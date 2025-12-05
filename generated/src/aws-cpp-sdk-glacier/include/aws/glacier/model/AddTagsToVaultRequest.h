@@ -99,12 +99,12 @@ class AddTagsToVaultRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

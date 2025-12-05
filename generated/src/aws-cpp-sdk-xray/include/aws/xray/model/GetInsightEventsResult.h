@@ -86,12 +86,12 @@ class GetInsightEventsResult {
   ///@}
  private:
   Aws::Vector<InsightEvent> m_insightEvents;
-  bool m_insightEventsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightEventsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

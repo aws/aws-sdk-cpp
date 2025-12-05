@@ -68,9 +68,9 @@ class PolicyTypeSummary {
   ///@}
  private:
   PolicyType m_type{PolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PolicyTypeStatus m_status{PolicyTypeStatus::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

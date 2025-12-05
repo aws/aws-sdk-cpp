@@ -191,24 +191,24 @@ class OutputGroupSettings {
   ///@}
  private:
   CmafGroupSettings m_cmafGroupSettings;
-  bool m_cmafGroupSettingsHasBeenSet = false;
 
   DashIsoGroupSettings m_dashIsoGroupSettings;
-  bool m_dashIsoGroupSettingsHasBeenSet = false;
 
   FileGroupSettings m_fileGroupSettings;
-  bool m_fileGroupSettingsHasBeenSet = false;
 
   HlsGroupSettings m_hlsGroupSettings;
-  bool m_hlsGroupSettingsHasBeenSet = false;
 
   MsSmoothGroupSettings m_msSmoothGroupSettings;
-  bool m_msSmoothGroupSettingsHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   OutputGroupType m_type{OutputGroupType::NOT_SET};
+  bool m_cmafGroupSettingsHasBeenSet = false;
+  bool m_dashIsoGroupSettingsHasBeenSet = false;
+  bool m_fileGroupSettingsHasBeenSet = false;
+  bool m_hlsGroupSettingsHasBeenSet = false;
+  bool m_msSmoothGroupSettingsHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

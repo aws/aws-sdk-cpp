@@ -95,9 +95,9 @@ class Filter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valueList;
+  bool m_nameHasBeenSet = false;
   bool m_valueListHasBeenSet = false;
 };
 

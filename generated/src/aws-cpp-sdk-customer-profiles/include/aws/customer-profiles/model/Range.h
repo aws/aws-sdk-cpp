@@ -135,18 +135,18 @@ class Range {
   ///@}
  private:
   int m_value{0};
-  bool m_valueHasBeenSet = false;
 
   Unit m_unit{Unit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   ValueRange m_valueRange;
-  bool m_valueRangeHasBeenSet = false;
 
   Aws::String m_timestampSource;
-  bool m_timestampSourceHasBeenSet = false;
 
   Aws::String m_timestampFormat;
+  bool m_valueHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_valueRangeHasBeenSet = false;
+  bool m_timestampSourceHasBeenSet = false;
   bool m_timestampFormatHasBeenSet = false;
 };
 

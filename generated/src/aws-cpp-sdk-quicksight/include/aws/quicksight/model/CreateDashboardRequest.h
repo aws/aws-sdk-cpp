@@ -390,48 +390,48 @@ class CreateDashboardRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Parameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   DashboardSourceEntity m_sourceEntity;
-  bool m_sourceEntityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   DashboardPublishOptions m_dashboardPublishOptions;
-  bool m_dashboardPublishOptionsHasBeenSet = false;
 
   Aws::String m_themeArn;
-  bool m_themeArnHasBeenSet = false;
 
   DashboardVersionDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   ValidationStrategy m_validationStrategy;
-  bool m_validationStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_folderArns;
-  bool m_folderArnsHasBeenSet = false;
 
   LinkSharingConfiguration m_linkSharingConfiguration;
-  bool m_linkSharingConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_linkEntities;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_sourceEntityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_dashboardPublishOptionsHasBeenSet = false;
+  bool m_themeArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_validationStrategyHasBeenSet = false;
+  bool m_folderArnsHasBeenSet = false;
+  bool m_linkSharingConfigurationHasBeenSet = false;
   bool m_linkEntitiesHasBeenSet = false;
 };
 

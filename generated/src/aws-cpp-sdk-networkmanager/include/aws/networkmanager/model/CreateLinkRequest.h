@@ -167,24 +167,24 @@ class CreateLinkRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Bandwidth m_bandwidth;
-  bool m_bandwidthHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_bandwidthHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_siteIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

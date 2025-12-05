@@ -61,9 +61,9 @@ class DescribeIdentityProviderConfigResult {
   ///@}
  private:
   IdentityProviderConfigResponse m_identityProviderConfig;
-  bool m_identityProviderConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityProviderConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

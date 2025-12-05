@@ -134,21 +134,21 @@ class GetTrafficDistributionResult {
   ///@}
  private:
   TelephonyConfig m_telephonyConfig;
-  bool m_telephonyConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   SignInConfig m_signInConfig;
-  bool m_signInConfigHasBeenSet = false;
 
   AgentConfig m_agentConfig;
-  bool m_agentConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_telephonyConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_signInConfigHasBeenSet = false;
+  bool m_agentConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

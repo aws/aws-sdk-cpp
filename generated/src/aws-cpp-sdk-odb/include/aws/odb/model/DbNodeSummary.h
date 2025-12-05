@@ -494,81 +494,81 @@ class DbNodeSummary {
   ///@}
  private:
   Aws::String m_dbNodeId;
-  bool m_dbNodeIdHasBeenSet = false;
 
   Aws::String m_dbNodeArn;
-  bool m_dbNodeArnHasBeenSet = false;
 
   DbNodeResourceStatus m_status{DbNodeResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_additionalDetails;
-  bool m_additionalDetailsHasBeenSet = false;
 
   Aws::String m_backupIpId;
-  bool m_backupIpIdHasBeenSet = false;
 
   Aws::String m_backupVnic2Id;
-  bool m_backupVnic2IdHasBeenSet = false;
 
   Aws::String m_backupVnicId;
-  bool m_backupVnicIdHasBeenSet = false;
 
   int m_cpuCoreCount{0};
-  bool m_cpuCoreCountHasBeenSet = false;
 
   int m_dbNodeStorageSizeInGBs{0};
-  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
 
   Aws::String m_dbServerId;
-  bool m_dbServerIdHasBeenSet = false;
 
   Aws::String m_dbSystemId;
-  bool m_dbSystemIdHasBeenSet = false;
 
   Aws::String m_faultDomain;
-  bool m_faultDomainHasBeenSet = false;
 
   Aws::String m_hostIpId;
-  bool m_hostIpIdHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_ocid;
-  bool m_ocidHasBeenSet = false;
 
   Aws::String m_ociResourceAnchorName;
-  bool m_ociResourceAnchorNameHasBeenSet = false;
 
   DbNodeMaintenanceType m_maintenanceType{DbNodeMaintenanceType::NOT_SET};
-  bool m_maintenanceTypeHasBeenSet = false;
 
   int m_memorySizeInGBs{0};
-  bool m_memorySizeInGBsHasBeenSet = false;
 
   int m_softwareStorageSizeInGB{0};
-  bool m_softwareStorageSizeInGBHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_timeMaintenanceWindowEnd;
-  bool m_timeMaintenanceWindowEndHasBeenSet = false;
 
   Aws::String m_timeMaintenanceWindowStart;
-  bool m_timeMaintenanceWindowStartHasBeenSet = false;
 
   int m_totalCpuCoreCount{0};
-  bool m_totalCpuCoreCountHasBeenSet = false;
 
   Aws::String m_vnic2Id;
-  bool m_vnic2IdHasBeenSet = false;
 
   Aws::String m_vnicId;
+  bool m_dbNodeIdHasBeenSet = false;
+  bool m_dbNodeArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_additionalDetailsHasBeenSet = false;
+  bool m_backupIpIdHasBeenSet = false;
+  bool m_backupVnic2IdHasBeenSet = false;
+  bool m_backupVnicIdHasBeenSet = false;
+  bool m_cpuCoreCountHasBeenSet = false;
+  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_dbServerIdHasBeenSet = false;
+  bool m_dbSystemIdHasBeenSet = false;
+  bool m_faultDomainHasBeenSet = false;
+  bool m_hostIpIdHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_ocidHasBeenSet = false;
+  bool m_ociResourceAnchorNameHasBeenSet = false;
+  bool m_maintenanceTypeHasBeenSet = false;
+  bool m_memorySizeInGBsHasBeenSet = false;
+  bool m_softwareStorageSizeInGBHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_timeMaintenanceWindowEndHasBeenSet = false;
+  bool m_timeMaintenanceWindowStartHasBeenSet = false;
+  bool m_totalCpuCoreCountHasBeenSet = false;
+  bool m_vnic2IdHasBeenSet = false;
   bool m_vnicIdHasBeenSet = false;
 };
 

@@ -187,24 +187,24 @@ class CreateKeyRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   KeyAttributes m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
-  bool m_keyCheckValueAlgorithmHasBeenSet = false;
 
   bool m_exportable{false};
-  bool m_exportableHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DeriveKeyUsage m_deriveKeyUsage{DeriveKeyUsage::NOT_SET};
-  bool m_deriveKeyUsageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationRegions;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_keyCheckValueAlgorithmHasBeenSet = false;
+  bool m_exportableHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_deriveKeyUsageHasBeenSet = false;
   bool m_replicationRegionsHasBeenSet = false;
 };
 

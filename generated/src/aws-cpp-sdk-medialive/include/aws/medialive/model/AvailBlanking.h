@@ -69,9 +69,9 @@ class AvailBlanking {
   ///@}
  private:
   InputLocation m_availBlankingImage;
-  bool m_availBlankingImageHasBeenSet = false;
 
   AvailBlankingState m_state{AvailBlankingState::NOT_SET};
+  bool m_availBlankingImageHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

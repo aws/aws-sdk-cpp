@@ -79,12 +79,12 @@ class DisassociateClientVpnTargetNetworkResponse {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   AssociationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_associationIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

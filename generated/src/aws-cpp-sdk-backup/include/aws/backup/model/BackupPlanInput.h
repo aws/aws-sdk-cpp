@@ -134,15 +134,15 @@ class BackupPlanInput {
   ///@}
  private:
   Aws::String m_backupPlanName;
-  bool m_backupPlanNameHasBeenSet = false;
 
   Aws::Vector<BackupRuleInput> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
-  bool m_advancedBackupSettingsHasBeenSet = false;
 
   Aws::Vector<ScanSetting> m_scanSettings;
+  bool m_backupPlanNameHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_advancedBackupSettingsHasBeenSet = false;
   bool m_scanSettingsHasBeenSet = false;
 };
 

@@ -71,12 +71,12 @@ class GetSolNetworkPackageContentResult {
   ///@}
  private:
   PackageContentType m_contentType{PackageContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_nsdContent{};
-  bool m_nsdContentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_nsdContentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

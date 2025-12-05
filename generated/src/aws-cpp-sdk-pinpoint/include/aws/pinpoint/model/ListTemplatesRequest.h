@@ -114,15 +114,15 @@ class ListTemplatesRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_pageSize;
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_templateType;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_templateTypeHasBeenSet = false;
 };
 

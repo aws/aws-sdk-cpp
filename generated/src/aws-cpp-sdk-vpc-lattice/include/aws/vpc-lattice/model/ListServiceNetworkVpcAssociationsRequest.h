@@ -104,15 +104,15 @@ class ListServiceNetworkVpcAssociationsRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceNetworkIdentifier;
-  bool m_serviceNetworkIdentifierHasBeenSet = false;
 
   Aws::String m_vpcIdentifier;
-  bool m_vpcIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceNetworkIdentifierHasBeenSet = false;
+  bool m_vpcIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

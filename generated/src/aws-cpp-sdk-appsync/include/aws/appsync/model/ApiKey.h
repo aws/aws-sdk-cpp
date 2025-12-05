@@ -129,15 +129,15 @@ class ApiKey {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_expires{0};
-  bool m_expiresHasBeenSet = false;
 
   long long m_deletes{0};
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_expiresHasBeenSet = false;
   bool m_deletesHasBeenSet = false;
 };
 

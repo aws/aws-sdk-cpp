@@ -110,18 +110,18 @@ class CompleteLayerUploadResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   Aws::String m_layerDigest;
-  bool m_layerDigestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_layerDigestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

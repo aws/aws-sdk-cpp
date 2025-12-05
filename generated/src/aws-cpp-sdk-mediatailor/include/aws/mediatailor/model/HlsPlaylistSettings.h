@@ -76,9 +76,9 @@ class HlsPlaylistSettings {
   ///@}
  private:
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   Aws::Vector<AdMarkupType> m_adMarkupType;
+  bool m_manifestWindowSecondsHasBeenSet = false;
   bool m_adMarkupTypeHasBeenSet = false;
 };
 

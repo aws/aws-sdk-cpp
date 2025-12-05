@@ -193,30 +193,30 @@ class VpcEncryptionControlConfiguration {
   ///@}
  private:
   VpcEncryptionControlMode m_mode{VpcEncryptionControlMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_internetGatewayExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
-  bool m_internetGatewayExclusionHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_egressOnlyInternetGatewayExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
-  bool m_egressOnlyInternetGatewayExclusionHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_natGatewayExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
-  bool m_natGatewayExclusionHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_virtualPrivateGatewayExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
-  bool m_virtualPrivateGatewayExclusionHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_vpcPeeringExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
-  bool m_vpcPeeringExclusionHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_lambdaExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
-  bool m_lambdaExclusionHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_vpcLatticeExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
-  bool m_vpcLatticeExclusionHasBeenSet = false;
 
   VpcEncryptionControlExclusionStateInput m_elasticFileSystemExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
+  bool m_modeHasBeenSet = false;
+  bool m_internetGatewayExclusionHasBeenSet = false;
+  bool m_egressOnlyInternetGatewayExclusionHasBeenSet = false;
+  bool m_natGatewayExclusionHasBeenSet = false;
+  bool m_virtualPrivateGatewayExclusionHasBeenSet = false;
+  bool m_vpcPeeringExclusionHasBeenSet = false;
+  bool m_lambdaExclusionHasBeenSet = false;
+  bool m_vpcLatticeExclusionHasBeenSet = false;
   bool m_elasticFileSystemExclusionHasBeenSet = false;
 };
 

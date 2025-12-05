@@ -77,9 +77,9 @@ class StandardsSubscriptionRequest {
   ///@}
  private:
   Aws::String m_standardsArn;
-  bool m_standardsArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_standardsInput;
+  bool m_standardsArnHasBeenSet = false;
   bool m_standardsInputHasBeenSet = false;
 };
 

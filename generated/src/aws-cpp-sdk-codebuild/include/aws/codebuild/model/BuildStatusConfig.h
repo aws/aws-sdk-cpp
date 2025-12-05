@@ -87,9 +87,9 @@ class BuildStatusConfig {
   ///@}
  private:
   Aws::String m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::String m_targetUrl;
+  bool m_contextHasBeenSet = false;
   bool m_targetUrlHasBeenSet = false;
 };
 

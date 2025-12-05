@@ -100,15 +100,15 @@ class CreateWorkspaceServiceAccountTokenRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_secondsToLive{0};
-  bool m_secondsToLiveHasBeenSet = false;
 
   Aws::String m_serviceAccountId;
-  bool m_serviceAccountIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_nameHasBeenSet = false;
+  bool m_secondsToLiveHasBeenSet = false;
+  bool m_serviceAccountIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

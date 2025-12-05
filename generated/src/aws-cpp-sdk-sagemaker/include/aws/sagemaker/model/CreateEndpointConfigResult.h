@@ -59,9 +59,9 @@ class CreateEndpointConfigResult {
   ///@}
  private:
   Aws::String m_endpointConfigArn;
-  bool m_endpointConfigArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointConfigArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

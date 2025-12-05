@@ -72,9 +72,9 @@ class OnDemandThroughput {
   ///@}
  private:
   long long m_maxReadRequestUnits{0};
-  bool m_maxReadRequestUnitsHasBeenSet = false;
 
   long long m_maxWriteRequestUnits{0};
+  bool m_maxReadRequestUnitsHasBeenSet = false;
   bool m_maxWriteRequestUnitsHasBeenSet = false;
 };
 

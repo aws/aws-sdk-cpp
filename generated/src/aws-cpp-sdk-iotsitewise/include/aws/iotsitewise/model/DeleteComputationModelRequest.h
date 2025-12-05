@@ -73,9 +73,9 @@ class DeleteComputationModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_computationModelId;
-  bool m_computationModelIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_computationModelIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

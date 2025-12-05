@@ -189,27 +189,27 @@ class GetManagedResourceResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_appliedWeights;
-  bool m_appliedWeightsHasBeenSet = false;
 
   Aws::Vector<ZonalShiftInResource> m_zonalShifts;
-  bool m_zonalShiftsHasBeenSet = false;
 
   Aws::Vector<AutoshiftInResource> m_autoshifts;
-  bool m_autoshiftsHasBeenSet = false;
 
   PracticeRunConfiguration m_practiceRunConfiguration;
-  bool m_practiceRunConfigurationHasBeenSet = false;
 
   ZonalAutoshiftStatus m_zonalAutoshiftStatus{ZonalAutoshiftStatus::NOT_SET};
-  bool m_zonalAutoshiftStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_appliedWeightsHasBeenSet = false;
+  bool m_zonalShiftsHasBeenSet = false;
+  bool m_autoshiftsHasBeenSet = false;
+  bool m_practiceRunConfigurationHasBeenSet = false;
+  bool m_zonalAutoshiftStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

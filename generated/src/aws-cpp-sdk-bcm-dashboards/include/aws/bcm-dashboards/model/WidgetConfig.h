@@ -72,9 +72,9 @@ class WidgetConfig {
   ///@}
  private:
   QueryParameters m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   DisplayConfig m_displayConfig;
+  bool m_queryParametersHasBeenSet = false;
   bool m_displayConfigHasBeenSet = false;
 };
 

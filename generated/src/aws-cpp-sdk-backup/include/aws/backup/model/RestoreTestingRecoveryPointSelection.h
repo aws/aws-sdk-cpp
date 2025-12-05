@@ -168,18 +168,18 @@ class RestoreTestingRecoveryPointSelection {
   ///@}
  private:
   RestoreTestingRecoveryPointSelectionAlgorithm m_algorithm{RestoreTestingRecoveryPointSelectionAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeVaults;
-  bool m_excludeVaultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeVaults;
-  bool m_includeVaultsHasBeenSet = false;
 
   Aws::Vector<RestoreTestingRecoveryPointType> m_recoveryPointTypes;
-  bool m_recoveryPointTypesHasBeenSet = false;
 
   int m_selectionWindowDays{0};
+  bool m_algorithmHasBeenSet = false;
+  bool m_excludeVaultsHasBeenSet = false;
+  bool m_includeVaultsHasBeenSet = false;
+  bool m_recoveryPointTypesHasBeenSet = false;
   bool m_selectionWindowDaysHasBeenSet = false;
 };
 

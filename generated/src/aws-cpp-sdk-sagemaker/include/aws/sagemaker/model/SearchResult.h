@@ -104,15 +104,15 @@ class SearchResult {
   ///@}
  private:
   Aws::Vector<SearchRecord> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   TotalHits m_totalHits;
-  bool m_totalHitsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_totalHitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

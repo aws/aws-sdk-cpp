@@ -88,12 +88,12 @@ class TriggerConditionInput {
   ///@}
  private:
   MessageBasedTriggerInput m_messageBasedTrigger;
-  bool m_messageBasedTriggerHasBeenSet = false;
 
   TokenBasedTriggerInput m_tokenBasedTrigger;
-  bool m_tokenBasedTriggerHasBeenSet = false;
 
   TimeBasedTriggerInput m_timeBasedTrigger;
+  bool m_messageBasedTriggerHasBeenSet = false;
+  bool m_tokenBasedTriggerHasBeenSet = false;
   bool m_timeBasedTriggerHasBeenSet = false;
 };
 

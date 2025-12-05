@@ -70,9 +70,9 @@ class DeleteRouteServerEndpointRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_routeServerEndpointId;
-  bool m_routeServerEndpointIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_routeServerEndpointIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

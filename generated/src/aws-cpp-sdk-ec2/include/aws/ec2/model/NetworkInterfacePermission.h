@@ -142,21 +142,21 @@ class NetworkInterfacePermission {
   ///@}
  private:
   Aws::String m_networkInterfacePermissionId;
-  bool m_networkInterfacePermissionIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsService;
-  bool m_awsServiceHasBeenSet = false;
 
   InterfacePermissionType m_permission{InterfacePermissionType::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   NetworkInterfacePermissionState m_permissionState;
+  bool m_networkInterfacePermissionIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsServiceHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
   bool m_permissionStateHasBeenSet = false;
 };
 

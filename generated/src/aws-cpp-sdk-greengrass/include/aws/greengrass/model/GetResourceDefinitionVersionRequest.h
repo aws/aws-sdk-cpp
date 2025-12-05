@@ -70,9 +70,9 @@ class GetResourceDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_resourceDefinitionId;
-  bool m_resourceDefinitionIdHasBeenSet = false;
 
   Aws::String m_resourceDefinitionVersionId;
+  bool m_resourceDefinitionIdHasBeenSet = false;
   bool m_resourceDefinitionVersionIdHasBeenSet = false;
 };
 

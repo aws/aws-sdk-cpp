@@ -108,15 +108,15 @@ class BucketCountByEncryptionType {
   ///@}
  private:
   long long m_kmsManaged{0};
-  bool m_kmsManagedHasBeenSet = false;
 
   long long m_s3Managed{0};
-  bool m_s3ManagedHasBeenSet = false;
 
   long long m_unencrypted{0};
-  bool m_unencryptedHasBeenSet = false;
 
   long long m_unknown{0};
+  bool m_kmsManagedHasBeenSet = false;
+  bool m_s3ManagedHasBeenSet = false;
+  bool m_unencryptedHasBeenSet = false;
   bool m_unknownHasBeenSet = false;
 };
 

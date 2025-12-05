@@ -60,9 +60,9 @@ class GetAWSDefaultServiceQuotaResult {
   ///@}
  private:
   ServiceQuota m_quota;
-  bool m_quotaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quotaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class ManagedWorkgroupListItem {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_managedWorkgroupId;
-  bool m_managedWorkgroupIdHasBeenSet = false;
 
   Aws::String m_managedWorkgroupName;
-  bool m_managedWorkgroupNameHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   ManagedWorkgroupStatus m_status{ManagedWorkgroupStatus::NOT_SET};
+  bool m_creationDateHasBeenSet = false;
+  bool m_managedWorkgroupIdHasBeenSet = false;
+  bool m_managedWorkgroupNameHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

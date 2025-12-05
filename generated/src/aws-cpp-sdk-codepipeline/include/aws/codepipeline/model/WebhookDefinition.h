@@ -172,21 +172,21 @@ class WebhookDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_targetPipeline;
-  bool m_targetPipelineHasBeenSet = false;
 
   Aws::String m_targetAction;
-  bool m_targetActionHasBeenSet = false;
 
   Aws::Vector<WebhookFilterRule> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   WebhookAuthenticationType m_authentication{WebhookAuthenticationType::NOT_SET};
-  bool m_authenticationHasBeenSet = false;
 
   WebhookAuthConfiguration m_authenticationConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_targetPipelineHasBeenSet = false;
+  bool m_targetActionHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
   bool m_authenticationConfigurationHasBeenSet = false;
 };
 

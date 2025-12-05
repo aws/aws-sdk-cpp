@@ -86,12 +86,12 @@ class ListDataSetExportHistoryResult {
   ///@}
  private:
   Aws::Vector<DataSetExportTask> m_dataSetExportTasks;
-  bool m_dataSetExportTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSetExportTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -253,39 +253,39 @@ class ListInferenceRecommendationsJobsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeAfter{};
-  bool m_lastModifiedTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeBefore{};
-  bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   RecommendationJobStatus m_statusEquals{RecommendationJobStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   ListInferenceRecommendationsJobsSortBy m_sortBy{ListInferenceRecommendationsJobsSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_modelNameEquals;
-  bool m_modelNameEqualsHasBeenSet = false;
 
   Aws::String m_modelPackageVersionArnEquals;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_lastModifiedTimeAfterHasBeenSet = false;
+  bool m_lastModifiedTimeBeforeHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_modelNameEqualsHasBeenSet = false;
   bool m_modelPackageVersionArnEqualsHasBeenSet = false;
 };
 

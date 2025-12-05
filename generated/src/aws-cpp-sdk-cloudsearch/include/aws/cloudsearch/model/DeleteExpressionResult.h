@@ -66,9 +66,9 @@ class DeleteExpressionResult {
   ///@}
  private:
   ExpressionStatus m_expression;
-  bool m_expressionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_expressionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeCapacityReservationsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CapacityReservation> m_capacityReservations;
-  bool m_capacityReservationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_capacityReservationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

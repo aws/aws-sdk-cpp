@@ -67,9 +67,9 @@ class ErrorInfo {
   ///@}
  private:
   long long m_putFailuresCount{0};
-  bool m_putFailuresCountHasBeenSet = false;
 
   Aws::String m_executionMessage;
+  bool m_putFailuresCountHasBeenSet = false;
   bool m_executionMessageHasBeenSet = false;
 };
 

@@ -120,18 +120,18 @@ class ListMembershipItem {
   ///@}
  private:
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AwsRegion m_region{AwsRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   MembershipStatus m_membershipStatus{MembershipStatus::NOT_SET};
+  bool m_membershipIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
   bool m_membershipStatusHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class GetLensReviewRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   int m_milestoneNumber{0};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
   bool m_milestoneNumberHasBeenSet = false;
 };
 

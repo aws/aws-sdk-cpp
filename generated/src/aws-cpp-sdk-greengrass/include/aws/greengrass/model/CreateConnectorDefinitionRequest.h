@@ -111,15 +111,15 @@ class CreateConnectorDefinitionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   ConnectorDefinitionVersion m_initialVersion;
-  bool m_initialVersionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_initialVersionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

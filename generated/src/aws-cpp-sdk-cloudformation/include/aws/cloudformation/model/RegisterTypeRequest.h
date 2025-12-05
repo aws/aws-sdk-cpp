@@ -181,21 +181,21 @@ class RegisterTypeRequest : public CloudFormationRequest {
   ///@}
  private:
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_schemaHandlerPackage;
-  bool m_schemaHandlerPackageHasBeenSet = false;
 
   LoggingConfig m_loggingConfig;
-  bool m_loggingConfigHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_typeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_schemaHandlerPackageHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

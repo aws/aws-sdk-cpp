@@ -132,18 +132,18 @@ class UpdateConnectionAuthRequestParameters {
   ///@}
  private:
   UpdateConnectionBasicAuthRequestParameters m_basicAuthParameters;
-  bool m_basicAuthParametersHasBeenSet = false;
 
   UpdateConnectionOAuthRequestParameters m_oAuthParameters;
-  bool m_oAuthParametersHasBeenSet = false;
 
   UpdateConnectionApiKeyAuthRequestParameters m_apiKeyAuthParameters;
-  bool m_apiKeyAuthParametersHasBeenSet = false;
 
   ConnectionHttpParameters m_invocationHttpParameters;
-  bool m_invocationHttpParametersHasBeenSet = false;
 
   ConnectivityResourceParameters m_connectivityParameters;
+  bool m_basicAuthParametersHasBeenSet = false;
+  bool m_oAuthParametersHasBeenSet = false;
+  bool m_apiKeyAuthParametersHasBeenSet = false;
+  bool m_invocationHttpParametersHasBeenSet = false;
   bool m_connectivityParametersHasBeenSet = false;
 };
 

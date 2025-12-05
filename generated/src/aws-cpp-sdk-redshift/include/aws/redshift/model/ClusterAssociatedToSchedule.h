@@ -69,9 +69,9 @@ class ClusterAssociatedToSchedule {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   ScheduleState m_scheduleAssociationState{ScheduleState::NOT_SET};
+  bool m_clusterIdentifierHasBeenSet = false;
   bool m_scheduleAssociationStateHasBeenSet = false;
 };
 

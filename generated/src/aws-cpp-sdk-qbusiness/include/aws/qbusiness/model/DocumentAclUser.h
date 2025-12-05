@@ -70,9 +70,9 @@ class DocumentAclUser {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MembershipType m_type{MembershipType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

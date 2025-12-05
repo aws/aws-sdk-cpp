@@ -67,9 +67,9 @@ class DescribeEventCategoriesResult {
   ///@}
  private:
   Aws::Vector<EventCategoriesMap> m_eventCategoriesMapList;
-  bool m_eventCategoriesMapListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_eventCategoriesMapListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

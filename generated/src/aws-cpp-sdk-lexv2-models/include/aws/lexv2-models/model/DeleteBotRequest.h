@@ -72,9 +72,9 @@ class DeleteBotRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   bool m_skipResourceInUseCheck{false};
+  bool m_botIdHasBeenSet = false;
   bool m_skipResourceInUseCheckHasBeenSet = false;
 };
 

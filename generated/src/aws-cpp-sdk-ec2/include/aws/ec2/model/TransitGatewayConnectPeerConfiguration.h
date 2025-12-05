@@ -137,18 +137,18 @@ class TransitGatewayConnectPeerConfiguration {
   ///@}
  private:
   Aws::String m_transitGatewayAddress;
-  bool m_transitGatewayAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insideCidrBlocks;
-  bool m_insideCidrBlocksHasBeenSet = false;
 
   ProtocolValue m_protocol{ProtocolValue::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<TransitGatewayAttachmentBgpConfiguration> m_bgpConfigurations;
+  bool m_transitGatewayAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_insideCidrBlocksHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_bgpConfigurationsHasBeenSet = false;
 };
 

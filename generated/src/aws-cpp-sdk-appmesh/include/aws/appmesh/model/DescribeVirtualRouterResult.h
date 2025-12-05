@@ -65,9 +65,9 @@ class DescribeVirtualRouterResult {
   ///@}
  private:
   VirtualRouterData m_virtualRouter;
-  bool m_virtualRouterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualRouterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

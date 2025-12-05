@@ -96,12 +96,12 @@ class DescribeLaunchConfigurationsRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_launchConfigurationNames;
-  bool m_launchConfigurationNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_launchConfigurationNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

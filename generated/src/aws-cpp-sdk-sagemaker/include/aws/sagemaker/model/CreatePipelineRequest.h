@@ -211,30 +211,30 @@ class CreatePipelineRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_pipelineDisplayName;
-  bool m_pipelineDisplayNameHasBeenSet = false;
 
   Aws::String m_pipelineDefinition;
-  bool m_pipelineDefinitionHasBeenSet = false;
 
   PipelineDefinitionS3Location m_pipelineDefinitionS3Location;
-  bool m_pipelineDefinitionS3LocationHasBeenSet = false;
 
   Aws::String m_pipelineDescription;
-  bool m_pipelineDescriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ParallelismConfiguration m_parallelismConfiguration;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineDisplayNameHasBeenSet = false;
+  bool m_pipelineDefinitionHasBeenSet = false;
+  bool m_pipelineDefinitionS3LocationHasBeenSet = false;
+  bool m_pipelineDescriptionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_parallelismConfigurationHasBeenSet = false;
 };
 

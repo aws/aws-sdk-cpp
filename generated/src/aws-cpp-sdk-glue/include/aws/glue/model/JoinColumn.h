@@ -75,9 +75,9 @@ class JoinColumn {
   ///@}
  private:
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_keys;
+  bool m_fromHasBeenSet = false;
   bool m_keysHasBeenSet = false;
 };
 

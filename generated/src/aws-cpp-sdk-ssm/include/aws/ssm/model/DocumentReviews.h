@@ -75,9 +75,9 @@ class DocumentReviews {
   ///@}
  private:
   DocumentReviewAction m_action{DocumentReviewAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<DocumentReviewCommentSource> m_comment;
+  bool m_actionHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

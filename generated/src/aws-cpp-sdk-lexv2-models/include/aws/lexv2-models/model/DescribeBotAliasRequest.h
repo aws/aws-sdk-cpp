@@ -65,9 +65,9 @@ class DescribeBotAliasRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_botId;
+  bool m_botAliasIdHasBeenSet = false;
   bool m_botIdHasBeenSet = false;
 };
 

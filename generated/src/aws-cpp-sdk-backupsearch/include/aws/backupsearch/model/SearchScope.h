@@ -153,18 +153,18 @@ class SearchScope {
   ///@}
  private:
   Aws::Vector<ResourceType> m_backupResourceTypes;
-  bool m_backupResourceTypesHasBeenSet = false;
 
   BackupCreationTimeFilter m_backupResourceCreationTime;
-  bool m_backupResourceCreationTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceResourceArns;
-  bool m_sourceResourceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_backupResourceArns;
-  bool m_backupResourceArnsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_backupResourceTags;
+  bool m_backupResourceTypesHasBeenSet = false;
+  bool m_backupResourceCreationTimeHasBeenSet = false;
+  bool m_sourceResourceArnsHasBeenSet = false;
+  bool m_backupResourceArnsHasBeenSet = false;
   bool m_backupResourceTagsHasBeenSet = false;
 };
 

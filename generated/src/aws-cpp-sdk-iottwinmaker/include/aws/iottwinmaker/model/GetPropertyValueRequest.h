@@ -217,33 +217,33 @@ class GetPropertyValueRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentPath;
-  bool m_componentPathHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedProperties;
-  bool m_selectedPropertiesHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_propertyGroupName;
-  bool m_propertyGroupNameHasBeenSet = false;
 
   TabularConditions m_tabularConditions;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentPathHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_selectedPropertiesHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_propertyGroupNameHasBeenSet = false;
   bool m_tabularConditionsHasBeenSet = false;
 };
 

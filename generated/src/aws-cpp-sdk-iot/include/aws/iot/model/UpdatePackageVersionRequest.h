@@ -196,27 +196,27 @@ class UpdatePackageVersionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   PackageVersionArtifact m_artifact;
-  bool m_artifactHasBeenSet = false;
 
   PackageVersionAction m_action{PackageVersionAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_recipe;
-  bool m_recipeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_packageNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_artifactHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_recipeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -81,12 +81,12 @@ class MultiplexStatmuxVideoSettings {
   ///@}
  private:
   int m_maximumBitrate{0};
-  bool m_maximumBitrateHasBeenSet = false;
 
   int m_minimumBitrate{0};
-  bool m_minimumBitrateHasBeenSet = false;
 
   int m_priority{0};
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_minimumBitrateHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

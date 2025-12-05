@@ -74,9 +74,9 @@ class UpdateServiceRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ServiceChange m_service;
+  bool m_idHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
 };
 

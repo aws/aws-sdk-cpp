@@ -123,18 +123,18 @@ class MemberAccount {
   ///@}
  private:
   Aws::String m_notificationConfigurationArn;
-  bool m_notificationConfigurationArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   MemberAccountNotificationConfigurationStatus m_status{MemberAccountNotificationConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
+  bool m_notificationConfigurationArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
 };
 

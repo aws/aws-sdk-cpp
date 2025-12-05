@@ -431,69 +431,69 @@ class Snapshot {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountsWithProvisionedRestoreAccess;
-  bool m_accountsWithProvisionedRestoreAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountsWithRestoreAccess;
-  bool m_accountsWithRestoreAccessHasBeenSet = false;
 
   double m_actualIncrementalBackupSizeInMegaBytes{0.0};
-  bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = false;
 
   Aws::String m_adminPasswordSecretArn;
-  bool m_adminPasswordSecretArnHasBeenSet = false;
 
   Aws::String m_adminPasswordSecretKmsKeyId;
-  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_adminUsername;
-  bool m_adminUsernameHasBeenSet = false;
 
   double m_backupProgressInMegaBytes{0.0};
-  bool m_backupProgressInMegaBytesHasBeenSet = false;
 
   double m_currentBackupRateInMegaBytesPerSecond{0.0};
-  bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet = false;
 
   long long m_elapsedTimeInSeconds{0};
-  bool m_elapsedTimeInSecondsHasBeenSet = false;
 
   long long m_estimatedSecondsToCompletion{0};
-  bool m_estimatedSecondsToCompletionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_namespaceArn;
-  bool m_namespaceArnHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotCreateTime{};
-  bool m_snapshotCreateTimeHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   int m_snapshotRemainingDays{0};
-  bool m_snapshotRemainingDaysHasBeenSet = false;
 
   int m_snapshotRetentionPeriod{0};
-  bool m_snapshotRetentionPeriodHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotRetentionStartTime{};
-  bool m_snapshotRetentionStartTimeHasBeenSet = false;
 
   SnapshotStatus m_status{SnapshotStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   double m_totalBackupSizeInMegaBytes{0.0};
+  bool m_accountsWithProvisionedRestoreAccessHasBeenSet = false;
+  bool m_accountsWithRestoreAccessHasBeenSet = false;
+  bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = false;
+  bool m_adminPasswordSecretArnHasBeenSet = false;
+  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_adminUsernameHasBeenSet = false;
+  bool m_backupProgressInMegaBytesHasBeenSet = false;
+  bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet = false;
+  bool m_elapsedTimeInSecondsHasBeenSet = false;
+  bool m_estimatedSecondsToCompletionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_namespaceArnHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_snapshotCreateTimeHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_snapshotRemainingDaysHasBeenSet = false;
+  bool m_snapshotRetentionPeriodHasBeenSet = false;
+  bool m_snapshotRetentionStartTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
 };
 

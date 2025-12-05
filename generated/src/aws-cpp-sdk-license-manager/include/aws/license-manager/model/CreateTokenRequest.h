@@ -136,18 +136,18 @@ class CreateTokenRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_licenseArn;
-  bool m_licenseArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_roleArns;
-  bool m_roleArnsHasBeenSet = false;
 
   int m_expirationInDays{0};
-  bool m_expirationInDaysHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenProperties;
-  bool m_tokenPropertiesHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_licenseArnHasBeenSet = false;
+  bool m_roleArnsHasBeenSet = false;
+  bool m_expirationInDaysHasBeenSet = false;
+  bool m_tokenPropertiesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

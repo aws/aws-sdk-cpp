@@ -80,9 +80,9 @@ class NamedEntityDefinitionMetric {
   ///@}
  private:
   NamedEntityAggType m_aggregation{NamedEntityAggType::NOT_SET};
-  bool m_aggregationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_aggregationFunctionParameters;
+  bool m_aggregationHasBeenSet = false;
   bool m_aggregationFunctionParametersHasBeenSet = false;
 };
 

@@ -145,18 +145,18 @@ class BatchReplaceClusterNodesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<BatchReplaceClusterNodesError> m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::Vector<BatchReplaceClusterNodeLogicalIdsError> m_failedNodeLogicalIds;
-  bool m_failedNodeLogicalIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_successfulNodeLogicalIds;
-  bool m_successfulNodeLogicalIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_failedNodeLogicalIdsHasBeenSet = false;
+  bool m_successfulNodeLogicalIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ReflectionConfiguration {
   ///@}
  private:
   CustomReflectionConfiguration m_customReflectionConfiguration;
-  bool m_customReflectionConfigurationHasBeenSet = false;
 
   EpisodicReflectionConfiguration m_episodicReflectionConfiguration;
+  bool m_customReflectionConfigurationHasBeenSet = false;
   bool m_episodicReflectionConfigurationHasBeenSet = false;
 };
 

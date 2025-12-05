@@ -85,12 +85,12 @@ class ListLayoutsResult {
   ///@}
  private:
   Aws::Vector<LayoutSummary> m_layouts;
-  bool m_layoutsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_layoutsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

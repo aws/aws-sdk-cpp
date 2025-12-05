@@ -110,15 +110,15 @@ class DescribeSharedDirectoriesRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_ownerDirectoryId;
-  bool m_ownerDirectoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sharedDirectoryIds;
-  bool m_sharedDirectoryIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_ownerDirectoryIdHasBeenSet = false;
+  bool m_sharedDirectoryIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

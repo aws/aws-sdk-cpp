@@ -153,18 +153,18 @@ class CustomJWTAuthorizerConfiguration {
   ///@}
  private:
   Aws::String m_discoveryUrl;
-  bool m_discoveryUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedAudience;
-  bool m_allowedAudienceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedClients;
-  bool m_allowedClientsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedScopes;
-  bool m_allowedScopesHasBeenSet = false;
 
   Aws::Vector<CustomClaimValidationType> m_customClaims;
+  bool m_discoveryUrlHasBeenSet = false;
+  bool m_allowedAudienceHasBeenSet = false;
+  bool m_allowedClientsHasBeenSet = false;
+  bool m_allowedScopesHasBeenSet = false;
   bool m_customClaimsHasBeenSet = false;
 };
 

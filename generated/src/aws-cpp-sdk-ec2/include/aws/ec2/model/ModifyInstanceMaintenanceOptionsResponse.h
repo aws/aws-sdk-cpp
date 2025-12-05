@@ -104,15 +104,15 @@ class ModifyInstanceMaintenanceOptionsResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceAutoRecoveryState m_autoRecovery{InstanceAutoRecoveryState::NOT_SET};
-  bool m_autoRecoveryHasBeenSet = false;
 
   InstanceRebootMigrationState m_rebootMigration{InstanceRebootMigrationState::NOT_SET};
-  bool m_rebootMigrationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_autoRecoveryHasBeenSet = false;
+  bool m_rebootMigrationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

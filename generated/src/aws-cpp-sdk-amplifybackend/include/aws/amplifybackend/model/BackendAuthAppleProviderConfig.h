@@ -105,15 +105,15 @@ class BackendAuthAppleProviderConfig {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_privateKey;
-  bool m_privateKeyHasBeenSet = false;
 
   Aws::String m_teamId;
+  bool m_clientIdHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_privateKeyHasBeenSet = false;
   bool m_teamIdHasBeenSet = false;
 };
 

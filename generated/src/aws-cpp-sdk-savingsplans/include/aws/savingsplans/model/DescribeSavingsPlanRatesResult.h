@@ -102,15 +102,15 @@ class DescribeSavingsPlanRatesResult {
   ///@}
  private:
   Aws::String m_savingsPlanId;
-  bool m_savingsPlanIdHasBeenSet = false;
 
   Aws::Vector<SavingsPlanRate> m_searchResults;
-  bool m_searchResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_savingsPlanIdHasBeenSet = false;
+  bool m_searchResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

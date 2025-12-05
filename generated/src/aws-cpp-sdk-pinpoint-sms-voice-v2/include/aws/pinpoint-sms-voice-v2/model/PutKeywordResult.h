@@ -126,21 +126,21 @@ class PutKeywordResult {
   ///@}
  private:
   Aws::String m_originationIdentityArn;
-  bool m_originationIdentityArnHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_keyword;
-  bool m_keywordHasBeenSet = false;
 
   Aws::String m_keywordMessage;
-  bool m_keywordMessageHasBeenSet = false;
 
   KeywordAction m_keywordAction{KeywordAction::NOT_SET};
-  bool m_keywordActionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originationIdentityArnHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_keywordHasBeenSet = false;
+  bool m_keywordMessageHasBeenSet = false;
+  bool m_keywordActionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

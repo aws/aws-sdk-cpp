@@ -141,21 +141,21 @@ class GetSimilarProfilesRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   MatchType m_matchType{MatchType::NOT_SET};
-  bool m_matchTypeHasBeenSet = false;
 
   Aws::String m_searchKey;
-  bool m_searchKeyHasBeenSet = false;
 
   Aws::String m_searchValue;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_matchTypeHasBeenSet = false;
+  bool m_searchKeyHasBeenSet = false;
   bool m_searchValueHasBeenSet = false;
 };
 

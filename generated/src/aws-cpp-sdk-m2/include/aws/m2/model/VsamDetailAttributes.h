@@ -150,21 +150,21 @@ class VsamDetailAttributes {
   ///@}
  private:
   Aws::Vector<AlternateKey> m_alternateKeys;
-  bool m_alternateKeysHasBeenSet = false;
 
   bool m_cacheAtStartup{false};
-  bool m_cacheAtStartupHasBeenSet = false;
 
   bool m_compressed{false};
-  bool m_compressedHasBeenSet = false;
 
   Aws::String m_encoding;
-  bool m_encodingHasBeenSet = false;
 
   PrimaryKey m_primaryKey;
-  bool m_primaryKeyHasBeenSet = false;
 
   Aws::String m_recordFormat;
+  bool m_alternateKeysHasBeenSet = false;
+  bool m_cacheAtStartupHasBeenSet = false;
+  bool m_compressedHasBeenSet = false;
+  bool m_encodingHasBeenSet = false;
+  bool m_primaryKeyHasBeenSet = false;
   bool m_recordFormatHasBeenSet = false;
 };
 

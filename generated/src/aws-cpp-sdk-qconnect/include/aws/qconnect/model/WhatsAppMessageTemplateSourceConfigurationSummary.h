@@ -167,24 +167,24 @@ class WhatsAppMessageTemplateSourceConfigurationSummary {
   ///@}
  private:
   Aws::String m_businessAccountId;
-  bool m_businessAccountIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_components;
-  bool m_componentsHasBeenSet = false;
 
   WhatsAppSourceConfigurationStatus m_status{WhatsAppSourceConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_businessAccountIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

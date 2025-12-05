@@ -104,12 +104,12 @@ class ExportStreamSessionFilesRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_streamSessionIdentifier;
-  bool m_streamSessionIdentifierHasBeenSet = false;
 
   Aws::String m_outputUri;
+  bool m_identifierHasBeenSet = false;
+  bool m_streamSessionIdentifierHasBeenSet = false;
   bool m_outputUriHasBeenSet = false;
 };
 

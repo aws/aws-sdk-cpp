@@ -210,30 +210,30 @@ class EksAttemptDetail {
   ///@}
  private:
   Aws::Vector<EksAttemptContainerDetail> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::Vector<EksAttemptContainerDetail> m_initContainers;
-  bool m_initContainersHasBeenSet = false;
 
   Aws::String m_eksClusterArn;
-  bool m_eksClusterArnHasBeenSet = false;
 
   Aws::String m_podName;
-  bool m_podNameHasBeenSet = false;
 
   Aws::String m_podNamespace;
-  bool m_podNamespaceHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_stoppedAt{0};
-  bool m_stoppedAtHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_containersHasBeenSet = false;
+  bool m_initContainersHasBeenSet = false;
+  bool m_eksClusterArnHasBeenSet = false;
+  bool m_podNameHasBeenSet = false;
+  bool m_podNamespaceHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class FederatedAuthentication {
   ///@}
  private:
   Aws::String m_samlProviderArn;
-  bool m_samlProviderArnHasBeenSet = false;
 
   Aws::String m_selfServiceSamlProviderArn;
+  bool m_samlProviderArnHasBeenSet = false;
   bool m_selfServiceSamlProviderArnHasBeenSet = false;
 };
 

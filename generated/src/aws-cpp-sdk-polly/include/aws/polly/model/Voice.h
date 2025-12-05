@@ -175,24 +175,24 @@ class Voice {
   ///@}
  private:
   Gender m_gender{Gender::NOT_SET};
-  bool m_genderHasBeenSet = false;
 
   VoiceId m_id{VoiceId::NOT_SET};
-  bool m_idHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_languageName;
-  bool m_languageNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<LanguageCode> m_additionalLanguageCodes;
-  bool m_additionalLanguageCodesHasBeenSet = false;
 
   Aws::Vector<Engine> m_supportedEngines;
+  bool m_genderHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_languageNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_additionalLanguageCodesHasBeenSet = false;
   bool m_supportedEnginesHasBeenSet = false;
 };
 

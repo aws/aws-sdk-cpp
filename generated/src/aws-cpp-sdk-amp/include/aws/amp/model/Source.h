@@ -72,9 +72,9 @@ class Source {
   ///@}
  private:
   EksConfiguration m_eksConfiguration;
-  bool m_eksConfigurationHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
+  bool m_eksConfigurationHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

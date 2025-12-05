@@ -60,9 +60,9 @@ class DescribeScheduledQueryResult {
   ///@}
  private:
   ScheduledQueryDescription m_scheduledQuery;
-  bool m_scheduledQueryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class WebsiteConfiguration {
   ///@}
  private:
   ErrorDocument m_errorDocument;
-  bool m_errorDocumentHasBeenSet = false;
 
   IndexDocument m_indexDocument;
-  bool m_indexDocumentHasBeenSet = false;
 
   RedirectAllRequestsTo m_redirectAllRequestsTo;
-  bool m_redirectAllRequestsToHasBeenSet = false;
 
   Aws::Vector<RoutingRule> m_routingRules;
+  bool m_errorDocumentHasBeenSet = false;
+  bool m_indexDocumentHasBeenSet = false;
+  bool m_redirectAllRequestsToHasBeenSet = false;
   bool m_routingRulesHasBeenSet = false;
 };
 

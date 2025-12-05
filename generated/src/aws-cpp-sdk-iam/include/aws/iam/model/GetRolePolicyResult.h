@@ -104,15 +104,15 @@ class GetRolePolicyResult {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_roleNameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

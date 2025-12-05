@@ -86,12 +86,12 @@ class ContainerRecommendation {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   MemorySizeConfiguration m_memorySizeConfiguration;
-  bool m_memorySizeConfigurationHasBeenSet = false;
 
   int m_cpu{0};
+  bool m_containerNameHasBeenSet = false;
+  bool m_memorySizeConfigurationHasBeenSet = false;
   bool m_cpuHasBeenSet = false;
 };
 

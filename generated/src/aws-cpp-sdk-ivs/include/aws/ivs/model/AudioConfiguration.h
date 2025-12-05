@@ -121,18 +121,18 @@ class AudioConfiguration {
   ///@}
  private:
   long long m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   long long m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   long long m_targetBitrate{0};
-  bool m_targetBitrateHasBeenSet = false;
 
   Aws::String m_track;
+  bool m_channelsHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_targetBitrateHasBeenSet = false;
   bool m_trackHasBeenSet = false;
 };
 

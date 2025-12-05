@@ -121,15 +121,15 @@ class CustomActionAttachment {
   ///@}
  private:
   Aws::String m_notificationType;
-  bool m_notificationTypeHasBeenSet = false;
 
   Aws::String m_buttonText;
-  bool m_buttonTextHasBeenSet = false;
 
   Aws::Vector<CustomActionAttachmentCriteria> m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_variables;
+  bool m_notificationTypeHasBeenSet = false;
+  bool m_buttonTextHasBeenSet = false;
+  bool m_criteriaHasBeenSet = false;
   bool m_variablesHasBeenSet = false;
 };
 

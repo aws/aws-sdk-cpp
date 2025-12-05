@@ -155,21 +155,21 @@ class AcceptPredictionsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<AcceptChoice> m_acceptChoices;
-  bool m_acceptChoicesHasBeenSet = false;
 
   AcceptRule m_acceptRule;
-  bool m_acceptRuleHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_revision;
+  bool m_acceptChoicesHasBeenSet = false;
+  bool m_acceptRuleHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

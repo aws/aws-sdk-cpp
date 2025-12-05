@@ -93,15 +93,15 @@ class GetConnectionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_connectedAt{};
-  bool m_connectedAtHasBeenSet = false;
 
   Identity m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastActiveAt{};
-  bool m_lastActiveAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectedAtHasBeenSet = false;
+  bool m_identityHasBeenSet = false;
+  bool m_lastActiveAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

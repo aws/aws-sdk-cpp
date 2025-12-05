@@ -83,12 +83,12 @@ class AnnotationValue {
   ///@}
  private:
   double m_numberValue{0.0};
-  bool m_numberValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   Aws::String m_stringValue;
+  bool m_numberValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
   bool m_stringValueHasBeenSet = false;
 };
 

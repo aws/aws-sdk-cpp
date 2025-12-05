@@ -88,12 +88,12 @@ class DescribeEndpointSettingsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<EndpointSetting> m_endpointSettings;
-  bool m_endpointSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_endpointSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

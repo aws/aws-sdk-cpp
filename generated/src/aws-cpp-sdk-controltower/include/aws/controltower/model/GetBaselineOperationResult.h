@@ -61,9 +61,9 @@ class GetBaselineOperationResult {
   ///@}
  private:
   BaselineOperation m_baselineOperation;
-  bool m_baselineOperationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baselineOperationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

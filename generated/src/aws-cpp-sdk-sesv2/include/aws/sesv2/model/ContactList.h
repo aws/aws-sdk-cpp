@@ -70,9 +70,9 @@ class ContactList {
   ///@}
  private:
   Aws::String m_contactListName;
-  bool m_contactListNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_contactListNameHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

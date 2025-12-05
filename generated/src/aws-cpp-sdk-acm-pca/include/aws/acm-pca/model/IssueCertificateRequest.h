@@ -250,27 +250,27 @@ class IssueCertificateRequest : public ACMPCARequest {
   ///@}
  private:
   ApiPassthrough m_apiPassthrough;
-  bool m_apiPassthroughHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_csr{};
-  bool m_csrHasBeenSet = false;
 
   SigningAlgorithm m_signingAlgorithm{SigningAlgorithm::NOT_SET};
-  bool m_signingAlgorithmHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Validity m_validity;
-  bool m_validityHasBeenSet = false;
 
   Validity m_validityNotBefore;
-  bool m_validityNotBeforeHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
+  bool m_apiPassthroughHasBeenSet = false;
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_csrHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
+  bool m_validityHasBeenSet = false;
+  bool m_validityNotBeforeHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = false;
 };
 

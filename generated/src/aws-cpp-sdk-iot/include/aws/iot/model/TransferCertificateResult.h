@@ -65,9 +65,9 @@ class TransferCertificateResult {
   ///@}
  private:
   Aws::String m_transferredCertificateArn;
-  bool m_transferredCertificateArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transferredCertificateArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

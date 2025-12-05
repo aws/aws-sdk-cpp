@@ -309,45 +309,45 @@ class DescribedCertificate {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   CertificateUsageType m_usage{CertificateUsageType::NOT_SET};
-  bool m_usageHasBeenSet = false;
 
   CertificateStatusType m_status{CertificateStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   Aws::String m_certificateChain;
-  bool m_certificateChainHasBeenSet = false;
 
   Aws::Utils::DateTime m_activeDate{};
-  bool m_activeDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_inactiveDate{};
-  bool m_inactiveDateHasBeenSet = false;
 
   Aws::String m_serial;
-  bool m_serialHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBeforeDate{};
-  bool m_notBeforeDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfterDate{};
-  bool m_notAfterDateHasBeenSet = false;
 
   CertificateType m_type{CertificateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_usageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
+  bool m_certificateChainHasBeenSet = false;
+  bool m_activeDateHasBeenSet = false;
+  bool m_inactiveDateHasBeenSet = false;
+  bool m_serialHasBeenSet = false;
+  bool m_notBeforeDateHasBeenSet = false;
+  bool m_notAfterDateHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

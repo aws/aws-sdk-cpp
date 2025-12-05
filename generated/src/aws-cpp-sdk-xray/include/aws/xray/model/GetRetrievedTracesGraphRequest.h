@@ -66,9 +66,9 @@ class GetRetrievedTracesGraphRequest : public XRayRequest {
   ///@}
  private:
   Aws::String m_retrievalToken;
-  bool m_retrievalTokenHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_retrievalTokenHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

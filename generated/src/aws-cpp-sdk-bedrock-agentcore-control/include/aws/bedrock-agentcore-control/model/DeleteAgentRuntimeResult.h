@@ -76,12 +76,12 @@ class DeleteAgentRuntimeResult {
   ///@}
  private:
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_agentRuntimeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

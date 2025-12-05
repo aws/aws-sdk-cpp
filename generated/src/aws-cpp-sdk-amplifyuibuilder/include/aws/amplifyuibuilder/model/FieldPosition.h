@@ -86,12 +86,12 @@ class FieldPosition {
   ///@}
  private:
   FixedPosition m_fixed{FixedPosition::NOT_SET};
-  bool m_fixedHasBeenSet = false;
 
   Aws::String m_rightOf;
-  bool m_rightOfHasBeenSet = false;
 
   Aws::String m_below;
+  bool m_fixedHasBeenSet = false;
+  bool m_rightOfHasBeenSet = false;
   bool m_belowHasBeenSet = false;
 };
 

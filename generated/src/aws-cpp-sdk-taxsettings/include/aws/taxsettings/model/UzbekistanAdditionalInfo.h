@@ -70,9 +70,9 @@ class UzbekistanAdditionalInfo {
   ///@}
  private:
   UzbekistanTaxRegistrationNumberType m_taxRegistrationNumberType{UzbekistanTaxRegistrationNumberType::NOT_SET};
-  bool m_taxRegistrationNumberTypeHasBeenSet = false;
 
   Aws::String m_vatRegistrationNumber;
+  bool m_taxRegistrationNumberTypeHasBeenSet = false;
   bool m_vatRegistrationNumberHasBeenSet = false;
 };
 

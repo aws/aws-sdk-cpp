@@ -132,18 +132,18 @@ class UpdateSubscriberRequest : public SecurityLakeRequest {
   ///@}
  private:
   Aws::Vector<LogSourceResource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::String m_subscriberDescription;
-  bool m_subscriberDescriptionHasBeenSet = false;
 
   Aws::String m_subscriberId;
-  bool m_subscriberIdHasBeenSet = false;
 
   AwsIdentity m_subscriberIdentity;
-  bool m_subscriberIdentityHasBeenSet = false;
 
   Aws::String m_subscriberName;
+  bool m_sourcesHasBeenSet = false;
+  bool m_subscriberDescriptionHasBeenSet = false;
+  bool m_subscriberIdHasBeenSet = false;
+  bool m_subscriberIdentityHasBeenSet = false;
   bool m_subscriberNameHasBeenSet = false;
 };
 

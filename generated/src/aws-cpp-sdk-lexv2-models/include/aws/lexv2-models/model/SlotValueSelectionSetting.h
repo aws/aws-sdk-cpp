@@ -97,12 +97,12 @@ class SlotValueSelectionSetting {
   ///@}
  private:
   SlotValueResolutionStrategy m_resolutionStrategy{SlotValueResolutionStrategy::NOT_SET};
-  bool m_resolutionStrategyHasBeenSet = false;
 
   SlotValueRegexFilter m_regexFilter;
-  bool m_regexFilterHasBeenSet = false;
 
   AdvancedRecognitionSetting m_advancedRecognitionSetting;
+  bool m_resolutionStrategyHasBeenSet = false;
+  bool m_regexFilterHasBeenSet = false;
   bool m_advancedRecognitionSettingHasBeenSet = false;
 };
 

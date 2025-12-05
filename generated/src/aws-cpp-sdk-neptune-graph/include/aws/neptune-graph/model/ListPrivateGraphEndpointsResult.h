@@ -87,12 +87,12 @@ class ListPrivateGraphEndpointsResult {
   ///@}
  private:
   Aws::Vector<PrivateGraphEndpointSummary> m_privateGraphEndpoints;
-  bool m_privateGraphEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_privateGraphEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

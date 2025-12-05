@@ -120,18 +120,18 @@ class UpdateConnectionGroup2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   bool m_ipv6Enabled{false};
-  bool m_ipv6EnabledHasBeenSet = false;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   Aws::String m_anycastIpListId;
-  bool m_anycastIpListIdHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_idHasBeenSet = false;
+  bool m_ipv6EnabledHasBeenSet = false;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_anycastIpListIdHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

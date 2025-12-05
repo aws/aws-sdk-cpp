@@ -107,15 +107,15 @@ class DescribeMultiRegionParametersRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_multiRegionParameterGroupName;
-  bool m_multiRegionParameterGroupNameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_multiRegionParameterGroupNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

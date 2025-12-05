@@ -139,21 +139,21 @@ class NetworkResourceSummary {
   ///@}
  private:
   Aws::String m_registeredGatewayArn;
-  bool m_registeredGatewayArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_nameTag;
-  bool m_nameTagHasBeenSet = false;
 
   bool m_isMiddlebox{false};
+  bool m_registeredGatewayArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_nameTagHasBeenSet = false;
   bool m_isMiddleboxHasBeenSet = false;
 };
 

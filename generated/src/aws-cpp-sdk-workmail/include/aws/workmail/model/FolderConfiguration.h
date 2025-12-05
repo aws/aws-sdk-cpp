@@ -83,12 +83,12 @@ class FolderConfiguration {
   ///@}
  private:
   FolderName m_name{FolderName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   RetentionAction m_action{RetentionAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   int m_period{0};
+  bool m_nameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_periodHasBeenSet = false;
 };
 

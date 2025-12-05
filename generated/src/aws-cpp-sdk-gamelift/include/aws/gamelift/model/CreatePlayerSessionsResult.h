@@ -67,9 +67,9 @@ class CreatePlayerSessionsResult {
   ///@}
  private:
   Aws::Vector<PlayerSession> m_playerSessions;
-  bool m_playerSessionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_playerSessionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

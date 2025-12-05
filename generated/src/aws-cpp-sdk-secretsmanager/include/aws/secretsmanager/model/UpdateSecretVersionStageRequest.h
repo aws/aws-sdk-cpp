@@ -115,15 +115,15 @@ class UpdateSecretVersionStageRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_versionStage;
-  bool m_versionStageHasBeenSet = false;
 
   Aws::String m_removeFromVersionId;
-  bool m_removeFromVersionIdHasBeenSet = false;
 
   Aws::String m_moveToVersionId;
+  bool m_secretIdHasBeenSet = false;
+  bool m_versionStageHasBeenSet = false;
+  bool m_removeFromVersionIdHasBeenSet = false;
   bool m_moveToVersionIdHasBeenSet = false;
 };
 

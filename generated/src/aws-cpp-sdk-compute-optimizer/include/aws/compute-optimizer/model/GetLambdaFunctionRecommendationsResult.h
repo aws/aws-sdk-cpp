@@ -89,12 +89,12 @@ class GetLambdaFunctionRecommendationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LambdaFunctionRecommendation> m_lambdaFunctionRecommendations;
-  bool m_lambdaFunctionRecommendationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_lambdaFunctionRecommendationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

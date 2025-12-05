@@ -108,15 +108,15 @@ class ThreatDetectedByName {
   ///@}
  private:
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   int m_uniqueThreatNameCount{0};
-  bool m_uniqueThreatNameCountHasBeenSet = false;
 
   bool m_shortened{false};
-  bool m_shortenedHasBeenSet = false;
 
   Aws::Vector<ScanThreatName> m_threatNames;
+  bool m_itemCountHasBeenSet = false;
+  bool m_uniqueThreatNameCountHasBeenSet = false;
+  bool m_shortenedHasBeenSet = false;
   bool m_threatNamesHasBeenSet = false;
 };
 

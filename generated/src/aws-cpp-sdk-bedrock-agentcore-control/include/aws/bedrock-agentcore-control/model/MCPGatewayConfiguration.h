@@ -97,12 +97,12 @@ class MCPGatewayConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_supportedVersions;
-  bool m_supportedVersionsHasBeenSet = false;
 
   Aws::String m_instructions;
-  bool m_instructionsHasBeenSet = false;
 
   SearchType m_searchType{SearchType::NOT_SET};
+  bool m_supportedVersionsHasBeenSet = false;
+  bool m_instructionsHasBeenSet = false;
   bool m_searchTypeHasBeenSet = false;
 };
 

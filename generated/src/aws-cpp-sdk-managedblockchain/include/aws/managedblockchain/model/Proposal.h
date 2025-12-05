@@ -324,45 +324,45 @@ class Proposal {
   ///@}
  private:
   Aws::String m_proposalId;
-  bool m_proposalIdHasBeenSet = false;
 
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProposalActions m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_proposedByMemberId;
-  bool m_proposedByMemberIdHasBeenSet = false;
 
   Aws::String m_proposedByMemberName;
-  bool m_proposedByMemberNameHasBeenSet = false;
 
   ProposalStatus m_status{ProposalStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   int m_yesVoteCount{0};
-  bool m_yesVoteCountHasBeenSet = false;
 
   int m_noVoteCount{0};
-  bool m_noVoteCountHasBeenSet = false;
 
   int m_outstandingVoteCount{0};
-  bool m_outstandingVoteCountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_proposalIdHasBeenSet = false;
+  bool m_networkIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_proposedByMemberIdHasBeenSet = false;
+  bool m_proposedByMemberNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_yesVoteCountHasBeenSet = false;
+  bool m_noVoteCountHasBeenSet = false;
+  bool m_outstandingVoteCountHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

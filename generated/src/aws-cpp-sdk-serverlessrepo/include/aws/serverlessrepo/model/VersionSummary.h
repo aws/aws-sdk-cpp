@@ -108,15 +108,15 @@ class VersionSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_sourceCodeUrl;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
   bool m_sourceCodeUrlHasBeenSet = false;
 };
 

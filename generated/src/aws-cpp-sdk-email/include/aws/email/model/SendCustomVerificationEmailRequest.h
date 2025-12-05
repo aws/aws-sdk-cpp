@@ -92,12 +92,12 @@ class SendCustomVerificationEmailRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_configurationSetName;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
 };
 

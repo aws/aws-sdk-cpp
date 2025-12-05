@@ -174,18 +174,18 @@ class DescribeAvailabilityZonesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_zoneNames;
-  bool m_zoneNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_zoneIds;
-  bool m_zoneIdsHasBeenSet = false;
 
   bool m_allAvailabilityZones{false};
-  bool m_allAvailabilityZonesHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_zoneNamesHasBeenSet = false;
+  bool m_zoneIdsHasBeenSet = false;
+  bool m_allAvailabilityZonesHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

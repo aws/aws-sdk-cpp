@@ -69,9 +69,9 @@ class DatasetActionSummary {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   DatasetActionType m_actionType{DatasetActionType::NOT_SET};
+  bool m_actionNameHasBeenSet = false;
   bool m_actionTypeHasBeenSet = false;
 };
 

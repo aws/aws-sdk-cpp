@@ -110,15 +110,15 @@ class ProcessingOutput {
   ///@}
  private:
   Aws::String m_outputName;
-  bool m_outputNameHasBeenSet = false;
 
   ProcessingS3Output m_s3Output;
-  bool m_s3OutputHasBeenSet = false;
 
   ProcessingFeatureStoreOutput m_featureStoreOutput;
-  bool m_featureStoreOutputHasBeenSet = false;
 
   bool m_appManaged{false};
+  bool m_outputNameHasBeenSet = false;
+  bool m_s3OutputHasBeenSet = false;
+  bool m_featureStoreOutputHasBeenSet = false;
   bool m_appManagedHasBeenSet = false;
 };
 

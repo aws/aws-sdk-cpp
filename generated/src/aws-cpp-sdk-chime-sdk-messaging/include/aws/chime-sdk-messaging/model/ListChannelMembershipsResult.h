@@ -102,15 +102,15 @@ class ListChannelMembershipsResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::Vector<ChannelMembershipSummary> m_channelMemberships;
-  bool m_channelMembershipsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_channelMembershipsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

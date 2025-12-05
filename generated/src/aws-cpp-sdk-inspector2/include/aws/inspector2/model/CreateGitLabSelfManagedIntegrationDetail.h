@@ -70,9 +70,9 @@ class CreateGitLabSelfManagedIntegrationDetail {
   ///@}
  private:
   Aws::String m_instanceUrl;
-  bool m_instanceUrlHasBeenSet = false;
 
   Aws::String m_accessToken;
+  bool m_instanceUrlHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
 };
 

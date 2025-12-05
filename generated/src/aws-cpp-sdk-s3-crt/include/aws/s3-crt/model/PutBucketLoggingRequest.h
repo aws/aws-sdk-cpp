@@ -171,21 +171,21 @@ class PutBucketLoggingRequest : public S3CrtRequest {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   BucketLoggingStatus m_bucketLoggingStatus;
-  bool m_bucketLoggingStatusHasBeenSet = false;
 
   Aws::String m_contentMD5;
-  bool m_contentMD5HasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_bucketLoggingStatusHasBeenSet = false;
+  bool m_contentMD5HasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

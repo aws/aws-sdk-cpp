@@ -137,18 +137,18 @@ class ComponentUpdateRequest {
   ///@}
  private:
   ComponentUpdateType m_updateType{ComponentUpdateType::NOT_SET};
-  bool m_updateTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Aws::Map<Aws::String, PropertyRequest> m_propertyUpdates;
-  bool m_propertyUpdatesHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentPropertyGroupRequest> m_propertyGroupUpdates;
+  bool m_updateTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
+  bool m_propertyUpdatesHasBeenSet = false;
   bool m_propertyGroupUpdatesHasBeenSet = false;
 };
 

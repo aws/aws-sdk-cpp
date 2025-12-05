@@ -158,21 +158,21 @@ class AutoParticipantRecordingConfiguration {
   ///@}
  private:
   Aws::String m_storageConfigurationArn;
-  bool m_storageConfigurationArnHasBeenSet = false;
 
   Aws::Vector<ParticipantRecordingMediaType> m_mediaTypes;
-  bool m_mediaTypesHasBeenSet = false;
 
   ParticipantThumbnailConfiguration m_thumbnailConfiguration;
-  bool m_thumbnailConfigurationHasBeenSet = false;
 
   int m_recordingReconnectWindowSeconds{0};
-  bool m_recordingReconnectWindowSecondsHasBeenSet = false;
 
   ParticipantRecordingHlsConfiguration m_hlsConfiguration;
-  bool m_hlsConfigurationHasBeenSet = false;
 
   bool m_recordParticipantReplicas{false};
+  bool m_storageConfigurationArnHasBeenSet = false;
+  bool m_mediaTypesHasBeenSet = false;
+  bool m_thumbnailConfigurationHasBeenSet = false;
+  bool m_recordingReconnectWindowSecondsHasBeenSet = false;
+  bool m_hlsConfigurationHasBeenSet = false;
   bool m_recordParticipantReplicasHasBeenSet = false;
 };
 

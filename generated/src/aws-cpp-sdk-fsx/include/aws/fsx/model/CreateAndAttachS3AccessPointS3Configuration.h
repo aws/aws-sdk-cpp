@@ -76,9 +76,9 @@ class CreateAndAttachS3AccessPointS3Configuration {
   ///@}
  private:
   S3AccessPointVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_vpcConfigurationHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

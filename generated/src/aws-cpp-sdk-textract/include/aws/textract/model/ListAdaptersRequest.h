@@ -106,15 +106,15 @@ class ListAdaptersRequest : public TextractRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_afterCreationTime{};
-  bool m_afterCreationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_beforeCreationTime{};
-  bool m_beforeCreationTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_afterCreationTimeHasBeenSet = false;
+  bool m_beforeCreationTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

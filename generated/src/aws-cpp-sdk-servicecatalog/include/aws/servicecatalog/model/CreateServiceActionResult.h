@@ -60,9 +60,9 @@ class CreateServiceActionResult {
   ///@}
  private:
   ServiceActionDetail m_serviceActionDetail;
-  bool m_serviceActionDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceActionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class DetectStackDriftRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logicalResourceIds;
+  bool m_stackNameHasBeenSet = false;
   bool m_logicalResourceIdsHasBeenSet = false;
 };
 

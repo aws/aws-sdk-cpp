@@ -256,39 +256,39 @@ class ModifyTrafficMirrorFilterRuleRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_trafficMirrorFilterRuleId;
-  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
 
   TrafficDirection m_trafficDirection{TrafficDirection::NOT_SET};
-  bool m_trafficDirectionHasBeenSet = false;
 
   int m_ruleNumber{0};
-  bool m_ruleNumberHasBeenSet = false;
 
   TrafficMirrorRuleAction m_ruleAction{TrafficMirrorRuleAction::NOT_SET};
-  bool m_ruleActionHasBeenSet = false;
 
   TrafficMirrorPortRangeRequest m_destinationPortRange;
-  bool m_destinationPortRangeHasBeenSet = false;
 
   TrafficMirrorPortRangeRequest m_sourcePortRange;
-  bool m_sourcePortRangeHasBeenSet = false;
 
   int m_protocol{0};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_sourceCidrBlock;
-  bool m_sourceCidrBlockHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<TrafficMirrorFilterRuleField> m_removeFields;
-  bool m_removeFieldsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
+  bool m_trafficDirectionHasBeenSet = false;
+  bool m_ruleNumberHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
+  bool m_destinationPortRangeHasBeenSet = false;
+  bool m_sourcePortRangeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_sourceCidrBlockHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_removeFieldsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

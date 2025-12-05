@@ -108,12 +108,12 @@ class ModifyReservedInstancesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_reservedInstancesIds;
-  bool m_reservedInstancesIdsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<ReservedInstancesConfiguration> m_targetConfigurations;
+  bool m_reservedInstancesIdsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_targetConfigurationsHasBeenSet = false;
 };
 

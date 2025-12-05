@@ -87,12 +87,12 @@ class NotificationConfigurationDeprecated {
   ///@}
  private:
   TopicConfigurationDeprecated m_topicConfiguration;
-  bool m_topicConfigurationHasBeenSet = false;
 
   QueueConfigurationDeprecated m_queueConfiguration;
-  bool m_queueConfigurationHasBeenSet = false;
 
   CloudFunctionConfiguration m_cloudFunctionConfiguration;
+  bool m_topicConfigurationHasBeenSet = false;
+  bool m_queueConfigurationHasBeenSet = false;
   bool m_cloudFunctionConfigurationHasBeenSet = false;
 };
 

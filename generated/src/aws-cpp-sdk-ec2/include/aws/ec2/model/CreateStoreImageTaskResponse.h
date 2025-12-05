@@ -60,9 +60,9 @@ class CreateStoreImageTaskResponse {
   ///@}
  private:
   Aws::String m_objectKey;
-  bool m_objectKeyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_objectKeyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

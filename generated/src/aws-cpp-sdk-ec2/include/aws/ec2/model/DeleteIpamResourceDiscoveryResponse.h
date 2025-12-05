@@ -60,9 +60,9 @@ class DeleteIpamResourceDiscoveryResponse {
   ///@}
  private:
   IpamResourceDiscovery m_ipamResourceDiscovery;
-  bool m_ipamResourceDiscoveryHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamResourceDiscoveryHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

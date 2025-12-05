@@ -67,9 +67,9 @@ class DeleteSlotTypeVersionRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_nameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

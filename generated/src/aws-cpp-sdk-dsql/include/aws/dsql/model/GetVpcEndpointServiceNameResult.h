@@ -76,12 +76,12 @@ class GetVpcEndpointServiceNameResult {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_clusterVpcEndpoint;
-  bool m_clusterVpcEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_clusterVpcEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

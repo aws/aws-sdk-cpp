@@ -78,9 +78,9 @@ class DeleteAccessRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_externalId;
+  bool m_serverIdHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
 };
 

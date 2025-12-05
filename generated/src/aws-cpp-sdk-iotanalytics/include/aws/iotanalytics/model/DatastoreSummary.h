@@ -181,27 +181,27 @@ class DatastoreSummary {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   DatastoreStorageSummary m_datastoreStorage;
-  bool m_datastoreStorageHasBeenSet = false;
 
   DatastoreStatus m_status{DatastoreStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastMessageArrivalTime{};
-  bool m_lastMessageArrivalTimeHasBeenSet = false;
 
   FileFormatType m_fileFormatType{FileFormatType::NOT_SET};
-  bool m_fileFormatTypeHasBeenSet = false;
 
   DatastorePartitions m_datastorePartitions;
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_datastoreStorageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_lastMessageArrivalTimeHasBeenSet = false;
+  bool m_fileFormatTypeHasBeenSet = false;
   bool m_datastorePartitionsHasBeenSet = false;
 };
 

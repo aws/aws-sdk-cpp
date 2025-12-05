@@ -115,15 +115,15 @@ class ReplacePermissionAssociationsRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_fromPermissionArn;
-  bool m_fromPermissionArnHasBeenSet = false;
 
   int m_fromPermissionVersion{0};
-  bool m_fromPermissionVersionHasBeenSet = false;
 
   Aws::String m_toPermissionArn;
-  bool m_toPermissionArnHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_fromPermissionArnHasBeenSet = false;
+  bool m_fromPermissionVersionHasBeenSet = false;
+  bool m_toPermissionArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

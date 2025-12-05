@@ -255,27 +255,27 @@ class GetDASHStreamingSessionURLRequest : public KinesisVideoArchivedMediaReques
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   DASHPlaybackMode m_playbackMode{DASHPlaybackMode::NOT_SET};
-  bool m_playbackModeHasBeenSet = false;
 
   DASHDisplayFragmentTimestamp m_displayFragmentTimestamp{DASHDisplayFragmentTimestamp::NOT_SET};
-  bool m_displayFragmentTimestampHasBeenSet = false;
 
   DASHDisplayFragmentNumber m_displayFragmentNumber{DASHDisplayFragmentNumber::NOT_SET};
-  bool m_displayFragmentNumberHasBeenSet = false;
 
   DASHFragmentSelector m_dASHFragmentSelector;
-  bool m_dASHFragmentSelectorHasBeenSet = false;
 
   int m_expires{0};
-  bool m_expiresHasBeenSet = false;
 
   long long m_maxManifestFragmentResults{0};
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_playbackModeHasBeenSet = false;
+  bool m_displayFragmentTimestampHasBeenSet = false;
+  bool m_displayFragmentNumberHasBeenSet = false;
+  bool m_dASHFragmentSelectorHasBeenSet = false;
+  bool m_expiresHasBeenSet = false;
   bool m_maxManifestFragmentResultsHasBeenSet = false;
 };
 

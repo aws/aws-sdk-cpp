@@ -62,9 +62,9 @@ class SecurityContext {
   ///@}
  private:
   bool m_privileged{false};
-  bool m_privilegedHasBeenSet = false;
 
   bool m_allowPrivilegeEscalation{false};
+  bool m_privilegedHasBeenSet = false;
   bool m_allowPrivilegeEscalationHasBeenSet = false;
 };
 

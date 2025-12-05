@@ -84,12 +84,12 @@ class CreateRefreshScheduleRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   RefreshSchedule m_schedule;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

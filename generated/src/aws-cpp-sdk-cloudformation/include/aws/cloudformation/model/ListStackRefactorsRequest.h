@@ -98,12 +98,12 @@ class ListStackRefactorsRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::Vector<StackRefactorExecutionStatus> m_executionStatusFilter;
-  bool m_executionStatusFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_executionStatusFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class FunctionAssociation {
   ///@}
  private:
   Aws::String m_functionARN;
-  bool m_functionARNHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
+  bool m_functionARNHasBeenSet = false;
   bool m_eventTypeHasBeenSet = false;
 };
 

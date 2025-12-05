@@ -140,18 +140,18 @@ class SubnetGroup {
   ///@}
  private:
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Subnet> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<NetworkType> m_supportedNetworkTypes;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
   bool m_supportedNetworkTypesHasBeenSet = false;
 };
 

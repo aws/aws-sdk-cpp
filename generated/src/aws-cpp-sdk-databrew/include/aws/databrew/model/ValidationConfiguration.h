@@ -73,9 +73,9 @@ class ValidationConfiguration {
   ///@}
  private:
   Aws::String m_rulesetArn;
-  bool m_rulesetArnHasBeenSet = false;
 
   ValidationMode m_validationMode{ValidationMode::NOT_SET};
+  bool m_rulesetArnHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
 };
 

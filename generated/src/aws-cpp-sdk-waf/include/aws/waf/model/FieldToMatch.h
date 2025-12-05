@@ -109,9 +109,9 @@ class FieldToMatch {
   ///@}
  private:
   MatchFieldType m_type{MatchFieldType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_data;
+  bool m_typeHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

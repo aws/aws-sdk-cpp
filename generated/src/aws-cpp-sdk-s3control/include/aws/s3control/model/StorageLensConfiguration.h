@@ -237,33 +237,33 @@ class StorageLensConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AccountLevel m_accountLevel;
-  bool m_accountLevelHasBeenSet = false;
 
   Include m_include;
-  bool m_includeHasBeenSet = false;
 
   Exclude m_exclude;
-  bool m_excludeHasBeenSet = false;
 
   StorageLensDataExport m_dataExport;
-  bool m_dataExportHasBeenSet = false;
 
   StorageLensExpandedPrefixesDataExport m_expandedPrefixesDataExport;
-  bool m_expandedPrefixesDataExportHasBeenSet = false;
 
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   StorageLensAwsOrg m_awsOrg;
-  bool m_awsOrgHasBeenSet = false;
 
   Aws::String m_storageLensArn;
-  bool m_storageLensArnHasBeenSet = false;
 
   Aws::String m_prefixDelimiter;
+  bool m_idHasBeenSet = false;
+  bool m_accountLevelHasBeenSet = false;
+  bool m_includeHasBeenSet = false;
+  bool m_excludeHasBeenSet = false;
+  bool m_dataExportHasBeenSet = false;
+  bool m_expandedPrefixesDataExportHasBeenSet = false;
+  bool m_isEnabledHasBeenSet = false;
+  bool m_awsOrgHasBeenSet = false;
+  bool m_storageLensArnHasBeenSet = false;
   bool m_prefixDelimiterHasBeenSet = false;
 };
 

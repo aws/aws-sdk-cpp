@@ -107,15 +107,15 @@ class AssociatedAccessPolicy {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   AccessScope m_accessScope;
-  bool m_accessScopeHasBeenSet = false;
 
   Aws::Utils::DateTime m_associatedAt{};
-  bool m_associatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
+  bool m_policyArnHasBeenSet = false;
+  bool m_accessScopeHasBeenSet = false;
+  bool m_associatedAtHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
 };
 

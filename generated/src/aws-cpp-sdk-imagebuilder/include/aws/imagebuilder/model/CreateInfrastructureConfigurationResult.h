@@ -80,12 +80,12 @@ class CreateInfrastructureConfigurationResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_infrastructureConfigurationArn;
+  bool m_requestIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_infrastructureConfigurationArnHasBeenSet = false;
 };
 

@@ -131,21 +131,21 @@ class GetOtaTaskConfigurationResult {
   ///@}
  private:
   Aws::String m_taskConfigurationId;
-  bool m_taskConfigurationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PushConfig m_pushConfig;
-  bool m_pushConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskConfigurationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pushConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

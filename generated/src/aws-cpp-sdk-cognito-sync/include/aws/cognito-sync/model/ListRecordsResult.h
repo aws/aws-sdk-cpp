@@ -206,33 +206,33 @@ class ListRecordsResult {
   ///@}
  private:
   Aws::Vector<Record> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   long long m_datasetSyncCount{0};
-  bool m_datasetSyncCountHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_mergedDatasetNames;
-  bool m_mergedDatasetNamesHasBeenSet = false;
 
   bool m_datasetExists{false};
-  bool m_datasetExistsHasBeenSet = false;
 
   bool m_datasetDeletedAfterRequestedSyncCount{false};
-  bool m_datasetDeletedAfterRequestedSyncCountHasBeenSet = false;
 
   Aws::String m_syncSessionToken;
-  bool m_syncSessionTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_datasetSyncCountHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_mergedDatasetNamesHasBeenSet = false;
+  bool m_datasetExistsHasBeenSet = false;
+  bool m_datasetDeletedAfterRequestedSyncCountHasBeenSet = false;
+  bool m_syncSessionTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

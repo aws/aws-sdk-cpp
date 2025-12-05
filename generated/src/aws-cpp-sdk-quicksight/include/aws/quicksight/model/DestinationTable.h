@@ -71,9 +71,9 @@ class DestinationTable {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   DestinationTableSource m_source;
+  bool m_aliasHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListEdgeAgentConfigurationsResult {
   ///@}
  private:
   Aws::Vector<ListEdgeAgentConfigurationsEdgeConfig> m_edgeConfigs;
-  bool m_edgeConfigsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_edgeConfigsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

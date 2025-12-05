@@ -85,12 +85,12 @@ class ListMetricAttributionsResult {
   ///@}
  private:
   Aws::Vector<MetricAttributionSummary> m_metricAttributions;
-  bool m_metricAttributionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricAttributionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

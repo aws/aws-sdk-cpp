@@ -305,45 +305,45 @@ class UserSettings {
   ///@}
  private:
   Aws::String m_userSettingsArn;
-  bool m_userSettingsArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedPortalArns;
-  bool m_associatedPortalArnsHasBeenSet = false;
 
   EnabledType m_copyAllowed{EnabledType::NOT_SET};
-  bool m_copyAllowedHasBeenSet = false;
 
   EnabledType m_pasteAllowed{EnabledType::NOT_SET};
-  bool m_pasteAllowedHasBeenSet = false;
 
   EnabledType m_downloadAllowed{EnabledType::NOT_SET};
-  bool m_downloadAllowedHasBeenSet = false;
 
   EnabledType m_uploadAllowed{EnabledType::NOT_SET};
-  bool m_uploadAllowedHasBeenSet = false;
 
   EnabledType m_printAllowed{EnabledType::NOT_SET};
-  bool m_printAllowedHasBeenSet = false;
 
   int m_disconnectTimeoutInMinutes{0};
-  bool m_disconnectTimeoutInMinutesHasBeenSet = false;
 
   int m_idleDisconnectTimeoutInMinutes{0};
-  bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
 
   CookieSynchronizationConfiguration m_cookieSynchronizationConfiguration;
-  bool m_cookieSynchronizationConfigurationHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   EnabledType m_deepLinkAllowed{EnabledType::NOT_SET};
-  bool m_deepLinkAllowedHasBeenSet = false;
 
   ToolbarConfiguration m_toolbarConfiguration;
+  bool m_userSettingsArnHasBeenSet = false;
+  bool m_associatedPortalArnsHasBeenSet = false;
+  bool m_copyAllowedHasBeenSet = false;
+  bool m_pasteAllowedHasBeenSet = false;
+  bool m_downloadAllowedHasBeenSet = false;
+  bool m_uploadAllowedHasBeenSet = false;
+  bool m_printAllowedHasBeenSet = false;
+  bool m_disconnectTimeoutInMinutesHasBeenSet = false;
+  bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
+  bool m_cookieSynchronizationConfigurationHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_deepLinkAllowedHasBeenSet = false;
   bool m_toolbarConfigurationHasBeenSet = false;
 };
 

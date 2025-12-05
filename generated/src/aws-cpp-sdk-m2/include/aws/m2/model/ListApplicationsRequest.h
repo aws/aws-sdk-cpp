@@ -113,15 +113,15 @@ class ListApplicationsRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

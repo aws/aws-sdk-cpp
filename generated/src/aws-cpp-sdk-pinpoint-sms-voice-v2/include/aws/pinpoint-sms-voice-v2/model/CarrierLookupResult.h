@@ -184,30 +184,30 @@ class CarrierLookupResult {
   ///@}
  private:
   Aws::String m_e164PhoneNumber;
-  bool m_e164PhoneNumberHasBeenSet = false;
 
   Aws::String m_dialingCountryCode;
-  bool m_dialingCountryCodeHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_mCC;
-  bool m_mCCHasBeenSet = false;
 
   Aws::String m_mNC;
-  bool m_mNCHasBeenSet = false;
 
   Aws::String m_carrier;
-  bool m_carrierHasBeenSet = false;
 
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
-  bool m_phoneNumberTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_e164PhoneNumberHasBeenSet = false;
+  bool m_dialingCountryCodeHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_mCCHasBeenSet = false;
+  bool m_mNCHasBeenSet = false;
+  bool m_carrierHasBeenSet = false;
+  bool m_phoneNumberTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

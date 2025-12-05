@@ -95,12 +95,12 @@ class GetMemberDetectorsResult {
   ///@}
  private:
   Aws::Vector<MemberDataSourceConfiguration> m_memberDataSourceConfigurations;
-  bool m_memberDataSourceConfigurationsHasBeenSet = false;
 
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
-  bool m_unprocessedAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memberDataSourceConfigurationsHasBeenSet = false;
+  bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

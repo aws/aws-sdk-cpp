@@ -122,15 +122,15 @@ class RouteMatrixBoundaryGeometry {
   ///@}
  private:
   RouteMatrixAutoCircle m_autoCircle;
-  bool m_autoCircleHasBeenSet = false;
 
   Circle m_circle;
-  bool m_circleHasBeenSet = false;
 
   Aws::Vector<double> m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_polygon;
+  bool m_autoCircleHasBeenSet = false;
+  bool m_circleHasBeenSet = false;
+  bool m_boundingBoxHasBeenSet = false;
   bool m_polygonHasBeenSet = false;
 };
 

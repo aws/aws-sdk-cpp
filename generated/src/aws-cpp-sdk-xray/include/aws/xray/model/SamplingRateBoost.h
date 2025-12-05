@@ -65,9 +65,9 @@ class SamplingRateBoost {
   ///@}
  private:
   double m_maxRate{0.0};
-  bool m_maxRateHasBeenSet = false;
 
   int m_cooldownWindowMinutes{0};
+  bool m_maxRateHasBeenSet = false;
   bool m_cooldownWindowMinutesHasBeenSet = false;
 };
 

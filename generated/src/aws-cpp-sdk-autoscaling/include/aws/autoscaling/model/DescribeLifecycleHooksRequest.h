@@ -77,9 +77,9 @@ class DescribeLifecycleHooksRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lifecycleHookNames;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_lifecycleHookNamesHasBeenSet = false;
 };
 

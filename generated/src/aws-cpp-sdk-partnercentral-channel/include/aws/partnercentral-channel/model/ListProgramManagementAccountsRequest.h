@@ -199,27 +199,27 @@ class ListProgramManagementAccountsRequest : public PartnerCentralChannelRequest
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_displayNames;
-  bool m_displayNamesHasBeenSet = false;
 
   Aws::Vector<Program> m_programs;
-  bool m_programsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<ProgramManagementAccountStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   ListProgramManagementAccountsSortBase m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_displayNamesHasBeenSet = false;
+  bool m_programsHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

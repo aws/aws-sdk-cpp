@@ -89,12 +89,12 @@ class ListIPSetsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<IPSetSummary> m_iPSets;
-  bool m_iPSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_iPSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

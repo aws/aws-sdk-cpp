@@ -221,30 +221,30 @@ class LifecycleExecutionResource {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   LifecycleExecutionResourceState m_state;
-  bool m_stateHasBeenSet = false;
 
   LifecycleExecutionResourceAction m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<LifecycleExecutionSnapshotResource> m_snapshots;
-  bool m_snapshotsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageUris;
-  bool m_imageUrisHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_snapshotsHasBeenSet = false;
+  bool m_imageUrisHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

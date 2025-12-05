@@ -84,12 +84,12 @@ class ExpenseDetection {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Geometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_textHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

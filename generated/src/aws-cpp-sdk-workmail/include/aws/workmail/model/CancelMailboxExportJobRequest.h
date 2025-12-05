@@ -86,12 +86,12 @@ class CancelMailboxExportJobRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_organizationId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_jobIdHasBeenSet = false;
   bool m_organizationIdHasBeenSet = false;
 };
 

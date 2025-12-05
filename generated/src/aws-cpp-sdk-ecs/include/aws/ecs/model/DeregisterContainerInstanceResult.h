@@ -60,9 +60,9 @@ class DeregisterContainerInstanceResult {
   ///@}
  private:
   ContainerInstance m_containerInstance;
-  bool m_containerInstanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

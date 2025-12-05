@@ -68,9 +68,9 @@ class InstanceRefreshLivePoolProgress {
   ///@}
  private:
   int m_percentageComplete{0};
-  bool m_percentageCompleteHasBeenSet = false;
 
   int m_instancesToUpdate{0};
+  bool m_percentageCompleteHasBeenSet = false;
   bool m_instancesToUpdateHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class ChildWorkflowExecutionCompletedEventAttributes {
   ///@}
  private:
   WorkflowExecution m_workflowExecution;
-  bool m_workflowExecutionHasBeenSet = false;
 
   WorkflowType m_workflowType;
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   long long m_initiatedEventId{0};
-  bool m_initiatedEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
+  bool m_workflowExecutionHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_initiatedEventIdHasBeenSet = false;
   bool m_startedEventIdHasBeenSet = false;
 };
 

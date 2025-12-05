@@ -93,12 +93,12 @@ class DestinationResult {
   ///@}
  private:
   S3TablesBucketType m_tableBucketType{S3TablesBucketType::NOT_SET};
-  bool m_tableBucketTypeHasBeenSet = false;
 
   Aws::String m_tableBucketArn;
-  bool m_tableBucketArnHasBeenSet = false;
 
   Aws::String m_tableNamespace;
+  bool m_tableBucketTypeHasBeenSet = false;
+  bool m_tableBucketArnHasBeenSet = false;
   bool m_tableNamespaceHasBeenSet = false;
 };
 

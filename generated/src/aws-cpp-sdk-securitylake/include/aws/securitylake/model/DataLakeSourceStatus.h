@@ -69,9 +69,9 @@ class DataLakeSourceStatus {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   SourceCollectionStatus m_status{SourceCollectionStatus::NOT_SET};
+  bool m_resourceHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

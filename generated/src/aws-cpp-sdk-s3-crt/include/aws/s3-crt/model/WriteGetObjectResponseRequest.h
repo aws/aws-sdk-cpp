@@ -856,123 +856,123 @@ class WriteGetObjectResponseRequest : public StreamingS3CrtRequest {
   ///@}
  private:
   Aws::String m_requestRoute;
-  bool m_requestRouteHasBeenSet = false;
 
   Aws::String m_requestToken;
-  bool m_requestTokenHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_acceptRanges;
-  bool m_acceptRangesHasBeenSet = false;
 
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   Aws::String m_contentDisposition;
-  bool m_contentDispositionHasBeenSet = false;
 
   Aws::String m_contentEncoding;
-  bool m_contentEncodingHasBeenSet = false;
 
   Aws::String m_contentLanguage;
-  bool m_contentLanguageHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   Aws::String m_contentRange;
-  bool m_contentRangeHasBeenSet = false;
 
   Aws::String m_checksumCRC32;
-  bool m_checksumCRC32HasBeenSet = false;
 
   Aws::String m_checksumCRC32C;
-  bool m_checksumCRC32CHasBeenSet = false;
 
   Aws::String m_checksumCRC64NVME;
-  bool m_checksumCRC64NVMEHasBeenSet = false;
 
   Aws::String m_checksumSHA1;
-  bool m_checksumSHA1HasBeenSet = false;
 
   Aws::String m_checksumSHA256;
-  bool m_checksumSHA256HasBeenSet = false;
 
   bool m_deleteMarker{false};
-  bool m_deleteMarkerHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_expires{};
-  bool m_expiresHasBeenSet = false;
 
   Aws::String m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   int m_missingMeta{0};
-  bool m_missingMetaHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   ObjectLockMode m_objectLockMode{ObjectLockMode::NOT_SET};
-  bool m_objectLockModeHasBeenSet = false;
 
   ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{ObjectLockLegalHoldStatus::NOT_SET};
-  bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_objectLockRetainUntilDate{};
-  bool m_objectLockRetainUntilDateHasBeenSet = false;
 
   int m_partsCount{0};
-  bool m_partsCountHasBeenSet = false;
 
   ReplicationStatus m_replicationStatus{ReplicationStatus::NOT_SET};
-  bool m_replicationStatusHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_restore;
-  bool m_restoreHasBeenSet = false;
 
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
-  bool m_sSEKMSKeyIdHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   int m_tagCount{0};
-  bool m_tagCountHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_requestRouteHasBeenSet = false;
+  bool m_requestTokenHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_acceptRangesHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_contentDispositionHasBeenSet = false;
+  bool m_contentEncodingHasBeenSet = false;
+  bool m_contentLanguageHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
+  bool m_contentRangeHasBeenSet = false;
+  bool m_checksumCRC32HasBeenSet = false;
+  bool m_checksumCRC32CHasBeenSet = false;
+  bool m_checksumCRC64NVMEHasBeenSet = false;
+  bool m_checksumSHA1HasBeenSet = false;
+  bool m_checksumSHA256HasBeenSet = false;
+  bool m_deleteMarkerHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_expiresHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_missingMetaHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_objectLockModeHasBeenSet = false;
+  bool m_objectLockLegalHoldStatusHasBeenSet = false;
+  bool m_objectLockRetainUntilDateHasBeenSet = false;
+  bool m_partsCountHasBeenSet = false;
+  bool m_replicationStatusHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
+  bool m_restoreHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSEKMSKeyIdHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_tagCountHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

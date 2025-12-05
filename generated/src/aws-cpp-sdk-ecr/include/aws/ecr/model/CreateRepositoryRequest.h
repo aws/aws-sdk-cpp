@@ -196,24 +196,24 @@ class CreateRepositoryRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
-  bool m_imageTagMutabilityHasBeenSet = false;
 
   Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
-  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_imageTagMutabilityHasBeenSet = false;
+  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
+  bool m_imageScanningConfigurationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

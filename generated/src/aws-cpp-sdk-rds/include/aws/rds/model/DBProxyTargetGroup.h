@@ -191,27 +191,27 @@ class DBProxyTargetGroup {
   ///@}
  private:
   Aws::String m_dBProxyName;
-  bool m_dBProxyNameHasBeenSet = false;
 
   Aws::String m_targetGroupName;
-  bool m_targetGroupNameHasBeenSet = false;
 
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ConnectionPoolConfigurationInfo m_connectionPoolConfig;
-  bool m_connectionPoolConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedDate{};
+  bool m_dBProxyNameHasBeenSet = false;
+  bool m_targetGroupNameHasBeenSet = false;
+  bool m_targetGroupArnHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_connectionPoolConfigHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_updatedDateHasBeenSet = false;
 };
 

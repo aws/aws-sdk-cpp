@@ -92,12 +92,12 @@ class BatchGetGraphMemberDatasourcesResult {
   ///@}
  private:
   Aws::Vector<MembershipDatasources> m_memberDatasources;
-  bool m_memberDatasourcesHasBeenSet = false;
 
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
-  bool m_unprocessedAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memberDatasourcesHasBeenSet = false;
+  bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

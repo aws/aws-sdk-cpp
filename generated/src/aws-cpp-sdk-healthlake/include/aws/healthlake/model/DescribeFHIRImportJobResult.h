@@ -60,9 +60,9 @@ class DescribeFHIRImportJobResult {
   ///@}
  private:
   ImportJobProperties m_importJobProperties;
-  bool m_importJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

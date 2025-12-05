@@ -83,12 +83,12 @@ class StopDeploymentResult {
   ///@}
  private:
   StopStatus m_status{StopStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

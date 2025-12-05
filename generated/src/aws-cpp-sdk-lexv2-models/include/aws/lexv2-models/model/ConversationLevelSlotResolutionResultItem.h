@@ -87,12 +87,12 @@ class ConversationLevelSlotResolutionResultItem {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::String m_slotName;
-  bool m_slotNameHasBeenSet = false;
 
   TestResultMatchStatus m_matchResult{TestResultMatchStatus::NOT_SET};
+  bool m_intentNameHasBeenSet = false;
+  bool m_slotNameHasBeenSet = false;
   bool m_matchResultHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class InstanceOnboardingJobStatus {
   ///@}
  private:
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   InstanceOnboardingJobStatusCode m_status{InstanceOnboardingJobStatusCode::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InstanceOnboardingJobFailureCode m_failureCode{InstanceOnboardingJobFailureCode::NOT_SET};
+  bool m_connectInstanceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
 };
 

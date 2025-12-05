@@ -687,102 +687,102 @@ class FlowValidationDetails {
   ///@}
  private:
   CyclicConnectionFlowValidationDetails m_cyclicConnection;
-  bool m_cyclicConnectionHasBeenSet = false;
 
   DuplicateConnectionsFlowValidationDetails m_duplicateConnections;
-  bool m_duplicateConnectionsHasBeenSet = false;
 
   DuplicateConditionExpressionFlowValidationDetails m_duplicateConditionExpression;
-  bool m_duplicateConditionExpressionHasBeenSet = false;
 
   UnreachableNodeFlowValidationDetails m_unreachableNode;
-  bool m_unreachableNodeHasBeenSet = false;
 
   UnknownConnectionSourceFlowValidationDetails m_unknownConnectionSource;
-  bool m_unknownConnectionSourceHasBeenSet = false;
 
   UnknownConnectionSourceOutputFlowValidationDetails m_unknownConnectionSourceOutput;
-  bool m_unknownConnectionSourceOutputHasBeenSet = false;
 
   UnknownConnectionTargetFlowValidationDetails m_unknownConnectionTarget;
-  bool m_unknownConnectionTargetHasBeenSet = false;
 
   UnknownConnectionTargetInputFlowValidationDetails m_unknownConnectionTargetInput;
-  bool m_unknownConnectionTargetInputHasBeenSet = false;
 
   UnknownConnectionConditionFlowValidationDetails m_unknownConnectionCondition;
-  bool m_unknownConnectionConditionHasBeenSet = false;
 
   MalformedConditionExpressionFlowValidationDetails m_malformedConditionExpression;
-  bool m_malformedConditionExpressionHasBeenSet = false;
 
   MalformedNodeInputExpressionFlowValidationDetails m_malformedNodeInputExpression;
-  bool m_malformedNodeInputExpressionHasBeenSet = false;
 
   MismatchedNodeInputTypeFlowValidationDetails m_mismatchedNodeInputType;
-  bool m_mismatchedNodeInputTypeHasBeenSet = false;
 
   MismatchedNodeOutputTypeFlowValidationDetails m_mismatchedNodeOutputType;
-  bool m_mismatchedNodeOutputTypeHasBeenSet = false;
 
   IncompatibleConnectionDataTypeFlowValidationDetails m_incompatibleConnectionDataType;
-  bool m_incompatibleConnectionDataTypeHasBeenSet = false;
 
   MissingConnectionConfigurationFlowValidationDetails m_missingConnectionConfiguration;
-  bool m_missingConnectionConfigurationHasBeenSet = false;
 
   MissingDefaultConditionFlowValidationDetails m_missingDefaultCondition;
-  bool m_missingDefaultConditionHasBeenSet = false;
 
   MissingEndingNodesFlowValidationDetails m_missingEndingNodes;
-  bool m_missingEndingNodesHasBeenSet = false;
 
   MissingNodeConfigurationFlowValidationDetails m_missingNodeConfiguration;
-  bool m_missingNodeConfigurationHasBeenSet = false;
 
   MissingNodeInputFlowValidationDetails m_missingNodeInput;
-  bool m_missingNodeInputHasBeenSet = false;
 
   MissingNodeOutputFlowValidationDetails m_missingNodeOutput;
-  bool m_missingNodeOutputHasBeenSet = false;
 
   MissingStartingNodesFlowValidationDetails m_missingStartingNodes;
-  bool m_missingStartingNodesHasBeenSet = false;
 
   MultipleNodeInputConnectionsFlowValidationDetails m_multipleNodeInputConnections;
-  bool m_multipleNodeInputConnectionsHasBeenSet = false;
 
   UnfulfilledNodeInputFlowValidationDetails m_unfulfilledNodeInput;
-  bool m_unfulfilledNodeInputHasBeenSet = false;
 
   UnsatisfiedConnectionConditionsFlowValidationDetails m_unsatisfiedConnectionConditions;
-  bool m_unsatisfiedConnectionConditionsHasBeenSet = false;
 
   UnspecifiedFlowValidationDetails m_unspecified;
-  bool m_unspecifiedHasBeenSet = false;
 
   UnknownNodeInputFlowValidationDetails m_unknownNodeInput;
-  bool m_unknownNodeInputHasBeenSet = false;
 
   UnknownNodeOutputFlowValidationDetails m_unknownNodeOutput;
-  bool m_unknownNodeOutputHasBeenSet = false;
 
   MissingLoopInputNodeFlowValidationDetails m_missingLoopInputNode;
-  bool m_missingLoopInputNodeHasBeenSet = false;
 
   MissingLoopControllerNodeFlowValidationDetails m_missingLoopControllerNode;
-  bool m_missingLoopControllerNodeHasBeenSet = false;
 
   MultipleLoopInputNodesFlowValidationDetails m_multipleLoopInputNodes;
-  bool m_multipleLoopInputNodesHasBeenSet = false;
 
   MultipleLoopControllerNodesFlowValidationDetails m_multipleLoopControllerNodes;
-  bool m_multipleLoopControllerNodesHasBeenSet = false;
 
   LoopIncompatibleNodeTypeFlowValidationDetails m_loopIncompatibleNodeType;
-  bool m_loopIncompatibleNodeTypeHasBeenSet = false;
 
   InvalidLoopBoundaryFlowValidationDetails m_invalidLoopBoundary;
+  bool m_cyclicConnectionHasBeenSet = false;
+  bool m_duplicateConnectionsHasBeenSet = false;
+  bool m_duplicateConditionExpressionHasBeenSet = false;
+  bool m_unreachableNodeHasBeenSet = false;
+  bool m_unknownConnectionSourceHasBeenSet = false;
+  bool m_unknownConnectionSourceOutputHasBeenSet = false;
+  bool m_unknownConnectionTargetHasBeenSet = false;
+  bool m_unknownConnectionTargetInputHasBeenSet = false;
+  bool m_unknownConnectionConditionHasBeenSet = false;
+  bool m_malformedConditionExpressionHasBeenSet = false;
+  bool m_malformedNodeInputExpressionHasBeenSet = false;
+  bool m_mismatchedNodeInputTypeHasBeenSet = false;
+  bool m_mismatchedNodeOutputTypeHasBeenSet = false;
+  bool m_incompatibleConnectionDataTypeHasBeenSet = false;
+  bool m_missingConnectionConfigurationHasBeenSet = false;
+  bool m_missingDefaultConditionHasBeenSet = false;
+  bool m_missingEndingNodesHasBeenSet = false;
+  bool m_missingNodeConfigurationHasBeenSet = false;
+  bool m_missingNodeInputHasBeenSet = false;
+  bool m_missingNodeOutputHasBeenSet = false;
+  bool m_missingStartingNodesHasBeenSet = false;
+  bool m_multipleNodeInputConnectionsHasBeenSet = false;
+  bool m_unfulfilledNodeInputHasBeenSet = false;
+  bool m_unsatisfiedConnectionConditionsHasBeenSet = false;
+  bool m_unspecifiedHasBeenSet = false;
+  bool m_unknownNodeInputHasBeenSet = false;
+  bool m_unknownNodeOutputHasBeenSet = false;
+  bool m_missingLoopInputNodeHasBeenSet = false;
+  bool m_missingLoopControllerNodeHasBeenSet = false;
+  bool m_multipleLoopInputNodesHasBeenSet = false;
+  bool m_multipleLoopControllerNodesHasBeenSet = false;
+  bool m_loopIncompatibleNodeTypeHasBeenSet = false;
   bool m_invalidLoopBoundaryHasBeenSet = false;
 };
 

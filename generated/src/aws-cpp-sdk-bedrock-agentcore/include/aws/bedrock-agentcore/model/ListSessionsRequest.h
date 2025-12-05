@@ -102,15 +102,15 @@ class ListSessionsRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::String m_actorId;
-  bool m_actorIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_actorIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class UpdateFrameworkRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_frameworkName;
-  bool m_frameworkNameHasBeenSet = false;
 
   Aws::String m_frameworkDescription;
-  bool m_frameworkDescriptionHasBeenSet = false;
 
   Aws::Vector<FrameworkControl> m_frameworkControls;
-  bool m_frameworkControlsHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_frameworkNameHasBeenSet = false;
+  bool m_frameworkDescriptionHasBeenSet = false;
+  bool m_frameworkControlsHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

@@ -68,9 +68,9 @@ class RegisterDBProxyTargetsResult {
   ///@}
  private:
   Aws::Vector<DBProxyTarget> m_dBProxyTargets;
-  bool m_dBProxyTargetsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBProxyTargetsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

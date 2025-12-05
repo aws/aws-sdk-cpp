@@ -72,9 +72,9 @@ class CrawlFilterConfiguration {
   ///@}
  private:
   CrawlFilterConfigurationType m_type{CrawlFilterConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PatternObjectFilterConfiguration m_patternObjectFilter;
+  bool m_typeHasBeenSet = false;
   bool m_patternObjectFilterHasBeenSet = false;
 };
 

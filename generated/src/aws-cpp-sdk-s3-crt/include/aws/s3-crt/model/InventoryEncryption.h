@@ -70,9 +70,9 @@ class InventoryEncryption {
   ///@}
  private:
   SSES3 m_sSES3;
-  bool m_sSES3HasBeenSet = false;
 
   SSEKMS m_sSEKMS;
+  bool m_sSES3HasBeenSet = false;
   bool m_sSEKMSHasBeenSet = false;
 };
 

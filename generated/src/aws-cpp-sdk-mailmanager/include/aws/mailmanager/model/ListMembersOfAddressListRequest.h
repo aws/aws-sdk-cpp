@@ -104,15 +104,15 @@ class ListMembersOfAddressListRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_addressListId;
-  bool m_addressListIdHasBeenSet = false;
 
   AddressFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_addressListIdHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

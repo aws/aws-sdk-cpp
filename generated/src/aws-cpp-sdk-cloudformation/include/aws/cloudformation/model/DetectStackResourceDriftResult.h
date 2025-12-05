@@ -62,9 +62,9 @@ class DetectStackResourceDriftResult {
   ///@}
  private:
   StackResourceDrift m_stackResourceDrift;
-  bool m_stackResourceDriftHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackResourceDriftHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

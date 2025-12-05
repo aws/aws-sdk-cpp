@@ -104,15 +104,15 @@ class DescribeSubscriptionFiltersRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_filterNamePrefix;
-  bool m_filterNamePrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_filterNamePrefixHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

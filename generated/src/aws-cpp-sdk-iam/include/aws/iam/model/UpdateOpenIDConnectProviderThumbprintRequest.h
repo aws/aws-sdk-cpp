@@ -86,9 +86,9 @@ class UpdateOpenIDConnectProviderThumbprintRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_openIDConnectProviderArn;
-  bool m_openIDConnectProviderArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_thumbprintList;
+  bool m_openIDConnectProviderArnHasBeenSet = false;
   bool m_thumbprintListHasBeenSet = false;
 };
 

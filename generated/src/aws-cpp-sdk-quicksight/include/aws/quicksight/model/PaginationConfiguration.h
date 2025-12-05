@@ -62,9 +62,9 @@ class PaginationConfiguration {
   ///@}
  private:
   long long m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   long long m_pageNumber{0};
+  bool m_pageSizeHasBeenSet = false;
   bool m_pageNumberHasBeenSet = false;
 };
 

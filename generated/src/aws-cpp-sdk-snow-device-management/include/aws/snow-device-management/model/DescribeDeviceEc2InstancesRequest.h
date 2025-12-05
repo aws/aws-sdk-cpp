@@ -72,9 +72,9 @@ class DescribeDeviceEc2InstancesRequest : public SnowDeviceManagementRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::String m_managedDeviceId;
+  bool m_instanceIdsHasBeenSet = false;
   bool m_managedDeviceIdHasBeenSet = false;
 };
 

@@ -160,24 +160,24 @@ class ModifyIpamResourceCidrRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceCidr;
-  bool m_resourceCidrHasBeenSet = false;
 
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   Aws::String m_currentIpamScopeId;
-  bool m_currentIpamScopeIdHasBeenSet = false;
 
   Aws::String m_destinationIpamScopeId;
-  bool m_destinationIpamScopeIdHasBeenSet = false;
 
   bool m_monitored{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceCidrHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
+  bool m_currentIpamScopeIdHasBeenSet = false;
+  bool m_destinationIpamScopeIdHasBeenSet = false;
   bool m_monitoredHasBeenSet = false;
 };
 

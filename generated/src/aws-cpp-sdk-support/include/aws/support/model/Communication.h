@@ -140,18 +140,18 @@ class Communication {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_submittedBy;
-  bool m_submittedByHasBeenSet = false;
 
   Aws::String m_timeCreated;
-  bool m_timeCreatedHasBeenSet = false;
 
   Aws::Vector<AttachmentDetails> m_attachmentSet;
+  bool m_caseIdHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_submittedByHasBeenSet = false;
+  bool m_timeCreatedHasBeenSet = false;
   bool m_attachmentSetHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class RecommendationSet {
   ///@}
  private:
   Strategy m_strategy{Strategy::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   TargetDestination m_targetDestination{TargetDestination::NOT_SET};
-  bool m_targetDestinationHasBeenSet = false;
 
   TransformationTool m_transformationTool;
+  bool m_strategyHasBeenSet = false;
+  bool m_targetDestinationHasBeenSet = false;
   bool m_transformationToolHasBeenSet = false;
 };
 

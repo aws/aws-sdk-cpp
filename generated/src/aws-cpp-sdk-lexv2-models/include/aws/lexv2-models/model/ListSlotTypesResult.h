@@ -143,21 +143,21 @@ class ListSlotTypesResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::Vector<SlotTypeSummary> m_slotTypeSummaries;
-  bool m_slotTypeSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_slotTypeSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

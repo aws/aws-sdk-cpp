@@ -106,15 +106,15 @@ class JobSummary {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

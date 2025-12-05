@@ -91,12 +91,12 @@ class MetadataAttributeSchema {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   AttributeType m_type{AttributeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_keyHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

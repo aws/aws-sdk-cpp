@@ -70,9 +70,9 @@ class DescribeAnomalyRequest : public DevOpsGuruRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_idHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class TaxRegistrationDocFile {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_fileContent{};
-  bool m_fileContentHasBeenSet = false;
 
   Aws::String m_fileName;
+  bool m_fileContentHasBeenSet = false;
   bool m_fileNameHasBeenSet = false;
 };
 

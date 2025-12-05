@@ -103,15 +103,15 @@ class GetMediaRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_mediaId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
   bool m_mediaIdHasBeenSet = false;
 };
 

@@ -305,33 +305,33 @@ class DataLakeSettings {
   ///@}
  private:
   Aws::Vector<DataLakePrincipal> m_dataLakeAdmins;
-  bool m_dataLakeAdminsHasBeenSet = false;
 
   Aws::Vector<DataLakePrincipal> m_readOnlyAdmins;
-  bool m_readOnlyAdminsHasBeenSet = false;
 
   Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
-  bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
 
   Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
-  bool m_createTableDefaultPermissionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_trustedResourceOwners;
-  bool m_trustedResourceOwnersHasBeenSet = false;
 
   bool m_allowExternalDataFiltering{false};
-  bool m_allowExternalDataFilteringHasBeenSet = false;
 
   bool m_allowFullTableExternalDataAccess{false};
-  bool m_allowFullTableExternalDataAccessHasBeenSet = false;
 
   Aws::Vector<DataLakePrincipal> m_externalDataFilteringAllowList;
-  bool m_externalDataFilteringAllowListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedSessionTagValueList;
+  bool m_dataLakeAdminsHasBeenSet = false;
+  bool m_readOnlyAdminsHasBeenSet = false;
+  bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
+  bool m_createTableDefaultPermissionsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_trustedResourceOwnersHasBeenSet = false;
+  bool m_allowExternalDataFilteringHasBeenSet = false;
+  bool m_allowFullTableExternalDataAccessHasBeenSet = false;
+  bool m_externalDataFilteringAllowListHasBeenSet = false;
   bool m_authorizedSessionTagValueListHasBeenSet = false;
 };
 

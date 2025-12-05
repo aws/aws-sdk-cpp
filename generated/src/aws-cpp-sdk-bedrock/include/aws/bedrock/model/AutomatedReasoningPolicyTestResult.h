@@ -172,24 +172,24 @@ class AutomatedReasoningPolicyTestResult {
   ///@}
  private:
   AutomatedReasoningPolicyTestCase m_testCase;
-  bool m_testCaseHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   AutomatedReasoningPolicyTestRunStatus m_testRunStatus{AutomatedReasoningPolicyTestRunStatus::NOT_SET};
-  bool m_testRunStatusHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningCheckFinding> m_testFindings;
-  bool m_testFindingsHasBeenSet = false;
 
   AutomatedReasoningPolicyTestRunResult m_testRunResult{AutomatedReasoningPolicyTestRunResult::NOT_SET};
-  bool m_testRunResultHasBeenSet = false;
 
   AutomatedReasoningCheckResult m_aggregatedTestFindingsResult{AutomatedReasoningCheckResult::NOT_SET};
-  bool m_aggregatedTestFindingsResultHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_testCaseHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
+  bool m_testRunStatusHasBeenSet = false;
+  bool m_testFindingsHasBeenSet = false;
+  bool m_testRunResultHasBeenSet = false;
+  bool m_aggregatedTestFindingsResultHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

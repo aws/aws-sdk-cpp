@@ -341,48 +341,48 @@ class Assessment {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDateTime{};
-  bool m_lastUpdateDateTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customerDnsIps;
-  bool m_customerDnsIpsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selfManagedInstanceIds;
-  bool m_selfManagedInstanceIdsHasBeenSet = false;
 
   Aws::String m_reportType;
-  bool m_reportTypeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_lastUpdateDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_customerDnsIpsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_selfManagedInstanceIdsHasBeenSet = false;
+  bool m_reportTypeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

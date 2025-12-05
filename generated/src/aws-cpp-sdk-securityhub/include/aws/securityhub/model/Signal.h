@@ -350,48 +350,48 @@ class Signal {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_productArn;
-  bool m_productArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Vector<Indicator> m_signalIndicators;
-  bool m_signalIndicatorsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_createdAt{0};
-  bool m_createdAtHasBeenSet = false;
 
   long long m_updatedAt{0};
-  bool m_updatedAtHasBeenSet = false;
 
   long long m_firstSeenAt{0};
-  bool m_firstSeenAtHasBeenSet = false;
 
   long long m_lastSeenAt{0};
-  bool m_lastSeenAtHasBeenSet = false;
 
   double m_severity{0.0};
-  bool m_severityHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actorIds;
-  bool m_actorIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_endpointIds;
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_productArnHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_signalIndicatorsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_firstSeenAtHasBeenSet = false;
+  bool m_lastSeenAtHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_actorIdsHasBeenSet = false;
   bool m_endpointIdsHasBeenSet = false;
 };
 

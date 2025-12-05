@@ -69,9 +69,9 @@ class ECSService {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_clusterName;
+  bool m_serviceNameHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
 };
 

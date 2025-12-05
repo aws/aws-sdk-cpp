@@ -230,27 +230,27 @@ class SearchNearbyFilter {
   ///@}
  private:
   Aws::Vector<double> m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeCountries;
-  bool m_includeCountriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeCategories;
-  bool m_includeCategoriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeCategories;
-  bool m_excludeCategoriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeBusinessChains;
-  bool m_includeBusinessChainsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeBusinessChains;
-  bool m_excludeBusinessChainsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeFoodTypes;
-  bool m_includeFoodTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeFoodTypes;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_includeCountriesHasBeenSet = false;
+  bool m_includeCategoriesHasBeenSet = false;
+  bool m_excludeCategoriesHasBeenSet = false;
+  bool m_includeBusinessChainsHasBeenSet = false;
+  bool m_excludeBusinessChainsHasBeenSet = false;
+  bool m_includeFoodTypesHasBeenSet = false;
   bool m_excludeFoodTypesHasBeenSet = false;
 };
 

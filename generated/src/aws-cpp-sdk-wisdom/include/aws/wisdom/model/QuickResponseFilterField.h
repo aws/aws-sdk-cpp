@@ -115,15 +115,15 @@ class QuickResponseFilterField {
   ///@}
  private:
   bool m_includeNoExistence{false};
-  bool m_includeNoExistenceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   QuickResponseFilterOperator m_operator{QuickResponseFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_includeNoExistenceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -300,48 +300,48 @@ class DescribeInferenceSchedulerResult {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerArn;
-  bool m_inferenceSchedulerArnHasBeenSet = false;
 
   InferenceSchedulerStatus m_status{InferenceSchedulerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   long long m_dataDelayOffsetInMinutes{0};
-  bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
   DataUploadFrequency m_dataUploadFrequency{DataUploadFrequency::NOT_SET};
-  bool m_dataUploadFrequencyHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   InferenceInputConfiguration m_dataInputConfiguration;
-  bool m_dataInputConfigurationHasBeenSet = false;
 
   InferenceOutputConfiguration m_dataOutputConfiguration;
-  bool m_dataOutputConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   LatestInferenceResult m_latestInferenceResult{LatestInferenceResult::NOT_SET};
-  bool m_latestInferenceResultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_inferenceSchedulerArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_dataDelayOffsetInMinutesHasBeenSet = false;
+  bool m_dataUploadFrequencyHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_dataInputConfigurationHasBeenSet = false;
+  bool m_dataOutputConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_latestInferenceResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

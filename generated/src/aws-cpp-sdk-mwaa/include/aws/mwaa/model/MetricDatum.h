@@ -150,21 +150,21 @@ class MetricDatum {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Unit m_unit{Unit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   StatisticSet m_statisticValues;
+  bool m_metricNameHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_statisticValuesHasBeenSet = false;
 };
 

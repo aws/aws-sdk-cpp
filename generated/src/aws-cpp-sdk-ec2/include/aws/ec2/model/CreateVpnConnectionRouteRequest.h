@@ -73,9 +73,9 @@ class CreateVpnConnectionRouteRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_vpnConnectionId;
+  bool m_destinationCidrBlockHasBeenSet = false;
   bool m_vpnConnectionIdHasBeenSet = false;
 };
 

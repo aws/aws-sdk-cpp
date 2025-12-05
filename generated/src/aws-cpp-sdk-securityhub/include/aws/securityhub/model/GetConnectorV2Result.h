@@ -199,33 +199,33 @@ class GetConnectorV2Result {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   HealthCheck m_health;
-  bool m_healthHasBeenSet = false;
 
   ProviderDetail m_providerDetail;
-  bool m_providerDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_providerDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

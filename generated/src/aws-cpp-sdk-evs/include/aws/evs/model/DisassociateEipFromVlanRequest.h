@@ -110,15 +110,15 @@ class DisassociateEipFromVlanRequest : public EVSRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_vlanName;
-  bool m_vlanNameHasBeenSet = false;
 
   Aws::String m_associationId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_vlanNameHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
 };
 

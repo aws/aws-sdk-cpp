@@ -72,9 +72,9 @@ class S3AccessPointOntapConfiguration {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   OntapFileSystemIdentity m_fileSystemIdentity;
+  bool m_volumeIdHasBeenSet = false;
   bool m_fileSystemIdentityHasBeenSet = false;
 };
 

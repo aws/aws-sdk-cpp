@@ -177,27 +177,27 @@ class QueryVectorsRequest : public S3VectorsRequest {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   int m_topK{0};
-  bool m_topKHasBeenSet = false;
 
   VectorData m_queryVector;
-  bool m_queryVectorHasBeenSet = false;
 
   Aws::Utils::Document m_filter;
-  bool m_filterHasBeenSet = false;
 
   bool m_returnMetadata{false};
-  bool m_returnMetadataHasBeenSet = false;
 
   bool m_returnDistance{false};
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
+  bool m_topKHasBeenSet = false;
+  bool m_queryVectorHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_returnMetadataHasBeenSet = false;
   bool m_returnDistanceHasBeenSet = false;
 };
 

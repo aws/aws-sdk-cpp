@@ -104,15 +104,15 @@ class ValidateStateMachineDefinitionResult {
   ///@}
  private:
   ValidateStateMachineDefinitionResultCode m_result{ValidateStateMachineDefinitionResultCode::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::Vector<ValidateStateMachineDefinitionDiagnostic> m_diagnostics;
-  bool m_diagnosticsHasBeenSet = false;
 
   bool m_truncated{false};
-  bool m_truncatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultHasBeenSet = false;
+  bool m_diagnosticsHasBeenSet = false;
+  bool m_truncatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

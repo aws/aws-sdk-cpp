@@ -92,12 +92,12 @@ class Mapping {
   ///@}
  private:
   FrameworkMappingDetails m_framework;
-  bool m_frameworkHasBeenSet = false;
 
   CommonControlMappingDetails m_commonControl;
-  bool m_commonControlHasBeenSet = false;
 
   RelatedControlMappingDetails m_relatedControl;
+  bool m_frameworkHasBeenSet = false;
+  bool m_commonControlHasBeenSet = false;
   bool m_relatedControlHasBeenSet = false;
 };
 

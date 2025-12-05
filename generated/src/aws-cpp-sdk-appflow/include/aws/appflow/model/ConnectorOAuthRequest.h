@@ -72,9 +72,9 @@ class ConnectorOAuthRequest {
   ///@}
  private:
   Aws::String m_authCode;
-  bool m_authCodeHasBeenSet = false;
 
   Aws::String m_redirectUri;
+  bool m_authCodeHasBeenSet = false;
   bool m_redirectUriHasBeenSet = false;
 };
 

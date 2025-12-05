@@ -174,24 +174,24 @@ class BudgetPerformanceHistory {
   ///@}
  private:
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   BudgetType m_budgetType{BudgetType::NOT_SET};
-  bool m_budgetTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
-  bool m_costFiltersHasBeenSet = false;
 
   CostTypes m_costTypes;
-  bool m_costTypesHasBeenSet = false;
 
   TimeUnit m_timeUnit{TimeUnit::NOT_SET};
-  bool m_timeUnitHasBeenSet = false;
 
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   Aws::Vector<BudgetedAndActualAmounts> m_budgetedAndActualAmountsList;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_budgetTypeHasBeenSet = false;
+  bool m_costFiltersHasBeenSet = false;
+  bool m_costTypesHasBeenSet = false;
+  bool m_timeUnitHasBeenSet = false;
+  bool m_billingViewArnHasBeenSet = false;
   bool m_budgetedAndActualAmountsListHasBeenSet = false;
 };
 

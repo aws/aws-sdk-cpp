@@ -79,12 +79,12 @@ class PromotePermissionCreatedFromPolicyResult {
   ///@}
  private:
   ResourceSharePermissionSummary m_permission;
-  bool m_permissionHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_permissionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

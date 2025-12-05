@@ -93,15 +93,15 @@ class GetWirelessGatewayStatisticsResult {
   ///@}
  private:
   Aws::String m_wirelessGatewayId;
-  bool m_wirelessGatewayIdHasBeenSet = false;
 
   Aws::String m_lastUplinkReceivedAt;
-  bool m_lastUplinkReceivedAtHasBeenSet = false;
 
   ConnectionStatus m_connectionStatus{ConnectionStatus::NOT_SET};
-  bool m_connectionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_wirelessGatewayIdHasBeenSet = false;
+  bool m_lastUplinkReceivedAtHasBeenSet = false;
+  bool m_connectionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

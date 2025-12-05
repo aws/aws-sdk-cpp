@@ -59,9 +59,9 @@ class CreateBatchInferenceJobResult {
   ///@}
  private:
   Aws::String m_batchInferenceJobArn;
-  bool m_batchInferenceJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchInferenceJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

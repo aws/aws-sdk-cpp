@@ -166,21 +166,21 @@ class CreateReplicatorRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<KafkaCluster> m_kafkaClusters;
-  bool m_kafkaClustersHasBeenSet = false;
 
   Aws::Vector<ReplicationInfo> m_replicationInfoList;
-  bool m_replicationInfoListHasBeenSet = false;
 
   Aws::String m_replicatorName;
-  bool m_replicatorNameHasBeenSet = false;
 
   Aws::String m_serviceExecutionRoleArn;
-  bool m_serviceExecutionRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kafkaClustersHasBeenSet = false;
+  bool m_replicationInfoListHasBeenSet = false;
+  bool m_replicatorNameHasBeenSet = false;
+  bool m_serviceExecutionRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

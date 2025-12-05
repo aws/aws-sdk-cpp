@@ -64,9 +64,9 @@ class ReasonCodeSummary {
   ///@}
  private:
   FindingReasonCode m_name{FindingReasonCode::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

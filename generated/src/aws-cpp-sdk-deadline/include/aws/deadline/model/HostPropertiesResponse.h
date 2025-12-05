@@ -105,15 +105,15 @@ class HostPropertiesResponse {
   ///@}
  private:
   IpAddresses m_ipAddresses;
-  bool m_ipAddressesHasBeenSet = false;
 
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::String m_ec2InstanceArn;
-  bool m_ec2InstanceArnHasBeenSet = false;
 
   Aws::String m_ec2InstanceType;
+  bool m_ipAddressesHasBeenSet = false;
+  bool m_hostNameHasBeenSet = false;
+  bool m_ec2InstanceArnHasBeenSet = false;
   bool m_ec2InstanceTypeHasBeenSet = false;
 };
 

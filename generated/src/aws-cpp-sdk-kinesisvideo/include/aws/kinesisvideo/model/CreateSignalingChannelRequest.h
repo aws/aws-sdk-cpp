@@ -114,15 +114,15 @@ class CreateSignalingChannelRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   ChannelType m_channelType{ChannelType::NOT_SET};
-  bool m_channelTypeHasBeenSet = false;
 
   SingleMasterConfiguration m_singleMasterConfiguration;
-  bool m_singleMasterConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelTypeHasBeenSet = false;
+  bool m_singleMasterConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

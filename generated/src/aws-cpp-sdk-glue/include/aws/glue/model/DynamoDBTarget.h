@@ -92,12 +92,12 @@ class DynamoDBTarget {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   bool m_scanAll{false};
-  bool m_scanAllHasBeenSet = false;
 
   double m_scanRate{0.0};
+  bool m_pathHasBeenSet = false;
+  bool m_scanAllHasBeenSet = false;
   bool m_scanRateHasBeenSet = false;
 };
 

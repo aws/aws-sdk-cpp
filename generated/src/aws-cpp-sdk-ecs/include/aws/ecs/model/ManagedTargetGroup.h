@@ -158,24 +158,24 @@ class ManagedTargetGroup {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_healthCheckPath;
-  bool m_healthCheckPathHasBeenSet = false;
 
   int m_healthCheckPort{0};
-  bool m_healthCheckPortHasBeenSet = false;
 
   int m_port{0};
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_healthCheckPathHasBeenSet = false;
+  bool m_healthCheckPortHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

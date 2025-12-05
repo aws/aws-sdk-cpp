@@ -90,12 +90,12 @@ class DescribeOptionGroupOptionsResult {
   ///@}
  private:
   Aws::Vector<OptionGroupOption> m_optionGroupOptions;
-  bool m_optionGroupOptionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_optionGroupOptionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -95,15 +95,15 @@ class ExportQAppSessionDataResult {
   ///@}
  private:
   Aws::String m_csvFileLink;
-  bool m_csvFileLinkHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_csvFileLinkHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

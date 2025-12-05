@@ -89,12 +89,12 @@ class UnlabelParameterVersionResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_removedLabels;
-  bool m_removedLabelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_invalidLabels;
-  bool m_invalidLabelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_removedLabelsHasBeenSet = false;
+  bool m_invalidLabelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

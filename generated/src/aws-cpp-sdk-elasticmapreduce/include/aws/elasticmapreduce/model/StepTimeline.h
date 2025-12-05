@@ -86,12 +86,12 @@ class StepTimeline {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDateTime{};
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
   bool m_endDateTimeHasBeenSet = false;
 };
 

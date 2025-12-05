@@ -93,12 +93,12 @@ class CustomRoutingDestinationConfiguration {
   ///@}
  private:
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::Vector<CustomRoutingProtocol> m_protocols;
+  bool m_fromPortHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
 };
 

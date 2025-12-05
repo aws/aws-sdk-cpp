@@ -232,36 +232,36 @@ class DescribeAgreementResult {
   ///@}
  private:
   Aws::String m_agreementId;
-  bool m_agreementIdHasBeenSet = false;
 
   Acceptor m_acceptor;
-  bool m_acceptorHasBeenSet = false;
 
   Proposer m_proposer;
-  bool m_proposerHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_acceptanceTime{};
-  bool m_acceptanceTimeHasBeenSet = false;
 
   Aws::String m_agreementType;
-  bool m_agreementTypeHasBeenSet = false;
 
   EstimatedCharges m_estimatedCharges;
-  bool m_estimatedChargesHasBeenSet = false;
 
   ProposalSummary m_proposalSummary;
-  bool m_proposalSummaryHasBeenSet = false;
 
   AgreementStatus m_status{AgreementStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agreementIdHasBeenSet = false;
+  bool m_acceptorHasBeenSet = false;
+  bool m_proposerHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_acceptanceTimeHasBeenSet = false;
+  bool m_agreementTypeHasBeenSet = false;
+  bool m_estimatedChargesHasBeenSet = false;
+  bool m_proposalSummaryHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

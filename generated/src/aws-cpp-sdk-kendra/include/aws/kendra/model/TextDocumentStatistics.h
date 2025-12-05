@@ -62,9 +62,9 @@ class TextDocumentStatistics {
   ///@}
  private:
   int m_indexedTextDocumentsCount{0};
-  bool m_indexedTextDocumentsCountHasBeenSet = false;
 
   long long m_indexedTextBytes{0};
+  bool m_indexedTextDocumentsCountHasBeenSet = false;
   bool m_indexedTextBytesHasBeenSet = false;
 };
 

@@ -118,18 +118,18 @@ class UpdateTieringConfigurationResult {
   ///@}
  private:
   Aws::String m_tieringConfigurationArn;
-  bool m_tieringConfigurationArnHasBeenSet = false;
 
   Aws::String m_tieringConfigurationName;
-  bool m_tieringConfigurationNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tieringConfigurationArnHasBeenSet = false;
+  bool m_tieringConfigurationNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

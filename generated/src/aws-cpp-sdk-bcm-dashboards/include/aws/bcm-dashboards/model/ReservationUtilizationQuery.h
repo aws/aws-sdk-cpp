@@ -111,15 +111,15 @@ class ReservationUtilizationQuery {
   ///@}
  private:
   DateTimeRange m_timeRange;
-  bool m_timeRangeHasBeenSet = false;
 
   Aws::Vector<GroupDefinition> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Granularity m_granularity{Granularity::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   Expression m_filter;
+  bool m_timeRangeHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_granularityHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

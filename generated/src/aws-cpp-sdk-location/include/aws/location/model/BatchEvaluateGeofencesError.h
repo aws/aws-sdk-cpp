@@ -92,12 +92,12 @@ class BatchEvaluateGeofencesError {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampleTime{};
-  bool m_sampleTimeHasBeenSet = false;
 
   BatchItemError m_error;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_sampleTimeHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

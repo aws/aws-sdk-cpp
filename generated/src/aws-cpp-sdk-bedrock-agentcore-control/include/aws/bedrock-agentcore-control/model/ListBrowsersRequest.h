@@ -88,12 +88,12 @@ class ListBrowsersRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResourceType m_type{ResourceType::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

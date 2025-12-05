@@ -106,15 +106,15 @@ class TitleAggregationResponse {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_vulnerabilityId;
-  bool m_vulnerabilityIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
+  bool m_titleHasBeenSet = false;
+  bool m_vulnerabilityIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
 };
 

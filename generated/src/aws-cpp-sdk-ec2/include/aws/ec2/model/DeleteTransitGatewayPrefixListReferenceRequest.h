@@ -88,12 +88,12 @@ class DeleteTransitGatewayPrefixListReferenceRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

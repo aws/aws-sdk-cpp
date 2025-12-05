@@ -69,9 +69,9 @@ class StaticKeySettings {
   ///@}
  private:
   InputLocation m_keyProviderServer;
-  bool m_keyProviderServerHasBeenSet = false;
 
   Aws::String m_staticKeyValue;
+  bool m_keyProviderServerHasBeenSet = false;
   bool m_staticKeyValueHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class DetectMitigationActionsTaskStatistics {
   ///@}
  private:
   long long m_actionsExecuted{0};
-  bool m_actionsExecutedHasBeenSet = false;
 
   long long m_actionsSkipped{0};
-  bool m_actionsSkippedHasBeenSet = false;
 
   long long m_actionsFailed{0};
+  bool m_actionsExecutedHasBeenSet = false;
+  bool m_actionsSkippedHasBeenSet = false;
   bool m_actionsFailedHasBeenSet = false;
 };
 

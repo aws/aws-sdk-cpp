@@ -229,33 +229,33 @@ class Instance {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   LifecycleState m_lifecycleState{LifecycleState::NOT_SET};
-  bool m_lifecycleStateHasBeenSet = false;
 
   Aws::String m_healthStatus;
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::String m_launchConfigurationName;
-  bool m_launchConfigurationNameHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   bool m_protectedFromScaleIn{false};
-  bool m_protectedFromScaleInHasBeenSet = false;
 
   Aws::String m_weightedCapacity;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_lifecycleStateHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_launchConfigurationNameHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_protectedFromScaleInHasBeenSet = false;
   bool m_weightedCapacityHasBeenSet = false;
 };
 

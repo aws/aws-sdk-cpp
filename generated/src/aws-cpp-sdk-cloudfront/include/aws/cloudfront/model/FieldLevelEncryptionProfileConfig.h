@@ -109,15 +109,15 @@ class FieldLevelEncryptionProfileConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   EncryptionEntities m_encryptionEntities;
+  bool m_nameHasBeenSet = false;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_encryptionEntitiesHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeWebAppResult {
   ///@}
  private:
   DescribedWebApp m_webApp;
-  bool m_webAppHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webAppHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

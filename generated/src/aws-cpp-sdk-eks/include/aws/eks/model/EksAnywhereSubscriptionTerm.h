@@ -68,9 +68,9 @@ class EksAnywhereSubscriptionTerm {
   ///@}
  private:
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   EksAnywhereSubscriptionTermUnit m_unit{EksAnywhereSubscriptionTermUnit::NOT_SET};
+  bool m_durationHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

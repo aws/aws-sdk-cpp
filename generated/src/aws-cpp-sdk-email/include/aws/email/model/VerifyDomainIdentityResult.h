@@ -73,9 +73,9 @@ class VerifyDomainIdentityResult {
   ///@}
  private:
   Aws::String m_verificationToken;
-  bool m_verificationTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verificationTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

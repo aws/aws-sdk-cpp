@@ -135,18 +135,18 @@ class TimestreamSettings {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   int m_memoryDuration{0};
-  bool m_memoryDurationHasBeenSet = false;
 
   int m_magneticDuration{0};
-  bool m_magneticDurationHasBeenSet = false;
 
   bool m_cdcInsertsAndUpdates{false};
-  bool m_cdcInsertsAndUpdatesHasBeenSet = false;
 
   bool m_enableMagneticStoreWrites{false};
+  bool m_databaseNameHasBeenSet = false;
+  bool m_memoryDurationHasBeenSet = false;
+  bool m_magneticDurationHasBeenSet = false;
+  bool m_cdcInsertsAndUpdatesHasBeenSet = false;
   bool m_enableMagneticStoreWritesHasBeenSet = false;
 };
 

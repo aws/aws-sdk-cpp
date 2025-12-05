@@ -106,15 +106,15 @@ class DeleteAgentMemoryRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_agentAliasIdHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_memoryIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

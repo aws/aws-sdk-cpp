@@ -156,24 +156,24 @@ class CreateBatchLoadTaskRequest : public TimestreamWriteRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DataModelConfiguration m_dataModelConfiguration;
-  bool m_dataModelConfigurationHasBeenSet = false;
 
   DataSourceConfiguration m_dataSourceConfiguration;
-  bool m_dataSourceConfigurationHasBeenSet = false;
 
   ReportConfiguration m_reportConfiguration;
-  bool m_reportConfigurationHasBeenSet = false;
 
   Aws::String m_targetDatabaseName;
-  bool m_targetDatabaseNameHasBeenSet = false;
 
   Aws::String m_targetTableName;
-  bool m_targetTableNameHasBeenSet = false;
 
   long long m_recordVersion{0};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dataModelConfigurationHasBeenSet = false;
+  bool m_dataSourceConfigurationHasBeenSet = false;
+  bool m_reportConfigurationHasBeenSet = false;
+  bool m_targetDatabaseNameHasBeenSet = false;
+  bool m_targetTableNameHasBeenSet = false;
   bool m_recordVersionHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CopyDestinationImageSet {
   ///@}
  private:
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   Aws::String m_latestVersionId;
+  bool m_imageSetIdHasBeenSet = false;
   bool m_latestVersionIdHasBeenSet = false;
 };
 

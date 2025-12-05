@@ -77,9 +77,9 @@ class ComponentConfiguration {
   ///@}
  private:
   Aws::String m_componentArn;
-  bool m_componentArnHasBeenSet = false;
 
   Aws::Vector<ComponentParameter> m_parameters;
+  bool m_componentArnHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

@@ -283,42 +283,42 @@ class ReactiveAnomaly {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AnomalySeverity m_severity{AnomalySeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   AnomalyStatus m_status{AnomalyStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AnomalyTimeRange m_anomalyTimeRange;
-  bool m_anomalyTimeRangeHasBeenSet = false;
 
   AnomalyReportedTimeRange m_anomalyReportedTimeRange;
-  bool m_anomalyReportedTimeRangeHasBeenSet = false;
 
   AnomalySourceDetails m_sourceDetails;
-  bool m_sourceDetailsHasBeenSet = false;
 
   Aws::String m_associatedInsightId;
-  bool m_associatedInsightIdHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   AnomalyType m_type{AnomalyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_causalAnomalyId;
-  bool m_causalAnomalyIdHasBeenSet = false;
 
   Aws::Vector<AnomalyResource> m_anomalyResources;
+  bool m_idHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_anomalyTimeRangeHasBeenSet = false;
+  bool m_anomalyReportedTimeRangeHasBeenSet = false;
+  bool m_sourceDetailsHasBeenSet = false;
+  bool m_associatedInsightIdHasBeenSet = false;
+  bool m_resourceCollectionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_causalAnomalyIdHasBeenSet = false;
   bool m_anomalyResourcesHasBeenSet = false;
 };
 

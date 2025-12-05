@@ -98,12 +98,12 @@ class DisassociateResourceSharePermissionRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_permissionArn;
-  bool m_permissionArnHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_permissionArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

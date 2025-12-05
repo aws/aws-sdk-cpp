@@ -302,42 +302,42 @@ class ModifyReplicationInstanceRequest : public DatabaseMigrationServiceRequest 
   ///@}
  private:
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::String m_replicationInstanceClass;
-  bool m_replicationInstanceClassHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_allowMajorVersionUpgrade{false};
-  bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_replicationInstanceIdentifier;
-  bool m_replicationInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   KerberosAuthenticationSettings m_kerberosAuthenticationSettings;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_replicationInstanceClassHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_allowMajorVersionUpgradeHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_replicationInstanceIdentifierHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_kerberosAuthenticationSettingsHasBeenSet = false;
 };
 

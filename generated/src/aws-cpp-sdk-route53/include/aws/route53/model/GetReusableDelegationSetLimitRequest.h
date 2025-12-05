@@ -70,9 +70,9 @@ class GetReusableDelegationSetLimitRequest : public Route53Request {
   ///@}
  private:
   ReusableDelegationSetLimitType m_type{ReusableDelegationSetLimitType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_delegationSetId;
+  bool m_typeHasBeenSet = false;
   bool m_delegationSetIdHasBeenSet = false;
 };
 

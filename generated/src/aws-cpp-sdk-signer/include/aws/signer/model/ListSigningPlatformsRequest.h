@@ -125,18 +125,18 @@ class ListSigningPlatformsRequest : public SignerRequest {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_partner;
-  bool m_partnerHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_categoryHasBeenSet = false;
+  bool m_partnerHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class QueryConditionItem {
   ///@}
  private:
   QueryConditionFieldName m_field{QueryConditionFieldName::NOT_SET};
-  bool m_fieldHasBeenSet = false;
 
   QueryConditionComparisonOperator m_comparator{QueryConditionComparisonOperator::NOT_SET};
-  bool m_comparatorHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_fieldHasBeenSet = false;
+  bool m_comparatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

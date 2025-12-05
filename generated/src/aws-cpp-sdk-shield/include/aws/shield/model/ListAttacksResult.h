@@ -94,12 +94,12 @@ class ListAttacksResult {
   ///@}
  private:
   Aws::Vector<AttackSummary> m_attackSummaries;
-  bool m_attackSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attackSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

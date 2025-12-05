@@ -91,12 +91,12 @@ class VariableImpactExplanation {
   ///@}
  private:
   Aws::String m_eventVariableName;
-  bool m_eventVariableNameHasBeenSet = false;
 
   Aws::String m_relativeImpact;
-  bool m_relativeImpactHasBeenSet = false;
 
   double m_logOddsImpact{0.0};
+  bool m_eventVariableNameHasBeenSet = false;
+  bool m_relativeImpactHasBeenSet = false;
   bool m_logOddsImpactHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ImageTestsConfiguration {
   ///@}
  private:
   bool m_imageTestsEnabled{false};
-  bool m_imageTestsEnabledHasBeenSet = false;
 
   int m_timeoutMinutes{0};
+  bool m_imageTestsEnabledHasBeenSet = false;
   bool m_timeoutMinutesHasBeenSet = false;
 };
 

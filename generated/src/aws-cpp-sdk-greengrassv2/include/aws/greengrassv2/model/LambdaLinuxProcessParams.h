@@ -71,9 +71,9 @@ class LambdaLinuxProcessParams {
   ///@}
  private:
   LambdaIsolationMode m_isolationMode{LambdaIsolationMode::NOT_SET};
-  bool m_isolationModeHasBeenSet = false;
 
   LambdaContainerParams m_containerParams;
+  bool m_isolationModeHasBeenSet = false;
   bool m_containerParamsHasBeenSet = false;
 };
 

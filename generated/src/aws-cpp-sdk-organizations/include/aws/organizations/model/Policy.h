@@ -71,9 +71,9 @@ class Policy {
   ///@}
  private:
   PolicySummary m_policySummary;
-  bool m_policySummaryHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_policySummaryHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

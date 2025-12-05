@@ -85,12 +85,12 @@ class ListDataSetRevisionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RevisionEntry> m_revisions;
-  bool m_revisionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_revisionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

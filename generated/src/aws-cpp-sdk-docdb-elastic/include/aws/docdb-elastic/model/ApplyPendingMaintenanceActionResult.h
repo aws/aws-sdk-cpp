@@ -61,9 +61,9 @@ class ApplyPendingMaintenanceActionResult {
   ///@}
  private:
   ResourcePendingMaintenanceAction m_resourcePendingMaintenanceAction;
-  bool m_resourcePendingMaintenanceActionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcePendingMaintenanceActionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

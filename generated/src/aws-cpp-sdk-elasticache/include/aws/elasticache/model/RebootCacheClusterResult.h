@@ -58,9 +58,9 @@ class RebootCacheClusterResult {
   ///@}
  private:
   CacheCluster m_cacheCluster;
-  bool m_cacheClusterHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_cacheClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

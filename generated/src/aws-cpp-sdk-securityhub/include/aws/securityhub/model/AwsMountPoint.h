@@ -70,9 +70,9 @@ class AwsMountPoint {
   ///@}
  private:
   Aws::String m_sourceVolume;
-  bool m_sourceVolumeHasBeenSet = false;
 
   Aws::String m_containerPath;
+  bool m_sourceVolumeHasBeenSet = false;
   bool m_containerPathHasBeenSet = false;
 };
 

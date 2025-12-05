@@ -109,15 +109,15 @@ class EvaluationFormNumericQuestionProperties {
   ///@}
  private:
   int m_minValue{0};
-  bool m_minValueHasBeenSet = false;
 
   int m_maxValue{0};
-  bool m_maxValueHasBeenSet = false;
 
   Aws::Vector<EvaluationFormNumericQuestionOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   EvaluationFormNumericQuestionAutomation m_automation;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_automationHasBeenSet = false;
 };
 

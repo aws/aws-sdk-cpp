@@ -100,15 +100,15 @@ class SearchTopicsResult {
   ///@}
  private:
   Aws::Vector<TopicSummary> m_topicSummaryList;
-  bool m_topicSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

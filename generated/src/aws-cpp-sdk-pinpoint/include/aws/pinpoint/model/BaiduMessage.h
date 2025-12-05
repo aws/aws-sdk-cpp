@@ -318,45 +318,45 @@ class BaiduMessage {
   ///@}
  private:
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_iconReference;
-  bool m_iconReferenceHasBeenSet = false;
 
   Aws::String m_imageIconUrl;
-  bool m_imageIconUrlHasBeenSet = false;
 
   Aws::String m_imageUrl;
-  bool m_imageUrlHasBeenSet = false;
 
   Aws::String m_rawContent;
-  bool m_rawContentHasBeenSet = false;
 
   bool m_silentPush{false};
-  bool m_silentPushHasBeenSet = false;
 
   Aws::String m_smallImageIconUrl;
-  bool m_smallImageIconUrlHasBeenSet = false;
 
   Aws::String m_sound;
-  bool m_soundHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-  bool m_substitutionsHasBeenSet = false;
 
   int m_timeToLive{0};
-  bool m_timeToLiveHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_actionHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_iconReferenceHasBeenSet = false;
+  bool m_imageIconUrlHasBeenSet = false;
+  bool m_imageUrlHasBeenSet = false;
+  bool m_rawContentHasBeenSet = false;
+  bool m_silentPushHasBeenSet = false;
+  bool m_smallImageIconUrlHasBeenSet = false;
+  bool m_soundHasBeenSet = false;
+  bool m_substitutionsHasBeenSet = false;
+  bool m_timeToLiveHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

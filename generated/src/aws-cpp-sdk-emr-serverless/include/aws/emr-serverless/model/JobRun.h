@@ -550,87 +550,87 @@ class JobRun {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_jobRunId;
-  bool m_jobRunIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   JobRunExecutionIamPolicy m_executionIamPolicy;
-  bool m_executionIamPolicyHasBeenSet = false;
 
   JobRunState m_state{JobRunState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateDetails;
-  bool m_stateDetailsHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   ConfigurationOverrides m_configurationOverrides;
-  bool m_configurationOverridesHasBeenSet = false;
 
   JobDriver m_jobDriver;
-  bool m_jobDriverHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TotalResourceUtilization m_totalResourceUtilization;
-  bool m_totalResourceUtilizationHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   int m_totalExecutionDurationSeconds{0};
-  bool m_totalExecutionDurationSecondsHasBeenSet = false;
 
   long long m_executionTimeoutMinutes{0};
-  bool m_executionTimeoutMinutesHasBeenSet = false;
 
   ResourceUtilization m_billedResourceUtilization;
-  bool m_billedResourceUtilizationHasBeenSet = false;
 
   JobRunMode m_mode{JobRunMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   RetryPolicy m_retryPolicy;
-  bool m_retryPolicyHasBeenSet = false;
 
   int m_attempt{0};
-  bool m_attemptHasBeenSet = false;
 
   Aws::Utils::DateTime m_attemptCreatedAt{};
-  bool m_attemptCreatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_attemptUpdatedAt{};
-  bool m_attemptUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   long long m_queuedDurationMilliseconds{0};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_jobRunIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_executionIamPolicyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateDetailsHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_configurationOverridesHasBeenSet = false;
+  bool m_jobDriverHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_totalResourceUtilizationHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_totalExecutionDurationSecondsHasBeenSet = false;
+  bool m_executionTimeoutMinutesHasBeenSet = false;
+  bool m_billedResourceUtilizationHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_retryPolicyHasBeenSet = false;
+  bool m_attemptHasBeenSet = false;
+  bool m_attemptCreatedAtHasBeenSet = false;
+  bool m_attemptUpdatedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
   bool m_queuedDurationMillisecondsHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class OrchestrationModelInvocationOutput {
   ///@}
  private:
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   RawResponse m_rawResponse;
-  bool m_rawResponseHasBeenSet = false;
 
   ReasoningContentBlock m_reasoningContent;
-  bool m_reasoningContentHasBeenSet = false;
 
   Aws::String m_traceId;
+  bool m_metadataHasBeenSet = false;
+  bool m_rawResponseHasBeenSet = false;
+  bool m_reasoningContentHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
 };
 

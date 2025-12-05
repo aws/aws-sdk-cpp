@@ -150,24 +150,24 @@ class CaptionSelectorSettings {
   ///@}
  private:
   AncillarySourceSettings m_ancillarySourceSettings;
-  bool m_ancillarySourceSettingsHasBeenSet = false;
 
   AribSourceSettings m_aribSourceSettings;
-  bool m_aribSourceSettingsHasBeenSet = false;
 
   DvbSubSourceSettings m_dvbSubSourceSettings;
-  bool m_dvbSubSourceSettingsHasBeenSet = false;
 
   EmbeddedSourceSettings m_embeddedSourceSettings;
-  bool m_embeddedSourceSettingsHasBeenSet = false;
 
   Scte20SourceSettings m_scte20SourceSettings;
-  bool m_scte20SourceSettingsHasBeenSet = false;
 
   Scte27SourceSettings m_scte27SourceSettings;
-  bool m_scte27SourceSettingsHasBeenSet = false;
 
   TeletextSourceSettings m_teletextSourceSettings;
+  bool m_ancillarySourceSettingsHasBeenSet = false;
+  bool m_aribSourceSettingsHasBeenSet = false;
+  bool m_dvbSubSourceSettingsHasBeenSet = false;
+  bool m_embeddedSourceSettingsHasBeenSet = false;
+  bool m_scte20SourceSettingsHasBeenSet = false;
+  bool m_scte27SourceSettingsHasBeenSet = false;
   bool m_teletextSourceSettingsHasBeenSet = false;
 };
 

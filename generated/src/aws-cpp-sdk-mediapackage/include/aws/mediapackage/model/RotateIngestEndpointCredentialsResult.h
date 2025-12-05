@@ -181,30 +181,30 @@ class RotateIngestEndpointCredentialsResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EgressAccessLogs m_egressAccessLogs;
-  bool m_egressAccessLogsHasBeenSet = false;
 
   HlsIngest m_hlsIngest;
-  bool m_hlsIngestHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   IngressAccessLogs m_ingressAccessLogs;
-  bool m_ingressAccessLogsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_egressAccessLogsHasBeenSet = false;
+  bool m_hlsIngestHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_ingressAccessLogsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

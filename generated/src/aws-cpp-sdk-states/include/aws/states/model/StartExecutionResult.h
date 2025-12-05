@@ -77,12 +77,12 @@ class StartExecutionResult {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionArnHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

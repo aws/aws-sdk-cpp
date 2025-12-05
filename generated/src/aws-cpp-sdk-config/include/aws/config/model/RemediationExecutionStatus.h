@@ -129,18 +129,18 @@ class RemediationExecutionStatus {
   ///@}
  private:
   ResourceKey m_resourceKey;
-  bool m_resourceKeyHasBeenSet = false;
 
   RemediationExecutionState m_state{RemediationExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<RemediationExecutionStep> m_stepDetails;
-  bool m_stepDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationTime{};
-  bool m_invocationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_resourceKeyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stepDetailsHasBeenSet = false;
+  bool m_invocationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

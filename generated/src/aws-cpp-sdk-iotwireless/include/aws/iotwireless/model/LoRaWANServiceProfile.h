@@ -173,30 +173,30 @@ class LoRaWANServiceProfile {
   ///@}
  private:
   bool m_addGwMetadata{false};
-  bool m_addGwMetadataHasBeenSet = false;
 
   int m_drMin{0};
-  bool m_drMinHasBeenSet = false;
 
   int m_drMax{0};
-  bool m_drMaxHasBeenSet = false;
 
   bool m_prAllowed{false};
-  bool m_prAllowedHasBeenSet = false;
 
   bool m_raAllowed{false};
-  bool m_raAllowedHasBeenSet = false;
 
   int m_txPowerIndexMin{0};
-  bool m_txPowerIndexMinHasBeenSet = false;
 
   int m_txPowerIndexMax{0};
-  bool m_txPowerIndexMaxHasBeenSet = false;
 
   int m_nbTransMin{0};
-  bool m_nbTransMinHasBeenSet = false;
 
   int m_nbTransMax{0};
+  bool m_addGwMetadataHasBeenSet = false;
+  bool m_drMinHasBeenSet = false;
+  bool m_drMaxHasBeenSet = false;
+  bool m_prAllowedHasBeenSet = false;
+  bool m_raAllowedHasBeenSet = false;
+  bool m_txPowerIndexMinHasBeenSet = false;
+  bool m_txPowerIndexMaxHasBeenSet = false;
+  bool m_nbTransMinHasBeenSet = false;
   bool m_nbTransMaxHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class JobScheduleFrequency {
   ///@}
  private:
   DailySchedule m_dailySchedule;
-  bool m_dailyScheduleHasBeenSet = false;
 
   MonthlySchedule m_monthlySchedule;
-  bool m_monthlyScheduleHasBeenSet = false;
 
   WeeklySchedule m_weeklySchedule;
+  bool m_dailyScheduleHasBeenSet = false;
+  bool m_monthlyScheduleHasBeenSet = false;
   bool m_weeklyScheduleHasBeenSet = false;
 };
 

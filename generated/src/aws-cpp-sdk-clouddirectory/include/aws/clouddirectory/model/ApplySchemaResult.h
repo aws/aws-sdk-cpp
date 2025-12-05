@@ -79,12 +79,12 @@ class ApplySchemaResult {
   ///@}
  private:
   Aws::String m_appliedSchemaArn;
-  bool m_appliedSchemaArnHasBeenSet = false;
 
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appliedSchemaArnHasBeenSet = false;
+  bool m_directoryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

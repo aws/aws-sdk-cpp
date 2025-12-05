@@ -80,9 +80,9 @@ class ReplicationSpecification {
   ///@}
  private:
   Rs m_replicationStrategy{Rs::NOT_SET};
-  bool m_replicationStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regionList;
+  bool m_replicationStrategyHasBeenSet = false;
   bool m_regionListHasBeenSet = false;
 };
 

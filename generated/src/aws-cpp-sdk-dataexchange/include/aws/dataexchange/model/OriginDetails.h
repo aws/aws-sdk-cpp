@@ -68,9 +68,9 @@ class OriginDetails {
   ///@}
  private:
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_dataGrantId;
+  bool m_productIdHasBeenSet = false;
   bool m_dataGrantIdHasBeenSet = false;
 };
 

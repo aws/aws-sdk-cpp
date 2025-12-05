@@ -102,15 +102,15 @@ class GetBackendStorageResourceConfig {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   bool m_imported{false};
-  bool m_importedHasBeenSet = false;
 
   BackendStoragePermissions m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   ServiceName m_serviceName{ServiceName::NOT_SET};
+  bool m_bucketNameHasBeenSet = false;
+  bool m_importedHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class PathFilter {
   ///@}
  private:
   Aws::String m_sourceAddress;
-  bool m_sourceAddressHasBeenSet = false;
 
   FilterPortRange m_sourcePortRange;
-  bool m_sourcePortRangeHasBeenSet = false;
 
   Aws::String m_destinationAddress;
-  bool m_destinationAddressHasBeenSet = false;
 
   FilterPortRange m_destinationPortRange;
+  bool m_sourceAddressHasBeenSet = false;
+  bool m_sourcePortRangeHasBeenSet = false;
+  bool m_destinationAddressHasBeenSet = false;
   bool m_destinationPortRangeHasBeenSet = false;
 };
 

@@ -179,27 +179,27 @@ class FileDetail {
   ///@}
  private:
   Aws::String m_fileURI;
-  bool m_fileURIHasBeenSet = false;
 
   Aws::String m_businessUseCase;
-  bool m_businessUseCaseHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_fileStatus;
-  bool m_fileStatusHasBeenSet = false;
 
   Aws::String m_fileStatusReason;
-  bool m_fileStatusReasonHasBeenSet = false;
 
   FileType m_fileType{FileType::NOT_SET};
-  bool m_fileTypeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_fileURIHasBeenSet = false;
+  bool m_businessUseCaseHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_fileStatusHasBeenSet = false;
+  bool m_fileStatusReasonHasBeenSet = false;
+  bool m_fileTypeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

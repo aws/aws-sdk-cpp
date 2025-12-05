@@ -84,12 +84,12 @@ class StartImportLabelsTaskRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_inputS3Path;
-  bool m_inputS3PathHasBeenSet = false;
 
   bool m_replaceAllLabels{false};
+  bool m_transformIdHasBeenSet = false;
+  bool m_inputS3PathHasBeenSet = false;
   bool m_replaceAllLabelsHasBeenSet = false;
 };
 

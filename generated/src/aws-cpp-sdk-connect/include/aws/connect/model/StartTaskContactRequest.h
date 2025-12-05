@@ -340,42 +340,42 @@ class StartTaskContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_previousContactId;
-  bool m_previousContactIdHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Reference> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Utils::DateTime m_scheduledTime{};
-  bool m_scheduledTimeHasBeenSet = false;
 
   Aws::String m_taskTemplateId;
-  bool m_taskTemplateIdHasBeenSet = false;
 
   Aws::String m_quickConnectId;
-  bool m_quickConnectIdHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_previousContactIdHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_scheduledTimeHasBeenSet = false;
+  bool m_taskTemplateIdHasBeenSet = false;
+  bool m_quickConnectIdHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
   bool m_segmentAttributesHasBeenSet = false;
 };
 

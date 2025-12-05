@@ -112,18 +112,18 @@ class CreateMetadataTransferJobResult {
   ///@}
  private:
   Aws::String m_metadataTransferJobId;
-  bool m_metadataTransferJobIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   MetadataTransferJobStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataTransferJobIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

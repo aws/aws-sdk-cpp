@@ -80,12 +80,12 @@ class GetStorageLensGroupResult {
   ///@}
  private:
   StorageLensGroup m_storageLensGroup;
-  bool m_storageLensGroupHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_storageLensGroupHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

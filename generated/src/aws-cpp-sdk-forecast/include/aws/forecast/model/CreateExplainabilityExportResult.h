@@ -60,9 +60,9 @@ class CreateExplainabilityExportResult {
   ///@}
  private:
   Aws::String m_explainabilityExportArn;
-  bool m_explainabilityExportArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_explainabilityExportArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

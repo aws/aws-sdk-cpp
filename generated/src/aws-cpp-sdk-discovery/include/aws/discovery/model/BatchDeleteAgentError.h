@@ -88,12 +88,12 @@ class BatchDeleteAgentError {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   DeleteAgentErrorCode m_errorCode{DeleteAgentErrorCode::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

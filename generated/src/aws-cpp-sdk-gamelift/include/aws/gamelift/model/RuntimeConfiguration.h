@@ -106,12 +106,12 @@ class RuntimeConfiguration {
   ///@}
  private:
   Aws::Vector<ServerProcess> m_serverProcesses;
-  bool m_serverProcessesHasBeenSet = false;
 
   int m_maxConcurrentGameSessionActivations{0};
-  bool m_maxConcurrentGameSessionActivationsHasBeenSet = false;
 
   int m_gameSessionActivationTimeoutSeconds{0};
+  bool m_serverProcessesHasBeenSet = false;
+  bool m_maxConcurrentGameSessionActivationsHasBeenSet = false;
   bool m_gameSessionActivationTimeoutSecondsHasBeenSet = false;
 };
 

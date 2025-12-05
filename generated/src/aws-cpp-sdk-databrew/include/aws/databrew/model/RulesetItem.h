@@ -237,36 +237,36 @@ class RulesetItem {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   int m_ruleCount{0};
-  bool m_ruleCountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_targetArn;
+  bool m_accountIdHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_ruleCountHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_targetArnHasBeenSet = false;
 };
 

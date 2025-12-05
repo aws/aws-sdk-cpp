@@ -67,9 +67,9 @@ class AgreementAvailability {
   ///@}
  private:
   AgreementStatus m_status{AgreementStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_statusHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ProtectedQueryInputParameters {
   ///@}
  private:
   ProtectedQuerySQLParameters m_sqlParameters;
-  bool m_sqlParametersHasBeenSet = false;
 
   ComputeConfiguration m_computeConfiguration;
-  bool m_computeConfigurationHasBeenSet = false;
 
   ResultFormat m_resultFormat{ResultFormat::NOT_SET};
+  bool m_sqlParametersHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
   bool m_resultFormatHasBeenSet = false;
 };
 

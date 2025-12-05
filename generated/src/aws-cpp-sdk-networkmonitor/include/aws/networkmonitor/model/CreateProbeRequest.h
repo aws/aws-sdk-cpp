@@ -111,15 +111,15 @@ class CreateProbeRequest : public NetworkMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   ProbeInput m_probe;
-  bool m_probeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_probeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

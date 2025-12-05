@@ -128,18 +128,18 @@ class DataLabelType {
   ///@}
  private:
   FieldLabelType m_fieldLabelType;
-  bool m_fieldLabelTypeHasBeenSet = false;
 
   DataPathLabelType m_dataPathLabelType;
-  bool m_dataPathLabelTypeHasBeenSet = false;
 
   RangeEndsLabelType m_rangeEndsLabelType;
-  bool m_rangeEndsLabelTypeHasBeenSet = false;
 
   MinimumLabelType m_minimumLabelType;
-  bool m_minimumLabelTypeHasBeenSet = false;
 
   MaximumLabelType m_maximumLabelType;
+  bool m_fieldLabelTypeHasBeenSet = false;
+  bool m_dataPathLabelTypeHasBeenSet = false;
+  bool m_rangeEndsLabelTypeHasBeenSet = false;
+  bool m_minimumLabelTypeHasBeenSet = false;
   bool m_maximumLabelTypeHasBeenSet = false;
 };
 

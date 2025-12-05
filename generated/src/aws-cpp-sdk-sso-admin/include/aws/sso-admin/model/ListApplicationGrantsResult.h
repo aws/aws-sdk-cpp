@@ -89,12 +89,12 @@ class ListApplicationGrantsResult {
   ///@}
  private:
   Aws::Vector<GrantItem> m_grants;
-  bool m_grantsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_grantsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

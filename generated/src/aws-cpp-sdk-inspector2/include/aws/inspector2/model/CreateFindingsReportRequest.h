@@ -83,12 +83,12 @@ class CreateFindingsReportRequest : public Inspector2Request {
   ///@}
  private:
   FilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   ReportFormat m_reportFormat{ReportFormat::NOT_SET};
-  bool m_reportFormatHasBeenSet = false;
 
   Destination m_s3Destination;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_reportFormatHasBeenSet = false;
   bool m_s3DestinationHasBeenSet = false;
 };
 

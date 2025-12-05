@@ -61,9 +61,9 @@ class CreateSecurityPolicyResult {
   ///@}
  private:
   SecurityPolicyDetail m_securityPolicyDetail;
-  bool m_securityPolicyDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityPolicyDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

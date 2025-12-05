@@ -83,9 +83,9 @@ class PutConfigurationSetSuppressionOptionsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::Vector<SuppressionListReason> m_suppressedReasons;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_suppressedReasonsHasBeenSet = false;
 };
 

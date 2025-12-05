@@ -69,9 +69,9 @@ class ResetDBClusterParameterGroupResult {
   ///@}
  private:
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

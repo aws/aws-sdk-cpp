@@ -73,9 +73,9 @@ class CreateExtendedSourceServerRequest : public DrsRequest {
   ///@}
  private:
   Aws::String m_sourceServerArn;
-  bool m_sourceServerArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_sourceServerArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

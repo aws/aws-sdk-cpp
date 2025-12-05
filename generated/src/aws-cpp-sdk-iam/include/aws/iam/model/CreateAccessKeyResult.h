@@ -67,9 +67,9 @@ class CreateAccessKeyResult {
   ///@}
  private:
   AccessKey m_accessKey;
-  bool m_accessKeyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_accessKeyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

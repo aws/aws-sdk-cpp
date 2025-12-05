@@ -222,33 +222,33 @@ class CreateRouterOutputRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RouterOutputConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   long long m_maximumBitrate{0};
-  bool m_maximumBitrateHasBeenSet = false;
 
   RoutingScope m_routingScope{RoutingScope::NOT_SET};
-  bool m_routingScopeHasBeenSet = false;
 
   RouterOutputTier m_tier{RouterOutputTier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   MaintenanceConfiguration m_maintenanceConfiguration;
-  bool m_maintenanceConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_routingScopeHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_maintenanceConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

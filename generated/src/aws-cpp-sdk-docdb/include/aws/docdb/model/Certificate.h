@@ -148,21 +148,21 @@ class Certificate {
   ///@}
  private:
   Aws::String m_certificateIdentifier;
-  bool m_certificateIdentifierHasBeenSet = false;
 
   Aws::String m_certificateType;
-  bool m_certificateTypeHasBeenSet = false;
 
   Aws::String m_thumbprint;
-  bool m_thumbprintHasBeenSet = false;
 
   Aws::Utils::DateTime m_validFrom{};
-  bool m_validFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_validTill{};
-  bool m_validTillHasBeenSet = false;
 
   Aws::String m_certificateArn;
+  bool m_certificateIdentifierHasBeenSet = false;
+  bool m_certificateTypeHasBeenSet = false;
+  bool m_thumbprintHasBeenSet = false;
+  bool m_validFromHasBeenSet = false;
+  bool m_validTillHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class ConnectAppAuthorizationResult {
   ///@}
  private:
   AppAuthorizationSummary m_appAuthorizationSummary;
-  bool m_appAuthorizationSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appAuthorizationSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

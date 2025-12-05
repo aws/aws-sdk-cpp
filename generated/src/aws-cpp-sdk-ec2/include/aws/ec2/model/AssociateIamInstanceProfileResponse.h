@@ -60,9 +60,9 @@ class AssociateIamInstanceProfileResponse {
   ///@}
  private:
   IamInstanceProfileAssociation m_iamInstanceProfileAssociation;
-  bool m_iamInstanceProfileAssociationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_iamInstanceProfileAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

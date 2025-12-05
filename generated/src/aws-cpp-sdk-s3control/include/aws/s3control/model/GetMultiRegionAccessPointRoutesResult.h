@@ -106,15 +106,15 @@ class GetMultiRegionAccessPointRoutesResult {
   ///@}
  private:
   Aws::String m_mrap;
-  bool m_mrapHasBeenSet = false;
 
   Aws::Vector<MultiRegionAccessPointRoute> m_routes;
-  bool m_routesHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_mrapHasBeenSet = false;
+  bool m_routesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

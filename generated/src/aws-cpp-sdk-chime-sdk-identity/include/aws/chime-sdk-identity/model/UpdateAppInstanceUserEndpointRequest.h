@@ -103,15 +103,15 @@ class UpdateAppInstanceUserEndpointRequest : public ChimeSDKIdentityRequest {
   ///@}
  private:
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AllowMessages m_allowMessages{AllowMessages::NOT_SET};
+  bool m_appInstanceUserArnHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_allowMessagesHasBeenSet = false;
 };
 

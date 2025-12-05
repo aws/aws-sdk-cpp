@@ -254,36 +254,36 @@ class ClusterSnapshot {
   ///@}
  private:
   Aws::String m_adminUserName;
-  bool m_adminUserNameHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterCreationTime;
-  bool m_clusterCreationTimeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_snapshotCreationTime;
-  bool m_snapshotCreationTimeHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   SnapshotType m_snapshotType{SnapshotType::NOT_SET};
-  bool m_snapshotTypeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+  bool m_adminUserNameHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterCreationTimeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_snapshotCreationTimeHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
 };
 

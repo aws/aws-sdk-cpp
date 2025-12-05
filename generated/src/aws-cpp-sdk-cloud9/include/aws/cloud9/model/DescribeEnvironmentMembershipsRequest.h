@@ -138,18 +138,18 @@ class DescribeEnvironmentMembershipsRequest : public Cloud9Request {
   ///@}
  private:
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Vector<Permissions> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_userArnHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

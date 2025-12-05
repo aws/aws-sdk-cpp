@@ -67,9 +67,9 @@ class FirewallPolicyStatelessRuleGroupReferencesDetails {
   ///@}
  private:
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_priorityHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

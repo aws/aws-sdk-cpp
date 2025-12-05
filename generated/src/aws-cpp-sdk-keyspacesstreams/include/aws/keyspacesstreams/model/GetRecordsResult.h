@@ -89,12 +89,12 @@ class GetRecordsResult {
   ///@}
  private:
   Aws::Vector<Record> m_changeRecords;
-  bool m_changeRecordsHasBeenSet = false;
 
   Aws::String m_nextShardIterator;
-  bool m_nextShardIteratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeRecordsHasBeenSet = false;
+  bool m_nextShardIteratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

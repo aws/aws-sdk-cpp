@@ -101,12 +101,12 @@ class UpdateLoginProfileRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   bool m_passwordResetRequired{false};
+  bool m_userNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
   bool m_passwordResetRequiredHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class ListAppInstanceUsersResult {
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::Vector<AppInstanceUserSummary> m_appInstanceUsers;
-  bool m_appInstanceUsersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceArnHasBeenSet = false;
+  bool m_appInstanceUsersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

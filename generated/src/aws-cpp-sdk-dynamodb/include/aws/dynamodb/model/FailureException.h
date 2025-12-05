@@ -69,9 +69,9 @@ class FailureException {
   ///@}
  private:
   Aws::String m_exceptionName;
-  bool m_exceptionNameHasBeenSet = false;
 
   Aws::String m_exceptionDescription;
+  bool m_exceptionNameHasBeenSet = false;
   bool m_exceptionDescriptionHasBeenSet = false;
 };
 

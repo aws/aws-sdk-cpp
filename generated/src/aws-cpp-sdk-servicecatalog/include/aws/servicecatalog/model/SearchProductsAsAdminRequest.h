@@ -181,27 +181,27 @@ class SearchProductsAsAdminRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   ProductViewSortBy m_sortBy{ProductViewSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   ProductSource m_productSource{ProductSource::NOT_SET};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_portfolioIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_productSourceHasBeenSet = false;
 };
 

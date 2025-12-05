@@ -87,12 +87,12 @@ class DataPathValue {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_fieldValue;
-  bool m_fieldValueHasBeenSet = false;
 
   DataPathType m_dataPathType;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_fieldValueHasBeenSet = false;
   bool m_dataPathTypeHasBeenSet = false;
 };
 

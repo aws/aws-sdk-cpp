@@ -145,21 +145,21 @@ class SendNotificationActionDefinition {
   ///@}
  private:
   NotificationDeliveryType m_deliveryMethod{NotificationDeliveryType::NOT_SET};
-  bool m_deliveryMethodHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   NotificationContentType m_contentType{NotificationContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   NotificationRecipientType m_recipient;
-  bool m_recipientHasBeenSet = false;
 
   NotificationRecipientType m_exclusion;
+  bool m_deliveryMethodHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_recipientHasBeenSet = false;
   bool m_exclusionHasBeenSet = false;
 };
 

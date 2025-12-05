@@ -69,9 +69,9 @@ class UpdateTrialRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trialName;
-  bool m_trialNameHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_trialNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

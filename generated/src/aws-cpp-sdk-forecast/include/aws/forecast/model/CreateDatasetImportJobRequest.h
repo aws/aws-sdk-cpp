@@ -267,33 +267,33 @@ class CreateDatasetImportJobRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_datasetImportJobName;
-  bool m_datasetImportJobNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_timestampFormat;
-  bool m_timestampFormatHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   bool m_useGeolocationForTimeZone{false};
-  bool m_useGeolocationForTimeZoneHasBeenSet = false;
 
   Aws::String m_geolocationFormat;
-  bool m_geolocationFormatHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   ImportMode m_importMode{ImportMode::NOT_SET};
+  bool m_datasetImportJobNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_timestampFormatHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
+  bool m_useGeolocationForTimeZoneHasBeenSet = false;
+  bool m_geolocationFormatHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_importModeHasBeenSet = false;
 };
 

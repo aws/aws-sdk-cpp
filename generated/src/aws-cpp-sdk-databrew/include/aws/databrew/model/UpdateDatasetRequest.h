@@ -119,18 +119,18 @@ class UpdateDatasetRequest : public GlueDataBrewRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InputFormat m_format{InputFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   FormatOptions m_formatOptions;
-  bool m_formatOptionsHasBeenSet = false;
 
   Input m_input;
-  bool m_inputHasBeenSet = false;
 
   PathOptions m_pathOptions;
+  bool m_nameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_formatOptionsHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_pathOptionsHasBeenSet = false;
 };
 

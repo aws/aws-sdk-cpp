@@ -92,12 +92,12 @@ class BatchGetMembershipDatasourcesResult {
   ///@}
  private:
   Aws::Vector<MembershipDatasources> m_membershipDatasources;
-  bool m_membershipDatasourcesHasBeenSet = false;
 
   Aws::Vector<UnprocessedGraph> m_unprocessedGraphs;
-  bool m_unprocessedGraphsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membershipDatasourcesHasBeenSet = false;
+  bool m_unprocessedGraphsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

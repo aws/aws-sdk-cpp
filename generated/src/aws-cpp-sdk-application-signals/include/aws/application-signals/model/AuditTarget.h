@@ -72,9 +72,9 @@ class AuditTarget {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   AuditTargetEntity m_data;
+  bool m_typeHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

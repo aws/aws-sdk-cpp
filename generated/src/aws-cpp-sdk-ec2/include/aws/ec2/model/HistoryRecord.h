@@ -94,12 +94,12 @@ class HistoryRecord {
   ///@}
  private:
   EventInformation m_eventInformation;
-  bool m_eventInformationHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_eventInformationHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

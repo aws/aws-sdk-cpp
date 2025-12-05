@@ -129,18 +129,18 @@ class CreateVpcEndpointAssociationRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   SubnetMapping m_subnetMapping;
-  bool m_subnetMappingHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetMappingHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

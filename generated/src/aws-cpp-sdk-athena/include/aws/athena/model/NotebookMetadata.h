@@ -142,21 +142,21 @@ class NotebookMetadata {
   ///@}
  private:
   Aws::String m_notebookId;
-  bool m_notebookIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   NotebookType m_type{NotebookType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_notebookIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_workGroupHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

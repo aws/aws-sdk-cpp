@@ -131,15 +131,15 @@ class CreateVpcConnectorRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_vpcConnectorName;
-  bool m_vpcConnectorNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_vpcConnectorNameHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

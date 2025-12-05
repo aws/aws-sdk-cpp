@@ -87,12 +87,12 @@ class AnalysisScheme {
   ///@}
  private:
   Aws::String m_analysisSchemeName;
-  bool m_analysisSchemeNameHasBeenSet = false;
 
   AnalysisSchemeLanguage m_analysisSchemeLanguage{AnalysisSchemeLanguage::NOT_SET};
-  bool m_analysisSchemeLanguageHasBeenSet = false;
 
   AnalysisOptions m_analysisOptions;
+  bool m_analysisSchemeNameHasBeenSet = false;
+  bool m_analysisSchemeLanguageHasBeenSet = false;
   bool m_analysisOptionsHasBeenSet = false;
 };
 

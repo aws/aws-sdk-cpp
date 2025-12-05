@@ -83,12 +83,12 @@ class UpdateThingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   ThingGroupProperties m_thingGroupProperties;
-  bool m_thingGroupPropertiesHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_thingGroupPropertiesHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

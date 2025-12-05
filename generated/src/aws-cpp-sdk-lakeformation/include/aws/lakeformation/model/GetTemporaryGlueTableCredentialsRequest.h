@@ -175,24 +175,24 @@ class GetTemporaryGlueTableCredentialsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   AuditContext m_auditContext;
-  bool m_auditContextHasBeenSet = false;
 
   Aws::Vector<PermissionType> m_supportedPermissionTypes;
-  bool m_supportedPermissionTypesHasBeenSet = false;
 
   Aws::String m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   QuerySessionContext m_querySessionContext;
+  bool m_tableArnHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
+  bool m_supportedPermissionTypesHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
   bool m_querySessionContextHasBeenSet = false;
 };
 

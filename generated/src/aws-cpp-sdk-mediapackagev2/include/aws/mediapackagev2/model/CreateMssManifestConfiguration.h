@@ -110,15 +110,15 @@ class CreateMssManifestConfiguration {
   ///@}
  private:
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   FilterConfiguration m_filterConfiguration;
-  bool m_filterConfigurationHasBeenSet = false;
 
   MssManifestLayout m_manifestLayout{MssManifestLayout::NOT_SET};
+  bool m_manifestNameHasBeenSet = false;
+  bool m_manifestWindowSecondsHasBeenSet = false;
+  bool m_filterConfigurationHasBeenSet = false;
   bool m_manifestLayoutHasBeenSet = false;
 };
 

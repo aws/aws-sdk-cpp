@@ -102,12 +102,12 @@ class DecoderManifestValidationException {
   ///@}
  private:
   Aws::Vector<InvalidSignalDecoder> m_invalidSignals;
-  bool m_invalidSignalsHasBeenSet = false;
 
   Aws::Vector<InvalidNetworkInterface> m_invalidNetworkInterfaces;
-  bool m_invalidNetworkInterfacesHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_invalidSignalsHasBeenSet = false;
+  bool m_invalidNetworkInterfacesHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

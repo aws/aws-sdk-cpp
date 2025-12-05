@@ -305,42 +305,42 @@ class CreateDBInstanceRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   int m_promotionTier{0};
-  bool m_promotionTierHasBeenSet = false;
 
   bool m_enablePerformanceInsights{false};
-  bool m_enablePerformanceInsightsHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
-  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_promotionTierHasBeenSet = false;
+  bool m_enablePerformanceInsightsHasBeenSet = false;
+  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   bool m_cACertificateIdentifierHasBeenSet = false;
 };
 

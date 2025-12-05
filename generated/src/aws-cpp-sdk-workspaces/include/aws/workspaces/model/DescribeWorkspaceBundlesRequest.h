@@ -97,12 +97,12 @@ class DescribeWorkspaceBundlesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_bundleIds;
-  bool m_bundleIdsHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_bundleIdsHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -254,39 +254,39 @@ class ImportReadSetSourceItem {
   ///@}
  private:
   SourceFiles m_sourceFiles;
-  bool m_sourceFilesHasBeenSet = false;
 
   FileType m_sourceFileType{FileType::NOT_SET};
-  bool m_sourceFileTypeHasBeenSet = false;
 
   ReadSetImportJobItemStatus m_status{ReadSetImportJobItemStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_subjectId;
-  bool m_subjectIdHasBeenSet = false;
 
   Aws::String m_sampleId;
-  bool m_sampleIdHasBeenSet = false;
 
   Aws::String m_generatedFrom;
-  bool m_generatedFromHasBeenSet = false;
 
   Aws::String m_referenceArn;
-  bool m_referenceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_readSetId;
+  bool m_sourceFilesHasBeenSet = false;
+  bool m_sourceFileTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_subjectIdHasBeenSet = false;
+  bool m_sampleIdHasBeenSet = false;
+  bool m_generatedFromHasBeenSet = false;
+  bool m_referenceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_readSetIdHasBeenSet = false;
 };
 

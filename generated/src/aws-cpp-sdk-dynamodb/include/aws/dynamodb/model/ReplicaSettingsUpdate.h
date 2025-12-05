@@ -146,18 +146,18 @@ class ReplicaSettingsUpdate {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   long long m_replicaProvisionedReadCapacityUnits{0};
-  bool m_replicaProvisionedReadCapacityUnitsHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate;
-  bool m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = false;
 
   Aws::Vector<ReplicaGlobalSecondaryIndexSettingsUpdate> m_replicaGlobalSecondaryIndexSettingsUpdate;
-  bool m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet = false;
 
   TableClass m_replicaTableClass{TableClass::NOT_SET};
+  bool m_regionNameHasBeenSet = false;
+  bool m_replicaProvisionedReadCapacityUnitsHasBeenSet = false;
+  bool m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = false;
+  bool m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet = false;
   bool m_replicaTableClassHasBeenSet = false;
 };
 

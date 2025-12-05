@@ -127,15 +127,15 @@ class ExpenseDocument {
   ///@}
  private:
   int m_expenseIndex{0};
-  bool m_expenseIndexHasBeenSet = false;
 
   Aws::Vector<ExpenseField> m_summaryFields;
-  bool m_summaryFieldsHasBeenSet = false;
 
   Aws::Vector<LineItemGroup> m_lineItemGroups;
-  bool m_lineItemGroupsHasBeenSet = false;
 
   Aws::Vector<Block> m_blocks;
+  bool m_expenseIndexHasBeenSet = false;
+  bool m_summaryFieldsHasBeenSet = false;
+  bool m_lineItemGroupsHasBeenSet = false;
   bool m_blocksHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeLifecycleHookTypesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_lifecycleHookTypes;
-  bool m_lifecycleHookTypesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_lifecycleHookTypesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

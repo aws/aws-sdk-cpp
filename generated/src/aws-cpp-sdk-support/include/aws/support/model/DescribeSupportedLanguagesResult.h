@@ -68,9 +68,9 @@ class DescribeSupportedLanguagesResult {
   ///@}
  private:
   Aws::Vector<SupportedLanguage> m_supportedLanguages;
-  bool m_supportedLanguagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_supportedLanguagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

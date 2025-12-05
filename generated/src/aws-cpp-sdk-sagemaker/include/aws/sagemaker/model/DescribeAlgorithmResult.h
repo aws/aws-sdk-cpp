@@ -233,39 +233,39 @@ class DescribeAlgorithmResult {
   ///@}
  private:
   Aws::String m_algorithmName;
-  bool m_algorithmNameHasBeenSet = false;
 
   Aws::String m_algorithmArn;
-  bool m_algorithmArnHasBeenSet = false;
 
   Aws::String m_algorithmDescription;
-  bool m_algorithmDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   TrainingSpecification m_trainingSpecification;
-  bool m_trainingSpecificationHasBeenSet = false;
 
   InferenceSpecification m_inferenceSpecification;
-  bool m_inferenceSpecificationHasBeenSet = false;
 
   AlgorithmValidationSpecification m_validationSpecification;
-  bool m_validationSpecificationHasBeenSet = false;
 
   AlgorithmStatus m_algorithmStatus{AlgorithmStatus::NOT_SET};
-  bool m_algorithmStatusHasBeenSet = false;
 
   AlgorithmStatusDetails m_algorithmStatusDetails;
-  bool m_algorithmStatusDetailsHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   bool m_certifyForMarketplace{false};
-  bool m_certifyForMarketplaceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_algorithmNameHasBeenSet = false;
+  bool m_algorithmArnHasBeenSet = false;
+  bool m_algorithmDescriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_trainingSpecificationHasBeenSet = false;
+  bool m_inferenceSpecificationHasBeenSet = false;
+  bool m_validationSpecificationHasBeenSet = false;
+  bool m_algorithmStatusHasBeenSet = false;
+  bool m_algorithmStatusDetailsHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_certifyForMarketplaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

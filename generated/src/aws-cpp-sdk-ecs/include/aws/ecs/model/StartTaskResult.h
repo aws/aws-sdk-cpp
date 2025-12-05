@@ -92,12 +92,12 @@ class StartTaskResult {
   ///@}
  private:
   Aws::Vector<Task> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tasksHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

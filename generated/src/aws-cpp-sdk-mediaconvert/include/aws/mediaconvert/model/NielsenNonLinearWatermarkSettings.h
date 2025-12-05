@@ -264,36 +264,36 @@ class NielsenNonLinearWatermarkSettings {
   ///@}
  private:
   NielsenActiveWatermarkProcessType m_activeWatermarkProcess{NielsenActiveWatermarkProcessType::NOT_SET};
-  bool m_activeWatermarkProcessHasBeenSet = false;
 
   Aws::String m_adiFilename;
-  bool m_adiFilenameHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   Aws::String m_cbetSourceId;
-  bool m_cbetSourceIdHasBeenSet = false;
 
   Aws::String m_episodeId;
-  bool m_episodeIdHasBeenSet = false;
 
   Aws::String m_metadataDestination;
-  bool m_metadataDestinationHasBeenSet = false;
 
   int m_sourceId{0};
-  bool m_sourceIdHasBeenSet = false;
 
   NielsenSourceWatermarkStatusType m_sourceWatermarkStatus{NielsenSourceWatermarkStatusType::NOT_SET};
-  bool m_sourceWatermarkStatusHasBeenSet = false;
 
   Aws::String m_ticServerUrl;
-  bool m_ticServerUrlHasBeenSet = false;
 
   NielsenUniqueTicPerAudioTrackType m_uniqueTicPerAudioTrack{NielsenUniqueTicPerAudioTrackType::NOT_SET};
+  bool m_activeWatermarkProcessHasBeenSet = false;
+  bool m_adiFilenameHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_assetNameHasBeenSet = false;
+  bool m_cbetSourceIdHasBeenSet = false;
+  bool m_episodeIdHasBeenSet = false;
+  bool m_metadataDestinationHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_sourceWatermarkStatusHasBeenSet = false;
+  bool m_ticServerUrlHasBeenSet = false;
   bool m_uniqueTicPerAudioTrackHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class Segment {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_document;
+  bool m_idHasBeenSet = false;
   bool m_documentHasBeenSet = false;
 };
 

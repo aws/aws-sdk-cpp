@@ -59,9 +59,9 @@ class DeleteContextResult {
   ///@}
  private:
   Aws::String m_contextArn;
-  bool m_contextArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contextArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

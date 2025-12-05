@@ -197,30 +197,30 @@ class VideoProperties {
   ///@}
  private:
   int m_bitDepth{0};
-  bool m_bitDepthHasBeenSet = false;
 
   long long m_bitRate{0};
-  bool m_bitRateHasBeenSet = false;
 
   CodecMetadata m_codecMetadata;
-  bool m_codecMetadataHasBeenSet = false;
 
   ColorPrimaries m_colorPrimaries{ColorPrimaries::NOT_SET};
-  bool m_colorPrimariesHasBeenSet = false;
 
   FrameRate m_frameRate;
-  bool m_frameRateHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   MatrixCoefficients m_matrixCoefficients{MatrixCoefficients::NOT_SET};
-  bool m_matrixCoefficientsHasBeenSet = false;
 
   TransferCharacteristics m_transferCharacteristics{TransferCharacteristics::NOT_SET};
-  bool m_transferCharacteristicsHasBeenSet = false;
 
   int m_width{0};
+  bool m_bitDepthHasBeenSet = false;
+  bool m_bitRateHasBeenSet = false;
+  bool m_codecMetadataHasBeenSet = false;
+  bool m_colorPrimariesHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_matrixCoefficientsHasBeenSet = false;
+  bool m_transferCharacteristicsHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

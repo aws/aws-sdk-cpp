@@ -79,12 +79,12 @@ class AssociateResourceSharePermissionResult {
   ///@}
  private:
   bool m_returnValue{false};
-  bool m_returnValueHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_returnValueHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

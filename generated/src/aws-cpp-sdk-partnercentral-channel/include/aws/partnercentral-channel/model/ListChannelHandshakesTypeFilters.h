@@ -91,12 +91,12 @@ class ListChannelHandshakesTypeFilters {
   ///@}
  private:
   StartServicePeriodTypeFilters m_startServicePeriodTypeFilters;
-  bool m_startServicePeriodTypeFiltersHasBeenSet = false;
 
   RevokeServicePeriodTypeFilters m_revokeServicePeriodTypeFilters;
-  bool m_revokeServicePeriodTypeFiltersHasBeenSet = false;
 
   ProgramManagementAccountTypeFilters m_programManagementAccountTypeFilters;
+  bool m_startServicePeriodTypeFiltersHasBeenSet = false;
+  bool m_revokeServicePeriodTypeFiltersHasBeenSet = false;
   bool m_programManagementAccountTypeFiltersHasBeenSet = false;
 };
 

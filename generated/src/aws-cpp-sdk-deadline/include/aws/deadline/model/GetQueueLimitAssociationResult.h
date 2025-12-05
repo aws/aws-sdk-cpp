@@ -162,27 +162,27 @@ class GetQueueLimitAssociationResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_limitId;
-  bool m_limitIdHasBeenSet = false;
 
   QueueLimitAssociationStatus m_status{QueueLimitAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_limitIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

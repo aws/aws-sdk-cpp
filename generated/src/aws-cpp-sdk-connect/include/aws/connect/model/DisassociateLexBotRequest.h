@@ -114,15 +114,15 @@ class DisassociateLexBotRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_lexRegion;
-  bool m_lexRegionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_botNameHasBeenSet = false;
+  bool m_lexRegionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

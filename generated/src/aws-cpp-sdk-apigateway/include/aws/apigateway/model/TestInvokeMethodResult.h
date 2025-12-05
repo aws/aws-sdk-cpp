@@ -160,24 +160,24 @@ class TestInvokeMethodResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_headers;
-  bool m_headersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_multiValueHeaders;
-  bool m_multiValueHeadersHasBeenSet = false;
 
   Aws::String m_log;
-  bool m_logHasBeenSet = false;
 
   long long m_latency{0};
-  bool m_latencyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
+  bool m_multiValueHeadersHasBeenSet = false;
+  bool m_logHasBeenSet = false;
+  bool m_latencyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

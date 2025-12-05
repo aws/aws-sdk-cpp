@@ -87,12 +87,12 @@ class DataPathColor {
   ///@}
  private:
   DataPathValue m_element;
-  bool m_elementHasBeenSet = false;
 
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
+  bool m_elementHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
   bool m_timeGranularityHasBeenSet = false;
 };
 

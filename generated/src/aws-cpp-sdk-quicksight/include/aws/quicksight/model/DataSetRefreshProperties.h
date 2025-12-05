@@ -69,9 +69,9 @@ class DataSetRefreshProperties {
   ///@}
  private:
   RefreshConfiguration m_refreshConfiguration;
-  bool m_refreshConfigurationHasBeenSet = false;
 
   RefreshFailureConfiguration m_failureConfiguration;
+  bool m_refreshConfigurationHasBeenSet = false;
   bool m_failureConfigurationHasBeenSet = false;
 };
 

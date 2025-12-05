@@ -85,12 +85,12 @@ class ListAgentRuntimeVersionsResult {
   ///@}
  private:
   Aws::Vector<AgentRuntime> m_agentRuntimes;
-  bool m_agentRuntimesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentRuntimesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

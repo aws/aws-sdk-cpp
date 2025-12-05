@@ -93,15 +93,15 @@ class DeleteAccessTokenResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   TokenStatus m_status{TokenStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
-  bool m_deletedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_deletedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

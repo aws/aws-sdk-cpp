@@ -246,39 +246,39 @@ class Operation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   bool m_isTerminal{false};
-  bool m_isTerminalHasBeenSet = false;
 
   Aws::String m_operationDetails;
-  bool m_operationDetailsHasBeenSet = false;
 
   OperationType m_operationType{OperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_statusChangedAt{};
-  bool m_statusChangedAtHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorDetails;
+  bool m_idHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_isTerminalHasBeenSet = false;
+  bool m_operationDetailsHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusChangedAtHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

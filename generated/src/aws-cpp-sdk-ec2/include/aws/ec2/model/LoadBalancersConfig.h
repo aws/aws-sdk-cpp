@@ -72,9 +72,9 @@ class LoadBalancersConfig {
   ///@}
  private:
   ClassicLoadBalancersConfig m_classicLoadBalancersConfig;
-  bool m_classicLoadBalancersConfigHasBeenSet = false;
 
   TargetGroupsConfig m_targetGroupsConfig;
+  bool m_classicLoadBalancersConfigHasBeenSet = false;
   bool m_targetGroupsConfigHasBeenSet = false;
 };
 

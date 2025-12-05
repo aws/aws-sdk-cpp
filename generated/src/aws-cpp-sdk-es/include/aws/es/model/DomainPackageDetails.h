@@ -196,30 +196,30 @@ class DomainPackageDetails {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   PackageType m_packageType{PackageType::NOT_SET};
-  bool m_packageTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   DomainPackageStatus m_domainPackageStatus{DomainPackageStatus::NOT_SET};
-  bool m_domainPackageStatusHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_referencePath;
-  bool m_referencePathHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
+  bool m_packageIDHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageTypeHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainPackageStatusHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
+  bool m_referencePathHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

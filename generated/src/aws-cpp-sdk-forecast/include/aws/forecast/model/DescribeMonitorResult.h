@@ -231,39 +231,39 @@ class DescribeMonitorResult {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastEvaluationTime{};
-  bool m_lastEvaluationTimeHasBeenSet = false;
 
   Aws::String m_lastEvaluationState;
-  bool m_lastEvaluationStateHasBeenSet = false;
 
   Baseline m_baseline;
-  bool m_baselineHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   long long m_estimatedEvaluationTimeRemainingInMinutes{0};
-  bool m_estimatedEvaluationTimeRemainingInMinutesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_monitorArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastEvaluationTimeHasBeenSet = false;
+  bool m_lastEvaluationStateHasBeenSet = false;
+  bool m_baselineHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_estimatedEvaluationTimeRemainingInMinutesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

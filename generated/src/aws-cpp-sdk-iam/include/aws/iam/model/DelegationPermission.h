@@ -82,9 +82,9 @@ class DelegationPermission {
   ///@}
  private:
   Aws::String m_policyTemplateArn;
-  bool m_policyTemplateArnHasBeenSet = false;
 
   Aws::Vector<PolicyParameter> m_parameters;
+  bool m_policyTemplateArnHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

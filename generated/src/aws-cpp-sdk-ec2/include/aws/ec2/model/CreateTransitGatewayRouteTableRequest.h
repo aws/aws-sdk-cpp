@@ -96,12 +96,12 @@ class CreateTransitGatewayRouteTableRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

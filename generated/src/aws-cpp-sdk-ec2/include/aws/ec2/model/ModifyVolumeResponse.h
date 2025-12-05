@@ -60,9 +60,9 @@ class ModifyVolumeResponse {
   ///@}
  private:
   VolumeModification m_volumeModification;
-  bool m_volumeModificationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_volumeModificationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

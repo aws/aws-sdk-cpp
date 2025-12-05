@@ -90,12 +90,12 @@ class Subnet {
   ///@}
  private:
   Aws::String m_subnetIdentifier;
-  bool m_subnetIdentifierHasBeenSet = false;
 
   AvailabilityZone m_subnetAvailabilityZone;
-  bool m_subnetAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_subnetStatus;
+  bool m_subnetIdentifierHasBeenSet = false;
+  bool m_subnetAvailabilityZoneHasBeenSet = false;
   bool m_subnetStatusHasBeenSet = false;
 };
 

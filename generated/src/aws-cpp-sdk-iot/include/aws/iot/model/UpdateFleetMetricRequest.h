@@ -209,33 +209,33 @@ class UpdateFleetMetricRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   AggregationType m_aggregationType;
-  bool m_aggregationTypeHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_aggregationField;
-  bool m_aggregationFieldHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_queryVersion;
-  bool m_queryVersionHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   FleetMetricUnit m_unit{FleetMetricUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_metricNameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_aggregationTypeHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_aggregationFieldHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_queryVersionHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

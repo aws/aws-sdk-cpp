@@ -224,30 +224,30 @@ class ListTasksRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_containerInstance;
-  bool m_containerInstanceHasBeenSet = false;
 
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   DesiredStatus m_desiredStatus{DesiredStatus::NOT_SET};
-  bool m_desiredStatusHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
+  bool m_clusterHasBeenSet = false;
+  bool m_containerInstanceHasBeenSet = false;
+  bool m_familyHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_desiredStatusHasBeenSet = false;
   bool m_launchTypeHasBeenSet = false;
 };
 

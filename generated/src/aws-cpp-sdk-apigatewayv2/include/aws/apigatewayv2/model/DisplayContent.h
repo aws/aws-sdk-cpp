@@ -68,9 +68,9 @@ class DisplayContent {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_bodyHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

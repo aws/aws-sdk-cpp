@@ -74,9 +74,9 @@ class KeyRange {
   ///@}
  private:
   Aws::String m_beginMarker;
-  bool m_beginMarkerHasBeenSet = false;
 
   Aws::String m_endMarker;
+  bool m_beginMarkerHasBeenSet = false;
   bool m_endMarkerHasBeenSet = false;
 };
 

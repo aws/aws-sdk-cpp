@@ -86,12 +86,12 @@ class PurchaseReservedInstanceOfferingRequest : public OpenSearchServiceRequest 
   ///@}
  private:
   Aws::String m_reservedInstanceOfferingId;
-  bool m_reservedInstanceOfferingIdHasBeenSet = false;
 
   Aws::String m_reservationName;
-  bool m_reservationNameHasBeenSet = false;
 
   int m_instanceCount{0};
+  bool m_reservedInstanceOfferingIdHasBeenSet = false;
+  bool m_reservationNameHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
 };
 

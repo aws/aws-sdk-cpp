@@ -146,21 +146,21 @@ class TotalOptions {
   ///@}
  private:
   Visibility m_totalsVisibility{Visibility::NOT_SET};
-  bool m_totalsVisibilityHasBeenSet = false;
 
   TableTotalsPlacement m_placement{TableTotalsPlacement::NOT_SET};
-  bool m_placementHasBeenSet = false;
 
   TableTotalsScrollStatus m_scrollStatus{TableTotalsScrollStatus::NOT_SET};
-  bool m_scrollStatusHasBeenSet = false;
 
   Aws::String m_customLabel;
-  bool m_customLabelHasBeenSet = false;
 
   TableCellStyle m_totalCellStyle;
-  bool m_totalCellStyleHasBeenSet = false;
 
   Aws::Vector<TotalAggregationOption> m_totalAggregationOptions;
+  bool m_totalsVisibilityHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_scrollStatusHasBeenSet = false;
+  bool m_customLabelHasBeenSet = false;
+  bool m_totalCellStyleHasBeenSet = false;
   bool m_totalAggregationOptionsHasBeenSet = false;
 };
 

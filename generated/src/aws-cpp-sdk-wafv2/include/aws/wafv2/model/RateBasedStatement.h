@@ -251,21 +251,21 @@ class RateBasedStatement {
   ///@}
  private:
   long long m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   long long m_evaluationWindowSec{0};
-  bool m_evaluationWindowSecHasBeenSet = false;
 
   RateBasedStatementAggregateKeyType m_aggregateKeyType{RateBasedStatementAggregateKeyType::NOT_SET};
-  bool m_aggregateKeyTypeHasBeenSet = false;
 
   std::shared_ptr<Statement> m_scopeDownStatement;
-  bool m_scopeDownStatementHasBeenSet = false;
 
   ForwardedIPConfig m_forwardedIPConfig;
-  bool m_forwardedIPConfigHasBeenSet = false;
 
   Aws::Vector<RateBasedStatementCustomKey> m_customKeys;
+  bool m_limitHasBeenSet = false;
+  bool m_evaluationWindowSecHasBeenSet = false;
+  bool m_aggregateKeyTypeHasBeenSet = false;
+  bool m_scopeDownStatementHasBeenSet = false;
+  bool m_forwardedIPConfigHasBeenSet = false;
   bool m_customKeysHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class DeepgramSpeechModelConfig {
   ///@}
  private:
   Aws::String m_apiTokenSecretArn;
-  bool m_apiTokenSecretArnHasBeenSet = false;
 
   Aws::String m_modelId;
+  bool m_apiTokenSecretArnHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
 };
 

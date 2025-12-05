@@ -206,30 +206,30 @@ class TranslatePinDataRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_incomingKeyIdentifier;
-  bool m_incomingKeyIdentifierHasBeenSet = false;
 
   Aws::String m_outgoingKeyIdentifier;
-  bool m_outgoingKeyIdentifierHasBeenSet = false;
 
   TranslationIsoFormats m_incomingTranslationAttributes;
-  bool m_incomingTranslationAttributesHasBeenSet = false;
 
   TranslationIsoFormats m_outgoingTranslationAttributes;
-  bool m_outgoingTranslationAttributesHasBeenSet = false;
 
   Aws::String m_encryptedPinBlock;
-  bool m_encryptedPinBlockHasBeenSet = false;
 
   DukptDerivationAttributes m_incomingDukptAttributes;
-  bool m_incomingDukptAttributesHasBeenSet = false;
 
   DukptDerivationAttributes m_outgoingDukptAttributes;
-  bool m_outgoingDukptAttributesHasBeenSet = false;
 
   WrappedKey m_incomingWrappedKey;
-  bool m_incomingWrappedKeyHasBeenSet = false;
 
   WrappedKey m_outgoingWrappedKey;
+  bool m_incomingKeyIdentifierHasBeenSet = false;
+  bool m_outgoingKeyIdentifierHasBeenSet = false;
+  bool m_incomingTranslationAttributesHasBeenSet = false;
+  bool m_outgoingTranslationAttributesHasBeenSet = false;
+  bool m_encryptedPinBlockHasBeenSet = false;
+  bool m_incomingDukptAttributesHasBeenSet = false;
+  bool m_outgoingDukptAttributesHasBeenSet = false;
+  bool m_incomingWrappedKeyHasBeenSet = false;
   bool m_outgoingWrappedKeyHasBeenSet = false;
 };
 

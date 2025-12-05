@@ -235,36 +235,36 @@ class UpdateApiKeyResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_customerId;
-  bool m_customerIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stageKeys;
-  bool m_stageKeysHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_customerIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_stageKeysHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

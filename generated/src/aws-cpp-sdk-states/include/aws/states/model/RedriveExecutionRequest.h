@@ -73,9 +73,9 @@ class RedriveExecutionRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_executionArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

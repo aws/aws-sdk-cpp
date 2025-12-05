@@ -78,9 +78,9 @@ class GenerateQueryRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eventDataStores;
-  bool m_eventDataStoresHasBeenSet = false;
 
   Aws::String m_prompt;
+  bool m_eventDataStoresHasBeenSet = false;
   bool m_promptHasBeenSet = false;
 };
 

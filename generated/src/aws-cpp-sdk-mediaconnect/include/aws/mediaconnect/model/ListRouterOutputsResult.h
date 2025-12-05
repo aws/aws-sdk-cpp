@@ -84,12 +84,12 @@ class ListRouterOutputsResult {
   ///@}
  private:
   Aws::Vector<ListedRouterOutput> m_routerOutputs;
-  bool m_routerOutputsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routerOutputsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

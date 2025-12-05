@@ -89,12 +89,12 @@ class Bounce {
   ///@}
  private:
   BounceType m_bounceType{BounceType::NOT_SET};
-  bool m_bounceTypeHasBeenSet = false;
 
   Aws::String m_bounceSubType;
-  bool m_bounceSubTypeHasBeenSet = false;
 
   Aws::String m_diagnosticCode;
+  bool m_bounceTypeHasBeenSet = false;
+  bool m_bounceSubTypeHasBeenSet = false;
   bool m_diagnosticCodeHasBeenSet = false;
 };
 

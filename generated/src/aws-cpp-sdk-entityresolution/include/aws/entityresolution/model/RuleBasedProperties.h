@@ -107,12 +107,12 @@ class RuleBasedProperties {
   ///@}
  private:
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
-  bool m_attributeMatchingModelHasBeenSet = false;
 
   MatchPurpose m_matchPurpose{MatchPurpose::NOT_SET};
+  bool m_rulesHasBeenSet = false;
+  bool m_attributeMatchingModelHasBeenSet = false;
   bool m_matchPurposeHasBeenSet = false;
 };
 

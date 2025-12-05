@@ -101,12 +101,12 @@ class ReplicaAutoScalingUpdate {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingUpdate> m_replicaGlobalSecondaryIndexUpdates;
-  bool m_replicaGlobalSecondaryIndexUpdatesHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_replicaProvisionedReadCapacityAutoScalingUpdate;
+  bool m_regionNameHasBeenSet = false;
+  bool m_replicaGlobalSecondaryIndexUpdatesHasBeenSet = false;
   bool m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet = false;
 };
 

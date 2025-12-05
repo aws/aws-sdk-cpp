@@ -177,21 +177,21 @@ class DescribeDBInstanceAutomatedBackupsRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dbiResourceId;
-  bool m_dbiResourceIdHasBeenSet = false;
 
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_dBInstanceAutomatedBackupsArn;
+  bool m_dbiResourceIdHasBeenSet = false;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_dBInstanceAutomatedBackupsArnHasBeenSet = false;
 };
 

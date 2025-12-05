@@ -101,15 +101,15 @@ class PrivateKeyFlagsV3 {
   ///@}
  private:
   ClientCompatibilityV3 m_clientVersion{ClientCompatibilityV3::NOT_SET};
-  bool m_clientVersionHasBeenSet = false;
 
   bool m_exportableKey{false};
-  bool m_exportableKeyHasBeenSet = false;
 
   bool m_requireAlternateSignatureAlgorithm{false};
-  bool m_requireAlternateSignatureAlgorithmHasBeenSet = false;
 
   bool m_strongKeyProtectionRequired{false};
+  bool m_clientVersionHasBeenSet = false;
+  bool m_exportableKeyHasBeenSet = false;
+  bool m_requireAlternateSignatureAlgorithmHasBeenSet = false;
   bool m_strongKeyProtectionRequiredHasBeenSet = false;
 };
 

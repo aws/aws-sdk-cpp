@@ -109,15 +109,15 @@ class KnowledgeBaseConfiguration {
   ///@}
  private:
   KnowledgeBaseType m_type{KnowledgeBaseType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   VectorKnowledgeBaseConfiguration m_vectorKnowledgeBaseConfiguration;
-  bool m_vectorKnowledgeBaseConfigurationHasBeenSet = false;
 
   KendraKnowledgeBaseConfiguration m_kendraKnowledgeBaseConfiguration;
-  bool m_kendraKnowledgeBaseConfigurationHasBeenSet = false;
 
   SqlKnowledgeBaseConfiguration m_sqlKnowledgeBaseConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_vectorKnowledgeBaseConfigurationHasBeenSet = false;
+  bool m_kendraKnowledgeBaseConfigurationHasBeenSet = false;
   bool m_sqlKnowledgeBaseConfigurationHasBeenSet = false;
 };
 

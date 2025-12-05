@@ -219,24 +219,24 @@ class GetCostAndUsageRequest : public CostExplorerRequest {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Granularity m_granularity{Granularity::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Vector<GroupDefinition> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   Aws::String m_nextPageToken;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_granularityHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_billingViewArnHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
 };
 

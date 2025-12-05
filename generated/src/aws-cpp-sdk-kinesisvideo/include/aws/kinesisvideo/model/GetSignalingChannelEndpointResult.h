@@ -67,9 +67,9 @@ class GetSignalingChannelEndpointResult {
   ///@}
  private:
   Aws::Vector<ResourceEndpointListItem> m_resourceEndpointList;
-  bool m_resourceEndpointListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceEndpointListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

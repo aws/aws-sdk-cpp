@@ -66,9 +66,9 @@ class ListDistributions2020_05_31Result {
   ///@}
  private:
   DistributionList m_distributionList;
-  bool m_distributionListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_distributionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -141,21 +141,21 @@ class CustomColors {
   ///@}
  private:
   Aws::String m_accentColor;
-  bool m_accentColorHasBeenSet = false;
 
   Aws::String m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   Aws::String m_errorValidationColor;
-  bool m_errorValidationColorHasBeenSet = false;
 
   Aws::String m_headerColor;
-  bool m_headerColorHasBeenSet = false;
 
   Aws::String m_navigationColor;
-  bool m_navigationColorHasBeenSet = false;
 
   Aws::String m_textColor;
+  bool m_accentColorHasBeenSet = false;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_errorValidationColorHasBeenSet = false;
+  bool m_headerColorHasBeenSet = false;
+  bool m_navigationColorHasBeenSet = false;
   bool m_textColorHasBeenSet = false;
 };
 

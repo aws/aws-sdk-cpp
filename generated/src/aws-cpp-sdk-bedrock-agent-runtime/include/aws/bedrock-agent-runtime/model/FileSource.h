@@ -87,12 +87,12 @@ class FileSource {
   ///@}
  private:
   ByteContentFile m_byteContent;
-  bool m_byteContentHasBeenSet = false;
 
   S3ObjectFile m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   FileSourceType m_sourceType{FileSourceType::NOT_SET};
+  bool m_byteContentHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

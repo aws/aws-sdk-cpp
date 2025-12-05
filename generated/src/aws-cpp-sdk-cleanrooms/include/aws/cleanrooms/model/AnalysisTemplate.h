@@ -383,57 +383,57 @@ class AnalysisTemplate {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_collaborationArn;
-  bool m_collaborationArnHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   AnalysisSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   AnalysisFormat m_format{AnalysisFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   AnalysisSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   AnalysisSourceMetadata m_sourceMetadata;
-  bool m_sourceMetadataHasBeenSet = false;
 
   Aws::Vector<AnalysisParameter> m_analysisParameters;
-  bool m_analysisParametersHasBeenSet = false;
 
   Aws::Vector<AnalysisTemplateValidationStatusDetail> m_validations;
-  bool m_validationsHasBeenSet = false;
 
   ErrorMessageConfiguration m_errorMessageConfiguration;
-  bool m_errorMessageConfigurationHasBeenSet = false;
 
   SyntheticDataParameters m_syntheticDataParameters;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_collaborationArnHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceMetadataHasBeenSet = false;
+  bool m_analysisParametersHasBeenSet = false;
+  bool m_validationsHasBeenSet = false;
+  bool m_errorMessageConfigurationHasBeenSet = false;
   bool m_syntheticDataParametersHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class MatchGroup {
   ///@}
  private:
   Aws::Vector<MatchedRecord> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_matchId;
-  bool m_matchIdHasBeenSet = false;
 
   Aws::String m_matchRule;
+  bool m_recordsHasBeenSet = false;
+  bool m_matchIdHasBeenSet = false;
   bool m_matchRuleHasBeenSet = false;
 };
 

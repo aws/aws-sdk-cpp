@@ -77,9 +77,9 @@ class ReservationCoverageGroup {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Coverage m_coverage;
+  bool m_attributesHasBeenSet = false;
   bool m_coverageHasBeenSet = false;
 };
 

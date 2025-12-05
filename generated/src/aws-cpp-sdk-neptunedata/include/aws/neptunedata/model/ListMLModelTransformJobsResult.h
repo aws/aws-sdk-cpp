@@ -66,9 +66,9 @@ class ListMLModelTransformJobsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

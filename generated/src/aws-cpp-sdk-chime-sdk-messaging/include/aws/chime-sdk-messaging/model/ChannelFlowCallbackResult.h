@@ -76,12 +76,12 @@ class ChannelFlowCallbackResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_callbackId;
-  bool m_callbackIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_callbackIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class FindingAggregationAccountDetails {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   int m_numberOfActiveFindings{0};
-  bool m_numberOfActiveFindingsHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_details;
+  bool m_accountHasBeenSet = false;
+  bool m_numberOfActiveFindingsHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

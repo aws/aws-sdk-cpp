@@ -66,9 +66,9 @@ class DisassociateOrganizationalUnitRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   Aws::String m_notificationConfigurationArn;
+  bool m_organizationalUnitIdHasBeenSet = false;
   bool m_notificationConfigurationArnHasBeenSet = false;
 };
 

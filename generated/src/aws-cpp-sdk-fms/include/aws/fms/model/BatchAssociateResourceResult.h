@@ -85,12 +85,12 @@ class BatchAssociateResourceResult {
   ///@}
  private:
   Aws::String m_resourceSetIdentifier;
-  bool m_resourceSetIdentifierHasBeenSet = false;
 
   Aws::Vector<FailedItem> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceSetIdentifierHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

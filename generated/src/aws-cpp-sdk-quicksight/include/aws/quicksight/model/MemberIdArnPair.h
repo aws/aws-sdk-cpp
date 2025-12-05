@@ -69,9 +69,9 @@ class MemberIdArnPair {
   ///@}
  private:
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   Aws::String m_memberArn;
+  bool m_memberIdHasBeenSet = false;
   bool m_memberArnHasBeenSet = false;
 };
 

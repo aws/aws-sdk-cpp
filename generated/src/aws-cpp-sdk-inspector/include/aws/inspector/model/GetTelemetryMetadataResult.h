@@ -67,9 +67,9 @@ class GetTelemetryMetadataResult {
   ///@}
  private:
   Aws::Vector<TelemetryMetadata> m_telemetryMetadata;
-  bool m_telemetryMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_telemetryMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

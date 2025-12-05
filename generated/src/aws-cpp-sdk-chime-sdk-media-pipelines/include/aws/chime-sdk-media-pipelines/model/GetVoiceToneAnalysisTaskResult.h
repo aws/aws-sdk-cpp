@@ -61,9 +61,9 @@ class GetVoiceToneAnalysisTaskResult {
   ///@}
  private:
   VoiceToneAnalysisTask m_voiceToneAnalysisTask;
-  bool m_voiceToneAnalysisTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceToneAnalysisTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

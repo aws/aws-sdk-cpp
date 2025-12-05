@@ -68,9 +68,9 @@ class AutoMLOutputDataConfig {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_s3OutputPath;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_s3OutputPathHasBeenSet = false;
 };
 

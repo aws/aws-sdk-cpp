@@ -84,12 +84,12 @@ class ListLabelGroupsRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_labelGroupNameBeginsWith;
-  bool m_labelGroupNameBeginsWithHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_labelGroupNameBeginsWithHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

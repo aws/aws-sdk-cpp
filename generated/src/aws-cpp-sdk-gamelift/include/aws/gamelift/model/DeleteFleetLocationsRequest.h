@@ -76,9 +76,9 @@ class DeleteFleetLocationsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_locations;
+  bool m_fleetIdHasBeenSet = false;
   bool m_locationsHasBeenSet = false;
 };
 

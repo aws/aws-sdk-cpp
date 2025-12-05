@@ -70,9 +70,9 @@ class TFIModelPerformance {
   ///@}
  private:
   double m_auc{0.0};
-  bool m_aucHasBeenSet = false;
 
   UncertaintyRange m_uncertaintyRange;
+  bool m_aucHasBeenSet = false;
   bool m_uncertaintyRangeHasBeenSet = false;
 };
 

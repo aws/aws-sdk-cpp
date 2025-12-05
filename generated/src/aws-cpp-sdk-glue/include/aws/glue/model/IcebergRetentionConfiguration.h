@@ -102,15 +102,15 @@ class IcebergRetentionConfiguration {
   ///@}
  private:
   int m_snapshotRetentionPeriodInDays{0};
-  bool m_snapshotRetentionPeriodInDaysHasBeenSet = false;
 
   int m_numberOfSnapshotsToRetain{0};
-  bool m_numberOfSnapshotsToRetainHasBeenSet = false;
 
   bool m_cleanExpiredFiles{false};
-  bool m_cleanExpiredFilesHasBeenSet = false;
 
   int m_runRateInHours{0};
+  bool m_snapshotRetentionPeriodInDaysHasBeenSet = false;
+  bool m_numberOfSnapshotsToRetainHasBeenSet = false;
+  bool m_cleanExpiredFilesHasBeenSet = false;
   bool m_runRateInHoursHasBeenSet = false;
 };
 

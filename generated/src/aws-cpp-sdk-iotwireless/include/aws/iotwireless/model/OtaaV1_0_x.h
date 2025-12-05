@@ -106,15 +106,15 @@ class OtaaV1_0_x {
   ///@}
  private:
   Aws::String m_appKey;
-  bool m_appKeyHasBeenSet = false;
 
   Aws::String m_appEui;
-  bool m_appEuiHasBeenSet = false;
 
   Aws::String m_joinEui;
-  bool m_joinEuiHasBeenSet = false;
 
   Aws::String m_genAppKey;
+  bool m_appKeyHasBeenSet = false;
+  bool m_appEuiHasBeenSet = false;
+  bool m_joinEuiHasBeenSet = false;
   bool m_genAppKeyHasBeenSet = false;
 };
 

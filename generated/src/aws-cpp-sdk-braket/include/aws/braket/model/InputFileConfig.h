@@ -88,12 +88,12 @@ class InputFileConfig {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   DataSource m_dataSource;
+  bool m_channelNameHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class ConfigurableUpfrontPricingTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::Vector<ConfigurableUpfrontRateCardItem> m_rateCards;
-  bool m_rateCardsHasBeenSet = false;
 
   ConfigurableUpfrontPricingTermConfiguration m_configuration;
+  bool m_typeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_rateCardsHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

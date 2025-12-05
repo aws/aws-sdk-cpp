@@ -87,12 +87,12 @@ class WindowMaintenanceSchedule {
   ///@}
  private:
   Aws::Utils::DateTime m_start{};
-  bool m_startHasBeenSet = false;
 
   Aws::Utils::DateTime m_end{};
-  bool m_endHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledTime{};
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
   bool m_scheduledTimeHasBeenSet = false;
 };
 

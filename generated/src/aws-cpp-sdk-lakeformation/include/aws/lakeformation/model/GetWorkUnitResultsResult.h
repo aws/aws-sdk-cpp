@@ -61,9 +61,9 @@ class GetWorkUnitResultsResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_resultStream{};
-  bool m_resultStreamHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultStreamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

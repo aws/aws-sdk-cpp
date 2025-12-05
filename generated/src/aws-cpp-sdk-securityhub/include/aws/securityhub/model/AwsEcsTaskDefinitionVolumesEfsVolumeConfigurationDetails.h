@@ -127,18 +127,18 @@ class AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
   ///@}
  private:
   AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails m_authorizationConfig;
-  bool m_authorizationConfigHasBeenSet = false;
 
   Aws::String m_filesystemId;
-  bool m_filesystemIdHasBeenSet = false;
 
   Aws::String m_rootDirectory;
-  bool m_rootDirectoryHasBeenSet = false;
 
   Aws::String m_transitEncryption;
-  bool m_transitEncryptionHasBeenSet = false;
 
   int m_transitEncryptionPort{0};
+  bool m_authorizationConfigHasBeenSet = false;
+  bool m_filesystemIdHasBeenSet = false;
+  bool m_rootDirectoryHasBeenSet = false;
+  bool m_transitEncryptionHasBeenSet = false;
   bool m_transitEncryptionPortHasBeenSet = false;
 };
 

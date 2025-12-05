@@ -61,9 +61,9 @@ class CreateNetworkProfileResult {
   ///@}
  private:
   NetworkProfile m_networkProfile;
-  bool m_networkProfileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkProfileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

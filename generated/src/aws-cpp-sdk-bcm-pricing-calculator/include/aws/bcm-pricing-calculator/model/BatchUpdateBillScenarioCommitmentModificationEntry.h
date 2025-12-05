@@ -69,9 +69,9 @@ class BatchUpdateBillScenarioCommitmentModificationEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_group;
+  bool m_idHasBeenSet = false;
   bool m_groupHasBeenSet = false;
 };
 

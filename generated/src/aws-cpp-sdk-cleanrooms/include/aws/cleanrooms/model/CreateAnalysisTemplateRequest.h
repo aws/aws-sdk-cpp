@@ -234,33 +234,33 @@ class CreateAnalysisTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AnalysisFormat m_format{AnalysisFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   AnalysisSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AnalysisParameter> m_analysisParameters;
-  bool m_analysisParametersHasBeenSet = false;
 
   AnalysisSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   ErrorMessageConfiguration m_errorMessageConfiguration;
-  bool m_errorMessageConfigurationHasBeenSet = false;
 
   SyntheticDataParameters m_syntheticDataParameters;
+  bool m_descriptionHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_analysisParametersHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_errorMessageConfigurationHasBeenSet = false;
   bool m_syntheticDataParametersHasBeenSet = false;
 };
 

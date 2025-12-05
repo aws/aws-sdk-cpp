@@ -131,18 +131,18 @@ class ListResolverQueryLogConfigAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   int m_totalFilteredCount{0};
-  bool m_totalFilteredCountHasBeenSet = false;
 
   Aws::Vector<ResolverQueryLogConfigAssociation> m_resolverQueryLogConfigAssociations;
-  bool m_resolverQueryLogConfigAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
+  bool m_totalFilteredCountHasBeenSet = false;
+  bool m_resolverQueryLogConfigAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

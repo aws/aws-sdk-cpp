@@ -279,24 +279,24 @@ class DkimAttributes {
   ///@}
  private:
   bool m_signingEnabled{false};
-  bool m_signingEnabledHasBeenSet = false;
 
   DkimStatus m_status{DkimStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokens;
-  bool m_tokensHasBeenSet = false;
 
   DkimSigningAttributesOrigin m_signingAttributesOrigin{DkimSigningAttributesOrigin::NOT_SET};
-  bool m_signingAttributesOriginHasBeenSet = false;
 
   DkimSigningKeyLength m_nextSigningKeyLength{DkimSigningKeyLength::NOT_SET};
-  bool m_nextSigningKeyLengthHasBeenSet = false;
 
   DkimSigningKeyLength m_currentSigningKeyLength{DkimSigningKeyLength::NOT_SET};
-  bool m_currentSigningKeyLengthHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastKeyGenerationTimestamp{};
+  bool m_signingEnabledHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tokensHasBeenSet = false;
+  bool m_signingAttributesOriginHasBeenSet = false;
+  bool m_nextSigningKeyLengthHasBeenSet = false;
+  bool m_currentSigningKeyLengthHasBeenSet = false;
   bool m_lastKeyGenerationTimestampHasBeenSet = false;
 };
 

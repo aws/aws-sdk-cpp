@@ -67,9 +67,9 @@ class CreateCaseResult {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_caseIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

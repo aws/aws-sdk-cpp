@@ -82,12 +82,12 @@ class CreateAliasResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

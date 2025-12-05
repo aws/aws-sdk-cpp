@@ -140,18 +140,18 @@ class LoadBalancerTlsPolicy {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ciphers;
+  bool m_nameHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
   bool m_ciphersHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class StartAutomatedReasoningPolicyTestWorkflowRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_testCaseIds;
-  bool m_testCaseIdsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
+  bool m_testCaseIdsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

@@ -165,24 +165,24 @@ class GlobalAuroraConfiguration {
   ///@}
  private:
   int m_timeoutMinutes{0};
-  bool m_timeoutMinutesHasBeenSet = false;
 
   Aws::String m_crossAccountRole;
-  bool m_crossAccountRoleHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   GlobalAuroraDefaultBehavior m_behavior{GlobalAuroraDefaultBehavior::NOT_SET};
-  bool m_behaviorHasBeenSet = false;
 
   GlobalAuroraUngraceful m_ungraceful;
-  bool m_ungracefulHasBeenSet = false;
 
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_databaseClusterArns;
+  bool m_timeoutMinutesHasBeenSet = false;
+  bool m_crossAccountRoleHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_behaviorHasBeenSet = false;
+  bool m_ungracefulHasBeenSet = false;
+  bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_databaseClusterArnsHasBeenSet = false;
 };
 

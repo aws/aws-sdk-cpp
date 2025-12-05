@@ -106,15 +106,15 @@ class DatabaseShortInfoResponse {
   ///@}
  private:
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_databaseIpAddress;
-  bool m_databaseIpAddressHasBeenSet = false;
 
   Aws::String m_databaseEngine;
+  bool m_databaseIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_databaseIpAddressHasBeenSet = false;
   bool m_databaseEngineHasBeenSet = false;
 };
 

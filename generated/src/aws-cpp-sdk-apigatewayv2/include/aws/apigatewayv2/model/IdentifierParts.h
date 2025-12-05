@@ -105,15 +105,15 @@ class IdentifierParts {
   ///@}
  private:
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_stage;
+  bool m_methodHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_restApiIdHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

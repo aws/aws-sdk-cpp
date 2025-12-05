@@ -93,12 +93,12 @@ class UpdatePackageVersionsStatusResult {
   ///@}
  private:
   Aws::Map<Aws::String, SuccessfulPackageVersionInfo> m_successfulVersions;
-  bool m_successfulVersionsHasBeenSet = false;
 
   Aws::Map<Aws::String, PackageVersionError> m_failedVersions;
-  bool m_failedVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulVersionsHasBeenSet = false;
+  bool m_failedVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

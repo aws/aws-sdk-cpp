@@ -304,42 +304,42 @@ class Catalog {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   TargetRedshiftCatalog m_targetRedshiftCatalog;
-  bool m_targetRedshiftCatalogHasBeenSet = false;
 
   FederatedCatalog m_federatedCatalog;
-  bool m_federatedCatalogHasBeenSet = false;
 
   CatalogPropertiesOutput m_catalogProperties;
-  bool m_catalogPropertiesHasBeenSet = false;
 
   Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
-  bool m_createTableDefaultPermissionsHasBeenSet = false;
 
   Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
-  bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
 
   AllowFullTableExternalDataAccessEnum m_allowFullTableExternalDataAccess{AllowFullTableExternalDataAccessEnum::NOT_SET};
+  bool m_catalogIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_targetRedshiftCatalogHasBeenSet = false;
+  bool m_federatedCatalogHasBeenSet = false;
+  bool m_catalogPropertiesHasBeenSet = false;
+  bool m_createTableDefaultPermissionsHasBeenSet = false;
+  bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
   bool m_allowFullTableExternalDataAccessHasBeenSet = false;
 };
 

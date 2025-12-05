@@ -67,9 +67,9 @@ class BlockerDeclaration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   BlockerType m_type{BlockerType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

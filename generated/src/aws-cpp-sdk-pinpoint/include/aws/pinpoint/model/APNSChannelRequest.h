@@ -181,27 +181,27 @@ class APNSChannelRequest {
   ///@}
  private:
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   Aws::String m_defaultAuthenticationMethod;
-  bool m_defaultAuthenticationMethodHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_privateKey;
-  bool m_privateKeyHasBeenSet = false;
 
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_tokenKey;
-  bool m_tokenKeyHasBeenSet = false;
 
   Aws::String m_tokenKeyId;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
+  bool m_defaultAuthenticationMethodHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_privateKeyHasBeenSet = false;
+  bool m_teamIdHasBeenSet = false;
+  bool m_tokenKeyHasBeenSet = false;
   bool m_tokenKeyIdHasBeenSet = false;
 };
 

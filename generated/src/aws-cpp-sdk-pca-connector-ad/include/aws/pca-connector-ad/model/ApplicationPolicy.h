@@ -68,9 +68,9 @@ class ApplicationPolicy {
   ///@}
  private:
   Aws::String m_policyObjectIdentifier;
-  bool m_policyObjectIdentifierHasBeenSet = false;
 
   ApplicationPolicyType m_policyType{ApplicationPolicyType::NOT_SET};
+  bool m_policyObjectIdentifierHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

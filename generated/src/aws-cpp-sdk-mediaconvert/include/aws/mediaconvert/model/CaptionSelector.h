@@ -101,12 +101,12 @@ class CaptionSelector {
   ///@}
  private:
   Aws::String m_customLanguageCode;
-  bool m_customLanguageCodeHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   CaptionSourceSettings m_sourceSettings;
+  bool m_customLanguageCodeHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_sourceSettingsHasBeenSet = false;
 };
 

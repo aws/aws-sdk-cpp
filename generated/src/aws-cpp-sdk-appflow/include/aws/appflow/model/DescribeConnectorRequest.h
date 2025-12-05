@@ -67,9 +67,9 @@ class DescribeConnectorRequest : public AppflowRequest {
   ///@}
  private:
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorLabel;
+  bool m_connectorTypeHasBeenSet = false;
   bool m_connectorLabelHasBeenSet = false;
 };
 

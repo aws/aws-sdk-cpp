@@ -67,9 +67,9 @@ class TerminateInstancesResponse {
   ///@}
  private:
   Aws::Vector<InstanceStateChange> m_terminatingInstances;
-  bool m_terminatingInstancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_terminatingInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

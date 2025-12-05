@@ -101,15 +101,15 @@ class ListVPCConnectionsResult {
   ///@}
  private:
   Aws::Vector<VPCConnectionSummary> m_vPCConnectionSummaries;
-  bool m_vPCConnectionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_vPCConnectionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class LakeFormationTagPolicyDetails {
   ///@}
  private:
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_table;
+  bool m_databaseHasBeenSet = false;
   bool m_tableHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class GetDefaultViewResult {
   ///@}
  private:
   Aws::String m_viewArn;
-  bool m_viewArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_viewArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

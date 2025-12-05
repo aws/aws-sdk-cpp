@@ -83,12 +83,12 @@ class DeleteRoomMembershipRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_roomId;
-  bool m_roomIdHasBeenSet = false;
 
   Aws::String m_memberId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_roomIdHasBeenSet = false;
   bool m_memberIdHasBeenSet = false;
 };
 

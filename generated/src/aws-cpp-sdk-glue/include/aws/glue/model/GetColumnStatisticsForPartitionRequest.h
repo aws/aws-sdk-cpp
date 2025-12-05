@@ -135,18 +135,18 @@ class GetColumnStatisticsForPartitionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_partitionValues;
-  bool m_partitionValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columnNames;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_partitionValuesHasBeenSet = false;
   bool m_columnNamesHasBeenSet = false;
 };
 

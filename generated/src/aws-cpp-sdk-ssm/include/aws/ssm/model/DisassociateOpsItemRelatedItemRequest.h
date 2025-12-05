@@ -69,9 +69,9 @@ class DisassociateOpsItemRelatedItemRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_opsItemId;
-  bool m_opsItemIdHasBeenSet = false;
 
   Aws::String m_associationId;
+  bool m_opsItemIdHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
 };
 

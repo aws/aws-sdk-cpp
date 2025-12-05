@@ -87,12 +87,12 @@ class SigningProfileRevocationRecord {
   ///@}
  private:
   Aws::Utils::DateTime m_revocationEffectiveFrom{};
-  bool m_revocationEffectiveFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedAt{};
-  bool m_revokedAtHasBeenSet = false;
 
   Aws::String m_revokedBy;
+  bool m_revocationEffectiveFromHasBeenSet = false;
+  bool m_revokedAtHasBeenSet = false;
   bool m_revokedByHasBeenSet = false;
 };
 

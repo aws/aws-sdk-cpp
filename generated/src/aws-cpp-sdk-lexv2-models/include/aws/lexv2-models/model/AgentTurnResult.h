@@ -122,18 +122,18 @@ class AgentTurnResult {
   ///@}
  private:
   Aws::String m_expectedAgentPrompt;
-  bool m_expectedAgentPromptHasBeenSet = false;
 
   Aws::String m_actualAgentPrompt;
-  bool m_actualAgentPromptHasBeenSet = false;
 
   ExecutionErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_actualElicitedSlot;
-  bool m_actualElicitedSlotHasBeenSet = false;
 
   Aws::String m_actualIntent;
+  bool m_expectedAgentPromptHasBeenSet = false;
+  bool m_actualAgentPromptHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_actualElicitedSlotHasBeenSet = false;
   bool m_actualIntentHasBeenSet = false;
 };
 

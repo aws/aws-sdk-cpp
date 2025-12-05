@@ -121,18 +121,18 @@ class HostProperties {
   ///@}
  private:
   int m_cores{0};
-  bool m_coresHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   int m_sockets{0};
-  bool m_socketsHasBeenSet = false;
 
   int m_totalVCpus{0};
+  bool m_coresHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_socketsHasBeenSet = false;
   bool m_totalVCpusHasBeenSet = false;
 };
 

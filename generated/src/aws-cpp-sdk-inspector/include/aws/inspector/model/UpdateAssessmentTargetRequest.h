@@ -86,12 +86,12 @@ class UpdateAssessmentTargetRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentTargetArn;
-  bool m_assessmentTargetArnHasBeenSet = false;
 
   Aws::String m_assessmentTargetName;
-  bool m_assessmentTargetNameHasBeenSet = false;
 
   Aws::String m_resourceGroupArn;
+  bool m_assessmentTargetArnHasBeenSet = false;
+  bool m_assessmentTargetNameHasBeenSet = false;
   bool m_resourceGroupArnHasBeenSet = false;
 };
 

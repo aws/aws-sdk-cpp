@@ -71,9 +71,9 @@ class DeletePromptRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_promptIdentifier;
-  bool m_promptIdentifierHasBeenSet = false;
 
   Aws::String m_promptVersion;
+  bool m_promptIdentifierHasBeenSet = false;
   bool m_promptVersionHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class DeleteStepDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sourceFileLocation;
+  bool m_nameHasBeenSet = false;
   bool m_sourceFileLocationHasBeenSet = false;
 };
 

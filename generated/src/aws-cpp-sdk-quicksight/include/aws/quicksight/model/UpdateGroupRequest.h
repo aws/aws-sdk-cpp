@@ -103,15 +103,15 @@ class UpdateGroupRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_groupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

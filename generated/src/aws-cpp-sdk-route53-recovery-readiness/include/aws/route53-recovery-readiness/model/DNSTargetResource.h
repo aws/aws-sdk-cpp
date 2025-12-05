@@ -127,18 +127,18 @@ class DNSTargetResource {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_hostedZoneArn;
-  bool m_hostedZoneArnHasBeenSet = false;
 
   Aws::String m_recordSetId;
-  bool m_recordSetIdHasBeenSet = false;
 
   Aws::String m_recordType;
-  bool m_recordTypeHasBeenSet = false;
 
   TargetResource m_targetResource;
+  bool m_domainNameHasBeenSet = false;
+  bool m_hostedZoneArnHasBeenSet = false;
+  bool m_recordSetIdHasBeenSet = false;
+  bool m_recordTypeHasBeenSet = false;
   bool m_targetResourceHasBeenSet = false;
 };
 

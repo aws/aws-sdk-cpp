@@ -119,18 +119,18 @@ class EstimateByTime {
   ///@}
  private:
   double m_usageCost{0.0};
-  bool m_usageCostHasBeenSet = false;
 
   PricingUnit m_pricingUnit{PricingUnit::NOT_SET};
-  bool m_pricingUnitHasBeenSet = false;
 
   double m_unit{0.0};
-  bool m_unitHasBeenSet = false;
 
   Currency m_currency{Currency::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   TimePeriod m_timePeriod;
+  bool m_usageCostHasBeenSet = false;
+  bool m_pricingUnitHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
   bool m_timePeriodHasBeenSet = false;
 };
 

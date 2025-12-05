@@ -64,9 +64,9 @@ class ListEncoderConfigurationsRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

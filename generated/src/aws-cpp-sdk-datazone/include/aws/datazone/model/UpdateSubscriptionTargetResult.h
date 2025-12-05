@@ -329,51 +329,51 @@ class UpdateSubscriptionTargetResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_applicableAssetTypes;
-  bool m_applicableAssetTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedPrincipals;
-  bool m_authorizedPrincipalsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_manageAccessRole;
-  bool m_manageAccessRoleHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::Vector<SubscriptionTargetForm> m_subscriptionTargetConfig;
-  bool m_subscriptionTargetConfigHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicableAssetTypesHasBeenSet = false;
+  bool m_authorizedPrincipalsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_manageAccessRoleHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_subscriptionTargetConfigHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

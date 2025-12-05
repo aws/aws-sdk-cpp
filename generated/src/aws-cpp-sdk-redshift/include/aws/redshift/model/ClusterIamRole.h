@@ -79,9 +79,9 @@ class ClusterIamRole {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_applyStatus;
+  bool m_iamRoleArnHasBeenSet = false;
   bool m_applyStatusHasBeenSet = false;
 };
 

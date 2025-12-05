@@ -85,12 +85,12 @@ class ListPortalsResult {
   ///@}
  private:
   Aws::Vector<PortalSummary> m_portals;
-  bool m_portalsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

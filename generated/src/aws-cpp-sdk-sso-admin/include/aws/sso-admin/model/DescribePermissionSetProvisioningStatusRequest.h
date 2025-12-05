@@ -72,9 +72,9 @@ class DescribePermissionSetProvisioningStatusRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_provisionPermissionSetRequestId;
+  bool m_instanceArnHasBeenSet = false;
   bool m_provisionPermissionSetRequestIdHasBeenSet = false;
 };
 

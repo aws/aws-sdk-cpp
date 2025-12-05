@@ -176,24 +176,24 @@ class InventoryConfiguration {
   ///@}
  private:
   InventoryDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   InventoryFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   InventoryIncludedObjectVersions m_includedObjectVersions{InventoryIncludedObjectVersions::NOT_SET};
-  bool m_includedObjectVersionsHasBeenSet = false;
 
   Aws::Vector<InventoryOptionalField> m_optionalFields;
-  bool m_optionalFieldsHasBeenSet = false;
 
   InventorySchedule m_schedule;
+  bool m_destinationHasBeenSet = false;
+  bool m_isEnabledHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_includedObjectVersionsHasBeenSet = false;
+  bool m_optionalFieldsHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

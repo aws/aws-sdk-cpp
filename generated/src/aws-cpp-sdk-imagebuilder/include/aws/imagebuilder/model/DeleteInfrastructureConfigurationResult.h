@@ -63,9 +63,9 @@ class DeleteInfrastructureConfigurationResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_infrastructureConfigurationArn;
+  bool m_requestIdHasBeenSet = false;
   bool m_infrastructureConfigurationArnHasBeenSet = false;
 };
 

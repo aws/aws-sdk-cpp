@@ -181,27 +181,27 @@ class ConsolidatedReportMetric {
   ///@}
  private:
   MetricType m_metricType{MetricType::NOT_SET};
-  bool m_metricTypeHasBeenSet = false;
 
   Aws::Map<Risk, int> m_riskCounts;
-  bool m_riskCountsHasBeenSet = false;
 
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_workloadArn;
-  bool m_workloadArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<LensMetric> m_lenses;
-  bool m_lensesHasBeenSet = false;
 
   int m_lensesAppliedCount{0};
+  bool m_metricTypeHasBeenSet = false;
+  bool m_riskCountsHasBeenSet = false;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
+  bool m_workloadArnHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_lensesHasBeenSet = false;
   bool m_lensesAppliedCountHasBeenSet = false;
 };
 

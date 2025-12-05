@@ -96,15 +96,15 @@ class MilestoneSummary {
   ///@}
  private:
   int m_milestoneNumber{0};
-  bool m_milestoneNumberHasBeenSet = false;
 
   Aws::String m_milestoneName;
-  bool m_milestoneNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_recordedAt{};
-  bool m_recordedAtHasBeenSet = false;
 
   WorkloadSummary m_workloadSummary;
+  bool m_milestoneNumberHasBeenSet = false;
+  bool m_milestoneNameHasBeenSet = false;
+  bool m_recordedAtHasBeenSet = false;
   bool m_workloadSummaryHasBeenSet = false;
 };
 

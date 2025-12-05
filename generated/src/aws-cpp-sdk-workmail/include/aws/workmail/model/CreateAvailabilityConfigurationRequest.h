@@ -130,18 +130,18 @@ class CreateAvailabilityConfigurationRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   EwsAvailabilityProvider m_ewsProvider;
-  bool m_ewsProviderHasBeenSet = false;
 
   LambdaAvailabilityProvider m_lambdaProvider;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_ewsProviderHasBeenSet = false;
   bool m_lambdaProviderHasBeenSet = false;
 };
 

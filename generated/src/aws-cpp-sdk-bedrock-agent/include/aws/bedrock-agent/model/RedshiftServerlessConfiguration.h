@@ -71,9 +71,9 @@ class RedshiftServerlessConfiguration {
   ///@}
  private:
   Aws::String m_workgroupArn;
-  bool m_workgroupArnHasBeenSet = false;
 
   RedshiftServerlessAuthConfiguration m_authConfiguration;
+  bool m_workgroupArnHasBeenSet = false;
   bool m_authConfigurationHasBeenSet = false;
 };
 

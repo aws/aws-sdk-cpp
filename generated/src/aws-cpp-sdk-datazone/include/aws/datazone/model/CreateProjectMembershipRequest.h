@@ -102,15 +102,15 @@ class CreateProjectMembershipRequest : public DataZoneRequest {
   ///@}
  private:
   UserDesignation m_designation{UserDesignation::NOT_SET};
-  bool m_designationHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Member m_member;
-  bool m_memberHasBeenSet = false;
 
   Aws::String m_projectIdentifier;
+  bool m_designationHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
 };
 

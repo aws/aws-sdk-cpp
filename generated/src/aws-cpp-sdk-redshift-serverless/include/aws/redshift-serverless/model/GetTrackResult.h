@@ -60,9 +60,9 @@ class GetTrackResult {
   ///@}
  private:
   ServerlessTrack m_track;
-  bool m_trackHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

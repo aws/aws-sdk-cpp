@@ -60,9 +60,9 @@ class CreateAccountAssignmentResult {
   ///@}
  private:
   AccountAssignmentOperationStatus m_accountAssignmentCreationStatus;
-  bool m_accountAssignmentCreationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountAssignmentCreationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

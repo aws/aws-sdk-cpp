@@ -100,15 +100,15 @@ class ListAppliedSchemaArnsRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_directoryArnHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

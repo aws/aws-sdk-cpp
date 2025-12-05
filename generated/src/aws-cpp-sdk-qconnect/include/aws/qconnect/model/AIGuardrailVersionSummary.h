@@ -66,9 +66,9 @@ class AIGuardrailVersionSummary {
   ///@}
  private:
   AIGuardrailSummary m_aiGuardrailSummary;
-  bool m_aiGuardrailSummaryHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_aiGuardrailSummaryHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

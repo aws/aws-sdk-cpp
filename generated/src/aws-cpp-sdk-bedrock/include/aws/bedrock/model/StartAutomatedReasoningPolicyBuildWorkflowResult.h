@@ -78,12 +78,12 @@ class StartAutomatedReasoningPolicyBuildWorkflowResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

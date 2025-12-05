@@ -118,15 +118,15 @@ class VideoSelector {
   ///@}
  private:
   VideoSelectorColorSpace m_colorSpace{VideoSelectorColorSpace::NOT_SET};
-  bool m_colorSpaceHasBeenSet = false;
 
   VideoSelectorColorSpaceSettings m_colorSpaceSettings;
-  bool m_colorSpaceSettingsHasBeenSet = false;
 
   VideoSelectorColorSpaceUsage m_colorSpaceUsage{VideoSelectorColorSpaceUsage::NOT_SET};
-  bool m_colorSpaceUsageHasBeenSet = false;
 
   VideoSelectorSettings m_selectorSettings;
+  bool m_colorSpaceHasBeenSet = false;
+  bool m_colorSpaceSettingsHasBeenSet = false;
+  bool m_colorSpaceUsageHasBeenSet = false;
   bool m_selectorSettingsHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class ModuleConfiguration {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   ModuleParameters m_moduleParameters;
+  bool m_versionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
   bool m_moduleParametersHasBeenSet = false;
 };
 

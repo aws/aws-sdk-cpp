@@ -67,9 +67,9 @@ class ModifyCacheParameterGroupResult {
   ///@}
  private:
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

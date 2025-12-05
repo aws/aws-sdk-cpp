@@ -89,12 +89,12 @@ class DescribeMetadataModelRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_selectionRules;
-  bool m_selectionRulesHasBeenSet = false;
 
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   OriginTypeValue m_origin{OriginTypeValue::NOT_SET};
+  bool m_selectionRulesHasBeenSet = false;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
   bool m_originHasBeenSet = false;
 };
 

@@ -139,18 +139,18 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::Vector<WiFiAccessPoint> m_wiFiAccessPoints;
-  bool m_wiFiAccessPointsHasBeenSet = false;
 
   CellTowers m_cellTowers;
-  bool m_cellTowersHasBeenSet = false;
 
   Ip m_ip;
-  bool m_ipHasBeenSet = false;
 
   Gnss m_gnss;
-  bool m_gnssHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_wiFiAccessPointsHasBeenSet = false;
+  bool m_cellTowersHasBeenSet = false;
+  bool m_ipHasBeenSet = false;
+  bool m_gnssHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

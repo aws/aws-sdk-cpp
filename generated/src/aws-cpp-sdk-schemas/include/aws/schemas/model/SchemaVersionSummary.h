@@ -98,15 +98,15 @@ class SchemaVersionSummary {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_schemaArnHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

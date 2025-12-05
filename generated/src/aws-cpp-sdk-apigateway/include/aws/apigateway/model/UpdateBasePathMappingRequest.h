@@ -122,15 +122,15 @@ class UpdateBasePathMappingRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_domainNameId;
-  bool m_domainNameIdHasBeenSet = false;
 
   Aws::String m_basePath;
-  bool m_basePathHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainNameIdHasBeenSet = false;
+  bool m_basePathHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

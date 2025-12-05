@@ -87,12 +87,12 @@ class InvokeWithResponseStreamCompleteEvent {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_logResult;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_logResultHasBeenSet = false;
 };
 

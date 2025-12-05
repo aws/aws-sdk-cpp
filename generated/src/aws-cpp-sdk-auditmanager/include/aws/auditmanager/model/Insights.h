@@ -177,24 +177,24 @@ class Insights {
   ///@}
  private:
   int m_activeAssessmentsCount{0};
-  bool m_activeAssessmentsCountHasBeenSet = false;
 
   int m_noncompliantEvidenceCount{0};
-  bool m_noncompliantEvidenceCountHasBeenSet = false;
 
   int m_compliantEvidenceCount{0};
-  bool m_compliantEvidenceCountHasBeenSet = false;
 
   int m_inconclusiveEvidenceCount{0};
-  bool m_inconclusiveEvidenceCountHasBeenSet = false;
 
   int m_assessmentControlsCountByNoncompliantEvidence{0};
-  bool m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet = false;
 
   int m_totalAssessmentControlsCount{0};
-  bool m_totalAssessmentControlsCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
+  bool m_activeAssessmentsCountHasBeenSet = false;
+  bool m_noncompliantEvidenceCountHasBeenSet = false;
+  bool m_compliantEvidenceCountHasBeenSet = false;
+  bool m_inconclusiveEvidenceCountHasBeenSet = false;
+  bool m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet = false;
+  bool m_totalAssessmentControlsCountHasBeenSet = false;
   bool m_lastUpdatedHasBeenSet = false;
 };
 

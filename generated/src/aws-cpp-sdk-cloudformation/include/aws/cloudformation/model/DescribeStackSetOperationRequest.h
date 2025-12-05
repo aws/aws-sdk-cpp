@@ -97,12 +97,12 @@ class DescribeStackSetOperationRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   CallAs m_callAs{CallAs::NOT_SET};
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
   bool m_callAsHasBeenSet = false;
 };
 

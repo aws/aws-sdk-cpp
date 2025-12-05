@@ -119,15 +119,15 @@ class DescribeSpotFleetRequestsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_spotFleetRequestIds;
-  bool m_spotFleetRequestIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_spotFleetRequestIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

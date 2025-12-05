@@ -83,12 +83,12 @@ class UpdateVoiceProfileDomainRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceProfileDomainId;
-  bool m_voiceProfileDomainIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_voiceProfileDomainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

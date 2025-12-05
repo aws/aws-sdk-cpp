@@ -81,12 +81,12 @@ class CreateResourceShareResult {
   ///@}
  private:
   ResourceShare m_resourceShare;
-  bool m_resourceShareHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceShareHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class BatchPutContactResult {
   ///@}
  private:
   Aws::Vector<SuccessfulRequest> m_successfulRequestList;
-  bool m_successfulRequestListHasBeenSet = false;
 
   Aws::Vector<FailedRequest> m_failedRequestList;
-  bool m_failedRequestListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulRequestListHasBeenSet = false;
+  bool m_failedRequestListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

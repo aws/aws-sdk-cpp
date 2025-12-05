@@ -69,9 +69,9 @@ class TerminateRecommendationDetail {
   ///@}
  private:
   Aws::String m_estimatedMonthlySavings;
-  bool m_estimatedMonthlySavingsHasBeenSet = false;
 
   Aws::String m_currencyCode;
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;
 };
 

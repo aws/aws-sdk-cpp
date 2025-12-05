@@ -66,9 +66,9 @@ class CatalogSchemaChangePolicy {
   ///@}
  private:
   bool m_enableUpdateCatalog{false};
-  bool m_enableUpdateCatalogHasBeenSet = false;
 
   UpdateCatalogBehavior m_updateBehavior{UpdateCatalogBehavior::NOT_SET};
+  bool m_enableUpdateCatalogHasBeenSet = false;
   bool m_updateBehaviorHasBeenSet = false;
 };
 

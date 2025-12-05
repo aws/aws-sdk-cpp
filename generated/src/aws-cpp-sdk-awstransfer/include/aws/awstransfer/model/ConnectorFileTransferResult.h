@@ -106,15 +106,15 @@ class ConnectorFileTransferResult {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   TransferTableStatus m_statusCode{TransferTableStatus::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_filePathHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

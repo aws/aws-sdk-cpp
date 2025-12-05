@@ -69,9 +69,9 @@ class CloudWatchEncryption {
   ///@}
  private:
   CloudWatchEncryptionMode m_cloudWatchEncryptionMode{CloudWatchEncryptionMode::NOT_SET};
-  bool m_cloudWatchEncryptionModeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_cloudWatchEncryptionModeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

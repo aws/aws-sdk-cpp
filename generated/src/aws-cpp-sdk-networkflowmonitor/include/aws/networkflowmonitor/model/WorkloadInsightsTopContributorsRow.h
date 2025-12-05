@@ -196,30 +196,30 @@ class WorkloadInsightsTopContributorsRow {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_localSubnetId;
-  bool m_localSubnetIdHasBeenSet = false;
 
   Aws::String m_localAz;
-  bool m_localAzHasBeenSet = false;
 
   Aws::String m_localVpcId;
-  bool m_localVpcIdHasBeenSet = false;
 
   Aws::String m_localRegion;
-  bool m_localRegionHasBeenSet = false;
 
   Aws::String m_remoteIdentifier;
-  bool m_remoteIdentifierHasBeenSet = false;
 
   long long m_value{0};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_localSubnetArn;
-  bool m_localSubnetArnHasBeenSet = false;
 
   Aws::String m_localVpcArn;
+  bool m_accountIdHasBeenSet = false;
+  bool m_localSubnetIdHasBeenSet = false;
+  bool m_localAzHasBeenSet = false;
+  bool m_localVpcIdHasBeenSet = false;
+  bool m_localRegionHasBeenSet = false;
+  bool m_remoteIdentifierHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_localSubnetArnHasBeenSet = false;
   bool m_localVpcArnHasBeenSet = false;
 };
 

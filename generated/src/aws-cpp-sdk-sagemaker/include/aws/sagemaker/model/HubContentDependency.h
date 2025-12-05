@@ -69,9 +69,9 @@ class HubContentDependency {
   ///@}
  private:
   Aws::String m_dependencyOriginPath;
-  bool m_dependencyOriginPathHasBeenSet = false;
 
   Aws::String m_dependencyCopyPath;
+  bool m_dependencyOriginPathHasBeenSet = false;
   bool m_dependencyCopyPathHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class DeleteSecretRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   long long m_recoveryWindowInDays{0};
-  bool m_recoveryWindowInDaysHasBeenSet = false;
 
   bool m_forceDeleteWithoutRecovery{false};
+  bool m_secretIdHasBeenSet = false;
+  bool m_recoveryWindowInDaysHasBeenSet = false;
   bool m_forceDeleteWithoutRecoveryHasBeenSet = false;
 };
 

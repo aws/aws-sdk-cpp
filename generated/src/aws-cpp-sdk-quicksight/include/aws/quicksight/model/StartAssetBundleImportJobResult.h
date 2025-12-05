@@ -92,15 +92,15 @@ class StartAssetBundleImportJobResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_assetBundleImportJobId;
-  bool m_assetBundleImportJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_arnHasBeenSet = false;
+  bool m_assetBundleImportJobIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

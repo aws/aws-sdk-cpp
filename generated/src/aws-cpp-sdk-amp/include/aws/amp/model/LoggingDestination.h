@@ -70,9 +70,9 @@ class LoggingDestination {
   ///@}
  private:
   CloudWatchLogDestination m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   LoggingFilter m_filters;
+  bool m_cloudWatchLogsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

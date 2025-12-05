@@ -90,12 +90,12 @@ class ListedConnector {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_arnHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

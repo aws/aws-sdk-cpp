@@ -89,12 +89,12 @@ class ListGeoMatchSetsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<GeoMatchSetSummary> m_geoMatchSets;
-  bool m_geoMatchSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_geoMatchSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

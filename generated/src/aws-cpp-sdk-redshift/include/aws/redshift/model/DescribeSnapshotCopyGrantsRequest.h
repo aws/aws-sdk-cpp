@@ -160,18 +160,18 @@ class DescribeSnapshotCopyGrantsRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_snapshotCopyGrantName;
-  bool m_snapshotCopyGrantNameHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagValues;
+  bool m_snapshotCopyGrantNameHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_tagKeysHasBeenSet = false;
   bool m_tagValuesHasBeenSet = false;
 };
 

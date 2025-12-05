@@ -76,9 +76,9 @@ class WaterfallChartSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_categorySort;
-  bool m_categorySortHasBeenSet = false;
 
   ItemsLimitConfiguration m_breakdownItemsLimit;
+  bool m_categorySortHasBeenSet = false;
   bool m_breakdownItemsLimitHasBeenSet = false;
 };
 

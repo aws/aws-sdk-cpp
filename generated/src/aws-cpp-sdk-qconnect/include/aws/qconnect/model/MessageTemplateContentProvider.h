@@ -108,15 +108,15 @@ class MessageTemplateContentProvider {
   ///@}
  private:
   EmailMessageTemplateContent m_email;
-  bool m_emailHasBeenSet = false;
 
   SMSMessageTemplateContent m_sms;
-  bool m_smsHasBeenSet = false;
 
   WhatsAppMessageTemplateContent m_whatsApp;
-  bool m_whatsAppHasBeenSet = false;
 
   PushMessageTemplateContent m_push;
+  bool m_emailHasBeenSet = false;
+  bool m_smsHasBeenSet = false;
+  bool m_whatsAppHasBeenSet = false;
   bool m_pushHasBeenSet = false;
 };
 

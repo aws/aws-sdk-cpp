@@ -444,63 +444,63 @@ class Environment {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   EnvironmentState m_environmentState{EnvironmentState::NOT_SET};
-  bool m_environmentStateHasBeenSet = false;
 
   Aws::String m_stateDetails;
-  bool m_stateDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_environmentArn;
-  bool m_environmentArnHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_serviceAccessSubnetId;
-  bool m_serviceAccessSubnetIdHasBeenSet = false;
 
   VcfVersion m_vcfVersion{VcfVersion::NOT_SET};
-  bool m_vcfVersionHasBeenSet = false;
 
   bool m_termsAccepted{false};
-  bool m_termsAcceptedHasBeenSet = false;
 
   Aws::Vector<LicenseInfo> m_licenseInfo;
-  bool m_licenseInfoHasBeenSet = false;
 
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   CheckResult m_environmentStatus{CheckResult::NOT_SET};
-  bool m_environmentStatusHasBeenSet = false;
 
   Aws::Vector<Check> m_checks;
-  bool m_checksHasBeenSet = false;
 
   ConnectivityInfo m_connectivityInfo;
-  bool m_connectivityInfoHasBeenSet = false;
 
   VcfHostnames m_vcfHostnames;
-  bool m_vcfHostnamesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ServiceAccessSecurityGroups m_serviceAccessSecurityGroups;
-  bool m_serviceAccessSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<Secret> m_credentials;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentStateHasBeenSet = false;
+  bool m_stateDetailsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_environmentArnHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_serviceAccessSubnetIdHasBeenSet = false;
+  bool m_vcfVersionHasBeenSet = false;
+  bool m_termsAcceptedHasBeenSet = false;
+  bool m_licenseInfoHasBeenSet = false;
+  bool m_siteIdHasBeenSet = false;
+  bool m_environmentStatusHasBeenSet = false;
+  bool m_checksHasBeenSet = false;
+  bool m_connectivityInfoHasBeenSet = false;
+  bool m_vcfHostnamesHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_serviceAccessSecurityGroupsHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
 };
 

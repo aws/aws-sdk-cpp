@@ -141,21 +141,21 @@ class ListReadSetUploadPartsRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   ReadSetPartSource m_partSource{ReadSetPartSource::NOT_SET};
-  bool m_partSourceHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ReadSetUploadPartListFilter m_filter;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_partSourceHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

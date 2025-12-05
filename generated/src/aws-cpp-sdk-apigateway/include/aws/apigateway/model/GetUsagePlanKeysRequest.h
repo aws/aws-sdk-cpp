@@ -111,15 +111,15 @@ class GetUsagePlanKeysRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_usagePlanId;
-  bool m_usagePlanIdHasBeenSet = false;
 
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nameQuery;
+  bool m_usagePlanIdHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nameQueryHasBeenSet = false;
 };
 

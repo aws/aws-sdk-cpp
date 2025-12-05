@@ -92,12 +92,12 @@ class IpRoute {
   ///@}
  private:
   Aws::String m_cidrIp;
-  bool m_cidrIpHasBeenSet = false;
 
   Aws::String m_cidrIpv6;
-  bool m_cidrIpv6HasBeenSet = false;
 
   Aws::String m_description;
+  bool m_cidrIpHasBeenSet = false;
+  bool m_cidrIpv6HasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

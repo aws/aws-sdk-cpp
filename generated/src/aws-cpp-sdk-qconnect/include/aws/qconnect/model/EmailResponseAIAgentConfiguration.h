@@ -117,15 +117,15 @@ class EmailResponseAIAgentConfiguration {
   ///@}
  private:
   Aws::String m_emailResponseAIPromptId;
-  bool m_emailResponseAIPromptIdHasBeenSet = false;
 
   Aws::String m_emailQueryReformulationAIPromptId;
-  bool m_emailQueryReformulationAIPromptIdHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::Vector<AssociationConfiguration> m_associationConfigurations;
+  bool m_emailResponseAIPromptIdHasBeenSet = false;
+  bool m_emailQueryReformulationAIPromptIdHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
   bool m_associationConfigurationsHasBeenSet = false;
 };
 

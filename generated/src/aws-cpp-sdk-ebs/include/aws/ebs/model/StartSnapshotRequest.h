@@ -235,27 +235,27 @@ class StartSnapshotRequest : public EBSRequest {
   ///@}
  private:
   long long m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   Aws::String m_parentSnapshotId;
-  bool m_parentSnapshotIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   int m_timeout{0};
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_parentSnapshotIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
 };
 

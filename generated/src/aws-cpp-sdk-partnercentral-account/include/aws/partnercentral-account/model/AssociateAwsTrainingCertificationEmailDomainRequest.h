@@ -125,18 +125,18 @@ class AssociateAwsTrainingCertificationEmailDomainRequest : public PartnerCentra
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_emailVerificationCode;
+  bool m_catalogHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_emailHasBeenSet = false;
   bool m_emailVerificationCodeHasBeenSet = false;
 };
 

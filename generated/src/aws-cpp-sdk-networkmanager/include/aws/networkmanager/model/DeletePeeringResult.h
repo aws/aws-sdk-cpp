@@ -60,9 +60,9 @@ class DeletePeeringResult {
   ///@}
  private:
   Peering m_peering;
-  bool m_peeringHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_peeringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

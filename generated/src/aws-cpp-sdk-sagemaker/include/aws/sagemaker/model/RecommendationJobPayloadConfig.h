@@ -78,9 +78,9 @@ class RecommendationJobPayloadConfig {
   ///@}
  private:
   Aws::String m_samplePayloadUrl;
-  bool m_samplePayloadUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedContentTypes;
+  bool m_samplePayloadUrlHasBeenSet = false;
   bool m_supportedContentTypesHasBeenSet = false;
 };
 

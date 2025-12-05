@@ -98,15 +98,15 @@ class GetExecutionResult {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   ExecutionStatus m_executionStatus;
-  bool m_executionStatusHasBeenSet = false;
 
   Export m_export;
-  bool m_exportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionIdHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_exportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

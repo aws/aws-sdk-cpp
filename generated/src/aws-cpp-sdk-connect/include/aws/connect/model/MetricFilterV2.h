@@ -121,12 +121,12 @@ class MetricFilterV2 {
   ///@}
  private:
   Aws::String m_metricFilterKey;
-  bool m_metricFilterKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricFilterValues;
-  bool m_metricFilterValuesHasBeenSet = false;
 
   bool m_negate{false};
+  bool m_metricFilterKeyHasBeenSet = false;
+  bool m_metricFilterValuesHasBeenSet = false;
   bool m_negateHasBeenSet = false;
 };
 

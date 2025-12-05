@@ -289,36 +289,36 @@ class AssessmentSummary {
   ///@}
  private:
   S3Object m_antipatternReportS3Object;
-  bool m_antipatternReportS3ObjectHasBeenSet = false;
 
   AntipatternReportStatus m_antipatternReportStatus{AntipatternReportStatus::NOT_SET};
-  bool m_antipatternReportStatusHasBeenSet = false;
 
   Aws::String m_antipatternReportStatusMessage;
-  bool m_antipatternReportStatusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAnalyzedTimestamp{};
-  bool m_lastAnalyzedTimestampHasBeenSet = false;
 
   Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
-  bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
   Aws::Vector<ApplicationComponentStatusSummary> m_listApplicationComponentStatusSummary;
-  bool m_listApplicationComponentStatusSummaryHasBeenSet = false;
 
   Aws::Vector<StrategySummary> m_listApplicationComponentStrategySummary;
-  bool m_listApplicationComponentStrategySummaryHasBeenSet = false;
 
   Aws::Vector<ApplicationComponentSummary> m_listApplicationComponentSummary;
-  bool m_listApplicationComponentSummaryHasBeenSet = false;
 
   Aws::Vector<ServerStatusSummary> m_listServerStatusSummary;
-  bool m_listServerStatusSummaryHasBeenSet = false;
 
   Aws::Vector<StrategySummary> m_listServerStrategySummary;
-  bool m_listServerStrategySummaryHasBeenSet = false;
 
   Aws::Vector<ServerSummary> m_listServerSummary;
+  bool m_antipatternReportS3ObjectHasBeenSet = false;
+  bool m_antipatternReportStatusHasBeenSet = false;
+  bool m_antipatternReportStatusMessageHasBeenSet = false;
+  bool m_lastAnalyzedTimestampHasBeenSet = false;
+  bool m_listAntipatternSeveritySummaryHasBeenSet = false;
+  bool m_listApplicationComponentStatusSummaryHasBeenSet = false;
+  bool m_listApplicationComponentStrategySummaryHasBeenSet = false;
+  bool m_listApplicationComponentSummaryHasBeenSet = false;
+  bool m_listServerStatusSummaryHasBeenSet = false;
+  bool m_listServerStrategySummaryHasBeenSet = false;
   bool m_listServerSummaryHasBeenSet = false;
 };
 

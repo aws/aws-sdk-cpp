@@ -117,12 +117,12 @@ class TranslationSettings {
   ///@}
  private:
   Formality m_formality{Formality::NOT_SET};
-  bool m_formalityHasBeenSet = false;
 
   Profanity m_profanity{Profanity::NOT_SET};
-  bool m_profanityHasBeenSet = false;
 
   Brevity m_brevity{Brevity::NOT_SET};
+  bool m_formalityHasBeenSet = false;
+  bool m_profanityHasBeenSet = false;
   bool m_brevityHasBeenSet = false;
 };
 

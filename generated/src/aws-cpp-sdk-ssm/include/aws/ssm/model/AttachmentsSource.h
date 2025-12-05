@@ -110,12 +110,12 @@ class AttachmentsSource {
   ///@}
  private:
   AttachmentsSourceKey m_key{AttachmentsSourceKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

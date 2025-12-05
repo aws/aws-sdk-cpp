@@ -115,15 +115,15 @@ class DetectModerationLabelsRequest : public RekognitionRequest {
   ///@}
  private:
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   double m_minConfidence{0.0};
-  bool m_minConfidenceHasBeenSet = false;
 
   HumanLoopConfig m_humanLoopConfig;
-  bool m_humanLoopConfigHasBeenSet = false;
 
   Aws::String m_projectVersion;
+  bool m_imageHasBeenSet = false;
+  bool m_minConfidenceHasBeenSet = false;
+  bool m_humanLoopConfigHasBeenSet = false;
   bool m_projectVersionHasBeenSet = false;
 };
 

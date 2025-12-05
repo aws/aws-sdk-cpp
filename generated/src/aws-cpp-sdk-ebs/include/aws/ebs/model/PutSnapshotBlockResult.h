@@ -75,12 +75,12 @@ class PutSnapshotBlockResult {
   ///@}
  private:
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_checksumHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

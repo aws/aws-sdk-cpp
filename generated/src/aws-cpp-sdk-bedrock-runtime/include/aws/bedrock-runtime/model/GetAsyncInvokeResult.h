@@ -196,33 +196,33 @@ class GetAsyncInvokeResult {
   ///@}
  private:
   Aws::String m_invocationArn;
-  bool m_invocationArnHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   AsyncInvokeStatus m_status{AsyncInvokeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
-  bool m_submitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   AsyncInvokeOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invocationArnHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_submitTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

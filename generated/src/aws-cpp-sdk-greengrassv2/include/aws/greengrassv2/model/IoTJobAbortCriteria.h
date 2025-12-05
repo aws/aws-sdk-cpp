@@ -106,15 +106,15 @@ class IoTJobAbortCriteria {
   ///@}
  private:
   IoTJobExecutionFailureType m_failureType{IoTJobExecutionFailureType::NOT_SET};
-  bool m_failureTypeHasBeenSet = false;
 
   IoTJobAbortAction m_action{IoTJobAbortAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   double m_thresholdPercentage{0.0};
-  bool m_thresholdPercentageHasBeenSet = false;
 
   int m_minNumberOfExecutedThings{0};
+  bool m_failureTypeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_thresholdPercentageHasBeenSet = false;
   bool m_minNumberOfExecutedThingsHasBeenSet = false;
 };
 

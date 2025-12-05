@@ -68,9 +68,9 @@ class RegisterComputeNodeGroupInstanceRequest : public PCSRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_bootstrapId;
+  bool m_clusterIdentifierHasBeenSet = false;
   bool m_bootstrapIdHasBeenSet = false;
 };
 

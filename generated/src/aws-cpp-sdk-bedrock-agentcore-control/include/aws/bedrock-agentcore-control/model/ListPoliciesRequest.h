@@ -112,15 +112,15 @@ class ListPoliciesRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_policyEngineId;
-  bool m_policyEngineIdHasBeenSet = false;
 
   Aws::String m_targetResourceScope;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_policyEngineIdHasBeenSet = false;
   bool m_targetResourceScopeHasBeenSet = false;
 };
 

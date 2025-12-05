@@ -196,30 +196,30 @@ class GetDeviceFleetReportResult {
   ///@}
  private:
   Aws::String m_deviceFleetArn;
-  bool m_deviceFleetArnHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   EdgeOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportGenerated{};
-  bool m_reportGeneratedHasBeenSet = false;
 
   DeviceStats m_deviceStats;
-  bool m_deviceStatsHasBeenSet = false;
 
   Aws::Vector<AgentVersion> m_agentVersions;
-  bool m_agentVersionsHasBeenSet = false;
 
   Aws::Vector<EdgeModelStat> m_modelStats;
-  bool m_modelStatsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceFleetArnHasBeenSet = false;
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_reportGeneratedHasBeenSet = false;
+  bool m_deviceStatsHasBeenSet = false;
+  bool m_agentVersionsHasBeenSet = false;
+  bool m_modelStatsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class DescribePublishingDestinationRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_destinationId;
+  bool m_detectorIdHasBeenSet = false;
   bool m_destinationIdHasBeenSet = false;
 };
 

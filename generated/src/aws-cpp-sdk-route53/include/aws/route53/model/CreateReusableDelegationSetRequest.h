@@ -71,9 +71,9 @@ class CreateReusableDelegationSetRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
+  bool m_callerReferenceHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;
 };
 

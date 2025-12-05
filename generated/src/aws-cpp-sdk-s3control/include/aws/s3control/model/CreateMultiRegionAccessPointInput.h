@@ -96,12 +96,12 @@ class CreateMultiRegionAccessPointInput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PublicAccessBlockConfiguration m_publicAccessBlock;
-  bool m_publicAccessBlockHasBeenSet = false;
 
   Aws::Vector<Region> m_regions;
+  bool m_nameHasBeenSet = false;
+  bool m_publicAccessBlockHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class BatchPutAssetPropertyValueResult {
   ///@}
  private:
   Aws::Vector<BatchPutAssetPropertyErrorEntry> m_errorEntries;
-  bool m_errorEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

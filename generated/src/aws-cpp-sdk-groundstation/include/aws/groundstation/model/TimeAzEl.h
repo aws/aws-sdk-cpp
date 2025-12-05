@@ -90,12 +90,12 @@ class TimeAzEl {
   ///@}
  private:
   double m_dt{0.0};
-  bool m_dtHasBeenSet = false;
 
   double m_az{0.0};
-  bool m_azHasBeenSet = false;
 
   double m_el{0.0};
+  bool m_dtHasBeenSet = false;
+  bool m_azHasBeenSet = false;
   bool m_elHasBeenSet = false;
 };
 

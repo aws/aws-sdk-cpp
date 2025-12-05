@@ -85,12 +85,12 @@ class ListResponsePlansResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ResponsePlanSummary> m_responsePlanSummaries;
-  bool m_responsePlanSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_responsePlanSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

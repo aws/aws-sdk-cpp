@@ -100,15 +100,15 @@ class CreateIngestionRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_ingestionId;
-  bool m_ingestionIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   IngestionType m_ingestionType{IngestionType::NOT_SET};
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_ingestionIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_ingestionTypeHasBeenSet = false;
 };
 

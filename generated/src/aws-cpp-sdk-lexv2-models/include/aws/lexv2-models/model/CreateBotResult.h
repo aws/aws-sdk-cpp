@@ -288,45 +288,45 @@ class CreateBotResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   DataPrivacy m_dataPrivacy;
-  bool m_dataPrivacyHasBeenSet = false;
 
   int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
   BotStatus m_botStatus{BotStatus::NOT_SET};
-  bool m_botStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_botTags;
-  bool m_botTagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_testBotAliasTags;
-  bool m_testBotAliasTagsHasBeenSet = false;
 
   BotType m_botType{BotType::NOT_SET};
-  bool m_botTypeHasBeenSet = false;
 
   Aws::Vector<BotMember> m_botMembers;
-  bool m_botMembersHasBeenSet = false;
 
   ErrorLogSettings m_errorLogSettings;
-  bool m_errorLogSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataPrivacyHasBeenSet = false;
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+  bool m_botStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_botTagsHasBeenSet = false;
+  bool m_testBotAliasTagsHasBeenSet = false;
+  bool m_botTypeHasBeenSet = false;
+  bool m_botMembersHasBeenSet = false;
+  bool m_errorLogSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

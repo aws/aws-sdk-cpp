@@ -73,9 +73,9 @@ class ToolResultBlockDelta {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Utils::Document m_json;
+  bool m_textHasBeenSet = false;
   bool m_jsonHasBeenSet = false;
 };
 

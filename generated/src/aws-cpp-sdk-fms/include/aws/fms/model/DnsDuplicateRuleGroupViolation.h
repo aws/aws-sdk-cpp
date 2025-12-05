@@ -70,9 +70,9 @@ class DnsDuplicateRuleGroupViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::String m_violationTargetDescription;
+  bool m_violationTargetHasBeenSet = false;
   bool m_violationTargetDescriptionHasBeenSet = false;
 };
 

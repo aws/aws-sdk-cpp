@@ -87,12 +87,12 @@ class DeleteTransitGatewayMeteringPolicyEntryRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayMeteringPolicyId;
-  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
 
   int m_policyRuleNumber{0};
-  bool m_policyRuleNumberHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
+  bool m_policyRuleNumberHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class FleetConfiguration {
   ///@}
  private:
   CustomerManagedFleetConfiguration m_customerManaged;
-  bool m_customerManagedHasBeenSet = false;
 
   ServiceManagedEc2FleetConfiguration m_serviceManagedEc2;
+  bool m_customerManagedHasBeenSet = false;
   bool m_serviceManagedEc2HasBeenSet = false;
 };
 

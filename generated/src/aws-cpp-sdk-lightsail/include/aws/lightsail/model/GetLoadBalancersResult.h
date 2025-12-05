@@ -88,12 +88,12 @@ class GetLoadBalancersResult {
   ///@}
  private:
   Aws::Vector<LoadBalancer> m_loadBalancers;
-  bool m_loadBalancersHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loadBalancersHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

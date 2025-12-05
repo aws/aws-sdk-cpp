@@ -75,9 +75,9 @@ class PutInventoryRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<InventoryItem> m_items;
+  bool m_instanceIdHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class SampleDocumentKeys {
   ///@}
  private:
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_output;
+  bool m_inputHasBeenSet = false;
   bool m_outputHasBeenSet = false;
 };
 

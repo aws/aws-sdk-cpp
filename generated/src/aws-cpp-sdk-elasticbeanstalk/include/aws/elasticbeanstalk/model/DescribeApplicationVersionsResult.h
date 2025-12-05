@@ -94,12 +94,12 @@ class DescribeApplicationVersionsResult {
   ///@}
  private:
   Aws::Vector<ApplicationVersionDescription> m_applicationVersions;
-  bool m_applicationVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_applicationVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

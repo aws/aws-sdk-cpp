@@ -60,9 +60,9 @@ class GetFunctionResult {
   ///@}
  private:
   FunctionConfiguration m_functionConfiguration;
-  bool m_functionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

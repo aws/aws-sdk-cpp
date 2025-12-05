@@ -127,12 +127,12 @@ class ByoipCidr {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   ByoipCidrState m_state{ByoipCidrState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<ByoipCidrEvent> m_events;
+  bool m_cidrHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

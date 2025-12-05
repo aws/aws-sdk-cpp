@@ -84,12 +84,12 @@ class ProvisioningTemplateVersionSummary {
   ///@}
  private:
   int m_versionId{0};
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
+  bool m_versionIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_isDefaultVersionHasBeenSet = false;
 };
 

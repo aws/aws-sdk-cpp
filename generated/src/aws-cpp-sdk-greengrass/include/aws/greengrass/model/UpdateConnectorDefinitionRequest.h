@@ -65,9 +65,9 @@ class UpdateConnectorDefinitionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_connectorDefinitionId;
-  bool m_connectorDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_connectorDefinitionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

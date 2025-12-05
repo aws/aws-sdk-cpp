@@ -91,12 +91,12 @@ class VirtualGatewayListenerTls {
   ///@}
  private:
   VirtualGatewayListenerTlsCertificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   VirtualGatewayListenerTlsMode m_mode{VirtualGatewayListenerTlsMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   VirtualGatewayListenerTlsValidationContext m_validation;
+  bool m_certificateHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

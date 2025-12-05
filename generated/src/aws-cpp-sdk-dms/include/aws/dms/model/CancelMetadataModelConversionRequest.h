@@ -68,9 +68,9 @@ class CancelMetadataModelConversionRequest : public DatabaseMigrationServiceRequ
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_requestIdentifier;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
   bool m_requestIdentifierHasBeenSet = false;
 };
 

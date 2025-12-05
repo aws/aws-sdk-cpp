@@ -256,30 +256,30 @@ class AppMonitorConfiguration {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedPages;
-  bool m_excludedPagesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includedPages;
-  bool m_includedPagesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_favoritePages;
-  bool m_favoritePagesHasBeenSet = false;
 
   double m_sessionSampleRate{0.0};
-  bool m_sessionSampleRateHasBeenSet = false;
 
   Aws::String m_guestRoleArn;
-  bool m_guestRoleArnHasBeenSet = false;
 
   bool m_allowCookies{false};
-  bool m_allowCookiesHasBeenSet = false;
 
   Aws::Vector<Telemetry> m_telemetries;
-  bool m_telemetriesHasBeenSet = false;
 
   bool m_enableXRay{false};
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_excludedPagesHasBeenSet = false;
+  bool m_includedPagesHasBeenSet = false;
+  bool m_favoritePagesHasBeenSet = false;
+  bool m_sessionSampleRateHasBeenSet = false;
+  bool m_guestRoleArnHasBeenSet = false;
+  bool m_allowCookiesHasBeenSet = false;
+  bool m_telemetriesHasBeenSet = false;
   bool m_enableXRayHasBeenSet = false;
 };
 

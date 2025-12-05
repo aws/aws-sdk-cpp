@@ -59,9 +59,9 @@ class UpdateRecommenderResult {
   ///@}
  private:
   Aws::String m_recommenderArn;
-  bool m_recommenderArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommenderArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

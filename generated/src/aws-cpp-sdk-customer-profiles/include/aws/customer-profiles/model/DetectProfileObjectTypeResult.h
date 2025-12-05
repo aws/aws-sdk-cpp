@@ -68,9 +68,9 @@ class DetectProfileObjectTypeResult {
   ///@}
  private:
   Aws::Vector<DetectedProfileObjectType> m_detectedProfileObjectTypes;
-  bool m_detectedProfileObjectTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectedProfileObjectTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

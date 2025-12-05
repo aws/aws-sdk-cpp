@@ -76,12 +76,12 @@ class DeleteKnowledgeBaseResult {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   KnowledgeBaseStatus m_status{KnowledgeBaseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -98,15 +98,15 @@ class GetUpgradeStatusResult {
   ///@}
  private:
   UpgradeStep m_upgradeStep{UpgradeStep::NOT_SET};
-  bool m_upgradeStepHasBeenSet = false;
 
   UpgradeStatus m_stepStatus{UpgradeStatus::NOT_SET};
-  bool m_stepStatusHasBeenSet = false;
 
   Aws::String m_upgradeName;
-  bool m_upgradeNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_upgradeStepHasBeenSet = false;
+  bool m_stepStatusHasBeenSet = false;
+  bool m_upgradeNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

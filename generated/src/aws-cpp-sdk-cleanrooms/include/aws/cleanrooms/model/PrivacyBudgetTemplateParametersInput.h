@@ -71,9 +71,9 @@ class PrivacyBudgetTemplateParametersInput {
   ///@}
  private:
   DifferentialPrivacyTemplateParametersInput m_differentialPrivacy;
-  bool m_differentialPrivacyHasBeenSet = false;
 
   AccessBudgetsPrivacyTemplateParametersInput m_accessBudget;
+  bool m_differentialPrivacyHasBeenSet = false;
   bool m_accessBudgetHasBeenSet = false;
 };
 

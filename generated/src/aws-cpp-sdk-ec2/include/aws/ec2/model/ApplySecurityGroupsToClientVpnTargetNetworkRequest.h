@@ -114,15 +114,15 @@ class ApplySecurityGroupsToClientVpnTargetNetworkRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

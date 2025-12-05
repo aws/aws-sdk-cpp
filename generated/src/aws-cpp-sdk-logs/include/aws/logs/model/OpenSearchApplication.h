@@ -109,15 +109,15 @@ class OpenSearchApplication {
   ///@}
  private:
   Aws::String m_applicationEndpoint;
-  bool m_applicationEndpointHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   OpenSearchResourceStatus m_status;
+  bool m_applicationEndpointHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -179,27 +179,27 @@ class GetNetworkAnalyzerConfigurationResult {
   ///@}
  private:
   TraceContent m_traceContent;
-  bool m_traceContentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessDevices;
-  bool m_wirelessDevicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessGateways;
-  bool m_wirelessGatewaysHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_multicastGroups;
-  bool m_multicastGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_traceContentHasBeenSet = false;
+  bool m_wirelessDevicesHasBeenSet = false;
+  bool m_wirelessGatewaysHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_multicastGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

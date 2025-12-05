@@ -123,18 +123,18 @@ class GetSdkTypeResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_friendlyName;
-  bool m_friendlyNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<SdkConfigurationProperty> m_configurationProperties;
-  bool m_configurationPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_friendlyNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configurationPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

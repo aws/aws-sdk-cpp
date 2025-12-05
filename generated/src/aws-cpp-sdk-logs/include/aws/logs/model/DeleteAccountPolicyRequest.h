@@ -66,9 +66,9 @@ class DeleteAccountPolicyRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
+  bool m_policyNameHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

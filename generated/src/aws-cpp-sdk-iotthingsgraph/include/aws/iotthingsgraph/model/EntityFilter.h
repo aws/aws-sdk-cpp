@@ -81,9 +81,9 @@ class EntityFilter {
   ///@}
  private:
   EntityFilterName m_name{EntityFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
   ///@}
  private:
   int m_max{0};
-  bool m_maxHasBeenSet = false;
 
   int m_min{0};
+  bool m_maxHasBeenSet = false;
   bool m_minHasBeenSet = false;
 };
 

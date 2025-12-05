@@ -85,12 +85,12 @@ class AutoTuneOptionsOutput {
   ///@}
  private:
   AutoTuneState m_state{AutoTuneState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   bool m_useOffPeakWindow{false};
+  bool m_stateHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_useOffPeakWindowHasBeenSet = false;
 };
 

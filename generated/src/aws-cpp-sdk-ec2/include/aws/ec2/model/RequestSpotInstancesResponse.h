@@ -72,9 +72,9 @@ class RequestSpotInstancesResponse {
   ///@}
  private:
   Aws::Vector<SpotInstanceRequest> m_spotInstanceRequests;
-  bool m_spotInstanceRequestsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_spotInstanceRequestsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class UpdateCodeSecurityIntegrationRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   UpdateIntegrationDetails m_details;
+  bool m_integrationArnHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

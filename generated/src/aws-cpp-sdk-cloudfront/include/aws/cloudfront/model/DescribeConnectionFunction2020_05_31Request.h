@@ -69,9 +69,9 @@ class DescribeConnectionFunction2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   FunctionStage m_stage{FunctionStage::NOT_SET};
+  bool m_identifierHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

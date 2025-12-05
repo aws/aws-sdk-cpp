@@ -112,18 +112,18 @@ class GetOutpostInstanceTypesResult {
   ///@}
  private:
   Aws::Vector<InstanceTypeItem> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_outpostIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

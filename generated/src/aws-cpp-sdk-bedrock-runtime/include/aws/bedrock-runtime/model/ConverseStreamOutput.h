@@ -244,36 +244,36 @@ class ConverseStreamOutput {
   ///@}
  private:
   MessageStartEvent m_messageStart;
-  bool m_messageStartHasBeenSet = false;
 
   ContentBlockStartEvent m_contentBlockStart;
-  bool m_contentBlockStartHasBeenSet = false;
 
   ContentBlockDeltaEvent m_contentBlockDelta;
-  bool m_contentBlockDeltaHasBeenSet = false;
 
   ContentBlockStopEvent m_contentBlockStop;
-  bool m_contentBlockStopHasBeenSet = false;
 
   MessageStopEvent m_messageStop;
-  bool m_messageStopHasBeenSet = false;
 
   ConverseStreamMetadataEvent m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   BedrockRuntimeError m_internalServerException;
-  bool m_internalServerExceptionHasBeenSet = false;
 
   ModelStreamErrorException m_modelStreamErrorException;
-  bool m_modelStreamErrorExceptionHasBeenSet = false;
 
   BedrockRuntimeError m_validationException;
-  bool m_validationExceptionHasBeenSet = false;
 
   BedrockRuntimeError m_throttlingException;
-  bool m_throttlingExceptionHasBeenSet = false;
 
   BedrockRuntimeError m_serviceUnavailableException;
+  bool m_messageStartHasBeenSet = false;
+  bool m_contentBlockStartHasBeenSet = false;
+  bool m_contentBlockDeltaHasBeenSet = false;
+  bool m_contentBlockStopHasBeenSet = false;
+  bool m_messageStopHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_internalServerExceptionHasBeenSet = false;
+  bool m_modelStreamErrorExceptionHasBeenSet = false;
+  bool m_validationExceptionHasBeenSet = false;
+  bool m_throttlingExceptionHasBeenSet = false;
   bool m_serviceUnavailableExceptionHasBeenSet = false;
 };
 

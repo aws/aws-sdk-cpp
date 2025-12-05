@@ -171,27 +171,27 @@ class UpdateCollectionDetail {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CollectionStatus m_status{CollectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CollectionType m_type{CollectionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_createdDate{0};
-  bool m_createdDateHasBeenSet = false;
 
   long long m_lastModifiedDate{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class GetRecordResult {
   ///@}
  private:
   Aws::Vector<FeatureValue> m_record;
-  bool m_recordHasBeenSet = false;
 
   Aws::String m_expiresAt;
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

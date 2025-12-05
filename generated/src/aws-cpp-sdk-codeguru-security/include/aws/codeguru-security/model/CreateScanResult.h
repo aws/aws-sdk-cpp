@@ -129,21 +129,21 @@ class CreateScanResult {
   ///@}
  private:
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   ResourceId m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScanState m_scanState{ScanState::NOT_SET};
-  bool m_scanStateHasBeenSet = false;
 
   Aws::String m_scanNameArn;
-  bool m_scanNameArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scanNameHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scanStateHasBeenSet = false;
+  bool m_scanNameArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class ProductCodeListItem {
   ///@}
  private:
   Aws::String m_productCodeId;
-  bool m_productCodeIdHasBeenSet = false;
 
   ProductCodeType m_productCodeType{ProductCodeType::NOT_SET};
+  bool m_productCodeIdHasBeenSet = false;
   bool m_productCodeTypeHasBeenSet = false;
 };
 

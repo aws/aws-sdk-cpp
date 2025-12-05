@@ -177,30 +177,30 @@ class DescribeAppResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   SimulationAppEndpointInfo m_endpointInfo;
-  bool m_endpointInfoHasBeenSet = false;
 
   LaunchOverrides m_launchOverrides;
-  bool m_launchOverridesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_simulation;
-  bool m_simulationHasBeenSet = false;
 
   SimulationAppStatus m_status{SimulationAppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SimulationAppTargetStatus m_targetStatus{SimulationAppTargetStatus::NOT_SET};
-  bool m_targetStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_endpointInfoHasBeenSet = false;
+  bool m_launchOverridesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_simulationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class StartRemoteDeleteRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_deletePath;
+  bool m_connectorIdHasBeenSet = false;
   bool m_deletePathHasBeenSet = false;
 };
 

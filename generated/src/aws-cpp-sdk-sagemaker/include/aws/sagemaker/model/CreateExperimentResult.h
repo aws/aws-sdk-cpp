@@ -59,9 +59,9 @@ class CreateExperimentResult {
   ///@}
  private:
   Aws::String m_experimentArn;
-  bool m_experimentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_experimentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

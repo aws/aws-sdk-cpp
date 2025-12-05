@@ -85,9 +85,9 @@ class DeploymentRecommendation {
   ///@}
  private:
   RecommendationStatus m_recommendationStatus{RecommendationStatus::NOT_SET};
-  bool m_recommendationStatusHasBeenSet = false;
 
   Aws::Vector<RealTimeInferenceRecommendation> m_realTimeInferenceRecommendations;
+  bool m_recommendationStatusHasBeenSet = false;
   bool m_realTimeInferenceRecommendationsHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class ListRefreshSchedulesResult {
   ///@}
  private:
   Aws::Vector<RefreshSchedule> m_refreshSchedules;
-  bool m_refreshSchedulesHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_refreshSchedulesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

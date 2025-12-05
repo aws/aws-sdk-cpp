@@ -129,15 +129,15 @@ class AwsCodeBuildProjectSource {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   int m_gitCloneDepth{0};
-  bool m_gitCloneDepthHasBeenSet = false;
 
   bool m_insecureSsl{false};
+  bool m_typeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_gitCloneDepthHasBeenSet = false;
   bool m_insecureSslHasBeenSet = false;
 };
 

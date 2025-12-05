@@ -222,33 +222,33 @@ class Blueprint {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::String m_parameterSpec;
-  bool m_parameterSpecHasBeenSet = false;
 
   Aws::String m_blueprintLocation;
-  bool m_blueprintLocationHasBeenSet = false;
 
   Aws::String m_blueprintServiceLocation;
-  bool m_blueprintServiceLocationHasBeenSet = false;
 
   BlueprintStatus m_status{BlueprintStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   LastActiveDefinition m_lastActiveDefinition;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_parameterSpecHasBeenSet = false;
+  bool m_blueprintLocationHasBeenSet = false;
+  bool m_blueprintServiceLocationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_lastActiveDefinitionHasBeenSet = false;
 };
 

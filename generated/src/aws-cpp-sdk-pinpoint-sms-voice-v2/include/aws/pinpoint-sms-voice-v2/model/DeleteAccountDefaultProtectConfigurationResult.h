@@ -79,12 +79,12 @@ class DeleteAccountDefaultProtectConfigurationResult {
   ///@}
  private:
   Aws::String m_defaultProtectConfigurationArn;
-  bool m_defaultProtectConfigurationArnHasBeenSet = false;
 
   Aws::String m_defaultProtectConfigurationId;
-  bool m_defaultProtectConfigurationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_defaultProtectConfigurationArnHasBeenSet = false;
+  bool m_defaultProtectConfigurationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

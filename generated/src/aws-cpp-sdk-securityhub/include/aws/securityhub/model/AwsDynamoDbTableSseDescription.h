@@ -108,15 +108,15 @@ class AwsDynamoDbTableSseDescription {
   ///@}
  private:
   Aws::String m_inaccessibleEncryptionDateTime;
-  bool m_inaccessibleEncryptionDateTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_sseType;
-  bool m_sseTypeHasBeenSet = false;
 
   Aws::String m_kmsMasterKeyArn;
+  bool m_inaccessibleEncryptionDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sseTypeHasBeenSet = false;
   bool m_kmsMasterKeyArnHasBeenSet = false;
 };
 

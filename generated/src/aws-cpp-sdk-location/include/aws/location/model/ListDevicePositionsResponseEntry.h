@@ -139,18 +139,18 @@ class ListDevicePositionsResponseEntry {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampleTime{};
-  bool m_sampleTimeHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   PositionalAccuracy m_accuracy;
-  bool m_accuracyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_positionProperties;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_sampleTimeHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_accuracyHasBeenSet = false;
   bool m_positionPropertiesHasBeenSet = false;
 };
 

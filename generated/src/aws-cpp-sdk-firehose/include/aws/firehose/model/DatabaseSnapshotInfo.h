@@ -148,21 +148,21 @@ class DatabaseSnapshotInfo {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTimestamp{};
-  bool m_requestTimestampHasBeenSet = false;
 
   SnapshotRequestedBy m_requestedBy{SnapshotRequestedBy::NOT_SET};
-  bool m_requestedByHasBeenSet = false;
 
   SnapshotStatus m_status{SnapshotStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   FailureDescription m_failureDescription;
+  bool m_idHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_requestTimestampHasBeenSet = false;
+  bool m_requestedByHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureDescriptionHasBeenSet = false;
 };
 

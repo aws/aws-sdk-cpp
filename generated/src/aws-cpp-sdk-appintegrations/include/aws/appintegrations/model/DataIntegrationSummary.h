@@ -86,12 +86,12 @@ class DataIntegrationSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sourceURI;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_sourceURIHasBeenSet = false;
 };
 

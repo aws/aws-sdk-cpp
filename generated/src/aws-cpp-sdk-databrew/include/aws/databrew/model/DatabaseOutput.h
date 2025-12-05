@@ -90,12 +90,12 @@ class DatabaseOutput {
   ///@}
  private:
   Aws::String m_glueConnectionName;
-  bool m_glueConnectionNameHasBeenSet = false;
 
   DatabaseTableOutputOptions m_databaseOptions;
-  bool m_databaseOptionsHasBeenSet = false;
 
   DatabaseOutputMode m_databaseOutputMode{DatabaseOutputMode::NOT_SET};
+  bool m_glueConnectionNameHasBeenSet = false;
+  bool m_databaseOptionsHasBeenSet = false;
   bool m_databaseOutputModeHasBeenSet = false;
 };
 

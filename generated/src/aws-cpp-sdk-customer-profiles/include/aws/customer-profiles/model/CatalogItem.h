@@ -277,42 +277,42 @@ class CatalogItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_additionalInformation;
-  bool m_additionalInformationHasBeenSet = false;
 
   Aws::String m_imageLink;
-  bool m_imageLinkHasBeenSet = false;
 
   Aws::String m_link;
-  bool m_linkHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_price;
-  bool m_priceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_additionalInformationHasBeenSet = false;
+  bool m_imageLinkHasBeenSet = false;
+  bool m_linkHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

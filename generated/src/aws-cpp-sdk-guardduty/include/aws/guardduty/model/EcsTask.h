@@ -116,15 +116,15 @@ class EcsTask {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_taskDefinitionArn;
-  bool m_taskDefinitionArnHasBeenSet = false;
 
   EcsLaunchType m_launchType{EcsLaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerUids;
+  bool m_createdAtHasBeenSet = false;
+  bool m_taskDefinitionArnHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
   bool m_containerUidsHasBeenSet = false;
 };
 

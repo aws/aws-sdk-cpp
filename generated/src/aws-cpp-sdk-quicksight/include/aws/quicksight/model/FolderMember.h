@@ -68,9 +68,9 @@ class FolderMember {
   ///@}
  private:
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   MemberType m_memberType{MemberType::NOT_SET};
+  bool m_memberIdHasBeenSet = false;
   bool m_memberTypeHasBeenSet = false;
 };
 

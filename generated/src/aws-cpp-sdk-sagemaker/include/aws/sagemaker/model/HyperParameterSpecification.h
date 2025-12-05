@@ -159,24 +159,24 @@ class HyperParameterSpecification {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ParameterType m_type{ParameterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ParameterRange m_range;
-  bool m_rangeHasBeenSet = false;
 
   bool m_isTunable{false};
-  bool m_isTunableHasBeenSet = false;
 
   bool m_isRequired{false};
-  bool m_isRequiredHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_isTunableHasBeenSet = false;
+  bool m_isRequiredHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

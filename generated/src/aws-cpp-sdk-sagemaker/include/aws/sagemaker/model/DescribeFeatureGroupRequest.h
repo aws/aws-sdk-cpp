@@ -70,9 +70,9 @@ class DescribeFeatureGroupRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_featureGroupNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

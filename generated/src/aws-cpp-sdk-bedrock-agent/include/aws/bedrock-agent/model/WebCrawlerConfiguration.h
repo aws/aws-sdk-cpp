@@ -171,21 +171,21 @@ class WebCrawlerConfiguration {
   ///@}
  private:
   WebCrawlerLimits m_crawlerLimits;
-  bool m_crawlerLimitsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionFilters;
-  bool m_inclusionFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionFilters;
-  bool m_exclusionFiltersHasBeenSet = false;
 
   WebScopeType m_scope{WebScopeType::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_userAgent;
-  bool m_userAgentHasBeenSet = false;
 
   Aws::String m_userAgentHeader;
+  bool m_crawlerLimitsHasBeenSet = false;
+  bool m_inclusionFiltersHasBeenSet = false;
+  bool m_exclusionFiltersHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_userAgentHasBeenSet = false;
   bool m_userAgentHeaderHasBeenSet = false;
 };
 

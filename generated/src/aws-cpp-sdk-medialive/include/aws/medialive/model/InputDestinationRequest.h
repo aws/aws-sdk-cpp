@@ -118,15 +118,15 @@ of the input is going to be on the customer local network.
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_network;
-  bool m_networkHasBeenSet = false;
 
   Aws::Vector<InputRequestDestinationRoute> m_networkRoutes;
-  bool m_networkRoutesHasBeenSet = false;
 
   Aws::String m_staticIpAddress;
+  bool m_streamNameHasBeenSet = false;
+  bool m_networkHasBeenSet = false;
+  bool m_networkRoutesHasBeenSet = false;
   bool m_staticIpAddressHasBeenSet = false;
 };
 

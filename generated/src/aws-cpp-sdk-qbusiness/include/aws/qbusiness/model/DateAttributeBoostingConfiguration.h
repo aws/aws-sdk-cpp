@@ -76,9 +76,9 @@ class DateAttributeBoostingConfiguration {
   ///@}
  private:
   DocumentAttributeBoostingLevel m_boostingLevel{DocumentAttributeBoostingLevel::NOT_SET};
-  bool m_boostingLevelHasBeenSet = false;
 
   long long m_boostingDurationInSeconds{0};
+  bool m_boostingLevelHasBeenSet = false;
   bool m_boostingDurationInSecondsHasBeenSet = false;
 };
 

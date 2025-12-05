@@ -87,12 +87,12 @@ class RenameKeyEntry {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_renameTo;
-  bool m_renameToHasBeenSet = false;
 
   bool m_overwriteIfExists{false};
+  bool m_keyHasBeenSet = false;
+  bool m_renameToHasBeenSet = false;
   bool m_overwriteIfExistsHasBeenSet = false;
 };
 

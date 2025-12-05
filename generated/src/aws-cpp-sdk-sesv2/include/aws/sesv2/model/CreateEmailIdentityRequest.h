@@ -122,15 +122,15 @@ class CreateEmailIdentityRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DkimSigningAttributes m_dkimSigningAttributes;
-  bool m_dkimSigningAttributesHasBeenSet = false;
 
   Aws::String m_configurationSetName;
+  bool m_emailIdentityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dkimSigningAttributesHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
 };
 

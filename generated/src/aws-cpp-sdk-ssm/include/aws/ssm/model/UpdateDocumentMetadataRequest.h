@@ -87,12 +87,12 @@ class UpdateDocumentMetadataRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   DocumentReviews m_documentReviews;
+  bool m_nameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
   bool m_documentReviewsHasBeenSet = false;
 };
 

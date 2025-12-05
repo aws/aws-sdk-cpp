@@ -93,12 +93,12 @@ class ListVpcEndpointAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VpcEndpointAssociationMetadata> m_vpcEndpointAssociations;
-  bool m_vpcEndpointAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_vpcEndpointAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

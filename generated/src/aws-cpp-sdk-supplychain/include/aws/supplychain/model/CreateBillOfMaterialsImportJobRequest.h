@@ -96,12 +96,12 @@ class CreateBillOfMaterialsImportJobRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_s3uri;
-  bool m_s3uriHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_s3uriHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

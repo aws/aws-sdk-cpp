@@ -140,21 +140,21 @@ class ProjectSummary {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
+  bool m_projectNameHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_projectArnHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_projectStatusHasBeenSet = false;
 };
 

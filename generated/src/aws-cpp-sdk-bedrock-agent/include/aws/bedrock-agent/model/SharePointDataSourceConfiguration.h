@@ -71,9 +71,9 @@ class SharePointDataSourceConfiguration {
   ///@}
  private:
   SharePointSourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   SharePointCrawlerConfiguration m_crawlerConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
   bool m_crawlerConfigurationHasBeenSet = false;
 };
 

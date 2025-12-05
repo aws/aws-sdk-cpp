@@ -199,30 +199,30 @@ class DescribePlaceIndexResult {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   DataSourceConfiguration m_dataSourceConfiguration;
-  bool m_dataSourceConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_dataSourceConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

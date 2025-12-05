@@ -739,102 +739,102 @@ class StartBuildRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::Vector<ProjectSource> m_secondarySourcesOverride;
-  bool m_secondarySourcesOverrideHasBeenSet = false;
 
   Aws::Vector<ProjectSourceVersion> m_secondarySourcesVersionOverride;
-  bool m_secondarySourcesVersionOverrideHasBeenSet = false;
 
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   ProjectArtifacts m_artifactsOverride;
-  bool m_artifactsOverrideHasBeenSet = false;
 
   Aws::Vector<ProjectArtifacts> m_secondaryArtifactsOverride;
-  bool m_secondaryArtifactsOverrideHasBeenSet = false;
 
   Aws::Vector<EnvironmentVariable> m_environmentVariablesOverride;
-  bool m_environmentVariablesOverrideHasBeenSet = false;
 
   SourceType m_sourceTypeOverride{SourceType::NOT_SET};
-  bool m_sourceTypeOverrideHasBeenSet = false;
 
   Aws::String m_sourceLocationOverride;
-  bool m_sourceLocationOverrideHasBeenSet = false;
 
   SourceAuth m_sourceAuthOverride;
-  bool m_sourceAuthOverrideHasBeenSet = false;
 
   int m_gitCloneDepthOverride{0};
-  bool m_gitCloneDepthOverrideHasBeenSet = false;
 
   GitSubmodulesConfig m_gitSubmodulesConfigOverride;
-  bool m_gitSubmodulesConfigOverrideHasBeenSet = false;
 
   Aws::String m_buildspecOverride;
-  bool m_buildspecOverrideHasBeenSet = false;
 
   bool m_insecureSslOverride{false};
-  bool m_insecureSslOverrideHasBeenSet = false;
 
   bool m_reportBuildStatusOverride{false};
-  bool m_reportBuildStatusOverrideHasBeenSet = false;
 
   BuildStatusConfig m_buildStatusConfigOverride;
-  bool m_buildStatusConfigOverrideHasBeenSet = false;
 
   EnvironmentType m_environmentTypeOverride{EnvironmentType::NOT_SET};
-  bool m_environmentTypeOverrideHasBeenSet = false;
 
   Aws::String m_imageOverride;
-  bool m_imageOverrideHasBeenSet = false;
 
   ComputeType m_computeTypeOverride{ComputeType::NOT_SET};
-  bool m_computeTypeOverrideHasBeenSet = false;
 
   Aws::String m_certificateOverride;
-  bool m_certificateOverrideHasBeenSet = false;
 
   ProjectCache m_cacheOverride;
-  bool m_cacheOverrideHasBeenSet = false;
 
   Aws::String m_serviceRoleOverride;
-  bool m_serviceRoleOverrideHasBeenSet = false;
 
   bool m_privilegedModeOverride{false};
-  bool m_privilegedModeOverrideHasBeenSet = false;
 
   int m_timeoutInMinutesOverride{0};
-  bool m_timeoutInMinutesOverrideHasBeenSet = false;
 
   int m_queuedTimeoutInMinutesOverride{0};
-  bool m_queuedTimeoutInMinutesOverrideHasBeenSet = false;
 
   Aws::String m_encryptionKeyOverride;
-  bool m_encryptionKeyOverrideHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   LogsConfig m_logsConfigOverride;
-  bool m_logsConfigOverrideHasBeenSet = false;
 
   RegistryCredential m_registryCredentialOverride;
-  bool m_registryCredentialOverrideHasBeenSet = false;
 
   ImagePullCredentialsType m_imagePullCredentialsTypeOverride{ImagePullCredentialsType::NOT_SET};
-  bool m_imagePullCredentialsTypeOverrideHasBeenSet = false;
 
   bool m_debugSessionEnabled{false};
-  bool m_debugSessionEnabledHasBeenSet = false;
 
   ProjectFleet m_fleetOverride;
-  bool m_fleetOverrideHasBeenSet = false;
 
   int m_autoRetryLimitOverride{0};
+  bool m_projectNameHasBeenSet = false;
+  bool m_secondarySourcesOverrideHasBeenSet = false;
+  bool m_secondarySourcesVersionOverrideHasBeenSet = false;
+  bool m_sourceVersionHasBeenSet = false;
+  bool m_artifactsOverrideHasBeenSet = false;
+  bool m_secondaryArtifactsOverrideHasBeenSet = false;
+  bool m_environmentVariablesOverrideHasBeenSet = false;
+  bool m_sourceTypeOverrideHasBeenSet = false;
+  bool m_sourceLocationOverrideHasBeenSet = false;
+  bool m_sourceAuthOverrideHasBeenSet = false;
+  bool m_gitCloneDepthOverrideHasBeenSet = false;
+  bool m_gitSubmodulesConfigOverrideHasBeenSet = false;
+  bool m_buildspecOverrideHasBeenSet = false;
+  bool m_insecureSslOverrideHasBeenSet = false;
+  bool m_reportBuildStatusOverrideHasBeenSet = false;
+  bool m_buildStatusConfigOverrideHasBeenSet = false;
+  bool m_environmentTypeOverrideHasBeenSet = false;
+  bool m_imageOverrideHasBeenSet = false;
+  bool m_computeTypeOverrideHasBeenSet = false;
+  bool m_certificateOverrideHasBeenSet = false;
+  bool m_cacheOverrideHasBeenSet = false;
+  bool m_serviceRoleOverrideHasBeenSet = false;
+  bool m_privilegedModeOverrideHasBeenSet = false;
+  bool m_timeoutInMinutesOverrideHasBeenSet = false;
+  bool m_queuedTimeoutInMinutesOverrideHasBeenSet = false;
+  bool m_encryptionKeyOverrideHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
+  bool m_logsConfigOverrideHasBeenSet = false;
+  bool m_registryCredentialOverrideHasBeenSet = false;
+  bool m_imagePullCredentialsTypeOverrideHasBeenSet = false;
+  bool m_debugSessionEnabledHasBeenSet = false;
+  bool m_fleetOverrideHasBeenSet = false;
   bool m_autoRetryLimitOverrideHasBeenSet = false;
 };
 

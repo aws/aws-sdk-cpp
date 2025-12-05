@@ -122,18 +122,18 @@ class SimulationAppMetadata {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_simulation;
-  bool m_simulationHasBeenSet = false;
 
   SimulationAppStatus m_status{SimulationAppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SimulationAppTargetStatus m_targetStatus{SimulationAppTargetStatus::NOT_SET};
+  bool m_domainHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_simulationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_targetStatusHasBeenSet = false;
 };
 

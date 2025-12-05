@@ -67,9 +67,9 @@ class DeleteIngestionRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::String m_ingestionIdentifier;
+  bool m_appBundleIdentifierHasBeenSet = false;
   bool m_ingestionIdentifierHasBeenSet = false;
 };
 

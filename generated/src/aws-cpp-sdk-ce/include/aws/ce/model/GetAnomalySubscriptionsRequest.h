@@ -110,15 +110,15 @@ class GetAnomalySubscriptionsRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subscriptionArnList;
-  bool m_subscriptionArnListHasBeenSet = false;
 
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_subscriptionArnListHasBeenSet = false;
+  bool m_monitorArnHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

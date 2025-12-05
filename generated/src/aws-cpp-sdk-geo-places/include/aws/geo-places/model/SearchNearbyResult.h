@@ -105,15 +105,15 @@ class SearchNearbyResult {
   ///@}
  private:
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   Aws::Vector<SearchNearbyResultItem> m_resultItems;
-  bool m_resultItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_resultItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

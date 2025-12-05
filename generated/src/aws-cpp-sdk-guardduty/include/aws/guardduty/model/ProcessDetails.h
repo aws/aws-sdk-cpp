@@ -268,42 +268,42 @@ class ProcessDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_executablePath;
-  bool m_executablePathHasBeenSet = false;
 
   Aws::String m_executableSha256;
-  bool m_executableSha256HasBeenSet = false;
 
   int m_namespacePid{0};
-  bool m_namespacePidHasBeenSet = false;
 
   Aws::String m_pwd;
-  bool m_pwdHasBeenSet = false;
 
   int m_pid{0};
-  bool m_pidHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_uuid;
-  bool m_uuidHasBeenSet = false;
 
   Aws::String m_parentUuid;
-  bool m_parentUuidHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   int m_userId{0};
-  bool m_userIdHasBeenSet = false;
 
   int m_euid{0};
-  bool m_euidHasBeenSet = false;
 
   Aws::Vector<LineageObject> m_lineage;
+  bool m_nameHasBeenSet = false;
+  bool m_executablePathHasBeenSet = false;
+  bool m_executableSha256HasBeenSet = false;
+  bool m_namespacePidHasBeenSet = false;
+  bool m_pwdHasBeenSet = false;
+  bool m_pidHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_uuidHasBeenSet = false;
+  bool m_parentUuidHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_euidHasBeenSet = false;
   bool m_lineageHasBeenSet = false;
 };
 

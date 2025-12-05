@@ -166,24 +166,24 @@ class GetMultiRegionEndpointResult {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::Vector<Route> m_routes;
-  bool m_routesHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_routesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

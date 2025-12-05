@@ -76,9 +76,9 @@ class TestEventPatternRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   Aws::String m_event;
+  bool m_eventPatternHasBeenSet = false;
   bool m_eventHasBeenSet = false;
 };
 

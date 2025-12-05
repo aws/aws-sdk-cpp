@@ -156,21 +156,21 @@ class TransitGatewayMeteringPolicy {
   ///@}
  private:
   Aws::String m_transitGatewayMeteringPolicyId;
-  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_middleboxAttachmentIds;
-  bool m_middleboxAttachmentIdsHasBeenSet = false;
 
   TransitGatewayMeteringPolicyState m_state{TransitGatewayMeteringPolicyState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateEffectiveAt{};
-  bool m_updateEffectiveAtHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_middleboxAttachmentIdsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_updateEffectiveAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

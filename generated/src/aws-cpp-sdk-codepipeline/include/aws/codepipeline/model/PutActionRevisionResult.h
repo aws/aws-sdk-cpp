@@ -81,12 +81,12 @@ class PutActionRevisionResult {
   ///@}
  private:
   bool m_newRevision{false};
-  bool m_newRevisionHasBeenSet = false;
 
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_newRevisionHasBeenSet = false;
+  bool m_pipelineExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListPartnerAccountsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SidewalkAccountInfoWithFingerprint> m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sidewalkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class ExportMetric {
   ///@}
  private:
   Metric m_name{Metric::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   MetricAggregation m_aggregation{MetricAggregation::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_aggregationHasBeenSet = false;
 };
 

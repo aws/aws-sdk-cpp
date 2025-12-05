@@ -219,33 +219,33 @@ class Attribute {
   ///@}
  private:
   EntitySubType m_type{EntitySubType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   double m_relationshipScore{0.0};
-  bool m_relationshipScoreHasBeenSet = false;
 
   RelationshipType m_relationshipType{RelationshipType::NOT_SET};
-  bool m_relationshipTypeHasBeenSet = false;
 
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   EntityType m_category{EntityType::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::Vector<Trait> m_traits;
+  bool m_typeHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_relationshipScoreHasBeenSet = false;
+  bool m_relationshipTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_traitsHasBeenSet = false;
 };
 

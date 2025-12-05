@@ -122,18 +122,18 @@ class ListManagedThingSchemasRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_endpointIdFilter;
-  bool m_endpointIdFilterHasBeenSet = false;
 
   Aws::String m_capabilityIdFilter;
-  bool m_capabilityIdFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_identifierHasBeenSet = false;
+  bool m_endpointIdFilterHasBeenSet = false;
+  bool m_capabilityIdFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

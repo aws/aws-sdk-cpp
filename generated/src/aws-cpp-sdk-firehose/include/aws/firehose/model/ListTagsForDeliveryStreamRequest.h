@@ -88,12 +88,12 @@ class ListTagsForDeliveryStreamRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   Aws::String m_exclusiveStartTagKey;
-  bool m_exclusiveStartTagKeyHasBeenSet = false;
 
   int m_limit{0};
+  bool m_deliveryStreamNameHasBeenSet = false;
+  bool m_exclusiveStartTagKeyHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

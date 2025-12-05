@@ -65,9 +65,9 @@ class PutServiceQuotaIncreaseRequestIntoTemplateResult {
   ///@}
  private:
   ServiceQuotaIncreaseRequestInTemplate m_serviceQuotaIncreaseRequestInTemplate;
-  bool m_serviceQuotaIncreaseRequestInTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceQuotaIncreaseRequestInTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

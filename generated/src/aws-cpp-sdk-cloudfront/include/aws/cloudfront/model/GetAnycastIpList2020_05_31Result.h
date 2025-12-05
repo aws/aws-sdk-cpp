@@ -78,12 +78,12 @@ class GetAnycastIpList2020_05_31Result {
   ///@}
  private:
   AnycastIpList m_anycastIpList;
-  bool m_anycastIpListHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anycastIpListHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

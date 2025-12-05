@@ -177,27 +177,27 @@ class DICOMImportJobSummary {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedAt{};
-  bool m_submittedAtHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_submittedAtHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class PullRequestMergedStateChangedEventMetadata {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_destinationReference;
-  bool m_destinationReferenceHasBeenSet = false;
 
   MergeMetadata m_mergeMetadata;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_destinationReferenceHasBeenSet = false;
   bool m_mergeMetadataHasBeenSet = false;
 };
 

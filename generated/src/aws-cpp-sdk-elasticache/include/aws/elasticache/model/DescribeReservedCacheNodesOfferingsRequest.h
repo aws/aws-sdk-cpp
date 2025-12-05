@@ -247,24 +247,24 @@ class DescribeReservedCacheNodesOfferingsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_reservedCacheNodesOfferingId;
-  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_productDescription;
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::String m_offeringType;
-  bool m_offeringTypeHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

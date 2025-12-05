@@ -67,9 +67,9 @@ class GetWorkflowRunRequest : public MWAAServerlessRequest {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_workflowArnHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

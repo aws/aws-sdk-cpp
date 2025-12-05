@@ -204,27 +204,27 @@ class UpdateDomainRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_defaultExpirationDays{0};
-  bool m_defaultExpirationDaysHasBeenSet = false;
 
   Aws::String m_defaultEncryptionKey;
-  bool m_defaultEncryptionKeyHasBeenSet = false;
 
   Aws::String m_deadLetterQueueUrl;
-  bool m_deadLetterQueueUrlHasBeenSet = false;
 
   MatchingRequest m_matching;
-  bool m_matchingHasBeenSet = false;
 
   RuleBasedMatchingRequest m_ruleBasedMatching;
-  bool m_ruleBasedMatchingHasBeenSet = false;
 
   DataStoreRequest m_dataStore;
-  bool m_dataStoreHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_defaultExpirationDaysHasBeenSet = false;
+  bool m_defaultEncryptionKeyHasBeenSet = false;
+  bool m_deadLetterQueueUrlHasBeenSet = false;
+  bool m_matchingHasBeenSet = false;
+  bool m_ruleBasedMatchingHasBeenSet = false;
+  bool m_dataStoreHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

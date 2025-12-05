@@ -186,21 +186,21 @@ class RateBasedRule {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Predicate> m_matchPredicates;
-  bool m_matchPredicatesHasBeenSet = false;
 
   RateKey m_rateKey{RateKey::NOT_SET};
-  bool m_rateKeyHasBeenSet = false;
 
   long long m_rateLimit{0};
+  bool m_ruleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_matchPredicatesHasBeenSet = false;
+  bool m_rateKeyHasBeenSet = false;
   bool m_rateLimitHasBeenSet = false;
 };
 

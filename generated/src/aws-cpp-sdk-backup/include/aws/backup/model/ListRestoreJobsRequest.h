@@ -254,36 +254,36 @@ class ListRestoreJobsRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_byAccountId;
-  bool m_byAccountIdHasBeenSet = false;
 
   Aws::String m_byResourceType;
-  bool m_byResourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreatedBefore{};
-  bool m_byCreatedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreatedAfter{};
-  bool m_byCreatedAfterHasBeenSet = false;
 
   RestoreJobStatus m_byStatus{RestoreJobStatus::NOT_SET};
-  bool m_byStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCompleteBefore{};
-  bool m_byCompleteBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCompleteAfter{};
-  bool m_byCompleteAfterHasBeenSet = false;
 
   Aws::String m_byRestoreTestingPlanArn;
-  bool m_byRestoreTestingPlanArnHasBeenSet = false;
 
   Aws::String m_byParentJobId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_byAccountIdHasBeenSet = false;
+  bool m_byResourceTypeHasBeenSet = false;
+  bool m_byCreatedBeforeHasBeenSet = false;
+  bool m_byCreatedAfterHasBeenSet = false;
+  bool m_byStatusHasBeenSet = false;
+  bool m_byCompleteBeforeHasBeenSet = false;
+  bool m_byCompleteAfterHasBeenSet = false;
+  bool m_byRestoreTestingPlanArnHasBeenSet = false;
   bool m_byParentJobIdHasBeenSet = false;
 };
 

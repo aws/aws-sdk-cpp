@@ -81,9 +81,9 @@ class SchedulerConfig {
   ///@}
  private:
   Aws::Vector<PriorityClass> m_priorityClasses;
-  bool m_priorityClassesHasBeenSet = false;
 
   FairShare m_fairShare{FairShare::NOT_SET};
+  bool m_priorityClassesHasBeenSet = false;
   bool m_fairShareHasBeenSet = false;
 };
 

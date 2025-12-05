@@ -79,12 +79,12 @@ class DeleteLakeFormationOptInRequest : public LakeFormationRequest {
   ///@}
  private:
   DataLakePrincipal m_principal;
-  bool m_principalHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Condition m_condition;
+  bool m_principalHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

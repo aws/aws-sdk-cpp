@@ -502,66 +502,66 @@ class UpdateIntegrationResult {
   ///@}
  private:
   bool m_apiGatewayManaged{false};
-  bool m_apiGatewayManagedHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   ContentHandlingStrategy m_contentHandlingStrategy{ContentHandlingStrategy::NOT_SET};
-  bool m_contentHandlingStrategyHasBeenSet = false;
 
   Aws::String m_credentialsArn;
-  bool m_credentialsArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_integrationId;
-  bool m_integrationIdHasBeenSet = false;
 
   Aws::String m_integrationMethod;
-  bool m_integrationMethodHasBeenSet = false;
 
   Aws::String m_integrationResponseSelectionExpression;
-  bool m_integrationResponseSelectionExpressionHasBeenSet = false;
 
   Aws::String m_integrationSubtype;
-  bool m_integrationSubtypeHasBeenSet = false;
 
   IntegrationType m_integrationType{IntegrationType::NOT_SET};
-  bool m_integrationTypeHasBeenSet = false;
 
   Aws::String m_integrationUri;
-  bool m_integrationUriHasBeenSet = false;
 
   PassthroughBehavior m_passthroughBehavior{PassthroughBehavior::NOT_SET};
-  bool m_passthroughBehaviorHasBeenSet = false;
 
   Aws::String m_payloadFormatVersion;
-  bool m_payloadFormatVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestParameters;
-  bool m_requestParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestTemplates;
-  bool m_requestTemplatesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::String m_templateSelectionExpression;
-  bool m_templateSelectionExpressionHasBeenSet = false;
 
   int m_timeoutInMillis{0};
-  bool m_timeoutInMillisHasBeenSet = false;
 
   TlsConfig m_tlsConfig;
-  bool m_tlsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiGatewayManagedHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_contentHandlingStrategyHasBeenSet = false;
+  bool m_credentialsArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_integrationIdHasBeenSet = false;
+  bool m_integrationMethodHasBeenSet = false;
+  bool m_integrationResponseSelectionExpressionHasBeenSet = false;
+  bool m_integrationSubtypeHasBeenSet = false;
+  bool m_integrationTypeHasBeenSet = false;
+  bool m_integrationUriHasBeenSet = false;
+  bool m_passthroughBehaviorHasBeenSet = false;
+  bool m_payloadFormatVersionHasBeenSet = false;
+  bool m_requestParametersHasBeenSet = false;
+  bool m_requestTemplatesHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_templateSelectionExpressionHasBeenSet = false;
+  bool m_timeoutInMillisHasBeenSet = false;
+  bool m_tlsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

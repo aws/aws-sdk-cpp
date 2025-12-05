@@ -66,9 +66,9 @@ class DescribeDashboardPermissionsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_dashboardIdHasBeenSet = false;
 };
 

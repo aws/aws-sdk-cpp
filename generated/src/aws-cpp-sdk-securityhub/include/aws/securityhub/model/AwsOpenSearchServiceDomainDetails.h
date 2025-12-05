@@ -331,48 +331,48 @@ class AwsOpenSearchServiceDomainDetails {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_accessPolicies;
-  bool m_accessPoliciesHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_domainEndpoint;
-  bool m_domainEndpointHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails m_encryptionAtRestOptions;
-  bool m_encryptionAtRestOptionsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails m_nodeToNodeEncryptionOptions;
-  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails m_serviceSoftwareOptions;
-  bool m_serviceSoftwareOptionsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainClusterConfigDetails m_clusterConfig;
-  bool m_clusterConfigHasBeenSet = false;
 
   AwsOpenSearchServiceDomainDomainEndpointOptionsDetails m_domainEndpointOptions;
-  bool m_domainEndpointOptionsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainVpcOptionsDetails m_vpcOptions;
-  bool m_vpcOptionsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainLogPublishingOptionsDetails m_logPublishingOptions;
-  bool m_logPublishingOptionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_domainEndpoints;
-  bool m_domainEndpointsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails m_advancedSecurityOptions;
+  bool m_arnHasBeenSet = false;
+  bool m_accessPoliciesHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_domainEndpointHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_encryptionAtRestOptionsHasBeenSet = false;
+  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
+  bool m_serviceSoftwareOptionsHasBeenSet = false;
+  bool m_clusterConfigHasBeenSet = false;
+  bool m_domainEndpointOptionsHasBeenSet = false;
+  bool m_vpcOptionsHasBeenSet = false;
+  bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_domainEndpointsHasBeenSet = false;
   bool m_advancedSecurityOptionsHasBeenSet = false;
 };
 

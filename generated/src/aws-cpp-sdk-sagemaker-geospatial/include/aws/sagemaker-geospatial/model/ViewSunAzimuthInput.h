@@ -66,9 +66,9 @@ class ViewSunAzimuthInput {
   ///@}
  private:
   double m_lowerBound{0.0};
-  bool m_lowerBoundHasBeenSet = false;
 
   double m_upperBound{0.0};
+  bool m_lowerBoundHasBeenSet = false;
   bool m_upperBoundHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class MinimumEngineVersionPerAllowedValue {
   ///@}
  private:
   Aws::String m_allowedValue;
-  bool m_allowedValueHasBeenSet = false;
 
   Aws::String m_minimumEngineVersion;
+  bool m_allowedValueHasBeenSet = false;
   bool m_minimumEngineVersionHasBeenSet = false;
 };
 

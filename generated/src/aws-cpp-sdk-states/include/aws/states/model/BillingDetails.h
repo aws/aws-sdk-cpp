@@ -62,9 +62,9 @@ class BillingDetails {
   ///@}
  private:
   long long m_billedMemoryUsedInMB{0};
-  bool m_billedMemoryUsedInMBHasBeenSet = false;
 
   long long m_billedDurationInMilliseconds{0};
+  bool m_billedMemoryUsedInMBHasBeenSet = false;
   bool m_billedDurationInMillisecondsHasBeenSet = false;
 };
 

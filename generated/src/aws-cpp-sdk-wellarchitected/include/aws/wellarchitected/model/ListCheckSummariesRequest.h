@@ -141,24 +141,24 @@ class ListCheckSummariesRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_choiceId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_questionIdHasBeenSet = false;
   bool m_choiceIdHasBeenSet = false;
 };
 

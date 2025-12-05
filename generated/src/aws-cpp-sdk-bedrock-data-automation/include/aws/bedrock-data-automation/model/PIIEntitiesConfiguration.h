@@ -74,9 +74,9 @@ class PIIEntitiesConfiguration {
   ///@}
  private:
   Aws::Vector<PIIEntityType> m_piiEntityTypes;
-  bool m_piiEntityTypesHasBeenSet = false;
 
   PIIRedactionMaskMode m_redactionMaskMode{PIIRedactionMaskMode::NOT_SET};
+  bool m_piiEntityTypesHasBeenSet = false;
   bool m_redactionMaskModeHasBeenSet = false;
 };
 

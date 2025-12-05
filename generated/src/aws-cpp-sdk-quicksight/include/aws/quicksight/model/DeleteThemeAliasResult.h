@@ -109,18 +109,18 @@ class DeleteThemeAliasResult {
   ///@}
  private:
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_themeId;
+  bool m_aliasNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_themeIdHasBeenSet = false;
 };
 

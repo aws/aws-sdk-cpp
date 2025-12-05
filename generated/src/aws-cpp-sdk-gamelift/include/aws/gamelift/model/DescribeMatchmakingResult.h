@@ -67,9 +67,9 @@ class DescribeMatchmakingResult {
   ///@}
  private:
   Aws::Vector<MatchmakingTicket> m_ticketList;
-  bool m_ticketListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ticketListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

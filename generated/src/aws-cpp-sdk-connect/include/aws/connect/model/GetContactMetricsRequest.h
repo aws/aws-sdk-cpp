@@ -93,12 +93,12 @@ class GetContactMetricsRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::Vector<ContactMetricInfo> m_metrics;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

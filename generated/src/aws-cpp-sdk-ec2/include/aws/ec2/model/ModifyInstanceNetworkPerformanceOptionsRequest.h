@@ -93,12 +93,12 @@ class ModifyInstanceNetworkPerformanceOptionsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
-  bool m_bandwidthWeightingHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_bandwidthWeightingHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateApiResult {
   ///@}
  private:
   Api m_api;
-  bool m_apiHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

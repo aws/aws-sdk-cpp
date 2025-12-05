@@ -64,9 +64,9 @@ class DataStoreResponse {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Readiness m_readiness;
+  bool m_enabledHasBeenSet = false;
   bool m_readinessHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class ModifyEbsDefaultKmsKeyIdResponse {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

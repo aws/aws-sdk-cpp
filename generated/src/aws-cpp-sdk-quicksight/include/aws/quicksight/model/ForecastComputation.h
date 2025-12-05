@@ -221,36 +221,36 @@ class ForecastComputation {
   ///@}
  private:
   Aws::String m_computationId;
-  bool m_computationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DimensionField m_time;
-  bool m_timeHasBeenSet = false;
 
   MeasureField m_value;
-  bool m_valueHasBeenSet = false;
 
   int m_periodsForward{0};
-  bool m_periodsForwardHasBeenSet = false;
 
   int m_periodsBackward{0};
-  bool m_periodsBackwardHasBeenSet = false;
 
   double m_upperBoundary{0.0};
-  bool m_upperBoundaryHasBeenSet = false;
 
   double m_lowerBoundary{0.0};
-  bool m_lowerBoundaryHasBeenSet = false;
 
   int m_predictionInterval{0};
-  bool m_predictionIntervalHasBeenSet = false;
 
   ForecastComputationSeasonality m_seasonality{ForecastComputationSeasonality::NOT_SET};
-  bool m_seasonalityHasBeenSet = false;
 
   int m_customSeasonalityValue{0};
+  bool m_computationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_periodsForwardHasBeenSet = false;
+  bool m_periodsBackwardHasBeenSet = false;
+  bool m_upperBoundaryHasBeenSet = false;
+  bool m_lowerBoundaryHasBeenSet = false;
+  bool m_predictionIntervalHasBeenSet = false;
+  bool m_seasonalityHasBeenSet = false;
   bool m_customSeasonalityValueHasBeenSet = false;
 };
 

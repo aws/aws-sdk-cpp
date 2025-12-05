@@ -88,12 +88,12 @@ class DescribePullThroughCacheRulesResult {
   ///@}
  private:
   Aws::Vector<PullThroughCacheRule> m_pullThroughCacheRules;
-  bool m_pullThroughCacheRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pullThroughCacheRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -153,21 +153,21 @@ class ComponentLatestVersion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_publisher;
-  bool m_publisherHasBeenSet = false;
 
   Aws::Vector<ComponentPlatform> m_platforms;
+  bool m_arnHasBeenSet = false;
+  bool m_componentVersionHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_publisherHasBeenSet = false;
   bool m_platformsHasBeenSet = false;
 };
 

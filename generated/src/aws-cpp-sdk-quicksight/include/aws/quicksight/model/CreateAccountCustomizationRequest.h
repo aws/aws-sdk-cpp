@@ -123,15 +123,15 @@ class CreateAccountCustomizationRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   AccountCustomization m_accountCustomization;
-  bool m_accountCustomizationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_accountCustomizationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class RegisterTaskWithMaintenanceWindowResult {
   ///@}
  private:
   Aws::String m_windowTaskId;
-  bool m_windowTaskIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowTaskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

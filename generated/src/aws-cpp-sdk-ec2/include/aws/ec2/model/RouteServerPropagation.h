@@ -90,12 +90,12 @@ class RouteServerPropagation {
   ///@}
  private:
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   RouteServerPropagationState m_state{RouteServerPropagationState::NOT_SET};
+  bool m_routeServerIdHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

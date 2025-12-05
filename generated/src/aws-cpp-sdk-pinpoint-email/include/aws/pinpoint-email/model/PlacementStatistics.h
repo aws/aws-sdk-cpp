@@ -115,18 +115,18 @@ class PlacementStatistics {
   ///@}
  private:
   double m_inboxPercentage{0.0};
-  bool m_inboxPercentageHasBeenSet = false;
 
   double m_spamPercentage{0.0};
-  bool m_spamPercentageHasBeenSet = false;
 
   double m_missingPercentage{0.0};
-  bool m_missingPercentageHasBeenSet = false;
 
   double m_spfPercentage{0.0};
-  bool m_spfPercentageHasBeenSet = false;
 
   double m_dkimPercentage{0.0};
+  bool m_inboxPercentageHasBeenSet = false;
+  bool m_spamPercentageHasBeenSet = false;
+  bool m_missingPercentageHasBeenSet = false;
+  bool m_spfPercentageHasBeenSet = false;
   bool m_dkimPercentageHasBeenSet = false;
 };
 

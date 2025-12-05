@@ -61,9 +61,9 @@ class ModifyAquaConfigurationResult {
   ///@}
  private:
   AquaConfiguration m_aquaConfiguration;
-  bool m_aquaConfigurationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_aquaConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

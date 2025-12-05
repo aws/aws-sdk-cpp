@@ -118,18 +118,18 @@ class GetResourceProfileResult {
   ///@}
  private:
   Aws::Utils::DateTime m_profileUpdatedAt{};
-  bool m_profileUpdatedAtHasBeenSet = false;
 
   int m_sensitivityScore{0};
-  bool m_sensitivityScoreHasBeenSet = false;
 
   bool m_sensitivityScoreOverridden{false};
-  bool m_sensitivityScoreOverriddenHasBeenSet = false;
 
   ResourceStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileUpdatedAtHasBeenSet = false;
+  bool m_sensitivityScoreHasBeenSet = false;
+  bool m_sensitivityScoreOverriddenHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class ListRealtimeContactAnalysisSegmentsV2Request : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   RealTimeContactAnalysisOutputType m_outputType{RealTimeContactAnalysisOutputType::NOT_SET};
-  bool m_outputTypeHasBeenSet = false;
 
   Aws::Vector<RealTimeContactAnalysisSegmentType> m_segmentTypes;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_outputTypeHasBeenSet = false;
   bool m_segmentTypesHasBeenSet = false;
 };
 

@@ -102,12 +102,12 @@ class CreateDBClusterSnapshotRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBClusterSnapshotIdentifier;
-  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -97,15 +97,15 @@ class ReservedInstancesPricing {
   ///@}
  private:
   double m_estimatedOnDemandCost{0.0};
-  bool m_estimatedOnDemandCostHasBeenSet = false;
 
   double m_monthlyReservationEligibleCost{0.0};
-  bool m_monthlyReservationEligibleCostHasBeenSet = false;
 
   double m_savingsPercentage{0.0};
-  bool m_savingsPercentageHasBeenSet = false;
 
   double m_estimatedMonthlyAmortizedReservationCost{0.0};
+  bool m_estimatedOnDemandCostHasBeenSet = false;
+  bool m_monthlyReservationEligibleCostHasBeenSet = false;
+  bool m_savingsPercentageHasBeenSet = false;
   bool m_estimatedMonthlyAmortizedReservationCostHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class X12ControlNumbers {
   ///@}
  private:
   int m_startingInterchangeControlNumber{0};
-  bool m_startingInterchangeControlNumberHasBeenSet = false;
 
   int m_startingFunctionalGroupControlNumber{0};
-  bool m_startingFunctionalGroupControlNumberHasBeenSet = false;
 
   int m_startingTransactionSetControlNumber{0};
+  bool m_startingInterchangeControlNumberHasBeenSet = false;
+  bool m_startingFunctionalGroupControlNumberHasBeenSet = false;
   bool m_startingTransactionSetControlNumberHasBeenSet = false;
 };
 

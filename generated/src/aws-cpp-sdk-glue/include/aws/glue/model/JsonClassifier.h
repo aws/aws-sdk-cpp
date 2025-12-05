@@ -124,18 +124,18 @@ class JsonClassifier {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_jsonPath;
+  bool m_nameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_jsonPathHasBeenSet = false;
 };
 

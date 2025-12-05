@@ -73,9 +73,9 @@ class BatchUpdateDevicePositionRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::Vector<DevicePositionUpdate> m_updates;
+  bool m_trackerNameHasBeenSet = false;
   bool m_updatesHasBeenSet = false;
 };
 

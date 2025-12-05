@@ -60,9 +60,9 @@ class UpdateConfiguredTableResult {
   ///@}
  private:
   ConfiguredTable m_configuredTable;
-  bool m_configuredTableHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configuredTableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

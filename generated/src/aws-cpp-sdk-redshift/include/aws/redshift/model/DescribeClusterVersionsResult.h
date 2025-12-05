@@ -96,12 +96,12 @@ class DescribeClusterVersionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ClusterVersion> m_clusterVersions;
-  bool m_clusterVersionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_clusterVersionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

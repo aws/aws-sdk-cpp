@@ -115,18 +115,18 @@ class DescribeTypeRegistrationResult {
   ///@}
  private:
   RegistrationStatus m_progressStatus{RegistrationStatus::NOT_SET};
-  bool m_progressStatusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   Aws::String m_typeVersionArn;
-  bool m_typeVersionArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_progressStatusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeArnHasBeenSet = false;
+  bool m_typeVersionArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

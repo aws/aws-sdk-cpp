@@ -62,9 +62,9 @@ class PutContainerRecipePolicyResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_containerRecipeArn;
+  bool m_requestIdHasBeenSet = false;
   bool m_containerRecipeArnHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ConditionExecution {
   ///@}
  private:
   ConditionExecutionStatus m_status{ConditionExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChange{};
+  bool m_statusHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_lastStatusChangeHasBeenSet = false;
 };
 

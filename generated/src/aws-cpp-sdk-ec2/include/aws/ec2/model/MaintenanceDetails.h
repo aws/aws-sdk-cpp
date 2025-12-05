@@ -91,12 +91,12 @@ class MaintenanceDetails {
   ///@}
  private:
   Aws::String m_pendingMaintenance;
-  bool m_pendingMaintenanceHasBeenSet = false;
 
   Aws::Utils::DateTime m_maintenanceAutoAppliedAfter{};
-  bool m_maintenanceAutoAppliedAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastMaintenanceApplied{};
+  bool m_pendingMaintenanceHasBeenSet = false;
+  bool m_maintenanceAutoAppliedAfterHasBeenSet = false;
   bool m_lastMaintenanceAppliedHasBeenSet = false;
 };
 

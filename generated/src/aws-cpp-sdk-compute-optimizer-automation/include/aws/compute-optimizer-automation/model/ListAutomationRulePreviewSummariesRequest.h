@@ -145,21 +145,21 @@ class ListAutomationRulePreviewSummariesRequest : public ComputeOptimizerAutomat
   ///@}
  private:
   RuleType m_ruleType{RuleType::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   OrganizationScope m_organizationScope;
-  bool m_organizationScopeHasBeenSet = false;
 
   Aws::Vector<RecommendedActionType> m_recommendedActionTypes;
-  bool m_recommendedActionTypesHasBeenSet = false;
 
   Criteria m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_organizationScopeHasBeenSet = false;
+  bool m_recommendedActionTypesHasBeenSet = false;
+  bool m_criteriaHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

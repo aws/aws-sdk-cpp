@@ -86,12 +86,12 @@ class DescribeSecurityGroupRulesResponse {
   ///@}
  private:
   Aws::Vector<SecurityGroupRule> m_securityGroupRules;
-  bool m_securityGroupRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_securityGroupRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

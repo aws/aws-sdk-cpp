@@ -168,24 +168,24 @@ class ModifyDataProviderRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_dataProviderIdentifier;
-  bool m_dataProviderIdentifierHasBeenSet = false;
 
   Aws::String m_dataProviderName;
-  bool m_dataProviderNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   bool m_virtual{false};
-  bool m_virtualHasBeenSet = false;
 
   bool m_exactSettings{false};
-  bool m_exactSettingsHasBeenSet = false;
 
   DataProviderSettings m_settings;
+  bool m_dataProviderIdentifierHasBeenSet = false;
+  bool m_dataProviderNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_virtualHasBeenSet = false;
+  bool m_exactSettingsHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

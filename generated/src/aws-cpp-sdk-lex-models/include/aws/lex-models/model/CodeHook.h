@@ -70,9 +70,9 @@ class CodeHook {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_messageVersion;
+  bool m_uriHasBeenSet = false;
   bool m_messageVersionHasBeenSet = false;
 };
 

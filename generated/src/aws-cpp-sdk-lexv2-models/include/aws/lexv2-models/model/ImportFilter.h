@@ -97,12 +97,12 @@ class ImportFilter {
   ///@}
  private:
   ImportFilterName m_name{ImportFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   ImportFilterOperator m_operator{ImportFilterOperator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

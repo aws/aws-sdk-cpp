@@ -107,15 +107,15 @@ class ListCallerAccessGrantsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListCallerAccessGrantsEntry> m_callerAccessGrantsList;
-  bool m_callerAccessGrantsListHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_callerAccessGrantsListHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

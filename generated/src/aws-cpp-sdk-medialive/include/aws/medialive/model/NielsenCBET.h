@@ -86,12 +86,12 @@ class NielsenCBET {
   ///@}
  private:
   Aws::String m_cbetCheckDigitString;
-  bool m_cbetCheckDigitStringHasBeenSet = false;
 
   NielsenWatermarksCbetStepaside m_cbetStepaside{NielsenWatermarksCbetStepaside::NOT_SET};
-  bool m_cbetStepasideHasBeenSet = false;
 
   Aws::String m_csid;
+  bool m_cbetCheckDigitStringHasBeenSet = false;
+  bool m_cbetStepasideHasBeenSet = false;
   bool m_csidHasBeenSet = false;
 };
 

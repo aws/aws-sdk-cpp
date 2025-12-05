@@ -240,27 +240,27 @@ class SpotOptions {
   ///@}
  private:
   SpotAllocationStrategy m_allocationStrategy{SpotAllocationStrategy::NOT_SET};
-  bool m_allocationStrategyHasBeenSet = false;
 
   FleetSpotMaintenanceStrategies m_maintenanceStrategies;
-  bool m_maintenanceStrategiesHasBeenSet = false;
 
   SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior{SpotInstanceInterruptionBehavior::NOT_SET};
-  bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
   int m_instancePoolsToUseCount{0};
-  bool m_instancePoolsToUseCountHasBeenSet = false;
 
   bool m_singleInstanceType{false};
-  bool m_singleInstanceTypeHasBeenSet = false;
 
   bool m_singleAvailabilityZone{false};
-  bool m_singleAvailabilityZoneHasBeenSet = false;
 
   int m_minTargetCapacity{0};
-  bool m_minTargetCapacityHasBeenSet = false;
 
   Aws::String m_maxTotalPrice;
+  bool m_allocationStrategyHasBeenSet = false;
+  bool m_maintenanceStrategiesHasBeenSet = false;
+  bool m_instanceInterruptionBehaviorHasBeenSet = false;
+  bool m_instancePoolsToUseCountHasBeenSet = false;
+  bool m_singleInstanceTypeHasBeenSet = false;
+  bool m_singleAvailabilityZoneHasBeenSet = false;
+  bool m_minTargetCapacityHasBeenSet = false;
   bool m_maxTotalPriceHasBeenSet = false;
 };
 

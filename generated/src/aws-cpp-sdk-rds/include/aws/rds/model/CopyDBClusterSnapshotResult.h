@@ -58,9 +58,9 @@ class CopyDBClusterSnapshotResult {
   ///@}
  private:
   DBClusterSnapshot m_dBClusterSnapshot;
-  bool m_dBClusterSnapshotHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBClusterSnapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

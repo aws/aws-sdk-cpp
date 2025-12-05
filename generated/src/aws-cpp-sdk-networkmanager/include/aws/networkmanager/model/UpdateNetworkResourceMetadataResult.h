@@ -84,12 +84,12 @@ class UpdateNetworkResourceMetadataResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -324,39 +324,39 @@ class CreateTaskRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_sourceLocationArn;
-  bool m_sourceLocationArnHasBeenSet = false;
 
   Aws::String m_destinationLocationArn;
-  bool m_destinationLocationArnHasBeenSet = false;
 
   Aws::String m_cloudWatchLogGroupArn;
-  bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Options m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   TaskSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_includes;
-  bool m_includesHasBeenSet = false;
 
   ManifestConfig m_manifestConfig;
-  bool m_manifestConfigHasBeenSet = false;
 
   TaskReportConfig m_taskReportConfig;
-  bool m_taskReportConfigHasBeenSet = false;
 
   TaskMode m_taskMode{TaskMode::NOT_SET};
+  bool m_sourceLocationArnHasBeenSet = false;
+  bool m_destinationLocationArnHasBeenSet = false;
+  bool m_cloudWatchLogGroupArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_excludesHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_includesHasBeenSet = false;
+  bool m_manifestConfigHasBeenSet = false;
+  bool m_taskReportConfigHasBeenSet = false;
   bool m_taskModeHasBeenSet = false;
 };
 

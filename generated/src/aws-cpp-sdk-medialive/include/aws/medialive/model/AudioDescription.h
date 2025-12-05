@@ -295,42 +295,42 @@ Note
   ///@}
  private:
   AudioNormalizationSettings m_audioNormalizationSettings;
-  bool m_audioNormalizationSettingsHasBeenSet = false;
 
   Aws::String m_audioSelectorName;
-  bool m_audioSelectorNameHasBeenSet = false;
 
   AudioType m_audioType{AudioType::NOT_SET};
-  bool m_audioTypeHasBeenSet = false;
 
   AudioDescriptionAudioTypeControl m_audioTypeControl{AudioDescriptionAudioTypeControl::NOT_SET};
-  bool m_audioTypeControlHasBeenSet = false;
 
   AudioWatermarkSettings m_audioWatermarkingSettings;
-  bool m_audioWatermarkingSettingsHasBeenSet = false;
 
   AudioCodecSettings m_codecSettings;
-  bool m_codecSettingsHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   AudioDescriptionLanguageCodeControl m_languageCodeControl{AudioDescriptionLanguageCodeControl::NOT_SET};
-  bool m_languageCodeControlHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RemixSettings m_remixSettings;
-  bool m_remixSettingsHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::Vector<DashRoleAudio> m_audioDashRoles;
-  bool m_audioDashRolesHasBeenSet = false;
 
   DvbDashAccessibility m_dvbDashAccessibility{DvbDashAccessibility::NOT_SET};
+  bool m_audioNormalizationSettingsHasBeenSet = false;
+  bool m_audioSelectorNameHasBeenSet = false;
+  bool m_audioTypeHasBeenSet = false;
+  bool m_audioTypeControlHasBeenSet = false;
+  bool m_audioWatermarkingSettingsHasBeenSet = false;
+  bool m_codecSettingsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_languageCodeControlHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_remixSettingsHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
+  bool m_audioDashRolesHasBeenSet = false;
   bool m_dvbDashAccessibilityHasBeenSet = false;
 };
 

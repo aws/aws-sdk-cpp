@@ -334,42 +334,42 @@ class SheetDefinition {
   ///@}
  private:
   Aws::String m_sheetId;
-  bool m_sheetIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ParameterControl> m_parameterControls;
-  bool m_parameterControlsHasBeenSet = false;
 
   Aws::Vector<FilterControl> m_filterControls;
-  bool m_filterControlsHasBeenSet = false;
 
   Aws::Vector<Visual> m_visuals;
-  bool m_visualsHasBeenSet = false;
 
   Aws::Vector<SheetTextBox> m_textBoxes;
-  bool m_textBoxesHasBeenSet = false;
 
   Aws::Vector<SheetImage> m_images;
-  bool m_imagesHasBeenSet = false;
 
   Aws::Vector<Layout> m_layouts;
-  bool m_layoutsHasBeenSet = false;
 
   Aws::Vector<SheetControlLayout> m_sheetControlLayouts;
-  bool m_sheetControlLayoutsHasBeenSet = false;
 
   SheetContentType m_contentType{SheetContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   VisualCustomActionDefaults m_customActionDefaults;
+  bool m_sheetIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_parameterControlsHasBeenSet = false;
+  bool m_filterControlsHasBeenSet = false;
+  bool m_visualsHasBeenSet = false;
+  bool m_textBoxesHasBeenSet = false;
+  bool m_imagesHasBeenSet = false;
+  bool m_layoutsHasBeenSet = false;
+  bool m_sheetControlLayoutsHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_customActionDefaultsHasBeenSet = false;
 };
 

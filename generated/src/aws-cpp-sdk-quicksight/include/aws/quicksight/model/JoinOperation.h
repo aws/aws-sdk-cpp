@@ -164,24 +164,24 @@ class JoinOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_leftOperand;
-  bool m_leftOperandHasBeenSet = false;
 
   TransformOperationSource m_rightOperand;
-  bool m_rightOperandHasBeenSet = false;
 
   JoinOperationType m_type{JoinOperationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_onClause;
-  bool m_onClauseHasBeenSet = false;
 
   JoinOperandProperties m_leftOperandProperties;
-  bool m_leftOperandPropertiesHasBeenSet = false;
 
   JoinOperandProperties m_rightOperandProperties;
+  bool m_aliasHasBeenSet = false;
+  bool m_leftOperandHasBeenSet = false;
+  bool m_rightOperandHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_onClauseHasBeenSet = false;
+  bool m_leftOperandPropertiesHasBeenSet = false;
   bool m_rightOperandPropertiesHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DeleteDomainRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   bool m_skipDeletionCheck{false};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_identifierHasBeenSet = false;
   bool m_skipDeletionCheckHasBeenSet = false;
 };
 

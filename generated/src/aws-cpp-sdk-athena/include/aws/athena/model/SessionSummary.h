@@ -125,18 +125,18 @@ class SessionSummary {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EngineVersion m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_notebookVersion;
-  bool m_notebookVersionHasBeenSet = false;
 
   SessionStatus m_status;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_notebookVersionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

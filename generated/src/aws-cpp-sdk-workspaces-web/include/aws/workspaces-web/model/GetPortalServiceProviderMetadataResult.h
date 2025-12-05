@@ -77,12 +77,12 @@ class GetPortalServiceProviderMetadataResult {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_serviceProviderSamlMetadata;
-  bool m_serviceProviderSamlMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalArnHasBeenSet = false;
+  bool m_serviceProviderSamlMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

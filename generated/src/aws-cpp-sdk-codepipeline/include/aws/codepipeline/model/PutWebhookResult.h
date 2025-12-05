@@ -61,9 +61,9 @@ class PutWebhookResult {
   ///@}
  private:
   ListWebhookItem m_webhook;
-  bool m_webhookHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webhookHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

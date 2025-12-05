@@ -168,21 +168,21 @@ class UpdateVpcEndpointRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSubnetIds;
-  bool m_addSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSubnetIds;
-  bool m_removeSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSecurityGroupIds;
-  bool m_addSecurityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSecurityGroupIds;
-  bool m_removeSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_idHasBeenSet = false;
+  bool m_addSubnetIdsHasBeenSet = false;
+  bool m_removeSubnetIdsHasBeenSet = false;
+  bool m_addSecurityGroupIdsHasBeenSet = false;
+  bool m_removeSecurityGroupIdsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

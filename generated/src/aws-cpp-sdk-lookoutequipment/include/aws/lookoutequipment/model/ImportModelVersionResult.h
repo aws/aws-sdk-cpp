@@ -124,21 +124,21 @@ class ImportModelVersionResult {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_modelVersionArn;
-  bool m_modelVersionArnHasBeenSet = false;
 
   long long m_modelVersion{0};
-  bool m_modelVersionHasBeenSet = false;
 
   ModelVersionStatus m_status{ModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelVersionArnHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

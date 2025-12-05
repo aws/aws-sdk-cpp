@@ -88,12 +88,12 @@ class PermissionSetProvisioningStatusMetadata {
   ///@}
  private:
   StatusValues m_status{StatusValues::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
 };
 

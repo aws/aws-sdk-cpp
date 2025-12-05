@@ -86,12 +86,12 @@ class RetrievalResultContentColumn {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_columnValue;
-  bool m_columnValueHasBeenSet = false;
 
   RetrievalResultContentColumnType m_type{RetrievalResultContentColumnType::NOT_SET};
+  bool m_columnNameHasBeenSet = false;
+  bool m_columnValueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

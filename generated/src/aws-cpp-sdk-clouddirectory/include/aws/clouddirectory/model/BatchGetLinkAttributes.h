@@ -78,9 +78,9 @@ class BatchGetLinkAttributes {
   ///@}
  private:
   TypedLinkSpecifier m_typedLinkSpecifier;
-  bool m_typedLinkSpecifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
+  bool m_typedLinkSpecifierHasBeenSet = false;
   bool m_attributeNamesHasBeenSet = false;
 };
 

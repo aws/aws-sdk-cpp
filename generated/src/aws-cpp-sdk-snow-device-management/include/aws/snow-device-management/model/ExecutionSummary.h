@@ -104,15 +104,15 @@ class ExecutionSummary {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_managedDeviceId;
-  bool m_managedDeviceIdHasBeenSet = false;
 
   ExecutionState m_state{ExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_executionIdHasBeenSet = false;
+  bool m_managedDeviceIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

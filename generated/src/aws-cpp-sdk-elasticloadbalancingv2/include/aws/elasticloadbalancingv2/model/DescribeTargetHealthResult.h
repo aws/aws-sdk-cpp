@@ -68,9 +68,9 @@ class DescribeTargetHealthResult {
   ///@}
  private:
   Aws::Vector<TargetHealthDescription> m_targetHealthDescriptions;
-  bool m_targetHealthDescriptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_targetHealthDescriptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

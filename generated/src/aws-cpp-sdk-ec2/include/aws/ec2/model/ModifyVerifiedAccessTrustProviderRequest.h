@@ -190,27 +190,27 @@ class ModifyVerifiedAccessTrustProviderRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessTrustProviderId;
-  bool m_verifiedAccessTrustProviderIdHasBeenSet = false;
 
   ModifyVerifiedAccessTrustProviderOidcOptions m_oidcOptions;
-  bool m_oidcOptionsHasBeenSet = false;
 
   ModifyVerifiedAccessTrustProviderDeviceOptions m_deviceOptions;
-  bool m_deviceOptionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   VerifiedAccessSseSpecificationRequest m_sseSpecification;
-  bool m_sseSpecificationHasBeenSet = false;
 
   ModifyVerifiedAccessNativeApplicationOidcOptions m_nativeApplicationOidcOptions;
+  bool m_verifiedAccessTrustProviderIdHasBeenSet = false;
+  bool m_oidcOptionsHasBeenSet = false;
+  bool m_deviceOptionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_sseSpecificationHasBeenSet = false;
   bool m_nativeApplicationOidcOptionsHasBeenSet = false;
 };
 

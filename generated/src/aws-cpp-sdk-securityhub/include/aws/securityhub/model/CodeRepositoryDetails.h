@@ -89,12 +89,12 @@ class CodeRepositoryDetails {
   ///@}
  private:
   Aws::String m_providerType;
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_codeSecurityIntegrationArn;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
   bool m_codeSecurityIntegrationArnHasBeenSet = false;
 };
 

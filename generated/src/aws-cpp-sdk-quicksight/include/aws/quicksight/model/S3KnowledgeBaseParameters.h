@@ -94,12 +94,12 @@ class S3KnowledgeBaseParameters {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_bucketUrl;
-  bool m_bucketUrlHasBeenSet = false;
 
   Aws::String m_metadataFilesLocation;
+  bool m_roleArnHasBeenSet = false;
+  bool m_bucketUrlHasBeenSet = false;
   bool m_metadataFilesLocationHasBeenSet = false;
 };
 

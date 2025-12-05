@@ -211,33 +211,33 @@ class RestoreTableFromSnapshotRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   bool m_activateCaseSensitiveIdentifier{false};
-  bool m_activateCaseSensitiveIdentifierHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_newTableName;
-  bool m_newTableNameHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_sourceDatabaseName;
-  bool m_sourceDatabaseNameHasBeenSet = false;
 
   Aws::String m_sourceSchemaName;
-  bool m_sourceSchemaNameHasBeenSet = false;
 
   Aws::String m_sourceTableName;
-  bool m_sourceTableNameHasBeenSet = false;
 
   Aws::String m_targetDatabaseName;
-  bool m_targetDatabaseNameHasBeenSet = false;
 
   Aws::String m_targetSchemaName;
-  bool m_targetSchemaNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_activateCaseSensitiveIdentifierHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_newTableNameHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_sourceDatabaseNameHasBeenSet = false;
+  bool m_sourceSchemaNameHasBeenSet = false;
+  bool m_sourceTableNameHasBeenSet = false;
+  bool m_targetDatabaseNameHasBeenSet = false;
+  bool m_targetSchemaNameHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class DataCollectionOptions {
   ///@}
  private:
   bool m_isDiagnosticsEventsEnabled{false};
-  bool m_isDiagnosticsEventsEnabledHasBeenSet = false;
 
   bool m_isHealthMonitoringEnabled{false};
-  bool m_isHealthMonitoringEnabledHasBeenSet = false;
 
   bool m_isIncidentLogsEnabled{false};
+  bool m_isDiagnosticsEventsEnabledHasBeenSet = false;
+  bool m_isHealthMonitoringEnabledHasBeenSet = false;
   bool m_isIncidentLogsEnabledHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class DataLakeAutoEnableNewAccountConfiguration {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<AwsLogSourceResource> m_sources;
+  bool m_regionHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

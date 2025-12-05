@@ -85,12 +85,12 @@ class ListGiVersionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<GiVersionSummary> m_giVersions;
-  bool m_giVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_giVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

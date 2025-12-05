@@ -85,12 +85,12 @@ class DescribeGroupsResult {
   ///@}
  private:
   Aws::Vector<GroupMetadata> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class UpdateRelationalDatabaseParametersRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   Aws::Vector<RelationalDatabaseParameter> m_parameters;
+  bool m_relationalDatabaseNameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

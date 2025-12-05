@@ -80,12 +80,12 @@ class GetLexiconResult {
   ///@}
  private:
   Lexicon m_lexicon;
-  bool m_lexiconHasBeenSet = false;
 
   LexiconAttributes m_lexiconAttributes;
-  bool m_lexiconAttributesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lexiconHasBeenSet = false;
+  bool m_lexiconAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

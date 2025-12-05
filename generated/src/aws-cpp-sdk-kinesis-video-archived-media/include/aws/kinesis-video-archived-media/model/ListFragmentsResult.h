@@ -87,12 +87,12 @@ class ListFragmentsResult {
   ///@}
  private:
   Aws::Vector<Fragment> m_fragments;
-  bool m_fragmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fragmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

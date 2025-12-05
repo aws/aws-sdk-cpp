@@ -299,39 +299,39 @@ class AllocateHostsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   HostRecovery m_hostRecovery{HostRecovery::NOT_SET};
-  bool m_hostRecoveryHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   HostMaintenance m_hostMaintenance{HostMaintenance::NOT_SET};
-  bool m_hostMaintenanceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_assetIds;
-  bool m_assetIdsHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   AutoPlacement m_autoPlacement{AutoPlacement::NOT_SET};
-  bool m_autoPlacementHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::String m_availabilityZone;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_hostRecoveryHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_hostMaintenanceHasBeenSet = false;
+  bool m_assetIdsHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_autoPlacementHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
 };
 

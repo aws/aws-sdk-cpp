@@ -86,12 +86,12 @@ class ListComputationModelResolveToResourcesRequest : public IoTSiteWiseRequest 
   ///@}
  private:
   Aws::String m_computationModelId;
-  bool m_computationModelIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_computationModelIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

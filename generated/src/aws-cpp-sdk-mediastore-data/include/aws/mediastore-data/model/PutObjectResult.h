@@ -93,15 +93,15 @@ class PutObjectResult {
   ///@}
  private:
   Aws::String m_contentSHA256;
-  bool m_contentSHA256HasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentSHA256HasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

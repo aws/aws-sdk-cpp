@@ -85,9 +85,9 @@ class CapacityForecast {
   ///@}
  private:
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<double> m_values;
+  bool m_timestampsHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class NetworkPathComponentDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<PortRange> m_portRanges;
+  bool m_addressHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
 };
 

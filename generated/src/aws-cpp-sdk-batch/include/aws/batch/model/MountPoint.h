@@ -90,12 +90,12 @@ class MountPoint {
   ///@}
  private:
   Aws::String m_containerPath;
-  bool m_containerPathHasBeenSet = false;
 
   bool m_readOnly{false};
-  bool m_readOnlyHasBeenSet = false;
 
   Aws::String m_sourceVolume;
+  bool m_containerPathHasBeenSet = false;
+  bool m_readOnlyHasBeenSet = false;
   bool m_sourceVolumeHasBeenSet = false;
 };
 

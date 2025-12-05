@@ -81,12 +81,12 @@ class CreateRegexMatchSetResult {
   ///@}
  private:
   RegexMatchSet m_regexMatchSet;
-  bool m_regexMatchSetHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_regexMatchSetHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

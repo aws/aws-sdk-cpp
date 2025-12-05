@@ -81,9 +81,9 @@ class TermRelations {
   ///@}
  private:
   Aws::Vector<Aws::String> m_classifies;
-  bool m_classifiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_isA;
+  bool m_classifiesHasBeenSet = false;
   bool m_isAHasBeenSet = false;
 };
 

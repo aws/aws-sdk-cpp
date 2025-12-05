@@ -95,12 +95,12 @@ class DescribeEnvironmentManagedActionHistoryResult {
   ///@}
  private:
   Aws::Vector<ManagedActionHistoryItem> m_managedActionHistoryItems;
-  bool m_managedActionHistoryItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_managedActionHistoryItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

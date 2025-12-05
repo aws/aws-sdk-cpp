@@ -73,9 +73,9 @@ class BatchCreateDelegationByAssessmentRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::Vector<CreateDelegationRequest> m_createDelegationRequests;
-  bool m_createDelegationRequestsHasBeenSet = false;
 
   Aws::String m_assessmentId;
+  bool m_createDelegationRequestsHasBeenSet = false;
   bool m_assessmentIdHasBeenSet = false;
 };
 

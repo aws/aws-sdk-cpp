@@ -79,9 +79,9 @@ class NodegroupResources {
   ///@}
  private:
   Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
-  bool m_autoScalingGroupsHasBeenSet = false;
 
   Aws::String m_remoteAccessSecurityGroup;
+  bool m_autoScalingGroupsHasBeenSet = false;
   bool m_remoteAccessSecurityGroupHasBeenSet = false;
 };
 

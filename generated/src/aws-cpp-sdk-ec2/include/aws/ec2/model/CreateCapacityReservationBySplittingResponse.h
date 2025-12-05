@@ -94,15 +94,15 @@ class CreateCapacityReservationBySplittingResponse {
   ///@}
  private:
   CapacityReservation m_sourceCapacityReservation;
-  bool m_sourceCapacityReservationHasBeenSet = false;
 
   CapacityReservation m_destinationCapacityReservation;
-  bool m_destinationCapacityReservationHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_sourceCapacityReservationHasBeenSet = false;
+  bool m_destinationCapacityReservationHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

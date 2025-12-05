@@ -294,42 +294,42 @@ class Vp8Settings {
   ///@}
  private:
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   Vp8FramerateControl m_framerateControl{Vp8FramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   Vp8FramerateConversionAlgorithm m_framerateConversionAlgorithm{Vp8FramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   int m_hrdBufferSize{0};
-  bool m_hrdBufferSizeHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   Vp8ParControl m_parControl{Vp8ParControl::NOT_SET};
-  bool m_parControlHasBeenSet = false;
 
   int m_parDenominator{0};
-  bool m_parDenominatorHasBeenSet = false;
 
   int m_parNumerator{0};
-  bool m_parNumeratorHasBeenSet = false;
 
   Vp8QualityTuningLevel m_qualityTuningLevel{Vp8QualityTuningLevel::NOT_SET};
-  bool m_qualityTuningLevelHasBeenSet = false;
 
   Vp8RateControlMode m_rateControlMode{Vp8RateControlMode::NOT_SET};
+  bool m_bitrateHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_hrdBufferSizeHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_parControlHasBeenSet = false;
+  bool m_parDenominatorHasBeenSet = false;
+  bool m_parNumeratorHasBeenSet = false;
+  bool m_qualityTuningLevelHasBeenSet = false;
   bool m_rateControlModeHasBeenSet = false;
 };
 

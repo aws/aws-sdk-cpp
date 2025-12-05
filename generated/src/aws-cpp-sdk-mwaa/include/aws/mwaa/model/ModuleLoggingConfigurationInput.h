@@ -68,9 +68,9 @@ class ModuleLoggingConfigurationInput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   LoggingLevel m_logLevel{LoggingLevel::NOT_SET};
+  bool m_enabledHasBeenSet = false;
   bool m_logLevelHasBeenSet = false;
 };
 

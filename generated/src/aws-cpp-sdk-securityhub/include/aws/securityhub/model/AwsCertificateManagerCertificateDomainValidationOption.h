@@ -154,21 +154,21 @@ class AwsCertificateManagerCertificateDomainValidationOption {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   AwsCertificateManagerCertificateResourceRecord m_resourceRecord;
-  bool m_resourceRecordHasBeenSet = false;
 
   Aws::String m_validationDomain;
-  bool m_validationDomainHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_validationEmails;
-  bool m_validationEmailsHasBeenSet = false;
 
   Aws::String m_validationMethod;
-  bool m_validationMethodHasBeenSet = false;
 
   Aws::String m_validationStatus;
+  bool m_domainNameHasBeenSet = false;
+  bool m_resourceRecordHasBeenSet = false;
+  bool m_validationDomainHasBeenSet = false;
+  bool m_validationEmailsHasBeenSet = false;
+  bool m_validationMethodHasBeenSet = false;
   bool m_validationStatusHasBeenSet = false;
 };
 

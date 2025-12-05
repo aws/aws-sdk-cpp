@@ -221,33 +221,33 @@ class AwsEcrContainerImageDetails {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageTags;
-  bool m_imageTagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_pushedAt{};
-  bool m_pushedAtHasBeenSet = false;
 
   Aws::String m_author;
-  bool m_authorHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_imageHash;
-  bool m_imageHashHasBeenSet = false;
 
   Aws::String m_registry;
-  bool m_registryHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastInUseAt{};
-  bool m_lastInUseAtHasBeenSet = false;
 
   long long m_inUseCount{0};
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_imageTagsHasBeenSet = false;
+  bool m_pushedAtHasBeenSet = false;
+  bool m_authorHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_imageHashHasBeenSet = false;
+  bool m_registryHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_lastInUseAtHasBeenSet = false;
   bool m_inUseCountHasBeenSet = false;
 };
 

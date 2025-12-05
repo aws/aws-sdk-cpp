@@ -121,15 +121,15 @@ class RerankRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RerankQuery> m_queries;
-  bool m_queriesHasBeenSet = false;
 
   RerankingConfiguration m_rerankingConfiguration;
-  bool m_rerankingConfigurationHasBeenSet = false;
 
   Aws::Vector<RerankSource> m_sources;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_queriesHasBeenSet = false;
+  bool m_rerankingConfigurationHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

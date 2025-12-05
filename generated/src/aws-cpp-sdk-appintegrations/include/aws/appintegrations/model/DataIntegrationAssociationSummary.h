@@ -142,21 +142,21 @@ class DataIntegrationAssociationSummary {
   ///@}
  private:
   Aws::String m_dataIntegrationAssociationArn;
-  bool m_dataIntegrationAssociationArnHasBeenSet = false;
 
   Aws::String m_dataIntegrationArn;
-  bool m_dataIntegrationArnHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_destinationURI;
-  bool m_destinationURIHasBeenSet = false;
 
   LastExecutionStatus m_lastExecutionStatus;
-  bool m_lastExecutionStatusHasBeenSet = false;
 
   ExecutionConfiguration m_executionConfiguration;
+  bool m_dataIntegrationAssociationArnHasBeenSet = false;
+  bool m_dataIntegrationArnHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_destinationURIHasBeenSet = false;
+  bool m_lastExecutionStatusHasBeenSet = false;
   bool m_executionConfigurationHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ValidationError {
   ///@}
  private:
   FieldValidationError m_fieldValidationError;
-  bool m_fieldValidationErrorHasBeenSet = false;
 
   BusinessValidationError m_businessValidationError;
+  bool m_fieldValidationErrorHasBeenSet = false;
   bool m_businessValidationErrorHasBeenSet = false;
 };
 

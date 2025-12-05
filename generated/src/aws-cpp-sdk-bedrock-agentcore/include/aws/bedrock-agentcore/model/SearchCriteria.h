@@ -112,15 +112,15 @@ class SearchCriteria {
   ///@}
  private:
   Aws::String m_searchQuery;
-  bool m_searchQueryHasBeenSet = false;
 
   Aws::String m_memoryStrategyId;
-  bool m_memoryStrategyIdHasBeenSet = false;
 
   int m_topK{0};
-  bool m_topKHasBeenSet = false;
 
   Aws::Vector<MemoryMetadataFilterExpression> m_metadataFilters;
+  bool m_searchQueryHasBeenSet = false;
+  bool m_memoryStrategyIdHasBeenSet = false;
+  bool m_topKHasBeenSet = false;
   bool m_metadataFiltersHasBeenSet = false;
 };
 

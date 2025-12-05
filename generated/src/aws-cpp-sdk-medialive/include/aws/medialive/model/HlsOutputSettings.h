@@ -108,15 +108,15 @@ Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
   ///@}
  private:
   HlsH265PackagingType m_h265PackagingType{HlsH265PackagingType::NOT_SET};
-  bool m_h265PackagingTypeHasBeenSet = false;
 
   HlsSettings m_hlsSettings;
-  bool m_hlsSettingsHasBeenSet = false;
 
   Aws::String m_nameModifier;
-  bool m_nameModifierHasBeenSet = false;
 
   Aws::String m_segmentModifier;
+  bool m_h265PackagingTypeHasBeenSet = false;
+  bool m_hlsSettingsHasBeenSet = false;
+  bool m_nameModifierHasBeenSet = false;
   bool m_segmentModifierHasBeenSet = false;
 };
 

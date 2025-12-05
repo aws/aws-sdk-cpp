@@ -61,9 +61,9 @@ class GetWorkloadAccessTokenForJWTResult {
   ///@}
  private:
   Aws::String m_workloadAccessToken;
-  bool m_workloadAccessTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadAccessTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

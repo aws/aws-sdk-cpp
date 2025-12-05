@@ -183,27 +183,27 @@ class DescribeMaintenanceStartTimeResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   int m_hourOfDay{0};
-  bool m_hourOfDayHasBeenSet = false;
 
   int m_minuteOfHour{0};
-  bool m_minuteOfHourHasBeenSet = false;
 
   int m_dayOfWeek{0};
-  bool m_dayOfWeekHasBeenSet = false;
 
   int m_dayOfMonth{0};
-  bool m_dayOfMonthHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   SoftwareUpdatePreferences m_softwareUpdatePreferences;
-  bool m_softwareUpdatePreferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_hourOfDayHasBeenSet = false;
+  bool m_minuteOfHourHasBeenSet = false;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_dayOfMonthHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_softwareUpdatePreferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

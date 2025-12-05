@@ -59,9 +59,9 @@ class CreateAssessmentTargetResult {
   ///@}
  private:
   Aws::String m_assessmentTargetArn;
-  bool m_assessmentTargetArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentTargetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -309,48 +309,48 @@ class GetDeploymentResult {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_deploymentName;
-  bool m_deploymentNameHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_iotJobId;
-  bool m_iotJobIdHasBeenSet = false;
 
   Aws::String m_iotJobArn;
-  bool m_iotJobArnHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentDeploymentSpecification> m_components;
-  bool m_componentsHasBeenSet = false;
 
   DeploymentPolicies m_deploymentPolicies;
-  bool m_deploymentPoliciesHasBeenSet = false;
 
   DeploymentIoTJobConfiguration m_iotJobConfiguration;
-  bool m_iotJobConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   bool m_isLatestForTarget{false};
-  bool m_isLatestForTargetHasBeenSet = false;
 
   Aws::String m_parentTargetArn;
-  bool m_parentTargetArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetArnHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_deploymentNameHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_iotJobIdHasBeenSet = false;
+  bool m_iotJobArnHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_deploymentPoliciesHasBeenSet = false;
+  bool m_iotJobConfigurationHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_isLatestForTargetHasBeenSet = false;
+  bool m_parentTargetArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

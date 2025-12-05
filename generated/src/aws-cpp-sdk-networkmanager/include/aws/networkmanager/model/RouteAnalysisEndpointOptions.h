@@ -86,12 +86,12 @@ class RouteAnalysisEndpointOptions {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentArn;
-  bool m_transitGatewayAttachmentArnHasBeenSet = false;
 
   Aws::String m_transitGatewayArn;
-  bool m_transitGatewayArnHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_transitGatewayAttachmentArnHasBeenSet = false;
+  bool m_transitGatewayArnHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

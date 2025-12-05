@@ -67,9 +67,9 @@ class ObjectAttributeAction {
   ///@}
  private:
   UpdateActionType m_objectAttributeActionType{UpdateActionType::NOT_SET};
-  bool m_objectAttributeActionTypeHasBeenSet = false;
 
   TypedAttributeValue m_objectAttributeUpdateValue;
+  bool m_objectAttributeActionTypeHasBeenSet = false;
   bool m_objectAttributeUpdateValueHasBeenSet = false;
 };
 

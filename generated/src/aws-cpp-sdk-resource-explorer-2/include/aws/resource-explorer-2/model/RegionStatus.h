@@ -89,12 +89,12 @@ class RegionStatus {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   IndexStatus m_index;
-  bool m_indexHasBeenSet = false;
 
   ViewStatus m_view;
+  bool m_regionHasBeenSet = false;
+  bool m_indexHasBeenSet = false;
   bool m_viewHasBeenSet = false;
 };
 

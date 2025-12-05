@@ -86,12 +86,12 @@ class Location {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_latitude;
-  bool m_latitudeHasBeenSet = false;
 
   Aws::String m_longitude;
+  bool m_addressHasBeenSet = false;
+  bool m_latitudeHasBeenSet = false;
   bool m_longitudeHasBeenSet = false;
 };
 

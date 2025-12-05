@@ -126,15 +126,15 @@ class UpdateVoiceTemplateRequest : public PinpointRequest {
   ///@}
  private:
   bool m_createNewVersion{false};
-  bool m_createNewVersionHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   VoiceTemplateRequest m_voiceTemplateRequest;
+  bool m_createNewVersionHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_voiceTemplateRequestHasBeenSet = false;
 };
 

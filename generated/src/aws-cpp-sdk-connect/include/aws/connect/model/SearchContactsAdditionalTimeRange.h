@@ -77,9 +77,9 @@ class SearchContactsAdditionalTimeRange {
   ///@}
  private:
   Aws::Vector<SearchContactsAdditionalTimeRangeCriteria> m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   SearchContactsMatchType m_matchType{SearchContactsMatchType::NOT_SET};
+  bool m_criteriaHasBeenSet = false;
   bool m_matchTypeHasBeenSet = false;
 };
 

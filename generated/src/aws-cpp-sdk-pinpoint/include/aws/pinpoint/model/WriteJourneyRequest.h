@@ -431,60 +431,60 @@ class WriteJourneyRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Activity> m_activities;
-  bool m_activitiesHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   JourneyLimits m_limits;
-  bool m_limitsHasBeenSet = false;
 
   bool m_localTime{false};
-  bool m_localTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   QuietTime m_quietTime;
-  bool m_quietTimeHasBeenSet = false;
 
   Aws::String m_refreshFrequency;
-  bool m_refreshFrequencyHasBeenSet = false;
 
   JourneySchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_startActivity;
-  bool m_startActivityHasBeenSet = false;
 
   StartCondition m_startCondition;
-  bool m_startConditionHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   bool m_waitForQuietTime{false};
-  bool m_waitForQuietTimeHasBeenSet = false;
 
   bool m_refreshOnSegmentUpdate{false};
-  bool m_refreshOnSegmentUpdateHasBeenSet = false;
 
   JourneyChannelSettings m_journeyChannelSettings;
-  bool m_journeyChannelSettingsHasBeenSet = false;
 
   bool m_sendingSchedule{false};
-  bool m_sendingScheduleHasBeenSet = false;
 
   OpenHours m_openHours;
-  bool m_openHoursHasBeenSet = false;
 
   ClosedDays m_closedDays;
-  bool m_closedDaysHasBeenSet = false;
 
   Aws::Vector<__TimezoneEstimationMethodsElement> m_timezoneEstimationMethods;
+  bool m_activitiesHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_limitsHasBeenSet = false;
+  bool m_localTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_quietTimeHasBeenSet = false;
+  bool m_refreshFrequencyHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_startActivityHasBeenSet = false;
+  bool m_startConditionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_waitForQuietTimeHasBeenSet = false;
+  bool m_refreshOnSegmentUpdateHasBeenSet = false;
+  bool m_journeyChannelSettingsHasBeenSet = false;
+  bool m_sendingScheduleHasBeenSet = false;
+  bool m_openHoursHasBeenSet = false;
+  bool m_closedDaysHasBeenSet = false;
   bool m_timezoneEstimationMethodsHasBeenSet = false;
 };
 

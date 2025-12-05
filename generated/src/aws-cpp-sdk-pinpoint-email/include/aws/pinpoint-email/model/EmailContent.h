@@ -105,12 +105,12 @@ class EmailContent {
   ///@}
  private:
   Message m_simple;
-  bool m_simpleHasBeenSet = false;
 
   RawMessage m_raw;
-  bool m_rawHasBeenSet = false;
 
   Template m_template;
+  bool m_simpleHasBeenSet = false;
+  bool m_rawHasBeenSet = false;
   bool m_templateHasBeenSet = false;
 };
 

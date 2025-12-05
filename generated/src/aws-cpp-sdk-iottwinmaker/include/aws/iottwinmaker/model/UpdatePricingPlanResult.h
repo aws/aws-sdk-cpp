@@ -77,12 +77,12 @@ class UpdatePricingPlanResult {
   ///@}
  private:
   PricingPlan m_currentPricingPlan;
-  bool m_currentPricingPlanHasBeenSet = false;
 
   PricingPlan m_pendingPricingPlan;
-  bool m_pendingPricingPlanHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_currentPricingPlanHasBeenSet = false;
+  bool m_pendingPricingPlanHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

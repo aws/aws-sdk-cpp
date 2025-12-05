@@ -77,9 +77,9 @@ class BatchAssociateResourceRequest : public FMSRequest {
   ///@}
  private:
   Aws::String m_resourceSetIdentifier;
-  bool m_resourceSetIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_items;
+  bool m_resourceSetIdentifierHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class CreateDatabaseRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   DatabaseInput m_databaseInput;
-  bool m_databaseInputHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseInputHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

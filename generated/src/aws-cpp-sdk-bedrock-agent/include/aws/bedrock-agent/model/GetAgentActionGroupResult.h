@@ -60,9 +60,9 @@ class GetAgentActionGroupResult {
   ///@}
  private:
   AgentActionGroup m_agentActionGroup;
-  bool m_agentActionGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentActionGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

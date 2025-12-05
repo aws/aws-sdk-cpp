@@ -121,12 +121,12 @@ class ProtectiveEquipmentSummary {
   ///@}
  private:
   Aws::Vector<int> m_personsWithRequiredEquipment;
-  bool m_personsWithRequiredEquipmentHasBeenSet = false;
 
   Aws::Vector<int> m_personsWithoutRequiredEquipment;
-  bool m_personsWithoutRequiredEquipmentHasBeenSet = false;
 
   Aws::Vector<int> m_personsIndeterminate;
+  bool m_personsWithRequiredEquipmentHasBeenSet = false;
+  bool m_personsWithoutRequiredEquipmentHasBeenSet = false;
   bool m_personsIndeterminateHasBeenSet = false;
 };
 

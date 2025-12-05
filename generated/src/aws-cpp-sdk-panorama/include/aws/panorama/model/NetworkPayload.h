@@ -87,12 +87,12 @@ class NetworkPayload {
   ///@}
  private:
   EthernetPayload m_ethernet0;
-  bool m_ethernet0HasBeenSet = false;
 
   EthernetPayload m_ethernet1;
-  bool m_ethernet1HasBeenSet = false;
 
   NtpPayload m_ntp;
+  bool m_ethernet0HasBeenSet = false;
+  bool m_ethernet1HasBeenSet = false;
   bool m_ntpHasBeenSet = false;
 };
 

@@ -432,60 +432,60 @@ class CreateJobRequest : public SnowballRequest {
   ///@}
  private:
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   JobResource m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
-  bool m_onDeviceServiceConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_addressId;
-  bool m_addressIdHasBeenSet = false;
 
   Aws::String m_kmsKeyARN;
-  bool m_kmsKeyARNHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   SnowballCapacity m_snowballCapacityPreference{SnowballCapacity::NOT_SET};
-  bool m_snowballCapacityPreferenceHasBeenSet = false;
 
   ShippingOption m_shippingOption{ShippingOption::NOT_SET};
-  bool m_shippingOptionHasBeenSet = false;
 
   Notification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   SnowballType m_snowballType{SnowballType::NOT_SET};
-  bool m_snowballTypeHasBeenSet = false;
 
   Aws::String m_forwardingAddressId;
-  bool m_forwardingAddressIdHasBeenSet = false;
 
   TaxDocuments m_taxDocuments;
-  bool m_taxDocumentsHasBeenSet = false;
 
   DeviceConfiguration m_deviceConfiguration;
-  bool m_deviceConfigurationHasBeenSet = false;
 
   RemoteManagement m_remoteManagement{RemoteManagement::NOT_SET};
-  bool m_remoteManagementHasBeenSet = false;
 
   Aws::String m_longTermPricingId;
-  bool m_longTermPricingIdHasBeenSet = false;
 
   ImpactLevel m_impactLevel{ImpactLevel::NOT_SET};
-  bool m_impactLevelHasBeenSet = false;
 
   PickupDetails m_pickupDetails;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_onDeviceServiceConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_addressIdHasBeenSet = false;
+  bool m_kmsKeyARNHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_snowballCapacityPreferenceHasBeenSet = false;
+  bool m_shippingOptionHasBeenSet = false;
+  bool m_notificationHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_snowballTypeHasBeenSet = false;
+  bool m_forwardingAddressIdHasBeenSet = false;
+  bool m_taxDocumentsHasBeenSet = false;
+  bool m_deviceConfigurationHasBeenSet = false;
+  bool m_remoteManagementHasBeenSet = false;
+  bool m_longTermPricingIdHasBeenSet = false;
+  bool m_impactLevelHasBeenSet = false;
   bool m_pickupDetailsHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class TemplateRule {
   ///@}
  private:
   Aws::String m_caseRuleId;
-  bool m_caseRuleIdHasBeenSet = false;
 
   Aws::String m_fieldId;
+  bool m_caseRuleIdHasBeenSet = false;
   bool m_fieldIdHasBeenSet = false;
 };
 

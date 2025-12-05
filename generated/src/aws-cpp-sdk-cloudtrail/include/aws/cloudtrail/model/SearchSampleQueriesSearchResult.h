@@ -104,15 +104,15 @@ class SearchSampleQueriesSearchResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_sQL;
-  bool m_sQLHasBeenSet = false;
 
   double m_relevance{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sQLHasBeenSet = false;
   bool m_relevanceHasBeenSet = false;
 };
 

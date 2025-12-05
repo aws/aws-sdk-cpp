@@ -108,12 +108,12 @@ class CreateIdentitySourceRequest : public MPARequest {
   ///@}
  private:
   IdentitySourceParameters m_identitySourceParameters;
-  bool m_identitySourceParametersHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_identitySourceParametersHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

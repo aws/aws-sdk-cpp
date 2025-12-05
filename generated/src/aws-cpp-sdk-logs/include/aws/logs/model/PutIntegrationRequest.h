@@ -87,12 +87,12 @@ class PutIntegrationRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   IntegrationType m_integrationType{IntegrationType::NOT_SET};
+  bool m_integrationNameHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
   bool m_integrationTypeHasBeenSet = false;
 };
 

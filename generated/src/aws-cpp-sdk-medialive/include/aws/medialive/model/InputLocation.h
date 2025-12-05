@@ -88,12 +88,12 @@ class InputLocation {
   ///@}
  private:
   Aws::String m_passwordParam;
-  bool m_passwordParamHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_passwordParamHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

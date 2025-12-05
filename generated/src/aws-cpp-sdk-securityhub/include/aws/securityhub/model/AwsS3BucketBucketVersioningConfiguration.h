@@ -69,9 +69,9 @@ class AwsS3BucketBucketVersioningConfiguration {
   ///@}
  private:
   bool m_isMfaDeleteEnabled{false};
-  bool m_isMfaDeleteEnabledHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_isMfaDeleteEnabledHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class JobExecutionsRolloutConfig {
   ///@}
  private:
   int m_maximumPerMinute{0};
-  bool m_maximumPerMinuteHasBeenSet = false;
 
   ExponentialRolloutRate m_exponentialRate;
+  bool m_maximumPerMinuteHasBeenSet = false;
   bool m_exponentialRateHasBeenSet = false;
 };
 

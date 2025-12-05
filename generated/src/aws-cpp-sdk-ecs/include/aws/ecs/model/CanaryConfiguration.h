@@ -71,9 +71,9 @@ class CanaryConfiguration {
   ///@}
  private:
   double m_canaryPercent{0.0};
-  bool m_canaryPercentHasBeenSet = false;
 
   int m_canaryBakeTimeInMinutes{0};
+  bool m_canaryPercentHasBeenSet = false;
   bool m_canaryBakeTimeInMinutesHasBeenSet = false;
 };
 

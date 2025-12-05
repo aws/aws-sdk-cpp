@@ -154,18 +154,18 @@ class ListServiceJobsRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_jobQueue;
-  bool m_jobQueueHasBeenSet = false;
 
   ServiceJobStatus m_jobStatus{ServiceJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<KeyValuesPair> m_filters;
+  bool m_jobQueueHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

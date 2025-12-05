@@ -119,15 +119,15 @@ class DisassociateRoutingProfileQueuesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_routingProfileId;
-  bool m_routingProfileIdHasBeenSet = false;
 
   Aws::Vector<RoutingProfileQueueReference> m_queueReferences;
-  bool m_queueReferencesHasBeenSet = false;
 
   Aws::Vector<RoutingProfileQueueReference> m_manualAssignmentQueueReferences;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_routingProfileIdHasBeenSet = false;
+  bool m_queueReferencesHasBeenSet = false;
   bool m_manualAssignmentQueueReferencesHasBeenSet = false;
 };
 

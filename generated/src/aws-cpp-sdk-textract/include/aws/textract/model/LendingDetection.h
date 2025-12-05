@@ -102,15 +102,15 @@ class LendingDetection {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   SelectionStatus m_selectionStatus{SelectionStatus::NOT_SET};
-  bool m_selectionStatusHasBeenSet = false;
 
   Geometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_textHasBeenSet = false;
+  bool m_selectionStatusHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

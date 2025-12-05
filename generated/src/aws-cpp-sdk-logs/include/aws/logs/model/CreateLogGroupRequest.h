@@ -154,18 +154,18 @@ class CreateLogGroupRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
-  bool m_logGroupClassHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_logGroupClassHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 

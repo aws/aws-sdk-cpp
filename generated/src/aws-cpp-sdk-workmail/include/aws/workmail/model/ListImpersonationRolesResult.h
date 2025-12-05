@@ -85,12 +85,12 @@ class ListImpersonationRolesResult {
   ///@}
  private:
   Aws::Vector<ImpersonationRole> m_roles;
-  bool m_rolesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rolesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

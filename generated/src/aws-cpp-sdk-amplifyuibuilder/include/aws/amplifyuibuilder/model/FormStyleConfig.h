@@ -70,9 +70,9 @@ class FormStyleConfig {
   ///@}
  private:
   Aws::String m_tokenReference;
-  bool m_tokenReferenceHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_tokenReferenceHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

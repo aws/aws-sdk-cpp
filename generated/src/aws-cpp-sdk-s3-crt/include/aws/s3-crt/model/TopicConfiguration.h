@@ -114,15 +114,15 @@ class TopicConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::Vector<Event> m_events;
-  bool m_eventsHasBeenSet = false;
 
   NotificationConfigurationFilter m_filter;
+  bool m_idHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

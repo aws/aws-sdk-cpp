@@ -94,12 +94,12 @@ class RoutingStrategy {
   ///@}
  private:
   RoutingStrategyType m_type{RoutingStrategyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

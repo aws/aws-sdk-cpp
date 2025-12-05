@@ -74,9 +74,9 @@ class UpdateEnabledControlRequest : public ControlTowerRequest {
   ///@}
  private:
   Aws::Vector<EnabledControlParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_enabledControlIdentifier;
+  bool m_parametersHasBeenSet = false;
   bool m_enabledControlIdentifierHasBeenSet = false;
 };
 

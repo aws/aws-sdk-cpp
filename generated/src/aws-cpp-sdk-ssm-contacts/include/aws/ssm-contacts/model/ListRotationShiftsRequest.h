@@ -123,18 +123,18 @@ class ListRotationShiftsRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_rotationId;
-  bool m_rotationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_rotationIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

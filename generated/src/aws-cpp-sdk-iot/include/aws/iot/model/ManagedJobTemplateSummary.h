@@ -130,18 +130,18 @@ class ManagedJobTemplateSummary {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_environments;
-  bool m_environmentsHasBeenSet = false;
 
   Aws::String m_templateVersion;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentsHasBeenSet = false;
   bool m_templateVersionHasBeenSet = false;
 };
 

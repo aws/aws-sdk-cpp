@@ -173,21 +173,21 @@ class Change {
   ///@}
  private:
   Aws::String m_changeType;
-  bool m_changeTypeHasBeenSet = false;
 
   Entity m_entity;
-  bool m_entityHasBeenSet = false;
 
   Aws::Vector<Tag> m_entityTags;
-  bool m_entityTagsHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::Utils::Document m_detailsDocument;
-  bool m_detailsDocumentHasBeenSet = false;
 
   Aws::String m_changeName;
+  bool m_changeTypeHasBeenSet = false;
+  bool m_entityHasBeenSet = false;
+  bool m_entityTagsHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_detailsDocumentHasBeenSet = false;
   bool m_changeNameHasBeenSet = false;
 };
 

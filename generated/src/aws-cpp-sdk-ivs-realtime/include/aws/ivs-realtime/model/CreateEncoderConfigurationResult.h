@@ -60,9 +60,9 @@ class CreateEncoderConfigurationResult {
   ///@}
  private:
   EncoderConfiguration m_encoderConfiguration;
-  bool m_encoderConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_encoderConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

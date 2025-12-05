@@ -99,15 +99,15 @@ class DecimalCondition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   double m_minValue{0.0};
-  bool m_minValueHasBeenSet = false;
 
   double m_maxValue{0.0};
-  bool m_maxValueHasBeenSet = false;
 
   DecimalComparisonType m_comparisonType{DecimalComparisonType::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
   bool m_comparisonTypeHasBeenSet = false;
 };
 

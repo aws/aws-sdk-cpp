@@ -69,9 +69,9 @@ class DiskMap {
   ///@}
  private:
   Aws::String m_originalDiskPath;
-  bool m_originalDiskPathHasBeenSet = false;
 
   Aws::String m_newDiskName;
+  bool m_originalDiskPathHasBeenSet = false;
   bool m_newDiskNameHasBeenSet = false;
 };
 

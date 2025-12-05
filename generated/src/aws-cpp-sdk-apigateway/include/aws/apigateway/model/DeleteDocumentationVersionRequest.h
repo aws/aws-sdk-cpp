@@ -69,9 +69,9 @@ class DeleteDocumentationVersionRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_documentationVersion;
+  bool m_restApiIdHasBeenSet = false;
   bool m_documentationVersionHasBeenSet = false;
 };
 

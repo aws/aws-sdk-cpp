@@ -59,9 +59,9 @@ class CreateIdentityProviderResult {
   ///@}
  private:
   Aws::String m_identityProviderArn;
-  bool m_identityProviderArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityProviderArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class CustomAuthConfig {
   ///@}
  private:
   Aws::String m_customAuthenticationType;
-  bool m_customAuthenticationTypeHasBeenSet = false;
 
   Aws::Vector<AuthParameter> m_authParameters;
+  bool m_customAuthenticationTypeHasBeenSet = false;
   bool m_authParametersHasBeenSet = false;
 };
 

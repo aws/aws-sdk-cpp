@@ -86,12 +86,12 @@ class GetIpamDiscoveredAccountsResponse {
   ///@}
  private:
   Aws::Vector<IpamDiscoveredAccount> m_ipamDiscoveredAccounts;
-  bool m_ipamDiscoveredAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamDiscoveredAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class MetricDimension {
   ///@}
  private:
   Aws::String m_dimensionName;
-  bool m_dimensionNameHasBeenSet = false;
 
   DimensionValueOperator m_operator{DimensionValueOperator::NOT_SET};
+  bool m_dimensionNameHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

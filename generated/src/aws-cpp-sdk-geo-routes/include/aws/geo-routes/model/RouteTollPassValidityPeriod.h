@@ -64,9 +64,9 @@ class RouteTollPassValidityPeriod {
   ///@}
  private:
   RouteTollPassValidityPeriodType m_period{RouteTollPassValidityPeriodType::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   int m_periodCount{0};
+  bool m_periodHasBeenSet = false;
   bool m_periodCountHasBeenSet = false;
 };
 

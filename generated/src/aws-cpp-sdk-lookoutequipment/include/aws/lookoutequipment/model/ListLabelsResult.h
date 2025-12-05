@@ -88,12 +88,12 @@ class ListLabelsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LabelSummary> m_labelSummaries;
-  bool m_labelSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_labelSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

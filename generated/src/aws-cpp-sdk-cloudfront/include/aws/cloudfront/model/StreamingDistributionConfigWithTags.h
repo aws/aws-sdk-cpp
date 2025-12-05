@@ -70,9 +70,9 @@ class StreamingDistributionConfigWithTags {
   ///@}
  private:
   StreamingDistributionConfig m_streamingDistributionConfig;
-  bool m_streamingDistributionConfigHasBeenSet = false;
 
   Tags m_tags;
+  bool m_streamingDistributionConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

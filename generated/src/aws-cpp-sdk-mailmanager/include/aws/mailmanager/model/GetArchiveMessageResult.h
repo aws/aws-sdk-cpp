@@ -101,15 +101,15 @@ class GetArchiveMessageResult {
   ///@}
  private:
   Aws::String m_messageDownloadLink;
-  bool m_messageDownloadLinkHasBeenSet = false;
 
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Envelope m_envelope;
-  bool m_envelopeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageDownloadLinkHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_envelopeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

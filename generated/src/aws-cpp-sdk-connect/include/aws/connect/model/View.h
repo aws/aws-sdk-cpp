@@ -277,42 +277,42 @@ class View {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ViewStatus m_status{ViewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ViewType m_type{ViewType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   ViewContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_viewContentSha256;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_viewContentSha256HasBeenSet = false;
 };
 

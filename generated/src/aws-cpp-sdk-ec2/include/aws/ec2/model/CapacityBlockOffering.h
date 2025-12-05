@@ -267,42 +267,42 @@ class CapacityBlockOffering {
   ///@}
  private:
   Aws::String m_capacityBlockOfferingId;
-  bool m_capacityBlockOfferingIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   int m_capacityBlockDurationHours{0};
-  bool m_capacityBlockDurationHoursHasBeenSet = false;
 
   Aws::String m_upfrontFee;
-  bool m_upfrontFeeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   CapacityReservationTenancy m_tenancy{CapacityReservationTenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Aws::String m_ultraserverType;
-  bool m_ultraserverTypeHasBeenSet = false;
 
   int m_ultraserverCount{0};
-  bool m_ultraserverCountHasBeenSet = false;
 
   int m_capacityBlockDurationMinutes{0};
+  bool m_capacityBlockOfferingIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_capacityBlockDurationHoursHasBeenSet = false;
+  bool m_upfrontFeeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_ultraserverTypeHasBeenSet = false;
+  bool m_ultraserverCountHasBeenSet = false;
   bool m_capacityBlockDurationMinutesHasBeenSet = false;
 };
 

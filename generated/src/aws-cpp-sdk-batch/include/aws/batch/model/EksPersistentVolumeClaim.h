@@ -78,9 +78,9 @@ class EksPersistentVolumeClaim {
   ///@}
  private:
   Aws::String m_claimName;
-  bool m_claimNameHasBeenSet = false;
 
   bool m_readOnly{false};
+  bool m_claimNameHasBeenSet = false;
   bool m_readOnlyHasBeenSet = false;
 };
 

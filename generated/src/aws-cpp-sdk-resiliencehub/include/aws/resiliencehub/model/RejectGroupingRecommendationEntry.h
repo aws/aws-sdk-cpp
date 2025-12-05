@@ -68,9 +68,9 @@ class RejectGroupingRecommendationEntry {
   ///@}
  private:
   Aws::String m_groupingRecommendationId;
-  bool m_groupingRecommendationIdHasBeenSet = false;
 
   GroupingRecommendationRejectionReason m_rejectionReason{GroupingRecommendationRejectionReason::NOT_SET};
+  bool m_groupingRecommendationIdHasBeenSet = false;
   bool m_rejectionReasonHasBeenSet = false;
 };
 

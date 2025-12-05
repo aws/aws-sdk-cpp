@@ -93,15 +93,15 @@ class DeleteDefaultSenderIdResult {
   ///@}
  private:
   Aws::String m_configurationSetArn;
-  bool m_configurationSetArnHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationSetArnHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_senderIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

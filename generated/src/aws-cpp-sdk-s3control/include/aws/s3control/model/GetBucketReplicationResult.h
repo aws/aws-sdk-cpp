@@ -81,12 +81,12 @@ class GetBucketReplicationResult {
   ///@}
  private:
   ReplicationConfiguration m_replicationConfiguration;
-  bool m_replicationConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_replicationConfigurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

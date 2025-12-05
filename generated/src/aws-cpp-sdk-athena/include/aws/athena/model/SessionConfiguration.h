@@ -119,18 +119,18 @@ class SessionConfiguration {
   ///@}
  private:
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   long long m_idleTimeoutSeconds{0};
-  bool m_idleTimeoutSecondsHasBeenSet = false;
 
   int m_sessionIdleTimeoutInMinutes{0};
-  bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
+  bool m_idleTimeoutSecondsHasBeenSet = false;
+  bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

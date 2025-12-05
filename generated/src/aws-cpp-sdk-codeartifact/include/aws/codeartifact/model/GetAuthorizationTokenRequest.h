@@ -92,12 +92,12 @@ class GetAuthorizationTokenRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   long long m_durationSeconds{0};
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
 };
 

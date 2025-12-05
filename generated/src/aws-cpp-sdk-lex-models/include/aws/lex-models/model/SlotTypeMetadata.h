@@ -124,18 +124,18 @@ class SlotTypeMetadata {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

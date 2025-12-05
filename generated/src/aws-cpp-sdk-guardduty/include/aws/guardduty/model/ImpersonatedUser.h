@@ -76,9 +76,9 @@ class ImpersonatedUser {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
+  bool m_usernameHasBeenSet = false;
   bool m_groupsHasBeenSet = false;
 };
 

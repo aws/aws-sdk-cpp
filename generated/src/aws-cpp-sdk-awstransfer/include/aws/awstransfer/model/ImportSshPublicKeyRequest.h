@@ -87,12 +87,12 @@ class ImportSshPublicKeyRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_sshPublicKeyBody;
-  bool m_sshPublicKeyBodyHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_serverIdHasBeenSet = false;
+  bool m_sshPublicKeyBodyHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

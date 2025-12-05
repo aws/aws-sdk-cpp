@@ -161,24 +161,24 @@ class DataQualityRulesetFilterCriteria {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedBefore{};
-  bool m_lastModifiedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAfter{};
-  bool m_lastModifiedAfterHasBeenSet = false;
 
   DataQualityTargetTable m_targetTable;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_lastModifiedBeforeHasBeenSet = false;
+  bool m_lastModifiedAfterHasBeenSet = false;
   bool m_targetTableHasBeenSet = false;
 };
 

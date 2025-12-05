@@ -170,24 +170,24 @@ class SipMediaApplication {
   ///@}
  private:
   Aws::String m_sipMediaApplicationId;
-  bool m_sipMediaApplicationIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SipMediaApplicationEndpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::String m_sipMediaApplicationArn;
+  bool m_sipMediaApplicationIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
   bool m_sipMediaApplicationArnHasBeenSet = false;
 };
 

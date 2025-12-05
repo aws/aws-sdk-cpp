@@ -90,12 +90,12 @@ class DescribeGlobalSettingsResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_globalSettings;
-  bool m_globalSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_globalSettingsHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

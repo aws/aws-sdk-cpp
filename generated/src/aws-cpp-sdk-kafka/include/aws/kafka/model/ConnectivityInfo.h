@@ -76,9 +76,9 @@ class ConnectivityInfo {
   ///@}
  private:
   PublicAccess m_publicAccess;
-  bool m_publicAccessHasBeenSet = false;
 
   VpcConnectivity m_vpcConnectivity;
+  bool m_publicAccessHasBeenSet = false;
   bool m_vpcConnectivityHasBeenSet = false;
 };
 

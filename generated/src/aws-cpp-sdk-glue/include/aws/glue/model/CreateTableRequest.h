@@ -173,24 +173,24 @@ class CreateTableRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TableInput m_tableInput;
-  bool m_tableInputHasBeenSet = false;
 
   Aws::Vector<PartitionIndex> m_partitionIndexes;
-  bool m_partitionIndexesHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   OpenTableFormatInput m_openTableFormatInput;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tableInputHasBeenSet = false;
+  bool m_partitionIndexesHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
   bool m_openTableFormatInputHasBeenSet = false;
 };
 

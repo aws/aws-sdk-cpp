@@ -184,21 +184,21 @@ class Leg {
   ///@}
  private:
   Aws::Vector<double> m_startPosition;
-  bool m_startPositionHasBeenSet = false;
 
   Aws::Vector<double> m_endPosition;
-  bool m_endPositionHasBeenSet = false;
 
   double m_distance{0.0};
-  bool m_distanceHasBeenSet = false;
 
   double m_durationSeconds{0.0};
-  bool m_durationSecondsHasBeenSet = false;
 
   LegGeometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::Vector<Step> m_steps;
+  bool m_startPositionHasBeenSet = false;
+  bool m_endPositionHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
   bool m_stepsHasBeenSet = false;
 };
 

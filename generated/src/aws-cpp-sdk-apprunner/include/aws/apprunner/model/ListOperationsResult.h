@@ -86,12 +86,12 @@ class ListOperationsResult {
   ///@}
  private:
   Aws::Vector<OperationSummary> m_operationSummaryList;
-  bool m_operationSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

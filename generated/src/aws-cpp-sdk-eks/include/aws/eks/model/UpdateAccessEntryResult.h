@@ -60,9 +60,9 @@ class UpdateAccessEntryResult {
   ///@}
  private:
   AccessEntry m_accessEntry;
-  bool m_accessEntryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessEntryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

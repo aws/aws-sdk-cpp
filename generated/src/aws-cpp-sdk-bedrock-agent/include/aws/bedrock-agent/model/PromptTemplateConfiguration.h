@@ -72,9 +72,9 @@ class PromptTemplateConfiguration {
   ///@}
  private:
   TextPromptTemplateConfiguration m_text;
-  bool m_textHasBeenSet = false;
 
   ChatPromptTemplateConfiguration m_chat;
+  bool m_textHasBeenSet = false;
   bool m_chatHasBeenSet = false;
 };
 

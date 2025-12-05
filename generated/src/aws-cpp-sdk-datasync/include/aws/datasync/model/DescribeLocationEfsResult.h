@@ -172,27 +172,27 @@ class DescribeLocationEfsResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Ec2Config m_ec2Config;
-  bool m_ec2ConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_accessPointArn;
-  bool m_accessPointArnHasBeenSet = false;
 
   Aws::String m_fileSystemAccessRoleArn;
-  bool m_fileSystemAccessRoleArnHasBeenSet = false;
 
   EfsInTransitEncryption m_inTransitEncryption{EfsInTransitEncryption::NOT_SET};
-  bool m_inTransitEncryptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_ec2ConfigHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_accessPointArnHasBeenSet = false;
+  bool m_fileSystemAccessRoleArnHasBeenSet = false;
+  bool m_inTransitEncryptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

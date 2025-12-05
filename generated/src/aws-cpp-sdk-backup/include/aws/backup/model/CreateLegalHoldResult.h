@@ -163,27 +163,27 @@ class CreateLegalHoldResult {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   LegalHoldStatus m_status{LegalHoldStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_legalHoldId;
-  bool m_legalHoldIdHasBeenSet = false;
 
   Aws::String m_legalHoldArn;
-  bool m_legalHoldArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   RecoveryPointSelection m_recoveryPointSelection;
-  bool m_recoveryPointSelectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_titleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_legalHoldIdHasBeenSet = false;
+  bool m_legalHoldArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_recoveryPointSelectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class NodeFilter {
   ///@}
  private:
   NodeFilterKey m_key{NodeFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   NodeFilterOperatorType m_type{NodeFilterOperatorType::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

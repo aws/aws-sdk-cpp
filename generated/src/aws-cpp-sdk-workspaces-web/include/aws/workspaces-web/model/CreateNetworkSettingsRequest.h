@@ -149,18 +149,18 @@ class CreateNetworkSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

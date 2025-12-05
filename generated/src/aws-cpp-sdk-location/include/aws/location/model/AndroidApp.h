@@ -70,9 +70,9 @@ class AndroidApp {
   ///@}
  private:
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::String m_certificateFingerprint;
+  bool m_packageHasBeenSet = false;
   bool m_certificateFingerprintHasBeenSet = false;
 };
 

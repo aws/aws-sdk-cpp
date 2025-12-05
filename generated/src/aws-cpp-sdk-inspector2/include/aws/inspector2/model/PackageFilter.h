@@ -179,27 +179,27 @@ class PackageFilter {
   ///@}
  private:
   StringFilter m_name;
-  bool m_nameHasBeenSet = false;
 
   StringFilter m_version;
-  bool m_versionHasBeenSet = false;
 
   NumberFilter m_epoch;
-  bool m_epochHasBeenSet = false;
 
   StringFilter m_release;
-  bool m_releaseHasBeenSet = false;
 
   StringFilter m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   StringFilter m_sourceLayerHash;
-  bool m_sourceLayerHashHasBeenSet = false;
 
   StringFilter m_sourceLambdaLayerArn;
-  bool m_sourceLambdaLayerArnHasBeenSet = false;
 
   StringFilter m_filePath;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_epochHasBeenSet = false;
+  bool m_releaseHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_sourceLayerHashHasBeenSet = false;
+  bool m_sourceLambdaLayerArnHasBeenSet = false;
   bool m_filePathHasBeenSet = false;
 };
 

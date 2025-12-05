@@ -164,24 +164,24 @@ class ExportVerifiedAccessInstanceClientConfigurationResponse {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<DeviceTrustProviderType> m_deviceTrustProviders;
-  bool m_deviceTrustProvidersHasBeenSet = false;
 
   VerifiedAccessInstanceUserTrustProviderClientConfiguration m_userTrustProvider;
-  bool m_userTrustProviderHasBeenSet = false;
 
   Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfiguration> m_openVpnConfigurations;
-  bool m_openVpnConfigurationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_versionHasBeenSet = false;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_deviceTrustProvidersHasBeenSet = false;
+  bool m_userTrustProviderHasBeenSet = false;
+  bool m_openVpnConfigurationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

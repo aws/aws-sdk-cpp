@@ -84,9 +84,9 @@ class AutomatedReasoningPolicyDisjointRuleSet {
   ///@}
  private:
   Aws::Vector<Aws::String> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rules;
+  bool m_variablesHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

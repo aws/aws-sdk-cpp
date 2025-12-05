@@ -505,66 +505,66 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_handler;
-  bool m_handlerHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   int m_memorySize{0};
-  bool m_memorySizeHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Environment m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Runtime m_runtime{Runtime::NOT_SET};
-  bool m_runtimeHasBeenSet = false;
 
   DeadLetterConfig m_deadLetterConfig;
-  bool m_deadLetterConfigHasBeenSet = false;
 
   Aws::String m_kMSKeyArn;
-  bool m_kMSKeyArnHasBeenSet = false;
 
   TracingConfig m_tracingConfig;
-  bool m_tracingConfigHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_layers;
-  bool m_layersHasBeenSet = false;
 
   Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
-  bool m_fileSystemConfigsHasBeenSet = false;
 
   ImageConfig m_imageConfig;
-  bool m_imageConfigHasBeenSet = false;
 
   EphemeralStorage m_ephemeralStorage;
-  bool m_ephemeralStorageHasBeenSet = false;
 
   SnapStart m_snapStart;
-  bool m_snapStartHasBeenSet = false;
 
   LoggingConfig m_loggingConfig;
-  bool m_loggingConfigHasBeenSet = false;
 
   CapacityProviderConfig m_capacityProviderConfig;
-  bool m_capacityProviderConfigHasBeenSet = false;
 
   DurableConfig m_durableConfig;
+  bool m_functionNameHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_handlerHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_memorySizeHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
+  bool m_deadLetterConfigHasBeenSet = false;
+  bool m_kMSKeyArnHasBeenSet = false;
+  bool m_tracingConfigHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_layersHasBeenSet = false;
+  bool m_fileSystemConfigsHasBeenSet = false;
+  bool m_imageConfigHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
+  bool m_snapStartHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
+  bool m_capacityProviderConfigHasBeenSet = false;
   bool m_durableConfigHasBeenSet = false;
 };
 

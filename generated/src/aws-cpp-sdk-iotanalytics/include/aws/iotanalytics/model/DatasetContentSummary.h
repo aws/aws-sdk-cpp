@@ -124,18 +124,18 @@ class DatasetContentSummary {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   DatasetContentStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduleTime{};
-  bool m_scheduleTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
+  bool m_versionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_scheduleTimeHasBeenSet = false;
   bool m_completionTimeHasBeenSet = false;
 };
 

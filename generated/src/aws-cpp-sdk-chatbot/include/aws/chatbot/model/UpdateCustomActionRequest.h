@@ -113,15 +113,15 @@ class UpdateCustomActionRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_customActionArn;
-  bool m_customActionArnHasBeenSet = false;
 
   CustomActionDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::Vector<CustomActionAttachment> m_attachments;
+  bool m_customActionArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class AnalyzableServerSummary {
   ///@}
  private:
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_vmId;
+  bool m_hostnameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_vmIdHasBeenSet = false;
 };
 

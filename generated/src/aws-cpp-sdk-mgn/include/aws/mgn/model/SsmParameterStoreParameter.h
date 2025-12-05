@@ -67,9 +67,9 @@ class SsmParameterStoreParameter {
   ///@}
  private:
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   SsmParameterStoreParameterType m_parameterType{SsmParameterStoreParameterType::NOT_SET};
+  bool m_parameterNameHasBeenSet = false;
   bool m_parameterTypeHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class SubnetIpPrefixes {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipPrefixes;
+  bool m_subnetIdHasBeenSet = false;
   bool m_ipPrefixesHasBeenSet = false;
 };
 

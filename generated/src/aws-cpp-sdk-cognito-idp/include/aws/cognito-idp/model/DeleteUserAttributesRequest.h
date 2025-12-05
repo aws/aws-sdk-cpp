@@ -82,9 +82,9 @@ class DeleteUserAttributesRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_userAttributeNames;
-  bool m_userAttributeNamesHasBeenSet = false;
 
   Aws::String m_accessToken;
+  bool m_userAttributeNamesHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
 };
 

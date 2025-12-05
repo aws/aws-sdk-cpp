@@ -59,9 +59,9 @@ class DetachObjectResult {
   ///@}
  private:
   Aws::String m_detachedObjectIdentifier;
-  bool m_detachedObjectIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detachedObjectIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

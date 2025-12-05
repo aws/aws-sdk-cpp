@@ -90,12 +90,12 @@ class BatchAssociateAssessmentReportEvidenceRequest : public AuditManagerRequest
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_evidenceFolderId;
-  bool m_evidenceFolderIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_evidenceIds;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_evidenceFolderIdHasBeenSet = false;
   bool m_evidenceIdsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ReturnSavingsPlanRequest : public SavingsPlansRequest {
   ///@}
  private:
   Aws::String m_savingsPlanId;
-  bool m_savingsPlanIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_savingsPlanIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

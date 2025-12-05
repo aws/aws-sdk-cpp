@@ -83,12 +83,12 @@ class PutProfileObjectRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_object;
-  bool m_objectHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_objectHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteSamplingRuleResult {
   ///@}
  private:
   SamplingRuleRecord m_samplingRuleRecord;
-  bool m_samplingRuleRecordHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_samplingRuleRecordHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

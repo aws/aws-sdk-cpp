@@ -130,15 +130,15 @@ class DisableFastSnapshotRestoresRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZoneIds;
-  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceSnapshotIds;
-  bool m_sourceSnapshotIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
+  bool m_sourceSnapshotIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

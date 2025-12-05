@@ -95,12 +95,12 @@ class EsamSettings {
   ///@}
  private:
   EsamManifestConfirmConditionNotification m_manifestConfirmConditionNotification;
-  bool m_manifestConfirmConditionNotificationHasBeenSet = false;
 
   int m_responseSignalPreroll{0};
-  bool m_responseSignalPrerollHasBeenSet = false;
 
   EsamSignalProcessingNotification m_signalProcessingNotification;
+  bool m_manifestConfirmConditionNotificationHasBeenSet = false;
+  bool m_responseSignalPrerollHasBeenSet = false;
   bool m_signalProcessingNotificationHasBeenSet = false;
 };
 

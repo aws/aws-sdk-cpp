@@ -146,21 +146,21 @@ class RelatedItemContent {
   ///@}
  private:
   ContactContent m_contact;
-  bool m_contactHasBeenSet = false;
 
   CommentContent m_comment;
-  bool m_commentHasBeenSet = false;
 
   FileContent m_file;
-  bool m_fileHasBeenSet = false;
 
   SlaContent m_sla;
-  bool m_slaHasBeenSet = false;
 
   ConnectCaseContent m_connectCase;
-  bool m_connectCaseHasBeenSet = false;
 
   CustomContent m_custom;
+  bool m_contactHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_fileHasBeenSet = false;
+  bool m_slaHasBeenSet = false;
+  bool m_connectCaseHasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

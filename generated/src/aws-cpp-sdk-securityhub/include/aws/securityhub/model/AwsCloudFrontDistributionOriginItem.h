@@ -132,18 +132,18 @@ class AwsCloudFrontDistributionOriginItem {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_originPath;
-  bool m_originPathHasBeenSet = false;
 
   AwsCloudFrontDistributionOriginS3OriginConfig m_s3OriginConfig;
-  bool m_s3OriginConfigHasBeenSet = false;
 
   AwsCloudFrontDistributionOriginCustomOriginConfig m_customOriginConfig;
+  bool m_domainNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_originPathHasBeenSet = false;
+  bool m_s3OriginConfigHasBeenSet = false;
   bool m_customOriginConfigHasBeenSet = false;
 };
 

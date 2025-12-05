@@ -87,12 +87,12 @@ class Session {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   bool m_isPrimary{false};
+  bool m_nameHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_isPrimaryHasBeenSet = false;
 };
 

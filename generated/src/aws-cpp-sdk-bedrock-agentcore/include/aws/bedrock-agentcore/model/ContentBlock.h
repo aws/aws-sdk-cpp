@@ -193,30 +193,30 @@ class ContentBlock {
   ///@}
  private:
   ContentBlockType m_type{ContentBlockType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   ResourceContent m_resource;
+  bool m_typeHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_mimeTypeHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

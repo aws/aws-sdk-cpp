@@ -144,24 +144,24 @@ class GetS3TableIntegrationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   IntegrationStatus m_status{IntegrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Encryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::String m_destinationTableBucketArn;
-  bool m_destinationTableBucketArnHasBeenSet = false;
 
   long long m_createdTimeStamp{0};
-  bool m_createdTimeStampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_destinationTableBucketArnHasBeenSet = false;
+  bool m_createdTimeStampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class QueryLoggingConfigurationMetadata {
   ///@}
  private:
   QueryLoggingConfigurationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_workspace;
-  bool m_workspaceHasBeenSet = false;
 
   Aws::Vector<LoggingDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
+  bool m_statusHasBeenSet = false;
+  bool m_workspaceHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
 };
 

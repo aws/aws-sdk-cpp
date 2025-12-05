@@ -65,9 +65,9 @@ class DeleteCaseRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_caseId;
+  bool m_domainIdHasBeenSet = false;
   bool m_caseIdHasBeenSet = false;
 };
 

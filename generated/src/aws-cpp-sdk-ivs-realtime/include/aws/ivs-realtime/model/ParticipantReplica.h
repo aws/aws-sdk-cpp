@@ -144,21 +144,21 @@ class ParticipantReplica {
   ///@}
  private:
   Aws::String m_sourceStageArn;
-  bool m_sourceStageArnHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_sourceSessionId;
-  bool m_sourceSessionIdHasBeenSet = false;
 
   Aws::String m_destinationStageArn;
-  bool m_destinationStageArnHasBeenSet = false;
 
   Aws::String m_destinationSessionId;
-  bool m_destinationSessionIdHasBeenSet = false;
 
   ReplicationState m_replicationState{ReplicationState::NOT_SET};
+  bool m_sourceStageArnHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_sourceSessionIdHasBeenSet = false;
+  bool m_destinationStageArnHasBeenSet = false;
+  bool m_destinationSessionIdHasBeenSet = false;
   bool m_replicationStateHasBeenSet = false;
 };
 

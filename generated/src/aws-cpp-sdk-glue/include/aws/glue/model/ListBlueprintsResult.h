@@ -83,12 +83,12 @@ class ListBlueprintsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_blueprints;
-  bool m_blueprintsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blueprintsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -127,15 +127,15 @@ class SubscribeToShardEvent {
   ///@}
  private:
   Aws::Vector<Record> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_continuationSequenceNumber;
-  bool m_continuationSequenceNumberHasBeenSet = false;
 
   long long m_millisBehindLatest{0};
-  bool m_millisBehindLatestHasBeenSet = false;
 
   Aws::Vector<ChildShard> m_childShards;
+  bool m_recordsHasBeenSet = false;
+  bool m_continuationSequenceNumberHasBeenSet = false;
+  bool m_millisBehindLatestHasBeenSet = false;
   bool m_childShardsHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class ListDiscoveredResourcesResult {
   ///@}
  private:
   Aws::Vector<ResourceIdentifier> m_resourceIdentifiers;
-  bool m_resourceIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdentifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -301,42 +301,42 @@ class AgentAlias {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentAliasName;
-  bool m_agentAliasNameHasBeenSet = false;
 
   Aws::String m_agentAliasArn;
-  bool m_agentAliasArnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
-  bool m_routingConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<AgentAliasHistoryEvent> m_agentAliasHistoryEvents;
-  bool m_agentAliasHistoryEventsHasBeenSet = false;
 
   AgentAliasStatus m_agentAliasStatus{AgentAliasStatus::NOT_SET};
-  bool m_agentAliasStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentAliasIdHasBeenSet = false;
+  bool m_agentAliasNameHasBeenSet = false;
+  bool m_agentAliasArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_agentAliasHistoryEventsHasBeenSet = false;
+  bool m_agentAliasStatusHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
   bool m_aliasInvocationStateHasBeenSet = false;
 };
 

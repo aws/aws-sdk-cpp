@@ -189,27 +189,27 @@ class CreateProgramRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::Vector<AdBreak> m_adBreaks;
-  bool m_adBreaksHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_liveSourceName;
-  bool m_liveSourceNameHasBeenSet = false;
 
   Aws::String m_programName;
-  bool m_programNameHasBeenSet = false;
 
   ScheduleConfiguration m_scheduleConfiguration;
-  bool m_scheduleConfigurationHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::String m_vodSourceName;
-  bool m_vodSourceNameHasBeenSet = false;
 
   Aws::Vector<AudienceMedia> m_audienceMedia;
+  bool m_adBreaksHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_liveSourceNameHasBeenSet = false;
+  bool m_programNameHasBeenSet = false;
+  bool m_scheduleConfigurationHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
+  bool m_vodSourceNameHasBeenSet = false;
   bool m_audienceMediaHasBeenSet = false;
 };
 

@@ -138,21 +138,21 @@ class StartContinuousExportResult {
   ///@}
  private:
   Aws::String m_exportId;
-  bool m_exportIdHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   DataSource m_dataSource{DataSource::NOT_SET};
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_schemaStorageConfig;
-  bool m_schemaStorageConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportIdHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_schemaStorageConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

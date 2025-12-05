@@ -109,15 +109,15 @@ class DatasetOrgAttributes {
   ///@}
  private:
   GdgAttributes m_gdg;
-  bool m_gdgHasBeenSet = false;
 
   PoAttributes m_po;
-  bool m_poHasBeenSet = false;
 
   PsAttributes m_ps;
-  bool m_psHasBeenSet = false;
 
   VsamAttributes m_vsam;
+  bool m_gdgHasBeenSet = false;
+  bool m_poHasBeenSet = false;
+  bool m_psHasBeenSet = false;
   bool m_vsamHasBeenSet = false;
 };
 

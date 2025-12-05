@@ -88,12 +88,12 @@ class S3DestinationProperties {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_bucketPrefix;
-  bool m_bucketPrefixHasBeenSet = false;
 
   S3OutputFormatConfig m_s3OutputFormatConfig;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_bucketPrefixHasBeenSet = false;
   bool m_s3OutputFormatConfigHasBeenSet = false;
 };
 

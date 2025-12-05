@@ -97,12 +97,12 @@ class StartTestRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceServerIDs;
-  bool m_sourceServerIDsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_accountIDHasBeenSet = false;
+  bool m_sourceServerIDsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

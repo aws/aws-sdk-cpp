@@ -61,9 +61,9 @@ class PutDeliveryDestinationResult {
   ///@}
  private:
   DeliveryDestination m_deliveryDestination;
-  bool m_deliveryDestinationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliveryDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

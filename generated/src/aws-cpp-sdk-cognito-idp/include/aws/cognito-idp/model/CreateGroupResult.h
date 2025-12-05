@@ -60,9 +60,9 @@ class CreateGroupResult {
   ///@}
  private:
   GroupType m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

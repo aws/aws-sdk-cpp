@@ -112,12 +112,12 @@ class SmsConfigurationType {
   ///@}
  private:
   Aws::String m_snsCallerArn;
-  bool m_snsCallerArnHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_snsRegion;
+  bool m_snsCallerArnHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
   bool m_snsRegionHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetQueryExecutionResult {
   ///@}
  private:
   QueryExecution m_queryExecution;
-  bool m_queryExecutionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

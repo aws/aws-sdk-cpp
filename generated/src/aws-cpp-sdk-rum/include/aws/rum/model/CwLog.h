@@ -69,9 +69,9 @@ class CwLog {
   ///@}
  private:
   bool m_cwLogEnabled{false};
-  bool m_cwLogEnabledHasBeenSet = false;
 
   Aws::String m_cwLogGroup;
+  bool m_cwLogEnabledHasBeenSet = false;
   bool m_cwLogGroupHasBeenSet = false;
 };
 

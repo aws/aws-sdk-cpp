@@ -62,9 +62,9 @@ class CreateHITResult {
   ///@}
  private:
   HIT m_hIT;
-  bool m_hITHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hITHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

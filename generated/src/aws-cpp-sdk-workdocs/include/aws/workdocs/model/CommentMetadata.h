@@ -141,21 +141,21 @@ class CommentMetadata {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   User m_contributor;
-  bool m_contributorHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   CommentStatusType m_commentStatus{CommentStatusType::NOT_SET};
-  bool m_commentStatusHasBeenSet = false;
 
   Aws::String m_recipientId;
-  bool m_recipientIdHasBeenSet = false;
 
   Aws::String m_contributorId;
+  bool m_commentIdHasBeenSet = false;
+  bool m_contributorHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_commentStatusHasBeenSet = false;
+  bool m_recipientIdHasBeenSet = false;
   bool m_contributorIdHasBeenSet = false;
 };
 

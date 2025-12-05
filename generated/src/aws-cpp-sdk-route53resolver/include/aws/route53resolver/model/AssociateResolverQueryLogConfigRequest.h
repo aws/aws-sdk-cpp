@@ -70,9 +70,9 @@ class AssociateResolverQueryLogConfigRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_resolverQueryLogConfigId;
-  bool m_resolverQueryLogConfigIdHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_resolverQueryLogConfigIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

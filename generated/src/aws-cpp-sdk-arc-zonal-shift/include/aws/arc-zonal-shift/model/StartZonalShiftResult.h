@@ -189,27 +189,27 @@ class StartZonalShiftResult {
   ///@}
  private:
   Aws::String m_zonalShiftId;
-  bool m_zonalShiftIdHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_awayFrom;
-  bool m_awayFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTime{};
-  bool m_expiryTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   ZonalShiftStatus m_status{ZonalShiftStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_zonalShiftIdHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_awayFromHasBeenSet = false;
+  bool m_expiryTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -158,21 +158,21 @@ class CreateStreamRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   int m_shardCount{0};
-  bool m_shardCountHasBeenSet = false;
 
   StreamModeDetails m_streamModeDetails;
-  bool m_streamModeDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_warmThroughputMiBps{0};
-  bool m_warmThroughputMiBpsHasBeenSet = false;
 
   int m_maxRecordSizeInKiB{0};
+  bool m_streamNameHasBeenSet = false;
+  bool m_shardCountHasBeenSet = false;
+  bool m_streamModeDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_warmThroughputMiBpsHasBeenSet = false;
   bool m_maxRecordSizeInKiBHasBeenSet = false;
 };
 

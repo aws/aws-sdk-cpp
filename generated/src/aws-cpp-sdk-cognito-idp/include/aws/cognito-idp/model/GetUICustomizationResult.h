@@ -62,9 +62,9 @@ class GetUICustomizationResult {
   ///@}
  private:
   UICustomizationType m_uICustomization;
-  bool m_uICustomizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_uICustomizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class TransformedLogRecord {
   ///@}
  private:
   long long m_eventNumber{0};
-  bool m_eventNumberHasBeenSet = false;
 
   Aws::String m_eventMessage;
-  bool m_eventMessageHasBeenSet = false;
 
   Aws::String m_transformedEventMessage;
+  bool m_eventNumberHasBeenSet = false;
+  bool m_eventMessageHasBeenSet = false;
   bool m_transformedEventMessageHasBeenSet = false;
 };
 

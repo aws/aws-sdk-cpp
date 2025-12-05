@@ -70,9 +70,9 @@ class UpdateSchedulingPolicyRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   FairsharePolicy m_fairsharePolicy;
+  bool m_arnHasBeenSet = false;
   bool m_fairsharePolicyHasBeenSet = false;
 };
 

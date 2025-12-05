@@ -86,12 +86,12 @@ class WirelessGatewayLogOption {
   ///@}
  private:
   WirelessGatewayType m_type{WirelessGatewayType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   Aws::Vector<WirelessGatewayEventLogOption> m_events;
+  bool m_typeHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

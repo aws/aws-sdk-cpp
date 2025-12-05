@@ -70,9 +70,9 @@ class LifecycleExecutionSnapshotResource {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   LifecycleExecutionResourceState m_state;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

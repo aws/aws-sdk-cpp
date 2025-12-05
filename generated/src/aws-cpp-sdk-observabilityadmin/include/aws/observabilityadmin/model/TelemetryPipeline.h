@@ -183,27 +183,27 @@ class TelemetryPipeline {
   ///@}
  private:
   long long m_createdTimeStamp{0};
-  bool m_createdTimeStampHasBeenSet = false;
 
   long long m_lastUpdateTimeStamp{0};
-  bool m_lastUpdateTimeStampHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TelemetryPipelineConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   TelemetryPipelineStatus m_status{TelemetryPipelineStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TelemetryPipelineStatusReason m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_createdTimeStampHasBeenSet = false;
+  bool m_lastUpdateTimeStampHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

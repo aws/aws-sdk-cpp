@@ -71,9 +71,9 @@ class ReverseGeocodingConfig {
   ///@}
  private:
   Aws::String m_xAttributeName;
-  bool m_xAttributeNameHasBeenSet = false;
 
   Aws::String m_yAttributeName;
+  bool m_xAttributeNameHasBeenSet = false;
   bool m_yAttributeNameHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class AssociationOverview {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_detailedStatus;
-  bool m_detailedStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_associationStatusAggregatedCount;
+  bool m_statusHasBeenSet = false;
+  bool m_detailedStatusHasBeenSet = false;
   bool m_associationStatusAggregatedCountHasBeenSet = false;
 };
 

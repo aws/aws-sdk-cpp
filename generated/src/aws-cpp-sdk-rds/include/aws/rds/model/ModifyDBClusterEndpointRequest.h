@@ -123,15 +123,15 @@ class ModifyDBClusterEndpointRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBClusterEndpointIdentifier;
-  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
   Aws::String m_endpointType;
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_staticMembers;
-  bool m_staticMembersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedMembers;
+  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_staticMembersHasBeenSet = false;
   bool m_excludedMembersHasBeenSet = false;
 };
 

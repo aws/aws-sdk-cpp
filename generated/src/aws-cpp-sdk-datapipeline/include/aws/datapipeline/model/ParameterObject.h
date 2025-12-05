@@ -76,9 +76,9 @@ class ParameterObject {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<ParameterAttribute> m_attributes;
+  bool m_idHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

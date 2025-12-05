@@ -118,15 +118,15 @@ class StepInput {
   ///@}
  private:
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listOfStringsValue;
-  bool m_listOfStringsValueHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_mapOfStringValue;
+  bool m_integerValueHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
+  bool m_listOfStringsValueHasBeenSet = false;
   bool m_mapOfStringValueHasBeenSet = false;
 };
 

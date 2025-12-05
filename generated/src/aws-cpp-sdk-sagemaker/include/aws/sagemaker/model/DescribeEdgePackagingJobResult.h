@@ -302,51 +302,51 @@ class DescribeEdgePackagingJobResult {
   ///@}
  private:
   Aws::String m_edgePackagingJobArn;
-  bool m_edgePackagingJobArnHasBeenSet = false;
 
   Aws::String m_edgePackagingJobName;
-  bool m_edgePackagingJobNameHasBeenSet = false;
 
   Aws::String m_compilationJobName;
-  bool m_compilationJobNameHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   EdgeOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_resourceKey;
-  bool m_resourceKeyHasBeenSet = false;
 
   EdgePackagingJobStatus m_edgePackagingJobStatus{EdgePackagingJobStatus::NOT_SET};
-  bool m_edgePackagingJobStatusHasBeenSet = false;
 
   Aws::String m_edgePackagingJobStatusMessage;
-  bool m_edgePackagingJobStatusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_modelArtifact;
-  bool m_modelArtifactHasBeenSet = false;
 
   Aws::String m_modelSignature;
-  bool m_modelSignatureHasBeenSet = false;
 
   EdgePresetDeploymentOutput m_presetDeploymentOutput;
-  bool m_presetDeploymentOutputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_edgePackagingJobArnHasBeenSet = false;
+  bool m_edgePackagingJobNameHasBeenSet = false;
+  bool m_compilationJobNameHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_resourceKeyHasBeenSet = false;
+  bool m_edgePackagingJobStatusHasBeenSet = false;
+  bool m_edgePackagingJobStatusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_modelArtifactHasBeenSet = false;
+  bool m_modelSignatureHasBeenSet = false;
+  bool m_presetDeploymentOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

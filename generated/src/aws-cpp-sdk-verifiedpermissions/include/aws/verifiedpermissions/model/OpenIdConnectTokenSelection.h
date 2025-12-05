@@ -79,9 +79,9 @@ class OpenIdConnectTokenSelection {
   ///@}
  private:
   OpenIdConnectAccessTokenConfiguration m_accessTokenOnly;
-  bool m_accessTokenOnlyHasBeenSet = false;
 
   OpenIdConnectIdentityTokenConfiguration m_identityTokenOnly;
+  bool m_accessTokenOnlyHasBeenSet = false;
   bool m_identityTokenOnlyHasBeenSet = false;
 };
 

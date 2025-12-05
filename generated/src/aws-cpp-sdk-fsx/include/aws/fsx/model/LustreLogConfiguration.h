@@ -78,9 +78,9 @@ class LustreLogConfiguration {
   ///@}
  private:
   LustreAccessAuditLogLevel m_level{LustreAccessAuditLogLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   Aws::String m_destination;
+  bool m_levelHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

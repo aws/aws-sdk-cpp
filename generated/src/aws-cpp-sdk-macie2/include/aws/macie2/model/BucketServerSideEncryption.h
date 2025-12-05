@@ -83,9 +83,9 @@ class BucketServerSideEncryption {
   ///@}
  private:
   Aws::String m_kmsMasterKeyId;
-  bool m_kmsMasterKeyIdHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_kmsMasterKeyIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

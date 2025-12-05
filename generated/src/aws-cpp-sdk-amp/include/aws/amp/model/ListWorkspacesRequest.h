@@ -100,12 +100,12 @@ class ListWorkspacesRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

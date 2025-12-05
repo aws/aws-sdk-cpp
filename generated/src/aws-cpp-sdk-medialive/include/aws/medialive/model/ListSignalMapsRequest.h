@@ -107,15 +107,15 @@ class ListSignalMapsRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_cloudWatchAlarmTemplateGroupIdentifier;
-  bool m_cloudWatchAlarmTemplateGroupIdentifierHasBeenSet = false;
 
   Aws::String m_eventBridgeRuleTemplateGroupIdentifier;
-  bool m_eventBridgeRuleTemplateGroupIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_cloudWatchAlarmTemplateGroupIdentifierHasBeenSet = false;
+  bool m_eventBridgeRuleTemplateGroupIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

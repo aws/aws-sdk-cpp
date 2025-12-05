@@ -66,9 +66,9 @@ class CreateStorageLocationResult {
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_s3BucketHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

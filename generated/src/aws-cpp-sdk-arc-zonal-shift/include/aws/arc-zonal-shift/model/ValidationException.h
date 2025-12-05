@@ -66,9 +66,9 @@ class ValidationException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

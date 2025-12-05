@@ -260,39 +260,39 @@ class CreateEnvironmentRequest : public DataZoneRequest {
   ///@}
  private:
   int m_deploymentOrder{0};
-  bool m_deploymentOrderHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentAccountIdentifier;
-  bool m_environmentAccountIdentifierHasBeenSet = false;
 
   Aws::String m_environmentAccountRegion;
-  bool m_environmentAccountRegionHasBeenSet = false;
 
   Aws::String m_environmentBlueprintIdentifier;
-  bool m_environmentBlueprintIdentifierHasBeenSet = false;
 
   Aws::String m_environmentConfigurationId;
-  bool m_environmentConfigurationIdHasBeenSet = false;
 
   Aws::String m_environmentProfileIdentifier;
-  bool m_environmentProfileIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectIdentifier;
-  bool m_projectIdentifierHasBeenSet = false;
 
   Aws::Vector<EnvironmentParameter> m_userParameters;
+  bool m_deploymentOrderHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_environmentAccountIdentifierHasBeenSet = false;
+  bool m_environmentAccountRegionHasBeenSet = false;
+  bool m_environmentBlueprintIdentifierHasBeenSet = false;
+  bool m_environmentConfigurationIdHasBeenSet = false;
+  bool m_environmentProfileIdentifierHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
 };
 

@@ -108,12 +108,12 @@ class CalculateRouteResult {
   ///@}
  private:
   Aws::Vector<Leg> m_legs;
-  bool m_legsHasBeenSet = false;
 
   CalculateRouteSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_legsHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

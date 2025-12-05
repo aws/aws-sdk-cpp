@@ -84,12 +84,12 @@ class ListApprovedOriginsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_origins;
-  bool m_originsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

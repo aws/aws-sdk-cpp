@@ -76,9 +76,9 @@ class GuardrailTextBlock {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Vector<GuardrailContentQualifier> m_qualifiers;
+  bool m_textHasBeenSet = false;
   bool m_qualifiersHasBeenSet = false;
 };
 

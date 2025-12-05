@@ -68,9 +68,9 @@ class Intent {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::String m_intentVersion;
+  bool m_intentNameHasBeenSet = false;
   bool m_intentVersionHasBeenSet = false;
 };
 

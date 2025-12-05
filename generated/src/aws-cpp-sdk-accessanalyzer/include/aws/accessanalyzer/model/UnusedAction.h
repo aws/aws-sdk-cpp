@@ -73,9 +73,9 @@ class UnusedAction {
   ///@}
  private:
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessed{};
+  bool m_actionHasBeenSet = false;
   bool m_lastAccessedHasBeenSet = false;
 };
 

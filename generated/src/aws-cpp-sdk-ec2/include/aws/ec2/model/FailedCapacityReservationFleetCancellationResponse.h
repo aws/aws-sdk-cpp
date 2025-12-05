@@ -75,9 +75,9 @@ class FailedCapacityReservationFleetCancellationResponse {
   ///@}
  private:
   Aws::String m_capacityReservationFleetId;
-  bool m_capacityReservationFleetIdHasBeenSet = false;
 
   CancelCapacityReservationFleetError m_cancelCapacityReservationFleetError;
+  bool m_capacityReservationFleetIdHasBeenSet = false;
   bool m_cancelCapacityReservationFleetErrorHasBeenSet = false;
 };
 

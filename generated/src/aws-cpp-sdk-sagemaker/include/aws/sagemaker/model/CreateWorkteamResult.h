@@ -60,9 +60,9 @@ class CreateWorkteamResult {
   ///@}
  private:
   Aws::String m_workteamArn;
-  bool m_workteamArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workteamArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -186,24 +186,24 @@ class UpdateNodegroupVersionRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_nodegroupName;
-  bool m_nodegroupNameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_releaseVersion;
-  bool m_releaseVersionHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_nodegroupNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_releaseVersionHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

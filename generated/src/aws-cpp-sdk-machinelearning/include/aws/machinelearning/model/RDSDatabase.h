@@ -66,9 +66,9 @@ class RDSDatabase {
   ///@}
  private:
   Aws::String m_instanceIdentifier;
-  bool m_instanceIdentifierHasBeenSet = false;
 
   Aws::String m_databaseName;
+  bool m_instanceIdentifierHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
 };
 

@@ -251,36 +251,36 @@ class ProgressEvent {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_requestToken;
-  bool m_requestTokenHasBeenSet = false;
 
   Aws::String m_hooksRequestToken;
-  bool m_hooksRequestTokenHasBeenSet = false;
 
   Operation m_operation{Operation::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   OperationStatus m_operationStatus{OperationStatus::NOT_SET};
-  bool m_operationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_resourceModel;
-  bool m_resourceModelHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   HandlerErrorCode m_errorCode{HandlerErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_retryAfter{};
+  bool m_typeNameHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_requestTokenHasBeenSet = false;
+  bool m_hooksRequestTokenHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_operationStatusHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_resourceModelHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_retryAfterHasBeenSet = false;
 };
 

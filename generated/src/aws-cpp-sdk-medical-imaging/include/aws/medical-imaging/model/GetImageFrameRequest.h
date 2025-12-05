@@ -84,12 +84,12 @@ class GetImageFrameRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   ImageFrameInformation m_imageFrameInformation;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_imageSetIdHasBeenSet = false;
   bool m_imageFrameInformationHasBeenSet = false;
 };
 

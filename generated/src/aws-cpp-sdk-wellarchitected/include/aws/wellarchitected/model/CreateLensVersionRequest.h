@@ -96,15 +96,15 @@ class CreateLensVersionRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensVersion;
-  bool m_lensVersionHasBeenSet = false;
 
   bool m_isMajorVersion{false};
-  bool m_isMajorVersionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensVersionHasBeenSet = false;
+  bool m_isMajorVersionHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

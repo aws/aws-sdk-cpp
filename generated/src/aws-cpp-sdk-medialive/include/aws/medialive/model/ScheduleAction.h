@@ -92,12 +92,12 @@ class ScheduleAction {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   ScheduleActionSettings m_scheduleActionSettings;
-  bool m_scheduleActionSettingsHasBeenSet = false;
 
   ScheduleActionStartSettings m_scheduleActionStartSettings;
+  bool m_actionNameHasBeenSet = false;
+  bool m_scheduleActionSettingsHasBeenSet = false;
   bool m_scheduleActionStartSettingsHasBeenSet = false;
 };
 

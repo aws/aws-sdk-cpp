@@ -179,21 +179,21 @@ class IPSet {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IPAddressVersion m_iPAddressVersion{IPAddressVersion::NOT_SET};
-  bool m_iPAddressVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addresses;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_iPAddressVersionHasBeenSet = false;
   bool m_addressesHasBeenSet = false;
 };
 

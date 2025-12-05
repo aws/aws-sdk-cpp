@@ -90,12 +90,12 @@ class ListQueuesRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueNamePrefix;
-  bool m_queueNamePrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_queueNamePrefixHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

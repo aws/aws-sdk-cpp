@@ -68,9 +68,9 @@ class DurableConfig {
   ///@}
  private:
   int m_retentionPeriodInDays{0};
-  bool m_retentionPeriodInDaysHasBeenSet = false;
 
   int m_executionTimeout{0};
+  bool m_retentionPeriodInDaysHasBeenSet = false;
   bool m_executionTimeoutHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class ProfileTemplateChoice {
   ///@}
  private:
   Aws::String m_choiceId;
-  bool m_choiceIdHasBeenSet = false;
 
   Aws::String m_choiceTitle;
-  bool m_choiceTitleHasBeenSet = false;
 
   Aws::String m_choiceDescription;
+  bool m_choiceIdHasBeenSet = false;
+  bool m_choiceTitleHasBeenSet = false;
   bool m_choiceDescriptionHasBeenSet = false;
 };
 

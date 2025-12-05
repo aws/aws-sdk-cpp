@@ -78,9 +78,9 @@ class DescribeTrailsResult {
   ///@}
  private:
   Aws::Vector<Trail> m_trailList;
-  bool m_trailListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trailListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class DescribeGlobalClustersRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_globalClusterIdentifierHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

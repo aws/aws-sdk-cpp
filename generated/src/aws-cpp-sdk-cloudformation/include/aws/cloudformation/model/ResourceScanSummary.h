@@ -163,24 +163,24 @@ class ResourceScanSummary {
   ///@}
  private:
   Aws::String m_resourceScanId;
-  bool m_resourceScanIdHasBeenSet = false;
 
   ResourceScanStatus m_status{ResourceScanStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   double m_percentageCompleted{0.0};
-  bool m_percentageCompletedHasBeenSet = false;
 
   ScanType m_scanType{ScanType::NOT_SET};
+  bool m_resourceScanIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_percentageCompletedHasBeenSet = false;
   bool m_scanTypeHasBeenSet = false;
 };
 

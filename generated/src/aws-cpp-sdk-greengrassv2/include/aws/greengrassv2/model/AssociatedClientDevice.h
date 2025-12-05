@@ -71,9 +71,9 @@ class AssociatedClientDevice {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_associationTimestamp{};
+  bool m_thingNameHasBeenSet = false;
   bool m_associationTimestampHasBeenSet = false;
 };
 

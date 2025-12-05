@@ -61,9 +61,9 @@ class DescribeEventsDetectionJobResult {
   ///@}
  private:
   EventsDetectionJobProperties m_eventsDetectionJobProperties;
-  bool m_eventsDetectionJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

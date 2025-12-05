@@ -427,63 +427,63 @@ class SpotInstanceRequest {
   ///@}
  private:
   Aws::String m_actualBlockHourlyPrice;
-  bool m_actualBlockHourlyPriceHasBeenSet = false;
 
   Aws::String m_availabilityZoneGroup;
-  bool m_availabilityZoneGroupHasBeenSet = false;
 
   int m_blockDurationMinutes{0};
-  bool m_blockDurationMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   SpotInstanceStateFault m_fault;
-  bool m_faultHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_launchGroup;
-  bool m_launchGroupHasBeenSet = false;
 
   LaunchSpecification m_launchSpecification;
-  bool m_launchSpecificationHasBeenSet = false;
 
   Aws::String m_launchedAvailabilityZone;
-  bool m_launchedAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_launchedAvailabilityZoneId;
-  bool m_launchedAvailabilityZoneIdHasBeenSet = false;
 
   RIProductDescription m_productDescription{RIProductDescription::NOT_SET};
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::String m_spotInstanceRequestId;
-  bool m_spotInstanceRequestIdHasBeenSet = false;
 
   Aws::String m_spotPrice;
-  bool m_spotPriceHasBeenSet = false;
 
   SpotInstanceState m_state{SpotInstanceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   SpotInstanceStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SpotInstanceType m_type{SpotInstanceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_validFrom{};
-  bool m_validFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   InstanceInterruptionBehavior m_instanceInterruptionBehavior{InstanceInterruptionBehavior::NOT_SET};
+  bool m_actualBlockHourlyPriceHasBeenSet = false;
+  bool m_availabilityZoneGroupHasBeenSet = false;
+  bool m_blockDurationMinutesHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_faultHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_launchGroupHasBeenSet = false;
+  bool m_launchSpecificationHasBeenSet = false;
+  bool m_launchedAvailabilityZoneHasBeenSet = false;
+  bool m_launchedAvailabilityZoneIdHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_spotInstanceRequestIdHasBeenSet = false;
+  bool m_spotPriceHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_validFromHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
   bool m_instanceInterruptionBehaviorHasBeenSet = false;
 };
 

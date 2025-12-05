@@ -87,12 +87,12 @@ class ListModelInvocationJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ModelInvocationJobSummary> m_invocationJobSummaries;
-  bool m_invocationJobSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_invocationJobSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

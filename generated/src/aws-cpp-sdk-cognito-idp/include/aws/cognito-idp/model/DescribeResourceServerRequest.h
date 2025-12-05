@@ -72,9 +72,9 @@ class DescribeResourceServerRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

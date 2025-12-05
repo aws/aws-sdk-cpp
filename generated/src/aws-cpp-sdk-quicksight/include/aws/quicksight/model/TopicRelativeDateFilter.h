@@ -88,12 +88,12 @@ class TopicRelativeDateFilter {
   ///@}
  private:
   TopicTimeGranularity m_timeGranularity{TopicTimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   TopicRelativeDateFilterFunction m_relativeDateFilterFunction{TopicRelativeDateFilterFunction::NOT_SET};
-  bool m_relativeDateFilterFunctionHasBeenSet = false;
 
   TopicSingularFilterConstant m_constant;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_relativeDateFilterFunctionHasBeenSet = false;
   bool m_constantHasBeenSet = false;
 };
 

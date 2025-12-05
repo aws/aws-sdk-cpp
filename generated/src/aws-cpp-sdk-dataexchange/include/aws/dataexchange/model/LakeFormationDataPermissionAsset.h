@@ -114,15 +114,15 @@ class LakeFormationDataPermissionAsset {
   ///@}
  private:
   LakeFormationDataPermissionDetails m_lakeFormationDataPermissionDetails;
-  bool m_lakeFormationDataPermissionDetailsHasBeenSet = false;
 
   LakeFormationDataPermissionType m_lakeFormationDataPermissionType{LakeFormationDataPermissionType::NOT_SET};
-  bool m_lakeFormationDataPermissionTypeHasBeenSet = false;
 
   Aws::Vector<LFPermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_lakeFormationDataPermissionDetailsHasBeenSet = false;
+  bool m_lakeFormationDataPermissionTypeHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

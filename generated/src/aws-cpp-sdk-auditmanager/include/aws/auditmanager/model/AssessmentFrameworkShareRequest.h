@@ -302,48 +302,48 @@ class AssessmentFrameworkShareRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_frameworkId;
-  bool m_frameworkIdHasBeenSet = false;
 
   Aws::String m_frameworkName;
-  bool m_frameworkNameHasBeenSet = false;
 
   Aws::String m_frameworkDescription;
-  bool m_frameworkDescriptionHasBeenSet = false;
 
   ShareRequestStatus m_status{ShareRequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_sourceAccount;
-  bool m_sourceAccountHasBeenSet = false;
 
   Aws::String m_destinationAccount;
-  bool m_destinationAccountHasBeenSet = false;
 
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   int m_standardControlsCount{0};
-  bool m_standardControlsCountHasBeenSet = false;
 
   int m_customControlsCount{0};
-  bool m_customControlsCountHasBeenSet = false;
 
   Aws::String m_complianceType;
+  bool m_idHasBeenSet = false;
+  bool m_frameworkIdHasBeenSet = false;
+  bool m_frameworkNameHasBeenSet = false;
+  bool m_frameworkDescriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceAccountHasBeenSet = false;
+  bool m_destinationAccountHasBeenSet = false;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_standardControlsCountHasBeenSet = false;
+  bool m_customControlsCountHasBeenSet = false;
   bool m_complianceTypeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class HumanWorkflowConfig {
   ///@}
  private:
   Aws::String m_flowDefinitionArn;
-  bool m_flowDefinitionArnHasBeenSet = false;
 
   Aws::String m_instructions;
+  bool m_flowDefinitionArnHasBeenSet = false;
   bool m_instructionsHasBeenSet = false;
 };
 

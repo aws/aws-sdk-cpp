@@ -96,12 +96,12 @@ class ListHlsManifestConfiguration {
   ///@}
  private:
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   Aws::String m_childManifestName;
-  bool m_childManifestNameHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_manifestNameHasBeenSet = false;
+  bool m_childManifestNameHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

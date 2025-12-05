@@ -72,9 +72,9 @@ class DescribeChangeSetRequest : public MarketplaceCatalogRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_changeSetId;
+  bool m_catalogHasBeenSet = false;
   bool m_changeSetIdHasBeenSet = false;
 };
 

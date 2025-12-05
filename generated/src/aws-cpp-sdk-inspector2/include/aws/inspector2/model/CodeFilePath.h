@@ -103,15 +103,15 @@ class CodeFilePath {
   ///@}
  private:
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   int m_startLine{0};
-  bool m_startLineHasBeenSet = false;
 
   int m_endLine{0};
+  bool m_fileNameHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_startLineHasBeenSet = false;
   bool m_endLineHasBeenSet = false;
 };
 

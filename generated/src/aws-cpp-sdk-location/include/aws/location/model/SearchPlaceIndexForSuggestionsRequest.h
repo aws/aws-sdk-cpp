@@ -260,30 +260,30 @@ class SearchPlaceIndexForSuggestionsRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Vector<double> m_biasPosition;
-  bool m_biasPositionHasBeenSet = false;
 
   Aws::Vector<double> m_filterBBox;
-  bool m_filterBBoxHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterCountries;
-  bool m_filterCountriesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterCategories;
-  bool m_filterCategoriesHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_indexNameHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_biasPositionHasBeenSet = false;
+  bool m_filterBBoxHasBeenSet = false;
+  bool m_filterCountriesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_filterCategoriesHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

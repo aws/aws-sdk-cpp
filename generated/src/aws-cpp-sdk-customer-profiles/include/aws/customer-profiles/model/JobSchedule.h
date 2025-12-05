@@ -68,9 +68,9 @@ class JobSchedule {
   ///@}
  private:
   JobScheduleDayOfTheWeek m_dayOfTheWeek{JobScheduleDayOfTheWeek::NOT_SET};
-  bool m_dayOfTheWeekHasBeenSet = false;
 
   Aws::String m_time;
+  bool m_dayOfTheWeekHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

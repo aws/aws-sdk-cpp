@@ -101,15 +101,15 @@ class CurrentPerformanceRiskRatings {
   ///@}
  private:
   long long m_high{0};
-  bool m_highHasBeenSet = false;
 
   long long m_medium{0};
-  bool m_mediumHasBeenSet = false;
 
   long long m_low{0};
-  bool m_lowHasBeenSet = false;
 
   long long m_veryLow{0};
+  bool m_highHasBeenSet = false;
+  bool m_mediumHasBeenSet = false;
+  bool m_lowHasBeenSet = false;
   bool m_veryLowHasBeenSet = false;
 };
 

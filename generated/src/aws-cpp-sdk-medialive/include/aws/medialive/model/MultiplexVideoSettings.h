@@ -71,9 +71,9 @@ When this field is defined, ConstantBitrate must
   ///@}
  private:
   int m_constantBitrate{0};
-  bool m_constantBitrateHasBeenSet = false;
 
   MultiplexStatmuxVideoSettings m_statmuxSettings;
+  bool m_constantBitrateHasBeenSet = false;
   bool m_statmuxSettingsHasBeenSet = false;
 };
 

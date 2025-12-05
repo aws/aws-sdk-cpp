@@ -89,9 +89,9 @@ class CreateHealthCheckRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   HealthCheckConfig m_healthCheckConfig;
+  bool m_callerReferenceHasBeenSet = false;
   bool m_healthCheckConfigHasBeenSet = false;
 };
 

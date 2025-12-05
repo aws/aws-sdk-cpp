@@ -102,15 +102,15 @@ class UpdateKxEnvironmentRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

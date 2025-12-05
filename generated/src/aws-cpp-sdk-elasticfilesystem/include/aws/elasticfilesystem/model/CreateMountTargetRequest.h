@@ -160,21 +160,21 @@ class CreateMountTargetRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_ipv6Address;
-  bool m_ipv6AddressHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_ipv6AddressHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
 };
 

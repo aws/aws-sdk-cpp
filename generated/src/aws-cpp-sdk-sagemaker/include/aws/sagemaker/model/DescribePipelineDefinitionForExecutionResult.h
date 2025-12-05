@@ -78,12 +78,12 @@ class DescribePipelineDefinitionForExecutionResult {
   ///@}
  private:
   Aws::String m_pipelineDefinition;
-  bool m_pipelineDefinitionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineDefinitionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -57,9 +57,9 @@ class ExecuteGremlinExplainQueryResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_output{};
-  bool m_outputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -184,27 +184,27 @@ class GetServiceLastAccessedDetailsWithEntitiesResult {
   ///@}
  private:
   JobStatusType m_jobStatus{JobStatusType::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobCreationDate{};
-  bool m_jobCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobCompletionDate{};
-  bool m_jobCompletionDateHasBeenSet = false;
 
   Aws::Vector<EntityDetails> m_entityDetailsList;
-  bool m_entityDetailsListHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ErrorDetails m_error;
-  bool m_errorHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_jobCreationDateHasBeenSet = false;
+  bool m_jobCompletionDateHasBeenSet = false;
+  bool m_entityDetailsListHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

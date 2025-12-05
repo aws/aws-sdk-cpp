@@ -109,15 +109,15 @@ class FilterOperation {
   ///@}
  private:
   Aws::String m_conditionExpression;
-  bool m_conditionExpressionHasBeenSet = false;
 
   DataSetStringFilterCondition m_stringFilterCondition;
-  bool m_stringFilterConditionHasBeenSet = false;
 
   DataSetNumericFilterCondition m_numericFilterCondition;
-  bool m_numericFilterConditionHasBeenSet = false;
 
   DataSetDateFilterCondition m_dateFilterCondition;
+  bool m_conditionExpressionHasBeenSet = false;
+  bool m_stringFilterConditionHasBeenSet = false;
+  bool m_numericFilterConditionHasBeenSet = false;
   bool m_dateFilterConditionHasBeenSet = false;
 };
 

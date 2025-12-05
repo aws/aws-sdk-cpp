@@ -59,9 +59,9 @@ class CreateAutoMLJobResult {
   ///@}
  private:
   Aws::String m_autoMLJobArn;
-  bool m_autoMLJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoMLJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

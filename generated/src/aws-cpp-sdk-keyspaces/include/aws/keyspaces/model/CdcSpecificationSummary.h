@@ -77,9 +77,9 @@ class CdcSpecificationSummary {
   ///@}
  private:
   CdcStatus m_status{CdcStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ViewType m_viewType{ViewType::NOT_SET};
+  bool m_statusHasBeenSet = false;
   bool m_viewTypeHasBeenSet = false;
 };
 

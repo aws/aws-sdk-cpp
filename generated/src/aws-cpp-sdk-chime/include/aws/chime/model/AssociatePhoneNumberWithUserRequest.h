@@ -83,12 +83,12 @@ class AssociatePhoneNumberWithUserRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_e164PhoneNumber;
+  bool m_accountIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_e164PhoneNumberHasBeenSet = false;
 };
 

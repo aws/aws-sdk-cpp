@@ -88,12 +88,12 @@ class FailedBatchAssociationSummary {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

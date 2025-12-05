@@ -359,51 +359,51 @@ class FlowNodeConfiguration {
   ///@}
  private:
   InputFlowNodeConfiguration m_input;
-  bool m_inputHasBeenSet = false;
 
   OutputFlowNodeConfiguration m_output;
-  bool m_outputHasBeenSet = false;
 
   KnowledgeBaseFlowNodeConfiguration m_knowledgeBase;
-  bool m_knowledgeBaseHasBeenSet = false;
 
   ConditionFlowNodeConfiguration m_condition;
-  bool m_conditionHasBeenSet = false;
 
   LexFlowNodeConfiguration m_lex;
-  bool m_lexHasBeenSet = false;
 
   PromptFlowNodeConfiguration m_prompt;
-  bool m_promptHasBeenSet = false;
 
   LambdaFunctionFlowNodeConfiguration m_lambdaFunction;
-  bool m_lambdaFunctionHasBeenSet = false;
 
   StorageFlowNodeConfiguration m_storage;
-  bool m_storageHasBeenSet = false;
 
   AgentFlowNodeConfiguration m_agent;
-  bool m_agentHasBeenSet = false;
 
   RetrievalFlowNodeConfiguration m_retrieval;
-  bool m_retrievalHasBeenSet = false;
 
   IteratorFlowNodeConfiguration m_iterator;
-  bool m_iteratorHasBeenSet = false;
 
   CollectorFlowNodeConfiguration m_collector;
-  bool m_collectorHasBeenSet = false;
 
   InlineCodeFlowNodeConfiguration m_inlineCode;
-  bool m_inlineCodeHasBeenSet = false;
 
   std::shared_ptr<LoopFlowNodeConfiguration> m_loop;
-  bool m_loopHasBeenSet = false;
 
   LoopInputFlowNodeConfiguration m_loopInput;
-  bool m_loopInputHasBeenSet = false;
 
   LoopControllerFlowNodeConfiguration m_loopController;
+  bool m_inputHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_knowledgeBaseHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_lexHasBeenSet = false;
+  bool m_promptHasBeenSet = false;
+  bool m_lambdaFunctionHasBeenSet = false;
+  bool m_storageHasBeenSet = false;
+  bool m_agentHasBeenSet = false;
+  bool m_retrievalHasBeenSet = false;
+  bool m_iteratorHasBeenSet = false;
+  bool m_collectorHasBeenSet = false;
+  bool m_inlineCodeHasBeenSet = false;
+  bool m_loopHasBeenSet = false;
+  bool m_loopInputHasBeenSet = false;
   bool m_loopControllerHasBeenSet = false;
 };
 

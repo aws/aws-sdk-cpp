@@ -81,9 +81,9 @@ class ServiceOperation {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<MetricReference> m_metricReferences;
+  bool m_nameHasBeenSet = false;
   bool m_metricReferencesHasBeenSet = false;
 };
 

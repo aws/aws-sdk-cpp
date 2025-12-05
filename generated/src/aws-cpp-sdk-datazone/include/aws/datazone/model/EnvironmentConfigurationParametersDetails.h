@@ -101,12 +101,12 @@ class EnvironmentConfigurationParametersDetails {
   ///@}
  private:
   Aws::Vector<EnvironmentConfigurationParameter> m_parameterOverrides;
-  bool m_parameterOverridesHasBeenSet = false;
 
   Aws::Vector<EnvironmentConfigurationParameter> m_resolvedParameters;
-  bool m_resolvedParametersHasBeenSet = false;
 
   Aws::String m_ssmPath;
+  bool m_parameterOverridesHasBeenSet = false;
+  bool m_resolvedParametersHasBeenSet = false;
   bool m_ssmPathHasBeenSet = false;
 };
 

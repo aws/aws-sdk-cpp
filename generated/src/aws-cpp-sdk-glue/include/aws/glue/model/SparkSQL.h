@@ -151,18 +151,18 @@ class SparkSQL {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::String m_sqlQuery;
-  bool m_sqlQueryHasBeenSet = false;
 
   Aws::Vector<SqlAlias> m_sqlAliases;
-  bool m_sqlAliasesHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_sqlQueryHasBeenSet = false;
+  bool m_sqlAliasesHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

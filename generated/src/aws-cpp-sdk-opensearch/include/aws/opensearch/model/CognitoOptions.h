@@ -110,15 +110,15 @@ class CognitoOptions {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_enabledHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_identityPoolIdHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

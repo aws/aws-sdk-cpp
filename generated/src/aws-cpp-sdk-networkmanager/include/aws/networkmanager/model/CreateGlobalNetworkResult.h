@@ -60,9 +60,9 @@ class CreateGlobalNetworkResult {
   ///@}
  private:
   GlobalNetwork m_globalNetwork;
-  bool m_globalNetworkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_globalNetworkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

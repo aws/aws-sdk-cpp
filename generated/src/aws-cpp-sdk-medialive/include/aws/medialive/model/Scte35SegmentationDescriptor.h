@@ -232,36 +232,36 @@ class Scte35SegmentationDescriptor {
   ///@}
  private:
   Scte35DeliveryRestrictions m_deliveryRestrictions;
-  bool m_deliveryRestrictionsHasBeenSet = false;
 
   int m_segmentNum{0};
-  bool m_segmentNumHasBeenSet = false;
 
   Scte35SegmentationCancelIndicator m_segmentationCancelIndicator{Scte35SegmentationCancelIndicator::NOT_SET};
-  bool m_segmentationCancelIndicatorHasBeenSet = false;
 
   long long m_segmentationDuration{0};
-  bool m_segmentationDurationHasBeenSet = false;
 
   long long m_segmentationEventId{0};
-  bool m_segmentationEventIdHasBeenSet = false;
 
   int m_segmentationTypeId{0};
-  bool m_segmentationTypeIdHasBeenSet = false;
 
   Aws::String m_segmentationUpid;
-  bool m_segmentationUpidHasBeenSet = false;
 
   int m_segmentationUpidType{0};
-  bool m_segmentationUpidTypeHasBeenSet = false;
 
   int m_segmentsExpected{0};
-  bool m_segmentsExpectedHasBeenSet = false;
 
   int m_subSegmentNum{0};
-  bool m_subSegmentNumHasBeenSet = false;
 
   int m_subSegmentsExpected{0};
+  bool m_deliveryRestrictionsHasBeenSet = false;
+  bool m_segmentNumHasBeenSet = false;
+  bool m_segmentationCancelIndicatorHasBeenSet = false;
+  bool m_segmentationDurationHasBeenSet = false;
+  bool m_segmentationEventIdHasBeenSet = false;
+  bool m_segmentationTypeIdHasBeenSet = false;
+  bool m_segmentationUpidHasBeenSet = false;
+  bool m_segmentationUpidTypeHasBeenSet = false;
+  bool m_segmentsExpectedHasBeenSet = false;
+  bool m_subSegmentNumHasBeenSet = false;
   bool m_subSegmentsExpectedHasBeenSet = false;
 };
 

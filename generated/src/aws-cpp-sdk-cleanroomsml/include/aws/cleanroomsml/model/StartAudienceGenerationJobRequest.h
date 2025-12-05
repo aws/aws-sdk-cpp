@@ -180,24 +180,24 @@ class StartAudienceGenerationJobRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   AudienceGenerationJobDataSource m_seedAudience;
-  bool m_seedAudienceHasBeenSet = false;
 
   bool m_includeSeedInOutput{false};
-  bool m_includeSeedInOutputHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_seedAudienceHasBeenSet = false;
+  bool m_includeSeedInOutputHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

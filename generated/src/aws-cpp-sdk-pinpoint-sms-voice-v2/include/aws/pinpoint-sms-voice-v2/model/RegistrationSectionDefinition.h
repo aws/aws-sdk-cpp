@@ -70,9 +70,9 @@ class RegistrationSectionDefinition {
   ///@}
  private:
   Aws::String m_sectionPath;
-  bool m_sectionPathHasBeenSet = false;
 
   RegistrationSectionDisplayHints m_displayHints;
+  bool m_sectionPathHasBeenSet = false;
   bool m_displayHintsHasBeenSet = false;
 };
 

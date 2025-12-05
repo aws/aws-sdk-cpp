@@ -69,9 +69,9 @@ class ResourceInUseException {
   ///@}
  private:
   ReferenceType m_referenceType{ReferenceType::NOT_SET};
-  bool m_referenceTypeHasBeenSet = false;
 
   ResourceReference m_exampleReference;
+  bool m_referenceTypeHasBeenSet = false;
   bool m_exampleReferenceHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListDatasetsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DatasetSummary> m_datasetSummaries;
-  bool m_datasetSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_datasetSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

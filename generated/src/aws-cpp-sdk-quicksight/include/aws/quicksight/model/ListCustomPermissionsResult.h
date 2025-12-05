@@ -100,15 +100,15 @@ class ListCustomPermissionsResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<CustomPermissions> m_customPermissionsList;
-  bool m_customPermissionsListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_customPermissionsListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

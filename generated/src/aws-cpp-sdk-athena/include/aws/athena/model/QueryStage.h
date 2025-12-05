@@ -193,30 +193,30 @@ class QueryStage {
   ///@}
  private:
   long long m_stageId{0};
-  bool m_stageIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   long long m_outputBytes{0};
-  bool m_outputBytesHasBeenSet = false;
 
   long long m_outputRows{0};
-  bool m_outputRowsHasBeenSet = false;
 
   long long m_inputBytes{0};
-  bool m_inputBytesHasBeenSet = false;
 
   long long m_inputRows{0};
-  bool m_inputRowsHasBeenSet = false;
 
   long long m_executionTime{0};
-  bool m_executionTimeHasBeenSet = false;
 
   QueryStagePlanNode m_queryStagePlan;
-  bool m_queryStagePlanHasBeenSet = false;
 
   Aws::Vector<QueryStage> m_subStages;
+  bool m_stageIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_outputBytesHasBeenSet = false;
+  bool m_outputRowsHasBeenSet = false;
+  bool m_inputBytesHasBeenSet = false;
+  bool m_inputRowsHasBeenSet = false;
+  bool m_executionTimeHasBeenSet = false;
+  bool m_queryStagePlanHasBeenSet = false;
   bool m_subStagesHasBeenSet = false;
 };
 

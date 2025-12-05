@@ -186,27 +186,27 @@ class QuickConnect {
   ///@}
  private:
   Aws::String m_quickConnectARN;
-  bool m_quickConnectARNHasBeenSet = false;
 
   Aws::String m_quickConnectId;
-  bool m_quickConnectIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   QuickConnectConfig m_quickConnectConfig;
-  bool m_quickConnectConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_quickConnectARNHasBeenSet = false;
+  bool m_quickConnectIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_quickConnectConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

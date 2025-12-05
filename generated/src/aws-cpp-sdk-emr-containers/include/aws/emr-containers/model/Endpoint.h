@@ -356,54 +356,54 @@ class Endpoint {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_virtualClusterId;
-  bool m_virtualClusterIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   EndpointState m_state{EndpointState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Certificate m_certificateAuthority;
-  bool m_certificateAuthorityHasBeenSet = false;
 
   ConfigurationOverrides m_configurationOverrides;
-  bool m_configurationOverridesHasBeenSet = false;
 
   Aws::String m_serverUrl;
-  bool m_serverUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_securityGroup;
-  bool m_securityGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_stateDetails;
-  bool m_stateDetailsHasBeenSet = false;
 
   FailureReason m_failureReason{FailureReason::NOT_SET};
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_virtualClusterIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_certificateAuthorityHasBeenSet = false;
+  bool m_configurationOverridesHasBeenSet = false;
+  bool m_serverUrlHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_securityGroupHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_stateDetailsHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListIdentityProvidersResult {
   ///@}
  private:
   Aws::Vector<IdentityProviderSummary> m_identityProviderSummaries;
-  bool m_identityProviderSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityProviderSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

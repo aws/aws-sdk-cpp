@@ -61,9 +61,9 @@ class DeleteFirewallPolicyResult {
   ///@}
  private:
   FirewallPolicyResponse m_firewallPolicyResponse;
-  bool m_firewallPolicyResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallPolicyResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

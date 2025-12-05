@@ -85,12 +85,12 @@ class GetDatabasesResult {
   ///@}
  private:
   Aws::Vector<Database> m_databaseList;
-  bool m_databaseListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_databaseListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

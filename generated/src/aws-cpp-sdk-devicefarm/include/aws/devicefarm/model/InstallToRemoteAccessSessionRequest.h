@@ -73,9 +73,9 @@ class InstallToRemoteAccessSessionRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_remoteAccessSessionArn;
-  bool m_remoteAccessSessionArnHasBeenSet = false;
 
   Aws::String m_appArn;
+  bool m_remoteAccessSessionArnHasBeenSet = false;
   bool m_appArnHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class FailedCreateWorkspaceRequest {
   ///@}
  private:
   WorkspaceRequest m_workspaceRequest;
-  bool m_workspaceRequestHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_workspaceRequestHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

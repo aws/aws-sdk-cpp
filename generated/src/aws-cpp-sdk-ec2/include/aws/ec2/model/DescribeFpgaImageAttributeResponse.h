@@ -60,9 +60,9 @@ class DescribeFpgaImageAttributeResponse {
   ///@}
  private:
   FpgaImageAttribute m_fpgaImageAttribute;
-  bool m_fpgaImageAttributeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_fpgaImageAttributeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

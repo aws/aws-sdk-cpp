@@ -248,39 +248,39 @@ class ListOfferingsRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_channelClass;
-  bool m_channelClassHasBeenSet = false;
 
   Aws::String m_channelConfiguration;
-  bool m_channelConfigurationHasBeenSet = false;
 
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_maximumBitrate;
-  bool m_maximumBitrateHasBeenSet = false;
 
   Aws::String m_maximumFramerate;
-  bool m_maximumFramerateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resolution;
-  bool m_resolutionHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_specialFeature;
-  bool m_specialFeatureHasBeenSet = false;
 
   Aws::String m_videoQuality;
+  bool m_channelClassHasBeenSet = false;
+  bool m_channelConfigurationHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_maximumFramerateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_specialFeatureHasBeenSet = false;
   bool m_videoQualityHasBeenSet = false;
 };
 

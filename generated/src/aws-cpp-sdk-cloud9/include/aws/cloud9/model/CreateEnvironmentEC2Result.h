@@ -59,9 +59,9 @@ class CreateEnvironmentEC2Result {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

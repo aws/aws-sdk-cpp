@@ -66,9 +66,9 @@ class CreateComputerResult {
   ///@}
  private:
   Computer m_computer;
-  bool m_computerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

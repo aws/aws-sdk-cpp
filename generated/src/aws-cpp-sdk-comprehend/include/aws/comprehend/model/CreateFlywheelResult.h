@@ -76,12 +76,12 @@ class CreateFlywheelResult {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_activeModelArn;
-  bool m_activeModelArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flywheelArnHasBeenSet = false;
+  bool m_activeModelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

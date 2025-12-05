@@ -73,9 +73,9 @@ class BudgetNotificationsForAccount {
   ///@}
  private:
   Aws::Vector<Notification> m_notifications;
-  bool m_notificationsHasBeenSet = false;
 
   Aws::String m_budgetName;
+  bool m_notificationsHasBeenSet = false;
   bool m_budgetNameHasBeenSet = false;
 };
 

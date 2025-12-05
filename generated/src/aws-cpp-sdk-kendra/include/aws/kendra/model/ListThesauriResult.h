@@ -85,12 +85,12 @@ class ListThesauriResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ThesaurusSummary> m_thesaurusSummaryItems;
-  bool m_thesaurusSummaryItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_thesaurusSummaryItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

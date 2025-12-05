@@ -95,12 +95,12 @@ class BotLocaleFilter {
   ///@}
  private:
   BotLocaleFilterName m_name{BotLocaleFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   BotLocaleFilterOperator m_operator{BotLocaleFilterOperator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

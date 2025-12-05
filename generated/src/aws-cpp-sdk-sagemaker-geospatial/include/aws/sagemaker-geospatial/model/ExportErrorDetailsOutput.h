@@ -69,9 +69,9 @@ class ExportErrorDetailsOutput {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ExportErrorType m_type{ExportErrorType::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

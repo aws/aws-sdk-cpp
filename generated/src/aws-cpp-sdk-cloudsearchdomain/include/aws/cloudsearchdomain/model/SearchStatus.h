@@ -67,9 +67,9 @@ class SearchStatus {
   ///@}
  private:
   long long m_timems{0};
-  bool m_timemsHasBeenSet = false;
 
   Aws::String m_rid;
+  bool m_timemsHasBeenSet = false;
   bool m_ridHasBeenSet = false;
 };
 

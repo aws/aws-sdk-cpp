@@ -126,21 +126,21 @@ class StartDevEnvironmentSessionResult {
   ///@}
  private:
   DevEnvironmentAccessDetails m_accessDetails;
-  bool m_accessDetailsHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessDetailsHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class CopyImageSetInformation {
   ///@}
  private:
   CopySourceImageSetInformation m_sourceImageSet;
-  bool m_sourceImageSetHasBeenSet = false;
 
   CopyDestinationImageSet m_destinationImageSet;
+  bool m_sourceImageSetHasBeenSet = false;
   bool m_destinationImageSetHasBeenSet = false;
 };
 

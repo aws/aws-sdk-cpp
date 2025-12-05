@@ -60,9 +60,9 @@ class WriteRecordsResult {
   ///@}
  private:
   RecordsIngested m_recordsIngested;
-  bool m_recordsIngestedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsIngestedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

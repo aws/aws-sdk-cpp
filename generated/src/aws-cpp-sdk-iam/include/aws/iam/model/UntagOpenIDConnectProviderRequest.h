@@ -81,9 +81,9 @@ class UntagOpenIDConnectProviderRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_openIDConnectProviderArn;
-  bool m_openIDConnectProviderArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_openIDConnectProviderArnHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

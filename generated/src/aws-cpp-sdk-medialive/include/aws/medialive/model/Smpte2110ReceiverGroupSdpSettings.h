@@ -106,12 +106,12 @@ Each stream encapsulates one captions
   ///@}
  private:
   Aws::Vector<InputSdpLocation> m_ancillarySdps;
-  bool m_ancillarySdpsHasBeenSet = false;
 
   Aws::Vector<InputSdpLocation> m_audioSdps;
-  bool m_audioSdpsHasBeenSet = false;
 
   InputSdpLocation m_videoSdp;
+  bool m_ancillarySdpsHasBeenSet = false;
+  bool m_audioSdpsHasBeenSet = false;
   bool m_videoSdpHasBeenSet = false;
 };
 

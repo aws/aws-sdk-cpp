@@ -67,9 +67,9 @@ class DeleteAIPromptRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiPromptId;
+  bool m_assistantIdHasBeenSet = false;
   bool m_aiPromptIdHasBeenSet = false;
 };
 

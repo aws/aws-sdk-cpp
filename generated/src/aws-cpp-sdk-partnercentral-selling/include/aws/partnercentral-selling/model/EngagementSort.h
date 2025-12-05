@@ -66,9 +66,9 @@ class EngagementSort {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   EngagementSortName m_sortBy{EngagementSortName::NOT_SET};
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

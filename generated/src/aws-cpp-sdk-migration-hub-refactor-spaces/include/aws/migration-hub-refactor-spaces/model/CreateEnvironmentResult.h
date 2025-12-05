@@ -221,36 +221,36 @@ class CreateEnvironmentResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NetworkFabricType m_networkFabricType{NetworkFabricType::NOT_SET};
-  bool m_networkFabricTypeHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   EnvironmentState m_state{EnvironmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkFabricTypeHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -312,45 +312,45 @@ class RecordDetail {
   ///@}
  private:
   Aws::String m_recordId;
-  bool m_recordIdHasBeenSet = false;
 
   Aws::String m_provisionedProductName;
-  bool m_provisionedProductNameHasBeenSet = false;
 
   RecordStatus m_status{RecordStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTime{};
-  bool m_updatedTimeHasBeenSet = false;
 
   Aws::String m_provisionedProductType;
-  bool m_provisionedProductTypeHasBeenSet = false;
 
   Aws::String m_recordType;
-  bool m_recordTypeHasBeenSet = false;
 
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::String m_pathId;
-  bool m_pathIdHasBeenSet = false;
 
   Aws::Vector<RecordError> m_recordErrors;
-  bool m_recordErrorsHasBeenSet = false;
 
   Aws::Vector<RecordTag> m_recordTags;
-  bool m_recordTagsHasBeenSet = false;
 
   Aws::String m_launchRoleArn;
+  bool m_recordIdHasBeenSet = false;
+  bool m_provisionedProductNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_updatedTimeHasBeenSet = false;
+  bool m_provisionedProductTypeHasBeenSet = false;
+  bool m_recordTypeHasBeenSet = false;
+  bool m_provisionedProductIdHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_pathIdHasBeenSet = false;
+  bool m_recordErrorsHasBeenSet = false;
+  bool m_recordTagsHasBeenSet = false;
   bool m_launchRoleArnHasBeenSet = false;
 };
 

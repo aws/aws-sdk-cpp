@@ -126,15 +126,15 @@ class GroupConfiguration {
   ///@}
  private:
   Aws::Vector<GroupConfigurationItem> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<GroupConfigurationItem> m_proposedConfiguration;
-  bool m_proposedConfigurationHasBeenSet = false;
 
   GroupConfigurationStatus m_status{GroupConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_configurationHasBeenSet = false;
+  bool m_proposedConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

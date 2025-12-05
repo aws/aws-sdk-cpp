@@ -124,18 +124,18 @@ class OpsMetadata {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_opsMetadataArn;
-  bool m_opsMetadataArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_lastModifiedUser;
-  bool m_lastModifiedUserHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_resourceIdHasBeenSet = false;
+  bool m_opsMetadataArnHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_lastModifiedUserHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

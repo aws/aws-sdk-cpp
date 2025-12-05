@@ -64,9 +64,9 @@ class UpdateAnalyzerRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerName;
-  bool m_analyzerNameHasBeenSet = false;
 
   AnalyzerConfiguration m_configuration;
+  bool m_analyzerNameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

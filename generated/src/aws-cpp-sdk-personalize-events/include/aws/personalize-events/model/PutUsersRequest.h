@@ -74,9 +74,9 @@ class PutUsersRequest : public PersonalizeEventsRequest {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::Vector<User> m_users;
+  bool m_datasetArnHasBeenSet = false;
   bool m_usersHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateHsmResult {
   ///@}
  private:
   Hsm m_hsm;
-  bool m_hsmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hsmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

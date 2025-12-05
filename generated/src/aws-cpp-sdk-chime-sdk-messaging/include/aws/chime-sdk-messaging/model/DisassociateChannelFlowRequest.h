@@ -85,12 +85,12 @@ class DisassociateChannelFlowRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_channelFlowArn;
-  bool m_channelFlowArnHasBeenSet = false;
 
   Aws::String m_chimeBearer;
+  bool m_channelArnHasBeenSet = false;
+  bool m_channelFlowArnHasBeenSet = false;
   bool m_chimeBearerHasBeenSet = false;
 };
 

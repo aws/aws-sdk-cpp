@@ -144,21 +144,21 @@ class TrialSummary {
   ///@}
  private:
   Aws::String m_trialArn;
-  bool m_trialArnHasBeenSet = false;
 
   Aws::String m_trialName;
-  bool m_trialNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   TrialSource m_trialSource;
-  bool m_trialSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_trialArnHasBeenSet = false;
+  bool m_trialNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_trialSourceHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

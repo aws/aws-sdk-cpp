@@ -153,21 +153,21 @@ class EbuTtDDestinationSettings {
   ///@}
  private:
   Aws::String m_copyrightHolder;
-  bool m_copyrightHolderHasBeenSet = false;
 
   EbuTtDFillLineGapControl m_fillLineGap{EbuTtDFillLineGapControl::NOT_SET};
-  bool m_fillLineGapHasBeenSet = false;
 
   Aws::String m_fontFamily;
-  bool m_fontFamilyHasBeenSet = false;
 
   EbuTtDDestinationStyleControl m_styleControl{EbuTtDDestinationStyleControl::NOT_SET};
-  bool m_styleControlHasBeenSet = false;
 
   int m_defaultFontSize{0};
-  bool m_defaultFontSizeHasBeenSet = false;
 
   int m_defaultLineHeight{0};
+  bool m_copyrightHolderHasBeenSet = false;
+  bool m_fillLineGapHasBeenSet = false;
+  bool m_fontFamilyHasBeenSet = false;
+  bool m_styleControlHasBeenSet = false;
+  bool m_defaultFontSizeHasBeenSet = false;
   bool m_defaultLineHeightHasBeenSet = false;
 };
 

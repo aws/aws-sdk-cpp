@@ -108,15 +108,15 @@ class PrepareQueryResult {
   ///@}
  private:
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::Vector<SelectColumn> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<ParameterMapping> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryStringHasBeenSet = false;
+  bool m_columnsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

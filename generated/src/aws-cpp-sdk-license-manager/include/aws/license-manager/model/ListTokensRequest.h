@@ -116,15 +116,15 @@ class ListTokensRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tokenIds;
-  bool m_tokenIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_tokenIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

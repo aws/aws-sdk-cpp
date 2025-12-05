@@ -86,12 +86,12 @@ class GetSavingsPlansCoverageResult {
   ///@}
  private:
   Aws::Vector<SavingsPlansCoverage> m_savingsPlansCoverages;
-  bool m_savingsPlansCoveragesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_savingsPlansCoveragesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

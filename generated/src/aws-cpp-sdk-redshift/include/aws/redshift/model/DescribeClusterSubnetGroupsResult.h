@@ -96,12 +96,12 @@ class DescribeClusterSubnetGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ClusterSubnetGroup> m_clusterSubnetGroups;
-  bool m_clusterSubnetGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_clusterSubnetGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

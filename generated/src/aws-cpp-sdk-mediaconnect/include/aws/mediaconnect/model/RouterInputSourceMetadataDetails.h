@@ -97,12 +97,12 @@ class RouterInputSourceMetadataDetails {
   ///@}
  private:
   Aws::Vector<RouterInputMessage> m_sourceMetadataMessages;
-  bool m_sourceMetadataMessagesHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   RouterInputMetadata m_routerInputMetadata;
+  bool m_sourceMetadataMessagesHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_routerInputMetadataHasBeenSet = false;
 };
 

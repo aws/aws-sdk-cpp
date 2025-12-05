@@ -68,9 +68,9 @@ class Route53ResourceRecordSet {
   ///@}
  private:
   Aws::String m_recordSetIdentifier;
-  bool m_recordSetIdentifierHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_recordSetIdentifierHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

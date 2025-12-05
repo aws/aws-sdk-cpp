@@ -376,57 +376,57 @@ class InspectionData {
   ///@}
  private:
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_afterArguments;
-  bool m_afterArgumentsHasBeenSet = false;
 
   Aws::String m_afterInputPath;
-  bool m_afterInputPathHasBeenSet = false;
 
   Aws::String m_afterParameters;
-  bool m_afterParametersHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_afterResultSelector;
-  bool m_afterResultSelectorHasBeenSet = false;
 
   Aws::String m_afterResultPath;
-  bool m_afterResultPathHasBeenSet = false;
 
   InspectionDataRequest m_request;
-  bool m_requestHasBeenSet = false;
 
   InspectionDataResponse m_response;
-  bool m_responseHasBeenSet = false;
 
   Aws::String m_variables;
-  bool m_variablesHasBeenSet = false;
 
   InspectionErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_afterItemsPath;
-  bool m_afterItemsPathHasBeenSet = false;
 
   Aws::String m_afterItemSelector;
-  bool m_afterItemSelectorHasBeenSet = false;
 
   Aws::String m_afterItemBatcher;
-  bool m_afterItemBatcherHasBeenSet = false;
 
   Aws::String m_afterItemsPointer;
-  bool m_afterItemsPointerHasBeenSet = false;
 
   int m_toleratedFailureCount{0};
-  bool m_toleratedFailureCountHasBeenSet = false;
 
   double m_toleratedFailurePercentage{0.0};
-  bool m_toleratedFailurePercentageHasBeenSet = false;
 
   int m_maxConcurrency{0};
+  bool m_inputHasBeenSet = false;
+  bool m_afterArgumentsHasBeenSet = false;
+  bool m_afterInputPathHasBeenSet = false;
+  bool m_afterParametersHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_afterResultSelectorHasBeenSet = false;
+  bool m_afterResultPathHasBeenSet = false;
+  bool m_requestHasBeenSet = false;
+  bool m_responseHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_afterItemsPathHasBeenSet = false;
+  bool m_afterItemSelectorHasBeenSet = false;
+  bool m_afterItemBatcherHasBeenSet = false;
+  bool m_afterItemsPointerHasBeenSet = false;
+  bool m_toleratedFailureCountHasBeenSet = false;
+  bool m_toleratedFailurePercentageHasBeenSet = false;
   bool m_maxConcurrencyHasBeenSet = false;
 };
 

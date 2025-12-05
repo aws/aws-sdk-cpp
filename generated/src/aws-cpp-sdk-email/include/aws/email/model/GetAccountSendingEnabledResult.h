@@ -64,9 +64,9 @@ class GetAccountSendingEnabledResult {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_enabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

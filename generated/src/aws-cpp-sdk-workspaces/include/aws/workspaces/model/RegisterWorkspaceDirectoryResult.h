@@ -75,12 +75,12 @@ class RegisterWorkspaceDirectoryResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   WorkspaceDirectoryState m_state{WorkspaceDirectoryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

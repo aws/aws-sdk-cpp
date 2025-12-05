@@ -78,12 +78,12 @@ class StatisticsSummary {
   ///@}
  private:
   int m_signatureCount{0};
-  bool m_signatureCountHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   int m_predicateCount{0};
+  bool m_signatureCountHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
   bool m_predicateCountHasBeenSet = false;
 };
 

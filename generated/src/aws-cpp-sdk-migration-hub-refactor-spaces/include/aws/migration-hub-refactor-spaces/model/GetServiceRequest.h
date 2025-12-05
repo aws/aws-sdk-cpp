@@ -83,12 +83,12 @@ class GetServiceRequest : public MigrationHubRefactorSpacesRequest {
   ///@}
  private:
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_serviceIdentifier;
+  bool m_applicationIdentifierHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
   bool m_serviceIdentifierHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class PackageAggregationResponse {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
+  bool m_packageNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
 };
 

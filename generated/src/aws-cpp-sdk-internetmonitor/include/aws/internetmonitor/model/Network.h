@@ -67,9 +67,9 @@ class Network {
   ///@}
  private:
   Aws::String m_aSName;
-  bool m_aSNameHasBeenSet = false;
 
   long long m_aSNumber{0};
+  bool m_aSNameHasBeenSet = false;
   bool m_aSNumberHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class SelfManagedKafkaAccessConfigurationVpc {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroup;
+  bool m_subnetsHasBeenSet = false;
   bool m_securityGroupHasBeenSet = false;
 };
 

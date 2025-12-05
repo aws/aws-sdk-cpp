@@ -65,9 +65,9 @@ class UpdateMediaInsightsPipelineStatusRequest : public ChimeSDKMediaPipelinesRe
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   MediaPipelineStatusUpdate m_updateStatus{MediaPipelineStatusUpdate::NOT_SET};
+  bool m_identifierHasBeenSet = false;
   bool m_updateStatusHasBeenSet = false;
 };
 

@@ -213,30 +213,30 @@ class DescribeDBEngineVersionsRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dBParameterGroupFamily;
-  bool m_dBParameterGroupFamilyHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_defaultOnly{false};
-  bool m_defaultOnlyHasBeenSet = false;
 
   bool m_listSupportedCharacterSets{false};
-  bool m_listSupportedCharacterSetsHasBeenSet = false;
 
   bool m_listSupportedTimezones{false};
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dBParameterGroupFamilyHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_defaultOnlyHasBeenSet = false;
+  bool m_listSupportedCharacterSetsHasBeenSet = false;
   bool m_listSupportedTimezonesHasBeenSet = false;
 };
 

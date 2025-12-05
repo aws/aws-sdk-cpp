@@ -86,12 +86,12 @@ class DescribeInstanceImageMetadataResponse {
   ///@}
  private:
   Aws::Vector<InstanceImageMetadata> m_instanceImageMetadata;
-  bool m_instanceImageMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceImageMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

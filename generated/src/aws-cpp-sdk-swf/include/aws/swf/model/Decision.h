@@ -468,45 +468,45 @@ class Decision {
   ///@}
  private:
   DecisionType m_decisionType{DecisionType::NOT_SET};
-  bool m_decisionTypeHasBeenSet = false;
 
   ScheduleActivityTaskDecisionAttributes m_scheduleActivityTaskDecisionAttributes;
-  bool m_scheduleActivityTaskDecisionAttributesHasBeenSet = false;
 
   RequestCancelActivityTaskDecisionAttributes m_requestCancelActivityTaskDecisionAttributes;
-  bool m_requestCancelActivityTaskDecisionAttributesHasBeenSet = false;
 
   CompleteWorkflowExecutionDecisionAttributes m_completeWorkflowExecutionDecisionAttributes;
-  bool m_completeWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
   FailWorkflowExecutionDecisionAttributes m_failWorkflowExecutionDecisionAttributes;
-  bool m_failWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
   CancelWorkflowExecutionDecisionAttributes m_cancelWorkflowExecutionDecisionAttributes;
-  bool m_cancelWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
   ContinueAsNewWorkflowExecutionDecisionAttributes m_continueAsNewWorkflowExecutionDecisionAttributes;
-  bool m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
   RecordMarkerDecisionAttributes m_recordMarkerDecisionAttributes;
-  bool m_recordMarkerDecisionAttributesHasBeenSet = false;
 
   StartTimerDecisionAttributes m_startTimerDecisionAttributes;
-  bool m_startTimerDecisionAttributesHasBeenSet = false;
 
   CancelTimerDecisionAttributes m_cancelTimerDecisionAttributes;
-  bool m_cancelTimerDecisionAttributesHasBeenSet = false;
 
   SignalExternalWorkflowExecutionDecisionAttributes m_signalExternalWorkflowExecutionDecisionAttributes;
-  bool m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
   RequestCancelExternalWorkflowExecutionDecisionAttributes m_requestCancelExternalWorkflowExecutionDecisionAttributes;
-  bool m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
   StartChildWorkflowExecutionDecisionAttributes m_startChildWorkflowExecutionDecisionAttributes;
-  bool m_startChildWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
   ScheduleLambdaFunctionDecisionAttributes m_scheduleLambdaFunctionDecisionAttributes;
+  bool m_decisionTypeHasBeenSet = false;
+  bool m_scheduleActivityTaskDecisionAttributesHasBeenSet = false;
+  bool m_requestCancelActivityTaskDecisionAttributesHasBeenSet = false;
+  bool m_completeWorkflowExecutionDecisionAttributesHasBeenSet = false;
+  bool m_failWorkflowExecutionDecisionAttributesHasBeenSet = false;
+  bool m_cancelWorkflowExecutionDecisionAttributesHasBeenSet = false;
+  bool m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet = false;
+  bool m_recordMarkerDecisionAttributesHasBeenSet = false;
+  bool m_startTimerDecisionAttributesHasBeenSet = false;
+  bool m_cancelTimerDecisionAttributesHasBeenSet = false;
+  bool m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet = false;
+  bool m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet = false;
+  bool m_startChildWorkflowExecutionDecisionAttributesHasBeenSet = false;
   bool m_scheduleLambdaFunctionDecisionAttributesHasBeenSet = false;
 };
 

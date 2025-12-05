@@ -68,9 +68,9 @@ class LogGroupField {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_percent{0};
+  bool m_nameHasBeenSet = false;
   bool m_percentHasBeenSet = false;
 };
 

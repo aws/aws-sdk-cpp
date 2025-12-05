@@ -137,18 +137,18 @@ class ListCatalogItemsRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<CatalogItemClass> m_itemClassFilter;
-  bool m_itemClassFilterHasBeenSet = false;
 
   Aws::Vector<SupportedStorageEnum> m_supportedStorageFilter;
-  bool m_supportedStorageFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eC2FamilyFilter;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_itemClassFilterHasBeenSet = false;
+  bool m_supportedStorageFilterHasBeenSet = false;
   bool m_eC2FamilyFilterHasBeenSet = false;
 };
 

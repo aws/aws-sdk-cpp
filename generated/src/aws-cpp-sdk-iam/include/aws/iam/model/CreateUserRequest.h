@@ -139,15 +139,15 @@ class CreateUserRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_permissionsBoundary;
-  bool m_permissionsBoundaryHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_pathHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_permissionsBoundaryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

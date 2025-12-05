@@ -59,9 +59,9 @@ class DeleteDirectoryResult {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

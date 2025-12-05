@@ -162,24 +162,24 @@ class ListAppsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   AppSortKey m_sortBy{AppSortKey::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   Aws::String m_domainIdEquals;
-  bool m_domainIdEqualsHasBeenSet = false;
 
   Aws::String m_userProfileNameEquals;
-  bool m_userProfileNameEqualsHasBeenSet = false;
 
   Aws::String m_spaceNameEquals;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_domainIdEqualsHasBeenSet = false;
+  bool m_userProfileNameEqualsHasBeenSet = false;
   bool m_spaceNameEqualsHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class MetricsConfig {
   ///@}
  private:
   bool m_enableEnhancedMetrics{false};
-  bool m_enableEnhancedMetricsHasBeenSet = false;
 
   int m_metricPublishFrequencyInSeconds{0};
+  bool m_enableEnhancedMetricsHasBeenSet = false;
   bool m_metricPublishFrequencyInSecondsHasBeenSet = false;
 };
 

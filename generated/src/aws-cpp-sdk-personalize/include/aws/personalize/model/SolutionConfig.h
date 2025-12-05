@@ -226,30 +226,30 @@ class SolutionConfig {
   ///@}
  private:
   Aws::String m_eventValueThreshold;
-  bool m_eventValueThresholdHasBeenSet = false;
 
   HPOConfig m_hpoConfig;
-  bool m_hpoConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_algorithmHyperParameters;
-  bool m_algorithmHyperParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_featureTransformationParameters;
-  bool m_featureTransformationParametersHasBeenSet = false;
 
   AutoMLConfig m_autoMLConfig;
-  bool m_autoMLConfigHasBeenSet = false;
 
   EventsConfig m_eventsConfig;
-  bool m_eventsConfigHasBeenSet = false;
 
   OptimizationObjective m_optimizationObjective;
-  bool m_optimizationObjectiveHasBeenSet = false;
 
   TrainingDataConfig m_trainingDataConfig;
-  bool m_trainingDataConfigHasBeenSet = false;
 
   AutoTrainingConfig m_autoTrainingConfig;
+  bool m_eventValueThresholdHasBeenSet = false;
+  bool m_hpoConfigHasBeenSet = false;
+  bool m_algorithmHyperParametersHasBeenSet = false;
+  bool m_featureTransformationParametersHasBeenSet = false;
+  bool m_autoMLConfigHasBeenSet = false;
+  bool m_eventsConfigHasBeenSet = false;
+  bool m_optimizationObjectiveHasBeenSet = false;
+  bool m_trainingDataConfigHasBeenSet = false;
   bool m_autoTrainingConfigHasBeenSet = false;
 };
 

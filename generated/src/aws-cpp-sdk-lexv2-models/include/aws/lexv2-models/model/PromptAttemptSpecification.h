@@ -105,15 +105,15 @@ class PromptAttemptSpecification {
   ///@}
  private:
   bool m_allowInterrupt{false};
-  bool m_allowInterruptHasBeenSet = false;
 
   AllowedInputTypes m_allowedInputTypes;
-  bool m_allowedInputTypesHasBeenSet = false;
 
   AudioAndDTMFInputSpecification m_audioAndDTMFInputSpecification;
-  bool m_audioAndDTMFInputSpecificationHasBeenSet = false;
 
   TextInputSpecification m_textInputSpecification;
+  bool m_allowInterruptHasBeenSet = false;
+  bool m_allowedInputTypesHasBeenSet = false;
+  bool m_audioAndDTMFInputSpecificationHasBeenSet = false;
   bool m_textInputSpecificationHasBeenSet = false;
 };
 

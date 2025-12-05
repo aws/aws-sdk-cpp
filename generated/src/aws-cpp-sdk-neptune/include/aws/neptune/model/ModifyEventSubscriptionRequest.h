@@ -136,18 +136,18 @@ class ModifyEventSubscriptionRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_subscriptionName;
-  bool m_subscriptionNameHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventCategories;
-  bool m_eventCategoriesHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_subscriptionNameHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_eventCategoriesHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

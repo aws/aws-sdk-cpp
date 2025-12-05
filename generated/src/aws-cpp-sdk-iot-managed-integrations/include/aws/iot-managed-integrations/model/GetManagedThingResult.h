@@ -488,81 +488,81 @@ class GetManagedThingResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_credentialLockerId;
-  bool m_credentialLockerIdHasBeenSet = false;
 
   Aws::String m_advertisedProductId;
-  bool m_advertisedProductIdHasBeenSet = false;
 
   Role m_role{Role::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   ProvisioningStatus m_provisioningStatus{ProvisioningStatus::NOT_SET};
-  bool m_provisioningStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_brand;
-  bool m_brandHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_universalProductCode;
-  bool m_universalProductCodeHasBeenSet = false;
 
   Aws::String m_internationalArticleNumber;
-  bool m_internationalArticleNumberHasBeenSet = false;
 
   Aws::String m_connectorDestinationId;
-  bool m_connectorDestinationIdHasBeenSet = false;
 
   Aws::String m_connectorDeviceId;
-  bool m_connectorDeviceIdHasBeenSet = false;
 
   Aws::String m_deviceSpecificKey;
-  bool m_deviceSpecificKeyHasBeenSet = false;
 
   Aws::String m_macAddress;
-  bool m_macAddressHasBeenSet = false;
 
   Aws::String m_parentControllerId;
-  bool m_parentControllerIdHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_activatedAt{};
-  bool m_activatedAtHasBeenSet = false;
 
   HubNetworkMode m_hubNetworkMode{HubNetworkMode::NOT_SET};
-  bool m_hubNetworkModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metaData;
-  bool m_metaDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_credentialLockerIdHasBeenSet = false;
+  bool m_advertisedProductIdHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_provisioningStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_brandHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_universalProductCodeHasBeenSet = false;
+  bool m_internationalArticleNumberHasBeenSet = false;
+  bool m_connectorDestinationIdHasBeenSet = false;
+  bool m_connectorDeviceIdHasBeenSet = false;
+  bool m_deviceSpecificKeyHasBeenSet = false;
+  bool m_macAddressHasBeenSet = false;
+  bool m_parentControllerIdHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_activatedAtHasBeenSet = false;
+  bool m_hubNetworkModeHasBeenSet = false;
+  bool m_metaDataHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

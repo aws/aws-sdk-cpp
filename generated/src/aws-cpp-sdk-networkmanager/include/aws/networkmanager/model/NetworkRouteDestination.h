@@ -158,24 +158,24 @@ class NetworkRouteDestination {
   ///@}
  private:
   Aws::String m_coreNetworkAttachmentId;
-  bool m_coreNetworkAttachmentIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_segmentName;
-  bool m_segmentNameHasBeenSet = false;
 
   Aws::String m_networkFunctionGroupName;
-  bool m_networkFunctionGroupNameHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_coreNetworkAttachmentIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_segmentNameHasBeenSet = false;
+  bool m_networkFunctionGroupNameHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

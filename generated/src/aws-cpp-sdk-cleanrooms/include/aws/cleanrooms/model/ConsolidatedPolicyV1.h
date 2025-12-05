@@ -89,12 +89,12 @@ class ConsolidatedPolicyV1 {
   ///@}
  private:
   ConsolidatedPolicyList m_list;
-  bool m_listHasBeenSet = false;
 
   ConsolidatedPolicyAggregation m_aggregation;
-  bool m_aggregationHasBeenSet = false;
 
   ConsolidatedPolicyCustom m_custom;
+  bool m_listHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class StopInstanceRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   bool m_force{false};
+  bool m_instanceNameHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

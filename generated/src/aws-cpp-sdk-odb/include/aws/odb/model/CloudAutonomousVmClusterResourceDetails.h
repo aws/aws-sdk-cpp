@@ -67,9 +67,9 @@ class CloudAutonomousVmClusterResourceDetails {
   ///@}
  private:
   Aws::String m_cloudAutonomousVmClusterId;
-  bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
 
   double m_unallocatedAdbStorageInTBs{0.0};
+  bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
   bool m_unallocatedAdbStorageInTBsHasBeenSet = false;
 };
 

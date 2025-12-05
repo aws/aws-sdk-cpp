@@ -113,15 +113,15 @@ class CreateConsumableResourceRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_consumableResourceName;
-  bool m_consumableResourceNameHasBeenSet = false;
 
   long long m_totalQuantity{0};
-  bool m_totalQuantityHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_consumableResourceNameHasBeenSet = false;
+  bool m_totalQuantityHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

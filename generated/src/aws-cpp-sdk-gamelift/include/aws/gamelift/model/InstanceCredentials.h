@@ -75,9 +75,9 @@ class InstanceCredentials {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_secret;
+  bool m_userNameHasBeenSet = false;
   bool m_secretHasBeenSet = false;
 };
 

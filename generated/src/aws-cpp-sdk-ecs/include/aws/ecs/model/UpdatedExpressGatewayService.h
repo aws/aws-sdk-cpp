@@ -165,24 +165,24 @@ class UpdatedExpressGatewayService {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   ExpressGatewayServiceStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   ExpressGatewayServiceConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_serviceArnHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

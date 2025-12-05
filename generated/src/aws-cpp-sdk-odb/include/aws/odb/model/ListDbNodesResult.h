@@ -85,12 +85,12 @@ class ListDbNodesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DbNodeSummary> m_dbNodes;
-  bool m_dbNodesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dbNodesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

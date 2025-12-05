@@ -174,27 +174,27 @@ class TableCellStyle {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   FontConfiguration m_fontConfiguration;
-  bool m_fontConfigurationHasBeenSet = false;
 
   TextWrap m_textWrap{TextWrap::NOT_SET};
-  bool m_textWrapHasBeenSet = false;
 
   HorizontalTextAlignment m_horizontalTextAlignment{HorizontalTextAlignment::NOT_SET};
-  bool m_horizontalTextAlignmentHasBeenSet = false;
 
   VerticalTextAlignment m_verticalTextAlignment{VerticalTextAlignment::NOT_SET};
-  bool m_verticalTextAlignmentHasBeenSet = false;
 
   Aws::String m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   GlobalTableBorderOptions m_border;
+  bool m_visibilityHasBeenSet = false;
+  bool m_fontConfigurationHasBeenSet = false;
+  bool m_textWrapHasBeenSet = false;
+  bool m_horizontalTextAlignmentHasBeenSet = false;
+  bool m_verticalTextAlignmentHasBeenSet = false;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
   bool m_borderHasBeenSet = false;
 };
 

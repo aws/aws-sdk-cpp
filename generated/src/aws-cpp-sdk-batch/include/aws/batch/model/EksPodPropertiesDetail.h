@@ -299,36 +299,36 @@ class EksPodPropertiesDetail {
   ///@}
  private:
   Aws::String m_serviceAccountName;
-  bool m_serviceAccountNameHasBeenSet = false;
 
   bool m_hostNetwork{false};
-  bool m_hostNetworkHasBeenSet = false;
 
   Aws::String m_dnsPolicy;
-  bool m_dnsPolicyHasBeenSet = false;
 
   Aws::Vector<ImagePullSecret> m_imagePullSecrets;
-  bool m_imagePullSecretsHasBeenSet = false;
 
   Aws::Vector<EksContainerDetail> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::Vector<EksContainerDetail> m_initContainers;
-  bool m_initContainersHasBeenSet = false;
 
   Aws::Vector<EksVolume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::String m_podName;
-  bool m_podNameHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   EksMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   bool m_shareProcessNamespace{false};
+  bool m_serviceAccountNameHasBeenSet = false;
+  bool m_hostNetworkHasBeenSet = false;
+  bool m_dnsPolicyHasBeenSet = false;
+  bool m_imagePullSecretsHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_initContainersHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
+  bool m_podNameHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_shareProcessNamespaceHasBeenSet = false;
 };
 

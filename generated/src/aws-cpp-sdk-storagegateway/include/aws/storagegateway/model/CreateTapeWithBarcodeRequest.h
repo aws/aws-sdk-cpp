@@ -200,27 +200,27 @@ class CreateTapeWithBarcodeRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   long long m_tapeSizeInBytes{0};
-  bool m_tapeSizeInBytesHasBeenSet = false;
 
   Aws::String m_tapeBarcode;
-  bool m_tapeBarcodeHasBeenSet = false;
 
   bool m_kMSEncrypted{false};
-  bool m_kMSEncryptedHasBeenSet = false;
 
   Aws::String m_kMSKey;
-  bool m_kMSKeyHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   bool m_worm{false};
-  bool m_wormHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_tapeSizeInBytesHasBeenSet = false;
+  bool m_tapeBarcodeHasBeenSet = false;
+  bool m_kMSEncryptedHasBeenSet = false;
+  bool m_kMSKeyHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_wormHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

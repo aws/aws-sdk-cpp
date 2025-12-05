@@ -82,9 +82,9 @@ class ConnectAction {
   ///@}
  private:
   Aws::String m_instanceARN;
-  bool m_instanceARNHasBeenSet = false;
 
   Aws::String m_iAMRoleARN;
+  bool m_instanceARNHasBeenSet = false;
   bool m_iAMRoleARNHasBeenSet = false;
 };
 

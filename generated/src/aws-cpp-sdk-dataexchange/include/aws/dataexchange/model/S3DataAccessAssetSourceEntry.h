@@ -127,15 +127,15 @@ class S3DataAccessAssetSourceEntry {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keyPrefixes;
-  bool m_keyPrefixesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::Vector<KmsKeyToGrant> m_kmsKeysToGrant;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyPrefixesHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
   bool m_kmsKeysToGrantHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class DeleteProxyConfigurationResult {
   ///@}
  private:
   Aws::String m_proxyConfigurationName;
-  bool m_proxyConfigurationNameHasBeenSet = false;
 
   Aws::String m_proxyConfigurationArn;
-  bool m_proxyConfigurationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyConfigurationNameHasBeenSet = false;
+  bool m_proxyConfigurationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

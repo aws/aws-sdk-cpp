@@ -70,9 +70,9 @@ class ListingItem {
   ///@}
  private:
   AssetListing m_assetListing;
-  bool m_assetListingHasBeenSet = false;
 
   DataProductListing m_dataProductListing;
+  bool m_assetListingHasBeenSet = false;
   bool m_dataProductListingHasBeenSet = false;
 };
 

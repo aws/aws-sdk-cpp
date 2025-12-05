@@ -75,9 +75,9 @@ class DeleteClientBrandingRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<ClientDeviceType> m_platforms;
+  bool m_resourceIdHasBeenSet = false;
   bool m_platformsHasBeenSet = false;
 };
 

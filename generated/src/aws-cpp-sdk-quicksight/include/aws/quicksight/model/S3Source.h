@@ -97,12 +97,12 @@ class S3Source {
   ///@}
  private:
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   UploadSettings m_uploadSettings;
-  bool m_uploadSettingsHasBeenSet = false;
 
   Aws::Vector<InputColumn> m_inputColumns;
+  bool m_dataSourceArnHasBeenSet = false;
+  bool m_uploadSettingsHasBeenSet = false;
   bool m_inputColumnsHasBeenSet = false;
 };
 

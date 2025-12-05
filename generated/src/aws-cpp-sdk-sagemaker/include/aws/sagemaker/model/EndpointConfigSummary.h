@@ -88,12 +88,12 @@ class EndpointConfigSummary {
   ///@}
  private:
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   Aws::String m_endpointConfigArn;
-  bool m_endpointConfigArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_endpointConfigArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

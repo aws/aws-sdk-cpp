@@ -86,12 +86,12 @@ class ListAutomationEventStepsResult {
   ///@}
  private:
   Aws::Vector<AutomationEventStep> m_automationEventSteps;
-  bool m_automationEventStepsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_automationEventStepsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

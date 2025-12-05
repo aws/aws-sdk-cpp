@@ -61,9 +61,9 @@ class AssociateProfileResult {
   ///@}
  private:
   ProfileAssociation m_profileAssociation;
-  bool m_profileAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

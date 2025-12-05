@@ -99,15 +99,15 @@ class TelephonyOutboundMode {
   ///@}
  private:
   ProgressiveConfig m_progressive;
-  bool m_progressiveHasBeenSet = false;
 
   PredictiveConfig m_predictive;
-  bool m_predictiveHasBeenSet = false;
 
   AgentlessConfig m_agentless;
-  bool m_agentlessHasBeenSet = false;
 
   PreviewConfig m_preview;
+  bool m_progressiveHasBeenSet = false;
+  bool m_predictiveHasBeenSet = false;
+  bool m_agentlessHasBeenSet = false;
   bool m_previewHasBeenSet = false;
 };
 

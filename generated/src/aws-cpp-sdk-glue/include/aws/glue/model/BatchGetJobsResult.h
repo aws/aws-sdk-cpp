@@ -90,12 +90,12 @@ class BatchGetJobsResult {
   ///@}
  private:
   Aws::Vector<Job> m_jobs;
-  bool m_jobsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_jobsNotFound;
-  bool m_jobsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobsHasBeenSet = false;
+  bool m_jobsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

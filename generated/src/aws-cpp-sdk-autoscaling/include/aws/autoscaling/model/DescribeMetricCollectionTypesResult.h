@@ -92,12 +92,12 @@ class DescribeMetricCollectionTypesResult {
   ///@}
  private:
   Aws::Vector<MetricCollectionType> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Vector<MetricGranularityType> m_granularities;
-  bool m_granularitiesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_metricsHasBeenSet = false;
+  bool m_granularitiesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

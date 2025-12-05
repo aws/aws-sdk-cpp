@@ -178,24 +178,24 @@ class UpdateFleetAttributesRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
-  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
   ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
-  bool m_resourceCreationLimitPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricGroups;
-  bool m_metricGroupsHasBeenSet = false;
 
   AnywhereConfiguration m_anywhereConfiguration;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
+  bool m_resourceCreationLimitPolicyHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
   bool m_anywhereConfigurationHasBeenSet = false;
 };
 

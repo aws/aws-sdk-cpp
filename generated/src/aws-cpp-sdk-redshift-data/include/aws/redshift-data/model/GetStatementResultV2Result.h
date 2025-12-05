@@ -147,21 +147,21 @@ class GetStatementResultV2Result {
   ///@}
  private:
   Aws::Vector<QueryRecords> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::Vector<ColumnMetadata> m_columnMetadata;
-  bool m_columnMetadataHasBeenSet = false;
 
   long long m_totalNumRows{0};
-  bool m_totalNumRowsHasBeenSet = false;
 
   ResultFormatString m_resultFormat{ResultFormatString::NOT_SET};
-  bool m_resultFormatHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_columnMetadataHasBeenSet = false;
+  bool m_totalNumRowsHasBeenSet = false;
+  bool m_resultFormatHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

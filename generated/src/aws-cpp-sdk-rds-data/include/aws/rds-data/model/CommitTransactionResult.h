@@ -65,9 +65,9 @@ class CommitTransactionResult {
   ///@}
  private:
   Aws::String m_transactionStatus;
-  bool m_transactionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transactionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

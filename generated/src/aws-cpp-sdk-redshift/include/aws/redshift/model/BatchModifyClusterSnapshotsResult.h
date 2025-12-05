@@ -91,12 +91,12 @@ class BatchModifyClusterSnapshotsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Vector<SnapshotErrorMessage> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resourcesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class DetectProfileObjectTypeRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_objects;
-  bool m_objectsHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_objectsHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

@@ -175,24 +175,24 @@ class ProtocolsListData {
   ///@}
  private:
   Aws::String m_listId;
-  bool m_listIdHasBeenSet = false;
 
   Aws::String m_listName;
-  bool m_listNameHasBeenSet = false;
 
   Aws::String m_listUpdateToken;
-  bool m_listUpdateTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_protocolsList;
-  bool m_protocolsListHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_previousProtocolsList;
+  bool m_listIdHasBeenSet = false;
+  bool m_listNameHasBeenSet = false;
+  bool m_listUpdateTokenHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_protocolsListHasBeenSet = false;
   bool m_previousProtocolsListHasBeenSet = false;
 };
 

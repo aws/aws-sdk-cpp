@@ -142,21 +142,21 @@ class GatewayRouteData {
   ///@}
  private:
   Aws::String m_gatewayRouteName;
-  bool m_gatewayRouteNameHasBeenSet = false;
 
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   ResourceMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   GatewayRouteSpec m_spec;
-  bool m_specHasBeenSet = false;
 
   GatewayRouteStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_virtualGatewayName;
+  bool m_gatewayRouteNameHasBeenSet = false;
+  bool m_meshNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_specHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_virtualGatewayNameHasBeenSet = false;
 };
 

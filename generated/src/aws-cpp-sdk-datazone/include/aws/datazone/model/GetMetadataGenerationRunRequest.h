@@ -88,12 +88,12 @@ class GetMetadataGenerationRunRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

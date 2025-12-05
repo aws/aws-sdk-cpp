@@ -60,9 +60,9 @@ class CreateReplaceRootVolumeTaskResponse {
   ///@}
  private:
   ReplaceRootVolumeTask m_replaceRootVolumeTask;
-  bool m_replaceRootVolumeTaskHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_replaceRootVolumeTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class BatchUpdateFindingsV2Result {
   ///@}
  private:
   Aws::Vector<BatchUpdateFindingsV2ProcessedFinding> m_processedFindings;
-  bool m_processedFindingsHasBeenSet = false;
 
   Aws::Vector<BatchUpdateFindingsV2UnprocessedFinding> m_unprocessedFindings;
-  bool m_unprocessedFindingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_processedFindingsHasBeenSet = false;
+  bool m_unprocessedFindingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class PutBucketVersioningRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_mFA;
-  bool m_mFAHasBeenSet = false;
 
   VersioningConfiguration m_versioningConfiguration;
+  bool m_accountIdHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_mFAHasBeenSet = false;
   bool m_versioningConfigurationHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class SimulationAppEndpointInfo {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<SimulationAppPortMapping> m_ingressPortMappings;
+  bool m_addressHasBeenSet = false;
   bool m_ingressPortMappingsHasBeenSet = false;
 };
 

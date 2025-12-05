@@ -58,9 +58,9 @@ class PutAccountPreferencesResult {
   ///@}
  private:
   ResourceIdPreference m_resourceIdPreference;
-  bool m_resourceIdPreferenceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdPreferenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

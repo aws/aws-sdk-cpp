@@ -69,9 +69,9 @@ class RedactedEwsAvailabilityProvider {
   ///@}
  private:
   Aws::String m_ewsEndpoint;
-  bool m_ewsEndpointHasBeenSet = false;
 
   Aws::String m_ewsUsername;
+  bool m_ewsEndpointHasBeenSet = false;
   bool m_ewsUsernameHasBeenSet = false;
 };
 

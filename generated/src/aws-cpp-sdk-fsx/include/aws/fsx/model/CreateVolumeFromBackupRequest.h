@@ -125,18 +125,18 @@ class CreateVolumeFromBackupRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CreateOntapVolumeConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_backupIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

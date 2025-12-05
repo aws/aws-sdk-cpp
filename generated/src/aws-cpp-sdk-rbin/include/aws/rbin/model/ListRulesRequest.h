@@ -159,21 +159,21 @@ class ListRulesRequest : public RecycleBinRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   LockState m_lockState{LockState::NOT_SET};
-  bool m_lockStateHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_excludeResourceTags;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_lockStateHasBeenSet = false;
   bool m_excludeResourceTagsHasBeenSet = false;
 };
 

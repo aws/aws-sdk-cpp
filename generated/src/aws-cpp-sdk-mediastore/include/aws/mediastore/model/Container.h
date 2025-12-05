@@ -154,21 +154,21 @@ class Container {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ContainerStatus m_status{ContainerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_accessLoggingEnabled{false};
+  bool m_endpointHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_accessLoggingEnabledHasBeenSet = false;
 };
 

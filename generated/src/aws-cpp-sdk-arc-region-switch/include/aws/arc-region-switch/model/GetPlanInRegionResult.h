@@ -60,9 +60,9 @@ class GetPlanInRegionResult {
   ///@}
  private:
   Plan m_plan;
-  bool m_planHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_planHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

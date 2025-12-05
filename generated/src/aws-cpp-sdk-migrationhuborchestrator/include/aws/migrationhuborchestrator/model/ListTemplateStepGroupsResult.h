@@ -85,12 +85,12 @@ class ListTemplateStepGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TemplateStepGroupSummary> m_templateStepGroupSummary;
-  bool m_templateStepGroupSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_templateStepGroupSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class EncryptionConfiguration {
   ///@}
  private:
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_sseAlgorithm;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_sseAlgorithmHasBeenSet = false;
 };
 

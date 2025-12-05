@@ -60,9 +60,9 @@ class GetDiskSnapshotResult {
   ///@}
  private:
   DiskSnapshot m_diskSnapshot;
-  bool m_diskSnapshotHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_diskSnapshotHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

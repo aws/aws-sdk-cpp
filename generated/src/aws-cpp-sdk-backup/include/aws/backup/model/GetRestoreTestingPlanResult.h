@@ -61,9 +61,9 @@ class GetRestoreTestingPlanResult {
   ///@}
  private:
   RestoreTestingPlanForGet m_restoreTestingPlan;
-  bool m_restoreTestingPlanHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_restoreTestingPlanHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

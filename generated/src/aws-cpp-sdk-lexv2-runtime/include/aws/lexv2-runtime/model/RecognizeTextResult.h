@@ -176,24 +176,24 @@ class RecognizeTextResult {
   ///@}
  private:
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   SessionState m_sessionState;
-  bool m_sessionStateHasBeenSet = false;
 
   Aws::Vector<Interpretation> m_interpretations;
-  bool m_interpretationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-  bool m_requestAttributesHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   RecognizedBotMember m_recognizedBotMember;
-  bool m_recognizedBotMemberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messagesHasBeenSet = false;
+  bool m_sessionStateHasBeenSet = false;
+  bool m_interpretationsHasBeenSet = false;
+  bool m_requestAttributesHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_recognizedBotMemberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

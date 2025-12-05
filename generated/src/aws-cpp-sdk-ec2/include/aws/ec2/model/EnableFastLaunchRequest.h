@@ -150,21 +150,21 @@ class EnableFastLaunchRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   FastLaunchSnapshotConfigurationRequest m_snapshotConfiguration;
-  bool m_snapshotConfigurationHasBeenSet = false;
 
   FastLaunchLaunchTemplateSpecificationRequest m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   int m_maxParallelLaunches{0};
-  bool m_maxParallelLaunchesHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_imageIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_snapshotConfigurationHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_maxParallelLaunchesHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

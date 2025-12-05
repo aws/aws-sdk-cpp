@@ -62,9 +62,9 @@ class DescribeQueryLoggingConfigurationResult {
   ///@}
  private:
   QueryLoggingConfigurationMetadata m_queryLoggingConfiguration;
-  bool m_queryLoggingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryLoggingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

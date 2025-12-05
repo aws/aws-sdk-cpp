@@ -119,15 +119,15 @@ class SchedulingPolicyDetail {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   FairsharePolicy m_fairsharePolicy;
-  bool m_fairsharePolicyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_fairsharePolicyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

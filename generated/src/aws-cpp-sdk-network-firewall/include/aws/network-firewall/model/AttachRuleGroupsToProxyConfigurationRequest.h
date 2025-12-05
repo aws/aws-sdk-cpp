@@ -122,15 +122,15 @@ class AttachRuleGroupsToProxyConfigurationRequest : public NetworkFirewallReques
   ///@}
  private:
   Aws::String m_proxyConfigurationName;
-  bool m_proxyConfigurationNameHasBeenSet = false;
 
   Aws::String m_proxyConfigurationArn;
-  bool m_proxyConfigurationArnHasBeenSet = false;
 
   Aws::Vector<ProxyRuleGroupAttachment> m_ruleGroups;
-  bool m_ruleGroupsHasBeenSet = false;
 
   Aws::String m_updateToken;
+  bool m_proxyConfigurationNameHasBeenSet = false;
+  bool m_proxyConfigurationArnHasBeenSet = false;
+  bool m_ruleGroupsHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
 };
 

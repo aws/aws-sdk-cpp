@@ -81,9 +81,9 @@ class SnapshotFile {
   ///@}
  private:
   Aws::Vector<SnapshotFileSheetSelection> m_sheetSelections;
-  bool m_sheetSelectionsHasBeenSet = false;
 
   SnapshotFileFormatType m_formatType{SnapshotFileFormatType::NOT_SET};
+  bool m_sheetSelectionsHasBeenSet = false;
   bool m_formatTypeHasBeenSet = false;
 };
 

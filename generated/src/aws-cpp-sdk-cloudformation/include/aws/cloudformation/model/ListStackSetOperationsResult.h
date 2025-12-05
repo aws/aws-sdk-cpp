@@ -90,12 +90,12 @@ class ListStackSetOperationsResult {
   ///@}
  private:
   Aws::Vector<StackSetOperationSummary> m_summaries;
-  bool m_summariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_summariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -162,24 +162,24 @@ class CodeRepositoryMetadata {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_providerType;
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_providerTypeVisibility;
-  bool m_providerTypeVisibilityHasBeenSet = false;
 
   Aws::String m_lastScannedCommitId;
-  bool m_lastScannedCommitIdHasBeenSet = false;
 
   ProjectCodeSecurityScanConfiguration m_scanConfiguration;
-  bool m_scanConfigurationHasBeenSet = false;
 
   CodeRepositoryOnDemandScan m_onDemandScan;
+  bool m_projectNameHasBeenSet = false;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_providerTypeVisibilityHasBeenSet = false;
+  bool m_lastScannedCommitIdHasBeenSet = false;
+  bool m_scanConfigurationHasBeenSet = false;
   bool m_onDemandScanHasBeenSet = false;
 };
 

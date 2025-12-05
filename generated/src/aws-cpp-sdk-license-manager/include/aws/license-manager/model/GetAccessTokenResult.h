@@ -59,9 +59,9 @@ class GetAccessTokenResult {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

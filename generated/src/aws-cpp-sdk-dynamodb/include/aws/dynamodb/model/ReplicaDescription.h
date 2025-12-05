@@ -258,36 +258,36 @@ class ReplicaDescription {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   ReplicaStatus m_replicaStatus{ReplicaStatus::NOT_SET};
-  bool m_replicaStatusHasBeenSet = false;
 
   Aws::String m_replicaStatusDescription;
-  bool m_replicaStatusDescriptionHasBeenSet = false;
 
   Aws::String m_replicaStatusPercentProgress;
-  bool m_replicaStatusPercentProgressHasBeenSet = false;
 
   Aws::String m_kMSMasterKeyId;
-  bool m_kMSMasterKeyIdHasBeenSet = false;
 
   ProvisionedThroughputOverride m_provisionedThroughputOverride;
-  bool m_provisionedThroughputOverrideHasBeenSet = false;
 
   OnDemandThroughputOverride m_onDemandThroughputOverride;
-  bool m_onDemandThroughputOverrideHasBeenSet = false;
 
   TableWarmThroughputDescription m_warmThroughput;
-  bool m_warmThroughputHasBeenSet = false;
 
   Aws::Vector<ReplicaGlobalSecondaryIndexDescription> m_globalSecondaryIndexes;
-  bool m_globalSecondaryIndexesHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicaInaccessibleDateTime{};
-  bool m_replicaInaccessibleDateTimeHasBeenSet = false;
 
   TableClassSummary m_replicaTableClassSummary;
+  bool m_regionNameHasBeenSet = false;
+  bool m_replicaStatusHasBeenSet = false;
+  bool m_replicaStatusDescriptionHasBeenSet = false;
+  bool m_replicaStatusPercentProgressHasBeenSet = false;
+  bool m_kMSMasterKeyIdHasBeenSet = false;
+  bool m_provisionedThroughputOverrideHasBeenSet = false;
+  bool m_onDemandThroughputOverrideHasBeenSet = false;
+  bool m_warmThroughputHasBeenSet = false;
+  bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_replicaInaccessibleDateTimeHasBeenSet = false;
   bool m_replicaTableClassSummaryHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class ListPricingPlansResult {
   ///@}
  private:
   Aws::String m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
 
   Aws::Vector<PricingPlanListElement> m_pricingPlans;
-  bool m_pricingPlansHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingPeriodHasBeenSet = false;
+  bool m_pricingPlansHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

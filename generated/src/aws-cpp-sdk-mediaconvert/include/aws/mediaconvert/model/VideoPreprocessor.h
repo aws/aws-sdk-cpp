@@ -197,27 +197,27 @@ class VideoPreprocessor {
   ///@}
  private:
   ColorCorrector m_colorCorrector;
-  bool m_colorCorrectorHasBeenSet = false;
 
   Deinterlacer m_deinterlacer;
-  bool m_deinterlacerHasBeenSet = false;
 
   DolbyVision m_dolbyVision;
-  bool m_dolbyVisionHasBeenSet = false;
 
   Hdr10Plus m_hdr10Plus;
-  bool m_hdr10PlusHasBeenSet = false;
 
   ImageInserter m_imageInserter;
-  bool m_imageInserterHasBeenSet = false;
 
   NoiseReducer m_noiseReducer;
-  bool m_noiseReducerHasBeenSet = false;
 
   PartnerWatermarking m_partnerWatermarking;
-  bool m_partnerWatermarkingHasBeenSet = false;
 
   TimecodeBurnin m_timecodeBurnin;
+  bool m_colorCorrectorHasBeenSet = false;
+  bool m_deinterlacerHasBeenSet = false;
+  bool m_dolbyVisionHasBeenSet = false;
+  bool m_hdr10PlusHasBeenSet = false;
+  bool m_imageInserterHasBeenSet = false;
+  bool m_noiseReducerHasBeenSet = false;
+  bool m_partnerWatermarkingHasBeenSet = false;
   bool m_timecodeBurninHasBeenSet = false;
 };
 

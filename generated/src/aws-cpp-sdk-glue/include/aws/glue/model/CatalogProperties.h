@@ -101,12 +101,12 @@ class CatalogProperties {
   ///@}
  private:
   DataLakeAccessProperties m_dataLakeAccessProperties;
-  bool m_dataLakeAccessPropertiesHasBeenSet = false;
 
   IcebergOptimizationProperties m_icebergOptimizationProperties;
-  bool m_icebergOptimizationPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customProperties;
+  bool m_dataLakeAccessPropertiesHasBeenSet = false;
+  bool m_icebergOptimizationPropertiesHasBeenSet = false;
   bool m_customPropertiesHasBeenSet = false;
 };
 

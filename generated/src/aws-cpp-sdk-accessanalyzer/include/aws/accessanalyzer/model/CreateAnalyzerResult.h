@@ -65,9 +65,9 @@ class CreateAnalyzerResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

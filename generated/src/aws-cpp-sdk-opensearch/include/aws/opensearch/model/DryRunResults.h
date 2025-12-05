@@ -75,9 +75,9 @@ class DryRunResults {
   ///@}
  private:
   Aws::String m_deploymentType;
-  bool m_deploymentTypeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_deploymentTypeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

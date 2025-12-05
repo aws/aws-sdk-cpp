@@ -223,33 +223,33 @@ class AssetModelSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AssetModelType m_assetModelType{AssetModelType::NOT_SET};
-  bool m_assetModelTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
-  bool m_lastUpdateDateHasBeenSet = false;
 
   AssetModelStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_idHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_assetModelTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastUpdateDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

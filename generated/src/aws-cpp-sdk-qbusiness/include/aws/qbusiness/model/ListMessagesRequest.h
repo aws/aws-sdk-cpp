@@ -125,18 +125,18 @@ class ListMessagesRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_conversationIdHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

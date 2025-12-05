@@ -68,9 +68,9 @@ class ClusterAutoScalingConfig {
   ///@}
  private:
   ClusterAutoScalingMode m_mode{ClusterAutoScalingMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   ClusterAutoScalerType m_autoScalerType{ClusterAutoScalerType::NOT_SET};
+  bool m_modeHasBeenSet = false;
   bool m_autoScalerTypeHasBeenSet = false;
 };
 

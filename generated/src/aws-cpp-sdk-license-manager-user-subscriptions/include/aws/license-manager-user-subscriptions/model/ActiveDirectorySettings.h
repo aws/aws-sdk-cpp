@@ -140,18 +140,18 @@ class ActiveDirectorySettings {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainIpv4List;
-  bool m_domainIpv4ListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainIpv6List;
-  bool m_domainIpv6ListHasBeenSet = false;
 
   CredentialsProvider m_domainCredentialsProvider;
-  bool m_domainCredentialsProviderHasBeenSet = false;
 
   DomainNetworkSettings m_domainNetworkSettings;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainIpv4ListHasBeenSet = false;
+  bool m_domainIpv6ListHasBeenSet = false;
+  bool m_domainCredentialsProviderHasBeenSet = false;
   bool m_domainNetworkSettingsHasBeenSet = false;
 };
 

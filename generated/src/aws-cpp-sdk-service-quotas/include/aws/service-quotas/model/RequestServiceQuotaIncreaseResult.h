@@ -61,9 +61,9 @@ class RequestServiceQuotaIncreaseResult {
   ///@}
  private:
   RequestedServiceQuotaChange m_requestedQuota;
-  bool m_requestedQuotaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_requestedQuotaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class GroupedResourceCount {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   long long m_resourceCount{0};
+  bool m_groupNameHasBeenSet = false;
   bool m_resourceCountHasBeenSet = false;
 };
 

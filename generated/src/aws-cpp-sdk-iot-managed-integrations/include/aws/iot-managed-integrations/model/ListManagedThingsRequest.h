@@ -214,33 +214,33 @@ class ListManagedThingsRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_ownerFilter;
-  bool m_ownerFilterHasBeenSet = false;
 
   Aws::String m_credentialLockerFilter;
-  bool m_credentialLockerFilterHasBeenSet = false;
 
   Role m_roleFilter{Role::NOT_SET};
-  bool m_roleFilterHasBeenSet = false;
 
   Aws::String m_parentControllerIdentifierFilter;
-  bool m_parentControllerIdentifierFilterHasBeenSet = false;
 
   Aws::String m_connectorDestinationIdFilter;
-  bool m_connectorDestinationIdFilterHasBeenSet = false;
 
   Aws::String m_connectorDeviceIdFilter;
-  bool m_connectorDeviceIdFilterHasBeenSet = false;
 
   Aws::String m_serialNumberFilter;
-  bool m_serialNumberFilterHasBeenSet = false;
 
   ProvisioningStatus m_provisioningStatusFilter{ProvisioningStatus::NOT_SET};
-  bool m_provisioningStatusFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_ownerFilterHasBeenSet = false;
+  bool m_credentialLockerFilterHasBeenSet = false;
+  bool m_roleFilterHasBeenSet = false;
+  bool m_parentControllerIdentifierFilterHasBeenSet = false;
+  bool m_connectorDestinationIdFilterHasBeenSet = false;
+  bool m_connectorDeviceIdFilterHasBeenSet = false;
+  bool m_serialNumberFilterHasBeenSet = false;
+  bool m_provisioningStatusFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

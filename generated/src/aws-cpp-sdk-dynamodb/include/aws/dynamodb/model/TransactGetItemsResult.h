@@ -102,12 +102,12 @@ class TransactGetItemsResult {
   ///@}
  private:
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::Vector<ItemResponse> m_responses;
-  bool m_responsesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumedCapacityHasBeenSet = false;
+  bool m_responsesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DeleteTLSInspectionConfigurationRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_tLSInspectionConfigurationArn;
-  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
 
   Aws::String m_tLSInspectionConfigurationName;
+  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
   bool m_tLSInspectionConfigurationNameHasBeenSet = false;
 };
 

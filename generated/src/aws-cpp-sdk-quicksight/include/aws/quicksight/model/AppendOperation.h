@@ -115,15 +115,15 @@ class AppendOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_firstSource;
-  bool m_firstSourceHasBeenSet = false;
 
   TransformOperationSource m_secondSource;
-  bool m_secondSourceHasBeenSet = false;
 
   Aws::Vector<AppendedColumn> m_appendedColumns;
+  bool m_aliasHasBeenSet = false;
+  bool m_firstSourceHasBeenSet = false;
+  bool m_secondSourceHasBeenSet = false;
   bool m_appendedColumnsHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class DeletedObject {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   bool m_deleteMarker{false};
-  bool m_deleteMarkerHasBeenSet = false;
 
   Aws::String m_deleteMarkerVersionId;
+  bool m_keyHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_deleteMarkerHasBeenSet = false;
   bool m_deleteMarkerVersionIdHasBeenSet = false;
 };
 

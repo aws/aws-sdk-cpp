@@ -131,18 +131,18 @@ class TargetHealthDescription {
   ///@}
  private:
   TargetDescription m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_healthCheckPort;
-  bool m_healthCheckPortHasBeenSet = false;
 
   TargetHealth m_targetHealth;
-  bool m_targetHealthHasBeenSet = false;
 
   AnomalyDetection m_anomalyDetection;
-  bool m_anomalyDetectionHasBeenSet = false;
 
   AdministrativeOverride m_administrativeOverride;
+  bool m_targetHasBeenSet = false;
+  bool m_healthCheckPortHasBeenSet = false;
+  bool m_targetHealthHasBeenSet = false;
+  bool m_anomalyDetectionHasBeenSet = false;
   bool m_administrativeOverrideHasBeenSet = false;
 };
 

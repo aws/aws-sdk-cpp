@@ -354,45 +354,45 @@ class SharePointConfiguration {
   ///@}
  private:
   SharePointVersion m_sharePointVersion{SharePointVersion::NOT_SET};
-  bool m_sharePointVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_urls;
-  bool m_urlsHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   bool m_crawlAttachments{false};
-  bool m_crawlAttachmentsHasBeenSet = false;
 
   bool m_useChangeLog{false};
-  bool m_useChangeLogHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-  bool m_fieldMappingsHasBeenSet = false;
 
   Aws::String m_documentTitleFieldName;
-  bool m_documentTitleFieldNameHasBeenSet = false;
 
   bool m_disableLocalGroups{false};
-  bool m_disableLocalGroupsHasBeenSet = false;
 
   S3Path m_sslCertificateS3Path;
-  bool m_sslCertificateS3PathHasBeenSet = false;
 
   SharePointOnlineAuthenticationType m_authenticationType{SharePointOnlineAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   ProxyConfiguration m_proxyConfiguration;
+  bool m_sharePointVersionHasBeenSet = false;
+  bool m_urlsHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_crawlAttachmentsHasBeenSet = false;
+  bool m_useChangeLogHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_fieldMappingsHasBeenSet = false;
+  bool m_documentTitleFieldNameHasBeenSet = false;
+  bool m_disableLocalGroupsHasBeenSet = false;
+  bool m_sslCertificateS3PathHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
   bool m_proxyConfigurationHasBeenSet = false;
 };
 

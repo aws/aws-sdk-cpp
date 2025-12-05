@@ -323,51 +323,51 @@ class TableRestoreStatus {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_newTableName;
-  bool m_newTableNameHasBeenSet = false;
 
   long long m_progressInMegaBytes{0};
-  bool m_progressInMegaBytesHasBeenSet = false;
 
   Aws::String m_recoveryPointId;
-  bool m_recoveryPointIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTime{};
-  bool m_requestTimeHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_sourceDatabaseName;
-  bool m_sourceDatabaseNameHasBeenSet = false;
 
   Aws::String m_sourceSchemaName;
-  bool m_sourceSchemaNameHasBeenSet = false;
 
   Aws::String m_sourceTableName;
-  bool m_sourceTableNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_tableRestoreRequestId;
-  bool m_tableRestoreRequestIdHasBeenSet = false;
 
   Aws::String m_targetDatabaseName;
-  bool m_targetDatabaseNameHasBeenSet = false;
 
   Aws::String m_targetSchemaName;
-  bool m_targetSchemaNameHasBeenSet = false;
 
   long long m_totalDataInMegaBytes{0};
-  bool m_totalDataInMegaBytesHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_messageHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_newTableNameHasBeenSet = false;
+  bool m_progressInMegaBytesHasBeenSet = false;
+  bool m_recoveryPointIdHasBeenSet = false;
+  bool m_requestTimeHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_sourceDatabaseNameHasBeenSet = false;
+  bool m_sourceSchemaNameHasBeenSet = false;
+  bool m_sourceTableNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tableRestoreRequestIdHasBeenSet = false;
+  bool m_targetDatabaseNameHasBeenSet = false;
+  bool m_targetSchemaNameHasBeenSet = false;
+  bool m_totalDataInMegaBytesHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

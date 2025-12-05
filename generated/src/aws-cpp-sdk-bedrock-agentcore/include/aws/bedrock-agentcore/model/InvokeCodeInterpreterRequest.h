@@ -175,24 +175,25 @@ class InvokeCodeInterpreterRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_codeInterpreterIdentifier;
-  bool m_codeInterpreterIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_traceParent;
-  bool m_traceParentHasBeenSet = false;
 
   ToolName m_name{ToolName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   ToolArguments m_arguments;
-  bool m_argumentsHasBeenSet = false;
   InvokeCodeInterpreterHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_codeInterpreterIdentifierHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_argumentsHasBeenSet = false;
 };
 
 }  // namespace Model

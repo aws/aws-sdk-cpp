@@ -65,9 +65,9 @@ class DeleteWorkflowVersionRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_versionName;
+  bool m_workflowIdHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
 };
 

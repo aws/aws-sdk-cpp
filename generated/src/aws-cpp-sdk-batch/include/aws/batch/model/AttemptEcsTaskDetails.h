@@ -97,12 +97,12 @@ class AttemptEcsTaskDetails {
   ///@}
  private:
   Aws::String m_containerInstanceArn;
-  bool m_containerInstanceArnHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::Vector<AttemptTaskContainerDetails> m_containers;
+  bool m_containerInstanceArnHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
   bool m_containersHasBeenSet = false;
 };
 

@@ -160,21 +160,21 @@ class DirectQueryDataSource {
   ///@}
  private:
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   DirectQueryDataSourceType m_dataSourceType;
-  bool m_dataSourceTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_openSearchArns;
-  bool m_openSearchArnsHasBeenSet = false;
 
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_dataSourceNameHasBeenSet = false;
+  bool m_dataSourceTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_openSearchArnsHasBeenSet = false;
+  bool m_dataSourceArnHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

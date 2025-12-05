@@ -71,9 +71,9 @@ class DeleteLocalGatewayRouteTableVpcAssociationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_localGatewayRouteTableVpcAssociationId;
-  bool m_localGatewayRouteTableVpcAssociationIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayRouteTableVpcAssociationIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

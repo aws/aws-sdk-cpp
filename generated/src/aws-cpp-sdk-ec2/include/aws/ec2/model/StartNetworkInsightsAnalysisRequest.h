@@ -192,24 +192,24 @@ class StartNetworkInsightsAnalysisRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_networkInsightsPathId;
-  bool m_networkInsightsPathIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalAccounts;
-  bool m_additionalAccountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterInArns;
-  bool m_filterInArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterOutArns;
-  bool m_filterOutArnsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_networkInsightsPathIdHasBeenSet = false;
+  bool m_additionalAccountsHasBeenSet = false;
+  bool m_filterInArnsHasBeenSet = false;
+  bool m_filterOutArnsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

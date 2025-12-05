@@ -113,15 +113,15 @@ class Parameter {
   ///@}
  private:
   Aws::String m_parameterKey;
-  bool m_parameterKeyHasBeenSet = false;
 
   Aws::String m_parameterValue;
-  bool m_parameterValueHasBeenSet = false;
 
   bool m_usePreviousValue{false};
-  bool m_usePreviousValueHasBeenSet = false;
 
   Aws::String m_resolvedValue;
+  bool m_parameterKeyHasBeenSet = false;
+  bool m_parameterValueHasBeenSet = false;
+  bool m_usePreviousValueHasBeenSet = false;
   bool m_resolvedValueHasBeenSet = false;
 };
 

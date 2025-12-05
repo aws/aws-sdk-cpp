@@ -69,9 +69,9 @@ class EKSOnDeviceServiceConfiguration {
   ///@}
  private:
   Aws::String m_kubernetesVersion;
-  bool m_kubernetesVersionHasBeenSet = false;
 
   Aws::String m_eKSAnywhereVersion;
+  bool m_kubernetesVersionHasBeenSet = false;
   bool m_eKSAnywhereVersionHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class AppsListDataSummary {
   ///@}
  private:
   Aws::String m_listArn;
-  bool m_listArnHasBeenSet = false;
 
   Aws::String m_listId;
-  bool m_listIdHasBeenSet = false;
 
   Aws::String m_listName;
-  bool m_listNameHasBeenSet = false;
 
   Aws::Vector<App> m_appsList;
+  bool m_listArnHasBeenSet = false;
+  bool m_listIdHasBeenSet = false;
+  bool m_listNameHasBeenSet = false;
   bool m_appsListHasBeenSet = false;
 };
 

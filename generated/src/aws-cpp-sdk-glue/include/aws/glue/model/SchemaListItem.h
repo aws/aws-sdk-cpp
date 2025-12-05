@@ -158,24 +158,24 @@ class SchemaListItem {
   ///@}
  private:
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SchemaStatus m_schemaStatus{SchemaStatus::NOT_SET};
-  bool m_schemaStatusHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_updatedTime;
+  bool m_registryNameHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_schemaStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_updatedTimeHasBeenSet = false;
 };
 

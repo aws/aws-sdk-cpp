@@ -60,9 +60,9 @@ class CreateDhcpOptionsResponse {
   ///@}
  private:
   DhcpOptions m_dhcpOptions;
-  bool m_dhcpOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dhcpOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

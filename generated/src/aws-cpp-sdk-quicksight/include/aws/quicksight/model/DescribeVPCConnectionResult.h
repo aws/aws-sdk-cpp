@@ -76,12 +76,12 @@ class DescribeVPCConnectionResult {
   ///@}
  private:
   VPCConnection m_vPCConnection;
-  bool m_vPCConnectionHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_vPCConnectionHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

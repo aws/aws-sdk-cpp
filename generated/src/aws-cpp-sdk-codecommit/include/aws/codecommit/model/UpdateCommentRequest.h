@@ -68,9 +68,9 @@ class UpdateCommentRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_commentIdHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

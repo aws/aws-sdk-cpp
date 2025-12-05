@@ -206,27 +206,27 @@ class DomainSettingsForUpdate {
   ///@}
  private:
   RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
-  bool m_rStudioServerProDomainSettingsForUpdateHasBeenSet = false;
 
   ExecutionRoleIdentityConfig m_executionRoleIdentityConfig{ExecutionRoleIdentityConfig::NOT_SET};
-  bool m_executionRoleIdentityConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   TrustedIdentityPropagationSettings m_trustedIdentityPropagationSettings;
-  bool m_trustedIdentityPropagationSettingsHasBeenSet = false;
 
   DockerSettings m_dockerSettings;
-  bool m_dockerSettingsHasBeenSet = false;
 
   AmazonQSettings m_amazonQSettings;
-  bool m_amazonQSettingsHasBeenSet = false;
 
   UnifiedStudioSettings m_unifiedStudioSettings;
-  bool m_unifiedStudioSettingsHasBeenSet = false;
 
   IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
+  bool m_rStudioServerProDomainSettingsForUpdateHasBeenSet = false;
+  bool m_executionRoleIdentityConfigHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_trustedIdentityPropagationSettingsHasBeenSet = false;
+  bool m_dockerSettingsHasBeenSet = false;
+  bool m_amazonQSettingsHasBeenSet = false;
+  bool m_unifiedStudioSettingsHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

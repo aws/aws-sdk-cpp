@@ -106,15 +106,15 @@ class QuantumTaskQueueInfo {
   ///@}
  private:
   QueueName m_queue{QueueName::NOT_SET};
-  bool m_queueHasBeenSet = false;
 
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   QueuePriority m_queuePriority{QueuePriority::NOT_SET};
-  bool m_queuePriorityHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_queueHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_queuePriorityHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

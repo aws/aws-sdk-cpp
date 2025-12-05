@@ -91,12 +91,12 @@ class ListSchemaVersionsRequest : public GlueRequest {
   ///@}
  private:
   SchemaId m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -137,18 +137,18 @@ class CaptionSource {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_timeOffset;
-  bool m_timeOffsetHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Encryption m_encryption;
+  bool m_keyHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_timeOffsetHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ServerlessCacheConfiguration {
   ///@}
  private:
   Aws::String m_serverlessCacheName;
-  bool m_serverlessCacheNameHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
+  bool m_serverlessCacheNameHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
   bool m_majorEngineVersionHasBeenSet = false;
 };
 

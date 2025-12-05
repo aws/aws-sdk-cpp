@@ -94,12 +94,12 @@ class PutHypervisorPropertyMappingsRequest : public BackupGatewayRequest {
   ///@}
  private:
   Aws::String m_hypervisorArn;
-  bool m_hypervisorArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Vector<VmwareToAwsTagMapping> m_vmwareToAwsTagMappings;
+  bool m_hypervisorArnHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
   bool m_vmwareToAwsTagMappingsHasBeenSet = false;
 };
 

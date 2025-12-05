@@ -160,21 +160,21 @@ class UpdateAssetPropertyRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
-  bool m_propertyIdHasBeenSet = false;
 
   Aws::String m_propertyAlias;
-  bool m_propertyAliasHasBeenSet = false;
 
   PropertyNotificationState m_propertyNotificationState{PropertyNotificationState::NOT_SET};
-  bool m_propertyNotificationStateHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_propertyUnit;
+  bool m_assetIdHasBeenSet = false;
+  bool m_propertyIdHasBeenSet = false;
+  bool m_propertyAliasHasBeenSet = false;
+  bool m_propertyNotificationStateHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_propertyUnitHasBeenSet = false;
 };
 

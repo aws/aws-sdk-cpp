@@ -89,12 +89,12 @@ class InstanceHardware {
   ///@}
  private:
   int m_cpuCount{0};
-  bool m_cpuCountHasBeenSet = false;
 
   Aws::Vector<Disk> m_disks;
-  bool m_disksHasBeenSet = false;
 
   double m_ramSizeInGb{0.0};
+  bool m_cpuCountHasBeenSet = false;
+  bool m_disksHasBeenSet = false;
   bool m_ramSizeInGbHasBeenSet = false;
 };
 

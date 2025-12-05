@@ -282,42 +282,42 @@ class GetMetricStreamResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<MetricStreamFilter> m_includeFilters;
-  bool m_includeFiltersHasBeenSet = false;
 
   Aws::Vector<MetricStreamFilter> m_excludeFilters;
-  bool m_excludeFiltersHasBeenSet = false;
 
   Aws::String m_firehoseArn;
-  bool m_firehoseArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
-  bool m_lastUpdateDateHasBeenSet = false;
 
   MetricStreamOutputFormat m_outputFormat{MetricStreamOutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
-  bool m_statisticsConfigurationsHasBeenSet = false;
 
   bool m_includeLinkedAccountsMetrics{false};
-  bool m_includeLinkedAccountsMetricsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_includeFiltersHasBeenSet = false;
+  bool m_excludeFiltersHasBeenSet = false;
+  bool m_firehoseArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastUpdateDateHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_statisticsConfigurationsHasBeenSet = false;
+  bool m_includeLinkedAccountsMetricsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

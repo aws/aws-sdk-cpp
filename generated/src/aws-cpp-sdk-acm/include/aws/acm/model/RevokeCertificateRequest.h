@@ -69,9 +69,9 @@ class RevokeCertificateRequest : public ACMRequest {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   RevocationReason m_revocationReason{RevocationReason::NOT_SET};
+  bool m_certificateArnHasBeenSet = false;
   bool m_revocationReasonHasBeenSet = false;
 };
 

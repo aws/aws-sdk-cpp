@@ -61,9 +61,9 @@ class DescribeRecommendationFeedbackResult {
   ///@}
  private:
   RecommendationFeedback m_recommendationFeedback;
-  bool m_recommendationFeedbackHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationFeedbackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

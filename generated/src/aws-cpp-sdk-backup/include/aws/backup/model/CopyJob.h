@@ -553,84 +553,84 @@ class CopyJob {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_copyJobId;
-  bool m_copyJobIdHasBeenSet = false;
 
   Aws::String m_sourceBackupVaultArn;
-  bool m_sourceBackupVaultArnHasBeenSet = false;
 
   Aws::String m_sourceRecoveryPointArn;
-  bool m_sourceRecoveryPointArnHasBeenSet = false;
 
   Aws::String m_destinationBackupVaultArn;
-  bool m_destinationBackupVaultArnHasBeenSet = false;
 
   Aws::String m_destinationVaultType;
-  bool m_destinationVaultTypeHasBeenSet = false;
 
   Aws::String m_destinationVaultLockState;
-  bool m_destinationVaultLockStateHasBeenSet = false;
 
   Aws::String m_destinationRecoveryPointArn;
-  bool m_destinationRecoveryPointArnHasBeenSet = false;
 
   Aws::String m_destinationEncryptionKeyArn;
-  bool m_destinationEncryptionKeyArnHasBeenSet = false;
 
   Lifecycle m_destinationRecoveryPointLifecycle;
-  bool m_destinationRecoveryPointLifecycleHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   CopyJobState m_state{CopyJobState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   long long m_backupSizeInBytes{0};
-  bool m_backupSizeInBytesHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   RecoveryPointCreator m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_createdByBackupJobId;
-  bool m_createdByBackupJobIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_parentJobId;
-  bool m_parentJobIdHasBeenSet = false;
 
   bool m_isParent{false};
-  bool m_isParentHasBeenSet = false;
 
   Aws::String m_compositeMemberIdentifier;
-  bool m_compositeMemberIdentifierHasBeenSet = false;
 
   long long m_numberOfChildJobs{0};
-  bool m_numberOfChildJobsHasBeenSet = false;
 
   Aws::Map<CopyJobState, long long> m_childJobsInState;
-  bool m_childJobsInStateHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_messageCategory;
+  bool m_accountIdHasBeenSet = false;
+  bool m_copyJobIdHasBeenSet = false;
+  bool m_sourceBackupVaultArnHasBeenSet = false;
+  bool m_sourceRecoveryPointArnHasBeenSet = false;
+  bool m_destinationBackupVaultArnHasBeenSet = false;
+  bool m_destinationVaultTypeHasBeenSet = false;
+  bool m_destinationVaultLockStateHasBeenSet = false;
+  bool m_destinationRecoveryPointArnHasBeenSet = false;
+  bool m_destinationEncryptionKeyArnHasBeenSet = false;
+  bool m_destinationRecoveryPointLifecycleHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_backupSizeInBytesHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdByBackupJobIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_parentJobIdHasBeenSet = false;
+  bool m_isParentHasBeenSet = false;
+  bool m_compositeMemberIdentifierHasBeenSet = false;
+  bool m_numberOfChildJobsHasBeenSet = false;
+  bool m_childJobsInStateHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_messageCategoryHasBeenSet = false;
 };
 

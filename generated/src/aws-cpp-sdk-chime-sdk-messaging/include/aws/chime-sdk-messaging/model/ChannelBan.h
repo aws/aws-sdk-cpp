@@ -106,15 +106,15 @@ class ChannelBan {
   ///@}
  private:
   Identity m_member;
-  bool m_memberHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Identity m_createdBy;
+  bool m_memberHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class PutStoredQueryResult {
   ///@}
  private:
   Aws::String m_queryArn;
-  bool m_queryArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

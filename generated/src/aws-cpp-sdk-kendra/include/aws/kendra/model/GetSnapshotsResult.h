@@ -127,18 +127,18 @@ class GetSnapshotsResult {
   ///@}
  private:
   TimeRange m_snapShotTimeFilter;
-  bool m_snapShotTimeFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snapshotsDataHeader;
-  bool m_snapshotsDataHeaderHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_snapshotsData;
-  bool m_snapshotsDataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapShotTimeFilterHasBeenSet = false;
+  bool m_snapshotsDataHeaderHasBeenSet = false;
+  bool m_snapshotsDataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

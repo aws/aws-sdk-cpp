@@ -170,24 +170,24 @@ class ResponseHeadersPolicyConfig {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResponseHeadersPolicyCorsConfig m_corsConfig;
-  bool m_corsConfigHasBeenSet = false;
 
   ResponseHeadersPolicySecurityHeadersConfig m_securityHeadersConfig;
-  bool m_securityHeadersConfigHasBeenSet = false;
 
   ResponseHeadersPolicyServerTimingHeadersConfig m_serverTimingHeadersConfig;
-  bool m_serverTimingHeadersConfigHasBeenSet = false;
 
   ResponseHeadersPolicyCustomHeadersConfig m_customHeadersConfig;
-  bool m_customHeadersConfigHasBeenSet = false;
 
   ResponseHeadersPolicyRemoveHeadersConfig m_removeHeadersConfig;
+  bool m_commentHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_corsConfigHasBeenSet = false;
+  bool m_securityHeadersConfigHasBeenSet = false;
+  bool m_serverTimingHeadersConfigHasBeenSet = false;
+  bool m_customHeadersConfigHasBeenSet = false;
   bool m_removeHeadersConfigHasBeenSet = false;
 };
 

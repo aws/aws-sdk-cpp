@@ -69,9 +69,9 @@ class DeleteThreatIntelSetRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_threatIntelSetId;
+  bool m_detectorIdHasBeenSet = false;
   bool m_threatIntelSetIdHasBeenSet = false;
 };
 

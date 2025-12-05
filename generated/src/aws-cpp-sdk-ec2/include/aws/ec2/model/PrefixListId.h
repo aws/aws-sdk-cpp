@@ -72,9 +72,9 @@ class PrefixListId {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_prefixListId;
+  bool m_descriptionHasBeenSet = false;
   bool m_prefixListIdHasBeenSet = false;
 };
 

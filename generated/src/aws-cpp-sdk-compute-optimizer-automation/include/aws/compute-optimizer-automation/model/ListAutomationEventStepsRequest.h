@@ -85,12 +85,12 @@ class ListAutomationEventStepsRequest : public ComputeOptimizerAutomationRequest
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_eventIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class OtaTaskExecutionRolloutConfig {
   ///@}
  private:
   ExponentialRolloutRate m_exponentialRolloutRate;
-  bool m_exponentialRolloutRateHasBeenSet = false;
 
   int m_maximumPerMinute{0};
+  bool m_exponentialRolloutRateHasBeenSet = false;
   bool m_maximumPerMinuteHasBeenSet = false;
 };
 

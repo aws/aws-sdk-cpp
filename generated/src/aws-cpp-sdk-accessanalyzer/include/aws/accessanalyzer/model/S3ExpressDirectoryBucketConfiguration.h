@@ -88,9 +88,9 @@ class S3ExpressDirectoryBucketConfiguration {
   ///@}
  private:
   Aws::String m_bucketPolicy;
-  bool m_bucketPolicyHasBeenSet = false;
 
   Aws::Map<Aws::String, S3ExpressDirectoryAccessPointConfiguration> m_accessPoints;
+  bool m_bucketPolicyHasBeenSet = false;
   bool m_accessPointsHasBeenSet = false;
 };
 

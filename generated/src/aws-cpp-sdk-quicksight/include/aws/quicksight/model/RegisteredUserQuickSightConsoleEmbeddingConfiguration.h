@@ -79,9 +79,9 @@ class RegisteredUserQuickSightConsoleEmbeddingConfiguration {
   ///@}
  private:
   Aws::String m_initialPath;
-  bool m_initialPathHasBeenSet = false;
 
   RegisteredUserConsoleFeatureConfigurations m_featureConfigurations;
+  bool m_initialPathHasBeenSet = false;
   bool m_featureConfigurationsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeStackResourceResult {
   ///@}
  private:
   StackResourceDetail m_stackResourceDetail;
-  bool m_stackResourceDetailHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackResourceDetailHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

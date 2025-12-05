@@ -71,9 +71,9 @@ class ConverseStreamTrace {
   ///@}
  private:
   GuardrailTraceAssessment m_guardrail;
-  bool m_guardrailHasBeenSet = false;
 
   PromptRouterTrace m_promptRouter;
+  bool m_guardrailHasBeenSet = false;
   bool m_promptRouterHasBeenSet = false;
 };
 

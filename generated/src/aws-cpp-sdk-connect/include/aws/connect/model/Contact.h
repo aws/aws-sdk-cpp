@@ -969,144 +969,144 @@ class Contact {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   Aws::String m_previousContactId;
-  bool m_previousContactIdHasBeenSet = false;
 
   Aws::String m_contactAssociationId;
-  bool m_contactAssociationIdHasBeenSet = false;
 
   ContactInitiationMethod m_initiationMethod{ContactInitiationMethod::NOT_SET};
-  bool m_initiationMethodHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   QueueInfo m_queueInfo;
-  bool m_queueInfoHasBeenSet = false;
 
   AgentInfo m_agentInfo;
-  bool m_agentInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationTimestamp{};
-  bool m_initiationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_disconnectTimestamp{};
-  bool m_disconnectTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastPausedTimestamp{};
-  bool m_lastPausedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastResumedTimestamp{};
-  bool m_lastResumedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_ringStartTimestamp{};
-  bool m_ringStartTimestampHasBeenSet = false;
 
   int m_totalPauseCount{0};
-  bool m_totalPauseCountHasBeenSet = false;
 
   int m_totalPauseDurationInSeconds{0};
-  bool m_totalPauseDurationInSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledTimestamp{};
-  bool m_scheduledTimestampHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   WisdomInfo m_wisdomInfo;
-  bool m_wisdomInfoHasBeenSet = false;
 
   Aws::String m_customerId;
-  bool m_customerIdHasBeenSet = false;
 
   EndpointInfo m_customerEndpoint;
-  bool m_customerEndpointHasBeenSet = false;
 
   EndpointInfo m_systemEndpoint;
-  bool m_systemEndpointHasBeenSet = false;
 
   int m_queueTimeAdjustmentSeconds{0};
-  bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
 
   long long m_queuePriority{0};
-  bool m_queuePriorityHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_connectedToSystemTimestamp{};
-  bool m_connectedToSystemTimestampHasBeenSet = false;
 
   RoutingCriteria m_routingCriteria;
-  bool m_routingCriteriaHasBeenSet = false;
 
   Customer m_customer;
-  bool m_customerHasBeenSet = false;
 
   Campaign m_campaign;
-  bool m_campaignHasBeenSet = false;
 
   AnsweringMachineDetectionStatus m_answeringMachineDetectionStatus{AnsweringMachineDetectionStatus::NOT_SET};
-  bool m_answeringMachineDetectionStatusHasBeenSet = false;
 
   CustomerVoiceActivity m_customerVoiceActivity;
-  bool m_customerVoiceActivityHasBeenSet = false;
 
   QualityMetrics m_qualityMetrics;
-  bool m_qualityMetricsHasBeenSet = false;
 
   ChatMetrics m_chatMetrics;
-  bool m_chatMetricsHasBeenSet = false;
 
   DisconnectDetails m_disconnectDetails;
-  bool m_disconnectDetailsHasBeenSet = false;
 
   AdditionalEmailRecipients m_additionalEmailRecipients;
-  bool m_additionalEmailRecipientsHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   Aws::Vector<RecordingInfo> m_recordings;
-  bool m_recordingsHasBeenSet = false;
 
   Aws::String m_disconnectReason;
-  bool m_disconnectReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, ContactEvaluation> m_contactEvaluations;
-  bool m_contactEvaluationsHasBeenSet = false;
 
   TaskTemplateInfoV2 m_taskTemplateInfo;
-  bool m_taskTemplateInfoHasBeenSet = false;
 
   ContactDetails m_contactDetails;
-  bool m_contactDetailsHasBeenSet = false;
 
   OutboundStrategy m_outboundStrategy;
-  bool m_outboundStrategyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<NextContactEntry> m_nextContacts;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_previousContactIdHasBeenSet = false;
+  bool m_contactAssociationIdHasBeenSet = false;
+  bool m_initiationMethodHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_queueInfoHasBeenSet = false;
+  bool m_agentInfoHasBeenSet = false;
+  bool m_initiationTimestampHasBeenSet = false;
+  bool m_disconnectTimestampHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
+  bool m_lastPausedTimestampHasBeenSet = false;
+  bool m_lastResumedTimestampHasBeenSet = false;
+  bool m_ringStartTimestampHasBeenSet = false;
+  bool m_totalPauseCountHasBeenSet = false;
+  bool m_totalPauseDurationInSecondsHasBeenSet = false;
+  bool m_scheduledTimestampHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_wisdomInfoHasBeenSet = false;
+  bool m_customerIdHasBeenSet = false;
+  bool m_customerEndpointHasBeenSet = false;
+  bool m_systemEndpointHasBeenSet = false;
+  bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
+  bool m_queuePriorityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_connectedToSystemTimestampHasBeenSet = false;
+  bool m_routingCriteriaHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
+  bool m_campaignHasBeenSet = false;
+  bool m_answeringMachineDetectionStatusHasBeenSet = false;
+  bool m_customerVoiceActivityHasBeenSet = false;
+  bool m_qualityMetricsHasBeenSet = false;
+  bool m_chatMetricsHasBeenSet = false;
+  bool m_disconnectDetailsHasBeenSet = false;
+  bool m_additionalEmailRecipientsHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
+  bool m_recordingsHasBeenSet = false;
+  bool m_disconnectReasonHasBeenSet = false;
+  bool m_contactEvaluationsHasBeenSet = false;
+  bool m_taskTemplateInfoHasBeenSet = false;
+  bool m_contactDetailsHasBeenSet = false;
+  bool m_outboundStrategyHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_nextContactsHasBeenSet = false;
 };
 

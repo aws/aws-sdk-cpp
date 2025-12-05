@@ -164,24 +164,24 @@ class CreateGlossaryRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owningProjectIdentifier;
-  bool m_owningProjectIdentifierHasBeenSet = false;
 
   GlossaryStatus m_status{GlossaryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_owningProjectIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_usageRestrictionsHasBeenSet = false;
 };
 

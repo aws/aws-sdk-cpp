@@ -95,9 +95,9 @@ class ProvisioningArtifactPreferences {
   ///@}
  private:
   Aws::Vector<Aws::String> m_stackSetAccounts;
-  bool m_stackSetAccountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stackSetRegions;
+  bool m_stackSetAccountsHasBeenSet = false;
   bool m_stackSetRegionsHasBeenSet = false;
 };
 

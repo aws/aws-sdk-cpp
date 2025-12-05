@@ -197,30 +197,30 @@ class SpaceDetails {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   SpaceStatus m_status{SpaceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   SpaceSettingsSummary m_spaceSettingsSummary;
-  bool m_spaceSettingsSummaryHasBeenSet = false;
 
   SpaceSharingSettingsSummary m_spaceSharingSettingsSummary;
-  bool m_spaceSharingSettingsSummaryHasBeenSet = false;
 
   OwnershipSettingsSummary m_ownershipSettingsSummary;
-  bool m_ownershipSettingsSummaryHasBeenSet = false;
 
   Aws::String m_spaceDisplayName;
+  bool m_domainIdHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_spaceSettingsSummaryHasBeenSet = false;
+  bool m_spaceSharingSettingsSummaryHasBeenSet = false;
+  bool m_ownershipSettingsSummaryHasBeenSet = false;
   bool m_spaceDisplayNameHasBeenSet = false;
 };
 

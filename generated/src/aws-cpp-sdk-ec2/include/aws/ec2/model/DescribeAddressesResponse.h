@@ -67,9 +67,9 @@ class DescribeAddressesResponse {
   ///@}
  private:
   Aws::Vector<Address> m_addresses;
-  bool m_addressesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_addressesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

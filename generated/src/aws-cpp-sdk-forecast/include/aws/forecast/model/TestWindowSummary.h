@@ -108,15 +108,15 @@ class TestWindowSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_testWindowStart{};
-  bool m_testWindowStartHasBeenSet = false;
 
   Aws::Utils::DateTime m_testWindowEnd{};
-  bool m_testWindowEndHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_testWindowStartHasBeenSet = false;
+  bool m_testWindowEndHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeAppBlocksResult {
   ///@}
  private:
   Aws::Vector<AppBlock> m_appBlocks;
-  bool m_appBlocksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appBlocksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

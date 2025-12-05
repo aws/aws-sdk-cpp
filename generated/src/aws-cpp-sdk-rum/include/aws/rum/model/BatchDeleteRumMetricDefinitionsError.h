@@ -88,12 +88,12 @@ class BatchDeleteRumMetricDefinitionsError {
   ///@}
  private:
   Aws::String m_metricDefinitionId;
-  bool m_metricDefinitionIdHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_metricDefinitionIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

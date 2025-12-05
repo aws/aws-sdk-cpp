@@ -414,54 +414,54 @@ class CreateDeliveryStreamRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   DeliveryStreamType m_deliveryStreamType{DeliveryStreamType::NOT_SET};
-  bool m_deliveryStreamTypeHasBeenSet = false;
 
   DirectPutSourceConfiguration m_directPutSourceConfiguration;
-  bool m_directPutSourceConfigurationHasBeenSet = false;
 
   KinesisStreamSourceConfiguration m_kinesisStreamSourceConfiguration;
-  bool m_kinesisStreamSourceConfigurationHasBeenSet = false;
 
   DeliveryStreamEncryptionConfigurationInput m_deliveryStreamEncryptionConfigurationInput;
-  bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet = false;
 
   ExtendedS3DestinationConfiguration m_extendedS3DestinationConfiguration;
-  bool m_extendedS3DestinationConfigurationHasBeenSet = false;
 
   RedshiftDestinationConfiguration m_redshiftDestinationConfiguration;
-  bool m_redshiftDestinationConfigurationHasBeenSet = false;
 
   ElasticsearchDestinationConfiguration m_elasticsearchDestinationConfiguration;
-  bool m_elasticsearchDestinationConfigurationHasBeenSet = false;
 
   AmazonopensearchserviceDestinationConfiguration m_amazonopensearchserviceDestinationConfiguration;
-  bool m_amazonopensearchserviceDestinationConfigurationHasBeenSet = false;
 
   SplunkDestinationConfiguration m_splunkDestinationConfiguration;
-  bool m_splunkDestinationConfigurationHasBeenSet = false;
 
   HttpEndpointDestinationConfiguration m_httpEndpointDestinationConfiguration;
-  bool m_httpEndpointDestinationConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AmazonOpenSearchServerlessDestinationConfiguration m_amazonOpenSearchServerlessDestinationConfiguration;
-  bool m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet = false;
 
   MSKSourceConfiguration m_mSKSourceConfiguration;
-  bool m_mSKSourceConfigurationHasBeenSet = false;
 
   SnowflakeDestinationConfiguration m_snowflakeDestinationConfiguration;
-  bool m_snowflakeDestinationConfigurationHasBeenSet = false;
 
   IcebergDestinationConfiguration m_icebergDestinationConfiguration;
-  bool m_icebergDestinationConfigurationHasBeenSet = false;
 
   DatabaseSourceConfiguration m_databaseSourceConfiguration;
+  bool m_deliveryStreamNameHasBeenSet = false;
+  bool m_deliveryStreamTypeHasBeenSet = false;
+  bool m_directPutSourceConfigurationHasBeenSet = false;
+  bool m_kinesisStreamSourceConfigurationHasBeenSet = false;
+  bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet = false;
+  bool m_extendedS3DestinationConfigurationHasBeenSet = false;
+  bool m_redshiftDestinationConfigurationHasBeenSet = false;
+  bool m_elasticsearchDestinationConfigurationHasBeenSet = false;
+  bool m_amazonopensearchserviceDestinationConfigurationHasBeenSet = false;
+  bool m_splunkDestinationConfigurationHasBeenSet = false;
+  bool m_httpEndpointDestinationConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet = false;
+  bool m_mSKSourceConfigurationHasBeenSet = false;
+  bool m_snowflakeDestinationConfigurationHasBeenSet = false;
+  bool m_icebergDestinationConfigurationHasBeenSet = false;
   bool m_databaseSourceConfigurationHasBeenSet = false;
 };
 

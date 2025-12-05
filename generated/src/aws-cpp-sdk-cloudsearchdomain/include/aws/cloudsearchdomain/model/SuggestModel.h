@@ -93,12 +93,12 @@ class SuggestModel {
   ///@}
  private:
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   long long m_found{0};
-  bool m_foundHasBeenSet = false;
 
   Aws::Vector<SuggestionMatch> m_suggestions;
+  bool m_queryHasBeenSet = false;
+  bool m_foundHasBeenSet = false;
   bool m_suggestionsHasBeenSet = false;
 };
 

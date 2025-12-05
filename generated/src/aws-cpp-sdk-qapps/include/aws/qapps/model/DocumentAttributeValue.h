@@ -114,15 +114,15 @@ class DocumentAttributeValue {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringListValue;
-  bool m_stringListValueHasBeenSet = false;
 
   long long m_longValue{0};
-  bool m_longValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateValue{};
+  bool m_stringValueHasBeenSet = false;
+  bool m_stringListValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
   bool m_dateValueHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class OAuthProperties {
   ///@}
  private:
   Aws::String m_tokenUrl;
-  bool m_tokenUrlHasBeenSet = false;
 
   Aws::String m_authCodeUrl;
-  bool m_authCodeUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_oAuthScopes;
+  bool m_tokenUrlHasBeenSet = false;
+  bool m_authCodeUrlHasBeenSet = false;
   bool m_oAuthScopesHasBeenSet = false;
 };
 

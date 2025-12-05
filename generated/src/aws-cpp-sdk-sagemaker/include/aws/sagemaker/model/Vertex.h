@@ -87,12 +87,12 @@ class Vertex {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   LineageType m_lineageType{LineageType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_lineageTypeHasBeenSet = false;
 };
 

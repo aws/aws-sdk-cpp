@@ -86,12 +86,12 @@ class DisassociateFraudsterRequest : public VoiceIDRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_fraudsterId;
-  bool m_fraudsterIdHasBeenSet = false;
 
   Aws::String m_watchlistId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_fraudsterIdHasBeenSet = false;
   bool m_watchlistIdHasBeenSet = false;
 };
 

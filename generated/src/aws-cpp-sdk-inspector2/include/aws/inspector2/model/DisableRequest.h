@@ -78,9 +78,9 @@ class DisableRequest : public Inspector2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<ResourceScanType> m_resourceTypes;
+  bool m_accountIdsHasBeenSet = false;
   bool m_resourceTypesHasBeenSet = false;
 };
 

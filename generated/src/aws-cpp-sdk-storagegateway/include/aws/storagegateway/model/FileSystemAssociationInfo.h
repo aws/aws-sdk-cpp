@@ -220,30 +220,30 @@ class FileSystemAssociationInfo {
   ///@}
  private:
   Aws::String m_fileSystemAssociationARN;
-  bool m_fileSystemAssociationARNHasBeenSet = false;
 
   Aws::String m_locationARN;
-  bool m_locationARNHasBeenSet = false;
 
   Aws::String m_fileSystemAssociationStatus;
-  bool m_fileSystemAssociationStatusHasBeenSet = false;
 
   Aws::String m_auditDestinationARN;
-  bool m_auditDestinationARNHasBeenSet = false;
 
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CacheAttributes m_cacheAttributes;
-  bool m_cacheAttributesHasBeenSet = false;
 
   EndpointNetworkConfiguration m_endpointNetworkConfiguration;
-  bool m_endpointNetworkConfigurationHasBeenSet = false;
 
   Aws::Vector<FileSystemAssociationStatusDetail> m_fileSystemAssociationStatusDetails;
+  bool m_fileSystemAssociationARNHasBeenSet = false;
+  bool m_locationARNHasBeenSet = false;
+  bool m_fileSystemAssociationStatusHasBeenSet = false;
+  bool m_auditDestinationARNHasBeenSet = false;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_cacheAttributesHasBeenSet = false;
+  bool m_endpointNetworkConfigurationHasBeenSet = false;
   bool m_fileSystemAssociationStatusDetailsHasBeenSet = false;
 };
 

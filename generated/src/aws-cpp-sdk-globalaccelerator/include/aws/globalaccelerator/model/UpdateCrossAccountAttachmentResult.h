@@ -61,9 +61,9 @@ class UpdateCrossAccountAttachmentResult {
   ///@}
  private:
   Attachment m_crossAccountAttachment;
-  bool m_crossAccountAttachmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crossAccountAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

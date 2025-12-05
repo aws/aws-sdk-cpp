@@ -101,12 +101,12 @@ class RDSDatabaseProjectedMetric {
   ///@}
  private:
   RDSDBMetricName m_name{RDSDBMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<double> m_values;
+  bool m_nameHasBeenSet = false;
+  bool m_timestampsHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

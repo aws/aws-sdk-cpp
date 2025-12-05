@@ -84,12 +84,12 @@ class DescribeStandardsResult {
   ///@}
  private:
   Aws::Vector<Standard> m_standards;
-  bool m_standardsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_standardsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

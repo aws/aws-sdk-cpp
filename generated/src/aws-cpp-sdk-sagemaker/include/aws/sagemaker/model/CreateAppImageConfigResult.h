@@ -59,9 +59,9 @@ class CreateAppImageConfigResult {
   ///@}
  private:
   Aws::String m_appImageConfigArn;
-  bool m_appImageConfigArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appImageConfigArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

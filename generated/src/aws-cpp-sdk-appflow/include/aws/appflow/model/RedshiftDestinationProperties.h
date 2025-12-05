@@ -113,15 +113,15 @@ class RedshiftDestinationProperties {
   ///@}
  private:
   Aws::String m_object;
-  bool m_objectHasBeenSet = false;
 
   Aws::String m_intermediateBucketName;
-  bool m_intermediateBucketNameHasBeenSet = false;
 
   Aws::String m_bucketPrefix;
-  bool m_bucketPrefixHasBeenSet = false;
 
   ErrorHandlingConfig m_errorHandlingConfig;
+  bool m_objectHasBeenSet = false;
+  bool m_intermediateBucketNameHasBeenSet = false;
+  bool m_bucketPrefixHasBeenSet = false;
   bool m_errorHandlingConfigHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeNodegroupResult {
   ///@}
  private:
   Nodegroup m_nodegroup;
-  bool m_nodegroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nodegroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

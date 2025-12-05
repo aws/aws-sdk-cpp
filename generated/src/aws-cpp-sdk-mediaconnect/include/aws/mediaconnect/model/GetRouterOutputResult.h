@@ -61,9 +61,9 @@ class GetRouterOutputResult {
   ///@}
  private:
   RouterOutput m_routerOutput;
-  bool m_routerOutputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routerOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

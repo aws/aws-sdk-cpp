@@ -369,51 +369,51 @@ class DataRepositoryTask {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   DataRepositoryTaskLifecycle m_lifecycle{DataRepositoryTaskLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   DataRepositoryTaskType m_type{DataRepositoryTaskType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_paths;
-  bool m_pathsHasBeenSet = false;
 
   DataRepositoryTaskFailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   DataRepositoryTaskStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   CompletionReport m_report;
-  bool m_reportHasBeenSet = false;
 
   long long m_capacityToRelease{0};
-  bool m_capacityToReleaseHasBeenSet = false;
 
   Aws::String m_fileCacheId;
-  bool m_fileCacheIdHasBeenSet = false;
 
   ReleaseConfiguration m_releaseConfiguration;
+  bool m_taskIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_pathsHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_reportHasBeenSet = false;
+  bool m_capacityToReleaseHasBeenSet = false;
+  bool m_fileCacheIdHasBeenSet = false;
   bool m_releaseConfigurationHasBeenSet = false;
 };
 

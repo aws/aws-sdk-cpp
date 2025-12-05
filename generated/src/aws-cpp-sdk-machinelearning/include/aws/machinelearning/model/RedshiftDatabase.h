@@ -65,9 +65,9 @@ class RedshiftDatabase {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
+  bool m_databaseNameHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
 };
 

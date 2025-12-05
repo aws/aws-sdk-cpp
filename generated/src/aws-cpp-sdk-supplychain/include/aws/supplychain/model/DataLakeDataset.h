@@ -203,30 +203,30 @@ class DataLakeDataset {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DataLakeDatasetSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataLakeDatasetPartitionSpec m_partitionSpec;
-  bool m_partitionSpecHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_partitionSpecHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

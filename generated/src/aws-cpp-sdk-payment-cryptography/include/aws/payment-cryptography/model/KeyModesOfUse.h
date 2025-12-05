@@ -185,30 +185,30 @@ class KeyModesOfUse {
   ///@}
  private:
   bool m_encrypt{false};
-  bool m_encryptHasBeenSet = false;
 
   bool m_decrypt{false};
-  bool m_decryptHasBeenSet = false;
 
   bool m_wrap{false};
-  bool m_wrapHasBeenSet = false;
 
   bool m_unwrap{false};
-  bool m_unwrapHasBeenSet = false;
 
   bool m_generate{false};
-  bool m_generateHasBeenSet = false;
 
   bool m_sign{false};
-  bool m_signHasBeenSet = false;
 
   bool m_verify{false};
-  bool m_verifyHasBeenSet = false;
 
   bool m_deriveKey{false};
-  bool m_deriveKeyHasBeenSet = false;
 
   bool m_noRestrictions{false};
+  bool m_encryptHasBeenSet = false;
+  bool m_decryptHasBeenSet = false;
+  bool m_wrapHasBeenSet = false;
+  bool m_unwrapHasBeenSet = false;
+  bool m_generateHasBeenSet = false;
+  bool m_signHasBeenSet = false;
+  bool m_verifyHasBeenSet = false;
+  bool m_deriveKeyHasBeenSet = false;
   bool m_noRestrictionsHasBeenSet = false;
 };
 

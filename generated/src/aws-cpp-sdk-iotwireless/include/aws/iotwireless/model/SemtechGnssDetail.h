@@ -99,15 +99,15 @@ class SemtechGnssDetail {
   ///@}
  private:
   PositionSolverProvider m_provider{PositionSolverProvider::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   PositionSolverType m_type{PositionSolverType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PositionConfigurationStatus m_status{PositionConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PositionConfigurationFec m_fec{PositionConfigurationFec::NOT_SET};
+  bool m_providerHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_fecHasBeenSet = false;
 };
 

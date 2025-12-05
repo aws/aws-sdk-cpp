@@ -66,9 +66,9 @@ class GetSearchSuggestionsRequest : public SageMakerRequest {
   ///@}
  private:
   ResourceType m_resource{ResourceType::NOT_SET};
-  bool m_resourceHasBeenSet = false;
 
   SuggestionQuery m_suggestionQuery;
+  bool m_resourceHasBeenSet = false;
   bool m_suggestionQueryHasBeenSet = false;
 };
 

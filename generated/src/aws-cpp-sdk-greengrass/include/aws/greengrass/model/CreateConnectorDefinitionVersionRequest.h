@@ -94,12 +94,12 @@ class CreateConnectorDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_connectorDefinitionId;
-  bool m_connectorDefinitionIdHasBeenSet = false;
 
   Aws::Vector<Connector> m_connectors;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_connectorDefinitionIdHasBeenSet = false;
   bool m_connectorsHasBeenSet = false;
 };
 

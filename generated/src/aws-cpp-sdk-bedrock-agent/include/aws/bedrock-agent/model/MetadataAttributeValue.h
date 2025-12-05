@@ -125,18 +125,18 @@ class MetadataAttributeValue {
   ///@}
  private:
   MetadataValueType m_type{MetadataValueType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_numberValue{0.0};
-  bool m_numberValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringListValue;
+  bool m_typeHasBeenSet = false;
+  bool m_numberValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
   bool m_stringListValueHasBeenSet = false;
 };
 

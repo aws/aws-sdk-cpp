@@ -87,12 +87,12 @@ class PreviewAgentsResult {
   ///@}
  private:
   Aws::Vector<AgentPreview> m_agentPreviews;
-  bool m_agentPreviewsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentPreviewsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

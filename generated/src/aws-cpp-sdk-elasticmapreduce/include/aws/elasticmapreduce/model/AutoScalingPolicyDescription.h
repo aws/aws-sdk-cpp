@@ -102,12 +102,12 @@ class AutoScalingPolicyDescription {
   ///@}
  private:
   AutoScalingPolicyStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   ScalingConstraints m_constraints;
-  bool m_constraintsHasBeenSet = false;
 
   Aws::Vector<ScalingRule> m_rules;
+  bool m_statusHasBeenSet = false;
+  bool m_constraintsHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

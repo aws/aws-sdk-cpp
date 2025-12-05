@@ -67,9 +67,9 @@ class GetLogFieldsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   Aws::String m_dataSourceType;
+  bool m_dataSourceNameHasBeenSet = false;
   bool m_dataSourceTypeHasBeenSet = false;
 };
 

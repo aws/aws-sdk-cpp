@@ -88,12 +88,12 @@ class PredictRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_record;
-  bool m_recordHasBeenSet = false;
 
   Aws::String m_predictEndpoint;
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_recordHasBeenSet = false;
   bool m_predictEndpointHasBeenSet = false;
 };
 

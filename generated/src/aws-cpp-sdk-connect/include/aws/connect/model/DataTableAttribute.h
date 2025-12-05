@@ -263,39 +263,39 @@ class DataTableAttribute {
   ///@}
  private:
   Aws::String m_attributeId;
-  bool m_attributeIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataTableAttributeValueType m_valueType{DataTableAttributeValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dataTableId;
-  bool m_dataTableIdHasBeenSet = false;
 
   Aws::String m_dataTableArn;
-  bool m_dataTableArnHasBeenSet = false;
 
   bool m_primary{false};
-  bool m_primaryHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   DataTableLockVersion m_lockVersion;
-  bool m_lockVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   Validation m_validation;
+  bool m_attributeIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataTableIdHasBeenSet = false;
+  bool m_dataTableArnHasBeenSet = false;
+  bool m_primaryHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_lockVersionHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

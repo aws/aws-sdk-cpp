@@ -65,9 +65,9 @@ class DeleteFlowRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_flowNameHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

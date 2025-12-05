@@ -131,18 +131,18 @@ class KxChangesetListEntry {
   ///@}
  private:
   Aws::String m_changesetId;
-  bool m_changesetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_activeFromTimestamp{};
-  bool m_activeFromTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   ChangesetStatus m_status{ChangesetStatus::NOT_SET};
+  bool m_changesetIdHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_activeFromTimestampHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

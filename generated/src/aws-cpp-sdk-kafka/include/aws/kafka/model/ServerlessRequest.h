@@ -84,9 +84,9 @@ class ServerlessRequest {
   ///@}
  private:
   Aws::Vector<VpcConfig> m_vpcConfigs;
-  bool m_vpcConfigsHasBeenSet = false;
 
   ServerlessClientAuthentication m_clientAuthentication;
+  bool m_vpcConfigsHasBeenSet = false;
   bool m_clientAuthenticationHasBeenSet = false;
 };
 

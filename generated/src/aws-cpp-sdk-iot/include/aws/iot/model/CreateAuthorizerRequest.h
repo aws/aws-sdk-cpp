@@ -195,27 +195,27 @@ class CreateAuthorizerRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_authorizerName;
-  bool m_authorizerNameHasBeenSet = false;
 
   Aws::String m_authorizerFunctionArn;
-  bool m_authorizerFunctionArnHasBeenSet = false;
 
   Aws::String m_tokenKeyName;
-  bool m_tokenKeyNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tokenSigningPublicKeys;
-  bool m_tokenSigningPublicKeysHasBeenSet = false;
 
   AuthorizerStatus m_status{AuthorizerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_signingDisabled{false};
-  bool m_signingDisabledHasBeenSet = false;
 
   bool m_enableCachingForHttp{false};
+  bool m_authorizerNameHasBeenSet = false;
+  bool m_authorizerFunctionArnHasBeenSet = false;
+  bool m_tokenKeyNameHasBeenSet = false;
+  bool m_tokenSigningPublicKeysHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_signingDisabledHasBeenSet = false;
   bool m_enableCachingForHttpHasBeenSet = false;
 };
 

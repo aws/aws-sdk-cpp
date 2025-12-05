@@ -81,12 +81,12 @@ class GetContainerRecipeResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ContainerRecipe m_containerRecipe;
-  bool m_containerRecipeHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
+  bool m_requestIdHasBeenSet = false;
+  bool m_containerRecipeHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;
 };
 

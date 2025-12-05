@@ -103,15 +103,15 @@ class StartTestExecutionRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   TestExecutionTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   TestExecutionApiMode m_apiMode{TestExecutionApiMode::NOT_SET};
-  bool m_apiModeHasBeenSet = false;
 
   TestExecutionModality m_testExecutionModality{TestExecutionModality::NOT_SET};
+  bool m_testSetIdHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_apiModeHasBeenSet = false;
   bool m_testExecutionModalityHasBeenSet = false;
 };
 

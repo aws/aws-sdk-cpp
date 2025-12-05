@@ -121,18 +121,18 @@ class ExportJobSummary {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ExportSourceType m_exportSourceType{ExportSourceType::NOT_SET};
-  bool m_exportSourceTypeHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedTimestamp{};
+  bool m_jobIdHasBeenSet = false;
+  bool m_exportSourceTypeHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_completedTimestampHasBeenSet = false;
 };
 

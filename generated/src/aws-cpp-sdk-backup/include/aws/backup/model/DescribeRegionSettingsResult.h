@@ -96,12 +96,12 @@ class DescribeRegionSettingsResult {
   ///@}
  private:
   Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
-  bool m_resourceTypeOptInPreferenceHasBeenSet = false;
 
   Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
-  bool m_resourceTypeManagementPreferenceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceTypeOptInPreferenceHasBeenSet = false;
+  bool m_resourceTypeManagementPreferenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

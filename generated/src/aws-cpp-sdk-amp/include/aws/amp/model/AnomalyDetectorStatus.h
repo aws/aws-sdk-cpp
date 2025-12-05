@@ -67,9 +67,9 @@ class AnomalyDetectorStatus {
   ///@}
  private:
   AnomalyDetectorStatusCode m_statusCode{AnomalyDetectorStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

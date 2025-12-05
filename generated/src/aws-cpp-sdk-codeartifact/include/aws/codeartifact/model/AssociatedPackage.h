@@ -116,15 +116,15 @@ class AssociatedPackage {
   ///@}
  private:
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   PackageGroupAssociationType m_associationType{PackageGroupAssociationType::NOT_SET};
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
   bool m_associationTypeHasBeenSet = false;
 };
 

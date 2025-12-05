@@ -86,12 +86,12 @@ class ListBulkImportJobsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ListBulkImportJobsFilter m_filter{ListBulkImportJobsFilter::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

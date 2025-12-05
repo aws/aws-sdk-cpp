@@ -85,12 +85,12 @@ class DescribePullRequestEventsResult {
   ///@}
  private:
   Aws::Vector<PullRequestEvent> m_pullRequestEvents;
-  bool m_pullRequestEventsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pullRequestEventsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

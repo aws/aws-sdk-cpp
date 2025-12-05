@@ -76,9 +76,9 @@ class PropertyGroup {
   ///@}
  private:
   Aws::String m_propertyGroupId;
-  bool m_propertyGroupIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_propertyMap;
+  bool m_propertyGroupIdHasBeenSet = false;
   bool m_propertyMapHasBeenSet = false;
 };
 

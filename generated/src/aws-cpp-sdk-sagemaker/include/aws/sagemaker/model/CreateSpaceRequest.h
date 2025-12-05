@@ -170,24 +170,24 @@ class CreateSpaceRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SpaceSettings m_spaceSettings;
-  bool m_spaceSettingsHasBeenSet = false;
 
   OwnershipSettings m_ownershipSettings;
-  bool m_ownershipSettingsHasBeenSet = false;
 
   SpaceSharingSettings m_spaceSharingSettings;
-  bool m_spaceSharingSettingsHasBeenSet = false;
 
   Aws::String m_spaceDisplayName;
+  bool m_domainIdHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_spaceSettingsHasBeenSet = false;
+  bool m_ownershipSettingsHasBeenSet = false;
+  bool m_spaceSharingSettingsHasBeenSet = false;
   bool m_spaceDisplayNameHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class CallbackStartedDetails {
   ///@}
  private:
   Aws::String m_callbackId;
-  bool m_callbackIdHasBeenSet = false;
 
   int m_heartbeatTimeout{0};
-  bool m_heartbeatTimeoutHasBeenSet = false;
 
   int m_timeout{0};
+  bool m_callbackIdHasBeenSet = false;
+  bool m_heartbeatTimeoutHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
 };
 

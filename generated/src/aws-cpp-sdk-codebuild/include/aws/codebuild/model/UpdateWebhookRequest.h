@@ -162,21 +162,21 @@ class UpdateWebhookRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_branchFilter;
-  bool m_branchFilterHasBeenSet = false;
 
   bool m_rotateSecret{false};
-  bool m_rotateSecretHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
-  bool m_filterGroupsHasBeenSet = false;
 
   WebhookBuildType m_buildType{WebhookBuildType::NOT_SET};
-  bool m_buildTypeHasBeenSet = false;
 
   PullRequestBuildPolicy m_pullRequestBuildPolicy;
+  bool m_projectNameHasBeenSet = false;
+  bool m_branchFilterHasBeenSet = false;
+  bool m_rotateSecretHasBeenSet = false;
+  bool m_filterGroupsHasBeenSet = false;
+  bool m_buildTypeHasBeenSet = false;
   bool m_pullRequestBuildPolicyHasBeenSet = false;
 };
 

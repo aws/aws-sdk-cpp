@@ -264,39 +264,39 @@ class ScraperSummary {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_scraperId;
-  bool m_scraperIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ScraperStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   RoleConfiguration m_roleConfiguration;
+  bool m_aliasHasBeenSet = false;
+  bool m_scraperIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_roleConfigurationHasBeenSet = false;
 };
 

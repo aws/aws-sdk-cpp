@@ -102,15 +102,15 @@ class ListChannelModeratorsResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ChannelModeratorSummary> m_channelModerators;
-  bool m_channelModeratorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_channelModeratorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListSensorStatisticsResult {
   ///@}
  private:
   Aws::Vector<SensorStatisticsSummary> m_sensorStatisticsSummaries;
-  bool m_sensorStatisticsSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sensorStatisticsSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

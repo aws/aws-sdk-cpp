@@ -237,36 +237,36 @@ class Delegation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_assessmentName;
-  bool m_assessmentNameHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   DelegationStatus m_status{DelegationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   RoleType m_roleType{RoleType::NOT_SET};
-  bool m_roleTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_createdBy;
+  bool m_idHasBeenSet = false;
+  bool m_assessmentNameHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_roleTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
 };
 

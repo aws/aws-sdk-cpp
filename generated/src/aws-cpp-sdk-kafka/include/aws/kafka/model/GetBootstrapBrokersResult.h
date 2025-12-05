@@ -244,36 +244,36 @@ class GetBootstrapBrokersResult {
   ///@}
  private:
   Aws::String m_bootstrapBrokerString;
-  bool m_bootstrapBrokerStringHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringTls;
-  bool m_bootstrapBrokerStringTlsHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringSaslScram;
-  bool m_bootstrapBrokerStringSaslScramHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringSaslIam;
-  bool m_bootstrapBrokerStringSaslIamHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringPublicTls;
-  bool m_bootstrapBrokerStringPublicTlsHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringPublicSaslScram;
-  bool m_bootstrapBrokerStringPublicSaslScramHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringPublicSaslIam;
-  bool m_bootstrapBrokerStringPublicSaslIamHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringVpcConnectivityTls;
-  bool m_bootstrapBrokerStringVpcConnectivityTlsHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringVpcConnectivitySaslScram;
-  bool m_bootstrapBrokerStringVpcConnectivitySaslScramHasBeenSet = false;
 
   Aws::String m_bootstrapBrokerStringVpcConnectivitySaslIam;
-  bool m_bootstrapBrokerStringVpcConnectivitySaslIamHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bootstrapBrokerStringHasBeenSet = false;
+  bool m_bootstrapBrokerStringTlsHasBeenSet = false;
+  bool m_bootstrapBrokerStringSaslScramHasBeenSet = false;
+  bool m_bootstrapBrokerStringSaslIamHasBeenSet = false;
+  bool m_bootstrapBrokerStringPublicTlsHasBeenSet = false;
+  bool m_bootstrapBrokerStringPublicSaslScramHasBeenSet = false;
+  bool m_bootstrapBrokerStringPublicSaslIamHasBeenSet = false;
+  bool m_bootstrapBrokerStringVpcConnectivityTlsHasBeenSet = false;
+  bool m_bootstrapBrokerStringVpcConnectivitySaslScramHasBeenSet = false;
+  bool m_bootstrapBrokerStringVpcConnectivitySaslIamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

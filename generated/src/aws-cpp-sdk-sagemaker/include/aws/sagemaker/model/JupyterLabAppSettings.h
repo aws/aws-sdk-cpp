@@ -190,24 +190,24 @@ class JupyterLabAppSettings {
   ///@}
  private:
   ResourceSpec m_defaultResourceSpec;
-  bool m_defaultResourceSpecHasBeenSet = false;
 
   Aws::Vector<CustomImage> m_customImages;
-  bool m_customImagesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lifecycleConfigArns;
-  bool m_lifecycleConfigArnsHasBeenSet = false;
 
   Aws::Vector<CodeRepository> m_codeRepositories;
-  bool m_codeRepositoriesHasBeenSet = false;
 
   AppLifecycleManagement m_appLifecycleManagement;
-  bool m_appLifecycleManagementHasBeenSet = false;
 
   EmrSettings m_emrSettings;
-  bool m_emrSettingsHasBeenSet = false;
 
   Aws::String m_builtInLifecycleConfigArn;
+  bool m_defaultResourceSpecHasBeenSet = false;
+  bool m_customImagesHasBeenSet = false;
+  bool m_lifecycleConfigArnsHasBeenSet = false;
+  bool m_codeRepositoriesHasBeenSet = false;
+  bool m_appLifecycleManagementHasBeenSet = false;
+  bool m_emrSettingsHasBeenSet = false;
   bool m_builtInLifecycleConfigArnHasBeenSet = false;
 };
 

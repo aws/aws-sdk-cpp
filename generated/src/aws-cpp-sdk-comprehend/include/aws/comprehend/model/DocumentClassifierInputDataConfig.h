@@ -217,27 +217,27 @@ class DocumentClassifierInputDataConfig {
   ///@}
  private:
   DocumentClassifierDataFormat m_dataFormat{DocumentClassifierDataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_testS3Uri;
-  bool m_testS3UriHasBeenSet = false;
 
   Aws::String m_labelDelimiter;
-  bool m_labelDelimiterHasBeenSet = false;
 
   Aws::Vector<AugmentedManifestsListItem> m_augmentedManifests;
-  bool m_augmentedManifestsHasBeenSet = false;
 
   DocumentClassifierDocumentTypeFormat m_documentType{DocumentClassifierDocumentTypeFormat::NOT_SET};
-  bool m_documentTypeHasBeenSet = false;
 
   DocumentClassifierDocuments m_documents;
-  bool m_documentsHasBeenSet = false;
 
   DocumentReaderConfig m_documentReaderConfig;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_s3UriHasBeenSet = false;
+  bool m_testS3UriHasBeenSet = false;
+  bool m_labelDelimiterHasBeenSet = false;
+  bool m_augmentedManifestsHasBeenSet = false;
+  bool m_documentTypeHasBeenSet = false;
+  bool m_documentsHasBeenSet = false;
   bool m_documentReaderConfigHasBeenSet = false;
 };
 

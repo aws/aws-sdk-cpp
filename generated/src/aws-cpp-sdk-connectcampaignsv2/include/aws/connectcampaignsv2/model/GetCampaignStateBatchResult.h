@@ -92,12 +92,12 @@ class GetCampaignStateBatchResult {
   ///@}
  private:
   Aws::Vector<SuccessfulCampaignStateResponse> m_successfulRequests;
-  bool m_successfulRequestsHasBeenSet = false;
 
   Aws::Vector<FailedCampaignStateResponse> m_failedRequests;
-  bool m_failedRequestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulRequestsHasBeenSet = false;
+  bool m_failedRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

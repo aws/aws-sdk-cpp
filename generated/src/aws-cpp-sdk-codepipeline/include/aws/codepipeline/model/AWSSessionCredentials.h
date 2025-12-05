@@ -90,12 +90,12 @@ class AWSSessionCredentials {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_secretAccessKey;
-  bool m_secretAccessKeyHasBeenSet = false;
 
   Aws::String m_sessionToken;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_secretAccessKeyHasBeenSet = false;
   bool m_sessionTokenHasBeenSet = false;
 };
 

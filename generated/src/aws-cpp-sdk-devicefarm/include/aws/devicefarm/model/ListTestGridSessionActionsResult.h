@@ -84,12 +84,12 @@ class ListTestGridSessionActionsResult {
   ///@}
  private:
   Aws::Vector<TestGridSessionAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

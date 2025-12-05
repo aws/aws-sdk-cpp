@@ -126,18 +126,18 @@ class ListFindingsV2Request : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Criterion> m_filter;
-  bool m_filterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SortCriteria m_sort;
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

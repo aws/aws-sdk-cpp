@@ -61,9 +61,9 @@ class StartBuildBatchResult {
   ///@}
  private:
   BuildBatch m_buildBatch;
-  bool m_buildBatchHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_buildBatchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

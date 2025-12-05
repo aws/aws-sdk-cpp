@@ -87,12 +87,12 @@ class DataQualityRulesetEvaluationRunFilter {
   ///@}
  private:
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedBefore{};
-  bool m_startedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAfter{};
+  bool m_dataSourceHasBeenSet = false;
+  bool m_startedBeforeHasBeenSet = false;
   bool m_startedAfterHasBeenSet = false;
 };
 

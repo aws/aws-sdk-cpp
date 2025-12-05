@@ -92,12 +92,12 @@ class DescribeInstanceProfilesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<InstanceProfile> m_instanceProfiles;
-  bool m_instanceProfilesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_instanceProfilesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

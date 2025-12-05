@@ -77,9 +77,9 @@ class CurrentMetricResult {
   ///@}
  private:
   Dimensions m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Vector<CurrentMetricData> m_collections;
+  bool m_dimensionsHasBeenSet = false;
   bool m_collectionsHasBeenSet = false;
 };
 

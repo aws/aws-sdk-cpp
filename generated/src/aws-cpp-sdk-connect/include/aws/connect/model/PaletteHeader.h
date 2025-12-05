@@ -103,15 +103,15 @@ class PaletteHeader {
   ///@}
  private:
   Aws::String m_background;
-  bool m_backgroundHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_textHover;
-  bool m_textHoverHasBeenSet = false;
 
   bool m_invertActionsColors{false};
+  bool m_backgroundHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_textHoverHasBeenSet = false;
   bool m_invertActionsColorsHasBeenSet = false;
 };
 

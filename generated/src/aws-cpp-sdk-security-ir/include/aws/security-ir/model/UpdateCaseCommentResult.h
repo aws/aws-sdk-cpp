@@ -77,12 +77,12 @@ class UpdateCaseCommentResult {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commentIdHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

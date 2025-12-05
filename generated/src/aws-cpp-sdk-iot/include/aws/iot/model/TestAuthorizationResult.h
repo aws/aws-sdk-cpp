@@ -67,9 +67,9 @@ class TestAuthorizationResult {
   ///@}
  private:
   Aws::Vector<AuthResult> m_authResults;
-  bool m_authResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

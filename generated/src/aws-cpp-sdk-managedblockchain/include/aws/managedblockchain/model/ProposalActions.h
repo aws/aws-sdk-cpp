@@ -86,9 +86,9 @@ class ProposalActions {
   ///@}
  private:
   Aws::Vector<InviteAction> m_invitations;
-  bool m_invitationsHasBeenSet = false;
 
   Aws::Vector<RemoveAction> m_removals;
+  bool m_invitationsHasBeenSet = false;
   bool m_removalsHasBeenSet = false;
 };
 

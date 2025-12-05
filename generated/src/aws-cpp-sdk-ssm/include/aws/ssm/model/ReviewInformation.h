@@ -87,12 +87,12 @@ class ReviewInformation {
   ///@}
  private:
   Aws::Utils::DateTime m_reviewedTime{};
-  bool m_reviewedTimeHasBeenSet = false;
 
   ReviewStatus m_status{ReviewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reviewer;
+  bool m_reviewedTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reviewerHasBeenSet = false;
 };
 

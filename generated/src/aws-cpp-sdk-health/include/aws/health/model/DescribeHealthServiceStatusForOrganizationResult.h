@@ -63,9 +63,9 @@ class DescribeHealthServiceStatusForOrganizationResult {
   ///@}
  private:
   Aws::String m_healthServiceAccessStatusForOrganization;
-  bool m_healthServiceAccessStatusForOrganizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_healthServiceAccessStatusForOrganizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

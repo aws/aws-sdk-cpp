@@ -140,21 +140,21 @@ class GetScheduledQueryHistoryRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   long long m_startTime{0};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_endTime{0};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<ExecutionStatus> m_executionStatuses;
-  bool m_executionStatusesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_identifierHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_executionStatusesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

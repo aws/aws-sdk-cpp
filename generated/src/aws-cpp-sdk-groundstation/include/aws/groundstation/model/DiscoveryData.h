@@ -105,12 +105,12 @@ class DiscoveryData {
   ///@}
  private:
   Aws::Vector<Aws::String> m_publicIpAddresses;
-  bool m_publicIpAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capabilityArns;
+  bool m_publicIpAddressesHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
   bool m_capabilityArnsHasBeenSet = false;
 };
 

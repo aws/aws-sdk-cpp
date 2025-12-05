@@ -131,18 +131,18 @@ class UpdateAssessmentFrameworkRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_frameworkId;
-  bool m_frameworkIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::Vector<UpdateAssessmentFrameworkControlSet> m_controlSets;
+  bool m_frameworkIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
   bool m_controlSetsHasBeenSet = false;
 };
 

@@ -144,18 +144,18 @@ class TestCustomDataIdentifierRequest : public Macie2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ignoreWords;
-  bool m_ignoreWordsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   int m_maximumMatchDistance{0};
-  bool m_maximumMatchDistanceHasBeenSet = false;
 
   Aws::String m_regex;
-  bool m_regexHasBeenSet = false;
 
   Aws::String m_sampleText;
+  bool m_ignoreWordsHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
+  bool m_maximumMatchDistanceHasBeenSet = false;
+  bool m_regexHasBeenSet = false;
   bool m_sampleTextHasBeenSet = false;
 };
 

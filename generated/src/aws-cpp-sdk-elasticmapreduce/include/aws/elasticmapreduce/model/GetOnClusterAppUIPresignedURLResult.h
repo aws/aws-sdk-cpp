@@ -74,12 +74,12 @@ class GetOnClusterAppUIPresignedURLResult {
   ///@}
  private:
   bool m_presignedURLReady{false};
-  bool m_presignedURLReadyHasBeenSet = false;
 
   Aws::String m_presignedURL;
-  bool m_presignedURLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_presignedURLReadyHasBeenSet = false;
+  bool m_presignedURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

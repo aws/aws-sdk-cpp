@@ -67,9 +67,9 @@ class DescribeVpcClassicLinkResponse {
   ///@}
  private:
   Aws::Vector<VpcClassicLink> m_vpcs;
-  bool m_vpcsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

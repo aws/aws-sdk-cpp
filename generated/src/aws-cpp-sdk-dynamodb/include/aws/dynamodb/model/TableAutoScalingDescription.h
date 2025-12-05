@@ -98,12 +98,12 @@ class TableAutoScalingDescription {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   TableStatus m_tableStatus{TableStatus::NOT_SET};
-  bool m_tableStatusHasBeenSet = false;
 
   Aws::Vector<ReplicaAutoScalingDescription> m_replicas;
+  bool m_tableNameHasBeenSet = false;
+  bool m_tableStatusHasBeenSet = false;
   bool m_replicasHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class CloudFrontOriginAccessIdentityConfig {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_callerReferenceHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class ReplicationRule {
   ///@}
  private:
   Aws::Vector<ReplicationDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<RepositoryFilter> m_repositoryFilters;
+  bool m_destinationsHasBeenSet = false;
   bool m_repositoryFiltersHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class CreateDeviceDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_deviceDefinitionId;
-  bool m_deviceDefinitionIdHasBeenSet = false;
 
   Aws::Vector<Device> m_devices;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_deviceDefinitionIdHasBeenSet = false;
   bool m_devicesHasBeenSet = false;
 };
 

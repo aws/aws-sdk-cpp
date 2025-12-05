@@ -110,18 +110,18 @@ class StartReadSetActivationJobResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   ReadSetActivationJobStatus m_status{ReadSetActivationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

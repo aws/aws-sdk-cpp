@@ -67,9 +67,9 @@ class DifferentialPrivacyPreviewAggregation {
   ///@}
  private:
   DifferentialPrivacyAggregationType m_type{DifferentialPrivacyAggregationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_maxCount{0};
+  bool m_typeHasBeenSet = false;
   bool m_maxCountHasBeenSet = false;
 };
 

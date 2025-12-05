@@ -88,12 +88,12 @@ class TuningJobCompletionCriteria {
   ///@}
  private:
   double m_targetObjectiveMetricValue{0.0};
-  bool m_targetObjectiveMetricValueHasBeenSet = false;
 
   BestObjectiveNotImproving m_bestObjectiveNotImproving;
-  bool m_bestObjectiveNotImprovingHasBeenSet = false;
 
   ConvergenceDetected m_convergenceDetected;
+  bool m_targetObjectiveMetricValueHasBeenSet = false;
+  bool m_bestObjectiveNotImprovingHasBeenSet = false;
   bool m_convergenceDetectedHasBeenSet = false;
 };
 

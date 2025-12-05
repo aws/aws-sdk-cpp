@@ -68,9 +68,9 @@ class DeleteManagedLoginBrandingRequest : public CognitoIdentityProviderRequest 
   ///@}
  private:
   Aws::String m_managedLoginBrandingId;
-  bool m_managedLoginBrandingIdHasBeenSet = false;
 
   Aws::String m_userPoolId;
+  bool m_managedLoginBrandingIdHasBeenSet = false;
   bool m_userPoolIdHasBeenSet = false;
 };
 

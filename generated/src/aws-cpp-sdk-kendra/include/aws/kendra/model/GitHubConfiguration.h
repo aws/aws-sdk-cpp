@@ -662,69 +662,69 @@ class GitHubConfiguration {
   ///@}
  private:
   SaaSConfiguration m_saaSConfiguration;
-  bool m_saaSConfigurationHasBeenSet = false;
 
   OnPremiseConfiguration m_onPremiseConfiguration;
-  bool m_onPremiseConfigurationHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   bool m_useChangeLog{false};
-  bool m_useChangeLogHasBeenSet = false;
 
   GitHubDocumentCrawlProperties m_gitHubDocumentCrawlProperties;
-  bool m_gitHubDocumentCrawlPropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_repositoryFilter;
-  bool m_repositoryFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionFolderNamePatterns;
-  bool m_inclusionFolderNamePatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionFileTypePatterns;
-  bool m_inclusionFileTypePatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionFileNamePatterns;
-  bool m_inclusionFileNamePatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionFolderNamePatterns;
-  bool m_exclusionFolderNamePatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionFileTypePatterns;
-  bool m_exclusionFileTypePatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionFileNamePatterns;
-  bool m_exclusionFileNamePatternsHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubRepositoryConfigurationFieldMappings;
-  bool m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubCommitConfigurationFieldMappings;
-  bool m_gitHubCommitConfigurationFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueDocumentConfigurationFieldMappings;
-  bool m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueCommentConfigurationFieldMappings;
-  bool m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueAttachmentConfigurationFieldMappings;
-  bool m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestCommentConfigurationFieldMappings;
-  bool m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestDocumentConfigurationFieldMappings;
-  bool m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings;
+  bool m_saaSConfigurationHasBeenSet = false;
+  bool m_onPremiseConfigurationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_useChangeLogHasBeenSet = false;
+  bool m_gitHubDocumentCrawlPropertiesHasBeenSet = false;
+  bool m_repositoryFilterHasBeenSet = false;
+  bool m_inclusionFolderNamePatternsHasBeenSet = false;
+  bool m_inclusionFileTypePatternsHasBeenSet = false;
+  bool m_inclusionFileNamePatternsHasBeenSet = false;
+  bool m_exclusionFolderNamePatternsHasBeenSet = false;
+  bool m_exclusionFileTypePatternsHasBeenSet = false;
+  bool m_exclusionFileNamePatternsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = false;
+  bool m_gitHubCommitConfigurationFieldMappingsHasBeenSet = false;
+  bool m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = false;
+  bool m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = false;
+  bool m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = false;
+  bool m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = false;
+  bool m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = false;
   bool m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = false;
 };
 

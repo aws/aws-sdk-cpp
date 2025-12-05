@@ -70,9 +70,9 @@ class SolutionUpdateConfig {
   ///@}
  private:
   AutoTrainingConfig m_autoTrainingConfig;
-  bool m_autoTrainingConfigHasBeenSet = false;
 
   EventsConfig m_eventsConfig;
+  bool m_autoTrainingConfigHasBeenSet = false;
   bool m_eventsConfigHasBeenSet = false;
 };
 

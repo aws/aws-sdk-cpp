@@ -74,9 +74,9 @@ class BatchGetCommandExecutionsRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_sandboxId;
-  bool m_sandboxIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_commandExecutionIds;
+  bool m_sandboxIdHasBeenSet = false;
   bool m_commandExecutionIdsHasBeenSet = false;
 };
 

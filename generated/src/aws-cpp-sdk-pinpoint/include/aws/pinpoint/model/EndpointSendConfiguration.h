@@ -145,18 +145,18 @@ class EndpointSendConfiguration {
   ///@}
  private:
   Aws::String m_bodyOverride;
-  bool m_bodyOverrideHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::String m_rawContent;
-  bool m_rawContentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-  bool m_substitutionsHasBeenSet = false;
 
   Aws::String m_titleOverride;
+  bool m_bodyOverrideHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_rawContentHasBeenSet = false;
+  bool m_substitutionsHasBeenSet = false;
   bool m_titleOverrideHasBeenSet = false;
 };
 

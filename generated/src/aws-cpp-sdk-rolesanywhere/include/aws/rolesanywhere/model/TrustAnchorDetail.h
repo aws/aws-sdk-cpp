@@ -185,27 +185,27 @@ class TrustAnchorDetail {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NotificationSettingDetail> m_notificationSettings;
-  bool m_notificationSettingsHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_trustAnchorArn;
-  bool m_trustAnchorArnHasBeenSet = false;
 
   Aws::String m_trustAnchorId;
-  bool m_trustAnchorIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_createdAtHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_notificationSettingsHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_trustAnchorArnHasBeenSet = false;
+  bool m_trustAnchorIdHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

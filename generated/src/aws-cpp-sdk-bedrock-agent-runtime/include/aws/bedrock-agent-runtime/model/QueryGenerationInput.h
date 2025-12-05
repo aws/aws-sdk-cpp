@@ -68,9 +68,9 @@ class QueryGenerationInput {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   InputQueryType m_type{InputQueryType::NOT_SET};
+  bool m_textHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

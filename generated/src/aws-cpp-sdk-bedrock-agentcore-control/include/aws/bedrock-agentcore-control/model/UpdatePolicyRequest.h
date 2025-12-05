@@ -130,18 +130,18 @@ class UpdatePolicyRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_policyEngineId;
-  bool m_policyEngineIdHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PolicyDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   PolicyValidationMode m_validationMode{PolicyValidationMode::NOT_SET};
+  bool m_policyEngineIdHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
 };
 

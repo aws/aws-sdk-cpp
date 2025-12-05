@@ -172,21 +172,21 @@ class MatterCapabilityReportEndpoint {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceTypes;
-  bool m_deviceTypesHasBeenSet = false;
 
   Aws::Vector<MatterCapabilityReportCluster> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parts;
-  bool m_partsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_semanticTags;
-  bool m_semanticTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientClusters;
+  bool m_idHasBeenSet = false;
+  bool m_deviceTypesHasBeenSet = false;
+  bool m_clustersHasBeenSet = false;
+  bool m_partsHasBeenSet = false;
+  bool m_semanticTagsHasBeenSet = false;
   bool m_clientClustersHasBeenSet = false;
 };
 

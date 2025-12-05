@@ -75,9 +75,9 @@ class MetadataTableEncryptionConfiguration {
   ///@}
  private:
   TableSseAlgorithm m_sseAlgorithm{TableSseAlgorithm::NOT_SET};
-  bool m_sseAlgorithmHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_sseAlgorithmHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

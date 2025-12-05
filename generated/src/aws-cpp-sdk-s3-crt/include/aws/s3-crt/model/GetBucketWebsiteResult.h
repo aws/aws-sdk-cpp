@@ -124,18 +124,18 @@ class GetBucketWebsiteResult {
   ///@}
  private:
   RedirectAllRequestsTo m_redirectAllRequestsTo;
-  bool m_redirectAllRequestsToHasBeenSet = false;
 
   IndexDocument m_indexDocument;
-  bool m_indexDocumentHasBeenSet = false;
 
   ErrorDocument m_errorDocument;
-  bool m_errorDocumentHasBeenSet = false;
 
   Aws::Vector<RoutingRule> m_routingRules;
-  bool m_routingRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_redirectAllRequestsToHasBeenSet = false;
+  bool m_indexDocumentHasBeenSet = false;
+  bool m_errorDocumentHasBeenSet = false;
+  bool m_routingRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

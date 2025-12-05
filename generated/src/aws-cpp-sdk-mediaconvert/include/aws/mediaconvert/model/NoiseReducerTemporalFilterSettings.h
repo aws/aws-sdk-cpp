@@ -131,18 +131,18 @@ class NoiseReducerTemporalFilterSettings {
   ///@}
  private:
   int m_aggressiveMode{0};
-  bool m_aggressiveModeHasBeenSet = false;
 
   NoiseFilterPostTemporalSharpening m_postTemporalSharpening{NoiseFilterPostTemporalSharpening::NOT_SET};
-  bool m_postTemporalSharpeningHasBeenSet = false;
 
   NoiseFilterPostTemporalSharpeningStrength m_postTemporalSharpeningStrength{NoiseFilterPostTemporalSharpeningStrength::NOT_SET};
-  bool m_postTemporalSharpeningStrengthHasBeenSet = false;
 
   int m_speed{0};
-  bool m_speedHasBeenSet = false;
 
   int m_strength{0};
+  bool m_aggressiveModeHasBeenSet = false;
+  bool m_postTemporalSharpeningHasBeenSet = false;
+  bool m_postTemporalSharpeningStrengthHasBeenSet = false;
+  bool m_speedHasBeenSet = false;
   bool m_strengthHasBeenSet = false;
 };
 

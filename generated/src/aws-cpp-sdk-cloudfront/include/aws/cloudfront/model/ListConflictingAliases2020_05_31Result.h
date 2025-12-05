@@ -61,9 +61,9 @@ class ListConflictingAliases2020_05_31Result {
   ///@}
  private:
   ConflictingAliasesList m_conflictingAliasesList;
-  bool m_conflictingAliasesListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_conflictingAliasesListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

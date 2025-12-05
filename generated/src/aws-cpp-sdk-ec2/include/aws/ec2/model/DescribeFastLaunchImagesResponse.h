@@ -87,12 +87,12 @@ class DescribeFastLaunchImagesResponse {
   ///@}
  private:
   Aws::Vector<DescribeFastLaunchImagesSuccessItem> m_fastLaunchImages;
-  bool m_fastLaunchImagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_fastLaunchImagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

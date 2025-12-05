@@ -140,21 +140,21 @@ class MlflowAppSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   MlflowAppStatus m_status{MlflowAppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_mlflowVersion;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_mlflowVersionHasBeenSet = false;
 };
 

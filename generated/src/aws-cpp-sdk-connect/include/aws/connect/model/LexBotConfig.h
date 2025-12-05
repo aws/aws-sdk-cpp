@@ -68,9 +68,9 @@ class LexBotConfig {
   ///@}
  private:
   LexBot m_lexBot;
-  bool m_lexBotHasBeenSet = false;
 
   LexV2Bot m_lexV2Bot;
+  bool m_lexBotHasBeenSet = false;
   bool m_lexV2BotHasBeenSet = false;
 };
 

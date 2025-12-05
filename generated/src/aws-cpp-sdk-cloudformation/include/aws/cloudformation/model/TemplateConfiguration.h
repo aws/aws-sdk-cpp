@@ -81,9 +81,9 @@ class TemplateConfiguration {
   ///@}
  private:
   GeneratedTemplateDeletionPolicy m_deletionPolicy{GeneratedTemplateDeletionPolicy::NOT_SET};
-  bool m_deletionPolicyHasBeenSet = false;
 
   GeneratedTemplateUpdateReplacePolicy m_updateReplacePolicy{GeneratedTemplateUpdateReplacePolicy::NOT_SET};
+  bool m_deletionPolicyHasBeenSet = false;
   bool m_updateReplacePolicyHasBeenSet = false;
 };
 

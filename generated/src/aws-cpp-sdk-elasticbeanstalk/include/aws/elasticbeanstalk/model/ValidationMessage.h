@@ -110,15 +110,15 @@ class ValidationMessage {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ValidationSeverity m_severity{ValidationSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_optionName;
+  bool m_messageHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_optionNameHasBeenSet = false;
 };
 

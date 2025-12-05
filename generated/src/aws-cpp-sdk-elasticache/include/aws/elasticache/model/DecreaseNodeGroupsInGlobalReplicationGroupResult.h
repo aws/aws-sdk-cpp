@@ -60,9 +60,9 @@ class DecreaseNodeGroupsInGlobalReplicationGroupResult {
   ///@}
  private:
   GlobalReplicationGroup m_globalReplicationGroup;
-  bool m_globalReplicationGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_globalReplicationGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

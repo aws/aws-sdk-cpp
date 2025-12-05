@@ -61,9 +61,9 @@ class ExportKeyResult {
   ///@}
  private:
   WrappedKey m_wrappedKey;
-  bool m_wrappedKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_wrappedKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

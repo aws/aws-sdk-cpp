@@ -70,9 +70,9 @@ class FirewallPolicyStatelessCustomActionsDetails {
   ///@}
  private:
   StatelessCustomActionDefinition m_actionDefinition;
-  bool m_actionDefinitionHasBeenSet = false;
 
   Aws::String m_actionName;
+  bool m_actionDefinitionHasBeenSet = false;
   bool m_actionNameHasBeenSet = false;
 };
 

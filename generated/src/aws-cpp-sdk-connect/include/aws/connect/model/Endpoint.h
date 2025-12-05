@@ -67,9 +67,9 @@ class Endpoint {
   ///@}
  private:
   EndpointType m_type{EndpointType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_address;
+  bool m_typeHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class SchedulerConfiguration {
   ///@}
  private:
   int m_queueTimeoutMinutes{0};
-  bool m_queueTimeoutMinutesHasBeenSet = false;
 
   int m_maxConcurrentRuns{0};
+  bool m_queueTimeoutMinutesHasBeenSet = false;
   bool m_maxConcurrentRunsHasBeenSet = false;
 };
 

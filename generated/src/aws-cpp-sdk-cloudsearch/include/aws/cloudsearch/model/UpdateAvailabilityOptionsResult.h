@@ -67,9 +67,9 @@ class UpdateAvailabilityOptionsResult {
   ///@}
  private:
   AvailabilityOptionsStatus m_availabilityOptions;
-  bool m_availabilityOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_availabilityOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

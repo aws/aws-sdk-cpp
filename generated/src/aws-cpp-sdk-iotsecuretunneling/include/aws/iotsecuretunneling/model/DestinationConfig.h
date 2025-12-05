@@ -78,9 +78,9 @@ class DestinationConfig {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_services;
+  bool m_thingNameHasBeenSet = false;
   bool m_servicesHasBeenSet = false;
 };
 

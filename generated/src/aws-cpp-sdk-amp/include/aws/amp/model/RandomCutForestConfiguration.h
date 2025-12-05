@@ -131,18 +131,18 @@ class RandomCutForestConfiguration {
   ///@}
  private:
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   int m_shingleSize{0};
-  bool m_shingleSizeHasBeenSet = false;
 
   int m_sampleSize{0};
-  bool m_sampleSizeHasBeenSet = false;
 
   IgnoreNearExpected m_ignoreNearExpectedFromAbove;
-  bool m_ignoreNearExpectedFromAboveHasBeenSet = false;
 
   IgnoreNearExpected m_ignoreNearExpectedFromBelow;
+  bool m_queryHasBeenSet = false;
+  bool m_shingleSizeHasBeenSet = false;
+  bool m_sampleSizeHasBeenSet = false;
+  bool m_ignoreNearExpectedFromAboveHasBeenSet = false;
   bool m_ignoreNearExpectedFromBelowHasBeenSet = false;
 };
 

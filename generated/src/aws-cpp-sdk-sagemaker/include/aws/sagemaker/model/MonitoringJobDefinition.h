@@ -220,30 +220,30 @@ class MonitoringJobDefinition {
   ///@}
  private:
   MonitoringBaselineConfig m_baselineConfig;
-  bool m_baselineConfigHasBeenSet = false;
 
   Aws::Vector<MonitoringInput> m_monitoringInputs;
-  bool m_monitoringInputsHasBeenSet = false;
 
   MonitoringOutputConfig m_monitoringOutputConfig;
-  bool m_monitoringOutputConfigHasBeenSet = false;
 
   MonitoringResources m_monitoringResources;
-  bool m_monitoringResourcesHasBeenSet = false;
 
   MonitoringAppSpecification m_monitoringAppSpecification;
-  bool m_monitoringAppSpecificationHasBeenSet = false;
 
   MonitoringStoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   NetworkConfig m_networkConfig;
-  bool m_networkConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_baselineConfigHasBeenSet = false;
+  bool m_monitoringInputsHasBeenSet = false;
+  bool m_monitoringOutputConfigHasBeenSet = false;
+  bool m_monitoringResourcesHasBeenSet = false;
+  bool m_monitoringAppSpecificationHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_networkConfigHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

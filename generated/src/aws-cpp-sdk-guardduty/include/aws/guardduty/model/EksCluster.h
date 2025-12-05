@@ -135,18 +135,18 @@ class EksCluster {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ClusterStatus m_status{ClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ec2InstanceUids;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_ec2InstanceUidsHasBeenSet = false;
 };
 

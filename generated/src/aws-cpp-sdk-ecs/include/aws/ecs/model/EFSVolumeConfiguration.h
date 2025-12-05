@@ -140,18 +140,18 @@ class EFSVolumeConfiguration {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_rootDirectory;
-  bool m_rootDirectoryHasBeenSet = false;
 
   EFSTransitEncryption m_transitEncryption{EFSTransitEncryption::NOT_SET};
-  bool m_transitEncryptionHasBeenSet = false;
 
   int m_transitEncryptionPort{0};
-  bool m_transitEncryptionPortHasBeenSet = false;
 
   EFSAuthorizationConfig m_authorizationConfig;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_rootDirectoryHasBeenSet = false;
+  bool m_transitEncryptionHasBeenSet = false;
+  bool m_transitEncryptionPortHasBeenSet = false;
   bool m_authorizationConfigHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class StartReportJobResult {
   ///@}
  private:
   Aws::String m_reportJobId;
-  bool m_reportJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

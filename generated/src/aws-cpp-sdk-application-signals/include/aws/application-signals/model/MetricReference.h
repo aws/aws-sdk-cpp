@@ -135,18 +135,18 @@ class MetricReference {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_metricType;
-  bool m_metricTypeHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricTypeHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

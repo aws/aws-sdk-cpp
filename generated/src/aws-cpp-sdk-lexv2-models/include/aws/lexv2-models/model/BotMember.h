@@ -122,18 +122,18 @@ class BotMember {
   ///@}
  private:
   Aws::String m_botMemberId;
-  bool m_botMemberIdHasBeenSet = false;
 
   Aws::String m_botMemberName;
-  bool m_botMemberNameHasBeenSet = false;
 
   Aws::String m_botMemberAliasId;
-  bool m_botMemberAliasIdHasBeenSet = false;
 
   Aws::String m_botMemberAliasName;
-  bool m_botMemberAliasNameHasBeenSet = false;
 
   Aws::String m_botMemberVersion;
+  bool m_botMemberIdHasBeenSet = false;
+  bool m_botMemberNameHasBeenSet = false;
+  bool m_botMemberAliasIdHasBeenSet = false;
+  bool m_botMemberAliasNameHasBeenSet = false;
   bool m_botMemberVersionHasBeenSet = false;
 };
 

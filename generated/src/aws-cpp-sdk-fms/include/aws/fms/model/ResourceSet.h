@@ -188,24 +188,24 @@ class ResourceSet {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypeList;
-  bool m_resourceTypeListHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   ResourceSetStatus m_resourceSetStatus{ResourceSetStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
+  bool m_resourceTypeListHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
   bool m_resourceSetStatusHasBeenSet = false;
 };
 

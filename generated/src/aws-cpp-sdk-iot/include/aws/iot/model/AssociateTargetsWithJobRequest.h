@@ -122,15 +122,15 @@ class AssociateTargetsWithJobRequest : public IoTRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_namespaceId;
+  bool m_targetsHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_namespaceIdHasBeenSet = false;
 };
 

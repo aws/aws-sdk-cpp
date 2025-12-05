@@ -84,12 +84,12 @@ class MergeHunkDetail {
   ///@}
  private:
   int m_startLine{0};
-  bool m_startLineHasBeenSet = false;
 
   int m_endLine{0};
-  bool m_endLineHasBeenSet = false;
 
   Aws::String m_hunkContent;
+  bool m_startLineHasBeenSet = false;
+  bool m_endLineHasBeenSet = false;
   bool m_hunkContentHasBeenSet = false;
 };
 

@@ -398,66 +398,66 @@ class DescribeDeviceResult {
   ///@}
  private:
   Aws::Vector<AlternateSoftwareMetadata> m_alternateSoftwares;
-  bool m_alternateSoftwaresHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DeviceBrand m_brand{DeviceBrand::NOT_SET};
-  bool m_brandHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   NetworkStatus m_currentNetworkingStatus;
-  bool m_currentNetworkingStatusHasBeenSet = false;
 
   Aws::String m_currentSoftware;
-  bool m_currentSoftwareHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DeviceAggregatedStatus m_deviceAggregatedStatus{DeviceAggregatedStatus::NOT_SET};
-  bool m_deviceAggregatedStatusHasBeenSet = false;
 
   DeviceConnectionStatus m_deviceConnectionStatus{DeviceConnectionStatus::NOT_SET};
-  bool m_deviceConnectionStatusHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_latestAlternateSoftware;
-  bool m_latestAlternateSoftwareHasBeenSet = false;
 
   LatestDeviceJob m_latestDeviceJob;
-  bool m_latestDeviceJobHasBeenSet = false;
 
   Aws::String m_latestSoftware;
-  bool m_latestSoftwareHasBeenSet = false;
 
   Aws::Utils::DateTime m_leaseExpirationTime{};
-  bool m_leaseExpirationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NetworkPayload m_networkingConfiguration;
-  bool m_networkingConfigurationHasBeenSet = false;
 
   DeviceStatus m_provisioningStatus{DeviceStatus::NOT_SET};
-  bool m_provisioningStatusHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DeviceType m_type{DeviceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alternateSoftwaresHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_brandHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_currentNetworkingStatusHasBeenSet = false;
+  bool m_currentSoftwareHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceAggregatedStatusHasBeenSet = false;
+  bool m_deviceConnectionStatusHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_latestAlternateSoftwareHasBeenSet = false;
+  bool m_latestDeviceJobHasBeenSet = false;
+  bool m_latestSoftwareHasBeenSet = false;
+  bool m_leaseExpirationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkingConfigurationHasBeenSet = false;
+  bool m_provisioningStatusHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

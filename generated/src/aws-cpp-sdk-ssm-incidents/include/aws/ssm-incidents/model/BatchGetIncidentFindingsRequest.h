@@ -73,9 +73,9 @@ class BatchGetIncidentFindingsRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_findingIds;
-  bool m_findingIdsHasBeenSet = false;
 
   Aws::String m_incidentRecordArn;
+  bool m_findingIdsHasBeenSet = false;
   bool m_incidentRecordArnHasBeenSet = false;
 };
 

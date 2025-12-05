@@ -64,9 +64,9 @@ class WhatsAppOutboundConfig {
   ///@}
  private:
   Aws::String m_connectSourcePhoneNumberArn;
-  bool m_connectSourcePhoneNumberArnHasBeenSet = false;
 
   Aws::String m_wisdomTemplateArn;
+  bool m_connectSourcePhoneNumberArnHasBeenSet = false;
   bool m_wisdomTemplateArnHasBeenSet = false;
 };
 

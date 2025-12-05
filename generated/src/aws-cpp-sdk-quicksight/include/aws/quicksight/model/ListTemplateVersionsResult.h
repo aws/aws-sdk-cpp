@@ -101,15 +101,15 @@ class ListTemplateVersionsResult {
   ///@}
  private:
   Aws::Vector<TemplateVersionSummary> m_templateVersionSummaryList;
-  bool m_templateVersionSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateVersionSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

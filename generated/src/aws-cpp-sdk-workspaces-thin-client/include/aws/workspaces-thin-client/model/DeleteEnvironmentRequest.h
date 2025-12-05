@@ -80,9 +80,9 @@ class DeleteEnvironmentRequest : public WorkSpacesThinClientRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_idHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

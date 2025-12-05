@@ -89,12 +89,12 @@ class PutEmailMonitoringConfigurationRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_logGroupArn;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_logGroupArnHasBeenSet = false;
 };
 

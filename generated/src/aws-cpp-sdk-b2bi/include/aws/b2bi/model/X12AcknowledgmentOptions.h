@@ -75,9 +75,9 @@ class X12AcknowledgmentOptions {
   ///@}
  private:
   X12FunctionalAcknowledgment m_functionalAcknowledgment{X12FunctionalAcknowledgment::NOT_SET};
-  bool m_functionalAcknowledgmentHasBeenSet = false;
 
   X12TechnicalAcknowledgment m_technicalAcknowledgment{X12TechnicalAcknowledgment::NOT_SET};
+  bool m_functionalAcknowledgmentHasBeenSet = false;
   bool m_technicalAcknowledgmentHasBeenSet = false;
 };
 

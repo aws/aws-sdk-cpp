@@ -92,15 +92,15 @@ class PutS3AccessPolicyResult {
   ///@}
  private:
   Aws::String m_s3AccessPointArn;
-  bool m_s3AccessPointArnHasBeenSet = false;
 
   Aws::String m_storeId;
-  bool m_storeIdHasBeenSet = false;
 
   StoreType m_storeType{StoreType::NOT_SET};
-  bool m_storeTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3AccessPointArnHasBeenSet = false;
+  bool m_storeIdHasBeenSet = false;
+  bool m_storeTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

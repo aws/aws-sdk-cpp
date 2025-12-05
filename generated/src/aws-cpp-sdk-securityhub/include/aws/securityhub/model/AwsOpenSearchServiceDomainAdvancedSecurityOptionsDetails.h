@@ -83,12 +83,12 @@ class AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_internalUserDatabaseEnabled{false};
-  bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
   AwsOpenSearchServiceDomainMasterUserOptionsDetails m_masterUserOptions;
+  bool m_enabledHasBeenSet = false;
+  bool m_internalUserDatabaseEnabledHasBeenSet = false;
   bool m_masterUserOptionsHasBeenSet = false;
 };
 

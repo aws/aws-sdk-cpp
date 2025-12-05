@@ -155,21 +155,21 @@ class XksProxyConfigurationType {
   ///@}
  private:
   XksProxyConnectivityType m_connectivity{XksProxyConnectivityType::NOT_SET};
-  bool m_connectivityHasBeenSet = false;
 
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_uriEndpoint;
-  bool m_uriEndpointHasBeenSet = false;
 
   Aws::String m_uriPath;
-  bool m_uriPathHasBeenSet = false;
 
   Aws::String m_vpcEndpointServiceName;
-  bool m_vpcEndpointServiceNameHasBeenSet = false;
 
   Aws::String m_vpcEndpointServiceOwner;
+  bool m_connectivityHasBeenSet = false;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_uriEndpointHasBeenSet = false;
+  bool m_uriPathHasBeenSet = false;
+  bool m_vpcEndpointServiceNameHasBeenSet = false;
   bool m_vpcEndpointServiceOwnerHasBeenSet = false;
 };
 

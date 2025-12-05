@@ -121,15 +121,15 @@ class MatterCluster {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::Document m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_commands;
-  bool m_commandsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_events;
+  bool m_idHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_commandsHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

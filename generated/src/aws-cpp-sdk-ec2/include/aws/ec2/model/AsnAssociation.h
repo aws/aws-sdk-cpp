@@ -106,15 +106,15 @@ class AsnAssociation {
   ///@}
  private:
   Aws::String m_asn;
-  bool m_asnHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   AsnAssociationState m_state{AsnAssociationState::NOT_SET};
+  bool m_asnHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

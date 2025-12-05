@@ -70,9 +70,9 @@ class LinkAttributeAction {
   ///@}
  private:
   UpdateActionType m_attributeActionType{UpdateActionType::NOT_SET};
-  bool m_attributeActionTypeHasBeenSet = false;
 
   TypedAttributeValue m_attributeUpdateValue;
+  bool m_attributeActionTypeHasBeenSet = false;
   bool m_attributeUpdateValueHasBeenSet = false;
 };
 

@@ -191,21 +191,21 @@ class ForgotPasswordRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_secretHash;
-  bool m_secretHashHasBeenSet = false;
 
   UserContextDataType m_userContextData;
-  bool m_userContextDataHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   AnalyticsMetadataType m_analyticsMetadata;
-  bool m_analyticsMetadataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_clientIdHasBeenSet = false;
+  bool m_secretHashHasBeenSet = false;
+  bool m_userContextDataHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_analyticsMetadataHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

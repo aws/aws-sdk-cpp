@@ -119,12 +119,12 @@ class SetSubscriptionAttributesRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_subscriptionArn;
-  bool m_subscriptionArnHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeValue;
+  bool m_subscriptionArnHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeValueHasBeenSet = false;
 };
 

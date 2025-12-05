@@ -89,12 +89,12 @@ class OpeningHoursComponents {
   ///@}
  private:
   Aws::String m_openTime;
-  bool m_openTimeHasBeenSet = false;
 
   Aws::String m_openDuration;
-  bool m_openDurationHasBeenSet = false;
 
   Aws::String m_recurrence;
+  bool m_openTimeHasBeenSet = false;
+  bool m_openDurationHasBeenSet = false;
   bool m_recurrenceHasBeenSet = false;
 };
 

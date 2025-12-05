@@ -64,9 +64,9 @@ class RoutingRuleMatchHeaderValue {
   ///@}
  private:
   Aws::String m_header;
-  bool m_headerHasBeenSet = false;
 
   Aws::String m_valueGlob;
+  bool m_headerHasBeenSet = false;
   bool m_valueGlobHasBeenSet = false;
 };
 

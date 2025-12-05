@@ -60,9 +60,9 @@ class GetAdministratorAccountResult {
   ///@}
  private:
   Administrator m_administrator;
-  bool m_administratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_administratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

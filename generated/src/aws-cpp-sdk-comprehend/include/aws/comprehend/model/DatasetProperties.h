@@ -211,33 +211,33 @@ class DatasetProperties {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   DatasetType m_datasetType{DatasetType::NOT_SET};
-  bool m_datasetTypeHasBeenSet = false;
 
   Aws::String m_datasetS3Uri;
-  bool m_datasetS3UriHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DatasetStatus m_status{DatasetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_numberOfDocuments{0};
-  bool m_numberOfDocumentsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_datasetS3UriHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_numberOfDocumentsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

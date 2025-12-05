@@ -91,12 +91,12 @@ class CandidateArtifactLocations {
   ///@}
  private:
   Aws::String m_explainability;
-  bool m_explainabilityHasBeenSet = false;
 
   Aws::String m_modelInsights;
-  bool m_modelInsightsHasBeenSet = false;
 
   Aws::String m_backtestResults;
+  bool m_explainabilityHasBeenSet = false;
+  bool m_modelInsightsHasBeenSet = false;
   bool m_backtestResultsHasBeenSet = false;
 };
 

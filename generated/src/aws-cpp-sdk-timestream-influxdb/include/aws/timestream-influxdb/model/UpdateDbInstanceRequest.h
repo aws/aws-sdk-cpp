@@ -177,27 +177,27 @@ class UpdateDbInstanceRequest : public TimestreamInfluxDBRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   LogDeliveryConfiguration m_logDeliveryConfiguration;
-  bool m_logDeliveryConfigurationHasBeenSet = false;
 
   Aws::String m_dbParameterGroupIdentifier;
-  bool m_dbParameterGroupIdentifierHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   DbInstanceType m_dbInstanceType{DbInstanceType::NOT_SET};
-  bool m_dbInstanceTypeHasBeenSet = false;
 
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   DbStorageType m_dbStorageType{DbStorageType::NOT_SET};
-  bool m_dbStorageTypeHasBeenSet = false;
 
   int m_allocatedStorage{0};
+  bool m_identifierHasBeenSet = false;
+  bool m_logDeliveryConfigurationHasBeenSet = false;
+  bool m_dbParameterGroupIdentifierHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_dbInstanceTypeHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_dbStorageTypeHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class UntagResourceRequest : public KinesisRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   Aws::String m_resourceARN;
+  bool m_tagKeysHasBeenSet = false;
   bool m_resourceARNHasBeenSet = false;
 };
 

@@ -166,21 +166,21 @@ class CreateQueueRequest : public PCSRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_queueName;
-  bool m_queueNameHasBeenSet = false;
 
   Aws::Vector<ComputeNodeGroupConfiguration> m_computeNodeGroupConfigurations;
-  bool m_computeNodeGroupConfigurationsHasBeenSet = false;
 
   QueueSlurmConfigurationRequest m_slurmConfiguration;
-  bool m_slurmConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_queueNameHasBeenSet = false;
+  bool m_computeNodeGroupConfigurationsHasBeenSet = false;
+  bool m_slurmConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

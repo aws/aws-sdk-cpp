@@ -94,12 +94,12 @@ class DatetimeOptions {
   ///@}
  private:
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_timezoneOffset;
-  bool m_timezoneOffsetHasBeenSet = false;
 
   Aws::String m_localeCode;
+  bool m_formatHasBeenSet = false;
+  bool m_timezoneOffsetHasBeenSet = false;
   bool m_localeCodeHasBeenSet = false;
 };
 

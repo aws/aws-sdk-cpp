@@ -262,39 +262,39 @@ class ApplicationInstance {
   ///@}
  private:
   Aws::String m_applicationInstanceId;
-  bool m_applicationInstanceIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_defaultRuntimeContextDevice;
-  bool m_defaultRuntimeContextDeviceHasBeenSet = false;
 
   Aws::String m_defaultRuntimeContextDeviceName;
-  bool m_defaultRuntimeContextDeviceNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApplicationInstanceHealthStatus m_healthStatus{ApplicationInstanceHealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ReportedRuntimeContextState> m_runtimeContextStates;
-  bool m_runtimeContextStatesHasBeenSet = false;
 
   ApplicationInstanceStatus m_status{ApplicationInstanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDescription;
-  bool m_statusDescriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_applicationInstanceIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_defaultRuntimeContextDeviceHasBeenSet = false;
+  bool m_defaultRuntimeContextDeviceNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_runtimeContextStatesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

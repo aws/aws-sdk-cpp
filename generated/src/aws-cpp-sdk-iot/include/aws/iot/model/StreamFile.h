@@ -66,9 +66,9 @@ class StreamFile {
   ///@}
  private:
   int m_fileId{0};
-  bool m_fileIdHasBeenSet = false;
 
   S3Location m_s3Location;
+  bool m_fileIdHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class UpdateDataLakeExceptionSubscriptionRequest : public SecurityLakeRequest {
   ///@}
  private:
   long long m_exceptionTimeToLive{0};
-  bool m_exceptionTimeToLiveHasBeenSet = false;
 
   Aws::String m_notificationEndpoint;
-  bool m_notificationEndpointHasBeenSet = false;
 
   Aws::String m_subscriptionProtocol;
+  bool m_exceptionTimeToLiveHasBeenSet = false;
+  bool m_notificationEndpointHasBeenSet = false;
   bool m_subscriptionProtocolHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class ResultSetOptions {
   ///@}
  private:
   DecimalReturnType m_decimalReturnType{DecimalReturnType::NOT_SET};
-  bool m_decimalReturnTypeHasBeenSet = false;
 
   LongReturnType m_longReturnType{LongReturnType::NOT_SET};
+  bool m_decimalReturnTypeHasBeenSet = false;
   bool m_longReturnTypeHasBeenSet = false;
 };
 

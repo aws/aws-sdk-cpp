@@ -68,9 +68,9 @@ class ApplicationCodeConfiguration {
   ///@}
  private:
   CodeContent m_codeContent;
-  bool m_codeContentHasBeenSet = false;
 
   CodeContentType m_codeContentType{CodeContentType::NOT_SET};
+  bool m_codeContentHasBeenSet = false;
   bool m_codeContentTypeHasBeenSet = false;
 };
 

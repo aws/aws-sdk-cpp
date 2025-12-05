@@ -85,12 +85,12 @@ class UpdateAttributeGroupRequest : public AppRegistryRequest {
   ///@}
  private:
   Aws::String m_attributeGroup;
-  bool m_attributeGroupHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_attributes;
+  bool m_attributeGroupHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

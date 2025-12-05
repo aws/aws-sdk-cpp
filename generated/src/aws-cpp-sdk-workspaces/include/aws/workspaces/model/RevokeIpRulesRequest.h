@@ -74,9 +74,9 @@ class RevokeIpRulesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userRules;
+  bool m_groupIdHasBeenSet = false;
   bool m_userRulesHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetInstanceProfileResult {
   ///@}
  private:
   InstanceProfile m_instanceProfile;
-  bool m_instanceProfileHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceProfileHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

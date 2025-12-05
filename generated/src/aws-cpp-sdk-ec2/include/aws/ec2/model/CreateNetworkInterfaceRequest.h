@@ -463,60 +463,60 @@ class CreateNetworkInterfaceRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Ipv4PrefixSpecificationRequest> m_ipv4Prefixes;
-  bool m_ipv4PrefixesHasBeenSet = false;
 
   int m_ipv4PrefixCount{0};
-  bool m_ipv4PrefixCountHasBeenSet = false;
 
   Aws::Vector<Ipv6PrefixSpecificationRequest> m_ipv6Prefixes;
-  bool m_ipv6PrefixesHasBeenSet = false;
 
   int m_ipv6PrefixCount{0};
-  bool m_ipv6PrefixCountHasBeenSet = false;
 
   NetworkInterfaceCreationType m_interfaceType{NetworkInterfaceCreationType::NOT_SET};
-  bool m_interfaceTypeHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_enablePrimaryIpv6{false};
-  bool m_enablePrimaryIpv6HasBeenSet = false;
 
   ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
-  bool m_connectionTrackingSpecificationHasBeenSet = false;
 
   OperatorRequest m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   int m_secondaryPrivateIpAddressCount{0};
-  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
   Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   int m_ipv6AddressCount{0};
-  bool m_ipv6AddressCountHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_ipv4PrefixesHasBeenSet = false;
+  bool m_ipv4PrefixCountHasBeenSet = false;
+  bool m_ipv6PrefixesHasBeenSet = false;
+  bool m_ipv6PrefixCountHasBeenSet = false;
+  bool m_interfaceTypeHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_enablePrimaryIpv6HasBeenSet = false;
+  bool m_connectionTrackingSpecificationHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_ipv6AddressCountHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

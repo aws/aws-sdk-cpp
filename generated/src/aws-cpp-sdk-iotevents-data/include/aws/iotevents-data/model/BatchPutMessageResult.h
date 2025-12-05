@@ -67,9 +67,9 @@ class BatchPutMessageResult {
   ///@}
  private:
   Aws::Vector<BatchPutMessageErrorEntry> m_batchPutMessageErrorEntries;
-  bool m_batchPutMessageErrorEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchPutMessageErrorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

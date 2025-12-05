@@ -73,9 +73,9 @@ class DukptAttributes {
   ///@}
  private:
   Aws::String m_keySerialNumber;
-  bool m_keySerialNumberHasBeenSet = false;
 
   DukptDerivationType m_dukptDerivationType{DukptDerivationType::NOT_SET};
+  bool m_keySerialNumberHasBeenSet = false;
   bool m_dukptDerivationTypeHasBeenSet = false;
 };
 

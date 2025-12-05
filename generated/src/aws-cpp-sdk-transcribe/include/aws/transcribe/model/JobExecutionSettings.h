@@ -87,9 +87,9 @@ class JobExecutionSettings {
   ///@}
  private:
   bool m_allowDeferredExecution{false};
-  bool m_allowDeferredExecutionHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
+  bool m_allowDeferredExecutionHasBeenSet = false;
   bool m_dataAccessRoleArnHasBeenSet = false;
 };
 

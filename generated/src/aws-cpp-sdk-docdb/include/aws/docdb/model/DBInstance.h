@@ -612,93 +612,93 @@ class DBInstance {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_dBInstanceStatus;
-  bool m_dBInstanceStatusHasBeenSet = false;
 
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_instanceCreateTime{};
-  bool m_instanceCreateTimeHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   DBSubnetGroup m_dBSubnetGroup;
-  bool m_dBSubnetGroupHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   PendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestRestorableTime{};
-  bool m_latestRestorableTimeHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<DBInstanceStatusInfo> m_statusInfos;
-  bool m_statusInfosHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dbiResourceId;
-  bool m_dbiResourceIdHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   int m_promotionTier{0};
-  bool m_promotionTierHasBeenSet = false;
 
   Aws::String m_dBInstanceArn;
-  bool m_dBInstanceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
-  bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
 
   CertificateDetails m_certificateDetails;
-  bool m_certificateDetailsHasBeenSet = false;
 
   bool m_performanceInsightsEnabled{false};
-  bool m_performanceInsightsEnabledHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_dBInstanceStatusHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_instanceCreateTimeHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_dBSubnetGroupHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_latestRestorableTimeHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_statusInfosHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dbiResourceIdHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_promotionTierHasBeenSet = false;
+  bool m_dBInstanceArnHasBeenSet = false;
+  bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
+  bool m_certificateDetailsHasBeenSet = false;
+  bool m_performanceInsightsEnabledHasBeenSet = false;
   bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 };
 

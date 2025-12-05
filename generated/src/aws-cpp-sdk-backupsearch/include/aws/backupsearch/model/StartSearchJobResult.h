@@ -98,15 +98,15 @@ class StartSearchJobResult {
   ///@}
  private:
   Aws::String m_searchJobArn;
-  bool m_searchJobArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_searchJobIdentifier;
-  bool m_searchJobIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_searchJobArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_searchJobIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

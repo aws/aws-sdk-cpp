@@ -127,18 +127,18 @@ class DescribeMetadataModelChildrenRequest : public DatabaseMigrationServiceRequ
   ///@}
  private:
   Aws::String m_selectionRules;
-  bool m_selectionRulesHasBeenSet = false;
 
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   OriginTypeValue m_origin{OriginTypeValue::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_selectionRulesHasBeenSet = false;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

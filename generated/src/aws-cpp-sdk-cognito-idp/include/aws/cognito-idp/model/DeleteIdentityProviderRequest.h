@@ -67,9 +67,9 @@ class DeleteIdentityProviderRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_providerName;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_providerNameHasBeenSet = false;
 };
 

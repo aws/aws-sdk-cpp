@@ -140,21 +140,21 @@ class Properties {
   ///@}
  private:
   double m_eoCloudCover{0.0};
-  bool m_eoCloudCoverHasBeenSet = false;
 
   double m_landsatCloudCoverLand{0.0};
-  bool m_landsatCloudCoverLandHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   double m_viewOffNadir{0.0};
-  bool m_viewOffNadirHasBeenSet = false;
 
   double m_viewSunAzimuth{0.0};
-  bool m_viewSunAzimuthHasBeenSet = false;
 
   double m_viewSunElevation{0.0};
+  bool m_eoCloudCoverHasBeenSet = false;
+  bool m_landsatCloudCoverLandHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_viewOffNadirHasBeenSet = false;
+  bool m_viewSunAzimuthHasBeenSet = false;
   bool m_viewSunElevationHasBeenSet = false;
 };
 

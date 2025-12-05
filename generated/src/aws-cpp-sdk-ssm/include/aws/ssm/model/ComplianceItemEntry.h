@@ -132,18 +132,18 @@ class ComplianceItemEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   ComplianceSeverity m_severity{ComplianceSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   ComplianceStatus m_status{ComplianceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_details;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

@@ -93,15 +93,15 @@ class AddInstanceFleetResult {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_instanceFleetId;
-  bool m_instanceFleetIdHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_instanceFleetIdHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

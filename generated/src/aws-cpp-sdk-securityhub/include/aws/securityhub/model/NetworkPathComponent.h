@@ -109,15 +109,15 @@ class NetworkPathComponent {
   ///@}
  private:
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::String m_componentType;
-  bool m_componentTypeHasBeenSet = false;
 
   NetworkHeader m_egress;
-  bool m_egressHasBeenSet = false;
 
   NetworkHeader m_ingress;
+  bool m_componentIdHasBeenSet = false;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_egressHasBeenSet = false;
   bool m_ingressHasBeenSet = false;
 };
 

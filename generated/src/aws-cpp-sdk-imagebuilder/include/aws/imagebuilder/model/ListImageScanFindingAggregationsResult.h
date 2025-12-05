@@ -114,15 +114,15 @@ class ListImageScanFindingAggregationsResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_aggregationType;
-  bool m_aggregationTypeHasBeenSet = false;
 
   Aws::Vector<ImageScanFindingAggregation> m_responses;
-  bool m_responsesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_aggregationTypeHasBeenSet = false;
+  bool m_responsesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

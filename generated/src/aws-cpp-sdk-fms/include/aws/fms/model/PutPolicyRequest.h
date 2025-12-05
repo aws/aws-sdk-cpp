@@ -75,9 +75,9 @@ class PutPolicyRequest : public FMSRequest {
   ///@}
  private:
   Policy m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_policyHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class BasicAuthenticationConfiguration {
   ///@}
  private:
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_credentials;
+  bool m_hostHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
 };
 

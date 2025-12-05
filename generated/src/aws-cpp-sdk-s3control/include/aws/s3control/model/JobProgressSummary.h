@@ -100,15 +100,15 @@ class JobProgressSummary {
   ///@}
  private:
   long long m_totalNumberOfTasks{0};
-  bool m_totalNumberOfTasksHasBeenSet = false;
 
   long long m_numberOfTasksSucceeded{0};
-  bool m_numberOfTasksSucceededHasBeenSet = false;
 
   long long m_numberOfTasksFailed{0};
-  bool m_numberOfTasksFailedHasBeenSet = false;
 
   JobTimers m_timers;
+  bool m_totalNumberOfTasksHasBeenSet = false;
+  bool m_numberOfTasksSucceededHasBeenSet = false;
+  bool m_numberOfTasksFailedHasBeenSet = false;
   bool m_timersHasBeenSet = false;
 };
 

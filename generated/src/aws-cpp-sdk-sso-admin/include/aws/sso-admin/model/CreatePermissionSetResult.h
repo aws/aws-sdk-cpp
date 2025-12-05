@@ -60,9 +60,9 @@ class CreatePermissionSetResult {
   ///@}
  private:
   PermissionSet m_permissionSet;
-  bool m_permissionSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_permissionSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

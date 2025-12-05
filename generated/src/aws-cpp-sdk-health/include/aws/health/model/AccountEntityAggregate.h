@@ -94,12 +94,12 @@ class AccountEntityAggregate {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Map<EntityStatusCode, int> m_statuses;
+  bool m_accountIdHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_statusesHasBeenSet = false;
 };
 

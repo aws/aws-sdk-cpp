@@ -81,9 +81,9 @@ class UntagRoleRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_roleNameHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

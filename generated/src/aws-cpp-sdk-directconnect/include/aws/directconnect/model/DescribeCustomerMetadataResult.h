@@ -88,12 +88,12 @@ class DescribeCustomerMetadataResult {
   ///@}
  private:
   Aws::Vector<CustomerAgreement> m_agreements;
-  bool m_agreementsHasBeenSet = false;
 
   NniPartnerType m_nniPartnerType{NniPartnerType::NOT_SET};
-  bool m_nniPartnerTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agreementsHasBeenSet = false;
+  bool m_nniPartnerTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

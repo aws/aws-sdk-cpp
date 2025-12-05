@@ -84,12 +84,12 @@ class UpdatePreferencesRequest : public CostOptimizationHubRequest {
   ///@}
  private:
   SavingsEstimationMode m_savingsEstimationMode{SavingsEstimationMode::NOT_SET};
-  bool m_savingsEstimationModeHasBeenSet = false;
 
   MemberAccountDiscountVisibility m_memberAccountDiscountVisibility{MemberAccountDiscountVisibility::NOT_SET};
-  bool m_memberAccountDiscountVisibilityHasBeenSet = false;
 
   PreferredCommitment m_preferredCommitment;
+  bool m_savingsEstimationModeHasBeenSet = false;
+  bool m_memberAccountDiscountVisibilityHasBeenSet = false;
   bool m_preferredCommitmentHasBeenSet = false;
 };
 

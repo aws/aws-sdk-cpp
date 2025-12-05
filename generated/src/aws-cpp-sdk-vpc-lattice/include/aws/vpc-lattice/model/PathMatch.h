@@ -67,9 +67,9 @@ class PathMatch {
   ///@}
  private:
   PathMatchType m_match;
-  bool m_matchHasBeenSet = false;
 
   bool m_caseSensitive{false};
+  bool m_matchHasBeenSet = false;
   bool m_caseSensitiveHasBeenSet = false;
 };
 

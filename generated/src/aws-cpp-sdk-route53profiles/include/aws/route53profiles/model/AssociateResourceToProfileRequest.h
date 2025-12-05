@@ -104,15 +104,15 @@ class AssociateResourceToProfileRequest : public Route53ProfilesRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceProperties;
+  bool m_nameHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourcePropertiesHasBeenSet = false;
 };
 

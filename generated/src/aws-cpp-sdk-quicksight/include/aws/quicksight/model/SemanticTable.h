@@ -90,12 +90,12 @@ class SemanticTable {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_destinationTableId;
-  bool m_destinationTableIdHasBeenSet = false;
 
   RowLevelPermissionConfiguration m_rowLevelPermissionConfiguration;
+  bool m_aliasHasBeenSet = false;
+  bool m_destinationTableIdHasBeenSet = false;
   bool m_rowLevelPermissionConfigurationHasBeenSet = false;
 };
 

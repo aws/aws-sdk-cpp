@@ -91,12 +91,12 @@ class BatchPutFieldOptionsRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::Vector<FieldOption> m_options;
+  bool m_domainIdHasBeenSet = false;
+  bool m_fieldIdHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

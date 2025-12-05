@@ -75,9 +75,9 @@ class Message {
   ///@}
  private:
   Content m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Body m_body;
+  bool m_subjectHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
 };
 

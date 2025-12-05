@@ -83,12 +83,12 @@ class UpdateJourneyRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_journeyId;
-  bool m_journeyIdHasBeenSet = false;
 
   WriteJourneyRequest m_writeJourneyRequest;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_journeyIdHasBeenSet = false;
   bool m_writeJourneyRequestHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class UnprocessedSecurityControl {
   ///@}
  private:
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   UnprocessedErrorCode m_errorCode{UnprocessedErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorReason;
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorReasonHasBeenSet = false;
 };
 

@@ -380,48 +380,48 @@ class ClusterInstanceGroupSpecification {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   int m_minInstanceCount{0};
-  bool m_minInstanceCountHasBeenSet = false;
 
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   ClusterLifeCycleConfig m_lifeCycleConfig;
-  bool m_lifeCycleConfigHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   int m_threadsPerCore{0};
-  bool m_threadsPerCoreHasBeenSet = false;
 
   Aws::Vector<ClusterInstanceStorageConfig> m_instanceStorageConfigs;
-  bool m_instanceStorageConfigsHasBeenSet = false;
 
   Aws::Vector<DeepHealthCheckType> m_onStartDeepHealthChecks;
-  bool m_onStartDeepHealthChecksHasBeenSet = false;
 
   Aws::String m_trainingPlanArn;
-  bool m_trainingPlanArnHasBeenSet = false;
 
   VpcConfig m_overrideVpcConfig;
-  bool m_overrideVpcConfigHasBeenSet = false;
 
   ScheduledUpdateConfig m_scheduledUpdateConfig;
-  bool m_scheduledUpdateConfigHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   ClusterKubernetesConfig m_kubernetesConfig;
-  bool m_kubernetesConfigHasBeenSet = false;
 
   ClusterCapacityRequirements m_capacityRequirements;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_minInstanceCountHasBeenSet = false;
+  bool m_instanceGroupNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_lifeCycleConfigHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_threadsPerCoreHasBeenSet = false;
+  bool m_instanceStorageConfigsHasBeenSet = false;
+  bool m_onStartDeepHealthChecksHasBeenSet = false;
+  bool m_trainingPlanArnHasBeenSet = false;
+  bool m_overrideVpcConfigHasBeenSet = false;
+  bool m_scheduledUpdateConfigHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_kubernetesConfigHasBeenSet = false;
   bool m_capacityRequirementsHasBeenSet = false;
 };
 

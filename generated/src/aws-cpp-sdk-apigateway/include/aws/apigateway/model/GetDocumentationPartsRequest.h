@@ -164,24 +164,24 @@ class GetDocumentationPartsRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   DocumentationPartType m_type{DocumentationPartType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nameQuery;
-  bool m_nameQueryHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   LocationStatusType m_locationStatus{LocationStatusType::NOT_SET};
+  bool m_restApiIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameQueryHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_locationStatusHasBeenSet = false;
 };
 

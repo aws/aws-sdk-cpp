@@ -68,9 +68,9 @@ class DeleteConnectionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_connectionName;
+  bool m_catalogIdHasBeenSet = false;
   bool m_connectionNameHasBeenSet = false;
 };
 

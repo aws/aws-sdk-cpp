@@ -148,21 +148,21 @@ class RouteFerrySpan {
   ///@}
  private:
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_geometryOffset{0};
-  bool m_geometryOffsetHasBeenSet = false;
 
   Aws::Vector<LocalizedString> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_countryHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_geometryOffsetHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

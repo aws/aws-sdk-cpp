@@ -103,12 +103,12 @@ class SnapshotCopyGrant {
   ///@}
  private:
   Aws::String m_snapshotCopyGrantName;
-  bool m_snapshotCopyGrantNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_snapshotCopyGrantNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

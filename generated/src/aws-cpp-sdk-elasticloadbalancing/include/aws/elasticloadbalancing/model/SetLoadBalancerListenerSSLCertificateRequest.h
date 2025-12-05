@@ -89,12 +89,12 @@ class SetLoadBalancerListenerSSLCertificateRequest : public ElasticLoadBalancing
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   int m_loadBalancerPort{0};
-  bool m_loadBalancerPortHasBeenSet = false;
 
   Aws::String m_sSLCertificateId;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_loadBalancerPortHasBeenSet = false;
   bool m_sSLCertificateIdHasBeenSet = false;
 };
 

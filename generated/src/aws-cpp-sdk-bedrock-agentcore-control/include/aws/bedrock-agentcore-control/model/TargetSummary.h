@@ -141,21 +141,21 @@ class TargetSummary {
   ///@}
  private:
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TargetStatus m_status{TargetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_targetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

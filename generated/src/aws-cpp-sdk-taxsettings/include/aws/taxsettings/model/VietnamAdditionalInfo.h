@@ -109,15 +109,15 @@ class VietnamAdditionalInfo {
   ///@}
  private:
   Aws::String m_electronicTransactionCodeNumber;
-  bool m_electronicTransactionCodeNumberHasBeenSet = false;
 
   Aws::String m_enterpriseIdentificationNumber;
-  bool m_enterpriseIdentificationNumberHasBeenSet = false;
 
   Aws::String m_paymentVoucherNumber;
-  bool m_paymentVoucherNumberHasBeenSet = false;
 
   Aws::String m_paymentVoucherNumberDate;
+  bool m_electronicTransactionCodeNumberHasBeenSet = false;
+  bool m_enterpriseIdentificationNumberHasBeenSet = false;
+  bool m_paymentVoucherNumberHasBeenSet = false;
   bool m_paymentVoucherNumberDateHasBeenSet = false;
 };
 

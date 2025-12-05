@@ -58,9 +58,9 @@ class UpdateSmsChannelResult {
   ///@}
  private:
   SMSChannelResponse m_sMSChannelResponse;
-  bool m_sMSChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sMSChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

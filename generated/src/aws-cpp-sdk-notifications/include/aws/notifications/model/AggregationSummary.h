@@ -157,21 +157,21 @@ class AggregationSummary {
   ///@}
  private:
   int m_eventCount{0};
-  bool m_eventCountHasBeenSet = false;
 
   Aws::Vector<AggregationKey> m_aggregatedBy;
-  bool m_aggregatedByHasBeenSet = false;
 
   SummarizationDimensionOverview m_aggregatedAccounts;
-  bool m_aggregatedAccountsHasBeenSet = false;
 
   SummarizationDimensionOverview m_aggregatedRegions;
-  bool m_aggregatedRegionsHasBeenSet = false;
 
   SummarizationDimensionOverview m_aggregatedOrganizationalUnits;
-  bool m_aggregatedOrganizationalUnitsHasBeenSet = false;
 
   Aws::Vector<SummarizationDimensionOverview> m_additionalSummarizationDimensions;
+  bool m_eventCountHasBeenSet = false;
+  bool m_aggregatedByHasBeenSet = false;
+  bool m_aggregatedAccountsHasBeenSet = false;
+  bool m_aggregatedRegionsHasBeenSet = false;
+  bool m_aggregatedOrganizationalUnitsHasBeenSet = false;
   bool m_additionalSummarizationDimensionsHasBeenSet = false;
 };
 

@@ -141,18 +141,18 @@ class DescribeVerifiedDestinationNumbersRequest : public PinpointSMSVoiceV2Reque
   ///@}
  private:
   Aws::Vector<Aws::String> m_verifiedDestinationNumberIds;
-  bool m_verifiedDestinationNumberIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationPhoneNumbers;
-  bool m_destinationPhoneNumbersHasBeenSet = false;
 
   Aws::Vector<VerifiedDestinationNumberFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_verifiedDestinationNumberIdsHasBeenSet = false;
+  bool m_destinationPhoneNumbersHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

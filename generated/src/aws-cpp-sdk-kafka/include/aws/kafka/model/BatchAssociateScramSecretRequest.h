@@ -83,9 +83,9 @@ class BatchAssociateScramSecretRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_secretArnList;
+  bool m_clusterArnHasBeenSet = false;
   bool m_secretArnListHasBeenSet = false;
 };
 

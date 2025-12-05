@@ -117,18 +117,18 @@ class UpdateProvisionedProductPropertiesResult {
   ///@}
  private:
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::Map<PropertyKey, Aws::String> m_provisionedProductProperties;
-  bool m_provisionedProductPropertiesHasBeenSet = false;
 
   Aws::String m_recordId;
-  bool m_recordIdHasBeenSet = false;
 
   RecordStatus m_status{RecordStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisionedProductIdHasBeenSet = false;
+  bool m_provisionedProductPropertiesHasBeenSet = false;
+  bool m_recordIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

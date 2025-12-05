@@ -626,93 +626,93 @@ class DeploymentInfo {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_deploymentGroupName;
-  bool m_deploymentGroupNameHasBeenSet = false;
 
   Aws::String m_deploymentConfigName;
-  bool m_deploymentConfigNameHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   RevisionLocation m_previousRevision;
-  bool m_previousRevisionHasBeenSet = false;
 
   RevisionLocation m_revision;
-  bool m_revisionHasBeenSet = false;
 
   DeploymentStatus m_status{DeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ErrorInformation m_errorInformation;
-  bool m_errorInformationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completeTime{};
-  bool m_completeTimeHasBeenSet = false;
 
   DeploymentOverview m_deploymentOverview;
-  bool m_deploymentOverviewHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DeploymentCreator m_creator{DeploymentCreator::NOT_SET};
-  bool m_creatorHasBeenSet = false;
 
   bool m_ignoreApplicationStopFailures{false};
-  bool m_ignoreApplicationStopFailuresHasBeenSet = false;
 
   AutoRollbackConfiguration m_autoRollbackConfiguration;
-  bool m_autoRollbackConfigurationHasBeenSet = false;
 
   bool m_updateOutdatedInstancesOnly{false};
-  bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
 
   RollbackInfo m_rollbackInfo;
-  bool m_rollbackInfoHasBeenSet = false;
 
   DeploymentStyle m_deploymentStyle;
-  bool m_deploymentStyleHasBeenSet = false;
 
   TargetInstances m_targetInstances;
-  bool m_targetInstancesHasBeenSet = false;
 
   bool m_instanceTerminationWaitTimeStarted{false};
-  bool m_instanceTerminationWaitTimeStartedHasBeenSet = false;
 
   BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
-  bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
 
   LoadBalancerInfo m_loadBalancerInfo;
-  bool m_loadBalancerInfoHasBeenSet = false;
 
   Aws::String m_additionalDeploymentStatusInfo;
-  bool m_additionalDeploymentStatusInfoHasBeenSet = false;
 
   FileExistsBehavior m_fileExistsBehavior{FileExistsBehavior::NOT_SET};
-  bool m_fileExistsBehaviorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deploymentStatusMessages;
-  bool m_deploymentStatusMessagesHasBeenSet = false;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
-  bool m_computePlatformHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   RelatedDeployments m_relatedDeployments;
-  bool m_relatedDeploymentsHasBeenSet = false;
 
   AlarmConfiguration m_overrideAlarmConfiguration;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_deploymentGroupNameHasBeenSet = false;
+  bool m_deploymentConfigNameHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_previousRevisionHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorInformationHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_completeTimeHasBeenSet = false;
+  bool m_deploymentOverviewHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creatorHasBeenSet = false;
+  bool m_ignoreApplicationStopFailuresHasBeenSet = false;
+  bool m_autoRollbackConfigurationHasBeenSet = false;
+  bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
+  bool m_rollbackInfoHasBeenSet = false;
+  bool m_deploymentStyleHasBeenSet = false;
+  bool m_targetInstancesHasBeenSet = false;
+  bool m_instanceTerminationWaitTimeStartedHasBeenSet = false;
+  bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
+  bool m_loadBalancerInfoHasBeenSet = false;
+  bool m_additionalDeploymentStatusInfoHasBeenSet = false;
+  bool m_fileExistsBehaviorHasBeenSet = false;
+  bool m_deploymentStatusMessagesHasBeenSet = false;
+  bool m_computePlatformHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_relatedDeploymentsHasBeenSet = false;
   bool m_overrideAlarmConfigurationHasBeenSet = false;
 };
 

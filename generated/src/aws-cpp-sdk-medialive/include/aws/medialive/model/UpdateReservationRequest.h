@@ -87,12 +87,12 @@ class UpdateReservationRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RenewalSettings m_renewalSettings;
-  bool m_renewalSettingsHasBeenSet = false;
 
   Aws::String m_reservationId;
+  bool m_nameHasBeenSet = false;
+  bool m_renewalSettingsHasBeenSet = false;
   bool m_reservationIdHasBeenSet = false;
 };
 

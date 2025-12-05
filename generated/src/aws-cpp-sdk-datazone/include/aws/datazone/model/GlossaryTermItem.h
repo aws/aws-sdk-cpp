@@ -294,45 +294,45 @@ class GlossaryTermItem {
   ///@}
  private:
   GlossaryTermItemAdditionalAttributes m_additionalAttributes;
-  bool m_additionalAttributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_glossaryId;
-  bool m_glossaryIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_longDescription;
-  bool m_longDescriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_shortDescription;
-  bool m_shortDescriptionHasBeenSet = false;
 
   GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TermRelations m_termRelations;
-  bool m_termRelationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
+  bool m_additionalAttributesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_glossaryIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_termRelationsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_usageRestrictionsHasBeenSet = false;
 };
 

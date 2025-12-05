@@ -100,12 +100,12 @@ class FeatureValue {
   ///@}
  private:
   Aws::String m_featureName;
-  bool m_featureNameHasBeenSet = false;
 
   Aws::String m_valueAsString;
-  bool m_valueAsStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valueAsStringList;
+  bool m_featureNameHasBeenSet = false;
+  bool m_valueAsStringHasBeenSet = false;
   bool m_valueAsStringListHasBeenSet = false;
 };
 

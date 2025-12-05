@@ -158,21 +158,21 @@ class UpdateNotificationRuleRequest : public CodeStarNotificationsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NotificationRuleStatus m_status{NotificationRuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventTypeIds;
-  bool m_eventTypeIdsHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   DetailType m_detailType{DetailType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_eventTypeIdsHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
   bool m_detailTypeHasBeenSet = false;
 };
 

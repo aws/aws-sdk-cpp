@@ -203,30 +203,30 @@ class UpdateApplicationRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_identityCenterInstanceArn;
-  bool m_identityCenterInstanceArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   AttachmentsConfiguration m_attachmentsConfiguration;
-  bool m_attachmentsConfigurationHasBeenSet = false;
 
   QAppsConfiguration m_qAppsConfiguration;
-  bool m_qAppsConfigurationHasBeenSet = false;
 
   PersonalizationConfiguration m_personalizationConfiguration;
-  bool m_personalizationConfigurationHasBeenSet = false;
 
   AutoSubscriptionConfiguration m_autoSubscriptionConfiguration;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_attachmentsConfigurationHasBeenSet = false;
+  bool m_qAppsConfigurationHasBeenSet = false;
+  bool m_personalizationConfigurationHasBeenSet = false;
   bool m_autoSubscriptionConfigurationHasBeenSet = false;
 };
 

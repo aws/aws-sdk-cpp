@@ -78,12 +78,12 @@ class RowInfo {
   ///@}
  private:
   long long m_rowsIngested{0};
-  bool m_rowsIngestedHasBeenSet = false;
 
   long long m_rowsDropped{0};
-  bool m_rowsDroppedHasBeenSet = false;
 
   long long m_totalRowsInDataset{0};
+  bool m_rowsIngestedHasBeenSet = false;
+  bool m_rowsDroppedHasBeenSet = false;
   bool m_totalRowsInDatasetHasBeenSet = false;
 };
 

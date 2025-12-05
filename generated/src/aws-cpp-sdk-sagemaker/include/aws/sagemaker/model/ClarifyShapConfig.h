@@ -128,18 +128,18 @@ class ClarifyShapConfig {
   ///@}
  private:
   ClarifyShapBaselineConfig m_shapBaselineConfig;
-  bool m_shapBaselineConfigHasBeenSet = false;
 
   int m_numberOfSamples{0};
-  bool m_numberOfSamplesHasBeenSet = false;
 
   bool m_useLogit{false};
-  bool m_useLogitHasBeenSet = false;
 
   int m_seed{0};
-  bool m_seedHasBeenSet = false;
 
   ClarifyTextConfig m_textConfig;
+  bool m_shapBaselineConfigHasBeenSet = false;
+  bool m_numberOfSamplesHasBeenSet = false;
+  bool m_useLogitHasBeenSet = false;
+  bool m_seedHasBeenSet = false;
   bool m_textConfigHasBeenSet = false;
 };
 

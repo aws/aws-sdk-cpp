@@ -193,27 +193,27 @@ class UpdateAuthenticationProfileRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_authenticationProfileId;
-  bool m_authenticationProfileIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedIps;
-  bool m_allowedIpsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedIps;
-  bool m_blockedIpsHasBeenSet = false;
 
   int m_sessionInactivityDuration{0};
-  bool m_sessionInactivityDurationHasBeenSet = false;
 
   bool m_sessionInactivityHandlingEnabled{false};
+  bool m_authenticationProfileIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_allowedIpsHasBeenSet = false;
+  bool m_blockedIpsHasBeenSet = false;
+  bool m_sessionInactivityDurationHasBeenSet = false;
   bool m_sessionInactivityHandlingEnabledHasBeenSet = false;
 };
 

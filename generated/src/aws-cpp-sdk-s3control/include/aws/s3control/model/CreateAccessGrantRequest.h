@@ -217,27 +217,27 @@ class CreateAccessGrantRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_accessGrantsLocationId;
-  bool m_accessGrantsLocationIdHasBeenSet = false;
 
   AccessGrantsLocationConfiguration m_accessGrantsLocationConfiguration;
-  bool m_accessGrantsLocationConfigurationHasBeenSet = false;
 
   Grantee m_grantee;
-  bool m_granteeHasBeenSet = false;
 
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   S3PrefixType m_s3PrefixType{S3PrefixType::NOT_SET};
-  bool m_s3PrefixTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_accessGrantsLocationIdHasBeenSet = false;
+  bool m_accessGrantsLocationConfigurationHasBeenSet = false;
+  bool m_granteeHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_s3PrefixTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

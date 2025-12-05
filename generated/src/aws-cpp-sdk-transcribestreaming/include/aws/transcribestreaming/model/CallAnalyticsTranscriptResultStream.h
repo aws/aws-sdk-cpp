@@ -155,24 +155,24 @@ class CallAnalyticsTranscriptResultStream {
   ///@}
  private:
   UtteranceEvent m_utteranceEvent;
-  bool m_utteranceEventHasBeenSet = false;
 
   CategoryEvent m_categoryEvent;
-  bool m_categoryEventHasBeenSet = false;
 
   TranscribeStreamingServiceError m_badRequestException;
-  bool m_badRequestExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_limitExceededException;
-  bool m_limitExceededExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_internalFailureException;
-  bool m_internalFailureExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_conflictException;
-  bool m_conflictExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_serviceUnavailableException;
+  bool m_utteranceEventHasBeenSet = false;
+  bool m_categoryEventHasBeenSet = false;
+  bool m_badRequestExceptionHasBeenSet = false;
+  bool m_limitExceededExceptionHasBeenSet = false;
+  bool m_internalFailureExceptionHasBeenSet = false;
+  bool m_conflictExceptionHasBeenSet = false;
   bool m_serviceUnavailableExceptionHasBeenSet = false;
 };
 

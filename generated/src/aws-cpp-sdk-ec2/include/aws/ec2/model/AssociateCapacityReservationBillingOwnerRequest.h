@@ -88,12 +88,12 @@ class AssociateCapacityReservationBillingOwnerRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_unusedReservationBillingOwnerId;
+  bool m_dryRunHasBeenSet = false;
+  bool m_capacityReservationIdHasBeenSet = false;
   bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
 };
 

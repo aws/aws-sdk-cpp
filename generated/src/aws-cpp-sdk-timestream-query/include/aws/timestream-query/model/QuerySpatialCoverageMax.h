@@ -96,12 +96,12 @@ class QuerySpatialCoverageMax {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_partitionKey;
+  bool m_valueHasBeenSet = false;
+  bool m_tableArnHasBeenSet = false;
   bool m_partitionKeyHasBeenSet = false;
 };
 

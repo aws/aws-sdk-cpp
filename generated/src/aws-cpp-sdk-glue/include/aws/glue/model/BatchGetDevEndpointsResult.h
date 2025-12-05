@@ -90,12 +90,12 @@ class BatchGetDevEndpointsResult {
   ///@}
  private:
   Aws::Vector<DevEndpoint> m_devEndpoints;
-  bool m_devEndpointsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_devEndpointsNotFound;
-  bool m_devEndpointsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devEndpointsHasBeenSet = false;
+  bool m_devEndpointsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

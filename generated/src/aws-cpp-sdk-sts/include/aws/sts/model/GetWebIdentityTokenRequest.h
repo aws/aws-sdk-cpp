@@ -128,15 +128,15 @@ class GetWebIdentityTokenRequest : public STSRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_audience;
-  bool m_audienceHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Aws::String m_signingAlgorithm;
-  bool m_signingAlgorithmHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_audienceHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

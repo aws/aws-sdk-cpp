@@ -121,15 +121,15 @@ class Ipv6Pool {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<PoolCidrBlock> m_poolCidrBlocks;
-  bool m_poolCidrBlocksHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_poolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_poolCidrBlocksHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

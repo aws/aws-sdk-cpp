@@ -83,12 +83,12 @@ class UpdateSiteAddressRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   AddressType m_addressType{AddressType::NOT_SET};
-  bool m_addressTypeHasBeenSet = false;
 
   Address m_address;
+  bool m_siteIdHasBeenSet = false;
+  bool m_addressTypeHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

@@ -119,15 +119,15 @@ class DescribeInstancePropertiesRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<InstancePropertyFilter> m_instancePropertyFilterList;
-  bool m_instancePropertyFilterListHasBeenSet = false;
 
   Aws::Vector<InstancePropertyStringFilter> m_filtersWithOperator;
-  bool m_filtersWithOperatorHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_instancePropertyFilterListHasBeenSet = false;
+  bool m_filtersWithOperatorHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

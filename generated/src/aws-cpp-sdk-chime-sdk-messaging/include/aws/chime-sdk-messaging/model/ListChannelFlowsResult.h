@@ -85,12 +85,12 @@ class ListChannelFlowsResult {
   ///@}
  private:
   Aws::Vector<ChannelFlowSummary> m_channelFlows;
-  bool m_channelFlowsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelFlowsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

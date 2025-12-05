@@ -301,48 +301,48 @@ class GetDevEnvironmentResult {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_creatorId;
-  bool m_creatorIdHasBeenSet = false;
 
   DevEnvironmentStatus m_status{DevEnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Vector<DevEnvironmentRepositorySummary> m_repositories;
-  bool m_repositoriesHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::Vector<Ide> m_ides;
-  bool m_idesHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_inactivityTimeoutMinutes{0};
-  bool m_inactivityTimeoutMinutesHasBeenSet = false;
 
   PersistentStorage m_persistentStorage;
-  bool m_persistentStorageHasBeenSet = false;
 
   Aws::String m_vpcConnectionName;
-  bool m_vpcConnectionNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_creatorIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_repositoriesHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_idesHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_inactivityTimeoutMinutesHasBeenSet = false;
+  bool m_persistentStorageHasBeenSet = false;
+  bool m_vpcConnectionNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

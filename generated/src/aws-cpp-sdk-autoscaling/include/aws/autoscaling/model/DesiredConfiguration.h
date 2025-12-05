@@ -84,9 +84,9 @@ class DesiredConfiguration {
   ///@}
  private:
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   MixedInstancesPolicy m_mixedInstancesPolicy;
+  bool m_launchTemplateHasBeenSet = false;
   bool m_mixedInstancesPolicyHasBeenSet = false;
 };
 

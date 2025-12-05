@@ -87,12 +87,12 @@ class ListCollaborationPrivacyBudgetsResult {
   ///@}
  private:
   Aws::Vector<CollaborationPrivacyBudgetSummary> m_collaborationPrivacyBudgetSummaries;
-  bool m_collaborationPrivacyBudgetSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collaborationPrivacyBudgetSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class EnableHttpEndpointResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   bool m_httpEndpointEnabled{false};
-  bool m_httpEndpointEnabledHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_httpEndpointEnabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

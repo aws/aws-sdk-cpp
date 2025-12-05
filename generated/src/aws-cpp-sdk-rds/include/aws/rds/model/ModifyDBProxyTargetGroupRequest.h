@@ -110,15 +110,15 @@ class ModifyDBProxyTargetGroupRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_targetGroupName;
-  bool m_targetGroupNameHasBeenSet = false;
 
   Aws::String m_dBProxyName;
-  bool m_dBProxyNameHasBeenSet = false;
 
   ConnectionPoolConfiguration m_connectionPoolConfig;
-  bool m_connectionPoolConfigHasBeenSet = false;
 
   Aws::String m_newName;
+  bool m_targetGroupNameHasBeenSet = false;
+  bool m_dBProxyNameHasBeenSet = false;
+  bool m_connectionPoolConfigHasBeenSet = false;
   bool m_newNameHasBeenSet = false;
 };
 

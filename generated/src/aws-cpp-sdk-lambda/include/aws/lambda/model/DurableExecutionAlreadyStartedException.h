@@ -68,9 +68,9 @@ class DurableExecutionAlreadyStartedException {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

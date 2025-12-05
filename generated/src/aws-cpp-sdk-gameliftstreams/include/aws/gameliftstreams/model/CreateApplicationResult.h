@@ -340,48 +340,48 @@ class CreateApplicationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuntimeEnvironment m_runtimeEnvironment;
-  bool m_runtimeEnvironmentHasBeenSet = false;
 
   Aws::String m_executablePath;
-  bool m_executablePathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicationLogPaths;
-  bool m_applicationLogPathsHasBeenSet = false;
 
   Aws::String m_applicationLogOutputUri;
-  bool m_applicationLogOutputUriHasBeenSet = false;
 
   Aws::String m_applicationSourceUri;
-  bool m_applicationSourceUriHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ApplicationStatusReason m_statusReason{ApplicationStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Vector<ReplicationStatus> m_replicationStatuses;
-  bool m_replicationStatusesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedStreamGroups;
-  bool m_associatedStreamGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_runtimeEnvironmentHasBeenSet = false;
+  bool m_executablePathHasBeenSet = false;
+  bool m_applicationLogPathsHasBeenSet = false;
+  bool m_applicationLogOutputUriHasBeenSet = false;
+  bool m_applicationSourceUriHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_replicationStatusesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_associatedStreamGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

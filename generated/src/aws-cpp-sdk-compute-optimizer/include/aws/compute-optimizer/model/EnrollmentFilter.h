@@ -78,9 +78,9 @@ class EnrollmentFilter {
   ///@}
  private:
   EnrollmentFilterName m_name{EnrollmentFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class GetExclusionsPreviewRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentTemplateArn;
-  bool m_assessmentTemplateArnHasBeenSet = false;
 
   Aws::String m_previewToken;
-  bool m_previewTokenHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Locale m_locale{Locale::NOT_SET};
+  bool m_assessmentTemplateArnHasBeenSet = false;
+  bool m_previewTokenHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ObjectLevelStatistics {
   ///@}
  private:
   long long m_fileType{0};
-  bool m_fileTypeHasBeenSet = false;
 
   long long m_storageClass{0};
-  bool m_storageClassHasBeenSet = false;
 
   long long m_total{0};
+  bool m_fileTypeHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

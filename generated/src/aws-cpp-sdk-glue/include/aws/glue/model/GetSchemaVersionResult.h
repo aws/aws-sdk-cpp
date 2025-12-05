@@ -158,27 +158,27 @@ class GetSchemaVersionResult {
   ///@}
  private:
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   Aws::String m_schemaDefinition;
-  bool m_schemaDefinitionHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   SchemaVersionStatus m_status{SchemaVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaVersionIdHasBeenSet = false;
+  bool m_schemaDefinitionHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class LocationConfiguration {
   ///@}
  private:
   Aws::String m_locationName;
-  bool m_locationNameHasBeenSet = false;
 
   int m_alwaysOnCapacity{0};
-  bool m_alwaysOnCapacityHasBeenSet = false;
 
   int m_onDemandCapacity{0};
+  bool m_locationNameHasBeenSet = false;
+  bool m_alwaysOnCapacityHasBeenSet = false;
   bool m_onDemandCapacityHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class DescribeScalingPoliciesRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   ScalingStatusType m_statusFilter{ScalingStatusType::NOT_SET};
-  bool m_statusFilterHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_statusFilterHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

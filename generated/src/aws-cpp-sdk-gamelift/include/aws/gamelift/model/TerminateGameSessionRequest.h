@@ -85,9 +85,9 @@ class TerminateGameSessionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameSessionId;
-  bool m_gameSessionIdHasBeenSet = false;
 
   TerminationMode m_terminationMode{TerminationMode::NOT_SET};
+  bool m_gameSessionIdHasBeenSet = false;
   bool m_terminationModeHasBeenSet = false;
 };
 

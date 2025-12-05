@@ -71,9 +71,9 @@ class EvaluationFormItemEnablementConditionOperand {
   ///@}
  private:
   EvaluationFormItemEnablementExpression m_expression;
-  bool m_expressionHasBeenSet = false;
 
   std::shared_ptr<EvaluationFormItemEnablementCondition> m_condition;
+  bool m_expressionHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

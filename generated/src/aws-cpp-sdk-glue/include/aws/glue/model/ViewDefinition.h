@@ -214,30 +214,30 @@ class ViewDefinition {
   ///@}
  private:
   bool m_isProtected{false};
-  bool m_isProtectedHasBeenSet = false;
 
   Aws::String m_definer;
-  bool m_definerHasBeenSet = false;
 
   long long m_viewVersionId{0};
-  bool m_viewVersionIdHasBeenSet = false;
 
   Aws::String m_viewVersionToken;
-  bool m_viewVersionTokenHasBeenSet = false;
 
   long long m_refreshSeconds{0};
-  bool m_refreshSecondsHasBeenSet = false;
 
   LastRefreshType m_lastRefreshType{LastRefreshType::NOT_SET};
-  bool m_lastRefreshTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subObjects;
-  bool m_subObjectsHasBeenSet = false;
 
   Aws::Vector<long long> m_subObjectVersionIds;
-  bool m_subObjectVersionIdsHasBeenSet = false;
 
   Aws::Vector<ViewRepresentation> m_representations;
+  bool m_isProtectedHasBeenSet = false;
+  bool m_definerHasBeenSet = false;
+  bool m_viewVersionIdHasBeenSet = false;
+  bool m_viewVersionTokenHasBeenSet = false;
+  bool m_refreshSecondsHasBeenSet = false;
+  bool m_lastRefreshTypeHasBeenSet = false;
+  bool m_subObjectsHasBeenSet = false;
+  bool m_subObjectVersionIdsHasBeenSet = false;
   bool m_representationsHasBeenSet = false;
 };
 

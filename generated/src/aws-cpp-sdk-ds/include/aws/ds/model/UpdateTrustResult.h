@@ -59,9 +59,9 @@ class UpdateTrustResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_trustId;
+  bool m_requestIdHasBeenSet = false;
   bool m_trustIdHasBeenSet = false;
 };
 

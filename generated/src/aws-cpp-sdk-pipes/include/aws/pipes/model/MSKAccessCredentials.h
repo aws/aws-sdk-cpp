@@ -69,9 +69,9 @@ class MSKAccessCredentials {
   ///@}
  private:
   Aws::String m_saslScram512Auth;
-  bool m_saslScram512AuthHasBeenSet = false;
 
   Aws::String m_clientCertificateTlsAuth;
+  bool m_saslScram512AuthHasBeenSet = false;
   bool m_clientCertificateTlsAuthHasBeenSet = false;
 };
 

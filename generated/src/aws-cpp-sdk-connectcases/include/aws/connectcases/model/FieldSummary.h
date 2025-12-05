@@ -120,18 +120,18 @@ class FieldSummary {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_fieldArn;
-  bool m_fieldArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FieldType m_type{FieldType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FieldNamespace m_namespace{FieldNamespace::NOT_SET};
+  bool m_fieldIdHasBeenSet = false;
+  bool m_fieldArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

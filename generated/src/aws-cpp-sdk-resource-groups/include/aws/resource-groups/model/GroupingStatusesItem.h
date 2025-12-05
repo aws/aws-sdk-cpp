@@ -142,21 +142,21 @@ class GroupingStatusesItem {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   GroupingType m_action{GroupingType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   GroupingStatus m_status{GroupingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

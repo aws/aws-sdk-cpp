@@ -92,12 +92,12 @@ class GetMatchIdRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_record;
-  bool m_recordHasBeenSet = false;
 
   bool m_applyNormalization{false};
+  bool m_workflowNameHasBeenSet = false;
+  bool m_recordHasBeenSet = false;
   bool m_applyNormalizationHasBeenSet = false;
 };
 

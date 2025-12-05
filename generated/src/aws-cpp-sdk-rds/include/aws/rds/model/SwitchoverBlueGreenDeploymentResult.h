@@ -58,9 +58,9 @@ class SwitchoverBlueGreenDeploymentResult {
   ///@}
  private:
   BlueGreenDeployment m_blueGreenDeployment;
-  bool m_blueGreenDeploymentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_blueGreenDeploymentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

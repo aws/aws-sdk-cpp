@@ -92,12 +92,12 @@ class InitiateJobRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   JobParameters m_jobParameters;
+  bool m_accountIdHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
   bool m_jobParametersHasBeenSet = false;
 };
 

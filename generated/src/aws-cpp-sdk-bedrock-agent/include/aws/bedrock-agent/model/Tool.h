@@ -73,9 +73,9 @@ class Tool {
   ///@}
  private:
   ToolSpecification m_toolSpec;
-  bool m_toolSpecHasBeenSet = false;
 
   CachePointBlock m_cachePoint;
+  bool m_toolSpecHasBeenSet = false;
   bool m_cachePointHasBeenSet = false;
 };
 

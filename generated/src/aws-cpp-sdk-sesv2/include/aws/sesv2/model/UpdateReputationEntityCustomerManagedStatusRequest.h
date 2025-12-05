@@ -91,12 +91,12 @@ class UpdateReputationEntityCustomerManagedStatusRequest : public SESV2Request {
   ///@}
  private:
   ReputationEntityType m_reputationEntityType{ReputationEntityType::NOT_SET};
-  bool m_reputationEntityTypeHasBeenSet = false;
 
   Aws::String m_reputationEntityReference;
-  bool m_reputationEntityReferenceHasBeenSet = false;
 
   SendingStatus m_sendingStatus{SendingStatus::NOT_SET};
+  bool m_reputationEntityTypeHasBeenSet = false;
+  bool m_reputationEntityReferenceHasBeenSet = false;
   bool m_sendingStatusHasBeenSet = false;
 };
 

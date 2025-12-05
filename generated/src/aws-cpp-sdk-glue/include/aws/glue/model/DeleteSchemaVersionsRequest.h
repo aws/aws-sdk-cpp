@@ -71,9 +71,9 @@ class DeleteSchemaVersionsRequest : public GlueRequest {
   ///@}
  private:
   SchemaId m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   Aws::String m_versions;
+  bool m_schemaIdHasBeenSet = false;
   bool m_versionsHasBeenSet = false;
 };
 

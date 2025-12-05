@@ -88,12 +88,12 @@ class SearchSortExpression {
   ///@}
  private:
   UserJobsFirst m_userJobsFirst;
-  bool m_userJobsFirstHasBeenSet = false;
 
   FieldSortExpression m_fieldSort;
-  bool m_fieldSortHasBeenSet = false;
 
   ParameterSortExpression m_parameterSort;
+  bool m_userJobsFirstHasBeenSet = false;
+  bool m_fieldSortHasBeenSet = false;
   bool m_parameterSortHasBeenSet = false;
 };
 

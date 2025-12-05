@@ -134,18 +134,18 @@ class UpdateLocationFsxWindowsRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_password;
+  bool m_locationArnHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_userHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
 };
 

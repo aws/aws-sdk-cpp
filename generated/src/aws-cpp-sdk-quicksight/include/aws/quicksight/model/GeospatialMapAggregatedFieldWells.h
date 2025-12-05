@@ -109,12 +109,12 @@ class GeospatialMapAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_geospatial;
-  bool m_geospatialHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_colors;
+  bool m_geospatialHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_colorsHasBeenSet = false;
 };
 

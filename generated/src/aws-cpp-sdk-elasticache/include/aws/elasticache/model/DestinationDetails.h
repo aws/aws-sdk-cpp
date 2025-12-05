@@ -72,9 +72,9 @@ class DestinationDetails {
   ///@}
  private:
   CloudWatchLogsDestinationDetails m_cloudWatchLogsDetails;
-  bool m_cloudWatchLogsDetailsHasBeenSet = false;
 
   KinesisFirehoseDestinationDetails m_kinesisFirehoseDetails;
+  bool m_cloudWatchLogsDetailsHasBeenSet = false;
   bool m_kinesisFirehoseDetailsHasBeenSet = false;
 };
 

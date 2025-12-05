@@ -219,30 +219,30 @@ class XavcHdProfileSettings {
   ///@}
  private:
   XavcHdProfileBitrateClass m_bitrateClass{XavcHdProfileBitrateClass::NOT_SET};
-  bool m_bitrateClassHasBeenSet = false;
 
   XavcFlickerAdaptiveQuantization m_flickerAdaptiveQuantization{XavcFlickerAdaptiveQuantization::NOT_SET};
-  bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
   XavcGopBReference m_gopBReference{XavcGopBReference::NOT_SET};
-  bool m_gopBReferenceHasBeenSet = false;
 
   int m_gopClosedCadence{0};
-  bool m_gopClosedCadenceHasBeenSet = false;
 
   int m_hrdBufferSize{0};
-  bool m_hrdBufferSizeHasBeenSet = false;
 
   XavcInterlaceMode m_interlaceMode{XavcInterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   XavcHdProfileQualityTuningLevel m_qualityTuningLevel{XavcHdProfileQualityTuningLevel::NOT_SET};
-  bool m_qualityTuningLevelHasBeenSet = false;
 
   int m_slices{0};
-  bool m_slicesHasBeenSet = false;
 
   XavcHdProfileTelecine m_telecine{XavcHdProfileTelecine::NOT_SET};
+  bool m_bitrateClassHasBeenSet = false;
+  bool m_flickerAdaptiveQuantizationHasBeenSet = false;
+  bool m_gopBReferenceHasBeenSet = false;
+  bool m_gopClosedCadenceHasBeenSet = false;
+  bool m_hrdBufferSizeHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_qualityTuningLevelHasBeenSet = false;
+  bool m_slicesHasBeenSet = false;
   bool m_telecineHasBeenSet = false;
 };
 

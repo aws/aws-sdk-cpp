@@ -250,39 +250,39 @@ class GetTemplateStepResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_stepGroupId;
-  bool m_stepGroupIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StepActionType m_stepActionType{StepActionType::NOT_SET};
-  bool m_stepActionTypeHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_previous;
-  bool m_previousHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_next;
-  bool m_nextHasBeenSet = false;
 
   Aws::Vector<StepOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   StepAutomationConfiguration m_stepAutomationConfiguration;
-  bool m_stepAutomationConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_stepGroupIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stepActionTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_previousHasBeenSet = false;
+  bool m_nextHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_stepAutomationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

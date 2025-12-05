@@ -255,39 +255,39 @@ class Session {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   SessionStatus m_status{SessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   SessionManagerOutputUrl m_outputUrl;
-  bool m_outputUrlHasBeenSet = false;
 
   Aws::String m_maxSessionDuration;
-  bool m_maxSessionDurationHasBeenSet = false;
 
   AccessType m_accessType{AccessType::NOT_SET};
+  bool m_sessionIdHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_outputUrlHasBeenSet = false;
+  bool m_maxSessionDurationHasBeenSet = false;
   bool m_accessTypeHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class ReasoningTextBlock {
   ///@}
  private:
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_signatureHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

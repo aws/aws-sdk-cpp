@@ -113,15 +113,15 @@ class ListSessionsRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   SessionState m_stateFilter{SessionState::NOT_SET};
-  bool m_stateFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_workGroupHasBeenSet = false;
+  bool m_stateFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

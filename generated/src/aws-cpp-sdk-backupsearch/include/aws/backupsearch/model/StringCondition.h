@@ -72,9 +72,9 @@ class StringCondition {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   StringConditionOperator m_operator{StringConditionOperator::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

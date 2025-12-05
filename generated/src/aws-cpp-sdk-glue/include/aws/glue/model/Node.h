@@ -143,21 +143,21 @@ class Node {
   ///@}
  private:
   NodeType m_type{NodeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_uniqueId;
-  bool m_uniqueIdHasBeenSet = false;
 
   TriggerNodeDetails m_triggerDetails;
-  bool m_triggerDetailsHasBeenSet = false;
 
   JobNodeDetails m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   CrawlerNodeDetails m_crawlerDetails;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_uniqueIdHasBeenSet = false;
+  bool m_triggerDetailsHasBeenSet = false;
+  bool m_jobDetailsHasBeenSet = false;
   bool m_crawlerDetailsHasBeenSet = false;
 };
 

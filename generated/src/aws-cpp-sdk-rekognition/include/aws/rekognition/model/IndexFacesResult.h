@@ -149,18 +149,18 @@ class IndexFacesResult {
   ///@}
  private:
   Aws::Vector<FaceRecord> m_faceRecords;
-  bool m_faceRecordsHasBeenSet = false;
 
   OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
-  bool m_orientationCorrectionHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   Aws::Vector<UnindexedFace> m_unindexedFaces;
-  bool m_unindexedFacesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_faceRecordsHasBeenSet = false;
+  bool m_orientationCorrectionHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
+  bool m_unindexedFacesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

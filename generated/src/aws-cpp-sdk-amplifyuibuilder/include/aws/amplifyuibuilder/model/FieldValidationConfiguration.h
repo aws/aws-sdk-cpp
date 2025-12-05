@@ -117,15 +117,15 @@ class FieldValidationConfiguration {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_strValues;
-  bool m_strValuesHasBeenSet = false;
 
   Aws::Vector<int> m_numValues;
-  bool m_numValuesHasBeenSet = false;
 
   Aws::String m_validationMessage;
+  bool m_typeHasBeenSet = false;
+  bool m_strValuesHasBeenSet = false;
+  bool m_numValuesHasBeenSet = false;
   bool m_validationMessageHasBeenSet = false;
 };
 

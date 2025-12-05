@@ -85,12 +85,12 @@ class AnomalyObject {
   ///@}
  private:
   ProfileType m_profileType{ProfileType::NOT_SET};
-  bool m_profileTypeHasBeenSet = false;
 
   ProfileSubtype m_profileSubtype{ProfileSubtype::NOT_SET};
-  bool m_profileSubtypeHasBeenSet = false;
 
   Observations m_observations;
+  bool m_profileTypeHasBeenSet = false;
+  bool m_profileSubtypeHasBeenSet = false;
   bool m_observationsHasBeenSet = false;
 };
 

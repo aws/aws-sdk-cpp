@@ -185,27 +185,27 @@ class AssessmentControl {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ControlStatus m_status{ControlStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ControlResponse m_response{ControlResponse::NOT_SET};
-  bool m_responseHasBeenSet = false;
 
   Aws::Vector<ControlComment> m_comments;
-  bool m_commentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_evidenceSources;
-  bool m_evidenceSourcesHasBeenSet = false;
 
   int m_evidenceCount{0};
-  bool m_evidenceCountHasBeenSet = false;
 
   int m_assessmentReportEvidenceCount{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_responseHasBeenSet = false;
+  bool m_commentsHasBeenSet = false;
+  bool m_evidenceSourcesHasBeenSet = false;
+  bool m_evidenceCountHasBeenSet = false;
   bool m_assessmentReportEvidenceCountHasBeenSet = false;
 };
 

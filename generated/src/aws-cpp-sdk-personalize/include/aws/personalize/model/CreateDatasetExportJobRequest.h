@@ -155,21 +155,21 @@ class CreateDatasetExportJobRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   IngestionMode m_ingestionMode{IngestionMode::NOT_SET};
-  bool m_ingestionModeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   DatasetExportJobOutput m_jobOutput;
-  bool m_jobOutputHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_jobNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_ingestionModeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_jobOutputHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

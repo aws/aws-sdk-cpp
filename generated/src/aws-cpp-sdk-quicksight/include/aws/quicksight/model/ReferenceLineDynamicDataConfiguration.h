@@ -89,12 +89,12 @@ class ReferenceLineDynamicDataConfiguration {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   AggregationFunction m_measureAggregationFunction;
-  bool m_measureAggregationFunctionHasBeenSet = false;
 
   NumericalAggregationFunction m_calculation;
+  bool m_columnHasBeenSet = false;
+  bool m_measureAggregationFunctionHasBeenSet = false;
   bool m_calculationHasBeenSet = false;
 };
 

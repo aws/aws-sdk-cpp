@@ -92,12 +92,12 @@ class AuditContext {
   ///@}
  private:
   Aws::String m_additionalAuditContext;
-  bool m_additionalAuditContextHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requestedColumns;
-  bool m_requestedColumnsHasBeenSet = false;
 
   bool m_allColumnsRequested{false};
+  bool m_additionalAuditContextHasBeenSet = false;
+  bool m_requestedColumnsHasBeenSet = false;
   bool m_allColumnsRequestedHasBeenSet = false;
 };
 

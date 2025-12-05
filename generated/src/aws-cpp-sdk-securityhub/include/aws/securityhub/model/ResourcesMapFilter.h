@@ -66,9 +66,9 @@ class ResourcesMapFilter {
   ///@}
  private:
   ResourcesMapField m_fieldName{ResourcesMapField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   MapFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

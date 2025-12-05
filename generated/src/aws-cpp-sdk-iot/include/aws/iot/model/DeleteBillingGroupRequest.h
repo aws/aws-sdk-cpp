@@ -71,9 +71,9 @@ class DeleteBillingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_billingGroupName;
-  bool m_billingGroupNameHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_billingGroupNameHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

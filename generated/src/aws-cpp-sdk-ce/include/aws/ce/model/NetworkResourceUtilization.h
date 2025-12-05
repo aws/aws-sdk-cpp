@@ -107,15 +107,15 @@ class NetworkResourceUtilization {
   ///@}
  private:
   Aws::String m_networkInBytesPerSecond;
-  bool m_networkInBytesPerSecondHasBeenSet = false;
 
   Aws::String m_networkOutBytesPerSecond;
-  bool m_networkOutBytesPerSecondHasBeenSet = false;
 
   Aws::String m_networkPacketsInPerSecond;
-  bool m_networkPacketsInPerSecondHasBeenSet = false;
 
   Aws::String m_networkPacketsOutPerSecond;
+  bool m_networkInBytesPerSecondHasBeenSet = false;
+  bool m_networkOutBytesPerSecondHasBeenSet = false;
+  bool m_networkPacketsInPerSecondHasBeenSet = false;
   bool m_networkPacketsOutPerSecondHasBeenSet = false;
 };
 

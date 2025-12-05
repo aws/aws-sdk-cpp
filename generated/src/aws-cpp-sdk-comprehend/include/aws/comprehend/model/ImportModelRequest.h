@@ -161,21 +161,21 @@ class ImportModelRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_sourceModelArn;
-  bool m_sourceModelArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_modelKmsKeyId;
-  bool m_modelKmsKeyIdHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourceModelArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_modelKmsKeyIdHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

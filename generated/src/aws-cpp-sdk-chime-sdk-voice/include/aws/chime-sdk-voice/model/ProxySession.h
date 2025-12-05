@@ -280,42 +280,42 @@ class ProxySession {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_proxySessionId;
-  bool m_proxySessionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProxySessionStatus m_status{ProxySessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_expiryMinutes{0};
-  bool m_expiryMinutesHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedTimestamp{};
-  bool m_endedTimestampHasBeenSet = false;
 
   Aws::Vector<Participant> m_participants;
-  bool m_participantsHasBeenSet = false;
 
   NumberSelectionBehavior m_numberSelectionBehavior{NumberSelectionBehavior::NOT_SET};
-  bool m_numberSelectionBehaviorHasBeenSet = false;
 
   GeoMatchLevel m_geoMatchLevel{GeoMatchLevel::NOT_SET};
-  bool m_geoMatchLevelHasBeenSet = false;
 
   GeoMatchParams m_geoMatchParams;
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_proxySessionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_expiryMinutesHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_endedTimestampHasBeenSet = false;
+  bool m_participantsHasBeenSet = false;
+  bool m_numberSelectionBehaviorHasBeenSet = false;
+  bool m_geoMatchLevelHasBeenSet = false;
   bool m_geoMatchParamsHasBeenSet = false;
 };
 

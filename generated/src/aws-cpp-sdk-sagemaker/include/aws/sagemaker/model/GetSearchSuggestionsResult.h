@@ -68,9 +68,9 @@ class GetSearchSuggestionsResult {
   ///@}
  private:
   Aws::Vector<PropertyNameSuggestion> m_propertyNameSuggestions;
-  bool m_propertyNameSuggestionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_propertyNameSuggestionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

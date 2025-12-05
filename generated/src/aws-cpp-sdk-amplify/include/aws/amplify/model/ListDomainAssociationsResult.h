@@ -91,12 +91,12 @@ class ListDomainAssociationsResult {
   ///@}
  private:
   Aws::Vector<DomainAssociation> m_domainAssociations;
-  bool m_domainAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -249,36 +249,36 @@ class ListInsightsMetricDataRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_trailName;
-  bool m_trailNameHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::String m_eventName;
-  bool m_eventNameHasBeenSet = false;
 
   InsightType m_insightType{InsightType::NOT_SET};
-  bool m_insightTypeHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   InsightsMetricDataType m_dataType{InsightsMetricDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_trailNameHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_eventNameHasBeenSet = false;
+  bool m_insightTypeHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

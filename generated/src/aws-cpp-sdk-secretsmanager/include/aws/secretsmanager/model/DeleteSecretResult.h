@@ -97,15 +97,15 @@ class DeleteSecretResult {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionDate{};
-  bool m_deletionDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aRNHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_deletionDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

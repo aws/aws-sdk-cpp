@@ -366,45 +366,45 @@ class CalculateRouteRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_calculatorName;
-  bool m_calculatorNameHasBeenSet = false;
 
   Aws::Vector<double> m_departurePosition;
-  bool m_departurePositionHasBeenSet = false;
 
   Aws::Vector<double> m_destinationPosition;
-  bool m_destinationPositionHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<double>> m_waypointPositions;
-  bool m_waypointPositionsHasBeenSet = false;
 
   TravelMode m_travelMode{TravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_departureTime{};
-  bool m_departureTimeHasBeenSet = false;
 
   bool m_departNow{false};
-  bool m_departNowHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
-  bool m_distanceUnitHasBeenSet = false;
 
   bool m_includeLegGeometry{false};
-  bool m_includeLegGeometryHasBeenSet = false;
 
   CalculateRouteCarModeOptions m_carModeOptions;
-  bool m_carModeOptionsHasBeenSet = false;
 
   CalculateRouteTruckModeOptions m_truckModeOptions;
-  bool m_truckModeOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_arrivalTime{};
-  bool m_arrivalTimeHasBeenSet = false;
 
   OptimizationMode m_optimizeFor{OptimizationMode::NOT_SET};
-  bool m_optimizeForHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_calculatorNameHasBeenSet = false;
+  bool m_departurePositionHasBeenSet = false;
+  bool m_destinationPositionHasBeenSet = false;
+  bool m_waypointPositionsHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_departNowHasBeenSet = false;
+  bool m_distanceUnitHasBeenSet = false;
+  bool m_includeLegGeometryHasBeenSet = false;
+  bool m_carModeOptionsHasBeenSet = false;
+  bool m_truckModeOptionsHasBeenSet = false;
+  bool m_arrivalTimeHasBeenSet = false;
+  bool m_optimizeForHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

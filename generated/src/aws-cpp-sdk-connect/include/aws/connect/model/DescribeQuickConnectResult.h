@@ -60,9 +60,9 @@ class DescribeQuickConnectResult {
   ///@}
  private:
   QuickConnect m_quickConnect;
-  bool m_quickConnectHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quickConnectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

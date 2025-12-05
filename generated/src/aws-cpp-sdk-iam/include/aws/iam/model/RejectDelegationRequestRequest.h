@@ -70,9 +70,9 @@ class RejectDelegationRequestRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_delegationRequestId;
-  bool m_delegationRequestIdHasBeenSet = false;
 
   Aws::String m_notes;
+  bool m_delegationRequestIdHasBeenSet = false;
   bool m_notesHasBeenSet = false;
 };
 

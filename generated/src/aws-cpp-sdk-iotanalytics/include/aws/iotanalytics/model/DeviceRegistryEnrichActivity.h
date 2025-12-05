@@ -125,18 +125,18 @@ class DeviceRegistryEnrichActivity {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_next;
+  bool m_nameHasBeenSet = false;
+  bool m_attributeHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_nextHasBeenSet = false;
 };
 

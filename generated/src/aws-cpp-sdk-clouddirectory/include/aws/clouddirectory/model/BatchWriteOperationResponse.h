@@ -326,48 +326,48 @@ class BatchWriteOperationResponse {
   ///@}
  private:
   BatchCreateObjectResponse m_createObject;
-  bool m_createObjectHasBeenSet = false;
 
   BatchAttachObjectResponse m_attachObject;
-  bool m_attachObjectHasBeenSet = false;
 
   BatchDetachObjectResponse m_detachObject;
-  bool m_detachObjectHasBeenSet = false;
 
   BatchUpdateObjectAttributesResponse m_updateObjectAttributes;
-  bool m_updateObjectAttributesHasBeenSet = false;
 
   BatchDeleteObjectResponse m_deleteObject;
-  bool m_deleteObjectHasBeenSet = false;
 
   BatchAddFacetToObjectResponse m_addFacetToObject;
-  bool m_addFacetToObjectHasBeenSet = false;
 
   BatchRemoveFacetFromObjectResponse m_removeFacetFromObject;
-  bool m_removeFacetFromObjectHasBeenSet = false;
 
   BatchAttachPolicyResponse m_attachPolicy;
-  bool m_attachPolicyHasBeenSet = false;
 
   BatchDetachPolicyResponse m_detachPolicy;
-  bool m_detachPolicyHasBeenSet = false;
 
   BatchCreateIndexResponse m_createIndex;
-  bool m_createIndexHasBeenSet = false;
 
   BatchAttachToIndexResponse m_attachToIndex;
-  bool m_attachToIndexHasBeenSet = false;
 
   BatchDetachFromIndexResponse m_detachFromIndex;
-  bool m_detachFromIndexHasBeenSet = false;
 
   BatchAttachTypedLinkResponse m_attachTypedLink;
-  bool m_attachTypedLinkHasBeenSet = false;
 
   BatchDetachTypedLinkResponse m_detachTypedLink;
-  bool m_detachTypedLinkHasBeenSet = false;
 
   BatchUpdateLinkAttributesResponse m_updateLinkAttributes;
+  bool m_createObjectHasBeenSet = false;
+  bool m_attachObjectHasBeenSet = false;
+  bool m_detachObjectHasBeenSet = false;
+  bool m_updateObjectAttributesHasBeenSet = false;
+  bool m_deleteObjectHasBeenSet = false;
+  bool m_addFacetToObjectHasBeenSet = false;
+  bool m_removeFacetFromObjectHasBeenSet = false;
+  bool m_attachPolicyHasBeenSet = false;
+  bool m_detachPolicyHasBeenSet = false;
+  bool m_createIndexHasBeenSet = false;
+  bool m_attachToIndexHasBeenSet = false;
+  bool m_detachFromIndexHasBeenSet = false;
+  bool m_attachTypedLinkHasBeenSet = false;
+  bool m_detachTypedLinkHasBeenSet = false;
   bool m_updateLinkAttributesHasBeenSet = false;
 };
 

@@ -116,18 +116,18 @@ class UpdateFolderPermissionsResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_folderIdHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

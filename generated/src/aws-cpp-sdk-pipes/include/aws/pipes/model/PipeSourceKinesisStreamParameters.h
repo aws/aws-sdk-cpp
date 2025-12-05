@@ -193,30 +193,30 @@ class PipeSourceKinesisStreamParameters {
   ///@}
  private:
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   DeadLetterConfig m_deadLetterConfig;
-  bool m_deadLetterConfigHasBeenSet = false;
 
   OnPartialBatchItemFailureStreams m_onPartialBatchItemFailure{OnPartialBatchItemFailureStreams::NOT_SET};
-  bool m_onPartialBatchItemFailureHasBeenSet = false;
 
   int m_maximumBatchingWindowInSeconds{0};
-  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
   int m_maximumRecordAgeInSeconds{0};
-  bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
   int m_maximumRetryAttempts{0};
-  bool m_maximumRetryAttemptsHasBeenSet = false;
 
   int m_parallelizationFactor{0};
-  bool m_parallelizationFactorHasBeenSet = false;
 
   KinesisStreamStartPosition m_startingPosition{KinesisStreamStartPosition::NOT_SET};
-  bool m_startingPositionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startingPositionTimestamp{};
+  bool m_batchSizeHasBeenSet = false;
+  bool m_deadLetterConfigHasBeenSet = false;
+  bool m_onPartialBatchItemFailureHasBeenSet = false;
+  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+  bool m_maximumRecordAgeInSecondsHasBeenSet = false;
+  bool m_maximumRetryAttemptsHasBeenSet = false;
+  bool m_parallelizationFactorHasBeenSet = false;
+  bool m_startingPositionHasBeenSet = false;
   bool m_startingPositionTimestampHasBeenSet = false;
 };
 

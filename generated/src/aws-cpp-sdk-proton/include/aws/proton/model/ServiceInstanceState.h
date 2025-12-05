@@ -172,24 +172,24 @@ class ServiceInstanceState {
   ///@}
  private:
   Aws::Vector<Aws::String> m_lastSuccessfulComponentDeploymentIds;
-  bool m_lastSuccessfulComponentDeploymentIdsHasBeenSet = false;
 
   Aws::String m_lastSuccessfulEnvironmentDeploymentId;
-  bool m_lastSuccessfulEnvironmentDeploymentIdHasBeenSet = false;
 
   Aws::String m_lastSuccessfulServicePipelineDeploymentId;
-  bool m_lastSuccessfulServicePipelineDeploymentIdHasBeenSet = false;
 
   Aws::String m_spec;
-  bool m_specHasBeenSet = false;
 
   Aws::String m_templateMajorVersion;
-  bool m_templateMajorVersionHasBeenSet = false;
 
   Aws::String m_templateMinorVersion;
-  bool m_templateMinorVersionHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_lastSuccessfulComponentDeploymentIdsHasBeenSet = false;
+  bool m_lastSuccessfulEnvironmentDeploymentIdHasBeenSet = false;
+  bool m_lastSuccessfulServicePipelineDeploymentIdHasBeenSet = false;
+  bool m_specHasBeenSet = false;
+  bool m_templateMajorVersionHasBeenSet = false;
+  bool m_templateMinorVersionHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

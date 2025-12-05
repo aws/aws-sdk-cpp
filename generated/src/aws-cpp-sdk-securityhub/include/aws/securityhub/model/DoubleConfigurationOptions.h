@@ -79,12 +79,12 @@ class DoubleConfigurationOptions {
   ///@}
  private:
   double m_defaultValue{0.0};
-  bool m_defaultValueHasBeenSet = false;
 
   double m_min{0.0};
-  bool m_minHasBeenSet = false;
 
   double m_max{0.0};
+  bool m_defaultValueHasBeenSet = false;
+  bool m_minHasBeenSet = false;
   bool m_maxHasBeenSet = false;
 };
 

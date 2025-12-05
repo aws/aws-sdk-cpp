@@ -62,9 +62,9 @@ class WcdmaLocalId {
   ///@}
  private:
   int m_uarfcndl{0};
-  bool m_uarfcndlHasBeenSet = false;
 
   int m_psc{0};
+  bool m_uarfcndlHasBeenSet = false;
   bool m_pscHasBeenSet = false;
 };
 

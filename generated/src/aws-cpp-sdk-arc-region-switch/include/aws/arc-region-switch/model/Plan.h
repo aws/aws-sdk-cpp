@@ -314,45 +314,45 @@ class Plan {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Workflow> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   int m_recoveryTimeObjectiveMinutes{0};
-  bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
 
   Aws::Map<Aws::String, AssociatedAlarm> m_associatedAlarms;
-  bool m_associatedAlarmsHasBeenSet = false;
 
   Aws::Vector<Trigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   RecoveryApproach m_recoveryApproach{RecoveryApproach::NOT_SET};
-  bool m_recoveryApproachHasBeenSet = false;
 
   Aws::String m_primaryRegion;
-  bool m_primaryRegionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_workflowsHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
+  bool m_associatedAlarmsHasBeenSet = false;
+  bool m_triggersHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_recoveryApproachHasBeenSet = false;
+  bool m_primaryRegionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

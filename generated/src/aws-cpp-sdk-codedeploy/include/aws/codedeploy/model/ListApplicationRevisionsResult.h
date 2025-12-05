@@ -92,12 +92,12 @@ class ListApplicationRevisionsResult {
   ///@}
  private:
   Aws::Vector<RevisionLocation> m_revisions;
-  bool m_revisionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_revisionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

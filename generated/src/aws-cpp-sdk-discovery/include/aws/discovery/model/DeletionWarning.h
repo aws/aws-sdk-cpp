@@ -86,12 +86,12 @@ class DeletionWarning {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   int m_warningCode{0};
-  bool m_warningCodeHasBeenSet = false;
 
   Aws::String m_warningText;
+  bool m_configurationIdHasBeenSet = false;
+  bool m_warningCodeHasBeenSet = false;
   bool m_warningTextHasBeenSet = false;
 };
 

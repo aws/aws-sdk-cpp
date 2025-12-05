@@ -79,9 +79,9 @@ class UntagResourceRequest : public ARCRegionswitchRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTagKeys;
+  bool m_arnHasBeenSet = false;
   bool m_resourceTagKeysHasBeenSet = false;
 };
 

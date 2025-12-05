@@ -62,9 +62,9 @@ class CreateCallAnalyticsCategoryResult {
   ///@}
  private:
   CategoryProperties m_categoryProperties;
-  bool m_categoryPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_categoryPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

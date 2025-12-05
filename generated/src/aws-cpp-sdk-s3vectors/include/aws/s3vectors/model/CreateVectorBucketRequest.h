@@ -101,12 +101,12 @@ class CreateVectorBucketRequest : public S3VectorsRequest {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

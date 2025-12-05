@@ -62,9 +62,9 @@ class StartWebAuthnRegistrationResult {
   ///@}
  private:
   Aws::Utils::Document m_credentialCreationOptions;
-  bool m_credentialCreationOptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_credentialCreationOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

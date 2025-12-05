@@ -90,12 +90,12 @@ class ListBotsResult {
   ///@}
  private:
   Aws::Vector<BotSummary> m_botSummaries;
-  bool m_botSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateCustomLogSourceResult {
   ///@}
  private:
   CustomLogSourceResource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

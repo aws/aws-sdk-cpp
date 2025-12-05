@@ -181,24 +181,24 @@ class Schedule {
   ///@}
  private:
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   CampaignEventFilter m_eventFilter;
-  bool m_eventFilterHasBeenSet = false;
 
   Frequency m_frequency{Frequency::NOT_SET};
-  bool m_frequencyHasBeenSet = false;
 
   bool m_isLocalTime{false};
-  bool m_isLocalTimeHasBeenSet = false;
 
   QuietTime m_quietTime;
-  bool m_quietTimeHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_timezone;
+  bool m_endTimeHasBeenSet = false;
+  bool m_eventFilterHasBeenSet = false;
+  bool m_frequencyHasBeenSet = false;
+  bool m_isLocalTimeHasBeenSet = false;
+  bool m_quietTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_timezoneHasBeenSet = false;
 };
 

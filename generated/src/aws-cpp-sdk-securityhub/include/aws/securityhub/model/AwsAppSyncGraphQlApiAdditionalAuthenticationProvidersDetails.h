@@ -110,15 +110,15 @@ class AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
   ///@}
  private:
   Aws::String m_authenticationType;
-  bool m_authenticationTypeHasBeenSet = false;
 
   AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails m_lambdaAuthorizerConfig;
-  bool m_lambdaAuthorizerConfigHasBeenSet = false;
 
   AwsAppSyncGraphQlApiOpenIdConnectConfigDetails m_openIdConnectConfig;
-  bool m_openIdConnectConfigHasBeenSet = false;
 
   AwsAppSyncGraphQlApiUserPoolConfigDetails m_userPoolConfig;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_lambdaAuthorizerConfigHasBeenSet = false;
+  bool m_openIdConnectConfigHasBeenSet = false;
   bool m_userPoolConfigHasBeenSet = false;
 };
 

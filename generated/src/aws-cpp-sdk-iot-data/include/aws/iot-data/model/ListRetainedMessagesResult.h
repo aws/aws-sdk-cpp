@@ -86,12 +86,12 @@ class ListRetainedMessagesResult {
   ///@}
  private:
   Aws::Vector<RetainedMessageSummary> m_retainedTopics;
-  bool m_retainedTopicsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retainedTopicsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

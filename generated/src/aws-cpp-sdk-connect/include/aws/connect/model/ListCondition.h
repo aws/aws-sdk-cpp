@@ -77,9 +77,9 @@ class ListCondition {
   ///@}
  private:
   TargetListType m_targetListType{TargetListType::NOT_SET};
-  bool m_targetListTypeHasBeenSet = false;
 
   Aws::Vector<Condition> m_conditions;
+  bool m_targetListTypeHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

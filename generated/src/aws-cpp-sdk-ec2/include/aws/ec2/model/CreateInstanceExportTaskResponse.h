@@ -60,9 +60,9 @@ class CreateInstanceExportTaskResponse {
   ///@}
  private:
   ExportTask m_exportTask;
-  bool m_exportTaskHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_exportTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

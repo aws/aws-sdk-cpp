@@ -140,21 +140,21 @@ class UpdateAccountPoolRequest : public DataZoneRequest {
   ///@}
  private:
   AccountSource m_accountSource;
-  bool m_accountSourceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResolutionStrategy m_resolutionStrategy{ResolutionStrategy::NOT_SET};
+  bool m_accountSourceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_resolutionStrategyHasBeenSet = false;
 };
 

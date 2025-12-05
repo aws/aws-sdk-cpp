@@ -94,12 +94,12 @@ class Filter {
   ///@}
  private:
   FilterBehavior m_behavior{FilterBehavior::NOT_SET};
-  bool m_behaviorHasBeenSet = false;
 
   FilterRequirement m_requirement{FilterRequirement::NOT_SET};
-  bool m_requirementHasBeenSet = false;
 
   Aws::Vector<Condition> m_conditions;
+  bool m_behaviorHasBeenSet = false;
+  bool m_requirementHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

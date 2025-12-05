@@ -221,33 +221,33 @@ class LongTermPricingListEntry {
   ///@}
  private:
   Aws::String m_longTermPricingId;
-  bool m_longTermPricingIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_longTermPricingEndDate{};
-  bool m_longTermPricingEndDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_longTermPricingStartDate{};
-  bool m_longTermPricingStartDateHasBeenSet = false;
 
   LongTermPricingType m_longTermPricingType{LongTermPricingType::NOT_SET};
-  bool m_longTermPricingTypeHasBeenSet = false;
 
   Aws::String m_currentActiveJob;
-  bool m_currentActiveJobHasBeenSet = false;
 
   Aws::String m_replacementJob;
-  bool m_replacementJobHasBeenSet = false;
 
   bool m_isLongTermPricingAutoRenew{false};
-  bool m_isLongTermPricingAutoRenewHasBeenSet = false;
 
   Aws::String m_longTermPricingStatus;
-  bool m_longTermPricingStatusHasBeenSet = false;
 
   SnowballType m_snowballType{SnowballType::NOT_SET};
-  bool m_snowballTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_jobIds;
+  bool m_longTermPricingIdHasBeenSet = false;
+  bool m_longTermPricingEndDateHasBeenSet = false;
+  bool m_longTermPricingStartDateHasBeenSet = false;
+  bool m_longTermPricingTypeHasBeenSet = false;
+  bool m_currentActiveJobHasBeenSet = false;
+  bool m_replacementJobHasBeenSet = false;
+  bool m_isLongTermPricingAutoRenewHasBeenSet = false;
+  bool m_longTermPricingStatusHasBeenSet = false;
+  bool m_snowballTypeHasBeenSet = false;
   bool m_jobIdsHasBeenSet = false;
 };
 

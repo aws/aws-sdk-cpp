@@ -106,15 +106,15 @@ class CreateSubscriptionRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   SubscriptionPrincipal m_principal;
-  bool m_principalHasBeenSet = false;
 
   SubscriptionType m_type{SubscriptionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

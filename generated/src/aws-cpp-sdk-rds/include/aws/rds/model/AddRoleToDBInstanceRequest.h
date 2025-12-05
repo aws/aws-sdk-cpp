@@ -91,12 +91,12 @@ class AddRoleToDBInstanceRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_featureName;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_featureNameHasBeenSet = false;
 };
 

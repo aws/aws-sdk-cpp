@@ -131,18 +131,18 @@ class ComputeLimits {
   ///@}
  private:
   ComputeLimitsUnitType m_unitType{ComputeLimitsUnitType::NOT_SET};
-  bool m_unitTypeHasBeenSet = false;
 
   int m_minimumCapacityUnits{0};
-  bool m_minimumCapacityUnitsHasBeenSet = false;
 
   int m_maximumCapacityUnits{0};
-  bool m_maximumCapacityUnitsHasBeenSet = false;
 
   int m_maximumOnDemandCapacityUnits{0};
-  bool m_maximumOnDemandCapacityUnitsHasBeenSet = false;
 
   int m_maximumCoreCapacityUnits{0};
+  bool m_unitTypeHasBeenSet = false;
+  bool m_minimumCapacityUnitsHasBeenSet = false;
+  bool m_maximumCapacityUnitsHasBeenSet = false;
+  bool m_maximumOnDemandCapacityUnitsHasBeenSet = false;
   bool m_maximumCoreCapacityUnitsHasBeenSet = false;
 };
 

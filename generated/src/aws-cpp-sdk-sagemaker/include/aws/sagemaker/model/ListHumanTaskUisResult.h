@@ -84,12 +84,12 @@ class ListHumanTaskUisResult {
   ///@}
  private:
   Aws::Vector<HumanTaskUiSummary> m_humanTaskUiSummaries;
-  bool m_humanTaskUiSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_humanTaskUiSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

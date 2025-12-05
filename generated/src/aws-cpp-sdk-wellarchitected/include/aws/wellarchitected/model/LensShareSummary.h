@@ -97,15 +97,15 @@ class LensShareSummary {
   ///@}
  private:
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   Aws::String m_sharedWith;
-  bool m_sharedWithHasBeenSet = false;
 
   ShareStatus m_status{ShareStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_shareIdHasBeenSet = false;
+  bool m_sharedWithHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

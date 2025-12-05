@@ -145,24 +145,24 @@ class InvokeResult {
   ///@}
  private:
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_functionError;
-  bool m_functionErrorHasBeenSet = false;
 
   Aws::String m_logResult;
-  bool m_logResultHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_payload{};
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_executedVersion;
-  bool m_executedVersionHasBeenSet = false;
 
   Aws::String m_durableExecutionArn;
-  bool m_durableExecutionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_functionErrorHasBeenSet = false;
+  bool m_logResultHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_executedVersionHasBeenSet = false;
+  bool m_durableExecutionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

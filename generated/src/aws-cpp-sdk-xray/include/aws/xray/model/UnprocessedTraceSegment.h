@@ -87,12 +87,12 @@ class UnprocessedTraceSegment {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_idHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

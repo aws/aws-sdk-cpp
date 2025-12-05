@@ -109,12 +109,12 @@ class RouteAnalysisCompletion {
   ///@}
  private:
   RouteAnalysisCompletionResultCode m_resultCode{RouteAnalysisCompletionResultCode::NOT_SET};
-  bool m_resultCodeHasBeenSet = false;
 
   RouteAnalysisCompletionReasonCode m_reasonCode{RouteAnalysisCompletionReasonCode::NOT_SET};
-  bool m_reasonCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_reasonContext;
+  bool m_resultCodeHasBeenSet = false;
+  bool m_reasonCodeHasBeenSet = false;
   bool m_reasonContextHasBeenSet = false;
 };
 

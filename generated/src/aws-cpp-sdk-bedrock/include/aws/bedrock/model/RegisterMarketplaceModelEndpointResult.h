@@ -60,9 +60,9 @@ class RegisterMarketplaceModelEndpointResult {
   ///@}
  private:
   MarketplaceModelEndpoint m_marketplaceModelEndpoint;
-  bool m_marketplaceModelEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_marketplaceModelEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

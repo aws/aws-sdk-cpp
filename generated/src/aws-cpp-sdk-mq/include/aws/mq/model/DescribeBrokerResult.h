@@ -671,105 +671,105 @@ class DescribeBrokerResult {
   ///@}
  private:
   Aws::Vector<ActionRequired> m_actionsRequired;
-  bool m_actionsRequiredHasBeenSet = false;
 
   AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
-  bool m_authenticationStrategyHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_brokerArn;
-  bool m_brokerArnHasBeenSet = false;
 
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   Aws::Vector<BrokerInstance> m_brokerInstances;
-  bool m_brokerInstancesHasBeenSet = false;
 
   Aws::String m_brokerName;
-  bool m_brokerNameHasBeenSet = false;
 
   BrokerState m_brokerState{BrokerState::NOT_SET};
-  bool m_brokerStateHasBeenSet = false;
 
   Configurations m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
-  bool m_deploymentModeHasBeenSet = false;
 
   EncryptionOptions m_encryptionOptions;
-  bool m_encryptionOptionsHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_hostInstanceType;
-  bool m_hostInstanceTypeHasBeenSet = false;
 
   LdapServerMetadataOutput m_ldapServerMetadata;
-  bool m_ldapServerMetadataHasBeenSet = false;
 
   LogsSummary m_logs;
-  bool m_logsHasBeenSet = false;
 
   WeeklyStartTime m_maintenanceWindowStartTime;
-  bool m_maintenanceWindowStartTimeHasBeenSet = false;
 
   AuthenticationStrategy m_pendingAuthenticationStrategy{AuthenticationStrategy::NOT_SET};
-  bool m_pendingAuthenticationStrategyHasBeenSet = false;
 
   Aws::String m_pendingEngineVersion;
-  bool m_pendingEngineVersionHasBeenSet = false;
 
   Aws::String m_pendingHostInstanceType;
-  bool m_pendingHostInstanceTypeHasBeenSet = false;
 
   LdapServerMetadataOutput m_pendingLdapServerMetadata;
-  bool m_pendingLdapServerMetadataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pendingSecurityGroups;
-  bool m_pendingSecurityGroupsHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   BrokerStorageType m_storageType{BrokerStorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<UserSummary> m_users;
-  bool m_usersHasBeenSet = false;
 
   DataReplicationMetadataOutput m_dataReplicationMetadata;
-  bool m_dataReplicationMetadataHasBeenSet = false;
 
   DataReplicationMode m_dataReplicationMode{DataReplicationMode::NOT_SET};
-  bool m_dataReplicationModeHasBeenSet = false;
 
   DataReplicationMetadataOutput m_pendingDataReplicationMetadata;
-  bool m_pendingDataReplicationMetadataHasBeenSet = false;
 
   DataReplicationMode m_pendingDataReplicationMode{DataReplicationMode::NOT_SET};
-  bool m_pendingDataReplicationModeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionsRequiredHasBeenSet = false;
+  bool m_authenticationStrategyHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_brokerArnHasBeenSet = false;
+  bool m_brokerIdHasBeenSet = false;
+  bool m_brokerInstancesHasBeenSet = false;
+  bool m_brokerNameHasBeenSet = false;
+  bool m_brokerStateHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_deploymentModeHasBeenSet = false;
+  bool m_encryptionOptionsHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_hostInstanceTypeHasBeenSet = false;
+  bool m_ldapServerMetadataHasBeenSet = false;
+  bool m_logsHasBeenSet = false;
+  bool m_maintenanceWindowStartTimeHasBeenSet = false;
+  bool m_pendingAuthenticationStrategyHasBeenSet = false;
+  bool m_pendingEngineVersionHasBeenSet = false;
+  bool m_pendingHostInstanceTypeHasBeenSet = false;
+  bool m_pendingLdapServerMetadataHasBeenSet = false;
+  bool m_pendingSecurityGroupsHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_usersHasBeenSet = false;
+  bool m_dataReplicationMetadataHasBeenSet = false;
+  bool m_dataReplicationModeHasBeenSet = false;
+  bool m_pendingDataReplicationMetadataHasBeenSet = false;
+  bool m_pendingDataReplicationModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -118,12 +118,12 @@ class LambdaAction {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   InvocationType m_invocationType{InvocationType::NOT_SET};
+  bool m_topicArnHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
   bool m_invocationTypeHasBeenSet = false;
 };
 

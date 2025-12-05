@@ -74,9 +74,9 @@ class BedrockFoundationModelContextEnrichmentConfiguration {
   ///@}
  private:
   EnrichmentStrategyConfiguration m_enrichmentStrategyConfiguration;
-  bool m_enrichmentStrategyConfigurationHasBeenSet = false;
 
   Aws::String m_modelArn;
+  bool m_enrichmentStrategyConfigurationHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
 };
 

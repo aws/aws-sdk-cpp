@@ -163,21 +163,21 @@ class Mapping {
   ///@}
  private:
   Aws::String m_toKey;
-  bool m_toKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fromPath;
-  bool m_fromPathHasBeenSet = false;
 
   Aws::String m_fromType;
-  bool m_fromTypeHasBeenSet = false;
 
   Aws::String m_toType;
-  bool m_toTypeHasBeenSet = false;
 
   bool m_dropped{false};
-  bool m_droppedHasBeenSet = false;
 
   Aws::Vector<Mapping> m_children;
+  bool m_toKeyHasBeenSet = false;
+  bool m_fromPathHasBeenSet = false;
+  bool m_fromTypeHasBeenSet = false;
+  bool m_toTypeHasBeenSet = false;
+  bool m_droppedHasBeenSet = false;
   bool m_childrenHasBeenSet = false;
 };
 

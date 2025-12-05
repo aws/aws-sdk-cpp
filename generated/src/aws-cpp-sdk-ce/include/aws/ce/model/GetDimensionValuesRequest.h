@@ -310,30 +310,30 @@ class GetDimensionValuesRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_searchString;
-  bool m_searchStringHasBeenSet = false;
 
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Dimension m_dimension{Dimension::NOT_SET};
-  bool m_dimensionHasBeenSet = false;
 
   Context m_context{Context::NOT_SET};
-  bool m_contextHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<SortDefinition> m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
+  bool m_searchStringHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_billingViewArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
 };
 

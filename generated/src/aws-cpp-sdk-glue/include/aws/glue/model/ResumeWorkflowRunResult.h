@@ -84,12 +84,12 @@ class ResumeWorkflowRunResult {
   ///@}
  private:
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeIds;
-  bool m_nodeIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runIdHasBeenSet = false;
+  bool m_nodeIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DistributionResourceId {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::String m_distributionTenantId;
+  bool m_distributionIdHasBeenSet = false;
   bool m_distributionTenantIdHasBeenSet = false;
 };
 

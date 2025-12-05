@@ -92,12 +92,12 @@ class SalesforceSourceConfiguration {
   ///@}
  private:
   Aws::String m_hostUrl;
-  bool m_hostUrlHasBeenSet = false;
 
   SalesforceAuthType m_authType{SalesforceAuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
+  bool m_hostUrlHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
   bool m_credentialsSecretArnHasBeenSet = false;
 };
 

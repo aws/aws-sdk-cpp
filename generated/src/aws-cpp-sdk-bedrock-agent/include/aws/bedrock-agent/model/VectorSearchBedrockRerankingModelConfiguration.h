@@ -82,9 +82,9 @@ class VectorSearchBedrockRerankingModelConfiguration {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
+  bool m_modelArnHasBeenSet = false;
   bool m_additionalModelRequestFieldsHasBeenSet = false;
 };
 

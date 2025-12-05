@@ -70,9 +70,9 @@ class TopicRangeFilterConstant {
   ///@}
  private:
   ConstantType m_constantType{ConstantType::NOT_SET};
-  bool m_constantTypeHasBeenSet = false;
 
   RangeConstant m_rangeConstant;
+  bool m_constantTypeHasBeenSet = false;
   bool m_rangeConstantHasBeenSet = false;
 };
 

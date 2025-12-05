@@ -68,9 +68,9 @@ class SourceServerConnectorAction {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
+  bool m_connectorArnHasBeenSet = false;
   bool m_credentialsSecretArnHasBeenSet = false;
 };
 

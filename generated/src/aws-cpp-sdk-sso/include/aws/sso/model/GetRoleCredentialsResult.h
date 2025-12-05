@@ -60,9 +60,9 @@ class GetRoleCredentialsResult {
   ///@}
  private:
   RoleCredentials m_roleCredentials;
-  bool m_roleCredentialsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleCredentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

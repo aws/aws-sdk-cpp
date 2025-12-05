@@ -78,12 +78,12 @@ class CountPendingActivityTasksResult {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   bool m_truncated{false};
-  bool m_truncatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_countHasBeenSet = false;
+  bool m_truncatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

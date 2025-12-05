@@ -75,9 +75,9 @@ class RemoveEndpointsRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::Vector<EndpointIdentifier> m_endpointIdentifiers;
-  bool m_endpointIdentifiersHasBeenSet = false;
 
   Aws::String m_endpointGroupArn;
+  bool m_endpointIdentifiersHasBeenSet = false;
   bool m_endpointGroupArnHasBeenSet = false;
 };
 

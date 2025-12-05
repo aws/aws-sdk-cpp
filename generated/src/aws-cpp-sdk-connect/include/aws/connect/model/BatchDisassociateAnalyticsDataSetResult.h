@@ -91,12 +91,12 @@ class BatchDisassociateAnalyticsDataSetResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deleted;
-  bool m_deletedHasBeenSet = false;
 
   Aws::Vector<ErrorResult> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletedHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

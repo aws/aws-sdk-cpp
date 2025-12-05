@@ -96,12 +96,12 @@ class CreateCoipPoolRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_localGatewayRouteTableId;
-  bool m_localGatewayRouteTableIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayRouteTableIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

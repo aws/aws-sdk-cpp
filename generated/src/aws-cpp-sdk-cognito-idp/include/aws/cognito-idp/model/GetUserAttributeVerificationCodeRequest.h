@@ -120,12 +120,12 @@ class GetUserAttributeVerificationCodeRequest : public CognitoIdentityProviderRe
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class SameSheetTargetVisualConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_targetVisuals;
-  bool m_targetVisualsHasBeenSet = false;
 
   TargetVisualOptions m_targetVisualOptions{TargetVisualOptions::NOT_SET};
+  bool m_targetVisualsHasBeenSet = false;
   bool m_targetVisualOptionsHasBeenSet = false;
 };
 

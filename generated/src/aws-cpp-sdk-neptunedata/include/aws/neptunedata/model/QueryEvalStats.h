@@ -99,15 +99,15 @@ class QueryEvalStats {
   ///@}
  private:
   int m_waited{0};
-  bool m_waitedHasBeenSet = false;
 
   int m_elapsed{0};
-  bool m_elapsedHasBeenSet = false;
 
   bool m_cancelled{false};
-  bool m_cancelledHasBeenSet = false;
 
   Aws::Utils::Document m_subqueries;
+  bool m_waitedHasBeenSet = false;
+  bool m_elapsedHasBeenSet = false;
+  bool m_cancelledHasBeenSet = false;
   bool m_subqueriesHasBeenSet = false;
 };
 

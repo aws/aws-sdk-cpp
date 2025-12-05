@@ -73,12 +73,12 @@ class DescribeGroupMembershipResult {
   ///@}
  private:
   GroupMember m_groupMember;
-  bool m_groupMemberHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_groupMemberHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -445,63 +445,63 @@ class Workspace {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_ipv6Address;
-  bool m_ipv6AddressHasBeenSet = false;
 
   WorkspaceState m_state{WorkspaceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_computerName;
-  bool m_computerNameHasBeenSet = false;
 
   Aws::String m_volumeEncryptionKey;
-  bool m_volumeEncryptionKeyHasBeenSet = false;
 
   bool m_userVolumeEncryptionEnabled{false};
-  bool m_userVolumeEncryptionEnabledHasBeenSet = false;
 
   bool m_rootVolumeEncryptionEnabled{false};
-  bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
 
   Aws::String m_workspaceName;
-  bool m_workspaceNameHasBeenSet = false;
 
   WorkspaceProperties m_workspaceProperties;
-  bool m_workspacePropertiesHasBeenSet = false;
 
   Aws::Vector<ModificationState> m_modificationStates;
-  bool m_modificationStatesHasBeenSet = false;
 
   Aws::Vector<RelatedWorkspaceProperties> m_relatedWorkspaces;
-  bool m_relatedWorkspacesHasBeenSet = false;
 
   DataReplicationSettings m_dataReplicationSettings;
-  bool m_dataReplicationSettingsHasBeenSet = false;
 
   Aws::Vector<StandbyWorkspacesProperties> m_standbyWorkspacesProperties;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_ipv6AddressHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_computerNameHasBeenSet = false;
+  bool m_volumeEncryptionKeyHasBeenSet = false;
+  bool m_userVolumeEncryptionEnabledHasBeenSet = false;
+  bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
+  bool m_workspacePropertiesHasBeenSet = false;
+  bool m_modificationStatesHasBeenSet = false;
+  bool m_relatedWorkspacesHasBeenSet = false;
+  bool m_dataReplicationSettingsHasBeenSet = false;
   bool m_standbyWorkspacesPropertiesHasBeenSet = false;
 };
 

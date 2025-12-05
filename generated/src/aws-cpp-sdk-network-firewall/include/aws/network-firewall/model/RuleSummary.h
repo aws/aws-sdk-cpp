@@ -90,12 +90,12 @@ class RuleSummary {
   ///@}
  private:
   Aws::String m_sID;
-  bool m_sIDHasBeenSet = false;
 
   Aws::String m_msg;
-  bool m_msgHasBeenSet = false;
 
   Aws::String m_metadata;
+  bool m_sIDHasBeenSet = false;
+  bool m_msgHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

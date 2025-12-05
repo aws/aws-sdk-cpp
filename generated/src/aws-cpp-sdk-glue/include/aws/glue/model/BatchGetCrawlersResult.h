@@ -90,12 +90,12 @@ class BatchGetCrawlersResult {
   ///@}
  private:
   Aws::Vector<Crawler> m_crawlers;
-  bool m_crawlersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_crawlersNotFound;
-  bool m_crawlersNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crawlersHasBeenSet = false;
+  bool m_crawlersNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

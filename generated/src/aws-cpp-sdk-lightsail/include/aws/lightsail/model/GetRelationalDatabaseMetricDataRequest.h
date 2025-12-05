@@ -217,24 +217,24 @@ class GetRelationalDatabaseMetricDataRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   RelationalDatabaseMetricName m_metricName{RelationalDatabaseMetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   MetricUnit m_unit{MetricUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   Aws::Vector<MetricStatistic> m_statistics;
+  bool m_relationalDatabaseNameHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
 };
 

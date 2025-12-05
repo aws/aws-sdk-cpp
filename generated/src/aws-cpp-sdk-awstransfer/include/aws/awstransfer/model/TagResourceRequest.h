@@ -78,9 +78,9 @@ class TagResourceRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

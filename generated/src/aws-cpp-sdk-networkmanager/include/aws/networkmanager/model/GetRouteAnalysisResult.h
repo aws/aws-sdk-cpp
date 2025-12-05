@@ -60,9 +60,9 @@ class GetRouteAnalysisResult {
   ///@}
  private:
   RouteAnalysis m_routeAnalysis;
-  bool m_routeAnalysisHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routeAnalysisHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

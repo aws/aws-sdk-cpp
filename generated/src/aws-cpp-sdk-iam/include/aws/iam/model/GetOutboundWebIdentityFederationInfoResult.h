@@ -83,12 +83,12 @@ class GetOutboundWebIdentityFederationInfoResult {
   ///@}
  private:
   Aws::String m_issuerIdentifier;
-  bool m_issuerIdentifierHasBeenSet = false;
 
   bool m_jwtVendingEnabled{false};
-  bool m_jwtVendingEnabledHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_issuerIdentifierHasBeenSet = false;
+  bool m_jwtVendingEnabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

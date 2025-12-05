@@ -114,15 +114,15 @@ class RegisterClusterRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConnectorConfigRequest m_connectorConfig;
-  bool m_connectorConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_connectorConfigHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

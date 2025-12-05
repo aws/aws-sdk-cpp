@@ -80,9 +80,9 @@ class DetachLoadBalancerFromSubnetsRequest : public ElasticLoadBalancingRequest 
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_subnetsHasBeenSet = false;
 };
 

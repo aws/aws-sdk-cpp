@@ -288,36 +288,36 @@ class StartBackupJobRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_logicallyAirGappedBackupVaultArn;
-  bool m_logicallyAirGappedBackupVaultArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   long long m_startWindowMinutes{0};
-  bool m_startWindowMinutesHasBeenSet = false;
 
   long long m_completeWindowMinutes{0};
-  bool m_completeWindowMinutesHasBeenSet = false;
 
   Lifecycle m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
-  bool m_recoveryPointTagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_backupOptions;
-  bool m_backupOptionsHasBeenSet = false;
 
   Index m_index{Index::NOT_SET};
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_logicallyAirGappedBackupVaultArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
+  bool m_startWindowMinutesHasBeenSet = false;
+  bool m_completeWindowMinutesHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_recoveryPointTagsHasBeenSet = false;
+  bool m_backupOptionsHasBeenSet = false;
   bool m_indexHasBeenSet = false;
 };
 

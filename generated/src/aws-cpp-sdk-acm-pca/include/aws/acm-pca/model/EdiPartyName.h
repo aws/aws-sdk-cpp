@@ -70,9 +70,9 @@ class EdiPartyName {
   ///@}
  private:
   Aws::String m_partyName;
-  bool m_partyNameHasBeenSet = false;
 
   Aws::String m_nameAssigner;
+  bool m_partyNameHasBeenSet = false;
   bool m_nameAssignerHasBeenSet = false;
 };
 

@@ -222,33 +222,33 @@ class DynamoDBAction {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_hashKeyField;
-  bool m_hashKeyFieldHasBeenSet = false;
 
   Aws::String m_hashKeyValue;
-  bool m_hashKeyValueHasBeenSet = false;
 
   DynamoKeyType m_hashKeyType{DynamoKeyType::NOT_SET};
-  bool m_hashKeyTypeHasBeenSet = false;
 
   Aws::String m_rangeKeyField;
-  bool m_rangeKeyFieldHasBeenSet = false;
 
   Aws::String m_rangeKeyValue;
-  bool m_rangeKeyValueHasBeenSet = false;
 
   DynamoKeyType m_rangeKeyType{DynamoKeyType::NOT_SET};
-  bool m_rangeKeyTypeHasBeenSet = false;
 
   Aws::String m_payloadField;
+  bool m_tableNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_hashKeyFieldHasBeenSet = false;
+  bool m_hashKeyValueHasBeenSet = false;
+  bool m_hashKeyTypeHasBeenSet = false;
+  bool m_rangeKeyFieldHasBeenSet = false;
+  bool m_rangeKeyValueHasBeenSet = false;
+  bool m_rangeKeyTypeHasBeenSet = false;
   bool m_payloadFieldHasBeenSet = false;
 };
 

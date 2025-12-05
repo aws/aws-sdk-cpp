@@ -87,12 +87,12 @@ class ListCisScanResultsAggregatedByTargetResourceResult {
   ///@}
  private:
   Aws::Vector<CisTargetResourceAggregation> m_targetResourceAggregations;
-  bool m_targetResourceAggregationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetResourceAggregationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

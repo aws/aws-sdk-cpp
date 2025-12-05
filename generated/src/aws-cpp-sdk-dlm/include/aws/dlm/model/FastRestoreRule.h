@@ -110,15 +110,15 @@ class FastRestoreRule {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   RetentionIntervalUnitValues m_intervalUnit{RetentionIntervalUnitValues::NOT_SET};
-  bool m_intervalUnitHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
+  bool m_countHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_intervalUnitHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
 };
 

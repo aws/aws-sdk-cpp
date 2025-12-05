@@ -61,9 +61,9 @@ class DescribeValidDBInstanceModificationsResult {
   ///@}
  private:
   ValidDBInstanceModificationsMessage m_validDBInstanceModificationsMessage;
-  bool m_validDBInstanceModificationsMessageHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_validDBInstanceModificationsMessageHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

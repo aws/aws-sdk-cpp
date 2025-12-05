@@ -84,9 +84,9 @@ class TimeSeriesTransformation {
   ///@}
  private:
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<TimeSeriesCondition> m_timeSeriesConditions;
+  bool m_actionHasBeenSet = false;
   bool m_timeSeriesConditionsHasBeenSet = false;
 };
 

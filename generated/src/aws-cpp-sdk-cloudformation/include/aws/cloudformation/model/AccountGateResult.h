@@ -101,9 +101,9 @@ class AccountGateResult {
   ///@}
  private:
   AccountGateStatus m_status{AccountGateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

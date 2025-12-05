@@ -114,15 +114,15 @@ class DescribeOptOutListsRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_optOutListNames;
-  bool m_optOutListNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Owner m_owner{Owner::NOT_SET};
+  bool m_optOutListNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

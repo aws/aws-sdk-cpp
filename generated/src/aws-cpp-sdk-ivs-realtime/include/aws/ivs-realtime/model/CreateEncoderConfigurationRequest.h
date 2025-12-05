@@ -98,12 +98,12 @@ class CreateEncoderConfigurationRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Video m_video;
-  bool m_videoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

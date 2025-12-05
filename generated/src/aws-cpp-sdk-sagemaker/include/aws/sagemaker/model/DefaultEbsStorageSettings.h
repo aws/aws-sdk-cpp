@@ -62,9 +62,9 @@ class DefaultEbsStorageSettings {
   ///@}
  private:
   int m_defaultEbsVolumeSizeInGb{0};
-  bool m_defaultEbsVolumeSizeInGbHasBeenSet = false;
 
   int m_maximumEbsVolumeSizeInGb{0};
+  bool m_defaultEbsVolumeSizeInGbHasBeenSet = false;
   bool m_maximumEbsVolumeSizeInGbHasBeenSet = false;
 };
 

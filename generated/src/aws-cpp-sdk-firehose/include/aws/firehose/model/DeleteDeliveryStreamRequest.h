@@ -72,9 +72,9 @@ class DeleteDeliveryStreamRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   bool m_allowForceDelete{false};
+  bool m_deliveryStreamNameHasBeenSet = false;
   bool m_allowForceDeleteHasBeenSet = false;
 };
 

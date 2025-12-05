@@ -103,15 +103,15 @@ class ListResourcesForTagOptionRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_tagOptionId;
-  bool m_tagOptionIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_tagOptionIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

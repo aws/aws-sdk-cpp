@@ -123,15 +123,15 @@ class CreateGeofenceCollectionRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_collectionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

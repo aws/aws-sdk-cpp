@@ -58,9 +58,9 @@ class UpdateApnsVoipSandboxChannelResult {
   ///@}
  private:
   APNSVoipSandboxChannelResponse m_aPNSVoipSandboxChannelResponse;
-  bool m_aPNSVoipSandboxChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aPNSVoipSandboxChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

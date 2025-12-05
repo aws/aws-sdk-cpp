@@ -71,9 +71,9 @@ class ActionExecutionFilter {
   ///@}
  private:
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   LatestInPipelineExecutionFilter m_latestInPipelineExecution;
+  bool m_pipelineExecutionIdHasBeenSet = false;
   bool m_latestInPipelineExecutionHasBeenSet = false;
 };
 

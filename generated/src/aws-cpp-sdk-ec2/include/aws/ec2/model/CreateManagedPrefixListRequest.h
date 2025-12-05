@@ -179,24 +179,24 @@ class CreateManagedPrefixListRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_prefixListName;
-  bool m_prefixListNameHasBeenSet = false;
 
   Aws::Vector<AddPrefixListEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   int m_maxEntries{0};
-  bool m_maxEntriesHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_addressFamily;
-  bool m_addressFamilyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_dryRunHasBeenSet = false;
+  bool m_prefixListNameHasBeenSet = false;
+  bool m_entriesHasBeenSet = false;
+  bool m_maxEntriesHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

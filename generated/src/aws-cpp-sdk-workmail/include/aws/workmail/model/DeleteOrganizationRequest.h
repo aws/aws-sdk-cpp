@@ -119,18 +119,18 @@ class DeleteOrganizationRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   bool m_deleteDirectory{false};
-  bool m_deleteDirectoryHasBeenSet = false;
 
   bool m_forceDelete{false};
-  bool m_forceDeleteHasBeenSet = false;
 
   bool m_deleteIdentityCenterApplication{false};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_deleteDirectoryHasBeenSet = false;
+  bool m_forceDeleteHasBeenSet = false;
   bool m_deleteIdentityCenterApplicationHasBeenSet = false;
 };
 

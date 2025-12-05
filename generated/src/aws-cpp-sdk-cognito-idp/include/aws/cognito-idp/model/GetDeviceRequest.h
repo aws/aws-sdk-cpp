@@ -72,9 +72,9 @@ class GetDeviceRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_deviceKey;
-  bool m_deviceKeyHasBeenSet = false;
 
   Aws::String m_accessToken;
+  bool m_deviceKeyHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
 };
 

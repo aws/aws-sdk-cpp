@@ -92,12 +92,12 @@ class ListWorkloadEstimatesFilter {
   ///@}
  private:
   ListWorkloadEstimatesFilterName m_name{ListWorkloadEstimatesFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   MatchOption m_matchOption{MatchOption::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_matchOptionHasBeenSet = false;
 };
 

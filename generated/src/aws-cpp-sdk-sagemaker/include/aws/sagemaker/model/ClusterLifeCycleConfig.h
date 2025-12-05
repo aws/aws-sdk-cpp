@@ -79,9 +79,9 @@ class ClusterLifeCycleConfig {
   ///@}
  private:
   Aws::String m_sourceS3Uri;
-  bool m_sourceS3UriHasBeenSet = false;
 
   Aws::String m_onCreate;
+  bool m_sourceS3UriHasBeenSet = false;
   bool m_onCreateHasBeenSet = false;
 };
 

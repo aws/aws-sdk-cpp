@@ -73,9 +73,9 @@ class CreateVoiceConnectorGroupRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<VoiceConnectorItem> m_voiceConnectorItems;
+  bool m_nameHasBeenSet = false;
   bool m_voiceConnectorItemsHasBeenSet = false;
 };
 

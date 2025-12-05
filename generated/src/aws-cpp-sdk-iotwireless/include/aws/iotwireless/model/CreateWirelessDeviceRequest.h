@@ -213,30 +213,30 @@ class CreateWirelessDeviceRequest : public IoTWirelessRequest {
   ///@}
  private:
   WirelessDeviceType m_type{WirelessDeviceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   LoRaWANDevice m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
-  bool m_positioningHasBeenSet = false;
 
   SidewalkCreateWirelessDevice m_sidewalk;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
   bool m_sidewalkHasBeenSet = false;
 };
 

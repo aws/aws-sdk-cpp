@@ -94,12 +94,12 @@ class MergeRouterInputConfiguration {
   ///@}
  private:
   Aws::String m_networkInterfaceArn;
-  bool m_networkInterfaceArnHasBeenSet = false;
 
   Aws::Vector<MergeRouterInputProtocolConfiguration> m_protocolConfigurations;
-  bool m_protocolConfigurationsHasBeenSet = false;
 
   long long m_mergeRecoveryWindowMilliseconds{0};
+  bool m_networkInterfaceArnHasBeenSet = false;
+  bool m_protocolConfigurationsHasBeenSet = false;
   bool m_mergeRecoveryWindowMillisecondsHasBeenSet = false;
 };
 

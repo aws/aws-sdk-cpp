@@ -270,39 +270,39 @@ class Recommendation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_namespaceArn;
-  bool m_namespaceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_recommendationType;
-  bool m_recommendationTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_observation;
-  bool m_observationHasBeenSet = false;
 
   ImpactRankingType m_impactRanking{ImpactRankingType::NOT_SET};
-  bool m_impactRankingHasBeenSet = false;
 
   Aws::String m_recommendationText;
-  bool m_recommendationTextHasBeenSet = false;
 
   Aws::Vector<RecommendedAction> m_recommendedActions;
-  bool m_recommendedActionsHasBeenSet = false;
 
   Aws::Vector<ReferenceLink> m_referenceLinks;
+  bool m_idHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_namespaceArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_recommendationTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_observationHasBeenSet = false;
+  bool m_impactRankingHasBeenSet = false;
+  bool m_recommendationTextHasBeenSet = false;
+  bool m_recommendedActionsHasBeenSet = false;
   bool m_referenceLinksHasBeenSet = false;
 };
 

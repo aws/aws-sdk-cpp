@@ -92,12 +92,12 @@ class DescribeCacheClustersResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<CacheCluster> m_cacheClusters;
-  bool m_cacheClustersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_cacheClustersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

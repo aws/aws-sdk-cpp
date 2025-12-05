@@ -122,15 +122,15 @@ class ModifyVpcEndpointServicePermissionsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addAllowedPrincipals;
-  bool m_addAllowedPrincipalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeAllowedPrincipals;
+  bool m_dryRunHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_addAllowedPrincipalsHasBeenSet = false;
   bool m_removeAllowedPrincipalsHasBeenSet = false;
 };
 

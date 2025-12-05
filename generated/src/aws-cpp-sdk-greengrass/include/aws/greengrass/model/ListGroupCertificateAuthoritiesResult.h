@@ -70,9 +70,9 @@ class ListGroupCertificateAuthoritiesResult {
   ///@}
  private:
   Aws::Vector<GroupCertificateAuthorityProperties> m_groupCertificateAuthorities;
-  bool m_groupCertificateAuthoritiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupCertificateAuthoritiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

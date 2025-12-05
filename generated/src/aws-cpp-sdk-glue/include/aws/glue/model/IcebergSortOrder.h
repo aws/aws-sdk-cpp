@@ -77,9 +77,9 @@ class IcebergSortOrder {
   ///@}
  private:
   int m_orderId{0};
-  bool m_orderIdHasBeenSet = false;
 
   Aws::Vector<IcebergSortField> m_fields;
+  bool m_orderIdHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class PutActionInteractionsRequest : public PersonalizeEventsRequest {
   ///@}
  private:
   Aws::String m_trackingId;
-  bool m_trackingIdHasBeenSet = false;
 
   Aws::Vector<ActionInteraction> m_actionInteractions;
+  bool m_trackingIdHasBeenSet = false;
   bool m_actionInteractionsHasBeenSet = false;
 };
 

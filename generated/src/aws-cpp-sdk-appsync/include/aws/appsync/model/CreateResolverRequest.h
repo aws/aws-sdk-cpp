@@ -300,45 +300,45 @@ class CreateResolverRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   Aws::String m_requestMappingTemplate;
-  bool m_requestMappingTemplateHasBeenSet = false;
 
   Aws::String m_responseMappingTemplate;
-  bool m_responseMappingTemplateHasBeenSet = false;
 
   ResolverKind m_kind{ResolverKind::NOT_SET};
-  bool m_kindHasBeenSet = false;
 
   PipelineConfig m_pipelineConfig;
-  bool m_pipelineConfigHasBeenSet = false;
 
   SyncConfig m_syncConfig;
-  bool m_syncConfigHasBeenSet = false;
 
   CachingConfig m_cachingConfig;
-  bool m_cachingConfigHasBeenSet = false;
 
   int m_maxBatchSize{0};
-  bool m_maxBatchSizeHasBeenSet = false;
 
   AppSyncRuntime m_runtime;
-  bool m_runtimeHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   ResolverLevelMetricsConfig m_metricsConfig{ResolverLevelMetricsConfig::NOT_SET};
+  bool m_apiIdHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_fieldNameHasBeenSet = false;
+  bool m_dataSourceNameHasBeenSet = false;
+  bool m_requestMappingTemplateHasBeenSet = false;
+  bool m_responseMappingTemplateHasBeenSet = false;
+  bool m_kindHasBeenSet = false;
+  bool m_pipelineConfigHasBeenSet = false;
+  bool m_syncConfigHasBeenSet = false;
+  bool m_cachingConfigHasBeenSet = false;
+  bool m_maxBatchSizeHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_metricsConfigHasBeenSet = false;
 };
 

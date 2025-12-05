@@ -83,9 +83,9 @@ class FileConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_folders;
-  bool m_foldersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
+  bool m_foldersHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

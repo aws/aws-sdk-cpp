@@ -147,21 +147,21 @@ class AccountSettings {
   ///@}
  private:
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Edition m_edition{Edition::NOT_SET};
-  bool m_editionHasBeenSet = false;
 
   Aws::String m_defaultNamespace;
-  bool m_defaultNamespaceHasBeenSet = false;
 
   Aws::String m_notificationEmail;
-  bool m_notificationEmailHasBeenSet = false;
 
   bool m_publicSharingEnabled{false};
-  bool m_publicSharingEnabledHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
+  bool m_accountNameHasBeenSet = false;
+  bool m_editionHasBeenSet = false;
+  bool m_defaultNamespaceHasBeenSet = false;
+  bool m_notificationEmailHasBeenSet = false;
+  bool m_publicSharingEnabledHasBeenSet = false;
   bool m_terminationProtectionEnabledHasBeenSet = false;
 };
 

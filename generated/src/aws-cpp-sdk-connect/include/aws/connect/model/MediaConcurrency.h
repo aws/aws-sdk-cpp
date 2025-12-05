@@ -92,12 +92,12 @@ class MediaConcurrency {
   ///@}
  private:
   Channel m_channel{Channel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   int m_concurrency{0};
-  bool m_concurrencyHasBeenSet = false;
 
   CrossChannelBehavior m_crossChannelBehavior;
+  bool m_channelHasBeenSet = false;
+  bool m_concurrencyHasBeenSet = false;
   bool m_crossChannelBehaviorHasBeenSet = false;
 };
 

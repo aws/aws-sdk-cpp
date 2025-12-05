@@ -84,12 +84,12 @@ class ListProvisioningTemplatesResult {
   ///@}
  private:
   Aws::Vector<ProvisioningTemplateSummary> m_templates;
-  bool m_templatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

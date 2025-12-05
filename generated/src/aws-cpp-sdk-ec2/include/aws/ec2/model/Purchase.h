@@ -184,27 +184,27 @@ class Purchase {
   ///@}
  private:
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hostIdSet;
-  bool m_hostIdSetHasBeenSet = false;
 
   Aws::String m_hostReservationId;
-  bool m_hostReservationIdHasBeenSet = false;
 
   Aws::String m_hourlyPrice;
-  bool m_hourlyPriceHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::String m_upfrontPrice;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_hostIdSetHasBeenSet = false;
+  bool m_hostReservationIdHasBeenSet = false;
+  bool m_hourlyPriceHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
   bool m_upfrontPriceHasBeenSet = false;
 };
 

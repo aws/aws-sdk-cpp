@@ -108,15 +108,15 @@ class DeleteKxDataviewRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_dataviewName;
-  bool m_dataviewNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_dataviewNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

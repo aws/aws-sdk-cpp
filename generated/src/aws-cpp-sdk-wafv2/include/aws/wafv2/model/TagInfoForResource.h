@@ -86,9 +86,9 @@ class TagInfoForResource {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

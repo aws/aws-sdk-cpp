@@ -67,9 +67,9 @@ class AwsOpenSearchServiceDomainLogPublishingOption {
   ///@}
  private:
   Aws::String m_cloudWatchLogsLogGroupArn;
-  bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

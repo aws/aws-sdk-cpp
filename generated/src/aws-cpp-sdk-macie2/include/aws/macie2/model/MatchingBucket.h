@@ -367,51 +367,51 @@ class MatchingBucket {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AutomatedDiscoveryMonitoringStatus m_automatedDiscoveryMonitoringStatus{AutomatedDiscoveryMonitoringStatus::NOT_SET};
-  bool m_automatedDiscoveryMonitoringStatusHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   long long m_classifiableObjectCount{0};
-  bool m_classifiableObjectCountHasBeenSet = false;
 
   long long m_classifiableSizeInBytes{0};
-  bool m_classifiableSizeInBytesHasBeenSet = false;
 
   BucketMetadataErrorCode m_errorCode{BucketMetadataErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   JobDetails m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAutomatedDiscoveryTime{};
-  bool m_lastAutomatedDiscoveryTimeHasBeenSet = false;
 
   long long m_objectCount{0};
-  bool m_objectCountHasBeenSet = false;
 
   ObjectCountByEncryptionType m_objectCountByEncryptionType;
-  bool m_objectCountByEncryptionTypeHasBeenSet = false;
 
   int m_sensitivityScore{0};
-  bool m_sensitivityScoreHasBeenSet = false;
 
   long long m_sizeInBytes{0};
-  bool m_sizeInBytesHasBeenSet = false;
 
   long long m_sizeInBytesCompressed{0};
-  bool m_sizeInBytesCompressedHasBeenSet = false;
 
   ObjectLevelStatistics m_unclassifiableObjectCount;
-  bool m_unclassifiableObjectCountHasBeenSet = false;
 
   ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
+  bool m_accountIdHasBeenSet = false;
+  bool m_automatedDiscoveryMonitoringStatusHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_classifiableObjectCountHasBeenSet = false;
+  bool m_classifiableSizeInBytesHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_jobDetailsHasBeenSet = false;
+  bool m_lastAutomatedDiscoveryTimeHasBeenSet = false;
+  bool m_objectCountHasBeenSet = false;
+  bool m_objectCountByEncryptionTypeHasBeenSet = false;
+  bool m_sensitivityScoreHasBeenSet = false;
+  bool m_sizeInBytesHasBeenSet = false;
+  bool m_sizeInBytesCompressedHasBeenSet = false;
+  bool m_unclassifiableObjectCountHasBeenSet = false;
   bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
 };
 

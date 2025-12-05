@@ -86,12 +86,12 @@ class DescribeClientVpnEndpointsResponse {
   ///@}
  private:
   Aws::Vector<ClientVpnEndpoint> m_clientVpnEndpoints;
-  bool m_clientVpnEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientVpnEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

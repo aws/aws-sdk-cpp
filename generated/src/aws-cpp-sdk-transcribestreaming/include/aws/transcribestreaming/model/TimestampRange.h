@@ -64,9 +64,9 @@ class TimestampRange {
   ///@}
  private:
   long long m_beginOffsetMillis{0};
-  bool m_beginOffsetMillisHasBeenSet = false;
 
   long long m_endOffsetMillis{0};
+  bool m_beginOffsetMillisHasBeenSet = false;
   bool m_endOffsetMillisHasBeenSet = false;
 };
 

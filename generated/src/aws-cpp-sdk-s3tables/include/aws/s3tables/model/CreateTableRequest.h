@@ -199,27 +199,27 @@ class CreateTableRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OpenTableFormat m_format{OpenTableFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   TableMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   StorageClassConfiguration m_storageClassConfiguration;
-  bool m_storageClassConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tableBucketARNHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_storageClassConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

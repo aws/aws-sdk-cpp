@@ -88,12 +88,12 @@ class FlowMultiTurnInputRequestEvent {
   ///@}
  private:
   FlowMultiTurnInputContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   NodeType m_nodeType{NodeType::NOT_SET};
+  bool m_contentHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
   bool m_nodeTypeHasBeenSet = false;
 };
 

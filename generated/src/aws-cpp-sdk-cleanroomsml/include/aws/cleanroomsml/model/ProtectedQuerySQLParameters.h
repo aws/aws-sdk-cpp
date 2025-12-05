@@ -95,12 +95,12 @@ class ProtectedQuerySQLParameters {
   ///@}
  private:
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_analysisTemplateArn;
-  bool m_analysisTemplateArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_queryStringHasBeenSet = false;
+  bool m_analysisTemplateArnHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

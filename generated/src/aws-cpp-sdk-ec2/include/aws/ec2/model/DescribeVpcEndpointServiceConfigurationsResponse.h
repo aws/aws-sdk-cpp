@@ -87,12 +87,12 @@ class DescribeVpcEndpointServiceConfigurationsResponse {
   ///@}
  private:
   Aws::Vector<ServiceConfiguration> m_serviceConfigurations;
-  bool m_serviceConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serviceConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

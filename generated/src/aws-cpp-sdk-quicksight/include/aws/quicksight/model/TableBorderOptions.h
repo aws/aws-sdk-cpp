@@ -83,12 +83,12 @@ class TableBorderOptions {
   ///@}
  private:
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   int m_thickness{0};
-  bool m_thicknessHasBeenSet = false;
 
   TableBorderStyle m_style{TableBorderStyle::NOT_SET};
+  bool m_colorHasBeenSet = false;
+  bool m_thicknessHasBeenSet = false;
   bool m_styleHasBeenSet = false;
 };
 

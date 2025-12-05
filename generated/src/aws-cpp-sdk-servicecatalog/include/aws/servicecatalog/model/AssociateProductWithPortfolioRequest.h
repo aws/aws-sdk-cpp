@@ -104,15 +104,15 @@ class AssociateProductWithPortfolioRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   Aws::String m_sourcePortfolioId;
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_portfolioIdHasBeenSet = false;
   bool m_sourcePortfolioIdHasBeenSet = false;
 };
 

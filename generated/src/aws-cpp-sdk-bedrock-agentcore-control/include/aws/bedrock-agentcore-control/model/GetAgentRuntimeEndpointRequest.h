@@ -66,9 +66,9 @@ class GetAgentRuntimeEndpointRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_endpointName;
+  bool m_agentRuntimeIdHasBeenSet = false;
   bool m_endpointNameHasBeenSet = false;
 };
 

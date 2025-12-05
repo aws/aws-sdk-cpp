@@ -67,9 +67,9 @@ class CheckInLicenseRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_licenseConsumptionToken;
-  bool m_licenseConsumptionTokenHasBeenSet = false;
 
   Aws::String m_beneficiary;
+  bool m_licenseConsumptionTokenHasBeenSet = false;
   bool m_beneficiaryHasBeenSet = false;
 };
 

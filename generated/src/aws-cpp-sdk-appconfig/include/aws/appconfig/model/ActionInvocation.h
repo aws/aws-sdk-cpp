@@ -163,24 +163,24 @@ class ActionInvocation {
   ///@}
  private:
   Aws::String m_extensionIdentifier;
-  bool m_extensionIdentifierHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_invocationId;
+  bool m_extensionIdentifierHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_invocationIdHasBeenSet = false;
 };
 

@@ -138,21 +138,21 @@ class ShareResult {
   ///@}
  private:
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_inviteePrincipalId;
-  bool m_inviteePrincipalIdHasBeenSet = false;
 
   RoleType m_role{RoleType::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   ShareStatusType m_status{ShareStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_principalIdHasBeenSet = false;
+  bool m_inviteePrincipalIdHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_shareIdHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

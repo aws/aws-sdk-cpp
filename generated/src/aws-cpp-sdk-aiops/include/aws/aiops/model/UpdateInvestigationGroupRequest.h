@@ -213,24 +213,24 @@ class UpdateInvestigationGroupRequest : public AIOpsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyBoundaries;
-  bool m_tagKeyBoundariesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_chatbotNotificationChannel;
-  bool m_chatbotNotificationChannelHasBeenSet = false;
 
   bool m_isCloudTrailEventHistoryEnabled{false};
-  bool m_isCloudTrailEventHistoryEnabledHasBeenSet = false;
 
   Aws::Vector<CrossAccountConfiguration> m_crossAccountConfigurations;
+  bool m_identifierHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_tagKeyBoundariesHasBeenSet = false;
+  bool m_chatbotNotificationChannelHasBeenSet = false;
+  bool m_isCloudTrailEventHistoryEnabledHasBeenSet = false;
   bool m_crossAccountConfigurationsHasBeenSet = false;
 };
 

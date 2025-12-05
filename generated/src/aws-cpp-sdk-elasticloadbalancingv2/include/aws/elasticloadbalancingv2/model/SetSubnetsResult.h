@@ -100,15 +100,15 @@ class SetSubnetsResult {
   ///@}
  private:
   Aws::Vector<AvailabilityZone> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat{EnablePrefixForIpv6SourceNatEnum::NOT_SET};
-  bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

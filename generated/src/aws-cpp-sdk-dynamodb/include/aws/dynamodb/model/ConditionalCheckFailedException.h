@@ -77,9 +77,9 @@ class ConditionalCheckFailedException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_item;
+  bool m_messageHasBeenSet = false;
   bool m_itemHasBeenSet = false;
 };
 

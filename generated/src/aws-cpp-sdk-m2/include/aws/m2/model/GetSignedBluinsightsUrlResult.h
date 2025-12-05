@@ -60,9 +60,9 @@ class GetSignedBluinsightsUrlResult {
   ///@}
  private:
   Aws::String m_signedBiUrl;
-  bool m_signedBiUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signedBiUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

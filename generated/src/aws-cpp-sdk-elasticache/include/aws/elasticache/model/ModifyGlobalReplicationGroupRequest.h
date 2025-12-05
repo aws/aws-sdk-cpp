@@ -181,27 +181,27 @@ class ModifyGlobalReplicationGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_globalReplicationGroupDescription;
-  bool m_globalReplicationGroupDescriptionHasBeenSet = false;
 
   bool m_automaticFailoverEnabled{false};
+  bool m_globalReplicationGroupIdHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_globalReplicationGroupDescriptionHasBeenSet = false;
   bool m_automaticFailoverEnabledHasBeenSet = false;
 };
 

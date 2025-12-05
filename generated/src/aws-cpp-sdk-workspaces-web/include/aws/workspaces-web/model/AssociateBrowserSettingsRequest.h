@@ -70,9 +70,9 @@ class AssociateBrowserSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_browserSettingsArn;
+  bool m_portalArnHasBeenSet = false;
   bool m_browserSettingsArnHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class S3ManifestOutputLocation {
   ///@}
  private:
   Aws::String m_expectedManifestBucketOwner;
-  bool m_expectedManifestBucketOwnerHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_manifestPrefix;
-  bool m_manifestPrefixHasBeenSet = false;
 
   GeneratedManifestEncryption m_manifestEncryption;
-  bool m_manifestEncryptionHasBeenSet = false;
 
   GeneratedManifestFormat m_manifestFormat{GeneratedManifestFormat::NOT_SET};
+  bool m_expectedManifestBucketOwnerHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_manifestPrefixHasBeenSet = false;
+  bool m_manifestEncryptionHasBeenSet = false;
   bool m_manifestFormatHasBeenSet = false;
 };
 

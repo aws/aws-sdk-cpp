@@ -70,9 +70,9 @@ class BedrockFoundationModelConfigurationForParsing {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   ParsingPrompt m_parsingPrompt;
+  bool m_modelArnHasBeenSet = false;
   bool m_parsingPromptHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class ComponentRecommendation {
   ///@}
  private:
   Aws::String m_appComponentName;
-  bool m_appComponentNameHasBeenSet = false;
 
   Aws::Vector<ConfigRecommendation> m_configRecommendations;
-  bool m_configRecommendationsHasBeenSet = false;
 
   RecommendationComplianceStatus m_recommendationStatus{RecommendationComplianceStatus::NOT_SET};
+  bool m_appComponentNameHasBeenSet = false;
+  bool m_configRecommendationsHasBeenSet = false;
   bool m_recommendationStatusHasBeenSet = false;
 };
 

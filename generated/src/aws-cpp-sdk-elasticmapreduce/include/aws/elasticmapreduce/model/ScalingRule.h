@@ -112,15 +112,15 @@ class ScalingRule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ScalingAction m_action;
-  bool m_actionHasBeenSet = false;
 
   ScalingTrigger m_trigger;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_triggerHasBeenSet = false;
 };
 

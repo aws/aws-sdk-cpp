@@ -126,18 +126,18 @@ class GetProfileRecommendationsRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_recommenderName;
-  bool m_recommenderNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
-  bool m_contextHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_recommenderNameHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

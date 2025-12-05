@@ -75,12 +75,12 @@ class CreatePersistentAppUIResult {
   ///@}
  private:
   Aws::String m_persistentAppUIId;
-  bool m_persistentAppUIIdHasBeenSet = false;
 
   bool m_runtimeRoleEnabledCluster{false};
-  bool m_runtimeRoleEnabledClusterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_persistentAppUIIdHasBeenSet = false;
+  bool m_runtimeRoleEnabledClusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListManagedJobTemplatesResult {
   ///@}
  private:
   Aws::Vector<ManagedJobTemplateSummary> m_managedJobTemplates;
-  bool m_managedJobTemplatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedJobTemplatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

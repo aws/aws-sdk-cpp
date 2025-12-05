@@ -85,9 +85,9 @@ class Plan {
   ///@}
  private:
   Aws::Vector<Stage> m_stages;
-  bool m_stagesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rotationIds;
+  bool m_stagesHasBeenSet = false;
   bool m_rotationIdsHasBeenSet = false;
 };
 

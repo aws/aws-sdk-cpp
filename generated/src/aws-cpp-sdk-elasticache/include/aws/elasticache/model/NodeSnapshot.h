@@ -164,24 +164,24 @@ class NodeSnapshot {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_nodeGroupId;
-  bool m_nodeGroupIdHasBeenSet = false;
 
   Aws::String m_cacheNodeId;
-  bool m_cacheNodeIdHasBeenSet = false;
 
   NodeGroupConfiguration m_nodeGroupConfiguration;
-  bool m_nodeGroupConfigurationHasBeenSet = false;
 
   Aws::String m_cacheSize;
-  bool m_cacheSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_cacheNodeCreateTime{};
-  bool m_cacheNodeCreateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotCreateTime{};
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_nodeGroupIdHasBeenSet = false;
+  bool m_cacheNodeIdHasBeenSet = false;
+  bool m_nodeGroupConfigurationHasBeenSet = false;
+  bool m_cacheSizeHasBeenSet = false;
+  bool m_cacheNodeCreateTimeHasBeenSet = false;
   bool m_snapshotCreateTimeHasBeenSet = false;
 };
 

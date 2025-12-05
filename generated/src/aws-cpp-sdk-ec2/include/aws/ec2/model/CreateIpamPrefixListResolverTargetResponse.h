@@ -61,9 +61,9 @@ class CreateIpamPrefixListResolverTargetResponse {
   ///@}
  private:
   IpamPrefixListResolverTarget m_ipamPrefixListResolverTarget;
-  bool m_ipamPrefixListResolverTargetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPrefixListResolverTargetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

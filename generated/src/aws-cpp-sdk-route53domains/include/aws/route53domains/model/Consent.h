@@ -67,9 +67,9 @@ class Consent {
   ///@}
  private:
   double m_maxPrice{0.0};
-  bool m_maxPriceHasBeenSet = false;
 
   Aws::String m_currency;
+  bool m_maxPriceHasBeenSet = false;
   bool m_currencyHasBeenSet = false;
 };
 

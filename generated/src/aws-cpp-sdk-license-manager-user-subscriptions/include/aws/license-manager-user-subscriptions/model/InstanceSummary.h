@@ -168,24 +168,24 @@ class InstanceSummary {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_products;
-  bool m_productsHasBeenSet = false;
 
   Aws::String m_lastStatusCheckDate;
-  bool m_lastStatusCheckDateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   IdentityProvider m_identityProvider;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_productsHasBeenSet = false;
+  bool m_lastStatusCheckDateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
   bool m_identityProviderHasBeenSet = false;
 };
 

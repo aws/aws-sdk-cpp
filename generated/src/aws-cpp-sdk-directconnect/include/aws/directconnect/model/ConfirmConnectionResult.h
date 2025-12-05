@@ -73,9 +73,9 @@ class ConfirmConnectionResult {
   ///@}
  private:
   ConnectionState m_connectionState{ConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

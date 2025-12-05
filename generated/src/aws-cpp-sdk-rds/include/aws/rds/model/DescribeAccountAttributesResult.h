@@ -75,9 +75,9 @@ class DescribeAccountAttributesResult {
   ///@}
  private:
   Aws::Vector<AccountQuota> m_accountQuotas;
-  bool m_accountQuotasHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_accountQuotasHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

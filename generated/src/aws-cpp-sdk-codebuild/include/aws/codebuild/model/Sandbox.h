@@ -415,63 +415,63 @@ class Sandbox {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTime{};
-  bool m_requestTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ProjectSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   Aws::Vector<ProjectSource> m_secondarySources;
-  bool m_secondarySourcesHasBeenSet = false;
 
   Aws::Vector<ProjectSourceVersion> m_secondarySourceVersions;
-  bool m_secondarySourceVersionsHasBeenSet = false;
 
   ProjectEnvironment m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
-  bool m_fileSystemLocationsHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
-  bool m_timeoutInMinutesHasBeenSet = false;
 
   int m_queuedTimeoutInMinutes{0};
-  bool m_queuedTimeoutInMinutesHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   LogsConfig m_logConfig;
-  bool m_logConfigHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   SandboxSession m_currentSession;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_requestTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceVersionHasBeenSet = false;
+  bool m_secondarySourcesHasBeenSet = false;
+  bool m_secondarySourceVersionsHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_fileSystemLocationsHasBeenSet = false;
+  bool m_timeoutInMinutesHasBeenSet = false;
+  bool m_queuedTimeoutInMinutesHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_logConfigHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
   bool m_currentSessionHasBeenSet = false;
 };
 

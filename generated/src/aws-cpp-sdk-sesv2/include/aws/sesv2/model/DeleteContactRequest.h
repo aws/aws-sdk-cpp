@@ -65,9 +65,9 @@ class DeleteContactRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_contactListName;
-  bool m_contactListNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
+  bool m_contactListNameHasBeenSet = false;
   bool m_emailAddressHasBeenSet = false;
 };
 

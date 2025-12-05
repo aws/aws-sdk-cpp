@@ -76,9 +76,9 @@ class UpdateLabelGroupRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_labelGroupName;
-  bool m_labelGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_faultCodes;
+  bool m_labelGroupNameHasBeenSet = false;
   bool m_faultCodesHasBeenSet = false;
 };
 

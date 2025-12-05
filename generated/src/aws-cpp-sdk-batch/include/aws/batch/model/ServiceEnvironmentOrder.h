@@ -69,9 +69,9 @@ class ServiceEnvironmentOrder {
   ///@}
  private:
   int m_order{0};
-  bool m_orderHasBeenSet = false;
 
   Aws::String m_serviceEnvironment;
+  bool m_orderHasBeenSet = false;
   bool m_serviceEnvironmentHasBeenSet = false;
 };
 

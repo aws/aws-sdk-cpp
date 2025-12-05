@@ -84,12 +84,12 @@ class GetSamplingRulesResult {
   ///@}
  private:
   Aws::Vector<SamplingRuleRecord> m_samplingRuleRecords;
-  bool m_samplingRuleRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_samplingRuleRecordsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

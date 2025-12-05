@@ -87,12 +87,12 @@ class GetGroupsForCapacityReservationResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CapacityReservationGroup> m_capacityReservationGroups;
-  bool m_capacityReservationGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_capacityReservationGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

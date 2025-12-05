@@ -70,9 +70,9 @@ class OperationResultFilter {
   ///@}
  private:
   OperationResultFilterName m_name{OperationResultFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

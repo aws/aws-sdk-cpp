@@ -197,27 +197,27 @@ class ReceiptAction {
   ///@}
  private:
   S3Action m_s3Action;
-  bool m_s3ActionHasBeenSet = false;
 
   BounceAction m_bounceAction;
-  bool m_bounceActionHasBeenSet = false;
 
   WorkmailAction m_workmailAction;
-  bool m_workmailActionHasBeenSet = false;
 
   LambdaAction m_lambdaAction;
-  bool m_lambdaActionHasBeenSet = false;
 
   StopAction m_stopAction;
-  bool m_stopActionHasBeenSet = false;
 
   AddHeaderAction m_addHeaderAction;
-  bool m_addHeaderActionHasBeenSet = false;
 
   SNSAction m_sNSAction;
-  bool m_sNSActionHasBeenSet = false;
 
   ConnectAction m_connectAction;
+  bool m_s3ActionHasBeenSet = false;
+  bool m_bounceActionHasBeenSet = false;
+  bool m_workmailActionHasBeenSet = false;
+  bool m_lambdaActionHasBeenSet = false;
+  bool m_stopActionHasBeenSet = false;
+  bool m_addHeaderActionHasBeenSet = false;
+  bool m_sNSActionHasBeenSet = false;
   bool m_connectActionHasBeenSet = false;
 };
 

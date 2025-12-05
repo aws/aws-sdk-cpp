@@ -120,12 +120,12 @@ class TargetHealth {
   ///@}
  private:
   TargetHealthStateEnum m_state{TargetHealthStateEnum::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   TargetHealthReasonEnum m_reason{TargetHealthReasonEnum::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_stateHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

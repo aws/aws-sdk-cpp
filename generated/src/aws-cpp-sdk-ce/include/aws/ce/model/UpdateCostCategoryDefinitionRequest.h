@@ -156,21 +156,21 @@ class UpdateCostCategoryDefinitionRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   CostCategoryRuleVersion m_ruleVersion{CostCategoryRuleVersion::NOT_SET};
-  bool m_ruleVersionHasBeenSet = false;
 
   Aws::Vector<CostCategoryRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_ruleVersionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
   bool m_splitChargeRulesHasBeenSet = false;
 };
 

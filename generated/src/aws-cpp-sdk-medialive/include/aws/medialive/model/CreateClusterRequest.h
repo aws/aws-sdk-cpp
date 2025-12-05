@@ -158,21 +158,21 @@ class CreateClusterRequest : public MediaLiveRequest {
   ///@}
  private:
   ClusterType m_clusterType{ClusterType::NOT_SET};
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_instanceRoleArn;
-  bool m_instanceRoleArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ClusterNetworkSettingsCreateRequest m_networkSettings;
-  bool m_networkSettingsHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_instanceRoleArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkSettingsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

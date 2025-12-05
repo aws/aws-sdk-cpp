@@ -86,12 +86,12 @@ class DiscoverInstancesResult {
   ///@}
  private:
   Aws::Vector<HttpInstanceSummary> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   long long m_instancesRevision{0};
-  bool m_instancesRevisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instancesHasBeenSet = false;
+  bool m_instancesRevisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

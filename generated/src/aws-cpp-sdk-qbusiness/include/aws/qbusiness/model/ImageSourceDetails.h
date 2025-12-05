@@ -69,9 +69,9 @@ class ImageSourceDetails {
   ///@}
  private:
   Aws::String m_mediaId;
-  bool m_mediaIdHasBeenSet = false;
 
   Aws::String m_mediaMimeType;
+  bool m_mediaIdHasBeenSet = false;
   bool m_mediaMimeTypeHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetAccountActivityRequest : public FreeTierRequest {
   ///@}
  private:
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
+  bool m_activityIdHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

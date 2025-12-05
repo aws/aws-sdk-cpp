@@ -116,15 +116,15 @@ class FillMissingValues {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::String m_imputedPath;
-  bool m_imputedPathHasBeenSet = false;
 
   Aws::String m_filledPath;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_imputedPathHasBeenSet = false;
   bool m_filledPathHasBeenSet = false;
 };
 

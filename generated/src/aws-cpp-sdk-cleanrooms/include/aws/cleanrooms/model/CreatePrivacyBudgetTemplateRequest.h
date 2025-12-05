@@ -136,18 +136,18 @@ class CreatePrivacyBudgetTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   PrivacyBudgetTemplateAutoRefresh m_autoRefresh{PrivacyBudgetTemplateAutoRefresh::NOT_SET};
-  bool m_autoRefreshHasBeenSet = false;
 
   PrivacyBudgetType m_privacyBudgetType{PrivacyBudgetType::NOT_SET};
-  bool m_privacyBudgetTypeHasBeenSet = false;
 
   PrivacyBudgetTemplateParametersInput m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_autoRefreshHasBeenSet = false;
+  bool m_privacyBudgetTypeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

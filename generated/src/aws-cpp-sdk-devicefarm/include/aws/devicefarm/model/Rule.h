@@ -123,12 +123,12 @@ class Rule {
   ///@}
  private:
   DeviceAttribute m_attribute{DeviceAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   RuleOperator m_operator{RuleOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_attributeHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

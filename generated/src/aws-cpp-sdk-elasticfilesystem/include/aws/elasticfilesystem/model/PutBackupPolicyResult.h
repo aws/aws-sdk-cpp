@@ -61,9 +61,9 @@ class PutBackupPolicyResult {
   ///@}
  private:
   BackupPolicy m_backupPolicy;
-  bool m_backupPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

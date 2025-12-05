@@ -106,15 +106,15 @@ class TransitionState {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_lastChangedBy;
-  bool m_lastChangedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastChangedAt{};
-  bool m_lastChangedAtHasBeenSet = false;
 
   Aws::String m_disabledReason;
+  bool m_enabledHasBeenSet = false;
+  bool m_lastChangedByHasBeenSet = false;
+  bool m_lastChangedAtHasBeenSet = false;
   bool m_disabledReasonHasBeenSet = false;
 };
 

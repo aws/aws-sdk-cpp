@@ -62,9 +62,9 @@ class GetMilestoneRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   int m_milestoneNumber{0};
+  bool m_workloadIdHasBeenSet = false;
   bool m_milestoneNumberHasBeenSet = false;
 };
 

@@ -172,21 +172,21 @@ class PlaybackRestrictionPolicy {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedCountries;
-  bool m_allowedCountriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedOrigins;
-  bool m_allowedOriginsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_enableStrictOriginEnforcement{false};
-  bool m_enableStrictOriginEnforcementHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_allowedCountriesHasBeenSet = false;
+  bool m_allowedOriginsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_enableStrictOriginEnforcementHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

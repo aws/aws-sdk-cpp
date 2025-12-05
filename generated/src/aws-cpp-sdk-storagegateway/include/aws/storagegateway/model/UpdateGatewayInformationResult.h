@@ -80,12 +80,12 @@ class UpdateGatewayInformationResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_gatewayName;
-  bool m_gatewayNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_gatewayNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

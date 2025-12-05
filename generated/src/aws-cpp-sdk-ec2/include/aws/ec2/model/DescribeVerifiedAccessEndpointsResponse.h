@@ -86,12 +86,12 @@ class DescribeVerifiedAccessEndpointsResponse {
   ///@}
  private:
   Aws::Vector<VerifiedAccessEndpoint> m_verifiedAccessEndpoints;
-  bool m_verifiedAccessEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

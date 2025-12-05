@@ -692,108 +692,108 @@ class Run {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TestType m_type{TestType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DevicePlatform m_platform{DevicePlatform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExecutionResult m_result{ExecutionResult::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::Utils::DateTime m_started{};
-  bool m_startedHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopped{};
-  bool m_stoppedHasBeenSet = false;
 
   Counters m_counters;
-  bool m_countersHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_totalJobs{0};
-  bool m_totalJobsHasBeenSet = false;
 
   int m_completedJobs{0};
-  bool m_completedJobsHasBeenSet = false;
 
   BillingMethod m_billingMethod{BillingMethod::NOT_SET};
-  bool m_billingMethodHasBeenSet = false;
 
   DeviceMinutes m_deviceMinutes;
-  bool m_deviceMinutesHasBeenSet = false;
 
   NetworkProfile m_networkProfile;
-  bool m_networkProfileHasBeenSet = false;
 
   DeviceProxy m_deviceProxy;
-  bool m_deviceProxyHasBeenSet = false;
 
   Aws::String m_parsingResultUrl;
-  bool m_parsingResultUrlHasBeenSet = false;
 
   ExecutionResultCode m_resultCode{ExecutionResultCode::NOT_SET};
-  bool m_resultCodeHasBeenSet = false;
 
   int m_seed{0};
-  bool m_seedHasBeenSet = false;
 
   Aws::String m_appUpload;
-  bool m_appUploadHasBeenSet = false;
 
   int m_eventCount{0};
-  bool m_eventCountHasBeenSet = false;
 
   int m_jobTimeoutMinutes{0};
-  bool m_jobTimeoutMinutesHasBeenSet = false;
 
   Aws::String m_devicePoolArn;
-  bool m_devicePoolArnHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Radios m_radios;
-  bool m_radiosHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   CustomerArtifactPaths m_customerArtifactPaths;
-  bool m_customerArtifactPathsHasBeenSet = false;
 
   Aws::String m_webUrl;
-  bool m_webUrlHasBeenSet = false;
 
   bool m_skipAppResign{false};
-  bool m_skipAppResignHasBeenSet = false;
 
   Aws::String m_testSpecArn;
-  bool m_testSpecArnHasBeenSet = false;
 
   DeviceSelectionResult m_deviceSelectionResult;
-  bool m_deviceSelectionResultHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::Vector<EnvironmentVariable> m_environmentVariables;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_startedHasBeenSet = false;
+  bool m_stoppedHasBeenSet = false;
+  bool m_countersHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_totalJobsHasBeenSet = false;
+  bool m_completedJobsHasBeenSet = false;
+  bool m_billingMethodHasBeenSet = false;
+  bool m_deviceMinutesHasBeenSet = false;
+  bool m_networkProfileHasBeenSet = false;
+  bool m_deviceProxyHasBeenSet = false;
+  bool m_parsingResultUrlHasBeenSet = false;
+  bool m_resultCodeHasBeenSet = false;
+  bool m_seedHasBeenSet = false;
+  bool m_appUploadHasBeenSet = false;
+  bool m_eventCountHasBeenSet = false;
+  bool m_jobTimeoutMinutesHasBeenSet = false;
+  bool m_devicePoolArnHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_radiosHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_customerArtifactPathsHasBeenSet = false;
+  bool m_webUrlHasBeenSet = false;
+  bool m_skipAppResignHasBeenSet = false;
+  bool m_testSpecArnHasBeenSet = false;
+  bool m_deviceSelectionResultHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
 };
 

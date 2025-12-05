@@ -75,9 +75,9 @@ class Parent {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ParentType m_type{ParentType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

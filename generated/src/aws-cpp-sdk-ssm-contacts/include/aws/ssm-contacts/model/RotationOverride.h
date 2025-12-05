@@ -132,18 +132,18 @@ class RotationOverride {
   ///@}
  private:
   Aws::String m_rotationOverrideId;
-  bool m_rotationOverrideIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_newContactIds;
-  bool m_newContactIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
+  bool m_rotationOverrideIdHasBeenSet = false;
+  bool m_newContactIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class PutRestoreValidationResultRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_restoreJobId;
-  bool m_restoreJobIdHasBeenSet = false;
 
   RestoreValidationStatus m_validationStatus{RestoreValidationStatus::NOT_SET};
-  bool m_validationStatusHasBeenSet = false;
 
   Aws::String m_validationStatusMessage;
+  bool m_restoreJobIdHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
   bool m_validationStatusMessageHasBeenSet = false;
 };
 

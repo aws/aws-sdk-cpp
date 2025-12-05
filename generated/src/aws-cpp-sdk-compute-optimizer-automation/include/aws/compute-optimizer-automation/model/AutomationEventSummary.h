@@ -117,15 +117,15 @@ class AutomationEventSummary {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<SummaryDimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   TimePeriod m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   SummaryTotals m_total;
+  bool m_keyHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

@@ -213,30 +213,30 @@ class Resource {
   ///@}
  private:
   CatalogResource m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   DatabaseResource m_database;
-  bool m_databaseHasBeenSet = false;
 
   TableResource m_table;
-  bool m_tableHasBeenSet = false;
 
   TableWithColumnsResource m_tableWithColumns;
-  bool m_tableWithColumnsHasBeenSet = false;
 
   DataLocationResource m_dataLocation;
-  bool m_dataLocationHasBeenSet = false;
 
   DataCellsFilterResource m_dataCellsFilter;
-  bool m_dataCellsFilterHasBeenSet = false;
 
   LFTagKeyResource m_lFTag;
-  bool m_lFTagHasBeenSet = false;
 
   LFTagPolicyResource m_lFTagPolicy;
-  bool m_lFTagPolicyHasBeenSet = false;
 
   LFTagExpressionResource m_lFTagExpression;
+  bool m_catalogHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_tableWithColumnsHasBeenSet = false;
+  bool m_dataLocationHasBeenSet = false;
+  bool m_dataCellsFilterHasBeenSet = false;
+  bool m_lFTagHasBeenSet = false;
+  bool m_lFTagPolicyHasBeenSet = false;
   bool m_lFTagExpressionHasBeenSet = false;
 };
 

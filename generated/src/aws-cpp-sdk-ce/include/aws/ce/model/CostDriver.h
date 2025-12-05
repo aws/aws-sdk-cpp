@@ -101,12 +101,12 @@ class CostDriver {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, ComparisonMetricValue> m_metrics;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

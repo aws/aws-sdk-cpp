@@ -103,15 +103,15 @@ class CreateMeetingDialOutRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_meetingId;
-  bool m_meetingIdHasBeenSet = false;
 
   Aws::String m_fromPhoneNumber;
-  bool m_fromPhoneNumberHasBeenSet = false;
 
   Aws::String m_toPhoneNumber;
-  bool m_toPhoneNumberHasBeenSet = false;
 
   Aws::String m_joinToken;
+  bool m_meetingIdHasBeenSet = false;
+  bool m_fromPhoneNumberHasBeenSet = false;
+  bool m_toPhoneNumberHasBeenSet = false;
   bool m_joinTokenHasBeenSet = false;
 };
 

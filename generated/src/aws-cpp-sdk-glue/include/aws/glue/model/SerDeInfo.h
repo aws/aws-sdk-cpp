@@ -95,12 +95,12 @@ class SerDeInfo {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_serializationLibrary;
-  bool m_serializationLibraryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_nameHasBeenSet = false;
+  bool m_serializationLibraryHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

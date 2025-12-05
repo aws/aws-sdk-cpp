@@ -143,21 +143,21 @@ class LambdaFunctionScheduledEventAttributes {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_control;
-  bool m_controlHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_startToCloseTimeout;
-  bool m_startToCloseTimeoutHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_controlHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_startToCloseTimeoutHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

@@ -165,24 +165,24 @@ class FilterListControl {
   ///@}
  private:
   Aws::String m_filterControlId;
-  bool m_filterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceFilterId;
-  bool m_sourceFilterIdHasBeenSet = false;
 
   ListControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   SheetControlListType m_type{SheetControlListType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FilterSelectableValues m_selectableValues;
-  bool m_selectableValuesHasBeenSet = false;
 
   CascadingControlConfiguration m_cascadingControlConfiguration;
+  bool m_filterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceFilterIdHasBeenSet = false;
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_selectableValuesHasBeenSet = false;
   bool m_cascadingControlConfigurationHasBeenSet = false;
 };
 

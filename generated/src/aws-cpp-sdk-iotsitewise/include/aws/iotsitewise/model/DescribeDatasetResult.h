@@ -204,33 +204,33 @@ class DescribeDatasetResult {
   ///@}
  private:
   Aws::String m_datasetId;
-  bool m_datasetIdHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetDescription;
-  bool m_datasetDescriptionHasBeenSet = false;
 
   DatasetSource m_datasetSource;
-  bool m_datasetSourceHasBeenSet = false;
 
   DatasetStatus m_datasetStatus;
-  bool m_datasetStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_datasetCreationDate{};
-  bool m_datasetCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_datasetLastUpdateDate{};
-  bool m_datasetLastUpdateDateHasBeenSet = false;
 
   Aws::String m_datasetVersion;
-  bool m_datasetVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetDescriptionHasBeenSet = false;
+  bool m_datasetSourceHasBeenSet = false;
+  bool m_datasetStatusHasBeenSet = false;
+  bool m_datasetCreationDateHasBeenSet = false;
+  bool m_datasetLastUpdateDateHasBeenSet = false;
+  bool m_datasetVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

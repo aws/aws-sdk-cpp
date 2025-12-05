@@ -86,12 +86,12 @@ class TransformationTool {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TransformationToolName m_name{TransformationToolName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_tranformationToolInstallationLink;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tranformationToolInstallationLinkHasBeenSet = false;
 };
 

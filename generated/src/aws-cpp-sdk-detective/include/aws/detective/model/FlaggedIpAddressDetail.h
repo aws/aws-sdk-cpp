@@ -69,9 +69,9 @@ class FlaggedIpAddressDetail {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Reason m_reason{Reason::NOT_SET};
+  bool m_ipAddressHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

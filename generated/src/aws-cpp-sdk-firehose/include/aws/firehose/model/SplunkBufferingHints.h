@@ -64,9 +64,9 @@ class SplunkBufferingHints {
   ///@}
  private:
   int m_intervalInSeconds{0};
-  bool m_intervalInSecondsHasBeenSet = false;
 
   int m_sizeInMBs{0};
+  bool m_intervalInSecondsHasBeenSet = false;
   bool m_sizeInMBsHasBeenSet = false;
 };
 

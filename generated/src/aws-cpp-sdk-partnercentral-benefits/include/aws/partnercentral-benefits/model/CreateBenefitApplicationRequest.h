@@ -269,36 +269,36 @@ class CreateBenefitApplicationRequest : public PartnerCentralBenefitsRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_benefitIdentifier;
-  bool m_benefitIdentifierHasBeenSet = false;
 
   Aws::Vector<FulfillmentType> m_fulfillmentTypes;
-  bool m_fulfillmentTypesHasBeenSet = false;
 
   Aws::Utils::Document m_benefitApplicationDetails;
-  bool m_benefitApplicationDetailsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedResources;
-  bool m_associatedResourcesHasBeenSet = false;
 
   Aws::Vector<Contact> m_partnerContacts;
-  bool m_partnerContactsHasBeenSet = false;
 
   Aws::Vector<FileInput> m_fileDetails;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_benefitIdentifierHasBeenSet = false;
+  bool m_fulfillmentTypesHasBeenSet = false;
+  bool m_benefitApplicationDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_associatedResourcesHasBeenSet = false;
+  bool m_partnerContactsHasBeenSet = false;
   bool m_fileDetailsHasBeenSet = false;
 };
 

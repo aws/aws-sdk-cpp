@@ -77,9 +77,9 @@ class TopicTemplate {
   ///@}
  private:
   Aws::String m_templateType;
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::Vector<Slot> m_slots;
+  bool m_templateTypeHasBeenSet = false;
   bool m_slotsHasBeenSet = false;
 };
 

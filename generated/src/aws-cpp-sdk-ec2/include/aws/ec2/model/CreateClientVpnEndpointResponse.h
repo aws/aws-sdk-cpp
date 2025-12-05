@@ -95,15 +95,15 @@ class CreateClientVpnEndpointResponse {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   ClientVpnEndpointStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

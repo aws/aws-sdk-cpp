@@ -131,21 +131,21 @@ class ReplicationTaskAssessmentRunResultStatistic {
   ///@}
  private:
   int m_passed{0};
-  bool m_passedHasBeenSet = false;
 
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_error{0};
-  bool m_errorHasBeenSet = false;
 
   int m_warning{0};
-  bool m_warningHasBeenSet = false;
 
   int m_cancelled{0};
-  bool m_cancelledHasBeenSet = false;
 
   int m_skipped{0};
+  bool m_passedHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
+  bool m_cancelledHasBeenSet = false;
   bool m_skippedHasBeenSet = false;
 };
 

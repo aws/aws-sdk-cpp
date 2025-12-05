@@ -194,24 +194,24 @@ class DirectConnectGatewayAssociationProposal {
   ///@}
  private:
   Aws::String m_proposalId;
-  bool m_proposalIdHasBeenSet = false;
 
   Aws::String m_directConnectGatewayId;
-  bool m_directConnectGatewayIdHasBeenSet = false;
 
   Aws::String m_directConnectGatewayOwnerAccount;
-  bool m_directConnectGatewayOwnerAccountHasBeenSet = false;
 
   DirectConnectGatewayAssociationProposalState m_proposalState{DirectConnectGatewayAssociationProposalState::NOT_SET};
-  bool m_proposalStateHasBeenSet = false;
 
   AssociatedGateway m_associatedGateway;
-  bool m_associatedGatewayHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_existingAllowedPrefixesToDirectConnectGateway;
-  bool m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_requestedAllowedPrefixesToDirectConnectGateway;
+  bool m_proposalIdHasBeenSet = false;
+  bool m_directConnectGatewayIdHasBeenSet = false;
+  bool m_directConnectGatewayOwnerAccountHasBeenSet = false;
+  bool m_proposalStateHasBeenSet = false;
+  bool m_associatedGatewayHasBeenSet = false;
+  bool m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
   bool m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 };
 

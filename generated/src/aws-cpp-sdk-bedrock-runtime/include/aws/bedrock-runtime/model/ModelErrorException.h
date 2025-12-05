@@ -83,12 +83,12 @@ class ModelErrorException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_originalStatusCode{0};
-  bool m_originalStatusCodeHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_messageHasBeenSet = false;
+  bool m_originalStatusCodeHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

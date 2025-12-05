@@ -86,9 +86,9 @@ class PermissionsBoundary {
   ///@}
  private:
   CustomerManagedPolicyReference m_customerManagedPolicyReference;
-  bool m_customerManagedPolicyReferenceHasBeenSet = false;
 
   Aws::String m_managedPolicyArn;
+  bool m_customerManagedPolicyReferenceHasBeenSet = false;
   bool m_managedPolicyArnHasBeenSet = false;
 };
 

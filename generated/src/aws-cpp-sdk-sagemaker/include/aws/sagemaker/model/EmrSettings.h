@@ -98,9 +98,9 @@ class EmrSettings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_assumableRoleArns;
-  bool m_assumableRoleArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_executionRoleArns;
+  bool m_assumableRoleArnsHasBeenSet = false;
   bool m_executionRoleArnsHasBeenSet = false;
 };
 

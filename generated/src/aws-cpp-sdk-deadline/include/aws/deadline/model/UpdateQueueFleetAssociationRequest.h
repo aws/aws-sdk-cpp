@@ -100,15 +100,15 @@ class UpdateQueueFleetAssociationRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   UpdateQueueFleetAssociationStatus m_status{UpdateQueueFleetAssociationStatus::NOT_SET};
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

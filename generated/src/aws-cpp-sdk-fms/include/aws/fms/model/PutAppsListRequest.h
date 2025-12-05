@@ -75,9 +75,9 @@ class PutAppsListRequest : public FMSRequest {
   ///@}
  private:
   AppsListData m_appsList;
-  bool m_appsListHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_appsListHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

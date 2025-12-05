@@ -111,15 +111,15 @@ class StartExperimentRequest : public FISRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_experimentTemplateId;
-  bool m_experimentTemplateIdHasBeenSet = false;
 
   StartExperimentExperimentOptionsInput m_experimentOptions;
-  bool m_experimentOptionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_experimentTemplateIdHasBeenSet = false;
+  bool m_experimentOptionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class InvokeActStepResult {
   ///@}
  private:
   Aws::Vector<Call> m_calls;
-  bool m_callsHasBeenSet = false;
 
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_callsHasBeenSet = false;
+  bool m_stepIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

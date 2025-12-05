@@ -106,15 +106,15 @@ class GetServerDetailsResult {
   ///@}
  private:
   Aws::Vector<AssociatedApplication> m_associatedApplications;
-  bool m_associatedApplicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ServerDetail m_serverDetail;
-  bool m_serverDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedApplicationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serverDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

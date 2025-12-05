@@ -89,12 +89,12 @@ class SelectValidation {
   ///@}
  private:
   int m_minChoices{0};
-  bool m_minChoicesHasBeenSet = false;
 
   int m_maxChoices{0};
-  bool m_maxChoicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_options;
+  bool m_minChoicesHasBeenSet = false;
+  bool m_maxChoicesHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

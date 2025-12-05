@@ -87,9 +87,9 @@ class AnomalyDetectorConfiguration {
   ///@}
  private:
   Aws::Vector<Range> m_excludedTimeRanges;
-  bool m_excludedTimeRangesHasBeenSet = false;
 
   Aws::String m_metricTimezone;
+  bool m_excludedTimeRangesHasBeenSet = false;
   bool m_metricTimezoneHasBeenSet = false;
 };
 

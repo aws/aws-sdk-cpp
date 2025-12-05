@@ -114,15 +114,15 @@ class DocumentationPart {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DocumentationPartLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

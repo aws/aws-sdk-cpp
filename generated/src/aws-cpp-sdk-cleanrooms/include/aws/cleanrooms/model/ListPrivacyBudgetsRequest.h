@@ -126,18 +126,18 @@ class ListPrivacyBudgetsRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   PrivacyBudgetType m_privacyBudgetType{PrivacyBudgetType::NOT_SET};
-  bool m_privacyBudgetTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_accessBudgetResourceArn;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_privacyBudgetTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_accessBudgetResourceArnHasBeenSet = false;
 };
 

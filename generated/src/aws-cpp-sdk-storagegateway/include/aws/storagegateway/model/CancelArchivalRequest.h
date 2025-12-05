@@ -69,9 +69,9 @@ class CancelArchivalRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_tapeARN;
+  bool m_gatewayARNHasBeenSet = false;
   bool m_tapeARNHasBeenSet = false;
 };
 

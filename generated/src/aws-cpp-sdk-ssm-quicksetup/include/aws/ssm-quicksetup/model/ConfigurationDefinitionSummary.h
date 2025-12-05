@@ -113,15 +113,15 @@ class ConfigurationDefinitionSummary {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_firstClassParameters;
-  bool m_firstClassParametersHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeVersion;
+  bool m_firstClassParametersHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_typeVersionHasBeenSet = false;
 };
 

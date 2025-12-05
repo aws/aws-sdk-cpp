@@ -72,9 +72,9 @@ class PutApplicationAssignmentConfigurationRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   bool m_assignmentRequired{false};
+  bool m_applicationArnHasBeenSet = false;
   bool m_assignmentRequiredHasBeenSet = false;
 };
 

@@ -126,21 +126,21 @@ class GetQAppSessionMetadataResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionName;
-  bool m_sessionNameHasBeenSet = false;
 
   SessionSharingConfiguration m_sharingConfiguration;
-  bool m_sharingConfigurationHasBeenSet = false;
 
   bool m_sessionOwner{false};
-  bool m_sessionOwnerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
+  bool m_sharingConfigurationHasBeenSet = false;
+  bool m_sessionOwnerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class TableVersionError {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   ErrorDetail m_errorDetail;
+  bool m_tableNameHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class GetInvestigationGroupPolicyResult {
   ///@}
  private:
   Aws::String m_investigationGroupArn;
-  bool m_investigationGroupArnHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_investigationGroupArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

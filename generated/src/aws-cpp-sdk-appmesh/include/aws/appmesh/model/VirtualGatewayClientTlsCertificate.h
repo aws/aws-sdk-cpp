@@ -75,9 +75,9 @@ class VirtualGatewayClientTlsCertificate {
   ///@}
  private:
   VirtualGatewayListenerTlsFileCertificate m_file;
-  bool m_fileHasBeenSet = false;
 
   VirtualGatewayListenerTlsSdsCertificate m_sds;
+  bool m_fileHasBeenSet = false;
   bool m_sdsHasBeenSet = false;
 };
 

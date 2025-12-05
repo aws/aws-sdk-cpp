@@ -88,12 +88,12 @@ class AssociateResourceShareResult {
   ///@}
  private:
   Aws::Vector<ResourceShareAssociation> m_resourceShareAssociations;
-  bool m_resourceShareAssociationsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceShareAssociationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

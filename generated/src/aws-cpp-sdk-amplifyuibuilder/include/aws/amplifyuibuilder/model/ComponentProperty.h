@@ -326,48 +326,48 @@ class ComponentProperty {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   ComponentPropertyBindingProperties m_bindingProperties;
-  bool m_bindingPropertiesHasBeenSet = false;
 
   ComponentPropertyBindingProperties m_collectionBindingProperties;
-  bool m_collectionBindingPropertiesHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::Map<Aws::String, FormBindingElement> m_bindings;
-  bool m_bindingsHasBeenSet = false;
 
   Aws::String m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_userAttribute;
-  bool m_userAttributeHasBeenSet = false;
 
   Aws::Vector<ComponentProperty> m_concat;
-  bool m_concatHasBeenSet = false;
 
   std::shared_ptr<ComponentConditionProperty> m_condition;
-  bool m_conditionHasBeenSet = false;
 
   bool m_configured{false};
-  bool m_configuredHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_importedValue;
-  bool m_importedValueHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_property;
+  bool m_valueHasBeenSet = false;
+  bool m_bindingPropertiesHasBeenSet = false;
+  bool m_collectionBindingPropertiesHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_bindingsHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
+  bool m_userAttributeHasBeenSet = false;
+  bool m_concatHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_configuredHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_importedValueHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
   bool m_propertyHasBeenSet = false;
 };
 

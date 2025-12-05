@@ -69,9 +69,9 @@ class ThirdPartyFirewallFirewallPolicy {
   ///@}
  private:
   Aws::String m_firewallPolicyId;
-  bool m_firewallPolicyIdHasBeenSet = false;
 
   Aws::String m_firewallPolicyName;
+  bool m_firewallPolicyIdHasBeenSet = false;
   bool m_firewallPolicyNameHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class ListWhatsAppTemplateLibraryRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filters;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

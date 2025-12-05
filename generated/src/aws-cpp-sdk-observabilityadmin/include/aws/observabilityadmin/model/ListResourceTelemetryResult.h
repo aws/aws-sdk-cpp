@@ -86,12 +86,12 @@ class ListResourceTelemetryResult {
   ///@}
  private:
   Aws::Vector<TelemetryConfiguration> m_telemetryConfigurations;
-  bool m_telemetryConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_telemetryConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

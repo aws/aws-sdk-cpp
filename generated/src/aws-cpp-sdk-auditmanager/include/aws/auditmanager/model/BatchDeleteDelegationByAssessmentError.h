@@ -90,12 +90,12 @@ class BatchDeleteDelegationByAssessmentError {
   ///@}
  private:
   Aws::String m_delegationId;
-  bool m_delegationIdHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_delegationIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

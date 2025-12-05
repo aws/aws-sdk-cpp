@@ -112,9 +112,9 @@ class CookiePreference {
   ///@}
  private:
   ItemSelection m_forward{ItemSelection::NOT_SET};
-  bool m_forwardHasBeenSet = false;
 
   CookieNames m_whitelistedNames;
+  bool m_forwardHasBeenSet = false;
   bool m_whitelistedNamesHasBeenSet = false;
 };
 

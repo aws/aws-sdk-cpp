@@ -187,27 +187,27 @@ class Channel {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ChannelStorage m_storage;
-  bool m_storageHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ChannelStatus m_status{ChannelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastMessageArrivalTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_storageHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
   bool m_lastMessageArrivalTimeHasBeenSet = false;
 };
 

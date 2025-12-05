@@ -226,33 +226,33 @@ class HttpEndpointDestinationDescription {
   ///@}
  private:
   HttpEndpointDescription m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   HttpEndpointBufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   HttpEndpointRequestConfiguration m_requestConfiguration;
-  bool m_requestConfigurationHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   HttpEndpointRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   HttpEndpointS3BackupMode m_s3BackupMode{HttpEndpointS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationDescription m_s3DestinationDescription;
-  bool m_s3DestinationDescriptionHasBeenSet = false;
 
   SecretsManagerConfiguration m_secretsManagerConfiguration;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_requestConfigurationHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3DestinationDescriptionHasBeenSet = false;
   bool m_secretsManagerConfigurationHasBeenSet = false;
 };
 

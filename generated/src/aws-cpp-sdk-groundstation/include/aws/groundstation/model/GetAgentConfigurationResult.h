@@ -76,12 +76,12 @@ class GetAgentConfigurationResult {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_taskingDocument;
-  bool m_taskingDocumentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentIdHasBeenSet = false;
+  bool m_taskingDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

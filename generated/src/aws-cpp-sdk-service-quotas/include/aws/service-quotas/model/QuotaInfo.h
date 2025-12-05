@@ -74,9 +74,9 @@ class QuotaInfo {
   ///@}
  private:
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_quotaName;
+  bool m_quotaCodeHasBeenSet = false;
   bool m_quotaNameHasBeenSet = false;
 };
 

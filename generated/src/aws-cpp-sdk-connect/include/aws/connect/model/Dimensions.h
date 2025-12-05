@@ -123,18 +123,18 @@ class Dimensions {
   ///@}
  private:
   QueueReference m_queue;
-  bool m_queueHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   RoutingProfileReference m_routingProfile;
-  bool m_routingProfileHasBeenSet = false;
 
   Aws::String m_routingStepExpression;
-  bool m_routingStepExpressionHasBeenSet = false;
 
   AgentStatusIdentifier m_agentStatus;
+  bool m_queueHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_routingProfileHasBeenSet = false;
+  bool m_routingStepExpressionHasBeenSet = false;
   bool m_agentStatusHasBeenSet = false;
 };
 

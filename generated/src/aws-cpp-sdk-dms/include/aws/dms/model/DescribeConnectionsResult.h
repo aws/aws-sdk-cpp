@@ -92,12 +92,12 @@ class DescribeConnectionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Connection> m_connections;
-  bool m_connectionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_connectionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

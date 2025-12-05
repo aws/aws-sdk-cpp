@@ -99,15 +99,15 @@ class ServiceCurrentRevisionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_requestedTaskCount{0};
-  bool m_requestedTaskCountHasBeenSet = false;
 
   int m_runningTaskCount{0};
-  bool m_runningTaskCountHasBeenSet = false;
 
   int m_pendingTaskCount{0};
+  bool m_arnHasBeenSet = false;
+  bool m_requestedTaskCountHasBeenSet = false;
+  bool m_runningTaskCountHasBeenSet = false;
   bool m_pendingTaskCountHasBeenSet = false;
 };
 

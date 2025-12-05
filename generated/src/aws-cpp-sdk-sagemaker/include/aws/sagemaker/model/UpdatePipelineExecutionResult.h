@@ -59,9 +59,9 @@ class UpdatePipelineExecutionResult {
   ///@}
  private:
   Aws::String m_pipelineExecutionArn;
-  bool m_pipelineExecutionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineExecutionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

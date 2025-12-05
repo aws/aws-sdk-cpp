@@ -151,21 +151,21 @@ class RightsizingRecommendation {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   CurrentInstance m_currentInstance;
-  bool m_currentInstanceHasBeenSet = false;
 
   RightsizingType m_rightsizingType{RightsizingType::NOT_SET};
-  bool m_rightsizingTypeHasBeenSet = false;
 
   ModifyRecommendationDetail m_modifyRecommendationDetail;
-  bool m_modifyRecommendationDetailHasBeenSet = false;
 
   TerminateRecommendationDetail m_terminateRecommendationDetail;
-  bool m_terminateRecommendationDetailHasBeenSet = false;
 
   Aws::Vector<FindingReasonCode> m_findingReasonCodes;
+  bool m_accountIdHasBeenSet = false;
+  bool m_currentInstanceHasBeenSet = false;
+  bool m_rightsizingTypeHasBeenSet = false;
+  bool m_modifyRecommendationDetailHasBeenSet = false;
+  bool m_terminateRecommendationDetailHasBeenSet = false;
   bool m_findingReasonCodesHasBeenSet = false;
 };
 

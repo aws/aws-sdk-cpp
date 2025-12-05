@@ -85,12 +85,12 @@ class PurchaseCapacityBlockResponse {
   ///@}
  private:
   CapacityReservation m_capacityReservation;
-  bool m_capacityReservationHasBeenSet = false;
 
   Aws::Vector<CapacityBlock> m_capacityBlocks;
-  bool m_capacityBlocksHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityReservationHasBeenSet = false;
+  bool m_capacityBlocksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

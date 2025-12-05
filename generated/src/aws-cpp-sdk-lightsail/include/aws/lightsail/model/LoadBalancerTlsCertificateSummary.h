@@ -68,9 +68,9 @@ class LoadBalancerTlsCertificateSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_isAttached{false};
+  bool m_nameHasBeenSet = false;
   bool m_isAttachedHasBeenSet = false;
 };
 

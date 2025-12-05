@@ -109,15 +109,15 @@ class StartSuiteRunRequest : public IoTDeviceAdvisorRequest {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteDefinitionVersion;
-  bool m_suiteDefinitionVersionHasBeenSet = false;
 
   SuiteRunConfiguration m_suiteRunConfiguration;
-  bool m_suiteRunConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_suiteDefinitionIdHasBeenSet = false;
+  bool m_suiteDefinitionVersionHasBeenSet = false;
+  bool m_suiteRunConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

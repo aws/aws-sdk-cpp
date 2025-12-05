@@ -100,15 +100,15 @@ class RdsDbInstanceStorageConfiguration {
   ///@}
  private:
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   double m_allocatedStorageInGb{0.0};
-  bool m_allocatedStorageInGbHasBeenSet = false;
 
   double m_iops{0.0};
-  bool m_iopsHasBeenSet = false;
 
   double m_storageThroughput{0.0};
+  bool m_storageTypeHasBeenSet = false;
+  bool m_allocatedStorageInGbHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
   bool m_storageThroughputHasBeenSet = false;
 };
 

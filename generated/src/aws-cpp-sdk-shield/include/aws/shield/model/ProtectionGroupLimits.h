@@ -68,9 +68,9 @@ class ProtectionGroupLimits {
   ///@}
  private:
   long long m_maxProtectionGroups{0};
-  bool m_maxProtectionGroupsHasBeenSet = false;
 
   ProtectionGroupPatternTypeLimits m_patternTypeLimits;
+  bool m_maxProtectionGroupsHasBeenSet = false;
   bool m_patternTypeLimitsHasBeenSet = false;
 };
 

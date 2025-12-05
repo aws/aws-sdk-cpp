@@ -87,12 +87,12 @@ class AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_streamName;
+  bool m_groupNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_streamNameHasBeenSet = false;
 };
 

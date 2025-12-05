@@ -112,9 +112,9 @@ class HyperParameterTuningJobWarmStartConfig {
   ///@}
  private:
   Aws::Vector<ParentHyperParameterTuningJob> m_parentHyperParameterTuningJobs;
-  bool m_parentHyperParameterTuningJobsHasBeenSet = false;
 
   HyperParameterTuningJobWarmStartType m_warmStartType{HyperParameterTuningJobWarmStartType::NOT_SET};
+  bool m_parentHyperParameterTuningJobsHasBeenSet = false;
   bool m_warmStartTypeHasBeenSet = false;
 };
 

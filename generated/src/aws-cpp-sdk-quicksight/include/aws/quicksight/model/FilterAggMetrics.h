@@ -85,12 +85,12 @@ class FilterAggMetrics {
   ///@}
  private:
   Identifier m_metricOperand;
-  bool m_metricOperandHasBeenSet = false;
 
   AggType m_function{AggType::NOT_SET};
-  bool m_functionHasBeenSet = false;
 
   TopicSortDirection m_sortDirection{TopicSortDirection::NOT_SET};
+  bool m_metricOperandHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
   bool m_sortDirectionHasBeenSet = false;
 };
 

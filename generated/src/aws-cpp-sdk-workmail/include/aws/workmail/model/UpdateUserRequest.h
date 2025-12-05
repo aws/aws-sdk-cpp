@@ -359,57 +359,57 @@ class UpdateUserRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   UserRole m_role{UserRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   bool m_hiddenFromGlobalAddressList{false};
-  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 
   Aws::String m_initials;
-  bool m_initialsHasBeenSet = false;
 
   Aws::String m_telephone;
-  bool m_telephoneHasBeenSet = false;
 
   Aws::String m_street;
-  bool m_streetHasBeenSet = false;
 
   Aws::String m_jobTitle;
-  bool m_jobTitleHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_company;
-  bool m_companyHasBeenSet = false;
 
   Aws::String m_zipCode;
-  bool m_zipCodeHasBeenSet = false;
 
   Aws::String m_department;
-  bool m_departmentHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_office;
-  bool m_officeHasBeenSet = false;
 
   Aws::String m_identityProviderUserId;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
+  bool m_initialsHasBeenSet = false;
+  bool m_telephoneHasBeenSet = false;
+  bool m_streetHasBeenSet = false;
+  bool m_jobTitleHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_companyHasBeenSet = false;
+  bool m_zipCodeHasBeenSet = false;
+  bool m_departmentHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_officeHasBeenSet = false;
   bool m_identityProviderUserIdHasBeenSet = false;
 };
 

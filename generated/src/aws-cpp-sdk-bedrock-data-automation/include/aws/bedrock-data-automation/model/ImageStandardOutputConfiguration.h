@@ -65,9 +65,9 @@ class ImageStandardOutputConfiguration {
   ///@}
  private:
   ImageStandardExtraction m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   ImageStandardGenerativeField m_generativeField;
+  bool m_extractionHasBeenSet = false;
   bool m_generativeFieldHasBeenSet = false;
 };
 

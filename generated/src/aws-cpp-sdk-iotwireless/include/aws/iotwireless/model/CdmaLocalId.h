@@ -63,9 +63,9 @@ class CdmaLocalId {
   ///@}
  private:
   int m_pnOffset{0};
-  bool m_pnOffsetHasBeenSet = false;
 
   int m_cdmaChannel{0};
+  bool m_pnOffsetHasBeenSet = false;
   bool m_cdmaChannelHasBeenSet = false;
 };
 

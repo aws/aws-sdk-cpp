@@ -90,12 +90,12 @@ class ListTypeVersionsResult {
   ///@}
  private:
   Aws::Vector<TypeVersionSummary> m_typeVersionSummaries;
-  bool m_typeVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_typeVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

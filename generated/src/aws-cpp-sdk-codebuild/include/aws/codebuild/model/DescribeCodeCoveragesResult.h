@@ -86,12 +86,12 @@ class DescribeCodeCoveragesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CodeCoverage> m_codeCoverages;
-  bool m_codeCoveragesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_codeCoveragesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

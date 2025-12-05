@@ -108,15 +108,15 @@ class ServicePipelineState {
   ///@}
  private:
   Aws::String m_spec;
-  bool m_specHasBeenSet = false;
 
   Aws::String m_templateMajorVersion;
-  bool m_templateMajorVersionHasBeenSet = false;
 
   Aws::String m_templateMinorVersion;
-  bool m_templateMinorVersionHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_specHasBeenSet = false;
+  bool m_templateMajorVersionHasBeenSet = false;
+  bool m_templateMinorVersionHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

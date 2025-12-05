@@ -234,30 +234,30 @@ class CreateTemplateRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   TemplateSourceEntity m_sourceEntity;
-  bool m_sourceEntityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   TemplateVersionDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   ValidationStrategy m_validationStrategy;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_sourceEntityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_validationStrategyHasBeenSet = false;
 };
 

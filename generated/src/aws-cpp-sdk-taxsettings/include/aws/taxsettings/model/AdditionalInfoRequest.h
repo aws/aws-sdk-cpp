@@ -399,60 +399,60 @@ class AdditionalInfoRequest {
   ///@}
  private:
   CanadaAdditionalInfo m_canadaAdditionalInfo;
-  bool m_canadaAdditionalInfoHasBeenSet = false;
 
   EgyptAdditionalInfo m_egyptAdditionalInfo;
-  bool m_egyptAdditionalInfoHasBeenSet = false;
 
   EstoniaAdditionalInfo m_estoniaAdditionalInfo;
-  bool m_estoniaAdditionalInfoHasBeenSet = false;
 
   GeorgiaAdditionalInfo m_georgiaAdditionalInfo;
-  bool m_georgiaAdditionalInfoHasBeenSet = false;
 
   GreeceAdditionalInfo m_greeceAdditionalInfo;
-  bool m_greeceAdditionalInfoHasBeenSet = false;
 
   IndonesiaAdditionalInfo m_indonesiaAdditionalInfo;
-  bool m_indonesiaAdditionalInfoHasBeenSet = false;
 
   IsraelAdditionalInfo m_israelAdditionalInfo;
-  bool m_israelAdditionalInfoHasBeenSet = false;
 
   ItalyAdditionalInfo m_italyAdditionalInfo;
-  bool m_italyAdditionalInfoHasBeenSet = false;
 
   KenyaAdditionalInfo m_kenyaAdditionalInfo;
-  bool m_kenyaAdditionalInfoHasBeenSet = false;
 
   MalaysiaAdditionalInfo m_malaysiaAdditionalInfo;
-  bool m_malaysiaAdditionalInfoHasBeenSet = false;
 
   PolandAdditionalInfo m_polandAdditionalInfo;
-  bool m_polandAdditionalInfoHasBeenSet = false;
 
   RomaniaAdditionalInfo m_romaniaAdditionalInfo;
-  bool m_romaniaAdditionalInfoHasBeenSet = false;
 
   SaudiArabiaAdditionalInfo m_saudiArabiaAdditionalInfo;
-  bool m_saudiArabiaAdditionalInfoHasBeenSet = false;
 
   SouthKoreaAdditionalInfo m_southKoreaAdditionalInfo;
-  bool m_southKoreaAdditionalInfoHasBeenSet = false;
 
   SpainAdditionalInfo m_spainAdditionalInfo;
-  bool m_spainAdditionalInfoHasBeenSet = false;
 
   TurkeyAdditionalInfo m_turkeyAdditionalInfo;
-  bool m_turkeyAdditionalInfoHasBeenSet = false;
 
   UkraineAdditionalInfo m_ukraineAdditionalInfo;
-  bool m_ukraineAdditionalInfoHasBeenSet = false;
 
   UzbekistanAdditionalInfo m_uzbekistanAdditionalInfo;
-  bool m_uzbekistanAdditionalInfoHasBeenSet = false;
 
   VietnamAdditionalInfo m_vietnamAdditionalInfo;
+  bool m_canadaAdditionalInfoHasBeenSet = false;
+  bool m_egyptAdditionalInfoHasBeenSet = false;
+  bool m_estoniaAdditionalInfoHasBeenSet = false;
+  bool m_georgiaAdditionalInfoHasBeenSet = false;
+  bool m_greeceAdditionalInfoHasBeenSet = false;
+  bool m_indonesiaAdditionalInfoHasBeenSet = false;
+  bool m_israelAdditionalInfoHasBeenSet = false;
+  bool m_italyAdditionalInfoHasBeenSet = false;
+  bool m_kenyaAdditionalInfoHasBeenSet = false;
+  bool m_malaysiaAdditionalInfoHasBeenSet = false;
+  bool m_polandAdditionalInfoHasBeenSet = false;
+  bool m_romaniaAdditionalInfoHasBeenSet = false;
+  bool m_saudiArabiaAdditionalInfoHasBeenSet = false;
+  bool m_southKoreaAdditionalInfoHasBeenSet = false;
+  bool m_spainAdditionalInfoHasBeenSet = false;
+  bool m_turkeyAdditionalInfoHasBeenSet = false;
+  bool m_ukraineAdditionalInfoHasBeenSet = false;
+  bool m_uzbekistanAdditionalInfoHasBeenSet = false;
   bool m_vietnamAdditionalInfoHasBeenSet = false;
 };
 

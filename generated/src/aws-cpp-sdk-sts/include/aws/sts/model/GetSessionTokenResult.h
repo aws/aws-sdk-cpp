@@ -70,9 +70,9 @@ class GetSessionTokenResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_credentialsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

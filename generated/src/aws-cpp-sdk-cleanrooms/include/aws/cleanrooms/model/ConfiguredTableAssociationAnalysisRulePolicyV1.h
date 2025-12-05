@@ -91,12 +91,12 @@ class ConfiguredTableAssociationAnalysisRulePolicyV1 {
   ///@}
  private:
   ConfiguredTableAssociationAnalysisRuleList m_list;
-  bool m_listHasBeenSet = false;
 
   ConfiguredTableAssociationAnalysisRuleAggregation m_aggregation;
-  bool m_aggregationHasBeenSet = false;
 
   ConfiguredTableAssociationAnalysisRuleCustom m_custom;
+  bool m_listHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

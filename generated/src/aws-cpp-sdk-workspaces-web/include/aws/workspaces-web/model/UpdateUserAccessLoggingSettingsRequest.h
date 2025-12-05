@@ -89,12 +89,12 @@ class UpdateUserAccessLoggingSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_userAccessLoggingSettingsArn;
-  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
   Aws::String m_kinesisStreamArn;
-  bool m_kinesisStreamArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
+  bool m_kinesisStreamArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

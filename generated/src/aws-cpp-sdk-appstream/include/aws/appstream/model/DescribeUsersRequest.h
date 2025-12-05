@@ -84,12 +84,12 @@ class DescribeUsersRequest : public AppStreamRequest {
   ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

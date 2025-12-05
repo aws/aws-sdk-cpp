@@ -84,12 +84,12 @@ class DescribeGlobalNetworksResult {
   ///@}
  private:
   Aws::Vector<GlobalNetwork> m_globalNetworks;
-  bool m_globalNetworksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_globalNetworksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

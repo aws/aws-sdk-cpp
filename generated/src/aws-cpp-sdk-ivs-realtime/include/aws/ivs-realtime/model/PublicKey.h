@@ -137,18 +137,18 @@ class PublicKey {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_publicKeyMaterial;
-  bool m_publicKeyMaterialHasBeenSet = false;
 
   Aws::String m_fingerprint;
-  bool m_fingerprintHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_publicKeyMaterialHasBeenSet = false;
+  bool m_fingerprintHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

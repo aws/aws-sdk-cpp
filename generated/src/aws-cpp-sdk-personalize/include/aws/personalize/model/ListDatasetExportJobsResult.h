@@ -84,12 +84,12 @@ class ListDatasetExportJobsResult {
   ///@}
  private:
   Aws::Vector<DatasetExportJobSummary> m_datasetExportJobs;
-  bool m_datasetExportJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetExportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

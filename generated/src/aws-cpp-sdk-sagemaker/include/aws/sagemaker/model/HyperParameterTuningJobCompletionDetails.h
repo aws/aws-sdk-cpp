@@ -71,9 +71,9 @@ class HyperParameterTuningJobCompletionDetails {
   ///@}
  private:
   int m_numberOfTrainingJobsObjectiveNotImproving{0};
-  bool m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet = false;
 
   Aws::Utils::DateTime m_convergenceDetectedTime{};
+  bool m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet = false;
   bool m_convergenceDetectedTimeHasBeenSet = false;
 };
 

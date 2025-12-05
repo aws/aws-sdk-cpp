@@ -169,24 +169,24 @@ class User {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_accessString;
-  bool m_accessStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aCLNames;
-  bool m_aCLNamesHasBeenSet = false;
 
   Aws::String m_minimumEngineVersion;
-  bool m_minimumEngineVersionHasBeenSet = false;
 
   Authentication m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_accessStringHasBeenSet = false;
+  bool m_aCLNamesHasBeenSet = false;
+  bool m_minimumEngineVersionHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

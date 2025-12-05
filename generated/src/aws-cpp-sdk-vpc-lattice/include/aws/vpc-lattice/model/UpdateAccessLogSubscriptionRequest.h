@@ -65,9 +65,9 @@ class UpdateAccessLogSubscriptionRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_accessLogSubscriptionIdentifier;
-  bool m_accessLogSubscriptionIdentifierHasBeenSet = false;
 
   Aws::String m_destinationArn;
+  bool m_accessLogSubscriptionIdentifierHasBeenSet = false;
   bool m_destinationArnHasBeenSet = false;
 };
 

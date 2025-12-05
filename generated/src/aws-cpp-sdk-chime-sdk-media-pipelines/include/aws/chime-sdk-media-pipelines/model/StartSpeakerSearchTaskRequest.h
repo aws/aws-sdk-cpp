@@ -108,15 +108,15 @@ class StartSpeakerSearchTaskRequest : public ChimeSDKMediaPipelinesRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_voiceProfileDomainArn;
-  bool m_voiceProfileDomainArnHasBeenSet = false;
 
   KinesisVideoStreamSourceTaskConfiguration m_kinesisVideoStreamSourceTaskConfiguration;
-  bool m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_identifierHasBeenSet = false;
+  bool m_voiceProfileDomainArnHasBeenSet = false;
+  bool m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

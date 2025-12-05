@@ -107,15 +107,15 @@ class MatchingResponse {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   JobSchedule m_jobSchedule;
-  bool m_jobScheduleHasBeenSet = false;
 
   AutoMerging m_autoMerging;
-  bool m_autoMergingHasBeenSet = false;
 
   ExportingConfig m_exportingConfig;
+  bool m_enabledHasBeenSet = false;
+  bool m_jobScheduleHasBeenSet = false;
+  bool m_autoMergingHasBeenSet = false;
   bool m_exportingConfigHasBeenSet = false;
 };
 

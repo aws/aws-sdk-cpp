@@ -241,36 +241,36 @@ class AwsEc2VolumeDetails {
   ///@}
  private:
   Aws::String m_createTime;
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<AwsEc2VolumeAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   Aws::String m_volumeScanStatus;
+  bool m_createTimeHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
   bool m_volumeScanStatusHasBeenSet = false;
 };
 

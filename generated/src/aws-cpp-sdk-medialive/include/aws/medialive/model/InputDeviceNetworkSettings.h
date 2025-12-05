@@ -129,18 +129,18 @@ class InputDeviceNetworkSettings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dnsAddresses;
-  bool m_dnsAddressesHasBeenSet = false;
 
   Aws::String m_gateway;
-  bool m_gatewayHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   InputDeviceIpScheme m_ipScheme{InputDeviceIpScheme::NOT_SET};
-  bool m_ipSchemeHasBeenSet = false;
 
   Aws::String m_subnetMask;
+  bool m_dnsAddressesHasBeenSet = false;
+  bool m_gatewayHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_ipSchemeHasBeenSet = false;
   bool m_subnetMaskHasBeenSet = false;
 };
 

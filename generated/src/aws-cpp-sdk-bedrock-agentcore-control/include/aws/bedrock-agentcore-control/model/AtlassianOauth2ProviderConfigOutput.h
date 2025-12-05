@@ -69,9 +69,9 @@ class AtlassianOauth2ProviderConfigOutput {
   ///@}
  private:
   Oauth2Discovery m_oauthDiscovery;
-  bool m_oauthDiscoveryHasBeenSet = false;
 
   Aws::String m_clientId;
+  bool m_oauthDiscoveryHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
 };
 

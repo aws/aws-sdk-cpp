@@ -95,12 +95,12 @@ class ListCallerAccessGrantsEntry {
   ///@}
  private:
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   Aws::String m_grantScope;
-  bool m_grantScopeHasBeenSet = false;
 
   Aws::String m_applicationArn;
+  bool m_permissionHasBeenSet = false;
+  bool m_grantScopeHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;
 };
 

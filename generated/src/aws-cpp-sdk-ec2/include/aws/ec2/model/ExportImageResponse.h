@@ -224,36 +224,36 @@ class ExportImageResponse {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DiskImageFormat m_diskImageFormat{DiskImageFormat::NOT_SET};
-  bool m_diskImageFormatHasBeenSet = false;
 
   Aws::String m_exportImageTaskId;
-  bool m_exportImageTaskIdHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   ExportTaskS3Location m_s3ExportLocation;
-  bool m_s3ExportLocationHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_descriptionHasBeenSet = false;
+  bool m_diskImageFormatHasBeenSet = false;
+  bool m_exportImageTaskIdHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_roleNameHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_s3ExportLocationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

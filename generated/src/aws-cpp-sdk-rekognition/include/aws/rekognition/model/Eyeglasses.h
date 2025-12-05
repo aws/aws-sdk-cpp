@@ -63,9 +63,9 @@ class Eyeglasses {
   ///@}
  private:
   bool m_value{false};
-  bool m_valueHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_valueHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

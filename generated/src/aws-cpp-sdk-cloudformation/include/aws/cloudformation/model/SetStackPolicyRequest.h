@@ -99,12 +99,12 @@ class SetStackPolicyRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_stackPolicyBody;
-  bool m_stackPolicyBodyHasBeenSet = false;
 
   Aws::String m_stackPolicyURL;
+  bool m_stackNameHasBeenSet = false;
+  bool m_stackPolicyBodyHasBeenSet = false;
   bool m_stackPolicyURLHasBeenSet = false;
 };
 

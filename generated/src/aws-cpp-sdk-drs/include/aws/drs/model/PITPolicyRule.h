@@ -113,18 +113,18 @@ class PITPolicyRule {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   int m_retentionDuration{0};
-  bool m_retentionDurationHasBeenSet = false;
 
   long long m_ruleID{0};
-  bool m_ruleIDHasBeenSet = false;
 
   PITPolicyRuleUnits m_units{PITPolicyRuleUnits::NOT_SET};
+  bool m_enabledHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_retentionDurationHasBeenSet = false;
+  bool m_ruleIDHasBeenSet = false;
   bool m_unitsHasBeenSet = false;
 };
 

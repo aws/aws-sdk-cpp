@@ -84,12 +84,12 @@ class UpdateBridgeOutputRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   UpdateBridgeNetworkOutputRequest m_networkOutput;
-  bool m_networkOutputHasBeenSet = false;
 
   Aws::String m_outputName;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_networkOutputHasBeenSet = false;
   bool m_outputNameHasBeenSet = false;
 };
 

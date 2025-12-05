@@ -74,9 +74,9 @@ class RelayAuthentication {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   NoAuthentication m_noAuthentication;
+  bool m_secretArnHasBeenSet = false;
   bool m_noAuthenticationHasBeenSet = false;
 };
 

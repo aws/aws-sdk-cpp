@@ -60,9 +60,9 @@ class UpdatePhoneNumberResult {
   ///@}
  private:
   PhoneNumber m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_phoneNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

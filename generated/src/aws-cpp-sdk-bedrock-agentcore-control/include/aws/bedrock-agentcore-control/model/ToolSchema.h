@@ -80,9 +80,9 @@ class ToolSchema {
   ///@}
  private:
   S3Configuration m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::Vector<ToolDefinition> m_inlinePayload;
+  bool m_s3HasBeenSet = false;
   bool m_inlinePayloadHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class RebootReplicationInstanceRequest : public DatabaseMigrationServiceRequest 
   ///@}
  private:
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   bool m_forceFailover{false};
-  bool m_forceFailoverHasBeenSet = false;
 
   bool m_forcePlannedFailover{false};
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_forceFailoverHasBeenSet = false;
   bool m_forcePlannedFailoverHasBeenSet = false;
 };
 

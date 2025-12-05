@@ -201,33 +201,33 @@ class OutputSettings {
   ///@}
  private:
   ArchiveOutputSettings m_archiveOutputSettings;
-  bool m_archiveOutputSettingsHasBeenSet = false;
 
   FrameCaptureOutputSettings m_frameCaptureOutputSettings;
-  bool m_frameCaptureOutputSettingsHasBeenSet = false;
 
   HlsOutputSettings m_hlsOutputSettings;
-  bool m_hlsOutputSettingsHasBeenSet = false;
 
   MediaPackageOutputSettings m_mediaPackageOutputSettings;
-  bool m_mediaPackageOutputSettingsHasBeenSet = false;
 
   MsSmoothOutputSettings m_msSmoothOutputSettings;
-  bool m_msSmoothOutputSettingsHasBeenSet = false;
 
   MultiplexOutputSettings m_multiplexOutputSettings;
-  bool m_multiplexOutputSettingsHasBeenSet = false;
 
   RtmpOutputSettings m_rtmpOutputSettings;
-  bool m_rtmpOutputSettingsHasBeenSet = false;
 
   UdpOutputSettings m_udpOutputSettings;
-  bool m_udpOutputSettingsHasBeenSet = false;
 
   CmafIngestOutputSettings m_cmafIngestOutputSettings;
-  bool m_cmafIngestOutputSettingsHasBeenSet = false;
 
   SrtOutputSettings m_srtOutputSettings;
+  bool m_archiveOutputSettingsHasBeenSet = false;
+  bool m_frameCaptureOutputSettingsHasBeenSet = false;
+  bool m_hlsOutputSettingsHasBeenSet = false;
+  bool m_mediaPackageOutputSettingsHasBeenSet = false;
+  bool m_msSmoothOutputSettingsHasBeenSet = false;
+  bool m_multiplexOutputSettingsHasBeenSet = false;
+  bool m_rtmpOutputSettingsHasBeenSet = false;
+  bool m_udpOutputSettingsHasBeenSet = false;
+  bool m_cmafIngestOutputSettingsHasBeenSet = false;
   bool m_srtOutputSettingsHasBeenSet = false;
 };
 

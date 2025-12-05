@@ -120,18 +120,18 @@ class GetDataAccessResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_matchedGrantTarget;
-  bool m_matchedGrantTargetHasBeenSet = false;
 
   Grantee m_grantee;
-  bool m_granteeHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_credentialsHasBeenSet = false;
+  bool m_matchedGrantTargetHasBeenSet = false;
+  bool m_granteeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

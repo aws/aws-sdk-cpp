@@ -62,9 +62,9 @@ class StopProductSubscriptionResult {
   ///@}
  private:
   ProductUserSummary m_productUserSummary;
-  bool m_productUserSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productUserSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

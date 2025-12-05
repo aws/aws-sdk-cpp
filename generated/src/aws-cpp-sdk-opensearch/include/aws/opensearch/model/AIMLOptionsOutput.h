@@ -93,12 +93,12 @@ class AIMLOptionsOutput {
   ///@}
  private:
   NaturalLanguageQueryGenerationOptionsOutput m_naturalLanguageQueryGenerationOptions;
-  bool m_naturalLanguageQueryGenerationOptionsHasBeenSet = false;
 
   S3VectorsEngine m_s3VectorsEngine;
-  bool m_s3VectorsEngineHasBeenSet = false;
 
   ServerlessVectorAcceleration m_serverlessVectorAcceleration;
+  bool m_naturalLanguageQueryGenerationOptionsHasBeenSet = false;
+  bool m_s3VectorsEngineHasBeenSet = false;
   bool m_serverlessVectorAccelerationHasBeenSet = false;
 };
 

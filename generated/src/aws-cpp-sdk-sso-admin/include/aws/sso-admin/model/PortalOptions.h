@@ -68,9 +68,9 @@ class PortalOptions {
   ///@}
  private:
   SignInOptions m_signInOptions;
-  bool m_signInOptionsHasBeenSet = false;
 
   ApplicationVisibility m_visibility{ApplicationVisibility::NOT_SET};
+  bool m_signInOptionsHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

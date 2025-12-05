@@ -196,27 +196,27 @@ class VpcBlockPublicAccessOptions {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   VpcBlockPublicAccessState m_state{VpcBlockPublicAccessState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   InternetGatewayBlockMode m_internetGatewayBlockMode{InternetGatewayBlockMode::NOT_SET};
-  bool m_internetGatewayBlockModeHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   VpcBlockPublicAccessExclusionsAllowed m_exclusionsAllowed{VpcBlockPublicAccessExclusionsAllowed::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_internetGatewayBlockModeHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_exclusionsAllowedHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DeploymentStyle {
   ///@}
  private:
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   DeploymentOption m_deploymentOption{DeploymentOption::NOT_SET};
+  bool m_deploymentTypeHasBeenSet = false;
   bool m_deploymentOptionHasBeenSet = false;
 };
 

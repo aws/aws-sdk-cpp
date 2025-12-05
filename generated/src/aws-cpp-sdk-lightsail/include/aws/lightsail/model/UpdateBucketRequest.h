@@ -163,21 +163,21 @@ class UpdateBucketRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   AccessRules m_accessRules;
-  bool m_accessRulesHasBeenSet = false;
 
   Aws::String m_versioning;
-  bool m_versioningHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readonlyAccessAccounts;
-  bool m_readonlyAccessAccountsHasBeenSet = false;
 
   BucketAccessLogConfig m_accessLogConfig;
-  bool m_accessLogConfigHasBeenSet = false;
 
   BucketCorsConfig m_cors;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_accessRulesHasBeenSet = false;
+  bool m_versioningHasBeenSet = false;
+  bool m_readonlyAccessAccountsHasBeenSet = false;
+  bool m_accessLogConfigHasBeenSet = false;
   bool m_corsHasBeenSet = false;
 };
 

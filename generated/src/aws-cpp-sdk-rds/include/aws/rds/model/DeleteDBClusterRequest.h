@@ -123,15 +123,15 @@ class DeleteDBClusterRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   bool m_skipFinalSnapshot{false};
-  bool m_skipFinalSnapshotHasBeenSet = false;
 
   Aws::String m_finalDBSnapshotIdentifier;
-  bool m_finalDBSnapshotIdentifierHasBeenSet = false;
 
   bool m_deleteAutomatedBackups{false};
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_skipFinalSnapshotHasBeenSet = false;
+  bool m_finalDBSnapshotIdentifierHasBeenSet = false;
   bool m_deleteAutomatedBackupsHasBeenSet = false;
 };
 

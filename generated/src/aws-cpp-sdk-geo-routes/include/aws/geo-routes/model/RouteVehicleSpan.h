@@ -514,72 +514,72 @@ class RouteVehicleSpan {
   ///@}
  private:
   long long m_bestCaseDuration{0};
-  bool m_bestCaseDurationHasBeenSet = false;
 
   Aws::Vector<RouteSpanCarAccessAttribute> m_carAccess;
-  bool m_carAccessHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   RouteSpanDynamicSpeedDetails m_dynamicSpeed;
-  bool m_dynamicSpeedHasBeenSet = false;
 
   int m_functionalClassification{0};
-  bool m_functionalClassificationHasBeenSet = false;
 
   RouteSpanGateAttribute m_gate{RouteSpanGateAttribute::NOT_SET};
-  bool m_gateHasBeenSet = false;
 
   int m_geometryOffset{0};
-  bool m_geometryOffsetHasBeenSet = false;
 
   Aws::Vector<int> m_incidents;
-  bool m_incidentsHasBeenSet = false;
 
   Aws::Vector<LocalizedString> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::Vector<int> m_notices;
-  bool m_noticesHasBeenSet = false;
 
   RouteSpanRailwayCrossingAttribute m_railwayCrossing{RouteSpanRailwayCrossingAttribute::NOT_SET};
-  bool m_railwayCrossingHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<RouteSpanRoadAttribute> m_roadAttributes;
-  bool m_roadAttributesHasBeenSet = false;
 
   Aws::Vector<RouteNumber> m_routeNumbers;
-  bool m_routeNumbersHasBeenSet = false;
 
   Aws::Vector<RouteSpanScooterAccessAttribute> m_scooterAccess;
-  bool m_scooterAccessHasBeenSet = false;
 
   RouteSpanSpeedLimitDetails m_speedLimit;
-  bool m_speedLimitHasBeenSet = false;
 
   Aws::Vector<int> m_tollSystems;
-  bool m_tollSystemsHasBeenSet = false;
 
   Aws::Vector<RouteSpanTruckAccessAttribute> m_truckAccess;
-  bool m_truckAccessHasBeenSet = false;
 
   Aws::Vector<int> m_truckRoadTypes;
-  bool m_truckRoadTypesHasBeenSet = false;
 
   long long m_typicalDuration{0};
-  bool m_typicalDurationHasBeenSet = false;
 
   Aws::Vector<int> m_zones;
+  bool m_bestCaseDurationHasBeenSet = false;
+  bool m_carAccessHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_dynamicSpeedHasBeenSet = false;
+  bool m_functionalClassificationHasBeenSet = false;
+  bool m_gateHasBeenSet = false;
+  bool m_geometryOffsetHasBeenSet = false;
+  bool m_incidentsHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_noticesHasBeenSet = false;
+  bool m_railwayCrossingHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_roadAttributesHasBeenSet = false;
+  bool m_routeNumbersHasBeenSet = false;
+  bool m_scooterAccessHasBeenSet = false;
+  bool m_speedLimitHasBeenSet = false;
+  bool m_tollSystemsHasBeenSet = false;
+  bool m_truckAccessHasBeenSet = false;
+  bool m_truckRoadTypesHasBeenSet = false;
+  bool m_typicalDurationHasBeenSet = false;
   bool m_zonesHasBeenSet = false;
 };
 

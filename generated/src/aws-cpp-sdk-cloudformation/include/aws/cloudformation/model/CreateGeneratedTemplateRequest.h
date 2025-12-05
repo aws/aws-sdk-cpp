@@ -119,15 +119,15 @@ class CreateGeneratedTemplateRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::Vector<ResourceDefinition> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_generatedTemplateName;
-  bool m_generatedTemplateNameHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   TemplateConfiguration m_templateConfiguration;
+  bool m_resourcesHasBeenSet = false;
+  bool m_generatedTemplateNameHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
   bool m_templateConfigurationHasBeenSet = false;
 };
 

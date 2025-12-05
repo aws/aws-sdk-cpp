@@ -78,9 +78,9 @@ class LifecyclePolicyPreviewSummary {
   ///@}
  private:
   int m_expiringImageTotalCount{0};
-  bool m_expiringImageTotalCountHasBeenSet = false;
 
   Aws::Vector<TransitioningImageTotalCount> m_transitioningImageTotalCounts;
+  bool m_expiringImageTotalCountHasBeenSet = false;
   bool m_transitioningImageTotalCountsHasBeenSet = false;
 };
 

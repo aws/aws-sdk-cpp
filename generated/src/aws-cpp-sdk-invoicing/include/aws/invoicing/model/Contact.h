@@ -69,9 +69,9 @@ class Contact {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_nameHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

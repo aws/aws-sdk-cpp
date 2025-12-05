@@ -85,12 +85,12 @@ class RedshiftMetadata {
   ///@}
  private:
   RedshiftDatabase m_redshiftDatabase;
-  bool m_redshiftDatabaseHasBeenSet = false;
 
   Aws::String m_databaseUserName;
-  bool m_databaseUserNameHasBeenSet = false;
 
   Aws::String m_selectSqlQuery;
+  bool m_redshiftDatabaseHasBeenSet = false;
+  bool m_databaseUserNameHasBeenSet = false;
   bool m_selectSqlQueryHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListLoggingConfigurationsResult {
   ///@}
  private:
   Aws::Vector<LoggingConfiguration> m_loggingConfigurations;
-  bool m_loggingConfigurationsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loggingConfigurationsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

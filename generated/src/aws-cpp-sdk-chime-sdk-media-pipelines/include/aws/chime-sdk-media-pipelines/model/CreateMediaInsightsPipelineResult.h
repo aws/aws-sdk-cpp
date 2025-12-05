@@ -61,9 +61,9 @@ class CreateMediaInsightsPipelineResult {
   ///@}
  private:
   MediaInsightsPipeline m_mediaInsightsPipeline;
-  bool m_mediaInsightsPipelineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaInsightsPipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

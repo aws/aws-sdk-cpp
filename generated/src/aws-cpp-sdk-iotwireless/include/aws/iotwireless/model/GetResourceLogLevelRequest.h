@@ -69,9 +69,9 @@ class GetResourceLogLevelRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

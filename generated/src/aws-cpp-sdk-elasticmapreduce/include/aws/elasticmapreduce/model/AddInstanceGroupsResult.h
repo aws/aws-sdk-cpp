@@ -105,15 +105,15 @@ class AddInstanceGroupsResult {
   ///@}
  private:
   Aws::String m_jobFlowId;
-  bool m_jobFlowIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceGroupIds;
-  bool m_instanceGroupIdsHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobFlowIdHasBeenSet = false;
+  bool m_instanceGroupIdsHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

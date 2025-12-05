@@ -71,9 +71,9 @@ class EbsBlockDeviceConfig {
   ///@}
  private:
   VolumeSpecification m_volumeSpecification;
-  bool m_volumeSpecificationHasBeenSet = false;
 
   int m_volumesPerInstance{0};
+  bool m_volumeSpecificationHasBeenSet = false;
   bool m_volumesPerInstanceHasBeenSet = false;
 };
 

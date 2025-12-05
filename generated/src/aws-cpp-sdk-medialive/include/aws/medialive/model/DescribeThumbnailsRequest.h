@@ -92,12 +92,12 @@ class DescribeThumbnailsRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::String m_thumbnailType;
+  bool m_channelIdHasBeenSet = false;
+  bool m_pipelineIdHasBeenSet = false;
   bool m_thumbnailTypeHasBeenSet = false;
 };
 

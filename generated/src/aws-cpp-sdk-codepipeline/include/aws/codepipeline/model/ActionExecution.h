@@ -240,36 +240,36 @@ class ActionExecution {
   ///@}
  private:
   Aws::String m_actionExecutionId;
-  bool m_actionExecutionIdHasBeenSet = false;
 
   ActionExecutionStatus m_status{ActionExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChange{};
-  bool m_lastStatusChangeHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::String m_externalExecutionId;
-  bool m_externalExecutionIdHasBeenSet = false;
 
   Aws::String m_externalExecutionUrl;
-  bool m_externalExecutionUrlHasBeenSet = false;
 
   int m_percentComplete{0};
-  bool m_percentCompleteHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_logStreamARN;
+  bool m_actionExecutionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_lastStatusChangeHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_externalExecutionIdHasBeenSet = false;
+  bool m_externalExecutionUrlHasBeenSet = false;
+  bool m_percentCompleteHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_logStreamARNHasBeenSet = false;
 };
 

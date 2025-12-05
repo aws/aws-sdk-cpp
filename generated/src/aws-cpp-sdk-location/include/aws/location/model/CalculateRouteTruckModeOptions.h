@@ -109,15 +109,15 @@ class CalculateRouteTruckModeOptions {
   ///@}
  private:
   bool m_avoidFerries{false};
-  bool m_avoidFerriesHasBeenSet = false;
 
   bool m_avoidTolls{false};
-  bool m_avoidTollsHasBeenSet = false;
 
   TruckDimensions m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   TruckWeight m_weight;
+  bool m_avoidFerriesHasBeenSet = false;
+  bool m_avoidTollsHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

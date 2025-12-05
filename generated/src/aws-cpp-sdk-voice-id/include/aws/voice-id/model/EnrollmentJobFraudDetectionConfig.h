@@ -96,12 +96,12 @@ class EnrollmentJobFraudDetectionConfig {
   ///@}
  private:
   FraudDetectionAction m_fraudDetectionAction{FraudDetectionAction::NOT_SET};
-  bool m_fraudDetectionActionHasBeenSet = false;
 
   int m_riskThreshold{0};
-  bool m_riskThresholdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_watchlistIds;
+  bool m_fraudDetectionActionHasBeenSet = false;
+  bool m_riskThresholdHasBeenSet = false;
   bool m_watchlistIdsHasBeenSet = false;
 };
 

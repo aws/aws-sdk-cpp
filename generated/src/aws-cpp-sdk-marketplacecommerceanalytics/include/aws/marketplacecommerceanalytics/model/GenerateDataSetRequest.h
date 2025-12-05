@@ -237,24 +237,24 @@ class GenerateDataSetRequest : public MarketplaceCommerceAnalyticsRequest {
   ///@}
  private:
   DataSetType m_dataSetType{DataSetType::NOT_SET};
-  bool m_dataSetTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataSetPublicationDate{};
-  bool m_dataSetPublicationDateHasBeenSet = false;
 
   Aws::String m_roleNameArn;
-  bool m_roleNameArnHasBeenSet = false;
 
   Aws::String m_destinationS3BucketName;
-  bool m_destinationS3BucketNameHasBeenSet = false;
 
   Aws::String m_destinationS3Prefix;
-  bool m_destinationS3PrefixHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customerDefinedValues;
+  bool m_dataSetTypeHasBeenSet = false;
+  bool m_dataSetPublicationDateHasBeenSet = false;
+  bool m_roleNameArnHasBeenSet = false;
+  bool m_destinationS3BucketNameHasBeenSet = false;
+  bool m_destinationS3PrefixHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
   bool m_customerDefinedValuesHasBeenSet = false;
 };
 

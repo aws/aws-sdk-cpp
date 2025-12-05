@@ -83,9 +83,9 @@ class InstanceConfiguration {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
+  bool m_imageHasBeenSet = false;
   bool m_blockDeviceMappingsHasBeenSet = false;
 };
 

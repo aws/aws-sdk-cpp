@@ -60,9 +60,9 @@ class CreateInternetGatewayResponse {
   ///@}
  private:
   InternetGateway m_internetGateway;
-  bool m_internetGatewayHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_internetGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

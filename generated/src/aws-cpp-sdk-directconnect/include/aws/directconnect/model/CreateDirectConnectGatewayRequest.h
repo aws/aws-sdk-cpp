@@ -94,12 +94,12 @@ class CreateDirectConnectGatewayRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_directConnectGatewayName;
-  bool m_directConnectGatewayNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   long long m_amazonSideAsn{0};
+  bool m_directConnectGatewayNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_amazonSideAsnHasBeenSet = false;
 };
 

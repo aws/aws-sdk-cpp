@@ -65,9 +65,9 @@ class ListImageScanFindingAggregationsRequest : public ImagebuilderRequest {
   ///@}
  private:
   Filter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

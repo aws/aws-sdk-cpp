@@ -126,18 +126,18 @@ class SearchResult {
   ///@}
  private:
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_viewArn;
-  bool m_viewArnHasBeenSet = false;
 
   ResourceCount m_count;
-  bool m_countHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_viewArnHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

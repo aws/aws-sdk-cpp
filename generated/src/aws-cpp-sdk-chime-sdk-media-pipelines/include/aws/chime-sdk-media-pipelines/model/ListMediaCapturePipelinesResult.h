@@ -85,12 +85,12 @@ class ListMediaCapturePipelinesResult {
   ///@}
  private:
   Aws::Vector<MediaCapturePipelineSummary> m_mediaCapturePipelines;
-  bool m_mediaCapturePipelinesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaCapturePipelinesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

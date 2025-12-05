@@ -137,18 +137,18 @@ class QueryWhatIfForecastRequest : public ForecastQueryServiceRequest {
   ///@}
  private:
   Aws::String m_whatIfForecastArn;
-  bool m_whatIfForecastArnHasBeenSet = false;
 
   Aws::String m_startDate;
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_endDate;
-  bool m_endDateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_whatIfForecastArnHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

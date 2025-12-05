@@ -98,15 +98,15 @@ class Period {
   ///@}
  private:
   PeriodUnit m_unit{PeriodUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   int m_value{0};
-  bool m_valueHasBeenSet = false;
 
   int m_maxInvocationsPerProfile{0};
-  bool m_maxInvocationsPerProfileHasBeenSet = false;
 
   bool m_unlimited{false};
+  bool m_unitHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_maxInvocationsPerProfileHasBeenSet = false;
   bool m_unlimitedHasBeenSet = false;
 };
 

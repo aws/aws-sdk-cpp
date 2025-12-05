@@ -63,9 +63,9 @@ class GeoLocation {
   ///@}
  private:
   double m_lat{0.0};
-  bool m_latHasBeenSet = false;
 
   double m_lon{0.0};
+  bool m_latHasBeenSet = false;
   bool m_lonHasBeenSet = false;
 };
 

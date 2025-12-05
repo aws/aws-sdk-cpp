@@ -90,12 +90,12 @@ class HealthCheckObservation {
   ///@}
  private:
   HealthCheckRegion m_region{HealthCheckRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_iPAddress;
-  bool m_iPAddressHasBeenSet = false;
 
   StatusReport m_statusReport;
+  bool m_regionHasBeenSet = false;
+  bool m_iPAddressHasBeenSet = false;
   bool m_statusReportHasBeenSet = false;
 };
 

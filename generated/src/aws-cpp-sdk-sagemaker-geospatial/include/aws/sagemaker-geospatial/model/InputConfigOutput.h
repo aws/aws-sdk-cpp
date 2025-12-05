@@ -72,9 +72,9 @@ class InputConfigOutput {
   ///@}
  private:
   Aws::String m_previousEarthObservationJobArn;
-  bool m_previousEarthObservationJobArnHasBeenSet = false;
 
   RasterDataCollectionQueryOutput m_rasterDataCollectionQuery;
+  bool m_previousEarthObservationJobArnHasBeenSet = false;
   bool m_rasterDataCollectionQueryHasBeenSet = false;
 };
 

@@ -156,24 +156,24 @@ class EvaluateSessionResult {
   ///@}
  private:
   AuthenticationResult m_authenticationResult;
-  bool m_authenticationResultHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   FraudDetectionResult m_fraudDetectionResult;
-  bool m_fraudDetectionResultHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_sessionName;
-  bool m_sessionNameHasBeenSet = false;
 
   StreamingStatus m_streamingStatus{StreamingStatus::NOT_SET};
-  bool m_streamingStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationResultHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_fraudDetectionResultHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
+  bool m_streamingStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

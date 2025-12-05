@@ -129,18 +129,18 @@ class ModelCardSummary {
   ///@}
  private:
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   Aws::String m_modelCardArn;
-  bool m_modelCardArnHasBeenSet = false;
 
   ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
-  bool m_modelCardStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_modelCardArnHasBeenSet = false;
+  bool m_modelCardStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

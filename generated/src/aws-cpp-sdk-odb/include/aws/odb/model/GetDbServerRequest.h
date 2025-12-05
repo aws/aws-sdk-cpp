@@ -69,9 +69,9 @@ class GetDbServerRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   Aws::String m_dbServerId;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
   bool m_dbServerIdHasBeenSet = false;
 };
 

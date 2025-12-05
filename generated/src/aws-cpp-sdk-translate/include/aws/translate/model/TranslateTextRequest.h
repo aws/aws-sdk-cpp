@@ -155,18 +155,18 @@ class TranslateTextRequest : public TranslateRequest {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_terminologyNames;
-  bool m_terminologyNamesHasBeenSet = false;
 
   Aws::String m_sourceLanguageCode;
-  bool m_sourceLanguageCodeHasBeenSet = false;
 
   Aws::String m_targetLanguageCode;
-  bool m_targetLanguageCodeHasBeenSet = false;
 
   TranslationSettings m_settings;
+  bool m_textHasBeenSet = false;
+  bool m_terminologyNamesHasBeenSet = false;
+  bool m_sourceLanguageCodeHasBeenSet = false;
+  bool m_targetLanguageCodeHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

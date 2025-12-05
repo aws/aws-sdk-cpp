@@ -71,9 +71,9 @@ class DevEnvironmentSessionConfiguration {
   ///@}
  private:
   DevEnvironmentSessionType m_sessionType{DevEnvironmentSessionType::NOT_SET};
-  bool m_sessionTypeHasBeenSet = false;
 
   ExecuteCommandSessionConfiguration m_executeCommandSessionConfiguration;
+  bool m_sessionTypeHasBeenSet = false;
   bool m_executeCommandSessionConfigurationHasBeenSet = false;
 };
 

@@ -176,27 +176,27 @@ class Member {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_masterId;
-  bool m_masterIdHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_relationshipStatus;
-  bool m_relationshipStatusHasBeenSet = false;
 
   Aws::String m_invitedAt;
-  bool m_invitedAtHasBeenSet = false;
 
   Aws::String m_updatedAt;
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_administratorId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_masterIdHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_relationshipStatusHasBeenSet = false;
+  bool m_invitedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_administratorIdHasBeenSet = false;
 };
 

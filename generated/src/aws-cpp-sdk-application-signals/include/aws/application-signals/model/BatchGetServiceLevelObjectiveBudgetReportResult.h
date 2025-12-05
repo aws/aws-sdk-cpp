@@ -113,15 +113,15 @@ class BatchGetServiceLevelObjectiveBudgetReportResult {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::Vector<ServiceLevelObjectiveBudgetReport> m_reports;
-  bool m_reportsHasBeenSet = false;
 
   Aws::Vector<ServiceLevelObjectiveBudgetReportError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_timestampHasBeenSet = false;
+  bool m_reportsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

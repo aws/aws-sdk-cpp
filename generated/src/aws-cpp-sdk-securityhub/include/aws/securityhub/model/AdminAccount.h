@@ -70,9 +70,9 @@ class AdminAccount {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AdminStatus m_status{AdminStatus::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

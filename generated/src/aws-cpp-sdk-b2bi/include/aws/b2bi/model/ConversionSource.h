@@ -68,9 +68,9 @@ class ConversionSource {
   ///@}
  private:
   ConversionSourceFormat m_fileFormat{ConversionSourceFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   InputFileSource m_inputFile;
+  bool m_fileFormatHasBeenSet = false;
   bool m_inputFileHasBeenSet = false;
 };
 

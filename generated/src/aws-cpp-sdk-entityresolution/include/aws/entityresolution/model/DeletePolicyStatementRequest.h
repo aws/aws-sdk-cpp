@@ -66,9 +66,9 @@ class DeletePolicyStatementRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_statementId;
+  bool m_arnHasBeenSet = false;
   bool m_statementIdHasBeenSet = false;
 };
 

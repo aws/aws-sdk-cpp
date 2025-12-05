@@ -263,39 +263,39 @@ class CreatePartnerAppRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PartnerAppType m_type{PartnerAppType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   PartnerAppMaintenanceConfig m_maintenanceConfig;
-  bool m_maintenanceConfigHasBeenSet = false;
 
   Aws::String m_tier;
-  bool m_tierHasBeenSet = false;
 
   PartnerAppConfig m_applicationConfig;
-  bool m_applicationConfigHasBeenSet = false;
 
   PartnerAppAuthType m_authType{PartnerAppAuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   bool m_enableIamSessionBasedIdentity{false};
-  bool m_enableIamSessionBasedIdentityHasBeenSet = false;
 
   bool m_enableAutoMinorVersionUpgrade{false};
-  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_maintenanceConfigHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_applicationConfigHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_enableIamSessionBasedIdentityHasBeenSet = false;
+  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

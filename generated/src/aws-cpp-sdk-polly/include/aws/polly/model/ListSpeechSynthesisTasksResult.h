@@ -87,12 +87,12 @@ class ListSpeechSynthesisTasksResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SynthesisTask> m_synthesisTasks;
-  bool m_synthesisTasksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_synthesisTasksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

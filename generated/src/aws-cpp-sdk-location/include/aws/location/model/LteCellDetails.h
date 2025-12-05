@@ -207,33 +207,33 @@ class LteCellDetails {
   ///@}
  private:
   int m_cellId{0};
-  bool m_cellIdHasBeenSet = false;
 
   int m_mcc{0};
-  bool m_mccHasBeenSet = false;
 
   int m_mnc{0};
-  bool m_mncHasBeenSet = false;
 
   LteLocalId m_localId;
-  bool m_localIdHasBeenSet = false;
 
   Aws::Vector<LteNetworkMeasurements> m_networkMeasurements;
-  bool m_networkMeasurementsHasBeenSet = false;
 
   int m_timingAdvance{0};
-  bool m_timingAdvanceHasBeenSet = false;
 
   bool m_nrCapable{false};
-  bool m_nrCapableHasBeenSet = false;
 
   int m_rsrp{0};
-  bool m_rsrpHasBeenSet = false;
 
   double m_rsrq{0.0};
-  bool m_rsrqHasBeenSet = false;
 
   int m_tac{0};
+  bool m_cellIdHasBeenSet = false;
+  bool m_mccHasBeenSet = false;
+  bool m_mncHasBeenSet = false;
+  bool m_localIdHasBeenSet = false;
+  bool m_networkMeasurementsHasBeenSet = false;
+  bool m_timingAdvanceHasBeenSet = false;
+  bool m_nrCapableHasBeenSet = false;
+  bool m_rsrpHasBeenSet = false;
+  bool m_rsrqHasBeenSet = false;
   bool m_tacHasBeenSet = false;
 };
 

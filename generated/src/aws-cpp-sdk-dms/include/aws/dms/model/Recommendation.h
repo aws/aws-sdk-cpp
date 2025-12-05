@@ -175,24 +175,24 @@ class Recommendation {
   ///@}
  private:
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_preferred{false};
-  bool m_preferredHasBeenSet = false;
 
   RecommendationSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   RecommendationData m_data;
+  bool m_databaseIdHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_preferredHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

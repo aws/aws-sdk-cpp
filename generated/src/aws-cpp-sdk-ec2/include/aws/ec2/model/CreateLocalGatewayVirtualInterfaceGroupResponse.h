@@ -63,9 +63,9 @@ class CreateLocalGatewayVirtualInterfaceGroupResponse {
   ///@}
  private:
   LocalGatewayVirtualInterfaceGroup m_localGatewayVirtualInterfaceGroup;
-  bool m_localGatewayVirtualInterfaceGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_localGatewayVirtualInterfaceGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

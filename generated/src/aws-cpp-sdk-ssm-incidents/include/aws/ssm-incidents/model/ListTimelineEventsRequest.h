@@ -153,21 +153,21 @@ class ListTimelineEventsRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_incidentRecordArn;
-  bool m_incidentRecordArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   TimelineEventSort m_sortBy{TimelineEventSort::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_filtersHasBeenSet = false;
+  bool m_incidentRecordArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

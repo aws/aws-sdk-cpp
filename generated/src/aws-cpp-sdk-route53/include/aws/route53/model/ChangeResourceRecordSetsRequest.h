@@ -72,9 +72,9 @@ class ChangeResourceRecordSetsRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   ChangeBatch m_changeBatch;
+  bool m_hostedZoneIdHasBeenSet = false;
   bool m_changeBatchHasBeenSet = false;
 };
 

@@ -98,15 +98,15 @@ class SearchTasksResult {
   ///@}
  private:
   Aws::Vector<TaskSearchSummary> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   int m_nextItemOffset{0};
-  bool m_nextItemOffsetHasBeenSet = false;
 
   int m_totalResults{0};
-  bool m_totalResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tasksHasBeenSet = false;
+  bool m_nextItemOffsetHasBeenSet = false;
+  bool m_totalResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

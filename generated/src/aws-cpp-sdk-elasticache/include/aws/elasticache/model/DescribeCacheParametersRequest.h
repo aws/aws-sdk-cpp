@@ -114,15 +114,15 @@ class DescribeCacheParametersRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

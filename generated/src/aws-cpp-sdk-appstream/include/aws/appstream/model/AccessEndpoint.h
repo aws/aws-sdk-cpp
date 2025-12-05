@@ -73,9 +73,9 @@ class AccessEndpoint {
   ///@}
  private:
   AccessEndpointType m_endpointType{AccessEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_vpceId;
+  bool m_endpointTypeHasBeenSet = false;
   bool m_vpceIdHasBeenSet = false;
 };
 

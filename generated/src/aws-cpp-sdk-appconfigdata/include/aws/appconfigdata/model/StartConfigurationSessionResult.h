@@ -70,9 +70,9 @@ class StartConfigurationSessionResult {
   ///@}
  private:
   Aws::String m_initialConfigurationToken;
-  bool m_initialConfigurationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_initialConfigurationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

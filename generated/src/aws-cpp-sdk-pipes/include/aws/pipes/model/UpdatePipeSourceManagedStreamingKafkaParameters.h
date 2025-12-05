@@ -83,12 +83,12 @@ class UpdatePipeSourceManagedStreamingKafkaParameters {
   ///@}
  private:
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   MSKAccessCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   int m_maximumBatchingWindowInSeconds{0};
+  bool m_batchSizeHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
   bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 };
 

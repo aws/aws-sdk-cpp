@@ -92,12 +92,12 @@ class RepositoryAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_repositories;
-  bool m_repositoriesHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   RepositorySortBy m_sortBy{RepositorySortBy::NOT_SET};
+  bool m_repositoriesHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

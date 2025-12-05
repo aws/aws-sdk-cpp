@@ -71,9 +71,9 @@ class Authorization {
   ///@}
  private:
   CognitoConfig m_cognitoConfig;
-  bool m_cognitoConfigHasBeenSet = false;
 
   None m_none;
+  bool m_cognitoConfigHasBeenSet = false;
   bool m_noneHasBeenSet = false;
 };
 

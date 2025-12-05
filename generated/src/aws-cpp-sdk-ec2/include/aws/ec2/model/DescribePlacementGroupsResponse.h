@@ -67,9 +67,9 @@ class DescribePlacementGroupsResponse {
   ///@}
  private:
   Aws::Vector<PlacementGroup> m_placementGroups;
-  bool m_placementGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_placementGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

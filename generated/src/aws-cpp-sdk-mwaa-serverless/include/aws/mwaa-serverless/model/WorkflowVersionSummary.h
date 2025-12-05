@@ -182,27 +182,27 @@ class WorkflowVersionSummary {
   ///@}
  private:
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   bool m_isLatestVersion{false};
-  bool m_isLatestVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   DefinitionS3Location m_definitionS3Location;
-  bool m_definitionS3LocationHasBeenSet = false;
 
   ScheduleConfiguration m_scheduleConfiguration;
-  bool m_scheduleConfigurationHasBeenSet = false;
 
   Aws::String m_triggerMode;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_isLatestVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_definitionS3LocationHasBeenSet = false;
+  bool m_scheduleConfigurationHasBeenSet = false;
   bool m_triggerModeHasBeenSet = false;
 };
 

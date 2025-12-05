@@ -107,15 +107,15 @@ class DisableTransitGatewayRouteTablePropagationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableAnnouncementId;
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class GetSellingSystemSettingsResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_resourceSnapshotJobRoleArn;
-  bool m_resourceSnapshotJobRoleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_resourceSnapshotJobRoleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

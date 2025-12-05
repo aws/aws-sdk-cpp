@@ -101,12 +101,12 @@ class AcceptAddressTransferRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_addressHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

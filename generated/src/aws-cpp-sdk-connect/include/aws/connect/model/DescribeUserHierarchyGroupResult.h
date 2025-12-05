@@ -60,9 +60,9 @@ class DescribeUserHierarchyGroupResult {
   ///@}
  private:
   HierarchyGroup m_hierarchyGroup;
-  bool m_hierarchyGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hierarchyGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

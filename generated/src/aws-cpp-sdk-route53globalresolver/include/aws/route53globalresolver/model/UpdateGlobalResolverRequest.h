@@ -102,15 +102,15 @@ class UpdateGlobalResolverRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_globalResolverId;
-  bool m_globalResolverIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_observabilityRegion;
-  bool m_observabilityRegionHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_globalResolverIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_observabilityRegionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class AwsRedshiftClusterClusterNode {
   ///@}
  private:
   Aws::String m_nodeRole;
-  bool m_nodeRoleHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::String m_publicIpAddress;
+  bool m_nodeRoleHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
   bool m_publicIpAddressHasBeenSet = false;
 };
 

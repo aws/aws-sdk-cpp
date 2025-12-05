@@ -304,27 +304,27 @@ class CreateFilterRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FilterAction m_action{FilterAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   FindingCriteria m_findingCriteria;
-  bool m_findingCriteriaHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
+  bool m_findingCriteriaHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

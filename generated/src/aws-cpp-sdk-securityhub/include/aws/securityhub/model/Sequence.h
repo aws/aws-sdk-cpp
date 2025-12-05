@@ -163,18 +163,18 @@ class Sequence {
   ///@}
  private:
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   Aws::Vector<Actor> m_actors;
-  bool m_actorsHasBeenSet = false;
 
   Aws::Vector<NetworkEndpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::Vector<Signal> m_signals;
-  bool m_signalsHasBeenSet = false;
 
   Aws::Vector<Indicator> m_sequenceIndicators;
+  bool m_uidHasBeenSet = false;
+  bool m_actorsHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_signalsHasBeenSet = false;
   bool m_sequenceIndicatorsHasBeenSet = false;
 };
 

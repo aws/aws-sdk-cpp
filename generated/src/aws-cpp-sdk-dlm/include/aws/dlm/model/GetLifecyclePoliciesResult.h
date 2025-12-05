@@ -67,9 +67,9 @@ class GetLifecyclePoliciesResult {
   ///@}
  private:
   Aws::Vector<LifecyclePolicySummary> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

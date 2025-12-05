@@ -281,39 +281,39 @@ class Webhook {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_payloadUrl;
-  bool m_payloadUrlHasBeenSet = false;
 
   Aws::String m_secret;
-  bool m_secretHasBeenSet = false;
 
   Aws::String m_branchFilter;
-  bool m_branchFilterHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
-  bool m_filterGroupsHasBeenSet = false;
 
   WebhookBuildType m_buildType{WebhookBuildType::NOT_SET};
-  bool m_buildTypeHasBeenSet = false;
 
   bool m_manualCreation{false};
-  bool m_manualCreationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedSecret{};
-  bool m_lastModifiedSecretHasBeenSet = false;
 
   ScopeConfiguration m_scopeConfiguration;
-  bool m_scopeConfigurationHasBeenSet = false;
 
   WebhookStatus m_status{WebhookStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   PullRequestBuildPolicy m_pullRequestBuildPolicy;
+  bool m_urlHasBeenSet = false;
+  bool m_payloadUrlHasBeenSet = false;
+  bool m_secretHasBeenSet = false;
+  bool m_branchFilterHasBeenSet = false;
+  bool m_filterGroupsHasBeenSet = false;
+  bool m_buildTypeHasBeenSet = false;
+  bool m_manualCreationHasBeenSet = false;
+  bool m_lastModifiedSecretHasBeenSet = false;
+  bool m_scopeConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_pullRequestBuildPolicyHasBeenSet = false;
 };
 

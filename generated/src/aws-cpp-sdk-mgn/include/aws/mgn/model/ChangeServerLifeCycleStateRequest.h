@@ -85,12 +85,12 @@ class ChangeServerLifeCycleStateRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   ChangeServerLifeCycleStateSourceServerLifecycle m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
   Aws::String m_sourceServerID;
+  bool m_accountIDHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ApplySecurityGroupsToClientVpnTargetNetworkResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -134,21 +134,21 @@ class CreateEventBusResult {
   ///@}
  private:
   Aws::String m_eventBusArn;
-  bool m_eventBusArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   DeadLetterConfig m_deadLetterConfig;
-  bool m_deadLetterConfigHasBeenSet = false;
 
   LogConfig m_logConfig;
-  bool m_logConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventBusArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_deadLetterConfigHasBeenSet = false;
+  bool m_logConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

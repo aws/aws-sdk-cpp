@@ -81,9 +81,9 @@ class CookieObject {
   ///@}
  private:
   ForwardValues m_option{ForwardValues::NOT_SET};
-  bool m_optionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cookiesAllowList;
+  bool m_optionHasBeenSet = false;
   bool m_cookiesAllowListHasBeenSet = false;
 };
 

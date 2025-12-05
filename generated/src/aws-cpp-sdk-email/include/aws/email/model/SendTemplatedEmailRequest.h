@@ -310,36 +310,36 @@ class SendTemplatedEmailRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replyToAddresses;
-  bool m_replyToAddressesHasBeenSet = false;
 
   Aws::String m_returnPath;
-  bool m_returnPathHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_returnPathArn;
-  bool m_returnPathArnHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_template;
-  bool m_templateHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateData;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_replyToAddressesHasBeenSet = false;
+  bool m_returnPathHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_returnPathArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_templateHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
   bool m_templateDataHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class BotLocaleHistoryEvent {
   ///@}
  private:
   Aws::String m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventDate{};
+  bool m_eventHasBeenSet = false;
   bool m_eventDateHasBeenSet = false;
 };
 

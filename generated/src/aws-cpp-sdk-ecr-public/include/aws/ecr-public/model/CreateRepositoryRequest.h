@@ -102,12 +102,12 @@ class CreateRepositoryRequest : public ECRPublicRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   RepositoryCatalogDataInput m_catalogData;
-  bool m_catalogDataHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_catalogDataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

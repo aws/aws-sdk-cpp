@@ -95,12 +95,12 @@ class DescribeReservedNodesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReservedNode> m_reservedNodes;
-  bool m_reservedNodesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_reservedNodesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

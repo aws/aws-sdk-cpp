@@ -91,12 +91,12 @@ class Ulimit {
   ///@}
  private:
   UlimitName m_name{UlimitName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   int m_softLimit{0};
-  bool m_softLimitHasBeenSet = false;
 
   int m_hardLimit{0};
+  bool m_nameHasBeenSet = false;
+  bool m_softLimitHasBeenSet = false;
   bool m_hardLimitHasBeenSet = false;
 };
 

@@ -183,27 +183,27 @@ class ModelVersionSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   long long m_modelVersion{0};
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_modelVersionArn;
-  bool m_modelVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ModelVersionStatus m_status{ModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ModelVersionSourceType m_sourceType{ModelVersionSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_modelVersionArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_modelQualityHasBeenSet = false;
 };
 

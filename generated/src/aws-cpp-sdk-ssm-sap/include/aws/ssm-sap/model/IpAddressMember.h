@@ -83,12 +83,12 @@ class IpAddressMember {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   bool m_primary{false};
-  bool m_primaryHasBeenSet = false;
 
   AllocationType m_allocationType{AllocationType::NOT_SET};
+  bool m_ipAddressHasBeenSet = false;
+  bool m_primaryHasBeenSet = false;
   bool m_allocationTypeHasBeenSet = false;
 };
 

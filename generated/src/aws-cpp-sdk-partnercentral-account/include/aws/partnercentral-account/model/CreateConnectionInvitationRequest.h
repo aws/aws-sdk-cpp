@@ -159,24 +159,24 @@ class CreateConnectionInvitationRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_receiverIdentifier;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_receiverIdentifierHasBeenSet = false;
 };
 

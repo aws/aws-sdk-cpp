@@ -100,12 +100,12 @@ class EngineDefaults {
   ///@}
  private:
   Aws::String m_dBParameterGroupFamily;
-  bool m_dBParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_dBParameterGroupFamilyHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

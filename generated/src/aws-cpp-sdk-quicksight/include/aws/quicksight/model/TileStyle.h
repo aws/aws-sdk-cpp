@@ -105,15 +105,15 @@ class TileStyle {
   ///@}
  private:
   Aws::String m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   BorderStyle m_border;
-  bool m_borderHasBeenSet = false;
 
   Aws::String m_borderRadius;
-  bool m_borderRadiusHasBeenSet = false;
 
   Aws::String m_padding;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_borderHasBeenSet = false;
+  bool m_borderRadiusHasBeenSet = false;
   bool m_paddingHasBeenSet = false;
 };
 

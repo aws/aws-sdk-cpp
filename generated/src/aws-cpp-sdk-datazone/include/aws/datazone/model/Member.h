@@ -68,9 +68,9 @@ class Member {
   ///@}
  private:
   Aws::String m_groupIdentifier;
-  bool m_groupIdentifierHasBeenSet = false;
 
   Aws::String m_userIdentifier;
+  bool m_groupIdentifierHasBeenSet = false;
   bool m_userIdentifierHasBeenSet = false;
 };
 

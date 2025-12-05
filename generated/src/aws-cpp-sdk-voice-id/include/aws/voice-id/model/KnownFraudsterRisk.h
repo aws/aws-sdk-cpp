@@ -69,9 +69,9 @@ class KnownFraudsterRisk {
   ///@}
  private:
   Aws::String m_generatedFraudsterId;
-  bool m_generatedFraudsterIdHasBeenSet = false;
 
   int m_riskScore{0};
+  bool m_generatedFraudsterIdHasBeenSet = false;
   bool m_riskScoreHasBeenSet = false;
 };
 

@@ -81,12 +81,12 @@ class ResourceConfig {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_volumeSizeInGBHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeProblemObservationsRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_problemId;
-  bool m_problemIdHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_problemIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class StartExperimentResult {
   ///@}
  private:
   Aws::Utils::DateTime m_startedTime{};
-  bool m_startedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_startedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

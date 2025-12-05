@@ -77,9 +77,9 @@ class EncryptionInfo {
   ///@}
  private:
   EncryptionAtRest m_encryptionAtRest;
-  bool m_encryptionAtRestHasBeenSet = false;
 
   EncryptionInTransit m_encryptionInTransit;
+  bool m_encryptionAtRestHasBeenSet = false;
   bool m_encryptionInTransitHasBeenSet = false;
 };
 

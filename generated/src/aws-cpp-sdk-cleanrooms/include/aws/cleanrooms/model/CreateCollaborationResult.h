@@ -60,9 +60,9 @@ class CreateCollaborationResult {
   ///@}
  private:
   Collaboration m_collaboration;
-  bool m_collaborationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collaborationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

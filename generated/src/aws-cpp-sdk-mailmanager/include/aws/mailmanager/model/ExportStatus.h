@@ -104,15 +104,15 @@ class ExportStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_submissionTimestamp{};
-  bool m_submissionTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTimestamp{};
-  bool m_completionTimestampHasBeenSet = false;
 
   ExportState m_state{ExportState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_submissionTimestampHasBeenSet = false;
+  bool m_completionTimestampHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

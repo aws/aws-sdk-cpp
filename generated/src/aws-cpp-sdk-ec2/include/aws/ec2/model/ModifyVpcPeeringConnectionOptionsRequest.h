@@ -107,15 +107,15 @@ class ModifyVpcPeeringConnectionOptionsRequest : public EC2Request {
   ///@}
  private:
   PeeringConnectionOptionsRequest m_accepterPeeringConnectionOptions;
-  bool m_accepterPeeringConnectionOptionsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   PeeringConnectionOptionsRequest m_requesterPeeringConnectionOptions;
-  bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
+  bool m_accepterPeeringConnectionOptionsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
   bool m_vpcPeeringConnectionIdHasBeenSet = false;
 };
 

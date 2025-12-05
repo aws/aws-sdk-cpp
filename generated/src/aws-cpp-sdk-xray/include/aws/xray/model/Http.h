@@ -120,18 +120,18 @@ class Http {
   ///@}
  private:
   Aws::String m_httpURL;
-  bool m_httpURLHasBeenSet = false;
 
   int m_httpStatus{0};
-  bool m_httpStatusHasBeenSet = false;
 
   Aws::String m_httpMethod;
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::String m_userAgent;
-  bool m_userAgentHasBeenSet = false;
 
   Aws::String m_clientIp;
+  bool m_httpURLHasBeenSet = false;
+  bool m_httpStatusHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_userAgentHasBeenSet = false;
   bool m_clientIpHasBeenSet = false;
 };
 

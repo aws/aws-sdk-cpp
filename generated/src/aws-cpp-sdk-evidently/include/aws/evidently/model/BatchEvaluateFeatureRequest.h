@@ -74,9 +74,9 @@ class BatchEvaluateFeatureRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::Vector<EvaluationRequest> m_requests;
+  bool m_projectHasBeenSet = false;
   bool m_requestsHasBeenSet = false;
 };
 

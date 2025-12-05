@@ -797,114 +797,114 @@ class ModifyDBInstanceRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dBSecurityGroups;
-  bool m_dBSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_allowMajorVersionUpgrade{false};
-  bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::String m_newDBInstanceIdentifier;
-  bool m_newDBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_tdeCredentialArn;
-  bool m_tdeCredentialArnHasBeenSet = false;
 
   Aws::String m_tdeCredentialPassword;
-  bool m_tdeCredentialPasswordHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   int m_monitoringInterval{0};
-  bool m_monitoringIntervalHasBeenSet = false;
 
   int m_dBPortNumber{0};
-  bool m_dBPortNumberHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_monitoringRoleArn;
-  bool m_monitoringRoleArnHasBeenSet = false;
 
   Aws::String m_domainIAMRoleName;
-  bool m_domainIAMRoleNameHasBeenSet = false;
 
   int m_promotionTier{0};
-  bool m_promotionTierHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   bool m_enablePerformanceInsights{false};
-  bool m_enablePerformanceInsightsHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
-  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
   CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
-  bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
 
   bool m_deletionProtection{false};
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_dBSecurityGroupsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_dBParameterGroupNameHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_allowMajorVersionUpgradeHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_newDBInstanceIdentifierHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_tdeCredentialArnHasBeenSet = false;
+  bool m_tdeCredentialPasswordHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_monitoringIntervalHasBeenSet = false;
+  bool m_dBPortNumberHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_monitoringRoleArnHasBeenSet = false;
+  bool m_domainIAMRoleNameHasBeenSet = false;
+  bool m_promotionTierHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_enablePerformanceInsightsHasBeenSet = false;
+  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+  bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
 };
 

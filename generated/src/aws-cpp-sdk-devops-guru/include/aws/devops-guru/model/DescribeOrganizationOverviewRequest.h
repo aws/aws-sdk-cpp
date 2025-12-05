@@ -119,15 +119,15 @@ class DescribeOrganizationOverviewRequest : public DevOpsGuruRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_fromTime{};
-  bool m_fromTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_toTime{};
-  bool m_toTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitIds;
+  bool m_fromTimeHasBeenSet = false;
+  bool m_toTimeHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
   bool m_organizationalUnitIdsHasBeenSet = false;
 };
 

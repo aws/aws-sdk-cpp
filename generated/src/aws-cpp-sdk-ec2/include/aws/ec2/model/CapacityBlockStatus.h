@@ -151,21 +151,21 @@ class CapacityBlockStatus {
   ///@}
  private:
   Aws::String m_capacityBlockId;
-  bool m_capacityBlockIdHasBeenSet = false;
 
   CapacityBlockInterconnectStatus m_interconnectStatus{CapacityBlockInterconnectStatus::NOT_SET};
-  bool m_interconnectStatusHasBeenSet = false;
 
   int m_totalCapacity{0};
-  bool m_totalCapacityHasBeenSet = false;
 
   int m_totalAvailableCapacity{0};
-  bool m_totalAvailableCapacityHasBeenSet = false;
 
   int m_totalUnavailableCapacity{0};
-  bool m_totalUnavailableCapacityHasBeenSet = false;
 
   Aws::Vector<CapacityReservationStatus> m_capacityReservationStatuses;
+  bool m_capacityBlockIdHasBeenSet = false;
+  bool m_interconnectStatusHasBeenSet = false;
+  bool m_totalCapacityHasBeenSet = false;
+  bool m_totalAvailableCapacityHasBeenSet = false;
+  bool m_totalUnavailableCapacityHasBeenSet = false;
   bool m_capacityReservationStatusesHasBeenSet = false;
 };
 

@@ -197,30 +197,30 @@ class RealTimeContactAnalysisSegmentTranscript {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   RealTimeContactAnalysisTimeData m_time;
-  bool m_timeHasBeenSet = false;
 
   RealTimeContactAnalysisTranscriptItemRedaction m_redaction;
-  bool m_redactionHasBeenSet = false;
 
   RealTimeContactAnalysisSentimentLabel m_sentiment{RealTimeContactAnalysisSentimentLabel::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_redactionHasBeenSet = false;
   bool m_sentimentHasBeenSet = false;
 };
 

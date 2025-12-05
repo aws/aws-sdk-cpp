@@ -162,24 +162,24 @@ class ProvisioningTemplateSummary {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   TemplateType m_type{TemplateType::NOT_SET};
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

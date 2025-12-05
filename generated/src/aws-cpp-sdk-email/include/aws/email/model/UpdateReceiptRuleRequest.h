@@ -76,9 +76,9 @@ class UpdateReceiptRuleRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   ReceiptRule m_rule;
+  bool m_ruleSetNameHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class GetCaseAuditEventsRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_caseIdHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

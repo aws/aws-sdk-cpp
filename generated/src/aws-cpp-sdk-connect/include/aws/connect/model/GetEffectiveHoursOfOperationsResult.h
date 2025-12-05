@@ -84,12 +84,12 @@ class GetEffectiveHoursOfOperationsResult {
   ///@}
  private:
   Aws::Vector<EffectiveHoursOfOperations> m_effectiveHoursOfOperationList;
-  bool m_effectiveHoursOfOperationListHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_effectiveHoursOfOperationListHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

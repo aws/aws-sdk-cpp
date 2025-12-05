@@ -92,12 +92,12 @@ class DescribeEndpointTypesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<SupportedEndpointType> m_supportedEndpointTypes;
-  bool m_supportedEndpointTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_supportedEndpointTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

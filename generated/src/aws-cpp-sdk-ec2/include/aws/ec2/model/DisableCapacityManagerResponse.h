@@ -74,12 +74,12 @@ class DisableCapacityManagerResponse {
   ///@}
  private:
   CapacityManagerStatus m_capacityManagerStatus{CapacityManagerStatus::NOT_SET};
-  bool m_capacityManagerStatusHasBeenSet = false;
 
   bool m_organizationsAccess{false};
-  bool m_organizationsAccessHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityManagerStatusHasBeenSet = false;
+  bool m_organizationsAccessHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

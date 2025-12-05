@@ -67,9 +67,9 @@ class DescribeEC2InstanceLimitsResult {
   ///@}
  private:
   Aws::Vector<EC2InstanceLimit> m_eC2InstanceLimits;
-  bool m_eC2InstanceLimitsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eC2InstanceLimitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

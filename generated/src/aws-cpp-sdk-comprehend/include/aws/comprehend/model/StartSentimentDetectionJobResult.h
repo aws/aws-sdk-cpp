@@ -104,15 +104,15 @@ class StartSentimentDetectionJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class DeleteFileSystemRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   DeleteFileSystemWindowsConfiguration m_windowsConfiguration;
-  bool m_windowsConfigurationHasBeenSet = false;
 
   DeleteFileSystemLustreConfiguration m_lustreConfiguration;
-  bool m_lustreConfigurationHasBeenSet = false;
 
   DeleteFileSystemOpenZFSConfiguration m_openZFSConfiguration;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_windowsConfigurationHasBeenSet = false;
+  bool m_lustreConfigurationHasBeenSet = false;
   bool m_openZFSConfigurationHasBeenSet = false;
 };
 

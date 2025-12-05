@@ -92,12 +92,12 @@ class UpdateWorkspaceConfigurationRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::String m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_grafanaVersion;
-  bool m_grafanaVersionHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_configurationHasBeenSet = false;
+  bool m_grafanaVersionHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

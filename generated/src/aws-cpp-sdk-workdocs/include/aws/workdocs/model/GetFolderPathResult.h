@@ -60,9 +60,9 @@ class GetFolderPathResult {
   ///@}
  private:
   ResourcePath m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pathHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

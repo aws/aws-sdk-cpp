@@ -132,18 +132,18 @@ class LastSync {
   ///@}
  private:
   Aws::Utils::DateTime m_lastSyncTime{};
-  bool m_lastSyncTimeHasBeenSet = false;
 
   LastSyncStatus m_lastSyncStatus{LastSyncStatus::NOT_SET};
-  bool m_lastSyncStatusHasBeenSet = false;
 
   Aws::String m_lastSyncStatusMessage;
-  bool m_lastSyncStatusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulSyncTime{};
-  bool m_lastSuccessfulSyncTimeHasBeenSet = false;
 
   Aws::String m_lastSuccessfulSyncProvisioningArtifactId;
+  bool m_lastSyncTimeHasBeenSet = false;
+  bool m_lastSyncStatusHasBeenSet = false;
+  bool m_lastSyncStatusMessageHasBeenSet = false;
+  bool m_lastSuccessfulSyncTimeHasBeenSet = false;
   bool m_lastSuccessfulSyncProvisioningArtifactIdHasBeenSet = false;
 };
 

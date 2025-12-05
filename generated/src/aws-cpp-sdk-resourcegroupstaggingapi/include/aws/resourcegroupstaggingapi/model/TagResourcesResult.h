@@ -71,9 +71,9 @@ class TagResourcesResult {
   ///@}
  private:
   Aws::Map<Aws::String, FailureInfo> m_failedResourcesMap;
-  bool m_failedResourcesMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedResourcesMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

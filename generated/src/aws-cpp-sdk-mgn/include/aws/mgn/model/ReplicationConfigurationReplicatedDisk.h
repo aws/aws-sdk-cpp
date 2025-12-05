@@ -115,18 +115,18 @@ class ReplicationConfigurationReplicatedDisk {
   ///@}
  private:
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   long long m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   bool m_isBootDisk{false};
-  bool m_isBootDiskHasBeenSet = false;
 
   ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType{ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET};
-  bool m_stagingDiskTypeHasBeenSet = false;
 
   long long m_throughput{0};
+  bool m_deviceNameHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_isBootDiskHasBeenSet = false;
+  bool m_stagingDiskTypeHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
 };
 

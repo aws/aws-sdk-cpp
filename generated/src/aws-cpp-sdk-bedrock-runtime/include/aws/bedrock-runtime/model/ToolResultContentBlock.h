@@ -149,21 +149,21 @@ class ToolResultContentBlock {
   ///@}
  private:
   Aws::Utils::Document m_json;
-  bool m_jsonHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   ImageBlock m_image;
-  bool m_imageHasBeenSet = false;
 
   DocumentBlock m_document;
-  bool m_documentHasBeenSet = false;
 
   VideoBlock m_video;
-  bool m_videoHasBeenSet = false;
 
   SearchResultBlock m_searchResult;
+  bool m_jsonHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
   bool m_searchResultHasBeenSet = false;
 };
 

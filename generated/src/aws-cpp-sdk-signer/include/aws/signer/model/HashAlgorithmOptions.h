@@ -73,9 +73,9 @@ class HashAlgorithmOptions {
   ///@}
  private:
   Aws::Vector<HashAlgorithm> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   HashAlgorithm m_defaultValue{HashAlgorithm::NOT_SET};
+  bool m_allowedValuesHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

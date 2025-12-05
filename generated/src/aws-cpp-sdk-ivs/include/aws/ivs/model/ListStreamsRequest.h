@@ -83,12 +83,12 @@ class ListStreamsRequest : public IVSRequest {
   ///@}
  private:
   StreamFilters m_filterBy;
-  bool m_filterByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListAgentRuntimeEndpointsResult {
   ///@}
  private:
   Aws::Vector<AgentRuntimeEndpoint> m_runtimeEndpoints;
-  bool m_runtimeEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runtimeEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

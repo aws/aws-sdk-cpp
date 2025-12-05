@@ -85,12 +85,12 @@ class UpdateStreamingDistribution2020_05_31Result {
   ///@}
  private:
   StreamingDistribution m_streamingDistribution;
-  bool m_streamingDistributionHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamingDistributionHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

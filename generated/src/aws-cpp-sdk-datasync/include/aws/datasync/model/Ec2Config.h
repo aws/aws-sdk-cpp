@@ -86,9 +86,9 @@ class Ec2Config {
   ///@}
  private:
   Aws::String m_subnetArn;
-  bool m_subnetArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupArns;
+  bool m_subnetArnHasBeenSet = false;
   bool m_securityGroupArnsHasBeenSet = false;
 };
 

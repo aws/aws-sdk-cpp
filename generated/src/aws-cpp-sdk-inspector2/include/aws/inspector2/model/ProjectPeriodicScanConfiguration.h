@@ -78,9 +78,9 @@ class ProjectPeriodicScanConfiguration {
   ///@}
  private:
   Aws::String m_frequencyExpression;
-  bool m_frequencyExpressionHasBeenSet = false;
 
   Aws::Vector<RuleSetCategory> m_ruleSetCategories;
+  bool m_frequencyExpressionHasBeenSet = false;
   bool m_ruleSetCategoriesHasBeenSet = false;
 };
 

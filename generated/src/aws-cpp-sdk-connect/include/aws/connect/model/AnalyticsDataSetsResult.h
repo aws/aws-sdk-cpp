@@ -69,9 +69,9 @@ class AnalyticsDataSetsResult {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_dataSetName;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_dataSetNameHasBeenSet = false;
 };
 

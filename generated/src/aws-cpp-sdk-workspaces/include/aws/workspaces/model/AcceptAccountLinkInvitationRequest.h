@@ -68,9 +68,9 @@ class AcceptAccountLinkInvitationRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_linkIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

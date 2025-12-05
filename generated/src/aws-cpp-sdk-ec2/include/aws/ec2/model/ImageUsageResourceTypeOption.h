@@ -78,9 +78,9 @@ class ImageUsageResourceTypeOption {
   ///@}
  private:
   Aws::String m_optionName;
-  bool m_optionNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_optionValues;
+  bool m_optionNameHasBeenSet = false;
   bool m_optionValuesHasBeenSet = false;
 };
 

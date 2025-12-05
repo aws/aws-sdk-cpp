@@ -161,21 +161,21 @@ class CreatePolicyRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PolicyDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PolicyValidationMode m_validationMode{PolicyValidationMode::NOT_SET};
-  bool m_validationModeHasBeenSet = false;
 
   Aws::String m_policyEngineId;
-  bool m_policyEngineIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_validationModeHasBeenSet = false;
+  bool m_policyEngineIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

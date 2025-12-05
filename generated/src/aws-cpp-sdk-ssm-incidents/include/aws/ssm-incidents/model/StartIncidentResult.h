@@ -59,9 +59,9 @@ class StartIncidentResult {
   ///@}
  private:
   Aws::String m_incidentRecordArn;
-  bool m_incidentRecordArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_incidentRecordArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListCommonControlsResult {
   ///@}
  private:
   Aws::Vector<CommonControlSummary> m_commonControls;
-  bool m_commonControlsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commonControlsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -117,18 +117,18 @@ class ForecastGeofenceEventsResult {
   ///@}
  private:
   Aws::Vector<ForecastedEvent> m_forecastedEvents;
-  bool m_forecastedEventsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
-  bool m_distanceUnitHasBeenSet = false;
 
   SpeedUnit m_speedUnit{SpeedUnit::NOT_SET};
-  bool m_speedUnitHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_forecastedEventsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_distanceUnitHasBeenSet = false;
+  bool m_speedUnitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

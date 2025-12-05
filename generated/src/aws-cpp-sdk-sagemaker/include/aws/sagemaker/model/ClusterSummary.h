@@ -135,18 +135,18 @@ class ClusterSummary {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ClusterStatus m_clusterStatus{ClusterStatus::NOT_SET};
-  bool m_clusterStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_trainingPlanArns;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_clusterStatusHasBeenSet = false;
   bool m_trainingPlanArnsHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class StreamSummary {
   ///@}
  private:
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   int m_streamVersion{0};
-  bool m_streamVersionHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_streamIdHasBeenSet = false;
+  bool m_streamArnHasBeenSet = false;
+  bool m_streamVersionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

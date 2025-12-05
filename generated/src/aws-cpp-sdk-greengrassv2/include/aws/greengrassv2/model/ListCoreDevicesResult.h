@@ -85,12 +85,12 @@ class ListCoreDevicesResult {
   ///@}
  private:
   Aws::Vector<CoreDevice> m_coreDevices;
-  bool m_coreDevicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreDevicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

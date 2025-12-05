@@ -69,9 +69,9 @@ class AdminDisableProviderForUserRequest : public CognitoIdentityProviderRequest
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   ProviderUserIdentifierType m_user;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

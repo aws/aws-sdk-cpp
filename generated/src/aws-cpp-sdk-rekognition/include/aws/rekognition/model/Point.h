@@ -69,9 +69,9 @@ class Point {
   ///@}
  private:
   double m_x{0.0};
-  bool m_xHasBeenSet = false;
 
   double m_y{0.0};
+  bool m_xHasBeenSet = false;
   bool m_yHasBeenSet = false;
 };
 

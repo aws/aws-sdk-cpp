@@ -116,15 +116,15 @@ class DecisionTaskScheduledEventAttributes {
   ///@}
  private:
   TaskList m_taskList;
-  bool m_taskListHasBeenSet = false;
 
   Aws::String m_taskPriority;
-  bool m_taskPriorityHasBeenSet = false;
 
   Aws::String m_startToCloseTimeout;
-  bool m_startToCloseTimeoutHasBeenSet = false;
 
   Aws::String m_scheduleToStartTimeout;
+  bool m_taskListHasBeenSet = false;
+  bool m_taskPriorityHasBeenSet = false;
+  bool m_startToCloseTimeoutHasBeenSet = false;
   bool m_scheduleToStartTimeoutHasBeenSet = false;
 };
 

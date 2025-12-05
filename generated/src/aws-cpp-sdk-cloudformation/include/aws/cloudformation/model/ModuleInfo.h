@@ -90,9 +90,9 @@ class ModuleInfo {
   ///@}
  private:
   Aws::String m_typeHierarchy;
-  bool m_typeHierarchyHasBeenSet = false;
 
   Aws::String m_logicalIdHierarchy;
+  bool m_typeHierarchyHasBeenSet = false;
   bool m_logicalIdHierarchyHasBeenSet = false;
 };
 

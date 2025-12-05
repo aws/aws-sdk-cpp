@@ -611,63 +611,63 @@ class StartTranscriptionJobRequest : public TranscribeServiceRequest {
   ///@}
  private:
   Aws::String m_transcriptionJobName;
-  bool m_transcriptionJobNameHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_mediaSampleRateHertz{0};
-  bool m_mediaSampleRateHertzHasBeenSet = false;
 
   MediaFormat m_mediaFormat{MediaFormat::NOT_SET};
-  bool m_mediaFormatHasBeenSet = false;
 
   Media m_media;
-  bool m_mediaHasBeenSet = false;
 
   Aws::String m_outputBucketName;
-  bool m_outputBucketNameHasBeenSet = false;
 
   Aws::String m_outputKey;
-  bool m_outputKeyHasBeenSet = false;
 
   Aws::String m_outputEncryptionKMSKeyId;
-  bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_kMSEncryptionContext;
-  bool m_kMSEncryptionContextHasBeenSet = false;
 
   Settings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   ModelSettings m_modelSettings;
-  bool m_modelSettingsHasBeenSet = false;
 
   JobExecutionSettings m_jobExecutionSettings;
-  bool m_jobExecutionSettingsHasBeenSet = false;
 
   ContentRedaction m_contentRedaction;
-  bool m_contentRedactionHasBeenSet = false;
 
   bool m_identifyLanguage{false};
-  bool m_identifyLanguageHasBeenSet = false;
 
   bool m_identifyMultipleLanguages{false};
-  bool m_identifyMultipleLanguagesHasBeenSet = false;
 
   Aws::Vector<LanguageCode> m_languageOptions;
-  bool m_languageOptionsHasBeenSet = false;
 
   Subtitles m_subtitles;
-  bool m_subtitlesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
-  bool m_languageIdSettingsHasBeenSet = false;
 
   Aws::Vector<ToxicityDetectionSettings> m_toxicityDetection;
+  bool m_transcriptionJobNameHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_mediaSampleRateHertzHasBeenSet = false;
+  bool m_mediaFormatHasBeenSet = false;
+  bool m_mediaHasBeenSet = false;
+  bool m_outputBucketNameHasBeenSet = false;
+  bool m_outputKeyHasBeenSet = false;
+  bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
+  bool m_kMSEncryptionContextHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_modelSettingsHasBeenSet = false;
+  bool m_jobExecutionSettingsHasBeenSet = false;
+  bool m_contentRedactionHasBeenSet = false;
+  bool m_identifyLanguageHasBeenSet = false;
+  bool m_identifyMultipleLanguagesHasBeenSet = false;
+  bool m_languageOptionsHasBeenSet = false;
+  bool m_subtitlesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_languageIdSettingsHasBeenSet = false;
   bool m_toxicityDetectionHasBeenSet = false;
 };
 

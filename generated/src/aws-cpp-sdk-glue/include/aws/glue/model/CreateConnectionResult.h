@@ -60,9 +60,9 @@ class CreateConnectionResult {
   ///@}
  private:
   ConnectionStatus m_createConnectionStatus{ConnectionStatus::NOT_SET};
-  bool m_createConnectionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createConnectionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

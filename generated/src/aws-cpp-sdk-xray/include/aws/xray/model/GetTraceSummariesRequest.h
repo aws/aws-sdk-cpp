@@ -159,24 +159,24 @@ class GetTraceSummariesRequest : public XRayRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   TimeRangeType m_timeRangeType{TimeRangeType::NOT_SET};
-  bool m_timeRangeTypeHasBeenSet = false;
 
   bool m_sampling{false};
-  bool m_samplingHasBeenSet = false;
 
   SamplingStrategy m_samplingStrategy;
-  bool m_samplingStrategyHasBeenSet = false;
 
   Aws::String m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_timeRangeTypeHasBeenSet = false;
+  bool m_samplingHasBeenSet = false;
+  bool m_samplingStrategyHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

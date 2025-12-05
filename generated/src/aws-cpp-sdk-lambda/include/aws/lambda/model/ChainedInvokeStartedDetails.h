@@ -125,18 +125,18 @@ class ChainedInvokeStartedDetails {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   EventInput m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_executedVersion;
-  bool m_executedVersionHasBeenSet = false;
 
   Aws::String m_durableExecutionArn;
+  bool m_functionNameHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_executedVersionHasBeenSet = false;
   bool m_durableExecutionArnHasBeenSet = false;
 };
 

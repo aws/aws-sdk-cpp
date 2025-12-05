@@ -92,12 +92,12 @@ class ProtectedQueryOutputConfiguration {
   ///@}
  private:
   ProtectedQueryS3OutputConfiguration m_s3;
-  bool m_s3HasBeenSet = false;
 
   ProtectedQueryMemberOutputConfiguration m_member;
-  bool m_memberHasBeenSet = false;
 
   ProtectedQueryDistributeOutputConfiguration m_distribute;
+  bool m_s3HasBeenSet = false;
+  bool m_memberHasBeenSet = false;
   bool m_distributeHasBeenSet = false;
 };
 

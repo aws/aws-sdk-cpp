@@ -269,39 +269,39 @@ class Assignment {
   ///@}
  private:
   Aws::String m_assignmentId;
-  bool m_assignmentIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   AssignmentStatus m_assignmentStatus{AssignmentStatus::NOT_SET};
-  bool m_assignmentStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_autoApprovalTime{};
-  bool m_autoApprovalTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_acceptTime{};
-  bool m_acceptTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
-  bool m_submitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_approvalTime{};
-  bool m_approvalTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_rejectionTime{};
-  bool m_rejectionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deadline{};
-  bool m_deadlineHasBeenSet = false;
 
   Aws::String m_answer;
-  bool m_answerHasBeenSet = false;
 
   Aws::String m_requesterFeedback;
+  bool m_assignmentIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_hITIdHasBeenSet = false;
+  bool m_assignmentStatusHasBeenSet = false;
+  bool m_autoApprovalTimeHasBeenSet = false;
+  bool m_acceptTimeHasBeenSet = false;
+  bool m_submitTimeHasBeenSet = false;
+  bool m_approvalTimeHasBeenSet = false;
+  bool m_rejectionTimeHasBeenSet = false;
+  bool m_deadlineHasBeenSet = false;
+  bool m_answerHasBeenSet = false;
   bool m_requesterFeedbackHasBeenSet = false;
 };
 

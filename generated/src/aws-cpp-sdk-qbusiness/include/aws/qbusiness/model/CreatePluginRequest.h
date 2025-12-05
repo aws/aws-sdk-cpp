@@ -185,27 +185,27 @@ class CreatePluginRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   PluginType m_type{PluginType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PluginAuthConfiguration m_authConfiguration;
-  bool m_authConfigurationHasBeenSet = false;
 
   Aws::String m_serverUrl;
-  bool m_serverUrlHasBeenSet = false;
 
   CustomPluginConfiguration m_customPluginConfiguration;
-  bool m_customPluginConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_authConfigurationHasBeenSet = false;
+  bool m_serverUrlHasBeenSet = false;
+  bool m_customPluginConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

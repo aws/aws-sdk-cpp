@@ -71,9 +71,9 @@ class RestartBatchJobIdentifier {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   JobStepRestartMarker m_jobStepRestartMarker;
+  bool m_executionIdHasBeenSet = false;
   bool m_jobStepRestartMarkerHasBeenSet = false;
 };
 

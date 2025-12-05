@@ -248,36 +248,36 @@ class CreateNetworkInsightsPathRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_sourceIp;
-  bool m_sourceIpHasBeenSet = false;
 
   Aws::String m_destinationIp;
-  bool m_destinationIpHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   PathRequestFilter m_filterAtSource;
-  bool m_filterAtSourceHasBeenSet = false;
 
   PathRequestFilter m_filterAtDestination;
+  bool m_sourceIpHasBeenSet = false;
+  bool m_destinationIpHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_filterAtSourceHasBeenSet = false;
   bool m_filterAtDestinationHasBeenSet = false;
 };
 

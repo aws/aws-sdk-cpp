@@ -212,30 +212,30 @@ class CreateProfileRequest : public RolesAnywhereRequest {
   ///@}
  private:
   bool m_acceptRoleSessionName{false};
-  bool m_acceptRoleSessionNameHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedPolicyArns;
-  bool m_managedPolicyArnsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_requireInstanceProperties{false};
-  bool m_requireInstancePropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_roleArns;
-  bool m_roleArnsHasBeenSet = false;
 
   Aws::String m_sessionPolicy;
-  bool m_sessionPolicyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_acceptRoleSessionNameHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_managedPolicyArnsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requireInstancePropertiesHasBeenSet = false;
+  bool m_roleArnsHasBeenSet = false;
+  bool m_sessionPolicyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

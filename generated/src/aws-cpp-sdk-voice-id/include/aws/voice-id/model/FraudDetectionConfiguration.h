@@ -70,9 +70,9 @@ class FraudDetectionConfiguration {
   ///@}
  private:
   int m_riskThreshold{0};
-  bool m_riskThresholdHasBeenSet = false;
 
   Aws::String m_watchlistId;
+  bool m_riskThresholdHasBeenSet = false;
   bool m_watchlistIdHasBeenSet = false;
 };
 

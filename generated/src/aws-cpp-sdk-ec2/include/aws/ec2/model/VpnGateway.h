@@ -173,24 +173,24 @@ class VpnGateway {
   ///@}
  private:
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpnGatewayId;
-  bool m_vpnGatewayIdHasBeenSet = false;
 
   VpnState m_state{VpnState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   GatewayType m_type{GatewayType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Vector<VpcAttachment> m_vpcAttachments;
+  bool m_amazonSideAsnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpnGatewayIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_vpcAttachmentsHasBeenSet = false;
 };
 

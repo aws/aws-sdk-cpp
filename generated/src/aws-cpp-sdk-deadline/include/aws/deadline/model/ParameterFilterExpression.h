@@ -86,12 +86,12 @@ class ParameterFilterExpression {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ComparisonOperator m_operator{ComparisonOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

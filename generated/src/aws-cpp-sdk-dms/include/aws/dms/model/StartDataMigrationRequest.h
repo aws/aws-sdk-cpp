@@ -68,9 +68,9 @@ class StartDataMigrationRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_dataMigrationIdentifier;
-  bool m_dataMigrationIdentifierHasBeenSet = false;
 
   StartReplicationMigrationTypeValue m_startType{StartReplicationMigrationTypeValue::NOT_SET};
+  bool m_dataMigrationIdentifierHasBeenSet = false;
   bool m_startTypeHasBeenSet = false;
 };
 

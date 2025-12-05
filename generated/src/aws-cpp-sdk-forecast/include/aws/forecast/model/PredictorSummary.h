@@ -212,30 +212,30 @@ class PredictorSummary {
   ///@}
  private:
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   Aws::String m_predictorName;
-  bool m_predictorNameHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   bool m_isAutoPredictor{false};
-  bool m_isAutoPredictorHasBeenSet = false;
 
   ReferencePredictorSummary m_referencePredictorSummary;
-  bool m_referencePredictorSummaryHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
+  bool m_predictorArnHasBeenSet = false;
+  bool m_predictorNameHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_isAutoPredictorHasBeenSet = false;
+  bool m_referencePredictorSummaryHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModificationTimeHasBeenSet = false;
 };
 

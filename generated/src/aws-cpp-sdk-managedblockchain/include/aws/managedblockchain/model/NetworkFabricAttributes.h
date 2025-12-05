@@ -70,9 +70,9 @@ class NetworkFabricAttributes {
   ///@}
  private:
   Aws::String m_orderingServiceEndpoint;
-  bool m_orderingServiceEndpointHasBeenSet = false;
 
   Edition m_edition{Edition::NOT_SET};
+  bool m_orderingServiceEndpointHasBeenSet = false;
   bool m_editionHasBeenSet = false;
 };
 

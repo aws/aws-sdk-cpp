@@ -89,12 +89,12 @@ class ListGroupsResult {
   ///@}
  private:
   Aws::Vector<GroupIdentifier> m_groupIdentifiers;
-  bool m_groupIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupIdentifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

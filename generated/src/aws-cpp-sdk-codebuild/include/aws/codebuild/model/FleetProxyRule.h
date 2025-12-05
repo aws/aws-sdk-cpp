@@ -92,12 +92,12 @@ class FleetProxyRule {
   ///@}
  private:
   FleetProxyRuleType m_type{FleetProxyRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FleetProxyRuleEffectType m_effect{FleetProxyRuleEffectType::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entities;
+  bool m_typeHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
   bool m_entitiesHasBeenSet = false;
 };
 

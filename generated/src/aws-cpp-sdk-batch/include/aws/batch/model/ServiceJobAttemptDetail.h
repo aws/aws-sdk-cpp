@@ -105,15 +105,15 @@ class ServiceJobAttemptDetail {
   ///@}
  private:
   ServiceResourceId m_serviceResourceId;
-  bool m_serviceResourceIdHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_stoppedAt{0};
-  bool m_stoppedAtHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_serviceResourceIdHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class EventReference {
   ///@}
  private:
   Aws::String m_relatedItemId;
-  bool m_relatedItemIdHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_relatedItemIdHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

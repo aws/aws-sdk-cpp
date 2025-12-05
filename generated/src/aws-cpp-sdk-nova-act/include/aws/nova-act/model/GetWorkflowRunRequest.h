@@ -65,9 +65,9 @@ class GetWorkflowRunRequest : public NovaActRequest {
   ///@}
  private:
   Aws::String m_workflowDefinitionName;
-  bool m_workflowDefinitionNameHasBeenSet = false;
 
   Aws::String m_workflowRunId;
+  bool m_workflowDefinitionNameHasBeenSet = false;
   bool m_workflowRunIdHasBeenSet = false;
 };
 

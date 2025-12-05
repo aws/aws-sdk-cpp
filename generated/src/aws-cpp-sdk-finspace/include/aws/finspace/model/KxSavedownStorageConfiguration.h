@@ -88,12 +88,12 @@ class KxSavedownStorageConfiguration {
   ///@}
  private:
   KxSavedownStorageType m_type{KxSavedownStorageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::String m_volumeName;
+  bool m_typeHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_volumeNameHasBeenSet = false;
 };
 

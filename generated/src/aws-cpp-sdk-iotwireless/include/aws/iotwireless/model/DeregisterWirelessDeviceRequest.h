@@ -71,9 +71,9 @@ class DeregisterWirelessDeviceRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   WirelessDeviceType m_wirelessDeviceType{WirelessDeviceType::NOT_SET};
+  bool m_identifierHasBeenSet = false;
   bool m_wirelessDeviceTypeHasBeenSet = false;
 };
 

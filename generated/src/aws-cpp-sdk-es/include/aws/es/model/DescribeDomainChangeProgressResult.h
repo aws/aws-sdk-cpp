@@ -69,9 +69,9 @@ class DescribeDomainChangeProgressResult {
   ///@}
  private:
   ChangeProgressStatusDetails m_changeProgressStatus;
-  bool m_changeProgressStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeProgressStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class BatchUpdateAttendeeCapabilitiesExceptRequest : public ChimeSDKMeetingsRequ
   ///@}
  private:
   Aws::String m_meetingId;
-  bool m_meetingIdHasBeenSet = false;
 
   Aws::Vector<AttendeeIdItem> m_excludedAttendeeIds;
-  bool m_excludedAttendeeIdsHasBeenSet = false;
 
   AttendeeCapabilities m_capabilities;
+  bool m_meetingIdHasBeenSet = false;
+  bool m_excludedAttendeeIdsHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

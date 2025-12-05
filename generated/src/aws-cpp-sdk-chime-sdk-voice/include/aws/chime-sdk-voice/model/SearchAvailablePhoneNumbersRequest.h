@@ -181,27 +181,27 @@ class SearchAvailablePhoneNumbersRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_areaCode;
-  bool m_areaCodeHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_tollFreePrefix;
-  bool m_tollFreePrefixHasBeenSet = false;
 
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
-  bool m_phoneNumberTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_areaCodeHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tollFreePrefixHasBeenSet = false;
+  bool m_phoneNumberTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

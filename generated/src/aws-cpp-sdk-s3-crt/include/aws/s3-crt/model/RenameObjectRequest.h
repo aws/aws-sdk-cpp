@@ -317,42 +317,42 @@ class RenameObjectRequest : public S3CrtRequest {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_renameSource;
-  bool m_renameSourceHasBeenSet = false;
 
   Aws::String m_destinationIfMatch;
-  bool m_destinationIfMatchHasBeenSet = false;
 
   Aws::String m_destinationIfNoneMatch;
-  bool m_destinationIfNoneMatchHasBeenSet = false;
 
   Aws::Utils::DateTime m_destinationIfModifiedSince{};
-  bool m_destinationIfModifiedSinceHasBeenSet = false;
 
   Aws::Utils::DateTime m_destinationIfUnmodifiedSince{};
-  bool m_destinationIfUnmodifiedSinceHasBeenSet = false;
 
   Aws::String m_sourceIfMatch;
-  bool m_sourceIfMatchHasBeenSet = false;
 
   Aws::String m_sourceIfNoneMatch;
-  bool m_sourceIfNoneMatchHasBeenSet = false;
 
   Aws::Utils::DateTime m_sourceIfModifiedSince{};
-  bool m_sourceIfModifiedSinceHasBeenSet = false;
 
   Aws::Utils::DateTime m_sourceIfUnmodifiedSince{};
-  bool m_sourceIfUnmodifiedSinceHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_renameSourceHasBeenSet = false;
+  bool m_destinationIfMatchHasBeenSet = false;
+  bool m_destinationIfNoneMatchHasBeenSet = false;
+  bool m_destinationIfModifiedSinceHasBeenSet = false;
+  bool m_destinationIfUnmodifiedSinceHasBeenSet = false;
+  bool m_sourceIfMatchHasBeenSet = false;
+  bool m_sourceIfNoneMatchHasBeenSet = false;
+  bool m_sourceIfModifiedSinceHasBeenSet = false;
+  bool m_sourceIfUnmodifiedSinceHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

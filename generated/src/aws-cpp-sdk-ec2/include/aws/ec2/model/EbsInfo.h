@@ -148,21 +148,21 @@ class EbsInfo {
   ///@}
  private:
   EbsOptimizedSupport m_ebsOptimizedSupport{EbsOptimizedSupport::NOT_SET};
-  bool m_ebsOptimizedSupportHasBeenSet = false;
 
   EbsEncryptionSupport m_encryptionSupport{EbsEncryptionSupport::NOT_SET};
-  bool m_encryptionSupportHasBeenSet = false;
 
   EbsOptimizedInfo m_ebsOptimizedInfo;
-  bool m_ebsOptimizedInfoHasBeenSet = false;
 
   EbsNvmeSupport m_nvmeSupport{EbsNvmeSupport::NOT_SET};
-  bool m_nvmeSupportHasBeenSet = false;
 
   int m_maximumEbsAttachments{0};
-  bool m_maximumEbsAttachmentsHasBeenSet = false;
 
   AttachmentLimitType m_attachmentLimitType{AttachmentLimitType::NOT_SET};
+  bool m_ebsOptimizedSupportHasBeenSet = false;
+  bool m_encryptionSupportHasBeenSet = false;
+  bool m_ebsOptimizedInfoHasBeenSet = false;
+  bool m_nvmeSupportHasBeenSet = false;
+  bool m_maximumEbsAttachmentsHasBeenSet = false;
   bool m_attachmentLimitTypeHasBeenSet = false;
 };
 

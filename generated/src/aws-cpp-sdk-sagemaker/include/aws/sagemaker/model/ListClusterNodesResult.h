@@ -85,12 +85,12 @@ class ListClusterNodesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ClusterNodeSummary> m_clusterNodeSummaries;
-  bool m_clusterNodeSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_clusterNodeSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -161,27 +161,27 @@ class CreateConnectorDefinitionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_creationTimestamp;
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_lastUpdatedTimestamp;
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_latestVersion;
-  bool m_latestVersionHasBeenSet = false;
 
   Aws::String m_latestVersionArn;
-  bool m_latestVersionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
+  bool m_latestVersionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class DescribeSnapshotAttributeResponse {
   ///@}
  private:
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Vector<CreateVolumePermission> m_createVolumePermissions;
-  bool m_createVolumePermissionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_productCodesHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_createVolumePermissionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

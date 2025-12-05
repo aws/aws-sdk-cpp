@@ -74,9 +74,9 @@ class DescribeFindingsRequest : public InspectorRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_findingArns;
-  bool m_findingArnsHasBeenSet = false;
 
   Locale m_locale{Locale::NOT_SET};
+  bool m_findingArnsHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class UpdateLongTermPricingRequest : public SnowballRequest {
   ///@}
  private:
   Aws::String m_longTermPricingId;
-  bool m_longTermPricingIdHasBeenSet = false;
 
   Aws::String m_replacementJob;
-  bool m_replacementJobHasBeenSet = false;
 
   bool m_isLongTermPricingAutoRenew{false};
+  bool m_longTermPricingIdHasBeenSet = false;
+  bool m_replacementJobHasBeenSet = false;
   bool m_isLongTermPricingAutoRenewHasBeenSet = false;
 };
 

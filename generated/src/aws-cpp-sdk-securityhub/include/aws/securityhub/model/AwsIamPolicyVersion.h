@@ -86,12 +86,12 @@ class AwsIamPolicyVersion {
   ///@}
  private:
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
-  bool m_isDefaultVersionHasBeenSet = false;
 
   Aws::String m_createDate;
+  bool m_versionIdHasBeenSet = false;
+  bool m_isDefaultVersionHasBeenSet = false;
   bool m_createDateHasBeenSet = false;
 };
 

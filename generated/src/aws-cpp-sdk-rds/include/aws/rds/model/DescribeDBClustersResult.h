@@ -92,12 +92,12 @@ class DescribeDBClustersResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBCluster> m_dBClusters;
-  bool m_dBClustersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBClustersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

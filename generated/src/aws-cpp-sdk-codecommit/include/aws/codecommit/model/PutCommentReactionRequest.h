@@ -71,9 +71,9 @@ class PutCommentReactionRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_reactionValue;
+  bool m_commentIdHasBeenSet = false;
   bool m_reactionValueHasBeenSet = false;
 };
 

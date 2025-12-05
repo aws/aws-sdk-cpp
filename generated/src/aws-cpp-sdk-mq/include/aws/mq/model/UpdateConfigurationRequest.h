@@ -87,12 +87,12 @@ class UpdateConfigurationRequest : public MQRequest {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_configurationIdHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

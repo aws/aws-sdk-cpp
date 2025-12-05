@@ -77,9 +77,9 @@ class DeleteGroupPolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_groupNameHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

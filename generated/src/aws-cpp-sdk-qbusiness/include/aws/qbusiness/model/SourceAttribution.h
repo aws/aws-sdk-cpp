@@ -218,30 +218,30 @@ class SourceAttribution {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_snippet;
-  bool m_snippetHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   int m_citationNumber{0};
-  bool m_citationNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<TextSegment> m_textMessageSegments;
-  bool m_textMessageSegmentsHasBeenSet = false;
 
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_datasourceId;
+  bool m_titleHasBeenSet = false;
+  bool m_snippetHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_citationNumberHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_textMessageSegmentsHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
   bool m_datasourceIdHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class FontConfiguration {
   ///@}
  private:
   FontSize m_fontSize;
-  bool m_fontSizeHasBeenSet = false;
 
   FontDecoration m_fontDecoration{FontDecoration::NOT_SET};
-  bool m_fontDecorationHasBeenSet = false;
 
   Aws::String m_fontColor;
-  bool m_fontColorHasBeenSet = false;
 
   FontWeight m_fontWeight;
-  bool m_fontWeightHasBeenSet = false;
 
   FontStyle m_fontStyle{FontStyle::NOT_SET};
-  bool m_fontStyleHasBeenSet = false;
 
   Aws::String m_fontFamily;
+  bool m_fontSizeHasBeenSet = false;
+  bool m_fontDecorationHasBeenSet = false;
+  bool m_fontColorHasBeenSet = false;
+  bool m_fontWeightHasBeenSet = false;
+  bool m_fontStyleHasBeenSet = false;
   bool m_fontFamilyHasBeenSet = false;
 };
 

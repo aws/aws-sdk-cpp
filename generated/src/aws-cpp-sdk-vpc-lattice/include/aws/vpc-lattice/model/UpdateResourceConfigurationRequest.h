@@ -115,15 +115,15 @@ class UpdateResourceConfigurationRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_resourceConfigurationIdentifier;
-  bool m_resourceConfigurationIdentifierHasBeenSet = false;
 
   ResourceConfigurationDefinition m_resourceConfigurationDefinition;
-  bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
   bool m_allowAssociationToShareableServiceNetwork{false};
-  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_portRanges;
+  bool m_resourceConfigurationIdentifierHasBeenSet = false;
+  bool m_resourceConfigurationDefinitionHasBeenSet = false;
+  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
 };
 

@@ -261,39 +261,39 @@ class Database {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::Vector<ApplicationCredential> m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   DatabaseType m_databaseType{DatabaseType::NOT_SET};
-  bool m_databaseTypeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DatabaseStatus m_status{DatabaseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_primaryHost;
-  bool m_primaryHostHasBeenSet = false;
 
   int m_sQLPort{0};
-  bool m_sQLPortHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectedComponentArns;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_componentIdHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_databaseIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_databaseTypeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_primaryHostHasBeenSet = false;
+  bool m_sQLPortHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_connectedComponentArnsHasBeenSet = false;
 };
 

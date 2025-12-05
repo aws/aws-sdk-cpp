@@ -77,9 +77,9 @@ class MediaAcceleratorInfo {
   ///@}
  private:
   Aws::Vector<MediaDeviceInfo> m_accelerators;
-  bool m_acceleratorsHasBeenSet = false;
 
   int m_totalMediaMemoryInMiB{0};
+  bool m_acceleratorsHasBeenSet = false;
   bool m_totalMediaMemoryInMiBHasBeenSet = false;
 };
 

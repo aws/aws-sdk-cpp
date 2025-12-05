@@ -60,9 +60,9 @@ class GetRecommenderConfigurationsResult {
   ///@}
  private:
   ListRecommenderConfigurationsResponse m_listRecommenderConfigurationsResponse;
-  bool m_listRecommenderConfigurationsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_listRecommenderConfigurationsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

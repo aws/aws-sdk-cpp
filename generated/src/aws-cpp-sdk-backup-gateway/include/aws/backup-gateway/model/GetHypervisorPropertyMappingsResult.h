@@ -103,15 +103,15 @@ class GetHypervisorPropertyMappingsResult {
   ///@}
  private:
   Aws::String m_hypervisorArn;
-  bool m_hypervisorArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Vector<VmwareToAwsTagMapping> m_vmwareToAwsTagMappings;
-  bool m_vmwareToAwsTagMappingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hypervisorArnHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_vmwareToAwsTagMappingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class SearchOrganizationInsightsRequest : public DevOpsGuruRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   StartTimeRange m_startTimeRange;
-  bool m_startTimeRangeHasBeenSet = false;
 
   SearchOrganizationInsightsFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   InsightType m_type{InsightType::NOT_SET};
+  bool m_accountIdsHasBeenSet = false;
+  bool m_startTimeRangeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

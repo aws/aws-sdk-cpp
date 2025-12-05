@@ -87,12 +87,12 @@ class ListProvisionedModelThroughputsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ProvisionedModelSummary> m_provisionedModelSummaries;
-  bool m_provisionedModelSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_provisionedModelSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

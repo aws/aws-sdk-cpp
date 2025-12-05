@@ -166,21 +166,21 @@ class DescribeExportTasksRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_exportTaskIdentifier;
-  bool m_exportTaskIdentifierHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   ExportSourceType m_sourceType{ExportSourceType::NOT_SET};
+  bool m_exportTaskIdentifierHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

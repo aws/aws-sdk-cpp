@@ -237,30 +237,30 @@ class CreateIdentityPoolRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_identityPoolName;
-  bool m_identityPoolNameHasBeenSet = false;
 
   bool m_allowUnauthenticatedIdentities{false};
-  bool m_allowUnauthenticatedIdentitiesHasBeenSet = false;
 
   bool m_allowClassicFlow{false};
-  bool m_allowClassicFlowHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
-  bool m_supportedLoginProvidersHasBeenSet = false;
 
   Aws::String m_developerProviderName;
-  bool m_developerProviderNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_openIdConnectProviderARNs;
-  bool m_openIdConnectProviderARNsHasBeenSet = false;
 
   Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
-  bool m_cognitoIdentityProvidersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_samlProviderARNs;
-  bool m_samlProviderARNsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
+  bool m_identityPoolNameHasBeenSet = false;
+  bool m_allowUnauthenticatedIdentitiesHasBeenSet = false;
+  bool m_allowClassicFlowHasBeenSet = false;
+  bool m_supportedLoginProvidersHasBeenSet = false;
+  bool m_developerProviderNameHasBeenSet = false;
+  bool m_openIdConnectProviderARNsHasBeenSet = false;
+  bool m_cognitoIdentityProvidersHasBeenSet = false;
+  bool m_samlProviderARNsHasBeenSet = false;
   bool m_identityPoolTagsHasBeenSet = false;
 };
 

@@ -118,18 +118,18 @@ class DescribeModelVersionsRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_modelVersionNumber;
-  bool m_modelVersionNumberHasBeenSet = false;
 
   ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelVersionNumberHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

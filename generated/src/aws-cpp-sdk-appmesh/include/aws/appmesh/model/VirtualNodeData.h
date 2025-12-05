@@ -126,18 +126,18 @@ class VirtualNodeData {
   ///@}
  private:
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   ResourceMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   VirtualNodeSpec m_spec;
-  bool m_specHasBeenSet = false;
 
   VirtualNodeStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_virtualNodeName;
+  bool m_meshNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_specHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_virtualNodeNameHasBeenSet = false;
 };
 

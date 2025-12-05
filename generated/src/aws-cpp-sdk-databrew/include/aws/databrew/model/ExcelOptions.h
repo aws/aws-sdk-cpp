@@ -101,12 +101,12 @@ class ExcelOptions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sheetNames;
-  bool m_sheetNamesHasBeenSet = false;
 
   Aws::Vector<int> m_sheetIndexes;
-  bool m_sheetIndexesHasBeenSet = false;
 
   bool m_headerRow{false};
+  bool m_sheetNamesHasBeenSet = false;
+  bool m_sheetIndexesHasBeenSet = false;
   bool m_headerRowHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class ReportWithRawData {
   ///@}
  private:
   Aws::String m_reportArn;
-  bool m_reportArnHasBeenSet = false;
 
   Aws::String m_data;
+  bool m_reportArnHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

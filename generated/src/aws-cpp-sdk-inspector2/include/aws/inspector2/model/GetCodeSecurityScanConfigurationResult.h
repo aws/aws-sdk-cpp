@@ -190,30 +190,30 @@ class GetCodeSecurityScanConfigurationResult {
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CodeSecurityScanConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ConfigurationLevel m_level{ConfigurationLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   ScopeSettings m_scopeSettings;
-  bool m_scopeSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scanConfigurationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_scopeSettingsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

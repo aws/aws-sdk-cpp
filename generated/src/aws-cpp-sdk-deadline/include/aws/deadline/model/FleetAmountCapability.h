@@ -82,12 +82,12 @@ class FleetAmountCapability {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_min{0.0};
-  bool m_minHasBeenSet = false;
 
   double m_max{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_minHasBeenSet = false;
   bool m_maxHasBeenSet = false;
 };
 

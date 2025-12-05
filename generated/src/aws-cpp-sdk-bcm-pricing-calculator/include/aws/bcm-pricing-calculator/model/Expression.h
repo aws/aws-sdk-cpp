@@ -154,21 +154,21 @@ class Expression {
   ///@}
  private:
   Aws::Vector<Expression> m_and;
-  bool m_andHasBeenSet = false;
 
   Aws::Vector<Expression> m_or;
-  bool m_orHasBeenSet = false;
 
   std::shared_ptr<Expression> m_not;
-  bool m_notHasBeenSet = false;
 
   ExpressionFilter m_costCategories;
-  bool m_costCategoriesHasBeenSet = false;
 
   ExpressionFilter m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   ExpressionFilter m_tags;
+  bool m_andHasBeenSet = false;
+  bool m_orHasBeenSet = false;
+  bool m_notHasBeenSet = false;
+  bool m_costCategoriesHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

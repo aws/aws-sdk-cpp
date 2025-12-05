@@ -65,9 +65,9 @@ class ListTestGridProjectsRequest : public DeviceFarmRequest {
   ///@}
  private:
   int m_maxResult{0};
-  bool m_maxResultHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_maxResultHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

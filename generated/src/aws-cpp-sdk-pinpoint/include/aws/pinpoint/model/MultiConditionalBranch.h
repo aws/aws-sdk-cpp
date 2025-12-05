@@ -71,9 +71,9 @@ class MultiConditionalBranch {
   ///@}
  private:
   SimpleCondition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_nextActivity;
+  bool m_conditionHasBeenSet = false;
   bool m_nextActivityHasBeenSet = false;
 };
 

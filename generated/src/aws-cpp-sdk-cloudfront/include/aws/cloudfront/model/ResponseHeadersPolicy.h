@@ -98,12 +98,12 @@ class ResponseHeadersPolicy {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   ResponseHeadersPolicyConfig m_responseHeadersPolicyConfig;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_responseHeadersPolicyConfigHasBeenSet = false;
 };
 

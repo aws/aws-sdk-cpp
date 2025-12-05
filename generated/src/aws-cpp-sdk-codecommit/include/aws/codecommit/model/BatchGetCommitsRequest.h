@@ -76,9 +76,9 @@ class BatchGetCommitsRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_commitIds;
-  bool m_commitIdsHasBeenSet = false;
 
   Aws::String m_repositoryName;
+  bool m_commitIdsHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
 };
 

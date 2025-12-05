@@ -198,27 +198,27 @@ class ProvisionByoipCidrRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   CidrAuthorizationContext m_cidrAuthorizationContext;
-  bool m_cidrAuthorizationContextHasBeenSet = false;
 
   bool m_publiclyAdvertisable{false};
-  bool m_publiclyAdvertisableHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_poolTagSpecifications;
-  bool m_poolTagSpecificationsHasBeenSet = false;
 
   bool m_multiRegion{false};
-  bool m_multiRegionHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
+  bool m_cidrHasBeenSet = false;
+  bool m_cidrAuthorizationContextHasBeenSet = false;
+  bool m_publiclyAdvertisableHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_poolTagSpecificationsHasBeenSet = false;
+  bool m_multiRegionHasBeenSet = false;
   bool m_networkBorderGroupHasBeenSet = false;
 };
 

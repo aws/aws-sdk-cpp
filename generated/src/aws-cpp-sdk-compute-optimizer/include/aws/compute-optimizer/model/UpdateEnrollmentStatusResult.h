@@ -77,12 +77,12 @@ class UpdateEnrollmentStatusResult {
   ///@}
  private:
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

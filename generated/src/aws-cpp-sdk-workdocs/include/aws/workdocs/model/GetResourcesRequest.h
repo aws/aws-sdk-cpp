@@ -126,18 +126,18 @@ class GetResourcesRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   ResourceCollectionType m_collectionType{ResourceCollectionType::NOT_SET};
-  bool m_collectionTypeHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_collectionTypeHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

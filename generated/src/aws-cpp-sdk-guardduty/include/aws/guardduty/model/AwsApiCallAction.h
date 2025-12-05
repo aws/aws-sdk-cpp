@@ -207,30 +207,30 @@ class AwsApiCallAction {
   ///@}
  private:
   Aws::String m_api;
-  bool m_apiHasBeenSet = false;
 
   Aws::String m_callerType;
-  bool m_callerTypeHasBeenSet = false;
 
   DomainDetails m_domainDetails;
-  bool m_domainDetailsHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_userAgent;
-  bool m_userAgentHasBeenSet = false;
 
   RemoteIpDetails m_remoteIpDetails;
-  bool m_remoteIpDetailsHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   RemoteAccountDetails m_remoteAccountDetails;
-  bool m_remoteAccountDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_affectedResources;
+  bool m_apiHasBeenSet = false;
+  bool m_callerTypeHasBeenSet = false;
+  bool m_domainDetailsHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_userAgentHasBeenSet = false;
+  bool m_remoteIpDetailsHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_remoteAccountDetailsHasBeenSet = false;
   bool m_affectedResourcesHasBeenSet = false;
 };
 

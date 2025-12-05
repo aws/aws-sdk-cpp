@@ -87,12 +87,12 @@ class UpdateContactFlowContentRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

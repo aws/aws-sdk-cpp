@@ -104,15 +104,15 @@ class ResourceFindingsSummary {
   ///@}
  private:
   Aws::String m_findingType;
-  bool m_findingTypeHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   int m_totalFindings{0};
-  bool m_totalFindingsHasBeenSet = false;
 
   ResourceSeverityBreakdown m_severities;
+  bool m_findingTypeHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_totalFindingsHasBeenSet = false;
   bool m_severitiesHasBeenSet = false;
 };
 

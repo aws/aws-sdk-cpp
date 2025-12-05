@@ -87,12 +87,12 @@ class GetGeneratedTemplateResult {
   ///@}
  private:
   GeneratedTemplateStatus m_status{GeneratedTemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_statusHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

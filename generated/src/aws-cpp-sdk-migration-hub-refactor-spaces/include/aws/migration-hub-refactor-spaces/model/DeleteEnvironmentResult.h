@@ -128,21 +128,21 @@ class DeleteEnvironmentResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EnvironmentState m_state{EnvironmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class CreateArchiveResult {
   ///@}
  private:
   Aws::String m_archiveId;
-  bool m_archiveIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_archiveIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

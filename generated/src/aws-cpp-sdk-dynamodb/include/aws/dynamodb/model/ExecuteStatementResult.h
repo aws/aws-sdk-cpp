@@ -135,18 +135,18 @@ class ExecuteStatementResult {
   ///@}
  private:
   Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ConsumedCapacity m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_lastEvaluatedKey;
-  bool m_lastEvaluatedKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
+  bool m_lastEvaluatedKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

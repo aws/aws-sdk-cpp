@@ -89,12 +89,12 @@ class FlowTraceDependencyEvent {
   ///@}
  private:
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   TraceElements m_traceElements;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_traceElementsHasBeenSet = false;
 };
 

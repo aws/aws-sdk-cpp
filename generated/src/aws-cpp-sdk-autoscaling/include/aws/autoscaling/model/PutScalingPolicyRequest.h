@@ -350,45 +350,45 @@ class PutScalingPolicyRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyType;
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_adjustmentType;
-  bool m_adjustmentTypeHasBeenSet = false;
 
   int m_minAdjustmentStep{0};
-  bool m_minAdjustmentStepHasBeenSet = false;
 
   int m_minAdjustmentMagnitude{0};
-  bool m_minAdjustmentMagnitudeHasBeenSet = false;
 
   int m_scalingAdjustment{0};
-  bool m_scalingAdjustmentHasBeenSet = false;
 
   int m_cooldown{0};
-  bool m_cooldownHasBeenSet = false;
 
   Aws::String m_metricAggregationType;
-  bool m_metricAggregationTypeHasBeenSet = false;
 
   Aws::Vector<StepAdjustment> m_stepAdjustments;
-  bool m_stepAdjustmentsHasBeenSet = false;
 
   int m_estimatedInstanceWarmup{0};
-  bool m_estimatedInstanceWarmupHasBeenSet = false;
 
   TargetTrackingConfiguration m_targetTrackingConfiguration;
-  bool m_targetTrackingConfigurationHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   PredictiveScalingConfiguration m_predictiveScalingConfiguration;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_adjustmentTypeHasBeenSet = false;
+  bool m_minAdjustmentStepHasBeenSet = false;
+  bool m_minAdjustmentMagnitudeHasBeenSet = false;
+  bool m_scalingAdjustmentHasBeenSet = false;
+  bool m_cooldownHasBeenSet = false;
+  bool m_metricAggregationTypeHasBeenSet = false;
+  bool m_stepAdjustmentsHasBeenSet = false;
+  bool m_estimatedInstanceWarmupHasBeenSet = false;
+  bool m_targetTrackingConfigurationHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_predictiveScalingConfigurationHasBeenSet = false;
 };
 

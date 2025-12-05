@@ -74,9 +74,9 @@ class ColumnInfo {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   std::shared_ptr<Type> m_type;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -75,12 +75,12 @@ class TestAvailabilityConfigurationResult {
   ///@}
  private:
   bool m_testPassed{false};
-  bool m_testPassedHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testPassedHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

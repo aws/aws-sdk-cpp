@@ -77,9 +77,9 @@ class PutEmailIdentityFeedbackAttributesRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   bool m_emailForwardingEnabled{false};
+  bool m_emailIdentityHasBeenSet = false;
   bool m_emailForwardingEnabledHasBeenSet = false;
 };
 

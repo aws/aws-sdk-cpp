@@ -86,9 +86,9 @@ class Filter {
   ///@}
  private:
   FilterNameStringType m_key{FilterNameStringType::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_keyHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

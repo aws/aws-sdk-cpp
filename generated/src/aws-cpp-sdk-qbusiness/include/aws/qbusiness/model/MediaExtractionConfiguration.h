@@ -94,12 +94,12 @@ class MediaExtractionConfiguration {
   ///@}
  private:
   ImageExtractionConfiguration m_imageExtractionConfiguration;
-  bool m_imageExtractionConfigurationHasBeenSet = false;
 
   AudioExtractionConfiguration m_audioExtractionConfiguration;
-  bool m_audioExtractionConfigurationHasBeenSet = false;
 
   VideoExtractionConfiguration m_videoExtractionConfiguration;
+  bool m_imageExtractionConfigurationHasBeenSet = false;
+  bool m_audioExtractionConfigurationHasBeenSet = false;
   bool m_videoExtractionConfigurationHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ActivityTaskCompletedEventAttributes {
   ///@}
  private:
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
+  bool m_resultHasBeenSet = false;
+  bool m_scheduledEventIdHasBeenSet = false;
   bool m_startedEventIdHasBeenSet = false;
 };
 

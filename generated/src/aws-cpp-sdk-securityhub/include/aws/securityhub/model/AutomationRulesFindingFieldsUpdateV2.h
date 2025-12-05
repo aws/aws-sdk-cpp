@@ -85,12 +85,12 @@ class AutomationRulesFindingFieldsUpdateV2 {
   ///@}
  private:
   int m_severityId{0};
-  bool m_severityIdHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   int m_statusId{0};
+  bool m_severityIdHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_statusIdHasBeenSet = false;
 };
 

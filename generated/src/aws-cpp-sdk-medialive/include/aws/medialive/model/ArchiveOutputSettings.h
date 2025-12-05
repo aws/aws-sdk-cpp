@@ -89,12 +89,12 @@ class ArchiveOutputSettings {
   ///@}
  private:
   ArchiveContainerSettings m_containerSettings;
-  bool m_containerSettingsHasBeenSet = false;
 
   Aws::String m_extension;
-  bool m_extensionHasBeenSet = false;
 
   Aws::String m_nameModifier;
+  bool m_containerSettingsHasBeenSet = false;
+  bool m_extensionHasBeenSet = false;
   bool m_nameModifierHasBeenSet = false;
 };
 

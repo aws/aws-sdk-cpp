@@ -70,9 +70,9 @@ class MaintenanceConfiguration {
   ///@}
  private:
   PreferredDayTimeMaintenanceConfiguration m_preferredDayTime;
-  bool m_preferredDayTimeHasBeenSet = false;
 
   DefaultMaintenanceConfiguration m_default;
+  bool m_preferredDayTimeHasBeenSet = false;
   bool m_defaultHasBeenSet = false;
 };
 

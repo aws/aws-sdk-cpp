@@ -87,12 +87,12 @@ class StaticFileS3SourceOptions {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_objectKey;
-  bool m_objectKeyHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_objectKeyHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class LogConfiguration {
   ///@}
  private:
   Aws::String m_logDriver;
-  bool m_logDriverHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_logDriverHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

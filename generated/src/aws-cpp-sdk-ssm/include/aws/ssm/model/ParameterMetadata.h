@@ -260,39 +260,39 @@ class ParameterMetadata {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   ParameterType m_type{ParameterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_lastModifiedUser;
-  bool m_lastModifiedUserHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_allowedPattern;
-  bool m_allowedPatternHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   ParameterTier m_tier{ParameterTier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::Vector<ParameterInlinePolicy> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::String m_dataType;
+  bool m_nameHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_lastModifiedUserHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_allowedPatternHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
   bool m_dataTypeHasBeenSet = false;
 };
 

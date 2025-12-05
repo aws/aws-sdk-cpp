@@ -61,9 +61,9 @@ class PutLifecycleEventHookExecutionStatusResult {
   ///@}
  private:
   Aws::String m_lifecycleEventHookExecutionId;
-  bool m_lifecycleEventHookExecutionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleEventHookExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

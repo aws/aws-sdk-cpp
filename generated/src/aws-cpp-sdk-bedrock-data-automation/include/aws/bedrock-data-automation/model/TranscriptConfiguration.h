@@ -65,9 +65,9 @@ class TranscriptConfiguration {
   ///@}
  private:
   SpeakerLabelingConfiguration m_speakerLabeling;
-  bool m_speakerLabelingHasBeenSet = false;
 
   ChannelLabelingConfiguration m_channelLabeling;
+  bool m_speakerLabelingHasBeenSet = false;
   bool m_channelLabelingHasBeenSet = false;
 };
 

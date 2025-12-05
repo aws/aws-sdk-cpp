@@ -105,12 +105,12 @@ class PromptSearchCriteria {
   ///@}
  private:
   Aws::Vector<PromptSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<PromptSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
   bool m_stringConditionHasBeenSet = false;
 };
 

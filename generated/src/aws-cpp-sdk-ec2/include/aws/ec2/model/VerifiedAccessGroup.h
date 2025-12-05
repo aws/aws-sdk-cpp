@@ -223,33 +223,33 @@ class VerifiedAccessGroup {
   ///@}
  private:
   Aws::String m_verifiedAccessGroupId;
-  bool m_verifiedAccessGroupIdHasBeenSet = false;
 
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_verifiedAccessGroupArn;
-  bool m_verifiedAccessGroupArnHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_deletionTime;
-  bool m_deletionTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VerifiedAccessSseSpecificationResponse m_sseSpecification;
+  bool m_verifiedAccessGroupIdHasBeenSet = false;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_verifiedAccessGroupArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_deletionTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_sseSpecificationHasBeenSet = false;
 };
 

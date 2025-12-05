@@ -70,9 +70,9 @@ class KmsEncryptionConfig {
   ///@}
  private:
   CmkType m_cmkType{CmkType::NOT_SET};
-  bool m_cmkTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_cmkTypeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

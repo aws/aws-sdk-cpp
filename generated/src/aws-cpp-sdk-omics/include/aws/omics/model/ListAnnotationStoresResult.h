@@ -84,12 +84,12 @@ class ListAnnotationStoresResult {
   ///@}
  private:
   Aws::Vector<AnnotationStoreItem> m_annotationStores;
-  bool m_annotationStoresHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_annotationStoresHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

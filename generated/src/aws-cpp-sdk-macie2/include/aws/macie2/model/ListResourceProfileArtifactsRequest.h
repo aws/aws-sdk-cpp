@@ -72,9 +72,9 @@ class ListResourceProfileArtifactsRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_nextTokenHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

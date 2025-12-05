@@ -92,12 +92,12 @@ class CreateFaceLivenessSessionRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   CreateFaceLivenessSessionRequestSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

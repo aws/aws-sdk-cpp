@@ -210,30 +210,30 @@ class SpendingLimitSummary {
   ///@}
  private:
   Aws::String m_spendingLimitArn;
-  bool m_spendingLimitArnHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   TimePeriod m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::String m_spendingLimit;
-  bool m_spendingLimitHasBeenSet = false;
 
   Aws::String m_queuedSpend;
-  bool m_queuedSpendHasBeenSet = false;
 
   Aws::String m_totalSpend;
-  bool m_totalSpendHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_spendingLimitArnHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_spendingLimitHasBeenSet = false;
+  bool m_queuedSpendHasBeenSet = false;
+  bool m_totalSpendHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -200,30 +200,30 @@ class SubscribedAsset {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_assetRevision;
-  bool m_assetRevisionHasBeenSet = false;
 
   AssetScope m_assetScope;
-  bool m_assetScopeHasBeenSet = false;
 
   FailureCause m_failureCause;
-  bool m_failureCauseHasBeenSet = false;
 
   Aws::Utils::DateTime m_failureTimestamp{};
-  bool m_failureTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_grantedTimestamp{};
-  bool m_grantedTimestampHasBeenSet = false;
 
   Permissions m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   SubscriptionGrantStatus m_status{SubscriptionGrantStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_targetName;
+  bool m_assetIdHasBeenSet = false;
+  bool m_assetRevisionHasBeenSet = false;
+  bool m_assetScopeHasBeenSet = false;
+  bool m_failureCauseHasBeenSet = false;
+  bool m_failureTimestampHasBeenSet = false;
+  bool m_grantedTimestampHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
 };
 

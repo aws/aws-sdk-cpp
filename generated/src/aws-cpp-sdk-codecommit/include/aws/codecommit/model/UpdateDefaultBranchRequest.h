@@ -72,9 +72,9 @@ class UpdateDefaultBranchRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_defaultBranchName;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_defaultBranchNameHasBeenSet = false;
 };
 

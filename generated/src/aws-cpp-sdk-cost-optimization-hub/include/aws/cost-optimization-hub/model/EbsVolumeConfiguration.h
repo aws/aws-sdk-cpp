@@ -89,12 +89,12 @@ class EbsVolumeConfiguration {
   ///@}
  private:
   StorageConfiguration m_storage;
-  bool m_storageHasBeenSet = false;
 
   BlockStoragePerformanceConfiguration m_performance;
-  bool m_performanceHasBeenSet = false;
 
   Aws::String m_attachmentState;
+  bool m_storageHasBeenSet = false;
+  bool m_performanceHasBeenSet = false;
   bool m_attachmentStateHasBeenSet = false;
 };
 

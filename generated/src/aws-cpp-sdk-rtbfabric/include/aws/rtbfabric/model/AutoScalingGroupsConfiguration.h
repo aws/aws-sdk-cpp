@@ -76,9 +76,9 @@ class AutoScalingGroupsConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_autoScalingGroupNames;
-  bool m_autoScalingGroupNamesHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_autoScalingGroupNamesHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

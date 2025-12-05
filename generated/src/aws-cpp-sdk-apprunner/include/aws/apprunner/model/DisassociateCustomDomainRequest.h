@@ -69,9 +69,9 @@ class DisassociateCustomDomainRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_serviceArnHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

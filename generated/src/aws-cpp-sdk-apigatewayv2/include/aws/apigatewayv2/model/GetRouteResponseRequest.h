@@ -83,12 +83,12 @@ class GetRouteResponseRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_routeId;
-  bool m_routeIdHasBeenSet = false;
 
   Aws::String m_routeResponseId;
+  bool m_apiIdHasBeenSet = false;
+  bool m_routeIdHasBeenSet = false;
   bool m_routeResponseIdHasBeenSet = false;
 };
 

@@ -642,87 +642,87 @@ class Snapshot {
   ///@}
  private:
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_replicationGroupDescription;
-  bool m_replicationGroupDescriptionHasBeenSet = false;
 
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_snapshotStatus;
-  bool m_snapshotStatusHasBeenSet = false;
 
   Aws::String m_snapshotSource;
-  bool m_snapshotSourceHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_numCacheNodes{0};
-  bool m_numCacheNodesHasBeenSet = false;
 
   Aws::String m_preferredAvailabilityZone;
-  bool m_preferredAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_preferredOutpostArn;
-  bool m_preferredOutpostArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_cacheClusterCreateTime{};
-  bool m_cacheClusterCreateTimeHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_cacheSubnetGroupName;
-  bool m_cacheSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   int m_numNodeGroups{0};
-  bool m_numNodeGroupsHasBeenSet = false;
 
   AutomaticFailoverStatus m_automaticFailover{AutomaticFailoverStatus::NOT_SET};
-  bool m_automaticFailoverHasBeenSet = false;
 
   Aws::Vector<NodeSnapshot> m_nodeSnapshots;
-  bool m_nodeSnapshotsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   DataTieringStatus m_dataTiering{DataTieringStatus::NOT_SET};
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_replicationGroupDescriptionHasBeenSet = false;
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_snapshotStatusHasBeenSet = false;
+  bool m_snapshotSourceHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_numCacheNodesHasBeenSet = false;
+  bool m_preferredAvailabilityZoneHasBeenSet = false;
+  bool m_preferredOutpostArnHasBeenSet = false;
+  bool m_cacheClusterCreateTimeHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_cacheSubnetGroupNameHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_numNodeGroupsHasBeenSet = false;
+  bool m_automaticFailoverHasBeenSet = false;
+  bool m_nodeSnapshotsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
   bool m_dataTieringHasBeenSet = false;
 };
 

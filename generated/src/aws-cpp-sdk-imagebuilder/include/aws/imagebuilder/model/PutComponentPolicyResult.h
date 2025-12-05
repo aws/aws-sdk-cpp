@@ -62,9 +62,9 @@ class PutComponentPolicyResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_componentArn;
+  bool m_requestIdHasBeenSet = false;
   bool m_componentArnHasBeenSet = false;
 };
 

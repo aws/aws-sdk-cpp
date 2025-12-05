@@ -220,33 +220,33 @@ class PromptRouterSummary {
   ///@}
  private:
   Aws::String m_promptRouterName;
-  bool m_promptRouterNameHasBeenSet = false;
 
   RoutingCriteria m_routingCriteria;
-  bool m_routingCriteriaHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_promptRouterArn;
-  bool m_promptRouterArnHasBeenSet = false;
 
   Aws::Vector<PromptRouterTargetModel> m_models;
-  bool m_modelsHasBeenSet = false;
 
   PromptRouterTargetModel m_fallbackModel;
-  bool m_fallbackModelHasBeenSet = false;
 
   PromptRouterStatus m_status{PromptRouterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PromptRouterType m_type{PromptRouterType::NOT_SET};
+  bool m_promptRouterNameHasBeenSet = false;
+  bool m_routingCriteriaHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_promptRouterArnHasBeenSet = false;
+  bool m_modelsHasBeenSet = false;
+  bool m_fallbackModelHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

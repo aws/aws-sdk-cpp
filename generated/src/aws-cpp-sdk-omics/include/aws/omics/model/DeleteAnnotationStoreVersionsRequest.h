@@ -94,12 +94,12 @@ class DeleteAnnotationStoreVersionsRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   bool m_force{false};
+  bool m_nameHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

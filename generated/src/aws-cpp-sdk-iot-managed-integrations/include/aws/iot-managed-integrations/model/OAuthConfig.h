@@ -146,21 +146,21 @@ class OAuthConfig {
   ///@}
  private:
   Aws::String m_authUrl;
-  bool m_authUrlHasBeenSet = false;
 
   Aws::String m_tokenUrl;
-  bool m_tokenUrlHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   TokenEndpointAuthenticationScheme m_tokenEndpointAuthenticationScheme{TokenEndpointAuthenticationScheme::NOT_SET};
-  bool m_tokenEndpointAuthenticationSchemeHasBeenSet = false;
 
   Aws::String m_oAuthCompleteRedirectUrl;
-  bool m_oAuthCompleteRedirectUrlHasBeenSet = false;
 
   ProactiveRefreshTokenRenewal m_proactiveRefreshTokenRenewal;
+  bool m_authUrlHasBeenSet = false;
+  bool m_tokenUrlHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_tokenEndpointAuthenticationSchemeHasBeenSet = false;
+  bool m_oAuthCompleteRedirectUrlHasBeenSet = false;
   bool m_proactiveRefreshTokenRenewalHasBeenSet = false;
 };
 

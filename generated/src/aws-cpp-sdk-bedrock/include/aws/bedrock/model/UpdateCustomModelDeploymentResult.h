@@ -59,9 +59,9 @@ class UpdateCustomModelDeploymentResult {
   ///@}
  private:
   Aws::String m_customModelDeploymentArn;
-  bool m_customModelDeploymentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customModelDeploymentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

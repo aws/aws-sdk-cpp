@@ -61,9 +61,9 @@ class GetVirtualMachineResult {
   ///@}
  private:
   VirtualMachineDetails m_virtualMachine;
-  bool m_virtualMachineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualMachineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

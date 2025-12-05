@@ -67,9 +67,9 @@ class ProbeSdkResult {
   ///@}
  private:
   Aws::Vector<ProbeResult> m_probeResults;
-  bool m_probeResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_probeResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DescribeAccountLimitsResult {
   ///@}
  private:
   Aws::Vector<Limit> m_limits;
-  bool m_limitsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_limitsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

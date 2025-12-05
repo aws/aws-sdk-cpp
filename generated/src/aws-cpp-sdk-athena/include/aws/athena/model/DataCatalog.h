@@ -226,24 +226,24 @@ class DataCatalog {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataCatalogType m_type{DataCatalogType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   DataCatalogStatus m_status{DataCatalogStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

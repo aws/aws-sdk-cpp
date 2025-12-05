@@ -68,9 +68,9 @@ class NegativeFormat {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_suffix;
+  bool m_prefixHasBeenSet = false;
   bool m_suffixHasBeenSet = false;
 };
 

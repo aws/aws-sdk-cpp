@@ -70,9 +70,9 @@ class AreaOfInterestGeometry {
   ///@}
  private:
   MultiPolygonGeometryInput m_multiPolygonGeometry;
-  bool m_multiPolygonGeometryHasBeenSet = false;
 
   PolygonGeometryInput m_polygonGeometry;
+  bool m_multiPolygonGeometryHasBeenSet = false;
   bool m_polygonGeometryHasBeenSet = false;
 };
 

@@ -205,27 +205,27 @@ class JDBCConnectorOptions {
   ///@}
  private:
   Aws::String m_filterPredicate;
-  bool m_filterPredicateHasBeenSet = false;
 
   Aws::String m_partitionColumn;
-  bool m_partitionColumnHasBeenSet = false;
 
   long long m_lowerBound{0};
-  bool m_lowerBoundHasBeenSet = false;
 
   long long m_upperBound{0};
-  bool m_upperBoundHasBeenSet = false;
 
   long long m_numPartitions{0};
-  bool m_numPartitionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_jobBookmarkKeys;
-  bool m_jobBookmarkKeysHasBeenSet = false;
 
   Aws::String m_jobBookmarkKeysSortOrder;
-  bool m_jobBookmarkKeysSortOrderHasBeenSet = false;
 
   Aws::Map<JDBCDataType, GlueRecordType> m_dataTypeMapping;
+  bool m_filterPredicateHasBeenSet = false;
+  bool m_partitionColumnHasBeenSet = false;
+  bool m_lowerBoundHasBeenSet = false;
+  bool m_upperBoundHasBeenSet = false;
+  bool m_numPartitionsHasBeenSet = false;
+  bool m_jobBookmarkKeysHasBeenSet = false;
+  bool m_jobBookmarkKeysSortOrderHasBeenSet = false;
   bool m_dataTypeMappingHasBeenSet = false;
 };
 

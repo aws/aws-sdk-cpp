@@ -192,27 +192,27 @@ class RouteTollRate {
   ///@}
  private:
   Aws::String m_applicableTimes;
-  bool m_applicableTimesHasBeenSet = false;
 
   RouteTollPrice m_convertedPrice;
-  bool m_convertedPriceHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RouteTollPrice m_localPrice;
-  bool m_localPriceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RouteTollPass m_pass;
-  bool m_passHasBeenSet = false;
 
   Aws::Vector<RouteTollPaymentMethod> m_paymentMethods;
-  bool m_paymentMethodsHasBeenSet = false;
 
   Aws::Vector<RouteTransponder> m_transponders;
+  bool m_applicableTimesHasBeenSet = false;
+  bool m_convertedPriceHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_localPriceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_passHasBeenSet = false;
+  bool m_paymentMethodsHasBeenSet = false;
   bool m_transpondersHasBeenSet = false;
 };
 

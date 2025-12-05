@@ -154,24 +154,24 @@ class CreateProtectConfigurationResult {
   ///@}
  private:
   Aws::String m_protectConfigurationArn;
-  bool m_protectConfigurationArnHasBeenSet = false;
 
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   bool m_accountDefault{false};
-  bool m_accountDefaultHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectConfigurationArnHasBeenSet = false;
+  bool m_protectConfigurationIdHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_accountDefaultHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

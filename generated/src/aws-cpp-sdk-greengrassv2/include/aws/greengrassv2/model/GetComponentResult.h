@@ -103,15 +103,15 @@ class GetComponentResult {
   ///@}
  private:
   RecipeOutputFormat m_recipeOutputFormat{RecipeOutputFormat::NOT_SET};
-  bool m_recipeOutputFormatHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_recipe{};
-  bool m_recipeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recipeOutputFormatHasBeenSet = false;
+  bool m_recipeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

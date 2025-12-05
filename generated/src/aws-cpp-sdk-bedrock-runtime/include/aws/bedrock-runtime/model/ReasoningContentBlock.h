@@ -73,9 +73,9 @@ class ReasoningContentBlock {
   ///@}
  private:
   ReasoningTextBlock m_reasoningText;
-  bool m_reasoningTextHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_redactedContent{};
+  bool m_reasoningTextHasBeenSet = false;
   bool m_redactedContentHasBeenSet = false;
 };
 

@@ -255,36 +255,36 @@ class Activity {
   ///@}
  private:
   CustomMessageActivity m_cUSTOM;
-  bool m_cUSTOMHasBeenSet = false;
 
   ConditionalSplitActivity m_conditionalSplit;
-  bool m_conditionalSplitHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EmailMessageActivity m_eMAIL;
-  bool m_eMAILHasBeenSet = false;
 
   HoldoutActivity m_holdout;
-  bool m_holdoutHasBeenSet = false;
 
   MultiConditionalSplitActivity m_multiCondition;
-  bool m_multiConditionHasBeenSet = false;
 
   PushMessageActivity m_pUSH;
-  bool m_pUSHHasBeenSet = false;
 
   RandomSplitActivity m_randomSplit;
-  bool m_randomSplitHasBeenSet = false;
 
   SMSMessageActivity m_sMS;
-  bool m_sMSHasBeenSet = false;
 
   WaitActivity m_wait;
-  bool m_waitHasBeenSet = false;
 
   ContactCenterActivity m_contactCenter;
+  bool m_cUSTOMHasBeenSet = false;
+  bool m_conditionalSplitHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eMAILHasBeenSet = false;
+  bool m_holdoutHasBeenSet = false;
+  bool m_multiConditionHasBeenSet = false;
+  bool m_pUSHHasBeenSet = false;
+  bool m_randomSplitHasBeenSet = false;
+  bool m_sMSHasBeenSet = false;
+  bool m_waitHasBeenSet = false;
   bool m_contactCenterHasBeenSet = false;
 };
 

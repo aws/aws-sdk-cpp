@@ -120,15 +120,15 @@ class UsageReportSubscription {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   UsageReportSchedule m_schedule{UsageReportSchedule::NOT_SET};
-  bool m_scheduleHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastGeneratedReportDate{};
-  bool m_lastGeneratedReportDateHasBeenSet = false;
 
   Aws::Vector<LastReportGenerationExecutionError> m_subscriptionErrors;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_lastGeneratedReportDateHasBeenSet = false;
   bool m_subscriptionErrorsHasBeenSet = false;
 };
 

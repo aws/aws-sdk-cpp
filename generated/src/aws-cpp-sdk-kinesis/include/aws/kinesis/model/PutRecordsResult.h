@@ -111,15 +111,15 @@ class PutRecordsResult {
   ///@}
  private:
   int m_failedRecordCount{0};
-  bool m_failedRecordCountHasBeenSet = false;
 
   Aws::Vector<PutRecordsResultEntry> m_records;
-  bool m_recordsHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedRecordCountHasBeenSet = false;
+  bool m_recordsHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

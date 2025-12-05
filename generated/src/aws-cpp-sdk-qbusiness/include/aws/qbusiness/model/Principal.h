@@ -71,9 +71,9 @@ class Principal {
   ///@}
  private:
   PrincipalUser m_user;
-  bool m_userHasBeenSet = false;
 
   PrincipalGroup m_group;
+  bool m_userHasBeenSet = false;
   bool m_groupHasBeenSet = false;
 };
 

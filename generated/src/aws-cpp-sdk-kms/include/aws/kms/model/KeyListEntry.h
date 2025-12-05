@@ -69,9 +69,9 @@ class KeyListEntry {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_keyArn;
+  bool m_keyIdHasBeenSet = false;
   bool m_keyArnHasBeenSet = false;
 };
 

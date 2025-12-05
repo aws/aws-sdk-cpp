@@ -87,12 +87,12 @@ class GetAnomalySubscriptionsResult {
   ///@}
  private:
   Aws::Vector<AnomalySubscription> m_anomalySubscriptions;
-  bool m_anomalySubscriptionsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anomalySubscriptionsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

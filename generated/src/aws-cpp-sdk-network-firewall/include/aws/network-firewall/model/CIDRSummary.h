@@ -93,12 +93,12 @@ class CIDRSummary {
   ///@}
  private:
   int m_availableCIDRCount{0};
-  bool m_availableCIDRCountHasBeenSet = false;
 
   int m_utilizedCIDRCount{0};
-  bool m_utilizedCIDRCountHasBeenSet = false;
 
   Aws::Map<Aws::String, IPSetMetadata> m_iPSetReferences;
+  bool m_availableCIDRCountHasBeenSet = false;
+  bool m_utilizedCIDRCountHasBeenSet = false;
   bool m_iPSetReferencesHasBeenSet = false;
 };
 

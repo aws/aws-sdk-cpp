@@ -235,36 +235,36 @@ class ActionExecutionDetail {
   ///@}
  private:
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   Aws::String m_actionExecutionId;
-  bool m_actionExecutionIdHasBeenSet = false;
 
   int m_pipelineVersion{0};
-  bool m_pipelineVersionHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   ActionExecutionStatus m_status{ActionExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ActionExecutionInput m_input;
-  bool m_inputHasBeenSet = false;
 
   ActionExecutionOutput m_output;
+  bool m_pipelineExecutionIdHasBeenSet = false;
+  bool m_actionExecutionIdHasBeenSet = false;
+  bool m_pipelineVersionHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_outputHasBeenSet = false;
 };
 

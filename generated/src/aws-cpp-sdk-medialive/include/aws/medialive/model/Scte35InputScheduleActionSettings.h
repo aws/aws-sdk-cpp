@@ -68,9 +68,9 @@ class Scte35InputScheduleActionSettings {
   ///@}
  private:
   Aws::String m_inputAttachmentNameReference;
-  bool m_inputAttachmentNameReferenceHasBeenSet = false;
 
   Scte35InputMode m_mode{Scte35InputMode::NOT_SET};
+  bool m_inputAttachmentNameReferenceHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

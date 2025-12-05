@@ -62,9 +62,9 @@ class SchemaVersionNumber {
   ///@}
  private:
   bool m_latestVersion{false};
-  bool m_latestVersionHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_latestVersionHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class LambdaEventSource {
   ///@}
  private:
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   LambdaEventSourceType m_type{LambdaEventSourceType::NOT_SET};
+  bool m_topicHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

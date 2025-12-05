@@ -92,12 +92,12 @@ class ListBillScenariosFilter {
   ///@}
  private:
   ListBillScenariosFilterName m_name{ListBillScenariosFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   MatchOption m_matchOption{MatchOption::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_matchOptionHasBeenSet = false;
 };
 

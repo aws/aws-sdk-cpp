@@ -91,12 +91,12 @@ class KxDatabaseListEntry {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
+  bool m_databaseNameHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_lastModifiedTimestampHasBeenSet = false;
 };
 

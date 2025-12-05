@@ -91,12 +91,12 @@ class BatchGetVpcEndpointResult {
   ///@}
  private:
   Aws::Vector<VpcEndpointDetail> m_vpcEndpointDetails;
-  bool m_vpcEndpointDetailsHasBeenSet = false;
 
   Aws::Vector<VpcEndpointErrorDetail> m_vpcEndpointErrorDetails;
-  bool m_vpcEndpointErrorDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcEndpointDetailsHasBeenSet = false;
+  bool m_vpcEndpointErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

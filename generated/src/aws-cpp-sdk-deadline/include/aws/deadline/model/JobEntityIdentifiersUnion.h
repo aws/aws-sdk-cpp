@@ -107,15 +107,15 @@ class JobEntityIdentifiersUnion {
   ///@}
  private:
   JobDetailsIdentifiers m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   JobAttachmentDetailsIdentifiers m_jobAttachmentDetails;
-  bool m_jobAttachmentDetailsHasBeenSet = false;
 
   StepDetailsIdentifiers m_stepDetails;
-  bool m_stepDetailsHasBeenSet = false;
 
   EnvironmentDetailsIdentifiers m_environmentDetails;
+  bool m_jobDetailsHasBeenSet = false;
+  bool m_jobAttachmentDetailsHasBeenSet = false;
+  bool m_stepDetailsHasBeenSet = false;
   bool m_environmentDetailsHasBeenSet = false;
 };
 

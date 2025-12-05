@@ -130,18 +130,18 @@ class ResourceScanMetadata {
   ///@}
  private:
   EcrRepositoryMetadata m_ecrRepository;
-  bool m_ecrRepositoryHasBeenSet = false;
 
   EcrContainerImageMetadata m_ecrImage;
-  bool m_ecrImageHasBeenSet = false;
 
   Ec2Metadata m_ec2;
-  bool m_ec2HasBeenSet = false;
 
   LambdaFunctionMetadata m_lambdaFunction;
-  bool m_lambdaFunctionHasBeenSet = false;
 
   CodeRepositoryMetadata m_codeRepository;
+  bool m_ecrRepositoryHasBeenSet = false;
+  bool m_ecrImageHasBeenSet = false;
+  bool m_ec2HasBeenSet = false;
+  bool m_lambdaFunctionHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
 };
 

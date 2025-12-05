@@ -119,15 +119,15 @@ class PushMessageActivity {
   ///@}
  private:
   JourneyPushMessage m_messageConfig;
-  bool m_messageConfigHasBeenSet = false;
 
   Aws::String m_nextActivity;
-  bool m_nextActivityHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateVersion;
+  bool m_messageConfigHasBeenSet = false;
+  bool m_nextActivityHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_templateVersionHasBeenSet = false;
 };
 

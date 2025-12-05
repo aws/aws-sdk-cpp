@@ -89,12 +89,12 @@ class FailedCustomVocabularyItem {
   ///@}
  private:
   Aws::String m_itemId;
-  bool m_itemIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
+  bool m_itemIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

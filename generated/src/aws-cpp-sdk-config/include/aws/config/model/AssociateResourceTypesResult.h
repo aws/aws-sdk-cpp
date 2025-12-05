@@ -58,9 +58,9 @@ class AssociateResourceTypesResult {
   ///@}
  private:
   ConfigurationRecorder m_configurationRecorder;
-  bool m_configurationRecorderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationRecorderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

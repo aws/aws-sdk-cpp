@@ -235,30 +235,30 @@ class JobSummary {
   ///@}
  private:
   S3BucketCriteriaForJob m_bucketCriteria;
-  bool m_bucketCriteriaHasBeenSet = false;
 
   Aws::Vector<S3BucketDefinitionForJob> m_bucketDefinitions;
-  bool m_bucketDefinitionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   LastRunErrorStatus m_lastRunErrorStatus;
-  bool m_lastRunErrorStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UserPausedDetails m_userPausedDetails;
+  bool m_bucketCriteriaHasBeenSet = false;
+  bool m_bucketDefinitionsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_lastRunErrorStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_userPausedDetailsHasBeenSet = false;
 };
 

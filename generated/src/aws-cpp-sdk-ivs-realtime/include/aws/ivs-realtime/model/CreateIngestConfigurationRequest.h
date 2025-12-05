@@ -184,24 +184,24 @@ class CreateIngestConfigurationRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_stageArn;
-  bool m_stageArnHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   IngestProtocol m_ingestProtocol{IngestProtocol::NOT_SET};
-  bool m_ingestProtocolHasBeenSet = false;
 
   bool m_insecureIngest{false};
-  bool m_insecureIngestHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_stageArnHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_ingestProtocolHasBeenSet = false;
+  bool m_insecureIngestHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

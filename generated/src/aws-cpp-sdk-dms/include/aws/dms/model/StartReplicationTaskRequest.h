@@ -163,18 +163,18 @@ class StartReplicationTaskRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   StartReplicationTaskTypeValue m_startReplicationTaskType{StartReplicationTaskTypeValue::NOT_SET};
-  bool m_startReplicationTaskTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_cdcStartTime{};
-  bool m_cdcStartTimeHasBeenSet = false;
 
   Aws::String m_cdcStartPosition;
-  bool m_cdcStartPositionHasBeenSet = false;
 
   Aws::String m_cdcStopPosition;
+  bool m_replicationTaskArnHasBeenSet = false;
+  bool m_startReplicationTaskTypeHasBeenSet = false;
+  bool m_cdcStartTimeHasBeenSet = false;
+  bool m_cdcStartPositionHasBeenSet = false;
   bool m_cdcStopPositionHasBeenSet = false;
 };
 

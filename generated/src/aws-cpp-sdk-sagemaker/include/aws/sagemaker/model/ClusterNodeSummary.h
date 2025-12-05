@@ -202,30 +202,30 @@ class ClusterNodeSummary {
   ///@}
  private:
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_nodeLogicalId;
-  bool m_nodeLogicalIdHasBeenSet = false;
 
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSoftwareUpdateTime{};
-  bool m_lastSoftwareUpdateTimeHasBeenSet = false;
 
   ClusterInstanceStatusDetails m_instanceStatus;
-  bool m_instanceStatusHasBeenSet = false;
 
   UltraServerInfo m_ultraServerInfo;
-  bool m_ultraServerInfoHasBeenSet = false;
 
   Aws::String m_privateDnsHostname;
+  bool m_instanceGroupNameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nodeLogicalIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_lastSoftwareUpdateTimeHasBeenSet = false;
+  bool m_instanceStatusHasBeenSet = false;
+  bool m_ultraServerInfoHasBeenSet = false;
   bool m_privateDnsHostnameHasBeenSet = false;
 };
 

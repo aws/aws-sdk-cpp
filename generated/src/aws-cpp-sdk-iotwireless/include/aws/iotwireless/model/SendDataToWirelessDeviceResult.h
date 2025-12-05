@@ -59,9 +59,9 @@ class SendDataToWirelessDeviceResult {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

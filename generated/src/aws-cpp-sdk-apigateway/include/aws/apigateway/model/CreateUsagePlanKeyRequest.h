@@ -88,12 +88,12 @@ class CreateUsagePlanKeyRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_usagePlanId;
-  bool m_usagePlanIdHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_keyType;
+  bool m_usagePlanIdHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
   bool m_keyTypeHasBeenSet = false;
 };
 

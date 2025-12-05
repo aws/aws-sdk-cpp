@@ -106,15 +106,15 @@ class UpdateClassifierRequest : public GlueRequest {
   ///@}
  private:
   UpdateGrokClassifierRequest m_grokClassifier;
-  bool m_grokClassifierHasBeenSet = false;
 
   UpdateXMLClassifierRequest m_xMLClassifier;
-  bool m_xMLClassifierHasBeenSet = false;
 
   UpdateJsonClassifierRequest m_jsonClassifier;
-  bool m_jsonClassifierHasBeenSet = false;
 
   UpdateCsvClassifierRequest m_csvClassifier;
+  bool m_grokClassifierHasBeenSet = false;
+  bool m_xMLClassifierHasBeenSet = false;
+  bool m_jsonClassifierHasBeenSet = false;
   bool m_csvClassifierHasBeenSet = false;
 };
 

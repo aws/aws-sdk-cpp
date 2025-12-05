@@ -86,12 +86,12 @@ class ListCertificatesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CertificateSummary> m_certificateSummaryList;
-  bool m_certificateSummaryListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_certificateSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

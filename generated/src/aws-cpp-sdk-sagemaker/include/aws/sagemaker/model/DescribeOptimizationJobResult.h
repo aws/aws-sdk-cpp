@@ -366,60 +366,60 @@ class DescribeOptimizationJobResult {
   ///@}
  private:
   Aws::String m_optimizationJobArn;
-  bool m_optimizationJobArnHasBeenSet = false;
 
   OptimizationJobStatus m_optimizationJobStatus{OptimizationJobStatus::NOT_SET};
-  bool m_optimizationJobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_optimizationStartTime{};
-  bool m_optimizationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_optimizationEndTime{};
-  bool m_optimizationEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_optimizationJobName;
-  bool m_optimizationJobNameHasBeenSet = false;
 
   OptimizationJobModelSource m_modelSource;
-  bool m_modelSourceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_optimizationEnvironment;
-  bool m_optimizationEnvironmentHasBeenSet = false;
 
   OptimizationJobDeploymentInstanceType m_deploymentInstanceType{OptimizationJobDeploymentInstanceType::NOT_SET};
-  bool m_deploymentInstanceTypeHasBeenSet = false;
 
   int m_maxInstanceCount{0};
-  bool m_maxInstanceCountHasBeenSet = false;
 
   Aws::Vector<OptimizationConfig> m_optimizationConfigs;
-  bool m_optimizationConfigsHasBeenSet = false;
 
   OptimizationJobOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   OptimizationOutput m_optimizationOutput;
-  bool m_optimizationOutputHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   OptimizationVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_optimizationJobArnHasBeenSet = false;
+  bool m_optimizationJobStatusHasBeenSet = false;
+  bool m_optimizationStartTimeHasBeenSet = false;
+  bool m_optimizationEndTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_optimizationJobNameHasBeenSet = false;
+  bool m_modelSourceHasBeenSet = false;
+  bool m_optimizationEnvironmentHasBeenSet = false;
+  bool m_deploymentInstanceTypeHasBeenSet = false;
+  bool m_maxInstanceCountHasBeenSet = false;
+  bool m_optimizationConfigsHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_optimizationOutputHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class UpdateApiKeyRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_apiKeyHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

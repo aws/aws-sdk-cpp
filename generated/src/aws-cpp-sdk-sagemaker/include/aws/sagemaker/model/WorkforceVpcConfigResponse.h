@@ -120,15 +120,15 @@ class WorkforceVpcConfigResponse {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
 };
 

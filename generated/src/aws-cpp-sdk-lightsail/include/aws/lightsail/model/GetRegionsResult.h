@@ -68,9 +68,9 @@ class GetRegionsResult {
   ///@}
  private:
   Aws::Vector<Region> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_regionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

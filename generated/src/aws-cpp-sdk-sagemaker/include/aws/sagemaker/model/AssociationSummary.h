@@ -195,30 +195,30 @@ class AssociationSummary {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_destinationType;
-  bool m_destinationTypeHasBeenSet = false;
 
   AssociationEdgeType m_associationType{AssociationEdgeType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
 };
 

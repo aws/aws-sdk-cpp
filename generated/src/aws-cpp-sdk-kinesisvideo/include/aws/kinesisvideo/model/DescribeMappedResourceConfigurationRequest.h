@@ -100,15 +100,15 @@ class DescribeMappedResourceConfigurationRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

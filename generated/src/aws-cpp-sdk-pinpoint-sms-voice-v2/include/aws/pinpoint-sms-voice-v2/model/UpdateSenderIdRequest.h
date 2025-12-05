@@ -85,12 +85,12 @@ class UpdateSenderIdRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
+  bool m_senderIdHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 

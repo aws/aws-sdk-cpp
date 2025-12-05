@@ -108,15 +108,15 @@ class DescribeRuleGroupRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_ruleGroupName;
-  bool m_ruleGroupNameHasBeenSet = false;
 
   Aws::String m_ruleGroupArn;
-  bool m_ruleGroupArnHasBeenSet = false;
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   bool m_analyzeRuleGroup{false};
+  bool m_ruleGroupNameHasBeenSet = false;
+  bool m_ruleGroupArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_analyzeRuleGroupHasBeenSet = false;
 };
 

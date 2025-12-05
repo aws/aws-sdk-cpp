@@ -63,9 +63,9 @@ class RegisterTransitGatewayMulticastGroupMembersResponse {
   ///@}
  private:
   TransitGatewayMulticastRegisteredGroupMembers m_registeredMulticastGroupMembers;
-  bool m_registeredMulticastGroupMembersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_registeredMulticastGroupMembersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class RetrieveDomainAuthCodeResult {
   ///@}
  private:
   Aws::String m_authCode;
-  bool m_authCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -342,51 +342,51 @@ class FlowLog {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_deliverLogsErrorMessage;
-  bool m_deliverLogsErrorMessageHasBeenSet = false;
 
   Aws::String m_deliverLogsPermissionArn;
-  bool m_deliverLogsPermissionArnHasBeenSet = false;
 
   Aws::String m_deliverCrossAccountRole;
-  bool m_deliverCrossAccountRoleHasBeenSet = false;
 
   Aws::String m_deliverLogsStatus;
-  bool m_deliverLogsStatusHasBeenSet = false;
 
   Aws::String m_flowLogId;
-  bool m_flowLogIdHasBeenSet = false;
 
   Aws::String m_flowLogStatus;
-  bool m_flowLogStatusHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TrafficType m_trafficType{TrafficType::NOT_SET};
-  bool m_trafficTypeHasBeenSet = false;
 
   LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
-  bool m_logDestinationTypeHasBeenSet = false;
 
   Aws::String m_logDestination;
-  bool m_logDestinationHasBeenSet = false;
 
   Aws::String m_logFormat;
-  bool m_logFormatHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_maxAggregationInterval{0};
-  bool m_maxAggregationIntervalHasBeenSet = false;
 
   DestinationOptionsResponse m_destinationOptions;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deliverLogsErrorMessageHasBeenSet = false;
+  bool m_deliverLogsPermissionArnHasBeenSet = false;
+  bool m_deliverCrossAccountRoleHasBeenSet = false;
+  bool m_deliverLogsStatusHasBeenSet = false;
+  bool m_flowLogIdHasBeenSet = false;
+  bool m_flowLogStatusHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_trafficTypeHasBeenSet = false;
+  bool m_logDestinationTypeHasBeenSet = false;
+  bool m_logDestinationHasBeenSet = false;
+  bool m_logFormatHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_maxAggregationIntervalHasBeenSet = false;
   bool m_destinationOptionsHasBeenSet = false;
 };
 

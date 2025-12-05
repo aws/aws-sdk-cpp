@@ -100,15 +100,15 @@ class DataTransfer {
   ///@}
  private:
   long long m_bytesTransferred{0};
-  bool m_bytesTransferredHasBeenSet = false;
 
   long long m_objectsTransferred{0};
-  bool m_objectsTransferredHasBeenSet = false;
 
   long long m_totalBytes{0};
-  bool m_totalBytesHasBeenSet = false;
 
   long long m_totalObjects{0};
+  bool m_bytesTransferredHasBeenSet = false;
+  bool m_objectsTransferredHasBeenSet = false;
+  bool m_totalBytesHasBeenSet = false;
   bool m_totalObjectsHasBeenSet = false;
 };
 

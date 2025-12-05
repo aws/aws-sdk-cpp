@@ -99,15 +99,15 @@ class ListNamedShadowsForThingResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

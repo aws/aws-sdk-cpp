@@ -86,12 +86,12 @@ class ListRepositoriesForApprovalRuleTemplateResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_repositoryNames;
-  bool m_repositoryNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

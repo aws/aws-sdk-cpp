@@ -60,9 +60,9 @@ class PopulateIdMappingTableResult {
   ///@}
  private:
   Aws::String m_idMappingJobId;
-  bool m_idMappingJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idMappingJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

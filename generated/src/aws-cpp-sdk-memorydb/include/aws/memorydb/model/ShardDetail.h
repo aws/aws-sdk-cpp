@@ -106,15 +106,15 @@ class ShardDetail {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ShardConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_size;
-  bool m_sizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotCreationTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_snapshotCreationTimeHasBeenSet = false;
 };
 

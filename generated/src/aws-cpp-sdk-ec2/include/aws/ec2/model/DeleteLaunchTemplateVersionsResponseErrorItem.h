@@ -106,15 +106,15 @@ class DeleteLaunchTemplateVersionsResponseErrorItem {
   ///@}
  private:
   Aws::String m_launchTemplateId;
-  bool m_launchTemplateIdHasBeenSet = false;
 
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   ResponseError m_responseError;
+  bool m_launchTemplateIdHasBeenSet = false;
+  bool m_launchTemplateNameHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_responseErrorHasBeenSet = false;
 };
 

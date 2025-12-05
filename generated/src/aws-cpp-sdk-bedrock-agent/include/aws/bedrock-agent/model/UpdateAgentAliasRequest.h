@@ -148,21 +148,21 @@ class UpdateAgentAliasRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentAliasName;
-  bool m_agentAliasNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
-  bool m_routingConfigurationHasBeenSet = false;
 
   AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentAliasIdHasBeenSet = false;
+  bool m_agentAliasNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigurationHasBeenSet = false;
   bool m_aliasInvocationStateHasBeenSet = false;
 };
 

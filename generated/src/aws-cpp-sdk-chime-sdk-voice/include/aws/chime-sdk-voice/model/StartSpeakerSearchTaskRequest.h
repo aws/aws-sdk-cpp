@@ -119,18 +119,18 @@ class StartSpeakerSearchTaskRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   Aws::String m_voiceProfileDomainId;
-  bool m_voiceProfileDomainIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   CallLegType m_callLeg{CallLegType::NOT_SET};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_voiceProfileDomainIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
   bool m_callLegHasBeenSet = false;
 };
 

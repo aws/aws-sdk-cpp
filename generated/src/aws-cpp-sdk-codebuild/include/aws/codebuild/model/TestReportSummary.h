@@ -91,12 +91,12 @@ class TestReportSummary {
   ///@}
  private:
   int m_total{0};
-  bool m_totalHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_statusCounts;
-  bool m_statusCountsHasBeenSet = false;
 
   long long m_durationInNanoSeconds{0};
+  bool m_totalHasBeenSet = false;
+  bool m_statusCountsHasBeenSet = false;
   bool m_durationInNanoSecondsHasBeenSet = false;
 };
 

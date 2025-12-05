@@ -84,12 +84,12 @@ class ListSolutionsResult {
   ///@}
  private:
   Aws::Vector<SolutionSummary> m_solutions;
-  bool m_solutionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_solutionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -438,66 +438,66 @@ class Eac3Settings {
   ///@}
  private:
   Eac3AttenuationControl m_attenuationControl{Eac3AttenuationControl::NOT_SET};
-  bool m_attenuationControlHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   Eac3BitstreamMode m_bitstreamMode{Eac3BitstreamMode::NOT_SET};
-  bool m_bitstreamModeHasBeenSet = false;
 
   Eac3CodingMode m_codingMode{Eac3CodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   Eac3DcFilter m_dcFilter{Eac3DcFilter::NOT_SET};
-  bool m_dcFilterHasBeenSet = false;
 
   int m_dialnorm{0};
-  bool m_dialnormHasBeenSet = false;
 
   Eac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine{Eac3DynamicRangeCompressionLine::NOT_SET};
-  bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
   Eac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf{Eac3DynamicRangeCompressionRf::NOT_SET};
-  bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
   Eac3LfeControl m_lfeControl{Eac3LfeControl::NOT_SET};
-  bool m_lfeControlHasBeenSet = false;
 
   Eac3LfeFilter m_lfeFilter{Eac3LfeFilter::NOT_SET};
-  bool m_lfeFilterHasBeenSet = false;
 
   double m_loRoCenterMixLevel{0.0};
-  bool m_loRoCenterMixLevelHasBeenSet = false;
 
   double m_loRoSurroundMixLevel{0.0};
-  bool m_loRoSurroundMixLevelHasBeenSet = false;
 
   double m_ltRtCenterMixLevel{0.0};
-  bool m_ltRtCenterMixLevelHasBeenSet = false;
 
   double m_ltRtSurroundMixLevel{0.0};
-  bool m_ltRtSurroundMixLevelHasBeenSet = false;
 
   Eac3MetadataControl m_metadataControl{Eac3MetadataControl::NOT_SET};
-  bool m_metadataControlHasBeenSet = false;
 
   Eac3PassthroughControl m_passthroughControl{Eac3PassthroughControl::NOT_SET};
-  bool m_passthroughControlHasBeenSet = false;
 
   Eac3PhaseControl m_phaseControl{Eac3PhaseControl::NOT_SET};
-  bool m_phaseControlHasBeenSet = false;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   Eac3StereoDownmix m_stereoDownmix{Eac3StereoDownmix::NOT_SET};
-  bool m_stereoDownmixHasBeenSet = false;
 
   Eac3SurroundExMode m_surroundExMode{Eac3SurroundExMode::NOT_SET};
-  bool m_surroundExModeHasBeenSet = false;
 
   Eac3SurroundMode m_surroundMode{Eac3SurroundMode::NOT_SET};
+  bool m_attenuationControlHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_bitstreamModeHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
+  bool m_dcFilterHasBeenSet = false;
+  bool m_dialnormHasBeenSet = false;
+  bool m_dynamicRangeCompressionLineHasBeenSet = false;
+  bool m_dynamicRangeCompressionRfHasBeenSet = false;
+  bool m_lfeControlHasBeenSet = false;
+  bool m_lfeFilterHasBeenSet = false;
+  bool m_loRoCenterMixLevelHasBeenSet = false;
+  bool m_loRoSurroundMixLevelHasBeenSet = false;
+  bool m_ltRtCenterMixLevelHasBeenSet = false;
+  bool m_ltRtSurroundMixLevelHasBeenSet = false;
+  bool m_metadataControlHasBeenSet = false;
+  bool m_passthroughControlHasBeenSet = false;
+  bool m_phaseControlHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_stereoDownmixHasBeenSet = false;
+  bool m_surroundExModeHasBeenSet = false;
   bool m_surroundModeHasBeenSet = false;
 };
 

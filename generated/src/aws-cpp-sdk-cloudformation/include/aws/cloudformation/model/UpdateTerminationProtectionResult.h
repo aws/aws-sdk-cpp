@@ -61,9 +61,9 @@ class UpdateTerminationProtectionResult {
   ///@}
  private:
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

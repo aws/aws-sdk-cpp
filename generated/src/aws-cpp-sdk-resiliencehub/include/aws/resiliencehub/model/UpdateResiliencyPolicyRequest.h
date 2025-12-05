@@ -152,21 +152,21 @@ class UpdateResiliencyPolicyRequest : public ResilienceHubRequest {
   ///@}
  private:
   DataLocationConstraint m_dataLocationConstraint{DataLocationConstraint::NOT_SET};
-  bool m_dataLocationConstraintHasBeenSet = false;
 
   Aws::Map<DisruptionType, FailurePolicy> m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_policyDescription;
-  bool m_policyDescriptionHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   ResiliencyPolicyTier m_tier{ResiliencyPolicyTier::NOT_SET};
+  bool m_dataLocationConstraintHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
+  bool m_policyDescriptionHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_tierHasBeenSet = false;
 };
 

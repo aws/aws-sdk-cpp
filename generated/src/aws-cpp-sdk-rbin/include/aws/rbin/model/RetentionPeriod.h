@@ -69,9 +69,9 @@ class RetentionPeriod {
   ///@}
  private:
   int m_retentionPeriodValue{0};
-  bool m_retentionPeriodValueHasBeenSet = false;
 
   RetentionPeriodUnit m_retentionPeriodUnit{RetentionPeriodUnit::NOT_SET};
+  bool m_retentionPeriodValueHasBeenSet = false;
   bool m_retentionPeriodUnitHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeByoipCidrsResponse {
   ///@}
  private:
   Aws::Vector<ByoipCidr> m_byoipCidrs;
-  bool m_byoipCidrsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_byoipCidrsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

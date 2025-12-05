@@ -204,30 +204,30 @@ class CreateDomainRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainExecutionRole;
-  bool m_domainExecutionRoleHasBeenSet = false;
 
   DomainVersion m_domainVersion{DomainVersion::NOT_SET};
-  bool m_domainVersionHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   SingleSignOn m_singleSignOn;
-  bool m_singleSignOnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainExecutionRoleHasBeenSet = false;
+  bool m_domainVersionHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_singleSignOnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

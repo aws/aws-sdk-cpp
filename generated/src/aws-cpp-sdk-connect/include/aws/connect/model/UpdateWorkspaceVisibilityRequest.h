@@ -87,12 +87,12 @@ class UpdateWorkspaceVisibilityRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

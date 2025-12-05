@@ -131,18 +131,18 @@ class StartMetadataGenerationRunRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_owningProjectIdentifier;
-  bool m_owningProjectIdentifierHasBeenSet = false;
 
   MetadataGenerationRunTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Vector<MetadataGenerationRunType> m_types;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_owningProjectIdentifierHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_typesHasBeenSet = false;
 };
 

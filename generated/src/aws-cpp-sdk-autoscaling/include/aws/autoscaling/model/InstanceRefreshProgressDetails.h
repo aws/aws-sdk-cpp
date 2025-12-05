@@ -75,9 +75,9 @@ class InstanceRefreshProgressDetails {
   ///@}
  private:
   InstanceRefreshLivePoolProgress m_livePoolProgress;
-  bool m_livePoolProgressHasBeenSet = false;
 
   InstanceRefreshWarmPoolProgress m_warmPoolProgress;
+  bool m_livePoolProgressHasBeenSet = false;
   bool m_warmPoolProgressHasBeenSet = false;
 };
 

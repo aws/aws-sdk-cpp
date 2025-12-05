@@ -117,15 +117,15 @@ class IncreaseReplicaCountRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   int m_newReplicaCount{0};
-  bool m_newReplicaCountHasBeenSet = false;
 
   Aws::Vector<ConfigureShard> m_replicaConfiguration;
-  bool m_replicaConfigurationHasBeenSet = false;
 
   bool m_applyImmediately{false};
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_newReplicaCountHasBeenSet = false;
+  bool m_replicaConfigurationHasBeenSet = false;
   bool m_applyImmediatelyHasBeenSet = false;
 };
 

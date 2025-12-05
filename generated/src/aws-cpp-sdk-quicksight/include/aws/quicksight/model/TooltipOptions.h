@@ -87,12 +87,12 @@ class TooltipOptions {
   ///@}
  private:
   Visibility m_tooltipVisibility{Visibility::NOT_SET};
-  bool m_tooltipVisibilityHasBeenSet = false;
 
   SelectedTooltipType m_selectedTooltipType{SelectedTooltipType::NOT_SET};
-  bool m_selectedTooltipTypeHasBeenSet = false;
 
   FieldBasedTooltip m_fieldBasedTooltip;
+  bool m_tooltipVisibilityHasBeenSet = false;
+  bool m_selectedTooltipTypeHasBeenSet = false;
   bool m_fieldBasedTooltipHasBeenSet = false;
 };
 

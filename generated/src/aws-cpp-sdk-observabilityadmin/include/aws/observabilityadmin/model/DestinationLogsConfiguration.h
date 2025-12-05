@@ -71,9 +71,9 @@ class DestinationLogsConfiguration {
   ///@}
  private:
   LogsEncryptionConfiguration m_logsEncryptionConfiguration;
-  bool m_logsEncryptionConfigurationHasBeenSet = false;
 
   LogsBackupConfiguration m_backupConfiguration;
+  bool m_logsEncryptionConfigurationHasBeenSet = false;
   bool m_backupConfigurationHasBeenSet = false;
 };
 

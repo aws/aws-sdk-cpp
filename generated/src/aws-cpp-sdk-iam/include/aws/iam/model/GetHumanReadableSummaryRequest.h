@@ -73,9 +73,9 @@ class GetHumanReadableSummaryRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_entityArnHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

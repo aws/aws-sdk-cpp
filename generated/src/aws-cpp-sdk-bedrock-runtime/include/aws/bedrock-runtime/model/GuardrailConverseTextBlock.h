@@ -78,9 +78,9 @@ class GuardrailConverseTextBlock {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Vector<GuardrailConverseContentQualifier> m_qualifiers;
+  bool m_textHasBeenSet = false;
   bool m_qualifiersHasBeenSet = false;
 };
 

@@ -270,33 +270,33 @@ class CreateIndexRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IndexEdition m_edition{IndexEdition::NOT_SET};
-  bool m_editionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
-  bool m_userTokenConfigurationsHasBeenSet = false;
 
   UserContextPolicy m_userContextPolicy{UserContextPolicy::NOT_SET};
-  bool m_userContextPolicyHasBeenSet = false;
 
   UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_editionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_userTokenConfigurationsHasBeenSet = false;
+  bool m_userContextPolicyHasBeenSet = false;
   bool m_userGroupResolutionConfigurationHasBeenSet = false;
 };
 

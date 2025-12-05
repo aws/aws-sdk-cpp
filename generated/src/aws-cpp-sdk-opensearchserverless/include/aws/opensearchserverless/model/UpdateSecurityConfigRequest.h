@@ -169,24 +169,24 @@ class UpdateSecurityConfigRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_configVersion;
-  bool m_configVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SamlConfigOptions m_samlOptions;
-  bool m_samlOptionsHasBeenSet = false;
 
   UpdateIamIdentityCenterConfigOptions m_iamIdentityCenterOptionsUpdates;
-  bool m_iamIdentityCenterOptionsUpdatesHasBeenSet = false;
 
   IamFederationConfigOptions m_iamFederationOptions;
-  bool m_iamFederationOptionsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_idHasBeenSet = false;
+  bool m_configVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_samlOptionsHasBeenSet = false;
+  bool m_iamIdentityCenterOptionsUpdatesHasBeenSet = false;
+  bool m_iamFederationOptionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

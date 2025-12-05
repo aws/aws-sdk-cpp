@@ -149,21 +149,21 @@ class Framework {
   ///@}
  private:
   Aws::String m_frameworkName;
-  bool m_frameworkNameHasBeenSet = false;
 
   Aws::String m_frameworkArn;
-  bool m_frameworkArnHasBeenSet = false;
 
   Aws::String m_frameworkDescription;
-  bool m_frameworkDescriptionHasBeenSet = false;
 
   int m_numberOfControls{0};
-  bool m_numberOfControlsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_deploymentStatus;
+  bool m_frameworkNameHasBeenSet = false;
+  bool m_frameworkArnHasBeenSet = false;
+  bool m_frameworkDescriptionHasBeenSet = false;
+  bool m_numberOfControlsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_deploymentStatusHasBeenSet = false;
 };
 

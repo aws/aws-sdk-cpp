@@ -127,15 +127,15 @@ class UpdateClusterRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<ClusterSetting> m_settings;
-  bool m_settingsHasBeenSet = false;
 
   ClusterConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ClusterServiceConnectDefaultsRequest m_serviceConnectDefaults;
+  bool m_clusterHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_serviceConnectDefaultsHasBeenSet = false;
 };
 

@@ -325,30 +325,30 @@ class DeploymentConfiguration {
   ///@}
  private:
   DeploymentCircuitBreaker m_deploymentCircuitBreaker;
-  bool m_deploymentCircuitBreakerHasBeenSet = false;
 
   int m_maximumPercent{0};
-  bool m_maximumPercentHasBeenSet = false;
 
   int m_minimumHealthyPercent{0};
-  bool m_minimumHealthyPercentHasBeenSet = false;
 
   DeploymentAlarms m_alarms;
-  bool m_alarmsHasBeenSet = false;
 
   DeploymentStrategy m_strategy{DeploymentStrategy::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   int m_bakeTimeInMinutes{0};
-  bool m_bakeTimeInMinutesHasBeenSet = false;
 
   Aws::Vector<DeploymentLifecycleHook> m_lifecycleHooks;
-  bool m_lifecycleHooksHasBeenSet = false;
 
   LinearConfiguration m_linearConfiguration;
-  bool m_linearConfigurationHasBeenSet = false;
 
   CanaryConfiguration m_canaryConfiguration;
+  bool m_deploymentCircuitBreakerHasBeenSet = false;
+  bool m_maximumPercentHasBeenSet = false;
+  bool m_minimumHealthyPercentHasBeenSet = false;
+  bool m_alarmsHasBeenSet = false;
+  bool m_strategyHasBeenSet = false;
+  bool m_bakeTimeInMinutesHasBeenSet = false;
+  bool m_lifecycleHooksHasBeenSet = false;
+  bool m_linearConfigurationHasBeenSet = false;
   bool m_canaryConfigurationHasBeenSet = false;
 };
 

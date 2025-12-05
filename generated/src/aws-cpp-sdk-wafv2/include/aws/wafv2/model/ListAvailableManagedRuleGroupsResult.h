@@ -89,12 +89,12 @@ class ListAvailableManagedRuleGroupsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<ManagedRuleGroupSummary> m_managedRuleGroups;
-  bool m_managedRuleGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_managedRuleGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

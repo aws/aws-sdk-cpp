@@ -197,27 +197,27 @@ class InstructionCollection {
   ///@}
  private:
   Aws::String m_responseLength;
-  bool m_responseLengthHasBeenSet = false;
 
   Aws::String m_targetAudience;
-  bool m_targetAudienceHasBeenSet = false;
 
   Aws::String m_perspective;
-  bool m_perspectiveHasBeenSet = false;
 
   Aws::String m_outputStyle;
-  bool m_outputStyleHasBeenSet = false;
 
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::String m_tone;
-  bool m_toneHasBeenSet = false;
 
   Aws::String m_customInstructions;
-  bool m_customInstructionsHasBeenSet = false;
 
   Aws::String m_examples;
+  bool m_responseLengthHasBeenSet = false;
+  bool m_targetAudienceHasBeenSet = false;
+  bool m_perspectiveHasBeenSet = false;
+  bool m_outputStyleHasBeenSet = false;
+  bool m_identityHasBeenSet = false;
+  bool m_toneHasBeenSet = false;
+  bool m_customInstructionsHasBeenSet = false;
   bool m_examplesHasBeenSet = false;
 };
 

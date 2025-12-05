@@ -99,15 +99,15 @@ class GetAnswerRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   int m_milestoneNumber{0};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_questionIdHasBeenSet = false;
   bool m_milestoneNumberHasBeenSet = false;
 };
 

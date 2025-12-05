@@ -72,9 +72,9 @@ class InternetGatewayAttachment {
   ///@}
  private:
   AttachmentStatus m_state{AttachmentStatus::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_stateHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

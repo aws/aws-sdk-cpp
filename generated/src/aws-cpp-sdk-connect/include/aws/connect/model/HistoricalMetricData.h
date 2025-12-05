@@ -66,9 +66,9 @@ class HistoricalMetricData {
   ///@}
  private:
   HistoricalMetric m_metric;
-  bool m_metricHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_metricHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

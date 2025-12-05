@@ -94,12 +94,12 @@ class DeleteAttachedFileRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_fileId;
-  bool m_fileIdHasBeenSet = false;
 
   Aws::String m_associatedResourceArn;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_fileIdHasBeenSet = false;
   bool m_associatedResourceArnHasBeenSet = false;
 };
 

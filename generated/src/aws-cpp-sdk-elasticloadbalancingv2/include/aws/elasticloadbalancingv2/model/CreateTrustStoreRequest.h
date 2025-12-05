@@ -133,18 +133,18 @@ class CreateTrustStoreRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_caCertificatesBundleS3Bucket;
-  bool m_caCertificatesBundleS3BucketHasBeenSet = false;
 
   Aws::String m_caCertificatesBundleS3Key;
-  bool m_caCertificatesBundleS3KeyHasBeenSet = false;
 
   Aws::String m_caCertificatesBundleS3ObjectVersion;
-  bool m_caCertificatesBundleS3ObjectVersionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_caCertificatesBundleS3BucketHasBeenSet = false;
+  bool m_caCertificatesBundleS3KeyHasBeenSet = false;
+  bool m_caCertificatesBundleS3ObjectVersionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

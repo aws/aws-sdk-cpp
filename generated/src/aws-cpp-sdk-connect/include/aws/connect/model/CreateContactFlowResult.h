@@ -93,15 +93,15 @@ class CreateContactFlowResult {
   ///@}
  private:
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::String m_contactFlowArn;
-  bool m_contactFlowArnHasBeenSet = false;
 
   Aws::String m_flowContentSha256;
-  bool m_flowContentSha256HasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_contactFlowArnHasBeenSet = false;
+  bool m_flowContentSha256HasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

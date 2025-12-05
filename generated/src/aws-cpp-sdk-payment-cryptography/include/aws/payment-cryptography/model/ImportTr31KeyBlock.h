@@ -70,9 +70,9 @@ class ImportTr31KeyBlock {
   ///@}
  private:
   Aws::String m_wrappingKeyIdentifier;
-  bool m_wrappingKeyIdentifierHasBeenSet = false;
 
   Aws::String m_wrappedKeyBlock;
+  bool m_wrappingKeyIdentifierHasBeenSet = false;
   bool m_wrappedKeyBlockHasBeenSet = false;
 };
 

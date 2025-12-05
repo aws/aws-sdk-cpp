@@ -68,9 +68,9 @@ class ElicitationCodeHookInvocationSetting {
   ///@}
  private:
   bool m_enableCodeHookInvocation{false};
-  bool m_enableCodeHookInvocationHasBeenSet = false;
 
   Aws::String m_invocationLabel;
+  bool m_enableCodeHookInvocationHasBeenSet = false;
   bool m_invocationLabelHasBeenSet = false;
 };
 

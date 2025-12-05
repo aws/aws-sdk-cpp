@@ -67,9 +67,9 @@ class TransferDomainResult {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListRulesOutput {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_ruleDescription;
-  bool m_ruleDescriptionHasBeenSet = false;
 
   Aws::String m_ruleId;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_ruleDescriptionHasBeenSet = false;
   bool m_ruleIdHasBeenSet = false;
 };
 

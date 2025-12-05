@@ -183,27 +183,27 @@ class StartImportTaskRequest : public NeptuneGraphRequest {
   ///@}
  private:
   ImportOptions m_importOptions;
-  bool m_importOptionsHasBeenSet = false;
 
   bool m_failOnError{false};
-  bool m_failOnErrorHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   ParquetType m_parquetType{ParquetType::NOT_SET};
-  bool m_parquetTypeHasBeenSet = false;
 
   BlankNodeHandling m_blankNodeHandling{BlankNodeHandling::NOT_SET};
-  bool m_blankNodeHandlingHasBeenSet = false;
 
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_importOptionsHasBeenSet = false;
+  bool m_failOnErrorHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_parquetTypeHasBeenSet = false;
+  bool m_blankNodeHandlingHasBeenSet = false;
+  bool m_graphIdentifierHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

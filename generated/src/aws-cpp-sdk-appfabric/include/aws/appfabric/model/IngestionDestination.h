@@ -186,27 +186,27 @@ class IngestionDestination {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_ingestionArn;
-  bool m_ingestionArnHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   DestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   IngestionDestinationStatus m_status{IngestionDestinationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_ingestionArnHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

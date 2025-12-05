@@ -68,9 +68,9 @@ class RepromptResponse {
   ///@}
  private:
   Source m_source{Source::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_sourceHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

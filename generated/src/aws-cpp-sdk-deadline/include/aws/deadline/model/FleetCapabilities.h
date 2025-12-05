@@ -82,9 +82,9 @@ class FleetCapabilities {
   ///@}
  private:
   Aws::Vector<FleetAmountCapability> m_amounts;
-  bool m_amountsHasBeenSet = false;
 
   Aws::Vector<FleetAttributeCapability> m_attributes;
+  bool m_amountsHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListProfileAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ProfileAssociation> m_profileAssociations;
-  bool m_profileAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_profileAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

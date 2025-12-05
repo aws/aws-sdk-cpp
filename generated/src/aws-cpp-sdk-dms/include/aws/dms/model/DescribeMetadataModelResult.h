@@ -122,18 +122,18 @@ class DescribeMetadataModelResult {
   ///@}
  private:
   Aws::String m_metadataModelName;
-  bool m_metadataModelNameHasBeenSet = false;
 
   Aws::String m_metadataModelType;
-  bool m_metadataModelTypeHasBeenSet = false;
 
   Aws::Vector<MetadataModelReference> m_targetMetadataModels;
-  bool m_targetMetadataModelsHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataModelNameHasBeenSet = false;
+  bool m_metadataModelTypeHasBeenSet = false;
+  bool m_targetMetadataModelsHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

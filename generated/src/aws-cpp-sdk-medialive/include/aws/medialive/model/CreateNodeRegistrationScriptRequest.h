@@ -155,21 +155,21 @@ class CreateNodeRegistrationScriptRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NodeInterfaceMapping> m_nodeInterfaceMappings;
-  bool m_nodeInterfaceMappingsHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   NodeRole m_role{NodeRole::NOT_SET};
+  bool m_clusterIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nodeInterfaceMappingsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
   bool m_roleHasBeenSet = false;
 };
 

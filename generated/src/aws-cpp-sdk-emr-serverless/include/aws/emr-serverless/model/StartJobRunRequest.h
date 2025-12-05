@@ -240,36 +240,36 @@ class StartJobRunRequest : public EMRServerlessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   JobRunExecutionIamPolicy m_executionIamPolicy;
-  bool m_executionIamPolicyHasBeenSet = false;
 
   JobDriver m_jobDriver;
-  bool m_jobDriverHasBeenSet = false;
 
   ConfigurationOverrides m_configurationOverrides;
-  bool m_configurationOverridesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   long long m_executionTimeoutMinutes{0};
-  bool m_executionTimeoutMinutesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   JobRunMode m_mode{JobRunMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   RetryPolicy m_retryPolicy;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_executionIamPolicyHasBeenSet = false;
+  bool m_jobDriverHasBeenSet = false;
+  bool m_configurationOverridesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_executionTimeoutMinutesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
   bool m_retryPolicyHasBeenSet = false;
 };
 

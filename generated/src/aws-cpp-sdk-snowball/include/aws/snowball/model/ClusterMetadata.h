@@ -325,48 +325,48 @@ class ClusterMetadata {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyARN;
-  bool m_kmsKeyARNHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   ClusterState m_clusterState{ClusterState::NOT_SET};
-  bool m_clusterStateHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   SnowballType m_snowballType{SnowballType::NOT_SET};
-  bool m_snowballTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   JobResource m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_addressId;
-  bool m_addressIdHasBeenSet = false;
 
   ShippingOption m_shippingOption{ShippingOption::NOT_SET};
-  bool m_shippingOptionHasBeenSet = false;
 
   Notification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   Aws::String m_forwardingAddressId;
-  bool m_forwardingAddressIdHasBeenSet = false;
 
   TaxDocuments m_taxDocuments;
-  bool m_taxDocumentsHasBeenSet = false;
 
   OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyARNHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_clusterStateHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_snowballTypeHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_addressIdHasBeenSet = false;
+  bool m_shippingOptionHasBeenSet = false;
+  bool m_notificationHasBeenSet = false;
+  bool m_forwardingAddressIdHasBeenSet = false;
+  bool m_taxDocumentsHasBeenSet = false;
   bool m_onDeviceServiceConfigurationHasBeenSet = false;
 };
 

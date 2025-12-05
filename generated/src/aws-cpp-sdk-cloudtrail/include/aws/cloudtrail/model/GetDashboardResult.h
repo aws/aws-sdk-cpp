@@ -218,36 +218,36 @@ class GetDashboardResult {
   ///@}
  private:
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   DashboardType m_type{DashboardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DashboardStatus m_status{DashboardStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Widget> m_widgets;
-  bool m_widgetsHasBeenSet = false;
 
   RefreshSchedule m_refreshSchedule;
-  bool m_refreshScheduleHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::String m_lastRefreshId;
-  bool m_lastRefreshIdHasBeenSet = false;
 
   Aws::String m_lastRefreshFailureReason;
-  bool m_lastRefreshFailureReasonHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
-  bool m_terminationProtectionEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_widgetsHasBeenSet = false;
+  bool m_refreshScheduleHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_lastRefreshIdHasBeenSet = false;
+  bool m_lastRefreshFailureReasonHasBeenSet = false;
+  bool m_terminationProtectionEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

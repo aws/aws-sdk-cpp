@@ -122,12 +122,12 @@ class OperationFilter {
   ///@}
  private:
   OperationFilterName m_name{OperationFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   FilterCondition m_condition{FilterCondition::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

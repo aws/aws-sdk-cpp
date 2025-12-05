@@ -90,9 +90,9 @@ class CloudwatchLogsExportConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_enableLogTypes;
-  bool m_enableLogTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_disableLogTypes;
+  bool m_enableLogTypesHasBeenSet = false;
   bool m_disableLogTypesHasBeenSet = false;
 };
 

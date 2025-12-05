@@ -95,12 +95,12 @@ class DescribeSnapshotsResult {
   ///@}
  private:
   Aws::Vector<Snapshot> m_snapshots;
-  bool m_snapshotsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

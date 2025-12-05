@@ -69,9 +69,9 @@ class StorageClassAnalysisDataExport {
   ///@}
  private:
   StorageClassAnalysisSchemaVersion m_outputSchemaVersion{StorageClassAnalysisSchemaVersion::NOT_SET};
-  bool m_outputSchemaVersionHasBeenSet = false;
 
   AnalyticsExportDestination m_destination;
+  bool m_outputSchemaVersionHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

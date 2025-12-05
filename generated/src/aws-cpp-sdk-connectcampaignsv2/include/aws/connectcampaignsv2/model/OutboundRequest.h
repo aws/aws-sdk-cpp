@@ -82,12 +82,12 @@ class OutboundRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   ChannelSubtypeParameters m_channelSubtypeParameters;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
   bool m_channelSubtypeParametersHasBeenSet = false;
 };
 

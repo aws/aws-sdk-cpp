@@ -86,12 +86,12 @@ class ListProvisionedConcurrencyConfigsResult {
   ///@}
  private:
   Aws::Vector<ProvisionedConcurrencyConfigListItem> m_provisionedConcurrencyConfigs;
-  bool m_provisionedConcurrencyConfigsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisionedConcurrencyConfigsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

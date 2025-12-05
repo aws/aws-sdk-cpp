@@ -100,12 +100,12 @@ class DBInstanceRole {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_featureName;
-  bool m_featureNameHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_roleArnHasBeenSet = false;
+  bool m_featureNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

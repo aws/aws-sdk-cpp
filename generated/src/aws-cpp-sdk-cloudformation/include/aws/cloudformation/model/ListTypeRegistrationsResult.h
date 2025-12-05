@@ -90,12 +90,12 @@ class ListTypeRegistrationsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_registrationTokenList;
-  bool m_registrationTokenListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_registrationTokenListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

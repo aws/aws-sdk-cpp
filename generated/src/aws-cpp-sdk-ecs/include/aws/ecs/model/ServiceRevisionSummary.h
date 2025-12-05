@@ -136,21 +136,21 @@ class ServiceRevisionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_requestedTaskCount{0};
-  bool m_requestedTaskCountHasBeenSet = false;
 
   int m_runningTaskCount{0};
-  bool m_runningTaskCountHasBeenSet = false;
 
   int m_pendingTaskCount{0};
-  bool m_pendingTaskCountHasBeenSet = false;
 
   double m_requestedTestTrafficWeight{0.0};
-  bool m_requestedTestTrafficWeightHasBeenSet = false;
 
   double m_requestedProductionTrafficWeight{0.0};
+  bool m_arnHasBeenSet = false;
+  bool m_requestedTaskCountHasBeenSet = false;
+  bool m_runningTaskCountHasBeenSet = false;
+  bool m_pendingTaskCountHasBeenSet = false;
+  bool m_requestedTestTrafficWeightHasBeenSet = false;
   bool m_requestedProductionTrafficWeightHasBeenSet = false;
 };
 

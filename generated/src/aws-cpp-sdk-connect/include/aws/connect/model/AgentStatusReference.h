@@ -87,12 +87,12 @@ class AgentStatusReference {
   ///@}
  private:
   Aws::Utils::DateTime m_statusStartTimestamp{};
-  bool m_statusStartTimestampHasBeenSet = false;
 
   Aws::String m_statusArn;
-  bool m_statusArnHasBeenSet = false;
 
   Aws::String m_statusName;
+  bool m_statusStartTimestampHasBeenSet = false;
+  bool m_statusArnHasBeenSet = false;
   bool m_statusNameHasBeenSet = false;
 };
 

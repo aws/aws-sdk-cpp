@@ -120,15 +120,15 @@ class CreateSnapshotScheduleActionParameters {
   ///@}
  private:
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   int m_retentionPeriod{0};
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_snapshotNamePrefix;
-  bool m_snapshotNamePrefixHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_snapshotNamePrefixHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

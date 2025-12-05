@@ -146,18 +146,18 @@ class DecryptStepDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EncryptionType m_type{EncryptionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_sourceFileLocation;
-  bool m_sourceFileLocationHasBeenSet = false;
 
   OverwriteExisting m_overwriteExisting{OverwriteExisting::NOT_SET};
-  bool m_overwriteExistingHasBeenSet = false;
 
   InputFileLocation m_destinationFileLocation;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_sourceFileLocationHasBeenSet = false;
+  bool m_overwriteExistingHasBeenSet = false;
   bool m_destinationFileLocationHasBeenSet = false;
 };
 

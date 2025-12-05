@@ -64,9 +64,9 @@ class OpsItemAlreadyExistsException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_opsItemId;
+  bool m_messageHasBeenSet = false;
   bool m_opsItemIdHasBeenSet = false;
 };
 

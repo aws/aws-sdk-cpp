@@ -223,33 +223,33 @@ class DescribeSourceLocationResult {
   ///@}
  private:
   AccessConfiguration m_accessConfiguration;
-  bool m_accessConfigurationHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   DefaultSegmentDeliveryConfiguration m_defaultSegmentDeliveryConfiguration;
-  bool m_defaultSegmentDeliveryConfigurationHasBeenSet = false;
 
   HttpConfiguration m_httpConfiguration;
-  bool m_httpConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<SegmentDeliveryConfiguration> m_segmentDeliveryConfigurations;
-  bool m_segmentDeliveryConfigurationsHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessConfigurationHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_defaultSegmentDeliveryConfigurationHasBeenSet = false;
+  bool m_httpConfigurationHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_segmentDeliveryConfigurationsHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

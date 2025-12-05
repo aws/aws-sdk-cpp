@@ -84,12 +84,12 @@ class RotateTunnelAccessTokenRequest : public IoTSecureTunnelingRequest {
   ///@}
  private:
   Aws::String m_tunnelId;
-  bool m_tunnelIdHasBeenSet = false;
 
   ClientMode m_clientMode{ClientMode::NOT_SET};
-  bool m_clientModeHasBeenSet = false;
 
   DestinationConfig m_destinationConfig;
+  bool m_tunnelIdHasBeenSet = false;
+  bool m_clientModeHasBeenSet = false;
   bool m_destinationConfigHasBeenSet = false;
 };
 

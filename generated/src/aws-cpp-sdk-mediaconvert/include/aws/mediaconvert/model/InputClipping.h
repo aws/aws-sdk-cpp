@@ -86,9 +86,9 @@ class InputClipping {
   ///@}
  private:
   Aws::String m_endTimecode;
-  bool m_endTimecodeHasBeenSet = false;
 
   Aws::String m_startTimecode;
+  bool m_endTimecodeHasBeenSet = false;
   bool m_startTimecodeHasBeenSet = false;
 };
 

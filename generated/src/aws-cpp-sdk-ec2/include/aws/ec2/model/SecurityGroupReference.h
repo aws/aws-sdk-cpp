@@ -111,15 +111,15 @@ class SecurityGroupReference {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_referencingVpcId;
-  bool m_referencingVpcIdHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
-  bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
+  bool m_groupIdHasBeenSet = false;
+  bool m_referencingVpcIdHasBeenSet = false;
+  bool m_vpcPeeringConnectionIdHasBeenSet = false;
   bool m_transitGatewayIdHasBeenSet = false;
 };
 

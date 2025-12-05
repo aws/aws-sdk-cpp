@@ -84,12 +84,12 @@ class ListKxClustersResult {
   ///@}
  private:
   Aws::Vector<KxCluster> m_kxClusterSummaries;
-  bool m_kxClusterSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kxClusterSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

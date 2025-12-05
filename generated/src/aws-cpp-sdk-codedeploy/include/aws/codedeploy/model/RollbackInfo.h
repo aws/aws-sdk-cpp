@@ -89,12 +89,12 @@ class RollbackInfo {
   ///@}
  private:
   Aws::String m_rollbackDeploymentId;
-  bool m_rollbackDeploymentIdHasBeenSet = false;
 
   Aws::String m_rollbackTriggeringDeploymentId;
-  bool m_rollbackTriggeringDeploymentIdHasBeenSet = false;
 
   Aws::String m_rollbackMessage;
+  bool m_rollbackDeploymentIdHasBeenSet = false;
+  bool m_rollbackTriggeringDeploymentIdHasBeenSet = false;
   bool m_rollbackMessageHasBeenSet = false;
 };
 

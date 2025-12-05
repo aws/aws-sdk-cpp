@@ -78,12 +78,12 @@ class UpdateAutomatedReasoningPolicyTestCaseResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_testCaseId;
-  bool m_testCaseIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_testCaseIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

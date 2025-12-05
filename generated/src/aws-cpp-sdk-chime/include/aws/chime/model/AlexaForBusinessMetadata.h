@@ -67,9 +67,9 @@ class AlexaForBusinessMetadata {
   ///@}
  private:
   bool m_isAlexaForBusinessEnabled{false};
-  bool m_isAlexaForBusinessEnabledHasBeenSet = false;
 
   Aws::String m_alexaForBusinessRoomArn;
+  bool m_isAlexaForBusinessEnabledHasBeenSet = false;
   bool m_alexaForBusinessRoomArnHasBeenSet = false;
 };
 

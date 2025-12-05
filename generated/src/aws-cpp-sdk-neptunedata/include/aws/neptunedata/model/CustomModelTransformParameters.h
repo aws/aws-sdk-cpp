@@ -78,9 +78,9 @@ class CustomModelTransformParameters {
   ///@}
  private:
   Aws::String m_sourceS3DirectoryPath;
-  bool m_sourceS3DirectoryPathHasBeenSet = false;
 
   Aws::String m_transformEntryPointScript;
+  bool m_sourceS3DirectoryPathHasBeenSet = false;
   bool m_transformEntryPointScriptHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListAccessEntriesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accessEntries;
-  bool m_accessEntriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessEntriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class StartWorkflowRunRequest : public MWAAServerlessRequest {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_overrideParameters;
-  bool m_overrideParametersHasBeenSet = false;
 
   Aws::String m_workflowVersion;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_overrideParametersHasBeenSet = false;
   bool m_workflowVersionHasBeenSet = false;
 };
 

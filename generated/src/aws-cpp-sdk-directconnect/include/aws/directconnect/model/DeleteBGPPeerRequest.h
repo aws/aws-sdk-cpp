@@ -132,18 +132,18 @@ class DeleteBGPPeerRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   int m_asn{0};
-  bool m_asnHasBeenSet = false;
 
   long long m_asnLong{0};
-  bool m_asnLongHasBeenSet = false;
 
   Aws::String m_customerAddress;
-  bool m_customerAddressHasBeenSet = false;
 
   Aws::String m_bgpPeerId;
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_asnHasBeenSet = false;
+  bool m_asnLongHasBeenSet = false;
+  bool m_customerAddressHasBeenSet = false;
   bool m_bgpPeerIdHasBeenSet = false;
 };
 

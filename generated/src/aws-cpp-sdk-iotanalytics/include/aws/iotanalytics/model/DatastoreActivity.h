@@ -69,9 +69,9 @@ class DatastoreActivity {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_datastoreName;
+  bool m_nameHasBeenSet = false;
   bool m_datastoreNameHasBeenSet = false;
 };
 

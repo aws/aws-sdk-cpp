@@ -94,12 +94,12 @@ class DisableKinesisStreamingDestinationRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   EnableKinesisStreamingConfiguration m_enableKinesisStreamingConfiguration;
+  bool m_tableNameHasBeenSet = false;
+  bool m_streamArnHasBeenSet = false;
   bool m_enableKinesisStreamingConfigurationHasBeenSet = false;
 };
 

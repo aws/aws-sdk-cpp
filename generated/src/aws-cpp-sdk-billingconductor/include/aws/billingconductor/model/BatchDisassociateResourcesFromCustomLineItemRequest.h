@@ -89,12 +89,12 @@ class BatchDisassociateResourcesFromCustomLineItemRequest : public BillingConduc
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   CustomLineItemBillingPeriodRange m_billingPeriodRange;
+  bool m_targetArnHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
   bool m_billingPeriodRangeHasBeenSet = false;
 };
 

@@ -148,24 +148,24 @@ class DescribeStudioLifecycleConfigResult {
   ///@}
  private:
   Aws::String m_studioLifecycleConfigArn;
-  bool m_studioLifecycleConfigArnHasBeenSet = false;
 
   Aws::String m_studioLifecycleConfigName;
-  bool m_studioLifecycleConfigNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_studioLifecycleConfigContent;
-  bool m_studioLifecycleConfigContentHasBeenSet = false;
 
   StudioLifecycleConfigAppType m_studioLifecycleConfigAppType{StudioLifecycleConfigAppType::NOT_SET};
-  bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_studioLifecycleConfigArnHasBeenSet = false;
+  bool m_studioLifecycleConfigNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_studioLifecycleConfigContentHasBeenSet = false;
+  bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

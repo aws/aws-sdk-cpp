@@ -95,12 +95,12 @@ class GetCoverageStatisticsRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   CoverageFilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   Aws::Vector<CoverageStatisticsType> m_statisticsType;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
   bool m_statisticsTypeHasBeenSet = false;
 };
 

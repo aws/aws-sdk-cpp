@@ -106,15 +106,15 @@ class VectorBucket {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_vectorBucketArn;
-  bool m_vectorBucketArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_vectorBucketArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

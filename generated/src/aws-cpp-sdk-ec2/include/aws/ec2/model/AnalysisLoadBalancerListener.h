@@ -63,9 +63,9 @@ class AnalysisLoadBalancerListener {
   ///@}
  private:
   int m_loadBalancerPort{0};
-  bool m_loadBalancerPortHasBeenSet = false;
 
   int m_instancePort{0};
+  bool m_loadBalancerPortHasBeenSet = false;
   bool m_instancePortHasBeenSet = false;
 };
 

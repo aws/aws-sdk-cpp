@@ -113,15 +113,15 @@ class ListSecurityPoliciesRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   SecurityPolicyType m_type{SecurityPolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_typeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

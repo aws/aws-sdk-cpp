@@ -70,9 +70,9 @@ class ChallengePreference {
   ///@}
  private:
   ChallengeType m_type{ChallengeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Versions m_versions;
+  bool m_typeHasBeenSet = false;
   bool m_versionsHasBeenSet = false;
 };
 

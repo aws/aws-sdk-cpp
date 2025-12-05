@@ -98,12 +98,12 @@ class ListProjectsRequest : public CodeBuildRequest {
   ///@}
  private:
   ProjectSortByType m_sortBy{ProjectSortByType::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrderType m_sortOrder{SortOrderType::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

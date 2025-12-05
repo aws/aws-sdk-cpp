@@ -67,9 +67,9 @@ class UpdateMediaStorageConfigurationRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_channelARN;
-  bool m_channelARNHasBeenSet = false;
 
   MediaStorageConfiguration m_mediaStorageConfiguration;
+  bool m_channelARNHasBeenSet = false;
   bool m_mediaStorageConfigurationHasBeenSet = false;
 };
 

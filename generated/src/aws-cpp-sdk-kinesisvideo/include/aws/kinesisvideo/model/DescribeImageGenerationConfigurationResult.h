@@ -63,9 +63,9 @@ class DescribeImageGenerationConfigurationResult {
   ///@}
  private:
   ImageGenerationConfiguration m_imageGenerationConfiguration;
-  bool m_imageGenerationConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageGenerationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

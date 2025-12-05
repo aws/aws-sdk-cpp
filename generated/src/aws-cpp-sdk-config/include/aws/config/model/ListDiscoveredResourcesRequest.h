@@ -153,21 +153,21 @@ class ListDiscoveredResourcesRequest : public ConfigServiceRequest {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   bool m_includeDeletedResources{false};
-  bool m_includeDeletedResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_includeDeletedResourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

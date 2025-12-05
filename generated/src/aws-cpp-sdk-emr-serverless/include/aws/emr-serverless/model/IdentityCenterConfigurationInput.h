@@ -71,9 +71,9 @@ class IdentityCenterConfigurationInput {
   ///@}
  private:
   Aws::String m_identityCenterInstanceArn;
-  bool m_identityCenterInstanceArnHasBeenSet = false;
 
   bool m_userBackgroundSessionsEnabled{false};
+  bool m_identityCenterInstanceArnHasBeenSet = false;
   bool m_userBackgroundSessionsEnabledHasBeenSet = false;
 };
 

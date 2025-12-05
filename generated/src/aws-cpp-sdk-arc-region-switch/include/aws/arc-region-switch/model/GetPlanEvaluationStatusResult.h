@@ -174,27 +174,27 @@ class GetPlanEvaluationStatusResult {
   ///@}
  private:
   Aws::String m_planArn;
-  bool m_planArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastEvaluationTime{};
-  bool m_lastEvaluationTimeHasBeenSet = false;
 
   Aws::String m_lastEvaluatedVersion;
-  bool m_lastEvaluatedVersionHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   EvaluationStatus m_evaluationState{EvaluationStatus::NOT_SET};
-  bool m_evaluationStateHasBeenSet = false;
 
   Aws::Vector<ResourceWarning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_planArnHasBeenSet = false;
+  bool m_lastEvaluationTimeHasBeenSet = false;
+  bool m_lastEvaluatedVersionHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_evaluationStateHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

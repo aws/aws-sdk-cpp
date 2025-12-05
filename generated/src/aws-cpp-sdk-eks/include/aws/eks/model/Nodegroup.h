@@ -532,75 +532,75 @@ class Nodegroup {
   ///@}
  private:
   Aws::String m_nodegroupName;
-  bool m_nodegroupNameHasBeenSet = false;
 
   Aws::String m_nodegroupArn;
-  bool m_nodegroupArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_releaseVersion;
-  bool m_releaseVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   NodegroupStatus m_status{NodegroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CapacityTypes m_capacityType{CapacityTypes::NOT_SET};
-  bool m_capacityTypeHasBeenSet = false;
 
   NodegroupScalingConfig m_scalingConfig;
-  bool m_scalingConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   RemoteAccessConfig m_remoteAccess;
-  bool m_remoteAccessHasBeenSet = false;
 
   AMITypes m_amiType{AMITypes::NOT_SET};
-  bool m_amiTypeHasBeenSet = false;
 
   Aws::String m_nodeRole;
-  bool m_nodeRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::Vector<Taint> m_taints;
-  bool m_taintsHasBeenSet = false;
 
   NodegroupResources m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   int m_diskSize{0};
-  bool m_diskSizeHasBeenSet = false;
 
   NodegroupHealth m_health;
-  bool m_healthHasBeenSet = false;
 
   NodegroupUpdateConfig m_updateConfig;
-  bool m_updateConfigHasBeenSet = false;
 
   NodeRepairConfig m_nodeRepairConfig;
-  bool m_nodeRepairConfigHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nodegroupNameHasBeenSet = false;
+  bool m_nodegroupArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_releaseVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_capacityTypeHasBeenSet = false;
+  bool m_scalingConfigHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_remoteAccessHasBeenSet = false;
+  bool m_amiTypeHasBeenSet = false;
+  bool m_nodeRoleHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_taintsHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_diskSizeHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_updateConfigHasBeenSet = false;
+  bool m_nodeRepairConfigHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

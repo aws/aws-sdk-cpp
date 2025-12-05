@@ -99,15 +99,15 @@ class StartSimulationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

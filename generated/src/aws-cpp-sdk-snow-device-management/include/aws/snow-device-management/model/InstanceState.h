@@ -77,9 +77,9 @@ class InstanceState {
   ///@}
  private:
   int m_code{0};
-  bool m_codeHasBeenSet = false;
 
   InstanceStateName m_name{InstanceStateName::NOT_SET};
+  bool m_codeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

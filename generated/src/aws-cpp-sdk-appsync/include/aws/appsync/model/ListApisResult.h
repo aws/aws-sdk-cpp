@@ -85,12 +85,12 @@ class ListApisResult {
   ///@}
  private:
   Aws::Vector<Api> m_apis;
-  bool m_apisHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apisHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

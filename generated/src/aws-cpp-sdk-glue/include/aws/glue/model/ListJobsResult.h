@@ -85,12 +85,12 @@ class ListJobsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_jobNames;
-  bool m_jobNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

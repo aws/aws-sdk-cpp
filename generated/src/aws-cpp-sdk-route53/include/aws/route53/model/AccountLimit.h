@@ -78,9 +78,9 @@ class AccountLimit {
   ///@}
  private:
   AccountLimitType m_type{AccountLimitType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   long long m_value{0};
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

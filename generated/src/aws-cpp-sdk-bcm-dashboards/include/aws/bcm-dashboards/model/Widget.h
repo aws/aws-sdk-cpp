@@ -149,21 +149,21 @@ class Widget {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   int m_horizontalOffset{0};
-  bool m_horizontalOffsetHasBeenSet = false;
 
   Aws::Vector<WidgetConfig> m_configs;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_horizontalOffsetHasBeenSet = false;
   bool m_configsHasBeenSet = false;
 };
 

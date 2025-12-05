@@ -103,15 +103,15 @@ class CodeVulnerabilitiesFilePath {
   ///@}
  private:
   int m_endLine{0};
-  bool m_endLineHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   int m_startLine{0};
+  bool m_endLineHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
   bool m_startLineHasBeenSet = false;
 };
 

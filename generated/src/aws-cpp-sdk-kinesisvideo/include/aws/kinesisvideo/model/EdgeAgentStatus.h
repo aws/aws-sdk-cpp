@@ -71,9 +71,9 @@ class EdgeAgentStatus {
   ///@}
  private:
   LastRecorderStatus m_lastRecorderStatus;
-  bool m_lastRecorderStatusHasBeenSet = false;
 
   LastUploaderStatus m_lastUploaderStatus;
+  bool m_lastRecorderStatusHasBeenSet = false;
   bool m_lastUploaderStatusHasBeenSet = false;
 };
 

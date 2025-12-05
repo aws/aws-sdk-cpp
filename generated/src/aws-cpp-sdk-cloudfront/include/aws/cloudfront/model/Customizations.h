@@ -92,12 +92,12 @@ class Customizations {
   ///@}
  private:
   WebAclCustomization m_webAcl;
-  bool m_webAclHasBeenSet = false;
 
   Certificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   GeoRestrictionCustomization m_geoRestrictions;
+  bool m_webAclHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
   bool m_geoRestrictionsHasBeenSet = false;
 };
 

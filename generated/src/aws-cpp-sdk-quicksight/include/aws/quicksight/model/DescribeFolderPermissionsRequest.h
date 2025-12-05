@@ -122,18 +122,18 @@ class DescribeFolderPermissionsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_folderIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

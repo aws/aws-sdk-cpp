@@ -58,9 +58,9 @@ class DescribeServiceIntegrationResult {
   ///@}
  private:
   ServiceIntegrationConfig m_serviceIntegration;
-  bool m_serviceIntegrationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceIntegrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

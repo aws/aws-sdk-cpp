@@ -69,9 +69,9 @@ class GetRelationalDatabaseBundlesRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   bool m_includeInactive{false};
+  bool m_pageTokenHasBeenSet = false;
   bool m_includeInactiveHasBeenSet = false;
 };
 

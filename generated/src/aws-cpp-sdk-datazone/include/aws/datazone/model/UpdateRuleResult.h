@@ -265,45 +265,45 @@ class UpdateRuleResult {
   ///@}
  private:
   RuleAction m_action{RuleAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleDetail m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   RuleType m_ruleType{RuleType::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   RuleScope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   RuleTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

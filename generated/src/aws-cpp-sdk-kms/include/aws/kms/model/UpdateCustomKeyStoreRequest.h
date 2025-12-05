@@ -289,33 +289,33 @@ class UpdateCustomKeyStoreRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_customKeyStoreId;
-  bool m_customKeyStoreIdHasBeenSet = false;
 
   Aws::String m_newCustomKeyStoreName;
-  bool m_newCustomKeyStoreNameHasBeenSet = false;
 
   Aws::String m_keyStorePassword;
-  bool m_keyStorePasswordHasBeenSet = false;
 
   Aws::String m_cloudHsmClusterId;
-  bool m_cloudHsmClusterIdHasBeenSet = false;
 
   Aws::String m_xksProxyUriEndpoint;
-  bool m_xksProxyUriEndpointHasBeenSet = false;
 
   Aws::String m_xksProxyUriPath;
-  bool m_xksProxyUriPathHasBeenSet = false;
 
   Aws::String m_xksProxyVpcEndpointServiceName;
-  bool m_xksProxyVpcEndpointServiceNameHasBeenSet = false;
 
   Aws::String m_xksProxyVpcEndpointServiceOwner;
-  bool m_xksProxyVpcEndpointServiceOwnerHasBeenSet = false;
 
   XksProxyAuthenticationCredentialType m_xksProxyAuthenticationCredential;
-  bool m_xksProxyAuthenticationCredentialHasBeenSet = false;
 
   XksProxyConnectivityType m_xksProxyConnectivity{XksProxyConnectivityType::NOT_SET};
+  bool m_customKeyStoreIdHasBeenSet = false;
+  bool m_newCustomKeyStoreNameHasBeenSet = false;
+  bool m_keyStorePasswordHasBeenSet = false;
+  bool m_cloudHsmClusterIdHasBeenSet = false;
+  bool m_xksProxyUriEndpointHasBeenSet = false;
+  bool m_xksProxyUriPathHasBeenSet = false;
+  bool m_xksProxyVpcEndpointServiceNameHasBeenSet = false;
+  bool m_xksProxyVpcEndpointServiceOwnerHasBeenSet = false;
+  bool m_xksProxyAuthenticationCredentialHasBeenSet = false;
   bool m_xksProxyConnectivityHasBeenSet = false;
 };
 

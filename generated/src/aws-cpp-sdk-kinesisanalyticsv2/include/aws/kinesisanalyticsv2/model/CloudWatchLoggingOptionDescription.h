@@ -90,12 +90,12 @@ class CloudWatchLoggingOptionDescription {
   ///@}
  private:
   Aws::String m_cloudWatchLoggingOptionId;
-  bool m_cloudWatchLoggingOptionIdHasBeenSet = false;
 
   Aws::String m_logStreamARN;
-  bool m_logStreamARNHasBeenSet = false;
 
   Aws::String m_roleARN;
+  bool m_cloudWatchLoggingOptionIdHasBeenSet = false;
+  bool m_logStreamARNHasBeenSet = false;
   bool m_roleARNHasBeenSet = false;
 };
 

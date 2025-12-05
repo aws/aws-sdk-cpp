@@ -257,36 +257,36 @@ class PullRequestEvent {
   ///@}
  private:
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventDate{};
-  bool m_eventDateHasBeenSet = false;
 
   PullRequestEventType m_pullRequestEventType{PullRequestEventType::NOT_SET};
-  bool m_pullRequestEventTypeHasBeenSet = false;
 
   Aws::String m_actorArn;
-  bool m_actorArnHasBeenSet = false;
 
   PullRequestCreatedEventMetadata m_pullRequestCreatedEventMetadata;
-  bool m_pullRequestCreatedEventMetadataHasBeenSet = false;
 
   PullRequestStatusChangedEventMetadata m_pullRequestStatusChangedEventMetadata;
-  bool m_pullRequestStatusChangedEventMetadataHasBeenSet = false;
 
   PullRequestSourceReferenceUpdatedEventMetadata m_pullRequestSourceReferenceUpdatedEventMetadata;
-  bool m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet = false;
 
   PullRequestMergedStateChangedEventMetadata m_pullRequestMergedStateChangedEventMetadata;
-  bool m_pullRequestMergedStateChangedEventMetadataHasBeenSet = false;
 
   ApprovalRuleEventMetadata m_approvalRuleEventMetadata;
-  bool m_approvalRuleEventMetadataHasBeenSet = false;
 
   ApprovalStateChangedEventMetadata m_approvalStateChangedEventMetadata;
-  bool m_approvalStateChangedEventMetadataHasBeenSet = false;
 
   ApprovalRuleOverriddenEventMetadata m_approvalRuleOverriddenEventMetadata;
+  bool m_pullRequestIdHasBeenSet = false;
+  bool m_eventDateHasBeenSet = false;
+  bool m_pullRequestEventTypeHasBeenSet = false;
+  bool m_actorArnHasBeenSet = false;
+  bool m_pullRequestCreatedEventMetadataHasBeenSet = false;
+  bool m_pullRequestStatusChangedEventMetadataHasBeenSet = false;
+  bool m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet = false;
+  bool m_pullRequestMergedStateChangedEventMetadataHasBeenSet = false;
+  bool m_approvalRuleEventMetadataHasBeenSet = false;
+  bool m_approvalStateChangedEventMetadataHasBeenSet = false;
   bool m_approvalRuleOverriddenEventMetadataHasBeenSet = false;
 };
 

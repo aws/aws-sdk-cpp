@@ -58,9 +58,9 @@ class GetBucketLoggingResult {
   ///@}
  private:
   LoggingEnabled m_loggingEnabled;
-  bool m_loggingEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loggingEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

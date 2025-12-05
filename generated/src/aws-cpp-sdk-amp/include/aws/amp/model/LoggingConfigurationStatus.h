@@ -69,9 +69,9 @@ class LoggingConfigurationStatus {
   ///@}
  private:
   LoggingConfigurationStatusCode m_statusCode{LoggingConfigurationStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

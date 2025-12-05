@@ -204,30 +204,30 @@ class MultiplexSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MultiplexSettingsSummary m_multiplexSettings;
-  bool m_multiplexSettingsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_pipelinesRunningCount{0};
-  bool m_pipelinesRunningCountHasBeenSet = false;
 
   int m_programCount{0};
-  bool m_programCountHasBeenSet = false;
 
   MultiplexState m_state{MultiplexState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_multiplexSettingsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pipelinesRunningCountHasBeenSet = false;
+  bool m_programCountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

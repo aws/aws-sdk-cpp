@@ -162,24 +162,24 @@ class ParameterListControl {
   ///@}
  private:
   Aws::String m_parameterControlId;
-  bool m_parameterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceParameterName;
-  bool m_sourceParameterNameHasBeenSet = false;
 
   ListControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   SheetControlListType m_type{SheetControlListType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ParameterSelectableValues m_selectableValues;
-  bool m_selectableValuesHasBeenSet = false;
 
   CascadingControlConfiguration m_cascadingControlConfiguration;
+  bool m_parameterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceParameterNameHasBeenSet = false;
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_selectableValuesHasBeenSet = false;
   bool m_cascadingControlConfigurationHasBeenSet = false;
 };
 

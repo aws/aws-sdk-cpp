@@ -68,9 +68,9 @@ class SupportedDialect {
   ///@}
  private:
   ViewDialect m_dialect{ViewDialect::NOT_SET};
-  bool m_dialectHasBeenSet = false;
 
   Aws::String m_dialectVersion;
+  bool m_dialectHasBeenSet = false;
   bool m_dialectVersionHasBeenSet = false;
 };
 

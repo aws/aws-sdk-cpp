@@ -83,12 +83,12 @@ class PanelTitleOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   FontConfiguration m_fontConfiguration;
-  bool m_fontConfigurationHasBeenSet = false;
 
   HorizontalTextAlignment m_horizontalTextAlignment{HorizontalTextAlignment::NOT_SET};
+  bool m_visibilityHasBeenSet = false;
+  bool m_fontConfigurationHasBeenSet = false;
   bool m_horizontalTextAlignmentHasBeenSet = false;
 };
 

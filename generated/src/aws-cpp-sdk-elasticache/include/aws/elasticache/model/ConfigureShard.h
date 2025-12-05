@@ -136,15 +136,15 @@ class ConfigureShard {
   ///@}
  private:
   Aws::String m_nodeGroupId;
-  bool m_nodeGroupIdHasBeenSet = false;
 
   int m_newReplicaCount{0};
-  bool m_newReplicaCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_preferredAvailabilityZones;
-  bool m_preferredAvailabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_preferredOutpostArns;
+  bool m_nodeGroupIdHasBeenSet = false;
+  bool m_newReplicaCountHasBeenSet = false;
+  bool m_preferredAvailabilityZonesHasBeenSet = false;
   bool m_preferredOutpostArnsHasBeenSet = false;
 };
 

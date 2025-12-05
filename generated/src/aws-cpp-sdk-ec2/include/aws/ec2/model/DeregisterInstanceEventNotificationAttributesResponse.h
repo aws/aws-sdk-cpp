@@ -62,9 +62,9 @@ class DeregisterInstanceEventNotificationAttributesResponse {
   ///@}
  private:
   InstanceTagNotificationAttribute m_instanceTagAttribute;
-  bool m_instanceTagAttributeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceTagAttributeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class UpdateHostedZoneFeaturesRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   bool m_enableAcceleratedRecovery{false};
+  bool m_hostedZoneIdHasBeenSet = false;
   bool m_enableAcceleratedRecoveryHasBeenSet = false;
 };
 

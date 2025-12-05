@@ -66,9 +66,9 @@ class ActionParameter {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_required{false};
+  bool m_descriptionHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
 };
 

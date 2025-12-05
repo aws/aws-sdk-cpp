@@ -165,18 +165,18 @@ class DescribeResourceCollectionHealthResult {
   ///@}
  private:
   Aws::Vector<CloudFormationHealth> m_cloudFormation;
-  bool m_cloudFormationHasBeenSet = false;
 
   Aws::Vector<ServiceHealth> m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TagHealth> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudFormationHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

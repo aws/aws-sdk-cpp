@@ -140,18 +140,18 @@ class AssignIpv6AddressesRequest : public EC2Request {
   ///@}
  private:
   int m_ipv6PrefixCount{0};
-  bool m_ipv6PrefixCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Prefixes;
-  bool m_ipv6PrefixesHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   int m_ipv6AddressCount{0};
+  bool m_ipv6PrefixCountHasBeenSet = false;
+  bool m_ipv6PrefixesHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
   bool m_ipv6AddressCountHasBeenSet = false;
 };
 

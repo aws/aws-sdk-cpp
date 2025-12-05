@@ -247,39 +247,39 @@ class CreateBotAliasResult {
   ///@}
  private:
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_botAliasName;
-  bool m_botAliasNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, BotAliasLocaleSettings> m_botAliasLocaleSettings;
-  bool m_botAliasLocaleSettingsHasBeenSet = false;
 
   ConversationLogSettings m_conversationLogSettings;
-  bool m_conversationLogSettingsHasBeenSet = false;
 
   SentimentAnalysisSettings m_sentimentAnalysisSettings;
-  bool m_sentimentAnalysisSettingsHasBeenSet = false;
 
   BotAliasStatus m_botAliasStatus{BotAliasStatus::NOT_SET};
-  bool m_botAliasStatusHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_botAliasNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_botAliasLocaleSettingsHasBeenSet = false;
+  bool m_conversationLogSettingsHasBeenSet = false;
+  bool m_sentimentAnalysisSettingsHasBeenSet = false;
+  bool m_botAliasStatusHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

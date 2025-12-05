@@ -125,18 +125,18 @@ class StartArchiveSearchRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_archiveId;
-  bool m_archiveIdHasBeenSet = false;
 
   ArchiveFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Utils::DateTime m_fromTimestamp{};
-  bool m_fromTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_toTimestamp{};
-  bool m_toTimestampHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_archiveIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_fromTimestampHasBeenSet = false;
+  bool m_toTimestampHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

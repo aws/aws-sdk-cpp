@@ -205,30 +205,30 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDisplayName;
-  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
   Aws::Vector<Parameter> m_pipelineParameters;
-  bool m_pipelineParametersHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDescription;
-  bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   ParallelismConfiguration m_parallelismConfiguration;
-  bool m_parallelismConfigurationHasBeenSet = false;
 
   SelectiveExecutionConfig m_selectiveExecutionConfig;
-  bool m_selectiveExecutionConfigHasBeenSet = false;
 
   long long m_pipelineVersionId{0};
-  bool m_pipelineVersionIdHasBeenSet = false;
 
   Aws::String m_mlflowExperimentName;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
+  bool m_pipelineParametersHasBeenSet = false;
+  bool m_pipelineExecutionDescriptionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_parallelismConfigurationHasBeenSet = false;
+  bool m_selectiveExecutionConfigHasBeenSet = false;
+  bool m_pipelineVersionIdHasBeenSet = false;
   bool m_mlflowExperimentNameHasBeenSet = false;
 };
 

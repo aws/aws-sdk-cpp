@@ -65,9 +65,9 @@ class AssumeQueueRoleForReadRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
+  bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
 };
 

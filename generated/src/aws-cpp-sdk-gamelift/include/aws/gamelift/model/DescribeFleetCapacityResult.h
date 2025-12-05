@@ -88,12 +88,12 @@ class DescribeFleetCapacityResult {
   ///@}
  private:
   Aws::Vector<FleetCapacity> m_fleetCapacity;
-  bool m_fleetCapacityHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetCapacityHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

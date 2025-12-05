@@ -143,21 +143,21 @@ class GetRightsizingRecommendationResult {
   ///@}
  private:
   RightsizingRecommendationMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   RightsizingRecommendationSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Vector<RightsizingRecommendation> m_rightsizingRecommendations;
-  bool m_rightsizingRecommendationsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   RightsizingRecommendationConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_rightsizingRecommendationsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

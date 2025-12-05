@@ -176,27 +176,27 @@ class GetDomainNameResult {
   ///@}
  private:
   Aws::String m_apiMappingSelectionExpression;
-  bool m_apiMappingSelectionExpressionHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_domainNameArn;
-  bool m_domainNameArnHasBeenSet = false;
 
   Aws::Vector<DomainNameConfiguration> m_domainNameConfigurations;
-  bool m_domainNameConfigurationsHasBeenSet = false;
 
   MutualTlsAuthentication m_mutualTlsAuthentication;
-  bool m_mutualTlsAuthenticationHasBeenSet = false;
 
   RoutingMode m_routingMode{RoutingMode::NOT_SET};
-  bool m_routingModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiMappingSelectionExpressionHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainNameArnHasBeenSet = false;
+  bool m_domainNameConfigurationsHasBeenSet = false;
+  bool m_mutualTlsAuthenticationHasBeenSet = false;
+  bool m_routingModeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class MacSecKey {
   ///@}
  private:
   Aws::String m_secretARN;
-  bool m_secretARNHasBeenSet = false;
 
   Aws::String m_ckn;
-  bool m_cknHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_startOn;
+  bool m_secretARNHasBeenSet = false;
+  bool m_cknHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_startOnHasBeenSet = false;
 };
 

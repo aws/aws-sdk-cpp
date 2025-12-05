@@ -83,9 +83,9 @@ class SingleMasterChannelEndpointConfiguration {
   ///@}
  private:
   Aws::Vector<ChannelProtocol> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   ChannelRole m_role{ChannelRole::NOT_SET};
+  bool m_protocolsHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

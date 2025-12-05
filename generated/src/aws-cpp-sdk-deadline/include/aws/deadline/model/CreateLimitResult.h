@@ -61,9 +61,9 @@ class CreateLimitResult {
   ///@}
  private:
   Aws::String m_limitId;
-  bool m_limitIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_limitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

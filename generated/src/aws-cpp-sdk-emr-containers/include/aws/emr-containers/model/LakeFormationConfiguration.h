@@ -91,12 +91,12 @@ class LakeFormationConfiguration {
   ///@}
  private:
   Aws::String m_authorizedSessionTagValue;
-  bool m_authorizedSessionTagValueHasBeenSet = false;
 
   SecureNamespaceInfo m_secureNamespaceInfo;
-  bool m_secureNamespaceInfoHasBeenSet = false;
 
   Aws::String m_queryEngineRoleArn;
+  bool m_authorizedSessionTagValueHasBeenSet = false;
+  bool m_secureNamespaceInfoHasBeenSet = false;
   bool m_queryEngineRoleArnHasBeenSet = false;
 };
 

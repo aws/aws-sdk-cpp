@@ -211,36 +211,36 @@ class DescribeThingGroupResult {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   Aws::String m_thingGroupId;
-  bool m_thingGroupIdHasBeenSet = false;
 
   Aws::String m_thingGroupArn;
-  bool m_thingGroupArnHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   ThingGroupProperties m_thingGroupProperties;
-  bool m_thingGroupPropertiesHasBeenSet = false;
 
   ThingGroupMetadata m_thingGroupMetadata;
-  bool m_thingGroupMetadataHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_queryVersion;
-  bool m_queryVersionHasBeenSet = false;
 
   DynamicGroupStatus m_status{DynamicGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_thingGroupIdHasBeenSet = false;
+  bool m_thingGroupArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_thingGroupPropertiesHasBeenSet = false;
+  bool m_thingGroupMetadataHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_queryVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

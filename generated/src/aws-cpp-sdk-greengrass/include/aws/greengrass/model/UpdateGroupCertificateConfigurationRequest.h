@@ -65,9 +65,9 @@ class UpdateGroupCertificateConfigurationRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_certificateExpiryInMilliseconds;
-  bool m_certificateExpiryInMillisecondsHasBeenSet = false;
 
   Aws::String m_groupId;
+  bool m_certificateExpiryInMillisecondsHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
 };
 

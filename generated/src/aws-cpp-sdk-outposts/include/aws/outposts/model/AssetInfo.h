@@ -124,18 +124,18 @@ class AssetInfo {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_rackId;
-  bool m_rackIdHasBeenSet = false;
 
   AssetType m_assetType{AssetType::NOT_SET};
-  bool m_assetTypeHasBeenSet = false;
 
   ComputeAttributes m_computeAttributes;
-  bool m_computeAttributesHasBeenSet = false;
 
   AssetLocation m_assetLocation;
+  bool m_assetIdHasBeenSet = false;
+  bool m_rackIdHasBeenSet = false;
+  bool m_assetTypeHasBeenSet = false;
+  bool m_computeAttributesHasBeenSet = false;
   bool m_assetLocationHasBeenSet = false;
 };
 

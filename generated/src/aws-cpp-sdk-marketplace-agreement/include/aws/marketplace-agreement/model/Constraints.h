@@ -73,9 +73,9 @@ class Constraints {
   ///@}
  private:
   Aws::String m_multipleDimensionSelection;
-  bool m_multipleDimensionSelectionHasBeenSet = false;
 
   Aws::String m_quantityConfiguration;
+  bool m_multipleDimensionSelectionHasBeenSet = false;
   bool m_quantityConfigurationHasBeenSet = false;
 };
 

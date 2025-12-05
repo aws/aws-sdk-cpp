@@ -100,15 +100,15 @@ class SequenceInformation {
   ///@}
  private:
   long long m_totalReadCount{0};
-  bool m_totalReadCountHasBeenSet = false;
 
   long long m_totalBaseCount{0};
-  bool m_totalBaseCountHasBeenSet = false;
 
   Aws::String m_generatedFrom;
-  bool m_generatedFromHasBeenSet = false;
 
   Aws::String m_alignment;
+  bool m_totalReadCountHasBeenSet = false;
+  bool m_totalBaseCountHasBeenSet = false;
+  bool m_generatedFromHasBeenSet = false;
   bool m_alignmentHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetAutoTerminationPolicyResult {
   ///@}
  private:
   AutoTerminationPolicy m_autoTerminationPolicy;
-  bool m_autoTerminationPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoTerminationPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

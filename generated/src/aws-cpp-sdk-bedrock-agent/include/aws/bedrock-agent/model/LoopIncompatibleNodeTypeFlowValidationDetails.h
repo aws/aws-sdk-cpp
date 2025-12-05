@@ -87,12 +87,12 @@ class LoopIncompatibleNodeTypeFlowValidationDetails {
   ///@}
  private:
   Aws::String m_node;
-  bool m_nodeHasBeenSet = false;
 
   IncompatibleLoopNodeType m_incompatibleNodeType{IncompatibleLoopNodeType::NOT_SET};
-  bool m_incompatibleNodeTypeHasBeenSet = false;
 
   Aws::String m_incompatibleNodeName;
+  bool m_nodeHasBeenSet = false;
+  bool m_incompatibleNodeTypeHasBeenSet = false;
   bool m_incompatibleNodeNameHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class DescribeConfigRuleEvaluationStatusResult {
   ///@}
  private:
   Aws::Vector<ConfigRuleEvaluationStatus> m_configRulesEvaluationStatus;
-  bool m_configRulesEvaluationStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configRulesEvaluationStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

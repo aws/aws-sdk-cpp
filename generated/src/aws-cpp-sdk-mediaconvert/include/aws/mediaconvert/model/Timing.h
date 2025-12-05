@@ -87,12 +87,12 @@ class Timing {
   ///@}
  private:
   Aws::Utils::DateTime m_finishTime{};
-  bool m_finishTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
+  bool m_finishTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_submitTimeHasBeenSet = false;
 };
 

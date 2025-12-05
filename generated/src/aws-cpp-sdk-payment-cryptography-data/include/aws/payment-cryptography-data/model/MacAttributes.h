@@ -127,18 +127,18 @@ class MacAttributes {
   ///@}
  private:
   MacAlgorithm m_algorithm{MacAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   MacAlgorithmEmv m_emvMac;
-  bool m_emvMacHasBeenSet = false;
 
   MacAlgorithmDukpt m_dukptIso9797Algorithm1;
-  bool m_dukptIso9797Algorithm1HasBeenSet = false;
 
   MacAlgorithmDukpt m_dukptIso9797Algorithm3;
-  bool m_dukptIso9797Algorithm3HasBeenSet = false;
 
   MacAlgorithmDukpt m_dukptCmac;
+  bool m_algorithmHasBeenSet = false;
+  bool m_emvMacHasBeenSet = false;
+  bool m_dukptIso9797Algorithm1HasBeenSet = false;
+  bool m_dukptIso9797Algorithm3HasBeenSet = false;
   bool m_dukptCmacHasBeenSet = false;
 };
 

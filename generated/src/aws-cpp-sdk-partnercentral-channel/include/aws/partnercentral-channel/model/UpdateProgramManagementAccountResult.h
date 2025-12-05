@@ -62,9 +62,9 @@ class UpdateProgramManagementAccountResult {
   ///@}
  private:
   UpdateProgramManagementAccountDetail m_programManagementAccountDetail;
-  bool m_programManagementAccountDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_programManagementAccountDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

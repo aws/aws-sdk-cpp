@@ -85,12 +85,12 @@ class DescribeLagsResult {
   ///@}
  private:
   Aws::Vector<Lag> m_lags;
-  bool m_lagsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lagsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

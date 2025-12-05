@@ -210,36 +210,36 @@ class InvokeAgentRuntimeResult {
   ///@}
  private:
   Aws::String m_runtimeSessionId;
-  bool m_runtimeSessionIdHasBeenSet = false;
 
   Aws::String m_mcpSessionId;
-  bool m_mcpSessionIdHasBeenSet = false;
 
   Aws::String m_mcpProtocolVersion;
-  bool m_mcpProtocolVersionHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_traceParent;
-  bool m_traceParentHasBeenSet = false;
 
   Aws::String m_traceState;
-  bool m_traceStateHasBeenSet = false;
 
   Aws::String m_baggage;
-  bool m_baggageHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_response{};
-  bool m_responseHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runtimeSessionIdHasBeenSet = false;
+  bool m_mcpSessionIdHasBeenSet = false;
+  bool m_mcpProtocolVersionHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_traceStateHasBeenSet = false;
+  bool m_baggageHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_responseHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

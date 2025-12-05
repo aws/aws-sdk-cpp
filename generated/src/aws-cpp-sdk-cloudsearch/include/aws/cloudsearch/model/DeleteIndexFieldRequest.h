@@ -73,9 +73,9 @@ class DeleteIndexFieldRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_indexFieldName;
+  bool m_domainNameHasBeenSet = false;
   bool m_indexFieldNameHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class WorkloadDataSummary {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_workloadName;
+  bool m_displayNameHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
 };
 

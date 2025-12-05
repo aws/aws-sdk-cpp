@@ -78,9 +78,9 @@ class GetJobRequest : public BraketRequest {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::Vector<HybridJobAdditionalAttributeName> m_additionalAttributeNames;
+  bool m_jobArnHasBeenSet = false;
   bool m_additionalAttributeNamesHasBeenSet = false;
 };
 

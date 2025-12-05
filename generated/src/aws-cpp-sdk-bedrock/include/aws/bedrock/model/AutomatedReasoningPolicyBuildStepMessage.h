@@ -70,9 +70,9 @@ class AutomatedReasoningPolicyBuildStepMessage {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildMessageType m_messageType{AutomatedReasoningPolicyBuildMessageType::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_messageTypeHasBeenSet = false;
 };
 

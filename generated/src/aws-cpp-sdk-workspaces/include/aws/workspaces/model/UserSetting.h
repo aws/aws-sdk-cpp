@@ -82,12 +82,12 @@ class UserSetting {
   ///@}
  private:
   UserSettingActionEnum m_action{UserSettingActionEnum::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   UserSettingPermissionEnum m_permission{UserSettingPermissionEnum::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   int m_maximumLength{0};
+  bool m_actionHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
   bool m_maximumLengthHasBeenSet = false;
 };
 

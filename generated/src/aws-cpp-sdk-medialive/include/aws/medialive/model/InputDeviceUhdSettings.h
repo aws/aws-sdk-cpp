@@ -270,42 +270,42 @@ class InputDeviceUhdSettings {
   ///@}
  private:
   InputDeviceActiveInput m_activeInput{InputDeviceActiveInput::NOT_SET};
-  bool m_activeInputHasBeenSet = false;
 
   InputDeviceConfiguredInput m_configuredInput{InputDeviceConfiguredInput::NOT_SET};
-  bool m_configuredInputHasBeenSet = false;
 
   InputDeviceState m_deviceState{InputDeviceState::NOT_SET};
-  bool m_deviceStateHasBeenSet = false;
 
   double m_framerate{0.0};
-  bool m_framerateHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   InputDeviceScanType m_scanType{InputDeviceScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_latencyMs{0};
-  bool m_latencyMsHasBeenSet = false;
 
   InputDeviceCodec m_codec{InputDeviceCodec::NOT_SET};
-  bool m_codecHasBeenSet = false;
 
   InputDeviceMediaConnectSettings m_mediaconnectSettings;
-  bool m_mediaconnectSettingsHasBeenSet = false;
 
   Aws::Vector<InputDeviceUhdAudioChannelPairConfig> m_audioChannelPairs;
-  bool m_audioChannelPairsHasBeenSet = false;
 
   Aws::String m_inputResolution;
+  bool m_activeInputHasBeenSet = false;
+  bool m_configuredInputHasBeenSet = false;
+  bool m_deviceStateHasBeenSet = false;
+  bool m_framerateHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_latencyMsHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_mediaconnectSettingsHasBeenSet = false;
+  bool m_audioChannelPairsHasBeenSet = false;
   bool m_inputResolutionHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class ListInvalidations2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_distributionIdHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

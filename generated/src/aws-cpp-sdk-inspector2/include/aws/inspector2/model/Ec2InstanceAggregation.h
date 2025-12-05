@@ -168,21 +168,21 @@ class Ec2InstanceAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_amis;
-  bool m_amisHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_operatingSystems;
-  bool m_operatingSystemsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::Vector<MapFilter> m_instanceTags;
-  bool m_instanceTagsHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Ec2InstanceSortBy m_sortBy{Ec2InstanceSortBy::NOT_SET};
+  bool m_amisHasBeenSet = false;
+  bool m_operatingSystemsHasBeenSet = false;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_instanceTagsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

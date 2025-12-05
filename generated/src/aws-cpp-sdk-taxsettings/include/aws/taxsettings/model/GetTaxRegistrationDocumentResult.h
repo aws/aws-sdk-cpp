@@ -77,12 +77,12 @@ class GetTaxRegistrationDocumentResult {
   ///@}
  private:
   Aws::String m_destinationFilePath;
-  bool m_destinationFilePathHasBeenSet = false;
 
   Aws::String m_presignedS3Url;
-  bool m_presignedS3UrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationFilePathHasBeenSet = false;
+  bool m_presignedS3UrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

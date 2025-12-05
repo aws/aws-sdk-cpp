@@ -101,15 +101,15 @@ class AuthProvider {
   ///@}
  private:
   AuthenticationType m_authType{AuthenticationType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   CognitoConfig m_cognitoConfig;
-  bool m_cognitoConfigHasBeenSet = false;
 
   OpenIDConnectConfig m_openIDConnectConfig;
-  bool m_openIDConnectConfigHasBeenSet = false;
 
   LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
+  bool m_authTypeHasBeenSet = false;
+  bool m_cognitoConfigHasBeenSet = false;
+  bool m_openIDConnectConfigHasBeenSet = false;
   bool m_lambdaAuthorizerConfigHasBeenSet = false;
 };
 

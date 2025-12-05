@@ -69,9 +69,9 @@ class DeleteRegexMatchSetRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_regexMatchSetId;
-  bool m_regexMatchSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_regexMatchSetIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

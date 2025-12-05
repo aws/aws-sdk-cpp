@@ -143,21 +143,21 @@ class DatasetSchema {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_domainHasBeenSet = false;
 };
 

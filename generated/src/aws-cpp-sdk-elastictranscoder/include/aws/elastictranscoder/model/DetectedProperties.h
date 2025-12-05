@@ -115,18 +115,18 @@ class DetectedProperties {
   ///@}
  private:
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   Aws::String m_frameRate;
-  bool m_frameRateHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   long long m_durationMillis{0};
+  bool m_widthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
   bool m_durationMillisHasBeenSet = false;
 };
 

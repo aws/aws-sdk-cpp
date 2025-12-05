@@ -76,9 +76,9 @@ class CodeInterpreterInvocationInput {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_files;
+  bool m_codeHasBeenSet = false;
   bool m_filesHasBeenSet = false;
 };
 

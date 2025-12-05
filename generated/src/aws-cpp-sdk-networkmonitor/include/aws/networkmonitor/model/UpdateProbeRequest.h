@@ -156,24 +156,24 @@ class UpdateProbeRequest : public NetworkMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_probeId;
-  bool m_probeIdHasBeenSet = false;
 
   ProbeState m_state{ProbeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_packetSize{0};
+  bool m_monitorNameHasBeenSet = false;
+  bool m_probeIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_packetSizeHasBeenSet = false;
 };
 

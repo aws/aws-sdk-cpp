@@ -75,9 +75,9 @@ class CustomerProjectsContext {
   ///@}
  private:
   EngagementCustomer m_customer;
-  bool m_customerHasBeenSet = false;
 
   EngagementCustomerProjectDetails m_project;
+  bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

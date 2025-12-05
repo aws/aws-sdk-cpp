@@ -134,18 +134,18 @@ class InventoryResultItem {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_captureTime;
-  bool m_captureTimeHasBeenSet = false;
 
   Aws::String m_contentHash;
-  bool m_contentHashHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
+  bool m_typeNameHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_captureTimeHasBeenSet = false;
+  bool m_contentHashHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

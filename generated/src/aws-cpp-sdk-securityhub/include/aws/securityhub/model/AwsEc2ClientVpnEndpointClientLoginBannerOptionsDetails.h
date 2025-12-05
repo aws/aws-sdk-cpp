@@ -69,9 +69,9 @@ class AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_bannerText;
+  bool m_enabledHasBeenSet = false;
   bool m_bannerTextHasBeenSet = false;
 };
 

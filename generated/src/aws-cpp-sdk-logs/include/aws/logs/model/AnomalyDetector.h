@@ -215,33 +215,33 @@ class AnomalyDetector {
   ///@}
  private:
   Aws::String m_anomalyDetectorArn;
-  bool m_anomalyDetectorArnHasBeenSet = false;
 
   Aws::String m_detectorName;
-  bool m_detectorNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupArnList;
-  bool m_logGroupArnListHasBeenSet = false;
 
   EvaluationFrequency m_evaluationFrequency{EvaluationFrequency::NOT_SET};
-  bool m_evaluationFrequencyHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   AnomalyDetectorStatus m_anomalyDetectorStatus{AnomalyDetectorStatus::NOT_SET};
-  bool m_anomalyDetectorStatusHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   long long m_creationTimeStamp{0};
-  bool m_creationTimeStampHasBeenSet = false;
 
   long long m_lastModifiedTimeStamp{0};
-  bool m_lastModifiedTimeStampHasBeenSet = false;
 
   long long m_anomalyVisibilityTime{0};
+  bool m_anomalyDetectorArnHasBeenSet = false;
+  bool m_detectorNameHasBeenSet = false;
+  bool m_logGroupArnListHasBeenSet = false;
+  bool m_evaluationFrequencyHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
+  bool m_anomalyDetectorStatusHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_creationTimeStampHasBeenSet = false;
+  bool m_lastModifiedTimeStampHasBeenSet = false;
   bool m_anomalyVisibilityTimeHasBeenSet = false;
 };
 

@@ -170,21 +170,21 @@ class DescribeImageReferencesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_imageIds;
-  bool m_imageIdsHasBeenSet = false;
 
   bool m_includeAllResourceTypes{false};
-  bool m_includeAllResourceTypesHasBeenSet = false;
 
   Aws::Vector<ResourceTypeRequest> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_imageIdsHasBeenSet = false;
+  bool m_includeAllResourceTypesHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

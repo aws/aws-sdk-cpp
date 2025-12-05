@@ -84,12 +84,12 @@ class GetGroupResult {
   ///@}
  private:
   GroupStatusDetail m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<GroupStatusDetail> m_statusHistory;
-  bool m_statusHistoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_statusHistoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

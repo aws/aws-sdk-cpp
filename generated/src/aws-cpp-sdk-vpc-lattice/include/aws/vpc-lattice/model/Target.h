@@ -71,9 +71,9 @@ class Target {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_port{0};
+  bool m_idHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

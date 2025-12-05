@@ -1151,144 +1151,144 @@ class ModifyDBClusterRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_newDBClusterIdentifier;
-  bool m_newDBClusterIdentifierHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   long long m_backtrackWindow{0};
-  bool m_backtrackWindowHasBeenSet = false;
 
   CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
-  bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_allowMajorVersionUpgrade{false};
-  bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_dBInstanceParameterGroupName;
-  bool m_dBInstanceParameterGroupNameHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainIAMRoleName;
-  bool m_domainIAMRoleNameHasBeenSet = false;
 
   ScalingConfiguration m_scalingConfiguration;
-  bool m_scalingConfigurationHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   bool m_enableHttpEndpoint{false};
-  bool m_enableHttpEndpointHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   bool m_enableGlobalWriteForwarding{false};
-  bool m_enableGlobalWriteForwardingHasBeenSet = false;
 
   Aws::String m_dBClusterInstanceClass;
-  bool m_dBClusterInstanceClassHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
   int m_monitoringInterval{0};
-  bool m_monitoringIntervalHasBeenSet = false;
 
   Aws::String m_monitoringRoleArn;
-  bool m_monitoringRoleArnHasBeenSet = false;
 
   DatabaseInsightsMode m_databaseInsightsMode{DatabaseInsightsMode::NOT_SET};
-  bool m_databaseInsightsModeHasBeenSet = false;
 
   bool m_enablePerformanceInsights{false};
-  bool m_enablePerformanceInsightsHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
-  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
   int m_performanceInsightsRetentionPeriod{0};
-  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
   bool m_manageMasterUserPassword{false};
-  bool m_manageMasterUserPasswordHasBeenSet = false;
 
   bool m_rotateMasterUserPassword{false};
-  bool m_rotateMasterUserPasswordHasBeenSet = false;
 
   bool m_enableLocalWriteForwarding{false};
-  bool m_enableLocalWriteForwardingHasBeenSet = false;
 
   Aws::String m_masterUserSecretKmsKeyId;
-  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_engineMode;
-  bool m_engineModeHasBeenSet = false;
 
   bool m_allowEngineModeChange{false};
-  bool m_allowEngineModeChangeHasBeenSet = false;
 
   Aws::String m_awsBackupRecoveryPointArn;
-  bool m_awsBackupRecoveryPointArnHasBeenSet = false;
 
   bool m_enableLimitlessDatabase{false};
-  bool m_enableLimitlessDatabaseHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
 
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_newDBClusterIdentifierHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_backtrackWindowHasBeenSet = false;
+  bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_allowMajorVersionUpgradeHasBeenSet = false;
+  bool m_dBInstanceParameterGroupNameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_domainIAMRoleNameHasBeenSet = false;
+  bool m_scalingConfigurationHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_enableHttpEndpointHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_enableGlobalWriteForwardingHasBeenSet = false;
+  bool m_dBClusterInstanceClassHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+  bool m_monitoringIntervalHasBeenSet = false;
+  bool m_monitoringRoleArnHasBeenSet = false;
+  bool m_databaseInsightsModeHasBeenSet = false;
+  bool m_enablePerformanceInsightsHasBeenSet = false;
+  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
+  bool m_manageMasterUserPasswordHasBeenSet = false;
+  bool m_rotateMasterUserPasswordHasBeenSet = false;
+  bool m_enableLocalWriteForwardingHasBeenSet = false;
+  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
+  bool m_allowEngineModeChangeHasBeenSet = false;
+  bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+  bool m_enableLimitlessDatabaseHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
 };
 

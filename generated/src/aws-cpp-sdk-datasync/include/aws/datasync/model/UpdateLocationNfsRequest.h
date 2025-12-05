@@ -126,18 +126,18 @@ class UpdateLocationNfsRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_serverHostname;
-  bool m_serverHostnameHasBeenSet = false;
 
   OnPremConfig m_onPremConfig;
-  bool m_onPremConfigHasBeenSet = false;
 
   NfsMountOptions m_mountOptions;
+  bool m_locationArnHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_serverHostnameHasBeenSet = false;
+  bool m_onPremConfigHasBeenSet = false;
   bool m_mountOptionsHasBeenSet = false;
 };
 

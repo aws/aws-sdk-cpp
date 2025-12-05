@@ -122,18 +122,18 @@ class TrafficPolicySummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RRType m_type{RRType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_latestVersion{0};
-  bool m_latestVersionHasBeenSet = false;
 
   int m_trafficPolicyCount{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
   bool m_trafficPolicyCountHasBeenSet = false;
 };
 

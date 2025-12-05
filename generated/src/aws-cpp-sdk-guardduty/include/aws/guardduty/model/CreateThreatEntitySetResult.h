@@ -60,9 +60,9 @@ class CreateThreatEntitySetResult {
   ///@}
  private:
   Aws::String m_threatEntitySetId;
-  bool m_threatEntitySetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_threatEntitySetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

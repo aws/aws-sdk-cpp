@@ -72,9 +72,9 @@ class ThirdPartyJob {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_clientIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

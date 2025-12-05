@@ -104,12 +104,12 @@ class PurchaseScheduledInstancesRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<PurchaseRequest> m_purchaseRequests;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
   bool m_purchaseRequestsHasBeenSet = false;
 };
 

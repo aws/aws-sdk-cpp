@@ -79,9 +79,9 @@ class TagDescription {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class LogsConfig {
   ///@}
  private:
   CloudWatchLogsConfig m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   S3LogsConfig m_s3Logs;
+  bool m_cloudWatchLogsHasBeenSet = false;
   bool m_s3LogsHasBeenSet = false;
 };
 

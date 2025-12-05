@@ -114,15 +114,15 @@ class VectorIngestionConfiguration {
   ///@}
  private:
   ChunkingConfiguration m_chunkingConfiguration;
-  bool m_chunkingConfigurationHasBeenSet = false;
 
   CustomTransformationConfiguration m_customTransformationConfiguration;
-  bool m_customTransformationConfigurationHasBeenSet = false;
 
   ParsingConfiguration m_parsingConfiguration;
-  bool m_parsingConfigurationHasBeenSet = false;
 
   ContextEnrichmentConfiguration m_contextEnrichmentConfiguration;
+  bool m_chunkingConfigurationHasBeenSet = false;
+  bool m_customTransformationConfigurationHasBeenSet = false;
+  bool m_parsingConfigurationHasBeenSet = false;
   bool m_contextEnrichmentConfigurationHasBeenSet = false;
 };
 

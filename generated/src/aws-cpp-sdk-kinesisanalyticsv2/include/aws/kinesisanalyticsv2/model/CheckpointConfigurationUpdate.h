@@ -119,15 +119,15 @@ class CheckpointConfigurationUpdate {
   ///@}
  private:
   ConfigurationType m_configurationTypeUpdate{ConfigurationType::NOT_SET};
-  bool m_configurationTypeUpdateHasBeenSet = false;
 
   bool m_checkpointingEnabledUpdate{false};
-  bool m_checkpointingEnabledUpdateHasBeenSet = false;
 
   long long m_checkpointIntervalUpdate{0};
-  bool m_checkpointIntervalUpdateHasBeenSet = false;
 
   long long m_minPauseBetweenCheckpointsUpdate{0};
+  bool m_configurationTypeUpdateHasBeenSet = false;
+  bool m_checkpointingEnabledUpdateHasBeenSet = false;
+  bool m_checkpointIntervalUpdateHasBeenSet = false;
   bool m_minPauseBetweenCheckpointsUpdateHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListAppAuthorizationsResult {
   ///@}
  private:
   Aws::Vector<AppAuthorizationSummary> m_appAuthorizationSummaryList;
-  bool m_appAuthorizationSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appAuthorizationSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

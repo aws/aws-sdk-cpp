@@ -121,15 +121,15 @@ class StatefulRuleGroupReference {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   StatefulRuleGroupOverride m_override;
-  bool m_overrideHasBeenSet = false;
 
   bool m_deepThreatInspection{false};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_overrideHasBeenSet = false;
   bool m_deepThreatInspectionHasBeenSet = false;
 };
 

@@ -201,33 +201,33 @@ class GetImportJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ImportDestination m_importDestination;
-  bool m_importDestinationHasBeenSet = false;
 
   ImportDataSource m_importDataSource;
-  bool m_importDataSourceHasBeenSet = false;
 
   FailureInfo m_failureInfo;
-  bool m_failureInfoHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedTimestamp{};
-  bool m_completedTimestampHasBeenSet = false;
 
   int m_processedRecordsCount{0};
-  bool m_processedRecordsCountHasBeenSet = false;
 
   int m_failedRecordsCount{0};
-  bool m_failedRecordsCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_importDestinationHasBeenSet = false;
+  bool m_importDataSourceHasBeenSet = false;
+  bool m_failureInfoHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_completedTimestampHasBeenSet = false;
+  bool m_processedRecordsCountHasBeenSet = false;
+  bool m_failedRecordsCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

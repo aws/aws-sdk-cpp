@@ -60,9 +60,9 @@ class UpdateResolverResult {
   ///@}
  private:
   Resolver m_resolver;
-  bool m_resolverHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class WiFiAccessPoint {
   ///@}
  private:
   Aws::String m_macAddress;
-  bool m_macAddressHasBeenSet = false;
 
   int m_rss{0};
+  bool m_macAddressHasBeenSet = false;
   bool m_rssHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class UpdateApplicationRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_newApplicationName;
+  bool m_applicationNameHasBeenSet = false;
   bool m_newApplicationNameHasBeenSet = false;
 };
 

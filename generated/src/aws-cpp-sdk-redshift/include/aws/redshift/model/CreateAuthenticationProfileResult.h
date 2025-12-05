@@ -77,12 +77,12 @@ class CreateAuthenticationProfileResult {
   ///@}
  private:
   Aws::String m_authenticationProfileName;
-  bool m_authenticationProfileNameHasBeenSet = false;
 
   Aws::String m_authenticationProfileContent;
-  bool m_authenticationProfileContentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_authenticationProfileNameHasBeenSet = false;
+  bool m_authenticationProfileContentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

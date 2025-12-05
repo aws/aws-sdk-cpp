@@ -86,12 +86,12 @@ class LoRaWANGatewayVersion {
   ///@}
  private:
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_station;
+  bool m_packageVersionHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
   bool m_stationHasBeenSet = false;
 };
 

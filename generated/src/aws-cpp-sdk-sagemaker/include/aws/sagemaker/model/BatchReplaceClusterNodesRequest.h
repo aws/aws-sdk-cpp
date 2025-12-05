@@ -119,12 +119,12 @@ class BatchReplaceClusterNodesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeIds;
-  bool m_nodeIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeLogicalIds;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_nodeIdsHasBeenSet = false;
   bool m_nodeLogicalIdsHasBeenSet = false;
 };
 

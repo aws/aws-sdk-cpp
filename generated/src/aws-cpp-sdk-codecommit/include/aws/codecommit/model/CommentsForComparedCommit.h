@@ -175,24 +175,24 @@ class CommentsForComparedCommit {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_beforeCommitId;
-  bool m_beforeCommitIdHasBeenSet = false;
 
   Aws::String m_afterCommitId;
-  bool m_afterCommitIdHasBeenSet = false;
 
   Aws::String m_beforeBlobId;
-  bool m_beforeBlobIdHasBeenSet = false;
 
   Aws::String m_afterBlobId;
-  bool m_afterBlobIdHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Vector<Comment> m_comments;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_beforeCommitIdHasBeenSet = false;
+  bool m_afterCommitIdHasBeenSet = false;
+  bool m_beforeBlobIdHasBeenSet = false;
+  bool m_afterBlobIdHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_commentsHasBeenSet = false;
 };
 

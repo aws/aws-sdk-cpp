@@ -174,27 +174,27 @@ class InstanceNetworkInterfaceAttachment {
   ///@}
  private:
   Aws::Utils::DateTime m_attachTime{};
-  bool m_attachTimeHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   int m_deviceIndex{0};
-  bool m_deviceIndexHasBeenSet = false;
 
   AttachmentStatus m_status{AttachmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_networkCardIndex{0};
-  bool m_networkCardIndexHasBeenSet = false;
 
   InstanceAttachmentEnaSrdSpecification m_enaSrdSpecification;
-  bool m_enaSrdSpecificationHasBeenSet = false;
 
   int m_enaQueueCount{0};
+  bool m_attachTimeHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_deviceIndexHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_networkCardIndexHasBeenSet = false;
+  bool m_enaSrdSpecificationHasBeenSet = false;
   bool m_enaQueueCountHasBeenSet = false;
 };
 

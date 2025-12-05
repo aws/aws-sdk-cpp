@@ -110,15 +110,15 @@ class ListedExecution {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   FileLocation m_initialFileLocation;
-  bool m_initialFileLocationHasBeenSet = false;
 
   ServiceMetadata m_serviceMetadata;
-  bool m_serviceMetadataHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
+  bool m_executionIdHasBeenSet = false;
+  bool m_initialFileLocationHasBeenSet = false;
+  bool m_serviceMetadataHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

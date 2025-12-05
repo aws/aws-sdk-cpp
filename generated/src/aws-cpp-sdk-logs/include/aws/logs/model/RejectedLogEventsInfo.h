@@ -78,12 +78,12 @@ class RejectedLogEventsInfo {
   ///@}
  private:
   int m_tooNewLogEventStartIndex{0};
-  bool m_tooNewLogEventStartIndexHasBeenSet = false;
 
   int m_tooOldLogEventEndIndex{0};
-  bool m_tooOldLogEventEndIndexHasBeenSet = false;
 
   int m_expiredLogEventEndIndex{0};
+  bool m_tooNewLogEventStartIndexHasBeenSet = false;
+  bool m_tooOldLogEventEndIndexHasBeenSet = false;
   bool m_expiredLogEventEndIndexHasBeenSet = false;
 };
 

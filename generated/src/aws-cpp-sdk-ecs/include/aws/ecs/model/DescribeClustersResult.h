@@ -91,12 +91,12 @@ class DescribeClustersResult {
   ///@}
  private:
   Aws::Vector<Cluster> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clustersHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

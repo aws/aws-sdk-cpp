@@ -80,9 +80,9 @@ class GuardrailContentPolicy {
   ///@}
  private:
   Aws::Vector<GuardrailContentFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   GuardrailContentFiltersTier m_tier;
+  bool m_filtersHasBeenSet = false;
   bool m_tierHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class S3Destination {
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   S3OutputConfigurations m_s3OutputConfigurations;
-  bool m_s3OutputConfigurationsHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   Aws::String m_s3Region;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3OutputConfigurationsHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
   bool m_s3RegionHasBeenSet = false;
 };
 

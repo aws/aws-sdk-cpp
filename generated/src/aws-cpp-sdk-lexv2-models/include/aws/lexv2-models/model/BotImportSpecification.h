@@ -181,24 +181,24 @@ class BotImportSpecification {
   ///@}
  private:
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   DataPrivacy m_dataPrivacy;
-  bool m_dataPrivacyHasBeenSet = false;
 
   ErrorLogSettings m_errorLogSettings;
-  bool m_errorLogSettingsHasBeenSet = false;
 
   int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_botTags;
-  bool m_botTagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_testBotAliasTags;
+  bool m_botNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataPrivacyHasBeenSet = false;
+  bool m_errorLogSettingsHasBeenSet = false;
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+  bool m_botTagsHasBeenSet = false;
   bool m_testBotAliasTagsHasBeenSet = false;
 };
 

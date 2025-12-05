@@ -88,12 +88,12 @@ class KinesisVideoStreamConfig {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   int m_retentionPeriodHours{0};
-  bool m_retentionPeriodHoursHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
+  bool m_prefixHasBeenSet = false;
+  bool m_retentionPeriodHoursHasBeenSet = false;
   bool m_encryptionConfigHasBeenSet = false;
 };
 

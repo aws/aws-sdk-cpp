@@ -69,9 +69,9 @@ class ColumnRowFilter {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_rowFilterExpression;
+  bool m_columnNameHasBeenSet = false;
   bool m_rowFilterExpressionHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class PackageSummary {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_defaultVersionName;
-  bool m_defaultVersionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_packageNameHasBeenSet = false;
+  bool m_defaultVersionNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

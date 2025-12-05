@@ -82,9 +82,9 @@ class PutGroupConfigurationRequest : public ResourceGroupsRequest {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::Vector<GroupConfigurationItem> m_configuration;
+  bool m_groupHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

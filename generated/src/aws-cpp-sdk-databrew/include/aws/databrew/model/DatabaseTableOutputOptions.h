@@ -71,9 +71,9 @@ class DatabaseTableOutputOptions {
   ///@}
  private:
   S3Location m_tempDirectory;
-  bool m_tempDirectoryHasBeenSet = false;
 
   Aws::String m_tableName;
+  bool m_tempDirectoryHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
 };
 

@@ -79,12 +79,12 @@ class SessionSharingConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_acceptResponses{false};
-  bool m_acceptResponsesHasBeenSet = false;
 
   bool m_revealCards{false};
+  bool m_enabledHasBeenSet = false;
+  bool m_acceptResponsesHasBeenSet = false;
   bool m_revealCardsHasBeenSet = false;
 };
 

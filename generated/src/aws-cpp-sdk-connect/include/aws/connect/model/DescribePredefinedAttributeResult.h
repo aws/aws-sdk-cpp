@@ -60,9 +60,9 @@ class DescribePredefinedAttributeResult {
   ///@}
  private:
   PredefinedAttribute m_predefinedAttribute;
-  bool m_predefinedAttributeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predefinedAttributeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

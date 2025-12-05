@@ -211,27 +211,27 @@ class CatalogInput {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FederatedCatalog m_federatedCatalog;
-  bool m_federatedCatalogHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   TargetRedshiftCatalog m_targetRedshiftCatalog;
-  bool m_targetRedshiftCatalogHasBeenSet = false;
 
   CatalogProperties m_catalogProperties;
-  bool m_catalogPropertiesHasBeenSet = false;
 
   Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
-  bool m_createTableDefaultPermissionsHasBeenSet = false;
 
   Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
-  bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
 
   AllowFullTableExternalDataAccessEnum m_allowFullTableExternalDataAccess{AllowFullTableExternalDataAccessEnum::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_federatedCatalogHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_targetRedshiftCatalogHasBeenSet = false;
+  bool m_catalogPropertiesHasBeenSet = false;
+  bool m_createTableDefaultPermissionsHasBeenSet = false;
+  bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
   bool m_allowFullTableExternalDataAccessHasBeenSet = false;
 };
 

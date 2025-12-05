@@ -93,15 +93,15 @@ class CreateKeySigningKeyResult {
   ///@}
  private:
   ChangeInfo m_changeInfo;
-  bool m_changeInfoHasBeenSet = false;
 
   KeySigningKey m_keySigningKey;
-  bool m_keySigningKeyHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeInfoHasBeenSet = false;
+  bool m_keySigningKeyHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

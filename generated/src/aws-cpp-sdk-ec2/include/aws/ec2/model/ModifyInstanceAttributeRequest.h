@@ -416,54 +416,54 @@ class ModifyInstanceAttributeRequest : public EC2Request {
   ///@}
  private:
   AttributeBooleanValue m_sourceDestCheck;
-  bool m_sourceDestCheckHasBeenSet = false;
 
   AttributeBooleanValue m_disableApiStop;
-  bool m_disableApiStopHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceAttributeName m_attribute{InstanceAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<InstanceBlockDeviceMappingSpecification> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   AttributeBooleanValue m_disableApiTermination;
-  bool m_disableApiTerminationHasBeenSet = false;
 
   AttributeValue m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   AttributeValue m_kernel;
-  bool m_kernelHasBeenSet = false;
 
   AttributeValue m_ramdisk;
-  bool m_ramdiskHasBeenSet = false;
 
   BlobAttributeValue m_userData;
-  bool m_userDataHasBeenSet = false;
 
   AttributeValue m_instanceInitiatedShutdownBehavior;
-  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   AttributeBooleanValue m_ebsOptimized;
-  bool m_ebsOptimizedHasBeenSet = false;
 
   AttributeValue m_sriovNetSupport;
-  bool m_sriovNetSupportHasBeenSet = false;
 
   AttributeBooleanValue m_enaSupport;
+  bool m_sourceDestCheckHasBeenSet = false;
+  bool m_disableApiStopHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_attributeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_disableApiTerminationHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kernelHasBeenSet = false;
+  bool m_ramdiskHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
+  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_sriovNetSupportHasBeenSet = false;
   bool m_enaSupportHasBeenSet = false;
 };
 

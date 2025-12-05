@@ -101,15 +101,15 @@ class CmafEncryption {
   ///@}
  private:
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   CmafEncryptionMethod m_encryptionMethod{CmafEncryptionMethod::NOT_SET};
-  bool m_encryptionMethodHasBeenSet = false;
 
   int m_keyRotationIntervalSeconds{0};
-  bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
+  bool m_constantInitializationVectorHasBeenSet = false;
+  bool m_encryptionMethodHasBeenSet = false;
+  bool m_keyRotationIntervalSecondsHasBeenSet = false;
   bool m_spekeKeyProviderHasBeenSet = false;
 };
 

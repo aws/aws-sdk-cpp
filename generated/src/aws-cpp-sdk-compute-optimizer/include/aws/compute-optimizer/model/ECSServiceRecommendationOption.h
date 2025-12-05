@@ -160,21 +160,21 @@ class ECSServiceRecommendationOption {
   ///@}
  private:
   int m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   int m_cpu{0};
-  bool m_cpuHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   ECSSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
-  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 
   Aws::Vector<ECSServiceProjectedUtilizationMetric> m_projectedUtilizationMetrics;
-  bool m_projectedUtilizationMetricsHasBeenSet = false;
 
   Aws::Vector<ContainerRecommendation> m_containerRecommendations;
+  bool m_memoryHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
+  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
+  bool m_projectedUtilizationMetricsHasBeenSet = false;
   bool m_containerRecommendationsHasBeenSet = false;
 };
 

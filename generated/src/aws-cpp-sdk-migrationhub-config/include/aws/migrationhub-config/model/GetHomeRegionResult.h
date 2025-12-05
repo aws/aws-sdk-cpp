@@ -59,9 +59,9 @@ class GetHomeRegionResult {
   ///@}
  private:
   Aws::String m_homeRegion;
-  bool m_homeRegionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_homeRegionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

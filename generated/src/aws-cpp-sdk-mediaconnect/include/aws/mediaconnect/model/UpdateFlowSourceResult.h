@@ -77,12 +77,12 @@ class UpdateFlowSourceResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

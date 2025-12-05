@@ -98,12 +98,12 @@ class CancelStepsRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stepIds;
-  bool m_stepIdsHasBeenSet = false;
 
   StepCancellationOption m_stepCancellationOption{StepCancellationOption::NOT_SET};
+  bool m_clusterIdHasBeenSet = false;
+  bool m_stepIdsHasBeenSet = false;
   bool m_stepCancellationOptionHasBeenSet = false;
 };
 

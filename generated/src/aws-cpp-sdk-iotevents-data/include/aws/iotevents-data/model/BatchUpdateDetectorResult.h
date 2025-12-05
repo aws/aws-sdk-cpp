@@ -70,9 +70,9 @@ class BatchUpdateDetectorResult {
   ///@}
  private:
   Aws::Vector<BatchUpdateDetectorErrorEntry> m_batchUpdateDetectorErrorEntries;
-  bool m_batchUpdateDetectorErrorEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchUpdateDetectorErrorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

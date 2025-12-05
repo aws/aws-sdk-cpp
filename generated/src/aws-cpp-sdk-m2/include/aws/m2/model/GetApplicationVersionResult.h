@@ -162,27 +162,27 @@ class GetApplicationVersionResult {
   ///@}
  private:
   int m_applicationVersion{0};
-  bool m_applicationVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_definitionContent;
-  bool m_definitionContentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ApplicationVersionLifecycle m_status{ApplicationVersionLifecycle::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationVersionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_definitionContentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

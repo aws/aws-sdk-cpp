@@ -205,30 +205,30 @@ class EngagementSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   int m_memberCount{0};
-  bool m_memberCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_modifiedBy;
-  bool m_modifiedByHasBeenSet = false;
 
   Aws::Vector<EngagementContextType> m_contextTypes;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_memberCountHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_modifiedByHasBeenSet = false;
   bool m_contextTypesHasBeenSet = false;
 };
 

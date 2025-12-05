@@ -154,21 +154,21 @@ class SavingsPlansPurchaseAnalysisConfiguration {
   ///@}
  private:
   AccountScope m_accountScope{AccountScope::NOT_SET};
-  bool m_accountScopeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AnalysisType m_analysisType{AnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   Aws::Vector<SavingsPlans> m_savingsPlansToAdd;
-  bool m_savingsPlansToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_savingsPlansToExclude;
-  bool m_savingsPlansToExcludeHasBeenSet = false;
 
   DateInterval m_lookBackTimePeriod;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_analysisTypeHasBeenSet = false;
+  bool m_savingsPlansToAddHasBeenSet = false;
+  bool m_savingsPlansToExcludeHasBeenSet = false;
   bool m_lookBackTimePeriodHasBeenSet = false;
 };
 

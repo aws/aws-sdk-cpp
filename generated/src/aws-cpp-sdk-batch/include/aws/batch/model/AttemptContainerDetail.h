@@ -155,21 +155,21 @@ class AttemptContainerDetail {
   ///@}
  private:
   Aws::String m_containerInstanceArn;
-  bool m_containerInstanceArnHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   int m_exitCode{0};
-  bool m_exitCodeHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
+  bool m_containerInstanceArnHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_exitCodeHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_logStreamNameHasBeenSet = false;
   bool m_networkInterfacesHasBeenSet = false;
 };
 

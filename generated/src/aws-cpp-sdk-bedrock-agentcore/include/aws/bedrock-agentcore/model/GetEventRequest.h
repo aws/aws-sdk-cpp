@@ -101,15 +101,15 @@ class GetEventRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actorId;
-  bool m_actorIdHasBeenSet = false;
 
   Aws::String m_eventId;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_actorIdHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
 };
 

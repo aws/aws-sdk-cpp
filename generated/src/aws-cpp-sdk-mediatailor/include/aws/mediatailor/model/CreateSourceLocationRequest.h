@@ -165,21 +165,21 @@ class CreateSourceLocationRequest : public MediaTailorRequest {
   ///@}
  private:
   AccessConfiguration m_accessConfiguration;
-  bool m_accessConfigurationHasBeenSet = false;
 
   DefaultSegmentDeliveryConfiguration m_defaultSegmentDeliveryConfiguration;
-  bool m_defaultSegmentDeliveryConfigurationHasBeenSet = false;
 
   HttpConfiguration m_httpConfiguration;
-  bool m_httpConfigurationHasBeenSet = false;
 
   Aws::Vector<SegmentDeliveryConfiguration> m_segmentDeliveryConfigurations;
-  bool m_segmentDeliveryConfigurationsHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_accessConfigurationHasBeenSet = false;
+  bool m_defaultSegmentDeliveryConfigurationHasBeenSet = false;
+  bool m_httpConfigurationHasBeenSet = false;
+  bool m_segmentDeliveryConfigurationsHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

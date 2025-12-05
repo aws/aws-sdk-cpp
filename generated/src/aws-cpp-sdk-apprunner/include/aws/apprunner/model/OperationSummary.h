@@ -161,24 +161,24 @@ class OperationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   OperationType m_type{OperationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

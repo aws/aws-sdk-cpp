@@ -60,9 +60,9 @@ class GetTaxRegistrationResult {
   ///@}
  private:
   TaxRegistration m_taxRegistration;
-  bool m_taxRegistrationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taxRegistrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

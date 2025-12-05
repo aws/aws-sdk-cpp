@@ -296,45 +296,45 @@ class TerminologyProperties {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_sourceLanguageCode;
-  bool m_sourceLanguageCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetLanguageCodes;
-  bool m_targetLanguageCodesHasBeenSet = false;
 
   EncryptionKey m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   int m_sizeBytes{0};
-  bool m_sizeBytesHasBeenSet = false;
 
   int m_termCount{0};
-  bool m_termCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Directionality m_directionality{Directionality::NOT_SET};
-  bool m_directionalityHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_skippedTermCount{0};
-  bool m_skippedTermCountHasBeenSet = false;
 
   TerminologyDataFormat m_format{TerminologyDataFormat::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_sourceLanguageCodeHasBeenSet = false;
+  bool m_targetLanguageCodesHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_sizeBytesHasBeenSet = false;
+  bool m_termCountHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_directionalityHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_skippedTermCountHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class SshPublicKey {
   ///@}
  private:
   Aws::Utils::DateTime m_dateImported{};
-  bool m_dateImportedHasBeenSet = false;
 
   Aws::String m_sshPublicKeyBody;
-  bool m_sshPublicKeyBodyHasBeenSet = false;
 
   Aws::String m_sshPublicKeyId;
+  bool m_dateImportedHasBeenSet = false;
+  bool m_sshPublicKeyBodyHasBeenSet = false;
   bool m_sshPublicKeyIdHasBeenSet = false;
 };
 

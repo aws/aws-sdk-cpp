@@ -159,24 +159,24 @@ class SourceApiAssociationSummary {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Aws::String m_sourceApiId;
-  bool m_sourceApiIdHasBeenSet = false;
 
   Aws::String m_sourceApiArn;
-  bool m_sourceApiArnHasBeenSet = false;
 
   Aws::String m_mergedApiId;
-  bool m_mergedApiIdHasBeenSet = false;
 
   Aws::String m_mergedApiArn;
-  bool m_mergedApiArnHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_associationIdHasBeenSet = false;
+  bool m_associationArnHasBeenSet = false;
+  bool m_sourceApiIdHasBeenSet = false;
+  bool m_sourceApiArnHasBeenSet = false;
+  bool m_mergedApiIdHasBeenSet = false;
+  bool m_mergedApiArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

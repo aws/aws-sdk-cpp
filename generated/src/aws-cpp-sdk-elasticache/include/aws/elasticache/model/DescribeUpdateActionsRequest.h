@@ -240,33 +240,33 @@ class DescribeUpdateActionsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_serviceUpdateName;
-  bool m_serviceUpdateNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationGroupIds;
-  bool m_replicationGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheClusterIds;
-  bool m_cacheClusterIdsHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::Vector<ServiceUpdateStatus> m_serviceUpdateStatus;
-  bool m_serviceUpdateStatusHasBeenSet = false;
 
   TimeRangeFilter m_serviceUpdateTimeRange;
-  bool m_serviceUpdateTimeRangeHasBeenSet = false;
 
   Aws::Vector<UpdateActionStatus> m_updateActionStatus;
-  bool m_updateActionStatusHasBeenSet = false;
 
   bool m_showNodeLevelUpdateStatus{false};
-  bool m_showNodeLevelUpdateStatusHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_serviceUpdateNameHasBeenSet = false;
+  bool m_replicationGroupIdsHasBeenSet = false;
+  bool m_cacheClusterIdsHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_serviceUpdateStatusHasBeenSet = false;
+  bool m_serviceUpdateTimeRangeHasBeenSet = false;
+  bool m_updateActionStatusHasBeenSet = false;
+  bool m_showNodeLevelUpdateStatusHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

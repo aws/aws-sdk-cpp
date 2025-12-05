@@ -114,15 +114,15 @@ class DescribeAssociationExecutionsRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::Vector<AssociationExecutionFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_associationIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

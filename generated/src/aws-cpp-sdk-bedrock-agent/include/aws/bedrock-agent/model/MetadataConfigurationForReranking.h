@@ -69,9 +69,9 @@ class MetadataConfigurationForReranking {
   ///@}
  private:
   RerankingMetadataSelectionMode m_selectionMode{RerankingMetadataSelectionMode::NOT_SET};
-  bool m_selectionModeHasBeenSet = false;
 
   RerankingMetadataSelectiveModeConfiguration m_selectiveModeConfiguration;
+  bool m_selectionModeHasBeenSet = false;
   bool m_selectiveModeConfigurationHasBeenSet = false;
 };
 

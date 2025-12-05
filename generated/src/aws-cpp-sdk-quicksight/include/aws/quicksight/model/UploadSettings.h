@@ -136,21 +136,21 @@ class UploadSettings {
   ///@}
  private:
   FileFormat m_format{FileFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   int m_startFromRow{0};
-  bool m_startFromRowHasBeenSet = false;
 
   bool m_containsHeader{false};
-  bool m_containsHeaderHasBeenSet = false;
 
   TextQualifier m_textQualifier{TextQualifier::NOT_SET};
-  bool m_textQualifierHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   Aws::String m_customCellAddressRange;
+  bool m_formatHasBeenSet = false;
+  bool m_startFromRowHasBeenSet = false;
+  bool m_containsHeaderHasBeenSet = false;
+  bool m_textQualifierHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
   bool m_customCellAddressRangeHasBeenSet = false;
 };
 

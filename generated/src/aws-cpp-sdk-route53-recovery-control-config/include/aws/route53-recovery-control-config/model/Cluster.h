@@ -154,21 +154,21 @@ class Cluster {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Vector<ClusterEndpoint> m_clusterEndpoints;
-  bool m_clusterEndpointsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterEndpointsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

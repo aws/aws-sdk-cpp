@@ -149,21 +149,21 @@ class Celebrity {
   ///@}
  private:
   Aws::Vector<Aws::String> m_urls;
-  bool m_urlsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ComparedFace m_face;
-  bool m_faceHasBeenSet = false;
 
   double m_matchConfidence{0.0};
-  bool m_matchConfidenceHasBeenSet = false;
 
   KnownGender m_knownGender;
+  bool m_urlsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_faceHasBeenSet = false;
+  bool m_matchConfidenceHasBeenSet = false;
   bool m_knownGenderHasBeenSet = false;
 };
 

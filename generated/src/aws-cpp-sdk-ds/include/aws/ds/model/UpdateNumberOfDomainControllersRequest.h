@@ -66,9 +66,9 @@ class UpdateNumberOfDomainControllersRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   int m_desiredNumber{0};
+  bool m_directoryIdHasBeenSet = false;
   bool m_desiredNumberHasBeenSet = false;
 };
 

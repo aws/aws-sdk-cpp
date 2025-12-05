@@ -85,12 +85,12 @@ class AlgorithmStatusItem {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DetailedAlgorithmStatus m_status{DetailedAlgorithmStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

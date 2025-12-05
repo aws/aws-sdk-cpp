@@ -73,9 +73,9 @@ class RepositoryAnalysis {
   ///@}
  private:
   RepositoryHeadSourceCodeType m_repositoryHead;
-  bool m_repositoryHeadHasBeenSet = false;
 
   SourceCodeType m_sourceCodeType;
+  bool m_repositoryHeadHasBeenSet = false;
   bool m_sourceCodeTypeHasBeenSet = false;
 };
 

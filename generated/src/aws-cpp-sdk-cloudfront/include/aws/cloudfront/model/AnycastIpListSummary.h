@@ -197,30 +197,30 @@ class AnycastIpListSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_ipCount{0};
-  bool m_ipCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   IpamConfig m_ipamConfig;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_ipCountHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_ipamConfigHasBeenSet = false;
 };
 

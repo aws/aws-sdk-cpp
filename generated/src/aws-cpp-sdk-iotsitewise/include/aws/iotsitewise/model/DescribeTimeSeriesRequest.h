@@ -96,12 +96,12 @@ class DescribeTimeSeriesRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
+  bool m_aliasHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
   bool m_propertyIdHasBeenSet = false;
 };
 

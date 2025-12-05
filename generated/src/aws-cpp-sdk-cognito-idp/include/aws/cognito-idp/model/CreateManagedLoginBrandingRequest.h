@@ -142,18 +142,18 @@ class CreateManagedLoginBrandingRequest : public CognitoIdentityProviderRequest 
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   bool m_useCognitoProvidedValues{false};
-  bool m_useCognitoProvidedValuesHasBeenSet = false;
 
   Aws::Utils::Document m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<AssetType> m_assets;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_useCognitoProvidedValuesHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_assetsHasBeenSet = false;
 };
 

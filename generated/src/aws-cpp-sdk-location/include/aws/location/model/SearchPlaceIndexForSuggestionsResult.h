@@ -90,12 +90,12 @@ class SearchPlaceIndexForSuggestionsResult {
   ///@}
  private:
   SearchPlaceIndexForSuggestionsSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Vector<SearchForSuggestionsResult> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_summaryHasBeenSet = false;
+  bool m_resultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class TemplateVersionsResponse {
   ///@}
  private:
   Aws::Vector<TemplateVersionResponse> m_item;
-  bool m_itemHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestID;
+  bool m_itemHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIDHasBeenSet = false;
 };
 

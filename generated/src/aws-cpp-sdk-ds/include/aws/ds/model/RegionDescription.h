@@ -193,30 +193,30 @@ class RegionDescription {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   RegionType m_regionType{RegionType::NOT_SET};
-  bool m_regionTypeHasBeenSet = false;
 
   DirectoryStage m_status{DirectoryStage::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DirectoryVpcSettings m_vpcSettings;
-  bool m_vpcSettingsHasBeenSet = false;
 
   int m_desiredNumberOfDomainControllers{0};
-  bool m_desiredNumberOfDomainControllersHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_statusLastUpdatedDateTime{};
-  bool m_statusLastUpdatedDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_regionTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_vpcSettingsHasBeenSet = false;
+  bool m_desiredNumberOfDomainControllersHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_statusLastUpdatedDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

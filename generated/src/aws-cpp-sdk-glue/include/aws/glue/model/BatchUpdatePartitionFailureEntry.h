@@ -77,9 +77,9 @@ class BatchUpdatePartitionFailureEntry {
   ///@}
  private:
   Aws::Vector<Aws::String> m_partitionValueList;
-  bool m_partitionValueListHasBeenSet = false;
 
   ErrorDetail m_errorDetail;
+  bool m_partitionValueListHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

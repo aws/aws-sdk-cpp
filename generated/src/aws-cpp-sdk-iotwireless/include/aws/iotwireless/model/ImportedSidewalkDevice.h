@@ -105,15 +105,15 @@ class ImportedSidewalkDevice {
   ///@}
  private:
   Aws::String m_sidewalkManufacturingSn;
-  bool m_sidewalkManufacturingSnHasBeenSet = false;
 
   OnboardStatus m_onboardingStatus{OnboardStatus::NOT_SET};
-  bool m_onboardingStatusHasBeenSet = false;
 
   Aws::String m_onboardingStatusReason;
-  bool m_onboardingStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
+  bool m_sidewalkManufacturingSnHasBeenSet = false;
+  bool m_onboardingStatusHasBeenSet = false;
+  bool m_onboardingStatusReasonHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
 };
 

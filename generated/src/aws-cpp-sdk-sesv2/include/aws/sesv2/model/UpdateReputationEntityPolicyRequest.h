@@ -89,12 +89,12 @@ class UpdateReputationEntityPolicyRequest : public SESV2Request {
   ///@}
  private:
   ReputationEntityType m_reputationEntityType{ReputationEntityType::NOT_SET};
-  bool m_reputationEntityTypeHasBeenSet = false;
 
   Aws::String m_reputationEntityReference;
-  bool m_reputationEntityReferenceHasBeenSet = false;
 
   Aws::String m_reputationEntityPolicy;
+  bool m_reputationEntityTypeHasBeenSet = false;
+  bool m_reputationEntityReferenceHasBeenSet = false;
   bool m_reputationEntityPolicyHasBeenSet = false;
 };
 

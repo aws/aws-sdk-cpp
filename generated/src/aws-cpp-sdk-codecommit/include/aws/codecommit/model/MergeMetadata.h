@@ -103,15 +103,15 @@ class MergeMetadata {
   ///@}
  private:
   bool m_isMerged{false};
-  bool m_isMergedHasBeenSet = false;
 
   Aws::String m_mergedBy;
-  bool m_mergedByHasBeenSet = false;
 
   Aws::String m_mergeCommitId;
-  bool m_mergeCommitIdHasBeenSet = false;
 
   MergeOptionTypeEnum m_mergeOption{MergeOptionTypeEnum::NOT_SET};
+  bool m_isMergedHasBeenSet = false;
+  bool m_mergedByHasBeenSet = false;
+  bool m_mergeCommitIdHasBeenSet = false;
   bool m_mergeOptionHasBeenSet = false;
 };
 

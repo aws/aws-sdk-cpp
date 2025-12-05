@@ -249,39 +249,39 @@ class WirelessDeviceImportTask {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
-  bool m_positioningHasBeenSet = false;
 
   SidewalkGetStartImportInfo m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ImportTaskStatus m_status{ImportTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   long long m_initializedImportedDeviceCount{0};
-  bool m_initializedImportedDeviceCountHasBeenSet = false;
 
   long long m_pendingImportedDeviceCount{0};
-  bool m_pendingImportedDeviceCountHasBeenSet = false;
 
   long long m_onboardedImportedDeviceCount{0};
-  bool m_onboardedImportedDeviceCountHasBeenSet = false;
 
   long long m_failedImportedDeviceCount{0};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
+  bool m_sidewalkHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_initializedImportedDeviceCountHasBeenSet = false;
+  bool m_pendingImportedDeviceCountHasBeenSet = false;
+  bool m_onboardedImportedDeviceCountHasBeenSet = false;
   bool m_failedImportedDeviceCountHasBeenSet = false;
 };
 

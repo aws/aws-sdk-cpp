@@ -75,9 +75,9 @@ class IntegerCriteriaCondition {
   ///@}
  private:
   ComparisonOperator m_comparison{ComparisonOperator::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::Vector<int> m_values;
+  bool m_comparisonHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

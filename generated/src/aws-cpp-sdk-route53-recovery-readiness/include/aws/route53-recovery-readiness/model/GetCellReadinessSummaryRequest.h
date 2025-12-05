@@ -86,12 +86,12 @@ class GetCellReadinessSummaryRequest : public Route53RecoveryReadinessRequest {
   ///@}
  private:
   Aws::String m_cellName;
-  bool m_cellNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_cellNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

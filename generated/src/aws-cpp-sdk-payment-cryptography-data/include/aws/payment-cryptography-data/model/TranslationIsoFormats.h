@@ -106,15 +106,15 @@ class TranslationIsoFormats {
   ///@}
  private:
   TranslationPinDataIsoFormat034 m_isoFormat0;
-  bool m_isoFormat0HasBeenSet = false;
 
   TranslationPinDataIsoFormat1 m_isoFormat1;
-  bool m_isoFormat1HasBeenSet = false;
 
   TranslationPinDataIsoFormat034 m_isoFormat3;
-  bool m_isoFormat3HasBeenSet = false;
 
   TranslationPinDataIsoFormat034 m_isoFormat4;
+  bool m_isoFormat0HasBeenSet = false;
+  bool m_isoFormat1HasBeenSet = false;
+  bool m_isoFormat3HasBeenSet = false;
   bool m_isoFormat4HasBeenSet = false;
 };
 

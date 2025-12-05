@@ -166,21 +166,21 @@ class S3DataAccessAsset {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keyPrefixes;
-  bool m_keyPrefixesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::String m_s3AccessPointAlias;
-  bool m_s3AccessPointAliasHasBeenSet = false;
 
   Aws::String m_s3AccessPointArn;
-  bool m_s3AccessPointArnHasBeenSet = false;
 
   Aws::Vector<KmsKeyToGrant> m_kmsKeysToGrant;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyPrefixesHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
+  bool m_s3AccessPointAliasHasBeenSet = false;
+  bool m_s3AccessPointArnHasBeenSet = false;
   bool m_kmsKeysToGrantHasBeenSet = false;
 };
 

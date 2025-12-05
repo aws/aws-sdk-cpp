@@ -134,21 +134,21 @@ class Entitlement {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   long long m_maxCount{0};
-  bool m_maxCountHasBeenSet = false;
 
   bool m_overage{false};
-  bool m_overageHasBeenSet = false;
 
   EntitlementUnit m_unit{EntitlementUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   bool m_allowCheckIn{false};
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_maxCountHasBeenSet = false;
+  bool m_overageHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_allowCheckInHasBeenSet = false;
 };
 

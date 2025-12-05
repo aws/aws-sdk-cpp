@@ -124,12 +124,12 @@ class DataProcessing {
   ///@}
  private:
   Aws::String m_inputFilter;
-  bool m_inputFilterHasBeenSet = false;
 
   Aws::String m_outputFilter;
-  bool m_outputFilterHasBeenSet = false;
 
   JoinSource m_joinSource{JoinSource::NOT_SET};
+  bool m_inputFilterHasBeenSet = false;
+  bool m_outputFilterHasBeenSet = false;
   bool m_joinSourceHasBeenSet = false;
 };
 

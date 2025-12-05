@@ -86,12 +86,12 @@ class ListResourcesResult {
   ///@}
  private:
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

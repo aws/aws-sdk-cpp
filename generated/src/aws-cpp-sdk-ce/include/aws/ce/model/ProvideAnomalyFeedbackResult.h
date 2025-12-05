@@ -59,9 +59,9 @@ class ProvideAnomalyFeedbackResult {
   ///@}
  private:
   Aws::String m_anomalyId;
-  bool m_anomalyIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anomalyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

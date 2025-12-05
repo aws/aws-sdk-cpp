@@ -61,9 +61,9 @@ class GetCatalogResult {
   ///@}
  private:
   Catalog m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

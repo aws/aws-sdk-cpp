@@ -76,12 +76,12 @@ class RevokeFlowEntitlementResult {
   ///@}
  private:
   Aws::String m_entitlementArn;
-  bool m_entitlementArnHasBeenSet = false;
 
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitlementArnHasBeenSet = false;
+  bool m_flowArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

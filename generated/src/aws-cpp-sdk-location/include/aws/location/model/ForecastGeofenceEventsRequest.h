@@ -169,24 +169,24 @@ class ForecastGeofenceEventsRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   ForecastGeofenceEventsDeviceState m_deviceState;
-  bool m_deviceStateHasBeenSet = false;
 
   double m_timeHorizonMinutes{0.0};
-  bool m_timeHorizonMinutesHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
-  bool m_distanceUnitHasBeenSet = false;
 
   SpeedUnit m_speedUnit{SpeedUnit::NOT_SET};
-  bool m_speedUnitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_collectionNameHasBeenSet = false;
+  bool m_deviceStateHasBeenSet = false;
+  bool m_timeHorizonMinutesHasBeenSet = false;
+  bool m_distanceUnitHasBeenSet = false;
+  bool m_speedUnitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

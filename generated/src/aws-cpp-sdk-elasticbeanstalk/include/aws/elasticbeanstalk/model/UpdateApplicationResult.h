@@ -66,9 +66,9 @@ class UpdateApplicationResult {
   ///@}
  private:
   ApplicationDescription m_application;
-  bool m_applicationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_applicationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

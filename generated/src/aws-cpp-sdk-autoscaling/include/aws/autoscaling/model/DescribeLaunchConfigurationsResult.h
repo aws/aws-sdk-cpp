@@ -89,12 +89,12 @@ class DescribeLaunchConfigurationsResult {
   ///@}
  private:
   Aws::Vector<LaunchConfiguration> m_launchConfigurations;
-  bool m_launchConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_launchConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

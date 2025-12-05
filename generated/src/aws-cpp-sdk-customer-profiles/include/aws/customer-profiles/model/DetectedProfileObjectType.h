@@ -104,12 +104,12 @@ class DetectedProfileObjectType {
   ///@}
  private:
   Aws::String m_sourceLastUpdatedTimestampFormat;
-  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
 
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
+  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_keysHasBeenSet = false;
 };
 

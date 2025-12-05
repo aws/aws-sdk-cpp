@@ -94,12 +94,12 @@ class CompatibilityInformation {
   ///@}
  private:
   int m_clientCompatibilityVersion{0};
-  bool m_clientCompatibilityVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedModelIds;
-  bool m_supportedModelIdsHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_clientCompatibilityVersionHasBeenSet = false;
+  bool m_supportedModelIdsHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

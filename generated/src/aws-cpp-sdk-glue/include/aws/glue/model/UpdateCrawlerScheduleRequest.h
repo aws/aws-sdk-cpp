@@ -70,9 +70,9 @@ class UpdateCrawlerScheduleRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_crawlerName;
-  bool m_crawlerNameHasBeenSet = false;
 
   Aws::String m_schedule;
+  bool m_crawlerNameHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

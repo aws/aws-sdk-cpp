@@ -89,12 +89,12 @@ class Function {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   FunctionConfiguration m_functionConfiguration;
-  bool m_functionConfigurationHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_functionArnHasBeenSet = false;
+  bool m_functionConfigurationHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

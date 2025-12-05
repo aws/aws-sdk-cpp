@@ -68,9 +68,9 @@ class LoRaWANUpdateGatewayTaskEntry {
   ///@}
  private:
   LoRaWANGatewayVersion m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   LoRaWANGatewayVersion m_updateVersion;
+  bool m_currentVersionHasBeenSet = false;
   bool m_updateVersionHasBeenSet = false;
 };
 

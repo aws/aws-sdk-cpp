@@ -110,15 +110,15 @@ class UpdateBrowserStreamRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_browserIdentifier;
-  bool m_browserIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   StreamUpdate m_streamUpdate;
-  bool m_streamUpdateHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_browserIdentifierHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_streamUpdateHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

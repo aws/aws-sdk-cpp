@@ -100,12 +100,12 @@ class Volume {
   ///@}
  private:
   Host m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EFSVolumeConfiguration m_efsVolumeConfiguration;
+  bool m_hostHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_efsVolumeConfigurationHasBeenSet = false;
 };
 

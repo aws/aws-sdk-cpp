@@ -69,9 +69,9 @@ class AggregationListItem {
   ///@}
  private:
   Aws::String m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_displayValue;
+  bool m_attributeHasBeenSet = false;
   bool m_displayValueHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class DashBaseUrl {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_serviceLocation;
-  bool m_serviceLocationHasBeenSet = false;
 
   int m_dvbPriority{0};
-  bool m_dvbPriorityHasBeenSet = false;
 
   int m_dvbWeight{0};
+  bool m_urlHasBeenSet = false;
+  bool m_serviceLocationHasBeenSet = false;
+  bool m_dvbPriorityHasBeenSet = false;
   bool m_dvbWeightHasBeenSet = false;
 };
 

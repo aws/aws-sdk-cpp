@@ -173,24 +173,24 @@ class InstanceTopology {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkNodes;
-  bool m_networkNodesHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_zoneId;
-  bool m_zoneIdHasBeenSet = false;
 
   Aws::String m_capacityBlockId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_networkNodesHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_zoneIdHasBeenSet = false;
   bool m_capacityBlockIdHasBeenSet = false;
 };
 

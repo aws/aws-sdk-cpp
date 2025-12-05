@@ -65,9 +65,9 @@ class PutResourcePolicyRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

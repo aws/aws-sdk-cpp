@@ -89,12 +89,12 @@ class InstanceStateChange {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceState m_currentState;
-  bool m_currentStateHasBeenSet = false;
 
   InstanceState m_previousState;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_currentStateHasBeenSet = false;
   bool m_previousStateHasBeenSet = false;
 };
 

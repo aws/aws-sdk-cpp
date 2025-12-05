@@ -68,9 +68,9 @@ class ErrorInfo {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   ErrorDetails m_errorType{ErrorDetails::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

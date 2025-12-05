@@ -144,21 +144,21 @@ class GetFunctionResult {
   ///@}
  private:
   FunctionConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   FunctionCodeLocation m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TagsError m_tagsError;
-  bool m_tagsErrorHasBeenSet = false;
 
   Concurrency m_concurrency;
-  bool m_concurrencyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tagsErrorHasBeenSet = false;
+  bool m_concurrencyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

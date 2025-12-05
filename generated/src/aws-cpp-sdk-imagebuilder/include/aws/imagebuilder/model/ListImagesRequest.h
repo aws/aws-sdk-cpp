@@ -145,21 +145,21 @@ class ListImagesRequest : public ImagebuilderRequest {
   ///@}
  private:
   Ownership m_owner{Ownership::NOT_SET};
-  bool m_ownerHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_byName{false};
-  bool m_byNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includeDeprecated{false};
+  bool m_ownerHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_byNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_includeDeprecatedHasBeenSet = false;
 };
 

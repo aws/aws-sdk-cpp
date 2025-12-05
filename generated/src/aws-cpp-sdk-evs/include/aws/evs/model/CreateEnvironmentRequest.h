@@ -387,48 +387,48 @@ class CreateEnvironmentRequest : public EVSRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ServiceAccessSecurityGroups m_serviceAccessSecurityGroups;
-  bool m_serviceAccessSecurityGroupsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_serviceAccessSubnetId;
-  bool m_serviceAccessSubnetIdHasBeenSet = false;
 
   VcfVersion m_vcfVersion{VcfVersion::NOT_SET};
-  bool m_vcfVersionHasBeenSet = false;
 
   bool m_termsAccepted{false};
-  bool m_termsAcceptedHasBeenSet = false;
 
   Aws::Vector<LicenseInfo> m_licenseInfo;
-  bool m_licenseInfoHasBeenSet = false;
 
   InitialVlans m_initialVlans;
-  bool m_initialVlansHasBeenSet = false;
 
   Aws::Vector<HostInfoForCreate> m_hosts;
-  bool m_hostsHasBeenSet = false;
 
   ConnectivityInfo m_connectivityInfo;
-  bool m_connectivityInfoHasBeenSet = false;
 
   VcfHostnames m_vcfHostnames;
-  bool m_vcfHostnamesHasBeenSet = false;
 
   Aws::String m_siteId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_serviceAccessSecurityGroupsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_serviceAccessSubnetIdHasBeenSet = false;
+  bool m_vcfVersionHasBeenSet = false;
+  bool m_termsAcceptedHasBeenSet = false;
+  bool m_licenseInfoHasBeenSet = false;
+  bool m_initialVlansHasBeenSet = false;
+  bool m_hostsHasBeenSet = false;
+  bool m_connectivityInfoHasBeenSet = false;
+  bool m_vcfHostnamesHasBeenSet = false;
   bool m_siteIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DescribeUserImportJobResult {
   ///@}
  private:
   UserImportJobType m_userImportJob;
-  bool m_userImportJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userImportJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class ExportRevisionsToS3ResponseDetails {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   ExportServerSideEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::Vector<RevisionDestinationEntry> m_revisionDestinations;
-  bool m_revisionDestinationsHasBeenSet = false;
 
   Aws::String m_eventActionArn;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_revisionDestinationsHasBeenSet = false;
   bool m_eventActionArnHasBeenSet = false;
 };
 

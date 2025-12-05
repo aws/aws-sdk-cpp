@@ -104,12 +104,12 @@ class DocumentAttributeTarget {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   DocumentAttributeValue m_value;
-  bool m_valueHasBeenSet = false;
 
   AttributeValueOperator m_attributeValueOperator{AttributeValueOperator::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_attributeValueOperatorHasBeenSet = false;
 };
 

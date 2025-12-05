@@ -91,12 +91,12 @@ class NetworkInterface {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ips;
-  bool m_ipsHasBeenSet = false;
 
   bool m_isPrimary{false};
-  bool m_isPrimaryHasBeenSet = false;
 
   Aws::String m_macAddress;
+  bool m_ipsHasBeenSet = false;
+  bool m_isPrimaryHasBeenSet = false;
   bool m_macAddressHasBeenSet = false;
 };
 

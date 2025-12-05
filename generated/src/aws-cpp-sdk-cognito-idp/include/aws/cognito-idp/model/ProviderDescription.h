@@ -112,15 +112,15 @@ class ProviderDescription {
   ///@}
  private:
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   IdentityProviderTypeType m_providerType{IdentityProviderTypeType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_providerNameHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

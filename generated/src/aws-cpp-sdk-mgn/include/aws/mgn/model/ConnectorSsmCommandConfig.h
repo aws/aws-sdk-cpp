@@ -100,15 +100,15 @@ class ConnectorSsmCommandConfig {
   ///@}
  private:
   Aws::String m_cloudWatchLogGroupName;
-  bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
   bool m_cloudWatchOutputEnabled{false};
-  bool m_cloudWatchOutputEnabledHasBeenSet = false;
 
   Aws::String m_outputS3BucketName;
-  bool m_outputS3BucketNameHasBeenSet = false;
 
   bool m_s3OutputEnabled{false};
+  bool m_cloudWatchLogGroupNameHasBeenSet = false;
+  bool m_cloudWatchOutputEnabledHasBeenSet = false;
+  bool m_outputS3BucketNameHasBeenSet = false;
   bool m_s3OutputEnabledHasBeenSet = false;
 };
 

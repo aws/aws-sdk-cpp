@@ -990,126 +990,126 @@ class S3Settings {
   ///@}
  private:
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_externalTableDefinition;
-  bool m_externalTableDefinitionHasBeenSet = false;
 
   Aws::String m_csvRowDelimiter;
-  bool m_csvRowDelimiterHasBeenSet = false;
 
   Aws::String m_csvDelimiter;
-  bool m_csvDelimiterHasBeenSet = false;
 
   Aws::String m_bucketFolder;
-  bool m_bucketFolderHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   CompressionTypeValue m_compressionType{CompressionTypeValue::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   EncryptionModeValue m_encryptionMode{EncryptionModeValue::NOT_SET};
-  bool m_encryptionModeHasBeenSet = false;
 
   Aws::String m_serverSideEncryptionKmsKeyId;
-  bool m_serverSideEncryptionKmsKeyIdHasBeenSet = false;
 
   DataFormatValue m_dataFormat{DataFormatValue::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   EncodingTypeValue m_encodingType{EncodingTypeValue::NOT_SET};
-  bool m_encodingTypeHasBeenSet = false;
 
   int m_dictPageSizeLimit{0};
-  bool m_dictPageSizeLimitHasBeenSet = false;
 
   int m_rowGroupLength{0};
-  bool m_rowGroupLengthHasBeenSet = false;
 
   int m_dataPageSize{0};
-  bool m_dataPageSizeHasBeenSet = false;
 
   ParquetVersionValue m_parquetVersion{ParquetVersionValue::NOT_SET};
-  bool m_parquetVersionHasBeenSet = false;
 
   bool m_enableStatistics{false};
-  bool m_enableStatisticsHasBeenSet = false;
 
   bool m_includeOpForFullLoad{false};
-  bool m_includeOpForFullLoadHasBeenSet = false;
 
   bool m_cdcInsertsOnly{false};
-  bool m_cdcInsertsOnlyHasBeenSet = false;
 
   Aws::String m_timestampColumnName;
-  bool m_timestampColumnNameHasBeenSet = false;
 
   bool m_parquetTimestampInMillisecond{false};
-  bool m_parquetTimestampInMillisecondHasBeenSet = false;
 
   bool m_cdcInsertsAndUpdates{false};
-  bool m_cdcInsertsAndUpdatesHasBeenSet = false;
 
   bool m_datePartitionEnabled{false};
-  bool m_datePartitionEnabledHasBeenSet = false;
 
   DatePartitionSequenceValue m_datePartitionSequence{DatePartitionSequenceValue::NOT_SET};
-  bool m_datePartitionSequenceHasBeenSet = false;
 
   DatePartitionDelimiterValue m_datePartitionDelimiter{DatePartitionDelimiterValue::NOT_SET};
-  bool m_datePartitionDelimiterHasBeenSet = false;
 
   bool m_useCsvNoSupValue{false};
-  bool m_useCsvNoSupValueHasBeenSet = false;
 
   Aws::String m_csvNoSupValue;
-  bool m_csvNoSupValueHasBeenSet = false;
 
   bool m_preserveTransactions{false};
-  bool m_preserveTransactionsHasBeenSet = false;
 
   Aws::String m_cdcPath;
-  bool m_cdcPathHasBeenSet = false;
 
   bool m_useTaskStartTimeForFullLoadTimestamp{false};
-  bool m_useTaskStartTimeForFullLoadTimestampHasBeenSet = false;
 
   CannedAclForObjectsValue m_cannedAclForObjects{CannedAclForObjectsValue::NOT_SET};
-  bool m_cannedAclForObjectsHasBeenSet = false;
 
   bool m_addColumnName{false};
-  bool m_addColumnNameHasBeenSet = false;
 
   int m_cdcMaxBatchInterval{0};
-  bool m_cdcMaxBatchIntervalHasBeenSet = false;
 
   int m_cdcMinFileSize{0};
-  bool m_cdcMinFileSizeHasBeenSet = false;
 
   Aws::String m_csvNullValue;
-  bool m_csvNullValueHasBeenSet = false;
 
   int m_ignoreHeaderRows{0};
-  bool m_ignoreHeaderRowsHasBeenSet = false;
 
   int m_maxFileSize{0};
-  bool m_maxFileSizeHasBeenSet = false;
 
   bool m_rfc4180{false};
-  bool m_rfc4180HasBeenSet = false;
 
   Aws::String m_datePartitionTimezone;
-  bool m_datePartitionTimezoneHasBeenSet = false;
 
   bool m_addTrailingPaddingCharacter{false};
-  bool m_addTrailingPaddingCharacterHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   bool m_glueCatalogGeneration{false};
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_externalTableDefinitionHasBeenSet = false;
+  bool m_csvRowDelimiterHasBeenSet = false;
+  bool m_csvDelimiterHasBeenSet = false;
+  bool m_bucketFolderHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
+  bool m_encryptionModeHasBeenSet = false;
+  bool m_serverSideEncryptionKmsKeyIdHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_encodingTypeHasBeenSet = false;
+  bool m_dictPageSizeLimitHasBeenSet = false;
+  bool m_rowGroupLengthHasBeenSet = false;
+  bool m_dataPageSizeHasBeenSet = false;
+  bool m_parquetVersionHasBeenSet = false;
+  bool m_enableStatisticsHasBeenSet = false;
+  bool m_includeOpForFullLoadHasBeenSet = false;
+  bool m_cdcInsertsOnlyHasBeenSet = false;
+  bool m_timestampColumnNameHasBeenSet = false;
+  bool m_parquetTimestampInMillisecondHasBeenSet = false;
+  bool m_cdcInsertsAndUpdatesHasBeenSet = false;
+  bool m_datePartitionEnabledHasBeenSet = false;
+  bool m_datePartitionSequenceHasBeenSet = false;
+  bool m_datePartitionDelimiterHasBeenSet = false;
+  bool m_useCsvNoSupValueHasBeenSet = false;
+  bool m_csvNoSupValueHasBeenSet = false;
+  bool m_preserveTransactionsHasBeenSet = false;
+  bool m_cdcPathHasBeenSet = false;
+  bool m_useTaskStartTimeForFullLoadTimestampHasBeenSet = false;
+  bool m_cannedAclForObjectsHasBeenSet = false;
+  bool m_addColumnNameHasBeenSet = false;
+  bool m_cdcMaxBatchIntervalHasBeenSet = false;
+  bool m_cdcMinFileSizeHasBeenSet = false;
+  bool m_csvNullValueHasBeenSet = false;
+  bool m_ignoreHeaderRowsHasBeenSet = false;
+  bool m_maxFileSizeHasBeenSet = false;
+  bool m_rfc4180HasBeenSet = false;
+  bool m_datePartitionTimezoneHasBeenSet = false;
+  bool m_addTrailingPaddingCharacterHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_glueCatalogGenerationHasBeenSet = false;
 };
 

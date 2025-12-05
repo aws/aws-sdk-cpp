@@ -145,21 +145,21 @@ class GetAnomaliesRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   AnomalyDateInterval m_dateInterval;
-  bool m_dateIntervalHasBeenSet = false;
 
   AnomalyFeedbackType m_feedback{AnomalyFeedbackType::NOT_SET};
-  bool m_feedbackHasBeenSet = false;
 
   TotalImpactFilter m_totalImpact;
-  bool m_totalImpactHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_monitorArnHasBeenSet = false;
+  bool m_dateIntervalHasBeenSet = false;
+  bool m_feedbackHasBeenSet = false;
+  bool m_totalImpactHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

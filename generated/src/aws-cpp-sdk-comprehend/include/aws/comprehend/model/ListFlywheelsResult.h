@@ -85,12 +85,12 @@ class ListFlywheelsResult {
   ///@}
  private:
   Aws::Vector<FlywheelSummary> m_flywheelSummaryList;
-  bool m_flywheelSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flywheelSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

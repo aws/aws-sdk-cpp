@@ -76,9 +76,9 @@ class RetrievedService {
   ///@}
  private:
   Service m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::Vector<GraphLink> m_links;
+  bool m_serviceHasBeenSet = false;
   bool m_linksHasBeenSet = false;
 };
 

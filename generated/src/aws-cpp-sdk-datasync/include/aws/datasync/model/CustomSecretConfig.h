@@ -75,9 +75,9 @@ class CustomSecretConfig {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_secretAccessRoleArn;
+  bool m_secretArnHasBeenSet = false;
   bool m_secretAccessRoleArnHasBeenSet = false;
 };
 

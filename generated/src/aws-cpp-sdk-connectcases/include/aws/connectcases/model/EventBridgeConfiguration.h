@@ -68,9 +68,9 @@ class EventBridgeConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   EventIncludedData m_includedData;
+  bool m_enabledHasBeenSet = false;
   bool m_includedDataHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class UnprocessedNamedQueryId {
   ///@}
  private:
   Aws::String m_namedQueryId;
-  bool m_namedQueryIdHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_namedQueryIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

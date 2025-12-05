@@ -139,18 +139,18 @@ class ArgoCdConfigResponse {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   ArgoCdAwsIdcConfigResponse m_awsIdc;
-  bool m_awsIdcHasBeenSet = false;
 
   Aws::Vector<ArgoCdRoleMapping> m_rbacRoleMappings;
-  bool m_rbacRoleMappingsHasBeenSet = false;
 
   ArgoCdNetworkAccessConfigResponse m_networkAccess;
-  bool m_networkAccessHasBeenSet = false;
 
   Aws::String m_serverUrl;
+  bool m_namespaceHasBeenSet = false;
+  bool m_awsIdcHasBeenSet = false;
+  bool m_rbacRoleMappingsHasBeenSet = false;
+  bool m_networkAccessHasBeenSet = false;
   bool m_serverUrlHasBeenSet = false;
 };
 

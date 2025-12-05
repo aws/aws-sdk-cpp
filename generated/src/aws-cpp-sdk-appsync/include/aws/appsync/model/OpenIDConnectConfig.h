@@ -107,15 +107,15 @@ class OpenIDConnectConfig {
   ///@}
  private:
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   long long m_iatTTL{0};
-  bool m_iatTTLHasBeenSet = false;
 
   long long m_authTTL{0};
+  bool m_issuerHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_iatTTLHasBeenSet = false;
   bool m_authTTLHasBeenSet = false;
 };
 

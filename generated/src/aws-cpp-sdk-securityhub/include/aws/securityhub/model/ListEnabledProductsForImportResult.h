@@ -84,12 +84,12 @@ class ListEnabledProductsForImportResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_productSubscriptions;
-  bool m_productSubscriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productSubscriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

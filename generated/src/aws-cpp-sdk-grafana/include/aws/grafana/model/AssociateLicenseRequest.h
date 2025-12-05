@@ -89,12 +89,12 @@ class AssociateLicenseRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::String m_grafanaToken;
-  bool m_grafanaTokenHasBeenSet = false;
 
   LicenseType m_licenseType{LicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_grafanaTokenHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

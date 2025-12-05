@@ -70,9 +70,9 @@ class KeyspacesMetadata {
   ///@}
  private:
   Aws::String m_expirationTime;
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::String m_writeTime;
+  bool m_expirationTimeHasBeenSet = false;
   bool m_writeTimeHasBeenSet = false;
 };
 

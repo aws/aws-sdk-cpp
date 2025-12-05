@@ -273,39 +273,39 @@ class CreateImageRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_imageRecipeArn;
-  bool m_imageRecipeArnHasBeenSet = false;
 
   Aws::String m_containerRecipeArn;
-  bool m_containerRecipeArnHasBeenSet = false;
 
   Aws::String m_distributionConfigurationArn;
-  bool m_distributionConfigurationArnHasBeenSet = false;
 
   Aws::String m_infrastructureConfigurationArn;
-  bool m_infrastructureConfigurationArnHasBeenSet = false;
 
   ImageTestsConfiguration m_imageTestsConfiguration;
-  bool m_imageTestsConfigurationHasBeenSet = false;
 
   bool m_enhancedImageMetadataEnabled{false};
-  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   Aws::Vector<WorkflowConfiguration> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   ImageLoggingConfiguration m_loggingConfiguration;
+  bool m_imageRecipeArnHasBeenSet = false;
+  bool m_containerRecipeArnHasBeenSet = false;
+  bool m_distributionConfigurationArnHasBeenSet = false;
+  bool m_infrastructureConfigurationArnHasBeenSet = false;
+  bool m_imageTestsConfigurationHasBeenSet = false;
+  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_imageScanningConfigurationHasBeenSet = false;
+  bool m_workflowsHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;
 };
 

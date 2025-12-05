@@ -93,12 +93,12 @@ class InvestigationFeedback {
   ///@}
  private:
   UsefulnessRating m_usefulness{UsefulnessRating::NOT_SET};
-  bool m_usefulnessHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedAt{};
+  bool m_usefulnessHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_submittedAtHasBeenSet = false;
 };
 

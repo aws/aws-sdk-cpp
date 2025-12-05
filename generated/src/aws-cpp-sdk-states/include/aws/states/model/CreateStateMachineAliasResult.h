@@ -78,12 +78,12 @@ class CreateStateMachineAliasResult {
   ///@}
  private:
   Aws::String m_stateMachineAliasArn;
-  bool m_stateMachineAliasArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stateMachineAliasArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -253,39 +253,39 @@ class UpgradeTarget {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_autoUpgrade{false};
-  bool m_autoUpgradeHasBeenSet = false;
 
   bool m_isMajorVersionUpgrade{false};
-  bool m_isMajorVersionUpgradeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedEngineModes;
-  bool m_supportedEngineModesHasBeenSet = false;
 
   bool m_supportsParallelQuery{false};
-  bool m_supportsParallelQueryHasBeenSet = false;
 
   bool m_supportsGlobalDatabases{false};
-  bool m_supportsGlobalDatabasesHasBeenSet = false;
 
   bool m_supportsBabelfish{false};
-  bool m_supportsBabelfishHasBeenSet = false;
 
   bool m_supportsLimitlessDatabase{false};
-  bool m_supportsLimitlessDatabaseHasBeenSet = false;
 
   bool m_supportsLocalWriteForwarding{false};
-  bool m_supportsLocalWriteForwardingHasBeenSet = false;
 
   bool m_supportsIntegrations{false};
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_autoUpgradeHasBeenSet = false;
+  bool m_isMajorVersionUpgradeHasBeenSet = false;
+  bool m_supportedEngineModesHasBeenSet = false;
+  bool m_supportsParallelQueryHasBeenSet = false;
+  bool m_supportsGlobalDatabasesHasBeenSet = false;
+  bool m_supportsBabelfishHasBeenSet = false;
+  bool m_supportsLimitlessDatabaseHasBeenSet = false;
+  bool m_supportsLocalWriteForwardingHasBeenSet = false;
   bool m_supportsIntegrationsHasBeenSet = false;
 };
 

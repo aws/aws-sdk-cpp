@@ -138,18 +138,18 @@ class UpdateTrackerRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PositionFiltering m_positionFiltering{PositionFiltering::NOT_SET};
-  bool m_positionFilteringHasBeenSet = false;
 
   bool m_eventBridgeEnabled{false};
-  bool m_eventBridgeEnabledHasBeenSet = false;
 
   bool m_kmsKeyEnableGeospatialQueries{false};
+  bool m_trackerNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_positionFilteringHasBeenSet = false;
+  bool m_eventBridgeEnabledHasBeenSet = false;
   bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class MergeRouterInputStreamDetails {
   ///@}
  private:
   MergeRouterInputIndexedStreamDetails m_sourceIndexZeroStreamDetails;
-  bool m_sourceIndexZeroStreamDetailsHasBeenSet = false;
 
   MergeRouterInputIndexedStreamDetails m_sourceIndexOneStreamDetails;
+  bool m_sourceIndexZeroStreamDetailsHasBeenSet = false;
   bool m_sourceIndexOneStreamDetailsHasBeenSet = false;
 };
 

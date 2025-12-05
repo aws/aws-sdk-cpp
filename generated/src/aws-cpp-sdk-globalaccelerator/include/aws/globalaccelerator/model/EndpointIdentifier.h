@@ -75,9 +75,9 @@ class EndpointIdentifier {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   bool m_clientIPPreservationEnabled{false};
+  bool m_endpointIdHasBeenSet = false;
   bool m_clientIPPreservationEnabledHasBeenSet = false;
 };
 

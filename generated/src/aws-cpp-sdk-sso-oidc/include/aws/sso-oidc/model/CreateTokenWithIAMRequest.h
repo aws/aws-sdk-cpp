@@ -272,36 +272,36 @@ class CreateTokenWithIAMRequest : public SSOOIDCRequest {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_grantType;
-  bool m_grantTypeHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   Aws::String m_assertion;
-  bool m_assertionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_redirectUri;
-  bool m_redirectUriHasBeenSet = false;
 
   Aws::String m_subjectToken;
-  bool m_subjectTokenHasBeenSet = false;
 
   Aws::String m_subjectTokenType;
-  bool m_subjectTokenTypeHasBeenSet = false;
 
   Aws::String m_requestedTokenType;
-  bool m_requestedTokenTypeHasBeenSet = false;
 
   Aws::String m_codeVerifier;
+  bool m_clientIdHasBeenSet = false;
+  bool m_grantTypeHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
+  bool m_assertionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_redirectUriHasBeenSet = false;
+  bool m_subjectTokenHasBeenSet = false;
+  bool m_subjectTokenTypeHasBeenSet = false;
+  bool m_requestedTokenTypeHasBeenSet = false;
   bool m_codeVerifierHasBeenSet = false;
 };
 

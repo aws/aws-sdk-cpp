@@ -80,9 +80,9 @@ class GuardrailTopicPolicy {
   ///@}
  private:
   Aws::Vector<GuardrailTopic> m_topics;
-  bool m_topicsHasBeenSet = false;
 
   GuardrailTopicsTier m_tier;
+  bool m_topicsHasBeenSet = false;
   bool m_tierHasBeenSet = false;
 };
 

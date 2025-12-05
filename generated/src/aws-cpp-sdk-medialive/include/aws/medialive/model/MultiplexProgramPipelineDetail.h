@@ -70,9 +70,9 @@ class MultiplexProgramPipelineDetail {
   ///@}
  private:
   Aws::String m_activeChannelPipeline;
-  bool m_activeChannelPipelineHasBeenSet = false;
 
   Aws::String m_pipelineId;
+  bool m_activeChannelPipelineHasBeenSet = false;
   bool m_pipelineIdHasBeenSet = false;
 };
 

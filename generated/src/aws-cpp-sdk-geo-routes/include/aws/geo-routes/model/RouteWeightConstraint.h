@@ -65,9 +65,9 @@ class RouteWeightConstraint {
   ///@}
  private:
   RouteWeightConstraintType m_type{RouteWeightConstraintType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   long long m_value{0};
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

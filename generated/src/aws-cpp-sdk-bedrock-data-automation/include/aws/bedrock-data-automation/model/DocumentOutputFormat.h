@@ -65,9 +65,9 @@ class DocumentOutputFormat {
   ///@}
  private:
   DocumentOutputTextFormat m_textFormat;
-  bool m_textFormatHasBeenSet = false;
 
   DocumentOutputAdditionalFileFormat m_additionalFileFormat;
+  bool m_textFormatHasBeenSet = false;
   bool m_additionalFileFormatHasBeenSet = false;
 };
 

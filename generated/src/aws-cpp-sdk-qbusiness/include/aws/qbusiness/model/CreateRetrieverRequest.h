@@ -167,24 +167,24 @@ class CreateRetrieverRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   RetrieverType m_type{RetrieverType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   RetrieverConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

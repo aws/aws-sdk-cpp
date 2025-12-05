@@ -211,27 +211,27 @@ class CreateResolverRuleRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleTypeOption m_ruleType{RuleTypeOption::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<TargetAddress> m_targetIps;
-  bool m_targetIpsHasBeenSet = false;
 
   Aws::String m_resolverEndpointId;
-  bool m_resolverEndpointIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_delegationRecord;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_targetIpsHasBeenSet = false;
+  bool m_resolverEndpointIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_delegationRecordHasBeenSet = false;
 };
 

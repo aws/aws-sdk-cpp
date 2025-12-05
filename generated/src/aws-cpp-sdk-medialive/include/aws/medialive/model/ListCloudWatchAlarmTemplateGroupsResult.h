@@ -91,12 +91,12 @@ class ListCloudWatchAlarmTemplateGroupsResult {
   ///@}
  private:
   Aws::Vector<CloudWatchAlarmTemplateGroupSummary> m_cloudWatchAlarmTemplateGroups;
-  bool m_cloudWatchAlarmTemplateGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudWatchAlarmTemplateGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

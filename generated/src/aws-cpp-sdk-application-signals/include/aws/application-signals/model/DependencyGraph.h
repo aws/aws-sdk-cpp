@@ -86,9 +86,9 @@ class DependencyGraph {
   ///@}
  private:
   Aws::Vector<Node> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   Aws::Vector<Edge> m_edges;
+  bool m_nodesHasBeenSet = false;
   bool m_edgesHasBeenSet = false;
 };
 

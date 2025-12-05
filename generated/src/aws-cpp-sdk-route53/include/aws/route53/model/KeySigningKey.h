@@ -365,51 +365,51 @@ class KeySigningKey {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_kmsArn;
-  bool m_kmsArnHasBeenSet = false;
 
   int m_flag{0};
-  bool m_flagHasBeenSet = false;
 
   Aws::String m_signingAlgorithmMnemonic;
-  bool m_signingAlgorithmMnemonicHasBeenSet = false;
 
   int m_signingAlgorithmType{0};
-  bool m_signingAlgorithmTypeHasBeenSet = false;
 
   Aws::String m_digestAlgorithmMnemonic;
-  bool m_digestAlgorithmMnemonicHasBeenSet = false;
 
   int m_digestAlgorithmType{0};
-  bool m_digestAlgorithmTypeHasBeenSet = false;
 
   int m_keyTag{0};
-  bool m_keyTagHasBeenSet = false;
 
   Aws::String m_digestValue;
-  bool m_digestValueHasBeenSet = false;
 
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::String m_dSRecord;
-  bool m_dSRecordHasBeenSet = false;
 
   Aws::String m_dNSKEYRecord;
-  bool m_dNSKEYRecordHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_nameHasBeenSet = false;
+  bool m_kmsArnHasBeenSet = false;
+  bool m_flagHasBeenSet = false;
+  bool m_signingAlgorithmMnemonicHasBeenSet = false;
+  bool m_signingAlgorithmTypeHasBeenSet = false;
+  bool m_digestAlgorithmMnemonicHasBeenSet = false;
+  bool m_digestAlgorithmTypeHasBeenSet = false;
+  bool m_keyTagHasBeenSet = false;
+  bool m_digestValueHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_dSRecordHasBeenSet = false;
+  bool m_dNSKEYRecordHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

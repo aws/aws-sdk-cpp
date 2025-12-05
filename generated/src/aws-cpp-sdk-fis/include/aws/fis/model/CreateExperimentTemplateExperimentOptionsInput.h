@@ -66,9 +66,9 @@ class CreateExperimentTemplateExperimentOptionsInput {
   ///@}
  private:
   AccountTargeting m_accountTargeting{AccountTargeting::NOT_SET};
-  bool m_accountTargetingHasBeenSet = false;
 
   EmptyTargetResolutionMode m_emptyTargetResolutionMode{EmptyTargetResolutionMode::NOT_SET};
+  bool m_accountTargetingHasBeenSet = false;
   bool m_emptyTargetResolutionModeHasBeenSet = false;
 };
 

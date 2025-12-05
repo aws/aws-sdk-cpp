@@ -163,24 +163,24 @@ class ResizeClusterRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_clusterType;
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   bool m_classic{false};
-  bool m_classicHasBeenSet = false;
 
   Aws::String m_reservedNodeId;
-  bool m_reservedNodeIdHasBeenSet = false;
 
   Aws::String m_targetReservedNodeOfferingId;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_classicHasBeenSet = false;
+  bool m_reservedNodeIdHasBeenSet = false;
   bool m_targetReservedNodeOfferingIdHasBeenSet = false;
 };
 

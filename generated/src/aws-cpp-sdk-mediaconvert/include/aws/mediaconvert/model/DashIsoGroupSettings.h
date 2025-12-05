@@ -532,69 +532,69 @@ class DashIsoGroupSettings {
   ///@}
  private:
   Aws::Vector<DashAdditionalManifest> m_additionalManifests;
-  bool m_additionalManifestsHasBeenSet = false;
 
   DashIsoGroupAudioChannelConfigSchemeIdUri m_audioChannelConfigSchemeIdUri{DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET};
-  bool m_audioChannelConfigSchemeIdUriHasBeenSet = false;
 
   Aws::String m_baseUrl;
-  bool m_baseUrlHasBeenSet = false;
 
   Aws::String m_dashIFrameTrickPlayNameModifier;
-  bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
 
   DashManifestStyle m_dashManifestStyle{DashManifestStyle::NOT_SET};
-  bool m_dashManifestStyleHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   DestinationSettings m_destinationSettings;
-  bool m_destinationSettingsHasBeenSet = false;
 
   DashIsoEncryptionSettings m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   int m_fragmentLength{0};
-  bool m_fragmentLengthHasBeenSet = false;
 
   DashIsoHbbtvCompliance m_hbbtvCompliance{DashIsoHbbtvCompliance::NOT_SET};
-  bool m_hbbtvComplianceHasBeenSet = false;
 
   DashIsoImageBasedTrickPlay m_imageBasedTrickPlay{DashIsoImageBasedTrickPlay::NOT_SET};
-  bool m_imageBasedTrickPlayHasBeenSet = false;
 
   DashIsoImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-  bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
   int m_minBufferTime{0};
-  bool m_minBufferTimeHasBeenSet = false;
 
   double m_minFinalSegmentLength{0.0};
-  bool m_minFinalSegmentLengthHasBeenSet = false;
 
   DashIsoMpdManifestBandwidthType m_mpdManifestBandwidthType{DashIsoMpdManifestBandwidthType::NOT_SET};
-  bool m_mpdManifestBandwidthTypeHasBeenSet = false;
 
   DashIsoMpdProfile m_mpdProfile{DashIsoMpdProfile::NOT_SET};
-  bool m_mpdProfileHasBeenSet = false;
 
   DashIsoPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames{DashIsoPtsOffsetHandlingForBFrames::NOT_SET};
-  bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
 
   DashIsoSegmentControl m_segmentControl{DashIsoSegmentControl::NOT_SET};
-  bool m_segmentControlHasBeenSet = false;
 
   int m_segmentLength{0};
-  bool m_segmentLengthHasBeenSet = false;
 
   DashIsoSegmentLengthControl m_segmentLengthControl{DashIsoSegmentLengthControl::NOT_SET};
-  bool m_segmentLengthControlHasBeenSet = false;
 
   DashIsoVideoCompositionOffsets m_videoCompositionOffsets{DashIsoVideoCompositionOffsets::NOT_SET};
-  bool m_videoCompositionOffsetsHasBeenSet = false;
 
   DashIsoWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation{DashIsoWriteSegmentTimelineInRepresentation::NOT_SET};
+  bool m_additionalManifestsHasBeenSet = false;
+  bool m_audioChannelConfigSchemeIdUriHasBeenSet = false;
+  bool m_baseUrlHasBeenSet = false;
+  bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
+  bool m_dashManifestStyleHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationSettingsHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_fragmentLengthHasBeenSet = false;
+  bool m_hbbtvComplianceHasBeenSet = false;
+  bool m_imageBasedTrickPlayHasBeenSet = false;
+  bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
+  bool m_minBufferTimeHasBeenSet = false;
+  bool m_minFinalSegmentLengthHasBeenSet = false;
+  bool m_mpdManifestBandwidthTypeHasBeenSet = false;
+  bool m_mpdProfileHasBeenSet = false;
+  bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
+  bool m_segmentControlHasBeenSet = false;
+  bool m_segmentLengthHasBeenSet = false;
+  bool m_segmentLengthControlHasBeenSet = false;
+  bool m_videoCompositionOffsetsHasBeenSet = false;
   bool m_writeSegmentTimelineInRepresentationHasBeenSet = false;
 };
 

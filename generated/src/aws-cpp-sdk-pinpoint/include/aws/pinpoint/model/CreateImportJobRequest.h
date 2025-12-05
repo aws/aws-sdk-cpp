@@ -65,9 +65,9 @@ class CreateImportJobRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   ImportJobRequest m_importJobRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_importJobRequestHasBeenSet = false;
 };
 

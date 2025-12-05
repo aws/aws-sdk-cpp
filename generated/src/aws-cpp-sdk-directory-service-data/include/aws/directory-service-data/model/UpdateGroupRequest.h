@@ -182,24 +182,24 @@ class UpdateGroupRequest : public DirectoryServiceDataRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   GroupScope m_groupScope{GroupScope::NOT_SET};
-  bool m_groupScopeHasBeenSet = false;
 
   GroupType m_groupType{GroupType::NOT_SET};
-  bool m_groupTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_otherAttributes;
-  bool m_otherAttributesHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   UpdateType m_updateType{UpdateType::NOT_SET};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_groupScopeHasBeenSet = false;
+  bool m_groupTypeHasBeenSet = false;
+  bool m_otherAttributesHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
   bool m_updateTypeHasBeenSet = false;
 };
 

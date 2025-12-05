@@ -66,9 +66,9 @@ class UserStorageMetadata {
   ///@}
  private:
   long long m_storageUtilizedInBytes{0};
-  bool m_storageUtilizedInBytesHasBeenSet = false;
 
   StorageRuleType m_storageRule;
+  bool m_storageUtilizedInBytesHasBeenSet = false;
   bool m_storageRuleHasBeenSet = false;
 };
 

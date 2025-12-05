@@ -164,21 +164,21 @@ class CompareFacesResult {
   ///@}
  private:
   ComparedSourceImageFace m_sourceImageFace;
-  bool m_sourceImageFaceHasBeenSet = false;
 
   Aws::Vector<CompareFacesMatch> m_faceMatches;
-  bool m_faceMatchesHasBeenSet = false;
 
   Aws::Vector<ComparedFace> m_unmatchedFaces;
-  bool m_unmatchedFacesHasBeenSet = false;
 
   OrientationCorrection m_sourceImageOrientationCorrection{OrientationCorrection::NOT_SET};
-  bool m_sourceImageOrientationCorrectionHasBeenSet = false;
 
   OrientationCorrection m_targetImageOrientationCorrection{OrientationCorrection::NOT_SET};
-  bool m_targetImageOrientationCorrectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceImageFaceHasBeenSet = false;
+  bool m_faceMatchesHasBeenSet = false;
+  bool m_unmatchedFacesHasBeenSet = false;
+  bool m_sourceImageOrientationCorrectionHasBeenSet = false;
+  bool m_targetImageOrientationCorrectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

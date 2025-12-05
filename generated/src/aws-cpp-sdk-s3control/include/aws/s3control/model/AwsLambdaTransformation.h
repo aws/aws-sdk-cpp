@@ -70,9 +70,9 @@ class AwsLambdaTransformation {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::String m_functionPayload;
+  bool m_functionArnHasBeenSet = false;
   bool m_functionPayloadHasBeenSet = false;
 };
 

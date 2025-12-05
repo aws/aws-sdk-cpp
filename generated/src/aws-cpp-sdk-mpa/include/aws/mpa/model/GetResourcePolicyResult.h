@@ -126,21 +126,21 @@ class GetResourcePolicyResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_policyVersionArn;
-  bool m_policyVersionArnHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_policyVersionArnHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

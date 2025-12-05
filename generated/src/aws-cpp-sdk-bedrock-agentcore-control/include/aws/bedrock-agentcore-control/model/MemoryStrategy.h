@@ -201,30 +201,30 @@ class MemoryStrategy {
   ///@}
  private:
   Aws::String m_strategyId;
-  bool m_strategyIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StrategyConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   MemoryStrategyType m_type{MemoryStrategyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   MemoryStrategyStatus m_status{MemoryStrategyStatus::NOT_SET};
+  bool m_strategyIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_namespacesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

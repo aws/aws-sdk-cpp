@@ -145,21 +145,21 @@ class StatementOutput {
   ///@}
  private:
   StatementOutputData m_data;
-  bool m_dataHasBeenSet = false;
 
   int m_executionCount{0};
-  bool m_executionCountHasBeenSet = false;
 
   StatementState m_status{StatementState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorName;
-  bool m_errorNameHasBeenSet = false;
 
   Aws::String m_errorValue;
-  bool m_errorValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_traceback;
+  bool m_dataHasBeenSet = false;
+  bool m_executionCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorNameHasBeenSet = false;
+  bool m_errorValueHasBeenSet = false;
   bool m_tracebackHasBeenSet = false;
 };
 

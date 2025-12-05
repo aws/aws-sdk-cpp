@@ -68,9 +68,9 @@ class ZeroEtlAccess {
   ///@}
  private:
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_cidr;
+  bool m_statusHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
 };
 

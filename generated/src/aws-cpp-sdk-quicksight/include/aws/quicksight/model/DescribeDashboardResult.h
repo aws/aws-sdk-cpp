@@ -75,12 +75,12 @@ class DescribeDashboardResult {
   ///@}
  private:
   Dashboard m_dashboard;
-  bool m_dashboardHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

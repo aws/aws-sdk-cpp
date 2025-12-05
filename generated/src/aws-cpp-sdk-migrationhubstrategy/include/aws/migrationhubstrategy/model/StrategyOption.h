@@ -102,15 +102,15 @@ class StrategyOption {
   ///@}
  private:
   bool m_isPreferred{false};
-  bool m_isPreferredHasBeenSet = false;
 
   Strategy m_strategy{Strategy::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   TargetDestination m_targetDestination{TargetDestination::NOT_SET};
-  bool m_targetDestinationHasBeenSet = false;
 
   TransformationToolName m_toolName{TransformationToolName::NOT_SET};
+  bool m_isPreferredHasBeenSet = false;
+  bool m_strategyHasBeenSet = false;
+  bool m_targetDestinationHasBeenSet = false;
   bool m_toolNameHasBeenSet = false;
 };
 

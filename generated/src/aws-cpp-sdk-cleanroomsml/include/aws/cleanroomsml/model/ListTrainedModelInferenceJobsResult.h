@@ -85,12 +85,12 @@ class ListTrainedModelInferenceJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TrainedModelInferenceJobSummary> m_trainedModelInferenceJobs;
-  bool m_trainedModelInferenceJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_trainedModelInferenceJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

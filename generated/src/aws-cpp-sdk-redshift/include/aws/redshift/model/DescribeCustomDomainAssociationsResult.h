@@ -86,12 +86,12 @@ class DescribeCustomDomainAssociationsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Association> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_associationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -167,24 +167,24 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ResourceState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   ResourceStateUpdateIncludeResources m_includeResources;
-  bool m_includeResourcesHasBeenSet = false;
 
   ResourceStateUpdateExclusionRules m_exclusionRules;
-  bool m_exclusionRulesHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateAt{};
-  bool m_updateAtHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_includeResourcesHasBeenSet = false;
+  bool m_exclusionRulesHasBeenSet = false;
+  bool m_updateAtHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

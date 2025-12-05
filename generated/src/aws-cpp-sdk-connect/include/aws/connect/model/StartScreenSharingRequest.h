@@ -90,12 +90,12 @@ class StartScreenSharingRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_instanceIdHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
 };
 

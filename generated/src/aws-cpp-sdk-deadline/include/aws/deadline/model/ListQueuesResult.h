@@ -90,12 +90,12 @@ class ListQueuesResult {
   ///@}
  private:
   Aws::Vector<QueueSummary> m_queues;
-  bool m_queuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class LabelingJobInputConfig {
   ///@}
  private:
   LabelingJobDataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   LabelingJobDataAttributes m_dataAttributes;
+  bool m_dataSourceHasBeenSet = false;
   bool m_dataAttributesHasBeenSet = false;
 };
 

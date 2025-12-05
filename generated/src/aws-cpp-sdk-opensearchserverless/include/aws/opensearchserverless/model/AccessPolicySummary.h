@@ -136,21 +136,21 @@ class AccessPolicySummary {
   ///@}
  private:
   AccessPolicyType m_type{AccessPolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_policyVersion;
-  bool m_policyVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_createdDate{0};
-  bool m_createdDateHasBeenSet = false;
 
   long long m_lastModifiedDate{0};
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_policyVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class GetTargetAccountConfigurationRequest : public FISRequest {
   ///@}
  private:
   Aws::String m_experimentTemplateId;
-  bool m_experimentTemplateIdHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_experimentTemplateIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

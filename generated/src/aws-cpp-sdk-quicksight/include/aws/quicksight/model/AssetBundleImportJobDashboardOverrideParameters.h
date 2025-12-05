@@ -69,9 +69,9 @@ class AssetBundleImportJobDashboardOverrideParameters {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_dashboardIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

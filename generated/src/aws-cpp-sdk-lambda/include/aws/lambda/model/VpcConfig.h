@@ -101,12 +101,12 @@ class VpcConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   bool m_ipv6AllowedForDualStack{false};
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_ipv6AllowedForDualStackHasBeenSet = false;
 };
 

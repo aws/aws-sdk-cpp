@@ -111,12 +111,12 @@ class VariableValue {
   ///@}
  private:
   Aws::String m_propertyId;
-  bool m_propertyIdHasBeenSet = false;
 
   Aws::String m_hierarchyId;
-  bool m_hierarchyIdHasBeenSet = false;
 
   Aws::Vector<AssetModelPropertyPathSegment> m_propertyPath;
+  bool m_propertyIdHasBeenSet = false;
+  bool m_hierarchyIdHasBeenSet = false;
   bool m_propertyPathHasBeenSet = false;
 };
 

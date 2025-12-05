@@ -277,36 +277,36 @@ class CreateAgreementRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_localProfileId;
-  bool m_localProfileIdHasBeenSet = false;
 
   Aws::String m_partnerProfileId;
-  bool m_partnerProfileIdHasBeenSet = false;
 
   Aws::String m_baseDirectory;
-  bool m_baseDirectoryHasBeenSet = false;
 
   Aws::String m_accessRole;
-  bool m_accessRoleHasBeenSet = false;
 
   AgreementStatusType m_status{AgreementStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PreserveFilenameType m_preserveFilename{PreserveFilenameType::NOT_SET};
-  bool m_preserveFilenameHasBeenSet = false;
 
   EnforceMessageSigningType m_enforceMessageSigning{EnforceMessageSigningType::NOT_SET};
-  bool m_enforceMessageSigningHasBeenSet = false;
 
   CustomDirectoriesType m_customDirectories;
+  bool m_descriptionHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_localProfileIdHasBeenSet = false;
+  bool m_partnerProfileIdHasBeenSet = false;
+  bool m_baseDirectoryHasBeenSet = false;
+  bool m_accessRoleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_preserveFilenameHasBeenSet = false;
+  bool m_enforceMessageSigningHasBeenSet = false;
   bool m_customDirectoriesHasBeenSet = false;
 };
 

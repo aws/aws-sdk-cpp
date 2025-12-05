@@ -131,18 +131,18 @@ class ImageScanFinding {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   FindingSeverity m_severity{FindingSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

@@ -324,36 +324,36 @@ class CreateRelationalDatabaseRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_relationalDatabaseBlueprintId;
-  bool m_relationalDatabaseBlueprintIdHasBeenSet = false;
 
   Aws::String m_relationalDatabaseBundleId;
-  bool m_relationalDatabaseBundleIdHasBeenSet = false;
 
   Aws::String m_masterDatabaseName;
-  bool m_masterDatabaseNameHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_relationalDatabaseNameHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_relationalDatabaseBlueprintIdHasBeenSet = false;
+  bool m_relationalDatabaseBundleIdHasBeenSet = false;
+  bool m_masterDatabaseNameHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

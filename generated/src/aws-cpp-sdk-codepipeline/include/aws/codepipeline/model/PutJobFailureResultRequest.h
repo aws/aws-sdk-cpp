@@ -73,9 +73,9 @@ class PutJobFailureResultRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   FailureDetails m_failureDetails;
+  bool m_jobIdHasBeenSet = false;
   bool m_failureDetailsHasBeenSet = false;
 };
 

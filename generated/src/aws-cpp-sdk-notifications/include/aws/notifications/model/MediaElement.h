@@ -103,15 +103,15 @@ class MediaElement {
   ///@}
  private:
   Aws::String m_mediaId;
-  bool m_mediaIdHasBeenSet = false;
 
   MediaElementType m_type{MediaElementType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_caption;
+  bool m_mediaIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_captionHasBeenSet = false;
 };
 

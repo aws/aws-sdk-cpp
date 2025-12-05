@@ -92,12 +92,12 @@ class AnalyticsUtteranceMetricResult {
   ///@}
  private:
   AnalyticsUtteranceMetricName m_name{AnalyticsUtteranceMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   AnalyticsMetricStatistic m_statistic{AnalyticsMetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

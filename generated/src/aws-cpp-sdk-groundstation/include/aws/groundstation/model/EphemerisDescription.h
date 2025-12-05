@@ -69,9 +69,9 @@ class EphemerisDescription {
   ///@}
  private:
   S3Object m_sourceS3Object;
-  bool m_sourceS3ObjectHasBeenSet = false;
 
   Aws::String m_ephemerisData;
+  bool m_sourceS3ObjectHasBeenSet = false;
   bool m_ephemerisDataHasBeenSet = false;
 };
 

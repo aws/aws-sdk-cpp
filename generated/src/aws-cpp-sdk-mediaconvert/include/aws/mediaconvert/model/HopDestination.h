@@ -91,12 +91,12 @@ class HopDestination {
   ///@}
  private:
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_queue;
-  bool m_queueHasBeenSet = false;
 
   int m_waitMinutes{0};
+  bool m_priorityHasBeenSet = false;
+  bool m_queueHasBeenSet = false;
   bool m_waitMinutesHasBeenSet = false;
 };
 

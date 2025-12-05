@@ -176,21 +176,21 @@ class UpdateMonitorRequest : public NetworkFlowMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::Vector<MonitorLocalResource> m_localResourcesToAdd;
-  bool m_localResourcesToAddHasBeenSet = false;
 
   Aws::Vector<MonitorLocalResource> m_localResourcesToRemove;
-  bool m_localResourcesToRemoveHasBeenSet = false;
 
   Aws::Vector<MonitorRemoteResource> m_remoteResourcesToAdd;
-  bool m_remoteResourcesToAddHasBeenSet = false;
 
   Aws::Vector<MonitorRemoteResource> m_remoteResourcesToRemove;
-  bool m_remoteResourcesToRemoveHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_monitorNameHasBeenSet = false;
+  bool m_localResourcesToAddHasBeenSet = false;
+  bool m_localResourcesToRemoveHasBeenSet = false;
+  bool m_remoteResourcesToAddHasBeenSet = false;
+  bool m_remoteResourcesToRemoveHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

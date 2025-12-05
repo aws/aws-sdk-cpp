@@ -262,42 +262,42 @@ class GetSessionActionResult {
   ///@}
  private:
   Aws::String m_sessionActionId;
-  bool m_sessionActionIdHasBeenSet = false;
 
   SessionActionStatus m_status{SessionActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_workerUpdatedAt{};
-  bool m_workerUpdatedAtHasBeenSet = false;
 
   double m_progressPercent{0.0};
-  bool m_progressPercentHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   int m_processExitCode{0};
-  bool m_processExitCodeHasBeenSet = false;
 
   Aws::String m_progressMessage;
-  bool m_progressMessageHasBeenSet = false;
 
   SessionActionDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::Vector<AcquiredLimit> m_acquiredLimits;
-  bool m_acquiredLimitsHasBeenSet = false;
 
   Aws::Vector<TaskRunManifestPropertiesResponse> m_manifests;
-  bool m_manifestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionActionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_workerUpdatedAtHasBeenSet = false;
+  bool m_progressPercentHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_processExitCodeHasBeenSet = false;
+  bool m_progressMessageHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_acquiredLimitsHasBeenSet = false;
+  bool m_manifestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

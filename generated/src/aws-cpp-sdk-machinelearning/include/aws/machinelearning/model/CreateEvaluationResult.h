@@ -70,9 +70,9 @@ class CreateEvaluationResult {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

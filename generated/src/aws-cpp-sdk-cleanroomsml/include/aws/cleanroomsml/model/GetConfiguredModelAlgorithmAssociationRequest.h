@@ -68,9 +68,9 @@ class GetConfiguredModelAlgorithmAssociationRequest : public CleanRoomsMLRequest
   ///@}
  private:
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
 };
 

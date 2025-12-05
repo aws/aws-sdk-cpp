@@ -92,9 +92,9 @@ class ProtectiveEquipmentSummarizationAttributes {
   ///@}
  private:
   double m_minConfidence{0.0};
-  bool m_minConfidenceHasBeenSet = false;
 
   Aws::Vector<ProtectiveEquipmentType> m_requiredEquipmentTypes;
+  bool m_minConfidenceHasBeenSet = false;
   bool m_requiredEquipmentTypesHasBeenSet = false;
 };
 

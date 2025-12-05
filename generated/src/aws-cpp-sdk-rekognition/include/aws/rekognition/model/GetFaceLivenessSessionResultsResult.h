@@ -164,24 +164,24 @@ class GetFaceLivenessSessionResultsResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   LivenessSessionStatus m_status{LivenessSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   AuditImage m_referenceImage;
-  bool m_referenceImageHasBeenSet = false;
 
   Aws::Vector<AuditImage> m_auditImages;
-  bool m_auditImagesHasBeenSet = false;
 
   Challenge m_challenge;
-  bool m_challengeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_referenceImageHasBeenSet = false;
+  bool m_auditImagesHasBeenSet = false;
+  bool m_challengeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

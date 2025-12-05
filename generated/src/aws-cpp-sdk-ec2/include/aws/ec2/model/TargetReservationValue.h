@@ -75,9 +75,9 @@ class TargetReservationValue {
   ///@}
  private:
   ReservationValue m_reservationValue;
-  bool m_reservationValueHasBeenSet = false;
 
   TargetConfiguration m_targetConfiguration;
+  bool m_reservationValueHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class StopDeploymentRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   bool m_autoRollbackEnabled{false};
+  bool m_deploymentIdHasBeenSet = false;
   bool m_autoRollbackEnabledHasBeenSet = false;
 };
 

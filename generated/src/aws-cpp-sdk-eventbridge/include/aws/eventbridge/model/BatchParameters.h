@@ -115,15 +115,15 @@ class BatchParameters {
   ///@}
  private:
   Aws::String m_jobDefinition;
-  bool m_jobDefinitionHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   BatchArrayProperties m_arrayProperties;
-  bool m_arrayPropertiesHasBeenSet = false;
 
   BatchRetryStrategy m_retryStrategy;
+  bool m_jobDefinitionHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_arrayPropertiesHasBeenSet = false;
   bool m_retryStrategyHasBeenSet = false;
 };
 

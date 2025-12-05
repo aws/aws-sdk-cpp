@@ -64,9 +64,9 @@ class RouteDriverScheduleInterval {
   ///@}
  private:
   long long m_driveDuration{0};
-  bool m_driveDurationHasBeenSet = false;
 
   long long m_restDuration{0};
+  bool m_driveDurationHasBeenSet = false;
   bool m_restDurationHasBeenSet = false;
 };
 

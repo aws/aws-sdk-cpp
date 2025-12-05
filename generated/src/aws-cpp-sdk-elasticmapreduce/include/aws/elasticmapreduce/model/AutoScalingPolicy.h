@@ -83,9 +83,9 @@ class AutoScalingPolicy {
   ///@}
  private:
   ScalingConstraints m_constraints;
-  bool m_constraintsHasBeenSet = false;
 
   Aws::Vector<ScalingRule> m_rules;
+  bool m_constraintsHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

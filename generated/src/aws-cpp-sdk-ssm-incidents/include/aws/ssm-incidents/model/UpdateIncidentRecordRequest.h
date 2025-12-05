@@ -189,27 +189,27 @@ class UpdateIncidentRecordRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ChatChannel m_chatChannel;
-  bool m_chatChannelHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   int m_impact{0};
-  bool m_impactHasBeenSet = false;
 
   Aws::Vector<NotificationTargetItem> m_notificationTargets;
-  bool m_notificationTargetsHasBeenSet = false;
 
   IncidentRecordStatus m_status{IncidentRecordStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_arnHasBeenSet = false;
+  bool m_chatChannelHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_impactHasBeenSet = false;
+  bool m_notificationTargetsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

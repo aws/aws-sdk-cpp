@@ -78,9 +78,9 @@ class DescribeRetentionConfigurationsRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_retentionConfigurationNames;
-  bool m_retentionConfigurationNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_retentionConfigurationNamesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

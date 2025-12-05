@@ -72,9 +72,9 @@ class Interval {
   ///@}
  private:
   RollingInterval m_rollingInterval;
-  bool m_rollingIntervalHasBeenSet = false;
 
   CalendarInterval m_calendarInterval;
+  bool m_rollingIntervalHasBeenSet = false;
   bool m_calendarIntervalHasBeenSet = false;
 };
 

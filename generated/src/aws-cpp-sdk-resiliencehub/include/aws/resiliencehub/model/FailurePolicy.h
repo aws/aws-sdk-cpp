@@ -61,9 +61,9 @@ class FailurePolicy {
   ///@}
  private:
   int m_rpoInSecs{0};
-  bool m_rpoInSecsHasBeenSet = false;
 
   int m_rtoInSecs{0};
+  bool m_rpoInSecsHasBeenSet = false;
   bool m_rtoInSecsHasBeenSet = false;
 };
 

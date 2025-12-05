@@ -72,9 +72,9 @@ class AlternateIdentifier {
   ///@}
  private:
   ExternalId m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   UniqueAttribute m_uniqueAttribute;
+  bool m_externalIdHasBeenSet = false;
   bool m_uniqueAttributeHasBeenSet = false;
 };
 

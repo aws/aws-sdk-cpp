@@ -94,12 +94,12 @@ class SharingSettings {
   ///@}
  private:
   NotebookOutputOption m_notebookOutputOption{NotebookOutputOption::NOT_SET};
-  bool m_notebookOutputOptionHasBeenSet = false;
 
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   Aws::String m_s3KmsKeyId;
+  bool m_notebookOutputOptionHasBeenSet = false;
+  bool m_s3OutputPathHasBeenSet = false;
   bool m_s3KmsKeyIdHasBeenSet = false;
 };
 

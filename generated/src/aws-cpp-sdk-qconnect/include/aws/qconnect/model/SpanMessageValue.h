@@ -90,12 +90,12 @@ class SpanMessageValue {
   ///@}
  private:
   SpanTextValue m_text;
-  bool m_textHasBeenSet = false;
 
   SpanToolUseValue m_toolUse;
-  bool m_toolUseHasBeenSet = false;
 
   std::shared_ptr<SpanToolResultValue> m_toolResult;
+  bool m_textHasBeenSet = false;
+  bool m_toolUseHasBeenSet = false;
   bool m_toolResultHasBeenSet = false;
 };
 

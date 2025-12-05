@@ -181,27 +181,27 @@ class SavingsPlanRate {
   ///@}
  private:
   Aws::String m_rate;
-  bool m_rateHasBeenSet = false;
 
   CurrencyCode m_currency{CurrencyCode::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   SavingsPlanRateUnit m_unit{SavingsPlanRateUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   SavingsPlanProductType m_productType{SavingsPlanProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   SavingsPlanRateServiceCode m_serviceCode{SavingsPlanRateServiceCode::NOT_SET};
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::Vector<SavingsPlanRateProperty> m_properties;
+  bool m_rateHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

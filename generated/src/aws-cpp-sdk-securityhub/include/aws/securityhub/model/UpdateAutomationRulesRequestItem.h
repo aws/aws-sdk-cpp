@@ -197,27 +197,27 @@ class UpdateAutomationRulesRequestItem {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   RuleStatus m_ruleStatus{RuleStatus::NOT_SET};
-  bool m_ruleStatusHasBeenSet = false;
 
   int m_ruleOrder{0};
-  bool m_ruleOrderHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   bool m_isTerminal{false};
-  bool m_isTerminalHasBeenSet = false;
 
   AutomationRulesFindingFilters m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   Aws::Vector<AutomationRulesAction> m_actions;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_ruleStatusHasBeenSet = false;
+  bool m_ruleOrderHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_isTerminalHasBeenSet = false;
+  bool m_criteriaHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

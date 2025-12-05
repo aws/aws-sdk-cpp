@@ -111,18 +111,18 @@ class StartSuiteRunResult {
   ///@}
  private:
   Aws::String m_suiteRunId;
-  bool m_suiteRunIdHasBeenSet = false;
 
   Aws::String m_suiteRunArn;
-  bool m_suiteRunArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suiteRunIdHasBeenSet = false;
+  bool m_suiteRunArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

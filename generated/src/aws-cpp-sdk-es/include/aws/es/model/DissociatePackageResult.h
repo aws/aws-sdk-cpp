@@ -66,9 +66,9 @@ class DissociatePackageResult {
   ///@}
  private:
   DomainPackageDetails m_domainPackageDetails;
-  bool m_domainPackageDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainPackageDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -257,33 +257,33 @@ class CreateGameSessionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   int m_maximumPlayerSessionCount{0};
-  bool m_maximumPlayerSessionCountHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<GameProperty> m_gameProperties;
-  bool m_gamePropertiesHasBeenSet = false;
 
   Aws::String m_creatorId;
-  bool m_creatorIdHasBeenSet = false;
 
   Aws::String m_gameSessionId;
-  bool m_gameSessionIdHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   Aws::String m_gameSessionData;
-  bool m_gameSessionDataHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_aliasIdHasBeenSet = false;
+  bool m_maximumPlayerSessionCountHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_gamePropertiesHasBeenSet = false;
+  bool m_creatorIdHasBeenSet = false;
+  bool m_gameSessionIdHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
+  bool m_gameSessionDataHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

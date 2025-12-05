@@ -138,18 +138,18 @@ class Oauth2AuthorizationServerMetadata {
   ///@}
  private:
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_authorizationEndpoint;
-  bool m_authorizationEndpointHasBeenSet = false;
 
   Aws::String m_tokenEndpoint;
-  bool m_tokenEndpointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_responseTypes;
-  bool m_responseTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenEndpointAuthMethods;
+  bool m_issuerHasBeenSet = false;
+  bool m_authorizationEndpointHasBeenSet = false;
+  bool m_tokenEndpointHasBeenSet = false;
+  bool m_responseTypesHasBeenSet = false;
   bool m_tokenEndpointAuthMethodsHasBeenSet = false;
 };
 

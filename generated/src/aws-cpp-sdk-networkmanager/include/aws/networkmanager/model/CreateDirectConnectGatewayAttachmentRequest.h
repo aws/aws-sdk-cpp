@@ -156,21 +156,21 @@ class CreateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_directConnectGatewayArn;
-  bool m_directConnectGatewayArnHasBeenSet = false;
 
   Aws::String m_routingPolicyLabel;
-  bool m_routingPolicyLabelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeLocations;
-  bool m_edgeLocationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_directConnectGatewayArnHasBeenSet = false;
+  bool m_routingPolicyLabelHasBeenSet = false;
+  bool m_edgeLocationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

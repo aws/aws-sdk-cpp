@@ -78,9 +78,9 @@ class SalesforceStandardObjectAttachmentConfiguration {
   ///@}
  private:
   Aws::String m_documentTitleFieldName;
-  bool m_documentTitleFieldNameHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
+  bool m_documentTitleFieldNameHasBeenSet = false;
   bool m_fieldMappingsHasBeenSet = false;
 };
 

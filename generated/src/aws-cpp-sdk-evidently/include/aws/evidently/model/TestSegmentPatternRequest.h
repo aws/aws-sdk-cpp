@@ -66,9 +66,9 @@ class TestSegmentPatternRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   Aws::String m_payload;
+  bool m_patternHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

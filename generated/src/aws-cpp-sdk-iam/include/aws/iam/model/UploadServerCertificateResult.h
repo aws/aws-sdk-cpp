@@ -97,12 +97,12 @@ class UploadServerCertificateResult {
   ///@}
  private:
   ServerCertificateMetadata m_serverCertificateMetadata;
-  bool m_serverCertificateMetadataHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serverCertificateMetadataHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

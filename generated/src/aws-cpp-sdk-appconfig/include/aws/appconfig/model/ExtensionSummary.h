@@ -121,18 +121,18 @@ class ExtensionSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

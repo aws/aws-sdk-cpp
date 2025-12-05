@@ -360,54 +360,54 @@ class ServerlessCache {
   ///@}
  private:
   Aws::String m_serverlessCacheName;
-  bool m_serverlessCacheNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
-  bool m_majorEngineVersionHasBeenSet = false;
 
   Aws::String m_fullEngineVersion;
-  bool m_fullEngineVersionHasBeenSet = false;
 
   CacheUsageLimits m_cacheUsageLimits;
-  bool m_cacheUsageLimitsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Endpoint m_readerEndpoint;
-  bool m_readerEndpointHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_userGroupId;
-  bool m_userGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_dailySnapshotTime;
+  bool m_serverlessCacheNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_majorEngineVersionHasBeenSet = false;
+  bool m_fullEngineVersionHasBeenSet = false;
+  bool m_cacheUsageLimitsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_readerEndpointHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_userGroupIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
   bool m_dailySnapshotTimeHasBeenSet = false;
 };
 

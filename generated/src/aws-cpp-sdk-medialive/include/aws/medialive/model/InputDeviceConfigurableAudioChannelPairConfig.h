@@ -69,9 +69,9 @@ class InputDeviceConfigurableAudioChannelPairConfig {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   InputDeviceConfigurableAudioChannelPairProfile m_profile{InputDeviceConfigurableAudioChannelPairProfile::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_profileHasBeenSet = false;
 };
 

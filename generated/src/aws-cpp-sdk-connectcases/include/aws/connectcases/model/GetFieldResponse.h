@@ -217,33 +217,33 @@ class GetFieldResponse {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_fieldArn;
-  bool m_fieldArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FieldType m_type{FieldType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FieldNamespace m_namespace{FieldNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_deleted{false};
-  bool m_deletedHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_fieldIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_fieldArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

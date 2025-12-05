@@ -66,9 +66,9 @@ class SocketAddress {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   int m_port{0};
+  bool m_ipAddressHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class SendWhatsAppMessageRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_originationPhoneNumberId;
-  bool m_originationPhoneNumberIdHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_message{};
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_metaApiVersion;
+  bool m_originationPhoneNumberIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_metaApiVersionHasBeenSet = false;
 };
 

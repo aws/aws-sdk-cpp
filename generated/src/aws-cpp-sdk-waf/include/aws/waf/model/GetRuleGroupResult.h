@@ -61,9 +61,9 @@ class GetRuleGroupResult {
   ///@}
  private:
   RuleGroup m_ruleGroup;
-  bool m_ruleGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class TopicRefreshSchedule {
   ///@}
  private:
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   bool m_basedOnSpiceSchedule{false};
-  bool m_basedOnSpiceScheduleHasBeenSet = false;
 
   Aws::Utils::DateTime m_startingAt{};
-  bool m_startingAtHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   Aws::String m_repeatAt;
-  bool m_repeatAtHasBeenSet = false;
 
   TopicScheduleType m_topicScheduleType{TopicScheduleType::NOT_SET};
+  bool m_isEnabledHasBeenSet = false;
+  bool m_basedOnSpiceScheduleHasBeenSet = false;
+  bool m_startingAtHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_repeatAtHasBeenSet = false;
   bool m_topicScheduleTypeHasBeenSet = false;
 };
 

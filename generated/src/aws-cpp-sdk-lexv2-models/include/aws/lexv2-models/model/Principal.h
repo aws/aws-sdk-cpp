@@ -73,9 +73,9 @@ class Principal {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_serviceHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

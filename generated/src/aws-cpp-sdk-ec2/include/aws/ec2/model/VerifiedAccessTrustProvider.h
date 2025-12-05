@@ -278,42 +278,42 @@ class VerifiedAccessTrustProvider {
   ///@}
  private:
   Aws::String m_verifiedAccessTrustProviderId;
-  bool m_verifiedAccessTrustProviderIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TrustProviderType m_trustProviderType{TrustProviderType::NOT_SET};
-  bool m_trustProviderTypeHasBeenSet = false;
 
   UserTrustProviderType m_userTrustProviderType{UserTrustProviderType::NOT_SET};
-  bool m_userTrustProviderTypeHasBeenSet = false;
 
   DeviceTrustProviderType m_deviceTrustProviderType{DeviceTrustProviderType::NOT_SET};
-  bool m_deviceTrustProviderTypeHasBeenSet = false;
 
   OidcOptions m_oidcOptions;
-  bool m_oidcOptionsHasBeenSet = false;
 
   DeviceOptions m_deviceOptions;
-  bool m_deviceOptionsHasBeenSet = false;
 
   Aws::String m_policyReferenceName;
-  bool m_policyReferenceNameHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VerifiedAccessSseSpecificationResponse m_sseSpecification;
-  bool m_sseSpecificationHasBeenSet = false;
 
   NativeApplicationOidcOptions m_nativeApplicationOidcOptions;
+  bool m_verifiedAccessTrustProviderIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_trustProviderTypeHasBeenSet = false;
+  bool m_userTrustProviderTypeHasBeenSet = false;
+  bool m_deviceTrustProviderTypeHasBeenSet = false;
+  bool m_oidcOptionsHasBeenSet = false;
+  bool m_deviceOptionsHasBeenSet = false;
+  bool m_policyReferenceNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_sseSpecificationHasBeenSet = false;
   bool m_nativeApplicationOidcOptionsHasBeenSet = false;
 };
 

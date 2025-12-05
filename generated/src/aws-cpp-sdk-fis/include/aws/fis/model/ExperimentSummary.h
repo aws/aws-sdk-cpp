@@ -168,24 +168,24 @@ class ExperimentSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_experimentTemplateId;
-  bool m_experimentTemplateIdHasBeenSet = false;
 
   ExperimentState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ExperimentOptions m_experimentOptions;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_experimentTemplateIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_experimentOptionsHasBeenSet = false;
 };
 

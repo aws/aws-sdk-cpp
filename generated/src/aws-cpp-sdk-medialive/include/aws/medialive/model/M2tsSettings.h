@@ -952,147 +952,147 @@ When
   ///@}
  private:
   M2tsAbsentInputAudioBehavior m_absentInputAudioBehavior{M2tsAbsentInputAudioBehavior::NOT_SET};
-  bool m_absentInputAudioBehaviorHasBeenSet = false;
 
   M2tsArib m_arib{M2tsArib::NOT_SET};
-  bool m_aribHasBeenSet = false;
 
   Aws::String m_aribCaptionsPid;
-  bool m_aribCaptionsPidHasBeenSet = false;
 
   M2tsAribCaptionsPidControl m_aribCaptionsPidControl{M2tsAribCaptionsPidControl::NOT_SET};
-  bool m_aribCaptionsPidControlHasBeenSet = false;
 
   M2tsAudioBufferModel m_audioBufferModel{M2tsAudioBufferModel::NOT_SET};
-  bool m_audioBufferModelHasBeenSet = false;
 
   int m_audioFramesPerPes{0};
-  bool m_audioFramesPerPesHasBeenSet = false;
 
   Aws::String m_audioPids;
-  bool m_audioPidsHasBeenSet = false;
 
   M2tsAudioStreamType m_audioStreamType{M2tsAudioStreamType::NOT_SET};
-  bool m_audioStreamTypeHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   M2tsBufferModel m_bufferModel{M2tsBufferModel::NOT_SET};
-  bool m_bufferModelHasBeenSet = false;
 
   M2tsCcDescriptor m_ccDescriptor{M2tsCcDescriptor::NOT_SET};
-  bool m_ccDescriptorHasBeenSet = false;
 
   DvbNitSettings m_dvbNitSettings;
-  bool m_dvbNitSettingsHasBeenSet = false;
 
   DvbSdtSettings m_dvbSdtSettings;
-  bool m_dvbSdtSettingsHasBeenSet = false;
 
   Aws::String m_dvbSubPids;
-  bool m_dvbSubPidsHasBeenSet = false;
 
   DvbTdtSettings m_dvbTdtSettings;
-  bool m_dvbTdtSettingsHasBeenSet = false;
 
   Aws::String m_dvbTeletextPid;
-  bool m_dvbTeletextPidHasBeenSet = false;
 
   M2tsEbifControl m_ebif{M2tsEbifControl::NOT_SET};
-  bool m_ebifHasBeenSet = false;
 
   M2tsAudioInterval m_ebpAudioInterval{M2tsAudioInterval::NOT_SET};
-  bool m_ebpAudioIntervalHasBeenSet = false;
 
   int m_ebpLookaheadMs{0};
-  bool m_ebpLookaheadMsHasBeenSet = false;
 
   M2tsEbpPlacement m_ebpPlacement{M2tsEbpPlacement::NOT_SET};
-  bool m_ebpPlacementHasBeenSet = false;
 
   Aws::String m_ecmPid;
-  bool m_ecmPidHasBeenSet = false;
 
   M2tsEsRateInPes m_esRateInPes{M2tsEsRateInPes::NOT_SET};
-  bool m_esRateInPesHasBeenSet = false;
 
   Aws::String m_etvPlatformPid;
-  bool m_etvPlatformPidHasBeenSet = false;
 
   Aws::String m_etvSignalPid;
-  bool m_etvSignalPidHasBeenSet = false;
 
   double m_fragmentTime{0.0};
-  bool m_fragmentTimeHasBeenSet = false;
 
   M2tsKlv m_klv{M2tsKlv::NOT_SET};
-  bool m_klvHasBeenSet = false;
 
   Aws::String m_klvDataPids;
-  bool m_klvDataPidsHasBeenSet = false;
 
   M2tsNielsenId3Behavior m_nielsenId3Behavior{M2tsNielsenId3Behavior::NOT_SET};
-  bool m_nielsenId3BehaviorHasBeenSet = false;
 
   double m_nullPacketBitrate{0.0};
-  bool m_nullPacketBitrateHasBeenSet = false;
 
   int m_patInterval{0};
-  bool m_patIntervalHasBeenSet = false;
 
   M2tsPcrControl m_pcrControl{M2tsPcrControl::NOT_SET};
-  bool m_pcrControlHasBeenSet = false;
 
   int m_pcrPeriod{0};
-  bool m_pcrPeriodHasBeenSet = false;
 
   Aws::String m_pcrPid;
-  bool m_pcrPidHasBeenSet = false;
 
   int m_pmtInterval{0};
-  bool m_pmtIntervalHasBeenSet = false;
 
   Aws::String m_pmtPid;
-  bool m_pmtPidHasBeenSet = false;
 
   int m_programNum{0};
-  bool m_programNumHasBeenSet = false;
 
   M2tsRateMode m_rateMode{M2tsRateMode::NOT_SET};
-  bool m_rateModeHasBeenSet = false;
 
   Aws::String m_scte27Pids;
-  bool m_scte27PidsHasBeenSet = false;
 
   M2tsScte35Control m_scte35Control{M2tsScte35Control::NOT_SET};
-  bool m_scte35ControlHasBeenSet = false;
 
   Aws::String m_scte35Pid;
-  bool m_scte35PidHasBeenSet = false;
 
   M2tsSegmentationMarkers m_segmentationMarkers{M2tsSegmentationMarkers::NOT_SET};
-  bool m_segmentationMarkersHasBeenSet = false;
 
   M2tsSegmentationStyle m_segmentationStyle{M2tsSegmentationStyle::NOT_SET};
-  bool m_segmentationStyleHasBeenSet = false;
 
   double m_segmentationTime{0.0};
-  bool m_segmentationTimeHasBeenSet = false;
 
   M2tsTimedMetadataBehavior m_timedMetadataBehavior{M2tsTimedMetadataBehavior::NOT_SET};
-  bool m_timedMetadataBehaviorHasBeenSet = false;
 
   Aws::String m_timedMetadataPid;
-  bool m_timedMetadataPidHasBeenSet = false;
 
   int m_transportStreamId{0};
-  bool m_transportStreamIdHasBeenSet = false;
 
   Aws::String m_videoPid;
-  bool m_videoPidHasBeenSet = false;
 
   double m_scte35PrerollPullupMilliseconds{0.0};
+  bool m_absentInputAudioBehaviorHasBeenSet = false;
+  bool m_aribHasBeenSet = false;
+  bool m_aribCaptionsPidHasBeenSet = false;
+  bool m_aribCaptionsPidControlHasBeenSet = false;
+  bool m_audioBufferModelHasBeenSet = false;
+  bool m_audioFramesPerPesHasBeenSet = false;
+  bool m_audioPidsHasBeenSet = false;
+  bool m_audioStreamTypeHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_bufferModelHasBeenSet = false;
+  bool m_ccDescriptorHasBeenSet = false;
+  bool m_dvbNitSettingsHasBeenSet = false;
+  bool m_dvbSdtSettingsHasBeenSet = false;
+  bool m_dvbSubPidsHasBeenSet = false;
+  bool m_dvbTdtSettingsHasBeenSet = false;
+  bool m_dvbTeletextPidHasBeenSet = false;
+  bool m_ebifHasBeenSet = false;
+  bool m_ebpAudioIntervalHasBeenSet = false;
+  bool m_ebpLookaheadMsHasBeenSet = false;
+  bool m_ebpPlacementHasBeenSet = false;
+  bool m_ecmPidHasBeenSet = false;
+  bool m_esRateInPesHasBeenSet = false;
+  bool m_etvPlatformPidHasBeenSet = false;
+  bool m_etvSignalPidHasBeenSet = false;
+  bool m_fragmentTimeHasBeenSet = false;
+  bool m_klvHasBeenSet = false;
+  bool m_klvDataPidsHasBeenSet = false;
+  bool m_nielsenId3BehaviorHasBeenSet = false;
+  bool m_nullPacketBitrateHasBeenSet = false;
+  bool m_patIntervalHasBeenSet = false;
+  bool m_pcrControlHasBeenSet = false;
+  bool m_pcrPeriodHasBeenSet = false;
+  bool m_pcrPidHasBeenSet = false;
+  bool m_pmtIntervalHasBeenSet = false;
+  bool m_pmtPidHasBeenSet = false;
+  bool m_programNumHasBeenSet = false;
+  bool m_rateModeHasBeenSet = false;
+  bool m_scte27PidsHasBeenSet = false;
+  bool m_scte35ControlHasBeenSet = false;
+  bool m_scte35PidHasBeenSet = false;
+  bool m_segmentationMarkersHasBeenSet = false;
+  bool m_segmentationStyleHasBeenSet = false;
+  bool m_segmentationTimeHasBeenSet = false;
+  bool m_timedMetadataBehaviorHasBeenSet = false;
+  bool m_timedMetadataPidHasBeenSet = false;
+  bool m_transportStreamIdHasBeenSet = false;
+  bool m_videoPidHasBeenSet = false;
   bool m_scte35PrerollPullupMillisecondsHasBeenSet = false;
 };
 

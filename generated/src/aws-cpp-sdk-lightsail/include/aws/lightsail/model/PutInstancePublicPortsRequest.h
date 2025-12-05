@@ -76,9 +76,9 @@ class PutInstancePublicPortsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::Vector<PortInfo> m_portInfos;
-  bool m_portInfosHasBeenSet = false;
 
   Aws::String m_instanceName;
+  bool m_portInfosHasBeenSet = false;
   bool m_instanceNameHasBeenSet = false;
 };
 

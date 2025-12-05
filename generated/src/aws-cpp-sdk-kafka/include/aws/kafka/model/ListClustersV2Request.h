@@ -119,15 +119,15 @@ class ListClustersV2Request : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterNameFilter;
-  bool m_clusterNameFilterHasBeenSet = false;
 
   Aws::String m_clusterTypeFilter;
-  bool m_clusterTypeFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_clusterNameFilterHasBeenSet = false;
+  bool m_clusterTypeFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

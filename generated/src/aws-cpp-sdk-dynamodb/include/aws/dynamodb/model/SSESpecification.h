@@ -94,12 +94,12 @@ class SSESpecification {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   SSEType m_sSEType{SSEType::NOT_SET};
-  bool m_sSETypeHasBeenSet = false;
 
   Aws::String m_kMSMasterKeyId;
+  bool m_enabledHasBeenSet = false;
+  bool m_sSETypeHasBeenSet = false;
   bool m_kMSMasterKeyIdHasBeenSet = false;
 };
 

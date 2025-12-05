@@ -87,12 +87,12 @@ class PutChannelExpirationSettingsRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_chimeBearer;
-  bool m_chimeBearerHasBeenSet = false;
 
   ExpirationSettings m_expirationSettings;
+  bool m_channelArnHasBeenSet = false;
+  bool m_chimeBearerHasBeenSet = false;
   bool m_expirationSettingsHasBeenSet = false;
 };
 

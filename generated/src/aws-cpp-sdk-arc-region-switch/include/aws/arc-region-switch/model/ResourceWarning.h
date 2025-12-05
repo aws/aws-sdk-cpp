@@ -160,24 +160,24 @@ class ResourceWarning {
   ///@}
  private:
   MinimalWorkflow m_workflow;
-  bool m_workflowHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ResourceWarningStatus m_warningStatus{ResourceWarningStatus::NOT_SET};
-  bool m_warningStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_warningUpdatedTime{};
-  bool m_warningUpdatedTimeHasBeenSet = false;
 
   Aws::String m_warningMessage;
+  bool m_workflowHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_stepNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_warningStatusHasBeenSet = false;
+  bool m_warningUpdatedTimeHasBeenSet = false;
   bool m_warningMessageHasBeenSet = false;
 };
 

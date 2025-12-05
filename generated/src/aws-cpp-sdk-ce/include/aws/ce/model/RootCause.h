@@ -147,21 +147,21 @@ class RootCause {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_linkedAccount;
-  bool m_linkedAccountHasBeenSet = false;
 
   Aws::String m_linkedAccountName;
-  bool m_linkedAccountNameHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   RootCauseImpact m_impact;
+  bool m_serviceHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_linkedAccountHasBeenSet = false;
+  bool m_linkedAccountNameHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
   bool m_impactHasBeenSet = false;
 };
 

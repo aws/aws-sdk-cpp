@@ -88,12 +88,12 @@ class TestGridSessionArtifact {
   ///@}
  private:
   Aws::String m_filename;
-  bool m_filenameHasBeenSet = false;
 
   TestGridSessionArtifactType m_type{TestGridSessionArtifactType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_filenameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

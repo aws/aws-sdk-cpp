@@ -114,15 +114,15 @@ class PublishTypeRequest : public CloudFormationRequest {
   ///@}
  private:
   ThirdPartyType m_type{ThirdPartyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_publicVersionNumber;
+  bool m_typeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
   bool m_publicVersionNumberHasBeenSet = false;
 };
 

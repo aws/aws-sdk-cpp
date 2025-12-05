@@ -58,9 +58,9 @@ class UpdateBaiduChannelResult {
   ///@}
  private:
   BaiduChannelResponse m_baiduChannelResponse;
-  bool m_baiduChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baiduChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

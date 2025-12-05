@@ -95,12 +95,12 @@ class CreateConnectionRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

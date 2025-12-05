@@ -170,27 +170,27 @@ class InstanceHealthSummary {
   ///@}
  private:
   int m_noData{0};
-  bool m_noDataHasBeenSet = false;
 
   int m_unknown{0};
-  bool m_unknownHasBeenSet = false;
 
   int m_pending{0};
-  bool m_pendingHasBeenSet = false;
 
   int m_ok{0};
-  bool m_okHasBeenSet = false;
 
   int m_info{0};
-  bool m_infoHasBeenSet = false;
 
   int m_warning{0};
-  bool m_warningHasBeenSet = false;
 
   int m_degraded{0};
-  bool m_degradedHasBeenSet = false;
 
   int m_severe{0};
+  bool m_noDataHasBeenSet = false;
+  bool m_unknownHasBeenSet = false;
+  bool m_pendingHasBeenSet = false;
+  bool m_okHasBeenSet = false;
+  bool m_infoHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
+  bool m_degradedHasBeenSet = false;
   bool m_severeHasBeenSet = false;
 };
 

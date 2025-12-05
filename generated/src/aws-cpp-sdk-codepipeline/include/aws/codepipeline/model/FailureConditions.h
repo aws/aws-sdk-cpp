@@ -105,12 +105,12 @@ class FailureConditions {
   ///@}
  private:
   Result m_result{Result::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   RetryConfiguration m_retryConfiguration;
-  bool m_retryConfigurationHasBeenSet = false;
 
   Aws::Vector<Condition> m_conditions;
+  bool m_resultHasBeenSet = false;
+  bool m_retryConfigurationHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

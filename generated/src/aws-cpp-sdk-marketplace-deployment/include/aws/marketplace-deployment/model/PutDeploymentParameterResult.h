@@ -121,18 +121,18 @@ class PutDeploymentParameterResult {
   ///@}
  private:
   Aws::String m_agreementId;
-  bool m_agreementIdHasBeenSet = false;
 
   Aws::String m_deploymentParameterId;
-  bool m_deploymentParameterIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agreementIdHasBeenSet = false;
+  bool m_deploymentParameterIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

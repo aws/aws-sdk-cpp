@@ -117,15 +117,15 @@ class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
   ///@}
  private:
   Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails> m_operands;
-  bool m_operandsHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails m_tag;
-  bool m_tagHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_operandsHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_tagHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

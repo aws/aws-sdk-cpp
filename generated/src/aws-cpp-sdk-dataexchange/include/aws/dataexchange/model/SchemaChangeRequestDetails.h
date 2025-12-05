@@ -78,9 +78,9 @@ class SchemaChangeRequestDetails {
   ///@}
  private:
   Aws::Vector<SchemaChangeDetails> m_changes;
-  bool m_changesHasBeenSet = false;
 
   Aws::Utils::DateTime m_schemaChangeAt{};
+  bool m_changesHasBeenSet = false;
   bool m_schemaChangeAtHasBeenSet = false;
 };
 

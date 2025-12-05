@@ -494,60 +494,60 @@ class CreateAccountSubscriptionRequest : public QuickSightRequest {
   ///@}
  private:
   Edition m_edition{Edition::NOT_SET};
-  bool m_editionHasBeenSet = false;
 
   AuthenticationMethodOption m_authenticationMethod{AuthenticationMethodOption::NOT_SET};
-  bool m_authenticationMethodHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_notificationEmail;
-  bool m_notificationEmailHasBeenSet = false;
 
   Aws::String m_activeDirectoryName;
-  bool m_activeDirectoryNameHasBeenSet = false;
 
   Aws::String m_realm;
-  bool m_realmHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_adminGroup;
-  bool m_adminGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorGroup;
-  bool m_authorGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readerGroup;
-  bool m_readerGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_adminProGroup;
-  bool m_adminProGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorProGroup;
-  bool m_authorProGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readerProGroup;
-  bool m_readerProGroupHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_contactNumber;
-  bool m_contactNumberHasBeenSet = false;
 
   Aws::String m_iAMIdentityCenterInstanceArn;
+  bool m_editionHasBeenSet = false;
+  bool m_authenticationMethodHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
+  bool m_notificationEmailHasBeenSet = false;
+  bool m_activeDirectoryNameHasBeenSet = false;
+  bool m_realmHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_adminGroupHasBeenSet = false;
+  bool m_authorGroupHasBeenSet = false;
+  bool m_readerGroupHasBeenSet = false;
+  bool m_adminProGroupHasBeenSet = false;
+  bool m_authorProGroupHasBeenSet = false;
+  bool m_readerProGroupHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_contactNumberHasBeenSet = false;
   bool m_iAMIdentityCenterInstanceArnHasBeenSet = false;
 };
 

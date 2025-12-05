@@ -85,12 +85,12 @@ class BorderStyle {
   ///@}
  private:
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   bool m_show{false};
-  bool m_showHasBeenSet = false;
 
   Aws::String m_width;
+  bool m_colorHasBeenSet = false;
+  bool m_showHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

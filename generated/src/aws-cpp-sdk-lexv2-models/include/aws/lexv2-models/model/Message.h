@@ -109,15 +109,15 @@ class Message {
   ///@}
  private:
   PlainTextMessage m_plainTextMessage;
-  bool m_plainTextMessageHasBeenSet = false;
 
   CustomPayload m_customPayload;
-  bool m_customPayloadHasBeenSet = false;
 
   SSMLMessage m_ssmlMessage;
-  bool m_ssmlMessageHasBeenSet = false;
 
   ImageResponseCard m_imageResponseCard;
+  bool m_plainTextMessageHasBeenSet = false;
+  bool m_customPayloadHasBeenSet = false;
+  bool m_ssmlMessageHasBeenSet = false;
   bool m_imageResponseCardHasBeenSet = false;
 };
 

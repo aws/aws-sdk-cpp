@@ -83,12 +83,12 @@ class GetApplicationRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_appRegistryArn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
   bool m_appRegistryArnHasBeenSet = false;
 };
 

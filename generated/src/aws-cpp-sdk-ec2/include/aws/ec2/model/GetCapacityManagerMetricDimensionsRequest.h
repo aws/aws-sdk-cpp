@@ -205,27 +205,27 @@ class GetCapacityManagerMetricDimensionsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<GroupBy> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::Vector<CapacityManagerCondition> m_filterBy;
-  bool m_filterByHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Metric> m_metricNames;
-  bool m_metricNamesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_groupByHasBeenSet = false;
+  bool m_filterByHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_metricNamesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListConfiguredTableAssociationsResult {
   ///@}
  private:
   Aws::Vector<ConfiguredTableAssociationSummary> m_configuredTableAssociationSummaries;
-  bool m_configuredTableAssociationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configuredTableAssociationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

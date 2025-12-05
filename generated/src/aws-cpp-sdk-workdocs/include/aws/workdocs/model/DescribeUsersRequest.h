@@ -227,33 +227,33 @@ class DescribeUsersRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   UserFilterType m_include{UserFilterType::NOT_SET};
-  bool m_includeHasBeenSet = false;
 
   OrderType m_order{OrderType::NOT_SET};
-  bool m_orderHasBeenSet = false;
 
   UserSortType m_sort{UserSortType::NOT_SET};
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_fields;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
+  bool m_queryHasBeenSet = false;
+  bool m_includeHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

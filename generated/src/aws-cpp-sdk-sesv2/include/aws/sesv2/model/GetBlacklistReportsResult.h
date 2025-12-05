@@ -75,9 +75,9 @@ class GetBlacklistReportsResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>> m_blacklistReport;
-  bool m_blacklistReportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blacklistReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

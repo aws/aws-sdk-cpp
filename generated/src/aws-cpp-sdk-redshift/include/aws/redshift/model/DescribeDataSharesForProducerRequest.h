@@ -114,15 +114,15 @@ class DescribeDataSharesForProducerRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_producerArn;
-  bool m_producerArnHasBeenSet = false;
 
   DataShareStatusForProducer m_status{DataShareStatusForProducer::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_producerArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

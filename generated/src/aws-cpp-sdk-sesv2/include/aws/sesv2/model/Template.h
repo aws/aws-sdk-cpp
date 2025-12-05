@@ -170,21 +170,21 @@ class Template {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   EmailTemplateContent m_templateContent;
-  bool m_templateContentHasBeenSet = false;
 
   Aws::String m_templateData;
-  bool m_templateDataHasBeenSet = false;
 
   Aws::Vector<MessageHeader> m_headers;
-  bool m_headersHasBeenSet = false;
 
   Aws::Vector<Attachment> m_attachments;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateContentHasBeenSet = false;
+  bool m_templateDataHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
 };
 

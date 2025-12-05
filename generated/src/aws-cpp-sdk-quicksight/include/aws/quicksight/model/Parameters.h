@@ -133,15 +133,15 @@ class Parameters {
   ///@}
  private:
   Aws::Vector<StringParameter> m_stringParameters;
-  bool m_stringParametersHasBeenSet = false;
 
   Aws::Vector<IntegerParameter> m_integerParameters;
-  bool m_integerParametersHasBeenSet = false;
 
   Aws::Vector<DecimalParameter> m_decimalParameters;
-  bool m_decimalParametersHasBeenSet = false;
 
   Aws::Vector<DateTimeParameter> m_dateTimeParameters;
+  bool m_stringParametersHasBeenSet = false;
+  bool m_integerParametersHasBeenSet = false;
+  bool m_decimalParametersHasBeenSet = false;
   bool m_dateTimeParametersHasBeenSet = false;
 };
 

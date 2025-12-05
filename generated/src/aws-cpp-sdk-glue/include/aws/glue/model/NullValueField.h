@@ -70,9 +70,9 @@ class NullValueField {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Datatype m_datatype;
+  bool m_valueHasBeenSet = false;
   bool m_datatypeHasBeenSet = false;
 };
 

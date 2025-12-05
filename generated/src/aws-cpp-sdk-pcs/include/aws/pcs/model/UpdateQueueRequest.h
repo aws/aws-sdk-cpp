@@ -140,18 +140,18 @@ class UpdateQueueRequest : public PCSRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_queueIdentifier;
-  bool m_queueIdentifierHasBeenSet = false;
 
   Aws::Vector<ComputeNodeGroupConfiguration> m_computeNodeGroupConfigurations;
-  bool m_computeNodeGroupConfigurationsHasBeenSet = false;
 
   UpdateQueueSlurmConfigurationRequest m_slurmConfiguration;
-  bool m_slurmConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_queueIdentifierHasBeenSet = false;
+  bool m_computeNodeGroupConfigurationsHasBeenSet = false;
+  bool m_slurmConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

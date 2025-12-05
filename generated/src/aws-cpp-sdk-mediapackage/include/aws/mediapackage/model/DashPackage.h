@@ -338,51 +338,51 @@ rounded to the
   ///@}
  private:
   Aws::Vector<__AdTriggersElement> m_adTriggers;
-  bool m_adTriggersHasBeenSet = false;
 
   AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions{AdsOnDeliveryRestrictions::NOT_SET};
-  bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
   DashEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   bool m_includeIframeOnlyStream{false};
-  bool m_includeIframeOnlyStreamHasBeenSet = false;
 
   ManifestLayout m_manifestLayout{ManifestLayout::NOT_SET};
-  bool m_manifestLayoutHasBeenSet = false;
 
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   int m_minBufferTimeSeconds{0};
-  bool m_minBufferTimeSecondsHasBeenSet = false;
 
   int m_minUpdatePeriodSeconds{0};
-  bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
   Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
-  bool m_periodTriggersHasBeenSet = false;
 
   Profile m_profile{Profile::NOT_SET};
-  bool m_profileHasBeenSet = false;
 
   int m_segmentDurationSeconds{0};
-  bool m_segmentDurationSecondsHasBeenSet = false;
 
   SegmentTemplateFormat m_segmentTemplateFormat{SegmentTemplateFormat::NOT_SET};
-  bool m_segmentTemplateFormatHasBeenSet = false;
 
   StreamSelection m_streamSelection;
-  bool m_streamSelectionHasBeenSet = false;
 
   int m_suggestedPresentationDelaySeconds{0};
-  bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
 
   UtcTiming m_utcTiming{UtcTiming::NOT_SET};
-  bool m_utcTimingHasBeenSet = false;
 
   Aws::String m_utcTimingUri;
+  bool m_adTriggersHasBeenSet = false;
+  bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_includeIframeOnlyStreamHasBeenSet = false;
+  bool m_manifestLayoutHasBeenSet = false;
+  bool m_manifestWindowSecondsHasBeenSet = false;
+  bool m_minBufferTimeSecondsHasBeenSet = false;
+  bool m_minUpdatePeriodSecondsHasBeenSet = false;
+  bool m_periodTriggersHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_segmentDurationSecondsHasBeenSet = false;
+  bool m_segmentTemplateFormatHasBeenSet = false;
+  bool m_streamSelectionHasBeenSet = false;
+  bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
+  bool m_utcTimingHasBeenSet = false;
   bool m_utcTimingUriHasBeenSet = false;
 };
 

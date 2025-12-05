@@ -156,24 +156,24 @@ class UpdateMultiRegionClusterRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_multiRegionClusterName;
-  bool m_multiRegionClusterNameHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   ShardConfigurationRequest m_shardConfiguration;
-  bool m_shardConfigurationHasBeenSet = false;
 
   Aws::String m_multiRegionParameterGroupName;
-  bool m_multiRegionParameterGroupNameHasBeenSet = false;
 
   UpdateStrategy m_updateStrategy{UpdateStrategy::NOT_SET};
+  bool m_multiRegionClusterNameHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_shardConfigurationHasBeenSet = false;
+  bool m_multiRegionParameterGroupNameHasBeenSet = false;
   bool m_updateStrategyHasBeenSet = false;
 };
 

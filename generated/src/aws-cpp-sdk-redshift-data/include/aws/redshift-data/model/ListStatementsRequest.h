@@ -198,27 +198,27 @@ class ListStatementsRequest : public RedshiftDataAPIServiceRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   StatusString m_status{StatusString::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_roleLevel{false};
-  bool m_roleLevelHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statementNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_roleLevelHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

@@ -208,33 +208,33 @@ class ColumnInfo {
   ///@}
  private:
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   int m_precision{0};
-  bool m_precisionHasBeenSet = false;
 
   int m_scale{0};
-  bool m_scaleHasBeenSet = false;
 
   ColumnNullable m_nullable{ColumnNullable::NOT_SET};
-  bool m_nullableHasBeenSet = false;
 
   bool m_caseSensitive{false};
+  bool m_catalogNameHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_precisionHasBeenSet = false;
+  bool m_scaleHasBeenSet = false;
+  bool m_nullableHasBeenSet = false;
   bool m_caseSensitiveHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class FlowTemplateSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_revisionNumber{0};
-  bool m_revisionNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_revisionNumberHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateInferenceComponentRuntimeConfigResult {
   ///@}
  private:
   Aws::String m_inferenceComponentArn;
-  bool m_inferenceComponentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceComponentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

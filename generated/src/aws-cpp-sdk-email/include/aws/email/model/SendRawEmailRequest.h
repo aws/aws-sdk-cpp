@@ -280,27 +280,27 @@ class SendRawEmailRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   RawMessage m_rawMessage;
-  bool m_rawMessageHasBeenSet = false;
 
   Aws::String m_fromArn;
-  bool m_fromArnHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_returnPathArn;
-  bool m_returnPathArnHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_configurationSetName;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_rawMessageHasBeenSet = false;
+  bool m_fromArnHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_returnPathArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
 };
 

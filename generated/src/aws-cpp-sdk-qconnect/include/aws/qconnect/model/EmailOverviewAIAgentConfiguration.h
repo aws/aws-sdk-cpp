@@ -71,9 +71,9 @@ class EmailOverviewAIAgentConfiguration {
   ///@}
  private:
   Aws::String m_emailOverviewAIPromptId;
-  bool m_emailOverviewAIPromptIdHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_emailOverviewAIPromptIdHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

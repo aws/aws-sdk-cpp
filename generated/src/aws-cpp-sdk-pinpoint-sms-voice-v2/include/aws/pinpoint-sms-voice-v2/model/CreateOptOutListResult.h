@@ -121,18 +121,18 @@ class CreateOptOutListResult {
   ///@}
  private:
   Aws::String m_optOutListArn;
-  bool m_optOutListArnHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_optOutListArnHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

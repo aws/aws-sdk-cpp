@@ -86,12 +86,12 @@ class ListTestSetsRequest : public LexModelsV2Request {
   ///@}
  private:
   TestSetSortBy m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_sortByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

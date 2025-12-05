@@ -85,12 +85,12 @@ class GetConnectionsResult {
   ///@}
  private:
   Aws::Vector<Connection> m_connectionList;
-  bool m_connectionListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

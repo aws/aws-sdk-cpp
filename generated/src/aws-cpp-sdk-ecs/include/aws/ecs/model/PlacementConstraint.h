@@ -81,9 +81,9 @@ class PlacementConstraint {
   ///@}
  private:
   PlacementConstraintType m_type{PlacementConstraintType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_typeHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

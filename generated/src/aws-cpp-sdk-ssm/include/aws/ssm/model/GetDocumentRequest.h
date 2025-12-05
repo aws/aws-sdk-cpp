@@ -105,15 +105,15 @@ class GetDocumentRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
   bool m_documentFormatHasBeenSet = false;
 };
 

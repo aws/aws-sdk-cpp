@@ -549,81 +549,81 @@ class ClientVpnEndpoint {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ClientVpnEndpointStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_deletionTime;
-  bool m_deletionTimeHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   Aws::String m_clientCidrBlock;
-  bool m_clientCidrBlockHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsServers;
-  bool m_dnsServersHasBeenSet = false;
 
   bool m_splitTunnel{false};
-  bool m_splitTunnelHasBeenSet = false;
 
   VpnProtocol m_vpnProtocol{VpnProtocol::NOT_SET};
-  bool m_vpnProtocolHasBeenSet = false;
 
   TransportProtocol m_transportProtocol{TransportProtocol::NOT_SET};
-  bool m_transportProtocolHasBeenSet = false;
 
   int m_vpnPort{0};
-  bool m_vpnPortHasBeenSet = false;
 
   Aws::String m_serverCertificateArn;
-  bool m_serverCertificateArnHasBeenSet = false;
 
   Aws::Vector<ClientVpnAuthentication> m_authenticationOptions;
-  bool m_authenticationOptionsHasBeenSet = false;
 
   ConnectionLogResponseOptions m_connectionLogOptions;
-  bool m_connectionLogOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_selfServicePortalUrl;
-  bool m_selfServicePortalUrlHasBeenSet = false;
 
   ClientConnectResponseOptions m_clientConnectOptions;
-  bool m_clientConnectOptionsHasBeenSet = false;
 
   int m_sessionTimeoutHours{0};
-  bool m_sessionTimeoutHoursHasBeenSet = false;
 
   ClientLoginBannerResponseOptions m_clientLoginBannerOptions;
-  bool m_clientLoginBannerOptionsHasBeenSet = false;
 
   ClientRouteEnforcementResponseOptions m_clientRouteEnforcementOptions;
-  bool m_clientRouteEnforcementOptionsHasBeenSet = false;
 
   bool m_disconnectOnSessionTimeout{false};
-  bool m_disconnectOnSessionTimeoutHasBeenSet = false;
 
   EndpointIpAddressType m_endpointIpAddressType{EndpointIpAddressType::NOT_SET};
-  bool m_endpointIpAddressTypeHasBeenSet = false;
 
   TrafficIpAddressType m_trafficIpAddressType{TrafficIpAddressType::NOT_SET};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deletionTimeHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_clientCidrBlockHasBeenSet = false;
+  bool m_dnsServersHasBeenSet = false;
+  bool m_splitTunnelHasBeenSet = false;
+  bool m_vpnProtocolHasBeenSet = false;
+  bool m_transportProtocolHasBeenSet = false;
+  bool m_vpnPortHasBeenSet = false;
+  bool m_serverCertificateArnHasBeenSet = false;
+  bool m_authenticationOptionsHasBeenSet = false;
+  bool m_connectionLogOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_selfServicePortalUrlHasBeenSet = false;
+  bool m_clientConnectOptionsHasBeenSet = false;
+  bool m_sessionTimeoutHoursHasBeenSet = false;
+  bool m_clientLoginBannerOptionsHasBeenSet = false;
+  bool m_clientRouteEnforcementOptionsHasBeenSet = false;
+  bool m_disconnectOnSessionTimeoutHasBeenSet = false;
+  bool m_endpointIpAddressTypeHasBeenSet = false;
   bool m_trafficIpAddressTypeHasBeenSet = false;
 };
 

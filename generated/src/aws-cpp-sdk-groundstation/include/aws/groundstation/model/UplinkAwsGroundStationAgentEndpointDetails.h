@@ -103,15 +103,15 @@ class UplinkAwsGroundStationAgentEndpointDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UplinkDataflowDetails m_dataflowDetails;
-  bool m_dataflowDetailsHasBeenSet = false;
 
   AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-  bool m_agentStatusHasBeenSet = false;
 
   AuditResults m_auditResults{AuditResults::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_dataflowDetailsHasBeenSet = false;
+  bool m_agentStatusHasBeenSet = false;
   bool m_auditResultsHasBeenSet = false;
 };
 

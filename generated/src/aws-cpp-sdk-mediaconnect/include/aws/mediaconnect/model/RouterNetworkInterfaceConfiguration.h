@@ -66,9 +66,9 @@ class RouterNetworkInterfaceConfiguration {
   ///@}
  private:
   PublicRouterNetworkInterfaceConfiguration m_public;
-  bool m_publicHasBeenSet = false;
 
   VpcRouterNetworkInterfaceConfiguration m_vpc;
+  bool m_publicHasBeenSet = false;
   bool m_vpcHasBeenSet = false;
 };
 

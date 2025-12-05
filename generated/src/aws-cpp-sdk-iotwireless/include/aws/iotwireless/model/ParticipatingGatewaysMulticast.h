@@ -82,9 +82,9 @@ class ParticipatingGatewaysMulticast {
   ///@}
  private:
   Aws::Vector<Aws::String> m_gatewayList;
-  bool m_gatewayListHasBeenSet = false;
 
   int m_transmissionInterval{0};
+  bool m_gatewayListHasBeenSet = false;
   bool m_transmissionIntervalHasBeenSet = false;
 };
 

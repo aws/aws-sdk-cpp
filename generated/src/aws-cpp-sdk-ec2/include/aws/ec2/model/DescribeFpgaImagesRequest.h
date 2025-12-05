@@ -182,21 +182,21 @@ class DescribeFpgaImagesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fpgaImageIds;
-  bool m_fpgaImageIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_owners;
-  bool m_ownersHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_fpgaImageIdsHasBeenSet = false;
+  bool m_ownersHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

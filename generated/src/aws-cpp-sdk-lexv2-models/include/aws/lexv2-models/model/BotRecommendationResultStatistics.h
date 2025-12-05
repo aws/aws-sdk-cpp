@@ -72,9 +72,9 @@ class BotRecommendationResultStatistics {
   ///@}
  private:
   IntentStatistics m_intents;
-  bool m_intentsHasBeenSet = false;
 
   SlotTypeStatistics m_slotTypes;
+  bool m_intentsHasBeenSet = false;
   bool m_slotTypesHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class Identity {
   ///@}
  private:
   Aws::String m_sourceIp;
-  bool m_sourceIpHasBeenSet = false;
 
   Aws::String m_userAgent;
+  bool m_sourceIpHasBeenSet = false;
   bool m_userAgentHasBeenSet = false;
 };
 

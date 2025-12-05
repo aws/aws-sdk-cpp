@@ -114,15 +114,15 @@ class MetricInfo {
   ///@}
  private:
   Aws::String m_metricNamespace;
-  bool m_metricNamespaceHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metricDimensions;
-  bool m_metricDimensionsHasBeenSet = false;
 
   Aws::String m_metricStatisticRecommendation;
+  bool m_metricNamespaceHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_metricDimensionsHasBeenSet = false;
   bool m_metricStatisticRecommendationHasBeenSet = false;
 };
 

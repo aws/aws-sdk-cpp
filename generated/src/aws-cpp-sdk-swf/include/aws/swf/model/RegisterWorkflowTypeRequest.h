@@ -262,33 +262,33 @@ class RegisterWorkflowTypeRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultTaskStartToCloseTimeout;
-  bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
 
   Aws::String m_defaultExecutionStartToCloseTimeout;
-  bool m_defaultExecutionStartToCloseTimeoutHasBeenSet = false;
 
   TaskList m_defaultTaskList;
-  bool m_defaultTaskListHasBeenSet = false;
 
   Aws::String m_defaultTaskPriority;
-  bool m_defaultTaskPriorityHasBeenSet = false;
 
   ChildPolicy m_defaultChildPolicy{ChildPolicy::NOT_SET};
-  bool m_defaultChildPolicyHasBeenSet = false;
 
   Aws::String m_defaultLambdaRole;
+  bool m_domainHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
+  bool m_defaultExecutionStartToCloseTimeoutHasBeenSet = false;
+  bool m_defaultTaskListHasBeenSet = false;
+  bool m_defaultTaskPriorityHasBeenSet = false;
+  bool m_defaultChildPolicyHasBeenSet = false;
   bool m_defaultLambdaRoleHasBeenSet = false;
 };
 

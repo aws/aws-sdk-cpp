@@ -229,30 +229,30 @@ class RecommendedAction {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::Vector<RecommendedActionParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applyModes;
-  bool m_applyModesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   IssueDetails m_issueDetails;
-  bool m_issueDetailsHasBeenSet = false;
 
   Aws::Vector<ContextAttribute> m_contextAttributes;
+  bool m_actionIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_applyModesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_issueDetailsHasBeenSet = false;
   bool m_contextAttributesHasBeenSet = false;
 };
 

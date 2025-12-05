@@ -87,12 +87,12 @@ class ListApplicationOperationsResult {
   ///@}
  private:
   Aws::Vector<ApplicationOperationInfo> m_applicationOperationInfoList;
-  bool m_applicationOperationInfoListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationOperationInfoListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

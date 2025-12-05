@@ -96,12 +96,12 @@ class DataPartition {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DataPartitionStorageOptions m_storageOptions;
-  bool m_storageOptionsHasBeenSet = false;
 
   DataPartitionUploadOptions m_uploadOptions;
+  bool m_idHasBeenSet = false;
+  bool m_storageOptionsHasBeenSet = false;
   bool m_uploadOptionsHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class UpdatePrimaryRegionRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_primaryRegion;
+  bool m_keyIdHasBeenSet = false;
   bool m_primaryRegionHasBeenSet = false;
 };
 

@@ -120,12 +120,12 @@ class EnableMetricsCollectionRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_granularity;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_granularityHasBeenSet = false;
 };
 

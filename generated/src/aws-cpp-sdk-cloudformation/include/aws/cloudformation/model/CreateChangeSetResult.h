@@ -83,12 +83,12 @@ class CreateChangeSetResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_idHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class ExecuteCoreNetworkChangeSetRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   int m_policyVersionId{0};
+  bool m_coreNetworkIdHasBeenSet = false;
   bool m_policyVersionIdHasBeenSet = false;
 };
 

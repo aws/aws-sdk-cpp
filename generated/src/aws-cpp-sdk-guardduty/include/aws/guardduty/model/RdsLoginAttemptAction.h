@@ -75,9 +75,9 @@ class RdsLoginAttemptAction {
   ///@}
  private:
   RemoteIpDetails m_remoteIpDetails;
-  bool m_remoteIpDetailsHasBeenSet = false;
 
   Aws::Vector<LoginAttribute> m_loginAttributes;
+  bool m_remoteIpDetailsHasBeenSet = false;
   bool m_loginAttributesHasBeenSet = false;
 };
 

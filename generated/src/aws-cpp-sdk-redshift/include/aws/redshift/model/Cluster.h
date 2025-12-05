@@ -1277,189 +1277,189 @@ class Cluster {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_clusterStatus;
-  bool m_clusterStatusHasBeenSet = false;
 
   Aws::String m_clusterAvailabilityStatus;
-  bool m_clusterAvailabilityStatusHasBeenSet = false;
 
   Aws::String m_modifyStatus;
-  bool m_modifyStatusHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_dBName;
-  bool m_dBNameHasBeenSet = false;
 
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_clusterCreateTime{};
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   int m_automatedSnapshotRetentionPeriod{0};
-  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::Vector<ClusterSecurityGroupMembership> m_clusterSecurityGroups;
-  bool m_clusterSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<ClusterParameterGroupStatus> m_clusterParameterGroups;
-  bool m_clusterParameterGroupsHasBeenSet = false;
 
   Aws::String m_clusterSubnetGroupName;
-  bool m_clusterSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   PendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   bool m_allowVersionUpgrade{false};
-  bool m_allowVersionUpgradeHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   RestoreStatus m_restoreStatus;
-  bool m_restoreStatusHasBeenSet = false;
 
   DataTransferProgress m_dataTransferProgress;
-  bool m_dataTransferProgressHasBeenSet = false;
 
   HsmStatus m_hsmStatus;
-  bool m_hsmStatusHasBeenSet = false;
 
   ClusterSnapshotCopyStatus m_clusterSnapshotCopyStatus;
-  bool m_clusterSnapshotCopyStatusHasBeenSet = false;
 
   Aws::String m_clusterPublicKey;
-  bool m_clusterPublicKeyHasBeenSet = false;
 
   Aws::Vector<ClusterNode> m_clusterNodes;
-  bool m_clusterNodesHasBeenSet = false;
 
   ElasticIpStatus m_elasticIpStatus;
-  bool m_elasticIpStatusHasBeenSet = false;
 
   Aws::String m_clusterRevisionNumber;
-  bool m_clusterRevisionNumberHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::Vector<ClusterIamRole> m_iamRoles;
-  bool m_iamRolesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pendingActions;
-  bool m_pendingActionsHasBeenSet = false;
 
   Aws::String m_maintenanceTrackName;
-  bool m_maintenanceTrackNameHasBeenSet = false;
 
   Aws::String m_elasticResizeNumberOfNodeOptions;
-  bool m_elasticResizeNumberOfNodeOptionsHasBeenSet = false;
 
   Aws::Vector<DeferredMaintenanceWindow> m_deferredMaintenanceWindows;
-  bool m_deferredMaintenanceWindowsHasBeenSet = false;
 
   Aws::String m_snapshotScheduleIdentifier;
-  bool m_snapshotScheduleIdentifierHasBeenSet = false;
 
   ScheduleState m_snapshotScheduleState{ScheduleState::NOT_SET};
-  bool m_snapshotScheduleStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expectedNextSnapshotScheduleTime{};
-  bool m_expectedNextSnapshotScheduleTimeHasBeenSet = false;
 
   Aws::String m_expectedNextSnapshotScheduleTimeStatus;
-  bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextMaintenanceWindowStartTime{};
-  bool m_nextMaintenanceWindowStartTimeHasBeenSet = false;
 
   ResizeInfo m_resizeInfo;
-  bool m_resizeInfoHasBeenSet = false;
 
   Aws::String m_availabilityZoneRelocationStatus;
-  bool m_availabilityZoneRelocationStatusHasBeenSet = false;
 
   Aws::String m_clusterNamespaceArn;
-  bool m_clusterNamespaceArnHasBeenSet = false;
 
   long long m_totalStorageCapacityInMegaBytes{0};
-  bool m_totalStorageCapacityInMegaBytesHasBeenSet = false;
 
   AquaConfiguration m_aquaConfiguration;
-  bool m_aquaConfigurationHasBeenSet = false;
 
   Aws::String m_defaultIamRoleArn;
-  bool m_defaultIamRoleArnHasBeenSet = false;
 
   ReservedNodeExchangeStatus m_reservedNodeExchangeStatus;
-  bool m_reservedNodeExchangeStatusHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_customDomainCertificateExpiryDate{};
-  bool m_customDomainCertificateExpiryDateHasBeenSet = false;
 
   Aws::String m_masterPasswordSecretArn;
-  bool m_masterPasswordSecretArnHasBeenSet = false;
 
   Aws::String m_masterPasswordSecretKmsKeyId;
-  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_ipAddressType;
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_multiAZ;
-  bool m_multiAZHasBeenSet = false;
 
   SecondaryClusterInfo m_multiAZSecondary;
-  bool m_multiAZSecondaryHasBeenSet = false;
 
   Aws::String m_lakehouseRegistrationStatus;
-  bool m_lakehouseRegistrationStatusHasBeenSet = false;
 
   Aws::String m_catalogArn;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_clusterStatusHasBeenSet = false;
+  bool m_clusterAvailabilityStatusHasBeenSet = false;
+  bool m_modifyStatusHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_dBNameHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_clusterSecurityGroupsHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
+  bool m_clusterParameterGroupsHasBeenSet = false;
+  bool m_clusterSubnetGroupNameHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_allowVersionUpgradeHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_restoreStatusHasBeenSet = false;
+  bool m_dataTransferProgressHasBeenSet = false;
+  bool m_hsmStatusHasBeenSet = false;
+  bool m_clusterSnapshotCopyStatusHasBeenSet = false;
+  bool m_clusterPublicKeyHasBeenSet = false;
+  bool m_clusterNodesHasBeenSet = false;
+  bool m_elasticIpStatusHasBeenSet = false;
+  bool m_clusterRevisionNumberHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_iamRolesHasBeenSet = false;
+  bool m_pendingActionsHasBeenSet = false;
+  bool m_maintenanceTrackNameHasBeenSet = false;
+  bool m_elasticResizeNumberOfNodeOptionsHasBeenSet = false;
+  bool m_deferredMaintenanceWindowsHasBeenSet = false;
+  bool m_snapshotScheduleIdentifierHasBeenSet = false;
+  bool m_snapshotScheduleStateHasBeenSet = false;
+  bool m_expectedNextSnapshotScheduleTimeHasBeenSet = false;
+  bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = false;
+  bool m_nextMaintenanceWindowStartTimeHasBeenSet = false;
+  bool m_resizeInfoHasBeenSet = false;
+  bool m_availabilityZoneRelocationStatusHasBeenSet = false;
+  bool m_clusterNamespaceArnHasBeenSet = false;
+  bool m_totalStorageCapacityInMegaBytesHasBeenSet = false;
+  bool m_aquaConfigurationHasBeenSet = false;
+  bool m_defaultIamRoleArnHasBeenSet = false;
+  bool m_reservedNodeExchangeStatusHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_customDomainCertificateArnHasBeenSet = false;
+  bool m_customDomainCertificateExpiryDateHasBeenSet = false;
+  bool m_masterPasswordSecretArnHasBeenSet = false;
+  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_multiAZSecondaryHasBeenSet = false;
+  bool m_lakehouseRegistrationStatusHasBeenSet = false;
   bool m_catalogArnHasBeenSet = false;
 };
 

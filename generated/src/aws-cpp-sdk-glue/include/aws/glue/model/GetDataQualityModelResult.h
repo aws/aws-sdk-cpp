@@ -110,18 +110,18 @@ class GetDataQualityModelResult {
   ///@}
  private:
   DataQualityModelStatus m_status{DataQualityModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

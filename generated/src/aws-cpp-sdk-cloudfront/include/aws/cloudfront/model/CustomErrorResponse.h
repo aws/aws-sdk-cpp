@@ -145,15 +145,15 @@ class CustomErrorResponse {
   ///@}
  private:
   int m_errorCode{0};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_responsePagePath;
-  bool m_responsePagePathHasBeenSet = false;
 
   Aws::String m_responseCode;
-  bool m_responseCodeHasBeenSet = false;
 
   long long m_errorCachingMinTTL{0};
+  bool m_errorCodeHasBeenSet = false;
+  bool m_responsePagePathHasBeenSet = false;
+  bool m_responseCodeHasBeenSet = false;
   bool m_errorCachingMinTTLHasBeenSet = false;
 };
 

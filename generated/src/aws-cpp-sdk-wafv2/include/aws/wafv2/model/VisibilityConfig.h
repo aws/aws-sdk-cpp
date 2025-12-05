@@ -102,12 +102,12 @@ class VisibilityConfig {
   ///@}
  private:
   bool m_sampledRequestsEnabled{false};
-  bool m_sampledRequestsEnabledHasBeenSet = false;
 
   bool m_cloudWatchMetricsEnabled{false};
-  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
   Aws::String m_metricName;
+  bool m_sampledRequestsEnabledHasBeenSet = false;
+  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
   bool m_metricNameHasBeenSet = false;
 };
 

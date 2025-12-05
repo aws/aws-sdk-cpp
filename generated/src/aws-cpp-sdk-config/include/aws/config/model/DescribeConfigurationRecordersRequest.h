@@ -101,12 +101,12 @@ class DescribeConfigurationRecordersRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configurationRecorderNames;
-  bool m_configurationRecorderNamesHasBeenSet = false;
 
   Aws::String m_servicePrincipal;
-  bool m_servicePrincipalHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_configurationRecorderNamesHasBeenSet = false;
+  bool m_servicePrincipalHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

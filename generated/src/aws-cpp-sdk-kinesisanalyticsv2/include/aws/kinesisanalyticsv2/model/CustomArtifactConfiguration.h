@@ -87,12 +87,12 @@ class CustomArtifactConfiguration {
   ///@}
  private:
   ArtifactType m_artifactType{ArtifactType::NOT_SET};
-  bool m_artifactTypeHasBeenSet = false;
 
   S3ContentLocation m_s3ContentLocation;
-  bool m_s3ContentLocationHasBeenSet = false;
 
   MavenReference m_mavenReference;
+  bool m_artifactTypeHasBeenSet = false;
+  bool m_s3ContentLocationHasBeenSet = false;
   bool m_mavenReferenceHasBeenSet = false;
 };
 

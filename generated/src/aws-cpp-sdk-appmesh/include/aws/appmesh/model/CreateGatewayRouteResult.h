@@ -60,9 +60,9 @@ class CreateGatewayRouteResult {
   ///@}
  private:
   GatewayRouteData m_gatewayRoute;
-  bool m_gatewayRouteHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayRouteHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

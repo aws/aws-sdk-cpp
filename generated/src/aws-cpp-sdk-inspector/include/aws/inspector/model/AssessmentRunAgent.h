@@ -168,24 +168,24 @@ class AssessmentRunAgent {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_assessmentRunArn;
-  bool m_assessmentRunArnHasBeenSet = false;
 
   AgentHealth m_agentHealth{AgentHealth::NOT_SET};
-  bool m_agentHealthHasBeenSet = false;
 
   AgentHealthCode m_agentHealthCode{AgentHealthCode::NOT_SET};
-  bool m_agentHealthCodeHasBeenSet = false;
 
   Aws::String m_agentHealthDetails;
-  bool m_agentHealthDetailsHasBeenSet = false;
 
   Aws::String m_autoScalingGroup;
-  bool m_autoScalingGroupHasBeenSet = false;
 
   Aws::Vector<TelemetryMetadata> m_telemetryMetadata;
+  bool m_agentIdHasBeenSet = false;
+  bool m_assessmentRunArnHasBeenSet = false;
+  bool m_agentHealthHasBeenSet = false;
+  bool m_agentHealthCodeHasBeenSet = false;
+  bool m_agentHealthDetailsHasBeenSet = false;
+  bool m_autoScalingGroupHasBeenSet = false;
   bool m_telemetryMetadataHasBeenSet = false;
 };
 

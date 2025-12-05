@@ -69,9 +69,9 @@ class DeleteIntegrationRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   bool m_force{false};
+  bool m_integrationNameHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

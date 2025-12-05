@@ -177,21 +177,21 @@ class ActivityTypeConfiguration {
   ///@}
  private:
   Aws::String m_defaultTaskStartToCloseTimeout;
-  bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
 
   Aws::String m_defaultTaskHeartbeatTimeout;
-  bool m_defaultTaskHeartbeatTimeoutHasBeenSet = false;
 
   TaskList m_defaultTaskList;
-  bool m_defaultTaskListHasBeenSet = false;
 
   Aws::String m_defaultTaskPriority;
-  bool m_defaultTaskPriorityHasBeenSet = false;
 
   Aws::String m_defaultTaskScheduleToStartTimeout;
-  bool m_defaultTaskScheduleToStartTimeoutHasBeenSet = false;
 
   Aws::String m_defaultTaskScheduleToCloseTimeout;
+  bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
+  bool m_defaultTaskHeartbeatTimeoutHasBeenSet = false;
+  bool m_defaultTaskListHasBeenSet = false;
+  bool m_defaultTaskPriorityHasBeenSet = false;
+  bool m_defaultTaskScheduleToStartTimeoutHasBeenSet = false;
   bool m_defaultTaskScheduleToCloseTimeoutHasBeenSet = false;
 };
 

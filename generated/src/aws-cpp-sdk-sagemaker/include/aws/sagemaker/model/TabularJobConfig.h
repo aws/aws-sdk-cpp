@@ -236,27 +236,27 @@ class TabularJobConfig {
   ///@}
  private:
   CandidateGenerationConfig m_candidateGenerationConfig;
-  bool m_candidateGenerationConfigHasBeenSet = false;
 
   AutoMLJobCompletionCriteria m_completionCriteria;
-  bool m_completionCriteriaHasBeenSet = false;
 
   Aws::String m_featureSpecificationS3Uri;
-  bool m_featureSpecificationS3UriHasBeenSet = false;
 
   AutoMLMode m_mode{AutoMLMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   bool m_generateCandidateDefinitionsOnly{false};
-  bool m_generateCandidateDefinitionsOnlyHasBeenSet = false;
 
   ProblemType m_problemType{ProblemType::NOT_SET};
-  bool m_problemTypeHasBeenSet = false;
 
   Aws::String m_targetAttributeName;
-  bool m_targetAttributeNameHasBeenSet = false;
 
   Aws::String m_sampleWeightAttributeName;
+  bool m_candidateGenerationConfigHasBeenSet = false;
+  bool m_completionCriteriaHasBeenSet = false;
+  bool m_featureSpecificationS3UriHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_generateCandidateDefinitionsOnlyHasBeenSet = false;
+  bool m_problemTypeHasBeenSet = false;
+  bool m_targetAttributeNameHasBeenSet = false;
   bool m_sampleWeightAttributeNameHasBeenSet = false;
 };
 

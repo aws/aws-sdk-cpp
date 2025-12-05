@@ -70,9 +70,9 @@ class DeleteConnectorRequest : public KafkaConnectRequest {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
+  bool m_connectorArnHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ActivateReadSetSourceItem {
   ///@}
  private:
   Aws::String m_readSetId;
-  bool m_readSetIdHasBeenSet = false;
 
   ReadSetActivationJobItemStatus m_status{ReadSetActivationJobItemStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_readSetIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

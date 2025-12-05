@@ -114,15 +114,15 @@ class FsxUpdateProtocolSmb {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   SmbMountOptions m_mountOptions;
-  bool m_mountOptionsHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_user;
+  bool m_domainHasBeenSet = false;
+  bool m_mountOptionsHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

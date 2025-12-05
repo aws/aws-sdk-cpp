@@ -96,12 +96,12 @@ class MediaResource {
   ///@}
  private:
   Aws::Vector<MediaResourceNeighbor> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<MediaResourceNeighbor> m_sources;
+  bool m_destinationsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

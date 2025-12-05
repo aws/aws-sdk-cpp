@@ -269,39 +269,39 @@ class ExecutionListItem {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopDate{};
-  bool m_stopDateHasBeenSet = false;
 
   Aws::String m_mapRunArn;
-  bool m_mapRunArnHasBeenSet = false;
 
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   Aws::String m_stateMachineVersionArn;
-  bool m_stateMachineVersionArnHasBeenSet = false;
 
   Aws::String m_stateMachineAliasArn;
-  bool m_stateMachineAliasArnHasBeenSet = false;
 
   int m_redriveCount{0};
-  bool m_redriveCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_redriveDate{};
+  bool m_executionArnHasBeenSet = false;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_stopDateHasBeenSet = false;
+  bool m_mapRunArnHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
+  bool m_stateMachineVersionArnHasBeenSet = false;
+  bool m_stateMachineAliasArnHasBeenSet = false;
+  bool m_redriveCountHasBeenSet = false;
   bool m_redriveDateHasBeenSet = false;
 };
 

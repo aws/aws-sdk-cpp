@@ -85,12 +85,12 @@ class ListPagesByContactRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_contactIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

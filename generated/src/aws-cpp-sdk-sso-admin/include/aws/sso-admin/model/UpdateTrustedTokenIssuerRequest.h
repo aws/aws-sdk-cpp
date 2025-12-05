@@ -92,12 +92,12 @@ class UpdateTrustedTokenIssuerRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_trustedTokenIssuerArn;
-  bool m_trustedTokenIssuerArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TrustedTokenIssuerUpdateConfiguration m_trustedTokenIssuerConfiguration;
+  bool m_trustedTokenIssuerArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_trustedTokenIssuerConfigurationHasBeenSet = false;
 };
 

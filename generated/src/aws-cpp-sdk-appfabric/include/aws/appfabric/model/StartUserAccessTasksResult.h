@@ -67,9 +67,9 @@ class StartUserAccessTasksResult {
   ///@}
  private:
   Aws::Vector<UserAccessTaskItem> m_userAccessTasksList;
-  bool m_userAccessTasksListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userAccessTasksListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

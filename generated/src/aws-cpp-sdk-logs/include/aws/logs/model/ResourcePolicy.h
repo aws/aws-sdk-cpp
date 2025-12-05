@@ -142,21 +142,21 @@ class ResourcePolicy {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   long long m_lastUpdatedTime{0};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   PolicyScope m_policyScope{PolicyScope::NOT_SET};
-  bool m_policyScopeHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_policyScopeHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

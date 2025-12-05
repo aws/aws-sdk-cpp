@@ -114,15 +114,15 @@ class OAuth2Properties {
   ///@}
  private:
   OAuth2GrantType m_oAuth2GrantType{OAuth2GrantType::NOT_SET};
-  bool m_oAuth2GrantTypeHasBeenSet = false;
 
   OAuth2ClientApplication m_oAuth2ClientApplication;
-  bool m_oAuth2ClientApplicationHasBeenSet = false;
 
   Aws::String m_tokenUrl;
-  bool m_tokenUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tokenUrlParametersMap;
+  bool m_oAuth2GrantTypeHasBeenSet = false;
+  bool m_oAuth2ClientApplicationHasBeenSet = false;
+  bool m_tokenUrlHasBeenSet = false;
   bool m_tokenUrlParametersMapHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class KnowledgeBaseAssociationConfigurationData {
   ///@}
  private:
   TagFilter m_contentTagFilter;
-  bool m_contentTagFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   KnowledgeBaseSearchType m_overrideKnowledgeBaseSearchType{KnowledgeBaseSearchType::NOT_SET};
+  bool m_contentTagFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_overrideKnowledgeBaseSearchTypeHasBeenSet = false;
 };
 

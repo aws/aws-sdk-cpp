@@ -104,12 +104,12 @@ class DataViewDestinationTypeParams {
   ///@}
  private:
   Aws::String m_destinationType;
-  bool m_destinationTypeHasBeenSet = false;
 
   ExportFileFormat m_s3DestinationExportFileFormat{ExportFileFormat::NOT_SET};
-  bool m_s3DestinationExportFileFormatHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_s3DestinationExportFileFormatOptions;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_s3DestinationExportFileFormatHasBeenSet = false;
   bool m_s3DestinationExportFileFormatOptionsHasBeenSet = false;
 };
 

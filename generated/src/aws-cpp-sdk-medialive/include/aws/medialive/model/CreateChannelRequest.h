@@ -344,51 +344,51 @@ creating multiple resources.
   ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
-  bool m_cdiInputSpecificationHasBeenSet = false;
 
   ChannelClass m_channelClass{ChannelClass::NOT_SET};
-  bool m_channelClassHasBeenSet = false;
 
   Aws::Vector<OutputDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   EncoderSettings m_encoderSettings;
-  bool m_encoderSettingsHasBeenSet = false;
 
   Aws::Vector<InputAttachment> m_inputAttachments;
-  bool m_inputAttachmentsHasBeenSet = false;
 
   InputSpecification m_inputSpecification;
-  bool m_inputSpecificationHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   MaintenanceCreateSettings m_maintenance;
-  bool m_maintenanceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VpcOutputSettings m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   AnywhereSettings m_anywhereSettings;
-  bool m_anywhereSettingsHasBeenSet = false;
 
   ChannelEngineVersionRequest m_channelEngineVersion;
-  bool m_channelEngineVersionHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_cdiInputSpecificationHasBeenSet = false;
+  bool m_channelClassHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_encoderSettingsHasBeenSet = false;
+  bool m_inputAttachmentsHasBeenSet = false;
+  bool m_inputSpecificationHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
+  bool m_maintenanceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
+  bool m_anywhereSettingsHasBeenSet = false;
+  bool m_channelEngineVersionHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

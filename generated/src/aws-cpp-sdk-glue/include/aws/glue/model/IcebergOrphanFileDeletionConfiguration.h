@@ -89,12 +89,12 @@ class IcebergOrphanFileDeletionConfiguration {
   ///@}
  private:
   int m_orphanFileRetentionPeriodInDays{0};
-  bool m_orphanFileRetentionPeriodInDaysHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   int m_runRateInHours{0};
+  bool m_orphanFileRetentionPeriodInDaysHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_runRateInHoursHasBeenSet = false;
 };
 

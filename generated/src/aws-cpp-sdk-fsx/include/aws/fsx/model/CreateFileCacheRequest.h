@@ -278,36 +278,36 @@ class CreateFileCacheRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   FileCacheType m_fileCacheType{FileCacheType::NOT_SET};
-  bool m_fileCacheTypeHasBeenSet = false;
 
   Aws::String m_fileCacheTypeVersion;
-  bool m_fileCacheTypeVersionHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_copyTagsToDataRepositoryAssociations{false};
-  bool m_copyTagsToDataRepositoryAssociationsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   CreateFileCacheLustreConfiguration m_lustreConfiguration;
-  bool m_lustreConfigurationHasBeenSet = false;
 
   Aws::Vector<FileCacheDataRepositoryAssociation> m_dataRepositoryAssociations;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_fileCacheTypeHasBeenSet = false;
+  bool m_fileCacheTypeVersionHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_copyTagsToDataRepositoryAssociationsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_lustreConfigurationHasBeenSet = false;
   bool m_dataRepositoryAssociationsHasBeenSet = false;
 };
 

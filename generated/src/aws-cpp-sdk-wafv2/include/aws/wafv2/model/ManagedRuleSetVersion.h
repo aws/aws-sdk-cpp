@@ -162,21 +162,21 @@ class ManagedRuleSetVersion {
   ///@}
  private:
   Aws::String m_associatedRuleGroupArn;
-  bool m_associatedRuleGroupArnHasBeenSet = false;
 
   long long m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   int m_forecastedLifetime{0};
-  bool m_forecastedLifetimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_publishTimestamp{};
-  bool m_publishTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTimestamp{};
+  bool m_associatedRuleGroupArnHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_forecastedLifetimeHasBeenSet = false;
+  bool m_publishTimestampHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
   bool m_expiryTimestampHasBeenSet = false;
 };
 

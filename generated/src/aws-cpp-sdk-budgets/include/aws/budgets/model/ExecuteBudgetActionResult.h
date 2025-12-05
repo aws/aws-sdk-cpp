@@ -105,18 +105,18 @@ class ExecuteBudgetActionResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   ExecutionType m_executionType{ExecutionType::NOT_SET};
-  bool m_executionTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
+  bool m_executionTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

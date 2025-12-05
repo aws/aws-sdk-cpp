@@ -122,18 +122,18 @@ class GetOnClusterAppUIPresignedURLRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   OnClusterAppUIType m_onClusterAppUIType{OnClusterAppUIType::NOT_SET};
-  bool m_onClusterAppUITypeHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_onClusterAppUITypeHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

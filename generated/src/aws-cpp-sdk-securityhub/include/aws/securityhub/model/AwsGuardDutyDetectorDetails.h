@@ -133,18 +133,18 @@ class AwsGuardDutyDetectorDetails {
   ///@}
  private:
   AwsGuardDutyDetectorDataSourcesDetails m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::Vector<AwsGuardDutyDetectorFeaturesDetails> m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::String m_findingPublishingFrequency;
-  bool m_findingPublishingFrequencyHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
+  bool m_findingPublishingFrequencyHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

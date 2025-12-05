@@ -204,27 +204,27 @@ class GetCostCategoriesRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_searchString;
-  bool m_searchStringHasBeenSet = false;
 
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::String m_costCategoryName;
-  bool m_costCategoryNameHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<SortDefinition> m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
+  bool m_searchStringHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_costCategoryNameHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_billingViewArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
 };
 

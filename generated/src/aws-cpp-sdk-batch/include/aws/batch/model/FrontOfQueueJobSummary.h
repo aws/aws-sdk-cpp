@@ -68,9 +68,9 @@ class FrontOfQueueJobSummary {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   long long m_earliestTimeAtPosition{0};
+  bool m_jobArnHasBeenSet = false;
   bool m_earliestTimeAtPositionHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class AssociateLensesRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lensAliases;
+  bool m_workloadIdHasBeenSet = false;
   bool m_lensAliasesHasBeenSet = false;
 };
 

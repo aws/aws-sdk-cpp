@@ -75,9 +75,9 @@ class GetQueueUrlRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueName;
-  bool m_queueNameHasBeenSet = false;
 
   Aws::String m_queueOwnerAWSAccountId;
+  bool m_queueNameHasBeenSet = false;
   bool m_queueOwnerAWSAccountIdHasBeenSet = false;
 };
 

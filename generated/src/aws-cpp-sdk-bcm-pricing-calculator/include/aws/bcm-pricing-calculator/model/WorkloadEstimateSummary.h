@@ -209,33 +209,33 @@ class WorkloadEstimateSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   WorkloadEstimateRateType m_rateType{WorkloadEstimateRateType::NOT_SET};
-  bool m_rateTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_rateTimestamp{};
-  bool m_rateTimestampHasBeenSet = false;
 
   WorkloadEstimateStatus m_status{WorkloadEstimateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   double m_totalCost{0.0};
-  bool m_totalCostHasBeenSet = false;
 
   CurrencyCode m_costCurrency{CurrencyCode::NOT_SET};
-  bool m_costCurrencyHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_rateTypeHasBeenSet = false;
+  bool m_rateTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_totalCostHasBeenSet = false;
+  bool m_costCurrencyHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

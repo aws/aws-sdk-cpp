@@ -125,15 +125,15 @@ class GetSavingsPlansUtilizationRequest : public CostExplorerRequest {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Granularity m_granularity{Granularity::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   SortDefinition m_sortBy;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_granularityHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

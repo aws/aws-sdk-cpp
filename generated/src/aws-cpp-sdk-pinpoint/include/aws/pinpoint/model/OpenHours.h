@@ -151,18 +151,18 @@ class OpenHours {
   ///@}
  private:
   Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_eMAIL;
-  bool m_eMAILHasBeenSet = false;
 
   Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_sMS;
-  bool m_sMSHasBeenSet = false;
 
   Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_pUSH;
-  bool m_pUSHHasBeenSet = false;
 
   Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_vOICE;
-  bool m_vOICEHasBeenSet = false;
 
   Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_cUSTOM;
+  bool m_eMAILHasBeenSet = false;
+  bool m_sMSHasBeenSet = false;
+  bool m_pUSHHasBeenSet = false;
+  bool m_vOICEHasBeenSet = false;
   bool m_cUSTOMHasBeenSet = false;
 };
 

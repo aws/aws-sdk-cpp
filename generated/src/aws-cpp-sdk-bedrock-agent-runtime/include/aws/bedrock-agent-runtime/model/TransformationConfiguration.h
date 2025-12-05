@@ -68,9 +68,9 @@ class TransformationConfiguration {
   ///@}
  private:
   QueryTransformationMode m_mode{QueryTransformationMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   TextToSqlConfiguration m_textToSqlConfiguration;
+  bool m_modeHasBeenSet = false;
   bool m_textToSqlConfigurationHasBeenSet = false;
 };
 

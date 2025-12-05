@@ -231,36 +231,36 @@ class ComputeQuotaSummary {
   ///@}
  private:
   Aws::String m_computeQuotaArn;
-  bool m_computeQuotaArnHasBeenSet = false;
 
   Aws::String m_computeQuotaId;
-  bool m_computeQuotaIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_computeQuotaVersion{0};
-  bool m_computeQuotaVersionHasBeenSet = false;
 
   SchedulerResourceStatus m_status{SchedulerResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   ComputeQuotaConfig m_computeQuotaConfig;
-  bool m_computeQuotaConfigHasBeenSet = false;
 
   ComputeQuotaTarget m_computeQuotaTarget;
-  bool m_computeQuotaTargetHasBeenSet = false;
 
   ActivationState m_activationState{ActivationState::NOT_SET};
-  bool m_activationStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_computeQuotaArnHasBeenSet = false;
+  bool m_computeQuotaIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_computeQuotaVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_computeQuotaConfigHasBeenSet = false;
+  bool m_computeQuotaTargetHasBeenSet = false;
+  bool m_activationStateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

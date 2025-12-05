@@ -178,24 +178,24 @@ class ListProfileTimesRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   OrderBy m_orderBy{OrderBy::NOT_SET};
-  bool m_orderByHasBeenSet = false;
 
   AggregationPeriod m_period{AggregationPeriod::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_endTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_orderByHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

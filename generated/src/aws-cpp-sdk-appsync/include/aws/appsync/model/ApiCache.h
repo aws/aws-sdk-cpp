@@ -181,24 +181,24 @@ class ApiCache {
   ///@}
  private:
   long long m_ttl{0};
-  bool m_ttlHasBeenSet = false;
 
   ApiCachingBehavior m_apiCachingBehavior{ApiCachingBehavior::NOT_SET};
-  bool m_apiCachingBehaviorHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   bool m_atRestEncryptionEnabled{false};
-  bool m_atRestEncryptionEnabledHasBeenSet = false;
 
   ApiCacheType m_type{ApiCacheType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ApiCacheStatus m_status{ApiCacheStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CacheHealthMetricsConfig m_healthMetricsConfig{CacheHealthMetricsConfig::NOT_SET};
+  bool m_ttlHasBeenSet = false;
+  bool m_apiCachingBehaviorHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_atRestEncryptionEnabledHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_healthMetricsConfigHasBeenSet = false;
 };
 

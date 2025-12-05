@@ -112,15 +112,15 @@ class RealtimeEndpointInfo {
   ///@}
  private:
   int m_peakRequestsPerSecond{0};
-  bool m_peakRequestsPerSecondHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_endpointUrl;
-  bool m_endpointUrlHasBeenSet = false;
 
   RealtimeEndpointStatus m_endpointStatus{RealtimeEndpointStatus::NOT_SET};
+  bool m_peakRequestsPerSecondHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_endpointUrlHasBeenSet = false;
   bool m_endpointStatusHasBeenSet = false;
 };
 

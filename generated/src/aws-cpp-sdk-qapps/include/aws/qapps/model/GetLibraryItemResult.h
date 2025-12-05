@@ -262,45 +262,45 @@ class GetLibraryItemResult {
   ///@}
  private:
   Aws::String m_libraryItemId;
-  bool m_libraryItemIdHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   int m_appVersion{0};
-  bool m_appVersionHasBeenSet = false;
 
   Aws::Vector<Category> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   int m_ratingCount{0};
-  bool m_ratingCountHasBeenSet = false;
 
   bool m_isRatedByUser{false};
-  bool m_isRatedByUserHasBeenSet = false;
 
   int m_userCount{0};
-  bool m_userCountHasBeenSet = false;
 
   bool m_isVerified{false};
-  bool m_isVerifiedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_libraryItemIdHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_ratingCountHasBeenSet = false;
+  bool m_isRatedByUserHasBeenSet = false;
+  bool m_userCountHasBeenSet = false;
+  bool m_isVerifiedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

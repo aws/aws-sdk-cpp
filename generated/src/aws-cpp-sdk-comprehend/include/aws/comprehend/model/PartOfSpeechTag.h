@@ -70,9 +70,9 @@ class PartOfSpeechTag {
   ///@}
  private:
   PartOfSpeechTagType m_tag{PartOfSpeechTagType::NOT_SET};
-  bool m_tagHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_tagHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class StartCisSessionRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanJobId;
-  bool m_scanJobIdHasBeenSet = false;
 
   StartCisSessionMessage m_message;
+  bool m_scanJobIdHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

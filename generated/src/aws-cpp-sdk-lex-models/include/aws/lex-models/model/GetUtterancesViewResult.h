@@ -89,12 +89,12 @@ class GetUtterancesViewResult {
   ///@}
  private:
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::Vector<UtteranceList> m_utterances;
-  bool m_utterancesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botNameHasBeenSet = false;
+  bool m_utterancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

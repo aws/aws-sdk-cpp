@@ -130,18 +130,18 @@ class ListDeploymentsRequest : public GreengrassV2Request {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   DeploymentHistoryFilter m_historyFilter{DeploymentHistoryFilter::NOT_SET};
-  bool m_historyFilterHasBeenSet = false;
 
   Aws::String m_parentTargetArn;
-  bool m_parentTargetArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_targetArnHasBeenSet = false;
+  bool m_historyFilterHasBeenSet = false;
+  bool m_parentTargetArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

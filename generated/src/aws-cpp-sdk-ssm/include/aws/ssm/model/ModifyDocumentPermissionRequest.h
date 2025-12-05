@@ -142,18 +142,18 @@ class ModifyDocumentPermissionRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DocumentPermissionType m_permissionType{DocumentPermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIdsToAdd;
-  bool m_accountIdsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIdsToRemove;
-  bool m_accountIdsToRemoveHasBeenSet = false;
 
   Aws::String m_sharedDocumentVersion;
+  bool m_nameHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
+  bool m_accountIdsToAddHasBeenSet = false;
+  bool m_accountIdsToRemoveHasBeenSet = false;
   bool m_sharedDocumentVersionHasBeenSet = false;
 };
 

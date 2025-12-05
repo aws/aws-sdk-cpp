@@ -147,21 +147,21 @@ class CmafEncryptionSettings {
   ///@}
  private:
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   CmafEncryptionType m_encryptionMethod{CmafEncryptionType::NOT_SET};
-  bool m_encryptionMethodHasBeenSet = false;
 
   CmafInitializationVectorInManifest m_initializationVectorInManifest{CmafInitializationVectorInManifest::NOT_SET};
-  bool m_initializationVectorInManifestHasBeenSet = false;
 
   SpekeKeyProviderCmaf m_spekeKeyProvider;
-  bool m_spekeKeyProviderHasBeenSet = false;
 
   StaticKeyProvider m_staticKeyProvider;
-  bool m_staticKeyProviderHasBeenSet = false;
 
   CmafKeyProviderType m_type{CmafKeyProviderType::NOT_SET};
+  bool m_constantInitializationVectorHasBeenSet = false;
+  bool m_encryptionMethodHasBeenSet = false;
+  bool m_initializationVectorInManifestHasBeenSet = false;
+  bool m_spekeKeyProviderHasBeenSet = false;
+  bool m_staticKeyProviderHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

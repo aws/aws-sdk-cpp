@@ -240,39 +240,39 @@ class DescribeModelExplainabilityJobDefinitionResult {
   ///@}
  private:
   Aws::String m_jobDefinitionArn;
-  bool m_jobDefinitionArnHasBeenSet = false;
 
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ModelExplainabilityBaselineConfig m_modelExplainabilityBaselineConfig;
-  bool m_modelExplainabilityBaselineConfigHasBeenSet = false;
 
   ModelExplainabilityAppSpecification m_modelExplainabilityAppSpecification;
-  bool m_modelExplainabilityAppSpecificationHasBeenSet = false;
 
   ModelExplainabilityJobInput m_modelExplainabilityJobInput;
-  bool m_modelExplainabilityJobInputHasBeenSet = false;
 
   MonitoringOutputConfig m_modelExplainabilityJobOutputConfig;
-  bool m_modelExplainabilityJobOutputConfigHasBeenSet = false;
 
   MonitoringResources m_jobResources;
-  bool m_jobResourcesHasBeenSet = false;
 
   MonitoringNetworkConfig m_networkConfig;
-  bool m_networkConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MonitoringStoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDefinitionArnHasBeenSet = false;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modelExplainabilityBaselineConfigHasBeenSet = false;
+  bool m_modelExplainabilityAppSpecificationHasBeenSet = false;
+  bool m_modelExplainabilityJobInputHasBeenSet = false;
+  bool m_modelExplainabilityJobOutputConfigHasBeenSet = false;
+  bool m_jobResourcesHasBeenSet = false;
+  bool m_networkConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class DocumentTypeListItem {
   ///@}
  private:
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   DocumentType m_type{DocumentType::NOT_SET};
+  bool m_pageHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

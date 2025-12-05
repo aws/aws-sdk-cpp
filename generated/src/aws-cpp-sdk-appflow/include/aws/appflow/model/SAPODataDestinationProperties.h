@@ -128,18 +128,18 @@ class SAPODataDestinationProperties {
   ///@}
  private:
   Aws::String m_objectPath;
-  bool m_objectPathHasBeenSet = false;
 
   SuccessResponseHandlingConfig m_successResponseHandlingConfig;
-  bool m_successResponseHandlingConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_idFieldNames;
-  bool m_idFieldNamesHasBeenSet = false;
 
   ErrorHandlingConfig m_errorHandlingConfig;
-  bool m_errorHandlingConfigHasBeenSet = false;
 
   WriteOperationType m_writeOperationType{WriteOperationType::NOT_SET};
+  bool m_objectPathHasBeenSet = false;
+  bool m_successResponseHandlingConfigHasBeenSet = false;
+  bool m_idFieldNamesHasBeenSet = false;
+  bool m_errorHandlingConfigHasBeenSet = false;
   bool m_writeOperationTypeHasBeenSet = false;
 };
 

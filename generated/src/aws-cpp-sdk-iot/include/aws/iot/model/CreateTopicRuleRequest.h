@@ -93,12 +93,12 @@ class CreateTopicRuleRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   TopicRulePayload m_topicRulePayload;
-  bool m_topicRulePayloadHasBeenSet = false;
 
   Aws::String m_tags;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_topicRulePayloadHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

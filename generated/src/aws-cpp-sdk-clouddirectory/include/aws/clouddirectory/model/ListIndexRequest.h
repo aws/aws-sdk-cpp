@@ -148,21 +148,21 @@ class ListIndexRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::Vector<ObjectAttributeRange> m_rangesOnIndexedValues;
-  bool m_rangesOnIndexedValuesHasBeenSet = false;
 
   ObjectReference m_indexReference;
-  bool m_indexReferenceHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
+  bool m_directoryArnHasBeenSet = false;
+  bool m_rangesOnIndexedValuesHasBeenSet = false;
+  bool m_indexReferenceHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_consistencyLevelHasBeenSet = false;
 };
 

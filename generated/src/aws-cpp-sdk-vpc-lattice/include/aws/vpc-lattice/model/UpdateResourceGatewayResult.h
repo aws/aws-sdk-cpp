@@ -189,30 +189,30 @@ class UpdateResourceGatewayResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ResourceGatewayStatus m_status{ResourceGatewayStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

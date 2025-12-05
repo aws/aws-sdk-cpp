@@ -89,12 +89,12 @@ class TransitGatewayPolicyTableEntry {
   ///@}
  private:
   Aws::String m_policyRuleNumber;
-  bool m_policyRuleNumberHasBeenSet = false;
 
   TransitGatewayPolicyRule m_policyRule;
-  bool m_policyRuleHasBeenSet = false;
 
   Aws::String m_targetRouteTableId;
+  bool m_policyRuleNumberHasBeenSet = false;
+  bool m_policyRuleHasBeenSet = false;
   bool m_targetRouteTableIdHasBeenSet = false;
 };
 

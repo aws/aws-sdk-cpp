@@ -141,21 +141,21 @@ class FieldIndex {
   ///@}
  private:
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   Aws::String m_fieldIndexName;
-  bool m_fieldIndexNameHasBeenSet = false;
 
   long long m_lastScanTime{0};
-  bool m_lastScanTimeHasBeenSet = false;
 
   long long m_firstEventTime{0};
-  bool m_firstEventTimeHasBeenSet = false;
 
   long long m_lastEventTime{0};
-  bool m_lastEventTimeHasBeenSet = false;
 
   IndexType m_type{IndexType::NOT_SET};
+  bool m_logGroupIdentifierHasBeenSet = false;
+  bool m_fieldIndexNameHasBeenSet = false;
+  bool m_lastScanTimeHasBeenSet = false;
+  bool m_firstEventTimeHasBeenSet = false;
+  bool m_lastEventTimeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

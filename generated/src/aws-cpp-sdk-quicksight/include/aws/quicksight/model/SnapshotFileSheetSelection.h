@@ -105,12 +105,12 @@ class SnapshotFileSheetSelection {
   ///@}
  private:
   Aws::String m_sheetId;
-  bool m_sheetIdHasBeenSet = false;
 
   SnapshotFileSheetSelectionScope m_selectionScope{SnapshotFileSheetSelectionScope::NOT_SET};
-  bool m_selectionScopeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_visualIds;
+  bool m_sheetIdHasBeenSet = false;
+  bool m_selectionScopeHasBeenSet = false;
   bool m_visualIdsHasBeenSet = false;
 };
 

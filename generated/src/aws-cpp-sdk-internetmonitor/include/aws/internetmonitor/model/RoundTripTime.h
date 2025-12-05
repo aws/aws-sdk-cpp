@@ -79,12 +79,12 @@ class RoundTripTime {
   ///@}
  private:
   double m_p50{0.0};
-  bool m_p50HasBeenSet = false;
 
   double m_p90{0.0};
-  bool m_p90HasBeenSet = false;
 
   double m_p95{0.0};
+  bool m_p50HasBeenSet = false;
+  bool m_p90HasBeenSet = false;
   bool m_p95HasBeenSet = false;
 };
 

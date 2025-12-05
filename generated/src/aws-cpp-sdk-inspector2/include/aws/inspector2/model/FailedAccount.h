@@ -125,18 +125,18 @@ class FailedAccount {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResourceStatus m_resourceStatus;
-  bool m_resourceStatusHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

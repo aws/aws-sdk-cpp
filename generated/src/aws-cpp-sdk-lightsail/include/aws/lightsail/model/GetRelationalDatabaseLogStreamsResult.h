@@ -68,9 +68,9 @@ class GetRelationalDatabaseLogStreamsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_logStreams;
-  bool m_logStreamsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logStreamsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

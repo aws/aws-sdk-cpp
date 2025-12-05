@@ -86,12 +86,12 @@ class StartRemediationExecutionResult {
   ///@}
  private:
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Vector<ResourceKey> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

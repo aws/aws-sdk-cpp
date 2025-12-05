@@ -198,24 +198,24 @@ class IpPermission {
   ///@}
  private:
   Aws::String m_ipProtocol;
-  bool m_ipProtocolHasBeenSet = false;
 
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
-  bool m_userIdGroupPairsHasBeenSet = false;
 
   Aws::Vector<IpRange> m_ipRanges;
-  bool m_ipRangesHasBeenSet = false;
 
   Aws::Vector<Ipv6Range> m_ipv6Ranges;
-  bool m_ipv6RangesHasBeenSet = false;
 
   Aws::Vector<PrefixListId> m_prefixListIds;
+  bool m_ipProtocolHasBeenSet = false;
+  bool m_fromPortHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
+  bool m_userIdGroupPairsHasBeenSet = false;
+  bool m_ipRangesHasBeenSet = false;
+  bool m_ipv6RangesHasBeenSet = false;
   bool m_prefixListIdsHasBeenSet = false;
 };
 

@@ -217,30 +217,30 @@ class CustomerManagedWorkerCapabilities {
   ///@}
  private:
   VCpuCountRange m_vCpuCount;
-  bool m_vCpuCountHasBeenSet = false;
 
   MemoryMiBRange m_memoryMiB;
-  bool m_memoryMiBHasBeenSet = false;
 
   Aws::Vector<AcceleratorType> m_acceleratorTypes;
-  bool m_acceleratorTypesHasBeenSet = false;
 
   AcceleratorCountRange m_acceleratorCount;
-  bool m_acceleratorCountHasBeenSet = false;
 
   AcceleratorTotalMemoryMiBRange m_acceleratorTotalMemoryMiB;
-  bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
 
   CustomerManagedFleetOperatingSystemFamily m_osFamily{CustomerManagedFleetOperatingSystemFamily::NOT_SET};
-  bool m_osFamilyHasBeenSet = false;
 
   CpuArchitectureType m_cpuArchitectureType{CpuArchitectureType::NOT_SET};
-  bool m_cpuArchitectureTypeHasBeenSet = false;
 
   Aws::Vector<FleetAmountCapability> m_customAmounts;
-  bool m_customAmountsHasBeenSet = false;
 
   Aws::Vector<FleetAttributeCapability> m_customAttributes;
+  bool m_vCpuCountHasBeenSet = false;
+  bool m_memoryMiBHasBeenSet = false;
+  bool m_acceleratorTypesHasBeenSet = false;
+  bool m_acceleratorCountHasBeenSet = false;
+  bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
+  bool m_osFamilyHasBeenSet = false;
+  bool m_cpuArchitectureTypeHasBeenSet = false;
+  bool m_customAmountsHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
 };
 

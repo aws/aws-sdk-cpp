@@ -74,9 +74,9 @@ class BatchPutAssetPropertyValueRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   bool m_enablePartialEntryProcessing{false};
-  bool m_enablePartialEntryProcessingHasBeenSet = false;
 
   Aws::Vector<PutAssetPropertyValueEntry> m_entries;
+  bool m_enablePartialEntryProcessingHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

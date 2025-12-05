@@ -231,39 +231,39 @@ class GetWirelessDeviceResult {
   ///@}
  private:
   WirelessDeviceType m_type{WirelessDeviceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_thingArn;
-  bool m_thingArnHasBeenSet = false;
 
   LoRaWANDevice m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   SidewalkDevice m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
-  bool m_positioningHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_thingArnHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_sidewalkHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

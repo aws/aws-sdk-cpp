@@ -202,30 +202,30 @@ class TrainingJobSummary {
   ///@}
  private:
   Aws::String m_trainingJobName;
-  bool m_trainingJobNameHasBeenSet = false;
 
   Aws::String m_trainingJobArn;
-  bool m_trainingJobArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingEndTime{};
-  bool m_trainingEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   TrainingJobStatus m_trainingJobStatus{TrainingJobStatus::NOT_SET};
-  bool m_trainingJobStatusHasBeenSet = false;
 
   SecondaryStatus m_secondaryStatus{SecondaryStatus::NOT_SET};
-  bool m_secondaryStatusHasBeenSet = false;
 
   WarmPoolStatus m_warmPoolStatus;
-  bool m_warmPoolStatusHasBeenSet = false;
 
   Aws::String m_trainingPlanArn;
+  bool m_trainingJobNameHasBeenSet = false;
+  bool m_trainingJobArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_trainingEndTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_trainingJobStatusHasBeenSet = false;
+  bool m_secondaryStatusHasBeenSet = false;
+  bool m_warmPoolStatusHasBeenSet = false;
   bool m_trainingPlanArnHasBeenSet = false;
 };
 

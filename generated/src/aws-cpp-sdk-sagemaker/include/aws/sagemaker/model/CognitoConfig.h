@@ -76,9 +76,9 @@ class CognitoConfig {
   ///@}
  private:
   Aws::String m_userPool;
-  bool m_userPoolHasBeenSet = false;
 
   Aws::String m_clientId;
+  bool m_userPoolHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
 };
 

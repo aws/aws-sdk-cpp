@@ -118,15 +118,15 @@ class CopyServerlessCacheSnapshotRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_sourceServerlessCacheSnapshotName;
-  bool m_sourceServerlessCacheSnapshotNameHasBeenSet = false;
 
   Aws::String m_targetServerlessCacheSnapshotName;
-  bool m_targetServerlessCacheSnapshotNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourceServerlessCacheSnapshotNameHasBeenSet = false;
+  bool m_targetServerlessCacheSnapshotNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

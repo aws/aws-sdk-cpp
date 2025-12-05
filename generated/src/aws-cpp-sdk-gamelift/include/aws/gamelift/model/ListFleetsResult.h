@@ -85,12 +85,12 @@ class ListFleetsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fleetIds;
-  bool m_fleetIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

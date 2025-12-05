@@ -95,15 +95,15 @@ class UpdateSubscriptionResult {
   ///@}
  private:
   Aws::String m_subscriptionArn;
-  bool m_subscriptionArnHasBeenSet = false;
 
   SubscriptionDetails m_currentSubscription;
-  bool m_currentSubscriptionHasBeenSet = false;
 
   SubscriptionDetails m_nextSubscription;
-  bool m_nextSubscriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionArnHasBeenSet = false;
+  bool m_currentSubscriptionHasBeenSet = false;
+  bool m_nextSubscriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

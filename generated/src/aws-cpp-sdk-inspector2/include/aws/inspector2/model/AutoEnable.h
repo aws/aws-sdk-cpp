@@ -116,18 +116,18 @@ class AutoEnable {
   ///@}
  private:
   bool m_ec2{false};
-  bool m_ec2HasBeenSet = false;
 
   bool m_ecr{false};
-  bool m_ecrHasBeenSet = false;
 
   bool m_lambda{false};
-  bool m_lambdaHasBeenSet = false;
 
   bool m_lambdaCode{false};
-  bool m_lambdaCodeHasBeenSet = false;
 
   bool m_codeRepository{false};
+  bool m_ec2HasBeenSet = false;
+  bool m_ecrHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_lambdaCodeHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
 };
 

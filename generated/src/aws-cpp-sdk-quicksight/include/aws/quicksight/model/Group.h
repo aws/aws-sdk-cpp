@@ -105,15 +105,15 @@ class Group {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_principalId;
+  bool m_arnHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
 };
 

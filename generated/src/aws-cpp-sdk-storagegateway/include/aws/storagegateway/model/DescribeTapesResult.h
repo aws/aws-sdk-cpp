@@ -92,12 +92,12 @@ class DescribeTapesResult {
   ///@}
  private:
   Aws::Vector<Tape> m_tapes;
-  bool m_tapesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tapesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

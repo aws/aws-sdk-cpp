@@ -444,75 +444,75 @@ class DescribeRestoreJobResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_restoreJobId;
-  bool m_restoreJobIdHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_sourceResourceArn;
-  bool m_sourceResourceArnHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   RestoreJobStatus m_status{RestoreJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_percentDone;
-  bool m_percentDoneHasBeenSet = false;
 
   long long m_backupSizeInBytes{0};
-  bool m_backupSizeInBytesHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   long long m_expectedCompletionTimeMinutes{0};
-  bool m_expectedCompletionTimeMinutesHasBeenSet = false;
 
   Aws::String m_createdResourceArn;
-  bool m_createdResourceArnHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_recoveryPointCreationDate{};
-  bool m_recoveryPointCreationDateHasBeenSet = false;
 
   RestoreJobCreator m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   RestoreValidationStatus m_validationStatus{RestoreValidationStatus::NOT_SET};
-  bool m_validationStatusHasBeenSet = false;
 
   Aws::String m_validationStatusMessage;
-  bool m_validationStatusMessageHasBeenSet = false;
 
   RestoreDeletionStatus m_deletionStatus{RestoreDeletionStatus::NOT_SET};
-  bool m_deletionStatusHasBeenSet = false;
 
   Aws::String m_deletionStatusMessage;
-  bool m_deletionStatusMessageHasBeenSet = false;
 
   bool m_isParent{false};
-  bool m_isParentHasBeenSet = false;
 
   Aws::String m_parentJobId;
-  bool m_parentJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_restoreJobIdHasBeenSet = false;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_sourceResourceArnHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_percentDoneHasBeenSet = false;
+  bool m_backupSizeInBytesHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_expectedCompletionTimeMinutesHasBeenSet = false;
+  bool m_createdResourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_recoveryPointCreationDateHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
+  bool m_validationStatusMessageHasBeenSet = false;
+  bool m_deletionStatusHasBeenSet = false;
+  bool m_deletionStatusMessageHasBeenSet = false;
+  bool m_isParentHasBeenSet = false;
+  bool m_parentJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

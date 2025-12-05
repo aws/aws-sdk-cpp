@@ -130,18 +130,18 @@ class UpdateKxClusterDatabasesRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<KxDatabaseConfiguration> m_databases;
-  bool m_databasesHasBeenSet = false;
 
   KxDeploymentConfiguration m_deploymentConfiguration;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_databasesHasBeenSet = false;
   bool m_deploymentConfigurationHasBeenSet = false;
 };
 

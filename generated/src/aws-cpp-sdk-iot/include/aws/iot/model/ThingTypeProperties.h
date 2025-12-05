@@ -97,12 +97,12 @@ class ThingTypeProperties {
   ///@}
  private:
   Aws::String m_thingTypeDescription;
-  bool m_thingTypeDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_searchableAttributes;
-  bool m_searchableAttributesHasBeenSet = false;
 
   Mqtt5Configuration m_mqtt5Configuration;
+  bool m_thingTypeDescriptionHasBeenSet = false;
+  bool m_searchableAttributesHasBeenSet = false;
   bool m_mqtt5ConfigurationHasBeenSet = false;
 };
 

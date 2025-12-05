@@ -145,24 +145,24 @@ class GetCloudConnectorResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EndpointConfig m_endpointConfig;
-  bool m_endpointConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CloudConnectorType m_type{CloudConnectorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_endpointConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

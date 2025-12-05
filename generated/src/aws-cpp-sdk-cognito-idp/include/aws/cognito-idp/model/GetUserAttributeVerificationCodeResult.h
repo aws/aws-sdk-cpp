@@ -69,9 +69,9 @@ class GetUserAttributeVerificationCodeResult {
   ///@}
  private:
   CodeDeliveryDetailsType m_codeDeliveryDetails;
-  bool m_codeDeliveryDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeDeliveryDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

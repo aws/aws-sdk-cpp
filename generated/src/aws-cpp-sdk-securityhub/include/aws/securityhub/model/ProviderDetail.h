@@ -70,9 +70,9 @@ class ProviderDetail {
   ///@}
  private:
   JiraCloudDetail m_jiraCloud;
-  bool m_jiraCloudHasBeenSet = false;
 
   ServiceNowDetail m_serviceNow;
+  bool m_jiraCloudHasBeenSet = false;
   bool m_serviceNowHasBeenSet = false;
 };
 

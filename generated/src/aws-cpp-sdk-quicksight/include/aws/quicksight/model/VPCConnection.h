@@ -269,39 +269,39 @@ class VPCConnection {
   ///@}
  private:
   Aws::String m_vPCConnectionId;
-  bool m_vPCConnectionIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_vPCId;
-  bool m_vPCIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsResolvers;
-  bool m_dnsResolversHasBeenSet = false;
 
   VPCConnectionResourceStatus m_status{VPCConnectionResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   VPCConnectionAvailabilityStatus m_availabilityStatus{VPCConnectionAvailabilityStatus::NOT_SET};
-  bool m_availabilityStatusHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_vPCConnectionIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_vPCIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_dnsResolversHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_availabilityStatusHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

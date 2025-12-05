@@ -183,18 +183,18 @@ class AutomatedAbrRule {
   ///@}
  private:
   Aws::Vector<AllowedRenditionSize> m_allowedRenditions;
-  bool m_allowedRenditionsHasBeenSet = false;
 
   Aws::Vector<ForceIncludeRenditionSize> m_forceIncludeRenditions;
-  bool m_forceIncludeRenditionsHasBeenSet = false;
 
   MinBottomRenditionSize m_minBottomRenditionSize;
-  bool m_minBottomRenditionSizeHasBeenSet = false;
 
   MinTopRenditionSize m_minTopRenditionSize;
-  bool m_minTopRenditionSizeHasBeenSet = false;
 
   RuleType m_type{RuleType::NOT_SET};
+  bool m_allowedRenditionsHasBeenSet = false;
+  bool m_forceIncludeRenditionsHasBeenSet = false;
+  bool m_minBottomRenditionSizeHasBeenSet = false;
+  bool m_minTopRenditionSizeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

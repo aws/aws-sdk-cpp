@@ -307,39 +307,39 @@ class CopySnapshotRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_destinationOutpostArn;
-  bool m_destinationOutpostArnHasBeenSet = false;
 
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_presignedUrl;
-  bool m_presignedUrlHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_sourceSnapshotId;
-  bool m_sourceSnapshotIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   int m_completionDurationMinutes{0};
-  bool m_completionDurationMinutesHasBeenSet = false;
 
   Aws::String m_destinationAvailabilityZone;
-  bool m_destinationAvailabilityZoneHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_destinationOutpostArnHasBeenSet = false;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_presignedUrlHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_sourceSnapshotIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_completionDurationMinutesHasBeenSet = false;
+  bool m_destinationAvailabilityZoneHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

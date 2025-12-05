@@ -109,15 +109,15 @@ class StartImportRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   ImportResourceSpecification m_resourceSpecification;
-  bool m_resourceSpecificationHasBeenSet = false;
 
   MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
-  bool m_mergeStrategyHasBeenSet = false;
 
   Aws::String m_filePassword;
+  bool m_importIdHasBeenSet = false;
+  bool m_resourceSpecificationHasBeenSet = false;
+  bool m_mergeStrategyHasBeenSet = false;
   bool m_filePasswordHasBeenSet = false;
 };
 

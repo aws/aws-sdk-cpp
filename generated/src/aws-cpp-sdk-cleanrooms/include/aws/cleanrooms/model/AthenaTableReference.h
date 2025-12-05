@@ -123,18 +123,18 @@ class AthenaTableReference {
   ///@}
  private:
   CommercialRegion m_region{CommercialRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
+  bool m_regionHasBeenSet = false;
+  bool m_workGroupHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
 };
 

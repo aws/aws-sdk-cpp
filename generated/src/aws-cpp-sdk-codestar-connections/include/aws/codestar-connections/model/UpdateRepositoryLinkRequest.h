@@ -88,12 +88,12 @@ class UpdateRepositoryLinkRequest : public CodeStarconnectionsRequest {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_repositoryLinkId;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
   bool m_repositoryLinkIdHasBeenSet = false;
 };
 

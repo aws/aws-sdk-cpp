@@ -120,18 +120,18 @@ class EndpointOutputConfiguration {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_initialInstanceCount{0};
-  bool m_initialInstanceCountHasBeenSet = false;
 
   ProductionVariantServerlessConfig m_serverlessConfig;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_variantNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_initialInstanceCountHasBeenSet = false;
   bool m_serverlessConfigHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class Target {
   ///@}
  private:
   ChannelTargetInfo m_channelTargetInfo;
-  bool m_channelTargetInfoHasBeenSet = false;
 
   ContactTargetInfo m_contactTargetInfo;
+  bool m_channelTargetInfoHasBeenSet = false;
   bool m_contactTargetInfoHasBeenSet = false;
 };
 

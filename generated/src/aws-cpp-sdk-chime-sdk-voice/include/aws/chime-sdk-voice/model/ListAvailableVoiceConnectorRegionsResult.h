@@ -67,9 +67,9 @@ class ListAvailableVoiceConnectorRegionsResult {
   ///@}
  private:
   Aws::Vector<VoiceConnectorAwsRegion> m_voiceConnectorRegions;
-  bool m_voiceConnectorRegionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceConnectorRegionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

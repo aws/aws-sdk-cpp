@@ -85,12 +85,12 @@ class ListParticipantReplicasResult {
   ///@}
  private:
   Aws::Vector<ParticipantReplica> m_replicas;
-  bool m_replicasHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicasHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

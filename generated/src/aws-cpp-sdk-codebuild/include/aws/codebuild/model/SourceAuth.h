@@ -69,9 +69,9 @@ class SourceAuth {
   ///@}
  private:
   SourceAuthType m_type{SourceAuthType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_typeHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

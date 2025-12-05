@@ -134,18 +134,18 @@ class EnableSnapshotCopyRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   int m_retentionPeriod{0};
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_snapshotCopyGrantName;
-  bool m_snapshotCopyGrantNameHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_snapshotCopyGrantNameHasBeenSet = false;
   bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 };
 

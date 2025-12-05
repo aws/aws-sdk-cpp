@@ -68,9 +68,9 @@ class ServiceVpcEndpoint {
   ///@}
  private:
   VpcEndpointServiceName m_serviceName{VpcEndpointServiceName::NOT_SET};
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
+  bool m_serviceNameHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
 };
 

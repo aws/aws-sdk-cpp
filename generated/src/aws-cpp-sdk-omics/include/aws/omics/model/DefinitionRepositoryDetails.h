@@ -128,18 +128,18 @@ class DefinitionRepositoryDetails {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_fullRepositoryId;
-  bool m_fullRepositoryIdHasBeenSet = false;
 
   SourceReference m_sourceReference;
-  bool m_sourceReferenceHasBeenSet = false;
 
   Aws::String m_providerType;
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_providerEndpoint;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_fullRepositoryIdHasBeenSet = false;
+  bool m_sourceReferenceHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
   bool m_providerEndpointHasBeenSet = false;
 };
 

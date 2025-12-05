@@ -92,12 +92,12 @@ class ListAgentsResult {
   ///@}
  private:
   Aws::Vector<AgentListEntry> m_agents;
-  bool m_agentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

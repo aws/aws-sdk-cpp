@@ -150,21 +150,21 @@ class TitleAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_titles;
-  bool m_titlesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_vulnerabilityIds;
-  bool m_vulnerabilityIdsHasBeenSet = false;
 
   AggregationResourceType m_resourceType{AggregationResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   TitleSortBy m_sortBy{TitleSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   AggregationFindingType m_findingType{AggregationFindingType::NOT_SET};
+  bool m_titlesHasBeenSet = false;
+  bool m_vulnerabilityIdsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_findingTypeHasBeenSet = false;
 };
 

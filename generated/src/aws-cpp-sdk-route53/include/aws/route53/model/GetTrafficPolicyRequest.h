@@ -68,9 +68,9 @@ class GetTrafficPolicyRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_version{0};
+  bool m_idHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

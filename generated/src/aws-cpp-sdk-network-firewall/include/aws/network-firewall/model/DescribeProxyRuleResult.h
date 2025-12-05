@@ -85,12 +85,12 @@ class DescribeProxyRuleResult {
   ///@}
  private:
   ProxyRule m_proxyRule;
-  bool m_proxyRuleHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyRuleHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

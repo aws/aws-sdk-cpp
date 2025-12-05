@@ -85,12 +85,12 @@ class CopySnapshotResponse {
   ///@}
  private:
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tagsHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

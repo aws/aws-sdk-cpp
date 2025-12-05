@@ -108,15 +108,15 @@ class SourceRegion {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_supportsDBInstanceAutomatedBackupsReplication{false};
+  bool m_regionNameHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = false;
 };
 

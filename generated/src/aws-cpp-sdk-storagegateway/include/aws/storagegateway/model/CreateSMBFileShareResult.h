@@ -64,9 +64,9 @@ class CreateSMBFileShareResult {
   ///@}
  private:
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileShareARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -130,21 +130,21 @@ class GetUsageProfileResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProfileConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

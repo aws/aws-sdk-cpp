@@ -219,33 +219,33 @@ class DescribeComponentResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_publisher;
-  bool m_publisherHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CloudComponentStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ComponentPlatform> m_platforms;
-  bool m_platformsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentVersionHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_publisherHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_platformsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

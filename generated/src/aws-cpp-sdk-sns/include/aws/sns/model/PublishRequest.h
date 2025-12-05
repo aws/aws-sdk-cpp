@@ -299,30 +299,30 @@ class PublishRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_messageStructure;
-  bool m_messageStructureHasBeenSet = false;
 
   Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-  bool m_messageAttributesHasBeenSet = false;
 
   Aws::String m_messageDeduplicationId;
-  bool m_messageDeduplicationIdHasBeenSet = false;
 
   Aws::String m_messageGroupId;
+  bool m_topicArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_messageStructureHasBeenSet = false;
+  bool m_messageAttributesHasBeenSet = false;
+  bool m_messageDeduplicationIdHasBeenSet = false;
   bool m_messageGroupIdHasBeenSet = false;
 };
 

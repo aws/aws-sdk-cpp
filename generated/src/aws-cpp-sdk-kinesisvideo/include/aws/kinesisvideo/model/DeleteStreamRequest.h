@@ -69,9 +69,9 @@ class DeleteStreamRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_currentVersion;
+  bool m_streamARNHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
 };
 

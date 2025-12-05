@@ -70,9 +70,9 @@ class RuntimeDetails {
   ///@}
  private:
   ProcessDetails m_process;
-  bool m_processHasBeenSet = false;
 
   RuntimeContext m_context;
+  bool m_processHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

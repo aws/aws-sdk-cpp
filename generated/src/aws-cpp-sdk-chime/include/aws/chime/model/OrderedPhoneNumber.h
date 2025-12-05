@@ -68,9 +68,9 @@ class OrderedPhoneNumber {
   ///@}
  private:
   Aws::String m_e164PhoneNumber;
-  bool m_e164PhoneNumberHasBeenSet = false;
 
   OrderedPhoneNumberStatus m_status{OrderedPhoneNumberStatus::NOT_SET};
+  bool m_e164PhoneNumberHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

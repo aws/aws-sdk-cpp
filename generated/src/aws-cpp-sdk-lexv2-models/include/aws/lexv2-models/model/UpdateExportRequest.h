@@ -65,9 +65,9 @@ class UpdateExportRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_exportId;
-  bool m_exportIdHasBeenSet = false;
 
   Aws::String m_filePassword;
+  bool m_exportIdHasBeenSet = false;
   bool m_filePasswordHasBeenSet = false;
 };
 

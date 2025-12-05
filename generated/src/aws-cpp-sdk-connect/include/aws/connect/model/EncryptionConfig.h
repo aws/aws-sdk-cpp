@@ -71,9 +71,9 @@ class EncryptionConfig {
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_keyId;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;
 };
 

@@ -158,21 +158,21 @@ class RedirectActionConfig {
   ///@}
  private:
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_port;
-  bool m_portHasBeenSet = false;
 
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   RedirectActionStatusCodeEnum m_statusCode{RedirectActionStatusCodeEnum::NOT_SET};
+  bool m_protocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_queryHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
 };
 

@@ -162,18 +162,18 @@ class InferenceSpecification {
   ///@}
  private:
   Aws::Vector<ModelPackageContainerDefinition> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::Vector<TransformInstanceType> m_supportedTransformInstanceTypes;
-  bool m_supportedTransformInstanceTypesHasBeenSet = false;
 
   Aws::Vector<ProductionVariantInstanceType> m_supportedRealtimeInferenceInstanceTypes;
-  bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedContentTypes;
-  bool m_supportedContentTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedResponseMIMETypes;
+  bool m_containersHasBeenSet = false;
+  bool m_supportedTransformInstanceTypesHasBeenSet = false;
+  bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet = false;
+  bool m_supportedContentTypesHasBeenSet = false;
   bool m_supportedResponseMIMETypesHasBeenSet = false;
 };
 

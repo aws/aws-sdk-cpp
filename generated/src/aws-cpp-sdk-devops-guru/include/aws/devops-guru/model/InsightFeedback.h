@@ -68,9 +68,9 @@ class InsightFeedback {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   InsightFeedbackOption m_feedback{InsightFeedbackOption::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_feedbackHasBeenSet = false;
 };
 

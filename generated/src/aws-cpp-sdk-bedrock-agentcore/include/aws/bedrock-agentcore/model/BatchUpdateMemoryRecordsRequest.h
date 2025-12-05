@@ -74,9 +74,9 @@ class BatchUpdateMemoryRecordsRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::Vector<MemoryRecordUpdateInput> m_records;
+  bool m_memoryIdHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
 };
 

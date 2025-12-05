@@ -71,9 +71,9 @@ class ConfluenceDataSourceConfiguration {
   ///@}
  private:
   ConfluenceSourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   ConfluenceCrawlerConfiguration m_crawlerConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
   bool m_crawlerConfigurationHasBeenSet = false;
 };
 

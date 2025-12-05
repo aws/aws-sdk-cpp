@@ -126,15 +126,15 @@ class Listener {
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   Aws::Vector<PortRange> m_portRanges;
-  bool m_portRangesHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   ClientAffinity m_clientAffinity{ClientAffinity::NOT_SET};
+  bool m_listenerArnHasBeenSet = false;
+  bool m_portRangesHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_clientAffinityHasBeenSet = false;
 };
 

@@ -91,15 +91,15 @@ class SendProjectSessionActionResult {
   ///@}
  private:
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_actionId{0};
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

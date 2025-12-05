@@ -102,12 +102,12 @@ class AutomatedEvaluationConfig {
   ///@}
  private:
   Aws::Vector<EvaluationDatasetMetricConfig> m_datasetMetricConfigs;
-  bool m_datasetMetricConfigsHasBeenSet = false;
 
   EvaluatorModelConfig m_evaluatorModelConfig;
-  bool m_evaluatorModelConfigHasBeenSet = false;
 
   AutomatedEvaluationCustomMetricConfig m_customMetricConfig;
+  bool m_datasetMetricConfigsHasBeenSet = false;
+  bool m_evaluatorModelConfigHasBeenSet = false;
   bool m_customMetricConfigHasBeenSet = false;
 };
 

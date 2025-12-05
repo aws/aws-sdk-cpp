@@ -76,12 +76,12 @@ class GetServiceLinkedRoleDeletionStatusResult {
   ///@}
  private:
   DeletionTaskStatusType m_status{DeletionTaskStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DeletionTaskFailureReasonType m_reason;
-  bool m_reasonHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_statusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class ResetParameterGroupRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   bool m_allParameters{false};
-  bool m_allParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parameterNames;
+  bool m_parameterGroupNameHasBeenSet = false;
+  bool m_allParametersHasBeenSet = false;
   bool m_parameterNamesHasBeenSet = false;
 };
 

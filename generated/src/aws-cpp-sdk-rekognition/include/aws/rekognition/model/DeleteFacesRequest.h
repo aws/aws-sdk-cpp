@@ -74,9 +74,9 @@ class DeleteFacesRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_faceIds;
+  bool m_collectionIdHasBeenSet = false;
   bool m_faceIdsHasBeenSet = false;
 };
 

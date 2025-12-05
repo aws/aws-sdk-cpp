@@ -76,9 +76,9 @@ class SignInOptions {
   ///@}
  private:
   SignInOrigin m_origin{SignInOrigin::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::String m_applicationUrl;
+  bool m_originHasBeenSet = false;
   bool m_applicationUrlHasBeenSet = false;
 };
 

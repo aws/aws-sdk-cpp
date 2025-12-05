@@ -86,12 +86,12 @@ class S3LoggingConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_logLocation;
+  bool m_enabledHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_logLocationHasBeenSet = false;
 };
 

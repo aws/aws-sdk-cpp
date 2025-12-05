@@ -96,12 +96,12 @@ class BatchCreateBillScenarioUsageModificationRequest : public BCMPricingCalcula
   ///@}
  private:
   Aws::String m_billScenarioId;
-  bool m_billScenarioIdHasBeenSet = false;
 
   Aws::Vector<BatchCreateBillScenarioUsageModificationEntry> m_usageModifications;
-  bool m_usageModificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_billScenarioIdHasBeenSet = false;
+  bool m_usageModificationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

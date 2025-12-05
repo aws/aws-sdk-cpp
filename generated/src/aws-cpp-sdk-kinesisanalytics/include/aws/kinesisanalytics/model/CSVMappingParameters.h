@@ -74,9 +74,9 @@ class CSVMappingParameters {
   ///@}
  private:
   Aws::String m_recordRowDelimiter;
-  bool m_recordRowDelimiterHasBeenSet = false;
 
   Aws::String m_recordColumnDelimiter;
+  bool m_recordRowDelimiterHasBeenSet = false;
   bool m_recordColumnDelimiterHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ComponentMatchScores {
   ///@}
  private:
   double m_title{0.0};
-  bool m_titleHasBeenSet = false;
 
   AddressComponentMatchScores m_address;
+  bool m_titleHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

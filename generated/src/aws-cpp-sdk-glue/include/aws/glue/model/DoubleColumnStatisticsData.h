@@ -94,15 +94,15 @@ class DoubleColumnStatisticsData {
   ///@}
  private:
   double m_minimumValue{0.0};
-  bool m_minimumValueHasBeenSet = false;
 
   double m_maximumValue{0.0};
-  bool m_maximumValueHasBeenSet = false;
 
   long long m_numberOfNulls{0};
-  bool m_numberOfNullsHasBeenSet = false;
 
   long long m_numberOfDistinctValues{0};
+  bool m_minimumValueHasBeenSet = false;
+  bool m_maximumValueHasBeenSet = false;
+  bool m_numberOfNullsHasBeenSet = false;
   bool m_numberOfDistinctValuesHasBeenSet = false;
 };
 

@@ -445,63 +445,63 @@ class ServiceRevision {
   ///@}
  private:
   Aws::String m_serviceRevisionArn;
-  bool m_serviceRevisionArnHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-  bool m_capacityProviderStrategyHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_platformFamily;
-  bool m_platformFamilyHasBeenSet = false;
 
   Aws::Vector<LoadBalancer> m_loadBalancers;
-  bool m_loadBalancersHasBeenSet = false;
 
   Aws::Vector<ServiceRegistry> m_serviceRegistries;
-  bool m_serviceRegistriesHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::Vector<ContainerImage> m_containerImages;
-  bool m_containerImagesHasBeenSet = false;
 
   bool m_guardDutyEnabled{false};
-  bool m_guardDutyEnabledHasBeenSet = false;
 
   ServiceConnectConfiguration m_serviceConnectConfiguration;
-  bool m_serviceConnectConfigurationHasBeenSet = false;
 
   Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
-  bool m_volumeConfigurationsHasBeenSet = false;
 
   DeploymentEphemeralStorage m_fargateEphemeralStorage;
-  bool m_fargateEphemeralStorageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
-  bool m_vpcLatticeConfigurationsHasBeenSet = false;
 
   ResolvedConfiguration m_resolvedConfiguration;
-  bool m_resolvedConfigurationHasBeenSet = false;
 
   ECSManagedResources m_ecsManagedResources;
+  bool m_serviceRevisionArnHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_taskDefinitionHasBeenSet = false;
+  bool m_capacityProviderStrategyHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_platformFamilyHasBeenSet = false;
+  bool m_loadBalancersHasBeenSet = false;
+  bool m_serviceRegistriesHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_containerImagesHasBeenSet = false;
+  bool m_guardDutyEnabledHasBeenSet = false;
+  bool m_serviceConnectConfigurationHasBeenSet = false;
+  bool m_volumeConfigurationsHasBeenSet = false;
+  bool m_fargateEphemeralStorageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_vpcLatticeConfigurationsHasBeenSet = false;
+  bool m_resolvedConfigurationHasBeenSet = false;
   bool m_ecsManagedResourcesHasBeenSet = false;
 };
 

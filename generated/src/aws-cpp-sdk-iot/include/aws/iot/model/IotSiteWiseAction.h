@@ -80,9 +80,9 @@ class IotSiteWiseAction {
   ///@}
  private:
   Aws::Vector<PutAssetPropertyValueEntry> m_putAssetPropertyValueEntries;
-  bool m_putAssetPropertyValueEntriesHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_putAssetPropertyValueEntriesHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

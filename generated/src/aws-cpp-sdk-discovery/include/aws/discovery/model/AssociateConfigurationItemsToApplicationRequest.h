@@ -75,9 +75,9 @@ class AssociateConfigurationItemsToApplicationRequest : public ApplicationDiscov
   ///@}
  private:
   Aws::String m_applicationConfigurationId;
-  bool m_applicationConfigurationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_configurationIds;
+  bool m_applicationConfigurationIdHasBeenSet = false;
   bool m_configurationIdsHasBeenSet = false;
 };
 

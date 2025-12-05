@@ -65,9 +65,9 @@ class UpdateLoggerDefinitionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_loggerDefinitionId;
-  bool m_loggerDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_loggerDefinitionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

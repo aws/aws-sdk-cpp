@@ -91,9 +91,9 @@ class RegisteredDomainDelegationInfo {
   ///@}
  private:
   NameServersUpdateState m_nameServersUpdateState;
-  bool m_nameServersUpdateStateHasBeenSet = false;
 
   R53HostedZoneDeletionState m_r53HostedZoneDeletionState;
+  bool m_nameServersUpdateStateHasBeenSet = false;
   bool m_r53HostedZoneDeletionStateHasBeenSet = false;
 };
 

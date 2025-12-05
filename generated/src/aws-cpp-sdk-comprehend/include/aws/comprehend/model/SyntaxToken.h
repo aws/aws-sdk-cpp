@@ -125,18 +125,18 @@ class SyntaxToken {
   ///@}
  private:
   int m_tokenId{0};
-  bool m_tokenIdHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   PartOfSpeechTag m_partOfSpeech;
+  bool m_tokenIdHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
   bool m_partOfSpeechHasBeenSet = false;
 };
 

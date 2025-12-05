@@ -118,15 +118,15 @@ class ListContactReferencesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::Vector<ReferenceType> m_referenceTypes;
-  bool m_referenceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_referenceTypesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

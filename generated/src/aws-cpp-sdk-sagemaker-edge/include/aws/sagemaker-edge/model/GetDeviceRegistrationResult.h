@@ -79,12 +79,12 @@ class GetDeviceRegistrationResult {
   ///@}
  private:
   Aws::String m_deviceRegistration;
-  bool m_deviceRegistrationHasBeenSet = false;
 
   Aws::String m_cacheTTL;
-  bool m_cacheTTLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceRegistrationHasBeenSet = false;
+  bool m_cacheTTLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

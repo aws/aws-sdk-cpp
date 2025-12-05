@@ -107,15 +107,15 @@ class CreateOrderRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifier;
-  bool m_outpostIdentifierHasBeenSet = false;
 
   Aws::Vector<LineItemRequest> m_lineItems;
-  bool m_lineItemsHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   PaymentTerm m_paymentTerm{PaymentTerm::NOT_SET};
+  bool m_outpostIdentifierHasBeenSet = false;
+  bool m_lineItemsHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
   bool m_paymentTermHasBeenSet = false;
 };
 

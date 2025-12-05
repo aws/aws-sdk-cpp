@@ -128,18 +128,18 @@ class ListArtifactsRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_appIdHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

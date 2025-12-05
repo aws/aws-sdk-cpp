@@ -142,12 +142,12 @@ class DeviceFilter {
   ///@}
  private:
   DeviceFilterAttribute m_attribute{DeviceFilterAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   RuleOperator m_operator{RuleOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_attributeHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class StandardsControlAssociationUpdate {
   ///@}
  private:
   Aws::String m_standardsArn;
-  bool m_standardsArnHasBeenSet = false;
 
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   AssociationStatus m_associationStatus{AssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::String m_updatedReason;
+  bool m_standardsArnHasBeenSet = false;
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
   bool m_updatedReasonHasBeenSet = false;
 };
 

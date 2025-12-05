@@ -936,138 +936,138 @@ class DBCluster {
   ///@}
  private:
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_characterSetName;
-  bool m_characterSetNameHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterParameterGroup;
-  bool m_dBClusterParameterGroupHasBeenSet = false;
 
   Aws::String m_dBSubnetGroup;
-  bool m_dBSubnetGroupHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_percentProgress;
-  bool m_percentProgressHasBeenSet = false;
 
   Aws::Utils::DateTime m_earliestRestorableTime{};
-  bool m_earliestRestorableTimeHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_readerEndpoint;
-  bool m_readerEndpointHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestRestorableTime{};
-  bool m_latestRestorableTimeHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::Vector<DBClusterOptionGroupStatus> m_dBClusterOptionGroupMemberships;
-  bool m_dBClusterOptionGroupMembershipsHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_replicationSourceIdentifier;
-  bool m_replicationSourceIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readReplicaIdentifiers;
-  bool m_readReplicaIdentifiersHasBeenSet = false;
 
   Aws::Vector<DBClusterMember> m_dBClusterMembers;
-  bool m_dBClusterMembersHasBeenSet = false;
 
   Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dbClusterResourceId;
-  bool m_dbClusterResourceIdHasBeenSet = false;
 
   Aws::String m_dBClusterArn;
-  bool m_dBClusterArnHasBeenSet = false;
 
   Aws::Vector<DBClusterRole> m_associatedRoles;
-  bool m_associatedRolesHasBeenSet = false;
 
   bool m_iAMDatabaseAuthenticationEnabled{false};
-  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
   Aws::String m_cloneGroupId;
-  bool m_cloneGroupIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_clusterCreateTime{};
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
-  bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
 
   ClusterPendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   bool m_crossAccountClone{false};
-  bool m_crossAccountCloneHasBeenSet = false;
 
   Aws::Utils::DateTime m_automaticRestartTime{};
-  bool m_automaticRestartTimeHasBeenSet = false;
 
   ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
-  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime{};
-  bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
 
   Aws::String m_storageType;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_characterSetNameHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_dBClusterParameterGroupHasBeenSet = false;
+  bool m_dBSubnetGroupHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_earliestRestorableTimeHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_readerEndpointHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_latestRestorableTimeHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_dBClusterOptionGroupMembershipsHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_replicationSourceIdentifierHasBeenSet = false;
+  bool m_readReplicaIdentifiersHasBeenSet = false;
+  bool m_dBClusterMembersHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dbClusterResourceIdHasBeenSet = false;
+  bool m_dBClusterArnHasBeenSet = false;
+  bool m_associatedRolesHasBeenSet = false;
+  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
+  bool m_cloneGroupIdHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_crossAccountCloneHasBeenSet = false;
+  bool m_automaticRestartTimeHasBeenSet = false;
+  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+  bool m_globalClusterIdentifierHasBeenSet = false;
+  bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
 };
 

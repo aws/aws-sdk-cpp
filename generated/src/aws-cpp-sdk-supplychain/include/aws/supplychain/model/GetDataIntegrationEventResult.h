@@ -66,9 +66,9 @@ class GetDataIntegrationEventResult {
   ///@}
  private:
   DataIntegrationEvent m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

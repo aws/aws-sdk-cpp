@@ -106,12 +106,12 @@ class StartTimerDecisionAttributes {
   ///@}
  private:
   Aws::String m_timerId;
-  bool m_timerIdHasBeenSet = false;
 
   Aws::String m_control;
-  bool m_controlHasBeenSet = false;
 
   Aws::String m_startToFireTimeout;
+  bool m_timerIdHasBeenSet = false;
+  bool m_controlHasBeenSet = false;
   bool m_startToFireTimeoutHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class CreateTenantResourceAssociationRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_tenantName;
-  bool m_tenantNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_tenantNameHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

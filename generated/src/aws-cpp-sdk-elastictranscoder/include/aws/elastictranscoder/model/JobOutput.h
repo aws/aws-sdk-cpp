@@ -512,63 +512,63 @@ class JobOutput {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_thumbnailPattern;
-  bool m_thumbnailPatternHasBeenSet = false;
 
   Encryption m_thumbnailEncryption;
-  bool m_thumbnailEncryptionHasBeenSet = false;
 
   Aws::String m_rotate;
-  bool m_rotateHasBeenSet = false;
 
   Aws::String m_presetId;
-  bool m_presetIdHasBeenSet = false;
 
   Aws::String m_segmentDuration;
-  bool m_segmentDurationHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetail;
-  bool m_statusDetailHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   Aws::String m_frameRate;
-  bool m_frameRateHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   long long m_durationMillis{0};
-  bool m_durationMillisHasBeenSet = false;
 
   Aws::Vector<JobWatermark> m_watermarks;
-  bool m_watermarksHasBeenSet = false;
 
   JobAlbumArt m_albumArt;
-  bool m_albumArtHasBeenSet = false;
 
   Captions m_captions;
-  bool m_captionsHasBeenSet = false;
 
   Encryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::String m_appliedColorSpaceConversion;
+  bool m_idHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_thumbnailPatternHasBeenSet = false;
+  bool m_thumbnailEncryptionHasBeenSet = false;
+  bool m_rotateHasBeenSet = false;
+  bool m_presetIdHasBeenSet = false;
+  bool m_segmentDurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
+  bool m_durationMillisHasBeenSet = false;
+  bool m_watermarksHasBeenSet = false;
+  bool m_albumArtHasBeenSet = false;
+  bool m_captionsHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
   bool m_appliedColorSpaceConversionHasBeenSet = false;
 };
 

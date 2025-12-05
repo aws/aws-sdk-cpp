@@ -74,9 +74,9 @@ class DataLakeDatasetPartitionField {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataLakeDatasetPartitionFieldTransform m_transform;
+  bool m_nameHasBeenSet = false;
   bool m_transformHasBeenSet = false;
 };
 

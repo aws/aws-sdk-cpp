@@ -230,36 +230,36 @@ class RouteAnalysis {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_routeAnalysisId;
-  bool m_routeAnalysisIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   RouteAnalysisStatus m_status{RouteAnalysisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RouteAnalysisEndpointOptions m_source;
-  bool m_sourceHasBeenSet = false;
 
   RouteAnalysisEndpointOptions m_destination;
-  bool m_destinationHasBeenSet = false;
 
   bool m_includeReturnPath{false};
-  bool m_includeReturnPathHasBeenSet = false;
 
   bool m_useMiddleboxes{false};
-  bool m_useMiddleboxesHasBeenSet = false;
 
   RouteAnalysisPath m_forwardPath;
-  bool m_forwardPathHasBeenSet = false;
 
   RouteAnalysisPath m_returnPath;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_routeAnalysisIdHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_includeReturnPathHasBeenSet = false;
+  bool m_useMiddleboxesHasBeenSet = false;
+  bool m_forwardPathHasBeenSet = false;
   bool m_returnPathHasBeenSet = false;
 };
 

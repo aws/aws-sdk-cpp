@@ -81,12 +81,12 @@ class FileModes {
   ///@}
  private:
   FileModeTypeEnum m_source{FileModeTypeEnum::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   FileModeTypeEnum m_destination{FileModeTypeEnum::NOT_SET};
-  bool m_destinationHasBeenSet = false;
 
   FileModeTypeEnum m_base{FileModeTypeEnum::NOT_SET};
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_baseHasBeenSet = false;
 };
 

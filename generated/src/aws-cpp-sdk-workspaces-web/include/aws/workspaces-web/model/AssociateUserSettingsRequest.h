@@ -70,9 +70,9 @@ class AssociateUserSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_userSettingsArn;
+  bool m_portalArnHasBeenSet = false;
   bool m_userSettingsArnHasBeenSet = false;
 };
 

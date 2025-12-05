@@ -66,9 +66,9 @@ class ReloadReplicationTablesResult {
   ///@}
  private:
   Aws::String m_replicationConfigArn;
-  bool m_replicationConfigArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationConfigArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

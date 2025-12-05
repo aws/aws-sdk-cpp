@@ -66,9 +66,9 @@ class Sort {
   ///@}
  private:
   SortableFieldName m_fieldName{SortableFieldName::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   SortOrder m_order{SortOrder::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

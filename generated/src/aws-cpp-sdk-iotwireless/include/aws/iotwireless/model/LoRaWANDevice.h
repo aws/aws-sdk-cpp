@@ -179,27 +179,27 @@ class LoRaWANDevice {
   ///@}
  private:
   Aws::String m_devEui;
-  bool m_devEuiHasBeenSet = false;
 
   Aws::String m_deviceProfileId;
-  bool m_deviceProfileIdHasBeenSet = false;
 
   Aws::String m_serviceProfileId;
-  bool m_serviceProfileIdHasBeenSet = false;
 
   OtaaV1_1 m_otaaV1_1;
-  bool m_otaaV1_1HasBeenSet = false;
 
   OtaaV1_0_x m_otaaV1_0_x;
-  bool m_otaaV1_0_xHasBeenSet = false;
 
   AbpV1_1 m_abpV1_1;
-  bool m_abpV1_1HasBeenSet = false;
 
   AbpV1_0_x m_abpV1_0_x;
-  bool m_abpV1_0_xHasBeenSet = false;
 
   FPorts m_fPorts;
+  bool m_devEuiHasBeenSet = false;
+  bool m_deviceProfileIdHasBeenSet = false;
+  bool m_serviceProfileIdHasBeenSet = false;
+  bool m_otaaV1_1HasBeenSet = false;
+  bool m_otaaV1_0_xHasBeenSet = false;
+  bool m_abpV1_1HasBeenSet = false;
+  bool m_abpV1_0_xHasBeenSet = false;
   bool m_fPortsHasBeenSet = false;
 };
 

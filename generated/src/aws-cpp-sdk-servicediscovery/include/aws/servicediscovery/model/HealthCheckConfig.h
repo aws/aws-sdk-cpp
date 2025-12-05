@@ -153,12 +153,12 @@ class HealthCheckConfig {
   ///@}
  private:
   HealthCheckType m_type{HealthCheckType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_resourcePath;
-  bool m_resourcePathHasBeenSet = false;
 
   int m_failureThreshold{0};
+  bool m_typeHasBeenSet = false;
+  bool m_resourcePathHasBeenSet = false;
   bool m_failureThresholdHasBeenSet = false;
 };
 

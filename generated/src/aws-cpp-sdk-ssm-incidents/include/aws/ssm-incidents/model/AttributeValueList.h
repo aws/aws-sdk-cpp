@@ -81,9 +81,9 @@ class AttributeValueList {
   ///@}
  private:
   Aws::Vector<int> m_integerValues;
-  bool m_integerValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringValues;
+  bool m_integerValuesHasBeenSet = false;
   bool m_stringValuesHasBeenSet = false;
 };
 

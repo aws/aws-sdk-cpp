@@ -102,15 +102,15 @@ class CreateRouteCalculatorResult {
   ///@}
  private:
   Aws::String m_calculatorName;
-  bool m_calculatorNameHasBeenSet = false;
 
   Aws::String m_calculatorArn;
-  bool m_calculatorArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_calculatorNameHasBeenSet = false;
+  bool m_calculatorArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

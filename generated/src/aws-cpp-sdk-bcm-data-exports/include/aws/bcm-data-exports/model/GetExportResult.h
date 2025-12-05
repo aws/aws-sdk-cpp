@@ -78,12 +78,12 @@ class GetExportResult {
   ///@}
  private:
   Export m_export;
-  bool m_exportHasBeenSet = false;
 
   ExportStatus m_exportStatus;
-  bool m_exportStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

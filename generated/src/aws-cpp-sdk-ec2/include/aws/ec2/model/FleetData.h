@@ -472,66 +472,66 @@ class FleetData {
   ///@}
  private:
   FleetActivityStatus m_activityStatus{FleetActivityStatus::NOT_SET};
-  bool m_activityStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   FleetStateCode m_fleetState{FleetStateCode::NOT_SET};
-  bool m_fleetStateHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy{FleetExcessCapacityTerminationPolicy::NOT_SET};
-  bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
   double m_fulfilledCapacity{0.0};
-  bool m_fulfilledCapacityHasBeenSet = false;
 
   double m_fulfilledOnDemandCapacity{0.0};
-  bool m_fulfilledOnDemandCapacityHasBeenSet = false;
 
   Aws::Vector<FleetLaunchTemplateConfig> m_launchTemplateConfigs;
-  bool m_launchTemplateConfigsHasBeenSet = false;
 
   TargetCapacitySpecification m_targetCapacitySpecification;
-  bool m_targetCapacitySpecificationHasBeenSet = false;
 
   bool m_terminateInstancesWithExpiration{false};
-  bool m_terminateInstancesWithExpirationHasBeenSet = false;
 
   FleetType m_type{FleetType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_validFrom{};
-  bool m_validFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   bool m_replaceUnhealthyInstances{false};
-  bool m_replaceUnhealthyInstancesHasBeenSet = false;
 
   SpotOptions m_spotOptions;
-  bool m_spotOptionsHasBeenSet = false;
 
   OnDemandOptions m_onDemandOptions;
-  bool m_onDemandOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<DescribeFleetError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<DescribeFleetsInstances> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_activityStatusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetStateHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_excessCapacityTerminationPolicyHasBeenSet = false;
+  bool m_fulfilledCapacityHasBeenSet = false;
+  bool m_fulfilledOnDemandCapacityHasBeenSet = false;
+  bool m_launchTemplateConfigsHasBeenSet = false;
+  bool m_targetCapacitySpecificationHasBeenSet = false;
+  bool m_terminateInstancesWithExpirationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_validFromHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
+  bool m_replaceUnhealthyInstancesHasBeenSet = false;
+  bool m_spotOptionsHasBeenSet = false;
+  bool m_onDemandOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

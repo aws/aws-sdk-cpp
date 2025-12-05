@@ -285,33 +285,33 @@ class DescribedUser {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_homeDirectory;
-  bool m_homeDirectoryHasBeenSet = false;
 
   Aws::Vector<HomeDirectoryMapEntry> m_homeDirectoryMappings;
-  bool m_homeDirectoryMappingsHasBeenSet = false;
 
   HomeDirectoryType m_homeDirectoryType{HomeDirectoryType::NOT_SET};
-  bool m_homeDirectoryTypeHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   PosixProfile m_posixProfile;
-  bool m_posixProfileHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::Vector<SshPublicKey> m_sshPublicKeys;
-  bool m_sshPublicKeysHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_arnHasBeenSet = false;
+  bool m_homeDirectoryHasBeenSet = false;
+  bool m_homeDirectoryMappingsHasBeenSet = false;
+  bool m_homeDirectoryTypeHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_posixProfileHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_sshPublicKeysHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

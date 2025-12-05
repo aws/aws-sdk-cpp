@@ -169,24 +169,24 @@ class Account {
   ///@}
  private:
   Industry m_industry{Industry::NOT_SET};
-  bool m_industryHasBeenSet = false;
 
   Aws::String m_otherIndustry;
-  bool m_otherIndustryHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_websiteUrl;
-  bool m_websiteUrlHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_duns;
+  bool m_industryHasBeenSet = false;
+  bool m_otherIndustryHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_websiteUrlHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
   bool m_dunsHasBeenSet = false;
 };
 

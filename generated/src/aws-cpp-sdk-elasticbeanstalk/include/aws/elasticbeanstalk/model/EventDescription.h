@@ -197,30 +197,30 @@ class EventDescription {
   ///@}
  private:
   Aws::Utils::DateTime m_eventDate{};
-  bool m_eventDateHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_platformArn;
-  bool m_platformArnHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   EventSeverity m_severity{EventSeverity::NOT_SET};
+  bool m_eventDateHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_platformArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

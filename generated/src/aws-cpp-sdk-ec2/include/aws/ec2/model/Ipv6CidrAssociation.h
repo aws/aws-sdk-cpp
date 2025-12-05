@@ -70,9 +70,9 @@ class Ipv6CidrAssociation {
   ///@}
  private:
   Aws::String m_ipv6Cidr;
-  bool m_ipv6CidrHasBeenSet = false;
 
   Aws::String m_associatedResource;
+  bool m_ipv6CidrHasBeenSet = false;
   bool m_associatedResourceHasBeenSet = false;
 };
 

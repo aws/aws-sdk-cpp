@@ -77,12 +77,12 @@ class GetPhoneNumberSettingsResult {
   ///@}
  private:
   Aws::String m_callingName;
-  bool m_callingNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_callingNameUpdatedTimestamp{};
-  bool m_callingNameUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_callingNameHasBeenSet = false;
+  bool m_callingNameUpdatedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

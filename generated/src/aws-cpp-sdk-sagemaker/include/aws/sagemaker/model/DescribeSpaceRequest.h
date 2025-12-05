@@ -67,9 +67,9 @@ class DescribeSpaceRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_spaceName;
+  bool m_domainIdHasBeenSet = false;
   bool m_spaceNameHasBeenSet = false;
 };
 

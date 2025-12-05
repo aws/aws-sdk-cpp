@@ -84,12 +84,12 @@ class AmazonQPropertiesInput {
   ///@}
  private:
   Aws::String m_authMode;
-  bool m_authModeHasBeenSet = false;
 
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   Aws::String m_profileArn;
+  bool m_authModeHasBeenSet = false;
+  bool m_isEnabledHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
 };
 

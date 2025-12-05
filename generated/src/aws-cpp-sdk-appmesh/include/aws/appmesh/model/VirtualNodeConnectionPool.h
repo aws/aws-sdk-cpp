@@ -111,15 +111,15 @@ class VirtualNodeConnectionPool {
   ///@}
  private:
   VirtualNodeGrpcConnectionPool m_grpc;
-  bool m_grpcHasBeenSet = false;
 
   VirtualNodeHttpConnectionPool m_http;
-  bool m_httpHasBeenSet = false;
 
   VirtualNodeHttp2ConnectionPool m_http2;
-  bool m_http2HasBeenSet = false;
 
   VirtualNodeTcpConnectionPool m_tcp;
+  bool m_grpcHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
+  bool m_http2HasBeenSet = false;
   bool m_tcpHasBeenSet = false;
 };
 

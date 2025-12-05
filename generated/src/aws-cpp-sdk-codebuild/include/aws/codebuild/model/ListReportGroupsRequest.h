@@ -112,15 +112,15 @@ class ListReportGroupsRequest : public CodeBuildRequest {
   ///@}
  private:
   SortOrderType m_sortOrder{SortOrderType::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   ReportGroupSortByType m_sortBy{ReportGroupSortByType::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -223,27 +223,27 @@ class CreateJobRequest : public ElasticTranscoderRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   JobInput m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::Vector<JobInput> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   CreateJobOutput m_output;
-  bool m_outputHasBeenSet = false;
 
   Aws::Vector<CreateJobOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_outputKeyPrefix;
-  bool m_outputKeyPrefixHasBeenSet = false;
 
   Aws::Vector<CreateJobPlaylist> m_playlists;
-  bool m_playlistsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userMetadata;
+  bool m_pipelineIdHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_outputKeyPrefixHasBeenSet = false;
+  bool m_playlistsHasBeenSet = false;
   bool m_userMetadataHasBeenSet = false;
 };
 

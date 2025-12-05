@@ -262,33 +262,33 @@ class ConsolidatedPolicyAggregation {
   ///@}
  private:
   Aws::Vector<AggregateColumn> m_aggregateColumns;
-  bool m_aggregateColumnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_joinColumns;
-  bool m_joinColumnsHasBeenSet = false;
 
   JoinRequiredOption m_joinRequired{JoinRequiredOption::NOT_SET};
-  bool m_joinRequiredHasBeenSet = false;
 
   Aws::Vector<JoinOperator> m_allowedJoinOperators;
-  bool m_allowedJoinOperatorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dimensionColumns;
-  bool m_dimensionColumnsHasBeenSet = false;
 
   Aws::Vector<ScalarFunctions> m_scalarFunctions;
-  bool m_scalarFunctionsHasBeenSet = false;
 
   Aws::Vector<AggregationConstraint> m_outputConstraints;
-  bool m_outputConstraintsHasBeenSet = false;
 
   AdditionalAnalyses m_additionalAnalyses{AdditionalAnalyses::NOT_SET};
-  bool m_additionalAnalysesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedResultReceivers;
-  bool m_allowedResultReceiversHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedAdditionalAnalyses;
+  bool m_aggregateColumnsHasBeenSet = false;
+  bool m_joinColumnsHasBeenSet = false;
+  bool m_joinRequiredHasBeenSet = false;
+  bool m_allowedJoinOperatorsHasBeenSet = false;
+  bool m_dimensionColumnsHasBeenSet = false;
+  bool m_scalarFunctionsHasBeenSet = false;
+  bool m_outputConstraintsHasBeenSet = false;
+  bool m_additionalAnalysesHasBeenSet = false;
+  bool m_allowedResultReceiversHasBeenSet = false;
   bool m_allowedAdditionalAnalysesHasBeenSet = false;
 };
 

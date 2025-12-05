@@ -294,45 +294,45 @@ class GetCommandExecutionResult {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_commandArn;
-  bool m_commandArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   CommandExecutionStatus m_status{CommandExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusReason m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, CommandExecutionResult> m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::Map<Aws::String, CommandParameterValue> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   long long m_executionTimeoutSeconds{0};
-  bool m_executionTimeoutSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeToLive{};
-  bool m_timeToLiveHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionIdHasBeenSet = false;
+  bool m_commandArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_executionTimeoutSecondsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_timeToLiveHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

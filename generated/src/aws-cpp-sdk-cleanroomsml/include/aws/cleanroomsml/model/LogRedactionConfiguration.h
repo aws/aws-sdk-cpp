@@ -79,9 +79,9 @@ class LogRedactionConfiguration {
   ///@}
  private:
   Aws::Vector<EntityType> m_entitiesToRedact;
-  bool m_entitiesToRedactHasBeenSet = false;
 
   CustomEntityConfig m_customEntityConfig;
+  bool m_entitiesToRedactHasBeenSet = false;
   bool m_customEntityConfigHasBeenSet = false;
 };
 

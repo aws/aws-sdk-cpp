@@ -133,18 +133,18 @@ class DescribeAssociationExecutionTargetsRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::Vector<AssociationExecutionTargetsFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_associationIdHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class WorkerComputeConfiguration {
   ///@}
  private:
   WorkerComputeType m_type{WorkerComputeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_number{0};
-  bool m_numberHasBeenSet = false;
 
   WorkerComputeConfigurationProperties m_properties;
+  bool m_typeHasBeenSet = false;
+  bool m_numberHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

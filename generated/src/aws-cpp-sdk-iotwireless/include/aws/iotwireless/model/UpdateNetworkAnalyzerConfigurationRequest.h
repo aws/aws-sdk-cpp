@@ -235,30 +235,30 @@ class UpdateNetworkAnalyzerConfigurationRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_configurationName;
-  bool m_configurationNameHasBeenSet = false;
 
   TraceContent m_traceContent;
-  bool m_traceContentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessDevicesToAdd;
-  bool m_wirelessDevicesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessDevicesToRemove;
-  bool m_wirelessDevicesToRemoveHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessGatewaysToAdd;
-  bool m_wirelessGatewaysToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessGatewaysToRemove;
-  bool m_wirelessGatewaysToRemoveHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_multicastGroupsToAdd;
-  bool m_multicastGroupsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_multicastGroupsToRemove;
+  bool m_configurationNameHasBeenSet = false;
+  bool m_traceContentHasBeenSet = false;
+  bool m_wirelessDevicesToAddHasBeenSet = false;
+  bool m_wirelessDevicesToRemoveHasBeenSet = false;
+  bool m_wirelessGatewaysToAddHasBeenSet = false;
+  bool m_wirelessGatewaysToRemoveHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_multicastGroupsToAddHasBeenSet = false;
   bool m_multicastGroupsToRemoveHasBeenSet = false;
 };
 

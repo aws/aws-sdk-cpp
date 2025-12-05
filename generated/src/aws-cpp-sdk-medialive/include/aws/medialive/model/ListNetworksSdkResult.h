@@ -89,12 +89,12 @@ class ListNetworksSdkResult {
   ///@}
  private:
   Aws::Vector<DescribeNetworkSummary> m_networks;
-  bool m_networksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

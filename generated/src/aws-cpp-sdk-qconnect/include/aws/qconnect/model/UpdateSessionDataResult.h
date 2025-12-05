@@ -118,18 +118,18 @@ class UpdateSessionDataResult {
   ///@}
  private:
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   SessionDataNamespace m_namespace{SessionDataNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<RuntimeSessionData> m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

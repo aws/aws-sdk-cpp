@@ -60,9 +60,9 @@ class GetObjectRetentionResult {
   ///@}
  private:
   ObjectLockRetention m_retention;
-  bool m_retentionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retentionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

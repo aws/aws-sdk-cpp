@@ -106,15 +106,15 @@ class StopPipelineExecutionRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   bool m_abandon{false};
-  bool m_abandonHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineExecutionIdHasBeenSet = false;
+  bool m_abandonHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

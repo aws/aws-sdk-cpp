@@ -86,12 +86,12 @@ class ModifyUsageLimitRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_usageLimitId;
-  bool m_usageLimitIdHasBeenSet = false;
 
   long long m_amount{0};
-  bool m_amountHasBeenSet = false;
 
   UsageLimitBreachAction m_breachAction{UsageLimitBreachAction::NOT_SET};
+  bool m_usageLimitIdHasBeenSet = false;
+  bool m_amountHasBeenSet = false;
   bool m_breachActionHasBeenSet = false;
 };
 

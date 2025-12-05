@@ -113,15 +113,15 @@ class GetEC2InstanceRecommendationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<InstanceRecommendation> m_instanceRecommendations;
-  bool m_instanceRecommendationsHasBeenSet = false;
 
   Aws::Vector<GetRecommendationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_instanceRecommendationsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

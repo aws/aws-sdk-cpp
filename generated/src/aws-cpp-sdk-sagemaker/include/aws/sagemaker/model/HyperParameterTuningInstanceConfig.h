@@ -96,12 +96,12 @@ class HyperParameterTuningInstanceConfig {
   ///@}
  private:
   TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
   bool m_volumeSizeInGBHasBeenSet = false;
 };
 

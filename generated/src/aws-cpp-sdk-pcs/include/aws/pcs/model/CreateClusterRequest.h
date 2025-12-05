@@ -179,24 +179,24 @@ class CreateClusterRequest : public PCSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   SchedulerRequest m_scheduler;
-  bool m_schedulerHasBeenSet = false;
 
   Size m_size{Size::NOT_SET};
-  bool m_sizeHasBeenSet = false;
 
   NetworkingRequest m_networking;
-  bool m_networkingHasBeenSet = false;
 
   ClusterSlurmConfigurationRequest m_slurmConfiguration;
-  bool m_slurmConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_schedulerHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_networkingHasBeenSet = false;
+  bool m_slurmConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

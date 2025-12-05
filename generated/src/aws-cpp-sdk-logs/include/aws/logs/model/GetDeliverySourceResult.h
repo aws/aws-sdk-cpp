@@ -60,9 +60,9 @@ class GetDeliverySourceResult {
   ///@}
  private:
   DeliverySource m_deliverySource;
-  bool m_deliverySourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliverySourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

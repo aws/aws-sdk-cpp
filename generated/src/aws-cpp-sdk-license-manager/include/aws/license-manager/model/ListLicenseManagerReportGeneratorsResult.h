@@ -86,12 +86,12 @@ class ListLicenseManagerReportGeneratorsResult {
   ///@}
  private:
   Aws::Vector<ReportGenerator> m_reportGenerators;
-  bool m_reportGeneratorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportGeneratorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

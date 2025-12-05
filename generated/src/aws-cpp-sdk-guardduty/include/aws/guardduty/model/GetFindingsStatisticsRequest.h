@@ -125,18 +125,18 @@ class GetFindingsStatisticsRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   FindingCriteria m_findingCriteria;
-  bool m_findingCriteriaHasBeenSet = false;
 
   GroupByType m_groupBy{GroupByType::NOT_SET};
-  bool m_groupByHasBeenSet = false;
 
   OrderBy m_orderBy{OrderBy::NOT_SET};
-  bool m_orderByHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_detectorIdHasBeenSet = false;
+  bool m_findingCriteriaHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_orderByHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

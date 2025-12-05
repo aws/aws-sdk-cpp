@@ -119,15 +119,15 @@ class LFTagPolicyResource {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<LFTag> m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_expressionName;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
   bool m_expressionNameHasBeenSet = false;
 };
 

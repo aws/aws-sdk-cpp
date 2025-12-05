@@ -79,9 +79,9 @@ class StatelessRule {
   ///@}
  private:
   RuleDefinition m_ruleDefinition;
-  bool m_ruleDefinitionHasBeenSet = false;
 
   int m_priority{0};
+  bool m_ruleDefinitionHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

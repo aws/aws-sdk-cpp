@@ -84,12 +84,12 @@ class ListFuotaTasksResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<FuotaTask> m_fuotaTaskList;
-  bool m_fuotaTaskListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_fuotaTaskListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

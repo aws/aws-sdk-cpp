@@ -174,24 +174,24 @@ class SybaseSettings {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
   bool m_secretsManagerSecretIdHasBeenSet = false;
 };
 

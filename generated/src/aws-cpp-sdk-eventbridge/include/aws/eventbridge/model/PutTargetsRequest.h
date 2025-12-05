@@ -94,12 +94,12 @@ class PutTargetsRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::String m_eventBusName;
-  bool m_eventBusNameHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
+  bool m_ruleHasBeenSet = false;
+  bool m_eventBusNameHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class FailedGroupingRecommendationEntry {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_groupingRecommendationId;
+  bool m_errorMessageHasBeenSet = false;
   bool m_groupingRecommendationIdHasBeenSet = false;
 };
 

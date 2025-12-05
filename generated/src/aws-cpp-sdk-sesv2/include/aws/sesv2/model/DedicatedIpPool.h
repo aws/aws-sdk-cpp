@@ -70,9 +70,9 @@ class DedicatedIpPool {
   ///@}
  private:
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   ScalingMode m_scalingMode{ScalingMode::NOT_SET};
+  bool m_poolNameHasBeenSet = false;
   bool m_scalingModeHasBeenSet = false;
 };
 

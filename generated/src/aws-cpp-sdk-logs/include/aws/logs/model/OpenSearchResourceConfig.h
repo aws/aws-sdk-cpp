@@ -146,18 +146,18 @@ class OpenSearchResourceConfig {
   ///@}
  private:
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_dataSourceRoleArn;
-  bool m_dataSourceRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dashboardViewerPrincipals;
-  bool m_dashboardViewerPrincipalsHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   int m_retentionDays{0};
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_dataSourceRoleArnHasBeenSet = false;
+  bool m_dashboardViewerPrincipalsHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
   bool m_retentionDaysHasBeenSet = false;
 };
 

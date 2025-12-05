@@ -59,9 +59,9 @@ class StartAudienceGenerationJobResult {
   ///@}
  private:
   Aws::String m_audienceGenerationJobArn;
-  bool m_audienceGenerationJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_audienceGenerationJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

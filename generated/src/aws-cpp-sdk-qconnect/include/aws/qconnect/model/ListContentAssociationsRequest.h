@@ -105,15 +105,15 @@ class ListContentAssociationsRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_contentId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_contentIdHasBeenSet = false;
 };
 

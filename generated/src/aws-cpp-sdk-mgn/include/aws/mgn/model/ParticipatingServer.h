@@ -104,15 +104,15 @@ class ParticipatingServer {
   ///@}
  private:
   LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
-  bool m_launchStatusHasBeenSet = false;
 
   Aws::String m_launchedEc2InstanceID;
-  bool m_launchedEc2InstanceIDHasBeenSet = false;
 
   PostLaunchActionsStatus m_postLaunchActionsStatus;
-  bool m_postLaunchActionsStatusHasBeenSet = false;
 
   Aws::String m_sourceServerID;
+  bool m_launchStatusHasBeenSet = false;
+  bool m_launchedEc2InstanceIDHasBeenSet = false;
+  bool m_postLaunchActionsStatusHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
 };
 

@@ -213,15 +213,15 @@ class DeleteScheduledActionRequest : public ApplicationAutoScalingRequest {
   ///@}
  private:
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_scheduledActionName;
-  bool m_scheduledActionNameHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_scheduledActionNameHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_scalableDimensionHasBeenSet = false;
 };
 

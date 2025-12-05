@@ -59,9 +59,9 @@ class CreateSpendingLimitResult {
   ///@}
  private:
   Aws::String m_spendingLimitArn;
-  bool m_spendingLimitArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spendingLimitArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

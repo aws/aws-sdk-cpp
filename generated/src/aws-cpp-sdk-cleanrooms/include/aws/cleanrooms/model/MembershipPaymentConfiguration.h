@@ -92,12 +92,12 @@ class MembershipPaymentConfiguration {
   ///@}
  private:
   MembershipQueryComputePaymentConfig m_queryCompute;
-  bool m_queryComputeHasBeenSet = false;
 
   MembershipMLPaymentConfig m_machineLearning;
-  bool m_machineLearningHasBeenSet = false;
 
   MembershipJobComputePaymentConfig m_jobCompute;
+  bool m_queryComputeHasBeenSet = false;
+  bool m_machineLearningHasBeenSet = false;
   bool m_jobComputeHasBeenSet = false;
 };
 

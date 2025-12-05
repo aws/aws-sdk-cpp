@@ -128,18 +128,18 @@ class CreatePresetRequest : public MediaConvertRequest {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PresetSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_categoryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

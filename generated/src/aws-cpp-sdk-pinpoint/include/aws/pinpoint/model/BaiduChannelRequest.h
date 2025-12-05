@@ -87,12 +87,12 @@ class BaiduChannelRequest {
   ///@}
  private:
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_secretKey;
+  bool m_apiKeyHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_secretKeyHasBeenSet = false;
 };
 

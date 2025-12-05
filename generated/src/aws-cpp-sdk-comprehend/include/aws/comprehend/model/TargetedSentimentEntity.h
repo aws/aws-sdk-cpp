@@ -88,9 +88,9 @@ class TargetedSentimentEntity {
   ///@}
  private:
   Aws::Vector<int> m_descriptiveMentionIndex;
-  bool m_descriptiveMentionIndexHasBeenSet = false;
 
   Aws::Vector<TargetedSentimentMention> m_mentions;
+  bool m_descriptiveMentionIndexHasBeenSet = false;
   bool m_mentionsHasBeenSet = false;
 };
 

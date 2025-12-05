@@ -114,15 +114,15 @@ class CreateStudioLifecycleConfigRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_studioLifecycleConfigName;
-  bool m_studioLifecycleConfigNameHasBeenSet = false;
 
   Aws::String m_studioLifecycleConfigContent;
-  bool m_studioLifecycleConfigContentHasBeenSet = false;
 
   StudioLifecycleConfigAppType m_studioLifecycleConfigAppType{StudioLifecycleConfigAppType::NOT_SET};
-  bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_studioLifecycleConfigNameHasBeenSet = false;
+  bool m_studioLifecycleConfigContentHasBeenSet = false;
+  bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class OutgoingCertificate {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::String m_transferredTo;
-  bool m_transferredToHasBeenSet = false;
 
   Aws::Utils::DateTime m_transferDate{};
-  bool m_transferDateHasBeenSet = false;
 
   Aws::String m_transferMessage;
-  bool m_transferMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_transferredToHasBeenSet = false;
+  bool m_transferDateHasBeenSet = false;
+  bool m_transferMessageHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

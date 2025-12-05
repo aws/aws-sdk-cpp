@@ -85,12 +85,12 @@ class DescribeConnectionAliasesResult {
   ///@}
  private:
   Aws::Vector<ConnectionAlias> m_connectionAliases;
-  bool m_connectionAliasesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionAliasesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

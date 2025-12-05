@@ -184,27 +184,27 @@ class VirtualInterfaceTestHistory {
   ///@}
  private:
   Aws::String m_testId;
-  bool m_testIdHasBeenSet = false;
 
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bgpPeers;
-  bool m_bgpPeersHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   int m_testDurationInMinutes{0};
-  bool m_testDurationInMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_testIdHasBeenSet = false;
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_bgpPeersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_testDurationInMinutesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

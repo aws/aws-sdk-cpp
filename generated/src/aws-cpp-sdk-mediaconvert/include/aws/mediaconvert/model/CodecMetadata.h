@@ -247,36 +247,36 @@ class CodecMetadata {
   ///@}
  private:
   int m_bitDepth{0};
-  bool m_bitDepthHasBeenSet = false;
 
   Aws::String m_chromaSubsampling;
-  bool m_chromaSubsamplingHasBeenSet = false;
 
   FrameRate m_codedFrameRate;
-  bool m_codedFrameRateHasBeenSet = false;
 
   ColorPrimaries m_colorPrimaries{ColorPrimaries::NOT_SET};
-  bool m_colorPrimariesHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   Aws::String m_level;
-  bool m_levelHasBeenSet = false;
 
   MatrixCoefficients m_matrixCoefficients{MatrixCoefficients::NOT_SET};
-  bool m_matrixCoefficientsHasBeenSet = false;
 
   Aws::String m_profile;
-  bool m_profileHasBeenSet = false;
 
   Aws::String m_scanType;
-  bool m_scanTypeHasBeenSet = false;
 
   TransferCharacteristics m_transferCharacteristics{TransferCharacteristics::NOT_SET};
-  bool m_transferCharacteristicsHasBeenSet = false;
 
   int m_width{0};
+  bool m_bitDepthHasBeenSet = false;
+  bool m_chromaSubsamplingHasBeenSet = false;
+  bool m_codedFrameRateHasBeenSet = false;
+  bool m_colorPrimariesHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_matrixCoefficientsHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
+  bool m_transferCharacteristicsHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class UpdateProfileResourceAssociationResult {
   ///@}
  private:
   ProfileResourceAssociation m_profileResourceAssociation;
-  bool m_profileResourceAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileResourceAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

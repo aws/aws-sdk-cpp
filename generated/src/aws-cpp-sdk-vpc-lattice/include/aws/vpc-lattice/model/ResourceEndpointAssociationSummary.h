@@ -197,30 +197,30 @@ class ResourceEndpointAssociationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceConfigurationId;
-  bool m_resourceConfigurationIdHasBeenSet = false;
 
   Aws::String m_resourceConfigurationArn;
-  bool m_resourceConfigurationArnHasBeenSet = false;
 
   Aws::String m_resourceConfigurationName;
-  bool m_resourceConfigurationNameHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointOwner;
-  bool m_vpcEndpointOwnerHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceConfigurationIdHasBeenSet = false;
+  bool m_resourceConfigurationArnHasBeenSet = false;
+  bool m_resourceConfigurationNameHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcEndpointOwnerHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

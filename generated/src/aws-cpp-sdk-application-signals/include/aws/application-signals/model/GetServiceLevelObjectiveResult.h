@@ -61,9 +61,9 @@ class GetServiceLevelObjectiveResult {
   ///@}
  private:
   ServiceLevelObjective m_slo;
-  bool m_sloHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sloHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

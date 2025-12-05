@@ -131,18 +131,18 @@ class CreateVoiceProfileDomainRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

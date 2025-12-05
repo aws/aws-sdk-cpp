@@ -75,9 +75,9 @@ class UntagDeliveryStreamRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_deliveryStreamNameHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

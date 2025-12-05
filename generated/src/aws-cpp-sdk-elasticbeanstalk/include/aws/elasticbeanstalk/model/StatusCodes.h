@@ -103,15 +103,15 @@ class StatusCodes {
   ///@}
  private:
   int m_status2xx{0};
-  bool m_status2xxHasBeenSet = false;
 
   int m_status3xx{0};
-  bool m_status3xxHasBeenSet = false;
 
   int m_status4xx{0};
-  bool m_status4xxHasBeenSet = false;
 
   int m_status5xx{0};
+  bool m_status2xxHasBeenSet = false;
+  bool m_status3xxHasBeenSet = false;
+  bool m_status4xxHasBeenSet = false;
   bool m_status5xxHasBeenSet = false;
 };
 

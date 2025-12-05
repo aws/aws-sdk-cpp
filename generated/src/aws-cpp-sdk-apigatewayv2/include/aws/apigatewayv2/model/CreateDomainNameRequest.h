@@ -138,18 +138,18 @@ class CreateDomainNameRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<DomainNameConfiguration> m_domainNameConfigurations;
-  bool m_domainNameConfigurationsHasBeenSet = false;
 
   MutualTlsAuthenticationInput m_mutualTlsAuthentication;
-  bool m_mutualTlsAuthenticationHasBeenSet = false;
 
   RoutingMode m_routingMode{RoutingMode::NOT_SET};
-  bool m_routingModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainNameConfigurationsHasBeenSet = false;
+  bool m_mutualTlsAuthenticationHasBeenSet = false;
+  bool m_routingModeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

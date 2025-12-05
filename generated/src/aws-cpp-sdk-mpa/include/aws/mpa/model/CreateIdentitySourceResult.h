@@ -94,15 +94,15 @@ class CreateIdentitySourceResult {
   ///@}
  private:
   IdentitySourceType m_identitySourceType{IdentitySourceType::NOT_SET};
-  bool m_identitySourceTypeHasBeenSet = false;
 
   Aws::String m_identitySourceArn;
-  bool m_identitySourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identitySourceTypeHasBeenSet = false;
+  bool m_identitySourceArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

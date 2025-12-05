@@ -72,9 +72,9 @@ class BatchUpdateStandardsControlAssociationsResult {
   ///@}
  private:
   Aws::Vector<UnprocessedStandardsControlAssociationUpdate> m_unprocessedAssociationUpdates;
-  bool m_unprocessedAssociationUpdatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unprocessedAssociationUpdatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

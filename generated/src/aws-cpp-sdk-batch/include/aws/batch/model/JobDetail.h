@@ -649,93 +649,93 @@ class JobDetail {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobQueue;
-  bool m_jobQueueHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_shareIdentifier;
-  bool m_shareIdentifierHasBeenSet = false;
 
   int m_schedulingPriority{0};
-  bool m_schedulingPriorityHasBeenSet = false;
 
   Aws::Vector<AttemptDetail> m_attempts;
-  bool m_attemptsHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   long long m_createdAt{0};
-  bool m_createdAtHasBeenSet = false;
 
   RetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_stoppedAt{0};
-  bool m_stoppedAtHasBeenSet = false;
 
   Aws::Vector<JobDependency> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   Aws::String m_jobDefinition;
-  bool m_jobDefinitionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   ContainerDetail m_container;
-  bool m_containerHasBeenSet = false;
 
   NodeDetails m_nodeDetails;
-  bool m_nodeDetailsHasBeenSet = false;
 
   NodeProperties m_nodeProperties;
-  bool m_nodePropertiesHasBeenSet = false;
 
   ArrayPropertiesDetail m_arrayProperties;
-  bool m_arrayPropertiesHasBeenSet = false;
 
   JobTimeout m_timeout;
-  bool m_timeoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_propagateTags{false};
-  bool m_propagateTagsHasBeenSet = false;
 
   Aws::Vector<PlatformCapability> m_platformCapabilities;
-  bool m_platformCapabilitiesHasBeenSet = false;
 
   EksPropertiesDetail m_eksProperties;
-  bool m_eksPropertiesHasBeenSet = false;
 
   Aws::Vector<EksAttemptDetail> m_eksAttempts;
-  bool m_eksAttemptsHasBeenSet = false;
 
   EcsPropertiesDetail m_ecsProperties;
-  bool m_ecsPropertiesHasBeenSet = false;
 
   bool m_isCancelled{false};
-  bool m_isCancelledHasBeenSet = false;
 
   bool m_isTerminated{false};
-  bool m_isTerminatedHasBeenSet = false;
 
   ConsumableResourceProperties m_consumableResourceProperties;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobQueueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_shareIdentifierHasBeenSet = false;
+  bool m_schedulingPriorityHasBeenSet = false;
+  bool m_attemptsHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
+  bool m_jobDefinitionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_nodeDetailsHasBeenSet = false;
+  bool m_nodePropertiesHasBeenSet = false;
+  bool m_arrayPropertiesHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_platformCapabilitiesHasBeenSet = false;
+  bool m_eksPropertiesHasBeenSet = false;
+  bool m_eksAttemptsHasBeenSet = false;
+  bool m_ecsPropertiesHasBeenSet = false;
+  bool m_isCancelledHasBeenSet = false;
+  bool m_isTerminatedHasBeenSet = false;
   bool m_consumableResourcePropertiesHasBeenSet = false;
 };
 

@@ -170,21 +170,21 @@ class VerificationMessageTemplateType {
   ///@}
  private:
   Aws::String m_smsMessage;
-  bool m_smsMessageHasBeenSet = false;
 
   Aws::String m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   Aws::String m_emailSubject;
-  bool m_emailSubjectHasBeenSet = false;
 
   Aws::String m_emailMessageByLink;
-  bool m_emailMessageByLinkHasBeenSet = false;
 
   Aws::String m_emailSubjectByLink;
-  bool m_emailSubjectByLinkHasBeenSet = false;
 
   DefaultEmailOptionType m_defaultEmailOption{DefaultEmailOptionType::NOT_SET};
+  bool m_smsMessageHasBeenSet = false;
+  bool m_emailMessageHasBeenSet = false;
+  bool m_emailSubjectHasBeenSet = false;
+  bool m_emailMessageByLinkHasBeenSet = false;
+  bool m_emailSubjectByLinkHasBeenSet = false;
   bool m_defaultEmailOptionHasBeenSet = false;
 };
 

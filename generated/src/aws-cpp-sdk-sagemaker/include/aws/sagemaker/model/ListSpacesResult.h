@@ -85,12 +85,12 @@ class ListSpacesResult {
   ///@}
  private:
   Aws::Vector<SpaceDetails> m_spaces;
-  bool m_spacesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spacesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

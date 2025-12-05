@@ -71,9 +71,9 @@ class GetApisRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_maxResults;
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

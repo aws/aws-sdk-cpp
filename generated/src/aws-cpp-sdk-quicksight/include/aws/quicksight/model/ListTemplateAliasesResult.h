@@ -100,15 +100,15 @@ class ListTemplateAliasesResult {
   ///@}
  private:
   Aws::Vector<TemplateAlias> m_templateAliasList;
-  bool m_templateAliasListHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_templateAliasListHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

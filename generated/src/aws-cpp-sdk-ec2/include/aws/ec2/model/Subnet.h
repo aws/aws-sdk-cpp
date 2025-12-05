@@ -469,72 +469,72 @@ class Subnet {
   ///@}
  private:
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   int m_enableLniAtDeviceIndex{0};
-  bool m_enableLniAtDeviceIndexHasBeenSet = false;
 
   bool m_mapCustomerOwnedIpOnLaunch{false};
-  bool m_mapCustomerOwnedIpOnLaunchHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
-  bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   bool m_assignIpv6AddressOnCreation{false};
-  bool m_assignIpv6AddressOnCreationHasBeenSet = false;
 
   Aws::Vector<SubnetIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-  bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_subnetArn;
-  bool m_subnetArnHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   bool m_enableDns64{false};
-  bool m_enableDns64HasBeenSet = false;
 
   bool m_ipv6Native{false};
-  bool m_ipv6NativeHasBeenSet = false;
 
   PrivateDnsNameOptionsOnLaunch m_privateDnsNameOptionsOnLaunch;
-  bool m_privateDnsNameOptionsOnLaunchHasBeenSet = false;
 
   BlockPublicAccessStates m_blockPublicAccessStates;
-  bool m_blockPublicAccessStatesHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   SubnetState m_state{SubnetState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   int m_availableIpAddressCount{0};
-  bool m_availableIpAddressCountHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   bool m_defaultForAz{false};
-  bool m_defaultForAzHasBeenSet = false;
 
   bool m_mapPublicIpOnLaunch{false};
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_enableLniAtDeviceIndexHasBeenSet = false;
+  bool m_mapCustomerOwnedIpOnLaunchHasBeenSet = false;
+  bool m_customerOwnedIpv4PoolHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_assignIpv6AddressOnCreationHasBeenSet = false;
+  bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_subnetArnHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_enableDns64HasBeenSet = false;
+  bool m_ipv6NativeHasBeenSet = false;
+  bool m_privateDnsNameOptionsOnLaunchHasBeenSet = false;
+  bool m_blockPublicAccessStatesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_availableIpAddressCountHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_defaultForAzHasBeenSet = false;
   bool m_mapPublicIpOnLaunchHasBeenSet = false;
 };
 

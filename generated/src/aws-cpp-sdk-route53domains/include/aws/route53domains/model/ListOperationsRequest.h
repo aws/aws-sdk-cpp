@@ -178,24 +178,24 @@ class ListOperationsRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_submittedSince{};
-  bool m_submittedSinceHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::Vector<OperationStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<OperationType> m_type;
-  bool m_typeHasBeenSet = false;
 
   ListOperationsSortAttributeName m_sortBy{ListOperationsSortAttributeName::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_submittedSinceHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

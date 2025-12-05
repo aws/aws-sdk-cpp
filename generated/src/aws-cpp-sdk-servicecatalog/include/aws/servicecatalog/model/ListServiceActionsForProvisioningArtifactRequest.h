@@ -122,18 +122,18 @@ class ListServiceActionsForProvisioningArtifactRequest : public ServiceCatalogRe
   ///@}
  private:
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_acceptLanguageHasBeenSet = false;
 };
 

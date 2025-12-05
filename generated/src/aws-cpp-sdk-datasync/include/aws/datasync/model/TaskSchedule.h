@@ -84,9 +84,9 @@ class TaskSchedule {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   ScheduleStatus m_status{ScheduleStatus::NOT_SET};
+  bool m_scheduleExpressionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

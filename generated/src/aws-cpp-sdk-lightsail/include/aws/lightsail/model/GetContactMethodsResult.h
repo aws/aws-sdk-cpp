@@ -67,9 +67,9 @@ class GetContactMethodsResult {
   ///@}
  private:
   Aws::Vector<ContactMethod> m_contactMethods;
-  bool m_contactMethodsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactMethodsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

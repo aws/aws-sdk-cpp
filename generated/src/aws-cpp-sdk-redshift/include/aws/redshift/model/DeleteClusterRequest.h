@@ -120,15 +120,15 @@ class DeleteClusterRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   bool m_skipFinalClusterSnapshot{false};
-  bool m_skipFinalClusterSnapshotHasBeenSet = false;
 
   Aws::String m_finalClusterSnapshotIdentifier;
-  bool m_finalClusterSnapshotIdentifierHasBeenSet = false;
 
   int m_finalClusterSnapshotRetentionPeriod{0};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_skipFinalClusterSnapshotHasBeenSet = false;
+  bool m_finalClusterSnapshotIdentifierHasBeenSet = false;
   bool m_finalClusterSnapshotRetentionPeriodHasBeenSet = false;
 };
 

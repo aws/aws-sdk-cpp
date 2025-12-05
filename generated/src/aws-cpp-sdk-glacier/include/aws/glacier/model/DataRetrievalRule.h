@@ -70,9 +70,9 @@ class DataRetrievalRule {
   ///@}
  private:
   Aws::String m_strategy;
-  bool m_strategyHasBeenSet = false;
 
   long long m_bytesPerHour{0};
+  bool m_strategyHasBeenSet = false;
   bool m_bytesPerHourHasBeenSet = false;
 };
 

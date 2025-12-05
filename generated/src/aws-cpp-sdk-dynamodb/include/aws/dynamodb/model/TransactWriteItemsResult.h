@@ -99,12 +99,12 @@ class TransactWriteItemsResult {
   ///@}
  private:
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>> m_itemCollectionMetrics;
-  bool m_itemCollectionMetricsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumedCapacityHasBeenSet = false;
+  bool m_itemCollectionMetricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListMissionProfilesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MissionProfileListItem> m_missionProfileList;
-  bool m_missionProfileListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_missionProfileListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

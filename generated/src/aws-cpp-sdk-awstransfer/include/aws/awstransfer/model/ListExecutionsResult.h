@@ -104,15 +104,15 @@ class ListExecutionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::Vector<ListedExecution> m_executions;
-  bool m_executionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_executionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

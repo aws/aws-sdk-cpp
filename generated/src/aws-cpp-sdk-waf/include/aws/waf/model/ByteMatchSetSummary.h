@@ -84,9 +84,9 @@ class ByteMatchSetSummary {
   ///@}
  private:
   Aws::String m_byteMatchSetId;
-  bool m_byteMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_byteMatchSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

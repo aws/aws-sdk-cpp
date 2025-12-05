@@ -88,12 +88,12 @@ class DescribeEvaluationFormRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   int m_evaluationFormVersion{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_evaluationFormIdHasBeenSet = false;
   bool m_evaluationFormVersionHasBeenSet = false;
 };
 

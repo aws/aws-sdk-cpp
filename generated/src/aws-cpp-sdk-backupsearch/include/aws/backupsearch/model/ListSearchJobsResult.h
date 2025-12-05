@@ -88,12 +88,12 @@ class ListSearchJobsResult {
   ///@}
  private:
   Aws::Vector<SearchJobSummary> m_searchJobs;
-  bool m_searchJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_searchJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

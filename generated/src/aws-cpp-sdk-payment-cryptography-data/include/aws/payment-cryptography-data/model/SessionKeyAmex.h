@@ -72,9 +72,9 @@ class SessionKeyAmex {
   ///@}
  private:
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   Aws::String m_panSequenceNumber;
+  bool m_primaryAccountNumberHasBeenSet = false;
   bool m_panSequenceNumberHasBeenSet = false;
 };
 

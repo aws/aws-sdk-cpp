@@ -102,15 +102,15 @@ class MeteredProductSummary {
   ///@}
  private:
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   int m_port{0};
+  bool m_productIdHasBeenSet = false;
+  bool m_familyHasBeenSet = false;
+  bool m_vendorHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

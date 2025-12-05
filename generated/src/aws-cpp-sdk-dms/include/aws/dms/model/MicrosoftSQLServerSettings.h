@@ -390,57 +390,57 @@ class MicrosoftSQLServerSettings {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   int m_bcpPacketSize{0};
-  bool m_bcpPacketSizeHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_controlTablesFileGroup;
-  bool m_controlTablesFileGroupHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   bool m_querySingleAlwaysOnNode{false};
-  bool m_querySingleAlwaysOnNodeHasBeenSet = false;
 
   bool m_readBackupOnly{false};
-  bool m_readBackupOnlyHasBeenSet = false;
 
   SafeguardPolicy m_safeguardPolicy{SafeguardPolicy::NOT_SET};
-  bool m_safeguardPolicyHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   bool m_useBcpFullLoad{false};
-  bool m_useBcpFullLoadHasBeenSet = false;
 
   bool m_useThirdPartyBackupDevice{false};
-  bool m_useThirdPartyBackupDeviceHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   bool m_trimSpaceInChar{false};
-  bool m_trimSpaceInCharHasBeenSet = false;
 
   TlogAccessMode m_tlogAccessMode{TlogAccessMode::NOT_SET};
-  bool m_tlogAccessModeHasBeenSet = false;
 
   bool m_forceLobLookup{false};
-  bool m_forceLobLookupHasBeenSet = false;
 
   SqlServerAuthenticationMethod m_authenticationMethod{SqlServerAuthenticationMethod::NOT_SET};
+  bool m_portHasBeenSet = false;
+  bool m_bcpPacketSizeHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_controlTablesFileGroupHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_querySingleAlwaysOnNodeHasBeenSet = false;
+  bool m_readBackupOnlyHasBeenSet = false;
+  bool m_safeguardPolicyHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_useBcpFullLoadHasBeenSet = false;
+  bool m_useThirdPartyBackupDeviceHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
+  bool m_trimSpaceInCharHasBeenSet = false;
+  bool m_tlogAccessModeHasBeenSet = false;
+  bool m_forceLobLookupHasBeenSet = false;
   bool m_authenticationMethodHasBeenSet = false;
 };
 

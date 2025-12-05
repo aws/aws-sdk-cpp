@@ -212,30 +212,30 @@ class ManagedNotificationEventOverview {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_managedNotificationConfigurationArn;
-  bool m_managedNotificationConfigurationArnHasBeenSet = false;
 
   Aws::String m_relatedAccount;
-  bool m_relatedAccountHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ManagedNotificationEventSummary m_notificationEvent;
-  bool m_notificationEventHasBeenSet = false;
 
   AggregationEventType m_aggregationEventType{AggregationEventType::NOT_SET};
-  bool m_aggregationEventTypeHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   AggregationSummary m_aggregationSummary;
-  bool m_aggregationSummaryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aggregatedNotificationRegions;
+  bool m_arnHasBeenSet = false;
+  bool m_managedNotificationConfigurationArnHasBeenSet = false;
+  bool m_relatedAccountHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_notificationEventHasBeenSet = false;
+  bool m_aggregationEventTypeHasBeenSet = false;
+  bool m_organizationalUnitIdHasBeenSet = false;
+  bool m_aggregationSummaryHasBeenSet = false;
   bool m_aggregatedNotificationRegionsHasBeenSet = false;
 };
 

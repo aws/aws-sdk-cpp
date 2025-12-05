@@ -85,12 +85,12 @@ class ListSolFunctionInstancesResult {
   ///@}
  private:
   Aws::Vector<ListSolFunctionInstanceInfo> m_functionInstances;
-  bool m_functionInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

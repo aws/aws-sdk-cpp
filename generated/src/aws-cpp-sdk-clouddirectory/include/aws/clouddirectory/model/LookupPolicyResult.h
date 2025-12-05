@@ -87,12 +87,12 @@ class LookupPolicyResult {
   ///@}
  private:
   Aws::Vector<PolicyToPath> m_policyToPathList;
-  bool m_policyToPathListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyToPathListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

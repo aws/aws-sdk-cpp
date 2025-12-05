@@ -70,9 +70,9 @@ class AttributeKeyAndValue {
   ///@}
  private:
   AttributeKey m_key;
-  bool m_keyHasBeenSet = false;
 
   TypedAttributeValue m_value;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

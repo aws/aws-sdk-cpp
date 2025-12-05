@@ -93,12 +93,12 @@ class ListServicesForAutoScalingConfigurationRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_autoScalingConfigurationArn;
-  bool m_autoScalingConfigurationArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_autoScalingConfigurationArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -161,27 +161,27 @@ class GetDestinationResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_deliveryDestinationArn;
-  bool m_deliveryDestinationArnHasBeenSet = false;
 
   DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
-  bool m_deliveryDestinationTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deliveryDestinationArnHasBeenSet = false;
+  bool m_deliveryDestinationTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

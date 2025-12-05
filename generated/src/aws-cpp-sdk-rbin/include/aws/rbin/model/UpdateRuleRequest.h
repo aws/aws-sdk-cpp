@@ -168,21 +168,21 @@ class UpdateRuleRequest : public RecycleBinRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_excludeResourceTags;
+  bool m_identifierHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
   bool m_excludeResourceTagsHasBeenSet = false;
 };
 

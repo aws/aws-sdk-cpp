@@ -133,18 +133,18 @@ class UpdateDataIntegrationFlowRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<DataIntegrationFlowSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   DataIntegrationFlowTransformation m_transformation;
-  bool m_transformationHasBeenSet = false;
 
   DataIntegrationFlowTarget m_target;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_transformationHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

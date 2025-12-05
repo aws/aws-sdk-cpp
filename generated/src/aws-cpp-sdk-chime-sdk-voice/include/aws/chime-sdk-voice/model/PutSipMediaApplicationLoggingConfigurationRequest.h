@@ -69,9 +69,9 @@ class PutSipMediaApplicationLoggingConfigurationRequest : public ChimeSDKVoiceRe
   ///@}
  private:
   Aws::String m_sipMediaApplicationId;
-  bool m_sipMediaApplicationIdHasBeenSet = false;
 
   SipMediaApplicationLoggingConfiguration m_sipMediaApplicationLoggingConfiguration;
+  bool m_sipMediaApplicationIdHasBeenSet = false;
   bool m_sipMediaApplicationLoggingConfigurationHasBeenSet = false;
 };
 

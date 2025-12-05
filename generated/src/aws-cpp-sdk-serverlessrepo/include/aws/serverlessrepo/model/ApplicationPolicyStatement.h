@@ -128,15 +128,15 @@ Permissions</a>.</p>
   ///@}
  private:
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principalOrgIDs;
-  bool m_principalOrgIDsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::String m_statementId;
+  bool m_actionsHasBeenSet = false;
+  bool m_principalOrgIDsHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
   bool m_statementIdHasBeenSet = false;
 };
 

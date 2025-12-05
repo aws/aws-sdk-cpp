@@ -69,9 +69,9 @@ class RelatedControlMappingDetails {
   ///@}
  private:
   Aws::String m_controlArn;
-  bool m_controlArnHasBeenSet = false;
 
   ControlRelationType m_relationType{ControlRelationType::NOT_SET};
+  bool m_controlArnHasBeenSet = false;
   bool m_relationTypeHasBeenSet = false;
 };
 

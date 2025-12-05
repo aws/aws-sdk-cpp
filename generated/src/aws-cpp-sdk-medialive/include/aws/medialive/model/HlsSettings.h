@@ -99,15 +99,15 @@ class HlsSettings {
   ///@}
  private:
   AudioOnlyHlsSettings m_audioOnlyHlsSettings;
-  bool m_audioOnlyHlsSettingsHasBeenSet = false;
 
   Fmp4HlsSettings m_fmp4HlsSettings;
-  bool m_fmp4HlsSettingsHasBeenSet = false;
 
   FrameCaptureHlsSettings m_frameCaptureHlsSettings;
-  bool m_frameCaptureHlsSettingsHasBeenSet = false;
 
   StandardHlsSettings m_standardHlsSettings;
+  bool m_audioOnlyHlsSettingsHasBeenSet = false;
+  bool m_fmp4HlsSettingsHasBeenSet = false;
+  bool m_frameCaptureHlsSettingsHasBeenSet = false;
   bool m_standardHlsSettingsHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class AddNotificationChannelsRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::Vector<Channel> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
+  bool m_channelsHasBeenSet = false;
   bool m_profilingGroupNameHasBeenSet = false;
 };
 

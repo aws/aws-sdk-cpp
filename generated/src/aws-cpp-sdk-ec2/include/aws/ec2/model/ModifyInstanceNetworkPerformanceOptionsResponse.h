@@ -78,12 +78,12 @@ class ModifyInstanceNetworkPerformanceOptionsResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
-  bool m_bandwidthWeightingHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_bandwidthWeightingHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

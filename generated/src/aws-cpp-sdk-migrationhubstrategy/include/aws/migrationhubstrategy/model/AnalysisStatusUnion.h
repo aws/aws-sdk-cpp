@@ -65,9 +65,9 @@ class AnalysisStatusUnion {
   ///@}
  private:
   RuntimeAnalysisStatus m_runtimeAnalysisStatus{RuntimeAnalysisStatus::NOT_SET};
-  bool m_runtimeAnalysisStatusHasBeenSet = false;
 
   SrcCodeOrDbAnalysisStatus m_srcCodeOrDbAnalysisStatus{SrcCodeOrDbAnalysisStatus::NOT_SET};
+  bool m_runtimeAnalysisStatusHasBeenSet = false;
   bool m_srcCodeOrDbAnalysisStatusHasBeenSet = false;
 };
 

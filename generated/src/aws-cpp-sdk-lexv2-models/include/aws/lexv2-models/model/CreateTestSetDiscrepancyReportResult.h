@@ -113,18 +113,18 @@ class CreateTestSetDiscrepancyReportResult {
   ///@}
  private:
   Aws::String m_testSetDiscrepancyReportId;
-  bool m_testSetDiscrepancyReportIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   TestSetDiscrepancyReportResourceTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testSetDiscrepancyReportIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_testSetIdHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

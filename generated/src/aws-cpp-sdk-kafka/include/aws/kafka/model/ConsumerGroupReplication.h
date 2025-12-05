@@ -116,15 +116,15 @@ class ConsumerGroupReplication {
   ///@}
  private:
   Aws::Vector<Aws::String> m_consumerGroupsToExclude;
-  bool m_consumerGroupsToExcludeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_consumerGroupsToReplicate;
-  bool m_consumerGroupsToReplicateHasBeenSet = false;
 
   bool m_detectAndCopyNewConsumerGroups{false};
-  bool m_detectAndCopyNewConsumerGroupsHasBeenSet = false;
 
   bool m_synchroniseConsumerGroupOffsets{false};
+  bool m_consumerGroupsToExcludeHasBeenSet = false;
+  bool m_consumerGroupsToReplicateHasBeenSet = false;
+  bool m_detectAndCopyNewConsumerGroupsHasBeenSet = false;
   bool m_synchroniseConsumerGroupOffsetsHasBeenSet = false;
 };
 

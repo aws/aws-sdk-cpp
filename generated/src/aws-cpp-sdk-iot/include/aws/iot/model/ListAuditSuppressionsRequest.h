@@ -113,18 +113,18 @@ class ListAuditSuppressionsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_checkName;
-  bool m_checkNameHasBeenSet = false;
 
   ResourceIdentifier m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   bool m_ascendingOrder{false};
-  bool m_ascendingOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_checkNameHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_ascendingOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class OutputDataConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   EncryptionKey m_encryptionKey;
+  bool m_s3UriHasBeenSet = false;
   bool m_encryptionKeyHasBeenSet = false;
 };
 

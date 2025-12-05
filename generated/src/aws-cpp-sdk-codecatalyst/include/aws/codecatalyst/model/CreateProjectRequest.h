@@ -85,12 +85,12 @@ class CreateProjectRequest : public CodeCatalystRequest {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

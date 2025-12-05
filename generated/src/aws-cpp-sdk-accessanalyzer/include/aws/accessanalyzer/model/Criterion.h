@@ -124,15 +124,15 @@ class Criterion {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eq;
-  bool m_eqHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_neq;
-  bool m_neqHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contains;
-  bool m_containsHasBeenSet = false;
 
   bool m_exists{false};
+  bool m_eqHasBeenSet = false;
+  bool m_neqHasBeenSet = false;
+  bool m_containsHasBeenSet = false;
   bool m_existsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ConformancePackComplianceSummary {
   ///@}
  private:
   Aws::String m_conformancePackName;
-  bool m_conformancePackNameHasBeenSet = false;
 
   ConformancePackComplianceType m_conformancePackComplianceStatus{ConformancePackComplianceType::NOT_SET};
+  bool m_conformancePackNameHasBeenSet = false;
   bool m_conformancePackComplianceStatusHasBeenSet = false;
 };
 

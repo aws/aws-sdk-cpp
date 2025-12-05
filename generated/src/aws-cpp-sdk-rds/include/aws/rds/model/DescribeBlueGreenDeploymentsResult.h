@@ -87,12 +87,12 @@ class DescribeBlueGreenDeploymentsResult {
   ///@}
  private:
   Aws::Vector<BlueGreenDeployment> m_blueGreenDeployments;
-  bool m_blueGreenDeploymentsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_blueGreenDeploymentsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

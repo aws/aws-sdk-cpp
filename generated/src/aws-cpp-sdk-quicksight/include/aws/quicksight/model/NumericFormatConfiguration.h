@@ -94,12 +94,12 @@ class NumericFormatConfiguration {
   ///@}
  private:
   NumberDisplayFormatConfiguration m_numberDisplayFormatConfiguration;
-  bool m_numberDisplayFormatConfigurationHasBeenSet = false;
 
   CurrencyDisplayFormatConfiguration m_currencyDisplayFormatConfiguration;
-  bool m_currencyDisplayFormatConfigurationHasBeenSet = false;
 
   PercentageDisplayFormatConfiguration m_percentageDisplayFormatConfiguration;
+  bool m_numberDisplayFormatConfigurationHasBeenSet = false;
+  bool m_currencyDisplayFormatConfigurationHasBeenSet = false;
   bool m_percentageDisplayFormatConfigurationHasBeenSet = false;
 };
 

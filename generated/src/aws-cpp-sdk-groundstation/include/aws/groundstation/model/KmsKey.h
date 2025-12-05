@@ -86,12 +86,12 @@ class KmsKey {
   ///@}
  private:
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_kmsAliasArn;
-  bool m_kmsAliasArnHasBeenSet = false;
 
   Aws::String m_kmsAliasName;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_kmsAliasArnHasBeenSet = false;
   bool m_kmsAliasNameHasBeenSet = false;
 };
 

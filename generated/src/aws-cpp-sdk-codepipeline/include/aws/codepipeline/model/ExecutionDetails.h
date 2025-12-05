@@ -87,12 +87,12 @@ class ExecutionDetails {
   ///@}
  private:
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_externalExecutionId;
-  bool m_externalExecutionIdHasBeenSet = false;
 
   int m_percentComplete{0};
+  bool m_summaryHasBeenSet = false;
+  bool m_externalExecutionIdHasBeenSet = false;
   bool m_percentCompleteHasBeenSet = false;
 };
 

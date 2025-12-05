@@ -137,18 +137,18 @@ class SubmitContactEvaluationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, EvaluationAnswerInput> m_answers;
-  bool m_answersHasBeenSet = false;
 
   Aws::Map<Aws::String, EvaluationNote> m_notes;
-  bool m_notesHasBeenSet = false;
 
   EvaluatorUserUnion m_submittedBy;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_answersHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
   bool m_submittedByHasBeenSet = false;
 };
 

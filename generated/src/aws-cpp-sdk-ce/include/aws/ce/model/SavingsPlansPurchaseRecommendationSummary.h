@@ -247,36 +247,36 @@ class SavingsPlansPurchaseRecommendationSummary {
   ///@}
  private:
   Aws::String m_estimatedROI;
-  bool m_estimatedROIHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_estimatedTotalCost;
-  bool m_estimatedTotalCostHasBeenSet = false;
 
   Aws::String m_currentOnDemandSpend;
-  bool m_currentOnDemandSpendHasBeenSet = false;
 
   Aws::String m_estimatedSavingsAmount;
-  bool m_estimatedSavingsAmountHasBeenSet = false;
 
   Aws::String m_totalRecommendationCount;
-  bool m_totalRecommendationCountHasBeenSet = false;
 
   Aws::String m_dailyCommitmentToPurchase;
-  bool m_dailyCommitmentToPurchaseHasBeenSet = false;
 
   Aws::String m_hourlyCommitmentToPurchase;
-  bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
 
   Aws::String m_estimatedSavingsPercentage;
-  bool m_estimatedSavingsPercentageHasBeenSet = false;
 
   Aws::String m_estimatedMonthlySavingsAmount;
-  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
   Aws::String m_estimatedOnDemandCostWithCurrentCommitment;
+  bool m_estimatedROIHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_estimatedTotalCostHasBeenSet = false;
+  bool m_currentOnDemandSpendHasBeenSet = false;
+  bool m_estimatedSavingsAmountHasBeenSet = false;
+  bool m_totalRecommendationCountHasBeenSet = false;
+  bool m_dailyCommitmentToPurchaseHasBeenSet = false;
+  bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
+  bool m_estimatedSavingsPercentageHasBeenSet = false;
+  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
   bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = false;
 };
 

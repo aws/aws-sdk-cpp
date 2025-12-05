@@ -87,12 +87,12 @@ class GetSetupHistoryResult {
   ///@}
  private:
   Aws::Vector<SetupHistory> m_setupHistory;
-  bool m_setupHistoryHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_setupHistoryHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

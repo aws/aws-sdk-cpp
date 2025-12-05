@@ -225,33 +225,33 @@ class DomainSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   DomainStatus m_domainStatus{DomainStatus::NOT_SET};
-  bool m_domainStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   ServerSideEncryptionUpdateDetails m_serverSideEncryptionUpdateDetails;
-  bool m_serverSideEncryptionUpdateDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   WatchlistDetails m_watchlistDetails;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_serverSideEncryptionUpdateDetailsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_watchlistDetailsHasBeenSet = false;
 };
 

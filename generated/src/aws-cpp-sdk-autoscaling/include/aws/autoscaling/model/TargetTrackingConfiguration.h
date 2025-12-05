@@ -115,15 +115,15 @@ class TargetTrackingConfiguration {
   ///@}
  private:
   PredefinedMetricSpecification m_predefinedMetricSpecification;
-  bool m_predefinedMetricSpecificationHasBeenSet = false;
 
   CustomizedMetricSpecification m_customizedMetricSpecification;
-  bool m_customizedMetricSpecificationHasBeenSet = false;
 
   double m_targetValue{0.0};
-  bool m_targetValueHasBeenSet = false;
 
   bool m_disableScaleIn{false};
+  bool m_predefinedMetricSpecificationHasBeenSet = false;
+  bool m_customizedMetricSpecificationHasBeenSet = false;
+  bool m_targetValueHasBeenSet = false;
   bool m_disableScaleInHasBeenSet = false;
 };
 

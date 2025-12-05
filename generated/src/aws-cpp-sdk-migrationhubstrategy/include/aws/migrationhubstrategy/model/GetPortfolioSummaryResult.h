@@ -63,9 +63,9 @@ class GetPortfolioSummaryResult {
   ///@}
  private:
   AssessmentSummary m_assessmentSummary;
-  bool m_assessmentSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

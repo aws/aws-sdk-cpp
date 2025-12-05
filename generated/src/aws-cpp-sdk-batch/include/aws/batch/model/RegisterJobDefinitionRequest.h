@@ -366,45 +366,45 @@ class RegisterJobDefinitionRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   JobDefinitionType m_type{JobDefinitionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   int m_schedulingPriority{0};
-  bool m_schedulingPriorityHasBeenSet = false;
 
   ContainerProperties m_containerProperties;
-  bool m_containerPropertiesHasBeenSet = false;
 
   NodeProperties m_nodeProperties;
-  bool m_nodePropertiesHasBeenSet = false;
 
   RetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   bool m_propagateTags{false};
-  bool m_propagateTagsHasBeenSet = false;
 
   JobTimeout m_timeout;
-  bool m_timeoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<PlatformCapability> m_platformCapabilities;
-  bool m_platformCapabilitiesHasBeenSet = false;
 
   EksProperties m_eksProperties;
-  bool m_eksPropertiesHasBeenSet = false;
 
   EcsProperties m_ecsProperties;
-  bool m_ecsPropertiesHasBeenSet = false;
 
   ConsumableResourceProperties m_consumableResourceProperties;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_schedulingPriorityHasBeenSet = false;
+  bool m_containerPropertiesHasBeenSet = false;
+  bool m_nodePropertiesHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_platformCapabilitiesHasBeenSet = false;
+  bool m_eksPropertiesHasBeenSet = false;
+  bool m_ecsPropertiesHasBeenSet = false;
   bool m_consumableResourcePropertiesHasBeenSet = false;
 };
 

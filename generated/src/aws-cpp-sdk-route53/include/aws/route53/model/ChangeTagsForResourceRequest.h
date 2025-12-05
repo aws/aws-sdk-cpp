@@ -124,15 +124,15 @@ class ChangeTagsForResourceRequest : public Route53Request {
   ///@}
  private:
   TagResourceType m_resourceType{TagResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_addTags;
-  bool m_addTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeTagKeys;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_addTagsHasBeenSet = false;
   bool m_removeTagKeysHasBeenSet = false;
 };
 

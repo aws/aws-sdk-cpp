@@ -73,9 +73,9 @@ class DeliveryOptions {
   ///@}
  private:
   TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
-  bool m_tlsPolicyHasBeenSet = false;
 
   Aws::String m_sendingPoolName;
+  bool m_tlsPolicyHasBeenSet = false;
   bool m_sendingPoolNameHasBeenSet = false;
 };
 

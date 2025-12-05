@@ -111,15 +111,15 @@ class Notifications {
   ///@}
  private:
   Aws::String m_progressing;
-  bool m_progressingHasBeenSet = false;
 
   Aws::String m_completed;
-  bool m_completedHasBeenSet = false;
 
   Aws::String m_warning;
-  bool m_warningHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_progressingHasBeenSet = false;
+  bool m_completedHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

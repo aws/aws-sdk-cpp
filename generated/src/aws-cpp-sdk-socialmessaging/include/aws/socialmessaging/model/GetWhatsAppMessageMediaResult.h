@@ -74,12 +74,12 @@ class GetWhatsAppMessageMediaResult {
   ///@}
  private:
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mimeTypeHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

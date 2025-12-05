@@ -90,12 +90,12 @@ class OpenSearchManagedClusterFieldMapping {
   ///@}
  private:
   Aws::String m_vectorField;
-  bool m_vectorFieldHasBeenSet = false;
 
   Aws::String m_textField;
-  bool m_textFieldHasBeenSet = false;
 
   Aws::String m_metadataField;
+  bool m_vectorFieldHasBeenSet = false;
+  bool m_textFieldHasBeenSet = false;
   bool m_metadataFieldHasBeenSet = false;
 };
 

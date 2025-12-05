@@ -87,12 +87,12 @@ class KinesisAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_partitionKey;
+  bool m_roleArnHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
   bool m_partitionKeyHasBeenSet = false;
 };
 

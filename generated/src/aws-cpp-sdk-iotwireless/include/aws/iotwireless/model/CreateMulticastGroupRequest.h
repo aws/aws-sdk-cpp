@@ -131,18 +131,18 @@ class CreateMulticastGroupRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   LoRaWANMulticast m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_loRaWANHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

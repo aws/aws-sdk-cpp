@@ -169,21 +169,21 @@ class ReportInstanceStatusRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   ReportStatusType m_status{ReportStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<ReportInstanceReasonCodes> m_reasonCodes;
+  bool m_dryRunHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_reasonCodesHasBeenSet = false;
 };
 

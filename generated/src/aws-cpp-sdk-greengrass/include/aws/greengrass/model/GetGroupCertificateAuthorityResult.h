@@ -93,15 +93,15 @@ class GetGroupCertificateAuthorityResult {
   ///@}
  private:
   Aws::String m_groupCertificateAuthorityArn;
-  bool m_groupCertificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_groupCertificateAuthorityId;
-  bool m_groupCertificateAuthorityIdHasBeenSet = false;
 
   Aws::String m_pemEncodedCertificate;
-  bool m_pemEncodedCertificateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupCertificateAuthorityArnHasBeenSet = false;
+  bool m_groupCertificateAuthorityIdHasBeenSet = false;
+  bool m_pemEncodedCertificateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

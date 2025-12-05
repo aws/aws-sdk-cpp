@@ -277,42 +277,42 @@ class ExportJobResponse {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   int m_completedPieces{0};
-  bool m_completedPiecesHasBeenSet = false;
 
   Aws::String m_completionDate;
-  bool m_completionDateHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   ExportJobResource m_definition;
-  bool m_definitionHasBeenSet = false;
 
   int m_failedPieces{0};
-  bool m_failedPiecesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   int m_totalFailures{0};
-  bool m_totalFailuresHasBeenSet = false;
 
   int m_totalPieces{0};
-  bool m_totalPiecesHasBeenSet = false;
 
   int m_totalProcessed{0};
-  bool m_totalProcessedHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_completedPiecesHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_failedPiecesHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_totalFailuresHasBeenSet = false;
+  bool m_totalPiecesHasBeenSet = false;
+  bool m_totalProcessedHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

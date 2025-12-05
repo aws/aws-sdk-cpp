@@ -69,9 +69,9 @@ class ItemPath {
   ///@}
  private:
   Aws::String m_nestedItemPath;
-  bool m_nestedItemPathHasBeenSet = false;
 
   Aws::String m_hash;
+  bool m_nestedItemPathHasBeenSet = false;
   bool m_hashHasBeenSet = false;
 };
 

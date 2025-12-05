@@ -59,9 +59,9 @@ class CreateModelCardExportJobResult {
   ///@}
  private:
   Aws::String m_modelCardExportJobArn;
-  bool m_modelCardExportJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelCardExportJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

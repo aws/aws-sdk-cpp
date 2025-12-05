@@ -186,27 +186,27 @@ class DecoderManifestSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_modelManifestArn;
-  bool m_modelManifestArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ManifestStatus m_status{ManifestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_modelManifestArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteTransitGatewayConnectResponse {
   ///@}
  private:
   TransitGatewayConnect m_transitGatewayConnect;
-  bool m_transitGatewayConnectHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayConnectHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

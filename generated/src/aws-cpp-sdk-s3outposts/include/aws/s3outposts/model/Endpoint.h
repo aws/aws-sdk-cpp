@@ -263,39 +263,39 @@ class Endpoint {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_outpostsId;
-  bool m_outpostsIdHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   EndpointStatus m_status{EndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_securityGroupId;
-  bool m_securityGroupIdHasBeenSet = false;
 
   EndpointAccessType m_accessType{EndpointAccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
-  bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
   FailedReason m_failedReason;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_outpostsIdHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_securityGroupIdHasBeenSet = false;
+  bool m_accessTypeHasBeenSet = false;
+  bool m_customerOwnedIpv4PoolHasBeenSet = false;
   bool m_failedReasonHasBeenSet = false;
 };
 

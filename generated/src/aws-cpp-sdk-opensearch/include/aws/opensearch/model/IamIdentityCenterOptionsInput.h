@@ -84,12 +84,12 @@ class IamIdentityCenterOptionsInput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_iamIdentityCenterInstanceArn;
-  bool m_iamIdentityCenterInstanceArnHasBeenSet = false;
 
   Aws::String m_iamRoleForIdentityCenterApplicationArn;
+  bool m_enabledHasBeenSet = false;
+  bool m_iamIdentityCenterInstanceArnHasBeenSet = false;
   bool m_iamRoleForIdentityCenterApplicationArnHasBeenSet = false;
 };
 

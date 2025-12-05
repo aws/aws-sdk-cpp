@@ -190,27 +190,27 @@ class ApiInvocationInput {
   ///@}
  private:
   Aws::String m_actionGroup;
-  bool m_actionGroupHasBeenSet = false;
 
   ActionInvocationType m_actionInvocationType{ActionInvocationType::NOT_SET};
-  bool m_actionInvocationTypeHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_apiPath;
-  bool m_apiPathHasBeenSet = false;
 
   Aws::String m_collaboratorName;
-  bool m_collaboratorNameHasBeenSet = false;
 
   Aws::String m_httpMethod;
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::Vector<ApiParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   ApiRequestBody m_requestBody;
+  bool m_actionGroupHasBeenSet = false;
+  bool m_actionInvocationTypeHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_apiPathHasBeenSet = false;
+  bool m_collaboratorNameHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_requestBodyHasBeenSet = false;
 };
 

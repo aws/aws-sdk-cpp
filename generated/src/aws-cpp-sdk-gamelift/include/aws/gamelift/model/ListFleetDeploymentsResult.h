@@ -86,12 +86,12 @@ class ListFleetDeploymentsResult {
   ///@}
  private:
   Aws::Vector<FleetDeployment> m_fleetDeployments;
-  bool m_fleetDeploymentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetDeploymentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

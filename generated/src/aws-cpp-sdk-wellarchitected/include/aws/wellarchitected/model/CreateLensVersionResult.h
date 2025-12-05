@@ -76,12 +76,12 @@ class CreateLensVersionResult {
   ///@}
  private:
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_lensVersion;
-  bool m_lensVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lensArnHasBeenSet = false;
+  bool m_lensVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

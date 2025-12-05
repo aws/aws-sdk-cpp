@@ -94,12 +94,12 @@ class DeletionConfig {
   ///@}
  private:
   int m_edgeRetentionInHours{0};
-  bool m_edgeRetentionInHoursHasBeenSet = false;
 
   LocalSizeConfig m_localSizeConfig;
-  bool m_localSizeConfigHasBeenSet = false;
 
   bool m_deleteAfterUpload{false};
+  bool m_edgeRetentionInHoursHasBeenSet = false;
+  bool m_localSizeConfigHasBeenSet = false;
   bool m_deleteAfterUploadHasBeenSet = false;
 };
 

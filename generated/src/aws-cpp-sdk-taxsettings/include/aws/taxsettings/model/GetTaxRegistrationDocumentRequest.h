@@ -66,9 +66,9 @@ class GetTaxRegistrationDocumentRequest : public TaxSettingsRequest {
   ///@}
  private:
   DestinationS3Location m_destinationS3Location;
-  bool m_destinationS3LocationHasBeenSet = false;
 
   TaxDocumentMetadata m_taxDocumentMetadata;
+  bool m_destinationS3LocationHasBeenSet = false;
   bool m_taxDocumentMetadataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateIdentityProviderSettingsResult {
   ///@}
  private:
   IdentityProviderSummary m_identityProviderSummary;
-  bool m_identityProviderSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityProviderSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

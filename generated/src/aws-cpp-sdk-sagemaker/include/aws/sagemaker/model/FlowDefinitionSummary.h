@@ -124,18 +124,18 @@ class FlowDefinitionSummary {
   ///@}
  private:
   Aws::String m_flowDefinitionName;
-  bool m_flowDefinitionNameHasBeenSet = false;
 
   Aws::String m_flowDefinitionArn;
-  bool m_flowDefinitionArnHasBeenSet = false;
 
   FlowDefinitionStatus m_flowDefinitionStatus{FlowDefinitionStatus::NOT_SET};
-  bool m_flowDefinitionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_flowDefinitionNameHasBeenSet = false;
+  bool m_flowDefinitionArnHasBeenSet = false;
+  bool m_flowDefinitionStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

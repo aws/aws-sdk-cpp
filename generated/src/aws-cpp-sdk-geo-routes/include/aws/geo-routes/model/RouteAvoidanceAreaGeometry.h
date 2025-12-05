@@ -151,18 +151,18 @@ class RouteAvoidanceAreaGeometry {
   ///@}
  private:
   Corridor m_corridor;
-  bool m_corridorHasBeenSet = false;
 
   Aws::Vector<double> m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_polygon;
-  bool m_polygonHasBeenSet = false;
 
   PolylineCorridor m_polylineCorridor;
-  bool m_polylineCorridorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_polylinePolygon;
+  bool m_corridorHasBeenSet = false;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_polygonHasBeenSet = false;
+  bool m_polylineCorridorHasBeenSet = false;
   bool m_polylinePolygonHasBeenSet = false;
 };
 

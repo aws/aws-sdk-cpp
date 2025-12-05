@@ -69,9 +69,9 @@ class Region {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   RegionOptStatus m_regionOptStatus{RegionOptStatus::NOT_SET};
+  bool m_regionNameHasBeenSet = false;
   bool m_regionOptStatusHasBeenSet = false;
 };
 

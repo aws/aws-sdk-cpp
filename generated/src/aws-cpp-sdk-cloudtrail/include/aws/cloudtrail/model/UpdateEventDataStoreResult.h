@@ -292,48 +292,48 @@ class UpdateEventDataStoreResult {
   ///@}
  private:
   Aws::String m_eventDataStoreArn;
-  bool m_eventDataStoreArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EventDataStoreStatus m_status{EventDataStoreStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
-  bool m_advancedEventSelectorsHasBeenSet = false;
 
   bool m_multiRegionEnabled{false};
-  bool m_multiRegionEnabledHasBeenSet = false;
 
   bool m_organizationEnabled{false};
-  bool m_organizationEnabledHasBeenSet = false;
 
   int m_retentionPeriod{0};
-  bool m_retentionPeriodHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
-  bool m_terminationProtectionEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   BillingMode m_billingMode{BillingMode::NOT_SET};
-  bool m_billingModeHasBeenSet = false;
 
   FederationStatus m_federationStatus{FederationStatus::NOT_SET};
-  bool m_federationStatusHasBeenSet = false;
 
   Aws::String m_federationRoleArn;
-  bool m_federationRoleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventDataStoreArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_advancedEventSelectorsHasBeenSet = false;
+  bool m_multiRegionEnabledHasBeenSet = false;
+  bool m_organizationEnabledHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_terminationProtectionEnabledHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_billingModeHasBeenSet = false;
+  bool m_federationStatusHasBeenSet = false;
+  bool m_federationRoleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

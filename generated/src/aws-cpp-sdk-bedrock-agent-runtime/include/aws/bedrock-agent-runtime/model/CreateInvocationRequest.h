@@ -86,12 +86,12 @@ class CreateInvocationRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::String m_sessionIdentifier;
+  bool m_descriptionHasBeenSet = false;
+  bool m_invocationIdHasBeenSet = false;
   bool m_sessionIdentifierHasBeenSet = false;
 };
 

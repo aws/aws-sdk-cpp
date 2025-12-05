@@ -89,12 +89,12 @@ class TLSCertificateConfiguration {
   ///@}
  private:
   CertificateProviderType m_certificateProviderType{CertificateProviderType::NOT_SET};
-  bool m_certificateProviderTypeHasBeenSet = false;
 
   Aws::String m_publicCertificateSecretArn;
-  bool m_publicCertificateSecretArnHasBeenSet = false;
 
   Aws::String m_privateCertificateSecretArn;
+  bool m_certificateProviderTypeHasBeenSet = false;
+  bool m_publicCertificateSecretArnHasBeenSet = false;
   bool m_privateCertificateSecretArnHasBeenSet = false;
 };
 

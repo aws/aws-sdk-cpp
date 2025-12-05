@@ -105,15 +105,15 @@ class EBSResourceUtilization {
   ///@}
  private:
   Aws::String m_ebsReadOpsPerSecond;
-  bool m_ebsReadOpsPerSecondHasBeenSet = false;
 
   Aws::String m_ebsWriteOpsPerSecond;
-  bool m_ebsWriteOpsPerSecondHasBeenSet = false;
 
   Aws::String m_ebsReadBytesPerSecond;
-  bool m_ebsReadBytesPerSecondHasBeenSet = false;
 
   Aws::String m_ebsWriteBytesPerSecond;
+  bool m_ebsReadOpsPerSecondHasBeenSet = false;
+  bool m_ebsWriteOpsPerSecondHasBeenSet = false;
+  bool m_ebsReadBytesPerSecondHasBeenSet = false;
   bool m_ebsWriteBytesPerSecondHasBeenSet = false;
 };
 

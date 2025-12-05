@@ -74,9 +74,9 @@ class UpdateAvailabilityOptionsRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_multiAZ{false};
+  bool m_domainNameHasBeenSet = false;
   bool m_multiAZHasBeenSet = false;
 };
 

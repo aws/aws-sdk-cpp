@@ -109,15 +109,15 @@ class InferredState {
   ///@}
  private:
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   PositionalAccuracy m_accuracy;
-  bool m_accuracyHasBeenSet = false;
 
   double m_deviationDistance{0.0};
-  bool m_deviationDistanceHasBeenSet = false;
 
   bool m_proxyDetected{false};
+  bool m_positionHasBeenSet = false;
+  bool m_accuracyHasBeenSet = false;
+  bool m_deviationDistanceHasBeenSet = false;
   bool m_proxyDetectedHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class LiveConnectorRTMPConfiguration {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   AudioChannelsOption m_audioChannels{AudioChannelsOption::NOT_SET};
-  bool m_audioChannelsHasBeenSet = false;
 
   Aws::String m_audioSampleRate;
+  bool m_urlHasBeenSet = false;
+  bool m_audioChannelsHasBeenSet = false;
   bool m_audioSampleRateHasBeenSet = false;
 };
 

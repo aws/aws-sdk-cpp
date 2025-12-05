@@ -87,12 +87,12 @@ When not specified
   ///@}
  private:
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   EncryptionMethod m_encryptionMethod{EncryptionMethod::NOT_SET};
-  bool m_encryptionMethodHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
+  bool m_constantInitializationVectorHasBeenSet = false;
+  bool m_encryptionMethodHasBeenSet = false;
   bool m_spekeKeyProviderHasBeenSet = false;
 };
 

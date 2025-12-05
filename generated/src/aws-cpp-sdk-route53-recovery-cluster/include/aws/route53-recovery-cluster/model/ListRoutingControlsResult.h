@@ -86,12 +86,12 @@ class ListRoutingControlsResult {
   ///@}
  private:
   Aws::Vector<RoutingControl> m_routingControls;
-  bool m_routingControlsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routingControlsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

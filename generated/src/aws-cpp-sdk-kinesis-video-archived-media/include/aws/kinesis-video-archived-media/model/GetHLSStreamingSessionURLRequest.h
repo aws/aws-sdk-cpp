@@ -297,30 +297,30 @@ class GetHLSStreamingSessionURLRequest : public KinesisVideoArchivedMediaRequest
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   HLSPlaybackMode m_playbackMode{HLSPlaybackMode::NOT_SET};
-  bool m_playbackModeHasBeenSet = false;
 
   HLSFragmentSelector m_hLSFragmentSelector;
-  bool m_hLSFragmentSelectorHasBeenSet = false;
 
   ContainerFormat m_containerFormat{ContainerFormat::NOT_SET};
-  bool m_containerFormatHasBeenSet = false;
 
   HLSDiscontinuityMode m_discontinuityMode{HLSDiscontinuityMode::NOT_SET};
-  bool m_discontinuityModeHasBeenSet = false;
 
   HLSDisplayFragmentTimestamp m_displayFragmentTimestamp{HLSDisplayFragmentTimestamp::NOT_SET};
-  bool m_displayFragmentTimestampHasBeenSet = false;
 
   int m_expires{0};
-  bool m_expiresHasBeenSet = false;
 
   long long m_maxMediaPlaylistFragmentResults{0};
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_playbackModeHasBeenSet = false;
+  bool m_hLSFragmentSelectorHasBeenSet = false;
+  bool m_containerFormatHasBeenSet = false;
+  bool m_discontinuityModeHasBeenSet = false;
+  bool m_displayFragmentTimestampHasBeenSet = false;
+  bool m_expiresHasBeenSet = false;
   bool m_maxMediaPlaylistFragmentResultsHasBeenSet = false;
 };
 

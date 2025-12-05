@@ -175,27 +175,27 @@ class CreateKxScalingGroupResult {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_scalingGroupName;
-  bool m_scalingGroupNameHasBeenSet = false;
 
   Aws::String m_hostType;
-  bool m_hostTypeHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   KxScalingGroupStatus m_status{KxScalingGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_scalingGroupNameHasBeenSet = false;
+  bool m_hostTypeHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

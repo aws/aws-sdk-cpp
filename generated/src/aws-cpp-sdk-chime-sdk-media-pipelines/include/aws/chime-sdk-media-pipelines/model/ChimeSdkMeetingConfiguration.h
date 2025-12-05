@@ -71,9 +71,9 @@ class ChimeSdkMeetingConfiguration {
   ///@}
  private:
   SourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   ArtifactsConfiguration m_artifactsConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
   bool m_artifactsConfigurationHasBeenSet = false;
 };
 

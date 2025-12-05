@@ -74,9 +74,9 @@ class Message {
   ///@}
  private:
   Aws::Vector<ContentBlock> m_content;
-  bool m_contentHasBeenSet = false;
 
   ConversationRole m_role{ConversationRole::NOT_SET};
+  bool m_contentHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

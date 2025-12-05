@@ -176,27 +176,27 @@ class EdgePackagingJobSummary {
   ///@}
  private:
   Aws::String m_edgePackagingJobArn;
-  bool m_edgePackagingJobArnHasBeenSet = false;
 
   Aws::String m_edgePackagingJobName;
-  bool m_edgePackagingJobNameHasBeenSet = false;
 
   EdgePackagingJobStatus m_edgePackagingJobStatus{EdgePackagingJobStatus::NOT_SET};
-  bool m_edgePackagingJobStatusHasBeenSet = false;
 
   Aws::String m_compilationJobName;
-  bool m_compilationJobNameHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_edgePackagingJobArnHasBeenSet = false;
+  bool m_edgePackagingJobNameHasBeenSet = false;
+  bool m_edgePackagingJobStatusHasBeenSet = false;
+  bool m_compilationJobNameHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

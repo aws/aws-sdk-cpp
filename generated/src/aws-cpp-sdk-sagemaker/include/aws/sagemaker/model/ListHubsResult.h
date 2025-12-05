@@ -85,12 +85,12 @@ class ListHubsResult {
   ///@}
  private:
   Aws::Vector<HubInfo> m_hubSummaries;
-  bool m_hubSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hubSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -173,24 +173,24 @@ class TimeEqualityFilter {
   ///@}
  private:
   Aws::String m_filterId;
-  bool m_filterIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   Aws::Utils::DateTime m_value{};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   RollingDateConfiguration m_rollingDate;
-  bool m_rollingDateHasBeenSet = false;
 
   DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+  bool m_filterIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_parameterNameHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_rollingDateHasBeenSet = false;
   bool m_defaultFilterControlConfigurationHasBeenSet = false;
 };
 

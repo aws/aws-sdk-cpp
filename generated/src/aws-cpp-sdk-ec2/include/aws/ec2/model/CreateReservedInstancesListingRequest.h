@@ -122,15 +122,15 @@ class CreateReservedInstancesListingRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_reservedInstancesId;
-  bool m_reservedInstancesIdHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Vector<PriceScheduleSpecification> m_priceSchedules;
-  bool m_priceSchedulesHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_reservedInstancesIdHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_priceSchedulesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

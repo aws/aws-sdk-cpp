@@ -91,12 +91,12 @@ class DefaultFilterListControlOptions {
   ///@}
  private:
   ListControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   SheetControlListType m_type{SheetControlListType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FilterSelectableValues m_selectableValues;
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_selectableValuesHasBeenSet = false;
 };
 

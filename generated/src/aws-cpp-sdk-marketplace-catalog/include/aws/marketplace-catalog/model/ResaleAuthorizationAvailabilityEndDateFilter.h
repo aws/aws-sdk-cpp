@@ -79,9 +79,9 @@ class ResaleAuthorizationAvailabilityEndDateFilter {
   ///@}
  private:
   ResaleAuthorizationAvailabilityEndDateFilterDateRange m_dateRange;
-  bool m_dateRangeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valueList;
+  bool m_dateRangeHasBeenSet = false;
   bool m_valueListHasBeenSet = false;
 };
 

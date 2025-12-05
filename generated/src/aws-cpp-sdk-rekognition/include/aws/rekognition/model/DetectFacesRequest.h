@@ -91,9 +91,9 @@ class DetectFacesRequest : public RekognitionRequest {
   ///@}
  private:
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_imageHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

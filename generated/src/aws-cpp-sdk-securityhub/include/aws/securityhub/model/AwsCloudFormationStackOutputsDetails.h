@@ -87,12 +87,12 @@ class AwsCloudFormationStackOutputsDetails {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_outputKey;
-  bool m_outputKeyHasBeenSet = false;
 
   Aws::String m_outputValue;
+  bool m_descriptionHasBeenSet = false;
+  bool m_outputKeyHasBeenSet = false;
   bool m_outputValueHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class VirtualGatewayListenerTlsFileCertificate {
   ///@}
  private:
   Aws::String m_certificateChain;
-  bool m_certificateChainHasBeenSet = false;
 
   Aws::String m_privateKey;
+  bool m_certificateChainHasBeenSet = false;
   bool m_privateKeyHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class SubnetCidrBlockState {
   ///@}
  private:
   SubnetCidrBlockStateCode m_state{SubnetCidrBlockStateCode::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_stateHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

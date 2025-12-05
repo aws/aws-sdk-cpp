@@ -85,12 +85,12 @@ class ColorCorrection {
   ///@}
  private:
   ColorSpace m_inputColorSpace{ColorSpace::NOT_SET};
-  bool m_inputColorSpaceHasBeenSet = false;
 
   ColorSpace m_outputColorSpace{ColorSpace::NOT_SET};
-  bool m_outputColorSpaceHasBeenSet = false;
 
   Aws::String m_uri;
+  bool m_inputColorSpaceHasBeenSet = false;
+  bool m_outputColorSpaceHasBeenSet = false;
   bool m_uriHasBeenSet = false;
 };
 

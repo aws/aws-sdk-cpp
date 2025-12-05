@@ -100,12 +100,12 @@ class EmptyVisual {
   ///@}
  private:
   Aws::String m_visualId;
-  bool m_visualIdHasBeenSet = false;
 
   Aws::String m_dataSetIdentifier;
-  bool m_dataSetIdentifierHasBeenSet = false;
 
   Aws::Vector<VisualCustomAction> m_actions;
+  bool m_visualIdHasBeenSet = false;
+  bool m_dataSetIdentifierHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

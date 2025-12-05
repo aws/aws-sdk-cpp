@@ -162,21 +162,21 @@ class ApplicationSettingsResource {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   CampaignHook m_campaignHook;
-  bool m_campaignHookHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   CampaignLimits m_limits;
-  bool m_limitsHasBeenSet = false;
 
   QuietTime m_quietTime;
-  bool m_quietTimeHasBeenSet = false;
 
   ApplicationSettingsJourneyLimits m_journeyLimits;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_campaignHookHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_limitsHasBeenSet = false;
+  bool m_quietTimeHasBeenSet = false;
   bool m_journeyLimitsHasBeenSet = false;
 };
 

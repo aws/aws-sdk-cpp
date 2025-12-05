@@ -114,15 +114,15 @@ class TerminateInstancesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   bool m_skipOsShutdown{false};
-  bool m_skipOsShutdownHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
+  bool m_skipOsShutdownHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -246,33 +246,33 @@ class CreateExperimentTemplateRequest : public FISRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<CreateExperimentTemplateStopConditionInput> m_stopConditions;
-  bool m_stopConditionsHasBeenSet = false;
 
   Aws::Map<Aws::String, CreateExperimentTemplateTargetInput> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Map<Aws::String, CreateExperimentTemplateActionInput> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CreateExperimentTemplateLogConfigurationInput m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   CreateExperimentTemplateExperimentOptionsInput m_experimentOptions;
-  bool m_experimentOptionsHasBeenSet = false;
 
   CreateExperimentTemplateReportConfigurationInput m_experimentReportConfiguration;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stopConditionsHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_experimentOptionsHasBeenSet = false;
   bool m_experimentReportConfigurationHasBeenSet = false;
 };
 

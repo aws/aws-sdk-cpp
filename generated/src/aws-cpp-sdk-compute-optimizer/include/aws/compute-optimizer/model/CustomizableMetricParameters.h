@@ -71,9 +71,9 @@ class CustomizableMetricParameters {
   ///@}
  private:
   CustomizableMetricThreshold m_threshold{CustomizableMetricThreshold::NOT_SET};
-  bool m_thresholdHasBeenSet = false;
 
   CustomizableMetricHeadroom m_headroom{CustomizableMetricHeadroom::NOT_SET};
+  bool m_thresholdHasBeenSet = false;
   bool m_headroomHasBeenSet = false;
 };
 

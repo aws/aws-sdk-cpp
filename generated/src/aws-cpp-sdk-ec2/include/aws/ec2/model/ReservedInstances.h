@@ -378,60 +378,60 @@ class ReservedInstances {
   ///@}
  private:
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   Tenancy m_instanceTenancy{Tenancy::NOT_SET};
-  bool m_instanceTenancyHasBeenSet = false;
 
   OfferingClassType m_offeringClass{OfferingClassType::NOT_SET};
-  bool m_offeringClassHasBeenSet = false;
 
   OfferingTypeValues m_offeringType{OfferingTypeValues::NOT_SET};
-  bool m_offeringTypeHasBeenSet = false;
 
   Aws::Vector<RecurringCharge> m_recurringCharges;
-  bool m_recurringChargesHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_reservedInstancesId;
-  bool m_reservedInstancesIdHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_start{};
-  bool m_startHasBeenSet = false;
 
   Aws::Utils::DateTime m_end{};
-  bool m_endHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   double m_usagePrice{0.0};
-  bool m_usagePriceHasBeenSet = false;
 
   double m_fixedPrice{0.0};
-  bool m_fixedPriceHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   RIProductDescription m_productDescription{RIProductDescription::NOT_SET};
-  bool m_productDescriptionHasBeenSet = false;
 
   ReservedInstanceState m_state{ReservedInstanceState::NOT_SET};
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_instanceTenancyHasBeenSet = false;
+  bool m_offeringClassHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
+  bool m_recurringChargesHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_reservedInstancesIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_usagePriceHasBeenSet = false;
+  bool m_fixedPriceHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -212,33 +212,33 @@ class AccountEnforcedGuardrailOutputConfiguration {
   ///@}
  private:
   Aws::String m_configId;
-  bool m_configIdHasBeenSet = false;
 
   Aws::String m_guardrailArn;
-  bool m_guardrailArnHasBeenSet = false;
 
   Aws::String m_guardrailId;
-  bool m_guardrailIdHasBeenSet = false;
 
   InputTags m_inputTags{InputTags::NOT_SET};
-  bool m_inputTagsHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
-  bool m_guardrailVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   ConfigurationOwner m_owner{ConfigurationOwner::NOT_SET};
+  bool m_configIdHasBeenSet = false;
+  bool m_guardrailArnHasBeenSet = false;
+  bool m_guardrailIdHasBeenSet = false;
+  bool m_inputTagsHasBeenSet = false;
+  bool m_guardrailVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class CreateNotificationConfigurationRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AggregationDuration m_aggregationDuration{AggregationDuration::NOT_SET};
-  bool m_aggregationDurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_aggregationDurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

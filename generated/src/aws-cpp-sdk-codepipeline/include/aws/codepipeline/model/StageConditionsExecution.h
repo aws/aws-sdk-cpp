@@ -68,9 +68,9 @@ class StageConditionsExecution {
   ///@}
  private:
   ConditionExecutionStatus m_status{ConditionExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_summary;
+  bool m_statusHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
 };
 

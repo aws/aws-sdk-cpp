@@ -97,12 +97,12 @@ class FormInputValueProperty {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   FormInputValuePropertyBindingProperties m_bindingProperties;
-  bool m_bindingPropertiesHasBeenSet = false;
 
   Aws::Vector<FormInputValueProperty> m_concat;
+  bool m_valueHasBeenSet = false;
+  bool m_bindingPropertiesHasBeenSet = false;
   bool m_concatHasBeenSet = false;
 };
 

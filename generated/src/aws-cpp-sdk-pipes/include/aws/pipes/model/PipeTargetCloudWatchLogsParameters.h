@@ -70,9 +70,9 @@ class PipeTargetCloudWatchLogsParameters {
   ///@}
  private:
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   Aws::String m_timestamp;
+  bool m_logStreamNameHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

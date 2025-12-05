@@ -80,9 +80,9 @@ class SecondaryClusterInfo {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Vector<ClusterNode> m_clusterNodes;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_clusterNodesHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class RejectChannelHandshakeDetail {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   HandshakeStatus m_status{HandshakeStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

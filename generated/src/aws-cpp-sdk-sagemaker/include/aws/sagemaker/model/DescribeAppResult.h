@@ -309,51 +309,51 @@ class DescribeAppResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   Aws::String m_appName;
-  bool m_appNameHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   AppStatus m_status{AppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   FeatureStatus m_effectiveTrustedIdentityPropagationStatus{FeatureStatus::NOT_SET};
-  bool m_effectiveTrustedIdentityPropagationStatusHasBeenSet = false;
 
   bool m_recoveryMode{false};
-  bool m_recoveryModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastHealthCheckTimestamp{};
-  bool m_lastHealthCheckTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUserActivityTimestamp{};
-  bool m_lastUserActivityTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   ResourceSpec m_resourceSpec;
-  bool m_resourceSpecHasBeenSet = false;
 
   Aws::String m_builtInLifecycleConfigArn;
-  bool m_builtInLifecycleConfigArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appTypeHasBeenSet = false;
+  bool m_appNameHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_effectiveTrustedIdentityPropagationStatusHasBeenSet = false;
+  bool m_recoveryModeHasBeenSet = false;
+  bool m_lastHealthCheckTimestampHasBeenSet = false;
+  bool m_lastUserActivityTimestampHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_resourceSpecHasBeenSet = false;
+  bool m_builtInLifecycleConfigArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

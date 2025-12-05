@@ -156,21 +156,21 @@ class CreateRecordingConfigurationRequest : public IVSRequest {
   ///@}
  private:
   DestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_recordingReconnectWindowSeconds{0};
-  bool m_recordingReconnectWindowSecondsHasBeenSet = false;
 
   RenditionConfiguration m_renditionConfiguration;
-  bool m_renditionConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ThumbnailConfiguration m_thumbnailConfiguration;
+  bool m_destinationConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recordingReconnectWindowSecondsHasBeenSet = false;
+  bool m_renditionConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_thumbnailConfigurationHasBeenSet = false;
 };
 

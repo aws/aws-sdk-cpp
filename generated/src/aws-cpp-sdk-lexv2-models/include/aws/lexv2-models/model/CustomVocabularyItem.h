@@ -107,15 +107,15 @@ class CustomVocabularyItem {
   ///@}
  private:
   Aws::String m_itemId;
-  bool m_itemIdHasBeenSet = false;
 
   Aws::String m_phrase;
-  bool m_phraseHasBeenSet = false;
 
   int m_weight{0};
-  bool m_weightHasBeenSet = false;
 
   Aws::String m_displayAs;
+  bool m_itemIdHasBeenSet = false;
+  bool m_phraseHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
   bool m_displayAsHasBeenSet = false;
 };
 

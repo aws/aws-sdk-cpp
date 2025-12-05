@@ -87,12 +87,12 @@ class ListRecommendedActionSummariesResult {
   ///@}
  private:
   Aws::Vector<RecommendedActionSummary> m_recommendedActionSummaries;
-  bool m_recommendedActionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendedActionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

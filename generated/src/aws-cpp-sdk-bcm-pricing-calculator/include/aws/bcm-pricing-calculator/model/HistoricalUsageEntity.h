@@ -161,24 +161,24 @@ class HistoricalUsageEntity {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   BillInterval m_billInterval;
-  bool m_billIntervalHasBeenSet = false;
 
   Expression m_filterExpression;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
+  bool m_billIntervalHasBeenSet = false;
   bool m_filterExpressionHasBeenSet = false;
 };
 

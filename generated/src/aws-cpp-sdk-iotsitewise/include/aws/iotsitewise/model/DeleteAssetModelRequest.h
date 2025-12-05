@@ -142,18 +142,18 @@ class DeleteAssetModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   Aws::String m_ifNoneMatch;
-  bool m_ifNoneMatchHasBeenSet = false;
 
   AssetModelVersionType m_matchForVersionType{AssetModelVersionType::NOT_SET};
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_ifNoneMatchHasBeenSet = false;
   bool m_matchForVersionTypeHasBeenSet = false;
 };
 

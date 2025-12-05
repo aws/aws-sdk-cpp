@@ -113,15 +113,15 @@ class EventInfoMap {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventCategories;
-  bool m_eventCategoriesHasBeenSet = false;
 
   Aws::String m_eventDescription;
-  bool m_eventDescriptionHasBeenSet = false;
 
   Aws::String m_severity;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventCategoriesHasBeenSet = false;
+  bool m_eventDescriptionHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

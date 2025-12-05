@@ -103,15 +103,15 @@ class ChannelFlowCallbackRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_callbackId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_callbackIdHasBeenSet = true;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   bool m_deleteResource{false};
-  bool m_deleteResourceHasBeenSet = false;
 
   ChannelMessageCallback m_channelMessage;
+  bool m_callbackIdHasBeenSet = true;
+  bool m_channelArnHasBeenSet = false;
+  bool m_deleteResourceHasBeenSet = false;
   bool m_channelMessageHasBeenSet = false;
 };
 

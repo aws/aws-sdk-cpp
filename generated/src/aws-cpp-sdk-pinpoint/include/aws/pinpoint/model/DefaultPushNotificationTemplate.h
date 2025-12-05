@@ -142,18 +142,18 @@ class DefaultPushNotificationTemplate {
   ///@}
  private:
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_sound;
-  bool m_soundHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_actionHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_soundHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

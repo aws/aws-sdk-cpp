@@ -106,15 +106,15 @@ class EffectivePolicy {
   ///@}
  private:
   Aws::String m_policyContent;
-  bool m_policyContentHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   EffectivePolicyType m_policyType{EffectivePolicyType::NOT_SET};
+  bool m_policyContentHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

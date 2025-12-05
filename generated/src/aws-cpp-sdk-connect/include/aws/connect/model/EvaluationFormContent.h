@@ -225,33 +225,33 @@ class EvaluationFormContent {
   ///@}
  private:
   int m_evaluationFormVersion{0};
-  bool m_evaluationFormVersionHasBeenSet = false;
 
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   Aws::String m_evaluationFormArn;
-  bool m_evaluationFormArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EvaluationFormItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   EvaluationFormScoringStrategy m_scoringStrategy;
-  bool m_scoringStrategyHasBeenSet = false;
 
   EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
-  bool m_autoEvaluationConfigurationHasBeenSet = false;
 
   EvaluationFormTargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   EvaluationFormLanguageConfiguration m_languageConfiguration;
+  bool m_evaluationFormVersionHasBeenSet = false;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_scoringStrategyHasBeenSet = false;
+  bool m_autoEvaluationConfigurationHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
 };
 

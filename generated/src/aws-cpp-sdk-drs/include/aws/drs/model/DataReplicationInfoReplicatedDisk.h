@@ -131,21 +131,21 @@ class DataReplicationInfoReplicatedDisk {
   ///@}
  private:
   long long m_backloggedStorageBytes{0};
-  bool m_backloggedStorageBytesHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   long long m_replicatedStorageBytes{0};
-  bool m_replicatedStorageBytesHasBeenSet = false;
 
   long long m_rescannedStorageBytes{0};
-  bool m_rescannedStorageBytesHasBeenSet = false;
 
   long long m_totalStorageBytes{0};
-  bool m_totalStorageBytesHasBeenSet = false;
 
   VolumeStatus m_volumeStatus{VolumeStatus::NOT_SET};
+  bool m_backloggedStorageBytesHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_replicatedStorageBytesHasBeenSet = false;
+  bool m_rescannedStorageBytesHasBeenSet = false;
+  bool m_totalStorageBytesHasBeenSet = false;
   bool m_volumeStatusHasBeenSet = false;
 };
 

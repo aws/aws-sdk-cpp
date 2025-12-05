@@ -100,12 +100,12 @@ class Sheet {
   ///@}
  private:
   Aws::String m_sheetId;
-  bool m_sheetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SheetImage> m_images;
+  bool m_sheetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_imagesHasBeenSet = false;
 };
 

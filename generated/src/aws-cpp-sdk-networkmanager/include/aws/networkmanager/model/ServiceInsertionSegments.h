@@ -82,9 +82,9 @@ class ServiceInsertionSegments {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sendVia;
-  bool m_sendViaHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sendTo;
+  bool m_sendViaHasBeenSet = false;
   bool m_sendToHasBeenSet = false;
 };
 

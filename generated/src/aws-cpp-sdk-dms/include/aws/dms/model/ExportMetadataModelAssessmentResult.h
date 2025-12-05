@@ -79,12 +79,12 @@ class ExportMetadataModelAssessmentResult {
   ///@}
  private:
   ExportMetadataModelAssessmentResultEntry m_pdfReport;
-  bool m_pdfReportHasBeenSet = false;
 
   ExportMetadataModelAssessmentResultEntry m_csvReport;
-  bool m_csvReportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pdfReportHasBeenSet = false;
+  bool m_csvReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

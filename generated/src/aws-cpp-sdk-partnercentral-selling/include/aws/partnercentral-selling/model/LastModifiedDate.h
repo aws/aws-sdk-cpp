@@ -74,9 +74,9 @@ class LastModifiedDate {
   ///@}
  private:
   Aws::Utils::DateTime m_afterLastModifiedDate{};
-  bool m_afterLastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_beforeLastModifiedDate{};
+  bool m_afterLastModifiedDateHasBeenSet = false;
   bool m_beforeLastModifiedDateHasBeenSet = false;
 };
 

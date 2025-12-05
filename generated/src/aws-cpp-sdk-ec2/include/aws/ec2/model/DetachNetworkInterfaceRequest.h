@@ -101,12 +101,12 @@ class DetachNetworkInterfaceRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   bool m_force{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

@@ -1471,174 +1471,174 @@ class HistoryEvent {
   ///@}
  private:
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   long long m_eventId{0};
-  bool m_eventIdHasBeenSet = false;
 
   WorkflowExecutionStartedEventAttributes m_workflowExecutionStartedEventAttributes;
-  bool m_workflowExecutionStartedEventAttributesHasBeenSet = false;
 
   WorkflowExecutionCompletedEventAttributes m_workflowExecutionCompletedEventAttributes;
-  bool m_workflowExecutionCompletedEventAttributesHasBeenSet = false;
 
   CompleteWorkflowExecutionFailedEventAttributes m_completeWorkflowExecutionFailedEventAttributes;
-  bool m_completeWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   WorkflowExecutionFailedEventAttributes m_workflowExecutionFailedEventAttributes;
-  bool m_workflowExecutionFailedEventAttributesHasBeenSet = false;
 
   FailWorkflowExecutionFailedEventAttributes m_failWorkflowExecutionFailedEventAttributes;
-  bool m_failWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   WorkflowExecutionTimedOutEventAttributes m_workflowExecutionTimedOutEventAttributes;
-  bool m_workflowExecutionTimedOutEventAttributesHasBeenSet = false;
 
   WorkflowExecutionCanceledEventAttributes m_workflowExecutionCanceledEventAttributes;
-  bool m_workflowExecutionCanceledEventAttributesHasBeenSet = false;
 
   CancelWorkflowExecutionFailedEventAttributes m_cancelWorkflowExecutionFailedEventAttributes;
-  bool m_cancelWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   WorkflowExecutionContinuedAsNewEventAttributes m_workflowExecutionContinuedAsNewEventAttributes;
-  bool m_workflowExecutionContinuedAsNewEventAttributesHasBeenSet = false;
 
   ContinueAsNewWorkflowExecutionFailedEventAttributes m_continueAsNewWorkflowExecutionFailedEventAttributes;
-  bool m_continueAsNewWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   WorkflowExecutionTerminatedEventAttributes m_workflowExecutionTerminatedEventAttributes;
-  bool m_workflowExecutionTerminatedEventAttributesHasBeenSet = false;
 
   WorkflowExecutionCancelRequestedEventAttributes m_workflowExecutionCancelRequestedEventAttributes;
-  bool m_workflowExecutionCancelRequestedEventAttributesHasBeenSet = false;
 
   DecisionTaskScheduledEventAttributes m_decisionTaskScheduledEventAttributes;
-  bool m_decisionTaskScheduledEventAttributesHasBeenSet = false;
 
   DecisionTaskStartedEventAttributes m_decisionTaskStartedEventAttributes;
-  bool m_decisionTaskStartedEventAttributesHasBeenSet = false;
 
   DecisionTaskCompletedEventAttributes m_decisionTaskCompletedEventAttributes;
-  bool m_decisionTaskCompletedEventAttributesHasBeenSet = false;
 
   DecisionTaskTimedOutEventAttributes m_decisionTaskTimedOutEventAttributes;
-  bool m_decisionTaskTimedOutEventAttributesHasBeenSet = false;
 
   ActivityTaskScheduledEventAttributes m_activityTaskScheduledEventAttributes;
-  bool m_activityTaskScheduledEventAttributesHasBeenSet = false;
 
   ActivityTaskStartedEventAttributes m_activityTaskStartedEventAttributes;
-  bool m_activityTaskStartedEventAttributesHasBeenSet = false;
 
   ActivityTaskCompletedEventAttributes m_activityTaskCompletedEventAttributes;
-  bool m_activityTaskCompletedEventAttributesHasBeenSet = false;
 
   ActivityTaskFailedEventAttributes m_activityTaskFailedEventAttributes;
-  bool m_activityTaskFailedEventAttributesHasBeenSet = false;
 
   ActivityTaskTimedOutEventAttributes m_activityTaskTimedOutEventAttributes;
-  bool m_activityTaskTimedOutEventAttributesHasBeenSet = false;
 
   ActivityTaskCanceledEventAttributes m_activityTaskCanceledEventAttributes;
-  bool m_activityTaskCanceledEventAttributesHasBeenSet = false;
 
   ActivityTaskCancelRequestedEventAttributes m_activityTaskCancelRequestedEventAttributes;
-  bool m_activityTaskCancelRequestedEventAttributesHasBeenSet = false;
 
   WorkflowExecutionSignaledEventAttributes m_workflowExecutionSignaledEventAttributes;
-  bool m_workflowExecutionSignaledEventAttributesHasBeenSet = false;
 
   MarkerRecordedEventAttributes m_markerRecordedEventAttributes;
-  bool m_markerRecordedEventAttributesHasBeenSet = false;
 
   RecordMarkerFailedEventAttributes m_recordMarkerFailedEventAttributes;
-  bool m_recordMarkerFailedEventAttributesHasBeenSet = false;
 
   TimerStartedEventAttributes m_timerStartedEventAttributes;
-  bool m_timerStartedEventAttributesHasBeenSet = false;
 
   TimerFiredEventAttributes m_timerFiredEventAttributes;
-  bool m_timerFiredEventAttributesHasBeenSet = false;
 
   TimerCanceledEventAttributes m_timerCanceledEventAttributes;
-  bool m_timerCanceledEventAttributesHasBeenSet = false;
 
   StartChildWorkflowExecutionInitiatedEventAttributes m_startChildWorkflowExecutionInitiatedEventAttributes;
-  bool m_startChildWorkflowExecutionInitiatedEventAttributesHasBeenSet = false;
 
   ChildWorkflowExecutionStartedEventAttributes m_childWorkflowExecutionStartedEventAttributes;
-  bool m_childWorkflowExecutionStartedEventAttributesHasBeenSet = false;
 
   ChildWorkflowExecutionCompletedEventAttributes m_childWorkflowExecutionCompletedEventAttributes;
-  bool m_childWorkflowExecutionCompletedEventAttributesHasBeenSet = false;
 
   ChildWorkflowExecutionFailedEventAttributes m_childWorkflowExecutionFailedEventAttributes;
-  bool m_childWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   ChildWorkflowExecutionTimedOutEventAttributes m_childWorkflowExecutionTimedOutEventAttributes;
-  bool m_childWorkflowExecutionTimedOutEventAttributesHasBeenSet = false;
 
   ChildWorkflowExecutionCanceledEventAttributes m_childWorkflowExecutionCanceledEventAttributes;
-  bool m_childWorkflowExecutionCanceledEventAttributesHasBeenSet = false;
 
   ChildWorkflowExecutionTerminatedEventAttributes m_childWorkflowExecutionTerminatedEventAttributes;
-  bool m_childWorkflowExecutionTerminatedEventAttributesHasBeenSet = false;
 
   SignalExternalWorkflowExecutionInitiatedEventAttributes m_signalExternalWorkflowExecutionInitiatedEventAttributes;
-  bool m_signalExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet = false;
 
   ExternalWorkflowExecutionSignaledEventAttributes m_externalWorkflowExecutionSignaledEventAttributes;
-  bool m_externalWorkflowExecutionSignaledEventAttributesHasBeenSet = false;
 
   SignalExternalWorkflowExecutionFailedEventAttributes m_signalExternalWorkflowExecutionFailedEventAttributes;
-  bool m_signalExternalWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   ExternalWorkflowExecutionCancelRequestedEventAttributes m_externalWorkflowExecutionCancelRequestedEventAttributes;
-  bool m_externalWorkflowExecutionCancelRequestedEventAttributesHasBeenSet = false;
 
   RequestCancelExternalWorkflowExecutionInitiatedEventAttributes m_requestCancelExternalWorkflowExecutionInitiatedEventAttributes;
-  bool m_requestCancelExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet = false;
 
   RequestCancelExternalWorkflowExecutionFailedEventAttributes m_requestCancelExternalWorkflowExecutionFailedEventAttributes;
-  bool m_requestCancelExternalWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   ScheduleActivityTaskFailedEventAttributes m_scheduleActivityTaskFailedEventAttributes;
-  bool m_scheduleActivityTaskFailedEventAttributesHasBeenSet = false;
 
   RequestCancelActivityTaskFailedEventAttributes m_requestCancelActivityTaskFailedEventAttributes;
-  bool m_requestCancelActivityTaskFailedEventAttributesHasBeenSet = false;
 
   StartTimerFailedEventAttributes m_startTimerFailedEventAttributes;
-  bool m_startTimerFailedEventAttributesHasBeenSet = false;
 
   CancelTimerFailedEventAttributes m_cancelTimerFailedEventAttributes;
-  bool m_cancelTimerFailedEventAttributesHasBeenSet = false;
 
   StartChildWorkflowExecutionFailedEventAttributes m_startChildWorkflowExecutionFailedEventAttributes;
-  bool m_startChildWorkflowExecutionFailedEventAttributesHasBeenSet = false;
 
   LambdaFunctionScheduledEventAttributes m_lambdaFunctionScheduledEventAttributes;
-  bool m_lambdaFunctionScheduledEventAttributesHasBeenSet = false;
 
   LambdaFunctionStartedEventAttributes m_lambdaFunctionStartedEventAttributes;
-  bool m_lambdaFunctionStartedEventAttributesHasBeenSet = false;
 
   LambdaFunctionCompletedEventAttributes m_lambdaFunctionCompletedEventAttributes;
-  bool m_lambdaFunctionCompletedEventAttributesHasBeenSet = false;
 
   LambdaFunctionFailedEventAttributes m_lambdaFunctionFailedEventAttributes;
-  bool m_lambdaFunctionFailedEventAttributesHasBeenSet = false;
 
   LambdaFunctionTimedOutEventAttributes m_lambdaFunctionTimedOutEventAttributes;
-  bool m_lambdaFunctionTimedOutEventAttributesHasBeenSet = false;
 
   ScheduleLambdaFunctionFailedEventAttributes m_scheduleLambdaFunctionFailedEventAttributes;
-  bool m_scheduleLambdaFunctionFailedEventAttributesHasBeenSet = false;
 
   StartLambdaFunctionFailedEventAttributes m_startLambdaFunctionFailedEventAttributes;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_workflowExecutionStartedEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionCompletedEventAttributesHasBeenSet = false;
+  bool m_completeWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_failWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionTimedOutEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionCanceledEventAttributesHasBeenSet = false;
+  bool m_cancelWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionContinuedAsNewEventAttributesHasBeenSet = false;
+  bool m_continueAsNewWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionTerminatedEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionCancelRequestedEventAttributesHasBeenSet = false;
+  bool m_decisionTaskScheduledEventAttributesHasBeenSet = false;
+  bool m_decisionTaskStartedEventAttributesHasBeenSet = false;
+  bool m_decisionTaskCompletedEventAttributesHasBeenSet = false;
+  bool m_decisionTaskTimedOutEventAttributesHasBeenSet = false;
+  bool m_activityTaskScheduledEventAttributesHasBeenSet = false;
+  bool m_activityTaskStartedEventAttributesHasBeenSet = false;
+  bool m_activityTaskCompletedEventAttributesHasBeenSet = false;
+  bool m_activityTaskFailedEventAttributesHasBeenSet = false;
+  bool m_activityTaskTimedOutEventAttributesHasBeenSet = false;
+  bool m_activityTaskCanceledEventAttributesHasBeenSet = false;
+  bool m_activityTaskCancelRequestedEventAttributesHasBeenSet = false;
+  bool m_workflowExecutionSignaledEventAttributesHasBeenSet = false;
+  bool m_markerRecordedEventAttributesHasBeenSet = false;
+  bool m_recordMarkerFailedEventAttributesHasBeenSet = false;
+  bool m_timerStartedEventAttributesHasBeenSet = false;
+  bool m_timerFiredEventAttributesHasBeenSet = false;
+  bool m_timerCanceledEventAttributesHasBeenSet = false;
+  bool m_startChildWorkflowExecutionInitiatedEventAttributesHasBeenSet = false;
+  bool m_childWorkflowExecutionStartedEventAttributesHasBeenSet = false;
+  bool m_childWorkflowExecutionCompletedEventAttributesHasBeenSet = false;
+  bool m_childWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_childWorkflowExecutionTimedOutEventAttributesHasBeenSet = false;
+  bool m_childWorkflowExecutionCanceledEventAttributesHasBeenSet = false;
+  bool m_childWorkflowExecutionTerminatedEventAttributesHasBeenSet = false;
+  bool m_signalExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet = false;
+  bool m_externalWorkflowExecutionSignaledEventAttributesHasBeenSet = false;
+  bool m_signalExternalWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_externalWorkflowExecutionCancelRequestedEventAttributesHasBeenSet = false;
+  bool m_requestCancelExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet = false;
+  bool m_requestCancelExternalWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_scheduleActivityTaskFailedEventAttributesHasBeenSet = false;
+  bool m_requestCancelActivityTaskFailedEventAttributesHasBeenSet = false;
+  bool m_startTimerFailedEventAttributesHasBeenSet = false;
+  bool m_cancelTimerFailedEventAttributesHasBeenSet = false;
+  bool m_startChildWorkflowExecutionFailedEventAttributesHasBeenSet = false;
+  bool m_lambdaFunctionScheduledEventAttributesHasBeenSet = false;
+  bool m_lambdaFunctionStartedEventAttributesHasBeenSet = false;
+  bool m_lambdaFunctionCompletedEventAttributesHasBeenSet = false;
+  bool m_lambdaFunctionFailedEventAttributesHasBeenSet = false;
+  bool m_lambdaFunctionTimedOutEventAttributesHasBeenSet = false;
+  bool m_scheduleLambdaFunctionFailedEventAttributesHasBeenSet = false;
   bool m_startLambdaFunctionFailedEventAttributesHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class CurrentMetricSortCriteria {
   ///@}
  private:
   CurrentMetricName m_sortByMetric{CurrentMetricName::NOT_SET};
-  bool m_sortByMetricHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_sortByMetricHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

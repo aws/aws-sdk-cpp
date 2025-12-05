@@ -84,12 +84,12 @@ class WorkUnitRange {
   ///@}
  private:
   long long m_workUnitIdMax{0};
-  bool m_workUnitIdMaxHasBeenSet = false;
 
   long long m_workUnitIdMin{0};
-  bool m_workUnitIdMinHasBeenSet = false;
 
   Aws::String m_workUnitToken;
+  bool m_workUnitIdMaxHasBeenSet = false;
+  bool m_workUnitIdMinHasBeenSet = false;
   bool m_workUnitTokenHasBeenSet = false;
 };
 

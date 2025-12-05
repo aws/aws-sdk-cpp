@@ -85,12 +85,12 @@ class SearchContentResult {
   ///@}
  private:
   Aws::Vector<ContentSummary> m_contentSummaries;
-  bool m_contentSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

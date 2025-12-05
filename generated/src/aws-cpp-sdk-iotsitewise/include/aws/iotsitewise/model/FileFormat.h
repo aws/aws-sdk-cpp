@@ -69,9 +69,9 @@ class FileFormat {
   ///@}
  private:
   Csv m_csv;
-  bool m_csvHasBeenSet = false;
 
   Parquet m_parquet;
+  bool m_csvHasBeenSet = false;
   bool m_parquetHasBeenSet = false;
 };
 

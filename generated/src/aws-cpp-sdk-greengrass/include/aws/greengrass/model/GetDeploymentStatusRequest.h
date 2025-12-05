@@ -65,9 +65,9 @@ class GetDeploymentStatusRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_groupId;
+  bool m_deploymentIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
 };
 

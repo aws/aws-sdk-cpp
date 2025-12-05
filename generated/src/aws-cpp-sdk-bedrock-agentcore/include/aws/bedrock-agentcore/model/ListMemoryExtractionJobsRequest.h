@@ -102,15 +102,15 @@ class ListMemoryExtractionJobsRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ExtractionJobFilterInput m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

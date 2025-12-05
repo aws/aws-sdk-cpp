@@ -95,12 +95,12 @@ class CreateMonitorRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

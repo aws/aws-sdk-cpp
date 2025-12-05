@@ -116,15 +116,15 @@ class MetadataCatalogDetail {
   ///@}
  private:
   CatalogType m_catalogType{CatalogType::NOT_SET};
-  bool m_catalogTypeHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   RegistrationOutput m_tableRegistrationOutput;
-  bool m_tableRegistrationOutputHasBeenSet = false;
 
   RegistrationOutput m_partitionRegistrationOutput;
+  bool m_catalogTypeHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_tableRegistrationOutputHasBeenSet = false;
   bool m_partitionRegistrationOutputHasBeenSet = false;
 };
 

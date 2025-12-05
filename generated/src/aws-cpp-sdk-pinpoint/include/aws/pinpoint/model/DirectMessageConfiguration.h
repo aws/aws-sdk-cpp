@@ -215,30 +215,30 @@ class DirectMessageConfiguration {
   ///@}
  private:
   ADMMessage m_aDMMessage;
-  bool m_aDMMessageHasBeenSet = false;
 
   APNSMessage m_aPNSMessage;
-  bool m_aPNSMessageHasBeenSet = false;
 
   BaiduMessage m_baiduMessage;
-  bool m_baiduMessageHasBeenSet = false;
 
   DefaultMessage m_defaultMessage;
-  bool m_defaultMessageHasBeenSet = false;
 
   DefaultPushNotificationMessage m_defaultPushNotificationMessage;
-  bool m_defaultPushNotificationMessageHasBeenSet = false;
 
   EmailMessage m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   GCMMessage m_gCMMessage;
-  bool m_gCMMessageHasBeenSet = false;
 
   SMSMessage m_sMSMessage;
-  bool m_sMSMessageHasBeenSet = false;
 
   VoiceMessage m_voiceMessage;
+  bool m_aDMMessageHasBeenSet = false;
+  bool m_aPNSMessageHasBeenSet = false;
+  bool m_baiduMessageHasBeenSet = false;
+  bool m_defaultMessageHasBeenSet = false;
+  bool m_defaultPushNotificationMessageHasBeenSet = false;
+  bool m_emailMessageHasBeenSet = false;
+  bool m_gCMMessageHasBeenSet = false;
+  bool m_sMSMessageHasBeenSet = false;
   bool m_voiceMessageHasBeenSet = false;
 };
 

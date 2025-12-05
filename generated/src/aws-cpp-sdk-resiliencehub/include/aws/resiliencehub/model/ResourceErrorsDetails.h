@@ -75,9 +75,9 @@ class ResourceErrorsDetails {
   ///@}
  private:
   bool m_hasMoreErrors{false};
-  bool m_hasMoreErrorsHasBeenSet = false;
 
   Aws::Vector<ResourceError> m_resourceErrors;
+  bool m_hasMoreErrorsHasBeenSet = false;
   bool m_resourceErrorsHasBeenSet = false;
 };
 

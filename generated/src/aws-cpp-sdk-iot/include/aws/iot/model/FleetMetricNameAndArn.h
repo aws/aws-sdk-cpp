@@ -68,9 +68,9 @@ class FleetMetricNameAndArn {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_metricArn;
+  bool m_metricNameHasBeenSet = false;
   bool m_metricArnHasBeenSet = false;
 };
 

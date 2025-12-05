@@ -111,15 +111,15 @@ class CreateProjectRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   CustomizationFeature m_feature{CustomizationFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   ProjectAutoUpdate m_autoUpdate{ProjectAutoUpdate::NOT_SET};
-  bool m_autoUpdateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_projectNameHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
+  bool m_autoUpdateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

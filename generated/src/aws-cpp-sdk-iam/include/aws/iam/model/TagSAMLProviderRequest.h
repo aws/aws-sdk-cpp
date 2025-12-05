@@ -82,9 +82,9 @@ class TagSAMLProviderRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_sAMLProviderArn;
-  bool m_sAMLProviderArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sAMLProviderArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

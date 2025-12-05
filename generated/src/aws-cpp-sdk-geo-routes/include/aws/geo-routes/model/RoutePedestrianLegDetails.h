@@ -192,24 +192,24 @@ class RoutePedestrianLegDetails {
   ///@}
  private:
   RoutePedestrianArrival m_arrival;
-  bool m_arrivalHasBeenSet = false;
 
   RoutePedestrianDeparture m_departure;
-  bool m_departureHasBeenSet = false;
 
   Aws::Vector<RoutePedestrianNotice> m_notices;
-  bool m_noticesHasBeenSet = false;
 
   Aws::Vector<RoutePassThroughWaypoint> m_passThroughWaypoints;
-  bool m_passThroughWaypointsHasBeenSet = false;
 
   Aws::Vector<RoutePedestrianSpan> m_spans;
-  bool m_spansHasBeenSet = false;
 
   RoutePedestrianSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Vector<RoutePedestrianTravelStep> m_travelSteps;
+  bool m_arrivalHasBeenSet = false;
+  bool m_departureHasBeenSet = false;
+  bool m_noticesHasBeenSet = false;
+  bool m_passThroughWaypointsHasBeenSet = false;
+  bool m_spansHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_travelStepsHasBeenSet = false;
 };
 

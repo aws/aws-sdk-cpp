@@ -88,12 +88,12 @@ class CreateBackupSelectionRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   BackupSelection m_backupSelection;
-  bool m_backupSelectionHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_backupSelectionHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = true;
 };
 

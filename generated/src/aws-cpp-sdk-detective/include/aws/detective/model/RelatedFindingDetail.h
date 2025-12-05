@@ -88,12 +88,12 @@ class RelatedFindingDetail {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

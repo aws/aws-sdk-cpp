@@ -67,9 +67,9 @@ class AssociateConnectionAliasRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_aliasIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

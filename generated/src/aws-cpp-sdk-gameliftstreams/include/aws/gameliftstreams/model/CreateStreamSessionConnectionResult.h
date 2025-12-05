@@ -61,9 +61,9 @@ class CreateStreamSessionConnectionResult {
   ///@}
  private:
   Aws::String m_signalResponse;
-  bool m_signalResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signalResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

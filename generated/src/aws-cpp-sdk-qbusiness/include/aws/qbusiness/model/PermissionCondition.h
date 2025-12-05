@@ -96,12 +96,12 @@ class PermissionCondition {
   ///@}
  private:
   PermissionConditionOperator m_conditionOperator{PermissionConditionOperator::NOT_SET};
-  bool m_conditionOperatorHasBeenSet = false;
 
   Aws::String m_conditionKey;
-  bool m_conditionKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_conditionValues;
+  bool m_conditionOperatorHasBeenSet = false;
+  bool m_conditionKeyHasBeenSet = false;
   bool m_conditionValuesHasBeenSet = false;
 };
 

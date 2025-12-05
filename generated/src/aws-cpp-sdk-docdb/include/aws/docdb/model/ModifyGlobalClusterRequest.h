@@ -96,12 +96,12 @@ class ModifyGlobalClusterRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::String m_newGlobalClusterIdentifier;
-  bool m_newGlobalClusterIdentifierHasBeenSet = false;
 
   bool m_deletionProtection{false};
+  bool m_globalClusterIdentifierHasBeenSet = false;
+  bool m_newGlobalClusterIdentifierHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
 };
 

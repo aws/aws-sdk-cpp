@@ -85,12 +85,12 @@ class PatchStatus {
   ///@}
  private:
   PatchDeploymentStatus m_deploymentStatus{PatchDeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   PatchComplianceLevel m_complianceLevel{PatchComplianceLevel::NOT_SET};
-  bool m_complianceLevelHasBeenSet = false;
 
   Aws::Utils::DateTime m_approvalDate{};
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_complianceLevelHasBeenSet = false;
   bool m_approvalDateHasBeenSet = false;
 };
 

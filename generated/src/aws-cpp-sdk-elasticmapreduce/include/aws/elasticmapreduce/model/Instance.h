@@ -259,39 +259,39 @@ class Instance {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
-  bool m_ec2InstanceIdHasBeenSet = false;
 
   Aws::String m_publicDnsName;
-  bool m_publicDnsNameHasBeenSet = false;
 
   Aws::String m_publicIpAddress;
-  bool m_publicIpAddressHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   InstanceStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_instanceGroupId;
-  bool m_instanceGroupIdHasBeenSet = false;
 
   Aws::String m_instanceFleetId;
-  bool m_instanceFleetIdHasBeenSet = false;
 
   MarketType m_market{MarketType::NOT_SET};
-  bool m_marketHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Vector<EbsVolume> m_ebsVolumes;
+  bool m_idHasBeenSet = false;
+  bool m_ec2InstanceIdHasBeenSet = false;
+  bool m_publicDnsNameHasBeenSet = false;
+  bool m_publicIpAddressHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_instanceGroupIdHasBeenSet = false;
+  bool m_instanceFleetIdHasBeenSet = false;
+  bool m_marketHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_ebsVolumesHasBeenSet = false;
 };
 

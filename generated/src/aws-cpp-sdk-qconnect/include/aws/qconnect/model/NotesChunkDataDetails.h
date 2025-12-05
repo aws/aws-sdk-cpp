@@ -68,9 +68,9 @@ class NotesChunkDataDetails {
   ///@}
  private:
   Aws::String m_completion;
-  bool m_completionHasBeenSet = false;
 
   Aws::String m_nextChunkToken;
+  bool m_completionHasBeenSet = false;
   bool m_nextChunkTokenHasBeenSet = false;
 };
 

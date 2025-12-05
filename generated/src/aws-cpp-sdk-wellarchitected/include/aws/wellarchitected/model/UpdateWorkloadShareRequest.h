@@ -79,12 +79,12 @@ class UpdateWorkloadShareRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
+  bool m_shareIdHasBeenSet = false;
+  bool m_workloadIdHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
 };
 

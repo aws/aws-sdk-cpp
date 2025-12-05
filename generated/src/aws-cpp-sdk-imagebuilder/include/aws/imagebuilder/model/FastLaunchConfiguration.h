@@ -127,18 +127,18 @@ class FastLaunchConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   FastLaunchSnapshotConfiguration m_snapshotConfiguration;
-  bool m_snapshotConfigurationHasBeenSet = false;
 
   int m_maxParallelLaunches{0};
-  bool m_maxParallelLaunchesHasBeenSet = false;
 
   FastLaunchLaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_enabledHasBeenSet = false;
+  bool m_snapshotConfigurationHasBeenSet = false;
+  bool m_maxParallelLaunchesHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

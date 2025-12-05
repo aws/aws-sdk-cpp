@@ -92,12 +92,12 @@ class IngestedFilesSummary {
   ///@}
  private:
   int m_totalNumberOfFiles{0};
-  bool m_totalNumberOfFilesHasBeenSet = false;
 
   int m_ingestedNumberOfFiles{0};
-  bool m_ingestedNumberOfFilesHasBeenSet = false;
 
   Aws::Vector<S3Object> m_discardedFiles;
+  bool m_totalNumberOfFilesHasBeenSet = false;
+  bool m_ingestedNumberOfFilesHasBeenSet = false;
   bool m_discardedFilesHasBeenSet = false;
 };
 

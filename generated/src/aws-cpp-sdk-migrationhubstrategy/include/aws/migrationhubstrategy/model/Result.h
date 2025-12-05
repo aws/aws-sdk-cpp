@@ -112,15 +112,15 @@ class Result {
   ///@}
  private:
   AnalysisStatusUnion m_analysisStatus;
-  bool m_analysisStatusHasBeenSet = false;
 
   AnalysisType m_analysisType{AnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   Aws::Vector<AntipatternReportResult> m_antipatternReportResultList;
-  bool m_antipatternReportResultListHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_analysisStatusHasBeenSet = false;
+  bool m_analysisTypeHasBeenSet = false;
+  bool m_antipatternReportResultListHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

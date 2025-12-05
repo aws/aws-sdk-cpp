@@ -150,21 +150,21 @@ class ListHealthChecksResult {
   ///@}
  private:
   Aws::Vector<HealthCheck> m_healthChecks;
-  bool m_healthChecksHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_healthChecksHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

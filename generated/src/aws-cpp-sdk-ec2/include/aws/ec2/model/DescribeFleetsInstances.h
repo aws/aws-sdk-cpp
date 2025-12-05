@@ -134,18 +134,18 @@ class DescribeFleetsInstances {
   ///@}
  private:
   LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;
-  bool m_launchTemplateAndOverridesHasBeenSet = false;
 
   InstanceLifecycle m_lifecycle{InstanceLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   PlatformValues m_platform{PlatformValues::NOT_SET};
+  bool m_launchTemplateAndOverridesHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

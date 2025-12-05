@@ -67,9 +67,9 @@ class UpdateWorkspaceBundleRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_imageId;
+  bool m_bundleIdHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
 };
 

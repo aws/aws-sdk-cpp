@@ -900,39 +900,39 @@ class HumanTaskConfig {
   ///@}
  private:
   Aws::String m_workteamArn;
-  bool m_workteamArnHasBeenSet = false;
 
   UiConfig m_uiConfig;
-  bool m_uiConfigHasBeenSet = false;
 
   Aws::String m_preHumanTaskLambdaArn;
-  bool m_preHumanTaskLambdaArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_taskKeywords;
-  bool m_taskKeywordsHasBeenSet = false;
 
   Aws::String m_taskTitle;
-  bool m_taskTitleHasBeenSet = false;
 
   Aws::String m_taskDescription;
-  bool m_taskDescriptionHasBeenSet = false;
 
   int m_numberOfHumanWorkersPerDataObject{0};
-  bool m_numberOfHumanWorkersPerDataObjectHasBeenSet = false;
 
   int m_taskTimeLimitInSeconds{0};
-  bool m_taskTimeLimitInSecondsHasBeenSet = false;
 
   int m_taskAvailabilityLifetimeInSeconds{0};
-  bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
 
   int m_maxConcurrentTaskCount{0};
-  bool m_maxConcurrentTaskCountHasBeenSet = false;
 
   AnnotationConsolidationConfig m_annotationConsolidationConfig;
-  bool m_annotationConsolidationConfigHasBeenSet = false;
 
   PublicWorkforceTaskPrice m_publicWorkforceTaskPrice;
+  bool m_workteamArnHasBeenSet = false;
+  bool m_uiConfigHasBeenSet = false;
+  bool m_preHumanTaskLambdaArnHasBeenSet = false;
+  bool m_taskKeywordsHasBeenSet = false;
+  bool m_taskTitleHasBeenSet = false;
+  bool m_taskDescriptionHasBeenSet = false;
+  bool m_numberOfHumanWorkersPerDataObjectHasBeenSet = false;
+  bool m_taskTimeLimitInSecondsHasBeenSet = false;
+  bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
+  bool m_maxConcurrentTaskCountHasBeenSet = false;
+  bool m_annotationConsolidationConfigHasBeenSet = false;
   bool m_publicWorkforceTaskPriceHasBeenSet = false;
 };
 

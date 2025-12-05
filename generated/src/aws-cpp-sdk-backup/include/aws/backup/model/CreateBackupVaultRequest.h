@@ -117,15 +117,15 @@ class CreateBackupVaultRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_backupVaultTags;
-  bool m_backupVaultTagsHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultTagsHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = true;
 };
 

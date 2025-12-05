@@ -198,27 +198,27 @@ class SecurityGroupRuleRequest {
   ///@}
  private:
   Aws::String m_ipProtocol;
-  bool m_ipProtocolHasBeenSet = false;
 
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::String m_cidrIpv4;
-  bool m_cidrIpv4HasBeenSet = false;
 
   Aws::String m_cidrIpv6;
-  bool m_cidrIpv6HasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_referencedGroupId;
-  bool m_referencedGroupIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_ipProtocolHasBeenSet = false;
+  bool m_fromPortHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
+  bool m_cidrIpv4HasBeenSet = false;
+  bool m_cidrIpv6HasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_referencedGroupIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

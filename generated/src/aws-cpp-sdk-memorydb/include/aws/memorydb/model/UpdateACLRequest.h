@@ -98,12 +98,12 @@ class UpdateACLRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_aCLName;
-  bool m_aCLNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userNamesToAdd;
-  bool m_userNamesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userNamesToRemove;
+  bool m_aCLNameHasBeenSet = false;
+  bool m_userNamesToAddHasBeenSet = false;
   bool m_userNamesToRemoveHasBeenSet = false;
 };
 

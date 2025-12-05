@@ -87,12 +87,12 @@ class AuthenticationConfiguration {
   ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   OAuth2Properties m_oAuth2Properties;
-  bool m_oAuth2PropertiesHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_oAuth2PropertiesHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

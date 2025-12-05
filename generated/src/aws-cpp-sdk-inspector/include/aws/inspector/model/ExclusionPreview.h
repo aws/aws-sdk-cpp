@@ -138,18 +138,18 @@ class ExclusionPreview {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   Aws::Vector<Scope> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

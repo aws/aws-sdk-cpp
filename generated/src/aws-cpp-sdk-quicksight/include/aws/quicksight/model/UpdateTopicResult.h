@@ -109,18 +109,18 @@ class UpdateTopicResult {
   ///@}
  private:
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_refreshArn;
-  bool m_refreshArnHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_topicIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_refreshArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

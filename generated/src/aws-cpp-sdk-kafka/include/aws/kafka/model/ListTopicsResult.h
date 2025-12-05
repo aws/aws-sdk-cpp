@@ -92,12 +92,12 @@ class ListTopicsResult {
   ///@}
  private:
   Aws::Vector<TopicInfo> m_topics;
-  bool m_topicsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

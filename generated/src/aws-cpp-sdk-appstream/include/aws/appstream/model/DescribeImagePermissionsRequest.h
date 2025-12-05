@@ -111,15 +111,15 @@ class DescribeImagePermissionsRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sharedAwsAccountIds;
-  bool m_sharedAwsAccountIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_nameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_sharedAwsAccountIdsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class UpdateIngressPointRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_ingressPointId;
-  bool m_ingressPointIdHasBeenSet = false;
 
   Aws::String m_ingressPointName;
-  bool m_ingressPointNameHasBeenSet = false;
 
   IngressPointStatusToUpdate m_statusToUpdate{IngressPointStatusToUpdate::NOT_SET};
-  bool m_statusToUpdateHasBeenSet = false;
 
   Aws::String m_ruleSetId;
-  bool m_ruleSetIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   IngressPointConfiguration m_ingressPointConfiguration;
+  bool m_ingressPointIdHasBeenSet = false;
+  bool m_ingressPointNameHasBeenSet = false;
+  bool m_statusToUpdateHasBeenSet = false;
+  bool m_ruleSetIdHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
   bool m_ingressPointConfigurationHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class OutboundCrossClusterSearchConnectionStatus {
   ///@}
  private:
   OutboundCrossClusterSearchConnectionStatusCode m_statusCode{OutboundCrossClusterSearchConnectionStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

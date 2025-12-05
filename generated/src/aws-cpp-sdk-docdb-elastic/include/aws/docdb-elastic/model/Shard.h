@@ -85,12 +85,12 @@ class Shard {
   ///@}
  private:
   Aws::String m_createTime;
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
+  bool m_createTimeHasBeenSet = false;
+  bool m_shardIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

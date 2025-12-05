@@ -109,15 +109,15 @@ class ApiAssociation {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   AssociationStatus m_associationStatus{AssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::String m_deploymentDetail;
+  bool m_domainNameHasBeenSet = false;
+  bool m_apiIdHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
   bool m_deploymentDetailHasBeenSet = false;
 };
 

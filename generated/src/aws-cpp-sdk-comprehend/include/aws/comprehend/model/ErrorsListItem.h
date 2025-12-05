@@ -98,12 +98,12 @@ class ErrorsListItem {
   ///@}
  private:
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   PageBasedErrorCode m_errorCode{PageBasedErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_pageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

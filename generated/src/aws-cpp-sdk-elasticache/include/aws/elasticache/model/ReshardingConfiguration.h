@@ -80,9 +80,9 @@ class ReshardingConfiguration {
   ///@}
  private:
   Aws::String m_nodeGroupId;
-  bool m_nodeGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_preferredAvailabilityZones;
+  bool m_nodeGroupIdHasBeenSet = false;
   bool m_preferredAvailabilityZonesHasBeenSet = false;
 };
 

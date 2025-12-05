@@ -82,9 +82,9 @@ class S3Origin {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_originAccessIdentity;
+  bool m_domainNameHasBeenSet = false;
   bool m_originAccessIdentityHasBeenSet = false;
 };
 

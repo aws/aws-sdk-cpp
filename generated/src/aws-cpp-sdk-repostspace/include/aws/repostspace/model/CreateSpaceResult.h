@@ -59,9 +59,9 @@ class CreateSpaceResult {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

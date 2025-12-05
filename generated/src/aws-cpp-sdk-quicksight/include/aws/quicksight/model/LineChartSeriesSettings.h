@@ -70,9 +70,9 @@ class LineChartSeriesSettings {
   ///@}
  private:
   LineChartLineStyleSettings m_lineStyleSettings;
-  bool m_lineStyleSettingsHasBeenSet = false;
 
   LineChartMarkerStyleSettings m_markerStyleSettings;
+  bool m_lineStyleSettingsHasBeenSet = false;
   bool m_markerStyleSettingsHasBeenSet = false;
 };
 

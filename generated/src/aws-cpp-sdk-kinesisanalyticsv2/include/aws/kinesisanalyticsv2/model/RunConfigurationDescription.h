@@ -72,9 +72,9 @@ class RunConfigurationDescription {
   ///@}
  private:
   ApplicationRestoreConfiguration m_applicationRestoreConfigurationDescription;
-  bool m_applicationRestoreConfigurationDescriptionHasBeenSet = false;
 
   FlinkRunConfiguration m_flinkRunConfigurationDescription;
+  bool m_applicationRestoreConfigurationDescriptionHasBeenSet = false;
   bool m_flinkRunConfigurationDescriptionHasBeenSet = false;
 };
 

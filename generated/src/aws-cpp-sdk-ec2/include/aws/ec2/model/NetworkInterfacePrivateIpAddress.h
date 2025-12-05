@@ -108,15 +108,15 @@ class NetworkInterfacePrivateIpAddress {
   ///@}
  private:
   NetworkInterfaceAssociation m_association;
-  bool m_associationHasBeenSet = false;
 
   bool m_primary{false};
-  bool m_primaryHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
+  bool m_associationHasBeenSet = false;
+  bool m_primaryHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
   bool m_privateIpAddressHasBeenSet = false;
 };
 

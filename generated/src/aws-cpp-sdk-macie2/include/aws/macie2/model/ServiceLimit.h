@@ -83,12 +83,12 @@ class ServiceLimit {
   ///@}
  private:
   bool m_isServiceLimited{false};
-  bool m_isServiceLimitedHasBeenSet = false;
 
   Unit m_unit{Unit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   long long m_value{0};
+  bool m_isServiceLimitedHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

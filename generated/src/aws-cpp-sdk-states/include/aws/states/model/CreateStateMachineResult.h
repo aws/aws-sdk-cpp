@@ -96,15 +96,15 @@ class CreateStateMachineResult {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_stateMachineVersionArn;
-  bool m_stateMachineVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_stateMachineVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -144,18 +144,18 @@ class ResourceSetOutput {
   ///@}
  private:
   Aws::String m_resourceSetArn;
-  bool m_resourceSetArnHasBeenSet = false;
 
   Aws::String m_resourceSetName;
-  bool m_resourceSetNameHasBeenSet = false;
 
   Aws::String m_resourceSetType;
-  bool m_resourceSetTypeHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_resourceSetArnHasBeenSet = false;
+  bool m_resourceSetNameHasBeenSet = false;
+  bool m_resourceSetTypeHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

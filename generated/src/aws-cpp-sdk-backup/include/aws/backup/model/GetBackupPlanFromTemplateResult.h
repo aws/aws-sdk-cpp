@@ -61,9 +61,9 @@ class GetBackupPlanFromTemplateResult {
   ///@}
  private:
   BackupPlan m_backupPlanDocument;
-  bool m_backupPlanDocumentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupPlanDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

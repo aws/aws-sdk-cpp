@@ -93,12 +93,12 @@ class AcceptMatchRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_ticketId;
-  bool m_ticketIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_playerIds;
-  bool m_playerIdsHasBeenSet = false;
 
   AcceptanceType m_acceptanceType{AcceptanceType::NOT_SET};
+  bool m_ticketIdHasBeenSet = false;
+  bool m_playerIdsHasBeenSet = false;
   bool m_acceptanceTypeHasBeenSet = false;
 };
 

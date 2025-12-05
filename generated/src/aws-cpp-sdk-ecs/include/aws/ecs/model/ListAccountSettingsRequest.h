@@ -158,21 +158,21 @@ class ListAccountSettingsRequest : public ECSRequest {
   ///@}
  private:
   SettingName m_name{SettingName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   bool m_effectiveSettings{false};
-  bool m_effectiveSettingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
+  bool m_effectiveSettingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

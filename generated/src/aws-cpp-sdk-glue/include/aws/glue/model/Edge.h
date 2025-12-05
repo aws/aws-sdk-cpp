@@ -69,9 +69,9 @@ class Edge {
   ///@}
  private:
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_destinationId;
+  bool m_sourceIdHasBeenSet = false;
   bool m_destinationIdHasBeenSet = false;
 };
 

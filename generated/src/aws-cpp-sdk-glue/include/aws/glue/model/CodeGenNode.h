@@ -110,15 +110,15 @@ class CodeGenNode {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::Vector<CodeGenNodeArg> m_args;
-  bool m_argsHasBeenSet = false;
 
   int m_lineNumber{0};
+  bool m_idHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_argsHasBeenSet = false;
   bool m_lineNumberHasBeenSet = false;
 };
 

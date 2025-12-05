@@ -71,9 +71,9 @@ class IspPlacement {
   ///@}
  private:
   Aws::String m_ispName;
-  bool m_ispNameHasBeenSet = false;
 
   PlacementStatistics m_placementStatistics;
+  bool m_ispNameHasBeenSet = false;
   bool m_placementStatisticsHasBeenSet = false;
 };
 

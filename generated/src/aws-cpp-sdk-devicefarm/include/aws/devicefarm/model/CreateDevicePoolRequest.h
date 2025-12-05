@@ -136,18 +136,18 @@ class CreateDevicePoolRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   int m_maxDevices{0};
+  bool m_projectArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_maxDevicesHasBeenSet = false;
 };
 

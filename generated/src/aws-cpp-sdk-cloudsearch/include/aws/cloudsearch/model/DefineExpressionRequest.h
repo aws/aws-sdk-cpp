@@ -71,9 +71,9 @@ class DefineExpressionRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Expression m_expression;
+  bool m_domainNameHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

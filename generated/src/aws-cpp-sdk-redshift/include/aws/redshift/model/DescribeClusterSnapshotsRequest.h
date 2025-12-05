@@ -333,42 +333,42 @@ class DescribeClusterSnapshotsRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagValues;
-  bool m_tagValuesHasBeenSet = false;
 
   bool m_clusterExists{false};
-  bool m_clusterExistsHasBeenSet = false;
 
   Aws::Vector<SnapshotSortingEntity> m_sortingEntities;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_tagKeysHasBeenSet = false;
+  bool m_tagValuesHasBeenSet = false;
+  bool m_clusterExistsHasBeenSet = false;
   bool m_sortingEntitiesHasBeenSet = false;
 };
 

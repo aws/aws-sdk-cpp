@@ -120,15 +120,15 @@ class CreateCustomLogSourceRequest : public SecurityLakeRequest {
   ///@}
  private:
   CustomLogSourceConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventClasses;
-  bool m_eventClassesHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_sourceVersion;
+  bool m_configurationHasBeenSet = false;
+  bool m_eventClassesHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class ListConnectionsRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_connectionType;
-  bool m_connectionTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_otherParticipantIdentifiers;
+  bool m_catalogHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_otherParticipantIdentifiersHasBeenSet = false;
 };
 

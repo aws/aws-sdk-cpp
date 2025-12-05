@@ -91,12 +91,12 @@ class UpdateServiceEnvironmentRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_serviceEnvironment;
-  bool m_serviceEnvironmentHasBeenSet = false;
 
   ServiceEnvironmentState m_state{ServiceEnvironmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<CapacityLimit> m_capacityLimits;
+  bool m_serviceEnvironmentHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_capacityLimitsHasBeenSet = false;
 };
 

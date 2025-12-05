@@ -154,18 +154,18 @@ class SearchAgreementsRequest : public AgreementServiceRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Sort m_sort;
-  bool m_sortHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

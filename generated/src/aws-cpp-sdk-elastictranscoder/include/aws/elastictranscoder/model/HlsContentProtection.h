@@ -161,21 +161,21 @@ class HlsContentProtection {
   ///@}
  private:
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_keyMd5;
-  bool m_keyMd5HasBeenSet = false;
 
   Aws::String m_initializationVector;
-  bool m_initializationVectorHasBeenSet = false;
 
   Aws::String m_licenseAcquisitionUrl;
-  bool m_licenseAcquisitionUrlHasBeenSet = false;
 
   Aws::String m_keyStoragePolicy;
+  bool m_methodHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_keyMd5HasBeenSet = false;
+  bool m_initializationVectorHasBeenSet = false;
+  bool m_licenseAcquisitionUrlHasBeenSet = false;
   bool m_keyStoragePolicyHasBeenSet = false;
 };
 

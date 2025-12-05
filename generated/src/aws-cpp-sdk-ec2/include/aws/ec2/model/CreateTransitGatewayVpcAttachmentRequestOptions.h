@@ -111,15 +111,15 @@ class CreateTransitGatewayVpcAttachmentRequestOptions {
   ///@}
  private:
   DnsSupportValue m_dnsSupport{DnsSupportValue::NOT_SET};
-  bool m_dnsSupportHasBeenSet = false;
 
   SecurityGroupReferencingSupportValue m_securityGroupReferencingSupport{SecurityGroupReferencingSupportValue::NOT_SET};
-  bool m_securityGroupReferencingSupportHasBeenSet = false;
 
   Ipv6SupportValue m_ipv6Support{Ipv6SupportValue::NOT_SET};
-  bool m_ipv6SupportHasBeenSet = false;
 
   ApplianceModeSupportValue m_applianceModeSupport{ApplianceModeSupportValue::NOT_SET};
+  bool m_dnsSupportHasBeenSet = false;
+  bool m_securityGroupReferencingSupportHasBeenSet = false;
+  bool m_ipv6SupportHasBeenSet = false;
   bool m_applianceModeSupportHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class RatingScaleItemValue {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   double m_floatValue{0.0};
+  bool m_stringValueHasBeenSet = false;
   bool m_floatValueHasBeenSet = false;
 };
 

@@ -210,9 +210,9 @@ class GetQueueAttributesRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Vector<QueueAttributeName> m_attributeNames;
+  bool m_queueUrlHasBeenSet = false;
   bool m_attributeNamesHasBeenSet = false;
 };
 

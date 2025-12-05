@@ -465,66 +465,66 @@ class TunnelOption {
   ///@}
  private:
   Aws::String m_outsideIpAddress;
-  bool m_outsideIpAddressHasBeenSet = false;
 
   Aws::String m_tunnelInsideCidr;
-  bool m_tunnelInsideCidrHasBeenSet = false;
 
   Aws::String m_tunnelInsideIpv6Cidr;
-  bool m_tunnelInsideIpv6CidrHasBeenSet = false;
 
   Aws::String m_preSharedKey;
-  bool m_preSharedKeyHasBeenSet = false;
 
   int m_phase1LifetimeSeconds{0};
-  bool m_phase1LifetimeSecondsHasBeenSet = false;
 
   int m_phase2LifetimeSeconds{0};
-  bool m_phase2LifetimeSecondsHasBeenSet = false;
 
   int m_rekeyMarginTimeSeconds{0};
-  bool m_rekeyMarginTimeSecondsHasBeenSet = false;
 
   int m_rekeyFuzzPercentage{0};
-  bool m_rekeyFuzzPercentageHasBeenSet = false;
 
   int m_replayWindowSize{0};
-  bool m_replayWindowSizeHasBeenSet = false;
 
   int m_dpdTimeoutSeconds{0};
-  bool m_dpdTimeoutSecondsHasBeenSet = false;
 
   Aws::String m_dpdTimeoutAction;
-  bool m_dpdTimeoutActionHasBeenSet = false;
 
   Aws::Vector<Phase1EncryptionAlgorithmsListValue> m_phase1EncryptionAlgorithms;
-  bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase2EncryptionAlgorithmsListValue> m_phase2EncryptionAlgorithms;
-  bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase1IntegrityAlgorithmsListValue> m_phase1IntegrityAlgorithms;
-  bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase2IntegrityAlgorithmsListValue> m_phase2IntegrityAlgorithms;
-  bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase1DHGroupNumbersListValue> m_phase1DHGroupNumbers;
-  bool m_phase1DHGroupNumbersHasBeenSet = false;
 
   Aws::Vector<Phase2DHGroupNumbersListValue> m_phase2DHGroupNumbers;
-  bool m_phase2DHGroupNumbersHasBeenSet = false;
 
   Aws::Vector<IKEVersionsListValue> m_ikeVersions;
-  bool m_ikeVersionsHasBeenSet = false;
 
   Aws::String m_startupAction;
-  bool m_startupActionHasBeenSet = false;
 
   VpnTunnelLogOptions m_logOptions;
-  bool m_logOptionsHasBeenSet = false;
 
   bool m_enableTunnelLifecycleControl{false};
+  bool m_outsideIpAddressHasBeenSet = false;
+  bool m_tunnelInsideCidrHasBeenSet = false;
+  bool m_tunnelInsideIpv6CidrHasBeenSet = false;
+  bool m_preSharedKeyHasBeenSet = false;
+  bool m_phase1LifetimeSecondsHasBeenSet = false;
+  bool m_phase2LifetimeSecondsHasBeenSet = false;
+  bool m_rekeyMarginTimeSecondsHasBeenSet = false;
+  bool m_rekeyFuzzPercentageHasBeenSet = false;
+  bool m_replayWindowSizeHasBeenSet = false;
+  bool m_dpdTimeoutSecondsHasBeenSet = false;
+  bool m_dpdTimeoutActionHasBeenSet = false;
+  bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
+  bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
+  bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
+  bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
+  bool m_phase1DHGroupNumbersHasBeenSet = false;
+  bool m_phase2DHGroupNumbersHasBeenSet = false;
+  bool m_ikeVersionsHasBeenSet = false;
+  bool m_startupActionHasBeenSet = false;
+  bool m_logOptionsHasBeenSet = false;
   bool m_enableTunnelLifecycleControlHasBeenSet = false;
 };
 

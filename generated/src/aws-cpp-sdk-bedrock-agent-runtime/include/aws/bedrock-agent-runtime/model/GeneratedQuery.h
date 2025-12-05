@@ -68,9 +68,9 @@ class GeneratedQuery {
   ///@}
  private:
   Aws::String m_sql;
-  bool m_sqlHasBeenSet = false;
 
   GeneratedQueryType m_type{GeneratedQueryType::NOT_SET};
+  bool m_sqlHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

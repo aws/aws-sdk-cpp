@@ -105,15 +105,15 @@ class ListCallAnalyticsJobsResult {
   ///@}
  private:
   CallAnalyticsJobStatus m_status{CallAnalyticsJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CallAnalyticsJobSummary> m_callAnalyticsJobSummaries;
-  bool m_callAnalyticsJobSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_callAnalyticsJobSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

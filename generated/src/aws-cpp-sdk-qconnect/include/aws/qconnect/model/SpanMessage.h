@@ -113,15 +113,15 @@ class SpanMessage {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Participant m_participant{Participant::NOT_SET};
-  bool m_participantHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::Vector<SpanMessageValue> m_values;
+  bool m_messageIdHasBeenSet = false;
+  bool m_participantHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -102,12 +102,12 @@ class UpdateRuleGroupRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_ruleGroupId;
-  bool m_ruleGroupIdHasBeenSet = false;
 
   Aws::Vector<RuleGroupUpdate> m_updates;
-  bool m_updatesHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_ruleGroupIdHasBeenSet = false;
+  bool m_updatesHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class RuleGroupUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   ActivatedRule m_activatedRule;
+  bool m_actionHasBeenSet = false;
   bool m_activatedRuleHasBeenSet = false;
 };
 

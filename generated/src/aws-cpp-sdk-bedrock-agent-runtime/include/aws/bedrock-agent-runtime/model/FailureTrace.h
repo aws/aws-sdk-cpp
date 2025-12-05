@@ -104,15 +104,15 @@ class FailureTrace {
   ///@}
  private:
   int m_failureCode{0};
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_traceId;
+  bool m_failureCodeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class LaunchTemplatePrivateDnsNameOptions {
   ///@}
  private:
   HostnameType m_hostnameType{HostnameType::NOT_SET};
-  bool m_hostnameTypeHasBeenSet = false;
 
   bool m_enableResourceNameDnsARecord{false};
-  bool m_enableResourceNameDnsARecordHasBeenSet = false;
 
   bool m_enableResourceNameDnsAAAARecord{false};
+  bool m_hostnameTypeHasBeenSet = false;
+  bool m_enableResourceNameDnsARecordHasBeenSet = false;
   bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
 };
 

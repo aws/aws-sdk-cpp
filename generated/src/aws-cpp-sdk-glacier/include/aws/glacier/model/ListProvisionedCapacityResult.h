@@ -67,9 +67,9 @@ class ListProvisionedCapacityResult {
   ///@}
  private:
   Aws::Vector<ProvisionedCapacityDescription> m_provisionedCapacityList;
-  bool m_provisionedCapacityListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisionedCapacityListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

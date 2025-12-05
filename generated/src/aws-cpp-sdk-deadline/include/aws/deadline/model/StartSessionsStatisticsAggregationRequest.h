@@ -188,27 +188,27 @@ class StartSessionsStatisticsAggregationRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   SessionsStatisticsResources m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   Period m_period{Period::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   Aws::Vector<UsageGroupByField> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::Vector<UsageStatistic> m_statistics;
+  bool m_farmIdHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
 };
 

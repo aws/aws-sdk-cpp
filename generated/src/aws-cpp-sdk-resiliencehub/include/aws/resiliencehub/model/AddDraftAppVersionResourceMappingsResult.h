@@ -110,15 +110,15 @@ class AddDraftAppVersionResourceMappingsResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::Vector<ResourceMapping> m_resourceMappings;
-  bool m_resourceMappingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_resourceMappingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

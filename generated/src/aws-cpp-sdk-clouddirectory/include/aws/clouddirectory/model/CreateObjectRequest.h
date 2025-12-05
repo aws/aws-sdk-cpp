@@ -140,18 +140,18 @@ class CreateObjectRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::Vector<SchemaFacet> m_schemaFacets;
-  bool m_schemaFacetsHasBeenSet = false;
 
   Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
-  bool m_objectAttributeListHasBeenSet = false;
 
   ObjectReference m_parentReference;
-  bool m_parentReferenceHasBeenSet = false;
 
   Aws::String m_linkName;
+  bool m_directoryArnHasBeenSet = false;
+  bool m_schemaFacetsHasBeenSet = false;
+  bool m_objectAttributeListHasBeenSet = false;
+  bool m_parentReferenceHasBeenSet = false;
   bool m_linkNameHasBeenSet = false;
 };
 

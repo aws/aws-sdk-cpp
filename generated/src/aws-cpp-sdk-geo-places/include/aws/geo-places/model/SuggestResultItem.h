@@ -126,18 +126,18 @@ class SuggestResultItem {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   SuggestResultItemType m_suggestResultItemType{SuggestResultItemType::NOT_SET};
-  bool m_suggestResultItemTypeHasBeenSet = false;
 
   SuggestPlaceResult m_place;
-  bool m_placeHasBeenSet = false;
 
   SuggestQueryResult m_query;
-  bool m_queryHasBeenSet = false;
 
   SuggestHighlights m_highlights;
+  bool m_titleHasBeenSet = false;
+  bool m_suggestResultItemTypeHasBeenSet = false;
+  bool m_placeHasBeenSet = false;
+  bool m_queryHasBeenSet = false;
   bool m_highlightsHasBeenSet = false;
 };
 

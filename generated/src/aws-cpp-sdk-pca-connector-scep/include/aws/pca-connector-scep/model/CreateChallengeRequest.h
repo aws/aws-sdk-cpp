@@ -99,12 +99,12 @@ class CreateChallengeRequest : public PcaConnectorScepRequest {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

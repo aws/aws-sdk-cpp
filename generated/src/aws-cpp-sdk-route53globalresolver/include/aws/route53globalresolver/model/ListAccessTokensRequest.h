@@ -113,15 +113,15 @@ class ListAccessTokensRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_dnsViewId;
-  bool m_dnsViewIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dnsViewIdHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

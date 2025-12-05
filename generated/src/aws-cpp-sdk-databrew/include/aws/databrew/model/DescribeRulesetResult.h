@@ -230,36 +230,36 @@ class DescribeRulesetResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

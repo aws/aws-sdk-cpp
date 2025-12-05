@@ -69,9 +69,9 @@ class FileLocation {
   ///@}
  private:
   Stream m_stream;
-  bool m_streamHasBeenSet = false;
 
   S3Location m_s3Location;
+  bool m_streamHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

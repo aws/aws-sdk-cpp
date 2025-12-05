@@ -71,9 +71,9 @@ class MemberAccountEc2DeepInspectionStatus {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   bool m_activateDeepInspection{false};
+  bool m_accountIdHasBeenSet = false;
   bool m_activateDeepInspectionHasBeenSet = false;
 };
 

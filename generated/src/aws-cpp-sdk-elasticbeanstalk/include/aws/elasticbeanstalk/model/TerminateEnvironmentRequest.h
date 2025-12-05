@@ -117,15 +117,15 @@ class TerminateEnvironmentRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   bool m_terminateResources{false};
-  bool m_terminateResourcesHasBeenSet = false;
 
   bool m_forceTerminate{false};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_terminateResourcesHasBeenSet = false;
   bool m_forceTerminateHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class TaskRunManifestPropertiesResponse {
   ///@}
  private:
   Aws::String m_outputManifestPath;
-  bool m_outputManifestPathHasBeenSet = false;
 
   Aws::String m_outputManifestHash;
+  bool m_outputManifestPathHasBeenSet = false;
   bool m_outputManifestHashHasBeenSet = false;
 };
 

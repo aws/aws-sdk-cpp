@@ -89,12 +89,12 @@ class AwsAppSyncGraphQlApiLogConfigDetails {
   ///@}
  private:
   Aws::String m_cloudWatchLogsRoleArn;
-  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
   bool m_excludeVerboseContent{false};
-  bool m_excludeVerboseContentHasBeenSet = false;
 
   Aws::String m_fieldLogLevel;
+  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
+  bool m_excludeVerboseContentHasBeenSet = false;
   bool m_fieldLogLevelHasBeenSet = false;
 };
 

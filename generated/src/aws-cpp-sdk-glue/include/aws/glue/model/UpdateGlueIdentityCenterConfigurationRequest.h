@@ -78,9 +78,9 @@ class UpdateGlueIdentityCenterConfigurationRequest : public GlueRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   bool m_userBackgroundSessionsEnabled{false};
+  bool m_scopesHasBeenSet = false;
   bool m_userBackgroundSessionsEnabledHasBeenSet = false;
 };
 

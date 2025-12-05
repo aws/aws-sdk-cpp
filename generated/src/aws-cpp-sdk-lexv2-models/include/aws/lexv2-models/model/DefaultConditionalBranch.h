@@ -68,9 +68,9 @@ class DefaultConditionalBranch {
   ///@}
  private:
   DialogState m_nextStep;
-  bool m_nextStepHasBeenSet = false;
 
   ResponseSpecification m_response;
+  bool m_nextStepHasBeenSet = false;
   bool m_responseHasBeenSet = false;
 };
 

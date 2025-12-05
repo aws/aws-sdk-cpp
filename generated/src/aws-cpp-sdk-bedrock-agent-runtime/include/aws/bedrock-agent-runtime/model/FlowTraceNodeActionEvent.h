@@ -163,24 +163,24 @@ class FlowTraceNodeActionEvent {
   ///@}
  private:
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   Aws::Utils::Document m_operationRequest;
-  bool m_operationRequestHasBeenSet = false;
 
   Aws::Utils::Document m_operationResponse;
-  bool m_operationResponseHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_nodeNameHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_operationRequestHasBeenSet = false;
+  bool m_operationResponseHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

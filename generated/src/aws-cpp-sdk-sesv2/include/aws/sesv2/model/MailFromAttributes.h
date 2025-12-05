@@ -100,12 +100,12 @@ class MailFromAttributes {
   ///@}
  private:
   Aws::String m_mailFromDomain;
-  bool m_mailFromDomainHasBeenSet = false;
 
   MailFromDomainStatus m_mailFromDomainStatus{MailFromDomainStatus::NOT_SET};
-  bool m_mailFromDomainStatusHasBeenSet = false;
 
   BehaviorOnMxFailure m_behaviorOnMxFailure{BehaviorOnMxFailure::NOT_SET};
+  bool m_mailFromDomainHasBeenSet = false;
+  bool m_mailFromDomainStatusHasBeenSet = false;
   bool m_behaviorOnMxFailureHasBeenSet = false;
 };
 

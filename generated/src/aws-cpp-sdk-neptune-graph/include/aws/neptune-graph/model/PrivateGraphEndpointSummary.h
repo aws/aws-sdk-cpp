@@ -110,15 +110,15 @@ class PrivateGraphEndpointSummary {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   PrivateGraphEndpointStatus m_status{PrivateGraphEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
 };
 

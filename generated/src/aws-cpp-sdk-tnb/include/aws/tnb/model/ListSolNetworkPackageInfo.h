@@ -262,39 +262,39 @@ class ListSolNetworkPackageInfo {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ListSolNetworkPackageMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nsdDesigner;
-  bool m_nsdDesignerHasBeenSet = false;
 
   Aws::String m_nsdId;
-  bool m_nsdIdHasBeenSet = false;
 
   Aws::String m_nsdInvariantId;
-  bool m_nsdInvariantIdHasBeenSet = false;
 
   Aws::String m_nsdName;
-  bool m_nsdNameHasBeenSet = false;
 
   NsdOnboardingState m_nsdOnboardingState{NsdOnboardingState::NOT_SET};
-  bool m_nsdOnboardingStateHasBeenSet = false;
 
   NsdOperationalState m_nsdOperationalState{NsdOperationalState::NOT_SET};
-  bool m_nsdOperationalStateHasBeenSet = false;
 
   NsdUsageState m_nsdUsageState{NsdUsageState::NOT_SET};
-  bool m_nsdUsageStateHasBeenSet = false;
 
   Aws::String m_nsdVersion;
-  bool m_nsdVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vnfPkgIds;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nsdDesignerHasBeenSet = false;
+  bool m_nsdIdHasBeenSet = false;
+  bool m_nsdInvariantIdHasBeenSet = false;
+  bool m_nsdNameHasBeenSet = false;
+  bool m_nsdOnboardingStateHasBeenSet = false;
+  bool m_nsdOperationalStateHasBeenSet = false;
+  bool m_nsdUsageStateHasBeenSet = false;
+  bool m_nsdVersionHasBeenSet = false;
   bool m_vnfPkgIdsHasBeenSet = false;
 };
 

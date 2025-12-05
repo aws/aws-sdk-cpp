@@ -148,21 +148,21 @@ class TranscriptResultStream {
   ///@}
  private:
   TranscriptEvent m_transcriptEvent;
-  bool m_transcriptEventHasBeenSet = false;
 
   TranscribeStreamingServiceError m_badRequestException;
-  bool m_badRequestExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_limitExceededException;
-  bool m_limitExceededExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_internalFailureException;
-  bool m_internalFailureExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_conflictException;
-  bool m_conflictExceptionHasBeenSet = false;
 
   TranscribeStreamingServiceError m_serviceUnavailableException;
+  bool m_transcriptEventHasBeenSet = false;
+  bool m_badRequestExceptionHasBeenSet = false;
+  bool m_limitExceededExceptionHasBeenSet = false;
+  bool m_internalFailureExceptionHasBeenSet = false;
+  bool m_conflictExceptionHasBeenSet = false;
   bool m_serviceUnavailableExceptionHasBeenSet = false;
 };
 

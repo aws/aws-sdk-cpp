@@ -61,9 +61,9 @@ class CreateAcceleratorResult {
   ///@}
  private:
   Accelerator m_accelerator;
-  bool m_acceleratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_acceleratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

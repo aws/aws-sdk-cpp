@@ -89,12 +89,12 @@ class UpdateRestoreTestingSelectionRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_restoreTestingPlanName;
-  bool m_restoreTestingPlanNameHasBeenSet = false;
 
   RestoreTestingSelectionForUpdate m_restoreTestingSelection;
-  bool m_restoreTestingSelectionHasBeenSet = false;
 
   Aws::String m_restoreTestingSelectionName;
+  bool m_restoreTestingPlanNameHasBeenSet = false;
+  bool m_restoreTestingSelectionHasBeenSet = false;
   bool m_restoreTestingSelectionNameHasBeenSet = false;
 };
 

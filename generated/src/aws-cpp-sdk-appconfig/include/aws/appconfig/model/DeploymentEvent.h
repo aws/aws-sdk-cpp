@@ -137,18 +137,18 @@ class DeploymentEvent {
   ///@}
  private:
   DeploymentEventType m_eventType{DeploymentEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   TriggeredBy m_triggeredBy{TriggeredBy::NOT_SET};
-  bool m_triggeredByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ActionInvocation> m_actionInvocations;
-  bool m_actionInvocationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_occurredAt{};
+  bool m_eventTypeHasBeenSet = false;
+  bool m_triggeredByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionInvocationsHasBeenSet = false;
   bool m_occurredAtHasBeenSet = false;
 };
 

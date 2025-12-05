@@ -124,18 +124,18 @@ class FilterTextAreaControl {
   ///@}
  private:
   Aws::String m_filterControlId;
-  bool m_filterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceFilterId;
-  bool m_sourceFilterIdHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   TextAreaControlDisplayOptions m_displayOptions;
+  bool m_filterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceFilterIdHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
   bool m_displayOptionsHasBeenSet = false;
 };
 

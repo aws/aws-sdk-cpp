@@ -58,9 +58,9 @@ class PutEventsResult {
   ///@}
  private:
   EventsResponse m_eventsResponse;
-  bool m_eventsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

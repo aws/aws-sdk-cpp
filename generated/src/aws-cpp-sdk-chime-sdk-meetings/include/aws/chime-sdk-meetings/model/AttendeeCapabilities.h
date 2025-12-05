@@ -115,12 +115,12 @@ class AttendeeCapabilities {
   ///@}
  private:
   MediaCapabilities m_audio{MediaCapabilities::NOT_SET};
-  bool m_audioHasBeenSet = false;
 
   MediaCapabilities m_video{MediaCapabilities::NOT_SET};
-  bool m_videoHasBeenSet = false;
 
   MediaCapabilities m_content{MediaCapabilities::NOT_SET};
+  bool m_audioHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

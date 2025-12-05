@@ -95,12 +95,12 @@ class InsightConfiguration {
   ///@}
  private:
   Aws::Vector<Computation> m_computations;
-  bool m_computationsHasBeenSet = false;
 
   CustomNarrativeOptions m_customNarrative;
-  bool m_customNarrativeHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_computationsHasBeenSet = false;
+  bool m_customNarrativeHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

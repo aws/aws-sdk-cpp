@@ -70,9 +70,9 @@ class RelationalDatabaseDataSourceConfig {
   ///@}
  private:
   RelationalDatabaseSourceType m_relationalDatabaseSourceType{RelationalDatabaseSourceType::NOT_SET};
-  bool m_relationalDatabaseSourceTypeHasBeenSet = false;
 
   RdsHttpEndpointConfig m_rdsHttpEndpointConfig;
+  bool m_relationalDatabaseSourceTypeHasBeenSet = false;
   bool m_rdsHttpEndpointConfigHasBeenSet = false;
 };
 

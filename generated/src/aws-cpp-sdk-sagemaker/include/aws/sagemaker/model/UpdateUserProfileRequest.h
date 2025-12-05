@@ -86,12 +86,12 @@ class UpdateUserProfileRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   UserSettings m_userSettings;
+  bool m_domainIdHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
   bool m_userSettingsHasBeenSet = false;
 };
 

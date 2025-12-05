@@ -100,12 +100,12 @@ class ListResourcesInProtectionGroupRequest : public ShieldRequest {
   ///@}
  private:
   Aws::String m_protectionGroupId;
-  bool m_protectionGroupIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_protectionGroupIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

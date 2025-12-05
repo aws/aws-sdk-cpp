@@ -92,12 +92,12 @@ class Tool {
   ///@}
  private:
   ToolSpecification m_toolSpec;
-  bool m_toolSpecHasBeenSet = false;
 
   SystemTool m_systemTool;
-  bool m_systemToolHasBeenSet = false;
 
   CachePointBlock m_cachePoint;
+  bool m_toolSpecHasBeenSet = false;
+  bool m_systemToolHasBeenSet = false;
   bool m_cachePointHasBeenSet = false;
 };
 

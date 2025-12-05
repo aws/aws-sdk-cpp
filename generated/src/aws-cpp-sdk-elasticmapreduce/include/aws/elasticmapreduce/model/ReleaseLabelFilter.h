@@ -71,9 +71,9 @@ class ReleaseLabelFilter {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_application;
+  bool m_prefixHasBeenSet = false;
   bool m_applicationHasBeenSet = false;
 };
 

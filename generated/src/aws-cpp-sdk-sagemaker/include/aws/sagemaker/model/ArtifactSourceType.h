@@ -67,9 +67,9 @@ class ArtifactSourceType {
   ///@}
  private:
   ArtifactSourceIdType m_sourceIdType{ArtifactSourceIdType::NOT_SET};
-  bool m_sourceIdTypeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_sourceIdTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

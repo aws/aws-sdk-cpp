@@ -218,33 +218,33 @@ class BackupSummary {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_tableId;
-  bool m_tableIdHasBeenSet = false;
 
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::String m_backupArn;
-  bool m_backupArnHasBeenSet = false;
 
   Aws::String m_backupName;
-  bool m_backupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_backupCreationDateTime{};
-  bool m_backupCreationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_backupExpiryDateTime{};
-  bool m_backupExpiryDateTimeHasBeenSet = false;
 
   BackupStatus m_backupStatus{BackupStatus::NOT_SET};
-  bool m_backupStatusHasBeenSet = false;
 
   BackupType m_backupType{BackupType::NOT_SET};
-  bool m_backupTypeHasBeenSet = false;
 
   long long m_backupSizeBytes{0};
+  bool m_tableNameHasBeenSet = false;
+  bool m_tableIdHasBeenSet = false;
+  bool m_tableArnHasBeenSet = false;
+  bool m_backupArnHasBeenSet = false;
+  bool m_backupNameHasBeenSet = false;
+  bool m_backupCreationDateTimeHasBeenSet = false;
+  bool m_backupExpiryDateTimeHasBeenSet = false;
+  bool m_backupStatusHasBeenSet = false;
+  bool m_backupTypeHasBeenSet = false;
   bool m_backupSizeBytesHasBeenSet = false;
 };
 

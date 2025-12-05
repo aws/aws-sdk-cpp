@@ -107,12 +107,12 @@ class ListPoliciesGrantingServiceAccessRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceNamespaces;
+  bool m_markerHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_serviceNamespacesHasBeenSet = false;
 };
 

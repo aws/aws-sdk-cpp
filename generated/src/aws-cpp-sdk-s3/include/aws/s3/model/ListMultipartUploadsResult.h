@@ -300,45 +300,45 @@ class ListMultipartUploadsResult {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_keyMarker;
-  bool m_keyMarkerHasBeenSet = false;
 
   Aws::String m_uploadIdMarker;
-  bool m_uploadIdMarkerHasBeenSet = false;
 
   Aws::String m_nextKeyMarker;
-  bool m_nextKeyMarkerHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   Aws::String m_nextUploadIdMarker;
-  bool m_nextUploadIdMarkerHasBeenSet = false;
 
   int m_maxUploads{0};
-  bool m_maxUploadsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::Vector<MultipartUpload> m_uploads;
-  bool m_uploadsHasBeenSet = false;
 
   Aws::Vector<CommonPrefix> m_commonPrefixes;
-  bool m_commonPrefixesHasBeenSet = false;
 
   EncodingType m_encodingType{EncodingType::NOT_SET};
-  bool m_encodingTypeHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyMarkerHasBeenSet = false;
+  bool m_uploadIdMarkerHasBeenSet = false;
+  bool m_nextKeyMarkerHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_nextUploadIdMarkerHasBeenSet = false;
+  bool m_maxUploadsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_uploadsHasBeenSet = false;
+  bool m_commonPrefixesHasBeenSet = false;
+  bool m_encodingTypeHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

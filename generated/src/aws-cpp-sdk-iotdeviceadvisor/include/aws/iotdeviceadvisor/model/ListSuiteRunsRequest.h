@@ -106,15 +106,15 @@ class ListSuiteRunsRequest : public IoTDeviceAdvisorRequest {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteDefinitionVersion;
-  bool m_suiteDefinitionVersionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_suiteDefinitionIdHasBeenSet = false;
+  bool m_suiteDefinitionVersionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

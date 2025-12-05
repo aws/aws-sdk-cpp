@@ -76,9 +76,9 @@ class CandidateProperties {
   ///@}
  private:
   CandidateArtifactLocations m_candidateArtifactLocations;
-  bool m_candidateArtifactLocationsHasBeenSet = false;
 
   Aws::Vector<MetricDatum> m_candidateMetrics;
+  bool m_candidateArtifactLocationsHasBeenSet = false;
   bool m_candidateMetricsHasBeenSet = false;
 };
 

@@ -121,18 +121,18 @@ class UpdateRelayRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_relayId;
-  bool m_relayIdHasBeenSet = false;
 
   Aws::String m_relayName;
-  bool m_relayNameHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_serverPort{0};
-  bool m_serverPortHasBeenSet = false;
 
   RelayAuthentication m_authentication;
+  bool m_relayIdHasBeenSet = false;
+  bool m_relayNameHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_serverPortHasBeenSet = false;
   bool m_authenticationHasBeenSet = false;
 };
 

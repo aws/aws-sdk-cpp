@@ -60,9 +60,9 @@ class DescribeInstanceStorageConfigResult {
   ///@}
  private:
   InstanceStorageConfig m_storageConfig;
-  bool m_storageConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

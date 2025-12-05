@@ -125,18 +125,18 @@ class AddressList {
   ///@}
  private:
   Aws::String m_addressListId;
-  bool m_addressListIdHasBeenSet = false;
 
   Aws::String m_addressListArn;
-  bool m_addressListArnHasBeenSet = false;
 
   Aws::String m_addressListName;
-  bool m_addressListNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_addressListIdHasBeenSet = false;
+  bool m_addressListArnHasBeenSet = false;
+  bool m_addressListNameHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

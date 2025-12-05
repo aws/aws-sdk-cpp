@@ -67,9 +67,9 @@ class ListPartnersRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

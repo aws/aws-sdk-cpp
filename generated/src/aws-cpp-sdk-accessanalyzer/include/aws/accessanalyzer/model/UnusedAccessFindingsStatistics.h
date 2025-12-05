@@ -133,18 +133,18 @@ class UnusedAccessFindingsStatistics {
   ///@}
  private:
   Aws::Vector<UnusedAccessTypeStatistics> m_unusedAccessTypeStatistics;
-  bool m_unusedAccessTypeStatisticsHasBeenSet = false;
 
   Aws::Vector<FindingAggregationAccountDetails> m_topAccounts;
-  bool m_topAccountsHasBeenSet = false;
 
   int m_totalActiveFindings{0};
-  bool m_totalActiveFindingsHasBeenSet = false;
 
   int m_totalArchivedFindings{0};
-  bool m_totalArchivedFindingsHasBeenSet = false;
 
   int m_totalResolvedFindings{0};
+  bool m_unusedAccessTypeStatisticsHasBeenSet = false;
+  bool m_topAccountsHasBeenSet = false;
+  bool m_totalActiveFindingsHasBeenSet = false;
+  bool m_totalArchivedFindingsHasBeenSet = false;
   bool m_totalResolvedFindingsHasBeenSet = false;
 };
 

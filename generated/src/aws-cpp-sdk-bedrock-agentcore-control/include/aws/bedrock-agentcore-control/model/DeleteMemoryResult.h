@@ -75,12 +75,12 @@ class DeleteMemoryResult {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   MemoryStatus m_status{MemoryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

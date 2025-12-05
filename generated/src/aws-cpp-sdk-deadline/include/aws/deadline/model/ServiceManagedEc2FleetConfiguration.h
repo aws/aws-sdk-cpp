@@ -108,15 +108,15 @@ class ServiceManagedEc2FleetConfiguration {
   ///@}
  private:
   ServiceManagedEc2InstanceCapabilities m_instanceCapabilities;
-  bool m_instanceCapabilitiesHasBeenSet = false;
 
   ServiceManagedEc2InstanceMarketOptions m_instanceMarketOptions;
-  bool m_instanceMarketOptionsHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_storageProfileId;
+  bool m_instanceCapabilitiesHasBeenSet = false;
+  bool m_instanceMarketOptionsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
   bool m_storageProfileIdHasBeenSet = false;
 };
 

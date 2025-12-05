@@ -300,42 +300,42 @@ class CreateGatewayRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   GatewayProtocolType m_protocolType{GatewayProtocolType::NOT_SET};
-  bool m_protocolTypeHasBeenSet = false;
 
   GatewayProtocolConfiguration m_protocolConfiguration;
-  bool m_protocolConfigurationHasBeenSet = false;
 
   AuthorizerType m_authorizerType{AuthorizerType::NOT_SET};
-  bool m_authorizerTypeHasBeenSet = false;
 
   AuthorizerConfiguration m_authorizerConfiguration;
-  bool m_authorizerConfigurationHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
-  bool m_interceptorConfigurationsHasBeenSet = false;
 
   GatewayPolicyEngineConfiguration m_policyEngineConfiguration;
-  bool m_policyEngineConfigurationHasBeenSet = false;
 
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
-  bool m_exceptionLevelHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_roleArnHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
+  bool m_protocolConfigurationHasBeenSet = false;
+  bool m_authorizerTypeHasBeenSet = false;
+  bool m_authorizerConfigurationHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_interceptorConfigurationsHasBeenSet = false;
+  bool m_policyEngineConfigurationHasBeenSet = false;
+  bool m_exceptionLevelHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

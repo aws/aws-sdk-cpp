@@ -658,96 +658,96 @@ class RedshiftSettings {
   ///@}
  private:
   bool m_acceptAnyDate{false};
-  bool m_acceptAnyDateHasBeenSet = false;
 
   Aws::String m_afterConnectScript;
-  bool m_afterConnectScriptHasBeenSet = false;
 
   Aws::String m_bucketFolder;
-  bool m_bucketFolderHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   bool m_caseSensitiveNames{false};
-  bool m_caseSensitiveNamesHasBeenSet = false;
 
   bool m_compUpdate{false};
-  bool m_compUpdateHasBeenSet = false;
 
   int m_connectionTimeout{0};
-  bool m_connectionTimeoutHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_dateFormat;
-  bool m_dateFormatHasBeenSet = false;
 
   bool m_emptyAsNull{false};
-  bool m_emptyAsNullHasBeenSet = false;
 
   EncryptionModeValue m_encryptionMode{EncryptionModeValue::NOT_SET};
-  bool m_encryptionModeHasBeenSet = false;
 
   bool m_explicitIds{false};
-  bool m_explicitIdsHasBeenSet = false;
 
   int m_fileTransferUploadStreams{0};
-  bool m_fileTransferUploadStreamsHasBeenSet = false;
 
   int m_loadTimeout{0};
-  bool m_loadTimeoutHasBeenSet = false;
 
   int m_maxFileSize{0};
-  bool m_maxFileSizeHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   bool m_removeQuotes{false};
-  bool m_removeQuotesHasBeenSet = false;
 
   Aws::String m_replaceInvalidChars;
-  bool m_replaceInvalidCharsHasBeenSet = false;
 
   Aws::String m_replaceChars;
-  bool m_replaceCharsHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_serverSideEncryptionKmsKeyId;
-  bool m_serverSideEncryptionKmsKeyIdHasBeenSet = false;
 
   Aws::String m_timeFormat;
-  bool m_timeFormatHasBeenSet = false;
 
   bool m_trimBlanks{false};
-  bool m_trimBlanksHasBeenSet = false;
 
   bool m_truncateColumns{false};
-  bool m_truncateColumnsHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   int m_writeBufferSize{0};
-  bool m_writeBufferSizeHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   bool m_mapBooleanAsBoolean{false};
+  bool m_acceptAnyDateHasBeenSet = false;
+  bool m_afterConnectScriptHasBeenSet = false;
+  bool m_bucketFolderHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_caseSensitiveNamesHasBeenSet = false;
+  bool m_compUpdateHasBeenSet = false;
+  bool m_connectionTimeoutHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_dateFormatHasBeenSet = false;
+  bool m_emptyAsNullHasBeenSet = false;
+  bool m_encryptionModeHasBeenSet = false;
+  bool m_explicitIdsHasBeenSet = false;
+  bool m_fileTransferUploadStreamsHasBeenSet = false;
+  bool m_loadTimeoutHasBeenSet = false;
+  bool m_maxFileSizeHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_removeQuotesHasBeenSet = false;
+  bool m_replaceInvalidCharsHasBeenSet = false;
+  bool m_replaceCharsHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_serverSideEncryptionKmsKeyIdHasBeenSet = false;
+  bool m_timeFormatHasBeenSet = false;
+  bool m_trimBlanksHasBeenSet = false;
+  bool m_truncateColumnsHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_writeBufferSizeHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
   bool m_mapBooleanAsBooleanHasBeenSet = false;
 };
 

@@ -320,45 +320,45 @@ class BatchReadOperation {
   ///@}
  private:
   BatchListObjectAttributes m_listObjectAttributes;
-  bool m_listObjectAttributesHasBeenSet = false;
 
   BatchListObjectChildren m_listObjectChildren;
-  bool m_listObjectChildrenHasBeenSet = false;
 
   BatchListAttachedIndices m_listAttachedIndices;
-  bool m_listAttachedIndicesHasBeenSet = false;
 
   BatchListObjectParentPaths m_listObjectParentPaths;
-  bool m_listObjectParentPathsHasBeenSet = false;
 
   BatchGetObjectInformation m_getObjectInformation;
-  bool m_getObjectInformationHasBeenSet = false;
 
   BatchGetObjectAttributes m_getObjectAttributes;
-  bool m_getObjectAttributesHasBeenSet = false;
 
   BatchListObjectParents m_listObjectParents;
-  bool m_listObjectParentsHasBeenSet = false;
 
   BatchListObjectPolicies m_listObjectPolicies;
-  bool m_listObjectPoliciesHasBeenSet = false;
 
   BatchListPolicyAttachments m_listPolicyAttachments;
-  bool m_listPolicyAttachmentsHasBeenSet = false;
 
   BatchLookupPolicy m_lookupPolicy;
-  bool m_lookupPolicyHasBeenSet = false;
 
   BatchListIndex m_listIndex;
-  bool m_listIndexHasBeenSet = false;
 
   BatchListOutgoingTypedLinks m_listOutgoingTypedLinks;
-  bool m_listOutgoingTypedLinksHasBeenSet = false;
 
   BatchListIncomingTypedLinks m_listIncomingTypedLinks;
-  bool m_listIncomingTypedLinksHasBeenSet = false;
 
   BatchGetLinkAttributes m_getLinkAttributes;
+  bool m_listObjectAttributesHasBeenSet = false;
+  bool m_listObjectChildrenHasBeenSet = false;
+  bool m_listAttachedIndicesHasBeenSet = false;
+  bool m_listObjectParentPathsHasBeenSet = false;
+  bool m_getObjectInformationHasBeenSet = false;
+  bool m_getObjectAttributesHasBeenSet = false;
+  bool m_listObjectParentsHasBeenSet = false;
+  bool m_listObjectPoliciesHasBeenSet = false;
+  bool m_listPolicyAttachmentsHasBeenSet = false;
+  bool m_lookupPolicyHasBeenSet = false;
+  bool m_listIndexHasBeenSet = false;
+  bool m_listOutgoingTypedLinksHasBeenSet = false;
+  bool m_listIncomingTypedLinksHasBeenSet = false;
   bool m_getLinkAttributesHasBeenSet = false;
 };
 

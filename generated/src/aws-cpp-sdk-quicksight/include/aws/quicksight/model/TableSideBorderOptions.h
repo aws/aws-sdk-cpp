@@ -140,21 +140,21 @@ class TableSideBorderOptions {
   ///@}
  private:
   TableBorderOptions m_innerVertical;
-  bool m_innerVerticalHasBeenSet = false;
 
   TableBorderOptions m_innerHorizontal;
-  bool m_innerHorizontalHasBeenSet = false;
 
   TableBorderOptions m_left;
-  bool m_leftHasBeenSet = false;
 
   TableBorderOptions m_right;
-  bool m_rightHasBeenSet = false;
 
   TableBorderOptions m_top;
-  bool m_topHasBeenSet = false;
 
   TableBorderOptions m_bottom;
+  bool m_innerVerticalHasBeenSet = false;
+  bool m_innerHorizontalHasBeenSet = false;
+  bool m_leftHasBeenSet = false;
+  bool m_rightHasBeenSet = false;
+  bool m_topHasBeenSet = false;
   bool m_bottomHasBeenSet = false;
 };
 

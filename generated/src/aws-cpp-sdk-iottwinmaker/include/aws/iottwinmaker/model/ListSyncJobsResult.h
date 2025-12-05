@@ -84,12 +84,12 @@ class ListSyncJobsResult {
   ///@}
  private:
   Aws::Vector<SyncJobSummary> m_syncJobSummaries;
-  bool m_syncJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_syncJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

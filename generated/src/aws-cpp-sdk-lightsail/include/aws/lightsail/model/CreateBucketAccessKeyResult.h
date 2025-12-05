@@ -87,12 +87,12 @@ class CreateBucketAccessKeyResult {
   ///@}
  private:
   AccessKey m_accessKey;
-  bool m_accessKeyHasBeenSet = false;
 
   Aws::Vector<Operation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessKeyHasBeenSet = false;
+  bool m_operationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

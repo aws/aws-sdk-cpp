@@ -94,15 +94,15 @@ class DescribeComponentConfigurationResult {
   ///@}
  private:
   bool m_monitor{false};
-  bool m_monitorHasBeenSet = false;
 
   Tier m_tier{Tier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_componentConfiguration;
-  bool m_componentConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitorHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_componentConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

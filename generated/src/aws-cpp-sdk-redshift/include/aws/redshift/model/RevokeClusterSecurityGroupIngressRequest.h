@@ -119,15 +119,15 @@ class RevokeClusterSecurityGroupIngressRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterSecurityGroupName;
-  bool m_clusterSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_cIDRIP;
-  bool m_cIDRIPHasBeenSet = false;
 
   Aws::String m_eC2SecurityGroupName;
-  bool m_eC2SecurityGroupNameHasBeenSet = false;
 
   Aws::String m_eC2SecurityGroupOwnerId;
+  bool m_clusterSecurityGroupNameHasBeenSet = false;
+  bool m_cIDRIPHasBeenSet = false;
+  bool m_eC2SecurityGroupNameHasBeenSet = false;
   bool m_eC2SecurityGroupOwnerIdHasBeenSet = false;
 };
 

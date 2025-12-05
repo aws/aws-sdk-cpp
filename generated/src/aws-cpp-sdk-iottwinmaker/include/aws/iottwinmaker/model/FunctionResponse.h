@@ -109,15 +109,15 @@ class FunctionResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_requiredProperties;
-  bool m_requiredPropertiesHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   DataConnector m_implementedBy;
-  bool m_implementedByHasBeenSet = false;
 
   bool m_isInherited{false};
+  bool m_requiredPropertiesHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_implementedByHasBeenSet = false;
   bool m_isInheritedHasBeenSet = false;
 };
 

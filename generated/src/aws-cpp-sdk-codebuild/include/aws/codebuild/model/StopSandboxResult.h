@@ -60,9 +60,9 @@ class StopSandboxResult {
   ///@}
  private:
   Sandbox m_sandbox;
-  bool m_sandboxHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sandboxHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

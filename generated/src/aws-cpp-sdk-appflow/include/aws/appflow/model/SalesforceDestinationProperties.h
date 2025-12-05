@@ -162,18 +162,18 @@ class SalesforceDestinationProperties {
   ///@}
  private:
   Aws::String m_object;
-  bool m_objectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_idFieldNames;
-  bool m_idFieldNamesHasBeenSet = false;
 
   ErrorHandlingConfig m_errorHandlingConfig;
-  bool m_errorHandlingConfigHasBeenSet = false;
 
   WriteOperationType m_writeOperationType{WriteOperationType::NOT_SET};
-  bool m_writeOperationTypeHasBeenSet = false;
 
   SalesforceDataTransferApi m_dataTransferApi{SalesforceDataTransferApi::NOT_SET};
+  bool m_objectHasBeenSet = false;
+  bool m_idFieldNamesHasBeenSet = false;
+  bool m_errorHandlingConfigHasBeenSet = false;
+  bool m_writeOperationTypeHasBeenSet = false;
   bool m_dataTransferApiHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListNamespacesResult {
   ///@}
  private:
   Aws::Vector<NamespaceSummary> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_namespacesHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -113,12 +113,12 @@ class AnalyticsSessionResult {
   ///@}
  private:
   Aws::Vector<AnalyticsBinKey> m_binKeys;
-  bool m_binKeysHasBeenSet = false;
 
   Aws::Vector<AnalyticsSessionGroupByKey> m_groupByKeys;
-  bool m_groupByKeysHasBeenSet = false;
 
   Aws::Vector<AnalyticsSessionMetricResult> m_metricsResults;
+  bool m_binKeysHasBeenSet = false;
+  bool m_groupByKeysHasBeenSet = false;
   bool m_metricsResultsHasBeenSet = false;
 };
 

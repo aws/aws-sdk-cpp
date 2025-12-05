@@ -242,39 +242,39 @@ class Statistics {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   int m_countDistinct{0};
-  bool m_countDistinctHasBeenSet = false;
 
   int m_countNull{0};
-  bool m_countNullHasBeenSet = false;
 
   int m_countNan{0};
-  bool m_countNanHasBeenSet = false;
 
   Aws::String m_min;
-  bool m_minHasBeenSet = false;
 
   Aws::String m_max;
-  bool m_maxHasBeenSet = false;
 
   double m_avg{0.0};
-  bool m_avgHasBeenSet = false;
 
   double m_stddev{0.0};
-  bool m_stddevHasBeenSet = false;
 
   long long m_countLong{0};
-  bool m_countLongHasBeenSet = false;
 
   long long m_countDistinctLong{0};
-  bool m_countDistinctLongHasBeenSet = false;
 
   long long m_countNullLong{0};
-  bool m_countNullLongHasBeenSet = false;
 
   long long m_countNanLong{0};
+  bool m_countHasBeenSet = false;
+  bool m_countDistinctHasBeenSet = false;
+  bool m_countNullHasBeenSet = false;
+  bool m_countNanHasBeenSet = false;
+  bool m_minHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
+  bool m_avgHasBeenSet = false;
+  bool m_stddevHasBeenSet = false;
+  bool m_countLongHasBeenSet = false;
+  bool m_countDistinctLongHasBeenSet = false;
+  bool m_countNullLongHasBeenSet = false;
   bool m_countNanLongHasBeenSet = false;
 };
 

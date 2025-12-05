@@ -75,9 +75,9 @@ class BatchDeleteBillScenarioUsageModificationRequest : public BCMPricingCalcula
   ///@}
  private:
   Aws::String m_billScenarioId;
-  bool m_billScenarioIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ids;
+  bool m_billScenarioIdHasBeenSet = false;
   bool m_idsHasBeenSet = false;
 };
 

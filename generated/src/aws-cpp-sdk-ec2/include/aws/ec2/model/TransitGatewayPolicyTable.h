@@ -132,18 +132,18 @@ class TransitGatewayPolicyTable {
   ///@}
  private:
   Aws::String m_transitGatewayPolicyTableId;
-  bool m_transitGatewayPolicyTableIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   TransitGatewayPolicyTableState m_state{TransitGatewayPolicyTableState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayPolicyTableIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -150,15 +150,15 @@ class ServerCertificateConfiguration {
   ///@}
  private:
   Aws::Vector<ServerCertificate> m_serverCertificates;
-  bool m_serverCertificatesHasBeenSet = false;
 
   Aws::Vector<ServerCertificateScope> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   CheckCertificateRevocationStatusActions m_checkCertificateRevocationStatus;
+  bool m_serverCertificatesHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
+  bool m_certificateAuthorityArnHasBeenSet = false;
   bool m_checkCertificateRevocationStatusHasBeenSet = false;
 };
 

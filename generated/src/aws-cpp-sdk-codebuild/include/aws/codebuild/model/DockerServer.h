@@ -103,12 +103,12 @@ class DockerServer {
   ///@}
  private:
   ComputeType m_computeType{ComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   DockerServerStatus m_status;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

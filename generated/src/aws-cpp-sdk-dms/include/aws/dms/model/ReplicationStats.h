@@ -220,36 +220,36 @@ class ReplicationStats {
   ///@}
  private:
   int m_fullLoadProgressPercent{0};
-  bool m_fullLoadProgressPercentHasBeenSet = false;
 
   long long m_elapsedTimeMillis{0};
-  bool m_elapsedTimeMillisHasBeenSet = false;
 
   int m_tablesLoaded{0};
-  bool m_tablesLoadedHasBeenSet = false;
 
   int m_tablesLoading{0};
-  bool m_tablesLoadingHasBeenSet = false;
 
   int m_tablesQueued{0};
-  bool m_tablesQueuedHasBeenSet = false;
 
   int m_tablesErrored{0};
-  bool m_tablesErroredHasBeenSet = false;
 
   Aws::Utils::DateTime m_freshStartDate{};
-  bool m_freshStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopDate{};
-  bool m_stopDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_fullLoadStartDate{};
-  bool m_fullLoadStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_fullLoadFinishDate{};
+  bool m_fullLoadProgressPercentHasBeenSet = false;
+  bool m_elapsedTimeMillisHasBeenSet = false;
+  bool m_tablesLoadedHasBeenSet = false;
+  bool m_tablesLoadingHasBeenSet = false;
+  bool m_tablesQueuedHasBeenSet = false;
+  bool m_tablesErroredHasBeenSet = false;
+  bool m_freshStartDateHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_stopDateHasBeenSet = false;
+  bool m_fullLoadStartDateHasBeenSet = false;
   bool m_fullLoadFinishDateHasBeenSet = false;
 };
 

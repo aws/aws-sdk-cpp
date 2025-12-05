@@ -67,9 +67,9 @@ class FieldLabelType {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
+  bool m_fieldIdHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

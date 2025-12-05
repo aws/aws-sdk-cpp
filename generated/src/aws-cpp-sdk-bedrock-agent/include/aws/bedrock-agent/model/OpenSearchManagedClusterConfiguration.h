@@ -109,15 +109,15 @@ class OpenSearchManagedClusterConfiguration {
   ///@}
  private:
   Aws::String m_domainEndpoint;
-  bool m_domainEndpointHasBeenSet = false;
 
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   Aws::String m_vectorIndexName;
-  bool m_vectorIndexNameHasBeenSet = false;
 
   OpenSearchManagedClusterFieldMapping m_fieldMapping;
+  bool m_domainEndpointHasBeenSet = false;
+  bool m_domainArnHasBeenSet = false;
+  bool m_vectorIndexNameHasBeenSet = false;
   bool m_fieldMappingHasBeenSet = false;
 };
 

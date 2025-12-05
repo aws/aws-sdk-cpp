@@ -134,18 +134,18 @@ class ListWorkflowsRequest : public CodeCatalystRequest {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<WorkflowSortCriteria> m_sortBy;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

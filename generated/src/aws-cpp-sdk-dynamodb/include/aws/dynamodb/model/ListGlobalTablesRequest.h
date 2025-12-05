@@ -88,12 +88,12 @@ class ListGlobalTablesRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_exclusiveStartGlobalTableName;
-  bool m_exclusiveStartGlobalTableNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_regionName;
+  bool m_exclusiveStartGlobalTableNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_regionNameHasBeenSet = false;
 };
 

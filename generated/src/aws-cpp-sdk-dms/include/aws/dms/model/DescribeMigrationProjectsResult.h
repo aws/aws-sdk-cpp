@@ -92,12 +92,12 @@ class DescribeMigrationProjectsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<MigrationProject> m_migrationProjects;
-  bool m_migrationProjectsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_migrationProjectsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

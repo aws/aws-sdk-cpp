@@ -94,12 +94,12 @@ class LoggingConfiguration {
   ///@}
  private:
   LogLevel m_level{LogLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   bool m_includeExecutionData{false};
-  bool m_includeExecutionDataHasBeenSet = false;
 
   Aws::Vector<LogDestination> m_destinations;
+  bool m_levelHasBeenSet = false;
+  bool m_includeExecutionDataHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
 };
 

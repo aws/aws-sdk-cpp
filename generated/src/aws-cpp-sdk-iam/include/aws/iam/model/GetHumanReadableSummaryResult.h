@@ -96,15 +96,15 @@ class GetHumanReadableSummaryResult {
   ///@}
  private:
   Aws::String m_summaryContent;
-  bool m_summaryContentHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   SummaryStateType m_summaryState{SummaryStateType::NOT_SET};
-  bool m_summaryStateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_summaryContentHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_summaryStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

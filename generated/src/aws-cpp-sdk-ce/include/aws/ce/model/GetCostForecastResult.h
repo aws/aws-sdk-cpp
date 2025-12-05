@@ -88,12 +88,12 @@ class GetCostForecastResult {
   ///@}
  private:
   MetricValue m_total;
-  bool m_totalHasBeenSet = false;
 
   Aws::Vector<ForecastResult> m_forecastResultsByTime;
-  bool m_forecastResultsByTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_totalHasBeenSet = false;
+  bool m_forecastResultsByTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

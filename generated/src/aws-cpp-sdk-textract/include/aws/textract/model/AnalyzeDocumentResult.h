@@ -120,18 +120,18 @@ class AnalyzeDocumentResult {
   ///@}
  private:
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   Aws::Vector<Block> m_blocks;
-  bool m_blocksHasBeenSet = false;
 
   HumanLoopActivationOutput m_humanLoopActivationOutput;
-  bool m_humanLoopActivationOutputHasBeenSet = false;
 
   Aws::String m_analyzeDocumentModelVersion;
-  bool m_analyzeDocumentModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_blocksHasBeenSet = false;
+  bool m_humanLoopActivationOutputHasBeenSet = false;
+  bool m_analyzeDocumentModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

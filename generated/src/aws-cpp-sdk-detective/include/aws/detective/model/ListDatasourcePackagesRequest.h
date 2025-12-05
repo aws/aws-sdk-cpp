@@ -83,12 +83,12 @@ class ListDatasourcePackagesRequest : public DetectiveRequest {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_graphArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

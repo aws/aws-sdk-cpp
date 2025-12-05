@@ -70,9 +70,9 @@ class AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetail
   ///@}
  private:
   Aws::String m_accessPointId;
-  bool m_accessPointIdHasBeenSet = false;
 
   Aws::String m_iam;
+  bool m_accessPointIdHasBeenSet = false;
   bool m_iamHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class PurchaseCapacityBlockExtensionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_capacityBlockExtensionOfferingId;
-  bool m_capacityBlockExtensionOfferingIdHasBeenSet = false;
 
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_capacityBlockExtensionOfferingIdHasBeenSet = false;
+  bool m_capacityReservationIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

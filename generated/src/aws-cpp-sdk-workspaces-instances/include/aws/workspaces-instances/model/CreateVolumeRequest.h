@@ -214,33 +214,33 @@ class CreateVolumeRequest : public WorkspacesInstancesRequest {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   int m_sizeInGB{0};
-  bool m_sizeInGBHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   int m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   VolumeTypeEnum m_volumeType{VolumeTypeEnum::NOT_SET};
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_encryptedHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_sizeInGBHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
   bool m_volumeTypeHasBeenSet = false;
 };
 

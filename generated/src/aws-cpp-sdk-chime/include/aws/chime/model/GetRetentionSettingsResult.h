@@ -79,12 +79,12 @@ class GetRetentionSettingsResult {
   ///@}
  private:
   RetentionSettings m_retentionSettings;
-  bool m_retentionSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiateDeletionTimestamp{};
-  bool m_initiateDeletionTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retentionSettingsHasBeenSet = false;
+  bool m_initiateDeletionTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

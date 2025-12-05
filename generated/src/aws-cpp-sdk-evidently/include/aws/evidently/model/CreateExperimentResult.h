@@ -61,9 +61,9 @@ class CreateExperimentResult {
   ///@}
  private:
   Experiment m_experiment;
-  bool m_experimentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_experimentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -130,18 +130,18 @@ class DisableEnhancedMonitoringResult {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::Vector<MetricsName> m_currentShardLevelMetrics;
-  bool m_currentShardLevelMetricsHasBeenSet = false;
 
   Aws::Vector<MetricsName> m_desiredShardLevelMetrics;
-  bool m_desiredShardLevelMetricsHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamNameHasBeenSet = false;
+  bool m_currentShardLevelMetricsHasBeenSet = false;
+  bool m_desiredShardLevelMetricsHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

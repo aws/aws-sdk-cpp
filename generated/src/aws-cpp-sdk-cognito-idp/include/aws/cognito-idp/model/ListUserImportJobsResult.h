@@ -96,12 +96,12 @@ class ListUserImportJobsResult {
   ///@}
  private:
   Aws::Vector<UserImportJobType> m_userImportJobs;
-  bool m_userImportJobsHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userImportJobsHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

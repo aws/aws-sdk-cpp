@@ -149,21 +149,21 @@ class TransitGatewayRoute {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableAnnouncementId;
-  bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 
   Aws::Vector<TransitGatewayRouteAttachment> m_transitGatewayAttachments;
-  bool m_transitGatewayAttachmentsHasBeenSet = false;
 
   TransitGatewayRouteType m_type{TransitGatewayRouteType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TransitGatewayRouteState m_state{TransitGatewayRouteState::NOT_SET};
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

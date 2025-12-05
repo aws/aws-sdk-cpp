@@ -68,9 +68,9 @@ class ValidatePullThroughCacheRuleRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_ecrRepositoryPrefix;
-  bool m_ecrRepositoryPrefixHasBeenSet = false;
 
   Aws::String m_registryId;
+  bool m_ecrRepositoryPrefixHasBeenSet = false;
   bool m_registryIdHasBeenSet = false;
 };
 

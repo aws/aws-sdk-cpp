@@ -122,18 +122,18 @@ class CampaignLimits {
   ///@}
  private:
   int m_daily{0};
-  bool m_dailyHasBeenSet = false;
 
   int m_maximumDuration{0};
-  bool m_maximumDurationHasBeenSet = false;
 
   int m_messagesPerSecond{0};
-  bool m_messagesPerSecondHasBeenSet = false;
 
   int m_total{0};
-  bool m_totalHasBeenSet = false;
 
   int m_session{0};
+  bool m_dailyHasBeenSet = false;
+  bool m_maximumDurationHasBeenSet = false;
+  bool m_messagesPerSecondHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
 };
 

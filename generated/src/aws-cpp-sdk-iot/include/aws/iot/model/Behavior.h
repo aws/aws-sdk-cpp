@@ -145,21 +145,21 @@ class Behavior {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   MetricDimension m_metricDimension;
-  bool m_metricDimensionHasBeenSet = false;
 
   BehaviorCriteria m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   bool m_suppressAlerts{false};
-  bool m_suppressAlertsHasBeenSet = false;
 
   bool m_exportMetric{false};
+  bool m_nameHasBeenSet = false;
+  bool m_metricHasBeenSet = false;
+  bool m_metricDimensionHasBeenSet = false;
+  bool m_criteriaHasBeenSet = false;
+  bool m_suppressAlertsHasBeenSet = false;
   bool m_exportMetricHasBeenSet = false;
 };
 

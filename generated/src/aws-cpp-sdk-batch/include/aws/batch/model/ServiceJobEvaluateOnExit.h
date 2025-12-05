@@ -72,9 +72,9 @@ class ServiceJobEvaluateOnExit {
   ///@}
  private:
   ServiceJobRetryAction m_action{ServiceJobRetryAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_onStatusReason;
+  bool m_actionHasBeenSet = false;
   bool m_onStatusReasonHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class FlywheelIterationFilter {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
+  bool m_creationTimeAfterHasBeenSet = false;
   bool m_creationTimeBeforeHasBeenSet = false;
 };
 

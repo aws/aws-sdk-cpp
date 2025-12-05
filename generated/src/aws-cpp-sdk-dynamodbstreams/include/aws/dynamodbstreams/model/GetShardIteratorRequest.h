@@ -118,15 +118,15 @@ class GetShardIteratorRequest : public DynamoDBStreamsRequest {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   ShardIteratorType m_shardIteratorType{ShardIteratorType::NOT_SET};
-  bool m_shardIteratorTypeHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
+  bool m_streamArnHasBeenSet = false;
+  bool m_shardIdHasBeenSet = false;
+  bool m_shardIteratorTypeHasBeenSet = false;
   bool m_sequenceNumberHasBeenSet = false;
 };
 

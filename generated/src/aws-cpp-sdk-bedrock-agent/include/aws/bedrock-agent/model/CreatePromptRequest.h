@@ -180,24 +180,24 @@ class CreatePromptRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   Aws::String m_defaultVariant;
-  bool m_defaultVariantHasBeenSet = false;
 
   Aws::Vector<PromptVariant> m_variants;
-  bool m_variantsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  bool m_defaultVariantHasBeenSet = false;
+  bool m_variantsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

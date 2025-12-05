@@ -67,9 +67,9 @@ class DeleteQuickResponseRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_quickResponseId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_quickResponseIdHasBeenSet = false;
 };
 

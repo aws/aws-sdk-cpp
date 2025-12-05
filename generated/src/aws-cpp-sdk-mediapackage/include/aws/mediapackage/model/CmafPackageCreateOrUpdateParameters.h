@@ -131,18 +131,18 @@ rounded to the
   ///@}
  private:
   CmafEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::Vector<HlsManifestCreateOrUpdateParameters> m_hlsManifests;
-  bool m_hlsManifestsHasBeenSet = false;
 
   int m_segmentDurationSeconds{0};
-  bool m_segmentDurationSecondsHasBeenSet = false;
 
   Aws::String m_segmentPrefix;
-  bool m_segmentPrefixHasBeenSet = false;
 
   StreamSelection m_streamSelection;
+  bool m_encryptionHasBeenSet = false;
+  bool m_hlsManifestsHasBeenSet = false;
+  bool m_segmentDurationSecondsHasBeenSet = false;
+  bool m_segmentPrefixHasBeenSet = false;
   bool m_streamSelectionHasBeenSet = false;
 };
 

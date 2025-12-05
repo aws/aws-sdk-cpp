@@ -84,12 +84,12 @@ class DeleteLensRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   LensStatusType m_lensStatus{LensStatusType::NOT_SET};
+  bool m_lensAliasHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_lensStatusHasBeenSet = false;
 };
 

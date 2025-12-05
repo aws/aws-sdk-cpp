@@ -92,15 +92,15 @@ class GetGlobalSettingsResult {
   ///@}
  private:
   OrganizationSharingStatus m_organizationSharingStatus{OrganizationSharingStatus::NOT_SET};
-  bool m_organizationSharingStatusHasBeenSet = false;
 
   DiscoveryIntegrationStatus m_discoveryIntegrationStatus{DiscoveryIntegrationStatus::NOT_SET};
-  bool m_discoveryIntegrationStatusHasBeenSet = false;
 
   AccountJiraConfigurationOutput m_jiraConfiguration;
-  bool m_jiraConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationSharingStatusHasBeenSet = false;
+  bool m_discoveryIntegrationStatusHasBeenSet = false;
+  bool m_jiraConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

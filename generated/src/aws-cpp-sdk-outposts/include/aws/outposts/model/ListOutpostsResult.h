@@ -80,12 +80,12 @@ class ListOutpostsResult {
   ///@}
  private:
   Aws::Vector<Outpost> m_outposts;
-  bool m_outpostsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outpostsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

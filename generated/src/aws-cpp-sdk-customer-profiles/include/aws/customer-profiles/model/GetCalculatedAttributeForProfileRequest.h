@@ -83,12 +83,12 @@ class GetCalculatedAttributeForProfileRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_calculatedAttributeName;
+  bool m_domainNameHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_calculatedAttributeNameHasBeenSet = false;
 };
 

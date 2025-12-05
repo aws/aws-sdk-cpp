@@ -335,48 +335,48 @@ class DataQualityResult {
   ///@}
  private:
   Aws::String m_resultId;
-  bool m_resultIdHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_rulesetName;
-  bool m_rulesetNameHasBeenSet = false;
 
   Aws::String m_evaluationContext;
-  bool m_evaluationContextHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobRunId;
-  bool m_jobRunIdHasBeenSet = false;
 
   Aws::String m_rulesetEvaluationRunId;
-  bool m_rulesetEvaluationRunIdHasBeenSet = false;
 
   Aws::Vector<DataQualityRuleResult> m_ruleResults;
-  bool m_ruleResultsHasBeenSet = false;
 
   Aws::Vector<DataQualityAnalyzerResult> m_analyzerResults;
-  bool m_analyzerResultsHasBeenSet = false;
 
   Aws::Vector<DataQualityObservation> m_observations;
-  bool m_observationsHasBeenSet = false;
 
   DataQualityAggregatedMetrics m_aggregatedMetrics;
+  bool m_resultIdHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_rulesetNameHasBeenSet = false;
+  bool m_evaluationContextHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobRunIdHasBeenSet = false;
+  bool m_rulesetEvaluationRunIdHasBeenSet = false;
+  bool m_ruleResultsHasBeenSet = false;
+  bool m_analyzerResultsHasBeenSet = false;
+  bool m_observationsHasBeenSet = false;
   bool m_aggregatedMetricsHasBeenSet = false;
 };
 

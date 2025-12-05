@@ -92,12 +92,12 @@ class DescribeExclusionsResult {
   ///@}
  private:
   Aws::Map<Aws::String, Exclusion> m_exclusions;
-  bool m_exclusionsHasBeenSet = false;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exclusionsHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

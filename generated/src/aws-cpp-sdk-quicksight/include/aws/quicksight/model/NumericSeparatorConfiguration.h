@@ -68,9 +68,9 @@ class NumericSeparatorConfiguration {
   ///@}
  private:
   NumericSeparatorSymbol m_decimalSeparator{NumericSeparatorSymbol::NOT_SET};
-  bool m_decimalSeparatorHasBeenSet = false;
 
   ThousandSeparatorOptions m_thousandsSeparator;
+  bool m_decimalSeparatorHasBeenSet = false;
   bool m_thousandsSeparatorHasBeenSet = false;
 };
 

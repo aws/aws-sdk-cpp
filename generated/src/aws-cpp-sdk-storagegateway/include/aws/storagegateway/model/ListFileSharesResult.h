@@ -109,15 +109,15 @@ class ListFileSharesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<FileShareInfo> m_fileShareInfoList;
-  bool m_fileShareInfoListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_fileShareInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

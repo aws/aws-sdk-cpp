@@ -79,9 +79,9 @@ class ApplicationVersionLifecycleConfig {
   ///@}
  private:
   MaxCountRule m_maxCountRule;
-  bool m_maxCountRuleHasBeenSet = false;
 
   MaxAgeRule m_maxAgeRule;
+  bool m_maxCountRuleHasBeenSet = false;
   bool m_maxAgeRuleHasBeenSet = false;
 };
 

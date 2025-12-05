@@ -71,9 +71,9 @@ class ParticipantTokenCredentials {
   ///@}
  private:
   Aws::String m_participantToken;
-  bool m_participantTokenHasBeenSet = false;
 
   Aws::String m_expiry;
+  bool m_participantTokenHasBeenSet = false;
   bool m_expiryHasBeenSet = false;
 };
 

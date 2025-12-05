@@ -68,9 +68,9 @@ class ErrorCause {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   ErrorCategory m_errorCategory{ErrorCategory::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorCategoryHasBeenSet = false;
 };
 

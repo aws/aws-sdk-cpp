@@ -64,9 +64,9 @@ class DataSetUsageConfiguration {
   ///@}
  private:
   bool m_disableUseAsDirectQuerySource{false};
-  bool m_disableUseAsDirectQuerySourceHasBeenSet = false;
 
   bool m_disableUseAsImportedSource{false};
+  bool m_disableUseAsDirectQuerySourceHasBeenSet = false;
   bool m_disableUseAsImportedSourceHasBeenSet = false;
 };
 

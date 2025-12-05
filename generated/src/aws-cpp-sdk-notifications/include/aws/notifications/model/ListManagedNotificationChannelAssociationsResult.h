@@ -88,12 +88,12 @@ class ListManagedNotificationChannelAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ManagedNotificationChannelAssociationSummary> m_channelAssociations;
-  bool m_channelAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_channelAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

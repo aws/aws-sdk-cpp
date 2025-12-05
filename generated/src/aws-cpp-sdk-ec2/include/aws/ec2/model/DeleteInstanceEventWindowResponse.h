@@ -60,9 +60,9 @@ class DeleteInstanceEventWindowResponse {
   ///@}
  private:
   InstanceEventWindowStateChange m_instanceEventWindowState;
-  bool m_instanceEventWindowStateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceEventWindowStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class GetChangeLogsResult {
   ///@}
  private:
   Aws::Vector<ChangeLog> m_changeLogs;
-  bool m_changeLogsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeLogsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

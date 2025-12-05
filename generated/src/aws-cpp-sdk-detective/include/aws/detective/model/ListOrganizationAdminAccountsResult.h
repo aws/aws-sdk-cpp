@@ -85,12 +85,12 @@ class ListOrganizationAdminAccountsResult {
   ///@}
  private:
   Aws::Vector<Administrator> m_administrators;
-  bool m_administratorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_administratorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

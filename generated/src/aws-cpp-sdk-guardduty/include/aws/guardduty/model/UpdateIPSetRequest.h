@@ -141,21 +141,21 @@ class UpdateIPSetRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_ipSetId;
-  bool m_ipSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   bool m_activate{false};
-  bool m_activateHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_ipSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_activateHasBeenSet = false;
   bool m_expectedBucketOwnerHasBeenSet = false;
 };
 

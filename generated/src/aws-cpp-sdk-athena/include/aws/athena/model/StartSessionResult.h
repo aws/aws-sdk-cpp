@@ -84,12 +84,12 @@ class StartSessionResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   SessionState m_state{SessionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

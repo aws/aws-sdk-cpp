@@ -105,12 +105,12 @@ class SearchFlowsFilter {
   ///@}
  private:
   FieldName m_name{FieldName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   SearchFilterOperator m_operator{SearchFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

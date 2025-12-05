@@ -93,12 +93,12 @@ class ScopeSummary {
   ///@}
  private:
   Aws::String m_scopeId;
-  bool m_scopeIdHasBeenSet = false;
 
   ScopeStatus m_status{ScopeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_scopeArn;
+  bool m_scopeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_scopeArnHasBeenSet = false;
 };
 

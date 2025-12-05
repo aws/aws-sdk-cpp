@@ -118,15 +118,15 @@ class BlockDeviceMapping {
   ///@}
  private:
   Aws::String m_virtualName;
-  bool m_virtualNameHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Ebs m_ebs;
-  bool m_ebsHasBeenSet = false;
 
   bool m_noDevice{false};
+  bool m_virtualNameHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_ebsHasBeenSet = false;
   bool m_noDeviceHasBeenSet = false;
 };
 

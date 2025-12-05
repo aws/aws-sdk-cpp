@@ -93,12 +93,12 @@ class ReceivedMetadata {
   ///@}
  private:
   ReceivedStatus m_receivedStatus{ReceivedStatus::NOT_SET};
-  bool m_receivedStatusHasBeenSet = false;
 
   Aws::String m_receivedStatusReason;
-  bool m_receivedStatusReasonHasBeenSet = false;
 
   Aws::Vector<AllowedOperation> m_allowedOperations;
+  bool m_receivedStatusHasBeenSet = false;
+  bool m_receivedStatusReasonHasBeenSet = false;
   bool m_allowedOperationsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateThemeForStackResult {
   ///@}
  private:
   Theme m_theme;
-  bool m_themeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_themeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

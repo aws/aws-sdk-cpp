@@ -87,12 +87,12 @@ class VpcEndpointErrorDetail {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorCode;
+  bool m_idHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

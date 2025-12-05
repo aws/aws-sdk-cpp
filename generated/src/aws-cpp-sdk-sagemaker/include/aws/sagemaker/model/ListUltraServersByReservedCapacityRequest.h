@@ -85,12 +85,12 @@ class ListUltraServersByReservedCapacityRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_reservedCapacityArn;
-  bool m_reservedCapacityArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_reservedCapacityArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

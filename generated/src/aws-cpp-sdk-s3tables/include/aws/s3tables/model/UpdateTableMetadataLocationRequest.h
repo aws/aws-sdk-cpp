@@ -119,18 +119,18 @@ class UpdateTableMetadataLocationRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_versionToken;
-  bool m_versionTokenHasBeenSet = false;
 
   Aws::String m_metadataLocation;
+  bool m_tableBucketARNHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionTokenHasBeenSet = false;
   bool m_metadataLocationHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeSecurityGroupReferencesResponse {
   ///@}
  private:
   Aws::Vector<SecurityGroupReference> m_securityGroupReferenceSet;
-  bool m_securityGroupReferenceSetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_securityGroupReferenceSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

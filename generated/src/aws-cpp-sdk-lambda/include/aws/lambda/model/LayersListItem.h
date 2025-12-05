@@ -89,12 +89,12 @@ class LayersListItem {
   ///@}
  private:
   Aws::String m_layerName;
-  bool m_layerNameHasBeenSet = false;
 
   Aws::String m_layerArn;
-  bool m_layerArnHasBeenSet = false;
 
   LayerVersionsListItem m_latestMatchingVersion;
+  bool m_layerNameHasBeenSet = false;
+  bool m_layerArnHasBeenSet = false;
   bool m_latestMatchingVersionHasBeenSet = false;
 };
 

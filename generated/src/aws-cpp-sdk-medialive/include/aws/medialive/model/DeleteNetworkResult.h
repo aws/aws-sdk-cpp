@@ -191,27 +191,27 @@ class DeleteNetworkResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedClusterIds;
-  bool m_associatedClusterIdsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<IpPool> m_ipPools;
-  bool m_ipPoolsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Route> m_routes;
-  bool m_routesHasBeenSet = false;
 
   NetworkState m_state{NetworkState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_associatedClusterIdsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_ipPoolsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_routesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

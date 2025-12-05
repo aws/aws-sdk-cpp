@@ -80,9 +80,9 @@ class PutRepositoryTriggersRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::Vector<RepositoryTrigger> m_triggers;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
 };
 

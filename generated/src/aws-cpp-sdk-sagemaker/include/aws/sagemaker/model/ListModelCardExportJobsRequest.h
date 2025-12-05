@@ -211,33 +211,33 @@ class ListModelCardExportJobsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   int m_modelCardVersion{0};
-  bool m_modelCardVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::String m_modelCardExportJobNameContains;
-  bool m_modelCardExportJobNameContainsHasBeenSet = false;
 
   ModelCardExportJobStatus m_statusEquals{ModelCardExportJobStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   ModelCardExportJobSortBy m_sortBy{ModelCardExportJobSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   ModelCardExportJobSortOrder m_sortOrder{ModelCardExportJobSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_modelCardVersionHasBeenSet = false;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_modelCardExportJobNameContainsHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

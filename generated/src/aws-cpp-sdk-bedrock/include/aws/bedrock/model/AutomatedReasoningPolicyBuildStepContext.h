@@ -72,9 +72,9 @@ class AutomatedReasoningPolicyBuildStepContext {
   ///@}
  private:
   AutomatedReasoningPolicyPlanning m_planning;
-  bool m_planningHasBeenSet = false;
 
   AutomatedReasoningPolicyMutation m_mutation;
+  bool m_planningHasBeenSet = false;
   bool m_mutationHasBeenSet = false;
 };
 

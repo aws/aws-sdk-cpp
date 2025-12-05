@@ -100,12 +100,12 @@ class TemplateDefinition {
   ///@}
  private:
   TemplateV2 m_templateV2;
-  bool m_templateV2HasBeenSet = false;
 
   TemplateV3 m_templateV3;
-  bool m_templateV3HasBeenSet = false;
 
   TemplateV4 m_templateV4;
+  bool m_templateV2HasBeenSet = false;
+  bool m_templateV3HasBeenSet = false;
   bool m_templateV4HasBeenSet = false;
 };
 

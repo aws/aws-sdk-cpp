@@ -112,15 +112,15 @@ class DescribeRemediationExecutionStatusRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::Vector<ResourceKey> m_resourceKeys;
-  bool m_resourceKeysHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_resourceKeysHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

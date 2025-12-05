@@ -268,39 +268,39 @@ class DataViewSummary {
   ///@}
  private:
   Aws::String m_dataViewId;
-  bool m_dataViewIdHasBeenSet = false;
 
   Aws::String m_dataViewArn;
-  bool m_dataViewArnHasBeenSet = false;
 
   Aws::String m_datasetId;
-  bool m_datasetIdHasBeenSet = false;
 
   long long m_asOfTimestamp{0};
-  bool m_asOfTimestampHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_partitionColumns;
-  bool m_partitionColumnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sortColumns;
-  bool m_sortColumnsHasBeenSet = false;
 
   DataViewStatus m_status{DataViewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DataViewErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   DataViewDestinationTypeParams m_destinationTypeProperties;
-  bool m_destinationTypePropertiesHasBeenSet = false;
 
   bool m_autoUpdate{false};
-  bool m_autoUpdateHasBeenSet = false;
 
   long long m_createTime{0};
-  bool m_createTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
+  bool m_dataViewIdHasBeenSet = false;
+  bool m_dataViewArnHasBeenSet = false;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_asOfTimestampHasBeenSet = false;
+  bool m_partitionColumnsHasBeenSet = false;
+  bool m_sortColumnsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
+  bool m_destinationTypePropertiesHasBeenSet = false;
+  bool m_autoUpdateHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

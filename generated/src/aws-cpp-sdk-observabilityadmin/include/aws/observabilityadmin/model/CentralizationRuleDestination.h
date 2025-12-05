@@ -90,12 +90,12 @@ class CentralizationRuleDestination {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   DestinationLogsConfiguration m_destinationLogsConfiguration;
+  bool m_regionHasBeenSet = false;
+  bool m_accountHasBeenSet = false;
   bool m_destinationLogsConfigurationHasBeenSet = false;
 };
 

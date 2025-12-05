@@ -76,9 +76,9 @@ class FieldFolder {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columns;
+  bool m_descriptionHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
 };
 

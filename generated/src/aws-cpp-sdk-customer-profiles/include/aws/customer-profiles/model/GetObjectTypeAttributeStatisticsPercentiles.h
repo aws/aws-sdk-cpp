@@ -110,18 +110,18 @@ class GetObjectTypeAttributeStatisticsPercentiles {
   ///@}
  private:
   double m_p5{0.0};
-  bool m_p5HasBeenSet = false;
 
   double m_p25{0.0};
-  bool m_p25HasBeenSet = false;
 
   double m_p50{0.0};
-  bool m_p50HasBeenSet = false;
 
   double m_p75{0.0};
-  bool m_p75HasBeenSet = false;
 
   double m_p95{0.0};
+  bool m_p5HasBeenSet = false;
+  bool m_p25HasBeenSet = false;
+  bool m_p50HasBeenSet = false;
+  bool m_p75HasBeenSet = false;
   bool m_p95HasBeenSet = false;
 };
 

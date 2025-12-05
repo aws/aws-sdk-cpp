@@ -114,15 +114,15 @@ class ContactFlowAttributeFilter {
   ///@}
  private:
   Aws::Vector<ContactFlowAttributeAndCondition> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   ContactFlowAttributeAndCondition m_andCondition;
-  bool m_andConditionHasBeenSet = false;
 
   TagCondition m_tagCondition;
-  bool m_tagConditionHasBeenSet = false;
 
   ContactFlowTypeCondition m_contactFlowTypeCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionHasBeenSet = false;
+  bool m_tagConditionHasBeenSet = false;
   bool m_contactFlowTypeConditionHasBeenSet = false;
 };
 

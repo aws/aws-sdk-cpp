@@ -223,33 +223,33 @@ class RecommenderSummary {
   ///@}
  private:
   Aws::String m_recommenderName;
-  bool m_recommenderNameHasBeenSet = false;
 
   RecommenderRecipeName m_recipeName{RecommenderRecipeName::NOT_SET};
-  bool m_recipeNameHasBeenSet = false;
 
   RecommenderConfig m_recommenderConfig;
-  bool m_recommenderConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RecommenderStatus m_status{RecommenderStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   RecommenderUpdate m_latestRecommenderUpdate;
+  bool m_recommenderNameHasBeenSet = false;
+  bool m_recipeNameHasBeenSet = false;
+  bool m_recommenderConfigHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_latestRecommenderUpdateHasBeenSet = false;
 };
 

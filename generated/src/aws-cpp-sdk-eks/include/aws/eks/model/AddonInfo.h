@@ -169,24 +169,24 @@ class AddonInfo {
   ///@}
  private:
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<AddonVersionInfo> m_addonVersions;
-  bool m_addonVersionsHasBeenSet = false;
 
   Aws::String m_publisher;
-  bool m_publisherHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   MarketplaceInformation m_marketplaceInformation;
-  bool m_marketplaceInformationHasBeenSet = false;
 
   Aws::String m_defaultNamespace;
+  bool m_addonNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_addonVersionsHasBeenSet = false;
+  bool m_publisherHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_marketplaceInformationHasBeenSet = false;
   bool m_defaultNamespaceHasBeenSet = false;
 };
 

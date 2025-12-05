@@ -70,9 +70,9 @@ class SAPODataConnectorProfileCredentials {
   ///@}
  private:
   BasicAuthCredentials m_basicAuthCredentials;
-  bool m_basicAuthCredentialsHasBeenSet = false;
 
   OAuthCredentials m_oAuthCredentials;
+  bool m_basicAuthCredentialsHasBeenSet = false;
   bool m_oAuthCredentialsHasBeenSet = false;
 };
 

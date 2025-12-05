@@ -71,9 +71,9 @@ class ChannelDestinationConfiguration {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_encoderConfigurationArn;
+  bool m_channelArnHasBeenSet = false;
   bool m_encoderConfigurationArnHasBeenSet = false;
 };
 

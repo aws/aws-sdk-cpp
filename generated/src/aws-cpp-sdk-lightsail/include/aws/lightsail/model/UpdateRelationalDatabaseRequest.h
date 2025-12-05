@@ -253,36 +253,36 @@ class UpdateRelationalDatabaseRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   bool m_rotateMasterUserPassword{false};
-  bool m_rotateMasterUserPasswordHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_enableBackupRetention{false};
-  bool m_enableBackupRetentionHasBeenSet = false;
 
   bool m_disableBackupRetention{false};
-  bool m_disableBackupRetentionHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::String m_caCertificateIdentifier;
-  bool m_caCertificateIdentifierHasBeenSet = false;
 
   Aws::String m_relationalDatabaseBlueprintId;
+  bool m_relationalDatabaseNameHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_rotateMasterUserPasswordHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_enableBackupRetentionHasBeenSet = false;
+  bool m_disableBackupRetentionHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_caCertificateIdentifierHasBeenSet = false;
   bool m_relationalDatabaseBlueprintIdHasBeenSet = false;
 };
 

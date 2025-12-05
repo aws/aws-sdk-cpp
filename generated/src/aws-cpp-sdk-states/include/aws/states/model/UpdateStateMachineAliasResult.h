@@ -60,9 +60,9 @@ class UpdateStateMachineAliasResult {
   ///@}
  private:
   Aws::Utils::DateTime m_updateDate{};
-  bool m_updateDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

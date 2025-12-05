@@ -88,12 +88,12 @@ class AssociationConfiguration {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   AIAgentAssociationConfigurationType m_associationType{AIAgentAssociationConfigurationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   AssociationConfigurationData m_associationConfigurationData;
+  bool m_associationIdHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
   bool m_associationConfigurationDataHasBeenSet = false;
 };
 

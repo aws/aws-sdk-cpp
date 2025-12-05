@@ -70,9 +70,9 @@ class PatchGroupPatchBaselineMapping {
   ///@}
  private:
   Aws::String m_patchGroup;
-  bool m_patchGroupHasBeenSet = false;
 
   PatchBaselineIdentity m_baselineIdentity;
+  bool m_patchGroupHasBeenSet = false;
   bool m_baselineIdentityHasBeenSet = false;
 };
 

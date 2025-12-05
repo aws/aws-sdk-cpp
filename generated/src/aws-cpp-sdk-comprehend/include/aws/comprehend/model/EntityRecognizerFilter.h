@@ -110,15 +110,15 @@ class EntityRecognizerFilter {
   ///@}
  private:
   ModelStatus m_status{ModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_recognizerName;
-  bool m_recognizerNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTimeBefore{};
-  bool m_submitTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTimeAfter{};
+  bool m_statusHasBeenSet = false;
+  bool m_recognizerNameHasBeenSet = false;
+  bool m_submitTimeBeforeHasBeenSet = false;
   bool m_submitTimeAfterHasBeenSet = false;
 };
 

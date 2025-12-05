@@ -105,15 +105,15 @@ class DescribeFirewallPolicyResult {
   ///@}
  private:
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   FirewallPolicyResponse m_firewallPolicyResponse;
-  bool m_firewallPolicyResponseHasBeenSet = false;
 
   FirewallPolicy m_firewallPolicy;
-  bool m_firewallPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateTokenHasBeenSet = false;
+  bool m_firewallPolicyResponseHasBeenSet = false;
+  bool m_firewallPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

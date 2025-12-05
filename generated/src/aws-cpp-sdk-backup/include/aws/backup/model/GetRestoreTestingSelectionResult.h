@@ -60,9 +60,9 @@ class GetRestoreTestingSelectionResult {
   ///@}
  private:
   RestoreTestingSelectionForGet m_restoreTestingSelection;
-  bool m_restoreTestingSelectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_restoreTestingSelectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

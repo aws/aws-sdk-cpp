@@ -137,21 +137,21 @@ class UpdateSchemaRequest : public SchemasRequest {
   ///@}
  private:
   Aws::String m_clientTokenId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenIdHasBeenSet = true;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_clientTokenIdHasBeenSet = true;
+  bool m_contentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_registryNameHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

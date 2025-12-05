@@ -103,15 +103,15 @@ class TagSearchCondition {
   ///@}
  private:
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::String m_tagValue;
-  bool m_tagValueHasBeenSet = false;
 
   StringComparisonType m_tagKeyComparisonType{StringComparisonType::NOT_SET};
-  bool m_tagKeyComparisonTypeHasBeenSet = false;
 
   StringComparisonType m_tagValueComparisonType{StringComparisonType::NOT_SET};
+  bool m_tagKeyHasBeenSet = false;
+  bool m_tagValueHasBeenSet = false;
+  bool m_tagKeyComparisonTypeHasBeenSet = false;
   bool m_tagValueComparisonTypeHasBeenSet = false;
 };
 

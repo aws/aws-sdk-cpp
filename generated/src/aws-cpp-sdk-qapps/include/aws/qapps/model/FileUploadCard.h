@@ -164,24 +164,24 @@ class FileUploadCard {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependencies;
-  bool m_dependenciesHasBeenSet = false;
 
   CardType m_type{CardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_filename;
-  bool m_filenameHasBeenSet = false;
 
   Aws::String m_fileId;
-  bool m_fileIdHasBeenSet = false;
 
   bool m_allowOverride{false};
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_dependenciesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_filenameHasBeenSet = false;
+  bool m_fileIdHasBeenSet = false;
   bool m_allowOverrideHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class HPOResourceConfig {
   ///@}
  private:
   Aws::String m_maxNumberOfTrainingJobs;
-  bool m_maxNumberOfTrainingJobsHasBeenSet = false;
 
   Aws::String m_maxParallelTrainingJobs;
+  bool m_maxNumberOfTrainingJobsHasBeenSet = false;
   bool m_maxParallelTrainingJobsHasBeenSet = false;
 };
 

@@ -140,18 +140,18 @@ class UpdateSolNetworkInstanceRequest : public TnbRequest {
   ///@}
  private:
   UpdateSolNetworkModify m_modifyVnfInfoData;
-  bool m_modifyVnfInfoDataHasBeenSet = false;
 
   Aws::String m_nsInstanceId;
-  bool m_nsInstanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UpdateSolNetworkServiceData m_updateNs;
-  bool m_updateNsHasBeenSet = false;
 
   UpdateSolNetworkType m_updateType{UpdateSolNetworkType::NOT_SET};
+  bool m_modifyVnfInfoDataHasBeenSet = false;
+  bool m_nsInstanceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_updateNsHasBeenSet = false;
   bool m_updateTypeHasBeenSet = false;
 };
 

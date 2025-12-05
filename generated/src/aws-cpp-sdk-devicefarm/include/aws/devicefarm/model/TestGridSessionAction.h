@@ -123,18 +123,18 @@ class TestGridSessionAction {
   ///@}
  private:
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Utils::DateTime m_started{};
-  bool m_startedHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestMethod;
+  bool m_actionHasBeenSet = false;
+  bool m_startedHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestMethodHasBeenSet = false;
 };
 

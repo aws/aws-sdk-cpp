@@ -118,15 +118,15 @@ class TaskActionDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Reference> m_references;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
   bool m_referencesHasBeenSet = false;
 };
 

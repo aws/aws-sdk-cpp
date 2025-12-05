@@ -71,9 +71,9 @@ class KafkaCluster {
   ///@}
  private:
   AmazonMskCluster m_amazonMskCluster;
-  bool m_amazonMskClusterHasBeenSet = false;
 
   KafkaClusterClientVpcConfig m_vpcConfig;
+  bool m_amazonMskClusterHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

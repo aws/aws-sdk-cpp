@@ -104,15 +104,15 @@ class GetReservationUtilizationResult {
   ///@}
  private:
   Aws::Vector<UtilizationByTime> m_utilizationsByTime;
-  bool m_utilizationsByTimeHasBeenSet = false;
 
   ReservationAggregates m_total;
-  bool m_totalHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_utilizationsByTimeHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

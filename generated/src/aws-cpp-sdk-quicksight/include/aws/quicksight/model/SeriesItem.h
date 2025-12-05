@@ -71,9 +71,9 @@ class SeriesItem {
   ///@}
  private:
   FieldSeriesItem m_fieldSeriesItem;
-  bool m_fieldSeriesItemHasBeenSet = false;
 
   DataFieldSeriesItem m_dataFieldSeriesItem;
+  bool m_fieldSeriesItemHasBeenSet = false;
   bool m_dataFieldSeriesItemHasBeenSet = false;
 };
 

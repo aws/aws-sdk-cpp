@@ -87,9 +87,9 @@ class EvaluationInferenceConfig {
   ///@}
  private:
   Aws::Vector<EvaluationModelConfig> m_models;
-  bool m_modelsHasBeenSet = false;
 
   Aws::Vector<RAGConfig> m_ragConfigs;
+  bool m_modelsHasBeenSet = false;
   bool m_ragConfigsHasBeenSet = false;
 };
 

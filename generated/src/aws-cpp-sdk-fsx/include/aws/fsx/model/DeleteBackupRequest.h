@@ -74,9 +74,9 @@ class DeleteBackupRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_backupIdHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

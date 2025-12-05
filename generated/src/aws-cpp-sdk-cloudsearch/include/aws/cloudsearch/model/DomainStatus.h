@@ -260,42 +260,42 @@ class DomainStatus {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   bool m_created{false};
-  bool m_createdHasBeenSet = false;
 
   bool m_deleted{false};
-  bool m_deletedHasBeenSet = false;
 
   ServiceEndpoint m_docService;
-  bool m_docServiceHasBeenSet = false;
 
   ServiceEndpoint m_searchService;
-  bool m_searchServiceHasBeenSet = false;
 
   bool m_requiresIndexDocuments{false};
-  bool m_requiresIndexDocumentsHasBeenSet = false;
 
   bool m_processing{false};
-  bool m_processingHasBeenSet = false;
 
   Aws::String m_searchInstanceType;
-  bool m_searchInstanceTypeHasBeenSet = false;
 
   int m_searchPartitionCount{0};
-  bool m_searchPartitionCountHasBeenSet = false;
 
   int m_searchInstanceCount{0};
-  bool m_searchInstanceCountHasBeenSet = false;
 
   Limits m_limits;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_docServiceHasBeenSet = false;
+  bool m_searchServiceHasBeenSet = false;
+  bool m_requiresIndexDocumentsHasBeenSet = false;
+  bool m_processingHasBeenSet = false;
+  bool m_searchInstanceTypeHasBeenSet = false;
+  bool m_searchPartitionCountHasBeenSet = false;
+  bool m_searchInstanceCountHasBeenSet = false;
   bool m_limitsHasBeenSet = false;
 };
 

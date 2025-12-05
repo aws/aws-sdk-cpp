@@ -132,18 +132,18 @@ class DescribeImagesRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_arns;
-  bool m_arnsHasBeenSet = false;
 
   VisibilityType m_type{VisibilityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_namesHasBeenSet = false;
+  bool m_arnsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class AssociateRouteTableRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_publicIpv4Pool;
-  bool m_publicIpv4PoolHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_routeTableId;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_publicIpv4PoolHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
   bool m_routeTableIdHasBeenSet = false;
 };
 

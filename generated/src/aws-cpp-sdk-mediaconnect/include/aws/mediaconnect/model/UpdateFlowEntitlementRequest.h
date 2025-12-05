@@ -153,21 +153,21 @@ class UpdateFlowEntitlementRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   UpdateEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::String m_entitlementArn;
-  bool m_entitlementArnHasBeenSet = false;
 
   EntitlementStatus m_entitlementStatus{EntitlementStatus::NOT_SET};
-  bool m_entitlementStatusHasBeenSet = false;
 
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subscribers;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_entitlementArnHasBeenSet = false;
+  bool m_entitlementStatusHasBeenSet = false;
+  bool m_flowArnHasBeenSet = false;
   bool m_subscribersHasBeenSet = false;
 };
 

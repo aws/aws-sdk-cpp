@@ -70,9 +70,9 @@ class SupplementalDocument {
   ///@}
  private:
   Aws::String m_documentUrl;
-  bool m_documentUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_documentUrlExpirationDate{};
+  bool m_documentUrlHasBeenSet = false;
   bool m_documentUrlExpirationDateHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListSuiteRunsResult {
   ///@}
  private:
   Aws::Vector<SuiteRunInformation> m_suiteRunsList;
-  bool m_suiteRunsListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suiteRunsListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

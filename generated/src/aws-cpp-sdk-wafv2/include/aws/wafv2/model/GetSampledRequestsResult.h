@@ -109,15 +109,15 @@ class GetSampledRequestsResult {
   ///@}
  private:
   Aws::Vector<SampledHTTPRequest> m_sampledRequests;
-  bool m_sampledRequestsHasBeenSet = false;
 
   long long m_populationSize{0};
-  bool m_populationSizeHasBeenSet = false;
 
   TimeWindow m_timeWindow;
-  bool m_timeWindowHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sampledRequestsHasBeenSet = false;
+  bool m_populationSizeHasBeenSet = false;
+  bool m_timeWindowHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class ListHITsForQualificationTypeRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_qualificationTypeId;
-  bool m_qualificationTypeIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_qualificationTypeIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

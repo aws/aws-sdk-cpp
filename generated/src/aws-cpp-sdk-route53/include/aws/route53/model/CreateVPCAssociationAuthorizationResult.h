@@ -85,12 +85,12 @@ class CreateVPCAssociationAuthorizationResult {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   VPC m_vPC;
-  bool m_vPCHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_vPCHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

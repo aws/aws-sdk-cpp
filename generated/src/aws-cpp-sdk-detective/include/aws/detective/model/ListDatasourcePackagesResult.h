@@ -86,12 +86,12 @@ class ListDatasourcePackagesResult {
   ///@}
  private:
   Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail> m_datasourcePackages;
-  bool m_datasourcePackagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasourcePackagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

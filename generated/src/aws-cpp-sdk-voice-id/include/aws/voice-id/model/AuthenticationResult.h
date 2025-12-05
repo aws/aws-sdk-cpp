@@ -190,27 +190,27 @@ class AuthenticationResult {
   ///@}
  private:
   Aws::Utils::DateTime m_audioAggregationEndedAt{};
-  bool m_audioAggregationEndedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_audioAggregationStartedAt{};
-  bool m_audioAggregationStartedAtHasBeenSet = false;
 
   Aws::String m_authenticationResultId;
-  bool m_authenticationResultIdHasBeenSet = false;
 
   AuthenticationConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_customerSpeakerId;
-  bool m_customerSpeakerIdHasBeenSet = false;
 
   AuthenticationDecision m_decision{AuthenticationDecision::NOT_SET};
-  bool m_decisionHasBeenSet = false;
 
   Aws::String m_generatedSpeakerId;
-  bool m_generatedSpeakerIdHasBeenSet = false;
 
   int m_score{0};
+  bool m_audioAggregationEndedAtHasBeenSet = false;
+  bool m_audioAggregationStartedAtHasBeenSet = false;
+  bool m_authenticationResultIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_customerSpeakerIdHasBeenSet = false;
+  bool m_decisionHasBeenSet = false;
+  bool m_generatedSpeakerIdHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

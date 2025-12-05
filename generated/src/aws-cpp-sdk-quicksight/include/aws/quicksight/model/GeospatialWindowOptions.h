@@ -69,9 +69,9 @@ class GeospatialWindowOptions {
   ///@}
  private:
   GeospatialCoordinateBounds m_bounds;
-  bool m_boundsHasBeenSet = false;
 
   MapZoomMode m_mapZoomMode{MapZoomMode::NOT_SET};
+  bool m_boundsHasBeenSet = false;
   bool m_mapZoomModeHasBeenSet = false;
 };
 

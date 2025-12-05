@@ -67,9 +67,9 @@ class SignInDistribution {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_regionHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

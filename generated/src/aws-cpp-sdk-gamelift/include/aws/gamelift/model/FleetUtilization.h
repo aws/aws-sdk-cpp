@@ -161,24 +161,24 @@ class FleetUtilization {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   int m_activeServerProcessCount{0};
-  bool m_activeServerProcessCountHasBeenSet = false;
 
   int m_activeGameSessionCount{0};
-  bool m_activeGameSessionCountHasBeenSet = false;
 
   int m_currentPlayerSessionCount{0};
-  bool m_currentPlayerSessionCountHasBeenSet = false;
 
   int m_maximumPlayerSessionCount{0};
-  bool m_maximumPlayerSessionCountHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_activeServerProcessCountHasBeenSet = false;
+  bool m_activeGameSessionCountHasBeenSet = false;
+  bool m_currentPlayerSessionCountHasBeenSet = false;
+  bool m_maximumPlayerSessionCountHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

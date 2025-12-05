@@ -84,12 +84,12 @@ class GetMLTaskRunsResult {
   ///@}
  private:
   Aws::Vector<TaskRun> m_taskRuns;
-  bool m_taskRunsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskRunsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

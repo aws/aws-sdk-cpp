@@ -95,12 +95,12 @@ class SpanToolResultValue {
   ///@}
  private:
   Aws::String m_toolUseId;
-  bool m_toolUseIdHasBeenSet = false;
 
   Aws::Vector<SpanMessageValue> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_toolUseIdHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

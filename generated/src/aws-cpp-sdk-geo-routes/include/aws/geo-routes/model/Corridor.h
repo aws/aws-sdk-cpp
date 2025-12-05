@@ -74,9 +74,9 @@ class Corridor {
   ///@}
  private:
   Aws::Vector<Aws::Vector<double>> m_lineString;
-  bool m_lineStringHasBeenSet = false;
 
   int m_radius{0};
+  bool m_lineStringHasBeenSet = false;
   bool m_radiusHasBeenSet = false;
 };
 

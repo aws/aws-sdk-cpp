@@ -79,9 +79,9 @@ class ValidVolumeOptions {
   ///@}
  private:
   Aws::String m_volumeName;
-  bool m_volumeNameHasBeenSet = false;
 
   Aws::Vector<ValidStorageOptions> m_storage;
+  bool m_volumeNameHasBeenSet = false;
   bool m_storageHasBeenSet = false;
 };
 

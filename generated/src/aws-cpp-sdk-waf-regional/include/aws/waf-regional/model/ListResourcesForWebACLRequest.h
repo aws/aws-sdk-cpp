@@ -68,9 +68,9 @@ class ListResourcesForWebACLRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_webACLId;
-  bool m_webACLIdHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_webACLIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

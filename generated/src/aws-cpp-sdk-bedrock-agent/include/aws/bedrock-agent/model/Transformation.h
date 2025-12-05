@@ -69,9 +69,9 @@ class Transformation {
   ///@}
  private:
   TransformationFunction m_transformationFunction;
-  bool m_transformationFunctionHasBeenSet = false;
 
   StepType m_stepToApply{StepType::NOT_SET};
+  bool m_transformationFunctionHasBeenSet = false;
   bool m_stepToApplyHasBeenSet = false;
 };
 

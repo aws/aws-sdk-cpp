@@ -71,9 +71,9 @@ class AutomatedDiscoveryAccount {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AutomatedDiscoveryAccountStatus m_status{AutomatedDiscoveryAccountStatus::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

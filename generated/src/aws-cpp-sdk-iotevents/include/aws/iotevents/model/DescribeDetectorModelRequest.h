@@ -70,9 +70,9 @@ class DescribeDetectorModelRequest : public IoTEventsRequest {
   ///@}
  private:
   Aws::String m_detectorModelName;
-  bool m_detectorModelNameHasBeenSet = false;
 
   Aws::String m_detectorModelVersion;
+  bool m_detectorModelNameHasBeenSet = false;
   bool m_detectorModelVersionHasBeenSet = false;
 };
 

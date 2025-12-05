@@ -113,15 +113,15 @@ class GrpcRouteMatch {
   ///@}
  private:
   Aws::Vector<GrpcRouteMetadata> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_methodName;
-  bool m_methodNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_metadataHasBeenSet = false;
+  bool m_methodNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

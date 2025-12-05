@@ -88,12 +88,12 @@ class ListAnalyzersRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class StateCapability {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::Document m_properties;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

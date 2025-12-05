@@ -139,21 +139,21 @@ class AnalysisAclRule {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   bool m_egress{false};
-  bool m_egressHasBeenSet = false;
 
   PortRange m_portRange;
-  bool m_portRangeHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_ruleAction;
-  bool m_ruleActionHasBeenSet = false;
 
   int m_ruleNumber{0};
+  bool m_cidrHasBeenSet = false;
+  bool m_egressHasBeenSet = false;
+  bool m_portRangeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
   bool m_ruleNumberHasBeenSet = false;
 };
 

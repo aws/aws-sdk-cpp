@@ -79,9 +79,9 @@ class DeleteServiceAttributesRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributes;
+  bool m_serviceIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

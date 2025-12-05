@@ -60,9 +60,9 @@ class UpdateAnalysisTemplateResult {
   ///@}
  private:
   AnalysisTemplate m_analysisTemplate;
-  bool m_analysisTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class ListControlsRequest : public AuditManagerRequest {
   ///@}
  private:
   ControlType m_controlType{ControlType::NOT_SET};
-  bool m_controlTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_controlCatalogId;
+  bool m_controlTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_controlCatalogIdHasBeenSet = false;
 };
 

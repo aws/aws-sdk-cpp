@@ -74,9 +74,9 @@ class AuthenticationConfiguration {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_accessRoleArn;
+  bool m_connectionArnHasBeenSet = false;
   bool m_accessRoleArnHasBeenSet = false;
 };
 

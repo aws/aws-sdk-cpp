@@ -74,9 +74,9 @@ class BillingViewHealthStatus {
   ///@}
  private:
   BillingViewStatus m_statusCode{BillingViewStatus::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Vector<BillingViewStatusReason> m_statusReasons;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonsHasBeenSet = false;
 };
 

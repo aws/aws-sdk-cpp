@@ -87,12 +87,12 @@ class AncillarySourceSettings {
   ///@}
  private:
   AncillaryConvert608To708 m_convert608To708{AncillaryConvert608To708::NOT_SET};
-  bool m_convert608To708HasBeenSet = false;
 
   int m_sourceAncillaryChannelNumber{0};
-  bool m_sourceAncillaryChannelNumberHasBeenSet = false;
 
   AncillaryTerminateCaptions m_terminateCaptions{AncillaryTerminateCaptions::NOT_SET};
+  bool m_convert608To708HasBeenSet = false;
+  bool m_sourceAncillaryChannelNumberHasBeenSet = false;
   bool m_terminateCaptionsHasBeenSet = false;
 };
 

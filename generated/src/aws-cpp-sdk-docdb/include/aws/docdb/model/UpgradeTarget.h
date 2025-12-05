@@ -124,18 +124,18 @@ class UpgradeTarget {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_autoUpgrade{false};
-  bool m_autoUpgradeHasBeenSet = false;
 
   bool m_isMajorVersionUpgrade{false};
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_autoUpgradeHasBeenSet = false;
   bool m_isMajorVersionUpgradeHasBeenSet = false;
 };
 

@@ -116,18 +116,18 @@ class GetObjectTypeAttributeStatisticsStats {
   ///@}
  private:
   double m_maximum{0.0};
-  bool m_maximumHasBeenSet = false;
 
   double m_minimum{0.0};
-  bool m_minimumHasBeenSet = false;
 
   double m_average{0.0};
-  bool m_averageHasBeenSet = false;
 
   double m_standardDeviation{0.0};
-  bool m_standardDeviationHasBeenSet = false;
 
   GetObjectTypeAttributeStatisticsPercentiles m_percentiles;
+  bool m_maximumHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
+  bool m_averageHasBeenSet = false;
+  bool m_standardDeviationHasBeenSet = false;
   bool m_percentilesHasBeenSet = false;
 };
 

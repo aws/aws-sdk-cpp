@@ -74,9 +74,9 @@ class RouteMatrixOrigin {
   ///@}
  private:
   RouteMatrixOriginOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<double> m_position;
+  bool m_optionsHasBeenSet = false;
   bool m_positionHasBeenSet = false;
 };
 

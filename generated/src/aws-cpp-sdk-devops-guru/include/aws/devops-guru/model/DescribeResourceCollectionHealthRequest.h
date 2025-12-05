@@ -77,9 +77,9 @@ class DescribeResourceCollectionHealthRequest : public DevOpsGuruRequest {
   ///@}
  private:
   ResourceCollectionType m_resourceCollectionType{ResourceCollectionType::NOT_SET};
-  bool m_resourceCollectionTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceCollectionTypeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

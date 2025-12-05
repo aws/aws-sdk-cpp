@@ -66,9 +66,9 @@ class StartServicePeriodTypeSort {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   StartServicePeriodTypeSortName m_sortBy{StartServicePeriodTypeSortName::NOT_SET};
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

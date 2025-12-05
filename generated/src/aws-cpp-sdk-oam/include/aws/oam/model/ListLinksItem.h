@@ -132,18 +132,18 @@ class ListLinksItem {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_sinkArn;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
   bool m_sinkArnHasBeenSet = false;
 };
 

@@ -131,18 +131,18 @@ class MessageTemplateQueryField {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   MessageTemplateQueryOperator m_operator{MessageTemplateQueryOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   bool m_allowFuzziness{false};
-  bool m_allowFuzzinessHasBeenSet = false;
 
   Priority m_priority{Priority::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_allowFuzzinessHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

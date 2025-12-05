@@ -79,12 +79,12 @@ class UpdateWorkerResult {
   ///@}
  private:
   LogConfiguration m_log;
-  bool m_logHasBeenSet = false;
 
   HostConfiguration m_hostConfiguration;
-  bool m_hostConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logHasBeenSet = false;
+  bool m_hostConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeQueueResult {
   ///@}
  private:
   Queue m_queue;
-  bool m_queueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

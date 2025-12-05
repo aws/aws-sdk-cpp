@@ -157,21 +157,21 @@ class DescribeMaintenanceWindowScheduleRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   MaintenanceWindowResourceType m_resourceType{MaintenanceWindowResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<PatchOrchestratorFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_windowIdHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

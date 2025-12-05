@@ -267,36 +267,36 @@ class Role {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_roleId;
-  bool m_roleIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_assumeRolePolicyDocument;
-  bool m_assumeRolePolicyDocumentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_maxSessionDuration{0};
-  bool m_maxSessionDurationHasBeenSet = false;
 
   AttachedPermissionsBoundary m_permissionsBoundary;
-  bool m_permissionsBoundaryHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   RoleLastUsed m_roleLastUsed;
+  bool m_pathHasBeenSet = false;
+  bool m_roleNameHasBeenSet = false;
+  bool m_roleIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_assumeRolePolicyDocumentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_maxSessionDurationHasBeenSet = false;
+  bool m_permissionsBoundaryHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_roleLastUsedHasBeenSet = false;
 };
 

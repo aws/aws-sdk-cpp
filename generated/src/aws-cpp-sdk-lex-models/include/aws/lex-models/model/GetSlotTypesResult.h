@@ -86,12 +86,12 @@ class GetSlotTypesResult {
   ///@}
  private:
   Aws::Vector<SlotTypeMetadata> m_slotTypes;
-  bool m_slotTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_slotTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -197,30 +197,30 @@ class NodeGroupMemberUpdateStatus {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_cacheNodeId;
-  bool m_cacheNodeIdHasBeenSet = false;
 
   NodeUpdateStatus m_nodeUpdateStatus{NodeUpdateStatus::NOT_SET};
-  bool m_nodeUpdateStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_nodeDeletionDate{};
-  bool m_nodeDeletionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_nodeUpdateStartDate{};
-  bool m_nodeUpdateStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_nodeUpdateEndDate{};
-  bool m_nodeUpdateEndDateHasBeenSet = false;
 
   NodeUpdateInitiatedBy m_nodeUpdateInitiatedBy{NodeUpdateInitiatedBy::NOT_SET};
-  bool m_nodeUpdateInitiatedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_nodeUpdateInitiatedDate{};
-  bool m_nodeUpdateInitiatedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_nodeUpdateStatusModifiedDate{};
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_cacheNodeIdHasBeenSet = false;
+  bool m_nodeUpdateStatusHasBeenSet = false;
+  bool m_nodeDeletionDateHasBeenSet = false;
+  bool m_nodeUpdateStartDateHasBeenSet = false;
+  bool m_nodeUpdateEndDateHasBeenSet = false;
+  bool m_nodeUpdateInitiatedByHasBeenSet = false;
+  bool m_nodeUpdateInitiatedDateHasBeenSet = false;
   bool m_nodeUpdateStatusModifiedDateHasBeenSet = false;
 };
 

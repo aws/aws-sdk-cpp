@@ -176,27 +176,27 @@ class Flow {
   ///@}
  private:
   Address m_sourceAddress;
-  bool m_sourceAddressHasBeenSet = false;
 
   Address m_destinationAddress;
-  bool m_destinationAddressHasBeenSet = false;
 
   Aws::String m_sourcePort;
-  bool m_sourcePortHasBeenSet = false;
 
   Aws::String m_destinationPort;
-  bool m_destinationPortHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   int m_age{0};
-  bool m_ageHasBeenSet = false;
 
   int m_packetCount{0};
-  bool m_packetCountHasBeenSet = false;
 
   long long m_byteCount{0};
+  bool m_sourceAddressHasBeenSet = false;
+  bool m_destinationAddressHasBeenSet = false;
+  bool m_sourcePortHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_ageHasBeenSet = false;
+  bool m_packetCountHasBeenSet = false;
   bool m_byteCountHasBeenSet = false;
 };
 

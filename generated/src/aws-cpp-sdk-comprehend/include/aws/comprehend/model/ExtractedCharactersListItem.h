@@ -62,9 +62,9 @@ class ExtractedCharactersListItem {
   ///@}
  private:
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   int m_count{0};
+  bool m_pageHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

@@ -212,30 +212,30 @@ class CreateModelImportJobRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_importedModelName;
-  bool m_importedModelNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ModelDataSource m_modelDataSource;
-  bool m_modelDataSourceHasBeenSet = false;
 
   Aws::Vector<Tag> m_jobTags;
-  bool m_jobTagsHasBeenSet = false;
 
   Aws::Vector<Tag> m_importedModelTags;
-  bool m_importedModelTagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_importedModelKmsKeyId;
+  bool m_jobNameHasBeenSet = false;
+  bool m_importedModelNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_modelDataSourceHasBeenSet = false;
+  bool m_jobTagsHasBeenSet = false;
+  bool m_importedModelTagsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_importedModelKmsKeyIdHasBeenSet = false;
 };
 

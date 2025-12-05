@@ -114,18 +114,18 @@ class PublishAppVersionResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   long long m_identifier{0};
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

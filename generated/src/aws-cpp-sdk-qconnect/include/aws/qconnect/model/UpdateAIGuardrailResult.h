@@ -60,9 +60,9 @@ class UpdateAIGuardrailResult {
   ///@}
  private:
   AIGuardrailData m_aiGuardrail;
-  bool m_aiGuardrailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiGuardrailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

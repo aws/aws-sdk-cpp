@@ -96,12 +96,12 @@ class ExportFilterPropertyAttributes {
   ///@}
  private:
   Aws::String m_outputType;
-  bool m_outputTypeHasBeenSet = false;
 
   Aws::String m_sourcePropertyName;
-  bool m_sourcePropertyNameHasBeenSet = false;
 
   MultiValueHandlingType m_multiValueHandling{MultiValueHandlingType::NOT_SET};
+  bool m_outputTypeHasBeenSet = false;
+  bool m_sourcePropertyNameHasBeenSet = false;
   bool m_multiValueHandlingHasBeenSet = false;
 };
 

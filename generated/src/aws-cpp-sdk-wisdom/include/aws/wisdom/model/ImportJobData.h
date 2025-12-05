@@ -275,42 +275,42 @@ class ImportJobData {
   ///@}
  private:
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   ExternalSourceConfiguration m_externalSourceConfiguration;
-  bool m_externalSourceConfigurationHasBeenSet = false;
 
   Aws::String m_failedRecordReport;
-  bool m_failedRecordReportHasBeenSet = false;
 
   Aws::String m_importJobId;
-  bool m_importJobIdHasBeenSet = false;
 
   ImportJobType m_importJobType{ImportJobType::NOT_SET};
-  bool m_importJobTypeHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   ImportJobStatus m_status{ImportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Utils::DateTime m_urlExpiry{};
+  bool m_createdTimeHasBeenSet = false;
+  bool m_externalSourceConfigurationHasBeenSet = false;
+  bool m_failedRecordReportHasBeenSet = false;
+  bool m_importJobIdHasBeenSet = false;
+  bool m_importJobTypeHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_urlExpiryHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class DescribeDBSubnetGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBSubnetGroup> m_dBSubnetGroups;
-  bool m_dBSubnetGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBSubnetGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

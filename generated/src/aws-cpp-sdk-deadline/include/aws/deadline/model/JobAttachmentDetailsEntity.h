@@ -69,9 +69,9 @@ class JobAttachmentDetailsEntity {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Attachments m_attachments;
+  bool m_jobIdHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
 };
 

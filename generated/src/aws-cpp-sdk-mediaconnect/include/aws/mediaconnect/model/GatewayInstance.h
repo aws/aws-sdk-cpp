@@ -183,27 +183,27 @@ class GatewayInstance {
   ///@}
  private:
   BridgePlacement m_bridgePlacement{BridgePlacement::NOT_SET};
-  bool m_bridgePlacementHasBeenSet = false;
 
   ConnectionStatus m_connectionStatus{ConnectionStatus::NOT_SET};
-  bool m_connectionStatusHasBeenSet = false;
 
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_gatewayInstanceArn;
-  bool m_gatewayInstanceArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<MessageDetail> m_instanceMessages;
-  bool m_instanceMessagesHasBeenSet = false;
 
   InstanceState m_instanceState{InstanceState::NOT_SET};
-  bool m_instanceStateHasBeenSet = false;
 
   int m_runningBridgeCount{0};
+  bool m_bridgePlacementHasBeenSet = false;
+  bool m_connectionStatusHasBeenSet = false;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_gatewayInstanceArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceMessagesHasBeenSet = false;
+  bool m_instanceStateHasBeenSet = false;
   bool m_runningBridgeCountHasBeenSet = false;
 };
 

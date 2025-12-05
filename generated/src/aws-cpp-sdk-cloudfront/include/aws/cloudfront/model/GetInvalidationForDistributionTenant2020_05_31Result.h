@@ -60,9 +60,9 @@ class GetInvalidationForDistributionTenant2020_05_31Result {
   ///@}
  private:
   Invalidation m_invalidation;
-  bool m_invalidationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invalidationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

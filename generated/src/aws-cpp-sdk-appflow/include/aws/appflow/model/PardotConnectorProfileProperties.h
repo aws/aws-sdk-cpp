@@ -86,12 +86,12 @@ class PardotConnectorProfileProperties {
   ///@}
  private:
   Aws::String m_instanceUrl;
-  bool m_instanceUrlHasBeenSet = false;
 
   bool m_isSandboxEnvironment{false};
-  bool m_isSandboxEnvironmentHasBeenSet = false;
 
   Aws::String m_businessUnitId;
+  bool m_instanceUrlHasBeenSet = false;
+  bool m_isSandboxEnvironmentHasBeenSet = false;
   bool m_businessUnitIdHasBeenSet = false;
 };
 

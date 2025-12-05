@@ -84,9 +84,9 @@ class AssetBundleImportJobFolderOverrideTags {
   ///@}
  private:
   Aws::Vector<Aws::String> m_folderIds;
-  bool m_folderIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_folderIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

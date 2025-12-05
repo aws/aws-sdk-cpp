@@ -120,18 +120,18 @@ class ListQualificationTypesRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   bool m_mustBeRequestable{false};
-  bool m_mustBeRequestableHasBeenSet = false;
 
   bool m_mustBeOwnedByCaller{false};
-  bool m_mustBeOwnedByCallerHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_queryHasBeenSet = false;
+  bool m_mustBeRequestableHasBeenSet = false;
+  bool m_mustBeOwnedByCallerHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

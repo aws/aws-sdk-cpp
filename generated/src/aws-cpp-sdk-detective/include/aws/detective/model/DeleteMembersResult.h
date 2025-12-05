@@ -93,12 +93,12 @@ class DeleteMembersResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
-  bool m_unprocessedAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

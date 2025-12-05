@@ -87,12 +87,12 @@ class WarningsListItem {
   ///@}
  private:
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   PageBasedWarningCode m_warnCode{PageBasedWarningCode::NOT_SET};
-  bool m_warnCodeHasBeenSet = false;
 
   Aws::String m_warnMessage;
+  bool m_pageHasBeenSet = false;
+  bool m_warnCodeHasBeenSet = false;
   bool m_warnMessageHasBeenSet = false;
 };
 

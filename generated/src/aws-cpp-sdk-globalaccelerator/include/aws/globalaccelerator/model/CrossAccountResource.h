@@ -100,12 +100,12 @@ class CrossAccountResource {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_attachmentArn;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
   bool m_attachmentArnHasBeenSet = false;
 };
 

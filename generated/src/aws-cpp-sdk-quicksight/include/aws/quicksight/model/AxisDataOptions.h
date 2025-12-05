@@ -71,9 +71,9 @@ class AxisDataOptions {
   ///@}
  private:
   NumericAxisOptions m_numericAxisOptions;
-  bool m_numericAxisOptionsHasBeenSet = false;
 
   DateAxisOptions m_dateAxisOptions;
+  bool m_numericAxisOptionsHasBeenSet = false;
   bool m_dateAxisOptionsHasBeenSet = false;
 };
 

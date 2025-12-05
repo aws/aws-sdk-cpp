@@ -64,9 +64,9 @@ class ProductionVariantServerlessUpdateConfig {
   ///@}
  private:
   int m_maxConcurrency{0};
-  bool m_maxConcurrencyHasBeenSet = false;
 
   int m_provisionedConcurrency{0};
+  bool m_maxConcurrencyHasBeenSet = false;
   bool m_provisionedConcurrencyHasBeenSet = false;
 };
 

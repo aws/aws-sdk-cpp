@@ -87,12 +87,12 @@ class FailedRequest {
   ///@}
  private:
   Aws::String m_requestIdentifier;
-  bool m_requestIdentifierHasBeenSet = false;
 
   FailureReasonCode m_failureReasonCode{FailureReasonCode::NOT_SET};
-  bool m_failureReasonCodeHasBeenSet = false;
 
   Aws::String m_failureReasonMessage;
+  bool m_requestIdentifierHasBeenSet = false;
+  bool m_failureReasonCodeHasBeenSet = false;
   bool m_failureReasonMessageHasBeenSet = false;
 };
 

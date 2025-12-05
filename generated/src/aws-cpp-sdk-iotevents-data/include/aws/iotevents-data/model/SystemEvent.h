@@ -68,9 +68,9 @@ class SystemEvent {
   ///@}
  private:
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   StateChangeConfiguration m_stateChangeConfiguration;
+  bool m_eventTypeHasBeenSet = false;
   bool m_stateChangeConfigurationHasBeenSet = false;
 };
 

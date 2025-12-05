@@ -68,9 +68,9 @@ class AnalyticsSessionGroupByKey {
   ///@}
  private:
   AnalyticsSessionField m_name{AnalyticsSessionField::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

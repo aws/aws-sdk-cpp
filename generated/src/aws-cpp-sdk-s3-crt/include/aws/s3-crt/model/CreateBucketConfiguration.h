@@ -140,15 +140,15 @@ class CreateBucketConfiguration {
   ///@}
  private:
   BucketLocationConstraint m_locationConstraint{BucketLocationConstraint::NOT_SET};
-  bool m_locationConstraintHasBeenSet = false;
 
   LocationInfo m_location;
-  bool m_locationHasBeenSet = false;
 
   BucketInfo m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_locationConstraintHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

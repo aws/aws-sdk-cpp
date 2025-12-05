@@ -86,12 +86,12 @@ class DescribeFastSnapshotRestoresResponse {
   ///@}
  private:
   Aws::Vector<DescribeFastSnapshotRestoreSuccessItem> m_fastSnapshotRestores;
-  bool m_fastSnapshotRestoresHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_fastSnapshotRestoresHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

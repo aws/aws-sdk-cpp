@@ -181,24 +181,24 @@ class MetricDefinition {
   ///@}
  private:
   Aws::String m_metricDefinitionId;
-  bool m_metricDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_valueKey;
-  bool m_valueKeyHasBeenSet = false;
 
   Aws::String m_unitLabel;
-  bool m_unitLabelHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dimensionKeys;
-  bool m_dimensionKeysHasBeenSet = false;
 
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_metricDefinitionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_valueKeyHasBeenSet = false;
+  bool m_unitLabelHasBeenSet = false;
+  bool m_dimensionKeysHasBeenSet = false;
+  bool m_eventPatternHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

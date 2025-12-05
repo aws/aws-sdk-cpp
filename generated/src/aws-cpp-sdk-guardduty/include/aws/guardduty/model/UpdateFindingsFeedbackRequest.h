@@ -111,15 +111,15 @@ class UpdateFindingsFeedbackRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_findingIds;
-  bool m_findingIdsHasBeenSet = false;
 
   Feedback m_feedback{Feedback::NOT_SET};
-  bool m_feedbackHasBeenSet = false;
 
   Aws::String m_comments;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_findingIdsHasBeenSet = false;
+  bool m_feedbackHasBeenSet = false;
   bool m_commentsHasBeenSet = false;
 };
 

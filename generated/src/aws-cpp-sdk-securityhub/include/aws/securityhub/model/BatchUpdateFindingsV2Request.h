@@ -139,18 +139,18 @@ class BatchUpdateFindingsV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_metadataUids;
-  bool m_metadataUidsHasBeenSet = false;
 
   Aws::Vector<OcsfFindingIdentifier> m_findingIdentifiers;
-  bool m_findingIdentifiersHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   int m_severityId{0};
-  bool m_severityIdHasBeenSet = false;
 
   int m_statusId{0};
+  bool m_metadataUidsHasBeenSet = false;
+  bool m_findingIdentifiersHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_severityIdHasBeenSet = false;
   bool m_statusIdHasBeenSet = false;
 };
 

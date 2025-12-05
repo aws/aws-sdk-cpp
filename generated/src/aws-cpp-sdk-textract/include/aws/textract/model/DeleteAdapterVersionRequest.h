@@ -68,9 +68,9 @@ class DeleteAdapterVersionRequest : public TextractRequest {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::String m_adapterVersion;
+  bool m_adapterIdHasBeenSet = false;
   bool m_adapterVersionHasBeenSet = false;
 };
 

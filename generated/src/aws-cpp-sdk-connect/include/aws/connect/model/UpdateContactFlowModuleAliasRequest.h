@@ -137,21 +137,21 @@ class UpdateContactFlowModuleAliasRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowModuleId;
-  bool m_contactFlowModuleIdHasBeenSet = false;
 
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_contactFlowModuleVersion{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactFlowModuleIdHasBeenSet = false;
+  bool m_aliasIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_contactFlowModuleVersionHasBeenSet = false;
 };
 

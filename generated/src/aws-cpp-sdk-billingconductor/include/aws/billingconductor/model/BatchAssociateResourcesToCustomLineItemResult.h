@@ -96,12 +96,12 @@ class BatchAssociateResourcesToCustomLineItemResult {
   ///@}
  private:
   Aws::Vector<AssociateResourceResponseElement> m_successfullyAssociatedResources;
-  bool m_successfullyAssociatedResourcesHasBeenSet = false;
 
   Aws::Vector<AssociateResourceResponseElement> m_failedAssociatedResources;
-  bool m_failedAssociatedResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfullyAssociatedResourcesHasBeenSet = false;
+  bool m_failedAssociatedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

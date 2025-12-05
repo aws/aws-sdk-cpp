@@ -61,9 +61,9 @@ class ExportBackupPlanTemplateResult {
   ///@}
  private:
   Aws::String m_backupPlanTemplateJson;
-  bool m_backupPlanTemplateJsonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupPlanTemplateJsonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

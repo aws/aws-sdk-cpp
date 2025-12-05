@@ -363,54 +363,54 @@ class ImportImageTask {
   ///@}
  private:
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_hypervisor;
-  bool m_hypervisorHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_importTaskId;
-  bool m_importTaskIdHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_licenseType;
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::Vector<SnapshotDetail> m_snapshotDetails;
-  bool m_snapshotDetailsHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<ImportImageLicenseConfigurationResponse> m_licenseSpecifications;
-  bool m_licenseSpecificationsHasBeenSet = false;
 
   Aws::String m_usageOperation;
-  bool m_usageOperationHasBeenSet = false;
 
   BootModeValues m_bootMode{BootModeValues::NOT_SET};
+  bool m_architectureHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_hypervisorHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_importTaskIdHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_snapshotDetailsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_licenseSpecificationsHasBeenSet = false;
+  bool m_usageOperationHasBeenSet = false;
   bool m_bootModeHasBeenSet = false;
 };
 

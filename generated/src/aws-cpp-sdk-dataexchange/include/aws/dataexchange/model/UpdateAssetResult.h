@@ -221,36 +221,36 @@ class UpdateAssetResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AssetDetails m_assetDetails;
-  bool m_assetDetailsHasBeenSet = false;
 
   AssetType m_assetType{AssetType::NOT_SET};
-  bool m_assetTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_assetDetailsHasBeenSet = false;
+  bool m_assetTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

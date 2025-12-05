@@ -120,12 +120,12 @@ class SoftwareAssociations {
   ///@}
  private:
   Aws::String m_softwareName;
-  bool m_softwareNameHasBeenSet = false;
 
   SoftwareDeploymentStatus m_status{SoftwareDeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ErrorDetails> m_deploymentError;
+  bool m_softwareNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_deploymentErrorHasBeenSet = false;
 };
 

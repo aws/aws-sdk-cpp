@@ -91,12 +91,12 @@ class CreateDocumentationPartRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   DocumentationPartLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_properties;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

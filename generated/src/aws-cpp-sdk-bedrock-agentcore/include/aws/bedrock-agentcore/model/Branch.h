@@ -70,9 +70,9 @@ class Branch {
   ///@}
  private:
   Aws::String m_rootEventId;
-  bool m_rootEventIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_rootEventIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

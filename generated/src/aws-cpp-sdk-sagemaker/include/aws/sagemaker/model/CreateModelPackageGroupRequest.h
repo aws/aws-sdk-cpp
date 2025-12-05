@@ -97,12 +97,12 @@ class CreateModelPackageGroupRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelPackageGroupName;
-  bool m_modelPackageGroupNameHasBeenSet = false;
 
   Aws::String m_modelPackageGroupDescription;
-  bool m_modelPackageGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_modelPackageGroupNameHasBeenSet = false;
+  bool m_modelPackageGroupDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

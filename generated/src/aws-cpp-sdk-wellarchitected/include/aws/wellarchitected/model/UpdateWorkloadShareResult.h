@@ -78,12 +78,12 @@ class UpdateWorkloadShareResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   WorkloadShare m_workloadShare;
-  bool m_workloadShareHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadShareHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

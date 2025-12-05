@@ -168,27 +168,27 @@ class ReservationResourceSpecification {
   ///@}
  private:
   ChannelClass m_channelClass{ChannelClass::NOT_SET};
-  bool m_channelClassHasBeenSet = false;
 
   ReservationCodec m_codec{ReservationCodec::NOT_SET};
-  bool m_codecHasBeenSet = false;
 
   ReservationMaximumBitrate m_maximumBitrate{ReservationMaximumBitrate::NOT_SET};
-  bool m_maximumBitrateHasBeenSet = false;
 
   ReservationMaximumFramerate m_maximumFramerate{ReservationMaximumFramerate::NOT_SET};
-  bool m_maximumFramerateHasBeenSet = false;
 
   ReservationResolution m_resolution{ReservationResolution::NOT_SET};
-  bool m_resolutionHasBeenSet = false;
 
   ReservationResourceType m_resourceType{ReservationResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   ReservationSpecialFeature m_specialFeature{ReservationSpecialFeature::NOT_SET};
-  bool m_specialFeatureHasBeenSet = false;
 
   ReservationVideoQuality m_videoQuality{ReservationVideoQuality::NOT_SET};
+  bool m_channelClassHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_maximumFramerateHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_specialFeatureHasBeenSet = false;
   bool m_videoQualityHasBeenSet = false;
 };
 

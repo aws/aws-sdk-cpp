@@ -108,15 +108,15 @@ class AwsAppSyncGraphQlApiUserPoolConfigDetails {
   ///@}
  private:
   Aws::String m_appIdClientRegex;
-  bool m_appIdClientRegexHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_defaultAction;
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_userPoolId;
+  bool m_appIdClientRegexHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
   bool m_userPoolIdHasBeenSet = false;
 };
 

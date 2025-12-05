@@ -87,9 +87,9 @@ class CodeReviewType {
   ///@}
  private:
   RepositoryAnalysis m_repositoryAnalysis;
-  bool m_repositoryAnalysisHasBeenSet = false;
 
   Aws::Vector<AnalysisType> m_analysisTypes;
+  bool m_repositoryAnalysisHasBeenSet = false;
   bool m_analysisTypesHasBeenSet = false;
 };
 

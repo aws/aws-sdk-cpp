@@ -138,21 +138,21 @@ class CreateMedicalVocabularyResult {
   ///@}
  private:
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   VocabularyState m_vocabularyState{VocabularyState::NOT_SET};
-  bool m_vocabularyStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_vocabularyStateHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

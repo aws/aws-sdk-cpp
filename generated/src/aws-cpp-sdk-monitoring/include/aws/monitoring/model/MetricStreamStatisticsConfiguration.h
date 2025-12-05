@@ -104,9 +104,9 @@ class MetricStreamStatisticsConfiguration {
   ///@}
  private:
   Aws::Vector<MetricStreamStatisticsMetric> m_includeMetrics;
-  bool m_includeMetricsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalStatistics;
+  bool m_includeMetricsHasBeenSet = false;
   bool m_additionalStatisticsHasBeenSet = false;
 };
 

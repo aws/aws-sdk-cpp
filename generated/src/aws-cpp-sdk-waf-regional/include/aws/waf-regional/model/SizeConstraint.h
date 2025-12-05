@@ -171,15 +171,15 @@ class SizeConstraint {
   ///@}
  private:
   FieldToMatch m_fieldToMatch;
-  bool m_fieldToMatchHasBeenSet = false;
 
   TextTransformation m_textTransformation{TextTransformation::NOT_SET};
-  bool m_textTransformationHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   long long m_size{0};
+  bool m_fieldToMatchHasBeenSet = false;
+  bool m_textTransformationHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

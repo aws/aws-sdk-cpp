@@ -77,12 +77,12 @@ class GetRateBasedStatementManagedKeysResult {
   ///@}
  private:
   RateBasedStatementManagedKeysIPSet m_managedKeysIPV4;
-  bool m_managedKeysIPV4HasBeenSet = false;
 
   RateBasedStatementManagedKeysIPSet m_managedKeysIPV6;
-  bool m_managedKeysIPV6HasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedKeysIPV4HasBeenSet = false;
+  bool m_managedKeysIPV6HasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

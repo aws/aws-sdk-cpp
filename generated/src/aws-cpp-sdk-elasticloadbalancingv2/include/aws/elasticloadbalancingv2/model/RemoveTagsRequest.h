@@ -82,9 +82,9 @@ class RemoveTagsRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_resourceArnsHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

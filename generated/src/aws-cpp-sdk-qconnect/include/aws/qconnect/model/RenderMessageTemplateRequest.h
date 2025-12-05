@@ -88,12 +88,12 @@ class RenderMessageTemplateRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   MessageTemplateAttributes m_attributes;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

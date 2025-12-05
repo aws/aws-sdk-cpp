@@ -68,9 +68,9 @@ class OfflineStoreStatus {
   ///@}
  private:
   OfflineStoreStatusValue m_status{OfflineStoreStatusValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_blockedReason;
+  bool m_statusHasBeenSet = false;
   bool m_blockedReasonHasBeenSet = false;
 };
 

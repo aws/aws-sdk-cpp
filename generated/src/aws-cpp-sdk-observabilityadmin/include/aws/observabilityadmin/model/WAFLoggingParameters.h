@@ -95,12 +95,12 @@ class WAFLoggingParameters {
   ///@}
  private:
   Aws::Vector<FieldToMatch> m_redactedFields;
-  bool m_redactedFieldsHasBeenSet = false;
 
   LoggingFilter m_loggingFilter;
-  bool m_loggingFilterHasBeenSet = false;
 
   WAFLogType m_logType{WAFLogType::NOT_SET};
+  bool m_redactedFieldsHasBeenSet = false;
+  bool m_loggingFilterHasBeenSet = false;
   bool m_logTypeHasBeenSet = false;
 };
 

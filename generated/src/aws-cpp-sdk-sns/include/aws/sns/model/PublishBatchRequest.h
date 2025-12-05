@@ -78,9 +78,9 @@ class PublishBatchRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::Vector<PublishBatchRequestEntry> m_publishBatchRequestEntries;
+  bool m_topicArnHasBeenSet = false;
   bool m_publishBatchRequestEntriesHasBeenSet = false;
 };
 

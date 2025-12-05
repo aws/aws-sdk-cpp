@@ -103,12 +103,12 @@ class EgressOnlyInternetGateway {
   ///@}
  private:
   Aws::Vector<InternetGatewayAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_egressOnlyInternetGatewayId;
-  bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

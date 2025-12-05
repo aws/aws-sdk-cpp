@@ -112,15 +112,15 @@ class OptimizationConfig {
   ///@}
  private:
   ModelQuantizationConfig m_modelQuantizationConfig;
-  bool m_modelQuantizationConfigHasBeenSet = false;
 
   ModelCompilationConfig m_modelCompilationConfig;
-  bool m_modelCompilationConfigHasBeenSet = false;
 
   ModelShardingConfig m_modelShardingConfig;
-  bool m_modelShardingConfigHasBeenSet = false;
 
   ModelSpeculativeDecodingConfig m_modelSpeculativeDecodingConfig;
+  bool m_modelQuantizationConfigHasBeenSet = false;
+  bool m_modelCompilationConfigHasBeenSet = false;
+  bool m_modelShardingConfigHasBeenSet = false;
   bool m_modelSpeculativeDecodingConfigHasBeenSet = false;
 };
 

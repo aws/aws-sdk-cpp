@@ -108,15 +108,15 @@ class AggregateConformancePackCompliance {
   ///@}
  private:
   ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   int m_compliantRuleCount{0};
-  bool m_compliantRuleCountHasBeenSet = false;
 
   int m_nonCompliantRuleCount{0};
-  bool m_nonCompliantRuleCountHasBeenSet = false;
 
   int m_totalRuleCount{0};
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_compliantRuleCountHasBeenSet = false;
+  bool m_nonCompliantRuleCountHasBeenSet = false;
   bool m_totalRuleCountHasBeenSet = false;
 };
 

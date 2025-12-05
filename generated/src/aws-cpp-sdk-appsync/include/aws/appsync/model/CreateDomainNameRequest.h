@@ -108,15 +108,15 @@ class CreateDomainNameRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

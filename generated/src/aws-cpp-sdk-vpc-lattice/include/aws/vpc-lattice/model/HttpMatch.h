@@ -97,12 +97,12 @@ class HttpMatch {
   ///@}
  private:
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   PathMatch m_pathMatch;
-  bool m_pathMatchHasBeenSet = false;
 
   Aws::Vector<HeaderMatch> m_headerMatches;
+  bool m_methodHasBeenSet = false;
+  bool m_pathMatchHasBeenSet = false;
   bool m_headerMatchesHasBeenSet = false;
 };
 

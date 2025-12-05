@@ -118,15 +118,15 @@ class GetNetworkResourceCountsRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

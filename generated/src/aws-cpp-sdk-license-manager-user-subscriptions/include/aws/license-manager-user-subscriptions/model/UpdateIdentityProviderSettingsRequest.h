@@ -109,15 +109,15 @@ class UpdateIdentityProviderSettingsRequest : public LicenseManagerUserSubscript
   ///@}
  private:
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   Aws::String m_identityProviderArn;
-  bool m_identityProviderArnHasBeenSet = false;
 
   UpdateSettings m_updateSettings;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_productHasBeenSet = false;
+  bool m_identityProviderArnHasBeenSet = false;
   bool m_updateSettingsHasBeenSet = false;
 };
 

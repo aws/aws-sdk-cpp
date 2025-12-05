@@ -169,21 +169,21 @@ class LockSnapshotRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   LockMode m_lockMode{LockMode::NOT_SET};
-  bool m_lockModeHasBeenSet = false;
 
   int m_coolOffPeriod{0};
-  bool m_coolOffPeriodHasBeenSet = false;
 
   int m_lockDuration{0};
-  bool m_lockDurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_lockModeHasBeenSet = false;
+  bool m_coolOffPeriodHasBeenSet = false;
+  bool m_lockDurationHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
 };
 

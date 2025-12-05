@@ -235,30 +235,30 @@ class StartGameSessionPlacementRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_placementId;
-  bool m_placementIdHasBeenSet = false;
 
   Aws::String m_gameSessionQueueName;
-  bool m_gameSessionQueueNameHasBeenSet = false;
 
   Aws::Vector<GameProperty> m_gameProperties;
-  bool m_gamePropertiesHasBeenSet = false;
 
   int m_maximumPlayerSessionCount{0};
-  bool m_maximumPlayerSessionCountHasBeenSet = false;
 
   Aws::String m_gameSessionName;
-  bool m_gameSessionNameHasBeenSet = false;
 
   Aws::Vector<PlayerLatency> m_playerLatencies;
-  bool m_playerLatenciesHasBeenSet = false;
 
   Aws::Vector<DesiredPlayerSession> m_desiredPlayerSessions;
-  bool m_desiredPlayerSessionsHasBeenSet = false;
 
   Aws::String m_gameSessionData;
-  bool m_gameSessionDataHasBeenSet = false;
 
   PriorityConfigurationOverride m_priorityConfigurationOverride;
+  bool m_placementIdHasBeenSet = false;
+  bool m_gameSessionQueueNameHasBeenSet = false;
+  bool m_gamePropertiesHasBeenSet = false;
+  bool m_maximumPlayerSessionCountHasBeenSet = false;
+  bool m_gameSessionNameHasBeenSet = false;
+  bool m_playerLatenciesHasBeenSet = false;
+  bool m_desiredPlayerSessionsHasBeenSet = false;
+  bool m_gameSessionDataHasBeenSet = false;
   bool m_priorityConfigurationOverrideHasBeenSet = false;
 };
 

@@ -170,24 +170,24 @@ class CreateRuleRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Language m_language{Language::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outcomes;
-  bool m_outcomesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_outcomesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -167,24 +167,24 @@ class CreateProfileRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_phone;
-  bool m_phoneHasBeenSet = false;
 
   Aws::String m_businessName;
-  bool m_businessNameHasBeenSet = false;
 
   Logging m_logging{Logging::NOT_SET};
-  bool m_loggingHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_phoneHasBeenSet = false;
+  bool m_businessNameHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class ModifyDBParameterGroupRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_dBParameterGroupNameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

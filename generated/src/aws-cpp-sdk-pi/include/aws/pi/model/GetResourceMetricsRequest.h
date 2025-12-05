@@ -231,30 +231,30 @@ class GetResourceMetricsRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<MetricQuery> m_metricQueries;
-  bool m_metricQueriesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_periodInSeconds{0};
-  bool m_periodInSecondsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   PeriodAlignment m_periodAlignment{PeriodAlignment::NOT_SET};
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_metricQueriesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_periodInSecondsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_periodAlignmentHasBeenSet = false;
 };
 

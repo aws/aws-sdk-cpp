@@ -75,9 +75,9 @@ class AggregateColumn {
   ///@}
  private:
   Aws::Vector<Aws::String> m_columnNames;
-  bool m_columnNamesHasBeenSet = false;
 
   AggregateFunctionName m_function{AggregateFunctionName::NOT_SET};
+  bool m_columnNamesHasBeenSet = false;
   bool m_functionHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class DescribeNotificationsForBudgetResult {
   ///@}
  private:
   Aws::Vector<Notification> m_notifications;
-  bool m_notificationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

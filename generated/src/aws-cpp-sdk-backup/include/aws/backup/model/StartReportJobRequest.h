@@ -69,9 +69,9 @@ class StartReportJobRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_reportPlanName;
-  bool m_reportPlanNameHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_reportPlanNameHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

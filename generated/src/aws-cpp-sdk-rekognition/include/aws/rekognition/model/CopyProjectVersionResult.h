@@ -59,9 +59,9 @@ class CopyProjectVersionResult {
   ///@}
  private:
   Aws::String m_projectVersionArn;
-  bool m_projectVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

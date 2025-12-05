@@ -74,9 +74,9 @@ class StreamProcessorOutput {
   ///@}
  private:
   KinesisDataStream m_kinesisDataStream;
-  bool m_kinesisDataStreamHasBeenSet = false;
 
   S3Destination m_s3Destination;
+  bool m_kinesisDataStreamHasBeenSet = false;
   bool m_s3DestinationHasBeenSet = false;
 };
 

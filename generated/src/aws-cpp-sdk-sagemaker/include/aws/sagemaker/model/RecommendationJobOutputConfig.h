@@ -85,9 +85,9 @@ class RecommendationJobOutputConfig {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   RecommendationJobCompiledOutputConfig m_compiledOutputConfig;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_compiledOutputConfigHasBeenSet = false;
 };
 

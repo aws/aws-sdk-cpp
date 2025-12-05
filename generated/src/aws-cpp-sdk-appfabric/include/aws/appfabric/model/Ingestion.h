@@ -175,27 +175,27 @@ class Ingestion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_appBundleArn;
-  bool m_appBundleArnHasBeenSet = false;
 
   Aws::String m_app;
-  bool m_appHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   IngestionState m_state{IngestionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   IngestionType m_ingestionType{IngestionType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_appBundleArnHasBeenSet = false;
+  bool m_appHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_ingestionTypeHasBeenSet = false;
 };
 

@@ -174,24 +174,24 @@ class ExecuteStatementRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_statement;
-  bool m_statementHasBeenSet = false;
 
   Aws::Vector<AttributeValue> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   bool m_consistentRead{false};
-  bool m_consistentReadHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
-  bool m_returnConsumedCapacityHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure{ReturnValuesOnConditionCheckFailure::NOT_SET};
+  bool m_statementHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_consistentReadHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_returnConsumedCapacityHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
 };
 

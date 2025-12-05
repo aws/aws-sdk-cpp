@@ -79,9 +79,9 @@ class TieringConfigurationInputForUpdate {
   ///@}
  private:
   Aws::Vector<ResourceSelection> m_resourceSelection;
-  bool m_resourceSelectionHasBeenSet = false;
 
   Aws::String m_backupVaultName;
+  bool m_resourceSelectionHasBeenSet = false;
   bool m_backupVaultNameHasBeenSet = false;
 };
 

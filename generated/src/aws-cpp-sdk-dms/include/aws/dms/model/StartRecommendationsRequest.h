@@ -74,9 +74,9 @@ class StartRecommendationsRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   RecommendationSettings m_settings;
+  bool m_databaseIdHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

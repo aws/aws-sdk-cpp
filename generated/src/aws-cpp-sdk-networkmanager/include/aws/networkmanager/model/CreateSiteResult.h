@@ -60,9 +60,9 @@ class CreateSiteResult {
   ///@}
  private:
   Site m_site;
-  bool m_siteHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_siteHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

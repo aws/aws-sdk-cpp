@@ -159,18 +159,18 @@ class EnabledBaselineFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_targetIdentifiers;
-  bool m_targetIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_baselineIdentifiers;
-  bool m_baselineIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parentIdentifiers;
-  bool m_parentIdentifiersHasBeenSet = false;
 
   Aws::Vector<EnablementStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   Aws::Vector<EnabledBaselineDriftStatus> m_inheritanceDriftStatuses;
+  bool m_targetIdentifiersHasBeenSet = false;
+  bool m_baselineIdentifiersHasBeenSet = false;
+  bool m_parentIdentifiersHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
   bool m_inheritanceDriftStatusesHasBeenSet = false;
 };
 

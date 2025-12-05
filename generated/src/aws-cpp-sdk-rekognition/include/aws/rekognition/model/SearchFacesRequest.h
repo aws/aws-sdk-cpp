@@ -102,15 +102,15 @@ class SearchFacesRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::String m_faceId;
-  bool m_faceIdHasBeenSet = false;
 
   int m_maxFaces{0};
-  bool m_maxFacesHasBeenSet = false;
 
   double m_faceMatchThreshold{0.0};
+  bool m_collectionIdHasBeenSet = false;
+  bool m_faceIdHasBeenSet = false;
+  bool m_maxFacesHasBeenSet = false;
   bool m_faceMatchThresholdHasBeenSet = false;
 };
 

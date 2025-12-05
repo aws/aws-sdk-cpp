@@ -137,15 +137,15 @@ class StudioWebPortalSettings {
   ///@}
  private:
   Aws::Vector<MlTools> m_hiddenMlTools;
-  bool m_hiddenMlToolsHasBeenSet = false;
 
   Aws::Vector<AppType> m_hiddenAppTypes;
-  bool m_hiddenAppTypesHasBeenSet = false;
 
   Aws::Vector<AppInstanceType> m_hiddenInstanceTypes;
-  bool m_hiddenInstanceTypesHasBeenSet = false;
 
   Aws::Vector<HiddenSageMakerImage> m_hiddenSageMakerImageVersionAliases;
+  bool m_hiddenMlToolsHasBeenSet = false;
+  bool m_hiddenAppTypesHasBeenSet = false;
+  bool m_hiddenInstanceTypesHasBeenSet = false;
   bool m_hiddenSageMakerImageVersionAliasesHasBeenSet = false;
 };
 

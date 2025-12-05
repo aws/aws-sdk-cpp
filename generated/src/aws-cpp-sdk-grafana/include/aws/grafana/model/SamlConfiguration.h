@@ -139,18 +139,18 @@ class SamlConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedOrganizations;
-  bool m_allowedOrganizationsHasBeenSet = false;
 
   AssertionAttributes m_assertionAttributes;
-  bool m_assertionAttributesHasBeenSet = false;
 
   IdpMetadata m_idpMetadata;
-  bool m_idpMetadataHasBeenSet = false;
 
   int m_loginValidityDuration{0};
-  bool m_loginValidityDurationHasBeenSet = false;
 
   RoleValues m_roleValues;
+  bool m_allowedOrganizationsHasBeenSet = false;
+  bool m_assertionAttributesHasBeenSet = false;
+  bool m_idpMetadataHasBeenSet = false;
+  bool m_loginValidityDurationHasBeenSet = false;
   bool m_roleValuesHasBeenSet = false;
 };
 

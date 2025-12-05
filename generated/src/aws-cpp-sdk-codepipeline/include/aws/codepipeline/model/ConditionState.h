@@ -76,9 +76,9 @@ class ConditionState {
   ///@}
  private:
   ConditionExecution m_latestExecution;
-  bool m_latestExecutionHasBeenSet = false;
 
   Aws::Vector<RuleState> m_ruleStates;
+  bool m_latestExecutionHasBeenSet = false;
   bool m_ruleStatesHasBeenSet = false;
 };
 

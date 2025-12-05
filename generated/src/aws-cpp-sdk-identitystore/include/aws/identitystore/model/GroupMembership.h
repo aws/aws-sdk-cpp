@@ -184,27 +184,27 @@ class GroupMembership {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   MemberId m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_updatedBy;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_memberIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class IdleRecommendationError {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   IdleRecommendationResourceType m_resourceType{IdleRecommendationResourceType::NOT_SET};
+  bool m_identifierHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

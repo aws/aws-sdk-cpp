@@ -107,15 +107,15 @@ class SensitivityAggregations {
   ///@}
  private:
   long long m_classifiableSizeInBytes{0};
-  bool m_classifiableSizeInBytesHasBeenSet = false;
 
   long long m_publiclyAccessibleCount{0};
-  bool m_publiclyAccessibleCountHasBeenSet = false;
 
   long long m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   long long m_totalSizeInBytes{0};
+  bool m_classifiableSizeInBytesHasBeenSet = false;
+  bool m_publiclyAccessibleCountHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
   bool m_totalSizeInBytesHasBeenSet = false;
 };
 

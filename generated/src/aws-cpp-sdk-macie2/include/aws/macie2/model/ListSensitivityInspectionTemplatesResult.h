@@ -89,12 +89,12 @@ class ListSensitivityInspectionTemplatesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SensitivityInspectionTemplatesEntry> m_sensitivityInspectionTemplates;
-  bool m_sensitivityInspectionTemplatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sensitivityInspectionTemplatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

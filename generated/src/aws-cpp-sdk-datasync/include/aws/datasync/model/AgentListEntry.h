@@ -113,15 +113,15 @@ class AgentListEntry {
   ///@}
  private:
   Aws::String m_agentArn;
-  bool m_agentArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AgentStatus m_status{AgentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Platform m_platform;
+  bool m_agentArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

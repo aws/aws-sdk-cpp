@@ -79,9 +79,9 @@ class IpamScopeExternalAuthorityConfiguration {
   ///@}
  private:
   IpamScopeExternalAuthorityType m_type{IpamScopeExternalAuthorityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_externalResourceIdentifier;
+  bool m_typeHasBeenSet = false;
   bool m_externalResourceIdentifierHasBeenSet = false;
 };
 

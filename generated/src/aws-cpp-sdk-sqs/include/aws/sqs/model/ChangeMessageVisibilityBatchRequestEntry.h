@@ -89,12 +89,12 @@ class ChangeMessageVisibilityBatchRequestEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_receiptHandle;
-  bool m_receiptHandleHasBeenSet = false;
 
   int m_visibilityTimeout{0};
+  bool m_idHasBeenSet = false;
+  bool m_receiptHandleHasBeenSet = false;
   bool m_visibilityTimeoutHasBeenSet = false;
 };
 

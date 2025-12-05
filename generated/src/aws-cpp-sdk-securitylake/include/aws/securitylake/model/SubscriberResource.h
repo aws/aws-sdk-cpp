@@ -332,48 +332,48 @@ class SubscriberResource {
   ///@}
  private:
   Aws::Vector<AccessType> m_accessTypes;
-  bool m_accessTypesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_resourceShareName;
-  bool m_resourceShareNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   Aws::Vector<LogSourceResource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::String m_subscriberArn;
-  bool m_subscriberArnHasBeenSet = false;
 
   Aws::String m_subscriberDescription;
-  bool m_subscriberDescriptionHasBeenSet = false;
 
   Aws::String m_subscriberEndpoint;
-  bool m_subscriberEndpointHasBeenSet = false;
 
   Aws::String m_subscriberId;
-  bool m_subscriberIdHasBeenSet = false;
 
   AwsIdentity m_subscriberIdentity;
-  bool m_subscriberIdentityHasBeenSet = false;
 
   Aws::String m_subscriberName;
-  bool m_subscriberNameHasBeenSet = false;
 
   SubscriberStatus m_subscriberStatus{SubscriberStatus::NOT_SET};
-  bool m_subscriberStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_accessTypesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_resourceShareNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_s3BucketArnHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_subscriberArnHasBeenSet = false;
+  bool m_subscriberDescriptionHasBeenSet = false;
+  bool m_subscriberEndpointHasBeenSet = false;
+  bool m_subscriberIdHasBeenSet = false;
+  bool m_subscriberIdentityHasBeenSet = false;
+  bool m_subscriberNameHasBeenSet = false;
+  bool m_subscriberStatusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

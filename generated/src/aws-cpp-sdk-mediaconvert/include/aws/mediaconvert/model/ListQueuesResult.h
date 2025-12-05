@@ -117,18 +117,18 @@ class ListQueuesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Queue> m_queues;
-  bool m_queuesHasBeenSet = false;
 
   int m_totalConcurrentJobs{0};
-  bool m_totalConcurrentJobsHasBeenSet = false;
 
   int m_unallocatedConcurrentJobs{0};
-  bool m_unallocatedConcurrentJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_queuesHasBeenSet = false;
+  bool m_totalConcurrentJobsHasBeenSet = false;
+  bool m_unallocatedConcurrentJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

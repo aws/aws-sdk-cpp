@@ -128,18 +128,18 @@ class CreateVirtualClusterRequest : public EMRContainersRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ContainerProvider m_containerProvider;
-  bool m_containerProviderHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_securityConfigurationId;
+  bool m_nameHasBeenSet = false;
+  bool m_containerProviderHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_securityConfigurationIdHasBeenSet = false;
 };
 

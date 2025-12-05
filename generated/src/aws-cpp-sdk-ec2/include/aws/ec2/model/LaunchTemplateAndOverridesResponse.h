@@ -72,9 +72,9 @@ class LaunchTemplateAndOverridesResponse {
   ///@}
  private:
   FleetLaunchTemplateSpecification m_launchTemplateSpecification;
-  bool m_launchTemplateSpecificationHasBeenSet = false;
 
   FleetLaunchTemplateOverrides m_overrides;
+  bool m_launchTemplateSpecificationHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

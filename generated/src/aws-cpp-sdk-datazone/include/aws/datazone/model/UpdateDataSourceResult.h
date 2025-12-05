@@ -454,75 +454,75 @@ class UpdateDataSourceResult {
   ///@}
  private:
   Aws::Vector<FormOutput> m_assetFormsOutput;
-  bool m_assetFormsOutputHasBeenSet = false;
 
   DataSourceConfigurationOutput m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   EnableSetting m_enableSetting{EnableSetting::NOT_SET};
-  bool m_enableSettingHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   DataSourceErrorMessage m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRunAt{};
-  bool m_lastRunAtHasBeenSet = false;
 
   DataSourceErrorMessage m_lastRunErrorMessage;
-  bool m_lastRunErrorMessageHasBeenSet = false;
 
   DataSourceRunStatus m_lastRunStatus{DataSourceRunStatus::NOT_SET};
-  bool m_lastRunStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   bool m_publishOnImport{false};
-  bool m_publishOnImportHasBeenSet = false;
 
   RecommendationConfiguration m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   bool m_retainPermissionsOnRevokeFailure{false};
-  bool m_retainPermissionsOnRevokeFailureHasBeenSet = false;
 
   ScheduleConfiguration m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   SelfGrantStatusOutput m_selfGrantStatus;
-  bool m_selfGrantStatusHasBeenSet = false;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetFormsOutputHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_enableSettingHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastRunAtHasBeenSet = false;
+  bool m_lastRunErrorMessageHasBeenSet = false;
+  bool m_lastRunStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_publishOnImportHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_retainPermissionsOnRevokeFailureHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_selfGrantStatusHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

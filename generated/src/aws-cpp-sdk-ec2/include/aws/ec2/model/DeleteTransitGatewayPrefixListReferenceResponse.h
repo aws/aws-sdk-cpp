@@ -63,9 +63,9 @@ class DeleteTransitGatewayPrefixListReferenceResponse {
   ///@}
  private:
   TransitGatewayPrefixListReference m_transitGatewayPrefixListReference;
-  bool m_transitGatewayPrefixListReferenceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayPrefixListReferenceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateMultiRegionClusterResult {
   ///@}
  private:
   MultiRegionCluster m_multiRegionCluster;
-  bool m_multiRegionClusterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_multiRegionClusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

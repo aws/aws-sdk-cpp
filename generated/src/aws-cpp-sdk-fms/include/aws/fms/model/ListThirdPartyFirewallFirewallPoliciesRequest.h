@@ -94,12 +94,12 @@ class ListThirdPartyFirewallFirewallPoliciesRequest : public FMSRequest {
   ///@}
  private:
   ThirdPartyFirewall m_thirdPartyFirewall{ThirdPartyFirewall::NOT_SET};
-  bool m_thirdPartyFirewallHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_thirdPartyFirewallHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

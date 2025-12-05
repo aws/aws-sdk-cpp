@@ -59,9 +59,9 @@ class StartEngagementResult {
   ///@}
  private:
   Aws::String m_engagementArn;
-  bool m_engagementArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_engagementArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

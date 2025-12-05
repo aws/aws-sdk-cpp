@@ -165,15 +165,15 @@ class CreateOpenIDConnectProviderRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientIDList;
-  bool m_clientIDListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_thumbprintList;
-  bool m_thumbprintListHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_urlHasBeenSet = false;
+  bool m_clientIDListHasBeenSet = false;
+  bool m_thumbprintListHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

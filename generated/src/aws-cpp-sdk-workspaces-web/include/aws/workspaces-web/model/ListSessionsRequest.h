@@ -157,24 +157,24 @@ class ListSessionsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   SessionSortBy m_sortBy{SessionSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SessionStatus m_status{SessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_portalIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

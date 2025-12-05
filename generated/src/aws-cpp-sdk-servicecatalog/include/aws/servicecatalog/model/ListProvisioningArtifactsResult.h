@@ -85,12 +85,12 @@ class ListProvisioningArtifactsResult {
   ///@}
  private:
   Aws::Vector<ProvisioningArtifactDetail> m_provisioningArtifactDetails;
-  bool m_provisioningArtifactDetailsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisioningArtifactDetailsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

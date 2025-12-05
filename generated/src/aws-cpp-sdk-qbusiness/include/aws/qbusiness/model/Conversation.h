@@ -88,12 +88,12 @@ class Conversation {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_conversationIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

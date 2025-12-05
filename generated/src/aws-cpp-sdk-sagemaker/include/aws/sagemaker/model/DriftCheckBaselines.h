@@ -112,15 +112,15 @@ class DriftCheckBaselines {
   ///@}
  private:
   DriftCheckBias m_bias;
-  bool m_biasHasBeenSet = false;
 
   DriftCheckExplainability m_explainability;
-  bool m_explainabilityHasBeenSet = false;
 
   DriftCheckModelQuality m_modelQuality;
-  bool m_modelQualityHasBeenSet = false;
 
   DriftCheckModelDataQuality m_modelDataQuality;
+  bool m_biasHasBeenSet = false;
+  bool m_explainabilityHasBeenSet = false;
+  bool m_modelQualityHasBeenSet = false;
   bool m_modelDataQualityHasBeenSet = false;
 };
 

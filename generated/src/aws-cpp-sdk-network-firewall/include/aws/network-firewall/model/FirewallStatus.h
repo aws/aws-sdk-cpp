@@ -162,18 +162,18 @@ class FirewallStatus {
   ///@}
  private:
   FirewallStatusValue m_status{FirewallStatusValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ConfigurationSyncState m_configurationSyncStateSummary{ConfigurationSyncState::NOT_SET};
-  bool m_configurationSyncStateSummaryHasBeenSet = false;
 
   Aws::Map<Aws::String, SyncState> m_syncStates;
-  bool m_syncStatesHasBeenSet = false;
 
   CapacityUsageSummary m_capacityUsageSummary;
-  bool m_capacityUsageSummaryHasBeenSet = false;
 
   TransitGatewayAttachmentSyncState m_transitGatewayAttachmentSyncState;
+  bool m_statusHasBeenSet = false;
+  bool m_configurationSyncStateSummaryHasBeenSet = false;
+  bool m_syncStatesHasBeenSet = false;
+  bool m_capacityUsageSummaryHasBeenSet = false;
   bool m_transitGatewayAttachmentSyncStateHasBeenSet = false;
 };
 

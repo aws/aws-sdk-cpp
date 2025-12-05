@@ -68,9 +68,9 @@ class DescribeLoadBalancerAttributesResult {
   ///@}
  private:
   LoadBalancerAttributes m_loadBalancerAttributes;
-  bool m_loadBalancerAttributesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_loadBalancerAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

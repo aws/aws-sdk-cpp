@@ -216,33 +216,33 @@ class InferenceExperimentSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InferenceExperimentType m_type{InferenceExperimentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   InferenceExperimentSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   InferenceExperimentStatus m_status{InferenceExperimentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class PortfolioShareDetail {
   ///@}
  private:
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   DescribePortfolioShareType m_type{DescribePortfolioShareType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   bool m_accepted{false};
-  bool m_acceptedHasBeenSet = false;
 
   bool m_shareTagOptions{false};
-  bool m_shareTagOptionsHasBeenSet = false;
 
   bool m_sharePrincipals{false};
+  bool m_principalIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_acceptedHasBeenSet = false;
+  bool m_shareTagOptionsHasBeenSet = false;
   bool m_sharePrincipalsHasBeenSet = false;
 };
 

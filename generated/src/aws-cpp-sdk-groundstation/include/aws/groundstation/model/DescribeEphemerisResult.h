@@ -245,39 +245,39 @@ class DescribeEphemerisResult {
   ///@}
  private:
   Aws::String m_ephemerisId;
-  bool m_ephemerisIdHasBeenSet = false;
 
   Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
 
   EphemerisStatus m_status{EphemerisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EphemerisTypeDescription m_suppliedData;
-  bool m_suppliedDataHasBeenSet = false;
 
   EphemerisInvalidReason m_invalidReason{EphemerisInvalidReason::NOT_SET};
-  bool m_invalidReasonHasBeenSet = false;
 
   Aws::Vector<EphemerisErrorReason> m_errorReasons;
-  bool m_errorReasonsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ephemerisIdHasBeenSet = false;
+  bool m_satelliteIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_suppliedDataHasBeenSet = false;
+  bool m_invalidReasonHasBeenSet = false;
+  bool m_errorReasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

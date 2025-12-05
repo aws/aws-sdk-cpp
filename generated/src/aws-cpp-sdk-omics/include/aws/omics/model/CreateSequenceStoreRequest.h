@@ -219,30 +219,30 @@ class CreateSequenceStoreRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SseConfig m_sseConfig;
-  bool m_sseConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_fallbackLocation;
-  bool m_fallbackLocationHasBeenSet = false;
 
   ETagAlgorithmFamily m_eTagAlgorithmFamily{ETagAlgorithmFamily::NOT_SET};
-  bool m_eTagAlgorithmFamilyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_propagatedSetLevelTags;
-  bool m_propagatedSetLevelTagsHasBeenSet = false;
 
   S3AccessConfig m_s3AccessConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sseConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_fallbackLocationHasBeenSet = false;
+  bool m_eTagAlgorithmFamilyHasBeenSet = false;
+  bool m_propagatedSetLevelTagsHasBeenSet = false;
   bool m_s3AccessConfigHasBeenSet = false;
 };
 

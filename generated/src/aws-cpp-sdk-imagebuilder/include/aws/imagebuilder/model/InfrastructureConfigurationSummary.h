@@ -235,33 +235,33 @@ class InfrastructureConfigurationSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::String m_dateUpdated;
-  bool m_dateUpdatedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Placement m_placement;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateUpdatedHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_instanceProfileNameHasBeenSet = false;
   bool m_placementHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class GuardrailAutomatedReasoningPolicy {
   ///@}
  private:
   Aws::Vector<Aws::String> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   double m_confidenceThreshold{0.0};
+  bool m_policiesHasBeenSet = false;
   bool m_confidenceThresholdHasBeenSet = false;
 };
 

@@ -211,27 +211,27 @@ class AssetModelProperty {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PropertyDataType m_dataType{PropertyDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_dataTypeSpec;
-  bool m_dataTypeSpecHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   PropertyType m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<AssetModelPropertyPathSegment> m_path;
+  bool m_idHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dataTypeSpecHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_pathHasBeenSet = false;
 };
 

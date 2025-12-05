@@ -90,12 +90,12 @@ class DeleteApplicationVersionRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   bool m_deleteSourceBundle{false};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
   bool m_deleteSourceBundleHasBeenSet = false;
 };
 

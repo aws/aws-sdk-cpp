@@ -59,9 +59,9 @@ class CreateLogAnomalyDetectorResult {
   ///@}
  private:
   Aws::String m_anomalyDetectorArn;
-  bool m_anomalyDetectorArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anomalyDetectorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

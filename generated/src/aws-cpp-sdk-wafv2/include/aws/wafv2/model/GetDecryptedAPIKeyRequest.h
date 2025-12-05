@@ -72,9 +72,9 @@ class GetDecryptedAPIKeyRequest : public WAFV2Request {
   ///@}
  private:
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_aPIKey;
+  bool m_scopeHasBeenSet = false;
   bool m_aPIKeyHasBeenSet = false;
 };
 

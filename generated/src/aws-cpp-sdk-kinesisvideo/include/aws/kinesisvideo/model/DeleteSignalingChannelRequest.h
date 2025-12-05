@@ -68,9 +68,9 @@ class DeleteSignalingChannelRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_channelARN;
-  bool m_channelARNHasBeenSet = false;
 
   Aws::String m_currentVersion;
+  bool m_channelARNHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
 };
 

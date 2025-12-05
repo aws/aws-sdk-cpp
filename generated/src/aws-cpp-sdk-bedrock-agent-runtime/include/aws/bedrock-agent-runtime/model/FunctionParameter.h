@@ -90,12 +90,12 @@ class FunctionParameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

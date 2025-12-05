@@ -68,9 +68,9 @@ class CustomPluginFileDescription {
   ///@}
  private:
   Aws::String m_fileMd5;
-  bool m_fileMd5HasBeenSet = false;
 
   long long m_fileSize{0};
+  bool m_fileMd5HasBeenSet = false;
   bool m_fileSizeHasBeenSet = false;
 };
 

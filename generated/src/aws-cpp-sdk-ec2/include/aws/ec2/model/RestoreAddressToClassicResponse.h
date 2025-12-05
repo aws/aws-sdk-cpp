@@ -76,12 +76,12 @@ class RestoreAddressToClassicResponse {
   ///@}
  private:
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_publicIpHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

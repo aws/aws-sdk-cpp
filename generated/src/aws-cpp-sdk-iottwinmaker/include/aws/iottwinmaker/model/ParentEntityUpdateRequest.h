@@ -67,9 +67,9 @@ class ParentEntityUpdateRequest {
   ///@}
  private:
   ParentEntityUpdateType m_updateType{ParentEntityUpdateType::NOT_SET};
-  bool m_updateTypeHasBeenSet = false;
 
   Aws::String m_parentEntityId;
+  bool m_updateTypeHasBeenSet = false;
   bool m_parentEntityIdHasBeenSet = false;
 };
 

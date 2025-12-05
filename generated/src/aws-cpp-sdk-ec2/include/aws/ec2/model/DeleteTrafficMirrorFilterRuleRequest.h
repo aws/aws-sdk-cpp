@@ -70,9 +70,9 @@ class DeleteTrafficMirrorFilterRuleRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_trafficMirrorFilterRuleId;
-  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class TemplateRevision {
   ///@}
  private:
   int m_majorRevision{0};
-  bool m_majorRevisionHasBeenSet = false;
 
   int m_minorRevision{0};
+  bool m_majorRevisionHasBeenSet = false;
   bool m_minorRevisionHasBeenSet = false;
 };
 

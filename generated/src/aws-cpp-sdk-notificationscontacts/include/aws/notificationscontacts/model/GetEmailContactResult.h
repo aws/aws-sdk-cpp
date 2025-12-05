@@ -60,9 +60,9 @@ class GetEmailContactResult {
   ///@}
  private:
   EmailContact m_emailContact;
-  bool m_emailContactHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emailContactHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

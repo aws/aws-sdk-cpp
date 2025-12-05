@@ -200,27 +200,27 @@ class MsSmoothGroupSettings {
   ///@}
  private:
   Aws::Vector<MsSmoothAdditionalManifest> m_additionalManifests;
-  bool m_additionalManifestsHasBeenSet = false;
 
   MsSmoothAudioDeduplication m_audioDeduplication{MsSmoothAudioDeduplication::NOT_SET};
-  bool m_audioDeduplicationHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   DestinationSettings m_destinationSettings;
-  bool m_destinationSettingsHasBeenSet = false;
 
   MsSmoothEncryptionSettings m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   int m_fragmentLength{0};
-  bool m_fragmentLengthHasBeenSet = false;
 
   MsSmoothFragmentLengthControl m_fragmentLengthControl{MsSmoothFragmentLengthControl::NOT_SET};
-  bool m_fragmentLengthControlHasBeenSet = false;
 
   MsSmoothManifestEncoding m_manifestEncoding{MsSmoothManifestEncoding::NOT_SET};
+  bool m_additionalManifestsHasBeenSet = false;
+  bool m_audioDeduplicationHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationSettingsHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_fragmentLengthHasBeenSet = false;
+  bool m_fragmentLengthControlHasBeenSet = false;
   bool m_manifestEncodingHasBeenSet = false;
 };
 

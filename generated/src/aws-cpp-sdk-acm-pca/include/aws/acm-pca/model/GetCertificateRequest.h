@@ -74,9 +74,9 @@ class GetCertificateRequest : public ACMPCARequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_certificateArn;
+  bool m_certificateAuthorityArnHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
 };
 

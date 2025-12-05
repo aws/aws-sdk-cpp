@@ -87,12 +87,12 @@ class ListLifecyclePoliciesResult {
   ///@}
  private:
   Aws::Vector<LifecyclePolicySummary> m_lifecyclePolicySummaries;
-  bool m_lifecyclePolicySummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecyclePolicySummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

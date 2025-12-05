@@ -197,30 +197,30 @@ class ExportTask {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_taskName;
-  bool m_taskNameHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   long long m_from{0};
-  bool m_fromHasBeenSet = false;
 
   long long m_to{0};
-  bool m_toHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_destinationPrefix;
-  bool m_destinationPrefixHasBeenSet = false;
 
   ExportTaskStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   ExportTaskExecutionInfo m_executionInfo;
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskNameHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
+  bool m_toHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationPrefixHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_executionInfoHasBeenSet = false;
 };
 

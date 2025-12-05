@@ -60,9 +60,9 @@ class CreateVerifiedAccessTrustProviderResponse {
   ///@}
  private:
   VerifiedAccessTrustProvider m_verifiedAccessTrustProvider;
-  bool m_verifiedAccessTrustProviderHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessTrustProviderHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

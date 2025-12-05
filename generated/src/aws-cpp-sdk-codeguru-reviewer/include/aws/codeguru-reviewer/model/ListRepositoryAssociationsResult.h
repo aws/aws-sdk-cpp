@@ -91,12 +91,12 @@ class ListRepositoryAssociationsResult {
   ///@}
  private:
   Aws::Vector<RepositoryAssociationSummary> m_repositoryAssociationSummaries;
-  bool m_repositoryAssociationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryAssociationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

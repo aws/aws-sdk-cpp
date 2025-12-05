@@ -74,9 +74,9 @@ class GrantFlowEntitlementsRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::Vector<GrantEntitlementRequest> m_entitlements;
-  bool m_entitlementsHasBeenSet = false;
 
   Aws::String m_flowArn;
+  bool m_entitlementsHasBeenSet = false;
   bool m_flowArnHasBeenSet = false;
 };
 

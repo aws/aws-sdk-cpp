@@ -188,27 +188,27 @@ class CoreNetworkChangeEventValues {
   ///@}
  private:
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   Aws::String m_peerEdgeLocation;
-  bool m_peerEdgeLocationHasBeenSet = false;
 
   RoutingPolicyDirection m_routingPolicyDirection{RoutingPolicyDirection::NOT_SET};
-  bool m_routingPolicyDirectionHasBeenSet = false;
 
   Aws::String m_segmentName;
-  bool m_segmentNameHasBeenSet = false;
 
   Aws::String m_networkFunctionGroupName;
-  bool m_networkFunctionGroupNameHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::Vector<RoutingPolicyAssociationDetail> m_routingPolicyAssociationDetails;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_peerEdgeLocationHasBeenSet = false;
+  bool m_routingPolicyDirectionHasBeenSet = false;
+  bool m_segmentNameHasBeenSet = false;
+  bool m_networkFunctionGroupNameHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
   bool m_routingPolicyAssociationDetailsHasBeenSet = false;
 };
 

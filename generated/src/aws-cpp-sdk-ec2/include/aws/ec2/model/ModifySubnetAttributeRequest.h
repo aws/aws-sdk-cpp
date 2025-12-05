@@ -264,36 +264,36 @@ class ModifySubnetAttributeRequest : public EC2Request {
   ///@}
  private:
   AttributeBooleanValue m_assignIpv6AddressOnCreation;
-  bool m_assignIpv6AddressOnCreationHasBeenSet = false;
 
   AttributeBooleanValue m_mapPublicIpOnLaunch;
-  bool m_mapPublicIpOnLaunchHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   AttributeBooleanValue m_mapCustomerOwnedIpOnLaunch;
-  bool m_mapCustomerOwnedIpOnLaunchHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
-  bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
   AttributeBooleanValue m_enableDns64;
-  bool m_enableDns64HasBeenSet = false;
 
   HostnameType m_privateDnsHostnameTypeOnLaunch{HostnameType::NOT_SET};
-  bool m_privateDnsHostnameTypeOnLaunchHasBeenSet = false;
 
   AttributeBooleanValue m_enableResourceNameDnsARecordOnLaunch;
-  bool m_enableResourceNameDnsARecordOnLaunchHasBeenSet = false;
 
   AttributeBooleanValue m_enableResourceNameDnsAAAARecordOnLaunch;
-  bool m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet = false;
 
   int m_enableLniAtDeviceIndex{0};
-  bool m_enableLniAtDeviceIndexHasBeenSet = false;
 
   AttributeBooleanValue m_disableLniAtDeviceIndex;
+  bool m_assignIpv6AddressOnCreationHasBeenSet = false;
+  bool m_mapPublicIpOnLaunchHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_mapCustomerOwnedIpOnLaunchHasBeenSet = false;
+  bool m_customerOwnedIpv4PoolHasBeenSet = false;
+  bool m_enableDns64HasBeenSet = false;
+  bool m_privateDnsHostnameTypeOnLaunchHasBeenSet = false;
+  bool m_enableResourceNameDnsARecordOnLaunchHasBeenSet = false;
+  bool m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet = false;
+  bool m_enableLniAtDeviceIndexHasBeenSet = false;
   bool m_disableLniAtDeviceIndexHasBeenSet = false;
 };
 

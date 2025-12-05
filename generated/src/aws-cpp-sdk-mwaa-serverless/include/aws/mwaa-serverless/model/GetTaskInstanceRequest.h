@@ -87,12 +87,12 @@ class GetTaskInstanceRequest : public MWAAServerlessRequest {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_taskInstanceId;
-  bool m_taskInstanceIdHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_taskInstanceIdHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

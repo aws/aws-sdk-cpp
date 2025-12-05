@@ -67,9 +67,9 @@ class CreateGroupResult {
   ///@}
  private:
   Group m_group;
-  bool m_groupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_groupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

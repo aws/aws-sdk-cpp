@@ -140,15 +140,15 @@ class InputTamsSettings {
   ///@}
  private:
   Aws::String m_authConnectionArn;
-  bool m_authConnectionArnHasBeenSet = false;
 
   TamsGapHandling m_gapHandling{TamsGapHandling::NOT_SET};
-  bool m_gapHandlingHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_timerange;
+  bool m_authConnectionArnHasBeenSet = false;
+  bool m_gapHandlingHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
   bool m_timerangeHasBeenSet = false;
 };
 

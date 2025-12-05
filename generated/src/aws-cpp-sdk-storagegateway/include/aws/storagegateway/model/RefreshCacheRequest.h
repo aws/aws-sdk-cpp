@@ -106,12 +106,12 @@ class RefreshCacheRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_folderList;
-  bool m_folderListHasBeenSet = false;
 
   bool m_recursive{false};
+  bool m_fileShareARNHasBeenSet = false;
+  bool m_folderListHasBeenSet = false;
   bool m_recursiveHasBeenSet = false;
 };
 

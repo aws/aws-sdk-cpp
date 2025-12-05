@@ -78,9 +78,9 @@ class RouteLegGeometry {
   ///@}
  private:
   Aws::Vector<Aws::Vector<double>> m_lineString;
-  bool m_lineStringHasBeenSet = false;
 
   Aws::String m_polyline;
+  bool m_lineStringHasBeenSet = false;
   bool m_polylineHasBeenSet = false;
 };
 

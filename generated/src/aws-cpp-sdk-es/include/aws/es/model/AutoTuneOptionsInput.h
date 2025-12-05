@@ -78,9 +78,9 @@ class AutoTuneOptionsInput {
   ///@}
  private:
   AutoTuneDesiredState m_desiredState{AutoTuneDesiredState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
+  bool m_desiredStateHasBeenSet = false;
   bool m_maintenanceSchedulesHasBeenSet = false;
 };
 

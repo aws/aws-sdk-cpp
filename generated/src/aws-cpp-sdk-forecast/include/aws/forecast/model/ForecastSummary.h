@@ -210,30 +210,30 @@ class ForecastSummary {
   ///@}
  private:
   Aws::String m_forecastArn;
-  bool m_forecastArnHasBeenSet = false;
 
   Aws::String m_forecastName;
-  bool m_forecastNameHasBeenSet = false;
 
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   bool m_createdUsingAutoPredictor{false};
-  bool m_createdUsingAutoPredictorHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
+  bool m_forecastArnHasBeenSet = false;
+  bool m_forecastNameHasBeenSet = false;
+  bool m_predictorArnHasBeenSet = false;
+  bool m_createdUsingAutoPredictorHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModificationTimeHasBeenSet = false;
 };
 

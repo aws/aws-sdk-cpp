@@ -136,18 +136,18 @@ class CreateModelCopyJobRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_sourceModelArn;
-  bool m_sourceModelArnHasBeenSet = false;
 
   Aws::String m_targetModelName;
-  bool m_targetModelNameHasBeenSet = false;
 
   Aws::String m_modelKmsKeyId;
-  bool m_modelKmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_targetModelTags;
-  bool m_targetModelTagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_sourceModelArnHasBeenSet = false;
+  bool m_targetModelNameHasBeenSet = false;
+  bool m_modelKmsKeyIdHasBeenSet = false;
+  bool m_targetModelTagsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

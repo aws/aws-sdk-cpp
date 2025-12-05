@@ -62,9 +62,9 @@ class UpdateAssessmentFrameworkShareResult {
   ///@}
  private:
   AssessmentFrameworkShareRequest m_assessmentFrameworkShareRequest;
-  bool m_assessmentFrameworkShareRequestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentFrameworkShareRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

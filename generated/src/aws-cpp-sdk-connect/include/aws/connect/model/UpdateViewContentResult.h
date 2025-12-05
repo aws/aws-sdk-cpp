@@ -61,9 +61,9 @@ class UpdateViewContentResult {
   ///@}
  private:
   View m_view;
-  bool m_viewHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_viewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

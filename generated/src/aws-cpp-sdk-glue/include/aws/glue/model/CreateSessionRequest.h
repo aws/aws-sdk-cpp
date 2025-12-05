@@ -344,48 +344,48 @@ class CreateSessionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   SessionCommand m_command;
-  bool m_commandHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   int m_idleTimeout{0};
-  bool m_idleTimeoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-  bool m_defaultArgumentsHasBeenSet = false;
 
   ConnectionsList m_connections;
-  bool m_connectionsHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestOrigin;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_idleTimeoutHasBeenSet = false;
+  bool m_defaultArgumentsHasBeenSet = false;
+  bool m_connectionsHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestOriginHasBeenSet = false;
 };
 

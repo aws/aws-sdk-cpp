@@ -85,12 +85,12 @@ class StopIngestionJobRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_ingestionJobId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
   bool m_ingestionJobIdHasBeenSet = false;
 };
 

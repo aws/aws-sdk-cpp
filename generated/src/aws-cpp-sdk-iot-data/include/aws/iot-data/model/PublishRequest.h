@@ -197,27 +197,27 @@ class PublishRequest : public StreamingIoTDataPlaneRequest {
   ///@}
  private:
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   int m_qos{0};
-  bool m_qosHasBeenSet = false;
 
   bool m_retain{false};
-  bool m_retainHasBeenSet = false;
 
   Aws::String m_userProperties;
-  bool m_userPropertiesHasBeenSet = false;
 
   PayloadFormatIndicator m_payloadFormatIndicator{PayloadFormatIndicator::NOT_SET};
-  bool m_payloadFormatIndicatorHasBeenSet = false;
 
   Aws::String m_responseTopic;
-  bool m_responseTopicHasBeenSet = false;
 
   Aws::String m_correlationData;
-  bool m_correlationDataHasBeenSet = false;
 
   long long m_messageExpiry{0};
+  bool m_topicHasBeenSet = false;
+  bool m_qosHasBeenSet = false;
+  bool m_retainHasBeenSet = false;
+  bool m_userPropertiesHasBeenSet = false;
+  bool m_payloadFormatIndicatorHasBeenSet = false;
+  bool m_responseTopicHasBeenSet = false;
+  bool m_correlationDataHasBeenSet = false;
   bool m_messageExpiryHasBeenSet = false;
 };
 

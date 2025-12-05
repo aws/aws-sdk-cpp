@@ -274,42 +274,42 @@ class User {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   UserStatus m_status{UserStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   UserType m_type{UserType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ApiAccess m_apiAccess{ApiAccess::NOT_SET};
-  bool m_apiAccessHasBeenSet = false;
 
   Aws::String m_apiAccessPrincipalArn;
-  bool m_apiAccessPrincipalArnHasBeenSet = false;
 
   long long m_createTime{0};
-  bool m_createTimeHasBeenSet = false;
 
   long long m_lastEnabledTime{0};
-  bool m_lastEnabledTimeHasBeenSet = false;
 
   long long m_lastDisabledTime{0};
-  bool m_lastDisabledTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   long long m_lastLoginTime{0};
+  bool m_userIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_apiAccessHasBeenSet = false;
+  bool m_apiAccessPrincipalArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_lastEnabledTimeHasBeenSet = false;
+  bool m_lastDisabledTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastLoginTimeHasBeenSet = false;
 };
 

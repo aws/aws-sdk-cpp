@@ -88,12 +88,12 @@ class EmailTemplateContent {
   ///@}
  private:
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_html;
+  bool m_subjectHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_htmlHasBeenSet = false;
 };
 

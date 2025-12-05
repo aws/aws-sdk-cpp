@@ -85,12 +85,12 @@ class ListTrackerConsumersResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_consumerArns;
-  bool m_consumerArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumerArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

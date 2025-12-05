@@ -210,27 +210,27 @@ class CacheSettings {
   ///@}
  private:
   long long m_defaultTTL{0};
-  bool m_defaultTTLHasBeenSet = false;
 
   long long m_minimumTTL{0};
-  bool m_minimumTTLHasBeenSet = false;
 
   long long m_maximumTTL{0};
-  bool m_maximumTTLHasBeenSet = false;
 
   Aws::String m_allowedHTTPMethods;
-  bool m_allowedHTTPMethodsHasBeenSet = false;
 
   Aws::String m_cachedHTTPMethods;
-  bool m_cachedHTTPMethodsHasBeenSet = false;
 
   CookieObject m_forwardedCookies;
-  bool m_forwardedCookiesHasBeenSet = false;
 
   HeaderObject m_forwardedHeaders;
-  bool m_forwardedHeadersHasBeenSet = false;
 
   QueryStringObject m_forwardedQueryStrings;
+  bool m_defaultTTLHasBeenSet = false;
+  bool m_minimumTTLHasBeenSet = false;
+  bool m_maximumTTLHasBeenSet = false;
+  bool m_allowedHTTPMethodsHasBeenSet = false;
+  bool m_cachedHTTPMethodsHasBeenSet = false;
+  bool m_forwardedCookiesHasBeenSet = false;
+  bool m_forwardedHeadersHasBeenSet = false;
   bool m_forwardedQueryStringsHasBeenSet = false;
 };
 

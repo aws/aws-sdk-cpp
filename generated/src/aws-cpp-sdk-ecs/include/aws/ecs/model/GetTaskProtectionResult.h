@@ -96,12 +96,12 @@ class GetTaskProtectionResult {
   ///@}
  private:
   Aws::Vector<ProtectedTask> m_protectedTasks;
-  bool m_protectedTasksHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectedTasksHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

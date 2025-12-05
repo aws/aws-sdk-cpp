@@ -84,12 +84,12 @@ class ProfileQueryFailures {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_status{0};
+  bool m_profileIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

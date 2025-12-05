@@ -103,12 +103,12 @@ class PutIdentityPolicyRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_identityHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

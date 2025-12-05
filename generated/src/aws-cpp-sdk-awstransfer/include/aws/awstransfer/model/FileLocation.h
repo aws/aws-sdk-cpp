@@ -71,9 +71,9 @@ class FileLocation {
   ///@}
  private:
   S3FileLocation m_s3FileLocation;
-  bool m_s3FileLocationHasBeenSet = false;
 
   EfsFileLocation m_efsFileLocation;
+  bool m_s3FileLocationHasBeenSet = false;
   bool m_efsFileLocationHasBeenSet = false;
 };
 

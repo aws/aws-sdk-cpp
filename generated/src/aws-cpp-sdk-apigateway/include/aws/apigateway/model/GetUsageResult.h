@@ -142,21 +142,21 @@ class GetUsageResult {
   ///@}
  private:
   Aws::String m_usagePlanId;
-  bool m_usagePlanIdHasBeenSet = false;
 
   Aws::String m_startDate;
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_endDate;
-  bool m_endDateHasBeenSet = false;
 
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::Vector<long long>>> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usagePlanIdHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

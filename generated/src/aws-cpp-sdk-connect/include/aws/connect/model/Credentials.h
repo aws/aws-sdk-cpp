@@ -107,15 +107,15 @@ class Credentials {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_accessTokenExpiration{};
-  bool m_accessTokenExpirationHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_refreshTokenExpiration{};
+  bool m_accessTokenHasBeenSet = false;
+  bool m_accessTokenExpirationHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
   bool m_refreshTokenExpirationHasBeenSet = false;
 };
 

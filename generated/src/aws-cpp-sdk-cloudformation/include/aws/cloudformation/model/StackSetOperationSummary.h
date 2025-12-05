@@ -211,27 +211,27 @@ class StackSetOperationSummary {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   StackSetOperationAction m_action{StackSetOperationAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   StackSetOperationStatus m_status{StackSetOperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   StackSetOperationStatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   StackSetOperationPreferences m_operationPreferences;
+  bool m_operationIdHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
   bool m_operationPreferencesHasBeenSet = false;
 };
 

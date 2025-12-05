@@ -75,9 +75,9 @@ class SlurmCustomSetting {
   ///@}
  private:
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   Aws::String m_parameterValue;
+  bool m_parameterNameHasBeenSet = false;
   bool m_parameterValueHasBeenSet = false;
 };
 

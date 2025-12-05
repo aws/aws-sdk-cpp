@@ -67,9 +67,9 @@ class TypedLinkFacetAttributeUpdate {
   ///@}
  private:
   TypedLinkAttributeDefinition m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   UpdateActionType m_action{UpdateActionType::NOT_SET};
+  bool m_attributeHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class CreateChannelMembershipRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_memberArn;
-  bool m_memberArnHasBeenSet = false;
 
   ChannelMembershipType m_type{ChannelMembershipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_chimeBearer;
-  bool m_chimeBearerHasBeenSet = false;
 
   Aws::String m_subChannelId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_memberArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_chimeBearerHasBeenSet = false;
   bool m_subChannelIdHasBeenSet = false;
 };
 

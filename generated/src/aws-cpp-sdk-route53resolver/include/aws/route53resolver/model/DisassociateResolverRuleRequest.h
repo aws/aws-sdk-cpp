@@ -68,9 +68,9 @@ class DisassociateResolverRuleRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_vPCId;
-  bool m_vPCIdHasBeenSet = false;
 
   Aws::String m_resolverRuleId;
+  bool m_vPCIdHasBeenSet = false;
   bool m_resolverRuleIdHasBeenSet = false;
 };
 

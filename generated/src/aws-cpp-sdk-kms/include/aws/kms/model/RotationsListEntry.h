@@ -230,30 +230,30 @@ class RotationsListEntry {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_keyMaterialId;
-  bool m_keyMaterialIdHasBeenSet = false;
 
   Aws::String m_keyMaterialDescription;
-  bool m_keyMaterialDescriptionHasBeenSet = false;
 
   ImportState m_importState{ImportState::NOT_SET};
-  bool m_importStateHasBeenSet = false;
 
   KeyMaterialState m_keyMaterialState{KeyMaterialState::NOT_SET};
-  bool m_keyMaterialStateHasBeenSet = false;
 
   ExpirationModelType m_expirationModel{ExpirationModelType::NOT_SET};
-  bool m_expirationModelHasBeenSet = false;
 
   Aws::Utils::DateTime m_validTo{};
-  bool m_validToHasBeenSet = false;
 
   Aws::Utils::DateTime m_rotationDate{};
-  bool m_rotationDateHasBeenSet = false;
 
   RotationType m_rotationType{RotationType::NOT_SET};
+  bool m_keyIdHasBeenSet = false;
+  bool m_keyMaterialIdHasBeenSet = false;
+  bool m_keyMaterialDescriptionHasBeenSet = false;
+  bool m_importStateHasBeenSet = false;
+  bool m_keyMaterialStateHasBeenSet = false;
+  bool m_expirationModelHasBeenSet = false;
+  bool m_validToHasBeenSet = false;
+  bool m_rotationDateHasBeenSet = false;
   bool m_rotationTypeHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListBotsResult {
   ///@}
  private:
   Aws::Vector<LexBotConfig> m_lexBots;
-  bool m_lexBotsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lexBotsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

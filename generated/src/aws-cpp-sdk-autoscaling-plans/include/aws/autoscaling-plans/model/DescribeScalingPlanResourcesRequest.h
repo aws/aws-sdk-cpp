@@ -101,15 +101,15 @@ class DescribeScalingPlanResourcesRequest : public AutoScalingPlansRequest {
   ///@}
  private:
   Aws::String m_scalingPlanName;
-  bool m_scalingPlanNameHasBeenSet = false;
 
   long long m_scalingPlanVersion{0};
-  bool m_scalingPlanVersionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_scalingPlanNameHasBeenSet = false;
+  bool m_scalingPlanVersionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

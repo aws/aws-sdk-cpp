@@ -161,24 +161,24 @@ class DescribeVaultOutput {
   ///@}
  private:
   Aws::String m_vaultARN;
-  bool m_vaultARNHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_lastInventoryDate;
-  bool m_lastInventoryDateHasBeenSet = false;
 
   long long m_numberOfArchives{0};
-  bool m_numberOfArchivesHasBeenSet = false;
 
   long long m_sizeInBytes{0};
-  bool m_sizeInBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vaultARNHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastInventoryDateHasBeenSet = false;
+  bool m_numberOfArchivesHasBeenSet = false;
+  bool m_sizeInBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

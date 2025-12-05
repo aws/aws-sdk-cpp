@@ -60,9 +60,9 @@ class CreateAppBundleResult {
   ///@}
  private:
   AppBundle m_appBundle;
-  bool m_appBundleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appBundleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

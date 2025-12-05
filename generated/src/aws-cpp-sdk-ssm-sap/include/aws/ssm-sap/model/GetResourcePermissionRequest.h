@@ -64,9 +64,9 @@ class GetResourcePermissionRequest : public SsmSapRequest {
   ///@}
  private:
   PermissionActionType m_actionType{PermissionActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_actionTypeHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

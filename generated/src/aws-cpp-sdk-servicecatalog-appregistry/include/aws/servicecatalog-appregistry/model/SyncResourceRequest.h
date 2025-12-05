@@ -66,9 +66,9 @@ class SyncResourceRequest : public AppRegistryRequest {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

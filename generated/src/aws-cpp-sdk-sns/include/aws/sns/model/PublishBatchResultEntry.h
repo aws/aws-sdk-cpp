@@ -93,12 +93,12 @@ class PublishBatchResultEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
+  bool m_idHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
   bool m_sequenceNumberHasBeenSet = false;
 };
 

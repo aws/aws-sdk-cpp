@@ -70,9 +70,9 @@ class DeactivatePipelineRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   bool m_cancelActive{false};
+  bool m_pipelineIdHasBeenSet = false;
   bool m_cancelActiveHasBeenSet = false;
 };
 

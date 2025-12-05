@@ -60,9 +60,9 @@ class GetEventsConfigurationResult {
   ///@}
  private:
   EventsConfiguration m_eventsConfiguration;
-  bool m_eventsConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

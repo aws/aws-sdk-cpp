@@ -68,9 +68,9 @@ class SlaFilter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SlaStatus m_status{SlaStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

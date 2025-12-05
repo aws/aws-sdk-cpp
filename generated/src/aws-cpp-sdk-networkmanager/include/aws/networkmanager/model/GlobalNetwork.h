@@ -150,21 +150,21 @@ class GlobalNetwork {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_globalNetworkArn;
-  bool m_globalNetworkArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   GlobalNetworkState m_state{GlobalNetworkState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_globalNetworkArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

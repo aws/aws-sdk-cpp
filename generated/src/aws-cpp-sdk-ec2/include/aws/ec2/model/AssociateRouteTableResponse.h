@@ -79,12 +79,12 @@ class AssociateRouteTableResponse {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   RouteTableAssociationState m_associationState;
-  bool m_associationStateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_associationIdHasBeenSet = false;
+  bool m_associationStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

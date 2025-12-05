@@ -87,12 +87,12 @@ class DescribeNotificationSubscriptionsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_organizationIdHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

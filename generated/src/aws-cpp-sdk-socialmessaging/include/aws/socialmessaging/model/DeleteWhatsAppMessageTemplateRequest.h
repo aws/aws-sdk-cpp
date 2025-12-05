@@ -104,15 +104,15 @@ class DeleteWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_metaTemplateId;
-  bool m_metaTemplateIdHasBeenSet = false;
 
   bool m_deleteAllLanguages{false};
-  bool m_deleteAllLanguagesHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_metaTemplateIdHasBeenSet = false;
+  bool m_deleteAllLanguagesHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

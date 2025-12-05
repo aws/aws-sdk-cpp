@@ -85,12 +85,12 @@ class DeviceDiscoverySummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
-  bool m_discoveryTypeHasBeenSet = false;
 
   DeviceDiscoveryStatus m_status{DeviceDiscoveryStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_discoveryTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

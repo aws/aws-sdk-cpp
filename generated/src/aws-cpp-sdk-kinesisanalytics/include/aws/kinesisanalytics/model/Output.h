@@ -135,18 +135,18 @@ class Output {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   KinesisStreamsOutput m_kinesisStreamsOutput;
-  bool m_kinesisStreamsOutputHasBeenSet = false;
 
   KinesisFirehoseOutput m_kinesisFirehoseOutput;
-  bool m_kinesisFirehoseOutputHasBeenSet = false;
 
   LambdaOutput m_lambdaOutput;
-  bool m_lambdaOutputHasBeenSet = false;
 
   DestinationSchema m_destinationSchema;
+  bool m_nameHasBeenSet = false;
+  bool m_kinesisStreamsOutputHasBeenSet = false;
+  bool m_kinesisFirehoseOutputHasBeenSet = false;
+  bool m_lambdaOutputHasBeenSet = false;
   bool m_destinationSchemaHasBeenSet = false;
 };
 

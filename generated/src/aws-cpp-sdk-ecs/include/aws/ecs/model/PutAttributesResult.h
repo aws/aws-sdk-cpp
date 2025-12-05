@@ -67,9 +67,9 @@ class PutAttributesResult {
   ///@}
  private:
   Aws::Vector<Attribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

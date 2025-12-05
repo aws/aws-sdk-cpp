@@ -96,12 +96,12 @@ class GatewayPlatform {
   ///@}
  private:
   Greengrass m_greengrass;
-  bool m_greengrassHasBeenSet = false;
 
   GreengrassV2 m_greengrassV2;
-  bool m_greengrassV2HasBeenSet = false;
 
   SiemensIE m_siemensIE;
+  bool m_greengrassHasBeenSet = false;
+  bool m_greengrassV2HasBeenSet = false;
   bool m_siemensIEHasBeenSet = false;
 };
 

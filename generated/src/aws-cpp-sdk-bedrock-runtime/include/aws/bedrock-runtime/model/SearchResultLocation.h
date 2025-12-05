@@ -81,12 +81,12 @@ class SearchResultLocation {
   ///@}
  private:
   int m_searchResultIndex{0};
-  bool m_searchResultIndexHasBeenSet = false;
 
   int m_start{0};
-  bool m_startHasBeenSet = false;
 
   int m_end{0};
+  bool m_searchResultIndexHasBeenSet = false;
+  bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

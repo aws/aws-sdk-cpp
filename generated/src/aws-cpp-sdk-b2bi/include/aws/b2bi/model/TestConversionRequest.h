@@ -69,9 +69,9 @@ class TestConversionRequest : public B2BIRequest {
   ///@}
  private:
   ConversionSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   ConversionTarget m_target;
+  bool m_sourceHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ExponentialRolloutRate {
   ///@}
  private:
   int m_baseRatePerMinute{0};
-  bool m_baseRatePerMinuteHasBeenSet = false;
 
   double m_incrementFactor{0.0};
-  bool m_incrementFactorHasBeenSet = false;
 
   RolloutRateIncreaseCriteria m_rateIncreaseCriteria;
+  bool m_baseRatePerMinuteHasBeenSet = false;
+  bool m_incrementFactorHasBeenSet = false;
   bool m_rateIncreaseCriteriaHasBeenSet = false;
 };
 

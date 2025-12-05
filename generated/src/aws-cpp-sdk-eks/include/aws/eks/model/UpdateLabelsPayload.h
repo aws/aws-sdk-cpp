@@ -83,9 +83,9 @@ class UpdateLabelsPayload {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_addOrUpdateLabels;
-  bool m_addOrUpdateLabelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeLabels;
+  bool m_addOrUpdateLabelsHasBeenSet = false;
   bool m_removeLabelsHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class CreateStudioResult {
   ///@}
  private:
   Aws::String m_studioId;
-  bool m_studioIdHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_studioIdHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

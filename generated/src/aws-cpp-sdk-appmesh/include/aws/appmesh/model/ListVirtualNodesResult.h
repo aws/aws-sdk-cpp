@@ -93,12 +93,12 @@ class ListVirtualNodesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VirtualNodeRef> m_virtualNodes;
-  bool m_virtualNodesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_virtualNodesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class ImportApplicationUsageResult {
   ///@}
  private:
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

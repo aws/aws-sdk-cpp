@@ -95,15 +95,15 @@ class TextAIPromptInferenceConfiguration {
   ///@}
  private:
   double m_temperature{0.0};
-  bool m_temperatureHasBeenSet = false;
 
   double m_topP{0.0};
-  bool m_topPHasBeenSet = false;
 
   int m_topK{0};
-  bool m_topKHasBeenSet = false;
 
   int m_maxTokensToSample{0};
+  bool m_temperatureHasBeenSet = false;
+  bool m_topPHasBeenSet = false;
+  bool m_topKHasBeenSet = false;
   bool m_maxTokensToSampleHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class AppDefinitionInput {
   ///@}
  private:
   Aws::Vector<CardInput> m_cards;
-  bool m_cardsHasBeenSet = false;
 
   Aws::String m_initialPrompt;
+  bool m_cardsHasBeenSet = false;
   bool m_initialPromptHasBeenSet = false;
 };
 

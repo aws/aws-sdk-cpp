@@ -109,15 +109,15 @@ class AnalysisRulePolicyV1 {
   ///@}
  private:
   AnalysisRuleList m_list;
-  bool m_listHasBeenSet = false;
 
   AnalysisRuleAggregation m_aggregation;
-  bool m_aggregationHasBeenSet = false;
 
   AnalysisRuleCustom m_custom;
-  bool m_customHasBeenSet = false;
 
   AnalysisRuleIdMappingTable m_idMappingTable;
+  bool m_listHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
+  bool m_customHasBeenSet = false;
   bool m_idMappingTableHasBeenSet = false;
 };
 

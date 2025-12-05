@@ -93,12 +93,12 @@ class Schedule {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_scheduleExpressionTimezone;
-  bool m_scheduleExpressionTimezoneHasBeenSet = false;
 
   int m_executionWindowInMinutes{0};
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_scheduleExpressionTimezoneHasBeenSet = false;
   bool m_executionWindowInMinutesHasBeenSet = false;
 };
 

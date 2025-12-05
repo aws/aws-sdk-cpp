@@ -140,21 +140,21 @@ class OtaTaskExecutionSummary {
   ///@}
  private:
   long long m_executionNumber{0};
-  bool m_executionNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_queuedAt{};
-  bool m_queuedAtHasBeenSet = false;
 
   int m_retryAttempt{0};
-  bool m_retryAttemptHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   OtaTaskExecutionStatus m_status{OtaTaskExecutionStatus::NOT_SET};
+  bool m_executionNumberHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_queuedAtHasBeenSet = false;
+  bool m_retryAttemptHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

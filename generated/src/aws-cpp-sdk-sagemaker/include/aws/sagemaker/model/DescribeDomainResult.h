@@ -436,72 +436,72 @@ class DescribeDomainResult {
   ///@}
  private:
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_homeEfsFileSystemId;
-  bool m_homeEfsFileSystemIdHasBeenSet = false;
 
   Aws::String m_singleSignOnManagedApplicationInstanceId;
-  bool m_singleSignOnManagedApplicationInstanceIdHasBeenSet = false;
 
   Aws::String m_singleSignOnApplicationArn;
-  bool m_singleSignOnApplicationArnHasBeenSet = false;
 
   DomainStatus m_status{DomainStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_securityGroupIdForDomainBoundary;
-  bool m_securityGroupIdForDomainBoundaryHasBeenSet = false;
 
   AuthMode m_authMode{AuthMode::NOT_SET};
-  bool m_authModeHasBeenSet = false;
 
   UserSettings m_defaultUserSettings;
-  bool m_defaultUserSettingsHasBeenSet = false;
 
   DomainSettings m_domainSettings;
-  bool m_domainSettingsHasBeenSet = false;
 
   AppNetworkAccessType m_appNetworkAccessType{AppNetworkAccessType::NOT_SET};
-  bool m_appNetworkAccessTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   AppSecurityGroupManagement m_appSecurityGroupManagement{AppSecurityGroupManagement::NOT_SET};
-  bool m_appSecurityGroupManagementHasBeenSet = false;
 
   TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
-  bool m_tagPropagationHasBeenSet = false;
 
   DefaultSpaceSettings m_defaultSpaceSettings;
-  bool m_defaultSpaceSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainArnHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_homeEfsFileSystemIdHasBeenSet = false;
+  bool m_singleSignOnManagedApplicationInstanceIdHasBeenSet = false;
+  bool m_singleSignOnApplicationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_securityGroupIdForDomainBoundaryHasBeenSet = false;
+  bool m_authModeHasBeenSet = false;
+  bool m_defaultUserSettingsHasBeenSet = false;
+  bool m_domainSettingsHasBeenSet = false;
+  bool m_appNetworkAccessTypeHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_appSecurityGroupManagementHasBeenSet = false;
+  bool m_tagPropagationHasBeenSet = false;
+  bool m_defaultSpaceSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class Certificate {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   CertificateStatus m_status{CertificateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CertificateMode m_certificateMode{CertificateMode::NOT_SET};
-  bool m_certificateModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_certificateModeHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

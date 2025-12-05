@@ -239,36 +239,36 @@ class Certificate {
   ///@}
  private:
   Aws::String m_certificateIdentifier;
-  bool m_certificateIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_certificateCreationDate{};
-  bool m_certificateCreationDateHasBeenSet = false;
 
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_certificateWallet{};
-  bool m_certificateWalletHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateOwner;
-  bool m_certificateOwnerHasBeenSet = false;
 
   Aws::Utils::DateTime m_validFromDate{};
-  bool m_validFromDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_validToDate{};
-  bool m_validToDateHasBeenSet = false;
 
   Aws::String m_signingAlgorithm;
-  bool m_signingAlgorithmHasBeenSet = false;
 
   int m_keyLength{0};
-  bool m_keyLengthHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_certificateIdentifierHasBeenSet = false;
+  bool m_certificateCreationDateHasBeenSet = false;
+  bool m_certificatePemHasBeenSet = false;
+  bool m_certificateWalletHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateOwnerHasBeenSet = false;
+  bool m_validFromDateHasBeenSet = false;
+  bool m_validToDateHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
+  bool m_keyLengthHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

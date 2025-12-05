@@ -144,18 +144,18 @@ class GameSessionConnectionInfo {
   ///@}
  private:
   Aws::String m_gameSessionArn;
-  bool m_gameSessionArnHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::Vector<MatchedPlayerSession> m_matchedPlayerSessions;
+  bool m_gameSessionArnHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_matchedPlayerSessionsHasBeenSet = false;
 };
 

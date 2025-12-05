@@ -117,18 +117,18 @@ class ApplicationOperationInfo {
   ///@}
  private:
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   OperationStatus m_operationStatus{OperationStatus::NOT_SET};
+  bool m_operationHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_operationStatusHasBeenSet = false;
 };
 

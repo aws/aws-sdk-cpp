@@ -181,24 +181,24 @@ class FraudDetectionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_audioAggregationEndedAt{};
-  bool m_audioAggregationEndedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_audioAggregationStartedAt{};
-  bool m_audioAggregationStartedAtHasBeenSet = false;
 
   FraudDetectionConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   FraudDetectionDecision m_decision{FraudDetectionDecision::NOT_SET};
-  bool m_decisionHasBeenSet = false;
 
   Aws::String m_fraudDetectionResultId;
-  bool m_fraudDetectionResultIdHasBeenSet = false;
 
   Aws::Vector<FraudDetectionReason> m_reasons;
-  bool m_reasonsHasBeenSet = false;
 
   FraudRiskDetails m_riskDetails;
+  bool m_audioAggregationEndedAtHasBeenSet = false;
+  bool m_audioAggregationStartedAtHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_decisionHasBeenSet = false;
+  bool m_fraudDetectionResultIdHasBeenSet = false;
+  bool m_reasonsHasBeenSet = false;
   bool m_riskDetailsHasBeenSet = false;
 };
 

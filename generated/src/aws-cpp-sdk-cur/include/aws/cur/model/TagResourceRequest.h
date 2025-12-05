@@ -76,9 +76,9 @@ class TagResourceRequest : public CostandUsageReportServiceRequest {
   ///@}
  private:
   Aws::String m_reportName;
-  bool m_reportNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_reportNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

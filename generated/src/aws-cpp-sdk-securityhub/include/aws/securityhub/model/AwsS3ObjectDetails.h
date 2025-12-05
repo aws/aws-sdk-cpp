@@ -145,21 +145,21 @@ class AwsS3ObjectDetails {
   ///@}
  private:
   Aws::String m_lastModified;
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_serverSideEncryption;
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
   bool m_sSEKMSKeyIdHasBeenSet = false;
 };
 

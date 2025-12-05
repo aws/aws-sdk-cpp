@@ -144,21 +144,21 @@ class CreateAgentStatusRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AgentStatusState m_state{AgentStatusState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_displayOrder{0};
-  bool m_displayOrderHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_displayOrderHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

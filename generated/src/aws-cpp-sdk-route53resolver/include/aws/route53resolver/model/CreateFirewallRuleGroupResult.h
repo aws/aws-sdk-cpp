@@ -60,9 +60,9 @@ class CreateFirewallRuleGroupResult {
   ///@}
  private:
   FirewallRuleGroup m_firewallRuleGroup;
-  bool m_firewallRuleGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallRuleGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

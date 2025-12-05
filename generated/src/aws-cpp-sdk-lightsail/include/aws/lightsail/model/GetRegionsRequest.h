@@ -66,9 +66,9 @@ class GetRegionsRequest : public LightsailRequest {
   ///@}
  private:
   bool m_includeAvailabilityZones{false};
-  bool m_includeAvailabilityZonesHasBeenSet = false;
 
   bool m_includeRelationalDatabaseAvailabilityZones{false};
+  bool m_includeAvailabilityZonesHasBeenSet = false;
   bool m_includeRelationalDatabaseAvailabilityZonesHasBeenSet = false;
 };
 

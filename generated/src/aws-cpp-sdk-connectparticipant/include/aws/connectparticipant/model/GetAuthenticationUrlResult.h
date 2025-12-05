@@ -61,9 +61,9 @@ class GetAuthenticationUrlResult {
   ///@}
  private:
   Aws::String m_authenticationUrl;
-  bool m_authenticationUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeAttackStatisticsResult {
   ///@}
  private:
   TimeRange m_timeRange;
-  bool m_timeRangeHasBeenSet = false;
 
   Aws::Vector<AttackStatisticsDataItem> m_dataItems;
-  bool m_dataItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_timeRangeHasBeenSet = false;
+  bool m_dataItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

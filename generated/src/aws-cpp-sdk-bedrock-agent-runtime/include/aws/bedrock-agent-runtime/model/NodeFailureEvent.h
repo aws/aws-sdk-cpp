@@ -107,15 +107,15 @@ class NodeFailureEvent {
   ///@}
  private:
   NodeErrorCode m_errorCode{NodeErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

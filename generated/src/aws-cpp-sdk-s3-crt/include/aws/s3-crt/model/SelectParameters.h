@@ -121,15 +121,15 @@ class SelectParameters {
   ///@}
  private:
   InputSerialization m_inputSerialization;
-  bool m_inputSerializationHasBeenSet = false;
 
   ExpressionType m_expressionType{ExpressionType::NOT_SET};
-  bool m_expressionTypeHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   OutputSerialization m_outputSerialization;
+  bool m_inputSerializationHasBeenSet = false;
+  bool m_expressionTypeHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
   bool m_outputSerializationHasBeenSet = false;
 };
 

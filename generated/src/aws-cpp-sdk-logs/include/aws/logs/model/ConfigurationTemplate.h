@@ -269,33 +269,33 @@ class ConfigurationTemplate {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_logType;
-  bool m_logTypeHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
-  bool m_deliveryDestinationTypeHasBeenSet = false;
 
   ConfigurationTemplateDeliveryConfigValues m_defaultDeliveryConfigValues;
-  bool m_defaultDeliveryConfigValuesHasBeenSet = false;
 
   Aws::Vector<RecordField> m_allowedFields;
-  bool m_allowedFieldsHasBeenSet = false;
 
   Aws::Vector<OutputFormat> m_allowedOutputFormats;
-  bool m_allowedOutputFormatsHasBeenSet = false;
 
   Aws::String m_allowedActionForAllowVendedLogsDeliveryForResource;
-  bool m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedFieldDelimiters;
-  bool m_allowedFieldDelimitersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedSuffixPathFields;
+  bool m_serviceHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_deliveryDestinationTypeHasBeenSet = false;
+  bool m_defaultDeliveryConfigValuesHasBeenSet = false;
+  bool m_allowedFieldsHasBeenSet = false;
+  bool m_allowedOutputFormatsHasBeenSet = false;
+  bool m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet = false;
+  bool m_allowedFieldDelimitersHasBeenSet = false;
   bool m_allowedSuffixPathFieldsHasBeenSet = false;
 };
 

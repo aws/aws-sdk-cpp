@@ -70,9 +70,9 @@ class Specifications {
   ///@}
  private:
   Aws::String m_slotTypeId;
-  bool m_slotTypeIdHasBeenSet = false;
 
   SubSlotValueElicitationSetting m_valueElicitationSetting;
+  bool m_slotTypeIdHasBeenSet = false;
   bool m_valueElicitationSettingHasBeenSet = false;
 };
 

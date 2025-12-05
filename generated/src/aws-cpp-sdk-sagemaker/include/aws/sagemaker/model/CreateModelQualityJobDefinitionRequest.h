@@ -225,33 +225,33 @@ class CreateModelQualityJobDefinitionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   ModelQualityBaselineConfig m_modelQualityBaselineConfig;
-  bool m_modelQualityBaselineConfigHasBeenSet = false;
 
   ModelQualityAppSpecification m_modelQualityAppSpecification;
-  bool m_modelQualityAppSpecificationHasBeenSet = false;
 
   ModelQualityJobInput m_modelQualityJobInput;
-  bool m_modelQualityJobInputHasBeenSet = false;
 
   MonitoringOutputConfig m_modelQualityJobOutputConfig;
-  bool m_modelQualityJobOutputConfigHasBeenSet = false;
 
   MonitoringResources m_jobResources;
-  bool m_jobResourcesHasBeenSet = false;
 
   MonitoringNetworkConfig m_networkConfig;
-  bool m_networkConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MonitoringStoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_modelQualityBaselineConfigHasBeenSet = false;
+  bool m_modelQualityAppSpecificationHasBeenSet = false;
+  bool m_modelQualityJobInputHasBeenSet = false;
+  bool m_modelQualityJobOutputConfigHasBeenSet = false;
+  bool m_jobResourcesHasBeenSet = false;
+  bool m_networkConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

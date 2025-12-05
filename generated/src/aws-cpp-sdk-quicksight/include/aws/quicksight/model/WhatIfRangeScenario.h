@@ -85,12 +85,12 @@ class WhatIfRangeScenario {
   ///@}
  private:
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

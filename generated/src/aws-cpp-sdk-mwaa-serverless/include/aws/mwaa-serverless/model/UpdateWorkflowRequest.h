@@ -179,27 +179,27 @@ class UpdateWorkflowRequest : public MWAAServerlessRequest {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   DefinitionS3Location m_definitionS3Location;
-  bool m_definitionS3LocationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   int m_engineVersion{0};
-  bool m_engineVersionHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::String m_triggerMode;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_definitionS3LocationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
   bool m_triggerModeHasBeenSet = false;
 };
 

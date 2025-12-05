@@ -75,9 +75,9 @@ class AnalysisTemplateArtifactMetadata {
   ///@}
  private:
   Hash m_entryPointHash;
-  bool m_entryPointHashHasBeenSet = false;
 
   Aws::Vector<Hash> m_additionalArtifactHashes;
+  bool m_entryPointHashHasBeenSet = false;
   bool m_additionalArtifactHashesHasBeenSet = false;
 };
 

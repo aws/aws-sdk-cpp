@@ -202,30 +202,30 @@ class GeospatialLayerItem {
   ///@}
  private:
   Aws::String m_layerId;
-  bool m_layerIdHasBeenSet = false;
 
   GeospatialLayerType m_layerType{GeospatialLayerType::NOT_SET};
-  bool m_layerTypeHasBeenSet = false;
 
   GeospatialDataSourceItem m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   GeospatialLayerDefinition m_layerDefinition;
-  bool m_layerDefinitionHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   GeospatialLayerJoinDefinition m_joinDefinition;
-  bool m_joinDefinitionHasBeenSet = false;
 
   Aws::Vector<LayerCustomAction> m_actions;
+  bool m_layerIdHasBeenSet = false;
+  bool m_layerTypeHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_layerDefinitionHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_joinDefinitionHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

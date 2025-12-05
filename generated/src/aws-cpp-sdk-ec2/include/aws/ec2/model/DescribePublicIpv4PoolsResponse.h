@@ -86,12 +86,12 @@ class DescribePublicIpv4PoolsResponse {
   ///@}
  private:
   Aws::Vector<PublicIpv4Pool> m_publicIpv4Pools;
-  bool m_publicIpv4PoolsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_publicIpv4PoolsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

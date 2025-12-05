@@ -73,9 +73,9 @@ class PipelineLoggingConfiguration {
   ///@}
  private:
   Aws::String m_imageLogGroupName;
-  bool m_imageLogGroupNameHasBeenSet = false;
 
   Aws::String m_pipelineLogGroupName;
+  bool m_imageLogGroupNameHasBeenSet = false;
   bool m_pipelineLogGroupNameHasBeenSet = false;
 };
 

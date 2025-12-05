@@ -95,12 +95,12 @@ class SnowflakeSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SnowflakeNodeData m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

@@ -132,21 +132,21 @@ class GetLatestConfigurationResult {
   ///@}
  private:
   Aws::String m_nextPollConfigurationToken;
-  bool m_nextPollConfigurationTokenHasBeenSet = false;
 
   int m_nextPollIntervalInSeconds{0};
-  bool m_nextPollIntervalInSecondsHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_configuration{};
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextPollConfigurationTokenHasBeenSet = false;
+  bool m_nextPollIntervalInSecondsHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

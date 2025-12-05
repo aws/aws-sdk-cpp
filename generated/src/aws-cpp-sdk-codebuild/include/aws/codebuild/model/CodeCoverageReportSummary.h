@@ -129,21 +129,21 @@ class CodeCoverageReportSummary {
   ///@}
  private:
   double m_lineCoveragePercentage{0.0};
-  bool m_lineCoveragePercentageHasBeenSet = false;
 
   int m_linesCovered{0};
-  bool m_linesCoveredHasBeenSet = false;
 
   int m_linesMissed{0};
-  bool m_linesMissedHasBeenSet = false;
 
   double m_branchCoveragePercentage{0.0};
-  bool m_branchCoveragePercentageHasBeenSet = false;
 
   int m_branchesCovered{0};
-  bool m_branchesCoveredHasBeenSet = false;
 
   int m_branchesMissed{0};
+  bool m_lineCoveragePercentageHasBeenSet = false;
+  bool m_linesCoveredHasBeenSet = false;
+  bool m_linesMissedHasBeenSet = false;
+  bool m_branchCoveragePercentageHasBeenSet = false;
+  bool m_branchesCoveredHasBeenSet = false;
   bool m_branchesMissedHasBeenSet = false;
 };
 

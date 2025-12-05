@@ -68,9 +68,9 @@ class S3Config {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_keyPrefix;
+  bool m_bucketNameHasBeenSet = false;
   bool m_keyPrefixHasBeenSet = false;
 };
 

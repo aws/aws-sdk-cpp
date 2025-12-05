@@ -68,9 +68,9 @@ class Filter {
   ///@}
  private:
   Aws::String m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_attributeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

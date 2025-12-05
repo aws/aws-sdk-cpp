@@ -89,12 +89,12 @@ class ListActionTypesRequest : public CodePipelineRequest {
   ///@}
  private:
   ActionOwner m_actionOwnerFilter{ActionOwner::NOT_SET};
-  bool m_actionOwnerFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_regionFilter;
+  bool m_actionOwnerFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_regionFilterHasBeenSet = false;
 };
 

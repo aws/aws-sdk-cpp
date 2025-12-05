@@ -100,12 +100,12 @@ class FlowTraceConditionNodeResultEvent {
   ///@}
  private:
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::Vector<FlowTraceCondition> m_satisfiedConditions;
-  bool m_satisfiedConditionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_nodeNameHasBeenSet = false;
+  bool m_satisfiedConditionsHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

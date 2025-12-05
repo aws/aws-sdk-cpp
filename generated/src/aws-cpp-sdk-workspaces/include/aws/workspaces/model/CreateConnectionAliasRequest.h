@@ -80,9 +80,9 @@ class CreateConnectionAliasRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_connectionString;
-  bool m_connectionStringHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_connectionStringHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

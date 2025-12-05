@@ -68,9 +68,9 @@ class ListRepositorySyncDefinitionsRequest : public CodeConnectionsRequest {
   ///@}
  private:
   Aws::String m_repositoryLinkId;
-  bool m_repositoryLinkIdHasBeenSet = false;
 
   SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
+  bool m_repositoryLinkIdHasBeenSet = false;
   bool m_syncTypeHasBeenSet = false;
 };
 

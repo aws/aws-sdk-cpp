@@ -71,9 +71,9 @@ class TrendsMetricsResult {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   TrendsValues m_trendsValues;
+  bool m_timestampHasBeenSet = false;
   bool m_trendsValuesHasBeenSet = false;
 };
 

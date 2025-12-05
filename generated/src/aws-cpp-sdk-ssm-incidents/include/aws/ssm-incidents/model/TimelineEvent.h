@@ -170,24 +170,24 @@ class TimelineEvent {
   ///@}
  private:
   Aws::String m_eventData;
-  bool m_eventDataHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::Vector<EventReference> m_eventReferences;
-  bool m_eventReferencesHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventUpdatedTime{};
-  bool m_eventUpdatedTimeHasBeenSet = false;
 
   Aws::String m_incidentRecordArn;
+  bool m_eventDataHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventReferencesHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventUpdatedTimeHasBeenSet = false;
   bool m_incidentRecordArnHasBeenSet = false;
 };
 

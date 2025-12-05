@@ -90,12 +90,12 @@ class ListInputDeviceTransfersResult {
   ///@}
  private:
   Aws::Vector<TransferringInputDeviceSummary> m_inputDeviceTransfers;
-  bool m_inputDeviceTransfersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputDeviceTransfersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

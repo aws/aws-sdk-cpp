@@ -76,12 +76,12 @@ class DeleteEventsByEventTypeResult {
   ///@}
  private:
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_eventsDeletionStatus;
-  bool m_eventsDeletionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_eventsDeletionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

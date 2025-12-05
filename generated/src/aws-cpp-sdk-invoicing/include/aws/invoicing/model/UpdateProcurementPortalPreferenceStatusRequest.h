@@ -130,18 +130,18 @@ class UpdateProcurementPortalPreferenceStatusRequest : public InvoicingRequest {
   ///@}
  private:
   Aws::String m_procurementPortalPreferenceArn;
-  bool m_procurementPortalPreferenceArnHasBeenSet = false;
 
   ProcurementPortalPreferenceStatus m_einvoiceDeliveryPreferenceStatus{ProcurementPortalPreferenceStatus::NOT_SET};
-  bool m_einvoiceDeliveryPreferenceStatusHasBeenSet = false;
 
   Aws::String m_einvoiceDeliveryPreferenceStatusReason;
-  bool m_einvoiceDeliveryPreferenceStatusReasonHasBeenSet = false;
 
   ProcurementPortalPreferenceStatus m_purchaseOrderRetrievalPreferenceStatus{ProcurementPortalPreferenceStatus::NOT_SET};
-  bool m_purchaseOrderRetrievalPreferenceStatusHasBeenSet = false;
 
   Aws::String m_purchaseOrderRetrievalPreferenceStatusReason;
+  bool m_procurementPortalPreferenceArnHasBeenSet = false;
+  bool m_einvoiceDeliveryPreferenceStatusHasBeenSet = false;
+  bool m_einvoiceDeliveryPreferenceStatusReasonHasBeenSet = false;
+  bool m_purchaseOrderRetrievalPreferenceStatusHasBeenSet = false;
   bool m_purchaseOrderRetrievalPreferenceStatusReasonHasBeenSet = false;
 };
 

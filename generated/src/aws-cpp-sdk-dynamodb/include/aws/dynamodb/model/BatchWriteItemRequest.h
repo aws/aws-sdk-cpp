@@ -124,12 +124,12 @@ class BatchWriteItemRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_requestItems;
-  bool m_requestItemsHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
-  bool m_returnConsumedCapacityHasBeenSet = false;
 
   ReturnItemCollectionMetrics m_returnItemCollectionMetrics{ReturnItemCollectionMetrics::NOT_SET};
+  bool m_requestItemsHasBeenSet = false;
+  bool m_returnConsumedCapacityHasBeenSet = false;
   bool m_returnItemCollectionMetricsHasBeenSet = false;
 };
 

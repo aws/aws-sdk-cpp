@@ -67,9 +67,9 @@ class CreateAgentResult {
   ///@}
  private:
   Aws::String m_agentArn;
-  bool m_agentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

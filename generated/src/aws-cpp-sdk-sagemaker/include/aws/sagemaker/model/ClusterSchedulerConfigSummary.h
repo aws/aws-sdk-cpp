@@ -174,27 +174,27 @@ class ClusterSchedulerConfigSummary {
   ///@}
  private:
   Aws::String m_clusterSchedulerConfigArn;
-  bool m_clusterSchedulerConfigArnHasBeenSet = false;
 
   Aws::String m_clusterSchedulerConfigId;
-  bool m_clusterSchedulerConfigIdHasBeenSet = false;
 
   int m_clusterSchedulerConfigVersion{0};
-  bool m_clusterSchedulerConfigVersionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   SchedulerResourceStatus m_status{SchedulerResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_clusterArn;
+  bool m_clusterSchedulerConfigArnHasBeenSet = false;
+  bool m_clusterSchedulerConfigIdHasBeenSet = false;
+  bool m_clusterSchedulerConfigVersionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
 };
 

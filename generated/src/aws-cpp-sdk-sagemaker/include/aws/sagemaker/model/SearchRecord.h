@@ -324,51 +324,51 @@ class SearchRecord {
   ///@}
  private:
   TrainingJob m_trainingJob;
-  bool m_trainingJobHasBeenSet = false;
 
   Experiment m_experiment;
-  bool m_experimentHasBeenSet = false;
 
   Trial m_trial;
-  bool m_trialHasBeenSet = false;
 
   TrialComponent m_trialComponent;
-  bool m_trialComponentHasBeenSet = false;
 
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   ModelPackage m_modelPackage;
-  bool m_modelPackageHasBeenSet = false;
 
   ModelPackageGroup m_modelPackageGroup;
-  bool m_modelPackageGroupHasBeenSet = false;
 
   Pipeline m_pipeline;
-  bool m_pipelineHasBeenSet = false;
 
   PipelineExecution m_pipelineExecution;
-  bool m_pipelineExecutionHasBeenSet = false;
 
   PipelineVersion m_pipelineVersion;
-  bool m_pipelineVersionHasBeenSet = false;
 
   FeatureGroup m_featureGroup;
-  bool m_featureGroupHasBeenSet = false;
 
   FeatureMetadata m_featureMetadata;
-  bool m_featureMetadataHasBeenSet = false;
 
   Project m_project;
-  bool m_projectHasBeenSet = false;
 
   HyperParameterTuningJobSearchEntity m_hyperParameterTuningJob;
-  bool m_hyperParameterTuningJobHasBeenSet = false;
 
   ModelCard m_modelCard;
-  bool m_modelCardHasBeenSet = false;
 
   ModelDashboardModel m_model;
+  bool m_trainingJobHasBeenSet = false;
+  bool m_experimentHasBeenSet = false;
+  bool m_trialHasBeenSet = false;
+  bool m_trialComponentHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_modelPackageHasBeenSet = false;
+  bool m_modelPackageGroupHasBeenSet = false;
+  bool m_pipelineHasBeenSet = false;
+  bool m_pipelineExecutionHasBeenSet = false;
+  bool m_pipelineVersionHasBeenSet = false;
+  bool m_featureGroupHasBeenSet = false;
+  bool m_featureMetadataHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_hyperParameterTuningJobHasBeenSet = false;
+  bool m_modelCardHasBeenSet = false;
   bool m_modelHasBeenSet = false;
 };
 

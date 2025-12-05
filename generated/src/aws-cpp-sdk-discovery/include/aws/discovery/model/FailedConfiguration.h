@@ -86,12 +86,12 @@ class FailedConfiguration {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   int m_errorStatusCode{0};
-  bool m_errorStatusCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_configurationIdHasBeenSet = false;
+  bool m_errorStatusCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

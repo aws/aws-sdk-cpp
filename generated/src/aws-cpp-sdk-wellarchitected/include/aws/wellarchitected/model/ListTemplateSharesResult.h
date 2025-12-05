@@ -99,15 +99,15 @@ class ListTemplateSharesResult {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::Vector<TemplateShareSummary> m_templateShareSummaries;
-  bool m_templateShareSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateShareSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -152,21 +152,21 @@ class RdsDbInstanceDetails {
   ///@}
  private:
   Aws::String m_dbInstanceIdentifier;
-  bool m_dbInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
-  bool m_dbClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dbInstanceArn;
-  bool m_dbInstanceArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dbInstanceIdentifierHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dbClusterIdentifierHasBeenSet = false;
+  bool m_dbInstanceArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

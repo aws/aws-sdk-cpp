@@ -94,12 +94,12 @@ class ResourceTagsCriteriaCondition {
   ///@}
  private:
   ComparisonOperator m_comparison{ComparisonOperator::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_comparisonHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -105,12 +105,12 @@ class BatchRestrictions {
   ///@}
  private:
   int m_maximumBuildsAllowed{0};
-  bool m_maximumBuildsAllowedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_computeTypesAllowed;
-  bool m_computeTypesAllowedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fleetsAllowed;
+  bool m_maximumBuildsAllowedHasBeenSet = false;
+  bool m_computeTypesAllowedHasBeenSet = false;
   bool m_fleetsAllowedHasBeenSet = false;
 };
 

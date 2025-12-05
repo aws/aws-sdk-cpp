@@ -100,15 +100,15 @@ class UpdateAssessmentControlSetStatusRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   ControlSetStatus m_status{ControlSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

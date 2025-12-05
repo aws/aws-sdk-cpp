@@ -70,9 +70,9 @@ class AwsElbLbCookieStickinessPolicy {
   ///@}
  private:
   long long m_cookieExpirationPeriod{0};
-  bool m_cookieExpirationPeriodHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_cookieExpirationPeriodHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

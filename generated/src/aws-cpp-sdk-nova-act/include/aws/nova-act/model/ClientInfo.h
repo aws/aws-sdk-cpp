@@ -68,9 +68,9 @@ class ClientInfo {
   ///@}
  private:
   int m_compatibilityVersion{0};
-  bool m_compatibilityVersionHasBeenSet = false;
 
   Aws::String m_sdkVersion;
+  bool m_compatibilityVersionHasBeenSet = false;
   bool m_sdkVersionHasBeenSet = false;
 };
 

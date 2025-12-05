@@ -325,51 +325,51 @@ class EmailChannelResponse {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_configurationSet;
-  bool m_configurationSetHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_fromAddress;
-  bool m_fromAddressHasBeenSet = false;
 
   bool m_hasCredential{false};
-  bool m_hasCredentialHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   int m_messagesPerSecond{0};
-  bool m_messagesPerSecondHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_orchestrationSendingRoleArn;
-  bool m_orchestrationSendingRoleArnHasBeenSet = false;
 
   int m_version{0};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_configurationSetHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_fromAddressHasBeenSet = false;
+  bool m_hasCredentialHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_identityHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_messagesPerSecondHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_orchestrationSendingRoleArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

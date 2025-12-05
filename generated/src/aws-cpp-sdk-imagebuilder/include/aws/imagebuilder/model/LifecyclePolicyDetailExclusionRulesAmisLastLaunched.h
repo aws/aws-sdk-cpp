@@ -68,9 +68,9 @@ class LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
   ///@}
  private:
   int m_value{0};
-  bool m_valueHasBeenSet = false;
 
   LifecyclePolicyTimeUnit m_unit{LifecyclePolicyTimeUnit::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

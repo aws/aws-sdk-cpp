@@ -371,57 +371,57 @@ class SolutionVersion {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   Aws::String m_solutionArn;
-  bool m_solutionArnHasBeenSet = false;
 
   bool m_performHPO{false};
-  bool m_performHPOHasBeenSet = false;
 
   bool m_performAutoML{false};
-  bool m_performAutoMLHasBeenSet = false;
 
   bool m_performIncrementalUpdate{false};
-  bool m_performIncrementalUpdateHasBeenSet = false;
 
   Aws::String m_recipeArn;
-  bool m_recipeArnHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   SolutionConfig m_solutionConfig;
-  bool m_solutionConfigHasBeenSet = false;
 
   double m_trainingHours{0.0};
-  bool m_trainingHoursHasBeenSet = false;
 
   TrainingMode m_trainingMode{TrainingMode::NOT_SET};
-  bool m_trainingModeHasBeenSet = false;
 
   TunedHPOParams m_tunedHPOParams;
-  bool m_tunedHPOParamsHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   TrainingType m_trainingType{TrainingType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_solutionArnHasBeenSet = false;
+  bool m_performHPOHasBeenSet = false;
+  bool m_performAutoMLHasBeenSet = false;
+  bool m_performIncrementalUpdateHasBeenSet = false;
+  bool m_recipeArnHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_solutionConfigHasBeenSet = false;
+  bool m_trainingHoursHasBeenSet = false;
+  bool m_trainingModeHasBeenSet = false;
+  bool m_tunedHPOParamsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_trainingTypeHasBeenSet = false;
 };
 

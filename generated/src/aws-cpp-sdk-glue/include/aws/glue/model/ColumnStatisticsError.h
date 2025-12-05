@@ -70,9 +70,9 @@ class ColumnStatisticsError {
   ///@}
  private:
   ColumnStatistics m_columnStatistics;
-  bool m_columnStatisticsHasBeenSet = false;
 
   ErrorDetail m_error;
+  bool m_columnStatisticsHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

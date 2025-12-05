@@ -221,27 +221,27 @@ class DescribeDBClusterSnapshotsRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterSnapshotIdentifier;
-  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_includeShared{false};
-  bool m_includeSharedHasBeenSet = false;
 
   bool m_includePublic{false};
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_includeSharedHasBeenSet = false;
   bool m_includePublicHasBeenSet = false;
 };
 

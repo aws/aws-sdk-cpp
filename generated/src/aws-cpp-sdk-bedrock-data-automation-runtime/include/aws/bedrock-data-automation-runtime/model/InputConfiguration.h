@@ -69,9 +69,9 @@ class InputConfiguration {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   AssetProcessingConfiguration m_assetProcessingConfiguration;
+  bool m_s3UriHasBeenSet = false;
   bool m_assetProcessingConfigurationHasBeenSet = false;
 };
 

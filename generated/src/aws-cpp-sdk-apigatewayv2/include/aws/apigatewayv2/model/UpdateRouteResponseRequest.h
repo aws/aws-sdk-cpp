@@ -173,24 +173,24 @@ class UpdateRouteResponseRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_modelSelectionExpression;
-  bool m_modelSelectionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseModels;
-  bool m_responseModelsHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterConstraints> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::String m_routeId;
-  bool m_routeIdHasBeenSet = false;
 
   Aws::String m_routeResponseId;
-  bool m_routeResponseIdHasBeenSet = false;
 
   Aws::String m_routeResponseKey;
+  bool m_apiIdHasBeenSet = false;
+  bool m_modelSelectionExpressionHasBeenSet = false;
+  bool m_responseModelsHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_routeIdHasBeenSet = false;
+  bool m_routeResponseIdHasBeenSet = false;
   bool m_routeResponseKeyHasBeenSet = false;
 };
 

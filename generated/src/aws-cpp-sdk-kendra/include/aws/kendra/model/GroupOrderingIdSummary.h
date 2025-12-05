@@ -132,18 +132,18 @@ class GroupOrderingIdSummary {
   ///@}
  private:
   PrincipalMappingStatus m_status{PrincipalMappingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_receivedAt{};
-  bool m_receivedAtHasBeenSet = false;
 
   long long m_orderingId{0};
-  bool m_orderingIdHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_receivedAtHasBeenSet = false;
+  bool m_orderingIdHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

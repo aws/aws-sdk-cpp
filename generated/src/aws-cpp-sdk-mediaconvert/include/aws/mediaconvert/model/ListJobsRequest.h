@@ -123,18 +123,18 @@ class ListJobsRequest : public MediaConvertRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Order m_order{Order::NOT_SET};
-  bool m_orderHasBeenSet = false;
 
   Aws::String m_queue;
-  bool m_queueHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_queueHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

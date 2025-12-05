@@ -69,9 +69,9 @@ class Dataset {
   ///@}
  private:
   DatasetType m_type{DatasetType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DatasetInputConfig m_inputConfig;
+  bool m_typeHasBeenSet = false;
   bool m_inputConfigHasBeenSet = false;
 };
 

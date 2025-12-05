@@ -71,9 +71,9 @@ class QueryComputeResponse {
   ///@}
  private:
   ComputeMode m_computeMode{ComputeMode::NOT_SET};
-  bool m_computeModeHasBeenSet = false;
 
   ProvisionedCapacityResponse m_provisionedCapacity;
+  bool m_computeModeHasBeenSet = false;
   bool m_provisionedCapacityHasBeenSet = false;
 };
 

@@ -414,63 +414,63 @@ class Participant {
   ///@}
  private:
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   ParticipantState m_state{ParticipantState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstJoinTime{};
-  bool m_firstJoinTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   bool m_published{false};
-  bool m_publishedHasBeenSet = false;
 
   Aws::String m_ispName;
-  bool m_ispNameHasBeenSet = false;
 
   Aws::String m_osName;
-  bool m_osNameHasBeenSet = false;
 
   Aws::String m_osVersion;
-  bool m_osVersionHasBeenSet = false;
 
   Aws::String m_browserName;
-  bool m_browserNameHasBeenSet = false;
 
   Aws::String m_browserVersion;
-  bool m_browserVersionHasBeenSet = false;
 
   Aws::String m_sdkVersion;
-  bool m_sdkVersionHasBeenSet = false;
 
   Aws::String m_recordingS3BucketName;
-  bool m_recordingS3BucketNameHasBeenSet = false;
 
   Aws::String m_recordingS3Prefix;
-  bool m_recordingS3PrefixHasBeenSet = false;
 
   ParticipantRecordingState m_recordingState{ParticipantRecordingState::NOT_SET};
-  bool m_recordingStateHasBeenSet = false;
 
   ParticipantProtocol m_protocol{ParticipantProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   ReplicationType m_replicationType{ReplicationType::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
   ReplicationState m_replicationState{ReplicationState::NOT_SET};
-  bool m_replicationStateHasBeenSet = false;
 
   Aws::String m_sourceStageArn;
-  bool m_sourceStageArnHasBeenSet = false;
 
   Aws::String m_sourceSessionId;
+  bool m_participantIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_firstJoinTimeHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_publishedHasBeenSet = false;
+  bool m_ispNameHasBeenSet = false;
+  bool m_osNameHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
+  bool m_browserNameHasBeenSet = false;
+  bool m_browserVersionHasBeenSet = false;
+  bool m_sdkVersionHasBeenSet = false;
+  bool m_recordingS3BucketNameHasBeenSet = false;
+  bool m_recordingS3PrefixHasBeenSet = false;
+  bool m_recordingStateHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
+  bool m_replicationStateHasBeenSet = false;
+  bool m_sourceStageArnHasBeenSet = false;
   bool m_sourceSessionIdHasBeenSet = false;
 };
 

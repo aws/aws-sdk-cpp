@@ -77,12 +77,12 @@ class CreateRetrieverResult {
   ///@}
  private:
   Aws::String m_retrieverId;
-  bool m_retrieverIdHasBeenSet = false;
 
   Aws::String m_retrieverArn;
-  bool m_retrieverArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retrieverIdHasBeenSet = false;
+  bool m_retrieverArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

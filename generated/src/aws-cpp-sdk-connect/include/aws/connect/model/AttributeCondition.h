@@ -141,21 +141,21 @@ class AttributeCondition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   double m_proficiencyLevel{0.0};
-  bool m_proficiencyLevelHasBeenSet = false;
 
   Range m_range;
-  bool m_rangeHasBeenSet = false;
 
   MatchCriteria m_matchCriteria;
-  bool m_matchCriteriaHasBeenSet = false;
 
   Aws::String m_comparisonOperator;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_proficiencyLevelHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_matchCriteriaHasBeenSet = false;
   bool m_comparisonOperatorHasBeenSet = false;
 };
 

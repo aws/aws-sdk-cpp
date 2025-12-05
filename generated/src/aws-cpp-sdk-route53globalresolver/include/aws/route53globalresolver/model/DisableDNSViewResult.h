@@ -246,42 +246,42 @@ class DisableDNSViewResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   DnsSecValidationType m_dnssecValidation{DnsSecValidationType::NOT_SET};
-  bool m_dnssecValidationHasBeenSet = false;
 
   EdnsClientSubnetType m_ednsClientSubnet{EdnsClientSubnetType::NOT_SET};
-  bool m_ednsClientSubnetHasBeenSet = false;
 
   FirewallRulesFailOpenType m_firewallRulesFailOpen{FirewallRulesFailOpenType::NOT_SET};
-  bool m_firewallRulesFailOpenHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_globalResolverId;
-  bool m_globalResolverIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   ProfileResourceStatus m_status{ProfileResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_dnssecValidationHasBeenSet = false;
+  bool m_ednsClientSubnetHasBeenSet = false;
+  bool m_firewallRulesFailOpenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_globalResolverIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

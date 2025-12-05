@@ -72,9 +72,9 @@ class CustomAccountPoolHandler {
   ///@}
  private:
   Aws::String m_lambdaExecutionRoleArn;
-  bool m_lambdaExecutionRoleArnHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
+  bool m_lambdaExecutionRoleArnHasBeenSet = false;
   bool m_lambdaFunctionArnHasBeenSet = false;
 };
 

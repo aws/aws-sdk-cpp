@@ -103,12 +103,12 @@ class AggregatedVariablesImpactExplanation {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eventVariableNames;
-  bool m_eventVariableNamesHasBeenSet = false;
 
   Aws::String m_relativeImpact;
-  bool m_relativeImpactHasBeenSet = false;
 
   double m_logOddsImpact{0.0};
+  bool m_eventVariableNamesHasBeenSet = false;
+  bool m_relativeImpactHasBeenSet = false;
   bool m_logOddsImpactHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class BatchGetRepositoryScanningConfigurationResult {
   ///@}
  private:
   Aws::Vector<RepositoryScanningConfiguration> m_scanningConfigurations;
-  bool m_scanningConfigurationsHasBeenSet = false;
 
   Aws::Vector<RepositoryScanningConfigurationFailure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scanningConfigurationsHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

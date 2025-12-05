@@ -86,12 +86,12 @@ class DescribeJobResult {
   ///@}
  private:
   JobMetadata m_jobMetadata;
-  bool m_jobMetadataHasBeenSet = false;
 
   Aws::Vector<JobMetadata> m_subJobMetadata;
-  bool m_subJobMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobMetadataHasBeenSet = false;
+  bool m_subJobMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

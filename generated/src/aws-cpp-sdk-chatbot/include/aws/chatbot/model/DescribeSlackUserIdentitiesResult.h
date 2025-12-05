@@ -87,12 +87,12 @@ class DescribeSlackUserIdentitiesResult {
   ///@}
  private:
   Aws::Vector<SlackUserIdentity> m_slackUserIdentities;
-  bool m_slackUserIdentitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_slackUserIdentitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -286,42 +286,42 @@ class Framework {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FrameworkType m_type{FrameworkType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_logo;
-  bool m_logoHasBeenSet = false;
 
   Aws::Vector<ControlSet> m_controlSets;
-  bool m_controlSetsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_logoHasBeenSet = false;
+  bool m_controlSetsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

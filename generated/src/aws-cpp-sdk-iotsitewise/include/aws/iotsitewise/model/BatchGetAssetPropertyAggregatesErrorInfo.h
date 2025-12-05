@@ -70,9 +70,9 @@ class BatchGetAssetPropertyAggregatesErrorInfo {
   ///@}
  private:
   BatchGetAssetPropertyAggregatesErrorCode m_errorCode{BatchGetAssetPropertyAggregatesErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_errorTimestamp{};
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorTimestampHasBeenSet = false;
 };
 

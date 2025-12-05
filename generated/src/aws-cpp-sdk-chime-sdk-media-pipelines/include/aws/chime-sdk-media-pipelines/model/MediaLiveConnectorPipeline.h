@@ -173,24 +173,24 @@ class MediaLiveConnectorPipeline {
   ///@}
  private:
   Aws::Vector<LiveConnectorSourceConfiguration> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Vector<LiveConnectorSinkConfiguration> m_sinks;
-  bool m_sinksHasBeenSet = false;
 
   Aws::String m_mediaPipelineId;
-  bool m_mediaPipelineIdHasBeenSet = false;
 
   Aws::String m_mediaPipelineArn;
-  bool m_mediaPipelineArnHasBeenSet = false;
 
   MediaPipelineStatus m_status{MediaPipelineStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_sourcesHasBeenSet = false;
+  bool m_sinksHasBeenSet = false;
+  bool m_mediaPipelineIdHasBeenSet = false;
+  bool m_mediaPipelineArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

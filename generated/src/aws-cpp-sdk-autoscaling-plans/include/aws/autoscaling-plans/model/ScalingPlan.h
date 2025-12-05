@@ -194,27 +194,27 @@ class ScalingPlan {
   ///@}
  private:
   Aws::String m_scalingPlanName;
-  bool m_scalingPlanNameHasBeenSet = false;
 
   long long m_scalingPlanVersion{0};
-  bool m_scalingPlanVersionHasBeenSet = false;
 
   ApplicationSource m_applicationSource;
-  bool m_applicationSourceHasBeenSet = false;
 
   Aws::Vector<ScalingInstruction> m_scalingInstructions;
-  bool m_scalingInstructionsHasBeenSet = false;
 
   ScalingPlanStatusCode m_statusCode{ScalingPlanStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_statusStartTime{};
-  bool m_statusStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_scalingPlanNameHasBeenSet = false;
+  bool m_scalingPlanVersionHasBeenSet = false;
+  bool m_applicationSourceHasBeenSet = false;
+  bool m_scalingInstructionsHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_statusStartTimeHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

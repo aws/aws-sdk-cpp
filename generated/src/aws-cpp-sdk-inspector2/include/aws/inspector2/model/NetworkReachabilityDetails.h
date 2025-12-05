@@ -89,12 +89,12 @@ class NetworkReachabilityDetails {
   ///@}
  private:
   PortRange m_openPortRange;
-  bool m_openPortRangeHasBeenSet = false;
 
   NetworkProtocol m_protocol{NetworkProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   NetworkPath m_networkPath;
+  bool m_openPortRangeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_networkPathHasBeenSet = false;
 };
 

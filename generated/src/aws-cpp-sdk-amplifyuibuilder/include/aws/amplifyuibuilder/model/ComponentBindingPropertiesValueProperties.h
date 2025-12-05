@@ -187,27 +187,27 @@ class ComponentBindingPropertiesValueProperties {
   ///@}
  private:
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Aws::Vector<Predicate> m_predicates;
-  bool m_predicatesHasBeenSet = false;
 
   Aws::String m_userAttribute;
-  bool m_userAttributeHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_slotName;
+  bool m_modelHasBeenSet = false;
+  bool m_fieldHasBeenSet = false;
+  bool m_predicatesHasBeenSet = false;
+  bool m_userAttributeHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
   bool m_slotNameHasBeenSet = false;
 };
 

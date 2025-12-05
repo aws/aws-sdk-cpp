@@ -191,24 +191,24 @@ class Organization {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   OrganizationFeatureSet m_featureSet{OrganizationFeatureSet::NOT_SET};
-  bool m_featureSetHasBeenSet = false;
 
   Aws::String m_masterAccountArn;
-  bool m_masterAccountArnHasBeenSet = false;
 
   Aws::String m_masterAccountId;
-  bool m_masterAccountIdHasBeenSet = false;
 
   Aws::String m_masterAccountEmail;
-  bool m_masterAccountEmailHasBeenSet = false;
 
   Aws::Vector<PolicyTypeSummary> m_availablePolicyTypes;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_featureSetHasBeenSet = false;
+  bool m_masterAccountArnHasBeenSet = false;
+  bool m_masterAccountIdHasBeenSet = false;
+  bool m_masterAccountEmailHasBeenSet = false;
   bool m_availablePolicyTypesHasBeenSet = false;
 };
 

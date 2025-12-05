@@ -136,15 +136,15 @@ If STANDARD channel, subnet IDs must
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceIds;
-  bool m_networkInterfaceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_networkInterfaceIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
 };
 

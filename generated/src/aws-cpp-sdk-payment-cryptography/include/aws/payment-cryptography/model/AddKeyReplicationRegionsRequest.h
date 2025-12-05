@@ -84,9 +84,9 @@ class AddKeyReplicationRegionsRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationRegions;
+  bool m_keyIdentifierHasBeenSet = false;
   bool m_replicationRegionsHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class GetSmsTemplateResult {
   ///@}
  private:
   SMSTemplateResponse m_sMSTemplateResponse;
-  bool m_sMSTemplateResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sMSTemplateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -123,9 +123,9 @@ class AppIntegrationsConfiguration {
   ///@}
  private:
   Aws::String m_appIntegrationArn;
-  bool m_appIntegrationArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_objectFields;
+  bool m_appIntegrationArnHasBeenSet = false;
   bool m_objectFieldsHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class GetEffectivePoliciesRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_cognitoIdentityPoolId;
-  bool m_cognitoIdentityPoolIdHasBeenSet = false;
 
   Aws::String m_thingName;
+  bool m_principalHasBeenSet = false;
+  bool m_cognitoIdentityPoolIdHasBeenSet = false;
   bool m_thingNameHasBeenSet = false;
 };
 

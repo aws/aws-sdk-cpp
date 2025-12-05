@@ -178,24 +178,24 @@ class PushAPNSMessageTemplateContent {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   MessageTemplateBodyContentProvider m_body;
-  bool m_bodyHasBeenSet = false;
 
   PushMessageAction m_action{PushMessageAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_sound;
-  bool m_soundHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_mediaUrl;
-  bool m_mediaUrlHasBeenSet = false;
 
   MessageTemplateBodyContentProvider m_rawContent;
+  bool m_titleHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_soundHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_mediaUrlHasBeenSet = false;
   bool m_rawContentHasBeenSet = false;
 };
 

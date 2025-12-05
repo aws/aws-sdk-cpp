@@ -126,15 +126,15 @@ class ListTaskDefinitionFamiliesRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_familyPrefix;
-  bool m_familyPrefixHasBeenSet = false;
 
   TaskDefinitionFamilyStatus m_status{TaskDefinitionFamilyStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_familyPrefixHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

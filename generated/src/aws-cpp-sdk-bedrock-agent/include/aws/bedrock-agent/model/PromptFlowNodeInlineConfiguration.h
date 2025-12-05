@@ -129,18 +129,18 @@ class PromptFlowNodeInlineConfiguration {
   ///@}
  private:
   PromptTemplateType m_templateType{PromptTemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   PromptTemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   PromptInferenceConfiguration m_inferenceConfiguration;
-  bool m_inferenceConfigurationHasBeenSet = false;
 
   Aws::Utils::Document m_additionalModelRequestFields;
+  bool m_templateTypeHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_inferenceConfigurationHasBeenSet = false;
   bool m_additionalModelRequestFieldsHasBeenSet = false;
 };
 

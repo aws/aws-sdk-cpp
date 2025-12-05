@@ -210,33 +210,33 @@ class VoiceChannelResponse {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_hasCredential{false};
-  bool m_hasCredentialHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   int m_version{0};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_hasCredentialHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

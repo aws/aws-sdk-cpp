@@ -100,12 +100,12 @@ class CreateRestoreTestingPlanRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   RestoreTestingPlanForCreate m_restoreTestingPlan;
-  bool m_restoreTestingPlanHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_restoreTestingPlanHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

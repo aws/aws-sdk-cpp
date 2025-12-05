@@ -202,30 +202,30 @@ class ExecutionEvent {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   ExecutionEventType m_type{ExecutionEventType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   ExecutionBlockType m_executionBlockType{ExecutionBlockType::NOT_SET};
-  bool m_executionBlockTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_previousEventId;
+  bool m_timestampHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stepNameHasBeenSet = false;
+  bool m_executionBlockTypeHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_previousEventIdHasBeenSet = false;
 };
 

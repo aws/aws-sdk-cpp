@@ -380,54 +380,54 @@ class MySQLSettings {
   ///@}
  private:
   Aws::String m_afterConnectScript;
-  bool m_afterConnectScriptHasBeenSet = false;
 
   bool m_cleanSourceMetadataOnMismatch{false};
-  bool m_cleanSourceMetadataOnMismatchHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   int m_eventsPollInterval{0};
-  bool m_eventsPollIntervalHasBeenSet = false;
 
   TargetDbType m_targetDbType{TargetDbType::NOT_SET};
-  bool m_targetDbTypeHasBeenSet = false;
 
   int m_maxFileSize{0};
-  bool m_maxFileSizeHasBeenSet = false;
 
   int m_parallelLoadThreads{0};
-  bool m_parallelLoadThreadsHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   Aws::String m_serverTimezone;
-  bool m_serverTimezoneHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   int m_executeTimeout{0};
-  bool m_executeTimeoutHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   MySQLAuthenticationMethod m_authenticationMethod{MySQLAuthenticationMethod::NOT_SET};
+  bool m_afterConnectScriptHasBeenSet = false;
+  bool m_cleanSourceMetadataOnMismatchHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_eventsPollIntervalHasBeenSet = false;
+  bool m_targetDbTypeHasBeenSet = false;
+  bool m_maxFileSizeHasBeenSet = false;
+  bool m_parallelLoadThreadsHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_serverTimezoneHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
+  bool m_executeTimeoutHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
   bool m_authenticationMethodHasBeenSet = false;
 };
 

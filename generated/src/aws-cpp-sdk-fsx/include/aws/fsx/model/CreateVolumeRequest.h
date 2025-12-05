@@ -146,21 +146,21 @@ class CreateVolumeRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CreateOntapVolumeConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CreateOpenZFSVolumeConfiguration m_openZFSConfiguration;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_openZFSConfigurationHasBeenSet = false;
 };
 

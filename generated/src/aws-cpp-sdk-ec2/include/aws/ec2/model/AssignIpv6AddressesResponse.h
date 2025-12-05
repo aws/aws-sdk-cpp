@@ -109,15 +109,15 @@ class AssignIpv6AddressesResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_assignedIpv6Addresses;
-  bool m_assignedIpv6AddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_assignedIpv6Prefixes;
-  bool m_assignedIpv6PrefixesHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_assignedIpv6AddressesHasBeenSet = false;
+  bool m_assignedIpv6PrefixesHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

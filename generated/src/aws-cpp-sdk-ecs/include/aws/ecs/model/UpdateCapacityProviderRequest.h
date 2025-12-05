@@ -111,15 +111,15 @@ class UpdateCapacityProviderRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   AutoScalingGroupProviderUpdate m_autoScalingGroupProvider;
-  bool m_autoScalingGroupProviderHasBeenSet = false;
 
   UpdateManagedInstancesProviderConfiguration m_managedInstancesProvider;
+  bool m_nameHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_autoScalingGroupProviderHasBeenSet = false;
   bool m_managedInstancesProviderHasBeenSet = false;
 };
 

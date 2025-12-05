@@ -70,9 +70,9 @@ class DeleteFlowRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   bool m_skipResourceInUseCheck{false};
+  bool m_flowIdentifierHasBeenSet = false;
   bool m_skipResourceInUseCheckHasBeenSet = false;
 };
 

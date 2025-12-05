@@ -112,18 +112,18 @@ class FileShareInfo {
   ///@}
  private:
   FileShareType m_fileShareType{FileShareType::NOT_SET};
-  bool m_fileShareTypeHasBeenSet = false;
 
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   Aws::String m_fileShareId;
-  bool m_fileShareIdHasBeenSet = false;
 
   Aws::String m_fileShareStatus;
-  bool m_fileShareStatusHasBeenSet = false;
 
   Aws::String m_gatewayARN;
+  bool m_fileShareTypeHasBeenSet = false;
+  bool m_fileShareARNHasBeenSet = false;
+  bool m_fileShareIdHasBeenSet = false;
+  bool m_fileShareStatusHasBeenSet = false;
   bool m_gatewayARNHasBeenSet = false;
 };
 

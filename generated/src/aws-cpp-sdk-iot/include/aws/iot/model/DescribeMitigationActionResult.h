@@ -181,30 +181,30 @@ class DescribeMitigationActionResult {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   MitigationActionType m_actionType{MitigationActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_actionArn;
-  bool m_actionArnHasBeenSet = false;
 
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MitigationActionParams m_actionParams;
-  bool m_actionParamsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionNameHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_actionArnHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_actionParamsHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

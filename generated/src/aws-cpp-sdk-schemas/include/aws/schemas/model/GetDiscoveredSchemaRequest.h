@@ -73,9 +73,9 @@ class GetDiscoveredSchemaRequest : public SchemasRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_eventsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -331,42 +331,42 @@ class AmazonTranscribeCallAnalyticsProcessorConfiguration {
   ///@}
  private:
   CallAnalyticsLanguageCode m_languageCode{CallAnalyticsLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
-  bool m_vocabularyFilterMethodHasBeenSet = false;
 
   Aws::String m_languageModelName;
-  bool m_languageModelNameHasBeenSet = false;
 
   bool m_enablePartialResultsStabilization{false};
-  bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
   PartialResultsStability m_partialResultsStability{PartialResultsStability::NOT_SET};
-  bool m_partialResultsStabilityHasBeenSet = false;
 
   ContentType m_contentIdentificationType{ContentType::NOT_SET};
-  bool m_contentIdentificationTypeHasBeenSet = false;
 
   ContentType m_contentRedactionType{ContentType::NOT_SET};
-  bool m_contentRedactionTypeHasBeenSet = false;
 
   Aws::String m_piiEntityTypes;
-  bool m_piiEntityTypesHasBeenSet = false;
 
   bool m_filterPartialResults{false};
-  bool m_filterPartialResultsHasBeenSet = false;
 
   PostCallAnalyticsSettings m_postCallAnalyticsSettings;
-  bool m_postCallAnalyticsSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_callAnalyticsStreamCategories;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_vocabularyFilterMethodHasBeenSet = false;
+  bool m_languageModelNameHasBeenSet = false;
+  bool m_enablePartialResultsStabilizationHasBeenSet = false;
+  bool m_partialResultsStabilityHasBeenSet = false;
+  bool m_contentIdentificationTypeHasBeenSet = false;
+  bool m_contentRedactionTypeHasBeenSet = false;
+  bool m_piiEntityTypesHasBeenSet = false;
+  bool m_filterPartialResultsHasBeenSet = false;
+  bool m_postCallAnalyticsSettingsHasBeenSet = false;
   bool m_callAnalyticsStreamCategoriesHasBeenSet = false;
 };
 

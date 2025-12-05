@@ -129,18 +129,18 @@ class GetParallelDataResult {
   ///@}
  private:
   ParallelDataProperties m_parallelDataProperties;
-  bool m_parallelDataPropertiesHasBeenSet = false;
 
   ParallelDataDataLocation m_dataLocation;
-  bool m_dataLocationHasBeenSet = false;
 
   ParallelDataDataLocation m_auxiliaryDataLocation;
-  bool m_auxiliaryDataLocationHasBeenSet = false;
 
   ParallelDataDataLocation m_latestUpdateAttemptAuxiliaryDataLocation;
-  bool m_latestUpdateAttemptAuxiliaryDataLocationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parallelDataPropertiesHasBeenSet = false;
+  bool m_dataLocationHasBeenSet = false;
+  bool m_auxiliaryDataLocationHasBeenSet = false;
+  bool m_latestUpdateAttemptAuxiliaryDataLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class NodeRepairConfigOverrides {
   ///@}
  private:
   Aws::String m_nodeMonitoringCondition;
-  bool m_nodeMonitoringConditionHasBeenSet = false;
 
   Aws::String m_nodeUnhealthyReason;
-  bool m_nodeUnhealthyReasonHasBeenSet = false;
 
   int m_minRepairWaitTimeMins{0};
-  bool m_minRepairWaitTimeMinsHasBeenSet = false;
 
   RepairAction m_repairAction{RepairAction::NOT_SET};
+  bool m_nodeMonitoringConditionHasBeenSet = false;
+  bool m_nodeUnhealthyReasonHasBeenSet = false;
+  bool m_minRepairWaitTimeMinsHasBeenSet = false;
   bool m_repairActionHasBeenSet = false;
 };
 

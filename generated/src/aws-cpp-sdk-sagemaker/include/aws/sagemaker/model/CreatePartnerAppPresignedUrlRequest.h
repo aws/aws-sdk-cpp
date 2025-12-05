@@ -82,12 +82,12 @@ class CreatePartnerAppPresignedUrlRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_expiresInSeconds{0};
-  bool m_expiresInSecondsHasBeenSet = false;
 
   int m_sessionExpirationDurationInSeconds{0};
+  bool m_arnHasBeenSet = false;
+  bool m_expiresInSecondsHasBeenSet = false;
   bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
 };
 

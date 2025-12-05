@@ -67,9 +67,9 @@ class PutPackageOriginConfigurationResult {
   ///@}
  private:
   PackageOriginConfiguration m_originConfiguration;
-  bool m_originConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

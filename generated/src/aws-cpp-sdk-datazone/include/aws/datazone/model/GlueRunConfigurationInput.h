@@ -116,15 +116,15 @@ class GlueRunConfigurationInput {
   ///@}
  private:
   bool m_autoImportDataQualityResult{false};
-  bool m_autoImportDataQualityResultHasBeenSet = false;
 
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   Aws::String m_dataAccessRole;
-  bool m_dataAccessRoleHasBeenSet = false;
 
   Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
+  bool m_autoImportDataQualityResultHasBeenSet = false;
+  bool m_catalogNameHasBeenSet = false;
+  bool m_dataAccessRoleHasBeenSet = false;
   bool m_relationalFilterConfigurationsHasBeenSet = false;
 };
 

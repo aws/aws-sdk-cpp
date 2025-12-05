@@ -104,15 +104,15 @@ class SearchResourcesRequest : public Macie2Request {
   ///@}
  private:
   SearchResourcesBucketCriteria m_bucketCriteria;
-  bool m_bucketCriteriaHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SearchResourcesSortCriteria m_sortCriteria;
+  bool m_bucketCriteriaHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
 };
 

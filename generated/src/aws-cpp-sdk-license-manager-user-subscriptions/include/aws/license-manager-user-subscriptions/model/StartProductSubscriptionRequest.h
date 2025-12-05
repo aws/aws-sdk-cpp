@@ -131,18 +131,18 @@ class StartProductSubscriptionRequest : public LicenseManagerUserSubscriptionsRe
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_usernameHasBeenSet = false;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_productHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

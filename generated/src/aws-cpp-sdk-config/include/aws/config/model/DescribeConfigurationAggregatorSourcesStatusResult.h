@@ -87,12 +87,12 @@ class DescribeConfigurationAggregatorSourcesStatusResult {
   ///@}
  private:
   Aws::Vector<AggregatedSourceStatus> m_aggregatedSourceStatusList;
-  bool m_aggregatedSourceStatusListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregatedSourceStatusListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

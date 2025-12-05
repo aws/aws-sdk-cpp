@@ -107,15 +107,15 @@ class ArtifactsConfiguration {
   ///@}
  private:
   AudioArtifactsConfiguration m_audio;
-  bool m_audioHasBeenSet = false;
 
   VideoArtifactsConfiguration m_video;
-  bool m_videoHasBeenSet = false;
 
   ContentArtifactsConfiguration m_content;
-  bool m_contentHasBeenSet = false;
 
   CompositedVideoArtifactsConfiguration m_compositedVideo;
+  bool m_audioHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_compositedVideoHasBeenSet = false;
 };
 

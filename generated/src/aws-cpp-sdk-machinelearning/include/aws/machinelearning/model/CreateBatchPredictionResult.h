@@ -71,9 +71,9 @@ class CreateBatchPredictionResult {
   ///@}
  private:
   Aws::String m_batchPredictionId;
-  bool m_batchPredictionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchPredictionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

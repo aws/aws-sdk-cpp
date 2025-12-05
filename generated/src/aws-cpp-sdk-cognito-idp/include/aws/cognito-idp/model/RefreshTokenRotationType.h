@@ -72,9 +72,9 @@ class RefreshTokenRotationType {
   ///@}
  private:
   FeatureType m_feature{FeatureType::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   int m_retryGracePeriodSeconds{0};
+  bool m_featureHasBeenSet = false;
   bool m_retryGracePeriodSecondsHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class TestHypervisorConfigurationRequest : public BackupGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

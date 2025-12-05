@@ -72,9 +72,9 @@ class DescribeRouterConfigurationRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_routerTypeIdentifier;
+  bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_routerTypeIdentifierHasBeenSet = false;
 };
 

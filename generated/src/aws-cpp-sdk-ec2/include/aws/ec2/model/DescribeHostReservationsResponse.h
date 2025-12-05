@@ -86,12 +86,12 @@ class DescribeHostReservationsResponse {
   ///@}
  private:
   Aws::Vector<HostReservation> m_hostReservationSet;
-  bool m_hostReservationSetHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_hostReservationSetHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

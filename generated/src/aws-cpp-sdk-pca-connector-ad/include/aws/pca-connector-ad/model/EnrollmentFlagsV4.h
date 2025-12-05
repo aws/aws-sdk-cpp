@@ -113,18 +113,18 @@ class EnrollmentFlagsV4 {
   ///@}
  private:
   bool m_enableKeyReuseOnNtTokenKeysetStorageFull{false};
-  bool m_enableKeyReuseOnNtTokenKeysetStorageFullHasBeenSet = false;
 
   bool m_includeSymmetricAlgorithms{false};
-  bool m_includeSymmetricAlgorithmsHasBeenSet = false;
 
   bool m_noSecurityExtension{false};
-  bool m_noSecurityExtensionHasBeenSet = false;
 
   bool m_removeInvalidCertificateFromPersonalStore{false};
-  bool m_removeInvalidCertificateFromPersonalStoreHasBeenSet = false;
 
   bool m_userInteractionRequired{false};
+  bool m_enableKeyReuseOnNtTokenKeysetStorageFullHasBeenSet = false;
+  bool m_includeSymmetricAlgorithmsHasBeenSet = false;
+  bool m_noSecurityExtensionHasBeenSet = false;
+  bool m_removeInvalidCertificateFromPersonalStoreHasBeenSet = false;
   bool m_userInteractionRequiredHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class CreateExportRequest : public LexModelsV2Request {
   ///@}
  private:
   ExportResourceSpecification m_resourceSpecification;
-  bool m_resourceSpecificationHasBeenSet = false;
 
   ImportExportFileFormat m_fileFormat{ImportExportFileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   Aws::String m_filePassword;
+  bool m_resourceSpecificationHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
   bool m_filePasswordHasBeenSet = false;
 };
 

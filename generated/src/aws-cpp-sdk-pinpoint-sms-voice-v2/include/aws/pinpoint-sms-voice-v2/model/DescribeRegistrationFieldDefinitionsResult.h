@@ -106,15 +106,15 @@ class DescribeRegistrationFieldDefinitionsResult {
   ///@}
  private:
   Aws::String m_registrationType;
-  bool m_registrationTypeHasBeenSet = false;
 
   Aws::Vector<RegistrationFieldDefinition> m_registrationFieldDefinitions;
-  bool m_registrationFieldDefinitionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationTypeHasBeenSet = false;
+  bool m_registrationFieldDefinitionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -152,21 +152,21 @@ class EvaluateDataTableValuesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataTableId;
-  bool m_dataTableIdHasBeenSet = false;
 
   Aws::Vector<DataTableValueEvaluationSet> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataTableIdHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

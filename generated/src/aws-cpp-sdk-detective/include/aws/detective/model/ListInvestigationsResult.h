@@ -88,12 +88,12 @@ class ListInvestigationsResult {
   ///@}
  private:
   Aws::Vector<InvestigationDetail> m_investigationDetails;
-  bool m_investigationDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_investigationDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -522,78 +522,78 @@ class KeyspacesCellValue {
   ///@}
  private:
   Aws::String m_asciiT;
-  bool m_asciiTHasBeenSet = false;
 
   Aws::String m_bigintT;
-  bool m_bigintTHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_blobT{};
-  bool m_blobTHasBeenSet = false;
 
   bool m_boolT{false};
-  bool m_boolTHasBeenSet = false;
 
   Aws::String m_counterT;
-  bool m_counterTHasBeenSet = false;
 
   Aws::String m_dateT;
-  bool m_dateTHasBeenSet = false;
 
   Aws::String m_decimalT;
-  bool m_decimalTHasBeenSet = false;
 
   Aws::String m_doubleT;
-  bool m_doubleTHasBeenSet = false;
 
   Aws::String m_floatT;
-  bool m_floatTHasBeenSet = false;
 
   Aws::String m_inetT;
-  bool m_inetTHasBeenSet = false;
 
   Aws::String m_intT;
-  bool m_intTHasBeenSet = false;
 
   Aws::Vector<KeyspacesCell> m_listT;
-  bool m_listTHasBeenSet = false;
 
   Aws::Vector<KeyspacesCellMapDefinition> m_mapT;
-  bool m_mapTHasBeenSet = false;
 
   Aws::Vector<KeyspacesCell> m_setT;
-  bool m_setTHasBeenSet = false;
 
   Aws::String m_smallintT;
-  bool m_smallintTHasBeenSet = false;
 
   Aws::String m_textT;
-  bool m_textTHasBeenSet = false;
 
   Aws::String m_timeT;
-  bool m_timeTHasBeenSet = false;
 
   Aws::String m_timestampT;
-  bool m_timestampTHasBeenSet = false;
 
   Aws::String m_timeuuidT;
-  bool m_timeuuidTHasBeenSet = false;
 
   Aws::String m_tinyintT;
-  bool m_tinyintTHasBeenSet = false;
 
   Aws::Vector<KeyspacesCell> m_tupleT;
-  bool m_tupleTHasBeenSet = false;
 
   Aws::String m_uuidT;
-  bool m_uuidTHasBeenSet = false;
 
   Aws::String m_varcharT;
-  bool m_varcharTHasBeenSet = false;
 
   Aws::String m_varintT;
-  bool m_varintTHasBeenSet = false;
 
   Aws::Map<Aws::String, KeyspacesCell> m_udtT;
+  bool m_asciiTHasBeenSet = false;
+  bool m_bigintTHasBeenSet = false;
+  bool m_blobTHasBeenSet = false;
+  bool m_boolTHasBeenSet = false;
+  bool m_counterTHasBeenSet = false;
+  bool m_dateTHasBeenSet = false;
+  bool m_decimalTHasBeenSet = false;
+  bool m_doubleTHasBeenSet = false;
+  bool m_floatTHasBeenSet = false;
+  bool m_inetTHasBeenSet = false;
+  bool m_intTHasBeenSet = false;
+  bool m_listTHasBeenSet = false;
+  bool m_mapTHasBeenSet = false;
+  bool m_setTHasBeenSet = false;
+  bool m_smallintTHasBeenSet = false;
+  bool m_textTHasBeenSet = false;
+  bool m_timeTHasBeenSet = false;
+  bool m_timestampTHasBeenSet = false;
+  bool m_timeuuidTHasBeenSet = false;
+  bool m_tinyintTHasBeenSet = false;
+  bool m_tupleTHasBeenSet = false;
+  bool m_uuidTHasBeenSet = false;
+  bool m_varcharTHasBeenSet = false;
+  bool m_varintTHasBeenSet = false;
   bool m_udtTHasBeenSet = false;
 };
 

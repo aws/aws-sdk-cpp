@@ -63,9 +63,9 @@ class DescribeAppInstanceAdminResult {
   ///@}
  private:
   AppInstanceAdmin m_appInstanceAdmin;
-  bool m_appInstanceAdminHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceAdminHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

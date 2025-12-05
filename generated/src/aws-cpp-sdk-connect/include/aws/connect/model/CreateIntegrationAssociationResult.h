@@ -76,12 +76,12 @@ class CreateIntegrationAssociationResult {
   ///@}
  private:
   Aws::String m_integrationAssociationId;
-  bool m_integrationAssociationIdHasBeenSet = false;
 
   Aws::String m_integrationAssociationArn;
-  bool m_integrationAssociationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationAssociationIdHasBeenSet = false;
+  bool m_integrationAssociationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

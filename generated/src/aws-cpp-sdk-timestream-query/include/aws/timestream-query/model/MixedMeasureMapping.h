@@ -138,18 +138,18 @@ class MixedMeasureMapping {
   ///@}
  private:
   Aws::String m_measureName;
-  bool m_measureNameHasBeenSet = false;
 
   Aws::String m_sourceColumn;
-  bool m_sourceColumnHasBeenSet = false;
 
   Aws::String m_targetMeasureName;
-  bool m_targetMeasureNameHasBeenSet = false;
 
   MeasureValueType m_measureValueType{MeasureValueType::NOT_SET};
-  bool m_measureValueTypeHasBeenSet = false;
 
   Aws::Vector<MultiMeasureAttributeMapping> m_multiMeasureAttributeMappings;
+  bool m_measureNameHasBeenSet = false;
+  bool m_sourceColumnHasBeenSet = false;
+  bool m_targetMeasureNameHasBeenSet = false;
+  bool m_measureValueTypeHasBeenSet = false;
   bool m_multiMeasureAttributeMappingsHasBeenSet = false;
 };
 

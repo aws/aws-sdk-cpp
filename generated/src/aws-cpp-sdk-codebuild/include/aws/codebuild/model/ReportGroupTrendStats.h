@@ -88,12 +88,12 @@ class ReportGroupTrendStats {
   ///@}
  private:
   Aws::String m_average;
-  bool m_averageHasBeenSet = false;
 
   Aws::String m_max;
-  bool m_maxHasBeenSet = false;
 
   Aws::String m_min;
+  bool m_averageHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
   bool m_minHasBeenSet = false;
 };
 

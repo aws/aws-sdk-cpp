@@ -393,60 +393,60 @@ class ResourceDetails {
   ///@}
  private:
   LambdaFunction m_lambdaFunction;
-  bool m_lambdaFunctionHasBeenSet = false;
 
   EcsService m_ecsService;
-  bool m_ecsServiceHasBeenSet = false;
 
   Ec2Instance m_ec2Instance;
-  bool m_ec2InstanceHasBeenSet = false;
 
   EbsVolume m_ebsVolume;
-  bool m_ebsVolumeHasBeenSet = false;
 
   Ec2AutoScalingGroup m_ec2AutoScalingGroup;
-  bool m_ec2AutoScalingGroupHasBeenSet = false;
 
   Ec2ReservedInstances m_ec2ReservedInstances;
-  bool m_ec2ReservedInstancesHasBeenSet = false;
 
   RdsReservedInstances m_rdsReservedInstances;
-  bool m_rdsReservedInstancesHasBeenSet = false;
 
   ElastiCacheReservedInstances m_elastiCacheReservedInstances;
-  bool m_elastiCacheReservedInstancesHasBeenSet = false;
 
   OpenSearchReservedInstances m_openSearchReservedInstances;
-  bool m_openSearchReservedInstancesHasBeenSet = false;
 
   RedshiftReservedInstances m_redshiftReservedInstances;
-  bool m_redshiftReservedInstancesHasBeenSet = false;
 
   Ec2InstanceSavingsPlans m_ec2InstanceSavingsPlans;
-  bool m_ec2InstanceSavingsPlansHasBeenSet = false;
 
   ComputeSavingsPlans m_computeSavingsPlans;
-  bool m_computeSavingsPlansHasBeenSet = false;
 
   SageMakerSavingsPlans m_sageMakerSavingsPlans;
-  bool m_sageMakerSavingsPlansHasBeenSet = false;
 
   RdsDbInstance m_rdsDbInstance;
-  bool m_rdsDbInstanceHasBeenSet = false;
 
   RdsDbInstanceStorage m_rdsDbInstanceStorage;
-  bool m_rdsDbInstanceStorageHasBeenSet = false;
 
   AuroraDbClusterStorage m_auroraDbClusterStorage;
-  bool m_auroraDbClusterStorageHasBeenSet = false;
 
   DynamoDbReservedCapacity m_dynamoDbReservedCapacity;
-  bool m_dynamoDbReservedCapacityHasBeenSet = false;
 
   MemoryDbReservedInstances m_memoryDbReservedInstances;
-  bool m_memoryDbReservedInstancesHasBeenSet = false;
 
   NatGateway m_natGateway;
+  bool m_lambdaFunctionHasBeenSet = false;
+  bool m_ecsServiceHasBeenSet = false;
+  bool m_ec2InstanceHasBeenSet = false;
+  bool m_ebsVolumeHasBeenSet = false;
+  bool m_ec2AutoScalingGroupHasBeenSet = false;
+  bool m_ec2ReservedInstancesHasBeenSet = false;
+  bool m_rdsReservedInstancesHasBeenSet = false;
+  bool m_elastiCacheReservedInstancesHasBeenSet = false;
+  bool m_openSearchReservedInstancesHasBeenSet = false;
+  bool m_redshiftReservedInstancesHasBeenSet = false;
+  bool m_ec2InstanceSavingsPlansHasBeenSet = false;
+  bool m_computeSavingsPlansHasBeenSet = false;
+  bool m_sageMakerSavingsPlansHasBeenSet = false;
+  bool m_rdsDbInstanceHasBeenSet = false;
+  bool m_rdsDbInstanceStorageHasBeenSet = false;
+  bool m_auroraDbClusterStorageHasBeenSet = false;
+  bool m_dynamoDbReservedCapacityHasBeenSet = false;
+  bool m_memoryDbReservedInstancesHasBeenSet = false;
   bool m_natGatewayHasBeenSet = false;
 };
 

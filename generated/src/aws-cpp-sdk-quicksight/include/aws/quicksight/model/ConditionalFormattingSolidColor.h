@@ -69,9 +69,9 @@ class ConditionalFormattingSolidColor {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_color;
+  bool m_expressionHasBeenSet = false;
   bool m_colorHasBeenSet = false;
 };
 

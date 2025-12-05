@@ -78,9 +78,9 @@ class ProvisionedThroughput {
   ///@}
  private:
   long long m_readCapacityUnits{0};
-  bool m_readCapacityUnitsHasBeenSet = false;
 
   long long m_writeCapacityUnits{0};
+  bool m_readCapacityUnitsHasBeenSet = false;
   bool m_writeCapacityUnitsHasBeenSet = false;
 };
 

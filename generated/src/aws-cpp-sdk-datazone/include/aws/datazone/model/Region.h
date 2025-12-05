@@ -68,9 +68,9 @@ class Region {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_regionNamePath;
+  bool m_regionNameHasBeenSet = false;
   bool m_regionNamePathHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListExperimentTemplatesResult {
   ///@}
  private:
   Aws::Vector<ExperimentTemplateSummary> m_experimentTemplates;
-  bool m_experimentTemplatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_experimentTemplatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

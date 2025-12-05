@@ -67,9 +67,9 @@ class DeleteResourcePolicyRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_policyHashCondition;
-  bool m_policyHashConditionHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_policyHashConditionHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

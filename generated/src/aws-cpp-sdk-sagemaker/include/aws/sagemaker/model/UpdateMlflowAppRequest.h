@@ -170,24 +170,24 @@ class UpdateMlflowAppRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_artifactStoreUri;
-  bool m_artifactStoreUriHasBeenSet = false;
 
   ModelRegistrationMode m_modelRegistrationMode{ModelRegistrationMode::NOT_SET};
-  bool m_modelRegistrationModeHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceWindowStart;
-  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_defaultDomainIdList;
-  bool m_defaultDomainIdListHasBeenSet = false;
 
   AccountDefaultStatus m_accountDefaultStatus{AccountDefaultStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_artifactStoreUriHasBeenSet = false;
+  bool m_modelRegistrationModeHasBeenSet = false;
+  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
+  bool m_defaultDomainIdListHasBeenSet = false;
   bool m_accountDefaultStatusHasBeenSet = false;
 };
 

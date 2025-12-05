@@ -96,12 +96,12 @@ class CoverageByTime {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::Vector<ReservationCoverageGroup> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Coverage m_total;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

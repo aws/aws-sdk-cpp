@@ -233,30 +233,30 @@ class ComputeConfig {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_dnsNameServers;
-  bool m_dnsNameServersHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   int m_maxCapacityUnits{0};
-  bool m_maxCapacityUnitsHasBeenSet = false;
 
   int m_minCapacityUnits{0};
-  bool m_minCapacityUnitsHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_replicationSubnetGroupId;
-  bool m_replicationSubnetGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_dnsNameServersHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_maxCapacityUnitsHasBeenSet = false;
+  bool m_minCapacityUnitsHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_replicationSubnetGroupIdHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
 };
 

@@ -185,30 +185,30 @@ class CheckoutLicenseResult {
   ///@}
  private:
   CheckoutType m_checkoutType{CheckoutType::NOT_SET};
-  bool m_checkoutTypeHasBeenSet = false;
 
   Aws::String m_licenseConsumptionToken;
-  bool m_licenseConsumptionTokenHasBeenSet = false;
 
   Aws::Vector<EntitlementData> m_entitlementsAllowed;
-  bool m_entitlementsAllowedHasBeenSet = false;
 
   Aws::String m_signedToken;
-  bool m_signedTokenHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_issuedAt;
-  bool m_issuedAtHasBeenSet = false;
 
   Aws::String m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_licenseArn;
-  bool m_licenseArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_checkoutTypeHasBeenSet = false;
+  bool m_licenseConsumptionTokenHasBeenSet = false;
+  bool m_entitlementsAllowedHasBeenSet = false;
+  bool m_signedTokenHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_issuedAtHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
+  bool m_licenseArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

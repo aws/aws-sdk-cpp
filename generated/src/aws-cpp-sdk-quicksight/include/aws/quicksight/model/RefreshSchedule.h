@@ -130,18 +130,18 @@ class RefreshSchedule {
   ///@}
  private:
   Aws::String m_scheduleId;
-  bool m_scheduleIdHasBeenSet = false;
 
   RefreshFrequency m_scheduleFrequency;
-  bool m_scheduleFrequencyHasBeenSet = false;
 
   Aws::Utils::DateTime m_startAfterDateTime{};
-  bool m_startAfterDateTimeHasBeenSet = false;
 
   IngestionType m_refreshType{IngestionType::NOT_SET};
-  bool m_refreshTypeHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_scheduleIdHasBeenSet = false;
+  bool m_scheduleFrequencyHasBeenSet = false;
+  bool m_startAfterDateTimeHasBeenSet = false;
+  bool m_refreshTypeHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

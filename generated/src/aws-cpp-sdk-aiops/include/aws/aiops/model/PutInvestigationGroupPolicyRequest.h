@@ -66,9 +66,9 @@ class PutInvestigationGroupPolicyRequest : public AIOpsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_identifierHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

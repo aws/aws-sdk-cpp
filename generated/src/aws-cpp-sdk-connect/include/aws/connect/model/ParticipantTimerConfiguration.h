@@ -93,12 +93,12 @@ class ParticipantTimerConfiguration {
   ///@}
  private:
   TimerEligibleParticipantRoles m_participantRole{TimerEligibleParticipantRoles::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   ParticipantTimerType m_timerType{ParticipantTimerType::NOT_SET};
-  bool m_timerTypeHasBeenSet = false;
 
   ParticipantTimerValue m_timerValue;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_timerTypeHasBeenSet = false;
   bool m_timerValueHasBeenSet = false;
 };
 

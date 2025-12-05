@@ -136,18 +136,18 @@ class BuildConfiguration {
   ///@}
  private:
   Aws::String m_artifactName;
-  bool m_artifactNameHasBeenSet = false;
 
   Aws::String m_codeBuildServiceRole;
-  bool m_codeBuildServiceRoleHasBeenSet = false;
 
   ComputeType m_computeType{ComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
+  bool m_artifactNameHasBeenSet = false;
+  bool m_codeBuildServiceRoleHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
   bool m_timeoutInMinutesHasBeenSet = false;
 };
 

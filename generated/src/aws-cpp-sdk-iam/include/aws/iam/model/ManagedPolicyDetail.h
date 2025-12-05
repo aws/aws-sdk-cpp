@@ -278,39 +278,39 @@ class ManagedPolicyDetail {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_defaultVersionId;
-  bool m_defaultVersionIdHasBeenSet = false;
 
   int m_attachmentCount{0};
-  bool m_attachmentCountHasBeenSet = false;
 
   int m_permissionsBoundaryUsageCount{0};
-  bool m_permissionsBoundaryUsageCountHasBeenSet = false;
 
   bool m_isAttachable{false};
-  bool m_isAttachableHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDate{};
-  bool m_updateDateHasBeenSet = false;
 
   Aws::Vector<PolicyVersion> m_policyVersionList;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_defaultVersionIdHasBeenSet = false;
+  bool m_attachmentCountHasBeenSet = false;
+  bool m_permissionsBoundaryUsageCountHasBeenSet = false;
+  bool m_isAttachableHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_updateDateHasBeenSet = false;
   bool m_policyVersionListHasBeenSet = false;
 };
 

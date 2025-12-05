@@ -85,12 +85,12 @@ class ListBillingGroupsResult {
   ///@}
  private:
   Aws::Vector<BillingGroupListElement> m_billingGroups;
-  bool m_billingGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -253,36 +253,36 @@ class DestinationDescription {
   ///@}
  private:
   Aws::String m_destinationId;
-  bool m_destinationIdHasBeenSet = false;
 
   S3DestinationDescription m_s3DestinationDescription;
-  bool m_s3DestinationDescriptionHasBeenSet = false;
 
   ExtendedS3DestinationDescription m_extendedS3DestinationDescription;
-  bool m_extendedS3DestinationDescriptionHasBeenSet = false;
 
   RedshiftDestinationDescription m_redshiftDestinationDescription;
-  bool m_redshiftDestinationDescriptionHasBeenSet = false;
 
   ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;
-  bool m_elasticsearchDestinationDescriptionHasBeenSet = false;
 
   AmazonopensearchserviceDestinationDescription m_amazonopensearchserviceDestinationDescription;
-  bool m_amazonopensearchserviceDestinationDescriptionHasBeenSet = false;
 
   SplunkDestinationDescription m_splunkDestinationDescription;
-  bool m_splunkDestinationDescriptionHasBeenSet = false;
 
   HttpEndpointDestinationDescription m_httpEndpointDestinationDescription;
-  bool m_httpEndpointDestinationDescriptionHasBeenSet = false;
 
   SnowflakeDestinationDescription m_snowflakeDestinationDescription;
-  bool m_snowflakeDestinationDescriptionHasBeenSet = false;
 
   AmazonOpenSearchServerlessDestinationDescription m_amazonOpenSearchServerlessDestinationDescription;
-  bool m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet = false;
 
   IcebergDestinationDescription m_icebergDestinationDescription;
+  bool m_destinationIdHasBeenSet = false;
+  bool m_s3DestinationDescriptionHasBeenSet = false;
+  bool m_extendedS3DestinationDescriptionHasBeenSet = false;
+  bool m_redshiftDestinationDescriptionHasBeenSet = false;
+  bool m_elasticsearchDestinationDescriptionHasBeenSet = false;
+  bool m_amazonopensearchserviceDestinationDescriptionHasBeenSet = false;
+  bool m_splunkDestinationDescriptionHasBeenSet = false;
+  bool m_httpEndpointDestinationDescriptionHasBeenSet = false;
+  bool m_snowflakeDestinationDescriptionHasBeenSet = false;
+  bool m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet = false;
   bool m_icebergDestinationDescriptionHasBeenSet = false;
 };
 

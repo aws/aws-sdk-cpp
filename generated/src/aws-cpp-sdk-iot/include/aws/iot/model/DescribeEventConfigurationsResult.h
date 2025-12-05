@@ -102,15 +102,15 @@ class DescribeEventConfigurationsResult {
   ///@}
  private:
   Aws::Map<EventType, Configuration> m_eventConfigurations;
-  bool m_eventConfigurationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventConfigurationsHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

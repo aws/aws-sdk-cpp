@@ -140,21 +140,21 @@ class AuthenticationResultType {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   int m_expiresIn{0};
-  bool m_expiresInHasBeenSet = false;
 
   Aws::String m_tokenType;
-  bool m_tokenTypeHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   Aws::String m_idToken;
-  bool m_idTokenHasBeenSet = false;
 
   NewDeviceMetadataType m_newDeviceMetadata;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_expiresInHasBeenSet = false;
+  bool m_tokenTypeHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
+  bool m_idTokenHasBeenSet = false;
   bool m_newDeviceMetadataHasBeenSet = false;
 };
 

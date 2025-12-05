@@ -186,27 +186,27 @@ class DescribeConfigurationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_kafkaVersions;
-  bool m_kafkaVersionsHasBeenSet = false;
 
   ConfigurationRevision m_latestRevision;
-  bool m_latestRevisionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConfigurationState m_state{ConfigurationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kafkaVersionsHasBeenSet = false;
+  bool m_latestRevisionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

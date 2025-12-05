@@ -67,9 +67,9 @@ class ToolOverrideConstantInputValue {
   ///@}
  private:
   ToolOverrideInputValueType m_type{ToolOverrideInputValueType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

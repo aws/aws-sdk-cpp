@@ -68,9 +68,9 @@ class EvaluationMetrics {
   ///@}
  private:
   TransformType m_transformType{TransformType::NOT_SET};
-  bool m_transformTypeHasBeenSet = false;
 
   FindMatchesMetrics m_findMatchesMetrics;
+  bool m_transformTypeHasBeenSet = false;
   bool m_findMatchesMetricsHasBeenSet = false;
 };
 

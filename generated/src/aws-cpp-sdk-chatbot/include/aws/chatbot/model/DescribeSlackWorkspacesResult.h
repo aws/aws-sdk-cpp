@@ -87,12 +87,12 @@ class DescribeSlackWorkspacesResult {
   ///@}
  private:
   Aws::Vector<SlackWorkspace> m_slackWorkspaces;
-  bool m_slackWorkspacesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_slackWorkspacesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

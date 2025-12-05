@@ -99,12 +99,12 @@ class IdentityMailFromDomainAttributes {
   ///@}
  private:
   Aws::String m_mailFromDomain;
-  bool m_mailFromDomainHasBeenSet = false;
 
   CustomMailFromStatus m_mailFromDomainStatus{CustomMailFromStatus::NOT_SET};
-  bool m_mailFromDomainStatusHasBeenSet = false;
 
   BehaviorOnMXFailure m_behaviorOnMXFailure{BehaviorOnMXFailure::NOT_SET};
+  bool m_mailFromDomainHasBeenSet = false;
+  bool m_mailFromDomainStatusHasBeenSet = false;
   bool m_behaviorOnMXFailureHasBeenSet = false;
 };
 

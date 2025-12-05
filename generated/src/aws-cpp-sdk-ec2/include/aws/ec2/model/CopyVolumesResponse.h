@@ -67,9 +67,9 @@ class CopyVolumesResponse {
   ///@}
  private:
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_volumesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CloudWatchLogDeliveryOptions {
   ///@}
  private:
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   Aws::String m_logGroupName;
+  bool m_logTypeHasBeenSet = false;
   bool m_logGroupNameHasBeenSet = false;
 };
 

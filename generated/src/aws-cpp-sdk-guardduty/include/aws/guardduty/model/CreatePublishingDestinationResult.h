@@ -59,9 +59,9 @@ class CreatePublishingDestinationResult {
   ///@}
  private:
   Aws::String m_destinationId;
-  bool m_destinationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

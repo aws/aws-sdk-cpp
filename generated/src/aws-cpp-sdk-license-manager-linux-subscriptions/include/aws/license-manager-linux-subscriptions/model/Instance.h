@@ -320,48 +320,48 @@ class Instance {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::String m_dualSubscription;
-  bool m_dualSubscriptionHasBeenSet = false;
 
   Aws::String m_instanceID;
-  bool m_instanceIDHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_osVersion;
-  bool m_osVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_registeredWithSubscriptionProvider;
-  bool m_registeredWithSubscriptionProviderHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_subscriptionName;
-  bool m_subscriptionNameHasBeenSet = false;
 
   Aws::String m_subscriptionProviderCreateTime;
-  bool m_subscriptionProviderCreateTimeHasBeenSet = false;
 
   Aws::String m_subscriptionProviderUpdateTime;
-  bool m_subscriptionProviderUpdateTimeHasBeenSet = false;
 
   Aws::String m_usageOperation;
+  bool m_accountIDHasBeenSet = false;
+  bool m_amiIdHasBeenSet = false;
+  bool m_dualSubscriptionHasBeenSet = false;
+  bool m_instanceIDHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
+  bool m_productCodeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_registeredWithSubscriptionProviderHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subscriptionNameHasBeenSet = false;
+  bool m_subscriptionProviderCreateTimeHasBeenSet = false;
+  bool m_subscriptionProviderUpdateTimeHasBeenSet = false;
   bool m_usageOperationHasBeenSet = false;
 };
 

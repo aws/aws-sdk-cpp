@@ -119,15 +119,15 @@ class InventoryItemSchema {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<InventoryItemAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_typeNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

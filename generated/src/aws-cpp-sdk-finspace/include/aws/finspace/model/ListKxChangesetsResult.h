@@ -84,12 +84,12 @@ class ListKxChangesetsResult {
   ///@}
  private:
   Aws::Vector<KxChangesetListEntry> m_kxChangesets;
-  bool m_kxChangesetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kxChangesetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

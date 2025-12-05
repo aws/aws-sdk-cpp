@@ -60,9 +60,9 @@ class DescribeTimeToLiveResult {
   ///@}
  private:
   TimeToLiveDescription m_timeToLiveDescription;
-  bool m_timeToLiveDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_timeToLiveDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

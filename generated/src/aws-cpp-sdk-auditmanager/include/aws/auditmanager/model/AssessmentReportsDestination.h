@@ -68,9 +68,9 @@ class AssessmentReportsDestination {
   ///@}
  private:
   AssessmentReportDestinationType m_destinationType{AssessmentReportDestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   Aws::String m_destination;
+  bool m_destinationTypeHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

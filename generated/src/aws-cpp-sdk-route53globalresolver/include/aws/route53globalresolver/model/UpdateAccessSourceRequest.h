@@ -117,18 +117,18 @@ class UpdateAccessSourceRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_accessSourceId;
-  bool m_accessSourceIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
+  bool m_accessSourceIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

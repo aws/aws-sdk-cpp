@@ -85,12 +85,12 @@ class SearchSampleQueriesResult {
   ///@}
  private:
   Aws::Vector<SearchSampleQueriesSearchResult> m_searchResults;
-  bool m_searchResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_searchResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

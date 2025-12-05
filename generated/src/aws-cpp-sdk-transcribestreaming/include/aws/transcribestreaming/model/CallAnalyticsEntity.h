@@ -143,21 +143,21 @@ class CallAnalyticsEntity {
   ///@}
  private:
   long long m_beginOffsetMillis{0};
-  bool m_beginOffsetMillisHasBeenSet = false;
 
   long long m_endOffsetMillis{0};
-  bool m_endOffsetMillisHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_beginOffsetMillisHasBeenSet = false;
+  bool m_endOffsetMillisHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

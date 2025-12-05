@@ -190,27 +190,27 @@ class EnabledBaselineDetails {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_baselineIdentifier;
-  bool m_baselineIdentifierHasBeenSet = false;
 
   Aws::String m_baselineVersion;
-  bool m_baselineVersionHasBeenSet = false;
 
   EnabledBaselineDriftStatusSummary m_driftStatusSummary;
-  bool m_driftStatusSummaryHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::String m_parentIdentifier;
-  bool m_parentIdentifierHasBeenSet = false;
 
   EnablementStatusSummary m_statusSummary;
-  bool m_statusSummaryHasBeenSet = false;
 
   Aws::Vector<EnabledBaselineParameterSummary> m_parameters;
+  bool m_arnHasBeenSet = false;
+  bool m_baselineIdentifierHasBeenSet = false;
+  bool m_baselineVersionHasBeenSet = false;
+  bool m_driftStatusSummaryHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
+  bool m_parentIdentifierHasBeenSet = false;
+  bool m_statusSummaryHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

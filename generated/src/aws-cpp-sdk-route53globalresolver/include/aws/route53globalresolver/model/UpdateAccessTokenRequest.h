@@ -65,9 +65,9 @@ class UpdateAccessTokenRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_accessTokenId;
-  bool m_accessTokenIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_accessTokenIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ProvisionedCapacityResponse {
   ///@}
  private:
   int m_activeQueryTCU{0};
-  bool m_activeQueryTCUHasBeenSet = false;
 
   AccountSettingsNotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   LastUpdate m_lastUpdate;
+  bool m_activeQueryTCUHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
   bool m_lastUpdateHasBeenSet = false;
 };
 

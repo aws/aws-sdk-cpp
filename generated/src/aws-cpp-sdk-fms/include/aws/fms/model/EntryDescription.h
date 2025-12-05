@@ -96,12 +96,12 @@ class EntryDescription {
   ///@}
  private:
   NetworkAclEntry m_entryDetail;
-  bool m_entryDetailHasBeenSet = false;
 
   int m_entryRuleNumber{0};
-  bool m_entryRuleNumberHasBeenSet = false;
 
   EntryType m_entryType{EntryType::NOT_SET};
+  bool m_entryDetailHasBeenSet = false;
+  bool m_entryRuleNumberHasBeenSet = false;
   bool m_entryTypeHasBeenSet = false;
 };
 

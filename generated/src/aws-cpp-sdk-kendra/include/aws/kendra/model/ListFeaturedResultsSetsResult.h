@@ -87,12 +87,12 @@ class ListFeaturedResultsSetsResult {
   ///@}
  private:
   Aws::Vector<FeaturedResultsSetSummary> m_featuredResultsSetSummaryItems;
-  bool m_featuredResultsSetSummaryItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featuredResultsSetSummaryItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

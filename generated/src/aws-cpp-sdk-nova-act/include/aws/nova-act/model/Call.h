@@ -91,12 +91,12 @@ class Call {
   ///@}
  private:
   Aws::String m_callId;
-  bool m_callIdHasBeenSet = false;
 
   Aws::Utils::Document m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_callIdHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

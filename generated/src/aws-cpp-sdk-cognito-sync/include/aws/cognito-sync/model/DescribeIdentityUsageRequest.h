@@ -71,9 +71,9 @@ class DescribeIdentityUsageRequest : public CognitoSyncRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityId;
+  bool m_identityPoolIdHasBeenSet = false;
   bool m_identityIdHasBeenSet = false;
 };
 

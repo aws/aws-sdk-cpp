@@ -78,9 +78,9 @@ class Anomaly {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   AnomalyUnusual m_unusual;
+  bool m_profilesHasBeenSet = false;
   bool m_unusualHasBeenSet = false;
 };
 

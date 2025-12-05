@@ -60,9 +60,9 @@ class GetInsightResult {
   ///@}
  private:
   Insight m_insight;
-  bool m_insightHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

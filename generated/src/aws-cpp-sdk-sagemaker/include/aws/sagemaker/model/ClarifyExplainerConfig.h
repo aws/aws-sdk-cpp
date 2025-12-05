@@ -92,12 +92,12 @@ class ClarifyExplainerConfig {
   ///@}
  private:
   Aws::String m_enableExplanations;
-  bool m_enableExplanationsHasBeenSet = false;
 
   ClarifyInferenceConfig m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   ClarifyShapConfig m_shapConfig;
+  bool m_enableExplanationsHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
   bool m_shapConfigHasBeenSet = false;
 };
 

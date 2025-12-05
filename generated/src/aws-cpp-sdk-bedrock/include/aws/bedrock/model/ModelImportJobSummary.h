@@ -176,27 +176,27 @@ class ModelImportJobSummary {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   ModelImportJobStatus m_status{ModelImportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_importedModelArn;
-  bool m_importedModelArnHasBeenSet = false;
 
   Aws::String m_importedModelName;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_importedModelArnHasBeenSet = false;
   bool m_importedModelNameHasBeenSet = false;
 };
 

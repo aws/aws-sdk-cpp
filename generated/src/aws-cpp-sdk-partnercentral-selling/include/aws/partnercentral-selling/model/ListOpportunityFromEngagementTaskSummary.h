@@ -226,33 +226,33 @@ class ListOpportunityFromEngagementTaskSummary {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   TaskStatus m_taskStatus{TaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ReasonCode m_reasonCode{ReasonCode::NOT_SET};
-  bool m_reasonCodeHasBeenSet = false;
 
   Aws::String m_opportunityId;
-  bool m_opportunityIdHasBeenSet = false;
 
   Aws::String m_resourceSnapshotJobId;
-  bool m_resourceSnapshotJobIdHasBeenSet = false;
 
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   Aws::String m_contextId;
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonCodeHasBeenSet = false;
+  bool m_opportunityIdHasBeenSet = false;
+  bool m_resourceSnapshotJobIdHasBeenSet = false;
+  bool m_engagementIdHasBeenSet = false;
   bool m_contextIdHasBeenSet = false;
 };
 

@@ -141,21 +141,21 @@ class UpdateFlowRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   UpdateFailoverConfig m_sourceFailoverConfig;
-  bool m_sourceFailoverConfigHasBeenSet = false;
 
   UpdateMaintenance m_maintenance;
-  bool m_maintenanceHasBeenSet = false;
 
   MonitoringConfig m_sourceMonitoringConfig;
-  bool m_sourceMonitoringConfigHasBeenSet = false;
 
   NdiConfig m_ndiConfig;
-  bool m_ndiConfigHasBeenSet = false;
 
   FlowSize m_flowSize{FlowSize::NOT_SET};
+  bool m_flowArnHasBeenSet = false;
+  bool m_sourceFailoverConfigHasBeenSet = false;
+  bool m_maintenanceHasBeenSet = false;
+  bool m_sourceMonitoringConfigHasBeenSet = false;
+  bool m_ndiConfigHasBeenSet = false;
   bool m_flowSizeHasBeenSet = false;
 };
 

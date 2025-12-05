@@ -239,36 +239,36 @@ class AuditFinding {
   ///@}
  private:
   Aws::String m_findingId;
-  bool m_findingIdHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_checkName;
-  bool m_checkNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskStartTime{};
-  bool m_taskStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_findingTime{};
-  bool m_findingTimeHasBeenSet = false;
 
   AuditFindingSeverity m_severity{AuditFindingSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   NonCompliantResource m_nonCompliantResource;
-  bool m_nonCompliantResourceHasBeenSet = false;
 
   Aws::Vector<RelatedResource> m_relatedResources;
-  bool m_relatedResourcesHasBeenSet = false;
 
   Aws::String m_reasonForNonCompliance;
-  bool m_reasonForNonComplianceHasBeenSet = false;
 
   Aws::String m_reasonForNonComplianceCode;
-  bool m_reasonForNonComplianceCodeHasBeenSet = false;
 
   bool m_isSuppressed{false};
+  bool m_findingIdHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_checkNameHasBeenSet = false;
+  bool m_taskStartTimeHasBeenSet = false;
+  bool m_findingTimeHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_nonCompliantResourceHasBeenSet = false;
+  bool m_relatedResourcesHasBeenSet = false;
+  bool m_reasonForNonComplianceHasBeenSet = false;
+  bool m_reasonForNonComplianceCodeHasBeenSet = false;
   bool m_isSuppressedHasBeenSet = false;
 };
 

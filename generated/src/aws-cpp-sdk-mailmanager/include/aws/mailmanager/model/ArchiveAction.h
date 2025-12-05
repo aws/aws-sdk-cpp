@@ -70,9 +70,9 @@ class ArchiveAction {
   ///@}
  private:
   ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
-  bool m_actionFailurePolicyHasBeenSet = false;
 
   Aws::String m_targetArchive;
+  bool m_actionFailurePolicyHasBeenSet = false;
   bool m_targetArchiveHasBeenSet = false;
 };
 

@@ -240,36 +240,36 @@ class SubscriptionGrantSummary {
   ///@}
  private:
   Aws::Vector<SubscribedAsset> m_assets;
-  bool m_assetsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   GrantedEntity m_grantedEntity;
-  bool m_grantedEntityHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SubscriptionGrantOverallStatus m_status{SubscriptionGrantOverallStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_subscriptionTargetId;
-  bool m_subscriptionTargetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
+  bool m_assetsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_grantedEntityHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subscriptionTargetIdHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
 };
 

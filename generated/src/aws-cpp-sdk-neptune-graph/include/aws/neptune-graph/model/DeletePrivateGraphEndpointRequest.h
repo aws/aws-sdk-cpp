@@ -70,9 +70,9 @@ class DeletePrivateGraphEndpointRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_graphIdentifierHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

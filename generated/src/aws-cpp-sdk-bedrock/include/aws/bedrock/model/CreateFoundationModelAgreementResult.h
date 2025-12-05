@@ -59,9 +59,9 @@ class CreateFoundationModelAgreementResult {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

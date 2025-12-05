@@ -88,12 +88,12 @@ class DeleteProxyRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   Aws::String m_proxyName;
-  bool m_proxyNameHasBeenSet = false;
 
   Aws::String m_proxyArn;
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_proxyNameHasBeenSet = false;
   bool m_proxyArnHasBeenSet = false;
 };
 

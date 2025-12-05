@@ -71,9 +71,9 @@ class ScheduleItem {
   ///@}
  private:
   Aws::Utils::DateTime m_chargeDate{};
-  bool m_chargeDateHasBeenSet = false;
 
   Aws::String m_chargeAmount;
+  bool m_chargeDateHasBeenSet = false;
   bool m_chargeAmountHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class PersistentChat {
   ///@}
  private:
   RehydrationType m_rehydrationType{RehydrationType::NOT_SET};
-  bool m_rehydrationTypeHasBeenSet = false;
 
   Aws::String m_sourceContactId;
+  bool m_rehydrationTypeHasBeenSet = false;
   bool m_sourceContactIdHasBeenSet = false;
 };
 

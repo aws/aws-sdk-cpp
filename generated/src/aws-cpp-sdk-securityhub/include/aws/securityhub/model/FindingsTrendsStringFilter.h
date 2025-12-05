@@ -66,9 +66,9 @@ class FindingsTrendsStringFilter {
   ///@}
  private:
   FindingsTrendsStringField m_fieldName{FindingsTrendsStringField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   StringFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

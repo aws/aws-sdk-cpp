@@ -89,12 +89,12 @@ class DocumentIdentifier {
   ///@}
  private:
   ContentDataSourceType m_dataSourceType{ContentDataSourceType::NOT_SET};
-  bool m_dataSourceTypeHasBeenSet = false;
 
   S3Location m_s3;
-  bool m_s3HasBeenSet = false;
 
   CustomDocumentIdentifier m_custom;
+  bool m_dataSourceTypeHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

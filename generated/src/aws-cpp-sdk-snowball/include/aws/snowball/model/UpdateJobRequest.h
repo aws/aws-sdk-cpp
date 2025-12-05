@@ -245,36 +245,36 @@ class UpdateJobRequest : public SnowballRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Notification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   JobResource m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
-  bool m_onDeviceServiceConfigurationHasBeenSet = false;
 
   Aws::String m_addressId;
-  bool m_addressIdHasBeenSet = false;
 
   ShippingOption m_shippingOption{ShippingOption::NOT_SET};
-  bool m_shippingOptionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SnowballCapacity m_snowballCapacityPreference{SnowballCapacity::NOT_SET};
-  bool m_snowballCapacityPreferenceHasBeenSet = false;
 
   Aws::String m_forwardingAddressId;
-  bool m_forwardingAddressIdHasBeenSet = false;
 
   PickupDetails m_pickupDetails;
+  bool m_jobIdHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_notificationHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_onDeviceServiceConfigurationHasBeenSet = false;
+  bool m_addressIdHasBeenSet = false;
+  bool m_shippingOptionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_snowballCapacityPreferenceHasBeenSet = false;
+  bool m_forwardingAddressIdHasBeenSet = false;
   bool m_pickupDetailsHasBeenSet = false;
 };
 

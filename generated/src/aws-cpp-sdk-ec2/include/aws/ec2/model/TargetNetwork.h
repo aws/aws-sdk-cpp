@@ -152,21 +152,21 @@ class TargetNetwork {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_targetNetworkId;
-  bool m_targetNetworkIdHasBeenSet = false;
 
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   AssociationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
+  bool m_associationIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_targetNetworkIdHasBeenSet = false;
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
 };
 

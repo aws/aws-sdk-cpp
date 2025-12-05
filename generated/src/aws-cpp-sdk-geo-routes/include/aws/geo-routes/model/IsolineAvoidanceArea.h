@@ -76,9 +76,9 @@ class IsolineAvoidanceArea {
   ///@}
  private:
   Aws::Vector<IsolineAvoidanceAreaGeometry> m_except;
-  bool m_exceptHasBeenSet = false;
 
   IsolineAvoidanceAreaGeometry m_geometry;
+  bool m_exceptHasBeenSet = false;
   bool m_geometryHasBeenSet = false;
 };
 

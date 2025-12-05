@@ -161,18 +161,18 @@ class Occurrences {
   ///@}
  private:
   Aws::Vector<Range> m_lineRanges;
-  bool m_lineRangesHasBeenSet = false;
 
   Aws::Vector<Range> m_offsetRanges;
-  bool m_offsetRangesHasBeenSet = false;
 
   Aws::Vector<Page> m_pages;
-  bool m_pagesHasBeenSet = false;
 
   Aws::Vector<Record> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::Vector<Cell> m_cells;
+  bool m_lineRangesHasBeenSet = false;
+  bool m_offsetRangesHasBeenSet = false;
+  bool m_pagesHasBeenSet = false;
+  bool m_recordsHasBeenSet = false;
   bool m_cellsHasBeenSet = false;
 };
 

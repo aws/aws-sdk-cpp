@@ -150,21 +150,21 @@ class PendingMaintenanceActionDetails {
   ///@}
  private:
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_autoAppliedAfterDate;
-  bool m_autoAppliedAfterDateHasBeenSet = false;
 
   Aws::String m_currentApplyDate;
-  bool m_currentApplyDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_forcedApplyDate;
-  bool m_forcedApplyDateHasBeenSet = false;
 
   Aws::String m_optInStatus;
+  bool m_actionHasBeenSet = false;
+  bool m_autoAppliedAfterDateHasBeenSet = false;
+  bool m_currentApplyDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_forcedApplyDateHasBeenSet = false;
   bool m_optInStatusHasBeenSet = false;
 };
 

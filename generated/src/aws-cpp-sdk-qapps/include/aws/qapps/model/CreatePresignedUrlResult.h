@@ -119,18 +119,18 @@ class CreatePresignedUrlResult {
   ///@}
  private:
   Aws::String m_fileId;
-  bool m_fileIdHasBeenSet = false;
 
   Aws::String m_presignedUrl;
-  bool m_presignedUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_presignedUrlFields;
-  bool m_presignedUrlFieldsHasBeenSet = false;
 
   Aws::Utils::DateTime m_presignedUrlExpiration{};
-  bool m_presignedUrlExpirationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileIdHasBeenSet = false;
+  bool m_presignedUrlHasBeenSet = false;
+  bool m_presignedUrlFieldsHasBeenSet = false;
+  bool m_presignedUrlExpirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

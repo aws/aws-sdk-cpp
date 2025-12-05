@@ -78,9 +78,9 @@ class BatchDetectSyntaxRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_textList;
-  bool m_textListHasBeenSet = false;
 
   SyntaxLanguageCode m_languageCode{SyntaxLanguageCode::NOT_SET};
+  bool m_textListHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

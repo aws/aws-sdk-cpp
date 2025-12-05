@@ -198,27 +198,27 @@ class PipeSourceParameters {
   ///@}
  private:
   FilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   PipeSourceKinesisStreamParameters m_kinesisStreamParameters;
-  bool m_kinesisStreamParametersHasBeenSet = false;
 
   PipeSourceDynamoDBStreamParameters m_dynamoDBStreamParameters;
-  bool m_dynamoDBStreamParametersHasBeenSet = false;
 
   PipeSourceSqsQueueParameters m_sqsQueueParameters;
-  bool m_sqsQueueParametersHasBeenSet = false;
 
   PipeSourceActiveMQBrokerParameters m_activeMQBrokerParameters;
-  bool m_activeMQBrokerParametersHasBeenSet = false;
 
   PipeSourceRabbitMQBrokerParameters m_rabbitMQBrokerParameters;
-  bool m_rabbitMQBrokerParametersHasBeenSet = false;
 
   PipeSourceManagedStreamingKafkaParameters m_managedStreamingKafkaParameters;
-  bool m_managedStreamingKafkaParametersHasBeenSet = false;
 
   PipeSourceSelfManagedKafkaParameters m_selfManagedKafkaParameters;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_kinesisStreamParametersHasBeenSet = false;
+  bool m_dynamoDBStreamParametersHasBeenSet = false;
+  bool m_sqsQueueParametersHasBeenSet = false;
+  bool m_activeMQBrokerParametersHasBeenSet = false;
+  bool m_rabbitMQBrokerParametersHasBeenSet = false;
+  bool m_managedStreamingKafkaParametersHasBeenSet = false;
   bool m_selfManagedKafkaParametersHasBeenSet = false;
 };
 

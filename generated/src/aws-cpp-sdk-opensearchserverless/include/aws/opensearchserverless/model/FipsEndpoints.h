@@ -76,9 +76,9 @@ class FipsEndpoints {
   ///@}
  private:
   Aws::String m_collectionEndpoint;
-  bool m_collectionEndpointHasBeenSet = false;
 
   Aws::String m_dashboardEndpoint;
+  bool m_collectionEndpointHasBeenSet = false;
   bool m_dashboardEndpointHasBeenSet = false;
 };
 

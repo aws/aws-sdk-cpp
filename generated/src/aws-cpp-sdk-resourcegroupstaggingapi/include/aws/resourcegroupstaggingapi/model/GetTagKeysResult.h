@@ -85,12 +85,12 @@ class GetTagKeysResult {
   ///@}
  private:
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_paginationTokenHasBeenSet = false;
+  bool m_tagKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

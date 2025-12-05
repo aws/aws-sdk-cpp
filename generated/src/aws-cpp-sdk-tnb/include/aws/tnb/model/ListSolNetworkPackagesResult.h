@@ -87,12 +87,12 @@ class ListSolNetworkPackagesResult {
   ///@}
  private:
   Aws::Vector<ListSolNetworkPackageInfo> m_networkPackages;
-  bool m_networkPackagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkPackagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

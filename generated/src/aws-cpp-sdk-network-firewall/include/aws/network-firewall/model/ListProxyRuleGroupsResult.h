@@ -90,12 +90,12 @@ class ListProxyRuleGroupsResult {
   ///@}
  private:
   Aws::Vector<ProxyRuleGroupMetadata> m_proxyRuleGroups;
-  bool m_proxyRuleGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyRuleGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

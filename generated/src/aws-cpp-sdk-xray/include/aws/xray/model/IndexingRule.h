@@ -90,12 +90,12 @@ class IndexingRule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   IndexingRuleValue m_rule;
+  bool m_nameHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class GetChannelsResult {
   ///@}
  private:
   ChannelsResponse m_channelsResponse;
-  bool m_channelsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetAppMonitorResult {
   ///@}
  private:
   AppMonitor m_appMonitor;
-  bool m_appMonitorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appMonitorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -79,12 +79,12 @@ class CreateEgressOnlyInternetGatewayResponse {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   EgressOnlyInternetGateway m_egressOnlyInternetGateway;
-  bool m_egressOnlyInternetGatewayHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_egressOnlyInternetGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

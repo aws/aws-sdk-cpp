@@ -228,36 +228,36 @@ class PipelineVersion {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   long long m_pipelineVersionId{0};
-  bool m_pipelineVersionIdHasBeenSet = false;
 
   Aws::String m_pipelineVersionDisplayName;
-  bool m_pipelineVersionDisplayNameHasBeenSet = false;
 
   Aws::String m_pipelineVersionDescription;
-  bool m_pipelineVersionDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_lastExecutedPipelineExecutionArn;
-  bool m_lastExecutedPipelineExecutionArnHasBeenSet = false;
 
   Aws::String m_lastExecutedPipelineExecutionDisplayName;
-  bool m_lastExecutedPipelineExecutionDisplayNameHasBeenSet = false;
 
   PipelineExecutionStatus m_lastExecutedPipelineExecutionStatus{PipelineExecutionStatus::NOT_SET};
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_pipelineVersionIdHasBeenSet = false;
+  bool m_pipelineVersionDisplayNameHasBeenSet = false;
+  bool m_pipelineVersionDescriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastExecutedPipelineExecutionArnHasBeenSet = false;
+  bool m_lastExecutedPipelineExecutionDisplayNameHasBeenSet = false;
   bool m_lastExecutedPipelineExecutionStatusHasBeenSet = false;
 };
 

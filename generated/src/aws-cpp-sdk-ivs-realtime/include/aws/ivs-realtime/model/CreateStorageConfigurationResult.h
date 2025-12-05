@@ -60,9 +60,9 @@ class CreateStorageConfigurationResult {
   ///@}
  private:
   StorageConfiguration m_storageConfiguration;
-  bool m_storageConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -155,18 +155,18 @@ class EndpointSummary {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   EndpointStatus m_endpointStatus{EndpointStatus::NOT_SET};
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_endpointStatusHasBeenSet = false;
 };
 

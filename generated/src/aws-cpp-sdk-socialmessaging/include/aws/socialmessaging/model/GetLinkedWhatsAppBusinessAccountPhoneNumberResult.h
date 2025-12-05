@@ -78,12 +78,12 @@ class GetLinkedWhatsAppBusinessAccountPhoneNumberResult {
   ///@}
  private:
   WhatsAppPhoneNumberDetail m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_linkedWhatsAppBusinessAccountId;
-  bool m_linkedWhatsAppBusinessAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_linkedWhatsAppBusinessAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

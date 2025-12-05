@@ -69,9 +69,9 @@ class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

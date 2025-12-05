@@ -239,27 +239,27 @@ class EventDestination {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<EventType> m_matchingEventTypes;
-  bool m_matchingEventTypesHasBeenSet = false;
 
   KinesisFirehoseDestination m_kinesisFirehoseDestination;
-  bool m_kinesisFirehoseDestinationHasBeenSet = false;
 
   CloudWatchDestination m_cloudWatchDestination;
-  bool m_cloudWatchDestinationHasBeenSet = false;
 
   SnsDestination m_snsDestination;
-  bool m_snsDestinationHasBeenSet = false;
 
   EventBridgeDestination m_eventBridgeDestination;
-  bool m_eventBridgeDestinationHasBeenSet = false;
 
   PinpointDestination m_pinpointDestination;
+  bool m_nameHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_matchingEventTypesHasBeenSet = false;
+  bool m_kinesisFirehoseDestinationHasBeenSet = false;
+  bool m_cloudWatchDestinationHasBeenSet = false;
+  bool m_snsDestinationHasBeenSet = false;
+  bool m_eventBridgeDestinationHasBeenSet = false;
   bool m_pinpointDestinationHasBeenSet = false;
 };
 

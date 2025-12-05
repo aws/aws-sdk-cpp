@@ -90,12 +90,12 @@ class MultitrackInputConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   MultitrackMaximumResolution m_maximumResolution{MultitrackMaximumResolution::NOT_SET};
-  bool m_maximumResolutionHasBeenSet = false;
 
   MultitrackPolicy m_policy{MultitrackPolicy::NOT_SET};
+  bool m_enabledHasBeenSet = false;
+  bool m_maximumResolutionHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

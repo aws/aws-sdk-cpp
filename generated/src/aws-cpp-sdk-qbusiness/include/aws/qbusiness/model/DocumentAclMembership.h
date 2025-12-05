@@ -77,9 +77,9 @@ class DocumentAclMembership {
   ///@}
  private:
   MemberRelation m_memberRelation{MemberRelation::NOT_SET};
-  bool m_memberRelationHasBeenSet = false;
 
   Aws::Vector<DocumentAclCondition> m_conditions;
+  bool m_memberRelationHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

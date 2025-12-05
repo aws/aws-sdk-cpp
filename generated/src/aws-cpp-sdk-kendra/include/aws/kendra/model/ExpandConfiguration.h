@@ -66,9 +66,9 @@ class ExpandConfiguration {
   ///@}
  private:
   int m_maxResultItemsToExpand{0};
-  bool m_maxResultItemsToExpandHasBeenSet = false;
 
   int m_maxExpandedResultsPerItem{0};
+  bool m_maxResultItemsToExpandHasBeenSet = false;
   bool m_maxExpandedResultsPerItemHasBeenSet = false;
 };
 

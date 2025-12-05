@@ -83,12 +83,12 @@ class DeleteImageVersionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_alias;
+  bool m_imageNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class AmountBreakdown {
   ///@}
  private:
   Aws::String m_subTotalAmount;
-  bool m_subTotalAmountHasBeenSet = false;
 
   DiscountsBreakdown m_discounts;
-  bool m_discountsHasBeenSet = false;
 
   TaxesBreakdown m_taxes;
-  bool m_taxesHasBeenSet = false;
 
   FeesBreakdown m_fees;
+  bool m_subTotalAmountHasBeenSet = false;
+  bool m_discountsHasBeenSet = false;
+  bool m_taxesHasBeenSet = false;
   bool m_feesHasBeenSet = false;
 };
 

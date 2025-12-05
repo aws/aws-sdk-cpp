@@ -69,9 +69,9 @@ class ApplicationCodeConfigurationUpdate {
   ///@}
  private:
   CodeContentType m_codeContentTypeUpdate{CodeContentType::NOT_SET};
-  bool m_codeContentTypeUpdateHasBeenSet = false;
 
   CodeContentUpdate m_codeContentUpdate;
+  bool m_codeContentTypeUpdateHasBeenSet = false;
   bool m_codeContentUpdateHasBeenSet = false;
 };
 

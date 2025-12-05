@@ -103,15 +103,15 @@ class TestConnectionFunction2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   FunctionStage m_stage{FunctionStage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_connectionObject{};
+  bool m_idHasBeenSet = false;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
   bool m_connectionObjectHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class ImageIdentifier {
   ///@}
  private:
   Aws::String m_imageDigest;
-  bool m_imageDigestHasBeenSet = false;
 
   Aws::String m_imageTag;
+  bool m_imageDigestHasBeenSet = false;
   bool m_imageTagHasBeenSet = false;
 };
 

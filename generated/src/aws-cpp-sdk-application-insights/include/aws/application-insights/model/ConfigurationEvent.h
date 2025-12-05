@@ -179,27 +179,27 @@ class ConfigurationEvent {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_monitoredResourceARN;
-  bool m_monitoredResourceARNHasBeenSet = false;
 
   ConfigurationEventStatus m_eventStatus{ConfigurationEventStatus::NOT_SET};
-  bool m_eventStatusHasBeenSet = false;
 
   ConfigurationEventResourceType m_eventResourceType{ConfigurationEventResourceType::NOT_SET};
-  bool m_eventResourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_eventDetail;
-  bool m_eventDetailHasBeenSet = false;
 
   Aws::String m_eventResourceName;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_monitoredResourceARNHasBeenSet = false;
+  bool m_eventStatusHasBeenSet = false;
+  bool m_eventResourceTypeHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_eventDetailHasBeenSet = false;
   bool m_eventResourceNameHasBeenSet = false;
 };
 

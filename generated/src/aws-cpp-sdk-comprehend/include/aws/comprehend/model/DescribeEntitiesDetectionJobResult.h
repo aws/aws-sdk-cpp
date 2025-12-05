@@ -61,9 +61,9 @@ class DescribeEntitiesDetectionJobResult {
   ///@}
  private:
   EntitiesDetectionJobProperties m_entitiesDetectionJobProperties;
-  bool m_entitiesDetectionJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

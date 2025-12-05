@@ -58,9 +58,9 @@ class PhoneNumberValidateResult {
   ///@}
  private:
   NumberValidateResponse m_numberValidateResponse;
-  bool m_numberValidateResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_numberValidateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

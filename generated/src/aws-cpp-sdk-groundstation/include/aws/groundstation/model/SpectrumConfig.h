@@ -97,12 +97,12 @@ class SpectrumConfig {
   ///@}
  private:
   Frequency m_centerFrequency;
-  bool m_centerFrequencyHasBeenSet = false;
 
   FrequencyBandwidth m_bandwidth;
-  bool m_bandwidthHasBeenSet = false;
 
   Polarization m_polarization{Polarization::NOT_SET};
+  bool m_centerFrequencyHasBeenSet = false;
+  bool m_bandwidthHasBeenSet = false;
   bool m_polarizationHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class SnapshotCopyConfiguration {
   ///@}
  private:
   Aws::String m_destinationKmsKeyId;
-  bool m_destinationKmsKeyIdHasBeenSet = false;
 
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_snapshotCopyConfigurationArn;
-  bool m_snapshotCopyConfigurationArnHasBeenSet = false;
 
   Aws::String m_snapshotCopyConfigurationId;
-  bool m_snapshotCopyConfigurationIdHasBeenSet = false;
 
   int m_snapshotRetentionPeriod{0};
+  bool m_destinationKmsKeyIdHasBeenSet = false;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_snapshotCopyConfigurationArnHasBeenSet = false;
+  bool m_snapshotCopyConfigurationIdHasBeenSet = false;
   bool m_snapshotRetentionPeriodHasBeenSet = false;
 };
 

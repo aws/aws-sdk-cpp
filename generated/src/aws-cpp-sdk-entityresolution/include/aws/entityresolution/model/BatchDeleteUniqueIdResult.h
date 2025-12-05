@@ -130,18 +130,18 @@ class BatchDeleteUniqueIdResult {
   ///@}
  private:
   DeleteUniqueIdStatus m_status{DeleteUniqueIdStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<DeleteUniqueIdError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<DeletedUniqueId> m_deleted;
-  bool m_deletedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_disconnectedUniqueIds;
-  bool m_disconnectedUniqueIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_disconnectedUniqueIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

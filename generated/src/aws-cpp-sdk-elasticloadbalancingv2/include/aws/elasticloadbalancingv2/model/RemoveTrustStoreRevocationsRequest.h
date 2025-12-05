@@ -75,9 +75,9 @@ class RemoveTrustStoreRevocationsRequest : public ElasticLoadBalancingv2Request 
   ///@}
  private:
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Aws::Vector<long long> m_revocationIds;
+  bool m_trustStoreArnHasBeenSet = false;
   bool m_revocationIdsHasBeenSet = false;
 };
 

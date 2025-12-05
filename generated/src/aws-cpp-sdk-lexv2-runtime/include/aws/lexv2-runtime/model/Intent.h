@@ -124,15 +124,15 @@ class Intent {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Slot> m_slots;
-  bool m_slotsHasBeenSet = false;
 
   IntentState m_state{IntentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ConfirmationState m_confirmationState{ConfirmationState::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_confirmationStateHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class ExternalFilteringConfiguration {
   ///@}
  private:
   EnableStatus m_status{EnableStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedTargets;
+  bool m_statusHasBeenSet = false;
   bool m_authorizedTargetsHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DescribeImageAssociationsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::Vector<ImageAssociatedResourceType> m_associatedResourceTypes;
+  bool m_imageIdHasBeenSet = false;
   bool m_associatedResourceTypesHasBeenSet = false;
 };
 

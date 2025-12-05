@@ -68,9 +68,9 @@ class ToolOutputConfiguration {
   ///@}
  private:
   Aws::String m_outputVariableNameOverride;
-  bool m_outputVariableNameOverrideHasBeenSet = false;
 
   Aws::String m_sessionDataNamespace;
+  bool m_outputVariableNameOverrideHasBeenSet = false;
   bool m_sessionDataNamespaceHasBeenSet = false;
 };
 

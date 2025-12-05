@@ -97,9 +97,9 @@ class ContextDefinition {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeValue> m_contextMap;
-  bool m_contextMapHasBeenSet = false;
 
   Aws::String m_cedarJson;
+  bool m_contextMapHasBeenSet = false;
   bool m_cedarJsonHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DisableRuleRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_eventBusName;
+  bool m_nameHasBeenSet = false;
   bool m_eventBusNameHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class ModifyIpamPrefixListResolverRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPrefixListResolverId;
-  bool m_ipamPrefixListResolverIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IpamPrefixListResolverRuleRequest> m_rules;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPrefixListResolverIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

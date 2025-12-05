@@ -119,12 +119,12 @@ class DashboardSearchFilter {
   ///@}
  private:
   FilterOperator m_operator{FilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DashboardFilterAttribute m_name{DashboardFilterAttribute::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_operatorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

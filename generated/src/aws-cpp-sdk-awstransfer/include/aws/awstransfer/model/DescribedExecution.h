@@ -184,27 +184,27 @@ class DescribedExecution {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   FileLocation m_initialFileLocation;
-  bool m_initialFileLocationHasBeenSet = false;
 
   ServiceMetadata m_serviceMetadata;
-  bool m_serviceMetadataHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   PosixProfile m_posixProfile;
-  bool m_posixProfileHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExecutionResults m_results;
+  bool m_executionIdHasBeenSet = false;
+  bool m_initialFileLocationHasBeenSet = false;
+  bool m_serviceMetadataHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_posixProfileHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_resultsHasBeenSet = false;
 };
 

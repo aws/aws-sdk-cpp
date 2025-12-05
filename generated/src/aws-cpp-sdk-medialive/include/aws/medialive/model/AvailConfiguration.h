@@ -81,9 +81,9 @@ SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output
   ///@}
  private:
   AvailSettings m_availSettings;
-  bool m_availSettingsHasBeenSet = false;
 
   Scte35SegmentationScope m_scte35SegmentationScope{Scte35SegmentationScope::NOT_SET};
+  bool m_availSettingsHasBeenSet = false;
   bool m_scte35SegmentationScopeHasBeenSet = false;
 };
 

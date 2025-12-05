@@ -87,12 +87,12 @@ class QueryOutputVector {
   ///@}
  private:
   double m_distance{0.0};
-  bool m_distanceHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Utils::Document m_metadata;
+  bool m_distanceHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

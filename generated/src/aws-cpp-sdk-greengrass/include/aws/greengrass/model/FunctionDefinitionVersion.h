@@ -77,9 +77,9 @@ class FunctionDefinitionVersion {
   ///@}
  private:
   FunctionDefaultConfig m_defaultConfig;
-  bool m_defaultConfigHasBeenSet = false;
 
   Aws::Vector<Function> m_functions;
+  bool m_defaultConfigHasBeenSet = false;
   bool m_functionsHasBeenSet = false;
 };
 

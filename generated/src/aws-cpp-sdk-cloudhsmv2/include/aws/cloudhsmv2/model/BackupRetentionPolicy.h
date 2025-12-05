@@ -69,9 +69,9 @@ class BackupRetentionPolicy {
   ///@}
  private:
   BackupRetentionType m_type{BackupRetentionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

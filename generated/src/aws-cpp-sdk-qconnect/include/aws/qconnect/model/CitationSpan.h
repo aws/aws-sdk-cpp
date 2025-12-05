@@ -62,9 +62,9 @@ class CitationSpan {
   ///@}
  private:
   int m_beginOffsetInclusive{0};
-  bool m_beginOffsetInclusiveHasBeenSet = false;
 
   int m_endOffsetExclusive{0};
+  bool m_beginOffsetInclusiveHasBeenSet = false;
   bool m_endOffsetExclusiveHasBeenSet = false;
 };
 

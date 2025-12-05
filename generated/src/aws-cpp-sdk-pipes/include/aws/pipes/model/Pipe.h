@@ -215,33 +215,33 @@ class Pipe {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   RequestedPipeState m_desiredState{RequestedPipeState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   PipeState m_currentState{PipeState::NOT_SET};
-  bool m_currentStateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_enrichment;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_currentStateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_enrichmentHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class DeleteClusterSnapshotResult {
   ///@}
  private:
   Snapshot m_snapshot;
-  bool m_snapshotHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

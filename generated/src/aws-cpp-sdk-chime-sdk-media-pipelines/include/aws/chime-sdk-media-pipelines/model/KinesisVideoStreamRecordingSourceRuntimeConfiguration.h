@@ -78,9 +78,9 @@ class KinesisVideoStreamRecordingSourceRuntimeConfiguration {
   ///@}
  private:
   Aws::Vector<RecordingStreamConfiguration> m_streams;
-  bool m_streamsHasBeenSet = false;
 
   FragmentSelector m_fragmentSelector;
+  bool m_streamsHasBeenSet = false;
   bool m_fragmentSelectorHasBeenSet = false;
 };
 

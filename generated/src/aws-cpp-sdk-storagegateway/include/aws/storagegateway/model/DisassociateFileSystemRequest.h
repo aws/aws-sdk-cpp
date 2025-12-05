@@ -70,9 +70,9 @@ class DisassociateFileSystemRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_fileSystemAssociationARN;
-  bool m_fileSystemAssociationARNHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_fileSystemAssociationARNHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

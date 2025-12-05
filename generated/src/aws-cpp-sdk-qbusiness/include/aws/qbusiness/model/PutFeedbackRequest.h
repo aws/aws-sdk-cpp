@@ -144,21 +144,21 @@ class PutFeedbackRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_messageCopiedAt{};
-  bool m_messageCopiedAtHasBeenSet = false;
 
   MessageUsefulnessFeedback m_messageUsefulness;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_messageCopiedAtHasBeenSet = false;
   bool m_messageUsefulnessHasBeenSet = false;
 };
 

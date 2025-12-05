@@ -65,9 +65,9 @@ class DescribePipelineRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   long long m_pipelineVersionId{0};
+  bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
 };
 

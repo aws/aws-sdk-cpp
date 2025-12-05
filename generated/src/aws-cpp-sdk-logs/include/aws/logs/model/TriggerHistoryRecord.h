@@ -128,18 +128,18 @@ class TriggerHistoryRecord {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   long long m_triggeredTimestamp{0};
-  bool m_triggeredTimestampHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<ScheduledQueryDestination> m_destinations;
+  bool m_queryIdHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_triggeredTimestampHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
 };
 

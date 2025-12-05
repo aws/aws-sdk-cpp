@@ -149,21 +149,21 @@ class GetResourceMetricsResult {
   ///@}
  private:
   Aws::Utils::DateTime m_alignedStartTime{};
-  bool m_alignedStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_alignedEndTime{};
-  bool m_alignedEndTimeHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<MetricKeyDataPoints> m_metricList;
-  bool m_metricListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alignedStartTimeHasBeenSet = false;
+  bool m_alignedEndTimeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_metricListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

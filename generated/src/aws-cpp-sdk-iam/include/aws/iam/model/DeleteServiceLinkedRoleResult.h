@@ -62,9 +62,9 @@ class DeleteServiceLinkedRoleResult {
   ///@}
  private:
   Aws::String m_deletionTaskId;
-  bool m_deletionTaskIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_deletionTaskIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -141,18 +141,18 @@ class CreateAssessmentTemplateRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentTargetArn;
-  bool m_assessmentTargetArnHasBeenSet = false;
 
   Aws::String m_assessmentTemplateName;
-  bool m_assessmentTemplateNameHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rulesPackageArns;
-  bool m_rulesPackageArnsHasBeenSet = false;
 
   Aws::Vector<Attribute> m_userAttributesForFindings;
+  bool m_assessmentTargetArnHasBeenSet = false;
+  bool m_assessmentTemplateNameHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_rulesPackageArnsHasBeenSet = false;
   bool m_userAttributesForFindingsHasBeenSet = false;
 };
 

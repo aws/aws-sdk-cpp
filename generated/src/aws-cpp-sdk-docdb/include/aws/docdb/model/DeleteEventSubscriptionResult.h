@@ -58,9 +58,9 @@ class DeleteEventSubscriptionResult {
   ///@}
  private:
   EventSubscription m_eventSubscription;
-  bool m_eventSubscriptionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_eventSubscriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class AccountSummary {
   ///@}
  private:
   Industry m_industry{Industry::NOT_SET};
-  bool m_industryHasBeenSet = false;
 
   Aws::String m_otherIndustry;
-  bool m_otherIndustryHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_websiteUrl;
-  bool m_websiteUrlHasBeenSet = false;
 
   AddressSummary m_address;
+  bool m_industryHasBeenSet = false;
+  bool m_otherIndustryHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_websiteUrlHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

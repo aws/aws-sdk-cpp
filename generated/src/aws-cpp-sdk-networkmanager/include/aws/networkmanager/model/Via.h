@@ -86,9 +86,9 @@ class Via {
   ///@}
  private:
   Aws::Vector<NetworkFunctionGroup> m_networkFunctionGroups;
-  bool m_networkFunctionGroupsHasBeenSet = false;
 
   Aws::Vector<EdgeOverride> m_withEdgeOverrides;
+  bool m_networkFunctionGroupsHasBeenSet = false;
   bool m_withEdgeOverridesHasBeenSet = false;
 };
 

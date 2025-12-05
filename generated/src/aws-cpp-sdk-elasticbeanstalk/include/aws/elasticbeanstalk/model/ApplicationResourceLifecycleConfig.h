@@ -84,9 +84,9 @@ class ApplicationResourceLifecycleConfig {
   ///@}
  private:
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   ApplicationVersionLifecycleConfig m_versionLifecycleConfig;
+  bool m_serviceRoleHasBeenSet = false;
   bool m_versionLifecycleConfigHasBeenSet = false;
 };
 

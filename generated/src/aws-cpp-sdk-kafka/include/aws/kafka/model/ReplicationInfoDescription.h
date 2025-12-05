@@ -125,18 +125,18 @@ class ReplicationInfoDescription {
   ///@}
  private:
   ConsumerGroupReplication m_consumerGroupReplication;
-  bool m_consumerGroupReplicationHasBeenSet = false;
 
   Aws::String m_sourceKafkaClusterAlias;
-  bool m_sourceKafkaClusterAliasHasBeenSet = false;
 
   TargetCompressionType m_targetCompressionType{TargetCompressionType::NOT_SET};
-  bool m_targetCompressionTypeHasBeenSet = false;
 
   Aws::String m_targetKafkaClusterAlias;
-  bool m_targetKafkaClusterAliasHasBeenSet = false;
 
   TopicReplication m_topicReplication;
+  bool m_consumerGroupReplicationHasBeenSet = false;
+  bool m_sourceKafkaClusterAliasHasBeenSet = false;
+  bool m_targetCompressionTypeHasBeenSet = false;
+  bool m_targetKafkaClusterAliasHasBeenSet = false;
   bool m_topicReplicationHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetMetricsSummaryResult {
   ///@}
  private:
   MetricsSummary m_metricsSummary;
-  bool m_metricsSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricsSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

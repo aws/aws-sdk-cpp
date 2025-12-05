@@ -118,18 +118,18 @@ class UpdateDestinationRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_deliveryDestinationArn;
-  bool m_deliveryDestinationArnHasBeenSet = false;
 
   DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
-  bool m_deliveryDestinationTypeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_nameHasBeenSet = false;
+  bool m_deliveryDestinationArnHasBeenSet = false;
+  bool m_deliveryDestinationTypeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

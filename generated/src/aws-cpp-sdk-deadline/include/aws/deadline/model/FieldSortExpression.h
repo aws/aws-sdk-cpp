@@ -67,9 +67,9 @@ class FieldSortExpression {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_sortOrderHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

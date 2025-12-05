@@ -67,9 +67,9 @@ class GetBucketAccessKeysResult {
   ///@}
  private:
   Aws::Vector<AccessKey> m_accessKeys;
-  bool m_accessKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

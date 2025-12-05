@@ -148,15 +148,15 @@ class FileCacheDataRepositoryAssociation {
   ///@}
  private:
   Aws::String m_fileCachePath;
-  bool m_fileCachePathHasBeenSet = false;
 
   Aws::String m_dataRepositoryPath;
-  bool m_dataRepositoryPathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataRepositorySubdirectories;
-  bool m_dataRepositorySubdirectoriesHasBeenSet = false;
 
   FileCacheNFSConfiguration m_nFS;
+  bool m_fileCachePathHasBeenSet = false;
+  bool m_dataRepositoryPathHasBeenSet = false;
+  bool m_dataRepositorySubdirectoriesHasBeenSet = false;
   bool m_nFSHasBeenSet = false;
 };
 

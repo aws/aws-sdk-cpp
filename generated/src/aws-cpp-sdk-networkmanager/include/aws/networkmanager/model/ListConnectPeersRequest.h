@@ -104,15 +104,15 @@ class ListConnectPeersRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_connectAttachmentId;
-  bool m_connectAttachmentIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_connectAttachmentIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

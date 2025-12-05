@@ -71,9 +71,9 @@ class RoutingCriteriaInputStep {
   ///@}
  private:
   RoutingCriteriaInputStepExpiry m_expiry;
-  bool m_expiryHasBeenSet = false;
 
   Expression m_expression;
+  bool m_expiryHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

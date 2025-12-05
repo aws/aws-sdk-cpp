@@ -138,18 +138,18 @@ class SegmentAttributeValue {
   ///@}
  private:
   Aws::String m_valueString;
-  bool m_valueStringHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_valueMap;
-  bool m_valueMapHasBeenSet = false;
 
   int m_valueInteger{0};
-  bool m_valueIntegerHasBeenSet = false;
 
   Aws::Vector<SegmentAttributeValue> m_valueList;
-  bool m_valueListHasBeenSet = false;
 
   Aws::String m_valueArn;
+  bool m_valueStringHasBeenSet = false;
+  bool m_valueMapHasBeenSet = false;
+  bool m_valueIntegerHasBeenSet = false;
+  bool m_valueListHasBeenSet = false;
   bool m_valueArnHasBeenSet = false;
 };
 

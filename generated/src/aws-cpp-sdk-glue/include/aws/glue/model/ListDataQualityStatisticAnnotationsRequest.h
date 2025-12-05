@@ -120,18 +120,18 @@ class ListDataQualityStatisticAnnotationsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_statisticId;
-  bool m_statisticIdHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   TimestampFilter m_timestampFilter;
-  bool m_timestampFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_statisticIdHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_timestampFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListLicenseConversionTasksResult {
   ///@}
  private:
   Aws::Vector<LicenseConversionTask> m_licenseConversionTasks;
-  bool m_licenseConversionTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseConversionTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

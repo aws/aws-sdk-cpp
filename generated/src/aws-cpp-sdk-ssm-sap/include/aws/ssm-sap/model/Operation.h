@@ -238,36 +238,36 @@ class Operation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

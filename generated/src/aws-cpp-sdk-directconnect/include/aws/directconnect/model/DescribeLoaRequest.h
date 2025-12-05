@@ -87,12 +87,12 @@ class DescribeLoaRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   LoaContentType m_loaContentType{LoaContentType::NOT_SET};
+  bool m_connectionIdHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
   bool m_loaContentTypeHasBeenSet = false;
 };
 

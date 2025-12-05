@@ -134,21 +134,21 @@ class UpdateDNSViewRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_dnsViewId;
-  bool m_dnsViewIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DnsSecValidationType m_dnssecValidation{DnsSecValidationType::NOT_SET};
-  bool m_dnssecValidationHasBeenSet = false;
 
   EdnsClientSubnetType m_ednsClientSubnet{EdnsClientSubnetType::NOT_SET};
-  bool m_ednsClientSubnetHasBeenSet = false;
 
   FirewallRulesFailOpenType m_firewallRulesFailOpen{FirewallRulesFailOpenType::NOT_SET};
+  bool m_dnsViewIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dnssecValidationHasBeenSet = false;
+  bool m_ednsClientSubnetHasBeenSet = false;
   bool m_firewallRulesFailOpenHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class StaticFile {
   ///@}
  private:
   ImageStaticFile m_imageStaticFile;
-  bool m_imageStaticFileHasBeenSet = false;
 
   SpatialStaticFile m_spatialStaticFile;
+  bool m_imageStaticFileHasBeenSet = false;
   bool m_spatialStaticFileHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class UpdateBackendAuthPasswordPolicyConfig {
   ///@}
  private:
   Aws::Vector<AdditionalConstraintsElement> m_additionalConstraints;
-  bool m_additionalConstraintsHasBeenSet = false;
 
   double m_minimumLength{0.0};
+  bool m_additionalConstraintsHasBeenSet = false;
   bool m_minimumLengthHasBeenSet = false;
 };
 

@@ -170,24 +170,24 @@ class ComputeNodeGroupSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   ComputeNodeGroupStatus m_status{ComputeNodeGroupStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

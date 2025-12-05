@@ -87,9 +87,9 @@ class LimitsPerLabelSet {
   ///@}
  private:
   LimitsPerLabelSetEntry m_limits;
-  bool m_limitsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labelSet;
+  bool m_limitsHasBeenSet = false;
   bool m_labelSetHasBeenSet = false;
 };
 

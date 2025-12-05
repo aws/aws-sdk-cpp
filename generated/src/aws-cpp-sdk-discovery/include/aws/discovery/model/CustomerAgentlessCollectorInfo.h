@@ -143,24 +143,24 @@ class CustomerAgentlessCollectorInfo {
   ///@}
  private:
   int m_activeAgentlessCollectors{0};
-  bool m_activeAgentlessCollectorsHasBeenSet = false;
 
   int m_healthyAgentlessCollectors{0};
-  bool m_healthyAgentlessCollectorsHasBeenSet = false;
 
   int m_denyListedAgentlessCollectors{0};
-  bool m_denyListedAgentlessCollectorsHasBeenSet = false;
 
   int m_shutdownAgentlessCollectors{0};
-  bool m_shutdownAgentlessCollectorsHasBeenSet = false;
 
   int m_unhealthyAgentlessCollectors{0};
-  bool m_unhealthyAgentlessCollectorsHasBeenSet = false;
 
   int m_totalAgentlessCollectors{0};
-  bool m_totalAgentlessCollectorsHasBeenSet = false;
 
   int m_unknownAgentlessCollectors{0};
+  bool m_activeAgentlessCollectorsHasBeenSet = false;
+  bool m_healthyAgentlessCollectorsHasBeenSet = false;
+  bool m_denyListedAgentlessCollectorsHasBeenSet = false;
+  bool m_shutdownAgentlessCollectorsHasBeenSet = false;
+  bool m_unhealthyAgentlessCollectorsHasBeenSet = false;
+  bool m_totalAgentlessCollectorsHasBeenSet = false;
   bool m_unknownAgentlessCollectorsHasBeenSet = false;
 };
 

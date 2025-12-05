@@ -106,15 +106,15 @@ class StartHumanLoopRequest : public AugmentedAIRuntimeRequest {
   ///@}
  private:
   Aws::String m_humanLoopName;
-  bool m_humanLoopNameHasBeenSet = false;
 
   Aws::String m_flowDefinitionArn;
-  bool m_flowDefinitionArnHasBeenSet = false;
 
   HumanLoopInput m_humanLoopInput;
-  bool m_humanLoopInputHasBeenSet = false;
 
   HumanLoopDataAttributes m_dataAttributes;
+  bool m_humanLoopNameHasBeenSet = false;
+  bool m_flowDefinitionArnHasBeenSet = false;
+  bool m_humanLoopInputHasBeenSet = false;
   bool m_dataAttributesHasBeenSet = false;
 };
 

@@ -184,21 +184,21 @@ class RuleGroupSourceStatelessRuleMatchAttributes {
   ///@}
  private:
   Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts> m_destinationPorts;
-  bool m_destinationPortsHasBeenSet = false;
 
   Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<int> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts> m_sourcePorts;
-  bool m_sourcePortsHasBeenSet = false;
 
   Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags> m_tcpFlags;
+  bool m_destinationPortsHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
+  bool m_sourcePortsHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
   bool m_tcpFlagsHasBeenSet = false;
 };
 

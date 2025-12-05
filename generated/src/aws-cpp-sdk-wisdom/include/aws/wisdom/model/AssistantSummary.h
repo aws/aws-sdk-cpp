@@ -213,30 +213,30 @@ class AssistantSummary {
   ///@}
  private:
   Aws::String m_assistantArn;
-  bool m_assistantArnHasBeenSet = false;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AssistantIntegrationConfiguration m_integrationConfiguration;
-  bool m_integrationConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   AssistantStatus m_status{AssistantStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AssistantType m_type{AssistantType::NOT_SET};
+  bool m_assistantArnHasBeenSet = false;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_integrationConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -130,15 +130,15 @@ class GetResourceShareInvitationsRequest : public RAMRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceShareInvitationArns;
-  bool m_resourceShareInvitationArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceShareArns;
-  bool m_resourceShareArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_resourceShareInvitationArnsHasBeenSet = false;
+  bool m_resourceShareArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class GetEvidenceByEvidenceFolderRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_evidenceFolderId;
-  bool m_evidenceFolderIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_evidenceFolderIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

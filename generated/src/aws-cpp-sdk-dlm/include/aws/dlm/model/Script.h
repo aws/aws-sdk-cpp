@@ -191,21 +191,21 @@ class Script {
   ///@}
  private:
   Aws::Vector<StageValues> m_stages;
-  bool m_stagesHasBeenSet = false;
 
   ExecutionHandlerServiceValues m_executionHandlerService{ExecutionHandlerServiceValues::NOT_SET};
-  bool m_executionHandlerServiceHasBeenSet = false;
 
   Aws::String m_executionHandler;
-  bool m_executionHandlerHasBeenSet = false;
 
   bool m_executeOperationOnScriptFailure{false};
-  bool m_executeOperationOnScriptFailureHasBeenSet = false;
 
   int m_executionTimeout{0};
-  bool m_executionTimeoutHasBeenSet = false;
 
   int m_maximumRetryCount{0};
+  bool m_stagesHasBeenSet = false;
+  bool m_executionHandlerServiceHasBeenSet = false;
+  bool m_executionHandlerHasBeenSet = false;
+  bool m_executeOperationOnScriptFailureHasBeenSet = false;
+  bool m_executionTimeoutHasBeenSet = false;
   bool m_maximumRetryCountHasBeenSet = false;
 };
 

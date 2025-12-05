@@ -137,18 +137,18 @@ class EnableBaselineRequest : public ControlTowerRequest {
   ///@}
  private:
   Aws::String m_baselineVersion;
-  bool m_baselineVersionHasBeenSet = false;
 
   Aws::Vector<EnabledBaselineParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_baselineIdentifier;
-  bool m_baselineIdentifierHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_baselineVersionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_baselineIdentifierHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

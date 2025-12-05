@@ -120,18 +120,18 @@ class Usage {
   ///@}
  private:
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   double m_usageAmount{0.0};
-  bool m_usageAmountHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_usageAmountHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_productCodeHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

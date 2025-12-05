@@ -148,21 +148,21 @@ class Node {
   ///@}
  private:
   Branch m_branch;
-  bool m_branchHasBeenSet = false;
 
   Sensor m_sensor;
-  bool m_sensorHasBeenSet = false;
 
   Actuator m_actuator;
-  bool m_actuatorHasBeenSet = false;
 
   Attribute m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   CustomStruct m_struct;
-  bool m_structHasBeenSet = false;
 
   CustomProperty m_property;
+  bool m_branchHasBeenSet = false;
+  bool m_sensorHasBeenSet = false;
+  bool m_actuatorHasBeenSet = false;
+  bool m_attributeHasBeenSet = false;
+  bool m_structHasBeenSet = false;
   bool m_propertyHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class CreateWhatsAppMessageTemplateMediaRequest : public SocialMessagingRequest 
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   S3File m_sourceS3File;
+  bool m_idHasBeenSet = false;
   bool m_sourceS3FileHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class Origin {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   RegionName m_regionName{RegionName::NOT_SET};
-  bool m_regionNameHasBeenSet = false;
 
   OriginProtocolPolicyEnum m_protocolPolicy{OriginProtocolPolicyEnum::NOT_SET};
-  bool m_protocolPolicyHasBeenSet = false;
 
   int m_responseTimeout{0};
+  bool m_nameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_protocolPolicyHasBeenSet = false;
   bool m_responseTimeoutHasBeenSet = false;
 };
 

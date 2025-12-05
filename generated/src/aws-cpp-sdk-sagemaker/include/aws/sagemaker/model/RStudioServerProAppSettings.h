@@ -69,9 +69,9 @@ class RStudioServerProAppSettings {
   ///@}
  private:
   RStudioServerProAccessStatus m_accessStatus{RStudioServerProAccessStatus::NOT_SET};
-  bool m_accessStatusHasBeenSet = false;
 
   RStudioServerProUserGroup m_userGroup{RStudioServerProUserGroup::NOT_SET};
+  bool m_accessStatusHasBeenSet = false;
   bool m_userGroupHasBeenSet = false;
 };
 

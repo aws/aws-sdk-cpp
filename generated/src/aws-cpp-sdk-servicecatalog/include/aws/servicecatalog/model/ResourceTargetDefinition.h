@@ -87,12 +87,12 @@ class ResourceTargetDefinition {
   ///@}
  private:
   ResourceAttribute m_attribute{ResourceAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RequiresRecreation m_requiresRecreation{RequiresRecreation::NOT_SET};
+  bool m_attributeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requiresRecreationHasBeenSet = false;
 };
 

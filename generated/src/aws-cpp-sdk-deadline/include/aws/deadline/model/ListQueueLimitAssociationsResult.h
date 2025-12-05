@@ -91,12 +91,12 @@ class ListQueueLimitAssociationsResult {
   ///@}
  private:
   Aws::Vector<QueueLimitAssociationSummary> m_queueLimitAssociations;
-  bool m_queueLimitAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queueLimitAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

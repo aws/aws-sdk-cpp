@@ -66,9 +66,9 @@ class AdminCreateUserResult {
   ///@}
  private:
   UserType m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

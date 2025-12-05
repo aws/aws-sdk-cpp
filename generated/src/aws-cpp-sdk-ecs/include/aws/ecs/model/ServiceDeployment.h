@@ -387,54 +387,54 @@ class ServiceDeployment {
   ///@}
  private:
   Aws::String m_serviceDeploymentArn;
-  bool m_serviceDeploymentArnHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedAt{};
-  bool m_finishedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_stoppedAt{};
-  bool m_stoppedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<ServiceRevisionSummary> m_sourceServiceRevisions;
-  bool m_sourceServiceRevisionsHasBeenSet = false;
 
   ServiceRevisionSummary m_targetServiceRevision;
-  bool m_targetServiceRevisionHasBeenSet = false;
 
   ServiceDeploymentStatus m_status{ServiceDeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   ServiceDeploymentLifecycleStage m_lifecycleStage{ServiceDeploymentLifecycleStage::NOT_SET};
-  bool m_lifecycleStageHasBeenSet = false;
 
   DeploymentConfiguration m_deploymentConfiguration;
-  bool m_deploymentConfigurationHasBeenSet = false;
 
   Rollback m_rollback;
-  bool m_rollbackHasBeenSet = false;
 
   ServiceDeploymentCircuitBreaker m_deploymentCircuitBreaker;
-  bool m_deploymentCircuitBreakerHasBeenSet = false;
 
   ServiceDeploymentAlarms m_alarms;
+  bool m_serviceDeploymentArnHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_finishedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_sourceServiceRevisionsHasBeenSet = false;
+  bool m_targetServiceRevisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_lifecycleStageHasBeenSet = false;
+  bool m_deploymentConfigurationHasBeenSet = false;
+  bool m_rollbackHasBeenSet = false;
+  bool m_deploymentCircuitBreakerHasBeenSet = false;
   bool m_alarmsHasBeenSet = false;
 };
 

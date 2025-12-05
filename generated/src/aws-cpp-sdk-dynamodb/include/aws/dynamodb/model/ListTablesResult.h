@@ -97,12 +97,12 @@ class ListTablesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tableNames;
-  bool m_tableNamesHasBeenSet = false;
 
   Aws::String m_lastEvaluatedTableName;
-  bool m_lastEvaluatedTableNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableNamesHasBeenSet = false;
+  bool m_lastEvaluatedTableNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

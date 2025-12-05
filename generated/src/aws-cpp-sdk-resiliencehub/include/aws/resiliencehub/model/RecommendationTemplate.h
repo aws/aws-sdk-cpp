@@ -321,45 +321,45 @@ class RecommendationTemplate {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_assessmentArn;
-  bool m_assessmentArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   TemplateFormat m_format{TemplateFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_needsReplacements{false};
-  bool m_needsReplacementsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
-  bool m_recommendationIdsHasBeenSet = false;
 
   Aws::String m_recommendationTemplateArn;
-  bool m_recommendationTemplateArnHasBeenSet = false;
 
   Aws::Vector<RenderRecommendationType> m_recommendationTypes;
-  bool m_recommendationTypesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   RecommendationTemplateStatus m_status{RecommendationTemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   S3Location m_templatesLocation;
+  bool m_appArnHasBeenSet = false;
+  bool m_assessmentArnHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_needsReplacementsHasBeenSet = false;
+  bool m_recommendationIdsHasBeenSet = false;
+  bool m_recommendationTemplateArnHasBeenSet = false;
+  bool m_recommendationTypesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_templatesLocationHasBeenSet = false;
 };
 

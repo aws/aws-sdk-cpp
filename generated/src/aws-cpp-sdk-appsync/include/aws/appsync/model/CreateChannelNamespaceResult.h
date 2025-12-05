@@ -60,9 +60,9 @@ class CreateChannelNamespaceResult {
   ///@}
  private:
   ChannelNamespace m_channelNamespace;
-  bool m_channelNamespaceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelNamespaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

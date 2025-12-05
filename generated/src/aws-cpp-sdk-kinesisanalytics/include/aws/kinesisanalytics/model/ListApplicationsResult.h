@@ -87,12 +87,12 @@ class ListApplicationsResult {
   ///@}
  private:
   Aws::Vector<ApplicationSummary> m_applicationSummaries;
-  bool m_applicationSummariesHasBeenSet = false;
 
   bool m_hasMoreApplications{false};
-  bool m_hasMoreApplicationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationSummariesHasBeenSet = false;
+  bool m_hasMoreApplicationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

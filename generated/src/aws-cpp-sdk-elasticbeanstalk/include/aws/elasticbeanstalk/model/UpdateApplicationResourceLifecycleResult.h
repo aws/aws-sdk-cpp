@@ -80,12 +80,12 @@ class UpdateApplicationResourceLifecycleResult {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
-  bool m_resourceLifecycleConfigHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_resourceLifecycleConfigHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

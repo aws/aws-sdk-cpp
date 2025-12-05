@@ -76,12 +76,12 @@ class CreateGuardrailVersionResult {
   ///@}
  private:
   Aws::String m_guardrailId;
-  bool m_guardrailIdHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_guardrailIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

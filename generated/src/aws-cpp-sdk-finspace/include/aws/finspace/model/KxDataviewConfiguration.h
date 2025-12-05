@@ -113,15 +113,15 @@ class KxDataviewConfiguration {
   ///@}
  private:
   Aws::String m_dataviewName;
-  bool m_dataviewNameHasBeenSet = false;
 
   Aws::String m_dataviewVersionId;
-  bool m_dataviewVersionIdHasBeenSet = false;
 
   Aws::String m_changesetId;
-  bool m_changesetIdHasBeenSet = false;
 
   Aws::Vector<KxDataviewSegmentConfiguration> m_segmentConfigurations;
+  bool m_dataviewNameHasBeenSet = false;
+  bool m_dataviewVersionIdHasBeenSet = false;
+  bool m_changesetIdHasBeenSet = false;
   bool m_segmentConfigurationsHasBeenSet = false;
 };
 

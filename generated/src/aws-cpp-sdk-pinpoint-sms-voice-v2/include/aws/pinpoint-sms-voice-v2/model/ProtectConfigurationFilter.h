@@ -75,9 +75,9 @@ class ProtectConfigurationFilter {
   ///@}
  private:
   ProtectConfigurationFilterName m_name{ProtectConfigurationFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

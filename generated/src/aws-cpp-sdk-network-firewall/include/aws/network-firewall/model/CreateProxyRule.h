@@ -132,18 +132,18 @@ class CreateProxyRule {
   ///@}
  private:
   Aws::String m_proxyRuleName;
-  bool m_proxyRuleNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProxyRulePhaseAction m_action{ProxyRulePhaseAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<ProxyRuleCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   int m_insertPosition{0};
+  bool m_proxyRuleNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
   bool m_insertPositionHasBeenSet = false;
 };
 

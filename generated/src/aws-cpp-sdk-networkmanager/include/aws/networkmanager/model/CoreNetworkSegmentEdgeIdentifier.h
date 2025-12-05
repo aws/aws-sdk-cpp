@@ -86,12 +86,12 @@ class CoreNetworkSegmentEdgeIdentifier {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_segmentName;
-  bool m_segmentNameHasBeenSet = false;
 
   Aws::String m_edgeLocation;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_segmentNameHasBeenSet = false;
   bool m_edgeLocationHasBeenSet = false;
 };
 

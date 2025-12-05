@@ -109,15 +109,15 @@ class CreateDefaultSubnetRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   bool m_ipv6Native{false};
-  bool m_ipv6NativeHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipv6NativeHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

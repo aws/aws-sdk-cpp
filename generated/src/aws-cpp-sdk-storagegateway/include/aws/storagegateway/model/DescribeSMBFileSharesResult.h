@@ -72,9 +72,9 @@ class DescribeSMBFileSharesResult {
   ///@}
  private:
   Aws::Vector<SMBFileShareInfo> m_sMBFileShareInfoList;
-  bool m_sMBFileShareInfoListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sMBFileShareInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

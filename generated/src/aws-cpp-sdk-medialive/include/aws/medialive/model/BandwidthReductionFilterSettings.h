@@ -76,9 +76,9 @@ enable this filter and use AUTO, to let MediaLive
   ///@}
  private:
   BandwidthReductionPostFilterSharpening m_postFilterSharpening{BandwidthReductionPostFilterSharpening::NOT_SET};
-  bool m_postFilterSharpeningHasBeenSet = false;
 
   BandwidthReductionFilterStrength m_strength{BandwidthReductionFilterStrength::NOT_SET};
+  bool m_postFilterSharpeningHasBeenSet = false;
   bool m_strengthHasBeenSet = false;
 };
 

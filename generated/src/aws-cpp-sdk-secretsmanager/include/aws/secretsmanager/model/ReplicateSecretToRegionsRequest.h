@@ -92,12 +92,12 @@ class ReplicateSecretToRegionsRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::Vector<ReplicaRegionType> m_addReplicaRegions;
-  bool m_addReplicaRegionsHasBeenSet = false;
 
   bool m_forceOverwriteReplicaSecret{false};
+  bool m_secretIdHasBeenSet = false;
+  bool m_addReplicaRegionsHasBeenSet = false;
   bool m_forceOverwriteReplicaSecretHasBeenSet = false;
 };
 

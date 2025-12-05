@@ -94,15 +94,15 @@ class UpdateResolverTypeResult {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   CaseStatus m_caseStatus{CaseStatus::NOT_SET};
-  bool m_caseStatusHasBeenSet = false;
 
   ResolverType m_resolverType{ResolverType::NOT_SET};
-  bool m_resolverTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_caseIdHasBeenSet = false;
+  bool m_caseStatusHasBeenSet = false;
+  bool m_resolverTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -175,24 +175,24 @@ class EndpointDetails {
   ///@}
  private:
   SecurityDetails m_securityDetails;
-  bool m_securityDetailsHasBeenSet = false;
 
   DataflowEndpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   AwsGroundStationAgentEndpoint m_awsGroundStationAgentEndpoint;
-  bool m_awsGroundStationAgentEndpointHasBeenSet = false;
 
   UplinkAwsGroundStationAgentEndpointDetails m_uplinkAwsGroundStationAgentEndpoint;
-  bool m_uplinkAwsGroundStationAgentEndpointHasBeenSet = false;
 
   DownlinkAwsGroundStationAgentEndpointDetails m_downlinkAwsGroundStationAgentEndpoint;
-  bool m_downlinkAwsGroundStationAgentEndpointHasBeenSet = false;
 
   CapabilityHealth m_healthStatus{CapabilityHealth::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::Vector<CapabilityHealthReason> m_healthReasons;
+  bool m_securityDetailsHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_awsGroundStationAgentEndpointHasBeenSet = false;
+  bool m_uplinkAwsGroundStationAgentEndpointHasBeenSet = false;
+  bool m_downlinkAwsGroundStationAgentEndpointHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
   bool m_healthReasonsHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class ListFirewallsRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcIds;
-  bool m_vpcIdsHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_vpcIdsHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

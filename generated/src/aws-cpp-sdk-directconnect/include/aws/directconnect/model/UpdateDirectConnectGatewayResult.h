@@ -61,9 +61,9 @@ class UpdateDirectConnectGatewayResult {
   ///@}
  private:
   DirectConnectGateway m_directConnectGateway;
-  bool m_directConnectGatewayHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directConnectGatewayHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class AssociateApplicationFleetResult {
   ///@}
  private:
   ApplicationFleetAssociation m_applicationFleetAssociation;
-  bool m_applicationFleetAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationFleetAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

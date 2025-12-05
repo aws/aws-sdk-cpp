@@ -72,9 +72,9 @@ class CreateAndAttachS3AccessPointOpenZFSConfiguration {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   OpenZFSFileSystemIdentity m_fileSystemIdentity;
+  bool m_volumeIdHasBeenSet = false;
   bool m_fileSystemIdentityHasBeenSet = false;
 };
 

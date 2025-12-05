@@ -93,9 +93,9 @@ class MembershipAccountsConfigurations {
   ///@}
  private:
   bool m_coverEntireOrganization{false};
-  bool m_coverEntireOrganizationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnits;
+  bool m_coverEntireOrganizationHasBeenSet = false;
   bool m_organizationalUnitsHasBeenSet = false;
 };
 

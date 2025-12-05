@@ -143,18 +143,18 @@ class GetRevocationStatusRequest : public SignerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_signatureTimestamp{};
-  bool m_signatureTimestampHasBeenSet = false;
 
   Aws::String m_platformId;
-  bool m_platformIdHasBeenSet = false;
 
   Aws::String m_profileVersionArn;
-  bool m_profileVersionArnHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_certificateHashes;
+  bool m_signatureTimestampHasBeenSet = false;
+  bool m_platformIdHasBeenSet = false;
+  bool m_profileVersionArnHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
   bool m_certificateHashesHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class GetPredictiveScalingForecastResult {
   ///@}
  private:
   Aws::Vector<LoadForecast> m_loadForecast;
-  bool m_loadForecastHasBeenSet = false;
 
   CapacityForecast m_capacityForecast;
-  bool m_capacityForecastHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_loadForecastHasBeenSet = false;
+  bool m_capacityForecastHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

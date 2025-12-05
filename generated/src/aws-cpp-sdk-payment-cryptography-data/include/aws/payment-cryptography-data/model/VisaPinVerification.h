@@ -69,9 +69,9 @@ class VisaPinVerification {
   ///@}
  private:
   int m_pinVerificationKeyIndex{0};
-  bool m_pinVerificationKeyIndexHasBeenSet = false;
 
   Aws::String m_verificationValue;
+  bool m_pinVerificationKeyIndexHasBeenSet = false;
   bool m_verificationValueHasBeenSet = false;
 };
 

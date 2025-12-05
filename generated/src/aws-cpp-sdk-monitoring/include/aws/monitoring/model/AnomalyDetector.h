@@ -135,18 +135,18 @@ class AnomalyDetector {
   ///@}
  private:
   AnomalyDetectorConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   AnomalyDetectorStateValue m_stateValue{AnomalyDetectorStateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   MetricCharacteristics m_metricCharacteristics;
-  bool m_metricCharacteristicsHasBeenSet = false;
 
   SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
   MetricMathAnomalyDetector m_metricMathAnomalyDetector;
+  bool m_configurationHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_metricCharacteristicsHasBeenSet = false;
+  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
   bool m_metricMathAnomalyDetectorHasBeenSet = false;
 };
 

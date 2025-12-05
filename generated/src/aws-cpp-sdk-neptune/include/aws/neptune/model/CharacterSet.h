@@ -70,9 +70,9 @@ class CharacterSet {
   ///@}
  private:
   Aws::String m_characterSetName;
-  bool m_characterSetNameHasBeenSet = false;
 
   Aws::String m_characterSetDescription;
+  bool m_characterSetNameHasBeenSet = false;
   bool m_characterSetDescriptionHasBeenSet = false;
 };
 

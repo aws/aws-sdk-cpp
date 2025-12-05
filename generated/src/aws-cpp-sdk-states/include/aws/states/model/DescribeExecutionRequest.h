@@ -70,9 +70,9 @@ class DescribeExecutionRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   IncludedData m_includedData{IncludedData::NOT_SET};
+  bool m_executionArnHasBeenSet = false;
   bool m_includedDataHasBeenSet = false;
 };
 

@@ -185,24 +185,24 @@ class UserType {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Vector<AttributeType> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_userCreateDate{};
-  bool m_userCreateDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_userLastModifiedDate{};
-  bool m_userLastModifiedDateHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   UserStatusType m_userStatus{UserStatusType::NOT_SET};
-  bool m_userStatusHasBeenSet = false;
 
   Aws::Vector<MFAOptionType> m_mFAOptions;
+  bool m_usernameHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_userCreateDateHasBeenSet = false;
+  bool m_userLastModifiedDateHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_userStatusHasBeenSet = false;
   bool m_mFAOptionsHasBeenSet = false;
 };
 

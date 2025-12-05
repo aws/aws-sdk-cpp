@@ -88,12 +88,12 @@ class DescribeEndpointAccessResult {
   ///@}
  private:
   Aws::Vector<EndpointAccess> m_endpointAccessList;
-  bool m_endpointAccessListHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_endpointAccessListHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

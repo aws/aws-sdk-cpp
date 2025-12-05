@@ -109,15 +109,15 @@ class ScanDetections {
   ///@}
  private:
   ScannedItemCount m_scannedItemCount;
-  bool m_scannedItemCountHasBeenSet = false;
 
   ThreatsDetectedItemCount m_threatsDetectedItemCount;
-  bool m_threatsDetectedItemCountHasBeenSet = false;
 
   HighestSeverityThreatDetails m_highestSeverityThreatDetails;
-  bool m_highestSeverityThreatDetailsHasBeenSet = false;
 
   ThreatDetectedByName m_threatDetectedByName;
+  bool m_scannedItemCountHasBeenSet = false;
+  bool m_threatsDetectedItemCountHasBeenSet = false;
+  bool m_highestSeverityThreatDetailsHasBeenSet = false;
   bool m_threatDetectedByNameHasBeenSet = false;
 };
 

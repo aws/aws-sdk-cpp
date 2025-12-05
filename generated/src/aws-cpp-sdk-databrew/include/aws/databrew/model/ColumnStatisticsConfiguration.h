@@ -81,9 +81,9 @@ class ColumnStatisticsConfiguration {
   ///@}
  private:
   Aws::Vector<ColumnSelector> m_selectors;
-  bool m_selectorsHasBeenSet = false;
 
   StatisticsConfiguration m_statistics;
+  bool m_selectorsHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
 };
 

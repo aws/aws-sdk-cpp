@@ -488,75 +488,75 @@ class DescribeNotebookInstanceResult {
   ///@}
  private:
   Aws::String m_notebookInstanceArn;
-  bool m_notebookInstanceArnHasBeenSet = false;
 
   Aws::String m_notebookInstanceName;
-  bool m_notebookInstanceNameHasBeenSet = false;
 
   NotebookInstanceStatus m_notebookInstanceStatus{NotebookInstanceStatus::NOT_SET};
-  bool m_notebookInstanceStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_notebookInstanceLifecycleConfigName;
-  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
   DirectInternetAccess m_directInternetAccess{DirectInternetAccess::NOT_SET};
-  bool m_directInternetAccessHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   Aws::Vector<NotebookInstanceAcceleratorType> m_acceleratorTypes;
-  bool m_acceleratorTypesHasBeenSet = false;
 
   Aws::String m_defaultCodeRepository;
-  bool m_defaultCodeRepositoryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalCodeRepositories;
-  bool m_additionalCodeRepositoriesHasBeenSet = false;
 
   RootAccess m_rootAccess{RootAccess::NOT_SET};
-  bool m_rootAccessHasBeenSet = false;
 
   Aws::String m_platformIdentifier;
-  bool m_platformIdentifierHasBeenSet = false;
 
   InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
-  bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookInstanceArnHasBeenSet = false;
+  bool m_notebookInstanceNameHasBeenSet = false;
+  bool m_notebookInstanceStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
+  bool m_directInternetAccessHasBeenSet = false;
+  bool m_volumeSizeInGBHasBeenSet = false;
+  bool m_acceleratorTypesHasBeenSet = false;
+  bool m_defaultCodeRepositoryHasBeenSet = false;
+  bool m_additionalCodeRepositoriesHasBeenSet = false;
+  bool m_rootAccessHasBeenSet = false;
+  bool m_platformIdentifierHasBeenSet = false;
+  bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

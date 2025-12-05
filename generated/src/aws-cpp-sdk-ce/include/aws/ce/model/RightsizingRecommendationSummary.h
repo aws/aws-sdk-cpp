@@ -106,15 +106,15 @@ class RightsizingRecommendationSummary {
   ///@}
  private:
   Aws::String m_totalRecommendationCount;
-  bool m_totalRecommendationCountHasBeenSet = false;
 
   Aws::String m_estimatedTotalMonthlySavingsAmount;
-  bool m_estimatedTotalMonthlySavingsAmountHasBeenSet = false;
 
   Aws::String m_savingsCurrencyCode;
-  bool m_savingsCurrencyCodeHasBeenSet = false;
 
   Aws::String m_savingsPercentage;
+  bool m_totalRecommendationCountHasBeenSet = false;
+  bool m_estimatedTotalMonthlySavingsAmountHasBeenSet = false;
+  bool m_savingsCurrencyCodeHasBeenSet = false;
   bool m_savingsPercentageHasBeenSet = false;
 };
 

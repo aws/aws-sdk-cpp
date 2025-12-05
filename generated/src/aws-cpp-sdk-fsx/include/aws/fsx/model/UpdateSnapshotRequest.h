@@ -85,12 +85,12 @@ class UpdateSnapshotRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_snapshotId;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
 };
 

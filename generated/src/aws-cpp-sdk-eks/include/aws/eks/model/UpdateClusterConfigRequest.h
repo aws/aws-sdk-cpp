@@ -298,42 +298,42 @@ class UpdateClusterConfigRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   VpcConfigRequest m_resourcesVpcConfig;
-  bool m_resourcesVpcConfigHasBeenSet = false;
 
   Logging m_logging;
-  bool m_loggingHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   UpdateAccessConfigRequest m_accessConfig;
-  bool m_accessConfigHasBeenSet = false;
 
   UpgradePolicyRequest m_upgradePolicy;
-  bool m_upgradePolicyHasBeenSet = false;
 
   ZonalShiftConfigRequest m_zonalShiftConfig;
-  bool m_zonalShiftConfigHasBeenSet = false;
 
   ComputeConfigRequest m_computeConfig;
-  bool m_computeConfigHasBeenSet = false;
 
   KubernetesNetworkConfigRequest m_kubernetesNetworkConfig;
-  bool m_kubernetesNetworkConfigHasBeenSet = false;
 
   StorageConfigRequest m_storageConfig;
-  bool m_storageConfigHasBeenSet = false;
 
   RemoteNetworkConfigRequest m_remoteNetworkConfig;
-  bool m_remoteNetworkConfigHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   ControlPlaneScalingConfig m_controlPlaneScalingConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_resourcesVpcConfigHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_accessConfigHasBeenSet = false;
+  bool m_upgradePolicyHasBeenSet = false;
+  bool m_zonalShiftConfigHasBeenSet = false;
+  bool m_computeConfigHasBeenSet = false;
+  bool m_kubernetesNetworkConfigHasBeenSet = false;
+  bool m_storageConfigHasBeenSet = false;
+  bool m_remoteNetworkConfigHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_controlPlaneScalingConfigHasBeenSet = false;
 };
 

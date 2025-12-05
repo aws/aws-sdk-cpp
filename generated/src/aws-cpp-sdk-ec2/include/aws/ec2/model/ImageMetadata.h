@@ -202,30 +202,30 @@ class ImageMetadata {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ImageState m_state{ImageState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_imageOwnerAlias;
-  bool m_imageOwnerAliasHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_deprecationTime;
-  bool m_deprecationTimeHasBeenSet = false;
 
   bool m_imageAllowed{false};
-  bool m_imageAllowedHasBeenSet = false;
 
   bool m_isPublic{false};
+  bool m_imageIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_imageOwnerAliasHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_deprecationTimeHasBeenSet = false;
+  bool m_imageAllowedHasBeenSet = false;
   bool m_isPublicHasBeenSet = false;
 };
 

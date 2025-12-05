@@ -243,36 +243,36 @@ class AnalyzedResource {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_analyzedAt{};
-  bool m_analyzedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   bool m_isPublic{false};
-  bool m_isPublicHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sharedVia;
-  bool m_sharedViaHasBeenSet = false;
 
   FindingStatus m_status{FindingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccount;
-  bool m_resourceOwnerAccountHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_analyzedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_isPublicHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_sharedViaHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceOwnerAccountHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

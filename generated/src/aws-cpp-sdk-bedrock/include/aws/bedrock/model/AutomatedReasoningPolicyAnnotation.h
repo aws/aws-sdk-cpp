@@ -298,42 +298,42 @@ class AutomatedReasoningPolicyAnnotation {
   ///@}
  private:
   AutomatedReasoningPolicyAddTypeAnnotation m_addType;
-  bool m_addTypeHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateTypeAnnotation m_updateType;
-  bool m_updateTypeHasBeenSet = false;
 
   AutomatedReasoningPolicyDeleteTypeAnnotation m_deleteType;
-  bool m_deleteTypeHasBeenSet = false;
 
   AutomatedReasoningPolicyAddVariableAnnotation m_addVariable;
-  bool m_addVariableHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateVariableAnnotation m_updateVariable;
-  bool m_updateVariableHasBeenSet = false;
 
   AutomatedReasoningPolicyDeleteVariableAnnotation m_deleteVariable;
-  bool m_deleteVariableHasBeenSet = false;
 
   AutomatedReasoningPolicyAddRuleAnnotation m_addRule;
-  bool m_addRuleHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateRuleAnnotation m_updateRule;
-  bool m_updateRuleHasBeenSet = false;
 
   AutomatedReasoningPolicyDeleteRuleAnnotation m_deleteRule;
-  bool m_deleteRuleHasBeenSet = false;
 
   AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation m_addRuleFromNaturalLanguage;
-  bool m_addRuleFromNaturalLanguageHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateFromRuleFeedbackAnnotation m_updateFromRulesFeedback;
-  bool m_updateFromRulesFeedbackHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateFromScenarioFeedbackAnnotation m_updateFromScenarioFeedback;
-  bool m_updateFromScenarioFeedbackHasBeenSet = false;
 
   AutomatedReasoningPolicyIngestContentAnnotation m_ingestContent;
+  bool m_addTypeHasBeenSet = false;
+  bool m_updateTypeHasBeenSet = false;
+  bool m_deleteTypeHasBeenSet = false;
+  bool m_addVariableHasBeenSet = false;
+  bool m_updateVariableHasBeenSet = false;
+  bool m_deleteVariableHasBeenSet = false;
+  bool m_addRuleHasBeenSet = false;
+  bool m_updateRuleHasBeenSet = false;
+  bool m_deleteRuleHasBeenSet = false;
+  bool m_addRuleFromNaturalLanguageHasBeenSet = false;
+  bool m_updateFromRulesFeedbackHasBeenSet = false;
+  bool m_updateFromScenarioFeedbackHasBeenSet = false;
   bool m_ingestContentHasBeenSet = false;
 };
 

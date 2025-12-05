@@ -171,24 +171,24 @@ class CreateFHIRDatastoreRequest : public HealthLakeRequest {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   FHIRVersion m_datastoreTypeVersion{FHIRVersion::NOT_SET};
-  bool m_datastoreTypeVersionHasBeenSet = false;
 
   SseConfiguration m_sseConfiguration;
-  bool m_sseConfigurationHasBeenSet = false;
 
   PreloadDataConfig m_preloadDataConfig;
-  bool m_preloadDataConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_datastoreTypeVersionHasBeenSet = false;
+  bool m_sseConfigurationHasBeenSet = false;
+  bool m_preloadDataConfigHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_identityProviderConfigurationHasBeenSet = false;
 };
 

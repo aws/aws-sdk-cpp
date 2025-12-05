@@ -89,12 +89,12 @@ class ClientAuthenticationSettingInfo {
   ///@}
  private:
   ClientAuthenticationType m_type{ClientAuthenticationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ClientAuthenticationStatus m_status{ClientAuthenticationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

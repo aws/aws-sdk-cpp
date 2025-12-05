@@ -72,9 +72,9 @@ class AddJobFlowStepsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_stepIds;
-  bool m_stepIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stepIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

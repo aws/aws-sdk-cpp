@@ -104,15 +104,15 @@ class SelfServiceConversationHistory {
   ///@}
  private:
   int m_turnNumber{0};
-  bool m_turnNumberHasBeenSet = false;
 
   Aws::String m_inputTranscript;
-  bool m_inputTranscriptHasBeenSet = false;
 
   Aws::String m_botResponse;
-  bool m_botResponseHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_turnNumberHasBeenSet = false;
+  bool m_inputTranscriptHasBeenSet = false;
+  bool m_botResponseHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

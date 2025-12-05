@@ -92,12 +92,12 @@ class BatchCreateFirewallRuleSdkResult {
   ///@}
  private:
   Aws::Vector<BatchCreateFirewallRuleOutputItem> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::Vector<BatchCreateFirewallRuleOutputItem> m_successes;
-  bool m_successesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failuresHasBeenSet = false;
+  bool m_successesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

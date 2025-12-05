@@ -59,9 +59,9 @@ class CreateContactChannelResult {
   ///@}
  private:
   Aws::String m_contactChannelArn;
-  bool m_contactChannelArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactChannelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

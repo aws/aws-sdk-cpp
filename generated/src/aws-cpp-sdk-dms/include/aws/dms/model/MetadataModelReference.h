@@ -69,9 +69,9 @@ class MetadataModelReference {
   ///@}
  private:
   Aws::String m_metadataModelName;
-  bool m_metadataModelNameHasBeenSet = false;
 
   Aws::String m_selectionRules;
+  bool m_metadataModelNameHasBeenSet = false;
   bool m_selectionRulesHasBeenSet = false;
 };
 

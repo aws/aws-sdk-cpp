@@ -347,36 +347,36 @@ class PutCompositeAlarmRequest : public CloudWatchRequest {
   ///@}
  private:
   bool m_actionsEnabled{false};
-  bool m_actionsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmActions;
-  bool m_alarmActionsHasBeenSet = false;
 
   Aws::String m_alarmDescription;
-  bool m_alarmDescriptionHasBeenSet = false;
 
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmRule;
-  bool m_alarmRuleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insufficientDataActions;
-  bool m_insufficientDataActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_oKActions;
-  bool m_oKActionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_actionsSuppressor;
-  bool m_actionsSuppressorHasBeenSet = false;
 
   int m_actionsSuppressorWaitPeriod{0};
-  bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
 
   int m_actionsSuppressorExtensionPeriod{0};
+  bool m_actionsEnabledHasBeenSet = false;
+  bool m_alarmActionsHasBeenSet = false;
+  bool m_alarmDescriptionHasBeenSet = false;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmRuleHasBeenSet = false;
+  bool m_insufficientDataActionsHasBeenSet = false;
+  bool m_oKActionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_actionsSuppressorHasBeenSet = false;
+  bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
   bool m_actionsSuppressorExtensionPeriodHasBeenSet = false;
 };
 

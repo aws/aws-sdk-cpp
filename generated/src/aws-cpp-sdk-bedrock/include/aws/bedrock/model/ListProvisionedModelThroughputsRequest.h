@@ -203,30 +203,30 @@ class ListProvisionedModelThroughputsRequest : public BedrockRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   ProvisionedModelStatus m_statusEquals{ProvisionedModelStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   Aws::String m_modelArnEquals;
-  bool m_modelArnEqualsHasBeenSet = false;
 
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SortByProvisionedModels m_sortBy{SortByProvisionedModels::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_modelArnEqualsHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class DescribePlatformVersionResult {
   ///@}
  private:
   PlatformDescription m_platformDescription;
-  bool m_platformDescriptionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_platformDescriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

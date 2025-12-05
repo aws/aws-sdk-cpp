@@ -80,12 +80,12 @@ class ListKafkaVersionsResult {
   ///@}
  private:
   Aws::Vector<KafkaVersion> m_kafkaVersions;
-  bool m_kafkaVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kafkaVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DeleteNetworkInsightsPathRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkInsightsPathId;
+  bool m_dryRunHasBeenSet = false;
   bool m_networkInsightsPathIdHasBeenSet = false;
 };
 

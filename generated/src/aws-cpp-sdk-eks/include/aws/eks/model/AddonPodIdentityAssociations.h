@@ -73,9 +73,9 @@ class AddonPodIdentityAssociations {
   ///@}
  private:
   Aws::String m_serviceAccount;
-  bool m_serviceAccountHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_serviceAccountHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -108,12 +108,12 @@ class ConnectionHttpParameters {
   ///@}
  private:
   Aws::Vector<ConnectionHeaderParameter> m_headerParameters;
-  bool m_headerParametersHasBeenSet = false;
 
   Aws::Vector<ConnectionQueryStringParameter> m_queryStringParameters;
-  bool m_queryStringParametersHasBeenSet = false;
 
   Aws::Vector<ConnectionBodyParameter> m_bodyParameters;
+  bool m_headerParametersHasBeenSet = false;
+  bool m_queryStringParametersHasBeenSet = false;
   bool m_bodyParametersHasBeenSet = false;
 };
 

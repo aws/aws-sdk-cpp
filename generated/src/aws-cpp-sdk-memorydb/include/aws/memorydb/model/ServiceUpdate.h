@@ -194,30 +194,30 @@ class ServiceUpdate {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_serviceUpdateName;
-  bool m_serviceUpdateNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_releaseDate{};
-  bool m_releaseDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ServiceUpdateStatus m_status{ServiceUpdateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ServiceUpdateType m_type{ServiceUpdateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_nodesUpdated;
-  bool m_nodesUpdatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_autoUpdateStartDate{};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_serviceUpdateNameHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_nodesUpdatedHasBeenSet = false;
   bool m_autoUpdateStartDateHasBeenSet = false;
 };
 

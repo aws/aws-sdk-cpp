@@ -110,15 +110,15 @@ class ListAssessmentControlInsightsByControlDomainRequest : public AuditManagerR
   ///@}
  private:
   Aws::String m_controlDomainId;
-  bool m_controlDomainIdHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_controlDomainIdHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

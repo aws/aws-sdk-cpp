@@ -75,9 +75,9 @@ class DescribeDomainEndpointOptionsRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_deployed{false};
+  bool m_domainNameHasBeenSet = false;
   bool m_deployedHasBeenSet = false;
 };
 

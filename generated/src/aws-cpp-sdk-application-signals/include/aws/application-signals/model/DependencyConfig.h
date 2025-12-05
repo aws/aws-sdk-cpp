@@ -94,9 +94,9 @@ class DependencyConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_dependencyKeyAttributes;
-  bool m_dependencyKeyAttributesHasBeenSet = false;
 
   Aws::String m_dependencyOperationName;
+  bool m_dependencyKeyAttributesHasBeenSet = false;
   bool m_dependencyOperationNameHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class CreateCertificateAuthorityAuditReportRequest : public ACMPCARequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   AuditReportResponseFormat m_auditReportResponseFormat{AuditReportResponseFormat::NOT_SET};
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
   bool m_auditReportResponseFormatHasBeenSet = false;
 };
 

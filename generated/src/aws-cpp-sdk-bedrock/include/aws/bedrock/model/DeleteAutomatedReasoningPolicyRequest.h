@@ -74,9 +74,9 @@ class DeleteAutomatedReasoningPolicyRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   bool m_force{false};
+  bool m_policyArnHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

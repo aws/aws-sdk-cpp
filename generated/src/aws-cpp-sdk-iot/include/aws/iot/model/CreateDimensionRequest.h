@@ -140,18 +140,18 @@ class CreateDimensionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DimensionType m_type{DimensionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringValues;
-  bool m_stringValuesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stringValuesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

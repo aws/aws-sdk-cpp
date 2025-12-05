@@ -120,15 +120,15 @@ class PublicIpDnsNameOptions {
   ///@}
  private:
   Aws::String m_dnsHostnameType;
-  bool m_dnsHostnameTypeHasBeenSet = false;
 
   Aws::String m_publicIpv4DnsName;
-  bool m_publicIpv4DnsNameHasBeenSet = false;
 
   Aws::String m_publicIpv6DnsName;
-  bool m_publicIpv6DnsNameHasBeenSet = false;
 
   Aws::String m_publicDualStackDnsName;
+  bool m_dnsHostnameTypeHasBeenSet = false;
+  bool m_publicIpv4DnsNameHasBeenSet = false;
+  bool m_publicIpv6DnsNameHasBeenSet = false;
   bool m_publicDualStackDnsNameHasBeenSet = false;
 };
 

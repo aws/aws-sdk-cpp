@@ -60,9 +60,9 @@ class CancelMetadataModelCreationResult {
   ///@}
  private:
   SchemaConversionRequest m_request;
-  bool m_requestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_requestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

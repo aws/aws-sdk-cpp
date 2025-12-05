@@ -124,18 +124,18 @@ class PeeringError {
   ///@}
  private:
   PeeringErrorCode m_code{PeeringErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   PermissionsErrorContext m_missingPermissionsContext;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_missingPermissionsContextHasBeenSet = false;
 };
 

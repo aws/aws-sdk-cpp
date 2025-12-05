@@ -85,12 +85,12 @@ class ListReceivedDataGrantsResult {
   ///@}
  private:
   Aws::Vector<ReceivedDataGrantSummariesEntry> m_dataGrantSummaries;
-  bool m_dataGrantSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataGrantSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

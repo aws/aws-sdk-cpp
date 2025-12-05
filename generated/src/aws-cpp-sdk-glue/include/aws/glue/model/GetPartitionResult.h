@@ -61,9 +61,9 @@ class GetPartitionResult {
   ///@}
  private:
   Partition m_partition;
-  bool m_partitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_partitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

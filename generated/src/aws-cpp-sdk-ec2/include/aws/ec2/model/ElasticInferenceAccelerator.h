@@ -73,9 +73,9 @@ class ElasticInferenceAccelerator {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   int m_count{0};
+  bool m_typeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

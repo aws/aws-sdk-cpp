@@ -77,12 +77,12 @@ class CreateSecurityConfigurationResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

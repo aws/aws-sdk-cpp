@@ -66,9 +66,9 @@ class RemoveFlowOutputRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_outputArn;
+  bool m_flowArnHasBeenSet = false;
   bool m_outputArnHasBeenSet = false;
 };
 

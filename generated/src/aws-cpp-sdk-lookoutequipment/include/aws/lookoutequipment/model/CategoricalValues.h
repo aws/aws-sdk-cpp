@@ -66,9 +66,9 @@ class CategoricalValues {
   ///@}
  private:
   StatisticalIssueStatus m_status{StatisticalIssueStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_numberOfCategory{0};
+  bool m_statusHasBeenSet = false;
   bool m_numberOfCategoryHasBeenSet = false;
 };
 

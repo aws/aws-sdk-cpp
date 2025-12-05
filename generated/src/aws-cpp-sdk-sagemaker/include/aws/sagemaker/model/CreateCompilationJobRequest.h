@@ -215,27 +215,27 @@ class CreateCompilationJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_compilationJobName;
-  bool m_compilationJobNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_modelPackageVersionArn;
-  bool m_modelPackageVersionArnHasBeenSet = false;
 
   InputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   NeoVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_compilationJobNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_modelPackageVersionArnHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

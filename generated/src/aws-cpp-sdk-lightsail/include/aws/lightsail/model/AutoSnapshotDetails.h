@@ -113,15 +113,15 @@ class AutoSnapshotDetails {
   ///@}
  private:
   Aws::String m_date;
-  bool m_dateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   AutoSnapshotStatus m_status{AutoSnapshotStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<AttachedDisk> m_fromAttachedDisks;
+  bool m_dateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_fromAttachedDisksHasBeenSet = false;
 };
 

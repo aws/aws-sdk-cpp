@@ -879,123 +879,123 @@ class TrainingJob {
   ///@}
  private:
   Aws::String m_trainingJobName;
-  bool m_trainingJobNameHasBeenSet = false;
 
   Aws::String m_trainingJobArn;
-  bool m_trainingJobArnHasBeenSet = false;
 
   Aws::String m_tuningJobArn;
-  bool m_tuningJobArnHasBeenSet = false;
 
   Aws::String m_labelingJobArn;
-  bool m_labelingJobArnHasBeenSet = false;
 
   Aws::String m_autoMLJobArn;
-  bool m_autoMLJobArnHasBeenSet = false;
 
   ModelArtifacts m_modelArtifacts;
-  bool m_modelArtifactsHasBeenSet = false;
 
   TrainingJobStatus m_trainingJobStatus{TrainingJobStatus::NOT_SET};
-  bool m_trainingJobStatusHasBeenSet = false;
 
   SecondaryStatus m_secondaryStatus{SecondaryStatus::NOT_SET};
-  bool m_secondaryStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-  bool m_hyperParametersHasBeenSet = false;
 
   AlgorithmSpecification m_algorithmSpecification;
-  bool m_algorithmSpecificationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Channel> m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingStartTime{};
-  bool m_trainingStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingEndTime{};
-  bool m_trainingEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<SecondaryStatusTransition> m_secondaryStatusTransitions;
-  bool m_secondaryStatusTransitionsHasBeenSet = false;
 
   Aws::Vector<MetricData> m_finalMetricDataList;
-  bool m_finalMetricDataListHasBeenSet = false;
 
   bool m_enableNetworkIsolation{false};
-  bool m_enableNetworkIsolationHasBeenSet = false;
 
   bool m_enableInterContainerTrafficEncryption{false};
-  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
   bool m_enableManagedSpotTraining{false};
-  bool m_enableManagedSpotTrainingHasBeenSet = false;
 
   CheckpointConfig m_checkpointConfig;
-  bool m_checkpointConfigHasBeenSet = false;
 
   int m_trainingTimeInSeconds{0};
-  bool m_trainingTimeInSecondsHasBeenSet = false;
 
   int m_billableTimeInSeconds{0};
-  bool m_billableTimeInSecondsHasBeenSet = false;
 
   DebugHookConfig m_debugHookConfig;
-  bool m_debugHookConfigHasBeenSet = false;
 
   ExperimentConfig m_experimentConfig;
-  bool m_experimentConfigHasBeenSet = false;
 
   Aws::Vector<DebugRuleConfiguration> m_debugRuleConfigurations;
-  bool m_debugRuleConfigurationsHasBeenSet = false;
 
   TensorBoardOutputConfig m_tensorBoardOutputConfig;
-  bool m_tensorBoardOutputConfigHasBeenSet = false;
 
   Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
-  bool m_debugRuleEvaluationStatusesHasBeenSet = false;
 
   Aws::String m_outputModelPackageArn;
-  bool m_outputModelPackageArnHasBeenSet = false;
 
   ModelPackageConfig m_modelPackageConfig;
-  bool m_modelPackageConfigHasBeenSet = false;
 
   ProfilerConfig m_profilerConfig;
-  bool m_profilerConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   RetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trainingJobNameHasBeenSet = false;
+  bool m_trainingJobArnHasBeenSet = false;
+  bool m_tuningJobArnHasBeenSet = false;
+  bool m_labelingJobArnHasBeenSet = false;
+  bool m_autoMLJobArnHasBeenSet = false;
+  bool m_modelArtifactsHasBeenSet = false;
+  bool m_trainingJobStatusHasBeenSet = false;
+  bool m_secondaryStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_hyperParametersHasBeenSet = false;
+  bool m_algorithmSpecificationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_trainingStartTimeHasBeenSet = false;
+  bool m_trainingEndTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_secondaryStatusTransitionsHasBeenSet = false;
+  bool m_finalMetricDataListHasBeenSet = false;
+  bool m_enableNetworkIsolationHasBeenSet = false;
+  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
+  bool m_enableManagedSpotTrainingHasBeenSet = false;
+  bool m_checkpointConfigHasBeenSet = false;
+  bool m_trainingTimeInSecondsHasBeenSet = false;
+  bool m_billableTimeInSecondsHasBeenSet = false;
+  bool m_debugHookConfigHasBeenSet = false;
+  bool m_experimentConfigHasBeenSet = false;
+  bool m_debugRuleConfigurationsHasBeenSet = false;
+  bool m_tensorBoardOutputConfigHasBeenSet = false;
+  bool m_debugRuleEvaluationStatusesHasBeenSet = false;
+  bool m_outputModelPackageArnHasBeenSet = false;
+  bool m_modelPackageConfigHasBeenSet = false;
+  bool m_profilerConfigHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

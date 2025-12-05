@@ -73,9 +73,9 @@ class AnalyzerConfiguration {
   ///@}
  private:
   UnusedAccessConfiguration m_unusedAccess;
-  bool m_unusedAccessHasBeenSet = false;
 
   InternalAccessConfiguration m_internalAccess;
+  bool m_unusedAccessHasBeenSet = false;
   bool m_internalAccessHasBeenSet = false;
 };
 

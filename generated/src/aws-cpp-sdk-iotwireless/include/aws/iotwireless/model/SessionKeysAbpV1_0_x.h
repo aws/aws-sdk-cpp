@@ -68,9 +68,9 @@ class SessionKeysAbpV1_0_x {
   ///@}
  private:
   Aws::String m_nwkSKey;
-  bool m_nwkSKeyHasBeenSet = false;
 
   Aws::String m_appSKey;
+  bool m_nwkSKeyHasBeenSet = false;
   bool m_appSKeyHasBeenSet = false;
 };
 

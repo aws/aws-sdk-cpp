@@ -222,36 +222,36 @@ class BatchUpdateFirewallRuleInputItem {
   ///@}
  private:
   FirewallRuleAction m_action{FirewallRuleAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   BlockOverrideDnsQueryType m_blockOverrideDnsType{BlockOverrideDnsQueryType::NOT_SET};
-  bool m_blockOverrideDnsTypeHasBeenSet = false;
 
   Aws::String m_blockOverrideDomain;
-  bool m_blockOverrideDomainHasBeenSet = false;
 
   int m_blockOverrideTtl{0};
-  bool m_blockOverrideTtlHasBeenSet = false;
 
   FirewallBlockResponse m_blockResponse{FirewallBlockResponse::NOT_SET};
-  bool m_blockResponseHasBeenSet = false;
 
   ConfidenceThreshold m_confidenceThreshold{ConfidenceThreshold::NOT_SET};
-  bool m_confidenceThresholdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DnsAdvancedProtection m_dnsAdvancedProtection{DnsAdvancedProtection::NOT_SET};
-  bool m_dnsAdvancedProtectionHasBeenSet = false;
 
   Aws::String m_firewallRuleId;
-  bool m_firewallRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_priority{0};
+  bool m_actionHasBeenSet = false;
+  bool m_blockOverrideDnsTypeHasBeenSet = false;
+  bool m_blockOverrideDomainHasBeenSet = false;
+  bool m_blockOverrideTtlHasBeenSet = false;
+  bool m_blockResponseHasBeenSet = false;
+  bool m_confidenceThresholdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dnsAdvancedProtectionHasBeenSet = false;
+  bool m_firewallRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

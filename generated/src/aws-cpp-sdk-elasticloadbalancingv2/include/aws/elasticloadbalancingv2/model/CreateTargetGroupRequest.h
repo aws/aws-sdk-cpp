@@ -411,57 +411,57 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProtocolEnum m_protocol{ProtocolEnum::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_protocolVersion;
-  bool m_protocolVersionHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   ProtocolEnum m_healthCheckProtocol{ProtocolEnum::NOT_SET};
-  bool m_healthCheckProtocolHasBeenSet = false;
 
   Aws::String m_healthCheckPort;
-  bool m_healthCheckPortHasBeenSet = false;
 
   bool m_healthCheckEnabled{false};
-  bool m_healthCheckEnabledHasBeenSet = false;
 
   Aws::String m_healthCheckPath;
-  bool m_healthCheckPathHasBeenSet = false;
 
   int m_healthCheckIntervalSeconds{0};
-  bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
   int m_healthCheckTimeoutSeconds{0};
-  bool m_healthCheckTimeoutSecondsHasBeenSet = false;
 
   int m_healthyThresholdCount{0};
-  bool m_healthyThresholdCountHasBeenSet = false;
 
   int m_unhealthyThresholdCount{0};
-  bool m_unhealthyThresholdCountHasBeenSet = false;
 
   Matcher m_matcher;
-  bool m_matcherHasBeenSet = false;
 
   TargetTypeEnum m_targetType{TargetTypeEnum::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TargetGroupIpAddressTypeEnum m_ipAddressType{TargetGroupIpAddressTypeEnum::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   int m_targetControlPort{0};
+  bool m_nameHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_protocolVersionHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_healthCheckProtocolHasBeenSet = false;
+  bool m_healthCheckPortHasBeenSet = false;
+  bool m_healthCheckEnabledHasBeenSet = false;
+  bool m_healthCheckPathHasBeenSet = false;
+  bool m_healthCheckIntervalSecondsHasBeenSet = false;
+  bool m_healthCheckTimeoutSecondsHasBeenSet = false;
+  bool m_healthyThresholdCountHasBeenSet = false;
+  bool m_unhealthyThresholdCountHasBeenSet = false;
+  bool m_matcherHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_targetControlPortHasBeenSet = false;
 };
 

@@ -109,18 +109,18 @@ class CreateConnectorV2Result {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_authUrl;
-  bool m_authUrlHasBeenSet = false;
 
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
-  bool m_connectorStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_authUrlHasBeenSet = false;
+  bool m_connectorStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

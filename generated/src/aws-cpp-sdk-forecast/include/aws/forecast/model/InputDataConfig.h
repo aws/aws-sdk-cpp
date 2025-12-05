@@ -81,9 +81,9 @@ class InputDataConfig {
   ///@}
  private:
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::Vector<SupplementaryFeature> m_supplementaryFeatures;
+  bool m_datasetGroupArnHasBeenSet = false;
   bool m_supplementaryFeaturesHasBeenSet = false;
 };
 

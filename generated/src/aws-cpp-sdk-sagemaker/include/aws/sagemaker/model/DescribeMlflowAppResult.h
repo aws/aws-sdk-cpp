@@ -301,51 +301,51 @@ class DescribeMlflowAppResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_artifactStoreUri;
-  bool m_artifactStoreUriHasBeenSet = false;
 
   Aws::String m_mlflowVersion;
-  bool m_mlflowVersionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MlflowAppStatus m_status{MlflowAppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ModelRegistrationMode m_modelRegistrationMode{ModelRegistrationMode::NOT_SET};
-  bool m_modelRegistrationModeHasBeenSet = false;
 
   AccountDefaultStatus m_accountDefaultStatus{AccountDefaultStatus::NOT_SET};
-  bool m_accountDefaultStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_defaultDomainIdList;
-  bool m_defaultDomainIdListHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceWindowStart;
-  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
 
   MaintenanceStatus m_maintenanceStatus{MaintenanceStatus::NOT_SET};
-  bool m_maintenanceStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_artifactStoreUriHasBeenSet = false;
+  bool m_mlflowVersionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_modelRegistrationModeHasBeenSet = false;
+  bool m_accountDefaultStatusHasBeenSet = false;
+  bool m_defaultDomainIdListHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
+  bool m_maintenanceStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -283,39 +283,39 @@ class ServiceSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ServiceType m_type{ServiceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   DnsConfig m_dnsConfig;
-  bool m_dnsConfigHasBeenSet = false;
 
   HealthCheckConfig m_healthCheckConfig;
-  bool m_healthCheckConfigHasBeenSet = false;
 
   HealthCheckCustomConfig m_healthCheckCustomConfig;
-  bool m_healthCheckCustomConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_createdByAccount;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_dnsConfigHasBeenSet = false;
+  bool m_healthCheckConfigHasBeenSet = false;
+  bool m_healthCheckCustomConfigHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
   bool m_createdByAccountHasBeenSet = false;
 };
 

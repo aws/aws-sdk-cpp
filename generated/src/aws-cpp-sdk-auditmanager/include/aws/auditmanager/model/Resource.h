@@ -98,12 +98,12 @@ class Resource {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_complianceCheck;
+  bool m_arnHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_complianceCheckHasBeenSet = false;
 };
 

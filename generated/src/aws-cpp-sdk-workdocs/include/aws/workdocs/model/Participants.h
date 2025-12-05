@@ -82,9 +82,9 @@ class Participants {
   ///@}
  private:
   Aws::Vector<UserMetadata> m_users;
-  bool m_usersHasBeenSet = false;
 
   Aws::Vector<GroupMetadata> m_groups;
+  bool m_usersHasBeenSet = false;
   bool m_groupsHasBeenSet = false;
 };
 

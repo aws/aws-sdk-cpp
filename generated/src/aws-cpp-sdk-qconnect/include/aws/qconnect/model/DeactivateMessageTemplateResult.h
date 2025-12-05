@@ -92,15 +92,15 @@ class DeactivateMessageTemplateResult {
   ///@}
  private:
   Aws::String m_messageTemplateArn;
-  bool m_messageTemplateArnHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageTemplateArnHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

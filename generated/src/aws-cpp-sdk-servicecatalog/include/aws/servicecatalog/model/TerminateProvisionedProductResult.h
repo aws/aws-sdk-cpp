@@ -61,9 +61,9 @@ class TerminateProvisionedProductResult {
   ///@}
  private:
   RecordDetail m_recordDetail;
-  bool m_recordDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

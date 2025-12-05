@@ -170,24 +170,24 @@ class UnpivotOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<ColumnToUnpivot> m_columnsToUnpivot;
-  bool m_columnsToUnpivotHasBeenSet = false;
 
   Aws::String m_unpivotedLabelColumnName;
-  bool m_unpivotedLabelColumnNameHasBeenSet = false;
 
   Aws::String m_unpivotedLabelColumnId;
-  bool m_unpivotedLabelColumnIdHasBeenSet = false;
 
   Aws::String m_unpivotedValueColumnName;
-  bool m_unpivotedValueColumnNameHasBeenSet = false;
 
   Aws::String m_unpivotedValueColumnId;
+  bool m_aliasHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_columnsToUnpivotHasBeenSet = false;
+  bool m_unpivotedLabelColumnNameHasBeenSet = false;
+  bool m_unpivotedLabelColumnIdHasBeenSet = false;
+  bool m_unpivotedValueColumnNameHasBeenSet = false;
   bool m_unpivotedValueColumnIdHasBeenSet = false;
 };
 

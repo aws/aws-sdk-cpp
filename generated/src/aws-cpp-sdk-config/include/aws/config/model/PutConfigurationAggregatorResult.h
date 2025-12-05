@@ -60,9 +60,9 @@ class PutConfigurationAggregatorResult {
   ///@}
  private:
   ConfigurationAggregator m_configurationAggregator;
-  bool m_configurationAggregatorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationAggregatorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

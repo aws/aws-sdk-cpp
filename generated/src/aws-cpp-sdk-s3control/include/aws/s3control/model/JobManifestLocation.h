@@ -96,12 +96,12 @@ class JobManifestLocation {
   ///@}
  private:
   Aws::String m_objectArn;
-  bool m_objectArnHasBeenSet = false;
 
   Aws::String m_objectVersionId;
-  bool m_objectVersionIdHasBeenSet = false;
 
   Aws::String m_eTag;
+  bool m_objectArnHasBeenSet = false;
+  bool m_objectVersionIdHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
 };
 

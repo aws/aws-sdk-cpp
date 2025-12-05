@@ -70,9 +70,9 @@ class ScalingAction {
   ///@}
  private:
   MarketType m_market{MarketType::NOT_SET};
-  bool m_marketHasBeenSet = false;
 
   SimpleScalingPolicyConfiguration m_simpleScalingPolicyConfiguration;
+  bool m_marketHasBeenSet = false;
   bool m_simpleScalingPolicyConfigurationHasBeenSet = false;
 };
 

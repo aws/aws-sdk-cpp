@@ -129,18 +129,18 @@ class PrivateKeyAttributesV3 {
   ///@}
  private:
   PrivateKeyAlgorithm m_algorithm{PrivateKeyAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cryptoProviders;
-  bool m_cryptoProvidersHasBeenSet = false;
 
   KeySpec m_keySpec{KeySpec::NOT_SET};
-  bool m_keySpecHasBeenSet = false;
 
   KeyUsageProperty m_keyUsageProperty;
-  bool m_keyUsagePropertyHasBeenSet = false;
 
   int m_minimalKeyLength{0};
+  bool m_algorithmHasBeenSet = false;
+  bool m_cryptoProvidersHasBeenSet = false;
+  bool m_keySpecHasBeenSet = false;
+  bool m_keyUsagePropertyHasBeenSet = false;
   bool m_minimalKeyLengthHasBeenSet = false;
 };
 

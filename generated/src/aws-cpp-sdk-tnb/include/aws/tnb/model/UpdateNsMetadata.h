@@ -70,9 +70,9 @@ class UpdateNsMetadata {
   ///@}
  private:
   Aws::Utils::Document m_additionalParamsForNs;
-  bool m_additionalParamsForNsHasBeenSet = false;
 
   Aws::String m_nsdInfoId;
+  bool m_additionalParamsForNsHasBeenSet = false;
   bool m_nsdInfoIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class TableConditionalFormattingOption {
   ///@}
  private:
   TableCellConditionalFormatting m_cell;
-  bool m_cellHasBeenSet = false;
 
   TableRowConditionalFormatting m_row;
+  bool m_cellHasBeenSet = false;
   bool m_rowHasBeenSet = false;
 };
 

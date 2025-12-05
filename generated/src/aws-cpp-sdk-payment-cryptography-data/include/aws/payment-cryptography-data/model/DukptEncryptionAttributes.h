@@ -127,18 +127,18 @@ class DukptEncryptionAttributes {
   ///@}
  private:
   Aws::String m_keySerialNumber;
-  bool m_keySerialNumberHasBeenSet = false;
 
   DukptEncryptionMode m_mode{DukptEncryptionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   DukptDerivationType m_dukptKeyDerivationType{DukptDerivationType::NOT_SET};
-  bool m_dukptKeyDerivationTypeHasBeenSet = false;
 
   DukptKeyVariant m_dukptKeyVariant{DukptKeyVariant::NOT_SET};
-  bool m_dukptKeyVariantHasBeenSet = false;
 
   Aws::String m_initializationVector;
+  bool m_keySerialNumberHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_dukptKeyDerivationTypeHasBeenSet = false;
+  bool m_dukptKeyVariantHasBeenSet = false;
   bool m_initializationVectorHasBeenSet = false;
 };
 

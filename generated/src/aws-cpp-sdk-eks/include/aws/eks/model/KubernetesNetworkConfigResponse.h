@@ -123,15 +123,15 @@ class KubernetesNetworkConfigResponse {
   ///@}
  private:
   Aws::String m_serviceIpv4Cidr;
-  bool m_serviceIpv4CidrHasBeenSet = false;
 
   Aws::String m_serviceIpv6Cidr;
-  bool m_serviceIpv6CidrHasBeenSet = false;
 
   IpFamily m_ipFamily{IpFamily::NOT_SET};
-  bool m_ipFamilyHasBeenSet = false;
 
   ElasticLoadBalancing m_elasticLoadBalancing;
+  bool m_serviceIpv4CidrHasBeenSet = false;
+  bool m_serviceIpv6CidrHasBeenSet = false;
+  bool m_ipFamilyHasBeenSet = false;
   bool m_elasticLoadBalancingHasBeenSet = false;
 };
 

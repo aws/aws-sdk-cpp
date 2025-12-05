@@ -111,15 +111,15 @@ class UpdateResourceShareRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_allowExternalPrincipals{false};
-  bool m_allowExternalPrincipalsHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_allowExternalPrincipalsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

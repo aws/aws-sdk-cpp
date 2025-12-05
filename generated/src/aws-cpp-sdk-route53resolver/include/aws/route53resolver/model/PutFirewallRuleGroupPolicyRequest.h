@@ -68,9 +68,9 @@ class PutFirewallRuleGroupPolicyRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_firewallRuleGroupPolicy;
+  bool m_arnHasBeenSet = false;
   bool m_firewallRuleGroupPolicyHasBeenSet = false;
 };
 

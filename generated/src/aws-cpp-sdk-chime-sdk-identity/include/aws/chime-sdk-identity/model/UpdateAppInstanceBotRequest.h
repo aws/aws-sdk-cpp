@@ -102,15 +102,15 @@ class UpdateAppInstanceBotRequest : public ChimeSDKIdentityRequest {
   ///@}
  private:
   Aws::String m_appInstanceBotArn;
-  bool m_appInstanceBotArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Configuration m_configuration;
+  bool m_appInstanceBotArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

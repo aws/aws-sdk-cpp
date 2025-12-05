@@ -83,12 +83,12 @@ class UpdateAnalysisTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_analysisTemplateIdentifier;
-  bool m_analysisTemplateIdentifierHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_analysisTemplateIdentifierHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

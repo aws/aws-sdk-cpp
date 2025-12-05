@@ -75,9 +75,9 @@ class DeletionProtectionSettings {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_protectionPeriodInMinutes{0};
+  bool m_enabledHasBeenSet = false;
   bool m_protectionPeriodInMinutesHasBeenSet = false;
 };
 

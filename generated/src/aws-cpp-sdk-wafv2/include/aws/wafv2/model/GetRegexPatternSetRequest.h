@@ -92,12 +92,12 @@ class GetRegexPatternSetRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

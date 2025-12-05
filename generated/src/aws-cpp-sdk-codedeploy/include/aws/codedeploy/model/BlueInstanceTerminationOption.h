@@ -76,9 +76,9 @@ class BlueInstanceTerminationOption {
   ///@}
  private:
   InstanceAction m_action{InstanceAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   int m_terminationWaitTimeInMinutes{0};
+  bool m_actionHasBeenSet = false;
   bool m_terminationWaitTimeInMinutesHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class VpcClassicLink {
   ///@}
  private:
   bool m_classicLinkEnabled{false};
-  bool m_classicLinkEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_classicLinkEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

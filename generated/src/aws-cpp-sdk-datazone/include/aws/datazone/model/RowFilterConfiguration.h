@@ -66,9 +66,9 @@ class RowFilterConfiguration {
   ///@}
  private:
   RowFilter m_rowFilter;
-  bool m_rowFilterHasBeenSet = false;
 
   bool m_sensitive{false};
+  bool m_rowFilterHasBeenSet = false;
   bool m_sensitiveHasBeenSet = false;
 };
 

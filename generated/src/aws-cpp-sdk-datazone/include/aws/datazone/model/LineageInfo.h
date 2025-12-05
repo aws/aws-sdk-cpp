@@ -85,12 +85,12 @@ class LineageInfo {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   LineageEventProcessingStatus m_eventStatus{LineageEventProcessingStatus::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_eventStatusHasBeenSet = false;
 };
 

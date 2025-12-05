@@ -170,18 +170,19 @@ class StartLiveTailRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
-  bool m_logGroupIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logStreamNames;
-  bool m_logStreamNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logStreamNamePrefixes;
-  bool m_logStreamNamePrefixesHasBeenSet = false;
 
   Aws::String m_logEventFilterPattern;
-  bool m_logEventFilterPatternHasBeenSet = false;
   StartLiveTailHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_logGroupIdentifiersHasBeenSet = false;
+  bool m_logStreamNamesHasBeenSet = false;
+  bool m_logStreamNamePrefixesHasBeenSet = false;
+  bool m_logEventFilterPatternHasBeenSet = false;
 };
 
 }  // namespace Model

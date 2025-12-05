@@ -121,12 +121,12 @@ class ControlScope {
   ///@}
  private:
   Aws::Vector<Aws::String> m_complianceResourceIds;
-  bool m_complianceResourceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_complianceResourceTypes;
-  bool m_complianceResourceTypesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_complianceResourceIdsHasBeenSet = false;
+  bool m_complianceResourceTypesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

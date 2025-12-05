@@ -234,30 +234,30 @@ class ComputeEnvironmentConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ComputeEnvironment m_computeEnvironment{ComputeEnvironment::NOT_SET};
-  bool m_computeEnvironmentHasBeenSet = false;
 
   Aws::Vector<AuthenticationType> m_supportedAuthenticationTypes;
-  bool m_supportedAuthenticationTypesHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_connectionOptions;
-  bool m_connectionOptionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_connectionPropertyNameOverrides;
-  bool m_connectionPropertyNameOverridesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_connectionOptionNameOverrides;
-  bool m_connectionOptionNameOverridesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectionPropertiesRequiredOverrides;
-  bool m_connectionPropertiesRequiredOverridesHasBeenSet = false;
 
   bool m_physicalConnectionPropertiesRequired{false};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_computeEnvironmentHasBeenSet = false;
+  bool m_supportedAuthenticationTypesHasBeenSet = false;
+  bool m_connectionOptionsHasBeenSet = false;
+  bool m_connectionPropertyNameOverridesHasBeenSet = false;
+  bool m_connectionOptionNameOverridesHasBeenSet = false;
+  bool m_connectionPropertiesRequiredOverridesHasBeenSet = false;
   bool m_physicalConnectionPropertiesRequiredHasBeenSet = false;
 };
 

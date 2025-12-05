@@ -87,12 +87,12 @@ class ListExportsResult {
   ///@}
  private:
   Aws::Vector<Export> m_exports;
-  bool m_exportsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_exportsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

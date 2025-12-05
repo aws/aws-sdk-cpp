@@ -85,12 +85,12 @@ class ListCampaignsResult {
   ///@}
  private:
   Aws::Vector<CampaignSummary> m_campaignSummaries;
-  bool m_campaignSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_campaignSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

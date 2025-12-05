@@ -81,9 +81,9 @@ class GetSamplingTargetsRequest : public XRayRequest {
   ///@}
  private:
   Aws::Vector<SamplingStatisticsDocument> m_samplingStatisticsDocuments;
-  bool m_samplingStatisticsDocumentsHasBeenSet = false;
 
   Aws::Vector<SamplingBoostStatisticsDocument> m_samplingBoostStatisticsDocuments;
+  bool m_samplingStatisticsDocumentsHasBeenSet = false;
   bool m_samplingBoostStatisticsDocumentsHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class DisassociateThirdPartyFirewallResult {
   ///@}
  private:
   ThirdPartyFirewallAssociationStatus m_thirdPartyFirewallStatus{ThirdPartyFirewallAssociationStatus::NOT_SET};
-  bool m_thirdPartyFirewallStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thirdPartyFirewallStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

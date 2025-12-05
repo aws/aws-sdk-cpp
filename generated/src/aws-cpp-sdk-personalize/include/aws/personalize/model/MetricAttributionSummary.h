@@ -144,21 +144,21 @@ class MetricAttributionSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metricAttributionArn;
-  bool m_metricAttributionArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_nameHasBeenSet = false;
+  bool m_metricAttributionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

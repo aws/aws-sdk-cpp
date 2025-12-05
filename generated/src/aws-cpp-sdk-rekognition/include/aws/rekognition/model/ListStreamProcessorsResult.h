@@ -86,12 +86,12 @@ class ListStreamProcessorsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<StreamProcessor> m_streamProcessors;
-  bool m_streamProcessorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_streamProcessorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

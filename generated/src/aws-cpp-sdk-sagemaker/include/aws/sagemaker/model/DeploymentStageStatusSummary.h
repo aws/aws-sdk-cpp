@@ -108,15 +108,15 @@ class DeploymentStageStatusSummary {
   ///@}
  private:
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   DeviceSelectionConfig m_deviceSelectionConfig;
-  bool m_deviceSelectionConfigHasBeenSet = false;
 
   EdgeDeploymentConfig m_deploymentConfig;
-  bool m_deploymentConfigHasBeenSet = false;
 
   EdgeDeploymentStatus m_deploymentStatus;
+  bool m_stageNameHasBeenSet = false;
+  bool m_deviceSelectionConfigHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
   bool m_deploymentStatusHasBeenSet = false;
 };
 

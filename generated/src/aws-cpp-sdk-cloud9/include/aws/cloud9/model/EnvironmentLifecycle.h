@@ -93,12 +93,12 @@ class EnvironmentLifecycle {
   ///@}
  private:
   EnvironmentLifecycleStatus m_status{EnvironmentLifecycleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_failureResource;
+  bool m_statusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_failureResourceHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class MetricResult {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   double m_metricValue{0.0};
+  bool m_metricNameHasBeenSet = false;
   bool m_metricValueHasBeenSet = false;
 };
 

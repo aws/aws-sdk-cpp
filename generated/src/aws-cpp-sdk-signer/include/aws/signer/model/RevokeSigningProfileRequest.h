@@ -104,15 +104,15 @@ class RevokeSigningProfileRequest : public SignerRequest {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileVersion;
-  bool m_profileVersionHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveTime{};
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileVersionHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_effectiveTimeHasBeenSet = false;
 };
 

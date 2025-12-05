@@ -85,12 +85,12 @@ class GetDevEndpointsResult {
   ///@}
  private:
   Aws::Vector<DevEndpoint> m_devEndpoints;
-  bool m_devEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

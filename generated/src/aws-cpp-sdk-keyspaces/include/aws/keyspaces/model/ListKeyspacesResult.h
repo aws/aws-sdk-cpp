@@ -85,12 +85,12 @@ class ListKeyspacesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<KeyspaceSummary> m_keyspaces;
-  bool m_keyspacesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_keyspacesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

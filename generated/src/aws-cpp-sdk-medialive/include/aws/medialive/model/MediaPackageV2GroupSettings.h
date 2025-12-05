@@ -216,33 +216,33 @@ class MediaPackageV2GroupSettings {
   ///@}
  private:
   Aws::Vector<CaptionLanguageMapping> m_captionLanguageMappings;
-  bool m_captionLanguageMappingsHasBeenSet = false;
 
   CmafId3Behavior m_id3Behavior{CmafId3Behavior::NOT_SET};
-  bool m_id3BehaviorHasBeenSet = false;
 
   CmafKLVBehavior m_klvBehavior{CmafKLVBehavior::NOT_SET};
-  bool m_klvBehaviorHasBeenSet = false;
 
   CmafNielsenId3Behavior m_nielsenId3Behavior{CmafNielsenId3Behavior::NOT_SET};
-  bool m_nielsenId3BehaviorHasBeenSet = false;
 
   Scte35Type m_scte35Type{Scte35Type::NOT_SET};
-  bool m_scte35TypeHasBeenSet = false;
 
   int m_segmentLength{0};
-  bool m_segmentLengthHasBeenSet = false;
 
   CmafIngestSegmentLengthUnits m_segmentLengthUnits{CmafIngestSegmentLengthUnits::NOT_SET};
-  bool m_segmentLengthUnitsHasBeenSet = false;
 
   CmafTimedMetadataId3Frame m_timedMetadataId3Frame{CmafTimedMetadataId3Frame::NOT_SET};
-  bool m_timedMetadataId3FrameHasBeenSet = false;
 
   int m_timedMetadataId3Period{0};
-  bool m_timedMetadataId3PeriodHasBeenSet = false;
 
   CmafTimedMetadataPassthrough m_timedMetadataPassthrough{CmafTimedMetadataPassthrough::NOT_SET};
+  bool m_captionLanguageMappingsHasBeenSet = false;
+  bool m_id3BehaviorHasBeenSet = false;
+  bool m_klvBehaviorHasBeenSet = false;
+  bool m_nielsenId3BehaviorHasBeenSet = false;
+  bool m_scte35TypeHasBeenSet = false;
+  bool m_segmentLengthHasBeenSet = false;
+  bool m_segmentLengthUnitsHasBeenSet = false;
+  bool m_timedMetadataId3FrameHasBeenSet = false;
+  bool m_timedMetadataId3PeriodHasBeenSet = false;
   bool m_timedMetadataPassthroughHasBeenSet = false;
 };
 

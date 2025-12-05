@@ -85,12 +85,12 @@ class InventoryFilter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InventoryFilterCondition m_condition{InventoryFilterCondition::NOT_SET};
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

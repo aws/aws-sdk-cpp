@@ -71,9 +71,9 @@ class DescribeManagedJobTemplateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateVersion;
+  bool m_templateNameHasBeenSet = false;
   bool m_templateVersionHasBeenSet = false;
 };
 

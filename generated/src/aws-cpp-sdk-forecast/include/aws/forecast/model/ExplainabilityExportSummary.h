@@ -173,24 +173,24 @@ class ExplainabilityExportSummary {
   ///@}
  private:
   Aws::String m_explainabilityExportArn;
-  bool m_explainabilityExportArnHasBeenSet = false;
 
   Aws::String m_explainabilityExportName;
-  bool m_explainabilityExportNameHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
+  bool m_explainabilityExportArnHasBeenSet = false;
+  bool m_explainabilityExportNameHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModificationTimeHasBeenSet = false;
 };
 

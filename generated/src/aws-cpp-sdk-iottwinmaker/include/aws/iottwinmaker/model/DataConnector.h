@@ -67,9 +67,9 @@ class DataConnector {
   ///@}
  private:
   LambdaFunction m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   bool m_isNative{false};
+  bool m_lambdaHasBeenSet = false;
   bool m_isNativeHasBeenSet = false;
 };
 

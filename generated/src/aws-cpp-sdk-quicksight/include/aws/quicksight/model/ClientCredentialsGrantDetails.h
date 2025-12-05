@@ -91,12 +91,12 @@ class ClientCredentialsGrantDetails {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   Aws::String m_tokenEndpoint;
+  bool m_clientIdHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
   bool m_tokenEndpointHasBeenSet = false;
 };
 

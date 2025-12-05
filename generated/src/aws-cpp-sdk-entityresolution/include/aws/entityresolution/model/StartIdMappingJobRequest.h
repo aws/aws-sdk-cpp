@@ -100,12 +100,12 @@ class StartIdMappingJobRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
-  bool m_outputSourceConfigHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
+  bool m_workflowNameHasBeenSet = false;
+  bool m_outputSourceConfigHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ScheduleMaintenanceWindow {
   ///@}
  private:
   int m_durationInMinutes{0};
-  bool m_durationInMinutesHasBeenSet = false;
 
   Aws::String m_startTime;
+  bool m_durationInMinutesHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

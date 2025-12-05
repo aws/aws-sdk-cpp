@@ -84,12 +84,12 @@ class ListProxySessionsResult {
   ///@}
  private:
   Aws::Vector<ProxySession> m_proxySessions;
-  bool m_proxySessionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxySessionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

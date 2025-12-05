@@ -194,27 +194,27 @@ class ConfiguredTableSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::Vector<ConfiguredTableAnalysisRuleType> m_analysisRuleTypes;
-  bool m_analysisRuleTypesHasBeenSet = false;
 
   AnalysisMethod m_analysisMethod{AnalysisMethod::NOT_SET};
-  bool m_analysisMethodHasBeenSet = false;
 
   Aws::Vector<SelectedAnalysisMethod> m_selectedAnalysisMethods;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_analysisRuleTypesHasBeenSet = false;
+  bool m_analysisMethodHasBeenSet = false;
   bool m_selectedAnalysisMethodsHasBeenSet = false;
 };
 

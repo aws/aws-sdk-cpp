@@ -137,18 +137,18 @@ class ResourceStatistics {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastGeneratedAt{};
-  bool m_lastGeneratedAtHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_totalFindings{0};
+  bool m_accountIdHasBeenSet = false;
+  bool m_lastGeneratedAtHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_totalFindingsHasBeenSet = false;
 };
 

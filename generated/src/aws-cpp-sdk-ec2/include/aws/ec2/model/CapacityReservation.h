@@ -669,96 +669,96 @@ class CapacityReservation {
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_capacityReservationArn;
-  bool m_capacityReservationArnHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   CapacityReservationInstancePlatform m_instancePlatform{CapacityReservationInstancePlatform::NOT_SET};
-  bool m_instancePlatformHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   CapacityReservationTenancy m_tenancy{CapacityReservationTenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   bool m_ephemeralStorage{false};
-  bool m_ephemeralStorageHasBeenSet = false;
 
   CapacityReservationState m_state{CapacityReservationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   EndDateType m_endDateType{EndDateType::NOT_SET};
-  bool m_endDateTypeHasBeenSet = false;
 
   InstanceMatchCriteria m_instanceMatchCriteria{InstanceMatchCriteria::NOT_SET};
-  bool m_instanceMatchCriteriaHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_capacityReservationFleetId;
-  bool m_capacityReservationFleetIdHasBeenSet = false;
 
   Aws::String m_placementGroupArn;
-  bool m_placementGroupArnHasBeenSet = false;
 
   Aws::Vector<CapacityAllocation> m_capacityAllocations;
-  bool m_capacityAllocationsHasBeenSet = false;
 
   CapacityReservationType m_reservationType{CapacityReservationType::NOT_SET};
-  bool m_reservationTypeHasBeenSet = false;
 
   Aws::String m_unusedReservationBillingOwnerId;
-  bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
 
   CapacityReservationCommitmentInfo m_commitmentInfo;
-  bool m_commitmentInfoHasBeenSet = false;
 
   CapacityReservationDeliveryPreference m_deliveryPreference{CapacityReservationDeliveryPreference::NOT_SET};
-  bool m_deliveryPreferenceHasBeenSet = false;
 
   Aws::String m_capacityBlockId;
-  bool m_capacityBlockIdHasBeenSet = false;
 
   bool m_interruptible{false};
-  bool m_interruptibleHasBeenSet = false;
 
   InterruptibleCapacityAllocation m_interruptibleCapacityAllocation;
-  bool m_interruptibleCapacityAllocationHasBeenSet = false;
 
   InterruptionInfo m_interruptionInfo;
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_capacityReservationArnHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instancePlatformHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_endDateTypeHasBeenSet = false;
+  bool m_instanceMatchCriteriaHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_capacityReservationFleetIdHasBeenSet = false;
+  bool m_placementGroupArnHasBeenSet = false;
+  bool m_capacityAllocationsHasBeenSet = false;
+  bool m_reservationTypeHasBeenSet = false;
+  bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
+  bool m_commitmentInfoHasBeenSet = false;
+  bool m_deliveryPreferenceHasBeenSet = false;
+  bool m_capacityBlockIdHasBeenSet = false;
+  bool m_interruptibleHasBeenSet = false;
+  bool m_interruptibleCapacityAllocationHasBeenSet = false;
   bool m_interruptionInfoHasBeenSet = false;
 };
 

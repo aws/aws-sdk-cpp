@@ -137,21 +137,21 @@ class GetOriginEndpointPolicyResult {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_originEndpointName;
-  bool m_originEndpointNameHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   CdnAuthConfiguration m_cdnAuthConfiguration;
-  bool m_cdnAuthConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_originEndpointNameHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_cdnAuthConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

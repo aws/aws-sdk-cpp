@@ -87,12 +87,12 @@ class DescribeTransitGatewayConnectPeersResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayConnectPeer> m_transitGatewayConnectPeers;
-  bool m_transitGatewayConnectPeersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayConnectPeersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

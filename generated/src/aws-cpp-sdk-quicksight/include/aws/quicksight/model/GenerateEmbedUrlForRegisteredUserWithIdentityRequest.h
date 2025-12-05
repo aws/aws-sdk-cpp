@@ -105,15 +105,15 @@ class GenerateEmbedUrlForRegisteredUserWithIdentityRequest : public QuickSightRe
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   long long m_sessionLifetimeInMinutes{0};
-  bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
   RegisteredUserEmbeddingExperienceConfiguration m_experienceConfiguration;
-  bool m_experienceConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedDomains;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_sessionLifetimeInMinutesHasBeenSet = false;
+  bool m_experienceConfigurationHasBeenSet = false;
   bool m_allowedDomainsHasBeenSet = false;
 };
 

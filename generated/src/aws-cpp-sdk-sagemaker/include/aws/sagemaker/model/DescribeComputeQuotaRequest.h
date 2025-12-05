@@ -65,9 +65,9 @@ class DescribeComputeQuotaRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_computeQuotaId;
-  bool m_computeQuotaIdHasBeenSet = false;
 
   int m_computeQuotaVersion{0};
+  bool m_computeQuotaIdHasBeenSet = false;
   bool m_computeQuotaVersionHasBeenSet = false;
 };
 

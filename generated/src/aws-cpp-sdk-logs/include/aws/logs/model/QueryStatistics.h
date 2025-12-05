@@ -142,21 +142,21 @@ class QueryStatistics {
   ///@}
  private:
   double m_recordsMatched{0.0};
-  bool m_recordsMatchedHasBeenSet = false;
 
   double m_recordsScanned{0.0};
-  bool m_recordsScannedHasBeenSet = false;
 
   double m_estimatedRecordsSkipped{0.0};
-  bool m_estimatedRecordsSkippedHasBeenSet = false;
 
   double m_bytesScanned{0.0};
-  bool m_bytesScannedHasBeenSet = false;
 
   double m_estimatedBytesSkipped{0.0};
-  bool m_estimatedBytesSkippedHasBeenSet = false;
 
   double m_logGroupsScanned{0.0};
+  bool m_recordsMatchedHasBeenSet = false;
+  bool m_recordsScannedHasBeenSet = false;
+  bool m_estimatedRecordsSkippedHasBeenSet = false;
+  bool m_bytesScannedHasBeenSet = false;
+  bool m_estimatedBytesSkippedHasBeenSet = false;
   bool m_logGroupsScannedHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class ListPublicKeys2020_05_31Result {
   ///@}
  private:
   PublicKeyList m_publicKeyList;
-  bool m_publicKeyListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_publicKeyListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

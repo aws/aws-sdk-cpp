@@ -86,12 +86,12 @@ class ConfigurationRevision {
   ///@}
  private:
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_revision{0};
+  bool m_createdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

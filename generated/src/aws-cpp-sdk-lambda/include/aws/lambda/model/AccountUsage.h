@@ -63,9 +63,9 @@ class AccountUsage {
   ///@}
  private:
   long long m_totalCodeSize{0};
-  bool m_totalCodeSizeHasBeenSet = false;
 
   long long m_functionCount{0};
+  bool m_totalCodeSizeHasBeenSet = false;
   bool m_functionCountHasBeenSet = false;
 };
 

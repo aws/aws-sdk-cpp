@@ -420,69 +420,69 @@ class DescribeStatementResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   StatusString m_status{StatusString::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   long long m_redshiftPid{0};
-  bool m_redshiftPidHasBeenSet = false;
 
   bool m_hasResultSet{false};
-  bool m_hasResultSetHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   long long m_resultRows{0};
-  bool m_resultRowsHasBeenSet = false;
 
   long long m_resultSize{0};
-  bool m_resultSizeHasBeenSet = false;
 
   long long m_redshiftQueryId{0};
-  bool m_redshiftQueryIdHasBeenSet = false;
 
   Aws::Vector<SqlParameter> m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   Aws::Vector<SubStatementData> m_subStatements;
-  bool m_subStatementsHasBeenSet = false;
 
   Aws::String m_workgroupName;
-  bool m_workgroupNameHasBeenSet = false;
 
   ResultFormatString m_resultFormat{ResultFormatString::NOT_SET};
-  bool m_resultFormatHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_dbUserHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_redshiftPidHasBeenSet = false;
+  bool m_hasResultSetHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_resultRowsHasBeenSet = false;
+  bool m_resultSizeHasBeenSet = false;
+  bool m_redshiftQueryIdHasBeenSet = false;
+  bool m_queryParametersHasBeenSet = false;
+  bool m_subStatementsHasBeenSet = false;
+  bool m_workgroupNameHasBeenSet = false;
+  bool m_resultFormatHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

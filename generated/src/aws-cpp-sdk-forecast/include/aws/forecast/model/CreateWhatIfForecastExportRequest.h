@@ -142,18 +142,18 @@ class CreateWhatIfForecastExportRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_whatIfForecastExportName;
-  bool m_whatIfForecastExportNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_whatIfForecastArns;
-  bool m_whatIfForecastArnsHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_whatIfForecastExportNameHasBeenSet = false;
+  bool m_whatIfForecastArnsHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

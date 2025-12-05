@@ -164,24 +164,24 @@ class QueryResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Row> m_rows;
-  bool m_rowsHasBeenSet = false;
 
   Aws::Vector<ColumnInfo> m_columnInfo;
-  bool m_columnInfoHasBeenSet = false;
 
   QueryStatus m_queryStatus;
-  bool m_queryStatusHasBeenSet = false;
 
   QueryInsightsResponse m_queryInsightsResponse;
-  bool m_queryInsightsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_rowsHasBeenSet = false;
+  bool m_columnInfoHasBeenSet = false;
+  bool m_queryStatusHasBeenSet = false;
+  bool m_queryInsightsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

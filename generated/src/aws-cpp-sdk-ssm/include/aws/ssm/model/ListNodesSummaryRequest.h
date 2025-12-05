@@ -144,18 +144,18 @@ class ListNodesSummaryRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_syncName;
-  bool m_syncNameHasBeenSet = false;
 
   Aws::Vector<NodeFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<NodeAggregator> m_aggregators;
-  bool m_aggregatorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_syncNameHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_aggregatorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

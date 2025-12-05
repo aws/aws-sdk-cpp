@@ -117,15 +117,15 @@ class TimeSeriesConfig {
   ///@}
  private:
   Aws::String m_targetAttributeName;
-  bool m_targetAttributeNameHasBeenSet = false;
 
   Aws::String m_timestampAttributeName;
-  bool m_timestampAttributeNameHasBeenSet = false;
 
   Aws::String m_itemIdentifierAttributeName;
-  bool m_itemIdentifierAttributeNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupingAttributeNames;
+  bool m_targetAttributeNameHasBeenSet = false;
+  bool m_timestampAttributeNameHasBeenSet = false;
+  bool m_itemIdentifierAttributeNameHasBeenSet = false;
   bool m_groupingAttributeNamesHasBeenSet = false;
 };
 

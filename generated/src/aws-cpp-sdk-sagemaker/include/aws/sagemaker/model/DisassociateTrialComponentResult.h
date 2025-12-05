@@ -76,12 +76,12 @@ class DisassociateTrialComponentResult {
   ///@}
  private:
   Aws::String m_trialComponentArn;
-  bool m_trialComponentArnHasBeenSet = false;
 
   Aws::String m_trialArn;
-  bool m_trialArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trialComponentArnHasBeenSet = false;
+  bool m_trialArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

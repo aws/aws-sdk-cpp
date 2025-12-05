@@ -331,51 +331,51 @@ class RecoveryInstance {
   ///@}
  private:
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   RecoveryInstanceDataReplicationInfo m_dataReplicationInfo;
-  bool m_dataReplicationInfoHasBeenSet = false;
 
   Aws::String m_ec2InstanceID;
-  bool m_ec2InstanceIDHasBeenSet = false;
 
   EC2InstanceState m_ec2InstanceState{EC2InstanceState::NOT_SET};
-  bool m_ec2InstanceStateHasBeenSet = false;
 
   RecoveryInstanceFailback m_failback;
-  bool m_failbackHasBeenSet = false;
 
   bool m_isDrill{false};
-  bool m_isDrillHasBeenSet = false;
 
   Aws::String m_jobID;
-  bool m_jobIDHasBeenSet = false;
 
   Aws::String m_originAvailabilityZone;
-  bool m_originAvailabilityZoneHasBeenSet = false;
 
   OriginEnvironment m_originEnvironment{OriginEnvironment::NOT_SET};
-  bool m_originEnvironmentHasBeenSet = false;
 
   Aws::String m_pointInTimeSnapshotDateTime;
-  bool m_pointInTimeSnapshotDateTimeHasBeenSet = false;
 
   Aws::String m_recoveryInstanceID;
-  bool m_recoveryInstanceIDHasBeenSet = false;
 
   RecoveryInstanceProperties m_recoveryInstanceProperties;
-  bool m_recoveryInstancePropertiesHasBeenSet = false;
 
   Aws::String m_sourceOutpostArn;
-  bool m_sourceOutpostArnHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_dataReplicationInfoHasBeenSet = false;
+  bool m_ec2InstanceIDHasBeenSet = false;
+  bool m_ec2InstanceStateHasBeenSet = false;
+  bool m_failbackHasBeenSet = false;
+  bool m_isDrillHasBeenSet = false;
+  bool m_jobIDHasBeenSet = false;
+  bool m_originAvailabilityZoneHasBeenSet = false;
+  bool m_originEnvironmentHasBeenSet = false;
+  bool m_pointInTimeSnapshotDateTimeHasBeenSet = false;
+  bool m_recoveryInstanceIDHasBeenSet = false;
+  bool m_recoveryInstancePropertiesHasBeenSet = false;
+  bool m_sourceOutpostArnHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

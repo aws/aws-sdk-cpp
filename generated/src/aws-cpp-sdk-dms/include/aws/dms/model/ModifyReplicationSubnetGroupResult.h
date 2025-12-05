@@ -67,9 +67,9 @@ class ModifyReplicationSubnetGroupResult {
   ///@}
  private:
   ReplicationSubnetGroup m_replicationSubnetGroup;
-  bool m_replicationSubnetGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationSubnetGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

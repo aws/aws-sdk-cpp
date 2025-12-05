@@ -298,45 +298,45 @@ class PolicyGrantDetail {
   ///@}
  private:
   AddToProjectMemberPoolPolicyGrantDetail m_addToProjectMemberPool;
-  bool m_addToProjectMemberPoolHasBeenSet = false;
 
   CreateAssetTypePolicyGrantDetail m_createAssetType;
-  bool m_createAssetTypeHasBeenSet = false;
 
   CreateDomainUnitPolicyGrantDetail m_createDomainUnit;
-  bool m_createDomainUnitHasBeenSet = false;
 
   Unit m_createEnvironment;
-  bool m_createEnvironmentHasBeenSet = false;
 
   Unit m_createEnvironmentFromBlueprint;
-  bool m_createEnvironmentFromBlueprintHasBeenSet = false;
 
   CreateEnvironmentProfilePolicyGrantDetail m_createEnvironmentProfile;
-  bool m_createEnvironmentProfileHasBeenSet = false;
 
   CreateFormTypePolicyGrantDetail m_createFormType;
-  bool m_createFormTypeHasBeenSet = false;
 
   CreateGlossaryPolicyGrantDetail m_createGlossary;
-  bool m_createGlossaryHasBeenSet = false;
 
   CreateProjectPolicyGrantDetail m_createProject;
-  bool m_createProjectHasBeenSet = false;
 
   CreateProjectFromProjectProfilePolicyGrantDetail m_createProjectFromProjectProfile;
-  bool m_createProjectFromProjectProfileHasBeenSet = false;
 
   Unit m_delegateCreateEnvironmentProfile;
-  bool m_delegateCreateEnvironmentProfileHasBeenSet = false;
 
   OverrideDomainUnitOwnersPolicyGrantDetail m_overrideDomainUnitOwners;
-  bool m_overrideDomainUnitOwnersHasBeenSet = false;
 
   OverrideProjectOwnersPolicyGrantDetail m_overrideProjectOwners;
-  bool m_overrideProjectOwnersHasBeenSet = false;
 
   UseAssetTypePolicyGrantDetail m_useAssetType;
+  bool m_addToProjectMemberPoolHasBeenSet = false;
+  bool m_createAssetTypeHasBeenSet = false;
+  bool m_createDomainUnitHasBeenSet = false;
+  bool m_createEnvironmentHasBeenSet = false;
+  bool m_createEnvironmentFromBlueprintHasBeenSet = false;
+  bool m_createEnvironmentProfileHasBeenSet = false;
+  bool m_createFormTypeHasBeenSet = false;
+  bool m_createGlossaryHasBeenSet = false;
+  bool m_createProjectHasBeenSet = false;
+  bool m_createProjectFromProjectProfileHasBeenSet = false;
+  bool m_delegateCreateEnvironmentProfileHasBeenSet = false;
+  bool m_overrideDomainUnitOwnersHasBeenSet = false;
+  bool m_overrideProjectOwnersHasBeenSet = false;
   bool m_useAssetTypeHasBeenSet = false;
 };
 

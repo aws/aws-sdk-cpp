@@ -72,9 +72,9 @@ class CustomSMSLambdaVersionConfigType {
   ///@}
  private:
   CustomSMSSenderLambdaVersionType m_lambdaVersion{CustomSMSSenderLambdaVersionType::NOT_SET};
-  bool m_lambdaVersionHasBeenSet = false;
 
   Aws::String m_lambdaArn;
+  bool m_lambdaVersionHasBeenSet = false;
   bool m_lambdaArnHasBeenSet = false;
 };
 

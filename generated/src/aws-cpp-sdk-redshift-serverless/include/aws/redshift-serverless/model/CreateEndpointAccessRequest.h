@@ -140,18 +140,18 @@ class CreateEndpointAccessRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

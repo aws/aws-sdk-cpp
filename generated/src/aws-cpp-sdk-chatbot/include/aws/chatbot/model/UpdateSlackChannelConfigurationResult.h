@@ -60,9 +60,9 @@ class UpdateSlackChannelConfigurationResult {
   ///@}
  private:
   SlackChannelConfiguration m_channelConfiguration;
-  bool m_channelConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

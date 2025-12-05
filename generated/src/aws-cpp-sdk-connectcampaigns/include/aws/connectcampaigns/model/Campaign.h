@@ -153,24 +153,24 @@ class Campaign {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   DialerConfig m_dialerConfig;
-  bool m_dialerConfigHasBeenSet = false;
 
   OutboundCallConfig m_outboundCallConfig;
-  bool m_outboundCallConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_connectInstanceIdHasBeenSet = false;
+  bool m_dialerConfigHasBeenSet = false;
+  bool m_outboundCallConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

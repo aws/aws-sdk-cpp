@@ -78,9 +78,9 @@ class DeleteTagsForDomainRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagsToDelete;
+  bool m_domainNameHasBeenSet = false;
   bool m_tagsToDeleteHasBeenSet = false;
 };
 

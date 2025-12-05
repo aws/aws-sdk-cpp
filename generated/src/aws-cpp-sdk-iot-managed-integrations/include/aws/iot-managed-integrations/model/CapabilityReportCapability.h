@@ -159,21 +159,21 @@ class CapabilityReportCapability {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_events;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

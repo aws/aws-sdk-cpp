@@ -60,9 +60,9 @@ class GetCompositionResult {
   ///@}
  private:
   Composition m_composition;
-  bool m_compositionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compositionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

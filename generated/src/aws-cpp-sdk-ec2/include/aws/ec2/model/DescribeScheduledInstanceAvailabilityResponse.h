@@ -95,12 +95,12 @@ class DescribeScheduledInstanceAvailabilityResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ScheduledInstanceAvailability> m_scheduledInstanceAvailabilitySet;
-  bool m_scheduledInstanceAvailabilitySetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_scheduledInstanceAvailabilitySetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

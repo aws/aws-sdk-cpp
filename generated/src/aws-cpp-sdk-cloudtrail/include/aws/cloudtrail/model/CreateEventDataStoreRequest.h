@@ -279,33 +279,33 @@ class CreateEventDataStoreRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
-  bool m_advancedEventSelectorsHasBeenSet = false;
 
   bool m_multiRegionEnabled{false};
-  bool m_multiRegionEnabledHasBeenSet = false;
 
   bool m_organizationEnabled{false};
-  bool m_organizationEnabledHasBeenSet = false;
 
   int m_retentionPeriod{0};
-  bool m_retentionPeriodHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
-  bool m_terminationProtectionEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagsList;
-  bool m_tagsListHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_startIngestion{false};
-  bool m_startIngestionHasBeenSet = false;
 
   BillingMode m_billingMode{BillingMode::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_advancedEventSelectorsHasBeenSet = false;
+  bool m_multiRegionEnabledHasBeenSet = false;
+  bool m_organizationEnabledHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_terminationProtectionEnabledHasBeenSet = false;
+  bool m_tagsListHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_startIngestionHasBeenSet = false;
   bool m_billingModeHasBeenSet = false;
 };
 

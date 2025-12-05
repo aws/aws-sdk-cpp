@@ -82,9 +82,9 @@ class UpdateUserAttributesResult {
   ///@}
  private:
   Aws::Vector<CodeDeliveryDetailsType> m_codeDeliveryDetailsList;
-  bool m_codeDeliveryDetailsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeDeliveryDetailsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

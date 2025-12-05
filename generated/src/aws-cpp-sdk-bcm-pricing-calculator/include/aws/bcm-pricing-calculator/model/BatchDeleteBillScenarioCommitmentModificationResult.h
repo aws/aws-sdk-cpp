@@ -70,9 +70,9 @@ class BatchDeleteBillScenarioCommitmentModificationResult {
   ///@}
  private:
   Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

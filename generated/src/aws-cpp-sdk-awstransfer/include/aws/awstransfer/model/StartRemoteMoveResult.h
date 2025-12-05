@@ -59,9 +59,9 @@ class StartRemoteMoveResult {
   ///@}
  private:
   Aws::String m_moveId;
-  bool m_moveIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_moveIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

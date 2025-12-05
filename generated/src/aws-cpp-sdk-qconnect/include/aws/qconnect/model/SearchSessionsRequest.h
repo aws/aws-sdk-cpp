@@ -107,15 +107,15 @@ class SearchSessionsRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   SearchExpression m_searchExpression;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_assistantIdHasBeenSet = false;
   bool m_searchExpressionHasBeenSet = false;
 };
 

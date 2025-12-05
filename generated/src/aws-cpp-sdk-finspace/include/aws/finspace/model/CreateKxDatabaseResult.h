@@ -149,24 +149,24 @@ class CreateKxDatabaseResult {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_databaseArn;
-  bool m_databaseArnHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_databaseArnHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

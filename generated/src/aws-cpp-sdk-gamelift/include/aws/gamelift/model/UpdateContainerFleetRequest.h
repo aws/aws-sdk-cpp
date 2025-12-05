@@ -351,45 +351,45 @@ class UpdateContainerFleetRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_gameServerContainerGroupDefinitionName;
-  bool m_gameServerContainerGroupDefinitionNameHasBeenSet = false;
 
   Aws::String m_perInstanceContainerGroupDefinitionName;
-  bool m_perInstanceContainerGroupDefinitionNameHasBeenSet = false;
 
   int m_gameServerContainerGroupsPerInstance{0};
-  bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
 
   ConnectionPortRange m_instanceConnectionPortRange;
-  bool m_instanceConnectionPortRangeHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_instanceInboundPermissionAuthorizations;
-  bool m_instanceInboundPermissionAuthorizationsHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_instanceInboundPermissionRevocations;
-  bool m_instanceInboundPermissionRevocationsHasBeenSet = false;
 
   DeploymentConfiguration m_deploymentConfiguration;
-  bool m_deploymentConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricGroups;
-  bool m_metricGroupsHasBeenSet = false;
 
   ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
-  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
   GameSessionCreationLimitPolicy m_gameSessionCreationLimitPolicy;
-  bool m_gameSessionCreationLimitPolicyHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::Vector<ContainerFleetRemoveAttribute> m_removeAttributes;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_gameServerContainerGroupDefinitionNameHasBeenSet = false;
+  bool m_perInstanceContainerGroupDefinitionNameHasBeenSet = false;
+  bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
+  bool m_instanceConnectionPortRangeHasBeenSet = false;
+  bool m_instanceInboundPermissionAuthorizationsHasBeenSet = false;
+  bool m_instanceInboundPermissionRevocationsHasBeenSet = false;
+  bool m_deploymentConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
+  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
+  bool m_gameSessionCreationLimitPolicyHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
   bool m_removeAttributesHasBeenSet = false;
 };
 

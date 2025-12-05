@@ -88,12 +88,12 @@ class ListDistributionTenantsByCustomization2020_05_31Result {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<DistributionTenantSummary> m_distributionTenantList;
-  bool m_distributionTenantListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_distributionTenantListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

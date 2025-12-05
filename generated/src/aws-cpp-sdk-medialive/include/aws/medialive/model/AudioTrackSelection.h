@@ -77,9 +77,9 @@ class AudioTrackSelection {
   ///@}
  private:
   Aws::Vector<AudioTrack> m_tracks;
-  bool m_tracksHasBeenSet = false;
 
   AudioDolbyEDecode m_dolbyEDecode;
+  bool m_tracksHasBeenSet = false;
   bool m_dolbyEDecodeHasBeenSet = false;
 };
 

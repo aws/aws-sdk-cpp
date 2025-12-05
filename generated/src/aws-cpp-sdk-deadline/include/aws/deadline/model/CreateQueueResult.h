@@ -59,9 +59,9 @@ class CreateQueueResult {
   ///@}
  private:
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queueIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

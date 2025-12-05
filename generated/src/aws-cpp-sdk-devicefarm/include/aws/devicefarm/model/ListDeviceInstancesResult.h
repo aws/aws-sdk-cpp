@@ -85,12 +85,12 @@ class ListDeviceInstancesResult {
   ///@}
  private:
   Aws::Vector<DeviceInstance> m_deviceInstances;
-  bool m_deviceInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

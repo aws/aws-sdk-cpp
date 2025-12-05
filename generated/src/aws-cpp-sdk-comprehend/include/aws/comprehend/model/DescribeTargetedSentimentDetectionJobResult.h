@@ -65,9 +65,9 @@ class DescribeTargetedSentimentDetectionJobResult {
   ///@}
  private:
   TargetedSentimentDetectionJobProperties m_targetedSentimentDetectionJobProperties;
-  bool m_targetedSentimentDetectionJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetedSentimentDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

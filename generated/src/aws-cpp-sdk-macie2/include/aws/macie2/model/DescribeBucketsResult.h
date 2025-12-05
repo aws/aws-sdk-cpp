@@ -86,12 +86,12 @@ class DescribeBucketsResult {
   ///@}
  private:
   Aws::Vector<BucketMetadata> m_buckets;
-  bool m_bucketsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

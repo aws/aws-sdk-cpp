@@ -87,12 +87,12 @@ class DescribeProtectConfigurationsResult {
   ///@}
  private:
   Aws::Vector<ProtectConfigurationInformation> m_protectConfigurations;
-  bool m_protectConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

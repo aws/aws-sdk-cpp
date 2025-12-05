@@ -130,18 +130,18 @@ class StartAsyncInvokeRequest : public BedrockRuntimeRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::Utils::Document m_modelInput;
-  bool m_modelInputHasBeenSet = false;
 
   AsyncInvokeOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelInputHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

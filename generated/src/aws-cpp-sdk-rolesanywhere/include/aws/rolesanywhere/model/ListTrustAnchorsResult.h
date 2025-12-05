@@ -86,12 +86,12 @@ class ListTrustAnchorsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TrustAnchorDetail> m_trustAnchors;
-  bool m_trustAnchorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_trustAnchorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DescribeSubnetGroupsRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class AcceptInvitationRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_administratorAccountId;
-  bool m_administratorAccountIdHasBeenSet = false;
 
   Aws::String m_invitationId;
-  bool m_invitationIdHasBeenSet = false;
 
   Aws::String m_masterAccount;
+  bool m_administratorAccountIdHasBeenSet = false;
+  bool m_invitationIdHasBeenSet = false;
   bool m_masterAccountHasBeenSet = false;
 };
 

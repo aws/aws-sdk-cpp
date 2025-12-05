@@ -86,12 +86,12 @@ class ListProfileHistoryRecordsResult {
   ///@}
  private:
   Aws::Vector<ProfileHistoryRecord> m_profileHistoryRecords;
-  bool m_profileHistoryRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileHistoryRecordsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

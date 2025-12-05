@@ -178,30 +178,30 @@ class StartMigrationResult {
   ///@}
  private:
   Aws::String m_v1BotName;
-  bool m_v1BotNameHasBeenSet = false;
 
   Aws::String m_v1BotVersion;
-  bool m_v1BotVersionHasBeenSet = false;
 
   Locale m_v1BotLocale{Locale::NOT_SET};
-  bool m_v1BotLocaleHasBeenSet = false;
 
   Aws::String m_v2BotId;
-  bool m_v2BotIdHasBeenSet = false;
 
   Aws::String m_v2BotRole;
-  bool m_v2BotRoleHasBeenSet = false;
 
   Aws::String m_migrationId;
-  bool m_migrationIdHasBeenSet = false;
 
   MigrationStrategy m_migrationStrategy{MigrationStrategy::NOT_SET};
-  bool m_migrationStrategyHasBeenSet = false;
 
   Aws::Utils::DateTime m_migrationTimestamp{};
-  bool m_migrationTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_v1BotNameHasBeenSet = false;
+  bool m_v1BotVersionHasBeenSet = false;
+  bool m_v1BotLocaleHasBeenSet = false;
+  bool m_v2BotIdHasBeenSet = false;
+  bool m_v2BotRoleHasBeenSet = false;
+  bool m_migrationIdHasBeenSet = false;
+  bool m_migrationStrategyHasBeenSet = false;
+  bool m_migrationTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

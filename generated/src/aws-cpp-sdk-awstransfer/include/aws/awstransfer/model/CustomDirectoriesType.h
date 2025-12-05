@@ -123,18 +123,18 @@ class CustomDirectoriesType {
   ///@}
  private:
   Aws::String m_failedFilesDirectory;
-  bool m_failedFilesDirectoryHasBeenSet = false;
 
   Aws::String m_mdnFilesDirectory;
-  bool m_mdnFilesDirectoryHasBeenSet = false;
 
   Aws::String m_payloadFilesDirectory;
-  bool m_payloadFilesDirectoryHasBeenSet = false;
 
   Aws::String m_statusFilesDirectory;
-  bool m_statusFilesDirectoryHasBeenSet = false;
 
   Aws::String m_temporaryFilesDirectory;
+  bool m_failedFilesDirectoryHasBeenSet = false;
+  bool m_mdnFilesDirectoryHasBeenSet = false;
+  bool m_payloadFilesDirectoryHasBeenSet = false;
+  bool m_statusFilesDirectoryHasBeenSet = false;
   bool m_temporaryFilesDirectoryHasBeenSet = false;
 };
 

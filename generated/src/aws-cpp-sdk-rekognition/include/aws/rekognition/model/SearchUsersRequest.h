@@ -120,18 +120,18 @@ class SearchUsersRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_faceId;
-  bool m_faceIdHasBeenSet = false;
 
   double m_userMatchThreshold{0.0};
-  bool m_userMatchThresholdHasBeenSet = false;
 
   int m_maxUsers{0};
+  bool m_collectionIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_faceIdHasBeenSet = false;
+  bool m_userMatchThresholdHasBeenSet = false;
   bool m_maxUsersHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class DocumentMetadata {
   ///@}
  private:
   int m_pages{0};
-  bool m_pagesHasBeenSet = false;
 
   Aws::Vector<ExtractedCharactersListItem> m_extractedCharacters;
+  bool m_pagesHasBeenSet = false;
   bool m_extractedCharactersHasBeenSet = false;
 };
 

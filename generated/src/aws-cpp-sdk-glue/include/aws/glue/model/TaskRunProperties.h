@@ -126,18 +126,18 @@ class TaskRunProperties {
   ///@}
  private:
   TaskType m_taskType{TaskType::NOT_SET};
-  bool m_taskTypeHasBeenSet = false;
 
   ImportLabelsTaskRunProperties m_importLabelsTaskRunProperties;
-  bool m_importLabelsTaskRunPropertiesHasBeenSet = false;
 
   ExportLabelsTaskRunProperties m_exportLabelsTaskRunProperties;
-  bool m_exportLabelsTaskRunPropertiesHasBeenSet = false;
 
   LabelingSetGenerationTaskRunProperties m_labelingSetGenerationTaskRunProperties;
-  bool m_labelingSetGenerationTaskRunPropertiesHasBeenSet = false;
 
   FindMatchesTaskRunProperties m_findMatchesTaskRunProperties;
+  bool m_taskTypeHasBeenSet = false;
+  bool m_importLabelsTaskRunPropertiesHasBeenSet = false;
+  bool m_exportLabelsTaskRunPropertiesHasBeenSet = false;
+  bool m_labelingSetGenerationTaskRunPropertiesHasBeenSet = false;
   bool m_findMatchesTaskRunPropertiesHasBeenSet = false;
 };
 

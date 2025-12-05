@@ -189,30 +189,30 @@ class GetSearchResultExportJobResult {
   ///@}
  private:
   Aws::String m_exportJobIdentifier;
-  bool m_exportJobIdentifierHasBeenSet = false;
 
   Aws::String m_exportJobArn;
-  bool m_exportJobArnHasBeenSet = false;
 
   ExportJobStatus m_status{ExportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   ExportSpecification m_exportSpecification;
-  bool m_exportSpecificationHasBeenSet = false;
 
   Aws::String m_searchJobArn;
-  bool m_searchJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportJobIdentifierHasBeenSet = false;
+  bool m_exportJobArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_exportSpecificationHasBeenSet = false;
+  bool m_searchJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

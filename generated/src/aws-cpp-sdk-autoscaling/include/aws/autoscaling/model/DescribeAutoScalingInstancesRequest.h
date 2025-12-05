@@ -96,12 +96,12 @@ class DescribeAutoScalingInstancesRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

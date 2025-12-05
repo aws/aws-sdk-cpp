@@ -84,12 +84,12 @@ class GetLinkAssociationsResult {
   ///@}
  private:
   Aws::Vector<LinkAssociation> m_linkAssociations;
-  bool m_linkAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_linkAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

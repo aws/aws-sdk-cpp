@@ -59,9 +59,9 @@ class ReverseReplicationResult {
   ///@}
  private:
   Aws::String m_reversedDirectionSourceServerArn;
-  bool m_reversedDirectionSourceServerArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reversedDirectionSourceServerArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

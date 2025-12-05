@@ -127,21 +127,21 @@ class GetExecutionPreviewResult {
   ///@}
  private:
   Aws::String m_executionPreviewId;
-  bool m_executionPreviewIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   ExecutionPreviewStatus m_status{ExecutionPreviewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   ExecutionPreview m_executionPreview;
-  bool m_executionPreviewHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionPreviewIdHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_executionPreviewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

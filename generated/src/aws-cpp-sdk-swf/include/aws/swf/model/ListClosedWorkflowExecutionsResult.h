@@ -94,12 +94,12 @@ class ListClosedWorkflowExecutionsResult {
   ///@}
  private:
   Aws::Vector<WorkflowExecutionInfo> m_executionInfos;
-  bool m_executionInfosHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionInfosHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

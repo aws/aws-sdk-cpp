@@ -69,9 +69,9 @@ class UpdateCatalogRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   CatalogInput m_catalogInput;
+  bool m_catalogIdHasBeenSet = false;
   bool m_catalogInputHasBeenSet = false;
 };
 

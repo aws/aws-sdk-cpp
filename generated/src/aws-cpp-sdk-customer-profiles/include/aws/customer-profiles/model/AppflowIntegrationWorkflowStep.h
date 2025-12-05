@@ -183,27 +183,27 @@ class AppflowIntegrationWorkflowStep {
   ///@}
  private:
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_executionMessage;
-  bool m_executionMessageHasBeenSet = false;
 
   long long m_recordsProcessed{0};
-  bool m_recordsProcessedHasBeenSet = false;
 
   Aws::String m_batchRecordsStartTime;
-  bool m_batchRecordsStartTimeHasBeenSet = false;
 
   Aws::String m_batchRecordsEndTime;
-  bool m_batchRecordsEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_flowNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_executionMessageHasBeenSet = false;
+  bool m_recordsProcessedHasBeenSet = false;
+  bool m_batchRecordsStartTimeHasBeenSet = false;
+  bool m_batchRecordsEndTimeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

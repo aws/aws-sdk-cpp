@@ -65,9 +65,9 @@ class DeleteApiKeyRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_apiIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class InferenceAcceleratorInfo {
   ///@}
  private:
   Aws::Vector<InferenceDeviceInfo> m_accelerators;
-  bool m_acceleratorsHasBeenSet = false;
 
   int m_totalInferenceMemoryInMiB{0};
+  bool m_acceleratorsHasBeenSet = false;
   bool m_totalInferenceMemoryInMiBHasBeenSet = false;
 };
 

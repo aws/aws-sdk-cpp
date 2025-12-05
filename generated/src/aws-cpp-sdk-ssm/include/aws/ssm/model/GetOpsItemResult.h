@@ -60,9 +60,9 @@ class GetOpsItemResult {
   ///@}
  private:
   OpsItem m_opsItem;
-  bool m_opsItemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_opsItemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

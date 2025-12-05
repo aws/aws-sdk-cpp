@@ -107,15 +107,15 @@ class ListAttachedPoliciesRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   bool m_recursive{false};
-  bool m_recursiveHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_targetHasBeenSet = false;
+  bool m_recursiveHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

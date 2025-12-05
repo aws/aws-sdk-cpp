@@ -112,15 +112,15 @@ class UpdatePhoneNumberRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

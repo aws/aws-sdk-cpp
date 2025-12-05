@@ -92,12 +92,12 @@ class PrimaryAttributeValue {
   ///@}
  private:
   AccessType m_accessType{AccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_accessTypeHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

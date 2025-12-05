@@ -115,15 +115,15 @@ class PutPipelineDefinitionResult {
   ///@}
  private:
   Aws::Vector<ValidationError> m_validationErrors;
-  bool m_validationErrorsHasBeenSet = false;
 
   Aws::Vector<ValidationWarning> m_validationWarnings;
-  bool m_validationWarningsHasBeenSet = false;
 
   bool m_errored{false};
-  bool m_erroredHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_validationErrorsHasBeenSet = false;
+  bool m_validationWarningsHasBeenSet = false;
+  bool m_erroredHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

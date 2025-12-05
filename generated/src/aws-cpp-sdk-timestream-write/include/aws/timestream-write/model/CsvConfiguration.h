@@ -122,18 +122,18 @@ class CsvConfiguration {
   ///@}
  private:
   Aws::String m_columnSeparator;
-  bool m_columnSeparatorHasBeenSet = false;
 
   Aws::String m_escapeChar;
-  bool m_escapeCharHasBeenSet = false;
 
   Aws::String m_quoteChar;
-  bool m_quoteCharHasBeenSet = false;
 
   Aws::String m_nullValue;
-  bool m_nullValueHasBeenSet = false;
 
   bool m_trimWhiteSpace{false};
+  bool m_columnSeparatorHasBeenSet = false;
+  bool m_escapeCharHasBeenSet = false;
+  bool m_quoteCharHasBeenSet = false;
+  bool m_nullValueHasBeenSet = false;
   bool m_trimWhiteSpaceHasBeenSet = false;
 };
 

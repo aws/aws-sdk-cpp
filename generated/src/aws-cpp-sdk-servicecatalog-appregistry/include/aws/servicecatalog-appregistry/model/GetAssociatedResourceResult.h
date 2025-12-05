@@ -102,15 +102,15 @@ class GetAssociatedResourceResult {
   ///@}
  private:
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<AssociationOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   ApplicationTagResult m_applicationTagResult;
-  bool m_applicationTagResultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_applicationTagResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

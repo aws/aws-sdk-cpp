@@ -119,18 +119,18 @@ class ListProblemsResult {
   ///@}
  private:
   Aws::Vector<Problem> m_problemList;
-  bool m_problemListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_problemListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

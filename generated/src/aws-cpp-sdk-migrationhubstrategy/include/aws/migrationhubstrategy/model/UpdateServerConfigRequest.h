@@ -67,9 +67,9 @@ class UpdateServerConfigRequest : public MigrationHubStrategyRecommendationsRequ
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   StrategyOption m_strategyOption;
+  bool m_serverIdHasBeenSet = false;
   bool m_strategyOptionHasBeenSet = false;
 };
 

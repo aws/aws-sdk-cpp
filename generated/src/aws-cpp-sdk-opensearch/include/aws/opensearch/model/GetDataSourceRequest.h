@@ -69,9 +69,9 @@ class GetDataSourceRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_domainNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

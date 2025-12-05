@@ -113,18 +113,18 @@ class CommunicationTimeConfig {
   ///@}
  private:
   LocalTimeZoneConfig m_localTimeZoneConfig;
-  bool m_localTimeZoneConfigHasBeenSet = false;
 
   TimeWindow m_telephony;
-  bool m_telephonyHasBeenSet = false;
 
   TimeWindow m_sms;
-  bool m_smsHasBeenSet = false;
 
   TimeWindow m_email;
-  bool m_emailHasBeenSet = false;
 
   TimeWindow m_whatsApp;
+  bool m_localTimeZoneConfigHasBeenSet = false;
+  bool m_telephonyHasBeenSet = false;
+  bool m_smsHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
   bool m_whatsAppHasBeenSet = false;
 };
 

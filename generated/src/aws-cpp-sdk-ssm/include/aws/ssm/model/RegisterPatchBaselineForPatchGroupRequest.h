@@ -67,9 +67,9 @@ class RegisterPatchBaselineForPatchGroupRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_baselineId;
-  bool m_baselineIdHasBeenSet = false;
 
   Aws::String m_patchGroup;
+  bool m_baselineIdHasBeenSet = false;
   bool m_patchGroupHasBeenSet = false;
 };
 

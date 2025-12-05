@@ -67,9 +67,9 @@ class DeletePersonalAccessTokenRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_personalAccessTokenId;
+  bool m_organizationIdHasBeenSet = false;
   bool m_personalAccessTokenIdHasBeenSet = false;
 };
 

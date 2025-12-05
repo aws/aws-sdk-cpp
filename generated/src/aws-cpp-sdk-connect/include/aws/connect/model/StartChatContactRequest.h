@@ -335,42 +335,42 @@ class StartChatContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ParticipantDetails m_participantDetails;
-  bool m_participantDetailsHasBeenSet = false;
 
   ParticipantConfiguration m_participantConfiguration;
-  bool m_participantConfigurationHasBeenSet = false;
 
   ChatMessage m_initialMessage;
-  bool m_initialMessageHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   int m_chatDurationInMinutes{0};
-  bool m_chatDurationInMinutesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
-  bool m_supportedMessagingContentTypesHasBeenSet = false;
 
   PersistentChat m_persistentChat;
-  bool m_persistentChatHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   Aws::String m_customerId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_participantDetailsHasBeenSet = false;
+  bool m_participantConfigurationHasBeenSet = false;
+  bool m_initialMessageHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_chatDurationInMinutesHasBeenSet = false;
+  bool m_supportedMessagingContentTypesHasBeenSet = false;
+  bool m_persistentChatHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
   bool m_customerIdHasBeenSet = false;
 };
 

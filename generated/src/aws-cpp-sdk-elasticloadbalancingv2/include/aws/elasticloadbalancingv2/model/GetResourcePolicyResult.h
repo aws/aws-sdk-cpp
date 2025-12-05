@@ -61,9 +61,9 @@ class GetResourcePolicyResult {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

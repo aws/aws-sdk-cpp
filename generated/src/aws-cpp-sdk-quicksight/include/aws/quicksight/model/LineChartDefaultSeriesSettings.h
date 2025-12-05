@@ -87,12 +87,12 @@ class LineChartDefaultSeriesSettings {
   ///@}
  private:
   AxisBinding m_axisBinding{AxisBinding::NOT_SET};
-  bool m_axisBindingHasBeenSet = false;
 
   LineChartLineStyleSettings m_lineStyleSettings;
-  bool m_lineStyleSettingsHasBeenSet = false;
 
   LineChartMarkerStyleSettings m_markerStyleSettings;
+  bool m_axisBindingHasBeenSet = false;
+  bool m_lineStyleSettingsHasBeenSet = false;
   bool m_markerStyleSettingsHasBeenSet = false;
 };
 

@@ -160,21 +160,21 @@ class DescribeProductAsAdminResult {
   ///@}
  private:
   ProductViewDetail m_productViewDetail;
-  bool m_productViewDetailHasBeenSet = false;
 
   Aws::Vector<ProvisioningArtifactSummary> m_provisioningArtifactSummaries;
-  bool m_provisioningArtifactSummariesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<TagOptionDetail> m_tagOptions;
-  bool m_tagOptionsHasBeenSet = false;
 
   Aws::Vector<BudgetDetail> m_budgets;
-  bool m_budgetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productViewDetailHasBeenSet = false;
+  bool m_provisioningArtifactSummariesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tagOptionsHasBeenSet = false;
+  bool m_budgetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

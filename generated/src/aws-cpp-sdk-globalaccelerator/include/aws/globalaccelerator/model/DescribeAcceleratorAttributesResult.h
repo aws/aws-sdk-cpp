@@ -61,9 +61,9 @@ class DescribeAcceleratorAttributesResult {
   ///@}
  private:
   AcceleratorAttributes m_acceleratorAttributes;
-  bool m_acceleratorAttributesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_acceleratorAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

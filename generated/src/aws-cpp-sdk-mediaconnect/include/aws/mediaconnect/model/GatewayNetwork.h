@@ -71,9 +71,9 @@ class GatewayNetwork {
   ///@}
  private:
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_cidrBlockHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

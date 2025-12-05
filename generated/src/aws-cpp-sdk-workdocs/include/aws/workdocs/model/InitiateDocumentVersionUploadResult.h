@@ -78,12 +78,12 @@ class InitiateDocumentVersionUploadResult {
   ///@}
  private:
   DocumentMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   UploadMetadata m_uploadMetadata;
-  bool m_uploadMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataHasBeenSet = false;
+  bool m_uploadMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

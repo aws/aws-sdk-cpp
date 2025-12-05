@@ -69,9 +69,9 @@ class AgentNetworkInfo {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_macAddress;
+  bool m_ipAddressHasBeenSet = false;
   bool m_macAddressHasBeenSet = false;
 };
 

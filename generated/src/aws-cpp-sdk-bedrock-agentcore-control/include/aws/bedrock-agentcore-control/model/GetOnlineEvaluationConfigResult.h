@@ -298,48 +298,48 @@ class GetOnlineEvaluationConfigResult {
   ///@}
  private:
   Aws::String m_onlineEvaluationConfigArn;
-  bool m_onlineEvaluationConfigArnHasBeenSet = false;
 
   Aws::String m_onlineEvaluationConfigId;
-  bool m_onlineEvaluationConfigIdHasBeenSet = false;
 
   Aws::String m_onlineEvaluationConfigName;
-  bool m_onlineEvaluationConfigNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Rule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   DataSourceConfig m_dataSourceConfig;
-  bool m_dataSourceConfigHasBeenSet = false;
 
   Aws::Vector<EvaluatorReference> m_evaluators;
-  bool m_evaluatorsHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_evaluationExecutionRoleArn;
-  bool m_evaluationExecutionRoleArnHasBeenSet = false;
 
   OnlineEvaluationConfigStatus m_status{OnlineEvaluationConfigStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   OnlineEvaluationExecutionStatus m_executionStatus{OnlineEvaluationExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_onlineEvaluationConfigArnHasBeenSet = false;
+  bool m_onlineEvaluationConfigIdHasBeenSet = false;
+  bool m_onlineEvaluationConfigNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
+  bool m_dataSourceConfigHasBeenSet = false;
+  bool m_evaluatorsHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_evaluationExecutionRoleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

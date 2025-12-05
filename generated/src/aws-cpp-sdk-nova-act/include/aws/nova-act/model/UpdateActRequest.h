@@ -137,21 +137,21 @@ class UpdateActRequest : public NovaActRequest {
   ///@}
  private:
   Aws::String m_workflowDefinitionName;
-  bool m_workflowDefinitionNameHasBeenSet = false;
 
   Aws::String m_workflowRunId;
-  bool m_workflowRunIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actId;
-  bool m_actIdHasBeenSet = false;
 
   ActStatus m_status{ActStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ActError m_error;
+  bool m_workflowDefinitionNameHasBeenSet = false;
+  bool m_workflowRunIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_actIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

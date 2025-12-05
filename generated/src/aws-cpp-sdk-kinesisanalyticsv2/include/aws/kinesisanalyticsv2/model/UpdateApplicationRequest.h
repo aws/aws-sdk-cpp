@@ -200,27 +200,27 @@ class UpdateApplicationRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   long long m_currentApplicationVersionId{0};
-  bool m_currentApplicationVersionIdHasBeenSet = false;
 
   ApplicationConfigurationUpdate m_applicationConfigurationUpdate;
-  bool m_applicationConfigurationUpdateHasBeenSet = false;
 
   Aws::String m_serviceExecutionRoleUpdate;
-  bool m_serviceExecutionRoleUpdateHasBeenSet = false;
 
   RunConfigurationUpdate m_runConfigurationUpdate;
-  bool m_runConfigurationUpdateHasBeenSet = false;
 
   Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
-  bool m_cloudWatchLoggingOptionUpdatesHasBeenSet = false;
 
   Aws::String m_conditionalToken;
-  bool m_conditionalTokenHasBeenSet = false;
 
   RuntimeEnvironment m_runtimeEnvironmentUpdate{RuntimeEnvironment::NOT_SET};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_currentApplicationVersionIdHasBeenSet = false;
+  bool m_applicationConfigurationUpdateHasBeenSet = false;
+  bool m_serviceExecutionRoleUpdateHasBeenSet = false;
+  bool m_runConfigurationUpdateHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionUpdatesHasBeenSet = false;
+  bool m_conditionalTokenHasBeenSet = false;
   bool m_runtimeEnvironmentUpdateHasBeenSet = false;
 };
 

@@ -554,78 +554,78 @@ class Job {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   TargetSelection m_targetSelection{TargetSelection::NOT_SET};
-  bool m_targetSelectionHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_forceCanceled{false};
-  bool m_forceCanceledHasBeenSet = false;
 
   Aws::String m_reasonCode;
-  bool m_reasonCodeHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PresignedUrlConfig m_presignedUrlConfig;
-  bool m_presignedUrlConfigHasBeenSet = false;
 
   JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
   AbortConfig m_abortConfig;
-  bool m_abortConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   JobProcessDetails m_jobProcessDetails;
-  bool m_jobProcessDetailsHasBeenSet = false;
 
   TimeoutConfig m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   Aws::String m_jobTemplateArn;
-  bool m_jobTemplateArnHasBeenSet = false;
 
   JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-  bool m_jobExecutionsRetryConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_documentParameters;
-  bool m_documentParametersHasBeenSet = false;
 
   bool m_isConcurrent{false};
-  bool m_isConcurrentHasBeenSet = false;
 
   SchedulingConfig m_schedulingConfig;
-  bool m_schedulingConfigHasBeenSet = false;
 
   Aws::Vector<ScheduledJobRollout> m_scheduledJobRollouts;
-  bool m_scheduledJobRolloutsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationPackageVersions;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_targetSelectionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_forceCanceledHasBeenSet = false;
+  bool m_reasonCodeHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_presignedUrlConfigHasBeenSet = false;
+  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_abortConfigHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_jobProcessDetailsHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
+  bool m_jobTemplateArnHasBeenSet = false;
+  bool m_jobExecutionsRetryConfigHasBeenSet = false;
+  bool m_documentParametersHasBeenSet = false;
+  bool m_isConcurrentHasBeenSet = false;
+  bool m_schedulingConfigHasBeenSet = false;
+  bool m_scheduledJobRolloutsHasBeenSet = false;
   bool m_destinationPackageVersionsHasBeenSet = false;
 };
 

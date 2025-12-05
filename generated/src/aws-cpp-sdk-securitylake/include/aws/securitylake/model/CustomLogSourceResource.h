@@ -109,15 +109,15 @@ class CustomLogSourceResource {
   ///@}
  private:
   CustomLogSourceAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   CustomLogSourceProvider m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_sourceVersion;
+  bool m_attributesHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
 };
 

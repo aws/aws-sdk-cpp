@@ -65,9 +65,9 @@ class GetModelRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_modelId;
+  bool m_apiIdHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
 };
 

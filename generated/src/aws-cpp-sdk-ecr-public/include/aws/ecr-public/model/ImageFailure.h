@@ -87,12 +87,12 @@ class ImageFailure {
   ///@}
  private:
   ImageIdentifier m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   ImageFailureCode m_failureCode{ImageFailureCode::NOT_SET};
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_imageIdHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

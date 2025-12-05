@@ -155,24 +155,24 @@ class ListActiveViolationsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   BehaviorCriteriaType m_behaviorCriteriaType{BehaviorCriteriaType::NOT_SET};
-  bool m_behaviorCriteriaTypeHasBeenSet = false;
 
   bool m_listSuppressedAlerts{false};
-  bool m_listSuppressedAlertsHasBeenSet = false;
 
   VerificationState m_verificationState{VerificationState::NOT_SET};
-  bool m_verificationStateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_thingNameHasBeenSet = false;
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_behaviorCriteriaTypeHasBeenSet = false;
+  bool m_listSuppressedAlertsHasBeenSet = false;
+  bool m_verificationStateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

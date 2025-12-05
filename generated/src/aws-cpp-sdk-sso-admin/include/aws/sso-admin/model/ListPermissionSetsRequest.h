@@ -88,12 +88,12 @@ class ListPermissionSetsRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_instanceArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

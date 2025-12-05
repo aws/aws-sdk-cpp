@@ -70,9 +70,9 @@ class DeleteManagedThingRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   bool m_force{false};
+  bool m_identifierHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

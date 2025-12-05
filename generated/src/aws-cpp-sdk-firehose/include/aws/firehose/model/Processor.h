@@ -78,9 +78,9 @@ class Processor {
   ///@}
  private:
   ProcessorType m_type{ProcessorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<ProcessorParameter> m_parameters;
+  bool m_typeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

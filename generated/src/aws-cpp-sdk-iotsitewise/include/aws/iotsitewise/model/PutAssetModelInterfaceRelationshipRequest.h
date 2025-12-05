@@ -109,15 +109,15 @@ class PutAssetModelInterfaceRelationshipRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_interfaceAssetModelId;
-  bool m_interfaceAssetModelIdHasBeenSet = false;
 
   PropertyMappingConfiguration m_propertyMappingConfiguration;
-  bool m_propertyMappingConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_interfaceAssetModelIdHasBeenSet = false;
+  bool m_propertyMappingConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

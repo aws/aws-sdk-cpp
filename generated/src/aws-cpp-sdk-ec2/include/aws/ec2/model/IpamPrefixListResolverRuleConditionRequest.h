@@ -196,24 +196,24 @@ class IpamPrefixListResolverRuleConditionRequest {
   ///@}
  private:
   IpamPrefixListResolverRuleConditionOperation m_operation{IpamPrefixListResolverRuleConditionOperation::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   RequestIpamResourceTag m_resourceTag;
-  bool m_resourceTagHasBeenSet = false;
 
   Aws::String m_cidr;
+  bool m_operationHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
+  bool m_resourceTagHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
 };
 

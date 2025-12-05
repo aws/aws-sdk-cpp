@@ -201,30 +201,30 @@ class PackageGroupDescription {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_contactInfo;
-  bool m_contactInfoHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PackageGroupOriginConfiguration m_originConfiguration;
-  bool m_originConfigurationHasBeenSet = false;
 
   PackageGroupReference m_parent;
+  bool m_arnHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_contactInfoHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_originConfigurationHasBeenSet = false;
   bool m_parentHasBeenSet = false;
 };
 

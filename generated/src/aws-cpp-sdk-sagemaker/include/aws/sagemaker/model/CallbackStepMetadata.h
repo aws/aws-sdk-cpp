@@ -95,12 +95,12 @@ class CallbackStepMetadata {
   ///@}
  private:
   Aws::String m_callbackToken;
-  bool m_callbackTokenHasBeenSet = false;
 
   Aws::String m_sqsQueueUrl;
-  bool m_sqsQueueUrlHasBeenSet = false;
 
   Aws::Vector<OutputParameter> m_outputParameters;
+  bool m_callbackTokenHasBeenSet = false;
+  bool m_sqsQueueUrlHasBeenSet = false;
   bool m_outputParametersHasBeenSet = false;
 };
 

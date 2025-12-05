@@ -286,39 +286,39 @@ class OrganizationEvent {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_eventTypeCode;
-  bool m_eventTypeCodeHasBeenSet = false;
 
   EventTypeCategory m_eventTypeCategory{EventTypeCategory::NOT_SET};
-  bool m_eventTypeCategoryHasBeenSet = false;
 
   EventScopeCode m_eventScopeCode{EventScopeCode::NOT_SET};
-  bool m_eventScopeCodeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   EventStatusCode m_statusCode{EventStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   EventActionability m_actionability{EventActionability::NOT_SET};
-  bool m_actionabilityHasBeenSet = false;
 
   Aws::Vector<EventPersona> m_personas;
+  bool m_arnHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_eventTypeCodeHasBeenSet = false;
+  bool m_eventTypeCategoryHasBeenSet = false;
+  bool m_eventScopeCodeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_actionabilityHasBeenSet = false;
   bool m_personasHasBeenSet = false;
 };
 

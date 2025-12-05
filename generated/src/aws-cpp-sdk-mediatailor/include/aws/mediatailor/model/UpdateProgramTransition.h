@@ -62,9 +62,9 @@ class UpdateProgramTransition {
   ///@}
  private:
   long long m_scheduledStartTimeMillis{0};
-  bool m_scheduledStartTimeMillisHasBeenSet = false;
 
   long long m_durationMillis{0};
+  bool m_scheduledStartTimeMillisHasBeenSet = false;
   bool m_durationMillisHasBeenSet = false;
 };
 

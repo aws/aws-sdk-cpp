@@ -65,9 +65,9 @@ class TrainedModelInferenceMaxOutputSize {
   ///@}
  private:
   TrainedModelInferenceMaxOutputSizeUnitType m_unit{TrainedModelInferenceMaxOutputSizeUnitType::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_unitHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

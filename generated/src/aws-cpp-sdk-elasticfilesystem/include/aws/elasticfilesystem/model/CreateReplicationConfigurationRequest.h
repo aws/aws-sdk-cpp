@@ -76,9 +76,9 @@ class CreateReplicationConfigurationRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_sourceFileSystemId;
-  bool m_sourceFileSystemIdHasBeenSet = false;
 
   Aws::Vector<DestinationToCreate> m_destinations;
+  bool m_sourceFileSystemIdHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
 };
 

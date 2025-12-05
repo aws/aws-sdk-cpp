@@ -71,9 +71,9 @@ class GetRecordsRequest : public KeyspacesStreamsRequest {
   ///@}
  private:
   Aws::String m_shardIterator;
-  bool m_shardIteratorHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_shardIteratorHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

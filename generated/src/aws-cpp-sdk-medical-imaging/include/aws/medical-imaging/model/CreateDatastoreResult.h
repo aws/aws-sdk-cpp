@@ -75,12 +75,12 @@ class CreateDatastoreResult {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
-  bool m_datastoreStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_datastoreStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

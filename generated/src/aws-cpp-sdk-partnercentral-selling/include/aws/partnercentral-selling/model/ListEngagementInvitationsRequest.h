@@ -231,30 +231,30 @@ class ListEngagementInvitationsRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   OpportunityEngagementInvitationSort m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::Vector<EngagementInvitationPayloadType> m_payloadType;
-  bool m_payloadTypeHasBeenSet = false;
 
   ParticipantType m_participantType{ParticipantType::NOT_SET};
-  bool m_participantTypeHasBeenSet = false;
 
   Aws::Vector<InvitationStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_engagementIdentifier;
-  bool m_engagementIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_senderAwsAccountId;
+  bool m_catalogHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_payloadTypeHasBeenSet = false;
+  bool m_participantTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_engagementIdentifierHasBeenSet = false;
   bool m_senderAwsAccountIdHasBeenSet = false;
 };
 

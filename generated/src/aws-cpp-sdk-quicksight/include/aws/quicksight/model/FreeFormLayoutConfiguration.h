@@ -74,9 +74,9 @@ class FreeFormLayoutConfiguration {
   ///@}
  private:
   Aws::Vector<FreeFormLayoutElement> m_elements;
-  bool m_elementsHasBeenSet = false;
 
   FreeFormLayoutCanvasSizeOptions m_canvasSizeOptions;
+  bool m_elementsHasBeenSet = false;
   bool m_canvasSizeOptionsHasBeenSet = false;
 };
 

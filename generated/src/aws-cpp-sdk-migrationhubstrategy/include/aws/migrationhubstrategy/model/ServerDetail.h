@@ -307,45 +307,45 @@ class ServerDetail {
   ///@}
  private:
   S3Object m_antipatternReportS3Object;
-  bool m_antipatternReportS3ObjectHasBeenSet = false;
 
   AntipatternReportStatus m_antipatternReportStatus{AntipatternReportStatus::NOT_SET};
-  bool m_antipatternReportStatusHasBeenSet = false;
 
   Aws::String m_antipatternReportStatusMessage;
-  bool m_antipatternReportStatusMessageHasBeenSet = false;
 
   Aws::Vector<StrategySummary> m_applicationComponentStrategySummary;
-  bool m_applicationComponentStrategySummaryHasBeenSet = false;
 
   RunTimeAssessmentStatus m_dataCollectionStatus{RunTimeAssessmentStatus::NOT_SET};
-  bool m_dataCollectionStatusHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAnalyzedTimestamp{};
-  bool m_lastAnalyzedTimestampHasBeenSet = false;
 
   Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
-  bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RecommendationSet m_recommendationSet;
-  bool m_recommendationSetHasBeenSet = false;
 
   ServerError m_serverError;
-  bool m_serverErrorHasBeenSet = false;
 
   Aws::String m_serverType;
-  bool m_serverTypeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   SystemInfo m_systemInfo;
+  bool m_antipatternReportS3ObjectHasBeenSet = false;
+  bool m_antipatternReportStatusHasBeenSet = false;
+  bool m_antipatternReportStatusMessageHasBeenSet = false;
+  bool m_applicationComponentStrategySummaryHasBeenSet = false;
+  bool m_dataCollectionStatusHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastAnalyzedTimestampHasBeenSet = false;
+  bool m_listAntipatternSeveritySummaryHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recommendationSetHasBeenSet = false;
+  bool m_serverErrorHasBeenSet = false;
+  bool m_serverTypeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_systemInfoHasBeenSet = false;
 };
 

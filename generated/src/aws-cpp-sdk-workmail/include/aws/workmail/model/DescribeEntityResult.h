@@ -92,15 +92,15 @@ class DescribeEntityResult {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EntityType m_type{EntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

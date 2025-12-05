@@ -100,15 +100,15 @@ class ListTestGridSessionArtifactsRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   TestGridSessionArtifactCategory m_type{TestGridSessionArtifactCategory::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_maxResult{0};
-  bool m_maxResultHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_maxResultHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

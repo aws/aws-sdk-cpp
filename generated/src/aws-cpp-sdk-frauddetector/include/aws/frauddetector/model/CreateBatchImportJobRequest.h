@@ -153,21 +153,21 @@ class CreateBatchImportJobRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_inputPath;
-  bool m_inputPathHasBeenSet = false;
 
   Aws::String m_outputPath;
-  bool m_outputPathHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_jobIdHasBeenSet = false;
+  bool m_inputPathHasBeenSet = false;
+  bool m_outputPathHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

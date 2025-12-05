@@ -85,12 +85,12 @@ class ListConfigurationsResult {
   ///@}
  private:
   Aws::Vector<ConfigurationSummary> m_configurationsList;
-  bool m_configurationsListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationsListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

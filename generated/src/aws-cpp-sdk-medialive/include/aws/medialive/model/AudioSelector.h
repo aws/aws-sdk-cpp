@@ -70,9 +70,9 @@ class AudioSelector {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AudioSelectorSettings m_selectorSettings;
+  bool m_nameHasBeenSet = false;
   bool m_selectorSettingsHasBeenSet = false;
 };
 

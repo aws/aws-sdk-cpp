@@ -87,12 +87,12 @@ class DomainUnitPolicyGrantPrincipal {
   ///@}
  private:
   DomainUnitDesignation m_domainUnitDesignation{DomainUnitDesignation::NOT_SET};
-  bool m_domainUnitDesignationHasBeenSet = false;
 
   DomainUnitGrantFilter m_domainUnitGrantFilter;
-  bool m_domainUnitGrantFilterHasBeenSet = false;
 
   Aws::String m_domainUnitIdentifier;
+  bool m_domainUnitDesignationHasBeenSet = false;
+  bool m_domainUnitGrantFilterHasBeenSet = false;
   bool m_domainUnitIdentifierHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class LinuxSubscriptionsDiscoverySettings {
   ///@}
  private:
   OrganizationIntegration m_organizationIntegration{OrganizationIntegration::NOT_SET};
-  bool m_organizationIntegrationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceRegions;
+  bool m_organizationIntegrationHasBeenSet = false;
   bool m_sourceRegionsHasBeenSet = false;
 };
 

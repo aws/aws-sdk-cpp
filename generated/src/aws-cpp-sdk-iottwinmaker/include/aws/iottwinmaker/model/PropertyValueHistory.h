@@ -78,9 +78,9 @@ class PropertyValueHistory {
   ///@}
  private:
   EntityPropertyReference m_entityPropertyReference;
-  bool m_entityPropertyReferenceHasBeenSet = false;
 
   Aws::Vector<PropertyValue> m_values;
+  bool m_entityPropertyReferenceHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

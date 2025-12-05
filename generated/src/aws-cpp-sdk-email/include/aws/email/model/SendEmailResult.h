@@ -66,9 +66,9 @@ class SendEmailResult {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_messageIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

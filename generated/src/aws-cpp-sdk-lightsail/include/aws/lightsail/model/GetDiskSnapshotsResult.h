@@ -89,12 +89,12 @@ class GetDiskSnapshotsResult {
   ///@}
  private:
   Aws::Vector<DiskSnapshot> m_diskSnapshots;
-  bool m_diskSnapshotsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_diskSnapshotsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

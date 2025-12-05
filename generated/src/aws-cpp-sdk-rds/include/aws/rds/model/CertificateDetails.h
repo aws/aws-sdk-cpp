@@ -79,9 +79,9 @@ class CertificateDetails {
   ///@}
  private:
   Aws::String m_cAIdentifier;
-  bool m_cAIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_validTill{};
+  bool m_cAIdentifierHasBeenSet = false;
   bool m_validTillHasBeenSet = false;
 };
 

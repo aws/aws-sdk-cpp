@@ -70,9 +70,9 @@ class LabelingJobOutput {
   ///@}
  private:
   Aws::String m_outputDatasetS3Uri;
-  bool m_outputDatasetS3UriHasBeenSet = false;
 
   Aws::String m_finalActiveLearningModelArn;
+  bool m_outputDatasetS3UriHasBeenSet = false;
   bool m_finalActiveLearningModelArnHasBeenSet = false;
 };
 

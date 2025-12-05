@@ -78,9 +78,9 @@ class ValidationEnum {
   ///@}
  private:
   bool m_strict{false};
-  bool m_strictHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_strictHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

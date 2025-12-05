@@ -74,12 +74,12 @@ class CancelMessageMoveTaskResult {
   ///@}
  private:
   long long m_approximateNumberOfMessagesMoved{0};
-  bool m_approximateNumberOfMessagesMovedHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_approximateNumberOfMessagesMovedHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

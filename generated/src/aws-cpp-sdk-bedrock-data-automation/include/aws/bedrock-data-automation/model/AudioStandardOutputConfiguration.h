@@ -65,9 +65,9 @@ class AudioStandardOutputConfiguration {
   ///@}
  private:
   AudioStandardExtraction m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   AudioStandardGenerativeField m_generativeField;
+  bool m_extractionHasBeenSet = false;
   bool m_generativeFieldHasBeenSet = false;
 };
 

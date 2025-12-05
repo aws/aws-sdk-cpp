@@ -210,30 +210,30 @@ class ServerlessCacheSnapshot {
   ///@}
  private:
   Aws::String m_serverlessCacheSnapshotName;
-  bool m_serverlessCacheSnapshotNameHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTime{};
-  bool m_expiryTimeHasBeenSet = false;
 
   Aws::String m_bytesUsedForCache;
-  bool m_bytesUsedForCacheHasBeenSet = false;
 
   ServerlessCacheConfiguration m_serverlessCacheConfiguration;
+  bool m_serverlessCacheSnapshotNameHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_expiryTimeHasBeenSet = false;
+  bool m_bytesUsedForCacheHasBeenSet = false;
   bool m_serverlessCacheConfigurationHasBeenSet = false;
 };
 

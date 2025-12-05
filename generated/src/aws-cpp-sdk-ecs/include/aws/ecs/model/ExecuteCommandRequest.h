@@ -122,18 +122,18 @@ class ExecuteCommandRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_container;
-  bool m_containerHasBeenSet = false;
 
   Aws::String m_command;
-  bool m_commandHasBeenSet = false;
 
   bool m_interactive{false};
-  bool m_interactiveHasBeenSet = false;
 
   Aws::String m_task;
+  bool m_clusterHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_interactiveHasBeenSet = false;
   bool m_taskHasBeenSet = false;
 };
 

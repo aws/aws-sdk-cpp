@@ -88,12 +88,12 @@ class ListMediaInsightsPipelineConfigurationsResult {
   ///@}
  private:
   Aws::Vector<MediaInsightsPipelineConfigurationSummary> m_mediaInsightsPipelineConfigurations;
-  bool m_mediaInsightsPipelineConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaInsightsPipelineConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

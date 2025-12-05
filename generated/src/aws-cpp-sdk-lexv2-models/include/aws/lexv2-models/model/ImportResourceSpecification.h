@@ -112,15 +112,15 @@ class ImportResourceSpecification {
   ///@}
  private:
   BotImportSpecification m_botImportSpecification;
-  bool m_botImportSpecificationHasBeenSet = false;
 
   BotLocaleImportSpecification m_botLocaleImportSpecification;
-  bool m_botLocaleImportSpecificationHasBeenSet = false;
 
   CustomVocabularyImportSpecification m_customVocabularyImportSpecification;
-  bool m_customVocabularyImportSpecificationHasBeenSet = false;
 
   TestSetImportResourceSpecification m_testSetImportResourceSpecification;
+  bool m_botImportSpecificationHasBeenSet = false;
+  bool m_botLocaleImportSpecificationHasBeenSet = false;
+  bool m_customVocabularyImportSpecificationHasBeenSet = false;
   bool m_testSetImportResourceSpecificationHasBeenSet = false;
 };
 

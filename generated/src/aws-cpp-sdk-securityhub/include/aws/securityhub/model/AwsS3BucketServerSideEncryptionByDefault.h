@@ -70,9 +70,9 @@ class AwsS3BucketServerSideEncryptionByDefault {
   ///@}
  private:
   Aws::String m_sSEAlgorithm;
-  bool m_sSEAlgorithmHasBeenSet = false;
 
   Aws::String m_kMSMasterKeyID;
+  bool m_sSEAlgorithmHasBeenSet = false;
   bool m_kMSMasterKeyIDHasBeenSet = false;
 };
 

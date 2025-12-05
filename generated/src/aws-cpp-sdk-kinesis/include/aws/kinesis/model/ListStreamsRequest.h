@@ -88,12 +88,12 @@ class ListStreamsRequest : public KinesisRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_exclusiveStartStreamName;
-  bool m_exclusiveStartStreamNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_limitHasBeenSet = false;
+  bool m_exclusiveStartStreamNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

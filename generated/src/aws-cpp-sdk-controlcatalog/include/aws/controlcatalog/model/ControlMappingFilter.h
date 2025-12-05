@@ -111,12 +111,12 @@ class ControlMappingFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_controlArns;
-  bool m_controlArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_commonControlArns;
-  bool m_commonControlArnsHasBeenSet = false;
 
   Aws::Vector<MappingType> m_mappingTypes;
+  bool m_controlArnsHasBeenSet = false;
+  bool m_commonControlArnsHasBeenSet = false;
   bool m_mappingTypesHasBeenSet = false;
 };
 

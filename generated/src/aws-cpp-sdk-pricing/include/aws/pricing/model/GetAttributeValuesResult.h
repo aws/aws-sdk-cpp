@@ -86,12 +86,12 @@ class GetAttributeValuesResult {
   ///@}
  private:
   Aws::Vector<AttributeValue> m_attributeValues;
-  bool m_attributeValuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributeValuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

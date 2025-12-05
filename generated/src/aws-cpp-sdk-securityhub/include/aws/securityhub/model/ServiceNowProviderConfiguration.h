@@ -70,9 +70,9 @@ class ServiceNowProviderConfiguration {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_instanceNameHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

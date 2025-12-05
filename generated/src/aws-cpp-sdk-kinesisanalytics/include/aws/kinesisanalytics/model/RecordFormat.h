@@ -71,9 +71,9 @@ class RecordFormat {
   ///@}
  private:
   RecordFormatType m_recordFormatType{RecordFormatType::NOT_SET};
-  bool m_recordFormatTypeHasBeenSet = false;
 
   MappingParameters m_mappingParameters;
+  bool m_recordFormatTypeHasBeenSet = false;
   bool m_mappingParametersHasBeenSet = false;
 };
 

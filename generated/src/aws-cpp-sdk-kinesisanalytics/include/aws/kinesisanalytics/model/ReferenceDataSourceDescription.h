@@ -115,15 +115,15 @@ class ReferenceDataSourceDescription {
   ///@}
  private:
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   S3ReferenceDataSourceDescription m_s3ReferenceDataSourceDescription;
-  bool m_s3ReferenceDataSourceDescriptionHasBeenSet = false;
 
   SourceSchema m_referenceSchema;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_s3ReferenceDataSourceDescriptionHasBeenSet = false;
   bool m_referenceSchemaHasBeenSet = false;
 };
 

@@ -111,18 +111,18 @@ class DeleteLifecyclePolicyResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_lifecyclePolicyText;
-  bool m_lifecyclePolicyTextHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastEvaluatedAt{};
-  bool m_lastEvaluatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_lifecyclePolicyTextHasBeenSet = false;
+  bool m_lastEvaluatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

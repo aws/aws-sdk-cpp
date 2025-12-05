@@ -106,15 +106,15 @@ class SampleChannelDataRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   int m_maxMessages{0};
-  bool m_maxMessagesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_channelNameHasBeenSet = false;
+  bool m_maxMessagesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

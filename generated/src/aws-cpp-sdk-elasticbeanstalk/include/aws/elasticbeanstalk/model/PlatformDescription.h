@@ -453,66 +453,66 @@ class PlatformDescription {
   ///@}
  private:
   Aws::String m_platformArn;
-  bool m_platformArnHasBeenSet = false;
 
   Aws::String m_platformOwner;
-  bool m_platformOwnerHasBeenSet = false;
 
   Aws::String m_platformName;
-  bool m_platformNameHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_solutionStackName;
-  bool m_solutionStackNameHasBeenSet = false;
 
   PlatformStatus m_platformStatus{PlatformStatus::NOT_SET};
-  bool m_platformStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateUpdated{};
-  bool m_dateUpdatedHasBeenSet = false;
 
   Aws::String m_platformCategory;
-  bool m_platformCategoryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_maintainer;
-  bool m_maintainerHasBeenSet = false;
 
   Aws::String m_operatingSystemName;
-  bool m_operatingSystemNameHasBeenSet = false;
 
   Aws::String m_operatingSystemVersion;
-  bool m_operatingSystemVersionHasBeenSet = false;
 
   Aws::Vector<PlatformProgrammingLanguage> m_programmingLanguages;
-  bool m_programmingLanguagesHasBeenSet = false;
 
   Aws::Vector<PlatformFramework> m_frameworks;
-  bool m_frameworksHasBeenSet = false;
 
   Aws::Vector<CustomAmi> m_customAmiList;
-  bool m_customAmiListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedTierList;
-  bool m_supportedTierListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedAddonList;
-  bool m_supportedAddonListHasBeenSet = false;
 
   Aws::String m_platformLifecycleState;
-  bool m_platformLifecycleStateHasBeenSet = false;
 
   Aws::String m_platformBranchName;
-  bool m_platformBranchNameHasBeenSet = false;
 
   Aws::String m_platformBranchLifecycleState;
+  bool m_platformArnHasBeenSet = false;
+  bool m_platformOwnerHasBeenSet = false;
+  bool m_platformNameHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_solutionStackNameHasBeenSet = false;
+  bool m_platformStatusHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateUpdatedHasBeenSet = false;
+  bool m_platformCategoryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_maintainerHasBeenSet = false;
+  bool m_operatingSystemNameHasBeenSet = false;
+  bool m_operatingSystemVersionHasBeenSet = false;
+  bool m_programmingLanguagesHasBeenSet = false;
+  bool m_frameworksHasBeenSet = false;
+  bool m_customAmiListHasBeenSet = false;
+  bool m_supportedTierListHasBeenSet = false;
+  bool m_supportedAddonListHasBeenSet = false;
+  bool m_platformLifecycleStateHasBeenSet = false;
+  bool m_platformBranchNameHasBeenSet = false;
   bool m_platformBranchLifecycleStateHasBeenSet = false;
 };
 

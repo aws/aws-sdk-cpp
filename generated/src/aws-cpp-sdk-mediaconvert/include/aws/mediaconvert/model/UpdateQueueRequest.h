@@ -127,18 +127,18 @@ class UpdateQueueRequest : public MediaConvertRequest {
   ///@}
  private:
   int m_concurrentJobs{0};
-  bool m_concurrentJobsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ReservationPlanSettings m_reservationPlanSettings;
-  bool m_reservationPlanSettingsHasBeenSet = false;
 
   QueueStatus m_status{QueueStatus::NOT_SET};
+  bool m_concurrentJobsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_reservationPlanSettingsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

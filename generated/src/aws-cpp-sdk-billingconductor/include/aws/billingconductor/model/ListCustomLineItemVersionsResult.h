@@ -87,12 +87,12 @@ class ListCustomLineItemVersionsResult {
   ///@}
  private:
   Aws::Vector<CustomLineItemVersionListElement> m_customLineItemVersions;
-  bool m_customLineItemVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customLineItemVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

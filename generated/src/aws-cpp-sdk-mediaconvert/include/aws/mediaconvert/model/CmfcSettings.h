@@ -432,54 +432,54 @@ When you specify Version
   ///@}
  private:
   CmfcAudioDuration m_audioDuration{CmfcAudioDuration::NOT_SET};
-  bool m_audioDurationHasBeenSet = false;
 
   Aws::String m_audioGroupId;
-  bool m_audioGroupIdHasBeenSet = false;
 
   Aws::String m_audioRenditionSets;
-  bool m_audioRenditionSetsHasBeenSet = false;
 
   CmfcAudioTrackType m_audioTrackType{CmfcAudioTrackType::NOT_SET};
-  bool m_audioTrackTypeHasBeenSet = false;
 
   CmfcC2paManifest m_c2paManifest{CmfcC2paManifest::NOT_SET};
-  bool m_c2paManifestHasBeenSet = false;
 
   Aws::String m_certificateSecret;
-  bool m_certificateSecretHasBeenSet = false;
 
   CmfcDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag{CmfcDescriptiveVideoServiceFlag::NOT_SET};
-  bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
   CmfcIFrameOnlyManifest m_iFrameOnlyManifest{CmfcIFrameOnlyManifest::NOT_SET};
-  bool m_iFrameOnlyManifestHasBeenSet = false;
 
   CmfcKlvMetadata m_klvMetadata{CmfcKlvMetadata::NOT_SET};
-  bool m_klvMetadataHasBeenSet = false;
 
   CmfcManifestMetadataSignaling m_manifestMetadataSignaling{CmfcManifestMetadataSignaling::NOT_SET};
-  bool m_manifestMetadataSignalingHasBeenSet = false;
 
   CmfcScte35Esam m_scte35Esam{CmfcScte35Esam::NOT_SET};
-  bool m_scte35EsamHasBeenSet = false;
 
   CmfcScte35Source m_scte35Source{CmfcScte35Source::NOT_SET};
-  bool m_scte35SourceHasBeenSet = false;
 
   Aws::String m_signingKmsKey;
-  bool m_signingKmsKeyHasBeenSet = false;
 
   CmfcTimedMetadata m_timedMetadata{CmfcTimedMetadata::NOT_SET};
-  bool m_timedMetadataHasBeenSet = false;
 
   CmfcTimedMetadataBoxVersion m_timedMetadataBoxVersion{CmfcTimedMetadataBoxVersion::NOT_SET};
-  bool m_timedMetadataBoxVersionHasBeenSet = false;
 
   Aws::String m_timedMetadataSchemeIdUri;
-  bool m_timedMetadataSchemeIdUriHasBeenSet = false;
 
   Aws::String m_timedMetadataValue;
+  bool m_audioDurationHasBeenSet = false;
+  bool m_audioGroupIdHasBeenSet = false;
+  bool m_audioRenditionSetsHasBeenSet = false;
+  bool m_audioTrackTypeHasBeenSet = false;
+  bool m_c2paManifestHasBeenSet = false;
+  bool m_certificateSecretHasBeenSet = false;
+  bool m_descriptiveVideoServiceFlagHasBeenSet = false;
+  bool m_iFrameOnlyManifestHasBeenSet = false;
+  bool m_klvMetadataHasBeenSet = false;
+  bool m_manifestMetadataSignalingHasBeenSet = false;
+  bool m_scte35EsamHasBeenSet = false;
+  bool m_scte35SourceHasBeenSet = false;
+  bool m_signingKmsKeyHasBeenSet = false;
+  bool m_timedMetadataHasBeenSet = false;
+  bool m_timedMetadataBoxVersionHasBeenSet = false;
+  bool m_timedMetadataSchemeIdUriHasBeenSet = false;
   bool m_timedMetadataValueHasBeenSet = false;
 };
 

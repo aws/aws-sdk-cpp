@@ -86,12 +86,12 @@ class Extraction {
   ///@}
  private:
   LendingDocument m_lendingDocument;
-  bool m_lendingDocumentHasBeenSet = false;
 
   ExpenseDocument m_expenseDocument;
-  bool m_expenseDocumentHasBeenSet = false;
 
   IdentityDocument m_identityDocument;
+  bool m_lendingDocumentHasBeenSet = false;
+  bool m_expenseDocumentHasBeenSet = false;
   bool m_identityDocumentHasBeenSet = false;
 };
 

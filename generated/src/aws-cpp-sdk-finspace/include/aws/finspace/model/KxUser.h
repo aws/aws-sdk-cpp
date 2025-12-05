@@ -126,18 +126,18 @@ class KxUser {
   ///@}
  private:
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_iamRole;
-  bool m_iamRoleHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTimestamp{};
+  bool m_userArnHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_iamRoleHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
   bool m_updateTimestampHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListConfiguredModelAlgorithmsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ConfiguredModelAlgorithmSummary> m_configuredModelAlgorithms;
-  bool m_configuredModelAlgorithmsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_configuredModelAlgorithmsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

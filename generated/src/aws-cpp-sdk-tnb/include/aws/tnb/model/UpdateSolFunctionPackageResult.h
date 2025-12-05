@@ -58,9 +58,9 @@ class UpdateSolFunctionPackageResult {
   ///@}
  private:
   OperationalState m_operationalState{OperationalState::NOT_SET};
-  bool m_operationalStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationalStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class DeleteResourcePolicyStatementRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   Aws::String m_expectedRevisionId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_statementIdHasBeenSet = false;
   bool m_expectedRevisionIdHasBeenSet = false;
 };
 

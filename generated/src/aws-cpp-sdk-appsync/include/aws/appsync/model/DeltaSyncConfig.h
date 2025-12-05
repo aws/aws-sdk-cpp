@@ -83,12 +83,12 @@ class DeltaSyncConfig {
   ///@}
  private:
   long long m_baseTableTTL{0};
-  bool m_baseTableTTLHasBeenSet = false;
 
   Aws::String m_deltaSyncTableName;
-  bool m_deltaSyncTableNameHasBeenSet = false;
 
   long long m_deltaSyncTableTTL{0};
+  bool m_baseTableTTLHasBeenSet = false;
+  bool m_deltaSyncTableNameHasBeenSet = false;
   bool m_deltaSyncTableTTLHasBeenSet = false;
 };
 

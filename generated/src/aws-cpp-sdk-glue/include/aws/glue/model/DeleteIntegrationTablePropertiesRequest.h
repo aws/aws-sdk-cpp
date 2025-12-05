@@ -67,9 +67,9 @@ class DeleteIntegrationTablePropertiesRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_tableName;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
 };
 

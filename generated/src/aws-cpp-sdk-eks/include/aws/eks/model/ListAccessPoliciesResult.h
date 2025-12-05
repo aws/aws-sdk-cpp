@@ -93,12 +93,12 @@ class ListAccessPoliciesResult {
   ///@}
  private:
   Aws::Vector<AccessPolicy> m_accessPolicies;
-  bool m_accessPoliciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessPoliciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

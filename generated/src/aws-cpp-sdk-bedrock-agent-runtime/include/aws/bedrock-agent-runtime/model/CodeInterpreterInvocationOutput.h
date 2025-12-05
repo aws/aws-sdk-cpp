@@ -129,18 +129,18 @@ class CodeInterpreterInvocationOutput {
   ///@}
  private:
   Aws::String m_executionError;
-  bool m_executionErrorHasBeenSet = false;
 
   Aws::String m_executionOutput;
-  bool m_executionOutputHasBeenSet = false;
 
   bool m_executionTimeout{false};
-  bool m_executionTimeoutHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_files;
-  bool m_filesHasBeenSet = false;
 
   Metadata m_metadata;
+  bool m_executionErrorHasBeenSet = false;
+  bool m_executionOutputHasBeenSet = false;
+  bool m_executionTimeoutHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

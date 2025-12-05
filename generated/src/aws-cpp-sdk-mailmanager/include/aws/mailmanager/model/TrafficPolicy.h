@@ -88,12 +88,12 @@ class TrafficPolicy {
   ///@}
  private:
   Aws::String m_trafficPolicyName;
-  bool m_trafficPolicyNameHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   AcceptAction m_defaultAction{AcceptAction::NOT_SET};
+  bool m_trafficPolicyNameHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
   bool m_defaultActionHasBeenSet = false;
 };
 

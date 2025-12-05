@@ -90,12 +90,12 @@ class SidewalkStartImportInfo {
   ///@}
  private:
   Aws::String m_deviceCreationFile;
-  bool m_deviceCreationFileHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   SidewalkPositioning m_positioning;
+  bool m_deviceCreationFileHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_positioningHasBeenSet = false;
 };
 

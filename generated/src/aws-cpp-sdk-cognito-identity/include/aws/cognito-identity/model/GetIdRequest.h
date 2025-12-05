@@ -105,12 +105,12 @@ class GetIdRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_logins;
+  bool m_accountIdHasBeenSet = false;
+  bool m_identityPoolIdHasBeenSet = false;
   bool m_loginsHasBeenSet = false;
 };
 

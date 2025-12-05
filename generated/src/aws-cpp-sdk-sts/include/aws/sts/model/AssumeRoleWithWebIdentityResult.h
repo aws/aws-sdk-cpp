@@ -212,27 +212,27 @@ class AssumeRoleWithWebIdentityResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_subjectFromWebIdentityToken;
-  bool m_subjectFromWebIdentityTokenHasBeenSet = false;
 
   AssumedRoleUser m_assumedRoleUser;
-  bool m_assumedRoleUserHasBeenSet = false;
 
   int m_packedPolicySize{0};
-  bool m_packedPolicySizeHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_audience;
-  bool m_audienceHasBeenSet = false;
 
   Aws::String m_sourceIdentity;
-  bool m_sourceIdentityHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_credentialsHasBeenSet = false;
+  bool m_subjectFromWebIdentityTokenHasBeenSet = false;
+  bool m_assumedRoleUserHasBeenSet = false;
+  bool m_packedPolicySizeHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_audienceHasBeenSet = false;
+  bool m_sourceIdentityHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

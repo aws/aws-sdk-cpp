@@ -133,15 +133,15 @@ class ModifyDBClusterSnapshotAttributeRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBClusterSnapshotIdentifier;
-  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valuesToAdd;
-  bool m_valuesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valuesToRemove;
+  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_valuesToAddHasBeenSet = false;
   bool m_valuesToRemoveHasBeenSet = false;
 };
 

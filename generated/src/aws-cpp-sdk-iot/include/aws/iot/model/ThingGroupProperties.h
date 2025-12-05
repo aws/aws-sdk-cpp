@@ -69,9 +69,9 @@ class ThingGroupProperties {
   ///@}
  private:
   Aws::String m_thingGroupDescription;
-  bool m_thingGroupDescriptionHasBeenSet = false;
 
   AttributePayload m_attributePayload;
+  bool m_thingGroupDescriptionHasBeenSet = false;
   bool m_attributePayloadHasBeenSet = false;
 };
 

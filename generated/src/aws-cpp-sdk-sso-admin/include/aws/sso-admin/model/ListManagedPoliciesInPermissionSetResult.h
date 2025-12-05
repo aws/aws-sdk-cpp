@@ -86,12 +86,12 @@ class ListManagedPoliciesInPermissionSetResult {
   ///@}
  private:
   Aws::Vector<AttachedManagedPolicy> m_attachedManagedPolicies;
-  bool m_attachedManagedPoliciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachedManagedPoliciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

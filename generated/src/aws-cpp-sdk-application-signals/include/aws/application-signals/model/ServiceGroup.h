@@ -110,15 +110,15 @@ class ServiceGroup {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupValue;
-  bool m_groupValueHasBeenSet = false;
 
   Aws::String m_groupSource;
-  bool m_groupSourceHasBeenSet = false;
 
   Aws::String m_groupIdentifier;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupValueHasBeenSet = false;
+  bool m_groupSourceHasBeenSet = false;
   bool m_groupIdentifierHasBeenSet = false;
 };
 

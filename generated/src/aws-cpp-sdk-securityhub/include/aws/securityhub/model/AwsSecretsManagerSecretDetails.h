@@ -173,27 +173,27 @@ class AwsSecretsManagerSecretDetails {
   ///@}
  private:
   AwsSecretsManagerSecretRotationRules m_rotationRules;
-  bool m_rotationRulesHasBeenSet = false;
 
   bool m_rotationOccurredWithinFrequency{false};
-  bool m_rotationOccurredWithinFrequencyHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_rotationEnabled{false};
-  bool m_rotationEnabledHasBeenSet = false;
 
   Aws::String m_rotationLambdaArn;
-  bool m_rotationLambdaArnHasBeenSet = false;
 
   bool m_deleted{false};
-  bool m_deletedHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_rotationRulesHasBeenSet = false;
+  bool m_rotationOccurredWithinFrequencyHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_rotationEnabledHasBeenSet = false;
+  bool m_rotationLambdaArnHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

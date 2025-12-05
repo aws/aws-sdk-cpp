@@ -202,30 +202,30 @@ class TreatmentResource {
   ///@}
  private:
   CustomDeliveryConfiguration m_customDeliveryConfiguration;
-  bool m_customDeliveryConfigurationHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MessageConfiguration m_messageConfiguration;
-  bool m_messageConfigurationHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   int m_sizePercent{0};
-  bool m_sizePercentHasBeenSet = false;
 
   CampaignState m_state;
-  bool m_stateHasBeenSet = false;
 
   TemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   Aws::String m_treatmentDescription;
-  bool m_treatmentDescriptionHasBeenSet = false;
 
   Aws::String m_treatmentName;
+  bool m_customDeliveryConfigurationHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_messageConfigurationHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_sizePercentHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_treatmentDescriptionHasBeenSet = false;
   bool m_treatmentNameHasBeenSet = false;
 };
 

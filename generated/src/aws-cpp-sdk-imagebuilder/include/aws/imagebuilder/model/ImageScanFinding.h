@@ -292,45 +292,45 @@ class ImageScanFinding {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   Aws::String m_imagePipelineArn;
-  bool m_imagePipelineArnHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Remediation m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstObservedAt{};
-  bool m_firstObservedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   double m_inspectorScore{0.0};
-  bool m_inspectorScoreHasBeenSet = false;
 
   InspectorScoreDetails m_inspectorScoreDetails;
-  bool m_inspectorScoreDetailsHasBeenSet = false;
 
   PackageVulnerabilityDetails m_packageVulnerabilityDetails;
-  bool m_packageVulnerabilityDetailsHasBeenSet = false;
 
   Aws::String m_fixAvailable;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_imageBuildVersionArnHasBeenSet = false;
+  bool m_imagePipelineArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_firstObservedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_inspectorScoreHasBeenSet = false;
+  bool m_inspectorScoreDetailsHasBeenSet = false;
+  bool m_packageVulnerabilityDetailsHasBeenSet = false;
   bool m_fixAvailableHasBeenSet = false;
 };
 

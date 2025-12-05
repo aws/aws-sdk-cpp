@@ -76,9 +76,9 @@ class ResponseSpecification {
   ///@}
  private:
   Aws::Vector<MessageGroup> m_messageGroups;
-  bool m_messageGroupsHasBeenSet = false;
 
   bool m_allowInterrupt{false};
+  bool m_messageGroupsHasBeenSet = false;
   bool m_allowInterruptHasBeenSet = false;
 };
 

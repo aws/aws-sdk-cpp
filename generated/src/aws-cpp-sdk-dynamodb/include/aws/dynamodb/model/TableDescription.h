@@ -705,84 +705,84 @@ class TableDescription {
   ///@}
  private:
   Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-  bool m_attributeDefinitionsHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   TableStatus m_tableStatus{TableStatus::NOT_SET};
-  bool m_tableStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   ProvisionedThroughputDescription m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   long long m_tableSizeBytes{0};
-  bool m_tableSizeBytesHasBeenSet = false;
 
   long long m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::String m_tableId;
-  bool m_tableIdHasBeenSet = false;
 
   BillingModeSummary m_billingModeSummary;
-  bool m_billingModeSummaryHasBeenSet = false;
 
   Aws::Vector<LocalSecondaryIndexDescription> m_localSecondaryIndexes;
-  bool m_localSecondaryIndexesHasBeenSet = false;
 
   Aws::Vector<GlobalSecondaryIndexDescription> m_globalSecondaryIndexes;
-  bool m_globalSecondaryIndexesHasBeenSet = false;
 
   StreamSpecification m_streamSpecification;
-  bool m_streamSpecificationHasBeenSet = false;
 
   Aws::String m_latestStreamLabel;
-  bool m_latestStreamLabelHasBeenSet = false;
 
   Aws::String m_latestStreamArn;
-  bool m_latestStreamArnHasBeenSet = false;
 
   Aws::String m_globalTableVersion;
-  bool m_globalTableVersionHasBeenSet = false;
 
   Aws::Vector<ReplicaDescription> m_replicas;
-  bool m_replicasHasBeenSet = false;
 
   Aws::Vector<GlobalTableWitnessDescription> m_globalTableWitnesses;
-  bool m_globalTableWitnessesHasBeenSet = false;
 
   RestoreSummary m_restoreSummary;
-  bool m_restoreSummaryHasBeenSet = false;
 
   SSEDescription m_sSEDescription;
-  bool m_sSEDescriptionHasBeenSet = false;
 
   ArchivalSummary m_archivalSummary;
-  bool m_archivalSummaryHasBeenSet = false;
 
   TableClassSummary m_tableClassSummary;
-  bool m_tableClassSummaryHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughput;
-  bool m_onDemandThroughputHasBeenSet = false;
 
   TableWarmThroughputDescription m_warmThroughput;
-  bool m_warmThroughputHasBeenSet = false;
 
   MultiRegionConsistency m_multiRegionConsistency{MultiRegionConsistency::NOT_SET};
+  bool m_attributeDefinitionsHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
+  bool m_tableStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_tableSizeBytesHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
+  bool m_tableArnHasBeenSet = false;
+  bool m_tableIdHasBeenSet = false;
+  bool m_billingModeSummaryHasBeenSet = false;
+  bool m_localSecondaryIndexesHasBeenSet = false;
+  bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_streamSpecificationHasBeenSet = false;
+  bool m_latestStreamLabelHasBeenSet = false;
+  bool m_latestStreamArnHasBeenSet = false;
+  bool m_globalTableVersionHasBeenSet = false;
+  bool m_replicasHasBeenSet = false;
+  bool m_globalTableWitnessesHasBeenSet = false;
+  bool m_restoreSummaryHasBeenSet = false;
+  bool m_sSEDescriptionHasBeenSet = false;
+  bool m_archivalSummaryHasBeenSet = false;
+  bool m_tableClassSummaryHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_onDemandThroughputHasBeenSet = false;
+  bool m_warmThroughputHasBeenSet = false;
   bool m_multiRegionConsistencyHasBeenSet = false;
 };
 

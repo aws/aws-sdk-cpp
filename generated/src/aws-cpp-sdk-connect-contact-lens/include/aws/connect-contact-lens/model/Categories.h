@@ -85,9 +85,9 @@ class Categories {
   ///@}
  private:
   Aws::Vector<Aws::String> m_matchedCategories;
-  bool m_matchedCategoriesHasBeenSet = false;
 
   Aws::Map<Aws::String, CategoryDetails> m_matchedDetails;
+  bool m_matchedCategoriesHasBeenSet = false;
   bool m_matchedDetailsHasBeenSet = false;
 };
 

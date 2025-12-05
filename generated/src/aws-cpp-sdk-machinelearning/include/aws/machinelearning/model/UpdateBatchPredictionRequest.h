@@ -68,9 +68,9 @@ class UpdateBatchPredictionRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_batchPredictionId;
-  bool m_batchPredictionIdHasBeenSet = false;
 
   Aws::String m_batchPredictionName;
+  bool m_batchPredictionIdHasBeenSet = false;
   bool m_batchPredictionNameHasBeenSet = false;
 };
 

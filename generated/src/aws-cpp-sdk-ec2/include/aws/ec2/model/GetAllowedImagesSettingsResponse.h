@@ -113,15 +113,15 @@ class GetAllowedImagesSettingsResponse {
   ///@}
  private:
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<ImageCriterion> m_imageCriteria;
-  bool m_imageCriteriaHasBeenSet = false;
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stateHasBeenSet = false;
+  bool m_imageCriteriaHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

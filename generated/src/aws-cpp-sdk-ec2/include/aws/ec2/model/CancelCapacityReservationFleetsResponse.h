@@ -97,12 +97,12 @@ class CancelCapacityReservationFleetsResponse {
   ///@}
  private:
   Aws::Vector<CapacityReservationFleetCancellationState> m_successfulFleetCancellations;
-  bool m_successfulFleetCancellationsHasBeenSet = false;
 
   Aws::Vector<FailedCapacityReservationFleetCancellationResponse> m_failedFleetCancellations;
-  bool m_failedFleetCancellationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulFleetCancellationsHasBeenSet = false;
+  bool m_failedFleetCancellationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

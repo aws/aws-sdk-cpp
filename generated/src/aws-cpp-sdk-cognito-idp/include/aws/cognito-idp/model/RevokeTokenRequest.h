@@ -87,12 +87,12 @@ class RevokeTokenRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
+  bool m_tokenHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
 };
 

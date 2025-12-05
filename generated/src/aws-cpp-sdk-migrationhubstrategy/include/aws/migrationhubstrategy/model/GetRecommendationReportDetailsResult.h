@@ -80,12 +80,12 @@ class GetRecommendationReportDetailsResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RecommendationReportDetails m_recommendationReportDetails;
-  bool m_recommendationReportDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_recommendationReportDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

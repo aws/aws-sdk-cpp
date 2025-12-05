@@ -241,39 +241,39 @@ class GridLayoutElement {
   ///@}
  private:
   Aws::String m_elementId;
-  bool m_elementIdHasBeenSet = false;
 
   LayoutElementType m_elementType{LayoutElementType::NOT_SET};
-  bool m_elementTypeHasBeenSet = false;
 
   int m_columnIndex{0};
-  bool m_columnIndexHasBeenSet = false;
 
   int m_columnSpan{0};
-  bool m_columnSpanHasBeenSet = false;
 
   int m_rowIndex{0};
-  bool m_rowIndexHasBeenSet = false;
 
   int m_rowSpan{0};
-  bool m_rowSpanHasBeenSet = false;
 
   GridLayoutElementBorderStyle m_borderStyle;
-  bool m_borderStyleHasBeenSet = false;
 
   GridLayoutElementBorderStyle m_selectedBorderStyle;
-  bool m_selectedBorderStyleHasBeenSet = false;
 
   GridLayoutElementBackgroundStyle m_backgroundStyle;
-  bool m_backgroundStyleHasBeenSet = false;
 
   LoadingAnimation m_loadingAnimation;
-  bool m_loadingAnimationHasBeenSet = false;
 
   Aws::String m_borderRadius;
-  bool m_borderRadiusHasBeenSet = false;
 
   Aws::String m_padding;
+  bool m_elementIdHasBeenSet = false;
+  bool m_elementTypeHasBeenSet = false;
+  bool m_columnIndexHasBeenSet = false;
+  bool m_columnSpanHasBeenSet = false;
+  bool m_rowIndexHasBeenSet = false;
+  bool m_rowSpanHasBeenSet = false;
+  bool m_borderStyleHasBeenSet = false;
+  bool m_selectedBorderStyleHasBeenSet = false;
+  bool m_backgroundStyleHasBeenSet = false;
+  bool m_loadingAnimationHasBeenSet = false;
+  bool m_borderRadiusHasBeenSet = false;
   bool m_paddingHasBeenSet = false;
 };
 

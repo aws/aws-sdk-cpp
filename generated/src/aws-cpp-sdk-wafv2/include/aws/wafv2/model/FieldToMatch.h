@@ -415,45 +415,45 @@ class FieldToMatch {
   ///@}
  private:
   SingleHeader m_singleHeader;
-  bool m_singleHeaderHasBeenSet = false;
 
   SingleQueryArgument m_singleQueryArgument;
-  bool m_singleQueryArgumentHasBeenSet = false;
 
   AllQueryArguments m_allQueryArguments;
-  bool m_allQueryArgumentsHasBeenSet = false;
 
   UriPath m_uriPath;
-  bool m_uriPathHasBeenSet = false;
 
   QueryString m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Body m_body;
-  bool m_bodyHasBeenSet = false;
 
   Method m_method;
-  bool m_methodHasBeenSet = false;
 
   JsonBody m_jsonBody;
-  bool m_jsonBodyHasBeenSet = false;
 
   Headers m_headers;
-  bool m_headersHasBeenSet = false;
 
   Cookies m_cookies;
-  bool m_cookiesHasBeenSet = false;
 
   HeaderOrder m_headerOrder;
-  bool m_headerOrderHasBeenSet = false;
 
   JA3Fingerprint m_jA3Fingerprint;
-  bool m_jA3FingerprintHasBeenSet = false;
 
   JA4Fingerprint m_jA4Fingerprint;
-  bool m_jA4FingerprintHasBeenSet = false;
 
   UriFragment m_uriFragment;
+  bool m_singleHeaderHasBeenSet = false;
+  bool m_singleQueryArgumentHasBeenSet = false;
+  bool m_allQueryArgumentsHasBeenSet = false;
+  bool m_uriPathHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_jsonBodyHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
+  bool m_cookiesHasBeenSet = false;
+  bool m_headerOrderHasBeenSet = false;
+  bool m_jA3FingerprintHasBeenSet = false;
+  bool m_jA4FingerprintHasBeenSet = false;
   bool m_uriFragmentHasBeenSet = false;
 };
 

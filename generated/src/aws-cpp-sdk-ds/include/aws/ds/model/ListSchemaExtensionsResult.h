@@ -86,12 +86,12 @@ class ListSchemaExtensionsResult {
   ///@}
  private:
   Aws::Vector<SchemaExtensionInfo> m_schemaExtensionsInfo;
-  bool m_schemaExtensionsInfoHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaExtensionsInfoHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

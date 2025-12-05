@@ -124,18 +124,18 @@ class GenerationSummary {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   GenerationStatus m_generationStatus{GenerationStatus::NOT_SET};
-  bool m_generationStatusHasBeenSet = false;
 
   Aws::String m_generationStartedTime;
-  bool m_generationStartedTimeHasBeenSet = false;
 
   Aws::String m_generationCompletionTime;
-  bool m_generationCompletionTimeHasBeenSet = false;
 
   Aws::String m_estimatedCompletionTime;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_generationStatusHasBeenSet = false;
+  bool m_generationStartedTimeHasBeenSet = false;
+  bool m_generationCompletionTimeHasBeenSet = false;
   bool m_estimatedCompletionTimeHasBeenSet = false;
 };
 

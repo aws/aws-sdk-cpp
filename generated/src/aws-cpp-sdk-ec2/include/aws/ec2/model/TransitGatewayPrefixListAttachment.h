@@ -89,12 +89,12 @@ class TransitGatewayPrefixListAttachment {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_resourceType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

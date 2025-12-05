@@ -68,9 +68,9 @@ class ModelLatencyThreshold {
   ///@}
  private:
   Aws::String m_percentile;
-  bool m_percentileHasBeenSet = false;
 
   int m_valueInMilliseconds{0};
+  bool m_percentileHasBeenSet = false;
   bool m_valueInMillisecondsHasBeenSet = false;
 };
 

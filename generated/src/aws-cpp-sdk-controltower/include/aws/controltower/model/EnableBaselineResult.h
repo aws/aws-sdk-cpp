@@ -78,12 +78,12 @@ class EnableBaselineResult {
   ///@}
  private:
   Aws::String m_operationIdentifier;
-  bool m_operationIdentifierHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationIdentifierHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

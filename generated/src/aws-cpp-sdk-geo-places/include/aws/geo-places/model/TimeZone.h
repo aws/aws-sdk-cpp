@@ -84,12 +84,12 @@ class TimeZone {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_offset;
-  bool m_offsetHasBeenSet = false;
 
   long long m_offsetSeconds{0};
+  bool m_nameHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
   bool m_offsetSecondsHasBeenSet = false;
 };
 

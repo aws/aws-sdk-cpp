@@ -87,12 +87,12 @@ class BatchDeleteEvaluationJobError {
   ///@}
  private:
   Aws::String m_jobIdentifier;
-  bool m_jobIdentifierHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_jobIdentifierHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

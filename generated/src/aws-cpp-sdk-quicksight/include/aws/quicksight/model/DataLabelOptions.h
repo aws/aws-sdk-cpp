@@ -212,33 +212,33 @@ class DataLabelOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Visibility m_categoryLabelVisibility{Visibility::NOT_SET};
-  bool m_categoryLabelVisibilityHasBeenSet = false;
 
   Visibility m_measureLabelVisibility{Visibility::NOT_SET};
-  bool m_measureLabelVisibilityHasBeenSet = false;
 
   Aws::Vector<DataLabelType> m_dataLabelTypes;
-  bool m_dataLabelTypesHasBeenSet = false;
 
   DataLabelPosition m_position{DataLabelPosition::NOT_SET};
-  bool m_positionHasBeenSet = false;
 
   DataLabelContent m_labelContent{DataLabelContent::NOT_SET};
-  bool m_labelContentHasBeenSet = false;
 
   FontConfiguration m_labelFontConfiguration;
-  bool m_labelFontConfigurationHasBeenSet = false;
 
   Aws::String m_labelColor;
-  bool m_labelColorHasBeenSet = false;
 
   DataLabelOverlap m_overlap{DataLabelOverlap::NOT_SET};
-  bool m_overlapHasBeenSet = false;
 
   Visibility m_totalsVisibility{Visibility::NOT_SET};
+  bool m_visibilityHasBeenSet = false;
+  bool m_categoryLabelVisibilityHasBeenSet = false;
+  bool m_measureLabelVisibilityHasBeenSet = false;
+  bool m_dataLabelTypesHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_labelContentHasBeenSet = false;
+  bool m_labelFontConfigurationHasBeenSet = false;
+  bool m_labelColorHasBeenSet = false;
+  bool m_overlapHasBeenSet = false;
   bool m_totalsVisibilityHasBeenSet = false;
 };
 

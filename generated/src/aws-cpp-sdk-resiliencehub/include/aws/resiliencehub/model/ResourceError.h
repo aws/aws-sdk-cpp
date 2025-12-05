@@ -86,12 +86,12 @@ class ResourceError {
   ///@}
  private:
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

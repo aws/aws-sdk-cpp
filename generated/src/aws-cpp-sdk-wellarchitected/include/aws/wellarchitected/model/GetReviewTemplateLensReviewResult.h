@@ -78,12 +78,12 @@ class GetReviewTemplateLensReviewResult {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   ReviewTemplateLensReview m_lensReview;
-  bool m_lensReviewHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateArnHasBeenSet = false;
+  bool m_lensReviewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

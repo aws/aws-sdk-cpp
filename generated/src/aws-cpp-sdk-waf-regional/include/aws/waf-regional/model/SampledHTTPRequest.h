@@ -142,18 +142,18 @@ class SampledHTTPRequest {
   ///@}
  private:
   HTTPRequest m_request;
-  bool m_requestHasBeenSet = false;
 
   long long m_weight{0};
-  bool m_weightHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_ruleWithinRuleGroup;
+  bool m_requestHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_ruleWithinRuleGroupHasBeenSet = false;
 };
 

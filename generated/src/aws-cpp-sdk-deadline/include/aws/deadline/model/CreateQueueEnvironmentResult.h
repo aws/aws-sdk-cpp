@@ -59,9 +59,9 @@ class CreateQueueEnvironmentResult {
   ///@}
  private:
   Aws::String m_queueEnvironmentId;
-  bool m_queueEnvironmentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queueEnvironmentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

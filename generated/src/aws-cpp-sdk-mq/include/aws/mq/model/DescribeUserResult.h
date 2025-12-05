@@ -152,24 +152,24 @@ class DescribeUserResult {
   ///@}
  private:
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   bool m_consoleAccess{false};
-  bool m_consoleAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   UserPendingChanges m_pending;
-  bool m_pendingHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   bool m_replicationUser{false};
-  bool m_replicationUserHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_brokerIdHasBeenSet = false;
+  bool m_consoleAccessHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_pendingHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_replicationUserHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

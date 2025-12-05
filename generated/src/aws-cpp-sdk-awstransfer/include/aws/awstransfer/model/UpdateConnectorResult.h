@@ -59,9 +59,9 @@ class UpdateConnectorResult {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

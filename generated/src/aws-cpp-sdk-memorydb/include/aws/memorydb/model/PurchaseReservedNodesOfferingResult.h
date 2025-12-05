@@ -61,9 +61,9 @@ class PurchaseReservedNodesOfferingResult {
   ///@}
  private:
   ReservedNode m_reservedNode;
-  bool m_reservedNodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reservedNodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

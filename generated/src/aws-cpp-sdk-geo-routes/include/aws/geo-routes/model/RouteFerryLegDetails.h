@@ -264,33 +264,33 @@ class RouteFerryLegDetails {
   ///@}
  private:
   Aws::Vector<RouteFerryAfterTravelStep> m_afterTravelSteps;
-  bool m_afterTravelStepsHasBeenSet = false;
 
   RouteFerryArrival m_arrival;
-  bool m_arrivalHasBeenSet = false;
 
   Aws::Vector<RouteFerryBeforeTravelStep> m_beforeTravelSteps;
-  bool m_beforeTravelStepsHasBeenSet = false;
 
   RouteFerryDeparture m_departure;
-  bool m_departureHasBeenSet = false;
 
   Aws::Vector<RouteFerryNotice> m_notices;
-  bool m_noticesHasBeenSet = false;
 
   Aws::Vector<RoutePassThroughWaypoint> m_passThroughWaypoints;
-  bool m_passThroughWaypointsHasBeenSet = false;
 
   Aws::String m_routeName;
-  bool m_routeNameHasBeenSet = false;
 
   Aws::Vector<RouteFerrySpan> m_spans;
-  bool m_spansHasBeenSet = false;
 
   RouteFerrySummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Vector<RouteFerryTravelStep> m_travelSteps;
+  bool m_afterTravelStepsHasBeenSet = false;
+  bool m_arrivalHasBeenSet = false;
+  bool m_beforeTravelStepsHasBeenSet = false;
+  bool m_departureHasBeenSet = false;
+  bool m_noticesHasBeenSet = false;
+  bool m_passThroughWaypointsHasBeenSet = false;
+  bool m_routeNameHasBeenSet = false;
+  bool m_spansHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_travelStepsHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class TopicNumericRangeFilter {
   ///@}
  private:
   bool m_inclusive{false};
-  bool m_inclusiveHasBeenSet = false;
 
   TopicRangeFilterConstant m_constant;
-  bool m_constantHasBeenSet = false;
 
   NamedFilterAggType m_aggregation{NamedFilterAggType::NOT_SET};
+  bool m_inclusiveHasBeenSet = false;
+  bool m_constantHasBeenSet = false;
   bool m_aggregationHasBeenSet = false;
 };
 

@@ -81,12 +81,12 @@ class IsBinaryFile {
   ///@}
  private:
   bool m_source{false};
-  bool m_sourceHasBeenSet = false;
 
   bool m_destination{false};
-  bool m_destinationHasBeenSet = false;
 
   bool m_base{false};
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_baseHasBeenSet = false;
 };
 

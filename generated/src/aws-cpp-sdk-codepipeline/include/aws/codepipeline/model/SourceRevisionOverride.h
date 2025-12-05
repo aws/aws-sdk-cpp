@@ -93,12 +93,12 @@ class SourceRevisionOverride {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   SourceRevisionType m_revisionType{SourceRevisionType::NOT_SET};
-  bool m_revisionTypeHasBeenSet = false;
 
   Aws::String m_revisionValue;
+  bool m_actionNameHasBeenSet = false;
+  bool m_revisionTypeHasBeenSet = false;
   bool m_revisionValueHasBeenSet = false;
 };
 

@@ -149,18 +149,18 @@ class AnalysisOptions {
   ///@}
  private:
   Aws::String m_synonyms;
-  bool m_synonymsHasBeenSet = false;
 
   Aws::String m_stopwords;
-  bool m_stopwordsHasBeenSet = false;
 
   Aws::String m_stemmingDictionary;
-  bool m_stemmingDictionaryHasBeenSet = false;
 
   Aws::String m_japaneseTokenizationDictionary;
-  bool m_japaneseTokenizationDictionaryHasBeenSet = false;
 
   AlgorithmicStemming m_algorithmicStemming{AlgorithmicStemming::NOT_SET};
+  bool m_synonymsHasBeenSet = false;
+  bool m_stopwordsHasBeenSet = false;
+  bool m_stemmingDictionaryHasBeenSet = false;
+  bool m_japaneseTokenizationDictionaryHasBeenSet = false;
   bool m_algorithmicStemmingHasBeenSet = false;
 };
 

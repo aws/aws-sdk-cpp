@@ -68,9 +68,9 @@ class InputRequestDestinationRoute {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_gateway;
+  bool m_cidrHasBeenSet = false;
   bool m_gatewayHasBeenSet = false;
 };
 

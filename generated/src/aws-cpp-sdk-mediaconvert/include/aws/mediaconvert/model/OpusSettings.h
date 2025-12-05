@@ -83,12 +83,12 @@ class OpusSettings {
   ///@}
  private:
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   int m_sampleRate{0};
+  bool m_bitrateHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

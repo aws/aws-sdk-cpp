@@ -103,12 +103,12 @@ class ContentSourceConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dataSourceIds;
-  bool m_dataSourceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_faqIds;
-  bool m_faqIdsHasBeenSet = false;
 
   bool m_directPutContent{false};
+  bool m_dataSourceIdsHasBeenSet = false;
+  bool m_faqIdsHasBeenSet = false;
   bool m_directPutContentHasBeenSet = false;
 };
 

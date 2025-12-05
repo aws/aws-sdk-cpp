@@ -59,9 +59,9 @@ class UpdateUserProfileResult {
   ///@}
  private:
   Aws::String m_userProfileArn;
-  bool m_userProfileArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userProfileArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

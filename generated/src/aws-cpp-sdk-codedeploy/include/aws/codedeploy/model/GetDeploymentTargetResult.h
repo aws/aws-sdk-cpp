@@ -64,9 +64,9 @@ class GetDeploymentTargetResult {
   ///@}
  private:
   DeploymentTarget m_deploymentTarget;
-  bool m_deploymentTargetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentTargetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

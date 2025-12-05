@@ -66,9 +66,9 @@ class AssetInstanceTypeCapacity {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_count{0};
+  bool m_instanceTypeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

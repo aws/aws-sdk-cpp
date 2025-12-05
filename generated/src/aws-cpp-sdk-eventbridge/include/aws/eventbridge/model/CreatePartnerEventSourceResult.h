@@ -59,9 +59,9 @@ class CreatePartnerEventSourceResult {
   ///@}
  private:
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventSourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

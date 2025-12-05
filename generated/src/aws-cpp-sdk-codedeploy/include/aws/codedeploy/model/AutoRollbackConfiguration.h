@@ -75,9 +75,9 @@ class AutoRollbackConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<AutoRollbackEvent> m_events;
+  bool m_enabledHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

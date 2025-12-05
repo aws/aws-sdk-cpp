@@ -70,9 +70,9 @@ class DetectToxicContentResult {
   ///@}
  private:
   Aws::Vector<ToxicLabels> m_resultList;
-  bool m_resultListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

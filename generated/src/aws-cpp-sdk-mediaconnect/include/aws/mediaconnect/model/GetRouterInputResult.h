@@ -61,9 +61,9 @@ class GetRouterInputResult {
   ///@}
  private:
   RouterInput m_routerInput;
-  bool m_routerInputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routerInputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListAdminAccountsForOrganizationResult {
   ///@}
  private:
   Aws::Vector<AdminAccountSummary> m_adminAccounts;
-  bool m_adminAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adminAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

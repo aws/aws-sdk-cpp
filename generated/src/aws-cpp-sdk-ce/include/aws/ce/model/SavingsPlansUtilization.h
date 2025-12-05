@@ -109,15 +109,15 @@ class SavingsPlansUtilization {
   ///@}
  private:
   Aws::String m_totalCommitment;
-  bool m_totalCommitmentHasBeenSet = false;
 
   Aws::String m_usedCommitment;
-  bool m_usedCommitmentHasBeenSet = false;
 
   Aws::String m_unusedCommitment;
-  bool m_unusedCommitmentHasBeenSet = false;
 
   Aws::String m_utilizationPercentage;
+  bool m_totalCommitmentHasBeenSet = false;
+  bool m_usedCommitmentHasBeenSet = false;
+  bool m_unusedCommitmentHasBeenSet = false;
   bool m_utilizationPercentageHasBeenSet = false;
 };
 

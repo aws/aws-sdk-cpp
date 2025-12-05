@@ -84,12 +84,12 @@ class ListVersionsByFunctionResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<FunctionConfiguration> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

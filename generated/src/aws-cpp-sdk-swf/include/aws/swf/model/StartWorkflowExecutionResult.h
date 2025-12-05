@@ -67,9 +67,9 @@ class StartWorkflowExecutionResult {
   ///@}
  private:
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

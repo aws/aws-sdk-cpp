@@ -176,24 +176,24 @@ class CreateBridgeRequest : public MediaConnectRequest {
   ///@}
  private:
   AddEgressGatewayBridgeRequest m_egressGatewayBridge;
-  bool m_egressGatewayBridgeHasBeenSet = false;
 
   AddIngressGatewayBridgeRequest m_ingressGatewayBridge;
-  bool m_ingressGatewayBridgeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AddBridgeOutputRequest> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_placementArn;
-  bool m_placementArnHasBeenSet = false;
 
   FailoverConfig m_sourceFailoverConfig;
-  bool m_sourceFailoverConfigHasBeenSet = false;
 
   Aws::Vector<AddBridgeSourceRequest> m_sources;
+  bool m_egressGatewayBridgeHasBeenSet = false;
+  bool m_ingressGatewayBridgeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_placementArnHasBeenSet = false;
+  bool m_sourceFailoverConfigHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

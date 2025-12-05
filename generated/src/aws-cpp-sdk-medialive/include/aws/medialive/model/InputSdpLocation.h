@@ -67,9 +67,9 @@ class InputSdpLocation {
   ///@}
  private:
   int m_mediaIndex{0};
-  bool m_mediaIndexHasBeenSet = false;
 
   Aws::String m_sdpUrl;
+  bool m_mediaIndexHasBeenSet = false;
   bool m_sdpUrlHasBeenSet = false;
 };
 

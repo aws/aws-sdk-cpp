@@ -87,12 +87,12 @@ class S3RecordingConfig {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

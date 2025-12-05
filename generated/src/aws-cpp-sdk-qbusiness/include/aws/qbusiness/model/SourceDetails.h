@@ -89,12 +89,12 @@ class SourceDetails {
   ///@}
  private:
   ImageSourceDetails m_imageSourceDetails;
-  bool m_imageSourceDetailsHasBeenSet = false;
 
   AudioSourceDetails m_audioSourceDetails;
-  bool m_audioSourceDetailsHasBeenSet = false;
 
   VideoSourceDetails m_videoSourceDetails;
+  bool m_imageSourceDetailsHasBeenSet = false;
+  bool m_audioSourceDetailsHasBeenSet = false;
   bool m_videoSourceDetailsHasBeenSet = false;
 };
 

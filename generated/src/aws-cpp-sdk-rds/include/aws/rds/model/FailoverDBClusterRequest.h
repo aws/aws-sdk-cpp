@@ -78,9 +78,9 @@ class FailoverDBClusterRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBInstanceIdentifier;
+  bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_targetDBInstanceIdentifierHasBeenSet = false;
 };
 

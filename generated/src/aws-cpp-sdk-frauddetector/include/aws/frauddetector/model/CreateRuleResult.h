@@ -60,9 +60,9 @@ class CreateRuleResult {
   ///@}
  private:
   Rule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

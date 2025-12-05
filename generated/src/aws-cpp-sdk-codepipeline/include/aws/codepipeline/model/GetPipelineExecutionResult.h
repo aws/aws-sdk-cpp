@@ -66,9 +66,9 @@ class GetPipelineExecutionResult {
   ///@}
  private:
   PipelineExecution m_pipelineExecution;
-  bool m_pipelineExecutionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class HeaderMatchPattern {
   ///@}
  private:
   All m_all;
-  bool m_allHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includedHeaders;
-  bool m_includedHeadersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedHeaders;
+  bool m_allHasBeenSet = false;
+  bool m_includedHeadersHasBeenSet = false;
   bool m_excludedHeadersHasBeenSet = false;
 };
 

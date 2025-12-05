@@ -78,9 +78,9 @@ class StringDefaultValues {
   ///@}
  private:
   DynamicDefaultValue m_dynamicValue;
-  bool m_dynamicValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_staticValues;
+  bool m_dynamicValueHasBeenSet = false;
   bool m_staticValuesHasBeenSet = false;
 };
 

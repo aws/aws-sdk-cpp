@@ -109,18 +109,18 @@ class CreateOdbPeeringConnectionResult {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_odbPeeringConnectionId;
-  bool m_odbPeeringConnectionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_odbPeeringConnectionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

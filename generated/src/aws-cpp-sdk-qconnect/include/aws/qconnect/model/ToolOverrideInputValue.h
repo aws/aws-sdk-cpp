@@ -69,9 +69,9 @@ class ToolOverrideInputValue {
   ///@}
  private:
   Aws::String m_jsonPath;
-  bool m_jsonPathHasBeenSet = false;
 
   ToolOverrideInputValueConfiguration m_value;
+  bool m_jsonPathHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

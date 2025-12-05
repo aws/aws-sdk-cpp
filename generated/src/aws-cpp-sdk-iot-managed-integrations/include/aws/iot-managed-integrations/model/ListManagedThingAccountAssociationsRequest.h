@@ -107,15 +107,15 @@ class ListManagedThingAccountAssociationsRequest : public IoTManagedIntegrations
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   Aws::String m_accountAssociationId;
-  bool m_accountAssociationIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_managedThingIdHasBeenSet = false;
+  bool m_accountAssociationIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class PreviewAgentsRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_previewAgentsArn;
-  bool m_previewAgentsArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_previewAgentsArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

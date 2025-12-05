@@ -137,18 +137,18 @@ class GetSampledRequestsRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_webAclArn;
-  bool m_webAclArnHasBeenSet = false;
 
   Aws::String m_ruleMetricName;
-  bool m_ruleMetricNameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   TimeWindow m_timeWindow;
-  bool m_timeWindowHasBeenSet = false;
 
   long long m_maxItems{0};
+  bool m_webAclArnHasBeenSet = false;
+  bool m_ruleMetricNameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_timeWindowHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

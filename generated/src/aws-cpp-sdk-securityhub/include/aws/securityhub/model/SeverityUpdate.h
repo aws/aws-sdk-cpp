@@ -94,12 +94,12 @@ class SeverityUpdate {
   ///@}
  private:
   int m_normalized{0};
-  bool m_normalizedHasBeenSet = false;
 
   double m_product{0.0};
-  bool m_productHasBeenSet = false;
 
   SeverityLabel m_label{SeverityLabel::NOT_SET};
+  bool m_normalizedHasBeenSet = false;
+  bool m_productHasBeenSet = false;
   bool m_labelHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class WorkerLogDelivery {
   ///@}
  private:
   CloudWatchLogsLogDelivery m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   FirehoseLogDelivery m_firehose;
-  bool m_firehoseHasBeenSet = false;
 
   S3LogDelivery m_s3;
+  bool m_cloudWatchLogsHasBeenSet = false;
+  bool m_firehoseHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

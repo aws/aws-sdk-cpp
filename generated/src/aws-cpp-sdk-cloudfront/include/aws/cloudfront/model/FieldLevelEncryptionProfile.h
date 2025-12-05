@@ -94,12 +94,12 @@ class FieldLevelEncryptionProfile {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   FieldLevelEncryptionProfileConfig m_fieldLevelEncryptionProfileConfig;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_fieldLevelEncryptionProfileConfigHasBeenSet = false;
 };
 

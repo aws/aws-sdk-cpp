@@ -63,9 +63,9 @@ class ResetServiceSpecificCredentialResult {
   ///@}
  private:
   ServiceSpecificCredential m_serviceSpecificCredential;
-  bool m_serviceSpecificCredentialHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serviceSpecificCredentialHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

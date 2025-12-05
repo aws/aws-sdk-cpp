@@ -114,15 +114,15 @@ class CreateUpdatedWorkspaceImageRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_sourceImageId;
-  bool m_sourceImageIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceImageIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class PromptModelInferenceConfiguration {
   ///@}
  private:
   double m_temperature{0.0};
-  bool m_temperatureHasBeenSet = false;
 
   double m_topP{0.0};
-  bool m_topPHasBeenSet = false;
 
   int m_maxTokens{0};
-  bool m_maxTokensHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stopSequences;
+  bool m_temperatureHasBeenSet = false;
+  bool m_topPHasBeenSet = false;
+  bool m_maxTokensHasBeenSet = false;
   bool m_stopSequencesHasBeenSet = false;
 };
 

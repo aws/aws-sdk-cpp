@@ -68,9 +68,9 @@ class DeleteVariantStoreRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_force{false};
+  bool m_nameHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

@@ -178,24 +178,24 @@ class UpdateEntityRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentUpdateRequest> m_componentUpdates;
-  bool m_componentUpdatesHasBeenSet = false;
 
   Aws::Map<Aws::String, CompositeComponentUpdateRequest> m_compositeComponentUpdates;
-  bool m_compositeComponentUpdatesHasBeenSet = false;
 
   ParentEntityUpdateRequest m_parentEntityUpdate;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_componentUpdatesHasBeenSet = false;
+  bool m_compositeComponentUpdatesHasBeenSet = false;
   bool m_parentEntityUpdateHasBeenSet = false;
 };
 

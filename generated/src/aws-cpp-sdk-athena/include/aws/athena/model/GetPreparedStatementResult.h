@@ -60,9 +60,9 @@ class GetPreparedStatementResult {
   ///@}
  private:
   PreparedStatement m_preparedStatement;
-  bool m_preparedStatementHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_preparedStatementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

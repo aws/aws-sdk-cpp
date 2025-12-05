@@ -101,15 +101,15 @@ class UpdateOutpostResolverRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_preferredInstanceType;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
   bool m_preferredInstanceTypeHasBeenSet = false;
 };
 

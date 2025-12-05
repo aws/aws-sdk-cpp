@@ -59,9 +59,9 @@ class CreateNamedQueryResult {
   ///@}
  private:
   Aws::String m_namedQueryId;
-  bool m_namedQueryIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_namedQueryIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

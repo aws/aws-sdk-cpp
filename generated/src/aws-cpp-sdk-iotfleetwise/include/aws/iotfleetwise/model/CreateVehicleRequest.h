@@ -186,24 +186,24 @@ class CreateVehicleRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   Aws::String m_modelManifestArn;
-  bool m_modelManifestArnHasBeenSet = false;
 
   Aws::String m_decoderManifestArn;
-  bool m_decoderManifestArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   VehicleAssociationBehavior m_associationBehavior{VehicleAssociationBehavior::NOT_SET};
-  bool m_associationBehaviorHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<StateTemplateAssociation> m_stateTemplates;
+  bool m_vehicleNameHasBeenSet = false;
+  bool m_modelManifestArnHasBeenSet = false;
+  bool m_decoderManifestArnHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_associationBehaviorHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_stateTemplatesHasBeenSet = false;
 };
 

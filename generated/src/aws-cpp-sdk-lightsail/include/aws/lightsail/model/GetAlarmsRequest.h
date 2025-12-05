@@ -91,12 +91,12 @@ class GetAlarmsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   Aws::String m_monitoredResourceName;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_monitoredResourceNameHasBeenSet = false;
 };
 

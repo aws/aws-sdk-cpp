@@ -193,33 +193,33 @@ class GetServiceNetworkResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   SharingConfig m_sharingConfig;
-  bool m_sharingConfigHasBeenSet = false;
 
   long long m_numberOfAssociatedVPCs{0};
-  bool m_numberOfAssociatedVPCsHasBeenSet = false;
 
   long long m_numberOfAssociatedServices{0};
-  bool m_numberOfAssociatedServicesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_sharingConfigHasBeenSet = false;
+  bool m_numberOfAssociatedVPCsHasBeenSet = false;
+  bool m_numberOfAssociatedServicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

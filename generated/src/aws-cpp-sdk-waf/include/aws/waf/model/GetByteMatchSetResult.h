@@ -69,9 +69,9 @@ class GetByteMatchSetResult {
   ///@}
  private:
   ByteMatchSet m_byteMatchSet;
-  bool m_byteMatchSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_byteMatchSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

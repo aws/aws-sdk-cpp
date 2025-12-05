@@ -198,33 +198,33 @@ class GetAutomatedReasoningPolicyBuildWorkflowResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildWorkflowStatus m_status{AutomatedReasoningPolicyBuildWorkflowStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildWorkflowType m_buildWorkflowType{AutomatedReasoningPolicyBuildWorkflowType::NOT_SET};
-  bool m_buildWorkflowTypeHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildDocumentContentType m_documentContentType{AutomatedReasoningPolicyBuildDocumentContentType::NOT_SET};
-  bool m_documentContentTypeHasBeenSet = false;
 
   Aws::String m_documentDescription;
-  bool m_documentDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_buildWorkflowTypeHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentContentTypeHasBeenSet = false;
+  bool m_documentDescriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

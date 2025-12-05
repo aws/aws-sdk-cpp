@@ -83,12 +83,12 @@ class EvaluationFormItemEnablementConfiguration {
   ///@}
  private:
   EvaluationFormItemEnablementCondition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   EvaluationFormItemEnablementAction m_action{EvaluationFormItemEnablementAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   EvaluationFormItemEnablementAction m_defaultAction{EvaluationFormItemEnablementAction::NOT_SET};
+  bool m_conditionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_defaultActionHasBeenSet = false;
 };
 

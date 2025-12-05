@@ -71,9 +71,9 @@ class TransitGatewayPolicyRuleMetaData {
   ///@}
  private:
   Aws::String m_metaDataKey;
-  bool m_metaDataKeyHasBeenSet = false;
 
   Aws::String m_metaDataValue;
+  bool m_metaDataKeyHasBeenSet = false;
   bool m_metaDataValueHasBeenSet = false;
 };
 

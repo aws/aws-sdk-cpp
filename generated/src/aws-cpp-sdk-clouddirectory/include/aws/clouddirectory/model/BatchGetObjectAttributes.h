@@ -99,12 +99,12 @@ class BatchGetObjectAttributes {
   ///@}
  private:
   ObjectReference m_objectReference;
-  bool m_objectReferenceHasBeenSet = false;
 
   SchemaFacet m_schemaFacet;
-  bool m_schemaFacetHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
+  bool m_objectReferenceHasBeenSet = false;
+  bool m_schemaFacetHasBeenSet = false;
   bool m_attributeNamesHasBeenSet = false;
 };
 

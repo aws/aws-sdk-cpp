@@ -68,9 +68,9 @@ class DescribeAutoScalingNotificationTypesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_autoScalingNotificationTypes;
-  bool m_autoScalingNotificationTypesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_autoScalingNotificationTypesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

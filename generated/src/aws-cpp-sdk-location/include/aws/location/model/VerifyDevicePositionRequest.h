@@ -86,12 +86,12 @@ class VerifyDevicePositionRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   DeviceState m_deviceState;
-  bool m_deviceStateHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
+  bool m_trackerNameHasBeenSet = false;
+  bool m_deviceStateHasBeenSet = false;
   bool m_distanceUnitHasBeenSet = false;
 };
 

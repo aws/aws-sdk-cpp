@@ -64,9 +64,9 @@ class ExportStatistics {
   ///@}
  private:
   int m_processedRecordsCount{0};
-  bool m_processedRecordsCountHasBeenSet = false;
 
   int m_exportedRecordsCount{0};
+  bool m_processedRecordsCountHasBeenSet = false;
   bool m_exportedRecordsCountHasBeenSet = false;
 };
 

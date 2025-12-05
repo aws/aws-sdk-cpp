@@ -71,9 +71,9 @@ class SecurityProfileTargetMapping {
   ///@}
  private:
   SecurityProfileIdentifier m_securityProfileIdentifier;
-  bool m_securityProfileIdentifierHasBeenSet = false;
 
   SecurityProfileTarget m_target;
+  bool m_securityProfileIdentifierHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

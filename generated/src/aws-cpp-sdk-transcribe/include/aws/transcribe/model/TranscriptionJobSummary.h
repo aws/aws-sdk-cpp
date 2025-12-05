@@ -345,48 +345,48 @@ class TranscriptionJobSummary {
   ///@}
  private:
   Aws::String m_transcriptionJobName;
-  bool m_transcriptionJobNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   TranscriptionJobStatus m_transcriptionJobStatus{TranscriptionJobStatus::NOT_SET};
-  bool m_transcriptionJobStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   OutputLocationType m_outputLocationType{OutputLocationType::NOT_SET};
-  bool m_outputLocationTypeHasBeenSet = false;
 
   ContentRedaction m_contentRedaction;
-  bool m_contentRedactionHasBeenSet = false;
 
   ModelSettings m_modelSettings;
-  bool m_modelSettingsHasBeenSet = false;
 
   bool m_identifyLanguage{false};
-  bool m_identifyLanguageHasBeenSet = false;
 
   bool m_identifyMultipleLanguages{false};
-  bool m_identifyMultipleLanguagesHasBeenSet = false;
 
   double m_identifiedLanguageScore{0.0};
-  bool m_identifiedLanguageScoreHasBeenSet = false;
 
   Aws::Vector<LanguageCodeItem> m_languageCodes;
-  bool m_languageCodesHasBeenSet = false;
 
   Aws::Vector<ToxicityDetectionSettings> m_toxicityDetection;
+  bool m_transcriptionJobNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_transcriptionJobStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_outputLocationTypeHasBeenSet = false;
+  bool m_contentRedactionHasBeenSet = false;
+  bool m_modelSettingsHasBeenSet = false;
+  bool m_identifyLanguageHasBeenSet = false;
+  bool m_identifyMultipleLanguagesHasBeenSet = false;
+  bool m_identifiedLanguageScoreHasBeenSet = false;
+  bool m_languageCodesHasBeenSet = false;
   bool m_toxicityDetectionHasBeenSet = false;
 };
 

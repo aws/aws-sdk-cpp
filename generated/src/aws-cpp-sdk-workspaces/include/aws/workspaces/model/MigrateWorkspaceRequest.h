@@ -67,9 +67,9 @@ class MigrateWorkspaceRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_sourceWorkspaceId;
-  bool m_sourceWorkspaceIdHasBeenSet = false;
 
   Aws::String m_bundleId;
+  bool m_sourceWorkspaceIdHasBeenSet = false;
   bool m_bundleIdHasBeenSet = false;
 };
 

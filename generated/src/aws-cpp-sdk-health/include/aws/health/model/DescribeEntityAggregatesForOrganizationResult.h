@@ -69,9 +69,9 @@ class DescribeEntityAggregatesForOrganizationResult {
   ///@}
  private:
   Aws::Vector<OrganizationEntityAggregate> m_organizationEntityAggregates;
-  bool m_organizationEntityAggregatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationEntityAggregatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

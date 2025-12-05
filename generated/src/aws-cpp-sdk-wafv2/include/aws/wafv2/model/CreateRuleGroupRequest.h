@@ -228,27 +228,27 @@ class CreateRuleGroupRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   long long m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   VisibilityConfig m_visibilityConfig;
-  bool m_visibilityConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_visibilityConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_customResponseBodiesHasBeenSet = false;
 };
 

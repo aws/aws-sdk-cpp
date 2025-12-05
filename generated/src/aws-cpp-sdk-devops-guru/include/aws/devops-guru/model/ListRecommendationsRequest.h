@@ -101,15 +101,15 @@ class ListRecommendationsRequest : public DevOpsGuruRequest {
   ///@}
  private:
   Aws::String m_insightId;
-  bool m_insightIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Locale m_locale{Locale::NOT_SET};
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_insightIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GroupByValue {
   ///@}
  private:
   Aws::String m_fieldValue;
-  bool m_fieldValueHasBeenSet = false;
 
   int m_count{0};
+  bool m_fieldValueHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class ContentRedaction {
   ///@}
  private:
   RedactionType m_redactionType{RedactionType::NOT_SET};
-  bool m_redactionTypeHasBeenSet = false;
 
   RedactionOutput m_redactionOutput{RedactionOutput::NOT_SET};
-  bool m_redactionOutputHasBeenSet = false;
 
   Aws::Vector<PiiEntityType> m_piiEntityTypes;
+  bool m_redactionTypeHasBeenSet = false;
+  bool m_redactionOutputHasBeenSet = false;
   bool m_piiEntityTypesHasBeenSet = false;
 };
 

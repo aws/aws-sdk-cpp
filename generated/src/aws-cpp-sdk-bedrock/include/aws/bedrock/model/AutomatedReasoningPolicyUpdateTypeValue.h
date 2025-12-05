@@ -88,12 +88,12 @@ class AutomatedReasoningPolicyUpdateTypeValue {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_newValue;
-  bool m_newValueHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_valueHasBeenSet = false;
+  bool m_newValueHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

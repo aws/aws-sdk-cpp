@@ -90,12 +90,12 @@ class BatchGetBlueprintsResult {
   ///@}
  private:
   Aws::Vector<Blueprint> m_blueprints;
-  bool m_blueprintsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_missingBlueprints;
-  bool m_missingBlueprintsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blueprintsHasBeenSet = false;
+  bool m_missingBlueprintsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

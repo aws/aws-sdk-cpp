@@ -81,9 +81,9 @@ class ContainerServiceDeploymentRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Container> m_containers;
-  bool m_containersHasBeenSet = false;
 
   EndpointRequest m_publicEndpoint;
+  bool m_containersHasBeenSet = false;
   bool m_publicEndpointHasBeenSet = false;
 };
 

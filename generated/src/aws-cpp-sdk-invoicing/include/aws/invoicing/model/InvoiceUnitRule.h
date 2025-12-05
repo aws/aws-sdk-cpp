@@ -87,9 +87,9 @@ class InvoiceUnitRule {
   ///@}
  private:
   Aws::Vector<Aws::String> m_linkedAccounts;
-  bool m_linkedAccountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_billSourceAccounts;
+  bool m_linkedAccountsHasBeenSet = false;
   bool m_billSourceAccountsHasBeenSet = false;
 };
 

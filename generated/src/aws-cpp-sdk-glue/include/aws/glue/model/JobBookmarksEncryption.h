@@ -69,9 +69,9 @@ class JobBookmarksEncryption {
   ///@}
  private:
   JobBookmarksEncryptionMode m_jobBookmarksEncryptionMode{JobBookmarksEncryptionMode::NOT_SET};
-  bool m_jobBookmarksEncryptionModeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_jobBookmarksEncryptionModeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

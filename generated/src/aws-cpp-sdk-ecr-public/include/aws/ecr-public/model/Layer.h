@@ -103,15 +103,15 @@ class Layer {
   ///@}
  private:
   Aws::String m_layerDigest;
-  bool m_layerDigestHasBeenSet = false;
 
   LayerAvailability m_layerAvailability{LayerAvailability::NOT_SET};
-  bool m_layerAvailabilityHasBeenSet = false;
 
   long long m_layerSize{0};
-  bool m_layerSizeHasBeenSet = false;
 
   Aws::String m_mediaType;
+  bool m_layerDigestHasBeenSet = false;
+  bool m_layerAvailabilityHasBeenSet = false;
+  bool m_layerSizeHasBeenSet = false;
   bool m_mediaTypeHasBeenSet = false;
 };
 

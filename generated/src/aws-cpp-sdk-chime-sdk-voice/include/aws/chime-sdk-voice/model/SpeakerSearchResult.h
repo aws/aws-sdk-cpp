@@ -66,9 +66,9 @@ class SpeakerSearchResult {
   ///@}
  private:
   double m_confidenceScore{0.0};
-  bool m_confidenceScoreHasBeenSet = false;
 
   Aws::String m_voiceProfileId;
+  bool m_confidenceScoreHasBeenSet = false;
   bool m_voiceProfileIdHasBeenSet = false;
 };
 

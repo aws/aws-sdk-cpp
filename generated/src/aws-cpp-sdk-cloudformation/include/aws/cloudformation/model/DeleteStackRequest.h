@@ -161,18 +161,18 @@ class DeleteStackRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_retainResources;
-  bool m_retainResourcesHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   DeletionMode m_deletionMode{DeletionMode::NOT_SET};
+  bool m_stackNameHasBeenSet = false;
+  bool m_retainResourcesHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
   bool m_deletionModeHasBeenSet = false;
 };
 

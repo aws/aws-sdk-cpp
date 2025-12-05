@@ -294,48 +294,48 @@ class GetEvaluationJobResult {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   EvaluationJobStatus m_status{EvaluationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobDescription;
-  bool m_jobDescriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyId;
-  bool m_customerEncryptionKeyIdHasBeenSet = false;
 
   EvaluationJobType m_jobType{EvaluationJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
-  bool m_applicationTypeHasBeenSet = false;
 
   EvaluationConfig m_evaluationConfig;
-  bool m_evaluationConfigHasBeenSet = false;
 
   EvaluationInferenceConfig m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   EvaluationOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureMessages;
-  bool m_failureMessagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobDescriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_customerEncryptionKeyIdHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_applicationTypeHasBeenSet = false;
+  bool m_evaluationConfigHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureMessagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

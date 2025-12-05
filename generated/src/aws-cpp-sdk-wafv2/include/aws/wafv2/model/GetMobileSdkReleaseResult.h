@@ -61,9 +61,9 @@ class GetMobileSdkReleaseResult {
   ///@}
  private:
   MobileSdkRelease m_mobileSdkRelease;
-  bool m_mobileSdkReleaseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mobileSdkReleaseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

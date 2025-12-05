@@ -89,12 +89,12 @@ class Participant {
   ///@}
  private:
   PartnerProfileSummary m_partnerProfile;
-  bool m_partnerProfileHasBeenSet = false;
 
   SellerProfileSummary m_sellerProfile;
-  bool m_sellerProfileHasBeenSet = false;
 
   AccountSummary m_account;
+  bool m_partnerProfileHasBeenSet = false;
+  bool m_sellerProfileHasBeenSet = false;
   bool m_accountHasBeenSet = false;
 };
 

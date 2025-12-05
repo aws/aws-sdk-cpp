@@ -84,12 +84,12 @@ class MessageBody {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_html;
-  bool m_htmlHasBeenSet = false;
 
   bool m_messageMalformed{false};
+  bool m_textHasBeenSet = false;
+  bool m_htmlHasBeenSet = false;
   bool m_messageMalformedHasBeenSet = false;
 };
 

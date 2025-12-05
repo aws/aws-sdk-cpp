@@ -76,12 +76,12 @@ class CreateBrokerResult {
   ///@}
  private:
   Aws::String m_brokerArn;
-  bool m_brokerArnHasBeenSet = false;
 
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_brokerArnHasBeenSet = false;
+  bool m_brokerIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

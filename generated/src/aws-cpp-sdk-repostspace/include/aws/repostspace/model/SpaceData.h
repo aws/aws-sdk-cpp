@@ -334,54 +334,54 @@ class SpaceData {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ConfigurationStatus m_configurationStatus{ConfigurationStatus::NOT_SET};
-  bool m_configurationStatusHasBeenSet = false;
 
   VanityDomainStatus m_vanityDomainStatus{VanityDomainStatus::NOT_SET};
-  bool m_vanityDomainStatusHasBeenSet = false;
 
   Aws::String m_vanityDomain;
-  bool m_vanityDomainHasBeenSet = false;
 
   Aws::String m_randomDomain;
-  bool m_randomDomainHasBeenSet = false;
 
   TierLevel m_tier{TierLevel::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   long long m_storageLimit{0};
-  bool m_storageLimitHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDateTime{};
-  bool m_createDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteDateTime{};
-  bool m_deleteDateTimeHasBeenSet = false;
 
   Aws::String m_userKMSKey;
-  bool m_userKMSKeyHasBeenSet = false;
 
   int m_userCount{0};
-  bool m_userCountHasBeenSet = false;
 
   long long m_contentSize{0};
-  bool m_contentSizeHasBeenSet = false;
 
   SupportedEmailDomainsStatus m_supportedEmailDomains;
+  bool m_spaceIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_configurationStatusHasBeenSet = false;
+  bool m_vanityDomainStatusHasBeenSet = false;
+  bool m_vanityDomainHasBeenSet = false;
+  bool m_randomDomainHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_storageLimitHasBeenSet = false;
+  bool m_createDateTimeHasBeenSet = false;
+  bool m_deleteDateTimeHasBeenSet = false;
+  bool m_userKMSKeyHasBeenSet = false;
+  bool m_userCountHasBeenSet = false;
+  bool m_contentSizeHasBeenSet = false;
   bool m_supportedEmailDomainsHasBeenSet = false;
 };
 

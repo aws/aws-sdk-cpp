@@ -134,18 +134,18 @@ class GetSolNetworkOperationMetadata {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   InstantiateMetadata m_instantiateMetadata;
-  bool m_instantiateMetadataHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   ModifyVnfInfoMetadata m_modifyVnfInfoMetadata;
-  bool m_modifyVnfInfoMetadataHasBeenSet = false;
 
   UpdateNsMetadata m_updateNsMetadata;
+  bool m_createdAtHasBeenSet = false;
+  bool m_instantiateMetadataHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_modifyVnfInfoMetadataHasBeenSet = false;
   bool m_updateNsMetadataHasBeenSet = false;
 };
 

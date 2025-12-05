@@ -86,12 +86,12 @@ class JobLog {
   ///@}
  private:
   JobLogEvent m_event{JobLogEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   JobLogEventData m_eventData;
-  bool m_eventDataHasBeenSet = false;
 
   Aws::String m_logDateTime;
+  bool m_eventHasBeenSet = false;
+  bool m_eventDataHasBeenSet = false;
   bool m_logDateTimeHasBeenSet = false;
 };
 

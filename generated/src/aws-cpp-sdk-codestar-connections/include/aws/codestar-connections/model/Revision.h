@@ -141,21 +141,21 @@ class Revision {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_directory;
-  bool m_directoryHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_sha;
+  bool m_branchHasBeenSet = false;
+  bool m_directoryHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
   bool m_shaHasBeenSet = false;
 };
 

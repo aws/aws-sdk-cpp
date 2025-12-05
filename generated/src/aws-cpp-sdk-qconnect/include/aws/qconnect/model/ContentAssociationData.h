@@ -202,30 +202,30 @@ class ContentAssociationData {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_contentArn;
-  bool m_contentArnHasBeenSet = false;
 
   Aws::String m_contentAssociationId;
-  bool m_contentAssociationIdHasBeenSet = false;
 
   Aws::String m_contentAssociationArn;
-  bool m_contentAssociationArnHasBeenSet = false;
 
   ContentAssociationType m_associationType{ContentAssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   ContentAssociationContents m_associationData;
-  bool m_associationDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_contentIdHasBeenSet = false;
+  bool m_contentArnHasBeenSet = false;
+  bool m_contentAssociationIdHasBeenSet = false;
+  bool m_contentAssociationArnHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_associationDataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

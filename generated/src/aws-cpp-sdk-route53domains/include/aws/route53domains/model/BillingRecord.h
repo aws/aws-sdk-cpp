@@ -127,18 +127,18 @@ class BillingRecord {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   OperationType m_operation{OperationType::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_invoiceId;
-  bool m_invoiceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_billDate{};
-  bool m_billDateHasBeenSet = false;
 
   double m_price{0.0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_invoiceIdHasBeenSet = false;
+  bool m_billDateHasBeenSet = false;
   bool m_priceHasBeenSet = false;
 };
 

@@ -130,18 +130,18 @@ class HttpsNotificationConfiguration {
   ///@}
  private:
   Aws::String m_authorizationApiKeyName;
-  bool m_authorizationApiKeyNameHasBeenSet = false;
 
   Aws::String m_authorizationApiKeyValue;
-  bool m_authorizationApiKeyValueHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   HttpMethod m_httpMethod{HttpMethod::NOT_SET};
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::String m_targetRoleArn;
+  bool m_authorizationApiKeyNameHasBeenSet = false;
+  bool m_authorizationApiKeyValueHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
   bool m_targetRoleArnHasBeenSet = false;
 };
 

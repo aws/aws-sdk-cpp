@@ -135,18 +135,18 @@ class MemberSpecification {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<MemberAbility> m_memberAbilities;
-  bool m_memberAbilitiesHasBeenSet = false;
 
   MLMemberAbilities m_mlMemberAbilities;
-  bool m_mlMemberAbilitiesHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   PaymentConfiguration m_paymentConfiguration;
+  bool m_accountIdHasBeenSet = false;
+  bool m_memberAbilitiesHasBeenSet = false;
+  bool m_mlMemberAbilitiesHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_paymentConfigurationHasBeenSet = false;
 };
 

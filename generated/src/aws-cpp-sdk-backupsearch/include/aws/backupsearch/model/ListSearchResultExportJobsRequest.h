@@ -108,15 +108,15 @@ class ListSearchResultExportJobsRequest : public BackupSearchRequest {
   ///@}
  private:
   ExportJobStatus m_status{ExportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_searchJobIdentifier;
-  bool m_searchJobIdentifierHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_statusHasBeenSet = false;
+  bool m_searchJobIdentifierHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

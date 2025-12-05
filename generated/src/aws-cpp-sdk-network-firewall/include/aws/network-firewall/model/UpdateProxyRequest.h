@@ -183,24 +183,24 @@ class UpdateProxyRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   Aws::String m_proxyName;
-  bool m_proxyNameHasBeenSet = false;
 
   Aws::String m_proxyArn;
-  bool m_proxyArnHasBeenSet = false;
 
   Aws::Vector<ListenerPropertyRequest> m_listenerPropertiesToAdd;
-  bool m_listenerPropertiesToAddHasBeenSet = false;
 
   Aws::Vector<ListenerPropertyRequest> m_listenerPropertiesToRemove;
-  bool m_listenerPropertiesToRemoveHasBeenSet = false;
 
   TlsInterceptPropertiesRequest m_tlsInterceptProperties;
-  bool m_tlsInterceptPropertiesHasBeenSet = false;
 
   Aws::String m_updateToken;
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_proxyNameHasBeenSet = false;
+  bool m_proxyArnHasBeenSet = false;
+  bool m_listenerPropertiesToAddHasBeenSet = false;
+  bool m_listenerPropertiesToRemoveHasBeenSet = false;
+  bool m_tlsInterceptPropertiesHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
 };
 

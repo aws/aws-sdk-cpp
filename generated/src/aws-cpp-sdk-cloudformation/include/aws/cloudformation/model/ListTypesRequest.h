@@ -187,24 +187,24 @@ class ListTypesRequest : public CloudFormationRequest {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   ProvisioningType m_provisioningType{ProvisioningType::NOT_SET};
-  bool m_provisioningTypeHasBeenSet = false;
 
   DeprecatedStatus m_deprecatedStatus{DeprecatedStatus::NOT_SET};
-  bool m_deprecatedStatusHasBeenSet = false;
 
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TypeFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_visibilityHasBeenSet = false;
+  bool m_provisioningTypeHasBeenSet = false;
+  bool m_deprecatedStatusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

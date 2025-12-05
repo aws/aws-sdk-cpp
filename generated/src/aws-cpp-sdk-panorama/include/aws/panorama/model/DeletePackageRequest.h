@@ -69,9 +69,9 @@ class DeletePackageRequest : public PanoramaRequest {
   ///@}
  private:
   bool m_forceDelete{false};
-  bool m_forceDeleteHasBeenSet = false;
 
   Aws::String m_packageId;
+  bool m_forceDeleteHasBeenSet = false;
   bool m_packageIdHasBeenSet = false;
 };
 

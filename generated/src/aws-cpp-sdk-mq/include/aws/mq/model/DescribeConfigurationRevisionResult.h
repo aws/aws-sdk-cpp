@@ -112,18 +112,18 @@ class DescribeConfigurationRevisionResult {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationIdHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class RegistryScanningConfiguration {
   ///@}
  private:
   ScanType m_scanType{ScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   Aws::Vector<RegistryScanningRule> m_rules;
+  bool m_scanTypeHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class LDAPSSettingInfo {
   ///@}
  private:
   LDAPSStatus m_lDAPSStatus{LDAPSStatus::NOT_SET};
-  bool m_lDAPSStatusHasBeenSet = false;
 
   Aws::String m_lDAPSStatusReason;
-  bool m_lDAPSStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_lDAPSStatusHasBeenSet = false;
+  bool m_lDAPSStatusReasonHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

@@ -136,18 +136,18 @@ class MigrationTask {
   ///@}
  private:
   Aws::String m_progressUpdateStream;
-  bool m_progressUpdateStreamHasBeenSet = false;
 
   Aws::String m_migrationTaskName;
-  bool m_migrationTaskNameHasBeenSet = false;
 
   Task m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   Aws::Vector<ResourceAttribute> m_resourceAttributeList;
+  bool m_progressUpdateStreamHasBeenSet = false;
+  bool m_migrationTaskNameHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
   bool m_resourceAttributeListHasBeenSet = false;
 };
 

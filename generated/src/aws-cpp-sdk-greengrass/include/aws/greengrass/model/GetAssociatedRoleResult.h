@@ -76,12 +76,12 @@ class GetAssociatedRoleResult {
   ///@}
  private:
   Aws::String m_associatedAt;
-  bool m_associatedAtHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedAtHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

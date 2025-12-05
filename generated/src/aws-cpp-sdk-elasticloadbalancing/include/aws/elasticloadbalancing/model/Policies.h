@@ -112,12 +112,12 @@ class Policies {
   ///@}
  private:
   Aws::Vector<AppCookieStickinessPolicy> m_appCookieStickinessPolicies;
-  bool m_appCookieStickinessPoliciesHasBeenSet = false;
 
   Aws::Vector<LBCookieStickinessPolicy> m_lBCookieStickinessPolicies;
-  bool m_lBCookieStickinessPoliciesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_otherPolicies;
+  bool m_appCookieStickinessPoliciesHasBeenSet = false;
+  bool m_lBCookieStickinessPoliciesHasBeenSet = false;
   bool m_otherPoliciesHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class Usage {
   ///@}
  private:
   int m_inputTokens{0};
-  bool m_inputTokensHasBeenSet = false;
 
   int m_outputTokens{0};
+  bool m_inputTokensHasBeenSet = false;
   bool m_outputTokensHasBeenSet = false;
 };
 

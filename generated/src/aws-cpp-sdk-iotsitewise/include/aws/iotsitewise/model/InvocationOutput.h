@@ -78,9 +78,9 @@ class InvocationOutput {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Citation> m_citations;
+  bool m_messageHasBeenSet = false;
   bool m_citationsHasBeenSet = false;
 };
 

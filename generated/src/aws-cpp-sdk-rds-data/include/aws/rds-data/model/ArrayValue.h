@@ -150,18 +150,18 @@ class ArrayValue {
   ///@}
  private:
   Aws::Vector<bool> m_booleanValues;
-  bool m_booleanValuesHasBeenSet = false;
 
   Aws::Vector<long long> m_longValues;
-  bool m_longValuesHasBeenSet = false;
 
   Aws::Vector<double> m_doubleValues;
-  bool m_doubleValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringValues;
-  bool m_stringValuesHasBeenSet = false;
 
   Aws::Vector<ArrayValue> m_arrayValues;
+  bool m_booleanValuesHasBeenSet = false;
+  bool m_longValuesHasBeenSet = false;
+  bool m_doubleValuesHasBeenSet = false;
+  bool m_stringValuesHasBeenSet = false;
   bool m_arrayValuesHasBeenSet = false;
 };
 

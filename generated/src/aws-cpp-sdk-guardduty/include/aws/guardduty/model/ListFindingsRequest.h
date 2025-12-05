@@ -178,18 +178,18 @@ class ListFindingsRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   FindingCriteria m_findingCriteria;
-  bool m_findingCriteriaHasBeenSet = false;
 
   SortCriteria m_sortCriteria;
-  bool m_sortCriteriaHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_findingCriteriaHasBeenSet = false;
+  bool m_sortCriteriaHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

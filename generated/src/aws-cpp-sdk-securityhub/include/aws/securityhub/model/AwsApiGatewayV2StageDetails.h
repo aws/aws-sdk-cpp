@@ -284,42 +284,42 @@ class AwsApiGatewayV2StageDetails {
   ///@}
  private:
   Aws::String m_clientCertificateId;
-  bool m_clientCertificateIdHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AwsApiGatewayV2RouteSettings m_defaultRouteSettings;
-  bool m_defaultRouteSettingsHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_lastUpdatedDate;
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   AwsApiGatewayV2RouteSettings m_routeSettings;
-  bool m_routeSettingsHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_stageVariables;
-  bool m_stageVariablesHasBeenSet = false;
 
   AwsApiGatewayAccessLogSettings m_accessLogSettings;
-  bool m_accessLogSettingsHasBeenSet = false;
 
   bool m_autoDeploy{false};
-  bool m_autoDeployHasBeenSet = false;
 
   Aws::String m_lastDeploymentStatusMessage;
-  bool m_lastDeploymentStatusMessageHasBeenSet = false;
 
   bool m_apiGatewayManaged{false};
+  bool m_clientCertificateIdHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultRouteSettingsHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_routeSettingsHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_stageVariablesHasBeenSet = false;
+  bool m_accessLogSettingsHasBeenSet = false;
+  bool m_autoDeployHasBeenSet = false;
+  bool m_lastDeploymentStatusMessageHasBeenSet = false;
   bool m_apiGatewayManagedHasBeenSet = false;
 };
 

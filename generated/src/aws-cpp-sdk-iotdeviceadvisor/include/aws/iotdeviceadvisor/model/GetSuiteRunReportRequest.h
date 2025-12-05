@@ -65,9 +65,9 @@ class GetSuiteRunReportRequest : public IoTDeviceAdvisorRequest {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteRunId;
+  bool m_suiteDefinitionIdHasBeenSet = false;
   bool m_suiteRunIdHasBeenSet = false;
 };
 

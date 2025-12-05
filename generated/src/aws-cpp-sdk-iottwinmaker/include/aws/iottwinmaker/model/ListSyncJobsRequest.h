@@ -82,12 +82,12 @@ class ListSyncJobsRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

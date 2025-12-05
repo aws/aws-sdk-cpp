@@ -94,12 +94,12 @@ class CreatePortalProductRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -88,13 +88,13 @@ class SetSecurityGroupsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic{
       EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET};
-  bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ContactTargetInfo {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   bool m_isEssential{false};
+  bool m_contactIdHasBeenSet = false;
   bool m_isEssentialHasBeenSet = false;
 };
 

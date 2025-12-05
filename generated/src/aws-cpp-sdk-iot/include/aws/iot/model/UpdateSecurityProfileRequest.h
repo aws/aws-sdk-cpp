@@ -259,36 +259,36 @@ class UpdateSecurityProfileRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_securityProfileDescription;
-  bool m_securityProfileDescriptionHasBeenSet = false;
 
   Aws::Vector<Behavior> m_behaviors;
-  bool m_behaviorsHasBeenSet = false;
 
   Aws::Map<AlertTargetType, AlertTarget> m_alertTargets;
-  bool m_alertTargetsHasBeenSet = false;
 
   Aws::Vector<MetricToRetain> m_additionalMetricsToRetainV2;
-  bool m_additionalMetricsToRetainV2HasBeenSet = false;
 
   bool m_deleteBehaviors{false};
-  bool m_deleteBehaviorsHasBeenSet = false;
 
   bool m_deleteAlertTargets{false};
-  bool m_deleteAlertTargetsHasBeenSet = false;
 
   bool m_deleteAdditionalMetricsToRetain{false};
-  bool m_deleteAdditionalMetricsToRetainHasBeenSet = false;
 
   long long m_expectedVersion{0};
-  bool m_expectedVersionHasBeenSet = false;
 
   MetricsExportConfig m_metricsExportConfig;
-  bool m_metricsExportConfigHasBeenSet = false;
 
   bool m_deleteMetricsExportConfig{false};
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_securityProfileDescriptionHasBeenSet = false;
+  bool m_behaviorsHasBeenSet = false;
+  bool m_alertTargetsHasBeenSet = false;
+  bool m_additionalMetricsToRetainV2HasBeenSet = false;
+  bool m_deleteBehaviorsHasBeenSet = false;
+  bool m_deleteAlertTargetsHasBeenSet = false;
+  bool m_deleteAdditionalMetricsToRetainHasBeenSet = false;
+  bool m_expectedVersionHasBeenSet = false;
+  bool m_metricsExportConfigHasBeenSet = false;
   bool m_deleteMetricsExportConfigHasBeenSet = false;
 };
 

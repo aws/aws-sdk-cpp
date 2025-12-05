@@ -86,12 +86,12 @@ class GetManagedPrefixListAssociationsResponse {
   ///@}
  private:
   Aws::Vector<PrefixListAssociation> m_prefixListAssociations;
-  bool m_prefixListAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_prefixListAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

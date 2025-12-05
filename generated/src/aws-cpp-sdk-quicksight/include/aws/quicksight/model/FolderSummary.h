@@ -158,24 +158,24 @@ class FolderSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FolderType m_folderType{FolderType::NOT_SET};
-  bool m_folderTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   SharingModel m_sharingModel{SharingModel::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_folderIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_folderTypeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_sharingModelHasBeenSet = false;
 };
 

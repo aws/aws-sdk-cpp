@@ -87,12 +87,12 @@ class ConfigDetails {
   ///@}
  private:
   EndpointDetails m_endpointDetails;
-  bool m_endpointDetailsHasBeenSet = false;
 
   AntennaDemodDecodeDetails m_antennaDemodDecodeDetails;
-  bool m_antennaDemodDecodeDetailsHasBeenSet = false;
 
   S3RecordingDetails m_s3RecordingDetails;
+  bool m_endpointDetailsHasBeenSet = false;
+  bool m_antennaDemodDecodeDetailsHasBeenSet = false;
   bool m_s3RecordingDetailsHasBeenSet = false;
 };
 

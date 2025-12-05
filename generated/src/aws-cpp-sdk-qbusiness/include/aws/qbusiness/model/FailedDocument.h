@@ -91,12 +91,12 @@ class FailedDocument {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_dataSourceId;
+  bool m_idHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
 };
 

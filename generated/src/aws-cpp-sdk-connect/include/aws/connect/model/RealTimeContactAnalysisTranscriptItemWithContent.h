@@ -91,12 +91,12 @@ class RealTimeContactAnalysisTranscriptItemWithContent {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RealTimeContactAnalysisCharacterInterval m_characterOffsets;
+  bool m_contentHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_characterOffsetsHasBeenSet = false;
 };
 

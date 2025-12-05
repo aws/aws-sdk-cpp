@@ -87,12 +87,12 @@ class MediaInsightsPipelineConfigurationSummary {
   ///@}
  private:
   Aws::String m_mediaInsightsPipelineConfigurationName;
-  bool m_mediaInsightsPipelineConfigurationNameHasBeenSet = false;
 
   Aws::String m_mediaInsightsPipelineConfigurationId;
-  bool m_mediaInsightsPipelineConfigurationIdHasBeenSet = false;
 
   Aws::String m_mediaInsightsPipelineConfigurationArn;
+  bool m_mediaInsightsPipelineConfigurationNameHasBeenSet = false;
+  bool m_mediaInsightsPipelineConfigurationIdHasBeenSet = false;
   bool m_mediaInsightsPipelineConfigurationArnHasBeenSet = false;
 };
 

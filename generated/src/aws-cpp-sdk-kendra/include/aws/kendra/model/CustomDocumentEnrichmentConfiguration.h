@@ -134,15 +134,15 @@ class CustomDocumentEnrichmentConfiguration {
   ///@}
  private:
   Aws::Vector<InlineCustomDocumentEnrichmentConfiguration> m_inlineConfigurations;
-  bool m_inlineConfigurationsHasBeenSet = false;
 
   HookConfiguration m_preExtractionHookConfiguration;
-  bool m_preExtractionHookConfigurationHasBeenSet = false;
 
   HookConfiguration m_postExtractionHookConfiguration;
-  bool m_postExtractionHookConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_inlineConfigurationsHasBeenSet = false;
+  bool m_preExtractionHookConfigurationHasBeenSet = false;
+  bool m_postExtractionHookConfigurationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

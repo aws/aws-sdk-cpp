@@ -68,9 +68,9 @@ class ExperimentReportS3Report {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_reportType;
+  bool m_arnHasBeenSet = false;
   bool m_reportTypeHasBeenSet = false;
 };
 

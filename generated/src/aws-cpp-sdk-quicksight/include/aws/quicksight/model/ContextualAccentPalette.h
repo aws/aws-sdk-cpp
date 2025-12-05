@@ -96,15 +96,15 @@ class ContextualAccentPalette {
   ///@}
  private:
   Palette m_connection;
-  bool m_connectionHasBeenSet = false;
 
   Palette m_visualization;
-  bool m_visualizationHasBeenSet = false;
 
   Palette m_insight;
-  bool m_insightHasBeenSet = false;
 
   Palette m_automation;
+  bool m_connectionHasBeenSet = false;
+  bool m_visualizationHasBeenSet = false;
+  bool m_insightHasBeenSet = false;
   bool m_automationHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class Counts {
   ///@}
  private:
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   GroupKey m_groupKey{GroupKey::NOT_SET};
+  bool m_countHasBeenSet = false;
   bool m_groupKeyHasBeenSet = false;
 };
 

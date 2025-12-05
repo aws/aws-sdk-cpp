@@ -186,27 +186,27 @@ class ModifyInstancePlacementRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   int m_partitionNumber{0};
-  bool m_partitionNumberHasBeenSet = false;
 
   Aws::String m_hostResourceGroupArn;
-  bool m_hostResourceGroupArnHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   HostTenancy m_tenancy{HostTenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Affinity m_affinity{Affinity::NOT_SET};
-  bool m_affinityHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_groupNameHasBeenSet = false;
+  bool m_partitionNumberHasBeenSet = false;
+  bool m_hostResourceGroupArnHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_affinityHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

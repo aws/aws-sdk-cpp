@@ -168,24 +168,24 @@ class InvoiceUnit {
   ///@}
  private:
   Aws::String m_invoiceUnitArn;
-  bool m_invoiceUnitArnHasBeenSet = false;
 
   Aws::String m_invoiceReceiver;
-  bool m_invoiceReceiverHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_taxInheritanceDisabled{false};
-  bool m_taxInheritanceDisabledHasBeenSet = false;
 
   InvoiceUnitRule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
+  bool m_invoiceUnitArnHasBeenSet = false;
+  bool m_invoiceReceiverHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_taxInheritanceDisabledHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
 };
 

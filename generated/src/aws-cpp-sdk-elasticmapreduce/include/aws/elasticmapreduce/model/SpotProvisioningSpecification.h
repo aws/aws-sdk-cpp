@@ -135,15 +135,15 @@ class SpotProvisioningSpecification {
   ///@}
  private:
   int m_timeoutDurationMinutes{0};
-  bool m_timeoutDurationMinutesHasBeenSet = false;
 
   SpotProvisioningTimeoutAction m_timeoutAction{SpotProvisioningTimeoutAction::NOT_SET};
-  bool m_timeoutActionHasBeenSet = false;
 
   int m_blockDurationMinutes{0};
-  bool m_blockDurationMinutesHasBeenSet = false;
 
   SpotProvisioningAllocationStrategy m_allocationStrategy{SpotProvisioningAllocationStrategy::NOT_SET};
+  bool m_timeoutDurationMinutesHasBeenSet = false;
+  bool m_timeoutActionHasBeenSet = false;
+  bool m_blockDurationMinutesHasBeenSet = false;
   bool m_allocationStrategyHasBeenSet = false;
 };
 

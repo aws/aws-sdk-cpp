@@ -226,27 +226,27 @@ class CreateImageRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   SnapshotLocationEnum m_snapshotLocation{SnapshotLocationEnum::NOT_SET};
-  bool m_snapshotLocationHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_noReboot{false};
-  bool m_noRebootHasBeenSet = false;
 
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_snapshotLocationHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_noRebootHasBeenSet = false;
   bool m_blockDeviceMappingsHasBeenSet = false;
 };
 

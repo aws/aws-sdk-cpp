@@ -69,9 +69,9 @@ class OperationalHour {
   ///@}
  private:
   OverrideTimeSlice m_start;
-  bool m_startHasBeenSet = false;
 
   OverrideTimeSlice m_end;
+  bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

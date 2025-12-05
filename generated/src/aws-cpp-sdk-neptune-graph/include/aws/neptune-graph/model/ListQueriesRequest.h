@@ -92,12 +92,12 @@ class ListQueriesRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   QueryStateInput m_state{QueryStateInput::NOT_SET};
+  bool m_graphIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class TerminateClientVpnConnectionsResponse {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Vector<TerminateConnectionStatus> m_connectionStatuses;
-  bool m_connectionStatusesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_connectionStatusesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

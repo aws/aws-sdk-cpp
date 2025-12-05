@@ -59,9 +59,9 @@ class CreateRelayResult {
   ///@}
  private:
   Aws::String m_relayId;
-  bool m_relayIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relayIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

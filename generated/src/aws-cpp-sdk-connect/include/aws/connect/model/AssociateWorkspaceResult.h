@@ -92,12 +92,12 @@ class AssociateWorkspaceResult {
   ///@}
  private:
   Aws::Vector<SuccessfulBatchAssociationSummary> m_successfulList;
-  bool m_successfulListHasBeenSet = false;
 
   Aws::Vector<FailedBatchAssociationSummary> m_failedList;
-  bool m_failedListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulListHasBeenSet = false;
+  bool m_failedListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

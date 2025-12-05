@@ -71,9 +71,9 @@ class StreamingConfigurations {
   ///@}
  private:
   int m_applyGuardrailInterval{0};
-  bool m_applyGuardrailIntervalHasBeenSet = false;
 
   bool m_streamFinalResponse{false};
+  bool m_applyGuardrailIntervalHasBeenSet = false;
   bool m_streamFinalResponseHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class GatewayRouteSpec {
   ///@}
  private:
   GrpcGatewayRoute m_grpcRoute;
-  bool m_grpcRouteHasBeenSet = false;
 
   HttpGatewayRoute m_http2Route;
-  bool m_http2RouteHasBeenSet = false;
 
   HttpGatewayRoute m_httpRoute;
-  bool m_httpRouteHasBeenSet = false;
 
   int m_priority{0};
+  bool m_grpcRouteHasBeenSet = false;
+  bool m_http2RouteHasBeenSet = false;
+  bool m_httpRouteHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

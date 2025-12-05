@@ -72,9 +72,9 @@ class GetHostedZoneLimitRequest : public Route53Request {
   ///@}
  private:
   HostedZoneLimitType m_type{HostedZoneLimitType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
+  bool m_typeHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;
 };
 

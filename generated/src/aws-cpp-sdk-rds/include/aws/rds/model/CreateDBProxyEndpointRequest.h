@@ -191,24 +191,24 @@ class CreateDBProxyEndpointRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBProxyName;
-  bool m_dBProxyNameHasBeenSet = false;
 
   Aws::String m_dBProxyEndpointName;
-  bool m_dBProxyEndpointNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSubnetIds;
-  bool m_vpcSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   DBProxyEndpointTargetRole m_targetRole{DBProxyEndpointTargetRole::NOT_SET};
-  bool m_targetRoleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EndpointNetworkType m_endpointNetworkType{EndpointNetworkType::NOT_SET};
+  bool m_dBProxyNameHasBeenSet = false;
+  bool m_dBProxyEndpointNameHasBeenSet = false;
+  bool m_vpcSubnetIdsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_targetRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_endpointNetworkTypeHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class MetricDataResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<long long> m_values;
+  bool m_idHasBeenSet = false;
+  bool m_timestampsHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

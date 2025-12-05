@@ -141,18 +141,18 @@ class UpdateDomainContactPrivacyRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_adminPrivacy{false};
-  bool m_adminPrivacyHasBeenSet = false;
 
   bool m_registrantPrivacy{false};
-  bool m_registrantPrivacyHasBeenSet = false;
 
   bool m_techPrivacy{false};
-  bool m_techPrivacyHasBeenSet = false;
 
   bool m_billingPrivacy{false};
+  bool m_domainNameHasBeenSet = false;
+  bool m_adminPrivacyHasBeenSet = false;
+  bool m_registrantPrivacyHasBeenSet = false;
+  bool m_techPrivacyHasBeenSet = false;
   bool m_billingPrivacyHasBeenSet = false;
 };
 

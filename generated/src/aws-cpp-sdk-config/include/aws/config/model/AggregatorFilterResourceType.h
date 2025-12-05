@@ -78,9 +78,9 @@ class AggregatorFilterResourceType {
   ///@}
  private:
   AggregatorFilterType m_type{AggregatorFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_value;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

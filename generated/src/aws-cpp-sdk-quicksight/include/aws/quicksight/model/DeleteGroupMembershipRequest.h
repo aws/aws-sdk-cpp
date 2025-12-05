@@ -103,15 +103,15 @@ class DeleteGroupMembershipRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_memberName;
-  bool m_memberNameHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_memberNameHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

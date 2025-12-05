@@ -171,24 +171,24 @@ class GatewaySummary {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_gatewayName;
-  bool m_gatewayNameHasBeenSet = false;
 
   GatewayPlatform m_gatewayPlatform;
-  bool m_gatewayPlatformHasBeenSet = false;
 
   Aws::String m_gatewayVersion;
-  bool m_gatewayVersionHasBeenSet = false;
 
   Aws::Vector<GatewayCapabilitySummary> m_gatewayCapabilitySummaries;
-  bool m_gatewayCapabilitySummariesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_gatewayNameHasBeenSet = false;
+  bool m_gatewayPlatformHasBeenSet = false;
+  bool m_gatewayVersionHasBeenSet = false;
+  bool m_gatewayCapabilitySummariesHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastUpdateDateHasBeenSet = false;
 };
 

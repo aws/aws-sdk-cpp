@@ -179,24 +179,24 @@ class UpdateLaunchRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<LaunchGroupConfig> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_launch;
-  bool m_launchHasBeenSet = false;
 
   Aws::Vector<MetricMonitorConfig> m_metricMonitors;
-  bool m_metricMonitorsHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::String m_randomizationSalt;
-  bool m_randomizationSaltHasBeenSet = false;
 
   ScheduledSplitsLaunchConfig m_scheduledSplitsConfig;
+  bool m_descriptionHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_launchHasBeenSet = false;
+  bool m_metricMonitorsHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_randomizationSaltHasBeenSet = false;
   bool m_scheduledSplitsConfigHasBeenSet = false;
 };
 

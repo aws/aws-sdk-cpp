@@ -99,12 +99,12 @@ class TemporalStatisticsConfigInput {
   ///@}
  private:
   GroupBy m_groupBy{GroupBy::NOT_SET};
-  bool m_groupByHasBeenSet = false;
 
   Aws::Vector<TemporalStatistics> m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetBands;
+  bool m_groupByHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
   bool m_targetBandsHasBeenSet = false;
 };
 

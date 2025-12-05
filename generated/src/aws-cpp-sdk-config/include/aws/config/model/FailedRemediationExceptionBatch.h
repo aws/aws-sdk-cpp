@@ -77,9 +77,9 @@ class FailedRemediationExceptionBatch {
   ///@}
  private:
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Vector<RemediationException> m_failedItems;
+  bool m_failureMessageHasBeenSet = false;
   bool m_failedItemsHasBeenSet = false;
 };
 

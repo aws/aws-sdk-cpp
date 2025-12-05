@@ -175,27 +175,27 @@ class ListWirelessDevicesRequest : public IoTWirelessRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_deviceProfileId;
-  bool m_deviceProfileIdHasBeenSet = false;
 
   Aws::String m_serviceProfileId;
-  bool m_serviceProfileIdHasBeenSet = false;
 
   WirelessDeviceType m_wirelessDeviceType{WirelessDeviceType::NOT_SET};
-  bool m_wirelessDeviceTypeHasBeenSet = false;
 
   Aws::String m_fuotaTaskId;
-  bool m_fuotaTaskIdHasBeenSet = false;
 
   Aws::String m_multicastGroupId;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_deviceProfileIdHasBeenSet = false;
+  bool m_serviceProfileIdHasBeenSet = false;
+  bool m_wirelessDeviceTypeHasBeenSet = false;
+  bool m_fuotaTaskIdHasBeenSet = false;
   bool m_multicastGroupIdHasBeenSet = false;
 };
 

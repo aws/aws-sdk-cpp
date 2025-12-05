@@ -67,9 +67,9 @@ class DomainUnitFilterForProject {
   ///@}
  private:
   Aws::String m_domainUnit;
-  bool m_domainUnitHasBeenSet = false;
 
   bool m_includeChildDomainUnits{false};
+  bool m_domainUnitHasBeenSet = false;
   bool m_includeChildDomainUnitsHasBeenSet = false;
 };
 

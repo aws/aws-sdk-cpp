@@ -97,9 +97,9 @@ class DynamoDBv2Action {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Payload m_payload;
+  bool m_tableNameHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

@@ -165,24 +165,24 @@ class DeleteAppVersionResourceRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   LogicalResourceId m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_appArnHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

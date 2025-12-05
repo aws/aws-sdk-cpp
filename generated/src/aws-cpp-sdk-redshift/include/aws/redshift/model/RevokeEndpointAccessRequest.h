@@ -112,15 +112,15 @@ class RevokeEndpointAccessRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcIds;
-  bool m_vpcIdsHasBeenSet = false;
 
   bool m_force{false};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_accountHasBeenSet = false;
+  bool m_vpcIdsHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

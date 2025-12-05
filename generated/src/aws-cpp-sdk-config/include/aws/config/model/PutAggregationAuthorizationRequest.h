@@ -93,12 +93,12 @@ class PutAggregationAuthorizationRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_authorizedAccountId;
-  bool m_authorizedAccountIdHasBeenSet = false;
 
   Aws::String m_authorizedAwsRegion;
-  bool m_authorizedAwsRegionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_authorizedAccountIdHasBeenSet = false;
+  bool m_authorizedAwsRegionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

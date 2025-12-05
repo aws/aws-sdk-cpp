@@ -273,36 +273,36 @@ class Accelerator {
   ///@}
  private:
   Aws::String m_acceleratorArn;
-  bool m_acceleratorArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<IpSet> m_ipSets;
-  bool m_ipSetsHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   AcceleratorStatus m_status{AcceleratorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_dualStackDnsName;
-  bool m_dualStackDnsNameHasBeenSet = false;
 
   Aws::Vector<AcceleratorEvent> m_events;
+  bool m_acceleratorArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_ipSetsHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_dualStackDnsNameHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

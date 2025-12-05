@@ -58,9 +58,9 @@ class SetIpAddressTypeResult {
   ///@}
  private:
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

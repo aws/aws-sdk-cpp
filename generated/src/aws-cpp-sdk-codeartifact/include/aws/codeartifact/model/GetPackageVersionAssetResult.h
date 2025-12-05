@@ -108,18 +108,18 @@ class GetPackageVersionAssetResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_asset{};
-  bool m_assetHasBeenSet = false;
 
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_packageVersionRevision;
-  bool m_packageVersionRevisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetHasBeenSet = false;
+  bool m_assetNameHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
+  bool m_packageVersionRevisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

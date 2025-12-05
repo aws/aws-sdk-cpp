@@ -60,9 +60,9 @@ class CreateProfileResult {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

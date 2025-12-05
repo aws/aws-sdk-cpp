@@ -120,18 +120,18 @@ class ProgressCounters {
   ///@}
  private:
   int m_totalSteps{0};
-  bool m_totalStepsHasBeenSet = false;
 
   int m_successSteps{0};
-  bool m_successStepsHasBeenSet = false;
 
   int m_failedSteps{0};
-  bool m_failedStepsHasBeenSet = false;
 
   int m_cancelledSteps{0};
-  bool m_cancelledStepsHasBeenSet = false;
 
   int m_timedOutSteps{0};
+  bool m_totalStepsHasBeenSet = false;
+  bool m_successStepsHasBeenSet = false;
+  bool m_failedStepsHasBeenSet = false;
+  bool m_cancelledStepsHasBeenSet = false;
   bool m_timedOutStepsHasBeenSet = false;
 };
 

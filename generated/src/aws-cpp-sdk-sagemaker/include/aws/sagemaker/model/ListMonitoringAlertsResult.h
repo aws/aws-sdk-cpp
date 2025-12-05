@@ -85,12 +85,12 @@ class ListMonitoringAlertsResult {
   ///@}
  private:
   Aws::Vector<MonitoringAlertSummary> m_monitoringAlertSummaries;
-  bool m_monitoringAlertSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitoringAlertSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

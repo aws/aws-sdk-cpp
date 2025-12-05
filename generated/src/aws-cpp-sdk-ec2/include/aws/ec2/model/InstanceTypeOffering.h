@@ -90,12 +90,12 @@ class InstanceTypeOffering {
   ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   LocationType m_locationType{LocationType::NOT_SET};
-  bool m_locationTypeHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_locationTypeHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class AwsEcsTaskDefinitionVolumesDetails {
   ///@}
  private:
   AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails m_dockerVolumeConfiguration;
-  bool m_dockerVolumeConfigurationHasBeenSet = false;
 
   AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails m_efsVolumeConfiguration;
-  bool m_efsVolumeConfigurationHasBeenSet = false;
 
   AwsEcsTaskDefinitionVolumesHostDetails m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_dockerVolumeConfigurationHasBeenSet = false;
+  bool m_efsVolumeConfigurationHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

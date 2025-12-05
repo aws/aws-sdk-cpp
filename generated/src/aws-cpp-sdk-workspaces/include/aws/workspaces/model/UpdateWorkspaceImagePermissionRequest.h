@@ -86,12 +86,12 @@ class UpdateWorkspaceImagePermissionRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   bool m_allowCopyImage{false};
-  bool m_allowCopyImageHasBeenSet = false;
 
   Aws::String m_sharedAccountId;
+  bool m_imageIdHasBeenSet = false;
+  bool m_allowCopyImageHasBeenSet = false;
   bool m_sharedAccountIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class S3Configuration {
   ///@}
  private:
   Aws::String m_bucketARN;
-  bool m_bucketARNHasBeenSet = false;
 
   Aws::String m_fileKey;
+  bool m_bucketARNHasBeenSet = false;
   bool m_fileKeyHasBeenSet = false;
 };
 

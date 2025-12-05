@@ -220,30 +220,30 @@ class Delivery {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_deliverySourceName;
-  bool m_deliverySourceNameHasBeenSet = false;
 
   Aws::String m_deliveryDestinationArn;
-  bool m_deliveryDestinationArnHasBeenSet = false;
 
   DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
-  bool m_deliveryDestinationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recordFields;
-  bool m_recordFieldsHasBeenSet = false;
 
   Aws::String m_fieldDelimiter;
-  bool m_fieldDelimiterHasBeenSet = false;
 
   S3DeliveryConfiguration m_s3DeliveryConfiguration;
-  bool m_s3DeliveryConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_deliverySourceNameHasBeenSet = false;
+  bool m_deliveryDestinationArnHasBeenSet = false;
+  bool m_deliveryDestinationTypeHasBeenSet = false;
+  bool m_recordFieldsHasBeenSet = false;
+  bool m_fieldDelimiterHasBeenSet = false;
+  bool m_s3DeliveryConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

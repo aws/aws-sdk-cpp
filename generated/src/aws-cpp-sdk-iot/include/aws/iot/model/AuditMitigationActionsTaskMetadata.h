@@ -87,12 +87,12 @@ class AuditMitigationActionsTaskMetadata {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   AuditMitigationActionsTaskStatus m_taskStatus{AuditMitigationActionsTaskStatus::NOT_SET};
+  bool m_taskIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_taskStatusHasBeenSet = false;
 };
 

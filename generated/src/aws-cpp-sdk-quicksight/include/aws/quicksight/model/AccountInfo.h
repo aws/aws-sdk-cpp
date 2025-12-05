@@ -149,21 +149,21 @@ class AccountInfo {
   ///@}
  private:
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Edition m_edition{Edition::NOT_SET};
-  bool m_editionHasBeenSet = false;
 
   Aws::String m_notificationEmail;
-  bool m_notificationEmailHasBeenSet = false;
 
   Aws::String m_authenticationType;
-  bool m_authenticationTypeHasBeenSet = false;
 
   Aws::String m_accountSubscriptionStatus;
-  bool m_accountSubscriptionStatusHasBeenSet = false;
 
   Aws::String m_iAMIdentityCenterInstanceArn;
+  bool m_accountNameHasBeenSet = false;
+  bool m_editionHasBeenSet = false;
+  bool m_notificationEmailHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_accountSubscriptionStatusHasBeenSet = false;
   bool m_iAMIdentityCenterInstanceArnHasBeenSet = false;
 };
 

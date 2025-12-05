@@ -87,12 +87,12 @@ class SidewalkCreateWirelessDevice {
   ///@}
  private:
   Aws::String m_deviceProfileId;
-  bool m_deviceProfileIdHasBeenSet = false;
 
   SidewalkPositioning m_positioning;
-  bool m_positioningHasBeenSet = false;
 
   Aws::String m_sidewalkManufacturingSn;
+  bool m_deviceProfileIdHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
   bool m_sidewalkManufacturingSnHasBeenSet = false;
 };
 

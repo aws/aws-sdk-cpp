@@ -199,30 +199,30 @@ class QuantumTaskSummary {
   ///@}
  private:
   Aws::String m_quantumTaskArn;
-  bool m_quantumTaskArnHasBeenSet = false;
 
   QuantumTaskStatus m_status{QuantumTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   long long m_shots{0};
-  bool m_shotsHasBeenSet = false;
 
   Aws::String m_outputS3Bucket;
-  bool m_outputS3BucketHasBeenSet = false;
 
   Aws::String m_outputS3Directory;
-  bool m_outputS3DirectoryHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_quantumTaskArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_shotsHasBeenSet = false;
+  bool m_outputS3BucketHasBeenSet = false;
+  bool m_outputS3DirectoryHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

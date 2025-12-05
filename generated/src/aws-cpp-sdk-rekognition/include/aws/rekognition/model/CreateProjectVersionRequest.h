@@ -227,30 +227,30 @@ class CreateProjectVersionRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   TrainingData m_trainingData;
-  bool m_trainingDataHasBeenSet = false;
 
   TestingData m_testingData;
-  bool m_testingDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   CustomizationFeatureConfig m_featureConfig;
+  bool m_projectArnHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_trainingDataHasBeenSet = false;
+  bool m_testingDataHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
   bool m_featureConfigHasBeenSet = false;
 };
 

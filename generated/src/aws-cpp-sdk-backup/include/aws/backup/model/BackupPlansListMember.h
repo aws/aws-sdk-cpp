@@ -218,30 +218,30 @@ class BackupPlansListMember {
   ///@}
  private:
   Aws::String m_backupPlanArn;
-  bool m_backupPlanArnHasBeenSet = false;
 
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionDate{};
-  bool m_deletionDateHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_backupPlanName;
-  bool m_backupPlanNameHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastExecutionDate{};
-  bool m_lastExecutionDateHasBeenSet = false;
 
   Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
+  bool m_backupPlanArnHasBeenSet = false;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_deletionDateHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_backupPlanNameHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_lastExecutionDateHasBeenSet = false;
   bool m_advancedBackupSettingsHasBeenSet = false;
 };
 

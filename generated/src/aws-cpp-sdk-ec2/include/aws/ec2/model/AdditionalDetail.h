@@ -210,27 +210,27 @@ class AdditionalDetail {
   ///@}
  private:
   Aws::String m_additionalDetailType;
-  bool m_additionalDetailTypeHasBeenSet = false;
 
   AnalysisComponent m_component;
-  bool m_componentHasBeenSet = false;
 
   AnalysisComponent m_vpcEndpointService;
-  bool m_vpcEndpointServiceHasBeenSet = false;
 
   Aws::Vector<RuleOption> m_ruleOptions;
-  bool m_ruleOptionsHasBeenSet = false;
 
   Aws::Vector<RuleGroupTypePair> m_ruleGroupTypePairs;
-  bool m_ruleGroupTypePairsHasBeenSet = false;
 
   Aws::Vector<RuleGroupRuleOptionsPair> m_ruleGroupRuleOptionsPairs;
-  bool m_ruleGroupRuleOptionsPairsHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::Vector<AnalysisComponent> m_loadBalancers;
+  bool m_additionalDetailTypeHasBeenSet = false;
+  bool m_componentHasBeenSet = false;
+  bool m_vpcEndpointServiceHasBeenSet = false;
+  bool m_ruleOptionsHasBeenSet = false;
+  bool m_ruleGroupTypePairsHasBeenSet = false;
+  bool m_ruleGroupRuleOptionsPairsHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_loadBalancersHasBeenSet = false;
 };
 

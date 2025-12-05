@@ -118,15 +118,15 @@ class Type {
   ///@}
  private:
   ScalarType m_scalarType{ScalarType::NOT_SET};
-  bool m_scalarTypeHasBeenSet = false;
 
   std::shared_ptr<ColumnInfo> m_arrayColumnInfo;
-  bool m_arrayColumnInfoHasBeenSet = false;
 
   std::shared_ptr<ColumnInfo> m_timeSeriesMeasureValueColumnInfo;
-  bool m_timeSeriesMeasureValueColumnInfoHasBeenSet = false;
 
   Aws::Vector<ColumnInfo> m_rowColumnInfo;
+  bool m_scalarTypeHasBeenSet = false;
+  bool m_arrayColumnInfoHasBeenSet = false;
+  bool m_timeSeriesMeasureValueColumnInfoHasBeenSet = false;
   bool m_rowColumnInfoHasBeenSet = false;
 };
 

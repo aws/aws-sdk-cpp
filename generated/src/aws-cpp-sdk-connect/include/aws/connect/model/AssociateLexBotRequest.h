@@ -91,12 +91,12 @@ class AssociateLexBotRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   LexBot m_lexBot;
-  bool m_lexBotHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_lexBotHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

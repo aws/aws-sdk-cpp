@@ -85,9 +85,9 @@ class ValueMappings {
   ///@}
  private:
   Aws::Vector<ValueMapping> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Map<Aws::String, FormInputBindingPropertiesValue> m_bindingProperties;
+  bool m_valuesHasBeenSet = false;
   bool m_bindingPropertiesHasBeenSet = false;
 };
 

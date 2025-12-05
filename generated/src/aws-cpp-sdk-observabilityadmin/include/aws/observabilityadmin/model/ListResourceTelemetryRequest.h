@@ -167,21 +167,21 @@ class ListResourceTelemetryRequest : public ObservabilityAdminRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifierPrefix;
-  bool m_resourceIdentifierPrefixHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Map<TelemetryType, TelemetryState> m_telemetryConfigurationState;
-  bool m_telemetryConfigurationStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceIdentifierPrefixHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_telemetryConfigurationStateHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

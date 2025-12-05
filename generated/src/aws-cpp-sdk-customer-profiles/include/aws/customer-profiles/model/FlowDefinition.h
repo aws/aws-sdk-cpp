@@ -156,21 +156,21 @@ class FlowDefinition {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Aws::String m_kmsArn;
-  bool m_kmsArnHasBeenSet = false;
 
   SourceFlowConfig m_sourceFlowConfig;
-  bool m_sourceFlowConfigHasBeenSet = false;
 
   Aws::Vector<Task> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   TriggerConfig m_triggerConfig;
+  bool m_descriptionHasBeenSet = false;
+  bool m_flowNameHasBeenSet = false;
+  bool m_kmsArnHasBeenSet = false;
+  bool m_sourceFlowConfigHasBeenSet = false;
+  bool m_tasksHasBeenSet = false;
   bool m_triggerConfigHasBeenSet = false;
 };
 

@@ -131,18 +131,18 @@ class TestCaseScenario {
   ///@}
  private:
   Aws::String m_testCaseScenarioId;
-  bool m_testCaseScenarioIdHasBeenSet = false;
 
   TestCaseScenarioType m_testCaseScenarioType{TestCaseScenarioType::NOT_SET};
-  bool m_testCaseScenarioTypeHasBeenSet = false;
 
   TestCaseScenarioStatus m_status{TestCaseScenarioStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failure;
-  bool m_failureHasBeenSet = false;
 
   Aws::String m_systemMessage;
+  bool m_testCaseScenarioIdHasBeenSet = false;
+  bool m_testCaseScenarioTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureHasBeenSet = false;
   bool m_systemMessageHasBeenSet = false;
 };
 

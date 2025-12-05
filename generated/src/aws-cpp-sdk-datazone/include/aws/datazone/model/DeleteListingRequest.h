@@ -65,9 +65,9 @@ class DeleteListingRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

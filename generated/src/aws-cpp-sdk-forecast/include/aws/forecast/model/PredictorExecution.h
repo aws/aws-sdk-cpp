@@ -79,9 +79,9 @@ class PredictorExecution {
   ///@}
  private:
   Aws::String m_algorithmArn;
-  bool m_algorithmArnHasBeenSet = false;
 
   Aws::Vector<TestWindowSummary> m_testWindows;
+  bool m_algorithmArnHasBeenSet = false;
   bool m_testWindowsHasBeenSet = false;
 };
 

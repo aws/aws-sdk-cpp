@@ -127,18 +127,18 @@ class ListChannelsRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   ChannelPrivacy m_privacy{ChannelPrivacy::NOT_SET};
-  bool m_privacyHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_chimeBearer;
+  bool m_appInstanceArnHasBeenSet = false;
+  bool m_privacyHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_chimeBearerHasBeenSet = false;
 };
 

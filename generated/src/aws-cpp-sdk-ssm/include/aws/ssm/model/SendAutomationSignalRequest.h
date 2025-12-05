@@ -101,12 +101,12 @@ class SendAutomationSignalRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_automationExecutionId;
-  bool m_automationExecutionIdHasBeenSet = false;
 
   SignalType m_signalType{SignalType::NOT_SET};
-  bool m_signalTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_payload;
+  bool m_automationExecutionIdHasBeenSet = false;
+  bool m_signalTypeHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

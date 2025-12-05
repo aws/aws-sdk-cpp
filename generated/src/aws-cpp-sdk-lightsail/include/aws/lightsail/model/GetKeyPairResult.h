@@ -60,9 +60,9 @@ class GetKeyPairResult {
   ///@}
  private:
   KeyPair m_keyPair;
-  bool m_keyPairHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyPairHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

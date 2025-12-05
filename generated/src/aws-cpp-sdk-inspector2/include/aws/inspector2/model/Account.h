@@ -87,12 +87,12 @@ class Account {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResourceStatus m_resourceStatus;
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_resourceStatusHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class EventCategoryGroup {
   ///@}
  private:
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventCategories;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_eventCategoriesHasBeenSet = false;
 };
 

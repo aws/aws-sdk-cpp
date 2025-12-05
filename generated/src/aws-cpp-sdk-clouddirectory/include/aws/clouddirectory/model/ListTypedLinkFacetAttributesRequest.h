@@ -102,15 +102,15 @@ class ListTypedLinkFacetAttributesRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_schemaArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

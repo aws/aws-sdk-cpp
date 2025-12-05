@@ -305,54 +305,54 @@ class MultiplexProgramPacketIdentifiersMap {
   ///@}
  private:
   Aws::Vector<int> m_audioPids;
-  bool m_audioPidsHasBeenSet = false;
 
   Aws::Vector<int> m_dvbSubPids;
-  bool m_dvbSubPidsHasBeenSet = false;
 
   int m_dvbTeletextPid{0};
-  bool m_dvbTeletextPidHasBeenSet = false;
 
   int m_etvPlatformPid{0};
-  bool m_etvPlatformPidHasBeenSet = false;
 
   int m_etvSignalPid{0};
-  bool m_etvSignalPidHasBeenSet = false;
 
   Aws::Vector<int> m_klvDataPids;
-  bool m_klvDataPidsHasBeenSet = false;
 
   int m_pcrPid{0};
-  bool m_pcrPidHasBeenSet = false;
 
   int m_pmtPid{0};
-  bool m_pmtPidHasBeenSet = false;
 
   int m_privateMetadataPid{0};
-  bool m_privateMetadataPidHasBeenSet = false;
 
   Aws::Vector<int> m_scte27Pids;
-  bool m_scte27PidsHasBeenSet = false;
 
   int m_scte35Pid{0};
-  bool m_scte35PidHasBeenSet = false;
 
   int m_timedMetadataPid{0};
-  bool m_timedMetadataPidHasBeenSet = false;
 
   int m_videoPid{0};
-  bool m_videoPidHasBeenSet = false;
 
   int m_aribCaptionsPid{0};
-  bool m_aribCaptionsPidHasBeenSet = false;
 
   Aws::Vector<int> m_dvbTeletextPids;
-  bool m_dvbTeletextPidsHasBeenSet = false;
 
   int m_ecmPid{0};
-  bool m_ecmPidHasBeenSet = false;
 
   int m_smpte2038Pid{0};
+  bool m_audioPidsHasBeenSet = false;
+  bool m_dvbSubPidsHasBeenSet = false;
+  bool m_dvbTeletextPidHasBeenSet = false;
+  bool m_etvPlatformPidHasBeenSet = false;
+  bool m_etvSignalPidHasBeenSet = false;
+  bool m_klvDataPidsHasBeenSet = false;
+  bool m_pcrPidHasBeenSet = false;
+  bool m_pmtPidHasBeenSet = false;
+  bool m_privateMetadataPidHasBeenSet = false;
+  bool m_scte27PidsHasBeenSet = false;
+  bool m_scte35PidHasBeenSet = false;
+  bool m_timedMetadataPidHasBeenSet = false;
+  bool m_videoPidHasBeenSet = false;
+  bool m_aribCaptionsPidHasBeenSet = false;
+  bool m_dvbTeletextPidsHasBeenSet = false;
+  bool m_ecmPidHasBeenSet = false;
   bool m_smpte2038PidHasBeenSet = false;
 };
 

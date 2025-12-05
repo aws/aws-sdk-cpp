@@ -165,18 +165,18 @@ class UpdateGameServerGroupRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-  bool m_instanceDefinitionsHasBeenSet = false;
 
   GameServerProtectionPolicy m_gameServerProtectionPolicy{GameServerProtectionPolicy::NOT_SET};
-  bool m_gameServerProtectionPolicyHasBeenSet = false;
 
   BalancingStrategy m_balancingStrategy{BalancingStrategy::NOT_SET};
+  bool m_gameServerGroupNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_instanceDefinitionsHasBeenSet = false;
+  bool m_gameServerProtectionPolicyHasBeenSet = false;
   bool m_balancingStrategyHasBeenSet = false;
 };
 

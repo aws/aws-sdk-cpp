@@ -101,12 +101,12 @@ class WorkloadInsightsTopContributorsDataPoint {
   ///@}
  private:
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<double> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_label;
+  bool m_timestampsHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_labelHasBeenSet = false;
 };
 

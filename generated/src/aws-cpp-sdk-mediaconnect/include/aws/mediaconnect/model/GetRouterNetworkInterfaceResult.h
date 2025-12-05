@@ -61,9 +61,9 @@ class GetRouterNetworkInterfaceResult {
   ///@}
  private:
   RouterNetworkInterface m_routerNetworkInterface;
-  bool m_routerNetworkInterfaceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routerNetworkInterfaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

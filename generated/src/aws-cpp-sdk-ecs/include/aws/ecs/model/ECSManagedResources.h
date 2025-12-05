@@ -153,18 +153,18 @@ class ECSManagedResources {
   ///@}
  private:
   Aws::Vector<ManagedIngressPath> m_ingressPaths;
-  bool m_ingressPathsHasBeenSet = false;
 
   ManagedAutoScaling m_autoScaling;
-  bool m_autoScalingHasBeenSet = false;
 
   Aws::Vector<ManagedMetricAlarm> m_metricAlarms;
-  bool m_metricAlarmsHasBeenSet = false;
 
   Aws::Vector<ManagedSecurityGroup> m_serviceSecurityGroups;
-  bool m_serviceSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<ManagedLogGroup> m_logGroups;
+  bool m_ingressPathsHasBeenSet = false;
+  bool m_autoScalingHasBeenSet = false;
+  bool m_metricAlarmsHasBeenSet = false;
+  bool m_serviceSecurityGroupsHasBeenSet = false;
   bool m_logGroupsHasBeenSet = false;
 };
 

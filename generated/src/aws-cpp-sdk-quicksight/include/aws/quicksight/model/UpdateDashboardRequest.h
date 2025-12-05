@@ -260,33 +260,33 @@ class UpdateDashboardRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DashboardSourceEntity m_sourceEntity;
-  bool m_sourceEntityHasBeenSet = false;
 
   Parameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   DashboardPublishOptions m_dashboardPublishOptions;
-  bool m_dashboardPublishOptionsHasBeenSet = false;
 
   Aws::String m_themeArn;
-  bool m_themeArnHasBeenSet = false;
 
   DashboardVersionDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   ValidationStrategy m_validationStrategy;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceEntityHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_dashboardPublishOptionsHasBeenSet = false;
+  bool m_themeArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_validationStrategyHasBeenSet = false;
 };
 

@@ -193,21 +193,21 @@ class MatchAttributes {
   ///@}
  private:
   Aws::Vector<Address> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Vector<Address> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<PortRange> m_sourcePorts;
-  bool m_sourcePortsHasBeenSet = false;
 
   Aws::Vector<PortRange> m_destinationPorts;
-  bool m_destinationPortsHasBeenSet = false;
 
   Aws::Vector<int> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   Aws::Vector<TCPFlagField> m_tCPFlags;
+  bool m_sourcesHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_sourcePortsHasBeenSet = false;
+  bool m_destinationPortsHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
   bool m_tCPFlagsHasBeenSet = false;
 };
 

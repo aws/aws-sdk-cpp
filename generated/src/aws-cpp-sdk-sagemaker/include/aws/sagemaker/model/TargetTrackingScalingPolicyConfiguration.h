@@ -71,9 +71,9 @@ class TargetTrackingScalingPolicyConfiguration {
   ///@}
  private:
   MetricSpecification m_metricSpecification;
-  bool m_metricSpecificationHasBeenSet = false;
 
   double m_targetValue{0.0};
+  bool m_metricSpecificationHasBeenSet = false;
   bool m_targetValueHasBeenSet = false;
 };
 

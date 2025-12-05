@@ -108,12 +108,12 @@ class LocalSecondaryIndex {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   Projection m_projection;
+  bool m_indexNameHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
   bool m_projectionHasBeenSet = false;
 };
 

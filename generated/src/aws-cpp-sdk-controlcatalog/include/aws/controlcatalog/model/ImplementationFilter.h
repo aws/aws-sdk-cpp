@@ -88,9 +88,9 @@ class ImplementationFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_identifiers;
+  bool m_typesHasBeenSet = false;
   bool m_identifiersHasBeenSet = false;
 };
 

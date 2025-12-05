@@ -66,9 +66,9 @@ class EmailAddress {
   ///@}
  private:
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   bool m_verified{false};
+  bool m_emailHasBeenSet = false;
   bool m_verifiedHasBeenSet = false;
 };
 

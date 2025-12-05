@@ -78,12 +78,12 @@ class BinaryColumnStatisticsData {
   ///@}
  private:
   long long m_maximumLength{0};
-  bool m_maximumLengthHasBeenSet = false;
 
   double m_averageLength{0.0};
-  bool m_averageLengthHasBeenSet = false;
 
   long long m_numberOfNulls{0};
+  bool m_maximumLengthHasBeenSet = false;
+  bool m_averageLengthHasBeenSet = false;
   bool m_numberOfNullsHasBeenSet = false;
 };
 

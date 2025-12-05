@@ -87,12 +87,12 @@ class ListDatasetLabelsResult {
   ///@}
  private:
   Aws::Vector<DatasetLabelDescription> m_datasetLabelDescriptions;
-  bool m_datasetLabelDescriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetLabelDescriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

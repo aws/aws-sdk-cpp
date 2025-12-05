@@ -61,9 +61,9 @@ class DescribeDataTableResult {
   ///@}
  private:
   DataTable m_dataTable;
-  bool m_dataTableHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataTableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

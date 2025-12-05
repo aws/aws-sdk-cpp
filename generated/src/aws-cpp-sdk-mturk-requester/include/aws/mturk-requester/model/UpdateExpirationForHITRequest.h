@@ -68,9 +68,9 @@ class UpdateExpirationForHITRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_expireAt{};
+  bool m_hITIdHasBeenSet = false;
   bool m_expireAtHasBeenSet = false;
 };
 

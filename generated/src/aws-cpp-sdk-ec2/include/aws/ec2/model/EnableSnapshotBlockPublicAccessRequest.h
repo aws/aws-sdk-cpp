@@ -78,9 +78,9 @@ class EnableSnapshotBlockPublicAccessRequest : public EC2Request {
   ///@}
  private:
   SnapshotBlockPublicAccessState m_state{SnapshotBlockPublicAccessState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_stateHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

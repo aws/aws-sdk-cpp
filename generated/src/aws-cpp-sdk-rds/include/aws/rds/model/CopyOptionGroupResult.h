@@ -58,9 +58,9 @@ class CopyOptionGroupResult {
   ///@}
  private:
   OptionGroup m_optionGroup;
-  bool m_optionGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_optionGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

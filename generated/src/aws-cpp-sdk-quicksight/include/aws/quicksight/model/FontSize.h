@@ -69,9 +69,9 @@ class FontSize {
   ///@}
  private:
   RelativeFontSize m_relative{RelativeFontSize::NOT_SET};
-  bool m_relativeHasBeenSet = false;
 
   Aws::String m_absolute;
+  bool m_relativeHasBeenSet = false;
   bool m_absoluteHasBeenSet = false;
 };
 

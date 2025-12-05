@@ -64,9 +64,9 @@ class TagResourceRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   TagsModel m_tagsModel;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagsModelHasBeenSet = false;
 };
 

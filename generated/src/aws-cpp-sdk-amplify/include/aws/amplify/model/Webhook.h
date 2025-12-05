@@ -178,27 +178,27 @@ class Webhook {
   ///@}
  private:
   Aws::String m_webhookArn;
-  bool m_webhookArnHasBeenSet = false;
 
   Aws::String m_webhookId;
-  bool m_webhookIdHasBeenSet = false;
 
   Aws::String m_webhookUrl;
-  bool m_webhookUrlHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_webhookArnHasBeenSet = false;
+  bool m_webhookIdHasBeenSet = false;
+  bool m_webhookUrlHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class EvaluateExpressionResult {
   ///@}
  private:
   Aws::String m_evaluatedExpression;
-  bool m_evaluatedExpressionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluatedExpressionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

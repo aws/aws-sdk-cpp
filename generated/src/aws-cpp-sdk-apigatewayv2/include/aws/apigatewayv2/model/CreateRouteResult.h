@@ -296,45 +296,45 @@ class CreateRouteResult {
   ///@}
  private:
   bool m_apiGatewayManaged{false};
-  bool m_apiGatewayManagedHasBeenSet = false;
 
   bool m_apiKeyRequired{false};
-  bool m_apiKeyRequiredHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizationScopes;
-  bool m_authorizationScopesHasBeenSet = false;
 
   AuthorizationType m_authorizationType{AuthorizationType::NOT_SET};
-  bool m_authorizationTypeHasBeenSet = false;
 
   Aws::String m_authorizerId;
-  bool m_authorizerIdHasBeenSet = false;
 
   Aws::String m_modelSelectionExpression;
-  bool m_modelSelectionExpressionHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestModels;
-  bool m_requestModelsHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterConstraints> m_requestParameters;
-  bool m_requestParametersHasBeenSet = false;
 
   Aws::String m_routeId;
-  bool m_routeIdHasBeenSet = false;
 
   Aws::String m_routeKey;
-  bool m_routeKeyHasBeenSet = false;
 
   Aws::String m_routeResponseSelectionExpression;
-  bool m_routeResponseSelectionExpressionHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiGatewayManagedHasBeenSet = false;
+  bool m_apiKeyRequiredHasBeenSet = false;
+  bool m_authorizationScopesHasBeenSet = false;
+  bool m_authorizationTypeHasBeenSet = false;
+  bool m_authorizerIdHasBeenSet = false;
+  bool m_modelSelectionExpressionHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_requestModelsHasBeenSet = false;
+  bool m_requestParametersHasBeenSet = false;
+  bool m_routeIdHasBeenSet = false;
+  bool m_routeKeyHasBeenSet = false;
+  bool m_routeResponseSelectionExpressionHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

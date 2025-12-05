@@ -146,15 +146,15 @@ class ResourceChangeDetail {
   ///@}
  private:
   ResourceTargetDefinition m_target;
-  bool m_targetHasBeenSet = false;
 
   EvaluationType m_evaluation{EvaluationType::NOT_SET};
-  bool m_evaluationHasBeenSet = false;
 
   ChangeSource m_changeSource{ChangeSource::NOT_SET};
-  bool m_changeSourceHasBeenSet = false;
 
   Aws::String m_causingEntity;
+  bool m_targetHasBeenSet = false;
+  bool m_evaluationHasBeenSet = false;
+  bool m_changeSourceHasBeenSet = false;
   bool m_causingEntityHasBeenSet = false;
 };
 

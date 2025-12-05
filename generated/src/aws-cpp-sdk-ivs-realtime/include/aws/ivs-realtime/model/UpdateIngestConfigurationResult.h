@@ -60,9 +60,9 @@ class UpdateIngestConfigurationResult {
   ///@}
  private:
   IngestConfiguration m_ingestConfiguration;
-  bool m_ingestConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

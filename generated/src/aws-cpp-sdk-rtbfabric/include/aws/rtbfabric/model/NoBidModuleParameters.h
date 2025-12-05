@@ -82,12 +82,12 @@ class NoBidModuleParameters {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   int m_reasonCode{0};
-  bool m_reasonCodeHasBeenSet = false;
 
   double m_passThroughPercentage{0.0};
+  bool m_reasonHasBeenSet = false;
+  bool m_reasonCodeHasBeenSet = false;
   bool m_passThroughPercentageHasBeenSet = false;
 };
 

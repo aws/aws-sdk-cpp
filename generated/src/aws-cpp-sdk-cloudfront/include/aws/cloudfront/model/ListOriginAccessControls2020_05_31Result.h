@@ -61,9 +61,9 @@ class ListOriginAccessControls2020_05_31Result {
   ///@}
  private:
   OriginAccessControlList m_originAccessControlList;
-  bool m_originAccessControlListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originAccessControlListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class StackDefinition {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateURL;
+  bool m_stackNameHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
   bool m_templateURLHasBeenSet = false;
 };
 

@@ -306,45 +306,45 @@ class ContactSearchSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   Aws::String m_previousContactId;
-  bool m_previousContactIdHasBeenSet = false;
 
   ContactInitiationMethod m_initiationMethod{ContactInitiationMethod::NOT_SET};
-  bool m_initiationMethodHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   ContactSearchSummaryQueueInfo m_queueInfo;
-  bool m_queueInfoHasBeenSet = false;
 
   ContactSearchSummaryAgentInfo m_agentInfo;
-  bool m_agentInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationTimestamp{};
-  bool m_initiationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_disconnectTimestamp{};
-  bool m_disconnectTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledTimestamp{};
-  bool m_scheduledTimestampHasBeenSet = false;
 
   Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RoutingCriteria m_routingCriteria;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_previousContactIdHasBeenSet = false;
+  bool m_initiationMethodHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_queueInfoHasBeenSet = false;
+  bool m_agentInfoHasBeenSet = false;
+  bool m_initiationTimestampHasBeenSet = false;
+  bool m_disconnectTimestampHasBeenSet = false;
+  bool m_scheduledTimestampHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_routingCriteriaHasBeenSet = false;
 };
 

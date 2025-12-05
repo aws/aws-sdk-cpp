@@ -86,12 +86,12 @@ class GeospatialLayerJoinDefinition {
   ///@}
  private:
   Aws::String m_shapeKeyField;
-  bool m_shapeKeyFieldHasBeenSet = false;
 
   UnaggregatedField m_datasetKeyField;
-  bool m_datasetKeyFieldHasBeenSet = false;
 
   GeospatialLayerColorField m_colorField;
+  bool m_shapeKeyFieldHasBeenSet = false;
+  bool m_datasetKeyFieldHasBeenSet = false;
   bool m_colorFieldHasBeenSet = false;
 };
 

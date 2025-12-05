@@ -101,15 +101,15 @@ class GetRouteServerRoutingDatabaseResponse {
   ///@}
  private:
   bool m_areRoutesPersisted{false};
-  bool m_areRoutesPersistedHasBeenSet = false;
 
   Aws::Vector<RouteServerRoute> m_routes;
-  bool m_routesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_areRoutesPersistedHasBeenSet = false;
+  bool m_routesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

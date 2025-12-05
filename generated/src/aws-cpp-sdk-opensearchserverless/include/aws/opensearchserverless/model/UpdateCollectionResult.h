@@ -60,9 +60,9 @@ class UpdateCollectionResult {
   ///@}
  private:
   UpdateCollectionDetail m_updateCollectionDetail;
-  bool m_updateCollectionDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateCollectionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

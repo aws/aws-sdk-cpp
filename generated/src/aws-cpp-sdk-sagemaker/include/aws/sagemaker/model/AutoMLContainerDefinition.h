@@ -104,12 +104,12 @@ class AutoMLContainerDefinition {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_modelDataUrl;
-  bool m_modelDataUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
+  bool m_imageHasBeenSet = false;
+  bool m_modelDataUrlHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
 };
 

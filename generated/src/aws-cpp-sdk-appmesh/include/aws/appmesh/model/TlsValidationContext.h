@@ -78,9 +78,9 @@ class TlsValidationContext {
   ///@}
  private:
   SubjectAlternativeNames m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   TlsValidationContextTrust m_trust;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
   bool m_trustHasBeenSet = false;
 };
 

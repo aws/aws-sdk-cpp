@@ -69,9 +69,9 @@ class AutomatedReasoningPolicyDefinitionTypeValuePair {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_valueName;
+  bool m_typeNameHasBeenSet = false;
   bool m_valueNameHasBeenSet = false;
 };
 

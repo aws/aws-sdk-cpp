@@ -78,9 +78,9 @@ class LogSourceResource {
   ///@}
  private:
   AwsLogSourceResource m_awsLogSource;
-  bool m_awsLogSourceHasBeenSet = false;
 
   CustomLogSourceResource m_customLogSource;
+  bool m_awsLogSourceHasBeenSet = false;
   bool m_customLogSourceHasBeenSet = false;
 };
 

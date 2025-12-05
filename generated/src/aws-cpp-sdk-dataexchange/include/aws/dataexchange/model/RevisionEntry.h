@@ -238,36 +238,36 @@ class RevisionEntry {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   bool m_finalized{false};
-  bool m_finalizedHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_revocationComment;
-  bool m_revocationCommentHasBeenSet = false;
 
   bool m_revoked{false};
-  bool m_revokedHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_finalizedHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_revocationCommentHasBeenSet = false;
+  bool m_revokedHasBeenSet = false;
   bool m_revokedAtHasBeenSet = false;
 };
 

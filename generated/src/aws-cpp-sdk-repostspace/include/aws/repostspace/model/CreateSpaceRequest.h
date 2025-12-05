@@ -187,27 +187,27 @@ class CreateSpaceRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_subdomain;
-  bool m_subdomainHasBeenSet = false;
 
   TierLevel m_tier{TierLevel::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_userKMSKey;
-  bool m_userKMSKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   SupportedEmailDomainsParameters m_supportedEmailDomains;
+  bool m_nameHasBeenSet = false;
+  bool m_subdomainHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_userKMSKeyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_supportedEmailDomainsHasBeenSet = false;
 };
 

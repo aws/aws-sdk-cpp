@@ -84,12 +84,12 @@ class ListHarvestJobsResult {
   ///@}
  private:
   Aws::Vector<HarvestJob> m_harvestJobs;
-  bool m_harvestJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_harvestJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

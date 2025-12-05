@@ -249,42 +249,42 @@ class DataAutomationProject {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
-  bool m_projectStageHasBeenSet = false;
 
   DataAutomationProjectType m_projectType{DataAutomationProjectType::NOT_SET};
-  bool m_projectTypeHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   StandardOutputConfiguration m_standardOutputConfiguration;
-  bool m_standardOutputConfigurationHasBeenSet = false;
 
   CustomOutputConfiguration m_customOutputConfiguration;
-  bool m_customOutputConfigurationHasBeenSet = false;
 
   OverrideConfiguration m_overrideConfiguration;
-  bool m_overrideConfigurationHasBeenSet = false;
 
   DataAutomationProjectStatus m_status{DataAutomationProjectStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_kmsEncryptionContext;
+  bool m_projectArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_projectStageHasBeenSet = false;
+  bool m_projectTypeHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_standardOutputConfigurationHasBeenSet = false;
+  bool m_customOutputConfigurationHasBeenSet = false;
+  bool m_overrideConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_kmsEncryptionContextHasBeenSet = false;
 };
 

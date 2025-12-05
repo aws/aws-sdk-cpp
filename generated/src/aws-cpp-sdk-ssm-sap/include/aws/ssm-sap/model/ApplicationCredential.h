@@ -86,12 +86,12 @@ class ApplicationCredential {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   CredentialType m_credentialType{CredentialType::NOT_SET};
-  bool m_credentialTypeHasBeenSet = false;
 
   Aws::String m_secretId;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_credentialTypeHasBeenSet = false;
   bool m_secretIdHasBeenSet = false;
 };
 

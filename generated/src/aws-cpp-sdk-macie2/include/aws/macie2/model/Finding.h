@@ -367,57 +367,57 @@ class Finding {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   bool m_archived{false};
-  bool m_archivedHasBeenSet = false;
 
   FindingCategory m_category{FindingCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   ClassificationDetails m_classificationDetails;
-  bool m_classificationDetailsHasBeenSet = false;
 
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_partition;
-  bool m_partitionHasBeenSet = false;
 
   PolicyDetails m_policyDetails;
-  bool m_policyDetailsHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   ResourcesAffected m_resourcesAffected;
-  bool m_resourcesAffectedHasBeenSet = false;
 
   bool m_sample{false};
-  bool m_sampleHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Severity m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   FindingType m_type{FindingType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_accountIdHasBeenSet = false;
+  bool m_archivedHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_classificationDetailsHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_partitionHasBeenSet = false;
+  bool m_policyDetailsHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourcesAffectedHasBeenSet = false;
+  bool m_sampleHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

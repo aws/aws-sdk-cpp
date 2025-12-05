@@ -111,15 +111,15 @@ class DescribeGatewayRouteRequest : public AppMeshRequest {
   ///@}
  private:
   Aws::String m_gatewayRouteName;
-  bool m_gatewayRouteNameHasBeenSet = false;
 
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   Aws::String m_meshOwner;
-  bool m_meshOwnerHasBeenSet = false;
 
   Aws::String m_virtualGatewayName;
+  bool m_gatewayRouteNameHasBeenSet = false;
+  bool m_meshNameHasBeenSet = false;
+  bool m_meshOwnerHasBeenSet = false;
   bool m_virtualGatewayNameHasBeenSet = false;
 };
 

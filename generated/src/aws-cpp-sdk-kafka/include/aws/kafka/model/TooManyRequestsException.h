@@ -75,9 +75,9 @@ class TooManyRequestsException {
   ///@}
  private:
   Aws::String m_invalidParameter;
-  bool m_invalidParameterHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_invalidParameterHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

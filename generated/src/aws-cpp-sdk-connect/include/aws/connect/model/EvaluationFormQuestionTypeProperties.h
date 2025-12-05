@@ -109,15 +109,15 @@ class EvaluationFormQuestionTypeProperties {
   ///@}
  private:
   EvaluationFormNumericQuestionProperties m_numeric;
-  bool m_numericHasBeenSet = false;
 
   EvaluationFormSingleSelectQuestionProperties m_singleSelect;
-  bool m_singleSelectHasBeenSet = false;
 
   EvaluationFormTextQuestionProperties m_text;
-  bool m_textHasBeenSet = false;
 
   EvaluationFormMultiSelectQuestionProperties m_multiSelect;
+  bool m_numericHasBeenSet = false;
+  bool m_singleSelectHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_multiSelectHasBeenSet = false;
 };
 

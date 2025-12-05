@@ -87,12 +87,12 @@ class ModelInvocationJobS3InputDataConfig {
   ///@}
  private:
   S3InputFormat m_s3InputFormat{S3InputFormat::NOT_SET};
-  bool m_s3InputFormatHasBeenSet = false;
 
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_s3BucketOwner;
+  bool m_s3InputFormatHasBeenSet = false;
+  bool m_s3UriHasBeenSet = false;
   bool m_s3BucketOwnerHasBeenSet = false;
 };
 

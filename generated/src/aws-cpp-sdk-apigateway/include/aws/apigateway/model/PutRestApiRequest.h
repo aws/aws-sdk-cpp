@@ -120,15 +120,16 @@ class PutRestApiRequest : public StreamingAPIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   PutMode m_mode{PutMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   bool m_failOnWarnings{false};
-  bool m_failOnWarningsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+
+  bool m_restApiIdHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_failOnWarningsHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

@@ -152,18 +152,18 @@ class ConnectionPoolConfigurationInfo {
   ///@}
  private:
   int m_maxConnectionsPercent{0};
-  bool m_maxConnectionsPercentHasBeenSet = false;
 
   int m_maxIdleConnectionsPercent{0};
-  bool m_maxIdleConnectionsPercentHasBeenSet = false;
 
   int m_connectionBorrowTimeout{0};
-  bool m_connectionBorrowTimeoutHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sessionPinningFilters;
-  bool m_sessionPinningFiltersHasBeenSet = false;
 
   Aws::String m_initQuery;
+  bool m_maxConnectionsPercentHasBeenSet = false;
+  bool m_maxIdleConnectionsPercentHasBeenSet = false;
+  bool m_connectionBorrowTimeoutHasBeenSet = false;
+  bool m_sessionPinningFiltersHasBeenSet = false;
   bool m_initQueryHasBeenSet = false;
 };
 

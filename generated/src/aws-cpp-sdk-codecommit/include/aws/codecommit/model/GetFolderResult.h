@@ -193,27 +193,27 @@ class GetFolderResult {
   ///@}
  private:
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_folderPath;
-  bool m_folderPathHasBeenSet = false;
 
   Aws::String m_treeId;
-  bool m_treeIdHasBeenSet = false;
 
   Aws::Vector<Folder> m_subFolders;
-  bool m_subFoldersHasBeenSet = false;
 
   Aws::Vector<File> m_files;
-  bool m_filesHasBeenSet = false;
 
   Aws::Vector<SymbolicLink> m_symbolicLinks;
-  bool m_symbolicLinksHasBeenSet = false;
 
   Aws::Vector<SubModule> m_subModules;
-  bool m_subModulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commitIdHasBeenSet = false;
+  bool m_folderPathHasBeenSet = false;
+  bool m_treeIdHasBeenSet = false;
+  bool m_subFoldersHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_symbolicLinksHasBeenSet = false;
+  bool m_subModulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class DescribeAccountAttributesResult {
   ///@}
  private:
   ResourceQuotas m_resourceQuotas;
-  bool m_resourceQuotasHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resourceQuotasHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

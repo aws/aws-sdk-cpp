@@ -71,9 +71,9 @@ class SegmentLocation {
   ///@}
  private:
   SetDimension m_country;
-  bool m_countryHasBeenSet = false;
 
   GPSPointDimension m_gPSPoint;
+  bool m_countryHasBeenSet = false;
   bool m_gPSPointHasBeenSet = false;
 };
 

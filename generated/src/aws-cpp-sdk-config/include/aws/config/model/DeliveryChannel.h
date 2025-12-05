@@ -159,21 +159,21 @@ class DeliveryChannel {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
-  bool m_s3KeyPrefixHasBeenSet = false;
 
   Aws::String m_s3KmsKeyArn;
-  bool m_s3KmsKeyArnHasBeenSet = false;
 
   Aws::String m_snsTopicARN;
-  bool m_snsTopicARNHasBeenSet = false;
 
   ConfigSnapshotDeliveryProperties m_configSnapshotDeliveryProperties;
+  bool m_nameHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3KeyPrefixHasBeenSet = false;
+  bool m_s3KmsKeyArnHasBeenSet = false;
+  bool m_snsTopicARNHasBeenSet = false;
   bool m_configSnapshotDeliveryPropertiesHasBeenSet = false;
 };
 

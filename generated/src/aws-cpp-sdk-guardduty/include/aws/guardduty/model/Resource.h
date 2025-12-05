@@ -349,51 +349,51 @@ class Resource {
   ///@}
  private:
   AccessKeyDetails m_accessKeyDetails;
-  bool m_accessKeyDetailsHasBeenSet = false;
 
   Aws::Vector<S3BucketDetail> m_s3BucketDetails;
-  bool m_s3BucketDetailsHasBeenSet = false;
 
   InstanceDetails m_instanceDetails;
-  bool m_instanceDetailsHasBeenSet = false;
 
   EksClusterDetails m_eksClusterDetails;
-  bool m_eksClusterDetailsHasBeenSet = false;
 
   KubernetesDetails m_kubernetesDetails;
-  bool m_kubernetesDetailsHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   EbsVolumeDetails m_ebsVolumeDetails;
-  bool m_ebsVolumeDetailsHasBeenSet = false;
 
   EcsClusterDetails m_ecsClusterDetails;
-  bool m_ecsClusterDetailsHasBeenSet = false;
 
   Container m_containerDetails;
-  bool m_containerDetailsHasBeenSet = false;
 
   RdsDbInstanceDetails m_rdsDbInstanceDetails;
-  bool m_rdsDbInstanceDetailsHasBeenSet = false;
 
   RdsLimitlessDbDetails m_rdsLimitlessDbDetails;
-  bool m_rdsLimitlessDbDetailsHasBeenSet = false;
 
   RdsDbUserDetails m_rdsDbUserDetails;
-  bool m_rdsDbUserDetailsHasBeenSet = false;
 
   LambdaDetails m_lambdaDetails;
-  bool m_lambdaDetailsHasBeenSet = false;
 
   EbsSnapshotDetails m_ebsSnapshotDetails;
-  bool m_ebsSnapshotDetailsHasBeenSet = false;
 
   Ec2ImageDetails m_ec2ImageDetails;
-  bool m_ec2ImageDetailsHasBeenSet = false;
 
   RecoveryPointDetails m_recoveryPointDetails;
+  bool m_accessKeyDetailsHasBeenSet = false;
+  bool m_s3BucketDetailsHasBeenSet = false;
+  bool m_instanceDetailsHasBeenSet = false;
+  bool m_eksClusterDetailsHasBeenSet = false;
+  bool m_kubernetesDetailsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_ebsVolumeDetailsHasBeenSet = false;
+  bool m_ecsClusterDetailsHasBeenSet = false;
+  bool m_containerDetailsHasBeenSet = false;
+  bool m_rdsDbInstanceDetailsHasBeenSet = false;
+  bool m_rdsLimitlessDbDetailsHasBeenSet = false;
+  bool m_rdsDbUserDetailsHasBeenSet = false;
+  bool m_lambdaDetailsHasBeenSet = false;
+  bool m_ebsSnapshotDetailsHasBeenSet = false;
+  bool m_ec2ImageDetailsHasBeenSet = false;
   bool m_recoveryPointDetailsHasBeenSet = false;
 };
 

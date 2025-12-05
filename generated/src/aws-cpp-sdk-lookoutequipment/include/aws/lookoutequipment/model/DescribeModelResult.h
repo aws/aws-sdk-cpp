@@ -807,132 +807,132 @@ class DescribeModelResult {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   LabelsInputConfiguration m_labelsInputConfiguration;
-  bool m_labelsInputConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataStartTime{};
-  bool m_trainingDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataEndTime{};
-  bool m_trainingDataEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationDataStartTime{};
-  bool m_evaluationDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationDataEndTime{};
-  bool m_evaluationDataEndTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   DataPreProcessingConfiguration m_dataPreProcessingConfiguration;
-  bool m_dataPreProcessingConfigurationHasBeenSet = false;
 
   ModelStatus m_status{ModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingExecutionStartTime{};
-  bool m_trainingExecutionStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingExecutionEndTime{};
-  bool m_trainingExecutionEndTimeHasBeenSet = false;
 
   Aws::String m_failedReason;
-  bool m_failedReasonHasBeenSet = false;
 
   Aws::String m_modelMetrics;
-  bool m_modelMetricsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   Aws::String m_offCondition;
-  bool m_offConditionHasBeenSet = false;
 
   Aws::String m_sourceModelVersionArn;
-  bool m_sourceModelVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_importJobStartTime{};
-  bool m_importJobStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_importJobEndTime{};
-  bool m_importJobEndTimeHasBeenSet = false;
 
   long long m_activeModelVersion{0};
-  bool m_activeModelVersionHasBeenSet = false;
 
   Aws::String m_activeModelVersionArn;
-  bool m_activeModelVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_modelVersionActivatedAt{};
-  bool m_modelVersionActivatedAtHasBeenSet = false;
 
   long long m_previousActiveModelVersion{0};
-  bool m_previousActiveModelVersionHasBeenSet = false;
 
   Aws::String m_previousActiveModelVersionArn;
-  bool m_previousActiveModelVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_previousModelVersionActivatedAt{};
-  bool m_previousModelVersionActivatedAtHasBeenSet = false;
 
   Aws::String m_priorModelMetrics;
-  bool m_priorModelMetricsHasBeenSet = false;
 
   Aws::String m_latestScheduledRetrainingFailedReason;
-  bool m_latestScheduledRetrainingFailedReasonHasBeenSet = false;
 
   ModelVersionStatus m_latestScheduledRetrainingStatus{ModelVersionStatus::NOT_SET};
-  bool m_latestScheduledRetrainingStatusHasBeenSet = false;
 
   long long m_latestScheduledRetrainingModelVersion{0};
-  bool m_latestScheduledRetrainingModelVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestScheduledRetrainingStartTime{};
-  bool m_latestScheduledRetrainingStartTimeHasBeenSet = false;
 
   int m_latestScheduledRetrainingAvailableDataInDays{0};
-  bool m_latestScheduledRetrainingAvailableDataInDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextScheduledRetrainingStartDate{};
-  bool m_nextScheduledRetrainingStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_accumulatedInferenceDataStartTime{};
-  bool m_accumulatedInferenceDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_accumulatedInferenceDataEndTime{};
-  bool m_accumulatedInferenceDataEndTimeHasBeenSet = false;
 
   RetrainingSchedulerStatus m_retrainingSchedulerStatus{RetrainingSchedulerStatus::NOT_SET};
-  bool m_retrainingSchedulerStatusHasBeenSet = false;
 
   ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
-  bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
 
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
-  bool m_modelQualityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_labelsInputConfigurationHasBeenSet = false;
+  bool m_trainingDataStartTimeHasBeenSet = false;
+  bool m_trainingDataEndTimeHasBeenSet = false;
+  bool m_evaluationDataStartTimeHasBeenSet = false;
+  bool m_evaluationDataEndTimeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataPreProcessingConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_trainingExecutionStartTimeHasBeenSet = false;
+  bool m_trainingExecutionEndTimeHasBeenSet = false;
+  bool m_failedReasonHasBeenSet = false;
+  bool m_modelMetricsHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_offConditionHasBeenSet = false;
+  bool m_sourceModelVersionArnHasBeenSet = false;
+  bool m_importJobStartTimeHasBeenSet = false;
+  bool m_importJobEndTimeHasBeenSet = false;
+  bool m_activeModelVersionHasBeenSet = false;
+  bool m_activeModelVersionArnHasBeenSet = false;
+  bool m_modelVersionActivatedAtHasBeenSet = false;
+  bool m_previousActiveModelVersionHasBeenSet = false;
+  bool m_previousActiveModelVersionArnHasBeenSet = false;
+  bool m_previousModelVersionActivatedAtHasBeenSet = false;
+  bool m_priorModelMetricsHasBeenSet = false;
+  bool m_latestScheduledRetrainingFailedReasonHasBeenSet = false;
+  bool m_latestScheduledRetrainingStatusHasBeenSet = false;
+  bool m_latestScheduledRetrainingModelVersionHasBeenSet = false;
+  bool m_latestScheduledRetrainingStartTimeHasBeenSet = false;
+  bool m_latestScheduledRetrainingAvailableDataInDaysHasBeenSet = false;
+  bool m_nextScheduledRetrainingStartDateHasBeenSet = false;
+  bool m_accumulatedInferenceDataStartTimeHasBeenSet = false;
+  bool m_accumulatedInferenceDataEndTimeHasBeenSet = false;
+  bool m_retrainingSchedulerStatusHasBeenSet = false;
+  bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
+  bool m_modelQualityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

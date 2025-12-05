@@ -137,18 +137,18 @@ class LaunchTemplateSpotMarketOptionsRequest {
   ///@}
  private:
   Aws::String m_maxPrice;
-  bool m_maxPriceHasBeenSet = false;
 
   SpotInstanceType m_spotInstanceType{SpotInstanceType::NOT_SET};
-  bool m_spotInstanceTypeHasBeenSet = false;
 
   int m_blockDurationMinutes{0};
-  bool m_blockDurationMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   InstanceInterruptionBehavior m_instanceInterruptionBehavior{InstanceInterruptionBehavior::NOT_SET};
+  bool m_maxPriceHasBeenSet = false;
+  bool m_spotInstanceTypeHasBeenSet = false;
+  bool m_blockDurationMinutesHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
   bool m_instanceInterruptionBehaviorHasBeenSet = false;
 };
 

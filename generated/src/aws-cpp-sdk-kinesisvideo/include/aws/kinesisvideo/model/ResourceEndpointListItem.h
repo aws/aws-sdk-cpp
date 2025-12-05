@@ -72,9 +72,9 @@ class ResourceEndpointListItem {
   ///@}
  private:
   ChannelProtocol m_protocol{ChannelProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_resourceEndpoint;
+  bool m_protocolHasBeenSet = false;
   bool m_resourceEndpointHasBeenSet = false;
 };
 

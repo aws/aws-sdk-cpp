@@ -155,21 +155,21 @@ class AwsEc2NetworkAclDetails {
   ///@}
  private:
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   Aws::String m_networkAclId;
-  bool m_networkAclIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<AwsEc2NetworkAclAssociation> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::Vector<AwsEc2NetworkAclEntry> m_entries;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_networkAclIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_associationsHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

@@ -452,69 +452,69 @@ class GlacierJobDescription {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobDescription;
-  bool m_jobDescriptionHasBeenSet = false;
 
   ActionCode m_action{ActionCode::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_archiveId;
-  bool m_archiveIdHasBeenSet = false;
 
   Aws::String m_vaultARN;
-  bool m_vaultARNHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   bool m_completed{false};
-  bool m_completedHasBeenSet = false;
 
   StatusCode m_statusCode{StatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   long long m_archiveSizeInBytes{0};
-  bool m_archiveSizeInBytesHasBeenSet = false;
 
   long long m_inventorySizeInBytes{0};
-  bool m_inventorySizeInBytesHasBeenSet = false;
 
   Aws::String m_sNSTopic;
-  bool m_sNSTopicHasBeenSet = false;
 
   Aws::String m_completionDate;
-  bool m_completionDateHasBeenSet = false;
 
   Aws::String m_sHA256TreeHash;
-  bool m_sHA256TreeHashHasBeenSet = false;
 
   Aws::String m_archiveSHA256TreeHash;
-  bool m_archiveSHA256TreeHashHasBeenSet = false;
 
   Aws::String m_retrievalByteRange;
-  bool m_retrievalByteRangeHasBeenSet = false;
 
   Aws::String m_tier;
-  bool m_tierHasBeenSet = false;
 
   InventoryRetrievalJobDescription m_inventoryRetrievalParameters;
-  bool m_inventoryRetrievalParametersHasBeenSet = false;
 
   Aws::String m_jobOutputPath;
-  bool m_jobOutputPathHasBeenSet = false;
 
   SelectParameters m_selectParameters;
-  bool m_selectParametersHasBeenSet = false;
 
   OutputLocation m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobDescriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_archiveIdHasBeenSet = false;
+  bool m_vaultARNHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_completedHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_archiveSizeInBytesHasBeenSet = false;
+  bool m_inventorySizeInBytesHasBeenSet = false;
+  bool m_sNSTopicHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_sHA256TreeHashHasBeenSet = false;
+  bool m_archiveSHA256TreeHashHasBeenSet = false;
+  bool m_retrievalByteRangeHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_inventoryRetrievalParametersHasBeenSet = false;
+  bool m_jobOutputPathHasBeenSet = false;
+  bool m_selectParametersHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

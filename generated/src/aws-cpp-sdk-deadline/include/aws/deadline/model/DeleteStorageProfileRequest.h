@@ -65,9 +65,9 @@ class DeleteStorageProfileRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_storageProfileId;
+  bool m_farmIdHasBeenSet = false;
   bool m_storageProfileIdHasBeenSet = false;
 };
 

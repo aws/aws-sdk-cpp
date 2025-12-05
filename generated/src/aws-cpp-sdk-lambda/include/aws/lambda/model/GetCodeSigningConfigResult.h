@@ -60,9 +60,9 @@ class GetCodeSigningConfigResult {
   ///@}
  private:
   CodeSigningConfig m_codeSigningConfig;
-  bool m_codeSigningConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeSigningConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

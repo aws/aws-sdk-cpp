@@ -191,27 +191,27 @@ class CaptionDescription {
   ///@}
  private:
   AccessibilityType m_accessibility{AccessibilityType::NOT_SET};
-  bool m_accessibilityHasBeenSet = false;
 
   Aws::String m_captionSelectorName;
-  bool m_captionSelectorNameHasBeenSet = false;
 
   CaptionDestinationSettings m_destinationSettings;
-  bool m_destinationSettingsHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_languageDescription;
-  bool m_languageDescriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<DashRoleCaption> m_captionDashRoles;
-  bool m_captionDashRolesHasBeenSet = false;
 
   DvbDashAccessibility m_dvbDashAccessibility{DvbDashAccessibility::NOT_SET};
+  bool m_accessibilityHasBeenSet = false;
+  bool m_captionSelectorNameHasBeenSet = false;
+  bool m_destinationSettingsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_languageDescriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_captionDashRolesHasBeenSet = false;
   bool m_dvbDashAccessibilityHasBeenSet = false;
 };
 

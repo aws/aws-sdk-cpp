@@ -106,15 +106,15 @@ class ReplaceNetworkAclAssociationAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionTarget m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   ActionTarget m_networkAclId;
-  bool m_networkAclIdHasBeenSet = false;
 
   bool m_fMSCanRemediate{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_networkAclIdHasBeenSet = false;
   bool m_fMSCanRemediateHasBeenSet = false;
 };
 

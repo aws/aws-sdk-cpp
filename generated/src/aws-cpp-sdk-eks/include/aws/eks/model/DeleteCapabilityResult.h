@@ -61,9 +61,9 @@ class DeleteCapabilityResult {
   ///@}
  private:
   Capability m_capability;
-  bool m_capabilityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capabilityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

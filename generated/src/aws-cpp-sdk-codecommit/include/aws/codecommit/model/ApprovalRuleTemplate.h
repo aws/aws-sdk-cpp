@@ -180,27 +180,27 @@ class ApprovalRuleTemplate {
   ///@}
  private:
   Aws::String m_approvalRuleTemplateId;
-  bool m_approvalRuleTemplateIdHasBeenSet = false;
 
   Aws::String m_approvalRuleTemplateName;
-  bool m_approvalRuleTemplateNameHasBeenSet = false;
 
   Aws::String m_approvalRuleTemplateDescription;
-  bool m_approvalRuleTemplateDescriptionHasBeenSet = false;
 
   Aws::String m_approvalRuleTemplateContent;
-  bool m_approvalRuleTemplateContentHasBeenSet = false;
 
   Aws::String m_ruleContentSha256;
-  bool m_ruleContentSha256HasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_lastModifiedUser;
+  bool m_approvalRuleTemplateIdHasBeenSet = false;
+  bool m_approvalRuleTemplateNameHasBeenSet = false;
+  bool m_approvalRuleTemplateDescriptionHasBeenSet = false;
+  bool m_approvalRuleTemplateContentHasBeenSet = false;
+  bool m_ruleContentSha256HasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedUserHasBeenSet = false;
 };
 

@@ -164,24 +164,24 @@ class RegisterAppInstanceUserEndpointRequest : public ChimeSDKIdentityRequest {
   ///@}
  private:
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AppInstanceUserEndpointType m_type{AppInstanceUserEndpointType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   EndpointAttributes m_endpointAttributes;
-  bool m_endpointAttributesHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   AllowMessages m_allowMessages{AllowMessages::NOT_SET};
+  bool m_appInstanceUserArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_endpointAttributesHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_allowMessagesHasBeenSet = false;
 };
 

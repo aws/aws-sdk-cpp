@@ -66,9 +66,9 @@ class CreateNetworkInterfacePermissionResponse {
   ///@}
  private:
   NetworkInterfacePermission m_interfacePermission;
-  bool m_interfacePermissionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_interfacePermissionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

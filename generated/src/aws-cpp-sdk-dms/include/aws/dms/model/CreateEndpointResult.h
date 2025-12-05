@@ -65,9 +65,9 @@ class CreateEndpointResult {
   ///@}
  private:
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

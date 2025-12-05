@@ -218,30 +218,30 @@ class PhysicalResource {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::Vector<AppComponent> m_appComponents;
-  bool m_appComponentsHasBeenSet = false;
 
   bool m_excluded{false};
-  bool m_excludedHasBeenSet = false;
 
   LogicalResourceId m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_parentResourceName;
-  bool m_parentResourceNameHasBeenSet = false;
 
   PhysicalResourceId m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   ResourceSourceType m_sourceType{ResourceSourceType::NOT_SET};
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_appComponentsHasBeenSet = false;
+  bool m_excludedHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_parentResourceNameHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

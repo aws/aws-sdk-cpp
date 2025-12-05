@@ -82,12 +82,12 @@ class PrivateKeyFlagsV2 {
   ///@}
  private:
   ClientCompatibilityV2 m_clientVersion{ClientCompatibilityV2::NOT_SET};
-  bool m_clientVersionHasBeenSet = false;
 
   bool m_exportableKey{false};
-  bool m_exportableKeyHasBeenSet = false;
 
   bool m_strongKeyProtectionRequired{false};
+  bool m_clientVersionHasBeenSet = false;
+  bool m_exportableKeyHasBeenSet = false;
   bool m_strongKeyProtectionRequiredHasBeenSet = false;
 };
 

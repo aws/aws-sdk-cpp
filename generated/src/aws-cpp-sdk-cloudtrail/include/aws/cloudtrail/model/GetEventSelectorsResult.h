@@ -108,15 +108,15 @@ class GetEventSelectorsResult {
   ///@}
  private:
   Aws::String m_trailARN;
-  bool m_trailARNHasBeenSet = false;
 
   Aws::Vector<EventSelector> m_eventSelectors;
-  bool m_eventSelectorsHasBeenSet = false;
 
   Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
-  bool m_advancedEventSelectorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trailARNHasBeenSet = false;
+  bool m_eventSelectorsHasBeenSet = false;
+  bool m_advancedEventSelectorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

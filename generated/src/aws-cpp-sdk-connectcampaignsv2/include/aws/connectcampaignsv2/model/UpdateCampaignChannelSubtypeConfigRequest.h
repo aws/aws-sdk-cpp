@@ -66,9 +66,9 @@ class UpdateCampaignChannelSubtypeConfigRequest : public ConnectCampaignsV2Reque
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ChannelSubtypeConfig m_channelSubtypeConfig;
+  bool m_idHasBeenSet = false;
   bool m_channelSubtypeConfigHasBeenSet = false;
 };
 

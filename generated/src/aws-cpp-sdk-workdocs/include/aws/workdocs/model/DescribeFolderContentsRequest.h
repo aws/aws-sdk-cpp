@@ -178,27 +178,27 @@ class DescribeFolderContentsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   ResourceSortType m_sort{ResourceSortType::NOT_SET};
-  bool m_sortHasBeenSet = false;
 
   OrderType m_order{OrderType::NOT_SET};
-  bool m_orderHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   FolderContentType m_type{FolderContentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_include;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_folderIdHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

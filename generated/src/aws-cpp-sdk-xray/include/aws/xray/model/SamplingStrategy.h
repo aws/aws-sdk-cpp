@@ -65,9 +65,9 @@ class SamplingStrategy {
   ///@}
  private:
   SamplingStrategyName m_name{SamplingStrategyName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

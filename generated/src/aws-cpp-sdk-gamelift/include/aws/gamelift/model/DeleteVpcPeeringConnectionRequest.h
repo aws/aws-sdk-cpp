@@ -69,9 +69,9 @@ class DeleteVpcPeeringConnectionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
+  bool m_fleetIdHasBeenSet = false;
   bool m_vpcPeeringConnectionIdHasBeenSet = false;
 };
 

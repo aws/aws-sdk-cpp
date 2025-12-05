@@ -130,18 +130,18 @@ class StartMigrationRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_v1BotName;
-  bool m_v1BotNameHasBeenSet = false;
 
   Aws::String m_v1BotVersion;
-  bool m_v1BotVersionHasBeenSet = false;
 
   Aws::String m_v2BotName;
-  bool m_v2BotNameHasBeenSet = false;
 
   Aws::String m_v2BotRole;
-  bool m_v2BotRoleHasBeenSet = false;
 
   MigrationStrategy m_migrationStrategy{MigrationStrategy::NOT_SET};
+  bool m_v1BotNameHasBeenSet = false;
+  bool m_v1BotVersionHasBeenSet = false;
+  bool m_v2BotNameHasBeenSet = false;
+  bool m_v2BotRoleHasBeenSet = false;
   bool m_migrationStrategyHasBeenSet = false;
 };
 

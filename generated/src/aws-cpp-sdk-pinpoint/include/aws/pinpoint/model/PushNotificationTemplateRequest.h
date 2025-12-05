@@ -234,30 +234,30 @@ class PushNotificationTemplateRequest {
   ///@}
  private:
   AndroidPushNotificationTemplate m_aDM;
-  bool m_aDMHasBeenSet = false;
 
   APNSPushNotificationTemplate m_aPNS;
-  bool m_aPNSHasBeenSet = false;
 
   AndroidPushNotificationTemplate m_baidu;
-  bool m_baiduHasBeenSet = false;
 
   DefaultPushNotificationTemplate m_default;
-  bool m_defaultHasBeenSet = false;
 
   Aws::String m_defaultSubstitutions;
-  bool m_defaultSubstitutionsHasBeenSet = false;
 
   AndroidPushNotificationTemplate m_gCM;
-  bool m_gCMHasBeenSet = false;
 
   Aws::String m_recommenderId;
-  bool m_recommenderIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateDescription;
+  bool m_aDMHasBeenSet = false;
+  bool m_aPNSHasBeenSet = false;
+  bool m_baiduHasBeenSet = false;
+  bool m_defaultHasBeenSet = false;
+  bool m_defaultSubstitutionsHasBeenSet = false;
+  bool m_gCMHasBeenSet = false;
+  bool m_recommenderIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_templateDescriptionHasBeenSet = false;
 };
 

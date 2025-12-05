@@ -70,9 +70,9 @@ class DataSummary {
   ///@}
  private:
   DataReference m_reference;
-  bool m_referenceHasBeenSet = false;
 
   std::shared_ptr<DataDetails> m_details;
+  bool m_referenceHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

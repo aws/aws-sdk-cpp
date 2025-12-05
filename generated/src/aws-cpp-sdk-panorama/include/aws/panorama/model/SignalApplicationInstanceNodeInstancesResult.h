@@ -60,9 +60,9 @@ class SignalApplicationInstanceNodeInstancesResult {
   ///@}
  private:
   Aws::String m_applicationInstanceId;
-  bool m_applicationInstanceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationInstanceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -156,21 +156,21 @@ class KafkaAction {
   ///@}
  private:
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_partition;
-  bool m_partitionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientProperties;
-  bool m_clientPropertiesHasBeenSet = false;
 
   Aws::Vector<KafkaActionHeader> m_headers;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_partitionHasBeenSet = false;
+  bool m_clientPropertiesHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

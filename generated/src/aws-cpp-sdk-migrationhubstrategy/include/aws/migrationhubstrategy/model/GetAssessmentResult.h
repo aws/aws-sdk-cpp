@@ -103,15 +103,15 @@ class GetAssessmentResult {
   ///@}
  private:
   Aws::Vector<AssessmentTarget> m_assessmentTargets;
-  bool m_assessmentTargetsHasBeenSet = false;
 
   DataCollectionDetails m_dataCollectionDetails;
-  bool m_dataCollectionDetailsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentTargetsHasBeenSet = false;
+  bool m_dataCollectionDetailsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

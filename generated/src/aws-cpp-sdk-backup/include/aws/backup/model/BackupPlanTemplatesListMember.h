@@ -69,9 +69,9 @@ class BackupPlanTemplatesListMember {
   ///@}
  private:
   Aws::String m_backupPlanTemplateId;
-  bool m_backupPlanTemplateIdHasBeenSet = false;
 
   Aws::String m_backupPlanTemplateName;
+  bool m_backupPlanTemplateIdHasBeenSet = false;
   bool m_backupPlanTemplateNameHasBeenSet = false;
 };
 

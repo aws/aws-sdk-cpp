@@ -278,33 +278,33 @@ class CreateDocumentRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<DocumentRequires> m_requires;
-  bool m_requiresHasBeenSet = false;
 
   Aws::Vector<AttachmentsSource> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   DocumentType m_documentType{DocumentType::NOT_SET};
-  bool m_documentTypeHasBeenSet = false;
 
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
-  bool m_documentFormatHasBeenSet = false;
 
   Aws::String m_targetType;
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_contentHasBeenSet = false;
+  bool m_requiresHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_documentTypeHasBeenSet = false;
+  bool m_documentFormatHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

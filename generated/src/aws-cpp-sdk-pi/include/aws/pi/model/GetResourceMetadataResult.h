@@ -88,12 +88,12 @@ class GetResourceMetadataResult {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Map<Aws::String, FeatureMetadata> m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identifierHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

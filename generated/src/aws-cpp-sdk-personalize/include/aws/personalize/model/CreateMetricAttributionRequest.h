@@ -117,15 +117,15 @@ class CreateMetricAttributionRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::Vector<MetricAttribute> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   MetricAttributionOutput m_metricsOutputConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_metricsOutputConfigHasBeenSet = false;
 };
 

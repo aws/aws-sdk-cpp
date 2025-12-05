@@ -97,12 +97,12 @@ class StartSourceNetworkRecoveryRequest : public DrsRequest {
   ///@}
  private:
   bool m_deployAsNew{false};
-  bool m_deployAsNewHasBeenSet = false;
 
   Aws::Vector<StartSourceNetworkRecoveryRequestNetworkEntry> m_sourceNetworks;
-  bool m_sourceNetworksHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_deployAsNewHasBeenSet = false;
+  bool m_sourceNetworksHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

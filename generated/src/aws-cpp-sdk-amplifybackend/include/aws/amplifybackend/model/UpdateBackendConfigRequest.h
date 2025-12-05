@@ -69,9 +69,9 @@ class UpdateBackendConfigRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   LoginAuthConfigReqObj m_loginAuthConfig;
+  bool m_appIdHasBeenSet = false;
   bool m_loginAuthConfigHasBeenSet = false;
 };
 

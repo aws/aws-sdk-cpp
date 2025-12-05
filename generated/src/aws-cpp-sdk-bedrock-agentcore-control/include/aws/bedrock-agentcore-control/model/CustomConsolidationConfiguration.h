@@ -111,15 +111,15 @@ class CustomConsolidationConfiguration {
   ///@}
  private:
   SemanticConsolidationOverride m_semanticConsolidationOverride;
-  bool m_semanticConsolidationOverrideHasBeenSet = false;
 
   SummaryConsolidationOverride m_summaryConsolidationOverride;
-  bool m_summaryConsolidationOverrideHasBeenSet = false;
 
   UserPreferenceConsolidationOverride m_userPreferenceConsolidationOverride;
-  bool m_userPreferenceConsolidationOverrideHasBeenSet = false;
 
   EpisodicConsolidationOverride m_episodicConsolidationOverride;
+  bool m_semanticConsolidationOverrideHasBeenSet = false;
+  bool m_summaryConsolidationOverrideHasBeenSet = false;
+  bool m_userPreferenceConsolidationOverrideHasBeenSet = false;
   bool m_episodicConsolidationOverrideHasBeenSet = false;
 };
 

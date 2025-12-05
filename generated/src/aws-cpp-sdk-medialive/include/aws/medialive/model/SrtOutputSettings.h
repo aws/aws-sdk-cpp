@@ -125,18 +125,18 @@ class SrtOutputSettings {
   ///@}
  private:
   int m_bufferMsec{0};
-  bool m_bufferMsecHasBeenSet = false;
 
   UdpContainerSettings m_containerSettings;
-  bool m_containerSettingsHasBeenSet = false;
 
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   SrtEncryptionType m_encryptionType{SrtEncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   int m_latency{0};
+  bool m_bufferMsecHasBeenSet = false;
+  bool m_containerSettingsHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_latencyHasBeenSet = false;
 };
 

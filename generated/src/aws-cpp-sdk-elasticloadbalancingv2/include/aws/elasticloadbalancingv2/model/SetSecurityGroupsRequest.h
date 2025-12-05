@@ -101,13 +101,13 @@ class SetSecurityGroupsRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic{
       EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET};
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
 };
 

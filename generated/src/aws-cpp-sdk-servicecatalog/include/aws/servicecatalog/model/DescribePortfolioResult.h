@@ -133,18 +133,18 @@ class DescribePortfolioResult {
   ///@}
  private:
   PortfolioDetail m_portfolioDetail;
-  bool m_portfolioDetailHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<TagOptionDetail> m_tagOptions;
-  bool m_tagOptionsHasBeenSet = false;
 
   Aws::Vector<BudgetDetail> m_budgets;
-  bool m_budgetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portfolioDetailHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tagOptionsHasBeenSet = false;
+  bool m_budgetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

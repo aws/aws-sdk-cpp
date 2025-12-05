@@ -87,12 +87,12 @@ class CreateBucketResult {
   ///@}
  private:
   Bucket m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::Vector<Operation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketHasBeenSet = false;
+  bool m_operationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

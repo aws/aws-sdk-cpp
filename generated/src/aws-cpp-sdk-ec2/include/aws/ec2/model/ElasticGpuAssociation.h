@@ -110,15 +110,15 @@ class ElasticGpuAssociation {
   ///@}
  private:
   Aws::String m_elasticGpuId;
-  bool m_elasticGpuIdHasBeenSet = false;
 
   Aws::String m_elasticGpuAssociationId;
-  bool m_elasticGpuAssociationIdHasBeenSet = false;
 
   Aws::String m_elasticGpuAssociationState;
-  bool m_elasticGpuAssociationStateHasBeenSet = false;
 
   Aws::String m_elasticGpuAssociationTime;
+  bool m_elasticGpuIdHasBeenSet = false;
+  bool m_elasticGpuAssociationIdHasBeenSet = false;
+  bool m_elasticGpuAssociationStateHasBeenSet = false;
   bool m_elasticGpuAssociationTimeHasBeenSet = false;
 };
 

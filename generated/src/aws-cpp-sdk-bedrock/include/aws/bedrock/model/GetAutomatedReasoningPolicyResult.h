@@ -199,33 +199,33 @@ class GetAutomatedReasoningPolicyResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_definitionHash;
-  bool m_definitionHashHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_definitionHashHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

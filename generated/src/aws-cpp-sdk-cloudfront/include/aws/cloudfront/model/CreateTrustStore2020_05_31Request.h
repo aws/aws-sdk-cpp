@@ -83,12 +83,12 @@ class CreateTrustStore2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CaCertificatesBundleSource m_caCertificatesBundleSource;
-  bool m_caCertificatesBundleSourceHasBeenSet = false;
 
   Tags m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_caCertificatesBundleSourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

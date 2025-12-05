@@ -69,9 +69,9 @@ class ResourceAccessPolicy {
   ///@}
  private:
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_permissionHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

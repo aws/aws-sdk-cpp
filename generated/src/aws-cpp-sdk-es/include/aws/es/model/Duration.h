@@ -73,9 +73,9 @@ class Duration {
   ///@}
  private:
   long long m_value{0};
-  bool m_valueHasBeenSet = false;
 
   TimeUnit m_unit{TimeUnit::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class LastUpdate {
   ///@}
  private:
   UpdateStatus m_status{UpdateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   UpdateError m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   WorkerReplacementStrategy m_workerReplacementStrategy{WorkerReplacementStrategy::NOT_SET};
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_workerReplacementStrategyHasBeenSet = false;
 };
 

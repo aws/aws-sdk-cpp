@@ -105,12 +105,12 @@ class ServerCertificateConfig {
   ///@}
  private:
   bool m_enableOCSPCheck{false};
-  bool m_enableOCSPCheckHasBeenSet = false;
 
   Aws::String m_ocspLambdaArn;
-  bool m_ocspLambdaArnHasBeenSet = false;
 
   Aws::String m_ocspAuthorizedResponderArn;
+  bool m_enableOCSPCheckHasBeenSet = false;
+  bool m_ocspLambdaArnHasBeenSet = false;
   bool m_ocspAuthorizedResponderArnHasBeenSet = false;
 };
 

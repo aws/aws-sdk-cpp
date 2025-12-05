@@ -100,15 +100,15 @@ class UpdateRunCacheRequest : public OmicsRequest {
   ///@}
  private:
   CacheBehavior m_cacheBehavior{CacheBehavior::NOT_SET};
-  bool m_cacheBehaviorHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_cacheBehaviorHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class ConfigureLogsForChannelResult {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::Vector<LogType> m_logTypes;
-  bool m_logTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelNameHasBeenSet = false;
+  bool m_logTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

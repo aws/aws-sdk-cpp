@@ -134,21 +134,21 @@ class GetParametersForExportResult {
   ///@}
  private:
   Aws::String m_signingKeyCertificate;
-  bool m_signingKeyCertificateHasBeenSet = false;
 
   Aws::String m_signingKeyCertificateChain;
-  bool m_signingKeyCertificateChainHasBeenSet = false;
 
   KeyAlgorithm m_signingKeyAlgorithm{KeyAlgorithm::NOT_SET};
-  bool m_signingKeyAlgorithmHasBeenSet = false;
 
   Aws::String m_exportToken;
-  bool m_exportTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_parametersValidUntilTimestamp{};
-  bool m_parametersValidUntilTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signingKeyCertificateHasBeenSet = false;
+  bool m_signingKeyCertificateChainHasBeenSet = false;
+  bool m_signingKeyAlgorithmHasBeenSet = false;
+  bool m_exportTokenHasBeenSet = false;
+  bool m_parametersValidUntilTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

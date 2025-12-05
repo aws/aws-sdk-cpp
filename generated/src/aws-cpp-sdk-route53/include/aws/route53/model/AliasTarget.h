@@ -330,12 +330,12 @@ class AliasTarget {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   bool m_evaluateTargetHealth{false};
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_dNSNameHasBeenSet = false;
   bool m_evaluateTargetHealthHasBeenSet = false;
 };
 

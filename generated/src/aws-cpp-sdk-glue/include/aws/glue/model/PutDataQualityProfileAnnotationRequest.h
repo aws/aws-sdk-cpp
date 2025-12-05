@@ -66,9 +66,9 @@ class PutDataQualityProfileAnnotationRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   InclusionAnnotationValue m_inclusionAnnotation{InclusionAnnotationValue::NOT_SET};
+  bool m_profileIdHasBeenSet = false;
   bool m_inclusionAnnotationHasBeenSet = false;
 };
 

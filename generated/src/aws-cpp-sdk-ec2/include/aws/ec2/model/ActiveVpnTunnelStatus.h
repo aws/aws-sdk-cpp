@@ -192,30 +192,30 @@ class ActiveVpnTunnelStatus {
   ///@}
  private:
   Aws::String m_phase1EncryptionAlgorithm;
-  bool m_phase1EncryptionAlgorithmHasBeenSet = false;
 
   Aws::String m_phase2EncryptionAlgorithm;
-  bool m_phase2EncryptionAlgorithmHasBeenSet = false;
 
   Aws::String m_phase1IntegrityAlgorithm;
-  bool m_phase1IntegrityAlgorithmHasBeenSet = false;
 
   Aws::String m_phase2IntegrityAlgorithm;
-  bool m_phase2IntegrityAlgorithmHasBeenSet = false;
 
   int m_phase1DHGroup{0};
-  bool m_phase1DHGroupHasBeenSet = false;
 
   int m_phase2DHGroup{0};
-  bool m_phase2DHGroupHasBeenSet = false;
 
   Aws::String m_ikeVersion;
-  bool m_ikeVersionHasBeenSet = false;
 
   VpnTunnelProvisioningStatus m_provisioningStatus{VpnTunnelProvisioningStatus::NOT_SET};
-  bool m_provisioningStatusHasBeenSet = false;
 
   Aws::String m_provisioningStatusReason;
+  bool m_phase1EncryptionAlgorithmHasBeenSet = false;
+  bool m_phase2EncryptionAlgorithmHasBeenSet = false;
+  bool m_phase1IntegrityAlgorithmHasBeenSet = false;
+  bool m_phase2IntegrityAlgorithmHasBeenSet = false;
+  bool m_phase1DHGroupHasBeenSet = false;
+  bool m_phase2DHGroupHasBeenSet = false;
+  bool m_ikeVersionHasBeenSet = false;
+  bool m_provisioningStatusHasBeenSet = false;
   bool m_provisioningStatusReasonHasBeenSet = false;
 };
 

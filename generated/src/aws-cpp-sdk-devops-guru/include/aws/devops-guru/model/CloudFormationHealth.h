@@ -91,12 +91,12 @@ class CloudFormationHealth {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   InsightHealth m_insight;
-  bool m_insightHasBeenSet = false;
 
   long long m_analyzedResourceCount{0};
+  bool m_stackNameHasBeenSet = false;
+  bool m_insightHasBeenSet = false;
   bool m_analyzedResourceCountHasBeenSet = false;
 };
 

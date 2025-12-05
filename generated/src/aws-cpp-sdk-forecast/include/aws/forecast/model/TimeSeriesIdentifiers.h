@@ -85,12 +85,12 @@ class TimeSeriesIdentifiers {
   ///@}
  private:
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Schema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

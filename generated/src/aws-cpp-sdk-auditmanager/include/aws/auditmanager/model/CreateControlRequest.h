@@ -170,24 +170,24 @@ class CreateControlRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_testingInformation;
-  bool m_testingInformationHasBeenSet = false;
 
   Aws::String m_actionPlanTitle;
-  bool m_actionPlanTitleHasBeenSet = false;
 
   Aws::String m_actionPlanInstructions;
-  bool m_actionPlanInstructionsHasBeenSet = false;
 
   Aws::Vector<CreateControlMappingSource> m_controlMappingSources;
-  bool m_controlMappingSourcesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_testingInformationHasBeenSet = false;
+  bool m_actionPlanTitleHasBeenSet = false;
+  bool m_actionPlanInstructionsHasBeenSet = false;
+  bool m_controlMappingSourcesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

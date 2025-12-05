@@ -70,9 +70,9 @@ class AutomatedReasoningPolicyDefinitionTypeValue {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_valueHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

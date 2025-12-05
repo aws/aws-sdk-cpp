@@ -72,9 +72,9 @@ class BuildtimeSettings {
   ///@}
  private:
   DescriptiveBotBuilderSpecification m_descriptiveBotBuilder;
-  bool m_descriptiveBotBuilderHasBeenSet = false;
 
   SampleUtteranceGenerationSpecification m_sampleUtteranceGeneration;
+  bool m_descriptiveBotBuilderHasBeenSet = false;
   bool m_sampleUtteranceGenerationHasBeenSet = false;
 };
 

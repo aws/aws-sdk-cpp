@@ -71,9 +71,9 @@ class SelfGrantStatusOutput {
   ///@}
  private:
   GlueSelfGrantStatusOutput m_glueSelfGrantStatus;
-  bool m_glueSelfGrantStatusHasBeenSet = false;
 
   RedshiftSelfGrantStatusOutput m_redshiftSelfGrantStatus;
+  bool m_glueSelfGrantStatusHasBeenSet = false;
   bool m_redshiftSelfGrantStatusHasBeenSet = false;
 };
 

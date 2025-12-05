@@ -119,18 +119,18 @@ class Resilience {
   ///@}
  private:
   Aws::String m_hsrTier;
-  bool m_hsrTierHasBeenSet = false;
 
   ReplicationMode m_hsrReplicationMode{ReplicationMode::NOT_SET};
-  bool m_hsrReplicationModeHasBeenSet = false;
 
   OperationMode m_hsrOperationMode{OperationMode::NOT_SET};
-  bool m_hsrOperationModeHasBeenSet = false;
 
   ClusterStatus m_clusterStatus{ClusterStatus::NOT_SET};
-  bool m_clusterStatusHasBeenSet = false;
 
   bool m_enqueueReplication{false};
+  bool m_hsrTierHasBeenSet = false;
+  bool m_hsrReplicationModeHasBeenSet = false;
+  bool m_hsrOperationModeHasBeenSet = false;
+  bool m_clusterStatusHasBeenSet = false;
   bool m_enqueueReplicationHasBeenSet = false;
 };
 

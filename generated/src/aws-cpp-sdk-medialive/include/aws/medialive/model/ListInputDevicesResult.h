@@ -89,12 +89,12 @@ class ListInputDevicesResult {
   ///@}
  private:
   Aws::Vector<InputDeviceSummary> m_inputDevices;
-  bool m_inputDevicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputDevicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

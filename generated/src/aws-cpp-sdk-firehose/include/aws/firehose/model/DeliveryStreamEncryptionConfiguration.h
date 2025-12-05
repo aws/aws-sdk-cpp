@@ -122,15 +122,15 @@ class DeliveryStreamEncryptionConfiguration {
   ///@}
  private:
   Aws::String m_keyARN;
-  bool m_keyARNHasBeenSet = false;
 
   KeyType m_keyType{KeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   DeliveryStreamEncryptionStatus m_status{DeliveryStreamEncryptionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   FailureDescription m_failureDescription;
+  bool m_keyARNHasBeenSet = false;
+  bool m_keyTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureDescriptionHasBeenSet = false;
 };
 

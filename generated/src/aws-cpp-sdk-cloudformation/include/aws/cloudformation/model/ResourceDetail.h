@@ -175,21 +175,21 @@ class ResourceDetail {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   GeneratedTemplateResourceStatus m_resourceStatus{GeneratedTemplateResourceStatus::NOT_SET};
-  bool m_resourceStatusHasBeenSet = false;
 
   Aws::String m_resourceStatusReason;
-  bool m_resourceStatusReasonHasBeenSet = false;
 
   Aws::Vector<WarningDetail> m_warnings;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_resourceStatusHasBeenSet = false;
+  bool m_resourceStatusReasonHasBeenSet = false;
   bool m_warningsHasBeenSet = false;
 };
 

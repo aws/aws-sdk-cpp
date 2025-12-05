@@ -93,12 +93,12 @@ class DeploymentConfiguration {
   ///@}
  private:
   DeploymentProtectionStrategy m_protectionStrategy{DeploymentProtectionStrategy::NOT_SET};
-  bool m_protectionStrategyHasBeenSet = false;
 
   int m_minimumHealthyPercentage{0};
-  bool m_minimumHealthyPercentageHasBeenSet = false;
 
   DeploymentImpairmentStrategy m_impairmentStrategy{DeploymentImpairmentStrategy::NOT_SET};
+  bool m_protectionStrategyHasBeenSet = false;
+  bool m_minimumHealthyPercentageHasBeenSet = false;
   bool m_impairmentStrategyHasBeenSet = false;
 };
 

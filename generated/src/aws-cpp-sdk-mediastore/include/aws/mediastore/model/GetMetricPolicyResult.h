@@ -60,9 +60,9 @@ class GetMetricPolicyResult {
   ///@}
  private:
   MetricPolicy m_metricPolicy;
-  bool m_metricPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

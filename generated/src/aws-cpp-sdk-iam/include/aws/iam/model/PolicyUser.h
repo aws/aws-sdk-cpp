@@ -79,9 +79,9 @@ class PolicyUser {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_userNameHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

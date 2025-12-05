@@ -62,9 +62,9 @@ class RegisterTypeResult {
   ///@}
  private:
   Aws::String m_registrationToken;
-  bool m_registrationTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_registrationTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

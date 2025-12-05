@@ -75,12 +75,12 @@ class StopFlowResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

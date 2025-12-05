@@ -171,18 +171,18 @@ class DisassociateResourceShareRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sources;
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

@@ -162,24 +162,24 @@ class TelemetryRuleSummary {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   long long m_createdTimeStamp{0};
-  bool m_createdTimeStampHasBeenSet = false;
 
   long long m_lastUpdateTimeStamp{0};
-  bool m_lastUpdateTimeStampHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   TelemetryType m_telemetryType{TelemetryType::NOT_SET};
-  bool m_telemetryTypeHasBeenSet = false;
 
   Aws::Vector<TelemetrySourceType> m_telemetrySourceTypes;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_createdTimeStampHasBeenSet = false;
+  bool m_lastUpdateTimeStampHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_telemetryTypeHasBeenSet = false;
   bool m_telemetrySourceTypesHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class DeleteBrowserRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_browserId;
-  bool m_browserIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_browserIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

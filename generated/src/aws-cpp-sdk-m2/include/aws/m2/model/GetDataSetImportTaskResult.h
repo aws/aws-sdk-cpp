@@ -94,15 +94,15 @@ class GetDataSetImportTaskResult {
   ///@}
  private:
   DataSetTaskLifecycle m_status{DataSetTaskLifecycle::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DataSetImportSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

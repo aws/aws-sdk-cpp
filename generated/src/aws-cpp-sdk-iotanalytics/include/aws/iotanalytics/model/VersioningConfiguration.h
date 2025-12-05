@@ -63,9 +63,9 @@ class VersioningConfiguration {
   ///@}
  private:
   bool m_unlimited{false};
-  bool m_unlimitedHasBeenSet = false;
 
   int m_maxVersions{0};
+  bool m_unlimitedHasBeenSet = false;
   bool m_maxVersionsHasBeenSet = false;
 };
 

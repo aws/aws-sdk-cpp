@@ -142,18 +142,18 @@ class UpdateTrainingJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trainingJobName;
-  bool m_trainingJobNameHasBeenSet = false;
 
   ProfilerConfigForUpdate m_profilerConfig;
-  bool m_profilerConfigHasBeenSet = false;
 
   Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
-  bool m_profilerRuleConfigurationsHasBeenSet = false;
 
   ResourceConfigForUpdate m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   RemoteDebugConfigForUpdate m_remoteDebugConfig;
+  bool m_trainingJobNameHasBeenSet = false;
+  bool m_profilerConfigHasBeenSet = false;
+  bool m_profilerRuleConfigurationsHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
   bool m_remoteDebugConfigHasBeenSet = false;
 };
 

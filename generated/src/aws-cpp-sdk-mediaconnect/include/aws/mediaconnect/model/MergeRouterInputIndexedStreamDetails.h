@@ -68,9 +68,9 @@ class MergeRouterInputIndexedStreamDetails {
   ///@}
  private:
   int m_sourceIndex{0};
-  bool m_sourceIndexHasBeenSet = false;
 
   Aws::String m_sourceIpAddress;
+  bool m_sourceIndexHasBeenSet = false;
   bool m_sourceIpAddressHasBeenSet = false;
 };
 

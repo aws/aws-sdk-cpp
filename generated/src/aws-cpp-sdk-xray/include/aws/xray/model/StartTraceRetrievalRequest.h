@@ -95,12 +95,12 @@ class StartTraceRetrievalRequest : public XRayRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_traceIds;
-  bool m_traceIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_traceIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

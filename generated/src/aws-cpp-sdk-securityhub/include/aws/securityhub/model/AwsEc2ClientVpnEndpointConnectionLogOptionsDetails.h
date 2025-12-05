@@ -88,12 +88,12 @@ class AwsEc2ClientVpnEndpointConnectionLogOptionsDetails {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_cloudwatchLogGroup;
-  bool m_cloudwatchLogGroupHasBeenSet = false;
 
   Aws::String m_cloudwatchLogStream;
+  bool m_enabledHasBeenSet = false;
+  bool m_cloudwatchLogGroupHasBeenSet = false;
   bool m_cloudwatchLogStreamHasBeenSet = false;
 };
 

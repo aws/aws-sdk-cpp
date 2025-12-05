@@ -229,33 +229,33 @@ class WorkspaceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_volumeEncryptionKey;
-  bool m_volumeEncryptionKeyHasBeenSet = false;
 
   bool m_userVolumeEncryptionEnabled{false};
-  bool m_userVolumeEncryptionEnabledHasBeenSet = false;
 
   bool m_rootVolumeEncryptionEnabled{false};
-  bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
 
   WorkspaceProperties m_workspaceProperties;
-  bool m_workspacePropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workspaceName;
-  bool m_workspaceNameHasBeenSet = false;
 
   Aws::String m_ipv6Address;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_volumeEncryptionKeyHasBeenSet = false;
+  bool m_userVolumeEncryptionEnabledHasBeenSet = false;
+  bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
+  bool m_workspacePropertiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
   bool m_ipv6AddressHasBeenSet = false;
 };
 

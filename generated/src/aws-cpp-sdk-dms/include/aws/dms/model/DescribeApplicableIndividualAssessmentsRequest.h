@@ -186,27 +186,27 @@ class DescribeApplicableIndividualAssessmentsRequest : public DatabaseMigrationS
   ///@}
  private:
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   Aws::String m_replicationConfigArn;
-  bool m_replicationConfigArnHasBeenSet = false;
 
   Aws::String m_sourceEngineName;
-  bool m_sourceEngineNameHasBeenSet = false;
 
   Aws::String m_targetEngineName;
-  bool m_targetEngineNameHasBeenSet = false;
 
   MigrationTypeValue m_migrationType{MigrationTypeValue::NOT_SET};
-  bool m_migrationTypeHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_replicationTaskArnHasBeenSet = false;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_replicationConfigArnHasBeenSet = false;
+  bool m_sourceEngineNameHasBeenSet = false;
+  bool m_targetEngineNameHasBeenSet = false;
+  bool m_migrationTypeHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

@@ -413,54 +413,54 @@ class CallAnalyticsJob {
   ///@}
  private:
   Aws::String m_callAnalyticsJobName;
-  bool m_callAnalyticsJobNameHasBeenSet = false;
 
   CallAnalyticsJobStatus m_callAnalyticsJobStatus{CallAnalyticsJobStatus::NOT_SET};
-  bool m_callAnalyticsJobStatusHasBeenSet = false;
 
   CallAnalyticsJobDetails m_callAnalyticsJobDetails;
-  bool m_callAnalyticsJobDetailsHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_mediaSampleRateHertz{0};
-  bool m_mediaSampleRateHertzHasBeenSet = false;
 
   MediaFormat m_mediaFormat{MediaFormat::NOT_SET};
-  bool m_mediaFormatHasBeenSet = false;
 
   Media m_media;
-  bool m_mediaHasBeenSet = false;
 
   Transcript m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   double m_identifiedLanguageScore{0.0};
-  bool m_identifiedLanguageScoreHasBeenSet = false;
 
   CallAnalyticsJobSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<ChannelDefinition> m_channelDefinitions;
-  bool m_channelDefinitionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_callAnalyticsJobNameHasBeenSet = false;
+  bool m_callAnalyticsJobStatusHasBeenSet = false;
+  bool m_callAnalyticsJobDetailsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_mediaSampleRateHertzHasBeenSet = false;
+  bool m_mediaFormatHasBeenSet = false;
+  bool m_mediaHasBeenSet = false;
+  bool m_transcriptHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_identifiedLanguageScoreHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_channelDefinitionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

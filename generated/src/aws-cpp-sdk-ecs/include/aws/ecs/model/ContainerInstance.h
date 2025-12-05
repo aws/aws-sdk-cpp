@@ -455,57 +455,57 @@ class ContainerInstance {
   ///@}
  private:
   Aws::String m_containerInstanceArn;
-  bool m_containerInstanceArnHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
-  bool m_ec2InstanceIdHasBeenSet = false;
 
   Aws::String m_capacityProviderName;
-  bool m_capacityProviderNameHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   VersionInfo m_versionInfo;
-  bool m_versionInfoHasBeenSet = false;
 
   Aws::Vector<Resource> m_remainingResources;
-  bool m_remainingResourcesHasBeenSet = false;
 
   Aws::Vector<Resource> m_registeredResources;
-  bool m_registeredResourcesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   bool m_agentConnected{false};
-  bool m_agentConnectedHasBeenSet = false;
 
   int m_runningTasksCount{0};
-  bool m_runningTasksCountHasBeenSet = false;
 
   int m_pendingTasksCount{0};
-  bool m_pendingTasksCountHasBeenSet = false;
 
   AgentUpdateStatus m_agentUpdateStatus{AgentUpdateStatus::NOT_SET};
-  bool m_agentUpdateStatusHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_registeredAt{};
-  bool m_registeredAtHasBeenSet = false;
 
   Aws::Vector<Attachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ContainerInstanceHealthStatus m_healthStatus;
+  bool m_containerInstanceArnHasBeenSet = false;
+  bool m_ec2InstanceIdHasBeenSet = false;
+  bool m_capacityProviderNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_versionInfoHasBeenSet = false;
+  bool m_remainingResourcesHasBeenSet = false;
+  bool m_registeredResourcesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_agentConnectedHasBeenSet = false;
+  bool m_runningTasksCountHasBeenSet = false;
+  bool m_pendingTasksCountHasBeenSet = false;
+  bool m_agentUpdateStatusHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_registeredAtHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
 };
 

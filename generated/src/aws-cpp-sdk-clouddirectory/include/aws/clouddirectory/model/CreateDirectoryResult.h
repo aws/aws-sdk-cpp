@@ -113,18 +113,18 @@ class CreateDirectoryResult {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   Aws::String m_appliedSchemaArn;
-  bool m_appliedSchemaArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_objectIdentifierHasBeenSet = false;
+  bool m_appliedSchemaArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

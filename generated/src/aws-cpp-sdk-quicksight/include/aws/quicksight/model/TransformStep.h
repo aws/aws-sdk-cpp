@@ -242,36 +242,36 @@ class TransformStep {
   ///@}
  private:
   ImportTableOperation m_importTableStep;
-  bool m_importTableStepHasBeenSet = false;
 
   ProjectOperation m_projectStep;
-  bool m_projectStepHasBeenSet = false;
 
   FiltersOperation m_filtersStep;
-  bool m_filtersStepHasBeenSet = false;
 
   CreateColumnsOperation m_createColumnsStep;
-  bool m_createColumnsStepHasBeenSet = false;
 
   RenameColumnsOperation m_renameColumnsStep;
-  bool m_renameColumnsStepHasBeenSet = false;
 
   CastColumnTypesOperation m_castColumnTypesStep;
-  bool m_castColumnTypesStepHasBeenSet = false;
 
   JoinOperation m_joinStep;
-  bool m_joinStepHasBeenSet = false;
 
   AggregateOperation m_aggregateStep;
-  bool m_aggregateStepHasBeenSet = false;
 
   PivotOperation m_pivotStep;
-  bool m_pivotStepHasBeenSet = false;
 
   UnpivotOperation m_unpivotStep;
-  bool m_unpivotStepHasBeenSet = false;
 
   AppendOperation m_appendStep;
+  bool m_importTableStepHasBeenSet = false;
+  bool m_projectStepHasBeenSet = false;
+  bool m_filtersStepHasBeenSet = false;
+  bool m_createColumnsStepHasBeenSet = false;
+  bool m_renameColumnsStepHasBeenSet = false;
+  bool m_castColumnTypesStepHasBeenSet = false;
+  bool m_joinStepHasBeenSet = false;
+  bool m_aggregateStepHasBeenSet = false;
+  bool m_pivotStepHasBeenSet = false;
+  bool m_unpivotStepHasBeenSet = false;
   bool m_appendStepHasBeenSet = false;
 };
 

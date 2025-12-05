@@ -87,12 +87,12 @@ class UpdateProblemRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_problemId;
-  bool m_problemIdHasBeenSet = false;
 
   UpdateStatus m_updateStatus{UpdateStatus::NOT_SET};
-  bool m_updateStatusHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
+  bool m_problemIdHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

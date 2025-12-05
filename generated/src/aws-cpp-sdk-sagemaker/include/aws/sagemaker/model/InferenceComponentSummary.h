@@ -178,27 +178,27 @@ class InferenceComponentSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_inferenceComponentArn;
-  bool m_inferenceComponentArnHasBeenSet = false;
 
   Aws::String m_inferenceComponentName;
-  bool m_inferenceComponentNameHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   InferenceComponentStatus m_inferenceComponentStatus{InferenceComponentStatus::NOT_SET};
-  bool m_inferenceComponentStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_inferenceComponentArnHasBeenSet = false;
+  bool m_inferenceComponentNameHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_variantNameHasBeenSet = false;
+  bool m_inferenceComponentStatusHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

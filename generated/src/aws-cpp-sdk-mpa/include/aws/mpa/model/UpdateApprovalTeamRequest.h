@@ -112,15 +112,15 @@ class UpdateApprovalTeamRequest : public MPARequest {
   ///@}
  private:
   ApprovalStrategy m_approvalStrategy;
-  bool m_approvalStrategyHasBeenSet = false;
 
   Aws::Vector<ApprovalTeamRequestApprover> m_approvers;
-  bool m_approversHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_approvalStrategyHasBeenSet = false;
+  bool m_approversHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

@@ -173,18 +173,18 @@ class CreatePolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_policyNameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

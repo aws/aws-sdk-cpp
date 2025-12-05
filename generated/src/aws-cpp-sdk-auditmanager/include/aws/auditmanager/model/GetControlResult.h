@@ -61,9 +61,9 @@ class GetControlResult {
   ///@}
  private:
   Control m_control;
-  bool m_controlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

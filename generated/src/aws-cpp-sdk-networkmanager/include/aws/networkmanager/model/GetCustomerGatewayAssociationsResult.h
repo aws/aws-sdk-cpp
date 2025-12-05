@@ -85,12 +85,12 @@ class GetCustomerGatewayAssociationsResult {
   ///@}
  private:
   Aws::Vector<CustomerGatewayAssociation> m_customerGatewayAssociations;
-  bool m_customerGatewayAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customerGatewayAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeDestinationsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_destinationNamePrefix;
-  bool m_destinationNamePrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_destinationNamePrefixHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

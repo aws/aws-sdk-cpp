@@ -84,9 +84,9 @@ class JobWorkerExecutorConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_pollingAccounts;
-  bool m_pollingAccountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pollingServicePrincipals;
+  bool m_pollingAccountsHasBeenSet = false;
   bool m_pollingServicePrincipalsHasBeenSet = false;
 };
 

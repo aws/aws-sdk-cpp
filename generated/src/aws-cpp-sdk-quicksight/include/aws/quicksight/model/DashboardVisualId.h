@@ -105,12 +105,12 @@ class DashboardVisualId {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_sheetId;
-  bool m_sheetIdHasBeenSet = false;
 
   Aws::String m_visualId;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_sheetIdHasBeenSet = false;
   bool m_visualIdHasBeenSet = false;
 };
 

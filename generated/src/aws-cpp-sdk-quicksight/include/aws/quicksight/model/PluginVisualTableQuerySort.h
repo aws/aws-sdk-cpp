@@ -77,9 +77,9 @@ class PluginVisualTableQuerySort {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_rowSort;
-  bool m_rowSortHasBeenSet = false;
 
   PluginVisualItemsLimitConfiguration m_itemsLimitConfiguration;
+  bool m_rowSortHasBeenSet = false;
   bool m_itemsLimitConfigurationHasBeenSet = false;
 };
 

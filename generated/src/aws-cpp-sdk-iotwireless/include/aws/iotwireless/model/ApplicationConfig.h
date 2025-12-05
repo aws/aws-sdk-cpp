@@ -85,12 +85,12 @@ class ApplicationConfig {
   ///@}
  private:
   int m_fPort{0};
-  bool m_fPortHasBeenSet = false;
 
   ApplicationConfigType m_type{ApplicationConfigType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_destinationName;
+  bool m_fPortHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_destinationNameHasBeenSet = false;
 };
 

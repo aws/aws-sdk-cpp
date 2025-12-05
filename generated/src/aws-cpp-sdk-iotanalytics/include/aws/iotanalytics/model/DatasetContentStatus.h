@@ -69,9 +69,9 @@ class DatasetContentStatus {
   ///@}
  private:
   DatasetContentState m_state{DatasetContentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_stateHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

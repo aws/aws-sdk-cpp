@@ -71,9 +71,9 @@ class CategoricalScaleDefinition {
   ///@}
  private:
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_label;
+  bool m_definitionHasBeenSet = false;
   bool m_labelHasBeenSet = false;
 };
 

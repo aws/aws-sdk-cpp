@@ -95,12 +95,12 @@ class ReplicaSpecification {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   long long m_readCapacityUnits{0};
-  bool m_readCapacityUnitsHasBeenSet = false;
 
   AutoScalingSettings m_readCapacityAutoScaling;
+  bool m_regionHasBeenSet = false;
+  bool m_readCapacityUnitsHasBeenSet = false;
   bool m_readCapacityAutoScalingHasBeenSet = false;
 };
 

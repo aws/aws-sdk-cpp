@@ -96,12 +96,12 @@ class AccessBudget {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<AccessBudgetDetails> m_details;
-  bool m_detailsHasBeenSet = false;
 
   int m_aggregateRemainingBudget{0};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_aggregateRemainingBudgetHasBeenSet = false;
 };
 

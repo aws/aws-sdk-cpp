@@ -69,9 +69,9 @@ class PromoteRequest : public MQRequest {
   ///@}
  private:
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   PromoteMode m_mode{PromoteMode::NOT_SET};
+  bool m_brokerIdHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

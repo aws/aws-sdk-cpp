@@ -94,12 +94,12 @@ class DescribeDBInstanceAutomatedBackupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBInstanceAutomatedBackup> m_dBInstanceAutomatedBackups;
-  bool m_dBInstanceAutomatedBackupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBInstanceAutomatedBackupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

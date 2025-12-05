@@ -75,9 +75,9 @@ class ReviewDetails {
   ///@}
  private:
   ReviewStatus m_status{ReviewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_caseId;
+  bool m_statusHasBeenSet = false;
   bool m_caseIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class AcceptResourceGroupingRecommendationsResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::Vector<FailedGroupingRecommendationEntry> m_failedEntries;
-  bool m_failedEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_failedEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

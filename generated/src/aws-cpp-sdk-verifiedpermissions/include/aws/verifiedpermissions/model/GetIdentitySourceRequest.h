@@ -68,9 +68,9 @@ class GetIdentitySourceRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_identitySourceId;
+  bool m_policyStoreIdHasBeenSet = false;
   bool m_identitySourceIdHasBeenSet = false;
 };
 

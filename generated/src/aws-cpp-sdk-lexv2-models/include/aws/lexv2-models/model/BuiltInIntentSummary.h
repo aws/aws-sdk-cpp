@@ -71,9 +71,9 @@ class BuiltInIntentSummary {
   ///@}
  private:
   Aws::String m_intentSignature;
-  bool m_intentSignatureHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_intentSignatureHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

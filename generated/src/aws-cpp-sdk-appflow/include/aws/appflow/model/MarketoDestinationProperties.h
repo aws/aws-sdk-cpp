@@ -68,9 +68,9 @@ class MarketoDestinationProperties {
   ///@}
  private:
   Aws::String m_object;
-  bool m_objectHasBeenSet = false;
 
   ErrorHandlingConfig m_errorHandlingConfig;
+  bool m_objectHasBeenSet = false;
   bool m_errorHandlingConfigHasBeenSet = false;
 };
 

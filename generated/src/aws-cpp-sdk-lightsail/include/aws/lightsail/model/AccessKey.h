@@ -143,18 +143,18 @@ class AccessKey {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_secretAccessKey;
-  bool m_secretAccessKeyHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   AccessKeyLastUsed m_lastUsed;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_secretAccessKeyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUsedHasBeenSet = false;
 };
 

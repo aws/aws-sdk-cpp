@@ -71,9 +71,9 @@ class DefaultAction {
   ///@}
  private:
   BlockAction m_block;
-  bool m_blockHasBeenSet = false;
 
   AllowAction m_allow;
+  bool m_blockHasBeenSet = false;
   bool m_allowHasBeenSet = false;
 };
 

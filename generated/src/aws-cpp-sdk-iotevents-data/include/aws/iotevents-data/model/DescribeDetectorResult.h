@@ -60,9 +60,9 @@ class DescribeDetectorResult {
   ///@}
  private:
   Detector m_detector;
-  bool m_detectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

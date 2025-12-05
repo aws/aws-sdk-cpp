@@ -69,9 +69,9 @@ class AuthorizingClaimMatchValueType {
   ///@}
  private:
   ClaimMatchValueType m_claimMatchValue;
-  bool m_claimMatchValueHasBeenSet = false;
 
   ClaimMatchOperatorType m_claimMatchOperator{ClaimMatchOperatorType::NOT_SET};
+  bool m_claimMatchValueHasBeenSet = false;
   bool m_claimMatchOperatorHasBeenSet = false;
 };
 

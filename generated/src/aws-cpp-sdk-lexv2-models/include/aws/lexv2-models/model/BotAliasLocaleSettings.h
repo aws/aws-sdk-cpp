@@ -69,9 +69,9 @@ class BotAliasLocaleSettings {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   CodeHookSpecification m_codeHookSpecification;
+  bool m_enabledHasBeenSet = false;
   bool m_codeHookSpecificationHasBeenSet = false;
 };
 

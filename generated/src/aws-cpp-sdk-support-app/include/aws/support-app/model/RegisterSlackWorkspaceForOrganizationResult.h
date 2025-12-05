@@ -95,15 +95,15 @@ class RegisterSlackWorkspaceForOrganizationResult {
   ///@}
  private:
   AccountType m_accountType{AccountType::NOT_SET};
-  bool m_accountTypeHasBeenSet = false;
 
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_teamName;
-  bool m_teamNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountTypeHasBeenSet = false;
+  bool m_teamIdHasBeenSet = false;
+  bool m_teamNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

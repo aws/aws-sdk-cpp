@@ -78,9 +78,9 @@ class AutomaticTapeCreationPolicyInfo {
   ///@}
  private:
   Aws::Vector<AutomaticTapeCreationRule> m_automaticTapeCreationRules;
-  bool m_automaticTapeCreationRulesHasBeenSet = false;
 
   Aws::String m_gatewayARN;
+  bool m_automaticTapeCreationRulesHasBeenSet = false;
   bool m_gatewayARNHasBeenSet = false;
 };
 

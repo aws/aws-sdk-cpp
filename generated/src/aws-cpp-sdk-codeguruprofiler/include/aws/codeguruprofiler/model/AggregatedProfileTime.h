@@ -80,9 +80,9 @@ class AggregatedProfileTime {
   ///@}
  private:
   AggregationPeriod m_period{AggregationPeriod::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   Aws::Utils::DateTime m_start{};
+  bool m_periodHasBeenSet = false;
   bool m_startHasBeenSet = false;
 };
 

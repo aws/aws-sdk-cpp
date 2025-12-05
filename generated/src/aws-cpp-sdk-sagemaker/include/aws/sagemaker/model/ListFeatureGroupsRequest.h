@@ -193,30 +193,30 @@ class ListFeatureGroupsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   FeatureGroupStatus m_featureGroupStatusEquals{FeatureGroupStatus::NOT_SET};
-  bool m_featureGroupStatusEqualsHasBeenSet = false;
 
   OfflineStoreStatusValue m_offlineStoreStatusEquals{OfflineStoreStatusValue::NOT_SET};
-  bool m_offlineStoreStatusEqualsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   FeatureGroupSortOrder m_sortOrder{FeatureGroupSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   FeatureGroupSortBy m_sortBy{FeatureGroupSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_featureGroupStatusEqualsHasBeenSet = false;
+  bool m_offlineStoreStatusEqualsHasBeenSet = false;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

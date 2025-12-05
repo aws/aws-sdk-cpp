@@ -163,18 +163,18 @@ class SetSubnetsRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<SubnetMapping> m_subnetMappings;
-  bool m_subnetMappingsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat{EnablePrefixForIpv6SourceNatEnum::NOT_SET};
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_subnetMappingsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
 };
 

@@ -251,39 +251,39 @@ class Activity {
   ///@}
  private:
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_cause;
-  bool m_causeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ScalingActivityStatusCode m_statusCode{ScalingActivityStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   int m_progress{0};
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_autoScalingGroupState;
-  bool m_autoScalingGroupStateHasBeenSet = false;
 
   Aws::String m_autoScalingGroupARN;
+  bool m_activityIdHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_autoScalingGroupStateHasBeenSet = false;
   bool m_autoScalingGroupARNHasBeenSet = false;
 };
 

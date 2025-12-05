@@ -74,9 +74,9 @@ class TestTelemetryPipelineRequest : public ObservabilityAdminRequest {
   ///@}
  private:
   Aws::Vector<Record> m_records;
-  bool m_recordsHasBeenSet = false;
 
   TelemetryPipelineConfiguration m_configuration;
+  bool m_recordsHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

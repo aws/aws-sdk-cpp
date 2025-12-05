@@ -75,9 +75,9 @@ class LineItemGroup {
   ///@}
  private:
   int m_lineItemGroupIndex{0};
-  bool m_lineItemGroupIndexHasBeenSet = false;
 
   Aws::Vector<LineItemFields> m_lineItems;
+  bool m_lineItemGroupIndexHasBeenSet = false;
   bool m_lineItemsHasBeenSet = false;
 };
 

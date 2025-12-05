@@ -66,9 +66,9 @@ class FrameRate {
   ///@}
  private:
   int m_denominator{0};
-  bool m_denominatorHasBeenSet = false;
 
   int m_numerator{0};
+  bool m_denominatorHasBeenSet = false;
   bool m_numeratorHasBeenSet = false;
 };
 

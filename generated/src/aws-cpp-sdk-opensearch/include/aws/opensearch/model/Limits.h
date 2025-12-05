@@ -103,12 +103,12 @@ class Limits {
   ///@}
  private:
   Aws::Vector<StorageType> m_storageTypes;
-  bool m_storageTypesHasBeenSet = false;
 
   InstanceLimits m_instanceLimits;
-  bool m_instanceLimitsHasBeenSet = false;
 
   Aws::Vector<AdditionalLimit> m_additionalLimits;
+  bool m_storageTypesHasBeenSet = false;
+  bool m_instanceLimitsHasBeenSet = false;
   bool m_additionalLimitsHasBeenSet = false;
 };
 

@@ -136,18 +136,18 @@ class DataQualitySummary {
   ///@}
  private:
   InsufficientSensorData m_insufficientSensorData;
-  bool m_insufficientSensorDataHasBeenSet = false;
 
   MissingSensorData m_missingSensorData;
-  bool m_missingSensorDataHasBeenSet = false;
 
   InvalidSensorData m_invalidSensorData;
-  bool m_invalidSensorDataHasBeenSet = false;
 
   UnsupportedTimestamps m_unsupportedTimestamps;
-  bool m_unsupportedTimestampsHasBeenSet = false;
 
   DuplicateTimestamps m_duplicateTimestamps;
+  bool m_insufficientSensorDataHasBeenSet = false;
+  bool m_missingSensorDataHasBeenSet = false;
+  bool m_invalidSensorDataHasBeenSet = false;
+  bool m_unsupportedTimestampsHasBeenSet = false;
   bool m_duplicateTimestampsHasBeenSet = false;
 };
 

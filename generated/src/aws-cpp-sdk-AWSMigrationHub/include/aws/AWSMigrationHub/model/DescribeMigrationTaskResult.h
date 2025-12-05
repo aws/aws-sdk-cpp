@@ -60,9 +60,9 @@ class DescribeMigrationTaskResult {
   ///@}
  private:
   MigrationTask m_migrationTask;
-  bool m_migrationTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_migrationTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

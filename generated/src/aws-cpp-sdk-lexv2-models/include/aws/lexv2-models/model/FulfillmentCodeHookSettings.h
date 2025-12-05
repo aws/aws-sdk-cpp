@@ -110,15 +110,15 @@ class FulfillmentCodeHookSettings {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   PostFulfillmentStatusSpecification m_postFulfillmentStatusSpecification;
-  bool m_postFulfillmentStatusSpecificationHasBeenSet = false;
 
   FulfillmentUpdatesSpecification m_fulfillmentUpdatesSpecification;
-  bool m_fulfillmentUpdatesSpecificationHasBeenSet = false;
 
   bool m_active{false};
+  bool m_enabledHasBeenSet = false;
+  bool m_postFulfillmentStatusSpecificationHasBeenSet = false;
+  bool m_fulfillmentUpdatesSpecificationHasBeenSet = false;
   bool m_activeHasBeenSet = false;
 };
 

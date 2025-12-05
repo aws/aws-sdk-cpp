@@ -103,15 +103,15 @@ class CreateProductResult {
   ///@}
  private:
   ProductViewDetail m_productViewDetail;
-  bool m_productViewDetailHasBeenSet = false;
 
   ProvisioningArtifactDetail m_provisioningArtifactDetail;
-  bool m_provisioningArtifactDetailHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productViewDetailHasBeenSet = false;
+  bool m_provisioningArtifactDetailHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class EvaluationAnswerData {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   double m_numericValue{0.0};
-  bool m_numericValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringValues;
-  bool m_stringValuesHasBeenSet = false;
 
   Aws::String m_dateTimeValue;
-  bool m_dateTimeValueHasBeenSet = false;
 
   bool m_notApplicable{false};
+  bool m_stringValueHasBeenSet = false;
+  bool m_numericValueHasBeenSet = false;
+  bool m_stringValuesHasBeenSet = false;
+  bool m_dateTimeValueHasBeenSet = false;
   bool m_notApplicableHasBeenSet = false;
 };
 

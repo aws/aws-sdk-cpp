@@ -105,15 +105,15 @@ class DescribeRecordResult {
   ///@}
  private:
   RecordDetail m_recordDetail;
-  bool m_recordDetailHasBeenSet = false;
 
   Aws::Vector<RecordOutput> m_recordOutputs;
-  bool m_recordOutputsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordDetailHasBeenSet = false;
+  bool m_recordOutputsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

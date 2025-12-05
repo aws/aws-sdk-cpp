@@ -138,18 +138,18 @@ class UpdateScriptRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_scriptId;
-  bool m_scriptIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   S3Location m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_zipFile{};
+  bool m_scriptIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
   bool m_zipFileHasBeenSet = false;
 };
 

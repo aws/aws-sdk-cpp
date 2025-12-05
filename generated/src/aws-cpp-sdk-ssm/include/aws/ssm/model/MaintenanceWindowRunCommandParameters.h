@@ -276,36 +276,36 @@ class MaintenanceWindowRunCommandParameters {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   CloudWatchOutputConfig m_cloudWatchOutputConfig;
-  bool m_cloudWatchOutputConfigHasBeenSet = false;
 
   Aws::String m_documentHash;
-  bool m_documentHashHasBeenSet = false;
 
   DocumentHashType m_documentHashType{DocumentHashType::NOT_SET};
-  bool m_documentHashTypeHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   NotificationConfig m_notificationConfig;
-  bool m_notificationConfigHasBeenSet = false;
 
   Aws::String m_outputS3BucketName;
-  bool m_outputS3BucketNameHasBeenSet = false;
 
   Aws::String m_outputS3KeyPrefix;
-  bool m_outputS3KeyPrefixHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_serviceRoleArn;
-  bool m_serviceRoleArnHasBeenSet = false;
 
   int m_timeoutSeconds{0};
+  bool m_commentHasBeenSet = false;
+  bool m_cloudWatchOutputConfigHasBeenSet = false;
+  bool m_documentHashHasBeenSet = false;
+  bool m_documentHashTypeHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_notificationConfigHasBeenSet = false;
+  bool m_outputS3BucketNameHasBeenSet = false;
+  bool m_outputS3KeyPrefixHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_serviceRoleArnHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
 };
 

@@ -235,21 +235,21 @@ class AudioParameters {
   ///@}
  private:
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   Aws::String m_sampleRate;
-  bool m_sampleRateHasBeenSet = false;
 
   Aws::String m_bitRate;
-  bool m_bitRateHasBeenSet = false;
 
   Aws::String m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_audioPackingMode;
-  bool m_audioPackingModeHasBeenSet = false;
 
   AudioCodecOptions m_codecOptions;
+  bool m_codecHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_bitRateHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
+  bool m_audioPackingModeHasBeenSet = false;
   bool m_codecOptionsHasBeenSet = false;
 };
 

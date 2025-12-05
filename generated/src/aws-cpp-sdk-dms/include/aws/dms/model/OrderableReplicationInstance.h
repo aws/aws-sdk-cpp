@@ -208,30 +208,30 @@ class OrderableReplicationInstance {
   ///@}
  private:
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_replicationInstanceClass;
-  bool m_replicationInstanceClassHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   int m_minAllocatedStorage{0};
-  bool m_minAllocatedStorageHasBeenSet = false;
 
   int m_maxAllocatedStorage{0};
-  bool m_maxAllocatedStorageHasBeenSet = false;
 
   int m_defaultAllocatedStorage{0};
-  bool m_defaultAllocatedStorageHasBeenSet = false;
 
   int m_includedAllocatedStorage{0};
-  bool m_includedAllocatedStorageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   ReleaseStatusValues m_releaseStatus{ReleaseStatusValues::NOT_SET};
+  bool m_engineVersionHasBeenSet = false;
+  bool m_replicationInstanceClassHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_minAllocatedStorageHasBeenSet = false;
+  bool m_maxAllocatedStorageHasBeenSet = false;
+  bool m_defaultAllocatedStorageHasBeenSet = false;
+  bool m_includedAllocatedStorageHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
   bool m_releaseStatusHasBeenSet = false;
 };
 

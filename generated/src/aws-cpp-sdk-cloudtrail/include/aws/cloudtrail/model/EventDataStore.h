@@ -72,9 +72,9 @@ class EventDataStore {
   ///@}
  private:
   Aws::String m_eventDataStoreArn;
-  bool m_eventDataStoreArnHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_eventDataStoreArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

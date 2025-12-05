@@ -106,15 +106,15 @@ class DescribeReplicationInstanceTaskLogsResult {
   ///@}
  private:
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   Aws::Vector<ReplicationInstanceTaskLog> m_replicationInstanceTaskLogs;
-  bool m_replicationInstanceTaskLogsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_replicationInstanceTaskLogsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

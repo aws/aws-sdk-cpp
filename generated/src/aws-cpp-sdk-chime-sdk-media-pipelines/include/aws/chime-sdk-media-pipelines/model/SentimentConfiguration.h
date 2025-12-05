@@ -85,12 +85,12 @@ class SentimentConfiguration {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   SentimentType m_sentimentType{SentimentType::NOT_SET};
-  bool m_sentimentTypeHasBeenSet = false;
 
   int m_timePeriod{0};
+  bool m_ruleNameHasBeenSet = false;
+  bool m_sentimentTypeHasBeenSet = false;
   bool m_timePeriodHasBeenSet = false;
 };
 

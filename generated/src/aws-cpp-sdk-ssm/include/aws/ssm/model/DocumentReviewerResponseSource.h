@@ -139,18 +139,18 @@ class DocumentReviewerResponseSource {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTime{};
-  bool m_updatedTimeHasBeenSet = false;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
-  bool m_reviewStatusHasBeenSet = false;
 
   Aws::Vector<DocumentReviewCommentSource> m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_reviewer;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updatedTimeHasBeenSet = false;
+  bool m_reviewStatusHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_reviewerHasBeenSet = false;
 };
 

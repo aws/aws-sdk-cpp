@@ -67,9 +67,9 @@ class IamPropertiesOutput {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   bool m_glueLineageSyncEnabled{false};
+  bool m_environmentIdHasBeenSet = false;
   bool m_glueLineageSyncEnabledHasBeenSet = false;
 };
 

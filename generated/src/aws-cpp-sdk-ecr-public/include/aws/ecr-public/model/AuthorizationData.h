@@ -74,9 +74,9 @@ class AuthorizationData {
   ///@}
  private:
   Aws::String m_authorizationToken;
-  bool m_authorizationTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
+  bool m_authorizationTokenHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
 };
 

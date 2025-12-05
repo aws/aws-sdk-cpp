@@ -93,12 +93,12 @@ class GetRoleCredentialsRequest : public SSORequest {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_accessToken;
+  bool m_roleNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
 };
 

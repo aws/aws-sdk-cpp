@@ -71,9 +71,9 @@ class BranchDiffSourceCodeType {
   ///@}
  private:
   Aws::String m_sourceBranchName;
-  bool m_sourceBranchNameHasBeenSet = false;
 
   Aws::String m_destinationBranchName;
+  bool m_sourceBranchNameHasBeenSet = false;
   bool m_destinationBranchNameHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class FailureDescription {
   ///@}
  private:
   DeliveryStreamFailureType m_type{DeliveryStreamFailureType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_details;
+  bool m_typeHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

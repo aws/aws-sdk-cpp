@@ -140,21 +140,21 @@ class ImportBackendAuthRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
-  bool m_backendEnvironmentNameHasBeenSet = false;
 
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_nativeClientId;
-  bool m_nativeClientIdHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_webClientId;
+  bool m_appIdHasBeenSet = false;
+  bool m_backendEnvironmentNameHasBeenSet = false;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_nativeClientIdHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_webClientIdHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class DescribeBatchDeleteConfigurationTaskResult {
   ///@}
  private:
   BatchDeleteConfigurationTask m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -167,21 +167,21 @@ class LambdaFunctionAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_functionNames;
-  bool m_functionNamesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_runtimes;
-  bool m_runtimesHasBeenSet = false;
 
   Aws::Vector<MapFilter> m_functionTags;
-  bool m_functionTagsHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   LambdaFunctionSortBy m_sortBy{LambdaFunctionSortBy::NOT_SET};
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_functionNamesHasBeenSet = false;
+  bool m_runtimesHasBeenSet = false;
+  bool m_functionTagsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

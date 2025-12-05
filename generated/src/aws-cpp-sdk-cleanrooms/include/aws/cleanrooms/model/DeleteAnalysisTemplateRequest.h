@@ -65,9 +65,9 @@ class DeleteAnalysisTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_analysisTemplateIdentifier;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_analysisTemplateIdentifierHasBeenSet = false;
 };
 

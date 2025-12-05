@@ -90,12 +90,12 @@ class ListAccountsForParentRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_parentIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

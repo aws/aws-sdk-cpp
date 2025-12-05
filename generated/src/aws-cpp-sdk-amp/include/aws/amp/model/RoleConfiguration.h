@@ -78,9 +78,9 @@ class RoleConfiguration {
   ///@}
  private:
   Aws::String m_sourceRoleArn;
-  bool m_sourceRoleArnHasBeenSet = false;
 
   Aws::String m_targetRoleArn;
+  bool m_sourceRoleArnHasBeenSet = false;
   bool m_targetRoleArnHasBeenSet = false;
 };
 

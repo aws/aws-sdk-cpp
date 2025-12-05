@@ -89,12 +89,12 @@ class GeospatialLayerDefinition {
   ///@}
  private:
   GeospatialPointLayer m_pointLayer;
-  bool m_pointLayerHasBeenSet = false;
 
   GeospatialLineLayer m_lineLayer;
-  bool m_lineLayerHasBeenSet = false;
 
   GeospatialPolygonLayer m_polygonLayer;
+  bool m_pointLayerHasBeenSet = false;
+  bool m_lineLayerHasBeenSet = false;
   bool m_polygonLayerHasBeenSet = false;
 };
 

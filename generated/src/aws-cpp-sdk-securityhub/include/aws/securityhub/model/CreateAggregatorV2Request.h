@@ -116,15 +116,15 @@ class CreateAggregatorV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_regionLinkingMode;
-  bool m_regionLinkingModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_linkedRegions;
-  bool m_linkedRegionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_regionLinkingModeHasBeenSet = false;
+  bool m_linkedRegionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

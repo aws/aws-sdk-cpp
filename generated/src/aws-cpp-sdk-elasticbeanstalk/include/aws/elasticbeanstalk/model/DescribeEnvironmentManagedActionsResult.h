@@ -74,9 +74,9 @@ class DescribeEnvironmentManagedActionsResult {
   ///@}
  private:
   Aws::Vector<ManagedAction> m_managedActions;
-  bool m_managedActionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_managedActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

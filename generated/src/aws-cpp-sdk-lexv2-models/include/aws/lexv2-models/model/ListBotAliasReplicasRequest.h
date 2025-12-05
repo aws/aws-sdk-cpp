@@ -103,15 +103,15 @@ class ListBotAliasReplicasRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_replicaRegion;
-  bool m_replicaRegionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_botIdHasBeenSet = false;
+  bool m_replicaRegionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

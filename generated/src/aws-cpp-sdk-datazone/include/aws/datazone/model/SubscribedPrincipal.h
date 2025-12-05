@@ -89,12 +89,12 @@ class SubscribedPrincipal {
   ///@}
  private:
   SubscribedGroup m_group;
-  bool m_groupHasBeenSet = false;
 
   SubscribedProject m_project;
-  bool m_projectHasBeenSet = false;
 
   SubscribedUser m_user;
+  bool m_groupHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

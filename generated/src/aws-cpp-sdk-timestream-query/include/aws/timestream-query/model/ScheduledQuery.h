@@ -195,30 +195,30 @@ class ScheduledQuery {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_previousInvocationTime{};
-  bool m_previousInvocationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextInvocationTime{};
-  bool m_nextInvocationTimeHasBeenSet = false;
 
   ErrorReportConfiguration m_errorReportConfiguration;
-  bool m_errorReportConfigurationHasBeenSet = false;
 
   TargetDestination m_targetDestination;
-  bool m_targetDestinationHasBeenSet = false;
 
   ScheduledQueryRunStatus m_lastRunStatus{ScheduledQueryRunStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_previousInvocationTimeHasBeenSet = false;
+  bool m_nextInvocationTimeHasBeenSet = false;
+  bool m_errorReportConfigurationHasBeenSet = false;
+  bool m_targetDestinationHasBeenSet = false;
   bool m_lastRunStatusHasBeenSet = false;
 };
 

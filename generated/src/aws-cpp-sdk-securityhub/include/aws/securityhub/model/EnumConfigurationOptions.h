@@ -76,9 +76,9 @@ class EnumConfigurationOptions {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedValues;
+  bool m_defaultValueHasBeenSet = false;
   bool m_allowedValuesHasBeenSet = false;
 };
 

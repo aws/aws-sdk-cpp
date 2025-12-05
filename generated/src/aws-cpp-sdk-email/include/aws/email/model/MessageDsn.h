@@ -105,12 +105,12 @@ class MessageDsn {
   ///@}
  private:
   Aws::String m_reportingMta;
-  bool m_reportingMtaHasBeenSet = false;
 
   Aws::Utils::DateTime m_arrivalDate{};
-  bool m_arrivalDateHasBeenSet = false;
 
   Aws::Vector<ExtensionField> m_extensionFields;
+  bool m_reportingMtaHasBeenSet = false;
+  bool m_arrivalDateHasBeenSet = false;
   bool m_extensionFieldsHasBeenSet = false;
 };
 

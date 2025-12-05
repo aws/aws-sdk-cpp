@@ -176,24 +176,24 @@ class PutSigningProfileRequest : public SignerRequest {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   SigningMaterial m_signingMaterial;
-  bool m_signingMaterialHasBeenSet = false;
 
   SignatureValidityPeriod m_signatureValidityPeriod;
-  bool m_signatureValidityPeriodHasBeenSet = false;
 
   Aws::String m_platformId;
-  bool m_platformIdHasBeenSet = false;
 
   SigningPlatformOverrides m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_signingParameters;
-  bool m_signingParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_profileNameHasBeenSet = false;
+  bool m_signingMaterialHasBeenSet = false;
+  bool m_signatureValidityPeriodHasBeenSet = false;
+  bool m_platformIdHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
+  bool m_signingParametersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

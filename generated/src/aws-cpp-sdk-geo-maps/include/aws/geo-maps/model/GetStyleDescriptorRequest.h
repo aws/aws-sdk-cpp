@@ -213,27 +213,27 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   ///@}
  private:
   MapStyle m_style{MapStyle::NOT_SET};
-  bool m_styleHasBeenSet = false;
 
   ColorScheme m_colorScheme{ColorScheme::NOT_SET};
-  bool m_colorSchemeHasBeenSet = false;
 
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   Terrain m_terrain{Terrain::NOT_SET};
-  bool m_terrainHasBeenSet = false;
 
   ContourDensity m_contourDensity{ContourDensity::NOT_SET};
-  bool m_contourDensityHasBeenSet = false;
 
   Traffic m_traffic{Traffic::NOT_SET};
-  bool m_trafficHasBeenSet = false;
 
   Aws::Vector<TravelMode> m_travelModes;
-  bool m_travelModesHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_styleHasBeenSet = false;
+  bool m_colorSchemeHasBeenSet = false;
+  bool m_politicalViewHasBeenSet = false;
+  bool m_terrainHasBeenSet = false;
+  bool m_contourDensityHasBeenSet = false;
+  bool m_trafficHasBeenSet = false;
+  bool m_travelModesHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

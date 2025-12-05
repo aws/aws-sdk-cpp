@@ -258,36 +258,36 @@ class CreateEndpointGroupRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   Aws::String m_endpointGroupRegion;
-  bool m_endpointGroupRegionHasBeenSet = false;
 
   Aws::Vector<EndpointConfiguration> m_endpointConfigurations;
-  bool m_endpointConfigurationsHasBeenSet = false;
 
   double m_trafficDialPercentage{0.0};
-  bool m_trafficDialPercentageHasBeenSet = false;
 
   int m_healthCheckPort{0};
-  bool m_healthCheckPortHasBeenSet = false;
 
   HealthCheckProtocol m_healthCheckProtocol{HealthCheckProtocol::NOT_SET};
-  bool m_healthCheckProtocolHasBeenSet = false;
 
   Aws::String m_healthCheckPath;
-  bool m_healthCheckPathHasBeenSet = false;
 
   int m_healthCheckIntervalSeconds{0};
-  bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
   int m_thresholdCount{0};
-  bool m_thresholdCountHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   Aws::Vector<PortOverride> m_portOverrides;
+  bool m_listenerArnHasBeenSet = false;
+  bool m_endpointGroupRegionHasBeenSet = false;
+  bool m_endpointConfigurationsHasBeenSet = false;
+  bool m_trafficDialPercentageHasBeenSet = false;
+  bool m_healthCheckPortHasBeenSet = false;
+  bool m_healthCheckProtocolHasBeenSet = false;
+  bool m_healthCheckPathHasBeenSet = false;
+  bool m_healthCheckIntervalSecondsHasBeenSet = false;
+  bool m_thresholdCountHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
   bool m_portOverridesHasBeenSet = false;
 };
 

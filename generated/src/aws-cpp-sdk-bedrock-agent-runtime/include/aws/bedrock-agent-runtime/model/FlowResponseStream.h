@@ -281,42 +281,42 @@ class FlowResponseStream {
   ///@}
  private:
   BedrockAgentRuntimeError m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
 
   BadGatewayException m_badGatewayException;
-  bool m_badGatewayExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_conflictException;
-  bool m_conflictExceptionHasBeenSet = false;
 
   DependencyFailedException m_dependencyFailedException;
-  bool m_dependencyFailedExceptionHasBeenSet = false;
 
   FlowCompletionEvent m_flowCompletionEvent;
-  bool m_flowCompletionEventHasBeenSet = false;
 
   FlowMultiTurnInputRequestEvent m_flowMultiTurnInputRequestEvent;
-  bool m_flowMultiTurnInputRequestEventHasBeenSet = false;
 
   FlowOutputEvent m_flowOutputEvent;
-  bool m_flowOutputEventHasBeenSet = false;
 
   FlowTraceEvent m_flowTraceEvent;
-  bool m_flowTraceEventHasBeenSet = false;
 
   InternalServerException m_internalServerException;
-  bool m_internalServerExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_resourceNotFoundException;
-  bool m_resourceNotFoundExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_serviceQuotaExceededException;
-  bool m_serviceQuotaExceededExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_throttlingException;
-  bool m_throttlingExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_validationException;
+  bool m_accessDeniedExceptionHasBeenSet = false;
+  bool m_badGatewayExceptionHasBeenSet = false;
+  bool m_conflictExceptionHasBeenSet = false;
+  bool m_dependencyFailedExceptionHasBeenSet = false;
+  bool m_flowCompletionEventHasBeenSet = false;
+  bool m_flowMultiTurnInputRequestEventHasBeenSet = false;
+  bool m_flowOutputEventHasBeenSet = false;
+  bool m_flowTraceEventHasBeenSet = false;
+  bool m_internalServerExceptionHasBeenSet = false;
+  bool m_resourceNotFoundExceptionHasBeenSet = false;
+  bool m_serviceQuotaExceededExceptionHasBeenSet = false;
+  bool m_throttlingExceptionHasBeenSet = false;
   bool m_validationExceptionHasBeenSet = false;
 };
 

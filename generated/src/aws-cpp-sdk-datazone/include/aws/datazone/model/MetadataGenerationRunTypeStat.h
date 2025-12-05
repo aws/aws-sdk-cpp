@@ -85,12 +85,12 @@ class MetadataGenerationRunTypeStat {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -439,57 +439,57 @@ class RegisterImageRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_imageLocation;
-  bool m_imageLocationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_billingProducts;
-  bool m_billingProductsHasBeenSet = false;
 
   BootModeValues m_bootMode{BootModeValues::NOT_SET};
-  bool m_bootModeHasBeenSet = false;
 
   TpmSupportValues m_tpmSupport{TpmSupportValues::NOT_SET};
-  bool m_tpmSupportHasBeenSet = false;
 
   Aws::String m_uefiData;
-  bool m_uefiDataHasBeenSet = false;
 
   ImdsSupportValues m_imdsSupport{ImdsSupportValues::NOT_SET};
-  bool m_imdsSupportHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ArchitectureValues m_architecture{ArchitectureValues::NOT_SET};
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   Aws::String m_rootDeviceName;
-  bool m_rootDeviceNameHasBeenSet = false;
 
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::String m_virtualizationType;
-  bool m_virtualizationTypeHasBeenSet = false;
 
   Aws::String m_sriovNetSupport;
-  bool m_sriovNetSupportHasBeenSet = false;
 
   bool m_enaSupport{false};
+  bool m_imageLocationHasBeenSet = false;
+  bool m_billingProductsHasBeenSet = false;
+  bool m_bootModeHasBeenSet = false;
+  bool m_tpmSupportHasBeenSet = false;
+  bool m_uefiDataHasBeenSet = false;
+  bool m_imdsSupportHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_rootDeviceNameHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_virtualizationTypeHasBeenSet = false;
+  bool m_sriovNetSupportHasBeenSet = false;
   bool m_enaSupportHasBeenSet = false;
 };
 

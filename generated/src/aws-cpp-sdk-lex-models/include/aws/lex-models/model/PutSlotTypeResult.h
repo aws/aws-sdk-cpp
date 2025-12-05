@@ -248,39 +248,39 @@ class PutSlotTypeResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EnumerationValue> m_enumerationValues;
-  bool m_enumerationValuesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   SlotValueSelectionStrategy m_valueSelectionStrategy{SlotValueSelectionStrategy::NOT_SET};
-  bool m_valueSelectionStrategyHasBeenSet = false;
 
   bool m_createVersion{false};
-  bool m_createVersionHasBeenSet = false;
 
   Aws::String m_parentSlotTypeSignature;
-  bool m_parentSlotTypeSignatureHasBeenSet = false;
 
   Aws::Vector<SlotTypeConfiguration> m_slotTypeConfigurations;
-  bool m_slotTypeConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enumerationValuesHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_valueSelectionStrategyHasBeenSet = false;
+  bool m_createVersionHasBeenSet = false;
+  bool m_parentSlotTypeSignatureHasBeenSet = false;
+  bool m_slotTypeConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

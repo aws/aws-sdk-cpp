@@ -89,12 +89,12 @@ class GetSolVnfcResourceInfoMetadata {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_helmChart;
-  bool m_helmChartHasBeenSet = false;
 
   Aws::String m_nodeGroup;
+  bool m_clusterHasBeenSet = false;
+  bool m_helmChartHasBeenSet = false;
   bool m_nodeGroupHasBeenSet = false;
 };
 

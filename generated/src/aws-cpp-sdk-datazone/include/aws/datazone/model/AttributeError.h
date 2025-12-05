@@ -86,12 +86,12 @@ class AttributeError {
   ///@}
  private:
   Aws::String m_attributeIdentifier;
-  bool m_attributeIdentifierHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_attributeIdentifierHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

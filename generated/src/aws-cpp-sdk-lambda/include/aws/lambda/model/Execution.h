@@ -148,21 +148,21 @@ class Execution {
   ///@}
  private:
   Aws::String m_durableExecutionArn;
-  bool m_durableExecutionArnHasBeenSet = false;
 
   Aws::String m_durableExecutionName;
-  bool m_durableExecutionNameHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
+  bool m_durableExecutionArnHasBeenSet = false;
+  bool m_durableExecutionNameHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
   bool m_endTimestampHasBeenSet = false;
 };
 

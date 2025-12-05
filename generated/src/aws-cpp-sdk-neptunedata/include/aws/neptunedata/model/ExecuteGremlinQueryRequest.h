@@ -76,9 +76,9 @@ class ExecuteGremlinQueryRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_gremlinQuery;
-  bool m_gremlinQueryHasBeenSet = false;
 
   Aws::String m_serializer;
+  bool m_gremlinQueryHasBeenSet = false;
   bool m_serializerHasBeenSet = false;
 };
 

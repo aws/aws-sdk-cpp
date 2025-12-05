@@ -69,9 +69,9 @@ class DeleteUserRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_authenticationTokenHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

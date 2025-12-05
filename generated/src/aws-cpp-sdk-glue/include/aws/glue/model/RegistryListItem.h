@@ -140,21 +140,21 @@ class RegistryListItem {
   ///@}
  private:
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_registryArn;
-  bool m_registryArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RegistryStatus m_status{RegistryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_updatedTime;
+  bool m_registryNameHasBeenSet = false;
+  bool m_registryArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_updatedTimeHasBeenSet = false;
 };
 

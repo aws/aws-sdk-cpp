@@ -106,12 +106,12 @@ class UnassignPrivateIpAddressesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ipv4Prefixes;
-  bool m_ipv4PrefixesHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_privateIpAddresses;
+  bool m_ipv4PrefixesHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
   bool m_privateIpAddressesHasBeenSet = false;
 };
 

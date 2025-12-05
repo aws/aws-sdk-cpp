@@ -80,12 +80,12 @@ class StreamSelection {
   ///@}
  private:
   int m_maxVideoBitsPerSecond{0};
-  bool m_maxVideoBitsPerSecondHasBeenSet = false;
 
   int m_minVideoBitsPerSecond{0};
-  bool m_minVideoBitsPerSecondHasBeenSet = false;
 
   StreamOrder m_streamOrder{StreamOrder::NOT_SET};
+  bool m_maxVideoBitsPerSecondHasBeenSet = false;
+  bool m_minVideoBitsPerSecondHasBeenSet = false;
   bool m_streamOrderHasBeenSet = false;
 };
 

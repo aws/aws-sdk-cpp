@@ -125,18 +125,18 @@ class PeriodToDateComputation {
   ///@}
  private:
   Aws::String m_computationId;
-  bool m_computationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DimensionField m_time;
-  bool m_timeHasBeenSet = false;
 
   MeasureField m_value;
-  bool m_valueHasBeenSet = false;
 
   TimeGranularity m_periodTimeGranularity{TimeGranularity::NOT_SET};
+  bool m_computationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_periodTimeGranularityHasBeenSet = false;
 };
 

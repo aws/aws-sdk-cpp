@@ -122,18 +122,18 @@ class Outpost {
   ///@}
  private:
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_s3OutpostArn;
-  bool m_s3OutpostArnHasBeenSet = false;
 
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   long long m_capacityInBytes{0};
+  bool m_outpostArnHasBeenSet = false;
+  bool m_s3OutpostArnHasBeenSet = false;
+  bool m_outpostIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_capacityInBytesHasBeenSet = false;
 };
 

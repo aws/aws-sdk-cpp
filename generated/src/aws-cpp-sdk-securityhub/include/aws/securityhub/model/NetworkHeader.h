@@ -89,12 +89,12 @@ class NetworkHeader {
   ///@}
  private:
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   NetworkPathComponentDetails m_destination;
-  bool m_destinationHasBeenSet = false;
 
   NetworkPathComponentDetails m_source;
+  bool m_protocolHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

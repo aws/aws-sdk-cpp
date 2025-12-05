@@ -70,9 +70,9 @@ class GuardrailCoverage {
   ///@}
  private:
   GuardrailTextCharactersCoverage m_textCharacters;
-  bool m_textCharactersHasBeenSet = false;
 
   GuardrailImageCoverage m_images;
+  bool m_textCharactersHasBeenSet = false;
   bool m_imagesHasBeenSet = false;
 };
 

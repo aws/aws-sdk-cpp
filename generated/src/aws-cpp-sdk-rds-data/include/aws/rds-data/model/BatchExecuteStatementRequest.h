@@ -182,24 +182,24 @@ class BatchExecuteStatementRequest : public RDSDataServiceRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_sql;
-  bool m_sqlHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<SqlParameter>> m_parameterSets;
-  bool m_parameterSetsHasBeenSet = false;
 
   Aws::String m_transactionId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_sqlHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_parameterSetsHasBeenSet = false;
   bool m_transactionIdHasBeenSet = false;
 };
 

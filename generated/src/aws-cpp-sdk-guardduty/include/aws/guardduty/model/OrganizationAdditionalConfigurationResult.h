@@ -81,9 +81,9 @@ class OrganizationAdditionalConfigurationResult {
   ///@}
  private:
   OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   OrgFeatureStatus m_autoEnable{OrgFeatureStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_autoEnableHasBeenSet = false;
 };
 

@@ -199,30 +199,30 @@ class VariantImportJobItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   bool m_runLeftNormalization{false};
-  bool m_runLeftNormalizationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_annotationFields;
+  bool m_idHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_runLeftNormalizationHasBeenSet = false;
   bool m_annotationFieldsHasBeenSet = false;
 };
 

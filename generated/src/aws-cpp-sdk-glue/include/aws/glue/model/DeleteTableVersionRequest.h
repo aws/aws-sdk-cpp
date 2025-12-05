@@ -107,15 +107,15 @@ class DeleteTableVersionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class RelationalDatabaseBlueprint {
   ///@}
  private:
   Aws::String m_blueprintId;
-  bool m_blueprintIdHasBeenSet = false;
 
   RelationalDatabaseEngine m_engine{RelationalDatabaseEngine::NOT_SET};
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_engineDescription;
-  bool m_engineDescriptionHasBeenSet = false;
 
   Aws::String m_engineVersionDescription;
-  bool m_engineVersionDescriptionHasBeenSet = false;
 
   bool m_isEngineDefault{false};
+  bool m_blueprintIdHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_engineDescriptionHasBeenSet = false;
+  bool m_engineVersionDescriptionHasBeenSet = false;
   bool m_isEngineDefaultHasBeenSet = false;
 };
 

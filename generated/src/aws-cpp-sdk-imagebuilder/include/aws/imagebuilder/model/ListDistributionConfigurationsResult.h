@@ -91,12 +91,12 @@ class ListDistributionConfigurationsResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<DistributionConfigurationSummary> m_distributionConfigurationSummaryList;
-  bool m_distributionConfigurationSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_distributionConfigurationSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

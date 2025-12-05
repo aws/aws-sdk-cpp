@@ -62,9 +62,9 @@ class ExportAutomatedReasoningPolicyVersionResult {
   ///@}
  private:
   AutomatedReasoningPolicyDefinition m_policyDefinition;
-  bool m_policyDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

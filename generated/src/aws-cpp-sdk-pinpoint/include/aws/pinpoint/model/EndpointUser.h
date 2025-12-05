@@ -86,9 +86,9 @@ class EndpointUser {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_userAttributes;
-  bool m_userAttributesHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_userAttributesHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

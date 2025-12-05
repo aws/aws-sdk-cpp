@@ -193,27 +193,27 @@ class RestoreTestingPlanForList {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastExecutionTime{};
-  bool m_lastExecutionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_restoreTestingPlanArn;
-  bool m_restoreTestingPlanArnHasBeenSet = false;
 
   Aws::String m_restoreTestingPlanName;
-  bool m_restoreTestingPlanNameHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_scheduleExpressionTimezone;
-  bool m_scheduleExpressionTimezoneHasBeenSet = false;
 
   int m_startWindowHours{0};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastExecutionTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_restoreTestingPlanArnHasBeenSet = false;
+  bool m_restoreTestingPlanNameHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_scheduleExpressionTimezoneHasBeenSet = false;
   bool m_startWindowHoursHasBeenSet = false;
 };
 

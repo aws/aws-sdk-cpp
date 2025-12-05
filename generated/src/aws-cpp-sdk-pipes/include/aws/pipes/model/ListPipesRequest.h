@@ -162,24 +162,24 @@ class ListPipesRequest : public PipesRequest {
   ///@}
  private:
   Aws::String m_namePrefix;
-  bool m_namePrefixHasBeenSet = false;
 
   RequestedPipeState m_desiredState{RequestedPipeState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   PipeState m_currentState{PipeState::NOT_SET};
-  bool m_currentStateHasBeenSet = false;
 
   Aws::String m_sourcePrefix;
-  bool m_sourcePrefixHasBeenSet = false;
 
   Aws::String m_targetPrefix;
-  bool m_targetPrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_namePrefixHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_currentStateHasBeenSet = false;
+  bool m_sourcePrefixHasBeenSet = false;
+  bool m_targetPrefixHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

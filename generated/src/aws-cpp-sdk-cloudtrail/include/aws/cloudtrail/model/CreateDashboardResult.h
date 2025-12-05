@@ -172,27 +172,27 @@ class CreateDashboardResult {
   ///@}
  private:
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DashboardType m_type{DashboardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Widget> m_widgets;
-  bool m_widgetsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagsList;
-  bool m_tagsListHasBeenSet = false;
 
   RefreshSchedule m_refreshSchedule;
-  bool m_refreshScheduleHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
-  bool m_terminationProtectionEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_widgetsHasBeenSet = false;
+  bool m_tagsListHasBeenSet = false;
+  bool m_refreshScheduleHasBeenSet = false;
+  bool m_terminationProtectionEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class CreateSbomExportRequest : public Inspector2Request {
   ///@}
  private:
   ResourceFilterCriteria m_resourceFilterCriteria;
-  bool m_resourceFilterCriteriaHasBeenSet = false;
 
   SbomReportFormat m_reportFormat{SbomReportFormat::NOT_SET};
-  bool m_reportFormatHasBeenSet = false;
 
   Destination m_s3Destination;
+  bool m_resourceFilterCriteriaHasBeenSet = false;
+  bool m_reportFormatHasBeenSet = false;
   bool m_s3DestinationHasBeenSet = false;
 };
 

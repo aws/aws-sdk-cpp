@@ -92,12 +92,12 @@ class ImportClientVpnClientCertificateRevocationListRequest : public EC2Request 
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_certificateRevocationList;
-  bool m_certificateRevocationListHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_certificateRevocationListHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

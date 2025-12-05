@@ -115,15 +115,15 @@ class EdgeConfig {
   ///@}
  private:
   Aws::String m_hubDeviceArn;
-  bool m_hubDeviceArnHasBeenSet = false;
 
   RecorderConfig m_recorderConfig;
-  bool m_recorderConfigHasBeenSet = false;
 
   UploaderConfig m_uploaderConfig;
-  bool m_uploaderConfigHasBeenSet = false;
 
   DeletionConfig m_deletionConfig;
+  bool m_hubDeviceArnHasBeenSet = false;
+  bool m_recorderConfigHasBeenSet = false;
+  bool m_uploaderConfigHasBeenSet = false;
   bool m_deletionConfigHasBeenSet = false;
 };
 

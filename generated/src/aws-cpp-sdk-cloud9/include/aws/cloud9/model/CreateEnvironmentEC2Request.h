@@ -273,36 +273,36 @@ class CreateEnvironmentEC2Request : public Cloud9Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   int m_automaticStopTimeMinutes{0};
-  bool m_automaticStopTimeMinutesHasBeenSet = false;
 
   Aws::String m_ownerArn;
-  bool m_ownerArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_automaticStopTimeMinutesHasBeenSet = false;
+  bool m_ownerArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

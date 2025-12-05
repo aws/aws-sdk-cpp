@@ -76,9 +76,9 @@ class ListConfigurationSetsRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

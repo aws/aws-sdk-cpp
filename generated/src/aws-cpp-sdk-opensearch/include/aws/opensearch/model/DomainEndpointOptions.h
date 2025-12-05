@@ -126,18 +126,18 @@ class DomainEndpointOptions {
   ///@}
  private:
   bool m_enforceHTTPS{false};
-  bool m_enforceHTTPSHasBeenSet = false;
 
   TLSSecurityPolicy m_tLSSecurityPolicy{TLSSecurityPolicy::NOT_SET};
-  bool m_tLSSecurityPolicyHasBeenSet = false;
 
   bool m_customEndpointEnabled{false};
-  bool m_customEndpointEnabledHasBeenSet = false;
 
   Aws::String m_customEndpoint;
-  bool m_customEndpointHasBeenSet = false;
 
   Aws::String m_customEndpointCertificateArn;
+  bool m_enforceHTTPSHasBeenSet = false;
+  bool m_tLSSecurityPolicyHasBeenSet = false;
+  bool m_customEndpointEnabledHasBeenSet = false;
+  bool m_customEndpointHasBeenSet = false;
   bool m_customEndpointCertificateArnHasBeenSet = false;
 };
 

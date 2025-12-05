@@ -69,9 +69,9 @@ class DetectorModel {
   ///@}
  private:
   DetectorModelDefinition m_detectorModelDefinition;
-  bool m_detectorModelDefinitionHasBeenSet = false;
 
   DetectorModelConfiguration m_detectorModelConfiguration;
+  bool m_detectorModelDefinitionHasBeenSet = false;
   bool m_detectorModelConfigurationHasBeenSet = false;
 };
 

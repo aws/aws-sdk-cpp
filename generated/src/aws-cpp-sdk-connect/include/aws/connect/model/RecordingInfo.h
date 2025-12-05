@@ -236,36 +236,36 @@ class RecordingInfo {
   ///@}
  private:
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   MediaStreamType m_mediaStreamType{MediaStreamType::NOT_SET};
-  bool m_mediaStreamTypeHasBeenSet = false;
 
   ParticipantType m_participantType{ParticipantType::NOT_SET};
-  bool m_participantTypeHasBeenSet = false;
 
   Aws::String m_fragmentStartNumber;
-  bool m_fragmentStartNumberHasBeenSet = false;
 
   Aws::String m_fragmentStopNumber;
-  bool m_fragmentStopNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTimestamp{};
-  bool m_stopTimestampHasBeenSet = false;
 
   RecordingStatus m_status{RecordingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_deletionReason;
-  bool m_deletionReasonHasBeenSet = false;
 
   Aws::String m_unprocessedTranscriptLocation;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_mediaStreamTypeHasBeenSet = false;
+  bool m_participantTypeHasBeenSet = false;
+  bool m_fragmentStartNumberHasBeenSet = false;
+  bool m_fragmentStopNumberHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_stopTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_deletionReasonHasBeenSet = false;
   bool m_unprocessedTranscriptLocationHasBeenSet = false;
 };
 

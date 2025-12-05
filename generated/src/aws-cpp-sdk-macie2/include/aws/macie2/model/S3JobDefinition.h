@@ -110,12 +110,12 @@ class S3JobDefinition {
   ///@}
  private:
   S3BucketCriteriaForJob m_bucketCriteria;
-  bool m_bucketCriteriaHasBeenSet = false;
 
   Aws::Vector<S3BucketDefinitionForJob> m_bucketDefinitions;
-  bool m_bucketDefinitionsHasBeenSet = false;
 
   Scoping m_scoping;
+  bool m_bucketCriteriaHasBeenSet = false;
+  bool m_bucketDefinitionsHasBeenSet = false;
   bool m_scopingHasBeenSet = false;
 };
 

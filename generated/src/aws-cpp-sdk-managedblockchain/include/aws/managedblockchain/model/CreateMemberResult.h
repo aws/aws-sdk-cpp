@@ -59,9 +59,9 @@ class CreateMemberResult {
   ///@}
  private:
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memberIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

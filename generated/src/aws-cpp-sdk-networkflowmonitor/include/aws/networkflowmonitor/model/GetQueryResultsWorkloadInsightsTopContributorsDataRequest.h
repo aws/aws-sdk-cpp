@@ -108,15 +108,15 @@ class GetQueryResultsWorkloadInsightsTopContributorsDataRequest : public Network
   ///@}
  private:
   Aws::String m_scopeId;
-  bool m_scopeIdHasBeenSet = false;
 
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_scopeIdHasBeenSet = false;
+  bool m_queryIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

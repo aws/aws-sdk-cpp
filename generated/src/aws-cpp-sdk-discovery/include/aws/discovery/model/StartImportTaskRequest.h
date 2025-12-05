@@ -96,12 +96,12 @@ class StartImportTaskRequest : public ApplicationDiscoveryServiceRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_importUrl;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
   bool m_importUrlHasBeenSet = false;
 };
 

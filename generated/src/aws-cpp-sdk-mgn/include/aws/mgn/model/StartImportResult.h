@@ -65,9 +65,9 @@ class StartImportResult {
   ///@}
  private:
   ImportTask m_importTask;
-  bool m_importTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ParticipantDetailsToAdd {
   ///@}
  private:
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ParticipantCapabilities m_participantCapabilities;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_participantCapabilitiesHasBeenSet = false;
 };
 

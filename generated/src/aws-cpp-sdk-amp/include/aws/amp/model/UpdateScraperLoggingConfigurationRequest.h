@@ -92,12 +92,12 @@ class UpdateScraperLoggingConfigurationRequest : public PrometheusServiceRequest
   ///@}
  private:
   Aws::String m_scraperId;
-  bool m_scraperIdHasBeenSet = false;
 
   ScraperLoggingDestination m_loggingDestination;
-  bool m_loggingDestinationHasBeenSet = false;
 
   Aws::Vector<ScraperComponent> m_scraperComponents;
+  bool m_scraperIdHasBeenSet = false;
+  bool m_loggingDestinationHasBeenSet = false;
   bool m_scraperComponentsHasBeenSet = false;
 };
 

@@ -261,33 +261,33 @@ class UpdateContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Reference> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   QueueInfoInput m_queueInfo;
-  bool m_queueInfoHasBeenSet = false;
 
   UserInfo m_userInfo;
-  bool m_userInfoHasBeenSet = false;
 
   Endpoint m_customerEndpoint;
-  bool m_customerEndpointHasBeenSet = false;
 
   Endpoint m_systemEndpoint;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
+  bool m_queueInfoHasBeenSet = false;
+  bool m_userInfoHasBeenSet = false;
+  bool m_customerEndpointHasBeenSet = false;
   bool m_systemEndpointHasBeenSet = false;
 };
 

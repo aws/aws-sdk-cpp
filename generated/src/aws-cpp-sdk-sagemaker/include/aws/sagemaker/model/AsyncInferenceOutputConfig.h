@@ -109,15 +109,15 @@ class AsyncInferenceOutputConfig {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   AsyncInferenceNotificationConfig m_notificationConfig;
-  bool m_notificationConfigHasBeenSet = false;
 
   Aws::String m_s3FailurePath;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_s3OutputPathHasBeenSet = false;
+  bool m_notificationConfigHasBeenSet = false;
   bool m_s3FailurePathHasBeenSet = false;
 };
 

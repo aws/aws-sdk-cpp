@@ -84,9 +84,9 @@ class CustomAction {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   ActionDefinition m_actionDefinition;
+  bool m_actionNameHasBeenSet = false;
   bool m_actionDefinitionHasBeenSet = false;
 };
 

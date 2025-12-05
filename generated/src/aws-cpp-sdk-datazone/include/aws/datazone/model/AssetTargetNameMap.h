@@ -68,9 +68,9 @@ class AssetTargetNameMap {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_targetName;
+  bool m_assetIdHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
 };
 

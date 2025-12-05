@@ -74,9 +74,9 @@ class JobSample {
   ///@}
  private:
   SampleMode m_mode{SampleMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   long long m_size{0};
+  bool m_modeHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

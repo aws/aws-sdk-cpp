@@ -71,9 +71,9 @@ class TargetIdentifier {
   ///@}
  private:
   TargetId m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
+  bool m_targetIdHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
 };
 

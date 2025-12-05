@@ -248,36 +248,36 @@ class SettingEntry {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_appliedValue;
-  bool m_appliedValueHasBeenSet = false;
 
   Aws::String m_requestedValue;
-  bool m_requestedValueHasBeenSet = false;
 
   DirectoryConfigurationStatus m_requestStatus{DirectoryConfigurationStatus::NOT_SET};
-  bool m_requestStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, DirectoryConfigurationStatus> m_requestDetailedStatus;
-  bool m_requestDetailedStatusHasBeenSet = false;
 
   Aws::String m_requestStatusMessage;
-  bool m_requestStatusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRequestedDateTime{};
-  bool m_lastRequestedDateTimeHasBeenSet = false;
 
   Aws::String m_dataType;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_appliedValueHasBeenSet = false;
+  bool m_requestedValueHasBeenSet = false;
+  bool m_requestStatusHasBeenSet = false;
+  bool m_requestDetailedStatusHasBeenSet = false;
+  bool m_requestStatusMessageHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_lastRequestedDateTimeHasBeenSet = false;
   bool m_dataTypeHasBeenSet = false;
 };
 

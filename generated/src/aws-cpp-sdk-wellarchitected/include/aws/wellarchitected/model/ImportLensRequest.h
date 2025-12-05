@@ -105,15 +105,15 @@ class ImportLensRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_jSONString;
-  bool m_jSONStringHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_jSONStringHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

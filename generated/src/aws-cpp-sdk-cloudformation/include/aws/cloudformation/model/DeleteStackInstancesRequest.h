@@ -218,27 +218,27 @@ class DeleteStackInstancesRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   DeploymentTargets m_deploymentTargets;
-  bool m_deploymentTargetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   StackSetOperationPreferences m_operationPreferences;
-  bool m_operationPreferencesHasBeenSet = false;
 
   bool m_retainStacks{false};
-  bool m_retainStacksHasBeenSet = false;
 
   Aws::String m_operationId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_operationIdHasBeenSet = true;
 
   CallAs m_callAs{CallAs::NOT_SET};
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_accountsHasBeenSet = false;
+  bool m_deploymentTargetsHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_operationPreferencesHasBeenSet = false;
+  bool m_retainStacksHasBeenSet = false;
+  bool m_operationIdHasBeenSet = true;
   bool m_callAsHasBeenSet = false;
 };
 

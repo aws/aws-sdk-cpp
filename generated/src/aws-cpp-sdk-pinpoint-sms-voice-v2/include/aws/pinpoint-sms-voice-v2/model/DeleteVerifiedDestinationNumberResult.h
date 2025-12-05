@@ -113,18 +113,18 @@ class DeleteVerifiedDestinationNumberResult {
   ///@}
  private:
   Aws::String m_verifiedDestinationNumberArn;
-  bool m_verifiedDestinationNumberArnHasBeenSet = false;
 
   Aws::String m_verifiedDestinationNumberId;
-  bool m_verifiedDestinationNumberIdHasBeenSet = false;
 
   Aws::String m_destinationPhoneNumber;
-  bool m_destinationPhoneNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_verifiedDestinationNumberArnHasBeenSet = false;
+  bool m_verifiedDestinationNumberIdHasBeenSet = false;
+  bool m_destinationPhoneNumberHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

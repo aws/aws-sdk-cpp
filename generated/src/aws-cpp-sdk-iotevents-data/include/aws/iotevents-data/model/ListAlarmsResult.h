@@ -85,12 +85,12 @@ class ListAlarmsResult {
   ///@}
  private:
   Aws::Vector<AlarmSummary> m_alarmSummaries;
-  bool m_alarmSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alarmSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

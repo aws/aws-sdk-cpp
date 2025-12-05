@@ -101,12 +101,12 @@ class RetrievalConfiguration {
   ///@}
  private:
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   RetrievalMode m_retrievalMode{RetrievalMode::NOT_SET};
-  bool m_retrievalModeHasBeenSet = false;
 
   Aws::String m_roleName;
+  bool m_externalIdHasBeenSet = false;
+  bool m_retrievalModeHasBeenSet = false;
   bool m_roleNameHasBeenSet = false;
 };
 

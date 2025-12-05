@@ -180,24 +180,24 @@ class AutomatedReasoningCheckFinding {
   ///@}
  private:
   AutomatedReasoningCheckValidFinding m_valid;
-  bool m_validHasBeenSet = false;
 
   AutomatedReasoningCheckInvalidFinding m_invalid;
-  bool m_invalidHasBeenSet = false;
 
   AutomatedReasoningCheckSatisfiableFinding m_satisfiable;
-  bool m_satisfiableHasBeenSet = false;
 
   AutomatedReasoningCheckImpossibleFinding m_impossible;
-  bool m_impossibleHasBeenSet = false;
 
   AutomatedReasoningCheckTranslationAmbiguousFinding m_translationAmbiguous;
-  bool m_translationAmbiguousHasBeenSet = false;
 
   AutomatedReasoningCheckTooComplexFinding m_tooComplex;
-  bool m_tooComplexHasBeenSet = false;
 
   AutomatedReasoningCheckNoTranslationsFinding m_noTranslations;
+  bool m_validHasBeenSet = false;
+  bool m_invalidHasBeenSet = false;
+  bool m_satisfiableHasBeenSet = false;
+  bool m_impossibleHasBeenSet = false;
+  bool m_translationAmbiguousHasBeenSet = false;
+  bool m_tooComplexHasBeenSet = false;
   bool m_noTranslationsHasBeenSet = false;
 };
 

@@ -279,27 +279,27 @@ class GetResourcesRequest : public ResourceGroupsTaggingAPIRequest {
   ///@}
  private:
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::Vector<TagFilter> m_tagFilters;
-  bool m_tagFiltersHasBeenSet = false;
 
   int m_resourcesPerPage{0};
-  bool m_resourcesPerPageHasBeenSet = false;
 
   int m_tagsPerPage{0};
-  bool m_tagsPerPageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypeFilters;
-  bool m_resourceTypeFiltersHasBeenSet = false;
 
   bool m_includeComplianceDetails{false};
-  bool m_includeComplianceDetailsHasBeenSet = false;
 
   bool m_excludeCompliantResources{false};
-  bool m_excludeCompliantResourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceARNList;
+  bool m_paginationTokenHasBeenSet = false;
+  bool m_tagFiltersHasBeenSet = false;
+  bool m_resourcesPerPageHasBeenSet = false;
+  bool m_tagsPerPageHasBeenSet = false;
+  bool m_resourceTypeFiltersHasBeenSet = false;
+  bool m_includeComplianceDetailsHasBeenSet = false;
+  bool m_excludeCompliantResourcesHasBeenSet = false;
   bool m_resourceARNListHasBeenSet = false;
 };
 

@@ -128,15 +128,15 @@ class GuardrailTraceAssessment {
   ///@}
  private:
   Aws::Vector<Aws::String> m_modelOutput;
-  bool m_modelOutputHasBeenSet = false;
 
   Aws::Map<Aws::String, GuardrailAssessment> m_inputAssessment;
-  bool m_inputAssessmentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<GuardrailAssessment>> m_outputAssessments;
-  bool m_outputAssessmentsHasBeenSet = false;
 
   Aws::String m_actionReason;
+  bool m_modelOutputHasBeenSet = false;
+  bool m_inputAssessmentHasBeenSet = false;
+  bool m_outputAssessmentsHasBeenSet = false;
   bool m_actionReasonHasBeenSet = false;
 };
 

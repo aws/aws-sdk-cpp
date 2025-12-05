@@ -67,9 +67,9 @@ class PutMessageFeedbackRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   MessageFeedbackStatus m_messageFeedbackStatus{MessageFeedbackStatus::NOT_SET};
+  bool m_messageIdHasBeenSet = false;
   bool m_messageFeedbackStatusHasBeenSet = false;
 };
 

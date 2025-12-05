@@ -507,69 +507,69 @@ class ContainerFleet {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::String m_fleetRoleArn;
-  bool m_fleetRoleArnHasBeenSet = false;
 
   Aws::String m_gameServerContainerGroupDefinitionName;
-  bool m_gameServerContainerGroupDefinitionNameHasBeenSet = false;
 
   Aws::String m_gameServerContainerGroupDefinitionArn;
-  bool m_gameServerContainerGroupDefinitionArnHasBeenSet = false;
 
   Aws::String m_perInstanceContainerGroupDefinitionName;
-  bool m_perInstanceContainerGroupDefinitionNameHasBeenSet = false;
 
   Aws::String m_perInstanceContainerGroupDefinitionArn;
-  bool m_perInstanceContainerGroupDefinitionArnHasBeenSet = false;
 
   ConnectionPortRange m_instanceConnectionPortRange;
-  bool m_instanceConnectionPortRangeHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_instanceInboundPermissions;
-  bool m_instanceInboundPermissionsHasBeenSet = false;
 
   int m_gameServerContainerGroupsPerInstance{0};
-  bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
 
   int m_maximumGameServerContainerGroupsPerInstance{0};
-  bool m_maximumGameServerContainerGroupsPerInstanceHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   ContainerFleetBillingType m_billingType{ContainerFleetBillingType::NOT_SET};
-  bool m_billingTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricGroups;
-  bool m_metricGroupsHasBeenSet = false;
 
   ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
-  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
   GameSessionCreationLimitPolicy m_gameSessionCreationLimitPolicy;
-  bool m_gameSessionCreationLimitPolicyHasBeenSet = false;
 
   ContainerFleetStatus m_status{ContainerFleetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DeploymentDetails m_deploymentDetails;
-  bool m_deploymentDetailsHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::Vector<ContainerFleetLocationAttributes> m_locationAttributes;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_fleetRoleArnHasBeenSet = false;
+  bool m_gameServerContainerGroupDefinitionNameHasBeenSet = false;
+  bool m_gameServerContainerGroupDefinitionArnHasBeenSet = false;
+  bool m_perInstanceContainerGroupDefinitionNameHasBeenSet = false;
+  bool m_perInstanceContainerGroupDefinitionArnHasBeenSet = false;
+  bool m_instanceConnectionPortRangeHasBeenSet = false;
+  bool m_instanceInboundPermissionsHasBeenSet = false;
+  bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
+  bool m_maximumGameServerContainerGroupsPerInstanceHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_billingTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
+  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
+  bool m_gameSessionCreationLimitPolicyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_deploymentDetailsHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
   bool m_locationAttributesHasBeenSet = false;
 };
 

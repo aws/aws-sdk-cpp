@@ -124,15 +124,15 @@ class CustomRoutingEndpointGroup {
   ///@}
  private:
   Aws::String m_endpointGroupArn;
-  bool m_endpointGroupArnHasBeenSet = false;
 
   Aws::String m_endpointGroupRegion;
-  bool m_endpointGroupRegionHasBeenSet = false;
 
   Aws::Vector<CustomRoutingDestinationDescription> m_destinationDescriptions;
-  bool m_destinationDescriptionsHasBeenSet = false;
 
   Aws::Vector<CustomRoutingEndpointDescription> m_endpointDescriptions;
+  bool m_endpointGroupArnHasBeenSet = false;
+  bool m_endpointGroupRegionHasBeenSet = false;
+  bool m_destinationDescriptionsHasBeenSet = false;
   bool m_endpointDescriptionsHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class InvalidAccessPoint {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

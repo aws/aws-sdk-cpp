@@ -75,9 +75,9 @@ class SAMLPrivateKey {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_keyIdHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

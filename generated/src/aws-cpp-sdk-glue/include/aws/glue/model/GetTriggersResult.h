@@ -85,12 +85,12 @@ class GetTriggersResult {
   ///@}
  private:
   Aws::Vector<Trigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_triggersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

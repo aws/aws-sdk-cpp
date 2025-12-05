@@ -122,18 +122,18 @@ class DynamicScalingConfiguration {
   ///@}
  private:
   int m_minCapacity{0};
-  bool m_minCapacityHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_scaleInCooldown{0};
-  bool m_scaleInCooldownHasBeenSet = false;
 
   int m_scaleOutCooldown{0};
-  bool m_scaleOutCooldownHasBeenSet = false;
 
   Aws::Vector<ScalingPolicy> m_scalingPolicies;
+  bool m_minCapacityHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_scaleInCooldownHasBeenSet = false;
+  bool m_scaleOutCooldownHasBeenSet = false;
   bool m_scalingPoliciesHasBeenSet = false;
 };
 

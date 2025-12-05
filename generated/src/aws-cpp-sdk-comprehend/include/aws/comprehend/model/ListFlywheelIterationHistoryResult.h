@@ -86,12 +86,12 @@ class ListFlywheelIterationHistoryResult {
   ///@}
  private:
   Aws::Vector<FlywheelIterationProperties> m_flywheelIterationPropertiesList;
-  bool m_flywheelIterationPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flywheelIterationPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

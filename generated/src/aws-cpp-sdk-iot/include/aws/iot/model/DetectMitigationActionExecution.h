@@ -195,30 +195,30 @@ class DetectMitigationActionExecution {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_violationId;
-  bool m_violationIdHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionStartDate{};
-  bool m_executionStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionEndDate{};
-  bool m_executionEndDateHasBeenSet = false;
 
   DetectMitigationActionExecutionStatus m_status{DetectMitigationActionExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_taskIdHasBeenSet = false;
+  bool m_violationIdHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_executionStartDateHasBeenSet = false;
+  bool m_executionEndDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

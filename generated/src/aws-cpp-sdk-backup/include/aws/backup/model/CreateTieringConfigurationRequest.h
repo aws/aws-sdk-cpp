@@ -103,12 +103,12 @@ class CreateTieringConfigurationRequest : public BackupRequest {
   ///@}
  private:
   TieringConfigurationInputForCreate m_tieringConfiguration;
-  bool m_tieringConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tieringConfigurationTags;
-  bool m_tieringConfigurationTagsHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_tieringConfigurationHasBeenSet = false;
+  bool m_tieringConfigurationTagsHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = true;
 };
 

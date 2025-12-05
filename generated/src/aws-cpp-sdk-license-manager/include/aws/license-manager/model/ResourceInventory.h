@@ -255,39 +255,39 @@ class ResourceInventory {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_resourceOwningAccountId;
-  bool m_resourceOwningAccountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_marketplaceProductCodes;
-  bool m_marketplaceProductCodesHasBeenSet = false;
 
   Aws::String m_usageOperation;
-  bool m_usageOperationHasBeenSet = false;
 
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_instanceType;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_resourceOwningAccountIdHasBeenSet = false;
+  bool m_marketplaceProductCodesHasBeenSet = false;
+  bool m_usageOperationHasBeenSet = false;
+  bool m_amiIdHasBeenSet = false;
+  bool m_hostIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
 };
 

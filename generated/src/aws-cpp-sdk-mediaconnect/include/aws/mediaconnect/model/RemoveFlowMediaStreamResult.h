@@ -76,12 +76,12 @@ class RemoveFlowMediaStreamResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_mediaStreamName;
-  bool m_mediaStreamNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_mediaStreamNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -132,12 +132,12 @@ class PerformanceInsightsMetricQuery {
   ///@}
  private:
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   PerformanceInsightsMetricDimensionGroup m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filter;
+  bool m_metricHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class CreateConsumableResourceResult {
   ///@}
  private:
   Aws::String m_consumableResourceName;
-  bool m_consumableResourceNameHasBeenSet = false;
 
   Aws::String m_consumableResourceArn;
-  bool m_consumableResourceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumableResourceNameHasBeenSet = false;
+  bool m_consumableResourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

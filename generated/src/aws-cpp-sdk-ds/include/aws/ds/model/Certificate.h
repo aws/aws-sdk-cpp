@@ -179,27 +179,27 @@ class Certificate {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   CertificateState m_state{CertificateState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_commonName;
-  bool m_commonNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_registeredDateTime{};
-  bool m_registeredDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryDateTime{};
-  bool m_expiryDateTimeHasBeenSet = false;
 
   CertificateType m_type{CertificateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ClientCertAuthSettings m_clientCertAuthSettings;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_commonNameHasBeenSet = false;
+  bool m_registeredDateTimeHasBeenSet = false;
+  bool m_expiryDateTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_clientCertAuthSettingsHasBeenSet = false;
 };
 

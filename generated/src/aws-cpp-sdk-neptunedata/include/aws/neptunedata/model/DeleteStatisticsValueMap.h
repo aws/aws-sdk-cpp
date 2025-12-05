@@ -66,9 +66,9 @@ class DeleteStatisticsValueMap {
   ///@}
  private:
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   Aws::String m_statisticsId;
+  bool m_activeHasBeenSet = false;
   bool m_statisticsIdHasBeenSet = false;
 };
 

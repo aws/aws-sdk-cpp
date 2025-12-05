@@ -76,9 +76,9 @@ class IpSet {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ipAddresses;
-  bool m_ipAddressesHasBeenSet = false;
 
   IpAddressFamily m_ipAddressFamily{IpAddressFamily::NOT_SET};
+  bool m_ipAddressesHasBeenSet = false;
   bool m_ipAddressFamilyHasBeenSet = false;
 };
 

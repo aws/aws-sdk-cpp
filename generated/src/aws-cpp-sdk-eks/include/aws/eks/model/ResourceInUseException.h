@@ -104,15 +104,15 @@ class ResourceInUseException {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_nodegroupName;
-  bool m_nodegroupNameHasBeenSet = false;
 
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_nodegroupNameHasBeenSet = false;
+  bool m_addonNameHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

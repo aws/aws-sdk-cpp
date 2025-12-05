@@ -63,9 +63,9 @@ class HistogramEntry {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   int m_count{0};
+  bool m_valueHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

@@ -132,21 +132,21 @@ class SummarizedCounter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_max{0.0};
-  bool m_maxHasBeenSet = false;
 
   double m_average{0.0};
-  bool m_averageHasBeenSet = false;
 
   double m_sum{0.0};
-  bool m_sumHasBeenSet = false;
 
   int m_n{0};
-  bool m_nHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_nameHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
+  bool m_averageHasBeenSet = false;
+  bool m_sumHasBeenSet = false;
+  bool m_nHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

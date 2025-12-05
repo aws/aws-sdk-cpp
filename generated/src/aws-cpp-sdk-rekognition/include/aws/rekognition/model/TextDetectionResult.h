@@ -70,9 +70,9 @@ class TextDetectionResult {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   TextDetection m_textDetection;
+  bool m_timestampHasBeenSet = false;
   bool m_textDetectionHasBeenSet = false;
 };
 

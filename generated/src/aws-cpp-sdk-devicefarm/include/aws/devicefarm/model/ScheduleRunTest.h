@@ -164,18 +164,18 @@ class ScheduleRunTest {
   ///@}
  private:
   TestType m_type{TestType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_testPackageArn;
-  bool m_testPackageArnHasBeenSet = false;
 
   Aws::String m_testSpecArn;
-  bool m_testSpecArnHasBeenSet = false;
 
   Aws::String m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_typeHasBeenSet = false;
+  bool m_testPackageArnHasBeenSet = false;
+  bool m_testSpecArnHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

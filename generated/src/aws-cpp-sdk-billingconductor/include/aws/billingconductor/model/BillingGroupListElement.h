@@ -242,39 +242,39 @@ class BillingGroupListElement {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_primaryAccountId;
-  bool m_primaryAccountIdHasBeenSet = false;
 
   ComputationPreference m_computationPreference;
-  bool m_computationPreferenceHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   BillingGroupStatus m_status{BillingGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   ListBillingGroupAccountGrouping m_accountGrouping;
-  bool m_accountGroupingHasBeenSet = false;
 
   BillingGroupType m_billingGroupType{BillingGroupType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_primaryAccountIdHasBeenSet = false;
+  bool m_computationPreferenceHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_accountGroupingHasBeenSet = false;
   bool m_billingGroupTypeHasBeenSet = false;
 };
 

@@ -332,48 +332,48 @@ class DocumentIdentifier {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::Vector<PlatformType> m_platformTypes;
-  bool m_platformTypesHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   DocumentType m_documentType{DocumentType::NOT_SET};
-  bool m_documentTypeHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
-  bool m_documentFormatHasBeenSet = false;
 
   Aws::String m_targetType;
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<DocumentRequires> m_requires;
-  bool m_requiresHasBeenSet = false;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
-  bool m_reviewStatusHasBeenSet = false;
 
   Aws::String m_author;
+  bool m_nameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_platformTypesHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_documentTypeHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_documentFormatHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_requiresHasBeenSet = false;
+  bool m_reviewStatusHasBeenSet = false;
   bool m_authorHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class DialerConfig {
   ///@}
  private:
   ProgressiveDialerConfig m_progressiveDialerConfig;
-  bool m_progressiveDialerConfigHasBeenSet = false;
 
   PredictiveDialerConfig m_predictiveDialerConfig;
-  bool m_predictiveDialerConfigHasBeenSet = false;
 
   AgentlessDialerConfig m_agentlessDialerConfig;
+  bool m_progressiveDialerConfigHasBeenSet = false;
+  bool m_predictiveDialerConfigHasBeenSet = false;
   bool m_agentlessDialerConfigHasBeenSet = false;
 };
 

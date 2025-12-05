@@ -304,45 +304,45 @@ class RouteServerPeer {
   ///@}
  private:
   Aws::String m_routeServerPeerId;
-  bool m_routeServerPeerIdHasBeenSet = false;
 
   Aws::String m_routeServerEndpointId;
-  bool m_routeServerEndpointIdHasBeenSet = false;
 
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   RouteServerPeerState m_state{RouteServerPeerState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_endpointEniId;
-  bool m_endpointEniIdHasBeenSet = false;
 
   Aws::String m_endpointEniAddress;
-  bool m_endpointEniAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   RouteServerBgpOptions m_bgpOptions;
-  bool m_bgpOptionsHasBeenSet = false;
 
   RouteServerBgpStatus m_bgpStatus;
-  bool m_bgpStatusHasBeenSet = false;
 
   RouteServerBfdStatus m_bfdStatus;
-  bool m_bfdStatusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_routeServerPeerIdHasBeenSet = false;
+  bool m_routeServerEndpointIdHasBeenSet = false;
+  bool m_routeServerIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_endpointEniIdHasBeenSet = false;
+  bool m_endpointEniAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_bgpOptionsHasBeenSet = false;
+  bool m_bgpStatusHasBeenSet = false;
+  bool m_bfdStatusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

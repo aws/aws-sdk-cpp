@@ -60,9 +60,9 @@ class GetBillingViewResult {
   ///@}
  private:
   BillingViewElement m_billingView;
-  bool m_billingViewHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingViewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

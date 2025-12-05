@@ -66,9 +66,9 @@ class GetContentModerationRequestMetadata {
   ///@}
  private:
   ContentModerationSortBy m_sortBy{ContentModerationSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   ContentModerationAggregateBy m_aggregateBy{ContentModerationAggregateBy::NOT_SET};
+  bool m_sortByHasBeenSet = false;
   bool m_aggregateByHasBeenSet = false;
 };
 

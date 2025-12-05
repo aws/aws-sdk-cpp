@@ -70,9 +70,9 @@ class TableRecordExpirationConfigurationValue {
   ///@}
  private:
   TableRecordExpirationStatus m_status{TableRecordExpirationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TableRecordExpirationSettings m_settings;
+  bool m_statusHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

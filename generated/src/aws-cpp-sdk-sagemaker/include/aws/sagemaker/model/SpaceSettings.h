@@ -207,30 +207,30 @@ class SpaceSettings {
   ///@}
  private:
   JupyterServerAppSettings m_jupyterServerAppSettings;
-  bool m_jupyterServerAppSettingsHasBeenSet = false;
 
   KernelGatewayAppSettings m_kernelGatewayAppSettings;
-  bool m_kernelGatewayAppSettingsHasBeenSet = false;
 
   SpaceCodeEditorAppSettings m_codeEditorAppSettings;
-  bool m_codeEditorAppSettingsHasBeenSet = false;
 
   SpaceJupyterLabAppSettings m_jupyterLabAppSettings;
-  bool m_jupyterLabAppSettingsHasBeenSet = false;
 
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   SpaceStorageSettings m_spaceStorageSettings;
-  bool m_spaceStorageSettingsHasBeenSet = false;
 
   FeatureStatus m_spaceManagedResources{FeatureStatus::NOT_SET};
-  bool m_spaceManagedResourcesHasBeenSet = false;
 
   Aws::Vector<CustomFileSystem> m_customFileSystems;
-  bool m_customFileSystemsHasBeenSet = false;
 
   FeatureStatus m_remoteAccess{FeatureStatus::NOT_SET};
+  bool m_jupyterServerAppSettingsHasBeenSet = false;
+  bool m_kernelGatewayAppSettingsHasBeenSet = false;
+  bool m_codeEditorAppSettingsHasBeenSet = false;
+  bool m_jupyterLabAppSettingsHasBeenSet = false;
+  bool m_appTypeHasBeenSet = false;
+  bool m_spaceStorageSettingsHasBeenSet = false;
+  bool m_spaceManagedResourcesHasBeenSet = false;
+  bool m_customFileSystemsHasBeenSet = false;
   bool m_remoteAccessHasBeenSet = false;
 };
 

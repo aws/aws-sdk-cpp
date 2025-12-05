@@ -85,12 +85,12 @@ class ListCloudAutonomousVmClustersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CloudAutonomousVmClusterSummary> m_cloudAutonomousVmClusters;
-  bool m_cloudAutonomousVmClustersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_cloudAutonomousVmClustersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

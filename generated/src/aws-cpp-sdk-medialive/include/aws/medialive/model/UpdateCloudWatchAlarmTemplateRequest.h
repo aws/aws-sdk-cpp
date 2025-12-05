@@ -252,42 +252,42 @@ class UpdateCloudWatchAlarmTemplateRequest : public MediaLiveRequest {
   ///@}
  private:
   CloudWatchAlarmTemplateComparisonOperator m_comparisonOperator{CloudWatchAlarmTemplateComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   Aws::String m_groupIdentifier;
-  bool m_groupIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   CloudWatchAlarmTemplateStatistic m_statistic{CloudWatchAlarmTemplateStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   CloudWatchAlarmTemplateTargetResourceType m_targetResourceType{CloudWatchAlarmTemplateTargetResourceType::NOT_SET};
-  bool m_targetResourceTypeHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   CloudWatchAlarmTemplateTreatMissingData m_treatMissingData{CloudWatchAlarmTemplateTreatMissingData::NOT_SET};
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_groupIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_targetResourceTypeHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
   bool m_treatMissingDataHasBeenSet = false;
 };
 

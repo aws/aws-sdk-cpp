@@ -169,24 +169,24 @@ class UserIdGroupPair {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
-  bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
   Aws::String m_peeringStatus;
+  bool m_descriptionHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_vpcPeeringConnectionIdHasBeenSet = false;
   bool m_peeringStatusHasBeenSet = false;
 };
 

@@ -668,90 +668,90 @@ class ModifyClusterRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_clusterType;
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clusterSecurityGroups;
-  bool m_clusterSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_clusterParameterGroupName;
-  bool m_clusterParameterGroupNameHasBeenSet = false;
 
   int m_automatedSnapshotRetentionPeriod{0};
-  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   bool m_allowVersionUpgrade{false};
-  bool m_allowVersionUpgradeHasBeenSet = false;
 
   Aws::String m_hsmClientCertificateIdentifier;
-  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
   Aws::String m_hsmConfigurationIdentifier;
-  bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
   Aws::String m_newClusterIdentifier;
-  bool m_newClusterIdentifierHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_elasticIp;
-  bool m_elasticIpHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::String m_maintenanceTrackName;
-  bool m_maintenanceTrackNameHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_availabilityZoneRelocation{false};
-  bool m_availabilityZoneRelocationHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   bool m_manageMasterPassword{false};
-  bool m_manageMasterPasswordHasBeenSet = false;
 
   Aws::String m_masterPasswordSecretKmsKeyId;
-  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_ipAddressType;
-  bool m_ipAddressTypeHasBeenSet = false;
 
   bool m_multiAZ{false};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_clusterSecurityGroupsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_clusterParameterGroupNameHasBeenSet = false;
+  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_allowVersionUpgradeHasBeenSet = false;
+  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
+  bool m_hsmConfigurationIdentifierHasBeenSet = false;
+  bool m_newClusterIdentifierHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_elasticIpHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_maintenanceTrackNameHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_availabilityZoneRelocationHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_manageMasterPasswordHasBeenSet = false;
+  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_multiAZHasBeenSet = false;
 };
 

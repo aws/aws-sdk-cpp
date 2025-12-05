@@ -105,15 +105,15 @@ class ListTestExecutionResultItemsRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_testExecutionId;
-  bool m_testExecutionIdHasBeenSet = false;
 
   TestExecutionResultFilterBy m_resultFilterBy;
-  bool m_resultFilterByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_testExecutionIdHasBeenSet = false;
+  bool m_resultFilterByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

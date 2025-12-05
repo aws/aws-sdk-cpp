@@ -187,27 +187,27 @@ class AgentAliasSummary {
   ///@}
  private:
   Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentAliasName;
-  bool m_agentAliasNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
-  bool m_routingConfigurationHasBeenSet = false;
 
   AgentAliasStatus m_agentAliasStatus{AgentAliasStatus::NOT_SET};
-  bool m_agentAliasStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+  bool m_agentAliasIdHasBeenSet = false;
+  bool m_agentAliasNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigurationHasBeenSet = false;
+  bool m_agentAliasStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_aliasInvocationStateHasBeenSet = false;
 };
 

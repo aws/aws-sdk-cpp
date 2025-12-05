@@ -119,18 +119,18 @@ class PutClusterPolicyRequest : public DSQLRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   bool m_bypassPolicyLockoutSafetyCheck{false};
-  bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 
   Aws::String m_expectedPolicyVersion;
-  bool m_expectedPolicyVersionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_identifierHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
+  bool m_expectedPolicyVersionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

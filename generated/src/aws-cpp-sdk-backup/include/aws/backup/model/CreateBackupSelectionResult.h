@@ -98,15 +98,15 @@ class CreateBackupSelectionResult {
   ///@}
  private:
   Aws::String m_selectionId;
-  bool m_selectionIdHasBeenSet = false;
 
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_selectionIdHasBeenSet = false;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DatasetLabelDescription {
   ///@}
  private:
   Aws::String m_labelName;
-  bool m_labelNameHasBeenSet = false;
 
   DatasetLabelStats m_labelStats;
+  bool m_labelNameHasBeenSet = false;
   bool m_labelStatsHasBeenSet = false;
 };
 

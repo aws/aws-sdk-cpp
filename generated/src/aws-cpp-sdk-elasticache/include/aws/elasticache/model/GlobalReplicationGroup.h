@@ -290,42 +290,42 @@ class GlobalReplicationGroup {
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   Aws::String m_globalReplicationGroupDescription;
-  bool m_globalReplicationGroupDescriptionHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::Vector<GlobalReplicationGroupMember> m_members;
-  bool m_membersHasBeenSet = false;
 
   bool m_clusterEnabled{false};
-  bool m_clusterEnabledHasBeenSet = false;
 
   Aws::Vector<GlobalNodeGroup> m_globalNodeGroups;
-  bool m_globalNodeGroupsHasBeenSet = false;
 
   bool m_authTokenEnabled{false};
-  bool m_authTokenEnabledHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   bool m_atRestEncryptionEnabled{false};
-  bool m_atRestEncryptionEnabledHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_globalReplicationGroupIdHasBeenSet = false;
+  bool m_globalReplicationGroupDescriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_membersHasBeenSet = false;
+  bool m_clusterEnabledHasBeenSet = false;
+  bool m_globalNodeGroupsHasBeenSet = false;
+  bool m_authTokenEnabledHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_atRestEncryptionEnabledHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

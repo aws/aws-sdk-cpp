@@ -97,12 +97,12 @@ class CodeConfiguration {
   ///@}
  private:
   Code m_code;
-  bool m_codeHasBeenSet = false;
 
   AgentManagedRuntimeType m_runtime{AgentManagedRuntimeType::NOT_SET};
-  bool m_runtimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entryPoint;
+  bool m_codeHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
   bool m_entryPointHasBeenSet = false;
 };
 

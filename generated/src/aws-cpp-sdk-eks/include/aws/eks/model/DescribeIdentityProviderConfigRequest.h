@@ -66,9 +66,9 @@ class DescribeIdentityProviderConfigRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   IdentityProviderConfig m_identityProviderConfig;
+  bool m_clusterNameHasBeenSet = false;
   bool m_identityProviderConfigHasBeenSet = false;
 };
 

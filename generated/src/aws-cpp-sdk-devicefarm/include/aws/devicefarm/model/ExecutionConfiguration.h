@@ -117,18 +117,18 @@ class ExecutionConfiguration {
   ///@}
  private:
   int m_jobTimeoutMinutes{0};
-  bool m_jobTimeoutMinutesHasBeenSet = false;
 
   bool m_accountsCleanup{false};
-  bool m_accountsCleanupHasBeenSet = false;
 
   bool m_appPackagesCleanup{false};
-  bool m_appPackagesCleanupHasBeenSet = false;
 
   bool m_videoCapture{false};
-  bool m_videoCaptureHasBeenSet = false;
 
   bool m_skipAppResign{false};
+  bool m_jobTimeoutMinutesHasBeenSet = false;
+  bool m_accountsCleanupHasBeenSet = false;
+  bool m_appPackagesCleanupHasBeenSet = false;
+  bool m_videoCaptureHasBeenSet = false;
   bool m_skipAppResignHasBeenSet = false;
 };
 

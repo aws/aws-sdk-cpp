@@ -58,9 +58,9 @@ class GetBucketRequestPaymentResult {
   ///@}
  private:
   Payer m_payer{Payer::NOT_SET};
-  bool m_payerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_payerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

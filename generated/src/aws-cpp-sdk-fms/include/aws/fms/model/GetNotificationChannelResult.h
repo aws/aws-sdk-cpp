@@ -76,12 +76,12 @@ class GetNotificationChannelResult {
   ///@}
  private:
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::String m_snsRoleName;
-  bool m_snsRoleNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_snsRoleNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

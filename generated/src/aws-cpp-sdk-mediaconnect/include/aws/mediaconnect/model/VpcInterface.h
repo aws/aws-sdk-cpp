@@ -154,21 +154,21 @@ class VpcInterface {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceIds;
-  bool m_networkInterfaceIdsHasBeenSet = false;
 
   NetworkInterfaceType m_networkInterfaceType{NetworkInterfaceType::NOT_SET};
-  bool m_networkInterfaceTypeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_subnetId;
+  bool m_nameHasBeenSet = false;
+  bool m_networkInterfaceIdsHasBeenSet = false;
+  bool m_networkInterfaceTypeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
 };
 

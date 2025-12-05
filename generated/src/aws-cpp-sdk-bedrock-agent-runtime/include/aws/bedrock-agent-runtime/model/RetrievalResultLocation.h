@@ -208,30 +208,30 @@ class RetrievalResultLocation {
   ///@}
  private:
   RetrievalResultConfluenceLocation m_confluenceLocation;
-  bool m_confluenceLocationHasBeenSet = false;
 
   RetrievalResultCustomDocumentLocation m_customDocumentLocation;
-  bool m_customDocumentLocationHasBeenSet = false;
 
   RetrievalResultKendraDocumentLocation m_kendraDocumentLocation;
-  bool m_kendraDocumentLocationHasBeenSet = false;
 
   RetrievalResultS3Location m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   RetrievalResultSalesforceLocation m_salesforceLocation;
-  bool m_salesforceLocationHasBeenSet = false;
 
   RetrievalResultSharePointLocation m_sharePointLocation;
-  bool m_sharePointLocationHasBeenSet = false;
 
   RetrievalResultSqlLocation m_sqlLocation;
-  bool m_sqlLocationHasBeenSet = false;
 
   RetrievalResultLocationType m_type{RetrievalResultLocationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RetrievalResultWebLocation m_webLocation;
+  bool m_confluenceLocationHasBeenSet = false;
+  bool m_customDocumentLocationHasBeenSet = false;
+  bool m_kendraDocumentLocationHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
+  bool m_salesforceLocationHasBeenSet = false;
+  bool m_sharePointLocationHasBeenSet = false;
+  bool m_sqlLocationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_webLocationHasBeenSet = false;
 };
 

@@ -136,21 +136,21 @@ class UpdateDbClusterRequest : public TimestreamInfluxDBRequest {
   ///@}
  private:
   Aws::String m_dbClusterId;
-  bool m_dbClusterIdHasBeenSet = false;
 
   LogDeliveryConfiguration m_logDeliveryConfiguration;
-  bool m_logDeliveryConfigurationHasBeenSet = false;
 
   Aws::String m_dbParameterGroupIdentifier;
-  bool m_dbParameterGroupIdentifierHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   DbInstanceType m_dbInstanceType{DbInstanceType::NOT_SET};
-  bool m_dbInstanceTypeHasBeenSet = false;
 
   FailoverMode m_failoverMode{FailoverMode::NOT_SET};
+  bool m_dbClusterIdHasBeenSet = false;
+  bool m_logDeliveryConfigurationHasBeenSet = false;
+  bool m_dbParameterGroupIdentifierHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_dbInstanceTypeHasBeenSet = false;
   bool m_failoverModeHasBeenSet = false;
 };
 

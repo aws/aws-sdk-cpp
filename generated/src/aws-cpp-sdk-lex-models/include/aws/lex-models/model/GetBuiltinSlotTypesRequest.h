@@ -109,15 +109,15 @@ class GetBuiltinSlotTypesRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Locale m_locale{Locale::NOT_SET};
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_signatureContains;
-  bool m_signatureContainsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_localeHasBeenSet = false;
+  bool m_signatureContainsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ShadowModelVariantConfig {
   ///@}
  private:
   Aws::String m_shadowModelVariantName;
-  bool m_shadowModelVariantNameHasBeenSet = false;
 
   int m_samplingPercentage{0};
+  bool m_shadowModelVariantNameHasBeenSet = false;
   bool m_samplingPercentageHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class CreateOpenIDConnectProviderResult {
   ///@}
  private:
   Aws::String m_openIDConnectProviderArn;
-  bool m_openIDConnectProviderArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_openIDConnectProviderArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

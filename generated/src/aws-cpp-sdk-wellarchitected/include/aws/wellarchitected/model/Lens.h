@@ -161,24 +161,24 @@ class Lens {
   ///@}
  private:
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_lensVersion;
-  bool m_lensVersionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_shareInvitationId;
-  bool m_shareInvitationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_lensArnHasBeenSet = false;
+  bool m_lensVersionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_shareInvitationIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

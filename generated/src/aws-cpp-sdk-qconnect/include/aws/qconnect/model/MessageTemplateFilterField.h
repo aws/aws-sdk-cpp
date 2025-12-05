@@ -114,15 +114,15 @@ class MessageTemplateFilterField {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   MessageTemplateFilterOperator m_operator{MessageTemplateFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   bool m_includeNoExistence{false};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_includeNoExistenceHasBeenSet = false;
 };
 

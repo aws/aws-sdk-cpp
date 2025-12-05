@@ -107,15 +107,15 @@ class ListSessionAnalyticsDataResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SessionSpecification> m_sessions;
-  bool m_sessionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sessionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

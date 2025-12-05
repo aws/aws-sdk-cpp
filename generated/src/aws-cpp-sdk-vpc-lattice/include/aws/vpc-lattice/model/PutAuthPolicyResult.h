@@ -82,12 +82,12 @@ class PutAuthPolicyResult {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   AuthPolicyState m_state{AuthPolicyState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

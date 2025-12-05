@@ -219,30 +219,30 @@ class CreateCustomerGatewayRequest : public EC2Request {
   ///@}
  private:
   int m_bgpAsn{0};
-  bool m_bgpAsnHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   GatewayType m_type{GatewayType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   long long m_bgpAsnExtended{0};
-  bool m_bgpAsnExtendedHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_bgpAsnHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_bgpAsnExtendedHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

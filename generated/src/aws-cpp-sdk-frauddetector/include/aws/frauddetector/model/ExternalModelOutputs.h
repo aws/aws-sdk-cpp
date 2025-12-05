@@ -77,9 +77,9 @@ class ExternalModelOutputs {
   ///@}
  private:
   ExternalModelSummary m_externalModel;
-  bool m_externalModelHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_outputs;
+  bool m_externalModelHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
 };
 

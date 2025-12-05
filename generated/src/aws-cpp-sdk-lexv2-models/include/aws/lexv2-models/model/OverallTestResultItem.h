@@ -114,15 +114,15 @@ class OverallTestResultItem {
   ///@}
  private:
   bool m_multiTurnConversation{false};
-  bool m_multiTurnConversationHasBeenSet = false;
 
   int m_totalResultCount{0};
-  bool m_totalResultCountHasBeenSet = false;
 
   Aws::Map<TestResultMatchStatus, int> m_speechTranscriptionResultCounts;
-  bool m_speechTranscriptionResultCountsHasBeenSet = false;
 
   Aws::Map<TestResultMatchStatus, int> m_endToEndResultCounts;
+  bool m_multiTurnConversationHasBeenSet = false;
+  bool m_totalResultCountHasBeenSet = false;
+  bool m_speechTranscriptionResultCountsHasBeenSet = false;
   bool m_endToEndResultCountsHasBeenSet = false;
 };
 

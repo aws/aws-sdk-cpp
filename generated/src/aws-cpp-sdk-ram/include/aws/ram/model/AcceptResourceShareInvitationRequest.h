@@ -76,9 +76,9 @@ class AcceptResourceShareInvitationRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_resourceShareInvitationArn;
-  bool m_resourceShareInvitationArnHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_resourceShareInvitationArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

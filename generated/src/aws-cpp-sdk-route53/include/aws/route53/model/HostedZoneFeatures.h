@@ -70,9 +70,9 @@ class HostedZoneFeatures {
   ///@}
  private:
   AcceleratedRecoveryStatus m_acceleratedRecoveryStatus{AcceleratedRecoveryStatus::NOT_SET};
-  bool m_acceleratedRecoveryStatusHasBeenSet = false;
 
   HostedZoneFailureReasons m_failureReasons;
+  bool m_acceleratedRecoveryStatusHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;
 };
 

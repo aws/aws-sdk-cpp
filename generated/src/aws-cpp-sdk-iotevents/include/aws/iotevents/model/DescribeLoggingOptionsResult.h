@@ -60,9 +60,9 @@ class DescribeLoggingOptionsResult {
   ///@}
  private:
   LoggingOptions m_loggingOptions;
-  bool m_loggingOptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loggingOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

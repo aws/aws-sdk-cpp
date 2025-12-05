@@ -69,9 +69,9 @@ class DeleteRegexPatternSetRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_regexPatternSetId;
-  bool m_regexPatternSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_regexPatternSetIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

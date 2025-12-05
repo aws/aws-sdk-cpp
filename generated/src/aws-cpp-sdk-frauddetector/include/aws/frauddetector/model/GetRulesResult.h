@@ -84,12 +84,12 @@ class GetRulesResult {
   ///@}
  private:
   Aws::Vector<RuleDetail> m_ruleDetails;
-  bool m_ruleDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

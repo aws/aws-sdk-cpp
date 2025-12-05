@@ -104,15 +104,15 @@ class AccessKeyDetails {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_userType;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_userTypeHasBeenSet = false;
 };
 

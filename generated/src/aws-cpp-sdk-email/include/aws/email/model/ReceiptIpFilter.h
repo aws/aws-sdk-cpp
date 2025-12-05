@@ -78,9 +78,9 @@ class ReceiptIpFilter {
   ///@}
  private:
   ReceiptFilterPolicy m_policy{ReceiptFilterPolicy::NOT_SET};
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_cidr;
+  bool m_policyHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
 };
 

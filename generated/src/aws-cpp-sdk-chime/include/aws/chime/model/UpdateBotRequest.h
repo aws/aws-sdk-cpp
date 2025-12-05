@@ -81,12 +81,12 @@ class UpdateBotRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   bool m_disabled{false};
+  bool m_accountIdHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
   bool m_disabledHasBeenSet = false;
 };
 

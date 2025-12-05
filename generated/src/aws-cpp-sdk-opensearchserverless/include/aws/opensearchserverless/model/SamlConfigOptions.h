@@ -122,18 +122,18 @@ class SamlConfigOptions {
   ///@}
  private:
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_userAttribute;
-  bool m_userAttributeHasBeenSet = false;
 
   Aws::String m_groupAttribute;
-  bool m_groupAttributeHasBeenSet = false;
 
   Aws::String m_openSearchServerlessEntityId;
-  bool m_openSearchServerlessEntityIdHasBeenSet = false;
 
   int m_sessionTimeout{0};
+  bool m_metadataHasBeenSet = false;
+  bool m_userAttributeHasBeenSet = false;
+  bool m_groupAttributeHasBeenSet = false;
+  bool m_openSearchServerlessEntityIdHasBeenSet = false;
   bool m_sessionTimeoutHasBeenSet = false;
 };
 

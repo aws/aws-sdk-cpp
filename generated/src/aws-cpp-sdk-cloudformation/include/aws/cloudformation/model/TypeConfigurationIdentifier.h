@@ -131,18 +131,18 @@ class TypeConfigurationIdentifier {
   ///@}
  private:
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   Aws::String m_typeConfigurationAlias;
-  bool m_typeConfigurationAliasHasBeenSet = false;
 
   Aws::String m_typeConfigurationArn;
-  bool m_typeConfigurationArnHasBeenSet = false;
 
   ThirdPartyType m_type{ThirdPartyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
+  bool m_typeArnHasBeenSet = false;
+  bool m_typeConfigurationAliasHasBeenSet = false;
+  bool m_typeConfigurationArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_typeNameHasBeenSet = false;
 };
 

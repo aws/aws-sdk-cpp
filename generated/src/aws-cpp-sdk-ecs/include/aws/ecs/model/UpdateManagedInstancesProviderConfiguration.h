@@ -116,15 +116,15 @@ class UpdateManagedInstancesProviderConfiguration {
   ///@}
  private:
   Aws::String m_infrastructureRoleArn;
-  bool m_infrastructureRoleArnHasBeenSet = false;
 
   InstanceLaunchTemplateUpdate m_instanceLaunchTemplate;
-  bool m_instanceLaunchTemplateHasBeenSet = false;
 
   PropagateMITags m_propagateTags{PropagateMITags::NOT_SET};
-  bool m_propagateTagsHasBeenSet = false;
 
   InfrastructureOptimization m_infrastructureOptimization;
+  bool m_infrastructureRoleArnHasBeenSet = false;
+  bool m_instanceLaunchTemplateHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
   bool m_infrastructureOptimizationHasBeenSet = false;
 };
 

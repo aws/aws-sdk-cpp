@@ -60,9 +60,9 @@ class DeleteClusterResult {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

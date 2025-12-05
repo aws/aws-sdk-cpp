@@ -115,12 +115,12 @@ class SecurityControlsConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_enabledSecurityControlIdentifiers;
-  bool m_enabledSecurityControlIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_disabledSecurityControlIdentifiers;
-  bool m_disabledSecurityControlIdentifiersHasBeenSet = false;
 
   Aws::Vector<SecurityControlCustomParameter> m_securityControlCustomParameters;
+  bool m_enabledSecurityControlIdentifiersHasBeenSet = false;
+  bool m_disabledSecurityControlIdentifiersHasBeenSet = false;
   bool m_securityControlCustomParametersHasBeenSet = false;
 };
 

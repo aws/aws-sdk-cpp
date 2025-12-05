@@ -326,54 +326,54 @@ class GetWorkflowResult {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   int m_engineVersion{0};
-  bool m_engineVersionHasBeenSet = false;
 
   WorkflowStatus m_workflowStatus{WorkflowStatus::NOT_SET};
-  bool m_workflowStatusHasBeenSet = false;
 
   DefinitionS3Location m_definitionS3Location;
-  bool m_definitionS3LocationHasBeenSet = false;
 
   ScheduleConfiguration m_scheduleConfiguration;
-  bool m_scheduleConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::String m_triggerMode;
-  bool m_triggerModeHasBeenSet = false;
 
   Aws::String m_workflowDefinition;
-  bool m_workflowDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_workflowStatusHasBeenSet = false;
+  bool m_definitionS3LocationHasBeenSet = false;
+  bool m_scheduleConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_triggerModeHasBeenSet = false;
+  bool m_workflowDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

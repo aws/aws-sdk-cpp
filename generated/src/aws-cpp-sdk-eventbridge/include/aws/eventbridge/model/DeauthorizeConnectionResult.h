@@ -127,21 +127,21 @@ class DeauthorizeConnectionResult {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   ConnectionState m_connectionState{ConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAuthorizedTime{};
-  bool m_lastAuthorizedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastAuthorizedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

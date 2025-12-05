@@ -87,12 +87,12 @@ class BedrockKnowledgeStoreConfiguration {
   ///@}
  private:
   Aws::String m_bedrockKnowledgeBaseArn;
-  bool m_bedrockKnowledgeBaseArnHasBeenSet = false;
 
   bool m_exactResponse{false};
-  bool m_exactResponseHasBeenSet = false;
 
   BedrockKnowledgeStoreExactResponseFields m_exactResponseFields;
+  bool m_bedrockKnowledgeBaseArnHasBeenSet = false;
+  bool m_exactResponseHasBeenSet = false;
   bool m_exactResponseFieldsHasBeenSet = false;
 };
 

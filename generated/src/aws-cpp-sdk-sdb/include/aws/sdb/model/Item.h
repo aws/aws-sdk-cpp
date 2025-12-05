@@ -96,12 +96,12 @@ class Item {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_alternateNameEncoding;
-  bool m_alternateNameEncodingHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_nameHasBeenSet = false;
+  bool m_alternateNameEncodingHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

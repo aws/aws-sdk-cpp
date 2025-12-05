@@ -117,15 +117,15 @@ class BatchGetRecordResult {
   ///@}
  private:
   Aws::Vector<BatchGetRecordResultDetail> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::Vector<BatchGetRecordError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<BatchGetRecordIdentifier> m_unprocessedIdentifiers;
-  bool m_unprocessedIdentifiersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_unprocessedIdentifiersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

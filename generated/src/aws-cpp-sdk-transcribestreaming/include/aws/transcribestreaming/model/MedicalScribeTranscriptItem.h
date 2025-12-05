@@ -139,21 +139,21 @@ class MedicalScribeTranscriptItem {
   ///@}
  private:
   double m_beginAudioTime{0.0};
-  bool m_beginAudioTimeHasBeenSet = false;
 
   double m_endAudioTime{0.0};
-  bool m_endAudioTimeHasBeenSet = false;
 
   MedicalScribeTranscriptItemType m_type{MedicalScribeTranscriptItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   bool m_vocabularyFilterMatch{false};
+  bool m_beginAudioTimeHasBeenSet = false;
+  bool m_endAudioTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_vocabularyFilterMatchHasBeenSet = false;
 };
 

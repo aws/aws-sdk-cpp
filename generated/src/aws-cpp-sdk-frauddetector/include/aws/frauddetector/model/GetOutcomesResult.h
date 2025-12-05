@@ -84,12 +84,12 @@ class GetOutcomesResult {
   ///@}
  private:
   Aws::Vector<Outcome> m_outcomes;
-  bool m_outcomesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outcomesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

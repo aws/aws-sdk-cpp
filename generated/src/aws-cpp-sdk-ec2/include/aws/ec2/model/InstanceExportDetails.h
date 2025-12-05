@@ -69,9 +69,9 @@ class InstanceExportDetails {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   ExportEnvironment m_targetEnvironment{ExportEnvironment::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
   bool m_targetEnvironmentHasBeenSet = false;
 };
 

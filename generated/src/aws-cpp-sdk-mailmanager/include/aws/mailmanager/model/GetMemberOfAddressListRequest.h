@@ -67,9 +67,9 @@ class GetMemberOfAddressListRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_addressListId;
-  bool m_addressListIdHasBeenSet = false;
 
   Aws::String m_address;
+  bool m_addressListIdHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

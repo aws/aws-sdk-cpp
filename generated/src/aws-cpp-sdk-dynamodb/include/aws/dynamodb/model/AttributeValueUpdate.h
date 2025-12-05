@@ -128,9 +128,9 @@ class AttributeValueUpdate {
   ///@}
  private:
   AttributeValue m_value;
-  bool m_valueHasBeenSet = false;
 
   AttributeAction m_action{AttributeAction::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

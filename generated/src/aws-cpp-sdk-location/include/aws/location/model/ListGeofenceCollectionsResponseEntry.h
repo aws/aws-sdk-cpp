@@ -111,15 +111,15 @@ class ListGeofenceCollectionsResponseEntry {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_collectionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

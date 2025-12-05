@@ -113,12 +113,12 @@ class CreateDomainRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_domainHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

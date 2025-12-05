@@ -271,45 +271,45 @@ class GetProbeResult {
   ///@}
  private:
   Aws::String m_probeId;
-  bool m_probeIdHasBeenSet = false;
 
   Aws::String m_probeArn;
-  bool m_probeArnHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_packetSize{0};
-  bool m_packetSizeHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   ProbeState m_state{ProbeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_probeIdHasBeenSet = false;
+  bool m_probeArnHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_packetSizeHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

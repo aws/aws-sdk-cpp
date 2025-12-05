@@ -116,18 +116,18 @@ class OverrideConfiguration {
   ///@}
  private:
   DocumentOverrideConfiguration m_document;
-  bool m_documentHasBeenSet = false;
 
   ImageOverrideConfiguration m_image;
-  bool m_imageHasBeenSet = false;
 
   VideoOverrideConfiguration m_video;
-  bool m_videoHasBeenSet = false;
 
   AudioOverrideConfiguration m_audio;
-  bool m_audioHasBeenSet = false;
 
   ModalityRoutingConfiguration m_modalityRouting;
+  bool m_documentHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_audioHasBeenSet = false;
   bool m_modalityRoutingHasBeenSet = false;
 };
 

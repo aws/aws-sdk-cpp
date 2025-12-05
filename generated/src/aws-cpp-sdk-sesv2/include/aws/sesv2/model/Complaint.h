@@ -72,9 +72,9 @@ class Complaint {
   ///@}
  private:
   Aws::String m_complaintSubType;
-  bool m_complaintSubTypeHasBeenSet = false;
 
   Aws::String m_complaintFeedbackType;
+  bool m_complaintSubTypeHasBeenSet = false;
   bool m_complaintFeedbackTypeHasBeenSet = false;
 };
 

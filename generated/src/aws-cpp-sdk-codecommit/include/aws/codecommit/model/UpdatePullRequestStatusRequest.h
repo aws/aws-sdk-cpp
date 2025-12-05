@@ -69,9 +69,9 @@ class UpdatePullRequestStatusRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   PullRequestStatusEnum m_pullRequestStatus{PullRequestStatusEnum::NOT_SET};
+  bool m_pullRequestIdHasBeenSet = false;
   bool m_pullRequestStatusHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class OrganizationFeatureStatisticsAdditionalConfiguration {
   ///@}
  private:
   OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   int m_enabledAccountsCount{0};
+  bool m_nameHasBeenSet = false;
   bool m_enabledAccountsCountHasBeenSet = false;
 };
 

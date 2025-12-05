@@ -99,15 +99,15 @@ class ListUserGroupsResult {
   ///@}
  private:
   Aws::Vector<Group> m_groupList;
-  bool m_groupListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_groupListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

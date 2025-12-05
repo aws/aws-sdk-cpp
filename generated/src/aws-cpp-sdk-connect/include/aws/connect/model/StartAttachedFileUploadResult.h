@@ -152,24 +152,24 @@ class StartAttachedFileUploadResult {
   ///@}
  private:
   Aws::String m_fileArn;
-  bool m_fileArnHasBeenSet = false;
 
   Aws::String m_fileId;
-  bool m_fileIdHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   FileStatusType m_fileStatus{FileStatusType::NOT_SET};
-  bool m_fileStatusHasBeenSet = false;
 
   CreatedByInfo m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   UploadUrlMetadata m_uploadUrlMetadata;
-  bool m_uploadUrlMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileArnHasBeenSet = false;
+  bool m_fileIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_fileStatusHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_uploadUrlMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

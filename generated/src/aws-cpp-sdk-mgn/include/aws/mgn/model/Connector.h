@@ -159,24 +159,24 @@ class Connector {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_connectorID;
-  bool m_connectorIDHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConnectorSsmCommandConfig m_ssmCommandConfig;
-  bool m_ssmCommandConfigHasBeenSet = false;
 
   Aws::String m_ssmInstanceID;
-  bool m_ssmInstanceIDHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_connectorIDHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ssmCommandConfigHasBeenSet = false;
+  bool m_ssmInstanceIDHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

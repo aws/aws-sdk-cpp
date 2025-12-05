@@ -69,9 +69,9 @@ class PipelineDestination {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_endpoint;
+  bool m_serviceNameHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
 };
 

@@ -122,18 +122,18 @@ class ModelMetadataSummary {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_framework;
-  bool m_frameworkHasBeenSet = false;
 
   Aws::String m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_frameworkVersion;
+  bool m_domainHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
   bool m_frameworkVersionHasBeenSet = false;
 };
 

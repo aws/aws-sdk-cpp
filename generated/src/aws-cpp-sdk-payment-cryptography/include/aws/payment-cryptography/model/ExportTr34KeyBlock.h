@@ -188,27 +188,27 @@ class ExportTr34KeyBlock {
   ///@}
  private:
   Aws::String m_certificateAuthorityPublicKeyIdentifier;
-  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
 
   Aws::String m_wrappingKeyCertificate;
-  bool m_wrappingKeyCertificateHasBeenSet = false;
 
   Aws::String m_exportToken;
-  bool m_exportTokenHasBeenSet = false;
 
   Aws::String m_signingKeyIdentifier;
-  bool m_signingKeyIdentifierHasBeenSet = false;
 
   Aws::String m_signingKeyCertificate;
-  bool m_signingKeyCertificateHasBeenSet = false;
 
   Tr34KeyBlockFormat m_keyBlockFormat{Tr34KeyBlockFormat::NOT_SET};
-  bool m_keyBlockFormatHasBeenSet = false;
 
   Aws::String m_randomNonce;
-  bool m_randomNonceHasBeenSet = false;
 
   KeyBlockHeaders m_keyBlockHeaders;
+  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
+  bool m_wrappingKeyCertificateHasBeenSet = false;
+  bool m_exportTokenHasBeenSet = false;
+  bool m_signingKeyIdentifierHasBeenSet = false;
+  bool m_signingKeyCertificateHasBeenSet = false;
+  bool m_keyBlockFormatHasBeenSet = false;
+  bool m_randomNonceHasBeenSet = false;
   bool m_keyBlockHeadersHasBeenSet = false;
 };
 

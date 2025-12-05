@@ -85,9 +85,9 @@ class CreateContainerRequest : public MediaStoreRequest {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_containerNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

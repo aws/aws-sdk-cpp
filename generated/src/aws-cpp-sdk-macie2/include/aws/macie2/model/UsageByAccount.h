@@ -110,15 +110,15 @@ class UsageByAccount {
   ///@}
  private:
   Currency m_currency{Currency::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   Aws::String m_estimatedCost;
-  bool m_estimatedCostHasBeenSet = false;
 
   ServiceLimit m_serviceLimit;
-  bool m_serviceLimitHasBeenSet = false;
 
   UsageType m_type{UsageType::NOT_SET};
+  bool m_currencyHasBeenSet = false;
+  bool m_estimatedCostHasBeenSet = false;
+  bool m_serviceLimitHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -134,18 +134,18 @@ class AwsWafRegionalWebAclDetails {
   ///@}
  private:
   Aws::String m_defaultAction;
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AwsWafRegionalWebAclRulesListDetails> m_rulesList;
-  bool m_rulesListHasBeenSet = false;
 
   Aws::String m_webAclId;
+  bool m_defaultActionHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_rulesListHasBeenSet = false;
   bool m_webAclIdHasBeenSet = false;
 };
 

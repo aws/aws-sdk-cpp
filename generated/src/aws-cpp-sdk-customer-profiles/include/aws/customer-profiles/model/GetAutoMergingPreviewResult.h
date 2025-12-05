@@ -106,18 +106,18 @@ class GetAutoMergingPreviewResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   long long m_numberOfMatchesInSample{0};
-  bool m_numberOfMatchesInSampleHasBeenSet = false;
 
   long long m_numberOfProfilesInSample{0};
-  bool m_numberOfProfilesInSampleHasBeenSet = false;
 
   long long m_numberOfProfilesWillBeMerged{0};
-  bool m_numberOfProfilesWillBeMergedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_numberOfMatchesInSampleHasBeenSet = false;
+  bool m_numberOfProfilesInSampleHasBeenSet = false;
+  bool m_numberOfProfilesWillBeMergedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

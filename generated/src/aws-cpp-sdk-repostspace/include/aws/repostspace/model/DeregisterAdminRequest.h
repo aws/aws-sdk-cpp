@@ -65,9 +65,9 @@ class DeregisterAdminRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_adminId;
+  bool m_spaceIdHasBeenSet = false;
   bool m_adminIdHasBeenSet = false;
 };
 

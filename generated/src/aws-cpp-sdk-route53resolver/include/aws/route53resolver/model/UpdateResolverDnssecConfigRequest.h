@@ -69,9 +69,9 @@ class UpdateResolverDnssecConfigRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Validation m_validation{Validation::NOT_SET};
+  bool m_resourceIdHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

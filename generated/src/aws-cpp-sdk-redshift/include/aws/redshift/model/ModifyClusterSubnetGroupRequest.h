@@ -98,12 +98,12 @@ class ModifyClusterSubnetGroupRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterSubnetGroupName;
-  bool m_clusterSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
+  bool m_clusterSubnetGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
 };
 

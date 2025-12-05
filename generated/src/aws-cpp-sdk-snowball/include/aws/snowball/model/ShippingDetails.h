@@ -100,12 +100,12 @@ class ShippingDetails {
   ///@}
  private:
   ShippingOption m_shippingOption{ShippingOption::NOT_SET};
-  bool m_shippingOptionHasBeenSet = false;
 
   Shipment m_inboundShipment;
-  bool m_inboundShipmentHasBeenSet = false;
 
   Shipment m_outboundShipment;
+  bool m_shippingOptionHasBeenSet = false;
+  bool m_inboundShipmentHasBeenSet = false;
   bool m_outboundShipmentHasBeenSet = false;
 };
 

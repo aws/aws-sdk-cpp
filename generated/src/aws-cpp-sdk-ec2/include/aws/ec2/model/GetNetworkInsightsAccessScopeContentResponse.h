@@ -63,9 +63,9 @@ class GetNetworkInsightsAccessScopeContentResponse {
   ///@}
  private:
   NetworkInsightsAccessScopeContent m_networkInsightsAccessScopeContent;
-  bool m_networkInsightsAccessScopeContentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsAccessScopeContentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

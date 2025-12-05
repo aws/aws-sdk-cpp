@@ -60,9 +60,9 @@ class DescribeSecurityPolicyResult {
   ///@}
  private:
   DescribedSecurityPolicy m_securityPolicy;
-  bool m_securityPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

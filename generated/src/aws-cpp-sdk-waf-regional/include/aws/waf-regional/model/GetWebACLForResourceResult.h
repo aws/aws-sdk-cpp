@@ -62,9 +62,9 @@ class GetWebACLForResourceResult {
   ///@}
  private:
   WebACLSummary m_webACLSummary;
-  bool m_webACLSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webACLSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class AddBridgeSourcesResult {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   Aws::Vector<BridgeSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

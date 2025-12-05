@@ -67,9 +67,9 @@ class FailoverShardRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_shardName;
+  bool m_clusterNameHasBeenSet = false;
   bool m_shardNameHasBeenSet = false;
 };
 

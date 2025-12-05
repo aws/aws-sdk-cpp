@@ -144,21 +144,21 @@ class InstanceStatusEvent {
   ///@}
  private:
   Aws::String m_instanceEventId;
-  bool m_instanceEventIdHasBeenSet = false;
 
   EventCode m_code{EventCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
-  bool m_notBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBeforeDeadline{};
+  bool m_instanceEventIdHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_notBeforeHasBeenSet = false;
   bool m_notBeforeDeadlineHasBeenSet = false;
 };
 

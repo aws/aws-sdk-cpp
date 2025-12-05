@@ -476,66 +476,66 @@ class TraceSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   double m_duration{0.0};
-  bool m_durationHasBeenSet = false;
 
   double m_responseTime{0.0};
-  bool m_responseTimeHasBeenSet = false;
 
   bool m_hasFault{false};
-  bool m_hasFaultHasBeenSet = false;
 
   bool m_hasError{false};
-  bool m_hasErrorHasBeenSet = false;
 
   bool m_hasThrottle{false};
-  bool m_hasThrottleHasBeenSet = false;
 
   bool m_isPartial{false};
-  bool m_isPartialHasBeenSet = false;
 
   Http m_http;
-  bool m_httpHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>> m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   Aws::Vector<TraceUser> m_users;
-  bool m_usersHasBeenSet = false;
 
   Aws::Vector<ServiceId> m_serviceIds;
-  bool m_serviceIdsHasBeenSet = false;
 
   Aws::Vector<ResourceARNDetail> m_resourceARNs;
-  bool m_resourceARNsHasBeenSet = false;
 
   Aws::Vector<InstanceIdDetail> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::Vector<AvailabilityZoneDetail> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   ServiceId m_entryPoint;
-  bool m_entryPointHasBeenSet = false;
 
   Aws::Vector<FaultRootCause> m_faultRootCauses;
-  bool m_faultRootCausesHasBeenSet = false;
 
   Aws::Vector<ErrorRootCause> m_errorRootCauses;
-  bool m_errorRootCausesHasBeenSet = false;
 
   Aws::Vector<ResponseTimeRootCause> m_responseTimeRootCauses;
-  bool m_responseTimeRootCausesHasBeenSet = false;
 
   int m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::Utils::DateTime m_matchedEventTime{};
+  bool m_idHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_responseTimeHasBeenSet = false;
+  bool m_hasFaultHasBeenSet = false;
+  bool m_hasErrorHasBeenSet = false;
+  bool m_hasThrottleHasBeenSet = false;
+  bool m_isPartialHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
+  bool m_usersHasBeenSet = false;
+  bool m_serviceIdsHasBeenSet = false;
+  bool m_resourceARNsHasBeenSet = false;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_entryPointHasBeenSet = false;
+  bool m_faultRootCausesHasBeenSet = false;
+  bool m_errorRootCausesHasBeenSet = false;
+  bool m_responseTimeRootCausesHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_matchedEventTimeHasBeenSet = false;
 };
 

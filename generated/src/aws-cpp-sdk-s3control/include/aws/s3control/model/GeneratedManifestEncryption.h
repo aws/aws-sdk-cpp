@@ -71,9 +71,9 @@ class GeneratedManifestEncryption {
   ///@}
  private:
   SSES3Encryption m_sSES3;
-  bool m_sSES3HasBeenSet = false;
 
   SSEKMSEncryption m_sSEKMS;
+  bool m_sSES3HasBeenSet = false;
   bool m_sSEKMSHasBeenSet = false;
 };
 

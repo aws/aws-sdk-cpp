@@ -974,159 +974,159 @@ class InfluxDBv3EnterpriseParameters {
   ///@}
  private:
   int m_queryFileLimit{0};
-  bool m_queryFileLimitHasBeenSet = false;
 
   int m_queryLogSize{0};
-  bool m_queryLogSizeHasBeenSet = false;
 
   Aws::String m_logFilter;
-  bool m_logFilterHasBeenSet = false;
 
   LogFormats m_logFormat{LogFormats::NOT_SET};
-  bool m_logFormatHasBeenSet = false;
 
   int m_dataFusionNumThreads{0};
-  bool m_dataFusionNumThreadsHasBeenSet = false;
 
   DataFusionRuntimeType m_dataFusionRuntimeType{DataFusionRuntimeType::NOT_SET};
-  bool m_dataFusionRuntimeTypeHasBeenSet = false;
 
   bool m_dataFusionRuntimeDisableLifoSlot{false};
-  bool m_dataFusionRuntimeDisableLifoSlotHasBeenSet = false;
 
   int m_dataFusionRuntimeEventInterval{0};
-  bool m_dataFusionRuntimeEventIntervalHasBeenSet = false;
 
   int m_dataFusionRuntimeGlobalQueueInterval{0};
-  bool m_dataFusionRuntimeGlobalQueueIntervalHasBeenSet = false;
 
   int m_dataFusionRuntimeMaxBlockingThreads{0};
-  bool m_dataFusionRuntimeMaxBlockingThreadsHasBeenSet = false;
 
   int m_dataFusionRuntimeMaxIoEventsPerTick{0};
-  bool m_dataFusionRuntimeMaxIoEventsPerTickHasBeenSet = false;
 
   Duration m_dataFusionRuntimeThreadKeepAlive;
-  bool m_dataFusionRuntimeThreadKeepAliveHasBeenSet = false;
 
   int m_dataFusionRuntimeThreadPriority{0};
-  bool m_dataFusionRuntimeThreadPriorityHasBeenSet = false;
 
   int m_dataFusionMaxParquetFanout{0};
-  bool m_dataFusionMaxParquetFanoutHasBeenSet = false;
 
   bool m_dataFusionUseCachedParquetLoader{false};
-  bool m_dataFusionUseCachedParquetLoaderHasBeenSet = false;
 
   Aws::String m_dataFusionConfig;
-  bool m_dataFusionConfigHasBeenSet = false;
 
   long long m_maxHttpRequestSize{0};
-  bool m_maxHttpRequestSizeHasBeenSet = false;
 
   PercentOrAbsoluteLong m_forceSnapshotMemThreshold;
-  bool m_forceSnapshotMemThresholdHasBeenSet = false;
 
   int m_walSnapshotSize{0};
-  bool m_walSnapshotSizeHasBeenSet = false;
 
   int m_walMaxWriteBufferSize{0};
-  bool m_walMaxWriteBufferSizeHasBeenSet = false;
 
   int m_snapshottedWalFilesToKeep{0};
-  bool m_snapshottedWalFilesToKeepHasBeenSet = false;
 
   Duration m_preemptiveCacheAge;
-  bool m_preemptiveCacheAgeHasBeenSet = false;
 
   double m_parquetMemCachePrunePercentage{0.0};
-  bool m_parquetMemCachePrunePercentageHasBeenSet = false;
 
   Duration m_parquetMemCachePruneInterval;
-  bool m_parquetMemCachePruneIntervalHasBeenSet = false;
 
   bool m_disableParquetMemCache{false};
-  bool m_disableParquetMemCacheHasBeenSet = false;
 
   Duration m_parquetMemCacheQueryPathDuration;
-  bool m_parquetMemCacheQueryPathDurationHasBeenSet = false;
 
   Duration m_lastCacheEvictionInterval;
-  bool m_lastCacheEvictionIntervalHasBeenSet = false;
 
   Duration m_distinctCacheEvictionInterval;
-  bool m_distinctCacheEvictionIntervalHasBeenSet = false;
 
   Duration m_gen1Duration;
-  bool m_gen1DurationHasBeenSet = false;
 
   PercentOrAbsoluteLong m_execMemPoolBytes;
-  bool m_execMemPoolBytesHasBeenSet = false;
 
   PercentOrAbsoluteLong m_parquetMemCacheSize;
-  bool m_parquetMemCacheSizeHasBeenSet = false;
 
   bool m_walReplayFailOnError{false};
-  bool m_walReplayFailOnErrorHasBeenSet = false;
 
   int m_walReplayConcurrencyLimit{0};
-  bool m_walReplayConcurrencyLimitHasBeenSet = false;
 
   int m_tableIndexCacheMaxEntries{0};
-  bool m_tableIndexCacheMaxEntriesHasBeenSet = false;
 
   int m_tableIndexCacheConcurrencyLimit{0};
-  bool m_tableIndexCacheConcurrencyLimitHasBeenSet = false;
 
   Duration m_gen1LookbackDuration;
-  bool m_gen1LookbackDurationHasBeenSet = false;
 
   Duration m_retentionCheckInterval;
-  bool m_retentionCheckIntervalHasBeenSet = false;
 
   Duration m_deleteGracePeriod;
-  bool m_deleteGracePeriodHasBeenSet = false;
 
   Duration m_hardDeleteDefaultDuration;
-  bool m_hardDeleteDefaultDurationHasBeenSet = false;
 
   int m_ingestQueryInstances{0};
-  bool m_ingestQueryInstancesHasBeenSet = false;
 
   int m_queryOnlyInstances{0};
-  bool m_queryOnlyInstancesHasBeenSet = false;
 
   bool m_dedicatedCompactor{false};
-  bool m_dedicatedCompactorHasBeenSet = false;
 
   int m_compactionRowLimit{0};
-  bool m_compactionRowLimitHasBeenSet = false;
 
   int m_compactionMaxNumFilesPerPlan{0};
-  bool m_compactionMaxNumFilesPerPlanHasBeenSet = false;
 
   Duration m_compactionGen2Duration;
-  bool m_compactionGen2DurationHasBeenSet = false;
 
   Aws::String m_compactionMultipliers;
-  bool m_compactionMultipliersHasBeenSet = false;
 
   Duration m_compactionCleanupWait;
-  bool m_compactionCleanupWaitHasBeenSet = false;
 
   Duration m_compactionCheckInterval;
-  bool m_compactionCheckIntervalHasBeenSet = false;
 
   bool m_lastValueCacheDisableFromHistory{false};
-  bool m_lastValueCacheDisableFromHistoryHasBeenSet = false;
 
   bool m_distinctValueCacheDisableFromHistory{false};
-  bool m_distinctValueCacheDisableFromHistoryHasBeenSet = false;
 
   Duration m_replicationInterval;
-  bool m_replicationIntervalHasBeenSet = false;
 
   Duration m_catalogSyncInterval;
+  bool m_queryFileLimitHasBeenSet = false;
+  bool m_queryLogSizeHasBeenSet = false;
+  bool m_logFilterHasBeenSet = false;
+  bool m_logFormatHasBeenSet = false;
+  bool m_dataFusionNumThreadsHasBeenSet = false;
+  bool m_dataFusionRuntimeTypeHasBeenSet = false;
+  bool m_dataFusionRuntimeDisableLifoSlotHasBeenSet = false;
+  bool m_dataFusionRuntimeEventIntervalHasBeenSet = false;
+  bool m_dataFusionRuntimeGlobalQueueIntervalHasBeenSet = false;
+  bool m_dataFusionRuntimeMaxBlockingThreadsHasBeenSet = false;
+  bool m_dataFusionRuntimeMaxIoEventsPerTickHasBeenSet = false;
+  bool m_dataFusionRuntimeThreadKeepAliveHasBeenSet = false;
+  bool m_dataFusionRuntimeThreadPriorityHasBeenSet = false;
+  bool m_dataFusionMaxParquetFanoutHasBeenSet = false;
+  bool m_dataFusionUseCachedParquetLoaderHasBeenSet = false;
+  bool m_dataFusionConfigHasBeenSet = false;
+  bool m_maxHttpRequestSizeHasBeenSet = false;
+  bool m_forceSnapshotMemThresholdHasBeenSet = false;
+  bool m_walSnapshotSizeHasBeenSet = false;
+  bool m_walMaxWriteBufferSizeHasBeenSet = false;
+  bool m_snapshottedWalFilesToKeepHasBeenSet = false;
+  bool m_preemptiveCacheAgeHasBeenSet = false;
+  bool m_parquetMemCachePrunePercentageHasBeenSet = false;
+  bool m_parquetMemCachePruneIntervalHasBeenSet = false;
+  bool m_disableParquetMemCacheHasBeenSet = false;
+  bool m_parquetMemCacheQueryPathDurationHasBeenSet = false;
+  bool m_lastCacheEvictionIntervalHasBeenSet = false;
+  bool m_distinctCacheEvictionIntervalHasBeenSet = false;
+  bool m_gen1DurationHasBeenSet = false;
+  bool m_execMemPoolBytesHasBeenSet = false;
+  bool m_parquetMemCacheSizeHasBeenSet = false;
+  bool m_walReplayFailOnErrorHasBeenSet = false;
+  bool m_walReplayConcurrencyLimitHasBeenSet = false;
+  bool m_tableIndexCacheMaxEntriesHasBeenSet = false;
+  bool m_tableIndexCacheConcurrencyLimitHasBeenSet = false;
+  bool m_gen1LookbackDurationHasBeenSet = false;
+  bool m_retentionCheckIntervalHasBeenSet = false;
+  bool m_deleteGracePeriodHasBeenSet = false;
+  bool m_hardDeleteDefaultDurationHasBeenSet = false;
+  bool m_ingestQueryInstancesHasBeenSet = false;
+  bool m_queryOnlyInstancesHasBeenSet = false;
+  bool m_dedicatedCompactorHasBeenSet = false;
+  bool m_compactionRowLimitHasBeenSet = false;
+  bool m_compactionMaxNumFilesPerPlanHasBeenSet = false;
+  bool m_compactionGen2DurationHasBeenSet = false;
+  bool m_compactionMultipliersHasBeenSet = false;
+  bool m_compactionCleanupWaitHasBeenSet = false;
+  bool m_compactionCheckIntervalHasBeenSet = false;
+  bool m_lastValueCacheDisableFromHistoryHasBeenSet = false;
+  bool m_distinctValueCacheDisableFromHistoryHasBeenSet = false;
+  bool m_replicationIntervalHasBeenSet = false;
   bool m_catalogSyncIntervalHasBeenSet = false;
 };
 

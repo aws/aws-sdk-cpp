@@ -76,12 +76,12 @@ class DeleteSnapshotResult {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   SnapshotLifecycle m_lifecycle{SnapshotLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

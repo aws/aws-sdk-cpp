@@ -315,39 +315,39 @@ class GameServerGroup {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_gameServerGroupArn;
-  bool m_gameServerGroupArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-  bool m_instanceDefinitionsHasBeenSet = false;
 
   BalancingStrategy m_balancingStrategy{BalancingStrategy::NOT_SET};
-  bool m_balancingStrategyHasBeenSet = false;
 
   GameServerProtectionPolicy m_gameServerProtectionPolicy{GameServerProtectionPolicy::NOT_SET};
-  bool m_gameServerProtectionPolicyHasBeenSet = false;
 
   Aws::String m_autoScalingGroupArn;
-  bool m_autoScalingGroupArnHasBeenSet = false;
 
   GameServerGroupStatus m_status{GameServerGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Vector<GameServerGroupAction> m_suspendedActions;
-  bool m_suspendedActionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_gameServerGroupNameHasBeenSet = false;
+  bool m_gameServerGroupArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_instanceDefinitionsHasBeenSet = false;
+  bool m_balancingStrategyHasBeenSet = false;
+  bool m_gameServerProtectionPolicyHasBeenSet = false;
+  bool m_autoScalingGroupArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_suspendedActionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

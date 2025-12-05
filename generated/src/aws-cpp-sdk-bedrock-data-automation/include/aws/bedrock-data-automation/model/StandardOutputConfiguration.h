@@ -99,15 +99,15 @@ class StandardOutputConfiguration {
   ///@}
  private:
   DocumentStandardOutputConfiguration m_document;
-  bool m_documentHasBeenSet = false;
 
   ImageStandardOutputConfiguration m_image;
-  bool m_imageHasBeenSet = false;
 
   VideoStandardOutputConfiguration m_video;
-  bool m_videoHasBeenSet = false;
 
   AudioStandardOutputConfiguration m_audio;
+  bool m_documentHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
   bool m_audioHasBeenSet = false;
 };
 

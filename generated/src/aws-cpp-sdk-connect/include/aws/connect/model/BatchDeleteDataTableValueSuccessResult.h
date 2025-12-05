@@ -95,12 +95,12 @@ class BatchDeleteDataTableValueSuccessResult {
   ///@}
  private:
   Aws::Vector<PrimaryValue> m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   DataTableLockVersion m_lockVersion;
+  bool m_primaryValuesHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_lockVersionHasBeenSet = false;
 };
 

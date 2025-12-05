@@ -65,9 +65,9 @@ class DeleteApplicationRequest : public MigrationHubRefactorSpacesRequest {
   ///@}
  private:
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
+  bool m_applicationIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
 };
 

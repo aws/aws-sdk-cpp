@@ -83,12 +83,12 @@ class RerankResult {
   ///@}
  private:
   RerankDocument m_document;
-  bool m_documentHasBeenSet = false;
 
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   double m_relevanceScore{0.0};
+  bool m_documentHasBeenSet = false;
+  bool m_indexHasBeenSet = false;
   bool m_relevanceScoreHasBeenSet = false;
 };
 

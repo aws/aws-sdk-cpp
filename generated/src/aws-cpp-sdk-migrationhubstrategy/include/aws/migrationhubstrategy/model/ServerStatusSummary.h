@@ -65,9 +65,9 @@ class ServerStatusSummary {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   RunTimeAssessmentStatus m_runTimeAssessmentStatus{RunTimeAssessmentStatus::NOT_SET};
+  bool m_countHasBeenSet = false;
   bool m_runTimeAssessmentStatusHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class JdbcTarget {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusions;
-  bool m_exclusionsHasBeenSet = false;
 
   Aws::Vector<JdbcMetadataEntry> m_enableAdditionalMetadata;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_exclusionsHasBeenSet = false;
   bool m_enableAdditionalMetadataHasBeenSet = false;
 };
 

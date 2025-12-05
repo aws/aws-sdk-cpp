@@ -177,27 +177,27 @@ class AwsEc2LaunchTemplateDataPlacementDetails {
   ///@}
  private:
   Aws::String m_affinity;
-  bool m_affinityHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   Aws::String m_hostResourceGroupArn;
-  bool m_hostResourceGroupArnHasBeenSet = false;
 
   int m_partitionNumber{0};
-  bool m_partitionNumberHasBeenSet = false;
 
   Aws::String m_spreadDomain;
-  bool m_spreadDomainHasBeenSet = false;
 
   Aws::String m_tenancy;
+  bool m_affinityHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_hostIdHasBeenSet = false;
+  bool m_hostResourceGroupArnHasBeenSet = false;
+  bool m_partitionNumberHasBeenSet = false;
+  bool m_spreadDomainHasBeenSet = false;
   bool m_tenancyHasBeenSet = false;
 };
 

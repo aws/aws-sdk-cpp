@@ -119,15 +119,15 @@ class CopyClusterSnapshotRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_sourceSnapshotIdentifier;
-  bool m_sourceSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_sourceSnapshotClusterIdentifier;
-  bool m_sourceSnapshotClusterIdentifierHasBeenSet = false;
 
   Aws::String m_targetSnapshotIdentifier;
-  bool m_targetSnapshotIdentifierHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
+  bool m_sourceSnapshotIdentifierHasBeenSet = false;
+  bool m_sourceSnapshotClusterIdentifierHasBeenSet = false;
+  bool m_targetSnapshotIdentifierHasBeenSet = false;
   bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 };
 

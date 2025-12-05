@@ -181,30 +181,30 @@ class GetCommitmentPurchaseAnalysisResult {
   ///@}
  private:
   Aws::String m_estimatedCompletionTime;
-  bool m_estimatedCompletionTimeHasBeenSet = false;
 
   Aws::String m_analysisCompletionTime;
-  bool m_analysisCompletionTimeHasBeenSet = false;
 
   Aws::String m_analysisStartedTime;
-  bool m_analysisStartedTimeHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   AnalysisStatus m_analysisStatus{AnalysisStatus::NOT_SET};
-  bool m_analysisStatusHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   AnalysisDetails m_analysisDetails;
-  bool m_analysisDetailsHasBeenSet = false;
 
   CommitmentPurchaseAnalysisConfiguration m_commitmentPurchaseAnalysisConfiguration;
-  bool m_commitmentPurchaseAnalysisConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_estimatedCompletionTimeHasBeenSet = false;
+  bool m_analysisCompletionTimeHasBeenSet = false;
+  bool m_analysisStartedTimeHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_analysisStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_analysisDetailsHasBeenSet = false;
+  bool m_commitmentPurchaseAnalysisConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

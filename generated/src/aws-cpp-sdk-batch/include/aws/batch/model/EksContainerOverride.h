@@ -183,21 +183,21 @@ class EksContainerOverride {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_args;
-  bool m_argsHasBeenSet = false;
 
   Aws::Vector<EksContainerEnvironmentVariable> m_env;
-  bool m_envHasBeenSet = false;
 
   EksContainerResourceRequirements m_resources;
+  bool m_nameHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_argsHasBeenSet = false;
+  bool m_envHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

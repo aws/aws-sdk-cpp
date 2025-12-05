@@ -371,42 +371,43 @@ class ConverseStreamRequest : public BedrockRuntimeRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::Vector<SystemContentBlock> m_system;
-  bool m_systemHasBeenSet = false;
 
   InferenceConfiguration m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   ToolConfiguration m_toolConfig;
-  bool m_toolConfigHasBeenSet = false;
 
   GuardrailStreamConfiguration m_guardrailConfig;
-  bool m_guardrailConfigHasBeenSet = false;
 
   Aws::Utils::Document m_additionalModelRequestFields;
-  bool m_additionalModelRequestFieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, PromptVariableValues> m_promptVariables;
-  bool m_promptVariablesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalModelResponseFieldPaths;
-  bool m_additionalModelResponseFieldPathsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestMetadata;
-  bool m_requestMetadataHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfig;
-  bool m_performanceConfigHasBeenSet = false;
 
   ServiceTier m_serviceTier;
-  bool m_serviceTierHasBeenSet = false;
   ConverseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_modelIdHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_systemHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
+  bool m_toolConfigHasBeenSet = false;
+  bool m_guardrailConfigHasBeenSet = false;
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
+  bool m_promptVariablesHasBeenSet = false;
+  bool m_additionalModelResponseFieldPathsHasBeenSet = false;
+  bool m_requestMetadataHasBeenSet = false;
+  bool m_performanceConfigHasBeenSet = false;
+  bool m_serviceTierHasBeenSet = false;
 };
 
 }  // namespace Model

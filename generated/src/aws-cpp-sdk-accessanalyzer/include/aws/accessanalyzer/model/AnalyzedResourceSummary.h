@@ -85,12 +85,12 @@ class AnalyzedResourceSummary {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccount;
-  bool m_resourceOwnerAccountHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceOwnerAccountHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

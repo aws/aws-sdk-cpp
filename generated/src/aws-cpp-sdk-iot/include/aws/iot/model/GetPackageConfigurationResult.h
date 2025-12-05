@@ -60,9 +60,9 @@ class GetPackageConfigurationResult {
   ///@}
  private:
   VersionUpdateByJobsConfig m_versionUpdateByJobsConfig;
-  bool m_versionUpdateByJobsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionUpdateByJobsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class SecurityGroupRuleDescription {
   ///@}
  private:
   Aws::String m_iPV4Range;
-  bool m_iPV4RangeHasBeenSet = false;
 
   Aws::String m_iPV6Range;
-  bool m_iPV6RangeHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   long long m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   long long m_toPort{0};
+  bool m_iPV4RangeHasBeenSet = false;
+  bool m_iPV6RangeHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_fromPortHasBeenSet = false;
   bool m_toPortHasBeenSet = false;
 };
 

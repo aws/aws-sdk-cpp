@@ -125,18 +125,18 @@ class Reference {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   ReferenceType m_type{ReferenceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ReferenceStatus m_status{ReferenceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_valueHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

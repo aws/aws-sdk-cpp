@@ -230,36 +230,36 @@ class ProgramManagementAccountSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Program m_program{Program::NOT_SET};
-  bool m_programHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   ProgramManagementAccountStatus m_status{ProgramManagementAccountStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_programHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

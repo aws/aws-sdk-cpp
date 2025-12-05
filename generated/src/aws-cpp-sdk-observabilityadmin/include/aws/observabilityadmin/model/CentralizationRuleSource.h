@@ -97,12 +97,12 @@ class CentralizationRuleSource {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   SourceLogsConfiguration m_sourceLogsConfiguration;
+  bool m_regionsHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_sourceLogsConfigurationHasBeenSet = false;
 };
 

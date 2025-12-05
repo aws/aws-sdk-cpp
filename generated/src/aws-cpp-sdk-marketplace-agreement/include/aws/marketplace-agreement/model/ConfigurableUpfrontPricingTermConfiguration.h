@@ -80,9 +80,9 @@ class ConfigurableUpfrontPricingTermConfiguration {
   ///@}
  private:
   Aws::String m_selectorValue;
-  bool m_selectorValueHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
+  bool m_selectorValueHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

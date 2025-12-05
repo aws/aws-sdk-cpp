@@ -68,9 +68,9 @@ class GetGraphqlApiEnvironmentVariablesResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentVariablesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

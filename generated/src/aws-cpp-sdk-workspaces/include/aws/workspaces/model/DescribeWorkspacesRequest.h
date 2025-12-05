@@ -172,24 +172,24 @@ class DescribeWorkspacesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_workspaceIds;
-  bool m_workspaceIdsHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_workspaceName;
+  bool m_workspaceIdsHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_workspaceNameHasBeenSet = false;
 };
 

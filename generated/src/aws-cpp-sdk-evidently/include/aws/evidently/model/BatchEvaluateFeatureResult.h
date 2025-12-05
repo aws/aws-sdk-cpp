@@ -68,9 +68,9 @@ class BatchEvaluateFeatureResult {
   ///@}
  private:
   Aws::Vector<EvaluationResult> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class TlsInterceptProperties {
   ///@}
  private:
   Aws::String m_pcaArn;
-  bool m_pcaArnHasBeenSet = false;
 
   TlsInterceptMode m_tlsInterceptMode{TlsInterceptMode::NOT_SET};
+  bool m_pcaArnHasBeenSet = false;
   bool m_tlsInterceptModeHasBeenSet = false;
 };
 

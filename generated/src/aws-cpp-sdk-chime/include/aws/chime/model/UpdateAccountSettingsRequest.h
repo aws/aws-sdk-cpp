@@ -66,9 +66,9 @@ class UpdateAccountSettingsRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AccountSettings m_accountSettings;
+  bool m_accountIdHasBeenSet = false;
   bool m_accountSettingsHasBeenSet = false;
 };
 

@@ -152,21 +152,21 @@ class ListReportJobsRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_byReportPlanName;
-  bool m_byReportPlanNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreationBefore{};
-  bool m_byCreationBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreationAfter{};
-  bool m_byCreationAfterHasBeenSet = false;
 
   Aws::String m_byStatus;
-  bool m_byStatusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_byReportPlanNameHasBeenSet = false;
+  bool m_byCreationBeforeHasBeenSet = false;
+  bool m_byCreationAfterHasBeenSet = false;
+  bool m_byStatusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

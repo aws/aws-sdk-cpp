@@ -76,12 +76,12 @@ class UpdateJobQueueResult {
   ///@}
  private:
   Aws::String m_jobQueueName;
-  bool m_jobQueueNameHasBeenSet = false;
 
   Aws::String m_jobQueueArn;
-  bool m_jobQueueArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobQueueNameHasBeenSet = false;
+  bool m_jobQueueArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

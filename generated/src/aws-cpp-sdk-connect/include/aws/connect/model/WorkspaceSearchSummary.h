@@ -184,27 +184,27 @@ class WorkspaceSearchSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

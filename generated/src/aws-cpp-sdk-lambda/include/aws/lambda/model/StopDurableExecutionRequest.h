@@ -66,9 +66,9 @@ class StopDurableExecutionRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_durableExecutionArn;
-  bool m_durableExecutionArnHasBeenSet = false;
 
   ErrorObject m_error;
+  bool m_durableExecutionArnHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

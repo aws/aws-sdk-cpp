@@ -90,12 +90,12 @@ class SimpleCondition {
   ///@}
  private:
   EventCondition m_eventCondition;
-  bool m_eventConditionHasBeenSet = false;
 
   SegmentCondition m_segmentCondition;
-  bool m_segmentConditionHasBeenSet = false;
 
   SegmentDimensions m_segmentDimensions;
+  bool m_eventConditionHasBeenSet = false;
+  bool m_segmentConditionHasBeenSet = false;
   bool m_segmentDimensionsHasBeenSet = false;
 };
 

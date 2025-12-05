@@ -217,33 +217,33 @@ class ReviewTemplateAnswerSummary {
   ///@}
  private:
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_questionTitle;
-  bool m_questionTitleHasBeenSet = false;
 
   Aws::Vector<Choice> m_choices;
-  bool m_choicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedChoices;
-  bool m_selectedChoicesHasBeenSet = false;
 
   Aws::Vector<ChoiceAnswerSummary> m_choiceAnswerSummaries;
-  bool m_choiceAnswerSummariesHasBeenSet = false;
 
   bool m_isApplicable{false};
-  bool m_isApplicableHasBeenSet = false;
 
   ReviewTemplateAnswerStatus m_answerStatus{ReviewTemplateAnswerStatus::NOT_SET};
-  bool m_answerStatusHasBeenSet = false;
 
   AnswerReason m_reason{AnswerReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   QuestionType m_questionType{QuestionType::NOT_SET};
+  bool m_questionIdHasBeenSet = false;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_questionTitleHasBeenSet = false;
+  bool m_choicesHasBeenSet = false;
+  bool m_selectedChoicesHasBeenSet = false;
+  bool m_choiceAnswerSummariesHasBeenSet = false;
+  bool m_isApplicableHasBeenSet = false;
+  bool m_answerStatusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_questionTypeHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class MachineLearningProductFilters {
   ///@}
  private:
   MachineLearningProductEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   MachineLearningProductLastModifiedDateFilter m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   MachineLearningProductTitleFilter m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   MachineLearningProductVisibilityFilter m_visibility;
+  bool m_entityIdHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_productTitleHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

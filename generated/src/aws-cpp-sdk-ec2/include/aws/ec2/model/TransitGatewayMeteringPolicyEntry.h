@@ -145,21 +145,21 @@ class TransitGatewayMeteringPolicyEntry {
   ///@}
  private:
   Aws::String m_policyRuleNumber;
-  bool m_policyRuleNumberHasBeenSet = false;
 
   TransitGatewayMeteringPayerType m_meteredAccount{TransitGatewayMeteringPayerType::NOT_SET};
-  bool m_meteredAccountHasBeenSet = false;
 
   TransitGatewayMeteringPolicyEntryState m_state{TransitGatewayMeteringPolicyEntryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateEffectiveAt{};
-  bool m_updateEffectiveAtHasBeenSet = false;
 
   TransitGatewayMeteringPolicyRule m_meteringPolicyRule;
+  bool m_policyRuleNumberHasBeenSet = false;
+  bool m_meteredAccountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updateEffectiveAtHasBeenSet = false;
   bool m_meteringPolicyRuleHasBeenSet = false;
 };
 

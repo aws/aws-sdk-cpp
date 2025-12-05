@@ -68,9 +68,9 @@ class DatetimeRange {
   ///@}
  private:
   Aws::String m_begin;
-  bool m_beginHasBeenSet = false;
 
   Aws::String m_end;
+  bool m_beginHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class UpdateTaskExecutionRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_taskExecutionArn;
-  bool m_taskExecutionArnHasBeenSet = false;
 
   Options m_options;
+  bool m_taskExecutionArnHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class InvokeDataAutomationResult {
   ///@}
  private:
   SemanticModality m_semanticModality{SemanticModality::NOT_SET};
-  bool m_semanticModalityHasBeenSet = false;
 
   Aws::Vector<OutputSegment> m_outputSegments;
-  bool m_outputSegmentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_semanticModalityHasBeenSet = false;
+  bool m_outputSegmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class UpdateEventLabelRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_assignedLabel;
-  bool m_assignedLabelHasBeenSet = false;
 
   Aws::String m_labelTimestamp;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_assignedLabelHasBeenSet = false;
   bool m_labelTimestampHasBeenSet = false;
 };
 

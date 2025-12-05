@@ -266,42 +266,42 @@ class Statistics {
   ///@}
  private:
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   UsageType m_usageType{UsageType::NOT_SET};
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_licenseProduct;
-  bool m_licenseProductHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Stats m_costInUsd;
-  bool m_costInUsdHasBeenSet = false;
 
   Stats m_runtimeInSeconds;
-  bool m_runtimeInSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_aggregationStartTime{};
-  bool m_aggregationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_aggregationEndTime{};
+  bool m_queueIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_licenseProductHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_costInUsdHasBeenSet = false;
+  bool m_runtimeInSecondsHasBeenSet = false;
+  bool m_aggregationStartTimeHasBeenSet = false;
   bool m_aggregationEndTimeHasBeenSet = false;
 };
 

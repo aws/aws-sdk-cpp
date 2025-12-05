@@ -82,9 +82,9 @@ class EcsResourceRequirement {
   ///@}
  private:
   EcsResourceRequirementType m_type{EcsResourceRequirementType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

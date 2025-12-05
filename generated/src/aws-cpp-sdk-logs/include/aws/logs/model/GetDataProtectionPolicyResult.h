@@ -91,15 +91,15 @@ class GetDataProtectionPolicyResult {
   ///@}
  private:
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   long long m_lastUpdatedTime{0};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logGroupIdentifierHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

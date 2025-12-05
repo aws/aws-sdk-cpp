@@ -165,24 +165,24 @@ class CreateWorkspaceBundleRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_bundleName;
-  bool m_bundleNameHasBeenSet = false;
 
   Aws::String m_bundleDescription;
-  bool m_bundleDescriptionHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   ComputeType m_computeType;
-  bool m_computeTypeHasBeenSet = false;
 
   UserStorage m_userStorage;
-  bool m_userStorageHasBeenSet = false;
 
   RootStorage m_rootStorage;
-  bool m_rootStorageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_bundleNameHasBeenSet = false;
+  bool m_bundleDescriptionHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_userStorageHasBeenSet = false;
+  bool m_rootStorageHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

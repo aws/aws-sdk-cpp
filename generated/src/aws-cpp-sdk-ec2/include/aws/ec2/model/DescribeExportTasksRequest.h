@@ -83,9 +83,9 @@ class DescribeExportTasksRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exportTaskIds;
+  bool m_filtersHasBeenSet = false;
   bool m_exportTaskIdsHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class TestSetTurnRecord {
   ///@}
  private:
   long long m_recordNumber{0};
-  bool m_recordNumberHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   int m_turnNumber{0};
-  bool m_turnNumberHasBeenSet = false;
 
   TurnSpecification m_turnSpecification;
+  bool m_recordNumberHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_turnNumberHasBeenSet = false;
   bool m_turnSpecificationHasBeenSet = false;
 };
 

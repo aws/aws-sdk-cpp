@@ -297,45 +297,45 @@ class IBMDb2Settings {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   bool m_setDataCaptureChanges{false};
-  bool m_setDataCaptureChangesHasBeenSet = false;
 
   Aws::String m_currentLsn;
-  bool m_currentLsnHasBeenSet = false;
 
   int m_maxKBytesPerRead{0};
-  bool m_maxKBytesPerReadHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   int m_loadTimeout{0};
-  bool m_loadTimeoutHasBeenSet = false;
 
   int m_writeBufferSize{0};
-  bool m_writeBufferSizeHasBeenSet = false;
 
   int m_maxFileSize{0};
-  bool m_maxFileSizeHasBeenSet = false;
 
   bool m_keepCsvFiles{false};
+  bool m_databaseNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_setDataCaptureChangesHasBeenSet = false;
+  bool m_currentLsnHasBeenSet = false;
+  bool m_maxKBytesPerReadHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
+  bool m_loadTimeoutHasBeenSet = false;
+  bool m_writeBufferSizeHasBeenSet = false;
+  bool m_maxFileSizeHasBeenSet = false;
   bool m_keepCsvFilesHasBeenSet = false;
 };
 

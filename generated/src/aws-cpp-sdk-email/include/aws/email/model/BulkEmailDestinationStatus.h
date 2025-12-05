@@ -117,12 +117,12 @@ class BulkEmailDestinationStatus {
   ///@}
  private:
   BulkEmailStatus m_status{BulkEmailStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_messageId;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_messageIdHasBeenSet = false;
 };
 

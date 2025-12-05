@@ -85,12 +85,12 @@ class QueryVectorsResult {
   ///@}
  private:
   Aws::Vector<QueryOutputVector> m_vectors;
-  bool m_vectorsHasBeenSet = false;
 
   DistanceMetric m_distanceMetric{DistanceMetric::NOT_SET};
-  bool m_distanceMetricHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vectorsHasBeenSet = false;
+  bool m_distanceMetricHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

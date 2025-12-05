@@ -69,9 +69,9 @@ class GetWirelessGatewayRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   WirelessGatewayIdType m_identifierType{WirelessGatewayIdType::NOT_SET};
+  bool m_identifierHasBeenSet = false;
   bool m_identifierTypeHasBeenSet = false;
 };
 

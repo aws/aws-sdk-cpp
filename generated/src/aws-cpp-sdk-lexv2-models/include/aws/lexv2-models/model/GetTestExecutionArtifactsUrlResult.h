@@ -76,12 +76,12 @@ class GetTestExecutionArtifactsUrlResult {
   ///@}
  private:
   Aws::String m_testExecutionId;
-  bool m_testExecutionIdHasBeenSet = false;
 
   Aws::String m_downloadArtifactsUrl;
-  bool m_downloadArtifactsUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testExecutionIdHasBeenSet = false;
+  bool m_downloadArtifactsUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

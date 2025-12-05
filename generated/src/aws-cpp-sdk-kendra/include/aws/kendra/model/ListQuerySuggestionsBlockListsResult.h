@@ -90,12 +90,12 @@ class ListQuerySuggestionsBlockListsResult {
   ///@}
  private:
   Aws::Vector<QuerySuggestionsBlockListSummary> m_blockListSummaryItems;
-  bool m_blockListSummaryItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blockListSummaryItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

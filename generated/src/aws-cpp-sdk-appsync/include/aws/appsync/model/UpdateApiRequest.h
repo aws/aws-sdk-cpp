@@ -103,15 +103,15 @@ class UpdateApiRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerContact;
-  bool m_ownerContactHasBeenSet = false;
 
   EventConfig m_eventConfig;
+  bool m_apiIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerContactHasBeenSet = false;
   bool m_eventConfigHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class DisassociateSecurityKeyRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

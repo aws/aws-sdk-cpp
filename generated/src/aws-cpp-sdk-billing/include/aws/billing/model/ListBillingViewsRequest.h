@@ -201,27 +201,27 @@ class ListBillingViewsRequest : public BillingRequest {
   ///@}
  private:
   ActiveTimeRange m_activeTimeRange;
-  bool m_activeTimeRangeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_arns;
-  bool m_arnsHasBeenSet = false;
 
   Aws::Vector<BillingViewType> m_billingViewTypes;
-  bool m_billingViewTypesHasBeenSet = false;
 
   Aws::Vector<StringSearch> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_sourceAccountId;
-  bool m_sourceAccountIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_activeTimeRangeHasBeenSet = false;
+  bool m_arnsHasBeenSet = false;
+  bool m_billingViewTypesHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_sourceAccountIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

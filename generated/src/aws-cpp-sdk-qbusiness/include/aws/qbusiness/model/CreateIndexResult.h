@@ -76,12 +76,12 @@ class CreateIndexResult {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexIdHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

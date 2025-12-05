@@ -89,12 +89,12 @@ class ListChannelsRequest : public Mediapackagev2Request {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

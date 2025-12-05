@@ -69,9 +69,9 @@ class ValidationExceptionField {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_pathHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

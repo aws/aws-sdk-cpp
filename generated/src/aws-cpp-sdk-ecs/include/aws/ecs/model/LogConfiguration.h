@@ -273,12 +273,12 @@ class LogConfiguration {
   ///@}
  private:
   LogDriver m_logDriver{LogDriver::NOT_SET};
-  bool m_logDriverHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<Secret> m_secretOptions;
+  bool m_logDriverHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_secretOptionsHasBeenSet = false;
 };
 

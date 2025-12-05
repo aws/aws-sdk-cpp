@@ -357,54 +357,54 @@ class Cluster {
   ///@}
  private:
   Aws::String m_adminUserName;
-  bool m_adminUserNameHasBeenSet = false;
 
   Auth m_authType{Auth::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterEndpoint;
-  bool m_clusterEndpointHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_createTime;
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   int m_shardCapacity{0};
-  bool m_shardCapacityHasBeenSet = false;
 
   int m_shardCount{0};
-  bool m_shardCountHasBeenSet = false;
 
   int m_shardInstanceCount{0};
-  bool m_shardInstanceCountHasBeenSet = false;
 
   Aws::Vector<Shard> m_shards;
-  bool m_shardsHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+  bool m_adminUserNameHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterEndpointHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_shardCapacityHasBeenSet = false;
+  bool m_shardCountHasBeenSet = false;
+  bool m_shardInstanceCountHasBeenSet = false;
+  bool m_shardsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
 };
 

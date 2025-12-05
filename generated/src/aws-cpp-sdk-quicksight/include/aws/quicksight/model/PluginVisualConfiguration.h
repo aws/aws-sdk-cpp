@@ -97,12 +97,12 @@ class PluginVisualConfiguration {
   ///@}
  private:
   Aws::Vector<PluginVisualFieldWell> m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   PluginVisualOptions m_visualOptions;
-  bool m_visualOptionsHasBeenSet = false;
 
   PluginVisualSortConfiguration m_sortConfiguration;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_visualOptionsHasBeenSet = false;
   bool m_sortConfigurationHasBeenSet = false;
 };
 

@@ -173,18 +173,18 @@ class QueryRequest : public TimestreamQueryRequest {
   ///@}
  private:
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxRows{0};
-  bool m_maxRowsHasBeenSet = false;
 
   QueryInsights m_queryInsights;
+  bool m_queryStringHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxRowsHasBeenSet = false;
   bool m_queryInsightsHasBeenSet = false;
 };
 

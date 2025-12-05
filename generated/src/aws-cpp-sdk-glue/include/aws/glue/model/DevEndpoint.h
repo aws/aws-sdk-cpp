@@ -554,78 +554,78 @@ class DevEndpoint {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_yarnEndpointAddress;
-  bool m_yarnEndpointAddressHasBeenSet = false;
 
   Aws::String m_privateAddress;
-  bool m_privateAddressHasBeenSet = false;
 
   int m_zeppelinRemoteSparkInterpreterPort{0};
-  bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet = false;
 
   Aws::String m_publicAddress;
-  bool m_publicAddressHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_extraPythonLibsS3Path;
-  bool m_extraPythonLibsS3PathHasBeenSet = false;
 
   Aws::String m_extraJarsS3Path;
-  bool m_extraJarsS3PathHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_lastUpdateStatus;
-  bool m_lastUpdateStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_publicKeys;
-  bool m_publicKeysHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_arguments;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_yarnEndpointAddressHasBeenSet = false;
+  bool m_privateAddressHasBeenSet = false;
+  bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet = false;
+  bool m_publicAddressHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_extraPythonLibsS3PathHasBeenSet = false;
+  bool m_extraJarsS3PathHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_lastUpdateStatusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_publicKeysHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
   bool m_argumentsHasBeenSet = false;
 };
 

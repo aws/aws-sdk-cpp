@@ -70,9 +70,9 @@ class MetadataConfiguration {
   ///@}
  private:
   JournalTableConfiguration m_journalTableConfiguration;
-  bool m_journalTableConfigurationHasBeenSet = false;
 
   InventoryTableConfiguration m_inventoryTableConfiguration;
+  bool m_journalTableConfigurationHasBeenSet = false;
   bool m_inventoryTableConfigurationHasBeenSet = false;
 };
 

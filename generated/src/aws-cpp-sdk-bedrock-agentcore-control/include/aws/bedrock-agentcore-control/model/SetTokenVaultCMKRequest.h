@@ -67,9 +67,9 @@ class SetTokenVaultCMKRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_tokenVaultId;
-  bool m_tokenVaultIdHasBeenSet = false;
 
   KmsConfiguration m_kmsConfiguration;
+  bool m_tokenVaultIdHasBeenSet = false;
   bool m_kmsConfigurationHasBeenSet = false;
 };
 

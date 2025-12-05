@@ -145,21 +145,21 @@ class UpdatePackageRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   PackageSource m_packageSource;
-  bool m_packageSourceHasBeenSet = false;
 
   Aws::String m_packageDescription;
-  bool m_packageDescriptionHasBeenSet = false;
 
   Aws::String m_commitMessage;
-  bool m_commitMessageHasBeenSet = false;
 
   PackageConfiguration m_packageConfiguration;
-  bool m_packageConfigurationHasBeenSet = false;
 
   PackageEncryptionOptions m_packageEncryptionOptions;
+  bool m_packageIDHasBeenSet = false;
+  bool m_packageSourceHasBeenSet = false;
+  bool m_packageDescriptionHasBeenSet = false;
+  bool m_commitMessageHasBeenSet = false;
+  bool m_packageConfigurationHasBeenSet = false;
   bool m_packageEncryptionOptionsHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class DescribeConfigurationRevisionRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_revision{0};
+  bool m_arnHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

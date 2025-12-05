@@ -192,27 +192,27 @@ class CreateUserRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_passwords;
-  bool m_passwordsHasBeenSet = false;
 
   Aws::String m_accessString;
-  bool m_accessStringHasBeenSet = false;
 
   bool m_noPasswordRequired{false};
-  bool m_noPasswordRequiredHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AuthenticationMode m_authenticationMode;
+  bool m_userIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_passwordsHasBeenSet = false;
+  bool m_accessStringHasBeenSet = false;
+  bool m_noPasswordRequiredHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_authenticationModeHasBeenSet = false;
 };
 

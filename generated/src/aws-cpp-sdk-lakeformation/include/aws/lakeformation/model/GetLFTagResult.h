@@ -103,15 +103,15 @@ class GetLFTagResult {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagValues;
-  bool m_tagValuesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_tagValuesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class CreateVpcEndpointConnectionNotificationResponse {
   ///@}
  private:
   ConnectionNotification m_connectionNotification;
-  bool m_connectionNotificationHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_connectionNotificationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

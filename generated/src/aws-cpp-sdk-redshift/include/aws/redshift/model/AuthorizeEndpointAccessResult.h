@@ -208,33 +208,33 @@ class AuthorizeEndpointAccessResult {
   ///@}
  private:
   Aws::String m_grantor;
-  bool m_grantorHasBeenSet = false;
 
   Aws::String m_grantee;
-  bool m_granteeHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_authorizeTime{};
-  bool m_authorizeTimeHasBeenSet = false;
 
   Aws::String m_clusterStatus;
-  bool m_clusterStatusHasBeenSet = false;
 
   AuthorizationStatus m_status{AuthorizationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_allowedAllVPCs{false};
-  bool m_allowedAllVPCsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedVPCs;
-  bool m_allowedVPCsHasBeenSet = false;
 
   int m_endpointCount{0};
-  bool m_endpointCountHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_grantorHasBeenSet = false;
+  bool m_granteeHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_authorizeTimeHasBeenSet = false;
+  bool m_clusterStatusHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_allowedAllVPCsHasBeenSet = false;
+  bool m_allowedVPCsHasBeenSet = false;
+  bool m_endpointCountHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

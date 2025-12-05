@@ -66,9 +66,9 @@ class GetLogRecordResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_logRecord;
-  bool m_logRecordHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logRecordHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

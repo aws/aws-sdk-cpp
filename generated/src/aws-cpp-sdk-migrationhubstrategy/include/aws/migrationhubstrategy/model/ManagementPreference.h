@@ -89,12 +89,12 @@ class ManagementPreference {
   ///@}
  private:
   AwsManagedResources m_awsManagedResources;
-  bool m_awsManagedResourcesHasBeenSet = false;
 
   NoManagementPreference m_noPreference;
-  bool m_noPreferenceHasBeenSet = false;
 
   SelfManageResources m_selfManageResources;
+  bool m_awsManagedResourcesHasBeenSet = false;
+  bool m_noPreferenceHasBeenSet = false;
   bool m_selfManageResourcesHasBeenSet = false;
 };
 

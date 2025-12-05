@@ -62,9 +62,9 @@ class DescribeFleetLocationUtilizationResult {
   ///@}
  private:
   FleetUtilization m_fleetUtilization;
-  bool m_fleetUtilizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetUtilizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

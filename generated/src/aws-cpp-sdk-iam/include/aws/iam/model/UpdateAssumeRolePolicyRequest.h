@@ -84,9 +84,9 @@ class UpdateAssumeRolePolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
+  bool m_roleNameHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
 };
 

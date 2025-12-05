@@ -73,9 +73,9 @@ class RoutingConfigurationListItem {
   ///@}
  private:
   Aws::String m_stateMachineVersionArn;
-  bool m_stateMachineVersionArnHasBeenSet = false;
 
   int m_weight{0};
+  bool m_stateMachineVersionArnHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

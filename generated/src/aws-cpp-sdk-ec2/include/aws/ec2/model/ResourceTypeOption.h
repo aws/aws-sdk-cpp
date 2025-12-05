@@ -87,9 +87,9 @@ class ResourceTypeOption {
   ///@}
  private:
   ImageReferenceOptionName m_optionName{ImageReferenceOptionName::NOT_SET};
-  bool m_optionNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_optionValues;
+  bool m_optionNameHasBeenSet = false;
   bool m_optionValuesHasBeenSet = false;
 };
 

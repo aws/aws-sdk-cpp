@@ -109,15 +109,15 @@ class LatestVersionReferences {
   ///@}
  private:
   Aws::String m_latestVersionArn;
-  bool m_latestVersionArnHasBeenSet = false;
 
   Aws::String m_latestMajorVersionArn;
-  bool m_latestMajorVersionArnHasBeenSet = false;
 
   Aws::String m_latestMinorVersionArn;
-  bool m_latestMinorVersionArnHasBeenSet = false;
 
   Aws::String m_latestPatchVersionArn;
+  bool m_latestVersionArnHasBeenSet = false;
+  bool m_latestMajorVersionArnHasBeenSet = false;
+  bool m_latestMinorVersionArnHasBeenSet = false;
   bool m_latestPatchVersionArnHasBeenSet = false;
 };
 

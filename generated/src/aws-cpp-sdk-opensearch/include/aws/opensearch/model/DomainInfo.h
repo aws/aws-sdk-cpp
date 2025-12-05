@@ -69,9 +69,9 @@ class DomainInfo {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
   bool m_engineTypeHasBeenSet = false;
 };
 

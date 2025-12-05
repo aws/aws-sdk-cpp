@@ -105,12 +105,12 @@ class DataAccessorAuthenticationDetail {
   ///@}
  private:
   DataAccessorAuthenticationType m_authenticationType{DataAccessorAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   DataAccessorAuthenticationConfiguration m_authenticationConfiguration;
-  bool m_authenticationConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_externalIds;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
   bool m_externalIdsHasBeenSet = false;
 };
 

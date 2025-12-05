@@ -86,12 +86,12 @@ class DescribeRulesResult {
   ///@}
  private:
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_rulesHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

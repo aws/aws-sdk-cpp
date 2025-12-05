@@ -86,12 +86,12 @@ class GetResourceRequestStatusResult {
   ///@}
  private:
   ProgressEvent m_progressEvent;
-  bool m_progressEventHasBeenSet = false;
 
   Aws::Vector<HookProgressEvent> m_hooksProgressEvent;
-  bool m_hooksProgressEventHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_progressEventHasBeenSet = false;
+  bool m_hooksProgressEventHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

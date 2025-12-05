@@ -96,12 +96,12 @@ class FreeTrialPricingTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<GrantItem> m_grants;
+  bool m_typeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_grantsHasBeenSet = false;
 };
 

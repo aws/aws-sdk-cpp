@@ -102,12 +102,12 @@ class UpdateSizeConstraintSetRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_sizeConstraintSetId;
-  bool m_sizeConstraintSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::Vector<SizeConstraintSetUpdate> m_updates;
+  bool m_sizeConstraintSetIdHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_updatesHasBeenSet = false;
 };
 

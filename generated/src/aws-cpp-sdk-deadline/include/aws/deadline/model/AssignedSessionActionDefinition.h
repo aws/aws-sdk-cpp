@@ -109,15 +109,15 @@ class AssignedSessionActionDefinition {
   ///@}
  private:
   AssignedEnvironmentEnterSessionActionDefinition m_envEnter;
-  bool m_envEnterHasBeenSet = false;
 
   AssignedEnvironmentExitSessionActionDefinition m_envExit;
-  bool m_envExitHasBeenSet = false;
 
   AssignedTaskRunSessionActionDefinition m_taskRun;
-  bool m_taskRunHasBeenSet = false;
 
   AssignedSyncInputJobAttachmentsSessionActionDefinition m_syncInputJobAttachments;
+  bool m_envEnterHasBeenSet = false;
+  bool m_envExitHasBeenSet = false;
+  bool m_taskRunHasBeenSet = false;
   bool m_syncInputJobAttachmentsHasBeenSet = false;
 };
 

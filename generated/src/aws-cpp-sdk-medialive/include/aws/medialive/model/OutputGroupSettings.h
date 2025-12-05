@@ -201,33 +201,33 @@ class OutputGroupSettings {
   ///@}
  private:
   ArchiveGroupSettings m_archiveGroupSettings;
-  bool m_archiveGroupSettingsHasBeenSet = false;
 
   FrameCaptureGroupSettings m_frameCaptureGroupSettings;
-  bool m_frameCaptureGroupSettingsHasBeenSet = false;
 
   HlsGroupSettings m_hlsGroupSettings;
-  bool m_hlsGroupSettingsHasBeenSet = false;
 
   MediaPackageGroupSettings m_mediaPackageGroupSettings;
-  bool m_mediaPackageGroupSettingsHasBeenSet = false;
 
   MsSmoothGroupSettings m_msSmoothGroupSettings;
-  bool m_msSmoothGroupSettingsHasBeenSet = false;
 
   MultiplexGroupSettings m_multiplexGroupSettings;
-  bool m_multiplexGroupSettingsHasBeenSet = false;
 
   RtmpGroupSettings m_rtmpGroupSettings;
-  bool m_rtmpGroupSettingsHasBeenSet = false;
 
   UdpGroupSettings m_udpGroupSettings;
-  bool m_udpGroupSettingsHasBeenSet = false;
 
   CmafIngestGroupSettings m_cmafIngestGroupSettings;
-  bool m_cmafIngestGroupSettingsHasBeenSet = false;
 
   SrtGroupSettings m_srtGroupSettings;
+  bool m_archiveGroupSettingsHasBeenSet = false;
+  bool m_frameCaptureGroupSettingsHasBeenSet = false;
+  bool m_hlsGroupSettingsHasBeenSet = false;
+  bool m_mediaPackageGroupSettingsHasBeenSet = false;
+  bool m_msSmoothGroupSettingsHasBeenSet = false;
+  bool m_multiplexGroupSettingsHasBeenSet = false;
+  bool m_rtmpGroupSettingsHasBeenSet = false;
+  bool m_udpGroupSettingsHasBeenSet = false;
+  bool m_cmafIngestGroupSettingsHasBeenSet = false;
   bool m_srtGroupSettingsHasBeenSet = false;
 };
 

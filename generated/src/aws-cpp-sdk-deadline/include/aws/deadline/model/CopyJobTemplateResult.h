@@ -59,9 +59,9 @@ class CopyJobTemplateResult {
   ///@}
  private:
   JobTemplateType m_templateType{JobTemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class CreateStreamRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<StreamFile> m_files;
-  bool m_filesHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_streamIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

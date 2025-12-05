@@ -283,42 +283,42 @@ class Queue {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_concurrentJobs{0};
-  bool m_concurrentJobsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PricingPlan m_pricingPlan{PricingPlan::NOT_SET};
-  bool m_pricingPlanHasBeenSet = false;
 
   int m_progressingJobsCount{0};
-  bool m_progressingJobsCountHasBeenSet = false;
 
   ReservationPlan m_reservationPlan;
-  bool m_reservationPlanHasBeenSet = false;
 
   Aws::Vector<ServiceOverride> m_serviceOverrides;
-  bool m_serviceOverridesHasBeenSet = false;
 
   QueueStatus m_status{QueueStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_submittedJobsCount{0};
-  bool m_submittedJobsCountHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_concurrentJobsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pricingPlanHasBeenSet = false;
+  bool m_progressingJobsCountHasBeenSet = false;
+  bool m_reservationPlanHasBeenSet = false;
+  bool m_serviceOverridesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_submittedJobsCountHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -274,39 +274,39 @@ class SendChannelMessageRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   ChannelMessageType m_type{ChannelMessageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ChannelMessagePersistenceType m_persistence{ChannelMessagePersistenceType::NOT_SET};
-  bool m_persistenceHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_chimeBearer;
-  bool m_chimeBearerHasBeenSet = false;
 
   PushNotificationConfiguration m_pushNotification;
-  bool m_pushNotificationHasBeenSet = false;
 
   Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-  bool m_messageAttributesHasBeenSet = false;
 
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Vector<Target> m_target;
+  bool m_channelArnHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_persistenceHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_chimeBearerHasBeenSet = false;
+  bool m_pushNotificationHasBeenSet = false;
+  bool m_messageAttributesHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

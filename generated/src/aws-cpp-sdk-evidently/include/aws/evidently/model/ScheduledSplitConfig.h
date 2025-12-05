@@ -117,12 +117,12 @@ class ScheduledSplitConfig {
   ///@}
  private:
   Aws::Map<Aws::String, long long> m_groupWeights;
-  bool m_groupWeightsHasBeenSet = false;
 
   Aws::Vector<SegmentOverride> m_segmentOverrides;
-  bool m_segmentOverridesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_groupWeightsHasBeenSet = false;
+  bool m_segmentOverridesHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

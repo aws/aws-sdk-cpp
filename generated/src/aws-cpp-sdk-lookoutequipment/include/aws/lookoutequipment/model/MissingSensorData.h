@@ -62,9 +62,9 @@ class MissingSensorData {
   ///@}
  private:
   int m_affectedSensorCount{0};
-  bool m_affectedSensorCountHasBeenSet = false;
 
   int m_totalNumberOfMissingValues{0};
+  bool m_affectedSensorCountHasBeenSet = false;
   bool m_totalNumberOfMissingValuesHasBeenSet = false;
 };
 

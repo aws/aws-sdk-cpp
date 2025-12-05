@@ -66,9 +66,9 @@ class GetProviderServiceRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::String m_providerServiceName;
+  bool m_providerNameHasBeenSet = false;
   bool m_providerServiceNameHasBeenSet = false;
 };
 

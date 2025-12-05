@@ -275,39 +275,39 @@ class AudioCodecSettings {
   ///@}
  private:
   AacSettings m_aacSettings;
-  bool m_aacSettingsHasBeenSet = false;
 
   Ac3Settings m_ac3Settings;
-  bool m_ac3SettingsHasBeenSet = false;
 
   AiffSettings m_aiffSettings;
-  bool m_aiffSettingsHasBeenSet = false;
 
   AudioCodec m_codec{AudioCodec::NOT_SET};
-  bool m_codecHasBeenSet = false;
 
   Eac3AtmosSettings m_eac3AtmosSettings;
-  bool m_eac3AtmosSettingsHasBeenSet = false;
 
   Eac3Settings m_eac3Settings;
-  bool m_eac3SettingsHasBeenSet = false;
 
   FlacSettings m_flacSettings;
-  bool m_flacSettingsHasBeenSet = false;
 
   Mp2Settings m_mp2Settings;
-  bool m_mp2SettingsHasBeenSet = false;
 
   Mp3Settings m_mp3Settings;
-  bool m_mp3SettingsHasBeenSet = false;
 
   OpusSettings m_opusSettings;
-  bool m_opusSettingsHasBeenSet = false;
 
   VorbisSettings m_vorbisSettings;
-  bool m_vorbisSettingsHasBeenSet = false;
 
   WavSettings m_wavSettings;
+  bool m_aacSettingsHasBeenSet = false;
+  bool m_ac3SettingsHasBeenSet = false;
+  bool m_aiffSettingsHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_eac3AtmosSettingsHasBeenSet = false;
+  bool m_eac3SettingsHasBeenSet = false;
+  bool m_flacSettingsHasBeenSet = false;
+  bool m_mp2SettingsHasBeenSet = false;
+  bool m_mp3SettingsHasBeenSet = false;
+  bool m_opusSettingsHasBeenSet = false;
+  bool m_vorbisSettingsHasBeenSet = false;
   bool m_wavSettingsHasBeenSet = false;
 };
 

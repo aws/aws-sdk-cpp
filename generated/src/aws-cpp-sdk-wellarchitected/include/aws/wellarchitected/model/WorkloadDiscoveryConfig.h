@@ -77,9 +77,9 @@ class WorkloadDiscoveryConfig {
   ///@}
  private:
   TrustedAdvisorIntegrationStatus m_trustedAdvisorIntegrationStatus{TrustedAdvisorIntegrationStatus::NOT_SET};
-  bool m_trustedAdvisorIntegrationStatusHasBeenSet = false;
 
   Aws::Vector<DefinitionType> m_workloadResourceDefinition;
+  bool m_trustedAdvisorIntegrationStatusHasBeenSet = false;
   bool m_workloadResourceDefinitionHasBeenSet = false;
 };
 

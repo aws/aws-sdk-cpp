@@ -72,9 +72,9 @@ class StorageLensExpandedPrefixesDataExport {
   ///@}
  private:
   S3BucketDestination m_s3BucketDestination;
-  bool m_s3BucketDestinationHasBeenSet = false;
 
   StorageLensTableDestination m_storageLensTableDestination;
+  bool m_s3BucketDestinationHasBeenSet = false;
   bool m_storageLensTableDestinationHasBeenSet = false;
 };
 

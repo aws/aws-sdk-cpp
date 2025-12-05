@@ -101,15 +101,15 @@ class NetworkInterfaceAttachmentChanges {
   ///@}
  private:
   bool m_defaultEnaQueueCount{false};
-  bool m_defaultEnaQueueCountHasBeenSet = false;
 
   int m_enaQueueCount{0};
-  bool m_enaQueueCountHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
+  bool m_defaultEnaQueueCountHasBeenSet = false;
+  bool m_enaQueueCountHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
   bool m_deleteOnTerminationHasBeenSet = false;
 };
 

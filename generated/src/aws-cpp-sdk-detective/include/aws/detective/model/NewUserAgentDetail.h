@@ -67,9 +67,9 @@ class NewUserAgentDetail {
   ///@}
  private:
   Aws::String m_userAgent;
-  bool m_userAgentHasBeenSet = false;
 
   bool m_isNewForEntireAccount{false};
+  bool m_userAgentHasBeenSet = false;
   bool m_isNewForEntireAccountHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class BatchListObjectParents {
   ///@}
  private:
   ObjectReference m_objectReference;
-  bool m_objectReferenceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_objectReferenceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

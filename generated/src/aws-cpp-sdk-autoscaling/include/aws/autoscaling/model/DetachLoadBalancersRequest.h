@@ -76,9 +76,9 @@ class DetachLoadBalancersRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_loadBalancerNames;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_loadBalancerNamesHasBeenSet = false;
 };
 

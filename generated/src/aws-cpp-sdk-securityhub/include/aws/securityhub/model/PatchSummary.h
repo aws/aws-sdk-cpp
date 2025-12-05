@@ -240,36 +240,36 @@ class PatchSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_installedCount{0};
-  bool m_installedCountHasBeenSet = false;
 
   int m_missingCount{0};
-  bool m_missingCountHasBeenSet = false;
 
   int m_failedCount{0};
-  bool m_failedCountHasBeenSet = false;
 
   int m_installedOtherCount{0};
-  bool m_installedOtherCountHasBeenSet = false;
 
   int m_installedRejectedCount{0};
-  bool m_installedRejectedCountHasBeenSet = false;
 
   int m_installedPendingReboot{0};
-  bool m_installedPendingRebootHasBeenSet = false;
 
   Aws::String m_operationStartTime;
-  bool m_operationStartTimeHasBeenSet = false;
 
   Aws::String m_operationEndTime;
-  bool m_operationEndTimeHasBeenSet = false;
 
   Aws::String m_rebootOption;
-  bool m_rebootOptionHasBeenSet = false;
 
   Aws::String m_operation;
+  bool m_idHasBeenSet = false;
+  bool m_installedCountHasBeenSet = false;
+  bool m_missingCountHasBeenSet = false;
+  bool m_failedCountHasBeenSet = false;
+  bool m_installedOtherCountHasBeenSet = false;
+  bool m_installedRejectedCountHasBeenSet = false;
+  bool m_installedPendingRebootHasBeenSet = false;
+  bool m_operationStartTimeHasBeenSet = false;
+  bool m_operationEndTimeHasBeenSet = false;
+  bool m_rebootOptionHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

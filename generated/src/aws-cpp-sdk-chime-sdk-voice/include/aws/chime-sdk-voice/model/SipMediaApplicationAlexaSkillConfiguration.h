@@ -78,9 +78,9 @@ class SipMediaApplicationAlexaSkillConfiguration {
   ///@}
  private:
   AlexaSkillStatus m_alexaSkillStatus{AlexaSkillStatus::NOT_SET};
-  bool m_alexaSkillStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alexaSkillIds;
+  bool m_alexaSkillStatusHasBeenSet = false;
   bool m_alexaSkillIdsHasBeenSet = false;
 };
 

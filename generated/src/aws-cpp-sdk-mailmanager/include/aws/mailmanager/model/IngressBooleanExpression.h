@@ -68,9 +68,9 @@ class IngressBooleanExpression {
   ///@}
  private:
   IngressBooleanToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   IngressBooleanOperator m_operator{IngressBooleanOperator::NOT_SET};
+  bool m_evaluateHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

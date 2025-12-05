@@ -108,15 +108,15 @@ class BucketCountBySharedAccessType {
   ///@}
  private:
   long long m_external{0};
-  bool m_externalHasBeenSet = false;
 
   long long m_internal{0};
-  bool m_internalHasBeenSet = false;
 
   long long m_notShared{0};
-  bool m_notSharedHasBeenSet = false;
 
   long long m_unknown{0};
+  bool m_externalHasBeenSet = false;
+  bool m_internalHasBeenSet = false;
+  bool m_notSharedHasBeenSet = false;
   bool m_unknownHasBeenSet = false;
 };
 

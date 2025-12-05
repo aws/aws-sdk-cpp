@@ -112,15 +112,15 @@ class ConfigurationOptionSetting {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_optionName;
-  bool m_optionNameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_optionNameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

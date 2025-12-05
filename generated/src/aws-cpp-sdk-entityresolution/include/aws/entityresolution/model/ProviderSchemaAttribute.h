@@ -115,15 +115,15 @@ class ProviderSchemaAttribute {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   SchemaAttributeType m_type{SchemaAttributeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_subType;
-  bool m_subTypeHasBeenSet = false;
 
   bool m_hashing{false};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_subTypeHasBeenSet = false;
   bool m_hashingHasBeenSet = false;
 };
 

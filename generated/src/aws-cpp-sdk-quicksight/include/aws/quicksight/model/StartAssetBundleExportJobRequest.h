@@ -261,36 +261,36 @@ class StartAssetBundleExportJobRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_assetBundleExportJobId;
-  bool m_assetBundleExportJobIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   bool m_includeAllDependencies{false};
-  bool m_includeAllDependenciesHasBeenSet = false;
 
   AssetBundleExportFormat m_exportFormat{AssetBundleExportFormat::NOT_SET};
-  bool m_exportFormatHasBeenSet = false;
 
   AssetBundleCloudFormationOverridePropertyConfiguration m_cloudFormationOverridePropertyConfiguration;
-  bool m_cloudFormationOverridePropertyConfigurationHasBeenSet = false;
 
   bool m_includePermissions{false};
-  bool m_includePermissionsHasBeenSet = false;
 
   bool m_includeTags{false};
-  bool m_includeTagsHasBeenSet = false;
 
   AssetBundleExportJobValidationStrategy m_validationStrategy;
-  bool m_validationStrategyHasBeenSet = false;
 
   bool m_includeFolderMemberships{false};
-  bool m_includeFolderMembershipsHasBeenSet = false;
 
   IncludeFolderMembers m_includeFolderMembers{IncludeFolderMembers::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_assetBundleExportJobIdHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_includeAllDependenciesHasBeenSet = false;
+  bool m_exportFormatHasBeenSet = false;
+  bool m_cloudFormationOverridePropertyConfigurationHasBeenSet = false;
+  bool m_includePermissionsHasBeenSet = false;
+  bool m_includeTagsHasBeenSet = false;
+  bool m_validationStrategyHasBeenSet = false;
+  bool m_includeFolderMembershipsHasBeenSet = false;
   bool m_includeFolderMembersHasBeenSet = false;
 };
 

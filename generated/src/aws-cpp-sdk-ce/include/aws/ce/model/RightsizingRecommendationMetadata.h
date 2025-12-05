@@ -104,15 +104,15 @@ class RightsizingRecommendationMetadata {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_generationTimestamp;
-  bool m_generationTimestampHasBeenSet = false;
 
   LookbackPeriodInDays m_lookbackPeriodInDays{LookbackPeriodInDays::NOT_SET};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   Aws::String m_additionalMetadata;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_generationTimestampHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
   bool m_additionalMetadataHasBeenSet = false;
 };
 

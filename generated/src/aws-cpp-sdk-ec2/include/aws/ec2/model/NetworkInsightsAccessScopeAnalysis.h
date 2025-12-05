@@ -237,36 +237,36 @@ class NetworkInsightsAccessScopeAnalysis {
   ///@}
  private:
   Aws::String m_networkInsightsAccessScopeAnalysisId;
-  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
   Aws::String m_networkInsightsAccessScopeAnalysisArn;
-  bool m_networkInsightsAccessScopeAnalysisArnHasBeenSet = false;
 
   Aws::String m_networkInsightsAccessScopeId;
-  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
   AnalysisStatus m_status{AnalysisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_warningMessage;
-  bool m_warningMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   FindingsFound m_findingsFound{FindingsFound::NOT_SET};
-  bool m_findingsFoundHasBeenSet = false;
 
   int m_analyzedEniCount{0};
-  bool m_analyzedEniCountHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
+  bool m_networkInsightsAccessScopeAnalysisArnHasBeenSet = false;
+  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_findingsFoundHasBeenSet = false;
+  bool m_analyzedEniCountHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

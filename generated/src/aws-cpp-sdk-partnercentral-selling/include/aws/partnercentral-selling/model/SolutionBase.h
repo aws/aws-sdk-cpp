@@ -172,24 +172,24 @@ class SolutionBase {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SolutionStatus m_status{SolutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
+  bool m_catalogHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
 };
 

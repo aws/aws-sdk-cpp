@@ -92,12 +92,12 @@ class AnalyticsFilter {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Tag m_tag;
-  bool m_tagHasBeenSet = false;
 
   AnalyticsAndOperator m_and;
+  bool m_prefixHasBeenSet = false;
+  bool m_tagHasBeenSet = false;
   bool m_andHasBeenSet = false;
 };
 

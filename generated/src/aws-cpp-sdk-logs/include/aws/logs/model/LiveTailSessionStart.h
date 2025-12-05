@@ -175,21 +175,21 @@ class LiveTailSessionStart {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
-  bool m_logGroupIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logStreamNames;
-  bool m_logStreamNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logStreamNamePrefixes;
-  bool m_logStreamNamePrefixesHasBeenSet = false;
 
   Aws::String m_logEventFilterPattern;
+  bool m_requestIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_logGroupIdentifiersHasBeenSet = false;
+  bool m_logStreamNamesHasBeenSet = false;
+  bool m_logStreamNamePrefixesHasBeenSet = false;
   bool m_logEventFilterPatternHasBeenSet = false;
 };
 

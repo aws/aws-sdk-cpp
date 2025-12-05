@@ -230,36 +230,36 @@ class Trust {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_trustId;
-  bool m_trustIdHasBeenSet = false;
 
   Aws::String m_remoteDomainName;
-  bool m_remoteDomainNameHasBeenSet = false;
 
   TrustType m_trustType{TrustType::NOT_SET};
-  bool m_trustTypeHasBeenSet = false;
 
   TrustDirection m_trustDirection{TrustDirection::NOT_SET};
-  bool m_trustDirectionHasBeenSet = false;
 
   TrustState m_trustState{TrustState::NOT_SET};
-  bool m_trustStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDateTime{};
-  bool m_createdDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateLastUpdatedDateTime{};
-  bool m_stateLastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_trustStateReason;
-  bool m_trustStateReasonHasBeenSet = false;
 
   SelectiveAuth m_selectiveAuth{SelectiveAuth::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_trustIdHasBeenSet = false;
+  bool m_remoteDomainNameHasBeenSet = false;
+  bool m_trustTypeHasBeenSet = false;
+  bool m_trustDirectionHasBeenSet = false;
+  bool m_trustStateHasBeenSet = false;
+  bool m_createdDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_stateLastUpdatedDateTimeHasBeenSet = false;
+  bool m_trustStateReasonHasBeenSet = false;
   bool m_selectiveAuthHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListFunctionsResult {
   ///@}
  private:
   Aws::Vector<FunctionConfiguration> m_functions;
-  bool m_functionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

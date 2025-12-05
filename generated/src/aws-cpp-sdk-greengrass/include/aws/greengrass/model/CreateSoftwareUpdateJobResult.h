@@ -93,15 +93,15 @@ class CreateSoftwareUpdateJobResult {
   ///@}
  private:
   Aws::String m_iotJobArn;
-  bool m_iotJobArnHasBeenSet = false;
 
   Aws::String m_iotJobId;
-  bool m_iotJobIdHasBeenSet = false;
 
   Aws::String m_platformSoftwareVersion;
-  bool m_platformSoftwareVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_iotJobArnHasBeenSet = false;
+  bool m_iotJobIdHasBeenSet = false;
+  bool m_platformSoftwareVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

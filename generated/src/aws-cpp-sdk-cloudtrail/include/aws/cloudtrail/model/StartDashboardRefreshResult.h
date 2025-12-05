@@ -59,9 +59,9 @@ class StartDashboardRefreshResult {
   ///@}
  private:
   Aws::String m_refreshId;
-  bool m_refreshIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_refreshIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

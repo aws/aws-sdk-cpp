@@ -72,9 +72,9 @@ class DeleteDeploymentGroupRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_deploymentGroupName;
+  bool m_applicationNameHasBeenSet = false;
   bool m_deploymentGroupNameHasBeenSet = false;
 };
 

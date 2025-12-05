@@ -87,12 +87,12 @@ class SelectResult {
   ///@}
  private:
   Aws::Vector<Item> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_itemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

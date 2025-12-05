@@ -138,21 +138,21 @@ class FleetMember {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   MembershipLevel m_membershipLevel{MembershipLevel::NOT_SET};
+  bool m_farmIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_principalTypeHasBeenSet = false;
+  bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipLevelHasBeenSet = false;
 };
 

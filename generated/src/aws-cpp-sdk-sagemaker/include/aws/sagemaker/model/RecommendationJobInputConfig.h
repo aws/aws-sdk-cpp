@@ -253,33 +253,33 @@ class RecommendationJobInputConfig {
   ///@}
  private:
   Aws::String m_modelPackageVersionArn;
-  bool m_modelPackageVersionArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   int m_jobDurationInSeconds{0};
-  bool m_jobDurationInSecondsHasBeenSet = false;
 
   TrafficPattern m_trafficPattern;
-  bool m_trafficPatternHasBeenSet = false;
 
   RecommendationJobResourceLimit m_resourceLimit;
-  bool m_resourceLimitHasBeenSet = false;
 
   Aws::Vector<EndpointInputConfiguration> m_endpointConfigurations;
-  bool m_endpointConfigurationsHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   RecommendationJobContainerConfig m_containerConfig;
-  bool m_containerConfigHasBeenSet = false;
 
   Aws::Vector<EndpointInfo> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   RecommendationJobVpcConfig m_vpcConfig;
+  bool m_modelPackageVersionArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_jobDurationInSecondsHasBeenSet = false;
+  bool m_trafficPatternHasBeenSet = false;
+  bool m_resourceLimitHasBeenSet = false;
+  bool m_endpointConfigurationsHasBeenSet = false;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
+  bool m_containerConfigHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

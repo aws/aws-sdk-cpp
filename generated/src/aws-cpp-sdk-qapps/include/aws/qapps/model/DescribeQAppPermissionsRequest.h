@@ -74,9 +74,9 @@ class DescribeQAppPermissionsRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_appId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_appIdHasBeenSet = false;
 };
 

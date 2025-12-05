@@ -103,12 +103,12 @@ class CreateSessionRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
-  bool m_sessionMetadataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_sessionMetadataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

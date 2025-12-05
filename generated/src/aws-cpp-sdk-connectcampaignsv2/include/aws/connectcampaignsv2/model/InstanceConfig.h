@@ -81,12 +81,12 @@ class InstanceConfig {
   ///@}
  private:
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   Aws::String m_serviceLinkedRoleArn;
-  bool m_serviceLinkedRoleArnHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
+  bool m_connectInstanceIdHasBeenSet = false;
+  bool m_serviceLinkedRoleArnHasBeenSet = false;
   bool m_encryptionConfigHasBeenSet = false;
 };
 

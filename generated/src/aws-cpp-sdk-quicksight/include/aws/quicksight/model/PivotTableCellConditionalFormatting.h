@@ -114,15 +114,15 @@ class PivotTableCellConditionalFormatting {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   TextConditionalFormat m_textFormat;
-  bool m_textFormatHasBeenSet = false;
 
   PivotTableConditionalFormattingScope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<PivotTableConditionalFormattingScope> m_scopes;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_textFormatHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_scopesHasBeenSet = false;
 };
 

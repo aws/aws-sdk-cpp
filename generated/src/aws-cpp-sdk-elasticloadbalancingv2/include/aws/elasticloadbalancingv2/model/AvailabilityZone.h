@@ -145,18 +145,18 @@ class AvailabilityZone {
   ///@}
  private:
   Aws::String m_zoneName;
-  bool m_zoneNameHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::Vector<LoadBalancerAddress> m_loadBalancerAddresses;
-  bool m_loadBalancerAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceNatIpv6Prefixes;
+  bool m_zoneNameHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_outpostIdHasBeenSet = false;
+  bool m_loadBalancerAddressesHasBeenSet = false;
   bool m_sourceNatIpv6PrefixesHasBeenSet = false;
 };
 

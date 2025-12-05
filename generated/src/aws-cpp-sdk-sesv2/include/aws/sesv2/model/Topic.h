@@ -105,15 +105,15 @@ class Topic {
   ///@}
  private:
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SubscriptionStatus m_defaultSubscriptionStatus{SubscriptionStatus::NOT_SET};
+  bool m_topicNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_defaultSubscriptionStatusHasBeenSet = false;
 };
 

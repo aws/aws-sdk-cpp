@@ -107,15 +107,15 @@ class StartMetadataModelCreationRequest : public DatabaseMigrationServiceRequest
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_selectionRules;
-  bool m_selectionRulesHasBeenSet = false;
 
   Aws::String m_metadataModelName;
-  bool m_metadataModelNameHasBeenSet = false;
 
   MetadataModelProperties m_properties;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_selectionRulesHasBeenSet = false;
+  bool m_metadataModelNameHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

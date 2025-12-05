@@ -63,9 +63,9 @@ class CommunicationLimitsConfig {
   ///@}
  private:
   CommunicationLimits m_allChannelSubtypes;
-  bool m_allChannelSubtypesHasBeenSet = false;
 
   InstanceLimitsHandling m_instanceLimitsHandling{InstanceLimitsHandling::NOT_SET};
+  bool m_allChannelSubtypesHasBeenSet = false;
   bool m_instanceLimitsHandlingHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class StructuredMessageListDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   std::shared_ptr<StructuredMessage> m_memberType;
-  bool m_memberTypeHasBeenSet = false;
 
   StructuredMessageListType m_listType{StructuredMessageListType::NOT_SET};
-  bool m_listTypeHasBeenSet = false;
 
   int m_capacity{0};
+  bool m_nameHasBeenSet = false;
+  bool m_memberTypeHasBeenSet = false;
+  bool m_listTypeHasBeenSet = false;
   bool m_capacityHasBeenSet = false;
 };
 

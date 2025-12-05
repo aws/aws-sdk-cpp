@@ -116,15 +116,15 @@ class AutomatedReasoningPolicyUpdateTypeAnnotation {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_newName;
-  bool m_newNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyTypeValueAnnotation> m_values;
+  bool m_nameHasBeenSet = false;
+  bool m_newNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

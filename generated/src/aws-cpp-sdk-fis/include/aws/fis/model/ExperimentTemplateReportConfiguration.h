@@ -110,15 +110,15 @@ class ExperimentTemplateReportConfiguration {
   ///@}
  private:
   ExperimentTemplateReportConfigurationOutputs m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   ExperimentTemplateReportConfigurationDataSources m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::String m_preExperimentDuration;
-  bool m_preExperimentDurationHasBeenSet = false;
 
   Aws::String m_postExperimentDuration;
+  bool m_outputsHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_preExperimentDurationHasBeenSet = false;
   bool m_postExperimentDurationHasBeenSet = false;
 };
 

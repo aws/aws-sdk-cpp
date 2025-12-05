@@ -89,12 +89,12 @@ class ListMobileSdkReleasesRequest : public WAFV2Request {
   ///@}
  private:
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_platformHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

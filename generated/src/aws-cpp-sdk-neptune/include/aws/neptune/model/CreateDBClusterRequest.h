@@ -643,90 +643,90 @@ class CreateDBClusterRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_characterSetName;
-  bool m_characterSetNameHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_replicationSourceIdentifier;
-  bool m_replicationSourceIdentifierHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_sourceRegion;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_characterSetNameHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_replicationSourceIdentifierHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+  bool m_globalClusterIdentifierHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

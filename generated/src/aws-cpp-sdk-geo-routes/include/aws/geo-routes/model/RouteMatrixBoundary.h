@@ -69,9 +69,9 @@ class RouteMatrixBoundary {
   ///@}
  private:
   RouteMatrixBoundaryGeometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   bool m_unbounded{false};
+  bool m_geometryHasBeenSet = false;
   bool m_unboundedHasBeenSet = false;
 };
 

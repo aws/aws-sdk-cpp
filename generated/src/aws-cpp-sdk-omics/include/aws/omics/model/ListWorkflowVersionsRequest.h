@@ -124,18 +124,18 @@ class ListWorkflowVersionsRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_workflowOwnerId;
-  bool m_workflowOwnerIdHasBeenSet = false;
 
   Aws::String m_startingToken;
-  bool m_startingTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_workflowIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_workflowOwnerIdHasBeenSet = false;
+  bool m_startingTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

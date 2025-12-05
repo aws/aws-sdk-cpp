@@ -111,15 +111,15 @@ class CreateUseCaseRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_integrationAssociationId;
-  bool m_integrationAssociationIdHasBeenSet = false;
 
   UseCaseType m_useCaseType{UseCaseType::NOT_SET};
-  bool m_useCaseTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_integrationAssociationIdHasBeenSet = false;
+  bool m_useCaseTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

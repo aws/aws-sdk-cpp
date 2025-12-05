@@ -70,9 +70,9 @@ class ContactSearchSummaryAgentInfo {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_connectedToAgentTimestamp{};
+  bool m_idHasBeenSet = false;
   bool m_connectedToAgentTimestampHasBeenSet = false;
 };
 

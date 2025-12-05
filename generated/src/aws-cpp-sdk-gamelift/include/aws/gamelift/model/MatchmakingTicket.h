@@ -278,36 +278,36 @@ class MatchmakingTicket {
   ///@}
  private:
   Aws::String m_ticketId;
-  bool m_ticketIdHasBeenSet = false;
 
   Aws::String m_configurationName;
-  bool m_configurationNameHasBeenSet = false;
 
   Aws::String m_configurationArn;
-  bool m_configurationArnHasBeenSet = false;
 
   MatchmakingConfigurationStatus m_status{MatchmakingConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Player> m_players;
-  bool m_playersHasBeenSet = false;
 
   GameSessionConnectionInfo m_gameSessionConnectionInfo;
-  bool m_gameSessionConnectionInfoHasBeenSet = false;
 
   int m_estimatedWaitTime{0};
+  bool m_ticketIdHasBeenSet = false;
+  bool m_configurationNameHasBeenSet = false;
+  bool m_configurationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_playersHasBeenSet = false;
+  bool m_gameSessionConnectionInfoHasBeenSet = false;
   bool m_estimatedWaitTimeHasBeenSet = false;
 };
 

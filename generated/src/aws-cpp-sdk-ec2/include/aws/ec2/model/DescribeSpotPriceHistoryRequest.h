@@ -264,33 +264,33 @@ class DescribeSpotPriceHistoryRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<InstanceType> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_productDescriptions;
-  bool m_productDescriptionsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_productDescriptionsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

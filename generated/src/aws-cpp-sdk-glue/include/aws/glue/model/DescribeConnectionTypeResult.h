@@ -293,39 +293,39 @@ class DescribeConnectionTypeResult {
   ///@}
  private:
   Aws::String m_connectionType;
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Capabilities m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_connectionProperties;
-  bool m_connectionPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_connectionOptions;
-  bool m_connectionOptionsHasBeenSet = false;
 
   AuthConfiguration m_authenticationConfiguration;
-  bool m_authenticationConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, ComputeEnvironmentConfiguration> m_computeEnvironmentConfigurations;
-  bool m_computeEnvironmentConfigurationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_physicalConnectionRequirements;
-  bool m_physicalConnectionRequirementsHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_athenaConnectionProperties;
-  bool m_athenaConnectionPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_pythonConnectionProperties;
-  bool m_pythonConnectionPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_sparkConnectionProperties;
-  bool m_sparkConnectionPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_connectionPropertiesHasBeenSet = false;
+  bool m_connectionOptionsHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
+  bool m_computeEnvironmentConfigurationsHasBeenSet = false;
+  bool m_physicalConnectionRequirementsHasBeenSet = false;
+  bool m_athenaConnectionPropertiesHasBeenSet = false;
+  bool m_pythonConnectionPropertiesHasBeenSet = false;
+  bool m_sparkConnectionPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

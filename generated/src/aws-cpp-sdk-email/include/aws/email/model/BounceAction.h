@@ -139,18 +139,18 @@ class BounceAction {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_smtpReplyCode;
-  bool m_smtpReplyCodeHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_sender;
+  bool m_topicArnHasBeenSet = false;
+  bool m_smtpReplyCodeHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_senderHasBeenSet = false;
 };
 

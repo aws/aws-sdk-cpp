@@ -178,27 +178,27 @@ class ImportInstanceVolumeDetailItem {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   long long m_bytesConverted{0};
-  bool m_bytesConvertedHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DiskImageDescription m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   DiskImageVolumeDescription m_volume;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_bytesConvertedHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_volumeHasBeenSet = false;
 };
 

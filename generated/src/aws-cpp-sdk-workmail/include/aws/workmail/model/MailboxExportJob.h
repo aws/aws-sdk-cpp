@@ -195,30 +195,30 @@ class MailboxExportJob {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   int m_estimatedProgress{0};
-  bool m_estimatedProgressHasBeenSet = false;
 
   MailboxExportJobState m_state{MailboxExportJobState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_jobIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
+  bool m_estimatedProgressHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

@@ -153,21 +153,21 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   RequestCancelExternalWorkflowExecutionFailedCause m_cause{RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   long long m_initiatedEventId{0};
-  bool m_initiatedEventIdHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
-  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
   Aws::String m_control;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
+  bool m_initiatedEventIdHasBeenSet = false;
+  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   bool m_controlHasBeenSet = false;
 };
 

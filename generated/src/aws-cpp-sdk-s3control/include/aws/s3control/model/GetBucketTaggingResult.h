@@ -86,12 +86,12 @@ class GetBucketTaggingResult {
   ///@}
  private:
   Aws::Vector<S3Tag> m_tagSet;
-  bool m_tagSetHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_tagSetHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

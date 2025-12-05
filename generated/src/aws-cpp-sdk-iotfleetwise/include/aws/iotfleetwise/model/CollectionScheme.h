@@ -72,9 +72,9 @@ class CollectionScheme {
   ///@}
  private:
   TimeBasedCollectionScheme m_timeBasedCollectionScheme;
-  bool m_timeBasedCollectionSchemeHasBeenSet = false;
 
   ConditionBasedCollectionScheme m_conditionBasedCollectionScheme;
+  bool m_timeBasedCollectionSchemeHasBeenSet = false;
   bool m_conditionBasedCollectionSchemeHasBeenSet = false;
 };
 

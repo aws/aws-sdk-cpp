@@ -147,21 +147,21 @@ class CreateFilterRequest : public Inspector2Request {
   ///@}
  private:
   FilterAction m_action{FilterAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_actionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

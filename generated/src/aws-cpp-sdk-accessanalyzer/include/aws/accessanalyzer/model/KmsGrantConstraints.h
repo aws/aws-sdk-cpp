@@ -98,9 +98,9 @@ class KmsGrantConstraints {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_encryptionContextEquals;
-  bool m_encryptionContextEqualsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_encryptionContextSubset;
+  bool m_encryptionContextEqualsHasBeenSet = false;
   bool m_encryptionContextSubsetHasBeenSet = false;
 };
 

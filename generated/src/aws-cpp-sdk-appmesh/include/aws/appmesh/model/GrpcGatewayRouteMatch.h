@@ -113,15 +113,15 @@ class GrpcGatewayRouteMatch {
   ///@}
  private:
   GatewayRouteHostnameMatch m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::Vector<GrpcGatewayRouteMetadata> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_hostnameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

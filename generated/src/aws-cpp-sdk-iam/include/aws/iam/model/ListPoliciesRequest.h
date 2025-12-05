@@ -166,21 +166,21 @@ class ListPoliciesRequest : public IAMRequest {
   ///@}
  private:
   PolicyScopeType m_scope{PolicyScopeType::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   bool m_onlyAttached{false};
-  bool m_onlyAttachedHasBeenSet = false;
 
   Aws::String m_pathPrefix;
-  bool m_pathPrefixHasBeenSet = false;
 
   PolicyUsageType m_policyUsageFilter{PolicyUsageType::NOT_SET};
-  bool m_policyUsageFilterHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_scopeHasBeenSet = false;
+  bool m_onlyAttachedHasBeenSet = false;
+  bool m_pathPrefixHasBeenSet = false;
+  bool m_policyUsageFilterHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

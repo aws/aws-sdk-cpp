@@ -58,9 +58,9 @@ class GetJourneyDateRangeKpiResult {
   ///@}
  private:
   JourneyDateRangeKpiResponse m_journeyDateRangeKpiResponse;
-  bool m_journeyDateRangeKpiResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_journeyDateRangeKpiResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

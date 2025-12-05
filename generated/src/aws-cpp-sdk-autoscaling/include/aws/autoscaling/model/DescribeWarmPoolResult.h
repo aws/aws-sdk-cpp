@@ -106,15 +106,15 @@ class DescribeWarmPoolResult {
   ///@}
  private:
   WarmPoolConfiguration m_warmPoolConfiguration;
-  bool m_warmPoolConfigurationHasBeenSet = false;
 
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_warmPoolConfigurationHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

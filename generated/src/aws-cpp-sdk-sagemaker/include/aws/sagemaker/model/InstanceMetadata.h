@@ -147,21 +147,21 @@ class InstanceMetadata {
   ///@}
  private:
   Aws::String m_customerEni;
-  bool m_customerEniHasBeenSet = false;
 
   AdditionalEnis m_additionalEnis;
-  bool m_additionalEnisHasBeenSet = false;
 
   CapacityReservation m_capacityReservation;
-  bool m_capacityReservationHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::String m_lcsExecutionState;
-  bool m_lcsExecutionStateHasBeenSet = false;
 
   Aws::String m_nodeLogicalId;
+  bool m_customerEniHasBeenSet = false;
+  bool m_additionalEnisHasBeenSet = false;
+  bool m_capacityReservationHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_lcsExecutionStateHasBeenSet = false;
   bool m_nodeLogicalIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class ExportSourceNetworkCfnTemplateResult {
   ///@}
  private:
   Aws::String m_s3DestinationUrl;
-  bool m_s3DestinationUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3DestinationUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

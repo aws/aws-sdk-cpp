@@ -78,9 +78,9 @@ class BatchPutDataQualityStatisticAnnotationRequest : public GlueRequest {
   ///@}
  private:
   Aws::Vector<DatapointInclusionAnnotation> m_inclusionAnnotations;
-  bool m_inclusionAnnotationsHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_inclusionAnnotationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

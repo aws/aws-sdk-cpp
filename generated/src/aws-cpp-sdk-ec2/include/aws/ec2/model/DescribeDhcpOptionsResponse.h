@@ -86,12 +86,12 @@ class DescribeDhcpOptionsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DhcpOptions> m_dhcpOptions;
-  bool m_dhcpOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dhcpOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

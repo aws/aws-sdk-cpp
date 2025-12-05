@@ -164,21 +164,21 @@ class ListFindingsReportsRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   bool m_dailyReportsOnly{false};
-  bool m_dailyReportsOnlyHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_dailyReportsOnlyHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListServiceActionsRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

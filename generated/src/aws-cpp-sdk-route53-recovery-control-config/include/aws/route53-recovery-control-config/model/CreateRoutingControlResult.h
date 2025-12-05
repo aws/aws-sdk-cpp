@@ -61,9 +61,9 @@ class CreateRoutingControlResult {
   ///@}
  private:
   RoutingControl m_routingControl;
-  bool m_routingControlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routingControlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

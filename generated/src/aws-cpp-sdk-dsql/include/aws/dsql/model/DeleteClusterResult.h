@@ -115,18 +115,18 @@ class DeleteClusterResult {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ClusterStatus m_status{ClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identifierHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

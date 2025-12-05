@@ -64,9 +64,9 @@ class VirtualNodeHttpConnectionPool {
   ///@}
  private:
   int m_maxConnections{0};
-  bool m_maxConnectionsHasBeenSet = false;
 
   int m_maxPendingRequests{0};
+  bool m_maxConnectionsHasBeenSet = false;
   bool m_maxPendingRequestsHasBeenSet = false;
 };
 

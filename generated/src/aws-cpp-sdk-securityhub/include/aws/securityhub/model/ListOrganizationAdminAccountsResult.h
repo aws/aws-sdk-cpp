@@ -102,15 +102,15 @@ class ListOrganizationAdminAccountsResult {
   ///@}
  private:
   Aws::Vector<AdminAccount> m_adminAccounts;
-  bool m_adminAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adminAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

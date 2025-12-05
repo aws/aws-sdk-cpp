@@ -141,21 +141,21 @@ class LastCrawlInfo {
   ///@}
  private:
   LastCrawlStatus m_status{LastCrawlStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_logGroup;
-  bool m_logGroupHasBeenSet = false;
 
   Aws::String m_logStream;
-  bool m_logStreamHasBeenSet = false;
 
   Aws::String m_messagePrefix;
-  bool m_messagePrefixHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_logGroupHasBeenSet = false;
+  bool m_logStreamHasBeenSet = false;
+  bool m_messagePrefixHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

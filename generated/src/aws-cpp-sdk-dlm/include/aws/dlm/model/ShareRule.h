@@ -93,12 +93,12 @@ class ShareRule {
   ///@}
  private:
   Aws::Vector<Aws::String> m_targetAccounts;
-  bool m_targetAccountsHasBeenSet = false;
 
   int m_unshareInterval{0};
-  bool m_unshareIntervalHasBeenSet = false;
 
   RetentionIntervalUnitValues m_unshareIntervalUnit{RetentionIntervalUnitValues::NOT_SET};
+  bool m_targetAccountsHasBeenSet = false;
+  bool m_unshareIntervalHasBeenSet = false;
   bool m_unshareIntervalUnitHasBeenSet = false;
 };
 

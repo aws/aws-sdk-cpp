@@ -225,33 +225,33 @@ class EnvironmentAccountConnectionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_componentRoleArn;
-  bool m_componentRoleArnHasBeenSet = false;
 
   Aws::String m_environmentAccountId;
-  bool m_environmentAccountIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_managementAccountId;
-  bool m_managementAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedAt{};
-  bool m_requestedAtHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   EnvironmentAccountConnectionStatus m_status{EnvironmentAccountConnectionStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_componentRoleArnHasBeenSet = false;
+  bool m_environmentAccountIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_managementAccountIdHasBeenSet = false;
+  bool m_requestedAtHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -131,12 +131,12 @@ class ServerSideEncryptionRule {
   ///@}
  private:
   ServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;
-  bool m_applyServerSideEncryptionByDefaultHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   BlockedEncryptionTypes m_blockedEncryptionTypes;
+  bool m_applyServerSideEncryptionByDefaultHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
   bool m_blockedEncryptionTypesHasBeenSet = false;
 };
 

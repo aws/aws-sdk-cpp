@@ -74,9 +74,9 @@ class CancelWorkflowExecutionFailedEventAttributes {
   ///@}
  private:
   CancelWorkflowExecutionFailedCause m_cause{CancelWorkflowExecutionFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_causeHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

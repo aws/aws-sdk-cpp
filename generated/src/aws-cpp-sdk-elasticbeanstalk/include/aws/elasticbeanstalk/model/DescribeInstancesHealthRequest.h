@@ -118,15 +118,15 @@ class DescribeInstancesHealthRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Vector<InstancesHealthAttribute> m_attributeNames;
-  bool m_attributeNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_attributeNamesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

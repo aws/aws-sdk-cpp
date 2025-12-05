@@ -258,42 +258,42 @@ class CaptionDestinationSettings {
   ///@}
  private:
   AribDestinationSettings m_aribDestinationSettings;
-  bool m_aribDestinationSettingsHasBeenSet = false;
 
   BurnInDestinationSettings m_burnInDestinationSettings;
-  bool m_burnInDestinationSettingsHasBeenSet = false;
 
   DvbSubDestinationSettings m_dvbSubDestinationSettings;
-  bool m_dvbSubDestinationSettingsHasBeenSet = false;
 
   EbuTtDDestinationSettings m_ebuTtDDestinationSettings;
-  bool m_ebuTtDDestinationSettingsHasBeenSet = false;
 
   EmbeddedDestinationSettings m_embeddedDestinationSettings;
-  bool m_embeddedDestinationSettingsHasBeenSet = false;
 
   EmbeddedPlusScte20DestinationSettings m_embeddedPlusScte20DestinationSettings;
-  bool m_embeddedPlusScte20DestinationSettingsHasBeenSet = false;
 
   RtmpCaptionInfoDestinationSettings m_rtmpCaptionInfoDestinationSettings;
-  bool m_rtmpCaptionInfoDestinationSettingsHasBeenSet = false;
 
   Scte20PlusEmbeddedDestinationSettings m_scte20PlusEmbeddedDestinationSettings;
-  bool m_scte20PlusEmbeddedDestinationSettingsHasBeenSet = false;
 
   Scte27DestinationSettings m_scte27DestinationSettings;
-  bool m_scte27DestinationSettingsHasBeenSet = false;
 
   SmpteTtDestinationSettings m_smpteTtDestinationSettings;
-  bool m_smpteTtDestinationSettingsHasBeenSet = false;
 
   TeletextDestinationSettings m_teletextDestinationSettings;
-  bool m_teletextDestinationSettingsHasBeenSet = false;
 
   TtmlDestinationSettings m_ttmlDestinationSettings;
-  bool m_ttmlDestinationSettingsHasBeenSet = false;
 
   WebvttDestinationSettings m_webvttDestinationSettings;
+  bool m_aribDestinationSettingsHasBeenSet = false;
+  bool m_burnInDestinationSettingsHasBeenSet = false;
+  bool m_dvbSubDestinationSettingsHasBeenSet = false;
+  bool m_ebuTtDDestinationSettingsHasBeenSet = false;
+  bool m_embeddedDestinationSettingsHasBeenSet = false;
+  bool m_embeddedPlusScte20DestinationSettingsHasBeenSet = false;
+  bool m_rtmpCaptionInfoDestinationSettingsHasBeenSet = false;
+  bool m_scte20PlusEmbeddedDestinationSettingsHasBeenSet = false;
+  bool m_scte27DestinationSettingsHasBeenSet = false;
+  bool m_smpteTtDestinationSettingsHasBeenSet = false;
+  bool m_teletextDestinationSettingsHasBeenSet = false;
+  bool m_ttmlDestinationSettingsHasBeenSet = false;
   bool m_webvttDestinationSettingsHasBeenSet = false;
 };
 

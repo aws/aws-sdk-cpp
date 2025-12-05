@@ -72,9 +72,9 @@ class ReportExportConfig {
   ///@}
  private:
   ReportExportConfigType m_exportConfigType{ReportExportConfigType::NOT_SET};
-  bool m_exportConfigTypeHasBeenSet = false;
 
   S3ReportExportConfig m_s3Destination;
+  bool m_exportConfigTypeHasBeenSet = false;
   bool m_s3DestinationHasBeenSet = false;
 };
 

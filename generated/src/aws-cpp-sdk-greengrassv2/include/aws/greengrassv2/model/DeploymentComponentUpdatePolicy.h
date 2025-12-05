@@ -85,9 +85,9 @@ class DeploymentComponentUpdatePolicy {
   ///@}
  private:
   int m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   DeploymentComponentUpdatePolicyAction m_action{DeploymentComponentUpdatePolicyAction::NOT_SET};
+  bool m_timeoutInSecondsHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

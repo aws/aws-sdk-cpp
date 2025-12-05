@@ -67,9 +67,9 @@ class DescribeBundleTasksResponse {
   ///@}
  private:
   Aws::Vector<BundleTask> m_bundleTasks;
-  bool m_bundleTasksHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_bundleTasksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

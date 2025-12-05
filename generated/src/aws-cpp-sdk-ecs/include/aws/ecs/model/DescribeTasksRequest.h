@@ -102,12 +102,12 @@ class DescribeTasksRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   Aws::Vector<TaskField> m_include;
+  bool m_clusterHasBeenSet = false;
+  bool m_tasksHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

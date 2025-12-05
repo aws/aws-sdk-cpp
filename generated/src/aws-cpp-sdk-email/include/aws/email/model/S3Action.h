@@ -190,18 +190,18 @@ class S3Action {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_objectKeyPrefix;
-  bool m_objectKeyPrefixHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
+  bool m_topicArnHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_objectKeyPrefixHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
 };
 

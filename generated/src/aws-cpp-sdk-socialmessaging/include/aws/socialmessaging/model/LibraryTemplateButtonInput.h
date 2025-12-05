@@ -153,21 +153,21 @@ class LibraryTemplateButtonInput {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_otpType;
-  bool m_otpTypeHasBeenSet = false;
 
   bool m_zeroTapTermsAccepted{false};
-  bool m_zeroTapTermsAcceptedHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_supportedApps;
+  bool m_typeHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_otpTypeHasBeenSet = false;
+  bool m_zeroTapTermsAcceptedHasBeenSet = false;
   bool m_supportedAppsHasBeenSet = false;
 };
 

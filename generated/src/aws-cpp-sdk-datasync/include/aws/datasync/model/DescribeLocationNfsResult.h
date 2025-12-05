@@ -133,21 +133,21 @@ class DescribeLocationNfsResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   OnPremConfig m_onPremConfig;
-  bool m_onPremConfigHasBeenSet = false;
 
   NfsMountOptions m_mountOptions;
-  bool m_mountOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_onPremConfigHasBeenSet = false;
+  bool m_mountOptionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

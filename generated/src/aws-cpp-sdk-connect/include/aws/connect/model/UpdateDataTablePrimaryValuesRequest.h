@@ -141,18 +141,18 @@ class UpdateDataTablePrimaryValuesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataTableId;
-  bool m_dataTableIdHasBeenSet = false;
 
   Aws::Vector<PrimaryValue> m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::Vector<PrimaryValue> m_newPrimaryValues;
-  bool m_newPrimaryValuesHasBeenSet = false;
 
   DataTableLockVersion m_lockVersion;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataTableIdHasBeenSet = false;
+  bool m_primaryValuesHasBeenSet = false;
+  bool m_newPrimaryValuesHasBeenSet = false;
   bool m_lockVersionHasBeenSet = false;
 };
 

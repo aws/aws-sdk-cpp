@@ -118,15 +118,15 @@ class CreateIpGroupRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupDesc;
-  bool m_groupDescHasBeenSet = false;
 
   Aws::Vector<IpRuleItem> m_userRules;
-  bool m_userRulesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupDescHasBeenSet = false;
+  bool m_userRulesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

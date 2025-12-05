@@ -62,9 +62,9 @@ class DeleteResourcePolicyResult {
   ///@}
  private:
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_revisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

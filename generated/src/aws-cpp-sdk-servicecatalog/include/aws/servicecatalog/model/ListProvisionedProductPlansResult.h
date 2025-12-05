@@ -86,12 +86,12 @@ class ListProvisionedProductPlansResult {
   ///@}
  private:
   Aws::Vector<ProvisionedProductPlanSummary> m_provisionedProductPlans;
-  bool m_provisionedProductPlansHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisionedProductPlansHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

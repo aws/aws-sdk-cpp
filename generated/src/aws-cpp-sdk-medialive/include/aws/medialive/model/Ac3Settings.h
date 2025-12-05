@@ -172,27 +172,27 @@ class Ac3Settings {
   ///@}
  private:
   double m_bitrate{0.0};
-  bool m_bitrateHasBeenSet = false;
 
   Ac3BitstreamMode m_bitstreamMode{Ac3BitstreamMode::NOT_SET};
-  bool m_bitstreamModeHasBeenSet = false;
 
   Ac3CodingMode m_codingMode{Ac3CodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   int m_dialnorm{0};
-  bool m_dialnormHasBeenSet = false;
 
   Ac3DrcProfile m_drcProfile{Ac3DrcProfile::NOT_SET};
-  bool m_drcProfileHasBeenSet = false;
 
   Ac3LfeFilter m_lfeFilter{Ac3LfeFilter::NOT_SET};
-  bool m_lfeFilterHasBeenSet = false;
 
   Ac3MetadataControl m_metadataControl{Ac3MetadataControl::NOT_SET};
-  bool m_metadataControlHasBeenSet = false;
 
   Ac3AttenuationControl m_attenuationControl{Ac3AttenuationControl::NOT_SET};
+  bool m_bitrateHasBeenSet = false;
+  bool m_bitstreamModeHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
+  bool m_dialnormHasBeenSet = false;
+  bool m_drcProfileHasBeenSet = false;
+  bool m_lfeFilterHasBeenSet = false;
+  bool m_metadataControlHasBeenSet = false;
   bool m_attenuationControlHasBeenSet = false;
 };
 

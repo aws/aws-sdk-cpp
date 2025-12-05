@@ -93,12 +93,12 @@ class ConfigurationDetails {
   ///@}
  private:
   ConfigurationStatus m_configurationStatus{ConfigurationStatus::NOT_SET};
-  bool m_configurationStatusHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_configurationStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

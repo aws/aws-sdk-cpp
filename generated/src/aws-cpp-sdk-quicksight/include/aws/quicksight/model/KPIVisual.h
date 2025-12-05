@@ -200,27 +200,27 @@ class KPIVisual {
   ///@}
  private:
   Aws::String m_visualId;
-  bool m_visualIdHasBeenSet = false;
 
   VisualTitleLabelOptions m_title;
-  bool m_titleHasBeenSet = false;
 
   VisualSubtitleLabelOptions m_subtitle;
-  bool m_subtitleHasBeenSet = false;
 
   KPIConfiguration m_chartConfiguration;
-  bool m_chartConfigurationHasBeenSet = false;
 
   KPIConditionalFormatting m_conditionalFormatting;
-  bool m_conditionalFormattingHasBeenSet = false;
 
   Aws::Vector<VisualCustomAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<ColumnHierarchy> m_columnHierarchies;
-  bool m_columnHierarchiesHasBeenSet = false;
 
   Aws::String m_visualContentAltText;
+  bool m_visualIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_subtitleHasBeenSet = false;
+  bool m_chartConfigurationHasBeenSet = false;
+  bool m_conditionalFormattingHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_columnHierarchiesHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
 };
 

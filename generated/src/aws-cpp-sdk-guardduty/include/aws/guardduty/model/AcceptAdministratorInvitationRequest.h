@@ -85,12 +85,12 @@ class AcceptAdministratorInvitationRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_administratorId;
-  bool m_administratorIdHasBeenSet = false;
 
   Aws::String m_invitationId;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_administratorIdHasBeenSet = false;
   bool m_invitationIdHasBeenSet = false;
 };
 

@@ -267,42 +267,42 @@ class Tape {
   ///@}
  private:
   Aws::String m_tapeARN;
-  bool m_tapeARNHasBeenSet = false;
 
   Aws::String m_tapeBarcode;
-  bool m_tapeBarcodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_tapeCreatedDate{};
-  bool m_tapeCreatedDateHasBeenSet = false;
 
   long long m_tapeSizeInBytes{0};
-  bool m_tapeSizeInBytesHasBeenSet = false;
 
   Aws::String m_tapeStatus;
-  bool m_tapeStatusHasBeenSet = false;
 
   Aws::String m_vTLDevice;
-  bool m_vTLDeviceHasBeenSet = false;
 
   double m_progress{0.0};
-  bool m_progressHasBeenSet = false;
 
   long long m_tapeUsedInBytes{0};
-  bool m_tapeUsedInBytesHasBeenSet = false;
 
   Aws::String m_kMSKey;
-  bool m_kMSKeyHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   bool m_worm{false};
-  bool m_wormHasBeenSet = false;
 
   Aws::Utils::DateTime m_retentionStartDate{};
-  bool m_retentionStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_poolEntryDate{};
+  bool m_tapeARNHasBeenSet = false;
+  bool m_tapeBarcodeHasBeenSet = false;
+  bool m_tapeCreatedDateHasBeenSet = false;
+  bool m_tapeSizeInBytesHasBeenSet = false;
+  bool m_tapeStatusHasBeenSet = false;
+  bool m_vTLDeviceHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_tapeUsedInBytesHasBeenSet = false;
+  bool m_kMSKeyHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_wormHasBeenSet = false;
+  bool m_retentionStartDateHasBeenSet = false;
   bool m_poolEntryDateHasBeenSet = false;
 };
 

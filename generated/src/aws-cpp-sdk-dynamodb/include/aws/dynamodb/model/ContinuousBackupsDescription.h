@@ -70,9 +70,9 @@ class ContinuousBackupsDescription {
   ///@}
  private:
   ContinuousBackupsStatus m_continuousBackupsStatus{ContinuousBackupsStatus::NOT_SET};
-  bool m_continuousBackupsStatusHasBeenSet = false;
 
   PointInTimeRecoveryDescription m_pointInTimeRecoveryDescription;
+  bool m_continuousBackupsStatusHasBeenSet = false;
   bool m_pointInTimeRecoveryDescriptionHasBeenSet = false;
 };
 

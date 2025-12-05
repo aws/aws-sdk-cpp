@@ -65,9 +65,9 @@ class DeleteJobRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_jobID;
+  bool m_accountIDHasBeenSet = false;
   bool m_jobIDHasBeenSet = false;
 };
 

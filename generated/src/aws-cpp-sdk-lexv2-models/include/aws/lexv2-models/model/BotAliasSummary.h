@@ -164,24 +164,24 @@ class BotAliasSummary {
   ///@}
  private:
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_botAliasName;
-  bool m_botAliasNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   BotAliasStatus m_botAliasStatus{BotAliasStatus::NOT_SET};
-  bool m_botAliasStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_botAliasNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_botAliasStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

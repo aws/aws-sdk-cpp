@@ -87,12 +87,12 @@ class OutboundEmailContent {
   ///@}
  private:
   OutboundMessageSourceType m_messageSourceType{OutboundMessageSourceType::NOT_SET};
-  bool m_messageSourceTypeHasBeenSet = false;
 
   TemplatedMessageConfig m_templatedMessageConfig;
-  bool m_templatedMessageConfigHasBeenSet = false;
 
   OutboundRawMessage m_rawMessage;
+  bool m_messageSourceTypeHasBeenSet = false;
+  bool m_templatedMessageConfigHasBeenSet = false;
   bool m_rawMessageHasBeenSet = false;
 };
 

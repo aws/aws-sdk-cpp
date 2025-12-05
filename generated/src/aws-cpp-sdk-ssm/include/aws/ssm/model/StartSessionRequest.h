@@ -124,15 +124,15 @@ class StartSessionRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
+  bool m_targetHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

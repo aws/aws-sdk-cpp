@@ -164,24 +164,24 @@ class PutGroupRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   MembershipType m_type{MembershipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GroupMembers m_groupMembers;
-  bool m_groupMembersHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_groupMembersHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

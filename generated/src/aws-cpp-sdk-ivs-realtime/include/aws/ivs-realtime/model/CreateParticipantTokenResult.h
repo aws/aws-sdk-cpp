@@ -60,9 +60,9 @@ class CreateParticipantTokenResult {
   ///@}
  private:
   ParticipantToken m_participantToken;
-  bool m_participantTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_participantTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

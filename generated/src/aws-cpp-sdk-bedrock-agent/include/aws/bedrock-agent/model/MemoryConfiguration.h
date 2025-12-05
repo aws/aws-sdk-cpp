@@ -93,12 +93,12 @@ class MemoryConfiguration {
   ///@}
  private:
   Aws::Vector<MemoryType> m_enabledMemoryTypes;
-  bool m_enabledMemoryTypesHasBeenSet = false;
 
   int m_storageDays{0};
-  bool m_storageDaysHasBeenSet = false;
 
   SessionSummaryConfiguration m_sessionSummaryConfiguration;
+  bool m_enabledMemoryTypesHasBeenSet = false;
+  bool m_storageDaysHasBeenSet = false;
   bool m_sessionSummaryConfigurationHasBeenSet = false;
 };
 

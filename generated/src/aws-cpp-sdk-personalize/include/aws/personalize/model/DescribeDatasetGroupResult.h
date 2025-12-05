@@ -60,9 +60,9 @@ class DescribeDatasetGroupResult {
   ///@}
  private:
   DatasetGroup m_datasetGroup;
-  bool m_datasetGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

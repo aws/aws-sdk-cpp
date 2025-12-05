@@ -90,9 +90,9 @@ class CachePolicyQueryStringsConfig {
   ///@}
  private:
   CachePolicyQueryStringBehavior m_queryStringBehavior{CachePolicyQueryStringBehavior::NOT_SET};
-  bool m_queryStringBehaviorHasBeenSet = false;
 
   QueryStringNames m_queryStrings;
+  bool m_queryStringBehaviorHasBeenSet = false;
   bool m_queryStringsHasBeenSet = false;
 };
 

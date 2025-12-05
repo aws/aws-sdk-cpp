@@ -185,27 +185,27 @@ class DBProxyTarget {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_trackedClusterId;
-  bool m_trackedClusterIdHasBeenSet = false;
 
   Aws::String m_rdsResourceId;
-  bool m_rdsResourceIdHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   TargetType m_type{TargetType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TargetRole m_role{TargetRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   TargetHealth m_targetHealth;
+  bool m_targetArnHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_trackedClusterIdHasBeenSet = false;
+  bool m_rdsResourceIdHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_targetHealthHasBeenSet = false;
 };
 

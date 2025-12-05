@@ -204,27 +204,27 @@ class CreateCommandRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   CommandNamespace m_namespace{CommandNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CommandPayload m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::Vector<CommandParameter> m_mandatoryParameters;
-  bool m_mandatoryParametersHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_commandIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_mandatoryParametersHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

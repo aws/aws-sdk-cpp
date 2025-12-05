@@ -105,15 +105,15 @@ class RetrieveResult {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   ReferenceType m_referenceType{ReferenceType::NOT_SET};
-  bool m_referenceTypeHasBeenSet = false;
 
   Aws::String m_contentText;
+  bool m_associationIdHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_referenceTypeHasBeenSet = false;
   bool m_contentTextHasBeenSet = false;
 };
 

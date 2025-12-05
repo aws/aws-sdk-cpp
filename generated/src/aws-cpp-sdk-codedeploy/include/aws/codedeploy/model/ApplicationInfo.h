@@ -140,21 +140,21 @@ class ApplicationInfo {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   bool m_linkedToGitHub{false};
-  bool m_linkedToGitHubHasBeenSet = false;
 
   Aws::String m_gitHubAccountName;
-  bool m_gitHubAccountNameHasBeenSet = false;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_linkedToGitHubHasBeenSet = false;
+  bool m_gitHubAccountNameHasBeenSet = false;
   bool m_computePlatformHasBeenSet = false;
 };
 

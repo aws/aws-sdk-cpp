@@ -301,51 +301,51 @@ class GetMaintenanceWindowResult {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_startDate;
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_endDate;
-  bool m_endDateHasBeenSet = false;
 
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_scheduleTimezone;
-  bool m_scheduleTimezoneHasBeenSet = false;
 
   int m_scheduleOffset{0};
-  bool m_scheduleOffsetHasBeenSet = false;
 
   Aws::String m_nextExecutionTime;
-  bool m_nextExecutionTimeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_cutoff{0};
-  bool m_cutoffHasBeenSet = false;
 
   bool m_allowUnassociatedTargets{false};
-  bool m_allowUnassociatedTargetsHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedDate{};
-  bool m_modifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_scheduleTimezoneHasBeenSet = false;
+  bool m_scheduleOffsetHasBeenSet = false;
+  bool m_nextExecutionTimeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_cutoffHasBeenSet = false;
+  bool m_allowUnassociatedTargetsHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_modifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

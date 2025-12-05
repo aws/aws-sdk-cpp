@@ -83,12 +83,12 @@ class GetStatementRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestOrigin;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_requestOriginHasBeenSet = false;
 };
 

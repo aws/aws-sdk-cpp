@@ -116,15 +116,15 @@ class EvaluatedExternalModel {
   ///@}
  private:
   Aws::String m_modelEndpoint;
-  bool m_modelEndpointHasBeenSet = false;
 
   bool m_useEventVariables{false};
-  bool m_useEventVariablesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_inputVariables;
-  bool m_inputVariablesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_outputVariables;
+  bool m_modelEndpointHasBeenSet = false;
+  bool m_useEventVariablesHasBeenSet = false;
+  bool m_inputVariablesHasBeenSet = false;
   bool m_outputVariablesHasBeenSet = false;
 };
 

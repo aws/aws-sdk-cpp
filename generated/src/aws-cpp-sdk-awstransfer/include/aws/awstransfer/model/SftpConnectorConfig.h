@@ -135,12 +135,12 @@ class SftpConnectorConfig {
   ///@}
  private:
   Aws::String m_userSecretId;
-  bool m_userSecretIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_trustedHostKeys;
-  bool m_trustedHostKeysHasBeenSet = false;
 
   int m_maxConcurrentConnections{0};
+  bool m_userSecretIdHasBeenSet = false;
+  bool m_trustedHostKeysHasBeenSet = false;
   bool m_maxConcurrentConnectionsHasBeenSet = false;
 };
 

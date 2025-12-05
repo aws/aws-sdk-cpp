@@ -159,21 +159,21 @@ class MultiRegionAccessPointReport {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   PublicAccessBlockConfiguration m_publicAccessBlock;
-  bool m_publicAccessBlockHasBeenSet = false;
 
   MultiRegionAccessPointStatus m_status{MultiRegionAccessPointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<RegionReport> m_regions;
+  bool m_nameHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_publicAccessBlockHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

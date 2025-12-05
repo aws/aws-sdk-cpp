@@ -93,12 +93,12 @@ class HumanLoopConfig {
   ///@}
  private:
   Aws::String m_humanLoopName;
-  bool m_humanLoopNameHasBeenSet = false;
 
   Aws::String m_flowDefinitionArn;
-  bool m_flowDefinitionArnHasBeenSet = false;
 
   HumanLoopDataAttributes m_dataAttributes;
+  bool m_humanLoopNameHasBeenSet = false;
+  bool m_flowDefinitionArnHasBeenSet = false;
   bool m_dataAttributesHasBeenSet = false;
 };
 

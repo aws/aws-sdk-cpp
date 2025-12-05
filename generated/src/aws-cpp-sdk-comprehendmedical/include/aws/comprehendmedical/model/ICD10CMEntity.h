@@ -241,33 +241,33 @@ class ICD10CMEntity {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   ICD10CMEntityCategory m_category{ICD10CMEntityCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   ICD10CMEntityType m_type{ICD10CMEntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   Aws::Vector<ICD10CMAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<ICD10CMTrait> m_traits;
-  bool m_traitsHasBeenSet = false;
 
   Aws::Vector<ICD10CMConcept> m_iCD10CMConcepts;
+  bool m_idHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_traitsHasBeenSet = false;
   bool m_iCD10CMConceptsHasBeenSet = false;
 };
 

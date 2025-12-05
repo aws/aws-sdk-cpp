@@ -191,27 +191,27 @@ class Settings {
   ///@}
  private:
   bool m_isAwsOrgEnabled{false};
-  bool m_isAwsOrgEnabledHasBeenSet = false;
 
   Aws::String m_snsTopic;
-  bool m_snsTopicHasBeenSet = false;
 
   AssessmentReportsDestination m_defaultAssessmentReportsDestination;
-  bool m_defaultAssessmentReportsDestinationHasBeenSet = false;
 
   Aws::Vector<Role> m_defaultProcessOwners;
-  bool m_defaultProcessOwnersHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   EvidenceFinderEnablement m_evidenceFinderEnablement;
-  bool m_evidenceFinderEnablementHasBeenSet = false;
 
   DeregistrationPolicy m_deregistrationPolicy;
-  bool m_deregistrationPolicyHasBeenSet = false;
 
   DefaultExportDestination m_defaultExportDestination;
+  bool m_isAwsOrgEnabledHasBeenSet = false;
+  bool m_snsTopicHasBeenSet = false;
+  bool m_defaultAssessmentReportsDestinationHasBeenSet = false;
+  bool m_defaultProcessOwnersHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
+  bool m_evidenceFinderEnablementHasBeenSet = false;
+  bool m_deregistrationPolicyHasBeenSet = false;
   bool m_defaultExportDestinationHasBeenSet = false;
 };
 

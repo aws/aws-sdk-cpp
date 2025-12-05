@@ -130,18 +130,18 @@ class ScheduledQueryInsightsResponse {
   ///@}
  private:
   QuerySpatialCoverage m_querySpatialCoverage;
-  bool m_querySpatialCoverageHasBeenSet = false;
 
   QueryTemporalRange m_queryTemporalRange;
-  bool m_queryTemporalRangeHasBeenSet = false;
 
   long long m_queryTableCount{0};
-  bool m_queryTableCountHasBeenSet = false;
 
   long long m_outputRows{0};
-  bool m_outputRowsHasBeenSet = false;
 
   long long m_outputBytes{0};
+  bool m_querySpatialCoverageHasBeenSet = false;
+  bool m_queryTemporalRangeHasBeenSet = false;
+  bool m_queryTableCountHasBeenSet = false;
+  bool m_outputRowsHasBeenSet = false;
   bool m_outputBytesHasBeenSet = false;
 };
 

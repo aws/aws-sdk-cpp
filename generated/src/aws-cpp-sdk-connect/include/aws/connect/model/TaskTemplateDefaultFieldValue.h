@@ -70,9 +70,9 @@ class TaskTemplateDefaultFieldValue {
   ///@}
  private:
   TaskTemplateFieldIdentifier m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_idHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

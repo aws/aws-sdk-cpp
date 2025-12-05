@@ -60,9 +60,9 @@ class ModifyIpPoolsResult {
   ///@}
  private:
   IpamPools m_ipamPools;
-  bool m_ipamPoolsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPoolsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

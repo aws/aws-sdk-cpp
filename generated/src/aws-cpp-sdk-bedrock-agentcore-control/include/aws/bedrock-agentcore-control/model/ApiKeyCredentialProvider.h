@@ -109,15 +109,15 @@ class ApiKeyCredentialProvider {
   ///@}
  private:
   Aws::String m_providerArn;
-  bool m_providerArnHasBeenSet = false;
 
   Aws::String m_credentialParameterName;
-  bool m_credentialParameterNameHasBeenSet = false;
 
   Aws::String m_credentialPrefix;
-  bool m_credentialPrefixHasBeenSet = false;
 
   ApiKeyCredentialLocation m_credentialLocation{ApiKeyCredentialLocation::NOT_SET};
+  bool m_providerArnHasBeenSet = false;
+  bool m_credentialParameterNameHasBeenSet = false;
+  bool m_credentialPrefixHasBeenSet = false;
   bool m_credentialLocationHasBeenSet = false;
 };
 

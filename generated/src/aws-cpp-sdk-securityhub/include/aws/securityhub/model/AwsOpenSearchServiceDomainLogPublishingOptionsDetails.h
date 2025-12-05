@@ -87,12 +87,12 @@ class AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
   ///@}
  private:
   AwsOpenSearchServiceDomainLogPublishingOption m_indexSlowLogs;
-  bool m_indexSlowLogsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainLogPublishingOption m_searchSlowLogs;
-  bool m_searchSlowLogsHasBeenSet = false;
 
   AwsOpenSearchServiceDomainLogPublishingOption m_auditLogs;
+  bool m_indexSlowLogsHasBeenSet = false;
+  bool m_searchSlowLogsHasBeenSet = false;
   bool m_auditLogsHasBeenSet = false;
 };
 

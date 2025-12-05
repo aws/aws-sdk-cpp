@@ -95,12 +95,12 @@ class DescribeReservedInstancesModificationsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ReservedInstancesModification> m_reservedInstancesModifications;
-  bool m_reservedInstancesModificationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reservedInstancesModificationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

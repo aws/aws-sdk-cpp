@@ -138,15 +138,15 @@ class Container {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::Map<Aws::String, ContainerServiceProtocol> m_ports;
+  bool m_imageHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
   bool m_portsHasBeenSet = false;
 };
 

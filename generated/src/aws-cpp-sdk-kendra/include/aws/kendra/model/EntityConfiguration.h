@@ -71,9 +71,9 @@ class EntityConfiguration {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   EntityType m_entityType{EntityType::NOT_SET};
+  bool m_entityIdHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
 };
 

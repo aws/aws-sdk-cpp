@@ -68,9 +68,9 @@ class DetectTargetedSentimentResult {
   ///@}
  private:
   Aws::Vector<TargetedSentimentEntity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

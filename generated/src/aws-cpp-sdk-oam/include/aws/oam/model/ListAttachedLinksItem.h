@@ -95,12 +95,12 @@ class ListAttachedLinksItem {
   ///@}
  private:
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_linkArn;
-  bool m_linkArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
+  bool m_labelHasBeenSet = false;
+  bool m_linkArnHasBeenSet = false;
   bool m_resourceTypesHasBeenSet = false;
 };
 

@@ -118,18 +118,18 @@ class ListBotVersionReplicasRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_replicaRegion;
-  bool m_replicaRegionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   BotVersionReplicaSortBy m_sortBy;
+  bool m_botIdHasBeenSet = false;
+  bool m_replicaRegionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

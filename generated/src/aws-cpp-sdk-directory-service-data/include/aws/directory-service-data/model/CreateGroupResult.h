@@ -93,15 +93,15 @@ class CreateGroupResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   Aws::String m_sID;
-  bool m_sIDHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
+  bool m_sIDHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

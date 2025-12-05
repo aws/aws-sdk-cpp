@@ -293,42 +293,42 @@ class UpdateOdbNetworkRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_peeredCidrsToBeAdded;
-  bool m_peeredCidrsToBeAddedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_peeredCidrsToBeRemoved;
-  bool m_peeredCidrsToBeRemovedHasBeenSet = false;
 
   Access m_s3Access{Access::NOT_SET};
-  bool m_s3AccessHasBeenSet = false;
 
   Access m_zeroEtlAccess{Access::NOT_SET};
-  bool m_zeroEtlAccessHasBeenSet = false;
 
   Access m_stsAccess{Access::NOT_SET};
-  bool m_stsAccessHasBeenSet = false;
 
   Access m_kmsAccess{Access::NOT_SET};
-  bool m_kmsAccessHasBeenSet = false;
 
   Aws::String m_s3PolicyDocument;
-  bool m_s3PolicyDocumentHasBeenSet = false;
 
   Aws::String m_stsPolicyDocument;
-  bool m_stsPolicyDocumentHasBeenSet = false;
 
   Aws::String m_kmsPolicyDocument;
-  bool m_kmsPolicyDocumentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_crossRegionS3RestoreSourcesToEnable;
-  bool m_crossRegionS3RestoreSourcesToEnableHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_crossRegionS3RestoreSourcesToDisable;
+  bool m_odbNetworkIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_peeredCidrsToBeAddedHasBeenSet = false;
+  bool m_peeredCidrsToBeRemovedHasBeenSet = false;
+  bool m_s3AccessHasBeenSet = false;
+  bool m_zeroEtlAccessHasBeenSet = false;
+  bool m_stsAccessHasBeenSet = false;
+  bool m_kmsAccessHasBeenSet = false;
+  bool m_s3PolicyDocumentHasBeenSet = false;
+  bool m_stsPolicyDocumentHasBeenSet = false;
+  bool m_kmsPolicyDocumentHasBeenSet = false;
+  bool m_crossRegionS3RestoreSourcesToEnableHasBeenSet = false;
   bool m_crossRegionS3RestoreSourcesToDisableHasBeenSet = false;
 };
 

@@ -144,21 +144,21 @@ class SnapshotDetails {
   ///@}
  private:
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   SnapshotStatus m_snapshotStatus{SnapshotStatus::NOT_SET};
-  bool m_snapshotStatusHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotCreationTimestamp{};
-  bool m_snapshotCreationTimestampHasBeenSet = false;
 
   RuntimeEnvironment m_runtimeEnvironment{RuntimeEnvironment::NOT_SET};
-  bool m_runtimeEnvironmentHasBeenSet = false;
 
   ApplicationEncryptionConfigurationDescription m_applicationEncryptionConfigurationDescription;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_snapshotStatusHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_snapshotCreationTimestampHasBeenSet = false;
+  bool m_runtimeEnvironmentHasBeenSet = false;
   bool m_applicationEncryptionConfigurationDescriptionHasBeenSet = false;
 };
 

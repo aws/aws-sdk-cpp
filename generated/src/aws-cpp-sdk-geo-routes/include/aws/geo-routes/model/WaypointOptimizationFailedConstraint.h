@@ -67,9 +67,9 @@ class WaypointOptimizationFailedConstraint {
   ///@}
  private:
   WaypointOptimizationConstraint m_constraint{WaypointOptimizationConstraint::NOT_SET};
-  bool m_constraintHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_constraintHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

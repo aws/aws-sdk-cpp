@@ -240,30 +240,30 @@ class ListOpportunitiesRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   OpportunitySort m_sort;
-  bool m_sortHasBeenSet = false;
 
   LastModifiedDate m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<Stage> m_lifeCycleStage;
-  bool m_lifeCycleStageHasBeenSet = false;
 
   Aws::Vector<ReviewStatus> m_lifeCycleReviewStatus;
-  bool m_lifeCycleReviewStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customerCompanyName;
+  bool m_catalogHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_lifeCycleStageHasBeenSet = false;
+  bool m_lifeCycleReviewStatusHasBeenSet = false;
   bool m_customerCompanyNameHasBeenSet = false;
 };
 

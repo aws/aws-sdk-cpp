@@ -77,9 +77,9 @@ class RemoveTagsRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_pipelineIdHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

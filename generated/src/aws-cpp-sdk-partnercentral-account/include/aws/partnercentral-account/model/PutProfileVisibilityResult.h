@@ -127,21 +127,21 @@ class PutProfileVisibilityResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ProfileVisibility m_visibility{ProfileVisibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

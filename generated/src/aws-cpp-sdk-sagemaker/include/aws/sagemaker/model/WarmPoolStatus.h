@@ -96,12 +96,12 @@ class WarmPoolStatus {
   ///@}
  private:
   WarmPoolResourceStatus m_status{WarmPoolResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_resourceRetainedBillableTimeInSeconds{0};
-  bool m_resourceRetainedBillableTimeInSecondsHasBeenSet = false;
 
   Aws::String m_reusedByJob;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceRetainedBillableTimeInSecondsHasBeenSet = false;
   bool m_reusedByJobHasBeenSet = false;
 };
 

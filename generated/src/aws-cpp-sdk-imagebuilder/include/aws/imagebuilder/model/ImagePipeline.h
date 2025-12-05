@@ -479,72 +479,72 @@ class ImagePipeline {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   bool m_enhancedImageMetadataEnabled{false};
-  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
   Aws::String m_imageRecipeArn;
-  bool m_imageRecipeArnHasBeenSet = false;
 
   Aws::String m_containerRecipeArn;
-  bool m_containerRecipeArnHasBeenSet = false;
 
   Aws::String m_infrastructureConfigurationArn;
-  bool m_infrastructureConfigurationArnHasBeenSet = false;
 
   Aws::String m_distributionConfigurationArn;
-  bool m_distributionConfigurationArnHasBeenSet = false;
 
   ImageTestsConfiguration m_imageTestsConfiguration;
-  bool m_imageTestsConfigurationHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   PipelineStatus m_status{PipelineStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::String m_dateUpdated;
-  bool m_dateUpdatedHasBeenSet = false;
 
   Aws::String m_dateLastRun;
-  bool m_dateLastRunHasBeenSet = false;
 
   ImageStatus m_lastRunStatus{ImageStatus::NOT_SET};
-  bool m_lastRunStatusHasBeenSet = false;
 
   Aws::String m_dateNextRun;
-  bool m_dateNextRunHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::Vector<WorkflowConfiguration> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   PipelineLoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   int m_consecutiveFailures{0};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
+  bool m_imageRecipeArnHasBeenSet = false;
+  bool m_containerRecipeArnHasBeenSet = false;
+  bool m_infrastructureConfigurationArnHasBeenSet = false;
+  bool m_distributionConfigurationArnHasBeenSet = false;
+  bool m_imageTestsConfigurationHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateUpdatedHasBeenSet = false;
+  bool m_dateLastRunHasBeenSet = false;
+  bool m_lastRunStatusHasBeenSet = false;
+  bool m_dateNextRunHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_imageScanningConfigurationHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_workflowsHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
   bool m_consecutiveFailuresHasBeenSet = false;
 };
 

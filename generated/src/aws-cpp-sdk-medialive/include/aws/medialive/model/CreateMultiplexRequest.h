@@ -139,18 +139,18 @@ resources.
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   MultiplexSettings m_multiplexSettings;
-  bool m_multiplexSettingsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_multiplexSettingsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

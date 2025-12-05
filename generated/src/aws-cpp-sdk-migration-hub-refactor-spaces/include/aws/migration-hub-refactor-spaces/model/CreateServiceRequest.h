@@ -225,33 +225,33 @@ class CreateServiceRequest : public MigrationHubRefactorSpacesRequest {
   ///@}
  private:
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ServiceEndpointType m_endpointType{ServiceEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   LambdaEndpointInput m_lambdaEndpoint;
-  bool m_lambdaEndpointHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UrlEndpointInput m_urlEndpoint;
-  bool m_urlEndpointHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_applicationIdentifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_lambdaEndpointHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_urlEndpointHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

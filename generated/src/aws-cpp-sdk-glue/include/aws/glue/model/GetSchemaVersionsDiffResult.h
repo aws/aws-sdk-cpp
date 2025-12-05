@@ -59,9 +59,9 @@ class GetSchemaVersionsDiffResult {
   ///@}
  private:
   Aws::String m_diff;
-  bool m_diffHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_diffHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

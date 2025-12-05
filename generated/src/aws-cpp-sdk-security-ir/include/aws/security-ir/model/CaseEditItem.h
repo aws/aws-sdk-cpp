@@ -105,15 +105,15 @@ class CaseEditItem {
   ///@}
  private:
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

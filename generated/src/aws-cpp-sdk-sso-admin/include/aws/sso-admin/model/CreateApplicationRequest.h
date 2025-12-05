@@ -198,27 +198,27 @@ class CreateApplicationRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_applicationProviderArn;
-  bool m_applicationProviderArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PortalOptions m_portalOptions;
-  bool m_portalOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceArnHasBeenSet = false;
+  bool m_applicationProviderArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_portalOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

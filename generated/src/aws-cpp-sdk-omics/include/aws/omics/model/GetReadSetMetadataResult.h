@@ -334,57 +334,57 @@ class GetReadSetMetadataResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_subjectId;
-  bool m_subjectIdHasBeenSet = false;
 
   Aws::String m_sampleId;
-  bool m_sampleIdHasBeenSet = false;
 
   ReadSetStatus m_status{ReadSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FileType m_fileType{FileType::NOT_SET};
-  bool m_fileTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   SequenceInformation m_sequenceInformation;
-  bool m_sequenceInformationHasBeenSet = false;
 
   Aws::String m_referenceArn;
-  bool m_referenceArnHasBeenSet = false;
 
   ReadSetFiles m_files;
-  bool m_filesHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   CreationType m_creationType{CreationType::NOT_SET};
-  bool m_creationTypeHasBeenSet = false;
 
   ETag m_etag;
-  bool m_etagHasBeenSet = false;
 
   Aws::String m_creationJobId;
-  bool m_creationJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_subjectIdHasBeenSet = false;
+  bool m_sampleIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_fileTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_sequenceInformationHasBeenSet = false;
+  bool m_referenceArnHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationTypeHasBeenSet = false;
+  bool m_etagHasBeenSet = false;
+  bool m_creationJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

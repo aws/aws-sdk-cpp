@@ -143,18 +143,18 @@ class AnalyzeDocumentRequest : public TextractRequest {
   ///@}
  private:
   Document m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::Vector<FeatureType> m_featureTypes;
-  bool m_featureTypesHasBeenSet = false;
 
   HumanLoopConfig m_humanLoopConfig;
-  bool m_humanLoopConfigHasBeenSet = false;
 
   QueriesConfig m_queriesConfig;
-  bool m_queriesConfigHasBeenSet = false;
 
   AdaptersConfig m_adaptersConfig;
+  bool m_documentHasBeenSet = false;
+  bool m_featureTypesHasBeenSet = false;
+  bool m_humanLoopConfigHasBeenSet = false;
+  bool m_queriesConfigHasBeenSet = false;
   bool m_adaptersConfigHasBeenSet = false;
 };
 

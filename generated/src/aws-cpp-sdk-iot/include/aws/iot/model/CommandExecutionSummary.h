@@ -163,24 +163,24 @@ class CommandExecutionSummary {
   ///@}
  private:
   Aws::String m_commandArn;
-  bool m_commandArnHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   CommandExecutionStatus m_status{CommandExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
+  bool m_commandArnHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
   bool m_completedAtHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class RollbackAutomationEventRequest : public ComputeOptimizerAutomationRequest 
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_eventIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

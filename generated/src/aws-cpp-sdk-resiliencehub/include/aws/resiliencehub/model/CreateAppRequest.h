@@ -224,30 +224,30 @@ class CreateAppRequest : public ResilienceHubRequest {
   ///@}
  private:
   AppAssessmentScheduleType m_assessmentSchedule{AppAssessmentScheduleType::NOT_SET};
-  bool m_assessmentScheduleHasBeenSet = false;
 
   Aws::String m_awsApplicationArn;
-  bool m_awsApplicationArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EventSubscription> m_eventSubscriptions;
-  bool m_eventSubscriptionsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PermissionModel m_permissionModel;
-  bool m_permissionModelHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_assessmentScheduleHasBeenSet = false;
+  bool m_awsApplicationArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventSubscriptionsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_permissionModelHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

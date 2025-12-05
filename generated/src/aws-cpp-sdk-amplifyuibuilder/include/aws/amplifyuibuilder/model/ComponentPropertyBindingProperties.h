@@ -70,9 +70,9 @@ class ComponentPropertyBindingProperties {
   ///@}
  private:
   Aws::String m_property;
-  bool m_propertyHasBeenSet = false;
 
   Aws::String m_field;
+  bool m_propertyHasBeenSet = false;
   bool m_fieldHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class CustomExtractionConfigurationInput {
   ///@}
  private:
   SemanticOverrideExtractionConfigurationInput m_semanticExtractionOverride;
-  bool m_semanticExtractionOverrideHasBeenSet = false;
 
   UserPreferenceOverrideExtractionConfigurationInput m_userPreferenceExtractionOverride;
-  bool m_userPreferenceExtractionOverrideHasBeenSet = false;
 
   EpisodicOverrideExtractionConfigurationInput m_episodicExtractionOverride;
+  bool m_semanticExtractionOverrideHasBeenSet = false;
+  bool m_userPreferenceExtractionOverrideHasBeenSet = false;
   bool m_episodicExtractionOverrideHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class RevokePipelineEndpointConnectionsResult {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class ComponentVariant {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_variantValues;
-  bool m_variantValuesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_overrides;
+  bool m_variantValuesHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

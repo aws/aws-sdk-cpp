@@ -137,18 +137,18 @@ class BatchCreateChannelMembershipRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   ChannelMembershipType m_type{ChannelMembershipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_memberArns;
-  bool m_memberArnsHasBeenSet = false;
 
   Aws::String m_chimeBearer;
-  bool m_chimeBearerHasBeenSet = false;
 
   Aws::String m_subChannelId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_memberArnsHasBeenSet = false;
+  bool m_chimeBearerHasBeenSet = false;
   bool m_subChannelIdHasBeenSet = false;
 };
 

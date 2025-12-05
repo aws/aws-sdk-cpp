@@ -162,24 +162,24 @@ class ListRecordsRequest : public CognitoSyncRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   long long m_lastSyncCount{0};
-  bool m_lastSyncCountHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_syncSessionToken;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_identityIdHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_lastSyncCountHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_syncSessionTokenHasBeenSet = false;
 };
 

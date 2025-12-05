@@ -72,9 +72,9 @@ class StatusReason {
   ///@}
  private:
   Aws::String m_reasonCode;
-  bool m_reasonCodeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_reasonCodeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

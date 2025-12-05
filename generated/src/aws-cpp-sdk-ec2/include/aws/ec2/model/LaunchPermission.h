@@ -106,15 +106,15 @@ class LaunchPermission {
   ///@}
  private:
   Aws::String m_organizationArn;
-  bool m_organizationArnHasBeenSet = false;
 
   Aws::String m_organizationalUnitArn;
-  bool m_organizationalUnitArnHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   PermissionGroup m_group{PermissionGroup::NOT_SET};
+  bool m_organizationArnHasBeenSet = false;
+  bool m_organizationalUnitArnHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_groupHasBeenSet = false;
 };
 

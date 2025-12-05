@@ -106,15 +106,15 @@ class AccountAssignmentForPrincipal {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_permissionSetArn;
-  bool m_permissionSetArnHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
+  bool m_permissionSetArnHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
 };
 

@@ -258,39 +258,39 @@ class DescribeGeneratedTemplateResult {
   ///@}
  private:
   Aws::String m_generatedTemplateId;
-  bool m_generatedTemplateIdHasBeenSet = false;
 
   Aws::String m_generatedTemplateName;
-  bool m_generatedTemplateNameHasBeenSet = false;
 
   Aws::Vector<ResourceDetail> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   GeneratedTemplateStatus m_status{GeneratedTemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   TemplateProgress m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   TemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   int m_totalWarnings{0};
-  bool m_totalWarningsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_generatedTemplateIdHasBeenSet = false;
+  bool m_generatedTemplateNameHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_totalWarningsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

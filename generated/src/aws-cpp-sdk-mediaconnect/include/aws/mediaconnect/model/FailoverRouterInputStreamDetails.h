@@ -71,9 +71,9 @@ class FailoverRouterInputStreamDetails {
   ///@}
  private:
   FailoverRouterInputIndexedStreamDetails m_sourceIndexZeroStreamDetails;
-  bool m_sourceIndexZeroStreamDetailsHasBeenSet = false;
 
   FailoverRouterInputIndexedStreamDetails m_sourceIndexOneStreamDetails;
+  bool m_sourceIndexZeroStreamDetailsHasBeenSet = false;
   bool m_sourceIndexOneStreamDetailsHasBeenSet = false;
 };
 

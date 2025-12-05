@@ -139,18 +139,18 @@ class CreateModelCardRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   ModelCardSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
-  bool m_modelCardStatusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_securityConfigHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_modelCardStatusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

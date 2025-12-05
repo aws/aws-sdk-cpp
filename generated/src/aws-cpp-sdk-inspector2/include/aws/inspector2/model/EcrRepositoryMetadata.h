@@ -68,9 +68,9 @@ class EcrRepositoryMetadata {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EcrScanFrequency m_scanFrequency{EcrScanFrequency::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_scanFrequencyHasBeenSet = false;
 };
 

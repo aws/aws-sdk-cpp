@@ -71,9 +71,9 @@ class CreateAccessConfigRequest {
   ///@}
  private:
   bool m_bootstrapClusterCreatorAdminPermissions{false};
-  bool m_bootstrapClusterCreatorAdminPermissionsHasBeenSet = false;
 
   AuthenticationMode m_authenticationMode{AuthenticationMode::NOT_SET};
+  bool m_bootstrapClusterCreatorAdminPermissionsHasBeenSet = false;
   bool m_authenticationModeHasBeenSet = false;
 };
 

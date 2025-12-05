@@ -159,24 +159,24 @@ class ScheduleSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationDate{};
-  bool m_lastModificationDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScheduleState m_state{ScheduleState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   TargetSummary m_target;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_lastModificationDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

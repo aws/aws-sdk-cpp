@@ -176,21 +176,21 @@ class CreateAgentRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_activationKey;
-  bool m_activationKeyHasBeenSet = false;
 
   Aws::String m_agentName;
-  bool m_agentNameHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetArns;
-  bool m_subnetArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupArns;
+  bool m_activationKeyHasBeenSet = false;
+  bool m_agentNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_subnetArnsHasBeenSet = false;
   bool m_securityGroupArnsHasBeenSet = false;
 };
 

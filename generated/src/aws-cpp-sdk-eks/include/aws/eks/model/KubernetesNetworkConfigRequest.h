@@ -117,12 +117,12 @@ class KubernetesNetworkConfigRequest {
   ///@}
  private:
   Aws::String m_serviceIpv4Cidr;
-  bool m_serviceIpv4CidrHasBeenSet = false;
 
   IpFamily m_ipFamily{IpFamily::NOT_SET};
-  bool m_ipFamilyHasBeenSet = false;
 
   ElasticLoadBalancing m_elasticLoadBalancing;
+  bool m_serviceIpv4CidrHasBeenSet = false;
+  bool m_ipFamilyHasBeenSet = false;
   bool m_elasticLoadBalancingHasBeenSet = false;
 };
 

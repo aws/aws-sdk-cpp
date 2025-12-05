@@ -239,36 +239,36 @@ class ListEnvironmentsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsAccountRegion;
-  bool m_awsAccountRegionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentBlueprintIdentifier;
-  bool m_environmentBlueprintIdentifierHasBeenSet = false;
 
   Aws::String m_environmentProfileIdentifier;
-  bool m_environmentProfileIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_projectIdentifier;
-  bool m_projectIdentifierHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsAccountRegionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_environmentBlueprintIdentifierHasBeenSet = false;
+  bool m_environmentProfileIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

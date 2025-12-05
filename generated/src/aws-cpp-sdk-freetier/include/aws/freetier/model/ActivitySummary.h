@@ -104,15 +104,15 @@ class ActivitySummary {
   ///@}
  private:
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   ActivityReward m_reward;
-  bool m_rewardHasBeenSet = false;
 
   ActivityStatus m_status{ActivityStatus::NOT_SET};
+  bool m_activityIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_rewardHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

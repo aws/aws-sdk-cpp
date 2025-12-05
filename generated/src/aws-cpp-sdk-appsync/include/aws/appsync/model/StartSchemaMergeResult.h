@@ -58,9 +58,9 @@ class StartSchemaMergeResult {
   ///@}
  private:
   SourceApiAssociationStatus m_sourceApiAssociationStatus{SourceApiAssociationStatus::NOT_SET};
-  bool m_sourceApiAssociationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceApiAssociationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

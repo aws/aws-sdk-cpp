@@ -198,27 +198,27 @@ class AuthenticateCognitoActionConfig {
   ///@}
  private:
   Aws::String m_userPoolArn;
-  bool m_userPoolArnHasBeenSet = false;
 
   Aws::String m_userPoolClientId;
-  bool m_userPoolClientIdHasBeenSet = false;
 
   Aws::String m_userPoolDomain;
-  bool m_userPoolDomainHasBeenSet = false;
 
   Aws::String m_sessionCookieName;
-  bool m_sessionCookieNameHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   long long m_sessionTimeout{0};
-  bool m_sessionTimeoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_authenticationRequestExtraParams;
-  bool m_authenticationRequestExtraParamsHasBeenSet = false;
 
   AuthenticateCognitoActionConditionalBehaviorEnum m_onUnauthenticatedRequest{AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET};
+  bool m_userPoolArnHasBeenSet = false;
+  bool m_userPoolClientIdHasBeenSet = false;
+  bool m_userPoolDomainHasBeenSet = false;
+  bool m_sessionCookieNameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_sessionTimeoutHasBeenSet = false;
+  bool m_authenticationRequestExtraParamsHasBeenSet = false;
   bool m_onUnauthenticatedRequestHasBeenSet = false;
 };
 

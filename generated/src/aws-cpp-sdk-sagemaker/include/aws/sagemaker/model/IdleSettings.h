@@ -100,15 +100,15 @@ class IdleSettings {
   ///@}
  private:
   LifecycleManagement m_lifecycleManagement{LifecycleManagement::NOT_SET};
-  bool m_lifecycleManagementHasBeenSet = false;
 
   int m_idleTimeoutInMinutes{0};
-  bool m_idleTimeoutInMinutesHasBeenSet = false;
 
   int m_minIdleTimeoutInMinutes{0};
-  bool m_minIdleTimeoutInMinutesHasBeenSet = false;
 
   int m_maxIdleTimeoutInMinutes{0};
+  bool m_lifecycleManagementHasBeenSet = false;
+  bool m_idleTimeoutInMinutesHasBeenSet = false;
+  bool m_minIdleTimeoutInMinutesHasBeenSet = false;
   bool m_maxIdleTimeoutInMinutesHasBeenSet = false;
 };
 

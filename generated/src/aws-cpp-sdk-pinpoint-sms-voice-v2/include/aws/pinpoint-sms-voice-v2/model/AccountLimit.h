@@ -81,12 +81,12 @@ class AccountLimit {
   ///@}
  private:
   AccountLimitName m_name{AccountLimitName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   long long m_used{0};
-  bool m_usedHasBeenSet = false;
 
   long long m_max{0};
+  bool m_nameHasBeenSet = false;
+  bool m_usedHasBeenSet = false;
   bool m_maxHasBeenSet = false;
 };
 

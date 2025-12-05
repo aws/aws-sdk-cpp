@@ -104,15 +104,15 @@ class GuardrailRegexFilter {
   ///@}
  private:
   GuardrailSensitiveInformationPolicyAction m_action{GuardrailSensitiveInformationPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_match;
-  bool m_matchHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_regex;
+  bool m_actionHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_regexHasBeenSet = false;
 };
 

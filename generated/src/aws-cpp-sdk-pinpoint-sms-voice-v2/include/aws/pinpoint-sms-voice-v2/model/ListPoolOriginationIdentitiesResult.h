@@ -120,18 +120,18 @@ class ListPoolOriginationIdentitiesResult {
   ///@}
  private:
   Aws::String m_poolArn;
-  bool m_poolArnHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::Vector<OriginationIdentityMetadata> m_originationIdentities;
-  bool m_originationIdentitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_poolArnHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_originationIdentitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

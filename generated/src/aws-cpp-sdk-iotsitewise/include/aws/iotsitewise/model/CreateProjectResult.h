@@ -80,12 +80,12 @@ class CreateProjectResult {
   ///@}
  private:
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectIdHasBeenSet = false;
+  bool m_projectArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

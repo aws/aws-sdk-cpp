@@ -108,15 +108,15 @@ class RepositorySyncDefinition {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_directory;
-  bool m_directoryHasBeenSet = false;
 
   Aws::String m_parent;
-  bool m_parentHasBeenSet = false;
 
   Aws::String m_target;
+  bool m_branchHasBeenSet = false;
+  bool m_directoryHasBeenSet = false;
+  bool m_parentHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

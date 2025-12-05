@@ -73,9 +73,9 @@ class DeleteVpnGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_vpnGatewayId;
-  bool m_vpnGatewayIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_vpnGatewayIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

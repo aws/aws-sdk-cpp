@@ -144,18 +144,18 @@ class CreateExplainabilityExportRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_explainabilityExportName;
-  bool m_explainabilityExportNameHasBeenSet = false;
 
   Aws::String m_explainabilityArn;
-  bool m_explainabilityArnHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_explainabilityExportNameHasBeenSet = false;
+  bool m_explainabilityArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

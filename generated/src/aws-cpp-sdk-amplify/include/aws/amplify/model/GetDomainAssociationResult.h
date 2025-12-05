@@ -67,9 +67,9 @@ class GetDomainAssociationResult {
   ///@}
  private:
   DomainAssociation m_domainAssociation;
-  bool m_domainAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

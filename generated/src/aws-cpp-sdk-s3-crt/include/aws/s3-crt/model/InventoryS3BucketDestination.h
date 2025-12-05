@@ -129,18 +129,18 @@ class InventoryS3BucketDestination {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   InventoryFormat m_format{InventoryFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   InventoryEncryption m_encryption;
+  bool m_accountIdHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

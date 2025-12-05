@@ -254,36 +254,36 @@ class ComponentResponse {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Status m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_definedIn;
-  bool m_definedInHasBeenSet = false;
 
   Aws::Map<Aws::String, PropertyResponse> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentPropertyGroupResponse> m_propertyGroups;
-  bool m_propertyGroupsHasBeenSet = false;
 
   Aws::String m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   bool m_areAllPropertiesReturned{false};
-  bool m_areAllPropertiesReturnedHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentSummary> m_compositeComponents;
-  bool m_compositeComponentsHasBeenSet = false;
 
   bool m_areAllCompositeComponentsReturned{false};
+  bool m_componentNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_definedInHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_propertyGroupsHasBeenSet = false;
+  bool m_syncSourceHasBeenSet = false;
+  bool m_areAllPropertiesReturnedHasBeenSet = false;
+  bool m_compositeComponentsHasBeenSet = false;
   bool m_areAllCompositeComponentsReturnedHasBeenSet = false;
 };
 

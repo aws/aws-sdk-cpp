@@ -416,63 +416,63 @@ class AwsLambdaFunctionDetails {
   ///@}
  private:
   AwsLambdaFunctionCode m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_codeSha256;
-  bool m_codeSha256HasBeenSet = false;
 
   AwsLambdaFunctionDeadLetterConfig m_deadLetterConfig;
-  bool m_deadLetterConfigHasBeenSet = false;
 
   AwsLambdaFunctionEnvironment m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_handler;
-  bool m_handlerHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_lastModified;
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::Vector<AwsLambdaFunctionLayer> m_layers;
-  bool m_layersHasBeenSet = false;
 
   Aws::String m_masterArn;
-  bool m_masterArnHasBeenSet = false;
 
   int m_memorySize{0};
-  bool m_memorySizeHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_runtime;
-  bool m_runtimeHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   AwsLambdaFunctionTracingConfig m_tracingConfig;
-  bool m_tracingConfigHasBeenSet = false;
 
   AwsLambdaFunctionVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_architectures;
-  bool m_architecturesHasBeenSet = false;
 
   Aws::String m_packageType;
+  bool m_codeHasBeenSet = false;
+  bool m_codeSha256HasBeenSet = false;
+  bool m_deadLetterConfigHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
+  bool m_handlerHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_layersHasBeenSet = false;
+  bool m_masterArnHasBeenSet = false;
+  bool m_memorySizeHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_tracingConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_architecturesHasBeenSet = false;
   bool m_packageTypeHasBeenSet = false;
 };
 

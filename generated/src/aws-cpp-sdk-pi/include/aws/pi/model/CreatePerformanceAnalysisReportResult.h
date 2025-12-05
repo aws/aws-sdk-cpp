@@ -59,9 +59,9 @@ class CreatePerformanceAnalysisReportResult {
   ///@}
  private:
   Aws::String m_analysisReportId;
-  bool m_analysisReportIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisReportIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

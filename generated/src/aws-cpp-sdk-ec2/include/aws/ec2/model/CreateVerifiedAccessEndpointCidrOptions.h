@@ -120,15 +120,15 @@ class CreateVerifiedAccessEndpointCidrOptions {
   ///@}
  private:
   VerifiedAccessEndpointProtocol m_protocol{VerifiedAccessEndpointProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::Vector<CreateVerifiedAccessEndpointPortRange> m_portRanges;
+  bool m_protocolHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class ListLibraryItemsRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_categoryId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_categoryIdHasBeenSet = false;
 };
 

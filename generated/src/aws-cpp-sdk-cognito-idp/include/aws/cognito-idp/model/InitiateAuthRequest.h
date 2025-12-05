@@ -273,24 +273,24 @@ class InitiateAuthRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   AuthFlowType m_authFlow{AuthFlowType::NOT_SET};
-  bool m_authFlowHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_authParameters;
-  bool m_authParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-  bool m_clientMetadataHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   AnalyticsMetadataType m_analyticsMetadata;
-  bool m_analyticsMetadataHasBeenSet = false;
 
   UserContextDataType m_userContextData;
-  bool m_userContextDataHasBeenSet = false;
 
   Aws::String m_session;
+  bool m_authFlowHasBeenSet = false;
+  bool m_authParametersHasBeenSet = false;
+  bool m_clientMetadataHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_analyticsMetadataHasBeenSet = false;
+  bool m_userContextDataHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
 };
 

@@ -152,24 +152,24 @@ class MetricQuery {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   MetricStatistic m_metricStat{MetricStatistic::NOT_SET};
-  bool m_metricStatHasBeenSet = false;
 
   Period m_period{Period::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   XAxisType m_xAxisType{XAxisType::NOT_SET};
-  bool m_xAxisTypeHasBeenSet = false;
 
   long long m_start{0};
-  bool m_startHasBeenSet = false;
 
   long long m_end{0};
+  bool m_metricNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_metricStatHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_xAxisTypeHasBeenSet = false;
+  bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

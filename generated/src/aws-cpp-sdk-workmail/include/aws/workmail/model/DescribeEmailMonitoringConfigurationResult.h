@@ -79,12 +79,12 @@ class DescribeEmailMonitoringConfigurationResult {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_logGroupArn;
-  bool m_logGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleArnHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

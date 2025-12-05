@@ -86,12 +86,12 @@ class ImportFirewallDomainsRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_domainFileUrl;
-  bool m_domainFileUrlHasBeenSet = false;
 
   Aws::String m_firewallDomainListId;
-  bool m_firewallDomainListIdHasBeenSet = false;
 
   Aws::String m_operation;
+  bool m_domainFileUrlHasBeenSet = false;
+  bool m_firewallDomainListIdHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

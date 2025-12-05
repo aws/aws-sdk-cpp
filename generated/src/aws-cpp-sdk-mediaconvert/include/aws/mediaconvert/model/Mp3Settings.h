@@ -117,18 +117,18 @@ class Mp3Settings {
   ///@}
  private:
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   Mp3RateControlMode m_rateControlMode{Mp3RateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   int m_vbrQuality{0};
+  bool m_bitrateHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
   bool m_vbrQualityHasBeenSet = false;
 };
 

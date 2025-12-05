@@ -139,18 +139,18 @@ class NewAssertionRule {
   ///@}
  private:
   Aws::Vector<Aws::String> m_assertedControls;
-  bool m_assertedControlsHasBeenSet = false;
 
   Aws::String m_controlPanelArn;
-  bool m_controlPanelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleConfig m_ruleConfig;
-  bool m_ruleConfigHasBeenSet = false;
 
   int m_waitPeriodMs{0};
+  bool m_assertedControlsHasBeenSet = false;
+  bool m_controlPanelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleConfigHasBeenSet = false;
   bool m_waitPeriodMsHasBeenSet = false;
 };
 

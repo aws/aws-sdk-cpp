@@ -124,15 +124,15 @@ class ListEventSourceMappingsRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

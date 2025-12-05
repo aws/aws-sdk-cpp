@@ -114,15 +114,15 @@ class SSEDescription {
   ///@}
  private:
   SSEStatus m_status{SSEStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SSEType m_sSEType{SSEType::NOT_SET};
-  bool m_sSETypeHasBeenSet = false;
 
   Aws::String m_kMSMasterKeyArn;
-  bool m_kMSMasterKeyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_inaccessibleEncryptionDateTime{};
+  bool m_statusHasBeenSet = false;
+  bool m_sSETypeHasBeenSet = false;
+  bool m_kMSMasterKeyArnHasBeenSet = false;
   bool m_inaccessibleEncryptionDateTimeHasBeenSet = false;
 };
 

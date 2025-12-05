@@ -69,9 +69,9 @@ class Input {
   ///@}
  private:
   InputConfiguration m_inputConfiguration;
-  bool m_inputConfigurationHasBeenSet = false;
 
   InputDefinition m_inputDefinition;
+  bool m_inputConfigurationHasBeenSet = false;
   bool m_inputDefinitionHasBeenSet = false;
 };
 

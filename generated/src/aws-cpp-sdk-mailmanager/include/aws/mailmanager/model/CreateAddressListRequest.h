@@ -96,12 +96,12 @@ class CreateAddressListRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_addressListName;
-  bool m_addressListNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_addressListNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class LinkApplicationLogSampling {
   ///@}
  private:
   double m_errorLog{0.0};
-  bool m_errorLogHasBeenSet = false;
 
   double m_filterLog{0.0};
+  bool m_errorLogHasBeenSet = false;
   bool m_filterLogHasBeenSet = false;
 };
 

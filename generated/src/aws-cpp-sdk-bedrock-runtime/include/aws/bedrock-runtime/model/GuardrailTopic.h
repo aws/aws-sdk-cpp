@@ -102,15 +102,15 @@ class GuardrailTopic {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   GuardrailTopicType m_type{GuardrailTopicType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailTopicPolicyAction m_action{GuardrailTopicPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   bool m_detected{false};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_detectedHasBeenSet = false;
 };
 

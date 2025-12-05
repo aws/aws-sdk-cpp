@@ -103,15 +103,15 @@ class DesiredWeightAndCapacity {
   ///@}
  private:
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   double m_desiredWeight{0.0};
-  bool m_desiredWeightHasBeenSet = false;
 
   int m_desiredInstanceCount{0};
-  bool m_desiredInstanceCountHasBeenSet = false;
 
   ProductionVariantServerlessUpdateConfig m_serverlessUpdateConfig;
+  bool m_variantNameHasBeenSet = false;
+  bool m_desiredWeightHasBeenSet = false;
+  bool m_desiredInstanceCountHasBeenSet = false;
   bool m_serverlessUpdateConfigHasBeenSet = false;
 };
 

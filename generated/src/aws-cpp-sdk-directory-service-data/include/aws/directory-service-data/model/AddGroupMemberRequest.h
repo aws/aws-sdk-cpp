@@ -139,18 +139,18 @@ class AddGroupMemberRequest : public DirectoryServiceDataRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_memberName;
-  bool m_memberNameHasBeenSet = false;
 
   Aws::String m_memberRealm;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_memberNameHasBeenSet = false;
   bool m_memberRealmHasBeenSet = false;
 };
 

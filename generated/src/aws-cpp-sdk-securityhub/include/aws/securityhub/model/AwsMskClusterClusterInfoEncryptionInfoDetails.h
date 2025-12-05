@@ -74,9 +74,9 @@ class AwsMskClusterClusterInfoEncryptionInfoDetails {
   ///@}
  private:
   AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails m_encryptionInTransit;
-  bool m_encryptionInTransitHasBeenSet = false;
 
   AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails m_encryptionAtRest;
+  bool m_encryptionInTransitHasBeenSet = false;
   bool m_encryptionAtRestHasBeenSet = false;
 };
 

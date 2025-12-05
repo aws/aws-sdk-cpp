@@ -88,12 +88,12 @@ class SheetStyle {
   ///@}
  private:
   TileStyle m_tile;
-  bool m_tileHasBeenSet = false;
 
   TileLayoutStyle m_tileLayout;
-  bool m_tileLayoutHasBeenSet = false;
 
   SheetBackgroundStyle m_background;
+  bool m_tileHasBeenSet = false;
+  bool m_tileLayoutHasBeenSet = false;
   bool m_backgroundHasBeenSet = false;
 };
 

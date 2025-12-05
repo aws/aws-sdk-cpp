@@ -92,12 +92,12 @@ class ListUsersResult {
   ///@}
  private:
   Aws::Vector<UserType> m_users;
-  bool m_usersHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usersHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

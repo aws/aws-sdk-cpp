@@ -355,60 +355,60 @@ class GetStepResult {
   ///@}
  private:
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   StepLifecycleStatus m_lifecycleStatus{StepLifecycleStatus::NOT_SET};
-  bool m_lifecycleStatusHasBeenSet = false;
 
   Aws::String m_lifecycleStatusMessage;
-  bool m_lifecycleStatusMessageHasBeenSet = false;
 
   TaskRunStatus m_taskRunStatus{TaskRunStatus::NOT_SET};
-  bool m_taskRunStatusHasBeenSet = false;
 
   Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
-  bool m_taskRunStatusCountsHasBeenSet = false;
 
   int m_taskFailureRetryCount{0};
-  bool m_taskFailureRetryCountHasBeenSet = false;
 
   StepTargetTaskRunStatus m_targetTaskRunStatus{StepTargetTaskRunStatus::NOT_SET};
-  bool m_targetTaskRunStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   DependencyCounts m_dependencyCounts;
-  bool m_dependencyCountsHasBeenSet = false;
 
   StepRequiredCapabilities m_requiredCapabilities;
-  bool m_requiredCapabilitiesHasBeenSet = false;
 
   ParameterSpace m_parameterSpace;
-  bool m_parameterSpaceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stepIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_lifecycleStatusHasBeenSet = false;
+  bool m_lifecycleStatusMessageHasBeenSet = false;
+  bool m_taskRunStatusHasBeenSet = false;
+  bool m_taskRunStatusCountsHasBeenSet = false;
+  bool m_taskFailureRetryCountHasBeenSet = false;
+  bool m_targetTaskRunStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_dependencyCountsHasBeenSet = false;
+  bool m_requiredCapabilitiesHasBeenSet = false;
+  bool m_parameterSpaceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

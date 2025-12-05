@@ -82,12 +82,12 @@ class ListJobsRequest : public ImportExportRequest {
   ///@}
  private:
   int m_maxJobs{0};
-  bool m_maxJobsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_aPIVersion;
+  bool m_maxJobsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_aPIVersionHasBeenSet = false;
 };
 

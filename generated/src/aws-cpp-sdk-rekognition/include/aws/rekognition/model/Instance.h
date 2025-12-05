@@ -95,12 +95,12 @@ class Instance {
   ///@}
  private:
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::Vector<DominantColor> m_dominantColors;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
   bool m_dominantColorsHasBeenSet = false;
 };
 

@@ -147,21 +147,21 @@ class Listener {
   ///@}
  private:
   VirtualNodeConnectionPool m_connectionPool;
-  bool m_connectionPoolHasBeenSet = false;
 
   HealthCheckPolicy m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   OutlierDetection m_outlierDetection;
-  bool m_outlierDetectionHasBeenSet = false;
 
   PortMapping m_portMapping;
-  bool m_portMappingHasBeenSet = false;
 
   ListenerTimeout m_timeout;
-  bool m_timeoutHasBeenSet = false;
 
   ListenerTls m_tls;
+  bool m_connectionPoolHasBeenSet = false;
+  bool m_healthCheckHasBeenSet = false;
+  bool m_outlierDetectionHasBeenSet = false;
+  bool m_portMappingHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
   bool m_tlsHasBeenSet = false;
 };
 

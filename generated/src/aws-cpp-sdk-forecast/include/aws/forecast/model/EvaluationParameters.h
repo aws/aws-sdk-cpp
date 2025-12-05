@@ -72,9 +72,9 @@ class EvaluationParameters {
   ///@}
  private:
   int m_numberOfBacktestWindows{0};
-  bool m_numberOfBacktestWindowsHasBeenSet = false;
 
   int m_backTestWindowOffset{0};
+  bool m_numberOfBacktestWindowsHasBeenSet = false;
   bool m_backTestWindowOffsetHasBeenSet = false;
 };
 

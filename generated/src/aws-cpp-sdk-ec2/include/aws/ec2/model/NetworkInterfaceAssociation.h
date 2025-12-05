@@ -164,24 +164,24 @@ class NetworkInterfaceAssociation {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_ipOwnerId;
-  bool m_ipOwnerIdHasBeenSet = false;
 
   Aws::String m_publicDnsName;
-  bool m_publicDnsNameHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::String m_customerOwnedIp;
-  bool m_customerOwnedIpHasBeenSet = false;
 
   Aws::String m_carrierIp;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_ipOwnerIdHasBeenSet = false;
+  bool m_publicDnsNameHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
+  bool m_customerOwnedIpHasBeenSet = false;
   bool m_carrierIpHasBeenSet = false;
 };
 

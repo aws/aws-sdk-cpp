@@ -187,27 +187,27 @@ class InferenceSchedulerSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerArn;
-  bool m_inferenceSchedulerArnHasBeenSet = false;
 
   InferenceSchedulerStatus m_status{InferenceSchedulerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   long long m_dataDelayOffsetInMinutes{0};
-  bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
   DataUploadFrequency m_dataUploadFrequency{DataUploadFrequency::NOT_SET};
-  bool m_dataUploadFrequencyHasBeenSet = false;
 
   LatestInferenceResult m_latestInferenceResult{LatestInferenceResult::NOT_SET};
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_inferenceSchedulerArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_dataDelayOffsetInMinutesHasBeenSet = false;
+  bool m_dataUploadFrequencyHasBeenSet = false;
   bool m_latestInferenceResultHasBeenSet = false;
 };
 

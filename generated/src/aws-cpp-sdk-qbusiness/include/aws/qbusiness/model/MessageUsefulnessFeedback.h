@@ -105,15 +105,15 @@ class MessageUsefulnessFeedback {
   ///@}
  private:
   MessageUsefulness m_usefulness{MessageUsefulness::NOT_SET};
-  bool m_usefulnessHasBeenSet = false;
 
   MessageUsefulnessReason m_reason{MessageUsefulnessReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedAt{};
+  bool m_usefulnessHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_submittedAtHasBeenSet = false;
 };
 

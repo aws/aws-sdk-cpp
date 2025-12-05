@@ -60,9 +60,9 @@ class UpdatePrivacyBudgetTemplateResult {
   ///@}
  private:
   PrivacyBudgetTemplate m_privacyBudgetTemplate;
-  bool m_privacyBudgetTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_privacyBudgetTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

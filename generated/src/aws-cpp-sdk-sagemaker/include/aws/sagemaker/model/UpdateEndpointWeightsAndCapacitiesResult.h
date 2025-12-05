@@ -60,9 +60,9 @@ class UpdateEndpointWeightsAndCapacitiesResult {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

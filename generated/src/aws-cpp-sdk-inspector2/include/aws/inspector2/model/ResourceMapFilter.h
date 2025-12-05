@@ -86,12 +86,12 @@ class ResourceMapFilter {
   ///@}
  private:
   ResourceMapComparison m_comparison{ResourceMapComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_comparisonHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

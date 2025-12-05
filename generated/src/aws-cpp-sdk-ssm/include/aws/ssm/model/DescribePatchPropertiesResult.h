@@ -86,12 +86,12 @@ class DescribePatchPropertiesResult {
   ///@}
  private:
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_propertiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

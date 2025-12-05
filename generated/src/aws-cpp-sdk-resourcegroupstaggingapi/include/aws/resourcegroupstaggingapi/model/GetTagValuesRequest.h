@@ -71,9 +71,9 @@ class GetTagValuesRequest : public ResourceGroupsTaggingAPIRequest {
   ///@}
  private:
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_paginationTokenHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

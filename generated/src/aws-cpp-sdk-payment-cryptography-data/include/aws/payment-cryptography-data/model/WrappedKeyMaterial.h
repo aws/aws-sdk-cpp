@@ -70,9 +70,9 @@ class WrappedKeyMaterial {
   ///@}
  private:
   Aws::String m_tr31KeyBlock;
-  bool m_tr31KeyBlockHasBeenSet = false;
 
   EcdhDerivationAttributes m_diffieHellmanSymmetricKey;
+  bool m_tr31KeyBlockHasBeenSet = false;
   bool m_diffieHellmanSymmetricKeyHasBeenSet = false;
 };
 

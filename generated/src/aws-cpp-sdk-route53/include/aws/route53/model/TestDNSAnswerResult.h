@@ -163,24 +163,24 @@ class TestDNSAnswerResult {
   ///@}
  private:
   Aws::String m_nameserver;
-  bool m_nameserverHasBeenSet = false;
 
   Aws::String m_recordName;
-  bool m_recordNameHasBeenSet = false;
 
   RRType m_recordType{RRType::NOT_SET};
-  bool m_recordTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recordData;
-  bool m_recordDataHasBeenSet = false;
 
   Aws::String m_responseCode;
-  bool m_responseCodeHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameserverHasBeenSet = false;
+  bool m_recordNameHasBeenSet = false;
+  bool m_recordTypeHasBeenSet = false;
+  bool m_recordDataHasBeenSet = false;
+  bool m_responseCodeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

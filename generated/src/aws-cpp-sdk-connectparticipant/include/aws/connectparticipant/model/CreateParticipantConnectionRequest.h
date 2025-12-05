@@ -96,12 +96,12 @@ class CreateParticipantConnectionRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::Vector<ConnectionType> m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_participantToken;
-  bool m_participantTokenHasBeenSet = false;
 
   bool m_connectParticipant{false};
+  bool m_typeHasBeenSet = false;
+  bool m_participantTokenHasBeenSet = false;
   bool m_connectParticipantHasBeenSet = false;
 };
 

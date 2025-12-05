@@ -104,15 +104,15 @@ class Edge {
   ///@}
  private:
   Aws::String m_sourceNodeId;
-  bool m_sourceNodeIdHasBeenSet = false;
 
   Aws::String m_destinationNodeId;
-  bool m_destinationNodeIdHasBeenSet = false;
 
   double m_duration{0.0};
-  bool m_durationHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
+  bool m_sourceNodeIdHasBeenSet = false;
+  bool m_destinationNodeIdHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;
 };
 

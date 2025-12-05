@@ -105,12 +105,12 @@ class WebAppVpcConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

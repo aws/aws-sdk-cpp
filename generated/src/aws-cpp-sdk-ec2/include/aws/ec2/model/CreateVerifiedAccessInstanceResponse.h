@@ -60,9 +60,9 @@ class CreateVerifiedAccessInstanceResponse {
   ///@}
  private:
   VerifiedAccessInstance m_verifiedAccessInstance;
-  bool m_verifiedAccessInstanceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

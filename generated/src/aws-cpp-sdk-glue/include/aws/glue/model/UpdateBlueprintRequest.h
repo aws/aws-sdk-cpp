@@ -85,12 +85,12 @@ class UpdateBlueprintRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_blueprintLocation;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_blueprintLocationHasBeenSet = false;
 };
 

@@ -90,15 +90,15 @@ class UpdateProjectVisibilityResult {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_publicProjectAlias;
-  bool m_publicProjectAliasHasBeenSet = false;
 
   ProjectVisibilityType m_projectVisibility{ProjectVisibilityType::NOT_SET};
-  bool m_projectVisibilityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectArnHasBeenSet = false;
+  bool m_publicProjectAliasHasBeenSet = false;
+  bool m_projectVisibilityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class ListBackupJobSummariesResult {
   ///@}
  private:
   Aws::Vector<BackupJobSummary> m_backupJobSummaries;
-  bool m_backupJobSummariesHasBeenSet = false;
 
   Aws::String m_aggregationPeriod;
-  bool m_aggregationPeriodHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupJobSummariesHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

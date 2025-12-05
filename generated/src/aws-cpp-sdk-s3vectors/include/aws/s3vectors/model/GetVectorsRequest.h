@@ -142,21 +142,21 @@ class GetVectorsRequest : public S3VectorsRequest {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   bool m_returnData{false};
-  bool m_returnDataHasBeenSet = false;
 
   bool m_returnMetadata{false};
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
+  bool m_returnDataHasBeenSet = false;
   bool m_returnMetadataHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class VersionInfo {
   ///@}
  private:
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_agentHash;
-  bool m_agentHashHasBeenSet = false;
 
   Aws::String m_dockerVersion;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_agentHashHasBeenSet = false;
   bool m_dockerVersionHasBeenSet = false;
 };
 

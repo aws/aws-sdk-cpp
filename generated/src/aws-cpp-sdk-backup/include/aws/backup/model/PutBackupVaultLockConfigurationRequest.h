@@ -134,15 +134,15 @@ class PutBackupVaultLockConfigurationRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   long long m_minRetentionDays{0};
-  bool m_minRetentionDaysHasBeenSet = false;
 
   long long m_maxRetentionDays{0};
-  bool m_maxRetentionDaysHasBeenSet = false;
 
   long long m_changeableForDays{0};
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_minRetentionDaysHasBeenSet = false;
+  bool m_maxRetentionDaysHasBeenSet = false;
   bool m_changeableForDaysHasBeenSet = false;
 };
 

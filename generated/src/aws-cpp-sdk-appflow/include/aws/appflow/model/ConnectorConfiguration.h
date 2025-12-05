@@ -598,87 +598,87 @@ class ConnectorConfiguration {
   ///@}
  private:
   bool m_canUseAsSource{false};
-  bool m_canUseAsSourceHasBeenSet = false;
 
   bool m_canUseAsDestination{false};
-  bool m_canUseAsDestinationHasBeenSet = false;
 
   Aws::Vector<ConnectorType> m_supportedDestinationConnectors;
-  bool m_supportedDestinationConnectorsHasBeenSet = false;
 
   Aws::Vector<ScheduleFrequencyType> m_supportedSchedulingFrequencies;
-  bool m_supportedSchedulingFrequenciesHasBeenSet = false;
 
   bool m_isPrivateLinkEnabled{false};
-  bool m_isPrivateLinkEnabledHasBeenSet = false;
 
   bool m_isPrivateLinkEndpointUrlRequired{false};
-  bool m_isPrivateLinkEndpointUrlRequiredHasBeenSet = false;
 
   Aws::Vector<TriggerType> m_supportedTriggerTypes;
-  bool m_supportedTriggerTypesHasBeenSet = false;
 
   ConnectorMetadata m_connectorMetadata;
-  bool m_connectorMetadataHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorLabel;
-  bool m_connectorLabelHasBeenSet = false;
 
   Aws::String m_connectorDescription;
-  bool m_connectorDescriptionHasBeenSet = false;
 
   Aws::String m_connectorOwner;
-  bool m_connectorOwnerHasBeenSet = false;
 
   Aws::String m_connectorName;
-  bool m_connectorNameHasBeenSet = false;
 
   Aws::String m_connectorVersion;
-  bool m_connectorVersionHasBeenSet = false;
 
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectorModes;
-  bool m_connectorModesHasBeenSet = false;
 
   AuthenticationConfig m_authenticationConfig;
-  bool m_authenticationConfigHasBeenSet = false;
 
   Aws::Vector<ConnectorRuntimeSetting> m_connectorRuntimeSettings;
-  bool m_connectorRuntimeSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedApiVersions;
-  bool m_supportedApiVersionsHasBeenSet = false;
 
   Aws::Vector<Operators> m_supportedOperators;
-  bool m_supportedOperatorsHasBeenSet = false;
 
   Aws::Vector<WriteOperationType> m_supportedWriteOperations;
-  bool m_supportedWriteOperationsHasBeenSet = false;
 
   ConnectorProvisioningType m_connectorProvisioningType{ConnectorProvisioningType::NOT_SET};
-  bool m_connectorProvisioningTypeHasBeenSet = false;
 
   ConnectorProvisioningConfig m_connectorProvisioningConfig;
-  bool m_connectorProvisioningConfigHasBeenSet = false;
 
   Aws::String m_logoURL;
-  bool m_logoURLHasBeenSet = false;
 
   Aws::Utils::DateTime m_registeredAt{};
-  bool m_registeredAtHasBeenSet = false;
 
   Aws::String m_registeredBy;
-  bool m_registeredByHasBeenSet = false;
 
   Aws::Vector<SupportedDataTransferType> m_supportedDataTransferTypes;
-  bool m_supportedDataTransferTypesHasBeenSet = false;
 
   Aws::Vector<DataTransferApi> m_supportedDataTransferApis;
+  bool m_canUseAsSourceHasBeenSet = false;
+  bool m_canUseAsDestinationHasBeenSet = false;
+  bool m_supportedDestinationConnectorsHasBeenSet = false;
+  bool m_supportedSchedulingFrequenciesHasBeenSet = false;
+  bool m_isPrivateLinkEnabledHasBeenSet = false;
+  bool m_isPrivateLinkEndpointUrlRequiredHasBeenSet = false;
+  bool m_supportedTriggerTypesHasBeenSet = false;
+  bool m_connectorMetadataHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_connectorLabelHasBeenSet = false;
+  bool m_connectorDescriptionHasBeenSet = false;
+  bool m_connectorOwnerHasBeenSet = false;
+  bool m_connectorNameHasBeenSet = false;
+  bool m_connectorVersionHasBeenSet = false;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorModesHasBeenSet = false;
+  bool m_authenticationConfigHasBeenSet = false;
+  bool m_connectorRuntimeSettingsHasBeenSet = false;
+  bool m_supportedApiVersionsHasBeenSet = false;
+  bool m_supportedOperatorsHasBeenSet = false;
+  bool m_supportedWriteOperationsHasBeenSet = false;
+  bool m_connectorProvisioningTypeHasBeenSet = false;
+  bool m_connectorProvisioningConfigHasBeenSet = false;
+  bool m_logoURLHasBeenSet = false;
+  bool m_registeredAtHasBeenSet = false;
+  bool m_registeredByHasBeenSet = false;
+  bool m_supportedDataTransferTypesHasBeenSet = false;
   bool m_supportedDataTransferApisHasBeenSet = false;
 };
 

@@ -255,42 +255,42 @@ class GetAudienceModelResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataStartTime{};
-  bool m_trainingDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataEndTime{};
-  bool m_trainingDataEndTimeHasBeenSet = false;
 
   Aws::String m_audienceModelArn;
-  bool m_audienceModelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_trainingDatasetArn;
-  bool m_trainingDatasetArnHasBeenSet = false;
 
   AudienceModelStatus m_status{AudienceModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_trainingDataStartTimeHasBeenSet = false;
+  bool m_trainingDataEndTimeHasBeenSet = false;
+  bool m_audienceModelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_trainingDatasetArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ModifyCapacityReservationRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   MinimumLoadBalancerCapacity m_minimumLoadBalancerCapacity;
-  bool m_minimumLoadBalancerCapacityHasBeenSet = false;
 
   bool m_resetCapacityReservation{false};
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_minimumLoadBalancerCapacityHasBeenSet = false;
   bool m_resetCapacityReservationHasBeenSet = false;
 };
 

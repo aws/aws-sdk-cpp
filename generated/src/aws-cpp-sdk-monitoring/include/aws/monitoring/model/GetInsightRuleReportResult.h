@@ -170,24 +170,24 @@ class GetInsightRuleReportResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_keyLabels;
-  bool m_keyLabelsHasBeenSet = false;
 
   Aws::String m_aggregationStatistic;
-  bool m_aggregationStatisticHasBeenSet = false;
 
   double m_aggregateValue{0.0};
-  bool m_aggregateValueHasBeenSet = false;
 
   long long m_approximateUniqueCount{0};
-  bool m_approximateUniqueCountHasBeenSet = false;
 
   Aws::Vector<InsightRuleContributor> m_contributors;
-  bool m_contributorsHasBeenSet = false;
 
   Aws::Vector<InsightRuleMetricDatapoint> m_metricDatapoints;
-  bool m_metricDatapointsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_keyLabelsHasBeenSet = false;
+  bool m_aggregationStatisticHasBeenSet = false;
+  bool m_aggregateValueHasBeenSet = false;
+  bool m_approximateUniqueCountHasBeenSet = false;
+  bool m_contributorsHasBeenSet = false;
+  bool m_metricDatapointsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

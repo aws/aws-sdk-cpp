@@ -88,9 +88,9 @@ class IsolineShapeGeometry {
   ///@}
  private:
   Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_polygon;
-  bool m_polygonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_polylinePolygon;
+  bool m_polygonHasBeenSet = false;
   bool m_polylinePolygonHasBeenSet = false;
 };
 

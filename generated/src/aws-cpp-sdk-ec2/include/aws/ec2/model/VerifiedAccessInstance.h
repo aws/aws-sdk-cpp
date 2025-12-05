@@ -195,27 +195,27 @@ class VerifiedAccessInstance {
   ///@}
  private:
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<VerifiedAccessTrustProviderCondensed> m_verifiedAccessTrustProviders;
-  bool m_verifiedAccessTrustProvidersHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_fipsEnabled{false};
-  bool m_fipsEnabledHasBeenSet = false;
 
   VerifiedAccessInstanceCustomSubDomain m_cidrEndpointsCustomSubDomain;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_verifiedAccessTrustProvidersHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fipsEnabledHasBeenSet = false;
   bool m_cidrEndpointsCustomSubDomainHasBeenSet = false;
 };
 

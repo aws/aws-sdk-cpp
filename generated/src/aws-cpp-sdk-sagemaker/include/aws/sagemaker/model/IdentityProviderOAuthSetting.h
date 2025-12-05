@@ -90,12 +90,12 @@ class IdentityProviderOAuthSetting {
   ///@}
  private:
   DataSourceName m_dataSourceName{DataSourceName::NOT_SET};
-  bool m_dataSourceNameHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_dataSourceNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

@@ -113,12 +113,12 @@ class SqlApplicationConfigurationDescription {
   ///@}
  private:
   Aws::Vector<InputDescription> m_inputDescriptions;
-  bool m_inputDescriptionsHasBeenSet = false;
 
   Aws::Vector<OutputDescription> m_outputDescriptions;
-  bool m_outputDescriptionsHasBeenSet = false;
 
   Aws::Vector<ReferenceDataSourceDescription> m_referenceDataSourceDescriptions;
+  bool m_inputDescriptionsHasBeenSet = false;
+  bool m_outputDescriptionsHasBeenSet = false;
   bool m_referenceDataSourceDescriptionsHasBeenSet = false;
 };
 

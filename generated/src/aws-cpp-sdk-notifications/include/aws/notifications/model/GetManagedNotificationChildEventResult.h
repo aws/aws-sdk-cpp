@@ -115,18 +115,18 @@ class GetManagedNotificationChildEventResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_managedNotificationConfigurationArn;
-  bool m_managedNotificationConfigurationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ManagedNotificationChildEvent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_managedNotificationConfigurationArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

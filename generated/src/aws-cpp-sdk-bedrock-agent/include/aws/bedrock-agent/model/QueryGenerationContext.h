@@ -85,9 +85,9 @@ class QueryGenerationContext {
   ///@}
  private:
   Aws::Vector<QueryGenerationTable> m_tables;
-  bool m_tablesHasBeenSet = false;
 
   Aws::Vector<CuratedQuery> m_curatedQueries;
+  bool m_tablesHasBeenSet = false;
   bool m_curatedQueriesHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class ApplicationAggregatedStatus {
   ///@}
  private:
   ApplicationHealthStatus m_healthStatus{ApplicationHealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::String m_lastUpdateDateTime;
-  bool m_lastUpdateDateTimeHasBeenSet = false;
 
   ApplicationProgressStatus m_progressStatus{ApplicationProgressStatus::NOT_SET};
-  bool m_progressStatusHasBeenSet = false;
 
   long long m_totalSourceServers{0};
+  bool m_healthStatusHasBeenSet = false;
+  bool m_lastUpdateDateTimeHasBeenSet = false;
+  bool m_progressStatusHasBeenSet = false;
   bool m_totalSourceServersHasBeenSet = false;
 };
 

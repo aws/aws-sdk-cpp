@@ -86,12 +86,12 @@ class BatchDeleteWorkloadEstimateUsageError {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   WorkloadEstimateUpdateUsageErrorCode m_errorCode{WorkloadEstimateUpdateUsageErrorCode::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

@@ -74,12 +74,12 @@ class CreateContactFlowModuleVersionResult {
   ///@}
  private:
   Aws::String m_contactFlowModuleArn;
-  bool m_contactFlowModuleArnHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowModuleArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

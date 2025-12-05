@@ -76,9 +76,9 @@ class ExperimentReport {
   ///@}
  private:
   ExperimentReportState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<ExperimentReportS3Report> m_s3Reports;
+  bool m_stateHasBeenSet = false;
   bool m_s3ReportsHasBeenSet = false;
 };
 

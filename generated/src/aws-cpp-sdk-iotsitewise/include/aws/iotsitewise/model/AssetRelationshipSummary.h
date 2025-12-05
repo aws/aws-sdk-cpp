@@ -73,9 +73,9 @@ class AssetRelationshipSummary {
   ///@}
  private:
   AssetHierarchyInfo m_hierarchyInfo;
-  bool m_hierarchyInfoHasBeenSet = false;
 
   AssetRelationshipType m_relationshipType{AssetRelationshipType::NOT_SET};
+  bool m_hierarchyInfoHasBeenSet = false;
   bool m_relationshipTypeHasBeenSet = false;
 };
 

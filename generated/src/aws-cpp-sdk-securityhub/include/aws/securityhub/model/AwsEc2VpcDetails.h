@@ -122,15 +122,15 @@ class AwsEc2VpcDetails {
   ///@}
  private:
   Aws::Vector<CidrBlockAssociation> m_cidrBlockAssociationSet;
-  bool m_cidrBlockAssociationSetHasBeenSet = false;
 
   Aws::Vector<Ipv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-  bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 
   Aws::String m_dhcpOptionsId;
-  bool m_dhcpOptionsIdHasBeenSet = false;
 
   Aws::String m_state;
+  bool m_cidrBlockAssociationSetHasBeenSet = false;
+  bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
+  bool m_dhcpOptionsIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

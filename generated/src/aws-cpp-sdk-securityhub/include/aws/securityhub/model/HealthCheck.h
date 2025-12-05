@@ -88,12 +88,12 @@ class HealthCheck {
   ///@}
  private:
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
-  bool m_connectorStatusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastCheckedAt{};
+  bool m_connectorStatusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_lastCheckedAtHasBeenSet = false;
 };
 

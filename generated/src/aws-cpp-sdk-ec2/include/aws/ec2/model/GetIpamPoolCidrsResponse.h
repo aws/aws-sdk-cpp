@@ -86,12 +86,12 @@ class GetIpamPoolCidrsResponse {
   ///@}
  private:
   Aws::Vector<IpamPoolCidr> m_ipamPoolCidrs;
-  bool m_ipamPoolCidrsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPoolCidrsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

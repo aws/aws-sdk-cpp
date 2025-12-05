@@ -143,21 +143,21 @@ class DescribeRegistrationFieldValuesRequest : public PinpointSMSVoiceV2Request 
   ///@}
  private:
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_sectionPath;
-  bool m_sectionPathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fieldPaths;
-  bool m_fieldPathsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_registrationIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_sectionPathHasBeenSet = false;
+  bool m_fieldPathsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

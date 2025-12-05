@@ -65,9 +65,9 @@ class UpdateGroupRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_groupIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

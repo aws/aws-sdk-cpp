@@ -273,42 +273,42 @@ class ClusterConfig {
   ///@}
  private:
   OpenSearchPartitionInstanceType m_instanceType{OpenSearchPartitionInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   bool m_dedicatedMasterEnabled{false};
-  bool m_dedicatedMasterEnabledHasBeenSet = false;
 
   bool m_zoneAwarenessEnabled{false};
-  bool m_zoneAwarenessEnabledHasBeenSet = false;
 
   ZoneAwarenessConfig m_zoneAwarenessConfig;
-  bool m_zoneAwarenessConfigHasBeenSet = false;
 
   OpenSearchPartitionInstanceType m_dedicatedMasterType{OpenSearchPartitionInstanceType::NOT_SET};
-  bool m_dedicatedMasterTypeHasBeenSet = false;
 
   int m_dedicatedMasterCount{0};
-  bool m_dedicatedMasterCountHasBeenSet = false;
 
   bool m_warmEnabled{false};
-  bool m_warmEnabledHasBeenSet = false;
 
   OpenSearchWarmPartitionInstanceType m_warmType{OpenSearchWarmPartitionInstanceType::NOT_SET};
-  bool m_warmTypeHasBeenSet = false;
 
   int m_warmCount{0};
-  bool m_warmCountHasBeenSet = false;
 
   ColdStorageOptions m_coldStorageOptions;
-  bool m_coldStorageOptionsHasBeenSet = false;
 
   bool m_multiAZWithStandbyEnabled{false};
-  bool m_multiAZWithStandbyEnabledHasBeenSet = false;
 
   Aws::Vector<NodeOption> m_nodeOptions;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_dedicatedMasterEnabledHasBeenSet = false;
+  bool m_zoneAwarenessEnabledHasBeenSet = false;
+  bool m_zoneAwarenessConfigHasBeenSet = false;
+  bool m_dedicatedMasterTypeHasBeenSet = false;
+  bool m_dedicatedMasterCountHasBeenSet = false;
+  bool m_warmEnabledHasBeenSet = false;
+  bool m_warmTypeHasBeenSet = false;
+  bool m_warmCountHasBeenSet = false;
+  bool m_coldStorageOptionsHasBeenSet = false;
+  bool m_multiAZWithStandbyEnabledHasBeenSet = false;
   bool m_nodeOptionsHasBeenSet = false;
 };
 

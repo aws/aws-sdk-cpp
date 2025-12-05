@@ -88,12 +88,12 @@ class RelativeDateTimeControlDisplayOptions {
   ///@}
  private:
   LabelOptions m_titleOptions;
-  bool m_titleOptionsHasBeenSet = false;
 
   Aws::String m_dateTimeFormat;
-  bool m_dateTimeFormatHasBeenSet = false;
 
   SheetControlInfoIconLabelOptions m_infoIconLabelOptions;
+  bool m_titleOptionsHasBeenSet = false;
+  bool m_dateTimeFormatHasBeenSet = false;
   bool m_infoIconLabelOptionsHasBeenSet = false;
 };
 

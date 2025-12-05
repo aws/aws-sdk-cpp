@@ -71,9 +71,9 @@ class CustomAmi {
   ///@}
  private:
   Aws::String m_virtualizationType;
-  bool m_virtualizationTypeHasBeenSet = false;
 
   Aws::String m_imageId;
+  bool m_virtualizationTypeHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
 };
 

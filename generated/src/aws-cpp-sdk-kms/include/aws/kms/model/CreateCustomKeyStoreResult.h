@@ -59,9 +59,9 @@ class CreateCustomKeyStoreResult {
   ///@}
  private:
   Aws::String m_customKeyStoreId;
-  bool m_customKeyStoreIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customKeyStoreIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

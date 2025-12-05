@@ -107,15 +107,15 @@ class PciId {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_vendorId;
-  bool m_vendorIdHasBeenSet = false;
 
   Aws::String m_subsystemId;
-  bool m_subsystemIdHasBeenSet = false;
 
   Aws::String m_subsystemVendorId;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_vendorIdHasBeenSet = false;
+  bool m_subsystemIdHasBeenSet = false;
   bool m_subsystemVendorIdHasBeenSet = false;
 };
 

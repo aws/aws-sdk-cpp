@@ -113,15 +113,15 @@ class IceServer {
   ///@}
  private:
   Aws::Vector<Aws::String> m_uris;
-  bool m_urisHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   int m_ttl{0};
+  bool m_urisHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
   bool m_ttlHasBeenSet = false;
 };
 

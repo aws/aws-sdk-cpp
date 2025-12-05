@@ -62,9 +62,9 @@ class DescribeClusterOperationResult {
   ///@}
  private:
   ClusterOperationInfo m_clusterOperationInfo;
-  bool m_clusterOperationInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterOperationInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

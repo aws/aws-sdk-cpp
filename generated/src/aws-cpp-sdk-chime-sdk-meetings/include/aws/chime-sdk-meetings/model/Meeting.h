@@ -216,30 +216,30 @@ class Meeting {
   ///@}
  private:
   Aws::String m_meetingId;
-  bool m_meetingIdHasBeenSet = false;
 
   Aws::String m_meetingHostId;
-  bool m_meetingHostIdHasBeenSet = false;
 
   Aws::String m_externalMeetingId;
-  bool m_externalMeetingIdHasBeenSet = false;
 
   Aws::String m_mediaRegion;
-  bool m_mediaRegionHasBeenSet = false;
 
   MediaPlacement m_mediaPlacement;
-  bool m_mediaPlacementHasBeenSet = false;
 
   MeetingFeaturesConfiguration m_meetingFeatures;
-  bool m_meetingFeaturesHasBeenSet = false;
 
   Aws::String m_primaryMeetingId;
-  bool m_primaryMeetingIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tenantIds;
-  bool m_tenantIdsHasBeenSet = false;
 
   Aws::String m_meetingArn;
+  bool m_meetingIdHasBeenSet = false;
+  bool m_meetingHostIdHasBeenSet = false;
+  bool m_externalMeetingIdHasBeenSet = false;
+  bool m_mediaRegionHasBeenSet = false;
+  bool m_mediaPlacementHasBeenSet = false;
+  bool m_meetingFeaturesHasBeenSet = false;
+  bool m_primaryMeetingIdHasBeenSet = false;
+  bool m_tenantIdsHasBeenSet = false;
   bool m_meetingArnHasBeenSet = false;
 };
 

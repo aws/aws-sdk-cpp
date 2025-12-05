@@ -110,15 +110,15 @@ class BoundingBox {
   ///@}
  private:
   double m_width{0.0};
-  bool m_widthHasBeenSet = false;
 
   double m_height{0.0};
-  bool m_heightHasBeenSet = false;
 
   double m_left{0.0};
-  bool m_leftHasBeenSet = false;
 
   double m_top{0.0};
+  bool m_widthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_leftHasBeenSet = false;
   bool m_topHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class EngineVersion {
   ///@}
  private:
   Aws::String m_selectedEngineVersion;
-  bool m_selectedEngineVersionHasBeenSet = false;
 
   Aws::String m_effectiveEngineVersion;
+  bool m_selectedEngineVersionHasBeenSet = false;
   bool m_effectiveEngineVersionHasBeenSet = false;
 };
 

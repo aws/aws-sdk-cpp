@@ -86,12 +86,12 @@ class DescribeVpcEndpointsResponse {
   ///@}
  private:
   Aws::Vector<VpcEndpoint> m_vpcEndpoints;
-  bool m_vpcEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

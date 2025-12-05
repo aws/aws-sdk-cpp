@@ -213,30 +213,30 @@ class SMSMessage {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_keyword;
-  bool m_keywordHasBeenSet = false;
 
   Aws::String m_mediaUrl;
-  bool m_mediaUrlHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   Aws::String m_originationNumber;
-  bool m_originationNumberHasBeenSet = false;
 
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-  bool m_substitutionsHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_templateId;
+  bool m_bodyHasBeenSet = false;
+  bool m_keywordHasBeenSet = false;
+  bool m_mediaUrlHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_originationNumberHasBeenSet = false;
+  bool m_senderIdHasBeenSet = false;
+  bool m_substitutionsHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
 };
 

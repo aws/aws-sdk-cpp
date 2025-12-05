@@ -177,27 +177,27 @@ class ImportSummary {
   ///@}
  private:
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   Aws::String m_importedResourceId;
-  bool m_importedResourceIdHasBeenSet = false;
 
   Aws::String m_importedResourceName;
-  bool m_importedResourceNameHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
-  bool m_mergeStrategyHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   ImportResourceType m_importedResourceType{ImportResourceType::NOT_SET};
+  bool m_importIdHasBeenSet = false;
+  bool m_importedResourceIdHasBeenSet = false;
+  bool m_importedResourceNameHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
+  bool m_mergeStrategyHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_importedResourceTypeHasBeenSet = false;
 };
 

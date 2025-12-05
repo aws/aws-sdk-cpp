@@ -70,9 +70,9 @@ class CreateReturnShippingLabelRequest : public SnowballRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ShippingOption m_shippingOption{ShippingOption::NOT_SET};
+  bool m_jobIdHasBeenSet = false;
   bool m_shippingOptionHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class InferenceComponentContainerSpecification {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_artifactUrl;
-  bool m_artifactUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
+  bool m_imageHasBeenSet = false;
+  bool m_artifactUrlHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
 };
 

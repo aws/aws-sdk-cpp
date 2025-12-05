@@ -148,21 +148,21 @@ class SessionMappingSummary {
   ///@}
  private:
   Aws::String m_studioId;
-  bool m_studioIdHasBeenSet = false;
 
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_identityName;
-  bool m_identityNameHasBeenSet = false;
 
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   Aws::String m_sessionPolicyArn;
-  bool m_sessionPolicyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_studioIdHasBeenSet = false;
+  bool m_identityIdHasBeenSet = false;
+  bool m_identityNameHasBeenSet = false;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_sessionPolicyArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

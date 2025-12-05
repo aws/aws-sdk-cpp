@@ -222,27 +222,27 @@ class Sequence {
   ///@}
  private:
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Actor> m_actors;
-  bool m_actorsHasBeenSet = false;
 
   Aws::Vector<ResourceV2> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Vector<NetworkEndpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::Vector<Signal> m_signals;
-  bool m_signalsHasBeenSet = false;
 
   Aws::Vector<Indicator> m_sequenceIndicators;
-  bool m_sequenceIndicatorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalSequenceTypes;
+  bool m_uidHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actorsHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_signalsHasBeenSet = false;
+  bool m_sequenceIndicatorsHasBeenSet = false;
   bool m_additionalSequenceTypesHasBeenSet = false;
 };
 

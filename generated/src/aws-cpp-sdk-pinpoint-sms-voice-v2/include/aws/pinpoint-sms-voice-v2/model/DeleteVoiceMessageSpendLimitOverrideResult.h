@@ -59,9 +59,9 @@ class DeleteVoiceMessageSpendLimitOverrideResult {
   ///@}
  private:
   long long m_monthlyLimit{0};
-  bool m_monthlyLimitHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monthlyLimitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

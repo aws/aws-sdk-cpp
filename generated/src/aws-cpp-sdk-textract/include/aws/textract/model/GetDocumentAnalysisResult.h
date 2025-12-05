@@ -181,27 +181,27 @@ class GetDocumentAnalysisResult {
   ///@}
  private:
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Block> m_blocks;
-  bool m_blocksHasBeenSet = false;
 
   Aws::Vector<Warning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_analyzeDocumentModelVersion;
-  bool m_analyzeDocumentModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_blocksHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_analyzeDocumentModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

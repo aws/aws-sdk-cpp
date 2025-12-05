@@ -93,12 +93,12 @@ class ListPhoneNumbersOptedOutResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_phoneNumbers;
-  bool m_phoneNumbersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_phoneNumbersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

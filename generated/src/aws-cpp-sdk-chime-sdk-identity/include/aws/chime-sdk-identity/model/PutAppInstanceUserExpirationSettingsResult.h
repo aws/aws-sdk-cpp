@@ -80,12 +80,12 @@ class PutAppInstanceUserExpirationSettingsResult {
   ///@}
  private:
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   ExpirationSettings m_expirationSettings;
-  bool m_expirationSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceUserArnHasBeenSet = false;
+  bool m_expirationSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

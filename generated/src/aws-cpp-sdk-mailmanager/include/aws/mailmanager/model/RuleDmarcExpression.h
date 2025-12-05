@@ -79,9 +79,9 @@ class RuleDmarcExpression {
   ///@}
  private:
   RuleDmarcOperator m_operator{RuleDmarcOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<RuleDmarcPolicy> m_values;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

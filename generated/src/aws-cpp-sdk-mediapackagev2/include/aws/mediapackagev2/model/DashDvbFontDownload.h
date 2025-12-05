@@ -94,12 +94,12 @@ class DashDvbFontDownload {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   Aws::String m_fontFamily;
+  bool m_urlHasBeenSet = false;
+  bool m_mimeTypeHasBeenSet = false;
   bool m_fontFamilyHasBeenSet = false;
 };
 

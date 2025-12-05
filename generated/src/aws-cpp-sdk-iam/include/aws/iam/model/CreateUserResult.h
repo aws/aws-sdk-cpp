@@ -67,9 +67,9 @@ class CreateUserResult {
   ///@}
  private:
   User m_user;
-  bool m_userHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_userHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

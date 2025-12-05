@@ -87,12 +87,12 @@ class IAMFederationOptionsOutput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_subjectKey;
-  bool m_subjectKeyHasBeenSet = false;
 
   Aws::String m_rolesKey;
+  bool m_enabledHasBeenSet = false;
+  bool m_subjectKeyHasBeenSet = false;
   bool m_rolesKeyHasBeenSet = false;
 };
 

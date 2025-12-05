@@ -65,9 +65,9 @@ class DeleteVodSourceRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::String m_vodSourceName;
+  bool m_sourceLocationNameHasBeenSet = false;
   bool m_vodSourceNameHasBeenSet = false;
 };
 

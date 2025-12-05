@@ -88,12 +88,12 @@ class ListAccessPreviewsRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

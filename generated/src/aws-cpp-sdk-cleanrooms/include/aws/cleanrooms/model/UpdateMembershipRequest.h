@@ -128,18 +128,18 @@ class UpdateMembershipRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   MembershipQueryLogStatus m_queryLogStatus{MembershipQueryLogStatus::NOT_SET};
-  bool m_queryLogStatusHasBeenSet = false;
 
   MembershipJobLogStatus m_jobLogStatus{MembershipJobLogStatus::NOT_SET};
-  bool m_jobLogStatusHasBeenSet = false;
 
   MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
-  bool m_defaultResultConfigurationHasBeenSet = false;
 
   MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_queryLogStatusHasBeenSet = false;
+  bool m_jobLogStatusHasBeenSet = false;
+  bool m_defaultResultConfigurationHasBeenSet = false;
   bool m_defaultJobResultConfigurationHasBeenSet = false;
 };
 

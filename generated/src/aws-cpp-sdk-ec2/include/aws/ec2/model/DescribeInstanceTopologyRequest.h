@@ -177,21 +177,21 @@ class DescribeInstanceTopologyRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupNames;
-  bool m_groupNamesHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_dryRunHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_groupNamesHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

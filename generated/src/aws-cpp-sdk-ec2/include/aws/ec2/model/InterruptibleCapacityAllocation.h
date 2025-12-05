@@ -125,18 +125,18 @@ class InterruptibleCapacityAllocation {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   int m_targetInstanceCount{0};
-  bool m_targetInstanceCountHasBeenSet = false;
 
   InterruptibleCapacityReservationAllocationStatus m_status{InterruptibleCapacityReservationAllocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_interruptibleCapacityReservationId;
-  bool m_interruptibleCapacityReservationIdHasBeenSet = false;
 
   InterruptionType m_interruptionType{InterruptionType::NOT_SET};
+  bool m_instanceCountHasBeenSet = false;
+  bool m_targetInstanceCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_interruptibleCapacityReservationIdHasBeenSet = false;
   bool m_interruptionTypeHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class EdgeStructure {
   ///@}
  private:
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeProperties;
+  bool m_countHasBeenSet = false;
   bool m_edgePropertiesHasBeenSet = false;
 };
 

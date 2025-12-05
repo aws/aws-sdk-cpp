@@ -142,21 +142,21 @@ class ListBotRecommendationsResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::Vector<BotRecommendationSummary> m_botRecommendationSummaries;
-  bool m_botRecommendationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_botRecommendationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

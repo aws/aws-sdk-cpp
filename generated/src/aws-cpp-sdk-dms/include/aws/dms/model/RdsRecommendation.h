@@ -72,9 +72,9 @@ class RdsRecommendation {
   ///@}
  private:
   RdsRequirements m_requirementsToTarget;
-  bool m_requirementsToTargetHasBeenSet = false;
 
   RdsConfiguration m_targetConfiguration;
+  bool m_requirementsToTargetHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
 };
 

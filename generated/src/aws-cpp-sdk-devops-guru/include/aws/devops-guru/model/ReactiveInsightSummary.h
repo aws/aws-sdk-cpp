@@ -184,27 +184,27 @@ class ReactiveInsightSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InsightSeverity m_severity{InsightSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   InsightStatus m_status{InsightStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InsightTimeRange m_insightTimeRange;
-  bool m_insightTimeRangeHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   ServiceCollection m_serviceCollection;
-  bool m_serviceCollectionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedResourceArns;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_insightTimeRangeHasBeenSet = false;
+  bool m_resourceCollectionHasBeenSet = false;
+  bool m_serviceCollectionHasBeenSet = false;
   bool m_associatedResourceArnsHasBeenSet = false;
 };
 

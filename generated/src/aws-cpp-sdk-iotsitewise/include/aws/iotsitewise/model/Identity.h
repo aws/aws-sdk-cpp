@@ -112,15 +112,15 @@ class Identity {
   ///@}
  private:
   UserIdentity m_user;
-  bool m_userHasBeenSet = false;
 
   GroupIdentity m_group;
-  bool m_groupHasBeenSet = false;
 
   IAMUserIdentity m_iamUser;
-  bool m_iamUserHasBeenSet = false;
 
   IAMRoleIdentity m_iamRole;
+  bool m_userHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_iamUserHasBeenSet = false;
   bool m_iamRoleHasBeenSet = false;
 };
 

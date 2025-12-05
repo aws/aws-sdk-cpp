@@ -79,9 +79,9 @@ class GameServerGroupAutoScalingPolicy {
   ///@}
  private:
   int m_estimatedInstanceWarmup{0};
-  bool m_estimatedInstanceWarmupHasBeenSet = false;
 
   TargetTrackingConfiguration m_targetTrackingConfiguration;
+  bool m_estimatedInstanceWarmupHasBeenSet = false;
   bool m_targetTrackingConfigurationHasBeenSet = false;
 };
 

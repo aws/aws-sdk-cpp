@@ -137,21 +137,21 @@ class CreateListingChangeSetRequest : public DataZoneRequest {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   Aws::String m_entityRevision;
-  bool m_entityRevisionHasBeenSet = false;
 
   EntityType m_entityType{EntityType::NOT_SET};
+  bool m_actionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityRevisionHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
 };
 

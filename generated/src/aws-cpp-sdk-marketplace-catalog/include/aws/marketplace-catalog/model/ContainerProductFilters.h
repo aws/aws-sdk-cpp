@@ -109,15 +109,15 @@ class ContainerProductFilters {
   ///@}
  private:
   ContainerProductEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   ContainerProductLastModifiedDateFilter m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   ContainerProductTitleFilter m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   ContainerProductVisibilityFilter m_visibility;
+  bool m_entityIdHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_productTitleHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

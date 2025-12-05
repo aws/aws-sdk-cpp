@@ -115,15 +115,15 @@ class SourceAlgorithm {
   ///@}
  private:
   Aws::String m_modelDataUrl;
-  bool m_modelDataUrlHasBeenSet = false;
 
   ModelDataSource m_modelDataSource;
-  bool m_modelDataSourceHasBeenSet = false;
 
   Aws::String m_modelDataETag;
-  bool m_modelDataETagHasBeenSet = false;
 
   Aws::String m_algorithmName;
+  bool m_modelDataUrlHasBeenSet = false;
+  bool m_modelDataSourceHasBeenSet = false;
+  bool m_modelDataETagHasBeenSet = false;
   bool m_algorithmNameHasBeenSet = false;
 };
 

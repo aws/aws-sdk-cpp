@@ -212,30 +212,30 @@ class Partition {
   ///@}
  private:
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessTime{};
-  bool m_lastAccessTimeHasBeenSet = false;
 
   StorageDescriptor m_storageDescriptor;
-  bool m_storageDescriptorHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAnalyzedTime{};
-  bool m_lastAnalyzedTimeHasBeenSet = false;
 
   Aws::String m_catalogId;
+  bool m_valuesHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastAccessTimeHasBeenSet = false;
+  bool m_storageDescriptorHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_lastAnalyzedTimeHasBeenSet = false;
   bool m_catalogIdHasBeenSet = false;
 };
 

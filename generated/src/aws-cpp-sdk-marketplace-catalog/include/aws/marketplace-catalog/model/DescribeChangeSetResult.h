@@ -229,36 +229,36 @@ class DescribeChangeSetResult {
   ///@}
  private:
   Aws::String m_changeSetId;
-  bool m_changeSetIdHasBeenSet = false;
 
   Aws::String m_changeSetArn;
-  bool m_changeSetArnHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Intent m_intent{Intent::NOT_SET};
-  bool m_intentHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   ChangeStatus m_status{ChangeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   FailureCode m_failureCode{FailureCode::NOT_SET};
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureDescription;
-  bool m_failureDescriptionHasBeenSet = false;
 
   Aws::Vector<ChangeSummary> m_changeSet;
-  bool m_changeSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeSetIdHasBeenSet = false;
+  bool m_changeSetArnHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_intentHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
+  bool m_failureDescriptionHasBeenSet = false;
+  bool m_changeSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

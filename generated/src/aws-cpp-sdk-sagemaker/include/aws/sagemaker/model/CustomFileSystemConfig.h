@@ -90,12 +90,12 @@ class CustomFileSystemConfig {
   ///@}
  private:
   EFSFileSystemConfig m_eFSFileSystemConfig;
-  bool m_eFSFileSystemConfigHasBeenSet = false;
 
   FSxLustreFileSystemConfig m_fSxLustreFileSystemConfig;
-  bool m_fSxLustreFileSystemConfigHasBeenSet = false;
 
   S3FileSystemConfig m_s3FileSystemConfig;
+  bool m_eFSFileSystemConfigHasBeenSet = false;
+  bool m_fSxLustreFileSystemConfigHasBeenSet = false;
   bool m_s3FileSystemConfigHasBeenSet = false;
 };
 

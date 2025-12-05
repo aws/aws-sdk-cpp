@@ -79,9 +79,9 @@ class Scte {
   ///@}
  private:
   Aws::Vector<ScteFilter> m_scteFilter;
-  bool m_scteFilterHasBeenSet = false;
 
   ScteInSegments m_scteInSegments{ScteInSegments::NOT_SET};
+  bool m_scteFilterHasBeenSet = false;
   bool m_scteInSegmentsHasBeenSet = false;
 };
 

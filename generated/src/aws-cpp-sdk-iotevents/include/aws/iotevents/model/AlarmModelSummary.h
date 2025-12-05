@@ -87,12 +87,12 @@ class AlarmModelSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_alarmModelDescription;
-  bool m_alarmModelDescriptionHasBeenSet = false;
 
   Aws::String m_alarmModelName;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_alarmModelDescriptionHasBeenSet = false;
   bool m_alarmModelNameHasBeenSet = false;
 };
 

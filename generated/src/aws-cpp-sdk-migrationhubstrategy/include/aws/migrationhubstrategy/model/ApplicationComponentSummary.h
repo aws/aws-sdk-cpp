@@ -65,9 +65,9 @@ class ApplicationComponentSummary {
   ///@}
  private:
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   int m_count{0};
+  bool m_appTypeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

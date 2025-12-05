@@ -76,9 +76,9 @@ class PutDashboardRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_dashboardName;
-  bool m_dashboardNameHasBeenSet = false;
 
   Aws::String m_dashboardBody;
+  bool m_dashboardNameHasBeenSet = false;
   bool m_dashboardBodyHasBeenSet = false;
 };
 

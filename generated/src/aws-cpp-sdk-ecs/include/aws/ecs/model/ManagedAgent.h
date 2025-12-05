@@ -106,15 +106,15 @@ class ManagedAgent {
   ///@}
  private:
   Aws::Utils::DateTime m_lastStartedAt{};
-  bool m_lastStartedAtHasBeenSet = false;
 
   ManagedAgentName m_name{ManagedAgentName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_lastStatus;
+  bool m_lastStartedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_lastStatusHasBeenSet = false;
 };
 

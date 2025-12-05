@@ -86,9 +86,9 @@ class InsightCategorySpecificSummary {
   ///@}
  private:
   Aws::Vector<DeprecationDetail> m_deprecationDetails;
-  bool m_deprecationDetailsHasBeenSet = false;
 
   Aws::Vector<AddonCompatibilityDetail> m_addonCompatibilityDetails;
+  bool m_deprecationDetailsHasBeenSet = false;
   bool m_addonCompatibilityDetailsHasBeenSet = false;
 };
 

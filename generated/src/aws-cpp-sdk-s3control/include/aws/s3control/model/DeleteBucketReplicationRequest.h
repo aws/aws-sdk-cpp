@@ -83,9 +83,9 @@ class DeleteBucketReplicationRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_bucket;
+  bool m_accountIdHasBeenSet = false;
   bool m_bucketHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class ScalableTargetAction {
   ///@}
  private:
   int m_minCapacity{0};
-  bool m_minCapacityHasBeenSet = false;
 
   int m_maxCapacity{0};
+  bool m_minCapacityHasBeenSet = false;
   bool m_maxCapacityHasBeenSet = false;
 };
 

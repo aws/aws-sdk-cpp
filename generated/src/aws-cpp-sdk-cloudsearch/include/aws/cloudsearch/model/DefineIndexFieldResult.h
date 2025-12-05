@@ -64,9 +64,9 @@ class DefineIndexFieldResult {
   ///@}
  private:
   IndexFieldStatus m_indexField;
-  bool m_indexFieldHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_indexFieldHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

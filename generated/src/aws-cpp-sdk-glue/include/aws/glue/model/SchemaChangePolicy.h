@@ -66,9 +66,9 @@ class SchemaChangePolicy {
   ///@}
  private:
   UpdateBehavior m_updateBehavior{UpdateBehavior::NOT_SET};
-  bool m_updateBehaviorHasBeenSet = false;
 
   DeleteBehavior m_deleteBehavior{DeleteBehavior::NOT_SET};
+  bool m_updateBehaviorHasBeenSet = false;
   bool m_deleteBehaviorHasBeenSet = false;
 };
 

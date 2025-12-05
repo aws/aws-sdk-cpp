@@ -386,54 +386,54 @@ class ServiceDetail {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::Vector<ServiceTypeDetail> m_serviceType;
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_serviceRegion;
-  bool m_serviceRegionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZoneIds;
-  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_baseEndpointDnsNames;
-  bool m_baseEndpointDnsNamesHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::Vector<PrivateDnsDetails> m_privateDnsNames;
-  bool m_privateDnsNamesHasBeenSet = false;
 
   bool m_vpcEndpointPolicySupported{false};
-  bool m_vpcEndpointPolicySupportedHasBeenSet = false;
 
   bool m_acceptanceRequired{false};
-  bool m_acceptanceRequiredHasBeenSet = false;
 
   bool m_managesVpcEndpoints{false};
-  bool m_managesVpcEndpointsHasBeenSet = false;
 
   PayerResponsibility m_payerResponsibility{PayerResponsibility::NOT_SET};
-  bool m_payerResponsibilityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DnsNameState m_privateDnsNameVerificationState{DnsNameState::NOT_SET};
-  bool m_privateDnsNameVerificationStateHasBeenSet = false;
 
   Aws::Vector<ServiceConnectivityType> m_supportedIpAddressTypes;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_serviceRegionHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_baseEndpointDnsNamesHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_privateDnsNamesHasBeenSet = false;
+  bool m_vpcEndpointPolicySupportedHasBeenSet = false;
+  bool m_acceptanceRequiredHasBeenSet = false;
+  bool m_managesVpcEndpointsHasBeenSet = false;
+  bool m_payerResponsibilityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_privateDnsNameVerificationStateHasBeenSet = false;
   bool m_supportedIpAddressTypesHasBeenSet = false;
 };
 

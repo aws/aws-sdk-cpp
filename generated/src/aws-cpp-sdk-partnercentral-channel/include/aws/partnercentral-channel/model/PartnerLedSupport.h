@@ -84,12 +84,12 @@ class PartnerLedSupport {
   ///@}
  private:
   Coverage m_coverage{Coverage::NOT_SET};
-  bool m_coverageHasBeenSet = false;
 
   Provider m_provider{Provider::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_tamLocation;
+  bool m_coverageHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_tamLocationHasBeenSet = false;
 };
 

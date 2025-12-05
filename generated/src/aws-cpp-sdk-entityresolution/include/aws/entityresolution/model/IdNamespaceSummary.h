@@ -173,24 +173,24 @@ class IdNamespaceSummary {
   ///@}
  private:
   Aws::String m_idNamespaceName;
-  bool m_idNamespaceNameHasBeenSet = false;
 
   Aws::String m_idNamespaceArn;
-  bool m_idNamespaceArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IdNamespaceIdMappingWorkflowMetadata> m_idMappingWorkflowProperties;
-  bool m_idMappingWorkflowPropertiesHasBeenSet = false;
 
   IdNamespaceType m_type{IdNamespaceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_idNamespaceNameHasBeenSet = false;
+  bool m_idNamespaceArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idMappingWorkflowPropertiesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -128,12 +128,12 @@ class DescribeReservedInstancesModificationsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_reservedInstancesModificationIds;
-  bool m_reservedInstancesModificationIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_reservedInstancesModificationIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

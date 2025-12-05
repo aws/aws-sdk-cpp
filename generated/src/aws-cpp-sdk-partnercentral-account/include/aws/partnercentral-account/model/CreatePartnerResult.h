@@ -193,30 +193,30 @@ class CreatePartnerResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_legalName;
-  bool m_legalNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   PartnerProfile m_profile;
-  bool m_profileHasBeenSet = false;
 
   Aws::Vector<PartnerDomain> m_awsTrainingCertificationEmailDomains;
-  bool m_awsTrainingCertificationEmailDomainsHasBeenSet = false;
 
   AllianceLeadContact m_allianceLeadContact;
-  bool m_allianceLeadContactHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_awsTrainingCertificationEmailDomainsHasBeenSet = false;
+  bool m_allianceLeadContactHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DeleteIdentitiesResult {
   ///@}
  private:
   Aws::Vector<UnprocessedIdentityId> m_unprocessedIdentityIds;
-  bool m_unprocessedIdentityIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unprocessedIdentityIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

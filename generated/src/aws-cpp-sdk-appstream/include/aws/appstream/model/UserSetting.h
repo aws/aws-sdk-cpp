@@ -89,12 +89,12 @@ class UserSetting {
   ///@}
  private:
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   int m_maximumLength{0};
+  bool m_actionHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
   bool m_maximumLengthHasBeenSet = false;
 };
 

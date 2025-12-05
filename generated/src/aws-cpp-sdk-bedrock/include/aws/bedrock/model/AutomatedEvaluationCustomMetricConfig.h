@@ -85,9 +85,9 @@ class AutomatedEvaluationCustomMetricConfig {
   ///@}
  private:
   Aws::Vector<AutomatedEvaluationCustomMetricSource> m_customMetrics;
-  bool m_customMetricsHasBeenSet = false;
 
   CustomMetricEvaluatorModelConfig m_evaluatorModelConfig;
+  bool m_customMetricsHasBeenSet = false;
   bool m_evaluatorModelConfigHasBeenSet = false;
 };
 

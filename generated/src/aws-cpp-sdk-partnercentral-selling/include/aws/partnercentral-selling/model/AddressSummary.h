@@ -118,15 +118,15 @@ class AddressSummary {
   ///@}
  private:
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_stateOrRegion;
-  bool m_stateOrRegionHasBeenSet = false;
 
   CountryCode m_countryCode{CountryCode::NOT_SET};
+  bool m_cityHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_stateOrRegionHasBeenSet = false;
   bool m_countryCodeHasBeenSet = false;
 };
 

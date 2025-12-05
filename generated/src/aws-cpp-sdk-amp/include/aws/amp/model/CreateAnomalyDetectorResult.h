@@ -118,18 +118,18 @@ class CreateAnomalyDetectorResult {
   ///@}
  private:
   Aws::String m_anomalyDetectorId;
-  bool m_anomalyDetectorIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AnomalyDetectorStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anomalyDetectorIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

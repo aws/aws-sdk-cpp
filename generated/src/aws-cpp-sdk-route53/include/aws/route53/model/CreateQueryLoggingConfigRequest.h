@@ -74,9 +74,9 @@ class CreateQueryLoggingConfigRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsLogGroupArn;
+  bool m_hostedZoneIdHasBeenSet = false;
   bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 };
 

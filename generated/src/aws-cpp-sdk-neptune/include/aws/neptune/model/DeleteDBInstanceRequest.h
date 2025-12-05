@@ -101,12 +101,12 @@ class DeleteDBInstanceRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   bool m_skipFinalSnapshot{false};
-  bool m_skipFinalSnapshotHasBeenSet = false;
 
   Aws::String m_finalDBSnapshotIdentifier;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_skipFinalSnapshotHasBeenSet = false;
   bool m_finalDBSnapshotIdentifierHasBeenSet = false;
 };
 

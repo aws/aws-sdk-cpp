@@ -222,27 +222,27 @@ class PutSlotTypeRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EnumerationValue> m_enumerationValues;
-  bool m_enumerationValuesHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   SlotValueSelectionStrategy m_valueSelectionStrategy{SlotValueSelectionStrategy::NOT_SET};
-  bool m_valueSelectionStrategyHasBeenSet = false;
 
   bool m_createVersion{false};
-  bool m_createVersionHasBeenSet = false;
 
   Aws::String m_parentSlotTypeSignature;
-  bool m_parentSlotTypeSignatureHasBeenSet = false;
 
   Aws::Vector<SlotTypeConfiguration> m_slotTypeConfigurations;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enumerationValuesHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_valueSelectionStrategyHasBeenSet = false;
+  bool m_createVersionHasBeenSet = false;
+  bool m_parentSlotTypeSignatureHasBeenSet = false;
   bool m_slotTypeConfigurationsHasBeenSet = false;
 };
 

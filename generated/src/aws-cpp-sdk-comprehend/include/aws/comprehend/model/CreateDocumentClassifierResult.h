@@ -59,9 +59,9 @@ class CreateDocumentClassifierResult {
   ///@}
  private:
   Aws::String m_documentClassifierArn;
-  bool m_documentClassifierArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentClassifierArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

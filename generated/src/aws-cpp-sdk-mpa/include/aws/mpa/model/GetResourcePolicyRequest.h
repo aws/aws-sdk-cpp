@@ -82,12 +82,12 @@ class GetResourcePolicyRequest : public MPARequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

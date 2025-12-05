@@ -71,9 +71,9 @@ class GetApplicationComponentStrategiesResult {
   ///@}
  private:
   Aws::Vector<ApplicationComponentStrategy> m_applicationComponentStrategies;
-  bool m_applicationComponentStrategiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationComponentStrategiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

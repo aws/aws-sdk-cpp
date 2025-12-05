@@ -69,9 +69,9 @@ class ReplaceTopicRuleRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   TopicRulePayload m_topicRulePayload;
+  bool m_ruleNameHasBeenSet = false;
   bool m_topicRulePayloadHasBeenSet = false;
 };
 

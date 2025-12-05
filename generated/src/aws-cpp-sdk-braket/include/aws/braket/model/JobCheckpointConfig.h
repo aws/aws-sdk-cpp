@@ -71,9 +71,9 @@ class JobCheckpointConfig {
   ///@}
  private:
   Aws::String m_localPath;
-  bool m_localPathHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_localPathHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

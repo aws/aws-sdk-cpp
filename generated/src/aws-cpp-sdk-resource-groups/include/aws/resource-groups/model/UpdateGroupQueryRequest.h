@@ -70,9 +70,9 @@ class UpdateGroupQueryRequest : public ResourceGroupsRequest {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   ResourceQuery m_resourceQuery;
+  bool m_groupHasBeenSet = false;
   bool m_resourceQueryHasBeenSet = false;
 };
 

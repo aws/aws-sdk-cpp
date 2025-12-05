@@ -168,24 +168,24 @@ class LinkedWhatsAppBusinessAccountSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_wabaId;
-  bool m_wabaIdHasBeenSet = false;
 
   RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_linkDate{};
-  bool m_linkDateHasBeenSet = false;
 
   Aws::String m_wabaName;
-  bool m_wabaNameHasBeenSet = false;
 
   Aws::Vector<WhatsAppBusinessAccountEventDestination> m_eventDestinations;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_wabaIdHasBeenSet = false;
+  bool m_registrationStatusHasBeenSet = false;
+  bool m_linkDateHasBeenSet = false;
+  bool m_wabaNameHasBeenSet = false;
   bool m_eventDestinationsHasBeenSet = false;
 };
 

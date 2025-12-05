@@ -72,9 +72,9 @@ class GetCollaborationConfiguredAudienceModelAssociationRequest : public CleanRo
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelAssociationIdentifier;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_configuredAudienceModelAssociationIdentifierHasBeenSet = false;
 };
 

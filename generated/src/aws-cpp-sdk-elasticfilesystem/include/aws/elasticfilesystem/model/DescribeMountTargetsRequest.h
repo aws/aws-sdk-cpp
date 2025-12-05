@@ -138,18 +138,18 @@ class DescribeMountTargetsRequest : public EFSRequest {
   ///@}
  private:
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_mountTargetId;
-  bool m_mountTargetIdHasBeenSet = false;
 
   Aws::String m_accessPointId;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_mountTargetIdHasBeenSet = false;
   bool m_accessPointIdHasBeenSet = false;
 };
 

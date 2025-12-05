@@ -261,39 +261,39 @@ class Host {
   ///@}
  private:
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_placementGroupId;
-  bool m_placementGroupIdHasBeenSet = false;
 
   Aws::String m_dedicatedHostId;
-  bool m_dedicatedHostIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   HostState m_hostState{HostState::NOT_SET};
-  bool m_hostStateHasBeenSet = false;
 
   Aws::String m_stateDetails;
-  bool m_stateDetailsHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
-  bool m_ec2InstanceIdHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
+  bool m_hostNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_placementGroupIdHasBeenSet = false;
+  bool m_dedicatedHostIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_hostStateHasBeenSet = false;
+  bool m_stateDetailsHasBeenSet = false;
+  bool m_ec2InstanceIdHasBeenSet = false;
   bool m_networkInterfacesHasBeenSet = false;
 };
 

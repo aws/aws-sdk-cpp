@@ -68,9 +68,9 @@ class LifecycleExecutionState {
   ///@}
  private:
   LifecycleExecutionStatus m_status{LifecycleExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

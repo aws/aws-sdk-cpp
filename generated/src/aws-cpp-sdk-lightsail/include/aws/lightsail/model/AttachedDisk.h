@@ -67,9 +67,9 @@ class AttachedDisk {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_sizeInGb{0};
+  bool m_pathHasBeenSet = false;
   bool m_sizeInGbHasBeenSet = false;
 };
 

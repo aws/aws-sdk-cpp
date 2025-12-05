@@ -79,12 +79,12 @@ class CloseCaseResult {
   ///@}
  private:
   CaseStatus m_caseStatus{CaseStatus::NOT_SET};
-  bool m_caseStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_closedDate{};
-  bool m_closedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_caseStatusHasBeenSet = false;
+  bool m_closedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

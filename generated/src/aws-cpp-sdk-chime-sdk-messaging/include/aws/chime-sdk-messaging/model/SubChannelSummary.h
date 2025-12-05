@@ -67,9 +67,9 @@ class SubChannelSummary {
   ///@}
  private:
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   int m_membershipCount{0};
+  bool m_subChannelIdHasBeenSet = false;
   bool m_membershipCountHasBeenSet = false;
 };
 

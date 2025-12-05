@@ -71,9 +71,9 @@ class OutputResolutionStackInput {
   ///@}
  private:
   PredefinedResolution m_predefined{PredefinedResolution::NOT_SET};
-  bool m_predefinedHasBeenSet = false;
 
   UserDefined m_userDefined;
+  bool m_predefinedHasBeenSet = false;
   bool m_userDefinedHasBeenSet = false;
 };
 

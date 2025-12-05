@@ -527,78 +527,78 @@ class Workgroup {
   ///@}
  private:
   int m_baseCapacity{0};
-  bool m_baseCapacityHasBeenSet = false;
 
   Aws::Vector<ConfigParameter> m_configParameters;
-  bool m_configParametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_crossAccountVpcs;
-  bool m_crossAccountVpcsHasBeenSet = false;
 
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_customDomainCertificateExpiryTime{};
-  bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::String m_ipAddressType;
-  bool m_ipAddressTypeHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_patchVersion;
-  bool m_patchVersionHasBeenSet = false;
 
   Aws::String m_pendingTrackName;
-  bool m_pendingTrackNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   PerformanceTarget m_pricePerformanceTarget;
-  bool m_pricePerformanceTargetHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   WorkgroupStatus m_status{WorkgroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_trackName;
-  bool m_trackNameHasBeenSet = false;
 
   Aws::String m_workgroupArn;
-  bool m_workgroupArnHasBeenSet = false;
 
   Aws::String m_workgroupId;
-  bool m_workgroupIdHasBeenSet = false;
 
   Aws::String m_workgroupName;
-  bool m_workgroupNameHasBeenSet = false;
 
   Aws::String m_workgroupVersion;
+  bool m_baseCapacityHasBeenSet = false;
+  bool m_configParametersHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_crossAccountVpcsHasBeenSet = false;
+  bool m_customDomainCertificateArnHasBeenSet = false;
+  bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_patchVersionHasBeenSet = false;
+  bool m_pendingTrackNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_pricePerformanceTargetHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_trackNameHasBeenSet = false;
+  bool m_workgroupArnHasBeenSet = false;
+  bool m_workgroupIdHasBeenSet = false;
+  bool m_workgroupNameHasBeenSet = false;
   bool m_workgroupVersionHasBeenSet = false;
 };
 

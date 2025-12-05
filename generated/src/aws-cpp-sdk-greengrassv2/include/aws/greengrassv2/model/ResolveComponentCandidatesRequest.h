@@ -73,9 +73,9 @@ class ResolveComponentCandidatesRequest : public GreengrassV2Request {
   ///@}
  private:
   ComponentPlatform m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<ComponentCandidate> m_componentCandidates;
+  bool m_platformHasBeenSet = false;
   bool m_componentCandidatesHasBeenSet = false;
 };
 

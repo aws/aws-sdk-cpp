@@ -76,9 +76,9 @@ class LineItemAssetInformation {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_macAddressList;
+  bool m_assetIdHasBeenSet = false;
   bool m_macAddressListHasBeenSet = false;
 };
 

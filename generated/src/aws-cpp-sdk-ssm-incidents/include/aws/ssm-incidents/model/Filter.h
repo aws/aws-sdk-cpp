@@ -70,9 +70,9 @@ class Filter {
   ///@}
  private:
   Condition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_conditionHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

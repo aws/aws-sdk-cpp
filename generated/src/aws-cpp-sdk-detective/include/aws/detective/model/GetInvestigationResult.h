@@ -216,36 +216,36 @@ class GetInvestigationResult {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_investigationId;
-  bool m_investigationIdHasBeenSet = false;
 
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   EntityType m_entityType{EntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scopeStartTime{};
-  bool m_scopeStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scopeEndTime{};
-  bool m_scopeEndTimeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_graphArnHasBeenSet = false;
+  bool m_investigationIdHasBeenSet = false;
+  bool m_entityArnHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_scopeStartTimeHasBeenSet = false;
+  bool m_scopeEndTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

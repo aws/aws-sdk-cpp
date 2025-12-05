@@ -85,12 +85,12 @@ class ListLayerVersionsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<LayerVersionsListItem> m_layerVersions;
-  bool m_layerVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_layerVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

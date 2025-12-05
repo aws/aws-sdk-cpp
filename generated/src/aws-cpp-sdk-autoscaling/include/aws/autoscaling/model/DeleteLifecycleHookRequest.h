@@ -69,9 +69,9 @@ class DeleteLifecycleHookRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_lifecycleHookName;
-  bool m_lifecycleHookNameHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
+  bool m_lifecycleHookNameHasBeenSet = false;
   bool m_autoScalingGroupNameHasBeenSet = false;
 };
 

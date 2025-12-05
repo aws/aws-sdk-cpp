@@ -122,18 +122,18 @@ class ListUsersRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_userEmail;
-  bool m_userEmailHasBeenSet = false;
 
   UserType m_userType{UserType::NOT_SET};
-  bool m_userTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_accountIdHasBeenSet = false;
+  bool m_userEmailHasBeenSet = false;
+  bool m_userTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

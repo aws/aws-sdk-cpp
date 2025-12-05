@@ -124,18 +124,18 @@ class CreateOutboundConnectionRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   DomainInformationContainer m_localDomainInfo;
-  bool m_localDomainInfoHasBeenSet = false;
 
   DomainInformationContainer m_remoteDomainInfo;
-  bool m_remoteDomainInfoHasBeenSet = false;
 
   Aws::String m_connectionAlias;
-  bool m_connectionAliasHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
-  bool m_connectionModeHasBeenSet = false;
 
   ConnectionProperties m_connectionProperties;
+  bool m_localDomainInfoHasBeenSet = false;
+  bool m_remoteDomainInfoHasBeenSet = false;
+  bool m_connectionAliasHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
   bool m_connectionPropertiesHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class SharedImagePermissions {
   ///@}
  private:
   Aws::String m_sharedAccountId;
-  bool m_sharedAccountIdHasBeenSet = false;
 
   ImagePermissions m_imagePermissions;
+  bool m_sharedAccountIdHasBeenSet = false;
   bool m_imagePermissionsHasBeenSet = false;
 };
 

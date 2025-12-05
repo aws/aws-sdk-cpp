@@ -197,30 +197,30 @@ class ProductUserSummary {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_productUserArn;
-  bool m_productUserArnHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_subscriptionStartDate;
-  bool m_subscriptionStartDateHasBeenSet = false;
 
   Aws::String m_subscriptionEndDate;
+  bool m_usernameHasBeenSet = false;
+  bool m_productHasBeenSet = false;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_productUserArnHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_subscriptionStartDateHasBeenSet = false;
   bool m_subscriptionEndDateHasBeenSet = false;
 };
 

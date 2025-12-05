@@ -91,12 +91,12 @@ class VirtualGatewayListenerTlsCertificate {
   ///@}
  private:
   VirtualGatewayListenerTlsAcmCertificate m_acm;
-  bool m_acmHasBeenSet = false;
 
   VirtualGatewayListenerTlsFileCertificate m_file;
-  bool m_fileHasBeenSet = false;
 
   VirtualGatewayListenerTlsSdsCertificate m_sds;
+  bool m_acmHasBeenSet = false;
+  bool m_fileHasBeenSet = false;
   bool m_sdsHasBeenSet = false;
 };
 

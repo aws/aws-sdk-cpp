@@ -132,21 +132,21 @@ class GetMailDomainResult {
   ///@}
  private:
   Aws::Vector<DnsRecord> m_records;
-  bool m_recordsHasBeenSet = false;
 
   bool m_isTestDomain{false};
-  bool m_isTestDomainHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   DnsRecordVerificationStatus m_ownershipVerificationStatus{DnsRecordVerificationStatus::NOT_SET};
-  bool m_ownershipVerificationStatusHasBeenSet = false;
 
   DnsRecordVerificationStatus m_dkimVerificationStatus{DnsRecordVerificationStatus::NOT_SET};
-  bool m_dkimVerificationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_isTestDomainHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_ownershipVerificationStatusHasBeenSet = false;
+  bool m_dkimVerificationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

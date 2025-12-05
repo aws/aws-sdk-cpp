@@ -86,12 +86,12 @@ class ListComponentsRequest : public GreengrassV2Request {
   ///@}
  private:
   ComponentVisibilityScope m_scope{ComponentVisibilityScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_scopeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

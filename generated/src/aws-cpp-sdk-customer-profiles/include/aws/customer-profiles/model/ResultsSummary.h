@@ -78,12 +78,12 @@ class ResultsSummary {
   ///@}
  private:
   long long m_updatedRecords{0};
-  bool m_updatedRecordsHasBeenSet = false;
 
   long long m_createdRecords{0};
-  bool m_createdRecordsHasBeenSet = false;
 
   long long m_failedRecords{0};
+  bool m_updatedRecordsHasBeenSet = false;
+  bool m_createdRecordsHasBeenSet = false;
   bool m_failedRecordsHasBeenSet = false;
 };
 

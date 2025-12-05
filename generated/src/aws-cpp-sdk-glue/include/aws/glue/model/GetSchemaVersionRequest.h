@@ -95,12 +95,12 @@ class GetSchemaVersionRequest : public GlueRequest {
   ///@}
  private:
   SchemaId m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   SchemaVersionNumber m_schemaVersionNumber;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_schemaVersionIdHasBeenSet = false;
   bool m_schemaVersionNumberHasBeenSet = false;
 };
 

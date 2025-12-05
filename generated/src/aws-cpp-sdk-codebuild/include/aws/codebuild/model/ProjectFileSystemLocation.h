@@ -146,18 +146,18 @@ class ProjectFileSystemLocation {
   ///@}
  private:
   FileSystemType m_type{FileSystemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_mountPoint;
-  bool m_mountPointHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_mountOptions;
+  bool m_typeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_mountPointHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_mountOptionsHasBeenSet = false;
 };
 

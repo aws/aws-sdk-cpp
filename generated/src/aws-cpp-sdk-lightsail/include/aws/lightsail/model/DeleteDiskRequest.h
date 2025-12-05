@@ -65,9 +65,9 @@ class DeleteDiskRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_diskName;
-  bool m_diskNameHasBeenSet = false;
 
   bool m_forceDeleteAddOns{false};
+  bool m_diskNameHasBeenSet = false;
   bool m_forceDeleteAddOnsHasBeenSet = false;
 };
 

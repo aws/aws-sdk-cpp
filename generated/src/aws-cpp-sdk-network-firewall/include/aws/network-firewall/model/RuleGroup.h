@@ -122,15 +122,15 @@ class RuleGroup {
   ///@}
  private:
   RuleVariables m_ruleVariables;
-  bool m_ruleVariablesHasBeenSet = false;
 
   ReferenceSets m_referenceSets;
-  bool m_referenceSetsHasBeenSet = false;
 
   RulesSource m_rulesSource;
-  bool m_rulesSourceHasBeenSet = false;
 
   StatefulRuleOptions m_statefulRuleOptions;
+  bool m_ruleVariablesHasBeenSet = false;
+  bool m_referenceSetsHasBeenSet = false;
+  bool m_rulesSourceHasBeenSet = false;
   bool m_statefulRuleOptionsHasBeenSet = false;
 };
 

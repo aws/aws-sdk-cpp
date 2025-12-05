@@ -66,9 +66,9 @@ class DescribeScraperResult {
   ///@}
  private:
   ScraperDescription m_scraper;
-  bool m_scraperHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scraperHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

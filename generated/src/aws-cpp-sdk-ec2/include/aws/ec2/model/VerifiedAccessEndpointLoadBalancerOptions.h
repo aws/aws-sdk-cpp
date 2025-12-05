@@ -137,18 +137,18 @@ class VerifiedAccessEndpointLoadBalancerOptions {
   ///@}
  private:
   VerifiedAccessEndpointProtocol m_protocol{VerifiedAccessEndpointProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<VerifiedAccessEndpointPortRange> m_portRanges;
+  bool m_protocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
 };
 

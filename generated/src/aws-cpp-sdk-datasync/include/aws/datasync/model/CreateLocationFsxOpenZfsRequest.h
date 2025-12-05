@@ -142,18 +142,18 @@ class CreateLocationFsxOpenZfsRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_fsxFilesystemArn;
-  bool m_fsxFilesystemArnHasBeenSet = false;
 
   FsxProtocol m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupArns;
-  bool m_securityGroupArnsHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
+  bool m_fsxFilesystemArnHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_securityGroupArnsHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

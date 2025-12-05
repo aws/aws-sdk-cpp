@@ -60,9 +60,9 @@ class DescribeStreamResult {
   ///@}
  private:
   StreamInfo m_streamInfo;
-  bool m_streamInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

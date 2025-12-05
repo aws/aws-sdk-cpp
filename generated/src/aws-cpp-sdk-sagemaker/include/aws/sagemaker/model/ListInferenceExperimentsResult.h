@@ -84,12 +84,12 @@ class ListInferenceExperimentsResult {
   ///@}
  private:
   Aws::Vector<InferenceExperimentSummary> m_inferenceExperiments;
-  bool m_inferenceExperimentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceExperimentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

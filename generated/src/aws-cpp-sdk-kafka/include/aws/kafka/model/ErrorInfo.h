@@ -76,9 +76,9 @@ class ErrorInfo {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorString;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorStringHasBeenSet = false;
 };
 

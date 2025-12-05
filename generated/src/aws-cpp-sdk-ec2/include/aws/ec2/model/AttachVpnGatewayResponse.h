@@ -65,9 +65,9 @@ class AttachVpnGatewayResponse {
   ///@}
  private:
   VpcAttachment m_vpcAttachment;
-  bool m_vpcAttachmentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcAttachmentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

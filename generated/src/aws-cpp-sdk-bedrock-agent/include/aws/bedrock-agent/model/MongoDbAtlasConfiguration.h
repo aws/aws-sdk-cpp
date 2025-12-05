@@ -182,27 +182,27 @@ class MongoDbAtlasConfiguration {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_vectorIndexName;
-  bool m_vectorIndexNameHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
-  bool m_credentialsSecretArnHasBeenSet = false;
 
   MongoDbAtlasFieldMapping m_fieldMapping;
-  bool m_fieldMappingHasBeenSet = false;
 
   Aws::String m_endpointServiceName;
-  bool m_endpointServiceNameHasBeenSet = false;
 
   Aws::String m_textIndexName;
+  bool m_endpointHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_collectionNameHasBeenSet = false;
+  bool m_vectorIndexNameHasBeenSet = false;
+  bool m_credentialsSecretArnHasBeenSet = false;
+  bool m_fieldMappingHasBeenSet = false;
+  bool m_endpointServiceNameHasBeenSet = false;
   bool m_textIndexNameHasBeenSet = false;
 };
 

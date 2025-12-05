@@ -127,21 +127,21 @@ class CreateUserProfileResult {
   ///@}
  private:
   UserProfileDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   UserProfileStatus m_status{UserProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   UserProfileType m_type{UserProfileType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detailsHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

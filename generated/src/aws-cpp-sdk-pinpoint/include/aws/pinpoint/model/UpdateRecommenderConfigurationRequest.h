@@ -66,9 +66,9 @@ class UpdateRecommenderConfigurationRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_recommenderId;
-  bool m_recommenderIdHasBeenSet = false;
 
   UpdateRecommenderConfiguration m_updateRecommenderConfiguration;
+  bool m_recommenderIdHasBeenSet = false;
   bool m_updateRecommenderConfigurationHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class CurrentPinAttributes {
   ///@}
  private:
   Aws::String m_currentPinPekIdentifier;
-  bool m_currentPinPekIdentifierHasBeenSet = false;
 
   Aws::String m_currentEncryptedPinBlock;
+  bool m_currentPinPekIdentifierHasBeenSet = false;
   bool m_currentEncryptedPinBlockHasBeenSet = false;
 };
 

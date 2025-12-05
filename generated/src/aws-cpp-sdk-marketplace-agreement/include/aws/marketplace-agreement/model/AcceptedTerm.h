@@ -281,39 +281,39 @@ class AcceptedTerm {
   ///@}
  private:
   LegalTerm m_legalTerm;
-  bool m_legalTermHasBeenSet = false;
 
   SupportTerm m_supportTerm;
-  bool m_supportTermHasBeenSet = false;
 
   RenewalTerm m_renewalTerm;
-  bool m_renewalTermHasBeenSet = false;
 
   UsageBasedPricingTerm m_usageBasedPricingTerm;
-  bool m_usageBasedPricingTermHasBeenSet = false;
 
   ConfigurableUpfrontPricingTerm m_configurableUpfrontPricingTerm;
-  bool m_configurableUpfrontPricingTermHasBeenSet = false;
 
   ByolPricingTerm m_byolPricingTerm;
-  bool m_byolPricingTermHasBeenSet = false;
 
   RecurringPaymentTerm m_recurringPaymentTerm;
-  bool m_recurringPaymentTermHasBeenSet = false;
 
   ValidityTerm m_validityTerm;
-  bool m_validityTermHasBeenSet = false;
 
   PaymentScheduleTerm m_paymentScheduleTerm;
-  bool m_paymentScheduleTermHasBeenSet = false;
 
   FreeTrialPricingTerm m_freeTrialPricingTerm;
-  bool m_freeTrialPricingTermHasBeenSet = false;
 
   FixedUpfrontPricingTerm m_fixedUpfrontPricingTerm;
-  bool m_fixedUpfrontPricingTermHasBeenSet = false;
 
   VariablePaymentTerm m_variablePaymentTerm;
+  bool m_legalTermHasBeenSet = false;
+  bool m_supportTermHasBeenSet = false;
+  bool m_renewalTermHasBeenSet = false;
+  bool m_usageBasedPricingTermHasBeenSet = false;
+  bool m_configurableUpfrontPricingTermHasBeenSet = false;
+  bool m_byolPricingTermHasBeenSet = false;
+  bool m_recurringPaymentTermHasBeenSet = false;
+  bool m_validityTermHasBeenSet = false;
+  bool m_paymentScheduleTermHasBeenSet = false;
+  bool m_freeTrialPricingTermHasBeenSet = false;
+  bool m_fixedUpfrontPricingTermHasBeenSet = false;
   bool m_variablePaymentTermHasBeenSet = false;
 };
 

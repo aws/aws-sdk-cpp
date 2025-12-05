@@ -100,12 +100,12 @@ class SnapshotJobS3Result {
   ///@}
  private:
   SnapshotS3DestinationConfiguration m_s3DestinationConfiguration;
-  bool m_s3DestinationConfigurationHasBeenSet = false;
 
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::Vector<SnapshotJobResultErrorInfo> m_errorInfo;
+  bool m_s3DestinationConfigurationHasBeenSet = false;
+  bool m_s3UriHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

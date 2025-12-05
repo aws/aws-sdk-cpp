@@ -135,21 +135,21 @@ class GetMacieSessionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
-  bool m_findingPublishingFrequencyHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   MacieStatus m_status{MacieStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_findingPublishingFrequencyHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

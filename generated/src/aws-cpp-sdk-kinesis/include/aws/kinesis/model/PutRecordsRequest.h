@@ -101,12 +101,12 @@ class PutRecordsRequest : public KinesisRequest {
   ///@}
  private:
   Aws::Vector<PutRecordsRequestEntry> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_recordsHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

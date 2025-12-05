@@ -240,30 +240,30 @@ class RecommendationPreferencesDetail {
   ///@}
  private:
   Scope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
-  bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
   InferredWorkloadTypesPreference m_inferredWorkloadTypes{InferredWorkloadTypesPreference::NOT_SET};
-  bool m_inferredWorkloadTypesHasBeenSet = false;
 
   ExternalMetricsPreference m_externalMetricsPreference;
-  bool m_externalMetricsPreferenceHasBeenSet = false;
 
   LookBackPeriodPreference m_lookBackPeriod{LookBackPeriodPreference::NOT_SET};
-  bool m_lookBackPeriodHasBeenSet = false;
 
   Aws::Vector<UtilizationPreference> m_utilizationPreferences;
-  bool m_utilizationPreferencesHasBeenSet = false;
 
   Aws::Vector<EffectivePreferredResource> m_preferredResources;
-  bool m_preferredResourcesHasBeenSet = false;
 
   SavingsEstimationMode m_savingsEstimationMode{SavingsEstimationMode::NOT_SET};
+  bool m_scopeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_enhancedInfrastructureMetricsHasBeenSet = false;
+  bool m_inferredWorkloadTypesHasBeenSet = false;
+  bool m_externalMetricsPreferenceHasBeenSet = false;
+  bool m_lookBackPeriodHasBeenSet = false;
+  bool m_utilizationPreferencesHasBeenSet = false;
+  bool m_preferredResourcesHasBeenSet = false;
   bool m_savingsEstimationModeHasBeenSet = false;
 };
 

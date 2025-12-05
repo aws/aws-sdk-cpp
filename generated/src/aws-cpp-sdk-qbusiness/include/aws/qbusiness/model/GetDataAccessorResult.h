@@ -228,36 +228,36 @@ class GetDataAccessorResult {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_dataAccessorId;
-  bool m_dataAccessorIdHasBeenSet = false;
 
   Aws::String m_dataAccessorArn;
-  bool m_dataAccessorArnHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_idcApplicationArn;
-  bool m_idcApplicationArnHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<ActionConfiguration> m_actionConfigurations;
-  bool m_actionConfigurationsHasBeenSet = false;
 
   DataAccessorAuthenticationDetail m_authenticationDetail;
-  bool m_authenticationDetailHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_displayNameHasBeenSet = false;
+  bool m_dataAccessorIdHasBeenSet = false;
+  bool m_dataAccessorArnHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_idcApplicationArnHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_actionConfigurationsHasBeenSet = false;
+  bool m_authenticationDetailHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

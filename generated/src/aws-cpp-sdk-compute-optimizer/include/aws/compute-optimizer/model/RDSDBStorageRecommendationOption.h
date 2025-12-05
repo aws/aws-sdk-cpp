@@ -128,18 +128,18 @@ class RDSDBStorageRecommendationOption {
   ///@}
  private:
   DBStorageConfiguration m_storageConfiguration;
-  bool m_storageConfigurationHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   RDSStorageSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
-  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 
   RDSEstimatedMonthlyVolumeIOPsCostVariation m_estimatedMonthlyVolumeIOPsCostVariation{RDSEstimatedMonthlyVolumeIOPsCostVariation::NOT_SET};
+  bool m_storageConfigurationHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
+  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   bool m_estimatedMonthlyVolumeIOPsCostVariationHasBeenSet = false;
 };
 

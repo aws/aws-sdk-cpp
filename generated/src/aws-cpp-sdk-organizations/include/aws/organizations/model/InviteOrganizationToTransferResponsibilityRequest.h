@@ -166,21 +166,21 @@ class InviteOrganizationToTransferResponsibilityRequest : public OrganizationsRe
   ///@}
  private:
   ResponsibilityTransferType m_type{ResponsibilityTransferType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   HandshakeParty m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_typeHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

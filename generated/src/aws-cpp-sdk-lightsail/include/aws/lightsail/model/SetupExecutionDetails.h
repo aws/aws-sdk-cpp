@@ -159,24 +159,24 @@ class SetupExecutionDetails {
   ///@}
  private:
   Aws::String m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateTime{};
-  bool m_dateTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SetupStatus m_status{SetupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_standardError;
-  bool m_standardErrorHasBeenSet = false;
 
   Aws::String m_standardOutput;
-  bool m_standardOutputHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_commandHasBeenSet = false;
+  bool m_dateTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_standardErrorHasBeenSet = false;
+  bool m_standardOutputHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

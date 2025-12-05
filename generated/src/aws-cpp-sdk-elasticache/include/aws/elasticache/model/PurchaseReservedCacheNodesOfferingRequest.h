@@ -122,15 +122,15 @@ class PurchaseReservedCacheNodesOfferingRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_reservedCacheNodesOfferingId;
-  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
 
   Aws::String m_reservedCacheNodeId;
-  bool m_reservedCacheNodeIdHasBeenSet = false;
 
   int m_cacheNodeCount{0};
-  bool m_cacheNodeCountHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
+  bool m_reservedCacheNodeIdHasBeenSet = false;
+  bool m_cacheNodeCountHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreatePlacementGroupResponse {
   ///@}
  private:
   PlacementGroup m_placementGroup;
-  bool m_placementGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_placementGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

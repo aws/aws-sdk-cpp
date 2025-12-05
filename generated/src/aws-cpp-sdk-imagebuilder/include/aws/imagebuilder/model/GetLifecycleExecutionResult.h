@@ -61,9 +61,9 @@ class GetLifecycleExecutionResult {
   ///@}
  private:
   LifecycleExecution m_lifecycleExecution;
-  bool m_lifecycleExecutionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

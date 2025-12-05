@@ -70,9 +70,9 @@ class DeregisterInstanceEventNotificationAttributesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   DeregisterInstanceTagAttributeRequest m_instanceTagAttribute;
+  bool m_dryRunHasBeenSet = false;
   bool m_instanceTagAttributeHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class ListDbSystemShapesRequest : public OdbRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

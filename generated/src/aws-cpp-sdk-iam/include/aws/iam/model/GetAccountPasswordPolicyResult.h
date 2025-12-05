@@ -67,9 +67,9 @@ class GetAccountPasswordPolicyResult {
   ///@}
  private:
   PasswordPolicy m_passwordPolicy;
-  bool m_passwordPolicyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_passwordPolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class AvailableCapacity {
   ///@}
  private:
   Aws::Vector<InstanceCapacity> m_availableInstanceCapacity;
-  bool m_availableInstanceCapacityHasBeenSet = false;
 
   int m_availableVCpus{0};
+  bool m_availableInstanceCapacityHasBeenSet = false;
   bool m_availableVCpusHasBeenSet = false;
 };
 

@@ -169,27 +169,27 @@ class PutSolNetworkPackageContentResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   PutSolNetworkPackageContentMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nsdId;
-  bool m_nsdIdHasBeenSet = false;
 
   Aws::String m_nsdName;
-  bool m_nsdNameHasBeenSet = false;
 
   Aws::String m_nsdVersion;
-  bool m_nsdVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vnfPkgIds;
-  bool m_vnfPkgIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nsdIdHasBeenSet = false;
+  bool m_nsdNameHasBeenSet = false;
+  bool m_nsdVersionHasBeenSet = false;
+  bool m_vnfPkgIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

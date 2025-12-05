@@ -150,21 +150,21 @@ class AddOn {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_snapshotTimeOfDay;
-  bool m_snapshotTimeOfDayHasBeenSet = false;
 
   Aws::String m_nextSnapshotTimeOfDay;
-  bool m_nextSnapshotTimeOfDayHasBeenSet = false;
 
   Aws::String m_threshold;
-  bool m_thresholdHasBeenSet = false;
 
   Aws::String m_duration;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_snapshotTimeOfDayHasBeenSet = false;
+  bool m_nextSnapshotTimeOfDayHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
   bool m_durationHasBeenSet = false;
 };
 

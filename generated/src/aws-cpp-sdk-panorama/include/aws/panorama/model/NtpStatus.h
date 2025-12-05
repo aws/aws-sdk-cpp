@@ -85,12 +85,12 @@ class NtpStatus {
   ///@}
  private:
   NetworkConnectionStatus m_connectionStatus{NetworkConnectionStatus::NOT_SET};
-  bool m_connectionStatusHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_ntpServerName;
+  bool m_connectionStatusHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
   bool m_ntpServerNameHasBeenSet = false;
 };
 

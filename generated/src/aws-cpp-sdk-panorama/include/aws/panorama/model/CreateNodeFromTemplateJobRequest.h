@@ -169,24 +169,24 @@ class CreateNodeFromTemplateJobRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::Vector<JobResourceTags> m_jobTags;
-  bool m_jobTagsHasBeenSet = false;
 
   Aws::String m_nodeDescription;
-  bool m_nodeDescriptionHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::String m_outputPackageName;
-  bool m_outputPackageNameHasBeenSet = false;
 
   Aws::String m_outputPackageVersion;
-  bool m_outputPackageVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_templateParameters;
-  bool m_templateParametersHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
+  bool m_jobTagsHasBeenSet = false;
+  bool m_nodeDescriptionHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_outputPackageNameHasBeenSet = false;
+  bool m_outputPackageVersionHasBeenSet = false;
+  bool m_templateParametersHasBeenSet = false;
   bool m_templateTypeHasBeenSet = false;
 };
 

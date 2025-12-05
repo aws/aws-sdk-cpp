@@ -73,9 +73,9 @@ class UpdateApplicationLayerAutomaticResponseRequest : public ShieldRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ResponseAction m_action;
+  bool m_resourceArnHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

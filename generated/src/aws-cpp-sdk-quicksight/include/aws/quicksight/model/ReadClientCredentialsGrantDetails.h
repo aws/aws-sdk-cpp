@@ -70,9 +70,9 @@ class ReadClientCredentialsGrantDetails {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_tokenEndpoint;
+  bool m_clientIdHasBeenSet = false;
   bool m_tokenEndpointHasBeenSet = false;
 };
 

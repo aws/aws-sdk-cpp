@@ -165,24 +165,24 @@ class GenerateMacEmvPinChangeRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_newPinPekIdentifier;
-  bool m_newPinPekIdentifierHasBeenSet = false;
 
   Aws::String m_newEncryptedPinBlock;
-  bool m_newEncryptedPinBlockHasBeenSet = false;
 
   PinBlockFormatForEmvPinChange m_pinBlockFormat{PinBlockFormatForEmvPinChange::NOT_SET};
-  bool m_pinBlockFormatHasBeenSet = false;
 
   Aws::String m_secureMessagingIntegrityKeyIdentifier;
-  bool m_secureMessagingIntegrityKeyIdentifierHasBeenSet = false;
 
   Aws::String m_secureMessagingConfidentialityKeyIdentifier;
-  bool m_secureMessagingConfidentialityKeyIdentifierHasBeenSet = false;
 
   Aws::String m_messageData;
-  bool m_messageDataHasBeenSet = false;
 
   DerivationMethodAttributes m_derivationMethodAttributes;
+  bool m_newPinPekIdentifierHasBeenSet = false;
+  bool m_newEncryptedPinBlockHasBeenSet = false;
+  bool m_pinBlockFormatHasBeenSet = false;
+  bool m_secureMessagingIntegrityKeyIdentifierHasBeenSet = false;
+  bool m_secureMessagingConfidentialityKeyIdentifierHasBeenSet = false;
+  bool m_messageDataHasBeenSet = false;
   bool m_derivationMethodAttributesHasBeenSet = false;
 };
 

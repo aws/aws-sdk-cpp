@@ -153,21 +153,21 @@ class InsightRule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   bool m_managedRule{false};
-  bool m_managedRuleHasBeenSet = false;
 
   bool m_applyOnTransformedLogs{false};
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_managedRuleHasBeenSet = false;
   bool m_applyOnTransformedLogsHasBeenSet = false;
 };
 

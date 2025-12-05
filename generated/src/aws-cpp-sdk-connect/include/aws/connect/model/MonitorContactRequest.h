@@ -134,18 +134,18 @@ class MonitorContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<MonitorCapability> m_allowedMonitorCapabilities;
-  bool m_allowedMonitorCapabilitiesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_allowedMonitorCapabilitiesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

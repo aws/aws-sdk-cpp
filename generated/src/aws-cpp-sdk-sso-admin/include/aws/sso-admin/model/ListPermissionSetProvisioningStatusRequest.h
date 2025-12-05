@@ -107,15 +107,15 @@ class ListPermissionSetProvisioningStatusRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   OperationStatusFilter m_filter;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

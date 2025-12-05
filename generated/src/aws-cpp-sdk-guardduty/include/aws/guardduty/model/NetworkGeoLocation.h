@@ -101,15 +101,15 @@ class NetworkGeoLocation {
   ///@}
  private:
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   double m_latitude{0.0};
-  bool m_latitudeHasBeenSet = false;
 
   double m_longitude{0.0};
+  bool m_cityHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_latitudeHasBeenSet = false;
   bool m_longitudeHasBeenSet = false;
 };
 

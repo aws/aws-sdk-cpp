@@ -102,15 +102,15 @@ class SelectResourceConfigResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_results;
-  bool m_resultsHasBeenSet = false;
 
   QueryInfo m_queryInfo;
-  bool m_queryInfoHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
+  bool m_queryInfoHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

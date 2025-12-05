@@ -106,15 +106,15 @@ class CreatePackageRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   PackageType m_packageType{PackageType::NOT_SET};
-  bool m_packageTypeHasBeenSet = false;
 
   Aws::String m_packageDescription;
-  bool m_packageDescriptionHasBeenSet = false;
 
   PackageSource m_packageSource;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageTypeHasBeenSet = false;
+  bool m_packageDescriptionHasBeenSet = false;
   bool m_packageSourceHasBeenSet = false;
 };
 

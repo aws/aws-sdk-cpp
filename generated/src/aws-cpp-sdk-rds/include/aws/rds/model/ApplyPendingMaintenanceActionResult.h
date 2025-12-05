@@ -60,9 +60,9 @@ class ApplyPendingMaintenanceActionResult {
   ///@}
  private:
   ResourcePendingMaintenanceActions m_resourcePendingMaintenanceActions;
-  bool m_resourcePendingMaintenanceActionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resourcePendingMaintenanceActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

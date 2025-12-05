@@ -68,9 +68,9 @@ class ListMobileDeviceAccessRulesResult {
   ///@}
  private:
   Aws::Vector<MobileDeviceAccessRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

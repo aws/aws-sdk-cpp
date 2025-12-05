@@ -100,12 +100,12 @@ class Association {
   ///@}
  private:
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_customDomainCertificateExpiryDate{};
-  bool m_customDomainCertificateExpiryDateHasBeenSet = false;
 
   Aws::Vector<CertificateAssociation> m_certificateAssociations;
+  bool m_customDomainCertificateArnHasBeenSet = false;
+  bool m_customDomainCertificateExpiryDateHasBeenSet = false;
   bool m_certificateAssociationsHasBeenSet = false;
 };
 

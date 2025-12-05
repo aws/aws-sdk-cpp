@@ -116,15 +116,15 @@ class DataProtection {
   ///@}
  private:
   FieldToProtect m_field;
-  bool m_fieldHasBeenSet = false;
 
   DataProtectionAction m_action{DataProtectionAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   bool m_excludeRuleMatchDetails{false};
-  bool m_excludeRuleMatchDetailsHasBeenSet = false;
 
   bool m_excludeRateBasedDetails{false};
+  bool m_fieldHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_excludeRuleMatchDetailsHasBeenSet = false;
   bool m_excludeRateBasedDetailsHasBeenSet = false;
 };
 

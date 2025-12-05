@@ -128,18 +128,18 @@ class ConflictException {
   ///@}
  private:
   Aws::Vector<ConflictExceptionErrorArgument> m_errorArguments;
-  bool m_errorArgumentsHasBeenSet = false;
 
   Aws::String m_errorId;
-  bool m_errorIdHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_errorArgumentsHasBeenSet = false;
+  bool m_errorIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

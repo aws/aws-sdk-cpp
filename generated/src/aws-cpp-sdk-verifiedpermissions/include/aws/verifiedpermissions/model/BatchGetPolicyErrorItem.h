@@ -104,15 +104,15 @@ class BatchGetPolicyErrorItem {
   ///@}
  private:
   BatchGetPolicyErrorCode m_code{BatchGetPolicyErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_codeHasBeenSet = false;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

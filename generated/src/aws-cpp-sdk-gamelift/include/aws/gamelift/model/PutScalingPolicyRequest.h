@@ -245,33 +245,33 @@ class PutScalingPolicyRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   int m_scalingAdjustment{0};
-  bool m_scalingAdjustmentHasBeenSet = false;
 
   ScalingAdjustmentType m_scalingAdjustmentType{ScalingAdjustmentType::NOT_SET};
-  bool m_scalingAdjustmentTypeHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   ComparisonOperatorType m_comparisonOperator{ComparisonOperatorType::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   MetricName m_metricName{MetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   TargetConfiguration m_targetConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_scalingAdjustmentHasBeenSet = false;
+  bool m_scalingAdjustmentTypeHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
 };
 

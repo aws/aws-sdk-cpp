@@ -84,12 +84,12 @@ class ListCellsResult {
   ///@}
  private:
   Aws::Vector<CellOutput> m_cells;
-  bool m_cellsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cellsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -150,24 +150,24 @@ class GetDomainMaintenanceStatusResult {
   ///@}
  private:
   MaintenanceStatus m_status{MaintenanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   MaintenanceType m_action{MaintenanceType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

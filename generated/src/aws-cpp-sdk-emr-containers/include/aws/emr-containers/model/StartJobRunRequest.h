@@ -244,36 +244,36 @@ class StartJobRunRequest : public EMRContainersRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_virtualClusterId;
-  bool m_virtualClusterIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   JobDriver m_jobDriver;
-  bool m_jobDriverHasBeenSet = false;
 
   ConfigurationOverrides m_configurationOverrides;
-  bool m_configurationOverridesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_jobTemplateId;
-  bool m_jobTemplateIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_jobTemplateParameters;
-  bool m_jobTemplateParametersHasBeenSet = false;
 
   RetryPolicyConfiguration m_retryPolicyConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_virtualClusterIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_jobDriverHasBeenSet = false;
+  bool m_configurationOverridesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_jobTemplateIdHasBeenSet = false;
+  bool m_jobTemplateParametersHasBeenSet = false;
   bool m_retryPolicyConfigurationHasBeenSet = false;
 };
 

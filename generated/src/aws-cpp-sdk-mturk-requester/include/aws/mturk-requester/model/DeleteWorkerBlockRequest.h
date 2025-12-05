@@ -68,9 +68,9 @@ class DeleteWorkerBlockRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_workerIdHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

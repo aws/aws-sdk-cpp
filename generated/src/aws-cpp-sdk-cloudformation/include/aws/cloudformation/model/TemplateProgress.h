@@ -96,15 +96,15 @@ class TemplateProgress {
   ///@}
  private:
   int m_resourcesSucceeded{0};
-  bool m_resourcesSucceededHasBeenSet = false;
 
   int m_resourcesFailed{0};
-  bool m_resourcesFailedHasBeenSet = false;
 
   int m_resourcesProcessing{0};
-  bool m_resourcesProcessingHasBeenSet = false;
 
   int m_resourcesPending{0};
+  bool m_resourcesSucceededHasBeenSet = false;
+  bool m_resourcesFailedHasBeenSet = false;
+  bool m_resourcesProcessingHasBeenSet = false;
   bool m_resourcesPendingHasBeenSet = false;
 };
 

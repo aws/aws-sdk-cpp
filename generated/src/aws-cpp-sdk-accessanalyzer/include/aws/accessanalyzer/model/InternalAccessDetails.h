@@ -257,30 +257,30 @@ class InternalAccessDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_principalOwnerAccount;
-  bool m_principalOwnerAccountHasBeenSet = false;
 
   InternalAccessType m_accessType{InternalAccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::Vector<FindingSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   ResourceControlPolicyRestriction m_resourceControlPolicyRestriction{ResourceControlPolicyRestriction::NOT_SET};
-  bool m_resourceControlPolicyRestrictionHasBeenSet = false;
 
   ServiceControlPolicyRestriction m_serviceControlPolicyRestriction{ServiceControlPolicyRestriction::NOT_SET};
+  bool m_actionHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_principalOwnerAccountHasBeenSet = false;
+  bool m_accessTypeHasBeenSet = false;
+  bool m_principalTypeHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_resourceControlPolicyRestrictionHasBeenSet = false;
   bool m_serviceControlPolicyRestrictionHasBeenSet = false;
 };
 

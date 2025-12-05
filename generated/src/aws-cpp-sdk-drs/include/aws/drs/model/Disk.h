@@ -67,9 +67,9 @@ class Disk {
   ///@}
  private:
   long long m_bytes{0};
-  bool m_bytesHasBeenSet = false;
 
   Aws::String m_deviceName;
+  bool m_bytesHasBeenSet = false;
   bool m_deviceNameHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class ListCloudFrontOriginAccessIdentities2020_05_31Result {
   ///@}
  private:
   CloudFrontOriginAccessIdentityList m_cloudFrontOriginAccessIdentityList;
-  bool m_cloudFrontOriginAccessIdentityListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudFrontOriginAccessIdentityListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -206,15 +206,15 @@ class RegisterInstanceRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_creatorRequestIdHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = true;
   bool m_attributesHasBeenSet = false;
 };
 

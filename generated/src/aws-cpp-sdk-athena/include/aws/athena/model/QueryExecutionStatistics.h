@@ -216,33 +216,33 @@ class QueryExecutionStatistics {
   ///@}
  private:
   long long m_engineExecutionTimeInMillis{0};
-  bool m_engineExecutionTimeInMillisHasBeenSet = false;
 
   long long m_dataScannedInBytes{0};
-  bool m_dataScannedInBytesHasBeenSet = false;
 
   Aws::String m_dataManifestLocation;
-  bool m_dataManifestLocationHasBeenSet = false;
 
   long long m_totalExecutionTimeInMillis{0};
-  bool m_totalExecutionTimeInMillisHasBeenSet = false;
 
   long long m_queryQueueTimeInMillis{0};
-  bool m_queryQueueTimeInMillisHasBeenSet = false;
 
   long long m_servicePreProcessingTimeInMillis{0};
-  bool m_servicePreProcessingTimeInMillisHasBeenSet = false;
 
   long long m_queryPlanningTimeInMillis{0};
-  bool m_queryPlanningTimeInMillisHasBeenSet = false;
 
   long long m_serviceProcessingTimeInMillis{0};
-  bool m_serviceProcessingTimeInMillisHasBeenSet = false;
 
   ResultReuseInformation m_resultReuseInformation;
-  bool m_resultReuseInformationHasBeenSet = false;
 
   double m_dpuCount{0.0};
+  bool m_engineExecutionTimeInMillisHasBeenSet = false;
+  bool m_dataScannedInBytesHasBeenSet = false;
+  bool m_dataManifestLocationHasBeenSet = false;
+  bool m_totalExecutionTimeInMillisHasBeenSet = false;
+  bool m_queryQueueTimeInMillisHasBeenSet = false;
+  bool m_servicePreProcessingTimeInMillisHasBeenSet = false;
+  bool m_queryPlanningTimeInMillisHasBeenSet = false;
+  bool m_serviceProcessingTimeInMillisHasBeenSet = false;
+  bool m_resultReuseInformationHasBeenSet = false;
   bool m_dpuCountHasBeenSet = false;
 };
 

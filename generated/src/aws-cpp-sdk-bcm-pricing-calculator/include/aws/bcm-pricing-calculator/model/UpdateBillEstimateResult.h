@@ -235,39 +235,39 @@ class UpdateBillEstimateResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   BillEstimateStatus m_status{BillEstimateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   BillInterval m_billInterval;
-  bool m_billIntervalHasBeenSet = false;
 
   BillEstimateCostSummary m_costSummary;
-  bool m_costSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
-  bool m_groupSharingPreferenceHasBeenSet = false;
 
   Aws::String m_costCategoryGroupSharingPreferenceArn;
-  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_costCategoryGroupSharingPreferenceEffectiveDate{};
-  bool m_costCategoryGroupSharingPreferenceEffectiveDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_billIntervalHasBeenSet = false;
+  bool m_costSummaryHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_groupSharingPreferenceHasBeenSet = false;
+  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
+  bool m_costCategoryGroupSharingPreferenceEffectiveDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

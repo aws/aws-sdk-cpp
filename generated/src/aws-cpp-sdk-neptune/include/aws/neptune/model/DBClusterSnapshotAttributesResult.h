@@ -84,9 +84,9 @@ class DBClusterSnapshotAttributesResult {
   ///@}
  private:
   Aws::String m_dBClusterSnapshotIdentifier;
-  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
   Aws::Vector<DBClusterSnapshotAttribute> m_dBClusterSnapshotAttributes;
+  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
   bool m_dBClusterSnapshotAttributesHasBeenSet = false;
 };
 

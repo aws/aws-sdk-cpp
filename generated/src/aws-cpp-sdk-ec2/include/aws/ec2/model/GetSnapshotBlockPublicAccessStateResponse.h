@@ -87,12 +87,12 @@ class GetSnapshotBlockPublicAccessStateResponse {
   ///@}
  private:
   SnapshotBlockPublicAccessState m_state{SnapshotBlockPublicAccessState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stateHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

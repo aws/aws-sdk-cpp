@@ -196,30 +196,30 @@ class OptionSetting {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_applyType;
-  bool m_applyTypeHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   bool m_isModifiable{false};
-  bool m_isModifiableHasBeenSet = false;
 
   bool m_isCollection{false};
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_applyTypeHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_isModifiableHasBeenSet = false;
   bool m_isCollectionHasBeenSet = false;
 };
 

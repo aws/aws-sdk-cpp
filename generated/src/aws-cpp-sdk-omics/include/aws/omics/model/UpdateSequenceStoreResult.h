@@ -268,45 +268,45 @@ class UpdateSequenceStoreResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SseConfig m_sseConfig;
-  bool m_sseConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_propagatedSetLevelTags;
-  bool m_propagatedSetLevelTagsHasBeenSet = false;
 
   SequenceStoreStatus m_status{SequenceStoreStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_fallbackLocation;
-  bool m_fallbackLocationHasBeenSet = false;
 
   SequenceStoreS3Access m_s3Access;
-  bool m_s3AccessHasBeenSet = false;
 
   ETagAlgorithmFamily m_eTagAlgorithmFamily{ETagAlgorithmFamily::NOT_SET};
-  bool m_eTagAlgorithmFamilyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sseConfigHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_propagatedSetLevelTagsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_fallbackLocationHasBeenSet = false;
+  bool m_s3AccessHasBeenSet = false;
+  bool m_eTagAlgorithmFamilyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

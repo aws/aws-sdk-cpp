@@ -66,9 +66,9 @@ class DeleteStageRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_stageName;
+  bool m_apiIdHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;
 };
 

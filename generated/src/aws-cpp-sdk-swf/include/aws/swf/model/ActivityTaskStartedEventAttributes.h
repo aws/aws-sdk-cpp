@@ -70,9 +70,9 @@ class ActivityTaskStartedEventAttributes {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   long long m_scheduledEventId{0};
+  bool m_identityHasBeenSet = false;
   bool m_scheduledEventIdHasBeenSet = false;
 };
 

@@ -276,45 +276,45 @@ class GetPackageVersionResult {
   ///@}
  private:
   Aws::String m_packageVersionArn;
-  bool m_packageVersionArnHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   PackageVersionArtifact m_artifact;
-  bool m_artifactHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorReason;
-  bool m_errorReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Sbom m_sbom;
-  bool m_sbomHasBeenSet = false;
 
   SbomValidationStatus m_sbomValidationStatus{SbomValidationStatus::NOT_SET};
-  bool m_sbomValidationStatusHasBeenSet = false;
 
   Aws::String m_recipe;
-  bool m_recipeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageVersionArnHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_artifactHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorReasonHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_sbomHasBeenSet = false;
+  bool m_sbomValidationStatusHasBeenSet = false;
+  bool m_recipeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

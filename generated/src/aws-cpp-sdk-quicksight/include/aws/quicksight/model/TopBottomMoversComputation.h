@@ -177,27 +177,27 @@ class TopBottomMoversComputation {
   ///@}
  private:
   Aws::String m_computationId;
-  bool m_computationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DimensionField m_time;
-  bool m_timeHasBeenSet = false;
 
   DimensionField m_category;
-  bool m_categoryHasBeenSet = false;
 
   MeasureField m_value;
-  bool m_valueHasBeenSet = false;
 
   int m_moverSize{0};
-  bool m_moverSizeHasBeenSet = false;
 
   TopBottomSortOrder m_sortOrder{TopBottomSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   TopBottomComputationType m_type{TopBottomComputationType::NOT_SET};
+  bool m_computationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_moverSizeHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

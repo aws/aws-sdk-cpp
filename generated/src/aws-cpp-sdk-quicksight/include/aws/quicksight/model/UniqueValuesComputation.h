@@ -87,12 +87,12 @@ class UniqueValuesComputation {
   ///@}
  private:
   Aws::String m_computationId;
-  bool m_computationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DimensionField m_category;
+  bool m_computationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
 };
 

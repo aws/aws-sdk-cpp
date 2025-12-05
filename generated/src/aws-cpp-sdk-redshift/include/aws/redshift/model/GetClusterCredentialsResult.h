@@ -108,15 +108,15 @@ class GetClusterCredentialsResult {
   ///@}
  private:
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::String m_dbPassword;
-  bool m_dbPasswordHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
-  bool m_expirationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dbUserHasBeenSet = false;
+  bool m_dbPasswordHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListResourceServersResult {
   ///@}
  private:
   Aws::Vector<ResourceServerType> m_resourceServers;
-  bool m_resourceServersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceServersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

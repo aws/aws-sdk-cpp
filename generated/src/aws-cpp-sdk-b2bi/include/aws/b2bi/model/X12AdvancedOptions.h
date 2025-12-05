@@ -74,9 +74,9 @@ class X12AdvancedOptions {
   ///@}
  private:
   X12SplitOptions m_splitOptions;
-  bool m_splitOptionsHasBeenSet = false;
 
   X12ValidationOptions m_validationOptions;
+  bool m_splitOptionsHasBeenSet = false;
   bool m_validationOptionsHasBeenSet = false;
 };
 

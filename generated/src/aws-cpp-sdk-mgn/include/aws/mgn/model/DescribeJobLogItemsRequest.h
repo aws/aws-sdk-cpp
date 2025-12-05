@@ -99,15 +99,15 @@ class DescribeJobLogItemsRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_jobID;
-  bool m_jobIDHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_accountIDHasBeenSet = false;
+  bool m_jobIDHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

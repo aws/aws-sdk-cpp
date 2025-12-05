@@ -60,9 +60,9 @@ class GetProfileTemplateResult {
   ///@}
  private:
   ProfileTemplate m_profileTemplate;
-  bool m_profileTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

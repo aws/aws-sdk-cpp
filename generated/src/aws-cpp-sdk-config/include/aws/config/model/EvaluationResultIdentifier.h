@@ -92,12 +92,12 @@ class EvaluationResultIdentifier {
   ///@}
  private:
   EvaluationResultQualifier m_evaluationResultQualifier;
-  bool m_evaluationResultQualifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_orderingTimestamp{};
-  bool m_orderingTimestampHasBeenSet = false;
 
   Aws::String m_resourceEvaluationId;
+  bool m_evaluationResultQualifierHasBeenSet = false;
+  bool m_orderingTimestampHasBeenSet = false;
   bool m_resourceEvaluationIdHasBeenSet = false;
 };
 

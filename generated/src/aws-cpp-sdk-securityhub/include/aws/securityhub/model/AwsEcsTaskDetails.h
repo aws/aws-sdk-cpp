@@ -214,30 +214,30 @@ class AwsEcsTaskDetails {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_taskDefinitionArn;
-  bool m_taskDefinitionArnHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_startedAt;
-  bool m_startedAtHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskVolumeDetails> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::Vector<AwsEcsContainerDetails> m_containers;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_taskDefinitionArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
   bool m_containersHasBeenSet = false;
 };
 

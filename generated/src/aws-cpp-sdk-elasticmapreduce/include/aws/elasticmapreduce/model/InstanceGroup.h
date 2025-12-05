@@ -389,57 +389,57 @@ class InstanceGroup {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   MarketType m_market{MarketType::NOT_SET};
-  bool m_marketHasBeenSet = false;
 
   InstanceGroupType m_instanceGroupType{InstanceGroupType::NOT_SET};
-  bool m_instanceGroupTypeHasBeenSet = false;
 
   Aws::String m_bidPrice;
-  bool m_bidPriceHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_requestedInstanceCount{0};
-  bool m_requestedInstanceCountHasBeenSet = false;
 
   int m_runningInstanceCount{0};
-  bool m_runningInstanceCountHasBeenSet = false;
 
   InstanceGroupStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Configuration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   long long m_configurationsVersion{0};
-  bool m_configurationsVersionHasBeenSet = false;
 
   Aws::Vector<Configuration> m_lastSuccessfullyAppliedConfigurations;
-  bool m_lastSuccessfullyAppliedConfigurationsHasBeenSet = false;
 
   long long m_lastSuccessfullyAppliedConfigurationsVersion{0};
-  bool m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet = false;
 
   Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
-  bool m_ebsBlockDevicesHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   ShrinkPolicy m_shrinkPolicy;
-  bool m_shrinkPolicyHasBeenSet = false;
 
   AutoScalingPolicyDescription m_autoScalingPolicy;
-  bool m_autoScalingPolicyHasBeenSet = false;
 
   Aws::String m_customAmiId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_marketHasBeenSet = false;
+  bool m_instanceGroupTypeHasBeenSet = false;
+  bool m_bidPriceHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_requestedInstanceCountHasBeenSet = false;
+  bool m_runningInstanceCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
+  bool m_configurationsVersionHasBeenSet = false;
+  bool m_lastSuccessfullyAppliedConfigurationsHasBeenSet = false;
+  bool m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet = false;
+  bool m_ebsBlockDevicesHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_shrinkPolicyHasBeenSet = false;
+  bool m_autoScalingPolicyHasBeenSet = false;
   bool m_customAmiIdHasBeenSet = false;
 };
 

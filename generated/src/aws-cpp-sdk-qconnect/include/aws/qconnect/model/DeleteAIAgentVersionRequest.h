@@ -83,12 +83,12 @@ class DeleteAIAgentVersionRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiAgentIdHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

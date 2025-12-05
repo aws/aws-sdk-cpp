@@ -117,15 +117,15 @@ class WriteRecordsRequest : public TimestreamWriteRequest {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Record m_commonAttributes;
-  bool m_commonAttributesHasBeenSet = false;
 
   Aws::Vector<Record> m_records;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_commonAttributesHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
 };
 

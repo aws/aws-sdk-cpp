@@ -70,9 +70,9 @@ class DomainJoinInfo {
   ///@}
  private:
   Aws::String m_directoryName;
-  bool m_directoryNameHasBeenSet = false;
 
   Aws::String m_organizationalUnitDistinguishedName;
+  bool m_directoryNameHasBeenSet = false;
   bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
 };
 

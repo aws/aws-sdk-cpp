@@ -84,12 +84,12 @@ class ListReadSetsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ReadSetListItem> m_readSets;
-  bool m_readSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_readSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -264,42 +264,42 @@ class FlowSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_flowId;
-  bool m_flowIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   FlowPublishState m_publishState{FlowPublishState::NOT_SET};
-  bool m_publishStateHasBeenSet = false;
 
   int m_runCount{0};
-  bool m_runCountHasBeenSet = false;
 
   int m_userCount{0};
-  bool m_userCountHasBeenSet = false;
 
   Aws::String m_lastPublishedBy;
-  bool m_lastPublishedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastPublishedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_flowIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_publishStateHasBeenSet = false;
+  bool m_runCountHasBeenSet = false;
+  bool m_userCountHasBeenSet = false;
+  bool m_lastPublishedByHasBeenSet = false;
   bool m_lastPublishedAtHasBeenSet = false;
 };
 

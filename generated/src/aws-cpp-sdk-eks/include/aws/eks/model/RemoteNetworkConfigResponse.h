@@ -85,9 +85,9 @@ class RemoteNetworkConfigResponse {
   ///@}
  private:
   Aws::Vector<RemoteNodeNetwork> m_remoteNodeNetworks;
-  bool m_remoteNodeNetworksHasBeenSet = false;
 
   Aws::Vector<RemotePodNetwork> m_remotePodNetworks;
+  bool m_remoteNodeNetworksHasBeenSet = false;
   bool m_remotePodNetworksHasBeenSet = false;
 };
 

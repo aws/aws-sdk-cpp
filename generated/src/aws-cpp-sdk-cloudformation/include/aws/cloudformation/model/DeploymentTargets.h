@@ -154,15 +154,15 @@ class DeploymentTargets {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::String m_accountsUrl;
-  bool m_accountsUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitIds;
-  bool m_organizationalUnitIdsHasBeenSet = false;
 
   AccountFilterType m_accountFilterType{AccountFilterType::NOT_SET};
+  bool m_accountsHasBeenSet = false;
+  bool m_accountsUrlHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
   bool m_accountFilterTypeHasBeenSet = false;
 };
 

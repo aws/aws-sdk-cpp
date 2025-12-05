@@ -76,9 +76,9 @@ class BatchDetectTargetedSentimentRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_textList;
-  bool m_textListHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
+  bool m_textListHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

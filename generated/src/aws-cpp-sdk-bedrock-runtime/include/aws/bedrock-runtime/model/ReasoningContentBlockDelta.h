@@ -93,12 +93,12 @@ class ReasoningContentBlockDelta {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_redactedContent{};
-  bool m_redactedContentHasBeenSet = false;
 
   Aws::String m_signature;
+  bool m_textHasBeenSet = false;
+  bool m_redactedContentHasBeenSet = false;
   bool m_signatureHasBeenSet = false;
 };
 

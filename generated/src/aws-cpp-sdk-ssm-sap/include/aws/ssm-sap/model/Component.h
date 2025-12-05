@@ -386,57 +386,57 @@ class Component {
   ///@}
  private:
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::String m_sid;
-  bool m_sidHasBeenSet = false;
 
   Aws::String m_systemNumber;
-  bool m_systemNumberHasBeenSet = false;
 
   Aws::String m_parentComponent;
-  bool m_parentComponentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_childComponents;
-  bool m_childComponentsHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   ComponentType m_componentType{ComponentType::NOT_SET};
-  bool m_componentTypeHasBeenSet = false;
 
   ComponentStatus m_status{ComponentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_sapHostname;
-  bool m_sapHostnameHasBeenSet = false;
 
   Aws::String m_sapFeature;
-  bool m_sapFeatureHasBeenSet = false;
 
   Aws::String m_sapKernelVersion;
-  bool m_sapKernelVersionHasBeenSet = false;
 
   Aws::String m_hdbVersion;
-  bool m_hdbVersionHasBeenSet = false;
 
   Resilience m_resilience;
-  bool m_resilienceHasBeenSet = false;
 
   AssociatedHost m_associatedHost;
-  bool m_associatedHostHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_databases;
-  bool m_databasesHasBeenSet = false;
 
   DatabaseConnection m_databaseConnection;
-  bool m_databaseConnectionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_componentIdHasBeenSet = false;
+  bool m_sidHasBeenSet = false;
+  bool m_systemNumberHasBeenSet = false;
+  bool m_parentComponentHasBeenSet = false;
+  bool m_childComponentsHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sapHostnameHasBeenSet = false;
+  bool m_sapFeatureHasBeenSet = false;
+  bool m_sapKernelVersionHasBeenSet = false;
+  bool m_hdbVersionHasBeenSet = false;
+  bool m_resilienceHasBeenSet = false;
+  bool m_associatedHostHasBeenSet = false;
+  bool m_databasesHasBeenSet = false;
+  bool m_databaseConnectionHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

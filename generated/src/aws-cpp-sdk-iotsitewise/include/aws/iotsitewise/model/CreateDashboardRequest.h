@@ -156,21 +156,21 @@ class CreateDashboardRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_dashboardName;
-  bool m_dashboardNameHasBeenSet = false;
 
   Aws::String m_dashboardDescription;
-  bool m_dashboardDescriptionHasBeenSet = false;
 
   Aws::String m_dashboardDefinition;
-  bool m_dashboardDefinitionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_projectIdHasBeenSet = false;
+  bool m_dashboardNameHasBeenSet = false;
+  bool m_dashboardDescriptionHasBeenSet = false;
+  bool m_dashboardDefinitionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

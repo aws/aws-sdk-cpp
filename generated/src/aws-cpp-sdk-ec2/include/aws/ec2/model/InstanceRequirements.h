@@ -763,81 +763,81 @@ class InstanceRequirements {
   ///@}
  private:
   VCpuCountRange m_vCpuCount;
-  bool m_vCpuCountHasBeenSet = false;
 
   MemoryMiB m_memoryMiB;
-  bool m_memoryMiBHasBeenSet = false;
 
   Aws::Vector<CpuManufacturer> m_cpuManufacturers;
-  bool m_cpuManufacturersHasBeenSet = false;
 
   MemoryGiBPerVCpu m_memoryGiBPerVCpu;
-  bool m_memoryGiBPerVCpuHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedInstanceTypes;
-  bool m_excludedInstanceTypesHasBeenSet = false;
 
   Aws::Vector<InstanceGeneration> m_instanceGenerations;
-  bool m_instanceGenerationsHasBeenSet = false;
 
   int m_spotMaxPricePercentageOverLowestPrice{0};
-  bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
   int m_onDemandMaxPricePercentageOverLowestPrice{0};
-  bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
   BareMetal m_bareMetal{BareMetal::NOT_SET};
-  bool m_bareMetalHasBeenSet = false;
 
   BurstablePerformance m_burstablePerformance{BurstablePerformance::NOT_SET};
-  bool m_burstablePerformanceHasBeenSet = false;
 
   bool m_requireHibernateSupport{false};
-  bool m_requireHibernateSupportHasBeenSet = false;
 
   NetworkInterfaceCount m_networkInterfaceCount;
-  bool m_networkInterfaceCountHasBeenSet = false;
 
   LocalStorage m_localStorage{LocalStorage::NOT_SET};
-  bool m_localStorageHasBeenSet = false;
 
   Aws::Vector<LocalStorageType> m_localStorageTypes;
-  bool m_localStorageTypesHasBeenSet = false;
 
   TotalLocalStorageGB m_totalLocalStorageGB;
-  bool m_totalLocalStorageGBHasBeenSet = false;
 
   BaselineEbsBandwidthMbps m_baselineEbsBandwidthMbps;
-  bool m_baselineEbsBandwidthMbpsHasBeenSet = false;
 
   Aws::Vector<AcceleratorType> m_acceleratorTypes;
-  bool m_acceleratorTypesHasBeenSet = false;
 
   AcceleratorCount m_acceleratorCount;
-  bool m_acceleratorCountHasBeenSet = false;
 
   Aws::Vector<AcceleratorManufacturer> m_acceleratorManufacturers;
-  bool m_acceleratorManufacturersHasBeenSet = false;
 
   Aws::Vector<AcceleratorName> m_acceleratorNames;
-  bool m_acceleratorNamesHasBeenSet = false;
 
   AcceleratorTotalMemoryMiB m_acceleratorTotalMemoryMiB;
-  bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
 
   NetworkBandwidthGbps m_networkBandwidthGbps;
-  bool m_networkBandwidthGbpsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedInstanceTypes;
-  bool m_allowedInstanceTypesHasBeenSet = false;
 
   int m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice{0};
-  bool m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = false;
 
   BaselinePerformanceFactors m_baselinePerformanceFactors;
-  bool m_baselinePerformanceFactorsHasBeenSet = false;
 
   bool m_requireEncryptionInTransit{false};
+  bool m_vCpuCountHasBeenSet = false;
+  bool m_memoryMiBHasBeenSet = false;
+  bool m_cpuManufacturersHasBeenSet = false;
+  bool m_memoryGiBPerVCpuHasBeenSet = false;
+  bool m_excludedInstanceTypesHasBeenSet = false;
+  bool m_instanceGenerationsHasBeenSet = false;
+  bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
+  bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
+  bool m_bareMetalHasBeenSet = false;
+  bool m_burstablePerformanceHasBeenSet = false;
+  bool m_requireHibernateSupportHasBeenSet = false;
+  bool m_networkInterfaceCountHasBeenSet = false;
+  bool m_localStorageHasBeenSet = false;
+  bool m_localStorageTypesHasBeenSet = false;
+  bool m_totalLocalStorageGBHasBeenSet = false;
+  bool m_baselineEbsBandwidthMbpsHasBeenSet = false;
+  bool m_acceleratorTypesHasBeenSet = false;
+  bool m_acceleratorCountHasBeenSet = false;
+  bool m_acceleratorManufacturersHasBeenSet = false;
+  bool m_acceleratorNamesHasBeenSet = false;
+  bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
+  bool m_networkBandwidthGbpsHasBeenSet = false;
+  bool m_allowedInstanceTypesHasBeenSet = false;
+  bool m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = false;
+  bool m_baselinePerformanceFactorsHasBeenSet = false;
   bool m_requireEncryptionInTransitHasBeenSet = false;
 };
 

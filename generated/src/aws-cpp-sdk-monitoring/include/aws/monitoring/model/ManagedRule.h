@@ -109,12 +109,12 @@ class ManagedRule {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_templateNameHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

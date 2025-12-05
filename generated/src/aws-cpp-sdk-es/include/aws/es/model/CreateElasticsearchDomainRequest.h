@@ -372,51 +372,51 @@ class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_elasticsearchVersion;
-  bool m_elasticsearchVersionHasBeenSet = false;
 
   ElasticsearchClusterConfig m_elasticsearchClusterConfig;
-  bool m_elasticsearchClusterConfigHasBeenSet = false;
 
   EBSOptions m_eBSOptions;
-  bool m_eBSOptionsHasBeenSet = false;
 
   Aws::String m_accessPolicies;
-  bool m_accessPoliciesHasBeenSet = false;
 
   SnapshotOptions m_snapshotOptions;
-  bool m_snapshotOptionsHasBeenSet = false;
 
   VPCOptions m_vPCOptions;
-  bool m_vPCOptionsHasBeenSet = false;
 
   CognitoOptions m_cognitoOptions;
-  bool m_cognitoOptionsHasBeenSet = false;
 
   EncryptionAtRestOptions m_encryptionAtRestOptions;
-  bool m_encryptionAtRestOptionsHasBeenSet = false;
 
   NodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
-  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_advancedOptions;
-  bool m_advancedOptionsHasBeenSet = false;
 
   Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
-  bool m_logPublishingOptionsHasBeenSet = false;
 
   DomainEndpointOptions m_domainEndpointOptions;
-  bool m_domainEndpointOptionsHasBeenSet = false;
 
   AdvancedSecurityOptionsInput m_advancedSecurityOptions;
-  bool m_advancedSecurityOptionsHasBeenSet = false;
 
   AutoTuneOptionsInput m_autoTuneOptions;
-  bool m_autoTuneOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_domainNameHasBeenSet = false;
+  bool m_elasticsearchVersionHasBeenSet = false;
+  bool m_elasticsearchClusterConfigHasBeenSet = false;
+  bool m_eBSOptionsHasBeenSet = false;
+  bool m_accessPoliciesHasBeenSet = false;
+  bool m_snapshotOptionsHasBeenSet = false;
+  bool m_vPCOptionsHasBeenSet = false;
+  bool m_cognitoOptionsHasBeenSet = false;
+  bool m_encryptionAtRestOptionsHasBeenSet = false;
+  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
+  bool m_advancedOptionsHasBeenSet = false;
+  bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_domainEndpointOptionsHasBeenSet = false;
+  bool m_advancedSecurityOptionsHasBeenSet = false;
+  bool m_autoTuneOptionsHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

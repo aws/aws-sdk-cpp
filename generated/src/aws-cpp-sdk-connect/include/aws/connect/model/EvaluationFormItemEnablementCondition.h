@@ -76,9 +76,9 @@ class EvaluationFormItemEnablementCondition {
   ///@}
  private:
   Aws::Vector<EvaluationFormItemEnablementConditionOperand> m_operands;
-  bool m_operandsHasBeenSet = false;
 
   EvaluationFormItemEnablementOperator m_operator{EvaluationFormItemEnablementOperator::NOT_SET};
+  bool m_operandsHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

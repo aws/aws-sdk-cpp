@@ -149,18 +149,18 @@ class CreateNetworkInsightsAccessScopeRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<AccessScopePathRequest> m_matchPaths;
-  bool m_matchPathsHasBeenSet = false;
 
   Aws::Vector<AccessScopePathRequest> m_excludePaths;
-  bool m_excludePathsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_matchPathsHasBeenSet = false;
+  bool m_excludePathsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

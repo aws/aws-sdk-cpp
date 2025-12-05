@@ -142,21 +142,21 @@ class CreateWorkspacePageRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_page;
-  bool m_pageHasBeenSet = false;
 
   Aws::String m_slug;
-  bool m_slugHasBeenSet = false;
 
   Aws::String m_inputData;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_pageHasBeenSet = false;
+  bool m_slugHasBeenSet = false;
   bool m_inputDataHasBeenSet = false;
 };
 

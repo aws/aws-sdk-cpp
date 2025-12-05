@@ -69,9 +69,9 @@ class DetectPiiEntitiesResult {
   ///@}
  private:
   Aws::Vector<PiiEntity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

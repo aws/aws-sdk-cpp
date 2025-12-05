@@ -135,18 +135,18 @@ class PerformanceInsightsMetric {
   ///@}
  private:
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filter;
-  bool m_filterHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_metricHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

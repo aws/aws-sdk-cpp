@@ -67,9 +67,9 @@ class GetPolicyResult {
   ///@}
  private:
   Policy m_policy;
-  bool m_policyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

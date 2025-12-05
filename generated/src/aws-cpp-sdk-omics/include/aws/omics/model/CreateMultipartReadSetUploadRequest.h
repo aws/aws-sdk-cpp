@@ -217,33 +217,33 @@ class CreateMultipartReadSetUploadRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   FileType m_sourceFileType{FileType::NOT_SET};
-  bool m_sourceFileTypeHasBeenSet = false;
 
   Aws::String m_subjectId;
-  bool m_subjectIdHasBeenSet = false;
 
   Aws::String m_sampleId;
-  bool m_sampleIdHasBeenSet = false;
 
   Aws::String m_generatedFrom;
-  bool m_generatedFromHasBeenSet = false;
 
   Aws::String m_referenceArn;
-  bool m_referenceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_sourceFileTypeHasBeenSet = false;
+  bool m_subjectIdHasBeenSet = false;
+  bool m_sampleIdHasBeenSet = false;
+  bool m_generatedFromHasBeenSet = false;
+  bool m_referenceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -158,21 +158,21 @@ class KnowledgeBaseDocumentDetail {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   DocumentStatus m_status{DocumentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DocumentIdentifier m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class AcceptLinkRequest : public RTBFabricRequest {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   LinkAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   LinkLogSettings m_logSettings;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class TrailProperties {
   ///@}
  private:
   Aws::String m_cloudTrailArn;
-  bool m_cloudTrailArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   bool m_allRegions{false};
+  bool m_cloudTrailArnHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
   bool m_allRegionsHasBeenSet = false;
 };
 

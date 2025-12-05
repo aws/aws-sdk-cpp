@@ -87,12 +87,12 @@ class DescribeInstanceCreditSpecificationsResponse {
   ///@}
  private:
   Aws::Vector<InstanceCreditSpecification> m_instanceCreditSpecifications;
-  bool m_instanceCreditSpecificationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceCreditSpecificationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

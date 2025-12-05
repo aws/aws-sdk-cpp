@@ -203,27 +203,27 @@ class ListedServer {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   IdentityProviderType m_identityProviderType{IdentityProviderType::NOT_SET};
-  bool m_identityProviderTypeHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_loggingRole;
-  bool m_loggingRoleHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_userCount{0};
+  bool m_arnHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_identityProviderTypeHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_loggingRoleHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_userCountHasBeenSet = false;
 };
 

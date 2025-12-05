@@ -339,39 +339,39 @@ class ListObjectsV2Request : public S3CrtRequest {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   EncodingType m_encodingType{EncodingType::NOT_SET};
-  bool m_encodingTypeHasBeenSet = false;
 
   int m_maxKeys{0};
-  bool m_maxKeysHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   bool m_fetchOwner{false};
-  bool m_fetchOwnerHasBeenSet = false;
 
   Aws::String m_startAfter;
-  bool m_startAfterHasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::Vector<OptionalObjectAttributes> m_optionalObjectAttributes;
-  bool m_optionalObjectAttributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_encodingTypeHasBeenSet = false;
+  bool m_maxKeysHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
+  bool m_fetchOwnerHasBeenSet = false;
+  bool m_startAfterHasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_optionalObjectAttributesHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

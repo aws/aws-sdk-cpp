@@ -103,15 +103,15 @@ class AwsElbLoadBalancerAccessLog {
   ///@}
  private:
   int m_emitInterval{0};
-  bool m_emitIntervalHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3BucketPrefix;
+  bool m_emitIntervalHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
   bool m_s3BucketPrefixHasBeenSet = false;
 };
 

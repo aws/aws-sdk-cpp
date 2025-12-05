@@ -81,9 +81,9 @@ class CreateConfigurationSetEventDestinationRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   EventDestination m_eventDestination;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_eventDestinationHasBeenSet = false;
 };
 

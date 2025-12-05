@@ -576,90 +576,90 @@ class RecommendationDetailData {
   ///@}
  private:
   AccountScope m_accountScope{AccountScope::NOT_SET};
-  bool m_accountScopeHasBeenSet = false;
 
   LookbackPeriodInDays m_lookbackPeriodInDays{LookbackPeriodInDays::NOT_SET};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   SupportedSavingsPlansType m_savingsPlansType{SupportedSavingsPlansType::NOT_SET};
-  bool m_savingsPlansTypeHasBeenSet = false;
 
   TermInYears m_termInYears{TermInYears::NOT_SET};
-  bool m_termInYearsHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   Aws::String m_generationTimestamp;
-  bool m_generationTimestampHasBeenSet = false;
 
   Aws::String m_latestUsageTimestamp;
-  bool m_latestUsageTimestampHasBeenSet = false;
 
   Aws::String m_currentAverageHourlyOnDemandSpend;
-  bool m_currentAverageHourlyOnDemandSpendHasBeenSet = false;
 
   Aws::String m_currentMaximumHourlyOnDemandSpend;
-  bool m_currentMaximumHourlyOnDemandSpendHasBeenSet = false;
 
   Aws::String m_currentMinimumHourlyOnDemandSpend;
-  bool m_currentMinimumHourlyOnDemandSpendHasBeenSet = false;
 
   Aws::String m_estimatedAverageUtilization;
-  bool m_estimatedAverageUtilizationHasBeenSet = false;
 
   Aws::String m_estimatedMonthlySavingsAmount;
-  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
   Aws::String m_estimatedOnDemandCost;
-  bool m_estimatedOnDemandCostHasBeenSet = false;
 
   Aws::String m_estimatedOnDemandCostWithCurrentCommitment;
-  bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = false;
 
   Aws::String m_estimatedROI;
-  bool m_estimatedROIHasBeenSet = false;
 
   Aws::String m_estimatedSPCost;
-  bool m_estimatedSPCostHasBeenSet = false;
 
   Aws::String m_estimatedSavingsAmount;
-  bool m_estimatedSavingsAmountHasBeenSet = false;
 
   Aws::String m_estimatedSavingsPercentage;
-  bool m_estimatedSavingsPercentageHasBeenSet = false;
 
   Aws::String m_existingHourlyCommitment;
-  bool m_existingHourlyCommitmentHasBeenSet = false;
 
   Aws::String m_hourlyCommitmentToPurchase;
-  bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
 
   Aws::String m_upfrontCost;
-  bool m_upfrontCostHasBeenSet = false;
 
   Aws::String m_currentAverageCoverage;
-  bool m_currentAverageCoverageHasBeenSet = false;
 
   Aws::String m_estimatedAverageCoverage;
-  bool m_estimatedAverageCoverageHasBeenSet = false;
 
   Aws::Vector<RecommendationDetailHourlyMetrics> m_metricsOverLookbackPeriod;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
+  bool m_savingsPlansTypeHasBeenSet = false;
+  bool m_termInYearsHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_generationTimestampHasBeenSet = false;
+  bool m_latestUsageTimestampHasBeenSet = false;
+  bool m_currentAverageHourlyOnDemandSpendHasBeenSet = false;
+  bool m_currentMaximumHourlyOnDemandSpendHasBeenSet = false;
+  bool m_currentMinimumHourlyOnDemandSpendHasBeenSet = false;
+  bool m_estimatedAverageUtilizationHasBeenSet = false;
+  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
+  bool m_estimatedOnDemandCostHasBeenSet = false;
+  bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = false;
+  bool m_estimatedROIHasBeenSet = false;
+  bool m_estimatedSPCostHasBeenSet = false;
+  bool m_estimatedSavingsAmountHasBeenSet = false;
+  bool m_estimatedSavingsPercentageHasBeenSet = false;
+  bool m_existingHourlyCommitmentHasBeenSet = false;
+  bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
+  bool m_upfrontCostHasBeenSet = false;
+  bool m_currentAverageCoverageHasBeenSet = false;
+  bool m_estimatedAverageCoverageHasBeenSet = false;
   bool m_metricsOverLookbackPeriodHasBeenSet = false;
 };
 

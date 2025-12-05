@@ -66,9 +66,9 @@ class UpdateTieringConfigurationRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_tieringConfigurationName;
-  bool m_tieringConfigurationNameHasBeenSet = false;
 
   TieringConfigurationInputForUpdate m_tieringConfiguration;
+  bool m_tieringConfigurationNameHasBeenSet = false;
   bool m_tieringConfigurationHasBeenSet = false;
 };
 

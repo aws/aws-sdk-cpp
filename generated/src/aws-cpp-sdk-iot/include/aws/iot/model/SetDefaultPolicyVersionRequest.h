@@ -69,9 +69,9 @@ class SetDefaultPolicyVersionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyVersionId;
+  bool m_policyNameHasBeenSet = false;
   bool m_policyVersionIdHasBeenSet = false;
 };
 

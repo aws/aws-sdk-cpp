@@ -63,9 +63,9 @@ class GetGroupQueryResult {
   ///@}
  private:
   GroupQuery m_groupQuery;
-  bool m_groupQueryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

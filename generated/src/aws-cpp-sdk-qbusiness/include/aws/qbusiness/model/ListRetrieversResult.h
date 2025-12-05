@@ -85,12 +85,12 @@ class ListRetrieversResult {
   ///@}
  private:
   Aws::Vector<Retriever> m_retrievers;
-  bool m_retrieversHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retrieversHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

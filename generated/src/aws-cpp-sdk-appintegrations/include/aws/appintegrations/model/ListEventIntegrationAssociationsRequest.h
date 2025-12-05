@@ -87,12 +87,12 @@ class ListEventIntegrationAssociationsRequest : public AppIntegrationsServiceReq
   ///@}
  private:
   Aws::String m_eventIntegrationName;
-  bool m_eventIntegrationNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_eventIntegrationNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

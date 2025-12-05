@@ -146,21 +146,21 @@ class ImportNotebookRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_payload;
-  bool m_payloadHasBeenSet = false;
 
   NotebookType m_type{NotebookType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_notebookS3LocationUri;
-  bool m_notebookS3LocationUriHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_workGroupHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_notebookS3LocationUriHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

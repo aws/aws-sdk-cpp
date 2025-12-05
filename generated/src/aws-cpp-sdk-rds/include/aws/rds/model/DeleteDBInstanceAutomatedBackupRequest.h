@@ -77,9 +77,9 @@ class DeleteDBInstanceAutomatedBackupRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dbiResourceId;
-  bool m_dbiResourceIdHasBeenSet = false;
 
   Aws::String m_dBInstanceAutomatedBackupsArn;
+  bool m_dbiResourceIdHasBeenSet = false;
   bool m_dBInstanceAutomatedBackupsArnHasBeenSet = false;
 };
 

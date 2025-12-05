@@ -129,18 +129,18 @@ class AssetOptions {
   ///@}
  private:
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   DayOfTheWeek m_weekStart{DayOfTheWeek::NOT_SET};
-  bool m_weekStartHasBeenSet = false;
 
   QBusinessInsightsStatus m_qBusinessInsightsStatus{QBusinessInsightsStatus::NOT_SET};
-  bool m_qBusinessInsightsStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedDataSetArns;
-  bool m_excludedDataSetArnsHasBeenSet = false;
 
   VisualCustomActionDefaults m_customActionDefaults;
+  bool m_timezoneHasBeenSet = false;
+  bool m_weekStartHasBeenSet = false;
+  bool m_qBusinessInsightsStatusHasBeenSet = false;
+  bool m_excludedDataSetArnsHasBeenSet = false;
   bool m_customActionDefaultsHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class SearchContactEvaluationsResult {
   ///@}
  private:
   Aws::Vector<EvaluationSearchSummary> m_evaluationSearchSummaryList;
-  bool m_evaluationSearchSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   long long m_approximateTotalCount{0};
-  bool m_approximateTotalCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationSearchSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_approximateTotalCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

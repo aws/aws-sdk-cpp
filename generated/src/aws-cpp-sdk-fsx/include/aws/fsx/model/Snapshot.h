@@ -209,30 +209,30 @@ class Snapshot {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   SnapshotLifecycle m_lifecycle{SnapshotLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   LifecycleTransitionReason m_lifecycleTransitionReason;
-  bool m_lifecycleTransitionReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AdministrativeAction> m_administrativeActions;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_lifecycleTransitionReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_administrativeActionsHasBeenSet = false;
 };
 

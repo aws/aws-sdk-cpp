@@ -68,9 +68,9 @@ class ShareTarget {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   TargetType m_type{TargetType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

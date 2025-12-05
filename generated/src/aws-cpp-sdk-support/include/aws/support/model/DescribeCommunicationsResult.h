@@ -90,12 +90,12 @@ class DescribeCommunicationsResult {
   ///@}
  private:
   Aws::Vector<Communication> m_communications;
-  bool m_communicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_communicationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

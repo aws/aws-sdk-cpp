@@ -113,15 +113,15 @@ class StopRuntimeSessionRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_runtimeSessionId;
-  bool m_runtimeSessionIdHasBeenSet = false;
 
   Aws::String m_agentRuntimeArn;
-  bool m_agentRuntimeArnHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_runtimeSessionIdHasBeenSet = false;
+  bool m_agentRuntimeArnHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

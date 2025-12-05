@@ -183,24 +183,24 @@ class ClusterSubnetGroup {
   ///@}
  private:
   Aws::String m_clusterSubnetGroupName;
-  bool m_clusterSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetGroupStatus;
-  bool m_subnetGroupStatusHasBeenSet = false;
 
   Aws::Vector<Subnet> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedClusterIpAddressTypes;
+  bool m_clusterSubnetGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetGroupStatusHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_supportedClusterIpAddressTypesHasBeenSet = false;
 };
 

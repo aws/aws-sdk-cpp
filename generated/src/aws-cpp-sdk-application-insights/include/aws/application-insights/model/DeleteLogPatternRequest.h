@@ -85,12 +85,12 @@ class DeleteLogPatternRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_patternSetName;
-  bool m_patternSetNameHasBeenSet = false;
 
   Aws::String m_patternName;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_patternSetNameHasBeenSet = false;
   bool m_patternNameHasBeenSet = false;
 };
 

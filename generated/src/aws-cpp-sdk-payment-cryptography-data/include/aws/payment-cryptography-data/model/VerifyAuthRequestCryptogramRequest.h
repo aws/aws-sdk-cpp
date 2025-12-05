@@ -151,21 +151,21 @@ class VerifyAuthRequestCryptogramRequest : public PaymentCryptographyDataRequest
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   Aws::String m_transactionData;
-  bool m_transactionDataHasBeenSet = false;
 
   Aws::String m_authRequestCryptogram;
-  bool m_authRequestCryptogramHasBeenSet = false;
 
   MajorKeyDerivationMode m_majorKeyDerivationMode{MajorKeyDerivationMode::NOT_SET};
-  bool m_majorKeyDerivationModeHasBeenSet = false;
 
   SessionKeyDerivation m_sessionKeyDerivationAttributes;
-  bool m_sessionKeyDerivationAttributesHasBeenSet = false;
 
   CryptogramAuthResponse m_authResponseAttributes;
+  bool m_keyIdentifierHasBeenSet = false;
+  bool m_transactionDataHasBeenSet = false;
+  bool m_authRequestCryptogramHasBeenSet = false;
+  bool m_majorKeyDerivationModeHasBeenSet = false;
+  bool m_sessionKeyDerivationAttributesHasBeenSet = false;
   bool m_authResponseAttributesHasBeenSet = false;
 };
 

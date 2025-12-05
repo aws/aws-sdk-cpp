@@ -67,9 +67,9 @@ class Field {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FieldType m_type{FieldType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

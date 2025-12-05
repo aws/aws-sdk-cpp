@@ -122,15 +122,15 @@ class StartAuditMitigationActionsTaskRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   AuditMitigationActionsTaskTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_auditCheckToActionsMapping;
-  bool m_auditCheckToActionsMappingHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_taskIdHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_auditCheckToActionsMappingHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

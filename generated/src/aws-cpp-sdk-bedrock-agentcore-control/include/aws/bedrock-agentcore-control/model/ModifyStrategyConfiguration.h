@@ -108,15 +108,15 @@ class ModifyStrategyConfiguration {
   ///@}
  private:
   ModifyExtractionConfiguration m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   ModifyConsolidationConfiguration m_consolidation;
-  bool m_consolidationHasBeenSet = false;
 
   ModifyReflectionConfiguration m_reflection;
-  bool m_reflectionHasBeenSet = false;
 
   ModifySelfManagedConfiguration m_selfManagedConfiguration;
+  bool m_extractionHasBeenSet = false;
+  bool m_consolidationHasBeenSet = false;
+  bool m_reflectionHasBeenSet = false;
   bool m_selfManagedConfigurationHasBeenSet = false;
 };
 

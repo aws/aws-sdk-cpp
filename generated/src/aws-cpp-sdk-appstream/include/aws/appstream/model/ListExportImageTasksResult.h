@@ -85,12 +85,12 @@ class ListExportImageTasksResult {
   ///@}
  private:
   Aws::Vector<ExportImageTask> m_exportImageTasks;
-  bool m_exportImageTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportImageTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

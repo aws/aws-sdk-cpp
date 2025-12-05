@@ -86,12 +86,12 @@ class FindingDetailsError {
   ///@}
  private:
   Aws::String m_findingArn;
-  bool m_findingArnHasBeenSet = false;
 
   FindingDetailsErrorCode m_errorCode{FindingDetailsErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_findingArnHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

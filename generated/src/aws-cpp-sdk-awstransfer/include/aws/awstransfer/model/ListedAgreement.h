@@ -159,24 +159,24 @@ class ListedAgreement {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_agreementId;
-  bool m_agreementIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AgreementStatusType m_status{AgreementStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_localProfileId;
-  bool m_localProfileIdHasBeenSet = false;
 
   Aws::String m_partnerProfileId;
+  bool m_arnHasBeenSet = false;
+  bool m_agreementIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_localProfileIdHasBeenSet = false;
   bool m_partnerProfileIdHasBeenSet = false;
 };
 

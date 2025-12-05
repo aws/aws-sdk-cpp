@@ -68,9 +68,9 @@ class DetachInstancesResult {
   ///@}
  private:
   Aws::Vector<Activity> m_activities;
-  bool m_activitiesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_activitiesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class PutQueryDefinitionResult {
   ///@}
  private:
   Aws::String m_queryDefinitionId;
-  bool m_queryDefinitionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryDefinitionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class MediaConnectFlowRouterInputConfiguration {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_flowOutputArn;
-  bool m_flowOutputArnHasBeenSet = false;
 
   FlowTransitEncryption m_sourceTransitDecryption;
+  bool m_flowArnHasBeenSet = false;
+  bool m_flowOutputArnHasBeenSet = false;
   bool m_sourceTransitDecryptionHasBeenSet = false;
 };
 

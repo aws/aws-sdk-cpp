@@ -164,27 +164,27 @@ class GetSyncJobResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   Aws::String m_syncRole;
-  bool m_syncRoleHasBeenSet = false;
 
   SyncJobStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_syncSourceHasBeenSet = false;
+  bool m_syncRoleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -183,27 +183,27 @@ class CreateGrantVersionRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_grantArn;
-  bool m_grantArnHasBeenSet = false;
 
   Aws::String m_grantName;
-  bool m_grantNameHasBeenSet = false;
 
   Aws::Vector<AllowedOperation> m_allowedOperations;
-  bool m_allowedOperationsHasBeenSet = false;
 
   GrantStatus m_status{GrantStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   Options m_options;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_grantArnHasBeenSet = false;
+  bool m_grantNameHasBeenSet = false;
+  bool m_allowedOperationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_sourceVersionHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

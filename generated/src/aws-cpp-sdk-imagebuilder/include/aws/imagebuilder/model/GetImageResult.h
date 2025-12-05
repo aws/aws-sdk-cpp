@@ -81,12 +81,12 @@ class GetImageResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;
 };
 

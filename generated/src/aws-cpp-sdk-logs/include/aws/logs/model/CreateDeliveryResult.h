@@ -61,9 +61,9 @@ class CreateDeliveryResult {
   ///@}
  private:
   Delivery m_delivery;
-  bool m_deliveryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliveryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

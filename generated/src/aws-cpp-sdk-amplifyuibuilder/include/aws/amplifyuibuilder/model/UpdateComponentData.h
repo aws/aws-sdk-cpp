@@ -304,39 +304,39 @@ class UpdateComponentData {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_componentType;
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentProperty> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Vector<ComponentChild> m_children;
-  bool m_childrenHasBeenSet = false;
 
   Aws::Vector<ComponentVariant> m_variants;
-  bool m_variantsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentBindingPropertiesValue> m_bindingProperties;
-  bool m_bindingPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentDataConfiguration> m_collectionProperties;
-  bool m_collectionPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_schemaVersion;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_childrenHasBeenSet = false;
+  bool m_variantsHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
+  bool m_bindingPropertiesHasBeenSet = false;
+  bool m_collectionPropertiesHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
   bool m_schemaVersionHasBeenSet = false;
 };
 

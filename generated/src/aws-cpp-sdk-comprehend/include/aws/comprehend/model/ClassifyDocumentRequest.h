@@ -128,15 +128,15 @@ class ClassifyDocumentRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   DocumentReaderConfig m_documentReaderConfig;
+  bool m_textHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_bytesHasBeenSet = false;
   bool m_documentReaderConfigHasBeenSet = false;
 };
 

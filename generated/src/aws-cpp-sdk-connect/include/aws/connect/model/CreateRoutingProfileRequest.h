@@ -240,30 +240,30 @@ class CreateRoutingProfileRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultOutboundQueueId;
-  bool m_defaultOutboundQueueIdHasBeenSet = false;
 
   Aws::Vector<RoutingProfileQueueConfig> m_queueConfigs;
-  bool m_queueConfigsHasBeenSet = false;
 
   Aws::Vector<RoutingProfileManualAssignmentQueueConfig> m_manualAssignmentQueueConfigs;
-  bool m_manualAssignmentQueueConfigsHasBeenSet = false;
 
   Aws::Vector<MediaConcurrency> m_mediaConcurrencies;
-  bool m_mediaConcurrenciesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AgentAvailabilityTimer m_agentAvailabilityTimer{AgentAvailabilityTimer::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultOutboundQueueIdHasBeenSet = false;
+  bool m_queueConfigsHasBeenSet = false;
+  bool m_manualAssignmentQueueConfigsHasBeenSet = false;
+  bool m_mediaConcurrenciesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_agentAvailabilityTimerHasBeenSet = false;
 };
 

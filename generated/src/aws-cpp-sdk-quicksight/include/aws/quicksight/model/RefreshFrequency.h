@@ -121,15 +121,15 @@ class RefreshFrequency {
   ///@}
  private:
   RefreshInterval m_interval{RefreshInterval::NOT_SET};
-  bool m_intervalHasBeenSet = false;
 
   ScheduleRefreshOnEntity m_refreshOnDay;
-  bool m_refreshOnDayHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   Aws::String m_timeOfTheDay;
+  bool m_intervalHasBeenSet = false;
+  bool m_refreshOnDayHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
   bool m_timeOfTheDayHasBeenSet = false;
 };
 

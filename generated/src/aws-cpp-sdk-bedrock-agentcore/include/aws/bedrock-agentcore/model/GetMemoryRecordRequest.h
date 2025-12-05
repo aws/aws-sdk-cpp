@@ -66,9 +66,9 @@ class GetMemoryRecordRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::String m_memoryRecordId;
+  bool m_memoryIdHasBeenSet = false;
   bool m_memoryRecordIdHasBeenSet = false;
 };
 

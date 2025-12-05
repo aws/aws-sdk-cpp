@@ -118,18 +118,18 @@ class KxScalingGroupConfiguration {
   ///@}
  private:
   Aws::String m_scalingGroupName;
-  bool m_scalingGroupNameHasBeenSet = false;
 
   int m_memoryLimit{0};
-  bool m_memoryLimitHasBeenSet = false;
 
   int m_memoryReservation{0};
-  bool m_memoryReservationHasBeenSet = false;
 
   int m_nodeCount{0};
-  bool m_nodeCountHasBeenSet = false;
 
   double m_cpu{0.0};
+  bool m_scalingGroupNameHasBeenSet = false;
+  bool m_memoryLimitHasBeenSet = false;
+  bool m_memoryReservationHasBeenSet = false;
+  bool m_nodeCountHasBeenSet = false;
   bool m_cpuHasBeenSet = false;
 };
 

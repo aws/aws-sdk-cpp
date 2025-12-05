@@ -92,12 +92,12 @@ class DescribeOrganizationConformancePacksRequest : public ConfigServiceRequest 
   ///@}
  private:
   Aws::Vector<Aws::String> m_organizationConformancePackNames;
-  bool m_organizationConformancePackNamesHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_organizationConformancePackNamesHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

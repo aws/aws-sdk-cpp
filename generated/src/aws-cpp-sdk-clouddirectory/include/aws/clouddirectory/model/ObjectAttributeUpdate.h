@@ -70,9 +70,9 @@ class ObjectAttributeUpdate {
   ///@}
  private:
   AttributeKey m_objectAttributeKey;
-  bool m_objectAttributeKeyHasBeenSet = false;
 
   ObjectAttributeAction m_objectAttributeAction;
+  bool m_objectAttributeKeyHasBeenSet = false;
   bool m_objectAttributeActionHasBeenSet = false;
 };
 

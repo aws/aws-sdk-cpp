@@ -135,18 +135,18 @@ class ObjectIdentifier {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   long long m_size{0};
+  bool m_keyHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

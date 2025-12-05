@@ -165,24 +165,24 @@ class ReEncryptDataRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_incomingKeyIdentifier;
-  bool m_incomingKeyIdentifierHasBeenSet = false;
 
   Aws::String m_outgoingKeyIdentifier;
-  bool m_outgoingKeyIdentifierHasBeenSet = false;
 
   Aws::String m_cipherText;
-  bool m_cipherTextHasBeenSet = false;
 
   ReEncryptionAttributes m_incomingEncryptionAttributes;
-  bool m_incomingEncryptionAttributesHasBeenSet = false;
 
   ReEncryptionAttributes m_outgoingEncryptionAttributes;
-  bool m_outgoingEncryptionAttributesHasBeenSet = false;
 
   WrappedKey m_incomingWrappedKey;
-  bool m_incomingWrappedKeyHasBeenSet = false;
 
   WrappedKey m_outgoingWrappedKey;
+  bool m_incomingKeyIdentifierHasBeenSet = false;
+  bool m_outgoingKeyIdentifierHasBeenSet = false;
+  bool m_cipherTextHasBeenSet = false;
+  bool m_incomingEncryptionAttributesHasBeenSet = false;
+  bool m_outgoingEncryptionAttributesHasBeenSet = false;
+  bool m_incomingWrappedKeyHasBeenSet = false;
   bool m_outgoingWrappedKeyHasBeenSet = false;
 };
 

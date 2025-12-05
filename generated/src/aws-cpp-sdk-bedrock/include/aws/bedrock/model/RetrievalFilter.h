@@ -334,42 +334,42 @@ class RetrievalFilter {
   ///@}
  private:
   FilterAttribute m_equals;
-  bool m_equalsHasBeenSet = false;
 
   FilterAttribute m_notEquals;
-  bool m_notEqualsHasBeenSet = false;
 
   FilterAttribute m_greaterThan;
-  bool m_greaterThanHasBeenSet = false;
 
   FilterAttribute m_greaterThanOrEquals;
-  bool m_greaterThanOrEqualsHasBeenSet = false;
 
   FilterAttribute m_lessThan;
-  bool m_lessThanHasBeenSet = false;
 
   FilterAttribute m_lessThanOrEquals;
-  bool m_lessThanOrEqualsHasBeenSet = false;
 
   FilterAttribute m_in;
-  bool m_inHasBeenSet = false;
 
   FilterAttribute m_notIn;
-  bool m_notInHasBeenSet = false;
 
   FilterAttribute m_startsWith;
-  bool m_startsWithHasBeenSet = false;
 
   FilterAttribute m_listContains;
-  bool m_listContainsHasBeenSet = false;
 
   FilterAttribute m_stringContains;
-  bool m_stringContainsHasBeenSet = false;
 
   Aws::Vector<RetrievalFilter> m_andAll;
-  bool m_andAllHasBeenSet = false;
 
   Aws::Vector<RetrievalFilter> m_orAll;
+  bool m_equalsHasBeenSet = false;
+  bool m_notEqualsHasBeenSet = false;
+  bool m_greaterThanHasBeenSet = false;
+  bool m_greaterThanOrEqualsHasBeenSet = false;
+  bool m_lessThanHasBeenSet = false;
+  bool m_lessThanOrEqualsHasBeenSet = false;
+  bool m_inHasBeenSet = false;
+  bool m_notInHasBeenSet = false;
+  bool m_startsWithHasBeenSet = false;
+  bool m_listContainsHasBeenSet = false;
+  bool m_stringContainsHasBeenSet = false;
+  bool m_andAllHasBeenSet = false;
   bool m_orAllHasBeenSet = false;
 };
 

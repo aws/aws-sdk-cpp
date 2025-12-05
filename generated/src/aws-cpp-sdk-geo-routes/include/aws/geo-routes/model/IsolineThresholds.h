@@ -79,9 +79,9 @@ class IsolineThresholds {
   ///@}
  private:
   Aws::Vector<long long> m_distance;
-  bool m_distanceHasBeenSet = false;
 
   Aws::Vector<long long> m_time;
+  bool m_distanceHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

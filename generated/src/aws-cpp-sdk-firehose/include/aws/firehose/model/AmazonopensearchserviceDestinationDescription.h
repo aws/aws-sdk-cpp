@@ -287,45 +287,45 @@ class AmazonopensearchserviceDestinationDescription {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_domainARN;
-  bool m_domainARNHasBeenSet = false;
 
   Aws::String m_clusterEndpoint;
-  bool m_clusterEndpointHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   AmazonopensearchserviceIndexRotationPeriod m_indexRotationPeriod{AmazonopensearchserviceIndexRotationPeriod::NOT_SET};
-  bool m_indexRotationPeriodHasBeenSet = false;
 
   AmazonopensearchserviceBufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   AmazonopensearchserviceRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   AmazonopensearchserviceS3BackupMode m_s3BackupMode{AmazonopensearchserviceS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationDescription m_s3DestinationDescription;
-  bool m_s3DestinationDescriptionHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   VpcConfigurationDescription m_vpcConfigurationDescription;
-  bool m_vpcConfigurationDescriptionHasBeenSet = false;
 
   DocumentIdOptions m_documentIdOptions;
+  bool m_roleARNHasBeenSet = false;
+  bool m_domainARNHasBeenSet = false;
+  bool m_clusterEndpointHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_indexRotationPeriodHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3DestinationDescriptionHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_vpcConfigurationDescriptionHasBeenSet = false;
   bool m_documentIdOptionsHasBeenSet = false;
 };
 

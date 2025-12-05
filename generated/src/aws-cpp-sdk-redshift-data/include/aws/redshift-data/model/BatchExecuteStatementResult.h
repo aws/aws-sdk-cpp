@@ -208,33 +208,33 @@ class BatchExecuteStatementResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbGroups;
-  bool m_dbGroupsHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_workgroupName;
-  bool m_workgroupNameHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_dbUserHasBeenSet = false;
+  bool m_dbGroupsHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_workgroupNameHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

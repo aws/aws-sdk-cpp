@@ -99,12 +99,12 @@ class NFSDataRepositoryConfiguration {
   ///@}
  private:
   NfsVersion m_version{NfsVersion::NOT_SET};
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIps;
-  bool m_dnsIpsHasBeenSet = false;
 
   AutoExportPolicy m_autoExportPolicy;
+  bool m_versionHasBeenSet = false;
+  bool m_dnsIpsHasBeenSet = false;
   bool m_autoExportPolicyHasBeenSet = false;
 };
 

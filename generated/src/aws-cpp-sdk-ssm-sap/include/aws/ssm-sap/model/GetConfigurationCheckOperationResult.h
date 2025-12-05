@@ -60,9 +60,9 @@ class GetConfigurationCheckOperationResult {
   ///@}
  private:
   ConfigurationCheckOperation m_configurationCheckOperation;
-  bool m_configurationCheckOperationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationCheckOperationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

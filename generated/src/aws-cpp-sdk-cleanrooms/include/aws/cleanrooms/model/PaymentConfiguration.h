@@ -91,12 +91,12 @@ class PaymentConfiguration {
   ///@}
  private:
   QueryComputePaymentConfig m_queryCompute;
-  bool m_queryComputeHasBeenSet = false;
 
   MLPaymentConfig m_machineLearning;
-  bool m_machineLearningHasBeenSet = false;
 
   JobComputePaymentConfig m_jobCompute;
+  bool m_queryComputeHasBeenSet = false;
+  bool m_machineLearningHasBeenSet = false;
   bool m_jobComputeHasBeenSet = false;
 };
 

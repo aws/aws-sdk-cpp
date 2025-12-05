@@ -81,9 +81,9 @@ class GeneratedPolicyResults {
   ///@}
  private:
   GeneratedPolicyProperties m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Vector<GeneratedPolicy> m_generatedPolicies;
+  bool m_propertiesHasBeenSet = false;
   bool m_generatedPoliciesHasBeenSet = false;
 };
 

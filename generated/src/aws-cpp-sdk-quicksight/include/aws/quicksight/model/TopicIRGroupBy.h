@@ -140,21 +140,21 @@ class TopicIRGroupBy {
   ///@}
  private:
   Identifier m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   TopicTimeGranularity m_timeGranularity{TopicTimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   TopicSortClause m_sort;
-  bool m_sortHasBeenSet = false;
 
   DisplayFormat m_displayFormat{DisplayFormat::NOT_SET};
-  bool m_displayFormatHasBeenSet = false;
 
   DisplayFormatOptions m_displayFormatOptions;
-  bool m_displayFormatOptionsHasBeenSet = false;
 
   NamedEntityRef m_namedEntity;
+  bool m_fieldNameHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_displayFormatHasBeenSet = false;
+  bool m_displayFormatOptionsHasBeenSet = false;
   bool m_namedEntityHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class GetQuerySuggestionsResult {
   ///@}
  private:
   Aws::String m_querySuggestionsId;
-  bool m_querySuggestionsIdHasBeenSet = false;
 
   Aws::Vector<Suggestion> m_suggestions;
-  bool m_suggestionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_querySuggestionsIdHasBeenSet = false;
+  bool m_suggestionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

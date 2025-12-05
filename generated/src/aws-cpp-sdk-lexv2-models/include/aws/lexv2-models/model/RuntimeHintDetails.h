@@ -89,9 +89,9 @@ class RuntimeHintDetails {
   ///@}
  private:
   Aws::Vector<RuntimeHintValue> m_runtimeHintValues;
-  bool m_runtimeHintValuesHasBeenSet = false;
 
   Aws::Map<Aws::String, RuntimeHintDetails> m_subSlotHints;
+  bool m_runtimeHintValuesHasBeenSet = false;
   bool m_subSlotHintsHasBeenSet = false;
 };
 

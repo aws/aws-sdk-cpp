@@ -75,9 +75,9 @@ class CreateCollaborationChangeRequestRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::Vector<ChangeInput> m_changes;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_changesHasBeenSet = false;
 };
 

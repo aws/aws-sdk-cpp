@@ -241,33 +241,33 @@ class AnalyzerSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_lastResourceAnalyzed;
-  bool m_lastResourceAnalyzedHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastResourceAnalyzedAt{};
-  bool m_lastResourceAnalyzedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AnalyzerStatus m_status{AnalyzerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusReason m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   AnalyzerConfiguration m_configuration;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastResourceAnalyzedHasBeenSet = false;
+  bool m_lastResourceAnalyzedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

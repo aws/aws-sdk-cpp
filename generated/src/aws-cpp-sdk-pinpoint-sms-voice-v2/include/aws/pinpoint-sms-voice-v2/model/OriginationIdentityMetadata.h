@@ -132,18 +132,18 @@ class OriginationIdentityMetadata {
   ///@}
  private:
   Aws::String m_originationIdentityArn;
-  bool m_originationIdentityArnHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::Vector<NumberCapability> m_numberCapabilities;
-  bool m_numberCapabilitiesHasBeenSet = false;
 
   Aws::String m_phoneNumber;
+  bool m_originationIdentityArnHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_numberCapabilitiesHasBeenSet = false;
   bool m_phoneNumberHasBeenSet = false;
 };
 

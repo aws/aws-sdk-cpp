@@ -66,9 +66,9 @@ class NumericEqualityDrillDownFilter {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_columnHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

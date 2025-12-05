@@ -174,24 +174,24 @@ class HostedZone {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   HostedZoneConfig m_config;
-  bool m_configHasBeenSet = false;
 
   long long m_resourceRecordSetCount{0};
-  bool m_resourceRecordSetCountHasBeenSet = false;
 
   LinkedService m_linkedService;
-  bool m_linkedServiceHasBeenSet = false;
 
   HostedZoneFeatures m_features;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_configHasBeenSet = false;
+  bool m_resourceRecordSetCountHasBeenSet = false;
+  bool m_linkedServiceHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
 };
 

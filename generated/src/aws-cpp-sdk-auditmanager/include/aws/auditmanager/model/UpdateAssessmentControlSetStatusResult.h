@@ -62,9 +62,9 @@ class UpdateAssessmentControlSetStatusResult {
   ///@}
  private:
   AssessmentControlSet m_controlSet;
-  bool m_controlSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

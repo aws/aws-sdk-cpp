@@ -234,33 +234,33 @@ class SingleInstanceHealth {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_healthStatus;
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_causes;
-  bool m_causesHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchedAt{};
-  bool m_launchedAtHasBeenSet = false;
 
   ApplicationMetrics m_applicationMetrics;
-  bool m_applicationMetricsHasBeenSet = false;
 
   SystemStatus m_system;
-  bool m_systemHasBeenSet = false;
 
   Deployment m_deployment;
-  bool m_deploymentHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_instanceType;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
+  bool m_causesHasBeenSet = false;
+  bool m_launchedAtHasBeenSet = false;
+  bool m_applicationMetricsHasBeenSet = false;
+  bool m_systemHasBeenSet = false;
+  bool m_deploymentHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
 };
 

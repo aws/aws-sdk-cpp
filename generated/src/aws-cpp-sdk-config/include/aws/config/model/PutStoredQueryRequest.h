@@ -79,9 +79,9 @@ class PutStoredQueryRequest : public ConfigServiceRequest {
   ///@}
  private:
   StoredQuery m_storedQuery;
-  bool m_storedQueryHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_storedQueryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

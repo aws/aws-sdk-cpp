@@ -106,12 +106,12 @@ class CreateSchedulingPolicyRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FairsharePolicy m_fairsharePolicy;
-  bool m_fairsharePolicyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_fairsharePolicyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

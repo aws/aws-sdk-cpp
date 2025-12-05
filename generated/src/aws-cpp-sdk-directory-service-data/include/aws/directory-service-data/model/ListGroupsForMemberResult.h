@@ -136,21 +136,21 @@ class ListGroupsForMemberResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<GroupSummary> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_memberRealm;
-  bool m_memberRealmHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_realm;
-  bool m_realmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_memberRealmHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_realmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

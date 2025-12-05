@@ -134,18 +134,18 @@ class CreateDatasetRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   DatasetSchema m_datasetSchema;
-  bool m_datasetSchemaHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetSchemaHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

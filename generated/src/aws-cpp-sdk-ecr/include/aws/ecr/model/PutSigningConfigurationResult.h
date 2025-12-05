@@ -60,9 +60,9 @@ class PutSigningConfigurationResult {
   ///@}
  private:
   SigningConfiguration m_signingConfiguration;
-  bool m_signingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

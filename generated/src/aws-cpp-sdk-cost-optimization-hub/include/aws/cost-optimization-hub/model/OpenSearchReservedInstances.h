@@ -70,9 +70,9 @@ class OpenSearchReservedInstances {
   ///@}
  private:
   OpenSearchReservedInstancesConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ReservedInstancesCostCalculation m_costCalculation;
+  bool m_configurationHasBeenSet = false;
   bool m_costCalculationHasBeenSet = false;
 };
 

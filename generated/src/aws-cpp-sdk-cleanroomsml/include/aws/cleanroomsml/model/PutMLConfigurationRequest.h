@@ -67,9 +67,9 @@ class PutMLConfigurationRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   MLOutputConfiguration m_defaultOutputLocation;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_defaultOutputLocationHasBeenSet = false;
 };
 

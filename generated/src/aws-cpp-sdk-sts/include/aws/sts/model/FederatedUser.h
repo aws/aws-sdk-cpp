@@ -76,9 +76,9 @@ class FederatedUser {
   ///@}
  private:
   Aws::String m_federatedUserId;
-  bool m_federatedUserIdHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_federatedUserIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

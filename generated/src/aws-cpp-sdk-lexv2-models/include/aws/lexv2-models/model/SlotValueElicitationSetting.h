@@ -175,24 +175,24 @@ class SlotValueElicitationSetting {
   ///@}
  private:
   SlotDefaultValueSpecification m_defaultValueSpecification;
-  bool m_defaultValueSpecificationHasBeenSet = false;
 
   SlotConstraint m_slotConstraint{SlotConstraint::NOT_SET};
-  bool m_slotConstraintHasBeenSet = false;
 
   PromptSpecification m_promptSpecification;
-  bool m_promptSpecificationHasBeenSet = false;
 
   Aws::Vector<SampleUtterance> m_sampleUtterances;
-  bool m_sampleUtterancesHasBeenSet = false;
 
   WaitAndContinueSpecification m_waitAndContinueSpecification;
-  bool m_waitAndContinueSpecificationHasBeenSet = false;
 
   SlotCaptureSetting m_slotCaptureSetting;
-  bool m_slotCaptureSettingHasBeenSet = false;
 
   SlotResolutionSetting m_slotResolutionSetting;
+  bool m_defaultValueSpecificationHasBeenSet = false;
+  bool m_slotConstraintHasBeenSet = false;
+  bool m_promptSpecificationHasBeenSet = false;
+  bool m_sampleUtterancesHasBeenSet = false;
+  bool m_waitAndContinueSpecificationHasBeenSet = false;
+  bool m_slotCaptureSettingHasBeenSet = false;
   bool m_slotResolutionSettingHasBeenSet = false;
 };
 

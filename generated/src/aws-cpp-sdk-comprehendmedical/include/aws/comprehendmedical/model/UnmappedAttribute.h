@@ -71,9 +71,9 @@ class UnmappedAttribute {
   ///@}
  private:
   EntityType m_type{EntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Attribute m_attribute;
+  bool m_typeHasBeenSet = false;
   bool m_attributeHasBeenSet = false;
 };
 

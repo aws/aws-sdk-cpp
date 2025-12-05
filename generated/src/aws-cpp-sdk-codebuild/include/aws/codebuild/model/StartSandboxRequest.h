@@ -67,9 +67,9 @@ class StartSandboxRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
+  bool m_projectNameHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = false;
 };
 

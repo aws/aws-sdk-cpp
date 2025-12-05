@@ -75,9 +75,9 @@ class EvaluationInferenceConfigSummary {
   ///@}
  private:
   EvaluationModelConfigSummary m_modelConfigSummary;
-  bool m_modelConfigSummaryHasBeenSet = false;
 
   EvaluationRagConfigSummary m_ragConfigSummary;
+  bool m_modelConfigSummaryHasBeenSet = false;
   bool m_ragConfigSummaryHasBeenSet = false;
 };
 

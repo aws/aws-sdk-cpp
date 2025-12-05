@@ -74,9 +74,9 @@ class EnablementStatusSummary {
   ///@}
  private:
   EnablementStatus m_status{EnablementStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_lastOperationIdentifier;
+  bool m_statusHasBeenSet = false;
   bool m_lastOperationIdentifierHasBeenSet = false;
 };
 

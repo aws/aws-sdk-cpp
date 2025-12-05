@@ -256,36 +256,36 @@ class ExecuteStatementRequest : public RDSDataServiceRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_sql;
-  bool m_sqlHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::Vector<SqlParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   bool m_includeResultMetadata{false};
-  bool m_includeResultMetadataHasBeenSet = false;
 
   bool m_continueAfterTimeout{false};
-  bool m_continueAfterTimeoutHasBeenSet = false;
 
   ResultSetOptions m_resultSetOptions;
-  bool m_resultSetOptionsHasBeenSet = false;
 
   RecordsFormatType m_formatRecordsAs{RecordsFormatType::NOT_SET};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_sqlHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_includeResultMetadataHasBeenSet = false;
+  bool m_continueAfterTimeoutHasBeenSet = false;
+  bool m_resultSetOptionsHasBeenSet = false;
   bool m_formatRecordsAsHasBeenSet = false;
 };
 

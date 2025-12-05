@@ -122,18 +122,18 @@ class DescribeGatewayCapabilityConfigurationResult {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_capabilityNamespace;
-  bool m_capabilityNamespaceHasBeenSet = false;
 
   Aws::String m_capabilityConfiguration;
-  bool m_capabilityConfigurationHasBeenSet = false;
 
   CapabilitySyncStatus m_capabilitySyncStatus{CapabilitySyncStatus::NOT_SET};
-  bool m_capabilitySyncStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_capabilityNamespaceHasBeenSet = false;
+  bool m_capabilityConfigurationHasBeenSet = false;
+  bool m_capabilitySyncStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

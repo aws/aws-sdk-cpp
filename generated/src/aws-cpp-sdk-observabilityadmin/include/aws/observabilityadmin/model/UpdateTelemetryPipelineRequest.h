@@ -67,9 +67,9 @@ class UpdateTelemetryPipelineRequest : public ObservabilityAdminRequest {
   ///@}
  private:
   Aws::String m_pipelineIdentifier;
-  bool m_pipelineIdentifierHasBeenSet = false;
 
   TelemetryPipelineConfiguration m_configuration;
+  bool m_pipelineIdentifierHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class RecommendationRelatedCloudWatchMetricsSourceDetail {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_metricNameHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

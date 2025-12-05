@@ -65,9 +65,9 @@ class RowLevelPermissionConfiguration {
   ///@}
  private:
   RowLevelPermissionTagConfiguration m_tagConfiguration;
-  bool m_tagConfigurationHasBeenSet = false;
 
   RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
+  bool m_tagConfigurationHasBeenSet = false;
   bool m_rowLevelPermissionDataSetHasBeenSet = false;
 };
 

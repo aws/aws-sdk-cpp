@@ -153,18 +153,18 @@ class CreateForecastExportJobRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_forecastExportJobName;
-  bool m_forecastExportJobNameHasBeenSet = false;
 
   Aws::String m_forecastArn;
-  bool m_forecastArnHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_forecastExportJobNameHasBeenSet = false;
+  bool m_forecastArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

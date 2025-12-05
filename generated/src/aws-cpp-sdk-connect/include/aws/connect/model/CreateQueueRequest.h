@@ -209,30 +209,30 @@ class CreateQueueRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OutboundCallerConfig m_outboundCallerConfig;
-  bool m_outboundCallerConfigHasBeenSet = false;
 
   OutboundEmailConfig m_outboundEmailConfig;
-  bool m_outboundEmailConfigHasBeenSet = false;
 
   Aws::String m_hoursOfOperationId;
-  bool m_hoursOfOperationIdHasBeenSet = false;
 
   int m_maxContacts{0};
-  bool m_maxContactsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_quickConnectIds;
-  bool m_quickConnectIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_outboundCallerConfigHasBeenSet = false;
+  bool m_outboundEmailConfigHasBeenSet = false;
+  bool m_hoursOfOperationIdHasBeenSet = false;
+  bool m_maxContactsHasBeenSet = false;
+  bool m_quickConnectIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

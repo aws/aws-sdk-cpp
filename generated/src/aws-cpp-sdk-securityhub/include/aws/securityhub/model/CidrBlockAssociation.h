@@ -86,12 +86,12 @@ class CidrBlockAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_cidrBlockState;
+  bool m_associationIdHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
   bool m_cidrBlockStateHasBeenSet = false;
 };
 

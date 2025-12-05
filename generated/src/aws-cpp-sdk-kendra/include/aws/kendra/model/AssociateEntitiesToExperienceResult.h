@@ -68,9 +68,9 @@ class AssociateEntitiesToExperienceResult {
   ///@}
  private:
   Aws::Vector<FailedEntity> m_failedEntityList;
-  bool m_failedEntityListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedEntityListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

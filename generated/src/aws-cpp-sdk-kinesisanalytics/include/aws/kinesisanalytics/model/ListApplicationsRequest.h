@@ -71,9 +71,9 @@ class ListApplicationsRequest : public KinesisAnalyticsRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_exclusiveStartApplicationName;
+  bool m_limitHasBeenSet = false;
   bool m_exclusiveStartApplicationNameHasBeenSet = false;
 };
 

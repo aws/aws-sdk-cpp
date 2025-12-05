@@ -76,12 +76,12 @@ class CreateInferenceProfileResult {
   ///@}
  private:
   Aws::String m_inferenceProfileArn;
-  bool m_inferenceProfileArnHasBeenSet = false;
 
   InferenceProfileStatus m_status{InferenceProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceProfileArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

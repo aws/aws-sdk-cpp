@@ -72,9 +72,9 @@ class AutoScalingPolicyUpdate {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   AutoScalingTargetTrackingScalingPolicyConfigurationUpdate m_targetTrackingScalingPolicyConfiguration;
+  bool m_policyNameHasBeenSet = false;
   bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListConnectionTypesResult {
   ///@}
  private:
   Aws::Vector<ConnectionTypeBrief> m_connectionTypes;
-  bool m_connectionTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

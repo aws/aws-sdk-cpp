@@ -70,9 +70,9 @@ class DeregisterGatewayInstanceRequest : public MediaConnectRequest {
   ///@}
  private:
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   Aws::String m_gatewayInstanceArn;
+  bool m_forceHasBeenSet = false;
   bool m_gatewayInstanceArnHasBeenSet = false;
 };
 

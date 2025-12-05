@@ -318,33 +318,33 @@ class CreateLabelingJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_labelingJobName;
-  bool m_labelingJobNameHasBeenSet = false;
 
   Aws::String m_labelAttributeName;
-  bool m_labelAttributeNameHasBeenSet = false;
 
   LabelingJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   LabelingJobOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_labelCategoryConfigS3Uri;
-  bool m_labelCategoryConfigS3UriHasBeenSet = false;
 
   LabelingJobStoppingConditions m_stoppingConditions;
-  bool m_stoppingConditionsHasBeenSet = false;
 
   LabelingJobAlgorithmsConfig m_labelingJobAlgorithmsConfig;
-  bool m_labelingJobAlgorithmsConfigHasBeenSet = false;
 
   HumanTaskConfig m_humanTaskConfig;
-  bool m_humanTaskConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_labelingJobNameHasBeenSet = false;
+  bool m_labelAttributeNameHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_labelCategoryConfigS3UriHasBeenSet = false;
+  bool m_stoppingConditionsHasBeenSet = false;
+  bool m_labelingJobAlgorithmsConfigHasBeenSet = false;
+  bool m_humanTaskConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

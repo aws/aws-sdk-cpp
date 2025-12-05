@@ -96,12 +96,12 @@ class StartImagePipelineExecutionRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_imagePipelineArn;
-  bool m_imagePipelineArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_imagePipelineArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

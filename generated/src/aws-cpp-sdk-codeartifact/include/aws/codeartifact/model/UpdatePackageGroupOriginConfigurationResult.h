@@ -95,13 +95,13 @@ class UpdatePackageGroupOriginConfigurationResult {
   ///@}
  private:
   PackageGroupDescription m_packageGroup;
-  bool m_packageGroupHasBeenSet = false;
 
   Aws::Map<PackageGroupOriginRestrictionType, Aws::Map<PackageGroupAllowedRepositoryUpdateType, Aws::Vector<Aws::String>>>
       m_allowedRepositoryUpdates;
-  bool m_allowedRepositoryUpdatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageGroupHasBeenSet = false;
+  bool m_allowedRepositoryUpdatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

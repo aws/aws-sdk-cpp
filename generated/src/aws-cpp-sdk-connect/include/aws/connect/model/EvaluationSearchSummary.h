@@ -238,36 +238,36 @@ class EvaluationSearchSummary {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_evaluationArn;
-  bool m_evaluationArnHasBeenSet = false;
 
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   int m_evaluationFormVersion{0};
-  bool m_evaluationFormVersionHasBeenSet = false;
 
   Aws::String m_evaluationFormTitle;
-  bool m_evaluationFormTitleHasBeenSet = false;
 
   EvaluationSearchMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   EvaluationStatus m_status{EvaluationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_evaluationArnHasBeenSet = false;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormVersionHasBeenSet = false;
+  bool m_evaluationFormTitleHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

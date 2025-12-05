@@ -95,12 +95,12 @@ class GetHealthEventRequest : public InternetMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_linkedAccountId;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_linkedAccountIdHasBeenSet = false;
 };
 

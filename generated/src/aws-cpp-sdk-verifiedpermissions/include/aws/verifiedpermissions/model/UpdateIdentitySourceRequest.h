@@ -107,15 +107,15 @@ class UpdateIdentitySourceRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_identitySourceId;
-  bool m_identitySourceIdHasBeenSet = false;
 
   UpdateConfiguration m_updateConfiguration;
-  bool m_updateConfigurationHasBeenSet = false;
 
   Aws::String m_principalEntityType;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_identitySourceIdHasBeenSet = false;
+  bool m_updateConfigurationHasBeenSet = false;
   bool m_principalEntityTypeHasBeenSet = false;
 };
 

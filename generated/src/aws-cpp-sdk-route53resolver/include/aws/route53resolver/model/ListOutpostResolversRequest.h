@@ -86,12 +86,12 @@ class ListOutpostResolversRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

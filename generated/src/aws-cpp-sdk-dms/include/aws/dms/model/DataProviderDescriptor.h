@@ -105,15 +105,15 @@ class DataProviderDescriptor {
   ///@}
  private:
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_dataProviderName;
-  bool m_dataProviderNameHasBeenSet = false;
 
   Aws::String m_dataProviderArn;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_dataProviderNameHasBeenSet = false;
   bool m_dataProviderArnHasBeenSet = false;
 };
 

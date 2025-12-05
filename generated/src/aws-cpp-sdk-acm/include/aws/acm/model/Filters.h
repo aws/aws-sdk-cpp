@@ -147,18 +147,18 @@ class Filters {
   ///@}
  private:
   Aws::Vector<ExtendedKeyUsageName> m_extendedKeyUsage;
-  bool m_extendedKeyUsageHasBeenSet = false;
 
   Aws::Vector<KeyUsageName> m_keyUsage;
-  bool m_keyUsageHasBeenSet = false;
 
   Aws::Vector<KeyAlgorithm> m_keyTypes;
-  bool m_keyTypesHasBeenSet = false;
 
   CertificateExport m_exportOption{CertificateExport::NOT_SET};
-  bool m_exportOptionHasBeenSet = false;
 
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+  bool m_extendedKeyUsageHasBeenSet = false;
+  bool m_keyUsageHasBeenSet = false;
+  bool m_keyTypesHasBeenSet = false;
+  bool m_exportOptionHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
 };
 

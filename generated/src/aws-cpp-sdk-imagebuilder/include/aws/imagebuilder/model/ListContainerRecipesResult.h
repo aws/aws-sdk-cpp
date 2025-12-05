@@ -88,12 +88,12 @@ class ListContainerRecipesResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<ContainerRecipeSummary> m_containerRecipeSummaryList;
-  bool m_containerRecipeSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_containerRecipeSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

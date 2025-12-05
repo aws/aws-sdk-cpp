@@ -97,12 +97,12 @@ class AwsStepFunctionStateMachineLoggingConfigurationDetails {
   ///@}
  private:
   Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   bool m_includeExecutionData{false};
-  bool m_includeExecutionDataHasBeenSet = false;
 
   Aws::String m_level;
+  bool m_destinationsHasBeenSet = false;
+  bool m_includeExecutionDataHasBeenSet = false;
   bool m_levelHasBeenSet = false;
 };
 

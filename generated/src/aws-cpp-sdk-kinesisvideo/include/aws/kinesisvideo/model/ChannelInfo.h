@@ -160,24 +160,24 @@ class ChannelInfo {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_channelARN;
-  bool m_channelARNHasBeenSet = false;
 
   ChannelType m_channelType{ChannelType::NOT_SET};
-  bool m_channelTypeHasBeenSet = false;
 
   Status m_channelStatus{Status::NOT_SET};
-  bool m_channelStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   SingleMasterConfiguration m_singleMasterConfiguration;
-  bool m_singleMasterConfigurationHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelARNHasBeenSet = false;
+  bool m_channelTypeHasBeenSet = false;
+  bool m_channelStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_singleMasterConfigurationHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

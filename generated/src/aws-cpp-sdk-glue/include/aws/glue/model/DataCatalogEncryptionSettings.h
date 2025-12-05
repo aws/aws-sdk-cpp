@@ -74,9 +74,9 @@ class DataCatalogEncryptionSettings {
   ///@}
  private:
   EncryptionAtRest m_encryptionAtRest;
-  bool m_encryptionAtRestHasBeenSet = false;
 
   ConnectionPasswordEncryption m_connectionPasswordEncryption;
+  bool m_encryptionAtRestHasBeenSet = false;
   bool m_connectionPasswordEncryptionHasBeenSet = false;
 };
 

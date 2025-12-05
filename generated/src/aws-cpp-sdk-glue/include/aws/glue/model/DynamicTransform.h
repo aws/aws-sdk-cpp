@@ -199,27 +199,27 @@ class DynamicTransform {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_transformName;
-  bool m_transformNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Vector<TransformConfigParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_transformNameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

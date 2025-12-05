@@ -69,9 +69,9 @@ class DeregisterComputeRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_computeName;
+  bool m_fleetIdHasBeenSet = false;
   bool m_computeNameHasBeenSet = false;
 };
 

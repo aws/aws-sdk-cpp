@@ -184,24 +184,24 @@ class CreateConfiguredTableRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TableReference m_tableReference;
-  bool m_tableReferenceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedColumns;
-  bool m_allowedColumnsHasBeenSet = false;
 
   AnalysisMethod m_analysisMethod{AnalysisMethod::NOT_SET};
-  bool m_analysisMethodHasBeenSet = false;
 
   Aws::Vector<SelectedAnalysisMethod> m_selectedAnalysisMethods;
-  bool m_selectedAnalysisMethodsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tableReferenceHasBeenSet = false;
+  bool m_allowedColumnsHasBeenSet = false;
+  bool m_analysisMethodHasBeenSet = false;
+  bool m_selectedAnalysisMethodsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

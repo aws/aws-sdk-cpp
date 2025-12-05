@@ -60,9 +60,9 @@ class CreateDataSourceResult {
   ///@}
  private:
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ValidationException {
   ///@}
  private:
   OAuth2ErrorCode m_error{OAuth2ErrorCode::NOT_SET};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

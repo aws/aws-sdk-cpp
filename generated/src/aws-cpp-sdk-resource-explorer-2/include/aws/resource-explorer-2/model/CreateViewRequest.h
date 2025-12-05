@@ -180,21 +180,21 @@ class CreateViewRequest : public ResourceExplorer2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_viewName;
-  bool m_viewNameHasBeenSet = false;
 
   Aws::Vector<IncludedProperty> m_includedProperties;
-  bool m_includedPropertiesHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   SearchFilter m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_viewNameHasBeenSet = false;
+  bool m_includedPropertiesHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class ReceiptFilter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ReceiptIpFilter m_ipFilter;
+  bool m_nameHasBeenSet = false;
   bool m_ipFilterHasBeenSet = false;
 };
 

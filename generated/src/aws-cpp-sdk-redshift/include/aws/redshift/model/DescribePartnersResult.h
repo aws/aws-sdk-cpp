@@ -67,9 +67,9 @@ class DescribePartnersResult {
   ///@}
  private:
   Aws::Vector<PartnerIntegrationInfo> m_partnerIntegrationInfoList;
-  bool m_partnerIntegrationInfoListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_partnerIntegrationInfoListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

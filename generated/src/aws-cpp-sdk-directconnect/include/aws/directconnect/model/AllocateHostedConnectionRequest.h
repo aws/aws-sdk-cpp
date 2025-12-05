@@ -150,21 +150,21 @@ class AllocateHostedConnectionRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_bandwidth;
-  bool m_bandwidthHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   int m_vlan{0};
-  bool m_vlanHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_bandwidthHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_vlanHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

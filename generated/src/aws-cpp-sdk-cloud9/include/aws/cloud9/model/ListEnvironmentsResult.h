@@ -86,12 +86,12 @@ class ListEnvironmentsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_environmentIds;
-  bool m_environmentIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_environmentIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -119,15 +119,15 @@ class UpdateFirewallDeleteProtectionRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   bool m_deleteProtection{false};
+  bool m_updateTokenHasBeenSet = false;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallNameHasBeenSet = false;
   bool m_deleteProtectionHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class DataTableLockVersion {
   ///@}
  private:
   Aws::String m_dataTable;
-  bool m_dataTableHasBeenSet = false;
 
   Aws::String m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_dataTableHasBeenSet = false;
+  bool m_attributeHasBeenSet = false;
+  bool m_primaryValuesHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

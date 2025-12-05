@@ -69,9 +69,9 @@ class Button {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_textHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

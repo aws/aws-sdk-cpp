@@ -150,24 +150,24 @@ class StartRunResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RunStatus m_status{RunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_uuid;
-  bool m_uuidHasBeenSet = false;
 
   Aws::String m_runOutputUri;
-  bool m_runOutputUriHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_uuidHasBeenSet = false;
+  bool m_runOutputUriHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

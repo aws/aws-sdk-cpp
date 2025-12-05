@@ -94,15 +94,15 @@ class FlywheelModelEvaluationMetrics {
   ///@}
  private:
   double m_averageF1Score{0.0};
-  bool m_averageF1ScoreHasBeenSet = false;
 
   double m_averagePrecision{0.0};
-  bool m_averagePrecisionHasBeenSet = false;
 
   double m_averageRecall{0.0};
-  bool m_averageRecallHasBeenSet = false;
 
   double m_averageAccuracy{0.0};
+  bool m_averageF1ScoreHasBeenSet = false;
+  bool m_averagePrecisionHasBeenSet = false;
+  bool m_averageRecallHasBeenSet = false;
   bool m_averageAccuracyHasBeenSet = false;
 };
 

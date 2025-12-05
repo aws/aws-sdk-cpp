@@ -60,9 +60,9 @@ class CreateVpcPeeringConnectionResponse {
   ///@}
  private:
   VpcPeeringConnection m_vpcPeeringConnection;
-  bool m_vpcPeeringConnectionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcPeeringConnectionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

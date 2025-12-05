@@ -281,48 +281,48 @@ class DescribeNodeResult {
   ///@}
  private:
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   NodeCategory m_category{NodeCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   NodeInterface m_nodeInterface;
-  bool m_nodeInterfaceHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_packageArn;
-  bool m_packageArnHasBeenSet = false;
 
   Aws::String m_packageId;
-  bool m_packageIdHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_patchVersion;
-  bool m_patchVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetNameHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_nodeInterfaceHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_packageArnHasBeenSet = false;
+  bool m_packageIdHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
+  bool m_patchVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

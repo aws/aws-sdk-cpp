@@ -161,21 +161,21 @@ class CreateUsagePlanRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ApiStage> m_apiStages;
-  bool m_apiStagesHasBeenSet = false;
 
   ThrottleSettings m_throttle;
-  bool m_throttleHasBeenSet = false;
 
   QuotaSettings m_quota;
-  bool m_quotaHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_apiStagesHasBeenSet = false;
+  bool m_throttleHasBeenSet = false;
+  bool m_quotaHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListAnalyzableServersRequest : public MigrationHubStrategyRecommendationsR
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SortOrder m_sort{SortOrder::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

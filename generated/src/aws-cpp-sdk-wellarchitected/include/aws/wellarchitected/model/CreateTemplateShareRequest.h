@@ -80,12 +80,12 @@ class CreateTemplateShareRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_sharedWith;
-  bool m_sharedWithHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_templateArnHasBeenSet = false;
+  bool m_sharedWithHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

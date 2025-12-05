@@ -73,9 +73,9 @@ class DescribeInstanceHealthResult {
   ///@}
  private:
   Aws::Vector<InstanceState> m_instanceStates;
-  bool m_instanceStatesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceStatesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

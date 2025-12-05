@@ -85,12 +85,12 @@ class ListRecoveryGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecoveryGroupOutput> m_recoveryGroups;
-  bool m_recoveryGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recoveryGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -122,15 +122,15 @@ class ListIndexesRequest : public ResourceExplorer2Request {
   ///@}
  private:
   IndexType m_type{IndexType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_typeHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

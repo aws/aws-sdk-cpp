@@ -104,15 +104,15 @@ class RtmpOutputSettings {
   ///@}
  private:
   RtmpOutputCertificateMode m_certificateMode{RtmpOutputCertificateMode::NOT_SET};
-  bool m_certificateModeHasBeenSet = false;
 
   int m_connectionRetryInterval{0};
-  bool m_connectionRetryIntervalHasBeenSet = false;
 
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   int m_numRetries{0};
+  bool m_certificateModeHasBeenSet = false;
+  bool m_connectionRetryIntervalHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_numRetriesHasBeenSet = false;
 };
 

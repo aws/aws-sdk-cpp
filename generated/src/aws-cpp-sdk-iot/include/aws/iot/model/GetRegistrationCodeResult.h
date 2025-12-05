@@ -65,9 +65,9 @@ class GetRegistrationCodeResult {
   ///@}
  private:
   Aws::String m_registrationCode;
-  bool m_registrationCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

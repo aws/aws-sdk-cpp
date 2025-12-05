@@ -113,18 +113,18 @@ class GetDeployablePatchSnapshotForInstanceResult {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_snapshotDownloadUrl;
-  bool m_snapshotDownloadUrlHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_snapshotDownloadUrlHasBeenSet = false;
+  bool m_productHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

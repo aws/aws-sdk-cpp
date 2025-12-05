@@ -84,12 +84,12 @@ class ListStudiosResult {
   ///@}
  private:
   Aws::Vector<StudioSummary> m_studios;
-  bool m_studiosHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_studiosHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

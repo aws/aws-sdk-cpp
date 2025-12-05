@@ -140,18 +140,18 @@ class Task {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sourceFields;
-  bool m_sourceFieldsHasBeenSet = false;
 
   ConnectorOperator m_connectorOperator;
-  bool m_connectorOperatorHasBeenSet = false;
 
   Aws::String m_destinationField;
-  bool m_destinationFieldHasBeenSet = false;
 
   TaskType m_taskType{TaskType::NOT_SET};
-  bool m_taskTypeHasBeenSet = false;
 
   Aws::Map<OperatorPropertiesKeys, Aws::String> m_taskProperties;
+  bool m_sourceFieldsHasBeenSet = false;
+  bool m_connectorOperatorHasBeenSet = false;
+  bool m_destinationFieldHasBeenSet = false;
+  bool m_taskTypeHasBeenSet = false;
   bool m_taskPropertiesHasBeenSet = false;
 };
 

@@ -166,24 +166,24 @@ class EvaluationResult {
   ///@}
  private:
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_feature;
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   VariableValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_variation;
+  bool m_detailsHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_variationHasBeenSet = false;
 };
 

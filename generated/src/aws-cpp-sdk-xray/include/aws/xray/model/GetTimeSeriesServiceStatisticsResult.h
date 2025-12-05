@@ -101,15 +101,15 @@ class GetTimeSeriesServiceStatisticsResult {
   ///@}
  private:
   Aws::Vector<TimeSeriesServiceStatistics> m_timeSeriesServiceStatistics;
-  bool m_timeSeriesServiceStatisticsHasBeenSet = false;
 
   bool m_containsOldGroupVersions{false};
-  bool m_containsOldGroupVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_timeSeriesServiceStatisticsHasBeenSet = false;
+  bool m_containsOldGroupVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

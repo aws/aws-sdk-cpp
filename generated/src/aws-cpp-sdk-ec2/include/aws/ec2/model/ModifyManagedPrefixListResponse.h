@@ -60,9 +60,9 @@ class ModifyManagedPrefixListResponse {
   ///@}
  private:
   ManagedPrefixList m_prefixList;
-  bool m_prefixListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_prefixListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

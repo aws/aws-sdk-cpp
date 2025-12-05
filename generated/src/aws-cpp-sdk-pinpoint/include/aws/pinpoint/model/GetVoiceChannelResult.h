@@ -58,9 +58,9 @@ class GetVoiceChannelResult {
   ///@}
  private:
   VoiceChannelResponse m_voiceChannelResponse;
-  bool m_voiceChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

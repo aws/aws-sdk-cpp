@@ -68,9 +68,9 @@ class ModifyWorkspaceAccessPropertiesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   WorkspaceAccessProperties m_workspaceAccessProperties;
+  bool m_resourceIdHasBeenSet = false;
   bool m_workspaceAccessPropertiesHasBeenSet = false;
 };
 

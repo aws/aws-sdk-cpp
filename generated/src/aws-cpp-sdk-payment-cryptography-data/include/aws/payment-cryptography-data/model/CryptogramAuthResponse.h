@@ -73,9 +73,9 @@ class CryptogramAuthResponse {
   ///@}
  private:
   CryptogramVerificationArpcMethod1 m_arpcMethod1;
-  bool m_arpcMethod1HasBeenSet = false;
 
   CryptogramVerificationArpcMethod2 m_arpcMethod2;
+  bool m_arpcMethod1HasBeenSet = false;
   bool m_arpcMethod2HasBeenSet = false;
 };
 

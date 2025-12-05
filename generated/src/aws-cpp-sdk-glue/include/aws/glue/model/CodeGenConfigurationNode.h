@@ -1575,240 +1575,240 @@ class CodeGenConfigurationNode {
   ///@}
  private:
   AthenaConnectorSource m_athenaConnectorSource;
-  bool m_athenaConnectorSourceHasBeenSet = false;
 
   JDBCConnectorSource m_jDBCConnectorSource;
-  bool m_jDBCConnectorSourceHasBeenSet = false;
 
   SparkConnectorSource m_sparkConnectorSource;
-  bool m_sparkConnectorSourceHasBeenSet = false;
 
   CatalogSource m_catalogSource;
-  bool m_catalogSourceHasBeenSet = false;
 
   RedshiftSource m_redshiftSource;
-  bool m_redshiftSourceHasBeenSet = false;
 
   S3CatalogSource m_s3CatalogSource;
-  bool m_s3CatalogSourceHasBeenSet = false;
 
   S3CsvSource m_s3CsvSource;
-  bool m_s3CsvSourceHasBeenSet = false;
 
   S3JsonSource m_s3JsonSource;
-  bool m_s3JsonSourceHasBeenSet = false;
 
   S3ParquetSource m_s3ParquetSource;
-  bool m_s3ParquetSourceHasBeenSet = false;
 
   RelationalCatalogSource m_relationalCatalogSource;
-  bool m_relationalCatalogSourceHasBeenSet = false;
 
   DynamoDBCatalogSource m_dynamoDBCatalogSource;
-  bool m_dynamoDBCatalogSourceHasBeenSet = false;
 
   JDBCConnectorTarget m_jDBCConnectorTarget;
-  bool m_jDBCConnectorTargetHasBeenSet = false;
 
   SparkConnectorTarget m_sparkConnectorTarget;
-  bool m_sparkConnectorTargetHasBeenSet = false;
 
   BasicCatalogTarget m_catalogTarget;
-  bool m_catalogTargetHasBeenSet = false;
 
   RedshiftTarget m_redshiftTarget;
-  bool m_redshiftTargetHasBeenSet = false;
 
   S3CatalogTarget m_s3CatalogTarget;
-  bool m_s3CatalogTargetHasBeenSet = false;
 
   S3GlueParquetTarget m_s3GlueParquetTarget;
-  bool m_s3GlueParquetTargetHasBeenSet = false;
 
   S3DirectTarget m_s3DirectTarget;
-  bool m_s3DirectTargetHasBeenSet = false;
 
   ApplyMapping m_applyMapping;
-  bool m_applyMappingHasBeenSet = false;
 
   SelectFields m_selectFields;
-  bool m_selectFieldsHasBeenSet = false;
 
   DropFields m_dropFields;
-  bool m_dropFieldsHasBeenSet = false;
 
   RenameField m_renameField;
-  bool m_renameFieldHasBeenSet = false;
 
   Spigot m_spigot;
-  bool m_spigotHasBeenSet = false;
 
   Join m_join;
-  bool m_joinHasBeenSet = false;
 
   SplitFields m_splitFields;
-  bool m_splitFieldsHasBeenSet = false;
 
   SelectFromCollection m_selectFromCollection;
-  bool m_selectFromCollectionHasBeenSet = false;
 
   FillMissingValues m_fillMissingValues;
-  bool m_fillMissingValuesHasBeenSet = false;
 
   Filter m_filter;
-  bool m_filterHasBeenSet = false;
 
   CustomCode m_customCode;
-  bool m_customCodeHasBeenSet = false;
 
   SparkSQL m_sparkSQL;
-  bool m_sparkSQLHasBeenSet = false;
 
   DirectKinesisSource m_directKinesisSource;
-  bool m_directKinesisSourceHasBeenSet = false;
 
   DirectKafkaSource m_directKafkaSource;
-  bool m_directKafkaSourceHasBeenSet = false;
 
   CatalogKinesisSource m_catalogKinesisSource;
-  bool m_catalogKinesisSourceHasBeenSet = false;
 
   CatalogKafkaSource m_catalogKafkaSource;
-  bool m_catalogKafkaSourceHasBeenSet = false;
 
   DropNullFields m_dropNullFields;
-  bool m_dropNullFieldsHasBeenSet = false;
 
   Merge m_merge;
-  bool m_mergeHasBeenSet = false;
 
   Union m_union;
-  bool m_unionHasBeenSet = false;
 
   PIIDetection m_pIIDetection;
-  bool m_pIIDetectionHasBeenSet = false;
 
   Aggregate m_aggregate;
-  bool m_aggregateHasBeenSet = false;
 
   DropDuplicates m_dropDuplicates;
-  bool m_dropDuplicatesHasBeenSet = false;
 
   GovernedCatalogTarget m_governedCatalogTarget;
-  bool m_governedCatalogTargetHasBeenSet = false;
 
   GovernedCatalogSource m_governedCatalogSource;
-  bool m_governedCatalogSourceHasBeenSet = false;
 
   MicrosoftSQLServerCatalogSource m_microsoftSQLServerCatalogSource;
-  bool m_microsoftSQLServerCatalogSourceHasBeenSet = false;
 
   MySQLCatalogSource m_mySQLCatalogSource;
-  bool m_mySQLCatalogSourceHasBeenSet = false;
 
   OracleSQLCatalogSource m_oracleSQLCatalogSource;
-  bool m_oracleSQLCatalogSourceHasBeenSet = false;
 
   PostgreSQLCatalogSource m_postgreSQLCatalogSource;
-  bool m_postgreSQLCatalogSourceHasBeenSet = false;
 
   MicrosoftSQLServerCatalogTarget m_microsoftSQLServerCatalogTarget;
-  bool m_microsoftSQLServerCatalogTargetHasBeenSet = false;
 
   MySQLCatalogTarget m_mySQLCatalogTarget;
-  bool m_mySQLCatalogTargetHasBeenSet = false;
 
   OracleSQLCatalogTarget m_oracleSQLCatalogTarget;
-  bool m_oracleSQLCatalogTargetHasBeenSet = false;
 
   PostgreSQLCatalogTarget m_postgreSQLCatalogTarget;
-  bool m_postgreSQLCatalogTargetHasBeenSet = false;
 
   Route m_route;
-  bool m_routeHasBeenSet = false;
 
   DynamicTransform m_dynamicTransform;
-  bool m_dynamicTransformHasBeenSet = false;
 
   EvaluateDataQuality m_evaluateDataQuality;
-  bool m_evaluateDataQualityHasBeenSet = false;
 
   S3CatalogHudiSource m_s3CatalogHudiSource;
-  bool m_s3CatalogHudiSourceHasBeenSet = false;
 
   CatalogHudiSource m_catalogHudiSource;
-  bool m_catalogHudiSourceHasBeenSet = false;
 
   S3HudiSource m_s3HudiSource;
-  bool m_s3HudiSourceHasBeenSet = false;
 
   S3HudiCatalogTarget m_s3HudiCatalogTarget;
-  bool m_s3HudiCatalogTargetHasBeenSet = false;
 
   S3HudiDirectTarget m_s3HudiDirectTarget;
-  bool m_s3HudiDirectTargetHasBeenSet = false;
 
   DirectJDBCSource m_directJDBCSource;
-  bool m_directJDBCSourceHasBeenSet = false;
 
   S3CatalogDeltaSource m_s3CatalogDeltaSource;
-  bool m_s3CatalogDeltaSourceHasBeenSet = false;
 
   CatalogDeltaSource m_catalogDeltaSource;
-  bool m_catalogDeltaSourceHasBeenSet = false;
 
   S3DeltaSource m_s3DeltaSource;
-  bool m_s3DeltaSourceHasBeenSet = false;
 
   S3DeltaCatalogTarget m_s3DeltaCatalogTarget;
-  bool m_s3DeltaCatalogTargetHasBeenSet = false;
 
   S3DeltaDirectTarget m_s3DeltaDirectTarget;
-  bool m_s3DeltaDirectTargetHasBeenSet = false;
 
   AmazonRedshiftSource m_amazonRedshiftSource;
-  bool m_amazonRedshiftSourceHasBeenSet = false;
 
   AmazonRedshiftTarget m_amazonRedshiftTarget;
-  bool m_amazonRedshiftTargetHasBeenSet = false;
 
   EvaluateDataQualityMultiFrame m_evaluateDataQualityMultiFrame;
-  bool m_evaluateDataQualityMultiFrameHasBeenSet = false;
 
   Recipe m_recipe;
-  bool m_recipeHasBeenSet = false;
 
   SnowflakeSource m_snowflakeSource;
-  bool m_snowflakeSourceHasBeenSet = false;
 
   SnowflakeTarget m_snowflakeTarget;
-  bool m_snowflakeTargetHasBeenSet = false;
 
   ConnectorDataSource m_connectorDataSource;
-  bool m_connectorDataSourceHasBeenSet = false;
 
   ConnectorDataTarget m_connectorDataTarget;
-  bool m_connectorDataTargetHasBeenSet = false;
 
   S3CatalogIcebergSource m_s3CatalogIcebergSource;
-  bool m_s3CatalogIcebergSourceHasBeenSet = false;
 
   CatalogIcebergSource m_catalogIcebergSource;
-  bool m_catalogIcebergSourceHasBeenSet = false;
 
   S3IcebergCatalogTarget m_s3IcebergCatalogTarget;
-  bool m_s3IcebergCatalogTargetHasBeenSet = false;
 
   S3IcebergDirectTarget m_s3IcebergDirectTarget;
-  bool m_s3IcebergDirectTargetHasBeenSet = false;
 
   S3ExcelSource m_s3ExcelSource;
-  bool m_s3ExcelSourceHasBeenSet = false;
 
   S3HyperDirectTarget m_s3HyperDirectTarget;
-  bool m_s3HyperDirectTargetHasBeenSet = false;
 
   DynamoDBELTConnectorSource m_dynamoDBELTConnectorSource;
+  bool m_athenaConnectorSourceHasBeenSet = false;
+  bool m_jDBCConnectorSourceHasBeenSet = false;
+  bool m_sparkConnectorSourceHasBeenSet = false;
+  bool m_catalogSourceHasBeenSet = false;
+  bool m_redshiftSourceHasBeenSet = false;
+  bool m_s3CatalogSourceHasBeenSet = false;
+  bool m_s3CsvSourceHasBeenSet = false;
+  bool m_s3JsonSourceHasBeenSet = false;
+  bool m_s3ParquetSourceHasBeenSet = false;
+  bool m_relationalCatalogSourceHasBeenSet = false;
+  bool m_dynamoDBCatalogSourceHasBeenSet = false;
+  bool m_jDBCConnectorTargetHasBeenSet = false;
+  bool m_sparkConnectorTargetHasBeenSet = false;
+  bool m_catalogTargetHasBeenSet = false;
+  bool m_redshiftTargetHasBeenSet = false;
+  bool m_s3CatalogTargetHasBeenSet = false;
+  bool m_s3GlueParquetTargetHasBeenSet = false;
+  bool m_s3DirectTargetHasBeenSet = false;
+  bool m_applyMappingHasBeenSet = false;
+  bool m_selectFieldsHasBeenSet = false;
+  bool m_dropFieldsHasBeenSet = false;
+  bool m_renameFieldHasBeenSet = false;
+  bool m_spigotHasBeenSet = false;
+  bool m_joinHasBeenSet = false;
+  bool m_splitFieldsHasBeenSet = false;
+  bool m_selectFromCollectionHasBeenSet = false;
+  bool m_fillMissingValuesHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_customCodeHasBeenSet = false;
+  bool m_sparkSQLHasBeenSet = false;
+  bool m_directKinesisSourceHasBeenSet = false;
+  bool m_directKafkaSourceHasBeenSet = false;
+  bool m_catalogKinesisSourceHasBeenSet = false;
+  bool m_catalogKafkaSourceHasBeenSet = false;
+  bool m_dropNullFieldsHasBeenSet = false;
+  bool m_mergeHasBeenSet = false;
+  bool m_unionHasBeenSet = false;
+  bool m_pIIDetectionHasBeenSet = false;
+  bool m_aggregateHasBeenSet = false;
+  bool m_dropDuplicatesHasBeenSet = false;
+  bool m_governedCatalogTargetHasBeenSet = false;
+  bool m_governedCatalogSourceHasBeenSet = false;
+  bool m_microsoftSQLServerCatalogSourceHasBeenSet = false;
+  bool m_mySQLCatalogSourceHasBeenSet = false;
+  bool m_oracleSQLCatalogSourceHasBeenSet = false;
+  bool m_postgreSQLCatalogSourceHasBeenSet = false;
+  bool m_microsoftSQLServerCatalogTargetHasBeenSet = false;
+  bool m_mySQLCatalogTargetHasBeenSet = false;
+  bool m_oracleSQLCatalogTargetHasBeenSet = false;
+  bool m_postgreSQLCatalogTargetHasBeenSet = false;
+  bool m_routeHasBeenSet = false;
+  bool m_dynamicTransformHasBeenSet = false;
+  bool m_evaluateDataQualityHasBeenSet = false;
+  bool m_s3CatalogHudiSourceHasBeenSet = false;
+  bool m_catalogHudiSourceHasBeenSet = false;
+  bool m_s3HudiSourceHasBeenSet = false;
+  bool m_s3HudiCatalogTargetHasBeenSet = false;
+  bool m_s3HudiDirectTargetHasBeenSet = false;
+  bool m_directJDBCSourceHasBeenSet = false;
+  bool m_s3CatalogDeltaSourceHasBeenSet = false;
+  bool m_catalogDeltaSourceHasBeenSet = false;
+  bool m_s3DeltaSourceHasBeenSet = false;
+  bool m_s3DeltaCatalogTargetHasBeenSet = false;
+  bool m_s3DeltaDirectTargetHasBeenSet = false;
+  bool m_amazonRedshiftSourceHasBeenSet = false;
+  bool m_amazonRedshiftTargetHasBeenSet = false;
+  bool m_evaluateDataQualityMultiFrameHasBeenSet = false;
+  bool m_recipeHasBeenSet = false;
+  bool m_snowflakeSourceHasBeenSet = false;
+  bool m_snowflakeTargetHasBeenSet = false;
+  bool m_connectorDataSourceHasBeenSet = false;
+  bool m_connectorDataTargetHasBeenSet = false;
+  bool m_s3CatalogIcebergSourceHasBeenSet = false;
+  bool m_catalogIcebergSourceHasBeenSet = false;
+  bool m_s3IcebergCatalogTargetHasBeenSet = false;
+  bool m_s3IcebergDirectTargetHasBeenSet = false;
+  bool m_s3ExcelSourceHasBeenSet = false;
+  bool m_s3HyperDirectTargetHasBeenSet = false;
   bool m_dynamoDBELTConnectorSourceHasBeenSet = false;
 };
 

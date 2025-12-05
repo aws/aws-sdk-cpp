@@ -99,12 +99,12 @@ class StepAttributeCapability {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_anyOf;
-  bool m_anyOfHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allOf;
+  bool m_nameHasBeenSet = false;
+  bool m_anyOfHasBeenSet = false;
   bool m_allOfHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class RelevanceFeedback {
   ///@}
  private:
   Aws::String m_resultId;
-  bool m_resultIdHasBeenSet = false;
 
   RelevanceType m_relevanceValue{RelevanceType::NOT_SET};
+  bool m_resultIdHasBeenSet = false;
   bool m_relevanceValueHasBeenSet = false;
 };
 

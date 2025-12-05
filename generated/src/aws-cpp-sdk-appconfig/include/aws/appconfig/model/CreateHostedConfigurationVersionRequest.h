@@ -124,18 +124,18 @@ class CreateHostedConfigurationVersionRequest : public StreamingAppConfigRequest
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_configurationProfileId;
-  bool m_configurationProfileIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_latestVersionNumber{0};
-  bool m_latestVersionNumberHasBeenSet = false;
 
   Aws::String m_versionLabel;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_configurationProfileIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_latestVersionNumberHasBeenSet = false;
   bool m_versionLabelHasBeenSet = false;
 };
 

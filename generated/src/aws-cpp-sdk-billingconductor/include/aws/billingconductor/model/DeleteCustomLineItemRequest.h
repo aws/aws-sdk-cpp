@@ -64,9 +64,9 @@ class DeleteCustomLineItemRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CustomLineItemBillingPeriodRange m_billingPeriodRange;
+  bool m_arnHasBeenSet = false;
   bool m_billingPeriodRangeHasBeenSet = false;
 };
 

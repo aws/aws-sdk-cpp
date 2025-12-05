@@ -198,30 +198,30 @@ class InstanceUserSummary {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_instanceUserArn;
-  bool m_instanceUserArnHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_associationDate;
-  bool m_associationDateHasBeenSet = false;
 
   Aws::String m_disassociationDate;
+  bool m_usernameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_instanceUserArnHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_associationDateHasBeenSet = false;
   bool m_disassociationDateHasBeenSet = false;
 };
 

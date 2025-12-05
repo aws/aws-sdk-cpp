@@ -190,27 +190,27 @@ class S3Location {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Encryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   ObjectCannedACL m_cannedACL{ObjectCannedACL::NOT_SET};
-  bool m_cannedACLHasBeenSet = false;
 
   Aws::Vector<Grant> m_accessControlList;
-  bool m_accessControlListHasBeenSet = false;
 
   Tagging m_tagging;
-  bool m_taggingHasBeenSet = false;
 
   Aws::Vector<MetadataEntry> m_userMetadata;
-  bool m_userMetadataHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
+  bool m_bucketNameHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_cannedACLHasBeenSet = false;
+  bool m_accessControlListHasBeenSet = false;
+  bool m_taggingHasBeenSet = false;
+  bool m_userMetadataHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class UpdateProvisionedModelThroughputRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_provisionedModelId;
-  bool m_provisionedModelIdHasBeenSet = false;
 
   Aws::String m_desiredProvisionedModelName;
-  bool m_desiredProvisionedModelNameHasBeenSet = false;
 
   Aws::String m_desiredModelId;
+  bool m_provisionedModelIdHasBeenSet = false;
+  bool m_desiredProvisionedModelNameHasBeenSet = false;
   bool m_desiredModelIdHasBeenSet = false;
 };
 

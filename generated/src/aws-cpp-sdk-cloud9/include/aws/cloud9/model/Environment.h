@@ -207,30 +207,30 @@ class Environment {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EnvironmentType m_type{EnvironmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_ownerArn;
-  bool m_ownerArnHasBeenSet = false;
 
   EnvironmentLifecycle m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   ManagedCredentialsStatus m_managedCredentialsStatus{ManagedCredentialsStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_ownerArnHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
   bool m_managedCredentialsStatusHasBeenSet = false;
 };
 

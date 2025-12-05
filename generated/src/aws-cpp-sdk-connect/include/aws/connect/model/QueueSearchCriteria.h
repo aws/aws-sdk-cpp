@@ -125,15 +125,15 @@ class QueueSearchCriteria {
   ///@}
  private:
   Aws::Vector<QueueSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<QueueSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   SearchableQueueType m_queueTypeCondition{SearchableQueueType::NOT_SET};
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
+  bool m_stringConditionHasBeenSet = false;
   bool m_queueTypeConditionHasBeenSet = false;
 };
 

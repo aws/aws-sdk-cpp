@@ -85,12 +85,12 @@ class ListWorkloadsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WorkloadDataSummary> m_workloads;
-  bool m_workloadsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workloadsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

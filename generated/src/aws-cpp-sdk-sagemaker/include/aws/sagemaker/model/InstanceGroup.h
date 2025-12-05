@@ -86,12 +86,12 @@ class InstanceGroup {
   ///@}
  private:
   TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_instanceGroupName;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
   bool m_instanceGroupNameHasBeenSet = false;
 };
 

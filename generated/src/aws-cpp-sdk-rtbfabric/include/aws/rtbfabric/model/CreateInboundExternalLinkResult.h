@@ -109,18 +109,18 @@ class CreateInboundExternalLinkResult {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   LinkStatus m_status{LinkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

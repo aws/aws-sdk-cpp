@@ -139,18 +139,18 @@ class DescribeSenderIdsRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::Vector<SenderIdAndCountry> m_senderIds;
-  bool m_senderIdsHasBeenSet = false;
 
   Aws::Vector<SenderIdFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Owner m_owner{Owner::NOT_SET};
+  bool m_senderIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

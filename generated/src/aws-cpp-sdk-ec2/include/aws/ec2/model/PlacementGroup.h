@@ -183,27 +183,27 @@ class PlacementGroup {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   PlacementGroupState m_state{PlacementGroupState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   PlacementStrategy m_strategy{PlacementStrategy::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   int m_partitionCount{0};
-  bool m_partitionCountHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_groupArn;
-  bool m_groupArnHasBeenSet = false;
 
   SpreadLevel m_spreadLevel{SpreadLevel::NOT_SET};
+  bool m_groupNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_strategyHasBeenSet = false;
+  bool m_partitionCountHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_groupArnHasBeenSet = false;
   bool m_spreadLevelHasBeenSet = false;
 };
 

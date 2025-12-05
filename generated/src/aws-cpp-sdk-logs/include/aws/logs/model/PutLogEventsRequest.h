@@ -136,18 +136,18 @@ class PutLogEventsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   Aws::Vector<InputLogEvent> m_logEvents;
-  bool m_logEventsHasBeenSet = false;
 
   Aws::String m_sequenceToken;
-  bool m_sequenceTokenHasBeenSet = false;
 
   Entity m_entity;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_logStreamNameHasBeenSet = false;
+  bool m_logEventsHasBeenSet = false;
+  bool m_sequenceTokenHasBeenSet = false;
   bool m_entityHasBeenSet = false;
 };
 

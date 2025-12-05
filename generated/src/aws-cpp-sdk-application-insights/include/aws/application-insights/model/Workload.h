@@ -139,21 +139,21 @@ class Workload {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Tier m_tier{Tier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_workloadRemarks;
-  bool m_workloadRemarksHasBeenSet = false;
 
   bool m_missingWorkloadConfig{false};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_workloadRemarksHasBeenSet = false;
   bool m_missingWorkloadConfigHasBeenSet = false;
 };
 

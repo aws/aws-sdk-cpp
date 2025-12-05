@@ -118,18 +118,18 @@ class ListQAppSessionDataResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::Vector<QAppSessionData> m_sessionData;
-  bool m_sessionDataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionDataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

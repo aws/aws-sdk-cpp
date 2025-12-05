@@ -187,27 +187,27 @@ class GetSavingsPlansPurchaseRecommendationRequest : public CostExplorerRequest 
   ///@}
  private:
   SupportedSavingsPlansType m_savingsPlansType{SupportedSavingsPlansType::NOT_SET};
-  bool m_savingsPlansTypeHasBeenSet = false;
 
   TermInYears m_termInYears{TermInYears::NOT_SET};
-  bool m_termInYearsHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   AccountScope m_accountScope{AccountScope::NOT_SET};
-  bool m_accountScopeHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   LookbackPeriodInDays m_lookbackPeriodInDays{LookbackPeriodInDays::NOT_SET};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   Expression m_filter;
+  bool m_savingsPlansTypeHasBeenSet = false;
+  bool m_termInYearsHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

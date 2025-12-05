@@ -88,12 +88,12 @@ class ListImagePipelinesResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<ImagePipeline> m_imagePipelineList;
-  bool m_imagePipelineListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imagePipelineListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

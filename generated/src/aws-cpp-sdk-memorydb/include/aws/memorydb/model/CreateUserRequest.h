@@ -115,15 +115,15 @@ class CreateUserRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   AuthenticationMode m_authenticationMode;
-  bool m_authenticationModeHasBeenSet = false;
 
   Aws::String m_accessString;
-  bool m_accessStringHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_userNameHasBeenSet = false;
+  bool m_authenticationModeHasBeenSet = false;
+  bool m_accessStringHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

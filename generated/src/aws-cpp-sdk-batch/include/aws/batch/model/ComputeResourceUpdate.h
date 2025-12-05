@@ -616,54 +616,54 @@ class ComputeResourceUpdate {
   ///@}
  private:
   int m_minvCpus{0};
-  bool m_minvCpusHasBeenSet = false;
 
   int m_maxvCpus{0};
-  bool m_maxvCpusHasBeenSet = false;
 
   int m_desiredvCpus{0};
-  bool m_desiredvCpusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   CRUpdateAllocationStrategy m_allocationStrategy{CRUpdateAllocationStrategy::NOT_SET};
-  bool m_allocationStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   Aws::String m_ec2KeyPair;
-  bool m_ec2KeyPairHasBeenSet = false;
 
   Aws::String m_instanceRole;
-  bool m_instanceRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_placementGroup;
-  bool m_placementGroupHasBeenSet = false;
 
   int m_bidPercentage{0};
-  bool m_bidPercentageHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   Aws::Vector<Ec2Configuration> m_ec2Configuration;
-  bool m_ec2ConfigurationHasBeenSet = false;
 
   bool m_updateToLatestImageVersion{false};
-  bool m_updateToLatestImageVersionHasBeenSet = false;
 
   CRType m_type{CRType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_imageId;
+  bool m_minvCpusHasBeenSet = false;
+  bool m_maxvCpusHasBeenSet = false;
+  bool m_desiredvCpusHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_allocationStrategyHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_ec2KeyPairHasBeenSet = false;
+  bool m_instanceRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_placementGroupHasBeenSet = false;
+  bool m_bidPercentageHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_ec2ConfigurationHasBeenSet = false;
+  bool m_updateToLatestImageVersionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
 };
 

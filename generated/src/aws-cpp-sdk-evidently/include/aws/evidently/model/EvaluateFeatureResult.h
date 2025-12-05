@@ -118,18 +118,18 @@ class EvaluateFeatureResult {
   ///@}
  private:
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   VariableValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_variation;
-  bool m_variationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detailsHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_variationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -510,75 +510,75 @@ class Job {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   EncryptionMode m_encryptionMode{EncryptionMode::NOT_SET};
-  bool m_encryptionModeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   JobType m_type{JobType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   LogSubscription m_logSubscription{LogSubscription::NOT_SET};
-  bool m_logSubscriptionHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_maxRetries{0};
-  bool m_maxRetriesHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
-  bool m_dataCatalogOutputsHasBeenSet = false;
 
   Aws::Vector<DatabaseOutput> m_databaseOutputs;
-  bool m_databaseOutputsHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   RecipeReference m_recipeReference;
-  bool m_recipeReferenceHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   JobSample m_jobSample;
-  bool m_jobSampleHasBeenSet = false;
 
   Aws::Vector<ValidationConfiguration> m_validationConfigurations;
+  bool m_accountIdHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_encryptionModeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_logSubscriptionHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_maxRetriesHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_dataCatalogOutputsHasBeenSet = false;
+  bool m_databaseOutputsHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_recipeReferenceHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_jobSampleHasBeenSet = false;
   bool m_validationConfigurationsHasBeenSet = false;
 };
 

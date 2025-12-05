@@ -205,27 +205,27 @@ class PutObjectLockConfigurationRequest : public S3Request {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   ObjectLockConfiguration m_objectLockConfiguration;
-  bool m_objectLockConfigurationHasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_contentMD5;
-  bool m_contentMD5HasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_objectLockConfigurationHasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
+  bool m_contentMD5HasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class UpdateConnectorProfileResult {
   ///@}
  private:
   Aws::String m_connectorProfileArn;
-  bool m_connectorProfileArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorProfileArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

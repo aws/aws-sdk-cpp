@@ -90,12 +90,12 @@ class GetPendingJobExecutionsResult {
   ///@}
  private:
   Aws::Vector<JobExecutionSummary> m_inProgressJobs;
-  bool m_inProgressJobsHasBeenSet = false;
 
   Aws::Vector<JobExecutionSummary> m_queuedJobs;
-  bool m_queuedJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inProgressJobsHasBeenSet = false;
+  bool m_queuedJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,12 +74,12 @@ class DeleteIAMPolicyAssignmentResult {
   ///@}
  private:
   Aws::String m_assignmentName;
-  bool m_assignmentNameHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_assignmentNameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

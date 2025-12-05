@@ -194,24 +194,24 @@ class IntentSummary {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::String m_checkpointLabel;
-  bool m_checkpointLabelHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_slots;
-  bool m_slotsHasBeenSet = false;
 
   ConfirmationStatus m_confirmationStatus{ConfirmationStatus::NOT_SET};
-  bool m_confirmationStatusHasBeenSet = false;
 
   DialogActionType m_dialogActionType{DialogActionType::NOT_SET};
-  bool m_dialogActionTypeHasBeenSet = false;
 
   FulfillmentState m_fulfillmentState{FulfillmentState::NOT_SET};
-  bool m_fulfillmentStateHasBeenSet = false;
 
   Aws::String m_slotToElicit;
+  bool m_intentNameHasBeenSet = false;
+  bool m_checkpointLabelHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_confirmationStatusHasBeenSet = false;
+  bool m_dialogActionTypeHasBeenSet = false;
+  bool m_fulfillmentStateHasBeenSet = false;
   bool m_slotToElicitHasBeenSet = false;
 };
 

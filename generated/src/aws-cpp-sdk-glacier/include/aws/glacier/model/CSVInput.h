@@ -145,21 +145,21 @@ class CSVInput {
   ///@}
  private:
   FileHeaderInfo m_fileHeaderInfo{FileHeaderInfo::NOT_SET};
-  bool m_fileHeaderInfoHasBeenSet = false;
 
   Aws::String m_comments;
-  bool m_commentsHasBeenSet = false;
 
   Aws::String m_quoteEscapeCharacter;
-  bool m_quoteEscapeCharacterHasBeenSet = false;
 
   Aws::String m_recordDelimiter;
-  bool m_recordDelimiterHasBeenSet = false;
 
   Aws::String m_fieldDelimiter;
-  bool m_fieldDelimiterHasBeenSet = false;
 
   Aws::String m_quoteCharacter;
+  bool m_fileHeaderInfoHasBeenSet = false;
+  bool m_commentsHasBeenSet = false;
+  bool m_quoteEscapeCharacterHasBeenSet = false;
+  bool m_recordDelimiterHasBeenSet = false;
+  bool m_fieldDelimiterHasBeenSet = false;
   bool m_quoteCharacterHasBeenSet = false;
 };
 

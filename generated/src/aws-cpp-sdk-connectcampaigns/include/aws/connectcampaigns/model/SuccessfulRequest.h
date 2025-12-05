@@ -65,9 +65,9 @@ class SuccessfulRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_clientTokenHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

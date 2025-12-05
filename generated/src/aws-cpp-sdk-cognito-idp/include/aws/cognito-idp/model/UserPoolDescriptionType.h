@@ -130,18 +130,18 @@ class UserPoolDescriptionType {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LambdaConfigType m_lambdaConfig;
-  bool m_lambdaConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_lambdaConfigHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

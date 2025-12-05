@@ -87,12 +87,12 @@ class ListChatResponseConfigurationsResult {
   ///@}
  private:
   Aws::Vector<ChatResponseConfiguration> m_chatResponseConfigurations;
-  bool m_chatResponseConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_chatResponseConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

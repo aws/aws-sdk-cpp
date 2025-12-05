@@ -86,12 +86,12 @@ class ListApplicationsRequest : public AppIntegrationsServiceRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;
 };
 

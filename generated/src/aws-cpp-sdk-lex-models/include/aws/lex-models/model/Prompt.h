@@ -101,12 +101,12 @@ class Prompt {
   ///@}
  private:
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   int m_maxAttempts{0};
-  bool m_maxAttemptsHasBeenSet = false;
 
   Aws::String m_responseCard;
+  bool m_messagesHasBeenSet = false;
+  bool m_maxAttemptsHasBeenSet = false;
   bool m_responseCardHasBeenSet = false;
 };
 

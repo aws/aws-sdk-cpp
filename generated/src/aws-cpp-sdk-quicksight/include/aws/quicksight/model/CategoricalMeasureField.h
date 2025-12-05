@@ -106,15 +106,15 @@ class CategoricalMeasureField {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   CategoricalAggregationFunction m_aggregationFunction{CategoricalAggregationFunction::NOT_SET};
-  bool m_aggregationFunctionHasBeenSet = false;
 
   StringFormatConfiguration m_formatConfiguration;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_aggregationFunctionHasBeenSet = false;
   bool m_formatConfigurationHasBeenSet = false;
 };
 

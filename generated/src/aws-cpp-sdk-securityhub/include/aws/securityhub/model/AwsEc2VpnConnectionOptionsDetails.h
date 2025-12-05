@@ -73,9 +73,9 @@ class AwsEc2VpnConnectionOptionsDetails {
   ///@}
  private:
   bool m_staticRoutesOnly{false};
-  bool m_staticRoutesOnlyHasBeenSet = false;
 
   Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails> m_tunnelOptions;
+  bool m_staticRoutesOnlyHasBeenSet = false;
   bool m_tunnelOptionsHasBeenSet = false;
 };
 

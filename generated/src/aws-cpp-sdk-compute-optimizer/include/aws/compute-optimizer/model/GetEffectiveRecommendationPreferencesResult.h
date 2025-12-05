@@ -183,21 +183,21 @@ class GetEffectiveRecommendationPreferencesResult {
   ///@}
  private:
   EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
-  bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
   ExternalMetricsPreference m_externalMetricsPreference;
-  bool m_externalMetricsPreferenceHasBeenSet = false;
 
   LookBackPeriodPreference m_lookBackPeriod{LookBackPeriodPreference::NOT_SET};
-  bool m_lookBackPeriodHasBeenSet = false;
 
   Aws::Vector<UtilizationPreference> m_utilizationPreferences;
-  bool m_utilizationPreferencesHasBeenSet = false;
 
   Aws::Vector<EffectivePreferredResource> m_preferredResources;
-  bool m_preferredResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enhancedInfrastructureMetricsHasBeenSet = false;
+  bool m_externalMetricsPreferenceHasBeenSet = false;
+  bool m_lookBackPeriodHasBeenSet = false;
+  bool m_utilizationPreferencesHasBeenSet = false;
+  bool m_preferredResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

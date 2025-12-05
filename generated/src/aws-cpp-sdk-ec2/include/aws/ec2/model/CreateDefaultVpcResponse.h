@@ -60,9 +60,9 @@ class CreateDefaultVpcResponse {
   ///@}
  private:
   Vpc m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

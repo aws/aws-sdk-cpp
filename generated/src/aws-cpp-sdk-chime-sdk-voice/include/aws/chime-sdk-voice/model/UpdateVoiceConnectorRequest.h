@@ -81,12 +81,12 @@ class UpdateVoiceConnectorRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_requireEncryption{false};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requireEncryptionHasBeenSet = false;
 };
 

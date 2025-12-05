@@ -164,24 +164,24 @@ class NatGatewayAttachedAppliance {
   ///@}
  private:
   NatGatewayApplianceType m_type{NatGatewayApplianceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_applianceArn;
-  bool m_applianceArnHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   NatGatewayApplianceState m_attachmentState{NatGatewayApplianceState::NOT_SET};
-  bool m_attachmentStateHasBeenSet = false;
 
   NatGatewayApplianceModifyState m_modificationState{NatGatewayApplianceModifyState::NOT_SET};
-  bool m_modificationStateHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_typeHasBeenSet = false;
+  bool m_applianceArnHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_attachmentStateHasBeenSet = false;
+  bool m_modificationStateHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

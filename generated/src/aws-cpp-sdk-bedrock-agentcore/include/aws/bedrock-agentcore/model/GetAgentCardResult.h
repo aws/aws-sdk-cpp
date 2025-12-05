@@ -93,15 +93,15 @@ class GetAgentCardResult {
   ///@}
  private:
   Aws::String m_runtimeSessionId;
-  bool m_runtimeSessionIdHasBeenSet = false;
 
   Aws::Utils::Document m_agentCard;
-  bool m_agentCardHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runtimeSessionIdHasBeenSet = false;
+  bool m_agentCardHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

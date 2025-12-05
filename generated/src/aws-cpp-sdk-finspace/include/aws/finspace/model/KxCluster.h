@@ -313,42 +313,42 @@ class KxCluster {
   ///@}
  private:
   KxClusterStatus m_status{KxClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   KxClusterType m_clusterType{KxClusterType::NOT_SET};
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_clusterDescription;
-  bool m_clusterDescriptionHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::String m_initializationScript;
-  bool m_initializationScriptHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   KxAzMode m_azMode{KxAzMode::NOT_SET};
-  bool m_azModeHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_clusterDescriptionHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
+  bool m_initializationScriptHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_azModeHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

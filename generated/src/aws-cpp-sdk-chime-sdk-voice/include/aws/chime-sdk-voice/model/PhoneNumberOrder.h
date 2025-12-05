@@ -185,27 +185,27 @@ class PhoneNumberOrder {
   ///@}
  private:
   Aws::String m_phoneNumberOrderId;
-  bool m_phoneNumberOrderIdHasBeenSet = false;
 
   PhoneNumberProductType m_productType{PhoneNumberProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   PhoneNumberOrderStatus m_status{PhoneNumberOrderStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PhoneNumberOrderType m_orderType{PhoneNumberOrderType::NOT_SET};
-  bool m_orderTypeHasBeenSet = false;
 
   Aws::Vector<OrderedPhoneNumber> m_orderedPhoneNumbers;
-  bool m_orderedPhoneNumbersHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_focDate{};
+  bool m_phoneNumberOrderIdHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_orderTypeHasBeenSet = false;
+  bool m_orderedPhoneNumbersHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
   bool m_focDateHasBeenSet = false;
 };
 

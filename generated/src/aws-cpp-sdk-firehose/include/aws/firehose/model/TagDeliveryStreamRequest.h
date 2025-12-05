@@ -75,9 +75,9 @@ class TagDeliveryStreamRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_deliveryStreamNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

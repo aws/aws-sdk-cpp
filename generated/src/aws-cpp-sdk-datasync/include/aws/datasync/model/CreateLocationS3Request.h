@@ -179,21 +179,21 @@ class CreateLocationS3Request : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   S3StorageClass m_s3StorageClass{S3StorageClass::NOT_SET};
-  bool m_s3StorageClassHasBeenSet = false;
 
   S3Config m_s3Config;
-  bool m_s3ConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_s3BucketArnHasBeenSet = false;
+  bool m_s3StorageClassHasBeenSet = false;
+  bool m_s3ConfigHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

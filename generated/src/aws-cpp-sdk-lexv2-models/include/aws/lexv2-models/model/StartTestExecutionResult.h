@@ -147,24 +147,24 @@ class StartTestExecutionResult {
   ///@}
  private:
   Aws::String m_testExecutionId;
-  bool m_testExecutionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   TestExecutionTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   TestExecutionApiMode m_apiMode{TestExecutionApiMode::NOT_SET};
-  bool m_apiModeHasBeenSet = false;
 
   TestExecutionModality m_testExecutionModality{TestExecutionModality::NOT_SET};
-  bool m_testExecutionModalityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testExecutionIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_testSetIdHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_apiModeHasBeenSet = false;
+  bool m_testExecutionModalityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

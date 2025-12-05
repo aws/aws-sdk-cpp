@@ -148,21 +148,21 @@ class CoreDevice {
   ///@}
  private:
   Aws::String m_coreDeviceThingName;
-  bool m_coreDeviceThingNameHasBeenSet = false;
 
   CoreDeviceStatus m_status{CoreDeviceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusUpdateTimestamp{};
-  bool m_lastStatusUpdateTimestampHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_runtime;
+  bool m_coreDeviceThingNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastStatusUpdateTimestampHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
   bool m_runtimeHasBeenSet = false;
 };
 

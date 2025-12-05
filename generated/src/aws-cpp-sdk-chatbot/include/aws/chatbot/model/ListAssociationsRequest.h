@@ -86,12 +86,12 @@ class ListAssociationsRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_chatConfiguration;
-  bool m_chatConfigurationHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_chatConfigurationHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

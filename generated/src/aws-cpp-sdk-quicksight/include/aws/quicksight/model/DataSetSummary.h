@@ -240,36 +240,36 @@ class DataSetSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   DataSetImportMode m_importMode{DataSetImportMode::NOT_SET};
-  bool m_importModeHasBeenSet = false;
 
   RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
-  bool m_rowLevelPermissionDataSetHasBeenSet = false;
 
   Aws::Map<Aws::String, RowLevelPermissionDataSet> m_rowLevelPermissionDataSetMap;
-  bool m_rowLevelPermissionDataSetMapHasBeenSet = false;
 
   bool m_rowLevelPermissionTagConfigurationApplied{false};
-  bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = false;
 
   bool m_columnLevelPermissionRulesApplied{false};
-  bool m_columnLevelPermissionRulesAppliedHasBeenSet = false;
 
   DataSetUseAs m_useAs{DataSetUseAs::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_importModeHasBeenSet = false;
+  bool m_rowLevelPermissionDataSetHasBeenSet = false;
+  bool m_rowLevelPermissionDataSetMapHasBeenSet = false;
+  bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = false;
+  bool m_columnLevelPermissionRulesAppliedHasBeenSet = false;
   bool m_useAsHasBeenSet = false;
 };
 

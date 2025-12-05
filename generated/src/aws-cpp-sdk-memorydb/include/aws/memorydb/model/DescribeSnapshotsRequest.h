@@ -147,21 +147,21 @@ class DescribeSnapshotsRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_showDetail{false};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_showDetailHasBeenSet = false;
 };
 

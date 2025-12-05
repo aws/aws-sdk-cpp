@@ -81,9 +81,9 @@ class TrackSourceSettings {
   ///@}
  private:
   int m_streamNumber{0};
-  bool m_streamNumberHasBeenSet = false;
 
   int m_trackNumber{0};
+  bool m_streamNumberHasBeenSet = false;
   bool m_trackNumberHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class RoutingRule {
   ///@}
  private:
   Aws::Vector<RoutingRuleAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<RoutingRuleCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_routingRuleArn;
-  bool m_routingRuleArnHasBeenSet = false;
 
   Aws::String m_routingRuleId;
+  bool m_actionsHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_routingRuleArnHasBeenSet = false;
   bool m_routingRuleIdHasBeenSet = false;
 };
 

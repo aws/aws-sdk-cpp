@@ -99,12 +99,12 @@ class ClusterMetadata {
   ///@}
  private:
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eksRoleAccessEntries;
-  bool m_eksRoleAccessEntriesHasBeenSet = false;
 
   Aws::String m_slrAccessEntry;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_eksRoleAccessEntriesHasBeenSet = false;
   bool m_slrAccessEntryHasBeenSet = false;
 };
 

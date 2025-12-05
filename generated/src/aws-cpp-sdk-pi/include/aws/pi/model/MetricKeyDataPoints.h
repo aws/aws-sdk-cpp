@@ -78,9 +78,9 @@ class MetricKeyDataPoints {
   ///@}
  private:
   ResponseResourceMetricKey m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<DataPoint> m_dataPoints;
+  bool m_keyHasBeenSet = false;
   bool m_dataPointsHasBeenSet = false;
 };
 

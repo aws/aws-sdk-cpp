@@ -164,21 +164,21 @@ class BuildPhase {
   ///@}
  private:
   BuildPhaseType m_phaseType{BuildPhaseType::NOT_SET};
-  bool m_phaseTypeHasBeenSet = false;
 
   StatusType m_phaseStatus{StatusType::NOT_SET};
-  bool m_phaseStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   long long m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::Vector<PhaseContext> m_contexts;
+  bool m_phaseTypeHasBeenSet = false;
+  bool m_phaseStatusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
   bool m_contextsHasBeenSet = false;
 };
 

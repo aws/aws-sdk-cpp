@@ -69,9 +69,9 @@ class ImportDataSource {
   ///@}
  private:
   Aws::String m_s3Url;
-  bool m_s3UrlHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
+  bool m_s3UrlHasBeenSet = false;
   bool m_dataFormatHasBeenSet = false;
 };
 

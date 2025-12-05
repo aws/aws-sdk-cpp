@@ -200,30 +200,30 @@ class AuditMitigationActionExecutionMetadata {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_findingId;
-  bool m_findingIdHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   AuditMitigationActionsExecutionStatus m_status{AuditMitigationActionsExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_taskIdHasBeenSet = false;
+  bool m_findingIdHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class PostTimeSeriesDataPointsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::Vector<TimeSeriesDataPointFormInput> m_forms;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
   bool m_formsHasBeenSet = false;
 };
 

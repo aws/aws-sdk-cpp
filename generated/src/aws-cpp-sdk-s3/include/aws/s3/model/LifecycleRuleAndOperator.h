@@ -111,15 +111,15 @@ class LifecycleRuleAndOperator {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   long long m_objectSizeGreaterThan{0};
-  bool m_objectSizeGreaterThanHasBeenSet = false;
 
   long long m_objectSizeLessThan{0};
+  bool m_prefixHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_objectSizeGreaterThanHasBeenSet = false;
   bool m_objectSizeLessThanHasBeenSet = false;
 };
 

@@ -121,18 +121,18 @@ class DescribeUserStackAssociationsRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_stackNameHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

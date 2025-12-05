@@ -165,21 +165,21 @@ class LambdaFunctionRecipeSource {
   ///@}
  private:
   Aws::String m_lambdaArn;
-  bool m_lambdaArnHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   Aws::Vector<ComponentPlatform> m_componentPlatforms;
-  bool m_componentPlatformsHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentDependencyRequirement> m_componentDependencies;
-  bool m_componentDependenciesHasBeenSet = false;
 
   LambdaExecutionParameters m_componentLambdaParameters;
+  bool m_lambdaArnHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentVersionHasBeenSet = false;
+  bool m_componentPlatformsHasBeenSet = false;
+  bool m_componentDependenciesHasBeenSet = false;
   bool m_componentLambdaParametersHasBeenSet = false;
 };
 

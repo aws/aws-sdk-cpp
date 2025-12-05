@@ -73,9 +73,9 @@ class McpLambdaTargetConfiguration {
   ///@}
  private:
   Aws::String m_lambdaArn;
-  bool m_lambdaArnHasBeenSet = false;
 
   ToolSchema m_toolSchema;
+  bool m_lambdaArnHasBeenSet = false;
   bool m_toolSchemaHasBeenSet = false;
 };
 

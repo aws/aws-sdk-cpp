@@ -100,12 +100,12 @@ class ExportFilesMetadata {
   ///@}
  private:
   ExportFilesStatus m_status{ExportFilesStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_outputUri;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_outputUriHasBeenSet = false;
 };
 

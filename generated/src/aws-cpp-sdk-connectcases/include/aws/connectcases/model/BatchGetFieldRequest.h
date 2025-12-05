@@ -73,9 +73,9 @@ class BatchGetFieldRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Vector<FieldIdentifier> m_fields;
+  bool m_domainIdHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

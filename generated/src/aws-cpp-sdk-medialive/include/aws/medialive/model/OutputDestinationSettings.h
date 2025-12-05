@@ -105,15 +105,15 @@ class OutputDestinationSettings {
   ///@}
  private:
   Aws::String m_passwordParam;
-  bool m_passwordParamHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_passwordParamHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

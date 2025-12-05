@@ -84,12 +84,12 @@ class ListWorkforcesResult {
   ///@}
  private:
   Aws::Vector<Workforce> m_workforces;
-  bool m_workforcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workforcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

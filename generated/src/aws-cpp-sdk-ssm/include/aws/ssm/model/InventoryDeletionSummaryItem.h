@@ -83,12 +83,12 @@ class InventoryDeletionSummaryItem {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   int m_remainingCount{0};
+  bool m_versionHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_remainingCountHasBeenSet = false;
 };
 

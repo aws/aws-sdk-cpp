@@ -137,18 +137,18 @@ class AnalyticsConfigurationType {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   bool m_userDataShared{false};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
   bool m_userDataSharedHasBeenSet = false;
 };
 

@@ -454,57 +454,57 @@ class Integration {
   ///@}
  private:
   IntegrationType m_type{IntegrationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_httpMethod;
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestParameters;
-  bool m_requestParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestTemplates;
-  bool m_requestTemplatesHasBeenSet = false;
 
   Aws::String m_passthroughBehavior;
-  bool m_passthroughBehaviorHasBeenSet = false;
 
   ContentHandlingStrategy m_contentHandling{ContentHandlingStrategy::NOT_SET};
-  bool m_contentHandlingHasBeenSet = false;
 
   int m_timeoutInMillis{0};
-  bool m_timeoutInMillisHasBeenSet = false;
 
   Aws::String m_cacheNamespace;
-  bool m_cacheNamespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheKeyParameters;
-  bool m_cacheKeyParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, IntegrationResponse> m_integrationResponses;
-  bool m_integrationResponsesHasBeenSet = false;
 
   TlsConfig m_tlsConfig;
-  bool m_tlsConfigHasBeenSet = false;
 
   ResponseTransferMode m_responseTransferMode{ResponseTransferMode::NOT_SET};
-  bool m_responseTransferModeHasBeenSet = false;
 
   Aws::String m_integrationTarget;
-  bool m_integrationTargetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_requestParametersHasBeenSet = false;
+  bool m_requestTemplatesHasBeenSet = false;
+  bool m_passthroughBehaviorHasBeenSet = false;
+  bool m_contentHandlingHasBeenSet = false;
+  bool m_timeoutInMillisHasBeenSet = false;
+  bool m_cacheNamespaceHasBeenSet = false;
+  bool m_cacheKeyParametersHasBeenSet = false;
+  bool m_integrationResponsesHasBeenSet = false;
+  bool m_tlsConfigHasBeenSet = false;
+  bool m_responseTransferModeHasBeenSet = false;
+  bool m_integrationTargetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

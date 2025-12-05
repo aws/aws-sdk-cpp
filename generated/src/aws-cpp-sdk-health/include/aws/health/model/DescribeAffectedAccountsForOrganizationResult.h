@@ -115,15 +115,15 @@ class DescribeAffectedAccountsForOrganizationResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_affectedAccounts;
-  bool m_affectedAccountsHasBeenSet = false;
 
   EventScopeCode m_eventScopeCode{EventScopeCode::NOT_SET};
-  bool m_eventScopeCodeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_affectedAccountsHasBeenSet = false;
+  bool m_eventScopeCodeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

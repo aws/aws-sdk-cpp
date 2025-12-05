@@ -152,24 +152,24 @@ class GetDomainResult {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   DomainStatus m_domainStatus{DomainStatus::NOT_SET};
-  bool m_domainStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_domainStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

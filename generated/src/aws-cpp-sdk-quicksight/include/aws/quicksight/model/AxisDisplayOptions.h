@@ -141,21 +141,21 @@ class AxisDisplayOptions {
   ///@}
  private:
   AxisTickLabelOptions m_tickLabelOptions;
-  bool m_tickLabelOptionsHasBeenSet = false;
 
   Visibility m_axisLineVisibility{Visibility::NOT_SET};
-  bool m_axisLineVisibilityHasBeenSet = false;
 
   Visibility m_gridLineVisibility{Visibility::NOT_SET};
-  bool m_gridLineVisibilityHasBeenSet = false;
 
   AxisDataOptions m_dataOptions;
-  bool m_dataOptionsHasBeenSet = false;
 
   ScrollBarOptions m_scrollbarOptions;
-  bool m_scrollbarOptionsHasBeenSet = false;
 
   Aws::String m_axisOffset;
+  bool m_tickLabelOptionsHasBeenSet = false;
+  bool m_axisLineVisibilityHasBeenSet = false;
+  bool m_gridLineVisibilityHasBeenSet = false;
+  bool m_dataOptionsHasBeenSet = false;
+  bool m_scrollbarOptionsHasBeenSet = false;
   bool m_axisOffsetHasBeenSet = false;
 };
 

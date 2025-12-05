@@ -93,12 +93,12 @@ class RevokeCacheSecurityGroupIngressRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheSecurityGroupName;
-  bool m_cacheSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_eC2SecurityGroupName;
-  bool m_eC2SecurityGroupNameHasBeenSet = false;
 
   Aws::String m_eC2SecurityGroupOwnerId;
+  bool m_cacheSecurityGroupNameHasBeenSet = false;
+  bool m_eC2SecurityGroupNameHasBeenSet = false;
   bool m_eC2SecurityGroupOwnerIdHasBeenSet = false;
 };
 

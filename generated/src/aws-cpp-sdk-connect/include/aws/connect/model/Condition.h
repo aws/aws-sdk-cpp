@@ -72,9 +72,9 @@ class Condition {
   ///@}
  private:
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   NumberCondition m_numberCondition;
+  bool m_stringConditionHasBeenSet = false;
   bool m_numberConditionHasBeenSet = false;
 };
 

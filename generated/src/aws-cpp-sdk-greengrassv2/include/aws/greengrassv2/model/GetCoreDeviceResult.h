@@ -199,30 +199,30 @@ class GetCoreDeviceResult {
   ///@}
  private:
   Aws::String m_coreDeviceThingName;
-  bool m_coreDeviceThingNameHasBeenSet = false;
 
   Aws::String m_coreVersion;
-  bool m_coreVersionHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_runtime;
-  bool m_runtimeHasBeenSet = false;
 
   CoreDeviceStatus m_status{CoreDeviceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusUpdateTimestamp{};
-  bool m_lastStatusUpdateTimestampHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreDeviceThingNameHasBeenSet = false;
+  bool m_coreVersionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastStatusUpdateTimestampHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

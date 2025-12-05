@@ -110,15 +110,15 @@ class ExportMetadataModelAssessmentRequest : public DatabaseMigrationServiceRequ
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_selectionRules;
-  bool m_selectionRulesHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::Vector<AssessmentReportType> m_assessmentReportTypes;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_selectionRulesHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
   bool m_assessmentReportTypesHasBeenSet = false;
 };
 

@@ -158,24 +158,24 @@ class AccountPoolSummary {
   ///@}
  private:
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResolutionStrategy m_resolutionStrategy{ResolutionStrategy::NOT_SET};
-  bool m_resolutionStrategyHasBeenSet = false;
 
   Aws::String m_updatedBy;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resolutionStrategyHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
 };
 

@@ -155,21 +155,21 @@ class CreateVpcPeeringConnectionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_peerRegion;
-  bool m_peerRegionHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_peerVpcId;
-  bool m_peerVpcIdHasBeenSet = false;
 
   Aws::String m_peerOwnerId;
+  bool m_peerRegionHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_peerVpcIdHasBeenSet = false;
   bool m_peerOwnerIdHasBeenSet = false;
 };
 

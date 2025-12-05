@@ -149,21 +149,21 @@ class DescribeConfigurationSetResult {
   ///@}
  private:
   ConfigurationSet m_configurationSet;
-  bool m_configurationSetHasBeenSet = false;
 
   Aws::Vector<EventDestination> m_eventDestinations;
-  bool m_eventDestinationsHasBeenSet = false;
 
   TrackingOptions m_trackingOptions;
-  bool m_trackingOptionsHasBeenSet = false;
 
   DeliveryOptions m_deliveryOptions;
-  bool m_deliveryOptionsHasBeenSet = false;
 
   ReputationOptions m_reputationOptions;
-  bool m_reputationOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_configurationSetHasBeenSet = false;
+  bool m_eventDestinationsHasBeenSet = false;
+  bool m_trackingOptionsHasBeenSet = false;
+  bool m_deliveryOptionsHasBeenSet = false;
+  bool m_reputationOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

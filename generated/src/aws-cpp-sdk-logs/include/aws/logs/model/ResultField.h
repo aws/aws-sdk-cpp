@@ -72,9 +72,9 @@ class ResultField {
   ///@}
  private:
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_fieldHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

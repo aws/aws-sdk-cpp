@@ -106,12 +106,12 @@ class StackInstance {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   StackInstanceStatus m_stackInstanceStatus{StackInstanceStatus::NOT_SET};
+  bool m_accountHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_stackInstanceStatusHasBeenSet = false;
 };
 

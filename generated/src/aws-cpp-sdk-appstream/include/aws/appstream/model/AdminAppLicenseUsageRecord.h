@@ -159,24 +159,24 @@ class AdminAppLicenseUsageRecord {
   ///@}
  private:
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
 
   Aws::String m_ownerAWSAccountId;
-  bool m_ownerAWSAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_subscriptionFirstUsedDate{};
-  bool m_subscriptionFirstUsedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_subscriptionLastUsedDate{};
-  bool m_subscriptionLastUsedDateHasBeenSet = false;
 
   Aws::String m_licenseType;
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_userArnHasBeenSet = false;
+  bool m_billingPeriodHasBeenSet = false;
+  bool m_ownerAWSAccountIdHasBeenSet = false;
+  bool m_subscriptionFirstUsedDateHasBeenSet = false;
+  bool m_subscriptionLastUsedDateHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

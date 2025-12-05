@@ -102,12 +102,12 @@ class SqlParameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Field m_value;
-  bool m_valueHasBeenSet = false;
 
   TypeHint m_typeHint{TypeHint::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_typeHintHasBeenSet = false;
 };
 

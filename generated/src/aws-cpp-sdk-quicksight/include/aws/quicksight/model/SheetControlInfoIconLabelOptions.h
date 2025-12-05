@@ -68,9 +68,9 @@ class SheetControlInfoIconLabelOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_infoIconText;
+  bool m_visibilityHasBeenSet = false;
   bool m_infoIconTextHasBeenSet = false;
 };
 

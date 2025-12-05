@@ -62,9 +62,9 @@ class PutDefaultApplicationSettingRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   bool m_setAsDefault{false};
+  bool m_applicationArnHasBeenSet = false;
   bool m_setAsDefaultHasBeenSet = false;
 };
 

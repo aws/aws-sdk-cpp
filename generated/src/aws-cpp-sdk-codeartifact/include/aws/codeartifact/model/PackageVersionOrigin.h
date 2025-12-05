@@ -74,9 +74,9 @@ class PackageVersionOrigin {
   ///@}
  private:
   DomainEntryPoint m_domainEntryPoint;
-  bool m_domainEntryPointHasBeenSet = false;
 
   PackageVersionOriginType m_originType{PackageVersionOriginType::NOT_SET};
+  bool m_domainEntryPointHasBeenSet = false;
   bool m_originTypeHasBeenSet = false;
 };
 

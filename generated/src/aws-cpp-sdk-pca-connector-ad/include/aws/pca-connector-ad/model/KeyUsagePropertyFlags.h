@@ -77,12 +77,12 @@ class KeyUsagePropertyFlags {
   ///@}
  private:
   bool m_decrypt{false};
-  bool m_decryptHasBeenSet = false;
 
   bool m_keyAgreement{false};
-  bool m_keyAgreementHasBeenSet = false;
 
   bool m_sign{false};
+  bool m_decryptHasBeenSet = false;
+  bool m_keyAgreementHasBeenSet = false;
   bool m_signHasBeenSet = false;
 };
 

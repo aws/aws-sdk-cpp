@@ -104,15 +104,15 @@ class UpdateManagedRuleSetVersionExpiryDateResult {
   ///@}
  private:
   Aws::String m_expiringVersion;
-  bool m_expiringVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTimestamp{};
-  bool m_expiryTimestampHasBeenSet = false;
 
   Aws::String m_nextLockToken;
-  bool m_nextLockTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_expiringVersionHasBeenSet = false;
+  bool m_expiryTimestampHasBeenSet = false;
+  bool m_nextLockTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

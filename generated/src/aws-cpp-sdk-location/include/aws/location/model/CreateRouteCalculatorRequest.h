@@ -147,15 +147,15 @@ class CreateRouteCalculatorRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_calculatorName;
-  bool m_calculatorNameHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_calculatorNameHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

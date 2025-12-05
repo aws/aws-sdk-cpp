@@ -97,15 +97,15 @@ class Video {
   ///@}
  private:
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   double m_framerate{0.0};
-  bool m_framerateHasBeenSet = false;
 
   int m_bitrate{0};
+  bool m_widthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_framerateHasBeenSet = false;
   bool m_bitrateHasBeenSet = false;
 };
 

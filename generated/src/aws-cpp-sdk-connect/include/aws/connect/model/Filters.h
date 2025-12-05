@@ -158,18 +158,18 @@ class Filters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_queues;
-  bool m_queuesHasBeenSet = false;
 
   Aws::Vector<Channel> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routingProfiles;
-  bool m_routingProfilesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routingStepExpressions;
-  bool m_routingStepExpressionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentStatuses;
+  bool m_queuesHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
+  bool m_routingProfilesHasBeenSet = false;
+  bool m_routingStepExpressionsHasBeenSet = false;
   bool m_agentStatusesHasBeenSet = false;
 };
 

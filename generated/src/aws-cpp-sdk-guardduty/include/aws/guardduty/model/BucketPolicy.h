@@ -64,9 +64,9 @@ class BucketPolicy {
   ///@}
  private:
   bool m_allowsPublicReadAccess{false};
-  bool m_allowsPublicReadAccessHasBeenSet = false;
 
   bool m_allowsPublicWriteAccess{false};
+  bool m_allowsPublicReadAccessHasBeenSet = false;
   bool m_allowsPublicWriteAccessHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class UpdateCampaignRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_campaignArn;
-  bool m_campaignArnHasBeenSet = false;
 
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   int m_minProvisionedTPS{0};
-  bool m_minProvisionedTPSHasBeenSet = false;
 
   CampaignConfig m_campaignConfig;
+  bool m_campaignArnHasBeenSet = false;
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_minProvisionedTPSHasBeenSet = false;
   bool m_campaignConfigHasBeenSet = false;
 };
 

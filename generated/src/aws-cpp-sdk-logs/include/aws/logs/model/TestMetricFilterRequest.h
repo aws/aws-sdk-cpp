@@ -72,9 +72,9 @@ class TestMetricFilterRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logEventMessages;
+  bool m_filterPatternHasBeenSet = false;
   bool m_logEventMessagesHasBeenSet = false;
 };
 

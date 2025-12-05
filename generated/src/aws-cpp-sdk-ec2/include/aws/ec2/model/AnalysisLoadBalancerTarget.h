@@ -123,18 +123,18 @@ class AnalysisLoadBalancerTarget {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   AnalysisComponent m_instance;
-  bool m_instanceHasBeenSet = false;
 
   int m_port{0};
+  bool m_addressHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_instanceHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

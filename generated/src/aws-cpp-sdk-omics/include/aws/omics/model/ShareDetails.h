@@ -213,33 +213,33 @@ class ShareDetails {
   ///@}
  private:
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_principalSubscriber;
-  bool m_principalSubscriberHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ShareStatus m_status{ShareStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_shareName;
-  bool m_shareNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_shareIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_principalSubscriberHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_shareNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

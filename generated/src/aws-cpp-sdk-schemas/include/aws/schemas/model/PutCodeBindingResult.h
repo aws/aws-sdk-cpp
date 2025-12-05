@@ -110,18 +110,18 @@ class PutCodeBindingResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   CodeGenerationStatus m_status{CodeGenerationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

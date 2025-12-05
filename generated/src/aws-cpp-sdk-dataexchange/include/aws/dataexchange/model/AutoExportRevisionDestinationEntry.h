@@ -72,9 +72,9 @@ class AutoExportRevisionDestinationEntry {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_keyPattern;
+  bool m_bucketHasBeenSet = false;
   bool m_keyPatternHasBeenSet = false;
 };
 

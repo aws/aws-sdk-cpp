@@ -94,15 +94,15 @@ class GetAddonSubscriptionResult {
   ///@}
  private:
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_addonSubscriptionArn;
-  bool m_addonSubscriptionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonNameHasBeenSet = false;
+  bool m_addonSubscriptionArnHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

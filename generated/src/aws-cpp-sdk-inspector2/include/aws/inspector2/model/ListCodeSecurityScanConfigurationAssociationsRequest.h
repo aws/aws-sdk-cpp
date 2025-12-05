@@ -93,12 +93,12 @@ class ListCodeSecurityScanConfigurationAssociationsRequest : public Inspector2Re
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_scanConfigurationArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

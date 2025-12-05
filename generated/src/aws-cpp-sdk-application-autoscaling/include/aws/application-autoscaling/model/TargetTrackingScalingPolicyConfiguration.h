@@ -158,21 +158,21 @@ class TargetTrackingScalingPolicyConfiguration {
   ///@}
  private:
   double m_targetValue{0.0};
-  bool m_targetValueHasBeenSet = false;
 
   PredefinedMetricSpecification m_predefinedMetricSpecification;
-  bool m_predefinedMetricSpecificationHasBeenSet = false;
 
   CustomizedMetricSpecification m_customizedMetricSpecification;
-  bool m_customizedMetricSpecificationHasBeenSet = false;
 
   int m_scaleOutCooldown{0};
-  bool m_scaleOutCooldownHasBeenSet = false;
 
   int m_scaleInCooldown{0};
-  bool m_scaleInCooldownHasBeenSet = false;
 
   bool m_disableScaleIn{false};
+  bool m_targetValueHasBeenSet = false;
+  bool m_predefinedMetricSpecificationHasBeenSet = false;
+  bool m_customizedMetricSpecificationHasBeenSet = false;
+  bool m_scaleOutCooldownHasBeenSet = false;
+  bool m_scaleInCooldownHasBeenSet = false;
   bool m_disableScaleInHasBeenSet = false;
 };
 

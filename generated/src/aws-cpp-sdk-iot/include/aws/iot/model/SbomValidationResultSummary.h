@@ -105,15 +105,15 @@ class SbomValidationResultSummary {
   ///@}
  private:
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   SbomValidationResult m_validationResult{SbomValidationResult::NOT_SET};
-  bool m_validationResultHasBeenSet = false;
 
   SbomValidationErrorCode m_errorCode{SbomValidationErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_fileNameHasBeenSet = false;
+  bool m_validationResultHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

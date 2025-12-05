@@ -66,9 +66,9 @@ class DescribeSpotDatafeedSubscriptionResponse {
   ///@}
  private:
   SpotDatafeedSubscription m_spotDatafeedSubscription;
-  bool m_spotDatafeedSubscriptionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_spotDatafeedSubscriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class EligibleDataSource {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
+  bool m_indexIdHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
 };
 

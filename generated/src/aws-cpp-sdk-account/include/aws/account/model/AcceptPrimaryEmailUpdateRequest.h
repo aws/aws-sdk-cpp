@@ -101,12 +101,12 @@ class AcceptPrimaryEmailUpdateRequest : public AccountRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_otp;
-  bool m_otpHasBeenSet = false;
 
   Aws::String m_primaryEmail;
+  bool m_accountIdHasBeenSet = false;
+  bool m_otpHasBeenSet = false;
   bool m_primaryEmailHasBeenSet = false;
 };
 

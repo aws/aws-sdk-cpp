@@ -73,9 +73,9 @@ class DescribeCustomerGatewaysResponse {
   ///@}
  private:
   Aws::Vector<CustomerGateway> m_customerGateways;
-  bool m_customerGatewaysHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_customerGatewaysHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

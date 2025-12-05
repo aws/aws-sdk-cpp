@@ -183,27 +183,27 @@ class S3ResultItem {
   ///@}
  private:
   Aws::String m_backupResourceArn;
-  bool m_backupResourceArnHasBeenSet = false;
 
   Aws::String m_sourceResourceArn;
-  bool m_sourceResourceArnHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_objectKey;
-  bool m_objectKeyHasBeenSet = false;
 
   long long m_objectSize{0};
-  bool m_objectSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_backupResourceArnHasBeenSet = false;
+  bool m_sourceResourceArnHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_objectKeyHasBeenSet = false;
+  bool m_objectSizeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

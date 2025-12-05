@@ -93,12 +93,12 @@ class EnableResult {
   ///@}
  private:
   Aws::Vector<Account> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::Vector<FailedAccount> m_failedAccounts;
-  bool m_failedAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountsHasBeenSet = false;
+  bool m_failedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ComputeQuotaTarget {
   ///@}
  private:
   Aws::String m_teamName;
-  bool m_teamNameHasBeenSet = false;
 
   int m_fairShareWeight{0};
+  bool m_teamNameHasBeenSet = false;
   bool m_fairShareWeightHasBeenSet = false;
 };
 

@@ -242,36 +242,36 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   AgentRuntimeArtifact m_agentRuntimeArtifact;
-  bool m_agentRuntimeArtifactHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AuthorizerConfiguration m_authorizerConfiguration;
-  bool m_authorizerConfigurationHasBeenSet = false;
 
   RequestHeaderConfiguration m_requestHeaderConfiguration;
-  bool m_requestHeaderConfigurationHasBeenSet = false;
 
   ProtocolConfiguration m_protocolConfiguration;
-  bool m_protocolConfigurationHasBeenSet = false;
 
   LifecycleConfiguration m_lifecycleConfiguration;
-  bool m_lifecycleConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_agentRuntimeArtifactHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_authorizerConfigurationHasBeenSet = false;
+  bool m_requestHeaderConfigurationHasBeenSet = false;
+  bool m_protocolConfigurationHasBeenSet = false;
+  bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

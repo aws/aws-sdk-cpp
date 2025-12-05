@@ -61,9 +61,9 @@ class GetCertificateSigningRequestResult {
   ///@}
  private:
   Aws::String m_certificateSigningRequest;
-  bool m_certificateSigningRequestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateSigningRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

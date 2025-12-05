@@ -141,21 +141,21 @@ class SnowflakeTableReference {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_accountIdentifier;
-  bool m_accountIdentifierHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   SnowflakeTableSchema m_tableSchema;
+  bool m_secretArnHasBeenSet = false;
+  bool m_accountIdentifierHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
   bool m_tableSchemaHasBeenSet = false;
 };
 

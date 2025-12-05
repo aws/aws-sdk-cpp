@@ -498,51 +498,51 @@ class ScanRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributesToGet;
-  bool m_attributesToGetHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Select m_select{Select::NOT_SET};
-  bool m_selectHasBeenSet = false;
 
   Aws::Map<Aws::String, Condition> m_scanFilter;
-  bool m_scanFilterHasBeenSet = false;
 
   ConditionalOperator m_conditionalOperator{ConditionalOperator::NOT_SET};
-  bool m_conditionalOperatorHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_exclusiveStartKey;
-  bool m_exclusiveStartKeyHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
-  bool m_returnConsumedCapacityHasBeenSet = false;
 
   int m_totalSegments{0};
-  bool m_totalSegmentsHasBeenSet = false;
 
   int m_segment{0};
-  bool m_segmentHasBeenSet = false;
 
   Aws::String m_projectionExpression;
-  bool m_projectionExpressionHasBeenSet = false;
 
   Aws::String m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-  bool m_expressionAttributeNamesHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-  bool m_expressionAttributeValuesHasBeenSet = false;
 
   bool m_consistentRead{false};
+  bool m_tableNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_attributesToGetHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_selectHasBeenSet = false;
+  bool m_scanFilterHasBeenSet = false;
+  bool m_conditionalOperatorHasBeenSet = false;
+  bool m_exclusiveStartKeyHasBeenSet = false;
+  bool m_returnConsumedCapacityHasBeenSet = false;
+  bool m_totalSegmentsHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
+  bool m_projectionExpressionHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
+  bool m_expressionAttributeNamesHasBeenSet = false;
+  bool m_expressionAttributeValuesHasBeenSet = false;
   bool m_consistentReadHasBeenSet = false;
 };
 

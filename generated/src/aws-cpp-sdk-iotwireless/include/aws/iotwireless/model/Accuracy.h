@@ -67,9 +67,9 @@ class Accuracy {
   ///@}
  private:
   double m_horizontalAccuracy{0.0};
-  bool m_horizontalAccuracyHasBeenSet = false;
 
   double m_verticalAccuracy{0.0};
+  bool m_horizontalAccuracyHasBeenSet = false;
   bool m_verticalAccuracyHasBeenSet = false;
 };
 

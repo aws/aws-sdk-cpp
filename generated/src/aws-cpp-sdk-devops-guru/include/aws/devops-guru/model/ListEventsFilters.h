@@ -144,21 +144,21 @@ class ListEventsFilters {
   ///@}
  private:
   Aws::String m_insightId;
-  bool m_insightIdHasBeenSet = false;
 
   EventTimeRange m_eventTimeRange;
-  bool m_eventTimeRangeHasBeenSet = false;
 
   EventClass m_eventClass{EventClass::NOT_SET};
-  bool m_eventClassHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   EventDataSource m_dataSource{EventDataSource::NOT_SET};
-  bool m_dataSourceHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
+  bool m_insightIdHasBeenSet = false;
+  bool m_eventTimeRangeHasBeenSet = false;
+  bool m_eventClassHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
   bool m_resourceCollectionHasBeenSet = false;
 };
 

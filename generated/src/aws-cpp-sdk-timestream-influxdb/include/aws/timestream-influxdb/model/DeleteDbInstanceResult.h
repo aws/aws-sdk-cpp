@@ -433,72 +433,72 @@ class DeleteDbInstanceResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   DbInstanceType m_dbInstanceType{DbInstanceType::NOT_SET};
-  bool m_dbInstanceTypeHasBeenSet = false;
 
   DbStorageType m_dbStorageType{DbStorageType::NOT_SET};
-  bool m_dbStorageTypeHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSubnetIds;
-  bool m_vpcSubnetIdsHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_dbParameterGroupIdentifier;
-  bool m_dbParameterGroupIdentifierHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_secondaryAvailabilityZone;
-  bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
   LogDeliveryConfiguration m_logDeliveryConfiguration;
-  bool m_logDeliveryConfigurationHasBeenSet = false;
 
   Aws::String m_influxAuthParametersSecretArn;
-  bool m_influxAuthParametersSecretArnHasBeenSet = false;
 
   Aws::String m_dbClusterId;
-  bool m_dbClusterIdHasBeenSet = false;
 
   InstanceMode m_instanceMode{InstanceMode::NOT_SET};
-  bool m_instanceModeHasBeenSet = false;
 
   Aws::Vector<InstanceMode> m_instanceModes;
-  bool m_instanceModesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_dbInstanceTypeHasBeenSet = false;
+  bool m_dbStorageTypeHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_vpcSubnetIdsHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_dbParameterGroupIdentifierHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_secondaryAvailabilityZoneHasBeenSet = false;
+  bool m_logDeliveryConfigurationHasBeenSet = false;
+  bool m_influxAuthParametersSecretArnHasBeenSet = false;
+  bool m_dbClusterIdHasBeenSet = false;
+  bool m_instanceModeHasBeenSet = false;
+  bool m_instanceModesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GetContainerAPIMetadataResult {
   ///@}
  private:
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

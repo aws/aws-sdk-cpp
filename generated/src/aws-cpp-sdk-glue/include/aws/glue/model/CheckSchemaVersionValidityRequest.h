@@ -67,9 +67,9 @@ class CheckSchemaVersionValidityRequest : public GlueRequest {
   ///@}
  private:
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Aws::String m_schemaDefinition;
+  bool m_dataFormatHasBeenSet = false;
   bool m_schemaDefinitionHasBeenSet = false;
 };
 

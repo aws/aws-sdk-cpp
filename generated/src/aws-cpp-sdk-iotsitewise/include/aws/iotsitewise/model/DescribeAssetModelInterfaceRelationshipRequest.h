@@ -67,9 +67,9 @@ class DescribeAssetModelInterfaceRelationshipRequest : public IoTSiteWiseRequest
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_interfaceAssetModelId;
+  bool m_assetModelIdHasBeenSet = false;
   bool m_interfaceAssetModelIdHasBeenSet = false;
 };
 

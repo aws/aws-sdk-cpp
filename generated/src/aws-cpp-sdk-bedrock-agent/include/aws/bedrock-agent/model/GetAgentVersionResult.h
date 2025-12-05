@@ -60,9 +60,9 @@ class GetAgentVersionResult {
   ///@}
  private:
   AgentVersion m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

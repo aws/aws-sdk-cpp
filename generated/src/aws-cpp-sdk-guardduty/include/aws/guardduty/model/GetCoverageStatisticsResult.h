@@ -61,9 +61,9 @@ class GetCoverageStatisticsResult {
   ///@}
  private:
   CoverageStatistics m_coverageStatistics;
-  bool m_coverageStatisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coverageStatisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

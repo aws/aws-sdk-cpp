@@ -151,21 +151,21 @@ class Entity {
   ///@}
  private:
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   bool m_isParentEntity{false};
-  bool m_isParentEntityHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customProperties;
+  bool m_entityNameHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_isParentEntityHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_customPropertiesHasBeenSet = false;
 };
 

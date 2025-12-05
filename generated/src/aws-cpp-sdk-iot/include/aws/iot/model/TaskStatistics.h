@@ -142,24 +142,24 @@ class TaskStatistics {
   ///@}
  private:
   int m_totalChecks{0};
-  bool m_totalChecksHasBeenSet = false;
 
   int m_inProgressChecks{0};
-  bool m_inProgressChecksHasBeenSet = false;
 
   int m_waitingForDataCollectionChecks{0};
-  bool m_waitingForDataCollectionChecksHasBeenSet = false;
 
   int m_compliantChecks{0};
-  bool m_compliantChecksHasBeenSet = false;
 
   int m_nonCompliantChecks{0};
-  bool m_nonCompliantChecksHasBeenSet = false;
 
   int m_failedChecks{0};
-  bool m_failedChecksHasBeenSet = false;
 
   int m_canceledChecks{0};
+  bool m_totalChecksHasBeenSet = false;
+  bool m_inProgressChecksHasBeenSet = false;
+  bool m_waitingForDataCollectionChecksHasBeenSet = false;
+  bool m_compliantChecksHasBeenSet = false;
+  bool m_nonCompliantChecksHasBeenSet = false;
+  bool m_failedChecksHasBeenSet = false;
   bool m_canceledChecksHasBeenSet = false;
 };
 

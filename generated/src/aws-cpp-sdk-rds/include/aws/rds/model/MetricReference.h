@@ -71,9 +71,9 @@ class MetricReference {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ReferenceDetails m_referenceDetails;
+  bool m_nameHasBeenSet = false;
   bool m_referenceDetailsHasBeenSet = false;
 };
 

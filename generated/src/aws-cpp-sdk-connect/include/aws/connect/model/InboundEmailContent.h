@@ -67,9 +67,9 @@ class InboundEmailContent {
   ///@}
  private:
   InboundMessageSourceType m_messageSourceType{InboundMessageSourceType::NOT_SET};
-  bool m_messageSourceTypeHasBeenSet = false;
 
   InboundRawMessage m_rawMessage;
+  bool m_messageSourceTypeHasBeenSet = false;
   bool m_rawMessageHasBeenSet = false;
 };
 

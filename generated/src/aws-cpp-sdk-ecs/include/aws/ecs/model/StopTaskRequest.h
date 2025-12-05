@@ -91,12 +91,12 @@ class StopTaskRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_clusterHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

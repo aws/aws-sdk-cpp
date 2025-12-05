@@ -78,12 +78,12 @@ class RequestImpactStatistics {
   ///@}
  private:
   long long m_faultCount{0};
-  bool m_faultCountHasBeenSet = false;
 
   long long m_okCount{0};
-  bool m_okCountHasBeenSet = false;
 
   long long m_totalCount{0};
+  bool m_faultCountHasBeenSet = false;
+  bool m_okCountHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;
 };
 

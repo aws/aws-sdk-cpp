@@ -135,18 +135,18 @@ class StartSyncExecutionRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_traceHeader;
-  bool m_traceHeaderHasBeenSet = false;
 
   IncludedData m_includedData{IncludedData::NOT_SET};
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_traceHeaderHasBeenSet = false;
   bool m_includedDataHasBeenSet = false;
 };
 

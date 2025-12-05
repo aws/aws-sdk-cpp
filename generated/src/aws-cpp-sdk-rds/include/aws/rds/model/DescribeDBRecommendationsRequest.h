@@ -193,21 +193,21 @@ class DescribeDBRecommendationsRequest : public RDSRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_lastUpdatedAfter{};
-  bool m_lastUpdatedAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedBefore{};
-  bool m_lastUpdatedBeforeHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_lastUpdatedAfterHasBeenSet = false;
+  bool m_lastUpdatedBeforeHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

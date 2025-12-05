@@ -61,9 +61,9 @@ class CreateMemoryResult {
   ///@}
  private:
   Memory m_memory;
-  bool m_memoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class BatchGetChannelResult {
   ///@}
  private:
   Aws::Vector<Channel> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::Vector<BatchError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

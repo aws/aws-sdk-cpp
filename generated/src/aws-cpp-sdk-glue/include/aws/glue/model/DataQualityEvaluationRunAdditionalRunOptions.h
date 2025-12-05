@@ -85,12 +85,12 @@ class DataQualityEvaluationRunAdditionalRunOptions {
   ///@}
  private:
   bool m_cloudWatchMetricsEnabled{false};
-  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
   Aws::String m_resultsS3Prefix;
-  bool m_resultsS3PrefixHasBeenSet = false;
 
   DQCompositeRuleEvaluationMethod m_compositeRuleEvaluationMethod{DQCompositeRuleEvaluationMethod::NOT_SET};
+  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
+  bool m_resultsS3PrefixHasBeenSet = false;
   bool m_compositeRuleEvaluationMethodHasBeenSet = false;
 };
 

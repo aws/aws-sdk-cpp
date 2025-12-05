@@ -85,12 +85,12 @@ class ListScheduledQueriesResult {
   ///@}
  private:
   Aws::Vector<ScheduledQuery> m_scheduledQueries;
-  bool m_scheduledQueriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledQueriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

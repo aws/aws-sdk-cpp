@@ -168,21 +168,21 @@ class CreateExtensionRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<ActionPoint, Aws::Vector<Action>> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_latestVersionNumber{0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_latestVersionNumberHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class UpdateServiceSettingsRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   OrganizationConfiguration m_organizationConfiguration;
-  bool m_organizationConfigurationHasBeenSet = false;
 
   bool m_enableCrossAccountsDiscovery{false};
-  bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledDiscoverySourceRegions;
+  bool m_s3BucketArnHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_organizationConfigurationHasBeenSet = false;
+  bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
   bool m_enabledDiscoverySourceRegionsHasBeenSet = false;
 };
 

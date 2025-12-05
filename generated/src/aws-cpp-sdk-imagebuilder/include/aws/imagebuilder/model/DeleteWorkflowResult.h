@@ -60,9 +60,9 @@ class DeleteWorkflowResult {
   ///@}
  private:
   Aws::String m_workflowBuildVersionArn;
-  bool m_workflowBuildVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowBuildVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

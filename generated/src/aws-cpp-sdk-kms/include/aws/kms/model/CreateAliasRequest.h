@@ -89,9 +89,9 @@ class CreateAliasRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::String m_targetKeyId;
+  bool m_aliasNameHasBeenSet = false;
   bool m_targetKeyIdHasBeenSet = false;
 };
 

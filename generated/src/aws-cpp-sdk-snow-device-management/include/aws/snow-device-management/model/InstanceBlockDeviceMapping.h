@@ -70,9 +70,9 @@ class InstanceBlockDeviceMapping {
   ///@}
  private:
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   EbsInstanceBlockDevice m_ebs;
+  bool m_deviceNameHasBeenSet = false;
   bool m_ebsHasBeenSet = false;
 };
 

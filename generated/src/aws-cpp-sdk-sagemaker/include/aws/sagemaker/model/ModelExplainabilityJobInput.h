@@ -67,9 +67,9 @@ class ModelExplainabilityJobInput {
   ///@}
  private:
   EndpointInput m_endpointInput;
-  bool m_endpointInputHasBeenSet = false;
 
   BatchTransformInput m_batchTransformInput;
+  bool m_endpointInputHasBeenSet = false;
   bool m_batchTransformInputHasBeenSet = false;
 };
 

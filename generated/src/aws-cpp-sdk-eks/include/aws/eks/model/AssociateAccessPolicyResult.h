@@ -95,15 +95,15 @@ class AssociateAccessPolicyResult {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   AssociatedAccessPolicy m_associatedAccessPolicy;
-  bool m_associatedAccessPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
+  bool m_associatedAccessPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

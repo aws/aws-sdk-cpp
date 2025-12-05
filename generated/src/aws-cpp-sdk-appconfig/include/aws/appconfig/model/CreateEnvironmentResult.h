@@ -153,24 +153,24 @@ class CreateEnvironmentResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EnvironmentState m_state{EnvironmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Monitor> m_monitors;
-  bool m_monitorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_monitorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

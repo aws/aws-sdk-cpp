@@ -85,12 +85,12 @@ class CheckDomainTransferabilityResult {
   ///@}
  private:
   DomainTransferability m_transferability;
-  bool m_transferabilityHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transferabilityHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

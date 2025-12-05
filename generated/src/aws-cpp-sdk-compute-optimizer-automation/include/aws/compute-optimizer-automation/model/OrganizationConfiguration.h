@@ -77,9 +77,9 @@ class OrganizationConfiguration {
   ///@}
  private:
   RuleApplyOrder m_ruleApplyOrder{RuleApplyOrder::NOT_SET};
-  bool m_ruleApplyOrderHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_ruleApplyOrderHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

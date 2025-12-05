@@ -172,27 +172,27 @@ class DeploymentModel {
   ///@}
  private:
   Aws::String m_modelHandle;
-  bool m_modelHandleHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   ModelState m_desiredState{ModelState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   ModelState m_state{ModelState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   DeploymentStatus m_status{DeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_rollbackFailureReason;
+  bool m_modelHandleHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_rollbackFailureReasonHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class CreateConnectionRequest : public CodeConnectionsRequest {
   ///@}
  private:
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_hostArn;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_hostArnHasBeenSet = false;
 };
 

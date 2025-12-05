@@ -92,12 +92,12 @@ class ListAWSServiceAccessForOrganizationResult {
   ///@}
  private:
   Aws::Vector<EnabledServicePrincipal> m_enabledServicePrincipals;
-  bool m_enabledServicePrincipalsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enabledServicePrincipalsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

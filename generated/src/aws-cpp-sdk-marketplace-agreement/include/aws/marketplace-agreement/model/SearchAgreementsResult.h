@@ -86,12 +86,12 @@ class SearchAgreementsResult {
   ///@}
  private:
   Aws::Vector<AgreementViewSummary> m_agreementViewSummaries;
-  bool m_agreementViewSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agreementViewSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

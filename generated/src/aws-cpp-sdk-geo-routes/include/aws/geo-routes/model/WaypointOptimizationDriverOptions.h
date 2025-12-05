@@ -92,12 +92,12 @@ class WaypointOptimizationDriverOptions {
   ///@}
  private:
   WaypointOptimizationRestCycles m_restCycles;
-  bool m_restCyclesHasBeenSet = false;
 
   WaypointOptimizationRestProfile m_restProfile;
-  bool m_restProfileHasBeenSet = false;
 
   WaypointOptimizationServiceTimeTreatment m_treatServiceTimeAs{WaypointOptimizationServiceTimeTreatment::NOT_SET};
+  bool m_restCyclesHasBeenSet = false;
+  bool m_restProfileHasBeenSet = false;
   bool m_treatServiceTimeAsHasBeenSet = false;
 };
 

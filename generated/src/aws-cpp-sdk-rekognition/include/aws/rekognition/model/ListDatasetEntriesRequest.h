@@ -175,24 +175,24 @@ class ListDatasetEntriesRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containsLabels;
-  bool m_containsLabelsHasBeenSet = false;
 
   bool m_labeled{false};
-  bool m_labeledHasBeenSet = false;
 
   Aws::String m_sourceRefContains;
-  bool m_sourceRefContainsHasBeenSet = false;
 
   bool m_hasErrors{false};
-  bool m_hasErrorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_datasetArnHasBeenSet = false;
+  bool m_containsLabelsHasBeenSet = false;
+  bool m_labeledHasBeenSet = false;
+  bool m_sourceRefContainsHasBeenSet = false;
+  bool m_hasErrorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

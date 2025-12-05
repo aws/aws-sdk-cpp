@@ -100,15 +100,15 @@ class ListBlockingInstancesForCapacityTaskRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifier;
-  bool m_outpostIdentifierHasBeenSet = false;
 
   Aws::String m_capacityTaskId;
-  bool m_capacityTaskIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_outpostIdentifierHasBeenSet = false;
+  bool m_capacityTaskIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

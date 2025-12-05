@@ -72,9 +72,9 @@ class GenerateFindingRecommendationRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_analyzerArnHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

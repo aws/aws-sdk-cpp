@@ -81,9 +81,9 @@ class Compliance {
   ///@}
  private:
   ComplianceType m_complianceType{ComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   ComplianceContributorCount m_complianceContributorCount;
+  bool m_complianceTypeHasBeenSet = false;
   bool m_complianceContributorCountHasBeenSet = false;
 };
 

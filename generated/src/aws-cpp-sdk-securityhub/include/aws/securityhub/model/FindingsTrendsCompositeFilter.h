@@ -101,12 +101,12 @@ class FindingsTrendsCompositeFilter {
   ///@}
  private:
   Aws::Vector<FindingsTrendsStringFilter> m_stringFilters;
-  bool m_stringFiltersHasBeenSet = false;
 
   Aws::Vector<FindingsTrendsCompositeFilter> m_nestedCompositeFilters;
-  bool m_nestedCompositeFiltersHasBeenSet = false;
 
   AllowedOperators m_operator{AllowedOperators::NOT_SET};
+  bool m_stringFiltersHasBeenSet = false;
+  bool m_nestedCompositeFiltersHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

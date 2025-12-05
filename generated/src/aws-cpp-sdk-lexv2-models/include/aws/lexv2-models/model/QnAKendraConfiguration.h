@@ -109,15 +109,15 @@ class QnAKendraConfiguration {
   ///@}
  private:
   Aws::String m_kendraIndex;
-  bool m_kendraIndexHasBeenSet = false;
 
   bool m_queryFilterStringEnabled{false};
-  bool m_queryFilterStringEnabledHasBeenSet = false;
 
   Aws::String m_queryFilterString;
-  bool m_queryFilterStringHasBeenSet = false;
 
   bool m_exactResponse{false};
+  bool m_kendraIndexHasBeenSet = false;
+  bool m_queryFilterStringEnabledHasBeenSet = false;
+  bool m_queryFilterStringHasBeenSet = false;
   bool m_exactResponseHasBeenSet = false;
 };
 

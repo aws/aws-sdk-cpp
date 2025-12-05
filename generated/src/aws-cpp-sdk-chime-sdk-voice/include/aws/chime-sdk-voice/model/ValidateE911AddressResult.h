@@ -123,18 +123,18 @@ class ValidateE911AddressResult {
   ///@}
  private:
   int m_validationResult{0};
-  bool m_validationResultHasBeenSet = false;
 
   Aws::String m_addressExternalId;
-  bool m_addressExternalIdHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<CandidateAddress> m_candidateAddressList;
-  bool m_candidateAddressListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_validationResultHasBeenSet = false;
+  bool m_addressExternalIdHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_candidateAddressListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

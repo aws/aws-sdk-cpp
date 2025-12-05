@@ -81,9 +81,9 @@ class AddAttributesToFindingsRequest : public InspectorRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_findingArns;
-  bool m_findingArnsHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_findingArnsHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

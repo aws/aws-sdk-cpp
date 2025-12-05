@@ -70,9 +70,9 @@ class EvaluationResult {
   ///@}
  private:
   double m_f1Score{0.0};
-  bool m_f1ScoreHasBeenSet = false;
 
   Summary m_summary;
+  bool m_f1ScoreHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
 };
 

@@ -531,81 +531,81 @@ class RelationalDatabase {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_relationalDatabaseBlueprintId;
-  bool m_relationalDatabaseBlueprintIdHasBeenSet = false;
 
   Aws::String m_relationalDatabaseBundleId;
-  bool m_relationalDatabaseBundleIdHasBeenSet = false;
 
   Aws::String m_masterDatabaseName;
-  bool m_masterDatabaseNameHasBeenSet = false;
 
   RelationalDatabaseHardware m_hardware;
-  bool m_hardwareHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_secondaryAvailabilityZone;
-  bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
   bool m_backupRetentionEnabled{false};
-  bool m_backupRetentionEnabledHasBeenSet = false;
 
   PendingModifiedRelationalDatabaseValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestRestorableTime{};
-  bool m_latestRestorableTimeHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_parameterApplyStatus;
-  bool m_parameterApplyStatusHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   RelationalDatabaseEndpoint m_masterEndpoint;
-  bool m_masterEndpointHasBeenSet = false;
 
   Aws::Vector<PendingMaintenanceAction> m_pendingMaintenanceActions;
-  bool m_pendingMaintenanceActionsHasBeenSet = false;
 
   Aws::String m_caCertificateIdentifier;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_relationalDatabaseBlueprintIdHasBeenSet = false;
+  bool m_relationalDatabaseBundleIdHasBeenSet = false;
+  bool m_masterDatabaseNameHasBeenSet = false;
+  bool m_hardwareHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_secondaryAvailabilityZoneHasBeenSet = false;
+  bool m_backupRetentionEnabledHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_latestRestorableTimeHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_parameterApplyStatusHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_masterEndpointHasBeenSet = false;
+  bool m_pendingMaintenanceActionsHasBeenSet = false;
   bool m_caCertificateIdentifierHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class Rule {
   ///@}
  private:
   UsersAndGroups m_includedUsersAndGroups;
-  bool m_includedUsersAndGroupsHasBeenSet = false;
 
   UsersAndGroups m_excludedUsersAndGroups;
-  bool m_excludedUsersAndGroupsHasBeenSet = false;
 
   RuleType m_ruleType{RuleType::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   RuleConfiguration m_ruleConfiguration;
+  bool m_includedUsersAndGroupsHasBeenSet = false;
+  bool m_excludedUsersAndGroupsHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
   bool m_ruleConfigurationHasBeenSet = false;
 };
 

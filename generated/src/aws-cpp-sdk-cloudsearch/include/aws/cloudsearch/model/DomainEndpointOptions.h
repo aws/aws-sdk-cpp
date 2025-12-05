@@ -66,9 +66,9 @@ class DomainEndpointOptions {
   ///@}
  private:
   bool m_enforceHTTPS{false};
-  bool m_enforceHTTPSHasBeenSet = false;
 
   TLSSecurityPolicy m_tLSSecurityPolicy{TLSSecurityPolicy::NOT_SET};
+  bool m_enforceHTTPSHasBeenSet = false;
   bool m_tLSSecurityPolicyHasBeenSet = false;
 };
 

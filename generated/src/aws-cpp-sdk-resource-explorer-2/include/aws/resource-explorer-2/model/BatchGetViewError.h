@@ -72,9 +72,9 @@ class BatchGetViewError {
   ///@}
  private:
   Aws::String m_viewArn;
-  bool m_viewArnHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_viewArnHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

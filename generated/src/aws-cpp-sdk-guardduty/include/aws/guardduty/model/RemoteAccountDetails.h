@@ -70,9 +70,9 @@ class RemoteAccountDetails {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   bool m_affiliated{false};
+  bool m_accountIdHasBeenSet = false;
   bool m_affiliatedHasBeenSet = false;
 };
 

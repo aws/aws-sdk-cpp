@@ -61,9 +61,9 @@ class FrameResolution {
   ///@}
  private:
   int m_frameHeight{0};
-  bool m_frameHeightHasBeenSet = false;
 
   int m_frameWidth{0};
+  bool m_frameHeightHasBeenSet = false;
   bool m_frameWidthHasBeenSet = false;
 };
 

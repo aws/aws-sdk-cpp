@@ -69,9 +69,9 @@ class ListTransactionsSort {
   ///@}
  private:
   ListTransactionsSortBy m_sortBy{ListTransactionsSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

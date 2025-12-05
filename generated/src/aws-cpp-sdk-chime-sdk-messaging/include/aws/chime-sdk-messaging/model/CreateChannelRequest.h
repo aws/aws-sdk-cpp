@@ -296,42 +296,42 @@ class CreateChannelRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ChannelMode m_mode{ChannelMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   ChannelPrivacy m_privacy{ChannelPrivacy::NOT_SET};
-  bool m_privacyHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_chimeBearer;
-  bool m_chimeBearerHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_memberArns;
-  bool m_memberArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_moderatorArns;
-  bool m_moderatorArnsHasBeenSet = false;
 
   ElasticChannelConfiguration m_elasticChannelConfiguration;
-  bool m_elasticChannelConfigurationHasBeenSet = false;
 
   ExpirationSettings m_expirationSettings;
+  bool m_appInstanceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_privacyHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_chimeBearerHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
+  bool m_memberArnsHasBeenSet = false;
+  bool m_moderatorArnsHasBeenSet = false;
+  bool m_elasticChannelConfigurationHasBeenSet = false;
   bool m_expirationSettingsHasBeenSet = false;
 };
 

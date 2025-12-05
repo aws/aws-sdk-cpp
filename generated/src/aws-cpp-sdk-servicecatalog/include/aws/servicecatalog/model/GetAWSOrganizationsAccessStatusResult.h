@@ -59,9 +59,9 @@ class GetAWSOrganizationsAccessStatusResult {
   ///@}
  private:
   AccessStatus m_accessStatus{AccessStatus::NOT_SET};
-  bool m_accessStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

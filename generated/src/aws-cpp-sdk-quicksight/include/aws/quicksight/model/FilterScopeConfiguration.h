@@ -74,9 +74,9 @@ class FilterScopeConfiguration {
   ///@}
  private:
   SelectedSheetsFilterScopeConfiguration m_selectedSheets;
-  bool m_selectedSheetsHasBeenSet = false;
 
   AllSheetsFilterScopeConfiguration m_allSheets;
+  bool m_selectedSheetsHasBeenSet = false;
   bool m_allSheetsHasBeenSet = false;
 };
 

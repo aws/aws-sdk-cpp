@@ -144,21 +144,21 @@ class Destination {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DestinationState m_state{DestinationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   DestinationConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   DestinationDetail m_detail;
+  bool m_idHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_detailHasBeenSet = false;
 };
 

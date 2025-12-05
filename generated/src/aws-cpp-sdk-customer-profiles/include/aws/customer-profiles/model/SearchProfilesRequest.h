@@ -192,24 +192,24 @@ class SearchProfilesRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<AdditionalSearchKey> m_additionalSearchKeys;
-  bool m_additionalSearchKeysHasBeenSet = false;
 
   LogicalOperator m_logicalOperator{LogicalOperator::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_additionalSearchKeysHasBeenSet = false;
   bool m_logicalOperatorHasBeenSet = false;
 };
 

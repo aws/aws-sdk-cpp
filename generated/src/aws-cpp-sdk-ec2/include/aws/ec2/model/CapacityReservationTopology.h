@@ -197,27 +197,27 @@ class CapacityReservationTopology {
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_capacityBlockId;
-  bool m_capacityBlockIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkNodes;
-  bool m_networkNodesHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_capacityBlockIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_networkNodesHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
 };
 

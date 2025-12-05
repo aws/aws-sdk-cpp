@@ -575,81 +575,81 @@ class Stack {
   ///@}
  private:
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_changeSetId;
-  bool m_changeSetIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionTime{};
-  bool m_deletionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   RollbackConfiguration m_rollbackConfiguration;
-  bool m_rollbackConfigurationHasBeenSet = false;
 
   StackStatus m_stackStatus{StackStatus::NOT_SET};
-  bool m_stackStatusHasBeenSet = false;
 
   Aws::String m_stackStatusReason;
-  bool m_stackStatusReasonHasBeenSet = false;
 
   bool m_disableRollback{false};
-  bool m_disableRollbackHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationARNs;
-  bool m_notificationARNsHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
-  bool m_timeoutInMinutesHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_enableTerminationProtection{false};
-  bool m_enableTerminationProtectionHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_rootId;
-  bool m_rootIdHasBeenSet = false;
 
   StackDriftInformation m_driftInformation;
-  bool m_driftInformationHasBeenSet = false;
 
   bool m_retainExceptOnCreate{false};
-  bool m_retainExceptOnCreateHasBeenSet = false;
 
   DeletionMode m_deletionMode{DeletionMode::NOT_SET};
-  bool m_deletionModeHasBeenSet = false;
 
   DetailedStatus m_detailedStatus{DetailedStatus::NOT_SET};
-  bool m_detailedStatusHasBeenSet = false;
 
   Aws::Vector<OperationEntry> m_lastOperations;
+  bool m_stackIdHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_changeSetIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deletionTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_rollbackConfigurationHasBeenSet = false;
+  bool m_stackStatusHasBeenSet = false;
+  bool m_stackStatusReasonHasBeenSet = false;
+  bool m_disableRollbackHasBeenSet = false;
+  bool m_notificationARNsHasBeenSet = false;
+  bool m_timeoutInMinutesHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_enableTerminationProtectionHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_rootIdHasBeenSet = false;
+  bool m_driftInformationHasBeenSet = false;
+  bool m_retainExceptOnCreateHasBeenSet = false;
+  bool m_deletionModeHasBeenSet = false;
+  bool m_detailedStatusHasBeenSet = false;
   bool m_lastOperationsHasBeenSet = false;
 };
 

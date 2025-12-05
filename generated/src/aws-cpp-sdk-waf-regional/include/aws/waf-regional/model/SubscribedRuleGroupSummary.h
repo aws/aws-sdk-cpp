@@ -100,12 +100,12 @@ class SubscribedRuleGroupSummary {
   ///@}
  private:
   Aws::String m_ruleGroupId;
-  bool m_ruleGroupIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metricName;
+  bool m_ruleGroupIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_metricNameHasBeenSet = false;
 };
 

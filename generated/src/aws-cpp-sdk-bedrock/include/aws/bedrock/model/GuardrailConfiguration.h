@@ -68,9 +68,9 @@ class GuardrailConfiguration {
   ///@}
  private:
   Aws::String m_guardrailId;
-  bool m_guardrailIdHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
+  bool m_guardrailIdHasBeenSet = false;
   bool m_guardrailVersionHasBeenSet = false;
 };
 

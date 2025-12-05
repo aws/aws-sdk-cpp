@@ -105,15 +105,15 @@ class SageMakerSavingsPlansConfiguration {
   ///@}
  private:
   Aws::String m_accountScope;
-  bool m_accountScopeHasBeenSet = false;
 
   Aws::String m_term;
-  bool m_termHasBeenSet = false;
 
   Aws::String m_paymentOption;
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::String m_hourlyCommitment;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_termHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
   bool m_hourlyCommitmentHasBeenSet = false;
 };
 

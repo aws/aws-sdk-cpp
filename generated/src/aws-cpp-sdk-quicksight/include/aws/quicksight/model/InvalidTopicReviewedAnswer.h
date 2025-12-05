@@ -69,9 +69,9 @@ class InvalidTopicReviewedAnswer {
   ///@}
  private:
   Aws::String m_answerId;
-  bool m_answerIdHasBeenSet = false;
 
   ReviewedAnswerErrorCode m_error{ReviewedAnswerErrorCode::NOT_SET};
+  bool m_answerIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

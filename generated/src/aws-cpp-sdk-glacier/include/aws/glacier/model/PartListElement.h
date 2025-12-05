@@ -70,9 +70,9 @@ class PartListElement {
   ///@}
  private:
   Aws::String m_rangeInBytes;
-  bool m_rangeInBytesHasBeenSet = false;
 
   Aws::String m_sHA256TreeHash;
+  bool m_rangeInBytesHasBeenSet = false;
   bool m_sHA256TreeHashHasBeenSet = false;
 };
 

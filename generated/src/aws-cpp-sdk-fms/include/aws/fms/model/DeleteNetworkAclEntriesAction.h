@@ -116,15 +116,15 @@ class DeleteNetworkAclEntriesAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionTarget m_networkAclId;
-  bool m_networkAclIdHasBeenSet = false;
 
   Aws::Vector<EntryDescription> m_networkAclEntriesToBeDeleted;
-  bool m_networkAclEntriesToBeDeletedHasBeenSet = false;
 
   bool m_fMSCanRemediate{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_networkAclIdHasBeenSet = false;
+  bool m_networkAclEntriesToBeDeletedHasBeenSet = false;
   bool m_fMSCanRemediateHasBeenSet = false;
 };
 

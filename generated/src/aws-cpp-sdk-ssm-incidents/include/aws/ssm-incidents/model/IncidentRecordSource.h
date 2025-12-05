@@ -109,15 +109,15 @@ class IncidentRecordSource {
   ///@}
  private:
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_invokedBy;
-  bool m_invokedByHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_source;
+  bool m_createdByHasBeenSet = false;
+  bool m_invokedByHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

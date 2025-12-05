@@ -231,33 +231,33 @@ class Job {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_creationDateTime;
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_endDateTime;
-  bool m_endDateTimeHasBeenSet = false;
 
   InitiatedBy m_initiatedBy{InitiatedBy::NOT_SET};
-  bool m_initiatedByHasBeenSet = false;
 
   Aws::String m_jobID;
-  bool m_jobIDHasBeenSet = false;
 
   Aws::Vector<ParticipatingResource> m_participatingResources;
-  bool m_participatingResourcesHasBeenSet = false;
 
   Aws::Vector<ParticipatingServer> m_participatingServers;
-  bool m_participatingServersHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   JobType m_type{JobType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_initiatedByHasBeenSet = false;
+  bool m_jobIDHasBeenSet = false;
+  bool m_participatingResourcesHasBeenSet = false;
+  bool m_participatingServersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class CreateTenantRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_tenantName;
-  bool m_tenantNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_tenantNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class TeletextDestinationSettings {
   ///@}
  private:
   Aws::String m_pageNumber;
-  bool m_pageNumberHasBeenSet = false;
 
   Aws::Vector<TeletextPageType> m_pageTypes;
+  bool m_pageNumberHasBeenSet = false;
   bool m_pageTypesHasBeenSet = false;
 };
 

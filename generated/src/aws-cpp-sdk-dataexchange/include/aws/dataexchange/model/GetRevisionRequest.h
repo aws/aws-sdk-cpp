@@ -65,9 +65,9 @@ class GetRevisionRequest : public DataExchangeRequest {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

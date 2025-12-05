@@ -71,9 +71,9 @@ class IdNamespaceAssociationInputReferenceConfig {
   ///@}
  private:
   Aws::String m_inputReferenceArn;
-  bool m_inputReferenceArnHasBeenSet = false;
 
   bool m_manageResourcePolicies{false};
+  bool m_inputReferenceArnHasBeenSet = false;
   bool m_manageResourcePoliciesHasBeenSet = false;
 };
 

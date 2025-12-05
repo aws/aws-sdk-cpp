@@ -72,9 +72,9 @@ class InsufficientSensorData {
   ///@}
  private:
   MissingCompleteSensorData m_missingCompleteSensorData;
-  bool m_missingCompleteSensorDataHasBeenSet = false;
 
   SensorsWithShortDateRange m_sensorsWithShortDateRange;
+  bool m_missingCompleteSensorDataHasBeenSet = false;
   bool m_sensorsWithShortDateRangeHasBeenSet = false;
 };
 

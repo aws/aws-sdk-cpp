@@ -60,9 +60,9 @@ class DescribeHostKeyResult {
   ///@}
  private:
   DescribedHostKey m_hostKey;
-  bool m_hostKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

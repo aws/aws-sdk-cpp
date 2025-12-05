@@ -128,18 +128,18 @@ class UpdateImageSetMetadataRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   Aws::String m_latestVersionId;
-  bool m_latestVersionIdHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   MetadataUpdates m_updateImageSetMetadataUpdates;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_imageSetIdHasBeenSet = false;
+  bool m_latestVersionIdHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_updateImageSetMetadataUpdatesHasBeenSet = false;
 };
 

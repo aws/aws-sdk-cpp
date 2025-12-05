@@ -135,18 +135,18 @@ class StartParticipantReplicationRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_sourceStageArn;
-  bool m_sourceStageArnHasBeenSet = false;
 
   Aws::String m_destinationStageArn;
-  bool m_destinationStageArnHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   int m_reconnectWindowSeconds{0};
-  bool m_reconnectWindowSecondsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_sourceStageArnHasBeenSet = false;
+  bool m_destinationStageArnHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_reconnectWindowSecondsHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

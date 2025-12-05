@@ -65,9 +65,9 @@ class NodeDetails {
   ///@}
  private:
   int m_nodeIndex{0};
-  bool m_nodeIndexHasBeenSet = false;
 
   bool m_isMainNode{false};
+  bool m_nodeIndexHasBeenSet = false;
   bool m_isMainNodeHasBeenSet = false;
 };
 

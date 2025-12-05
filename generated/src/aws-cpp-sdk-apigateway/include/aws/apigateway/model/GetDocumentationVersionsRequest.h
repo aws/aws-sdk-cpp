@@ -90,12 +90,12 @@ class GetDocumentationVersionsRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_limit{0};
+  bool m_restApiIdHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

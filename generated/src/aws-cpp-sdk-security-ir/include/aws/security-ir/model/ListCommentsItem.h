@@ -141,21 +141,21 @@ class ListCommentsItem {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_creator;
-  bool m_creatorHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::String m_body;
+  bool m_commentIdHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_creatorHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
 };
 

@@ -201,30 +201,30 @@ class DomainDescriptionType {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_aWSAccountId;
-  bool m_aWSAccountIdHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_cloudFrontDistribution;
-  bool m_cloudFrontDistributionHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   DomainStatusType m_status{DomainStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CustomDomainConfigType m_customDomainConfig;
-  bool m_customDomainConfigHasBeenSet = false;
 
   int m_managedLoginVersion{0};
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_aWSAccountIdHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_cloudFrontDistributionHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_customDomainConfigHasBeenSet = false;
   bool m_managedLoginVersionHasBeenSet = false;
 };
 

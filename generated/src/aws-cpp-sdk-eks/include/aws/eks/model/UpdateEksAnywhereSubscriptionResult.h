@@ -60,9 +60,9 @@ class UpdateEksAnywhereSubscriptionResult {
   ///@}
  private:
   EksAnywhereSubscription m_subscription;
-  bool m_subscriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

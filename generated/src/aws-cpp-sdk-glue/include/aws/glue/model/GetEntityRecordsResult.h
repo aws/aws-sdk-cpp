@@ -84,12 +84,12 @@ class GetEntityRecordsResult {
   ///@}
  private:
   Aws::Vector<Aws::Utils::Document> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

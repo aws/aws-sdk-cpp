@@ -60,9 +60,9 @@ class CreateAssistantResult {
   ///@}
  private:
   AssistantData m_assistant;
-  bool m_assistantHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assistantHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

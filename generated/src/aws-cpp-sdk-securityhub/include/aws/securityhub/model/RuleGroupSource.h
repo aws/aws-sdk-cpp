@@ -118,15 +118,15 @@ class RuleGroupSource {
   ///@}
  private:
   RuleGroupSourceListDetails m_rulesSourceList;
-  bool m_rulesSourceListHasBeenSet = false;
 
   Aws::String m_rulesString;
-  bool m_rulesStringHasBeenSet = false;
 
   Aws::Vector<RuleGroupSourceStatefulRulesDetails> m_statefulRules;
-  bool m_statefulRulesHasBeenSet = false;
 
   RuleGroupSourceStatelessRulesAndCustomActionsDetails m_statelessRulesAndCustomActions;
+  bool m_rulesSourceListHasBeenSet = false;
+  bool m_rulesStringHasBeenSet = false;
+  bool m_statefulRulesHasBeenSet = false;
   bool m_statelessRulesAndCustomActionsHasBeenSet = false;
 };
 

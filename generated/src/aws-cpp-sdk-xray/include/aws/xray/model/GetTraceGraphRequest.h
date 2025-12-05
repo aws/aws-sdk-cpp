@@ -72,9 +72,9 @@ class GetTraceGraphRequest : public XRayRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_traceIds;
-  bool m_traceIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_traceIdsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

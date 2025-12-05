@@ -114,15 +114,15 @@ class AwsEc2ClientVpnEndpointAuthenticationOptionsDetails {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails m_activeDirectory;
-  bool m_activeDirectoryHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails m_mutualAuthentication;
-  bool m_mutualAuthenticationHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails m_federatedAuthentication;
+  bool m_typeHasBeenSet = false;
+  bool m_activeDirectoryHasBeenSet = false;
+  bool m_mutualAuthenticationHasBeenSet = false;
   bool m_federatedAuthenticationHasBeenSet = false;
 };
 

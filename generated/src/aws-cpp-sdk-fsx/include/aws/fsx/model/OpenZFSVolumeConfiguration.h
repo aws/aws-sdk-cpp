@@ -396,57 +396,57 @@ class OpenZFSVolumeConfiguration {
   ///@}
  private:
   Aws::String m_parentVolumeId;
-  bool m_parentVolumeIdHasBeenSet = false;
 
   Aws::String m_volumePath;
-  bool m_volumePathHasBeenSet = false;
 
   int m_storageCapacityReservationGiB{0};
-  bool m_storageCapacityReservationGiBHasBeenSet = false;
 
   int m_storageCapacityQuotaGiB{0};
-  bool m_storageCapacityQuotaGiBHasBeenSet = false;
 
   int m_recordSizeKiB{0};
-  bool m_recordSizeKiBHasBeenSet = false;
 
   OpenZFSDataCompressionType m_dataCompressionType{OpenZFSDataCompressionType::NOT_SET};
-  bool m_dataCompressionTypeHasBeenSet = false;
 
   bool m_copyTagsToSnapshots{false};
-  bool m_copyTagsToSnapshotsHasBeenSet = false;
 
   OpenZFSOriginSnapshotConfiguration m_originSnapshot;
-  bool m_originSnapshotHasBeenSet = false;
 
   bool m_readOnly{false};
-  bool m_readOnlyHasBeenSet = false;
 
   Aws::Vector<OpenZFSNfsExport> m_nfsExports;
-  bool m_nfsExportsHasBeenSet = false;
 
   Aws::Vector<OpenZFSUserOrGroupQuota> m_userAndGroupQuotas;
-  bool m_userAndGroupQuotasHasBeenSet = false;
 
   Aws::String m_restoreToSnapshot;
-  bool m_restoreToSnapshotHasBeenSet = false;
 
   bool m_deleteIntermediateSnaphots{false};
-  bool m_deleteIntermediateSnaphotsHasBeenSet = false;
 
   bool m_deleteClonedVolumes{false};
-  bool m_deleteClonedVolumesHasBeenSet = false;
 
   bool m_deleteIntermediateData{false};
-  bool m_deleteIntermediateDataHasBeenSet = false;
 
   Aws::String m_sourceSnapshotARN;
-  bool m_sourceSnapshotARNHasBeenSet = false;
 
   Aws::String m_destinationSnapshot;
-  bool m_destinationSnapshotHasBeenSet = false;
 
   OpenZFSCopyStrategy m_copyStrategy{OpenZFSCopyStrategy::NOT_SET};
+  bool m_parentVolumeIdHasBeenSet = false;
+  bool m_volumePathHasBeenSet = false;
+  bool m_storageCapacityReservationGiBHasBeenSet = false;
+  bool m_storageCapacityQuotaGiBHasBeenSet = false;
+  bool m_recordSizeKiBHasBeenSet = false;
+  bool m_dataCompressionTypeHasBeenSet = false;
+  bool m_copyTagsToSnapshotsHasBeenSet = false;
+  bool m_originSnapshotHasBeenSet = false;
+  bool m_readOnlyHasBeenSet = false;
+  bool m_nfsExportsHasBeenSet = false;
+  bool m_userAndGroupQuotasHasBeenSet = false;
+  bool m_restoreToSnapshotHasBeenSet = false;
+  bool m_deleteIntermediateSnaphotsHasBeenSet = false;
+  bool m_deleteClonedVolumesHasBeenSet = false;
+  bool m_deleteIntermediateDataHasBeenSet = false;
+  bool m_sourceSnapshotARNHasBeenSet = false;
+  bool m_destinationSnapshotHasBeenSet = false;
   bool m_copyStrategyHasBeenSet = false;
 };
 

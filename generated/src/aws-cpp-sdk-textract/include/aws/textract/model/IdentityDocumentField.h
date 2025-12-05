@@ -66,9 +66,9 @@ class IdentityDocumentField {
   ///@}
  private:
   AnalyzeIDDetections m_type;
-  bool m_typeHasBeenSet = false;
 
   AnalyzeIDDetections m_valueDetection;
+  bool m_typeHasBeenSet = false;
   bool m_valueDetectionHasBeenSet = false;
 };
 

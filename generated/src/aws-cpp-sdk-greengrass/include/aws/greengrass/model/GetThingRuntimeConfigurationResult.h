@@ -60,9 +60,9 @@ class GetThingRuntimeConfigurationResult {
   ///@}
  private:
   RuntimeConfiguration m_runtimeConfiguration;
-  bool m_runtimeConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runtimeConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

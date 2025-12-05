@@ -62,9 +62,9 @@ class ThrottleSettings {
   ///@}
  private:
   int m_burstLimit{0};
-  bool m_burstLimitHasBeenSet = false;
 
   double m_rateLimit{0.0};
+  bool m_burstLimitHasBeenSet = false;
   bool m_rateLimitHasBeenSet = false;
 };
 

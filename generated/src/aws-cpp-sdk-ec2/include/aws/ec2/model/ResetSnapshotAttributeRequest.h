@@ -88,12 +88,12 @@ class ResetSnapshotAttributeRequest : public EC2Request {
   ///@}
  private:
   SnapshotAttributeName m_attribute{SnapshotAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_attributeHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

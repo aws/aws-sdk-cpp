@@ -192,30 +192,30 @@ class EvaluationFormVersionSummary {
   ///@}
  private:
   Aws::String m_evaluationFormArn;
-  bool m_evaluationFormArnHasBeenSet = false;
 
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   int m_evaluationFormVersion{0};
-  bool m_evaluationFormVersionHasBeenSet = false;
 
   bool m_locked{false};
-  bool m_lockedHasBeenSet = false;
 
   EvaluationFormVersionStatus m_status{EvaluationFormVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
+  bool m_evaluationFormArnHasBeenSet = false;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormVersionHasBeenSet = false;
+  bool m_lockedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
 };
 

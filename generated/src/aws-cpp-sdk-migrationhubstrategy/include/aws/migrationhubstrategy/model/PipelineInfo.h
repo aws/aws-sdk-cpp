@@ -67,9 +67,9 @@ class PipelineInfo {
   ///@}
  private:
   Aws::String m_pipelineConfigurationTimeStamp;
-  bool m_pipelineConfigurationTimeStampHasBeenSet = false;
 
   PipelineType m_pipelineType{PipelineType::NOT_SET};
+  bool m_pipelineConfigurationTimeStampHasBeenSet = false;
   bool m_pipelineTypeHasBeenSet = false;
 };
 

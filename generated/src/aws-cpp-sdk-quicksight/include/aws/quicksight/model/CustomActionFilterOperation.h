@@ -70,9 +70,9 @@ class CustomActionFilterOperation {
   ///@}
  private:
   FilterOperationSelectedFieldsConfiguration m_selectedFieldsConfiguration;
-  bool m_selectedFieldsConfigurationHasBeenSet = false;
 
   FilterOperationTargetVisualsConfiguration m_targetVisualsConfiguration;
+  bool m_selectedFieldsConfigurationHasBeenSet = false;
   bool m_targetVisualsConfigurationHasBeenSet = false;
 };
 

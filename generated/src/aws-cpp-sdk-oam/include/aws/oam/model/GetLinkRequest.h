@@ -68,9 +68,9 @@ class GetLinkRequest : public OAMRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   bool m_includeTags{false};
+  bool m_identifierHasBeenSet = false;
   bool m_includeTagsHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListLFTagExpressionsResult {
   ///@}
  private:
   Aws::Vector<LFTagExpression> m_lFTagExpressions;
-  bool m_lFTagExpressionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lFTagExpressionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

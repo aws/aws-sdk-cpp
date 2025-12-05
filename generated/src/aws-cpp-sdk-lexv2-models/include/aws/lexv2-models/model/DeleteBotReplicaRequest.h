@@ -66,9 +66,9 @@ class DeleteBotReplicaRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_replicaRegion;
+  bool m_botIdHasBeenSet = false;
   bool m_replicaRegionHasBeenSet = false;
 };
 

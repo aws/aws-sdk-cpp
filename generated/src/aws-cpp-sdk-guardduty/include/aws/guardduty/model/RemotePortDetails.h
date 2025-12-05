@@ -66,9 +66,9 @@ class RemotePortDetails {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_portName;
+  bool m_portHasBeenSet = false;
   bool m_portNameHasBeenSet = false;
 };
 

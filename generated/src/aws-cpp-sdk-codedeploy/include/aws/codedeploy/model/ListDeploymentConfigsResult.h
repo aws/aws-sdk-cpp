@@ -92,12 +92,12 @@ class ListDeploymentConfigsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deploymentConfigsList;
-  bool m_deploymentConfigsListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentConfigsListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

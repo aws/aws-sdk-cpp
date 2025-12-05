@@ -77,9 +77,9 @@ class CreateDedicatedIpPoolRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_poolNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

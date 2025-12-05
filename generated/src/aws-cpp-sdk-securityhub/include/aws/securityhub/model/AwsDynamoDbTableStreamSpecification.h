@@ -67,9 +67,9 @@ class AwsDynamoDbTableStreamSpecification {
   ///@}
  private:
   bool m_streamEnabled{false};
-  bool m_streamEnabledHasBeenSet = false;
 
   Aws::String m_streamViewType;
+  bool m_streamEnabledHasBeenSet = false;
   bool m_streamViewTypeHasBeenSet = false;
 };
 

@@ -168,24 +168,24 @@ class CreateRemoteAccessSessionRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CreateRemoteAccessSessionConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   bool m_skipAppResign{false};
+  bool m_projectArnHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_appArnHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_skipAppResignHasBeenSet = false;
 };
 

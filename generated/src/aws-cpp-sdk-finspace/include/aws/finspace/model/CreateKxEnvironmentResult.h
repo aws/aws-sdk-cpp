@@ -161,27 +161,27 @@ class CreateKxEnvironmentResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_environmentArn;
-  bool m_environmentArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

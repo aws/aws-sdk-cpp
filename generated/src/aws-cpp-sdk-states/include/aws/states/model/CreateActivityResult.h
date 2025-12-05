@@ -77,12 +77,12 @@ class CreateActivityResult {
   ///@}
  private:
   Aws::String m_activityArn;
-  bool m_activityArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_activityArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

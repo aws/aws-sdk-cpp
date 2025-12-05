@@ -208,30 +208,30 @@ class Encryption {
   ///@}
  private:
   Algorithm m_algorithm{Algorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   KeyType m_keyType{KeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_algorithmHasBeenSet = false;
+  bool m_constantInitializationVectorHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_keyTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

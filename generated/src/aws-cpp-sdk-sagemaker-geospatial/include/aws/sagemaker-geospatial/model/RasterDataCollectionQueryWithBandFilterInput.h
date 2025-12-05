@@ -115,15 +115,15 @@ class RasterDataCollectionQueryWithBandFilterInput {
   ///@}
  private:
   AreaOfInterest m_areaOfInterest;
-  bool m_areaOfInterestHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bandFilter;
-  bool m_bandFilterHasBeenSet = false;
 
   PropertyFilters m_propertyFilters;
-  bool m_propertyFiltersHasBeenSet = false;
 
   TimeRangeFilterInput m_timeRangeFilter;
+  bool m_areaOfInterestHasBeenSet = false;
+  bool m_bandFilterHasBeenSet = false;
+  bool m_propertyFiltersHasBeenSet = false;
   bool m_timeRangeFilterHasBeenSet = false;
 };
 

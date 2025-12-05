@@ -68,9 +68,9 @@ class AvailabilityZone {
   ///@}
  private:
   Aws::String m_zoneName;
-  bool m_zoneNameHasBeenSet = false;
 
   Aws::String m_subnetId;
+  bool m_zoneNameHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
 };
 

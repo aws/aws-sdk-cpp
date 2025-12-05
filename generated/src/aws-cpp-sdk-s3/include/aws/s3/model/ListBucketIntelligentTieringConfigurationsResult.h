@@ -126,18 +126,18 @@ class ListBucketIntelligentTieringConfigurationsResult {
   ///@}
  private:
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_nextContinuationToken;
-  bool m_nextContinuationTokenHasBeenSet = false;
 
   Aws::Vector<IntelligentTieringConfiguration> m_intelligentTieringConfigurationList;
-  bool m_intelligentTieringConfigurationListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
+  bool m_nextContinuationTokenHasBeenSet = false;
+  bool m_intelligentTieringConfigurationListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

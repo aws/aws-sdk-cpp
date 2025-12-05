@@ -289,36 +289,36 @@ class SupportContainerDefinition {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::Vector<ContainerDependency> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   Aws::Vector<ContainerMountPoint> m_mountPoints;
-  bool m_mountPointsHasBeenSet = false;
 
   Aws::Vector<ContainerEnvironment> m_environmentOverride;
-  bool m_environmentOverrideHasBeenSet = false;
 
   bool m_essential{false};
-  bool m_essentialHasBeenSet = false;
 
   ContainerHealthCheck m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   int m_memoryHardLimitMebibytes{0};
-  bool m_memoryHardLimitMebibytesHasBeenSet = false;
 
   ContainerPortConfiguration m_portConfiguration;
-  bool m_portConfigurationHasBeenSet = false;
 
   Aws::String m_resolvedImageDigest;
-  bool m_resolvedImageDigestHasBeenSet = false;
 
   double m_vcpu{0.0};
+  bool m_containerNameHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
+  bool m_mountPointsHasBeenSet = false;
+  bool m_environmentOverrideHasBeenSet = false;
+  bool m_essentialHasBeenSet = false;
+  bool m_healthCheckHasBeenSet = false;
+  bool m_imageUriHasBeenSet = false;
+  bool m_memoryHardLimitMebibytesHasBeenSet = false;
+  bool m_portConfigurationHasBeenSet = false;
+  bool m_resolvedImageDigestHasBeenSet = false;
   bool m_vcpuHasBeenSet = false;
 };
 

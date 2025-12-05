@@ -59,9 +59,9 @@ class CreateMobileDeviceAccessRuleResult {
   ///@}
  private:
   Aws::String m_mobileDeviceAccessRuleId;
-  bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

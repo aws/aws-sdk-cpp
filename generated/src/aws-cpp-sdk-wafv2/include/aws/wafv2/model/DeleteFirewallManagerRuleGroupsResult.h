@@ -66,9 +66,9 @@ class DeleteFirewallManagerRuleGroupsResult {
   ///@}
  private:
   Aws::String m_nextWebACLLockToken;
-  bool m_nextWebACLLockTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextWebACLLockTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

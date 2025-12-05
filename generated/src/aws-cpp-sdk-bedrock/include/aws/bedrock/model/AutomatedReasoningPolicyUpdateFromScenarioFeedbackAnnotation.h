@@ -97,12 +97,12 @@ class AutomatedReasoningPolicyUpdateFromScenarioFeedbackAnnotation {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ruleIds;
-  bool m_ruleIdsHasBeenSet = false;
 
   Aws::String m_scenarioExpression;
-  bool m_scenarioExpressionHasBeenSet = false;
 
   Aws::String m_feedback;
+  bool m_ruleIdsHasBeenSet = false;
+  bool m_scenarioExpressionHasBeenSet = false;
   bool m_feedbackHasBeenSet = false;
 };
 

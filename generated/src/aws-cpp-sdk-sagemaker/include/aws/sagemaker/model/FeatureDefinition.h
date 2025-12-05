@@ -119,15 +119,15 @@ class FeatureDefinition {
   ///@}
  private:
   Aws::String m_featureName;
-  bool m_featureNameHasBeenSet = false;
 
   FeatureType m_featureType{FeatureType::NOT_SET};
-  bool m_featureTypeHasBeenSet = false;
 
   CollectionType m_collectionType{CollectionType::NOT_SET};
-  bool m_collectionTypeHasBeenSet = false;
 
   CollectionConfig m_collectionConfig;
+  bool m_featureNameHasBeenSet = false;
+  bool m_featureTypeHasBeenSet = false;
+  bool m_collectionTypeHasBeenSet = false;
   bool m_collectionConfigHasBeenSet = false;
 };
 

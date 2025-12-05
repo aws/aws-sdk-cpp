@@ -133,15 +133,15 @@ class ListTrafficPolicyInstancesByHostedZoneRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyInstanceNameMarker;
-  bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
 
   RRType m_trafficPolicyInstanceTypeMarker{RRType::NOT_SET};
-  bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
+  bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

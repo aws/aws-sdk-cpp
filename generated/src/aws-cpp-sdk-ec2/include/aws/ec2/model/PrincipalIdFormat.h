@@ -78,9 +78,9 @@ class PrincipalIdFormat {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<IdFormat> m_statuses;
+  bool m_arnHasBeenSet = false;
   bool m_statusesHasBeenSet = false;
 };
 

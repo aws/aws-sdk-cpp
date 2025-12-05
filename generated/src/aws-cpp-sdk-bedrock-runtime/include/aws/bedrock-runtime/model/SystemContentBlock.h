@@ -96,12 +96,12 @@ class SystemContentBlock {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   GuardrailConverseContentBlock m_guardContent;
-  bool m_guardContentHasBeenSet = false;
 
   CachePointBlock m_cachePoint;
+  bool m_textHasBeenSet = false;
+  bool m_guardContentHasBeenSet = false;
   bool m_cachePointHasBeenSet = false;
 };
 

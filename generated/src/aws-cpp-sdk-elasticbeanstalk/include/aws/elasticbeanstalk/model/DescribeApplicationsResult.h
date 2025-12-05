@@ -73,9 +73,9 @@ class DescribeApplicationsResult {
   ///@}
  private:
   Aws::Vector<ApplicationDescription> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_applicationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

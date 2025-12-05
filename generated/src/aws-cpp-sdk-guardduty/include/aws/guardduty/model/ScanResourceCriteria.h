@@ -83,9 +83,9 @@ class ScanResourceCriteria {
   ///@}
  private:
   Aws::Map<ScanCriterionKey, ScanCondition> m_include;
-  bool m_includeHasBeenSet = false;
 
   Aws::Map<ScanCriterionKey, ScanCondition> m_exclude;
+  bool m_includeHasBeenSet = false;
   bool m_excludeHasBeenSet = false;
 };
 

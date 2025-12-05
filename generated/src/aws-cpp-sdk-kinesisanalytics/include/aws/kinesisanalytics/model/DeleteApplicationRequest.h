@@ -72,9 +72,9 @@ class DeleteApplicationRequest : public KinesisAnalyticsRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
+  bool m_applicationNameHasBeenSet = false;
   bool m_createTimestampHasBeenSet = false;
 };
 

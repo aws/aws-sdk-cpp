@@ -66,9 +66,9 @@ class PutVoiceConnectorStreamingConfigurationRequest : public ChimeSDKVoiceReque
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   StreamingConfiguration m_streamingConfiguration;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_streamingConfigurationHasBeenSet = false;
 };
 

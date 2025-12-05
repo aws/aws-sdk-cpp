@@ -345,54 +345,54 @@ class ListSessionsResponseSession {
   ///@}
  private:
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_approvalTeamName;
-  bool m_approvalTeamNameHasBeenSet = false;
 
   Aws::String m_approvalTeamArn;
-  bool m_approvalTeamArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationTime{};
-  bool m_initiationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_protectedResourceArn;
-  bool m_protectedResourceArnHasBeenSet = false;
 
   Aws::String m_requesterServicePrincipal;
-  bool m_requesterServicePrincipalHasBeenSet = false;
 
   Aws::String m_requesterPrincipalArn;
-  bool m_requesterPrincipalArnHasBeenSet = false;
 
   Aws::String m_requesterRegion;
-  bool m_requesterRegionHasBeenSet = false;
 
   Aws::String m_requesterAccountId;
-  bool m_requesterAccountIdHasBeenSet = false;
 
   SessionStatus m_status{SessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SessionStatusCode m_statusCode{SessionStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   ActionCompletionStrategy m_actionCompletionStrategy{ActionCompletionStrategy::NOT_SET};
+  bool m_sessionArnHasBeenSet = false;
+  bool m_approvalTeamNameHasBeenSet = false;
+  bool m_approvalTeamArnHasBeenSet = false;
+  bool m_initiationTimeHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_protectedResourceArnHasBeenSet = false;
+  bool m_requesterServicePrincipalHasBeenSet = false;
+  bool m_requesterPrincipalArnHasBeenSet = false;
+  bool m_requesterRegionHasBeenSet = false;
+  bool m_requesterAccountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_actionCompletionStrategyHasBeenSet = false;
 };
 

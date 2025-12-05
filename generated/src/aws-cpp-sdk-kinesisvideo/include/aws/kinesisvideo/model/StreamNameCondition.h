@@ -73,9 +73,9 @@ class StreamNameCondition {
   ///@}
  private:
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::String m_comparisonValue;
+  bool m_comparisonOperatorHasBeenSet = false;
   bool m_comparisonValueHasBeenSet = false;
 };
 

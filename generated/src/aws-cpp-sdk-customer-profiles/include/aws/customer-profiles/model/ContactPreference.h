@@ -104,15 +104,15 @@ class ContactPreference {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   ContactType m_contactType{ContactType::NOT_SET};
+  bool m_keyNameHasBeenSet = false;
+  bool m_keyValueHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_contactTypeHasBeenSet = false;
 };
 

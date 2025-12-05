@@ -135,18 +135,18 @@ class UpdateApplicationSettingsRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Vector<ApplicationCredential> m_credentialsToAddOrUpdate;
-  bool m_credentialsToAddOrUpdateHasBeenSet = false;
 
   Aws::Vector<ApplicationCredential> m_credentialsToRemove;
-  bool m_credentialsToRemoveHasBeenSet = false;
 
   BackintConfig m_backint;
-  bool m_backintHasBeenSet = false;
 
   Aws::String m_databaseArn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_credentialsToAddOrUpdateHasBeenSet = false;
+  bool m_credentialsToRemoveHasBeenSet = false;
+  bool m_backintHasBeenSet = false;
   bool m_databaseArnHasBeenSet = false;
 };
 

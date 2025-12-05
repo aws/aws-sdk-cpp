@@ -105,15 +105,15 @@ class VmwareToAwsTagMapping {
   ///@}
  private:
   Aws::String m_awsTagKey;
-  bool m_awsTagKeyHasBeenSet = false;
 
   Aws::String m_awsTagValue;
-  bool m_awsTagValueHasBeenSet = false;
 
   Aws::String m_vmwareCategory;
-  bool m_vmwareCategoryHasBeenSet = false;
 
   Aws::String m_vmwareTagName;
+  bool m_awsTagKeyHasBeenSet = false;
+  bool m_awsTagValueHasBeenSet = false;
+  bool m_vmwareCategoryHasBeenSet = false;
   bool m_vmwareTagNameHasBeenSet = false;
 };
 

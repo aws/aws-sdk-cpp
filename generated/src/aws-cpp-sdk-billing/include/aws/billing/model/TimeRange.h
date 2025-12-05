@@ -69,9 +69,9 @@ class TimeRange {
   ///@}
  private:
   Aws::Utils::DateTime m_beginDateInclusive{};
-  bool m_beginDateInclusiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateInclusive{};
+  bool m_beginDateInclusiveHasBeenSet = false;
   bool m_endDateInclusiveHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class UpdateScopeRequest : public NetworkFlowMonitorRequest {
   ///@}
  private:
   Aws::String m_scopeId;
-  bool m_scopeIdHasBeenSet = false;
 
   Aws::Vector<TargetResource> m_resourcesToAdd;
-  bool m_resourcesToAddHasBeenSet = false;
 
   Aws::Vector<TargetResource> m_resourcesToDelete;
+  bool m_scopeIdHasBeenSet = false;
+  bool m_resourcesToAddHasBeenSet = false;
   bool m_resourcesToDeleteHasBeenSet = false;
 };
 

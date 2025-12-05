@@ -78,12 +78,12 @@ class ExecutionStatistics {
   ///@}
  private:
   long long m_averageExecutionTimeMillis{0};
-  bool m_averageExecutionTimeMillisHasBeenSet = false;
 
   long long m_dataScannedBytes{0};
-  bool m_dataScannedBytesHasBeenSet = false;
 
   long long m_workUnitsExecutedCount{0};
+  bool m_averageExecutionTimeMillisHasBeenSet = false;
+  bool m_dataScannedBytesHasBeenSet = false;
   bool m_workUnitsExecutedCountHasBeenSet = false;
 };
 

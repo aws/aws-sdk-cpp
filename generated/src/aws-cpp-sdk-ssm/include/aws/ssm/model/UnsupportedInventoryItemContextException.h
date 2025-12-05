@@ -67,9 +67,9 @@ class UnsupportedInventoryItemContextException {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeNameHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

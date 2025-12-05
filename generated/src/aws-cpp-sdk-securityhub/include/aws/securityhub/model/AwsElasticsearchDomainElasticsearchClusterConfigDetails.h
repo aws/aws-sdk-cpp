@@ -172,24 +172,24 @@ class AwsElasticsearchDomainElasticsearchClusterConfigDetails {
   ///@}
  private:
   int m_dedicatedMasterCount{0};
-  bool m_dedicatedMasterCountHasBeenSet = false;
 
   bool m_dedicatedMasterEnabled{false};
-  bool m_dedicatedMasterEnabledHasBeenSet = false;
 
   Aws::String m_dedicatedMasterType;
-  bool m_dedicatedMasterTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
-  bool m_zoneAwarenessConfigHasBeenSet = false;
 
   bool m_zoneAwarenessEnabled{false};
+  bool m_dedicatedMasterCountHasBeenSet = false;
+  bool m_dedicatedMasterEnabledHasBeenSet = false;
+  bool m_dedicatedMasterTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_zoneAwarenessConfigHasBeenSet = false;
   bool m_zoneAwarenessEnabledHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class ListPipelineExecutionsRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   PipelineExecutionFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

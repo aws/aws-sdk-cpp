@@ -109,15 +109,15 @@ class DomainMembership {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_fQDN;
-  bool m_fQDNHasBeenSet = false;
 
   Aws::String m_iAMRoleName;
+  bool m_domainHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_fQDNHasBeenSet = false;
   bool m_iAMRoleNameHasBeenSet = false;
 };
 

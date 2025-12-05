@@ -146,15 +146,15 @@ class TextGenerationJobConfig {
   ///@}
  private:
   AutoMLJobCompletionCriteria m_completionCriteria;
-  bool m_completionCriteriaHasBeenSet = false;
 
   Aws::String m_baseModelName;
-  bool m_baseModelNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_textGenerationHyperParameters;
-  bool m_textGenerationHyperParametersHasBeenSet = false;
 
   ModelAccessConfig m_modelAccessConfig;
+  bool m_completionCriteriaHasBeenSet = false;
+  bool m_baseModelNameHasBeenSet = false;
+  bool m_textGenerationHyperParametersHasBeenSet = false;
   bool m_modelAccessConfigHasBeenSet = false;
 };
 

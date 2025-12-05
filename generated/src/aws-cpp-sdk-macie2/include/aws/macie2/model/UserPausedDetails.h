@@ -97,12 +97,12 @@ class UserPausedDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_jobExpiresAt{};
-  bool m_jobExpiresAtHasBeenSet = false;
 
   Aws::String m_jobImminentExpirationHealthEventArn;
-  bool m_jobImminentExpirationHealthEventArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobPausedAt{};
+  bool m_jobExpiresAtHasBeenSet = false;
+  bool m_jobImminentExpirationHealthEventArnHasBeenSet = false;
   bool m_jobPausedAtHasBeenSet = false;
 };
 

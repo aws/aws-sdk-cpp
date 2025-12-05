@@ -69,9 +69,9 @@ class TopicDateRangeFilter {
   ///@}
  private:
   bool m_inclusive{false};
-  bool m_inclusiveHasBeenSet = false;
 
   TopicRangeFilterConstant m_constant;
+  bool m_inclusiveHasBeenSet = false;
   bool m_constantHasBeenSet = false;
 };
 

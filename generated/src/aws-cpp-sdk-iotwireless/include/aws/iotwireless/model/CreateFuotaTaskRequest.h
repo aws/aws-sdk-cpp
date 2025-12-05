@@ -209,36 +209,36 @@ class CreateFuotaTaskRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   LoRaWANFuotaTask m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   Aws::String m_firmwareUpdateImage;
-  bool m_firmwareUpdateImageHasBeenSet = false;
 
   Aws::String m_firmwareUpdateRole;
-  bool m_firmwareUpdateRoleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_redundancyPercent{0};
-  bool m_redundancyPercentHasBeenSet = false;
 
   int m_fragmentSizeBytes{0};
-  bool m_fragmentSizeBytesHasBeenSet = false;
 
   int m_fragmentIntervalMS{0};
-  bool m_fragmentIntervalMSHasBeenSet = false;
 
   Aws::String m_descriptor;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_firmwareUpdateImageHasBeenSet = false;
+  bool m_firmwareUpdateRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_redundancyPercentHasBeenSet = false;
+  bool m_fragmentSizeBytesHasBeenSet = false;
+  bool m_fragmentIntervalMSHasBeenSet = false;
   bool m_descriptorHasBeenSet = false;
 };
 

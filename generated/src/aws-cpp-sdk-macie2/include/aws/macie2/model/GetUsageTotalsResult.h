@@ -86,12 +86,12 @@ class GetUsageTotalsResult {
   ///@}
  private:
   TimeRange m_timeRange{TimeRange::NOT_SET};
-  bool m_timeRangeHasBeenSet = false;
 
   Aws::Vector<UsageTotal> m_usageTotals;
-  bool m_usageTotalsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_timeRangeHasBeenSet = false;
+  bool m_usageTotalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

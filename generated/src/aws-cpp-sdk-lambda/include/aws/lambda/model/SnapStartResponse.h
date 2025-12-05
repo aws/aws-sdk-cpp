@@ -71,9 +71,9 @@ class SnapStartResponse {
   ///@}
  private:
   SnapStartApplyOn m_applyOn{SnapStartApplyOn::NOT_SET};
-  bool m_applyOnHasBeenSet = false;
 
   SnapStartOptimizationStatus m_optimizationStatus{SnapStartOptimizationStatus::NOT_SET};
+  bool m_applyOnHasBeenSet = false;
   bool m_optimizationStatusHasBeenSet = false;
 };
 

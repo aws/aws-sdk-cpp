@@ -68,9 +68,9 @@ class EnableAddOnRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   AddOnRequest m_addOnRequest;
+  bool m_resourceNameHasBeenSet = false;
   bool m_addOnRequestHasBeenSet = false;
 };
 

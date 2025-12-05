@@ -86,12 +86,12 @@ class DescribeMovingAddressesResponse {
   ///@}
  private:
   Aws::Vector<MovingAddressStatus> m_movingAddressStatuses;
-  bool m_movingAddressStatusesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_movingAddressStatusesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

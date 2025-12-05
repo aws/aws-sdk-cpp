@@ -104,15 +104,15 @@ class AggregateConformancePackComplianceFilters {
   ///@}
  private:
   Aws::String m_conformancePackName;
-  bool m_conformancePackNameHasBeenSet = false;
 
   ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
+  bool m_conformancePackNameHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_awsRegionHasBeenSet = false;
 };
 

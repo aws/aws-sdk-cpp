@@ -59,9 +59,9 @@ class DeleteEphemerisResult {
   ///@}
  private:
   Aws::String m_ephemerisId;
-  bool m_ephemerisIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ephemerisIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

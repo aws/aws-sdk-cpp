@@ -98,12 +98,12 @@ class AutomatedReasoningCheckImpossibleFinding {
   ///@}
  private:
   AutomatedReasoningCheckTranslation m_translation;
-  bool m_translationHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningCheckRule> m_contradictingRules;
-  bool m_contradictingRulesHasBeenSet = false;
 
   AutomatedReasoningCheckLogicWarning m_logicWarning;
+  bool m_translationHasBeenSet = false;
+  bool m_contradictingRulesHasBeenSet = false;
   bool m_logicWarningHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class SetParameterValueConfiguration {
   ///@}
  private:
   Aws::String m_destinationParameterName;
-  bool m_destinationParameterNameHasBeenSet = false;
 
   DestinationParameterValueConfiguration m_value;
+  bool m_destinationParameterNameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

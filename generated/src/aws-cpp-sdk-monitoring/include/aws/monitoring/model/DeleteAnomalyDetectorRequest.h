@@ -86,9 +86,9 @@ class DeleteAnomalyDetectorRequest : public CloudWatchRequest {
   ///@}
  private:
   SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
   MetricMathAnomalyDetector m_metricMathAnomalyDetector;
+  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
   bool m_metricMathAnomalyDetectorHasBeenSet = false;
 };
 

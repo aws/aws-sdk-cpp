@@ -110,15 +110,15 @@ class UnusedPermissionsRecommendedStep {
   ///@}
  private:
   Aws::Utils::DateTime m_policyUpdatedAt{};
-  bool m_policyUpdatedAtHasBeenSet = false;
 
   RecommendedRemediationAction m_recommendedAction{RecommendedRemediationAction::NOT_SET};
-  bool m_recommendedActionHasBeenSet = false;
 
   Aws::String m_recommendedPolicy;
-  bool m_recommendedPolicyHasBeenSet = false;
 
   Aws::String m_existingPolicyId;
+  bool m_policyUpdatedAtHasBeenSet = false;
+  bool m_recommendedActionHasBeenSet = false;
+  bool m_recommendedPolicyHasBeenSet = false;
   bool m_existingPolicyIdHasBeenSet = false;
 };
 

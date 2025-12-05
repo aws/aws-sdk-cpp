@@ -203,24 +203,24 @@ class PacketHeaderStatement {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sourceAddresses;
-  bool m_sourceAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationAddresses;
-  bool m_destinationAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourcePorts;
-  bool m_sourcePortsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationPorts;
-  bool m_destinationPortsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourcePrefixLists;
-  bool m_sourcePrefixListsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationPrefixLists;
-  bool m_destinationPrefixListsHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
+  bool m_sourceAddressesHasBeenSet = false;
+  bool m_destinationAddressesHasBeenSet = false;
+  bool m_sourcePortsHasBeenSet = false;
+  bool m_destinationPortsHasBeenSet = false;
+  bool m_sourcePrefixListsHasBeenSet = false;
+  bool m_destinationPrefixListsHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
 };
 

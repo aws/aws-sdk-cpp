@@ -97,12 +97,12 @@ class UpdateConnectivityRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   ConnectivityInfo m_connectivityInfo;
-  bool m_connectivityInfoHasBeenSet = false;
 
   Aws::String m_currentVersion;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_connectivityInfoHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
 };
 

@@ -178,21 +178,21 @@ class BatchGetMetricDataQuery {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MetricNamespace m_namespace{MetricNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Metric m_metric{Metric::NOT_SET};
-  bool m_metricHasBeenSet = false;
 
   Aws::Map<MetricDimensionName, Aws::String> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
+  bool m_idHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
 };
 

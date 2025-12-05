@@ -69,9 +69,9 @@ class TopicRuleDestinationConfiguration {
   ///@}
  private:
   HttpUrlDestinationConfiguration m_httpUrlConfiguration;
-  bool m_httpUrlConfigurationHasBeenSet = false;
 
   VpcDestinationConfiguration m_vpcConfiguration;
+  bool m_httpUrlConfigurationHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

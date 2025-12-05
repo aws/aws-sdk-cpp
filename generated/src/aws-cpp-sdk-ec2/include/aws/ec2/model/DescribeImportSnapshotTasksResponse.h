@@ -87,12 +87,12 @@ class DescribeImportSnapshotTasksResponse {
   ///@}
  private:
   Aws::Vector<ImportSnapshotTask> m_importSnapshotTasks;
-  bool m_importSnapshotTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_importSnapshotTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

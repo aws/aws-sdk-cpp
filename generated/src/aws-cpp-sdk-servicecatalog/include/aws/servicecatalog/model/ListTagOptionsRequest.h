@@ -86,12 +86,12 @@ class ListTagOptionsRequest : public ServiceCatalogRequest {
   ///@}
  private:
   ListTagOptionsFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

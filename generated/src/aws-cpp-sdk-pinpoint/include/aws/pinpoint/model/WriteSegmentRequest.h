@@ -127,15 +127,15 @@ class WriteSegmentRequest {
   ///@}
  private:
   SegmentDimensions m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SegmentGroupList m_segmentGroups;
-  bool m_segmentGroupsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_segmentGroupsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

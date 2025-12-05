@@ -70,9 +70,9 @@ class EndpointConfigurationRequest {
   ///@}
  private:
   ACMManaged m_acmManaged;
-  bool m_acmManagedHasBeenSet = false;
 
   None m_none;
+  bool m_acmManagedHasBeenSet = false;
   bool m_noneHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class StringConfigurationOptions {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_re2Expression;
-  bool m_re2ExpressionHasBeenSet = false;
 
   Aws::String m_expressionDescription;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_re2ExpressionHasBeenSet = false;
   bool m_expressionDescriptionHasBeenSet = false;
 };
 

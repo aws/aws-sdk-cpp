@@ -113,15 +113,15 @@ class IdentityInfo {
   ///@}
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   Aws::String m_identityName;
-  bool m_identityNameHasBeenSet = false;
 
   bool m_sendingEnabled{false};
-  bool m_sendingEnabledHasBeenSet = false;
 
   VerificationStatus m_verificationStatus{VerificationStatus::NOT_SET};
+  bool m_identityTypeHasBeenSet = false;
+  bool m_identityNameHasBeenSet = false;
+  bool m_sendingEnabledHasBeenSet = false;
   bool m_verificationStatusHasBeenSet = false;
 };
 

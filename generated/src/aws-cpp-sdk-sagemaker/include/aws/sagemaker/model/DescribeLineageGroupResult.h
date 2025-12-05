@@ -176,30 +176,30 @@ class DescribeLineageGroupResult {
   ///@}
  private:
   Aws::String m_lineageGroupName;
-  bool m_lineageGroupNameHasBeenSet = false;
 
   Aws::String m_lineageGroupArn;
-  bool m_lineageGroupArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lineageGroupNameHasBeenSet = false;
+  bool m_lineageGroupArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

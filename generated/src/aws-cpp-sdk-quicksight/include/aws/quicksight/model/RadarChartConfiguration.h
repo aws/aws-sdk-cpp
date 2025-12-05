@@ -325,51 +325,51 @@ class RadarChartConfiguration {
   ///@}
  private:
   RadarChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   RadarChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   RadarChartShape m_shape{RadarChartShape::NOT_SET};
-  bool m_shapeHasBeenSet = false;
 
   RadarChartSeriesSettings m_baseSeriesSettings;
-  bool m_baseSeriesSettingsHasBeenSet = false;
 
   double m_startAngle{0.0};
-  bool m_startAngleHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   Visibility m_alternateBandColorsVisibility{Visibility::NOT_SET};
-  bool m_alternateBandColorsVisibilityHasBeenSet = false;
 
   Aws::String m_alternateBandEvenColor;
-  bool m_alternateBandEvenColorHasBeenSet = false;
 
   Aws::String m_alternateBandOddColor;
-  bool m_alternateBandOddColorHasBeenSet = false;
 
   AxisDisplayOptions m_categoryAxis;
-  bool m_categoryAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_colorAxis;
-  bool m_colorAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_colorLabelOptions;
-  bool m_colorLabelOptionsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   RadarChartAxesRangeScale m_axesRangeScale{RadarChartAxesRangeScale::NOT_SET};
-  bool m_axesRangeScaleHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
+  bool m_baseSeriesSettingsHasBeenSet = false;
+  bool m_startAngleHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
+  bool m_alternateBandColorsVisibilityHasBeenSet = false;
+  bool m_alternateBandEvenColorHasBeenSet = false;
+  bool m_alternateBandOddColorHasBeenSet = false;
+  bool m_categoryAxisHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_colorAxisHasBeenSet = false;
+  bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_axesRangeScaleHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class DetachCustomerManagedPolicyReferenceFromPermissionSetRequest : public SSOA
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_permissionSetArn;
-  bool m_permissionSetArnHasBeenSet = false;
 
   CustomerManagedPolicyReference m_customerManagedPolicyReference;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_permissionSetArnHasBeenSet = false;
   bool m_customerManagedPolicyReferenceHasBeenSet = false;
 };
 

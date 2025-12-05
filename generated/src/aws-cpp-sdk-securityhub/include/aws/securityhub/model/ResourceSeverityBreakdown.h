@@ -158,27 +158,27 @@ class ResourceSeverityBreakdown {
   ///@}
  private:
   int m_other{0};
-  bool m_otherHasBeenSet = false;
 
   int m_fatal{0};
-  bool m_fatalHasBeenSet = false;
 
   int m_critical{0};
-  bool m_criticalHasBeenSet = false;
 
   int m_high{0};
-  bool m_highHasBeenSet = false;
 
   int m_medium{0};
-  bool m_mediumHasBeenSet = false;
 
   int m_low{0};
-  bool m_lowHasBeenSet = false;
 
   int m_informational{0};
-  bool m_informationalHasBeenSet = false;
 
   int m_unknown{0};
+  bool m_otherHasBeenSet = false;
+  bool m_fatalHasBeenSet = false;
+  bool m_criticalHasBeenSet = false;
+  bool m_highHasBeenSet = false;
+  bool m_mediumHasBeenSet = false;
+  bool m_lowHasBeenSet = false;
+  bool m_informationalHasBeenSet = false;
   bool m_unknownHasBeenSet = false;
 };
 

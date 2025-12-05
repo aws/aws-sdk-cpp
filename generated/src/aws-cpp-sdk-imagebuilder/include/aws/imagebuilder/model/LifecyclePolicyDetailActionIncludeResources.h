@@ -80,12 +80,12 @@ class LifecyclePolicyDetailActionIncludeResources {
   ///@}
  private:
   bool m_amis{false};
-  bool m_amisHasBeenSet = false;
 
   bool m_snapshots{false};
-  bool m_snapshotsHasBeenSet = false;
 
   bool m_containers{false};
+  bool m_amisHasBeenSet = false;
+  bool m_snapshotsHasBeenSet = false;
   bool m_containersHasBeenSet = false;
 };
 

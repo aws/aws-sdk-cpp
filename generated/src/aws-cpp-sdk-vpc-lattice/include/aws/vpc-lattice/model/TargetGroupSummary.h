@@ -274,42 +274,42 @@ class TargetGroupSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TargetGroupType m_type{TargetGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   TargetGroupProtocol m_protocol{TargetGroupProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_vpcIdentifier;
-  bool m_vpcIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   TargetGroupStatus m_status{TargetGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceArns;
-  bool m_serviceArnsHasBeenSet = false;
 
   LambdaEventStructureVersion m_lambdaEventStructureVersion{LambdaEventStructureVersion::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_vpcIdentifierHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_serviceArnsHasBeenSet = false;
   bool m_lambdaEventStructureVersionHasBeenSet = false;
 };
 

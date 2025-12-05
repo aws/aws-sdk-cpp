@@ -152,24 +152,24 @@ class GetConnectionPreferencesResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AccessType m_accessType{AccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedParticipantIds;
-  bool m_excludedParticipantIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   long long m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_accessTypeHasBeenSet = false;
+  bool m_excludedParticipantIdsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

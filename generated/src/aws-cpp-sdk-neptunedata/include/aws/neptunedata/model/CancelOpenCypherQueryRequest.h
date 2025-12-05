@@ -69,9 +69,9 @@ class CancelOpenCypherQueryRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   bool m_silent{false};
+  bool m_queryIdHasBeenSet = false;
   bool m_silentHasBeenSet = false;
 };
 

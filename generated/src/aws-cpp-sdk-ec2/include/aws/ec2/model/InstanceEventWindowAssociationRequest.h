@@ -117,12 +117,12 @@ class InstanceEventWindowAssociationRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_instanceTags;
-  bool m_instanceTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dedicatedHostIds;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_instanceTagsHasBeenSet = false;
   bool m_dedicatedHostIdsHasBeenSet = false;
 };
 

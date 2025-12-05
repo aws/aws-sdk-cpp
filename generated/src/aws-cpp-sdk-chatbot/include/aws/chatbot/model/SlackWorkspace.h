@@ -107,15 +107,15 @@ class SlackWorkspace {
   ///@}
  private:
   Aws::String m_slackTeamId;
-  bool m_slackTeamIdHasBeenSet = false;
 
   Aws::String m_slackTeamName;
-  bool m_slackTeamNameHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
+  bool m_slackTeamIdHasBeenSet = false;
+  bool m_slackTeamNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_stateReasonHasBeenSet = false;
 };
 

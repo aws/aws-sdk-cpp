@@ -207,30 +207,30 @@ class AssociateFileSystemRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_locationARN;
-  bool m_locationARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_auditDestinationARN;
-  bool m_auditDestinationARNHasBeenSet = false;
 
   CacheAttributes m_cacheAttributes;
-  bool m_cacheAttributesHasBeenSet = false;
 
   EndpointNetworkConfiguration m_endpointNetworkConfiguration;
+  bool m_userNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_locationARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_auditDestinationARNHasBeenSet = false;
+  bool m_cacheAttributesHasBeenSet = false;
   bool m_endpointNetworkConfigurationHasBeenSet = false;
 };
 

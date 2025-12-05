@@ -155,24 +155,24 @@ class CapacityReservation {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CapacityReservationStatus m_status{CapacityReservationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_targetDpus{0};
-  bool m_targetDpusHasBeenSet = false;
 
   int m_allocatedDpus{0};
-  bool m_allocatedDpusHasBeenSet = false;
 
   CapacityAllocation m_lastAllocation;
-  bool m_lastAllocationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulAllocationTime{};
-  bool m_lastSuccessfulAllocationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetDpusHasBeenSet = false;
+  bool m_allocatedDpusHasBeenSet = false;
+  bool m_lastAllocationHasBeenSet = false;
+  bool m_lastSuccessfulAllocationTimeHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

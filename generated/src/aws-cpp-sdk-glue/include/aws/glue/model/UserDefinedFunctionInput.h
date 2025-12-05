@@ -147,21 +147,21 @@ class UserDefinedFunctionInput {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_className;
-  bool m_classNameHasBeenSet = false;
 
   Aws::String m_ownerName;
-  bool m_ownerNameHasBeenSet = false;
 
   FunctionType m_functionType{FunctionType::NOT_SET};
-  bool m_functionTypeHasBeenSet = false;
 
   PrincipalType m_ownerType{PrincipalType::NOT_SET};
-  bool m_ownerTypeHasBeenSet = false;
 
   Aws::Vector<ResourceUri> m_resourceUris;
+  bool m_functionNameHasBeenSet = false;
+  bool m_classNameHasBeenSet = false;
+  bool m_ownerNameHasBeenSet = false;
+  bool m_functionTypeHasBeenSet = false;
+  bool m_ownerTypeHasBeenSet = false;
   bool m_resourceUrisHasBeenSet = false;
 };
 

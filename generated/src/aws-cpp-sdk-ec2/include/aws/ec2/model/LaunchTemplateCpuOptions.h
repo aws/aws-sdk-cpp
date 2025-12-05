@@ -85,12 +85,12 @@ class LaunchTemplateCpuOptions {
   ///@}
  private:
   int m_coreCount{0};
-  bool m_coreCountHasBeenSet = false;
 
   int m_threadsPerCore{0};
-  bool m_threadsPerCoreHasBeenSet = false;
 
   AmdSevSnpSpecification m_amdSevSnp{AmdSevSnpSpecification::NOT_SET};
+  bool m_coreCountHasBeenSet = false;
+  bool m_threadsPerCoreHasBeenSet = false;
   bool m_amdSevSnpHasBeenSet = false;
 };
 

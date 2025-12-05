@@ -91,12 +91,12 @@ class InvocationSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_invocationIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

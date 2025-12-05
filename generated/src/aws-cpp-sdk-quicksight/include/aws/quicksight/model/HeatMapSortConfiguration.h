@@ -119,15 +119,15 @@ class HeatMapSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_heatMapRowSort;
-  bool m_heatMapRowSortHasBeenSet = false;
 
   Aws::Vector<FieldSortOptions> m_heatMapColumnSort;
-  bool m_heatMapColumnSortHasBeenSet = false;
 
   ItemsLimitConfiguration m_heatMapRowItemsLimitConfiguration;
-  bool m_heatMapRowItemsLimitConfigurationHasBeenSet = false;
 
   ItemsLimitConfiguration m_heatMapColumnItemsLimitConfiguration;
+  bool m_heatMapRowSortHasBeenSet = false;
+  bool m_heatMapColumnSortHasBeenSet = false;
+  bool m_heatMapRowItemsLimitConfigurationHasBeenSet = false;
   bool m_heatMapColumnItemsLimitConfigurationHasBeenSet = false;
 };
 

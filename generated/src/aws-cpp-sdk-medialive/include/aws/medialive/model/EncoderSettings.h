@@ -316,45 +316,45 @@ class EncoderSettings {
   ///@}
  private:
   Aws::Vector<AudioDescription> m_audioDescriptions;
-  bool m_audioDescriptionsHasBeenSet = false;
 
   AvailBlanking m_availBlanking;
-  bool m_availBlankingHasBeenSet = false;
 
   AvailConfiguration m_availConfiguration;
-  bool m_availConfigurationHasBeenSet = false;
 
   BlackoutSlate m_blackoutSlate;
-  bool m_blackoutSlateHasBeenSet = false;
 
   Aws::Vector<CaptionDescription> m_captionDescriptions;
-  bool m_captionDescriptionsHasBeenSet = false;
 
   FeatureActivations m_featureActivations;
-  bool m_featureActivationsHasBeenSet = false;
 
   GlobalConfiguration m_globalConfiguration;
-  bool m_globalConfigurationHasBeenSet = false;
 
   MotionGraphicsConfiguration m_motionGraphicsConfiguration;
-  bool m_motionGraphicsConfigurationHasBeenSet = false;
 
   NielsenConfiguration m_nielsenConfiguration;
-  bool m_nielsenConfigurationHasBeenSet = false;
 
   Aws::Vector<OutputGroup> m_outputGroups;
-  bool m_outputGroupsHasBeenSet = false;
 
   TimecodeConfig m_timecodeConfig;
-  bool m_timecodeConfigHasBeenSet = false;
 
   Aws::Vector<VideoDescription> m_videoDescriptions;
-  bool m_videoDescriptionsHasBeenSet = false;
 
   ThumbnailConfiguration m_thumbnailConfiguration;
-  bool m_thumbnailConfigurationHasBeenSet = false;
 
   ColorCorrectionSettings m_colorCorrectionSettings;
+  bool m_audioDescriptionsHasBeenSet = false;
+  bool m_availBlankingHasBeenSet = false;
+  bool m_availConfigurationHasBeenSet = false;
+  bool m_blackoutSlateHasBeenSet = false;
+  bool m_captionDescriptionsHasBeenSet = false;
+  bool m_featureActivationsHasBeenSet = false;
+  bool m_globalConfigurationHasBeenSet = false;
+  bool m_motionGraphicsConfigurationHasBeenSet = false;
+  bool m_nielsenConfigurationHasBeenSet = false;
+  bool m_outputGroupsHasBeenSet = false;
+  bool m_timecodeConfigHasBeenSet = false;
+  bool m_videoDescriptionsHasBeenSet = false;
+  bool m_thumbnailConfigurationHasBeenSet = false;
   bool m_colorCorrectionSettingsHasBeenSet = false;
 };
 

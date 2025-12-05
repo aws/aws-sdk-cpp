@@ -106,15 +106,15 @@ class BrandDefinition {
   ///@}
  private:
   Aws::String m_brandName;
-  bool m_brandNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApplicationTheme m_applicationTheme;
-  bool m_applicationThemeHasBeenSet = false;
 
   LogoConfiguration m_logoConfiguration;
+  bool m_brandNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_applicationThemeHasBeenSet = false;
   bool m_logoConfigurationHasBeenSet = false;
 };
 

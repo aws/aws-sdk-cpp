@@ -68,9 +68,9 @@ class DataBindingValue {
   ///@}
  private:
   AssetModelPropertyBindingValue m_assetModelProperty;
-  bool m_assetModelPropertyHasBeenSet = false;
 
   AssetPropertyBindingValue m_assetProperty;
+  bool m_assetModelPropertyHasBeenSet = false;
   bool m_assetPropertyHasBeenSet = false;
 };
 

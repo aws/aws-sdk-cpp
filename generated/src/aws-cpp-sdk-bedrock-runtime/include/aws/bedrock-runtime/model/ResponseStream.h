@@ -164,24 +164,24 @@ class ResponseStream {
   ///@}
  private:
   PayloadPart m_chunk;
-  bool m_chunkHasBeenSet = false;
 
   BedrockRuntimeError m_internalServerException;
-  bool m_internalServerExceptionHasBeenSet = false;
 
   ModelStreamErrorException m_modelStreamErrorException;
-  bool m_modelStreamErrorExceptionHasBeenSet = false;
 
   BedrockRuntimeError m_validationException;
-  bool m_validationExceptionHasBeenSet = false;
 
   BedrockRuntimeError m_throttlingException;
-  bool m_throttlingExceptionHasBeenSet = false;
 
   BedrockRuntimeError m_modelTimeoutException;
-  bool m_modelTimeoutExceptionHasBeenSet = false;
 
   BedrockRuntimeError m_serviceUnavailableException;
+  bool m_chunkHasBeenSet = false;
+  bool m_internalServerExceptionHasBeenSet = false;
+  bool m_modelStreamErrorExceptionHasBeenSet = false;
+  bool m_validationExceptionHasBeenSet = false;
+  bool m_throttlingExceptionHasBeenSet = false;
+  bool m_modelTimeoutExceptionHasBeenSet = false;
   bool m_serviceUnavailableExceptionHasBeenSet = false;
 };
 

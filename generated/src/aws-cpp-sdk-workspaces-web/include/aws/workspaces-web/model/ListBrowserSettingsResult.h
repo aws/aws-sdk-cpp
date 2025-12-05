@@ -85,12 +85,12 @@ class ListBrowserSettingsResult {
   ///@}
  private:
   Aws::Vector<BrowserSettingsSummary> m_browserSettings;
-  bool m_browserSettingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_browserSettingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

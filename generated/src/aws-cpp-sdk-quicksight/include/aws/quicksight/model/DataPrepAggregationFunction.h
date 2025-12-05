@@ -74,9 +74,9 @@ class DataPrepAggregationFunction {
   ///@}
  private:
   DataPrepSimpleAggregationFunction m_simpleAggregation;
-  bool m_simpleAggregationHasBeenSet = false;
 
   DataPrepListAggregationFunction m_listAggregation;
+  bool m_simpleAggregationHasBeenSet = false;
   bool m_listAggregationHasBeenSet = false;
 };
 

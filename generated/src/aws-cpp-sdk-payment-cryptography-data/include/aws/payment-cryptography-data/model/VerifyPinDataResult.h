@@ -118,18 +118,18 @@ class VerifyPinDataResult {
   ///@}
  private:
   Aws::String m_verificationKeyArn;
-  bool m_verificationKeyArnHasBeenSet = false;
 
   Aws::String m_verificationKeyCheckValue;
-  bool m_verificationKeyCheckValueHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_encryptionKeyCheckValue;
-  bool m_encryptionKeyCheckValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_verificationKeyArnHasBeenSet = false;
+  bool m_verificationKeyCheckValueHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_encryptionKeyCheckValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

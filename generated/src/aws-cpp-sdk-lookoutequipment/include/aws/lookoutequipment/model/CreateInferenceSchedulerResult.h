@@ -122,18 +122,18 @@ class CreateInferenceSchedulerResult {
   ///@}
  private:
   Aws::String m_inferenceSchedulerArn;
-  bool m_inferenceSchedulerArnHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   InferenceSchedulerStatus m_status{InferenceSchedulerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
-  bool m_modelQualityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceSchedulerArnHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_modelQualityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

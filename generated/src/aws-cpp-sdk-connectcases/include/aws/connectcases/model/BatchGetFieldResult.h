@@ -91,12 +91,12 @@ class BatchGetFieldResult {
   ///@}
  private:
   Aws::Vector<GetFieldResponse> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Vector<FieldError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fieldsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

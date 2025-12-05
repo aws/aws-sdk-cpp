@@ -168,27 +168,27 @@ class GetNextMessageResult {
   ///@}
  private:
   MessageType m_type{MessageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   MessageOutput m_response;
-  bool m_responseHasBeenSet = false;
 
   Aws::String m_requestMessageId;
-  bool m_requestMessageIdHasBeenSet = false;
 
   ConversationState m_conversationState;
-  bool m_conversationStateHasBeenSet = false;
 
   Aws::String m_nextMessageToken;
-  bool m_nextMessageTokenHasBeenSet = false;
 
   Aws::Vector<RuntimeSessionData> m_conversationSessionData;
-  bool m_conversationSessionDataHasBeenSet = false;
 
   bool m_chunkedResponseTerminated{false};
-  bool m_chunkedResponseTerminatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeHasBeenSet = false;
+  bool m_responseHasBeenSet = false;
+  bool m_requestMessageIdHasBeenSet = false;
+  bool m_conversationStateHasBeenSet = false;
+  bool m_nextMessageTokenHasBeenSet = false;
+  bool m_conversationSessionDataHasBeenSet = false;
+  bool m_chunkedResponseTerminatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

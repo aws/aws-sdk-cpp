@@ -69,9 +69,9 @@ class Authority {
   ///@}
  private:
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_state;
+  bool m_countryHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

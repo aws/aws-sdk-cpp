@@ -73,9 +73,9 @@ class InterruptionInfo {
   ///@}
  private:
   Aws::String m_sourceCapacityReservationId;
-  bool m_sourceCapacityReservationIdHasBeenSet = false;
 
   InterruptionType m_interruptionType{InterruptionType::NOT_SET};
+  bool m_sourceCapacityReservationIdHasBeenSet = false;
   bool m_interruptionTypeHasBeenSet = false;
 };
 

@@ -196,30 +196,30 @@ class Index {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   DataType m_dataType{DataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   int m_dimension{0};
-  bool m_dimensionHasBeenSet = false;
 
   DistanceMetric m_distanceMetric{DistanceMetric::NOT_SET};
-  bool m_distanceMetricHasBeenSet = false;
 
   MetadataConfiguration m_metadataConfiguration;
-  bool m_metadataConfigurationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
+  bool m_distanceMetricHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

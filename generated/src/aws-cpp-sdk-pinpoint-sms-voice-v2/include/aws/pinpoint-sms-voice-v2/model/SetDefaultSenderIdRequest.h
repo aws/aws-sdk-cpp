@@ -72,9 +72,9 @@ class SetDefaultSenderIdRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_senderId;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_senderIdHasBeenSet = false;
 };
 

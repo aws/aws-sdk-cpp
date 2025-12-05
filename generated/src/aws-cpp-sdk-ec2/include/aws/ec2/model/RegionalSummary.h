@@ -87,12 +87,12 @@ class RegionalSummary {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   int m_numberOfMatchedAccounts{0};
-  bool m_numberOfMatchedAccountsHasBeenSet = false;
 
   int m_numberOfUnmatchedAccounts{0};
+  bool m_regionNameHasBeenSet = false;
+  bool m_numberOfMatchedAccountsHasBeenSet = false;
   bool m_numberOfUnmatchedAccountsHasBeenSet = false;
 };
 

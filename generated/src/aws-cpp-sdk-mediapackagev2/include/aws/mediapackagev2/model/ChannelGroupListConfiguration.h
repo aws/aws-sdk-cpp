@@ -126,18 +126,18 @@ class ChannelGroupListConfiguration {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

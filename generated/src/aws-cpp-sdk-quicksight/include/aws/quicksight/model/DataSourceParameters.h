@@ -642,99 +642,99 @@ class DataSourceParameters {
   ///@}
  private:
   AmazonElasticsearchParameters m_amazonElasticsearchParameters;
-  bool m_amazonElasticsearchParametersHasBeenSet = false;
 
   AthenaParameters m_athenaParameters;
-  bool m_athenaParametersHasBeenSet = false;
 
   AuroraParameters m_auroraParameters;
-  bool m_auroraParametersHasBeenSet = false;
 
   AuroraPostgreSqlParameters m_auroraPostgreSqlParameters;
-  bool m_auroraPostgreSqlParametersHasBeenSet = false;
 
   AwsIotAnalyticsParameters m_awsIotAnalyticsParameters;
-  bool m_awsIotAnalyticsParametersHasBeenSet = false;
 
   JiraParameters m_jiraParameters;
-  bool m_jiraParametersHasBeenSet = false;
 
   MariaDbParameters m_mariaDbParameters;
-  bool m_mariaDbParametersHasBeenSet = false;
 
   MySqlParameters m_mySqlParameters;
-  bool m_mySqlParametersHasBeenSet = false;
 
   OracleParameters m_oracleParameters;
-  bool m_oracleParametersHasBeenSet = false;
 
   PostgreSqlParameters m_postgreSqlParameters;
-  bool m_postgreSqlParametersHasBeenSet = false;
 
   PrestoParameters m_prestoParameters;
-  bool m_prestoParametersHasBeenSet = false;
 
   RdsParameters m_rdsParameters;
-  bool m_rdsParametersHasBeenSet = false;
 
   RedshiftParameters m_redshiftParameters;
-  bool m_redshiftParametersHasBeenSet = false;
 
   S3Parameters m_s3Parameters;
-  bool m_s3ParametersHasBeenSet = false;
 
   S3KnowledgeBaseParameters m_s3KnowledgeBaseParameters;
-  bool m_s3KnowledgeBaseParametersHasBeenSet = false;
 
   ServiceNowParameters m_serviceNowParameters;
-  bool m_serviceNowParametersHasBeenSet = false;
 
   SnowflakeParameters m_snowflakeParameters;
-  bool m_snowflakeParametersHasBeenSet = false;
 
   SparkParameters m_sparkParameters;
-  bool m_sparkParametersHasBeenSet = false;
 
   SqlServerParameters m_sqlServerParameters;
-  bool m_sqlServerParametersHasBeenSet = false;
 
   TeradataParameters m_teradataParameters;
-  bool m_teradataParametersHasBeenSet = false;
 
   TwitterParameters m_twitterParameters;
-  bool m_twitterParametersHasBeenSet = false;
 
   AmazonOpenSearchParameters m_amazonOpenSearchParameters;
-  bool m_amazonOpenSearchParametersHasBeenSet = false;
 
   ExasolParameters m_exasolParameters;
-  bool m_exasolParametersHasBeenSet = false;
 
   DatabricksParameters m_databricksParameters;
-  bool m_databricksParametersHasBeenSet = false;
 
   StarburstParameters m_starburstParameters;
-  bool m_starburstParametersHasBeenSet = false;
 
   TrinoParameters m_trinoParameters;
-  bool m_trinoParametersHasBeenSet = false;
 
   BigQueryParameters m_bigQueryParameters;
-  bool m_bigQueryParametersHasBeenSet = false;
 
   ImpalaParameters m_impalaParameters;
-  bool m_impalaParametersHasBeenSet = false;
 
   CustomConnectionParameters m_customConnectionParameters;
-  bool m_customConnectionParametersHasBeenSet = false;
 
   WebCrawlerParameters m_webCrawlerParameters;
-  bool m_webCrawlerParametersHasBeenSet = false;
 
   ConfluenceParameters m_confluenceParameters;
-  bool m_confluenceParametersHasBeenSet = false;
 
   QBusinessParameters m_qBusinessParameters;
+  bool m_amazonElasticsearchParametersHasBeenSet = false;
+  bool m_athenaParametersHasBeenSet = false;
+  bool m_auroraParametersHasBeenSet = false;
+  bool m_auroraPostgreSqlParametersHasBeenSet = false;
+  bool m_awsIotAnalyticsParametersHasBeenSet = false;
+  bool m_jiraParametersHasBeenSet = false;
+  bool m_mariaDbParametersHasBeenSet = false;
+  bool m_mySqlParametersHasBeenSet = false;
+  bool m_oracleParametersHasBeenSet = false;
+  bool m_postgreSqlParametersHasBeenSet = false;
+  bool m_prestoParametersHasBeenSet = false;
+  bool m_rdsParametersHasBeenSet = false;
+  bool m_redshiftParametersHasBeenSet = false;
+  bool m_s3ParametersHasBeenSet = false;
+  bool m_s3KnowledgeBaseParametersHasBeenSet = false;
+  bool m_serviceNowParametersHasBeenSet = false;
+  bool m_snowflakeParametersHasBeenSet = false;
+  bool m_sparkParametersHasBeenSet = false;
+  bool m_sqlServerParametersHasBeenSet = false;
+  bool m_teradataParametersHasBeenSet = false;
+  bool m_twitterParametersHasBeenSet = false;
+  bool m_amazonOpenSearchParametersHasBeenSet = false;
+  bool m_exasolParametersHasBeenSet = false;
+  bool m_databricksParametersHasBeenSet = false;
+  bool m_starburstParametersHasBeenSet = false;
+  bool m_trinoParametersHasBeenSet = false;
+  bool m_bigQueryParametersHasBeenSet = false;
+  bool m_impalaParametersHasBeenSet = false;
+  bool m_customConnectionParametersHasBeenSet = false;
+  bool m_webCrawlerParametersHasBeenSet = false;
+  bool m_confluenceParametersHasBeenSet = false;
   bool m_qBusinessParametersHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class CreateFleetResult {
   ///@}
  private:
   FleetAttributes m_fleetAttributes;
-  bool m_fleetAttributesHasBeenSet = false;
 
   Aws::Vector<LocationState> m_locationStates;
-  bool m_locationStatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetAttributesHasBeenSet = false;
+  bool m_locationStatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

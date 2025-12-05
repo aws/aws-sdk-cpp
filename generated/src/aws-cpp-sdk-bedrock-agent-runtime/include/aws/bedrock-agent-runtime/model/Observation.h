@@ -193,27 +193,27 @@ class Observation {
   ///@}
  private:
   ActionGroupInvocationOutput m_actionGroupInvocationOutput;
-  bool m_actionGroupInvocationOutputHasBeenSet = false;
 
   AgentCollaboratorInvocationOutput m_agentCollaboratorInvocationOutput;
-  bool m_agentCollaboratorInvocationOutputHasBeenSet = false;
 
   CodeInterpreterInvocationOutput m_codeInterpreterInvocationOutput;
-  bool m_codeInterpreterInvocationOutputHasBeenSet = false;
 
   FinalResponse m_finalResponse;
-  bool m_finalResponseHasBeenSet = false;
 
   KnowledgeBaseLookupOutput m_knowledgeBaseLookupOutput;
-  bool m_knowledgeBaseLookupOutputHasBeenSet = false;
 
   RepromptResponse m_repromptResponse;
-  bool m_repromptResponseHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_actionGroupInvocationOutputHasBeenSet = false;
+  bool m_agentCollaboratorInvocationOutputHasBeenSet = false;
+  bool m_codeInterpreterInvocationOutputHasBeenSet = false;
+  bool m_finalResponseHasBeenSet = false;
+  bool m_knowledgeBaseLookupOutputHasBeenSet = false;
+  bool m_repromptResponseHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

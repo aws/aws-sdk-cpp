@@ -61,9 +61,9 @@ class CreateTransitGatewayMulticastDomainResponse {
   ///@}
  private:
   TransitGatewayMulticastDomain m_transitGatewayMulticastDomain;
-  bool m_transitGatewayMulticastDomainHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayMulticastDomainHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -261,39 +261,39 @@ class UpdateSlotRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_slotId;
-  bool m_slotIdHasBeenSet = false;
 
   Aws::String m_slotName;
-  bool m_slotNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_slotTypeId;
-  bool m_slotTypeIdHasBeenSet = false;
 
   SlotValueElicitationSetting m_valueElicitationSetting;
-  bool m_valueElicitationSettingHasBeenSet = false;
 
   ObfuscationSetting m_obfuscationSetting;
-  bool m_obfuscationSettingHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_intentId;
-  bool m_intentIdHasBeenSet = false;
 
   MultipleValuesSetting m_multipleValuesSetting;
-  bool m_multipleValuesSettingHasBeenSet = false;
 
   SubSlotSetting m_subSlotSetting;
+  bool m_slotIdHasBeenSet = false;
+  bool m_slotNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_slotTypeIdHasBeenSet = false;
+  bool m_valueElicitationSettingHasBeenSet = false;
+  bool m_obfuscationSettingHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_intentIdHasBeenSet = false;
+  bool m_multipleValuesSettingHasBeenSet = false;
   bool m_subSlotSettingHasBeenSet = false;
 };
 

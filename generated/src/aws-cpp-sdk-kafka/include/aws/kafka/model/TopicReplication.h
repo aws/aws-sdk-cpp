@@ -172,24 +172,24 @@ class TopicReplication {
   ///@}
  private:
   bool m_copyAccessControlListsForTopics{false};
-  bool m_copyAccessControlListsForTopicsHasBeenSet = false;
 
   bool m_copyTopicConfigurations{false};
-  bool m_copyTopicConfigurationsHasBeenSet = false;
 
   bool m_detectAndCopyNewTopics{false};
-  bool m_detectAndCopyNewTopicsHasBeenSet = false;
 
   ReplicationStartingPosition m_startingPosition;
-  bool m_startingPositionHasBeenSet = false;
 
   ReplicationTopicNameConfiguration m_topicNameConfiguration;
-  bool m_topicNameConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_topicsToExclude;
-  bool m_topicsToExcludeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_topicsToReplicate;
+  bool m_copyAccessControlListsForTopicsHasBeenSet = false;
+  bool m_copyTopicConfigurationsHasBeenSet = false;
+  bool m_detectAndCopyNewTopicsHasBeenSet = false;
+  bool m_startingPositionHasBeenSet = false;
+  bool m_topicNameConfigurationHasBeenSet = false;
+  bool m_topicsToExcludeHasBeenSet = false;
   bool m_topicsToReplicateHasBeenSet = false;
 };
 

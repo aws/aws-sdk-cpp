@@ -116,15 +116,15 @@ class PerformanceIssueDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Metric> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_analysis;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_analysisHasBeenSet = false;
 };
 

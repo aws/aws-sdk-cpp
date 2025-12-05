@@ -128,18 +128,18 @@ class ListUserAssociationsRequest : public LicenseManagerUserSubscriptionsReques
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

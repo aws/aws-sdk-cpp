@@ -184,27 +184,27 @@ class SearchJobSummary {
   ///@}
  private:
   Aws::String m_searchJobIdentifier;
-  bool m_searchJobIdentifierHasBeenSet = false;
 
   Aws::String m_searchJobArn;
-  bool m_searchJobArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SearchJobState m_status{SearchJobState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   SearchScopeSummary m_searchScopeSummary;
-  bool m_searchScopeSummaryHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_searchJobIdentifierHasBeenSet = false;
+  bool m_searchJobArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_searchScopeSummaryHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

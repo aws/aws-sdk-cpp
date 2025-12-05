@@ -96,12 +96,12 @@ class BatchDeleteResult {
   ///@}
  private:
   Aws::Vector<BatchFailedResultModel> m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::Vector<BatchSuccessfulResultModel> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedHasBeenSet = false;
+  bool m_successfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

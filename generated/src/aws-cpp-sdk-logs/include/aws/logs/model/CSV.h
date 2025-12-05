@@ -121,15 +121,15 @@ class CSV {
   ///@}
  private:
   Aws::String m_quoteCharacter;
-  bool m_quoteCharacterHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::String m_source;
+  bool m_quoteCharacterHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_columnsHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

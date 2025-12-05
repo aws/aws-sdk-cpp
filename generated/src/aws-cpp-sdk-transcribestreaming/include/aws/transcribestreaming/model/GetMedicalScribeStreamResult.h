@@ -61,9 +61,9 @@ class GetMedicalScribeStreamResult {
   ///@}
  private:
   MedicalScribeStreamDetails m_medicalScribeStreamDetails;
-  bool m_medicalScribeStreamDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_medicalScribeStreamDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

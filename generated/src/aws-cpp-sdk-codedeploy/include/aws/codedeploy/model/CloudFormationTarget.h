@@ -171,24 +171,24 @@ class CloudFormationTarget {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Vector<LifecycleEvent> m_lifecycleEvents;
-  bool m_lifecycleEventsHasBeenSet = false;
 
   TargetStatus m_status{TargetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   double m_targetVersionWeight{0.0};
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_lifecycleEventsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_targetVersionWeightHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class ListTagsForResourceRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_resourceARN;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_resourceARNHasBeenSet = false;
 };
 

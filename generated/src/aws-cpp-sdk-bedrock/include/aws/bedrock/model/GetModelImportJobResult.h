@@ -267,45 +267,45 @@ class GetModelImportJobResult {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_importedModelName;
-  bool m_importedModelNameHasBeenSet = false;
 
   Aws::String m_importedModelArn;
-  bool m_importedModelArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ModelDataSource m_modelDataSource;
-  bool m_modelDataSourceHasBeenSet = false;
 
   ModelImportJobStatus m_status{ModelImportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_importedModelKmsKeyArn;
-  bool m_importedModelKmsKeyArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_importedModelNameHasBeenSet = false;
+  bool m_importedModelArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_modelDataSourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_importedModelKmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

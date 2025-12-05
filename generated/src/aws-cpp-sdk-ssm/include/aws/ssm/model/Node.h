@@ -126,18 +126,18 @@ class Node {
   ///@}
  private:
   Aws::Utils::DateTime m_captureTime{};
-  bool m_captureTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   NodeOwnerInfo m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   NodeType m_nodeType;
+  bool m_captureTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_nodeTypeHasBeenSet = false;
 };
 

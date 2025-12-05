@@ -96,12 +96,12 @@ class DataPartitionStorageOptions {
   ///@}
  private:
   StorageMaximumSize m_maximumSize;
-  bool m_maximumSizeHasBeenSet = false;
 
   Aws::String m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   StorageMinimumTimeToLive m_minimumTimeToLive;
+  bool m_maximumSizeHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
   bool m_minimumTimeToLiveHasBeenSet = false;
 };
 

@@ -143,24 +143,24 @@ class GetDestinationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   ExpressionType m_expressionType{ExpressionType::NOT_SET};
-  bool m_expressionTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_expressionTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

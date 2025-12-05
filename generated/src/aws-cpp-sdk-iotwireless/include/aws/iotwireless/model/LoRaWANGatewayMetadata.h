@@ -82,12 +82,12 @@ class LoRaWANGatewayMetadata {
   ///@}
  private:
   Aws::String m_gatewayEui;
-  bool m_gatewayEuiHasBeenSet = false;
 
   double m_snr{0.0};
-  bool m_snrHasBeenSet = false;
 
   double m_rssi{0.0};
+  bool m_gatewayEuiHasBeenSet = false;
+  bool m_snrHasBeenSet = false;
   bool m_rssiHasBeenSet = false;
 };
 

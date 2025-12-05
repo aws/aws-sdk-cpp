@@ -104,15 +104,15 @@ class ListServerNeighborsResult {
   ///@}
  private:
   Aws::Vector<NeighborConnectionDetail> m_neighbors;
-  bool m_neighborsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   long long m_knownDependencyCount{0};
-  bool m_knownDependencyCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_neighborsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_knownDependencyCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

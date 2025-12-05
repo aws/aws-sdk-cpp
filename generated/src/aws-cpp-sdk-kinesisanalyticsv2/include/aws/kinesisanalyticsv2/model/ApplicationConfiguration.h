@@ -222,30 +222,30 @@ class ApplicationConfiguration {
   ///@}
  private:
   SqlApplicationConfiguration m_sqlApplicationConfiguration;
-  bool m_sqlApplicationConfigurationHasBeenSet = false;
 
   FlinkApplicationConfiguration m_flinkApplicationConfiguration;
-  bool m_flinkApplicationConfigurationHasBeenSet = false;
 
   EnvironmentProperties m_environmentProperties;
-  bool m_environmentPropertiesHasBeenSet = false;
 
   ApplicationCodeConfiguration m_applicationCodeConfiguration;
-  bool m_applicationCodeConfigurationHasBeenSet = false;
 
   ApplicationSnapshotConfiguration m_applicationSnapshotConfiguration;
-  bool m_applicationSnapshotConfigurationHasBeenSet = false;
 
   ApplicationSystemRollbackConfiguration m_applicationSystemRollbackConfiguration;
-  bool m_applicationSystemRollbackConfigurationHasBeenSet = false;
 
   Aws::Vector<VpcConfiguration> m_vpcConfigurations;
-  bool m_vpcConfigurationsHasBeenSet = false;
 
   ZeppelinApplicationConfiguration m_zeppelinApplicationConfiguration;
-  bool m_zeppelinApplicationConfigurationHasBeenSet = false;
 
   ApplicationEncryptionConfiguration m_applicationEncryptionConfiguration;
+  bool m_sqlApplicationConfigurationHasBeenSet = false;
+  bool m_flinkApplicationConfigurationHasBeenSet = false;
+  bool m_environmentPropertiesHasBeenSet = false;
+  bool m_applicationCodeConfigurationHasBeenSet = false;
+  bool m_applicationSnapshotConfigurationHasBeenSet = false;
+  bool m_applicationSystemRollbackConfigurationHasBeenSet = false;
+  bool m_vpcConfigurationsHasBeenSet = false;
+  bool m_zeppelinApplicationConfigurationHasBeenSet = false;
   bool m_applicationEncryptionConfigurationHasBeenSet = false;
 };
 

@@ -159,18 +159,18 @@ class ConfluenceSpaceConfiguration {
   ///@}
  private:
   bool m_crawlPersonalSpaces{false};
-  bool m_crawlPersonalSpacesHasBeenSet = false;
 
   bool m_crawlArchivedSpaces{false};
-  bool m_crawlArchivedSpacesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeSpaces;
-  bool m_includeSpacesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeSpaces;
-  bool m_excludeSpacesHasBeenSet = false;
 
   Aws::Vector<ConfluenceSpaceToIndexFieldMapping> m_spaceFieldMappings;
+  bool m_crawlPersonalSpacesHasBeenSet = false;
+  bool m_crawlArchivedSpacesHasBeenSet = false;
+  bool m_includeSpacesHasBeenSet = false;
+  bool m_excludeSpacesHasBeenSet = false;
   bool m_spaceFieldMappingsHasBeenSet = false;
 };
 

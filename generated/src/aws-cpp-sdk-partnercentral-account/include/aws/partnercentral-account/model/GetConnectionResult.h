@@ -153,24 +153,24 @@ class GetConnectionResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_otherParticipantAccountId;
-  bool m_otherParticipantAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Map<ConnectionType, ConnectionTypeDetail> m_connectionTypes;
-  bool m_connectionTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_otherParticipantAccountIdHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_connectionTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

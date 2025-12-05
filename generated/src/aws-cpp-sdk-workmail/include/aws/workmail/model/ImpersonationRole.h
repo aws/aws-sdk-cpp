@@ -123,18 +123,18 @@ class ImpersonationRole {
   ///@}
  private:
   Aws::String m_impersonationRoleId;
-  bool m_impersonationRoleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ImpersonationRoleType m_type{ImpersonationRoleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateModified{};
+  bool m_impersonationRoleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
   bool m_dateModifiedHasBeenSet = false;
 };
 

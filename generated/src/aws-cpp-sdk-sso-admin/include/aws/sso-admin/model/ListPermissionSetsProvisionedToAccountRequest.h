@@ -124,18 +124,18 @@ class ListPermissionSetsProvisionedToAccountRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ProvisioningStatus m_provisioningStatus{ProvisioningStatus::NOT_SET};
-  bool m_provisioningStatusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_provisioningStatusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

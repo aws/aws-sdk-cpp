@@ -60,9 +60,9 @@ class DescribeBuildResult {
   ///@}
  private:
   Build m_build;
-  bool m_buildHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_buildHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

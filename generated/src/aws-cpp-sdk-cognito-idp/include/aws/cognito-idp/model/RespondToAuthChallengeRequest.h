@@ -365,24 +365,24 @@ class RespondToAuthChallengeRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   ChallengeNameType m_challengeName{ChallengeNameType::NOT_SET};
-  bool m_challengeNameHasBeenSet = false;
 
   Aws::String m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_challengeResponses;
-  bool m_challengeResponsesHasBeenSet = false;
 
   AnalyticsMetadataType m_analyticsMetadata;
-  bool m_analyticsMetadataHasBeenSet = false;
 
   UserContextDataType m_userContextData;
-  bool m_userContextDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_clientIdHasBeenSet = false;
+  bool m_challengeNameHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
+  bool m_challengeResponsesHasBeenSet = false;
+  bool m_analyticsMetadataHasBeenSet = false;
+  bool m_userContextDataHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

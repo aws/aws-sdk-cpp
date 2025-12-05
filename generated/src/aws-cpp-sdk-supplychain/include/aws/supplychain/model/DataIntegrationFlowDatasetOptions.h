@@ -101,12 +101,12 @@ class DataIntegrationFlowDatasetOptions {
   ///@}
  private:
   DataIntegrationFlowLoadType m_loadType{DataIntegrationFlowLoadType::NOT_SET};
-  bool m_loadTypeHasBeenSet = false;
 
   bool m_dedupeRecords{false};
-  bool m_dedupeRecordsHasBeenSet = false;
 
   DataIntegrationFlowDedupeStrategy m_dedupeStrategy;
+  bool m_loadTypeHasBeenSet = false;
+  bool m_dedupeRecordsHasBeenSet = false;
   bool m_dedupeStrategyHasBeenSet = false;
 };
 

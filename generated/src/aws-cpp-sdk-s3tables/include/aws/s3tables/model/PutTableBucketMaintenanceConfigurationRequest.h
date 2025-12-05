@@ -84,12 +84,12 @@ class PutTableBucketMaintenanceConfigurationRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   TableBucketMaintenanceType m_type{TableBucketMaintenanceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TableBucketMaintenanceConfigurationValue m_value;
+  bool m_tableBucketARNHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

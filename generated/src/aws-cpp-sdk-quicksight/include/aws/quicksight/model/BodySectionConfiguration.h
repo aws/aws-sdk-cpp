@@ -127,18 +127,18 @@ class BodySectionConfiguration {
   ///@}
  private:
   Aws::String m_sectionId;
-  bool m_sectionIdHasBeenSet = false;
 
   BodySectionContent m_content;
-  bool m_contentHasBeenSet = false;
 
   SectionStyle m_style;
-  bool m_styleHasBeenSet = false;
 
   SectionPageBreakConfiguration m_pageBreakConfiguration;
-  bool m_pageBreakConfigurationHasBeenSet = false;
 
   BodySectionRepeatConfiguration m_repeatConfiguration;
+  bool m_sectionIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_styleHasBeenSet = false;
+  bool m_pageBreakConfigurationHasBeenSet = false;
   bool m_repeatConfigurationHasBeenSet = false;
 };
 

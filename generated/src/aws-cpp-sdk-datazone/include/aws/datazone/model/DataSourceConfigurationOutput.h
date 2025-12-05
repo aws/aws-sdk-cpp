@@ -88,12 +88,12 @@ class DataSourceConfigurationOutput {
   ///@}
  private:
   GlueRunConfigurationOutput m_glueRunConfiguration;
-  bool m_glueRunConfigurationHasBeenSet = false;
 
   RedshiftRunConfigurationOutput m_redshiftRunConfiguration;
-  bool m_redshiftRunConfigurationHasBeenSet = false;
 
   SageMakerRunConfigurationOutput m_sageMakerRunConfiguration;
+  bool m_glueRunConfigurationHasBeenSet = false;
+  bool m_redshiftRunConfigurationHasBeenSet = false;
   bool m_sageMakerRunConfigurationHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class GaugeChartFieldWells {
   ///@}
  private:
   Aws::Vector<MeasureField> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_targetValues;
+  bool m_valuesHasBeenSet = false;
   bool m_targetValuesHasBeenSet = false;
 };
 

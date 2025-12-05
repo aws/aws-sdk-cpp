@@ -67,9 +67,9 @@ class AcquiredLimit {
   ///@}
  private:
   Aws::String m_limitId;
-  bool m_limitIdHasBeenSet = false;
 
   int m_count{0};
+  bool m_limitIdHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

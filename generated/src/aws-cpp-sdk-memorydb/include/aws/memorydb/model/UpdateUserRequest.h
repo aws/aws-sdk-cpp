@@ -87,12 +87,12 @@ class UpdateUserRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   AuthenticationMode m_authenticationMode;
-  bool m_authenticationModeHasBeenSet = false;
 
   Aws::String m_accessString;
+  bool m_userNameHasBeenSet = false;
+  bool m_authenticationModeHasBeenSet = false;
   bool m_accessStringHasBeenSet = false;
 };
 

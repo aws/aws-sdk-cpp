@@ -126,18 +126,18 @@ class AssetType {
   ///@}
  private:
   AssetCategoryType m_category{AssetCategoryType::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   ColorSchemeModeType m_colorMode{ColorSchemeModeType::NOT_SET};
-  bool m_colorModeHasBeenSet = false;
 
   AssetExtensionType m_extension{AssetExtensionType::NOT_SET};
-  bool m_extensionHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_categoryHasBeenSet = false;
+  bool m_colorModeHasBeenSet = false;
+  bool m_extensionHasBeenSet = false;
+  bool m_bytesHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

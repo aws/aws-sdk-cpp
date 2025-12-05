@@ -103,15 +103,15 @@ class UpgradePublishedSchemaRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_developmentSchemaArn;
-  bool m_developmentSchemaArnHasBeenSet = false;
 
   Aws::String m_publishedSchemaArn;
-  bool m_publishedSchemaArnHasBeenSet = false;
 
   Aws::String m_minorVersion;
-  bool m_minorVersionHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_developmentSchemaArnHasBeenSet = false;
+  bool m_publishedSchemaArnHasBeenSet = false;
+  bool m_minorVersionHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

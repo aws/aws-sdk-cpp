@@ -108,15 +108,15 @@ class AssociateResourceRequest : public AppRegistryRequest {
   ///@}
  private:
   Aws::String m_application;
-  bool m_applicationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<AssociationOption> m_options;
+  bool m_applicationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

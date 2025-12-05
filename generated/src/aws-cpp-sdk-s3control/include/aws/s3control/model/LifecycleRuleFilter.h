@@ -125,18 +125,18 @@ class LifecycleRuleFilter {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   S3Tag m_tag;
-  bool m_tagHasBeenSet = false;
 
   LifecycleRuleAndOperator m_and;
-  bool m_andHasBeenSet = false;
 
   long long m_objectSizeGreaterThan{0};
-  bool m_objectSizeGreaterThanHasBeenSet = false;
 
   long long m_objectSizeLessThan{0};
+  bool m_prefixHasBeenSet = false;
+  bool m_tagHasBeenSet = false;
+  bool m_andHasBeenSet = false;
+  bool m_objectSizeGreaterThanHasBeenSet = false;
   bool m_objectSizeLessThanHasBeenSet = false;
 };
 

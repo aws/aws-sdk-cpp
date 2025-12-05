@@ -91,12 +91,12 @@ class DescribeServerlessCachesRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_serverlessCacheName;
-  bool m_serverlessCacheNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serverlessCacheNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

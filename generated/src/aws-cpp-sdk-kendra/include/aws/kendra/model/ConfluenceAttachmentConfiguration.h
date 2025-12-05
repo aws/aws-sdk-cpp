@@ -84,9 +84,9 @@ class ConfluenceAttachmentConfiguration {
   ///@}
  private:
   bool m_crawlAttachments{false};
-  bool m_crawlAttachmentsHasBeenSet = false;
 
   Aws::Vector<ConfluenceAttachmentToIndexFieldMapping> m_attachmentFieldMappings;
+  bool m_crawlAttachmentsHasBeenSet = false;
   bool m_attachmentFieldMappingsHasBeenSet = false;
 };
 

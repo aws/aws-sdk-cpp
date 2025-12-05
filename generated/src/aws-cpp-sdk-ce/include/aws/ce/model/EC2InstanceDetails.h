@@ -175,27 +175,27 @@ class EC2InstanceDetails {
   ///@}
  private:
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_tenancy;
-  bool m_tenancyHasBeenSet = false;
 
   bool m_currentGeneration{false};
-  bool m_currentGenerationHasBeenSet = false;
 
   bool m_sizeFlexEligible{false};
+  bool m_familyHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_currentGenerationHasBeenSet = false;
   bool m_sizeFlexEligibleHasBeenSet = false;
 };
 

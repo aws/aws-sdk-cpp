@@ -233,33 +233,33 @@ class SubmitServiceJobRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobQueue;
-  bool m_jobQueueHasBeenSet = false;
 
   ServiceJobRetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   int m_schedulingPriority{0};
-  bool m_schedulingPriorityHasBeenSet = false;
 
   Aws::String m_serviceRequestPayload;
-  bool m_serviceRequestPayloadHasBeenSet = false;
 
   ServiceJobType m_serviceJobType{ServiceJobType::NOT_SET};
-  bool m_serviceJobTypeHasBeenSet = false;
 
   Aws::String m_shareIdentifier;
-  bool m_shareIdentifierHasBeenSet = false;
 
   ServiceJobTimeout m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobQueueHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_schedulingPriorityHasBeenSet = false;
+  bool m_serviceRequestPayloadHasBeenSet = false;
+  bool m_serviceJobTypeHasBeenSet = false;
+  bool m_shareIdentifierHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

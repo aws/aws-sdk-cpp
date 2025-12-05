@@ -147,21 +147,21 @@ class ListKeysResponseEntry {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_expireTime{};
-  bool m_expireTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApiKeyRestrictions m_restrictions;
-  bool m_restrictionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_keyNameHasBeenSet = false;
+  bool m_expireTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_restrictionsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

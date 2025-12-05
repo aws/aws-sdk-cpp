@@ -70,9 +70,9 @@ class OutputSerialization {
   ///@}
  private:
   CSVOutput m_cSV;
-  bool m_cSVHasBeenSet = false;
 
   JSONOutput m_jSON;
+  bool m_cSVHasBeenSet = false;
   bool m_jSONHasBeenSet = false;
 };
 

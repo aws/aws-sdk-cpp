@@ -368,54 +368,54 @@ class ScheduleActionSettings {
   ///@}
  private:
   HlsId3SegmentTaggingScheduleActionSettings m_hlsId3SegmentTaggingSettings;
-  bool m_hlsId3SegmentTaggingSettingsHasBeenSet = false;
 
   HlsTimedMetadataScheduleActionSettings m_hlsTimedMetadataSettings;
-  bool m_hlsTimedMetadataSettingsHasBeenSet = false;
 
   InputPrepareScheduleActionSettings m_inputPrepareSettings;
-  bool m_inputPrepareSettingsHasBeenSet = false;
 
   InputSwitchScheduleActionSettings m_inputSwitchSettings;
-  bool m_inputSwitchSettingsHasBeenSet = false;
 
   MotionGraphicsActivateScheduleActionSettings m_motionGraphicsImageActivateSettings;
-  bool m_motionGraphicsImageActivateSettingsHasBeenSet = false;
 
   MotionGraphicsDeactivateScheduleActionSettings m_motionGraphicsImageDeactivateSettings;
-  bool m_motionGraphicsImageDeactivateSettingsHasBeenSet = false;
 
   PauseStateScheduleActionSettings m_pauseStateSettings;
-  bool m_pauseStateSettingsHasBeenSet = false;
 
   Scte35InputScheduleActionSettings m_scte35InputSettings;
-  bool m_scte35InputSettingsHasBeenSet = false;
 
   Scte35ReturnToNetworkScheduleActionSettings m_scte35ReturnToNetworkSettings;
-  bool m_scte35ReturnToNetworkSettingsHasBeenSet = false;
 
   Scte35SpliceInsertScheduleActionSettings m_scte35SpliceInsertSettings;
-  bool m_scte35SpliceInsertSettingsHasBeenSet = false;
 
   Scte35TimeSignalScheduleActionSettings m_scte35TimeSignalSettings;
-  bool m_scte35TimeSignalSettingsHasBeenSet = false;
 
   StaticImageActivateScheduleActionSettings m_staticImageActivateSettings;
-  bool m_staticImageActivateSettingsHasBeenSet = false;
 
   StaticImageDeactivateScheduleActionSettings m_staticImageDeactivateSettings;
-  bool m_staticImageDeactivateSettingsHasBeenSet = false;
 
   StaticImageOutputActivateScheduleActionSettings m_staticImageOutputActivateSettings;
-  bool m_staticImageOutputActivateSettingsHasBeenSet = false;
 
   StaticImageOutputDeactivateScheduleActionSettings m_staticImageOutputDeactivateSettings;
-  bool m_staticImageOutputDeactivateSettingsHasBeenSet = false;
 
   Id3SegmentTaggingScheduleActionSettings m_id3SegmentTaggingSettings;
-  bool m_id3SegmentTaggingSettingsHasBeenSet = false;
 
   TimedMetadataScheduleActionSettings m_timedMetadataSettings;
+  bool m_hlsId3SegmentTaggingSettingsHasBeenSet = false;
+  bool m_hlsTimedMetadataSettingsHasBeenSet = false;
+  bool m_inputPrepareSettingsHasBeenSet = false;
+  bool m_inputSwitchSettingsHasBeenSet = false;
+  bool m_motionGraphicsImageActivateSettingsHasBeenSet = false;
+  bool m_motionGraphicsImageDeactivateSettingsHasBeenSet = false;
+  bool m_pauseStateSettingsHasBeenSet = false;
+  bool m_scte35InputSettingsHasBeenSet = false;
+  bool m_scte35ReturnToNetworkSettingsHasBeenSet = false;
+  bool m_scte35SpliceInsertSettingsHasBeenSet = false;
+  bool m_scte35TimeSignalSettingsHasBeenSet = false;
+  bool m_staticImageActivateSettingsHasBeenSet = false;
+  bool m_staticImageDeactivateSettingsHasBeenSet = false;
+  bool m_staticImageOutputActivateSettingsHasBeenSet = false;
+  bool m_staticImageOutputDeactivateSettingsHasBeenSet = false;
+  bool m_id3SegmentTaggingSettingsHasBeenSet = false;
   bool m_timedMetadataSettingsHasBeenSet = false;
 };
 

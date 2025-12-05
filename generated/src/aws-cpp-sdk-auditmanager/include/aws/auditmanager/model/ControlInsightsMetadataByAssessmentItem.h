@@ -128,18 +128,18 @@ class ControlInsightsMetadataByAssessmentItem {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   EvidenceInsights m_evidenceInsights;
-  bool m_evidenceInsightsHasBeenSet = false;
 
   Aws::String m_controlSetName;
-  bool m_controlSetNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_evidenceInsightsHasBeenSet = false;
+  bool m_controlSetNameHasBeenSet = false;
   bool m_lastUpdatedHasBeenSet = false;
 };
 

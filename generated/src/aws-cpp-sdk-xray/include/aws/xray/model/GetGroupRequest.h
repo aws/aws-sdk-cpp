@@ -65,9 +65,9 @@ class GetGroupRequest : public XRayRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupARN;
+  bool m_groupNameHasBeenSet = false;
   bool m_groupARNHasBeenSet = false;
 };
 

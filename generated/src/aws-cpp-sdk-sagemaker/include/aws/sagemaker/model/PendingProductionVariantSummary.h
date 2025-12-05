@@ -296,42 +296,42 @@ class PendingProductionVariantSummary {
   ///@}
  private:
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   Aws::Vector<DeployedImage> m_deployedImages;
-  bool m_deployedImagesHasBeenSet = false;
 
   double m_currentWeight{0.0};
-  bool m_currentWeightHasBeenSet = false;
 
   double m_desiredWeight{0.0};
-  bool m_desiredWeightHasBeenSet = false;
 
   int m_currentInstanceCount{0};
-  bool m_currentInstanceCountHasBeenSet = false;
 
   int m_desiredInstanceCount{0};
-  bool m_desiredInstanceCountHasBeenSet = false;
 
   ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   ProductionVariantAcceleratorType m_acceleratorType{ProductionVariantAcceleratorType::NOT_SET};
-  bool m_acceleratorTypeHasBeenSet = false;
 
   Aws::Vector<ProductionVariantStatus> m_variantStatus;
-  bool m_variantStatusHasBeenSet = false;
 
   ProductionVariantServerlessConfig m_currentServerlessConfig;
-  bool m_currentServerlessConfigHasBeenSet = false;
 
   ProductionVariantServerlessConfig m_desiredServerlessConfig;
-  bool m_desiredServerlessConfigHasBeenSet = false;
 
   ProductionVariantManagedInstanceScaling m_managedInstanceScaling;
-  bool m_managedInstanceScalingHasBeenSet = false;
 
   ProductionVariantRoutingConfig m_routingConfig;
+  bool m_variantNameHasBeenSet = false;
+  bool m_deployedImagesHasBeenSet = false;
+  bool m_currentWeightHasBeenSet = false;
+  bool m_desiredWeightHasBeenSet = false;
+  bool m_currentInstanceCountHasBeenSet = false;
+  bool m_desiredInstanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_acceleratorTypeHasBeenSet = false;
+  bool m_variantStatusHasBeenSet = false;
+  bool m_currentServerlessConfigHasBeenSet = false;
+  bool m_desiredServerlessConfigHasBeenSet = false;
+  bool m_managedInstanceScalingHasBeenSet = false;
   bool m_routingConfigHasBeenSet = false;
 };
 

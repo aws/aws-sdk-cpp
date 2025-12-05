@@ -131,18 +131,18 @@ class SourceConnectorProperties {
   ///@}
  private:
   MarketoSourceProperties m_marketo;
-  bool m_marketoHasBeenSet = false;
 
   S3SourceProperties m_s3;
-  bool m_s3HasBeenSet = false;
 
   SalesforceSourceProperties m_salesforce;
-  bool m_salesforceHasBeenSet = false;
 
   ServiceNowSourceProperties m_serviceNow;
-  bool m_serviceNowHasBeenSet = false;
 
   ZendeskSourceProperties m_zendesk;
+  bool m_marketoHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_serviceNowHasBeenSet = false;
   bool m_zendeskHasBeenSet = false;
 };
 

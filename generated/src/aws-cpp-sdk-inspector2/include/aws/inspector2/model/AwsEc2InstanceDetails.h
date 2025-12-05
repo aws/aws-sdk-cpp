@@ -227,33 +227,33 @@ class AwsEc2InstanceDetails {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipV4Addresses;
-  bool m_ipV4AddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipV6Addresses;
-  bool m_ipV6AddressesHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_iamInstanceProfileArn;
-  bool m_iamInstanceProfileArnHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchedAt{};
-  bool m_launchedAtHasBeenSet = false;
 
   Aws::String m_platform;
+  bool m_typeHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_ipV4AddressesHasBeenSet = false;
+  bool m_ipV6AddressesHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_iamInstanceProfileArnHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_launchedAtHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

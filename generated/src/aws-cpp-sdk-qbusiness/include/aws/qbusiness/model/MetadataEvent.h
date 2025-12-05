@@ -135,18 +135,18 @@ class MetadataEvent {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_userMessageId;
-  bool m_userMessageIdHasBeenSet = false;
 
   Aws::String m_systemMessageId;
-  bool m_systemMessageIdHasBeenSet = false;
 
   Aws::Vector<SourceAttribution> m_sourceAttributions;
-  bool m_sourceAttributionsHasBeenSet = false;
 
   Aws::String m_finalTextMessage;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_userMessageIdHasBeenSet = false;
+  bool m_systemMessageIdHasBeenSet = false;
+  bool m_sourceAttributionsHasBeenSet = false;
   bool m_finalTextMessageHasBeenSet = false;
 };
 

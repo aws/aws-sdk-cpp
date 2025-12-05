@@ -89,12 +89,12 @@ class ListRegexPatternSetsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<RegexPatternSetSummary> m_regexPatternSets;
-  bool m_regexPatternSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_regexPatternSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

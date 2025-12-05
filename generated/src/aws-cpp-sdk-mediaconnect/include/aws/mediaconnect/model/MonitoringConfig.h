@@ -116,15 +116,15 @@ class MonitoringConfig {
   ///@}
  private:
   ThumbnailState m_thumbnailState{ThumbnailState::NOT_SET};
-  bool m_thumbnailStateHasBeenSet = false;
 
   Aws::Vector<AudioMonitoringSetting> m_audioMonitoringSettings;
-  bool m_audioMonitoringSettingsHasBeenSet = false;
 
   ContentQualityAnalysisState m_contentQualityAnalysisState{ContentQualityAnalysisState::NOT_SET};
-  bool m_contentQualityAnalysisStateHasBeenSet = false;
 
   Aws::Vector<VideoMonitoringSetting> m_videoMonitoringSettings;
+  bool m_thumbnailStateHasBeenSet = false;
+  bool m_audioMonitoringSettingsHasBeenSet = false;
+  bool m_contentQualityAnalysisStateHasBeenSet = false;
   bool m_videoMonitoringSettingsHasBeenSet = false;
 };
 

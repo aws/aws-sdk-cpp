@@ -185,27 +185,27 @@ class EBSResultItem {
   ///@}
  private:
   Aws::String m_backupResourceArn;
-  bool m_backupResourceArnHasBeenSet = false;
 
   Aws::String m_sourceResourceArn;
-  bool m_sourceResourceArnHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_fileSystemIdentifier;
-  bool m_fileSystemIdentifierHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_backupResourceArnHasBeenSet = false;
+  bool m_sourceResourceArnHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_fileSystemIdentifierHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

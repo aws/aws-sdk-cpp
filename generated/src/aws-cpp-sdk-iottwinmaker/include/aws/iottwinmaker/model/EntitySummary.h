@@ -196,30 +196,30 @@ class EntitySummary {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_parentEntityId;
-  bool m_parentEntityIdHasBeenSet = false;
 
   Status m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_hasChildEntities{false};
-  bool m_hasChildEntitiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_parentEntityIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_hasChildEntitiesHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_updateDateTimeHasBeenSet = false;
 };
 

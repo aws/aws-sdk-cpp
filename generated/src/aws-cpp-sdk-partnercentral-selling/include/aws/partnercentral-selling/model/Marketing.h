@@ -158,18 +158,18 @@ class Marketing {
   ///@}
  private:
   Aws::String m_campaignName;
-  bool m_campaignNameHasBeenSet = false;
 
   MarketingSource m_source{MarketingSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_useCases;
-  bool m_useCasesHasBeenSet = false;
 
   Aws::Vector<Channel> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   AwsFundingUsed m_awsFundingUsed{AwsFundingUsed::NOT_SET};
+  bool m_campaignNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_useCasesHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
   bool m_awsFundingUsedHasBeenSet = false;
 };
 

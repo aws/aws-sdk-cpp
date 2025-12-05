@@ -86,12 +86,12 @@ class ListTestGridProjectsResult {
   ///@}
  private:
   Aws::Vector<TestGridProject> m_testGridProjects;
-  bool m_testGridProjectsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testGridProjectsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

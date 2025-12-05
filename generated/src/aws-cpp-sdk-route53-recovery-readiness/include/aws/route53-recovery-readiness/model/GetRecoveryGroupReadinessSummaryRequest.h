@@ -86,12 +86,12 @@ class GetRecoveryGroupReadinessSummaryRequest : public Route53RecoveryReadinessR
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_recoveryGroupName;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_recoveryGroupNameHasBeenSet = false;
 };
 

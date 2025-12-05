@@ -69,9 +69,9 @@ class EncryptionOptions {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_useAwsOwnedKey{false};
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_useAwsOwnedKeyHasBeenSet = false;
 };
 

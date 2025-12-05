@@ -109,15 +109,15 @@ class ListFindingsRequest : public Inspector2Request {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   FilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   SortCriteria m_sortCriteria;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
 };
 

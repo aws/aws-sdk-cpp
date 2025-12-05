@@ -87,12 +87,12 @@ class DescribeEgressOnlyInternetGatewaysResponse {
   ///@}
  private:
   Aws::Vector<EgressOnlyInternetGateway> m_egressOnlyInternetGateways;
-  bool m_egressOnlyInternetGatewaysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_egressOnlyInternetGatewaysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

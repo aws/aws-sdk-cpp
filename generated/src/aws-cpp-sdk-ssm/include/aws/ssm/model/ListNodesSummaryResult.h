@@ -86,12 +86,12 @@ class ListNodesSummaryResult {
   ///@}
  private:
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_summaryHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

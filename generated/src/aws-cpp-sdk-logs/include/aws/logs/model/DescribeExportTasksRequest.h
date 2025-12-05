@@ -104,15 +104,15 @@ class DescribeExportTasksRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   ExportTaskStatusCode m_statusCode{ExportTaskStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_taskIdHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class CompositedVideoArtifactsConfiguration {
   ///@}
  private:
   LayoutOption m_layout{LayoutOption::NOT_SET};
-  bool m_layoutHasBeenSet = false;
 
   ResolutionOption m_resolution{ResolutionOption::NOT_SET};
-  bool m_resolutionHasBeenSet = false;
 
   GridViewConfiguration m_gridViewConfiguration;
+  bool m_layoutHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
   bool m_gridViewConfigurationHasBeenSet = false;
 };
 

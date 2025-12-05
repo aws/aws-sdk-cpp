@@ -115,15 +115,15 @@ class UpdateLocationS3Request : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   S3StorageClass m_s3StorageClass{S3StorageClass::NOT_SET};
-  bool m_s3StorageClassHasBeenSet = false;
 
   S3Config m_s3Config;
+  bool m_locationArnHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_s3StorageClassHasBeenSet = false;
   bool m_s3ConfigHasBeenSet = false;
 };
 

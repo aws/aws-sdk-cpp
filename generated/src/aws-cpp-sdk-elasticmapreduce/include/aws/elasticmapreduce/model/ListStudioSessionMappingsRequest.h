@@ -86,12 +86,12 @@ class ListStudioSessionMappingsRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_studioId;
-  bool m_studioIdHasBeenSet = false;
 
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_studioIdHasBeenSet = false;
+  bool m_identityTypeHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

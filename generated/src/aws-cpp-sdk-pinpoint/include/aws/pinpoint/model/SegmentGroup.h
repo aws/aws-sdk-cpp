@@ -129,15 +129,15 @@ class SegmentGroup {
   ///@}
  private:
   Aws::Vector<SegmentDimensions> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Vector<SegmentReference> m_sourceSegments;
-  bool m_sourceSegmentsHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_dimensionsHasBeenSet = false;
+  bool m_sourceSegmentsHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

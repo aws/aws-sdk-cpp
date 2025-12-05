@@ -70,9 +70,9 @@ class PolicyQualifierInfo {
   ///@}
  private:
   PolicyQualifierId m_policyQualifierId{PolicyQualifierId::NOT_SET};
-  bool m_policyQualifierIdHasBeenSet = false;
 
   Qualifier m_qualifier;
+  bool m_policyQualifierIdHasBeenSet = false;
   bool m_qualifierHasBeenSet = false;
 };
 

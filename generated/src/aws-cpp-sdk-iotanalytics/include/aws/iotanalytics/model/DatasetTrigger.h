@@ -71,9 +71,9 @@ class DatasetTrigger {
   ///@}
  private:
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   TriggeringDataset m_dataset;
+  bool m_scheduleHasBeenSet = false;
   bool m_datasetHasBeenSet = false;
 };
 

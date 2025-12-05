@@ -94,15 +94,15 @@ class DownloadDefaultKeyPairResult {
   ///@}
  private:
   Aws::String m_publicKeyBase64;
-  bool m_publicKeyBase64HasBeenSet = false;
 
   Aws::String m_privateKeyBase64;
-  bool m_privateKeyBase64HasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_publicKeyBase64HasBeenSet = false;
+  bool m_privateKeyBase64HasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

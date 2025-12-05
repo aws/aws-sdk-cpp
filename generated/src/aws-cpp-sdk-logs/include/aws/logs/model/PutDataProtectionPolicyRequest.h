@@ -95,9 +95,9 @@ class PutDataProtectionPolicyRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   Aws::String m_policyDocument;
+  bool m_logGroupIdentifierHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
 };
 

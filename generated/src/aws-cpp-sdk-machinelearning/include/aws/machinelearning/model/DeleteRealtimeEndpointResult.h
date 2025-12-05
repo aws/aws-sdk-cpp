@@ -87,12 +87,12 @@ class DeleteRealtimeEndpointResult {
   ///@}
  private:
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   RealtimeEndpointInfo m_realtimeEndpointInfo;
-  bool m_realtimeEndpointInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_realtimeEndpointInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

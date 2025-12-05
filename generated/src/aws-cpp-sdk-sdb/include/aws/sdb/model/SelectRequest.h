@@ -89,12 +89,12 @@ class SelectRequest : public SimpleDBRequest {
   ///@}
  private:
   Aws::String m_selectExpression;
-  bool m_selectExpressionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_consistentRead{false};
+  bool m_selectExpressionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_consistentReadHasBeenSet = false;
 };
 

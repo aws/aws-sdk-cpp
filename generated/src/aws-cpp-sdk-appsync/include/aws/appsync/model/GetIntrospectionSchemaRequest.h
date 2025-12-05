@@ -86,12 +86,12 @@ class GetIntrospectionSchemaRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   OutputType m_format{OutputType::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   bool m_includeDirectives{false};
+  bool m_apiIdHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_includeDirectivesHasBeenSet = false;
 };
 

@@ -306,42 +306,42 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
   ///@}
  private:
   RouteMatrixAllowOptions m_allow;
-  bool m_allowHasBeenSet = false;
 
   RouteMatrixAvoidanceOptions m_avoid;
-  bool m_avoidHasBeenSet = false;
 
   bool m_departNow{false};
-  bool m_departNowHasBeenSet = false;
 
   Aws::String m_departureTime;
-  bool m_departureTimeHasBeenSet = false;
 
   Aws::Vector<RouteMatrixDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   RouteMatrixExclusionOptions m_exclude;
-  bool m_excludeHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   RoutingObjective m_optimizeRoutingFor{RoutingObjective::NOT_SET};
-  bool m_optimizeRoutingForHasBeenSet = false;
 
   Aws::Vector<RouteMatrixOrigin> m_origins;
-  bool m_originsHasBeenSet = false;
 
   RouteMatrixBoundary m_routingBoundary;
-  bool m_routingBoundaryHasBeenSet = false;
 
   RouteMatrixTrafficOptions m_traffic;
-  bool m_trafficHasBeenSet = false;
 
   RouteMatrixTravelMode m_travelMode{RouteMatrixTravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   RouteMatrixTravelModeOptions m_travelModeOptions;
+  bool m_allowHasBeenSet = false;
+  bool m_avoidHasBeenSet = false;
+  bool m_departNowHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_excludeHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_optimizeRoutingForHasBeenSet = false;
+  bool m_originsHasBeenSet = false;
+  bool m_routingBoundaryHasBeenSet = false;
+  bool m_trafficHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
   bool m_travelModeOptionsHasBeenSet = false;
 };
 

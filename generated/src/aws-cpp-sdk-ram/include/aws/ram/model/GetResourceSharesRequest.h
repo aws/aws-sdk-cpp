@@ -225,30 +225,30 @@ class GetResourceSharesRequest : public RAMRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceShareArns;
-  bool m_resourceShareArnsHasBeenSet = false;
 
   ResourceShareStatus m_resourceShareStatus{ResourceShareStatus::NOT_SET};
-  bool m_resourceShareStatusHasBeenSet = false;
 
   ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<TagFilter> m_tagFilters;
-  bool m_tagFiltersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_permissionArn;
-  bool m_permissionArnHasBeenSet = false;
 
   int m_permissionVersion{0};
+  bool m_resourceShareArnsHasBeenSet = false;
+  bool m_resourceShareStatusHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagFiltersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_permissionArnHasBeenSet = false;
   bool m_permissionVersionHasBeenSet = false;
 };
 

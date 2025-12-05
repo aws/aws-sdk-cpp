@@ -167,21 +167,21 @@ class ComponentChild {
   ///@}
  private:
   Aws::String m_componentType;
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentProperty> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Vector<ComponentChild> m_children;
-  bool m_childrenHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_sourceId;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_childrenHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
   bool m_sourceIdHasBeenSet = false;
 };
 

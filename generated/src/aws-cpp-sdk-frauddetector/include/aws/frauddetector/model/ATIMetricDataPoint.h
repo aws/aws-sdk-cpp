@@ -106,15 +106,15 @@ class ATIMetricDataPoint {
   ///@}
  private:
   double m_cr{0.0};
-  bool m_crHasBeenSet = false;
 
   double m_adr{0.0};
-  bool m_adrHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   double m_atodr{0.0};
+  bool m_crHasBeenSet = false;
+  bool m_adrHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
   bool m_atodrHasBeenSet = false;
 };
 

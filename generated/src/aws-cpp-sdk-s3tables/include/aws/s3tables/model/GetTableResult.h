@@ -339,57 +339,57 @@ class GetTableResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TableType m_type{TableType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_tableARN;
-  bool m_tableARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   Aws::String m_versionToken;
-  bool m_versionTokenHasBeenSet = false;
 
   Aws::String m_metadataLocation;
-  bool m_metadataLocationHasBeenSet = false;
 
   Aws::String m_warehouseLocation;
-  bool m_warehouseLocationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_managedByService;
-  bool m_managedByServiceHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_modifiedBy;
-  bool m_modifiedByHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   OpenTableFormat m_format{OpenTableFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_tableBucketId;
-  bool m_tableBucketIdHasBeenSet = false;
 
   ManagedTableInformation m_managedTableInformation;
-  bool m_managedTableInformationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_tableARNHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
+  bool m_versionTokenHasBeenSet = false;
+  bool m_metadataLocationHasBeenSet = false;
+  bool m_warehouseLocationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_managedByServiceHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_modifiedByHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_tableBucketIdHasBeenSet = false;
+  bool m_managedTableInformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

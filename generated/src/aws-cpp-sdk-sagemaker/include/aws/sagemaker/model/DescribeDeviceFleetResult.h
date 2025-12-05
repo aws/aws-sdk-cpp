@@ -182,30 +182,30 @@ class DescribeDeviceFleetResult {
   ///@}
  private:
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   Aws::String m_deviceFleetArn;
-  bool m_deviceFleetArnHasBeenSet = false;
 
   EdgeOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_iotRoleAlias;
-  bool m_iotRoleAliasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_deviceFleetArnHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_iotRoleAliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

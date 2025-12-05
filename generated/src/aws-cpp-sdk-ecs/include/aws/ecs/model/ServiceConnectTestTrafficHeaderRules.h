@@ -78,9 +78,9 @@ class ServiceConnectTestTrafficHeaderRules {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ServiceConnectTestTrafficHeaderMatchRules m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

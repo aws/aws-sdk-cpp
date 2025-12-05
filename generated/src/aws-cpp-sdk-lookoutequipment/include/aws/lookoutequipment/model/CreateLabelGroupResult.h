@@ -79,12 +79,12 @@ class CreateLabelGroupResult {
   ///@}
  private:
   Aws::String m_labelGroupName;
-  bool m_labelGroupNameHasBeenSet = false;
 
   Aws::String m_labelGroupArn;
-  bool m_labelGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelGroupNameHasBeenSet = false;
+  bool m_labelGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ListRunTasksRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   TaskStatus m_status{TaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_startingToken;
-  bool m_startingTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startingTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

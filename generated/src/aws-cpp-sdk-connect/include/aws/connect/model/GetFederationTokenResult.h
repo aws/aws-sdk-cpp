@@ -111,18 +111,18 @@ class GetFederationTokenResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_signInUrl;
-  bool m_signInUrlHasBeenSet = false;
 
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_credentialsHasBeenSet = false;
+  bool m_signInUrlHasBeenSet = false;
+  bool m_userArnHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

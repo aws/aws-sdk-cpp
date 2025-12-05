@@ -85,12 +85,12 @@ class PurchaseReservedElasticsearchInstanceOfferingResult {
   ///@}
  private:
   Aws::String m_reservedElasticsearchInstanceId;
-  bool m_reservedElasticsearchInstanceIdHasBeenSet = false;
 
   Aws::String m_reservationName;
-  bool m_reservationNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reservedElasticsearchInstanceIdHasBeenSet = false;
+  bool m_reservationNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

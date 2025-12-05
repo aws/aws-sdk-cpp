@@ -198,27 +198,27 @@ class ThingDocument {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_thingId;
-  bool m_thingIdHasBeenSet = false;
 
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_thingGroupNames;
-  bool m_thingGroupNamesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_shadow;
-  bool m_shadowHasBeenSet = false;
 
   Aws::String m_deviceDefender;
-  bool m_deviceDefenderHasBeenSet = false;
 
   ThingConnectivity m_connectivity;
+  bool m_thingNameHasBeenSet = false;
+  bool m_thingIdHasBeenSet = false;
+  bool m_thingTypeNameHasBeenSet = false;
+  bool m_thingGroupNamesHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_shadowHasBeenSet = false;
+  bool m_deviceDefenderHasBeenSet = false;
   bool m_connectivityHasBeenSet = false;
 };
 

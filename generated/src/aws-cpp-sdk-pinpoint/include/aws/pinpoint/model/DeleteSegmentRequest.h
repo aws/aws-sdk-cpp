@@ -66,9 +66,9 @@ class DeleteSegmentRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_segmentId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_segmentIdHasBeenSet = false;
 };
 

@@ -201,27 +201,27 @@ class AuthEventType {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   EventResponseType m_eventResponse{EventResponseType::NOT_SET};
-  bool m_eventResponseHasBeenSet = false;
 
   EventRiskType m_eventRisk;
-  bool m_eventRiskHasBeenSet = false;
 
   Aws::Vector<ChallengeResponseType> m_challengeResponses;
-  bool m_challengeResponsesHasBeenSet = false;
 
   EventContextDataType m_eventContextData;
-  bool m_eventContextDataHasBeenSet = false;
 
   EventFeedbackType m_eventFeedback;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_eventResponseHasBeenSet = false;
+  bool m_eventRiskHasBeenSet = false;
+  bool m_challengeResponsesHasBeenSet = false;
+  bool m_eventContextDataHasBeenSet = false;
   bool m_eventFeedbackHasBeenSet = false;
 };
 

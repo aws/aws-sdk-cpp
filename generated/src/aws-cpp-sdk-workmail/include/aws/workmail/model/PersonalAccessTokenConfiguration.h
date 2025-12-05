@@ -72,9 +72,9 @@ class PersonalAccessTokenConfiguration {
   ///@}
  private:
   PersonalAccessTokenConfigurationStatus m_status{PersonalAccessTokenConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_lifetimeInDays{0};
+  bool m_statusHasBeenSet = false;
   bool m_lifetimeInDaysHasBeenSet = false;
 };
 

@@ -314,45 +314,45 @@ class CreateApiRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiKeySelectionExpression;
-  bool m_apiKeySelectionExpressionHasBeenSet = false;
 
   Cors m_corsConfiguration;
-  bool m_corsConfigurationHasBeenSet = false;
 
   Aws::String m_credentialsArn;
-  bool m_credentialsArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_disableSchemaValidation{false};
-  bool m_disableSchemaValidationHasBeenSet = false;
 
   bool m_disableExecuteApiEndpoint{false};
-  bool m_disableExecuteApiEndpointHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProtocolType m_protocolType{ProtocolType::NOT_SET};
-  bool m_protocolTypeHasBeenSet = false;
 
   Aws::String m_routeKey;
-  bool m_routeKeyHasBeenSet = false;
 
   Aws::String m_routeSelectionExpression;
-  bool m_routeSelectionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_apiKeySelectionExpressionHasBeenSet = false;
+  bool m_corsConfigurationHasBeenSet = false;
+  bool m_credentialsArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_disableSchemaValidationHasBeenSet = false;
+  bool m_disableExecuteApiEndpointHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
+  bool m_routeKeyHasBeenSet = false;
+  bool m_routeSelectionExpressionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

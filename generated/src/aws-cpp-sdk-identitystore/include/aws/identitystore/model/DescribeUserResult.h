@@ -494,78 +494,78 @@ class DescribeUserResult {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::Vector<ExternalId> m_externalIds;
-  bool m_externalIdsHasBeenSet = false;
 
   Name m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_nickName;
-  bool m_nickNameHasBeenSet = false;
 
   Aws::String m_profileUrl;
-  bool m_profileUrlHasBeenSet = false;
 
   Aws::Vector<Email> m_emails;
-  bool m_emailsHasBeenSet = false;
 
   Aws::Vector<Address> m_addresses;
-  bool m_addressesHasBeenSet = false;
 
   Aws::Vector<PhoneNumber> m_phoneNumbers;
-  bool m_phoneNumbersHasBeenSet = false;
 
   Aws::String m_userType;
-  bool m_userTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_preferredLanguage;
-  bool m_preferredLanguageHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   UserStatus m_userStatus{UserStatus::NOT_SET};
-  bool m_userStatusHasBeenSet = false;
 
   Aws::Vector<Photo> m_photos;
-  bool m_photosHasBeenSet = false;
 
   Aws::String m_website;
-  bool m_websiteHasBeenSet = false;
 
   Aws::String m_birthdate;
-  bool m_birthdateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_externalIdsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_nickNameHasBeenSet = false;
+  bool m_profileUrlHasBeenSet = false;
+  bool m_emailsHasBeenSet = false;
+  bool m_addressesHasBeenSet = false;
+  bool m_phoneNumbersHasBeenSet = false;
+  bool m_userTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_preferredLanguageHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_userStatusHasBeenSet = false;
+  bool m_photosHasBeenSet = false;
+  bool m_websiteHasBeenSet = false;
+  bool m_birthdateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

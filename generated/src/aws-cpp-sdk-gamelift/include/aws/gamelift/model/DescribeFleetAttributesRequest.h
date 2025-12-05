@@ -97,12 +97,12 @@ class DescribeFleetAttributesRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fleetIds;
-  bool m_fleetIdsHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_fleetIdsHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

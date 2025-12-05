@@ -141,18 +141,18 @@ class SchemaDefinition {
   ///@}
  private:
   SchemaType m_type{SchemaType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Map<Aws::String, SchemaDefinition> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_required;
-  bool m_requiredHasBeenSet = false;
 
   std::shared_ptr<SchemaDefinition> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_typeHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

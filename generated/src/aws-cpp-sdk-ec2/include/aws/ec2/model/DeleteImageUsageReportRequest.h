@@ -70,9 +70,9 @@ class DeleteImageUsageReportRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_reportIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

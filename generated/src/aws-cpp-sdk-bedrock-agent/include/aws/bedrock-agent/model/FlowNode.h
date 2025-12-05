@@ -143,18 +143,18 @@ class FlowNode {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FlowNodeType m_type{FlowNodeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   std::shared_ptr<FlowNodeConfiguration> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<FlowNodeInput> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Vector<FlowNodeOutput> m_outputs;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
 };
 

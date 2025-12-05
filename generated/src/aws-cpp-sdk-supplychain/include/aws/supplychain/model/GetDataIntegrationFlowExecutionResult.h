@@ -66,9 +66,9 @@ class GetDataIntegrationFlowExecutionResult {
   ///@}
  private:
   DataIntegrationFlowExecution m_flowExecution;
-  bool m_flowExecutionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

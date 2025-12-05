@@ -183,27 +183,27 @@ class ConformancePackStatusDetail {
   ///@}
  private:
   Aws::String m_conformancePackName;
-  bool m_conformancePackNameHasBeenSet = false;
 
   Aws::String m_conformancePackId;
-  bool m_conformancePackIdHasBeenSet = false;
 
   Aws::String m_conformancePackArn;
-  bool m_conformancePackArnHasBeenSet = false;
 
   ConformancePackState m_conformancePackState{ConformancePackState::NOT_SET};
-  bool m_conformancePackStateHasBeenSet = false;
 
   Aws::String m_stackArn;
-  bool m_stackArnHasBeenSet = false;
 
   Aws::String m_conformancePackStatusReason;
-  bool m_conformancePackStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateRequestedTime{};
-  bool m_lastUpdateRequestedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateCompletedTime{};
+  bool m_conformancePackNameHasBeenSet = false;
+  bool m_conformancePackIdHasBeenSet = false;
+  bool m_conformancePackArnHasBeenSet = false;
+  bool m_conformancePackStateHasBeenSet = false;
+  bool m_stackArnHasBeenSet = false;
+  bool m_conformancePackStatusReasonHasBeenSet = false;
+  bool m_lastUpdateRequestedTimeHasBeenSet = false;
   bool m_lastUpdateCompletedTimeHasBeenSet = false;
 };
 

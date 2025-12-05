@@ -84,12 +84,12 @@ class StopApplicationRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   ConnectedEntityType m_stopConnectedEntity{ConnectedEntityType::NOT_SET};
-  bool m_stopConnectedEntityHasBeenSet = false;
 
   bool m_includeEc2InstanceShutdown{false};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_stopConnectedEntityHasBeenSet = false;
   bool m_includeEc2InstanceShutdownHasBeenSet = false;
 };
 

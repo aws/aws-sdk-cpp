@@ -109,15 +109,15 @@ class CustomStepDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   int m_timeoutSeconds{0};
-  bool m_timeoutSecondsHasBeenSet = false;
 
   Aws::String m_sourceFileLocation;
+  bool m_nameHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_timeoutSecondsHasBeenSet = false;
   bool m_sourceFileLocationHasBeenSet = false;
 };
 

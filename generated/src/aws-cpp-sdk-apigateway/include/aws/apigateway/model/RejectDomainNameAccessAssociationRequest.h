@@ -70,9 +70,9 @@ class RejectDomainNameAccessAssociationRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_domainNameAccessAssociationArn;
-  bool m_domainNameAccessAssociationArnHasBeenSet = false;
 
   Aws::String m_domainNameArn;
+  bool m_domainNameAccessAssociationArnHasBeenSet = false;
   bool m_domainNameArnHasBeenSet = false;
 };
 

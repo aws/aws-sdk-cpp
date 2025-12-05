@@ -167,24 +167,24 @@ class TransformConfigParameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ParamType m_type{ParamType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_validationRule;
-  bool m_validationRuleHasBeenSet = false;
 
   Aws::String m_validationMessage;
-  bool m_validationMessageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_value;
-  bool m_valueHasBeenSet = false;
 
   ParamType m_listType{ParamType::NOT_SET};
-  bool m_listTypeHasBeenSet = false;
 
   bool m_isOptional{false};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_validationRuleHasBeenSet = false;
+  bool m_validationMessageHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_listTypeHasBeenSet = false;
   bool m_isOptionalHasBeenSet = false;
 };
 

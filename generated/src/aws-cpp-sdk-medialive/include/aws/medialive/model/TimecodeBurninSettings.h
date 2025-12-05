@@ -84,12 +84,12 @@ class TimecodeBurninSettings {
   ///@}
  private:
   TimecodeBurninFontSize m_fontSize{TimecodeBurninFontSize::NOT_SET};
-  bool m_fontSizeHasBeenSet = false;
 
   TimecodeBurninPosition m_position{TimecodeBurninPosition::NOT_SET};
-  bool m_positionHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_fontSizeHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

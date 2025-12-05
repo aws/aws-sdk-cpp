@@ -70,9 +70,9 @@ class Parent {
   ///@}
  private:
   Aws::String m_trialName;
-  bool m_trialNameHasBeenSet = false;
 
   Aws::String m_experimentName;
+  bool m_trialNameHasBeenSet = false;
   bool m_experimentNameHasBeenSet = false;
 };
 

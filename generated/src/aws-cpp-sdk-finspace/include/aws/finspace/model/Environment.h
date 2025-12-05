@@ -249,39 +249,39 @@ class Environment {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_environmentUrl;
-  bool m_environmentUrlHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_environmentArn;
-  bool m_environmentArnHasBeenSet = false;
 
   Aws::String m_sageMakerStudioDomainUrl;
-  bool m_sageMakerStudioDomainUrlHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dedicatedServiceAccountId;
-  bool m_dedicatedServiceAccountIdHasBeenSet = false;
 
   FederationMode m_federationMode{FederationMode::NOT_SET};
-  bool m_federationModeHasBeenSet = false;
 
   FederationParameters m_federationParameters;
+  bool m_nameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_environmentUrlHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentArnHasBeenSet = false;
+  bool m_sageMakerStudioDomainUrlHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dedicatedServiceAccountIdHasBeenSet = false;
+  bool m_federationModeHasBeenSet = false;
   bool m_federationParametersHasBeenSet = false;
 };
 

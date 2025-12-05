@@ -76,9 +76,9 @@ class CapacityLimit {
   ///@}
  private:
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   Aws::String m_capacityUnit;
+  bool m_maxCapacityHasBeenSet = false;
   bool m_capacityUnitHasBeenSet = false;
 };
 

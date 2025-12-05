@@ -98,12 +98,12 @@ class UpdateWorkspaceAuthenticationRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
-  bool m_authenticationProvidersHasBeenSet = false;
 
   SamlConfiguration m_samlConfiguration;
-  bool m_samlConfigurationHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_authenticationProvidersHasBeenSet = false;
+  bool m_samlConfigurationHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

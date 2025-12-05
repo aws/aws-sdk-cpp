@@ -303,45 +303,45 @@ class ImportTask {
   ///@}
  private:
   Aws::String m_importTaskId;
-  bool m_importTaskIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_importUrl;
-  bool m_importUrlHasBeenSet = false;
 
   ImportStatus m_status{ImportStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_importRequestTime{};
-  bool m_importRequestTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_importCompletionTime{};
-  bool m_importCompletionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_importDeletedTime{};
-  bool m_importDeletedTimeHasBeenSet = false;
 
   FileClassification m_fileClassification{FileClassification::NOT_SET};
-  bool m_fileClassificationHasBeenSet = false;
 
   int m_serverImportSuccess{0};
-  bool m_serverImportSuccessHasBeenSet = false;
 
   int m_serverImportFailure{0};
-  bool m_serverImportFailureHasBeenSet = false;
 
   int m_applicationImportSuccess{0};
-  bool m_applicationImportSuccessHasBeenSet = false;
 
   int m_applicationImportFailure{0};
-  bool m_applicationImportFailureHasBeenSet = false;
 
   Aws::String m_errorsAndFailedEntriesZip;
+  bool m_importTaskIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_importUrlHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_importRequestTimeHasBeenSet = false;
+  bool m_importCompletionTimeHasBeenSet = false;
+  bool m_importDeletedTimeHasBeenSet = false;
+  bool m_fileClassificationHasBeenSet = false;
+  bool m_serverImportSuccessHasBeenSet = false;
+  bool m_serverImportFailureHasBeenSet = false;
+  bool m_applicationImportSuccessHasBeenSet = false;
+  bool m_applicationImportFailureHasBeenSet = false;
   bool m_errorsAndFailedEntriesZipHasBeenSet = false;
 };
 

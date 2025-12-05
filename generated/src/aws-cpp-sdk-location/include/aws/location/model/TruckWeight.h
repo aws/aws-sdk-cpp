@@ -68,9 +68,9 @@ class TruckWeight {
   ///@}
  private:
   double m_total{0.0};
-  bool m_totalHasBeenSet = false;
 
   VehicleWeightUnit m_unit{VehicleWeightUnit::NOT_SET};
+  bool m_totalHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

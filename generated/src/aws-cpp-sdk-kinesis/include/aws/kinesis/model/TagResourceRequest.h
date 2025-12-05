@@ -83,9 +83,9 @@ class TagResourceRequest : public KinesisRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_resourceARN;
+  bool m_tagsHasBeenSet = false;
   bool m_resourceARNHasBeenSet = false;
 };
 

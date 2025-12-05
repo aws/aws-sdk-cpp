@@ -109,15 +109,15 @@ class OAuth2ClientCredentialConfiguration {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_authorizationUrl;
-  bool m_authorizationUrlHasBeenSet = false;
 
   Aws::String m_tokenUrl;
+  bool m_secretArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_authorizationUrlHasBeenSet = false;
   bool m_tokenUrlHasBeenSet = false;
 };
 

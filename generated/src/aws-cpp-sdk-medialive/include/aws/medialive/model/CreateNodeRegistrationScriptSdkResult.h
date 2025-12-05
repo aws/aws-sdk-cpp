@@ -67,9 +67,9 @@ class CreateNodeRegistrationScriptSdkResult {
   ///@}
  private:
   Aws::String m_nodeRegistrationScript;
-  bool m_nodeRegistrationScriptHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nodeRegistrationScriptHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

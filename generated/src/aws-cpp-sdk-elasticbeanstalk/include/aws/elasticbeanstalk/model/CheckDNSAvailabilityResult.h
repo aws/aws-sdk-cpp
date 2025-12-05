@@ -83,12 +83,12 @@ class CheckDNSAvailabilityResult {
   ///@}
  private:
   bool m_available{false};
-  bool m_availableHasBeenSet = false;
 
   Aws::String m_fullyQualifiedCNAME;
-  bool m_fullyQualifiedCNAMEHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_availableHasBeenSet = false;
+  bool m_fullyQualifiedCNAMEHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

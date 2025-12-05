@@ -196,30 +196,30 @@ class DescribeGeofenceCollectionResult {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_collectionArn;
-  bool m_collectionArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   int m_geofenceCount{0};
-  bool m_geofenceCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collectionNameHasBeenSet = false;
+  bool m_collectionArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_geofenceCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

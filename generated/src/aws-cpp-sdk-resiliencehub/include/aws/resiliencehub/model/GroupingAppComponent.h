@@ -87,12 +87,12 @@ class GroupingAppComponent {
   ///@}
  private:
   Aws::String m_appComponentId;
-  bool m_appComponentIdHasBeenSet = false;
 
   Aws::String m_appComponentName;
-  bool m_appComponentNameHasBeenSet = false;
 
   Aws::String m_appComponentType;
+  bool m_appComponentIdHasBeenSet = false;
+  bool m_appComponentNameHasBeenSet = false;
   bool m_appComponentTypeHasBeenSet = false;
 };
 

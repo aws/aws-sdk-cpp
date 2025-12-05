@@ -118,12 +118,12 @@ class EvaluationDatasetMetricConfig {
   ///@}
  private:
   EvaluationTaskType m_taskType{EvaluationTaskType::NOT_SET};
-  bool m_taskTypeHasBeenSet = false;
 
   EvaluationDataset m_dataset;
-  bool m_datasetHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricNames;
+  bool m_taskTypeHasBeenSet = false;
+  bool m_datasetHasBeenSet = false;
   bool m_metricNamesHasBeenSet = false;
 };
 

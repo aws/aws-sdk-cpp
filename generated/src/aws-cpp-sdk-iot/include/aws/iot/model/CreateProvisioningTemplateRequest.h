@@ -192,27 +192,27 @@ class CreateProvisioningTemplateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_provisioningRoleArn;
-  bool m_provisioningRoleArnHasBeenSet = false;
 
   ProvisioningHook m_preProvisioningHook;
-  bool m_preProvisioningHookHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TemplateType m_type{TemplateType::NOT_SET};
+  bool m_templateNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_provisioningRoleArnHasBeenSet = false;
+  bool m_preProvisioningHookHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

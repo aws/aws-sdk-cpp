@@ -86,12 +86,12 @@ class SearchResourcesResult {
   ///@}
  private:
   Aws::Vector<ResponseItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -207,33 +207,33 @@ class UpdateEndpointResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   RoutingConfig m_routingConfig;
-  bool m_routingConfigHasBeenSet = false;
 
   ReplicationConfig m_replicationConfig;
-  bool m_replicationConfigHasBeenSet = false;
 
   Aws::Vector<EndpointEventBus> m_eventBuses;
-  bool m_eventBusesHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_endpointUrl;
-  bool m_endpointUrlHasBeenSet = false;
 
   EndpointState m_state{EndpointState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_routingConfigHasBeenSet = false;
+  bool m_replicationConfigHasBeenSet = false;
+  bool m_eventBusesHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_endpointUrlHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class ContactFlowAttributeAndCondition {
   ///@}
  private:
   Aws::Vector<TagCondition> m_tagConditions;
-  bool m_tagConditionsHasBeenSet = false;
 
   ContactFlowTypeCondition m_contactFlowTypeCondition;
+  bool m_tagConditionsHasBeenSet = false;
   bool m_contactFlowTypeConditionHasBeenSet = false;
 };
 

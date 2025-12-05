@@ -100,15 +100,15 @@ class ListQualificationRequestsResult {
   ///@}
  private:
   int m_numResults{0};
-  bool m_numResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<QualificationRequest> m_qualificationRequests;
-  bool m_qualificationRequestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_numResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_qualificationRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

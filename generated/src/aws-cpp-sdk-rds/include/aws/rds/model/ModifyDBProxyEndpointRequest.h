@@ -99,12 +99,12 @@ class ModifyDBProxyEndpointRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBProxyEndpointName;
-  bool m_dBProxyEndpointNameHasBeenSet = false;
 
   Aws::String m_newDBProxyEndpointName;
-  bool m_newDBProxyEndpointNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+  bool m_dBProxyEndpointNameHasBeenSet = false;
+  bool m_newDBProxyEndpointNameHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
 };
 

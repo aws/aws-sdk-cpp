@@ -60,9 +60,9 @@ class PutDestinationResult {
   ///@}
  private:
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

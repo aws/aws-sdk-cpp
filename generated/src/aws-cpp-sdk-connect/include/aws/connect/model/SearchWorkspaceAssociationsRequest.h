@@ -123,18 +123,18 @@ class SearchWorkspaceAssociationsRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   WorkspaceAssociationSearchFilter m_searchFilter;
-  bool m_searchFilterHasBeenSet = false;
 
   WorkspaceAssociationSearchCriteria m_searchCriteria;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_searchFilterHasBeenSet = false;
   bool m_searchCriteriaHasBeenSet = false;
 };
 

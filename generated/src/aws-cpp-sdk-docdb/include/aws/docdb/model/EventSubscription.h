@@ -238,33 +238,33 @@ class EventSubscription {
   ///@}
  private:
   Aws::String m_customerAwsId;
-  bool m_customerAwsIdHasBeenSet = false;
 
   Aws::String m_custSubscriptionId;
-  bool m_custSubscriptionIdHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_subscriptionCreationTime;
-  bool m_subscriptionCreationTimeHasBeenSet = false;
 
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceIdsList;
-  bool m_sourceIdsListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventCategoriesList;
-  bool m_eventCategoriesListHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_eventSubscriptionArn;
+  bool m_customerAwsIdHasBeenSet = false;
+  bool m_custSubscriptionIdHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subscriptionCreationTimeHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceIdsListHasBeenSet = false;
+  bool m_eventCategoriesListHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_eventSubscriptionArnHasBeenSet = false;
 };
 

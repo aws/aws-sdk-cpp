@@ -74,9 +74,9 @@ class DescribeBundleAssociationsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::Vector<BundleAssociatedResourceType> m_associatedResourceTypes;
+  bool m_bundleIdHasBeenSet = false;
   bool m_associatedResourceTypesHasBeenSet = false;
 };
 

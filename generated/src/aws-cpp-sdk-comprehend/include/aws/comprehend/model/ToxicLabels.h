@@ -78,9 +78,9 @@ class ToxicLabels {
   ///@}
  private:
   Aws::Vector<ToxicContent> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   double m_toxicity{0.0};
+  bool m_labelsHasBeenSet = false;
   bool m_toxicityHasBeenSet = false;
 };
 

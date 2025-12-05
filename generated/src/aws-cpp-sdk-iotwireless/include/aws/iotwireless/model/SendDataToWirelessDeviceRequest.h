@@ -100,15 +100,15 @@ class SendDataToWirelessDeviceRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_transmitMode{0};
-  bool m_transmitModeHasBeenSet = false;
 
   Aws::String m_payloadData;
-  bool m_payloadDataHasBeenSet = false;
 
   WirelessMetadata m_wirelessMetadata;
+  bool m_idHasBeenSet = false;
+  bool m_transmitModeHasBeenSet = false;
+  bool m_payloadDataHasBeenSet = false;
   bool m_wirelessMetadataHasBeenSet = false;
 };
 

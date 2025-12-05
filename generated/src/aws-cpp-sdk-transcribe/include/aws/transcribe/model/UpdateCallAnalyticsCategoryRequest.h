@@ -99,12 +99,12 @@ class UpdateCallAnalyticsCategoryRequest : public TranscribeServiceRequest {
   ///@}
  private:
   Aws::String m_categoryName;
-  bool m_categoryNameHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   InputType m_inputType{InputType::NOT_SET};
+  bool m_categoryNameHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_inputTypeHasBeenSet = false;
 };
 

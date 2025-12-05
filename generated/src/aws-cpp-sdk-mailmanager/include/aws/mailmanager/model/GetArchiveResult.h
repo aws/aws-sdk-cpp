@@ -190,30 +190,30 @@ class GetArchiveResult {
   ///@}
  private:
   Aws::String m_archiveId;
-  bool m_archiveIdHasBeenSet = false;
 
   Aws::String m_archiveName;
-  bool m_archiveNameHasBeenSet = false;
 
   Aws::String m_archiveArn;
-  bool m_archiveArnHasBeenSet = false;
 
   ArchiveState m_archiveState{ArchiveState::NOT_SET};
-  bool m_archiveStateHasBeenSet = false;
 
   ArchiveRetention m_retention;
-  bool m_retentionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_archiveIdHasBeenSet = false;
+  bool m_archiveNameHasBeenSet = false;
+  bool m_archiveArnHasBeenSet = false;
+  bool m_archiveStateHasBeenSet = false;
+  bool m_retentionHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -337,51 +337,51 @@ class GetModelInvocationJobResult {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ModelInvocationJobStatus m_status{ModelInvocationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
-  bool m_submitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ModelInvocationJobInputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   ModelInvocationJobOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   int m_timeoutDurationInHours{0};
-  bool m_timeoutDurationInHoursHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobExpirationTime{};
-  bool m_jobExpirationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_submitTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_timeoutDurationInHoursHasBeenSet = false;
+  bool m_jobExpirationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

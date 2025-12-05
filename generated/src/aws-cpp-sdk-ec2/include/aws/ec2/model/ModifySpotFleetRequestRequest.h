@@ -153,21 +153,21 @@ class ModifySpotFleetRequestRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<LaunchTemplateConfig> m_launchTemplateConfigs;
-  bool m_launchTemplateConfigsHasBeenSet = false;
 
   int m_onDemandTargetCapacity{0};
-  bool m_onDemandTargetCapacityHasBeenSet = false;
 
   Aws::String m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::String m_spotFleetRequestId;
-  bool m_spotFleetRequestIdHasBeenSet = false;
 
   int m_targetCapacity{0};
-  bool m_targetCapacityHasBeenSet = false;
 
   ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy{ExcessCapacityTerminationPolicy::NOT_SET};
+  bool m_launchTemplateConfigsHasBeenSet = false;
+  bool m_onDemandTargetCapacityHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_spotFleetRequestIdHasBeenSet = false;
+  bool m_targetCapacityHasBeenSet = false;
   bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 };
 

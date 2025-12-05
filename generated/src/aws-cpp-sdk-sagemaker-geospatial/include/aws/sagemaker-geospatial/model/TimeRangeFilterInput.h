@@ -68,9 +68,9 @@ class TimeRangeFilterInput {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_endTimeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

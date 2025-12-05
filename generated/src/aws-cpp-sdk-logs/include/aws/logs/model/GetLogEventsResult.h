@@ -105,15 +105,15 @@ class GetLogEventsResult {
   ///@}
  private:
   Aws::Vector<OutputLogEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_nextForwardToken;
-  bool m_nextForwardTokenHasBeenSet = false;
 
   Aws::String m_nextBackwardToken;
-  bool m_nextBackwardTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsHasBeenSet = false;
+  bool m_nextForwardTokenHasBeenSet = false;
+  bool m_nextBackwardTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

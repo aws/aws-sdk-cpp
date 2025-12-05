@@ -87,12 +87,12 @@ class ThousandSeparatorOptions {
   ///@}
  private:
   NumericSeparatorSymbol m_symbol{NumericSeparatorSymbol::NOT_SET};
-  bool m_symbolHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   DigitGroupingStyle m_groupingStyle{DigitGroupingStyle::NOT_SET};
+  bool m_symbolHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_groupingStyleHasBeenSet = false;
 };
 

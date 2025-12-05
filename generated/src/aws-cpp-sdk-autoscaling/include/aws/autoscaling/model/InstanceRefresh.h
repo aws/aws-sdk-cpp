@@ -298,42 +298,42 @@ class InstanceRefresh {
   ///@}
  private:
   Aws::String m_instanceRefreshId;
-  bool m_instanceRefreshIdHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   InstanceRefreshStatus m_status{InstanceRefreshStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_percentageComplete{0};
-  bool m_percentageCompleteHasBeenSet = false;
 
   int m_instancesToUpdate{0};
-  bool m_instancesToUpdateHasBeenSet = false;
 
   InstanceRefreshProgressDetails m_progressDetails;
-  bool m_progressDetailsHasBeenSet = false;
 
   RefreshPreferences m_preferences;
-  bool m_preferencesHasBeenSet = false;
 
   DesiredConfiguration m_desiredConfiguration;
-  bool m_desiredConfigurationHasBeenSet = false;
 
   RollbackDetails m_rollbackDetails;
-  bool m_rollbackDetailsHasBeenSet = false;
 
   RefreshStrategy m_strategy{RefreshStrategy::NOT_SET};
+  bool m_instanceRefreshIdHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_percentageCompleteHasBeenSet = false;
+  bool m_instancesToUpdateHasBeenSet = false;
+  bool m_progressDetailsHasBeenSet = false;
+  bool m_preferencesHasBeenSet = false;
+  bool m_desiredConfigurationHasBeenSet = false;
+  bool m_rollbackDetailsHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
 };
 

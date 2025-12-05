@@ -83,12 +83,12 @@ class GetFunctionCodeSigningConfigResult {
   ///@}
  private:
   Aws::String m_codeSigningConfigArn;
-  bool m_codeSigningConfigArnHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeSigningConfigArnHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

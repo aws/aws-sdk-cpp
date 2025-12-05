@@ -93,15 +93,15 @@ class DependencyCounts {
   ///@}
  private:
   int m_dependenciesResolved{0};
-  bool m_dependenciesResolvedHasBeenSet = false;
 
   int m_dependenciesUnresolved{0};
-  bool m_dependenciesUnresolvedHasBeenSet = false;
 
   int m_consumersResolved{0};
-  bool m_consumersResolvedHasBeenSet = false;
 
   int m_consumersUnresolved{0};
+  bool m_dependenciesResolvedHasBeenSet = false;
+  bool m_dependenciesUnresolvedHasBeenSet = false;
+  bool m_consumersResolvedHasBeenSet = false;
   bool m_consumersUnresolvedHasBeenSet = false;
 };
 

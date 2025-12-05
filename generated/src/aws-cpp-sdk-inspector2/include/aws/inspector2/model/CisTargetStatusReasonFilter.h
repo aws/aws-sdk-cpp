@@ -65,9 +65,9 @@ class CisTargetStatusReasonFilter {
   ///@}
  private:
   CisTargetStatusComparison m_comparison{CisTargetStatusComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   CisTargetStatusReason m_value{CisTargetStatusReason::NOT_SET};
+  bool m_comparisonHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

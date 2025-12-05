@@ -60,9 +60,9 @@ class StartIngestionJobResult {
   ///@}
  private:
   IngestionJob m_ingestionJob;
-  bool m_ingestionJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestionJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

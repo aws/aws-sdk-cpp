@@ -58,9 +58,9 @@ class ListTagsForResourceResult {
   ///@}
  private:
   TagsModel m_tagsModel;
-  bool m_tagsModelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagsModelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

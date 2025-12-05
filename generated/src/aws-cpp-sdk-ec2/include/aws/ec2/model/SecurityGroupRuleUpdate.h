@@ -71,9 +71,9 @@ class SecurityGroupRuleUpdate {
   ///@}
  private:
   Aws::String m_securityGroupRuleId;
-  bool m_securityGroupRuleIdHasBeenSet = false;
 
   SecurityGroupRuleRequest m_securityGroupRule;
+  bool m_securityGroupRuleIdHasBeenSet = false;
   bool m_securityGroupRuleHasBeenSet = false;
 };
 

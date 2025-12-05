@@ -135,18 +135,18 @@ class CreateVpnGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   GatewayType m_type{GatewayType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_amazonSideAsnHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

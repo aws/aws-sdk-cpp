@@ -65,9 +65,9 @@ class StopSpeakerSearchTaskRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_speakerSearchTaskId;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_speakerSearchTaskIdHasBeenSet = false;
 };
 

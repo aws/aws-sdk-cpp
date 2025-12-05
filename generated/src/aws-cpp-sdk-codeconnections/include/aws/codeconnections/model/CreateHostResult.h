@@ -84,12 +84,12 @@ class CreateHostResult {
   ///@}
  private:
   Aws::String m_hostArn;
-  bool m_hostArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

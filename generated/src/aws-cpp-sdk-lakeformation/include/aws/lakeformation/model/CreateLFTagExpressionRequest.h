@@ -112,15 +112,15 @@ class CreateLFTagExpressionRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::Vector<LFTag> m_expression;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

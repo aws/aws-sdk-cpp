@@ -70,9 +70,9 @@ class AwsWafv2WebAclActionDetails {
   ///@}
  private:
   AwsWafv2ActionAllowDetails m_allow;
-  bool m_allowHasBeenSet = false;
 
   AwsWafv2ActionBlockDetails m_block;
+  bool m_allowHasBeenSet = false;
   bool m_blockHasBeenSet = false;
 };
 

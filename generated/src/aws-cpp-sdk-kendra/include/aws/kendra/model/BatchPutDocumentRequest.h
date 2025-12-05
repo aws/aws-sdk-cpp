@@ -128,15 +128,15 @@ class BatchPutDocumentRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Document> m_documents;
-  bool m_documentsHasBeenSet = false;
 
   CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
+  bool m_indexIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_documentsHasBeenSet = false;
   bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
 };
 

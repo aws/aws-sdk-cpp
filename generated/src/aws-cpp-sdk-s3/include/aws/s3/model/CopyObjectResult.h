@@ -243,39 +243,39 @@ class CopyObjectResult {
   ///@}
  private:
   Aws::String m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_copySourceVersionId;
-  bool m_copySourceVersionIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
-  bool m_sSEKMSKeyIdHasBeenSet = false;
 
   Aws::String m_sSEKMSEncryptionContext;
-  bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   CopyObjectResultDetails m_copyObjectResultDetails;
-  bool m_copyObjectResultDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_expirationHasBeenSet = false;
+  bool m_copySourceVersionIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_sSEKMSKeyIdHasBeenSet = false;
+  bool m_sSEKMSEncryptionContextHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
+  bool m_copyObjectResultDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

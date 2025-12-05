@@ -62,9 +62,9 @@ class InvalidSensorData {
   ///@}
  private:
   int m_affectedSensorCount{0};
-  bool m_affectedSensorCountHasBeenSet = false;
 
   int m_totalNumberOfInvalidValues{0};
+  bool m_affectedSensorCountHasBeenSet = false;
   bool m_totalNumberOfInvalidValuesHasBeenSet = false;
 };
 

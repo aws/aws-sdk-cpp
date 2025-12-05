@@ -70,9 +70,9 @@ class UserQuickConnectConfig {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_contactFlowId;
+  bool m_userIdHasBeenSet = false;
   bool m_contactFlowIdHasBeenSet = false;
 };
 

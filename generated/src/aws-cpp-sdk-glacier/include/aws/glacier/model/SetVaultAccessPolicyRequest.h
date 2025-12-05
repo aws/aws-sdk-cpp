@@ -91,12 +91,12 @@ class SetVaultAccessPolicyRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   VaultAccessPolicy m_policy;
+  bool m_accountIdHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

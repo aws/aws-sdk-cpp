@@ -164,24 +164,24 @@ class ListResourceRecordSetsResult {
   ///@}
  private:
   Aws::Vector<ResourceRecordSet> m_resourceRecordSets;
-  bool m_resourceRecordSetsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_nextRecordName;
-  bool m_nextRecordNameHasBeenSet = false;
 
   RRType m_nextRecordType{RRType::NOT_SET};
-  bool m_nextRecordTypeHasBeenSet = false;
 
   Aws::String m_nextRecordIdentifier;
-  bool m_nextRecordIdentifierHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceRecordSetsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_nextRecordNameHasBeenSet = false;
+  bool m_nextRecordTypeHasBeenSet = false;
+  bool m_nextRecordIdentifierHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

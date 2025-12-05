@@ -331,54 +331,54 @@ class GetTableResult {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   TableStatus m_status{TableStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SchemaDefinition m_schemaDefinition;
-  bool m_schemaDefinitionHasBeenSet = false;
 
   CapacitySpecificationSummary m_capacitySpecification;
-  bool m_capacitySpecificationHasBeenSet = false;
 
   EncryptionSpecification m_encryptionSpecification;
-  bool m_encryptionSpecificationHasBeenSet = false;
 
   PointInTimeRecoverySummary m_pointInTimeRecovery;
-  bool m_pointInTimeRecoveryHasBeenSet = false;
 
   TimeToLive m_ttl;
-  bool m_ttlHasBeenSet = false;
 
   int m_defaultTimeToLive{0};
-  bool m_defaultTimeToLiveHasBeenSet = false;
 
   Comment m_comment;
-  bool m_commentHasBeenSet = false;
 
   ClientSideTimestamps m_clientSideTimestamps;
-  bool m_clientSideTimestampsHasBeenSet = false;
 
   Aws::Vector<ReplicaSpecificationSummary> m_replicaSpecifications;
-  bool m_replicaSpecificationsHasBeenSet = false;
 
   Aws::String m_latestStreamArn;
-  bool m_latestStreamArnHasBeenSet = false;
 
   CdcSpecificationSummary m_cdcSpecification;
-  bool m_cdcSpecificationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_schemaDefinitionHasBeenSet = false;
+  bool m_capacitySpecificationHasBeenSet = false;
+  bool m_encryptionSpecificationHasBeenSet = false;
+  bool m_pointInTimeRecoveryHasBeenSet = false;
+  bool m_ttlHasBeenSet = false;
+  bool m_defaultTimeToLiveHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_clientSideTimestampsHasBeenSet = false;
+  bool m_replicaSpecificationsHasBeenSet = false;
+  bool m_latestStreamArnHasBeenSet = false;
+  bool m_cdcSpecificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

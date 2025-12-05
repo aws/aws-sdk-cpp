@@ -93,12 +93,12 @@ class ColumnHierarchy {
   ///@}
  private:
   ExplicitHierarchy m_explicitHierarchy;
-  bool m_explicitHierarchyHasBeenSet = false;
 
   DateTimeHierarchy m_dateTimeHierarchy;
-  bool m_dateTimeHierarchyHasBeenSet = false;
 
   PredefinedHierarchy m_predefinedHierarchy;
+  bool m_explicitHierarchyHasBeenSet = false;
+  bool m_dateTimeHierarchyHasBeenSet = false;
   bool m_predefinedHierarchyHasBeenSet = false;
 };
 

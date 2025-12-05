@@ -67,9 +67,9 @@ class ListMetadataTransferJobsFilter {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   MetadataTransferJobState m_state{MetadataTransferJobState::NOT_SET};
+  bool m_workspaceIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

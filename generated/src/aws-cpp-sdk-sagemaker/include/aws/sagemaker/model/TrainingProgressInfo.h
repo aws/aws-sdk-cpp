@@ -94,15 +94,15 @@ class TrainingProgressInfo {
   ///@}
  private:
   long long m_totalStepCountPerEpoch{0};
-  bool m_totalStepCountPerEpochHasBeenSet = false;
 
   long long m_currentStep{0};
-  bool m_currentStepHasBeenSet = false;
 
   long long m_currentEpoch{0};
-  bool m_currentEpochHasBeenSet = false;
 
   long long m_maxEpoch{0};
+  bool m_totalStepCountPerEpochHasBeenSet = false;
+  bool m_currentStepHasBeenSet = false;
+  bool m_currentEpochHasBeenSet = false;
   bool m_maxEpochHasBeenSet = false;
 };
 

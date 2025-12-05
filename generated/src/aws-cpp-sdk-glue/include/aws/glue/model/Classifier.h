@@ -115,15 +115,15 @@ class Classifier {
   ///@}
  private:
   GrokClassifier m_grokClassifier;
-  bool m_grokClassifierHasBeenSet = false;
 
   XMLClassifier m_xMLClassifier;
-  bool m_xMLClassifierHasBeenSet = false;
 
   JsonClassifier m_jsonClassifier;
-  bool m_jsonClassifierHasBeenSet = false;
 
   CsvClassifier m_csvClassifier;
+  bool m_grokClassifierHasBeenSet = false;
+  bool m_xMLClassifierHasBeenSet = false;
+  bool m_jsonClassifierHasBeenSet = false;
   bool m_csvClassifierHasBeenSet = false;
 };
 

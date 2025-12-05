@@ -147,18 +147,18 @@ class AssessmentConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_customerDnsIps;
-  bool m_customerDnsIpsHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   DirectoryVpcSettings m_vpcSettings;
-  bool m_vpcSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_customerDnsIpsHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_vpcSettingsHasBeenSet = false;
+  bool m_instanceIdsHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

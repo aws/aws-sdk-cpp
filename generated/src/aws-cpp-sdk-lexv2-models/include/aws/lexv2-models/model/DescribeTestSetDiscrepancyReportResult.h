@@ -205,33 +205,33 @@ class DescribeTestSetDiscrepancyReportResult {
   ///@}
  private:
   Aws::String m_testSetDiscrepancyReportId;
-  bool m_testSetDiscrepancyReportIdHasBeenSet = false;
 
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   TestSetDiscrepancyReportResourceTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   TestSetDiscrepancyReportStatus m_testSetDiscrepancyReportStatus{TestSetDiscrepancyReportStatus::NOT_SET};
-  bool m_testSetDiscrepancyReportStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDataTime{};
-  bool m_lastUpdatedDataTimeHasBeenSet = false;
 
   TestSetDiscrepancyErrors m_testSetDiscrepancyTopErrors;
-  bool m_testSetDiscrepancyTopErrorsHasBeenSet = false;
 
   Aws::String m_testSetDiscrepancyRawOutputUrl;
-  bool m_testSetDiscrepancyRawOutputUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testSetDiscrepancyReportIdHasBeenSet = false;
+  bool m_testSetIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_testSetDiscrepancyReportStatusHasBeenSet = false;
+  bool m_lastUpdatedDataTimeHasBeenSet = false;
+  bool m_testSetDiscrepancyTopErrorsHasBeenSet = false;
+  bool m_testSetDiscrepancyRawOutputUrlHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

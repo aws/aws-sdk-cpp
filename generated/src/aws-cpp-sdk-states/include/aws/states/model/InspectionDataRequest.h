@@ -124,18 +124,18 @@ class InspectionDataRequest {
   ///@}
  private:
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_headers;
-  bool m_headersHasBeenSet = false;
 
   Aws::String m_body;
+  bool m_protocolHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
 };
 

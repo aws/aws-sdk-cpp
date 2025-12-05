@@ -70,9 +70,9 @@ class DeleteWorkloadRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workloadIdHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

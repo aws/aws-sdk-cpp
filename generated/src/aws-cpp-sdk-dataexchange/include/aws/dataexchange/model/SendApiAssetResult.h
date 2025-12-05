@@ -78,12 +78,12 @@ class SendApiAssetResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseHeaders;
-  bool m_responseHeadersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
+  bool m_responseHeadersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -127,15 +127,15 @@ class PendingDeploymentSummary {
   ///@}
  private:
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   Aws::Vector<PendingProductionVariantSummary> m_productionVariants;
-  bool m_productionVariantsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Vector<PendingProductionVariantSummary> m_shadowProductionVariants;
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_productionVariantsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_shadowProductionVariantsHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class GetComplianceDetailsByConfigRuleResult {
   ///@}
  private:
   Aws::Vector<EvaluationResult> m_evaluationResults;
-  bool m_evaluationResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class IngestionStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_latestIngestionSuccessTime{};
-  bool m_latestIngestionSuccessTimeHasBeenSet = false;
 
   Aws::String m_latestIngestionSuccessEventID;
-  bool m_latestIngestionSuccessEventIDHasBeenSet = false;
 
   Aws::String m_latestIngestionErrorCode;
-  bool m_latestIngestionErrorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestIngestionAttemptTime{};
-  bool m_latestIngestionAttemptTimeHasBeenSet = false;
 
   Aws::String m_latestIngestionAttemptEventID;
+  bool m_latestIngestionSuccessTimeHasBeenSet = false;
+  bool m_latestIngestionSuccessEventIDHasBeenSet = false;
+  bool m_latestIngestionErrorCodeHasBeenSet = false;
+  bool m_latestIngestionAttemptTimeHasBeenSet = false;
   bool m_latestIngestionAttemptEventIDHasBeenSet = false;
 };
 

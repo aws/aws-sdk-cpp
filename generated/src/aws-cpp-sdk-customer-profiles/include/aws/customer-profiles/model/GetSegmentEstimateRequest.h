@@ -66,9 +66,9 @@ class GetSegmentEstimateRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_estimateId;
+  bool m_domainNameHasBeenSet = false;
   bool m_estimateIdHasBeenSet = false;
 };
 

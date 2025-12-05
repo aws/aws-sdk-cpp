@@ -69,9 +69,9 @@ class DistributionIdOwner {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
+  bool m_distributionIdHasBeenSet = false;
   bool m_ownerAccountIdHasBeenSet = false;
 };
 

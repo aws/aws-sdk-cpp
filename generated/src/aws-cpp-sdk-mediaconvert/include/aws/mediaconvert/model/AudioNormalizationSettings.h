@@ -167,24 +167,24 @@ class AudioNormalizationSettings {
   ///@}
  private:
   AudioNormalizationAlgorithm m_algorithm{AudioNormalizationAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   AudioNormalizationAlgorithmControl m_algorithmControl{AudioNormalizationAlgorithmControl::NOT_SET};
-  bool m_algorithmControlHasBeenSet = false;
 
   int m_correctionGateLevel{0};
-  bool m_correctionGateLevelHasBeenSet = false;
 
   AudioNormalizationLoudnessLogging m_loudnessLogging{AudioNormalizationLoudnessLogging::NOT_SET};
-  bool m_loudnessLoggingHasBeenSet = false;
 
   AudioNormalizationPeakCalculation m_peakCalculation{AudioNormalizationPeakCalculation::NOT_SET};
-  bool m_peakCalculationHasBeenSet = false;
 
   double m_targetLkfs{0.0};
-  bool m_targetLkfsHasBeenSet = false;
 
   double m_truePeakLimiterThreshold{0.0};
+  bool m_algorithmHasBeenSet = false;
+  bool m_algorithmControlHasBeenSet = false;
+  bool m_correctionGateLevelHasBeenSet = false;
+  bool m_loudnessLoggingHasBeenSet = false;
+  bool m_peakCalculationHasBeenSet = false;
+  bool m_targetLkfsHasBeenSet = false;
   bool m_truePeakLimiterThresholdHasBeenSet = false;
 };
 

@@ -290,33 +290,33 @@ class CalculateRouteMatrixRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_calculatorName;
-  bool m_calculatorNameHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<double>> m_departurePositions;
-  bool m_departurePositionsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<double>> m_destinationPositions;
-  bool m_destinationPositionsHasBeenSet = false;
 
   TravelMode m_travelMode{TravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_departureTime{};
-  bool m_departureTimeHasBeenSet = false;
 
   bool m_departNow{false};
-  bool m_departNowHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
-  bool m_distanceUnitHasBeenSet = false;
 
   CalculateRouteCarModeOptions m_carModeOptions;
-  bool m_carModeOptionsHasBeenSet = false;
 
   CalculateRouteTruckModeOptions m_truckModeOptions;
-  bool m_truckModeOptionsHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_calculatorNameHasBeenSet = false;
+  bool m_departurePositionsHasBeenSet = false;
+  bool m_destinationPositionsHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_departNowHasBeenSet = false;
+  bool m_distanceUnitHasBeenSet = false;
+  bool m_carModeOptionsHasBeenSet = false;
+  bool m_truckModeOptionsHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

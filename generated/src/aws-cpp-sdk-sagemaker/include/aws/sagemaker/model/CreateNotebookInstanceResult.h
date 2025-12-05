@@ -59,9 +59,9 @@ class CreateNotebookInstanceResult {
   ///@}
  private:
   Aws::String m_notebookInstanceArn;
-  bool m_notebookInstanceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookInstanceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

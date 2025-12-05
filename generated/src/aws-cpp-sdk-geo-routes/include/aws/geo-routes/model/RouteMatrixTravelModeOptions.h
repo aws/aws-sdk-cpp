@@ -92,12 +92,12 @@ class RouteMatrixTravelModeOptions {
   ///@}
  private:
   RouteMatrixCarOptions m_car;
-  bool m_carHasBeenSet = false;
 
   RouteMatrixScooterOptions m_scooter;
-  bool m_scooterHasBeenSet = false;
 
   RouteMatrixTruckOptions m_truck;
+  bool m_carHasBeenSet = false;
+  bool m_scooterHasBeenSet = false;
   bool m_truckHasBeenSet = false;
 };
 

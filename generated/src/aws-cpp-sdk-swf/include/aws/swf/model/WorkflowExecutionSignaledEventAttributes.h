@@ -112,15 +112,15 @@ class WorkflowExecutionSignaledEventAttributes {
   ///@}
  private:
   Aws::String m_signalName;
-  bool m_signalNameHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   WorkflowExecution m_externalWorkflowExecution;
-  bool m_externalWorkflowExecutionHasBeenSet = false;
 
   long long m_externalInitiatedEventId{0};
+  bool m_signalNameHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_externalWorkflowExecutionHasBeenSet = false;
   bool m_externalInitiatedEventIdHasBeenSet = false;
 };
 

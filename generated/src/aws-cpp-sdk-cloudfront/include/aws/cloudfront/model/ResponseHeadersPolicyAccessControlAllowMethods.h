@@ -83,9 +83,9 @@ class ResponseHeadersPolicyAccessControlAllowMethods {
   ///@}
  private:
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<ResponseHeadersPolicyAccessControlAllowMethodsValues> m_items;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

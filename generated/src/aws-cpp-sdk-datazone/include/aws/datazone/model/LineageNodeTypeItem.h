@@ -203,30 +203,30 @@ class LineageNodeTypeItem {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Map<Aws::String, FormEntryOutput> m_formsOutput;
-  bool m_formsOutputHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
 };
 

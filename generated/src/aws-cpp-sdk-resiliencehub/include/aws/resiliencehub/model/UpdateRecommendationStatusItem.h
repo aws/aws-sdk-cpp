@@ -87,12 +87,12 @@ class UpdateRecommendationStatusItem {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_targetAccountId;
-  bool m_targetAccountIdHasBeenSet = false;
 
   Aws::String m_targetRegion;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_targetAccountIdHasBeenSet = false;
   bool m_targetRegionHasBeenSet = false;
 };
 

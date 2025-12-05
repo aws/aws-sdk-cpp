@@ -155,21 +155,21 @@ class GetRelationalDatabaseLogEventsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   bool m_startFromHead{false};
-  bool m_startFromHeadHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_relationalDatabaseNameHasBeenSet = false;
+  bool m_logStreamNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_startFromHeadHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

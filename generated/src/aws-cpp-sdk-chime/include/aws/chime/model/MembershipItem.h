@@ -68,9 +68,9 @@ class MembershipItem {
   ///@}
  private:
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   RoomMembershipRole m_role{RoomMembershipRole::NOT_SET};
+  bool m_memberIdHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

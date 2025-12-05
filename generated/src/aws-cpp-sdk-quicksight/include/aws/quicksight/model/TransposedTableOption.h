@@ -87,12 +87,12 @@ class TransposedTableOption {
   ///@}
  private:
   int m_columnIndex{0};
-  bool m_columnIndexHasBeenSet = false;
 
   Aws::String m_columnWidth;
-  bool m_columnWidthHasBeenSet = false;
 
   TransposedColumnType m_columnType{TransposedColumnType::NOT_SET};
+  bool m_columnIndexHasBeenSet = false;
+  bool m_columnWidthHasBeenSet = false;
   bool m_columnTypeHasBeenSet = false;
 };
 

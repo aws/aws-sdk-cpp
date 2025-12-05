@@ -671,96 +671,96 @@ class Job {
   ///@}
  private:
   AccelerationSettings m_accelerationSettings;
-  bool m_accelerationSettingsHasBeenSet = false;
 
   AccelerationStatus m_accelerationStatus{AccelerationStatus::NOT_SET};
-  bool m_accelerationStatusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   BillingTagsSource m_billingTagsSource{BillingTagsSource::NOT_SET};
-  bool m_billingTagsSourceHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   JobPhase m_currentPhase{JobPhase::NOT_SET};
-  bool m_currentPhaseHasBeenSet = false;
 
   int m_errorCode{0};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<HopDestination> m_hopDestinations;
-  bool m_hopDestinationsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_jobEngineVersionRequested;
-  bool m_jobEngineVersionRequestedHasBeenSet = false;
 
   Aws::String m_jobEngineVersionUsed;
-  bool m_jobEngineVersionUsedHasBeenSet = false;
 
   int m_jobPercentComplete{0};
-  bool m_jobPercentCompleteHasBeenSet = false;
 
   Aws::String m_jobTemplate;
-  bool m_jobTemplateHasBeenSet = false;
 
   Aws::String m_lastShareDetails;
-  bool m_lastShareDetailsHasBeenSet = false;
 
   JobMessages m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::Vector<OutputGroupDetail> m_outputGroupDetails;
-  bool m_outputGroupDetailsHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_queue;
-  bool m_queueHasBeenSet = false;
 
   Aws::Vector<QueueTransition> m_queueTransitions;
-  bool m_queueTransitionsHasBeenSet = false;
 
   int m_retryCount{0};
-  bool m_retryCountHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   JobSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-  bool m_shareStatusHasBeenSet = false;
 
   SimulateReservedQueue m_simulateReservedQueue{SimulateReservedQueue::NOT_SET};
-  bool m_simulateReservedQueueHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusUpdateInterval m_statusUpdateInterval{StatusUpdateInterval::NOT_SET};
-  bool m_statusUpdateIntervalHasBeenSet = false;
 
   Timing m_timing;
-  bool m_timingHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userMetadata;
-  bool m_userMetadataHasBeenSet = false;
 
   Aws::Vector<WarningGroup> m_warnings;
+  bool m_accelerationSettingsHasBeenSet = false;
+  bool m_accelerationStatusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_billingTagsSourceHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_currentPhaseHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_hopDestinationsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_jobEngineVersionRequestedHasBeenSet = false;
+  bool m_jobEngineVersionUsedHasBeenSet = false;
+  bool m_jobPercentCompleteHasBeenSet = false;
+  bool m_jobTemplateHasBeenSet = false;
+  bool m_lastShareDetailsHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_outputGroupDetailsHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_queueHasBeenSet = false;
+  bool m_queueTransitionsHasBeenSet = false;
+  bool m_retryCountHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_shareStatusHasBeenSet = false;
+  bool m_simulateReservedQueueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusUpdateIntervalHasBeenSet = false;
+  bool m_timingHasBeenSet = false;
+  bool m_userMetadataHasBeenSet = false;
   bool m_warningsHasBeenSet = false;
 };
 

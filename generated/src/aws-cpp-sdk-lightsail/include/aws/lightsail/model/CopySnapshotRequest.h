@@ -162,21 +162,21 @@ class CopySnapshotRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_sourceSnapshotName;
-  bool m_sourceSnapshotNameHasBeenSet = false;
 
   Aws::String m_sourceResourceName;
-  bool m_sourceResourceNameHasBeenSet = false;
 
   Aws::String m_restoreDate;
-  bool m_restoreDateHasBeenSet = false;
 
   bool m_useLatestRestorableAutoSnapshot{false};
-  bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
 
   Aws::String m_targetSnapshotName;
-  bool m_targetSnapshotNameHasBeenSet = false;
 
   RegionName m_sourceRegion{RegionName::NOT_SET};
+  bool m_sourceSnapshotNameHasBeenSet = false;
+  bool m_sourceResourceNameHasBeenSet = false;
+  bool m_restoreDateHasBeenSet = false;
+  bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
+  bool m_targetSnapshotNameHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

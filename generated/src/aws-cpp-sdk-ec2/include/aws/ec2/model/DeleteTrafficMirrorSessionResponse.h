@@ -60,9 +60,9 @@ class DeleteTrafficMirrorSessionResponse {
   ///@}
  private:
   Aws::String m_trafficMirrorSessionId;
-  bool m_trafficMirrorSessionIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficMirrorSessionIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

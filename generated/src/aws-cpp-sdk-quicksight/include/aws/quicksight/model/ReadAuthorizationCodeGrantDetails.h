@@ -89,12 +89,12 @@ class ReadAuthorizationCodeGrantDetails {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_tokenEndpoint;
-  bool m_tokenEndpointHasBeenSet = false;
 
   Aws::String m_authorizationEndpoint;
+  bool m_clientIdHasBeenSet = false;
+  bool m_tokenEndpointHasBeenSet = false;
   bool m_authorizationEndpointHasBeenSet = false;
 };
 

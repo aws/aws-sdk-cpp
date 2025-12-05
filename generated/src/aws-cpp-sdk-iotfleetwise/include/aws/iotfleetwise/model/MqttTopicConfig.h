@@ -77,9 +77,9 @@ class MqttTopicConfig {
   ///@}
  private:
   Aws::String m_mqttTopicArn;
-  bool m_mqttTopicArnHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_mqttTopicArnHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

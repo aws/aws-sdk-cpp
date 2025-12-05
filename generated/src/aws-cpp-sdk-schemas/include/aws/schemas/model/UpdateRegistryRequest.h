@@ -68,9 +68,9 @@ class UpdateRegistryRequest : public SchemasRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_registryName;
+  bool m_descriptionHasBeenSet = false;
   bool m_registryNameHasBeenSet = false;
 };
 

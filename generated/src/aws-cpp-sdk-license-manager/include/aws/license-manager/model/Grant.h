@@ -237,36 +237,36 @@ class Grant {
   ///@}
  private:
   Aws::String m_grantArn;
-  bool m_grantArnHasBeenSet = false;
 
   Aws::String m_grantName;
-  bool m_grantNameHasBeenSet = false;
 
   Aws::String m_parentArn;
-  bool m_parentArnHasBeenSet = false;
 
   Aws::String m_licenseArn;
-  bool m_licenseArnHasBeenSet = false;
 
   Aws::String m_granteePrincipalArn;
-  bool m_granteePrincipalArnHasBeenSet = false;
 
   Aws::String m_homeRegion;
-  bool m_homeRegionHasBeenSet = false;
 
   GrantStatus m_grantStatus{GrantStatus::NOT_SET};
-  bool m_grantStatusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<AllowedOperation> m_grantedOperations;
-  bool m_grantedOperationsHasBeenSet = false;
 
   Options m_options;
+  bool m_grantArnHasBeenSet = false;
+  bool m_grantNameHasBeenSet = false;
+  bool m_parentArnHasBeenSet = false;
+  bool m_licenseArnHasBeenSet = false;
+  bool m_granteePrincipalArnHasBeenSet = false;
+  bool m_homeRegionHasBeenSet = false;
+  bool m_grantStatusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_grantedOperationsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

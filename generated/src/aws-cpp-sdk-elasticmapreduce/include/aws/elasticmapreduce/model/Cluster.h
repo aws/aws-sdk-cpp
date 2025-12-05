@@ -757,111 +757,111 @@ class Cluster {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ClusterStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Ec2InstanceAttributes m_ec2InstanceAttributes;
-  bool m_ec2InstanceAttributesHasBeenSet = false;
 
   InstanceCollectionType m_instanceCollectionType{InstanceCollectionType::NOT_SET};
-  bool m_instanceCollectionTypeHasBeenSet = false;
 
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_logEncryptionKmsKeyId;
-  bool m_logEncryptionKmsKeyIdHasBeenSet = false;
 
   Aws::String m_requestedAmiVersion;
-  bool m_requestedAmiVersionHasBeenSet = false;
 
   Aws::String m_runningAmiVersion;
-  bool m_runningAmiVersionHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   bool m_autoTerminate{false};
-  bool m_autoTerminateHasBeenSet = false;
 
   bool m_terminationProtected{false};
-  bool m_terminationProtectedHasBeenSet = false;
 
   bool m_unhealthyNodeReplacement{false};
-  bool m_unhealthyNodeReplacementHasBeenSet = false;
 
   bool m_visibleToAllUsers{false};
-  bool m_visibleToAllUsersHasBeenSet = false;
 
   Aws::Vector<Application> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   int m_normalizedInstanceHours{0};
-  bool m_normalizedInstanceHoursHasBeenSet = false;
 
   Aws::String m_masterPublicDnsName;
-  bool m_masterPublicDnsNameHasBeenSet = false;
 
   Aws::Vector<Configuration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::String m_autoScalingRole;
-  bool m_autoScalingRoleHasBeenSet = false;
 
   ScaleDownBehavior m_scaleDownBehavior{ScaleDownBehavior::NOT_SET};
-  bool m_scaleDownBehaviorHasBeenSet = false;
 
   Aws::String m_customAmiId;
-  bool m_customAmiIdHasBeenSet = false;
 
   int m_ebsRootVolumeSize{0};
-  bool m_ebsRootVolumeSizeHasBeenSet = false;
 
   RepoUpgradeOnBoot m_repoUpgradeOnBoot{RepoUpgradeOnBoot::NOT_SET};
-  bool m_repoUpgradeOnBootHasBeenSet = false;
 
   KerberosAttributes m_kerberosAttributes;
-  bool m_kerberosAttributesHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   int m_stepConcurrencyLevel{0};
-  bool m_stepConcurrencyLevelHasBeenSet = false;
 
   Aws::Vector<PlacementGroupConfig> m_placementGroups;
-  bool m_placementGroupsHasBeenSet = false;
 
   Aws::String m_oSReleaseLabel;
-  bool m_oSReleaseLabelHasBeenSet = false;
 
   int m_ebsRootVolumeIops{0};
-  bool m_ebsRootVolumeIopsHasBeenSet = false;
 
   int m_ebsRootVolumeThroughput{0};
-  bool m_ebsRootVolumeThroughputHasBeenSet = false;
 
   bool m_extendedSupport{false};
-  bool m_extendedSupportHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_ec2InstanceAttributesHasBeenSet = false;
+  bool m_instanceCollectionTypeHasBeenSet = false;
+  bool m_logUriHasBeenSet = false;
+  bool m_logEncryptionKmsKeyIdHasBeenSet = false;
+  bool m_requestedAmiVersionHasBeenSet = false;
+  bool m_runningAmiVersionHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_autoTerminateHasBeenSet = false;
+  bool m_terminationProtectedHasBeenSet = false;
+  bool m_unhealthyNodeReplacementHasBeenSet = false;
+  bool m_visibleToAllUsersHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_normalizedInstanceHoursHasBeenSet = false;
+  bool m_masterPublicDnsNameHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_autoScalingRoleHasBeenSet = false;
+  bool m_scaleDownBehaviorHasBeenSet = false;
+  bool m_customAmiIdHasBeenSet = false;
+  bool m_ebsRootVolumeSizeHasBeenSet = false;
+  bool m_repoUpgradeOnBootHasBeenSet = false;
+  bool m_kerberosAttributesHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_stepConcurrencyLevelHasBeenSet = false;
+  bool m_placementGroupsHasBeenSet = false;
+  bool m_oSReleaseLabelHasBeenSet = false;
+  bool m_ebsRootVolumeIopsHasBeenSet = false;
+  bool m_ebsRootVolumeThroughputHasBeenSet = false;
+  bool m_extendedSupportHasBeenSet = false;
   bool m_monitoringConfigurationHasBeenSet = false;
 };
 

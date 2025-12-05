@@ -204,27 +204,27 @@ class UpdateFileSystemWindowsConfiguration {
   ///@}
  private:
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;
-  bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
   WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
-  bool m_auditLogConfigurationHasBeenSet = false;
 
   DiskIopsConfiguration m_diskIopsConfiguration;
-  bool m_diskIopsConfigurationHasBeenSet = false;
 
   WindowsFsrmConfiguration m_fsrmConfiguration;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
+  bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
+  bool m_auditLogConfigurationHasBeenSet = false;
+  bool m_diskIopsConfigurationHasBeenSet = false;
   bool m_fsrmConfigurationHasBeenSet = false;
 };
 

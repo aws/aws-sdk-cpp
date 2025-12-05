@@ -260,39 +260,39 @@ class SnapshotTierStatus {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   SnapshotState m_status{SnapshotState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   StorageTier m_storageTier{StorageTier::NOT_SET};
-  bool m_storageTierHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastTieringStartTime{};
-  bool m_lastTieringStartTimeHasBeenSet = false;
 
   int m_lastTieringProgress{0};
-  bool m_lastTieringProgressHasBeenSet = false;
 
   TieringOperationStatus m_lastTieringOperationStatus{TieringOperationStatus::NOT_SET};
-  bool m_lastTieringOperationStatusHasBeenSet = false;
 
   Aws::String m_lastTieringOperationStatusDetail;
-  bool m_lastTieringOperationStatusDetailHasBeenSet = false;
 
   Aws::Utils::DateTime m_archivalCompleteTime{};
-  bool m_archivalCompleteTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreExpiryTime{};
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_storageTierHasBeenSet = false;
+  bool m_lastTieringStartTimeHasBeenSet = false;
+  bool m_lastTieringProgressHasBeenSet = false;
+  bool m_lastTieringOperationStatusHasBeenSet = false;
+  bool m_lastTieringOperationStatusDetailHasBeenSet = false;
+  bool m_archivalCompleteTimeHasBeenSet = false;
   bool m_restoreExpiryTimeHasBeenSet = false;
 };
 

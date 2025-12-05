@@ -69,9 +69,9 @@ class ContributionAnalysisTimeRanges {
   ///@}
  private:
   TopicIRFilterOption m_startRange;
-  bool m_startRangeHasBeenSet = false;
 
   TopicIRFilterOption m_endRange;
+  bool m_startRangeHasBeenSet = false;
   bool m_endRangeHasBeenSet = false;
 };
 

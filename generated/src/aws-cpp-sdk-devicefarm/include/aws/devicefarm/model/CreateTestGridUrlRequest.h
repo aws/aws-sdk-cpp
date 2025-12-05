@@ -66,9 +66,9 @@ class CreateTestGridUrlRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   int m_expiresInSeconds{0};
+  bool m_projectArnHasBeenSet = false;
   bool m_expiresInSecondsHasBeenSet = false;
 };
 

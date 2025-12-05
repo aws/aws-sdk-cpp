@@ -146,24 +146,24 @@ class IngestionJobStatistics {
   ///@}
  private:
   long long m_numberOfDocumentsScanned{0};
-  bool m_numberOfDocumentsScannedHasBeenSet = false;
 
   long long m_numberOfMetadataDocumentsScanned{0};
-  bool m_numberOfMetadataDocumentsScannedHasBeenSet = false;
 
   long long m_numberOfNewDocumentsIndexed{0};
-  bool m_numberOfNewDocumentsIndexedHasBeenSet = false;
 
   long long m_numberOfModifiedDocumentsIndexed{0};
-  bool m_numberOfModifiedDocumentsIndexedHasBeenSet = false;
 
   long long m_numberOfMetadataDocumentsModified{0};
-  bool m_numberOfMetadataDocumentsModifiedHasBeenSet = false;
 
   long long m_numberOfDocumentsDeleted{0};
-  bool m_numberOfDocumentsDeletedHasBeenSet = false;
 
   long long m_numberOfDocumentsFailed{0};
+  bool m_numberOfDocumentsScannedHasBeenSet = false;
+  bool m_numberOfMetadataDocumentsScannedHasBeenSet = false;
+  bool m_numberOfNewDocumentsIndexedHasBeenSet = false;
+  bool m_numberOfModifiedDocumentsIndexedHasBeenSet = false;
+  bool m_numberOfMetadataDocumentsModifiedHasBeenSet = false;
+  bool m_numberOfDocumentsDeletedHasBeenSet = false;
   bool m_numberOfDocumentsFailedHasBeenSet = false;
 };
 

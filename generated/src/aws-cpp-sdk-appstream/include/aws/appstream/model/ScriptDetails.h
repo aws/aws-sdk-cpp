@@ -103,15 +103,15 @@ class ScriptDetails {
   ///@}
  private:
   S3Location m_scriptS3Location;
-  bool m_scriptS3LocationHasBeenSet = false;
 
   Aws::String m_executablePath;
-  bool m_executablePathHasBeenSet = false;
 
   Aws::String m_executableParameters;
-  bool m_executableParametersHasBeenSet = false;
 
   int m_timeoutInSeconds{0};
+  bool m_scriptS3LocationHasBeenSet = false;
+  bool m_executablePathHasBeenSet = false;
+  bool m_executableParametersHasBeenSet = false;
   bool m_timeoutInSecondsHasBeenSet = false;
 };
 

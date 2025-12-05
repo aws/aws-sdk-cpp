@@ -136,18 +136,18 @@ class StorageOptimizer {
   ///@}
  private:
   OptimizerType m_storageOptimizerType{OptimizerType::NOT_SET};
-  bool m_storageOptimizerTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_config;
-  bool m_configHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_lastRunDetails;
+  bool m_storageOptimizerTypeHasBeenSet = false;
+  bool m_configHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_lastRunDetailsHasBeenSet = false;
 };
 

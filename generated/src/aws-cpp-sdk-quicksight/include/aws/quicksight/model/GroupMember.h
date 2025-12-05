@@ -69,9 +69,9 @@ class GroupMember {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_memberName;
+  bool m_arnHasBeenSet = false;
   bool m_memberNameHasBeenSet = false;
 };
 

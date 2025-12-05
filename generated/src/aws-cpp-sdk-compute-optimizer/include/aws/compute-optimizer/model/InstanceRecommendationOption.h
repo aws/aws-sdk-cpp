@@ -329,30 +329,30 @@ class InstanceRecommendationOption {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   GpuInfo m_instanceGpuInfo;
-  bool m_instanceGpuInfoHasBeenSet = false;
 
   Aws::Vector<UtilizationMetric> m_projectedUtilizationMetrics;
-  bool m_projectedUtilizationMetricsHasBeenSet = false;
 
   Aws::Vector<PlatformDifference> m_platformDifferences;
-  bool m_platformDifferencesHasBeenSet = false;
 
   double m_performanceRisk{0.0};
-  bool m_performanceRiskHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   InstanceSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
-  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 
   MigrationEffort m_migrationEffort{MigrationEffort::NOT_SET};
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceGpuInfoHasBeenSet = false;
+  bool m_projectedUtilizationMetricsHasBeenSet = false;
+  bool m_platformDifferencesHasBeenSet = false;
+  bool m_performanceRiskHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
+  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   bool m_migrationEffortHasBeenSet = false;
 };
 

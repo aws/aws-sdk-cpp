@@ -103,12 +103,12 @@ class MemberChangeSpecification {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<MemberAbility> m_memberAbilities;
-  bool m_memberAbilitiesHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_accountIdHasBeenSet = false;
+  bool m_memberAbilitiesHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

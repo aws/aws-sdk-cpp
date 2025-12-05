@@ -76,9 +76,9 @@ class VersionToPublish {
   ///@}
  private:
   Aws::String m_associatedRuleGroupArn;
-  bool m_associatedRuleGroupArnHasBeenSet = false;
 
   int m_forecastedLifetime{0};
+  bool m_associatedRuleGroupArnHasBeenSet = false;
   bool m_forecastedLifetimeHasBeenSet = false;
 };
 

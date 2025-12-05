@@ -83,9 +83,9 @@ class DeleteTagsRequest : public ApplicationDiscoveryServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configurationIds;
-  bool m_configurationIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_configurationIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

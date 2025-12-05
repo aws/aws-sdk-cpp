@@ -162,24 +162,24 @@ class WorkflowStepExecution {
   ///@}
  private:
   Aws::String m_stepExecutionId;
-  bool m_stepExecutionIdHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   Aws::String m_workflowExecutionId;
-  bool m_workflowExecutionIdHasBeenSet = false;
 
   Aws::String m_workflowBuildVersionArn;
-  bool m_workflowBuildVersionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_startTime;
+  bool m_stepExecutionIdHasBeenSet = false;
+  bool m_imageBuildVersionArnHasBeenSet = false;
+  bool m_workflowExecutionIdHasBeenSet = false;
+  bool m_workflowBuildVersionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

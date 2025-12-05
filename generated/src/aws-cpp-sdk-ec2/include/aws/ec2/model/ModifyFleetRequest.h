@@ -152,21 +152,21 @@ class ModifyFleetRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy{FleetExcessCapacityTerminationPolicy::NOT_SET};
-  bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
   Aws::Vector<FleetLaunchTemplateConfigRequest> m_launchTemplateConfigs;
-  bool m_launchTemplateConfigsHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   TargetCapacitySpecificationRequest m_targetCapacitySpecification;
-  bool m_targetCapacitySpecificationHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_dryRunHasBeenSet = false;
+  bool m_excessCapacityTerminationPolicyHasBeenSet = false;
+  bool m_launchTemplateConfigsHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_targetCapacitySpecificationHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

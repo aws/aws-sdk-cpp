@@ -157,24 +157,24 @@ class GetManagedEndpointSessionCredentialsRequest : public EMRContainersRequest 
   ///@}
  private:
   Aws::String m_endpointIdentifier;
-  bool m_endpointIdentifierHasBeenSet = false;
 
   Aws::String m_virtualClusterIdentifier;
-  bool m_virtualClusterIdentifierHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_credentialType;
-  bool m_credentialTypeHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::String m_logContext;
-  bool m_logContextHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_endpointIdentifierHasBeenSet = false;
+  bool m_virtualClusterIdentifierHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_credentialTypeHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_logContextHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

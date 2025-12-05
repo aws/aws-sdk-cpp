@@ -74,9 +74,9 @@ class TimeSeriesDataPoint {
   ///@}
  private:
   Aws::String m_time;
-  bool m_timeHasBeenSet = false;
 
   std::shared_ptr<Datum> m_value;
+  bool m_timeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

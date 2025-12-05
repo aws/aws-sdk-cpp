@@ -58,9 +58,9 @@ class CreateDBSubnetGroupResult {
   ///@}
  private:
   DBSubnetGroup m_dBSubnetGroup;
-  bool m_dBSubnetGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteDataTableAttributeResult {
   ///@}
  private:
   DataTableLockVersion m_lockVersion;
-  bool m_lockVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lockVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

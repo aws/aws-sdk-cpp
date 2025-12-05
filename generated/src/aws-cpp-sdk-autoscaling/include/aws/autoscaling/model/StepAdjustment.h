@@ -110,12 +110,12 @@ class StepAdjustment {
   ///@}
  private:
   double m_metricIntervalLowerBound{0.0};
-  bool m_metricIntervalLowerBoundHasBeenSet = false;
 
   double m_metricIntervalUpperBound{0.0};
-  bool m_metricIntervalUpperBoundHasBeenSet = false;
 
   int m_scalingAdjustment{0};
+  bool m_metricIntervalLowerBoundHasBeenSet = false;
+  bool m_metricIntervalUpperBoundHasBeenSet = false;
   bool m_scalingAdjustmentHasBeenSet = false;
 };
 

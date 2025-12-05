@@ -86,9 +86,9 @@ class RevealConfiguration {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   RevealStatus m_status{RevealStatus::NOT_SET};
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

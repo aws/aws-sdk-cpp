@@ -131,15 +131,15 @@ class CreateAccessorRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   AccessorType m_accessorType{AccessorType::NOT_SET};
-  bool m_accessorTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AccessorNetworkType m_networkType{AccessorNetworkType::NOT_SET};
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_accessorTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

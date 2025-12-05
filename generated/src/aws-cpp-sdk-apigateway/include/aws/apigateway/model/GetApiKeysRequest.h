@@ -127,18 +127,18 @@ class GetApiKeysRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nameQuery;
-  bool m_nameQueryHasBeenSet = false;
 
   Aws::String m_customerId;
-  bool m_customerIdHasBeenSet = false;
 
   bool m_includeValues{false};
+  bool m_positionHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_nameQueryHasBeenSet = false;
+  bool m_customerIdHasBeenSet = false;
   bool m_includeValuesHasBeenSet = false;
 };
 

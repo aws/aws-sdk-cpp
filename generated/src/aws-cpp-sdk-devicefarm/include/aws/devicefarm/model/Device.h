@@ -399,63 +399,63 @@ class Device {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_manufacturer;
-  bool m_manufacturerHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   DeviceFormFactor m_formFactor{DeviceFormFactor::NOT_SET};
-  bool m_formFactorHasBeenSet = false;
 
   DevicePlatform m_platform{DevicePlatform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_os;
-  bool m_osHasBeenSet = false;
 
   CPU m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   Resolution m_resolution;
-  bool m_resolutionHasBeenSet = false;
 
   long long m_heapSize{0};
-  bool m_heapSizeHasBeenSet = false;
 
   long long m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_carrier;
-  bool m_carrierHasBeenSet = false;
 
   Aws::String m_radio;
-  bool m_radioHasBeenSet = false;
 
   bool m_remoteAccessEnabled{false};
-  bool m_remoteAccessEnabledHasBeenSet = false;
 
   Aws::String m_fleetType;
-  bool m_fleetTypeHasBeenSet = false;
 
   Aws::String m_fleetName;
-  bool m_fleetNameHasBeenSet = false;
 
   Aws::Vector<DeviceInstance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   DeviceAvailability m_availability{DeviceAvailability::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_manufacturerHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_formFactorHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_osHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_heapSizeHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_carrierHasBeenSet = false;
+  bool m_radioHasBeenSet = false;
+  bool m_remoteAccessEnabledHasBeenSet = false;
+  bool m_fleetTypeHasBeenSet = false;
+  bool m_fleetNameHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
   bool m_availabilityHasBeenSet = false;
 };
 

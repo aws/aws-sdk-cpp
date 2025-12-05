@@ -88,9 +88,9 @@ class InsightSelector {
   ///@}
  private:
   InsightType m_insightType{InsightType::NOT_SET};
-  bool m_insightTypeHasBeenSet = false;
 
   Aws::Vector<SourceEventCategory> m_eventCategories;
+  bool m_insightTypeHasBeenSet = false;
   bool m_eventCategoriesHasBeenSet = false;
 };
 

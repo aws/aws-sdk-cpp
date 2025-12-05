@@ -112,15 +112,15 @@ class UpdateShardCountRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   int m_targetShardCount{0};
-  bool m_targetShardCountHasBeenSet = false;
 
   ScalingType m_scalingType{ScalingType::NOT_SET};
-  bool m_scalingTypeHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_targetShardCountHasBeenSet = false;
+  bool m_scalingTypeHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

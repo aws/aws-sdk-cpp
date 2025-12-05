@@ -68,9 +68,9 @@ class GenerativeReference {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_generationId;
+  bool m_modelIdHasBeenSet = false;
   bool m_generationIdHasBeenSet = false;
 };
 

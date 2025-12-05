@@ -240,33 +240,33 @@ class NotebookInstanceSummary {
   ///@}
  private:
   Aws::String m_notebookInstanceName;
-  bool m_notebookInstanceNameHasBeenSet = false;
 
   Aws::String m_notebookInstanceArn;
-  bool m_notebookInstanceArnHasBeenSet = false;
 
   NotebookInstanceStatus m_notebookInstanceStatus{NotebookInstanceStatus::NOT_SET};
-  bool m_notebookInstanceStatusHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_notebookInstanceLifecycleConfigName;
-  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
   Aws::String m_defaultCodeRepository;
-  bool m_defaultCodeRepositoryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalCodeRepositories;
+  bool m_notebookInstanceNameHasBeenSet = false;
+  bool m_notebookInstanceArnHasBeenSet = false;
+  bool m_notebookInstanceStatusHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
+  bool m_defaultCodeRepositoryHasBeenSet = false;
   bool m_additionalCodeRepositoriesHasBeenSet = false;
 };
 

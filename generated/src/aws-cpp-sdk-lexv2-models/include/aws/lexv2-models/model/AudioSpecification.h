@@ -63,9 +63,9 @@ class AudioSpecification {
   ///@}
  private:
   int m_maxLengthMs{0};
-  bool m_maxLengthMsHasBeenSet = false;
 
   int m_endTimeoutMs{0};
+  bool m_maxLengthMsHasBeenSet = false;
   bool m_endTimeoutMsHasBeenSet = false;
 };
 

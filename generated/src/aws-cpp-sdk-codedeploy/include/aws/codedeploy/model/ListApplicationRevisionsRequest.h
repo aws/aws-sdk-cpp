@@ -178,24 +178,24 @@ class ListApplicationRevisionsRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   ApplicationRevisionSortBy m_sortBy{ApplicationRevisionSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
-  bool m_s3KeyPrefixHasBeenSet = false;
 
   ListStateFilterAction m_deployed{ListStateFilterAction::NOT_SET};
-  bool m_deployedHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3KeyPrefixHasBeenSet = false;
+  bool m_deployedHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

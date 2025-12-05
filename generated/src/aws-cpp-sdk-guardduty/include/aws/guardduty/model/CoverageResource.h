@@ -163,24 +163,24 @@ class CoverageResource {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   CoverageResourceDetails m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   CoverageStatus m_coverageStatus{CoverageStatus::NOT_SET};
-  bool m_coverageStatusHasBeenSet = false;
 
   Aws::String m_issue;
-  bool m_issueHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_resourceIdHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceDetailsHasBeenSet = false;
+  bool m_coverageStatusHasBeenSet = false;
+  bool m_issueHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

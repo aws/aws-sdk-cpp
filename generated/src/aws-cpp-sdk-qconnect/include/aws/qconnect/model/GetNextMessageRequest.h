@@ -89,12 +89,12 @@ class GetNextMessageRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_nextMessageToken;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_nextMessageTokenHasBeenSet = false;
 };
 

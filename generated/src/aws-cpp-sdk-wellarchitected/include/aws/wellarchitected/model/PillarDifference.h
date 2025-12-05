@@ -107,15 +107,15 @@ class PillarDifference {
   ///@}
  private:
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_pillarName;
-  bool m_pillarNameHasBeenSet = false;
 
   DifferenceStatus m_differenceStatus{DifferenceStatus::NOT_SET};
-  bool m_differenceStatusHasBeenSet = false;
 
   Aws::Vector<QuestionDifference> m_questionDifferences;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_pillarNameHasBeenSet = false;
+  bool m_differenceStatusHasBeenSet = false;
   bool m_questionDifferencesHasBeenSet = false;
 };
 

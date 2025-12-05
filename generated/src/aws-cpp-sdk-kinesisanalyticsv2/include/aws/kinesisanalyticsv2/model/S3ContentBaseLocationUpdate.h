@@ -69,9 +69,9 @@ class S3ContentBaseLocationUpdate {
   ///@}
  private:
   Aws::String m_bucketARNUpdate;
-  bool m_bucketARNUpdateHasBeenSet = false;
 
   Aws::String m_basePathUpdate;
+  bool m_bucketARNUpdateHasBeenSet = false;
   bool m_basePathUpdateHasBeenSet = false;
 };
 

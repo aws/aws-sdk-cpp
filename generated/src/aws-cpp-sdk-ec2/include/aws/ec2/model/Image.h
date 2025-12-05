@@ -763,114 +763,114 @@ class Image {
   ///@}
  private:
   Aws::String m_platformDetails;
-  bool m_platformDetailsHasBeenSet = false;
 
   Aws::String m_usageOperation;
-  bool m_usageOperationHasBeenSet = false;
 
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_enaSupport{false};
-  bool m_enaSupportHasBeenSet = false;
 
   HypervisorType m_hypervisor{HypervisorType::NOT_SET};
-  bool m_hypervisorHasBeenSet = false;
 
   Aws::String m_imageOwnerAlias;
-  bool m_imageOwnerAliasHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_rootDeviceName;
-  bool m_rootDeviceNameHasBeenSet = false;
 
   DeviceType m_rootDeviceType{DeviceType::NOT_SET};
-  bool m_rootDeviceTypeHasBeenSet = false;
 
   Aws::String m_sriovNetSupport;
-  bool m_sriovNetSupportHasBeenSet = false;
 
   StateReason m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VirtualizationType m_virtualizationType{VirtualizationType::NOT_SET};
-  bool m_virtualizationTypeHasBeenSet = false;
 
   BootModeValues m_bootMode{BootModeValues::NOT_SET};
-  bool m_bootModeHasBeenSet = false;
 
   TpmSupportValues m_tpmSupport{TpmSupportValues::NOT_SET};
-  bool m_tpmSupportHasBeenSet = false;
 
   Aws::String m_deprecationTime;
-  bool m_deprecationTimeHasBeenSet = false;
 
   ImdsSupportValues m_imdsSupport{ImdsSupportValues::NOT_SET};
-  bool m_imdsSupportHasBeenSet = false;
 
   Aws::String m_sourceInstanceId;
-  bool m_sourceInstanceIdHasBeenSet = false;
 
   Aws::String m_deregistrationProtection;
-  bool m_deregistrationProtectionHasBeenSet = false;
 
   Aws::String m_lastLaunchedTime;
-  bool m_lastLaunchedTimeHasBeenSet = false;
 
   bool m_imageAllowed{false};
-  bool m_imageAllowedHasBeenSet = false;
 
   Aws::String m_sourceImageId;
-  bool m_sourceImageIdHasBeenSet = false;
 
   Aws::String m_sourceImageRegion;
-  bool m_sourceImageRegionHasBeenSet = false;
 
   bool m_freeTierEligible{false};
-  bool m_freeTierEligibleHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_imageLocation;
-  bool m_imageLocationHasBeenSet = false;
 
   ImageState m_state{ImageState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   bool m_public{false};
-  bool m_publicHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   ArchitectureValues m_architecture{ArchitectureValues::NOT_SET};
-  bool m_architectureHasBeenSet = false;
 
   ImageTypeValues m_imageType{ImageTypeValues::NOT_SET};
-  bool m_imageTypeHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   PlatformValues m_platform{PlatformValues::NOT_SET};
+  bool m_platformDetailsHasBeenSet = false;
+  bool m_usageOperationHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enaSupportHasBeenSet = false;
+  bool m_hypervisorHasBeenSet = false;
+  bool m_imageOwnerAliasHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_rootDeviceNameHasBeenSet = false;
+  bool m_rootDeviceTypeHasBeenSet = false;
+  bool m_sriovNetSupportHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_virtualizationTypeHasBeenSet = false;
+  bool m_bootModeHasBeenSet = false;
+  bool m_tpmSupportHasBeenSet = false;
+  bool m_deprecationTimeHasBeenSet = false;
+  bool m_imdsSupportHasBeenSet = false;
+  bool m_sourceInstanceIdHasBeenSet = false;
+  bool m_deregistrationProtectionHasBeenSet = false;
+  bool m_lastLaunchedTimeHasBeenSet = false;
+  bool m_imageAllowedHasBeenSet = false;
+  bool m_sourceImageIdHasBeenSet = false;
+  bool m_sourceImageRegionHasBeenSet = false;
+  bool m_freeTierEligibleHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_imageLocationHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_publicHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_imageTypeHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

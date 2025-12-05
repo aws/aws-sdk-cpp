@@ -111,15 +111,15 @@ class PutDetectorRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

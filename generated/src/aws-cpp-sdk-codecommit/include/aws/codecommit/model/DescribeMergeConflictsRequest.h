@@ -199,30 +199,30 @@ class DescribeMergeConflictsRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_destinationCommitSpecifier;
-  bool m_destinationCommitSpecifierHasBeenSet = false;
 
   Aws::String m_sourceCommitSpecifier;
-  bool m_sourceCommitSpecifierHasBeenSet = false;
 
   MergeOptionTypeEnum m_mergeOption{MergeOptionTypeEnum::NOT_SET};
-  bool m_mergeOptionHasBeenSet = false;
 
   int m_maxMergeHunks{0};
-  bool m_maxMergeHunksHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   ConflictDetailLevelTypeEnum m_conflictDetailLevel{ConflictDetailLevelTypeEnum::NOT_SET};
-  bool m_conflictDetailLevelHasBeenSet = false;
 
   ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy{ConflictResolutionStrategyTypeEnum::NOT_SET};
-  bool m_conflictResolutionStrategyHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_destinationCommitSpecifierHasBeenSet = false;
+  bool m_sourceCommitSpecifierHasBeenSet = false;
+  bool m_mergeOptionHasBeenSet = false;
+  bool m_maxMergeHunksHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_conflictDetailLevelHasBeenSet = false;
+  bool m_conflictResolutionStrategyHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

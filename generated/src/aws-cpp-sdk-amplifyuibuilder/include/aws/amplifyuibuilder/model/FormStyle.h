@@ -87,12 +87,12 @@ class FormStyle {
   ///@}
  private:
   FormStyleConfig m_horizontalGap;
-  bool m_horizontalGapHasBeenSet = false;
 
   FormStyleConfig m_verticalGap;
-  bool m_verticalGapHasBeenSet = false;
 
   FormStyleConfig m_outerPadding;
+  bool m_horizontalGapHasBeenSet = false;
+  bool m_verticalGapHasBeenSet = false;
   bool m_outerPaddingHasBeenSet = false;
 };
 

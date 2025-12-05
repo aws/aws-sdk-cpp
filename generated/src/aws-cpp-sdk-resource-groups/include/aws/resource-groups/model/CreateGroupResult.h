@@ -126,18 +126,18 @@ class CreateGroupResult {
   ///@}
  private:
   Group m_group;
-  bool m_groupHasBeenSet = false;
 
   ResourceQuery m_resourceQuery;
-  bool m_resourceQueryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   GroupConfiguration m_groupConfiguration;
-  bool m_groupConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupHasBeenSet = false;
+  bool m_resourceQueryHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_groupConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

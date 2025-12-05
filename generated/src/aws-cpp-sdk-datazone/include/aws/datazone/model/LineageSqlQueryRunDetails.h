@@ -129,18 +129,18 @@ class LineageSqlQueryRunDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_errorMessages;
-  bool m_errorMessagesHasBeenSet = false;
 
   int m_numQueriesFailed{0};
-  bool m_numQueriesFailedHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryEndTime{};
-  bool m_queryEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryStartTime{};
-  bool m_queryStartTimeHasBeenSet = false;
 
   int m_totalQueriesProcessed{0};
+  bool m_errorMessagesHasBeenSet = false;
+  bool m_numQueriesFailedHasBeenSet = false;
+  bool m_queryEndTimeHasBeenSet = false;
+  bool m_queryStartTimeHasBeenSet = false;
   bool m_totalQueriesProcessedHasBeenSet = false;
 };
 

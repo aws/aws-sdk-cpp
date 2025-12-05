@@ -682,90 +682,90 @@ class JobRun {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_attempt{0};
-  bool m_attemptHasBeenSet = false;
 
   Aws::String m_previousRunId;
-  bool m_previousRunIdHasBeenSet = false;
 
   Aws::String m_triggerName;
-  bool m_triggerNameHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobMode m_jobMode{JobMode::NOT_SET};
-  bool m_jobModeHasBeenSet = false;
 
   bool m_jobRunQueuingEnabled{false};
-  bool m_jobRunQueuingEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   JobRunState m_jobRunState{JobRunState::NOT_SET};
-  bool m_jobRunStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_arguments;
-  bool m_argumentsHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<Predecessor> m_predecessorRuns;
-  bool m_predecessorRunsHasBeenSet = false;
 
   int m_executionTime{0};
-  bool m_executionTimeHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   NotificationProperty m_notificationProperty;
-  bool m_notificationPropertyHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   double m_dPUSeconds{0.0};
-  bool m_dPUSecondsHasBeenSet = false;
 
   ExecutionClass m_executionClass{ExecutionClass::NOT_SET};
-  bool m_executionClassHasBeenSet = false;
 
   Aws::String m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_stateDetail;
-  bool m_stateDetailHasBeenSet = false;
 
   Aws::String m_executionRoleSessionPolicy;
+  bool m_idHasBeenSet = false;
+  bool m_attemptHasBeenSet = false;
+  bool m_previousRunIdHasBeenSet = false;
+  bool m_triggerNameHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobModeHasBeenSet = false;
+  bool m_jobRunQueuingEnabledHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_jobRunStateHasBeenSet = false;
+  bool m_argumentsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_predecessorRunsHasBeenSet = false;
+  bool m_executionTimeHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_notificationPropertyHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_dPUSecondsHasBeenSet = false;
+  bool m_executionClassHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_profileNameHasBeenSet = false;
+  bool m_stateDetailHasBeenSet = false;
   bool m_executionRoleSessionPolicyHasBeenSet = false;
 };
 

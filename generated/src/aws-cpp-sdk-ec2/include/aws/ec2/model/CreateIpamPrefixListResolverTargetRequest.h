@@ -200,27 +200,27 @@ class CreateIpamPrefixListResolverTargetRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPrefixListResolverId;
-  bool m_ipamPrefixListResolverIdHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_prefixListRegion;
-  bool m_prefixListRegionHasBeenSet = false;
 
   long long m_desiredVersion{0};
-  bool m_desiredVersionHasBeenSet = false;
 
   bool m_trackLatestVersion{false};
-  bool m_trackLatestVersionHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPrefixListResolverIdHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_prefixListRegionHasBeenSet = false;
+  bool m_desiredVersionHasBeenSet = false;
+  bool m_trackLatestVersionHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -85,12 +85,12 @@ class ListScheduledAuditsResult {
   ///@}
  private:
   Aws::Vector<ScheduledAuditMetadata> m_scheduledAudits;
-  bool m_scheduledAuditsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledAuditsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

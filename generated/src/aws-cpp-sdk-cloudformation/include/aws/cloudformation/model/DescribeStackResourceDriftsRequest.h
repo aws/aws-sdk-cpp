@@ -125,15 +125,15 @@ class DescribeStackResourceDriftsRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::Vector<StackResourceDriftStatus> m_stackResourceDriftStatusFilters;
-  bool m_stackResourceDriftStatusFiltersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_stackNameHasBeenSet = false;
+  bool m_stackResourceDriftStatusFiltersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

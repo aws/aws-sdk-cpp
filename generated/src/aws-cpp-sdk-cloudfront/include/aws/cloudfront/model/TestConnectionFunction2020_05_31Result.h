@@ -61,9 +61,9 @@ class TestConnectionFunction2020_05_31Result {
   ///@}
  private:
   ConnectionFunctionTestResult m_connectionFunctionTestResult;
-  bool m_connectionFunctionTestResultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionFunctionTestResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

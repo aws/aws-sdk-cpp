@@ -65,9 +65,9 @@ class Duration {
   ///@}
  private:
   DurationType m_durationType{DurationType::NOT_SET};
-  bool m_durationTypeHasBeenSet = false;
 
   long long m_value{0};
+  bool m_durationTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

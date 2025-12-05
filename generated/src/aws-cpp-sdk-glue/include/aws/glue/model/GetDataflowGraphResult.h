@@ -91,12 +91,12 @@ class GetDataflowGraphResult {
   ///@}
  private:
   Aws::Vector<CodeGenNode> m_dagNodes;
-  bool m_dagNodesHasBeenSet = false;
 
   Aws::Vector<CodeGenEdge> m_dagEdges;
-  bool m_dagEdgesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dagNodesHasBeenSet = false;
+  bool m_dagEdgesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

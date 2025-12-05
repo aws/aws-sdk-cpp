@@ -159,24 +159,24 @@ class CallAnalyticsItem {
   ///@}
  private:
   long long m_beginOffsetMillis{0};
-  bool m_beginOffsetMillisHasBeenSet = false;
 
   long long m_endOffsetMillis{0};
-  bool m_endOffsetMillisHasBeenSet = false;
 
   ItemType m_type{ItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   bool m_vocabularyFilterMatch{false};
-  bool m_vocabularyFilterMatchHasBeenSet = false;
 
   bool m_stable{false};
+  bool m_beginOffsetMillisHasBeenSet = false;
+  bool m_endOffsetMillisHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_vocabularyFilterMatchHasBeenSet = false;
   bool m_stableHasBeenSet = false;
 };
 

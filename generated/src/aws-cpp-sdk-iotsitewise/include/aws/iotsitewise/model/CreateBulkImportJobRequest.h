@@ -168,24 +168,24 @@ class CreateBulkImportJobRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobRoleArn;
-  bool m_jobRoleArnHasBeenSet = false;
 
   Aws::Vector<File> m_files;
-  bool m_filesHasBeenSet = false;
 
   ErrorReportLocation m_errorReportLocation;
-  bool m_errorReportLocationHasBeenSet = false;
 
   JobConfiguration m_jobConfiguration;
-  bool m_jobConfigurationHasBeenSet = false;
 
   bool m_adaptiveIngestion{false};
-  bool m_adaptiveIngestionHasBeenSet = false;
 
   bool m_deleteFilesAfterImport{false};
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobRoleArnHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_errorReportLocationHasBeenSet = false;
+  bool m_jobConfigurationHasBeenSet = false;
+  bool m_adaptiveIngestionHasBeenSet = false;
   bool m_deleteFilesAfterImportHasBeenSet = false;
 };
 

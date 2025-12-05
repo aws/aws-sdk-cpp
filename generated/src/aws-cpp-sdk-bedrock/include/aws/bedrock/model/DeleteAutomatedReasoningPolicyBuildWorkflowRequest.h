@@ -92,12 +92,12 @@ class DeleteAutomatedReasoningPolicyBuildWorkflowRequest : public BedrockRequest
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

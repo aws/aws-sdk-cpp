@@ -95,12 +95,12 @@ class RedactionConfig {
   ///@}
  private:
   Aws::Vector<PiiEntityType> m_piiEntityTypes;
-  bool m_piiEntityTypesHasBeenSet = false;
 
   PiiEntitiesDetectionMaskMode m_maskMode{PiiEntitiesDetectionMaskMode::NOT_SET};
-  bool m_maskModeHasBeenSet = false;
 
   Aws::String m_maskCharacter;
+  bool m_piiEntityTypesHasBeenSet = false;
+  bool m_maskModeHasBeenSet = false;
   bool m_maskCharacterHasBeenSet = false;
 };
 

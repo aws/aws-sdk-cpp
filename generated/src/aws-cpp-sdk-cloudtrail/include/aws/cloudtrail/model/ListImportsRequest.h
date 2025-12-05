@@ -100,15 +100,15 @@ class ListImportsRequest : public CloudTrailRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class ListStreamsResult {
   ///@}
  private:
   Aws::Vector<Stream> m_streams;
-  bool m_streamsHasBeenSet = false;
 
   Aws::String m_lastEvaluatedStreamArn;
-  bool m_lastEvaluatedStreamArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamsHasBeenSet = false;
+  bool m_lastEvaluatedStreamArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

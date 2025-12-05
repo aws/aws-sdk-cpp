@@ -83,12 +83,12 @@ class StopFlowExecutionRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_executionIdentifier;
-  bool m_executionIdentifierHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
-  bool m_flowAliasIdentifierHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
+  bool m_executionIdentifierHasBeenSet = false;
+  bool m_flowAliasIdentifierHasBeenSet = false;
   bool m_flowIdentifierHasBeenSet = false;
 };
 

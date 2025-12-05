@@ -71,9 +71,9 @@ class ApplicationRestoreConfiguration {
   ///@}
  private:
   ApplicationRestoreType m_applicationRestoreType{ApplicationRestoreType::NOT_SET};
-  bool m_applicationRestoreTypeHasBeenSet = false;
 
   Aws::String m_snapshotName;
+  bool m_applicationRestoreTypeHasBeenSet = false;
   bool m_snapshotNameHasBeenSet = false;
 };
 

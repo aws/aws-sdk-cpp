@@ -86,12 +86,12 @@ class ListDatastoresRequest : public MedicalImagingRequest {
   ///@}
  private:
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
-  bool m_datastoreStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_datastoreStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

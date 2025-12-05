@@ -101,12 +101,12 @@ class RemoveTagsFromStreamRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_tagKeysHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

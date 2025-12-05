@@ -169,27 +169,27 @@ class DataCollectionDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_inProgress{0};
-  bool m_inProgressHasBeenSet = false;
 
   int m_servers{0};
-  bool m_serversHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   AssessmentStatus m_status{AssessmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   int m_success{0};
+  bool m_completionTimeHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_inProgressHasBeenSet = false;
+  bool m_serversHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_successHasBeenSet = false;
 };
 

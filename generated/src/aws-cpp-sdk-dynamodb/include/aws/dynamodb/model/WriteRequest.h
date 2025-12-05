@@ -73,9 +73,9 @@ class WriteRequest {
   ///@}
  private:
   PutRequest m_putRequest;
-  bool m_putRequestHasBeenSet = false;
 
   DeleteRequest m_deleteRequest;
+  bool m_putRequestHasBeenSet = false;
   bool m_deleteRequestHasBeenSet = false;
 };
 

@@ -203,30 +203,30 @@ class Activity {
   ///@}
  private:
   ActivityType m_type{ActivityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeStamp{};
-  bool m_timeStampHasBeenSet = false;
 
   bool m_isIndirectActivity{false};
-  bool m_isIndirectActivityHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   UserMetadata m_initiator;
-  bool m_initiatorHasBeenSet = false;
 
   Participants m_participants;
-  bool m_participantsHasBeenSet = false;
 
   ResourceMetadata m_resourceMetadata;
-  bool m_resourceMetadataHasBeenSet = false;
 
   ResourceMetadata m_originalParent;
-  bool m_originalParentHasBeenSet = false;
 
   CommentMetadata m_commentMetadata;
+  bool m_typeHasBeenSet = false;
+  bool m_timeStampHasBeenSet = false;
+  bool m_isIndirectActivityHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_initiatorHasBeenSet = false;
+  bool m_participantsHasBeenSet = false;
+  bool m_resourceMetadataHasBeenSet = false;
+  bool m_originalParentHasBeenSet = false;
   bool m_commentMetadataHasBeenSet = false;
 };
 

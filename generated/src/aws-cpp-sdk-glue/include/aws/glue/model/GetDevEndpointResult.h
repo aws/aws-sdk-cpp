@@ -60,9 +60,9 @@ class GetDevEndpointResult {
   ///@}
  private:
   DevEndpoint m_devEndpoint;
-  bool m_devEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

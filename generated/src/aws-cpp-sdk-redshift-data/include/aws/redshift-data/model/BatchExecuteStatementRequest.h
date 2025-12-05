@@ -267,39 +267,39 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sqls;
-  bool m_sqlsHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   bool m_withEvent{false};
-  bool m_withEventHasBeenSet = false;
 
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
-  bool m_workgroupNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ResultFormatString m_resultFormat{ResultFormatString::NOT_SET};
-  bool m_resultFormatHasBeenSet = false;
 
   int m_sessionKeepAliveSeconds{0};
-  bool m_sessionKeepAliveSecondsHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_sqlsHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_dbUserHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_withEventHasBeenSet = false;
+  bool m_statementNameHasBeenSet = false;
+  bool m_workgroupNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_resultFormatHasBeenSet = false;
+  bool m_sessionKeepAliveSecondsHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DateTimeFilterExpression {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ComparisonOperator m_operator{ComparisonOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_dateTimeHasBeenSet = false;
 };
 

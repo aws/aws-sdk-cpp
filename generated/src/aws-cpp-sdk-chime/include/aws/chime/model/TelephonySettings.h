@@ -79,12 +79,12 @@ class TelephonySettings {
   ///@}
  private:
   bool m_inboundCalling{false};
-  bool m_inboundCallingHasBeenSet = false;
 
   bool m_outboundCalling{false};
-  bool m_outboundCallingHasBeenSet = false;
 
   bool m_sMS{false};
+  bool m_inboundCallingHasBeenSet = false;
+  bool m_outboundCallingHasBeenSet = false;
   bool m_sMSHasBeenSet = false;
 };
 

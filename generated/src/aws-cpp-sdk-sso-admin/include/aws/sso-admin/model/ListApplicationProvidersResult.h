@@ -89,12 +89,12 @@ class ListApplicationProvidersResult {
   ///@}
  private:
   Aws::Vector<ApplicationProvider> m_applicationProviders;
-  bool m_applicationProvidersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationProvidersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

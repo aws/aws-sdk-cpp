@@ -66,9 +66,9 @@ class ECPUPerSecond {
   ///@}
  private:
   int m_maximum{0};
-  bool m_maximumHasBeenSet = false;
 
   int m_minimum{0};
+  bool m_maximumHasBeenSet = false;
   bool m_minimumHasBeenSet = false;
 };
 

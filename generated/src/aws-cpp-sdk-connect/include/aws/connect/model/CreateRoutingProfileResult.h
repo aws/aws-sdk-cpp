@@ -76,12 +76,12 @@ class CreateRoutingProfileResult {
   ///@}
  private:
   Aws::String m_routingProfileArn;
-  bool m_routingProfileArnHasBeenSet = false;
 
   Aws::String m_routingProfileId;
-  bool m_routingProfileIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routingProfileArnHasBeenSet = false;
+  bool m_routingProfileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

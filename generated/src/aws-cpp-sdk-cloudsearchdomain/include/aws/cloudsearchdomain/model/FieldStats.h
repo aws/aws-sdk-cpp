@@ -192,27 +192,27 @@ class FieldStats {
   ///@}
  private:
   Aws::String m_min;
-  bool m_minHasBeenSet = false;
 
   Aws::String m_max;
-  bool m_maxHasBeenSet = false;
 
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   long long m_missing{0};
-  bool m_missingHasBeenSet = false;
 
   double m_sum{0.0};
-  bool m_sumHasBeenSet = false;
 
   double m_sumOfSquares{0.0};
-  bool m_sumOfSquaresHasBeenSet = false;
 
   Aws::String m_mean;
-  bool m_meanHasBeenSet = false;
 
   double m_stddev{0.0};
+  bool m_minHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_missingHasBeenSet = false;
+  bool m_sumHasBeenSet = false;
+  bool m_sumOfSquaresHasBeenSet = false;
+  bool m_meanHasBeenSet = false;
   bool m_stddevHasBeenSet = false;
 };
 

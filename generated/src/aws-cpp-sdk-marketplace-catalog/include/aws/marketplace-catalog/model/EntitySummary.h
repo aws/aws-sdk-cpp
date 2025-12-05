@@ -299,45 +299,45 @@ class EntitySummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_entityType;
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_visibility;
-  bool m_visibilityHasBeenSet = false;
 
   AmiProductSummary m_amiProductSummary;
-  bool m_amiProductSummaryHasBeenSet = false;
 
   ContainerProductSummary m_containerProductSummary;
-  bool m_containerProductSummaryHasBeenSet = false;
 
   DataProductSummary m_dataProductSummary;
-  bool m_dataProductSummaryHasBeenSet = false;
 
   SaaSProductSummary m_saaSProductSummary;
-  bool m_saaSProductSummaryHasBeenSet = false;
 
   OfferSummary m_offerSummary;
-  bool m_offerSummaryHasBeenSet = false;
 
   ResaleAuthorizationSummary m_resaleAuthorizationSummary;
-  bool m_resaleAuthorizationSummaryHasBeenSet = false;
 
   MachineLearningProductSummary m_machineLearningProductSummary;
-  bool m_machineLearningProductSummaryHasBeenSet = false;
 
   OfferSetSummary m_offerSetSummary;
+  bool m_nameHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityArnHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_amiProductSummaryHasBeenSet = false;
+  bool m_containerProductSummaryHasBeenSet = false;
+  bool m_dataProductSummaryHasBeenSet = false;
+  bool m_saaSProductSummaryHasBeenSet = false;
+  bool m_offerSummaryHasBeenSet = false;
+  bool m_resaleAuthorizationSummaryHasBeenSet = false;
+  bool m_machineLearningProductSummaryHasBeenSet = false;
   bool m_offerSetSummaryHasBeenSet = false;
 };
 

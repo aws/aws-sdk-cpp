@@ -63,9 +63,9 @@ class ShotSegment {
   ///@}
  private:
   long long m_index{0};
-  bool m_indexHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_indexHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

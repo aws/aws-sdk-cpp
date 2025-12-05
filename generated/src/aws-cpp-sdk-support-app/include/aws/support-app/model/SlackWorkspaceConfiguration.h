@@ -87,12 +87,12 @@ class SlackWorkspaceConfiguration {
   ///@}
  private:
   bool m_allowOrganizationMemberAccount{false};
-  bool m_allowOrganizationMemberAccountHasBeenSet = false;
 
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_teamName;
+  bool m_allowOrganizationMemberAccountHasBeenSet = false;
+  bool m_teamIdHasBeenSet = false;
   bool m_teamNameHasBeenSet = false;
 };
 

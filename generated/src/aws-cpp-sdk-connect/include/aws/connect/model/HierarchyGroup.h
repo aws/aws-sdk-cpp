@@ -186,27 +186,27 @@ class HierarchyGroup {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_levelId;
-  bool m_levelIdHasBeenSet = false;
 
   HierarchyPath m_hierarchyPath;
-  bool m_hierarchyPathHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_levelIdHasBeenSet = false;
+  bool m_hierarchyPathHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

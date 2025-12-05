@@ -85,9 +85,9 @@ class DisassociateKmsKeyRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

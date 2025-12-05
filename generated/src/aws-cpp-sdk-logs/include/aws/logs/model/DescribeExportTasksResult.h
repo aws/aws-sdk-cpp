@@ -82,12 +82,12 @@ class DescribeExportTasksResult {
   ///@}
  private:
   Aws::Vector<ExportTask> m_exportTasks;
-  bool m_exportTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

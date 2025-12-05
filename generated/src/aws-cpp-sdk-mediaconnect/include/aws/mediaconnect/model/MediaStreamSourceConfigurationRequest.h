@@ -97,12 +97,12 @@ class MediaStreamSourceConfigurationRequest {
   ///@}
  private:
   EncodingName m_encodingName{EncodingName::NOT_SET};
-  bool m_encodingNameHasBeenSet = false;
 
   Aws::Vector<InputConfigurationRequest> m_inputConfigurations;
-  bool m_inputConfigurationsHasBeenSet = false;
 
   Aws::String m_mediaStreamName;
+  bool m_encodingNameHasBeenSet = false;
+  bool m_inputConfigurationsHasBeenSet = false;
   bool m_mediaStreamNameHasBeenSet = false;
 };
 

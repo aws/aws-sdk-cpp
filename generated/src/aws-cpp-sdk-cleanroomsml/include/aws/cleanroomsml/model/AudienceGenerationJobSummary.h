@@ -197,30 +197,30 @@ class AudienceGenerationJobSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_audienceGenerationJobArn;
-  bool m_audienceGenerationJobArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AudienceGenerationJobStatus m_status{AudienceGenerationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_startedBy;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_audienceGenerationJobArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
   bool m_startedByHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class AnomalyDetectorMissingDataAction {
   ///@}
  private:
   bool m_markAsAnomaly{false};
-  bool m_markAsAnomalyHasBeenSet = false;
 
   bool m_skip{false};
+  bool m_markAsAnomalyHasBeenSet = false;
   bool m_skipHasBeenSet = false;
 };
 

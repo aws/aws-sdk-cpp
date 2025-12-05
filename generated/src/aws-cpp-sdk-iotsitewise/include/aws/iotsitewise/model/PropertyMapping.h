@@ -69,9 +69,9 @@ class PropertyMapping {
   ///@}
  private:
   Aws::String m_assetModelPropertyId;
-  bool m_assetModelPropertyIdHasBeenSet = false;
 
   Aws::String m_interfaceAssetModelPropertyId;
+  bool m_assetModelPropertyIdHasBeenSet = false;
   bool m_interfaceAssetModelPropertyIdHasBeenSet = false;
 };
 

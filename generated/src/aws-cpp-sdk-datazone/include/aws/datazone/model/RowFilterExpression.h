@@ -259,39 +259,39 @@ class RowFilterExpression {
   ///@}
  private:
   EqualToExpression m_equalTo;
-  bool m_equalToHasBeenSet = false;
 
   GreaterThanExpression m_greaterThan;
-  bool m_greaterThanHasBeenSet = false;
 
   GreaterThanOrEqualToExpression m_greaterThanOrEqualTo;
-  bool m_greaterThanOrEqualToHasBeenSet = false;
 
   InExpression m_in;
-  bool m_inHasBeenSet = false;
 
   IsNotNullExpression m_isNotNull;
-  bool m_isNotNullHasBeenSet = false;
 
   IsNullExpression m_isNull;
-  bool m_isNullHasBeenSet = false;
 
   LessThanExpression m_lessThan;
-  bool m_lessThanHasBeenSet = false;
 
   LessThanOrEqualToExpression m_lessThanOrEqualTo;
-  bool m_lessThanOrEqualToHasBeenSet = false;
 
   LikeExpression m_like;
-  bool m_likeHasBeenSet = false;
 
   NotEqualToExpression m_notEqualTo;
-  bool m_notEqualToHasBeenSet = false;
 
   NotInExpression m_notIn;
-  bool m_notInHasBeenSet = false;
 
   NotLikeExpression m_notLike;
+  bool m_equalToHasBeenSet = false;
+  bool m_greaterThanHasBeenSet = false;
+  bool m_greaterThanOrEqualToHasBeenSet = false;
+  bool m_inHasBeenSet = false;
+  bool m_isNotNullHasBeenSet = false;
+  bool m_isNullHasBeenSet = false;
+  bool m_lessThanHasBeenSet = false;
+  bool m_lessThanOrEqualToHasBeenSet = false;
+  bool m_likeHasBeenSet = false;
+  bool m_notEqualToHasBeenSet = false;
+  bool m_notInHasBeenSet = false;
   bool m_notLikeHasBeenSet = false;
 };
 

@@ -190,30 +190,30 @@ class UpdateBudgetActionRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   NotificationType m_notificationType{NotificationType::NOT_SET};
-  bool m_notificationTypeHasBeenSet = false;
 
   ActionThreshold m_actionThreshold;
-  bool m_actionThresholdHasBeenSet = false;
 
   Definition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   ApprovalModel m_approvalModel{ApprovalModel::NOT_SET};
-  bool m_approvalModelHasBeenSet = false;
 
   Aws::Vector<Subscriber> m_subscribers;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
+  bool m_notificationTypeHasBeenSet = false;
+  bool m_actionThresholdHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_approvalModelHasBeenSet = false;
   bool m_subscribersHasBeenSet = false;
 };
 

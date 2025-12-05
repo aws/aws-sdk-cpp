@@ -155,21 +155,21 @@ class ContentBlockDelta {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   ToolUseBlockDelta m_toolUse;
-  bool m_toolUseHasBeenSet = false;
 
   Aws::Vector<ToolResultBlockDelta> m_toolResult;
-  bool m_toolResultHasBeenSet = false;
 
   ReasoningContentBlockDelta m_reasoningContent;
-  bool m_reasoningContentHasBeenSet = false;
 
   CitationsDelta m_citation;
-  bool m_citationHasBeenSet = false;
 
   ImageBlockDelta m_image;
+  bool m_textHasBeenSet = false;
+  bool m_toolUseHasBeenSet = false;
+  bool m_toolResultHasBeenSet = false;
+  bool m_reasoningContentHasBeenSet = false;
+  bool m_citationHasBeenSet = false;
   bool m_imageHasBeenSet = false;
 };
 

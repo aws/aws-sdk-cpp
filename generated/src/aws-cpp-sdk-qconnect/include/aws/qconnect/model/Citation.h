@@ -138,21 +138,21 @@ class Citation {
   ///@}
  private:
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   CitationSpan m_citationSpan;
-  bool m_citationSpanHasBeenSet = false;
 
   Aws::String m_sourceURL;
-  bool m_sourceURLHasBeenSet = false;
 
   ReferenceType m_referenceType{ReferenceType::NOT_SET};
+  bool m_contentIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_citationSpanHasBeenSet = false;
+  bool m_sourceURLHasBeenSet = false;
   bool m_referenceTypeHasBeenSet = false;
 };
 

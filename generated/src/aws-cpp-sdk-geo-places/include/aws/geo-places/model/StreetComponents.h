@@ -183,27 +183,27 @@ class StreetComponents {
   ///@}
  private:
   Aws::String m_baseName;
-  bool m_baseNameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   TypePlacement m_typePlacement{TypePlacement::NOT_SET};
-  bool m_typePlacementHasBeenSet = false;
 
   Aws::String m_typeSeparator;
-  bool m_typeSeparatorHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_suffix;
-  bool m_suffixHasBeenSet = false;
 
   Aws::String m_direction;
-  bool m_directionHasBeenSet = false;
 
   Aws::String m_language;
+  bool m_baseNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_typePlacementHasBeenSet = false;
+  bool m_typeSeparatorHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_suffixHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
   bool m_languageHasBeenSet = false;
 };
 

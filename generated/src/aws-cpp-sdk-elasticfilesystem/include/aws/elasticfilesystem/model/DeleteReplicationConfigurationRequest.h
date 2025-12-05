@@ -82,9 +82,9 @@ class DeleteReplicationConfigurationRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_sourceFileSystemId;
-  bool m_sourceFileSystemIdHasBeenSet = false;
 
   DeletionMode m_deletionMode{DeletionMode::NOT_SET};
+  bool m_sourceFileSystemIdHasBeenSet = false;
   bool m_deletionModeHasBeenSet = false;
 };
 

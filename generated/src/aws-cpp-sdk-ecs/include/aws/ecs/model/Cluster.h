@@ -428,51 +428,51 @@ class Cluster {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   ClusterConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_registeredContainerInstancesCount{0};
-  bool m_registeredContainerInstancesCountHasBeenSet = false;
 
   int m_runningTasksCount{0};
-  bool m_runningTasksCountHasBeenSet = false;
 
   int m_pendingTasksCount{0};
-  bool m_pendingTasksCountHasBeenSet = false;
 
   int m_activeServicesCount{0};
-  bool m_activeServicesCountHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<ClusterSetting> m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capacityProviders;
-  bool m_capacityProvidersHasBeenSet = false;
 
   Aws::Vector<CapacityProviderStrategyItem> m_defaultCapacityProviderStrategy;
-  bool m_defaultCapacityProviderStrategyHasBeenSet = false;
 
   Aws::Vector<Attachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_attachmentsStatus;
-  bool m_attachmentsStatusHasBeenSet = false;
 
   ClusterServiceConnectDefaults m_serviceConnectDefaults;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_registeredContainerInstancesCountHasBeenSet = false;
+  bool m_runningTasksCountHasBeenSet = false;
+  bool m_pendingTasksCountHasBeenSet = false;
+  bool m_activeServicesCountHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_capacityProvidersHasBeenSet = false;
+  bool m_defaultCapacityProviderStrategyHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_attachmentsStatusHasBeenSet = false;
   bool m_serviceConnectDefaultsHasBeenSet = false;
 };
 

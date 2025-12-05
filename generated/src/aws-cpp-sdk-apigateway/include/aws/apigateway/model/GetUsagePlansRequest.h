@@ -91,12 +91,12 @@ class GetUsagePlansRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   int m_limit{0};
+  bool m_positionHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

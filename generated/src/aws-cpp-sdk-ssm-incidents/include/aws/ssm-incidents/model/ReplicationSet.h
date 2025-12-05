@@ -188,27 +188,27 @@ class ReplicationSet {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   bool m_deletionProtected{false};
-  bool m_deletionProtectedHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, RegionInfo> m_regionMap;
-  bool m_regionMapHasBeenSet = false;
 
   ReplicationSetStatus m_status{ReplicationSetStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_deletionProtectedHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_regionMapHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

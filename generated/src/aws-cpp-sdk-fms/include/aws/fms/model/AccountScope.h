@@ -110,12 +110,12 @@ class AccountScope {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   bool m_allAccountsEnabled{false};
-  bool m_allAccountsEnabledHasBeenSet = false;
 
   bool m_excludeSpecifiedAccounts{false};
+  bool m_accountsHasBeenSet = false;
+  bool m_allAccountsEnabledHasBeenSet = false;
   bool m_excludeSpecifiedAccountsHasBeenSet = false;
 };
 

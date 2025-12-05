@@ -191,27 +191,27 @@ class OwnerDirectoryDescription {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddrs;
-  bool m_dnsIpAddrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpv6Addrs;
-  bool m_dnsIpv6AddrsHasBeenSet = false;
 
   DirectoryVpcSettingsDescription m_vpcSettings;
-  bool m_vpcSettingsHasBeenSet = false;
 
   RadiusSettings m_radiusSettings;
-  bool m_radiusSettingsHasBeenSet = false;
 
   RadiusStatus m_radiusStatus{RadiusStatus::NOT_SET};
-  bool m_radiusStatusHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_dnsIpAddrsHasBeenSet = false;
+  bool m_dnsIpv6AddrsHasBeenSet = false;
+  bool m_vpcSettingsHasBeenSet = false;
+  bool m_radiusSettingsHasBeenSet = false;
+  bool m_radiusStatusHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

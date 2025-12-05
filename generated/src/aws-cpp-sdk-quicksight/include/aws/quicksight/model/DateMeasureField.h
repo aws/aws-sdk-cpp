@@ -105,15 +105,15 @@ class DateMeasureField {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   DateAggregationFunction m_aggregationFunction{DateAggregationFunction::NOT_SET};
-  bool m_aggregationFunctionHasBeenSet = false;
 
   DateTimeFormatConfiguration m_formatConfiguration;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_aggregationFunctionHasBeenSet = false;
   bool m_formatConfigurationHasBeenSet = false;
 };
 

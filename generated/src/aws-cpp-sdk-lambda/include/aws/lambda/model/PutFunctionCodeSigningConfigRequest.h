@@ -72,9 +72,9 @@ class PutFunctionCodeSigningConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_codeSigningConfigArn;
-  bool m_codeSigningConfigArnHasBeenSet = false;
 
   Aws::String m_functionName;
+  bool m_codeSigningConfigArnHasBeenSet = false;
   bool m_functionNameHasBeenSet = false;
 };
 

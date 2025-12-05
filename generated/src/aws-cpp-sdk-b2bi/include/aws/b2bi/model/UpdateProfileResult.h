@@ -212,36 +212,36 @@ class UpdateProfileResult {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_phone;
-  bool m_phoneHasBeenSet = false;
 
   Aws::String m_businessName;
-  bool m_businessNameHasBeenSet = false;
 
   Logging m_logging{Logging::NOT_SET};
-  bool m_loggingHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileIdHasBeenSet = false;
+  bool m_profileArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_phoneHasBeenSet = false;
+  bool m_businessNameHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

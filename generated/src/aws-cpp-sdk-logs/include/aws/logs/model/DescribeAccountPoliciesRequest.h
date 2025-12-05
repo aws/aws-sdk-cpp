@@ -117,15 +117,15 @@ class DescribeAccountPoliciesRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIdentifiers;
-  bool m_accountIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_accountIdentifiersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

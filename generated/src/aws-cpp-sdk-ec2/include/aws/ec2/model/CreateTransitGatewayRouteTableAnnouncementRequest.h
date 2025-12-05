@@ -115,15 +115,15 @@ class CreateTransitGatewayRouteTableAnnouncementRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_peeringAttachmentId;
-  bool m_peeringAttachmentIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_peeringAttachmentIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

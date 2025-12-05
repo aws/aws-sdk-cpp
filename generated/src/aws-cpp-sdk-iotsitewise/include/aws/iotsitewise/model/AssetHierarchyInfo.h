@@ -69,9 +69,9 @@ class AssetHierarchyInfo {
   ///@}
  private:
   Aws::String m_parentAssetId;
-  bool m_parentAssetIdHasBeenSet = false;
 
   Aws::String m_childAssetId;
+  bool m_parentAssetIdHasBeenSet = false;
   bool m_childAssetIdHasBeenSet = false;
 };
 

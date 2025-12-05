@@ -136,18 +136,18 @@ class ReplicationTaskIndividualAssessment {
   ///@}
  private:
   Aws::String m_replicationTaskIndividualAssessmentArn;
-  bool m_replicationTaskIndividualAssessmentArnHasBeenSet = false;
 
   Aws::String m_replicationTaskAssessmentRunArn;
-  bool m_replicationTaskAssessmentRunArnHasBeenSet = false;
 
   Aws::String m_individualAssessmentName;
-  bool m_individualAssessmentNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationTaskIndividualAssessmentStartDate{};
+  bool m_replicationTaskIndividualAssessmentArnHasBeenSet = false;
+  bool m_replicationTaskAssessmentRunArnHasBeenSet = false;
+  bool m_individualAssessmentNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_replicationTaskIndividualAssessmentStartDateHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class DeleteFleetsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fleetIds;
-  bool m_fleetIdsHasBeenSet = false;
 
   bool m_terminateInstances{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_fleetIdsHasBeenSet = false;
   bool m_terminateInstancesHasBeenSet = false;
 };
 

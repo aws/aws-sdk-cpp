@@ -59,9 +59,9 @@ class StartFileTransferResult {
   ///@}
  private:
   Aws::String m_transferId;
-  bool m_transferIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transferIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

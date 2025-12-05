@@ -79,9 +79,9 @@ class ResultFrame {
   ///@}
  private:
   ResultSetMetadata m_resultSetMetadata;
-  bool m_resultSetMetadataHasBeenSet = false;
 
   Aws::Vector<Record> m_records;
+  bool m_resultSetMetadataHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
 };
 

@@ -262,36 +262,36 @@ class DBClusterEndpoint {
   ///@}
  private:
   Aws::String m_dBClusterEndpointIdentifier;
-  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterEndpointResourceIdentifier;
-  bool m_dBClusterEndpointResourceIdentifierHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_endpointType;
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_customEndpointType;
-  bool m_customEndpointTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_staticMembers;
-  bool m_staticMembersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedMembers;
-  bool m_excludedMembersHasBeenSet = false;
 
   Aws::String m_dBClusterEndpointArn;
-  bool m_dBClusterEndpointArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_dBClusterEndpointResourceIdentifierHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_customEndpointTypeHasBeenSet = false;
+  bool m_staticMembersHasBeenSet = false;
+  bool m_excludedMembersHasBeenSet = false;
+  bool m_dBClusterEndpointArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = true;
 };
 

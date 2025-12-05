@@ -66,9 +66,9 @@ class GetDataSetDetailsRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_dataSetName;
+  bool m_applicationIdHasBeenSet = false;
   bool m_dataSetNameHasBeenSet = false;
 };
 

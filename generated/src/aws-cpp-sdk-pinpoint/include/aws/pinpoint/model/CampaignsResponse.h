@@ -79,9 +79,9 @@ class CampaignsResponse {
   ///@}
  private:
   Aws::Vector<CampaignResponse> m_item;
-  bool m_itemHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_itemHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -315,45 +315,45 @@ class ExperimentTemplate {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, ExperimentTemplateTarget> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Map<Aws::String, ExperimentTemplateAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<ExperimentTemplateStopCondition> m_stopConditions;
-  bool m_stopConditionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ExperimentTemplateLogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   ExperimentTemplateExperimentOptions m_experimentOptions;
-  bool m_experimentOptionsHasBeenSet = false;
 
   long long m_targetAccountConfigurationsCount{0};
-  bool m_targetAccountConfigurationsCountHasBeenSet = false;
 
   ExperimentTemplateReportConfiguration m_experimentReportConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_stopConditionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_experimentOptionsHasBeenSet = false;
+  bool m_targetAccountConfigurationsCountHasBeenSet = false;
   bool m_experimentReportConfigurationHasBeenSet = false;
 };
 

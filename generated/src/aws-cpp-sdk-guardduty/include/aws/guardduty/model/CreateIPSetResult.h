@@ -59,9 +59,9 @@ class CreateIPSetResult {
   ///@}
  private:
   Aws::String m_ipSetId;
-  bool m_ipSetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ipSetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

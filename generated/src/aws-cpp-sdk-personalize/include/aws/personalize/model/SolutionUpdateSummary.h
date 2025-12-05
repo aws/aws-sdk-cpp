@@ -166,24 +166,24 @@ class SolutionUpdateSummary {
   ///@}
  private:
   SolutionUpdateConfig m_solutionUpdateConfig;
-  bool m_solutionUpdateConfigHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_performAutoTraining{false};
-  bool m_performAutoTrainingHasBeenSet = false;
 
   bool m_performIncrementalUpdate{false};
-  bool m_performIncrementalUpdateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_solutionUpdateConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_performAutoTrainingHasBeenSet = false;
+  bool m_performIncrementalUpdateHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class RecallBenefitApplicationRequest : public PartnerCentralBenefitsRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

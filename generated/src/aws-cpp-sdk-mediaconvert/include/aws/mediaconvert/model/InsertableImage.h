@@ -233,36 +233,36 @@ class InsertableImage {
   ///@}
  private:
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_fadeIn{0};
-  bool m_fadeInHasBeenSet = false;
 
   int m_fadeOut{0};
-  bool m_fadeOutHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   Aws::String m_imageInserterInput;
-  bool m_imageInserterInputHasBeenSet = false;
 
   int m_imageX{0};
-  bool m_imageXHasBeenSet = false;
 
   int m_imageY{0};
-  bool m_imageYHasBeenSet = false;
 
   int m_layer{0};
-  bool m_layerHasBeenSet = false;
 
   int m_opacity{0};
-  bool m_opacityHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   int m_width{0};
+  bool m_durationHasBeenSet = false;
+  bool m_fadeInHasBeenSet = false;
+  bool m_fadeOutHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_imageInserterInputHasBeenSet = false;
+  bool m_imageXHasBeenSet = false;
+  bool m_imageYHasBeenSet = false;
+  bool m_layerHasBeenSet = false;
+  bool m_opacityHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

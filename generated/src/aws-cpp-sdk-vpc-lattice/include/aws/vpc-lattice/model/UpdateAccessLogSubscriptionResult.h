@@ -127,21 +127,21 @@ class UpdateAccessLogSubscriptionResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

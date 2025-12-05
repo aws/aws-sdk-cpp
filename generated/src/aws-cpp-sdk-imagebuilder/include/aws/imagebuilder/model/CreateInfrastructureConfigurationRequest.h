@@ -347,48 +347,48 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Logging m_logging;
-  bool m_loggingHasBeenSet = false;
 
   Aws::String m_keyPair;
-  bool m_keyPairHasBeenSet = false;
 
   bool m_terminateInstanceOnFailure{false};
-  bool m_terminateInstanceOnFailureHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   InstanceMetadataOptions m_instanceMetadataOptions;
-  bool m_instanceMetadataOptionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Placement m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_instanceProfileNameHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_keyPairHasBeenSet = false;
+  bool m_terminateInstanceOnFailureHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_instanceMetadataOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -182,27 +182,27 @@ class UpdateHoursOfOperationOverrideRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_hoursOfOperationId;
-  bool m_hoursOfOperationIdHasBeenSet = false;
 
   Aws::String m_hoursOfOperationOverrideId;
-  bool m_hoursOfOperationOverrideIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<HoursOfOperationOverrideConfig> m_config;
-  bool m_configHasBeenSet = false;
 
   Aws::String m_effectiveFrom;
-  bool m_effectiveFromHasBeenSet = false;
 
   Aws::String m_effectiveTill;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_hoursOfOperationIdHasBeenSet = false;
+  bool m_hoursOfOperationOverrideIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configHasBeenSet = false;
+  bool m_effectiveFromHasBeenSet = false;
   bool m_effectiveTillHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class NodeConfigurationOptionsFilter {
   ///@}
  private:
   NodeConfigurationOptionsFilterName m_name{NodeConfigurationOptionsFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   OperatorType m_operator{OperatorType::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

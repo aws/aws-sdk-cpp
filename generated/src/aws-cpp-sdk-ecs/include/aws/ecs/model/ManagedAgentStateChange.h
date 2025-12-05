@@ -104,15 +104,15 @@ class ManagedAgentStateChange {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   ManagedAgentName m_managedAgentName{ManagedAgentName::NOT_SET};
-  bool m_managedAgentNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_containerNameHasBeenSet = false;
+  bool m_managedAgentNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

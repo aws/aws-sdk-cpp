@@ -69,9 +69,9 @@ class AssetPermission {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Permissions m_permissions;
+  bool m_assetIdHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

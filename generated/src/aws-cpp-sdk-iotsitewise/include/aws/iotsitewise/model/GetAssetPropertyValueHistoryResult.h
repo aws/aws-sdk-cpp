@@ -85,12 +85,12 @@ class GetAssetPropertyValueHistoryResult {
   ///@}
  private:
   Aws::Vector<AssetPropertyValue> m_assetPropertyValueHistory;
-  bool m_assetPropertyValueHistoryHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetPropertyValueHistoryHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

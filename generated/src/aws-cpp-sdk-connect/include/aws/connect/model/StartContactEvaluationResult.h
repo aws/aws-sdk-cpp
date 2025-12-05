@@ -76,12 +76,12 @@ class StartContactEvaluationResult {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_evaluationArn;
-  bool m_evaluationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_evaluationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

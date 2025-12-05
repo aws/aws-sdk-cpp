@@ -112,15 +112,15 @@ class DescribeManagedRuleGroupRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_vendorName;
-  bool m_vendorNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_versionName;
+  bool m_vendorNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
 };
 

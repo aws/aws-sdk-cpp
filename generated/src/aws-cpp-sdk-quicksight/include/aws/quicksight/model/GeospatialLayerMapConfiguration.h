@@ -130,18 +130,18 @@ class GeospatialLayerMapConfiguration {
   ///@}
  private:
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   Aws::Vector<GeospatialLayerItem> m_mapLayers;
-  bool m_mapLayersHasBeenSet = false;
 
   GeospatialMapState m_mapState;
-  bool m_mapStateHasBeenSet = false;
 
   GeospatialMapStyle m_mapStyle;
-  bool m_mapStyleHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_legendHasBeenSet = false;
+  bool m_mapLayersHasBeenSet = false;
+  bool m_mapStateHasBeenSet = false;
+  bool m_mapStyleHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

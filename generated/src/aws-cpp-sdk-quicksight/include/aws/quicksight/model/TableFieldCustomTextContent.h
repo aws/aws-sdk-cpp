@@ -72,9 +72,9 @@ class TableFieldCustomTextContent {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   FontConfiguration m_fontConfiguration;
+  bool m_valueHasBeenSet = false;
   bool m_fontConfigurationHasBeenSet = false;
 };
 

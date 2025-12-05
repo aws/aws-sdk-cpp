@@ -69,9 +69,9 @@ class VectorEnrichmentJobInputConfig {
   ///@}
  private:
   VectorEnrichmentJobDataSourceConfigInput m_dataSourceConfig;
-  bool m_dataSourceConfigHasBeenSet = false;
 
   VectorEnrichmentJobDocumentType m_documentType{VectorEnrichmentJobDocumentType::NOT_SET};
+  bool m_dataSourceConfigHasBeenSet = false;
   bool m_documentTypeHasBeenSet = false;
 };
 

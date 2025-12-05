@@ -94,12 +94,12 @@ class BrokerInstance {
   ///@}
  private:
   Aws::String m_consoleURL;
-  bool m_consoleURLHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_consoleURLHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

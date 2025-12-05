@@ -419,57 +419,57 @@ class ServiceConfiguration {
   ///@}
  private:
   Aws::Vector<ServiceTypeDetail> m_serviceType;
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   ServiceState m_serviceState{ServiceState::NOT_SET};
-  bool m_serviceStateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZoneIds;
-  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   bool m_acceptanceRequired{false};
-  bool m_acceptanceRequiredHasBeenSet = false;
 
   bool m_managesVpcEndpoints{false};
-  bool m_managesVpcEndpointsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-  bool m_networkLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-  bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<ServiceConnectivityType> m_supportedIpAddressTypes;
-  bool m_supportedIpAddressTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_baseEndpointDnsNames;
-  bool m_baseEndpointDnsNamesHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   PrivateDnsNameConfiguration m_privateDnsNameConfiguration;
-  bool m_privateDnsNameConfigurationHasBeenSet = false;
 
   PayerResponsibility m_payerResponsibility{PayerResponsibility::NOT_SET};
-  bool m_payerResponsibilityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<SupportedRegionDetail> m_supportedRegions;
-  bool m_supportedRegionsHasBeenSet = false;
 
   bool m_remoteAccessEnabled{false};
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_serviceStateHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_acceptanceRequiredHasBeenSet = false;
+  bool m_managesVpcEndpointsHasBeenSet = false;
+  bool m_networkLoadBalancerArnsHasBeenSet = false;
+  bool m_gatewayLoadBalancerArnsHasBeenSet = false;
+  bool m_supportedIpAddressTypesHasBeenSet = false;
+  bool m_baseEndpointDnsNamesHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_privateDnsNameConfigurationHasBeenSet = false;
+  bool m_payerResponsibilityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_supportedRegionsHasBeenSet = false;
   bool m_remoteAccessEnabledHasBeenSet = false;
 };
 

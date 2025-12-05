@@ -228,33 +228,33 @@ class MaintenanceWindow {
   ///@}
  private:
   int m_customActionTimeoutInMins{0};
-  bool m_customActionTimeoutInMinsHasBeenSet = false;
 
   Aws::Vector<DayOfWeek> m_daysOfWeek;
-  bool m_daysOfWeekHasBeenSet = false;
 
   Aws::Vector<int> m_hoursOfDay;
-  bool m_hoursOfDayHasBeenSet = false;
 
   bool m_isCustomActionTimeoutEnabled{false};
-  bool m_isCustomActionTimeoutEnabledHasBeenSet = false;
 
   int m_leadTimeInWeeks{0};
-  bool m_leadTimeInWeeksHasBeenSet = false;
 
   Aws::Vector<Month> m_months;
-  bool m_monthsHasBeenSet = false;
 
   PatchingModeType m_patchingMode{PatchingModeType::NOT_SET};
-  bool m_patchingModeHasBeenSet = false;
 
   PreferenceType m_preference{PreferenceType::NOT_SET};
-  bool m_preferenceHasBeenSet = false;
 
   bool m_skipRu{false};
-  bool m_skipRuHasBeenSet = false;
 
   Aws::Vector<int> m_weeksOfMonth;
+  bool m_customActionTimeoutInMinsHasBeenSet = false;
+  bool m_daysOfWeekHasBeenSet = false;
+  bool m_hoursOfDayHasBeenSet = false;
+  bool m_isCustomActionTimeoutEnabledHasBeenSet = false;
+  bool m_leadTimeInWeeksHasBeenSet = false;
+  bool m_monthsHasBeenSet = false;
+  bool m_patchingModeHasBeenSet = false;
+  bool m_preferenceHasBeenSet = false;
+  bool m_skipRuHasBeenSet = false;
   bool m_weeksOfMonthHasBeenSet = false;
 };
 

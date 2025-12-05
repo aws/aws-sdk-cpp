@@ -177,27 +177,27 @@ class ListContextsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_sourceUri;
-  bool m_sourceUriHasBeenSet = false;
 
   Aws::String m_contextType;
-  bool m_contextTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   SortContextsBy m_sortBy{SortContextsBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_sourceUriHasBeenSet = false;
+  bool m_contextTypeHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

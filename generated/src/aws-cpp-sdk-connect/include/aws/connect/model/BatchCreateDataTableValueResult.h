@@ -93,12 +93,12 @@ class BatchCreateDataTableValueResult {
   ///@}
  private:
   Aws::Vector<BatchCreateDataTableValueSuccessResult> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<BatchCreateDataTableValueFailureResult> m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

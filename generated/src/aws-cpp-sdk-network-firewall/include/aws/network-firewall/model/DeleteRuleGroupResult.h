@@ -62,9 +62,9 @@ class DeleteRuleGroupResult {
   ///@}
  private:
   RuleGroupResponse m_ruleGroupResponse;
-  bool m_ruleGroupResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleGroupResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

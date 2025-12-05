@@ -123,18 +123,18 @@ class GetAccessControlEffectRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_impersonationRoleId;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_impersonationRoleIdHasBeenSet = false;
 };
 

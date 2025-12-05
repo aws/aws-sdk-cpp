@@ -232,36 +232,36 @@ class CollaborationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_creatorDisplayName;
-  bool m_creatorDisplayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   MemberStatus m_memberStatus{MemberStatus::NOT_SET};
-  bool m_memberStatusHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   AnalyticsEngine m_analyticsEngine{AnalyticsEngine::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
+  bool m_creatorDisplayNameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_memberStatusHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
   bool m_analyticsEngineHasBeenSet = false;
 };
 

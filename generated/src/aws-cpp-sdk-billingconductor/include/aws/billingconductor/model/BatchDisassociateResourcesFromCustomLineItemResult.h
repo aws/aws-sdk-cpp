@@ -98,12 +98,12 @@ class BatchDisassociateResourcesFromCustomLineItemResult {
   ///@}
  private:
   Aws::Vector<DisassociateResourceResponseElement> m_successfullyDisassociatedResources;
-  bool m_successfullyDisassociatedResourcesHasBeenSet = false;
 
   Aws::Vector<DisassociateResourceResponseElement> m_failedDisassociatedResources;
-  bool m_failedDisassociatedResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfullyDisassociatedResourcesHasBeenSet = false;
+  bool m_failedDisassociatedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

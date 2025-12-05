@@ -114,15 +114,15 @@ class DescribeCustomKeyStoresRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_customKeyStoreId;
-  bool m_customKeyStoreIdHasBeenSet = false;
 
   Aws::String m_customKeyStoreName;
-  bool m_customKeyStoreNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_customKeyStoreIdHasBeenSet = false;
+  bool m_customKeyStoreNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

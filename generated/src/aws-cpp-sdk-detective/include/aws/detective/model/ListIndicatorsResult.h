@@ -122,18 +122,18 @@ class ListIndicatorsResult {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_investigationId;
-  bool m_investigationIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Indicator> m_indicators;
-  bool m_indicatorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_graphArnHasBeenSet = false;
+  bool m_investigationIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_indicatorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -159,21 +159,21 @@ class LaunchTemplateInstanceMetadataOptions {
   ///@}
  private:
   LaunchTemplateInstanceMetadataOptionsState m_state{LaunchTemplateInstanceMetadataOptionsState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   LaunchTemplateHttpTokensState m_httpTokens{LaunchTemplateHttpTokensState::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   LaunchTemplateInstanceMetadataEndpointState m_httpEndpoint{LaunchTemplateInstanceMetadataEndpointState::NOT_SET};
-  bool m_httpEndpointHasBeenSet = false;
 
   LaunchTemplateInstanceMetadataProtocolIpv6 m_httpProtocolIpv6{LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET};
-  bool m_httpProtocolIpv6HasBeenSet = false;
 
   LaunchTemplateInstanceMetadataTagsState m_instanceMetadataTags{LaunchTemplateInstanceMetadataTagsState::NOT_SET};
+  bool m_stateHasBeenSet = false;
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_httpProtocolIpv6HasBeenSet = false;
   bool m_instanceMetadataTagsHasBeenSet = false;
 };
 

@@ -218,36 +218,36 @@ class DescribeModelCardExportJobResult {
   ///@}
  private:
   Aws::String m_modelCardExportJobName;
-  bool m_modelCardExportJobNameHasBeenSet = false;
 
   Aws::String m_modelCardExportJobArn;
-  bool m_modelCardExportJobArnHasBeenSet = false;
 
   ModelCardExportJobStatus m_status{ModelCardExportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   int m_modelCardVersion{0};
-  bool m_modelCardVersionHasBeenSet = false;
 
   ModelCardExportOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   ModelCardExportArtifacts m_exportArtifacts;
-  bool m_exportArtifactsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelCardExportJobNameHasBeenSet = false;
+  bool m_modelCardExportJobArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_modelCardVersionHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_exportArtifactsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

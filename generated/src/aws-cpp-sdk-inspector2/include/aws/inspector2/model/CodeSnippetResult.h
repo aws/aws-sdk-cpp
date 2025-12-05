@@ -134,18 +134,18 @@ class CodeSnippetResult {
   ///@}
  private:
   Aws::String m_findingArn;
-  bool m_findingArnHasBeenSet = false;
 
   int m_startLine{0};
-  bool m_startLineHasBeenSet = false;
 
   int m_endLine{0};
-  bool m_endLineHasBeenSet = false;
 
   Aws::Vector<CodeLine> m_codeSnippet;
-  bool m_codeSnippetHasBeenSet = false;
 
   Aws::Vector<SuggestedFix> m_suggestedFixes;
+  bool m_findingArnHasBeenSet = false;
+  bool m_startLineHasBeenSet = false;
+  bool m_endLineHasBeenSet = false;
+  bool m_codeSnippetHasBeenSet = false;
   bool m_suggestedFixesHasBeenSet = false;
 };
 

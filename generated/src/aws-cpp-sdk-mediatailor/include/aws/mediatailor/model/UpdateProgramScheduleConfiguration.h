@@ -69,9 +69,9 @@ class UpdateProgramScheduleConfiguration {
   ///@}
  private:
   UpdateProgramTransition m_transition;
-  bool m_transitionHasBeenSet = false;
 
   ClipRange m_clipRange;
+  bool m_transitionHasBeenSet = false;
   bool m_clipRangeHasBeenSet = false;
 };
 

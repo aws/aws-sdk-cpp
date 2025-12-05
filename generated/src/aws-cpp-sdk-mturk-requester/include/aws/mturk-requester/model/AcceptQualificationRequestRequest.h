@@ -68,9 +68,9 @@ class AcceptQualificationRequestRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_qualificationRequestId;
-  bool m_qualificationRequestIdHasBeenSet = false;
 
   int m_integerValue{0};
+  bool m_qualificationRequestIdHasBeenSet = false;
   bool m_integerValueHasBeenSet = false;
 };
 

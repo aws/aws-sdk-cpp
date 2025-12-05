@@ -104,15 +104,15 @@ class CreateSnapshotCopyConfigurationRequest : public RedshiftServerlessRequest 
   ///@}
  private:
   Aws::String m_destinationKmsKeyId;
-  bool m_destinationKmsKeyIdHasBeenSet = false;
 
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   int m_snapshotRetentionPeriod{0};
+  bool m_destinationKmsKeyIdHasBeenSet = false;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
   bool m_snapshotRetentionPeriodHasBeenSet = false;
 };
 

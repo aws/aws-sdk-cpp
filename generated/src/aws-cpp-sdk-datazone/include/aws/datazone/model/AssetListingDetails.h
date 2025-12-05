@@ -68,9 +68,9 @@ class AssetListingDetails {
   ///@}
  private:
   Aws::String m_listingId;
-  bool m_listingIdHasBeenSet = false;
 
   ListingStatus m_listingStatus{ListingStatus::NOT_SET};
+  bool m_listingIdHasBeenSet = false;
   bool m_listingStatusHasBeenSet = false;
 };
 

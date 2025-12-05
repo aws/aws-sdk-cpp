@@ -415,60 +415,60 @@ class Anomaly {
   ///@}
  private:
   Aws::String m_anomalyId;
-  bool m_anomalyIdHasBeenSet = false;
 
   Aws::String m_patternId;
-  bool m_patternIdHasBeenSet = false;
 
   Aws::String m_anomalyDetectorArn;
-  bool m_anomalyDetectorArnHasBeenSet = false;
 
   Aws::String m_patternString;
-  bool m_patternStringHasBeenSet = false;
 
   Aws::String m_patternRegex;
-  bool m_patternRegexHasBeenSet = false;
 
   Aws::String m_priority;
-  bool m_priorityHasBeenSet = false;
 
   long long m_firstSeen{0};
-  bool m_firstSeenHasBeenSet = false;
 
   long long m_lastSeen{0};
-  bool m_lastSeenHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, long long> m_histogram;
-  bool m_histogramHasBeenSet = false;
 
   Aws::Vector<LogEvent> m_logSamples;
-  bool m_logSamplesHasBeenSet = false;
 
   Aws::Vector<PatternToken> m_patternTokens;
-  bool m_patternTokensHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupArnList;
-  bool m_logGroupArnListHasBeenSet = false;
 
   bool m_suppressed{false};
-  bool m_suppressedHasBeenSet = false;
 
   long long m_suppressedDate{0};
-  bool m_suppressedDateHasBeenSet = false;
 
   long long m_suppressedUntil{0};
-  bool m_suppressedUntilHasBeenSet = false;
 
   bool m_isPatternLevelSuppression{false};
+  bool m_anomalyIdHasBeenSet = false;
+  bool m_patternIdHasBeenSet = false;
+  bool m_anomalyDetectorArnHasBeenSet = false;
+  bool m_patternStringHasBeenSet = false;
+  bool m_patternRegexHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_firstSeenHasBeenSet = false;
+  bool m_lastSeenHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_histogramHasBeenSet = false;
+  bool m_logSamplesHasBeenSet = false;
+  bool m_patternTokensHasBeenSet = false;
+  bool m_logGroupArnListHasBeenSet = false;
+  bool m_suppressedHasBeenSet = false;
+  bool m_suppressedDateHasBeenSet = false;
+  bool m_suppressedUntilHasBeenSet = false;
   bool m_isPatternLevelSuppressionHasBeenSet = false;
 };
 

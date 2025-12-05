@@ -106,15 +106,15 @@ class ListBrowserSessionsRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_browserIdentifier;
-  bool m_browserIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   BrowserSessionStatus m_status{BrowserSessionStatus::NOT_SET};
+  bool m_browserIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

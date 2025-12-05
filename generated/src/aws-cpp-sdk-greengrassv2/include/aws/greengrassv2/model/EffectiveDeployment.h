@@ -250,36 +250,36 @@ class EffectiveDeployment {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_deploymentName;
-  bool m_deploymentNameHasBeenSet = false;
 
   Aws::String m_iotJobId;
-  bool m_iotJobIdHasBeenSet = false;
 
   Aws::String m_iotJobArn;
-  bool m_iotJobArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   EffectiveDeploymentExecutionStatus m_coreDeviceExecutionStatus{EffectiveDeploymentExecutionStatus::NOT_SET};
-  bool m_coreDeviceExecutionStatusHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTimestamp{};
-  bool m_modifiedTimestampHasBeenSet = false;
 
   EffectiveDeploymentStatusDetails m_statusDetails;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_deploymentNameHasBeenSet = false;
+  bool m_iotJobIdHasBeenSet = false;
+  bool m_iotJobArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_coreDeviceExecutionStatusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_modifiedTimestampHasBeenSet = false;
   bool m_statusDetailsHasBeenSet = false;
 };
 

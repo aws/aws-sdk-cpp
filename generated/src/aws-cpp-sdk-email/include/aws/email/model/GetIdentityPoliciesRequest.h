@@ -89,9 +89,9 @@ class GetIdentityPoliciesRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyNames;
+  bool m_identityHasBeenSet = false;
   bool m_policyNamesHasBeenSet = false;
 };
 

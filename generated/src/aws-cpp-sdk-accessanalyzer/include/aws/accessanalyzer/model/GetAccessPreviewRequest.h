@@ -72,9 +72,9 @@ class GetAccessPreviewRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_accessPreviewId;
-  bool m_accessPreviewIdHasBeenSet = false;
 
   Aws::String m_analyzerArn;
+  bool m_accessPreviewIdHasBeenSet = false;
   bool m_analyzerArnHasBeenSet = false;
 };
 

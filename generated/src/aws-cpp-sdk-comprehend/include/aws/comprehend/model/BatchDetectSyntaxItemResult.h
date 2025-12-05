@@ -74,9 +74,9 @@ class BatchDetectSyntaxItemResult {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::Vector<SyntaxToken> m_syntaxTokens;
+  bool m_indexHasBeenSet = false;
   bool m_syntaxTokensHasBeenSet = false;
 };
 

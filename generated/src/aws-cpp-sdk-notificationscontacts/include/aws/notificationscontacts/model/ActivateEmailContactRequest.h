@@ -69,9 +69,9 @@ class ActivateEmailContactRequest : public NotificationsContactsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_code;
+  bool m_arnHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

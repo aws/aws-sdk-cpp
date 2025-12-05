@@ -115,15 +115,15 @@ class ImportKeyPairRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_publicKeyMaterial{};
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
   bool m_publicKeyMaterialHasBeenSet = false;
 };
 

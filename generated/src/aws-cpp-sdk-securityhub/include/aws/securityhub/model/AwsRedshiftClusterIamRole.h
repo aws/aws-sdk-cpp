@@ -70,9 +70,9 @@ class AwsRedshiftClusterIamRole {
   ///@}
  private:
   Aws::String m_applyStatus;
-  bool m_applyStatusHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
+  bool m_applyStatusHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
 };
 

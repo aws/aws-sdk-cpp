@@ -138,18 +138,18 @@ class DescribeServiceUpdatesRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_serviceUpdateName;
-  bool m_serviceUpdateNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clusterNames;
-  bool m_clusterNamesHasBeenSet = false;
 
   Aws::Vector<ServiceUpdateStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceUpdateNameHasBeenSet = false;
+  bool m_clusterNamesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

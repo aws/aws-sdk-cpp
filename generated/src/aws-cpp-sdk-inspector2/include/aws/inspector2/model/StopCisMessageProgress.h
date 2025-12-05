@@ -157,27 +157,27 @@ class StopCisMessageProgress {
   ///@}
  private:
   int m_totalChecks{0};
-  bool m_totalChecksHasBeenSet = false;
 
   int m_successfulChecks{0};
-  bool m_successfulChecksHasBeenSet = false;
 
   int m_failedChecks{0};
-  bool m_failedChecksHasBeenSet = false;
 
   int m_notEvaluatedChecks{0};
-  bool m_notEvaluatedChecksHasBeenSet = false;
 
   int m_unknownChecks{0};
-  bool m_unknownChecksHasBeenSet = false;
 
   int m_notApplicableChecks{0};
-  bool m_notApplicableChecksHasBeenSet = false;
 
   int m_informationalChecks{0};
-  bool m_informationalChecksHasBeenSet = false;
 
   int m_errorChecks{0};
+  bool m_totalChecksHasBeenSet = false;
+  bool m_successfulChecksHasBeenSet = false;
+  bool m_failedChecksHasBeenSet = false;
+  bool m_notEvaluatedChecksHasBeenSet = false;
+  bool m_unknownChecksHasBeenSet = false;
+  bool m_notApplicableChecksHasBeenSet = false;
+  bool m_informationalChecksHasBeenSet = false;
   bool m_errorChecksHasBeenSet = false;
 };
 

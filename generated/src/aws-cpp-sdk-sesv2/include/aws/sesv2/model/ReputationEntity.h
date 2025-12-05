@@ -175,24 +175,24 @@ class ReputationEntity {
   ///@}
  private:
   Aws::String m_reputationEntityReference;
-  bool m_reputationEntityReferenceHasBeenSet = false;
 
   ReputationEntityType m_reputationEntityType{ReputationEntityType::NOT_SET};
-  bool m_reputationEntityTypeHasBeenSet = false;
 
   Aws::String m_reputationManagementPolicy;
-  bool m_reputationManagementPolicyHasBeenSet = false;
 
   StatusRecord m_customerManagedStatus;
-  bool m_customerManagedStatusHasBeenSet = false;
 
   StatusRecord m_awsSesManagedStatus;
-  bool m_awsSesManagedStatusHasBeenSet = false;
 
   SendingStatus m_sendingStatusAggregate{SendingStatus::NOT_SET};
-  bool m_sendingStatusAggregateHasBeenSet = false;
 
   RecommendationImpact m_reputationImpact{RecommendationImpact::NOT_SET};
+  bool m_reputationEntityReferenceHasBeenSet = false;
+  bool m_reputationEntityTypeHasBeenSet = false;
+  bool m_reputationManagementPolicyHasBeenSet = false;
+  bool m_customerManagedStatusHasBeenSet = false;
+  bool m_awsSesManagedStatusHasBeenSet = false;
+  bool m_sendingStatusAggregateHasBeenSet = false;
   bool m_reputationImpactHasBeenSet = false;
 };
 

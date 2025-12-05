@@ -92,12 +92,12 @@ class StartResourceScanRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccount;
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourceOwnerAccountHasBeenSet = false;
 };
 

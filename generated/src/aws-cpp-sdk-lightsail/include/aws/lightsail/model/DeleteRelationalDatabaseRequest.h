@@ -94,12 +94,12 @@ class DeleteRelationalDatabaseRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   bool m_skipFinalSnapshot{false};
-  bool m_skipFinalSnapshotHasBeenSet = false;
 
   Aws::String m_finalRelationalDatabaseSnapshotName;
+  bool m_relationalDatabaseNameHasBeenSet = false;
+  bool m_skipFinalSnapshotHasBeenSet = false;
   bool m_finalRelationalDatabaseSnapshotNameHasBeenSet = false;
 };
 

@@ -219,30 +219,30 @@ class SearchResourcesRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_queryText;
-  bool m_queryTextHasBeenSet = false;
 
   Aws::Vector<SearchQueryScopeType> m_queryScopes;
-  bool m_queryScopesHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::Vector<AdditionalResponseFieldType> m_additionalResponseFields;
-  bool m_additionalResponseFieldsHasBeenSet = false;
 
   Filters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<SearchSortResult> m_orderBy;
-  bool m_orderByHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_queryTextHasBeenSet = false;
+  bool m_queryScopesHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_additionalResponseFieldsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_orderByHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

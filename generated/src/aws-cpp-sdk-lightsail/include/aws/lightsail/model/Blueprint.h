@@ -272,42 +272,42 @@ class Blueprint {
   ///@}
  private:
   Aws::String m_blueprintId;
-  bool m_blueprintIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   BlueprintType m_type{BlueprintType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   int m_minPower{0};
-  bool m_minPowerHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_versionCode;
-  bool m_versionCodeHasBeenSet = false;
 
   Aws::String m_productUrl;
-  bool m_productUrlHasBeenSet = false;
 
   Aws::String m_licenseUrl;
-  bool m_licenseUrlHasBeenSet = false;
 
   InstancePlatform m_platform{InstancePlatform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   AppCategory m_appCategory{AppCategory::NOT_SET};
+  bool m_blueprintIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
+  bool m_minPowerHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_versionCodeHasBeenSet = false;
+  bool m_productUrlHasBeenSet = false;
+  bool m_licenseUrlHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
   bool m_appCategoryHasBeenSet = false;
 };
 

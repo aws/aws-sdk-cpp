@@ -103,15 +103,15 @@ class UpdateSessionLoggerRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_sessionLoggerArn;
-  bool m_sessionLoggerArnHasBeenSet = false;
 
   EventFilter m_eventFilter;
-  bool m_eventFilterHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_sessionLoggerArnHasBeenSet = false;
+  bool m_eventFilterHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

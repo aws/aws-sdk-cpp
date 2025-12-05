@@ -88,12 +88,12 @@ class UpdateExperimentTemplateLogConfigurationInput {
   ///@}
  private:
   ExperimentTemplateCloudWatchLogsLogConfigurationInput m_cloudWatchLogsConfiguration;
-  bool m_cloudWatchLogsConfigurationHasBeenSet = false;
 
   ExperimentTemplateS3LogConfigurationInput m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   int m_logSchemaVersion{0};
+  bool m_cloudWatchLogsConfigurationHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
   bool m_logSchemaVersionHasBeenSet = false;
 };
 

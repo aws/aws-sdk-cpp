@@ -126,15 +126,15 @@ class SalesforceChatterFeedConfiguration {
   ///@}
  private:
   Aws::String m_documentDataFieldName;
-  bool m_documentDataFieldNameHasBeenSet = false;
 
   Aws::String m_documentTitleFieldName;
-  bool m_documentTitleFieldNameHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-  bool m_fieldMappingsHasBeenSet = false;
 
   Aws::Vector<SalesforceChatterFeedIncludeFilterType> m_includeFilterTypes;
+  bool m_documentDataFieldNameHasBeenSet = false;
+  bool m_documentTitleFieldNameHasBeenSet = false;
+  bool m_fieldMappingsHasBeenSet = false;
   bool m_includeFilterTypesHasBeenSet = false;
 };
 

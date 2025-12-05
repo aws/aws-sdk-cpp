@@ -88,12 +88,12 @@ class DetachObjectRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   ObjectReference m_parentReference;
-  bool m_parentReferenceHasBeenSet = false;
 
   Aws::String m_linkName;
+  bool m_directoryArnHasBeenSet = false;
+  bool m_parentReferenceHasBeenSet = false;
   bool m_linkNameHasBeenSet = false;
 };
 

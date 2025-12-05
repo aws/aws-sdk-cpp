@@ -85,12 +85,12 @@ class DescribeAssociationExecutionsResult {
   ///@}
  private:
   Aws::Vector<AssociationExecution> m_associationExecutions;
-  bool m_associationExecutionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associationExecutionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

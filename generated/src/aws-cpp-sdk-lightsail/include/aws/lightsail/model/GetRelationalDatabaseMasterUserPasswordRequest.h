@@ -71,9 +71,9 @@ class GetRelationalDatabaseMasterUserPasswordRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   RelationalDatabasePasswordVersion m_passwordVersion{RelationalDatabasePasswordVersion::NOT_SET};
+  bool m_relationalDatabaseNameHasBeenSet = false;
   bool m_passwordVersionHasBeenSet = false;
 };
 

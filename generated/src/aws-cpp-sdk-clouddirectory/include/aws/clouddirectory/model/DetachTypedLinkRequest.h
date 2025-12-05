@@ -69,9 +69,9 @@ class DetachTypedLinkRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   TypedLinkSpecifier m_typedLinkSpecifier;
+  bool m_directoryArnHasBeenSet = false;
   bool m_typedLinkSpecifierHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class RouteMatrixEntry {
   ///@}
  private:
   double m_distance{0.0};
-  bool m_distanceHasBeenSet = false;
 
   double m_durationSeconds{0.0};
-  bool m_durationSecondsHasBeenSet = false;
 
   RouteMatrixEntryError m_error;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

@@ -205,33 +205,33 @@ class StartTestSetGenerationResult {
   ///@}
  private:
   Aws::String m_testSetGenerationId;
-  bool m_testSetGenerationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   TestSetGenerationStatus m_testSetGenerationStatus{TestSetGenerationStatus::NOT_SET};
-  bool m_testSetGenerationStatusHasBeenSet = false;
 
   Aws::String m_testSetName;
-  bool m_testSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TestSetStorageLocation m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   TestSetGenerationDataSource m_generationDataSource;
-  bool m_generationDataSourceHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_testSetTags;
-  bool m_testSetTagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testSetGenerationIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_testSetGenerationStatusHasBeenSet = false;
+  bool m_testSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
+  bool m_generationDataSourceHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_testSetTagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

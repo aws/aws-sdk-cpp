@@ -67,9 +67,9 @@ class ProvideAnomalyFeedbackRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_anomalyId;
-  bool m_anomalyIdHasBeenSet = false;
 
   AnomalyFeedbackType m_feedback{AnomalyFeedbackType::NOT_SET};
+  bool m_anomalyIdHasBeenSet = false;
   bool m_feedbackHasBeenSet = false;
 };
 

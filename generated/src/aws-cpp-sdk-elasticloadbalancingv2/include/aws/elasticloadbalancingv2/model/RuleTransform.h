@@ -97,12 +97,12 @@ class RuleTransform {
   ///@}
  private:
   TransformTypeEnum m_type{TransformTypeEnum::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   HostHeaderRewriteConfig m_hostHeaderRewriteConfig;
-  bool m_hostHeaderRewriteConfigHasBeenSet = false;
 
   UrlRewriteConfig m_urlRewriteConfig;
+  bool m_typeHasBeenSet = false;
+  bool m_hostHeaderRewriteConfigHasBeenSet = false;
   bool m_urlRewriteConfigHasBeenSet = false;
 };
 

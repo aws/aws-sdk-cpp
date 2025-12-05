@@ -78,9 +78,9 @@ class FrontOfQueueDetail {
   ///@}
  private:
   Aws::Vector<FrontOfQueueJobSummary> m_jobs;
-  bool m_jobsHasBeenSet = false;
 
   long long m_lastUpdatedAt{0};
+  bool m_jobsHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

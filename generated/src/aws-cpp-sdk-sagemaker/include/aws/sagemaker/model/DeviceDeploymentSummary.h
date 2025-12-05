@@ -231,36 +231,36 @@ class DeviceDeploymentSummary {
   ///@}
  private:
   Aws::String m_edgeDeploymentPlanArn;
-  bool m_edgeDeploymentPlanArnHasBeenSet = false;
 
   Aws::String m_edgeDeploymentPlanName;
-  bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_deployedStageName;
-  bool m_deployedStageNameHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   DeviceDeploymentStatus m_deviceDeploymentStatus{DeviceDeploymentStatus::NOT_SET};
-  bool m_deviceDeploymentStatusHasBeenSet = false;
 
   Aws::String m_deviceDeploymentStatusMessage;
-  bool m_deviceDeploymentStatusMessageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_deploymentStartTime{};
+  bool m_edgeDeploymentPlanArnHasBeenSet = false;
+  bool m_edgeDeploymentPlanNameHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_deployedStageNameHasBeenSet = false;
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_deviceDeploymentStatusHasBeenSet = false;
+  bool m_deviceDeploymentStatusMessageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_deploymentStartTimeHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class LabelMatchStatement {
   ///@}
  private:
   LabelMatchScope m_scope{LabelMatchScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_scopeHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

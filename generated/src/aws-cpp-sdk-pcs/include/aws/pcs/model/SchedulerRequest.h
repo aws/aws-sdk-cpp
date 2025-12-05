@@ -72,9 +72,9 @@ class SchedulerRequest {
   ///@}
  private:
   SchedulerType m_type{SchedulerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_typeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

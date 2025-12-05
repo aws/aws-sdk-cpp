@@ -88,12 +88,12 @@ class CaptionLanguageMapping {
   ///@}
  private:
   int m_captionChannel{0};
-  bool m_captionChannelHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_languageDescription;
+  bool m_captionChannelHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_languageDescriptionHasBeenSet = false;
 };
 

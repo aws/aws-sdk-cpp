@@ -60,9 +60,9 @@ class GetDirectoryResult {
   ///@}
  private:
   Directory m_directory;
-  bool m_directoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

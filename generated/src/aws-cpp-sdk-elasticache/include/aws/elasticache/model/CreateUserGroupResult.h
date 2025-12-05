@@ -218,33 +218,33 @@ class CreateUserGroupResult {
   ///@}
  private:
   Aws::String m_userGroupId;
-  bool m_userGroupIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::String m_minimumEngineVersion;
-  bool m_minimumEngineVersionHasBeenSet = false;
 
   UserGroupPendingChanges m_pendingChanges;
-  bool m_pendingChangesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationGroups;
-  bool m_replicationGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serverlessCaches;
-  bool m_serverlessCachesHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_userGroupIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
+  bool m_minimumEngineVersionHasBeenSet = false;
+  bool m_pendingChangesHasBeenSet = false;
+  bool m_replicationGroupsHasBeenSet = false;
+  bool m_serverlessCachesHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

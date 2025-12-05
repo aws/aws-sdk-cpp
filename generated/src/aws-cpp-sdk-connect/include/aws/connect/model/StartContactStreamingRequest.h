@@ -110,15 +110,15 @@ class StartContactStreamingRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   ChatStreamingConfiguration m_chatStreamingConfiguration;
-  bool m_chatStreamingConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_chatStreamingConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

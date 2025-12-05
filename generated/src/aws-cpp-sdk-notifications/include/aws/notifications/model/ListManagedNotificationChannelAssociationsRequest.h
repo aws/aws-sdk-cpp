@@ -89,12 +89,12 @@ class ListManagedNotificationChannelAssociationsRequest : public NotificationsRe
   ///@}
  private:
   Aws::String m_managedNotificationConfigurationArn;
-  bool m_managedNotificationConfigurationArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_managedNotificationConfigurationArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

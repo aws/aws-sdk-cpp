@@ -78,9 +78,9 @@ class PutTransformerRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   Aws::Vector<Processor> m_transformerConfig;
+  bool m_logGroupIdentifierHasBeenSet = false;
   bool m_transformerConfigHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class RoleValues {
   ///@}
  private:
   Aws::Vector<Aws::String> m_admin;
-  bool m_adminHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_editor;
+  bool m_adminHasBeenSet = false;
   bool m_editorHasBeenSet = false;
 };
 

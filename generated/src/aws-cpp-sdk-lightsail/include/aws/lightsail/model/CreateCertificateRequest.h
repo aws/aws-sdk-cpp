@@ -123,15 +123,15 @@ class CreateCertificateRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

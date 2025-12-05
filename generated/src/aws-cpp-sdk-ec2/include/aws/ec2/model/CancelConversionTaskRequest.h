@@ -88,12 +88,12 @@ class CancelConversionTaskRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_conversionTaskId;
-  bool m_conversionTaskIdHasBeenSet = false;
 
   Aws::String m_reasonMessage;
+  bool m_dryRunHasBeenSet = false;
+  bool m_conversionTaskIdHasBeenSet = false;
   bool m_reasonMessageHasBeenSet = false;
 };
 

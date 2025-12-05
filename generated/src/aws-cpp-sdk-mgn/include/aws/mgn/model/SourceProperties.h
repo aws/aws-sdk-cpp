@@ -198,27 +198,27 @@ class SourceProperties {
   ///@}
  private:
   Aws::Vector<CPU> m_cpus;
-  bool m_cpusHasBeenSet = false;
 
   Aws::Vector<Disk> m_disks;
-  bool m_disksHasBeenSet = false;
 
   IdentificationHints m_identificationHints;
-  bool m_identificationHintsHasBeenSet = false;
 
   Aws::String m_lastUpdatedDateTime;
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   OS m_os;
-  bool m_osHasBeenSet = false;
 
   long long m_ramBytes{0};
-  bool m_ramBytesHasBeenSet = false;
 
   Aws::String m_recommendedInstanceType;
+  bool m_cpusHasBeenSet = false;
+  bool m_disksHasBeenSet = false;
+  bool m_identificationHintsHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_osHasBeenSet = false;
+  bool m_ramBytesHasBeenSet = false;
   bool m_recommendedInstanceTypeHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class EmvEncryptionAttributes {
   ///@}
  private:
   EmvMajorKeyDerivationMode m_majorKeyDerivationMode{EmvMajorKeyDerivationMode::NOT_SET};
-  bool m_majorKeyDerivationModeHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   Aws::String m_panSequenceNumber;
-  bool m_panSequenceNumberHasBeenSet = false;
 
   Aws::String m_sessionDerivationData;
-  bool m_sessionDerivationDataHasBeenSet = false;
 
   EmvEncryptionMode m_mode{EmvEncryptionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_initializationVector;
+  bool m_majorKeyDerivationModeHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_panSequenceNumberHasBeenSet = false;
+  bool m_sessionDerivationDataHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
   bool m_initializationVectorHasBeenSet = false;
 };
 

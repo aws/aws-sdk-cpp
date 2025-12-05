@@ -92,12 +92,12 @@ class ListDevicePoolsResult {
   ///@}
  private:
   Aws::Vector<DevicePool> m_devicePools;
-  bool m_devicePoolsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devicePoolsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

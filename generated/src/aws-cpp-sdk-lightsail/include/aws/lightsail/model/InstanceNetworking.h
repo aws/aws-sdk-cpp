@@ -78,9 +78,9 @@ class InstanceNetworking {
   ///@}
  private:
   MonthlyTransfer m_monthlyTransfer;
-  bool m_monthlyTransferHasBeenSet = false;
 
   Aws::Vector<InstancePortInfo> m_ports;
+  bool m_monthlyTransferHasBeenSet = false;
   bool m_portsHasBeenSet = false;
 };
 

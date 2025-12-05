@@ -103,12 +103,12 @@ class DeleteRecommendationPreferencesRequest : public ComputeOptimizerRequest {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Scope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<RecommendationPreferenceName> m_recommendationPreferenceNames;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_recommendationPreferenceNamesHasBeenSet = false;
 };
 

@@ -488,69 +488,69 @@ class PipelineExecutionStepMetadata {
   ///@}
  private:
   TrainingJobStepMetadata m_trainingJob;
-  bool m_trainingJobHasBeenSet = false;
 
   ProcessingJobStepMetadata m_processingJob;
-  bool m_processingJobHasBeenSet = false;
 
   TransformJobStepMetadata m_transformJob;
-  bool m_transformJobHasBeenSet = false;
 
   TuningJobStepMetaData m_tuningJob;
-  bool m_tuningJobHasBeenSet = false;
 
   ModelStepMetadata m_model;
-  bool m_modelHasBeenSet = false;
 
   RegisterModelStepMetadata m_registerModel;
-  bool m_registerModelHasBeenSet = false;
 
   ConditionStepMetadata m_condition;
-  bool m_conditionHasBeenSet = false;
 
   CallbackStepMetadata m_callback;
-  bool m_callbackHasBeenSet = false;
 
   LambdaStepMetadata m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   EMRStepMetadata m_eMR;
-  bool m_eMRHasBeenSet = false;
 
   QualityCheckStepMetadata m_qualityCheck;
-  bool m_qualityCheckHasBeenSet = false;
 
   ClarifyCheckStepMetadata m_clarifyCheck;
-  bool m_clarifyCheckHasBeenSet = false;
 
   FailStepMetadata m_fail;
-  bool m_failHasBeenSet = false;
 
   AutoMLJobStepMetadata m_autoMLJob;
-  bool m_autoMLJobHasBeenSet = false;
 
   EndpointStepMetadata m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   EndpointConfigStepMetadata m_endpointConfig;
-  bool m_endpointConfigHasBeenSet = false;
 
   BedrockCustomModelMetadata m_bedrockCustomModel;
-  bool m_bedrockCustomModelHasBeenSet = false;
 
   BedrockCustomModelDeploymentMetadata m_bedrockCustomModelDeployment;
-  bool m_bedrockCustomModelDeploymentHasBeenSet = false;
 
   BedrockProvisionedModelThroughputMetadata m_bedrockProvisionedModelThroughput;
-  bool m_bedrockProvisionedModelThroughputHasBeenSet = false;
 
   BedrockModelImportMetadata m_bedrockModelImport;
-  bool m_bedrockModelImportHasBeenSet = false;
 
   InferenceComponentMetadata m_inferenceComponent;
-  bool m_inferenceComponentHasBeenSet = false;
 
   LineageMetadata m_lineage;
+  bool m_trainingJobHasBeenSet = false;
+  bool m_processingJobHasBeenSet = false;
+  bool m_transformJobHasBeenSet = false;
+  bool m_tuningJobHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_registerModelHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_callbackHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_eMRHasBeenSet = false;
+  bool m_qualityCheckHasBeenSet = false;
+  bool m_clarifyCheckHasBeenSet = false;
+  bool m_failHasBeenSet = false;
+  bool m_autoMLJobHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_endpointConfigHasBeenSet = false;
+  bool m_bedrockCustomModelHasBeenSet = false;
+  bool m_bedrockCustomModelDeploymentHasBeenSet = false;
+  bool m_bedrockProvisionedModelThroughputHasBeenSet = false;
+  bool m_bedrockModelImportHasBeenSet = false;
+  bool m_inferenceComponentHasBeenSet = false;
   bool m_lineageHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class BatchUpdateFindingsV2ProcessedFinding {
   ///@}
  private:
   OcsfFindingIdentifier m_findingIdentifier;
-  bool m_findingIdentifierHasBeenSet = false;
 
   Aws::String m_metadataUid;
+  bool m_findingIdentifierHasBeenSet = false;
   bool m_metadataUidHasBeenSet = false;
 };
 

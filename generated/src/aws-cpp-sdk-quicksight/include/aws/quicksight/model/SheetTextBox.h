@@ -89,12 +89,12 @@ class SheetTextBox {
   ///@}
  private:
   Aws::String m_sheetTextBoxId;
-  bool m_sheetTextBoxIdHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   TextBoxInteractionOptions m_interactions;
+  bool m_sheetTextBoxIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

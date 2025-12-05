@@ -84,9 +84,9 @@ class MapConfigurationUpdate {
   ///@}
  private:
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customLayers;
+  bool m_politicalViewHasBeenSet = false;
   bool m_customLayersHasBeenSet = false;
 };
 

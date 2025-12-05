@@ -66,9 +66,9 @@ class UpdateSafetyLeverStateRequest : public FISRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   UpdateSafetyLeverStateInput m_state;
+  bool m_idHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

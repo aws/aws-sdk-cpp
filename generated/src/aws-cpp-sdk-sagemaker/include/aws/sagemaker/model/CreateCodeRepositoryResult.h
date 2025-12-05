@@ -59,9 +59,9 @@ class CreateCodeRepositoryResult {
   ///@}
  private:
   Aws::String m_codeRepositoryArn;
-  bool m_codeRepositoryArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeRepositoryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

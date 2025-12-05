@@ -297,48 +297,48 @@ class FleetSummary {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   FleetStatus m_status{FleetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   AutoScalingStatus m_autoScalingStatus{AutoScalingStatus::NOT_SET};
-  bool m_autoScalingStatusHasBeenSet = false;
 
   int m_targetWorkerCount{0};
-  bool m_targetWorkerCountHasBeenSet = false;
 
   int m_workerCount{0};
-  bool m_workerCountHasBeenSet = false;
 
   int m_minWorkerCount{0};
-  bool m_minWorkerCountHasBeenSet = false;
 
   int m_maxWorkerCount{0};
-  bool m_maxWorkerCountHasBeenSet = false;
 
   FleetConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_farmIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_autoScalingStatusHasBeenSet = false;
+  bool m_targetWorkerCountHasBeenSet = false;
+  bool m_workerCountHasBeenSet = false;
+  bool m_minWorkerCountHasBeenSet = false;
+  bool m_maxWorkerCountHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
 };
 

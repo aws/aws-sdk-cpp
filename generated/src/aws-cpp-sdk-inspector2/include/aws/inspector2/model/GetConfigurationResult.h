@@ -80,12 +80,12 @@ class GetConfigurationResult {
   ///@}
  private:
   EcrConfigurationState m_ecrConfiguration;
-  bool m_ecrConfigurationHasBeenSet = false;
 
   Ec2ConfigurationState m_ec2Configuration;
-  bool m_ec2ConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ecrConfigurationHasBeenSet = false;
+  bool m_ec2ConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

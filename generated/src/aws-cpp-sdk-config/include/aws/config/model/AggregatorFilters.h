@@ -72,9 +72,9 @@ class AggregatorFilters {
   ///@}
  private:
   AggregatorFilterResourceType m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   AggregatorFilterServicePrincipal m_servicePrincipal;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_servicePrincipalHasBeenSet = false;
 };
 

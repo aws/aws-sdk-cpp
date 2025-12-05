@@ -83,9 +83,9 @@ class ConfigurationRecorderFilter {
   ///@}
  private:
   ConfigurationRecorderFilterName m_filterName{ConfigurationRecorderFilterName::NOT_SET};
-  bool m_filterNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterValue;
+  bool m_filterNameHasBeenSet = false;
   bool m_filterValueHasBeenSet = false;
 };
 

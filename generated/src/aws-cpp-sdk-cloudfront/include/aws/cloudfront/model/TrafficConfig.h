@@ -87,12 +87,12 @@ class TrafficConfig {
   ///@}
  private:
   ContinuousDeploymentSingleWeightConfig m_singleWeightConfig;
-  bool m_singleWeightConfigHasBeenSet = false;
 
   ContinuousDeploymentSingleHeaderConfig m_singleHeaderConfig;
-  bool m_singleHeaderConfigHasBeenSet = false;
 
   ContinuousDeploymentPolicyType m_type{ContinuousDeploymentPolicyType::NOT_SET};
+  bool m_singleWeightConfigHasBeenSet = false;
+  bool m_singleHeaderConfigHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

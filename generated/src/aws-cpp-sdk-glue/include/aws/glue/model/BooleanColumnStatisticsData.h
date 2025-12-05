@@ -78,12 +78,12 @@ class BooleanColumnStatisticsData {
   ///@}
  private:
   long long m_numberOfTrues{0};
-  bool m_numberOfTruesHasBeenSet = false;
 
   long long m_numberOfFalses{0};
-  bool m_numberOfFalsesHasBeenSet = false;
 
   long long m_numberOfNulls{0};
+  bool m_numberOfTruesHasBeenSet = false;
+  bool m_numberOfFalsesHasBeenSet = false;
   bool m_numberOfNullsHasBeenSet = false;
 };
 

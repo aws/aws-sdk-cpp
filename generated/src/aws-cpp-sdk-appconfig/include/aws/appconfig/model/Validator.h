@@ -76,9 +76,9 @@ class Validator {
   ///@}
  private:
   ValidatorType m_type{ValidatorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_typeHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

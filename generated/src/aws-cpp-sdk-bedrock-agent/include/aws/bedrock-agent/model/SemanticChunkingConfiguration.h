@@ -91,12 +91,12 @@ class SemanticChunkingConfiguration {
   ///@}
  private:
   int m_maxTokens{0};
-  bool m_maxTokensHasBeenSet = false;
 
   int m_bufferSize{0};
-  bool m_bufferSizeHasBeenSet = false;
 
   int m_breakpointPercentileThreshold{0};
+  bool m_maxTokensHasBeenSet = false;
+  bool m_bufferSizeHasBeenSet = false;
   bool m_breakpointPercentileThresholdHasBeenSet = false;
 };
 

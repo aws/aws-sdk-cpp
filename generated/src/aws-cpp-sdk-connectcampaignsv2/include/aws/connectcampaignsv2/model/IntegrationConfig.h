@@ -82,12 +82,12 @@ class IntegrationConfig {
   ///@}
  private:
   CustomerProfilesIntegrationConfig m_customerProfiles;
-  bool m_customerProfilesHasBeenSet = false;
 
   QConnectIntegrationConfig m_qConnect;
-  bool m_qConnectHasBeenSet = false;
 
   LambdaIntegrationConfig m_lambda;
+  bool m_customerProfilesHasBeenSet = false;
+  bool m_qConnectHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
 };
 

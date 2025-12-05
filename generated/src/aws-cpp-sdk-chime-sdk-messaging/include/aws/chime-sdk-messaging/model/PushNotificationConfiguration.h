@@ -88,12 +88,12 @@ class PushNotificationConfiguration {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   PushNotificationType m_type{PushNotificationType::NOT_SET};
+  bool m_titleHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

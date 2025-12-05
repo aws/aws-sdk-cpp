@@ -87,12 +87,12 @@ class ListAppComponentRecommendationsResult {
   ///@}
  private:
   Aws::Vector<ComponentRecommendation> m_componentRecommendations;
-  bool m_componentRecommendationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_componentRecommendationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

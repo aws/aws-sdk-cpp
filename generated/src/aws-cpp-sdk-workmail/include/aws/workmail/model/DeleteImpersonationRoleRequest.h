@@ -67,9 +67,9 @@ class DeleteImpersonationRoleRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_impersonationRoleId;
+  bool m_organizationIdHasBeenSet = false;
   bool m_impersonationRoleIdHasBeenSet = false;
 };
 

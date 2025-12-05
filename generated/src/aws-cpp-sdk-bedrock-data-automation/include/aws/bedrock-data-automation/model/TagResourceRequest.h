@@ -69,9 +69,9 @@ class TagResourceRequest : public BedrockDataAutomationRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

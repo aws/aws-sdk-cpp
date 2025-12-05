@@ -481,72 +481,72 @@ class Action {
   ///@}
  private:
   DynamoDBAction m_dynamoDB;
-  bool m_dynamoDBHasBeenSet = false;
 
   DynamoDBv2Action m_dynamoDBv2;
-  bool m_dynamoDBv2HasBeenSet = false;
 
   LambdaAction m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   SnsAction m_sns;
-  bool m_snsHasBeenSet = false;
 
   SqsAction m_sqs;
-  bool m_sqsHasBeenSet = false;
 
   KinesisAction m_kinesis;
-  bool m_kinesisHasBeenSet = false;
 
   RepublishAction m_republish;
-  bool m_republishHasBeenSet = false;
 
   S3Action m_s3;
-  bool m_s3HasBeenSet = false;
 
   FirehoseAction m_firehose;
-  bool m_firehoseHasBeenSet = false;
 
   CloudwatchMetricAction m_cloudwatchMetric;
-  bool m_cloudwatchMetricHasBeenSet = false;
 
   CloudwatchAlarmAction m_cloudwatchAlarm;
-  bool m_cloudwatchAlarmHasBeenSet = false;
 
   CloudwatchLogsAction m_cloudwatchLogs;
-  bool m_cloudwatchLogsHasBeenSet = false;
 
   ElasticsearchAction m_elasticsearch;
-  bool m_elasticsearchHasBeenSet = false;
 
   SalesforceAction m_salesforce;
-  bool m_salesforceHasBeenSet = false;
 
   IotAnalyticsAction m_iotAnalytics;
-  bool m_iotAnalyticsHasBeenSet = false;
 
   IotEventsAction m_iotEvents;
-  bool m_iotEventsHasBeenSet = false;
 
   IotSiteWiseAction m_iotSiteWise;
-  bool m_iotSiteWiseHasBeenSet = false;
 
   StepFunctionsAction m_stepFunctions;
-  bool m_stepFunctionsHasBeenSet = false;
 
   TimestreamAction m_timestream;
-  bool m_timestreamHasBeenSet = false;
 
   HttpAction m_http;
-  bool m_httpHasBeenSet = false;
 
   KafkaAction m_kafka;
-  bool m_kafkaHasBeenSet = false;
 
   OpenSearchAction m_openSearch;
-  bool m_openSearchHasBeenSet = false;
 
   LocationAction m_location;
+  bool m_dynamoDBHasBeenSet = false;
+  bool m_dynamoDBv2HasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_snsHasBeenSet = false;
+  bool m_sqsHasBeenSet = false;
+  bool m_kinesisHasBeenSet = false;
+  bool m_republishHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_firehoseHasBeenSet = false;
+  bool m_cloudwatchMetricHasBeenSet = false;
+  bool m_cloudwatchAlarmHasBeenSet = false;
+  bool m_cloudwatchLogsHasBeenSet = false;
+  bool m_elasticsearchHasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_iotAnalyticsHasBeenSet = false;
+  bool m_iotEventsHasBeenSet = false;
+  bool m_iotSiteWiseHasBeenSet = false;
+  bool m_stepFunctionsHasBeenSet = false;
+  bool m_timestreamHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
+  bool m_kafkaHasBeenSet = false;
+  bool m_openSearchHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

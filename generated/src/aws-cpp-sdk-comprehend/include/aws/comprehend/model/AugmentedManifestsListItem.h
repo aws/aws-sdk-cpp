@@ -168,21 +168,21 @@ class AugmentedManifestsListItem {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Split m_split{Split::NOT_SET};
-  bool m_splitHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
-  bool m_attributeNamesHasBeenSet = false;
 
   Aws::String m_annotationDataS3Uri;
-  bool m_annotationDataS3UriHasBeenSet = false;
 
   Aws::String m_sourceDocumentsS3Uri;
-  bool m_sourceDocumentsS3UriHasBeenSet = false;
 
   AugmentedManifestsDocumentTypeFormat m_documentType{AugmentedManifestsDocumentTypeFormat::NOT_SET};
+  bool m_s3UriHasBeenSet = false;
+  bool m_splitHasBeenSet = false;
+  bool m_attributeNamesHasBeenSet = false;
+  bool m_annotationDataS3UriHasBeenSet = false;
+  bool m_sourceDocumentsS3UriHasBeenSet = false;
   bool m_documentTypeHasBeenSet = false;
 };
 

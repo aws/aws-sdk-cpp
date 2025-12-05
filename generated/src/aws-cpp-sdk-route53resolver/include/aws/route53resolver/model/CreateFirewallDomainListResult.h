@@ -60,9 +60,9 @@ class CreateFirewallDomainListResult {
   ///@}
  private:
   FirewallDomainList m_firewallDomainList;
-  bool m_firewallDomainListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallDomainListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

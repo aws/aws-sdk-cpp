@@ -60,9 +60,9 @@ class ImportCertificateResult {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

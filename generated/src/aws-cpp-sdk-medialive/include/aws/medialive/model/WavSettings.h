@@ -81,12 +81,12 @@ class WavSettings {
   ///@}
  private:
   double m_bitDepth{0.0};
-  bool m_bitDepthHasBeenSet = false;
 
   WavCodingMode m_codingMode{WavCodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   double m_sampleRate{0.0};
+  bool m_bitDepthHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

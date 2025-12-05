@@ -266,39 +266,39 @@ class PieChartConfiguration {
   ///@}
  private:
   PieChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   PieChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   DonutOptions m_donutOptions;
-  bool m_donutOptionsHasBeenSet = false;
 
   SmallMultiplesOptions m_smallMultiplesOptions;
-  bool m_smallMultiplesOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_valueLabelOptions;
-  bool m_valueLabelOptionsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   Aws::Vector<ContributionAnalysisDefault> m_contributionAnalysisDefaults;
-  bool m_contributionAnalysisDefaultsHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_donutOptionsHasBeenSet = false;
+  bool m_smallMultiplesOptionsHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_valueLabelOptionsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
+  bool m_contributionAnalysisDefaultsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class ModelInputConfiguration {
   ///@}
  private:
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   ModelInputDataFormat m_format{ModelInputDataFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   bool m_useEventVariables{false};
-  bool m_useEventVariablesHasBeenSet = false;
 
   Aws::String m_jsonInputTemplate;
-  bool m_jsonInputTemplateHasBeenSet = false;
 
   Aws::String m_csvInputTemplate;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_useEventVariablesHasBeenSet = false;
+  bool m_jsonInputTemplateHasBeenSet = false;
   bool m_csvInputTemplateHasBeenSet = false;
 };
 

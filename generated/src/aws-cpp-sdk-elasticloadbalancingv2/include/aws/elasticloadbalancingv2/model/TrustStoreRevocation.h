@@ -103,15 +103,15 @@ class TrustStoreRevocation {
   ///@}
  private:
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   long long m_revocationId{0};
-  bool m_revocationIdHasBeenSet = false;
 
   RevocationType m_revocationType{RevocationType::NOT_SET};
-  bool m_revocationTypeHasBeenSet = false;
 
   long long m_numberOfRevokedEntries{0};
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_revocationIdHasBeenSet = false;
+  bool m_revocationTypeHasBeenSet = false;
   bool m_numberOfRevokedEntriesHasBeenSet = false;
 };
 

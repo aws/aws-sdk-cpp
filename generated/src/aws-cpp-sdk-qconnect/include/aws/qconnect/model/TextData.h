@@ -64,9 +64,9 @@ class TextData {
   ///@}
  private:
   DocumentText m_title;
-  bool m_titleHasBeenSet = false;
 
   DocumentText m_excerpt;
+  bool m_titleHasBeenSet = false;
   bool m_excerptHasBeenSet = false;
 };
 

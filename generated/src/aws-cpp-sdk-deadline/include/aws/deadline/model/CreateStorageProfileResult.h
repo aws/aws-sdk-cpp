@@ -59,9 +59,9 @@ class CreateStorageProfileResult {
   ///@}
  private:
   Aws::String m_storageProfileId;
-  bool m_storageProfileIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageProfileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

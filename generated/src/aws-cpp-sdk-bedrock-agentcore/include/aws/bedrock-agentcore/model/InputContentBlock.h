@@ -87,12 +87,12 @@ class InputContentBlock {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_blob{};
+  bool m_pathHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_blobHasBeenSet = false;
 };
 

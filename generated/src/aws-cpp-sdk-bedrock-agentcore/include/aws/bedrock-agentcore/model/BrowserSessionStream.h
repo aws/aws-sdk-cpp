@@ -76,9 +76,9 @@ class BrowserSessionStream {
   ///@}
  private:
   AutomationStream m_automationStream;
-  bool m_automationStreamHasBeenSet = false;
 
   LiveViewStream m_liveViewStream;
+  bool m_automationStreamHasBeenSet = false;
   bool m_liveViewStreamHasBeenSet = false;
 };
 

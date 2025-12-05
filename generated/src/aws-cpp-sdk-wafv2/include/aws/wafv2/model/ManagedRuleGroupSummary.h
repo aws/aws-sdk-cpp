@@ -114,15 +114,15 @@ class ManagedRuleGroupSummary {
   ///@}
  private:
   Aws::String m_vendorName;
-  bool m_vendorNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_versioningSupported{false};
-  bool m_versioningSupportedHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_vendorNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versioningSupportedHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

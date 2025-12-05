@@ -225,33 +225,33 @@ class TransitGatewayAttachment {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_transitGatewayOwnerId;
-  bool m_transitGatewayOwnerIdHasBeenSet = false;
 
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_resourceType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TransitGatewayAttachmentState m_state{TransitGatewayAttachmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   TransitGatewayAttachmentAssociation m_association;
-  bool m_associationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_transitGatewayOwnerIdHasBeenSet = false;
+  bool m_resourceOwnerIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_associationHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

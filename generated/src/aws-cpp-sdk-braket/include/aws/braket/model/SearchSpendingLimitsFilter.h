@@ -94,12 +94,12 @@ class SearchSpendingLimitsFilter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   SearchSpendingLimitsFilterOperator m_operator{SearchSpendingLimitsFilterOperator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

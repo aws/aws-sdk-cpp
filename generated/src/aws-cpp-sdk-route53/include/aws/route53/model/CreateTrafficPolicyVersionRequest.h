@@ -91,12 +91,12 @@ class CreateTrafficPolicyVersionRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_idHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

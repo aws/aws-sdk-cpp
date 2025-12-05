@@ -148,21 +148,21 @@ class DescribeReservedNodesOfferingsRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_reservedNodesOfferingId;
-  bool m_reservedNodesOfferingIdHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_offeringType;
-  bool m_offeringTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_reservedNodesOfferingIdHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

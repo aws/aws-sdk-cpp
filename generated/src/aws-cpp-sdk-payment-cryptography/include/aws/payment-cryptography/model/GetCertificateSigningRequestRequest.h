@@ -85,12 +85,12 @@ class GetCertificateSigningRequestRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   SigningAlgorithmType m_signingAlgorithm{SigningAlgorithmType::NOT_SET};
-  bool m_signingAlgorithmHasBeenSet = false;
 
   CertificateSubjectType m_certificateSubject;
+  bool m_keyIdentifierHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
   bool m_certificateSubjectHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class DescribeEmergencyContactSettingsResult {
   ///@}
  private:
   Aws::Vector<EmergencyContact> m_emergencyContactList;
-  bool m_emergencyContactListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emergencyContactListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

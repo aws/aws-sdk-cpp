@@ -92,12 +92,12 @@ class StatusDetails {
   ///@}
  private:
   ValidationDetails m_validationDetails;
-  bool m_validationDetailsHasBeenSet = false;
 
   DataProcessingDetails m_dataProcessingDetails;
-  bool m_dataProcessingDetailsHasBeenSet = false;
 
   TrainingDetails m_trainingDetails;
+  bool m_validationDetailsHasBeenSet = false;
+  bool m_dataProcessingDetailsHasBeenSet = false;
   bool m_trainingDetailsHasBeenSet = false;
 };
 

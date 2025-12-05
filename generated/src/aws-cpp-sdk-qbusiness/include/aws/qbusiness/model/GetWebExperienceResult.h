@@ -359,57 +359,57 @@ class GetWebExperienceResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_webExperienceId;
-  bool m_webExperienceIdHasBeenSet = false;
 
   Aws::String m_webExperienceArn;
-  bool m_webExperienceArnHasBeenSet = false;
 
   Aws::String m_defaultEndpoint;
-  bool m_defaultEndpointHasBeenSet = false;
 
   WebExperienceStatus m_status{WebExperienceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_subtitle;
-  bool m_subtitleHasBeenSet = false;
 
   Aws::String m_welcomeMessage;
-  bool m_welcomeMessageHasBeenSet = false;
 
   WebExperienceSamplePromptsControlMode m_samplePromptsControlMode{WebExperienceSamplePromptsControlMode::NOT_SET};
-  bool m_samplePromptsControlModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_origins;
-  bool m_originsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
-  bool m_identityProviderConfigurationHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   BrowserExtensionConfiguration m_browserExtensionConfiguration;
-  bool m_browserExtensionConfigurationHasBeenSet = false;
 
   CustomizationConfiguration m_customizationConfiguration;
-  bool m_customizationConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_webExperienceIdHasBeenSet = false;
+  bool m_webExperienceArnHasBeenSet = false;
+  bool m_defaultEndpointHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_subtitleHasBeenSet = false;
+  bool m_welcomeMessageHasBeenSet = false;
+  bool m_samplePromptsControlModeHasBeenSet = false;
+  bool m_originsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_identityProviderConfigurationHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_browserExtensionConfigurationHasBeenSet = false;
+  bool m_customizationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

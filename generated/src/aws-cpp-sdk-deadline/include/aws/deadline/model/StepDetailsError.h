@@ -103,15 +103,15 @@ class StepDetailsError {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   JobEntityErrorCode m_code{JobEntityErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_jobIdHasBeenSet = false;
+  bool m_stepIdHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

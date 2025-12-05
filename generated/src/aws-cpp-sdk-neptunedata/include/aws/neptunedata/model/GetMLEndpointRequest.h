@@ -72,9 +72,9 @@ class GetMLEndpointRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_neptuneIamRoleArn;
+  bool m_idHasBeenSet = false;
   bool m_neptuneIamRoleArnHasBeenSet = false;
 };
 

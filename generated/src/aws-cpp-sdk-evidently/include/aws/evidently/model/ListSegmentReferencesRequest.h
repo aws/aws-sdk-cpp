@@ -106,15 +106,15 @@ class ListSegmentReferencesRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_segment;
-  bool m_segmentHasBeenSet = false;
 
   SegmentReferenceResourceType m_type{SegmentReferenceResourceType::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ServiceStatus {
   ///@}
  private:
   CrossAccountDiscoveryServiceStatus m_crossAccountDiscovery;
-  bool m_crossAccountDiscoveryHasBeenSet = false;
 
   CrossRegionDiscoveryStatus m_crossRegionDiscovery;
+  bool m_crossAccountDiscoveryHasBeenSet = false;
   bool m_crossRegionDiscoveryHasBeenSet = false;
 };
 

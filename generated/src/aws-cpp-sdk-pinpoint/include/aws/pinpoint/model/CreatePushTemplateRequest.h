@@ -67,9 +67,9 @@ class CreatePushTemplateRequest : public PinpointRequest {
   ///@}
  private:
   PushNotificationTemplateRequest m_pushNotificationTemplateRequest;
-  bool m_pushNotificationTemplateRequestHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_pushNotificationTemplateRequestHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class ListRegionalBucketsResult {
   ///@}
  private:
   Aws::Vector<RegionalBucket> m_regionalBucketList;
-  bool m_regionalBucketListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_regionalBucketListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

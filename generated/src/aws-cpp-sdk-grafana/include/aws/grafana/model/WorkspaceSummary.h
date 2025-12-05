@@ -289,42 +289,42 @@ class WorkspaceSummary {
   ///@}
  private:
   AuthenticationSummary m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_grafanaToken;
-  bool m_grafanaTokenHasBeenSet = false;
 
   Aws::String m_grafanaVersion;
-  bool m_grafanaVersionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LicenseType m_licenseType{LicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_modified{};
-  bool m_modifiedHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NotificationDestinationType> m_notificationDestinations;
-  bool m_notificationDestinationsHasBeenSet = false;
 
   WorkspaceStatus m_status{WorkspaceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_authenticationHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_grafanaTokenHasBeenSet = false;
+  bool m_grafanaVersionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_modifiedHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_notificationDestinationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

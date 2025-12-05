@@ -58,9 +58,9 @@ class CreateCacheParameterGroupResult {
   ///@}
  private:
   CacheParameterGroup m_cacheParameterGroup;
-  bool m_cacheParameterGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_cacheParameterGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

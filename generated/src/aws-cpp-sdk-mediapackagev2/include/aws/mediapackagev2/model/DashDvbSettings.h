@@ -78,9 +78,9 @@ class DashDvbSettings {
   ///@}
  private:
   DashDvbFontDownload m_fontDownload;
-  bool m_fontDownloadHasBeenSet = false;
 
   Aws::Vector<DashDvbMetricsReporting> m_errorMetrics;
+  bool m_fontDownloadHasBeenSet = false;
   bool m_errorMetricsHasBeenSet = false;
 };
 

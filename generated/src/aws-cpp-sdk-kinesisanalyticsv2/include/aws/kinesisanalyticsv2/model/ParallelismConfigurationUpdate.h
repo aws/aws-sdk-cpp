@@ -113,15 +113,15 @@ class ParallelismConfigurationUpdate {
   ///@}
  private:
   ConfigurationType m_configurationTypeUpdate{ConfigurationType::NOT_SET};
-  bool m_configurationTypeUpdateHasBeenSet = false;
 
   int m_parallelismUpdate{0};
-  bool m_parallelismUpdateHasBeenSet = false;
 
   int m_parallelismPerKPUUpdate{0};
-  bool m_parallelismPerKPUUpdateHasBeenSet = false;
 
   bool m_autoScalingEnabledUpdate{false};
+  bool m_configurationTypeUpdateHasBeenSet = false;
+  bool m_parallelismUpdateHasBeenSet = false;
+  bool m_parallelismPerKPUUpdateHasBeenSet = false;
   bool m_autoScalingEnabledUpdateHasBeenSet = false;
 };
 

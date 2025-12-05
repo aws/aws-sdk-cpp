@@ -143,24 +143,24 @@ class CustomerMeCollectorInfo {
   ///@}
  private:
   int m_activeMeCollectors{0};
-  bool m_activeMeCollectorsHasBeenSet = false;
 
   int m_healthyMeCollectors{0};
-  bool m_healthyMeCollectorsHasBeenSet = false;
 
   int m_denyListedMeCollectors{0};
-  bool m_denyListedMeCollectorsHasBeenSet = false;
 
   int m_shutdownMeCollectors{0};
-  bool m_shutdownMeCollectorsHasBeenSet = false;
 
   int m_unhealthyMeCollectors{0};
-  bool m_unhealthyMeCollectorsHasBeenSet = false;
 
   int m_totalMeCollectors{0};
-  bool m_totalMeCollectorsHasBeenSet = false;
 
   int m_unknownMeCollectors{0};
+  bool m_activeMeCollectorsHasBeenSet = false;
+  bool m_healthyMeCollectorsHasBeenSet = false;
+  bool m_denyListedMeCollectorsHasBeenSet = false;
+  bool m_shutdownMeCollectorsHasBeenSet = false;
+  bool m_unhealthyMeCollectorsHasBeenSet = false;
+  bool m_totalMeCollectorsHasBeenSet = false;
   bool m_unknownMeCollectorsHasBeenSet = false;
 };
 

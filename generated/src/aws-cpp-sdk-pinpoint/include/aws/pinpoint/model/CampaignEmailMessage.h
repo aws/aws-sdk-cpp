@@ -136,18 +136,18 @@ class CampaignEmailMessage {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_fromAddress;
-  bool m_fromAddressHasBeenSet = false;
 
   Aws::Vector<MessageHeader> m_headers;
-  bool m_headersHasBeenSet = false;
 
   Aws::String m_htmlBody;
-  bool m_htmlBodyHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_bodyHasBeenSet = false;
+  bool m_fromAddressHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
+  bool m_htmlBodyHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

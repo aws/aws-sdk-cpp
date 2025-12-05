@@ -112,15 +112,15 @@ class Deployment {
   ///@}
  private:
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   long long m_deploymentId{0};
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_deploymentTime{};
+  bool m_versionLabelHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_deploymentTimeHasBeenSet = false;
 };
 

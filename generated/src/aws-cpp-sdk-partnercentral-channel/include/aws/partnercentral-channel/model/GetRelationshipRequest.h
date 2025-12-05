@@ -86,12 +86,12 @@ class GetRelationshipRequest : public PartnerCentralChannelRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_programManagementAccountIdentifier;
-  bool m_programManagementAccountIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_catalogHasBeenSet = false;
+  bool m_programManagementAccountIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

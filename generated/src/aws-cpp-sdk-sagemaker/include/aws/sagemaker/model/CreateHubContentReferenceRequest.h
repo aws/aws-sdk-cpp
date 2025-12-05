@@ -129,18 +129,18 @@ class CreateHubContentReferenceRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   Aws::String m_sageMakerPublicHubContentArn;
-  bool m_sageMakerPublicHubContentArnHasBeenSet = false;
 
   Aws::String m_hubContentName;
-  bool m_hubContentNameHasBeenSet = false;
 
   Aws::String m_minVersion;
-  bool m_minVersionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_hubNameHasBeenSet = false;
+  bool m_sageMakerPublicHubContentArnHasBeenSet = false;
+  bool m_hubContentNameHasBeenSet = false;
+  bool m_minVersionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

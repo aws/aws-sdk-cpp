@@ -118,18 +118,18 @@ class GetWorkflowStepsResult {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   WorkflowType m_workflowType{WorkflowType::NOT_SET};
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::Vector<WorkflowStepItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

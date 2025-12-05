@@ -85,12 +85,12 @@ class ListRecordHistoryResult {
   ///@}
  private:
   Aws::Vector<RecordDetail> m_recordDetails;
-  bool m_recordDetailsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordDetailsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

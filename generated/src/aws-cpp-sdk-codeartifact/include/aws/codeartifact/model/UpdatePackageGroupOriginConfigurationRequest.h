@@ -173,21 +173,21 @@ class UpdatePackageGroupOriginConfigurationRequest : public CodeArtifactRequest 
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_packageGroup;
-  bool m_packageGroupHasBeenSet = false;
 
   Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestrictionMode> m_restrictions;
-  bool m_restrictionsHasBeenSet = false;
 
   Aws::Vector<PackageGroupAllowedRepository> m_addAllowedRepositories;
-  bool m_addAllowedRepositoriesHasBeenSet = false;
 
   Aws::Vector<PackageGroupAllowedRepository> m_removeAllowedRepositories;
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_packageGroupHasBeenSet = false;
+  bool m_restrictionsHasBeenSet = false;
+  bool m_addAllowedRepositoriesHasBeenSet = false;
   bool m_removeAllowedRepositoriesHasBeenSet = false;
 };
 

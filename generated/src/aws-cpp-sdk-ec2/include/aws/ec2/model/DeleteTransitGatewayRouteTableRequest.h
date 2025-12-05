@@ -70,9 +70,9 @@ class DeleteTransitGatewayRouteTableRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

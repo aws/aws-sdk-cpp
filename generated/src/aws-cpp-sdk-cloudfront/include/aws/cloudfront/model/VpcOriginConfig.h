@@ -112,15 +112,15 @@ class VpcOriginConfig {
   ///@}
  private:
   Aws::String m_vpcOriginId;
-  bool m_vpcOriginIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   int m_originReadTimeout{0};
-  bool m_originReadTimeoutHasBeenSet = false;
 
   int m_originKeepaliveTimeout{0};
+  bool m_vpcOriginIdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_originReadTimeoutHasBeenSet = false;
   bool m_originKeepaliveTimeoutHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class DonutOptions {
   ///@}
  private:
   ArcOptions m_arcOptions;
-  bool m_arcOptionsHasBeenSet = false;
 
   DonutCenterOptions m_donutCenterOptions;
+  bool m_arcOptionsHasBeenSet = false;
   bool m_donutCenterOptionsHasBeenSet = false;
 };
 

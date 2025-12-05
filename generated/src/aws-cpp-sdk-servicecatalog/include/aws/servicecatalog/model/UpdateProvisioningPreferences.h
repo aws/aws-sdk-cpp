@@ -223,24 +223,24 @@ class UpdateProvisioningPreferences {
   ///@}
  private:
   Aws::Vector<Aws::String> m_stackSetAccounts;
-  bool m_stackSetAccountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stackSetRegions;
-  bool m_stackSetRegionsHasBeenSet = false;
 
   int m_stackSetFailureToleranceCount{0};
-  bool m_stackSetFailureToleranceCountHasBeenSet = false;
 
   int m_stackSetFailureTolerancePercentage{0};
-  bool m_stackSetFailureTolerancePercentageHasBeenSet = false;
 
   int m_stackSetMaxConcurrencyCount{0};
-  bool m_stackSetMaxConcurrencyCountHasBeenSet = false;
 
   int m_stackSetMaxConcurrencyPercentage{0};
-  bool m_stackSetMaxConcurrencyPercentageHasBeenSet = false;
 
   StackSetOperationType m_stackSetOperationType{StackSetOperationType::NOT_SET};
+  bool m_stackSetAccountsHasBeenSet = false;
+  bool m_stackSetRegionsHasBeenSet = false;
+  bool m_stackSetFailureToleranceCountHasBeenSet = false;
+  bool m_stackSetFailureTolerancePercentageHasBeenSet = false;
+  bool m_stackSetMaxConcurrencyCountHasBeenSet = false;
+  bool m_stackSetMaxConcurrencyPercentageHasBeenSet = false;
   bool m_stackSetOperationTypeHasBeenSet = false;
 };
 

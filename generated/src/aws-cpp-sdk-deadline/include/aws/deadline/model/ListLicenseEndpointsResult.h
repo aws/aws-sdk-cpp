@@ -90,12 +90,12 @@ class ListLicenseEndpointsResult {
   ///@}
  private:
   Aws::Vector<LicenseEndpointSummary> m_licenseEndpoints;
-  bool m_licenseEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

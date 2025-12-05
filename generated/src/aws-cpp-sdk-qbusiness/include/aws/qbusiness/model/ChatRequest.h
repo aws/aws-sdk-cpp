@@ -202,27 +202,28 @@ class ChatRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroups;
-  bool m_userGroupsHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_parentMessageId;
-  bool m_parentMessageIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   std::shared_ptr<ChatInputStream> m_inputStream;
-  bool m_inputStreamHasBeenSet = false;
   ChatHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_applicationIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userGroupsHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_parentMessageIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_inputStreamHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -156,21 +156,21 @@ class StartIncidentRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   int m_impact{0};
-  bool m_impactHasBeenSet = false;
 
   Aws::Vector<RelatedItem> m_relatedItems;
-  bool m_relatedItemsHasBeenSet = false;
 
   Aws::String m_responsePlanArn;
-  bool m_responsePlanArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   TriggerDetails m_triggerDetails;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_impactHasBeenSet = false;
+  bool m_relatedItemsHasBeenSet = false;
+  bool m_responsePlanArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_triggerDetailsHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class DescribeElasticGpusResponse {
   ///@}
  private:
   Aws::Vector<ElasticGpus> m_elasticGpuSet;
-  bool m_elasticGpuSetHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_elasticGpuSetHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

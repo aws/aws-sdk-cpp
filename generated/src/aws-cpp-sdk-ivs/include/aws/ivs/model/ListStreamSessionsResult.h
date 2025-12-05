@@ -85,12 +85,12 @@ class ListStreamSessionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<StreamSessionSummary> m_streamSessions;
-  bool m_streamSessionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_streamSessionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

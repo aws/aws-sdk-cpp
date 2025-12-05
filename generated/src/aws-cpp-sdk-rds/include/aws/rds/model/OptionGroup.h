@@ -249,36 +249,36 @@ class OptionGroup {
   ///@}
  private:
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::String m_optionGroupDescription;
-  bool m_optionGroupDescriptionHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
-  bool m_majorEngineVersionHasBeenSet = false;
 
   Aws::Vector<Option> m_options;
-  bool m_optionsHasBeenSet = false;
 
   bool m_allowsVpcAndNonVpcInstanceMemberships{false};
-  bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_optionGroupArn;
-  bool m_optionGroupArnHasBeenSet = false;
 
   Aws::String m_sourceOptionGroup;
-  bool m_sourceOptionGroupHasBeenSet = false;
 
   Aws::String m_sourceAccountId;
-  bool m_sourceAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_copyTimestamp{};
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_optionGroupDescriptionHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
+  bool m_majorEngineVersionHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_optionGroupArnHasBeenSet = false;
+  bool m_sourceOptionGroupHasBeenSet = false;
+  bool m_sourceAccountIdHasBeenSet = false;
   bool m_copyTimestampHasBeenSet = false;
 };
 

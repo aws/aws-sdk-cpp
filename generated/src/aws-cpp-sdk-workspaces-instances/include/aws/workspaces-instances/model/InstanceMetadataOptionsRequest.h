@@ -116,18 +116,18 @@ class InstanceMetadataOptionsRequest {
   ///@}
  private:
   HttpEndpointEnum m_httpEndpoint{HttpEndpointEnum::NOT_SET};
-  bool m_httpEndpointHasBeenSet = false;
 
   HttpProtocolIpv6Enum m_httpProtocolIpv6{HttpProtocolIpv6Enum::NOT_SET};
-  bool m_httpProtocolIpv6HasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   HttpTokensEnum m_httpTokens{HttpTokensEnum::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   InstanceMetadataTagsEnum m_instanceMetadataTags{InstanceMetadataTagsEnum::NOT_SET};
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_httpProtocolIpv6HasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
+  bool m_httpTokensHasBeenSet = false;
   bool m_instanceMetadataTagsHasBeenSet = false;
 };
 

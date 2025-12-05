@@ -415,69 +415,69 @@ class GetCollaborationTrainedModelResult {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_versionIdentifier;
-  bool m_versionIdentifierHasBeenSet = false;
 
   Aws::Vector<IncrementalTrainingDataChannelOutput> m_incrementalTrainingDataChannels;
-  bool m_incrementalTrainingDataChannelsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TrainedModelStatus m_status{TrainedModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
-  bool m_trainingInputModeHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   MetricsStatus m_metricsStatus{MetricsStatus::NOT_SET};
-  bool m_metricsStatusHasBeenSet = false;
 
   Aws::String m_metricsStatusDetails;
-  bool m_metricsStatusDetailsHasBeenSet = false;
 
   LogsStatus m_logsStatus{LogsStatus::NOT_SET};
-  bool m_logsStatusHasBeenSet = false;
 
   Aws::String m_logsStatusDetails;
-  bool m_logsStatusDetailsHasBeenSet = false;
 
   Aws::String m_trainingContainerImageDigest;
-  bool m_trainingContainerImageDigestHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_versionIdentifierHasBeenSet = false;
+  bool m_incrementalTrainingDataChannelsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
+  bool m_trainingInputModeHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_metricsStatusHasBeenSet = false;
+  bool m_metricsStatusDetailsHasBeenSet = false;
+  bool m_logsStatusHasBeenSet = false;
+  bool m_logsStatusDetailsHasBeenSet = false;
+  bool m_trainingContainerImageDigestHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class JourneyLimits {
   ///@}
  private:
   int m_dailyCap{0};
-  bool m_dailyCapHasBeenSet = false;
 
   int m_endpointReentryCap{0};
-  bool m_endpointReentryCapHasBeenSet = false;
 
   int m_messagesPerSecond{0};
-  bool m_messagesPerSecondHasBeenSet = false;
 
   Aws::String m_endpointReentryInterval;
-  bool m_endpointReentryIntervalHasBeenSet = false;
 
   JourneyTimeframeCap m_timeframeCap;
-  bool m_timeframeCapHasBeenSet = false;
 
   int m_totalCap{0};
+  bool m_dailyCapHasBeenSet = false;
+  bool m_endpointReentryCapHasBeenSet = false;
+  bool m_messagesPerSecondHasBeenSet = false;
+  bool m_endpointReentryIntervalHasBeenSet = false;
+  bool m_timeframeCapHasBeenSet = false;
   bool m_totalCapHasBeenSet = false;
 };
 

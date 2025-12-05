@@ -202,27 +202,27 @@ class UpdateContainerGroupDefinitionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   GameServerContainerDefinitionInput m_gameServerContainerDefinition;
-  bool m_gameServerContainerDefinitionHasBeenSet = false;
 
   Aws::Vector<SupportContainerDefinitionInput> m_supportContainerDefinitions;
-  bool m_supportContainerDefinitionsHasBeenSet = false;
 
   int m_totalMemoryLimitMebibytes{0};
-  bool m_totalMemoryLimitMebibytesHasBeenSet = false;
 
   double m_totalVcpuLimit{0.0};
-  bool m_totalVcpuLimitHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   int m_sourceVersionNumber{0};
-  bool m_sourceVersionNumberHasBeenSet = false;
 
   ContainerOperatingSystem m_operatingSystem{ContainerOperatingSystem::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_gameServerContainerDefinitionHasBeenSet = false;
+  bool m_supportContainerDefinitionsHasBeenSet = false;
+  bool m_totalMemoryLimitMebibytesHasBeenSet = false;
+  bool m_totalVcpuLimitHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_sourceVersionNumberHasBeenSet = false;
   bool m_operatingSystemHasBeenSet = false;
 };
 

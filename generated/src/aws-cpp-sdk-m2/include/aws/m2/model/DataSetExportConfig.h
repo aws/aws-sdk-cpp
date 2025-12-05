@@ -77,9 +77,9 @@ class DataSetExportConfig {
   ///@}
  private:
   Aws::Vector<DataSetExportItem> m_dataSets;
-  bool m_dataSetsHasBeenSet = false;
 
   Aws::String m_s3Location;
+  bool m_dataSetsHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

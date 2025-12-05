@@ -150,21 +150,21 @@ class ParameterControl {
   ///@}
  private:
   ParameterDateTimePickerControl m_dateTimePicker;
-  bool m_dateTimePickerHasBeenSet = false;
 
   ParameterListControl m_list;
-  bool m_listHasBeenSet = false;
 
   ParameterDropDownControl m_dropdown;
-  bool m_dropdownHasBeenSet = false;
 
   ParameterTextFieldControl m_textField;
-  bool m_textFieldHasBeenSet = false;
 
   ParameterTextAreaControl m_textArea;
-  bool m_textAreaHasBeenSet = false;
 
   ParameterSliderControl m_slider;
+  bool m_dateTimePickerHasBeenSet = false;
+  bool m_listHasBeenSet = false;
+  bool m_dropdownHasBeenSet = false;
+  bool m_textFieldHasBeenSet = false;
+  bool m_textAreaHasBeenSet = false;
   bool m_sliderHasBeenSet = false;
 };
 

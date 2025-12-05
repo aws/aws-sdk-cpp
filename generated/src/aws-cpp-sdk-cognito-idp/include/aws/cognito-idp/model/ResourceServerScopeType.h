@@ -77,9 +77,9 @@ class ResourceServerScopeType {
   ///@}
  private:
   Aws::String m_scopeName;
-  bool m_scopeNameHasBeenSet = false;
 
   Aws::String m_scopeDescription;
+  bool m_scopeNameHasBeenSet = false;
   bool m_scopeDescriptionHasBeenSet = false;
 };
 

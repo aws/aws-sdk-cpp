@@ -285,27 +285,27 @@ class AdminInitiateAuthRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   AuthFlowType m_authFlow{AuthFlowType::NOT_SET};
-  bool m_authFlowHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_authParameters;
-  bool m_authParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-  bool m_clientMetadataHasBeenSet = false;
 
   AnalyticsMetadataType m_analyticsMetadata;
-  bool m_analyticsMetadataHasBeenSet = false;
 
   ContextDataType m_contextData;
-  bool m_contextDataHasBeenSet = false;
 
   Aws::String m_session;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_authFlowHasBeenSet = false;
+  bool m_authParametersHasBeenSet = false;
+  bool m_clientMetadataHasBeenSet = false;
+  bool m_analyticsMetadataHasBeenSet = false;
+  bool m_contextDataHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class StartAttachmentUploadRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   long long m_attachmentSizeInBytes{0};
-  bool m_attachmentSizeInBytesHasBeenSet = false;
 
   Aws::String m_attachmentName;
-  bool m_attachmentNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_connectionToken;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_attachmentSizeInBytesHasBeenSet = false;
+  bool m_attachmentNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_connectionTokenHasBeenSet = false;
 };
 

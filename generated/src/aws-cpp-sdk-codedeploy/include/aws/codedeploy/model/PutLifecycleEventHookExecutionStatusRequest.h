@@ -89,12 +89,12 @@ class PutLifecycleEventHookExecutionStatusRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_lifecycleEventHookExecutionId;
-  bool m_lifecycleEventHookExecutionIdHasBeenSet = false;
 
   LifecycleEventStatus m_status{LifecycleEventStatus::NOT_SET};
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_lifecycleEventHookExecutionIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

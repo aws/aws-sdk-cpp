@@ -70,9 +70,9 @@ class AssociateTrustStoreRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_trustStoreArn;
+  bool m_portalArnHasBeenSet = false;
   bool m_trustStoreArnHasBeenSet = false;
 };
 

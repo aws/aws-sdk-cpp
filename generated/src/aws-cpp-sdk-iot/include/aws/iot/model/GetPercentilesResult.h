@@ -67,9 +67,9 @@ class GetPercentilesResult {
   ///@}
  private:
   Aws::Vector<PercentPair> m_percentiles;
-  bool m_percentilesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_percentilesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

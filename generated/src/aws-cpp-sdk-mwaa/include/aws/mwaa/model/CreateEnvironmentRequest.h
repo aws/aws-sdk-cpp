@@ -615,78 +615,78 @@ class CreateEnvironmentRequest : public MWAARequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_sourceBucketArn;
-  bool m_sourceBucketArnHasBeenSet = false;
 
   Aws::String m_dagS3Path;
-  bool m_dagS3PathHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::String m_pluginsS3Path;
-  bool m_pluginsS3PathHasBeenSet = false;
 
   Aws::String m_pluginsS3ObjectVersion;
-  bool m_pluginsS3ObjectVersionHasBeenSet = false;
 
   Aws::String m_requirementsS3Path;
-  bool m_requirementsS3PathHasBeenSet = false;
 
   Aws::String m_requirementsS3ObjectVersion;
-  bool m_requirementsS3ObjectVersionHasBeenSet = false;
 
   Aws::String m_startupScriptS3Path;
-  bool m_startupScriptS3PathHasBeenSet = false;
 
   Aws::String m_startupScriptS3ObjectVersion;
-  bool m_startupScriptS3ObjectVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_airflowConfigurationOptions;
-  bool m_airflowConfigurationOptionsHasBeenSet = false;
 
   Aws::String m_environmentClass;
-  bool m_environmentClassHasBeenSet = false;
 
   int m_maxWorkers{0};
-  bool m_maxWorkersHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_airflowVersion;
-  bool m_airflowVersionHasBeenSet = false;
 
   LoggingConfigurationInput m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceWindowStart;
-  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   WebserverAccessMode m_webserverAccessMode{WebserverAccessMode::NOT_SET};
-  bool m_webserverAccessModeHasBeenSet = false;
 
   int m_minWorkers{0};
-  bool m_minWorkersHasBeenSet = false;
 
   int m_schedulers{0};
-  bool m_schedulersHasBeenSet = false;
 
   EndpointManagement m_endpointManagement{EndpointManagement::NOT_SET};
-  bool m_endpointManagementHasBeenSet = false;
 
   int m_minWebservers{0};
-  bool m_minWebserversHasBeenSet = false;
 
   int m_maxWebservers{0};
+  bool m_nameHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_sourceBucketArnHasBeenSet = false;
+  bool m_dagS3PathHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_pluginsS3PathHasBeenSet = false;
+  bool m_pluginsS3ObjectVersionHasBeenSet = false;
+  bool m_requirementsS3PathHasBeenSet = false;
+  bool m_requirementsS3ObjectVersionHasBeenSet = false;
+  bool m_startupScriptS3PathHasBeenSet = false;
+  bool m_startupScriptS3ObjectVersionHasBeenSet = false;
+  bool m_airflowConfigurationOptionsHasBeenSet = false;
+  bool m_environmentClassHasBeenSet = false;
+  bool m_maxWorkersHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
+  bool m_airflowVersionHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_webserverAccessModeHasBeenSet = false;
+  bool m_minWorkersHasBeenSet = false;
+  bool m_schedulersHasBeenSet = false;
+  bool m_endpointManagementHasBeenSet = false;
+  bool m_minWebserversHasBeenSet = false;
   bool m_maxWebserversHasBeenSet = false;
 };
 

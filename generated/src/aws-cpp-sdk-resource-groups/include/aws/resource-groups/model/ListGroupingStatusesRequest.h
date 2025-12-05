@@ -114,15 +114,15 @@ class ListGroupingStatusesRequest : public ResourceGroupsRequest {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<ListGroupingStatusesFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_groupHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

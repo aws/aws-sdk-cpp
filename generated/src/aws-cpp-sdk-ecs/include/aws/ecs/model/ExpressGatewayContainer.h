@@ -192,24 +192,24 @@ class ExpressGatewayContainer {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   int m_containerPort{0};
-  bool m_containerPortHasBeenSet = false;
 
   ExpressGatewayServiceAwsLogsConfiguration m_awsLogsConfiguration;
-  bool m_awsLogsConfigurationHasBeenSet = false;
 
   ExpressGatewayRepositoryCredentials m_repositoryCredentials;
-  bool m_repositoryCredentialsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::Vector<Secret> m_secrets;
+  bool m_imageHasBeenSet = false;
+  bool m_containerPortHasBeenSet = false;
+  bool m_awsLogsConfigurationHasBeenSet = false;
+  bool m_repositoryCredentialsHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
   bool m_secretsHasBeenSet = false;
 };
 

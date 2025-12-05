@@ -125,18 +125,18 @@ class ProviderServiceSummary {
   ///@}
  private:
   Aws::String m_providerServiceArn;
-  bool m_providerServiceArnHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::String m_providerServiceDisplayName;
-  bool m_providerServiceDisplayNameHasBeenSet = false;
 
   Aws::String m_providerServiceName;
-  bool m_providerServiceNameHasBeenSet = false;
 
   ServiceType m_providerServiceType{ServiceType::NOT_SET};
+  bool m_providerServiceArnHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_providerServiceDisplayNameHasBeenSet = false;
+  bool m_providerServiceNameHasBeenSet = false;
   bool m_providerServiceTypeHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class AssociateManagedNotificationAdditionalChannelRequest : public Notification
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_managedNotificationConfigurationArn;
+  bool m_channelArnHasBeenSet = false;
   bool m_managedNotificationConfigurationArnHasBeenSet = false;
 };
 

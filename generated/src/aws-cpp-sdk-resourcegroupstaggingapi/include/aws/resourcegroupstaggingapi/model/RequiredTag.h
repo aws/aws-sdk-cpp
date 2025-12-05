@@ -102,12 +102,12 @@ class RequiredTag {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cloudFormationResourceTypes;
-  bool m_cloudFormationResourceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reportingTagKeys;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_cloudFormationResourceTypesHasBeenSet = false;
   bool m_reportingTagKeysHasBeenSet = false;
 };
 

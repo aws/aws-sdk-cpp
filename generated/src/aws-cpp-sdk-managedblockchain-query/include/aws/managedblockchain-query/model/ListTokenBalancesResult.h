@@ -85,12 +85,12 @@ class ListTokenBalancesResult {
   ///@}
  private:
   Aws::Vector<TokenBalance> m_tokenBalances;
-  bool m_tokenBalancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenBalancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class IncidentResponder {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_jobTitle;
-  bool m_jobTitleHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::Vector<CommunicationType> m_communicationPreferences;
+  bool m_nameHasBeenSet = false;
+  bool m_jobTitleHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
   bool m_communicationPreferencesHasBeenSet = false;
 };
 

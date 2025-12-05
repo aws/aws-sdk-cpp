@@ -203,33 +203,33 @@ class DescribeQueryResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   QueryStatus m_queryStatus{QueryStatus::NOT_SET};
-  bool m_queryStatusHasBeenSet = false;
 
   QueryStatisticsForDescribeQuery m_queryStatistics;
-  bool m_queryStatisticsHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_deliveryS3Uri;
-  bool m_deliveryS3UriHasBeenSet = false;
 
   DeliveryStatus m_deliveryStatus{DeliveryStatus::NOT_SET};
-  bool m_deliveryStatusHasBeenSet = false;
 
   Aws::String m_prompt;
-  bool m_promptHasBeenSet = false;
 
   Aws::String m_eventDataStoreOwnerAccountId;
-  bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_queryStatusHasBeenSet = false;
+  bool m_queryStatisticsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_deliveryS3UriHasBeenSet = false;
+  bool m_deliveryStatusHasBeenSet = false;
+  bool m_promptHasBeenSet = false;
+  bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

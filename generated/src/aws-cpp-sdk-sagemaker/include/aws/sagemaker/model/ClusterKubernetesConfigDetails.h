@@ -132,15 +132,15 @@ class ClusterKubernetesConfigDetails {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_currentLabels;
-  bool m_currentLabelsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_desiredLabels;
-  bool m_desiredLabelsHasBeenSet = false;
 
   Aws::Vector<ClusterKubernetesTaint> m_currentTaints;
-  bool m_currentTaintsHasBeenSet = false;
 
   Aws::Vector<ClusterKubernetesTaint> m_desiredTaints;
+  bool m_currentLabelsHasBeenSet = false;
+  bool m_desiredLabelsHasBeenSet = false;
+  bool m_currentTaintsHasBeenSet = false;
   bool m_desiredTaintsHasBeenSet = false;
 };
 

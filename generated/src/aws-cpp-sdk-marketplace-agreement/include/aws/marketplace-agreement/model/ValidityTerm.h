@@ -113,15 +113,15 @@ class ValidityTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_agreementDuration;
-  bool m_agreementDurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_agreementStartDate{};
-  bool m_agreementStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_agreementEndDate{};
+  bool m_typeHasBeenSet = false;
+  bool m_agreementDurationHasBeenSet = false;
+  bool m_agreementStartDateHasBeenSet = false;
   bool m_agreementEndDateHasBeenSet = false;
 };
 

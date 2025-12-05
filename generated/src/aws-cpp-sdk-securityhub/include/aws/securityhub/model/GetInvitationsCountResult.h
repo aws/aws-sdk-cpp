@@ -58,9 +58,9 @@ class GetInvitationsCountResult {
   ///@}
  private:
   int m_invitationsCount{0};
-  bool m_invitationsCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invitationsCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

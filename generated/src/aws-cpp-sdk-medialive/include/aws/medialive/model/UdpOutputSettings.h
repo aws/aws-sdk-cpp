@@ -106,15 +106,15 @@ class UdpOutputSettings {
   ///@}
  private:
   int m_bufferMsec{0};
-  bool m_bufferMsecHasBeenSet = false;
 
   UdpContainerSettings m_containerSettings;
-  bool m_containerSettingsHasBeenSet = false;
 
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   FecOutputSettings m_fecOutputSettings;
+  bool m_bufferMsecHasBeenSet = false;
+  bool m_containerSettingsHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_fecOutputSettingsHasBeenSet = false;
 };
 

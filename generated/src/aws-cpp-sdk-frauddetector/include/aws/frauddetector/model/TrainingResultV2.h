@@ -111,15 +111,15 @@ class TrainingResultV2 {
   ///@}
  private:
   DataValidationMetrics m_dataValidationMetrics;
-  bool m_dataValidationMetricsHasBeenSet = false;
 
   TrainingMetricsV2 m_trainingMetricsV2;
-  bool m_trainingMetricsV2HasBeenSet = false;
 
   VariableImportanceMetrics m_variableImportanceMetrics;
-  bool m_variableImportanceMetricsHasBeenSet = false;
 
   AggregatedVariablesImportanceMetrics m_aggregatedVariablesImportanceMetrics;
+  bool m_dataValidationMetricsHasBeenSet = false;
+  bool m_trainingMetricsV2HasBeenSet = false;
+  bool m_variableImportanceMetricsHasBeenSet = false;
   bool m_aggregatedVariablesImportanceMetricsHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListStudioLifecycleConfigsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<StudioLifecycleConfigDetails> m_studioLifecycleConfigs;
-  bool m_studioLifecycleConfigsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_studioLifecycleConfigsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

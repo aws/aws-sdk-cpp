@@ -66,9 +66,9 @@ class DeleteFormTypeRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_formTypeIdentifier;
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_formTypeIdentifierHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class StopActivityStreamRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   bool m_applyImmediately{false};
+  bool m_resourceArnHasBeenSet = false;
   bool m_applyImmediatelyHasBeenSet = false;
 };
 

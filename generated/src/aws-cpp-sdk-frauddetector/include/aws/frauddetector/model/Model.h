@@ -157,24 +157,24 @@ class Model {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

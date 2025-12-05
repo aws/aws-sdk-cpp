@@ -87,12 +87,12 @@ class GetMigrationsResult {
   ///@}
  private:
   Aws::Vector<MigrationSummary> m_migrationSummaries;
-  bool m_migrationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_migrationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

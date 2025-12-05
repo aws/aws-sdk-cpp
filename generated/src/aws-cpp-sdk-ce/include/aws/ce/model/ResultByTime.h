@@ -119,15 +119,15 @@ class ResultByTime {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::Map<Aws::String, MetricValue> m_total;
-  bool m_totalHasBeenSet = false;
 
   Aws::Vector<Group> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   bool m_estimated{false};
+  bool m_timePeriodHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_estimatedHasBeenSet = false;
 };
 

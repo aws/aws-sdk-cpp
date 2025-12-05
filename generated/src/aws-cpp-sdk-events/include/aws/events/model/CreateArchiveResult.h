@@ -110,18 +110,18 @@ class CreateArchiveResult {
   ///@}
  private:
   Aws::String m_archiveArn;
-  bool m_archiveArnHasBeenSet = false;
 
   ArchiveState m_state{ArchiveState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_archiveArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

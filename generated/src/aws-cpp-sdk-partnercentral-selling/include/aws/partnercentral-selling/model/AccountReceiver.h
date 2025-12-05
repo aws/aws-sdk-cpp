@@ -74,9 +74,9 @@ class AccountReceiver {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_awsAccountId;
+  bool m_aliasHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
 };
 

@@ -347,39 +347,39 @@ class Project {
   ///@}
  private:
   Aws::Vector<DeliveryModel> m_deliveryModels;
-  bool m_deliveryModelsHasBeenSet = false;
 
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
-  bool m_expectedCustomerSpendHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_apnPrograms;
-  bool m_apnProgramsHasBeenSet = false;
 
   Aws::String m_customerBusinessProblem;
-  bool m_customerBusinessProblemHasBeenSet = false;
 
   Aws::String m_customerUseCase;
-  bool m_customerUseCaseHasBeenSet = false;
 
   Aws::String m_relatedOpportunityIdentifier;
-  bool m_relatedOpportunityIdentifierHasBeenSet = false;
 
   Aws::Vector<SalesActivity> m_salesActivities;
-  bool m_salesActivitiesHasBeenSet = false;
 
   CompetitorName m_competitorName{CompetitorName::NOT_SET};
-  bool m_competitorNameHasBeenSet = false;
 
   Aws::String m_otherCompetitorNames;
-  bool m_otherCompetitorNamesHasBeenSet = false;
 
   Aws::String m_otherSolutionDescription;
-  bool m_otherSolutionDescriptionHasBeenSet = false;
 
   Aws::String m_additionalComments;
+  bool m_deliveryModelsHasBeenSet = false;
+  bool m_expectedCustomerSpendHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_apnProgramsHasBeenSet = false;
+  bool m_customerBusinessProblemHasBeenSet = false;
+  bool m_customerUseCaseHasBeenSet = false;
+  bool m_relatedOpportunityIdentifierHasBeenSet = false;
+  bool m_salesActivitiesHasBeenSet = false;
+  bool m_competitorNameHasBeenSet = false;
+  bool m_otherCompetitorNamesHasBeenSet = false;
+  bool m_otherSolutionDescriptionHasBeenSet = false;
   bool m_additionalCommentsHasBeenSet = false;
 };
 

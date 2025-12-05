@@ -78,12 +78,12 @@ class UpdateLensReviewResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   LensReview m_lensReview;
-  bool m_lensReviewHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensReviewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

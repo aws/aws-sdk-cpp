@@ -132,18 +132,18 @@ class DerivationMethodAttributes {
   ///@}
  private:
   EmvCommonAttributes m_emvCommon;
-  bool m_emvCommonHasBeenSet = false;
 
   AmexAttributes m_amex;
-  bool m_amexHasBeenSet = false;
 
   VisaAttributes m_visa;
-  bool m_visaHasBeenSet = false;
 
   Emv2000Attributes m_emv2000;
-  bool m_emv2000HasBeenSet = false;
 
   MasterCardAttributes m_mastercard;
+  bool m_emvCommonHasBeenSet = false;
+  bool m_amexHasBeenSet = false;
+  bool m_visaHasBeenSet = false;
+  bool m_emv2000HasBeenSet = false;
   bool m_mastercardHasBeenSet = false;
 };
 

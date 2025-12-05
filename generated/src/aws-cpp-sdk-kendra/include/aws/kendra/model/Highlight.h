@@ -99,15 +99,15 @@ class Highlight {
   ///@}
  private:
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   bool m_topAnswer{false};
-  bool m_topAnswerHasBeenSet = false;
 
   HighlightType m_type{HighlightType::NOT_SET};
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
+  bool m_topAnswerHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

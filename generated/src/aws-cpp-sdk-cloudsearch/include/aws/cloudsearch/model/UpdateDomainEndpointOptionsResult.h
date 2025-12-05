@@ -67,9 +67,9 @@ class UpdateDomainEndpointOptionsResult {
   ///@}
  private:
   DomainEndpointOptionsStatus m_domainEndpointOptions;
-  bool m_domainEndpointOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class UnprocessedConfigurationPolicyAssociation {
   ///@}
  private:
   ConfigurationPolicyAssociation m_configurationPolicyAssociationIdentifiers;
-  bool m_configurationPolicyAssociationIdentifiersHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorReason;
+  bool m_configurationPolicyAssociationIdentifiersHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorReasonHasBeenSet = false;
 };
 

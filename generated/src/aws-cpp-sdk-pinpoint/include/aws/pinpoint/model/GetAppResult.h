@@ -58,9 +58,9 @@ class GetAppResult {
   ///@}
  private:
   ApplicationResponse m_applicationResponse;
-  bool m_applicationResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

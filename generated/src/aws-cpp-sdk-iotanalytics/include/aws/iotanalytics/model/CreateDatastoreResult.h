@@ -94,15 +94,15 @@ class CreateDatastoreResult {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   Aws::String m_datastoreArn;
-  bool m_datastoreArnHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_datastoreArnHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

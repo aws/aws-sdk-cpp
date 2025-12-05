@@ -289,36 +289,36 @@ class MemberDetail {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_administratorId;
-  bool m_administratorIdHasBeenSet = false;
 
   MemberStatus m_status{MemberStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MemberDisabledReason m_disabledReason{MemberDisabledReason::NOT_SET};
-  bool m_disabledReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_invitedTime{};
-  bool m_invitedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTime{};
-  bool m_updatedTimeHasBeenSet = false;
 
   InvitationType m_invitationType{InvitationType::NOT_SET};
-  bool m_invitationTypeHasBeenSet = false;
 
   Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo> m_volumeUsageByDatasourcePackage;
-  bool m_volumeUsageByDatasourcePackageHasBeenSet = false;
 
   Aws::Map<DatasourcePackage, DatasourcePackageIngestState> m_datasourcePackageIngestStates;
+  bool m_accountIdHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_graphArnHasBeenSet = false;
+  bool m_administratorIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_disabledReasonHasBeenSet = false;
+  bool m_invitedTimeHasBeenSet = false;
+  bool m_updatedTimeHasBeenSet = false;
+  bool m_invitationTypeHasBeenSet = false;
+  bool m_volumeUsageByDatasourcePackageHasBeenSet = false;
   bool m_datasourcePackageIngestStatesHasBeenSet = false;
 };
 

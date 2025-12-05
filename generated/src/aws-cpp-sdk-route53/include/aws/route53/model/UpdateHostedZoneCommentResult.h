@@ -67,9 +67,9 @@ class UpdateHostedZoneCommentResult {
   ///@}
  private:
   HostedZone m_hostedZone;
-  bool m_hostedZoneHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostedZoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

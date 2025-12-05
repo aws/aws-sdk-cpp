@@ -103,12 +103,12 @@ class MessageTemplateSearchExpression {
   ///@}
  private:
   Aws::Vector<MessageTemplateQueryField> m_queries;
-  bool m_queriesHasBeenSet = false;
 
   Aws::Vector<MessageTemplateFilterField> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   MessageTemplateOrderField m_orderOnField;
+  bool m_queriesHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_orderOnFieldHasBeenSet = false;
 };
 

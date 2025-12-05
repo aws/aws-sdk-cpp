@@ -83,9 +83,9 @@ class ScheduleConfig {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   int m_durationInSeconds{0};
+  bool m_scheduleExpressionHasBeenSet = false;
   bool m_durationInSecondsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class SortDefinition {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_keyHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

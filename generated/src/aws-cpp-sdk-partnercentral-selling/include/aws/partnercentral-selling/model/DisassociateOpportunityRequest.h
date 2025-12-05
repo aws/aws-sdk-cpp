@@ -128,15 +128,15 @@ class DisassociateOpportunityRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_opportunityIdentifier;
-  bool m_opportunityIdentifierHasBeenSet = false;
 
   RelatedEntityType m_relatedEntityType{RelatedEntityType::NOT_SET};
-  bool m_relatedEntityTypeHasBeenSet = false;
 
   Aws::String m_relatedEntityIdentifier;
+  bool m_catalogHasBeenSet = false;
+  bool m_opportunityIdentifierHasBeenSet = false;
+  bool m_relatedEntityTypeHasBeenSet = false;
   bool m_relatedEntityIdentifierHasBeenSet = false;
 };
 

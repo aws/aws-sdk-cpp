@@ -112,15 +112,15 @@ class SetUICustomizationRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_cSS;
-  bool m_cSSHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_imageFile{};
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_cSSHasBeenSet = false;
   bool m_imageFileHasBeenSet = false;
 };
 

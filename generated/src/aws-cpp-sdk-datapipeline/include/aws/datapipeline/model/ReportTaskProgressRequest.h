@@ -80,9 +80,9 @@ class ReportTaskProgressRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::Vector<Field> m_fields;
+  bool m_taskIdHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

@@ -235,39 +235,39 @@ class DescribeContextResult {
   ///@}
  private:
   Aws::String m_contextName;
-  bool m_contextNameHasBeenSet = false;
 
   Aws::String m_contextArn;
-  bool m_contextArnHasBeenSet = false;
 
   ContextSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_contextType;
-  bool m_contextTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_lineageGroupArn;
-  bool m_lineageGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contextNameHasBeenSet = false;
+  bool m_contextArnHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_contextTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lineageGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

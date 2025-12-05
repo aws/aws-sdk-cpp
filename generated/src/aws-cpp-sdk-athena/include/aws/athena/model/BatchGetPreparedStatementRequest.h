@@ -74,9 +74,9 @@ class BatchGetPreparedStatementRequest : public AthenaRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_preparedStatementNames;
-  bool m_preparedStatementNamesHasBeenSet = false;
 
   Aws::String m_workGroup;
+  bool m_preparedStatementNamesHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
 };
 

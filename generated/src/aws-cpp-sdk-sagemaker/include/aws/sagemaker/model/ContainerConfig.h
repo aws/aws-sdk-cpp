@@ -108,12 +108,12 @@ class ContainerConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_containerArguments;
-  bool m_containerArgumentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerEntrypoint;
-  bool m_containerEntrypointHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_containerEnvironmentVariables;
+  bool m_containerArgumentsHasBeenSet = false;
+  bool m_containerEntrypointHasBeenSet = false;
   bool m_containerEnvironmentVariablesHasBeenSet = false;
 };
 

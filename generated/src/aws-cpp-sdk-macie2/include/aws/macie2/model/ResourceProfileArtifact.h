@@ -93,12 +93,12 @@ class ResourceProfileArtifact {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_classificationResultStatus;
-  bool m_classificationResultStatusHasBeenSet = false;
 
   bool m_sensitive{false};
+  bool m_arnHasBeenSet = false;
+  bool m_classificationResultStatusHasBeenSet = false;
   bool m_sensitiveHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class DescribeMaintenanceWindowsForTargetRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   MaintenanceWindowResourceType m_resourceType{MaintenanceWindowResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_targetsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

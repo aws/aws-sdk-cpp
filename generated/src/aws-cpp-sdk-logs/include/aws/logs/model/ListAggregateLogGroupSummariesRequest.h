@@ -203,27 +203,27 @@ class ListAggregateLogGroupSummariesRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIdentifiers;
-  bool m_accountIdentifiersHasBeenSet = false;
 
   bool m_includeLinkedAccounts{false};
-  bool m_includeLinkedAccountsHasBeenSet = false;
 
   LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
-  bool m_logGroupClassHasBeenSet = false;
 
   Aws::String m_logGroupNamePattern;
-  bool m_logGroupNamePatternHasBeenSet = false;
 
   Aws::Vector<DataSourceFilter> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   ListAggregateLogGroupSummariesGroupBy m_groupBy{ListAggregateLogGroupSummariesGroupBy::NOT_SET};
-  bool m_groupByHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_accountIdentifiersHasBeenSet = false;
+  bool m_includeLinkedAccountsHasBeenSet = false;
+  bool m_logGroupClassHasBeenSet = false;
+  bool m_logGroupNamePatternHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

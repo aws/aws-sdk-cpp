@@ -68,9 +68,9 @@ class UpdateResolverRuleRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_resolverRuleId;
-  bool m_resolverRuleIdHasBeenSet = false;
 
   ResolverRuleConfig m_config;
+  bool m_resolverRuleIdHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

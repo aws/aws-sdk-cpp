@@ -90,9 +90,9 @@ class AvailMatchingCriteria {
   ///@}
  private:
   Aws::String m_dynamicVariable;
-  bool m_dynamicVariableHasBeenSet = false;
 
   Operator m_operator{Operator::NOT_SET};
+  bool m_dynamicVariableHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

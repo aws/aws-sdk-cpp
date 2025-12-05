@@ -141,21 +141,21 @@ class RecoveryPoint {
   ///@}
  private:
   Aws::String m_namespaceArn;
-  bool m_namespaceArnHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_recoveryPointCreateTime{};
-  bool m_recoveryPointCreateTimeHasBeenSet = false;
 
   Aws::String m_recoveryPointId;
-  bool m_recoveryPointIdHasBeenSet = false;
 
   double m_totalSizeInMegaBytes{0.0};
-  bool m_totalSizeInMegaBytesHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_namespaceArnHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_recoveryPointCreateTimeHasBeenSet = false;
+  bool m_recoveryPointIdHasBeenSet = false;
+  bool m_totalSizeInMegaBytesHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

@@ -261,39 +261,39 @@ class CreateRuleResult {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   RuleStatus m_status{RuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   LockConfiguration m_lockConfiguration;
-  bool m_lockConfigurationHasBeenSet = false;
 
   LockState m_lockState{LockState::NOT_SET};
-  bool m_lockStateHasBeenSet = false;
 
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_excludeResourceTags;
-  bool m_excludeResourceTagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identifierHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lockConfigurationHasBeenSet = false;
+  bool m_lockStateHasBeenSet = false;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_excludeResourceTagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DescribeTrunkInterfaceAssociationsResponse {
   ///@}
  private:
   Aws::Vector<TrunkInterfaceAssociation> m_interfaceAssociations;
-  bool m_interfaceAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_interfaceAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

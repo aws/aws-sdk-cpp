@@ -98,15 +98,15 @@ class CreateMapResult {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   Aws::String m_mapArn;
-  bool m_mapArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mapNameHasBeenSet = false;
+  bool m_mapArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

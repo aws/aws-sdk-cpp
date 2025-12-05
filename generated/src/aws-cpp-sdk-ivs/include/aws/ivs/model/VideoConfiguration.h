@@ -233,36 +233,36 @@ class VideoConfiguration {
   ///@}
  private:
   Aws::String m_avcLevel;
-  bool m_avcLevelHasBeenSet = false;
 
   Aws::String m_avcProfile;
-  bool m_avcProfileHasBeenSet = false;
 
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   Aws::String m_encoder;
-  bool m_encoderHasBeenSet = false;
 
   Aws::String m_level;
-  bool m_levelHasBeenSet = false;
 
   Aws::String m_profile;
-  bool m_profileHasBeenSet = false;
 
   long long m_targetBitrate{0};
-  bool m_targetBitrateHasBeenSet = false;
 
   long long m_targetFramerate{0};
-  bool m_targetFramerateHasBeenSet = false;
 
   Aws::String m_track;
-  bool m_trackHasBeenSet = false;
 
   long long m_videoHeight{0};
-  bool m_videoHeightHasBeenSet = false;
 
   long long m_videoWidth{0};
+  bool m_avcLevelHasBeenSet = false;
+  bool m_avcProfileHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_encoderHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_targetBitrateHasBeenSet = false;
+  bool m_targetFramerateHasBeenSet = false;
+  bool m_trackHasBeenSet = false;
+  bool m_videoHeightHasBeenSet = false;
   bool m_videoWidthHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class CancelPipelineReprocessingRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_reprocessingId;
+  bool m_pipelineNameHasBeenSet = false;
   bool m_reprocessingIdHasBeenSet = false;
 };
 

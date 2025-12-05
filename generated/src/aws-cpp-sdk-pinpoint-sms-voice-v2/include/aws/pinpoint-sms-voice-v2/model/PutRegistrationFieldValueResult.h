@@ -168,27 +168,27 @@ class PutRegistrationFieldValueResult {
   ///@}
  private:
   Aws::String m_registrationArn;
-  bool m_registrationArnHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_fieldPath;
-  bool m_fieldPathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectChoices;
-  bool m_selectChoicesHasBeenSet = false;
 
   Aws::String m_textValue;
-  bool m_textValueHasBeenSet = false;
 
   Aws::String m_registrationAttachmentId;
-  bool m_registrationAttachmentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationArnHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_fieldPathHasBeenSet = false;
+  bool m_selectChoicesHasBeenSet = false;
+  bool m_textValueHasBeenSet = false;
+  bool m_registrationAttachmentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

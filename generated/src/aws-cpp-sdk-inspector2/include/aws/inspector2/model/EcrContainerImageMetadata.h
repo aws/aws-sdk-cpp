@@ -113,15 +113,15 @@ class EcrContainerImageMetadata {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_imagePulledAt{};
-  bool m_imagePulledAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastInUseAt{};
-  bool m_lastInUseAtHasBeenSet = false;
 
   long long m_inUseCount{0};
+  bool m_tagsHasBeenSet = false;
+  bool m_imagePulledAtHasBeenSet = false;
+  bool m_lastInUseAtHasBeenSet = false;
   bool m_inUseCountHasBeenSet = false;
 };
 

@@ -212,30 +212,30 @@ class GrantListEntry {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_grantId;
-  bool m_grantIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_granteePrincipal;
-  bool m_granteePrincipalHasBeenSet = false;
 
   Aws::String m_retiringPrincipal;
-  bool m_retiringPrincipalHasBeenSet = false;
 
   Aws::String m_issuingAccount;
-  bool m_issuingAccountHasBeenSet = false;
 
   Aws::Vector<GrantOperation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   GrantConstraints m_constraints;
+  bool m_keyIdHasBeenSet = false;
+  bool m_grantIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_granteePrincipalHasBeenSet = false;
+  bool m_retiringPrincipalHasBeenSet = false;
+  bool m_issuingAccountHasBeenSet = false;
+  bool m_operationsHasBeenSet = false;
   bool m_constraintsHasBeenSet = false;
 };
 

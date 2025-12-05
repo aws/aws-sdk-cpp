@@ -85,12 +85,12 @@ class ListDomainConfigurationsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   ServiceType m_serviceType{ServiceType::NOT_SET};
+  bool m_markerHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_serviceTypeHasBeenSet = false;
 };
 

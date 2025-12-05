@@ -119,15 +119,15 @@ class Filter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   FilterLogicalOperator m_logicalOperator{FilterLogicalOperator::NOT_SET};
-  bool m_logicalOperatorHasBeenSet = false;
 
   Aws::Vector<FilterExpression> m_filters;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_logicalOperatorHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

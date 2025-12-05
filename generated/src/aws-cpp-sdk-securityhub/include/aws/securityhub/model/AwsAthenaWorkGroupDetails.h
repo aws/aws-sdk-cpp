@@ -110,15 +110,15 @@ class AwsAthenaWorkGroupDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   AwsAthenaWorkGroupConfigurationDetails m_configuration;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

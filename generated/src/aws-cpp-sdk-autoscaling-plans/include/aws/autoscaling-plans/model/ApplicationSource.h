@@ -76,9 +76,9 @@ class ApplicationSource {
   ///@}
  private:
   Aws::String m_cloudFormationStackARN;
-  bool m_cloudFormationStackARNHasBeenSet = false;
 
   Aws::Vector<TagFilter> m_tagFilters;
+  bool m_cloudFormationStackARNHasBeenSet = false;
   bool m_tagFiltersHasBeenSet = false;
 };
 

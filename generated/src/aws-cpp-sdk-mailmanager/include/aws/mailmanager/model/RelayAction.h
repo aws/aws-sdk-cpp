@@ -88,12 +88,12 @@ class RelayAction {
   ///@}
  private:
   ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
-  bool m_actionFailurePolicyHasBeenSet = false;
 
   Aws::String m_relay;
-  bool m_relayHasBeenSet = false;
 
   MailFrom m_mailFrom{MailFrom::NOT_SET};
+  bool m_actionFailurePolicyHasBeenSet = false;
+  bool m_relayHasBeenSet = false;
   bool m_mailFromHasBeenSet = false;
 };
 

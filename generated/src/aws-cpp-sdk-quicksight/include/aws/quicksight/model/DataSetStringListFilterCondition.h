@@ -69,9 +69,9 @@ class DataSetStringListFilterCondition {
   ///@}
  private:
   DataSetStringListFilterOperator m_operator{DataSetStringListFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DataSetStringListFilterValue m_values;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

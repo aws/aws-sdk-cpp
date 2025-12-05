@@ -217,36 +217,36 @@ class GetAccountActivityResult {
   ///@}
  private:
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActivityStatus m_status{ActivityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_instructionsUrl;
-  bool m_instructionsUrlHasBeenSet = false;
 
   ActivityReward m_reward;
-  bool m_rewardHasBeenSet = false;
 
   int m_estimatedTimeToCompleteInMinutes{0};
-  bool m_estimatedTimeToCompleteInMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_activityIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_instructionsUrlHasBeenSet = false;
+  bool m_rewardHasBeenSet = false;
+  bool m_estimatedTimeToCompleteInMinutesHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

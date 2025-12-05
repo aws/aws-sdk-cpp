@@ -71,9 +71,9 @@ class ByteContentFile {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_mediaType;
+  bool m_dataHasBeenSet = false;
   bool m_mediaTypeHasBeenSet = false;
 };
 

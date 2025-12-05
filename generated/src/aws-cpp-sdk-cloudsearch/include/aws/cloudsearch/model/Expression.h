@@ -68,9 +68,9 @@ class Expression {
   ///@}
  private:
   Aws::String m_expressionName;
-  bool m_expressionNameHasBeenSet = false;
 
   Aws::String m_expressionValue;
+  bool m_expressionNameHasBeenSet = false;
   bool m_expressionValueHasBeenSet = false;
 };
 

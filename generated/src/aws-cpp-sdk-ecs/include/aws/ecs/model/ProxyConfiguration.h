@@ -122,12 +122,12 @@ class ProxyConfiguration {
   ///@}
  private:
   ProxyConfigurationType m_type{ProxyConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_properties;
+  bool m_typeHasBeenSet = false;
+  bool m_containerNameHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

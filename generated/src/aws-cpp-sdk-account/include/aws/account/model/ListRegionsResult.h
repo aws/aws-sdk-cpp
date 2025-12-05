@@ -88,12 +88,12 @@ class ListRegionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Region> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class DescribeFleetLocationAttributesRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_locations;
-  bool m_locationsHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_locationsHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

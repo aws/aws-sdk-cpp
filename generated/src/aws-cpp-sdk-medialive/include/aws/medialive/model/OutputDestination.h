@@ -172,21 +172,21 @@ class OutputDestination {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<MediaPackageOutputDestinationSettings> m_mediaPackageSettings;
-  bool m_mediaPackageSettingsHasBeenSet = false;
 
   MultiplexProgramChannelDestinationSettings m_multiplexSettings;
-  bool m_multiplexSettingsHasBeenSet = false;
 
   Aws::Vector<OutputDestinationSettings> m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<SrtOutputDestinationSettings> m_srtSettings;
-  bool m_srtSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logicalInterfaceNames;
+  bool m_idHasBeenSet = false;
+  bool m_mediaPackageSettingsHasBeenSet = false;
+  bool m_multiplexSettingsHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_srtSettingsHasBeenSet = false;
   bool m_logicalInterfaceNamesHasBeenSet = false;
 };
 

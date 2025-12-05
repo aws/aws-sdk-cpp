@@ -191,27 +191,27 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_customAttributes;
-  bool m_customAttributesHasBeenSet = false;
 
   Aws::String m_inferenceId;
-  bool m_inferenceIdHasBeenSet = false;
 
   Aws::String m_inputLocation;
-  bool m_inputLocationHasBeenSet = false;
 
   int m_requestTTLSeconds{0};
-  bool m_requestTTLSecondsHasBeenSet = false;
 
   int m_invocationTimeoutSeconds{0};
+  bool m_endpointNameHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_acceptHasBeenSet = false;
+  bool m_customAttributesHasBeenSet = false;
+  bool m_inferenceIdHasBeenSet = false;
+  bool m_inputLocationHasBeenSet = false;
+  bool m_requestTTLSecondsHasBeenSet = false;
   bool m_invocationTimeoutSecondsHasBeenSet = false;
 };
 

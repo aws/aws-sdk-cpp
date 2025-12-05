@@ -60,9 +60,9 @@ class GetEvidenceFolderResult {
   ///@}
  private:
   AssessmentEvidenceFolder m_evidenceFolder;
-  bool m_evidenceFolderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evidenceFolderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

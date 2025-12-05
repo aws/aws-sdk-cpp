@@ -80,9 +80,9 @@ class ScatterPlotFieldWells {
   ///@}
  private:
   ScatterPlotCategoricallyAggregatedFieldWells m_scatterPlotCategoricallyAggregatedFieldWells;
-  bool m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = false;
 
   ScatterPlotUnaggregatedFieldWells m_scatterPlotUnaggregatedFieldWells;
+  bool m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = false;
   bool m_scatterPlotUnaggregatedFieldWellsHasBeenSet = false;
 };
 

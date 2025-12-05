@@ -94,15 +94,15 @@ class GetMLDataProcessingJobResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MlResourceDefinition m_processingJob;
-  bool m_processingJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_processingJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

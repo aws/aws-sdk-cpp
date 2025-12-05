@@ -243,33 +243,33 @@ class ChannelNamespace {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AuthMode> m_subscribeAuthModes;
-  bool m_subscribeAuthModesHasBeenSet = false;
 
   Aws::Vector<AuthMode> m_publishAuthModes;
-  bool m_publishAuthModesHasBeenSet = false;
 
   Aws::String m_codeHandlers;
-  bool m_codeHandlersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_channelNamespaceArn;
-  bool m_channelNamespaceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   HandlerConfigs m_handlerConfigs;
+  bool m_apiIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_subscribeAuthModesHasBeenSet = false;
+  bool m_publishAuthModesHasBeenSet = false;
+  bool m_codeHandlersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_channelNamespaceArnHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_handlerConfigsHasBeenSet = false;
 };
 

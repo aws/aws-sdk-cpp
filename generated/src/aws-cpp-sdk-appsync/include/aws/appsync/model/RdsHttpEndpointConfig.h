@@ -124,18 +124,18 @@ class RdsHttpEndpointConfig {
   ///@}
  private:
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
-  bool m_dbClusterIdentifierHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_awsSecretStoreArn;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_dbClusterIdentifierHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
   bool m_awsSecretStoreArnHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class KeywordMatchConfiguration {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   bool m_negate{false};
+  bool m_ruleNameHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
   bool m_negateHasBeenSet = false;
 };
 

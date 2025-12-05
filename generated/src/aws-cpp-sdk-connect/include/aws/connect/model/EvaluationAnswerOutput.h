@@ -95,12 +95,12 @@ class EvaluationAnswerOutput {
   ///@}
  private:
   EvaluationAnswerData m_value;
-  bool m_valueHasBeenSet = false;
 
   EvaluationAnswerData m_systemSuggestedValue;
-  bool m_systemSuggestedValueHasBeenSet = false;
 
   Aws::Vector<EvaluationSuggestedAnswer> m_suggestedAnswers;
+  bool m_valueHasBeenSet = false;
+  bool m_systemSuggestedValueHasBeenSet = false;
   bool m_suggestedAnswersHasBeenSet = false;
 };
 

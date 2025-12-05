@@ -70,9 +70,9 @@ class IdNamespaceInputSource {
   ///@}
  private:
   Aws::String m_inputSourceARN;
-  bool m_inputSourceARNHasBeenSet = false;
 
   Aws::String m_schemaName;
+  bool m_inputSourceARNHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;
 };
 

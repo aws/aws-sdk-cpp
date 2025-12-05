@@ -400,63 +400,63 @@ class DescribeJobRunResult {
   ///@}
  private:
   int m_attempt{0};
-  bool m_attemptHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   int m_executionTime{0};
-  bool m_executionTimeHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   ProfileConfiguration m_profileConfiguration;
-  bool m_profileConfigurationHasBeenSet = false;
 
   Aws::Vector<ValidationConfiguration> m_validationConfigurations;
-  bool m_validationConfigurationsHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   JobRunState m_state{JobRunState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   LogSubscription m_logSubscription{LogSubscription::NOT_SET};
-  bool m_logSubscriptionHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
-  bool m_dataCatalogOutputsHasBeenSet = false;
 
   Aws::Vector<DatabaseOutput> m_databaseOutputs;
-  bool m_databaseOutputsHasBeenSet = false;
 
   RecipeReference m_recipeReference;
-  bool m_recipeReferenceHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   JobSample m_jobSample;
-  bool m_jobSampleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attemptHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_executionTimeHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_profileConfigurationHasBeenSet = false;
+  bool m_validationConfigurationsHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_logSubscriptionHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_dataCatalogOutputsHasBeenSet = false;
+  bool m_databaseOutputsHasBeenSet = false;
+  bool m_recipeReferenceHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_jobSampleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

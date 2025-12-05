@@ -106,15 +106,15 @@ class DeleteHsmRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_hsmId;
-  bool m_hsmIdHasBeenSet = false;
 
   Aws::String m_eniId;
-  bool m_eniIdHasBeenSet = false;
 
   Aws::String m_eniIp;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_hsmIdHasBeenSet = false;
+  bool m_eniIdHasBeenSet = false;
   bool m_eniIpHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class CreateLoadBalancerListenersRequest : public ElasticLoadBalancingRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Listener> m_listeners;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_listenersHasBeenSet = false;
 };
 

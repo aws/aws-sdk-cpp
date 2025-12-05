@@ -275,39 +275,39 @@ class IpamScope {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ipamScopeId;
-  bool m_ipamScopeIdHasBeenSet = false;
 
   Aws::String m_ipamScopeArn;
-  bool m_ipamScopeArnHasBeenSet = false;
 
   Aws::String m_ipamArn;
-  bool m_ipamArnHasBeenSet = false;
 
   Aws::String m_ipamRegion;
-  bool m_ipamRegionHasBeenSet = false;
 
   IpamScopeType m_ipamScopeType{IpamScopeType::NOT_SET};
-  bool m_ipamScopeTypeHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_poolCount{0};
-  bool m_poolCountHasBeenSet = false;
 
   IpamScopeState m_state{IpamScopeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IpamScopeExternalAuthorityConfiguration m_externalAuthorityConfiguration;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ipamScopeIdHasBeenSet = false;
+  bool m_ipamScopeArnHasBeenSet = false;
+  bool m_ipamArnHasBeenSet = false;
+  bool m_ipamRegionHasBeenSet = false;
+  bool m_ipamScopeTypeHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_poolCountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_externalAuthorityConfigurationHasBeenSet = false;
 };
 

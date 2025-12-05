@@ -75,9 +75,9 @@ class UntagResourceRequest : public CostandUsageReportServiceRequest {
   ///@}
  private:
   Aws::String m_reportName;
-  bool m_reportNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_reportNameHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

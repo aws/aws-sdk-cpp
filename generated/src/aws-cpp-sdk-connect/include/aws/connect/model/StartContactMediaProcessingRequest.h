@@ -103,15 +103,15 @@ class StartContactMediaProcessingRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_processorArn;
-  bool m_processorArnHasBeenSet = false;
 
   ContactMediaProcessingFailureMode m_failureMode{ContactMediaProcessingFailureMode::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_processorArnHasBeenSet = false;
   bool m_failureModeHasBeenSet = false;
 };
 

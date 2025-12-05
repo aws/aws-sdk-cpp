@@ -80,9 +80,9 @@ class HierarchicalChunkingConfiguration {
   ///@}
  private:
   Aws::Vector<HierarchicalChunkingLevelConfiguration> m_levelConfigurations;
-  bool m_levelConfigurationsHasBeenSet = false;
 
   int m_overlapTokens{0};
+  bool m_levelConfigurationsHasBeenSet = false;
   bool m_overlapTokensHasBeenSet = false;
 };
 

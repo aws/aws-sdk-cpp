@@ -133,18 +133,18 @@ class CfnTemplateProviderDetail {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateURL;
-  bool m_templateURLHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::Vector<CfnStackParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   CfnStackDetail m_stackDetail;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateURLHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_stackDetailHasBeenSet = false;
 };
 

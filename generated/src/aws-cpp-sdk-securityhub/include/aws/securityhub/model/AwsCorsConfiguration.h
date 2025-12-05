@@ -163,21 +163,21 @@ class AwsCorsConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowOrigins;
-  bool m_allowOriginsHasBeenSet = false;
 
   bool m_allowCredentials{false};
-  bool m_allowCredentialsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exposeHeaders;
-  bool m_exposeHeadersHasBeenSet = false;
 
   int m_maxAge{0};
-  bool m_maxAgeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowMethods;
-  bool m_allowMethodsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowHeaders;
+  bool m_allowOriginsHasBeenSet = false;
+  bool m_allowCredentialsHasBeenSet = false;
+  bool m_exposeHeadersHasBeenSet = false;
+  bool m_maxAgeHasBeenSet = false;
+  bool m_allowMethodsHasBeenSet = false;
   bool m_allowHeadersHasBeenSet = false;
 };
 

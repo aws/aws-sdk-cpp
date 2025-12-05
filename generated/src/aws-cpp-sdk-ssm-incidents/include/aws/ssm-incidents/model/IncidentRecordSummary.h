@@ -158,24 +158,24 @@ class IncidentRecordSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   int m_impact{0};
-  bool m_impactHasBeenSet = false;
 
   IncidentRecordSource m_incidentRecordSource;
-  bool m_incidentRecordSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_resolvedTime{};
-  bool m_resolvedTimeHasBeenSet = false;
 
   IncidentRecordStatus m_status{IncidentRecordStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_impactHasBeenSet = false;
+  bool m_incidentRecordSourceHasBeenSet = false;
+  bool m_resolvedTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

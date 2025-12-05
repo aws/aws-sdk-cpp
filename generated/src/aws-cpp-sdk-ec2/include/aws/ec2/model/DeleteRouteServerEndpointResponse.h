@@ -60,9 +60,9 @@ class DeleteRouteServerEndpointResponse {
   ///@}
  private:
   RouteServerEndpoint m_routeServerEndpoint;
-  bool m_routeServerEndpointHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerEndpointHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

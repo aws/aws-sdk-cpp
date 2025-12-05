@@ -71,9 +71,9 @@ class RunConfigurationUpdate {
   ///@}
  private:
   FlinkRunConfiguration m_flinkRunConfiguration;
-  bool m_flinkRunConfigurationHasBeenSet = false;
 
   ApplicationRestoreConfiguration m_applicationRestoreConfiguration;
+  bool m_flinkRunConfigurationHasBeenSet = false;
   bool m_applicationRestoreConfigurationHasBeenSet = false;
 };
 

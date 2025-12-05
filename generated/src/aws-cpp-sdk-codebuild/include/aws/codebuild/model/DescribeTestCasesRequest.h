@@ -111,15 +111,15 @@ class DescribeTestCasesRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_reportArn;
-  bool m_reportArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   TestCaseFilter m_filter;
+  bool m_reportArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

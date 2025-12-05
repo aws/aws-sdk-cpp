@@ -130,15 +130,15 @@ class ExportTransitGatewayRoutesRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

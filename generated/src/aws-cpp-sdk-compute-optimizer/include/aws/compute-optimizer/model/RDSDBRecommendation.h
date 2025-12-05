@@ -490,70 +490,70 @@ class RDSDBRecommendation {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_promotionTier{0};
-  bool m_promotionTierHasBeenSet = false;
 
   Aws::String m_currentDBInstanceClass;
-  bool m_currentDBInstanceClassHasBeenSet = false;
 
   DBStorageConfiguration m_currentStorageConfiguration;
-  bool m_currentStorageConfigurationHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
-  bool m_dbClusterIdentifierHasBeenSet = false;
 
   Idle m_idle{Idle::NOT_SET};
-  bool m_idleHasBeenSet = false;
 
   RDSInstanceFinding m_instanceFinding{RDSInstanceFinding::NOT_SET};
-  bool m_instanceFindingHasBeenSet = false;
 
   RDSStorageFinding m_storageFinding{RDSStorageFinding::NOT_SET};
-  bool m_storageFindingHasBeenSet = false;
 
   Aws::Vector<RDSInstanceFindingReasonCode> m_instanceFindingReasonCodes;
-  bool m_instanceFindingReasonCodesHasBeenSet = false;
 
   RDSCurrentInstancePerformanceRisk m_currentInstancePerformanceRisk{RDSCurrentInstancePerformanceRisk::NOT_SET};
-  bool m_currentInstancePerformanceRiskHasBeenSet = false;
 
   RDSEstimatedMonthlyVolumeIOPsCostVariation m_currentStorageEstimatedMonthlyVolumeIOPsCostVariation{
       RDSEstimatedMonthlyVolumeIOPsCostVariation::NOT_SET};
-  bool m_currentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet = false;
 
   Aws::Vector<RDSStorageFindingReasonCode> m_storageFindingReasonCodes;
-  bool m_storageFindingReasonCodesHasBeenSet = false;
 
   Aws::Vector<RDSDBInstanceRecommendationOption> m_instanceRecommendationOptions;
-  bool m_instanceRecommendationOptionsHasBeenSet = false;
 
   Aws::Vector<RDSDBStorageRecommendationOption> m_storageRecommendationOptions;
-  bool m_storageRecommendationOptionsHasBeenSet = false;
 
   Aws::Vector<RDSDBUtilizationMetric> m_utilizationMetrics;
-  bool m_utilizationMetricsHasBeenSet = false;
 
   RDSEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
   double m_lookbackPeriodInDays{0.0};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_promotionTierHasBeenSet = false;
+  bool m_currentDBInstanceClassHasBeenSet = false;
+  bool m_currentStorageConfigurationHasBeenSet = false;
+  bool m_dbClusterIdentifierHasBeenSet = false;
+  bool m_idleHasBeenSet = false;
+  bool m_instanceFindingHasBeenSet = false;
+  bool m_storageFindingHasBeenSet = false;
+  bool m_instanceFindingReasonCodesHasBeenSet = false;
+  bool m_currentInstancePerformanceRiskHasBeenSet = false;
+  bool m_currentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet = false;
+  bool m_storageFindingReasonCodesHasBeenSet = false;
+  bool m_instanceRecommendationOptionsHasBeenSet = false;
+  bool m_storageRecommendationOptionsHasBeenSet = false;
+  bool m_utilizationMetricsHasBeenSet = false;
+  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

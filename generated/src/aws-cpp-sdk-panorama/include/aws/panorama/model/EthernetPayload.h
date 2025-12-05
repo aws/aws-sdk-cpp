@@ -67,9 +67,9 @@ class EthernetPayload {
   ///@}
  private:
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   StaticIpConnectionInfo m_staticIpConnectionInfo;
+  bool m_connectionTypeHasBeenSet = false;
   bool m_staticIpConnectionInfoHasBeenSet = false;
 };
 

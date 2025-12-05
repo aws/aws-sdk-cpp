@@ -109,15 +109,15 @@ class CustomContent {
   ///@}
  private:
   CustomDocumentIdentifier m_customDocumentIdentifier;
-  bool m_customDocumentIdentifierHasBeenSet = false;
 
   CustomSourceType m_sourceType{CustomSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   CustomS3Location m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   InlineContent m_inlineContent;
+  bool m_customDocumentIdentifierHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
   bool m_inlineContentHasBeenSet = false;
 };
 

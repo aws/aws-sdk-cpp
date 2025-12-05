@@ -84,12 +84,12 @@ class ListThreatIntelSetsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_threatIntelSetIds;
-  bool m_threatIntelSetIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_threatIntelSetIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

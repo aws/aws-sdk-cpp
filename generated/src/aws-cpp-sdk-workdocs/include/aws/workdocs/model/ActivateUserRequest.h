@@ -68,9 +68,9 @@ class ActivateUserRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_authenticationToken;
+  bool m_userIdHasBeenSet = false;
   bool m_authenticationTokenHasBeenSet = false;
 };
 

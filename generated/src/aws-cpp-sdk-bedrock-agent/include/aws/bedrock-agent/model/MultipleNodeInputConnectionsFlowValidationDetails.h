@@ -69,9 +69,9 @@ class MultipleNodeInputConnectionsFlowValidationDetails {
   ///@}
  private:
   Aws::String m_node;
-  bool m_nodeHasBeenSet = false;
 
   Aws::String m_input;
+  bool m_nodeHasBeenSet = false;
   bool m_inputHasBeenSet = false;
 };
 

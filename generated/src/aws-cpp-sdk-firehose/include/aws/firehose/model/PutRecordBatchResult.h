@@ -102,15 +102,15 @@ class PutRecordBatchResult {
   ///@}
  private:
   int m_failedPutCount{0};
-  bool m_failedPutCountHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
-  bool m_requestResponsesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedPutCountHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_requestResponsesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

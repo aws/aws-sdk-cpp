@@ -131,18 +131,18 @@ class InvalidNetworkAclEntriesViolation {
   ///@}
  private:
   Aws::String m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   Aws::String m_subnet;
-  bool m_subnetHasBeenSet = false;
 
   Aws::String m_subnetAvailabilityZone;
-  bool m_subnetAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_currentAssociatedNetworkAcl;
-  bool m_currentAssociatedNetworkAclHasBeenSet = false;
 
   Aws::Vector<EntryViolation> m_entryViolations;
+  bool m_vpcHasBeenSet = false;
+  bool m_subnetHasBeenSet = false;
+  bool m_subnetAvailabilityZoneHasBeenSet = false;
+  bool m_currentAssociatedNetworkAclHasBeenSet = false;
   bool m_entryViolationsHasBeenSet = false;
 };
 

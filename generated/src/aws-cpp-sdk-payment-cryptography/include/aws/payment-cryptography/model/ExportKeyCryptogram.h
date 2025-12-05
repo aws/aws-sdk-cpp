@@ -89,12 +89,12 @@ class ExportKeyCryptogram {
   ///@}
  private:
   Aws::String m_certificateAuthorityPublicKeyIdentifier;
-  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
 
   Aws::String m_wrappingKeyCertificate;
-  bool m_wrappingKeyCertificateHasBeenSet = false;
 
   WrappingKeySpec m_wrappingSpec{WrappingKeySpec::NOT_SET};
+  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
+  bool m_wrappingKeyCertificateHasBeenSet = false;
   bool m_wrappingSpecHasBeenSet = false;
 };
 

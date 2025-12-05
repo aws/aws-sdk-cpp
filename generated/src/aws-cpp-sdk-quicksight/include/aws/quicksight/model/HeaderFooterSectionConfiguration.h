@@ -89,12 +89,12 @@ class HeaderFooterSectionConfiguration {
   ///@}
  private:
   Aws::String m_sectionId;
-  bool m_sectionIdHasBeenSet = false;
 
   SectionLayoutConfiguration m_layout;
-  bool m_layoutHasBeenSet = false;
 
   SectionStyle m_style;
+  bool m_sectionIdHasBeenSet = false;
+  bool m_layoutHasBeenSet = false;
   bool m_styleHasBeenSet = false;
 };
 

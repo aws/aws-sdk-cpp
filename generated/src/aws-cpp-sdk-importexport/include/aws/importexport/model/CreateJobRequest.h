@@ -113,18 +113,18 @@ class CreateJobRequest : public ImportExportRequest {
   ///@}
  private:
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_manifest;
-  bool m_manifestHasBeenSet = false;
 
   Aws::String m_manifestAddendum;
-  bool m_manifestAddendumHasBeenSet = false;
 
   bool m_validateOnly{false};
-  bool m_validateOnlyHasBeenSet = false;
 
   Aws::String m_aPIVersion;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_manifestHasBeenSet = false;
+  bool m_manifestAddendumHasBeenSet = false;
+  bool m_validateOnlyHasBeenSet = false;
   bool m_aPIVersionHasBeenSet = false;
 };
 

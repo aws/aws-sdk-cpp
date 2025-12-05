@@ -91,12 +91,12 @@ class ListApplicationsRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ApplicationStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

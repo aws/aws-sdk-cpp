@@ -141,21 +141,21 @@ class RedshiftPropertiesInput {
   ///@}
  private:
   RedshiftCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   RedshiftLineageSyncConfigurationInput m_lineageSync;
-  bool m_lineageSyncHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   RedshiftStorageProperties m_storage;
+  bool m_credentialsHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
+  bool m_lineageSyncHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_storageHasBeenSet = false;
 };
 

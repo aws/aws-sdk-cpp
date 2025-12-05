@@ -70,9 +70,9 @@ class PackageOriginRestrictions {
   ///@}
  private:
   AllowPublish m_publish{AllowPublish::NOT_SET};
-  bool m_publishHasBeenSet = false;
 
   AllowUpstream m_upstream{AllowUpstream::NOT_SET};
+  bool m_publishHasBeenSet = false;
   bool m_upstreamHasBeenSet = false;
 };
 

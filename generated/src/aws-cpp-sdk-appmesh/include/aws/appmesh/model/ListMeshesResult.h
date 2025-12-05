@@ -93,12 +93,12 @@ class ListMeshesResult {
   ///@}
  private:
   Aws::Vector<MeshRef> m_meshes;
-  bool m_meshesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_meshesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

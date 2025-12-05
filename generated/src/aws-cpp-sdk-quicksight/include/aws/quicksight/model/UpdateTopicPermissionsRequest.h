@@ -117,15 +117,15 @@ class UpdateTopicPermissionsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_grantPermissions;
-  bool m_grantPermissionsHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_revokePermissions;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
+  bool m_grantPermissionsHasBeenSet = false;
   bool m_revokePermissionsHasBeenSet = false;
 };
 

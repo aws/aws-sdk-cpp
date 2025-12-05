@@ -85,12 +85,12 @@ class ListMessagesResult {
   ///@}
  private:
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

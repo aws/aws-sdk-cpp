@@ -82,9 +82,9 @@ class ComputationModelDataBindingUsageSummary {
   ///@}
  private:
   Aws::Vector<Aws::String> m_computationModelIds;
-  bool m_computationModelIdsHasBeenSet = false;
 
   MatchedDataBinding m_matchedDataBinding;
+  bool m_computationModelIdsHasBeenSet = false;
   bool m_matchedDataBindingHasBeenSet = false;
 };
 

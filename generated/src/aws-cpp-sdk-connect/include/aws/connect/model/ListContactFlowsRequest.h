@@ -115,15 +115,15 @@ class ListContactFlowsRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<ContactFlowType> m_contactFlowTypes;
-  bool m_contactFlowTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactFlowTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -333,45 +333,45 @@ class EcsParameters {
   ///@}
  private:
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-  bool m_capacityProviderStrategyHasBeenSet = false;
 
   bool m_enableECSManagedTags{false};
-  bool m_enableECSManagedTagsHasBeenSet = false;
 
   bool m_enableExecuteCommand{false};
-  bool m_enableExecuteCommandHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::Vector<PlacementConstraint> m_placementConstraints;
-  bool m_placementConstraintsHasBeenSet = false;
 
   Aws::Vector<PlacementStrategy> m_placementStrategy;
-  bool m_placementStrategyHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   PropagateTags m_propagateTags{PropagateTags::NOT_SET};
-  bool m_propagateTagsHasBeenSet = false;
 
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_taskCount{0};
-  bool m_taskCountHasBeenSet = false;
 
   Aws::String m_taskDefinitionArn;
+  bool m_capacityProviderStrategyHasBeenSet = false;
+  bool m_enableECSManagedTagsHasBeenSet = false;
+  bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_placementConstraintsHasBeenSet = false;
+  bool m_placementStrategyHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_taskCountHasBeenSet = false;
   bool m_taskDefinitionArnHasBeenSet = false;
 };
 

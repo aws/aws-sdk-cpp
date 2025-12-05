@@ -75,12 +75,12 @@ class ImportLensResult {
   ///@}
  private:
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   ImportLensStatus m_status{ImportLensStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lensArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

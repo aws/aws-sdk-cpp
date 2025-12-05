@@ -78,9 +78,9 @@ class CmkSecretConfig {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_secretArnHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

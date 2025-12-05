@@ -68,9 +68,9 @@ class SolutionSort {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   SolutionSortName m_sortBy{SolutionSortName::NOT_SET};
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

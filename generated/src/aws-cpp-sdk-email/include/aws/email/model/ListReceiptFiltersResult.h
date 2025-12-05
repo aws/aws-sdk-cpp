@@ -74,9 +74,9 @@ class ListReceiptFiltersResult {
   ///@}
  private:
   Aws::Vector<ReceiptFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_filtersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

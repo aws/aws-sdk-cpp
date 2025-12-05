@@ -91,12 +91,12 @@ class DescribeAppBlocksRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_arns;
-  bool m_arnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_arnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

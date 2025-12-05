@@ -125,15 +125,15 @@ class CreateLabelGroupRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_labelGroupName;
-  bool m_labelGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_faultCodes;
-  bool m_faultCodesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_labelGroupNameHasBeenSet = false;
+  bool m_faultCodesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

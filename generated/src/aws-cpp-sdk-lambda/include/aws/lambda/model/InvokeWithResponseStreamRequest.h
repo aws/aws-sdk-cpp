@@ -184,24 +184,25 @@ class InvokeWithResponseStreamRequest : public StreamingLambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   ResponseStreamingInvocationType m_invocationType{ResponseStreamingInvocationType::NOT_SET};
-  bool m_invocationTypeHasBeenSet = false;
 
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   Aws::String m_clientContext;
-  bool m_clientContextHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
   InvokeWithResponseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_functionNameHasBeenSet = false;
+  bool m_invocationTypeHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
+  bool m_clientContextHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
 };
 
 }  // namespace Model

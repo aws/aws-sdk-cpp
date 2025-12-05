@@ -132,18 +132,18 @@ class CheckDocumentAccessRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
 };
 

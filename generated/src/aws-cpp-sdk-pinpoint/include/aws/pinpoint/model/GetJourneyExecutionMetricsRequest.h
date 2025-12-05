@@ -111,15 +111,15 @@ class GetJourneyExecutionMetricsRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_journeyId;
-  bool m_journeyIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_pageSize;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_journeyIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

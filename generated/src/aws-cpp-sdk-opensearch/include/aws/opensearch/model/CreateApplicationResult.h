@@ -200,30 +200,30 @@ class CreateApplicationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<DataSource> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   IamIdentityCenterOptions m_iamIdentityCenterOptions;
-  bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
   Aws::Vector<AppConfig> m_appConfigs;
-  bool m_appConfigsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_iamIdentityCenterOptionsHasBeenSet = false;
+  bool m_appConfigsHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

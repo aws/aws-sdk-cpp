@@ -69,9 +69,9 @@ class KernelSpec {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_nameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

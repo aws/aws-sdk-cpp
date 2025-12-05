@@ -75,12 +75,12 @@ class CancelJobResult {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
-  bool m_cancellationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobArnHasBeenSet = false;
+  bool m_cancellationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class NodeOutputField {
   ///@}
  private:
   NodeExecutionContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NodeOutputNext> m_next;
-  bool m_nextHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
+  bool m_contentHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nextHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

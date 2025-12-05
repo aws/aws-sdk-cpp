@@ -85,12 +85,12 @@ class ListWirelessDevicesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WirelessDeviceStatistics> m_wirelessDeviceList;
-  bool m_wirelessDeviceListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_wirelessDeviceListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

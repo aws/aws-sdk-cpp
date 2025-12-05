@@ -195,24 +195,24 @@ class PipeTargetBatchJobParameters {
   ///@}
  private:
   Aws::String m_jobDefinition;
-  bool m_jobDefinitionHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   BatchArrayProperties m_arrayProperties;
-  bool m_arrayPropertiesHasBeenSet = false;
 
   BatchRetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   BatchContainerOverrides m_containerOverrides;
-  bool m_containerOverridesHasBeenSet = false;
 
   Aws::Vector<BatchJobDependency> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_jobDefinitionHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_arrayPropertiesHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_containerOverridesHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

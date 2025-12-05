@@ -58,9 +58,9 @@ class UpdateAdmChannelResult {
   ///@}
  private:
   ADMChannelResponse m_aDMChannelResponse;
-  bool m_aDMChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aDMChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

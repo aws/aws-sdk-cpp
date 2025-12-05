@@ -146,21 +146,21 @@ class ReservedNodesOffering {
   ///@}
  private:
   Aws::String m_reservedNodesOfferingId;
-  bool m_reservedNodesOfferingIdHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   double m_fixedPrice{0.0};
-  bool m_fixedPriceHasBeenSet = false;
 
   Aws::String m_offeringType;
-  bool m_offeringTypeHasBeenSet = false;
 
   Aws::Vector<RecurringCharge> m_recurringCharges;
+  bool m_reservedNodesOfferingIdHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_fixedPriceHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
   bool m_recurringChargesHasBeenSet = false;
 };
 

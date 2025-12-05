@@ -191,27 +191,27 @@ class ChangeSetSummaryListItem {
   ///@}
  private:
   Aws::String m_changeSetId;
-  bool m_changeSetIdHasBeenSet = false;
 
   Aws::String m_changeSetArn;
-  bool m_changeSetArnHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   ChangeStatus m_status{ChangeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityIdList;
-  bool m_entityIdListHasBeenSet = false;
 
   FailureCode m_failureCode{FailureCode::NOT_SET};
+  bool m_changeSetIdHasBeenSet = false;
+  bool m_changeSetArnHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_entityIdListHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
 };
 

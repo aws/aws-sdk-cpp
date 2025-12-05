@@ -88,12 +88,12 @@ class BatchGetAssetPropertyValueErrorEntry {
   ///@}
  private:
   BatchGetAssetPropertyValueErrorCode m_errorCode{BatchGetAssetPropertyValueErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_entryId;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_entryIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class WaypointOptimizationRestCycleDurations {
   ///@}
  private:
   long long m_restDuration{0};
-  bool m_restDurationHasBeenSet = false;
 
   long long m_workDuration{0};
+  bool m_restDurationHasBeenSet = false;
   bool m_workDurationHasBeenSet = false;
 };
 

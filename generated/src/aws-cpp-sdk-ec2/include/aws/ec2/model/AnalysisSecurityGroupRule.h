@@ -144,21 +144,21 @@ class AnalysisSecurityGroupRule {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_direction;
-  bool m_directionHasBeenSet = false;
 
   Aws::String m_securityGroupId;
-  bool m_securityGroupIdHasBeenSet = false;
 
   PortRange m_portRange;
-  bool m_portRangeHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_protocol;
+  bool m_cidrHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
+  bool m_securityGroupIdHasBeenSet = false;
+  bool m_portRangeHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

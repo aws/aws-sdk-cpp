@@ -70,9 +70,9 @@ class DataClassificationDetails {
   ///@}
  private:
   Aws::String m_detailedResultsLocation;
-  bool m_detailedResultsLocationHasBeenSet = false;
 
   ClassificationResult m_result;
+  bool m_detailedResultsLocationHasBeenSet = false;
   bool m_resultHasBeenSet = false;
 };
 

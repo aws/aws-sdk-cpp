@@ -79,9 +79,9 @@ class PolicyDefinitionItem {
   ///@}
  private:
   StaticPolicyDefinitionItem m_static;
-  bool m_staticHasBeenSet = false;
 
   TemplateLinkedPolicyDefinitionItem m_templateLinked;
+  bool m_staticHasBeenSet = false;
   bool m_templateLinkedHasBeenSet = false;
 };
 

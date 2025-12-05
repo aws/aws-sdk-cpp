@@ -153,18 +153,18 @@ class CreateAutoScalingConfigurationRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_autoScalingConfigurationName;
-  bool m_autoScalingConfigurationNameHasBeenSet = false;
 
   int m_maxConcurrency{0};
-  bool m_maxConcurrencyHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   int m_maxSize{0};
-  bool m_maxSizeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_autoScalingConfigurationNameHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

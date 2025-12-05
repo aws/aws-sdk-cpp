@@ -77,9 +77,9 @@ class BatchUpdatePartitionRequestEntry {
   ///@}
  private:
   Aws::Vector<Aws::String> m_partitionValueList;
-  bool m_partitionValueListHasBeenSet = false;
 
   PartitionInput m_partitionInput;
+  bool m_partitionValueListHasBeenSet = false;
   bool m_partitionInputHasBeenSet = false;
 };
 

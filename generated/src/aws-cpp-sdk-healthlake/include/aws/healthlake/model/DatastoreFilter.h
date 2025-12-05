@@ -106,15 +106,15 @@ class DatastoreFilter {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
-  bool m_datastoreStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_datastoreStatusHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
   bool m_createdAfterHasBeenSet = false;
 };
 

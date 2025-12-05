@@ -83,9 +83,9 @@ class SuspendProcessesRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scalingProcesses;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_scalingProcessesHasBeenSet = false;
 };
 

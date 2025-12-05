@@ -148,21 +148,21 @@ class NetworkACLEntry {
   ///@}
  private:
   int m_ruleNumber{0};
-  bool m_ruleNumberHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   RuleAction m_ruleAction{RuleAction::NOT_SET};
-  bool m_ruleActionHasBeenSet = false;
 
   PortRange m_portRange;
-  bool m_portRangeHasBeenSet = false;
 
   IcmpTypeCode m_icmpTypeCode;
-  bool m_icmpTypeCodeHasBeenSet = false;
 
   Aws::String m_cidrBlock;
+  bool m_ruleNumberHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
+  bool m_portRangeHasBeenSet = false;
+  bool m_icmpTypeCodeHasBeenSet = false;
   bool m_cidrBlockHasBeenSet = false;
 };
 

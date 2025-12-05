@@ -71,9 +71,9 @@ class GetAwsOpportunitySummaryRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_relatedOpportunityIdentifier;
+  bool m_catalogHasBeenSet = false;
   bool m_relatedOpportunityIdentifierHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class ForecastStatistics {
   ///@}
  private:
   long long m_faultCountHigh{0};
-  bool m_faultCountHighHasBeenSet = false;
 
   long long m_faultCountLow{0};
+  bool m_faultCountHighHasBeenSet = false;
   bool m_faultCountLowHasBeenSet = false;
 };
 

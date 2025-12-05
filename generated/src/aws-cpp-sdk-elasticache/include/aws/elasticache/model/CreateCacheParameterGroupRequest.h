@@ -123,15 +123,15 @@ class CreateCacheParameterGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupFamily;
-  bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_cacheParameterGroupFamilyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

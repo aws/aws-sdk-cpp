@@ -173,24 +173,24 @@ class ListInstancesRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_instanceGroupId;
-  bool m_instanceGroupIdHasBeenSet = false;
 
   Aws::Vector<InstanceGroupType> m_instanceGroupTypes;
-  bool m_instanceGroupTypesHasBeenSet = false;
 
   Aws::String m_instanceFleetId;
-  bool m_instanceFleetIdHasBeenSet = false;
 
   InstanceFleetType m_instanceFleetType{InstanceFleetType::NOT_SET};
-  bool m_instanceFleetTypeHasBeenSet = false;
 
   Aws::Vector<InstanceState> m_instanceStates;
-  bool m_instanceStatesHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_instanceGroupIdHasBeenSet = false;
+  bool m_instanceGroupTypesHasBeenSet = false;
+  bool m_instanceFleetIdHasBeenSet = false;
+  bool m_instanceFleetTypeHasBeenSet = false;
+  bool m_instanceStatesHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

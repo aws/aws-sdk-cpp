@@ -142,21 +142,21 @@ class CreateRouteResponseResult {
   ///@}
  private:
   Aws::String m_modelSelectionExpression;
-  bool m_modelSelectionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseModels;
-  bool m_responseModelsHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterConstraints> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::String m_routeResponseId;
-  bool m_routeResponseIdHasBeenSet = false;
 
   Aws::String m_routeResponseKey;
-  bool m_routeResponseKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelSelectionExpressionHasBeenSet = false;
+  bool m_responseModelsHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_routeResponseIdHasBeenSet = false;
+  bool m_routeResponseKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

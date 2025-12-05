@@ -91,9 +91,9 @@ class EncryptionSpecification {
   ///@}
  private:
   EncryptionType m_type{EncryptionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
+  bool m_typeHasBeenSet = false;
   bool m_kmsKeyIdentifierHasBeenSet = false;
 };
 

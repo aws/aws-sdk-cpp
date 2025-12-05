@@ -92,12 +92,12 @@ class BatchGetCodeSnippetResult {
   ///@}
  private:
   Aws::Vector<CodeSnippetResult> m_codeSnippetResults;
-  bool m_codeSnippetResultsHasBeenSet = false;
 
   Aws::Vector<CodeSnippetError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeSnippetResultsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class PutActionRevisionRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   ActionRevision m_actionRevision;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
   bool m_actionRevisionHasBeenSet = false;
 };
 

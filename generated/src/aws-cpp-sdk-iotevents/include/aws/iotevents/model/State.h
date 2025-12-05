@@ -110,15 +110,15 @@ class State {
   ///@}
  private:
   Aws::String m_stateName;
-  bool m_stateNameHasBeenSet = false;
 
   OnInputLifecycle m_onInput;
-  bool m_onInputHasBeenSet = false;
 
   OnEnterLifecycle m_onEnter;
-  bool m_onEnterHasBeenSet = false;
 
   OnExitLifecycle m_onExit;
+  bool m_stateNameHasBeenSet = false;
+  bool m_onInputHasBeenSet = false;
+  bool m_onEnterHasBeenSet = false;
   bool m_onExitHasBeenSet = false;
 };
 

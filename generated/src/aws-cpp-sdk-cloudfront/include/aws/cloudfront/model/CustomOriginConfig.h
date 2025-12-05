@@ -178,24 +178,24 @@ class CustomOriginConfig {
   ///@}
  private:
   int m_hTTPPort{0};
-  bool m_hTTPPortHasBeenSet = false;
 
   int m_hTTPSPort{0};
-  bool m_hTTPSPortHasBeenSet = false;
 
   OriginProtocolPolicy m_originProtocolPolicy{OriginProtocolPolicy::NOT_SET};
-  bool m_originProtocolPolicyHasBeenSet = false;
 
   OriginSslProtocols m_originSslProtocols;
-  bool m_originSslProtocolsHasBeenSet = false;
 
   int m_originReadTimeout{0};
-  bool m_originReadTimeoutHasBeenSet = false;
 
   int m_originKeepaliveTimeout{0};
-  bool m_originKeepaliveTimeoutHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+  bool m_hTTPPortHasBeenSet = false;
+  bool m_hTTPSPortHasBeenSet = false;
+  bool m_originProtocolPolicyHasBeenSet = false;
+  bool m_originSslProtocolsHasBeenSet = false;
+  bool m_originReadTimeoutHasBeenSet = false;
+  bool m_originKeepaliveTimeoutHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ApplicationAssociationSummary {
   ///@}
  private:
   Aws::String m_applicationAssociationArn;
-  bool m_applicationAssociationArnHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_clientId;
+  bool m_applicationAssociationArnHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
 };
 

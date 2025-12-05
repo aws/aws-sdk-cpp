@@ -89,12 +89,12 @@ class CognitoMemberDefinition {
   ///@}
  private:
   Aws::String m_userPool;
-  bool m_userPoolHasBeenSet = false;
 
   Aws::String m_userGroup;
-  bool m_userGroupHasBeenSet = false;
 
   Aws::String m_clientId;
+  bool m_userPoolHasBeenSet = false;
+  bool m_userGroupHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
 };
 

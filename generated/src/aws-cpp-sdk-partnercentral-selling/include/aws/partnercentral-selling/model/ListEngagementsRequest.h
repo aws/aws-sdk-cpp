@@ -228,30 +228,30 @@ class ListEngagementsRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeCreatedBy;
-  bool m_excludeCreatedByHasBeenSet = false;
 
   Aws::Vector<EngagementContextType> m_contextTypes;
-  bool m_contextTypesHasBeenSet = false;
 
   Aws::Vector<EngagementContextType> m_excludeContextTypes;
-  bool m_excludeContextTypesHasBeenSet = false;
 
   EngagementSort m_sort;
-  bool m_sortHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_engagementIdentifier;
+  bool m_catalogHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_excludeCreatedByHasBeenSet = false;
+  bool m_contextTypesHasBeenSet = false;
+  bool m_excludeContextTypesHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_engagementIdentifierHasBeenSet = false;
 };
 

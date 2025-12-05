@@ -120,15 +120,15 @@ class LaunchPathSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<ConstraintSummary> m_constraintSummaries;
-  bool m_constraintSummariesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_idHasBeenSet = false;
+  bool m_constraintSummariesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

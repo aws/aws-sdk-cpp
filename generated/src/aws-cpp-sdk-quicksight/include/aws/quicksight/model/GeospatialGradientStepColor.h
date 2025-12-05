@@ -66,9 +66,9 @@ class GeospatialGradientStepColor {
   ///@}
  private:
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   double m_dataValue{0.0};
+  bool m_colorHasBeenSet = false;
   bool m_dataValueHasBeenSet = false;
 };
 

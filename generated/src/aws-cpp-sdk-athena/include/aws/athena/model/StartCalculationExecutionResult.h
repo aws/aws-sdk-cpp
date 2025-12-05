@@ -83,12 +83,12 @@ class StartCalculationExecutionResult {
   ///@}
  private:
   Aws::String m_calculationExecutionId;
-  bool m_calculationExecutionIdHasBeenSet = false;
 
   CalculationExecutionState m_state{CalculationExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_calculationExecutionIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

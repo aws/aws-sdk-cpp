@@ -72,9 +72,9 @@ class DisassociateMacSecKeyRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_secretARN;
+  bool m_connectionIdHasBeenSet = false;
   bool m_secretARNHasBeenSet = false;
 };
 

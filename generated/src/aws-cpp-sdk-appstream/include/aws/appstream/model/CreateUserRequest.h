@@ -127,18 +127,18 @@ class CreateUserRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   MessageAction m_messageAction{MessageAction::NOT_SET};
-  bool m_messageActionHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
+  bool m_userNameHasBeenSet = false;
+  bool m_messageActionHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
 };
 

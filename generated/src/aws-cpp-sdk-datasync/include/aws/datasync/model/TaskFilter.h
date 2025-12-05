@@ -101,12 +101,12 @@ class TaskFilter {
   ///@}
  private:
   TaskFilterName m_name{TaskFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Operator m_operator{Operator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

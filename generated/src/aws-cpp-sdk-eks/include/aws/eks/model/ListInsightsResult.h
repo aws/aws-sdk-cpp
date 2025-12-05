@@ -88,12 +88,12 @@ class ListInsightsResult {
   ///@}
  private:
   Aws::Vector<InsightSummary> m_insights;
-  bool m_insightsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

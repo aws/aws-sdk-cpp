@@ -70,9 +70,9 @@ class ListExperimentTargetAccountConfigurationsRequest : public FISRequest {
   ///@}
  private:
   Aws::String m_experimentId;
-  bool m_experimentIdHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_experimentIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

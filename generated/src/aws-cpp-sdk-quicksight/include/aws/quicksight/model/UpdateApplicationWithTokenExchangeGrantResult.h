@@ -58,9 +58,9 @@ class UpdateApplicationWithTokenExchangeGrantResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

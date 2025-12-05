@@ -105,15 +105,15 @@ class SearchSchemasRequest : public SchemasRequest {
   ///@}
  private:
   Aws::String m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_registryName;
+  bool m_keywordsHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_registryNameHasBeenSet = false;
 };
 

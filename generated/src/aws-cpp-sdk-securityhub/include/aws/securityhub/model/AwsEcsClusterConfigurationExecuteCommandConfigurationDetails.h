@@ -92,12 +92,12 @@ class AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::String m_logging;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
   bool m_loggingHasBeenSet = false;
 };
 

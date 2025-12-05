@@ -89,12 +89,12 @@ class ListAccountAssociationsRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
 
   ListAccountAssociationsFilter m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_billingPeriodHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

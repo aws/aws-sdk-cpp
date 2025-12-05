@@ -97,12 +97,12 @@ class ExportFilter {
   ///@}
  private:
   ExportFilterName m_name{ExportFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   ExportFilterOperator m_operator{ExportFilterOperator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

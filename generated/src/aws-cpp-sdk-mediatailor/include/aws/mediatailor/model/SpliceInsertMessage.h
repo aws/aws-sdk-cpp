@@ -104,15 +104,15 @@ class SpliceInsertMessage {
   ///@}
  private:
   int m_availNum{0};
-  bool m_availNumHasBeenSet = false;
 
   int m_availsExpected{0};
-  bool m_availsExpectedHasBeenSet = false;
 
   int m_spliceEventId{0};
-  bool m_spliceEventIdHasBeenSet = false;
 
   int m_uniqueProgramId{0};
+  bool m_availNumHasBeenSet = false;
+  bool m_availsExpectedHasBeenSet = false;
+  bool m_spliceEventIdHasBeenSet = false;
   bool m_uniqueProgramIdHasBeenSet = false;
 };
 

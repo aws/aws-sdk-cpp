@@ -95,12 +95,12 @@ class ListWebACLsRequest : public WAFV2Request {
   ///@}
  private:
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_scopeHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

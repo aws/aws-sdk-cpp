@@ -60,9 +60,9 @@ class CreateSubnetCidrReservationResponse {
   ///@}
  private:
   SubnetCidrReservation m_subnetCidrReservation;
-  bool m_subnetCidrReservationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_subnetCidrReservationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class RemoveAttributesRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_attributeType;
-  bool m_attributeTypeHasBeenSet = false;
 
   UpdateAttributesRequest m_updateAttributesRequest;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_attributeTypeHasBeenSet = false;
   bool m_updateAttributesRequestHasBeenSet = false;
 };
 

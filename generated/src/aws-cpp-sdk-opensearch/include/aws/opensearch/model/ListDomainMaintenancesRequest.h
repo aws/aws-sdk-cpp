@@ -128,18 +128,18 @@ class ListDomainMaintenancesRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   MaintenanceType m_action{MaintenanceType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   MaintenanceStatus m_status{MaintenanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_domainNameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

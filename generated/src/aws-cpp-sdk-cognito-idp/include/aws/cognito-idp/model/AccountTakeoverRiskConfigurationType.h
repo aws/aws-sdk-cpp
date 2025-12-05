@@ -75,9 +75,9 @@ class AccountTakeoverRiskConfigurationType {
   ///@}
  private:
   NotifyConfigurationType m_notifyConfiguration;
-  bool m_notifyConfigurationHasBeenSet = false;
 
   AccountTakeoverActionsType m_actions;
+  bool m_notifyConfigurationHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

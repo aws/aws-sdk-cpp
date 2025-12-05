@@ -86,12 +86,12 @@ class DataBarsOptions {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_positiveColor;
-  bool m_positiveColorHasBeenSet = false;
 
   Aws::String m_negativeColor;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_positiveColorHasBeenSet = false;
   bool m_negativeColorHasBeenSet = false;
 };
 

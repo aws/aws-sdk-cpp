@@ -89,12 +89,12 @@ class DataIntegrationFlowTarget {
   ///@}
  private:
   DataIntegrationFlowTargetType m_targetType{DataIntegrationFlowTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   DataIntegrationFlowS3TargetConfiguration m_s3Target;
-  bool m_s3TargetHasBeenSet = false;
 
   DataIntegrationFlowDatasetTargetConfiguration m_datasetTarget;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_s3TargetHasBeenSet = false;
   bool m_datasetTargetHasBeenSet = false;
 };
 

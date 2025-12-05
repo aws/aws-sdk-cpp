@@ -109,15 +109,15 @@ class IdMappingWorkflowSummary {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_workflowNameHasBeenSet = false;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

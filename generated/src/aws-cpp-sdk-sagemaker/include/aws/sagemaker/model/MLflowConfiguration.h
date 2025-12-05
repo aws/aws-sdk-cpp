@@ -68,9 +68,9 @@ class MLflowConfiguration {
   ///@}
  private:
   Aws::String m_mlflowResourceArn;
-  bool m_mlflowResourceArnHasBeenSet = false;
 
   Aws::String m_mlflowExperimentName;
+  bool m_mlflowResourceArnHasBeenSet = false;
   bool m_mlflowExperimentNameHasBeenSet = false;
 };
 

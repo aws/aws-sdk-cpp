@@ -74,9 +74,9 @@ class ResetNotificationSettingsRequest : public RolesAnywhereRequest {
   ///@}
  private:
   Aws::Vector<NotificationSettingKey> m_notificationSettingKeys;
-  bool m_notificationSettingKeysHasBeenSet = false;
 
   Aws::String m_trustAnchorId;
+  bool m_notificationSettingKeysHasBeenSet = false;
   bool m_trustAnchorIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class UpdateDeviceInstanceRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
+  bool m_arnHasBeenSet = false;
+  bool m_profileArnHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
 };
 

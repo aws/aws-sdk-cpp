@@ -89,12 +89,12 @@ class ListConnectorDefinitionVersionsRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_connectorDefinitionId;
-  bool m_connectorDefinitionIdHasBeenSet = false;
 
   Aws::String m_maxResults;
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_connectorDefinitionIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

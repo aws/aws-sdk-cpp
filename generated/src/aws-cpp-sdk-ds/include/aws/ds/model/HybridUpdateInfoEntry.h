@@ -182,27 +182,27 @@ class HybridUpdateInfoEntry {
   ///@}
  private:
   UpdateStatus m_status{UpdateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_initiatedBy;
-  bool m_initiatedByHasBeenSet = false;
 
   HybridUpdateValue m_newValue;
-  bool m_newValueHasBeenSet = false;
 
   HybridUpdateValue m_previousValue;
-  bool m_previousValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_assessmentId;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_initiatedByHasBeenSet = false;
+  bool m_newValueHasBeenSet = false;
+  bool m_previousValueHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_assessmentIdHasBeenSet = false;
 };
 

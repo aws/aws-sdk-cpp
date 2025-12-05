@@ -142,21 +142,21 @@ class DataSource {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
+  bool m_displayNameHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

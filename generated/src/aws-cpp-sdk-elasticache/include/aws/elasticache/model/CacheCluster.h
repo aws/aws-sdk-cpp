@@ -768,102 +768,102 @@ class CacheCluster {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Endpoint m_configurationEndpoint;
-  bool m_configurationEndpointHasBeenSet = false;
 
   Aws::String m_clientDownloadLandingPage;
-  bool m_clientDownloadLandingPageHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_cacheClusterStatus;
-  bool m_cacheClusterStatusHasBeenSet = false;
 
   int m_numCacheNodes{0};
-  bool m_numCacheNodesHasBeenSet = false;
 
   Aws::String m_preferredAvailabilityZone;
-  bool m_preferredAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_preferredOutpostArn;
-  bool m_preferredOutpostArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_cacheClusterCreateTime{};
-  bool m_cacheClusterCreateTimeHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   PendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   Aws::Vector<CacheSecurityGroupMembership> m_cacheSecurityGroups;
-  bool m_cacheSecurityGroupsHasBeenSet = false;
 
   CacheParameterGroupStatus m_cacheParameterGroup;
-  bool m_cacheParameterGroupHasBeenSet = false;
 
   Aws::String m_cacheSubnetGroupName;
-  bool m_cacheSubnetGroupNameHasBeenSet = false;
 
   Aws::Vector<CacheNode> m_cacheNodes;
-  bool m_cacheNodesHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::Vector<SecurityGroupMembership> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   bool m_authTokenEnabled{false};
-  bool m_authTokenEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_authTokenLastModifiedDate{};
-  bool m_authTokenLastModifiedDateHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   bool m_atRestEncryptionEnabled{false};
-  bool m_atRestEncryptionEnabledHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   bool m_replicationGroupLogDeliveryEnabled{false};
-  bool m_replicationGroupLogDeliveryEnabledHasBeenSet = false;
 
   Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
-  bool m_logDeliveryConfigurationsHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
-  bool m_ipDiscoveryHasBeenSet = false;
 
   TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_configurationEndpointHasBeenSet = false;
+  bool m_clientDownloadLandingPageHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_cacheClusterStatusHasBeenSet = false;
+  bool m_numCacheNodesHasBeenSet = false;
+  bool m_preferredAvailabilityZoneHasBeenSet = false;
+  bool m_preferredOutpostArnHasBeenSet = false;
+  bool m_cacheClusterCreateTimeHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
+  bool m_cacheSecurityGroupsHasBeenSet = false;
+  bool m_cacheParameterGroupHasBeenSet = false;
+  bool m_cacheSubnetGroupNameHasBeenSet = false;
+  bool m_cacheNodesHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_authTokenEnabledHasBeenSet = false;
+  bool m_authTokenLastModifiedDateHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_atRestEncryptionEnabledHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_replicationGroupLogDeliveryEnabledHasBeenSet = false;
+  bool m_logDeliveryConfigurationsHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_ipDiscoveryHasBeenSet = false;
   bool m_transitEncryptionModeHasBeenSet = false;
 };
 

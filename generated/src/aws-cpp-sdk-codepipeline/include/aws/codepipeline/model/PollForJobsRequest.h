@@ -98,12 +98,12 @@ class PollForJobsRequest : public CodePipelineRequest {
   ///@}
  private:
   ActionTypeId m_actionTypeId;
-  bool m_actionTypeIdHasBeenSet = false;
 
   int m_maxBatchSize{0};
-  bool m_maxBatchSizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_queryParam;
+  bool m_actionTypeIdHasBeenSet = false;
+  bool m_maxBatchSizeHasBeenSet = false;
   bool m_queryParamHasBeenSet = false;
 };
 

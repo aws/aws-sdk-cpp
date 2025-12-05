@@ -118,15 +118,15 @@ class SplitShardRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_shardToSplit;
-  bool m_shardToSplitHasBeenSet = false;
 
   Aws::String m_newStartingHashKey;
-  bool m_newStartingHashKeyHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_shardToSplitHasBeenSet = false;
+  bool m_newStartingHashKeyHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

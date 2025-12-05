@@ -76,9 +76,9 @@ class UntagResourceRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyList;
+  bool m_resourceIdHasBeenSet = false;
   bool m_tagKeyListHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class VerifyDnsConfiguration2020_05_31Result {
   ///@}
  private:
   Aws::Vector<DnsConfiguration> m_dnsConfigurationList;
-  bool m_dnsConfigurationListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dnsConfigurationListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

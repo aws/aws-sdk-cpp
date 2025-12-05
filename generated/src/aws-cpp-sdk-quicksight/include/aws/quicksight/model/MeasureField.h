@@ -107,15 +107,15 @@ class MeasureField {
   ///@}
  private:
   NumericalMeasureField m_numericalMeasureField;
-  bool m_numericalMeasureFieldHasBeenSet = false;
 
   CategoricalMeasureField m_categoricalMeasureField;
-  bool m_categoricalMeasureFieldHasBeenSet = false;
 
   DateMeasureField m_dateMeasureField;
-  bool m_dateMeasureFieldHasBeenSet = false;
 
   CalculatedMeasureField m_calculatedMeasureField;
+  bool m_numericalMeasureFieldHasBeenSet = false;
+  bool m_categoricalMeasureFieldHasBeenSet = false;
+  bool m_dateMeasureFieldHasBeenSet = false;
   bool m_calculatedMeasureFieldHasBeenSet = false;
 };
 

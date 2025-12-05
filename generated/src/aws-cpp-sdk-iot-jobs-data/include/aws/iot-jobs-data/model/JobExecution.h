@@ -234,36 +234,36 @@ class JobExecution {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   long long m_queuedAt{0};
-  bool m_queuedAtHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_lastUpdatedAt{0};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   long long m_approximateSecondsBeforeTimedOut{0};
-  bool m_approximateSecondsBeforeTimedOutHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   long long m_executionNumber{0};
-  bool m_executionNumberHasBeenSet = false;
 
   Aws::String m_jobDocument;
+  bool m_jobIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_queuedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_approximateSecondsBeforeTimedOutHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_executionNumberHasBeenSet = false;
   bool m_jobDocumentHasBeenSet = false;
 };
 

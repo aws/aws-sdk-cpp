@@ -82,12 +82,12 @@ class CreateUsageReportSubscriptionResult {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   UsageReportSchedule m_schedule{UsageReportSchedule::NOT_SET};
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

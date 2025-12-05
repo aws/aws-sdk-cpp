@@ -67,9 +67,9 @@ class PutLexiconRequest : public PollyRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_nameHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class TagServerCertificateRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_serverCertificateName;
-  bool m_serverCertificateNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serverCertificateNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

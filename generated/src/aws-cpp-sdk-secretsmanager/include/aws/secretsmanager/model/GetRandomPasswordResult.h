@@ -59,9 +59,9 @@ class GetRandomPasswordResult {
   ///@}
  private:
   Aws::String m_randomPassword;
-  bool m_randomPasswordHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_randomPasswordHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

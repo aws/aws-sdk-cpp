@@ -114,15 +114,15 @@ class TurkeyAdditionalInfo {
   ///@}
  private:
   Industries m_industries{Industries::NOT_SET};
-  bool m_industriesHasBeenSet = false;
 
   Aws::String m_kepEmailId;
-  bool m_kepEmailIdHasBeenSet = false;
 
   Aws::String m_secondaryTaxId;
-  bool m_secondaryTaxIdHasBeenSet = false;
 
   Aws::String m_taxOffice;
+  bool m_industriesHasBeenSet = false;
+  bool m_kepEmailIdHasBeenSet = false;
+  bool m_secondaryTaxIdHasBeenSet = false;
   bool m_taxOfficeHasBeenSet = false;
 };
 

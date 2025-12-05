@@ -128,18 +128,18 @@ class ElasticsearchAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_index;
-  bool m_indexHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_roleArnHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_indexHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

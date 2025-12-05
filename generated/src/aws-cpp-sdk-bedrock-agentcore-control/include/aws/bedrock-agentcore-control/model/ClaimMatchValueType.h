@@ -83,9 +83,9 @@ class ClaimMatchValueType {
   ///@}
  private:
   Aws::String m_matchValueString;
-  bool m_matchValueStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchValueStringList;
+  bool m_matchValueStringHasBeenSet = false;
   bool m_matchValueStringListHasBeenSet = false;
 };
 

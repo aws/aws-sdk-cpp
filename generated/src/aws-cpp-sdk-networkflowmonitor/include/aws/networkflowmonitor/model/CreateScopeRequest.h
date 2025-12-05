@@ -103,12 +103,12 @@ class CreateScopeRequest : public NetworkFlowMonitorRequest {
   ///@}
  private:
   Aws::Vector<TargetResource> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_targetsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

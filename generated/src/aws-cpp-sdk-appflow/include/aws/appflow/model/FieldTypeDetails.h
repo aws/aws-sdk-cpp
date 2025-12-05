@@ -174,24 +174,24 @@ class FieldTypeDetails {
   ///@}
  private:
   Aws::String m_fieldType;
-  bool m_fieldTypeHasBeenSet = false;
 
   Aws::Vector<Operator> m_filterOperators;
-  bool m_filterOperatorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedValues;
-  bool m_supportedValuesHasBeenSet = false;
 
   Aws::String m_valueRegexPattern;
-  bool m_valueRegexPatternHasBeenSet = false;
 
   Aws::String m_supportedDateFormat;
-  bool m_supportedDateFormatHasBeenSet = false;
 
   Range m_fieldValueRange;
-  bool m_fieldValueRangeHasBeenSet = false;
 
   Range m_fieldLengthRange;
+  bool m_fieldTypeHasBeenSet = false;
+  bool m_filterOperatorsHasBeenSet = false;
+  bool m_supportedValuesHasBeenSet = false;
+  bool m_valueRegexPatternHasBeenSet = false;
+  bool m_supportedDateFormatHasBeenSet = false;
+  bool m_fieldValueRangeHasBeenSet = false;
   bool m_fieldLengthRangeHasBeenSet = false;
 };
 

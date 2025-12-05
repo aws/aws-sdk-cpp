@@ -68,9 +68,9 @@ class AnomalyDateInterval {
   ///@}
  private:
   Aws::String m_startDate;
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_endDate;
+  bool m_startDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
 };
 

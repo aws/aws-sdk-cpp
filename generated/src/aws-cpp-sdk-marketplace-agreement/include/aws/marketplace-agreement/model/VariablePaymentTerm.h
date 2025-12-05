@@ -108,15 +108,15 @@ class VariablePaymentTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_maxTotalChargeAmount;
-  bool m_maxTotalChargeAmountHasBeenSet = false;
 
   VariablePaymentTermConfiguration m_configuration;
+  bool m_typeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_maxTotalChargeAmountHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

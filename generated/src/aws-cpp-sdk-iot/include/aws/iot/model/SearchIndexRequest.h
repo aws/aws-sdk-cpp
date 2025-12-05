@@ -126,18 +126,18 @@ class SearchIndexRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_queryVersion;
+  bool m_indexNameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_queryVersionHasBeenSet = false;
 };
 

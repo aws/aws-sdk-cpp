@@ -147,21 +147,21 @@ class UpdateLakehouseConfigurationRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_lakehouseIdcApplicationArn;
-  bool m_lakehouseIdcApplicationArnHasBeenSet = false;
 
   LakehouseIdcRegistration m_lakehouseIdcRegistration{LakehouseIdcRegistration::NOT_SET};
-  bool m_lakehouseIdcRegistrationHasBeenSet = false;
 
   LakehouseRegistration m_lakehouseRegistration{LakehouseRegistration::NOT_SET};
-  bool m_lakehouseRegistrationHasBeenSet = false;
 
   Aws::String m_namespaceName;
+  bool m_catalogNameHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_lakehouseIdcApplicationArnHasBeenSet = false;
+  bool m_lakehouseIdcRegistrationHasBeenSet = false;
+  bool m_lakehouseRegistrationHasBeenSet = false;
   bool m_namespaceNameHasBeenSet = false;
 };
 

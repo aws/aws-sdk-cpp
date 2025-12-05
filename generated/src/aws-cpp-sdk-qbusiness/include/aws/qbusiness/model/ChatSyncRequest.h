@@ -311,42 +311,42 @@ class ChatSyncRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroups;
-  bool m_userGroupsHasBeenSet = false;
 
   Aws::String m_userMessage;
-  bool m_userMessageHasBeenSet = false;
 
   Aws::Vector<AttachmentInput> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   ActionExecution m_actionExecution;
-  bool m_actionExecutionHasBeenSet = false;
 
   AuthChallengeResponse m_authChallengeResponse;
-  bool m_authChallengeResponseHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_parentMessageId;
-  bool m_parentMessageIdHasBeenSet = false;
 
   AttributeFilter m_attributeFilter;
-  bool m_attributeFilterHasBeenSet = false;
 
   ChatMode m_chatMode{ChatMode::NOT_SET};
-  bool m_chatModeHasBeenSet = false;
 
   ChatModeConfiguration m_chatModeConfiguration;
-  bool m_chatModeConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userGroupsHasBeenSet = false;
+  bool m_userMessageHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_actionExecutionHasBeenSet = false;
+  bool m_authChallengeResponseHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_parentMessageIdHasBeenSet = false;
+  bool m_attributeFilterHasBeenSet = false;
+  bool m_chatModeHasBeenSet = false;
+  bool m_chatModeConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -503,66 +503,66 @@ class CreateNFSFileShareRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   NFSFileShareDefaults m_nFSFileShareDefaults;
-  bool m_nFSFileShareDefaultsHasBeenSet = false;
 
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kMSKey;
-  bool m_kMSKeyHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_locationARN;
-  bool m_locationARNHasBeenSet = false;
 
   Aws::String m_defaultStorageClass;
-  bool m_defaultStorageClassHasBeenSet = false;
 
   ObjectACL m_objectACL{ObjectACL::NOT_SET};
-  bool m_objectACLHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientList;
-  bool m_clientListHasBeenSet = false;
 
   Aws::String m_squash;
-  bool m_squashHasBeenSet = false;
 
   bool m_readOnly{false};
-  bool m_readOnlyHasBeenSet = false;
 
   bool m_guessMIMETypeEnabled{false};
-  bool m_guessMIMETypeEnabledHasBeenSet = false;
 
   bool m_requesterPays{false};
-  bool m_requesterPaysHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_fileShareName;
-  bool m_fileShareNameHasBeenSet = false;
 
   CacheAttributes m_cacheAttributes;
-  bool m_cacheAttributesHasBeenSet = false;
 
   Aws::String m_notificationPolicy;
-  bool m_notificationPolicyHasBeenSet = false;
 
   Aws::String m_vPCEndpointDNSName;
-  bool m_vPCEndpointDNSNameHasBeenSet = false;
 
   Aws::String m_bucketRegion;
-  bool m_bucketRegionHasBeenSet = false;
 
   Aws::String m_auditDestinationARN;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_nFSFileShareDefaultsHasBeenSet = false;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kMSKeyHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_locationARNHasBeenSet = false;
+  bool m_defaultStorageClassHasBeenSet = false;
+  bool m_objectACLHasBeenSet = false;
+  bool m_clientListHasBeenSet = false;
+  bool m_squashHasBeenSet = false;
+  bool m_readOnlyHasBeenSet = false;
+  bool m_guessMIMETypeEnabledHasBeenSet = false;
+  bool m_requesterPaysHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileShareNameHasBeenSet = false;
+  bool m_cacheAttributesHasBeenSet = false;
+  bool m_notificationPolicyHasBeenSet = false;
+  bool m_vPCEndpointDNSNameHasBeenSet = false;
+  bool m_bucketRegionHasBeenSet = false;
   bool m_auditDestinationARNHasBeenSet = false;
 };
 

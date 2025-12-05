@@ -152,21 +152,21 @@ class CreateDataProviderRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_dataProviderName;
-  bool m_dataProviderNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   bool m_virtual{false};
-  bool m_virtualHasBeenSet = false;
 
   DataProviderSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dataProviderNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_virtualHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

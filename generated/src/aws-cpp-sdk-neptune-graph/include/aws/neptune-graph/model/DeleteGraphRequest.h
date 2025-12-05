@@ -76,9 +76,9 @@ class DeleteGraphRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   bool m_skipSnapshot{false};
+  bool m_graphIdentifierHasBeenSet = false;
   bool m_skipSnapshotHasBeenSet = false;
 };
 

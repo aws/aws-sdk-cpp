@@ -103,12 +103,12 @@ class UpdateResourceSetRequest : public Route53RecoveryReadinessRequest {
   ///@}
  private:
   Aws::String m_resourceSetName;
-  bool m_resourceSetNameHasBeenSet = false;
 
   Aws::String m_resourceSetType;
-  bool m_resourceSetTypeHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
+  bool m_resourceSetNameHasBeenSet = false;
+  bool m_resourceSetTypeHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

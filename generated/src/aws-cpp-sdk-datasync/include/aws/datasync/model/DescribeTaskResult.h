@@ -454,66 +454,66 @@ class DescribeTaskResult {
   ///@}
  private:
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   TaskStatus m_status{TaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_currentTaskExecutionArn;
-  bool m_currentTaskExecutionArnHasBeenSet = false;
 
   Aws::String m_sourceLocationArn;
-  bool m_sourceLocationArnHasBeenSet = false;
 
   Aws::String m_destinationLocationArn;
-  bool m_destinationLocationArnHasBeenSet = false;
 
   Aws::String m_cloudWatchLogGroupArn;
-  bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceNetworkInterfaceArns;
-  bool m_sourceNetworkInterfaceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationNetworkInterfaceArns;
-  bool m_destinationNetworkInterfaceArnsHasBeenSet = false;
 
   Options m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   TaskSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorDetail;
-  bool m_errorDetailHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_includes;
-  bool m_includesHasBeenSet = false;
 
   ManifestConfig m_manifestConfig;
-  bool m_manifestConfigHasBeenSet = false;
 
   TaskReportConfig m_taskReportConfig;
-  bool m_taskReportConfigHasBeenSet = false;
 
   TaskScheduleDetails m_scheduleDetails;
-  bool m_scheduleDetailsHasBeenSet = false;
 
   TaskMode m_taskMode{TaskMode::NOT_SET};
-  bool m_taskModeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_currentTaskExecutionArnHasBeenSet = false;
+  bool m_sourceLocationArnHasBeenSet = false;
+  bool m_destinationLocationArnHasBeenSet = false;
+  bool m_cloudWatchLogGroupArnHasBeenSet = false;
+  bool m_sourceNetworkInterfaceArnsHasBeenSet = false;
+  bool m_destinationNetworkInterfaceArnsHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_excludesHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorDetailHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_includesHasBeenSet = false;
+  bool m_manifestConfigHasBeenSet = false;
+  bool m_taskReportConfigHasBeenSet = false;
+  bool m_scheduleDetailsHasBeenSet = false;
+  bool m_taskModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

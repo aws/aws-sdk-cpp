@@ -105,15 +105,15 @@ class ListBudgetsRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   BudgetStatus m_status{BudgetStatus::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_farmIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -117,12 +117,12 @@ class HttpHeaderConditionConfig {
   ///@}
  private:
   Aws::String m_httpHeaderName;
-  bool m_httpHeaderNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regexValues;
+  bool m_httpHeaderNameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_regexValuesHasBeenSet = false;
 };
 

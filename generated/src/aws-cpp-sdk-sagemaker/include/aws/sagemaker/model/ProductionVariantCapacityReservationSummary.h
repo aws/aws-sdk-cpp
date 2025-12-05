@@ -149,21 +149,21 @@ class ProductionVariantCapacityReservationSummary {
   ///@}
  private:
   Aws::String m_mlReservationArn;
-  bool m_mlReservationArnHasBeenSet = false;
 
   CapacityReservationPreference m_capacityReservationPreference{CapacityReservationPreference::NOT_SET};
-  bool m_capacityReservationPreferenceHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   int m_usedByCurrentEndpoint{0};
-  bool m_usedByCurrentEndpointHasBeenSet = false;
 
   Aws::Vector<Ec2CapacityReservation> m_ec2CapacityReservations;
+  bool m_mlReservationArnHasBeenSet = false;
+  bool m_capacityReservationPreferenceHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
+  bool m_usedByCurrentEndpointHasBeenSet = false;
   bool m_ec2CapacityReservationsHasBeenSet = false;
 };
 

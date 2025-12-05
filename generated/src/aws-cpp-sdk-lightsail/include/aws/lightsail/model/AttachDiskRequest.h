@@ -104,15 +104,15 @@ class AttachDiskRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_diskName;
-  bool m_diskNameHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_diskPath;
-  bool m_diskPathHasBeenSet = false;
 
   bool m_autoMounting{false};
+  bool m_diskNameHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_diskPathHasBeenSet = false;
   bool m_autoMountingHasBeenSet = false;
 };
 

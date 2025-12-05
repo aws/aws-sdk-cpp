@@ -60,9 +60,9 @@ class RejectAccountLinkInvitationResult {
   ///@}
  private:
   AccountLink m_accountLink;
-  bool m_accountLinkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountLinkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

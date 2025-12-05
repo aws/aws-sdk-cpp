@@ -103,15 +103,15 @@ class Search {
   ///@}
  private:
   bool m_facetable{false};
-  bool m_facetableHasBeenSet = false;
 
   bool m_searchable{false};
-  bool m_searchableHasBeenSet = false;
 
   bool m_displayable{false};
-  bool m_displayableHasBeenSet = false;
 
   bool m_sortable{false};
+  bool m_facetableHasBeenSet = false;
+  bool m_searchableHasBeenSet = false;
+  bool m_displayableHasBeenSet = false;
   bool m_sortableHasBeenSet = false;
 };
 

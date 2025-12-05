@@ -70,9 +70,9 @@ class ValueMapping {
   ///@}
  private:
   FormInputValueProperty m_displayValue;
-  bool m_displayValueHasBeenSet = false;
 
   FormInputValueProperty m_value;
+  bool m_displayValueHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

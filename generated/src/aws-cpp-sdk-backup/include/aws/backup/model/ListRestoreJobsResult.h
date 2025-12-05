@@ -88,12 +88,12 @@ class ListRestoreJobsResult {
   ///@}
  private:
   Aws::Vector<RestoreJobsListMember> m_restoreJobs;
-  bool m_restoreJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_restoreJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

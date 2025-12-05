@@ -95,15 +95,15 @@ class TelephonyOutboundConfig {
   ///@}
  private:
   Aws::String m_connectContactFlowId;
-  bool m_connectContactFlowIdHasBeenSet = false;
 
   Aws::String m_connectSourcePhoneNumber;
-  bool m_connectSourcePhoneNumberHasBeenSet = false;
 
   AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
-  bool m_answerMachineDetectionConfigHasBeenSet = false;
 
   int m_ringTimeout{0};
+  bool m_connectContactFlowIdHasBeenSet = false;
+  bool m_connectSourcePhoneNumberHasBeenSet = false;
+  bool m_answerMachineDetectionConfigHasBeenSet = false;
   bool m_ringTimeoutHasBeenSet = false;
 };
 

@@ -189,24 +189,24 @@ class Update {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeValue> m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_updateExpression;
-  bool m_updateExpressionHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_conditionExpression;
-  bool m_conditionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-  bool m_expressionAttributeNamesHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-  bool m_expressionAttributeValuesHasBeenSet = false;
 
   ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure{ReturnValuesOnConditionCheckFailure::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_updateExpressionHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_conditionExpressionHasBeenSet = false;
+  bool m_expressionAttributeNamesHasBeenSet = false;
+  bool m_expressionAttributeValuesHasBeenSet = false;
   bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
 };
 

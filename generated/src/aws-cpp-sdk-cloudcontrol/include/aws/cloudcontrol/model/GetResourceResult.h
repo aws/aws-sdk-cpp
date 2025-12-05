@@ -75,12 +75,12 @@ class GetResourceResult {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   ResourceDescription m_resourceDescription;
-  bool m_resourceDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeNameHasBeenSet = false;
+  bool m_resourceDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

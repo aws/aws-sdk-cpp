@@ -134,18 +134,18 @@ class DiscoverInputSchemaResult {
   ///@}
  private:
   SourceSchema m_inputSchema;
-  bool m_inputSchemaHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_parsedInputRecords;
-  bool m_parsedInputRecordsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_processedInputRecords;
-  bool m_processedInputRecordsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rawInputRecords;
-  bool m_rawInputRecordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputSchemaHasBeenSet = false;
+  bool m_parsedInputRecordsHasBeenSet = false;
+  bool m_processedInputRecordsHasBeenSet = false;
+  bool m_rawInputRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

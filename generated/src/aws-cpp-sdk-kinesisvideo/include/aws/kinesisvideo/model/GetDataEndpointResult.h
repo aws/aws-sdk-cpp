@@ -60,9 +60,9 @@ class GetDataEndpointResult {
   ///@}
  private:
   Aws::String m_dataEndpoint;
-  bool m_dataEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

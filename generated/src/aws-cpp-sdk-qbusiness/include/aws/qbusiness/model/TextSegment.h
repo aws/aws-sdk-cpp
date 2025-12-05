@@ -106,15 +106,15 @@ class TextSegment {
   ///@}
  private:
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   SnippetExcerpt m_snippetExcerpt;
-  bool m_snippetExcerptHasBeenSet = false;
 
   SourceDetails m_sourceDetails;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
+  bool m_snippetExcerptHasBeenSet = false;
   bool m_sourceDetailsHasBeenSet = false;
 };
 

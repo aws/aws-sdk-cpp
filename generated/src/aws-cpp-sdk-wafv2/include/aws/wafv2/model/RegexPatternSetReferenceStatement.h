@@ -112,12 +112,12 @@ class RegexPatternSetReferenceStatement {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   FieldToMatch m_fieldToMatch;
-  bool m_fieldToMatchHasBeenSet = false;
 
   Aws::Vector<TextTransformation> m_textTransformations;
+  bool m_aRNHasBeenSet = false;
+  bool m_fieldToMatchHasBeenSet = false;
   bool m_textTransformationsHasBeenSet = false;
 };
 

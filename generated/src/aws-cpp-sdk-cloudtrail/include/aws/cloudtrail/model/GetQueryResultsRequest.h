@@ -101,15 +101,15 @@ class GetQueryResultsRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxQueryResults{0};
-  bool m_maxQueryResultsHasBeenSet = false;
 
   Aws::String m_eventDataStoreOwnerAccountId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxQueryResultsHasBeenSet = false;
   bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 };
 

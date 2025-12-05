@@ -70,9 +70,9 @@ class UpdateVpcEndpointRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   VPCOptions m_vpcOptions;
+  bool m_vpcEndpointIdHasBeenSet = false;
   bool m_vpcOptionsHasBeenSet = false;
 };
 

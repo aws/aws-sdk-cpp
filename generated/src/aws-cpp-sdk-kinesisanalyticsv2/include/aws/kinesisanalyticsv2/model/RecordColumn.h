@@ -92,12 +92,12 @@ class RecordColumn {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_mapping;
-  bool m_mappingHasBeenSet = false;
 
   Aws::String m_sqlType;
+  bool m_nameHasBeenSet = false;
+  bool m_mappingHasBeenSet = false;
   bool m_sqlTypeHasBeenSet = false;
 };
 

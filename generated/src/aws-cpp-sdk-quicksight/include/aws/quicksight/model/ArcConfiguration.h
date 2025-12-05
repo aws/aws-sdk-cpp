@@ -67,9 +67,9 @@ class ArcConfiguration {
   ///@}
  private:
   double m_arcAngle{0.0};
-  bool m_arcAngleHasBeenSet = false;
 
   ArcThicknessOptions m_arcThickness{ArcThicknessOptions::NOT_SET};
+  bool m_arcAngleHasBeenSet = false;
   bool m_arcThicknessHasBeenSet = false;
 };
 

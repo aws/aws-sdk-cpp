@@ -280,39 +280,39 @@ class GetImagesRequest : public KinesisVideoArchivedMediaRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   ImageSelectorType m_imageSelectorType{ImageSelectorType::NOT_SET};
-  bool m_imageSelectorTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   int m_samplingInterval{0};
-  bool m_samplingIntervalHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Map<FormatConfigKey, Aws::String> m_formatConfig;
-  bool m_formatConfigHasBeenSet = false;
 
   int m_widthPixels{0};
-  bool m_widthPixelsHasBeenSet = false;
 
   int m_heightPixels{0};
-  bool m_heightPixelsHasBeenSet = false;
 
   long long m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_imageSelectorTypeHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_samplingIntervalHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_formatConfigHasBeenSet = false;
+  bool m_widthPixelsHasBeenSet = false;
+  bool m_heightPixelsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

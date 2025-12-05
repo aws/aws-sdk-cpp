@@ -78,9 +78,9 @@ class MixedInstancesPolicy {
   ///@}
  private:
   LaunchTemplate m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   InstancesDistribution m_instancesDistribution;
+  bool m_launchTemplateHasBeenSet = false;
   bool m_instancesDistributionHasBeenSet = false;
 };
 

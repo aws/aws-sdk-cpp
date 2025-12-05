@@ -123,15 +123,15 @@ class CreateChannelRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Destination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

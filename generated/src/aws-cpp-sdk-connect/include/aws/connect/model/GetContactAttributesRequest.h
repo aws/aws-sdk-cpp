@@ -65,9 +65,9 @@ class GetContactAttributesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_initialContactId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_initialContactIdHasBeenSet = false;
 };
 

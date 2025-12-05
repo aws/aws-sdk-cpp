@@ -74,9 +74,9 @@ class AssociateEnvironmentOperationsRoleRequest : public ElasticBeanstalkRequest
   ///@}
  private:
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_operationsRole;
+  bool m_environmentNameHasBeenSet = false;
   bool m_operationsRoleHasBeenSet = false;
 };
 

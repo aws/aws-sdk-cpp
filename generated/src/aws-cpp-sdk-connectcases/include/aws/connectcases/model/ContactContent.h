@@ -90,12 +90,12 @@ class ContactContent {
   ///@}
  private:
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_channel;
-  bool m_channelHasBeenSet = false;
 
   Aws::Utils::DateTime m_connectedToSystemTime{};
+  bool m_contactArnHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
   bool m_connectedToSystemTimeHasBeenSet = false;
 };
 

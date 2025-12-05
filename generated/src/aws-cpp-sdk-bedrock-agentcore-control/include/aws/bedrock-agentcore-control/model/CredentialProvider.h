@@ -73,9 +73,9 @@ class CredentialProvider {
   ///@}
  private:
   OAuthCredentialProvider m_oauthCredentialProvider;
-  bool m_oauthCredentialProviderHasBeenSet = false;
 
   ApiKeyCredentialProvider m_apiKeyCredentialProvider;
+  bool m_oauthCredentialProviderHasBeenSet = false;
   bool m_apiKeyCredentialProviderHasBeenSet = false;
 };
 

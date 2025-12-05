@@ -67,9 +67,9 @@ class CreateApplicationVersionResult {
   ///@}
  private:
   ApplicationVersionDescription m_applicationVersion;
-  bool m_applicationVersionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_applicationVersionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

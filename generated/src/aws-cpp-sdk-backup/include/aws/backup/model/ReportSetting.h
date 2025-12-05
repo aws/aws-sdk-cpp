@@ -169,21 +169,21 @@ class ReportSetting {
   ///@}
  private:
   Aws::String m_reportTemplate;
-  bool m_reportTemplateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_frameworkArns;
-  bool m_frameworkArnsHasBeenSet = false;
 
   int m_numberOfFrameworks{0};
-  bool m_numberOfFrameworksHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationUnits;
-  bool m_organizationUnitsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_reportTemplateHasBeenSet = false;
+  bool m_frameworkArnsHasBeenSet = false;
+  bool m_numberOfFrameworksHasBeenSet = false;
+  bool m_accountsHasBeenSet = false;
+  bool m_organizationUnitsHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

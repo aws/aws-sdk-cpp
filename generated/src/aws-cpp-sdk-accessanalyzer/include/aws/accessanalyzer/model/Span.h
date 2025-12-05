@@ -69,9 +69,9 @@ class Span {
   ///@}
  private:
   Position m_start;
-  bool m_startHasBeenSet = false;
 
   Position m_end;
+  bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

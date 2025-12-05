@@ -151,21 +151,21 @@ class Template {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TemplateVersion m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

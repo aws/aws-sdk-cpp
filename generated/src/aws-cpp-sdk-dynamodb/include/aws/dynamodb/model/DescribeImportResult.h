@@ -62,9 +62,9 @@ class DescribeImportResult {
   ///@}
  private:
   ImportTableDescription m_importTableDescription;
-  bool m_importTableDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importTableDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

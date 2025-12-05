@@ -206,30 +206,30 @@ class ContactMethod {
   ///@}
  private:
   Aws::String m_contactEndpoint;
-  bool m_contactEndpointHasBeenSet = false;
 
   ContactMethodStatus m_status{ContactMethodStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ContactProtocol m_protocol{ContactProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_supportCode;
+  bool m_contactEndpointHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_supportCodeHasBeenSet = false;
 };
 

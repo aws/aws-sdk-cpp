@@ -215,30 +215,30 @@ class UpdateBenefitApplicationRequest : public PartnerCentralBenefitsRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::Utils::Document m_benefitApplicationDetails;
-  bool m_benefitApplicationDetailsHasBeenSet = false;
 
   Aws::Vector<Contact> m_partnerContacts;
-  bool m_partnerContactsHasBeenSet = false;
 
   Aws::Vector<FileInput> m_fileDetails;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_benefitApplicationDetailsHasBeenSet = false;
+  bool m_partnerContactsHasBeenSet = false;
   bool m_fileDetailsHasBeenSet = false;
 };
 

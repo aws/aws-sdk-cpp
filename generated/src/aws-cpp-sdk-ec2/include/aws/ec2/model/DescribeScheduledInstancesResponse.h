@@ -92,12 +92,12 @@ class DescribeScheduledInstancesResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ScheduledInstance> m_scheduledInstanceSet;
-  bool m_scheduledInstanceSetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_scheduledInstanceSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

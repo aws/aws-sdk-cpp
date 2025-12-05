@@ -71,9 +71,9 @@ class AwsS3BucketWebsiteConfigurationRedirectTo {
   ///@}
  private:
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_protocol;
+  bool m_hostnameHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

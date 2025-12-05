@@ -84,12 +84,12 @@ class ListIPSetsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ipSetIds;
-  bool m_ipSetIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ipSetIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

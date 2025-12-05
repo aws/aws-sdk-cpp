@@ -113,15 +113,15 @@ class Workflow {
   ///@}
  private:
   Aws::Vector<Step> m_steps;
-  bool m_stepsHasBeenSet = false;
 
   WorkflowTargetAction m_workflowTargetAction{WorkflowTargetAction::NOT_SET};
-  bool m_workflowTargetActionHasBeenSet = false;
 
   Aws::String m_workflowTargetRegion;
-  bool m_workflowTargetRegionHasBeenSet = false;
 
   Aws::String m_workflowDescription;
+  bool m_stepsHasBeenSet = false;
+  bool m_workflowTargetActionHasBeenSet = false;
+  bool m_workflowTargetRegionHasBeenSet = false;
   bool m_workflowDescriptionHasBeenSet = false;
 };
 

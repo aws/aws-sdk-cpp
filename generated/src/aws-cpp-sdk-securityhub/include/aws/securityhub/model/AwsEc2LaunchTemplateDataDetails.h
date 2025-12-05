@@ -663,93 +663,93 @@ class AwsEc2LaunchTemplateDataDetails {
   ///@}
  private:
   Aws::Vector<AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails> m_blockDeviceMappingSet;
-  bool m_blockDeviceMappingSetHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails m_capacityReservationSpecification;
-  bool m_capacityReservationSpecificationHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataCpuOptionsDetails m_cpuOptions;
-  bool m_cpuOptionsHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataCreditSpecificationDetails m_creditSpecification;
-  bool m_creditSpecificationHasBeenSet = false;
 
   bool m_disableApiStop{false};
-  bool m_disableApiStopHasBeenSet = false;
 
   bool m_disableApiTermination{false};
-  bool m_disableApiTerminationHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails> m_elasticGpuSpecificationSet;
-  bool m_elasticGpuSpecificationSetHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails> m_elasticInferenceAcceleratorSet;
-  bool m_elasticInferenceAcceleratorSetHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataEnclaveOptionsDetails m_enclaveOptions;
-  bool m_enclaveOptionsHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataHibernationOptionsDetails m_hibernationOptions;
-  bool m_hibernationOptionsHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataIamInstanceProfileDetails m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_instanceInitiatedShutdownBehavior;
-  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails m_instanceMarketOptions;
-  bool m_instanceMarketOptionsHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsDetails m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataLicenseSetDetails> m_licenseSet;
-  bool m_licenseSetHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataMaintenanceOptionsDetails m_maintenanceOptions;
-  bool m_maintenanceOptionsHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataMetadataOptionsDetails m_metadataOptions;
-  bool m_metadataOptionsHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataMonitoringDetails m_monitoring;
-  bool m_monitoringHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails> m_networkInterfaceSet;
-  bool m_networkInterfaceSetHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataPlacementDetails m_placement;
-  bool m_placementHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails m_privateDnsNameOptions;
-  bool m_privateDnsNameOptionsHasBeenSet = false;
 
   Aws::String m_ramDiskId;
-  bool m_ramDiskIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIdSet;
-  bool m_securityGroupIdSetHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupSet;
-  bool m_securityGroupSetHasBeenSet = false;
 
   Aws::String m_userData;
+  bool m_blockDeviceMappingSetHasBeenSet = false;
+  bool m_capacityReservationSpecificationHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
+  bool m_creditSpecificationHasBeenSet = false;
+  bool m_disableApiStopHasBeenSet = false;
+  bool m_disableApiTerminationHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_elasticGpuSpecificationSetHasBeenSet = false;
+  bool m_elasticInferenceAcceleratorSetHasBeenSet = false;
+  bool m_enclaveOptionsHasBeenSet = false;
+  bool m_hibernationOptionsHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+  bool m_instanceMarketOptionsHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_licenseSetHasBeenSet = false;
+  bool m_maintenanceOptionsHasBeenSet = false;
+  bool m_metadataOptionsHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_networkInterfaceSetHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_privateDnsNameOptionsHasBeenSet = false;
+  bool m_ramDiskIdHasBeenSet = false;
+  bool m_securityGroupIdSetHasBeenSet = false;
+  bool m_securityGroupSetHasBeenSet = false;
   bool m_userDataHasBeenSet = false;
 };
 

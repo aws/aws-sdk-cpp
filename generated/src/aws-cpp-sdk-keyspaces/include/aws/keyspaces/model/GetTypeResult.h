@@ -214,33 +214,33 @@ class GetTypeResult {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::Vector<FieldDefinition> m_fieldDefinitions;
-  bool m_fieldDefinitionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   TypeStatus m_status{TypeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_directReferringTables;
-  bool m_directReferringTablesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_directParentTypes;
-  bool m_directParentTypesHasBeenSet = false;
 
   int m_maxNestingDepth{0};
-  bool m_maxNestingDepthHasBeenSet = false;
 
   Aws::String m_keyspaceArn;
-  bool m_keyspaceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_fieldDefinitionsHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_directReferringTablesHasBeenSet = false;
+  bool m_directParentTypesHasBeenSet = false;
+  bool m_maxNestingDepthHasBeenSet = false;
+  bool m_keyspaceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class AutoMLCandidateStep {
   ///@}
  private:
   CandidateStepType m_candidateStepType{CandidateStepType::NOT_SET};
-  bool m_candidateStepTypeHasBeenSet = false;
 
   Aws::String m_candidateStepArn;
-  bool m_candidateStepArnHasBeenSet = false;
 
   Aws::String m_candidateStepName;
+  bool m_candidateStepTypeHasBeenSet = false;
+  bool m_candidateStepArnHasBeenSet = false;
   bool m_candidateStepNameHasBeenSet = false;
 };
 

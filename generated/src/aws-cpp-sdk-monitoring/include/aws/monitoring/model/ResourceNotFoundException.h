@@ -66,9 +66,9 @@ class ResourceNotFoundException {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

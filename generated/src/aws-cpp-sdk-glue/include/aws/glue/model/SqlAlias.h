@@ -69,9 +69,9 @@ class SqlAlias {
   ///@}
  private:
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_alias;
+  bool m_fromHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class PrivateIp {
   ///@}
  private:
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
+  bool m_privateDnsNameHasBeenSet = false;
   bool m_privateIpAddressHasBeenSet = false;
 };
 

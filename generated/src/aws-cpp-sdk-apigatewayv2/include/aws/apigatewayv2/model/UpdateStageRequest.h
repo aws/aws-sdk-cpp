@@ -230,33 +230,33 @@ class UpdateStageRequest : public ApiGatewayV2Request {
   ///@}
  private:
   AccessLogSettings m_accessLogSettings;
-  bool m_accessLogSettingsHasBeenSet = false;
 
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   bool m_autoDeploy{false};
-  bool m_autoDeployHasBeenSet = false;
 
   Aws::String m_clientCertificateId;
-  bool m_clientCertificateIdHasBeenSet = false;
 
   RouteSettings m_defaultRouteSettings;
-  bool m_defaultRouteSettingsHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, RouteSettings> m_routeSettings;
-  bool m_routeSettingsHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_stageVariables;
+  bool m_accessLogSettingsHasBeenSet = false;
+  bool m_apiIdHasBeenSet = false;
+  bool m_autoDeployHasBeenSet = false;
+  bool m_clientCertificateIdHasBeenSet = false;
+  bool m_defaultRouteSettingsHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routeSettingsHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
   bool m_stageVariablesHasBeenSet = false;
 };
 

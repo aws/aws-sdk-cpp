@@ -70,9 +70,9 @@ class PrefixListEntry {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_cidrHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

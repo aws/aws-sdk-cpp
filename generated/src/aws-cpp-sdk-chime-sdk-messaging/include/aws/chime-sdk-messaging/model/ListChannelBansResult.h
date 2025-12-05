@@ -102,15 +102,15 @@ class ListChannelBansResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ChannelBanSummary> m_channelBans;
-  bool m_channelBansHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_channelBansHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

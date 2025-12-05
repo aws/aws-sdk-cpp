@@ -339,51 +339,51 @@ class PackageDetails {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   PackageType m_packageType{PackageType::NOT_SET};
-  bool m_packageTypeHasBeenSet = false;
 
   Aws::String m_packageDescription;
-  bool m_packageDescriptionHasBeenSet = false;
 
   PackageStatus m_packageStatus{PackageStatus::NOT_SET};
-  bool m_packageStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_availablePackageVersion;
-  bool m_availablePackageVersionHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   PluginProperties m_availablePluginProperties;
-  bool m_availablePluginPropertiesHasBeenSet = false;
 
   PackageConfiguration m_availablePackageConfiguration;
-  bool m_availablePackageConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowListedUserList;
-  bool m_allowListedUserListHasBeenSet = false;
 
   Aws::String m_packageOwner;
-  bool m_packageOwnerHasBeenSet = false;
 
   PackageVendingOptions m_packageVendingOptions;
-  bool m_packageVendingOptionsHasBeenSet = false;
 
   PackageEncryptionOptions m_packageEncryptionOptions;
+  bool m_packageIDHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageTypeHasBeenSet = false;
+  bool m_packageDescriptionHasBeenSet = false;
+  bool m_packageStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_availablePackageVersionHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_availablePluginPropertiesHasBeenSet = false;
+  bool m_availablePackageConfigurationHasBeenSet = false;
+  bool m_allowListedUserListHasBeenSet = false;
+  bool m_packageOwnerHasBeenSet = false;
+  bool m_packageVendingOptionsHasBeenSet = false;
   bool m_packageEncryptionOptionsHasBeenSet = false;
 };
 

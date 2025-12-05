@@ -118,18 +118,18 @@ class ListStageDevicesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_edgeDeploymentPlanName;
-  bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
   bool m_excludeDevicesDeployedInOtherStage{false};
-  bool m_excludeDevicesDeployedInOtherStageHasBeenSet = false;
 
   Aws::String m_stageName;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_edgeDeploymentPlanNameHasBeenSet = false;
+  bool m_excludeDevicesDeployedInOtherStageHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;
 };
 

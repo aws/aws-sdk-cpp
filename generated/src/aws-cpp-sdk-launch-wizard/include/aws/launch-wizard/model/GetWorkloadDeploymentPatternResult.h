@@ -61,9 +61,9 @@ class GetWorkloadDeploymentPatternResult {
   ///@}
  private:
   WorkloadDeploymentPatternData m_workloadDeploymentPattern;
-  bool m_workloadDeploymentPatternHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadDeploymentPatternHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class EntityDescription {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   EntityType m_type{EntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   DefinitionDocument m_definition;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

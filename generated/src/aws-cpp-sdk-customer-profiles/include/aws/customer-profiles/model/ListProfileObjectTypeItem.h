@@ -162,24 +162,24 @@ class ListProfileObjectTypeItem {
   ///@}
  private:
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   int m_maxProfileObjectCount{0};
-  bool m_maxProfileObjectCountHasBeenSet = false;
 
   int m_maxAvailableProfileObjectCount{0};
-  bool m_maxAvailableProfileObjectCountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_maxProfileObjectCountHasBeenSet = false;
+  bool m_maxAvailableProfileObjectCountHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

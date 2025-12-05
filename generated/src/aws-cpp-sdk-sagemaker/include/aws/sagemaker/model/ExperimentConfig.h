@@ -113,15 +113,15 @@ class ExperimentConfig {
   ///@}
  private:
   Aws::String m_experimentName;
-  bool m_experimentNameHasBeenSet = false;
 
   Aws::String m_trialName;
-  bool m_trialNameHasBeenSet = false;
 
   Aws::String m_trialComponentDisplayName;
-  bool m_trialComponentDisplayNameHasBeenSet = false;
 
   Aws::String m_runName;
+  bool m_experimentNameHasBeenSet = false;
+  bool m_trialNameHasBeenSet = false;
+  bool m_trialComponentDisplayNameHasBeenSet = false;
   bool m_runNameHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class TraceContent {
   ///@}
  private:
   WirelessDeviceFrameInfo m_wirelessDeviceFrameInfo{WirelessDeviceFrameInfo::NOT_SET};
-  bool m_wirelessDeviceFrameInfoHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   MulticastFrameInfo m_multicastFrameInfo{MulticastFrameInfo::NOT_SET};
+  bool m_wirelessDeviceFrameInfoHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
   bool m_multicastFrameInfoHasBeenSet = false;
 };
 

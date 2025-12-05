@@ -131,18 +131,18 @@ class ReplicationPendingModifiedValues {
   ///@}
  private:
   Aws::String m_replicationInstanceClass;
-  bool m_replicationInstanceClassHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_networkType;
+  bool m_replicationInstanceClassHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

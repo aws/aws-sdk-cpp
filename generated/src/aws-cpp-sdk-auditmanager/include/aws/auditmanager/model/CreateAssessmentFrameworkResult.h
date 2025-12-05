@@ -61,9 +61,9 @@ class CreateAssessmentFrameworkResult {
   ///@}
  private:
   Framework m_framework;
-  bool m_frameworkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_frameworkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

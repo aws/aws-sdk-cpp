@@ -68,9 +68,9 @@ class OrderBy {
   ///@}
  private:
   Aws::String m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   Order m_order{Order::NOT_SET};
+  bool m_dimensionHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

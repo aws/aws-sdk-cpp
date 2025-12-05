@@ -66,9 +66,9 @@ class GetAgentAliasRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentAliasId;
+  bool m_agentIdHasBeenSet = false;
   bool m_agentAliasIdHasBeenSet = false;
 };
 

@@ -88,9 +88,9 @@ class RejectedRecordsException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<RejectedRecord> m_rejectedRecords;
+  bool m_messageHasBeenSet = false;
   bool m_rejectedRecordsHasBeenSet = false;
 };
 

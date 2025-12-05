@@ -227,36 +227,36 @@ class CheckSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CheckProvider m_provider{CheckProvider::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_choiceId;
-  bool m_choiceIdHasBeenSet = false;
 
   CheckStatus m_status{CheckStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<CheckStatus, int> m_accountSummary;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_questionIdHasBeenSet = false;
+  bool m_choiceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_accountSummaryHasBeenSet = false;
 };
 

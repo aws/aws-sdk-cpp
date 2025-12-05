@@ -119,15 +119,15 @@ class KnowledgeBaseRetrievalResult {
   ///@}
  private:
   RetrievalResultContent m_content;
-  bool m_contentHasBeenSet = false;
 
   RetrievalResultLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_contentHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class Citation {
   ///@}
  private:
   Reference m_reference;
-  bool m_referenceHasBeenSet = false;
 
   Content m_content;
+  bool m_referenceHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

@@ -257,33 +257,33 @@ class UpdateUserRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   UserRole m_role{UserRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_customPermissionsName;
-  bool m_customPermissionsNameHasBeenSet = false;
 
   bool m_unapplyCustomPermissions{false};
-  bool m_unapplyCustomPermissionsHasBeenSet = false;
 
   Aws::String m_externalLoginFederationProviderType;
-  bool m_externalLoginFederationProviderTypeHasBeenSet = false;
 
   Aws::String m_customFederationProviderUrl;
-  bool m_customFederationProviderUrlHasBeenSet = false;
 
   Aws::String m_externalLoginId;
+  bool m_userNameHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_customPermissionsNameHasBeenSet = false;
+  bool m_unapplyCustomPermissionsHasBeenSet = false;
+  bool m_externalLoginFederationProviderTypeHasBeenSet = false;
+  bool m_customFederationProviderUrlHasBeenSet = false;
   bool m_externalLoginIdHasBeenSet = false;
 };
 

@@ -266,42 +266,42 @@ class ChannelHandshakeSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   HandshakeType m_handshakeType{HandshakeType::NOT_SET};
-  bool m_handshakeTypeHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_senderAccountId;
-  bool m_senderAccountIdHasBeenSet = false;
 
   Aws::String m_senderDisplayName;
-  bool m_senderDisplayNameHasBeenSet = false;
 
   Aws::String m_receiverAccountId;
-  bool m_receiverAccountIdHasBeenSet = false;
 
   Aws::String m_associatedResourceId;
-  bool m_associatedResourceIdHasBeenSet = false;
 
   HandshakeDetail m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   HandshakeStatus m_status{HandshakeStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_handshakeTypeHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_senderAccountIdHasBeenSet = false;
+  bool m_senderDisplayNameHasBeenSet = false;
+  bool m_receiverAccountIdHasBeenSet = false;
+  bool m_associatedResourceIdHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

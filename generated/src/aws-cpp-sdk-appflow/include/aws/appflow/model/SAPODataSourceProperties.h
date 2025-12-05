@@ -91,12 +91,12 @@ class SAPODataSourceProperties {
   ///@}
  private:
   Aws::String m_objectPath;
-  bool m_objectPathHasBeenSet = false;
 
   SAPODataParallelismConfig m_parallelismConfig;
-  bool m_parallelismConfigHasBeenSet = false;
 
   SAPODataPaginationConfig m_paginationConfig;
+  bool m_objectPathHasBeenSet = false;
+  bool m_parallelismConfigHasBeenSet = false;
   bool m_paginationConfigHasBeenSet = false;
 };
 

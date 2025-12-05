@@ -87,12 +87,12 @@ class ListGatewaysResult {
   ///@}
  private:
   Aws::Vector<Gateway> m_gateways;
-  bool m_gatewaysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewaysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

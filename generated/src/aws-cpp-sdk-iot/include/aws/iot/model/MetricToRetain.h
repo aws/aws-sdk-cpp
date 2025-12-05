@@ -87,12 +87,12 @@ class MetricToRetain {
   ///@}
  private:
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   MetricDimension m_metricDimension;
-  bool m_metricDimensionHasBeenSet = false;
 
   bool m_exportMetric{false};
+  bool m_metricHasBeenSet = false;
+  bool m_metricDimensionHasBeenSet = false;
   bool m_exportMetricHasBeenSet = false;
 };
 

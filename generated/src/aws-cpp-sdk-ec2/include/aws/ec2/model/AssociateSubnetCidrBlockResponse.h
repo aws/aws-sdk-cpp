@@ -78,12 +78,12 @@ class AssociateSubnetCidrBlockResponse {
   ///@}
  private:
   SubnetIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
-  bool m_ipv6CidrBlockAssociationHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipv6CidrBlockAssociationHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

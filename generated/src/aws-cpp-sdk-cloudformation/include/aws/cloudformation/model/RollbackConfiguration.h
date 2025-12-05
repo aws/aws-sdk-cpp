@@ -109,9 +109,9 @@ class RollbackConfiguration {
   ///@}
  private:
   Aws::Vector<RollbackTrigger> m_rollbackTriggers;
-  bool m_rollbackTriggersHasBeenSet = false;
 
   int m_monitoringTimeInMinutes{0};
+  bool m_rollbackTriggersHasBeenSet = false;
   bool m_monitoringTimeInMinutesHasBeenSet = false;
 };
 

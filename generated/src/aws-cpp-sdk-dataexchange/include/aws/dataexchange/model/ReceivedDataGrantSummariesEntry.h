@@ -230,36 +230,36 @@ class ReceivedDataGrantSummariesEntry {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_senderPrincipal;
-  bool m_senderPrincipalHasBeenSet = false;
 
   Aws::String m_receiverPrincipal;
-  bool m_receiverPrincipalHasBeenSet = false;
 
   DataGrantAcceptanceState m_acceptanceState{DataGrantAcceptanceState::NOT_SET};
-  bool m_acceptanceStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_acceptedAt{};
-  bool m_acceptedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endsAt{};
-  bool m_endsAtHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_nameHasBeenSet = false;
+  bool m_senderPrincipalHasBeenSet = false;
+  bool m_receiverPrincipalHasBeenSet = false;
+  bool m_acceptanceStateHasBeenSet = false;
+  bool m_acceptedAtHasBeenSet = false;
+  bool m_endsAtHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

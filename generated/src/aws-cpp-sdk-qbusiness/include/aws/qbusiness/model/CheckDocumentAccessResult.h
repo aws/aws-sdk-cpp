@@ -129,18 +129,18 @@ class CheckDocumentAccessResult {
   ///@}
  private:
   Aws::Vector<AssociatedGroup> m_userGroups;
-  bool m_userGroupsHasBeenSet = false;
 
   Aws::Vector<AssociatedUser> m_userAliases;
-  bool m_userAliasesHasBeenSet = false;
 
   bool m_hasAccess{false};
-  bool m_hasAccessHasBeenSet = false;
 
   DocumentAcl m_documentAcl;
-  bool m_documentAclHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userGroupsHasBeenSet = false;
+  bool m_userAliasesHasBeenSet = false;
+  bool m_hasAccessHasBeenSet = false;
+  bool m_documentAclHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

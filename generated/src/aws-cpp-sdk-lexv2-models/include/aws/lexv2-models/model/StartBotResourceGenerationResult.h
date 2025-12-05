@@ -163,27 +163,27 @@ class StartBotResourceGenerationResult {
   ///@}
  private:
   Aws::String m_generationInputPrompt;
-  bool m_generationInputPromptHasBeenSet = false;
 
   Aws::String m_generationId;
-  bool m_generationIdHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   GenerationStatus m_generationStatus{GenerationStatus::NOT_SET};
-  bool m_generationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_generationInputPromptHasBeenSet = false;
+  bool m_generationIdHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_generationStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

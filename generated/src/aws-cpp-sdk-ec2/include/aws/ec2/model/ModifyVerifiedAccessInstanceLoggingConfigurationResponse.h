@@ -62,9 +62,9 @@ class ModifyVerifiedAccessInstanceLoggingConfigurationResponse {
   ///@}
  private:
   VerifiedAccessInstanceLoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_loggingConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

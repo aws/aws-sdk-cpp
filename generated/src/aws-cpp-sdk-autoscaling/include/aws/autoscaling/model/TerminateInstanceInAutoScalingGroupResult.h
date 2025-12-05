@@ -61,9 +61,9 @@ class TerminateInstanceInAutoScalingGroupResult {
   ///@}
  private:
   Activity m_activity;
-  bool m_activityHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_activityHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

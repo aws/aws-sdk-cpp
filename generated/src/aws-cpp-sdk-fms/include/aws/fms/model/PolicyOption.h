@@ -90,12 +90,12 @@ class PolicyOption {
   ///@}
  private:
   NetworkFirewallPolicy m_networkFirewallPolicy;
-  bool m_networkFirewallPolicyHasBeenSet = false;
 
   ThirdPartyFirewallPolicy m_thirdPartyFirewallPolicy;
-  bool m_thirdPartyFirewallPolicyHasBeenSet = false;
 
   NetworkAclCommonPolicy m_networkAclCommonPolicy;
+  bool m_networkFirewallPolicyHasBeenSet = false;
+  bool m_thirdPartyFirewallPolicyHasBeenSet = false;
   bool m_networkAclCommonPolicyHasBeenSet = false;
 };
 

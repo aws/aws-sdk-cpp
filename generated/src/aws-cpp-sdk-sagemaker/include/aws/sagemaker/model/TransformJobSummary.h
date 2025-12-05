@@ -165,24 +165,24 @@ class TransformJobSummary {
   ///@}
  private:
   Aws::String m_transformJobName;
-  bool m_transformJobNameHasBeenSet = false;
 
   Aws::String m_transformJobArn;
-  bool m_transformJobArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_transformEndTime{};
-  bool m_transformEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   TransformJobStatus m_transformJobStatus{TransformJobStatus::NOT_SET};
-  bool m_transformJobStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_transformJobNameHasBeenSet = false;
+  bool m_transformJobArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_transformEndTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_transformJobStatusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

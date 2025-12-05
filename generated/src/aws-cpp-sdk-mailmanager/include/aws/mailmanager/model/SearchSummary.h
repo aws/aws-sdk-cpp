@@ -69,9 +69,9 @@ class SearchSummary {
   ///@}
  private:
   Aws::String m_searchId;
-  bool m_searchIdHasBeenSet = false;
 
   SearchStatus m_status;
+  bool m_searchIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

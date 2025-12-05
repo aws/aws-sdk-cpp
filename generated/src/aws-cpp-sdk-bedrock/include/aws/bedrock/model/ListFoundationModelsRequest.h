@@ -113,15 +113,15 @@ class ListFoundationModelsRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_byProvider;
-  bool m_byProviderHasBeenSet = false;
 
   ModelCustomization m_byCustomizationType{ModelCustomization::NOT_SET};
-  bool m_byCustomizationTypeHasBeenSet = false;
 
   ModelModality m_byOutputModality{ModelModality::NOT_SET};
-  bool m_byOutputModalityHasBeenSet = false;
 
   InferenceType m_byInferenceType{InferenceType::NOT_SET};
+  bool m_byProviderHasBeenSet = false;
+  bool m_byCustomizationTypeHasBeenSet = false;
+  bool m_byOutputModalityHasBeenSet = false;
   bool m_byInferenceTypeHasBeenSet = false;
 };
 

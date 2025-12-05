@@ -179,30 +179,30 @@ class GetWorkflowResult {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   WorkflowType m_workflowType{WorkflowType::NOT_SET};
-  bool m_workflowTypeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorDescription;
-  bool m_errorDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   WorkflowAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   WorkflowMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorDescriptionHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

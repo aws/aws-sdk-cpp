@@ -220,30 +220,30 @@ class RegisterApplicationRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
-  bool m_applicationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::String m_sapInstanceNumber;
-  bool m_sapInstanceNumberHasBeenSet = false;
 
   Aws::String m_sid;
-  bool m_sidHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<ApplicationCredential> m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_databaseArn;
-  bool m_databaseArnHasBeenSet = false;
 
   Aws::Vector<ComponentInfo> m_componentsInfo;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationTypeHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_sapInstanceNumberHasBeenSet = false;
+  bool m_sidHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_databaseArnHasBeenSet = false;
   bool m_componentsInfoHasBeenSet = false;
 };
 

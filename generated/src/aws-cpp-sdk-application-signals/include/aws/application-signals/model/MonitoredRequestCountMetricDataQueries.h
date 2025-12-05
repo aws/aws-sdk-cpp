@@ -89,9 +89,9 @@ class MonitoredRequestCountMetricDataQueries {
   ///@}
  private:
   Aws::Vector<MetricDataQuery> m_goodCountMetric;
-  bool m_goodCountMetricHasBeenSet = false;
 
   Aws::Vector<MetricDataQuery> m_badCountMetric;
+  bool m_goodCountMetricHasBeenSet = false;
   bool m_badCountMetricHasBeenSet = false;
 };
 

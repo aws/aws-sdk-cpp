@@ -230,36 +230,36 @@ class CompilationJobSummary {
   ///@}
  private:
   Aws::String m_compilationJobName;
-  bool m_compilationJobNameHasBeenSet = false;
 
   Aws::String m_compilationJobArn;
-  bool m_compilationJobArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_compilationStartTime{};
-  bool m_compilationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_compilationEndTime{};
-  bool m_compilationEndTimeHasBeenSet = false;
 
   TargetDevice m_compilationTargetDevice{TargetDevice::NOT_SET};
-  bool m_compilationTargetDeviceHasBeenSet = false;
 
   TargetPlatformOs m_compilationTargetPlatformOs{TargetPlatformOs::NOT_SET};
-  bool m_compilationTargetPlatformOsHasBeenSet = false;
 
   TargetPlatformArch m_compilationTargetPlatformArch{TargetPlatformArch::NOT_SET};
-  bool m_compilationTargetPlatformArchHasBeenSet = false;
 
   TargetPlatformAccelerator m_compilationTargetPlatformAccelerator{TargetPlatformAccelerator::NOT_SET};
-  bool m_compilationTargetPlatformAcceleratorHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   CompilationJobStatus m_compilationJobStatus{CompilationJobStatus::NOT_SET};
+  bool m_compilationJobNameHasBeenSet = false;
+  bool m_compilationJobArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_compilationStartTimeHasBeenSet = false;
+  bool m_compilationEndTimeHasBeenSet = false;
+  bool m_compilationTargetDeviceHasBeenSet = false;
+  bool m_compilationTargetPlatformOsHasBeenSet = false;
+  bool m_compilationTargetPlatformArchHasBeenSet = false;
+  bool m_compilationTargetPlatformAcceleratorHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_compilationJobStatusHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ChannelMessageStatusStructure {
   ///@}
  private:
   ChannelMessageStatus m_value{ChannelMessageStatus::NOT_SET};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_detail;
+  bool m_valueHasBeenSet = false;
   bool m_detailHasBeenSet = false;
 };
 

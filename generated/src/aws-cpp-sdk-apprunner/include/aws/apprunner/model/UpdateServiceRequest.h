@@ -175,24 +175,24 @@ class UpdateServiceRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   SourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   InstanceConfiguration m_instanceConfiguration;
-  bool m_instanceConfigurationHasBeenSet = false;
 
   Aws::String m_autoScalingConfigurationArn;
-  bool m_autoScalingConfigurationArnHasBeenSet = false;
 
   HealthCheckConfiguration m_healthCheckConfiguration;
-  bool m_healthCheckConfigurationHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   ServiceObservabilityConfiguration m_observabilityConfiguration;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
+  bool m_instanceConfigurationHasBeenSet = false;
+  bool m_autoScalingConfigurationArnHasBeenSet = false;
+  bool m_healthCheckConfigurationHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
   bool m_observabilityConfigurationHasBeenSet = false;
 };
 

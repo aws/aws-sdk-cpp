@@ -99,12 +99,12 @@ class JwtValidationActionAdditionalClaim {
   ///@}
  private:
   JwtValidationActionAdditionalClaimFormatEnum m_format{JwtValidationActionAdditionalClaimFormatEnum::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_formatHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -109,12 +109,12 @@ class TreeMapAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_sizes;
-  bool m_sizesHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_colors;
+  bool m_groupsHasBeenSet = false;
+  bool m_sizesHasBeenSet = false;
   bool m_colorsHasBeenSet = false;
 };
 

@@ -185,27 +185,27 @@ class UpdateNodegroupConfigRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_nodegroupName;
-  bool m_nodegroupNameHasBeenSet = false;
 
   UpdateLabelsPayload m_labels;
-  bool m_labelsHasBeenSet = false;
 
   UpdateTaintsPayload m_taints;
-  bool m_taintsHasBeenSet = false;
 
   NodegroupScalingConfig m_scalingConfig;
-  bool m_scalingConfigHasBeenSet = false;
 
   NodegroupUpdateConfig m_updateConfig;
-  bool m_updateConfigHasBeenSet = false;
 
   NodeRepairConfig m_nodeRepairConfig;
-  bool m_nodeRepairConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_nodegroupNameHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_taintsHasBeenSet = false;
+  bool m_scalingConfigHasBeenSet = false;
+  bool m_updateConfigHasBeenSet = false;
+  bool m_nodeRepairConfigHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

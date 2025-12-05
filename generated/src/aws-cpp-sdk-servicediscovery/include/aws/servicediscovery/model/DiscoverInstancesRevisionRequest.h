@@ -94,12 +94,12 @@ class DiscoverInstancesRevisionRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_ownerAccount;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class StartArchiveExportResult {
   ///@}
  private:
   Aws::String m_exportId;
-  bool m_exportIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

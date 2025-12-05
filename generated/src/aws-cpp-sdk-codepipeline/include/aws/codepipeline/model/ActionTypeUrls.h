@@ -113,15 +113,15 @@ class ActionTypeUrls {
   ///@}
  private:
   Aws::String m_configurationUrl;
-  bool m_configurationUrlHasBeenSet = false;
 
   Aws::String m_entityUrlTemplate;
-  bool m_entityUrlTemplateHasBeenSet = false;
 
   Aws::String m_executionUrlTemplate;
-  bool m_executionUrlTemplateHasBeenSet = false;
 
   Aws::String m_revisionUrlTemplate;
+  bool m_configurationUrlHasBeenSet = false;
+  bool m_entityUrlTemplateHasBeenSet = false;
+  bool m_executionUrlTemplateHasBeenSet = false;
   bool m_revisionUrlTemplateHasBeenSet = false;
 };
 

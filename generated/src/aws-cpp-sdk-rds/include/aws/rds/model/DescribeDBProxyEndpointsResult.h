@@ -88,12 +88,12 @@ class DescribeDBProxyEndpointsResult {
   ///@}
  private:
   Aws::Vector<DBProxyEndpoint> m_dBProxyEndpoints;
-  bool m_dBProxyEndpointsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBProxyEndpointsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

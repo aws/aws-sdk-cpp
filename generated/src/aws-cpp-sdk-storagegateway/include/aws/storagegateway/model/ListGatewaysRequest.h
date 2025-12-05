@@ -72,9 +72,9 @@ class ListGatewaysRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_markerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

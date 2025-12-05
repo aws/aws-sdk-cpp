@@ -67,9 +67,9 @@ class ExecutionStartedDetails {
   ///@}
  private:
   EventInput m_input;
-  bool m_inputHasBeenSet = false;
 
   int m_executionTimeout{0};
+  bool m_inputHasBeenSet = false;
   bool m_executionTimeoutHasBeenSet = false;
 };
 

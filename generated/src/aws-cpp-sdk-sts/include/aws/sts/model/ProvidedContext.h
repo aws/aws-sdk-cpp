@@ -75,9 +75,9 @@ class ProvidedContext {
   ///@}
  private:
   Aws::String m_providerArn;
-  bool m_providerArnHasBeenSet = false;
 
   Aws::String m_contextAssertion;
+  bool m_providerArnHasBeenSet = false;
   bool m_contextAssertionHasBeenSet = false;
 };
 

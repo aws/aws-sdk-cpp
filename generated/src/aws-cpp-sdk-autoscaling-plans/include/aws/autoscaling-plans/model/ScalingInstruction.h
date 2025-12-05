@@ -386,45 +386,45 @@ class ScalingInstruction {
   ///@}
  private:
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   int m_minCapacity{0};
-  bool m_minCapacityHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   Aws::Vector<TargetTrackingConfiguration> m_targetTrackingConfigurations;
-  bool m_targetTrackingConfigurationsHasBeenSet = false;
 
   PredefinedLoadMetricSpecification m_predefinedLoadMetricSpecification;
-  bool m_predefinedLoadMetricSpecificationHasBeenSet = false;
 
   CustomizedLoadMetricSpecification m_customizedLoadMetricSpecification;
-  bool m_customizedLoadMetricSpecificationHasBeenSet = false;
 
   int m_scheduledActionBufferTime{0};
-  bool m_scheduledActionBufferTimeHasBeenSet = false;
 
   PredictiveScalingMaxCapacityBehavior m_predictiveScalingMaxCapacityBehavior{PredictiveScalingMaxCapacityBehavior::NOT_SET};
-  bool m_predictiveScalingMaxCapacityBehaviorHasBeenSet = false;
 
   int m_predictiveScalingMaxCapacityBuffer{0};
-  bool m_predictiveScalingMaxCapacityBufferHasBeenSet = false;
 
   PredictiveScalingMode m_predictiveScalingMode{PredictiveScalingMode::NOT_SET};
-  bool m_predictiveScalingModeHasBeenSet = false;
 
   ScalingPolicyUpdateBehavior m_scalingPolicyUpdateBehavior{ScalingPolicyUpdateBehavior::NOT_SET};
-  bool m_scalingPolicyUpdateBehaviorHasBeenSet = false;
 
   bool m_disableDynamicScaling{false};
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_minCapacityHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_targetTrackingConfigurationsHasBeenSet = false;
+  bool m_predefinedLoadMetricSpecificationHasBeenSet = false;
+  bool m_customizedLoadMetricSpecificationHasBeenSet = false;
+  bool m_scheduledActionBufferTimeHasBeenSet = false;
+  bool m_predictiveScalingMaxCapacityBehaviorHasBeenSet = false;
+  bool m_predictiveScalingMaxCapacityBufferHasBeenSet = false;
+  bool m_predictiveScalingModeHasBeenSet = false;
+  bool m_scalingPolicyUpdateBehaviorHasBeenSet = false;
   bool m_disableDynamicScalingHasBeenSet = false;
 };
 

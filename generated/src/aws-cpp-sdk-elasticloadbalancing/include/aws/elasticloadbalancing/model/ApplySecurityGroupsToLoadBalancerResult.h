@@ -75,9 +75,9 @@ class ApplySecurityGroupsToLoadBalancerResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

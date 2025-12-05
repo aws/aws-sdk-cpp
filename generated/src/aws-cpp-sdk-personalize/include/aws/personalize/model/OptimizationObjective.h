@@ -73,9 +73,9 @@ class OptimizationObjective {
   ///@}
  private:
   Aws::String m_itemAttribute;
-  bool m_itemAttributeHasBeenSet = false;
 
   ObjectiveSensitivity m_objectiveSensitivity{ObjectiveSensitivity::NOT_SET};
+  bool m_itemAttributeHasBeenSet = false;
   bool m_objectiveSensitivityHasBeenSet = false;
 };
 

@@ -1005,138 +1005,138 @@ class AwsSecurityFinding {
   ///@}
  private:
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_productArn;
-  bool m_productArnHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_generatorId;
-  bool m_generatorIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::String m_firstObservedAt;
-  bool m_firstObservedAtHasBeenSet = false;
 
   Aws::String m_lastObservedAt;
-  bool m_lastObservedAtHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_updatedAt;
-  bool m_updatedAtHasBeenSet = false;
 
   Severity m_severity;
-  bool m_severityHasBeenSet = false;
 
   int m_confidence{0};
-  bool m_confidenceHasBeenSet = false;
 
   int m_criticality{0};
-  bool m_criticalityHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Remediation m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   Aws::String m_sourceUrl;
-  bool m_sourceUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_productFields;
-  bool m_productFieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userDefinedFields;
-  bool m_userDefinedFieldsHasBeenSet = false;
 
   Aws::Vector<Malware> m_malware;
-  bool m_malwareHasBeenSet = false;
 
   Network m_network;
-  bool m_networkHasBeenSet = false;
 
   Aws::Vector<NetworkPathComponent> m_networkPath;
-  bool m_networkPathHasBeenSet = false;
 
   ProcessDetails m_process;
-  bool m_processHasBeenSet = false;
 
   Aws::Vector<Threat> m_threats;
-  bool m_threatsHasBeenSet = false;
 
   Aws::Vector<ThreatIntelIndicator> m_threatIntelIndicators;
-  bool m_threatIntelIndicatorsHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Compliance m_compliance;
-  bool m_complianceHasBeenSet = false;
 
   VerificationState m_verificationState{VerificationState::NOT_SET};
-  bool m_verificationStateHasBeenSet = false;
 
   WorkflowState m_workflowState{WorkflowState::NOT_SET};
-  bool m_workflowStateHasBeenSet = false;
 
   Workflow m_workflow;
-  bool m_workflowHasBeenSet = false;
 
   RecordState m_recordState{RecordState::NOT_SET};
-  bool m_recordStateHasBeenSet = false;
 
   Aws::Vector<RelatedFinding> m_relatedFindings;
-  bool m_relatedFindingsHasBeenSet = false;
 
   Note m_note;
-  bool m_noteHasBeenSet = false;
 
   Aws::Vector<Vulnerability> m_vulnerabilities;
-  bool m_vulnerabilitiesHasBeenSet = false;
 
   PatchSummary m_patchSummary;
-  bool m_patchSummaryHasBeenSet = false;
 
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   FindingProviderFields m_findingProviderFields;
-  bool m_findingProviderFieldsHasBeenSet = false;
 
   bool m_sample{false};
-  bool m_sampleHasBeenSet = false;
 
   GeneratorDetails m_generatorDetails;
-  bool m_generatorDetailsHasBeenSet = false;
 
   Aws::String m_processedAt;
-  bool m_processedAtHasBeenSet = false;
 
   Aws::String m_awsAccountName;
-  bool m_awsAccountNameHasBeenSet = false;
 
   Detection m_detection;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_productArnHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_generatorIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_typesHasBeenSet = false;
+  bool m_firstObservedAtHasBeenSet = false;
+  bool m_lastObservedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
+  bool m_sourceUrlHasBeenSet = false;
+  bool m_productFieldsHasBeenSet = false;
+  bool m_userDefinedFieldsHasBeenSet = false;
+  bool m_malwareHasBeenSet = false;
+  bool m_networkHasBeenSet = false;
+  bool m_networkPathHasBeenSet = false;
+  bool m_processHasBeenSet = false;
+  bool m_threatsHasBeenSet = false;
+  bool m_threatIntelIndicatorsHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_complianceHasBeenSet = false;
+  bool m_verificationStateHasBeenSet = false;
+  bool m_workflowStateHasBeenSet = false;
+  bool m_workflowHasBeenSet = false;
+  bool m_recordStateHasBeenSet = false;
+  bool m_relatedFindingsHasBeenSet = false;
+  bool m_noteHasBeenSet = false;
+  bool m_vulnerabilitiesHasBeenSet = false;
+  bool m_patchSummaryHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_findingProviderFieldsHasBeenSet = false;
+  bool m_sampleHasBeenSet = false;
+  bool m_generatorDetailsHasBeenSet = false;
+  bool m_processedAtHasBeenSet = false;
+  bool m_awsAccountNameHasBeenSet = false;
   bool m_detectionHasBeenSet = false;
 };
 

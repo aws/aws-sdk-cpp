@@ -154,21 +154,21 @@ class PutRumEventsRequest : public CloudWatchRUMRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_batchId;
-  bool m_batchIdHasBeenSet = false;
 
   AppMonitorDetails m_appMonitorDetails;
-  bool m_appMonitorDetailsHasBeenSet = false;
 
   UserDetails m_userDetails;
-  bool m_userDetailsHasBeenSet = false;
 
   Aws::Vector<RumEvent> m_rumEvents;
-  bool m_rumEventsHasBeenSet = false;
 
   Aws::String m_alias;
+  bool m_idHasBeenSet = false;
+  bool m_batchIdHasBeenSet = false;
+  bool m_appMonitorDetailsHasBeenSet = false;
+  bool m_userDetailsHasBeenSet = false;
+  bool m_rumEventsHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

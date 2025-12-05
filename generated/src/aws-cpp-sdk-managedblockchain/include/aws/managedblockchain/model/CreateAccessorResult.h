@@ -94,15 +94,15 @@ class CreateAccessorResult {
   ///@}
  private:
   Aws::String m_accessorId;
-  bool m_accessorIdHasBeenSet = false;
 
   Aws::String m_billingToken;
-  bool m_billingTokenHasBeenSet = false;
 
   AccessorNetworkType m_networkType{AccessorNetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessorIdHasBeenSet = false;
+  bool m_billingTokenHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

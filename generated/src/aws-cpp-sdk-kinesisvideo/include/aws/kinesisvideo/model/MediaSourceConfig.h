@@ -72,9 +72,9 @@ class MediaSourceConfig {
   ///@}
  private:
   Aws::String m_mediaUriSecretArn;
-  bool m_mediaUriSecretArnHasBeenSet = false;
 
   MediaUriType m_mediaUriType{MediaUriType::NOT_SET};
+  bool m_mediaUriSecretArnHasBeenSet = false;
   bool m_mediaUriTypeHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class UpdateWirelessGatewayTaskEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LoRaWANUpdateGatewayTaskEntry m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_idHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

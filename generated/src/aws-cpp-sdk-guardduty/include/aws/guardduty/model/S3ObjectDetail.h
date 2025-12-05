@@ -124,18 +124,18 @@ class S3ObjectDetail {
   ///@}
  private:
   Aws::String m_objectArn;
-  bool m_objectArnHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_hash;
-  bool m_hashHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_objectArnHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_hashHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

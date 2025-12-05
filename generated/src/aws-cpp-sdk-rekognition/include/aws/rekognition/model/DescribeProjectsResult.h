@@ -87,12 +87,12 @@ class DescribeProjectsResult {
   ///@}
  private:
   Aws::Vector<ProjectDescription> m_projectDescriptions;
-  bool m_projectDescriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectDescriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

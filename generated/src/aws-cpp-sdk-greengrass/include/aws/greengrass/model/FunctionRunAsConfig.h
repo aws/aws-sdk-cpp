@@ -67,9 +67,9 @@ class FunctionRunAsConfig {
   ///@}
  private:
   int m_gid{0};
-  bool m_gidHasBeenSet = false;
 
   int m_uid{0};
+  bool m_gidHasBeenSet = false;
   bool m_uidHasBeenSet = false;
 };
 

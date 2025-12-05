@@ -110,15 +110,15 @@ class OnDeviceServiceConfiguration {
   ///@}
  private:
   NFSOnDeviceServiceConfiguration m_nFSOnDeviceService;
-  bool m_nFSOnDeviceServiceHasBeenSet = false;
 
   TGWOnDeviceServiceConfiguration m_tGWOnDeviceService;
-  bool m_tGWOnDeviceServiceHasBeenSet = false;
 
   EKSOnDeviceServiceConfiguration m_eKSOnDeviceService;
-  bool m_eKSOnDeviceServiceHasBeenSet = false;
 
   S3OnDeviceServiceConfiguration m_s3OnDeviceService;
+  bool m_nFSOnDeviceServiceHasBeenSet = false;
+  bool m_tGWOnDeviceServiceHasBeenSet = false;
+  bool m_eKSOnDeviceServiceHasBeenSet = false;
   bool m_s3OnDeviceServiceHasBeenSet = false;
 };
 

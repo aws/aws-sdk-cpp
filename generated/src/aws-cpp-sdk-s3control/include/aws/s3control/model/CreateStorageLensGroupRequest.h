@@ -101,12 +101,12 @@ class CreateStorageLensGroupRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   StorageLensGroup m_storageLensGroup;
-  bool m_storageLensGroupHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_storageLensGroupHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

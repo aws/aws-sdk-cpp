@@ -73,9 +73,9 @@ class AssociateAccountsRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_arnHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

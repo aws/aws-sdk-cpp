@@ -86,9 +86,9 @@ class SessionsStatisticsResources {
   ///@}
  private:
   Aws::Vector<Aws::String> m_queueIds;
-  bool m_queueIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fleetIds;
+  bool m_queueIdsHasBeenSet = false;
   bool m_fleetIdsHasBeenSet = false;
 };
 

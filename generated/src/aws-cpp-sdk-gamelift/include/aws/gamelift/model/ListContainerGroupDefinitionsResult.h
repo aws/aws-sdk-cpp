@@ -86,12 +86,12 @@ class ListContainerGroupDefinitionsResult {
   ///@}
  private:
   Aws::Vector<ContainerGroupDefinition> m_containerGroupDefinitions;
-  bool m_containerGroupDefinitionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerGroupDefinitionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

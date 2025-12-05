@@ -79,9 +79,9 @@ class DescribeTrustedAdvisorCheckResultRequest : public SupportRequest {
   ///@}
  private:
   Aws::String m_checkId;
-  bool m_checkIdHasBeenSet = false;
 
   Aws::String m_language;
+  bool m_checkIdHasBeenSet = false;
   bool m_languageHasBeenSet = false;
 };
 

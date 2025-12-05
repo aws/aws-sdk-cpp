@@ -84,12 +84,12 @@ class DescribeModelVersionsResult {
   ///@}
  private:
   Aws::Vector<ModelVersionDetail> m_modelVersionDetails;
-  bool m_modelVersionDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelVersionDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

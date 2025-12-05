@@ -132,18 +132,18 @@ class AttributeSummary {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_mostFrequentValue;
-  bool m_mostFrequentValueHasBeenSet = false;
 
   int m_numberOfMatchedAccounts{0};
-  bool m_numberOfMatchedAccountsHasBeenSet = false;
 
   int m_numberOfUnmatchedAccounts{0};
-  bool m_numberOfUnmatchedAccountsHasBeenSet = false;
 
   Aws::Vector<RegionalSummary> m_regionalSummaries;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_mostFrequentValueHasBeenSet = false;
+  bool m_numberOfMatchedAccountsHasBeenSet = false;
+  bool m_numberOfUnmatchedAccountsHasBeenSet = false;
   bool m_regionalSummariesHasBeenSet = false;
 };
 

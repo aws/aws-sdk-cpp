@@ -66,9 +66,9 @@ class PutApprovalResultResult {
   ///@}
  private:
   Aws::Utils::DateTime m_approvedAt{};
-  bool m_approvedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_approvedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

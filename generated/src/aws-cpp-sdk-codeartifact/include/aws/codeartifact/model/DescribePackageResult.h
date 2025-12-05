@@ -62,9 +62,9 @@ class DescribePackageResult {
   ///@}
  private:
   PackageDescription m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

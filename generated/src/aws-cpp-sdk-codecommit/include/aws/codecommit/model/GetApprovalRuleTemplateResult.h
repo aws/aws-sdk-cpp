@@ -60,9 +60,9 @@ class GetApprovalRuleTemplateResult {
   ///@}
  private:
   ApprovalRuleTemplate m_approvalRuleTemplate;
-  bool m_approvalRuleTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_approvalRuleTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

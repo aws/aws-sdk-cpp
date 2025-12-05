@@ -66,9 +66,9 @@ class ListLoaderJobsRequest : public NeptunedataRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   bool m_includeQueuedLoads{false};
+  bool m_limitHasBeenSet = false;
   bool m_includeQueuedLoadsHasBeenSet = false;
 };
 

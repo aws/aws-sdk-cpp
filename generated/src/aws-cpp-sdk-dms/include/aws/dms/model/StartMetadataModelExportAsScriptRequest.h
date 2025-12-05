@@ -102,15 +102,15 @@ class StartMetadataModelExportAsScriptRequest : public DatabaseMigrationServiceR
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_selectionRules;
-  bool m_selectionRulesHasBeenSet = false;
 
   OriginTypeValue m_origin{OriginTypeValue::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::String m_fileName;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_selectionRulesHasBeenSet = false;
+  bool m_originHasBeenSet = false;
   bool m_fileNameHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class PutResourceSetResult {
   ///@}
  private:
   ResourceSet m_resourceSet;
-  bool m_resourceSetHasBeenSet = false;
 
   Aws::String m_resourceSetArn;
-  bool m_resourceSetArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceSetHasBeenSet = false;
+  bool m_resourceSetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

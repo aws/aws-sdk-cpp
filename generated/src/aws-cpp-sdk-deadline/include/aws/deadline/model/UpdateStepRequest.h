@@ -140,21 +140,21 @@ class UpdateStepRequest : public DeadlineRequest {
   ///@}
  private:
   StepTargetTaskRunStatus m_targetTaskRunStatus{StepTargetTaskRunStatus::NOT_SET};
-  bool m_targetTaskRunStatusHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_stepId;
+  bool m_targetTaskRunStatusHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
   bool m_stepIdHasBeenSet = false;
 };
 

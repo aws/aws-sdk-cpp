@@ -173,18 +173,18 @@ class ListResolverQueryLogConfigsRequest : public Route53ResolverRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

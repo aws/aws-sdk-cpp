@@ -306,45 +306,45 @@ class Evaluation {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_evaluationDataSourceId;
-  bool m_evaluationDataSourceIdHasBeenSet = false;
 
   Aws::String m_inputDataLocationS3;
-  bool m_inputDataLocationS3HasBeenSet = false;
 
   Aws::String m_createdByIamUser;
-  bool m_createdByIamUserHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EntityStatus m_status{EntityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PerformanceMetrics m_performanceMetrics;
-  bool m_performanceMetricsHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_computeTime{0};
-  bool m_computeTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedAt{};
-  bool m_finishedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_evaluationDataSourceIdHasBeenSet = false;
+  bool m_inputDataLocationS3HasBeenSet = false;
+  bool m_createdByIamUserHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_performanceMetricsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_computeTimeHasBeenSet = false;
+  bool m_finishedAtHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
 };
 

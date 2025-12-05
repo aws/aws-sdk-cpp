@@ -105,15 +105,15 @@ class UpdateProgramManagementAccountDetail {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

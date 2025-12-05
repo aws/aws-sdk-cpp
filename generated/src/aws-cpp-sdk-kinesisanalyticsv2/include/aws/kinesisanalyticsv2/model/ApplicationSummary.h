@@ -138,21 +138,21 @@ class ApplicationSummary {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
-  bool m_applicationStatusHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   RuntimeEnvironment m_runtimeEnvironment{RuntimeEnvironment::NOT_SET};
-  bool m_runtimeEnvironmentHasBeenSet = false;
 
   ApplicationMode m_applicationMode{ApplicationMode::NOT_SET};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationStatusHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_runtimeEnvironmentHasBeenSet = false;
   bool m_applicationModeHasBeenSet = false;
 };
 

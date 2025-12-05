@@ -401,66 +401,66 @@ class GetWorkflowResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_adsApplicationConfigurationId;
-  bool m_adsApplicationConfigurationIdHasBeenSet = false;
 
   Aws::String m_adsApplicationName;
-  bool m_adsApplicationNameHasBeenSet = false;
 
   MigrationWorkflowStatusEnum m_status{MigrationWorkflowStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStartTime{};
-  bool m_lastStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStopTime{};
-  bool m_lastStopTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Tool> m_tools;
-  bool m_toolsHasBeenSet = false;
 
   int m_totalSteps{0};
-  bool m_totalStepsHasBeenSet = false;
 
   int m_completedSteps{0};
-  bool m_completedStepsHasBeenSet = false;
 
   Aws::Map<Aws::String, StepInput> m_workflowInputs;
-  bool m_workflowInputsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workflowBucket;
-  bool m_workflowBucketHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_adsApplicationConfigurationIdHasBeenSet = false;
+  bool m_adsApplicationNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastStartTimeHasBeenSet = false;
+  bool m_lastStopTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_toolsHasBeenSet = false;
+  bool m_totalStepsHasBeenSet = false;
+  bool m_completedStepsHasBeenSet = false;
+  bool m_workflowInputsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_workflowBucketHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class GetInvalidation2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_distributionIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

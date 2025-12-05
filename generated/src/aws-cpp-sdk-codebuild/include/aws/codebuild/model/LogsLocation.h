@@ -190,27 +190,27 @@ class LogsLocation {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_deepLink;
-  bool m_deepLinkHasBeenSet = false;
 
   Aws::String m_s3DeepLink;
-  bool m_s3DeepLinkHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsArn;
-  bool m_cloudWatchLogsArnHasBeenSet = false;
 
   Aws::String m_s3LogsArn;
-  bool m_s3LogsArnHasBeenSet = false;
 
   CloudWatchLogsConfig m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   S3LogsConfig m_s3Logs;
+  bool m_groupNameHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
+  bool m_deepLinkHasBeenSet = false;
+  bool m_s3DeepLinkHasBeenSet = false;
+  bool m_cloudWatchLogsArnHasBeenSet = false;
+  bool m_s3LogsArnHasBeenSet = false;
+  bool m_cloudWatchLogsHasBeenSet = false;
   bool m_s3LogsHasBeenSet = false;
 };
 

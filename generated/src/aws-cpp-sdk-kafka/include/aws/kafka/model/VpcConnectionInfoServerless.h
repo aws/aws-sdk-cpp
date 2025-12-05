@@ -110,15 +110,15 @@ class VpcConnectionInfoServerless {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   UserIdentity m_userIdentity;
-  bool m_userIdentityHasBeenSet = false;
 
   Aws::String m_vpcConnectionArn;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_userIdentityHasBeenSet = false;
   bool m_vpcConnectionArnHasBeenSet = false;
 };
 

@@ -327,42 +327,42 @@ class CreateDBProxyRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBProxyName;
-  bool m_dBProxyNameHasBeenSet = false;
 
   EngineFamily m_engineFamily{EngineFamily::NOT_SET};
-  bool m_engineFamilyHasBeenSet = false;
 
   DefaultAuthScheme m_defaultAuthScheme{DefaultAuthScheme::NOT_SET};
-  bool m_defaultAuthSchemeHasBeenSet = false;
 
   Aws::Vector<UserAuthConfig> m_auth;
-  bool m_authHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSubnetIds;
-  bool m_vpcSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   bool m_requireTLS{false};
-  bool m_requireTLSHasBeenSet = false;
 
   int m_idleClientTimeout{0};
-  bool m_idleClientTimeoutHasBeenSet = false;
 
   bool m_debugLogging{false};
-  bool m_debugLoggingHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EndpointNetworkType m_endpointNetworkType{EndpointNetworkType::NOT_SET};
-  bool m_endpointNetworkTypeHasBeenSet = false;
 
   TargetConnectionNetworkType m_targetConnectionNetworkType{TargetConnectionNetworkType::NOT_SET};
+  bool m_dBProxyNameHasBeenSet = false;
+  bool m_engineFamilyHasBeenSet = false;
+  bool m_defaultAuthSchemeHasBeenSet = false;
+  bool m_authHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_vpcSubnetIdsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_requireTLSHasBeenSet = false;
+  bool m_idleClientTimeoutHasBeenSet = false;
+  bool m_debugLoggingHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_endpointNetworkTypeHasBeenSet = false;
   bool m_targetConnectionNetworkTypeHasBeenSet = false;
 };
 

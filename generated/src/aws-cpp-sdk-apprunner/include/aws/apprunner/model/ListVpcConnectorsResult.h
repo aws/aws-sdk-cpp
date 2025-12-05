@@ -86,12 +86,12 @@ class ListVpcConnectorsResult {
   ///@}
  private:
   Aws::Vector<VpcConnector> m_vpcConnectors;
-  bool m_vpcConnectorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcConnectorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

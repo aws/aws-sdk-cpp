@@ -72,9 +72,9 @@ class NamespaceIdentifierUnion {
   ///@}
  private:
   ServerlessIdentifier m_serverlessIdentifier;
-  bool m_serverlessIdentifierHasBeenSet = false;
 
   ProvisionedIdentifier m_provisionedIdentifier;
+  bool m_serverlessIdentifierHasBeenSet = false;
   bool m_provisionedIdentifierHasBeenSet = false;
 };
 

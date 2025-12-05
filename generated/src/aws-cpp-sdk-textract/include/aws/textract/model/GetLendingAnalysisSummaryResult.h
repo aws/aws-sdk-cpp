@@ -152,24 +152,24 @@ class GetLendingAnalysisSummaryResult {
   ///@}
  private:
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   LendingSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Vector<Warning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_analyzeLendingModelVersion;
-  bool m_analyzeLendingModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_analyzeLendingModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

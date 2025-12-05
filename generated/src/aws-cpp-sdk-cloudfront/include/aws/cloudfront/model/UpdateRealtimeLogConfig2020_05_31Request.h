@@ -139,18 +139,18 @@ class UpdateRealtimeLogConfig2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::Vector<EndPoint> m_endPoints;
-  bool m_endPointsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   long long m_samplingRate{0};
+  bool m_endPointsHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
   bool m_samplingRateHasBeenSet = false;
 };
 

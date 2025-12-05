@@ -113,15 +113,15 @@ class AddApplicationVpcConfigurationRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   long long m_currentApplicationVersionId{0};
-  bool m_currentApplicationVersionIdHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_conditionalToken;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_currentApplicationVersionIdHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
   bool m_conditionalTokenHasBeenSet = false;
 };
 

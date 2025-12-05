@@ -218,33 +218,33 @@ class ReviewTemplateLensReview {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_lensVersion;
-  bool m_lensVersionHasBeenSet = false;
 
   Aws::String m_lensName;
-  bool m_lensNameHasBeenSet = false;
 
   LensStatus m_lensStatus{LensStatus::NOT_SET};
-  bool m_lensStatusHasBeenSet = false;
 
   Aws::Vector<ReviewTemplatePillarReviewSummary> m_pillarReviewSummaries;
-  bool m_pillarReviewSummariesHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Map<Question, int> m_questionCounts;
-  bool m_questionCountsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_lensVersionHasBeenSet = false;
+  bool m_lensNameHasBeenSet = false;
+  bool m_lensStatusHasBeenSet = false;
+  bool m_pillarReviewSummariesHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_questionCountsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

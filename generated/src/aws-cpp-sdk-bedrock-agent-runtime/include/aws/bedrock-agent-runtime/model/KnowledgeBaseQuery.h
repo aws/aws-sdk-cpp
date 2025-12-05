@@ -90,12 +90,12 @@ class KnowledgeBaseQuery {
   ///@}
  private:
   InputImage m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   KnowledgeBaseQueryType m_type{KnowledgeBaseQueryType::NOT_SET};
+  bool m_imageHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

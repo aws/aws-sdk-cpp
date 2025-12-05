@@ -91,12 +91,12 @@ class PutTableReplicationRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::String m_versionToken;
-  bool m_versionTokenHasBeenSet = false;
 
   TableReplicationConfiguration m_configuration;
+  bool m_tableArnHasBeenSet = false;
+  bool m_versionTokenHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

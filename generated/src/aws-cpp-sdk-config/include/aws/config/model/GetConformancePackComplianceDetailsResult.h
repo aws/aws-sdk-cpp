@@ -105,15 +105,15 @@ class GetConformancePackComplianceDetailsResult {
   ///@}
  private:
   Aws::String m_conformancePackName;
-  bool m_conformancePackNameHasBeenSet = false;
 
   Aws::Vector<ConformancePackEvaluationResult> m_conformancePackRuleEvaluationResults;
-  bool m_conformancePackRuleEvaluationResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_conformancePackNameHasBeenSet = false;
+  bool m_conformancePackRuleEvaluationResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

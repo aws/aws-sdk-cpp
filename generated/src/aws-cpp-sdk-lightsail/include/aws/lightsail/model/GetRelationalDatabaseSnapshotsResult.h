@@ -89,12 +89,12 @@ class GetRelationalDatabaseSnapshotsResult {
   ///@}
  private:
   Aws::Vector<RelationalDatabaseSnapshot> m_relationalDatabaseSnapshots;
-  bool m_relationalDatabaseSnapshotsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relationalDatabaseSnapshotsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetManagedScalingPolicyResult {
   ///@}
  private:
   ManagedScalingPolicy m_managedScalingPolicy;
-  bool m_managedScalingPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedScalingPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

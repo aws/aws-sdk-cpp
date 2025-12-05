@@ -271,36 +271,36 @@ class CreateAnalysisRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Parameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   AnalysisSourceEntity m_sourceEntity;
-  bool m_sourceEntityHasBeenSet = false;
 
   Aws::String m_themeArn;
-  bool m_themeArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AnalysisDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   ValidationStrategy m_validationStrategy;
-  bool m_validationStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_folderArns;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_sourceEntityHasBeenSet = false;
+  bool m_themeArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_validationStrategyHasBeenSet = false;
   bool m_folderArnsHasBeenSet = false;
 };
 

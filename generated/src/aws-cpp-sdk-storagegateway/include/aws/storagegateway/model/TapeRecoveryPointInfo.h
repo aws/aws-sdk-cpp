@@ -105,15 +105,15 @@ class TapeRecoveryPointInfo {
   ///@}
  private:
   Aws::String m_tapeARN;
-  bool m_tapeARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_tapeRecoveryPointTime{};
-  bool m_tapeRecoveryPointTimeHasBeenSet = false;
 
   long long m_tapeSizeInBytes{0};
-  bool m_tapeSizeInBytesHasBeenSet = false;
 
   Aws::String m_tapeStatus;
+  bool m_tapeARNHasBeenSet = false;
+  bool m_tapeRecoveryPointTimeHasBeenSet = false;
+  bool m_tapeSizeInBytesHasBeenSet = false;
   bool m_tapeStatusHasBeenSet = false;
 };
 

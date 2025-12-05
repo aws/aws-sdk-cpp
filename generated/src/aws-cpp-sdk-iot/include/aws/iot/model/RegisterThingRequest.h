@@ -76,9 +76,9 @@ class RegisterThingRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_templateBodyHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

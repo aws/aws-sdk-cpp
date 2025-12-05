@@ -112,15 +112,15 @@ class StartCalculationExecutionRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_codeBlock;
-  bool m_codeBlockHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_codeBlockHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

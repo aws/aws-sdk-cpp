@@ -158,24 +158,24 @@ class IpRouteInfo {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_cidrIp;
-  bool m_cidrIpHasBeenSet = false;
 
   Aws::String m_cidrIpv6;
-  bool m_cidrIpv6HasBeenSet = false;
 
   IpRouteStatusMsg m_ipRouteStatusMsg{IpRouteStatusMsg::NOT_SET};
-  bool m_ipRouteStatusMsgHasBeenSet = false;
 
   Aws::Utils::DateTime m_addedDateTime{};
-  bool m_addedDateTimeHasBeenSet = false;
 
   Aws::String m_ipRouteStatusReason;
-  bool m_ipRouteStatusReasonHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_cidrIpHasBeenSet = false;
+  bool m_cidrIpv6HasBeenSet = false;
+  bool m_ipRouteStatusMsgHasBeenSet = false;
+  bool m_addedDateTimeHasBeenSet = false;
+  bool m_ipRouteStatusReasonHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

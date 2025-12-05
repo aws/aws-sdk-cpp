@@ -101,15 +101,15 @@ class UpdateOrganizationRecommendationLifecycleRequest : public TrustedAdvisorRe
   ///@}
  private:
   UpdateRecommendationLifecycleStage m_lifecycleStage{UpdateRecommendationLifecycleStage::NOT_SET};
-  bool m_lifecycleStageHasBeenSet = false;
 
   Aws::String m_organizationRecommendationIdentifier;
-  bool m_organizationRecommendationIdentifierHasBeenSet = false;
 
   Aws::String m_updateReason;
-  bool m_updateReasonHasBeenSet = false;
 
   UpdateRecommendationLifecycleStageReasonCode m_updateReasonCode{UpdateRecommendationLifecycleStageReasonCode::NOT_SET};
+  bool m_lifecycleStageHasBeenSet = false;
+  bool m_organizationRecommendationIdentifierHasBeenSet = false;
+  bool m_updateReasonHasBeenSet = false;
   bool m_updateReasonCodeHasBeenSet = false;
 };
 

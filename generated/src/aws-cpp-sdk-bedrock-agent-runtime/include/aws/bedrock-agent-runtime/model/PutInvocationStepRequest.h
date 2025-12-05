@@ -125,18 +125,18 @@ class PutInvocationStepRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_invocationIdentifier;
-  bool m_invocationIdentifierHasBeenSet = false;
 
   Aws::String m_invocationStepId;
-  bool m_invocationStepIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationStepTime{};
-  bool m_invocationStepTimeHasBeenSet = false;
 
   InvocationStepPayload m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_sessionIdentifier;
+  bool m_invocationIdentifierHasBeenSet = false;
+  bool m_invocationStepIdHasBeenSet = false;
+  bool m_invocationStepTimeHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_sessionIdentifierHasBeenSet = false;
 };
 

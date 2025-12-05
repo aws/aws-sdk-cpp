@@ -83,12 +83,12 @@ class CreateRecommenderResult {
   ///@}
  private:
   Aws::String m_recommenderArn;
-  bool m_recommenderArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommenderArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

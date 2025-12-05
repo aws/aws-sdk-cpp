@@ -93,15 +93,15 @@ class StartAppResult {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_simulation;
-  bool m_simulationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_simulationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

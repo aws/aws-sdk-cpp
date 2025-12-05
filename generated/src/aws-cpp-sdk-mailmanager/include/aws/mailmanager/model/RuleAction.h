@@ -226,33 +226,33 @@ class RuleAction {
   ///@}
  private:
   DropAction m_drop;
-  bool m_dropHasBeenSet = false;
 
   RelayAction m_relay;
-  bool m_relayHasBeenSet = false;
 
   ArchiveAction m_archive;
-  bool m_archiveHasBeenSet = false;
 
   S3Action m_writeToS3;
-  bool m_writeToS3HasBeenSet = false;
 
   SendAction m_send;
-  bool m_sendHasBeenSet = false;
 
   AddHeaderAction m_addHeader;
-  bool m_addHeaderHasBeenSet = false;
 
   ReplaceRecipientAction m_replaceRecipient;
-  bool m_replaceRecipientHasBeenSet = false;
 
   DeliverToMailboxAction m_deliverToMailbox;
-  bool m_deliverToMailboxHasBeenSet = false;
 
   DeliverToQBusinessAction m_deliverToQBusiness;
-  bool m_deliverToQBusinessHasBeenSet = false;
 
   SnsAction m_publishToSns;
+  bool m_dropHasBeenSet = false;
+  bool m_relayHasBeenSet = false;
+  bool m_archiveHasBeenSet = false;
+  bool m_writeToS3HasBeenSet = false;
+  bool m_sendHasBeenSet = false;
+  bool m_addHeaderHasBeenSet = false;
+  bool m_replaceRecipientHasBeenSet = false;
+  bool m_deliverToMailboxHasBeenSet = false;
+  bool m_deliverToQBusinessHasBeenSet = false;
   bool m_publishToSnsHasBeenSet = false;
 };
 

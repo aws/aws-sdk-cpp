@@ -96,12 +96,12 @@ class NetworkInterfaceIpv6Address {
   ///@}
  private:
   Aws::String m_ipv6Address;
-  bool m_ipv6AddressHasBeenSet = false;
 
   Aws::String m_publicIpv6DnsName;
-  bool m_publicIpv6DnsNameHasBeenSet = false;
 
   bool m_isPrimaryIpv6{false};
+  bool m_ipv6AddressHasBeenSet = false;
+  bool m_publicIpv6DnsNameHasBeenSet = false;
   bool m_isPrimaryIpv6HasBeenSet = false;
 };
 

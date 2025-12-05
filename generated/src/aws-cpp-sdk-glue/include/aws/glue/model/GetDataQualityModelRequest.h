@@ -67,9 +67,9 @@ class GetDataQualityModelRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_statisticId;
-  bool m_statisticIdHasBeenSet = false;
 
   Aws::String m_profileId;
+  bool m_statisticIdHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
 };
 

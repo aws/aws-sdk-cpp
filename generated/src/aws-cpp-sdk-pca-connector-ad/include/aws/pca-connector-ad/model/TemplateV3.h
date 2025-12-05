@@ -219,30 +219,30 @@ class TemplateV3 {
   ///@}
  private:
   CertificateValidity m_certificateValidity;
-  bool m_certificateValidityHasBeenSet = false;
 
   EnrollmentFlagsV3 m_enrollmentFlags;
-  bool m_enrollmentFlagsHasBeenSet = false;
 
   ExtensionsV3 m_extensions;
-  bool m_extensionsHasBeenSet = false;
 
   GeneralFlagsV3 m_generalFlags;
-  bool m_generalFlagsHasBeenSet = false;
 
   HashAlgorithm m_hashAlgorithm{HashAlgorithm::NOT_SET};
-  bool m_hashAlgorithmHasBeenSet = false;
 
   PrivateKeyAttributesV3 m_privateKeyAttributes;
-  bool m_privateKeyAttributesHasBeenSet = false;
 
   PrivateKeyFlagsV3 m_privateKeyFlags;
-  bool m_privateKeyFlagsHasBeenSet = false;
 
   SubjectNameFlagsV3 m_subjectNameFlags;
-  bool m_subjectNameFlagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supersededTemplates;
+  bool m_certificateValidityHasBeenSet = false;
+  bool m_enrollmentFlagsHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
+  bool m_generalFlagsHasBeenSet = false;
+  bool m_hashAlgorithmHasBeenSet = false;
+  bool m_privateKeyAttributesHasBeenSet = false;
+  bool m_privateKeyFlagsHasBeenSet = false;
+  bool m_subjectNameFlagsHasBeenSet = false;
   bool m_supersededTemplatesHasBeenSet = false;
 };
 

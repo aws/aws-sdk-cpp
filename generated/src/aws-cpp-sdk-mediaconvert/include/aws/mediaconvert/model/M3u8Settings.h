@@ -444,69 +444,69 @@ class M3u8Settings {
   ///@}
  private:
   M3u8AudioDuration m_audioDuration{M3u8AudioDuration::NOT_SET};
-  bool m_audioDurationHasBeenSet = false;
 
   int m_audioFramesPerPes{0};
-  bool m_audioFramesPerPesHasBeenSet = false;
 
   Aws::Vector<int> m_audioPids;
-  bool m_audioPidsHasBeenSet = false;
 
   int m_audioPtsOffsetDelta{0};
-  bool m_audioPtsOffsetDeltaHasBeenSet = false;
 
   M3u8DataPtsControl m_dataPTSControl{M3u8DataPtsControl::NOT_SET};
-  bool m_dataPTSControlHasBeenSet = false;
 
   int m_maxPcrInterval{0};
-  bool m_maxPcrIntervalHasBeenSet = false;
 
   M3u8NielsenId3 m_nielsenId3{M3u8NielsenId3::NOT_SET};
-  bool m_nielsenId3HasBeenSet = false;
 
   int m_patInterval{0};
-  bool m_patIntervalHasBeenSet = false;
 
   M3u8PcrControl m_pcrControl{M3u8PcrControl::NOT_SET};
-  bool m_pcrControlHasBeenSet = false;
 
   int m_pcrPid{0};
-  bool m_pcrPidHasBeenSet = false;
 
   int m_pmtInterval{0};
-  bool m_pmtIntervalHasBeenSet = false;
 
   int m_pmtPid{0};
-  bool m_pmtPidHasBeenSet = false;
 
   int m_privateMetadataPid{0};
-  bool m_privateMetadataPidHasBeenSet = false;
 
   int m_programNumber{0};
-  bool m_programNumberHasBeenSet = false;
 
   int m_ptsOffset{0};
-  bool m_ptsOffsetHasBeenSet = false;
 
   TsPtsOffset m_ptsOffsetMode{TsPtsOffset::NOT_SET};
-  bool m_ptsOffsetModeHasBeenSet = false;
 
   int m_scte35Pid{0};
-  bool m_scte35PidHasBeenSet = false;
 
   M3u8Scte35Source m_scte35Source{M3u8Scte35Source::NOT_SET};
-  bool m_scte35SourceHasBeenSet = false;
 
   TimedMetadata m_timedMetadata{TimedMetadata::NOT_SET};
-  bool m_timedMetadataHasBeenSet = false;
 
   int m_timedMetadataPid{0};
-  bool m_timedMetadataPidHasBeenSet = false;
 
   int m_transportStreamId{0};
-  bool m_transportStreamIdHasBeenSet = false;
 
   int m_videoPid{0};
+  bool m_audioDurationHasBeenSet = false;
+  bool m_audioFramesPerPesHasBeenSet = false;
+  bool m_audioPidsHasBeenSet = false;
+  bool m_audioPtsOffsetDeltaHasBeenSet = false;
+  bool m_dataPTSControlHasBeenSet = false;
+  bool m_maxPcrIntervalHasBeenSet = false;
+  bool m_nielsenId3HasBeenSet = false;
+  bool m_patIntervalHasBeenSet = false;
+  bool m_pcrControlHasBeenSet = false;
+  bool m_pcrPidHasBeenSet = false;
+  bool m_pmtIntervalHasBeenSet = false;
+  bool m_pmtPidHasBeenSet = false;
+  bool m_privateMetadataPidHasBeenSet = false;
+  bool m_programNumberHasBeenSet = false;
+  bool m_ptsOffsetHasBeenSet = false;
+  bool m_ptsOffsetModeHasBeenSet = false;
+  bool m_scte35PidHasBeenSet = false;
+  bool m_scte35SourceHasBeenSet = false;
+  bool m_timedMetadataHasBeenSet = false;
+  bool m_timedMetadataPidHasBeenSet = false;
+  bool m_transportStreamIdHasBeenSet = false;
   bool m_videoPidHasBeenSet = false;
 };
 

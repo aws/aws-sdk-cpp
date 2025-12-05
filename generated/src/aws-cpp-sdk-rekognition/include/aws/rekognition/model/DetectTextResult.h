@@ -84,12 +84,12 @@ class DetectTextResult {
   ///@}
  private:
   Aws::Vector<TextDetection> m_textDetections;
-  bool m_textDetectionsHasBeenSet = false;
 
   Aws::String m_textModelVersion;
-  bool m_textModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_textDetectionsHasBeenSet = false;
+  bool m_textModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

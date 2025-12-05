@@ -115,15 +115,15 @@ class RedshiftRunConfigurationInput {
   ///@}
  private:
   Aws::String m_dataAccessRole;
-  bool m_dataAccessRoleHasBeenSet = false;
 
   RedshiftCredentialConfiguration m_redshiftCredentialConfiguration;
-  bool m_redshiftCredentialConfigurationHasBeenSet = false;
 
   RedshiftStorage m_redshiftStorage;
-  bool m_redshiftStorageHasBeenSet = false;
 
   Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
+  bool m_dataAccessRoleHasBeenSet = false;
+  bool m_redshiftCredentialConfigurationHasBeenSet = false;
+  bool m_redshiftStorageHasBeenSet = false;
   bool m_relationalFilterConfigurationsHasBeenSet = false;
 };
 

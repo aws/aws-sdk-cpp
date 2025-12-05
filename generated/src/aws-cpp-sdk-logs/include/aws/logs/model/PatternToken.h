@@ -140,18 +140,18 @@ class PatternToken {
   ///@}
  private:
   int m_dynamicTokenPosition{0};
-  bool m_dynamicTokenPositionHasBeenSet = false;
 
   bool m_isDynamic{false};
-  bool m_isDynamicHasBeenSet = false;
 
   Aws::String m_tokenString;
-  bool m_tokenStringHasBeenSet = false;
 
   Aws::Map<Aws::String, long long> m_enumerations;
-  bool m_enumerationsHasBeenSet = false;
 
   Aws::String m_inferredTokenName;
+  bool m_dynamicTokenPositionHasBeenSet = false;
+  bool m_isDynamicHasBeenSet = false;
+  bool m_tokenStringHasBeenSet = false;
+  bool m_enumerationsHasBeenSet = false;
   bool m_inferredTokenNameHasBeenSet = false;
 };
 

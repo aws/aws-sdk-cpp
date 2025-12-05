@@ -96,12 +96,12 @@ class SpaceJupyterLabAppSettings {
   ///@}
  private:
   ResourceSpec m_defaultResourceSpec;
-  bool m_defaultResourceSpecHasBeenSet = false;
 
   Aws::Vector<CodeRepository> m_codeRepositories;
-  bool m_codeRepositoriesHasBeenSet = false;
 
   SpaceAppLifecycleManagement m_appLifecycleManagement;
+  bool m_defaultResourceSpecHasBeenSet = false;
+  bool m_codeRepositoriesHasBeenSet = false;
   bool m_appLifecycleManagementHasBeenSet = false;
 };
 

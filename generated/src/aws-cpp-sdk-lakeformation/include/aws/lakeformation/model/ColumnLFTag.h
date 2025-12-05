@@ -77,9 +77,9 @@ class ColumnLFTag {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<LFTagPair> m_lFTags;
+  bool m_nameHasBeenSet = false;
   bool m_lFTagsHasBeenSet = false;
 };
 

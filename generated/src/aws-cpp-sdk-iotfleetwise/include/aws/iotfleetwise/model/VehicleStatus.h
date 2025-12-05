@@ -95,12 +95,12 @@ class VehicleStatus {
   ///@}
  private:
   Aws::String m_campaignName;
-  bool m_campaignNameHasBeenSet = false;
 
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   VehicleState m_status{VehicleState::NOT_SET};
+  bool m_campaignNameHasBeenSet = false;
+  bool m_vehicleNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

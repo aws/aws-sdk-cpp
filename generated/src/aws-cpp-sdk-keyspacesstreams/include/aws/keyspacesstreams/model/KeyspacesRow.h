@@ -106,12 +106,12 @@ class KeyspacesRow {
   ///@}
  private:
   Aws::Map<Aws::String, KeyspacesCell> m_valueCells;
-  bool m_valueCellsHasBeenSet = false;
 
   Aws::Map<Aws::String, KeyspacesCell> m_staticCells;
-  bool m_staticCellsHasBeenSet = false;
 
   KeyspacesMetadata m_rowMetadata;
+  bool m_valueCellsHasBeenSet = false;
+  bool m_staticCellsHasBeenSet = false;
   bool m_rowMetadataHasBeenSet = false;
 };
 

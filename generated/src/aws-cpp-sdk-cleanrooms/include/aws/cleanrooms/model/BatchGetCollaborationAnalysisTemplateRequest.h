@@ -74,9 +74,9 @@ class BatchGetCollaborationAnalysisTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_analysisTemplateArns;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_analysisTemplateArnsHasBeenSet = false;
 };
 

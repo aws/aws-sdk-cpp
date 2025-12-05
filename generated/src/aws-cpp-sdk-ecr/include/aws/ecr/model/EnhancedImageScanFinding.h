@@ -352,54 +352,54 @@ class EnhancedImageScanFinding {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_findingArn;
-  bool m_findingArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstObservedAt{};
-  bool m_firstObservedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastObservedAt{};
-  bool m_lastObservedAtHasBeenSet = false;
 
   PackageVulnerabilityDetails m_packageVulnerabilityDetails;
-  bool m_packageVulnerabilityDetailsHasBeenSet = false;
 
   Remediation m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   ScoreDetails m_scoreDetails;
-  bool m_scoreDetailsHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_fixAvailable;
-  bool m_fixAvailableHasBeenSet = false;
 
   Aws::String m_exploitAvailable;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_findingArnHasBeenSet = false;
+  bool m_firstObservedAtHasBeenSet = false;
+  bool m_lastObservedAtHasBeenSet = false;
+  bool m_packageVulnerabilityDetailsHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_scoreDetailsHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_fixAvailableHasBeenSet = false;
   bool m_exploitAvailableHasBeenSet = false;
 };
 

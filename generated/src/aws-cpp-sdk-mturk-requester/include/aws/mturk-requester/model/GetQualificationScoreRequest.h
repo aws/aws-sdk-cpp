@@ -67,9 +67,9 @@ class GetQualificationScoreRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_qualificationTypeId;
-  bool m_qualificationTypeIdHasBeenSet = false;
 
   Aws::String m_workerId;
+  bool m_qualificationTypeIdHasBeenSet = false;
   bool m_workerIdHasBeenSet = false;
 };
 

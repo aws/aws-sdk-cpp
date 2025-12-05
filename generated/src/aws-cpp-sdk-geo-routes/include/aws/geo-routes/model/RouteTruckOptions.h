@@ -379,60 +379,60 @@ class RouteTruckOptions {
   ///@}
  private:
   int m_axleCount{0};
-  bool m_axleCountHasBeenSet = false;
 
   RouteEngineType m_engineType{RouteEngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   long long m_grossWeight{0};
-  bool m_grossWeightHasBeenSet = false;
 
   Aws::Vector<RouteHazardousCargoType> m_hazardousCargos;
-  bool m_hazardousCargosHasBeenSet = false;
 
   long long m_height{0};
-  bool m_heightHasBeenSet = false;
 
   long long m_heightAboveFirstAxle{0};
-  bool m_heightAboveFirstAxleHasBeenSet = false;
 
   long long m_kpraLength{0};
-  bool m_kpraLengthHasBeenSet = false;
 
   long long m_length{0};
-  bool m_lengthHasBeenSet = false;
 
   RouteVehicleLicensePlate m_licensePlate;
-  bool m_licensePlateHasBeenSet = false;
 
   double m_maxSpeed{0.0};
-  bool m_maxSpeedHasBeenSet = false;
 
   int m_occupancy{0};
-  bool m_occupancyHasBeenSet = false;
 
   long long m_payloadCapacity{0};
-  bool m_payloadCapacityHasBeenSet = false;
 
   int m_tireCount{0};
-  bool m_tireCountHasBeenSet = false;
 
   RouteTrailerOptions m_trailer;
-  bool m_trailerHasBeenSet = false;
 
   RouteTruckType m_truckType{RouteTruckType::NOT_SET};
-  bool m_truckTypeHasBeenSet = false;
 
   Aws::String m_tunnelRestrictionCode;
-  bool m_tunnelRestrictionCodeHasBeenSet = false;
 
   long long m_weightPerAxle{0};
-  bool m_weightPerAxleHasBeenSet = false;
 
   WeightPerAxleGroup m_weightPerAxleGroup;
-  bool m_weightPerAxleGroupHasBeenSet = false;
 
   long long m_width{0};
+  bool m_axleCountHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_grossWeightHasBeenSet = false;
+  bool m_hazardousCargosHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_heightAboveFirstAxleHasBeenSet = false;
+  bool m_kpraLengthHasBeenSet = false;
+  bool m_lengthHasBeenSet = false;
+  bool m_licensePlateHasBeenSet = false;
+  bool m_maxSpeedHasBeenSet = false;
+  bool m_occupancyHasBeenSet = false;
+  bool m_payloadCapacityHasBeenSet = false;
+  bool m_tireCountHasBeenSet = false;
+  bool m_trailerHasBeenSet = false;
+  bool m_truckTypeHasBeenSet = false;
+  bool m_tunnelRestrictionCodeHasBeenSet = false;
+  bool m_weightPerAxleHasBeenSet = false;
+  bool m_weightPerAxleGroupHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

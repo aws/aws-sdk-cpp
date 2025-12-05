@@ -92,15 +92,15 @@ class CreateLicenseResult {
   ///@}
  private:
   Aws::String m_licenseArn;
-  bool m_licenseArnHasBeenSet = false;
 
   LicenseStatus m_status{LicenseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

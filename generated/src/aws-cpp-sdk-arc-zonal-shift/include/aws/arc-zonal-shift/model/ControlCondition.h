@@ -80,9 +80,9 @@ class ControlCondition {
   ///@}
  private:
   ControlConditionType m_type{ControlConditionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_alarmIdentifier;
+  bool m_typeHasBeenSet = false;
   bool m_alarmIdentifierHasBeenSet = false;
 };
 

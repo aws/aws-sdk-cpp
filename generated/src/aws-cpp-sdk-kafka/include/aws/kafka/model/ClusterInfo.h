@@ -472,66 +472,66 @@ class ClusterInfo {
   ///@}
  private:
   Aws::String m_activeOperationArn;
-  bool m_activeOperationArnHasBeenSet = false;
 
   BrokerNodeGroupInfo m_brokerNodeGroupInfo;
-  bool m_brokerNodeGroupInfoHasBeenSet = false;
 
   Rebalancing m_rebalancing;
-  bool m_rebalancingHasBeenSet = false;
 
   ClientAuthentication m_clientAuthentication;
-  bool m_clientAuthenticationHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   BrokerSoftwareInfo m_currentBrokerSoftwareInfo;
-  bool m_currentBrokerSoftwareInfoHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   EncryptionInfo m_encryptionInfo;
-  bool m_encryptionInfoHasBeenSet = false;
 
   EnhancedMonitoring m_enhancedMonitoring{EnhancedMonitoring::NOT_SET};
-  bool m_enhancedMonitoringHasBeenSet = false;
 
   OpenMonitoring m_openMonitoring;
-  bool m_openMonitoringHasBeenSet = false;
 
   LoggingInfo m_loggingInfo;
-  bool m_loggingInfoHasBeenSet = false;
 
   int m_numberOfBrokerNodes{0};
-  bool m_numberOfBrokerNodesHasBeenSet = false;
 
   ClusterState m_state{ClusterState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   StateInfo m_stateInfo;
-  bool m_stateInfoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_zookeeperConnectString;
-  bool m_zookeeperConnectStringHasBeenSet = false;
 
   Aws::String m_zookeeperConnectStringTls;
-  bool m_zookeeperConnectStringTlsHasBeenSet = false;
 
   StorageMode m_storageMode{StorageMode::NOT_SET};
-  bool m_storageModeHasBeenSet = false;
 
   CustomerActionStatus m_customerActionStatus{CustomerActionStatus::NOT_SET};
+  bool m_activeOperationArnHasBeenSet = false;
+  bool m_brokerNodeGroupInfoHasBeenSet = false;
+  bool m_rebalancingHasBeenSet = false;
+  bool m_clientAuthenticationHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_currentBrokerSoftwareInfoHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_encryptionInfoHasBeenSet = false;
+  bool m_enhancedMonitoringHasBeenSet = false;
+  bool m_openMonitoringHasBeenSet = false;
+  bool m_loggingInfoHasBeenSet = false;
+  bool m_numberOfBrokerNodesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateInfoHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_zookeeperConnectStringHasBeenSet = false;
+  bool m_zookeeperConnectStringTlsHasBeenSet = false;
+  bool m_storageModeHasBeenSet = false;
   bool m_customerActionStatusHasBeenSet = false;
 };
 

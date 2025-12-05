@@ -146,21 +146,21 @@ class TrafficPolicy {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RRType m_type{RRType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_idHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

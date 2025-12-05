@@ -207,33 +207,33 @@ class GetPolicyStoreResult {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ValidationSettings m_validationSettings;
-  bool m_validationSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
-  bool m_deletionProtectionHasBeenSet = false;
 
   CedarVersion m_cedarVersion{CedarVersion::NOT_SET};
-  bool m_cedarVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_validationSettingsHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_cedarVersionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class DeployedImage {
   ///@}
  private:
   Aws::String m_specifiedImage;
-  bool m_specifiedImageHasBeenSet = false;
 
   Aws::String m_resolvedImage;
-  bool m_resolvedImageHasBeenSet = false;
 
   Aws::Utils::DateTime m_resolutionTime{};
+  bool m_specifiedImageHasBeenSet = false;
+  bool m_resolvedImageHasBeenSet = false;
   bool m_resolutionTimeHasBeenSet = false;
 };
 

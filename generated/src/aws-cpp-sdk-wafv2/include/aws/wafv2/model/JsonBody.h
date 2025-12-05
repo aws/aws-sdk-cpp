@@ -149,15 +149,15 @@ class JsonBody {
   ///@}
  private:
   JsonMatchPattern m_matchPattern;
-  bool m_matchPatternHasBeenSet = false;
 
   JsonMatchScope m_matchScope{JsonMatchScope::NOT_SET};
-  bool m_matchScopeHasBeenSet = false;
 
   BodyParsingFallbackBehavior m_invalidFallbackBehavior{BodyParsingFallbackBehavior::NOT_SET};
-  bool m_invalidFallbackBehaviorHasBeenSet = false;
 
   OversizeHandling m_oversizeHandling{OversizeHandling::NOT_SET};
+  bool m_matchPatternHasBeenSet = false;
+  bool m_matchScopeHasBeenSet = false;
+  bool m_invalidFallbackBehaviorHasBeenSet = false;
   bool m_oversizeHandlingHasBeenSet = false;
 };
 

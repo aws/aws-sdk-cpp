@@ -86,12 +86,12 @@ class GetManagedPrefixListEntriesResponse {
   ///@}
  private:
   Aws::Vector<PrefixListEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_entriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

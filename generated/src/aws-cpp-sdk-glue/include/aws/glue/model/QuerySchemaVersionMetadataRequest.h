@@ -150,21 +150,21 @@ class QuerySchemaVersionMetadataRequest : public GlueRequest {
   ///@}
  private:
   SchemaId m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   SchemaVersionNumber m_schemaVersionNumber;
-  bool m_schemaVersionNumberHasBeenSet = false;
 
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   Aws::Vector<MetadataKeyValuePair> m_metadataList;
-  bool m_metadataListHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_schemaVersionNumberHasBeenSet = false;
+  bool m_schemaVersionIdHasBeenSet = false;
+  bool m_metadataListHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -219,30 +219,30 @@ class UpdateSubscriptionTargetRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_applicableAssetTypes;
-  bool m_applicableAssetTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedPrincipals;
-  bool m_authorizedPrincipalsHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_manageAccessRole;
-  bool m_manageAccessRoleHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::Vector<SubscriptionTargetForm> m_subscriptionTargetConfig;
+  bool m_applicableAssetTypesHasBeenSet = false;
+  bool m_authorizedPrincipalsHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_manageAccessRoleHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_subscriptionTargetConfigHasBeenSet = false;
 };
 

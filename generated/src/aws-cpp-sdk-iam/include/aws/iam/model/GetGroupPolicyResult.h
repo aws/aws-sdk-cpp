@@ -104,15 +104,15 @@ class GetGroupPolicyResult {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_groupNameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

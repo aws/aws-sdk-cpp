@@ -178,27 +178,27 @@ class ManagedActionHistoryItem {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_actionDescription;
-  bool m_actionDescriptionHasBeenSet = false;
 
   FailureType m_failureType{FailureType::NOT_SET};
-  bool m_failureTypeHasBeenSet = false;
 
   ActionHistoryStatus m_status{ActionHistoryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureDescription;
-  bool m_failureDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_executedTime{};
-  bool m_executedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedTime{};
+  bool m_actionIdHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_actionDescriptionHasBeenSet = false;
+  bool m_failureTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureDescriptionHasBeenSet = false;
+  bool m_executedTimeHasBeenSet = false;
   bool m_finishedTimeHasBeenSet = false;
 };
 

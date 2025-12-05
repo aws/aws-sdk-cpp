@@ -231,27 +231,27 @@ class CompositeFilter {
   ///@}
  private:
   Aws::Vector<OcsfStringFilter> m_stringFilters;
-  bool m_stringFiltersHasBeenSet = false;
 
   Aws::Vector<OcsfDateFilter> m_dateFilters;
-  bool m_dateFiltersHasBeenSet = false;
 
   Aws::Vector<OcsfBooleanFilter> m_booleanFilters;
-  bool m_booleanFiltersHasBeenSet = false;
 
   Aws::Vector<OcsfNumberFilter> m_numberFilters;
-  bool m_numberFiltersHasBeenSet = false;
 
   Aws::Vector<OcsfMapFilter> m_mapFilters;
-  bool m_mapFiltersHasBeenSet = false;
 
   Aws::Vector<OcsfIpFilter> m_ipFilters;
-  bool m_ipFiltersHasBeenSet = false;
 
   Aws::Vector<CompositeFilter> m_nestedCompositeFilters;
-  bool m_nestedCompositeFiltersHasBeenSet = false;
 
   AllowedOperators m_operator{AllowedOperators::NOT_SET};
+  bool m_stringFiltersHasBeenSet = false;
+  bool m_dateFiltersHasBeenSet = false;
+  bool m_booleanFiltersHasBeenSet = false;
+  bool m_numberFiltersHasBeenSet = false;
+  bool m_mapFiltersHasBeenSet = false;
+  bool m_ipFiltersHasBeenSet = false;
+  bool m_nestedCompositeFiltersHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

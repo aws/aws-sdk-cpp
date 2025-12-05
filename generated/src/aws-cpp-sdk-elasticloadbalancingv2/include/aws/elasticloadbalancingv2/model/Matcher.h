@@ -82,9 +82,9 @@ class Matcher {
   ///@}
  private:
   Aws::String m_httpCode;
-  bool m_httpCodeHasBeenSet = false;
 
   Aws::String m_grpcCode;
+  bool m_httpCodeHasBeenSet = false;
   bool m_grpcCodeHasBeenSet = false;
 };
 

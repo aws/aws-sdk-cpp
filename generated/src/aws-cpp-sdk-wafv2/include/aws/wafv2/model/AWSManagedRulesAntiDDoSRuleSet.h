@@ -91,9 +91,9 @@ class AWSManagedRulesAntiDDoSRuleSet {
   ///@}
  private:
   ClientSideActionConfig m_clientSideActionConfig;
-  bool m_clientSideActionConfigHasBeenSet = false;
 
   SensitivityToAct m_sensitivityToBlock{SensitivityToAct::NOT_SET};
+  bool m_clientSideActionConfigHasBeenSet = false;
   bool m_sensitivityToBlockHasBeenSet = false;
 };
 

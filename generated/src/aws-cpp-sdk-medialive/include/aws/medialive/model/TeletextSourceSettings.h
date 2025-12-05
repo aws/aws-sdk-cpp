@@ -71,9 +71,9 @@ class TeletextSourceSettings {
   ///@}
  private:
   CaptionRectangle m_outputRectangle;
-  bool m_outputRectangleHasBeenSet = false;
 
   Aws::String m_pageNumber;
+  bool m_outputRectangleHasBeenSet = false;
   bool m_pageNumberHasBeenSet = false;
 };
 

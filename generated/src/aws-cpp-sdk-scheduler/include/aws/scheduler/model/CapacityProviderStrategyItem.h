@@ -87,12 +87,12 @@ class CapacityProviderStrategyItem {
   ///@}
  private:
   int m_base{0};
-  bool m_baseHasBeenSet = false;
 
   Aws::String m_capacityProvider;
-  bool m_capacityProviderHasBeenSet = false;
 
   int m_weight{0};
+  bool m_baseHasBeenSet = false;
+  bool m_capacityProviderHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

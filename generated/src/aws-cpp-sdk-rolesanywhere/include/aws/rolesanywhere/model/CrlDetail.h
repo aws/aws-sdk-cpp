@@ -181,27 +181,27 @@ class CrlDetail {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_crlArn;
-  bool m_crlArnHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_crlData{};
-  bool m_crlDataHasBeenSet = false;
 
   Aws::String m_crlId;
-  bool m_crlIdHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_trustAnchorArn;
-  bool m_trustAnchorArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_createdAtHasBeenSet = false;
+  bool m_crlArnHasBeenSet = false;
+  bool m_crlDataHasBeenSet = false;
+  bool m_crlIdHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_trustAnchorArnHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -141,21 +141,21 @@ class ReservedInstancesConfiguration {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

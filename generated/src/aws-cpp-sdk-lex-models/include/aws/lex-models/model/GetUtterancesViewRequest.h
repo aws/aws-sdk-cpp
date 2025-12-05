@@ -97,12 +97,12 @@ class GetUtterancesViewRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_botVersions;
-  bool m_botVersionsHasBeenSet = false;
 
   StatusType m_statusType{StatusType::NOT_SET};
+  bool m_botNameHasBeenSet = false;
+  bool m_botVersionsHasBeenSet = false;
   bool m_statusTypeHasBeenSet = false;
 };
 

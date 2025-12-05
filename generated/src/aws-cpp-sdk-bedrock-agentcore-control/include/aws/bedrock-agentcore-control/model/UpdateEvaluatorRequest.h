@@ -127,18 +127,18 @@ class UpdateEvaluatorRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_evaluatorId;
-  bool m_evaluatorIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EvaluatorConfig m_evaluatorConfig;
-  bool m_evaluatorConfigHasBeenSet = false;
 
   EvaluatorLevel m_level{EvaluatorLevel::NOT_SET};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_evaluatorIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_evaluatorConfigHasBeenSet = false;
   bool m_levelHasBeenSet = false;
 };
 

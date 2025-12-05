@@ -162,18 +162,18 @@ class CreatePermissionRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_policyTemplate;
-  bool m_policyTemplateHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_policyTemplateHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

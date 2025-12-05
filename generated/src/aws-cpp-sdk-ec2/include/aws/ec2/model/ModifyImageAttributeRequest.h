@@ -325,42 +325,42 @@ class ModifyImageAttributeRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   AttributeValue m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   LaunchPermissionModifications m_launchPermission;
-  bool m_launchPermissionHasBeenSet = false;
 
   OperationType m_operationType{OperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroups;
-  bool m_userGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationArns;
-  bool m_organizationArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitArns;
-  bool m_organizationalUnitArnsHasBeenSet = false;
 
   AttributeValue m_imdsSupport;
-  bool m_imdsSupportHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_attributeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_launchPermissionHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_userGroupsHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_organizationArnsHasBeenSet = false;
+  bool m_organizationalUnitArnsHasBeenSet = false;
+  bool m_imdsSupportHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

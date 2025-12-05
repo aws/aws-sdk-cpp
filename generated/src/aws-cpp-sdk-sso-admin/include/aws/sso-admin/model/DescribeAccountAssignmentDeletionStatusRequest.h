@@ -71,9 +71,9 @@ class DescribeAccountAssignmentDeletionStatusRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_accountAssignmentDeletionRequestId;
+  bool m_instanceArnHasBeenSet = false;
   bool m_accountAssignmentDeletionRequestIdHasBeenSet = false;
 };
 

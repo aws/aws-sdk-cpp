@@ -116,15 +116,15 @@ class CoverageNormalizedUnits {
   ///@}
  private:
   Aws::String m_onDemandNormalizedUnits;
-  bool m_onDemandNormalizedUnitsHasBeenSet = false;
 
   Aws::String m_reservedNormalizedUnits;
-  bool m_reservedNormalizedUnitsHasBeenSet = false;
 
   Aws::String m_totalRunningNormalizedUnits;
-  bool m_totalRunningNormalizedUnitsHasBeenSet = false;
 
   Aws::String m_coverageNormalizedUnitsPercentage;
+  bool m_onDemandNormalizedUnitsHasBeenSet = false;
+  bool m_reservedNormalizedUnitsHasBeenSet = false;
+  bool m_totalRunningNormalizedUnitsHasBeenSet = false;
   bool m_coverageNormalizedUnitsPercentageHasBeenSet = false;
 };
 

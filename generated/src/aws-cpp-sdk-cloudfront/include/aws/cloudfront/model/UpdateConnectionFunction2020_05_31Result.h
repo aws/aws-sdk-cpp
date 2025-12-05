@@ -79,12 +79,12 @@ class UpdateConnectionFunction2020_05_31Result {
   ///@}
  private:
   ConnectionFunctionSummary m_connectionFunctionSummary;
-  bool m_connectionFunctionSummaryHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionFunctionSummaryHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

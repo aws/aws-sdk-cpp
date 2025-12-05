@@ -73,9 +73,9 @@ class SignalApplicationInstanceNodeInstancesRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::String m_applicationInstanceId;
-  bool m_applicationInstanceIdHasBeenSet = false;
 
   Aws::Vector<NodeSignal> m_nodeSignals;
+  bool m_applicationInstanceIdHasBeenSet = false;
   bool m_nodeSignalsHasBeenSet = false;
 };
 

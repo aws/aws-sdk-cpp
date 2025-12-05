@@ -135,18 +135,18 @@ class ListRouteCalculatorsResponseEntry {
   ///@}
  private:
   Aws::String m_calculatorName;
-  bool m_calculatorNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_calculatorNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

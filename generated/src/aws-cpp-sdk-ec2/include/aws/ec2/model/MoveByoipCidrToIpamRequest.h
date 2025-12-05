@@ -106,15 +106,15 @@ class MoveByoipCidrToIpamRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_ipamPoolOwner;
+  bool m_dryRunHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
   bool m_ipamPoolOwnerHasBeenSet = false;
 };
 

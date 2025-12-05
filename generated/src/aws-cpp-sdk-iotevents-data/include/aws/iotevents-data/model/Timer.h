@@ -69,9 +69,9 @@ class Timer {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_nameHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

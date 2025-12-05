@@ -221,33 +221,33 @@ class Activation {
   ///@}
  private:
   Aws::String m_activationId;
-  bool m_activationIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultInstanceName;
-  bool m_defaultInstanceNameHasBeenSet = false;
 
   Aws::String m_iamRole;
-  bool m_iamRoleHasBeenSet = false;
 
   int m_registrationLimit{0};
-  bool m_registrationLimitHasBeenSet = false;
 
   int m_registrationsCount{0};
-  bool m_registrationsCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   bool m_expired{false};
-  bool m_expiredHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_activationIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultInstanceNameHasBeenSet = false;
+  bool m_iamRoleHasBeenSet = false;
+  bool m_registrationLimitHasBeenSet = false;
+  bool m_registrationsCountHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_expiredHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

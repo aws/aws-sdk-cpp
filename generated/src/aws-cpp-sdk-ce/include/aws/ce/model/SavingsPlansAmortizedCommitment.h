@@ -90,12 +90,12 @@ class SavingsPlansAmortizedCommitment {
   ///@}
  private:
   Aws::String m_amortizedRecurringCommitment;
-  bool m_amortizedRecurringCommitmentHasBeenSet = false;
 
   Aws::String m_amortizedUpfrontCommitment;
-  bool m_amortizedUpfrontCommitmentHasBeenSet = false;
 
   Aws::String m_totalAmortizedCommitment;
+  bool m_amortizedRecurringCommitmentHasBeenSet = false;
+  bool m_amortizedUpfrontCommitmentHasBeenSet = false;
   bool m_totalAmortizedCommitmentHasBeenSet = false;
 };
 

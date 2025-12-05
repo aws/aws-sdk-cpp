@@ -80,12 +80,12 @@ class CreateLaunchTemplateVersionResponse {
   ///@}
  private:
   LaunchTemplateVersion m_launchTemplateVersion;
-  bool m_launchTemplateVersionHasBeenSet = false;
 
   ValidationWarning m_warning;
-  bool m_warningHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_launchTemplateVersionHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class PutRegistryCatalogDataResult {
   ///@}
  private:
   RegistryCatalogData m_registryCatalogData;
-  bool m_registryCatalogDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryCatalogDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

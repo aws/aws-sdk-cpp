@@ -67,9 +67,9 @@ class FederationSourceException {
   ///@}
  private:
   FederationSourceErrorCode m_federationSourceErrorCode{FederationSourceErrorCode::NOT_SET};
-  bool m_federationSourceErrorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_federationSourceErrorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

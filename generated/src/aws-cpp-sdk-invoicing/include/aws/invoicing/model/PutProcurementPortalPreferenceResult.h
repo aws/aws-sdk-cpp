@@ -60,9 +60,9 @@ class PutProcurementPortalPreferenceResult {
   ///@}
  private:
   Aws::String m_procurementPortalPreferenceArn;
-  bool m_procurementPortalPreferenceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_procurementPortalPreferenceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

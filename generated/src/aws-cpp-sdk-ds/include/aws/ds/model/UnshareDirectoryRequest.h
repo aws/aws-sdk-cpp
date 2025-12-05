@@ -70,9 +70,9 @@ class UnshareDirectoryRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   UnshareTarget m_unshareTarget;
+  bool m_directoryIdHasBeenSet = false;
   bool m_unshareTargetHasBeenSet = false;
 };
 

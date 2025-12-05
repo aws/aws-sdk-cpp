@@ -83,12 +83,12 @@ class ListComponentBuildVersionsRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_componentVersionArn;
-  bool m_componentVersionArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_componentVersionArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

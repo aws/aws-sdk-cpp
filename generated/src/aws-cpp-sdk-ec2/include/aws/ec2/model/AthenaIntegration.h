@@ -107,15 +107,15 @@ class AthenaIntegration {
   ///@}
  private:
   Aws::String m_integrationResultS3DestinationArn;
-  bool m_integrationResultS3DestinationArnHasBeenSet = false;
 
   PartitionLoadFrequency m_partitionLoadFrequency{PartitionLoadFrequency::NOT_SET};
-  bool m_partitionLoadFrequencyHasBeenSet = false;
 
   Aws::Utils::DateTime m_partitionStartDate{};
-  bool m_partitionStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_partitionEndDate{};
+  bool m_integrationResultS3DestinationArnHasBeenSet = false;
+  bool m_partitionLoadFrequencyHasBeenSet = false;
+  bool m_partitionStartDateHasBeenSet = false;
   bool m_partitionEndDateHasBeenSet = false;
 };
 

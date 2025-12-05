@@ -207,30 +207,30 @@ class TransitGatewayRequestOptions {
   ///@}
  private:
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   AutoAcceptSharedAttachmentsValue m_autoAcceptSharedAttachments{AutoAcceptSharedAttachmentsValue::NOT_SET};
-  bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
 
   DefaultRouteTableAssociationValue m_defaultRouteTableAssociation{DefaultRouteTableAssociationValue::NOT_SET};
-  bool m_defaultRouteTableAssociationHasBeenSet = false;
 
   DefaultRouteTablePropagationValue m_defaultRouteTablePropagation{DefaultRouteTablePropagationValue::NOT_SET};
-  bool m_defaultRouteTablePropagationHasBeenSet = false;
 
   VpnEcmpSupportValue m_vpnEcmpSupport{VpnEcmpSupportValue::NOT_SET};
-  bool m_vpnEcmpSupportHasBeenSet = false;
 
   DnsSupportValue m_dnsSupport{DnsSupportValue::NOT_SET};
-  bool m_dnsSupportHasBeenSet = false;
 
   SecurityGroupReferencingSupportValue m_securityGroupReferencingSupport{SecurityGroupReferencingSupportValue::NOT_SET};
-  bool m_securityGroupReferencingSupportHasBeenSet = false;
 
   MulticastSupportValue m_multicastSupport{MulticastSupportValue::NOT_SET};
-  bool m_multicastSupportHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_transitGatewayCidrBlocks;
+  bool m_amazonSideAsnHasBeenSet = false;
+  bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
+  bool m_defaultRouteTableAssociationHasBeenSet = false;
+  bool m_defaultRouteTablePropagationHasBeenSet = false;
+  bool m_vpnEcmpSupportHasBeenSet = false;
+  bool m_dnsSupportHasBeenSet = false;
+  bool m_securityGroupReferencingSupportHasBeenSet = false;
+  bool m_multicastSupportHasBeenSet = false;
   bool m_transitGatewayCidrBlocksHasBeenSet = false;
 };
 

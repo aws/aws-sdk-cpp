@@ -69,9 +69,9 @@ class PutAutoTerminationPolicyRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   AutoTerminationPolicy m_autoTerminationPolicy;
+  bool m_clusterIdHasBeenSet = false;
   bool m_autoTerminationPolicyHasBeenSet = false;
 };
 

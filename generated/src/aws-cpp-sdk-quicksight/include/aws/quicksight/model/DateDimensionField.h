@@ -130,18 +130,18 @@ class DateDimensionField {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   TimeGranularity m_dateGranularity{TimeGranularity::NOT_SET};
-  bool m_dateGranularityHasBeenSet = false;
 
   Aws::String m_hierarchyId;
-  bool m_hierarchyIdHasBeenSet = false;
 
   DateTimeFormatConfiguration m_formatConfiguration;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_dateGranularityHasBeenSet = false;
+  bool m_hierarchyIdHasBeenSet = false;
   bool m_formatConfigurationHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeLocationsResult {
   ///@}
  private:
   Aws::Vector<Location> m_locations;
-  bool m_locationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

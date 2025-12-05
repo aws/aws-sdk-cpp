@@ -78,9 +78,9 @@ class Payload {
   ///@}
  private:
   Aws::String m_contentExpression;
-  bool m_contentExpressionHasBeenSet = false;
 
   PayloadType m_type{PayloadType::NOT_SET};
+  bool m_contentExpressionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

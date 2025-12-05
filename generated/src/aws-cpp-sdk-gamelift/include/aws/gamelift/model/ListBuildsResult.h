@@ -86,12 +86,12 @@ class ListBuildsResult {
   ///@}
  private:
   Aws::Vector<Build> m_builds;
-  bool m_buildsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_buildsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -238,36 +238,36 @@ class Validation {
   ///@}
  private:
   int m_minLength{0};
-  bool m_minLengthHasBeenSet = false;
 
   int m_maxLength{0};
-  bool m_maxLengthHasBeenSet = false;
 
   int m_minValues{0};
-  bool m_minValuesHasBeenSet = false;
 
   int m_maxValues{0};
-  bool m_maxValuesHasBeenSet = false;
 
   bool m_ignoreCase{false};
-  bool m_ignoreCaseHasBeenSet = false;
 
   double m_minimum{0.0};
-  bool m_minimumHasBeenSet = false;
 
   double m_maximum{0.0};
-  bool m_maximumHasBeenSet = false;
 
   double m_exclusiveMinimum{0.0};
-  bool m_exclusiveMinimumHasBeenSet = false;
 
   double m_exclusiveMaximum{0.0};
-  bool m_exclusiveMaximumHasBeenSet = false;
 
   double m_multipleOf{0.0};
-  bool m_multipleOfHasBeenSet = false;
 
   ValidationEnum m_enum;
+  bool m_minLengthHasBeenSet = false;
+  bool m_maxLengthHasBeenSet = false;
+  bool m_minValuesHasBeenSet = false;
+  bool m_maxValuesHasBeenSet = false;
+  bool m_ignoreCaseHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
+  bool m_maximumHasBeenSet = false;
+  bool m_exclusiveMinimumHasBeenSet = false;
+  bool m_exclusiveMaximumHasBeenSet = false;
+  bool m_multipleOfHasBeenSet = false;
   bool m_enumHasBeenSet = false;
 };
 

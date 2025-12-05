@@ -104,12 +104,12 @@ class CreatePublicIpv4PoolRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
+  bool m_dryRunHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_networkBorderGroupHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class GetBucketLocationResult {
   ///@}
  private:
   BucketLocationConstraint m_locationConstraint{BucketLocationConstraint::NOT_SET};
-  bool m_locationConstraintHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationConstraintHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

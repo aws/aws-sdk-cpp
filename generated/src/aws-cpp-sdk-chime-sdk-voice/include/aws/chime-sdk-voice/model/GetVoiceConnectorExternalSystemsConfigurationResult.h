@@ -63,9 +63,9 @@ class GetVoiceConnectorExternalSystemsConfigurationResult {
   ///@}
  private:
   ExternalSystemsConfiguration m_externalSystemsConfiguration;
-  bool m_externalSystemsConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_externalSystemsConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

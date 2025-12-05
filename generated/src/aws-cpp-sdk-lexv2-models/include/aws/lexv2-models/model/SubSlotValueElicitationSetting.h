@@ -118,15 +118,15 @@ class SubSlotValueElicitationSetting {
   ///@}
  private:
   SlotDefaultValueSpecification m_defaultValueSpecification;
-  bool m_defaultValueSpecificationHasBeenSet = false;
 
   PromptSpecification m_promptSpecification;
-  bool m_promptSpecificationHasBeenSet = false;
 
   Aws::Vector<SampleUtterance> m_sampleUtterances;
-  bool m_sampleUtterancesHasBeenSet = false;
 
   WaitAndContinueSpecification m_waitAndContinueSpecification;
+  bool m_defaultValueSpecificationHasBeenSet = false;
+  bool m_promptSpecificationHasBeenSet = false;
+  bool m_sampleUtterancesHasBeenSet = false;
   bool m_waitAndContinueSpecificationHasBeenSet = false;
 };
 

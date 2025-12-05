@@ -140,21 +140,21 @@ class MobileDeviceAccessOverride {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   MobileDeviceAccessRuleEffect m_effect{MobileDeviceAccessRuleEffect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateModified{};
+  bool m_userIdHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
   bool m_dateModifiedHasBeenSet = false;
 };
 

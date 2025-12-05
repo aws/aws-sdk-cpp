@@ -60,9 +60,9 @@ class GetPortalResult {
   ///@}
  private:
   Portal m_portal;
-  bool m_portalHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

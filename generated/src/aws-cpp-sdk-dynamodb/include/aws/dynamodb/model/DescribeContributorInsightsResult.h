@@ -180,27 +180,27 @@ class DescribeContributorInsightsResult {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contributorInsightsRuleList;
-  bool m_contributorInsightsRuleListHasBeenSet = false;
 
   ContributorInsightsStatus m_contributorInsightsStatus{ContributorInsightsStatus::NOT_SET};
-  bool m_contributorInsightsStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDateTime{};
-  bool m_lastUpdateDateTimeHasBeenSet = false;
 
   FailureException m_failureException;
-  bool m_failureExceptionHasBeenSet = false;
 
   ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
-  bool m_contributorInsightsModeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_contributorInsightsRuleListHasBeenSet = false;
+  bool m_contributorInsightsStatusHasBeenSet = false;
+  bool m_lastUpdateDateTimeHasBeenSet = false;
+  bool m_failureExceptionHasBeenSet = false;
+  bool m_contributorInsightsModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

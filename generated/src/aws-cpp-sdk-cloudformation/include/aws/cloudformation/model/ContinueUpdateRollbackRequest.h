@@ -162,15 +162,15 @@ class ContinueUpdateRollbackRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourcesToSkip;
-  bool m_resourcesToSkipHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_stackNameHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_resourcesToSkipHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

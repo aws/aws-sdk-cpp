@@ -93,12 +93,12 @@ class BedrockEvaluatorModelConfig {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   InferenceConfiguration m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   Aws::Utils::Document m_additionalModelRequestFields;
+  bool m_modelIdHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
   bool m_additionalModelRequestFieldsHasBeenSet = false;
 };
 

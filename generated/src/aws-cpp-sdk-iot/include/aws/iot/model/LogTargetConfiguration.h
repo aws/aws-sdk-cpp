@@ -67,9 +67,9 @@ class LogTargetConfiguration {
   ///@}
  private:
   LogTarget m_logTarget;
-  bool m_logTargetHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
+  bool m_logTargetHasBeenSet = false;
   bool m_logLevelHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class GetDelegationRequestResult {
   ///@}
  private:
   DelegationRequest m_delegationRequest;
-  bool m_delegationRequestHasBeenSet = false;
 
   PermissionCheckStatusType m_permissionCheckStatus{PermissionCheckStatusType::NOT_SET};
-  bool m_permissionCheckStatusHasBeenSet = false;
 
   PermissionCheckResultType m_permissionCheckResult{PermissionCheckResultType::NOT_SET};
-  bool m_permissionCheckResultHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_delegationRequestHasBeenSet = false;
+  bool m_permissionCheckStatusHasBeenSet = false;
+  bool m_permissionCheckResultHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

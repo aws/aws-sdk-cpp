@@ -105,15 +105,15 @@ class PivotTableTotalOptions {
   ///@}
  private:
   SubtotalOptions m_rowSubtotalOptions;
-  bool m_rowSubtotalOptionsHasBeenSet = false;
 
   SubtotalOptions m_columnSubtotalOptions;
-  bool m_columnSubtotalOptionsHasBeenSet = false;
 
   PivotTotalOptions m_rowTotalOptions;
-  bool m_rowTotalOptionsHasBeenSet = false;
 
   PivotTotalOptions m_columnTotalOptions;
+  bool m_rowSubtotalOptionsHasBeenSet = false;
+  bool m_columnSubtotalOptionsHasBeenSet = false;
+  bool m_rowTotalOptionsHasBeenSet = false;
   bool m_columnTotalOptionsHasBeenSet = false;
 };
 

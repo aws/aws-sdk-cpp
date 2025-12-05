@@ -149,21 +149,21 @@ class AuditEvent {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   AuditEventType m_type{AuditEventType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RelatedItemType m_relatedItemType{RelatedItemType::NOT_SET};
-  bool m_relatedItemTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_performedTime{};
-  bool m_performedTimeHasBeenSet = false;
 
   Aws::Vector<AuditEventField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   AuditEventPerformedBy m_performedBy;
+  bool m_eventIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_relatedItemTypeHasBeenSet = false;
+  bool m_performedTimeHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_performedByHasBeenSet = false;
 };
 

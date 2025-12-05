@@ -67,9 +67,9 @@ class DescribeTagsResult {
   ///@}
  private:
   Aws::Vector<ResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceTagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

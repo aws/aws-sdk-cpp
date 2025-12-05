@@ -91,12 +91,12 @@ class GetSegmentMembershipRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_segmentDefinitionName;
-  bool m_segmentDefinitionNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_profileIds;
+  bool m_domainNameHasBeenSet = false;
+  bool m_segmentDefinitionNameHasBeenSet = false;
   bool m_profileIdsHasBeenSet = false;
 };
 

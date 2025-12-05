@@ -94,15 +94,15 @@ class CreateDataAccessorResult {
   ///@}
  private:
   Aws::String m_dataAccessorId;
-  bool m_dataAccessorIdHasBeenSet = false;
 
   Aws::String m_idcApplicationArn;
-  bool m_idcApplicationArnHasBeenSet = false;
 
   Aws::String m_dataAccessorArn;
-  bool m_dataAccessorArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataAccessorIdHasBeenSet = false;
+  bool m_idcApplicationArnHasBeenSet = false;
+  bool m_dataAccessorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class Standard {
   ///@}
  private:
   Aws::String m_standardsArn;
-  bool m_standardsArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_enabledByDefault{false};
-  bool m_enabledByDefaultHasBeenSet = false;
 
   StandardsManagedBy m_standardsManagedBy;
+  bool m_standardsArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enabledByDefaultHasBeenSet = false;
   bool m_standardsManagedByHasBeenSet = false;
 };
 

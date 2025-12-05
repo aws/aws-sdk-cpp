@@ -104,15 +104,15 @@ class CreateModelCardExportJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   int m_modelCardVersion{0};
-  bool m_modelCardVersionHasBeenSet = false;
 
   Aws::String m_modelCardExportJobName;
-  bool m_modelCardExportJobNameHasBeenSet = false;
 
   ModelCardExportOutputConfig m_outputConfig;
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_modelCardVersionHasBeenSet = false;
+  bool m_modelCardExportJobNameHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
 };
 

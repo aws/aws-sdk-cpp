@@ -86,12 +86,12 @@ class SearchAvailablePhoneNumbersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AvailableNumberSummary> m_availableNumbersList;
-  bool m_availableNumbersListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_availableNumbersListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

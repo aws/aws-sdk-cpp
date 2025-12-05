@@ -124,18 +124,18 @@ class CalculateRouteMatrixResult {
   ///@}
  private:
   int m_errorCount{0};
-  bool m_errorCountHasBeenSet = false;
 
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<RouteMatrixEntry>> m_routeMatrix;
-  bool m_routeMatrixHasBeenSet = false;
 
   RouteMatrixBoundary m_routingBoundary;
-  bool m_routingBoundaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorCountHasBeenSet = false;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_routeMatrixHasBeenSet = false;
+  bool m_routingBoundaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

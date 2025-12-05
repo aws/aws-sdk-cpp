@@ -335,39 +335,39 @@ class TaskManagedEBSVolumeConfiguration {
   ///@}
  private:
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   int m_sizeInGiB{0};
-  bool m_sizeInGiBHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   int m_volumeInitializationRate{0};
-  bool m_volumeInitializationRateHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   Aws::Vector<EBSTagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   TaskManagedEBSVolumeTerminationPolicy m_terminationPolicy;
-  bool m_terminationPolicyHasBeenSet = false;
 
   TaskFilesystemType m_filesystemType{TaskFilesystemType::NOT_SET};
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_sizeInGiBHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_volumeInitializationRateHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_terminationPolicyHasBeenSet = false;
   bool m_filesystemTypeHasBeenSet = false;
 };
 

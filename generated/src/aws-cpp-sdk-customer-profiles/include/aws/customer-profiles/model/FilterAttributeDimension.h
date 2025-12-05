@@ -75,9 +75,9 @@ class FilterAttributeDimension {
   ///@}
  private:
   FilterDimensionType m_dimensionType{FilterDimensionType::NOT_SET};
-  bool m_dimensionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_dimensionTypeHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

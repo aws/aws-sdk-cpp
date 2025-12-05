@@ -74,12 +74,12 @@ class UpdateComputeQuotaResult {
   ///@}
  private:
   Aws::String m_computeQuotaArn;
-  bool m_computeQuotaArnHasBeenSet = false;
 
   int m_computeQuotaVersion{0};
-  bool m_computeQuotaVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computeQuotaArnHasBeenSet = false;
+  bool m_computeQuotaVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

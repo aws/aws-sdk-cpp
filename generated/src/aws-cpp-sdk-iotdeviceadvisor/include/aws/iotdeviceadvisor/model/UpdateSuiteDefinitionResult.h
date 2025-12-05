@@ -145,24 +145,24 @@ class UpdateSuiteDefinitionResult {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteDefinitionArn;
-  bool m_suiteDefinitionArnHasBeenSet = false;
 
   Aws::String m_suiteDefinitionName;
-  bool m_suiteDefinitionNameHasBeenSet = false;
 
   Aws::String m_suiteDefinitionVersion;
-  bool m_suiteDefinitionVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suiteDefinitionIdHasBeenSet = false;
+  bool m_suiteDefinitionArnHasBeenSet = false;
+  bool m_suiteDefinitionNameHasBeenSet = false;
+  bool m_suiteDefinitionVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

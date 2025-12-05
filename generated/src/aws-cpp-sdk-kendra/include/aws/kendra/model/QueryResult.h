@@ -210,27 +210,27 @@ class QueryResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::Vector<QueryResultItem> m_resultItems;
-  bool m_resultItemsHasBeenSet = false;
 
   Aws::Vector<FacetResult> m_facetResults;
-  bool m_facetResultsHasBeenSet = false;
 
   int m_totalNumberOfResults{0};
-  bool m_totalNumberOfResultsHasBeenSet = false;
 
   Aws::Vector<Warning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::Vector<SpellCorrectedQuery> m_spellCorrectedQueries;
-  bool m_spellCorrectedQueriesHasBeenSet = false;
 
   Aws::Vector<FeaturedResultsItem> m_featuredResultsItems;
-  bool m_featuredResultsItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_resultItemsHasBeenSet = false;
+  bool m_facetResultsHasBeenSet = false;
+  bool m_totalNumberOfResultsHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
+  bool m_spellCorrectedQueriesHasBeenSet = false;
+  bool m_featuredResultsItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

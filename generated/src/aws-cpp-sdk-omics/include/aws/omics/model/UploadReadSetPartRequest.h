@@ -104,15 +104,16 @@ class UploadReadSetPartRequest : public StreamingOmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   ReadSetPartSource m_partSource{ReadSetPartSource::NOT_SET};
-  bool m_partSourceHasBeenSet = false;
 
   int m_partNumber{0};
+
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_partSourceHasBeenSet = false;
   bool m_partNumberHasBeenSet = false;
 };
 

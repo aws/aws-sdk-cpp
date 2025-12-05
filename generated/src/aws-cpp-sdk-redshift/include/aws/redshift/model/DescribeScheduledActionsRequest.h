@@ -194,27 +194,27 @@ class DescribeScheduledActionsRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_scheduledActionName;
-  bool m_scheduledActionNameHasBeenSet = false;
 
   ScheduledActionTypeValues m_targetActionType{ScheduledActionTypeValues::NOT_SET};
-  bool m_targetActionTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   Aws::Vector<ScheduledActionFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_scheduledActionNameHasBeenSet = false;
+  bool m_targetActionTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

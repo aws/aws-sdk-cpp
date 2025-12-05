@@ -119,12 +119,12 @@ class DocumentReaderConfig {
   ///@}
  private:
   DocumentReadAction m_documentReadAction{DocumentReadAction::NOT_SET};
-  bool m_documentReadActionHasBeenSet = false;
 
   DocumentReadMode m_documentReadMode{DocumentReadMode::NOT_SET};
-  bool m_documentReadModeHasBeenSet = false;
 
   Aws::Vector<DocumentReadFeatureTypes> m_featureTypes;
+  bool m_documentReadActionHasBeenSet = false;
+  bool m_documentReadModeHasBeenSet = false;
   bool m_featureTypesHasBeenSet = false;
 };
 

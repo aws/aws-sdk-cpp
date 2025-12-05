@@ -89,12 +89,12 @@ class ListImageScanFindingsResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<ImageScanFinding> m_findings;
-  bool m_findingsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_findingsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class VersionInformation {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_creationTimestamp;
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

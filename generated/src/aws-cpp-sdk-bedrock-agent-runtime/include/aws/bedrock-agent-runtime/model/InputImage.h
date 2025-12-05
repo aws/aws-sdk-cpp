@@ -74,9 +74,9 @@ class InputImage {
   ///@}
  private:
   InputImageFormat m_format{InputImageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_inlineContent{};
+  bool m_formatHasBeenSet = false;
   bool m_inlineContentHasBeenSet = false;
 };
 

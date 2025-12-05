@@ -131,15 +131,15 @@ class ChatPromptTemplateConfiguration {
   ///@}
  private:
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::Vector<SystemContentBlock> m_system;
-  bool m_systemHasBeenSet = false;
 
   Aws::Vector<PromptInputVariable> m_inputVariables;
-  bool m_inputVariablesHasBeenSet = false;
 
   ToolConfiguration m_toolConfiguration;
+  bool m_messagesHasBeenSet = false;
+  bool m_systemHasBeenSet = false;
+  bool m_inputVariablesHasBeenSet = false;
   bool m_toolConfigurationHasBeenSet = false;
 };
 

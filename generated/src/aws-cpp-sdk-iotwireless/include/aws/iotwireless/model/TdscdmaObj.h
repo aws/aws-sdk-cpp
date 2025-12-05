@@ -190,30 +190,30 @@ class TdscdmaObj {
   ///@}
  private:
   int m_mcc{0};
-  bool m_mccHasBeenSet = false;
 
   int m_mnc{0};
-  bool m_mncHasBeenSet = false;
 
   int m_lac{0};
-  bool m_lacHasBeenSet = false;
 
   int m_utranCid{0};
-  bool m_utranCidHasBeenSet = false;
 
   TdscdmaLocalId m_tdscdmaLocalId;
-  bool m_tdscdmaLocalIdHasBeenSet = false;
 
   int m_tdscdmaTimingAdvance{0};
-  bool m_tdscdmaTimingAdvanceHasBeenSet = false;
 
   int m_rscp{0};
-  bool m_rscpHasBeenSet = false;
 
   int m_pathLoss{0};
-  bool m_pathLossHasBeenSet = false;
 
   Aws::Vector<TdscdmaNmrObj> m_tdscdmaNmr;
+  bool m_mccHasBeenSet = false;
+  bool m_mncHasBeenSet = false;
+  bool m_lacHasBeenSet = false;
+  bool m_utranCidHasBeenSet = false;
+  bool m_tdscdmaLocalIdHasBeenSet = false;
+  bool m_tdscdmaTimingAdvanceHasBeenSet = false;
+  bool m_rscpHasBeenSet = false;
+  bool m_pathLossHasBeenSet = false;
   bool m_tdscdmaNmrHasBeenSet = false;
 };
 

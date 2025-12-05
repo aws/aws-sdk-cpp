@@ -72,9 +72,9 @@ class EncodingParameters {
   ///@}
  private:
   double m_compressionFactor{0.0};
-  bool m_compressionFactorHasBeenSet = false;
 
   EncoderProfile m_encoderProfile{EncoderProfile::NOT_SET};
+  bool m_compressionFactorHasBeenSet = false;
   bool m_encoderProfileHasBeenSet = false;
 };
 

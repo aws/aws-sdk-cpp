@@ -59,9 +59,9 @@ class CreateFlowDefinitionResult {
   ///@}
  private:
   Aws::String m_flowDefinitionArn;
-  bool m_flowDefinitionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowDefinitionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

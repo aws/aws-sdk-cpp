@@ -96,12 +96,12 @@ class SyncConfig {
   ///@}
  private:
   ConflictHandlerType m_conflictHandler{ConflictHandlerType::NOT_SET};
-  bool m_conflictHandlerHasBeenSet = false;
 
   ConflictDetectionType m_conflictDetection{ConflictDetectionType::NOT_SET};
-  bool m_conflictDetectionHasBeenSet = false;
 
   LambdaConflictHandlerConfig m_lambdaConflictHandlerConfig;
+  bool m_conflictHandlerHasBeenSet = false;
+  bool m_conflictDetectionHasBeenSet = false;
   bool m_lambdaConflictHandlerConfigHasBeenSet = false;
 };
 

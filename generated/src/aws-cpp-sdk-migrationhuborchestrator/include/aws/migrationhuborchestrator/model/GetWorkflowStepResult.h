@@ -421,69 +421,69 @@ class GetWorkflowStepResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_stepGroupId;
-  bool m_stepGroupIdHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StepActionType m_stepActionType{StepActionType::NOT_SET};
-  bool m_stepActionTypeHasBeenSet = false;
 
   Owner m_owner{Owner::NOT_SET};
-  bool m_ownerHasBeenSet = false;
 
   WorkflowStepAutomationConfiguration m_workflowStepAutomationConfiguration;
-  bool m_workflowStepAutomationConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stepTarget;
-  bool m_stepTargetHasBeenSet = false;
 
   Aws::Vector<WorkflowStepOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_previous;
-  bool m_previousHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_next;
-  bool m_nextHasBeenSet = false;
 
   StepStatus m_status{StepStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_scriptOutputLocation;
-  bool m_scriptOutputLocationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStartTime{};
-  bool m_lastStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_noOfSrvCompleted{0};
-  bool m_noOfSrvCompletedHasBeenSet = false;
 
   int m_noOfSrvFailed{0};
-  bool m_noOfSrvFailedHasBeenSet = false;
 
   int m_totalNoOfSrv{0};
-  bool m_totalNoOfSrvHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_stepGroupIdHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_stepIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stepActionTypeHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_workflowStepAutomationConfigurationHasBeenSet = false;
+  bool m_stepTargetHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_previousHasBeenSet = false;
+  bool m_nextHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_scriptOutputLocationHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastStartTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_noOfSrvCompletedHasBeenSet = false;
+  bool m_noOfSrvFailedHasBeenSet = false;
+  bool m_totalNoOfSrvHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

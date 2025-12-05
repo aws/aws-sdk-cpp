@@ -61,9 +61,9 @@ class CreateExclusionsPreviewResult {
   ///@}
  private:
   Aws::String m_previewToken;
-  bool m_previewTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_previewTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -436,66 +436,66 @@ class Finding {
   ///@}
  private:
   Aws::String m_findingArn;
-  bool m_findingArnHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   FindingType m_type{FindingType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Remediation m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstObservedAt{};
-  bool m_firstObservedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastObservedAt{};
-  bool m_lastObservedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   FindingStatus m_status{FindingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   double m_inspectorScore{0.0};
-  bool m_inspectorScoreHasBeenSet = false;
 
   InspectorScoreDetails m_inspectorScoreDetails;
-  bool m_inspectorScoreDetailsHasBeenSet = false;
 
   NetworkReachabilityDetails m_networkReachabilityDetails;
-  bool m_networkReachabilityDetailsHasBeenSet = false;
 
   PackageVulnerabilityDetails m_packageVulnerabilityDetails;
-  bool m_packageVulnerabilityDetailsHasBeenSet = false;
 
   FixAvailable m_fixAvailable{FixAvailable::NOT_SET};
-  bool m_fixAvailableHasBeenSet = false;
 
   ExploitAvailable m_exploitAvailable{ExploitAvailable::NOT_SET};
-  bool m_exploitAvailableHasBeenSet = false;
 
   ExploitabilityDetails m_exploitabilityDetails;
-  bool m_exploitabilityDetailsHasBeenSet = false;
 
   CodeVulnerabilityDetails m_codeVulnerabilityDetails;
-  bool m_codeVulnerabilityDetailsHasBeenSet = false;
 
   EpssDetails m_epss;
+  bool m_findingArnHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_firstObservedAtHasBeenSet = false;
+  bool m_lastObservedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_inspectorScoreHasBeenSet = false;
+  bool m_inspectorScoreDetailsHasBeenSet = false;
+  bool m_networkReachabilityDetailsHasBeenSet = false;
+  bool m_packageVulnerabilityDetailsHasBeenSet = false;
+  bool m_fixAvailableHasBeenSet = false;
+  bool m_exploitAvailableHasBeenSet = false;
+  bool m_exploitabilityDetailsHasBeenSet = false;
+  bool m_codeVulnerabilityDetailsHasBeenSet = false;
   bool m_epssHasBeenSet = false;
 };
 

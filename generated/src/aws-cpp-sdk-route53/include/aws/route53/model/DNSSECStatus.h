@@ -83,9 +83,9 @@ class DNSSECStatus {
   ///@}
  private:
   Aws::String m_serveSignature;
-  bool m_serveSignatureHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_serveSignatureHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

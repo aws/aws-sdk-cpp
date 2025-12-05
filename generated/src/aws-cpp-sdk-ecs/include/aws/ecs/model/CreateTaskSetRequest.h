@@ -354,42 +354,42 @@ class CreateTaskSetRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::Vector<LoadBalancer> m_loadBalancers;
-  bool m_loadBalancersHasBeenSet = false;
 
   Aws::Vector<ServiceRegistry> m_serviceRegistries;
-  bool m_serviceRegistriesHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-  bool m_capacityProviderStrategyHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Scale m_scale;
-  bool m_scaleHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serviceHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_taskDefinitionHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_loadBalancersHasBeenSet = false;
+  bool m_serviceRegistriesHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_capacityProviderStrategyHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_scaleHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

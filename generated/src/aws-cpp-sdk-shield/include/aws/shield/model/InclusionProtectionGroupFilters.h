@@ -139,15 +139,15 @@ class InclusionProtectionGroupFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_protectionGroupIds;
-  bool m_protectionGroupIdsHasBeenSet = false;
 
   Aws::Vector<ProtectionGroupPattern> m_patterns;
-  bool m_patternsHasBeenSet = false;
 
   Aws::Vector<ProtectedResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<ProtectionGroupAggregation> m_aggregations;
+  bool m_protectionGroupIdsHasBeenSet = false;
+  bool m_patternsHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
   bool m_aggregationsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ExternalModelSummary {
   ///@}
  private:
   Aws::String m_modelEndpoint;
-  bool m_modelEndpointHasBeenSet = false;
 
   ModelSource m_modelSource{ModelSource::NOT_SET};
+  bool m_modelEndpointHasBeenSet = false;
   bool m_modelSourceHasBeenSet = false;
 };
 

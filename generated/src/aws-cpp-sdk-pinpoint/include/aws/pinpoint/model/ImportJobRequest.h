@@ -193,27 +193,27 @@ class ImportJobRequest {
   ///@}
  private:
   bool m_defineSegment{false};
-  bool m_defineSegmentHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   bool m_registerEndpoints{false};
-  bool m_registerEndpointsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_s3Url;
-  bool m_s3UrlHasBeenSet = false;
 
   Aws::String m_segmentId;
-  bool m_segmentIdHasBeenSet = false;
 
   Aws::String m_segmentName;
+  bool m_defineSegmentHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_registerEndpointsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_s3UrlHasBeenSet = false;
+  bool m_segmentIdHasBeenSet = false;
   bool m_segmentNameHasBeenSet = false;
 };
 

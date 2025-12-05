@@ -90,12 +90,12 @@ class ListPolicyEnginesResult {
   ///@}
  private:
   Aws::Vector<PolicyEngine> m_policyEngines;
-  bool m_policyEnginesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyEnginesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

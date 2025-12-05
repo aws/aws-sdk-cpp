@@ -96,12 +96,12 @@ class EventSubscription {
   ///@}
  private:
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_snsTopicArnHasBeenSet = false;
 };
 

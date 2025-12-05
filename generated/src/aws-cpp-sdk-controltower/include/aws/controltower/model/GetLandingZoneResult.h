@@ -60,9 +60,9 @@ class GetLandingZoneResult {
   ///@}
  private:
   LandingZoneDetail m_landingZone;
-  bool m_landingZoneHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_landingZoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

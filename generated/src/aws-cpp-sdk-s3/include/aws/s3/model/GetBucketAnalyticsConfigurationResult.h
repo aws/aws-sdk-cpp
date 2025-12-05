@@ -60,9 +60,9 @@ class GetBucketAnalyticsConfigurationResult {
   ///@}
  private:
   AnalyticsConfiguration m_analyticsConfiguration;
-  bool m_analyticsConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analyticsConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

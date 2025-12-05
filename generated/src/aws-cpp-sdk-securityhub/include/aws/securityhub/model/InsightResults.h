@@ -98,12 +98,12 @@ class InsightResults {
   ///@}
  private:
   Aws::String m_insightArn;
-  bool m_insightArnHasBeenSet = false;
 
   Aws::String m_groupByAttribute;
-  bool m_groupByAttributeHasBeenSet = false;
 
   Aws::Vector<InsightResultValue> m_resultValues;
+  bool m_insightArnHasBeenSet = false;
+  bool m_groupByAttributeHasBeenSet = false;
   bool m_resultValuesHasBeenSet = false;
 };
 

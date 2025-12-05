@@ -198,27 +198,27 @@ class PersistentAppUI {
   ///@}
  private:
   Aws::String m_persistentAppUIId;
-  bool m_persistentAppUIIdHasBeenSet = false;
 
   Aws::Vector<PersistentAppUIType> m_persistentAppUITypeList;
-  bool m_persistentAppUITypeListHasBeenSet = false;
 
   Aws::String m_persistentAppUIStatus;
-  bool m_persistentAppUIStatusHasBeenSet = false;
 
   Aws::String m_authorId;
-  bool m_authorIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastStateChangeReason;
-  bool m_lastStateChangeReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_persistentAppUIIdHasBeenSet = false;
+  bool m_persistentAppUITypeListHasBeenSet = false;
+  bool m_persistentAppUIStatusHasBeenSet = false;
+  bool m_authorIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastStateChangeReasonHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class ExtensionsV3 {
   ///@}
  private:
   ApplicationPolicies m_applicationPolicies;
-  bool m_applicationPoliciesHasBeenSet = false;
 
   KeyUsage m_keyUsage;
+  bool m_applicationPoliciesHasBeenSet = false;
   bool m_keyUsageHasBeenSet = false;
 };
 

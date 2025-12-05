@@ -86,9 +86,9 @@ class CachedMethods {
   ///@}
  private:
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<Method> m_items;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

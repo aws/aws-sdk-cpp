@@ -172,24 +172,24 @@ class ListGeoLocationsResult {
   ///@}
  private:
   Aws::Vector<GeoLocationDetails> m_geoLocationDetailsList;
-  bool m_geoLocationDetailsListHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_nextContinentCode;
-  bool m_nextContinentCodeHasBeenSet = false;
 
   Aws::String m_nextCountryCode;
-  bool m_nextCountryCodeHasBeenSet = false;
 
   Aws::String m_nextSubdivisionCode;
-  bool m_nextSubdivisionCodeHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_geoLocationDetailsListHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_nextContinentCodeHasBeenSet = false;
+  bool m_nextCountryCodeHasBeenSet = false;
+  bool m_nextSubdivisionCodeHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

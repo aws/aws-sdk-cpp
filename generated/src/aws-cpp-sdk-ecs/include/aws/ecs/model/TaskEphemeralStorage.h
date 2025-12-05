@@ -70,9 +70,9 @@ class TaskEphemeralStorage {
   ///@}
  private:
   int m_sizeInGiB{0};
-  bool m_sizeInGiBHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_sizeInGiBHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

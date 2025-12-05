@@ -73,9 +73,9 @@ class MultiRegionAccessPointPolicyDocument {
   ///@}
  private:
   EstablishedMultiRegionAccessPointPolicy m_established;
-  bool m_establishedHasBeenSet = false;
 
   ProposedMultiRegionAccessPointPolicy m_proposed;
+  bool m_establishedHasBeenSet = false;
   bool m_proposedHasBeenSet = false;
 };
 

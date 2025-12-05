@@ -70,9 +70,9 @@ class ResourceTag {
   ///@}
  private:
   Aws::String m_resourceTagKey;
-  bool m_resourceTagKeyHasBeenSet = false;
 
   Aws::String m_resourceTagValue;
+  bool m_resourceTagKeyHasBeenSet = false;
   bool m_resourceTagValueHasBeenSet = false;
 };
 

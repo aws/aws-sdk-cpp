@@ -80,12 +80,12 @@ class GetClusterSessionCredentialsResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_credentialsHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

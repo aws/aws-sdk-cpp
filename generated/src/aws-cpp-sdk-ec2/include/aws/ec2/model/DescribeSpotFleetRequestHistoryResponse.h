@@ -148,21 +148,21 @@ class DescribeSpotFleetRequestHistoryResponse {
   ///@}
  private:
   Aws::Vector<HistoryRecord> m_historyRecords;
-  bool m_historyRecordsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastEvaluatedTime{};
-  bool m_lastEvaluatedTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_spotFleetRequestId;
-  bool m_spotFleetRequestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_historyRecordsHasBeenSet = false;
+  bool m_lastEvaluatedTimeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_spotFleetRequestIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

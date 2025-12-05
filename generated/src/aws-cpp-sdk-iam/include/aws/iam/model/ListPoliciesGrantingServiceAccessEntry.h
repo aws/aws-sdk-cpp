@@ -93,9 +93,9 @@ class ListPoliciesGrantingServiceAccessEntry {
   ///@}
  private:
   Aws::String m_serviceNamespace;
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::Vector<PolicyGrantingServiceAccess> m_policies;
+  bool m_serviceNamespaceHasBeenSet = false;
   bool m_policiesHasBeenSet = false;
 };
 

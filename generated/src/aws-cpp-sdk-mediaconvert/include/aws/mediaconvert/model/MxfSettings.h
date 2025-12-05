@@ -97,12 +97,12 @@ class MxfSettings {
   ///@}
  private:
   MxfAfdSignaling m_afdSignaling{MxfAfdSignaling::NOT_SET};
-  bool m_afdSignalingHasBeenSet = false;
 
   MxfProfile m_profile{MxfProfile::NOT_SET};
-  bool m_profileHasBeenSet = false;
 
   MxfXavcProfileSettings m_xavcProfileSettings;
+  bool m_afdSignalingHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
   bool m_xavcProfileSettingsHasBeenSet = false;
 };
 

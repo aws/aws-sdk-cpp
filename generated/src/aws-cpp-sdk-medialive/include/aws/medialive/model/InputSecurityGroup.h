@@ -160,21 +160,21 @@ class InputSecurityGroup {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   InputSecurityGroupState m_state{InputSecurityGroupState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<InputWhitelistRule> m_whitelistRules;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_whitelistRulesHasBeenSet = false;
 };
 

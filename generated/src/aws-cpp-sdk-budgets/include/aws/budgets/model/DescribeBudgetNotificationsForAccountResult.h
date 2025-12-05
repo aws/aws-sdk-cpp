@@ -85,12 +85,12 @@ class DescribeBudgetNotificationsForAccountResult {
   ///@}
  private:
   Aws::Vector<BudgetNotificationsForAccount> m_budgetNotificationsForAccount;
-  bool m_budgetNotificationsForAccountHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_budgetNotificationsForAccountHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class CreateEventActionRequest : public DataExchangeRequest {
   ///@}
  private:
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   Event m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_actionHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

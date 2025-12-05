@@ -182,27 +182,27 @@ class AccountRecommendationLifecycleSummary {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_accountRecommendationArn;
-  bool m_accountRecommendationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   RecommendationLifecycleStage m_lifecycleStage{RecommendationLifecycleStage::NOT_SET};
-  bool m_lifecycleStageHasBeenSet = false;
 
   Aws::String m_updateReason;
-  bool m_updateReasonHasBeenSet = false;
 
   UpdateRecommendationLifecycleStageReasonCode m_updateReasonCode{UpdateRecommendationLifecycleStageReasonCode::NOT_SET};
-  bool m_updateReasonCodeHasBeenSet = false;
 
   Aws::String m_updatedOnBehalfOf;
-  bool m_updatedOnBehalfOfHasBeenSet = false;
 
   Aws::String m_updatedOnBehalfOfJobTitle;
+  bool m_accountIdHasBeenSet = false;
+  bool m_accountRecommendationArnHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_lifecycleStageHasBeenSet = false;
+  bool m_updateReasonHasBeenSet = false;
+  bool m_updateReasonCodeHasBeenSet = false;
+  bool m_updatedOnBehalfOfHasBeenSet = false;
   bool m_updatedOnBehalfOfJobTitleHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class GetDedicatedIpsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_poolNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

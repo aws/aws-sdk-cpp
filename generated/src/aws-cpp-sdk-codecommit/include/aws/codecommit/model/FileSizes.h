@@ -78,12 +78,12 @@ class FileSizes {
   ///@}
  private:
   long long m_source{0};
-  bool m_sourceHasBeenSet = false;
 
   long long m_destination{0};
-  bool m_destinationHasBeenSet = false;
 
   long long m_base{0};
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_baseHasBeenSet = false;
 };
 

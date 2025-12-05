@@ -60,9 +60,9 @@ class UpdateTagOptionResult {
   ///@}
  private:
   TagOptionDetail m_tagOptionDetail;
-  bool m_tagOptionDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagOptionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

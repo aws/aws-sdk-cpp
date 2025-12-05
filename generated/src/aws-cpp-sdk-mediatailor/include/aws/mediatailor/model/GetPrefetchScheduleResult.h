@@ -192,30 +192,30 @@ class GetPrefetchScheduleResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   PrefetchConsumption m_consumption;
-  bool m_consumptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_playbackConfigurationName;
-  bool m_playbackConfigurationNameHasBeenSet = false;
 
   PrefetchRetrieval m_retrieval;
-  bool m_retrievalHasBeenSet = false;
 
   PrefetchScheduleType m_scheduleType{PrefetchScheduleType::NOT_SET};
-  bool m_scheduleTypeHasBeenSet = false;
 
   RecurringPrefetchConfiguration m_recurringPrefetchConfiguration;
-  bool m_recurringPrefetchConfigurationHasBeenSet = false;
 
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_consumptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_playbackConfigurationNameHasBeenSet = false;
+  bool m_retrievalHasBeenSet = false;
+  bool m_scheduleTypeHasBeenSet = false;
+  bool m_recurringPrefetchConfigurationHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

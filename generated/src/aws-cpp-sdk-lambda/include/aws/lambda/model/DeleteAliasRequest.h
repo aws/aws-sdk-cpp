@@ -72,9 +72,9 @@ class DeleteAliasRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_functionNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

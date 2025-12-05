@@ -60,9 +60,9 @@ class DescribeObservationResult {
   ///@}
  private:
   Observation m_observation;
-  bool m_observationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_observationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

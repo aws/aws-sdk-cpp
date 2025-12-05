@@ -90,12 +90,12 @@ class MetricDestinationSummary {
   ///@}
  private:
   MetricDestination m_destination{MetricDestination::NOT_SET};
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
 };
 

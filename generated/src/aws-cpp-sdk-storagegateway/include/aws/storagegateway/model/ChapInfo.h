@@ -109,15 +109,15 @@ class ChapInfo {
   ///@}
  private:
   Aws::String m_targetARN;
-  bool m_targetARNHasBeenSet = false;
 
   Aws::String m_secretToAuthenticateInitiator;
-  bool m_secretToAuthenticateInitiatorHasBeenSet = false;
 
   Aws::String m_initiatorName;
-  bool m_initiatorNameHasBeenSet = false;
 
   Aws::String m_secretToAuthenticateTarget;
+  bool m_targetARNHasBeenSet = false;
+  bool m_secretToAuthenticateInitiatorHasBeenSet = false;
+  bool m_initiatorNameHasBeenSet = false;
   bool m_secretToAuthenticateTargetHasBeenSet = false;
 };
 

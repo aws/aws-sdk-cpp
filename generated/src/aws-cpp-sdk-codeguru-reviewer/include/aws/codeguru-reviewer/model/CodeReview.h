@@ -349,51 +349,51 @@ class CodeReview {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_codeReviewArn;
-  bool m_codeReviewArnHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   JobState m_state{JobState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimeStamp{};
-  bool m_createdTimeStampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimeStamp{};
-  bool m_lastUpdatedTimeStampHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   SourceCodeType m_sourceCodeType;
-  bool m_sourceCodeTypeHasBeenSet = false;
 
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Metrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Vector<AnalysisType> m_analysisTypes;
-  bool m_analysisTypesHasBeenSet = false;
 
   ConfigFileState m_configFileState{ConfigFileState::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_codeReviewArnHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_createdTimeStampHasBeenSet = false;
+  bool m_lastUpdatedTimeStampHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_pullRequestIdHasBeenSet = false;
+  bool m_sourceCodeTypeHasBeenSet = false;
+  bool m_associationArnHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_analysisTypesHasBeenSet = false;
   bool m_configFileStateHasBeenSet = false;
 };
 

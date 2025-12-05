@@ -101,12 +101,12 @@ class TransitGatewayConfiguration {
   ///@}
  private:
   Aws::String m_transitGatewayID;
-  bool m_transitGatewayIDHasBeenSet = false;
 
   Aws::String m_routableCIDRSpace;
-  bool m_routableCIDRSpaceHasBeenSet = false;
 
   Aws::Vector<NetworkACLEntry> m_attachmentNetworkAclConfiguration;
+  bool m_transitGatewayIDHasBeenSet = false;
+  bool m_routableCIDRSpaceHasBeenSet = false;
   bool m_attachmentNetworkAclConfigurationHasBeenSet = false;
 };
 

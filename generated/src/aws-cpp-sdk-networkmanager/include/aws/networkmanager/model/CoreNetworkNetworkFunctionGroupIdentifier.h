@@ -86,12 +86,12 @@ class CoreNetworkNetworkFunctionGroupIdentifier {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_networkFunctionGroupName;
-  bool m_networkFunctionGroupNameHasBeenSet = false;
 
   Aws::String m_edgeLocation;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_networkFunctionGroupNameHasBeenSet = false;
   bool m_edgeLocationHasBeenSet = false;
 };
 

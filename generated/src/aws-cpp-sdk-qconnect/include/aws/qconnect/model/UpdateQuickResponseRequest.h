@@ -293,45 +293,45 @@ class UpdateQuickResponseRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_quickResponseId;
-  bool m_quickResponseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   QuickResponseDataProvider m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   GroupingConfiguration m_groupingConfiguration;
-  bool m_groupingConfigurationHasBeenSet = false;
 
   bool m_removeGroupingConfiguration{false};
-  bool m_removeGroupingConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_removeDescription{false};
-  bool m_removeDescriptionHasBeenSet = false;
 
   Aws::String m_shortcutKey;
-  bool m_shortcutKeyHasBeenSet = false;
 
   bool m_removeShortcutKey{false};
-  bool m_removeShortcutKeyHasBeenSet = false;
 
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_language;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_quickResponseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_groupingConfigurationHasBeenSet = false;
+  bool m_removeGroupingConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_removeDescriptionHasBeenSet = false;
+  bool m_shortcutKeyHasBeenSet = false;
+  bool m_removeShortcutKeyHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
   bool m_languageHasBeenSet = false;
 };
 

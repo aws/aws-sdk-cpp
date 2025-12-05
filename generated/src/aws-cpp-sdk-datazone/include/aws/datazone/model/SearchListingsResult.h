@@ -129,18 +129,18 @@ class SearchListingsResult {
   ///@}
  private:
   Aws::Vector<AggregationOutput> m_aggregates;
-  bool m_aggregatesHasBeenSet = false;
 
   Aws::Vector<SearchResultItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_totalMatchCount{0};
-  bool m_totalMatchCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregatesHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_totalMatchCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

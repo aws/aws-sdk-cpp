@@ -91,12 +91,12 @@ class CloudFormationStackUpdate {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_stackArn;
-  bool m_stackArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_endTimeHasBeenSet = false;
+  bool m_stackArnHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

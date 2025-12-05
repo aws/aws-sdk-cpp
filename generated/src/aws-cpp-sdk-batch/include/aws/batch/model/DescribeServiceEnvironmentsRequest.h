@@ -103,12 +103,12 @@ class DescribeServiceEnvironmentsRequest : public BatchRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_serviceEnvironments;
-  bool m_serviceEnvironmentsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceEnvironmentsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

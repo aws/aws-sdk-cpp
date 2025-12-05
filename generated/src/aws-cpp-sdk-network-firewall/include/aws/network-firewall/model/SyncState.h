@@ -92,9 +92,9 @@ class SyncState {
   ///@}
  private:
   Attachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::Map<Aws::String, PerObjectStatus> m_config;
+  bool m_attachmentHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

@@ -132,21 +132,21 @@ class DescribeCodeRepositoryResult {
   ///@}
  private:
   Aws::String m_codeRepositoryName;
-  bool m_codeRepositoryNameHasBeenSet = false;
 
   Aws::String m_codeRepositoryArn;
-  bool m_codeRepositoryArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   GitConfig m_gitConfig;
-  bool m_gitConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeRepositoryNameHasBeenSet = false;
+  bool m_codeRepositoryArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_gitConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class OtaaV1_1 {
   ///@}
  private:
   Aws::String m_appKey;
-  bool m_appKeyHasBeenSet = false;
 
   Aws::String m_nwkKey;
-  bool m_nwkKeyHasBeenSet = false;
 
   Aws::String m_joinEui;
+  bool m_appKeyHasBeenSet = false;
+  bool m_nwkKeyHasBeenSet = false;
   bool m_joinEuiHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class LastUpdate {
   ///@}
  private:
   int m_targetQueryTCU{0};
-  bool m_targetQueryTCUHasBeenSet = false;
 
   LastUpdateStatus m_status{LastUpdateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_targetQueryTCUHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

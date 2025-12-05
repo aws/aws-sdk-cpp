@@ -225,33 +225,33 @@ class UpdateFleetRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_minWorkerCount{0};
-  bool m_minWorkerCountHasBeenSet = false;
 
   int m_maxWorkerCount{0};
-  bool m_maxWorkerCountHasBeenSet = false;
 
   FleetConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   HostConfiguration m_hostConfiguration;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_farmIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_minWorkerCountHasBeenSet = false;
+  bool m_maxWorkerCountHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_hostConfigurationHasBeenSet = false;
 };
 

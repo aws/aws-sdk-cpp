@@ -185,30 +185,30 @@ class DescribeDashboardResult {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   Aws::String m_dashboardName;
-  bool m_dashboardNameHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_dashboardDescription;
-  bool m_dashboardDescriptionHasBeenSet = false;
 
   Aws::String m_dashboardDefinition;
-  bool m_dashboardDefinitionHasBeenSet = false;
 
   Aws::Utils::DateTime m_dashboardCreationDate{};
-  bool m_dashboardCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_dashboardLastUpdateDate{};
-  bool m_dashboardLastUpdateDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_dashboardArnHasBeenSet = false;
+  bool m_dashboardNameHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_dashboardDescriptionHasBeenSet = false;
+  bool m_dashboardDefinitionHasBeenSet = false;
+  bool m_dashboardCreationDateHasBeenSet = false;
+  bool m_dashboardLastUpdateDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

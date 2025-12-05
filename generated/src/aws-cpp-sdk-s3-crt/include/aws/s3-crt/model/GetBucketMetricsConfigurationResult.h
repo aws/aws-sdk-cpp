@@ -60,9 +60,9 @@ class GetBucketMetricsConfigurationResult {
   ///@}
  private:
   MetricsConfiguration m_metricsConfiguration;
-  bool m_metricsConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricsConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

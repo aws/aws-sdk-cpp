@@ -81,9 +81,9 @@ class RelatedDeployments {
   ///@}
  private:
   Aws::String m_autoUpdateOutdatedInstancesRootDeploymentId;
-  bool m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autoUpdateOutdatedInstancesDeploymentIds;
+  bool m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet = false;
   bool m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet = false;
 };
 

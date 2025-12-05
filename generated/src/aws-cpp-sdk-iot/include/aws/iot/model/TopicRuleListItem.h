@@ -121,18 +121,18 @@ class TopicRuleListItem {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_topicPattern;
-  bool m_topicPatternHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   bool m_ruleDisabled{false};
+  bool m_ruleArnHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_topicPatternHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_ruleDisabledHasBeenSet = false;
 };
 

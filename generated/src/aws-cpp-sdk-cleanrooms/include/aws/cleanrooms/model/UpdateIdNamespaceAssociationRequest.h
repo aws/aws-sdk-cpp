@@ -122,18 +122,18 @@ class UpdateIdNamespaceAssociationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_idNamespaceAssociationIdentifier;
-  bool m_idNamespaceAssociationIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IdMappingConfig m_idMappingConfig;
+  bool m_idNamespaceAssociationIdentifierHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_idMappingConfigHasBeenSet = false;
 };
 

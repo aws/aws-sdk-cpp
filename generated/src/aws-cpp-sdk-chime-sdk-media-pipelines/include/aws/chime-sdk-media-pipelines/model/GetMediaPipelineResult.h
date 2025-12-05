@@ -60,9 +60,9 @@ class GetMediaPipelineResult {
   ///@}
  private:
   MediaPipeline m_mediaPipeline;
-  bool m_mediaPipelineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaPipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class AddTagsRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceArnsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

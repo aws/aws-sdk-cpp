@@ -80,12 +80,12 @@ class GetPublicKeyCertificateResult {
   ///@}
  private:
   Aws::String m_keyCertificate;
-  bool m_keyCertificateHasBeenSet = false;
 
   Aws::String m_keyCertificateChain;
-  bool m_keyCertificateChainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyCertificateHasBeenSet = false;
+  bool m_keyCertificateChainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

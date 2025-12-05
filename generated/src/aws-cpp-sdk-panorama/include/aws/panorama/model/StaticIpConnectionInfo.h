@@ -111,15 +111,15 @@ class StaticIpConnectionInfo {
   ///@}
  private:
   Aws::String m_defaultGateway;
-  bool m_defaultGatewayHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dns;
-  bool m_dnsHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_mask;
+  bool m_defaultGatewayHasBeenSet = false;
+  bool m_dnsHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
   bool m_maskHasBeenSet = false;
 };
 

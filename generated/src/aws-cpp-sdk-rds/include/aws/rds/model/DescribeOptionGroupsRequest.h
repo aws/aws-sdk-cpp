@@ -168,21 +168,21 @@ class DescribeOptionGroupsRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
   bool m_majorEngineVersionHasBeenSet = false;
 };
 

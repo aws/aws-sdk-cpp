@@ -96,12 +96,12 @@ class RealTimeContactAnalysisSegmentPostContactSummary {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   RealTimeContactAnalysisPostContactSummaryStatus m_status{RealTimeContactAnalysisPostContactSummaryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RealTimeContactAnalysisPostContactSummaryFailureCode m_failureCode{RealTimeContactAnalysisPostContactSummaryFailureCode::NOT_SET};
+  bool m_contentHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
 };
 

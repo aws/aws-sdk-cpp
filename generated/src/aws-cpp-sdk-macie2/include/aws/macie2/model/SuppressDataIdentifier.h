@@ -73,9 +73,9 @@ class SuppressDataIdentifier {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DataIdentifierType m_type{DataIdentifierType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class DetectorModelDefinition {
   ///@}
  private:
   Aws::Vector<State> m_states;
-  bool m_statesHasBeenSet = false;
 
   Aws::String m_initialStateName;
+  bool m_statesHasBeenSet = false;
   bool m_initialStateNameHasBeenSet = false;
 };
 

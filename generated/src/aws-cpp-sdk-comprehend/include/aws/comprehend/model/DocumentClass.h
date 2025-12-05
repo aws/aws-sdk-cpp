@@ -85,12 +85,12 @@ class DocumentClass {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   int m_page{0};
+  bool m_nameHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
   bool m_pageHasBeenSet = false;
 };
 

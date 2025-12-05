@@ -241,36 +241,36 @@ class DescribeLocationSmbResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   SmbMountOptions m_mountOptions;
-  bool m_mountOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddresses;
-  bool m_dnsIpAddressesHasBeenSet = false;
 
   Aws::String m_kerberosPrincipal;
-  bool m_kerberosPrincipalHasBeenSet = false;
 
   SmbAuthenticationType m_authenticationType{SmbAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_mountOptionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_dnsIpAddressesHasBeenSet = false;
+  bool m_kerberosPrincipalHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -96,15 +96,15 @@ class GetChannelMembershipPreferencesResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Identity m_member;
-  bool m_memberHasBeenSet = false;
 
   ChannelMembershipPreferences m_preferences;
-  bool m_preferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
+  bool m_preferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class GetLabelDetectionRequestMetadata {
   ///@}
  private:
   LabelDetectionSortBy m_sortBy{LabelDetectionSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   LabelDetectionAggregateBy m_aggregateBy{LabelDetectionAggregateBy::NOT_SET};
+  bool m_sortByHasBeenSet = false;
   bool m_aggregateByHasBeenSet = false;
 };
 

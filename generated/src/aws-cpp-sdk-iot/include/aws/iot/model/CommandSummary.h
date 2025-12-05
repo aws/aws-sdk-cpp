@@ -156,24 +156,24 @@ class CommandSummary {
   ///@}
  private:
   Aws::String m_commandArn;
-  bool m_commandArnHasBeenSet = false;
 
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   bool m_deprecated{false};
-  bool m_deprecatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   bool m_pendingDeletion{false};
+  bool m_commandArnHasBeenSet = false;
+  bool m_commandIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_deprecatedHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_pendingDeletionHasBeenSet = false;
 };
 

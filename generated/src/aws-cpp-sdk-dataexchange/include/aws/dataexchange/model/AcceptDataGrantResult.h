@@ -262,45 +262,45 @@ class AcceptDataGrantResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_senderPrincipal;
-  bool m_senderPrincipalHasBeenSet = false;
 
   Aws::String m_receiverPrincipal;
-  bool m_receiverPrincipalHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataGrantAcceptanceState m_acceptanceState{DataGrantAcceptanceState::NOT_SET};
-  bool m_acceptanceStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_acceptedAt{};
-  bool m_acceptedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endsAt{};
-  bool m_endsAtHasBeenSet = false;
 
   GrantDistributionScope m_grantDistributionScope{GrantDistributionScope::NOT_SET};
-  bool m_grantDistributionScopeHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_senderPrincipalHasBeenSet = false;
+  bool m_receiverPrincipalHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_acceptanceStateHasBeenSet = false;
+  bool m_acceptedAtHasBeenSet = false;
+  bool m_endsAtHasBeenSet = false;
+  bool m_grantDistributionScopeHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

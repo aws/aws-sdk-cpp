@@ -85,12 +85,12 @@ class DescribeResourcePermissionsResult {
   ///@}
  private:
   Aws::Vector<Principal> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_principalsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

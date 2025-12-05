@@ -112,15 +112,15 @@ class DescribeVoicesRequest : public PollyRequest {
   ///@}
  private:
   Engine m_engine{Engine::NOT_SET};
-  bool m_engineHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   bool m_includeAdditionalLanguageCodes{false};
-  bool m_includeAdditionalLanguageCodesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_engineHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_includeAdditionalLanguageCodesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

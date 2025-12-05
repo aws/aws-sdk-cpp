@@ -164,27 +164,27 @@ class DescribeCustomPluginResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_customPluginArn;
-  bool m_customPluginArnHasBeenSet = false;
 
   CustomPluginState m_customPluginState{CustomPluginState::NOT_SET};
-  bool m_customPluginStateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CustomPluginRevisionSummary m_latestRevision;
-  bool m_latestRevisionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   StateDescription m_stateDescription;
-  bool m_stateDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_customPluginArnHasBeenSet = false;
+  bool m_customPluginStateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_latestRevisionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

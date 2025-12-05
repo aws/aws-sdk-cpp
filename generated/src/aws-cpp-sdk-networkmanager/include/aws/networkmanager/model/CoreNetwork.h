@@ -241,33 +241,33 @@ class CoreNetwork {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
-  bool m_coreNetworkArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   CoreNetworkState m_state{CoreNetworkState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<CoreNetworkSegment> m_segments;
-  bool m_segmentsHasBeenSet = false;
 
   Aws::Vector<CoreNetworkNetworkFunctionGroup> m_networkFunctionGroups;
-  bool m_networkFunctionGroupsHasBeenSet = false;
 
   Aws::Vector<CoreNetworkEdge> m_edges;
-  bool m_edgesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_coreNetworkArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_segmentsHasBeenSet = false;
+  bool m_networkFunctionGroupsHasBeenSet = false;
+  bool m_edgesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

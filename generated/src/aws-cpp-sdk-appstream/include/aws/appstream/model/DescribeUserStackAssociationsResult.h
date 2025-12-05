@@ -85,12 +85,12 @@ class DescribeUserStackAssociationsResult {
   ///@}
  private:
   Aws::Vector<UserStackAssociation> m_userStackAssociations;
-  bool m_userStackAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userStackAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

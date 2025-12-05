@@ -93,12 +93,12 @@ class BatchGetCustomDataIdentifiersResult {
   ///@}
  private:
   Aws::Vector<BatchGetCustomDataIdentifierSummary> m_customDataIdentifiers;
-  bool m_customDataIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notFoundIdentifierIds;
-  bool m_notFoundIdentifierIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customDataIdentifiersHasBeenSet = false;
+  bool m_notFoundIdentifierIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class UpdateAnomalySubscriptionResult {
   ///@}
  private:
   Aws::String m_subscriptionArn;
-  bool m_subscriptionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

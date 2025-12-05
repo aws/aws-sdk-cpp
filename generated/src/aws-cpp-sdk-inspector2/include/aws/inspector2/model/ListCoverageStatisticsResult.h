@@ -102,15 +102,15 @@ class ListCoverageStatisticsResult {
   ///@}
  private:
   Aws::Vector<Counts> m_countsByGroup;
-  bool m_countsByGroupHasBeenSet = false;
 
   long long m_totalCounts{0};
-  bool m_totalCountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_countsByGroupHasBeenSet = false;
+  bool m_totalCountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

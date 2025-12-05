@@ -70,9 +70,9 @@ class TableError {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   ErrorDetail m_errorDetail;
+  bool m_tableNameHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

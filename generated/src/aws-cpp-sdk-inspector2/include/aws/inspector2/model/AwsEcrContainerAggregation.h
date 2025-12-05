@@ -240,30 +240,30 @@ class AwsEcrContainerAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_imageShas;
-  bool m_imageShasHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_repositories;
-  bool m_repositoriesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_architectures;
-  bool m_architecturesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_imageTags;
-  bool m_imageTagsHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   AwsEcrContainerSortBy m_sortBy{AwsEcrContainerSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_lastInUseAt;
-  bool m_lastInUseAtHasBeenSet = false;
 
   Aws::Vector<NumberFilter> m_inUseCount;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_imageShasHasBeenSet = false;
+  bool m_repositoriesHasBeenSet = false;
+  bool m_architecturesHasBeenSet = false;
+  bool m_imageTagsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_lastInUseAtHasBeenSet = false;
   bool m_inUseCountHasBeenSet = false;
 };
 

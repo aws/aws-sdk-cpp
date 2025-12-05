@@ -160,21 +160,21 @@ class CreateMediaInsightsPipelineConfigurationRequest : public ChimeSDKMediaPipe
   ///@}
  private:
   Aws::String m_mediaInsightsPipelineConfigurationName;
-  bool m_mediaInsightsPipelineConfigurationNameHasBeenSet = false;
 
   Aws::String m_resourceAccessRoleArn;
-  bool m_resourceAccessRoleArnHasBeenSet = false;
 
   RealTimeAlertConfiguration m_realTimeAlertConfiguration;
-  bool m_realTimeAlertConfigurationHasBeenSet = false;
 
   Aws::Vector<MediaInsightsPipelineConfigurationElement> m_elements;
-  bool m_elementsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_mediaInsightsPipelineConfigurationNameHasBeenSet = false;
+  bool m_resourceAccessRoleArnHasBeenSet = false;
+  bool m_realTimeAlertConfigurationHasBeenSet = false;
+  bool m_elementsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

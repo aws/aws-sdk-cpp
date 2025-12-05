@@ -106,12 +106,12 @@ class ConfigurationTemplateDeliveryConfigValues {
   ///@}
  private:
   Aws::Vector<Aws::String> m_recordFields;
-  bool m_recordFieldsHasBeenSet = false;
 
   Aws::String m_fieldDelimiter;
-  bool m_fieldDelimiterHasBeenSet = false;
 
   S3DeliveryConfiguration m_s3DeliveryConfiguration;
+  bool m_recordFieldsHasBeenSet = false;
+  bool m_fieldDelimiterHasBeenSet = false;
   bool m_s3DeliveryConfigurationHasBeenSet = false;
 };
 

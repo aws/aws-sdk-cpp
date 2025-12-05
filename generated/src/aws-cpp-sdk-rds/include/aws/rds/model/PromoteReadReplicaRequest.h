@@ -104,12 +104,12 @@ class PromoteReadReplicaRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_preferredBackupWindowHasBeenSet = false;
 };
 

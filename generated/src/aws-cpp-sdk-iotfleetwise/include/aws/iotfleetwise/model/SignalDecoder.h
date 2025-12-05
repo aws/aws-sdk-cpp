@@ -175,24 +175,24 @@ class SignalDecoder {
   ///@}
  private:
   Aws::String m_fullyQualifiedName;
-  bool m_fullyQualifiedNameHasBeenSet = false;
 
   SignalDecoderType m_type{SignalDecoderType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_interfaceId;
-  bool m_interfaceIdHasBeenSet = false;
 
   CanSignal m_canSignal;
-  bool m_canSignalHasBeenSet = false;
 
   ObdSignal m_obdSignal;
-  bool m_obdSignalHasBeenSet = false;
 
   MessageSignal m_messageSignal;
-  bool m_messageSignalHasBeenSet = false;
 
   CustomDecodingSignal m_customDecodingSignal;
+  bool m_fullyQualifiedNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_interfaceIdHasBeenSet = false;
+  bool m_canSignalHasBeenSet = false;
+  bool m_obdSignalHasBeenSet = false;
+  bool m_messageSignalHasBeenSet = false;
   bool m_customDecodingSignalHasBeenSet = false;
 };
 

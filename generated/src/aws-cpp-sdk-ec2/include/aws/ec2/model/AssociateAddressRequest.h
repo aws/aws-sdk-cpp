@@ -165,24 +165,24 @@ class AssociateAddressRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   bool m_allowReassociation{false};
+  bool m_allocationIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
   bool m_allowReassociationHasBeenSet = false;
 };
 

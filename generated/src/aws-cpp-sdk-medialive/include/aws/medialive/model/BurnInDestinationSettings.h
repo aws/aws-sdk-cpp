@@ -380,57 +380,57 @@ class BurnInDestinationSettings {
   ///@}
  private:
   BurnInAlignment m_alignment{BurnInAlignment::NOT_SET};
-  bool m_alignmentHasBeenSet = false;
 
   BurnInBackgroundColor m_backgroundColor{BurnInBackgroundColor::NOT_SET};
-  bool m_backgroundColorHasBeenSet = false;
 
   int m_backgroundOpacity{0};
-  bool m_backgroundOpacityHasBeenSet = false;
 
   InputLocation m_font;
-  bool m_fontHasBeenSet = false;
 
   BurnInFontColor m_fontColor{BurnInFontColor::NOT_SET};
-  bool m_fontColorHasBeenSet = false;
 
   int m_fontOpacity{0};
-  bool m_fontOpacityHasBeenSet = false;
 
   int m_fontResolution{0};
-  bool m_fontResolutionHasBeenSet = false;
 
   Aws::String m_fontSize;
-  bool m_fontSizeHasBeenSet = false;
 
   BurnInOutlineColor m_outlineColor{BurnInOutlineColor::NOT_SET};
-  bool m_outlineColorHasBeenSet = false;
 
   int m_outlineSize{0};
-  bool m_outlineSizeHasBeenSet = false;
 
   BurnInShadowColor m_shadowColor{BurnInShadowColor::NOT_SET};
-  bool m_shadowColorHasBeenSet = false;
 
   int m_shadowOpacity{0};
-  bool m_shadowOpacityHasBeenSet = false;
 
   int m_shadowXOffset{0};
-  bool m_shadowXOffsetHasBeenSet = false;
 
   int m_shadowYOffset{0};
-  bool m_shadowYOffsetHasBeenSet = false;
 
   BurnInTeletextGridControl m_teletextGridControl{BurnInTeletextGridControl::NOT_SET};
-  bool m_teletextGridControlHasBeenSet = false;
 
   int m_xPosition{0};
-  bool m_xPositionHasBeenSet = false;
 
   int m_yPosition{0};
-  bool m_yPositionHasBeenSet = false;
 
   BurnInDestinationSubtitleRows m_subtitleRows{BurnInDestinationSubtitleRows::NOT_SET};
+  bool m_alignmentHasBeenSet = false;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_backgroundOpacityHasBeenSet = false;
+  bool m_fontHasBeenSet = false;
+  bool m_fontColorHasBeenSet = false;
+  bool m_fontOpacityHasBeenSet = false;
+  bool m_fontResolutionHasBeenSet = false;
+  bool m_fontSizeHasBeenSet = false;
+  bool m_outlineColorHasBeenSet = false;
+  bool m_outlineSizeHasBeenSet = false;
+  bool m_shadowColorHasBeenSet = false;
+  bool m_shadowOpacityHasBeenSet = false;
+  bool m_shadowXOffsetHasBeenSet = false;
+  bool m_shadowYOffsetHasBeenSet = false;
+  bool m_teletextGridControlHasBeenSet = false;
+  bool m_xPositionHasBeenSet = false;
+  bool m_yPositionHasBeenSet = false;
   bool m_subtitleRowsHasBeenSet = false;
 };
 

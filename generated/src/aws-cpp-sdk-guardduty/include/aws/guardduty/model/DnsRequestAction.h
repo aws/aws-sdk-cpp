@@ -126,18 +126,18 @@ class DnsRequestAction {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   bool m_blocked{false};
-  bool m_blockedHasBeenSet = false;
 
   Aws::String m_domainWithSuffix;
-  bool m_domainWithSuffixHasBeenSet = false;
 
   Aws::String m_vpcOwnerAccountId;
+  bool m_domainHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_blockedHasBeenSet = false;
+  bool m_domainWithSuffixHasBeenSet = false;
   bool m_vpcOwnerAccountIdHasBeenSet = false;
 };
 

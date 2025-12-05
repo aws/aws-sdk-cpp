@@ -126,18 +126,18 @@ class DescribeSubscribersForNotificationRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Notification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_notificationHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

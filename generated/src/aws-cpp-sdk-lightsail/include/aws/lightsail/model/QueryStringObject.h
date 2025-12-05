@@ -82,9 +82,9 @@ class QueryStringObject {
   ///@}
  private:
   bool m_option{false};
-  bool m_optionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryStringsAllowList;
+  bool m_optionHasBeenSet = false;
   bool m_queryStringsAllowListHasBeenSet = false;
 };
 

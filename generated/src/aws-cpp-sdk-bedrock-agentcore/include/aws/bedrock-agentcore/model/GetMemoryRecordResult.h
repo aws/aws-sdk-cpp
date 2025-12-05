@@ -60,9 +60,9 @@ class GetMemoryRecordResult {
   ///@}
  private:
   MemoryRecord m_memoryRecord;
-  bool m_memoryRecordHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memoryRecordHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

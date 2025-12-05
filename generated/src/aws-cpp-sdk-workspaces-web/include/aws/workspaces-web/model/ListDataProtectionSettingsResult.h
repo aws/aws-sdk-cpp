@@ -85,12 +85,12 @@ class ListDataProtectionSettingsResult {
   ///@}
  private:
   Aws::Vector<DataProtectionSettingsSummary> m_dataProtectionSettings;
-  bool m_dataProtectionSettingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataProtectionSettingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

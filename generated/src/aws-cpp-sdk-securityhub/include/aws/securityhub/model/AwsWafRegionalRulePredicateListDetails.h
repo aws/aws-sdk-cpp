@@ -95,12 +95,12 @@ class AwsWafRegionalRulePredicateListDetails {
   ///@}
  private:
   Aws::String m_dataId;
-  bool m_dataIdHasBeenSet = false;
 
   bool m_negated{false};
-  bool m_negatedHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_dataIdHasBeenSet = false;
+  bool m_negatedHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

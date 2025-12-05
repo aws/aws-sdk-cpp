@@ -502,69 +502,69 @@ class Canary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CanaryCodeOutput m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   CanaryScheduleOutput m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   CanaryRunConfigOutput m_runConfig;
-  bool m_runConfigHasBeenSet = false;
 
   int m_successRetentionPeriodInDays{0};
-  bool m_successRetentionPeriodInDaysHasBeenSet = false;
 
   int m_failureRetentionPeriodInDays{0};
-  bool m_failureRetentionPeriodInDaysHasBeenSet = false;
 
   CanaryStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   CanaryTimeline m_timeline;
-  bool m_timelineHasBeenSet = false;
 
   Aws::String m_artifactS3Location;
-  bool m_artifactS3LocationHasBeenSet = false;
 
   Aws::String m_engineArn;
-  bool m_engineArnHasBeenSet = false;
 
   Aws::String m_runtimeVersion;
-  bool m_runtimeVersionHasBeenSet = false;
 
   VpcConfigOutput m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   VisualReferenceOutput m_visualReference;
-  bool m_visualReferenceHasBeenSet = false;
 
   ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
-  bool m_provisionedResourceCleanupHasBeenSet = false;
 
   Aws::Vector<BrowserConfig> m_browserConfigs;
-  bool m_browserConfigsHasBeenSet = false;
 
   Aws::Vector<EngineConfig> m_engineConfigs;
-  bool m_engineConfigsHasBeenSet = false;
 
   Aws::Vector<VisualReferenceOutput> m_visualReferences;
-  bool m_visualReferencesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ArtifactConfigOutput m_artifactConfig;
-  bool m_artifactConfigHasBeenSet = false;
 
   DryRunConfigOutput m_dryRunConfig;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_runConfigHasBeenSet = false;
+  bool m_successRetentionPeriodInDaysHasBeenSet = false;
+  bool m_failureRetentionPeriodInDaysHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_timelineHasBeenSet = false;
+  bool m_artifactS3LocationHasBeenSet = false;
+  bool m_engineArnHasBeenSet = false;
+  bool m_runtimeVersionHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_visualReferenceHasBeenSet = false;
+  bool m_provisionedResourceCleanupHasBeenSet = false;
+  bool m_browserConfigsHasBeenSet = false;
+  bool m_engineConfigsHasBeenSet = false;
+  bool m_visualReferencesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_artifactConfigHasBeenSet = false;
   bool m_dryRunConfigHasBeenSet = false;
 };
 

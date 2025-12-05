@@ -78,12 +78,12 @@ class DescribeOrganizationConfigurationResult {
   ///@}
  private:
   AutoEnable m_autoEnable;
-  bool m_autoEnableHasBeenSet = false;
 
   bool m_maxAccountLimitReached{false};
-  bool m_maxAccountLimitReachedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoEnableHasBeenSet = false;
+  bool m_maxAccountLimitReachedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

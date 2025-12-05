@@ -195,24 +195,24 @@ class StorageLensGroupFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_matchAnyPrefix;
-  bool m_matchAnyPrefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchAnySuffix;
-  bool m_matchAnySuffixHasBeenSet = false;
 
   Aws::Vector<S3Tag> m_matchAnyTag;
-  bool m_matchAnyTagHasBeenSet = false;
 
   MatchObjectAge m_matchObjectAge;
-  bool m_matchObjectAgeHasBeenSet = false;
 
   MatchObjectSize m_matchObjectSize;
-  bool m_matchObjectSizeHasBeenSet = false;
 
   StorageLensGroupAndOperator m_and;
-  bool m_andHasBeenSet = false;
 
   StorageLensGroupOrOperator m_or;
+  bool m_matchAnyPrefixHasBeenSet = false;
+  bool m_matchAnySuffixHasBeenSet = false;
+  bool m_matchAnyTagHasBeenSet = false;
+  bool m_matchObjectAgeHasBeenSet = false;
+  bool m_matchObjectSizeHasBeenSet = false;
+  bool m_andHasBeenSet = false;
   bool m_orHasBeenSet = false;
 };
 

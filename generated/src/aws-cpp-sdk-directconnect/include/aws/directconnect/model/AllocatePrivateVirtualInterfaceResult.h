@@ -561,87 +561,87 @@ class AllocatePrivateVirtualInterfaceResult {
   ///@}
  private:
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_virtualInterfaceType;
-  bool m_virtualInterfaceTypeHasBeenSet = false;
 
   Aws::String m_virtualInterfaceName;
-  bool m_virtualInterfaceNameHasBeenSet = false;
 
   int m_vlan{0};
-  bool m_vlanHasBeenSet = false;
 
   int m_asn{0};
-  bool m_asnHasBeenSet = false;
 
   long long m_asnLong{0};
-  bool m_asnLongHasBeenSet = false;
 
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   Aws::String m_authKey;
-  bool m_authKeyHasBeenSet = false;
 
   Aws::String m_amazonAddress;
-  bool m_amazonAddressHasBeenSet = false;
 
   Aws::String m_customerAddress;
-  bool m_customerAddressHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   VirtualInterfaceState m_virtualInterfaceState{VirtualInterfaceState::NOT_SET};
-  bool m_virtualInterfaceStateHasBeenSet = false;
 
   Aws::String m_customerRouterConfig;
-  bool m_customerRouterConfigHasBeenSet = false;
 
   int m_mtu{0};
-  bool m_mtuHasBeenSet = false;
 
   bool m_jumboFrameCapable{false};
-  bool m_jumboFrameCapableHasBeenSet = false;
 
   Aws::String m_virtualGatewayId;
-  bool m_virtualGatewayIdHasBeenSet = false;
 
   Aws::String m_directConnectGatewayId;
-  bool m_directConnectGatewayIdHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_routeFilterPrefixes;
-  bool m_routeFilterPrefixesHasBeenSet = false;
 
   Aws::Vector<BGPPeer> m_bgpPeers;
-  bool m_bgpPeersHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_awsDeviceV2;
-  bool m_awsDeviceV2HasBeenSet = false;
 
   Aws::String m_awsLogicalDeviceId;
-  bool m_awsLogicalDeviceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_siteLinkEnabled{false};
-  bool m_siteLinkEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_virtualInterfaceTypeHasBeenSet = false;
+  bool m_virtualInterfaceNameHasBeenSet = false;
+  bool m_vlanHasBeenSet = false;
+  bool m_asnHasBeenSet = false;
+  bool m_asnLongHasBeenSet = false;
+  bool m_amazonSideAsnHasBeenSet = false;
+  bool m_authKeyHasBeenSet = false;
+  bool m_amazonAddressHasBeenSet = false;
+  bool m_customerAddressHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_virtualInterfaceStateHasBeenSet = false;
+  bool m_customerRouterConfigHasBeenSet = false;
+  bool m_mtuHasBeenSet = false;
+  bool m_jumboFrameCapableHasBeenSet = false;
+  bool m_virtualGatewayIdHasBeenSet = false;
+  bool m_directConnectGatewayIdHasBeenSet = false;
+  bool m_routeFilterPrefixesHasBeenSet = false;
+  bool m_bgpPeersHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_awsDeviceV2HasBeenSet = false;
+  bool m_awsLogicalDeviceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_siteLinkEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

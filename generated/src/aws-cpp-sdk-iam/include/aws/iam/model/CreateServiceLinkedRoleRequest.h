@@ -103,12 +103,12 @@ class CreateServiceLinkedRoleRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_aWSServiceName;
-  bool m_aWSServiceNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_customSuffix;
+  bool m_aWSServiceNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_customSuffixHasBeenSet = false;
 };
 

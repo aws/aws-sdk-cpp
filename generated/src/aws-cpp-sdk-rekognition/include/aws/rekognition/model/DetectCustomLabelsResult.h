@@ -67,9 +67,9 @@ class DetectCustomLabelsResult {
   ///@}
  private:
   Aws::Vector<CustomLabel> m_customLabels;
-  bool m_customLabelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customLabelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

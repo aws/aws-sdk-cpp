@@ -70,9 +70,9 @@ class ListCrlsRequest : public RolesAnywhereRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

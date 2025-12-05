@@ -69,12 +69,12 @@ class GetObjectTorrentResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
-  bool m_bodyHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

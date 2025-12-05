@@ -66,9 +66,9 @@ class PutInstanceCommunicationLimitsRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   InstanceCommunicationLimitsConfig m_communicationLimitsConfig;
+  bool m_connectInstanceIdHasBeenSet = false;
   bool m_communicationLimitsConfigHasBeenSet = false;
 };
 

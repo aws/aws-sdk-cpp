@@ -61,9 +61,9 @@ class DeleteServerlessCacheResult {
   ///@}
  private:
   ServerlessCache m_serverlessCache;
-  bool m_serverlessCacheHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serverlessCacheHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

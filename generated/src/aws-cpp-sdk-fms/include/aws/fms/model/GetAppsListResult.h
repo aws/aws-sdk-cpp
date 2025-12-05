@@ -77,12 +77,12 @@ class GetAppsListResult {
   ///@}
  private:
   AppsListData m_appsList;
-  bool m_appsListHasBeenSet = false;
 
   Aws::String m_appsListArn;
-  bool m_appsListArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appsListHasBeenSet = false;
+  bool m_appsListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

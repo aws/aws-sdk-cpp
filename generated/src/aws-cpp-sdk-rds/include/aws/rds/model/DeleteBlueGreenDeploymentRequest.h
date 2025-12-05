@@ -72,9 +72,9 @@ class DeleteBlueGreenDeploymentRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_blueGreenDeploymentIdentifier;
-  bool m_blueGreenDeploymentIdentifierHasBeenSet = false;
 
   bool m_deleteTarget{false};
+  bool m_blueGreenDeploymentIdentifierHasBeenSet = false;
   bool m_deleteTargetHasBeenSet = false;
 };
 

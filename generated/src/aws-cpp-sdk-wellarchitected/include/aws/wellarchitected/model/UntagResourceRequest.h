@@ -76,9 +76,9 @@ class UntagResourceRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadArn;
-  bool m_workloadArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_workloadArnHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

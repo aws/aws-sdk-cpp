@@ -66,9 +66,9 @@ class UplinkConnectionDetails {
   ///@}
  private:
   ConnectionDetails m_ingressAddressAndPort;
-  bool m_ingressAddressAndPortHasBeenSet = false;
 
   RangedConnectionDetails m_agentIpAndPortAddress;
+  bool m_ingressAddressAndPortHasBeenSet = false;
   bool m_agentIpAndPortAddressHasBeenSet = false;
 };
 

@@ -140,18 +140,18 @@ class GetSamplingTargetsResult {
   ///@}
  private:
   Aws::Vector<SamplingTargetDocument> m_samplingTargetDocuments;
-  bool m_samplingTargetDocumentsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRuleModification{};
-  bool m_lastRuleModificationHasBeenSet = false;
 
   Aws::Vector<UnprocessedStatistics> m_unprocessedStatistics;
-  bool m_unprocessedStatisticsHasBeenSet = false;
 
   Aws::Vector<UnprocessedStatistics> m_unprocessedBoostStatistics;
-  bool m_unprocessedBoostStatisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_samplingTargetDocumentsHasBeenSet = false;
+  bool m_lastRuleModificationHasBeenSet = false;
+  bool m_unprocessedStatisticsHasBeenSet = false;
+  bool m_unprocessedBoostStatisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class Time {
   ///@}
  private:
   Aws::String m_timeOfDay;
-  bool m_timeOfDayHasBeenSet = false;
 
   Aws::String m_timezone;
+  bool m_timeOfDayHasBeenSet = false;
   bool m_timezoneHasBeenSet = false;
 };
 

@@ -131,18 +131,18 @@ class GetObjectAttributesRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   ObjectReference m_objectReference;
-  bool m_objectReferenceHasBeenSet = false;
 
   ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
-  bool m_consistencyLevelHasBeenSet = false;
 
   SchemaFacet m_schemaFacet;
-  bool m_schemaFacetHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
+  bool m_directoryArnHasBeenSet = false;
+  bool m_objectReferenceHasBeenSet = false;
+  bool m_consistencyLevelHasBeenSet = false;
+  bool m_schemaFacetHasBeenSet = false;
   bool m_attributeNamesHasBeenSet = false;
 };
 

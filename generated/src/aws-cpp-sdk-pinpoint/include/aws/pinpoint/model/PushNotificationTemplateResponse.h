@@ -332,48 +332,48 @@ class PushNotificationTemplateResponse {
   ///@}
  private:
   AndroidPushNotificationTemplate m_aDM;
-  bool m_aDMHasBeenSet = false;
 
   APNSPushNotificationTemplate m_aPNS;
-  bool m_aPNSHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AndroidPushNotificationTemplate m_baidu;
-  bool m_baiduHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   DefaultPushNotificationTemplate m_default;
-  bool m_defaultHasBeenSet = false;
 
   Aws::String m_defaultSubstitutions;
-  bool m_defaultSubstitutionsHasBeenSet = false;
 
   AndroidPushNotificationTemplate m_gCM;
-  bool m_gCMHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_recommenderId;
-  bool m_recommenderIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_aDMHasBeenSet = false;
+  bool m_aPNSHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_baiduHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_defaultHasBeenSet = false;
+  bool m_defaultSubstitutionsHasBeenSet = false;
+  bool m_gCMHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_recommenderIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

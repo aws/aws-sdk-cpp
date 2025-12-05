@@ -113,18 +113,18 @@ class DescribeResourcePolicyResult {
   ///@}
  private:
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_policyRevisionId;
-  bool m_policyRevisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcePolicyHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_policyRevisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

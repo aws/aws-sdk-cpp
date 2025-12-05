@@ -69,9 +69,9 @@ class UpdateGitHubIntegrationDetail {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_installationId;
+  bool m_codeHasBeenSet = false;
   bool m_installationIdHasBeenSet = false;
 };
 

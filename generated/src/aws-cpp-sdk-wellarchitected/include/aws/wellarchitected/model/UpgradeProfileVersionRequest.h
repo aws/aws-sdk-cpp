@@ -96,15 +96,15 @@ class UpgradeProfileVersionRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_milestoneName;
-  bool m_milestoneNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_profileArnHasBeenSet = false;
+  bool m_milestoneNameHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

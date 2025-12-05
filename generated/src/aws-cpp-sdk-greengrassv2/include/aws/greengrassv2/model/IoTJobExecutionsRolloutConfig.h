@@ -69,9 +69,9 @@ class IoTJobExecutionsRolloutConfig {
   ///@}
  private:
   IoTJobExponentialRolloutRate m_exponentialRate;
-  bool m_exponentialRateHasBeenSet = false;
 
   int m_maximumPerMinute{0};
+  bool m_exponentialRateHasBeenSet = false;
   bool m_maximumPerMinuteHasBeenSet = false;
 };
 

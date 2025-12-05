@@ -58,9 +58,9 @@ class UpdateEmailChannelResult {
   ///@}
  private:
   EmailChannelResponse m_emailChannelResponse;
-  bool m_emailChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emailChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

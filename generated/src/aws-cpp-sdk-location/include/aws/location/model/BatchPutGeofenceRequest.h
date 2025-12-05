@@ -73,9 +73,9 @@ class BatchPutGeofenceRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::Vector<BatchPutGeofenceRequestEntry> m_entries;
+  bool m_collectionNameHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

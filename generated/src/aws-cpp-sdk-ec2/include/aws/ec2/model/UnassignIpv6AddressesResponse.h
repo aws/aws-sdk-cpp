@@ -107,15 +107,15 @@ class UnassignIpv6AddressesResponse {
   ///@}
  private:
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_unassignedIpv6Addresses;
-  bool m_unassignedIpv6AddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_unassignedIpv6Prefixes;
-  bool m_unassignedIpv6PrefixesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_unassignedIpv6AddressesHasBeenSet = false;
+  bool m_unassignedIpv6PrefixesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

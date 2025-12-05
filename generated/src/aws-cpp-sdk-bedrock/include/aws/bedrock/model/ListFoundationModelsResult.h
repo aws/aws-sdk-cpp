@@ -67,9 +67,9 @@ class ListFoundationModelsResult {
   ///@}
  private:
   Aws::Vector<FoundationModelSummary> m_modelSummaries;
-  bool m_modelSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class ModifyDBProxyTargetGroupResult {
   ///@}
  private:
   DBProxyTargetGroup m_dBProxyTargetGroup;
-  bool m_dBProxyTargetGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBProxyTargetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

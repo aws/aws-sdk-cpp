@@ -78,9 +78,9 @@ class ThemeValue {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<ThemeValues> m_children;
+  bool m_valueHasBeenSet = false;
   bool m_childrenHasBeenSet = false;
 };
 

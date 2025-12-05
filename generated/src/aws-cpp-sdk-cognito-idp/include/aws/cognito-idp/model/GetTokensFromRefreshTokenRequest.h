@@ -158,18 +158,18 @@ class GetTokensFromRefreshTokenRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   Aws::String m_deviceKey;
-  bool m_deviceKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_refreshTokenHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
+  bool m_deviceKeyHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

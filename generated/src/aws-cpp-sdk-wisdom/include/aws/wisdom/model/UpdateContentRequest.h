@@ -194,27 +194,27 @@ class UpdateContentRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_overrideLinkOutUri;
-  bool m_overrideLinkOutUriHasBeenSet = false;
 
   bool m_removeOverrideLinkOutUri{false};
-  bool m_removeOverrideLinkOutUriHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_uploadId;
+  bool m_contentIdHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_overrideLinkOutUriHasBeenSet = false;
+  bool m_removeOverrideLinkOutUriHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_uploadIdHasBeenSet = false;
 };
 

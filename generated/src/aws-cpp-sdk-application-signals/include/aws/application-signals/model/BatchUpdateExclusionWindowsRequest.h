@@ -105,12 +105,12 @@ class BatchUpdateExclusionWindowsRequest : public ApplicationSignalsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sloIds;
-  bool m_sloIdsHasBeenSet = false;
 
   Aws::Vector<ExclusionWindow> m_addExclusionWindows;
-  bool m_addExclusionWindowsHasBeenSet = false;
 
   Aws::Vector<ExclusionWindow> m_removeExclusionWindows;
+  bool m_sloIdsHasBeenSet = false;
+  bool m_addExclusionWindowsHasBeenSet = false;
   bool m_removeExclusionWindowsHasBeenSet = false;
 };
 

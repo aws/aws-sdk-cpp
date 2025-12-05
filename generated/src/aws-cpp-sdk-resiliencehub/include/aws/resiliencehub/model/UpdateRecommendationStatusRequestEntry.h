@@ -142,21 +142,21 @@ class UpdateRecommendationStatusRequestEntry {
   ///@}
  private:
   Aws::String m_appComponentId;
-  bool m_appComponentIdHasBeenSet = false;
 
   Aws::String m_entryId;
-  bool m_entryIdHasBeenSet = false;
 
   ExcludeRecommendationReason m_excludeReason{ExcludeRecommendationReason::NOT_SET};
-  bool m_excludeReasonHasBeenSet = false;
 
   bool m_excluded{false};
-  bool m_excludedHasBeenSet = false;
 
   UpdateRecommendationStatusItem m_item;
-  bool m_itemHasBeenSet = false;
 
   Aws::String m_referenceId;
+  bool m_appComponentIdHasBeenSet = false;
+  bool m_entryIdHasBeenSet = false;
+  bool m_excludeReasonHasBeenSet = false;
+  bool m_excludedHasBeenSet = false;
+  bool m_itemHasBeenSet = false;
   bool m_referenceIdHasBeenSet = false;
 };
 

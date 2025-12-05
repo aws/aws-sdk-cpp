@@ -94,12 +94,12 @@ class MediaPackageOutputDestinationSettings {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_channelGroup;
-  bool m_channelGroupHasBeenSet = false;
 
   Aws::String m_channelName;
+  bool m_channelIdHasBeenSet = false;
+  bool m_channelGroupHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
 };
 

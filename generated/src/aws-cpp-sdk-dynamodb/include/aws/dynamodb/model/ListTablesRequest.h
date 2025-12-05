@@ -72,9 +72,9 @@ class ListTablesRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_exclusiveStartTableName;
-  bool m_exclusiveStartTableNameHasBeenSet = false;
 
   int m_limit{0};
+  bool m_exclusiveStartTableNameHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

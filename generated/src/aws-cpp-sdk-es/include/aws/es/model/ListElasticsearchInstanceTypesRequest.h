@@ -114,15 +114,15 @@ class ListElasticsearchInstanceTypesRequest : public ElasticsearchServiceRequest
   ///@}
  private:
   Aws::String m_elasticsearchVersion;
-  bool m_elasticsearchVersionHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_elasticsearchVersionHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -109,18 +109,18 @@ class CreateFHIRDatastoreResult {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_datastoreArn;
-  bool m_datastoreArnHasBeenSet = false;
 
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
-  bool m_datastoreStatusHasBeenSet = false;
 
   Aws::String m_datastoreEndpoint;
-  bool m_datastoreEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_datastoreArnHasBeenSet = false;
+  bool m_datastoreStatusHasBeenSet = false;
+  bool m_datastoreEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

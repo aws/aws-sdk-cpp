@@ -299,42 +299,42 @@ class Action {
   ///@}
  private:
   SetVariableAction m_setVariable;
-  bool m_setVariableHasBeenSet = false;
 
   SNSTopicPublishAction m_sns;
-  bool m_snsHasBeenSet = false;
 
   IotTopicPublishAction m_iotTopicPublish;
-  bool m_iotTopicPublishHasBeenSet = false;
 
   SetTimerAction m_setTimer;
-  bool m_setTimerHasBeenSet = false;
 
   ClearTimerAction m_clearTimer;
-  bool m_clearTimerHasBeenSet = false;
 
   ResetTimerAction m_resetTimer;
-  bool m_resetTimerHasBeenSet = false;
 
   LambdaAction m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   IotEventsAction m_iotEvents;
-  bool m_iotEventsHasBeenSet = false;
 
   SqsAction m_sqs;
-  bool m_sqsHasBeenSet = false;
 
   FirehoseAction m_firehose;
-  bool m_firehoseHasBeenSet = false;
 
   DynamoDBAction m_dynamoDB;
-  bool m_dynamoDBHasBeenSet = false;
 
   DynamoDBv2Action m_dynamoDBv2;
-  bool m_dynamoDBv2HasBeenSet = false;
 
   IotSiteWiseAction m_iotSiteWise;
+  bool m_setVariableHasBeenSet = false;
+  bool m_snsHasBeenSet = false;
+  bool m_iotTopicPublishHasBeenSet = false;
+  bool m_setTimerHasBeenSet = false;
+  bool m_clearTimerHasBeenSet = false;
+  bool m_resetTimerHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_iotEventsHasBeenSet = false;
+  bool m_sqsHasBeenSet = false;
+  bool m_firehoseHasBeenSet = false;
+  bool m_dynamoDBHasBeenSet = false;
+  bool m_dynamoDBv2HasBeenSet = false;
   bool m_iotSiteWiseHasBeenSet = false;
 };
 

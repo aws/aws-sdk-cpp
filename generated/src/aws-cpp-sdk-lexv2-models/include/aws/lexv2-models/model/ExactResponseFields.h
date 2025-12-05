@@ -71,9 +71,9 @@ class ExactResponseFields {
   ///@}
  private:
   Aws::String m_questionField;
-  bool m_questionFieldHasBeenSet = false;
 
   Aws::String m_answerField;
+  bool m_questionFieldHasBeenSet = false;
   bool m_answerFieldHasBeenSet = false;
 };
 

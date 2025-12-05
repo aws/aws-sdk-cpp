@@ -123,15 +123,15 @@ class FunctionConfigurationEnvironment {
   ///@}
  private:
   bool m_accessSysfs{false};
-  bool m_accessSysfsHasBeenSet = false;
 
   FunctionExecutionConfig m_execution;
-  bool m_executionHasBeenSet = false;
 
   Aws::Vector<ResourceAccessPolicy> m_resourceAccessPolicies;
-  bool m_resourceAccessPoliciesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_variables;
+  bool m_accessSysfsHasBeenSet = false;
+  bool m_executionHasBeenSet = false;
+  bool m_resourceAccessPoliciesHasBeenSet = false;
   bool m_variablesHasBeenSet = false;
 };
 

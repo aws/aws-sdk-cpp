@@ -129,18 +129,18 @@ class ProjectBuildBatchConfig {
   ///@}
  private:
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   bool m_combineArtifacts{false};
-  bool m_combineArtifactsHasBeenSet = false;
 
   BatchRestrictions m_restrictions;
-  bool m_restrictionsHasBeenSet = false;
 
   int m_timeoutInMins{0};
-  bool m_timeoutInMinsHasBeenSet = false;
 
   BatchReportModeType m_batchReportMode{BatchReportModeType::NOT_SET};
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_combineArtifactsHasBeenSet = false;
+  bool m_restrictionsHasBeenSet = false;
+  bool m_timeoutInMinsHasBeenSet = false;
   bool m_batchReportModeHasBeenSet = false;
 };
 

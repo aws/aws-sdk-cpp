@@ -356,51 +356,51 @@ class Address {
   ///@}
  private:
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Country m_country;
-  bool m_countryHasBeenSet = false;
 
   Region m_region;
-  bool m_regionHasBeenSet = false;
 
   SubRegion m_subRegion;
-  bool m_subRegionHasBeenSet = false;
 
   Aws::String m_locality;
-  bool m_localityHasBeenSet = false;
 
   Aws::String m_district;
-  bool m_districtHasBeenSet = false;
 
   Aws::String m_subDistrict;
-  bool m_subDistrictHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_block;
-  bool m_blockHasBeenSet = false;
 
   Aws::String m_subBlock;
-  bool m_subBlockHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_intersection;
-  bool m_intersectionHasBeenSet = false;
 
   Aws::String m_street;
-  bool m_streetHasBeenSet = false;
 
   Aws::Vector<StreetComponents> m_streetComponents;
-  bool m_streetComponentsHasBeenSet = false;
 
   Aws::String m_addressNumber;
-  bool m_addressNumberHasBeenSet = false;
 
   Aws::String m_building;
-  bool m_buildingHasBeenSet = false;
 
   Aws::Vector<SecondaryAddressComponent> m_secondaryAddressComponents;
+  bool m_labelHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_subRegionHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_districtHasBeenSet = false;
+  bool m_subDistrictHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_blockHasBeenSet = false;
+  bool m_subBlockHasBeenSet = false;
+  bool m_intersectionHasBeenSet = false;
+  bool m_streetHasBeenSet = false;
+  bool m_streetComponentsHasBeenSet = false;
+  bool m_addressNumberHasBeenSet = false;
+  bool m_buildingHasBeenSet = false;
   bool m_secondaryAddressComponentsHasBeenSet = false;
 };
 

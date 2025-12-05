@@ -120,15 +120,15 @@ class DescribeUserRequest : public DirectoryServiceDataRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_otherAttributes;
-  bool m_otherAttributesHasBeenSet = false;
 
   Aws::String m_realm;
-  bool m_realmHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_otherAttributesHasBeenSet = false;
+  bool m_realmHasBeenSet = false;
   bool m_sAMAccountNameHasBeenSet = false;
 };
 

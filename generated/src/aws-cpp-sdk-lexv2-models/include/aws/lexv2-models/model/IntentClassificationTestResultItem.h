@@ -86,12 +86,12 @@ class IntentClassificationTestResultItem {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   bool m_multiTurnConversation{false};
-  bool m_multiTurnConversationHasBeenSet = false;
 
   IntentClassificationTestResultItemCounts m_resultCounts;
+  bool m_intentNameHasBeenSet = false;
+  bool m_multiTurnConversationHasBeenSet = false;
   bool m_resultCountsHasBeenSet = false;
 };
 

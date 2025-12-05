@@ -67,9 +67,9 @@ class BatchGetMetricsResult {
   ///@}
  private:
   Aws::Vector<MetricQueryResult> m_metricQueryResults;
-  bool m_metricQueryResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricQueryResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

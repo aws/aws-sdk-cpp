@@ -64,9 +64,9 @@ class UpdateSolFunctionPackageRequest : public TnbRequest {
   ///@}
  private:
   OperationalState m_operationalState{OperationalState::NOT_SET};
-  bool m_operationalStateHasBeenSet = false;
 
   Aws::String m_vnfPkgId;
+  bool m_operationalStateHasBeenSet = false;
   bool m_vnfPkgIdHasBeenSet = false;
 };
 

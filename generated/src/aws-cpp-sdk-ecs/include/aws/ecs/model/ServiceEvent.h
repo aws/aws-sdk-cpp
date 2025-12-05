@@ -88,12 +88,12 @@ class ServiceEvent {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_idHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

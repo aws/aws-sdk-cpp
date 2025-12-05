@@ -150,18 +150,18 @@ class MetricsSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   FindingMetricsValuePerSeverity m_openFindings;
-  bool m_openFindingsHasBeenSet = false;
 
   Aws::Vector<CategoryWithFindingNum> m_categoriesWithMostFindings;
-  bool m_categoriesWithMostFindingsHasBeenSet = false;
 
   Aws::Vector<ScanNameWithFindingNum> m_scansWithMostOpenFindings;
-  bool m_scansWithMostOpenFindingsHasBeenSet = false;
 
   Aws::Vector<ScanNameWithFindingNum> m_scansWithMostOpenCriticalFindings;
+  bool m_dateHasBeenSet = false;
+  bool m_openFindingsHasBeenSet = false;
+  bool m_categoriesWithMostFindingsHasBeenSet = false;
+  bool m_scansWithMostOpenFindingsHasBeenSet = false;
   bool m_scansWithMostOpenCriticalFindingsHasBeenSet = false;
 };
 

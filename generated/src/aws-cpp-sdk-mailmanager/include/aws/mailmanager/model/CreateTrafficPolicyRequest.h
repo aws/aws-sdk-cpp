@@ -157,21 +157,21 @@ class CreateTrafficPolicyRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_trafficPolicyName;
-  bool m_trafficPolicyNameHasBeenSet = false;
 
   Aws::Vector<PolicyStatement> m_policyStatements;
-  bool m_policyStatementsHasBeenSet = false;
 
   AcceptAction m_defaultAction{AcceptAction::NOT_SET};
-  bool m_defaultActionHasBeenSet = false;
 
   int m_maxMessageSizeBytes{0};
-  bool m_maxMessageSizeBytesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_trafficPolicyNameHasBeenSet = false;
+  bool m_policyStatementsHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
+  bool m_maxMessageSizeBytesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

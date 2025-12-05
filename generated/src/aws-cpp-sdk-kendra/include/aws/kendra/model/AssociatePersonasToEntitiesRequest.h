@@ -98,12 +98,12 @@ class AssociatePersonasToEntitiesRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::Vector<EntityPersonaConfiguration> m_personas;
+  bool m_idHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
   bool m_personasHasBeenSet = false;
 };
 

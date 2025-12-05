@@ -69,9 +69,9 @@ class SessionStickinessConfig {
   ///@}
  private:
   int m_idleTTL{0};
-  bool m_idleTTLHasBeenSet = false;
 
   int m_maximumTTL{0};
+  bool m_idleTTLHasBeenSet = false;
   bool m_maximumTTLHasBeenSet = false;
 };
 

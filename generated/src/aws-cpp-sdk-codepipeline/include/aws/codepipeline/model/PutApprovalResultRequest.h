@@ -134,18 +134,18 @@ class PutApprovalResultRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   ApprovalResult m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_token;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_tokenHasBeenSet = false;
 };
 

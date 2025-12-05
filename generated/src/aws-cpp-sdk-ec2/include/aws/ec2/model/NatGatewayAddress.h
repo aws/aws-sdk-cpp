@@ -218,33 +218,33 @@ class NatGatewayAddress {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_privateIp;
-  bool m_privateIpHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   bool m_isPrimary{false};
-  bool m_isPrimaryHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   NatGatewayAddressStatus m_status{NatGatewayAddressStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_privateIpHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_isPrimaryHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

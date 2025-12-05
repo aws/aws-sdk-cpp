@@ -94,12 +94,12 @@ class PropertyMappingConfiguration {
   ///@}
  private:
   bool m_matchByPropertyName{false};
-  bool m_matchByPropertyNameHasBeenSet = false;
 
   bool m_createMissingProperty{false};
-  bool m_createMissingPropertyHasBeenSet = false;
 
   Aws::Vector<PropertyMapping> m_overrides;
+  bool m_matchByPropertyNameHasBeenSet = false;
+  bool m_createMissingPropertyHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

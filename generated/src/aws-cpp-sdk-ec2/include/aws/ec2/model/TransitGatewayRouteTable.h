@@ -166,24 +166,24 @@ class TransitGatewayRouteTable {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   TransitGatewayRouteTableState m_state{TransitGatewayRouteTableState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   bool m_defaultAssociationRouteTable{false};
-  bool m_defaultAssociationRouteTableHasBeenSet = false;
 
   bool m_defaultPropagationRouteTable{false};
-  bool m_defaultPropagationRouteTableHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_defaultAssociationRouteTableHasBeenSet = false;
+  bool m_defaultPropagationRouteTableHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

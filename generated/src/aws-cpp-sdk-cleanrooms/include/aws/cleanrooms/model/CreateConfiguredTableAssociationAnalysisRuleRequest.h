@@ -105,15 +105,15 @@ class CreateConfiguredTableAssociationAnalysisRuleRequest : public CleanRoomsReq
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_configuredTableAssociationIdentifier;
-  bool m_configuredTableAssociationIdentifierHasBeenSet = false;
 
   ConfiguredTableAssociationAnalysisRuleType m_analysisRuleType{ConfiguredTableAssociationAnalysisRuleType::NOT_SET};
-  bool m_analysisRuleTypeHasBeenSet = false;
 
   ConfiguredTableAssociationAnalysisRulePolicy m_analysisRulePolicy;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_configuredTableAssociationIdentifierHasBeenSet = false;
+  bool m_analysisRuleTypeHasBeenSet = false;
   bool m_analysisRulePolicyHasBeenSet = false;
 };
 

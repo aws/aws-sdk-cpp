@@ -115,15 +115,15 @@ class AssociateTransitGatewayMulticastDomainRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayMulticastDomainId;
-  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

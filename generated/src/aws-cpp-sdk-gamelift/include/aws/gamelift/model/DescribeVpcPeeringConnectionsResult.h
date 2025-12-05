@@ -67,9 +67,9 @@ class DescribeVpcPeeringConnectionsResult {
   ///@}
  private:
   Aws::Vector<VpcPeeringConnection> m_vpcPeeringConnections;
-  bool m_vpcPeeringConnectionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcPeeringConnectionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class CreateShareRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_principalSubscriber;
-  bool m_principalSubscriberHasBeenSet = false;
 
   Aws::String m_shareName;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_principalSubscriberHasBeenSet = false;
   bool m_shareNameHasBeenSet = false;
 };
 

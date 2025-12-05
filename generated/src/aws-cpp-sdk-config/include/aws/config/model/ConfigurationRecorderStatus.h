@@ -214,33 +214,33 @@ class ConfigurationRecorderStatus {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStartTime{};
-  bool m_lastStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStopTime{};
-  bool m_lastStopTimeHasBeenSet = false;
 
   bool m_recording{false};
-  bool m_recordingHasBeenSet = false;
 
   RecorderStatus m_lastStatus{RecorderStatus::NOT_SET};
-  bool m_lastStatusHasBeenSet = false;
 
   Aws::String m_lastErrorCode;
-  bool m_lastErrorCodeHasBeenSet = false;
 
   Aws::String m_lastErrorMessage;
-  bool m_lastErrorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChangeTime{};
-  bool m_lastStatusChangeTimeHasBeenSet = false;
 
   Aws::String m_servicePrincipal;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_lastStartTimeHasBeenSet = false;
+  bool m_lastStopTimeHasBeenSet = false;
+  bool m_recordingHasBeenSet = false;
+  bool m_lastStatusHasBeenSet = false;
+  bool m_lastErrorCodeHasBeenSet = false;
+  bool m_lastErrorMessageHasBeenSet = false;
+  bool m_lastStatusChangeTimeHasBeenSet = false;
   bool m_servicePrincipalHasBeenSet = false;
 };
 

@@ -219,27 +219,27 @@ class GetEventPredictionRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::Vector<Entity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::String m_eventTimestamp;
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_eventVariables;
-  bool m_eventVariablesHasBeenSet = false;
 
   Aws::Map<Aws::String, ModelEndpointDataBlob> m_externalModelEndpointDataBlobs;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionIdHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_entitiesHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_eventVariablesHasBeenSet = false;
   bool m_externalModelEndpointDataBlobsHasBeenSet = false;
 };
 

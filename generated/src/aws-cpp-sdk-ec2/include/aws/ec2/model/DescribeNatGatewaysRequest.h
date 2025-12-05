@@ -154,18 +154,18 @@ class DescribeNatGatewaysRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filter;
-  bool m_filterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_natGatewayIds;
-  bool m_natGatewayIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_dryRunHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_natGatewayIdsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

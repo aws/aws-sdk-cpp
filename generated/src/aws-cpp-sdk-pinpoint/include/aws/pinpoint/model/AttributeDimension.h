@@ -88,9 +88,9 @@ class AttributeDimension {
   ///@}
  private:
   AttributeType m_attributeType{AttributeType::NOT_SET};
-  bool m_attributeTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_attributeTypeHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

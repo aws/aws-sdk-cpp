@@ -145,24 +145,24 @@ class UpdatePipeResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RequestedPipeState m_desiredState{RequestedPipeState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   PipeState m_currentState{PipeState::NOT_SET};
-  bool m_currentStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_currentStateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

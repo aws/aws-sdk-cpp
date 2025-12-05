@@ -86,12 +86,12 @@ class DescribeAccountAttributesResult {
   ///@}
  private:
   Aws::Vector<AccountAttribute> m_accountAttributes;
-  bool m_accountAttributesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountAttributesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

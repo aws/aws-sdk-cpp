@@ -57,9 +57,9 @@ class ResetCacheResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class UpdateApplicationRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   int m_currentApplicationVersion{0};
-  bool m_currentApplicationVersionHasBeenSet = false;
 
   Definition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_currentApplicationVersionHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

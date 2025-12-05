@@ -368,57 +368,57 @@ class CreateBotVersionResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Intent> m_intents;
-  bool m_intentsHasBeenSet = false;
 
   Prompt m_clarificationPrompt;
-  bool m_clarificationPromptHasBeenSet = false;
 
   Statement m_abortStatement;
-  bool m_abortStatementHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
   Aws::String m_voiceId;
-  bool m_voiceIdHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Locale m_locale{Locale::NOT_SET};
-  bool m_localeHasBeenSet = false;
 
   bool m_childDirected{false};
-  bool m_childDirectedHasBeenSet = false;
 
   bool m_enableModelImprovements{false};
-  bool m_enableModelImprovementsHasBeenSet = false;
 
   bool m_detectSentiment{false};
-  bool m_detectSentimentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_intentsHasBeenSet = false;
+  bool m_clarificationPromptHasBeenSet = false;
+  bool m_abortStatementHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+  bool m_voiceIdHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_childDirectedHasBeenSet = false;
+  bool m_enableModelImprovementsHasBeenSet = false;
+  bool m_detectSentimentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

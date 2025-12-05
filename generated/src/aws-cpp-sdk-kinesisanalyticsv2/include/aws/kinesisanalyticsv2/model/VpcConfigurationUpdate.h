@@ -104,12 +104,12 @@ class VpcConfigurationUpdate {
   ///@}
  private:
   Aws::String m_vpcConfigurationId;
-  bool m_vpcConfigurationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIdUpdates;
-  bool m_subnetIdUpdatesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIdUpdates;
+  bool m_vpcConfigurationIdHasBeenSet = false;
+  bool m_subnetIdUpdatesHasBeenSet = false;
   bool m_securityGroupIdUpdatesHasBeenSet = false;
 };
 

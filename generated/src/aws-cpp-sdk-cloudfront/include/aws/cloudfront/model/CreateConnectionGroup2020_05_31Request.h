@@ -119,18 +119,18 @@ class CreateConnectionGroup2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_ipv6Enabled{false};
-  bool m_ipv6EnabledHasBeenSet = false;
 
   Tags m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_anycastIpListId;
-  bool m_anycastIpListIdHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_nameHasBeenSet = false;
+  bool m_ipv6EnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_anycastIpListIdHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

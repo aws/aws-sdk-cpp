@@ -65,9 +65,9 @@ class GetDevicePositionRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::String m_deviceId;
+  bool m_trackerNameHasBeenSet = false;
   bool m_deviceIdHasBeenSet = false;
 };
 

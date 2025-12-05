@@ -158,21 +158,21 @@ class ChangeSummary {
   ///@}
  private:
   Aws::String m_changeType;
-  bool m_changeTypeHasBeenSet = false;
 
   Entity m_entity;
-  bool m_entityHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::Utils::Document m_detailsDocument;
-  bool m_detailsDocumentHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errorDetailList;
-  bool m_errorDetailListHasBeenSet = false;
 
   Aws::String m_changeName;
+  bool m_changeTypeHasBeenSet = false;
+  bool m_entityHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_detailsDocumentHasBeenSet = false;
+  bool m_errorDetailListHasBeenSet = false;
   bool m_changeNameHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ImageTagMutabilityExclusionFilter {
   ///@}
  private:
   ImageTagMutabilityExclusionFilterType m_filterType{ImageTagMutabilityExclusionFilterType::NOT_SET};
-  bool m_filterTypeHasBeenSet = false;
 
   Aws::String m_filter;
+  bool m_filterTypeHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

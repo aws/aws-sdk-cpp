@@ -58,9 +58,9 @@ class GetCampaignActivitiesResult {
   ///@}
  private:
   ActivitiesResponse m_activitiesResponse;
-  bool m_activitiesResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_activitiesResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

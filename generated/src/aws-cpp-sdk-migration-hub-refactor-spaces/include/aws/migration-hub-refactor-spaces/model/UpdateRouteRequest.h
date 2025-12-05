@@ -101,15 +101,15 @@ class UpdateRouteRequest : public MigrationHubRefactorSpacesRequest {
   ///@}
  private:
   RouteActivationState m_activationState{RouteActivationState::NOT_SET};
-  bool m_activationStateHasBeenSet = false;
 
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_routeIdentifier;
+  bool m_activationStateHasBeenSet = false;
+  bool m_applicationIdentifierHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
   bool m_routeIdentifierHasBeenSet = false;
 };
 

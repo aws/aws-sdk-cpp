@@ -184,30 +184,30 @@ class CreateSchemaResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_versionCreatedDate{};
-  bool m_versionCreatedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_versionCreatedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

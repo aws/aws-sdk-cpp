@@ -280,42 +280,42 @@ class UpdateManagedThingRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_credentialLockerId;
-  bool m_credentialLockerIdHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_brand;
-  bool m_brandHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CapabilityReport m_capabilityReport;
-  bool m_capabilityReportHasBeenSet = false;
 
   Aws::Vector<CapabilitySchemaItem> m_capabilitySchemas;
-  bool m_capabilitySchemasHasBeenSet = false;
 
   Aws::String m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   HubNetworkMode m_hubNetworkMode{HubNetworkMode::NOT_SET};
-  bool m_hubNetworkModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metaData;
+  bool m_identifierHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_credentialLockerIdHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_brandHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_capabilityReportHasBeenSet = false;
+  bool m_capabilitySchemasHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
+  bool m_hubNetworkModeHasBeenSet = false;
   bool m_metaDataHasBeenSet = false;
 };
 

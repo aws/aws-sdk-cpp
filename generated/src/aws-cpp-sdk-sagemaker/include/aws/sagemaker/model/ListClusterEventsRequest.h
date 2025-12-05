@@ -218,33 +218,33 @@ class ListClusterEventsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTimeAfter{};
-  bool m_eventTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTimeBefore{};
-  bool m_eventTimeBeforeHasBeenSet = false;
 
   EventSortBy m_sortBy{EventSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   ClusterEventResourceType m_resourceType{ClusterEventResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_instanceGroupNameHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_eventTimeAfterHasBeenSet = false;
+  bool m_eventTimeBeforeHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

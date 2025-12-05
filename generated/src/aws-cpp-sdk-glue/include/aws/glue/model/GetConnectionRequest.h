@@ -106,15 +106,15 @@ class GetConnectionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_hidePassword{false};
-  bool m_hidePasswordHasBeenSet = false;
 
   ComputeEnvironment m_applyOverrideForComputeEnvironment{ComputeEnvironment::NOT_SET};
+  bool m_catalogIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_hidePasswordHasBeenSet = false;
   bool m_applyOverrideForComputeEnvironmentHasBeenSet = false;
 };
 

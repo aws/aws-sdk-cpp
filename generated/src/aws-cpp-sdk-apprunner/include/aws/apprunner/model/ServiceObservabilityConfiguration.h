@@ -78,9 +78,9 @@ class ServiceObservabilityConfiguration {
   ///@}
  private:
   bool m_observabilityEnabled{false};
-  bool m_observabilityEnabledHasBeenSet = false;
 
   Aws::String m_observabilityConfigurationArn;
+  bool m_observabilityEnabledHasBeenSet = false;
   bool m_observabilityConfigurationArnHasBeenSet = false;
 };
 

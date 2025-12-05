@@ -87,12 +87,12 @@ class ListExplainabilityExportsResult {
   ///@}
  private:
   Aws::Vector<ExplainabilityExportSummary> m_explainabilityExports;
-  bool m_explainabilityExportsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_explainabilityExportsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

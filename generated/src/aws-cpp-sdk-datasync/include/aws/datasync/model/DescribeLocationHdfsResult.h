@@ -264,42 +264,42 @@ class DescribeLocationHdfsResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Aws::Vector<HdfsNameNode> m_nameNodes;
-  bool m_nameNodesHasBeenSet = false;
 
   int m_blockSize{0};
-  bool m_blockSizeHasBeenSet = false;
 
   int m_replicationFactor{0};
-  bool m_replicationFactorHasBeenSet = false;
 
   Aws::String m_kmsKeyProviderUri;
-  bool m_kmsKeyProviderUriHasBeenSet = false;
 
   QopConfiguration m_qopConfiguration;
-  bool m_qopConfigurationHasBeenSet = false;
 
   HdfsAuthenticationType m_authenticationType{HdfsAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   Aws::String m_simpleUser;
-  bool m_simpleUserHasBeenSet = false;
 
   Aws::String m_kerberosPrincipal;
-  bool m_kerberosPrincipalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_nameNodesHasBeenSet = false;
+  bool m_blockSizeHasBeenSet = false;
+  bool m_replicationFactorHasBeenSet = false;
+  bool m_kmsKeyProviderUriHasBeenSet = false;
+  bool m_qopConfigurationHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_simpleUserHasBeenSet = false;
+  bool m_kerberosPrincipalHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

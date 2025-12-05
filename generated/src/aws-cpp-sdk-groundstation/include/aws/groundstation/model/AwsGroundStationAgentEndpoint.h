@@ -124,18 +124,18 @@ class AwsGroundStationAgentEndpoint {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConnectionDetails m_egressAddress;
-  bool m_egressAddressHasBeenSet = false;
 
   RangedConnectionDetails m_ingressAddress;
-  bool m_ingressAddressHasBeenSet = false;
 
   AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-  bool m_agentStatusHasBeenSet = false;
 
   AuditResults m_auditResults{AuditResults::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_egressAddressHasBeenSet = false;
+  bool m_ingressAddressHasBeenSet = false;
+  bool m_agentStatusHasBeenSet = false;
   bool m_auditResultsHasBeenSet = false;
 };
 

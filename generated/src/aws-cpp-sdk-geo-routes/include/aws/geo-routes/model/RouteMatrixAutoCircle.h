@@ -62,9 +62,9 @@ class RouteMatrixAutoCircle {
   ///@}
  private:
   long long m_margin{0};
-  bool m_marginHasBeenSet = false;
 
   long long m_maxRadius{0};
+  bool m_marginHasBeenSet = false;
   bool m_maxRadiusHasBeenSet = false;
 };
 

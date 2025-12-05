@@ -61,9 +61,9 @@ class BorrowConfiguration {
   ///@}
  private:
   bool m_allowEarlyCheckIn{false};
-  bool m_allowEarlyCheckInHasBeenSet = false;
 
   int m_maxTimeToLiveInMinutes{0};
+  bool m_allowEarlyCheckInHasBeenSet = false;
   bool m_maxTimeToLiveInMinutesHasBeenSet = false;
 };
 

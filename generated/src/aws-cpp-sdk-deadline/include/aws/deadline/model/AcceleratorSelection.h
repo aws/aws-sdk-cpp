@@ -86,9 +86,9 @@ class AcceleratorSelection {
   ///@}
  private:
   AcceleratorName m_name{AcceleratorName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_runtime;
+  bool m_nameHasBeenSet = false;
   bool m_runtimeHasBeenSet = false;
 };
 

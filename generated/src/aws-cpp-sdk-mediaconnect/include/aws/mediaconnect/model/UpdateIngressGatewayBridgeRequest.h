@@ -61,9 +61,9 @@ class UpdateIngressGatewayBridgeRequest {
   ///@}
  private:
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_maxOutputs{0};
+  bool m_maxBitrateHasBeenSet = false;
   bool m_maxOutputsHasBeenSet = false;
 };
 

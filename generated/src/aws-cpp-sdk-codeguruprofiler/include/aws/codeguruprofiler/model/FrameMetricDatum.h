@@ -73,9 +73,9 @@ class FrameMetricDatum {
   ///@}
  private:
   FrameMetric m_frameMetric;
-  bool m_frameMetricHasBeenSet = false;
 
   Aws::Vector<double> m_values;
+  bool m_frameMetricHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

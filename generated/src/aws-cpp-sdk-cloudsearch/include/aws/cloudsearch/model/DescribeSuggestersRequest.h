@@ -101,12 +101,12 @@ class DescribeSuggestersRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_suggesterNames;
-  bool m_suggesterNamesHasBeenSet = false;
 
   bool m_deployed{false};
+  bool m_domainNameHasBeenSet = false;
+  bool m_suggesterNamesHasBeenSet = false;
   bool m_deployedHasBeenSet = false;
 };
 

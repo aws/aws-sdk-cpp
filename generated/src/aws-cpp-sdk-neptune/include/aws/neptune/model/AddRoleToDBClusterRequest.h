@@ -91,12 +91,12 @@ class AddRoleToDBClusterRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_featureName;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_featureNameHasBeenSet = false;
 };
 

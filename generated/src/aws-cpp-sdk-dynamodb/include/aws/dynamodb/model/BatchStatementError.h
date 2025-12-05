@@ -95,12 +95,12 @@ class BatchStatementError {
   ///@}
  private:
   BatchStatementErrorCodeEnum m_code{BatchStatementErrorCodeEnum::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_item;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_itemHasBeenSet = false;
 };
 

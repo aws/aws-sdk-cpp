@@ -85,12 +85,12 @@ class ContractFilter {
   ///@}
  private:
   QueryNetwork m_network{QueryNetwork::NOT_SET};
-  bool m_networkHasBeenSet = false;
 
   QueryTokenStandard m_tokenStandard{QueryTokenStandard::NOT_SET};
-  bool m_tokenStandardHasBeenSet = false;
 
   Aws::String m_deployerAddress;
+  bool m_networkHasBeenSet = false;
+  bool m_tokenStandardHasBeenSet = false;
   bool m_deployerAddressHasBeenSet = false;
 };
 

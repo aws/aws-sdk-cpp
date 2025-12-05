@@ -201,24 +201,24 @@ class CreateResourcePolicyStatementRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   Effect m_effect{Effect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::Vector<Principal> m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_expectedRevisionId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_statementIdHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_expectedRevisionIdHasBeenSet = false;
 };
 

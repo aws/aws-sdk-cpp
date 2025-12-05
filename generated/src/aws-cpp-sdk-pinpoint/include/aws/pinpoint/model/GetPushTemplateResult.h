@@ -58,9 +58,9 @@ class GetPushTemplateResult {
   ///@}
  private:
   PushNotificationTemplateResponse m_pushNotificationTemplateResponse;
-  bool m_pushNotificationTemplateResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pushNotificationTemplateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

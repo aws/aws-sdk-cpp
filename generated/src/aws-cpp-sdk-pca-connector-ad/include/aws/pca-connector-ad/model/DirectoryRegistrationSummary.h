@@ -142,21 +142,21 @@ class DirectoryRegistrationSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   DirectoryRegistrationStatus m_status{DirectoryRegistrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DirectoryRegistrationStatusReason m_statusReason{DirectoryRegistrationStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

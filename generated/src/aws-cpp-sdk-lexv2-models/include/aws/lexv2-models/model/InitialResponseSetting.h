@@ -102,15 +102,15 @@ class InitialResponseSetting {
   ///@}
  private:
   ResponseSpecification m_initialResponse;
-  bool m_initialResponseHasBeenSet = false;
 
   DialogState m_nextStep;
-  bool m_nextStepHasBeenSet = false;
 
   ConditionalSpecification m_conditional;
-  bool m_conditionalHasBeenSet = false;
 
   DialogCodeHookInvocationSetting m_codeHook;
+  bool m_initialResponseHasBeenSet = false;
+  bool m_nextStepHasBeenSet = false;
+  bool m_conditionalHasBeenSet = false;
   bool m_codeHookHasBeenSet = false;
 };
 

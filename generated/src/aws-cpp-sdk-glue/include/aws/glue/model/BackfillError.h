@@ -87,9 +87,9 @@ class BackfillError {
   ///@}
  private:
   BackfillErrorCode m_code{BackfillErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::Vector<PartitionValueList> m_partitions;
+  bool m_codeHasBeenSet = false;
   bool m_partitionsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListChannelsRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_spaceIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

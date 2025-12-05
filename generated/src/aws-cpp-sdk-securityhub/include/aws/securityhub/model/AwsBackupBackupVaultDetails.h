@@ -131,18 +131,18 @@ class AwsBackupBackupVaultDetails {
   ///@}
  private:
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   AwsBackupBackupVaultNotificationsDetails m_notifications;
-  bool m_notificationsHasBeenSet = false;
 
   Aws::String m_accessPolicy;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_notificationsHasBeenSet = false;
   bool m_accessPolicyHasBeenSet = false;
 };
 

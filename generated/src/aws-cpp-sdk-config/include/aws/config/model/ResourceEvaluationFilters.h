@@ -90,12 +90,12 @@ class ResourceEvaluationFilters {
   ///@}
  private:
   EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
-  bool m_evaluationModeHasBeenSet = false;
 
   TimeWindow m_timeWindow;
-  bool m_timeWindowHasBeenSet = false;
 
   Aws::String m_evaluationContextIdentifier;
+  bool m_evaluationModeHasBeenSet = false;
+  bool m_timeWindowHasBeenSet = false;
   bool m_evaluationContextIdentifierHasBeenSet = false;
 };
 

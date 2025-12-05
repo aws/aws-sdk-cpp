@@ -68,9 +68,9 @@ class S3BucketInfo {
   ///@}
  private:
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_creationDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

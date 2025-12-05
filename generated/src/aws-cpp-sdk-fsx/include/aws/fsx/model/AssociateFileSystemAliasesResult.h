@@ -77,9 +77,9 @@ class AssociateFileSystemAliasesResult {
   ///@}
  private:
   Aws::Vector<Alias> m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aliasesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListServiceNetworkVpcEndpointAssociationsRequest : public VPCLatticeReques
   ///@}
  private:
   Aws::String m_serviceNetworkIdentifier;
-  bool m_serviceNetworkIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceNetworkIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

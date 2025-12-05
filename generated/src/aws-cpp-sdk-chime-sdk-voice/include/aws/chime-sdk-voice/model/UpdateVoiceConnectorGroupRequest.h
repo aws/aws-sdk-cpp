@@ -92,12 +92,12 @@ class UpdateVoiceConnectorGroupRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorGroupId;
-  bool m_voiceConnectorGroupIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<VoiceConnectorItem> m_voiceConnectorItems;
+  bool m_voiceConnectorGroupIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_voiceConnectorItemsHasBeenSet = false;
 };
 

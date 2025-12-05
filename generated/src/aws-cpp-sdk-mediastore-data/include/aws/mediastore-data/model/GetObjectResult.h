@@ -177,30 +177,30 @@ class GetObjectResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   Aws::String m_contentRange;
-  bool m_contentRangeHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_contentRangeHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

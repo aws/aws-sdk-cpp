@@ -150,21 +150,21 @@ class StartImportFileTaskRequest : public MigrationHubStrategyRecommendationsReq
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   DataSourceType m_dataSourceType{DataSourceType::NOT_SET};
-  bool m_dataSourceTypeHasBeenSet = false;
 
   Aws::Vector<Group> m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_s3bucketForReportData;
-  bool m_s3bucketForReportDataHasBeenSet = false;
 
   Aws::String m_s3key;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_dataSourceTypeHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_s3bucketForReportDataHasBeenSet = false;
   bool m_s3keyHasBeenSet = false;
 };
 

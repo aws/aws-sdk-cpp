@@ -159,24 +159,24 @@ class ImportDocumentRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_cardId;
-  bool m_cardIdHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_fileContentsBase64;
-  bool m_fileContentsBase64HasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   DocumentScope m_scope{DocumentScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_cardIdHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_fileContentsBase64HasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

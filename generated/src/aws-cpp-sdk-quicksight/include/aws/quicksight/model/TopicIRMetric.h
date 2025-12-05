@@ -210,30 +210,30 @@ class TopicIRMetric {
   ///@}
  private:
   Identifier m_metricId;
-  bool m_metricIdHasBeenSet = false;
 
   AggFunction m_function;
-  bool m_functionHasBeenSet = false;
 
   Aws::Vector<Identifier> m_operands;
-  bool m_operandsHasBeenSet = false;
 
   TopicIRComparisonMethod m_comparisonMethod;
-  bool m_comparisonMethodHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Vector<Identifier> m_calculatedFieldReferences;
-  bool m_calculatedFieldReferencesHasBeenSet = false;
 
   DisplayFormat m_displayFormat{DisplayFormat::NOT_SET};
-  bool m_displayFormatHasBeenSet = false;
 
   DisplayFormatOptions m_displayFormatOptions;
-  bool m_displayFormatOptionsHasBeenSet = false;
 
   NamedEntityRef m_namedEntity;
+  bool m_metricIdHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
+  bool m_operandsHasBeenSet = false;
+  bool m_comparisonMethodHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_calculatedFieldReferencesHasBeenSet = false;
+  bool m_displayFormatHasBeenSet = false;
+  bool m_displayFormatOptionsHasBeenSet = false;
   bool m_namedEntityHasBeenSet = false;
 };
 

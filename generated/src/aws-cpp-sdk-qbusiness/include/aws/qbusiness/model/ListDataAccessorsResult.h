@@ -84,12 +84,12 @@ class ListDataAccessorsResult {
   ///@}
  private:
   Aws::Vector<DataAccessor> m_dataAccessors;
-  bool m_dataAccessorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataAccessorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

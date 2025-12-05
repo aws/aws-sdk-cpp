@@ -100,12 +100,12 @@ class UpdateOpsMetadataRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_opsMetadataArn;
-  bool m_opsMetadataArnHasBeenSet = false;
 
   Aws::Map<Aws::String, MetadataValue> m_metadataToUpdate;
-  bool m_metadataToUpdateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keysToDelete;
+  bool m_opsMetadataArnHasBeenSet = false;
+  bool m_metadataToUpdateHasBeenSet = false;
   bool m_keysToDeleteHasBeenSet = false;
 };
 

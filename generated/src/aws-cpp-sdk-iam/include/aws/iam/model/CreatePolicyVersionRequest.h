@@ -112,12 +112,12 @@ class CreatePolicyVersionRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   bool m_setAsDefault{false};
+  bool m_policyArnHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_setAsDefaultHasBeenSet = false;
 };
 

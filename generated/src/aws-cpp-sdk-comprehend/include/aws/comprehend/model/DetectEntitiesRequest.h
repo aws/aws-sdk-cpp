@@ -150,18 +150,18 @@ class DetectEntitiesRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   DocumentReaderConfig m_documentReaderConfig;
+  bool m_textHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_bytesHasBeenSet = false;
   bool m_documentReaderConfigHasBeenSet = false;
 };
 

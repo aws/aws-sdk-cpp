@@ -65,9 +65,9 @@ class CreateLoadBalancerResult {
   ///@}
  private:
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dNSNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

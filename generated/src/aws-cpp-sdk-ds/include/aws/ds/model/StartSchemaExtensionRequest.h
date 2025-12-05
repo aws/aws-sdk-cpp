@@ -106,15 +106,15 @@ class StartSchemaExtensionRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   bool m_createSnapshotBeforeSchemaExtension{false};
-  bool m_createSnapshotBeforeSchemaExtensionHasBeenSet = false;
 
   Aws::String m_ldifContent;
-  bool m_ldifContentHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_createSnapshotBeforeSchemaExtensionHasBeenSet = false;
+  bool m_ldifContentHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

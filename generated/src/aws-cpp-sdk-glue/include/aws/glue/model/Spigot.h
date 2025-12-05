@@ -130,18 +130,18 @@ class Spigot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_topk{0};
-  bool m_topkHasBeenSet = false;
 
   double m_prob{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_topkHasBeenSet = false;
   bool m_probHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class DeleteQueueRequest : public PCSRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_queueIdentifier;
-  bool m_queueIdentifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_queueIdentifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

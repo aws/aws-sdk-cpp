@@ -85,12 +85,12 @@ class ListMessageTemplatesResult {
   ///@}
  private:
   Aws::Vector<MessageTemplateSummary> m_messageTemplateSummaries;
-  bool m_messageTemplateSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageTemplateSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

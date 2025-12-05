@@ -186,27 +186,27 @@ class Theme {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   ThemeState m_state{ThemeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_themeTitleText;
-  bool m_themeTitleTextHasBeenSet = false;
 
   ThemeStyling m_themeStyling{ThemeStyling::NOT_SET};
-  bool m_themeStylingHasBeenSet = false;
 
   Aws::Vector<ThemeFooterLink> m_themeFooterLinks;
-  bool m_themeFooterLinksHasBeenSet = false;
 
   Aws::String m_themeOrganizationLogoURL;
-  bool m_themeOrganizationLogoURLHasBeenSet = false;
 
   Aws::String m_themeFaviconURL;
-  bool m_themeFaviconURLHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
+  bool m_stackNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_themeTitleTextHasBeenSet = false;
+  bool m_themeStylingHasBeenSet = false;
+  bool m_themeFooterLinksHasBeenSet = false;
+  bool m_themeOrganizationLogoURLHasBeenSet = false;
+  bool m_themeFaviconURLHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

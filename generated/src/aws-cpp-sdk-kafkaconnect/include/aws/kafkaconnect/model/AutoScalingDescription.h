@@ -119,18 +119,18 @@ class AutoScalingDescription {
   ///@}
  private:
   int m_maxWorkerCount{0};
-  bool m_maxWorkerCountHasBeenSet = false;
 
   int m_mcuCount{0};
-  bool m_mcuCountHasBeenSet = false;
 
   int m_minWorkerCount{0};
-  bool m_minWorkerCountHasBeenSet = false;
 
   ScaleInPolicyDescription m_scaleInPolicy;
-  bool m_scaleInPolicyHasBeenSet = false;
 
   ScaleOutPolicyDescription m_scaleOutPolicy;
+  bool m_maxWorkerCountHasBeenSet = false;
+  bool m_mcuCountHasBeenSet = false;
+  bool m_minWorkerCountHasBeenSet = false;
+  bool m_scaleInPolicyHasBeenSet = false;
   bool m_scaleOutPolicyHasBeenSet = false;
 };
 

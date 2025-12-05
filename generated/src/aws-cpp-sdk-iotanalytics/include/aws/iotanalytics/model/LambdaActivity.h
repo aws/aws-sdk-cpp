@@ -105,15 +105,15 @@ class LambdaActivity {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_lambdaName;
-  bool m_lambdaNameHasBeenSet = false;
 
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   Aws::String m_next;
+  bool m_nameHasBeenSet = false;
+  bool m_lambdaNameHasBeenSet = false;
+  bool m_batchSizeHasBeenSet = false;
   bool m_nextHasBeenSet = false;
 };
 

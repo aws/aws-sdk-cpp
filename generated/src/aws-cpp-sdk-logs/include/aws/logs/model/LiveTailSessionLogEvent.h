@@ -120,18 +120,18 @@ class LiveTailSessionLogEvent {
   ///@}
  private:
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   long long m_ingestionTime{0};
+  bool m_logStreamNameHasBeenSet = false;
+  bool m_logGroupIdentifierHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_ingestionTimeHasBeenSet = false;
 };
 

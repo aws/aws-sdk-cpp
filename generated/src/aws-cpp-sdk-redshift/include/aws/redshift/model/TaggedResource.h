@@ -99,12 +99,12 @@ class TaggedResource {
   ///@}
  private:
   Tag m_tag;
-  bool m_tagHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_tagHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

@@ -210,27 +210,27 @@ class SecurityControlDefinition {
   ///@}
  private:
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_remediationUrl;
-  bool m_remediationUrlHasBeenSet = false;
 
   SeverityRating m_severityRating{SeverityRating::NOT_SET};
-  bool m_severityRatingHasBeenSet = false;
 
   RegionAvailabilityStatus m_currentRegionAvailability{RegionAvailabilityStatus::NOT_SET};
-  bool m_currentRegionAvailabilityHasBeenSet = false;
 
   Aws::Vector<SecurityControlProperty> m_customizableProperties;
-  bool m_customizablePropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterDefinition> m_parameterDefinitions;
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_remediationUrlHasBeenSet = false;
+  bool m_severityRatingHasBeenSet = false;
+  bool m_currentRegionAvailabilityHasBeenSet = false;
+  bool m_customizablePropertiesHasBeenSet = false;
   bool m_parameterDefinitionsHasBeenSet = false;
 };
 

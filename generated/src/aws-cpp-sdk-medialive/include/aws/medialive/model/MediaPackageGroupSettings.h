@@ -71,9 +71,9 @@ class MediaPackageGroupSettings {
   ///@}
  private:
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   MediaPackageV2GroupSettings m_mediapackageV2GroupSettings;
+  bool m_destinationHasBeenSet = false;
   bool m_mediapackageV2GroupSettingsHasBeenSet = false;
 };
 

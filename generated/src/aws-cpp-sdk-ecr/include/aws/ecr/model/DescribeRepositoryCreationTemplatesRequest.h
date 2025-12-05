@@ -110,12 +110,12 @@ class DescribeRepositoryCreationTemplatesRequest : public ECRRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_prefixes;
-  bool m_prefixesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_prefixesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

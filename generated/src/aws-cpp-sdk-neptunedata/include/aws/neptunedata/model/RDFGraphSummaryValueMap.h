@@ -91,12 +91,12 @@ class RDFGraphSummaryValueMap {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatisticsComputationTime{};
-  bool m_lastStatisticsComputationTimeHasBeenSet = false;
 
   RDFGraphSummary m_graphSummary;
+  bool m_versionHasBeenSet = false;
+  bool m_lastStatisticsComputationTimeHasBeenSet = false;
   bool m_graphSummaryHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetSessionResult {
   ///@}
  private:
   SessionData m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

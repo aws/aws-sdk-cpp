@@ -79,9 +79,9 @@ class FleetLaunchTemplateConfig {
   ///@}
  private:
   FleetLaunchTemplateSpecification m_launchTemplateSpecification;
-  bool m_launchTemplateSpecificationHasBeenSet = false;
 
   Aws::Vector<FleetLaunchTemplateOverrides> m_overrides;
+  bool m_launchTemplateSpecificationHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

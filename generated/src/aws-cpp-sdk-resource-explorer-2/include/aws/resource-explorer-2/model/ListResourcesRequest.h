@@ -137,15 +137,15 @@ class ListResourcesRequest : public ResourceExplorer2Request {
   ///@}
  private:
   SearchFilter m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_viewArn;
-  bool m_viewArnHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_viewArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

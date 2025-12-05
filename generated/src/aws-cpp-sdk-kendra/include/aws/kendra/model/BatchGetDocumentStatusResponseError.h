@@ -106,15 +106,15 @@ class BatchGetDocumentStatusResponseError {
   ///@}
  private:
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_documentIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

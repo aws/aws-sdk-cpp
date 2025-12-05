@@ -65,9 +65,9 @@ class InsightsConfiguration {
   ///@}
  private:
   bool m_insightsEnabled{false};
-  bool m_insightsEnabledHasBeenSet = false;
 
   bool m_notificationsEnabled{false};
+  bool m_insightsEnabledHasBeenSet = false;
   bool m_notificationsEnabledHasBeenSet = false;
 };
 

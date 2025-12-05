@@ -84,12 +84,12 @@ class ListDevicesJobsResult {
   ///@}
  private:
   Aws::Vector<DeviceJob> m_deviceJobs;
-  bool m_deviceJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

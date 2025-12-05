@@ -73,9 +73,9 @@ class EntityNotExistsException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityIds;
+  bool m_messageHasBeenSet = false;
   bool m_entityIdsHasBeenSet = false;
 };
 

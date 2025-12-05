@@ -102,15 +102,15 @@ class OutlierDetection {
   ///@}
  private:
   Duration m_baseEjectionDuration;
-  bool m_baseEjectionDurationHasBeenSet = false;
 
   Duration m_interval;
-  bool m_intervalHasBeenSet = false;
 
   int m_maxEjectionPercent{0};
-  bool m_maxEjectionPercentHasBeenSet = false;
 
   long long m_maxServerErrors{0};
+  bool m_baseEjectionDurationHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_maxEjectionPercentHasBeenSet = false;
   bool m_maxServerErrorsHasBeenSet = false;
 };
 

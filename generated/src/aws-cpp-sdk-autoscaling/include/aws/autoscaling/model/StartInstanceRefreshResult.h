@@ -60,9 +60,9 @@ class StartInstanceRefreshResult {
   ///@}
  private:
   Aws::String m_instanceRefreshId;
-  bool m_instanceRefreshIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceRefreshIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

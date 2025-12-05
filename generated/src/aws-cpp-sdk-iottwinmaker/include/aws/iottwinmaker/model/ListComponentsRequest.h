@@ -119,18 +119,18 @@ class ListComponentsRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_componentPath;
-  bool m_componentPathHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_componentPathHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

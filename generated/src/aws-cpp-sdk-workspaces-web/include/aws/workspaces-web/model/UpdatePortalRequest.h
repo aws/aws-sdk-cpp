@@ -124,18 +124,18 @@ class UpdatePortalRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_maxConcurrentSessions{0};
+  bool m_portalArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_maxConcurrentSessionsHasBeenSet = false;
 };
 

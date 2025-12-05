@@ -72,9 +72,9 @@ class AutomatedReasoningLogicStatement {
   ///@}
  private:
   Aws::String m_logic;
-  bool m_logicHasBeenSet = false;
 
   Aws::String m_naturalLanguage;
+  bool m_logicHasBeenSet = false;
   bool m_naturalLanguageHasBeenSet = false;
 };
 

@@ -290,48 +290,48 @@ class DescribeDataIngestionJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   IngestionInputConfiguration m_ingestionInputConfiguration;
-  bool m_ingestionInputConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   IngestionJobStatus m_status{IngestionJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failedReason;
-  bool m_failedReasonHasBeenSet = false;
 
   DataQualitySummary m_dataQualitySummary;
-  bool m_dataQualitySummaryHasBeenSet = false;
 
   IngestedFilesSummary m_ingestedFilesSummary;
-  bool m_ingestedFilesSummaryHasBeenSet = false;
 
   Aws::String m_statusDetail;
-  bool m_statusDetailHasBeenSet = false;
 
   long long m_ingestedDataSize{0};
-  bool m_ingestedDataSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataStartTime{};
-  bool m_dataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataEndTime{};
-  bool m_dataEndTimeHasBeenSet = false;
 
   Aws::String m_sourceDatasetArn;
-  bool m_sourceDatasetArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_ingestionInputConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failedReasonHasBeenSet = false;
+  bool m_dataQualitySummaryHasBeenSet = false;
+  bool m_ingestedFilesSummaryHasBeenSet = false;
+  bool m_statusDetailHasBeenSet = false;
+  bool m_ingestedDataSizeHasBeenSet = false;
+  bool m_dataStartTimeHasBeenSet = false;
+  bool m_dataEndTimeHasBeenSet = false;
+  bool m_sourceDatasetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

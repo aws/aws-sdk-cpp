@@ -65,9 +65,9 @@ class GeospatialMapState {
   ///@}
  private:
   GeospatialCoordinateBounds m_bounds;
-  bool m_boundsHasBeenSet = false;
 
   GeospatialMapNavigation m_mapNavigation{GeospatialMapNavigation::NOT_SET};
+  bool m_boundsHasBeenSet = false;
   bool m_mapNavigationHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ConfirmTransitVirtualInterfaceRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_directConnectGatewayId;
+  bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_directConnectGatewayIdHasBeenSet = false;
 };
 

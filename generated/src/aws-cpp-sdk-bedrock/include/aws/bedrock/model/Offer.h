@@ -87,12 +87,12 @@ class Offer {
   ///@}
  private:
   Aws::String m_offerId;
-  bool m_offerIdHasBeenSet = false;
 
   Aws::String m_offerToken;
-  bool m_offerTokenHasBeenSet = false;
 
   TermDetails m_termDetails;
+  bool m_offerIdHasBeenSet = false;
+  bool m_offerTokenHasBeenSet = false;
   bool m_termDetailsHasBeenSet = false;
 };
 

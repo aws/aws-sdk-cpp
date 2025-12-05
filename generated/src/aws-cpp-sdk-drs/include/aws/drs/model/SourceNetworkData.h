@@ -106,15 +106,15 @@ class SourceNetworkData {
   ///@}
  private:
   Aws::String m_sourceNetworkID;
-  bool m_sourceNetworkIDHasBeenSet = false;
 
   Aws::String m_sourceVpc;
-  bool m_sourceVpcHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_targetVpc;
+  bool m_sourceNetworkIDHasBeenSet = false;
+  bool m_sourceVpcHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
   bool m_targetVpcHasBeenSet = false;
 };
 

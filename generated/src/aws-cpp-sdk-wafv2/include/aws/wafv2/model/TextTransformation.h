@@ -71,9 +71,9 @@ class TextTransformation {
   ///@}
  private:
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   TextTransformationType m_type{TextTransformationType::NOT_SET};
+  bool m_priorityHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

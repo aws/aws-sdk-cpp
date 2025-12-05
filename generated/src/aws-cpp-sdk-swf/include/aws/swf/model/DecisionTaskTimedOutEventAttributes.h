@@ -86,12 +86,12 @@ class DecisionTaskTimedOutEventAttributes {
   ///@}
  private:
   DecisionTaskTimeoutType m_timeoutType{DecisionTaskTimeoutType::NOT_SET};
-  bool m_timeoutTypeHasBeenSet = false;
 
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
+  bool m_timeoutTypeHasBeenSet = false;
+  bool m_scheduledEventIdHasBeenSet = false;
   bool m_startedEventIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class DescribeReservedDBInstancesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReservedDBInstance> m_reservedDBInstances;
-  bool m_reservedDBInstancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_reservedDBInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -187,24 +187,24 @@ class Destination {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   AccessControlTranslation m_accessControlTranslation;
-  bool m_accessControlTranslationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   ReplicationTime m_replicationTime;
-  bool m_replicationTimeHasBeenSet = false;
 
   Metrics m_metrics;
+  bool m_bucketHasBeenSet = false;
+  bool m_accountHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_accessControlTranslationHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_replicationTimeHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

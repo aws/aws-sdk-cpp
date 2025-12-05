@@ -161,24 +161,24 @@ class GetClientCertificateResult {
   ///@}
  private:
   Aws::String m_clientCertificateId;
-  bool m_clientCertificateIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_pemEncodedCertificate;
-  bool m_pemEncodedCertificateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientCertificateIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_pemEncodedCertificateHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

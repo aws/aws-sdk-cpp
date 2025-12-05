@@ -78,9 +78,9 @@ class AttachmentEnaSrdSpecification {
   ///@}
  private:
   bool m_enaSrdEnabled{false};
-  bool m_enaSrdEnabledHasBeenSet = false;
 
   AttachmentEnaSrdUdpSpecification m_enaSrdUdpSpecification;
+  bool m_enaSrdEnabledHasBeenSet = false;
   bool m_enaSrdUdpSpecificationHasBeenSet = false;
 };
 

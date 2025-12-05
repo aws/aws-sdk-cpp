@@ -66,9 +66,9 @@ class DirectoryUnavailableException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   DirectoryUnavailableReason m_reason{DirectoryUnavailableReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

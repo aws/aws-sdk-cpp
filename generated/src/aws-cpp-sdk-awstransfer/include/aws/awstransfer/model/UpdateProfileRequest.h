@@ -75,9 +75,9 @@ class UpdateProfileRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_certificateIds;
+  bool m_profileIdHasBeenSet = false;
   bool m_certificateIdsHasBeenSet = false;
 };
 

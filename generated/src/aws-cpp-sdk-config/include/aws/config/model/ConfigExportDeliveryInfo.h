@@ -143,21 +143,21 @@ class ConfigExportDeliveryInfo {
   ///@}
  private:
   DeliveryStatus m_lastStatus{DeliveryStatus::NOT_SET};
-  bool m_lastStatusHasBeenSet = false;
 
   Aws::String m_lastErrorCode;
-  bool m_lastErrorCodeHasBeenSet = false;
 
   Aws::String m_lastErrorMessage;
-  bool m_lastErrorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAttemptTime{};
-  bool m_lastAttemptTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulTime{};
-  bool m_lastSuccessfulTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextDeliveryTime{};
+  bool m_lastStatusHasBeenSet = false;
+  bool m_lastErrorCodeHasBeenSet = false;
+  bool m_lastErrorMessageHasBeenSet = false;
+  bool m_lastAttemptTimeHasBeenSet = false;
+  bool m_lastSuccessfulTimeHasBeenSet = false;
   bool m_nextDeliveryTimeHasBeenSet = false;
 };
 

@@ -88,9 +88,9 @@ class ContainerRegistryMap {
   ///@}
  private:
   Aws::Vector<RegistryMapping> m_registryMappings;
-  bool m_registryMappingsHasBeenSet = false;
 
   Aws::Vector<ImageMapping> m_imageMappings;
+  bool m_registryMappingsHasBeenSet = false;
   bool m_imageMappingsHasBeenSet = false;
 };
 

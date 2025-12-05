@@ -68,9 +68,9 @@ class DeleteWorkflowRequest : public MWAAServerlessRequest {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_workflowVersion;
+  bool m_workflowArnHasBeenSet = false;
   bool m_workflowVersionHasBeenSet = false;
 };
 

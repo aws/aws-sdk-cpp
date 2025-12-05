@@ -85,12 +85,12 @@ class ListDashboardsResult {
   ///@}
  private:
   Aws::Vector<DashboardEntry> m_dashboardEntries;
-  bool m_dashboardEntriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dashboardEntriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

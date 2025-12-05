@@ -89,12 +89,12 @@ class DeliverToMailboxAction {
   ///@}
  private:
   ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
-  bool m_actionFailurePolicyHasBeenSet = false;
 
   Aws::String m_mailboxArn;
-  bool m_mailboxArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_actionFailurePolicyHasBeenSet = false;
+  bool m_mailboxArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

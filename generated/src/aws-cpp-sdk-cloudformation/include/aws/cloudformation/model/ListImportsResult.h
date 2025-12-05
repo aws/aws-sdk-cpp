@@ -86,12 +86,12 @@ class ListImportsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_imports;
-  bool m_importsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_importsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

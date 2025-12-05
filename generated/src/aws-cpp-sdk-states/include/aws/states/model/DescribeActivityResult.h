@@ -120,18 +120,18 @@ class DescribeActivityResult {
   ///@}
  private:
   Aws::String m_activityArn;
-  bool m_activityArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_activityArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

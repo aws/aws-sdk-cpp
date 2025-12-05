@@ -111,15 +111,15 @@ class AuditTargetEntity {
   ///@}
  private:
   ServiceEntity m_service;
-  bool m_serviceHasBeenSet = false;
 
   ServiceLevelObjectiveEntity m_slo;
-  bool m_sloHasBeenSet = false;
 
   ServiceOperationEntity m_serviceOperation;
-  bool m_serviceOperationHasBeenSet = false;
 
   CanaryEntity m_canary;
+  bool m_serviceHasBeenSet = false;
+  bool m_sloHasBeenSet = false;
+  bool m_serviceOperationHasBeenSet = false;
   bool m_canaryHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class AutoScalingPolicyStatus {
   ///@}
  private:
   AutoScalingPolicyState m_state{AutoScalingPolicyState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   AutoScalingPolicyStateChangeReason m_stateChangeReason;
+  bool m_stateHasBeenSet = false;
   bool m_stateChangeReasonHasBeenSet = false;
 };
 

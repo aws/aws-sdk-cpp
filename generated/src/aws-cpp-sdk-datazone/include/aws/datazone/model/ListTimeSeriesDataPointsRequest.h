@@ -185,27 +185,27 @@ class ListTimeSeriesDataPointsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_formName;
-  bool m_formNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_formNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
 };
 

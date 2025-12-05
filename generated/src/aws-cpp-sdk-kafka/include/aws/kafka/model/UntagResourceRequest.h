@@ -113,9 +113,9 @@ class UntagResourceRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

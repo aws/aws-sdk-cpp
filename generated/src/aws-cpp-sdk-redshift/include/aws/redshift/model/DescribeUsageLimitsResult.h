@@ -90,12 +90,12 @@ class DescribeUsageLimitsResult {
   ///@}
  private:
   Aws::Vector<UsageLimit> m_usageLimits;
-  bool m_usageLimitsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_usageLimitsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

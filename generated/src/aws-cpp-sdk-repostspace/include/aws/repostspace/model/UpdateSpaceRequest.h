@@ -121,18 +121,18 @@ class UpdateSpaceRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TierLevel m_tier{TierLevel::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   SupportedEmailDomainsParameters m_supportedEmailDomains;
+  bool m_spaceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_supportedEmailDomainsHasBeenSet = false;
 };
 

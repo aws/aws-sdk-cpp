@@ -60,9 +60,9 @@ class GetFeatureResult {
   ///@}
  private:
   Feature m_feature;
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

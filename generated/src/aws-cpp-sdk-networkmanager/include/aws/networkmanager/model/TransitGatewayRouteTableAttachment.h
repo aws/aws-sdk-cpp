@@ -88,12 +88,12 @@ class TransitGatewayRouteTableAttachment {
   ///@}
  private:
   Attachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::String m_peeringId;
-  bool m_peeringIdHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableArn;
+  bool m_attachmentHasBeenSet = false;
+  bool m_peeringIdHasBeenSet = false;
   bool m_transitGatewayRouteTableArnHasBeenSet = false;
 };
 

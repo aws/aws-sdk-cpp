@@ -65,9 +65,9 @@ class GetProxySessionRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_proxySessionId;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_proxySessionIdHasBeenSet = false;
 };
 

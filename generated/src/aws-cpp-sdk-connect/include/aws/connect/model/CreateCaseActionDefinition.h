@@ -77,9 +77,9 @@ class CreateCaseActionDefinition {
   ///@}
  private:
   Aws::Vector<FieldValue> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_templateId;
+  bool m_fieldsHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
 };
 

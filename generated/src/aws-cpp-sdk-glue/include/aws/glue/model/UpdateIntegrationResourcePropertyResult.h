@@ -114,18 +114,18 @@ class UpdateIntegrationResourcePropertyResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourcePropertyArn;
-  bool m_resourcePropertyArnHasBeenSet = false;
 
   SourceProcessingProperties m_sourceProcessingProperties;
-  bool m_sourceProcessingPropertiesHasBeenSet = false;
 
   TargetProcessingProperties m_targetProcessingProperties;
-  bool m_targetProcessingPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourcePropertyArnHasBeenSet = false;
+  bool m_sourceProcessingPropertiesHasBeenSet = false;
+  bool m_targetProcessingPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

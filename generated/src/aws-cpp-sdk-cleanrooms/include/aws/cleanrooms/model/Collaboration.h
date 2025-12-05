@@ -364,54 +364,54 @@ class Collaboration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_creatorDisplayName;
-  bool m_creatorDisplayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   MemberStatus m_memberStatus{MemberStatus::NOT_SET};
-  bool m_memberStatusHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   DataEncryptionMetadata m_dataEncryptionMetadata;
-  bool m_dataEncryptionMetadataHasBeenSet = false;
 
   CollaborationQueryLogStatus m_queryLogStatus{CollaborationQueryLogStatus::NOT_SET};
-  bool m_queryLogStatusHasBeenSet = false;
 
   CollaborationJobLogStatus m_jobLogStatus{CollaborationJobLogStatus::NOT_SET};
-  bool m_jobLogStatusHasBeenSet = false;
 
   AnalyticsEngine m_analyticsEngine{AnalyticsEngine::NOT_SET};
-  bool m_analyticsEngineHasBeenSet = false;
 
   Aws::Vector<AutoApprovedChangeType> m_autoApprovedChangeTypes;
-  bool m_autoApprovedChangeTypesHasBeenSet = false;
 
   Aws::Vector<SupportedS3Region> m_allowedResultRegions;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
+  bool m_creatorDisplayNameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_memberStatusHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_dataEncryptionMetadataHasBeenSet = false;
+  bool m_queryLogStatusHasBeenSet = false;
+  bool m_jobLogStatusHasBeenSet = false;
+  bool m_analyticsEngineHasBeenSet = false;
+  bool m_autoApprovedChangeTypesHasBeenSet = false;
   bool m_allowedResultRegionsHasBeenSet = false;
 };
 

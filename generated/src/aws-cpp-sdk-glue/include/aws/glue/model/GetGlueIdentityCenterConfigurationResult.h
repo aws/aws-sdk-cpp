@@ -125,18 +125,18 @@ class GetGlueIdentityCenterConfigurationResult {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   bool m_userBackgroundSessionsEnabled{false};
-  bool m_userBackgroundSessionsEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
+  bool m_userBackgroundSessionsEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

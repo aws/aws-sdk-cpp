@@ -88,12 +88,12 @@ class ListImagePackagesResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<ImagePackage> m_imagePackageList;
-  bool m_imagePackageListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imagePackageListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

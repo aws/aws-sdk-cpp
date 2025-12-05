@@ -120,15 +120,15 @@ class SearchCasesResponseItem {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::Vector<FieldValue> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_caseIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

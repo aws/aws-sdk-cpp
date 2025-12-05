@@ -83,9 +83,9 @@ class ComponentPlatform {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_nameHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

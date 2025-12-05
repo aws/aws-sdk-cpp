@@ -99,12 +99,12 @@ class DescribeFileSystemsRequest : public FSxRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fileSystemIds;
-  bool m_fileSystemIdsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_fileSystemIdsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

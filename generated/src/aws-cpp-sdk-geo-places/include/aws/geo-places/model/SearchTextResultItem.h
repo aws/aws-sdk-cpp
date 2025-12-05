@@ -418,57 +418,57 @@ class SearchTextResultItem {
   ///@}
  private:
   Aws::String m_placeId;
-  bool m_placeIdHasBeenSet = false;
 
   PlaceType m_placeType{PlaceType::NOT_SET};
-  bool m_placeTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   bool m_addressNumberCorrected{false};
-  bool m_addressNumberCorrectedHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   Aws::Vector<double> m_mapView;
-  bool m_mapViewHasBeenSet = false;
 
   Aws::Vector<Category> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::Vector<FoodType> m_foodTypes;
-  bool m_foodTypesHasBeenSet = false;
 
   Aws::Vector<BusinessChain> m_businessChains;
-  bool m_businessChainsHasBeenSet = false;
 
   Contacts m_contacts;
-  bool m_contactsHasBeenSet = false;
 
   Aws::Vector<OpeningHours> m_openingHours;
-  bool m_openingHoursHasBeenSet = false;
 
   Aws::Vector<AccessPoint> m_accessPoints;
-  bool m_accessPointsHasBeenSet = false;
 
   Aws::Vector<AccessRestriction> m_accessRestrictions;
-  bool m_accessRestrictionsHasBeenSet = false;
 
   TimeZone m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   PhonemeDetails m_phonemes;
+  bool m_placeIdHasBeenSet = false;
+  bool m_placeTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_addressNumberCorrectedHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_mapViewHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_foodTypesHasBeenSet = false;
+  bool m_businessChainsHasBeenSet = false;
+  bool m_contactsHasBeenSet = false;
+  bool m_openingHoursHasBeenSet = false;
+  bool m_accessPointsHasBeenSet = false;
+  bool m_accessRestrictionsHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
+  bool m_politicalViewHasBeenSet = false;
   bool m_phonemesHasBeenSet = false;
 };
 

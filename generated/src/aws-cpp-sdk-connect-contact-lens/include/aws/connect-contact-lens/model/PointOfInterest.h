@@ -63,9 +63,9 @@ class PointOfInterest {
   ///@}
  private:
   int m_beginOffsetMillis{0};
-  bool m_beginOffsetMillisHasBeenSet = false;
 
   int m_endOffsetMillis{0};
+  bool m_beginOffsetMillisHasBeenSet = false;
   bool m_endOffsetMillisHasBeenSet = false;
 };
 

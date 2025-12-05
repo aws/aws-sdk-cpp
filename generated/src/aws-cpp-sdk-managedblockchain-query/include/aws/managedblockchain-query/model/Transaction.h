@@ -395,63 +395,63 @@ class Transaction {
   ///@}
  private:
   QueryNetwork m_network{QueryNetwork::NOT_SET};
-  bool m_networkHasBeenSet = false;
 
   Aws::String m_blockHash;
-  bool m_blockHashHasBeenSet = false;
 
   Aws::String m_transactionHash;
-  bool m_transactionHashHasBeenSet = false;
 
   Aws::String m_blockNumber;
-  bool m_blockNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_transactionTimestamp{};
-  bool m_transactionTimestampHasBeenSet = false;
 
   long long m_transactionIndex{0};
-  bool m_transactionIndexHasBeenSet = false;
 
   long long m_numberOfTransactions{0};
-  bool m_numberOfTransactionsHasBeenSet = false;
 
   Aws::String m_to;
-  bool m_toHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_contractAddress;
-  bool m_contractAddressHasBeenSet = false;
 
   Aws::String m_gasUsed;
-  bool m_gasUsedHasBeenSet = false;
 
   Aws::String m_cumulativeGasUsed;
-  bool m_cumulativeGasUsedHasBeenSet = false;
 
   Aws::String m_effectiveGasPrice;
-  bool m_effectiveGasPriceHasBeenSet = false;
 
   int m_signatureV{0};
-  bool m_signatureVHasBeenSet = false;
 
   Aws::String m_signatureR;
-  bool m_signatureRHasBeenSet = false;
 
   Aws::String m_signatureS;
-  bool m_signatureSHasBeenSet = false;
 
   Aws::String m_transactionFee;
-  bool m_transactionFeeHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   ConfirmationStatus m_confirmationStatus{ConfirmationStatus::NOT_SET};
-  bool m_confirmationStatusHasBeenSet = false;
 
   ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
+  bool m_networkHasBeenSet = false;
+  bool m_blockHashHasBeenSet = false;
+  bool m_transactionHashHasBeenSet = false;
+  bool m_blockNumberHasBeenSet = false;
+  bool m_transactionTimestampHasBeenSet = false;
+  bool m_transactionIndexHasBeenSet = false;
+  bool m_numberOfTransactionsHasBeenSet = false;
+  bool m_toHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
+  bool m_contractAddressHasBeenSet = false;
+  bool m_gasUsedHasBeenSet = false;
+  bool m_cumulativeGasUsedHasBeenSet = false;
+  bool m_effectiveGasPriceHasBeenSet = false;
+  bool m_signatureVHasBeenSet = false;
+  bool m_signatureRHasBeenSet = false;
+  bool m_signatureSHasBeenSet = false;
+  bool m_transactionFeeHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_confirmationStatusHasBeenSet = false;
   bool m_executionStatusHasBeenSet = false;
 };
 

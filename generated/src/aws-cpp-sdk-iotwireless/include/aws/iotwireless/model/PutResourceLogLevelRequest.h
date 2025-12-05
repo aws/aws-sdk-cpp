@@ -84,12 +84,12 @@ class PutResourceLogLevelRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_logLevelHasBeenSet = false;
 };
 

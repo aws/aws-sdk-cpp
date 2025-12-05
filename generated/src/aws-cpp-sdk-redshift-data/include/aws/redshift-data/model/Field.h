@@ -133,21 +133,21 @@ class Field {
   ///@}
  private:
   bool m_isNull{false};
-  bool m_isNullHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   long long m_longValue{0};
-  bool m_longValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_blobValue{};
+  bool m_isNullHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
   bool m_blobValueHasBeenSet = false;
 };
 

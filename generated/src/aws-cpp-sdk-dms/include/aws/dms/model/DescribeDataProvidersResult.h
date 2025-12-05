@@ -92,12 +92,12 @@ class DescribeDataProvidersResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DataProvider> m_dataProviders;
-  bool m_dataProvidersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_dataProvidersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

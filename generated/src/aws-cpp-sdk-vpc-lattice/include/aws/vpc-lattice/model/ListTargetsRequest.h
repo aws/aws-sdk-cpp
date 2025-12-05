@@ -112,15 +112,15 @@ class ListTargetsRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_targetGroupIdentifier;
-  bool m_targetGroupIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
+  bool m_targetGroupIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
 };
 

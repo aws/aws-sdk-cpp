@@ -166,24 +166,24 @@ class ProfilerRuleConfiguration {
   ///@}
  private:
   Aws::String m_ruleConfigurationName;
-  bool m_ruleConfigurationNameHasBeenSet = false;
 
   Aws::String m_localPath;
-  bool m_localPathHasBeenSet = false;
 
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   Aws::String m_ruleEvaluatorImage;
-  bool m_ruleEvaluatorImageHasBeenSet = false;
 
   ProcessingInstanceType m_instanceType{ProcessingInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_ruleParameters;
+  bool m_ruleConfigurationNameHasBeenSet = false;
+  bool m_localPathHasBeenSet = false;
+  bool m_s3OutputPathHasBeenSet = false;
+  bool m_ruleEvaluatorImageHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_volumeSizeInGBHasBeenSet = false;
   bool m_ruleParametersHasBeenSet = false;
 };
 

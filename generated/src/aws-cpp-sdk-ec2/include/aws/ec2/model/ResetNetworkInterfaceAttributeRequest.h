@@ -93,12 +93,12 @@ class ResetNetworkInterfaceAttributeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_sourceDestCheck;
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
   bool m_sourceDestCheckHasBeenSet = false;
 };
 

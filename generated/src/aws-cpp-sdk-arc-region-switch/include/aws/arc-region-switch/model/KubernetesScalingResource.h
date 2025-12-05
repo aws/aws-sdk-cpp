@@ -87,12 +87,12 @@ class KubernetesScalingResource {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_hpaName;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_hpaNameHasBeenSet = false;
 };
 

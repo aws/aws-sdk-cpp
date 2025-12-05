@@ -83,9 +83,9 @@ class ProcurementPortalPreferenceSelector {
   ///@}
  private:
   Aws::Vector<Aws::String> m_invoiceUnitArns;
-  bool m_invoiceUnitArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sellerOfRecords;
+  bool m_invoiceUnitArnsHasBeenSet = false;
   bool m_sellerOfRecordsHasBeenSet = false;
 };
 

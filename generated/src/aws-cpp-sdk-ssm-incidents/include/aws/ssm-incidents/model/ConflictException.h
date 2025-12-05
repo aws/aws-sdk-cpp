@@ -103,15 +103,15 @@ class ConflictException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_retryAfter{};
+  bool m_messageHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_retryAfterHasBeenSet = false;
 };
 

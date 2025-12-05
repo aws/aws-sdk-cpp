@@ -88,12 +88,12 @@ class ResourceConfigurationDefinition {
   ///@}
  private:
   DnsResource m_dnsResource;
-  bool m_dnsResourceHasBeenSet = false;
 
   IpResource m_ipResource;
-  bool m_ipResourceHasBeenSet = false;
 
   ArnResource m_arnResource;
+  bool m_dnsResourceHasBeenSet = false;
+  bool m_ipResourceHasBeenSet = false;
   bool m_arnResourceHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class ListSecurityConfigurationsRequest : public EMRContainersRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class ResponseHeadersPolicyFrameOptions {
   ///@}
  private:
   bool m_override{false};
-  bool m_overrideHasBeenSet = false;
 
   FrameOptionsList m_frameOption{FrameOptionsList::NOT_SET};
+  bool m_overrideHasBeenSet = false;
   bool m_frameOptionHasBeenSet = false;
 };
 

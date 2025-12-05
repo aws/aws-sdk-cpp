@@ -83,12 +83,12 @@ class UpdateOtaTaskRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_taskConfigurationId;
+  bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_taskConfigurationIdHasBeenSet = false;
 };
 

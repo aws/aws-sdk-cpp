@@ -109,15 +109,15 @@ class GetFederationTokenResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   FederatedUser m_federatedUser;
-  bool m_federatedUserHasBeenSet = false;
 
   int m_packedPolicySize{0};
-  bool m_packedPolicySizeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_credentialsHasBeenSet = false;
+  bool m_federatedUserHasBeenSet = false;
+  bool m_packedPolicySizeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

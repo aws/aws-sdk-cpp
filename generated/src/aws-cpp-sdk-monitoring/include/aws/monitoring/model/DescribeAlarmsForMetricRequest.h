@@ -166,24 +166,24 @@ class DescribeAlarmsForMetricRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Statistic m_statistic{Statistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::String m_extendedStatistic;
-  bool m_extendedStatisticHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_extendedStatisticHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

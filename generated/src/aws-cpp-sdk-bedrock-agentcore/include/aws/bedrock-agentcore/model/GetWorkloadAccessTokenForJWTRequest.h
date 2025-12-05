@@ -65,9 +65,9 @@ class GetWorkloadAccessTokenForJWTRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_userToken;
+  bool m_workloadNameHasBeenSet = false;
   bool m_userTokenHasBeenSet = false;
 };
 

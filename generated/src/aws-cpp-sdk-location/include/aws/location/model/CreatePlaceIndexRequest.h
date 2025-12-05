@@ -166,18 +166,18 @@ class CreatePlaceIndexRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataSourceConfiguration m_dataSourceConfiguration;
-  bool m_dataSourceConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_indexNameHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataSourceConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -224,33 +224,33 @@ class Trigger {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   TriggerType m_type{TriggerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TriggerState m_state{TriggerState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Predicate m_predicate;
-  bool m_predicateHasBeenSet = false;
 
   EventBatchingCondition m_eventBatchingCondition;
+  bool m_nameHasBeenSet = false;
+  bool m_workflowNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_predicateHasBeenSet = false;
   bool m_eventBatchingConditionHasBeenSet = false;
 };
 

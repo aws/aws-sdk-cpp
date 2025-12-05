@@ -60,9 +60,9 @@ class DescribeProtectionResult {
   ///@}
  private:
   Protection m_protection;
-  bool m_protectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListIdMappingWorkflowsResult {
   ///@}
  private:
   Aws::Vector<IdMappingWorkflowSummary> m_workflowSummaries;
-  bool m_workflowSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

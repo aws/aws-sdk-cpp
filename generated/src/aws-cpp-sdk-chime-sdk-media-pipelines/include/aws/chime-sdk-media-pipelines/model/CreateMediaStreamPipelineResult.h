@@ -61,9 +61,9 @@ class CreateMediaStreamPipelineResult {
   ///@}
  private:
   MediaStreamPipeline m_mediaStreamPipeline;
-  bool m_mediaStreamPipelineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaStreamPipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

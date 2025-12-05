@@ -87,12 +87,12 @@ class SrtOutputDestinationSettings {
   ///@}
  private:
   Aws::String m_encryptionPassphraseSecretArn;
-  bool m_encryptionPassphraseSecretArnHasBeenSet = false;
 
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_encryptionPassphraseSecretArnHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class DeletePrefetchScheduleRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_playbackConfigurationName;
+  bool m_nameHasBeenSet = false;
   bool m_playbackConfigurationNameHasBeenSet = false;
 };
 

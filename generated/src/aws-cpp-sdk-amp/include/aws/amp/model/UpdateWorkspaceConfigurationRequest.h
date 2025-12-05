@@ -114,15 +114,15 @@ class UpdateWorkspaceConfigurationRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<LimitsPerLabelSet> m_limitsPerLabelSet;
-  bool m_limitsPerLabelSetHasBeenSet = false;
 
   int m_retentionPeriodInDays{0};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_limitsPerLabelSetHasBeenSet = false;
   bool m_retentionPeriodInDaysHasBeenSet = false;
 };
 

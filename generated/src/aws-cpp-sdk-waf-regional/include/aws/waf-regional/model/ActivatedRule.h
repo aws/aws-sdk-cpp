@@ -232,21 +232,21 @@ class ActivatedRule {
   ///@}
  private:
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   WafAction m_action;
-  bool m_actionHasBeenSet = false;
 
   WafOverrideAction m_overrideAction;
-  bool m_overrideActionHasBeenSet = false;
 
   WafRuleType m_type{WafRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<ExcludedRule> m_excludedRules;
+  bool m_priorityHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_overrideActionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_excludedRulesHasBeenSet = false;
 };
 

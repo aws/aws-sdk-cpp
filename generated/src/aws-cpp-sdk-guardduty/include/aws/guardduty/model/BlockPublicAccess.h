@@ -100,15 +100,15 @@ class BlockPublicAccess {
   ///@}
  private:
   bool m_ignorePublicAcls{false};
-  bool m_ignorePublicAclsHasBeenSet = false;
 
   bool m_restrictPublicBuckets{false};
-  bool m_restrictPublicBucketsHasBeenSet = false;
 
   bool m_blockPublicAcls{false};
-  bool m_blockPublicAclsHasBeenSet = false;
 
   bool m_blockPublicPolicy{false};
+  bool m_ignorePublicAclsHasBeenSet = false;
+  bool m_restrictPublicBucketsHasBeenSet = false;
+  bool m_blockPublicAclsHasBeenSet = false;
   bool m_blockPublicPolicyHasBeenSet = false;
 };
 

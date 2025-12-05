@@ -127,18 +127,18 @@ class ImportCrlRequest : public RolesAnywhereRequest {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_crlData{};
-  bool m_crlDataHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_trustAnchorArn;
+  bool m_crlDataHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_trustAnchorArnHasBeenSet = false;
 };
 

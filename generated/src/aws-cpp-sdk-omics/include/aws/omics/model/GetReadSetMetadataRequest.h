@@ -65,9 +65,9 @@ class GetReadSetMetadataRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_sequenceStoreId;
+  bool m_idHasBeenSet = false;
   bool m_sequenceStoreIdHasBeenSet = false;
 };
 

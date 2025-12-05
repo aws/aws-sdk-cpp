@@ -139,18 +139,18 @@ class PutConfigurationAggregatorRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   Aws::Vector<AccountAggregationSource> m_accountAggregationSources;
-  bool m_accountAggregationSourcesHasBeenSet = false;
 
   OrganizationAggregationSource m_organizationAggregationSource;
-  bool m_organizationAggregationSourceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AggregatorFilters m_aggregatorFilters;
+  bool m_configurationAggregatorNameHasBeenSet = false;
+  bool m_accountAggregationSourcesHasBeenSet = false;
+  bool m_organizationAggregationSourceHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_aggregatorFiltersHasBeenSet = false;
 };
 

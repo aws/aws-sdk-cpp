@@ -109,15 +109,15 @@ class ListBuiltInIntentsResult {
   ///@}
  private:
   Aws::Vector<BuiltInIntentSummary> m_builtInIntentSummaries;
-  bool m_builtInIntentSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_builtInIntentSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

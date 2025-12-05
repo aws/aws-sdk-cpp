@@ -111,15 +111,15 @@ class StreamingConfiguration {
   ///@}
  private:
   int m_dataRetentionInHours{0};
-  bool m_dataRetentionInHoursHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::Vector<StreamingNotificationTarget> m_streamingNotificationTargets;
-  bool m_streamingNotificationTargetsHasBeenSet = false;
 
   MediaInsightsConfiguration m_mediaInsightsConfiguration;
+  bool m_dataRetentionInHoursHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
+  bool m_streamingNotificationTargetsHasBeenSet = false;
   bool m_mediaInsightsConfigurationHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class WafConfiguration {
   ///@}
  private:
   Aws::String m_webAclArn;
-  bool m_webAclArnHasBeenSet = false;
 
   WafStatus m_wafStatus{WafStatus::NOT_SET};
-  bool m_wafStatusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_webAclArnHasBeenSet = false;
+  bool m_wafStatusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

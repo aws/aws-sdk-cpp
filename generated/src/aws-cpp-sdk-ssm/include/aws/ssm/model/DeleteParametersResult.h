@@ -90,12 +90,12 @@ class DeleteParametersResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deletedParameters;
-  bool m_deletedParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_invalidParameters;
-  bool m_invalidParametersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletedParametersHasBeenSet = false;
+  bool m_invalidParametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -144,18 +144,18 @@ class GetBucketNotificationConfigurationResult {
   ///@}
  private:
   Aws::Vector<TopicConfiguration> m_topicConfigurations;
-  bool m_topicConfigurationsHasBeenSet = false;
 
   Aws::Vector<QueueConfiguration> m_queueConfigurations;
-  bool m_queueConfigurationsHasBeenSet = false;
 
   Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
-  bool m_lambdaFunctionConfigurationsHasBeenSet = false;
 
   EventBridgeConfiguration m_eventBridgeConfiguration;
-  bool m_eventBridgeConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicConfigurationsHasBeenSet = false;
+  bool m_queueConfigurationsHasBeenSet = false;
+  bool m_lambdaFunctionConfigurationsHasBeenSet = false;
+  bool m_eventBridgeConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

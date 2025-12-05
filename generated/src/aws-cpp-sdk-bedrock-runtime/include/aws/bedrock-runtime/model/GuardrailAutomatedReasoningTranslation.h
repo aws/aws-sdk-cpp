@@ -155,18 +155,18 @@ class GuardrailAutomatedReasoningTranslation {
   ///@}
  private:
   Aws::Vector<GuardrailAutomatedReasoningStatement> m_premises;
-  bool m_premisesHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningStatement> m_claims;
-  bool m_claimsHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningInputTextReference> m_untranslatedPremises;
-  bool m_untranslatedPremisesHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningInputTextReference> m_untranslatedClaims;
-  bool m_untranslatedClaimsHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_premisesHasBeenSet = false;
+  bool m_claimsHasBeenSet = false;
+  bool m_untranslatedPremisesHasBeenSet = false;
+  bool m_untranslatedClaimsHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

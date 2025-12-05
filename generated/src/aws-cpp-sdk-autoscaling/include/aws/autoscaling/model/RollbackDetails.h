@@ -127,18 +127,18 @@ class RollbackDetails {
   ///@}
  private:
   Aws::String m_rollbackReason;
-  bool m_rollbackReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_rollbackStartTime{};
-  bool m_rollbackStartTimeHasBeenSet = false;
 
   int m_percentageCompleteOnRollback{0};
-  bool m_percentageCompleteOnRollbackHasBeenSet = false;
 
   int m_instancesToUpdateOnRollback{0};
-  bool m_instancesToUpdateOnRollbackHasBeenSet = false;
 
   InstanceRefreshProgressDetails m_progressDetailsOnRollback;
+  bool m_rollbackReasonHasBeenSet = false;
+  bool m_rollbackStartTimeHasBeenSet = false;
+  bool m_percentageCompleteOnRollbackHasBeenSet = false;
+  bool m_instancesToUpdateOnRollbackHasBeenSet = false;
   bool m_progressDetailsOnRollbackHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class DeleteNotificationConfigurationRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_topicARN;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_topicARNHasBeenSet = false;
 };
 

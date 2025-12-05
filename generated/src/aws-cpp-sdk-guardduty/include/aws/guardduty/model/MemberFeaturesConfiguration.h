@@ -92,12 +92,12 @@ class MemberFeaturesConfiguration {
   ///@}
  private:
   OrgFeature m_name{OrgFeature::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<MemberAdditionalConfiguration> m_additionalConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_additionalConfigurationHasBeenSet = false;
 };
 

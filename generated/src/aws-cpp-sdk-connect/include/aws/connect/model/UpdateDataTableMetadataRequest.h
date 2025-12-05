@@ -144,21 +144,21 @@ class UpdateDataTableMetadataRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataTableId;
-  bool m_dataTableIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataTableLockLevel m_valueLockLevel{DataTableLockLevel::NOT_SET};
-  bool m_valueLockLevelHasBeenSet = false;
 
   Aws::String m_timeZone;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataTableIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_valueLockLevelHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
 };
 

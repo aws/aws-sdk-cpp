@@ -111,15 +111,15 @@ class CreateTrainingPlanRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trainingPlanName;
-  bool m_trainingPlanNameHasBeenSet = false;
 
   Aws::String m_trainingPlanOfferingId;
-  bool m_trainingPlanOfferingIdHasBeenSet = false;
 
   int m_spareInstanceCountPerUltraServer{0};
-  bool m_spareInstanceCountPerUltraServerHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trainingPlanNameHasBeenSet = false;
+  bool m_trainingPlanOfferingIdHasBeenSet = false;
+  bool m_spareInstanceCountPerUltraServerHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

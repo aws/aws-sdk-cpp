@@ -173,27 +173,27 @@ class GetLifecyclePolicyPreviewResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_lifecyclePolicyText;
-  bool m_lifecyclePolicyTextHasBeenSet = false;
 
   LifecyclePolicyPreviewStatus m_status{LifecyclePolicyPreviewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LifecyclePolicyPreviewResult> m_previewResults;
-  bool m_previewResultsHasBeenSet = false;
 
   LifecyclePolicyPreviewSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_lifecyclePolicyTextHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_previewResultsHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

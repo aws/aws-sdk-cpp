@@ -149,21 +149,21 @@ class DescribeSpotFleetRequestHistoryRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_spotFleetRequestId;
-  bool m_spotFleetRequestIdHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_spotFleetRequestIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

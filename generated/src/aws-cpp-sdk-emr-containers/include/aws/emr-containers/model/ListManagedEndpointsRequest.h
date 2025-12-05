@@ -172,24 +172,24 @@ class ListManagedEndpointsRequest : public EMRContainersRequest {
   ///@}
  private:
   Aws::String m_virtualClusterId;
-  bool m_virtualClusterIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Vector<EndpointState> m_states;
-  bool m_statesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_virtualClusterIdHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_typesHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

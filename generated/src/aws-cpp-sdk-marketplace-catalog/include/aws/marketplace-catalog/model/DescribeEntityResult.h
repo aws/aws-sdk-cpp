@@ -154,24 +154,24 @@ class DescribeEntityResult {
   ///@}
  private:
   Aws::String m_entityType;
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::Utils::Document m_detailsDocument;
-  bool m_detailsDocumentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityArnHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_detailsDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

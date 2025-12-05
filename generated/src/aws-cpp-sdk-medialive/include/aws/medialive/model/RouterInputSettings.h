@@ -91,12 +91,12 @@ class RouterInputSettings {
   ///@}
  private:
   Aws::Vector<RouterDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   RouterEncryptionType m_encryptionType{RouterEncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_destinationsHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

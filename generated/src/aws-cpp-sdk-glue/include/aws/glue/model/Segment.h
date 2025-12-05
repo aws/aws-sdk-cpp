@@ -63,9 +63,9 @@ class Segment {
   ///@}
  private:
   int m_segmentNumber{0};
-  bool m_segmentNumberHasBeenSet = false;
 
   int m_totalSegments{0};
+  bool m_segmentNumberHasBeenSet = false;
   bool m_totalSegmentsHasBeenSet = false;
 };
 

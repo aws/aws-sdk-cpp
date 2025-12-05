@@ -87,12 +87,12 @@ class GetBucketLifecycleConfigurationResult {
   ///@}
  private:
   Aws::Vector<LifecycleRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_rulesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class ListingRevision {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_revision;
+  bool m_idHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

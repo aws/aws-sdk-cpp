@@ -317,48 +317,48 @@ class ListObjectVersionsResult {
   ///@}
  private:
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_keyMarker;
-  bool m_keyMarkerHasBeenSet = false;
 
   Aws::String m_versionIdMarker;
-  bool m_versionIdMarkerHasBeenSet = false;
 
   Aws::String m_nextKeyMarker;
-  bool m_nextKeyMarkerHasBeenSet = false;
 
   Aws::String m_nextVersionIdMarker;
-  bool m_nextVersionIdMarkerHasBeenSet = false;
 
   Aws::Vector<ObjectVersion> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::Vector<DeleteMarkerEntry> m_deleteMarkers;
-  bool m_deleteMarkersHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   int m_maxKeys{0};
-  bool m_maxKeysHasBeenSet = false;
 
   Aws::Vector<CommonPrefix> m_commonPrefixes;
-  bool m_commonPrefixesHasBeenSet = false;
 
   EncodingType m_encodingType{EncodingType::NOT_SET};
-  bool m_encodingTypeHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_keyMarkerHasBeenSet = false;
+  bool m_versionIdMarkerHasBeenSet = false;
+  bool m_nextKeyMarkerHasBeenSet = false;
+  bool m_nextVersionIdMarkerHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
+  bool m_deleteMarkersHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_maxKeysHasBeenSet = false;
+  bool m_commonPrefixesHasBeenSet = false;
+  bool m_encodingTypeHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

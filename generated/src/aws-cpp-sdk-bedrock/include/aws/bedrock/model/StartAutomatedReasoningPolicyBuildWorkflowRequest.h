@@ -109,15 +109,15 @@ class StartAutomatedReasoningPolicyBuildWorkflowRequest : public BedrockRequest 
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildWorkflowType m_buildWorkflowType{AutomatedReasoningPolicyBuildWorkflowType::NOT_SET};
-  bool m_buildWorkflowTypeHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   AutomatedReasoningPolicyBuildWorkflowSource m_sourceContent;
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowTypeHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_sourceContentHasBeenSet = false;
 };
 

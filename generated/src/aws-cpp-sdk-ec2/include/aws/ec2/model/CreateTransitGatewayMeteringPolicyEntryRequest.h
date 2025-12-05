@@ -274,42 +274,42 @@ class CreateTransitGatewayMeteringPolicyEntryRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayMeteringPolicyId;
-  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
 
   int m_policyRuleNumber{0};
-  bool m_policyRuleNumberHasBeenSet = false;
 
   Aws::String m_sourceTransitGatewayAttachmentId;
-  bool m_sourceTransitGatewayAttachmentIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_sourceTransitGatewayAttachmentType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_sourceTransitGatewayAttachmentTypeHasBeenSet = false;
 
   Aws::String m_sourceCidrBlock;
-  bool m_sourceCidrBlockHasBeenSet = false;
 
   Aws::String m_sourcePortRange;
-  bool m_sourcePortRangeHasBeenSet = false;
 
   Aws::String m_destinationTransitGatewayAttachmentId;
-  bool m_destinationTransitGatewayAttachmentIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_destinationTransitGatewayAttachmentType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_destinationTransitGatewayAttachmentTypeHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_destinationPortRange;
-  bool m_destinationPortRangeHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   TransitGatewayMeteringPayerType m_meteredAccount{TransitGatewayMeteringPayerType::NOT_SET};
-  bool m_meteredAccountHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
+  bool m_policyRuleNumberHasBeenSet = false;
+  bool m_sourceTransitGatewayAttachmentIdHasBeenSet = false;
+  bool m_sourceTransitGatewayAttachmentTypeHasBeenSet = false;
+  bool m_sourceCidrBlockHasBeenSet = false;
+  bool m_sourcePortRangeHasBeenSet = false;
+  bool m_destinationTransitGatewayAttachmentIdHasBeenSet = false;
+  bool m_destinationTransitGatewayAttachmentTypeHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_destinationPortRangeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_meteredAccountHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

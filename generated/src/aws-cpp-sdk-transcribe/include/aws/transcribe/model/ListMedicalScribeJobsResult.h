@@ -105,15 +105,15 @@ class ListMedicalScribeJobsResult {
   ///@}
  private:
   MedicalScribeJobStatus m_status{MedicalScribeJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MedicalScribeJobSummary> m_medicalScribeJobSummaries;
-  bool m_medicalScribeJobSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_medicalScribeJobSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -125,15 +125,15 @@ class AwsElasticsearchDomainVPCOptions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_vPCId;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_vPCIdHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class LifecyclePolicyDetailExclusionRules {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_tagMap;
-  bool m_tagMapHasBeenSet = false;
 
   LifecyclePolicyDetailExclusionRulesAmis m_amis;
+  bool m_tagMapHasBeenSet = false;
   bool m_amisHasBeenSet = false;
 };
 

@@ -153,18 +153,18 @@ class ConfigurationSummary {
   ///@}
  private:
   Aws::Vector<IPAddressBasedRemoteInfo> m_ipAddressBasedRemoteInfoList;
-  bool m_ipAddressBasedRemoteInfoListHasBeenSet = false;
 
   Aws::Vector<PipelineInfo> m_pipelineInfoList;
-  bool m_pipelineInfoListHasBeenSet = false;
 
   RemoteSourceCodeAnalysisServerInfo m_remoteSourceCodeAnalysisServerInfo;
-  bool m_remoteSourceCodeAnalysisServerInfoHasBeenSet = false;
 
   Aws::Vector<VcenterBasedRemoteInfo> m_vcenterBasedRemoteInfoList;
-  bool m_vcenterBasedRemoteInfoListHasBeenSet = false;
 
   Aws::Vector<VersionControlInfo> m_versionControlInfoList;
+  bool m_ipAddressBasedRemoteInfoListHasBeenSet = false;
+  bool m_pipelineInfoListHasBeenSet = false;
+  bool m_remoteSourceCodeAnalysisServerInfoHasBeenSet = false;
+  bool m_vcenterBasedRemoteInfoListHasBeenSet = false;
   bool m_versionControlInfoListHasBeenSet = false;
 };
 

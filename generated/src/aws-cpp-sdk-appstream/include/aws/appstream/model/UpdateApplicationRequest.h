@@ -203,30 +203,30 @@ class UpdateApplicationRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   S3Location m_iconS3Location;
-  bool m_iconS3LocationHasBeenSet = false;
 
   Aws::String m_launchPath;
-  bool m_launchPathHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   Aws::String m_launchParameters;
-  bool m_launchParametersHasBeenSet = false;
 
   Aws::String m_appBlockArn;
-  bool m_appBlockArnHasBeenSet = false;
 
   Aws::Vector<ApplicationAttribute> m_attributesToDelete;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_iconS3LocationHasBeenSet = false;
+  bool m_launchPathHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
+  bool m_launchParametersHasBeenSet = false;
+  bool m_appBlockArnHasBeenSet = false;
   bool m_attributesToDeleteHasBeenSet = false;
 };
 

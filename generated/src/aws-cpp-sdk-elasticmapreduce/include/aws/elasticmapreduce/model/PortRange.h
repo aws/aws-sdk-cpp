@@ -63,9 +63,9 @@ class PortRange {
   ///@}
  private:
   int m_minRange{0};
-  bool m_minRangeHasBeenSet = false;
 
   int m_maxRange{0};
+  bool m_minRangeHasBeenSet = false;
   bool m_maxRangeHasBeenSet = false;
 };
 

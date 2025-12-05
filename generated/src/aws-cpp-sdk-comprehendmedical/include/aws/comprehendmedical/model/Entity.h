@@ -204,30 +204,30 @@ class Entity {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   EntityType m_category{EntityType::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   EntitySubType m_type{EntitySubType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Trait> m_traits;
-  bool m_traitsHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_idHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_traitsHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

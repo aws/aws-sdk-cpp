@@ -127,15 +127,15 @@ class ManagedCertificateDetails {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   ManagedCertificateStatus m_certificateStatus{ManagedCertificateStatus::NOT_SET};
-  bool m_certificateStatusHasBeenSet = false;
 
   ValidationTokenHost m_validationTokenHost{ValidationTokenHost::NOT_SET};
-  bool m_validationTokenHostHasBeenSet = false;
 
   Aws::Vector<ValidationTokenDetail> m_validationTokenDetails;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateStatusHasBeenSet = false;
+  bool m_validationTokenHostHasBeenSet = false;
   bool m_validationTokenDetailsHasBeenSet = false;
 };
 

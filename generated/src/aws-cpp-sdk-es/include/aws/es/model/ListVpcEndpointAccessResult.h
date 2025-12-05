@@ -94,12 +94,12 @@ class ListVpcEndpointAccessResult {
   ///@}
  private:
   Aws::Vector<AuthorizedPrincipal> m_authorizedPrincipalList;
-  bool m_authorizedPrincipalListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizedPrincipalListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

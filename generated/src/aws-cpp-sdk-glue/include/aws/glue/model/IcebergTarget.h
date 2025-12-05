@@ -122,15 +122,15 @@ class IcebergTarget {
   ///@}
  private:
   Aws::Vector<Aws::String> m_paths;
-  bool m_pathsHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusions;
-  bool m_exclusionsHasBeenSet = false;
 
   int m_maximumTraversalDepth{0};
+  bool m_pathsHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_exclusionsHasBeenSet = false;
   bool m_maximumTraversalDepthHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class UpdateDomainNameserversRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Nameserver> m_nameservers;
+  bool m_domainNameHasBeenSet = false;
   bool m_nameserversHasBeenSet = false;
 };
 

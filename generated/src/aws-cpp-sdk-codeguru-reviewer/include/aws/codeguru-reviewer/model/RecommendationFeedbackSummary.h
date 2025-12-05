@@ -100,12 +100,12 @@ class RecommendationFeedbackSummary {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::Vector<Reaction> m_reactions;
-  bool m_reactionsHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_reactionsHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

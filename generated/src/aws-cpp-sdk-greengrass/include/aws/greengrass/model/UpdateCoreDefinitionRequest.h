@@ -65,9 +65,9 @@ class UpdateCoreDefinitionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_coreDefinitionId;
-  bool m_coreDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_coreDefinitionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class HoursOfOperationConfig {
   ///@}
  private:
   HoursOfOperationDays m_day{HoursOfOperationDays::NOT_SET};
-  bool m_dayHasBeenSet = false;
 
   HoursOfOperationTimeSlice m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   HoursOfOperationTimeSlice m_endTime;
+  bool m_dayHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

@@ -267,42 +267,42 @@ class CustomLineItemListElement {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ListCustomLineItemChargeDetails m_chargeDetails;
-  bool m_chargeDetailsHasBeenSet = false;
 
   CurrencyCode m_currencyCode{CurrencyCode::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   Aws::String m_billingGroupArn;
-  bool m_billingGroupArnHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   long long m_associationSize{0};
-  bool m_associationSizeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ComputationRuleEnum m_computationRule{ComputationRuleEnum::NOT_SET};
-  bool m_computationRuleHasBeenSet = false;
 
   PresentationObject m_presentationDetails;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_chargeDetailsHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_productCodeHasBeenSet = false;
+  bool m_billingGroupArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_associationSizeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_computationRuleHasBeenSet = false;
   bool m_presentationDetailsHasBeenSet = false;
 };
 

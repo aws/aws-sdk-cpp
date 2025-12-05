@@ -124,9 +124,9 @@ class AdditionalDataset {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_configuration;
+  bool m_nameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

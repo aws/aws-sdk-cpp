@@ -94,12 +94,12 @@ class ListPublicKeysRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

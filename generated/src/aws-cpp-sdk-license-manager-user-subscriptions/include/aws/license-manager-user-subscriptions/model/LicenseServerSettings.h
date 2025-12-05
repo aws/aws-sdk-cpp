@@ -68,9 +68,9 @@ class LicenseServerSettings {
   ///@}
  private:
   ServerType m_serverType{ServerType::NOT_SET};
-  bool m_serverTypeHasBeenSet = false;
 
   ServerSettings m_serverSettings;
+  bool m_serverTypeHasBeenSet = false;
   bool m_serverSettingsHasBeenSet = false;
 };
 

@@ -143,21 +143,21 @@ class CreateAndAttachS3AccessPointRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3AccessPointAttachmentType m_type{S3AccessPointAttachmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CreateAndAttachS3AccessPointOpenZFSConfiguration m_openZFSConfiguration;
-  bool m_openZFSConfigurationHasBeenSet = false;
 
   CreateAndAttachS3AccessPointOntapConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   CreateAndAttachS3AccessPointS3Configuration m_s3AccessPoint;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_openZFSConfigurationHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
   bool m_s3AccessPointHasBeenSet = false;
 };
 

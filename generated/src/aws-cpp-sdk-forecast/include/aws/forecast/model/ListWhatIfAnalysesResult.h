@@ -86,12 +86,12 @@ class ListWhatIfAnalysesResult {
   ///@}
  private:
   Aws::Vector<WhatIfAnalysisSummary> m_whatIfAnalyses;
-  bool m_whatIfAnalysesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_whatIfAnalysesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class Cvss {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   double m_baseScore{0.0};
-  bool m_baseScoreHasBeenSet = false;
 
   Aws::String m_baseVector;
-  bool m_baseVectorHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Adjustment> m_adjustments;
+  bool m_versionHasBeenSet = false;
+  bool m_baseScoreHasBeenSet = false;
+  bool m_baseVectorHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_adjustmentsHasBeenSet = false;
 };
 

@@ -193,27 +193,27 @@ class UpdateMicrosoftTeamsChannelConfigurationRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_chatConfigurationArn;
-  bool m_chatConfigurationArnHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snsTopicArns;
-  bool m_snsTopicArnsHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_loggingLevel;
-  bool m_loggingLevelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_guardrailPolicyArns;
-  bool m_guardrailPolicyArnsHasBeenSet = false;
 
   bool m_userAuthorizationRequired{false};
+  bool m_chatConfigurationArnHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_snsTopicArnsHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_loggingLevelHasBeenSet = false;
+  bool m_guardrailPolicyArnsHasBeenSet = false;
   bool m_userAuthorizationRequiredHasBeenSet = false;
 };
 

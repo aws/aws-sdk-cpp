@@ -85,12 +85,12 @@ class ListThingGroupsResult {
   ///@}
  private:
   Aws::Vector<GroupNameAndArn> m_thingGroups;
-  bool m_thingGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thingGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

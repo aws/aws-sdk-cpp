@@ -95,12 +95,12 @@ class SecretsManagerConfiguration {
   ///@}
  private:
   Aws::String m_secretARN;
-  bool m_secretARNHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_secretARNHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class FlowTraceNodeInputSource {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::String m_outputFieldName;
+  bool m_expressionHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
   bool m_outputFieldNameHasBeenSet = false;
 };
 

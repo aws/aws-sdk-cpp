@@ -67,9 +67,9 @@ class CreateApplicationResult {
   ///@}
  private:
   ApplicationSummary m_applicationSummary;
-  bool m_applicationSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

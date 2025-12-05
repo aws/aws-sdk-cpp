@@ -97,15 +97,15 @@ class StartFlowFlushResult {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_flowOperationId;
-  bool m_flowOperationIdHasBeenSet = false;
 
   FlowOperationStatus m_flowOperationStatus{FlowOperationStatus::NOT_SET};
-  bool m_flowOperationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_flowOperationIdHasBeenSet = false;
+  bool m_flowOperationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

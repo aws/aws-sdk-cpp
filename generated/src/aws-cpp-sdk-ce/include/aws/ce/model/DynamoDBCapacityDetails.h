@@ -69,9 +69,9 @@ class DynamoDBCapacityDetails {
   ///@}
  private:
   Aws::String m_capacityUnits;
-  bool m_capacityUnitsHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_capacityUnitsHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

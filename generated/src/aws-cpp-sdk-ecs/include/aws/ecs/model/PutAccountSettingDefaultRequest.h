@@ -174,9 +174,9 @@ class PutAccountSettingDefaultRequest : public ECSRequest {
   ///@}
  private:
   SettingName m_name{SettingName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

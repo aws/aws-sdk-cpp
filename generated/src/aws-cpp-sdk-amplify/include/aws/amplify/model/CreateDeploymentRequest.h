@@ -97,12 +97,12 @@ class CreateDeploymentRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_fileMap;
+  bool m_appIdHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
   bool m_fileMapHasBeenSet = false;
 };
 

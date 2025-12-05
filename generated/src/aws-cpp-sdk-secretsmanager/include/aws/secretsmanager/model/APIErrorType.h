@@ -91,12 +91,12 @@ class APIErrorType {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_secretIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

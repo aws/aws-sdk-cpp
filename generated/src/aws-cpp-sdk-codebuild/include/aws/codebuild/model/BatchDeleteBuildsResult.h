@@ -90,12 +90,12 @@ class BatchDeleteBuildsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_buildsDeleted;
-  bool m_buildsDeletedHasBeenSet = false;
 
   Aws::Vector<BuildNotDeleted> m_buildsNotDeleted;
-  bool m_buildsNotDeletedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_buildsDeletedHasBeenSet = false;
+  bool m_buildsNotDeletedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class PriceWithCurrency {
   ///@}
  private:
   double m_price{0.0};
-  bool m_priceHasBeenSet = false;
 
   Aws::String m_currency;
+  bool m_priceHasBeenSet = false;
   bool m_currencyHasBeenSet = false;
 };
 

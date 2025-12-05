@@ -149,21 +149,21 @@ class BatchDeleteCustomVocabularyItemResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::Vector<FailedCustomVocabularyItem> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<CustomVocabularyItem> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

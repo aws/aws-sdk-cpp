@@ -97,12 +97,12 @@ class RegistrationTypeDefinition {
   ///@}
  private:
   Aws::String m_registrationType;
-  bool m_registrationTypeHasBeenSet = false;
 
   Aws::Vector<SupportedAssociation> m_supportedAssociations;
-  bool m_supportedAssociationsHasBeenSet = false;
 
   RegistrationTypeDisplayHints m_displayHints;
+  bool m_registrationTypeHasBeenSet = false;
+  bool m_supportedAssociationsHasBeenSet = false;
   bool m_displayHintsHasBeenSet = false;
 };
 

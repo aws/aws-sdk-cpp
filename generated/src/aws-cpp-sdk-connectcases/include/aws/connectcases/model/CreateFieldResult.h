@@ -76,12 +76,12 @@ class CreateFieldResult {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_fieldArn;
-  bool m_fieldArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_fieldArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

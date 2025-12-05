@@ -84,12 +84,12 @@ class GetDecryptedAPIKeyResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tokenDomains;
-  bool m_tokenDomainsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenDomainsHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

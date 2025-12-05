@@ -104,15 +104,15 @@ class PutIdentityProviderConfigurationRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   IdentityProviderAuthenticationMode m_authenticationMode{IdentityProviderAuthenticationMode::NOT_SET};
-  bool m_authenticationModeHasBeenSet = false;
 
   IdentityCenterConfiguration m_identityCenterConfiguration;
-  bool m_identityCenterConfigurationHasBeenSet = false;
 
   PersonalAccessTokenConfiguration m_personalAccessTokenConfiguration;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_authenticationModeHasBeenSet = false;
+  bool m_identityCenterConfigurationHasBeenSet = false;
   bool m_personalAccessTokenConfigurationHasBeenSet = false;
 };
 

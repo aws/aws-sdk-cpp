@@ -136,18 +136,18 @@ class ConnectionAlias {
   ///@}
  private:
   Aws::String m_connectionString;
-  bool m_connectionStringHasBeenSet = false;
 
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   ConnectionAliasState m_state{ConnectionAliasState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::Vector<ConnectionAliasAssociation> m_associations;
+  bool m_connectionStringHasBeenSet = false;
+  bool m_aliasIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
   bool m_associationsHasBeenSet = false;
 };
 

@@ -185,27 +185,27 @@ class DescribeStackDriftDetectionStatusResult {
   ///@}
  private:
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_stackDriftDetectionId;
-  bool m_stackDriftDetectionIdHasBeenSet = false;
 
   StackDriftStatus m_stackDriftStatus{StackDriftStatus::NOT_SET};
-  bool m_stackDriftStatusHasBeenSet = false;
 
   StackDriftDetectionStatus m_detectionStatus{StackDriftDetectionStatus::NOT_SET};
-  bool m_detectionStatusHasBeenSet = false;
 
   Aws::String m_detectionStatusReason;
-  bool m_detectionStatusReasonHasBeenSet = false;
 
   int m_driftedStackResourceCount{0};
-  bool m_driftedStackResourceCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackIdHasBeenSet = false;
+  bool m_stackDriftDetectionIdHasBeenSet = false;
+  bool m_stackDriftStatusHasBeenSet = false;
+  bool m_detectionStatusHasBeenSet = false;
+  bool m_detectionStatusReasonHasBeenSet = false;
+  bool m_driftedStackResourceCountHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

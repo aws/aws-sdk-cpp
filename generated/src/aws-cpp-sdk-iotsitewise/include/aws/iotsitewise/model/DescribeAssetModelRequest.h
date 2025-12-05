@@ -94,12 +94,12 @@ class DescribeAssetModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   bool m_excludeProperties{false};
-  bool m_excludePropertiesHasBeenSet = false;
 
   Aws::String m_assetModelVersion;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_excludePropertiesHasBeenSet = false;
   bool m_assetModelVersionHasBeenSet = false;
 };
 

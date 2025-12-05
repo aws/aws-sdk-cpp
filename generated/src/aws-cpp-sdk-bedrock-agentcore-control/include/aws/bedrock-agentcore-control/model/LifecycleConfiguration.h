@@ -68,9 +68,9 @@ class LifecycleConfiguration {
   ///@}
  private:
   int m_idleRuntimeSessionTimeout{0};
-  bool m_idleRuntimeSessionTimeoutHasBeenSet = false;
 
   int m_maxLifetime{0};
+  bool m_idleRuntimeSessionTimeoutHasBeenSet = false;
   bool m_maxLifetimeHasBeenSet = false;
 };
 

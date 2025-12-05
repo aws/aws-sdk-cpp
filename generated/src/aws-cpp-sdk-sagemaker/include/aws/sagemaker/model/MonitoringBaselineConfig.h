@@ -93,12 +93,12 @@ class MonitoringBaselineConfig {
   ///@}
  private:
   Aws::String m_baseliningJobName;
-  bool m_baseliningJobNameHasBeenSet = false;
 
   MonitoringConstraintsResource m_constraintsResource;
-  bool m_constraintsResourceHasBeenSet = false;
 
   MonitoringStatisticsResource m_statisticsResource;
+  bool m_baseliningJobNameHasBeenSet = false;
+  bool m_constraintsResourceHasBeenSet = false;
   bool m_statisticsResourceHasBeenSet = false;
 };
 

@@ -130,18 +130,18 @@ class ListFacesRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_faceIds;
+  bool m_collectionIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_faceIdsHasBeenSet = false;
 };
 

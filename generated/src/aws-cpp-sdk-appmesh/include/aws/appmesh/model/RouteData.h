@@ -144,21 +144,21 @@ class RouteData {
   ///@}
  private:
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   ResourceMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_routeName;
-  bool m_routeNameHasBeenSet = false;
 
   RouteSpec m_spec;
-  bool m_specHasBeenSet = false;
 
   RouteStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_virtualRouterName;
+  bool m_meshNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_routeNameHasBeenSet = false;
+  bool m_specHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_virtualRouterNameHasBeenSet = false;
 };
 

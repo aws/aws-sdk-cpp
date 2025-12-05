@@ -321,45 +321,45 @@ class StartCanaryDryRunRequest : public SyntheticsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CanaryCodeInput m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_runtimeVersion;
-  bool m_runtimeVersionHasBeenSet = false;
 
   CanaryRunConfigInput m_runConfig;
-  bool m_runConfigHasBeenSet = false;
 
   VpcConfigInput m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   int m_successRetentionPeriodInDays{0};
-  bool m_successRetentionPeriodInDaysHasBeenSet = false;
 
   int m_failureRetentionPeriodInDays{0};
-  bool m_failureRetentionPeriodInDaysHasBeenSet = false;
 
   VisualReferenceInput m_visualReference;
-  bool m_visualReferenceHasBeenSet = false;
 
   Aws::String m_artifactS3Location;
-  bool m_artifactS3LocationHasBeenSet = false;
 
   ArtifactConfigInput m_artifactConfig;
-  bool m_artifactConfigHasBeenSet = false;
 
   ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
-  bool m_provisionedResourceCleanupHasBeenSet = false;
 
   Aws::Vector<BrowserConfig> m_browserConfigs;
-  bool m_browserConfigsHasBeenSet = false;
 
   Aws::Vector<VisualReferenceInput> m_visualReferences;
+  bool m_nameHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_runtimeVersionHasBeenSet = false;
+  bool m_runConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_successRetentionPeriodInDaysHasBeenSet = false;
+  bool m_failureRetentionPeriodInDaysHasBeenSet = false;
+  bool m_visualReferenceHasBeenSet = false;
+  bool m_artifactS3LocationHasBeenSet = false;
+  bool m_artifactConfigHasBeenSet = false;
+  bool m_provisionedResourceCleanupHasBeenSet = false;
+  bool m_browserConfigsHasBeenSet = false;
   bool m_visualReferencesHasBeenSet = false;
 };
 

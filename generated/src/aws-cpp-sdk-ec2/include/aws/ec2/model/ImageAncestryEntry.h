@@ -128,18 +128,18 @@ class ImageAncestryEntry {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_imageOwnerAlias;
-  bool m_imageOwnerAliasHasBeenSet = false;
 
   Aws::String m_sourceImageId;
-  bool m_sourceImageIdHasBeenSet = false;
 
   Aws::String m_sourceImageRegion;
+  bool m_creationDateHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_imageOwnerAliasHasBeenSet = false;
+  bool m_sourceImageIdHasBeenSet = false;
   bool m_sourceImageRegionHasBeenSet = false;
 };
 

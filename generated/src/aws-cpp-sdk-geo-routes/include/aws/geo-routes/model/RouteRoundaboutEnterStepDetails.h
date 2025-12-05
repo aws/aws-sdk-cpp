@@ -107,15 +107,15 @@ class RouteRoundaboutEnterStepDetails {
   ///@}
  private:
   Aws::Vector<LocalizedString> m_intersection;
-  bool m_intersectionHasBeenSet = false;
 
   RouteSteeringDirection m_steeringDirection{RouteSteeringDirection::NOT_SET};
-  bool m_steeringDirectionHasBeenSet = false;
 
   double m_turnAngle{0.0};
-  bool m_turnAngleHasBeenSet = false;
 
   RouteTurnIntensity m_turnIntensity{RouteTurnIntensity::NOT_SET};
+  bool m_intersectionHasBeenSet = false;
+  bool m_steeringDirectionHasBeenSet = false;
+  bool m_turnAngleHasBeenSet = false;
   bool m_turnIntensityHasBeenSet = false;
 };
 

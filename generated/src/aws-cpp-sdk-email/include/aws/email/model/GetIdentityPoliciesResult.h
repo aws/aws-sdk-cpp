@@ -73,9 +73,9 @@ class GetIdentityPoliciesResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policiesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

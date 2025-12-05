@@ -84,12 +84,12 @@ class CreateVpcEndpointAssociationResult {
   ///@}
  private:
   VpcEndpointAssociation m_vpcEndpointAssociation;
-  bool m_vpcEndpointAssociationHasBeenSet = false;
 
   VpcEndpointAssociationStatus m_vpcEndpointAssociationStatus;
-  bool m_vpcEndpointAssociationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcEndpointAssociationHasBeenSet = false;
+  bool m_vpcEndpointAssociationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

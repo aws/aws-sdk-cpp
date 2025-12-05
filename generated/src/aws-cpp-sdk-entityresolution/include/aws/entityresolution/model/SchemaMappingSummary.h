@@ -124,18 +124,18 @@ class SchemaMappingSummary {
   ///@}
  private:
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   bool m_hasWorkflows{false};
+  bool m_schemaNameHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_hasWorkflowsHasBeenSet = false;
 };
 

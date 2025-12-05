@@ -150,18 +150,18 @@ class SpekeKeyProvider {
   ///@}
  private:
   EncryptionContractConfiguration m_encryptionContractConfiguration;
-  bool m_encryptionContractConfigurationHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<DrmSystem> m_drmSystems;
-  bool m_drmSystemsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_encryptionContractConfigurationHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_drmSystemsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

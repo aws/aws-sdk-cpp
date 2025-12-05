@@ -84,12 +84,12 @@ class SubscribeRequest : public CodeStarNotificationsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Target m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_arnHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

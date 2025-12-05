@@ -131,18 +131,18 @@ class Shard {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_slots;
-  bool m_slotsHasBeenSet = false;
 
   Aws::Vector<Node> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   int m_numberOfNodes{0};
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_nodesHasBeenSet = false;
   bool m_numberOfNodesHasBeenSet = false;
 };
 

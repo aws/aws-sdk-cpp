@@ -71,9 +71,9 @@ class PrivacyBudget {
   ///@}
  private:
   DifferentialPrivacyPrivacyBudget m_differentialPrivacy;
-  bool m_differentialPrivacyHasBeenSet = false;
 
   AccessBudget m_accessBudget;
+  bool m_differentialPrivacyHasBeenSet = false;
   bool m_accessBudgetHasBeenSet = false;
 };
 

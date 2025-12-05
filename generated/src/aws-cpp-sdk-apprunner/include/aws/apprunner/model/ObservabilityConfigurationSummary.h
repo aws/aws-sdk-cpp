@@ -95,12 +95,12 @@ class ObservabilityConfigurationSummary {
   ///@}
  private:
   Aws::String m_observabilityConfigurationArn;
-  bool m_observabilityConfigurationArnHasBeenSet = false;
 
   Aws::String m_observabilityConfigurationName;
-  bool m_observabilityConfigurationNameHasBeenSet = false;
 
   int m_observabilityConfigurationRevision{0};
+  bool m_observabilityConfigurationArnHasBeenSet = false;
+  bool m_observabilityConfigurationNameHasBeenSet = false;
   bool m_observabilityConfigurationRevisionHasBeenSet = false;
 };
 

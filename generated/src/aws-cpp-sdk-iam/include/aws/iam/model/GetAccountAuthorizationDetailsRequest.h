@@ -107,12 +107,12 @@ class GetAccountAuthorizationDetailsRequest : public IAMRequest {
   ///@}
  private:
   Aws::Vector<EntityType> m_filter;
-  bool m_filterHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_filterHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

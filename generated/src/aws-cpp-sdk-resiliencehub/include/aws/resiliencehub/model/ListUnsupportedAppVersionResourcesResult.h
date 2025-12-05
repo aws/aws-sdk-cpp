@@ -102,15 +102,15 @@ class ListUnsupportedAppVersionResourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resolutionId;
-  bool m_resolutionIdHasBeenSet = false;
 
   Aws::Vector<UnsupportedResource> m_unsupportedResources;
-  bool m_unsupportedResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resolutionIdHasBeenSet = false;
+  bool m_unsupportedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

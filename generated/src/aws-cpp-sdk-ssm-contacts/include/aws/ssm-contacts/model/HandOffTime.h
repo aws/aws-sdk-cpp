@@ -62,9 +62,9 @@ class HandOffTime {
   ///@}
  private:
   int m_hourOfDay{0};
-  bool m_hourOfDayHasBeenSet = false;
 
   int m_minuteOfHour{0};
+  bool m_hourOfDayHasBeenSet = false;
   bool m_minuteOfHourHasBeenSet = false;
 };
 

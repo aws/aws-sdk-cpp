@@ -68,9 +68,9 @@ class InputDeviceUhdAudioChannelPairConfig {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   InputDeviceUhdAudioChannelPairProfile m_profile{InputDeviceUhdAudioChannelPairProfile::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_profileHasBeenSet = false;
 };
 

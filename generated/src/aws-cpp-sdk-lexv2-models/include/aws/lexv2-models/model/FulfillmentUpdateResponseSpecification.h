@@ -95,12 +95,12 @@ class FulfillmentUpdateResponseSpecification {
   ///@}
  private:
   int m_frequencyInSeconds{0};
-  bool m_frequencyInSecondsHasBeenSet = false;
 
   Aws::Vector<MessageGroup> m_messageGroups;
-  bool m_messageGroupsHasBeenSet = false;
 
   bool m_allowInterrupt{false};
+  bool m_frequencyInSecondsHasBeenSet = false;
+  bool m_messageGroupsHasBeenSet = false;
   bool m_allowInterruptHasBeenSet = false;
 };
 

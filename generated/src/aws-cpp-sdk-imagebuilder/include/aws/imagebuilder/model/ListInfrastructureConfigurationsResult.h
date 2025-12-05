@@ -91,12 +91,12 @@ class ListInfrastructureConfigurationsResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<InfrastructureConfigurationSummary> m_infrastructureConfigurationSummaryList;
-  bool m_infrastructureConfigurationSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_infrastructureConfigurationSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

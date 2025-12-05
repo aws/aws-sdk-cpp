@@ -230,39 +230,39 @@ class DescribeUserProfileResult {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileArn;
-  bool m_userProfileArnHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   Aws::String m_homeEfsFileSystemUid;
-  bool m_homeEfsFileSystemUidHasBeenSet = false;
 
   UserProfileStatus m_status{UserProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_singleSignOnUserIdentifier;
-  bool m_singleSignOnUserIdentifierHasBeenSet = false;
 
   Aws::String m_singleSignOnUserValue;
-  bool m_singleSignOnUserValueHasBeenSet = false;
 
   UserSettings m_userSettings;
-  bool m_userSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_userProfileArnHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
+  bool m_homeEfsFileSystemUidHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_singleSignOnUserIdentifierHasBeenSet = false;
+  bool m_singleSignOnUserValueHasBeenSet = false;
+  bool m_userSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

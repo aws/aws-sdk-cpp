@@ -60,9 +60,9 @@ class DescribeRoutingProfileResult {
   ///@}
  private:
   RoutingProfile m_routingProfile;
-  bool m_routingProfileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routingProfileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

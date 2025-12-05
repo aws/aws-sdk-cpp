@@ -86,12 +86,12 @@ class ContextSource {
   ///@}
  private:
   Aws::String m_sourceUri;
-  bool m_sourceUriHasBeenSet = false;
 
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceId;
+  bool m_sourceUriHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_sourceIdHasBeenSet = false;
 };
 

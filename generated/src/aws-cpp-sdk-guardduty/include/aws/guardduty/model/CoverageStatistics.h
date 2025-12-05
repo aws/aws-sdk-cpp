@@ -83,9 +83,9 @@ class CoverageStatistics {
   ///@}
  private:
   Aws::Map<ResourceType, long long> m_countByResourceType;
-  bool m_countByResourceTypeHasBeenSet = false;
 
   Aws::Map<CoverageStatus, long long> m_countByCoverageStatus;
+  bool m_countByResourceTypeHasBeenSet = false;
   bool m_countByCoverageStatusHasBeenSet = false;
 };
 

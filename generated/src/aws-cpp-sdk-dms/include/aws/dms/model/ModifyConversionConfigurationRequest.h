@@ -67,9 +67,9 @@ class ModifyConversionConfigurationRequest : public DatabaseMigrationServiceRequ
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_conversionConfiguration;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
   bool m_conversionConfigurationHasBeenSet = false;
 };
 

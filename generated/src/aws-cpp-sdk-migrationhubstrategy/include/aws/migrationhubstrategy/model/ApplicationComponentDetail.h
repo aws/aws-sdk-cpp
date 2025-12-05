@@ -473,72 +473,72 @@ class ApplicationComponentDetail {
   ///@}
  private:
   SrcCodeOrDbAnalysisStatus m_analysisStatus{SrcCodeOrDbAnalysisStatus::NOT_SET};
-  bool m_analysisStatusHasBeenSet = false;
 
   S3Object m_antipatternReportS3Object;
-  bool m_antipatternReportS3ObjectHasBeenSet = false;
 
   AntipatternReportStatus m_antipatternReportStatus{AntipatternReportStatus::NOT_SET};
-  bool m_antipatternReportStatusHasBeenSet = false;
 
   Aws::String m_antipatternReportStatusMessage;
-  bool m_antipatternReportStatusMessageHasBeenSet = false;
 
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   AppUnitError m_appUnitError;
-  bool m_appUnitErrorHasBeenSet = false;
 
   Aws::String m_associatedServerId;
-  bool m_associatedServerIdHasBeenSet = false;
 
   DatabaseConfigDetail m_databaseConfigDetail;
-  bool m_databaseConfigDetailHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   InclusionStatus m_inclusionStatus{InclusionStatus::NOT_SET};
-  bool m_inclusionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAnalyzedTimestamp{};
-  bool m_lastAnalyzedTimestampHasBeenSet = false;
 
   Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
-  bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
   bool m_moreServerAssociationExists{false};
-  bool m_moreServerAssociationExistsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_osDriver;
-  bool m_osDriverHasBeenSet = false;
 
   Aws::String m_osVersion;
-  bool m_osVersionHasBeenSet = false;
 
   RecommendationSet m_recommendationSet;
-  bool m_recommendationSetHasBeenSet = false;
 
   ResourceSubType m_resourceSubType{ResourceSubType::NOT_SET};
-  bool m_resourceSubTypeHasBeenSet = false;
 
   Aws::Vector<Result> m_resultList;
-  bool m_resultListHasBeenSet = false;
 
   RuntimeAnalysisStatus m_runtimeStatus{RuntimeAnalysisStatus::NOT_SET};
-  bool m_runtimeStatusHasBeenSet = false;
 
   Aws::String m_runtimeStatusMessage;
-  bool m_runtimeStatusMessageHasBeenSet = false;
 
   Aws::Vector<SourceCodeRepository> m_sourceCodeRepositories;
-  bool m_sourceCodeRepositoriesHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_analysisStatusHasBeenSet = false;
+  bool m_antipatternReportS3ObjectHasBeenSet = false;
+  bool m_antipatternReportStatusHasBeenSet = false;
+  bool m_antipatternReportStatusMessageHasBeenSet = false;
+  bool m_appTypeHasBeenSet = false;
+  bool m_appUnitErrorHasBeenSet = false;
+  bool m_associatedServerIdHasBeenSet = false;
+  bool m_databaseConfigDetailHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_inclusionStatusHasBeenSet = false;
+  bool m_lastAnalyzedTimestampHasBeenSet = false;
+  bool m_listAntipatternSeveritySummaryHasBeenSet = false;
+  bool m_moreServerAssociationExistsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_osDriverHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
+  bool m_recommendationSetHasBeenSet = false;
+  bool m_resourceSubTypeHasBeenSet = false;
+  bool m_resultListHasBeenSet = false;
+  bool m_runtimeStatusHasBeenSet = false;
+  bool m_runtimeStatusMessageHasBeenSet = false;
+  bool m_sourceCodeRepositoriesHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

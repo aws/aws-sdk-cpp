@@ -142,21 +142,21 @@ class TimeSeriesDataPointSummaryFormOutput {
   ///@}
  private:
   Aws::String m_contentSummary;
-  bool m_contentSummaryHasBeenSet = false;
 
   Aws::String m_formName;
-  bool m_formNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_typeIdentifier;
-  bool m_typeIdentifierHasBeenSet = false;
 
   Aws::String m_typeRevision;
+  bool m_contentSummaryHasBeenSet = false;
+  bool m_formNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_typeIdentifierHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
 };
 

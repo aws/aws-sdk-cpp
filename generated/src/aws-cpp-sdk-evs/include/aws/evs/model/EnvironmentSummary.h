@@ -176,27 +176,27 @@ class EnvironmentSummary {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   VcfVersion m_vcfVersion{VcfVersion::NOT_SET};
-  bool m_vcfVersionHasBeenSet = false;
 
   CheckResult m_environmentStatus{CheckResult::NOT_SET};
-  bool m_environmentStatusHasBeenSet = false;
 
   EnvironmentState m_environmentState{EnvironmentState::NOT_SET};
-  bool m_environmentStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_environmentArn;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_vcfVersionHasBeenSet = false;
+  bool m_environmentStatusHasBeenSet = false;
+  bool m_environmentStateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_environmentArnHasBeenSet = false;
 };
 

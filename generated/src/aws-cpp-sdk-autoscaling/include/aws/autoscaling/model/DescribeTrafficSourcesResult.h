@@ -88,12 +88,12 @@ class DescribeTrafficSourcesResult {
   ///@}
  private:
   Aws::Vector<TrafficSourceState> m_trafficSources;
-  bool m_trafficSourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficSourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

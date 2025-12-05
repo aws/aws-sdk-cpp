@@ -87,12 +87,12 @@ class GetComplianceSummaryResult {
   ///@}
  private:
   Aws::Vector<Summary> m_summaryList;
-  bool m_summaryListHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_summaryListHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

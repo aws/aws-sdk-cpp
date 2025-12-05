@@ -86,12 +86,12 @@ class ListKeywordsForDataSourceRequest : public AuditManagerRequest {
   ///@}
  private:
   DataSourceType m_source{DataSourceType::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_sourceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

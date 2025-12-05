@@ -214,30 +214,30 @@ class AssessmentTemplate {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_assessmentTargetArn;
-  bool m_assessmentTargetArnHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rulesPackageArns;
-  bool m_rulesPackageArnsHasBeenSet = false;
 
   Aws::Vector<Attribute> m_userAttributesForFindings;
-  bool m_userAttributesForFindingsHasBeenSet = false;
 
   Aws::String m_lastAssessmentRunArn;
-  bool m_lastAssessmentRunArnHasBeenSet = false;
 
   int m_assessmentRunCount{0};
-  bool m_assessmentRunCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_assessmentTargetArnHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_rulesPackageArnsHasBeenSet = false;
+  bool m_userAttributesForFindingsHasBeenSet = false;
+  bool m_lastAssessmentRunArnHasBeenSet = false;
+  bool m_assessmentRunCountHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

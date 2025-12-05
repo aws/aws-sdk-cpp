@@ -117,18 +117,18 @@ class GetAuthPolicyResult {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   AuthPolicyState m_state{AuthPolicyState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

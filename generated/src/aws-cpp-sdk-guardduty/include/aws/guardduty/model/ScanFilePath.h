@@ -105,15 +105,15 @@ class ScanFilePath {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   Aws::String m_volumeArn;
-  bool m_volumeArnHasBeenSet = false;
 
   Aws::String m_hash;
-  bool m_hashHasBeenSet = false;
 
   Aws::String m_fileName;
+  bool m_filePathHasBeenSet = false;
+  bool m_volumeArnHasBeenSet = false;
+  bool m_hashHasBeenSet = false;
   bool m_fileNameHasBeenSet = false;
 };
 

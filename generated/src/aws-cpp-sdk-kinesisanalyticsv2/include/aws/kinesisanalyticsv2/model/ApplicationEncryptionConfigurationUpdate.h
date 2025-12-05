@@ -69,9 +69,9 @@ class ApplicationEncryptionConfigurationUpdate {
   ///@}
  private:
   Aws::String m_keyIdUpdate;
-  bool m_keyIdUpdateHasBeenSet = false;
 
   KeyType m_keyTypeUpdate{KeyType::NOT_SET};
+  bool m_keyIdUpdateHasBeenSet = false;
   bool m_keyTypeUpdateHasBeenSet = false;
 };
 

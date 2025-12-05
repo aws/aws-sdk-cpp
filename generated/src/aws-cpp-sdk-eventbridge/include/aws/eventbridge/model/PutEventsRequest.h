@@ -85,9 +85,9 @@ class PutEventsRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::Vector<PutEventsRequestEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_endpointId;
+  bool m_entriesHasBeenSet = false;
   bool m_endpointIdHasBeenSet = false;
 };
 

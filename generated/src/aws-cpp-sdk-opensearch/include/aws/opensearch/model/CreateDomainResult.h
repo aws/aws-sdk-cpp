@@ -66,9 +66,9 @@ class CreateDomainResult {
   ///@}
  private:
   DomainStatus m_domainStatus;
-  bool m_domainStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

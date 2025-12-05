@@ -85,12 +85,12 @@ class ListEnvironmentVlansResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Vlan> m_environmentVlans;
-  bool m_environmentVlansHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_environmentVlansHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class SuccessfulRequest {
   ///@}
  private:
   Aws::String m_requestIdentifier;
-  bool m_requestIdentifierHasBeenSet = false;
 
   Aws::String m_contactId;
+  bool m_requestIdentifierHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class GetTableBucketMaintenanceConfigurationResult {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   Aws::Map<TableBucketMaintenanceType, TableBucketMaintenanceConfigurationValue> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableBucketARNHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

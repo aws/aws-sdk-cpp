@@ -78,9 +78,9 @@ class BuiltinIntentMetadata {
   ///@}
  private:
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   Aws::Vector<Locale> m_supportedLocales;
+  bool m_signatureHasBeenSet = false;
   bool m_supportedLocalesHasBeenSet = false;
 };
 

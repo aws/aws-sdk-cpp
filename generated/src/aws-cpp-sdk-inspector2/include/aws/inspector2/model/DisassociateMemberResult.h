@@ -60,9 +60,9 @@ class DisassociateMemberResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

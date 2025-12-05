@@ -80,9 +80,9 @@ class TemplateAttributes {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_customAttributes;
-  bool m_customAttributesHasBeenSet = false;
 
   Aws::String m_customerProfileAttributes;
+  bool m_customAttributesHasBeenSet = false;
   bool m_customerProfileAttributesHasBeenSet = false;
 };
 

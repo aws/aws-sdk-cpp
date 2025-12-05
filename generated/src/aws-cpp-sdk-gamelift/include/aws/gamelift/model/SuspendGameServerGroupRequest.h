@@ -75,9 +75,9 @@ class SuspendGameServerGroupRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::Vector<GameServerGroupAction> m_suspendActions;
+  bool m_gameServerGroupNameHasBeenSet = false;
   bool m_suspendActionsHasBeenSet = false;
 };
 

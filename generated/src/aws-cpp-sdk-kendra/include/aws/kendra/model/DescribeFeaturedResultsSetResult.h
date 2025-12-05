@@ -230,33 +230,33 @@ class DescribeFeaturedResultsSetResult {
   ///@}
  private:
   Aws::String m_featuredResultsSetId;
-  bool m_featuredResultsSetIdHasBeenSet = false;
 
   Aws::String m_featuredResultsSetName;
-  bool m_featuredResultsSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FeaturedResultsSetStatus m_status{FeaturedResultsSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryTexts;
-  bool m_queryTextsHasBeenSet = false;
 
   Aws::Vector<FeaturedDocumentWithMetadata> m_featuredDocumentsWithMetadata;
-  bool m_featuredDocumentsWithMetadataHasBeenSet = false;
 
   Aws::Vector<FeaturedDocumentMissing> m_featuredDocumentsMissing;
-  bool m_featuredDocumentsMissingHasBeenSet = false;
 
   long long m_lastUpdatedTimestamp{0};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   long long m_creationTimestamp{0};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featuredResultsSetIdHasBeenSet = false;
+  bool m_featuredResultsSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_queryTextsHasBeenSet = false;
+  bool m_featuredDocumentsWithMetadataHasBeenSet = false;
+  bool m_featuredDocumentsMissingHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

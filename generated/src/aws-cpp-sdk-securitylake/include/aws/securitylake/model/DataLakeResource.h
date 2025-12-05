@@ -185,27 +185,27 @@ class DataLakeResource {
   ///@}
  private:
   DataLakeStatus m_createStatus{DataLakeStatus::NOT_SET};
-  bool m_createStatusHasBeenSet = false;
 
   Aws::String m_dataLakeArn;
-  bool m_dataLakeArnHasBeenSet = false;
 
   DataLakeEncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   DataLakeLifecycleConfiguration m_lifecycleConfiguration;
-  bool m_lifecycleConfigurationHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   DataLakeReplicationConfiguration m_replicationConfiguration;
-  bool m_replicationConfigurationHasBeenSet = false;
 
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   DataLakeUpdateStatus m_updateStatus;
+  bool m_createStatusHasBeenSet = false;
+  bool m_dataLakeArnHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_replicationConfigurationHasBeenSet = false;
+  bool m_s3BucketArnHasBeenSet = false;
   bool m_updateStatusHasBeenSet = false;
 };
 

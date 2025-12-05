@@ -171,24 +171,24 @@ class UpdateKxClusterCodeConfigurationRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   CodeConfiguration m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_initializationScript;
-  bool m_initializationScriptHasBeenSet = false;
 
   Aws::Vector<KxCommandLineArgument> m_commandLineArguments;
-  bool m_commandLineArgumentsHasBeenSet = false;
 
   KxClusterCodeDeploymentConfiguration m_deploymentConfiguration;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_codeHasBeenSet = false;
+  bool m_initializationScriptHasBeenSet = false;
+  bool m_commandLineArgumentsHasBeenSet = false;
   bool m_deploymentConfigurationHasBeenSet = false;
 };
 

@@ -228,36 +228,36 @@ class DescribeQuerySuggestionsConfigResult {
   ///@}
  private:
   Mode m_mode{Mode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   QuerySuggestionsStatus m_status{QuerySuggestionsStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_queryLogLookBackWindowInDays{0};
-  bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
 
   bool m_includeQueriesWithoutUserInformation{false};
-  bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
 
   int m_minimumNumberOfQueryingUsers{0};
-  bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
 
   int m_minimumQueryCount{0};
-  bool m_minimumQueryCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuggestionsBuildTime{};
-  bool m_lastSuggestionsBuildTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastClearTime{};
-  bool m_lastClearTimeHasBeenSet = false;
 
   int m_totalSuggestionsCount{0};
-  bool m_totalSuggestionsCountHasBeenSet = false;
 
   AttributeSuggestionsDescribeConfig m_attributeSuggestionsConfig;
-  bool m_attributeSuggestionsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
+  bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
+  bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
+  bool m_minimumQueryCountHasBeenSet = false;
+  bool m_lastSuggestionsBuildTimeHasBeenSet = false;
+  bool m_lastClearTimeHasBeenSet = false;
+  bool m_totalSuggestionsCountHasBeenSet = false;
+  bool m_attributeSuggestionsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

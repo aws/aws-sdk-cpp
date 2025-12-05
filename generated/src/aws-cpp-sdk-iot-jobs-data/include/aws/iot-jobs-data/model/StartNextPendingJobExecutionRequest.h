@@ -99,12 +99,12 @@ class StartNextPendingJobExecutionRequest : public IoTJobsDataPlaneRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   long long m_stepTimeoutInMinutes{0};
+  bool m_thingNameHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
   bool m_stepTimeoutInMinutesHasBeenSet = false;
 };
 

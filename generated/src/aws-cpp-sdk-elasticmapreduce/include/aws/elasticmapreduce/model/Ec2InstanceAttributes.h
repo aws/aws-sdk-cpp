@@ -282,36 +282,36 @@ class Ec2InstanceAttributes {
   ///@}
  private:
   Aws::String m_ec2KeyName;
-  bool m_ec2KeyNameHasBeenSet = false;
 
   Aws::String m_ec2SubnetId;
-  bool m_ec2SubnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requestedEc2SubnetIds;
-  bool m_requestedEc2SubnetIdsHasBeenSet = false;
 
   Aws::String m_ec2AvailabilityZone;
-  bool m_ec2AvailabilityZoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requestedEc2AvailabilityZones;
-  bool m_requestedEc2AvailabilityZonesHasBeenSet = false;
 
   Aws::String m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_emrManagedMasterSecurityGroup;
-  bool m_emrManagedMasterSecurityGroupHasBeenSet = false;
 
   Aws::String m_emrManagedSlaveSecurityGroup;
-  bool m_emrManagedSlaveSecurityGroupHasBeenSet = false;
 
   Aws::String m_serviceAccessSecurityGroup;
-  bool m_serviceAccessSecurityGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalMasterSecurityGroups;
-  bool m_additionalMasterSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalSlaveSecurityGroups;
+  bool m_ec2KeyNameHasBeenSet = false;
+  bool m_ec2SubnetIdHasBeenSet = false;
+  bool m_requestedEc2SubnetIdsHasBeenSet = false;
+  bool m_ec2AvailabilityZoneHasBeenSet = false;
+  bool m_requestedEc2AvailabilityZonesHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_emrManagedMasterSecurityGroupHasBeenSet = false;
+  bool m_emrManagedSlaveSecurityGroupHasBeenSet = false;
+  bool m_serviceAccessSecurityGroupHasBeenSet = false;
+  bool m_additionalMasterSecurityGroupsHasBeenSet = false;
   bool m_additionalSlaveSecurityGroupsHasBeenSet = false;
 };
 

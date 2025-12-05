@@ -97,12 +97,12 @@ class CreateThingTypeRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   ThingTypeProperties m_thingTypeProperties;
-  bool m_thingTypePropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_thingTypeNameHasBeenSet = false;
+  bool m_thingTypePropertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

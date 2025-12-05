@@ -73,9 +73,9 @@ class UnsuccessfulInstanceCreditSpecificationItem {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   UnsuccessfulInstanceCreditSpecificationItemError m_error;
+  bool m_instanceIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

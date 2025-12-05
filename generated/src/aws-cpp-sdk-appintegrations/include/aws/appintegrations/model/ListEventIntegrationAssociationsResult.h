@@ -87,12 +87,12 @@ class ListEventIntegrationAssociationsResult {
   ///@}
  private:
   Aws::Vector<EventIntegrationAssociation> m_eventIntegrationAssociations;
-  bool m_eventIntegrationAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventIntegrationAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

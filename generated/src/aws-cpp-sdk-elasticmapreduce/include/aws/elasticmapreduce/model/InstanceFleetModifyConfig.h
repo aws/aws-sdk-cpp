@@ -153,21 +153,21 @@ class InstanceFleetModifyConfig {
   ///@}
  private:
   Aws::String m_instanceFleetId;
-  bool m_instanceFleetIdHasBeenSet = false;
 
   int m_targetOnDemandCapacity{0};
-  bool m_targetOnDemandCapacityHasBeenSet = false;
 
   int m_targetSpotCapacity{0};
-  bool m_targetSpotCapacityHasBeenSet = false;
 
   InstanceFleetResizingSpecifications m_resizeSpecifications;
-  bool m_resizeSpecificationsHasBeenSet = false;
 
   Aws::Vector<InstanceTypeConfig> m_instanceTypeConfigs;
-  bool m_instanceTypeConfigsHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_instanceFleetIdHasBeenSet = false;
+  bool m_targetOnDemandCapacityHasBeenSet = false;
+  bool m_targetSpotCapacityHasBeenSet = false;
+  bool m_resizeSpecificationsHasBeenSet = false;
+  bool m_instanceTypeConfigsHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

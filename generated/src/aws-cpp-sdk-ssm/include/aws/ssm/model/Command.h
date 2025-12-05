@@ -580,81 +580,81 @@ class Command {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAfter{};
-  bool m_expiresAfterHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedDateTime{};
-  bool m_requestedDateTimeHasBeenSet = false;
 
   CommandStatus m_status{CommandStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_outputS3Region;
-  bool m_outputS3RegionHasBeenSet = false;
 
   Aws::String m_outputS3BucketName;
-  bool m_outputS3BucketNameHasBeenSet = false;
 
   Aws::String m_outputS3KeyPrefix;
-  bool m_outputS3KeyPrefixHasBeenSet = false;
 
   Aws::String m_maxConcurrency;
-  bool m_maxConcurrencyHasBeenSet = false;
 
   Aws::String m_maxErrors;
-  bool m_maxErrorsHasBeenSet = false;
 
   int m_targetCount{0};
-  bool m_targetCountHasBeenSet = false;
 
   int m_completedCount{0};
-  bool m_completedCountHasBeenSet = false;
 
   int m_errorCount{0};
-  bool m_errorCountHasBeenSet = false;
 
   int m_deliveryTimedOutCount{0};
-  bool m_deliveryTimedOutCountHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   NotificationConfig m_notificationConfig;
-  bool m_notificationConfigHasBeenSet = false;
 
   CloudWatchOutputConfig m_cloudWatchOutputConfig;
-  bool m_cloudWatchOutputConfigHasBeenSet = false;
 
   int m_timeoutSeconds{0};
-  bool m_timeoutSecondsHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
-  bool m_alarmConfigurationHasBeenSet = false;
 
   Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+  bool m_commandIdHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_expiresAfterHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_requestedDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_outputS3RegionHasBeenSet = false;
+  bool m_outputS3BucketNameHasBeenSet = false;
+  bool m_outputS3KeyPrefixHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_maxErrorsHasBeenSet = false;
+  bool m_targetCountHasBeenSet = false;
+  bool m_completedCountHasBeenSet = false;
+  bool m_errorCountHasBeenSet = false;
+  bool m_deliveryTimedOutCountHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_notificationConfigHasBeenSet = false;
+  bool m_cloudWatchOutputConfigHasBeenSet = false;
+  bool m_timeoutSecondsHasBeenSet = false;
+  bool m_alarmConfigurationHasBeenSet = false;
   bool m_triggeredAlarmsHasBeenSet = false;
 };
 

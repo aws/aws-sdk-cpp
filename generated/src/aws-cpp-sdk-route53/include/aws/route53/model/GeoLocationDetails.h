@@ -149,21 +149,21 @@ class GeoLocationDetails {
   ///@}
  private:
   Aws::String m_continentCode;
-  bool m_continentCodeHasBeenSet = false;
 
   Aws::String m_continentName;
-  bool m_continentNameHasBeenSet = false;
 
   Aws::String m_countryCode;
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_countryName;
-  bool m_countryNameHasBeenSet = false;
 
   Aws::String m_subdivisionCode;
-  bool m_subdivisionCodeHasBeenSet = false;
 
   Aws::String m_subdivisionName;
+  bool m_continentCodeHasBeenSet = false;
+  bool m_continentNameHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
+  bool m_countryNameHasBeenSet = false;
+  bool m_subdivisionCodeHasBeenSet = false;
   bool m_subdivisionNameHasBeenSet = false;
 };
 

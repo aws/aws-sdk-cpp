@@ -218,33 +218,33 @@ class ConflictMetadata {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   FileSizes m_fileSizes;
-  bool m_fileSizesHasBeenSet = false;
 
   FileModes m_fileModes;
-  bool m_fileModesHasBeenSet = false;
 
   ObjectTypes m_objectTypes;
-  bool m_objectTypesHasBeenSet = false;
 
   int m_numberOfConflicts{0};
-  bool m_numberOfConflictsHasBeenSet = false;
 
   IsBinaryFile m_isBinaryFile;
-  bool m_isBinaryFileHasBeenSet = false;
 
   bool m_contentConflict{false};
-  bool m_contentConflictHasBeenSet = false;
 
   bool m_fileModeConflict{false};
-  bool m_fileModeConflictHasBeenSet = false;
 
   bool m_objectTypeConflict{false};
-  bool m_objectTypeConflictHasBeenSet = false;
 
   MergeOperations m_mergeOperations;
+  bool m_filePathHasBeenSet = false;
+  bool m_fileSizesHasBeenSet = false;
+  bool m_fileModesHasBeenSet = false;
+  bool m_objectTypesHasBeenSet = false;
+  bool m_numberOfConflictsHasBeenSet = false;
+  bool m_isBinaryFileHasBeenSet = false;
+  bool m_contentConflictHasBeenSet = false;
+  bool m_fileModeConflictHasBeenSet = false;
+  bool m_objectTypeConflictHasBeenSet = false;
   bool m_mergeOperationsHasBeenSet = false;
 };
 

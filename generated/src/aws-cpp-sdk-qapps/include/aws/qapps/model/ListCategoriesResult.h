@@ -67,9 +67,9 @@ class ListCategoriesResult {
   ///@}
  private:
   Aws::Vector<Category> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_categoriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

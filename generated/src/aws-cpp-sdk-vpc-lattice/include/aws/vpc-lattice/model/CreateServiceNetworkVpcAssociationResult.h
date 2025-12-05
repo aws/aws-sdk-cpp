@@ -165,27 +165,27 @@ class CreateServiceNetworkVpcAssociationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ServiceNetworkVpcAssociationStatus m_status{ServiceNetworkVpcAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   bool m_privateDnsEnabled{false};
-  bool m_privateDnsEnabledHasBeenSet = false;
 
   DnsOptions m_dnsOptions;
-  bool m_dnsOptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_privateDnsEnabledHasBeenSet = false;
+  bool m_dnsOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

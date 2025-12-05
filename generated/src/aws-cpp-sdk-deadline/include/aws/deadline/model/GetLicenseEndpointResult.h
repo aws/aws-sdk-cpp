@@ -173,27 +173,27 @@ class GetLicenseEndpointResult {
   ///@}
  private:
   Aws::String m_licenseEndpointId;
-  bool m_licenseEndpointIdHasBeenSet = false;
 
   LicenseEndpointStatus m_status{LicenseEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseEndpointIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class UpdateExtensionRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_extensionIdentifier;
-  bool m_extensionIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<ActionPoint, Aws::Vector<Action>> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   int m_versionNumber{0};
+  bool m_extensionIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

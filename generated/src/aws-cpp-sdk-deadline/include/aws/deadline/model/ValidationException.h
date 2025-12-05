@@ -117,15 +117,15 @@ class ValidationException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<ValidationExceptionField> m_fieldList;
-  bool m_fieldListHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_fieldListHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class StagingArea {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_stagingAccountID;
-  bool m_stagingAccountIDHasBeenSet = false;
 
   Aws::String m_stagingSourceServerArn;
-  bool m_stagingSourceServerArnHasBeenSet = false;
 
   ExtensionStatus m_status{ExtensionStatus::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
+  bool m_stagingAccountIDHasBeenSet = false;
+  bool m_stagingSourceServerArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

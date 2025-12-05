@@ -89,12 +89,12 @@ class CreateIamIdentityCenterConfigOptions {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   IamIdentityCenterUserAttribute m_userAttribute{IamIdentityCenterUserAttribute::NOT_SET};
-  bool m_userAttributeHasBeenSet = false;
 
   IamIdentityCenterGroupAttribute m_groupAttribute{IamIdentityCenterGroupAttribute::NOT_SET};
+  bool m_instanceArnHasBeenSet = false;
+  bool m_userAttributeHasBeenSet = false;
   bool m_groupAttributeHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class Route53HealthCheckConfiguration {
   ///@}
  private:
   int m_timeoutMinutes{0};
-  bool m_timeoutMinutesHasBeenSet = false;
 
   Aws::String m_crossAccountRole;
-  bool m_crossAccountRoleHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_recordName;
-  bool m_recordNameHasBeenSet = false;
 
   Aws::Vector<Route53ResourceRecordSet> m_recordSets;
+  bool m_timeoutMinutesHasBeenSet = false;
+  bool m_crossAccountRoleHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_recordNameHasBeenSet = false;
   bool m_recordSetsHasBeenSet = false;
 };
 

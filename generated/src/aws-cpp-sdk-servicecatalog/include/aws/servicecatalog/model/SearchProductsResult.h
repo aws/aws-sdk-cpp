@@ -113,15 +113,15 @@ class SearchProductsResult {
   ///@}
  private:
   Aws::Vector<ProductViewSummary> m_productViewSummaries;
-  bool m_productViewSummariesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>> m_productViewAggregations;
-  bool m_productViewAggregationsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productViewSummariesHasBeenSet = false;
+  bool m_productViewAggregationsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

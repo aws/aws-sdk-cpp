@@ -62,9 +62,9 @@ class GetDASHStreamingSessionURLResult {
   ///@}
  private:
   Aws::String m_dASHStreamingSessionURL;
-  bool m_dASHStreamingSessionURLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dASHStreamingSessionURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

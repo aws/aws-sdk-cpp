@@ -89,12 +89,12 @@ class GetActionRecommendationsResult {
   ///@}
  private:
   Aws::Vector<PredictedAction> m_actionList;
-  bool m_actionListHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionListHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

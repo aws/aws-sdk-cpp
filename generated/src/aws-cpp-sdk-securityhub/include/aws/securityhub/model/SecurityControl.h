@@ -242,33 +242,33 @@ class SecurityControl {
   ///@}
  private:
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::String m_securityControlArn;
-  bool m_securityControlArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_remediationUrl;
-  bool m_remediationUrlHasBeenSet = false;
 
   SeverityRating m_severityRating{SeverityRating::NOT_SET};
-  bool m_severityRatingHasBeenSet = false;
 
   ControlStatus m_securityControlStatus{ControlStatus::NOT_SET};
-  bool m_securityControlStatusHasBeenSet = false;
 
   UpdateStatus m_updateStatus{UpdateStatus::NOT_SET};
-  bool m_updateStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterConfiguration> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_lastUpdateReason;
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_securityControlArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_remediationUrlHasBeenSet = false;
+  bool m_severityRatingHasBeenSet = false;
+  bool m_securityControlStatusHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_lastUpdateReasonHasBeenSet = false;
 };
 

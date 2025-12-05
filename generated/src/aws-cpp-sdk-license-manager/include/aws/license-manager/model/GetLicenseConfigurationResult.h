@@ -373,60 +373,60 @@ class GetLicenseConfigurationResult {
   ///@}
  private:
   Aws::String m_licenseConfigurationId;
-  bool m_licenseConfigurationIdHasBeenSet = false;
 
   Aws::String m_licenseConfigurationArn;
-  bool m_licenseConfigurationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LicenseCountingType m_licenseCountingType{LicenseCountingType::NOT_SET};
-  bool m_licenseCountingTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_licenseRules;
-  bool m_licenseRulesHasBeenSet = false;
 
   long long m_licenseCount{0};
-  bool m_licenseCountHasBeenSet = false;
 
   bool m_licenseCountHardLimit{false};
-  bool m_licenseCountHardLimitHasBeenSet = false;
 
   long long m_consumedLicenses{0};
-  bool m_consumedLicensesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::Vector<ConsumedLicenseSummary> m_consumedLicenseSummaryList;
-  bool m_consumedLicenseSummaryListHasBeenSet = false;
 
   Aws::Vector<ManagedResourceSummary> m_managedResourceSummaryList;
-  bool m_managedResourceSummaryListHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<ProductInformation> m_productInformationList;
-  bool m_productInformationListHasBeenSet = false;
 
   AutomatedDiscoveryInformation m_automatedDiscoveryInformation;
-  bool m_automatedDiscoveryInformationHasBeenSet = false;
 
   bool m_disassociateWhenNotFound{false};
-  bool m_disassociateWhenNotFoundHasBeenSet = false;
 
   long long m_licenseExpiry{0};
-  bool m_licenseExpiryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseConfigurationIdHasBeenSet = false;
+  bool m_licenseConfigurationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_licenseCountingTypeHasBeenSet = false;
+  bool m_licenseRulesHasBeenSet = false;
+  bool m_licenseCountHasBeenSet = false;
+  bool m_licenseCountHardLimitHasBeenSet = false;
+  bool m_consumedLicensesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_consumedLicenseSummaryListHasBeenSet = false;
+  bool m_managedResourceSummaryListHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_productInformationListHasBeenSet = false;
+  bool m_automatedDiscoveryInformationHasBeenSet = false;
+  bool m_disassociateWhenNotFoundHasBeenSet = false;
+  bool m_licenseExpiryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

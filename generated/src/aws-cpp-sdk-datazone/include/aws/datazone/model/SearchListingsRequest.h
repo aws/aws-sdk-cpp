@@ -222,30 +222,30 @@ class SearchListingsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<SearchOutputAdditionalAttribute> m_additionalAttributes;
-  bool m_additionalAttributesHasBeenSet = false;
 
   Aws::Vector<AggregationListItem> m_aggregations;
-  bool m_aggregationsHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   FilterClause m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SearchInItem> m_searchIn;
-  bool m_searchInHasBeenSet = false;
 
   Aws::String m_searchText;
-  bool m_searchTextHasBeenSet = false;
 
   SearchSort m_sort;
+  bool m_additionalAttributesHasBeenSet = false;
+  bool m_aggregationsHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_searchInHasBeenSet = false;
+  bool m_searchTextHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

@@ -115,12 +115,12 @@ class PlatformFilter {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_typeHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

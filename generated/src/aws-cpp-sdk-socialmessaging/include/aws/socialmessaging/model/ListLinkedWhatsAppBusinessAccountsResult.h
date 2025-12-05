@@ -86,12 +86,12 @@ class ListLinkedWhatsAppBusinessAccountsResult {
   ///@}
  private:
   Aws::Vector<LinkedWhatsAppBusinessAccountSummary> m_linkedAccounts;
-  bool m_linkedAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_linkedAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

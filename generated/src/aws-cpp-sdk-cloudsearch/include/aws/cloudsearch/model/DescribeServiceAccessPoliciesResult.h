@@ -67,9 +67,9 @@ class DescribeServiceAccessPoliciesResult {
   ///@}
  private:
   AccessPoliciesStatus m_accessPolicies;
-  bool m_accessPoliciesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_accessPoliciesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

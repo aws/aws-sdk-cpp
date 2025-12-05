@@ -212,30 +212,30 @@ class JobConfigInput {
   ///@}
  private:
   BandMathConfigInput m_bandMathConfig;
-  bool m_bandMathConfigHasBeenSet = false;
 
   CloudMaskingConfigInput m_cloudMaskingConfig;
-  bool m_cloudMaskingConfigHasBeenSet = false;
 
   CloudRemovalConfigInput m_cloudRemovalConfig;
-  bool m_cloudRemovalConfigHasBeenSet = false;
 
   GeoMosaicConfigInput m_geoMosaicConfig;
-  bool m_geoMosaicConfigHasBeenSet = false;
 
   LandCoverSegmentationConfigInput m_landCoverSegmentationConfig;
-  bool m_landCoverSegmentationConfigHasBeenSet = false;
 
   ResamplingConfigInput m_resamplingConfig;
-  bool m_resamplingConfigHasBeenSet = false;
 
   StackConfigInput m_stackConfig;
-  bool m_stackConfigHasBeenSet = false;
 
   TemporalStatisticsConfigInput m_temporalStatisticsConfig;
-  bool m_temporalStatisticsConfigHasBeenSet = false;
 
   ZonalStatisticsConfigInput m_zonalStatisticsConfig;
+  bool m_bandMathConfigHasBeenSet = false;
+  bool m_cloudMaskingConfigHasBeenSet = false;
+  bool m_cloudRemovalConfigHasBeenSet = false;
+  bool m_geoMosaicConfigHasBeenSet = false;
+  bool m_landCoverSegmentationConfigHasBeenSet = false;
+  bool m_resamplingConfigHasBeenSet = false;
+  bool m_stackConfigHasBeenSet = false;
+  bool m_temporalStatisticsConfigHasBeenSet = false;
   bool m_zonalStatisticsConfigHasBeenSet = false;
 };
 

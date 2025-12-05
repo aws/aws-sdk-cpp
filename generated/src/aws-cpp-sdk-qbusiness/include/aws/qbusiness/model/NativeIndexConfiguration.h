@@ -106,12 +106,12 @@ class NativeIndexConfiguration {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration> m_boostingOverride;
+  bool m_indexIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_boostingOverrideHasBeenSet = false;
 };
 

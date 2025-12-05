@@ -189,27 +189,27 @@ class ReferenceSummary {
   ///@}
  private:
   UrlReference m_url;
-  bool m_urlHasBeenSet = false;
 
   AttachmentReference m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   EmailMessageReference m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   EmailMessageReference m_emailMessagePlainText;
-  bool m_emailMessagePlainTextHasBeenSet = false;
 
   StringReference m_string;
-  bool m_stringHasBeenSet = false;
 
   NumberReference m_number;
-  bool m_numberHasBeenSet = false;
 
   DateReference m_date;
-  bool m_dateHasBeenSet = false;
 
   EmailReference m_email;
+  bool m_urlHasBeenSet = false;
+  bool m_attachmentHasBeenSet = false;
+  bool m_emailMessageHasBeenSet = false;
+  bool m_emailMessagePlainTextHasBeenSet = false;
+  bool m_stringHasBeenSet = false;
+  bool m_numberHasBeenSet = false;
+  bool m_dateHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

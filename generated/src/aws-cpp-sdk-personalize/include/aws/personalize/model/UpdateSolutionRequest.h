@@ -117,15 +117,15 @@ class UpdateSolutionRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_solutionArn;
-  bool m_solutionArnHasBeenSet = false;
 
   bool m_performAutoTraining{false};
-  bool m_performAutoTrainingHasBeenSet = false;
 
   bool m_performIncrementalUpdate{false};
-  bool m_performIncrementalUpdateHasBeenSet = false;
 
   SolutionUpdateConfig m_solutionUpdateConfig;
+  bool m_solutionArnHasBeenSet = false;
+  bool m_performAutoTrainingHasBeenSet = false;
+  bool m_performIncrementalUpdateHasBeenSet = false;
   bool m_solutionUpdateConfigHasBeenSet = false;
 };
 

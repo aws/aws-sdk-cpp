@@ -80,9 +80,9 @@ class UpdateSMBSecurityStrategyRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   SMBSecurityStrategy m_sMBSecurityStrategy{SMBSecurityStrategy::NOT_SET};
+  bool m_gatewayARNHasBeenSet = false;
   bool m_sMBSecurityStrategyHasBeenSet = false;
 };
 

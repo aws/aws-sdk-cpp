@@ -152,21 +152,21 @@ class StartFlowCaptureRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_vpcEndpointAssociationArn;
-  bool m_vpcEndpointAssociationArnHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   int m_minimumFlowAgeInSeconds{0};
-  bool m_minimumFlowAgeInSecondsHasBeenSet = false;
 
   Aws::Vector<FlowFilter> m_flowFilters;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_vpcEndpointAssociationArnHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_minimumFlowAgeInSecondsHasBeenSet = false;
   bool m_flowFiltersHasBeenSet = false;
 };
 

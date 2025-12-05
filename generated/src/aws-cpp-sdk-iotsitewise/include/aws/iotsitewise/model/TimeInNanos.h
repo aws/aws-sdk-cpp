@@ -63,9 +63,9 @@ class TimeInNanos {
   ///@}
  private:
   long long m_timeInSeconds{0};
-  bool m_timeInSecondsHasBeenSet = false;
 
   int m_offsetInNanos{0};
+  bool m_timeInSecondsHasBeenSet = false;
   bool m_offsetInNanosHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetCollaborationMLInputChannelRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_mlInputChannelArn;
-  bool m_mlInputChannelArnHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
+  bool m_mlInputChannelArnHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class ClassifierMetadata {
   ///@}
  private:
   int m_numberOfLabels{0};
-  bool m_numberOfLabelsHasBeenSet = false;
 
   int m_numberOfTrainedDocuments{0};
-  bool m_numberOfTrainedDocumentsHasBeenSet = false;
 
   int m_numberOfTestDocuments{0};
-  bool m_numberOfTestDocumentsHasBeenSet = false;
 
   ClassifierEvaluationMetrics m_evaluationMetrics;
+  bool m_numberOfLabelsHasBeenSet = false;
+  bool m_numberOfTrainedDocumentsHasBeenSet = false;
+  bool m_numberOfTestDocumentsHasBeenSet = false;
   bool m_evaluationMetricsHasBeenSet = false;
 };
 

@@ -139,15 +139,15 @@ class ModifyDBSnapshotAttributeRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBSnapshotIdentifier;
-  bool m_dBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valuesToAdd;
-  bool m_valuesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valuesToRemove;
+  bool m_dBSnapshotIdentifierHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_valuesToAddHasBeenSet = false;
   bool m_valuesToRemoveHasBeenSet = false;
 };
 

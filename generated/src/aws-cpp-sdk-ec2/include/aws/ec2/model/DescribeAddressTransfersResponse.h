@@ -86,12 +86,12 @@ class DescribeAddressTransfersResponse {
   ///@}
  private:
   Aws::Vector<AddressTransfer> m_addressTransfers;
-  bool m_addressTransfersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_addressTransfersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

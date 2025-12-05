@@ -97,15 +97,15 @@ class CreateComponentResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_componentBuildVersionArn;
-  bool m_componentBuildVersionArnHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
+  bool m_requestIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_componentBuildVersionArnHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;
 };
 

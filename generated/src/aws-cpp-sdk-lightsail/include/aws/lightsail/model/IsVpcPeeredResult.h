@@ -58,9 +58,9 @@ class IsVpcPeeredResult {
   ///@}
  private:
   bool m_isPeered{false};
-  bool m_isPeeredHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isPeeredHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

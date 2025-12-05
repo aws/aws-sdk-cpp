@@ -72,9 +72,9 @@ class DeleteCloudFrontOriginAccessIdentity2020_05_31Request : public CloudFrontR
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

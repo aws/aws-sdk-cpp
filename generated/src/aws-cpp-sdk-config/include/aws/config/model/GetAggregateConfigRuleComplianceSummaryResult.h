@@ -104,15 +104,15 @@ class GetAggregateConfigRuleComplianceSummaryResult {
   ///@}
  private:
   Aws::String m_groupByKey;
-  bool m_groupByKeyHasBeenSet = false;
 
   Aws::Vector<AggregateComplianceCount> m_aggregateComplianceCounts;
-  bool m_aggregateComplianceCountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupByKeyHasBeenSet = false;
+  bool m_aggregateComplianceCountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

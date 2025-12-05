@@ -87,12 +87,12 @@ class FilesLimit {
   ///@}
  private:
   int m_maxFiles{0};
-  bool m_maxFilesHasBeenSet = false;
 
   OrderedBy m_orderedBy{OrderedBy::NOT_SET};
-  bool m_orderedByHasBeenSet = false;
 
   Order m_order{Order::NOT_SET};
+  bool m_maxFilesHasBeenSet = false;
+  bool m_orderedByHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

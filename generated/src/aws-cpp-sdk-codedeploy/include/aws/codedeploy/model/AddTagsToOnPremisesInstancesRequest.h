@@ -87,9 +87,9 @@ class AddTagsToOnPremisesInstancesRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceNames;
+  bool m_tagsHasBeenSet = false;
   bool m_instanceNamesHasBeenSet = false;
 };
 

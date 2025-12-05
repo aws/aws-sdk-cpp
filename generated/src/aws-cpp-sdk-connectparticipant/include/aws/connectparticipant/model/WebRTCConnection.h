@@ -69,9 +69,9 @@ class WebRTCConnection {
   ///@}
  private:
   Attendee m_attendee;
-  bool m_attendeeHasBeenSet = false;
 
   WebRTCMeeting m_meeting;
+  bool m_attendeeHasBeenSet = false;
   bool m_meetingHasBeenSet = false;
 };
 

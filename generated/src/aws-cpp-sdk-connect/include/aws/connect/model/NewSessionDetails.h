@@ -131,15 +131,15 @@ class NewSessionDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
-  bool m_supportedMessagingContentTypesHasBeenSet = false;
 
   ParticipantDetails m_participantDetails;
-  bool m_participantDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ChatStreamingConfiguration m_streamingConfiguration;
+  bool m_supportedMessagingContentTypesHasBeenSet = false;
+  bool m_participantDetailsHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_streamingConfigurationHasBeenSet = false;
 };
 

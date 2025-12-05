@@ -72,9 +72,9 @@ class NetworkFrameworkAttributes {
   ///@}
  private:
   NetworkFabricAttributes m_fabric;
-  bool m_fabricHasBeenSet = false;
 
   NetworkEthereumAttributes m_ethereum;
+  bool m_fabricHasBeenSet = false;
   bool m_ethereumHasBeenSet = false;
 };
 

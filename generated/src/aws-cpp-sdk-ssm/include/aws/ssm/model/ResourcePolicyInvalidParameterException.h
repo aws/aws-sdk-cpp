@@ -72,9 +72,9 @@ class ResourcePolicyInvalidParameterException {
   ///@}
  private:
   Aws::Vector<Aws::String> m_parameterNames;
-  bool m_parameterNamesHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_parameterNamesHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

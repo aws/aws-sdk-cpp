@@ -67,9 +67,9 @@ class AssociateTrialComponentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trialComponentName;
-  bool m_trialComponentNameHasBeenSet = false;
 
   Aws::String m_trialName;
+  bool m_trialComponentNameHasBeenSet = false;
   bool m_trialNameHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class UpdateJobExecutionResult {
   ///@}
  private:
   JobExecutionState m_executionState;
-  bool m_executionStateHasBeenSet = false;
 
   Aws::String m_jobDocument;
-  bool m_jobDocumentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionStateHasBeenSet = false;
+  bool m_jobDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

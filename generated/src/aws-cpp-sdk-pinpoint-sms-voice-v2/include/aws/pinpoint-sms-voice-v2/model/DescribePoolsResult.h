@@ -86,12 +86,12 @@ class DescribePoolsResult {
   ///@}
  private:
   Aws::Vector<PoolInformation> m_pools;
-  bool m_poolsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_poolsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

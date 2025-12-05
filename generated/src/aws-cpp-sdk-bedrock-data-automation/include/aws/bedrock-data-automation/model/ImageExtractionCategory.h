@@ -69,9 +69,9 @@ class ImageExtractionCategory {
   ///@}
  private:
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<ImageExtractionCategoryType> m_types;
+  bool m_stateHasBeenSet = false;
   bool m_typesHasBeenSet = false;
 };
 

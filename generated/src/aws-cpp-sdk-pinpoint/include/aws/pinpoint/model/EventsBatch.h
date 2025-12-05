@@ -78,9 +78,9 @@ class EventsBatch {
   ///@}
  private:
   PublicEndpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Map<Aws::String, Event> m_events;
+  bool m_endpointHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

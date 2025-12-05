@@ -69,9 +69,9 @@ class GetPolicyStoreRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   bool m_tags{false};
+  bool m_policyStoreIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

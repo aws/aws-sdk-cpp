@@ -102,12 +102,12 @@ class EksConfiguration {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
 };
 

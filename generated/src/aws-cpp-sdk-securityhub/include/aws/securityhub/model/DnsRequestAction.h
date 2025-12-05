@@ -87,12 +87,12 @@ class DnsRequestAction {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   bool m_blocked{false};
+  bool m_domainHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_blockedHasBeenSet = false;
 };
 

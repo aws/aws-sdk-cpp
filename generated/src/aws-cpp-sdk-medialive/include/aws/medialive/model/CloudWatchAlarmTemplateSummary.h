@@ -326,54 +326,54 @@ class CloudWatchAlarmTemplateSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CloudWatchAlarmTemplateComparisonOperator m_comparisonOperator{CloudWatchAlarmTemplateComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   CloudWatchAlarmTemplateStatistic m_statistic{CloudWatchAlarmTemplateStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CloudWatchAlarmTemplateTargetResourceType m_targetResourceType{CloudWatchAlarmTemplateTargetResourceType::NOT_SET};
-  bool m_targetResourceTypeHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   CloudWatchAlarmTemplateTreatMissingData m_treatMissingData{CloudWatchAlarmTemplateTreatMissingData::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetResourceTypeHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
   bool m_treatMissingDataHasBeenSet = false;
 };
 

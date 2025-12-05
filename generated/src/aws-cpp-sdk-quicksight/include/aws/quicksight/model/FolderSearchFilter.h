@@ -121,12 +121,12 @@ class FolderSearchFilter {
   ///@}
  private:
   FilterOperator m_operator{FilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   FolderFilterAttribute m_name{FolderFilterAttribute::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_operatorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

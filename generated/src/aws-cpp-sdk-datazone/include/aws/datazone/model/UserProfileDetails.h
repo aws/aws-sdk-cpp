@@ -69,9 +69,9 @@ class UserProfileDetails {
   ///@}
  private:
   IamUserProfileDetails m_iam;
-  bool m_iamHasBeenSet = false;
 
   SsoUserProfileDetails m_sso;
+  bool m_iamHasBeenSet = false;
   bool m_ssoHasBeenSet = false;
 };
 

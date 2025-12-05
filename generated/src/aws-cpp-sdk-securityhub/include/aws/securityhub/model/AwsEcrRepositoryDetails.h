@@ -146,21 +146,21 @@ class AwsEcrRepositoryDetails {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AwsEcrRepositoryImageScanningConfigurationDetails m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   Aws::String m_imageTagMutability;
-  bool m_imageTagMutabilityHasBeenSet = false;
 
   AwsEcrRepositoryLifecyclePolicyDetails m_lifecyclePolicy;
-  bool m_lifecyclePolicyHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_repositoryPolicyText;
+  bool m_arnHasBeenSet = false;
+  bool m_imageScanningConfigurationHasBeenSet = false;
+  bool m_imageTagMutabilityHasBeenSet = false;
+  bool m_lifecyclePolicyHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_repositoryPolicyTextHasBeenSet = false;
 };
 

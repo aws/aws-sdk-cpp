@@ -67,9 +67,9 @@ class DescribeBundleAssociationsResult {
   ///@}
  private:
   Aws::Vector<BundleResourceAssociation> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

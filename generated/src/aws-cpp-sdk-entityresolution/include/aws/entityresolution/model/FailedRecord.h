@@ -86,12 +86,12 @@ class FailedRecord {
   ///@}
  private:
   Aws::String m_inputSourceARN;
-  bool m_inputSourceARNHasBeenSet = false;
 
   Aws::String m_uniqueId;
-  bool m_uniqueIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_inputSourceARNHasBeenSet = false;
+  bool m_uniqueIdHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

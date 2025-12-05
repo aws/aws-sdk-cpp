@@ -69,9 +69,9 @@ class DeleteCustomDomainAssociationRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_customDomainName;
+  bool m_clusterIdentifierHasBeenSet = false;
   bool m_customDomainNameHasBeenSet = false;
 };
 

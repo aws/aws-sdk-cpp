@@ -87,12 +87,12 @@ class IndexStatus {
   ///@}
  private:
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Index m_index;
-  bool m_indexHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
+  bool m_statusHasBeenSet = false;
+  bool m_indexHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

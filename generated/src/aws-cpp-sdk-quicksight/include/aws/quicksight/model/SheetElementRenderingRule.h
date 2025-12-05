@@ -70,9 +70,9 @@ class SheetElementRenderingRule {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   SheetElementConfigurationOverrides m_configurationOverrides;
+  bool m_expressionHasBeenSet = false;
   bool m_configurationOverridesHasBeenSet = false;
 };
 

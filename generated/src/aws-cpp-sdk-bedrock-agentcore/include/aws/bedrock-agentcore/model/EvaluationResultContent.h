@@ -237,33 +237,33 @@ class EvaluationResultContent {
   ///@}
  private:
   Aws::String m_evaluatorArn;
-  bool m_evaluatorArnHasBeenSet = false;
 
   Aws::String m_evaluatorId;
-  bool m_evaluatorIdHasBeenSet = false;
 
   Aws::String m_evaluatorName;
-  bool m_evaluatorNameHasBeenSet = false;
 
   Aws::String m_explanation;
-  bool m_explanationHasBeenSet = false;
 
   Context m_context;
-  bool m_contextHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   TokenUsage m_tokenUsage;
-  bool m_tokenUsageHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorCode;
+  bool m_evaluatorArnHasBeenSet = false;
+  bool m_evaluatorIdHasBeenSet = false;
+  bool m_evaluatorNameHasBeenSet = false;
+  bool m_explanationHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_tokenUsageHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

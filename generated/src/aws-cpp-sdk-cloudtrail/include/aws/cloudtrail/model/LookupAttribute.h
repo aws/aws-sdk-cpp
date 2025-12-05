@@ -72,9 +72,9 @@ class LookupAttribute {
   ///@}
  private:
   LookupAttributeKey m_attributeKey{LookupAttributeKey::NOT_SET};
-  bool m_attributeKeyHasBeenSet = false;
 
   Aws::String m_attributeValue;
+  bool m_attributeKeyHasBeenSet = false;
   bool m_attributeValueHasBeenSet = false;
 };
 

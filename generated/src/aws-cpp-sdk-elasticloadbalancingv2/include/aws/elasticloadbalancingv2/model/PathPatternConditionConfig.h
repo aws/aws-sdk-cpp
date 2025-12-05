@@ -93,9 +93,9 @@ class PathPatternConditionConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regexValues;
+  bool m_valuesHasBeenSet = false;
   bool m_regexValuesHasBeenSet = false;
 };
 

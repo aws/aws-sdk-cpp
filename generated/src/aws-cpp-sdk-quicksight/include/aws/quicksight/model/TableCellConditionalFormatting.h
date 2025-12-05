@@ -70,9 +70,9 @@ class TableCellConditionalFormatting {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   TextConditionalFormat m_textFormat;
+  bool m_fieldIdHasBeenSet = false;
   bool m_textFormatHasBeenSet = false;
 };
 

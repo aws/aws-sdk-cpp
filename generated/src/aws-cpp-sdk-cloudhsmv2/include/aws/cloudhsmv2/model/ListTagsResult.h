@@ -86,12 +86,12 @@ class ListTagsResult {
   ///@}
  private:
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

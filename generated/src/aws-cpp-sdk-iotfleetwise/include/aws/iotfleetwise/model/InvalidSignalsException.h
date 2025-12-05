@@ -75,9 +75,9 @@ class InvalidSignalsException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<InvalidSignal> m_invalidSignals;
+  bool m_messageHasBeenSet = false;
   bool m_invalidSignalsHasBeenSet = false;
 };
 

@@ -303,48 +303,48 @@ class ListMonitoringExecutionsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   MonitoringExecutionSortKey m_sortBy{MonitoringExecutionSortKey::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledTimeBefore{};
-  bool m_scheduledTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledTimeAfter{};
-  bool m_scheduledTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeBefore{};
-  bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeAfter{};
-  bool m_lastModifiedTimeAfterHasBeenSet = false;
 
   ExecutionStatus m_statusEquals{ExecutionStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   Aws::String m_monitoringJobDefinitionName;
-  bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
   MonitoringType m_monitoringTypeEquals{MonitoringType::NOT_SET};
+  bool m_monitoringScheduleNameHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_scheduledTimeBeforeHasBeenSet = false;
+  bool m_scheduledTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_lastModifiedTimeBeforeHasBeenSet = false;
+  bool m_lastModifiedTimeAfterHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_monitoringJobDefinitionNameHasBeenSet = false;
   bool m_monitoringTypeEqualsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DeleteArtifactRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_artifactArn;
-  bool m_artifactArnHasBeenSet = false;
 
   ArtifactSource m_source;
+  bool m_artifactArnHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

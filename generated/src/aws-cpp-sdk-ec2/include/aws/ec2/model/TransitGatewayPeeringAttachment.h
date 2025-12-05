@@ -209,30 +209,30 @@ class TransitGatewayPeeringAttachment {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_accepterTransitGatewayAttachmentId;
-  bool m_accepterTransitGatewayAttachmentIdHasBeenSet = false;
 
   PeeringTgwInfo m_requesterTgwInfo;
-  bool m_requesterTgwInfoHasBeenSet = false;
 
   PeeringTgwInfo m_accepterTgwInfo;
-  bool m_accepterTgwInfoHasBeenSet = false;
 
   TransitGatewayPeeringAttachmentOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   PeeringAttachmentStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   TransitGatewayAttachmentState m_state{TransitGatewayAttachmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_accepterTransitGatewayAttachmentIdHasBeenSet = false;
+  bool m_requesterTgwInfoHasBeenSet = false;
+  bool m_accepterTgwInfoHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

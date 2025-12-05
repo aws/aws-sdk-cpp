@@ -84,12 +84,12 @@ class ListReferencesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ReferenceListItem> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

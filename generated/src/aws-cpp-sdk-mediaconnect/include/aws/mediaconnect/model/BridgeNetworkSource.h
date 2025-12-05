@@ -141,21 +141,21 @@ class BridgeNetworkSource {
   ///@}
  private:
   Aws::String m_multicastIp;
-  bool m_multicastIpHasBeenSet = false;
 
   MulticastSourceSettings m_multicastSourceSettings;
-  bool m_multicastSourceSettingsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_networkName;
-  bool m_networkNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
+  bool m_multicastIpHasBeenSet = false;
+  bool m_multicastSourceSettingsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

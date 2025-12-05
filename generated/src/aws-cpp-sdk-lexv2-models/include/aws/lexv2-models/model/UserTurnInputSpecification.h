@@ -96,12 +96,12 @@ class UserTurnInputSpecification {
   ///@}
  private:
   UtteranceInputSpecification m_utteranceInput;
-  bool m_utteranceInputHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-  bool m_requestAttributesHasBeenSet = false;
 
   InputSessionStateSpecification m_sessionState;
+  bool m_utteranceInputHasBeenSet = false;
+  bool m_requestAttributesHasBeenSet = false;
   bool m_sessionStateHasBeenSet = false;
 };
 

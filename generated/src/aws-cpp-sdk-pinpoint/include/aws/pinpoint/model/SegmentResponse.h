@@ -267,39 +267,39 @@ class SegmentResponse {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   SegmentDimensions m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SegmentImportResource m_importDefinition;
-  bool m_importDefinitionHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SegmentGroupList m_segmentGroups;
-  bool m_segmentGroupsHasBeenSet = false;
 
   SegmentType m_segmentType{SegmentType::NOT_SET};
-  bool m_segmentTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_version{0};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_importDefinitionHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_segmentGroupsHasBeenSet = false;
+  bool m_segmentTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

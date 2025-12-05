@@ -96,12 +96,12 @@ class CreateCatalogRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CatalogInput m_catalogInput;
-  bool m_catalogInputHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_catalogInputHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

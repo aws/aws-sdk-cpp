@@ -127,15 +127,15 @@ class Get {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeValue> m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_projectionExpression;
-  bool m_projectionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
+  bool m_keyHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_projectionExpressionHasBeenSet = false;
   bool m_expressionAttributeNamesHasBeenSet = false;
 };
 

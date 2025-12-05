@@ -67,9 +67,9 @@ class DescribeSpeakerRequest : public VoiceIDRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_speakerId;
+  bool m_domainIdHasBeenSet = false;
   bool m_speakerIdHasBeenSet = false;
 };
 

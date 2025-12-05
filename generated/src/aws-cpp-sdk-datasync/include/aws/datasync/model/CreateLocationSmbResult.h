@@ -64,9 +64,9 @@ class CreateLocationSmbResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class BatchPutScheduledUpdateGroupActionResult {
   ///@}
  private:
   Aws::Vector<FailedScheduledUpdateGroupActionRequest> m_failedScheduledUpdateGroupActions;
-  bool m_failedScheduledUpdateGroupActionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_failedScheduledUpdateGroupActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

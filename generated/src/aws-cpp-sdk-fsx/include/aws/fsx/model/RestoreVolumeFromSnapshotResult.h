@@ -102,15 +102,15 @@ class RestoreVolumeFromSnapshotResult {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   VolumeLifecycle m_lifecycle{VolumeLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::Vector<AdministrativeAction> m_administrativeActions;
-  bool m_administrativeActionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_administrativeActionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

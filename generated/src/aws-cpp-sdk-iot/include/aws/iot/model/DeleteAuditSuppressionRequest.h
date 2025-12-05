@@ -62,9 +62,9 @@ class DeleteAuditSuppressionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_checkName;
-  bool m_checkNameHasBeenSet = false;
 
   ResourceIdentifier m_resourceIdentifier;
+  bool m_checkNameHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

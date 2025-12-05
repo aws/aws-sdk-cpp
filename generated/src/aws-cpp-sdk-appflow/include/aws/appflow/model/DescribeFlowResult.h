@@ -412,63 +412,63 @@ class DescribeFlowResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Aws::String m_kmsArn;
-  bool m_kmsArnHasBeenSet = false;
 
   FlowStatus m_flowStatus{FlowStatus::NOT_SET};
-  bool m_flowStatusHasBeenSet = false;
 
   Aws::String m_flowStatusMessage;
-  bool m_flowStatusMessageHasBeenSet = false;
 
   SourceFlowConfig m_sourceFlowConfig;
-  bool m_sourceFlowConfigHasBeenSet = false;
 
   Aws::Vector<DestinationFlowConfig> m_destinationFlowConfigList;
-  bool m_destinationFlowConfigListHasBeenSet = false;
 
   ExecutionDetails m_lastRunExecutionDetails;
-  bool m_lastRunExecutionDetailsHasBeenSet = false;
 
   TriggerConfig m_triggerConfig;
-  bool m_triggerConfigHasBeenSet = false;
 
   Aws::Vector<Task> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MetadataCatalogConfig m_metadataCatalogConfig;
-  bool m_metadataCatalogConfigHasBeenSet = false;
 
   Aws::Vector<MetadataCatalogDetail> m_lastRunMetadataCatalogDetails;
-  bool m_lastRunMetadataCatalogDetailsHasBeenSet = false;
 
   long long m_schemaVersion{0};
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_flowNameHasBeenSet = false;
+  bool m_kmsArnHasBeenSet = false;
+  bool m_flowStatusHasBeenSet = false;
+  bool m_flowStatusMessageHasBeenSet = false;
+  bool m_sourceFlowConfigHasBeenSet = false;
+  bool m_destinationFlowConfigListHasBeenSet = false;
+  bool m_lastRunExecutionDetailsHasBeenSet = false;
+  bool m_triggerConfigHasBeenSet = false;
+  bool m_tasksHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_metadataCatalogConfigHasBeenSet = false;
+  bool m_lastRunMetadataCatalogDetailsHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class PutUserStatusRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_agentStatusId;
+  bool m_userIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_agentStatusIdHasBeenSet = false;
 };
 

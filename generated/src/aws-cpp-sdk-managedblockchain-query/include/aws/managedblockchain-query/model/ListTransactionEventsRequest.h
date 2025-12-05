@@ -124,18 +124,18 @@ class ListTransactionEventsRequest : public ManagedBlockchainQueryRequest {
   ///@}
  private:
   Aws::String m_transactionHash;
-  bool m_transactionHashHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   QueryNetwork m_network{QueryNetwork::NOT_SET};
-  bool m_networkHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_transactionHashHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_networkHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

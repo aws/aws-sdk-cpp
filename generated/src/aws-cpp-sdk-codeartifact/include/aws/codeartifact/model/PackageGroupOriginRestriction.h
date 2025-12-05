@@ -113,15 +113,15 @@ class PackageGroupOriginRestriction {
   ///@}
  private:
   PackageGroupOriginRestrictionMode m_mode{PackageGroupOriginRestrictionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   PackageGroupOriginRestrictionMode m_effectiveMode{PackageGroupOriginRestrictionMode::NOT_SET};
-  bool m_effectiveModeHasBeenSet = false;
 
   PackageGroupReference m_inheritedFrom;
-  bool m_inheritedFromHasBeenSet = false;
 
   long long m_repositoriesCount{0};
+  bool m_modeHasBeenSet = false;
+  bool m_effectiveModeHasBeenSet = false;
+  bool m_inheritedFromHasBeenSet = false;
   bool m_repositoriesCountHasBeenSet = false;
 };
 

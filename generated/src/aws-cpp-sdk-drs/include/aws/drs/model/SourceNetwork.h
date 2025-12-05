@@ -243,36 +243,36 @@ class SourceNetwork {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_cfnStackName;
-  bool m_cfnStackNameHasBeenSet = false;
 
   RecoveryLifeCycle m_lastRecovery;
-  bool m_lastRecoveryHasBeenSet = false;
 
   Aws::String m_launchedVpcID;
-  bool m_launchedVpcIDHasBeenSet = false;
 
   ReplicationStatus m_replicationStatus{ReplicationStatus::NOT_SET};
-  bool m_replicationStatusHasBeenSet = false;
 
   Aws::String m_replicationStatusDetails;
-  bool m_replicationStatusDetailsHasBeenSet = false;
 
   Aws::String m_sourceAccountID;
-  bool m_sourceAccountIDHasBeenSet = false;
 
   Aws::String m_sourceNetworkID;
-  bool m_sourceNetworkIDHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_sourceVpcID;
-  bool m_sourceVpcIDHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_cfnStackNameHasBeenSet = false;
+  bool m_lastRecoveryHasBeenSet = false;
+  bool m_launchedVpcIDHasBeenSet = false;
+  bool m_replicationStatusHasBeenSet = false;
+  bool m_replicationStatusDetailsHasBeenSet = false;
+  bool m_sourceAccountIDHasBeenSet = false;
+  bool m_sourceNetworkIDHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_sourceVpcIDHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

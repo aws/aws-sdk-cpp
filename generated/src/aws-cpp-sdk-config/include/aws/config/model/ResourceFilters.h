@@ -105,15 +105,15 @@ class ResourceFilters {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

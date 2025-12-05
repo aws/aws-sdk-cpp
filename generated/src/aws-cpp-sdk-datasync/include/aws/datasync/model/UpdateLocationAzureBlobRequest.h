@@ -225,30 +225,30 @@ class UpdateLocationAzureBlobRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   AzureBlobAuthenticationType m_authenticationType{AzureBlobAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   AzureBlobSasConfiguration m_sasConfiguration;
-  bool m_sasConfigurationHasBeenSet = false;
 
   AzureBlobType m_blobType{AzureBlobType::NOT_SET};
-  bool m_blobTypeHasBeenSet = false;
 
   AzureAccessTier m_accessTier{AzureAccessTier::NOT_SET};
-  bool m_accessTierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   CmkSecretConfig m_cmkSecretConfig;
-  bool m_cmkSecretConfigHasBeenSet = false;
 
   CustomSecretConfig m_customSecretConfig;
+  bool m_locationArnHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_sasConfigurationHasBeenSet = false;
+  bool m_blobTypeHasBeenSet = false;
+  bool m_accessTierHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
   bool m_customSecretConfigHasBeenSet = false;
 };
 

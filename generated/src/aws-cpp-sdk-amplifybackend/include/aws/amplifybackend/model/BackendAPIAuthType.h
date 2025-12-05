@@ -68,9 +68,9 @@ class BackendAPIAuthType {
   ///@}
  private:
   Mode m_mode{Mode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   BackendAPIAppSyncAuthSettings m_settings;
+  bool m_modeHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

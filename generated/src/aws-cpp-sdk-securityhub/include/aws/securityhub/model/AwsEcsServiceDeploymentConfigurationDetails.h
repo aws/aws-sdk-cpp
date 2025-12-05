@@ -105,12 +105,12 @@ class AwsEcsServiceDeploymentConfigurationDetails {
   ///@}
  private:
   AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails m_deploymentCircuitBreaker;
-  bool m_deploymentCircuitBreakerHasBeenSet = false;
 
   int m_maximumPercent{0};
-  bool m_maximumPercentHasBeenSet = false;
 
   int m_minimumHealthyPercent{0};
+  bool m_deploymentCircuitBreakerHasBeenSet = false;
+  bool m_maximumPercentHasBeenSet = false;
   bool m_minimumHealthyPercentHasBeenSet = false;
 };
 

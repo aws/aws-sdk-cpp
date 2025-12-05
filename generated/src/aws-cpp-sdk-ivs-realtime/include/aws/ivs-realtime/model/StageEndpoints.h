@@ -109,15 +109,15 @@ class StageEndpoints {
   ///@}
  private:
   Aws::String m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_whip;
-  bool m_whipHasBeenSet = false;
 
   Aws::String m_rtmp;
-  bool m_rtmpHasBeenSet = false;
 
   Aws::String m_rtmps;
+  bool m_eventsHasBeenSet = false;
+  bool m_whipHasBeenSet = false;
+  bool m_rtmpHasBeenSet = false;
   bool m_rtmpsHasBeenSet = false;
 };
 

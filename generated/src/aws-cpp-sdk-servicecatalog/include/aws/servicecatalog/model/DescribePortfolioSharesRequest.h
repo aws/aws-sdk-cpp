@@ -109,15 +109,15 @@ class DescribePortfolioSharesRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   DescribePortfolioShareType m_type{DescribePortfolioShareType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_portfolioIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

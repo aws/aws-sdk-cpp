@@ -62,9 +62,9 @@ class ScalingConfiguration {
   ///@}
  private:
   int m_minInstanceCount{0};
-  bool m_minInstanceCountHasBeenSet = false;
 
   int m_maxInstanceCount{0};
+  bool m_minInstanceCountHasBeenSet = false;
   bool m_maxInstanceCountHasBeenSet = false;
 };
 

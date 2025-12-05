@@ -68,9 +68,9 @@ class DescribeFeaturedResultsSetRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_featuredResultsSetId;
+  bool m_indexIdHasBeenSet = false;
   bool m_featuredResultsSetIdHasBeenSet = false;
 };
 

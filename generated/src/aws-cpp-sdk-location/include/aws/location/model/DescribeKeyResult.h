@@ -211,33 +211,33 @@ class DescribeKeyResult {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   ApiKeyRestrictions m_restrictions;
-  bool m_restrictionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expireTime{};
-  bool m_expireTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyHasBeenSet = false;
+  bool m_keyArnHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_restrictionsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_expireTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

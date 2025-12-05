@@ -68,9 +68,9 @@ class RecommendationSource {
   ///@}
  private:
   Aws::String m_recommendationSourceArn;
-  bool m_recommendationSourceArnHasBeenSet = false;
 
   RecommendationSourceType m_recommendationSourceType{RecommendationSourceType::NOT_SET};
+  bool m_recommendationSourceArnHasBeenSet = false;
   bool m_recommendationSourceTypeHasBeenSet = false;
 };
 

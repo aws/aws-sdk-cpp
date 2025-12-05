@@ -102,12 +102,12 @@ class SetIdentityNotificationTopicRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   NotificationType m_notificationType{NotificationType::NOT_SET};
-  bool m_notificationTypeHasBeenSet = false;
 
   Aws::String m_snsTopic;
+  bool m_identityHasBeenSet = false;
+  bool m_notificationTypeHasBeenSet = false;
   bool m_snsTopicHasBeenSet = false;
 };
 

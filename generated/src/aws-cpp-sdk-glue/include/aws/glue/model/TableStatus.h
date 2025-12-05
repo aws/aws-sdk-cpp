@@ -187,27 +187,27 @@ class TableStatus {
   ///@}
  private:
   Aws::String m_requestedBy;
-  bool m_requestedByHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTime{};
-  bool m_requestTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   ResourceAction m_action{ResourceAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   ResourceState m_state{ResourceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   std::shared_ptr<StatusDetails> m_details;
+  bool m_requestedByHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_requestTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

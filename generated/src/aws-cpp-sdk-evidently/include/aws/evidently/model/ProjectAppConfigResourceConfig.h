@@ -77,9 +77,9 @@ class ProjectAppConfigResourceConfig {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_environmentId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class AttachInstancesToLoadBalancerRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceNames;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_instanceNamesHasBeenSet = false;
 };
 

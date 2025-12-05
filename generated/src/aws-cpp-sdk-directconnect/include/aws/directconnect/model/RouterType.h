@@ -141,21 +141,21 @@ class RouterType {
   ///@}
  private:
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_software;
-  bool m_softwareHasBeenSet = false;
 
   Aws::String m_xsltTemplateName;
-  bool m_xsltTemplateNameHasBeenSet = false;
 
   Aws::String m_xsltTemplateNameForMacSec;
-  bool m_xsltTemplateNameForMacSecHasBeenSet = false;
 
   Aws::String m_routerTypeIdentifier;
+  bool m_vendorHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_softwareHasBeenSet = false;
+  bool m_xsltTemplateNameHasBeenSet = false;
+  bool m_xsltTemplateNameForMacSecHasBeenSet = false;
   bool m_routerTypeIdentifierHasBeenSet = false;
 };
 

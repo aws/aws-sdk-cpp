@@ -468,72 +468,72 @@ class PendingModifiedValues {
   ///@}
  private:
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_storageThroughput{0};
-  bool m_storageThroughputHasBeenSet = false;
 
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
-  bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
 
   Aws::Vector<ProcessorFeature> m_processorFeatures;
-  bool m_processorFeaturesHasBeenSet = false;
 
   AutomationMode m_automationMode{AutomationMode::NOT_SET};
-  bool m_automationModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_resumeFullAutomationModeTime{};
-  bool m_resumeFullAutomationModeTimeHasBeenSet = false;
 
   bool m_multiTenant{false};
-  bool m_multiTenantHasBeenSet = false;
 
   bool m_iAMDatabaseAuthenticationEnabled{false};
-  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
   bool m_dedicatedLogVolume{false};
-  bool m_dedicatedLogVolumeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_storageThroughputHasBeenSet = false;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
+  bool m_processorFeaturesHasBeenSet = false;
+  bool m_automationModeHasBeenSet = false;
+  bool m_resumeFullAutomationModeTimeHasBeenSet = false;
+  bool m_multiTenantHasBeenSet = false;
+  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
+  bool m_dedicatedLogVolumeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
 };
 

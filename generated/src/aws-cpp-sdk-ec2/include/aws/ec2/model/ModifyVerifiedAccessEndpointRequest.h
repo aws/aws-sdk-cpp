@@ -205,30 +205,30 @@ class ModifyVerifiedAccessEndpointRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessEndpointId;
-  bool m_verifiedAccessEndpointIdHasBeenSet = false;
 
   Aws::String m_verifiedAccessGroupId;
-  bool m_verifiedAccessGroupIdHasBeenSet = false;
 
   ModifyVerifiedAccessEndpointLoadBalancerOptions m_loadBalancerOptions;
-  bool m_loadBalancerOptionsHasBeenSet = false;
 
   ModifyVerifiedAccessEndpointEniOptions m_networkInterfaceOptions;
-  bool m_networkInterfaceOptionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   ModifyVerifiedAccessEndpointRdsOptions m_rdsOptions;
-  bool m_rdsOptionsHasBeenSet = false;
 
   ModifyVerifiedAccessEndpointCidrOptions m_cidrOptions;
+  bool m_verifiedAccessEndpointIdHasBeenSet = false;
+  bool m_verifiedAccessGroupIdHasBeenSet = false;
+  bool m_loadBalancerOptionsHasBeenSet = false;
+  bool m_networkInterfaceOptionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_rdsOptionsHasBeenSet = false;
   bool m_cidrOptionsHasBeenSet = false;
 };
 

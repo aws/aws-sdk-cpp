@@ -68,9 +68,9 @@ class DataIntegrationEventDatasetTargetConfiguration {
   ///@}
  private:
   Aws::String m_datasetIdentifier;
-  bool m_datasetIdentifierHasBeenSet = false;
 
   DataIntegrationEventDatasetOperationType m_operationType{DataIntegrationEventDatasetOperationType::NOT_SET};
+  bool m_datasetIdentifierHasBeenSet = false;
   bool m_operationTypeHasBeenSet = false;
 };
 

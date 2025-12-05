@@ -139,18 +139,18 @@ class SavingsPlansUtilizationDetail {
   ///@}
  private:
   Aws::String m_savingsPlanArn;
-  bool m_savingsPlanArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   SavingsPlansUtilization m_utilization;
-  bool m_utilizationHasBeenSet = false;
 
   SavingsPlansSavings m_savings;
-  bool m_savingsHasBeenSet = false;
 
   SavingsPlansAmortizedCommitment m_amortizedCommitment;
+  bool m_savingsPlanArnHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_utilizationHasBeenSet = false;
+  bool m_savingsHasBeenSet = false;
   bool m_amortizedCommitmentHasBeenSet = false;
 };
 

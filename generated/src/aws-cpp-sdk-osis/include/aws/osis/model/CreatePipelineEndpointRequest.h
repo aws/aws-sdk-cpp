@@ -68,9 +68,9 @@ class CreatePipelineEndpointRequest : public OSISRequest {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   PipelineEndpointVpcOptions m_vpcOptions;
+  bool m_pipelineArnHasBeenSet = false;
   bool m_vpcOptionsHasBeenSet = false;
 };
 

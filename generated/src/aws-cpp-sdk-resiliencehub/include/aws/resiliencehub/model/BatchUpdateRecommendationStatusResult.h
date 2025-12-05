@@ -116,15 +116,15 @@ class BatchUpdateRecommendationStatusResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::Vector<BatchUpdateRecommendationStatusFailedEntry> m_failedEntries;
-  bool m_failedEntriesHasBeenSet = false;
 
   Aws::Vector<BatchUpdateRecommendationStatusSuccessfulEntry> m_successfulEntries;
-  bool m_successfulEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_failedEntriesHasBeenSet = false;
+  bool m_successfulEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

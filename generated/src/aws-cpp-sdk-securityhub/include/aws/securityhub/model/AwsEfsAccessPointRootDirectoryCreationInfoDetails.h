@@ -89,12 +89,12 @@ class AwsEfsAccessPointRootDirectoryCreationInfoDetails {
   ///@}
  private:
   Aws::String m_ownerGid;
-  bool m_ownerGidHasBeenSet = false;
 
   Aws::String m_ownerUid;
-  bool m_ownerUidHasBeenSet = false;
 
   Aws::String m_permissions;
+  bool m_ownerGidHasBeenSet = false;
+  bool m_ownerUidHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

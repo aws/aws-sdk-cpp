@@ -105,15 +105,15 @@ class GetArchitectureRecommendationsResult {
   ///@}
  private:
   Aws::Utils::DateTime m_lastAuditTimestamp{};
-  bool m_lastAuditTimestampHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Recommendation> m_recommendations;
-  bool m_recommendationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lastAuditTimestampHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

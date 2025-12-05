@@ -87,12 +87,12 @@ class DescribeRegistrationAttachmentsResult {
   ///@}
  private:
   Aws::Vector<RegistrationAttachmentsInformation> m_registrationAttachments;
-  bool m_registrationAttachmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationAttachmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

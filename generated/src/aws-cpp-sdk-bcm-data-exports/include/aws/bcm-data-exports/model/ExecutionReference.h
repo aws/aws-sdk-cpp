@@ -69,9 +69,9 @@ class ExecutionReference {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   ExecutionStatus m_executionStatus;
+  bool m_executionIdHasBeenSet = false;
   bool m_executionStatusHasBeenSet = false;
 };
 

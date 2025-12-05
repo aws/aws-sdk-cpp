@@ -68,9 +68,9 @@ class SoftwareTokenMfaSettingsType {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_preferredMfa{false};
+  bool m_enabledHasBeenSet = false;
   bool m_preferredMfaHasBeenSet = false;
 };
 

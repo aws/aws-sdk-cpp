@@ -63,9 +63,9 @@ class DisassociateResolverEndpointIpAddressResult {
   ///@}
  private:
   ResolverEndpoint m_resolverEndpoint;
-  bool m_resolverEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

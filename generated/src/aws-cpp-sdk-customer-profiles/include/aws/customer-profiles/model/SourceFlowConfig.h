@@ -110,15 +110,15 @@ class SourceFlowConfig {
   ///@}
  private:
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   SourceConnectorType m_connectorType{SourceConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   IncrementalPullConfig m_incrementalPullConfig;
-  bool m_incrementalPullConfigHasBeenSet = false;
 
   SourceConnectorProperties m_sourceConnectorProperties;
+  bool m_connectorProfileNameHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_incrementalPullConfigHasBeenSet = false;
   bool m_sourceConnectorPropertiesHasBeenSet = false;
 };
 

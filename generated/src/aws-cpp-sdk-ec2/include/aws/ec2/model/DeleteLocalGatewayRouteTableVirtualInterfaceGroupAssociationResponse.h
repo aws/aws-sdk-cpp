@@ -65,9 +65,9 @@ class DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse {
   ///@}
  private:
   LocalGatewayRouteTableVirtualInterfaceGroupAssociation m_localGatewayRouteTableVirtualInterfaceGroupAssociation;
-  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

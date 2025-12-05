@@ -102,12 +102,12 @@ class BulkEmailDestination {
   ///@}
  private:
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_replacementTags;
-  bool m_replacementTagsHasBeenSet = false;
 
   Aws::String m_replacementTemplateData;
+  bool m_destinationHasBeenSet = false;
+  bool m_replacementTagsHasBeenSet = false;
   bool m_replacementTemplateDataHasBeenSet = false;
 };
 

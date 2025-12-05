@@ -69,9 +69,9 @@ class TopicFilter {
   ///@}
  private:
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   bool m_useDefaultIfPreferenceUnavailable{false};
+  bool m_topicNameHasBeenSet = false;
   bool m_useDefaultIfPreferenceUnavailableHasBeenSet = false;
 };
 

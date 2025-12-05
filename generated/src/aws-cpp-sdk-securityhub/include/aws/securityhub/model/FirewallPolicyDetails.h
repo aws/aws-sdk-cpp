@@ -171,18 +171,18 @@ class FirewallPolicyDetails {
   ///@}
  private:
   Aws::Vector<FirewallPolicyStatefulRuleGroupReferencesDetails> m_statefulRuleGroupReferences;
-  bool m_statefulRuleGroupReferencesHasBeenSet = false;
 
   Aws::Vector<FirewallPolicyStatelessCustomActionsDetails> m_statelessCustomActions;
-  bool m_statelessCustomActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statelessDefaultActions;
-  bool m_statelessDefaultActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statelessFragmentDefaultActions;
-  bool m_statelessFragmentDefaultActionsHasBeenSet = false;
 
   Aws::Vector<FirewallPolicyStatelessRuleGroupReferencesDetails> m_statelessRuleGroupReferences;
+  bool m_statefulRuleGroupReferencesHasBeenSet = false;
+  bool m_statelessCustomActionsHasBeenSet = false;
+  bool m_statelessDefaultActionsHasBeenSet = false;
+  bool m_statelessFragmentDefaultActionsHasBeenSet = false;
   bool m_statelessRuleGroupReferencesHasBeenSet = false;
 };
 

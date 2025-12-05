@@ -84,12 +84,12 @@ class GetCredentialsForIdentityResult {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityIdHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

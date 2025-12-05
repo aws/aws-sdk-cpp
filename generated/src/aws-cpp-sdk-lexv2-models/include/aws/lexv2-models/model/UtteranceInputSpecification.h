@@ -71,9 +71,9 @@ class UtteranceInputSpecification {
   ///@}
  private:
   Aws::String m_textInput;
-  bool m_textInputHasBeenSet = false;
 
   UtteranceAudioInputSpecification m_audioInput;
+  bool m_textInputHasBeenSet = false;
   bool m_audioInputHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class PutVoiceConnectorExternalSystemsConfigurationRequest : public ChimeSDKVoic
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::Vector<SessionBorderControllerType> m_sessionBorderControllerTypes;
-  bool m_sessionBorderControllerTypesHasBeenSet = false;
 
   Aws::Vector<ContactCenterSystemType> m_contactCenterSystemTypes;
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_sessionBorderControllerTypesHasBeenSet = false;
   bool m_contactCenterSystemTypesHasBeenSet = false;
 };
 

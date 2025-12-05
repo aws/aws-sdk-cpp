@@ -72,9 +72,9 @@ class StructuredMessageFieldNameAndDataTypePair {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   std::shared_ptr<StructuredMessage> m_dataType;
+  bool m_fieldNameHasBeenSet = false;
   bool m_dataTypeHasBeenSet = false;
 };
 

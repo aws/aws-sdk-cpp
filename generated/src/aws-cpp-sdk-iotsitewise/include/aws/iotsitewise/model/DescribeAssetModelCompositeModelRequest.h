@@ -100,12 +100,12 @@ class DescribeAssetModelCompositeModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelId;
-  bool m_assetModelCompositeModelIdHasBeenSet = false;
 
   Aws::String m_assetModelVersion;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetModelCompositeModelIdHasBeenSet = false;
   bool m_assetModelVersionHasBeenSet = false;
 };
 

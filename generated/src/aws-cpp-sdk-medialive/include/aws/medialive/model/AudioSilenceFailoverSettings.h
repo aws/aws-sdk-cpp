@@ -71,9 +71,9 @@ class AudioSilenceFailoverSettings {
   ///@}
  private:
   Aws::String m_audioSelectorName;
-  bool m_audioSelectorNameHasBeenSet = false;
 
   int m_audioSilenceThresholdMsec{0};
+  bool m_audioSelectorNameHasBeenSet = false;
   bool m_audioSilenceThresholdMsecHasBeenSet = false;
 };
 

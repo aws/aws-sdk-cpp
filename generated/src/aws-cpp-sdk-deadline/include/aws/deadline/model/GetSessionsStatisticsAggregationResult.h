@@ -131,18 +131,18 @@ class GetSessionsStatisticsAggregationResult {
   ///@}
  private:
   Aws::Vector<Statistics> m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SessionsStatisticsAggregationStatus m_status{SessionsStatisticsAggregationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statisticsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class BatchIsAuthorizedWithTokenResult {
   ///@}
  private:
   EntityIdentifier m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<BatchIsAuthorizedWithTokenOutputItem> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_principalHasBeenSet = false;
+  bool m_resultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

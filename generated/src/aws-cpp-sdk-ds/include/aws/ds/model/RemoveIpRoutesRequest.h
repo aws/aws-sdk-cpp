@@ -99,12 +99,12 @@ class RemoveIpRoutesRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrIps;
-  bool m_cidrIpsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrIpv6s;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_cidrIpsHasBeenSet = false;
   bool m_cidrIpv6sHasBeenSet = false;
 };
 

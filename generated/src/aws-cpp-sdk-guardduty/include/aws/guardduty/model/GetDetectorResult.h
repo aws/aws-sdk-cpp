@@ -174,27 +174,27 @@ class GetDetectorResult {
   ///@}
  private:
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
-  bool m_findingPublishingFrequencyHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   DetectorStatus m_status{DetectorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_updatedAt;
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<DetectorFeatureConfigurationResult> m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_findingPublishingFrequencyHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

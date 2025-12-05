@@ -86,12 +86,12 @@ class SymmetricEncryptionAttributes {
   ///@}
  private:
   EncryptionMode m_mode{EncryptionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_initializationVector;
-  bool m_initializationVectorHasBeenSet = false;
 
   PaddingType m_paddingType{PaddingType::NOT_SET};
+  bool m_modeHasBeenSet = false;
+  bool m_initializationVectorHasBeenSet = false;
   bool m_paddingTypeHasBeenSet = false;
 };
 

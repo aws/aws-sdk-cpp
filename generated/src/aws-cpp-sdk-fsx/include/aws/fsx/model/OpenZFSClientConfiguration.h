@@ -89,9 +89,9 @@ class OpenZFSClientConfiguration {
   ///@}
  private:
   Aws::String m_clients;
-  bool m_clientsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_options;
+  bool m_clientsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

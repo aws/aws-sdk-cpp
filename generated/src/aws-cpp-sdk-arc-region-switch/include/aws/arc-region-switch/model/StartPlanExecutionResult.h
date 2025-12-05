@@ -127,21 +127,21 @@ class StartPlanExecutionResult {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_plan;
-  bool m_planHasBeenSet = false;
 
   Aws::String m_planVersion;
-  bool m_planVersionHasBeenSet = false;
 
   Aws::String m_activateRegion;
-  bool m_activateRegionHasBeenSet = false;
 
   Aws::String m_deactivateRegion;
-  bool m_deactivateRegionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionIdHasBeenSet = false;
+  bool m_planHasBeenSet = false;
+  bool m_planVersionHasBeenSet = false;
+  bool m_activateRegionHasBeenSet = false;
+  bool m_deactivateRegionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

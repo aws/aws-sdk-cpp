@@ -94,12 +94,12 @@ class GetTemplateResult {
   ///@}
  private:
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::Vector<TemplateStage> m_stagesAvailable;
-  bool m_stagesAvailableHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_stagesAvailableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

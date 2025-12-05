@@ -110,15 +110,15 @@ class ListTriggersRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_dependentJobName;
-  bool m_dependentJobNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dependentJobNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

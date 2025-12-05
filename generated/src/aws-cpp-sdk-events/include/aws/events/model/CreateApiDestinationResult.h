@@ -111,18 +111,18 @@ class CreateApiDestinationResult {
   ///@}
  private:
   Aws::String m_apiDestinationArn;
-  bool m_apiDestinationArnHasBeenSet = false;
 
   ApiDestinationState m_apiDestinationState{ApiDestinationState::NOT_SET};
-  bool m_apiDestinationStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiDestinationArnHasBeenSet = false;
+  bool m_apiDestinationStateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

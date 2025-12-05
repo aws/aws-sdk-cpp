@@ -100,12 +100,12 @@ class GetItemResult {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeValue> m_item;
-  bool m_itemHasBeenSet = false;
 
   ConsumedCapacity m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

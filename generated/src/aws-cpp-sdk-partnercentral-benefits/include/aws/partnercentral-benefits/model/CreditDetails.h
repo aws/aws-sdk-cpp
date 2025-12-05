@@ -97,12 +97,12 @@ class CreditDetails {
   ///@}
  private:
   MonetaryValue m_allocatedAmount;
-  bool m_allocatedAmountHasBeenSet = false;
 
   MonetaryValue m_issuedAmount;
-  bool m_issuedAmountHasBeenSet = false;
 
   Aws::Vector<CreditCode> m_codes;
+  bool m_allocatedAmountHasBeenSet = false;
+  bool m_issuedAmountHasBeenSet = false;
   bool m_codesHasBeenSet = false;
 };
 

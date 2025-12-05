@@ -93,12 +93,12 @@ class ColorScale {
   ///@}
  private:
   Aws::Vector<DataColor> m_colors;
-  bool m_colorsHasBeenSet = false;
 
   ColorFillType m_colorFillType{ColorFillType::NOT_SET};
-  bool m_colorFillTypeHasBeenSet = false;
 
   DataColor m_nullValueColor;
+  bool m_colorsHasBeenSet = false;
+  bool m_colorFillTypeHasBeenSet = false;
   bool m_nullValueColorHasBeenSet = false;
 };
 

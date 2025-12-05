@@ -103,15 +103,15 @@ class CreateTicketV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_findingMetadataUid;
-  bool m_findingMetadataUidHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   TicketCreationMode m_mode{TicketCreationMode::NOT_SET};
+  bool m_connectorIdHasBeenSet = false;
+  bool m_findingMetadataUidHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_modeHasBeenSet = false;
 };
 

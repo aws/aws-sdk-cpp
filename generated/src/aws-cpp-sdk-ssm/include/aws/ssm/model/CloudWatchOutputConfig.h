@@ -71,9 +71,9 @@ class CloudWatchOutputConfig {
   ///@}
  private:
   Aws::String m_cloudWatchLogGroupName;
-  bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
   bool m_cloudWatchOutputEnabled{false};
+  bool m_cloudWatchLogGroupNameHasBeenSet = false;
   bool m_cloudWatchOutputEnabledHasBeenSet = false;
 };
 

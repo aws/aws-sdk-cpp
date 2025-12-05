@@ -68,9 +68,9 @@ class UpdateConfigurationRequest : public Inspector2Request {
   ///@}
  private:
   EcrConfiguration m_ecrConfiguration;
-  bool m_ecrConfigurationHasBeenSet = false;
 
   Ec2Configuration m_ec2Configuration;
+  bool m_ecrConfigurationHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
 };
 

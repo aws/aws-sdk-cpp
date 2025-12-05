@@ -151,21 +151,21 @@ class InstanceMetadataDefaultsResponse {
   ///@}
  private:
   HttpTokensState m_httpTokens{HttpTokensState::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   InstanceMetadataEndpointState m_httpEndpoint{InstanceMetadataEndpointState::NOT_SET};
-  bool m_httpEndpointHasBeenSet = false;
 
   InstanceMetadataTagsState m_instanceMetadataTags{InstanceMetadataTagsState::NOT_SET};
-  bool m_instanceMetadataTagsHasBeenSet = false;
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   Aws::String m_managedExceptionMessage;
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_instanceMetadataTagsHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_managedExceptionMessageHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AwsRedshiftClusterClusterSecurityGroup {
   ///@}
  private:
   Aws::String m_clusterSecurityGroupName;
-  bool m_clusterSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_clusterSecurityGroupNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

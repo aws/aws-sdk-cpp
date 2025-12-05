@@ -139,18 +139,18 @@ class CreateInferenceProfileRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_inferenceProfileName;
-  bool m_inferenceProfileNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   InferenceProfileModelSource m_modelSource;
-  bool m_modelSourceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_inferenceProfileNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_modelSourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

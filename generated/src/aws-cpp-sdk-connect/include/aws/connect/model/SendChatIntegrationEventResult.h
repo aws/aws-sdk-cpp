@@ -77,12 +77,12 @@ class SendChatIntegrationEventResult {
   ///@}
  private:
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   bool m_newChatCreated{false};
-  bool m_newChatCreatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_newChatCreatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

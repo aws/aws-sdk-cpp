@@ -84,12 +84,12 @@ class GetObjectTaggingResult {
   ///@}
  private:
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagSet;
-  bool m_tagSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionIdHasBeenSet = false;
+  bool m_tagSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

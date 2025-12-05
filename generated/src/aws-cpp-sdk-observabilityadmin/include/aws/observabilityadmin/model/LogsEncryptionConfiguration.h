@@ -95,12 +95,12 @@ class LogsEncryptionConfiguration {
   ///@}
  private:
   EncryptionStrategy m_encryptionStrategy{EncryptionStrategy::NOT_SET};
-  bool m_encryptionStrategyHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   EncryptionConflictResolutionStrategy m_encryptionConflictResolutionStrategy{EncryptionConflictResolutionStrategy::NOT_SET};
+  bool m_encryptionStrategyHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_encryptionConflictResolutionStrategyHasBeenSet = false;
 };
 

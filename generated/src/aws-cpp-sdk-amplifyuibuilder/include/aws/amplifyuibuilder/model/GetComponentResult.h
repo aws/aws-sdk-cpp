@@ -60,9 +60,9 @@ class GetComponentResult {
   ///@}
  private:
   Component m_component;
-  bool m_componentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_componentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

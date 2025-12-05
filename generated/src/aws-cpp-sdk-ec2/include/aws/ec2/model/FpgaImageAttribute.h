@@ -139,18 +139,18 @@ class FpgaImageAttribute {
   ///@}
  private:
   Aws::String m_fpgaImageId;
-  bool m_fpgaImageIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<LoadPermission> m_loadPermissions;
-  bool m_loadPermissionsHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
+  bool m_fpgaImageIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_loadPermissionsHasBeenSet = false;
   bool m_productCodesHasBeenSet = false;
 };
 

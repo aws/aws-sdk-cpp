@@ -63,9 +63,9 @@ class DescribeDatasetImportJobResult {
   ///@}
  private:
   DatasetImportJob m_datasetImportJob;
-  bool m_datasetImportJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetImportJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

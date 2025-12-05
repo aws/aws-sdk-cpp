@@ -62,9 +62,9 @@ class CpuOptions {
   ///@}
  private:
   int m_coreCount{0};
-  bool m_coreCountHasBeenSet = false;
 
   int m_threadsPerCore{0};
+  bool m_coreCountHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;
 };
 

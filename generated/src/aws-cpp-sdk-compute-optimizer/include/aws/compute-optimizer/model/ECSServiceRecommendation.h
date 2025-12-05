@@ -334,42 +334,42 @@ class ECSServiceRecommendation {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ServiceConfiguration m_currentServiceConfiguration;
-  bool m_currentServiceConfigurationHasBeenSet = false;
 
   Aws::Vector<ECSServiceUtilizationMetric> m_utilizationMetrics;
-  bool m_utilizationMetricsHasBeenSet = false;
 
   double m_lookbackPeriodInDays{0.0};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   ECSServiceLaunchType m_launchType{ECSServiceLaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   ECSServiceRecommendationFinding m_finding{ECSServiceRecommendationFinding::NOT_SET};
-  bool m_findingHasBeenSet = false;
 
   Aws::Vector<ECSServiceRecommendationFindingReasonCode> m_findingReasonCodes;
-  bool m_findingReasonCodesHasBeenSet = false;
 
   Aws::Vector<ECSServiceRecommendationOption> m_serviceRecommendationOptions;
-  bool m_serviceRecommendationOptionsHasBeenSet = false;
 
   CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
-  bool m_currentPerformanceRiskHasBeenSet = false;
 
   ECSEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_currentServiceConfigurationHasBeenSet = false;
+  bool m_utilizationMetricsHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
+  bool m_findingHasBeenSet = false;
+  bool m_findingReasonCodesHasBeenSet = false;
+  bool m_serviceRecommendationOptionsHasBeenSet = false;
+  bool m_currentPerformanceRiskHasBeenSet = false;
+  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

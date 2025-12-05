@@ -115,15 +115,15 @@ class CreateMembersRequest : public DetectiveRequest {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   bool m_disableEmailNotification{false};
-  bool m_disableEmailNotificationHasBeenSet = false;
 
   Aws::Vector<Account> m_accounts;
+  bool m_graphArnHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_disableEmailNotificationHasBeenSet = false;
   bool m_accountsHasBeenSet = false;
 };
 

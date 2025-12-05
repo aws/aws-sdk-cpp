@@ -60,9 +60,9 @@ class DescribeTopicsDetectionJobResult {
   ///@}
  private:
   TopicsDetectionJobProperties m_topicsDetectionJobProperties;
-  bool m_topicsDetectionJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicsDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

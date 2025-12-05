@@ -84,12 +84,12 @@ class CreateInvalidation2020_05_31Result {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Invalidation m_invalidation;
-  bool m_invalidationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationHasBeenSet = false;
+  bool m_invalidationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class RunDetailSummary {
   ///@}
  private:
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
+  bool m_statusHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
 };
 

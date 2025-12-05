@@ -69,9 +69,9 @@ class ChannelDefinition {
   ///@}
  private:
   int m_channelId{0};
-  bool m_channelIdHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
+  bool m_channelIdHasBeenSet = false;
   bool m_participantRoleHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListUltraServersByReservedCapacityResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<UltraServer> m_ultraServers;
-  bool m_ultraServersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ultraServersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

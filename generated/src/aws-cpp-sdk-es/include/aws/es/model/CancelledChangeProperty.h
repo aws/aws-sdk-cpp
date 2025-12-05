@@ -88,12 +88,12 @@ class CancelledChangeProperty {
   ///@}
  private:
   Aws::String m_propertyName;
-  bool m_propertyNameHasBeenSet = false;
 
   Aws::String m_cancelledValue;
-  bool m_cancelledValueHasBeenSet = false;
 
   Aws::String m_activeValue;
+  bool m_propertyNameHasBeenSet = false;
+  bool m_cancelledValueHasBeenSet = false;
   bool m_activeValueHasBeenSet = false;
 };
 

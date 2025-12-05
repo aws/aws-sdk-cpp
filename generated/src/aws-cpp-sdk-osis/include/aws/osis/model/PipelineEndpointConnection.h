@@ -106,15 +106,15 @@ class PipelineEndpointConnection {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   PipelineEndpointStatus m_status{PipelineEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_vpcEndpointOwner;
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_vpcEndpointOwnerHasBeenSet = false;
 };
 

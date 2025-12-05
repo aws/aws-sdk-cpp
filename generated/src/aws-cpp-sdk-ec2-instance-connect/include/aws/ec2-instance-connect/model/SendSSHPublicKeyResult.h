@@ -57,9 +57,9 @@ class SendSSHPublicKeyResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   bool m_success{false};
+  bool m_requestIdHasBeenSet = false;
   bool m_successHasBeenSet = false;
 };
 

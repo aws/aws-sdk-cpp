@@ -116,15 +116,15 @@ class CreateExperimentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_experimentName;
-  bool m_experimentNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_experimentNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

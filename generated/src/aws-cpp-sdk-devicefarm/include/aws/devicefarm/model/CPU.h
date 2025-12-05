@@ -86,12 +86,12 @@ class CPU {
   ///@}
  private:
   Aws::String m_frequency;
-  bool m_frequencyHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   double m_clock{0.0};
+  bool m_frequencyHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
   bool m_clockHasBeenSet = false;
 };
 

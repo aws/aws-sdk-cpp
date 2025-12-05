@@ -144,21 +144,21 @@ class CreateKeyPairResponse {
   ///@}
  private:
   Aws::String m_keyPairId;
-  bool m_keyPairIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_keyFingerprint;
-  bool m_keyFingerprintHasBeenSet = false;
 
   Aws::String m_keyMaterial;
-  bool m_keyMaterialHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_keyPairIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_keyFingerprintHasBeenSet = false;
+  bool m_keyMaterialHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

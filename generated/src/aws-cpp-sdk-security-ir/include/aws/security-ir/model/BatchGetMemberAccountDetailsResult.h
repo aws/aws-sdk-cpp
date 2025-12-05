@@ -93,12 +93,12 @@ class BatchGetMemberAccountDetailsResult {
   ///@}
  private:
   Aws::Vector<GetMembershipAccountDetailItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::Vector<GetMembershipAccountDetailError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

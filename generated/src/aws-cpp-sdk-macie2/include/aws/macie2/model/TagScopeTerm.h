@@ -114,15 +114,15 @@ class TagScopeTerm {
   ///@}
  private:
   JobComparator m_comparator{JobComparator::NOT_SET};
-  bool m_comparatorHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<TagValuePair> m_tagValues;
-  bool m_tagValuesHasBeenSet = false;
 
   TagTarget m_target{TagTarget::NOT_SET};
+  bool m_comparatorHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_tagValuesHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

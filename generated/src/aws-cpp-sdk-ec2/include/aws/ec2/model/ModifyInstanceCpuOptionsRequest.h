@@ -102,15 +102,15 @@ class ModifyInstanceCpuOptionsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_coreCount{0};
-  bool m_coreCountHasBeenSet = false;
 
   int m_threadsPerCore{0};
-  bool m_threadsPerCoreHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_coreCountHasBeenSet = false;
+  bool m_threadsPerCoreHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

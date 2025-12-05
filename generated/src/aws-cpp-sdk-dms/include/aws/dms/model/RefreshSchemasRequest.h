@@ -71,9 +71,9 @@ class RefreshSchemasRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_replicationInstanceArn;
+  bool m_endpointArnHasBeenSet = false;
   bool m_replicationInstanceArnHasBeenSet = false;
 };
 

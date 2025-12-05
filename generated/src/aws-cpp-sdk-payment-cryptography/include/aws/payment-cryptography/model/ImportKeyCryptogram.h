@@ -122,18 +122,18 @@ class ImportKeyCryptogram {
   ///@}
  private:
   KeyAttributes m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   bool m_exportable{false};
-  bool m_exportableHasBeenSet = false;
 
   Aws::String m_wrappedKeyCryptogram;
-  bool m_wrappedKeyCryptogramHasBeenSet = false;
 
   Aws::String m_importToken;
-  bool m_importTokenHasBeenSet = false;
 
   WrappingKeySpec m_wrappingSpec{WrappingKeySpec::NOT_SET};
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_exportableHasBeenSet = false;
+  bool m_wrappedKeyCryptogramHasBeenSet = false;
+  bool m_importTokenHasBeenSet = false;
   bool m_wrappingSpecHasBeenSet = false;
 };
 

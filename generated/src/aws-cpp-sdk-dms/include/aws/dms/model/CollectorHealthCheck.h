@@ -98,15 +98,15 @@ class CollectorHealthCheck {
   ///@}
  private:
   CollectorStatus m_collectorStatus{CollectorStatus::NOT_SET};
-  bool m_collectorStatusHasBeenSet = false;
 
   bool m_localCollectorS3Access{false};
-  bool m_localCollectorS3AccessHasBeenSet = false;
 
   bool m_webCollectorS3Access{false};
-  bool m_webCollectorS3AccessHasBeenSet = false;
 
   bool m_webCollectorGrantedRoleBasedAccess{false};
+  bool m_collectorStatusHasBeenSet = false;
+  bool m_localCollectorS3AccessHasBeenSet = false;
+  bool m_webCollectorS3AccessHasBeenSet = false;
   bool m_webCollectorGrantedRoleBasedAccessHasBeenSet = false;
 };
 

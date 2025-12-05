@@ -70,9 +70,9 @@ class ImageLocation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_idHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

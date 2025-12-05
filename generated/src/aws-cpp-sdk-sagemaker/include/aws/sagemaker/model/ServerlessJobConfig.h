@@ -165,24 +165,24 @@ class ServerlessJobConfig {
   ///@}
  private:
   Aws::String m_baseModelArn;
-  bool m_baseModelArnHasBeenSet = false;
 
   bool m_acceptEula{false};
-  bool m_acceptEulaHasBeenSet = false;
 
   ServerlessJobType m_jobType{ServerlessJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   CustomizationTechnique m_customizationTechnique{CustomizationTechnique::NOT_SET};
-  bool m_customizationTechniqueHasBeenSet = false;
 
   Peft m_peft{Peft::NOT_SET};
-  bool m_peftHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   Aws::String m_evaluatorArn;
+  bool m_baseModelArnHasBeenSet = false;
+  bool m_acceptEulaHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_customizationTechniqueHasBeenSet = false;
+  bool m_peftHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
   bool m_evaluatorArnHasBeenSet = false;
 };
 

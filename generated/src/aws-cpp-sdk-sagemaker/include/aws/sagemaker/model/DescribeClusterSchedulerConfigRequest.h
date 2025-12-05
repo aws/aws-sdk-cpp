@@ -65,9 +65,9 @@ class DescribeClusterSchedulerConfigRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterSchedulerConfigId;
-  bool m_clusterSchedulerConfigIdHasBeenSet = false;
 
   int m_clusterSchedulerConfigVersion{0};
+  bool m_clusterSchedulerConfigIdHasBeenSet = false;
   bool m_clusterSchedulerConfigVersionHasBeenSet = false;
 };
 

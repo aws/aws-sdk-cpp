@@ -95,12 +95,12 @@ class EvaluationAutomationRuleCategory {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   QuestionRuleCategoryAutomationCondition m_condition{QuestionRuleCategoryAutomationCondition::NOT_SET};
-  bool m_conditionHasBeenSet = false;
 
   Aws::Vector<EvaluationTranscriptPointOfInterest> m_pointsOfInterest;
+  bool m_categoryHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_pointsOfInterestHasBeenSet = false;
 };
 

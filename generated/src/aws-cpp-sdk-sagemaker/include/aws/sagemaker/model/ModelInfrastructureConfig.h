@@ -71,9 +71,9 @@ class ModelInfrastructureConfig {
   ///@}
  private:
   ModelInfrastructureType m_infrastructureType{ModelInfrastructureType::NOT_SET};
-  bool m_infrastructureTypeHasBeenSet = false;
 
   RealTimeInferenceConfig m_realTimeInferenceConfig;
+  bool m_infrastructureTypeHasBeenSet = false;
   bool m_realTimeInferenceConfigHasBeenSet = false;
 };
 

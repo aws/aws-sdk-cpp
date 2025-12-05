@@ -164,21 +164,21 @@ class PutPermissionRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_eventBusName;
-  bool m_eventBusNameHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   Condition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_eventBusNameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_statementIdHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

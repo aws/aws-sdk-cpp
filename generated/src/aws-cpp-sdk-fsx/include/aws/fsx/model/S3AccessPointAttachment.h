@@ -184,27 +184,27 @@ class S3AccessPointAttachment {
   ///@}
  private:
   S3AccessPointAttachmentLifecycle m_lifecycle{S3AccessPointAttachmentLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   LifecycleTransitionReason m_lifecycleTransitionReason;
-  bool m_lifecycleTransitionReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3AccessPointAttachmentType m_type{S3AccessPointAttachmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   S3AccessPointOpenZFSConfiguration m_openZFSConfiguration;
-  bool m_openZFSConfigurationHasBeenSet = false;
 
   S3AccessPointOntapConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   S3AccessPoint m_s3AccessPoint;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_lifecycleTransitionReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_openZFSConfigurationHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
   bool m_s3AccessPointHasBeenSet = false;
 };
 

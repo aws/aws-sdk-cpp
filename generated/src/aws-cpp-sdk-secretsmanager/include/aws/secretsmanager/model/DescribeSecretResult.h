@@ -489,69 +489,69 @@ class DescribeSecretResult {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_rotationEnabled{false};
-  bool m_rotationEnabledHasBeenSet = false;
 
   Aws::String m_rotationLambdaARN;
-  bool m_rotationLambdaARNHasBeenSet = false;
 
   RotationRulesType m_rotationRules;
-  bool m_rotationRulesHasBeenSet = false;
 
   Aws::Vector<ExternalSecretRotationMetadataItem> m_externalSecretRotationMetadata;
-  bool m_externalSecretRotationMetadataHasBeenSet = false;
 
   Aws::String m_externalSecretRotationRoleArn;
-  bool m_externalSecretRotationRoleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRotatedDate{};
-  bool m_lastRotatedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastChangedDate{};
-  bool m_lastChangedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessedDate{};
-  bool m_lastAccessedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedDate{};
-  bool m_deletedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextRotationDate{};
-  bool m_nextRotationDateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_versionIdsToStages;
-  bool m_versionIdsToStagesHasBeenSet = false;
 
   Aws::String m_owningService;
-  bool m_owningServiceHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_primaryRegion;
-  bool m_primaryRegionHasBeenSet = false;
 
   Aws::Vector<ReplicationStatusType> m_replicationStatus;
-  bool m_replicationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aRNHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_rotationEnabledHasBeenSet = false;
+  bool m_rotationLambdaARNHasBeenSet = false;
+  bool m_rotationRulesHasBeenSet = false;
+  bool m_externalSecretRotationMetadataHasBeenSet = false;
+  bool m_externalSecretRotationRoleArnHasBeenSet = false;
+  bool m_lastRotatedDateHasBeenSet = false;
+  bool m_lastChangedDateHasBeenSet = false;
+  bool m_lastAccessedDateHasBeenSet = false;
+  bool m_deletedDateHasBeenSet = false;
+  bool m_nextRotationDateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_versionIdsToStagesHasBeenSet = false;
+  bool m_owningServiceHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_primaryRegionHasBeenSet = false;
+  bool m_replicationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

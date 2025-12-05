@@ -111,15 +111,15 @@ class UpdateDetectorRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   bool m_enable{false};
-  bool m_enableHasBeenSet = false;
 
   FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
-  bool m_findingPublishingFrequencyHasBeenSet = false;
 
   Aws::Vector<DetectorFeatureConfiguration> m_features;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_enableHasBeenSet = false;
+  bool m_findingPublishingFrequencyHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
 };
 

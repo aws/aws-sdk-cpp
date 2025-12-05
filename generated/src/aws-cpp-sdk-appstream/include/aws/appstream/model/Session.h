@@ -237,36 +237,36 @@ class Session {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_fleetName;
-  bool m_fleetNameHasBeenSet = false;
 
   SessionState m_state{SessionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   SessionConnectionState m_connectionState{SessionConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_maxExpirationTime{};
-  bool m_maxExpirationTimeHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   NetworkAccessConfiguration m_networkAccessConfiguration;
-  bool m_networkAccessConfigurationHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_idHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_fleetNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_maxExpirationTimeHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_networkAccessConfigurationHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

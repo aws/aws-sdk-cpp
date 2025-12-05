@@ -70,9 +70,9 @@ class EnableAllowedImagesSettingsRequest : public EC2Request {
   ///@}
  private:
   AllowedImagesSettingsEnabledState m_allowedImagesSettingsState{AllowedImagesSettingsEnabledState::NOT_SET};
-  bool m_allowedImagesSettingsStateHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_allowedImagesSettingsStateHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

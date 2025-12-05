@@ -95,12 +95,12 @@ class BatchCreateBillScenarioCommitmentModificationResult {
   ///@}
  private:
   Aws::Vector<BatchCreateBillScenarioCommitmentModificationItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::Vector<BatchCreateBillScenarioCommitmentModificationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

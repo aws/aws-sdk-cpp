@@ -87,12 +87,12 @@ class FoodType {
   ///@}
  private:
   Aws::String m_localizedName;
-  bool m_localizedNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   bool m_primary{false};
+  bool m_localizedNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_primaryHasBeenSet = false;
 };
 

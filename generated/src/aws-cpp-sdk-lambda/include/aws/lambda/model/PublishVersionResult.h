@@ -805,126 +805,126 @@ class PublishVersionResult {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Runtime m_runtime{Runtime::NOT_SET};
-  bool m_runtimeHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_handler;
-  bool m_handlerHasBeenSet = false;
 
   long long m_codeSize{0};
-  bool m_codeSizeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   int m_memorySize{0};
-  bool m_memorySizeHasBeenSet = false;
 
   Aws::String m_lastModified;
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_codeSha256;
-  bool m_codeSha256HasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   VpcConfigResponse m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   DeadLetterConfig m_deadLetterConfig;
-  bool m_deadLetterConfigHasBeenSet = false;
 
   EnvironmentResponse m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_kMSKeyArn;
-  bool m_kMSKeyArnHasBeenSet = false;
 
   TracingConfigResponse m_tracingConfig;
-  bool m_tracingConfigHasBeenSet = false;
 
   Aws::String m_masterArn;
-  bool m_masterArnHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::Vector<Layer> m_layers;
-  bool m_layersHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   StateReasonCode m_stateReasonCode{StateReasonCode::NOT_SET};
-  bool m_stateReasonCodeHasBeenSet = false;
 
   LastUpdateStatus m_lastUpdateStatus{LastUpdateStatus::NOT_SET};
-  bool m_lastUpdateStatusHasBeenSet = false;
 
   Aws::String m_lastUpdateStatusReason;
-  bool m_lastUpdateStatusReasonHasBeenSet = false;
 
   LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode{LastUpdateStatusReasonCode::NOT_SET};
-  bool m_lastUpdateStatusReasonCodeHasBeenSet = false;
 
   Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
-  bool m_fileSystemConfigsHasBeenSet = false;
 
   PackageType m_packageType{PackageType::NOT_SET};
-  bool m_packageTypeHasBeenSet = false;
 
   ImageConfigResponse m_imageConfigResponse;
-  bool m_imageConfigResponseHasBeenSet = false;
 
   Aws::String m_signingProfileVersionArn;
-  bool m_signingProfileVersionArnHasBeenSet = false;
 
   Aws::String m_signingJobArn;
-  bool m_signingJobArnHasBeenSet = false;
 
   Aws::Vector<Architecture> m_architectures;
-  bool m_architecturesHasBeenSet = false;
 
   EphemeralStorage m_ephemeralStorage;
-  bool m_ephemeralStorageHasBeenSet = false;
 
   SnapStartResponse m_snapStart;
-  bool m_snapStartHasBeenSet = false;
 
   RuntimeVersionConfig m_runtimeVersionConfig;
-  bool m_runtimeVersionConfigHasBeenSet = false;
 
   LoggingConfig m_loggingConfig;
-  bool m_loggingConfigHasBeenSet = false;
 
   CapacityProviderConfig m_capacityProviderConfig;
-  bool m_capacityProviderConfigHasBeenSet = false;
 
   Aws::String m_configSha256;
-  bool m_configSha256HasBeenSet = false;
 
   DurableConfig m_durableConfig;
-  bool m_durableConfigHasBeenSet = false;
 
   TenancyConfig m_tenancyConfig;
-  bool m_tenancyConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionNameHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_handlerHasBeenSet = false;
+  bool m_codeSizeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_memorySizeHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_codeSha256HasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_deadLetterConfigHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_kMSKeyArnHasBeenSet = false;
+  bool m_tracingConfigHasBeenSet = false;
+  bool m_masterArnHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_layersHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_stateReasonCodeHasBeenSet = false;
+  bool m_lastUpdateStatusHasBeenSet = false;
+  bool m_lastUpdateStatusReasonHasBeenSet = false;
+  bool m_lastUpdateStatusReasonCodeHasBeenSet = false;
+  bool m_fileSystemConfigsHasBeenSet = false;
+  bool m_packageTypeHasBeenSet = false;
+  bool m_imageConfigResponseHasBeenSet = false;
+  bool m_signingProfileVersionArnHasBeenSet = false;
+  bool m_signingJobArnHasBeenSet = false;
+  bool m_architecturesHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
+  bool m_snapStartHasBeenSet = false;
+  bool m_runtimeVersionConfigHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
+  bool m_capacityProviderConfigHasBeenSet = false;
+  bool m_configSha256HasBeenSet = false;
+  bool m_durableConfigHasBeenSet = false;
+  bool m_tenancyConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

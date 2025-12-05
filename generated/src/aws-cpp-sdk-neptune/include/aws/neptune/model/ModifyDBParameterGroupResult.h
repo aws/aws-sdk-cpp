@@ -60,9 +60,9 @@ class ModifyDBParameterGroupResult {
   ///@}
  private:
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBParameterGroupNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

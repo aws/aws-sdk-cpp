@@ -67,9 +67,9 @@ class GetMetricsResult {
   ///@}
  private:
   Aws::Vector<SummaryMetricQueryResult> m_summaryMetricQueryResults;
-  bool m_summaryMetricQueryResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_summaryMetricQueryResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

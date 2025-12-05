@@ -145,21 +145,21 @@ class CreateLinkRequest : public RTBFabricRequest {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_peerGatewayId;
-  bool m_peerGatewayIdHasBeenSet = false;
 
   LinkAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   bool m_httpResponderAllowed{false};
-  bool m_httpResponderAllowedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LinkLogSettings m_logSettings;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_peerGatewayIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_httpResponderAllowedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
 };
 

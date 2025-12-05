@@ -86,12 +86,12 @@ class UpdateQueueOutboundEmailConfigRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   OutboundEmailConfig m_outboundEmailConfig;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
   bool m_outboundEmailConfigHasBeenSet = false;
 };
 

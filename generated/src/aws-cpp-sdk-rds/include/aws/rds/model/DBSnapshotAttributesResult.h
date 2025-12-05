@@ -82,9 +82,9 @@ class DBSnapshotAttributesResult {
   ///@}
  private:
   Aws::String m_dBSnapshotIdentifier;
-  bool m_dBSnapshotIdentifierHasBeenSet = false;
 
   Aws::Vector<DBSnapshotAttribute> m_dBSnapshotAttributes;
+  bool m_dBSnapshotIdentifierHasBeenSet = false;
   bool m_dBSnapshotAttributesHasBeenSet = false;
 };
 

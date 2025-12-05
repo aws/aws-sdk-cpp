@@ -93,12 +93,12 @@ class GitPushFilter {
   ///@}
  private:
   GitTagFilterCriteria m_tags;
-  bool m_tagsHasBeenSet = false;
 
   GitBranchFilterCriteria m_branches;
-  bool m_branchesHasBeenSet = false;
 
   GitFilePathFilterCriteria m_filePaths;
+  bool m_tagsHasBeenSet = false;
+  bool m_branchesHasBeenSet = false;
   bool m_filePathsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateParameterGroupResult {
   ///@}
  private:
   ParameterGroup m_parameterGroup;
-  bool m_parameterGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parameterGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

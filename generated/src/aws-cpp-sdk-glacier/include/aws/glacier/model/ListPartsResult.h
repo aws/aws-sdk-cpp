@@ -180,27 +180,27 @@ class ListPartsResult {
   ///@}
  private:
   Aws::String m_multipartUploadId;
-  bool m_multipartUploadIdHasBeenSet = false;
 
   Aws::String m_vaultARN;
-  bool m_vaultARNHasBeenSet = false;
 
   Aws::String m_archiveDescription;
-  bool m_archiveDescriptionHasBeenSet = false;
 
   long long m_partSizeInBytes{0};
-  bool m_partSizeInBytesHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Vector<PartListElement> m_parts;
-  bool m_partsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_multipartUploadIdHasBeenSet = false;
+  bool m_vaultARNHasBeenSet = false;
+  bool m_archiveDescriptionHasBeenSet = false;
+  bool m_partSizeInBytesHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_partsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

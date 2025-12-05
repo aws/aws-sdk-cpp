@@ -85,12 +85,12 @@ class GetDistributionConfig2020_05_31Result {
   ///@}
  private:
   DistributionConfig m_distributionConfig;
-  bool m_distributionConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_distributionConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

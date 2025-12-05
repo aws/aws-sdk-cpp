@@ -77,12 +77,12 @@ class GetPortalProductSharingPolicyResult {
   ///@}
  private:
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_portalProductIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

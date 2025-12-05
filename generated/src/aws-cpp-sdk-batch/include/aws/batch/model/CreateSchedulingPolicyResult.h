@@ -79,12 +79,12 @@ class CreateSchedulingPolicyResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

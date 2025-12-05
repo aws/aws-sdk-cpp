@@ -89,12 +89,12 @@ class GetAccessKeyLastUsedResult {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   AccessKeyLastUsed m_accessKeyLastUsed;
-  bool m_accessKeyLastUsedHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_userNameHasBeenSet = false;
+  bool m_accessKeyLastUsedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

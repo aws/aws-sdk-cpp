@@ -146,21 +146,21 @@ class RegisterComputeRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_computeName;
-  bool m_computeNameHasBeenSet = false;
 
   Aws::String m_certificatePath;
-  bool m_certificatePathHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_computeNameHasBeenSet = false;
+  bool m_certificatePathHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

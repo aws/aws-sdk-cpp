@@ -386,45 +386,45 @@ class CreateTableRequest : public KeyspacesRequest {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   SchemaDefinition m_schemaDefinition;
-  bool m_schemaDefinitionHasBeenSet = false;
 
   Comment m_comment;
-  bool m_commentHasBeenSet = false;
 
   CapacitySpecification m_capacitySpecification;
-  bool m_capacitySpecificationHasBeenSet = false;
 
   EncryptionSpecification m_encryptionSpecification;
-  bool m_encryptionSpecificationHasBeenSet = false;
 
   PointInTimeRecovery m_pointInTimeRecovery;
-  bool m_pointInTimeRecoveryHasBeenSet = false;
 
   TimeToLive m_ttl;
-  bool m_ttlHasBeenSet = false;
 
   int m_defaultTimeToLive{0};
-  bool m_defaultTimeToLiveHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ClientSideTimestamps m_clientSideTimestamps;
-  bool m_clientSideTimestampsHasBeenSet = false;
 
   AutoScalingSpecification m_autoScalingSpecification;
-  bool m_autoScalingSpecificationHasBeenSet = false;
 
   Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
-  bool m_replicaSpecificationsHasBeenSet = false;
 
   CdcSpecification m_cdcSpecification;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_schemaDefinitionHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_capacitySpecificationHasBeenSet = false;
+  bool m_encryptionSpecificationHasBeenSet = false;
+  bool m_pointInTimeRecoveryHasBeenSet = false;
+  bool m_ttlHasBeenSet = false;
+  bool m_defaultTimeToLiveHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientSideTimestampsHasBeenSet = false;
+  bool m_autoScalingSpecificationHasBeenSet = false;
+  bool m_replicaSpecificationsHasBeenSet = false;
   bool m_cdcSpecificationHasBeenSet = false;
 };
 

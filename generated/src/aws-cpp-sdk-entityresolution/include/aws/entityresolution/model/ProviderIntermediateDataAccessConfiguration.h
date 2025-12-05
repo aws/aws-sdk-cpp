@@ -83,9 +83,9 @@ class ProviderIntermediateDataAccessConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_awsAccountIds;
-  bool m_awsAccountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requiredBucketActions;
+  bool m_awsAccountIdsHasBeenSet = false;
   bool m_requiredBucketActionsHasBeenSet = false;
 };
 

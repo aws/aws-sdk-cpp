@@ -87,12 +87,12 @@ class HumanLoopQuotaExceededException {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_serviceCode;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
 };
 

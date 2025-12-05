@@ -113,15 +113,15 @@ class RecordPrimaryValue {
   ///@}
  private:
   Aws::String m_recordId;
-  bool m_recordIdHasBeenSet = false;
 
   Aws::Vector<PrimaryValueResponse> m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_recordIdHasBeenSet = false;
+  bool m_primaryValuesHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

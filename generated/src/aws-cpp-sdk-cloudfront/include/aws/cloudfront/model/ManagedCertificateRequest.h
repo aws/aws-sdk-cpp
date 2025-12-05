@@ -101,12 +101,12 @@ class ManagedCertificateRequest {
   ///@}
  private:
   ValidationTokenHost m_validationTokenHost{ValidationTokenHost::NOT_SET};
-  bool m_validationTokenHostHasBeenSet = false;
 
   Aws::String m_primaryDomainName;
-  bool m_primaryDomainNameHasBeenSet = false;
 
   CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference{CertificateTransparencyLoggingPreference::NOT_SET};
+  bool m_validationTokenHostHasBeenSet = false;
+  bool m_primaryDomainNameHasBeenSet = false;
   bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
 };
 

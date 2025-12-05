@@ -111,15 +111,15 @@ class DocumentClassifierFilter {
   ///@}
  private:
   ModelStatus m_status{ModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_documentClassifierName;
-  bool m_documentClassifierNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTimeBefore{};
-  bool m_submitTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTimeAfter{};
+  bool m_statusHasBeenSet = false;
+  bool m_documentClassifierNameHasBeenSet = false;
+  bool m_submitTimeBeforeHasBeenSet = false;
   bool m_submitTimeAfterHasBeenSet = false;
 };
 

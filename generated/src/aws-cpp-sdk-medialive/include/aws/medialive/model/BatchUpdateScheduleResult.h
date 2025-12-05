@@ -84,12 +84,12 @@ class BatchUpdateScheduleResult {
   ///@}
  private:
   BatchScheduleActionCreateResult m_creates;
-  bool m_createsHasBeenSet = false;
 
   BatchScheduleActionDeleteResult m_deletes;
-  bool m_deletesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createsHasBeenSet = false;
+  bool m_deletesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

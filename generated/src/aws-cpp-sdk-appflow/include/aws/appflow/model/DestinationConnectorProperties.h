@@ -279,42 +279,42 @@ class DestinationConnectorProperties {
   ///@}
  private:
   RedshiftDestinationProperties m_redshift;
-  bool m_redshiftHasBeenSet = false;
 
   S3DestinationProperties m_s3;
-  bool m_s3HasBeenSet = false;
 
   SalesforceDestinationProperties m_salesforce;
-  bool m_salesforceHasBeenSet = false;
 
   SnowflakeDestinationProperties m_snowflake;
-  bool m_snowflakeHasBeenSet = false;
 
   EventBridgeDestinationProperties m_eventBridge;
-  bool m_eventBridgeHasBeenSet = false;
 
   LookoutMetricsDestinationProperties m_lookoutMetrics;
-  bool m_lookoutMetricsHasBeenSet = false;
 
   UpsolverDestinationProperties m_upsolver;
-  bool m_upsolverHasBeenSet = false;
 
   HoneycodeDestinationProperties m_honeycode;
-  bool m_honeycodeHasBeenSet = false;
 
   CustomerProfilesDestinationProperties m_customerProfiles;
-  bool m_customerProfilesHasBeenSet = false;
 
   ZendeskDestinationProperties m_zendesk;
-  bool m_zendeskHasBeenSet = false;
 
   MarketoDestinationProperties m_marketo;
-  bool m_marketoHasBeenSet = false;
 
   CustomConnectorDestinationProperties m_customConnector;
-  bool m_customConnectorHasBeenSet = false;
 
   SAPODataDestinationProperties m_sAPOData;
+  bool m_redshiftHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_snowflakeHasBeenSet = false;
+  bool m_eventBridgeHasBeenSet = false;
+  bool m_lookoutMetricsHasBeenSet = false;
+  bool m_upsolverHasBeenSet = false;
+  bool m_honeycodeHasBeenSet = false;
+  bool m_customerProfilesHasBeenSet = false;
+  bool m_zendeskHasBeenSet = false;
+  bool m_marketoHasBeenSet = false;
+  bool m_customConnectorHasBeenSet = false;
   bool m_sAPODataHasBeenSet = false;
 };
 

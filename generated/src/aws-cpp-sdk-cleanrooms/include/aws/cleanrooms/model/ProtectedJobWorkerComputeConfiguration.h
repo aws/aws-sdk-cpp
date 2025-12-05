@@ -65,9 +65,9 @@ class ProtectedJobWorkerComputeConfiguration {
   ///@}
  private:
   ProtectedJobWorkerComputeType m_type{ProtectedJobWorkerComputeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_number{0};
+  bool m_typeHasBeenSet = false;
   bool m_numberHasBeenSet = false;
 };
 

@@ -239,39 +239,39 @@ class GetPartnershipResult {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_partnershipId;
-  bool m_partnershipIdHasBeenSet = false;
 
   Aws::String m_partnershipArn;
-  bool m_partnershipArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_phone;
-  bool m_phoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   CapabilityOptions m_capabilityOptions;
-  bool m_capabilityOptionsHasBeenSet = false;
 
   Aws::String m_tradingPartnerId;
-  bool m_tradingPartnerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileIdHasBeenSet = false;
+  bool m_partnershipIdHasBeenSet = false;
+  bool m_partnershipArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_phoneHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_capabilityOptionsHasBeenSet = false;
+  bool m_tradingPartnerIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

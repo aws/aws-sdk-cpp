@@ -85,12 +85,12 @@ class ListConfigurationManagersResult {
   ///@}
  private:
   Aws::Vector<ConfigurationManagerSummary> m_configurationManagersList;
-  bool m_configurationManagersListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationManagersListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

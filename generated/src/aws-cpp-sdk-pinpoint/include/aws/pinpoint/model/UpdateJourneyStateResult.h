@@ -58,9 +58,9 @@ class UpdateJourneyStateResult {
   ///@}
  private:
   JourneyResponse m_journeyResponse;
-  bool m_journeyResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_journeyResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

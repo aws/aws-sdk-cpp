@@ -82,9 +82,9 @@ class GetSupportedResourceTypesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

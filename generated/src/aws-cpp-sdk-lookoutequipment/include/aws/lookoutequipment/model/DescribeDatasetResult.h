@@ -294,48 +294,48 @@ class DescribeDatasetResult {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   DatasetStatus m_status{DatasetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   IngestionInputConfiguration m_ingestionInputConfiguration;
-  bool m_ingestionInputConfigurationHasBeenSet = false;
 
   DataQualitySummary m_dataQualitySummary;
-  bool m_dataQualitySummaryHasBeenSet = false;
 
   IngestedFilesSummary m_ingestedFilesSummary;
-  bool m_ingestedFilesSummaryHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataStartTime{};
-  bool m_dataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataEndTime{};
-  bool m_dataEndTimeHasBeenSet = false;
 
   Aws::String m_sourceDatasetArn;
-  bool m_sourceDatasetArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_ingestionInputConfigurationHasBeenSet = false;
+  bool m_dataQualitySummaryHasBeenSet = false;
+  bool m_ingestedFilesSummaryHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataStartTimeHasBeenSet = false;
+  bool m_dataEndTimeHasBeenSet = false;
+  bool m_sourceDatasetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class ExportToS3Task {
   ///@}
  private:
   ContainerFormat m_containerFormat{ContainerFormat::NOT_SET};
-  bool m_containerFormatHasBeenSet = false;
 
   DiskImageFormat m_diskImageFormat{DiskImageFormat::NOT_SET};
-  bool m_diskImageFormatHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Key;
+  bool m_containerFormatHasBeenSet = false;
+  bool m_diskImageFormatHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
 };
 

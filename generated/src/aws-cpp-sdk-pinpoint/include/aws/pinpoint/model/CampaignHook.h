@@ -94,12 +94,12 @@ class CampaignHook {
   ///@}
  private:
   Aws::String m_lambdaFunctionName;
-  bool m_lambdaFunctionNameHasBeenSet = false;
 
   Mode m_mode{Mode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_webUrl;
+  bool m_lambdaFunctionNameHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
   bool m_webUrlHasBeenSet = false;
 };
 

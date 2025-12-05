@@ -114,15 +114,15 @@ class DescribeRuleGroupResult {
   ///@}
  private:
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   RuleGroup m_ruleGroup;
-  bool m_ruleGroupHasBeenSet = false;
 
   RuleGroupResponse m_ruleGroupResponse;
-  bool m_ruleGroupResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateTokenHasBeenSet = false;
+  bool m_ruleGroupHasBeenSet = false;
+  bool m_ruleGroupResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

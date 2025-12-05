@@ -143,21 +143,21 @@ class UpdateComponentConfigurationRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   bool m_monitor{false};
-  bool m_monitorHasBeenSet = false;
 
   Tier m_tier{Tier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_componentConfiguration;
-  bool m_componentConfigurationHasBeenSet = false;
 
   bool m_autoConfigEnabled{false};
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_monitorHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_componentConfigurationHasBeenSet = false;
   bool m_autoConfigEnabledHasBeenSet = false;
 };
 

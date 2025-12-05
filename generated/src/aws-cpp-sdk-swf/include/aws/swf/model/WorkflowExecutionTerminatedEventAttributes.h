@@ -113,15 +113,15 @@ class WorkflowExecutionTerminatedEventAttributes {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
-  bool m_childPolicyHasBeenSet = false;
 
   WorkflowExecutionTerminatedCause m_cause{WorkflowExecutionTerminatedCause::NOT_SET};
+  bool m_reasonHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_childPolicyHasBeenSet = false;
   bool m_causeHasBeenSet = false;
 };
 

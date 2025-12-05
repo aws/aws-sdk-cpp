@@ -94,15 +94,15 @@ class StartCommitmentPurchaseAnalysisResult {
   ///@}
  private:
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::String m_analysisStartedTime;
-  bool m_analysisStartedTimeHasBeenSet = false;
 
   Aws::String m_estimatedCompletionTime;
-  bool m_estimatedCompletionTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_analysisStartedTimeHasBeenSet = false;
+  bool m_estimatedCompletionTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

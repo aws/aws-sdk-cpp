@@ -96,12 +96,12 @@ class SnaplockRetentionPeriod {
   ///@}
  private:
   RetentionPeriod m_defaultRetention;
-  bool m_defaultRetentionHasBeenSet = false;
 
   RetentionPeriod m_minimumRetention;
-  bool m_minimumRetentionHasBeenSet = false;
 
   RetentionPeriod m_maximumRetention;
+  bool m_defaultRetentionHasBeenSet = false;
+  bool m_minimumRetentionHasBeenSet = false;
   bool m_maximumRetentionHasBeenSet = false;
 };
 

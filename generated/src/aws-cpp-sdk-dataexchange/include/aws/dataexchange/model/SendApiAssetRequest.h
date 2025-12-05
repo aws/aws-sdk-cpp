@@ -179,24 +179,24 @@ class SendApiAssetRequest : public StreamingDataExchangeRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_queryStringParameters;
-  bool m_queryStringParametersHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestHeaders;
-  bool m_requestHeadersHasBeenSet = false;
 
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_queryStringParametersHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_requestHeadersHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ImageAggregation {
   ///@}
  private:
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
+  bool m_imageBuildVersionArnHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
 };
 

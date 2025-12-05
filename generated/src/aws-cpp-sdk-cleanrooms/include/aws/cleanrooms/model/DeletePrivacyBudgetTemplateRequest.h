@@ -67,9 +67,9 @@ class DeletePrivacyBudgetTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_privacyBudgetTemplateIdentifier;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_privacyBudgetTemplateIdentifierHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class Endpoint {
   ///@}
  private:
   EndpointType m_type{EndpointType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::String m_publicIpAddress;
-  bool m_publicIpAddressHasBeenSet = false;
 
   Aws::String m_ipv6Address;
-  bool m_ipv6AddressHasBeenSet = false;
 
   Aws::String m_port;
+  bool m_typeHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_publicIpAddressHasBeenSet = false;
+  bool m_ipv6AddressHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class CoipAddressUsage {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsService;
-  bool m_awsServiceHasBeenSet = false;
 
   Aws::String m_coIp;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsServiceHasBeenSet = false;
   bool m_coIpHasBeenSet = false;
 };
 

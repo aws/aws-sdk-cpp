@@ -67,9 +67,9 @@ class TimeBasedLinear {
   ///@}
  private:
   int m_linearPercentage{0};
-  bool m_linearPercentageHasBeenSet = false;
 
   int m_linearInterval{0};
+  bool m_linearPercentageHasBeenSet = false;
   bool m_linearIntervalHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteIpamPoolResponse {
   ///@}
  private:
   IpamPool m_ipamPool;
-  bool m_ipamPoolHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPoolHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

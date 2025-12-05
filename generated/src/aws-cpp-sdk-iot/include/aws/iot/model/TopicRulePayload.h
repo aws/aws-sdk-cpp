@@ -148,21 +148,21 @@ class TopicRulePayload {
   ///@}
  private:
   Aws::String m_sql;
-  bool m_sqlHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   bool m_ruleDisabled{false};
-  bool m_ruleDisabledHasBeenSet = false;
 
   Aws::String m_awsIotSqlVersion;
-  bool m_awsIotSqlVersionHasBeenSet = false;
 
   Action m_errorAction;
+  bool m_sqlHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_ruleDisabledHasBeenSet = false;
+  bool m_awsIotSqlVersionHasBeenSet = false;
   bool m_errorActionHasBeenSet = false;
 };
 

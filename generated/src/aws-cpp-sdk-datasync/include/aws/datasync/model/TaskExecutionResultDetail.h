@@ -215,30 +215,30 @@ class TaskExecutionResultDetail {
   ///@}
  private:
   long long m_prepareDuration{0};
-  bool m_prepareDurationHasBeenSet = false;
 
   PhaseStatus m_prepareStatus{PhaseStatus::NOT_SET};
-  bool m_prepareStatusHasBeenSet = false;
 
   long long m_totalDuration{0};
-  bool m_totalDurationHasBeenSet = false;
 
   long long m_transferDuration{0};
-  bool m_transferDurationHasBeenSet = false;
 
   PhaseStatus m_transferStatus{PhaseStatus::NOT_SET};
-  bool m_transferStatusHasBeenSet = false;
 
   long long m_verifyDuration{0};
-  bool m_verifyDurationHasBeenSet = false;
 
   PhaseStatus m_verifyStatus{PhaseStatus::NOT_SET};
-  bool m_verifyStatusHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorDetail;
+  bool m_prepareDurationHasBeenSet = false;
+  bool m_prepareStatusHasBeenSet = false;
+  bool m_totalDurationHasBeenSet = false;
+  bool m_transferDurationHasBeenSet = false;
+  bool m_transferStatusHasBeenSet = false;
+  bool m_verifyDurationHasBeenSet = false;
+  bool m_verifyStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

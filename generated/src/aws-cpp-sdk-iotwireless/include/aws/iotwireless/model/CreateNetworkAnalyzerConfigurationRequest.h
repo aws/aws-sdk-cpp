@@ -197,27 +197,27 @@ class CreateNetworkAnalyzerConfigurationRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TraceContent m_traceContent;
-  bool m_traceContentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessDevices;
-  bool m_wirelessDevicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_wirelessGateways;
-  bool m_wirelessGatewaysHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Aws::String> m_multicastGroups;
+  bool m_nameHasBeenSet = false;
+  bool m_traceContentHasBeenSet = false;
+  bool m_wirelessDevicesHasBeenSet = false;
+  bool m_wirelessGatewaysHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_multicastGroupsHasBeenSet = false;
 };
 

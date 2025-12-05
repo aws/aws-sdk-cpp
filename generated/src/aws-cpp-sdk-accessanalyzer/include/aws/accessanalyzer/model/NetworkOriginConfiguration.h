@@ -75,9 +75,9 @@ class NetworkOriginConfiguration {
   ///@}
  private:
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   InternetConfiguration m_internetConfiguration;
+  bool m_vpcConfigurationHasBeenSet = false;
   bool m_internetConfigurationHasBeenSet = false;
 };
 

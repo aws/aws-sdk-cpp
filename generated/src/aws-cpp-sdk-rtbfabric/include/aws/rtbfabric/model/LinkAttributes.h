@@ -76,9 +76,9 @@ class LinkAttributes {
   ///@}
  private:
   Aws::Vector<ResponderErrorMaskingForHttpCode> m_responderErrorMasking;
-  bool m_responderErrorMaskingHasBeenSet = false;
 
   Aws::String m_customerProvidedId;
+  bool m_responderErrorMaskingHasBeenSet = false;
   bool m_customerProvidedIdHasBeenSet = false;
 };
 

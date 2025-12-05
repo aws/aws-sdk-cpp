@@ -88,12 +88,12 @@ class GetTokenBalanceRequest : public ManagedBlockchainQueryRequest {
   ///@}
  private:
   TokenIdentifier m_tokenIdentifier;
-  bool m_tokenIdentifierHasBeenSet = false;
 
   OwnerIdentifier m_ownerIdentifier;
-  bool m_ownerIdentifierHasBeenSet = false;
 
   BlockchainInstant m_atBlockchainInstant;
+  bool m_tokenIdentifierHasBeenSet = false;
+  bool m_ownerIdentifierHasBeenSet = false;
   bool m_atBlockchainInstantHasBeenSet = false;
 };
 

@@ -221,30 +221,30 @@ class ComplianceItem {
   ///@}
  private:
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   ComplianceStatus m_status{ComplianceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ComplianceSeverity m_severity{ComplianceSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   ComplianceExecutionSummary m_executionSummary;
-  bool m_executionSummaryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_details;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_executionSummaryHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

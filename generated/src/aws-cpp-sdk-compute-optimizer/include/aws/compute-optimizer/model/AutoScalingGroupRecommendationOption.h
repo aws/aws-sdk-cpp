@@ -219,27 +219,27 @@ class AutoScalingGroupRecommendationOption {
   ///@}
  private:
   AutoScalingGroupConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   GpuInfo m_instanceGpuInfo;
-  bool m_instanceGpuInfoHasBeenSet = false;
 
   Aws::Vector<UtilizationMetric> m_projectedUtilizationMetrics;
-  bool m_projectedUtilizationMetricsHasBeenSet = false;
 
   double m_performanceRisk{0.0};
-  bool m_performanceRiskHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   AutoScalingGroupSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
-  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 
   MigrationEffort m_migrationEffort{MigrationEffort::NOT_SET};
+  bool m_configurationHasBeenSet = false;
+  bool m_instanceGpuInfoHasBeenSet = false;
+  bool m_projectedUtilizationMetricsHasBeenSet = false;
+  bool m_performanceRiskHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
+  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   bool m_migrationEffortHasBeenSet = false;
 };
 

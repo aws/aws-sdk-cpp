@@ -202,30 +202,30 @@ class TableSummary {
   ///@}
  private:
   Aws::Vector<Aws::String> m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TableType m_type{TableType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_tableARN;
-  bool m_tableARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_managedByService;
-  bool m_managedByServiceHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   Aws::String m_tableBucketId;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_tableARNHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_managedByServiceHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
   bool m_tableBucketIdHasBeenSet = false;
 };
 

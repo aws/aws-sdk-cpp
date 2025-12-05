@@ -85,12 +85,12 @@ class LaunchedInstance {
   ///@}
  private:
   Aws::String m_ec2InstanceID;
-  bool m_ec2InstanceIDHasBeenSet = false;
 
   FirstBoot m_firstBoot{FirstBoot::NOT_SET};
-  bool m_firstBootHasBeenSet = false;
 
   Aws::String m_jobID;
+  bool m_ec2InstanceIDHasBeenSet = false;
+  bool m_firstBootHasBeenSet = false;
   bool m_jobIDHasBeenSet = false;
 };
 

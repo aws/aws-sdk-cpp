@@ -120,15 +120,15 @@ class HttpAction {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_confirmationUrl;
-  bool m_confirmationUrlHasBeenSet = false;
 
   Aws::Vector<HttpActionHeader> m_headers;
-  bool m_headersHasBeenSet = false;
 
   HttpAuthorization m_auth;
+  bool m_urlHasBeenSet = false;
+  bool m_confirmationUrlHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
   bool m_authHasBeenSet = false;
 };
 

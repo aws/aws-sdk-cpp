@@ -67,9 +67,9 @@ class ListPageResolutionsRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_pageId;
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageIdHasBeenSet = false;
 };
 

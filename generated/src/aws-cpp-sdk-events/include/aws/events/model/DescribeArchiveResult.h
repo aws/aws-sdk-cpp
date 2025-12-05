@@ -223,39 +223,39 @@ class DescribeArchiveResult {
   ///@}
  private:
   Aws::String m_archiveArn;
-  bool m_archiveArnHasBeenSet = false;
 
   Aws::String m_archiveName;
-  bool m_archiveNameHasBeenSet = false;
 
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   ArchiveState m_state{ArchiveState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   int m_retentionDays{0};
-  bool m_retentionDaysHasBeenSet = false;
 
   long long m_sizeBytes{0};
-  bool m_sizeBytesHasBeenSet = false;
 
   long long m_eventCount{0};
-  bool m_eventCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_archiveArnHasBeenSet = false;
+  bool m_archiveNameHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventPatternHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_retentionDaysHasBeenSet = false;
+  bool m_sizeBytesHasBeenSet = false;
+  bool m_eventCountHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

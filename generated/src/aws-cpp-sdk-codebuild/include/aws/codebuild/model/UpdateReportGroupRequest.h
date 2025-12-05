@@ -99,12 +99,12 @@ class UpdateReportGroupRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ReportExportConfig m_exportConfig;
-  bool m_exportConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_exportConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

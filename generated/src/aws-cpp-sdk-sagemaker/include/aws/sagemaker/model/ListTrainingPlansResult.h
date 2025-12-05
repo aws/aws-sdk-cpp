@@ -84,12 +84,12 @@ class ListTrainingPlansResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TrainingPlanSummary> m_trainingPlanSummaries;
-  bool m_trainingPlanSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_trainingPlanSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

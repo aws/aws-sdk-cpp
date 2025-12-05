@@ -96,15 +96,15 @@ class GetConsoleOutputResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_output;
-  bool m_outputHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

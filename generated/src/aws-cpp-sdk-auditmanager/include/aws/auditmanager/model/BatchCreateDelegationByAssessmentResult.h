@@ -93,12 +93,12 @@ class BatchCreateDelegationByAssessmentResult {
   ///@}
  private:
   Aws::Vector<Delegation> m_delegations;
-  bool m_delegationsHasBeenSet = false;
 
   Aws::Vector<BatchCreateDelegationByAssessmentError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_delegationsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

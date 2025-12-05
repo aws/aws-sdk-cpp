@@ -73,9 +73,9 @@ class LinkConfiguration {
   ///@}
  private:
   LogGroupConfiguration m_logGroupConfiguration;
-  bool m_logGroupConfigurationHasBeenSet = false;
 
   MetricConfiguration m_metricConfiguration;
+  bool m_logGroupConfigurationHasBeenSet = false;
   bool m_metricConfigurationHasBeenSet = false;
 };
 

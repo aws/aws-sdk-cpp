@@ -107,15 +107,15 @@ class ModifyInstanceEventStartTimeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceEventId;
-  bool m_instanceEventIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceEventIdHasBeenSet = false;
   bool m_notBeforeHasBeenSet = false;
 };
 

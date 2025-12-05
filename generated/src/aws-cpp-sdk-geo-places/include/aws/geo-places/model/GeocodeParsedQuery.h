@@ -77,9 +77,9 @@ class GeocodeParsedQuery {
   ///@}
  private:
   Aws::Vector<ParsedQueryComponent> m_title;
-  bool m_titleHasBeenSet = false;
 
   GeocodeParsedQueryAddressComponents m_address;
+  bool m_titleHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

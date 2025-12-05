@@ -150,24 +150,24 @@ class CreateSolFunctionPackageResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   OnboardingState m_onboardingState{OnboardingState::NOT_SET};
-  bool m_onboardingStateHasBeenSet = false;
 
   OperationalState m_operationalState{OperationalState::NOT_SET};
-  bool m_operationalStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UsageState m_usageState{UsageState::NOT_SET};
-  bool m_usageStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_onboardingStateHasBeenSet = false;
+  bool m_operationalStateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_usageStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

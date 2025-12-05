@@ -68,9 +68,9 @@ class ScheduleConfiguration {
   ///@}
  private:
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Timezone m_timezone{Timezone::NOT_SET};
+  bool m_scheduleHasBeenSet = false;
   bool m_timezoneHasBeenSet = false;
 };
 

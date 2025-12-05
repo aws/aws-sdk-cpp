@@ -88,12 +88,12 @@ class AwsAutoScalingLaunchConfigurationMetadataOptions {
   ///@}
  private:
   Aws::String m_httpEndpoint;
-  bool m_httpEndpointHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   Aws::String m_httpTokens;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
   bool m_httpTokensHasBeenSet = false;
 };
 

@@ -79,12 +79,12 @@ class SmsChannelSubtypeConfig {
   ///@}
  private:
   double m_capacity{0.0};
-  bool m_capacityHasBeenSet = false;
 
   SmsOutboundMode m_outboundMode;
-  bool m_outboundModeHasBeenSet = false;
 
   SmsOutboundConfig m_defaultOutboundConfig;
+  bool m_capacityHasBeenSet = false;
+  bool m_outboundModeHasBeenSet = false;
   bool m_defaultOutboundConfigHasBeenSet = false;
 };
 

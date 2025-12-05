@@ -172,18 +172,18 @@ class GetDimensionValuesResult {
   ///@}
  private:
   Aws::Vector<DimensionValuesWithAttributes> m_dimensionValues;
-  bool m_dimensionValuesHasBeenSet = false;
 
   int m_returnSize{0};
-  bool m_returnSizeHasBeenSet = false;
 
   int m_totalSize{0};
-  bool m_totalSizeHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dimensionValuesHasBeenSet = false;
+  bool m_returnSizeHasBeenSet = false;
+  bool m_totalSizeHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

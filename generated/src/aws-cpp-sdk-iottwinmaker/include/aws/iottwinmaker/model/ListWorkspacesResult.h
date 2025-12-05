@@ -84,12 +84,12 @@ class ListWorkspacesResult {
   ///@}
  private:
   Aws::Vector<WorkspaceSummary> m_workspaceSummaries;
-  bool m_workspaceSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

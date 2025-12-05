@@ -93,12 +93,12 @@ class SuiteRunConfiguration {
   ///@}
  private:
   DeviceUnderTest m_primaryDevice;
-  bool m_primaryDeviceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedTestList;
-  bool m_selectedTestListHasBeenSet = false;
 
   bool m_parallelRun{false};
+  bool m_primaryDeviceHasBeenSet = false;
+  bool m_selectedTestListHasBeenSet = false;
   bool m_parallelRunHasBeenSet = false;
 };
 

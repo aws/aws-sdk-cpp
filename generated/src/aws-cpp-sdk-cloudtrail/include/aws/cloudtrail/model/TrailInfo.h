@@ -87,12 +87,12 @@ class TrailInfo {
   ///@}
  private:
   Aws::String m_trailARN;
-  bool m_trailARNHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_homeRegion;
+  bool m_trailARNHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_homeRegionHasBeenSet = false;
 };
 

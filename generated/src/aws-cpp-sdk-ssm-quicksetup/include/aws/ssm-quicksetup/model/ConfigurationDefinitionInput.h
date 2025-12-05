@@ -492,18 +492,18 @@ class ConfigurationDefinitionInput {
   ///@}
  private:
   Aws::String m_localDeploymentAdministrationRoleArn;
-  bool m_localDeploymentAdministrationRoleArnHasBeenSet = false;
 
   Aws::String m_localDeploymentExecutionRoleName;
-  bool m_localDeploymentExecutionRoleNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeVersion;
+  bool m_localDeploymentAdministrationRoleArnHasBeenSet = false;
+  bool m_localDeploymentExecutionRoleNameHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_typeVersionHasBeenSet = false;
 };
 

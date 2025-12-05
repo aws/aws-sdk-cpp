@@ -78,9 +78,9 @@ class MacHost {
   ///@}
  private:
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_macOSLatestSupportedVersions;
+  bool m_hostIdHasBeenSet = false;
   bool m_macOSLatestSupportedVersionsHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class InputPrepareScheduleActionSettings {
   ///@}
  private:
   Aws::String m_inputAttachmentNameReference;
-  bool m_inputAttachmentNameReferenceHasBeenSet = false;
 
   InputClippingSettings m_inputClippingSettings;
-  bool m_inputClippingSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_urlPath;
+  bool m_inputAttachmentNameReferenceHasBeenSet = false;
+  bool m_inputClippingSettingsHasBeenSet = false;
   bool m_urlPathHasBeenSet = false;
 };
 

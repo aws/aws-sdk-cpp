@@ -95,12 +95,12 @@ class ComparativeOrder {
   ///@}
  private:
   ColumnOrderingType m_useOrdering{ColumnOrderingType::NOT_SET};
-  bool m_useOrderingHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_specifedOrder;
-  bool m_specifedOrderHasBeenSet = false;
 
   UndefinedSpecifiedValueType m_treatUndefinedSpecifiedValues{UndefinedSpecifiedValueType::NOT_SET};
+  bool m_useOrderingHasBeenSet = false;
+  bool m_specifedOrderHasBeenSet = false;
   bool m_treatUndefinedSpecifiedValuesHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GroupSummary {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   long long m_orderingId{0};
+  bool m_groupIdHasBeenSet = false;
   bool m_orderingIdHasBeenSet = false;
 };
 

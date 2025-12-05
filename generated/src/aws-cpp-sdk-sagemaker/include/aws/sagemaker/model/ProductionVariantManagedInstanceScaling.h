@@ -84,12 +84,12 @@ class ProductionVariantManagedInstanceScaling {
   ///@}
  private:
   ManagedInstanceScalingStatus m_status{ManagedInstanceScalingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_minInstanceCount{0};
-  bool m_minInstanceCountHasBeenSet = false;
 
   int m_maxInstanceCount{0};
+  bool m_statusHasBeenSet = false;
+  bool m_minInstanceCountHasBeenSet = false;
   bool m_maxInstanceCountHasBeenSet = false;
 };
 

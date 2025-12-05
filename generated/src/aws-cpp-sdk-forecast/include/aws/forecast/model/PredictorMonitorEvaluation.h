@@ -245,36 +245,36 @@ class PredictorMonitorEvaluation {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationTime{};
-  bool m_evaluationTimeHasBeenSet = false;
 
   Aws::String m_evaluationState;
-  bool m_evaluationStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_windowStartDatetime{};
-  bool m_windowStartDatetimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_windowEndDatetime{};
-  bool m_windowEndDatetimeHasBeenSet = false;
 
   PredictorEvent m_predictorEvent;
-  bool m_predictorEventHasBeenSet = false;
 
   MonitorDataSource m_monitorDataSource;
-  bool m_monitorDataSourceHasBeenSet = false;
 
   Aws::Vector<MetricResult> m_metricResults;
-  bool m_metricResultsHasBeenSet = false;
 
   long long m_numItemsEvaluated{0};
-  bool m_numItemsEvaluatedHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_monitorArnHasBeenSet = false;
+  bool m_evaluationTimeHasBeenSet = false;
+  bool m_evaluationStateHasBeenSet = false;
+  bool m_windowStartDatetimeHasBeenSet = false;
+  bool m_windowEndDatetimeHasBeenSet = false;
+  bool m_predictorEventHasBeenSet = false;
+  bool m_monitorDataSourceHasBeenSet = false;
+  bool m_metricResultsHasBeenSet = false;
+  bool m_numItemsEvaluatedHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

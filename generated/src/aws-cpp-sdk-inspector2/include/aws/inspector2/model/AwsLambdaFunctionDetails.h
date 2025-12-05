@@ -234,33 +234,33 @@ class AwsLambdaFunctionDetails {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Runtime m_runtime{Runtime::NOT_SET};
-  bool m_runtimeHasBeenSet = false;
 
   Aws::String m_codeSha256;
-  bool m_codeSha256HasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_layers;
-  bool m_layersHasBeenSet = false;
 
   LambdaVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   PackageType m_packageType{PackageType::NOT_SET};
-  bool m_packageTypeHasBeenSet = false;
 
   Aws::Vector<Architecture> m_architectures;
-  bool m_architecturesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
+  bool m_functionNameHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
+  bool m_codeSha256HasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_layersHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_packageTypeHasBeenSet = false;
+  bool m_architecturesHasBeenSet = false;
   bool m_lastModifiedAtHasBeenSet = false;
 };
 

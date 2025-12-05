@@ -215,33 +215,33 @@ class ViolationEvent {
   ///@}
  private:
   Aws::String m_violationId;
-  bool m_violationIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Behavior m_behavior;
-  bool m_behaviorHasBeenSet = false;
 
   MetricValue m_metricValue;
-  bool m_metricValueHasBeenSet = false;
 
   ViolationEventAdditionalInfo m_violationEventAdditionalInfo;
-  bool m_violationEventAdditionalInfoHasBeenSet = false;
 
   ViolationEventType m_violationEventType{ViolationEventType::NOT_SET};
-  bool m_violationEventTypeHasBeenSet = false;
 
   VerificationState m_verificationState{VerificationState::NOT_SET};
-  bool m_verificationStateHasBeenSet = false;
 
   Aws::String m_verificationStateDescription;
-  bool m_verificationStateDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_violationEventTime{};
+  bool m_violationIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_behaviorHasBeenSet = false;
+  bool m_metricValueHasBeenSet = false;
+  bool m_violationEventAdditionalInfoHasBeenSet = false;
+  bool m_violationEventTypeHasBeenSet = false;
+  bool m_verificationStateHasBeenSet = false;
+  bool m_verificationStateDescriptionHasBeenSet = false;
   bool m_violationEventTimeHasBeenSet = false;
 };
 

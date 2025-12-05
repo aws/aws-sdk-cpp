@@ -449,69 +449,69 @@ class ConnectorMetadata {
   ///@}
  private:
   AmplitudeMetadata m_amplitude;
-  bool m_amplitudeHasBeenSet = false;
 
   DatadogMetadata m_datadog;
-  bool m_datadogHasBeenSet = false;
 
   DynatraceMetadata m_dynatrace;
-  bool m_dynatraceHasBeenSet = false;
 
   GoogleAnalyticsMetadata m_googleAnalytics;
-  bool m_googleAnalyticsHasBeenSet = false;
 
   InforNexusMetadata m_inforNexus;
-  bool m_inforNexusHasBeenSet = false;
 
   MarketoMetadata m_marketo;
-  bool m_marketoHasBeenSet = false;
 
   RedshiftMetadata m_redshift;
-  bool m_redshiftHasBeenSet = false;
 
   S3Metadata m_s3;
-  bool m_s3HasBeenSet = false;
 
   SalesforceMetadata m_salesforce;
-  bool m_salesforceHasBeenSet = false;
 
   ServiceNowMetadata m_serviceNow;
-  bool m_serviceNowHasBeenSet = false;
 
   SingularMetadata m_singular;
-  bool m_singularHasBeenSet = false;
 
   SlackMetadata m_slack;
-  bool m_slackHasBeenSet = false;
 
   SnowflakeMetadata m_snowflake;
-  bool m_snowflakeHasBeenSet = false;
 
   TrendmicroMetadata m_trendmicro;
-  bool m_trendmicroHasBeenSet = false;
 
   VeevaMetadata m_veeva;
-  bool m_veevaHasBeenSet = false;
 
   ZendeskMetadata m_zendesk;
-  bool m_zendeskHasBeenSet = false;
 
   EventBridgeMetadata m_eventBridge;
-  bool m_eventBridgeHasBeenSet = false;
 
   UpsolverMetadata m_upsolver;
-  bool m_upsolverHasBeenSet = false;
 
   CustomerProfilesMetadata m_customerProfiles;
-  bool m_customerProfilesHasBeenSet = false;
 
   HoneycodeMetadata m_honeycode;
-  bool m_honeycodeHasBeenSet = false;
 
   SAPODataMetadata m_sAPOData;
-  bool m_sAPODataHasBeenSet = false;
 
   PardotMetadata m_pardot;
+  bool m_amplitudeHasBeenSet = false;
+  bool m_datadogHasBeenSet = false;
+  bool m_dynatraceHasBeenSet = false;
+  bool m_googleAnalyticsHasBeenSet = false;
+  bool m_inforNexusHasBeenSet = false;
+  bool m_marketoHasBeenSet = false;
+  bool m_redshiftHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_serviceNowHasBeenSet = false;
+  bool m_singularHasBeenSet = false;
+  bool m_slackHasBeenSet = false;
+  bool m_snowflakeHasBeenSet = false;
+  bool m_trendmicroHasBeenSet = false;
+  bool m_veevaHasBeenSet = false;
+  bool m_zendeskHasBeenSet = false;
+  bool m_eventBridgeHasBeenSet = false;
+  bool m_upsolverHasBeenSet = false;
+  bool m_customerProfilesHasBeenSet = false;
+  bool m_honeycodeHasBeenSet = false;
+  bool m_sAPODataHasBeenSet = false;
   bool m_pardotHasBeenSet = false;
 };
 

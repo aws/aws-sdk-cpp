@@ -228,33 +228,33 @@ class S3Bucket {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_encryptionType;
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_effectivePermission;
-  bool m_effectivePermissionHasBeenSet = false;
 
   PublicAccessStatus m_publicReadAccess{PublicAccessStatus::NOT_SET};
-  bool m_publicReadAccessHasBeenSet = false;
 
   PublicAccessStatus m_publicWriteAccess{PublicAccessStatus::NOT_SET};
-  bool m_publicWriteAccessHasBeenSet = false;
 
   PublicAccessConfiguration m_accountPublicAccess;
-  bool m_accountPublicAccessHasBeenSet = false;
 
   PublicAccessConfiguration m_bucketPublicAccess;
-  bool m_bucketPublicAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_s3ObjectUids;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_effectivePermissionHasBeenSet = false;
+  bool m_publicReadAccessHasBeenSet = false;
+  bool m_publicWriteAccessHasBeenSet = false;
+  bool m_accountPublicAccessHasBeenSet = false;
+  bool m_bucketPublicAccessHasBeenSet = false;
   bool m_s3ObjectUidsHasBeenSet = false;
 };
 

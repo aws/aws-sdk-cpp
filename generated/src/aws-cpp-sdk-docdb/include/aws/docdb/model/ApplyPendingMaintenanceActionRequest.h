@@ -99,12 +99,12 @@ class ApplyPendingMaintenanceActionRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_applyAction;
-  bool m_applyActionHasBeenSet = false;
 
   Aws::String m_optInType;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_applyActionHasBeenSet = false;
   bool m_optInTypeHasBeenSet = false;
 };
 

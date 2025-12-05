@@ -74,9 +74,9 @@ class DeleteCustomerGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_customerGatewayId;
-  bool m_customerGatewayIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_customerGatewayIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -164,21 +164,21 @@ class EinvoiceDeliveryPreference {
   ///@}
  private:
   Aws::Vector<EinvoiceDeliveryDocumentType> m_einvoiceDeliveryDocumentTypes;
-  bool m_einvoiceDeliveryDocumentTypesHasBeenSet = false;
 
   Aws::Vector<EinvoiceDeliveryAttachmentType> m_einvoiceDeliveryAttachmentTypes;
-  bool m_einvoiceDeliveryAttachmentTypesHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<PurchaseOrderDataSource> m_purchaseOrderDataSources;
-  bool m_purchaseOrderDataSourcesHasBeenSet = false;
 
   ConnectionTestingMethod m_connectionTestingMethod{ConnectionTestingMethod::NOT_SET};
-  bool m_connectionTestingMethodHasBeenSet = false;
 
   Aws::Utils::DateTime m_einvoiceDeliveryActivationDate{};
+  bool m_einvoiceDeliveryDocumentTypesHasBeenSet = false;
+  bool m_einvoiceDeliveryAttachmentTypesHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_purchaseOrderDataSourcesHasBeenSet = false;
+  bool m_connectionTestingMethodHasBeenSet = false;
   bool m_einvoiceDeliveryActivationDateHasBeenSet = false;
 };
 

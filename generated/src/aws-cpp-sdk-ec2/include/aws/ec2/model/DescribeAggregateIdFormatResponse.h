@@ -84,12 +84,12 @@ class DescribeAggregateIdFormatResponse {
   ///@}
  private:
   bool m_useLongIdsAggregated{false};
-  bool m_useLongIdsAggregatedHasBeenSet = false;
 
   Aws::Vector<IdFormat> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_useLongIdsAggregatedHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

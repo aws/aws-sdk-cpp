@@ -79,12 +79,12 @@ class InspectionErrorDetails {
   ///@}
  private:
   int m_catchIndex{0};
-  bool m_catchIndexHasBeenSet = false;
 
   int m_retryIndex{0};
-  bool m_retryIndexHasBeenSet = false;
 
   int m_retryBackoffIntervalSeconds{0};
+  bool m_catchIndexHasBeenSet = false;
+  bool m_retryIndexHasBeenSet = false;
   bool m_retryBackoffIntervalSecondsHasBeenSet = false;
 };
 

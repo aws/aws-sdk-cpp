@@ -67,9 +67,9 @@ class GenerateServiceLastAccessedDetailsResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_jobIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -275,36 +275,36 @@ class GlobalSecondaryIndexDescription {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   Projection m_projection;
-  bool m_projectionHasBeenSet = false;
 
   IndexStatus m_indexStatus{IndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   bool m_backfilling{false};
-  bool m_backfillingHasBeenSet = false;
 
   ProvisionedThroughputDescription m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   long long m_indexSizeBytes{0};
-  bool m_indexSizeBytesHasBeenSet = false;
 
   long long m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughput;
-  bool m_onDemandThroughputHasBeenSet = false;
 
   GlobalSecondaryIndexWarmThroughputDescription m_warmThroughput;
+  bool m_indexNameHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
+  bool m_projectionHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
+  bool m_backfillingHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_indexSizeBytesHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
+  bool m_onDemandThroughputHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
 };
 

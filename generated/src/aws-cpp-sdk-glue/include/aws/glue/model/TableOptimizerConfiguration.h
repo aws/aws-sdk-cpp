@@ -149,21 +149,21 @@ class TableOptimizerConfiguration {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   TableOptimizerVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   CompactionConfiguration m_compactionConfiguration;
-  bool m_compactionConfigurationHasBeenSet = false;
 
   RetentionConfiguration m_retentionConfiguration;
-  bool m_retentionConfigurationHasBeenSet = false;
 
   OrphanFileDeletionConfiguration m_orphanFileDeletionConfiguration;
+  bool m_roleArnHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_compactionConfigurationHasBeenSet = false;
+  bool m_retentionConfigurationHasBeenSet = false;
   bool m_orphanFileDeletionConfigurationHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListFailuresForLicenseConfigurationOperationsResult {
   ///@}
  private:
   Aws::Vector<LicenseOperationFailure> m_licenseOperationFailureList;
-  bool m_licenseOperationFailureListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseOperationFailureListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

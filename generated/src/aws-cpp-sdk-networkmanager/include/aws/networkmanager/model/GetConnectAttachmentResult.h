@@ -60,9 +60,9 @@ class GetConnectAttachmentResult {
   ///@}
  private:
   ConnectAttachment m_connectAttachment;
-  bool m_connectAttachmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

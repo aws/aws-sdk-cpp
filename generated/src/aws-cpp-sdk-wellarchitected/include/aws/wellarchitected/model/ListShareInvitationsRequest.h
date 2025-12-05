@@ -159,24 +159,24 @@ class ListShareInvitationsRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadNamePrefix;
-  bool m_workloadNamePrefixHasBeenSet = false;
 
   Aws::String m_lensNamePrefix;
-  bool m_lensNamePrefixHasBeenSet = false;
 
   ShareResourceType m_shareResourceType{ShareResourceType::NOT_SET};
-  bool m_shareResourceTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_profileNamePrefix;
-  bool m_profileNamePrefixHasBeenSet = false;
 
   Aws::String m_templateNamePrefix;
+  bool m_workloadNamePrefixHasBeenSet = false;
+  bool m_lensNamePrefixHasBeenSet = false;
+  bool m_shareResourceTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_profileNamePrefixHasBeenSet = false;
   bool m_templateNamePrefixHasBeenSet = false;
 };
 

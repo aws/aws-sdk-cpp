@@ -130,15 +130,15 @@ class CustomParameterValues {
   ///@}
  private:
   Aws::Vector<Aws::String> m_stringValues;
-  bool m_stringValuesHasBeenSet = false;
 
   Aws::Vector<long long> m_integerValues;
-  bool m_integerValuesHasBeenSet = false;
 
   Aws::Vector<double> m_decimalValues;
-  bool m_decimalValuesHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_dateTimeValues;
+  bool m_stringValuesHasBeenSet = false;
+  bool m_integerValuesHasBeenSet = false;
+  bool m_decimalValuesHasBeenSet = false;
   bool m_dateTimeValuesHasBeenSet = false;
 };
 

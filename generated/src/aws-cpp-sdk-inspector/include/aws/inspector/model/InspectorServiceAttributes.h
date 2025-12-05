@@ -85,12 +85,12 @@ class InspectorServiceAttributes {
   ///@}
  private:
   int m_schemaVersion{0};
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_assessmentRunArn;
-  bool m_assessmentRunArnHasBeenSet = false;
 
   Aws::String m_rulesPackageArn;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_assessmentRunArnHasBeenSet = false;
   bool m_rulesPackageArnHasBeenSet = false;
 };
 

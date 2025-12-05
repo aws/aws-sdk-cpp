@@ -113,12 +113,12 @@ class AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
   ///@}
  private:
   Aws::String m_logDriver;
-  bool m_logDriverHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails> m_secretOptions;
+  bool m_logDriverHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_secretOptionsHasBeenSet = false;
 };
 

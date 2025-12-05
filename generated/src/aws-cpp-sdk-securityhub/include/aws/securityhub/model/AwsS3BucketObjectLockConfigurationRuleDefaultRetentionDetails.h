@@ -87,12 +87,12 @@ class AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
   ///@}
  private:
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   Aws::String m_mode;
-  bool m_modeHasBeenSet = false;
 
   int m_years{0};
+  bool m_daysHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
   bool m_yearsHasBeenSet = false;
 };
 

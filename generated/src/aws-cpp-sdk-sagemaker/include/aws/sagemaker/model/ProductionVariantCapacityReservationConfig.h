@@ -72,9 +72,9 @@ class ProductionVariantCapacityReservationConfig {
   ///@}
  private:
   CapacityReservationPreference m_capacityReservationPreference{CapacityReservationPreference::NOT_SET};
-  bool m_capacityReservationPreferenceHasBeenSet = false;
 
   Aws::String m_mlReservationArn;
+  bool m_capacityReservationPreferenceHasBeenSet = false;
   bool m_mlReservationArnHasBeenSet = false;
 };
 

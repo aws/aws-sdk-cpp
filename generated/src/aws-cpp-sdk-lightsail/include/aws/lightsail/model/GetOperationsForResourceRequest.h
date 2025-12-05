@@ -70,9 +70,9 @@ class GetOperationsForResourceRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_resourceNameHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

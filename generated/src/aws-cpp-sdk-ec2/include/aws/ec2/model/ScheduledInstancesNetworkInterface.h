@@ -274,39 +274,39 @@ class ScheduledInstancesNetworkInterface {
   ///@}
  private:
   bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_deviceIndex{0};
-  bool m_deviceIndexHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   int m_ipv6AddressCount{0};
-  bool m_ipv6AddressCountHasBeenSet = false;
 
   Aws::Vector<ScheduledInstancesIpv6Address> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::Vector<ScheduledInstancesPrivateIpAddressConfig> m_privateIpAddressConfigs;
-  bool m_privateIpAddressConfigsHasBeenSet = false;
 
   int m_secondaryPrivateIpAddressCount{0};
-  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
   Aws::String m_subnetId;
+  bool m_associatePublicIpAddressHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceIndexHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_ipv6AddressCountHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_privateIpAddressConfigsHasBeenSet = false;
+  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
 };
 

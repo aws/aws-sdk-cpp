@@ -105,15 +105,15 @@ class UpdateStorageVirtualMachineRequest : public FSxRequest {
   ///@}
  private:
   UpdateSvmActiveDirectoryConfiguration m_activeDirectoryConfiguration;
-  bool m_activeDirectoryConfigurationHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_storageVirtualMachineId;
-  bool m_storageVirtualMachineIdHasBeenSet = false;
 
   Aws::String m_svmAdminPassword;
+  bool m_activeDirectoryConfigurationHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_storageVirtualMachineIdHasBeenSet = false;
   bool m_svmAdminPasswordHasBeenSet = false;
 };
 

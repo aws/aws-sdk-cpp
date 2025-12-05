@@ -175,24 +175,24 @@ class InstanceEventWindow {
   ///@}
  private:
   Aws::String m_instanceEventWindowId;
-  bool m_instanceEventWindowIdHasBeenSet = false;
 
   Aws::Vector<InstanceEventWindowTimeRange> m_timeRanges;
-  bool m_timeRangesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_cronExpression;
-  bool m_cronExpressionHasBeenSet = false;
 
   InstanceEventWindowAssociationTarget m_associationTarget;
-  bool m_associationTargetHasBeenSet = false;
 
   InstanceEventWindowState m_state{InstanceEventWindowState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_instanceEventWindowIdHasBeenSet = false;
+  bool m_timeRangesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_cronExpressionHasBeenSet = false;
+  bool m_associationTargetHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

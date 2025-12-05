@@ -57,9 +57,9 @@ class DeleteTokenResult {
   ///@}
  private:
   bool m_isSuccess{false};
-  bool m_isSuccessHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isSuccessHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

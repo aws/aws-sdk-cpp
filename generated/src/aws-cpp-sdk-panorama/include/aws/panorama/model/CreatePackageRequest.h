@@ -72,9 +72,9 @@ class CreatePackageRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_packageNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class UnusedAccessTypeStatistics {
   ///@}
  private:
   Aws::String m_unusedAccessType;
-  bool m_unusedAccessTypeHasBeenSet = false;
 
   int m_total{0};
+  bool m_unusedAccessTypeHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

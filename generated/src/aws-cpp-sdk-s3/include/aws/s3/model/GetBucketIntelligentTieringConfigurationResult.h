@@ -61,9 +61,9 @@ class GetBucketIntelligentTieringConfigurationResult {
   ///@}
  private:
   IntelligentTieringConfiguration m_intelligentTieringConfiguration;
-  bool m_intelligentTieringConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_intelligentTieringConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

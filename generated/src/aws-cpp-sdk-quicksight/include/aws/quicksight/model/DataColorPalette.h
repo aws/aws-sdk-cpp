@@ -104,12 +104,12 @@ class DataColorPalette {
   ///@}
  private:
   Aws::Vector<Aws::String> m_colors;
-  bool m_colorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_minMaxGradient;
-  bool m_minMaxGradientHasBeenSet = false;
 
   Aws::String m_emptyFillColor;
+  bool m_colorsHasBeenSet = false;
+  bool m_minMaxGradientHasBeenSet = false;
   bool m_emptyFillColorHasBeenSet = false;
 };
 

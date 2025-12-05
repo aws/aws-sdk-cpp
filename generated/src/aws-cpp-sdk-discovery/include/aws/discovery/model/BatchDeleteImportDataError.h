@@ -86,12 +86,12 @@ class BatchDeleteImportDataError {
   ///@}
  private:
   Aws::String m_importTaskId;
-  bool m_importTaskIdHasBeenSet = false;
 
   BatchDeleteImportDataErrorCode m_errorCode{BatchDeleteImportDataErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorDescription;
+  bool m_importTaskIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorDescriptionHasBeenSet = false;
 };
 

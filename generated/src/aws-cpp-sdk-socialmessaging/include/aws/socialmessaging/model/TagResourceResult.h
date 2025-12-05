@@ -57,9 +57,9 @@ class TagResourceResult {
   ///@}
  private:
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class UnsearchedFace {
   ///@}
  private:
   FaceDetail m_faceDetails;
-  bool m_faceDetailsHasBeenSet = false;
 
   Aws::Vector<UnsearchedFaceReason> m_reasons;
+  bool m_faceDetailsHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;
 };
 

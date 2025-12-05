@@ -60,9 +60,9 @@ class DeprovisionByoipCidrResult {
   ///@}
  private:
   ByoipCidr m_byoipCidr;
-  bool m_byoipCidrHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_byoipCidrHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

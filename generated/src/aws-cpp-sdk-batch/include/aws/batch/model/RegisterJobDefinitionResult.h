@@ -91,15 +91,15 @@ class RegisterJobDefinitionResult {
   ///@}
  private:
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   Aws::String m_jobDefinitionArn;
-  bool m_jobDefinitionArnHasBeenSet = false;
 
   int m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_jobDefinitionArnHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

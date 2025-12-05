@@ -111,15 +111,15 @@ class ListAnomaliesForInsightResult {
   ///@}
  private:
   Aws::Vector<ProactiveAnomalySummary> m_proactiveAnomalies;
-  bool m_proactiveAnomaliesHasBeenSet = false;
 
   Aws::Vector<ReactiveAnomalySummary> m_reactiveAnomalies;
-  bool m_reactiveAnomaliesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proactiveAnomaliesHasBeenSet = false;
+  bool m_reactiveAnomaliesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

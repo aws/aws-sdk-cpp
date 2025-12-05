@@ -86,12 +86,12 @@ class ListOptimizationJobsResult {
   ///@}
  private:
   Aws::Vector<OptimizationJobSummary> m_optimizationJobSummaries;
-  bool m_optimizationJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_optimizationJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

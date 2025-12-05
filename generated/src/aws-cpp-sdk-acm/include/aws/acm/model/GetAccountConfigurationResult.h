@@ -61,9 +61,9 @@ class GetAccountConfigurationResult {
   ///@}
  private:
   ExpiryEventsConfiguration m_expiryEvents;
-  bool m_expiryEventsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_expiryEventsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

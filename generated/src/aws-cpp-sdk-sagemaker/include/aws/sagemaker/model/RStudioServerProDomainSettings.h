@@ -105,15 +105,15 @@ class RStudioServerProDomainSettings {
   ///@}
  private:
   Aws::String m_domainExecutionRoleArn;
-  bool m_domainExecutionRoleArnHasBeenSet = false;
 
   Aws::String m_rStudioConnectUrl;
-  bool m_rStudioConnectUrlHasBeenSet = false;
 
   Aws::String m_rStudioPackageManagerUrl;
-  bool m_rStudioPackageManagerUrlHasBeenSet = false;
 
   ResourceSpec m_defaultResourceSpec;
+  bool m_domainExecutionRoleArnHasBeenSet = false;
+  bool m_rStudioConnectUrlHasBeenSet = false;
+  bool m_rStudioPackageManagerUrlHasBeenSet = false;
   bool m_defaultResourceSpecHasBeenSet = false;
 };
 

@@ -165,24 +165,24 @@ class InternetEventSummary {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventArn;
-  bool m_eventArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   ClientLocation m_clientLocation;
-  bool m_clientLocationHasBeenSet = false;
 
   InternetEventType m_eventType{InternetEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   InternetEventStatus m_eventStatus{InternetEventStatus::NOT_SET};
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventArnHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_clientLocationHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_eventStatusHasBeenSet = false;
 };
 

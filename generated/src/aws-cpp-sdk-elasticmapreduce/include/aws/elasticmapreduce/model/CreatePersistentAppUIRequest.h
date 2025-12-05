@@ -129,18 +129,18 @@ class CreatePersistentAppUIRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_targetResourceArn;
-  bool m_targetResourceArnHasBeenSet = false;
 
   EMRContainersConfig m_eMRContainersConfig;
-  bool m_eMRContainersConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_xReferer;
-  bool m_xRefererHasBeenSet = false;
 
   ProfilerType m_profilerType{ProfilerType::NOT_SET};
+  bool m_targetResourceArnHasBeenSet = false;
+  bool m_eMRContainersConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_xRefererHasBeenSet = false;
   bool m_profilerTypeHasBeenSet = false;
 };
 

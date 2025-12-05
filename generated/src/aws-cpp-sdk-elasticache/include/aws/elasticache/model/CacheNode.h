@@ -258,27 +258,27 @@ class CacheNode {
   ///@}
  private:
   Aws::String m_cacheNodeId;
-  bool m_cacheNodeIdHasBeenSet = false;
 
   Aws::String m_cacheNodeStatus;
-  bool m_cacheNodeStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_cacheNodeCreateTime{};
-  bool m_cacheNodeCreateTimeHasBeenSet = false;
 
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_parameterGroupStatus;
-  bool m_parameterGroupStatusHasBeenSet = false;
 
   Aws::String m_sourceCacheNodeId;
-  bool m_sourceCacheNodeIdHasBeenSet = false;
 
   Aws::String m_customerAvailabilityZone;
-  bool m_customerAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_customerOutpostArn;
+  bool m_cacheNodeIdHasBeenSet = false;
+  bool m_cacheNodeStatusHasBeenSet = false;
+  bool m_cacheNodeCreateTimeHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_parameterGroupStatusHasBeenSet = false;
+  bool m_sourceCacheNodeIdHasBeenSet = false;
+  bool m_customerAvailabilityZoneHasBeenSet = false;
   bool m_customerOutpostArnHasBeenSet = false;
 };
 

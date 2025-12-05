@@ -122,18 +122,18 @@ class ListRunsRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_runGroupId;
-  bool m_runGroupIdHasBeenSet = false;
 
   Aws::String m_startingToken;
-  bool m_startingTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   RunStatus m_status{RunStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_runGroupIdHasBeenSet = false;
+  bool m_startingTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

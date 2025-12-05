@@ -66,9 +66,9 @@ class PutVoiceConnectorEmergencyCallingConfigurationRequest : public ChimeSDKVoi
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   EmergencyCallingConfiguration m_emergencyCallingConfiguration;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_emergencyCallingConfigurationHasBeenSet = false;
 };
 

@@ -105,12 +105,12 @@ class CostComparisonDriver {
   ///@}
  private:
   Expression m_costSelector;
-  bool m_costSelectorHasBeenSet = false;
 
   Aws::Map<Aws::String, ComparisonMetricValue> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Vector<CostDriver> m_costDrivers;
+  bool m_costSelectorHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_costDriversHasBeenSet = false;
 };
 

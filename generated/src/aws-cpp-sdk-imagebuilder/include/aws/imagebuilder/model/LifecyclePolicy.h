@@ -267,39 +267,39 @@ class LifecyclePolicy {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LifecyclePolicyStatus m_status{LifecyclePolicyStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   LifecyclePolicyResourceType m_resourceType{LifecyclePolicyResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<LifecyclePolicyDetail> m_policyDetails;
-  bool m_policyDetailsHasBeenSet = false;
 
   LifecyclePolicyResourceSelection m_resourceSelection;
-  bool m_resourceSelectionHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateUpdated{};
-  bool m_dateUpdatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateLastRun{};
-  bool m_dateLastRunHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_policyDetailsHasBeenSet = false;
+  bool m_resourceSelectionHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateUpdatedHasBeenSet = false;
+  bool m_dateLastRunHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

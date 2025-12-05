@@ -84,12 +84,12 @@ class ListDataDeletionJobsResult {
   ///@}
  private:
   Aws::Vector<DataDeletionJobSummary> m_dataDeletionJobs;
-  bool m_dataDeletionJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataDeletionJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

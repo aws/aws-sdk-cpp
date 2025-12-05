@@ -107,15 +107,15 @@ class ParameterGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_nameHasBeenSet = false;
+  bool m_familyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

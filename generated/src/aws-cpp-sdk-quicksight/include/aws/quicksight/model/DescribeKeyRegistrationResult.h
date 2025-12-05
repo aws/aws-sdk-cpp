@@ -119,18 +119,18 @@ class DescribeKeyRegistrationResult {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Vector<RegisteredCustomerManagedKey> m_keyRegistration;
-  bool m_keyRegistrationHasBeenSet = false;
 
   QDataKey m_qDataKey;
-  bool m_qDataKeyHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_keyRegistrationHasBeenSet = false;
+  bool m_qDataKeyHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

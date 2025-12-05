@@ -86,12 +86,12 @@ class ListStudioSessionMappingsResult {
   ///@}
  private:
   Aws::Vector<SessionMappingSummary> m_sessionMappings;
-  bool m_sessionMappingsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionMappingsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

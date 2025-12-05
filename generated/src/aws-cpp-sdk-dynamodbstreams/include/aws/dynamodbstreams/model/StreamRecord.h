@@ -185,24 +185,24 @@ class StreamRecord {
   ///@}
  private:
   Aws::Utils::DateTime m_approximateCreationDateTime{};
-  bool m_approximateCreationDateTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_newImage;
-  bool m_newImageHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_oldImage;
-  bool m_oldImageHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
-  bool m_sequenceNumberHasBeenSet = false;
 
   long long m_sizeBytes{0};
-  bool m_sizeBytesHasBeenSet = false;
 
   StreamViewType m_streamViewType{StreamViewType::NOT_SET};
+  bool m_approximateCreationDateTimeHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
+  bool m_newImageHasBeenSet = false;
+  bool m_oldImageHasBeenSet = false;
+  bool m_sequenceNumberHasBeenSet = false;
+  bool m_sizeBytesHasBeenSet = false;
   bool m_streamViewTypeHasBeenSet = false;
 };
 

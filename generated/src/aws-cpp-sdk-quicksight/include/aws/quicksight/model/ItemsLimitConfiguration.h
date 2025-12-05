@@ -68,9 +68,9 @@ class ItemsLimitConfiguration {
   ///@}
  private:
   long long m_itemsLimit{0};
-  bool m_itemsLimitHasBeenSet = false;
 
   OtherCategories m_otherCategories{OtherCategories::NOT_SET};
+  bool m_itemsLimitHasBeenSet = false;
   bool m_otherCategoriesHasBeenSet = false;
 };
 

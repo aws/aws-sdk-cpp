@@ -66,9 +66,9 @@ class ServiceQuotaExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_messageHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

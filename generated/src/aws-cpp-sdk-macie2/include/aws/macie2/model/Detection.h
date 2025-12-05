@@ -152,21 +152,21 @@ class Detection {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_suppressed{false};
-  bool m_suppressedHasBeenSet = false;
 
   DataIdentifierType m_type{DataIdentifierType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_suppressedHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class UpdateTemplateRequest : public PcaConnectorAdRequest {
   ///@}
  private:
   TemplateDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   bool m_reenrollAllCertificateHolders{false};
-  bool m_reenrollAllCertificateHoldersHasBeenSet = false;
 
   Aws::String m_templateArn;
+  bool m_definitionHasBeenSet = false;
+  bool m_reenrollAllCertificateHoldersHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
 };
 

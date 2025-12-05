@@ -71,9 +71,9 @@ class FailoverConfig {
   ///@}
  private:
   Primary m_primary;
-  bool m_primaryHasBeenSet = false;
 
   Secondary m_secondary;
+  bool m_primaryHasBeenSet = false;
   bool m_secondaryHasBeenSet = false;
 };
 

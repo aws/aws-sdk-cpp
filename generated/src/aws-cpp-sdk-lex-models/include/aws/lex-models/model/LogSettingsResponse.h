@@ -124,18 +124,18 @@ class LogSettingsResponse {
   ///@}
  private:
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   Destination m_destination{Destination::NOT_SET};
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourcePrefix;
+  bool m_logTypeHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourcePrefixHasBeenSet = false;
 };
 

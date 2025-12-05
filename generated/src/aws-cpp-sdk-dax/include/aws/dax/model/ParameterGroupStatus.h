@@ -93,12 +93,12 @@ class ParameterGroupStatus {
   ///@}
  private:
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::String m_parameterApplyStatus;
-  bool m_parameterApplyStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeIdsToReboot;
+  bool m_parameterGroupNameHasBeenSet = false;
+  bool m_parameterApplyStatusHasBeenSet = false;
   bool m_nodeIdsToRebootHasBeenSet = false;
 };
 

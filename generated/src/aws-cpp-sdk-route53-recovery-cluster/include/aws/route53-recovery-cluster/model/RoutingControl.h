@@ -146,21 +146,21 @@ class RoutingControl {
   ///@}
  private:
   Aws::String m_controlPanelArn;
-  bool m_controlPanelArnHasBeenSet = false;
 
   Aws::String m_controlPanelName;
-  bool m_controlPanelNameHasBeenSet = false;
 
   Aws::String m_routingControlArn;
-  bool m_routingControlArnHasBeenSet = false;
 
   Aws::String m_routingControlName;
-  bool m_routingControlNameHasBeenSet = false;
 
   RoutingControlState m_routingControlState{RoutingControlState::NOT_SET};
-  bool m_routingControlStateHasBeenSet = false;
 
   Aws::String m_owner;
+  bool m_controlPanelArnHasBeenSet = false;
+  bool m_controlPanelNameHasBeenSet = false;
+  bool m_routingControlArnHasBeenSet = false;
+  bool m_routingControlNameHasBeenSet = false;
+  bool m_routingControlStateHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

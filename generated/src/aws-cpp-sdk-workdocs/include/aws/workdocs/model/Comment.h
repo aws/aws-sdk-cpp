@@ -198,30 +198,30 @@ class Comment {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_threadId;
-  bool m_threadIdHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   User m_contributor;
-  bool m_contributorHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   CommentStatusType m_status{CommentStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CommentVisibilityType m_visibility{CommentVisibilityType::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_recipientId;
+  bool m_commentIdHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_threadIdHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_contributorHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_recipientIdHasBeenSet = false;
 };
 

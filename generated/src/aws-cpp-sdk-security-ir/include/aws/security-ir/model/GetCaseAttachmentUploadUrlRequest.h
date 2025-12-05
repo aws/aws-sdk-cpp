@@ -106,15 +106,15 @@ class GetCaseAttachmentUploadUrlRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_caseIdHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

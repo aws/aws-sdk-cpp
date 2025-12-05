@@ -93,12 +93,12 @@ class Encryption {
   ///@}
  private:
   ServerSideEncryption m_encryptionType{ServerSideEncryption::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   Aws::String m_kMSContext;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
   bool m_kMSContextHasBeenSet = false;
 };
 

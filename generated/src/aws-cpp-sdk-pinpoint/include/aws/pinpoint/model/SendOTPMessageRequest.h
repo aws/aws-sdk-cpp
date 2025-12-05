@@ -64,9 +64,9 @@ class SendOTPMessageRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   SendOTPMessageRequestParameters m_sendOTPMessageRequestParameters;
+  bool m_applicationIdHasBeenSet = false;
   bool m_sendOTPMessageRequestParametersHasBeenSet = false;
 };
 

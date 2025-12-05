@@ -76,9 +76,9 @@ class AwsBackupBackupPlanRuleCopyActionsDetails {
   ///@}
  private:
   Aws::String m_destinationBackupVaultArn;
-  bool m_destinationBackupVaultArnHasBeenSet = false;
 
   AwsBackupBackupPlanLifecycleDetails m_lifecycle;
+  bool m_destinationBackupVaultArnHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
 };
 

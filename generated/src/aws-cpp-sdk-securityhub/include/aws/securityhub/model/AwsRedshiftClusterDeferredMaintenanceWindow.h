@@ -93,12 +93,12 @@ class AwsRedshiftClusterDeferredMaintenanceWindow {
   ///@}
  private:
   Aws::String m_deferMaintenanceEndTime;
-  bool m_deferMaintenanceEndTimeHasBeenSet = false;
 
   Aws::String m_deferMaintenanceIdentifier;
-  bool m_deferMaintenanceIdentifierHasBeenSet = false;
 
   Aws::String m_deferMaintenanceStartTime;
+  bool m_deferMaintenanceEndTimeHasBeenSet = false;
+  bool m_deferMaintenanceIdentifierHasBeenSet = false;
   bool m_deferMaintenanceStartTimeHasBeenSet = false;
 };
 

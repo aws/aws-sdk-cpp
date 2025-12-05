@@ -141,21 +141,21 @@ class ListPipelineVersionsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

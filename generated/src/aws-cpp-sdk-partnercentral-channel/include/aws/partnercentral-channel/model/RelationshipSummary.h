@@ -248,39 +248,39 @@ class RelationshipSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   AssociationType m_associationType{AssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::String m_programManagementAccountId;
-  bool m_programManagementAccountIdHasBeenSet = false;
 
   Aws::String m_associatedAccountId;
-  bool m_associatedAccountIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Sector m_sector{Sector::NOT_SET};
-  bool m_sectorHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_programManagementAccountIdHasBeenSet = false;
+  bool m_associatedAccountIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_sectorHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_startDateHasBeenSet = false;
 };
 

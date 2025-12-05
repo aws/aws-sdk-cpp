@@ -245,42 +245,42 @@ class GetAddressListImportJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ImportJobStatus m_status{ImportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   int m_importedItemsCount{0};
-  bool m_importedItemsCountHasBeenSet = false;
 
   int m_failedItemsCount{0};
-  bool m_failedItemsCountHasBeenSet = false;
 
   ImportDataFormat m_importDataFormat;
-  bool m_importDataFormatHasBeenSet = false;
 
   Aws::String m_addressListId;
-  bool m_addressListIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedTimestamp{};
-  bool m_completedTimestampHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
+  bool m_importedItemsCountHasBeenSet = false;
+  bool m_failedItemsCountHasBeenSet = false;
+  bool m_importDataFormatHasBeenSet = false;
+  bool m_addressListIdHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_completedTimestampHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

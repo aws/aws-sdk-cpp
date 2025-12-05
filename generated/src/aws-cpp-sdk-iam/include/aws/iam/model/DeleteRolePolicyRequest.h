@@ -77,9 +77,9 @@ class DeleteRolePolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_roleNameHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

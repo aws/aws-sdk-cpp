@@ -76,9 +76,9 @@ class NetworkUpdateSettings {
   ///@}
  private:
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customerDnsIpsV6;
+  bool m_networkTypeHasBeenSet = false;
   bool m_customerDnsIpsV6HasBeenSet = false;
 };
 

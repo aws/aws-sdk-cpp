@@ -87,12 +87,12 @@ class ADMChannelRequest {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_clientIdHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

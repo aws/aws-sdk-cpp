@@ -66,9 +66,9 @@ class OcsfBooleanFilter {
   ///@}
  private:
   OcsfBooleanField m_fieldName{OcsfBooleanField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   BooleanFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

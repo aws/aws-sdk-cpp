@@ -105,15 +105,15 @@ class DetectProtectiveEquipmentResult {
   ///@}
  private:
   Aws::String m_protectiveEquipmentModelVersion;
-  bool m_protectiveEquipmentModelVersionHasBeenSet = false;
 
   Aws::Vector<ProtectiveEquipmentPerson> m_persons;
-  bool m_personsHasBeenSet = false;
 
   ProtectiveEquipmentSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectiveEquipmentModelVersionHasBeenSet = false;
+  bool m_personsHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

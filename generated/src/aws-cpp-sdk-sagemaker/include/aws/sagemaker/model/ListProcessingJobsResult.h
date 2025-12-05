@@ -86,12 +86,12 @@ class ListProcessingJobsResult {
   ///@}
  private:
   Aws::Vector<ProcessingJobSummary> m_processingJobSummaries;
-  bool m_processingJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_processingJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

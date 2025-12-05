@@ -224,36 +224,36 @@ class Ingestion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_ingestionId;
-  bool m_ingestionIdHasBeenSet = false;
 
   IngestionStatus m_ingestionStatus{IngestionStatus::NOT_SET};
-  bool m_ingestionStatusHasBeenSet = false;
 
   ErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   RowInfo m_rowInfo;
-  bool m_rowInfoHasBeenSet = false;
 
   QueueInfo m_queueInfo;
-  bool m_queueInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   long long m_ingestionTimeInSeconds{0};
-  bool m_ingestionTimeInSecondsHasBeenSet = false;
 
   long long m_ingestionSizeInBytes{0};
-  bool m_ingestionSizeInBytesHasBeenSet = false;
 
   IngestionRequestSource m_requestSource{IngestionRequestSource::NOT_SET};
-  bool m_requestSourceHasBeenSet = false;
 
   IngestionRequestType m_requestType{IngestionRequestType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_ingestionIdHasBeenSet = false;
+  bool m_ingestionStatusHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
+  bool m_rowInfoHasBeenSet = false;
+  bool m_queueInfoHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_ingestionTimeInSecondsHasBeenSet = false;
+  bool m_ingestionSizeInBytesHasBeenSet = false;
+  bool m_requestSourceHasBeenSet = false;
   bool m_requestTypeHasBeenSet = false;
 };
 

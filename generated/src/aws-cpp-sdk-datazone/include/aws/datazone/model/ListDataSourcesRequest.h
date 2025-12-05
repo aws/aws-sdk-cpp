@@ -203,30 +203,30 @@ class ListDataSourcesRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_connectionIdentifier;
-  bool m_connectionIdentifierHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_projectIdentifier;
-  bool m_projectIdentifierHasBeenSet = false;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_connectionIdentifierHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

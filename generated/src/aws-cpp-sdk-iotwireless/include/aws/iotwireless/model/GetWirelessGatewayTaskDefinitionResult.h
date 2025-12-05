@@ -112,18 +112,18 @@ class GetWirelessGatewayTaskDefinitionResult {
   ///@}
  private:
   bool m_autoCreateTasks{false};
-  bool m_autoCreateTasksHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UpdateWirelessGatewayTaskCreate m_update;
-  bool m_updateHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoCreateTasksHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_updateHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

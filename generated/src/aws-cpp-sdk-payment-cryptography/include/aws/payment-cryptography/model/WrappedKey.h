@@ -129,18 +129,18 @@ class WrappedKey {
   ///@}
  private:
   Aws::String m_wrappingKeyArn;
-  bool m_wrappingKeyArnHasBeenSet = false;
 
   WrappedKeyMaterialFormat m_wrappedKeyMaterialFormat{WrappedKeyMaterialFormat::NOT_SET};
-  bool m_wrappedKeyMaterialFormatHasBeenSet = false;
 
   Aws::String m_keyMaterial;
-  bool m_keyMaterialHasBeenSet = false;
 
   Aws::String m_keyCheckValue;
-  bool m_keyCheckValueHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
+  bool m_wrappingKeyArnHasBeenSet = false;
+  bool m_wrappedKeyMaterialFormatHasBeenSet = false;
+  bool m_keyMaterialHasBeenSet = false;
+  bool m_keyCheckValueHasBeenSet = false;
   bool m_keyCheckValueAlgorithmHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class UpdateMediaPipelineKinesisVideoStreamPoolRequest : public ChimeSDKMediaPip
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   KinesisVideoStreamConfigurationUpdate m_streamConfiguration;
+  bool m_identifierHasBeenSet = false;
   bool m_streamConfigurationHasBeenSet = false;
 };
 

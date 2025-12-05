@@ -75,9 +75,9 @@ class ToolInstruction {
   ///@}
  private:
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_examples;
+  bool m_instructionHasBeenSet = false;
   bool m_examplesHasBeenSet = false;
 };
 

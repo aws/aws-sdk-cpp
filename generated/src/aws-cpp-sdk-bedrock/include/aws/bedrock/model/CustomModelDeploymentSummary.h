@@ -162,24 +162,24 @@ class CustomModelDeploymentSummary {
   ///@}
  private:
   Aws::String m_customModelDeploymentArn;
-  bool m_customModelDeploymentArnHasBeenSet = false;
 
   Aws::String m_customModelDeploymentName;
-  bool m_customModelDeploymentNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   CustomModelDeploymentStatus m_status{CustomModelDeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_customModelDeploymentArnHasBeenSet = false;
+  bool m_customModelDeploymentNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

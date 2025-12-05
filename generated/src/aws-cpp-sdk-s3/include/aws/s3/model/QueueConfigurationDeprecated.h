@@ -96,12 +96,12 @@ class QueueConfigurationDeprecated {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Event> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_queue;
+  bool m_idHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
   bool m_queueHasBeenSet = false;
 };
 

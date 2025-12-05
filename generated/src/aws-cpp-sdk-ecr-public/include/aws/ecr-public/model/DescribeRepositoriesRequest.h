@@ -128,15 +128,15 @@ class DescribeRepositoriesRequest : public ECRPublicRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_repositoryNames;
-  bool m_repositoryNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

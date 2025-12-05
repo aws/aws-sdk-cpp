@@ -93,12 +93,12 @@ class LendingField {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   LendingDetection m_keyDetection;
-  bool m_keyDetectionHasBeenSet = false;
 
   Aws::Vector<LendingDetection> m_valueDetections;
+  bool m_typeHasBeenSet = false;
+  bool m_keyDetectionHasBeenSet = false;
   bool m_valueDetectionsHasBeenSet = false;
 };
 

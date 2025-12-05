@@ -155,21 +155,21 @@ class CoreNetworkRoutingInformation {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   RoutingInformationNextHop m_nextHop;
-  bool m_nextHopHasBeenSet = false;
 
   Aws::String m_localPreference;
-  bool m_localPreferenceHasBeenSet = false;
 
   Aws::String m_med;
-  bool m_medHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_asPath;
-  bool m_asPathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_communities;
+  bool m_prefixHasBeenSet = false;
+  bool m_nextHopHasBeenSet = false;
+  bool m_localPreferenceHasBeenSet = false;
+  bool m_medHasBeenSet = false;
+  bool m_asPathHasBeenSet = false;
   bool m_communitiesHasBeenSet = false;
 };
 

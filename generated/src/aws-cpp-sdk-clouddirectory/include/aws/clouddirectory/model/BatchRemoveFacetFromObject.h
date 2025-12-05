@@ -70,9 +70,9 @@ class BatchRemoveFacetFromObject {
   ///@}
  private:
   SchemaFacet m_schemaFacet;
-  bool m_schemaFacetHasBeenSet = false;
 
   ObjectReference m_objectReference;
+  bool m_schemaFacetHasBeenSet = false;
   bool m_objectReferenceHasBeenSet = false;
 };
 

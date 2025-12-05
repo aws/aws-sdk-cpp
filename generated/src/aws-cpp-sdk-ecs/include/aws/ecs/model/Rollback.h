@@ -89,12 +89,12 @@ class Rollback {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::String m_serviceRevisionArn;
+  bool m_reasonHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
   bool m_serviceRevisionArnHasBeenSet = false;
 };
 

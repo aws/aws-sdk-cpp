@@ -173,24 +173,24 @@ DISABLED - MediaLive will not attempt to synchronize
   ///@}
  private:
   int m_initialAudioGain{0};
-  bool m_initialAudioGainHasBeenSet = false;
 
   GlobalConfigurationInputEndAction m_inputEndAction{GlobalConfigurationInputEndAction::NOT_SET};
-  bool m_inputEndActionHasBeenSet = false;
 
   InputLossBehavior m_inputLossBehavior;
-  bool m_inputLossBehaviorHasBeenSet = false;
 
   GlobalConfigurationOutputLockingMode m_outputLockingMode{GlobalConfigurationOutputLockingMode::NOT_SET};
-  bool m_outputLockingModeHasBeenSet = false;
 
   GlobalConfigurationOutputTimingSource m_outputTimingSource{GlobalConfigurationOutputTimingSource::NOT_SET};
-  bool m_outputTimingSourceHasBeenSet = false;
 
   GlobalConfigurationLowFramerateInputs m_supportLowFramerateInputs{GlobalConfigurationLowFramerateInputs::NOT_SET};
-  bool m_supportLowFramerateInputsHasBeenSet = false;
 
   OutputLockingSettings m_outputLockingSettings;
+  bool m_initialAudioGainHasBeenSet = false;
+  bool m_inputEndActionHasBeenSet = false;
+  bool m_inputLossBehaviorHasBeenSet = false;
+  bool m_outputLockingModeHasBeenSet = false;
+  bool m_outputTimingSourceHasBeenSet = false;
+  bool m_supportLowFramerateInputsHasBeenSet = false;
   bool m_outputLockingSettingsHasBeenSet = false;
 };
 

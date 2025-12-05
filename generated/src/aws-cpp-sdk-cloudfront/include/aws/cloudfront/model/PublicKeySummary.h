@@ -124,18 +124,18 @@ class PublicKeySummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_encodedKey;
-  bool m_encodedKeyHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_encodedKeyHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

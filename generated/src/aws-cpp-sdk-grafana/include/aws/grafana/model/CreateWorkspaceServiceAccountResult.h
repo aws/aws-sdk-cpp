@@ -110,18 +110,18 @@ class CreateWorkspaceServiceAccountResult {
   ///@}
  private:
   Role m_grafanaRole{Role::NOT_SET};
-  bool m_grafanaRoleHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_grafanaRoleHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

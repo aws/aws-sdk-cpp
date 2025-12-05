@@ -291,42 +291,42 @@ class RemediationAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EC2CreateRouteAction m_eC2CreateRouteAction;
-  bool m_eC2CreateRouteActionHasBeenSet = false;
 
   EC2ReplaceRouteAction m_eC2ReplaceRouteAction;
-  bool m_eC2ReplaceRouteActionHasBeenSet = false;
 
   EC2DeleteRouteAction m_eC2DeleteRouteAction;
-  bool m_eC2DeleteRouteActionHasBeenSet = false;
 
   EC2CopyRouteTableAction m_eC2CopyRouteTableAction;
-  bool m_eC2CopyRouteTableActionHasBeenSet = false;
 
   EC2ReplaceRouteTableAssociationAction m_eC2ReplaceRouteTableAssociationAction;
-  bool m_eC2ReplaceRouteTableAssociationActionHasBeenSet = false;
 
   EC2AssociateRouteTableAction m_eC2AssociateRouteTableAction;
-  bool m_eC2AssociateRouteTableActionHasBeenSet = false;
 
   EC2CreateRouteTableAction m_eC2CreateRouteTableAction;
-  bool m_eC2CreateRouteTableActionHasBeenSet = false;
 
   FMSPolicyUpdateFirewallCreationConfigAction m_fMSPolicyUpdateFirewallCreationConfigAction;
-  bool m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = false;
 
   CreateNetworkAclAction m_createNetworkAclAction;
-  bool m_createNetworkAclActionHasBeenSet = false;
 
   ReplaceNetworkAclAssociationAction m_replaceNetworkAclAssociationAction;
-  bool m_replaceNetworkAclAssociationActionHasBeenSet = false;
 
   CreateNetworkAclEntriesAction m_createNetworkAclEntriesAction;
-  bool m_createNetworkAclEntriesActionHasBeenSet = false;
 
   DeleteNetworkAclEntriesAction m_deleteNetworkAclEntriesAction;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eC2CreateRouteActionHasBeenSet = false;
+  bool m_eC2ReplaceRouteActionHasBeenSet = false;
+  bool m_eC2DeleteRouteActionHasBeenSet = false;
+  bool m_eC2CopyRouteTableActionHasBeenSet = false;
+  bool m_eC2ReplaceRouteTableAssociationActionHasBeenSet = false;
+  bool m_eC2AssociateRouteTableActionHasBeenSet = false;
+  bool m_eC2CreateRouteTableActionHasBeenSet = false;
+  bool m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = false;
+  bool m_createNetworkAclActionHasBeenSet = false;
+  bool m_replaceNetworkAclAssociationActionHasBeenSet = false;
+  bool m_createNetworkAclEntriesActionHasBeenSet = false;
   bool m_deleteNetworkAclEntriesActionHasBeenSet = false;
 };
 

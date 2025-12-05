@@ -69,9 +69,9 @@ class AwsRdsDbInstanceVpcSecurityGroup {
   ///@}
  private:
   Aws::String m_vpcSecurityGroupId;
-  bool m_vpcSecurityGroupIdHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_vpcSecurityGroupIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

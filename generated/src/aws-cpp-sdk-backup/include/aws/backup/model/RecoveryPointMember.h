@@ -108,15 +108,15 @@ class RecoveryPointMember {
   ///@}
  private:
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_backupVaultName;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_backupVaultNameHasBeenSet = false;
 };
 

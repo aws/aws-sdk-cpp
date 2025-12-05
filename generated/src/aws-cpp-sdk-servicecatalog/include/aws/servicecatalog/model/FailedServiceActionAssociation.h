@@ -125,18 +125,18 @@ class FailedServiceActionAssociation {
   ///@}
  private:
   Aws::String m_serviceActionId;
-  bool m_serviceActionIdHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   ServiceActionAssociationErrorCode m_errorCode{ServiceActionAssociationErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_serviceActionIdHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class AssociateProtectConfigurationRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   Aws::String m_configurationSetName;
+  bool m_protectConfigurationIdHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
 };
 

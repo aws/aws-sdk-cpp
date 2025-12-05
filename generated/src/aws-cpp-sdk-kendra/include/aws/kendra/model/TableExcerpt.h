@@ -77,9 +77,9 @@ class TableExcerpt {
   ///@}
  private:
   Aws::Vector<TableRow> m_rows;
-  bool m_rowsHasBeenSet = false;
 
   int m_totalNumberOfRows{0};
+  bool m_rowsHasBeenSet = false;
   bool m_totalNumberOfRowsHasBeenSet = false;
 };
 

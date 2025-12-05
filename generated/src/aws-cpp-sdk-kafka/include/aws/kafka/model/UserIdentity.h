@@ -76,9 +76,9 @@ class UserIdentity {
   ///@}
  private:
   UserIdentityType m_type{UserIdentityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_principalId;
+  bool m_typeHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
 };
 

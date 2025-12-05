@@ -71,9 +71,9 @@ class Detection {
   ///@}
  private:
   Anomaly m_anomaly;
-  bool m_anomalyHasBeenSet = false;
 
   Sequence m_sequence;
+  bool m_anomalyHasBeenSet = false;
   bool m_sequenceHasBeenSet = false;
 };
 

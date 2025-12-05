@@ -72,9 +72,9 @@ class ImagePipelineAggregation {
   ///@}
  private:
   Aws::String m_imagePipelineArn;
-  bool m_imagePipelineArnHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
+  bool m_imagePipelineArnHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
 };
 

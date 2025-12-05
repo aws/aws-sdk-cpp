@@ -60,9 +60,9 @@ class PutRetentionConfigurationResult {
   ///@}
  private:
   RetentionConfiguration m_retentionConfiguration;
-  bool m_retentionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retentionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

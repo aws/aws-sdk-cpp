@@ -165,24 +165,24 @@ class UpdateTransformerRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_transformerId;
-  bool m_transformerIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TransformerStatus m_status{TransformerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InputConversion m_inputConversion;
-  bool m_inputConversionHasBeenSet = false;
 
   Mapping m_mapping;
-  bool m_mappingHasBeenSet = false;
 
   OutputConversion m_outputConversion;
-  bool m_outputConversionHasBeenSet = false;
 
   SampleDocuments m_sampleDocuments;
+  bool m_transformerIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_inputConversionHasBeenSet = false;
+  bool m_mappingHasBeenSet = false;
+  bool m_outputConversionHasBeenSet = false;
   bool m_sampleDocumentsHasBeenSet = false;
 };
 

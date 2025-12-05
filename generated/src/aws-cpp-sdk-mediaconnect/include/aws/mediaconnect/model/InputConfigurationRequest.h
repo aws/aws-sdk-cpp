@@ -68,9 +68,9 @@ class InputConfigurationRequest {
   ///@}
  private:
   int m_inputPort{0};
-  bool m_inputPortHasBeenSet = false;
 
   InterfaceRequest m_interface;
+  bool m_inputPortHasBeenSet = false;
   bool m_interfaceHasBeenSet = false;
 };
 

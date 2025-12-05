@@ -183,15 +183,15 @@ class HistoricalMetric {
   ///@}
  private:
   HistoricalMetricName m_name{HistoricalMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Threshold m_threshold;
-  bool m_thresholdHasBeenSet = false;
 
   Statistic m_statistic{Statistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Unit m_unit{Unit::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

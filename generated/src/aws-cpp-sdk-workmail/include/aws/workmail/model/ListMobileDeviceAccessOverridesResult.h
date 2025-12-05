@@ -86,12 +86,12 @@ class ListMobileDeviceAccessOverridesResult {
   ///@}
  private:
   Aws::Vector<MobileDeviceAccessOverride> m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_overridesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

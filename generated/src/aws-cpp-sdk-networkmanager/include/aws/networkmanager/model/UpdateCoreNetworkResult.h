@@ -60,9 +60,9 @@ class UpdateCoreNetworkResult {
   ///@}
  private:
   CoreNetwork m_coreNetwork;
-  bool m_coreNetworkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreNetworkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

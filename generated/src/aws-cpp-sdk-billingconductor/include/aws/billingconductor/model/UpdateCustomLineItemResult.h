@@ -159,27 +159,27 @@ class UpdateCustomLineItemResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_billingGroupArn;
-  bool m_billingGroupArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ListCustomLineItemChargeDetails m_chargeDetails;
-  bool m_chargeDetailsHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   long long m_associationSize{0};
-  bool m_associationSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_billingGroupArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_chargeDetailsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_associationSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

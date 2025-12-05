@@ -85,12 +85,12 @@ class ListContactFlowModulesResult {
   ///@}
  private:
   Aws::Vector<ContactFlowModuleSummary> m_contactFlowModulesSummaryList;
-  bool m_contactFlowModulesSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowModulesSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

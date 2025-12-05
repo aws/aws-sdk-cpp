@@ -70,9 +70,9 @@ class TagResourceRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadArn;
-  bool m_workloadArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_workloadArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

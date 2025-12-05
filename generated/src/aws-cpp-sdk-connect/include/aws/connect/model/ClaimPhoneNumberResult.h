@@ -76,12 +76,12 @@ class ClaimPhoneNumberResult {
   ///@}
  private:
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   Aws::String m_phoneNumberArn;
-  bool m_phoneNumberArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_phoneNumberArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

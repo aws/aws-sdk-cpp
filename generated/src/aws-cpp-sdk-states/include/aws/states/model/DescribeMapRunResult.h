@@ -251,42 +251,42 @@ class DescribeMapRunResult {
   ///@}
  private:
   Aws::String m_mapRunArn;
-  bool m_mapRunArnHasBeenSet = false;
 
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   MapRunStatus m_status{MapRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopDate{};
-  bool m_stopDateHasBeenSet = false;
 
   int m_maxConcurrency{0};
-  bool m_maxConcurrencyHasBeenSet = false;
 
   double m_toleratedFailurePercentage{0.0};
-  bool m_toleratedFailurePercentageHasBeenSet = false;
 
   long long m_toleratedFailureCount{0};
-  bool m_toleratedFailureCountHasBeenSet = false;
 
   MapRunItemCounts m_itemCounts;
-  bool m_itemCountsHasBeenSet = false;
 
   MapRunExecutionCounts m_executionCounts;
-  bool m_executionCountsHasBeenSet = false;
 
   int m_redriveCount{0};
-  bool m_redriveCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_redriveDate{};
-  bool m_redriveDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mapRunArnHasBeenSet = false;
+  bool m_executionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_stopDateHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_toleratedFailurePercentageHasBeenSet = false;
+  bool m_toleratedFailureCountHasBeenSet = false;
+  bool m_itemCountsHasBeenSet = false;
+  bool m_executionCountsHasBeenSet = false;
+  bool m_redriveCountHasBeenSet = false;
+  bool m_redriveDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

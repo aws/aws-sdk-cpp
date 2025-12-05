@@ -89,12 +89,12 @@ class DeletePackageGroupRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_packageGroup;
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
   bool m_packageGroupHasBeenSet = false;
 };
 

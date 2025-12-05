@@ -130,18 +130,18 @@ class ListSyncResourcesRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   Aws::Vector<SyncResourceFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_syncSourceHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

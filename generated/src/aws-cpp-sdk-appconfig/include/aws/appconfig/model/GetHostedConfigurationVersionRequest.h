@@ -81,12 +81,12 @@ class GetHostedConfigurationVersionRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_configurationProfileId;
-  bool m_configurationProfileIdHasBeenSet = false;
 
   int m_versionNumber{0};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_configurationProfileIdHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

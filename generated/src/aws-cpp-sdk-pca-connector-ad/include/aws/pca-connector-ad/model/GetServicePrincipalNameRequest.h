@@ -67,9 +67,9 @@ class GetServicePrincipalNameRequest : public PcaConnectorAdRequest {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_directoryRegistrationArn;
+  bool m_connectorArnHasBeenSet = false;
   bool m_directoryRegistrationArnHasBeenSet = false;
 };
 

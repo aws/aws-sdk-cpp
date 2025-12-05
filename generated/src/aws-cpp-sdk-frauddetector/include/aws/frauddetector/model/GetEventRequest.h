@@ -67,9 +67,9 @@ class GetEventRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventTypeName;
+  bool m_eventIdHasBeenSet = false;
   bool m_eventTypeNameHasBeenSet = false;
 };
 

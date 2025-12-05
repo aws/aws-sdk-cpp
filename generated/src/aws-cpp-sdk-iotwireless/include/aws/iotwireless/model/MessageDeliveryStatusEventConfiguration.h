@@ -67,9 +67,9 @@ class MessageDeliveryStatusEventConfiguration {
   ///@}
  private:
   SidewalkEventNotificationConfigurations m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   EventNotificationTopicStatus m_wirelessDeviceIdEventTopic{EventNotificationTopicStatus::NOT_SET};
+  bool m_sidewalkHasBeenSet = false;
   bool m_wirelessDeviceIdEventTopicHasBeenSet = false;
 };
 

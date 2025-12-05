@@ -121,18 +121,18 @@ class ListLogPatternsRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_patternSetName;
-  bool m_patternSetNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_patternSetNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

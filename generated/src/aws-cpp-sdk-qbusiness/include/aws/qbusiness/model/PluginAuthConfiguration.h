@@ -113,15 +113,15 @@ class PluginAuthConfiguration {
   ///@}
  private:
   BasicAuthConfiguration m_basicAuthConfiguration;
-  bool m_basicAuthConfigurationHasBeenSet = false;
 
   OAuth2ClientCredentialConfiguration m_oAuth2ClientCredentialConfiguration;
-  bool m_oAuth2ClientCredentialConfigurationHasBeenSet = false;
 
   NoAuthConfiguration m_noAuthConfiguration;
-  bool m_noAuthConfigurationHasBeenSet = false;
 
   IdcAuthConfiguration m_idcAuthConfiguration;
+  bool m_basicAuthConfigurationHasBeenSet = false;
+  bool m_oAuth2ClientCredentialConfigurationHasBeenSet = false;
+  bool m_noAuthConfigurationHasBeenSet = false;
   bool m_idcAuthConfigurationHasBeenSet = false;
 };
 

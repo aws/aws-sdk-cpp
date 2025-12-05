@@ -86,12 +86,12 @@ class ListModelQualityJobDefinitionsResult {
   ///@}
  private:
   Aws::Vector<MonitoringJobDefinitionSummary> m_jobDefinitionSummaries;
-  bool m_jobDefinitionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDefinitionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

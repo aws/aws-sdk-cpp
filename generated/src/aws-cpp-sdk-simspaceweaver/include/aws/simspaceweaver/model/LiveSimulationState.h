@@ -87,9 +87,9 @@ class LiveSimulationState {
   ///@}
  private:
   Aws::Vector<SimulationClock> m_clocks;
-  bool m_clocksHasBeenSet = false;
 
   Aws::Vector<Domain> m_domains;
+  bool m_clocksHasBeenSet = false;
   bool m_domainsHasBeenSet = false;
 };
 

@@ -114,18 +114,18 @@ class CreateAccessTokenResult {
   ///@}
  private:
   Aws::String m_secret;
-  bool m_secretHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresTime{};
-  bool m_expiresTimeHasBeenSet = false;
 
   Aws::String m_accessTokenId;
-  bool m_accessTokenIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_secretHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_expiresTimeHasBeenSet = false;
+  bool m_accessTokenIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

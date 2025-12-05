@@ -151,21 +151,21 @@ class Recommendation {
   ///@}
  private:
   int m_allMatchesCount{0};
-  bool m_allMatchesCountHasBeenSet = false;
 
   double m_allMatchesSum{0.0};
-  bool m_allMatchesSumHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Pattern m_pattern;
-  bool m_patternHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Vector<Match> m_topMatches;
+  bool m_allMatchesCountHasBeenSet = false;
+  bool m_allMatchesSumHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_topMatchesHasBeenSet = false;
 };
 

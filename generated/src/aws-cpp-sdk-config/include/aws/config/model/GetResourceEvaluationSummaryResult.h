@@ -167,27 +167,27 @@ class GetResourceEvaluationSummaryResult {
   ///@}
  private:
   Aws::String m_resourceEvaluationId;
-  bool m_resourceEvaluationIdHasBeenSet = false;
 
   EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
-  bool m_evaluationModeHasBeenSet = false;
 
   EvaluationStatus m_evaluationStatus;
-  bool m_evaluationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationStartTimestamp{};
-  bool m_evaluationStartTimestampHasBeenSet = false;
 
   ComplianceType m_compliance{ComplianceType::NOT_SET};
-  bool m_complianceHasBeenSet = false;
 
   EvaluationContext m_evaluationContext;
-  bool m_evaluationContextHasBeenSet = false;
 
   ResourceDetails m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceEvaluationIdHasBeenSet = false;
+  bool m_evaluationModeHasBeenSet = false;
+  bool m_evaluationStatusHasBeenSet = false;
+  bool m_evaluationStartTimestampHasBeenSet = false;
+  bool m_complianceHasBeenSet = false;
+  bool m_evaluationContextHasBeenSet = false;
+  bool m_resourceDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

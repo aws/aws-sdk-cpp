@@ -67,9 +67,9 @@ class KeyStoreAccessOption {
   ///@}
  private:
   Aws::String m_keyAccessRoleArn;
-  bool m_keyAccessRoleArnHasBeenSet = false;
 
   bool m_keyStoreAccessEnabled{false};
+  bool m_keyAccessRoleArnHasBeenSet = false;
   bool m_keyStoreAccessEnabledHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class SendUsersMessagesRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   SendUsersMessageRequest m_sendUsersMessageRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_sendUsersMessageRequestHasBeenSet = false;
 };
 

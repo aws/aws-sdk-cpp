@@ -145,24 +145,24 @@ class CreateJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   Aws::String m_signatureFileContents;
-  bool m_signatureFileContentsHasBeenSet = false;
 
   Aws::String m_warningMessage;
-  bool m_warningMessageHasBeenSet = false;
 
   Aws::Vector<Artifact> m_artifactList;
-  bool m_artifactListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_signatureHasBeenSet = false;
+  bool m_signatureFileContentsHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
+  bool m_artifactListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

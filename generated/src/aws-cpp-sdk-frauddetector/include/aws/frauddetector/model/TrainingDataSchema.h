@@ -74,9 +74,9 @@ class TrainingDataSchema {
   ///@}
  private:
   Aws::Vector<Aws::String> m_modelVariables;
-  bool m_modelVariablesHasBeenSet = false;
 
   LabelSchema m_labelSchema;
+  bool m_modelVariablesHasBeenSet = false;
   bool m_labelSchemaHasBeenSet = false;
 };
 

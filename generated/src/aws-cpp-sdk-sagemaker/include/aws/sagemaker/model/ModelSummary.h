@@ -87,12 +87,12 @@ class ModelSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

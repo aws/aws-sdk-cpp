@@ -177,18 +177,18 @@ class DescribeReservedInstancesRequest : public EC2Request {
   ///@}
  private:
   OfferingClassType m_offeringClass{OfferingClassType::NOT_SET};
-  bool m_offeringClassHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reservedInstancesIds;
-  bool m_reservedInstancesIdsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   OfferingTypeValues m_offeringType{OfferingTypeValues::NOT_SET};
+  bool m_offeringClassHasBeenSet = false;
+  bool m_reservedInstancesIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_offeringTypeHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class OperationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   OperationStatus m_status{OperationStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

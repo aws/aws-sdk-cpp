@@ -67,9 +67,9 @@ class GetConfiguredTableAnalysisRuleRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_configuredTableIdentifier;
-  bool m_configuredTableIdentifierHasBeenSet = false;
 
   ConfiguredTableAnalysisRuleType m_analysisRuleType{ConfiguredTableAnalysisRuleType::NOT_SET};
+  bool m_configuredTableIdentifierHasBeenSet = false;
   bool m_analysisRuleTypeHasBeenSet = false;
 };
 

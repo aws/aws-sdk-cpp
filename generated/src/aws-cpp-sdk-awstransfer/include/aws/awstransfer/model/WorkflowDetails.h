@@ -93,9 +93,9 @@ class WorkflowDetails {
   ///@}
  private:
   Aws::Vector<WorkflowDetail> m_onUpload;
-  bool m_onUploadHasBeenSet = false;
 
   Aws::Vector<WorkflowDetail> m_onPartialUpload;
+  bool m_onUploadHasBeenSet = false;
   bool m_onPartialUploadHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class StringSearch {
   ///@}
  private:
   SearchOption m_searchOption{SearchOption::NOT_SET};
-  bool m_searchOptionHasBeenSet = false;
 
   Aws::String m_searchValue;
+  bool m_searchOptionHasBeenSet = false;
   bool m_searchValueHasBeenSet = false;
 };
 

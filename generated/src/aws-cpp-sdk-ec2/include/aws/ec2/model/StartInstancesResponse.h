@@ -67,9 +67,9 @@ class StartInstancesResponse {
   ///@}
  private:
   Aws::Vector<InstanceStateChange> m_startingInstances;
-  bool m_startingInstancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_startingInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

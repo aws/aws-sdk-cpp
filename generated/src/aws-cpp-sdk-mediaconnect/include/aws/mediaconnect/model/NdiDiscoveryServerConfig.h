@@ -87,12 +87,12 @@ class NdiDiscoveryServerConfig {
   ///@}
  private:
   Aws::String m_discoveryServerAddress;
-  bool m_discoveryServerAddressHasBeenSet = false;
 
   int m_discoveryServerPort{0};
-  bool m_discoveryServerPortHasBeenSet = false;
 
   Aws::String m_vpcInterfaceAdapter;
+  bool m_discoveryServerAddressHasBeenSet = false;
+  bool m_discoveryServerPortHasBeenSet = false;
   bool m_vpcInterfaceAdapterHasBeenSet = false;
 };
 

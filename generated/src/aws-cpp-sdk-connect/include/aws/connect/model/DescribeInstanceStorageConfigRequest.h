@@ -90,12 +90,12 @@ class DescribeInstanceStorageConfigRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   InstanceStorageResourceType m_resourceType{InstanceStorageResourceType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

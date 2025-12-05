@@ -95,9 +95,9 @@ class CacheBehaviorPerPath {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   BehaviorEnum m_behavior{BehaviorEnum::NOT_SET};
+  bool m_pathHasBeenSet = false;
   bool m_behaviorHasBeenSet = false;
 };
 

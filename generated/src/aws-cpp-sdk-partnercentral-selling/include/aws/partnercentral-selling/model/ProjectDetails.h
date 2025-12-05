@@ -119,15 +119,15 @@ class ProjectDetails {
   ///@}
  private:
   Aws::String m_businessProblem;
-  bool m_businessProblemHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_targetCompletionDate;
-  bool m_targetCompletionDateHasBeenSet = false;
 
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
+  bool m_businessProblemHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_targetCompletionDateHasBeenSet = false;
   bool m_expectedCustomerSpendHasBeenSet = false;
 };
 

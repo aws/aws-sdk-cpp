@@ -72,9 +72,9 @@ class DeleteConfigurationTemplateRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_applicationNameHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class TabularConditions {
   ///@}
  private:
   Aws::Vector<OrderBy> m_orderBy;
-  bool m_orderByHasBeenSet = false;
 
   Aws::Vector<PropertyFilter> m_propertyFilters;
+  bool m_orderByHasBeenSet = false;
   bool m_propertyFiltersHasBeenSet = false;
 };
 

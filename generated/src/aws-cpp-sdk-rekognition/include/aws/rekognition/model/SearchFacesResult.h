@@ -103,15 +103,15 @@ class SearchFacesResult {
   ///@}
  private:
   Aws::String m_searchedFaceId;
-  bool m_searchedFaceIdHasBeenSet = false;
 
   Aws::Vector<FaceMatch> m_faceMatches;
-  bool m_faceMatchesHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_searchedFaceIdHasBeenSet = false;
+  bool m_faceMatchesHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

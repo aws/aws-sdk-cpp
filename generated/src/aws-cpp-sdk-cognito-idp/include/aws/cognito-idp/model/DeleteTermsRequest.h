@@ -68,9 +68,9 @@ class DeleteTermsRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_termsId;
-  bool m_termsIdHasBeenSet = false;
 
   Aws::String m_userPoolId;
+  bool m_termsIdHasBeenSet = false;
   bool m_userPoolIdHasBeenSet = false;
 };
 

@@ -257,27 +257,27 @@ class DeleteObjectsRequest : public S3Request {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Delete m_delete;
-  bool m_deleteHasBeenSet = false;
 
   Aws::String m_mFA;
-  bool m_mFAHasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   bool m_bypassGovernanceRetention{false};
-  bool m_bypassGovernanceRetentionHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_deleteHasBeenSet = false;
+  bool m_mFAHasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
+  bool m_bypassGovernanceRetentionHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

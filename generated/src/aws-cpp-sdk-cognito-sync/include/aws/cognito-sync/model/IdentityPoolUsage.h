@@ -102,15 +102,15 @@ class IdentityPoolUsage {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   long long m_syncSessionsCount{0};
-  bool m_syncSessionsCountHasBeenSet = false;
 
   long long m_dataStorage{0};
-  bool m_dataStorageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_syncSessionsCountHasBeenSet = false;
+  bool m_dataStorageHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

@@ -108,9 +108,9 @@ class UpdateServiceSettingRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_settingId;
-  bool m_settingIdHasBeenSet = false;
 
   Aws::String m_settingValue;
+  bool m_settingIdHasBeenSet = false;
   bool m_settingValueHasBeenSet = false;
 };
 

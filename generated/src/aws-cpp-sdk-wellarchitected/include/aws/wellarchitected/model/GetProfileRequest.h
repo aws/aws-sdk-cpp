@@ -70,9 +70,9 @@ class GetProfileRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_profileVersion;
+  bool m_profileArnHasBeenSet = false;
   bool m_profileVersionHasBeenSet = false;
 };
 

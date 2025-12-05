@@ -91,12 +91,12 @@ class ListTrainingJobsForHyperParameterTuningJobResult {
   ///@}
  private:
   Aws::Vector<HyperParameterTrainingJobSummary> m_trainingJobSummaries;
-  bool m_trainingJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trainingJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

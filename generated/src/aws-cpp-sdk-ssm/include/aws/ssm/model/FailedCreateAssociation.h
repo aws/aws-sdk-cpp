@@ -86,12 +86,12 @@ class FailedCreateAssociation {
   ///@}
  private:
   CreateAssociationBatchRequestEntry m_entry;
-  bool m_entryHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Fault m_fault{Fault::NOT_SET};
+  bool m_entryHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_faultHasBeenSet = false;
 };
 

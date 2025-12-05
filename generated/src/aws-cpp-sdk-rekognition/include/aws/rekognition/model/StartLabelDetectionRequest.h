@@ -185,24 +185,24 @@ class StartLabelDetectionRequest : public RekognitionRequest {
   ///@}
  private:
   Video m_video;
-  bool m_videoHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   double m_minConfidence{0.0};
-  bool m_minConfidenceHasBeenSet = false;
 
   NotificationChannel m_notificationChannel;
-  bool m_notificationChannelHasBeenSet = false;
 
   Aws::String m_jobTag;
-  bool m_jobTagHasBeenSet = false;
 
   Aws::Vector<LabelDetectionFeatureName> m_features;
-  bool m_featuresHasBeenSet = false;
 
   LabelDetectionSettings m_settings;
+  bool m_videoHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_minConfidenceHasBeenSet = false;
+  bool m_notificationChannelHasBeenSet = false;
+  bool m_jobTagHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

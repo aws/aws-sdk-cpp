@@ -139,21 +139,21 @@ class ProvisionedProductPlanSummary {
   ///@}
  private:
   Aws::String m_planName;
-  bool m_planNameHasBeenSet = false;
 
   Aws::String m_planId;
-  bool m_planIdHasBeenSet = false;
 
   Aws::String m_provisionProductId;
-  bool m_provisionProductIdHasBeenSet = false;
 
   Aws::String m_provisionProductName;
-  bool m_provisionProductNameHasBeenSet = false;
 
   ProvisionedProductPlanType m_planType{ProvisionedProductPlanType::NOT_SET};
-  bool m_planTypeHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
+  bool m_planNameHasBeenSet = false;
+  bool m_planIdHasBeenSet = false;
+  bool m_provisionProductIdHasBeenSet = false;
+  bool m_provisionProductNameHasBeenSet = false;
+  bool m_planTypeHasBeenSet = false;
   bool m_provisioningArtifactIdHasBeenSet = false;
 };
 

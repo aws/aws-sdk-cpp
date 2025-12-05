@@ -109,15 +109,15 @@ class ProfileTemplate {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::Vector<ProfileTemplateQuestion> m_templateQuestions;
-  bool m_templateQuestionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateQuestionsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

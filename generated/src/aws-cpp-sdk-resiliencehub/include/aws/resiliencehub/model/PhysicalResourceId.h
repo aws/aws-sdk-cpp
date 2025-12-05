@@ -131,15 +131,15 @@ class PhysicalResourceId {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   PhysicalIdentifierType m_type{PhysicalIdentifierType::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

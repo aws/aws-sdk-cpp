@@ -70,9 +70,9 @@ class PutDataLakeSettingsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   DataLakeSettings m_dataLakeSettings;
+  bool m_catalogIdHasBeenSet = false;
   bool m_dataLakeSettingsHasBeenSet = false;
 };
 

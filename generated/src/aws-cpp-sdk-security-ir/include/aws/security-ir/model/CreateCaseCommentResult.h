@@ -59,9 +59,9 @@ class CreateCaseCommentResult {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

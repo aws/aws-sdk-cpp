@@ -159,24 +159,24 @@ class StartDICOMImportJobRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_inputS3Uri;
-  bool m_inputS3UriHasBeenSet = false;
 
   Aws::String m_outputS3Uri;
-  bool m_outputS3UriHasBeenSet = false;
 
   Aws::String m_inputOwnerAccountId;
+  bool m_jobNameHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_inputS3UriHasBeenSet = false;
+  bool m_outputS3UriHasBeenSet = false;
   bool m_inputOwnerAccountIdHasBeenSet = false;
 };
 

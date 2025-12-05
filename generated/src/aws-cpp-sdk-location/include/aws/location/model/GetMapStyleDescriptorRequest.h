@@ -72,9 +72,9 @@ class GetMapStyleDescriptorRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_mapNameHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

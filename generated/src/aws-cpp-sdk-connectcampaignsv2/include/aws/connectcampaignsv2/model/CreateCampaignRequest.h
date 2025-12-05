@@ -203,33 +203,33 @@ class CreateCampaignRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   ChannelSubtypeConfig m_channelSubtypeConfig;
-  bool m_channelSubtypeConfigHasBeenSet = false;
 
   ExternalCampaignType m_type{ExternalCampaignType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_connectCampaignFlowArn;
-  bool m_connectCampaignFlowArnHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   CommunicationTimeConfig m_communicationTimeConfig;
-  bool m_communicationTimeConfigHasBeenSet = false;
 
   CommunicationLimitsConfig m_communicationLimitsOverride;
-  bool m_communicationLimitsOverrideHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_connectInstanceIdHasBeenSet = false;
+  bool m_channelSubtypeConfigHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_connectCampaignFlowArnHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_communicationTimeConfigHasBeenSet = false;
+  bool m_communicationLimitsOverrideHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

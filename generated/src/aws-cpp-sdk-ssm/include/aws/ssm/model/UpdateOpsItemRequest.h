@@ -383,51 +383,51 @@ class UpdateOpsItemRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
-  bool m_operationalDataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operationalDataToDelete;
-  bool m_operationalDataToDeleteHasBeenSet = false;
 
   Aws::Vector<OpsItemNotification> m_notifications;
-  bool m_notificationsHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Vector<RelatedOpsItem> m_relatedOpsItems;
-  bool m_relatedOpsItemsHasBeenSet = false;
 
   OpsItemStatus m_status{OpsItemStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_opsItemId;
-  bool m_opsItemIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::Utils::DateTime m_actualStartTime{};
-  bool m_actualStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_actualEndTime{};
-  bool m_actualEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_plannedStartTime{};
-  bool m_plannedStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_plannedEndTime{};
-  bool m_plannedEndTimeHasBeenSet = false;
 
   Aws::String m_opsItemArn;
+  bool m_descriptionHasBeenSet = false;
+  bool m_operationalDataHasBeenSet = false;
+  bool m_operationalDataToDeleteHasBeenSet = false;
+  bool m_notificationsHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_relatedOpsItemsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_opsItemIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_actualStartTimeHasBeenSet = false;
+  bool m_actualEndTimeHasBeenSet = false;
+  bool m_plannedStartTimeHasBeenSet = false;
+  bool m_plannedEndTimeHasBeenSet = false;
   bool m_opsItemArnHasBeenSet = false;
 };
 

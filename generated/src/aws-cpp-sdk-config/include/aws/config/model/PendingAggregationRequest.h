@@ -70,9 +70,9 @@ class PendingAggregationRequest {
   ///@}
  private:
   Aws::String m_requesterAccountId;
-  bool m_requesterAccountIdHasBeenSet = false;
 
   Aws::String m_requesterAwsRegion;
+  bool m_requesterAccountIdHasBeenSet = false;
   bool m_requesterAwsRegionHasBeenSet = false;
 };
 

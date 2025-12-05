@@ -99,12 +99,12 @@ class ListGroupPoliciesRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_groupNameHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

@@ -244,39 +244,39 @@ class GetAttachedFileResult {
   ///@}
  private:
   Aws::String m_fileArn;
-  bool m_fileArnHasBeenSet = false;
 
   Aws::String m_fileId;
-  bool m_fileIdHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   FileStatusType m_fileStatus{FileStatusType::NOT_SET};
-  bool m_fileStatusHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   long long m_fileSizeInBytes{0};
-  bool m_fileSizeInBytesHasBeenSet = false;
 
   Aws::String m_associatedResourceArn;
-  bool m_associatedResourceArnHasBeenSet = false;
 
   FileUseCaseType m_fileUseCaseType{FileUseCaseType::NOT_SET};
-  bool m_fileUseCaseTypeHasBeenSet = false;
 
   CreatedByInfo m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   DownloadUrlMetadata m_downloadUrlMetadata;
-  bool m_downloadUrlMetadataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileArnHasBeenSet = false;
+  bool m_fileIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_fileStatusHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_fileSizeInBytesHasBeenSet = false;
+  bool m_associatedResourceArnHasBeenSet = false;
+  bool m_fileUseCaseTypeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_downloadUrlMetadataHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

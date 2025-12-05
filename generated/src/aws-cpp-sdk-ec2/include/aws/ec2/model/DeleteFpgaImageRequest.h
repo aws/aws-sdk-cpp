@@ -70,9 +70,9 @@ class DeleteFpgaImageRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_fpgaImageId;
+  bool m_dryRunHasBeenSet = false;
   bool m_fpgaImageIdHasBeenSet = false;
 };
 

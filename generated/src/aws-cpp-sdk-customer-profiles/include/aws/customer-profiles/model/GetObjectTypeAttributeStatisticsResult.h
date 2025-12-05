@@ -79,12 +79,12 @@ class GetObjectTypeAttributeStatisticsResult {
   ///@}
  private:
   GetObjectTypeAttributeStatisticsStats m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::Utils::DateTime m_calculatedAt{};
-  bool m_calculatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statisticsHasBeenSet = false;
+  bool m_calculatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

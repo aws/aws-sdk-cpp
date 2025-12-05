@@ -73,9 +73,9 @@ class PredictorEvent {
   ///@}
  private:
   Aws::String m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::Utils::DateTime m_datetime{};
+  bool m_detailHasBeenSet = false;
   bool m_datetimeHasBeenSet = false;
 };
 

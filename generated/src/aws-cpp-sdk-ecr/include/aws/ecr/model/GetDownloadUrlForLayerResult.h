@@ -76,12 +76,12 @@ class GetDownloadUrlForLayerResult {
   ///@}
  private:
   Aws::String m_downloadUrl;
-  bool m_downloadUrlHasBeenSet = false;
 
   Aws::String m_layerDigest;
-  bool m_layerDigestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_downloadUrlHasBeenSet = false;
+  bool m_layerDigestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class DisplayOrder {
   ///@}
  private:
   Aws::Vector<Section> m_contents;
-  bool m_contentsHasBeenSet = false;
 
   Aws::String m_overviewPageArn;
-  bool m_overviewPageArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_productPageArns;
+  bool m_contentsHasBeenSet = false;
+  bool m_overviewPageArnHasBeenSet = false;
   bool m_productPageArnsHasBeenSet = false;
 };
 

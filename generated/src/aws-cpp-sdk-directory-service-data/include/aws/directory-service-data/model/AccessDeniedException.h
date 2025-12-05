@@ -70,9 +70,9 @@ class AccessDeniedException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   AccessDeniedReason m_reason{AccessDeniedReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class GetCompatibleKafkaVersionsResult {
   ///@}
  private:
   Aws::Vector<CompatibleKafkaVersion> m_compatibleKafkaVersions;
-  bool m_compatibleKafkaVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compatibleKafkaVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

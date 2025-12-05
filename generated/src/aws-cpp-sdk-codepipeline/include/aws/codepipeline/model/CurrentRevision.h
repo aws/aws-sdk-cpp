@@ -107,15 +107,15 @@ class CurrentRevision {
   ///@}
  private:
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_changeIdentifier;
-  bool m_changeIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_revisionSummary;
+  bool m_revisionHasBeenSet = false;
+  bool m_changeIdentifierHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
   bool m_revisionSummaryHasBeenSet = false;
 };
 

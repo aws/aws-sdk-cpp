@@ -237,39 +237,39 @@ class StartSnapshotResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   int m_blockSize{0};
-  bool m_blockSizeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_parentSnapshotId;
-  bool m_parentSnapshotIdHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   SSEType m_sseType{SSEType::NOT_SET};
-  bool m_sseTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_blockSizeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_parentSnapshotIdHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_sseTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class AdditionalResources {
   ///@}
  private:
   AdditionalResourceType m_type{AdditionalResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<ChoiceContent> m_content;
+  bool m_typeHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

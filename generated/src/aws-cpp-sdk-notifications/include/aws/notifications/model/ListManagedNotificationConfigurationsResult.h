@@ -89,12 +89,12 @@ class ListManagedNotificationConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ManagedNotificationConfigurationStructure> m_managedNotificationConfigurations;
-  bool m_managedNotificationConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_managedNotificationConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

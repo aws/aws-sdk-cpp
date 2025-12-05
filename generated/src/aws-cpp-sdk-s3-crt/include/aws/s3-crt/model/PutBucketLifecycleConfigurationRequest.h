@@ -183,21 +183,21 @@ class PutBucketLifecycleConfigurationRequest : public S3CrtRequest {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   BucketLifecycleConfiguration m_lifecycleConfiguration;
-  bool m_lifecycleConfigurationHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   TransitionDefaultMinimumObjectSize m_transitionDefaultMinimumObjectSize{TransitionDefaultMinimumObjectSize::NOT_SET};
-  bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

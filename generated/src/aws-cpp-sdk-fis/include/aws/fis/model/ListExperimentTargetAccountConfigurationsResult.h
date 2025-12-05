@@ -88,12 +88,12 @@ class ListExperimentTargetAccountConfigurationsResult {
   ///@}
  private:
   Aws::Vector<ExperimentTargetAccountConfigurationSummary> m_targetAccountConfigurations;
-  bool m_targetAccountConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetAccountConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

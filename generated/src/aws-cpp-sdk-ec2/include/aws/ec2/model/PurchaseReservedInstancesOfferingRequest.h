@@ -131,18 +131,18 @@ class PurchaseReservedInstancesOfferingRequest : public EC2Request {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_reservedInstancesOfferingId;
-  bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_purchaseTime{};
-  bool m_purchaseTimeHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   ReservedInstanceLimitPrice m_limitPrice;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_reservedInstancesOfferingIdHasBeenSet = false;
+  bool m_purchaseTimeHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_limitPriceHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteSnapshotResult {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class CreateEmailIdentityPolicyRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_emailIdentityHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

@@ -358,54 +358,54 @@ class Membership {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_collaborationArn;
-  bool m_collaborationArnHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_collaborationCreatorAccountId;
-  bool m_collaborationCreatorAccountIdHasBeenSet = false;
 
   Aws::String m_collaborationCreatorDisplayName;
-  bool m_collaborationCreatorDisplayNameHasBeenSet = false;
 
   Aws::String m_collaborationName;
-  bool m_collaborationNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   MembershipStatus m_status{MembershipStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<MemberAbility> m_memberAbilities;
-  bool m_memberAbilitiesHasBeenSet = false;
 
   MLMemberAbilities m_mlMemberAbilities;
-  bool m_mlMemberAbilitiesHasBeenSet = false;
 
   MembershipQueryLogStatus m_queryLogStatus{MembershipQueryLogStatus::NOT_SET};
-  bool m_queryLogStatusHasBeenSet = false;
 
   MembershipJobLogStatus m_jobLogStatus{MembershipJobLogStatus::NOT_SET};
-  bool m_jobLogStatusHasBeenSet = false;
 
   MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
-  bool m_defaultResultConfigurationHasBeenSet = false;
 
   MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
-  bool m_defaultJobResultConfigurationHasBeenSet = false;
 
   MembershipPaymentConfiguration m_paymentConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_collaborationArnHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_collaborationCreatorAccountIdHasBeenSet = false;
+  bool m_collaborationCreatorDisplayNameHasBeenSet = false;
+  bool m_collaborationNameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_memberAbilitiesHasBeenSet = false;
+  bool m_mlMemberAbilitiesHasBeenSet = false;
+  bool m_queryLogStatusHasBeenSet = false;
+  bool m_jobLogStatusHasBeenSet = false;
+  bool m_defaultResultConfigurationHasBeenSet = false;
+  bool m_defaultJobResultConfigurationHasBeenSet = false;
   bool m_paymentConfigurationHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class RecoveryLifeCycle {
   ///@}
  private:
   Aws::Utils::DateTime m_apiCallDateTime{};
-  bool m_apiCallDateTimeHasBeenSet = false;
 
   Aws::String m_jobID;
-  bool m_jobIDHasBeenSet = false;
 
   RecoveryResult m_lastRecoveryResult{RecoveryResult::NOT_SET};
+  bool m_apiCallDateTimeHasBeenSet = false;
+  bool m_jobIDHasBeenSet = false;
   bool m_lastRecoveryResultHasBeenSet = false;
 };
 

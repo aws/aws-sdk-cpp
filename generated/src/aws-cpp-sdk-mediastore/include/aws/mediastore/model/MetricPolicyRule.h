@@ -75,9 +75,9 @@ class MetricPolicyRule {
   ///@}
  private:
   Aws::String m_objectGroup;
-  bool m_objectGroupHasBeenSet = false;
 
   Aws::String m_objectGroupName;
+  bool m_objectGroupHasBeenSet = false;
   bool m_objectGroupNameHasBeenSet = false;
 };
 

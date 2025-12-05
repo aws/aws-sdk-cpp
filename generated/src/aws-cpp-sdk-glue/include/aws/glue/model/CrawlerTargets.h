@@ -232,27 +232,27 @@ class CrawlerTargets {
   ///@}
  private:
   Aws::Vector<S3Target> m_s3Targets;
-  bool m_s3TargetsHasBeenSet = false;
 
   Aws::Vector<JdbcTarget> m_jdbcTargets;
-  bool m_jdbcTargetsHasBeenSet = false;
 
   Aws::Vector<MongoDBTarget> m_mongoDBTargets;
-  bool m_mongoDBTargetsHasBeenSet = false;
 
   Aws::Vector<DynamoDBTarget> m_dynamoDBTargets;
-  bool m_dynamoDBTargetsHasBeenSet = false;
 
   Aws::Vector<CatalogTarget> m_catalogTargets;
-  bool m_catalogTargetsHasBeenSet = false;
 
   Aws::Vector<DeltaTarget> m_deltaTargets;
-  bool m_deltaTargetsHasBeenSet = false;
 
   Aws::Vector<IcebergTarget> m_icebergTargets;
-  bool m_icebergTargetsHasBeenSet = false;
 
   Aws::Vector<HudiTarget> m_hudiTargets;
+  bool m_s3TargetsHasBeenSet = false;
+  bool m_jdbcTargetsHasBeenSet = false;
+  bool m_mongoDBTargetsHasBeenSet = false;
+  bool m_dynamoDBTargetsHasBeenSet = false;
+  bool m_catalogTargetsHasBeenSet = false;
+  bool m_deltaTargetsHasBeenSet = false;
+  bool m_icebergTargetsHasBeenSet = false;
   bool m_hudiTargetsHasBeenSet = false;
 };
 

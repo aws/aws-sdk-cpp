@@ -91,12 +91,12 @@ class DescribeNetworkInterfaceAttributeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   NetworkInterfaceAttribute m_attribute{NetworkInterfaceAttribute::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
   bool m_attributeHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateVpcPeeringAuthorizationResult {
   ///@}
  private:
   VpcPeeringAuthorization m_vpcPeeringAuthorization;
-  bool m_vpcPeeringAuthorizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcPeeringAuthorizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

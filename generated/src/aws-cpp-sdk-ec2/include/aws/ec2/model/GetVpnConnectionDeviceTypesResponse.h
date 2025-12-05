@@ -90,12 +90,12 @@ class GetVpnConnectionDeviceTypesResponse {
   ///@}
  private:
   Aws::Vector<VpnConnectionDeviceType> m_vpnConnectionDeviceTypes;
-  bool m_vpnConnectionDeviceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnConnectionDeviceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

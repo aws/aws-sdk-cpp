@@ -122,18 +122,18 @@ class ScheduleGroupSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationDate{};
-  bool m_lastModificationDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScheduleGroupState m_state{ScheduleGroupState::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModificationDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class RowFilter {
   ///@}
  private:
   Aws::String m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   AllRowsWildcard m_allRowsWildcard;
+  bool m_filterExpressionHasBeenSet = false;
   bool m_allRowsWildcardHasBeenSet = false;
 };
 

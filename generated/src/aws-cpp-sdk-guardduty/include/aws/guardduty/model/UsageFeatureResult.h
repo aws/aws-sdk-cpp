@@ -66,9 +66,9 @@ class UsageFeatureResult {
   ///@}
  private:
   UsageFeature m_feature{UsageFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   Total m_total;
+  bool m_featureHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

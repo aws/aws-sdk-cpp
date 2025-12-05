@@ -125,15 +125,15 @@ class SectionBasedLayoutConfiguration {
   ///@}
  private:
   Aws::Vector<HeaderFooterSectionConfiguration> m_headerSections;
-  bool m_headerSectionsHasBeenSet = false;
 
   Aws::Vector<BodySectionConfiguration> m_bodySections;
-  bool m_bodySectionsHasBeenSet = false;
 
   Aws::Vector<HeaderFooterSectionConfiguration> m_footerSections;
-  bool m_footerSectionsHasBeenSet = false;
 
   SectionBasedLayoutCanvasSizeOptions m_canvasSizeOptions;
+  bool m_headerSectionsHasBeenSet = false;
+  bool m_bodySectionsHasBeenSet = false;
+  bool m_footerSectionsHasBeenSet = false;
   bool m_canvasSizeOptionsHasBeenSet = false;
 };
 

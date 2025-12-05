@@ -86,12 +86,12 @@ class CurrencyExchangeDetails {
   ///@}
  private:
   Aws::String m_sourceCurrencyCode;
-  bool m_sourceCurrencyCodeHasBeenSet = false;
 
   Aws::String m_targetCurrencyCode;
-  bool m_targetCurrencyCodeHasBeenSet = false;
 
   Aws::String m_rate;
+  bool m_sourceCurrencyCodeHasBeenSet = false;
+  bool m_targetCurrencyCodeHasBeenSet = false;
   bool m_rateHasBeenSet = false;
 };
 

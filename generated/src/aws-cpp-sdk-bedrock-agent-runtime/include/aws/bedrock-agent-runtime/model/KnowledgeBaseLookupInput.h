@@ -69,9 +69,9 @@ class KnowledgeBaseLookupInput {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

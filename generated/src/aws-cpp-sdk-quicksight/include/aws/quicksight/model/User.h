@@ -252,36 +252,36 @@ class User {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   UserRole m_role{UserRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_customPermissionsName;
-  bool m_customPermissionsNameHasBeenSet = false;
 
   Aws::String m_externalLoginFederationProviderType;
-  bool m_externalLoginFederationProviderTypeHasBeenSet = false;
 
   Aws::String m_externalLoginFederationProviderUrl;
-  bool m_externalLoginFederationProviderUrlHasBeenSet = false;
 
   Aws::String m_externalLoginId;
+  bool m_arnHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_customPermissionsNameHasBeenSet = false;
+  bool m_externalLoginFederationProviderTypeHasBeenSet = false;
+  bool m_externalLoginFederationProviderUrlHasBeenSet = false;
   bool m_externalLoginIdHasBeenSet = false;
 };
 

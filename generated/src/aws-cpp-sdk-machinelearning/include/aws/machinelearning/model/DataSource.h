@@ -356,57 +356,57 @@ class DataSource {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_dataLocationS3;
-  bool m_dataLocationS3HasBeenSet = false;
 
   Aws::String m_dataRearrangement;
-  bool m_dataRearrangementHasBeenSet = false;
 
   Aws::String m_createdByIamUser;
-  bool m_createdByIamUserHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   long long m_dataSizeInBytes{0};
-  bool m_dataSizeInBytesHasBeenSet = false;
 
   long long m_numberOfFiles{0};
-  bool m_numberOfFilesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EntityStatus m_status{EntityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   RedshiftMetadata m_redshiftMetadata;
-  bool m_redshiftMetadataHasBeenSet = false;
 
   RDSMetadata m_rDSMetadata;
-  bool m_rDSMetadataHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   bool m_computeStatistics{false};
-  bool m_computeStatisticsHasBeenSet = false;
 
   long long m_computeTime{0};
-  bool m_computeTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedAt{};
-  bool m_finishedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_dataLocationS3HasBeenSet = false;
+  bool m_dataRearrangementHasBeenSet = false;
+  bool m_createdByIamUserHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_dataSizeInBytesHasBeenSet = false;
+  bool m_numberOfFilesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_redshiftMetadataHasBeenSet = false;
+  bool m_rDSMetadataHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_computeStatisticsHasBeenSet = false;
+  bool m_computeTimeHasBeenSet = false;
+  bool m_finishedAtHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
 };
 

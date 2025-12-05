@@ -255,39 +255,39 @@ class PutSessionResult {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::String m_slots;
-  bool m_slotsHasBeenSet = false;
 
   Aws::String m_sessionAttributes;
-  bool m_sessionAttributesHasBeenSet = false;
 
   Aws::String m_encodedMessage;
-  bool m_encodedMessageHasBeenSet = false;
 
   MessageFormatType m_messageFormat{MessageFormatType::NOT_SET};
-  bool m_messageFormatHasBeenSet = false;
 
   DialogState m_dialogState{DialogState::NOT_SET};
-  bool m_dialogStateHasBeenSet = false;
 
   Aws::String m_slotToElicit;
-  bool m_slotToElicitHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_audioStream{};
-  bool m_audioStreamHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_activeContexts;
-  bool m_activeContextsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_intentNameHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_sessionAttributesHasBeenSet = false;
+  bool m_encodedMessageHasBeenSet = false;
+  bool m_messageFormatHasBeenSet = false;
+  bool m_dialogStateHasBeenSet = false;
+  bool m_slotToElicitHasBeenSet = false;
+  bool m_audioStreamHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_activeContextsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

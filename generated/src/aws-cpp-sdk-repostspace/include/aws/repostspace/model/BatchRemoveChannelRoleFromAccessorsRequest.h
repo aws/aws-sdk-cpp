@@ -107,15 +107,15 @@ class BatchRemoveChannelRoleFromAccessorsRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accessorIds;
-  bool m_accessorIdsHasBeenSet = false;
 
   ChannelRole m_channelRole{ChannelRole::NOT_SET};
+  bool m_spaceIdHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
+  bool m_accessorIdsHasBeenSet = false;
   bool m_channelRoleHasBeenSet = false;
 };
 

@@ -254,42 +254,42 @@ class GetMediaAnalysisJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   MediaAnalysisOperationsConfig m_operationsConfig;
-  bool m_operationsConfigHasBeenSet = false;
 
   MediaAnalysisJobStatus m_status{MediaAnalysisJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MediaAnalysisJobFailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTimestamp{};
-  bool m_completionTimestampHasBeenSet = false;
 
   MediaAnalysisInput m_input;
-  bool m_inputHasBeenSet = false;
 
   MediaAnalysisOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   MediaAnalysisResults m_results;
-  bool m_resultsHasBeenSet = false;
 
   MediaAnalysisManifestSummary m_manifestSummary;
-  bool m_manifestSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_operationsConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_completionTimestampHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_resultsHasBeenSet = false;
+  bool m_manifestSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

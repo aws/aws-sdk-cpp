@@ -60,9 +60,9 @@ class AssumeFleetRoleForWorkerResult {
   ///@}
  private:
   AwsCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_credentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

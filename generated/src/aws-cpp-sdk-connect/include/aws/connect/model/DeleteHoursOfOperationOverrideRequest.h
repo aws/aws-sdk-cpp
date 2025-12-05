@@ -83,12 +83,12 @@ class DeleteHoursOfOperationOverrideRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_hoursOfOperationId;
-  bool m_hoursOfOperationIdHasBeenSet = false;
 
   Aws::String m_hoursOfOperationOverrideId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_hoursOfOperationIdHasBeenSet = false;
   bool m_hoursOfOperationOverrideIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class DescribeCacheSecurityGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<CacheSecurityGroup> m_cacheSecurityGroups;
-  bool m_cacheSecurityGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_cacheSecurityGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

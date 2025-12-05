@@ -97,12 +97,12 @@ class KMSServerSideEncryptionIntegration {
   ///@}
  private:
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   OptInStatus m_optInStatus{OptInStatus::NOT_SET};
-  bool m_optInStatusHasBeenSet = false;
 
   ServerSideEncryptionType m_type{ServerSideEncryptionType::NOT_SET};
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_optInStatusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

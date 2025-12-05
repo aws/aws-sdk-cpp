@@ -65,9 +65,9 @@ class DeleteAppResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

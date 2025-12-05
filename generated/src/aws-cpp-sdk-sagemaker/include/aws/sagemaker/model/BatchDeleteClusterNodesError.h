@@ -89,12 +89,12 @@ class BatchDeleteClusterNodesError {
   ///@}
  private:
   BatchDeleteClusterNodesErrorCode m_code{BatchDeleteClusterNodesErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_nodeId;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_nodeIdHasBeenSet = false;
 };
 

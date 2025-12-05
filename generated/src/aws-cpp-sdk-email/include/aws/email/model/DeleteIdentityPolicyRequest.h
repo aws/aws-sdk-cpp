@@ -80,9 +80,9 @@ class DeleteIdentityPolicyRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_identityHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

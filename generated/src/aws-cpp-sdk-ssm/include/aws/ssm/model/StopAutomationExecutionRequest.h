@@ -67,9 +67,9 @@ class StopAutomationExecutionRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_automationExecutionId;
-  bool m_automationExecutionIdHasBeenSet = false;
 
   StopType m_type{StopType::NOT_SET};
+  bool m_automationExecutionIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

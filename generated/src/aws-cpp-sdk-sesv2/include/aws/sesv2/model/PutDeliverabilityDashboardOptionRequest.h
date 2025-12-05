@@ -84,9 +84,9 @@ class PutDeliverabilityDashboardOptionRequest : public SESV2Request {
   ///@}
  private:
   bool m_dashboardEnabled{false};
-  bool m_dashboardEnabledHasBeenSet = false;
 
   Aws::Vector<DomainDeliverabilityTrackingOption> m_subscribedDomains;
+  bool m_dashboardEnabledHasBeenSet = false;
   bool m_subscribedDomainsHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class DeleteFileSystemLustreConfiguration {
   ///@}
  private:
   bool m_skipFinalBackup{false};
-  bool m_skipFinalBackupHasBeenSet = false;
 
   Aws::Vector<Tag> m_finalBackupTags;
+  bool m_skipFinalBackupHasBeenSet = false;
   bool m_finalBackupTagsHasBeenSet = false;
 };
 

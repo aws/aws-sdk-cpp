@@ -206,33 +206,33 @@ class CancelProfileUpdateTaskResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   TaskDetails m_taskDetails;
-  bool m_taskDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   ProfileTaskStatus m_status{ProfileTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errorDetailList;
-  bool m_errorDetailListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskDetailsHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_errorDetailListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

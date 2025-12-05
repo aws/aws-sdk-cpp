@@ -155,21 +155,21 @@ class PutAlternateContactRequest : public AccountRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
-  bool m_alternateContactTypeHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_accountIdHasBeenSet = false;
+  bool m_alternateContactTypeHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

@@ -144,18 +144,18 @@ class CellOutput {
   ///@}
  private:
   Aws::String m_cellArn;
-  bool m_cellArnHasBeenSet = false;
 
   Aws::String m_cellName;
-  bool m_cellNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cells;
-  bool m_cellsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parentReadinessScopes;
-  bool m_parentReadinessScopesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_cellArnHasBeenSet = false;
+  bool m_cellNameHasBeenSet = false;
+  bool m_cellsHasBeenSet = false;
+  bool m_parentReadinessScopesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

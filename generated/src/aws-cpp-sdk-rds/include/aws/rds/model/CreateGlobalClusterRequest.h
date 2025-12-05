@@ -237,30 +237,30 @@ class CreateGlobalClusterRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::String m_sourceDBClusterIdentifier;
-  bool m_sourceDBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_engineLifecycleSupport;
-  bool m_engineLifecycleSupportHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_globalClusterIdentifierHasBeenSet = false;
+  bool m_sourceDBClusterIdentifierHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

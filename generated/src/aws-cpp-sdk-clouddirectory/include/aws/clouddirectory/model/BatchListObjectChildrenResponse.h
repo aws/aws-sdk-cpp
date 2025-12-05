@@ -77,9 +77,9 @@ class BatchListObjectChildrenResponse {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_children;
-  bool m_childrenHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_childrenHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class OrganizationStatistics {
   ///@}
  private:
   int m_totalAccountsCount{0};
-  bool m_totalAccountsCountHasBeenSet = false;
 
   int m_memberAccountsCount{0};
-  bool m_memberAccountsCountHasBeenSet = false;
 
   int m_activeAccountsCount{0};
-  bool m_activeAccountsCountHasBeenSet = false;
 
   int m_enabledAccountsCount{0};
-  bool m_enabledAccountsCountHasBeenSet = false;
 
   Aws::Vector<OrganizationFeatureStatistics> m_countByFeature;
+  bool m_totalAccountsCountHasBeenSet = false;
+  bool m_memberAccountsCountHasBeenSet = false;
+  bool m_activeAccountsCountHasBeenSet = false;
+  bool m_enabledAccountsCountHasBeenSet = false;
   bool m_countByFeatureHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class TestTransformerResult {
   ///@}
  private:
   Aws::Vector<TransformedLogRecord> m_transformedLogs;
-  bool m_transformedLogsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformedLogsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

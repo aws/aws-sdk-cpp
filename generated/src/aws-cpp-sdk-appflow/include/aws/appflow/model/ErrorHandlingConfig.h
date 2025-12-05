@@ -89,12 +89,12 @@ class ErrorHandlingConfig {
   ///@}
  private:
   bool m_failOnFirstDestinationError{false};
-  bool m_failOnFirstDestinationErrorHasBeenSet = false;
 
   Aws::String m_bucketPrefix;
-  bool m_bucketPrefixHasBeenSet = false;
 
   Aws::String m_bucketName;
+  bool m_failOnFirstDestinationErrorHasBeenSet = false;
+  bool m_bucketPrefixHasBeenSet = false;
   bool m_bucketNameHasBeenSet = false;
 };
 

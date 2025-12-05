@@ -86,12 +86,12 @@ class BatchUpdateBillScenarioUsageModificationError {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   BatchUpdateBillScenarioUsageModificationErrorCode m_errorCode{BatchUpdateBillScenarioUsageModificationErrorCode::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

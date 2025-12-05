@@ -77,12 +77,12 @@ class CreateIntegrationWorkflowResult {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

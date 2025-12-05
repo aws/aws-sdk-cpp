@@ -147,24 +147,24 @@ class StartDeviceAuthorizationResult {
   ///@}
  private:
   Aws::String m_deviceCode;
-  bool m_deviceCodeHasBeenSet = false;
 
   Aws::String m_userCode;
-  bool m_userCodeHasBeenSet = false;
 
   Aws::String m_verificationUri;
-  bool m_verificationUriHasBeenSet = false;
 
   Aws::String m_verificationUriComplete;
-  bool m_verificationUriCompleteHasBeenSet = false;
 
   int m_expiresIn{0};
-  bool m_expiresInHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceCodeHasBeenSet = false;
+  bool m_userCodeHasBeenSet = false;
+  bool m_verificationUriHasBeenSet = false;
+  bool m_verificationUriCompleteHasBeenSet = false;
+  bool m_expiresInHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

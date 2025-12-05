@@ -172,24 +172,24 @@ class RedisSettings {
   ///@}
  private:
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   SslSecurityProtocolValue m_sslSecurityProtocol{SslSecurityProtocolValue::NOT_SET};
-  bool m_sslSecurityProtocolHasBeenSet = false;
 
   RedisAuthTypeValue m_authType{RedisAuthTypeValue::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_authUserName;
-  bool m_authUserNameHasBeenSet = false;
 
   Aws::String m_authPassword;
-  bool m_authPasswordHasBeenSet = false;
 
   Aws::String m_sslCaCertificateArn;
+  bool m_serverNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_sslSecurityProtocolHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_authUserNameHasBeenSet = false;
+  bool m_authPasswordHasBeenSet = false;
   bool m_sslCaCertificateArnHasBeenSet = false;
 };
 

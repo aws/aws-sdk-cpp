@@ -152,21 +152,21 @@ class StartSearchJobRequest : public BackupSearchRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   SearchScope m_searchScope;
-  bool m_searchScopeHasBeenSet = false;
 
   ItemFilters m_itemFilters;
+  bool m_tagsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_searchScopeHasBeenSet = false;
   bool m_itemFiltersHasBeenSet = false;
 };
 

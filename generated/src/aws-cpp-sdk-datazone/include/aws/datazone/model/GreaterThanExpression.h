@@ -69,9 +69,9 @@ class GreaterThanExpression {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_columnNameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

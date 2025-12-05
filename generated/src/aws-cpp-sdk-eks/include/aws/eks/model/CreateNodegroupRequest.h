@@ -495,60 +495,60 @@ class CreateNodegroupRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_nodegroupName;
-  bool m_nodegroupNameHasBeenSet = false;
 
   NodegroupScalingConfig m_scalingConfig;
-  bool m_scalingConfigHasBeenSet = false;
 
   int m_diskSize{0};
-  bool m_diskSizeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   AMITypes m_amiType{AMITypes::NOT_SET};
-  bool m_amiTypeHasBeenSet = false;
 
   RemoteAccessConfig m_remoteAccess;
-  bool m_remoteAccessHasBeenSet = false;
 
   Aws::String m_nodeRole;
-  bool m_nodeRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::Vector<Taint> m_taints;
-  bool m_taintsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   NodegroupUpdateConfig m_updateConfig;
-  bool m_updateConfigHasBeenSet = false;
 
   NodeRepairConfig m_nodeRepairConfig;
-  bool m_nodeRepairConfigHasBeenSet = false;
 
   CapacityTypes m_capacityType{CapacityTypes::NOT_SET};
-  bool m_capacityTypeHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_releaseVersion;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_nodegroupNameHasBeenSet = false;
+  bool m_scalingConfigHasBeenSet = false;
+  bool m_diskSizeHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_amiTypeHasBeenSet = false;
+  bool m_remoteAccessHasBeenSet = false;
+  bool m_nodeRoleHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_taintsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_updateConfigHasBeenSet = false;
+  bool m_nodeRepairConfigHasBeenSet = false;
+  bool m_capacityTypeHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_releaseVersionHasBeenSet = false;
 };
 

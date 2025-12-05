@@ -200,27 +200,27 @@ class ProposalSummary {
   ///@}
  private:
   Aws::String m_proposalId;
-  bool m_proposalIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_proposedByMemberId;
-  bool m_proposedByMemberIdHasBeenSet = false;
 
   Aws::String m_proposedByMemberName;
-  bool m_proposedByMemberNameHasBeenSet = false;
 
   ProposalStatus m_status{ProposalStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_proposalIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_proposedByMemberIdHasBeenSet = false;
+  bool m_proposedByMemberNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class ModifyEndpointAccessRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+  bool m_endpointNameHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
 };
 

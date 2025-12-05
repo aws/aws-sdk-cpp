@@ -131,18 +131,18 @@ class StatusSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   StatusType m_statusType{StatusType::NOT_SET};
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_statusTypeHasBeenSet = false;
 };
 

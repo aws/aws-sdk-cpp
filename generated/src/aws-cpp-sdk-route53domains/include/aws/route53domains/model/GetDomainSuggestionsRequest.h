@@ -101,12 +101,12 @@ class GetDomainSuggestionsRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_suggestionCount{0};
-  bool m_suggestionCountHasBeenSet = false;
 
   bool m_onlyAvailable{false};
+  bool m_domainNameHasBeenSet = false;
+  bool m_suggestionCountHasBeenSet = false;
   bool m_onlyAvailableHasBeenSet = false;
 };
 

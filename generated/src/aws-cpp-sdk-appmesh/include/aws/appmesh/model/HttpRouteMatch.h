@@ -177,24 +177,24 @@ class HttpRouteMatch {
   ///@}
  private:
   Aws::Vector<HttpRouteHeader> m_headers;
-  bool m_headersHasBeenSet = false;
 
   HttpMethod m_method{HttpMethod::NOT_SET};
-  bool m_methodHasBeenSet = false;
 
   HttpPathMatch m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::Vector<HttpQueryParameter> m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   HttpScheme m_scheme{HttpScheme::NOT_SET};
+  bool m_headersHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_queryParametersHasBeenSet = false;
   bool m_schemeHasBeenSet = false;
 };
 

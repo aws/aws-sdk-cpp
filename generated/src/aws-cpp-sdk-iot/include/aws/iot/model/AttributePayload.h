@@ -79,9 +79,9 @@ class AttributePayload {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   bool m_merge{false};
+  bool m_attributesHasBeenSet = false;
   bool m_mergeHasBeenSet = false;
 };
 

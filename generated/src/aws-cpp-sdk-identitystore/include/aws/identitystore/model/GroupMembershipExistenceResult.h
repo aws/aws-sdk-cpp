@@ -88,12 +88,12 @@ class GroupMembershipExistenceResult {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   MemberId m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   bool m_membershipExists{false};
+  bool m_groupIdHasBeenSet = false;
+  bool m_memberIdHasBeenSet = false;
   bool m_membershipExistsHasBeenSet = false;
 };
 

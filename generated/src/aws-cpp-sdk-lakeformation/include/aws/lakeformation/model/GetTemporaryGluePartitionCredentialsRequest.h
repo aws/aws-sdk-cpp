@@ -154,21 +154,21 @@ class GetTemporaryGluePartitionCredentialsRequest : public LakeFormationRequest 
   ///@}
  private:
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   PartitionValueList m_partition;
-  bool m_partitionHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   AuditContext m_auditContext;
-  bool m_auditContextHasBeenSet = false;
 
   Aws::Vector<PermissionType> m_supportedPermissionTypes;
+  bool m_tableArnHasBeenSet = false;
+  bool m_partitionHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
   bool m_supportedPermissionTypesHasBeenSet = false;
 };
 

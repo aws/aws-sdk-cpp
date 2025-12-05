@@ -68,9 +68,9 @@ class StringFilter {
   ///@}
  private:
   StringComparison m_comparison{StringComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_comparisonHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

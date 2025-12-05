@@ -117,18 +117,18 @@ class RouteFerryTravelStep {
   ///@}
  private:
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_geometryOffset{0};
-  bool m_geometryOffsetHasBeenSet = false;
 
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   RouteFerryTravelStepType m_type{RouteFerryTravelStepType::NOT_SET};
+  bool m_distanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_geometryOffsetHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

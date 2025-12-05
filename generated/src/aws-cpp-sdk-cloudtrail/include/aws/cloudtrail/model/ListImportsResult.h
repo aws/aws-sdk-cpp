@@ -84,12 +84,12 @@ class ListImportsResult {
   ///@}
  private:
   Aws::Vector<ImportsListItem> m_imports;
-  bool m_importsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

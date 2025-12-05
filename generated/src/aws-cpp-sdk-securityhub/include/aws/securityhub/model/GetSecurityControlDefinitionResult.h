@@ -58,9 +58,9 @@ class GetSecurityControlDefinitionResult {
   ///@}
  private:
   SecurityControlDefinition m_securityControlDefinition;
-  bool m_securityControlDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityControlDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

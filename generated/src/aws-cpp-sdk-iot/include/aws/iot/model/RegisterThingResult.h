@@ -83,12 +83,12 @@ class RegisterThingResult {
   ///@}
  private:
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificatePemHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

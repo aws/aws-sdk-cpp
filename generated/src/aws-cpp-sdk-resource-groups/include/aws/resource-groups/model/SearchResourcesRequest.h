@@ -95,12 +95,12 @@ class SearchResourcesRequest : public ResourceGroupsRequest {
   ///@}
  private:
   ResourceQuery m_resourceQuery;
-  bool m_resourceQueryHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceQueryHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

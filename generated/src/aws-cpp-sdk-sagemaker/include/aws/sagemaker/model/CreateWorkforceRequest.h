@@ -176,24 +176,24 @@ class CreateWorkforceRequest : public SageMakerRequest {
   ///@}
  private:
   CognitoConfig m_cognitoConfig;
-  bool m_cognitoConfigHasBeenSet = false;
 
   OidcConfig m_oidcConfig;
-  bool m_oidcConfigHasBeenSet = false;
 
   SourceIpConfig m_sourceIpConfig;
-  bool m_sourceIpConfigHasBeenSet = false;
 
   Aws::String m_workforceName;
-  bool m_workforceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   WorkforceVpcConfigRequest m_workforceVpcConfig;
-  bool m_workforceVpcConfigHasBeenSet = false;
 
   WorkforceIpAddressType m_ipAddressType{WorkforceIpAddressType::NOT_SET};
+  bool m_cognitoConfigHasBeenSet = false;
+  bool m_oidcConfigHasBeenSet = false;
+  bool m_sourceIpConfigHasBeenSet = false;
+  bool m_workforceNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_workforceVpcConfigHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

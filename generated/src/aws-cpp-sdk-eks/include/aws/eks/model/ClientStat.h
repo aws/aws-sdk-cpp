@@ -87,12 +87,12 @@ class ClientStat {
   ///@}
  private:
   Aws::String m_userAgent;
-  bool m_userAgentHasBeenSet = false;
 
   int m_numberOfRequestsLast30Days{0};
-  bool m_numberOfRequestsLast30DaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRequestTime{};
+  bool m_userAgentHasBeenSet = false;
+  bool m_numberOfRequestsLast30DaysHasBeenSet = false;
   bool m_lastRequestTimeHasBeenSet = false;
 };
 

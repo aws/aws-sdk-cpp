@@ -83,9 +83,9 @@ class GeospatialLayerColorField {
   ///@}
  private:
   Aws::Vector<DimensionField> m_colorDimensionsFields;
-  bool m_colorDimensionsFieldsHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_colorValuesFields;
+  bool m_colorDimensionsFieldsHasBeenSet = false;
   bool m_colorValuesFieldsHasBeenSet = false;
 };
 

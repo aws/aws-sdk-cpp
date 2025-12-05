@@ -59,9 +59,9 @@ class CreateJobResult {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class TestSetIntentDiscrepancyItem {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_intentNameHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

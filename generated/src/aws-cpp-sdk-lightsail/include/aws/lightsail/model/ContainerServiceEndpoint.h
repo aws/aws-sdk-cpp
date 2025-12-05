@@ -87,12 +87,12 @@ class ContainerServiceEndpoint {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   int m_containerPort{0};
-  bool m_containerPortHasBeenSet = false;
 
   ContainerServiceHealthCheckConfig m_healthCheck;
+  bool m_containerNameHasBeenSet = false;
+  bool m_containerPortHasBeenSet = false;
   bool m_healthCheckHasBeenSet = false;
 };
 

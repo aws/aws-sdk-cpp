@@ -116,15 +116,15 @@ class InputDecryptionSettings {
   ///@}
  private:
   DecryptionMode m_decryptionMode{DecryptionMode::NOT_SET};
-  bool m_decryptionModeHasBeenSet = false;
 
   Aws::String m_encryptedDecryptionKey;
-  bool m_encryptedDecryptionKeyHasBeenSet = false;
 
   Aws::String m_initializationVector;
-  bool m_initializationVectorHasBeenSet = false;
 
   Aws::String m_kmsKeyRegion;
+  bool m_decryptionModeHasBeenSet = false;
+  bool m_encryptedDecryptionKeyHasBeenSet = false;
+  bool m_initializationVectorHasBeenSet = false;
   bool m_kmsKeyRegionHasBeenSet = false;
 };
 

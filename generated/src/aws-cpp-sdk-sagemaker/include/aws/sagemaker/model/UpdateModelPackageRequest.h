@@ -297,39 +297,39 @@ class UpdateModelPackageRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelPackageArn;
-  bool m_modelPackageArnHasBeenSet = false;
 
   ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
-  bool m_modelApprovalStatusHasBeenSet = false;
 
   ModelPackageRegistrationType m_modelPackageRegistrationType{ModelPackageRegistrationType::NOT_SET};
-  bool m_modelPackageRegistrationTypeHasBeenSet = false;
 
   Aws::String m_approvalDescription;
-  bool m_approvalDescriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-  bool m_customerMetadataPropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customerMetadataPropertiesToRemove;
-  bool m_customerMetadataPropertiesToRemoveHasBeenSet = false;
 
   Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecificationsToAdd;
-  bool m_additionalInferenceSpecificationsToAddHasBeenSet = false;
 
   InferenceSpecification m_inferenceSpecification;
-  bool m_inferenceSpecificationHasBeenSet = false;
 
   Aws::String m_sourceUri;
-  bool m_sourceUriHasBeenSet = false;
 
   ModelPackageModelCard m_modelCard;
-  bool m_modelCardHasBeenSet = false;
 
   ModelLifeCycle m_modelLifeCycle;
-  bool m_modelLifeCycleHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_modelPackageArnHasBeenSet = false;
+  bool m_modelApprovalStatusHasBeenSet = false;
+  bool m_modelPackageRegistrationTypeHasBeenSet = false;
+  bool m_approvalDescriptionHasBeenSet = false;
+  bool m_customerMetadataPropertiesHasBeenSet = false;
+  bool m_customerMetadataPropertiesToRemoveHasBeenSet = false;
+  bool m_additionalInferenceSpecificationsToAddHasBeenSet = false;
+  bool m_inferenceSpecificationHasBeenSet = false;
+  bool m_sourceUriHasBeenSet = false;
+  bool m_modelCardHasBeenSet = false;
+  bool m_modelLifeCycleHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

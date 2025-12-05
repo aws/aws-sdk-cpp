@@ -76,12 +76,12 @@ class UpdateSiteAddressResult {
   ///@}
  private:
   AddressType m_addressType{AddressType::NOT_SET};
-  bool m_addressTypeHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addressTypeHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

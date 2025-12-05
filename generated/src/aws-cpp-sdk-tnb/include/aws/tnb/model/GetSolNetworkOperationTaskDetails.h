@@ -150,21 +150,21 @@ class GetSolNetworkOperationTaskDetails {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_taskContext;
-  bool m_taskContextHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskEndTime{};
-  bool m_taskEndTimeHasBeenSet = false;
 
   ErrorInfo m_taskErrorDetails;
-  bool m_taskErrorDetailsHasBeenSet = false;
 
   Aws::String m_taskName;
-  bool m_taskNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskStartTime{};
-  bool m_taskStartTimeHasBeenSet = false;
 
   TaskStatus m_taskStatus{TaskStatus::NOT_SET};
+  bool m_taskContextHasBeenSet = false;
+  bool m_taskEndTimeHasBeenSet = false;
+  bool m_taskErrorDetailsHasBeenSet = false;
+  bool m_taskNameHasBeenSet = false;
+  bool m_taskStartTimeHasBeenSet = false;
   bool m_taskStatusHasBeenSet = false;
 };
 

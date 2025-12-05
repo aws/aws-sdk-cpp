@@ -237,33 +237,33 @@ class ResolverQueryLogConfig {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ResolverQueryLogConfigStatus m_status{ResolverQueryLogConfigStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-  bool m_shareStatusHasBeenSet = false;
 
   int m_associationCount{0};
-  bool m_associationCountHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_creationTime;
+  bool m_idHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_shareStatusHasBeenSet = false;
+  bool m_associationCountHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ShrinkPolicy {
   ///@}
  private:
   int m_decommissionTimeout{0};
-  bool m_decommissionTimeoutHasBeenSet = false;
 
   InstanceResizePolicy m_instanceResizePolicy;
+  bool m_decommissionTimeoutHasBeenSet = false;
   bool m_instanceResizePolicyHasBeenSet = false;
 };
 

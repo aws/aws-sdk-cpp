@@ -370,51 +370,51 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Reference> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::String m_destinationPhoneNumber;
-  bool m_destinationPhoneNumberHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_sourcePhoneNumber;
-  bool m_sourcePhoneNumberHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
-  bool m_answerMachineDetectionConfigHasBeenSet = false;
 
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   TrafficType m_trafficType{TrafficType::NOT_SET};
-  bool m_trafficTypeHasBeenSet = false;
 
   OutboundStrategy m_outboundStrategy;
-  bool m_outboundStrategyHasBeenSet = false;
 
   int m_ringTimeoutInSeconds{0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_destinationPhoneNumberHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_sourcePhoneNumberHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_answerMachineDetectionConfigHasBeenSet = false;
+  bool m_campaignIdHasBeenSet = false;
+  bool m_trafficTypeHasBeenSet = false;
+  bool m_outboundStrategyHasBeenSet = false;
   bool m_ringTimeoutInSecondsHasBeenSet = false;
 };
 

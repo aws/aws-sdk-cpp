@@ -176,24 +176,24 @@ class CreateSceneRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_sceneId;
-  bool m_sceneIdHasBeenSet = false;
 
   Aws::String m_contentLocation;
-  bool m_contentLocationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sceneMetadata;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_sceneIdHasBeenSet = false;
+  bool m_contentLocationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_sceneMetadataHasBeenSet = false;
 };
 

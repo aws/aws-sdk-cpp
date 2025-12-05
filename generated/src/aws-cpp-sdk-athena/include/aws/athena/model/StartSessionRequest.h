@@ -234,33 +234,33 @@ class StartSessionRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   EngineConfiguration m_engineConfiguration;
-  bool m_engineConfigurationHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
-  bool m_monitoringConfigurationHasBeenSet = false;
 
   Aws::String m_notebookVersion;
-  bool m_notebookVersionHasBeenSet = false;
 
   int m_sessionIdleTimeoutInMinutes{0};
-  bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_copyWorkGroupTags{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_workGroupHasBeenSet = false;
+  bool m_engineConfigurationHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_notebookVersionHasBeenSet = false;
+  bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_copyWorkGroupTagsHasBeenSet = false;
 };
 

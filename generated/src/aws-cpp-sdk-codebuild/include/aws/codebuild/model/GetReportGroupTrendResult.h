@@ -85,12 +85,12 @@ class GetReportGroupTrendResult {
   ///@}
  private:
   ReportGroupTrendStats m_stats;
-  bool m_statsHasBeenSet = false;
 
   Aws::Vector<ReportWithRawData> m_rawData;
-  bool m_rawDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statsHasBeenSet = false;
+  bool m_rawDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

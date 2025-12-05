@@ -58,9 +58,9 @@ class UpdateApplicationSettingsResult {
   ///@}
  private:
   ApplicationSettingsResource m_applicationSettingsResource;
-  bool m_applicationSettingsResourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationSettingsResourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

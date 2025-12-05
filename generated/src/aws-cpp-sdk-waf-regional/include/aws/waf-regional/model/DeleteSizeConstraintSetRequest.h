@@ -69,9 +69,9 @@ class DeleteSizeConstraintSetRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_sizeConstraintSetId;
-  bool m_sizeConstraintSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_sizeConstraintSetIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

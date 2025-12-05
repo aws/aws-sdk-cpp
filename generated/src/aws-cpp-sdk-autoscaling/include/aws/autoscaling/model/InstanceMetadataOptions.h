@@ -102,12 +102,12 @@ class InstanceMetadataOptions {
   ///@}
  private:
   InstanceMetadataHttpTokensState m_httpTokens{InstanceMetadataHttpTokensState::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   InstanceMetadataEndpointState m_httpEndpoint{InstanceMetadataEndpointState::NOT_SET};
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
   bool m_httpEndpointHasBeenSet = false;
 };
 

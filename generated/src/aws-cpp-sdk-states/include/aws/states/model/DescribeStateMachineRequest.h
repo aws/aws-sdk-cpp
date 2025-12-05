@@ -78,9 +78,9 @@ class DescribeStateMachineRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   IncludedData m_includedData{IncludedData::NOT_SET};
+  bool m_stateMachineArnHasBeenSet = false;
   bool m_includedDataHasBeenSet = false;
 };
 

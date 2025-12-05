@@ -143,21 +143,21 @@ class VolumeStatusEvent {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
-  bool m_notBeforeHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_notBeforeHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class AssociateApprovalRuleTemplateWithRepositoryRequest : public CodeCommitRequ
   ///@}
  private:
   Aws::String m_approvalRuleTemplateName;
-  bool m_approvalRuleTemplateNameHasBeenSet = false;
 
   Aws::String m_repositoryName;
+  bool m_approvalRuleTemplateNameHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class VersionDeleteError {
   ///@}
  private:
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_versionNameHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -215,30 +215,30 @@ class UpdateDomainConfigurationRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_domainConfigurationName;
-  bool m_domainConfigurationNameHasBeenSet = false;
 
   AuthorizerConfig m_authorizerConfig;
-  bool m_authorizerConfigHasBeenSet = false;
 
   DomainConfigurationStatus m_domainConfigurationStatus{DomainConfigurationStatus::NOT_SET};
-  bool m_domainConfigurationStatusHasBeenSet = false;
 
   bool m_removeAuthorizerConfig{false};
-  bool m_removeAuthorizerConfigHasBeenSet = false;
 
   TlsConfig m_tlsConfig;
-  bool m_tlsConfigHasBeenSet = false;
 
   ServerCertificateConfig m_serverCertificateConfig;
-  bool m_serverCertificateConfigHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   ApplicationProtocol m_applicationProtocol{ApplicationProtocol::NOT_SET};
-  bool m_applicationProtocolHasBeenSet = false;
 
   ClientCertificateConfig m_clientCertificateConfig;
+  bool m_domainConfigurationNameHasBeenSet = false;
+  bool m_authorizerConfigHasBeenSet = false;
+  bool m_domainConfigurationStatusHasBeenSet = false;
+  bool m_removeAuthorizerConfigHasBeenSet = false;
+  bool m_tlsConfigHasBeenSet = false;
+  bool m_serverCertificateConfigHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_applicationProtocolHasBeenSet = false;
   bool m_clientCertificateConfigHasBeenSet = false;
 };
 

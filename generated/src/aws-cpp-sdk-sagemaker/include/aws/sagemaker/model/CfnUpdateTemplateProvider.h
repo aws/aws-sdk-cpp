@@ -95,12 +95,12 @@ class CfnUpdateTemplateProvider {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateURL;
-  bool m_templateURLHasBeenSet = false;
 
   Aws::Vector<CfnStackUpdateParameter> m_parameters;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateURLHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

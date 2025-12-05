@@ -139,18 +139,18 @@ class UpdateChannelRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   SlateSource m_fillerSlate;
-  bool m_fillerSlateHasBeenSet = false;
 
   Aws::Vector<RequestOutputItem> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   TimeShiftConfiguration m_timeShiftConfiguration;
-  bool m_timeShiftConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_audiences;
+  bool m_channelNameHasBeenSet = false;
+  bool m_fillerSlateHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_timeShiftConfigurationHasBeenSet = false;
   bool m_audiencesHasBeenSet = false;
 };
 

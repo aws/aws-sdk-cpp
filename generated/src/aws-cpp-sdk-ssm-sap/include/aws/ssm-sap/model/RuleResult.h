@@ -129,18 +129,18 @@ class RuleResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleResultStatus m_status{RuleResultStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

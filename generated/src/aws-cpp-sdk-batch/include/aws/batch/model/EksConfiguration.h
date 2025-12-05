@@ -78,9 +78,9 @@ class EksConfiguration {
   ///@}
  private:
   Aws::String m_eksClusterArn;
-  bool m_eksClusterArnHasBeenSet = false;
 
   Aws::String m_kubernetesNamespace;
+  bool m_eksClusterArnHasBeenSet = false;
   bool m_kubernetesNamespaceHasBeenSet = false;
 };
 

@@ -441,63 +441,63 @@ class InstanceNetworkInterface {
   ///@}
  private:
   InstanceNetworkInterfaceAssociation m_association;
-  bool m_associationHasBeenSet = false;
 
   InstanceNetworkInterfaceAttachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<GroupIdentifier> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   Aws::String m_macAddress;
-  bool m_macAddressHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::Vector<InstancePrivateIpAddress> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   bool m_sourceDestCheck{false};
-  bool m_sourceDestCheckHasBeenSet = false;
 
   NetworkInterfaceStatus m_status{NetworkInterfaceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_interfaceType;
-  bool m_interfaceTypeHasBeenSet = false;
 
   Aws::Vector<InstanceIpv4Prefix> m_ipv4Prefixes;
-  bool m_ipv4PrefixesHasBeenSet = false;
 
   Aws::Vector<InstanceIpv6Prefix> m_ipv6Prefixes;
-  bool m_ipv6PrefixesHasBeenSet = false;
 
   ConnectionTrackingSpecificationResponse m_connectionTrackingConfiguration;
-  bool m_connectionTrackingConfigurationHasBeenSet = false;
 
   OperatorResponse m_operator;
+  bool m_associationHasBeenSet = false;
+  bool m_attachmentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_macAddressHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_sourceDestCheckHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_interfaceTypeHasBeenSet = false;
+  bool m_ipv4PrefixesHasBeenSet = false;
+  bool m_ipv6PrefixesHasBeenSet = false;
+  bool m_connectionTrackingConfigurationHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

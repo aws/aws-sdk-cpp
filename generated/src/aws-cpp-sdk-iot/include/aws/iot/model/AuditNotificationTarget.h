@@ -86,12 +86,12 @@ class AuditNotificationTarget {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_targetArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateInputResult {
   ///@}
  private:
   InputConfiguration m_inputConfiguration;
-  bool m_inputConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

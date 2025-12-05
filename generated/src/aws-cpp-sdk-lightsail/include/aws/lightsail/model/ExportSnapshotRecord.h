@@ -180,27 +180,27 @@ class ExportSnapshotRecord {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   RecordState m_state{RecordState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ExportSnapshotRecordSourceInfo m_sourceInfo;
-  bool m_sourceInfoHasBeenSet = false;
 
   DestinationInfo m_destinationInfo;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_sourceInfoHasBeenSet = false;
   bool m_destinationInfoHasBeenSet = false;
 };
 

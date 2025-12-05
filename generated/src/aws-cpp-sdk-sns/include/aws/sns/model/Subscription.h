@@ -125,18 +125,18 @@ class Subscription {
   ///@}
  private:
   Aws::String m_subscriptionArn;
-  bool m_subscriptionArnHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_topicArn;
+  bool m_subscriptionArnHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
   bool m_topicArnHasBeenSet = false;
 };
 

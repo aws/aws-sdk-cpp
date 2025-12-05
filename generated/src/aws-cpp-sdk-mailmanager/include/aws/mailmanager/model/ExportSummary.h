@@ -69,9 +69,9 @@ class ExportSummary {
   ///@}
  private:
   Aws::String m_exportId;
-  bool m_exportIdHasBeenSet = false;
 
   ExportStatus m_status;
+  bool m_exportIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

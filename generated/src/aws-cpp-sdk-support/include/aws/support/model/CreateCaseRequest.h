@@ -228,30 +228,30 @@ class CreateCaseRequest : public SupportRequest {
   ///@}
  private:
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_severityCode;
-  bool m_severityCodeHasBeenSet = false;
 
   Aws::String m_categoryCode;
-  bool m_categoryCodeHasBeenSet = false;
 
   Aws::String m_communicationBody;
-  bool m_communicationBodyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ccEmailAddresses;
-  bool m_ccEmailAddressesHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_issueType;
-  bool m_issueTypeHasBeenSet = false;
 
   Aws::String m_attachmentSetId;
+  bool m_subjectHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_severityCodeHasBeenSet = false;
+  bool m_categoryCodeHasBeenSet = false;
+  bool m_communicationBodyHasBeenSet = false;
+  bool m_ccEmailAddressesHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_issueTypeHasBeenSet = false;
   bool m_attachmentSetIdHasBeenSet = false;
 };
 

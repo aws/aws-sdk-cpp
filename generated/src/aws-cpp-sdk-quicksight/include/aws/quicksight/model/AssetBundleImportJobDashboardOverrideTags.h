@@ -84,9 +84,9 @@ class AssetBundleImportJobDashboardOverrideTags {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dashboardIds;
-  bool m_dashboardIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dashboardIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

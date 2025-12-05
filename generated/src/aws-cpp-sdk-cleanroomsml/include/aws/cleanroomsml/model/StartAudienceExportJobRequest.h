@@ -101,15 +101,15 @@ class StartAudienceExportJobRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_audienceGenerationJobArn;
-  bool m_audienceGenerationJobArnHasBeenSet = false;
 
   AudienceSize m_audienceSize;
-  bool m_audienceSizeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_nameHasBeenSet = false;
+  bool m_audienceGenerationJobArnHasBeenSet = false;
+  bool m_audienceSizeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

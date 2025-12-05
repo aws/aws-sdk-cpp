@@ -122,18 +122,18 @@ class EntityDisplayData {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_identifiedUserName;
-  bool m_identifiedUserNameHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
+  bool m_userNameHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_identifiedUserNameHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
   bool m_lastNameHasBeenSet = false;
 };
 

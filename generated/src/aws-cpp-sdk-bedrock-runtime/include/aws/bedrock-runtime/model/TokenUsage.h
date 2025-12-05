@@ -110,18 +110,18 @@ class TokenUsage {
   ///@}
  private:
   int m_inputTokens{0};
-  bool m_inputTokensHasBeenSet = false;
 
   int m_outputTokens{0};
-  bool m_outputTokensHasBeenSet = false;
 
   int m_totalTokens{0};
-  bool m_totalTokensHasBeenSet = false;
 
   int m_cacheReadInputTokens{0};
-  bool m_cacheReadInputTokensHasBeenSet = false;
 
   int m_cacheWriteInputTokens{0};
+  bool m_inputTokensHasBeenSet = false;
+  bool m_outputTokensHasBeenSet = false;
+  bool m_totalTokensHasBeenSet = false;
+  bool m_cacheReadInputTokensHasBeenSet = false;
   bool m_cacheWriteInputTokensHasBeenSet = false;
 };
 

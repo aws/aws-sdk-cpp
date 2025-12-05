@@ -88,12 +88,12 @@ class CreateReadinessCheckRequest : public Route53RecoveryReadinessRequest {
   ///@}
  private:
   Aws::String m_readinessCheckName;
-  bool m_readinessCheckNameHasBeenSet = false;
 
   Aws::String m_resourceSetName;
-  bool m_resourceSetNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_readinessCheckNameHasBeenSet = false;
+  bool m_resourceSetNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class RouteTableIdentifier {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableArn;
-  bool m_transitGatewayRouteTableArnHasBeenSet = false;
 
   CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
-  bool m_coreNetworkSegmentEdgeHasBeenSet = false;
 
   CoreNetworkNetworkFunctionGroupIdentifier m_coreNetworkNetworkFunctionGroup;
+  bool m_transitGatewayRouteTableArnHasBeenSet = false;
+  bool m_coreNetworkSegmentEdgeHasBeenSet = false;
   bool m_coreNetworkNetworkFunctionGroupHasBeenSet = false;
 };
 

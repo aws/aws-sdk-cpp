@@ -70,9 +70,9 @@ class ActionReviewPayloadFieldAllowedValue {
   ///@}
  private:
   Aws::Utils::Document m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::Document m_displayValue;
+  bool m_valueHasBeenSet = false;
   bool m_displayValueHasBeenSet = false;
 };
 

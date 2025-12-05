@@ -93,12 +93,12 @@ class DescribeNetworkInterfacePermissionsResponse {
   ///@}
  private:
   Aws::Vector<NetworkInterfacePermission> m_networkInterfacePermissions;
-  bool m_networkInterfacePermissionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInterfacePermissionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

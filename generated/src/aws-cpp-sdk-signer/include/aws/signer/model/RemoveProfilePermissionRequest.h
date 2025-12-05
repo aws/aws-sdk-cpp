@@ -90,12 +90,12 @@ class RemoveProfilePermissionRequest : public SignerRequest {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_statementId;
+  bool m_profileNameHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_statementIdHasBeenSet = false;
 };
 

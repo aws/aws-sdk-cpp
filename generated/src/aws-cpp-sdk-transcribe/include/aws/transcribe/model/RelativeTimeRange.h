@@ -113,15 +113,15 @@ class RelativeTimeRange {
   ///@}
  private:
   int m_startPercentage{0};
-  bool m_startPercentageHasBeenSet = false;
 
   int m_endPercentage{0};
-  bool m_endPercentageHasBeenSet = false;
 
   int m_first{0};
-  bool m_firstHasBeenSet = false;
 
   int m_last{0};
+  bool m_startPercentageHasBeenSet = false;
+  bool m_endPercentageHasBeenSet = false;
+  bool m_firstHasBeenSet = false;
   bool m_lastHasBeenSet = false;
 };
 

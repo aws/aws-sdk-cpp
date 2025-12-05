@@ -60,9 +60,9 @@ class CreateBGPPeerResult {
   ///@}
  private:
   VirtualInterface m_virtualInterface;
-  bool m_virtualInterfaceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualInterfaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

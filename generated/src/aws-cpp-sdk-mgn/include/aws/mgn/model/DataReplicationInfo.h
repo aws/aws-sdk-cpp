@@ -167,24 +167,24 @@ class DataReplicationInfo {
   ///@}
  private:
   DataReplicationError m_dataReplicationError;
-  bool m_dataReplicationErrorHasBeenSet = false;
 
   DataReplicationInitiation m_dataReplicationInitiation;
-  bool m_dataReplicationInitiationHasBeenSet = false;
 
   DataReplicationState m_dataReplicationState{DataReplicationState::NOT_SET};
-  bool m_dataReplicationStateHasBeenSet = false;
 
   Aws::String m_etaDateTime;
-  bool m_etaDateTimeHasBeenSet = false;
 
   Aws::String m_lagDuration;
-  bool m_lagDurationHasBeenSet = false;
 
   Aws::String m_lastSnapshotDateTime;
-  bool m_lastSnapshotDateTimeHasBeenSet = false;
 
   Aws::Vector<DataReplicationInfoReplicatedDisk> m_replicatedDisks;
+  bool m_dataReplicationErrorHasBeenSet = false;
+  bool m_dataReplicationInitiationHasBeenSet = false;
+  bool m_dataReplicationStateHasBeenSet = false;
+  bool m_etaDateTimeHasBeenSet = false;
+  bool m_lagDurationHasBeenSet = false;
+  bool m_lastSnapshotDateTimeHasBeenSet = false;
   bool m_replicatedDisksHasBeenSet = false;
 };
 

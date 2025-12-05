@@ -102,12 +102,12 @@ class NodegroupScalingConfig {
   ///@}
  private:
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   int m_maxSize{0};
-  bool m_maxSizeHasBeenSet = false;
 
   int m_desiredSize{0};
+  bool m_minSizeHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
   bool m_desiredSizeHasBeenSet = false;
 };
 

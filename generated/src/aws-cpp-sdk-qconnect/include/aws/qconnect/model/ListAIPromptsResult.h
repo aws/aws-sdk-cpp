@@ -85,12 +85,12 @@ class ListAIPromptsResult {
   ///@}
  private:
   Aws::Vector<AIPromptSummary> m_aiPromptSummaries;
-  bool m_aiPromptSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiPromptSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

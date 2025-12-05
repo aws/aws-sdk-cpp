@@ -148,21 +148,21 @@ class CreatePresetRequest : public ElasticTranscoderRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_container;
-  bool m_containerHasBeenSet = false;
 
   VideoParameters m_video;
-  bool m_videoHasBeenSet = false;
 
   AudioParameters m_audio;
-  bool m_audioHasBeenSet = false;
 
   Thumbnails m_thumbnails;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_audioHasBeenSet = false;
   bool m_thumbnailsHasBeenSet = false;
 };
 

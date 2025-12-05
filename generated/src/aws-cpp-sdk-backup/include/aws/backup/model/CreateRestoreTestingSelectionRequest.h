@@ -95,12 +95,12 @@ class CreateRestoreTestingSelectionRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_restoreTestingPlanName;
-  bool m_restoreTestingPlanNameHasBeenSet = false;
 
   RestoreTestingSelectionForCreate m_restoreTestingSelection;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_restoreTestingPlanNameHasBeenSet = false;
   bool m_restoreTestingSelectionHasBeenSet = false;
 };
 

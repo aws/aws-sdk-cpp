@@ -155,24 +155,24 @@ class UpdateRuleRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleDetail m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   bool m_includeChildDomainUnits{false};
-  bool m_includeChildDomainUnitsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleScope m_scope;
+  bool m_descriptionHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_includeChildDomainUnitsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

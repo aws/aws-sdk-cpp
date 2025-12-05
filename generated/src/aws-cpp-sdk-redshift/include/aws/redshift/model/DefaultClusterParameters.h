@@ -103,12 +103,12 @@ class DefaultClusterParameters {
   ///@}
  private:
   Aws::String m_parameterGroupFamily;
-  bool m_parameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_parameterGroupFamilyHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

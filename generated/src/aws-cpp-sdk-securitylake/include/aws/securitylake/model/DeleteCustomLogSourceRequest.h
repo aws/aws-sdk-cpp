@@ -71,9 +71,9 @@ class DeleteCustomLogSourceRequest : public SecurityLakeRequest {
   ///@}
  private:
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_sourceVersion;
+  bool m_sourceNameHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
 };
 

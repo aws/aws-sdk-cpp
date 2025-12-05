@@ -78,12 +78,12 @@ class AppflowIntegrationWorkflowMetrics {
   ///@}
  private:
   long long m_recordsProcessed{0};
-  bool m_recordsProcessedHasBeenSet = false;
 
   long long m_stepsCompleted{0};
-  bool m_stepsCompletedHasBeenSet = false;
 
   long long m_totalSteps{0};
+  bool m_recordsProcessedHasBeenSet = false;
+  bool m_stepsCompletedHasBeenSet = false;
   bool m_totalStepsHasBeenSet = false;
 };
 

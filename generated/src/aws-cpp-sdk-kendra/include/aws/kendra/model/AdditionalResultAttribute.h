@@ -86,12 +86,12 @@ class AdditionalResultAttribute {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   AdditionalResultAttributeValueType m_valueType{AdditionalResultAttributeValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   AdditionalResultAttributeValue m_value;
+  bool m_keyHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

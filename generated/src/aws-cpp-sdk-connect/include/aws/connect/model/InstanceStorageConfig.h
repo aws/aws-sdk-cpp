@@ -144,21 +144,21 @@ class InstanceStorageConfig {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   S3Config m_s3Config;
-  bool m_s3ConfigHasBeenSet = false;
 
   KinesisVideoStreamConfig m_kinesisVideoStreamConfig;
-  bool m_kinesisVideoStreamConfigHasBeenSet = false;
 
   KinesisStreamConfig m_kinesisStreamConfig;
-  bool m_kinesisStreamConfigHasBeenSet = false;
 
   KinesisFirehoseConfig m_kinesisFirehoseConfig;
+  bool m_associationIdHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_s3ConfigHasBeenSet = false;
+  bool m_kinesisVideoStreamConfigHasBeenSet = false;
+  bool m_kinesisStreamConfigHasBeenSet = false;
   bool m_kinesisFirehoseConfigHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class OfferSetSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OfferSetStateString m_state{OfferSetStateString::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_releaseDate;
-  bool m_releaseDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedOfferIds;
-  bool m_associatedOfferIdsHasBeenSet = false;
 
   Aws::String m_solutionId;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
+  bool m_associatedOfferIdsHasBeenSet = false;
   bool m_solutionIdHasBeenSet = false;
 };
 

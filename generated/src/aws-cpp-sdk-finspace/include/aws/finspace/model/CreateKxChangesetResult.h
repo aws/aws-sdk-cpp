@@ -195,30 +195,30 @@ class CreateKxChangesetResult {
   ///@}
  private:
   Aws::String m_changesetId;
-  bool m_changesetIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Vector<ChangeRequest> m_changeRequests;
-  bool m_changeRequestsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   ChangesetStatus m_status{ChangesetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changesetIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_changeRequestsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

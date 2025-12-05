@@ -70,9 +70,9 @@ class ListCertificateProvidersRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_ascendingOrder{false};
+  bool m_nextTokenHasBeenSet = false;
   bool m_ascendingOrderHasBeenSet = false;
 };
 

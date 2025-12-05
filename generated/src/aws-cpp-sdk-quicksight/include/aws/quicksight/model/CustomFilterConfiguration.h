@@ -128,18 +128,18 @@ class CustomFilterConfiguration {
   ///@}
  private:
   CategoryFilterMatchOperator m_matchOperator{CategoryFilterMatchOperator::NOT_SET};
-  bool m_matchOperatorHasBeenSet = false;
 
   Aws::String m_categoryValue;
-  bool m_categoryValueHasBeenSet = false;
 
   CategoryFilterSelectAllOptions m_selectAllOptions{CategoryFilterSelectAllOptions::NOT_SET};
-  bool m_selectAllOptionsHasBeenSet = false;
 
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   FilterNullOption m_nullOption{FilterNullOption::NOT_SET};
+  bool m_matchOperatorHasBeenSet = false;
+  bool m_categoryValueHasBeenSet = false;
+  bool m_selectAllOptionsHasBeenSet = false;
+  bool m_parameterNameHasBeenSet = false;
   bool m_nullOptionHasBeenSet = false;
 };
 

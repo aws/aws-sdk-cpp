@@ -59,9 +59,9 @@ class CreateEventBusResult {
   ///@}
  private:
   Aws::String m_eventBusArn;
-  bool m_eventBusArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventBusArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

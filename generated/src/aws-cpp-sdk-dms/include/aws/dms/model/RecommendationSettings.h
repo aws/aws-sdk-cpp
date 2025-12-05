@@ -75,9 +75,9 @@ class RecommendationSettings {
   ///@}
  private:
   Aws::String m_instanceSizingType;
-  bool m_instanceSizingTypeHasBeenSet = false;
 
   Aws::String m_workloadType;
+  bool m_instanceSizingTypeHasBeenSet = false;
   bool m_workloadTypeHasBeenSet = false;
 };
 

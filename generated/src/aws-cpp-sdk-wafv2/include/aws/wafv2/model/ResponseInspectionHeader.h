@@ -116,12 +116,12 @@ class ResponseInspectionHeader {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_successValues;
-  bool m_successValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureValues;
+  bool m_nameHasBeenSet = false;
+  bool m_successValuesHasBeenSet = false;
   bool m_failureValuesHasBeenSet = false;
 };
 

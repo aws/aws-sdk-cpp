@@ -69,9 +69,9 @@ class DataflowEndpointConfig {
   ///@}
  private:
   Aws::String m_dataflowEndpointName;
-  bool m_dataflowEndpointNameHasBeenSet = false;
 
   Aws::String m_dataflowEndpointRegion;
+  bool m_dataflowEndpointNameHasBeenSet = false;
   bool m_dataflowEndpointRegionHasBeenSet = false;
 };
 

@@ -149,18 +149,18 @@ class MessageSystemAttributeValue {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_binaryValue{};
-  bool m_binaryValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringListValues;
-  bool m_stringListValuesHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::ByteBuffer> m_binaryListValues;
-  bool m_binaryListValuesHasBeenSet = false;
 
   Aws::String m_dataType;
+  bool m_stringValueHasBeenSet = false;
+  bool m_binaryValueHasBeenSet = false;
+  bool m_stringListValuesHasBeenSet = false;
+  bool m_binaryListValuesHasBeenSet = false;
   bool m_dataTypeHasBeenSet = false;
 };
 

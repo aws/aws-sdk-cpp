@@ -74,9 +74,9 @@ class UntagResourceRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTagKeys;
+  bool m_resourceARNHasBeenSet = false;
   bool m_resourceTagKeysHasBeenSet = false;
 };
 

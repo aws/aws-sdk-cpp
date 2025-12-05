@@ -87,12 +87,12 @@ class ActionConnectorSearchFilter {
   ///@}
  private:
   ActionConnectorSearchFilterNameEnum m_name{ActionConnectorSearchFilterNameEnum::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   FilterOperator m_operator{FilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

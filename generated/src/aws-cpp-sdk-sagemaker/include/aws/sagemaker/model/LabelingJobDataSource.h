@@ -80,9 +80,9 @@ class LabelingJobDataSource {
   ///@}
  private:
   LabelingJobS3DataSource m_s3DataSource;
-  bool m_s3DataSourceHasBeenSet = false;
 
   LabelingJobSnsDataSource m_snsDataSource;
+  bool m_s3DataSourceHasBeenSet = false;
   bool m_snsDataSourceHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetComponentPolicyResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_requestIdHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

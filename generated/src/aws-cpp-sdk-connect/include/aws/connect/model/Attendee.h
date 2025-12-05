@@ -69,9 +69,9 @@ class Attendee {
   ///@}
  private:
   Aws::String m_attendeeId;
-  bool m_attendeeIdHasBeenSet = false;
 
   Aws::String m_joinToken;
+  bool m_attendeeIdHasBeenSet = false;
   bool m_joinTokenHasBeenSet = false;
 };
 

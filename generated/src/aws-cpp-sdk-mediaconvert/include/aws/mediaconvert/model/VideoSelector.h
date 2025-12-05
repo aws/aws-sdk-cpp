@@ -339,42 +339,42 @@ class VideoSelector {
   ///@}
  private:
   AlphaBehavior m_alphaBehavior{AlphaBehavior::NOT_SET};
-  bool m_alphaBehaviorHasBeenSet = false;
 
   ColorSpace m_colorSpace{ColorSpace::NOT_SET};
-  bool m_colorSpaceHasBeenSet = false;
 
   ColorSpaceUsage m_colorSpaceUsage{ColorSpaceUsage::NOT_SET};
-  bool m_colorSpaceUsageHasBeenSet = false;
 
   EmbeddedTimecodeOverride m_embeddedTimecodeOverride{EmbeddedTimecodeOverride::NOT_SET};
-  bool m_embeddedTimecodeOverrideHasBeenSet = false;
 
   Hdr10Metadata m_hdr10Metadata;
-  bool m_hdr10MetadataHasBeenSet = false;
 
   int m_maxLuminance{0};
-  bool m_maxLuminanceHasBeenSet = false;
 
   PadVideo m_padVideo{PadVideo::NOT_SET};
-  bool m_padVideoHasBeenSet = false;
 
   int m_pid{0};
-  bool m_pidHasBeenSet = false;
 
   int m_programNumber{0};
-  bool m_programNumberHasBeenSet = false;
 
   InputRotate m_rotate{InputRotate::NOT_SET};
-  bool m_rotateHasBeenSet = false;
 
   InputSampleRange m_sampleRange{InputSampleRange::NOT_SET};
-  bool m_sampleRangeHasBeenSet = false;
 
   VideoSelectorType m_selectorType{VideoSelectorType::NOT_SET};
-  bool m_selectorTypeHasBeenSet = false;
 
   Aws::Vector<int> m_streams;
+  bool m_alphaBehaviorHasBeenSet = false;
+  bool m_colorSpaceHasBeenSet = false;
+  bool m_colorSpaceUsageHasBeenSet = false;
+  bool m_embeddedTimecodeOverrideHasBeenSet = false;
+  bool m_hdr10MetadataHasBeenSet = false;
+  bool m_maxLuminanceHasBeenSet = false;
+  bool m_padVideoHasBeenSet = false;
+  bool m_pidHasBeenSet = false;
+  bool m_programNumberHasBeenSet = false;
+  bool m_rotateHasBeenSet = false;
+  bool m_sampleRangeHasBeenSet = false;
+  bool m_selectorTypeHasBeenSet = false;
   bool m_streamsHasBeenSet = false;
 };
 

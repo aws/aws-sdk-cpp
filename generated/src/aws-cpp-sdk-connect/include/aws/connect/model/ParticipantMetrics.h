@@ -185,30 +185,30 @@ class ParticipantMetrics {
   ///@}
  private:
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   ParticipantType m_participantType{ParticipantType::NOT_SET};
-  bool m_participantTypeHasBeenSet = false;
 
   bool m_conversationAbandon{false};
-  bool m_conversationAbandonHasBeenSet = false;
 
   int m_messagesSent{0};
-  bool m_messagesSentHasBeenSet = false;
 
   int m_numResponses{0};
-  bool m_numResponsesHasBeenSet = false;
 
   int m_messageLengthInChars{0};
-  bool m_messageLengthInCharsHasBeenSet = false;
 
   long long m_totalResponseTimeInMillis{0};
-  bool m_totalResponseTimeInMillisHasBeenSet = false;
 
   long long m_maxResponseTimeInMillis{0};
-  bool m_maxResponseTimeInMillisHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastMessageTimestamp{};
+  bool m_participantIdHasBeenSet = false;
+  bool m_participantTypeHasBeenSet = false;
+  bool m_conversationAbandonHasBeenSet = false;
+  bool m_messagesSentHasBeenSet = false;
+  bool m_numResponsesHasBeenSet = false;
+  bool m_messageLengthInCharsHasBeenSet = false;
+  bool m_totalResponseTimeInMillisHasBeenSet = false;
+  bool m_maxResponseTimeInMillisHasBeenSet = false;
   bool m_lastMessageTimestampHasBeenSet = false;
 };
 

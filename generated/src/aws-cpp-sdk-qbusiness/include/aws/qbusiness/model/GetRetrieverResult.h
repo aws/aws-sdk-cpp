@@ -212,36 +212,36 @@ class GetRetrieverResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_retrieverId;
-  bool m_retrieverIdHasBeenSet = false;
 
   Aws::String m_retrieverArn;
-  bool m_retrieverArnHasBeenSet = false;
 
   RetrieverType m_type{RetrieverType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RetrieverStatus m_status{RetrieverStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   RetrieverConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_retrieverIdHasBeenSet = false;
+  bool m_retrieverArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

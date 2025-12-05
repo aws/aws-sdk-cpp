@@ -111,18 +111,18 @@ class SendChannelMessageResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   ChannelMessageStatusStructure m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

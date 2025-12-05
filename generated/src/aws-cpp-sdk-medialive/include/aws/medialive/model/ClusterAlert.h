@@ -176,27 +176,27 @@ class ClusterAlert {
   ///@}
  private:
   Aws::String m_alertType;
-  bool m_alertTypeHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_clearedTimestamp{};
-  bool m_clearedTimestampHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_setTimestamp{};
-  bool m_setTimestampHasBeenSet = false;
 
   ClusterAlertState m_state{ClusterAlertState::NOT_SET};
+  bool m_alertTypeHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
+  bool m_clearedTimestampHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_setTimestampHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

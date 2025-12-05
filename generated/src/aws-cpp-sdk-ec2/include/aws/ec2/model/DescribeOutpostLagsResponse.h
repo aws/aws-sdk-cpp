@@ -86,12 +86,12 @@ class DescribeOutpostLagsResponse {
   ///@}
  private:
   Aws::Vector<OutpostLag> m_outpostLags;
-  bool m_outpostLagsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_outpostLagsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

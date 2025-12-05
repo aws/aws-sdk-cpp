@@ -151,18 +151,18 @@ class ImportKeyRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   ImportKeyMaterial m_keyMaterial;
-  bool m_keyMaterialHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
-  bool m_keyCheckValueAlgorithmHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationRegions;
+  bool m_keyMaterialHasBeenSet = false;
+  bool m_keyCheckValueAlgorithmHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_replicationRegionsHasBeenSet = false;
 };
 

@@ -300,48 +300,48 @@ class ScheduledInstance {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_hourlyPrice;
-  bool m_hourlyPriceHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_networkPlatform;
-  bool m_networkPlatformHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextSlotStartTime{};
-  bool m_nextSlotStartTimeHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::Utils::DateTime m_previousSlotEndTime{};
-  bool m_previousSlotEndTimeHasBeenSet = false;
 
   ScheduledInstanceRecurrence m_recurrence;
-  bool m_recurrenceHasBeenSet = false;
 
   Aws::String m_scheduledInstanceId;
-  bool m_scheduledInstanceIdHasBeenSet = false;
 
   int m_slotDurationInHours{0};
-  bool m_slotDurationInHoursHasBeenSet = false;
 
   Aws::Utils::DateTime m_termEndDate{};
-  bool m_termEndDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_termStartDate{};
-  bool m_termStartDateHasBeenSet = false;
 
   int m_totalScheduledInstanceHours{0};
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_hourlyPriceHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_networkPlatformHasBeenSet = false;
+  bool m_nextSlotStartTimeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_previousSlotEndTimeHasBeenSet = false;
+  bool m_recurrenceHasBeenSet = false;
+  bool m_scheduledInstanceIdHasBeenSet = false;
+  bool m_slotDurationInHoursHasBeenSet = false;
+  bool m_termEndDateHasBeenSet = false;
+  bool m_termStartDateHasBeenSet = false;
   bool m_totalScheduledInstanceHoursHasBeenSet = false;
 };
 

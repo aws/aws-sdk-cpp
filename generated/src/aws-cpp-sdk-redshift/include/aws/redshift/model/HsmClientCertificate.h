@@ -99,12 +99,12 @@ class HsmClientCertificate {
   ///@}
  private:
   Aws::String m_hsmClientCertificateIdentifier;
-  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
   Aws::String m_hsmClientCertificatePublicKey;
-  bool m_hsmClientCertificatePublicKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
+  bool m_hsmClientCertificatePublicKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -98,15 +98,15 @@ class UpdateBlueprintRequest : public BedrockDataAutomationRequest {
   ///@}
  private:
   Aws::String m_blueprintArn;
-  bool m_blueprintArnHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   BlueprintStage m_blueprintStage{BlueprintStage::NOT_SET};
-  bool m_blueprintStageHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_blueprintArnHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_blueprintStageHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

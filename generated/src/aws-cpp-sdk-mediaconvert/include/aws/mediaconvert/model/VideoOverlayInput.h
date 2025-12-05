@@ -121,15 +121,15 @@ To specify
   ///@}
  private:
   Aws::String m_fileInput;
-  bool m_fileInputHasBeenSet = false;
 
   Aws::Vector<VideoOverlayInputClipping> m_inputClippings;
-  bool m_inputClippingsHasBeenSet = false;
 
   InputTimecodeSource m_timecodeSource{InputTimecodeSource::NOT_SET};
-  bool m_timecodeSourceHasBeenSet = false;
 
   Aws::String m_timecodeStart;
+  bool m_fileInputHasBeenSet = false;
+  bool m_inputClippingsHasBeenSet = false;
+  bool m_timecodeSourceHasBeenSet = false;
   bool m_timecodeStartHasBeenSet = false;
 };
 

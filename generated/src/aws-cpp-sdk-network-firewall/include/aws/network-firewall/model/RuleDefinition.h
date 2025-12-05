@@ -103,9 +103,9 @@ class RuleDefinition {
   ///@}
  private:
   MatchAttributes m_matchAttributes;
-  bool m_matchAttributesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
+  bool m_matchAttributesHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

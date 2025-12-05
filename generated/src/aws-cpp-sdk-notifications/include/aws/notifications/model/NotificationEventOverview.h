@@ -207,30 +207,30 @@ class NotificationEventOverview {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_notificationConfigurationArn;
-  bool m_notificationConfigurationArnHasBeenSet = false;
 
   Aws::String m_relatedAccount;
-  bool m_relatedAccountHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   NotificationEventSummary m_notificationEvent;
-  bool m_notificationEventHasBeenSet = false;
 
   AggregationEventType m_aggregationEventType{AggregationEventType::NOT_SET};
-  bool m_aggregationEventTypeHasBeenSet = false;
 
   Aws::String m_aggregateNotificationEventArn;
-  bool m_aggregateNotificationEventArnHasBeenSet = false;
 
   AggregationSummary m_aggregationSummary;
-  bool m_aggregationSummaryHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
+  bool m_arnHasBeenSet = false;
+  bool m_notificationConfigurationArnHasBeenSet = false;
+  bool m_relatedAccountHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_notificationEventHasBeenSet = false;
+  bool m_aggregationEventTypeHasBeenSet = false;
+  bool m_aggregateNotificationEventArnHasBeenSet = false;
+  bool m_aggregationSummaryHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateTopicRuleDestinationResult {
   ///@}
  private:
   TopicRuleDestination m_topicRuleDestination;
-  bool m_topicRuleDestinationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicRuleDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

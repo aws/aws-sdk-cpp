@@ -91,12 +91,12 @@ class NluImprovementSpecification {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   AssistedNluMode m_assistedNluMode{AssistedNluMode::NOT_SET};
-  bool m_assistedNluModeHasBeenSet = false;
 
   IntentDisambiguationSettings m_intentDisambiguationSettings;
+  bool m_enabledHasBeenSet = false;
+  bool m_assistedNluModeHasBeenSet = false;
   bool m_intentDisambiguationSettingsHasBeenSet = false;
 };
 

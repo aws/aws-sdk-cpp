@@ -66,9 +66,9 @@ class CPU {
   ///@}
  private:
   long long m_cores{0};
-  bool m_coresHasBeenSet = false;
 
   Aws::String m_modelName;
+  bool m_coresHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;
 };
 

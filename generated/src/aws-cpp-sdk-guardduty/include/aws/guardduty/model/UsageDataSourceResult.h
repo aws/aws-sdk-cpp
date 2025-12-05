@@ -68,9 +68,9 @@ class UsageDataSourceResult {
   ///@}
  private:
   DataSource m_dataSource{DataSource::NOT_SET};
-  bool m_dataSourceHasBeenSet = false;
 
   Total m_total;
+  bool m_dataSourceHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

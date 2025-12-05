@@ -71,9 +71,9 @@ class EncryptionConfiguration {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_kmsEncryptionContext;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_kmsEncryptionContextHasBeenSet = false;
 };
 

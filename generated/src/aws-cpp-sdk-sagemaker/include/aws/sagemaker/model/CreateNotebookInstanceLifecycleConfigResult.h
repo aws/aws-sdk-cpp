@@ -60,9 +60,9 @@ class CreateNotebookInstanceLifecycleConfigResult {
   ///@}
  private:
   Aws::String m_notebookInstanceLifecycleConfigArn;
-  bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

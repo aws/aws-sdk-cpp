@@ -68,9 +68,9 @@ class AuthorizerSummary {
   ///@}
  private:
   Aws::String m_authorizerName;
-  bool m_authorizerNameHasBeenSet = false;
 
   Aws::String m_authorizerArn;
+  bool m_authorizerNameHasBeenSet = false;
   bool m_authorizerArnHasBeenSet = false;
 };
 

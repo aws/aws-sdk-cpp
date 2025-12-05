@@ -89,9 +89,9 @@ class StackResourceDriftInformationSummary {
   ///@}
  private:
   StackResourceDriftStatus m_stackResourceDriftStatus{StackResourceDriftStatus::NOT_SET};
-  bool m_stackResourceDriftStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastCheckTimestamp{};
+  bool m_stackResourceDriftStatusHasBeenSet = false;
   bool m_lastCheckTimestampHasBeenSet = false;
 };
 

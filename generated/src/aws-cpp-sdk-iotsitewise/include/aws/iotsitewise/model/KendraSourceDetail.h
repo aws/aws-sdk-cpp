@@ -69,9 +69,9 @@ class KendraSourceDetail {
   ///@}
  private:
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_knowledgeBaseArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

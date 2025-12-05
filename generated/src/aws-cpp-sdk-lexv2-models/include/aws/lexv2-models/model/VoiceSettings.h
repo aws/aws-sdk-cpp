@@ -76,9 +76,9 @@ class VoiceSettings {
   ///@}
  private:
   VoiceEngine m_engine{VoiceEngine::NOT_SET};
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_voiceId;
+  bool m_engineHasBeenSet = false;
   bool m_voiceIdHasBeenSet = false;
 };
 

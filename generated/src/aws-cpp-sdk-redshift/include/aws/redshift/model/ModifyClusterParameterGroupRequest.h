@@ -86,9 +86,9 @@ class ModifyClusterParameterGroupRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_parameterGroupNameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

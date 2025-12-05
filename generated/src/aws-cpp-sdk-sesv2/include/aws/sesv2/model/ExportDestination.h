@@ -70,9 +70,9 @@ class ExportDestination {
   ///@}
  private:
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Aws::String m_s3Url;
+  bool m_dataFormatHasBeenSet = false;
   bool m_s3UrlHasBeenSet = false;
 };
 

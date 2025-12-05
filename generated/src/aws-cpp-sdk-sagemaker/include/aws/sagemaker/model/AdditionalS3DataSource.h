@@ -107,15 +107,15 @@ class AdditionalS3DataSource {
   ///@}
  private:
   AdditionalS3DataSourceDataType m_s3DataType{AdditionalS3DataSourceDataType::NOT_SET};
-  bool m_s3DataTypeHasBeenSet = false;
 
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   CompressionType m_compressionType{CompressionType::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   Aws::String m_eTag;
+  bool m_s3DataTypeHasBeenSet = false;
+  bool m_s3UriHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
 };
 

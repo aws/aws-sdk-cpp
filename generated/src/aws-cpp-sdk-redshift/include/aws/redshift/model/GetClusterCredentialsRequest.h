@@ -207,24 +207,24 @@ class GetClusterCredentialsRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::String m_dbName;
-  bool m_dbNameHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   bool m_autoCreate{false};
-  bool m_autoCreateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbGroups;
-  bool m_dbGroupsHasBeenSet = false;
 
   Aws::String m_customDomainName;
+  bool m_dbUserHasBeenSet = false;
+  bool m_dbNameHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_autoCreateHasBeenSet = false;
+  bool m_dbGroupsHasBeenSet = false;
   bool m_customDomainNameHasBeenSet = false;
 };
 

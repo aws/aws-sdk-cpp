@@ -148,21 +148,21 @@ class X12OutboundEdiHeaders {
   ///@}
  private:
   X12InterchangeControlHeaders m_interchangeControlHeaders;
-  bool m_interchangeControlHeadersHasBeenSet = false;
 
   X12FunctionalGroupHeaders m_functionalGroupHeaders;
-  bool m_functionalGroupHeadersHasBeenSet = false;
 
   X12Delimiters m_delimiters;
-  bool m_delimitersHasBeenSet = false;
 
   bool m_validateEdi{false};
-  bool m_validateEdiHasBeenSet = false;
 
   X12ControlNumbers m_controlNumbers;
-  bool m_controlNumbersHasBeenSet = false;
 
   X12GS05TimeFormat m_gs05TimeFormat{X12GS05TimeFormat::NOT_SET};
+  bool m_interchangeControlHeadersHasBeenSet = false;
+  bool m_functionalGroupHeadersHasBeenSet = false;
+  bool m_delimitersHasBeenSet = false;
+  bool m_validateEdiHasBeenSet = false;
+  bool m_controlNumbersHasBeenSet = false;
   bool m_gs05TimeFormatHasBeenSet = false;
 };
 

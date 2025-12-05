@@ -77,9 +77,9 @@ class AwsEksClusterLoggingClusterLoggingDetails {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_types;
+  bool m_enabledHasBeenSet = false;
   bool m_typesHasBeenSet = false;
 };
 

@@ -159,21 +159,21 @@ class ListNotebookExecutionsRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_editorId;
-  bool m_editorIdHasBeenSet = false;
 
   NotebookExecutionStatus m_status{NotebookExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_from{};
-  bool m_fromHasBeenSet = false;
 
   Aws::Utils::DateTime m_to{};
-  bool m_toHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_executionEngineId;
+  bool m_editorIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
+  bool m_toHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_executionEngineIdHasBeenSet = false;
 };
 

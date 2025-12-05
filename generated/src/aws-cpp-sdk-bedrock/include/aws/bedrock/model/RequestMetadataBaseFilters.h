@@ -82,9 +82,9 @@ class RequestMetadataBaseFilters {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_equals;
-  bool m_equalsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_notEquals;
+  bool m_equalsHasBeenSet = false;
   bool m_notEqualsHasBeenSet = false;
 };
 

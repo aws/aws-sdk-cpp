@@ -124,18 +124,18 @@ class GetRepositoryEndpointRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_endpointTypeHasBeenSet = false;
 };
 

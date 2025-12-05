@@ -100,15 +100,15 @@ class SearchContactsResult {
   ///@}
  private:
   Aws::Vector<ContactSearchSummary> m_contacts;
-  bool m_contactsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   long long m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

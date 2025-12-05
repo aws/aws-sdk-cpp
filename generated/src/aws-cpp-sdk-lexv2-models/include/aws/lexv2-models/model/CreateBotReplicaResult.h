@@ -128,21 +128,21 @@ class CreateBotReplicaResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_replicaRegion;
-  bool m_replicaRegionHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   BotReplicaStatus m_botReplicaStatus{BotReplicaStatus::NOT_SET};
-  bool m_botReplicaStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_replicaRegionHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_botReplicaStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

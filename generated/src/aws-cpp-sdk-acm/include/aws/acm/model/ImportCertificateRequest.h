@@ -134,18 +134,18 @@ class ImportCertificateRequest : public ACMRequest {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_certificate{};
-  bool m_certificateHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_privateKey{};
-  bool m_privateKeyHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_certificateChain{};
-  bool m_certificateChainHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
+  bool m_privateKeyHasBeenSet = false;
+  bool m_certificateChainHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

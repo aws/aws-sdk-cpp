@@ -77,9 +77,9 @@ class GetStatementResultRequest : public RedshiftDataAPIServiceRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_idHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

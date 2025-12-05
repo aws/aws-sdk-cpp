@@ -176,24 +176,24 @@ class ACL {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userNames;
-  bool m_userNamesHasBeenSet = false;
 
   Aws::String m_minimumEngineVersion;
-  bool m_minimumEngineVersionHasBeenSet = false;
 
   ACLPendingChanges m_pendingChanges;
-  bool m_pendingChangesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_userNamesHasBeenSet = false;
+  bool m_minimumEngineVersionHasBeenSet = false;
+  bool m_pendingChangesHasBeenSet = false;
+  bool m_clustersHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

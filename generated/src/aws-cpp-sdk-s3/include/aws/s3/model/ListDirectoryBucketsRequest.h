@@ -103,12 +103,12 @@ class ListDirectoryBucketsRequest : public S3Request {
   ///@}
  private:
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   int m_maxDirectoryBuckets{0};
-  bool m_maxDirectoryBucketsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_continuationTokenHasBeenSet = false;
+  bool m_maxDirectoryBucketsHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

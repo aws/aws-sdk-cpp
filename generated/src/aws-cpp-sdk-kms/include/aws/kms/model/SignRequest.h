@@ -207,21 +207,21 @@ class SignRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_message{};
-  bool m_messageHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTokens;
-  bool m_grantTokensHasBeenSet = false;
 
   SigningAlgorithmSpec m_signingAlgorithm{SigningAlgorithmSpec::NOT_SET};
-  bool m_signingAlgorithmHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_keyIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_grantTokensHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

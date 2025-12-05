@@ -88,12 +88,12 @@ class FederatedDatabase {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_connectionType;
+  bool m_identifierHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;
 };
 

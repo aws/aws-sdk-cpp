@@ -99,12 +99,12 @@ class RowFilter {
   ///@}
  private:
   Aws::Vector<RowFilter> m_and;
-  bool m_andHasBeenSet = false;
 
   RowFilterExpression m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Vector<RowFilter> m_or;
+  bool m_andHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
   bool m_orHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class ResourceNotFoundException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ExceptionResourceType m_resourceType{ExceptionResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

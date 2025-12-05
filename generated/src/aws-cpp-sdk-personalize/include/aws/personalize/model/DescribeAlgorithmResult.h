@@ -60,9 +60,9 @@ class DescribeAlgorithmResult {
   ///@}
  private:
   Algorithm m_algorithm;
-  bool m_algorithmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_algorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

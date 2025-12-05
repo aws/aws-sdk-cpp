@@ -99,12 +99,12 @@ class SMSConfiguration {
   ///@}
  private:
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_additionalMessage;
-  bool m_additionalMessageHasBeenSet = false;
 
   Aws::Vector<RecipientDetail> m_recipients;
+  bool m_senderIdHasBeenSet = false;
+  bool m_additionalMessageHasBeenSet = false;
   bool m_recipientsHasBeenSet = false;
 };
 

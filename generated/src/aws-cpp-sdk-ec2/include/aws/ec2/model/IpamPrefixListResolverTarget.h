@@ -267,39 +267,39 @@ class IpamPrefixListResolverTarget {
   ///@}
  private:
   Aws::String m_ipamPrefixListResolverTargetId;
-  bool m_ipamPrefixListResolverTargetIdHasBeenSet = false;
 
   Aws::String m_ipamPrefixListResolverTargetArn;
-  bool m_ipamPrefixListResolverTargetArnHasBeenSet = false;
 
   Aws::String m_ipamPrefixListResolverId;
-  bool m_ipamPrefixListResolverIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_prefixListRegion;
-  bool m_prefixListRegionHasBeenSet = false;
 
   long long m_desiredVersion{0};
-  bool m_desiredVersionHasBeenSet = false;
 
   long long m_lastSyncedVersion{0};
-  bool m_lastSyncedVersionHasBeenSet = false;
 
   bool m_trackLatestVersion{false};
-  bool m_trackLatestVersionHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   IpamPrefixListResolverTargetState m_state{IpamPrefixListResolverTargetState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_ipamPrefixListResolverTargetIdHasBeenSet = false;
+  bool m_ipamPrefixListResolverTargetArnHasBeenSet = false;
+  bool m_ipamPrefixListResolverIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_prefixListRegionHasBeenSet = false;
+  bool m_desiredVersionHasBeenSet = false;
+  bool m_lastSyncedVersionHasBeenSet = false;
+  bool m_trackLatestVersionHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

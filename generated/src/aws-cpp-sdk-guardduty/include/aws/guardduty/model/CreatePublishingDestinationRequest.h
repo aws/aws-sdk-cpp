@@ -133,18 +133,18 @@ class CreatePublishingDestinationRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   DestinationType m_destinationType{DestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   DestinationProperties m_destinationProperties;
-  bool m_destinationPropertiesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_destinationPropertiesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

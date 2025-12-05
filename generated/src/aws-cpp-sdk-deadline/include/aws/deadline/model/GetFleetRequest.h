@@ -65,9 +65,9 @@ class GetFleetRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_fleetId;
+  bool m_farmIdHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
 };
 

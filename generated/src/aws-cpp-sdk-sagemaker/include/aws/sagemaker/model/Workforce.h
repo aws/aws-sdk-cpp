@@ -269,39 +269,39 @@ class Workforce {
   ///@}
  private:
   Aws::String m_workforceName;
-  bool m_workforceNameHasBeenSet = false;
 
   Aws::String m_workforceArn;
-  bool m_workforceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   SourceIpConfig m_sourceIpConfig;
-  bool m_sourceIpConfigHasBeenSet = false;
 
   Aws::String m_subDomain;
-  bool m_subDomainHasBeenSet = false;
 
   CognitoConfig m_cognitoConfig;
-  bool m_cognitoConfigHasBeenSet = false;
 
   OidcConfigForResponse m_oidcConfig;
-  bool m_oidcConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   WorkforceVpcConfigResponse m_workforceVpcConfig;
-  bool m_workforceVpcConfigHasBeenSet = false;
 
   WorkforceStatus m_status{WorkforceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   WorkforceIpAddressType m_ipAddressType{WorkforceIpAddressType::NOT_SET};
+  bool m_workforceNameHasBeenSet = false;
+  bool m_workforceArnHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_sourceIpConfigHasBeenSet = false;
+  bool m_subDomainHasBeenSet = false;
+  bool m_cognitoConfigHasBeenSet = false;
+  bool m_oidcConfigHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_workforceVpcConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

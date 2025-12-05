@@ -550,48 +550,48 @@ class VideoParameters {
   ///@}
  private:
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_codecOptions;
-  bool m_codecOptionsHasBeenSet = false;
 
   Aws::String m_keyframesMaxDist;
-  bool m_keyframesMaxDistHasBeenSet = false;
 
   Aws::String m_fixedGOP;
-  bool m_fixedGOPHasBeenSet = false;
 
   Aws::String m_bitRate;
-  bool m_bitRateHasBeenSet = false;
 
   Aws::String m_frameRate;
-  bool m_frameRateHasBeenSet = false;
 
   Aws::String m_maxFrameRate;
-  bool m_maxFrameRateHasBeenSet = false;
 
   Aws::String m_resolution;
-  bool m_resolutionHasBeenSet = false;
 
   Aws::String m_aspectRatio;
-  bool m_aspectRatioHasBeenSet = false;
 
   Aws::String m_maxWidth;
-  bool m_maxWidthHasBeenSet = false;
 
   Aws::String m_maxHeight;
-  bool m_maxHeightHasBeenSet = false;
 
   Aws::String m_displayAspectRatio;
-  bool m_displayAspectRatioHasBeenSet = false;
 
   Aws::String m_sizingPolicy;
-  bool m_sizingPolicyHasBeenSet = false;
 
   Aws::String m_paddingPolicy;
-  bool m_paddingPolicyHasBeenSet = false;
 
   Aws::Vector<PresetWatermark> m_watermarks;
+  bool m_codecHasBeenSet = false;
+  bool m_codecOptionsHasBeenSet = false;
+  bool m_keyframesMaxDistHasBeenSet = false;
+  bool m_fixedGOPHasBeenSet = false;
+  bool m_bitRateHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_maxFrameRateHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_aspectRatioHasBeenSet = false;
+  bool m_maxWidthHasBeenSet = false;
+  bool m_maxHeightHasBeenSet = false;
+  bool m_displayAspectRatioHasBeenSet = false;
+  bool m_sizingPolicyHasBeenSet = false;
+  bool m_paddingPolicyHasBeenSet = false;
   bool m_watermarksHasBeenSet = false;
 };
 

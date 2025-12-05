@@ -65,9 +65,9 @@ class ImageStandardExtraction {
   ///@}
  private:
   ImageExtractionCategory m_category;
-  bool m_categoryHasBeenSet = false;
 
   ImageBoundingBox m_boundingBox;
+  bool m_categoryHasBeenSet = false;
   bool m_boundingBoxHasBeenSet = false;
 };
 

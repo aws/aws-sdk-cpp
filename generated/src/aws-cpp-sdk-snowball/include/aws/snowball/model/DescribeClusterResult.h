@@ -61,9 +61,9 @@ class DescribeClusterResult {
   ///@}
  private:
   ClusterMetadata m_clusterMetadata;
-  bool m_clusterMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

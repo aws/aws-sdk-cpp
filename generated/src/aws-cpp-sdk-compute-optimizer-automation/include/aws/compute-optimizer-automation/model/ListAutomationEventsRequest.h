@@ -128,18 +128,18 @@ class ListAutomationEventsRequest : public ComputeOptimizerAutomationRequest {
   ///@}
  private:
   Aws::Vector<AutomationEventFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimeInclusive{};
-  bool m_startTimeInclusiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimeExclusive{};
-  bool m_endTimeExclusiveHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_startTimeInclusiveHasBeenSet = false;
+  bool m_endTimeExclusiveHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

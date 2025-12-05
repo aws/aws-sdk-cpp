@@ -75,9 +75,9 @@ class EvictFilesFailingUploadRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   bool m_forceRemove{false};
+  bool m_fileShareARNHasBeenSet = false;
   bool m_forceRemoveHasBeenSet = false;
 };
 

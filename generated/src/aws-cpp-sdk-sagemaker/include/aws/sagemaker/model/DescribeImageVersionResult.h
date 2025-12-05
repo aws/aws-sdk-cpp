@@ -323,54 +323,54 @@ class DescribeImageVersionResult {
   ///@}
  private:
   Aws::String m_baseImage;
-  bool m_baseImageHasBeenSet = false;
 
   Aws::String m_containerImage;
-  bool m_containerImageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_imageVersionArn;
-  bool m_imageVersionArnHasBeenSet = false;
 
   ImageVersionStatus m_imageVersionStatus{ImageVersionStatus::NOT_SET};
-  bool m_imageVersionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   VendorGuidance m_vendorGuidance{VendorGuidance::NOT_SET};
-  bool m_vendorGuidanceHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_mLFramework;
-  bool m_mLFrameworkHasBeenSet = false;
 
   Aws::String m_programmingLang;
-  bool m_programmingLangHasBeenSet = false;
 
   Processor m_processor{Processor::NOT_SET};
-  bool m_processorHasBeenSet = false;
 
   bool m_horovod{false};
-  bool m_horovodHasBeenSet = false;
 
   Aws::String m_releaseNotes;
-  bool m_releaseNotesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baseImageHasBeenSet = false;
+  bool m_containerImageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
+  bool m_imageVersionArnHasBeenSet = false;
+  bool m_imageVersionStatusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_vendorGuidanceHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_mLFrameworkHasBeenSet = false;
+  bool m_programmingLangHasBeenSet = false;
+  bool m_processorHasBeenSet = false;
+  bool m_horovodHasBeenSet = false;
+  bool m_releaseNotesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

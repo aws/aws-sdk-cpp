@@ -76,9 +76,9 @@ class RestartChannelPipelinesRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::Vector<ChannelPipelineIdToRestart> m_pipelineIds;
+  bool m_channelIdHasBeenSet = false;
   bool m_pipelineIdsHasBeenSet = false;
 };
 

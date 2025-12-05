@@ -363,36 +363,36 @@ class ScalingPolicy {
   ///@}
  private:
   Aws::String m_policyARN;
-  bool m_policyARNHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   StepScalingPolicyConfiguration m_stepScalingPolicyConfiguration;
-  bool m_stepScalingPolicyConfigurationHasBeenSet = false;
 
   TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
-  bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
 
   PredictiveScalingPolicyConfiguration m_predictiveScalingPolicyConfiguration;
-  bool m_predictiveScalingPolicyConfigurationHasBeenSet = false;
 
   Aws::Vector<Alarm> m_alarms;
-  bool m_alarmsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_policyARNHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_stepScalingPolicyConfigurationHasBeenSet = false;
+  bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
+  bool m_predictiveScalingPolicyConfigurationHasBeenSet = false;
+  bool m_alarmsHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

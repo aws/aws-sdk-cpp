@@ -70,9 +70,9 @@ class Authorization {
   ///@}
  private:
   Aws::String m_cdnIdentifierSecret;
-  bool m_cdnIdentifierSecretHasBeenSet = false;
 
   Aws::String m_secretsRoleArn;
+  bool m_cdnIdentifierSecretHasBeenSet = false;
   bool m_secretsRoleArnHasBeenSet = false;
 };
 

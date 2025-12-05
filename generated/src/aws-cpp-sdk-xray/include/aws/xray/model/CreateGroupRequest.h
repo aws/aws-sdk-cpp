@@ -127,15 +127,15 @@ class CreateGroupRequest : public XRayRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   InsightsConfiguration m_insightsConfiguration;
-  bool m_insightsConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_groupNameHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
+  bool m_insightsConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

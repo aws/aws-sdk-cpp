@@ -67,9 +67,9 @@ class Grant {
   ///@}
  private:
   Grantee m_grantee;
-  bool m_granteeHasBeenSet = false;
 
   Permission m_permission{Permission::NOT_SET};
+  bool m_granteeHasBeenSet = false;
   bool m_permissionHasBeenSet = false;
 };
 

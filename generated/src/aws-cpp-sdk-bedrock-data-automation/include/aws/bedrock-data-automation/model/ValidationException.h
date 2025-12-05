@@ -73,9 +73,9 @@ class ValidationException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<ValidationExceptionField> m_fieldList;
+  bool m_messageHasBeenSet = false;
   bool m_fieldListHasBeenSet = false;
 };
 

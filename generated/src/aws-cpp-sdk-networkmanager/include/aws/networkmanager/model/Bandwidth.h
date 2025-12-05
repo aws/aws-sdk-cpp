@@ -61,9 +61,9 @@ class Bandwidth {
   ///@}
  private:
   int m_uploadSpeed{0};
-  bool m_uploadSpeedHasBeenSet = false;
 
   int m_downloadSpeed{0};
+  bool m_uploadSpeedHasBeenSet = false;
   bool m_downloadSpeedHasBeenSet = false;
 };
 

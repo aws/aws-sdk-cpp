@@ -93,12 +93,12 @@ class NodeProperties {
   ///@}
  private:
   int m_numNodes{0};
-  bool m_numNodesHasBeenSet = false;
 
   int m_mainNode{0};
-  bool m_mainNodeHasBeenSet = false;
 
   Aws::Vector<NodeRangeProperty> m_nodeRangeProperties;
+  bool m_numNodesHasBeenSet = false;
+  bool m_mainNodeHasBeenSet = false;
   bool m_nodeRangePropertiesHasBeenSet = false;
 };
 

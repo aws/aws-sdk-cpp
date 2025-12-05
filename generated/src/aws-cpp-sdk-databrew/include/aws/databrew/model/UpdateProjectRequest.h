@@ -83,12 +83,12 @@ class UpdateProjectRequest : public GlueDataBrewRequest {
   ///@}
  private:
   Sample m_sample;
-  bool m_sampleHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_sampleHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class ObjectLambdaTransformationConfiguration {
   ///@}
  private:
   Aws::Vector<ObjectLambdaTransformationConfigurationAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   ObjectLambdaContentTransformation m_contentTransformation;
+  bool m_actionsHasBeenSet = false;
   bool m_contentTransformationHasBeenSet = false;
 };
 

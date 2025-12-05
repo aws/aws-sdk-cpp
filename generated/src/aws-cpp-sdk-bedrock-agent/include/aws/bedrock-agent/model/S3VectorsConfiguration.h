@@ -91,12 +91,12 @@ class S3VectorsConfiguration {
   ///@}
  private:
   Aws::String m_vectorBucketArn;
-  bool m_vectorBucketArnHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::String m_indexName;
+  bool m_vectorBucketArnHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
 };
 

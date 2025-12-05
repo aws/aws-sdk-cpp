@@ -110,15 +110,15 @@ class AssociateOpsItemRelatedItemRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_opsItemId;
-  bool m_opsItemIdHasBeenSet = false;
 
   Aws::String m_associationType;
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceUri;
+  bool m_opsItemIdHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceUriHasBeenSet = false;
 };
 

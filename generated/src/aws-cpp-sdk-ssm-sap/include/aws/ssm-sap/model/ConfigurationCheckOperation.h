@@ -215,33 +215,33 @@ class ConfigurationCheckOperation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   ConfigurationCheckType m_configurationCheckId{ConfigurationCheckType::NOT_SET};
-  bool m_configurationCheckIdHasBeenSet = false;
 
   Aws::String m_configurationCheckName;
-  bool m_configurationCheckNameHasBeenSet = false;
 
   Aws::String m_configurationCheckDescription;
-  bool m_configurationCheckDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   RuleStatusCounts m_ruleStatusCounts;
+  bool m_idHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_configurationCheckIdHasBeenSet = false;
+  bool m_configurationCheckNameHasBeenSet = false;
+  bool m_configurationCheckDescriptionHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_ruleStatusCountsHasBeenSet = false;
 };
 

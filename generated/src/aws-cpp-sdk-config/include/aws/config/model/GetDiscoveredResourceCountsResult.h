@@ -110,15 +110,15 @@ class GetDiscoveredResourceCountsResult {
   ///@}
  private:
   long long m_totalDiscoveredResources{0};
-  bool m_totalDiscoveredResourcesHasBeenSet = false;
 
   Aws::Vector<ResourceCount> m_resourceCounts;
-  bool m_resourceCountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_totalDiscoveredResourcesHasBeenSet = false;
+  bool m_resourceCountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

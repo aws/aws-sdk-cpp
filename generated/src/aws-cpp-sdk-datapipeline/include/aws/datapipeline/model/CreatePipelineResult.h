@@ -65,9 +65,9 @@ class CreatePipelineResult {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

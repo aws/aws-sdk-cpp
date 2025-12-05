@@ -109,15 +109,15 @@ class ParseToOCSF {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   EventSource m_eventSource{EventSource::NOT_SET};
-  bool m_eventSourceHasBeenSet = false;
 
   OCSFVersion m_ocsfVersion{OCSFVersion::NOT_SET};
-  bool m_ocsfVersionHasBeenSet = false;
 
   Aws::String m_mappingVersion;
+  bool m_sourceHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_ocsfVersionHasBeenSet = false;
   bool m_mappingVersionHasBeenSet = false;
 };
 

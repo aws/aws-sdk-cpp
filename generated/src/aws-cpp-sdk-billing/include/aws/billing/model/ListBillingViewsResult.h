@@ -84,12 +84,12 @@ class ListBillingViewsResult {
   ///@}
  private:
   Aws::Vector<BillingViewListElement> m_billingViews;
-  bool m_billingViewsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingViewsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

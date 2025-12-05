@@ -270,42 +270,42 @@ class BatchLoadTaskDescription {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   DataSourceConfiguration m_dataSourceConfiguration;
-  bool m_dataSourceConfigurationHasBeenSet = false;
 
   BatchLoadProgressReport m_progressReport;
-  bool m_progressReportHasBeenSet = false;
 
   ReportConfiguration m_reportConfiguration;
-  bool m_reportConfigurationHasBeenSet = false;
 
   DataModelConfiguration m_dataModelConfiguration;
-  bool m_dataModelConfigurationHasBeenSet = false;
 
   Aws::String m_targetDatabaseName;
-  bool m_targetDatabaseNameHasBeenSet = false;
 
   Aws::String m_targetTableName;
-  bool m_targetTableNameHasBeenSet = false;
 
   BatchLoadStatus m_taskStatus{BatchLoadStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   long long m_recordVersion{0};
-  bool m_recordVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_resumableUntil{};
+  bool m_taskIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_dataSourceConfigurationHasBeenSet = false;
+  bool m_progressReportHasBeenSet = false;
+  bool m_reportConfigurationHasBeenSet = false;
+  bool m_dataModelConfigurationHasBeenSet = false;
+  bool m_targetDatabaseNameHasBeenSet = false;
+  bool m_targetTableNameHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_recordVersionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_resumableUntilHasBeenSet = false;
 };
 

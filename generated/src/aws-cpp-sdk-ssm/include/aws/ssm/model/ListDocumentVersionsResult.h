@@ -85,12 +85,12 @@ class ListDocumentVersionsResult {
   ///@}
  private:
   Aws::Vector<DocumentVersionInfo> m_documentVersions;
-  bool m_documentVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

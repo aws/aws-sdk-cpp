@@ -102,12 +102,12 @@ class DetectorState {
   ///@}
  private:
   Aws::String m_stateName;
-  bool m_stateNameHasBeenSet = false;
 
   Aws::Vector<Variable> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::Vector<Timer> m_timers;
+  bool m_stateNameHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
   bool m_timersHasBeenSet = false;
 };
 

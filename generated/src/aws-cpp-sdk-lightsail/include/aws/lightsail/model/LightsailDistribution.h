@@ -449,66 +449,66 @@ class LightsailDistribution {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alternativeDomainNames;
-  bool m_alternativeDomainNamesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Origin m_origin;
-  bool m_originHasBeenSet = false;
 
   Aws::String m_originPublicDNS;
-  bool m_originPublicDNSHasBeenSet = false;
 
   CacheBehavior m_defaultCacheBehavior;
-  bool m_defaultCacheBehaviorHasBeenSet = false;
 
   CacheSettings m_cacheBehaviorSettings;
-  bool m_cacheBehaviorSettingsHasBeenSet = false;
 
   Aws::Vector<CacheBehaviorPerPath> m_cacheBehaviors;
-  bool m_cacheBehaviorsHasBeenSet = false;
 
   bool m_ableToUpdateBundle{false};
-  bool m_ableToUpdateBundleHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_viewerMinimumTlsProtocolVersion;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_alternativeDomainNamesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_isEnabledHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_originPublicDNSHasBeenSet = false;
+  bool m_defaultCacheBehaviorHasBeenSet = false;
+  bool m_cacheBehaviorSettingsHasBeenSet = false;
+  bool m_cacheBehaviorsHasBeenSet = false;
+  bool m_ableToUpdateBundleHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
 };
 

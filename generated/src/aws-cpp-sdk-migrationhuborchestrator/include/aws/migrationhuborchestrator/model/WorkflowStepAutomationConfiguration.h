@@ -123,18 +123,18 @@ class WorkflowStepAutomationConfiguration {
   ///@}
  private:
   Aws::String m_scriptLocationS3Bucket;
-  bool m_scriptLocationS3BucketHasBeenSet = false;
 
   PlatformScriptKey m_scriptLocationS3Key;
-  bool m_scriptLocationS3KeyHasBeenSet = false;
 
   PlatformCommand m_command;
-  bool m_commandHasBeenSet = false;
 
   RunEnvironment m_runEnvironment{RunEnvironment::NOT_SET};
-  bool m_runEnvironmentHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
+  bool m_scriptLocationS3BucketHasBeenSet = false;
+  bool m_scriptLocationS3KeyHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_runEnvironmentHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
 };
 

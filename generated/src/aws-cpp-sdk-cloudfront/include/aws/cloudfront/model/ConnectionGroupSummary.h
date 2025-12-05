@@ -230,36 +230,36 @@ class ConnectionGroupSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_routingEndpoint;
-  bool m_routingEndpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_anycastIpListId;
-  bool m_anycastIpListIdHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_isDefault{false};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_routingEndpointHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_anycastIpListIdHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_isDefaultHasBeenSet = false;
 };
 

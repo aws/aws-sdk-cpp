@@ -68,9 +68,9 @@ class RangeConstant {
   ///@}
  private:
   Aws::String m_minimum;
-  bool m_minimumHasBeenSet = false;
 
   Aws::String m_maximum;
+  bool m_minimumHasBeenSet = false;
   bool m_maximumHasBeenSet = false;
 };
 

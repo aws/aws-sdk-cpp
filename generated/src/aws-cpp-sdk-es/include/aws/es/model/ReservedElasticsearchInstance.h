@@ -271,42 +271,42 @@ class ReservedElasticsearchInstance {
   ///@}
  private:
   Aws::String m_reservationName;
-  bool m_reservationNameHasBeenSet = false;
 
   Aws::String m_reservedElasticsearchInstanceId;
-  bool m_reservedElasticsearchInstanceIdHasBeenSet = false;
 
   Aws::String m_reservedElasticsearchInstanceOfferingId;
-  bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
 
   ESPartitionInstanceType m_elasticsearchInstanceType{ESPartitionInstanceType::NOT_SET};
-  bool m_elasticsearchInstanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   double m_fixedPrice{0.0};
-  bool m_fixedPriceHasBeenSet = false;
 
   double m_usagePrice{0.0};
-  bool m_usagePriceHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_elasticsearchInstanceCount{0};
-  bool m_elasticsearchInstanceCountHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   ReservedElasticsearchInstancePaymentOption m_paymentOption{ReservedElasticsearchInstancePaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::Vector<RecurringCharge> m_recurringCharges;
+  bool m_reservationNameHasBeenSet = false;
+  bool m_reservedElasticsearchInstanceIdHasBeenSet = false;
+  bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
+  bool m_elasticsearchInstanceTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_fixedPriceHasBeenSet = false;
+  bool m_usagePriceHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_elasticsearchInstanceCountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
   bool m_recurringChargesHasBeenSet = false;
 };
 

@@ -354,48 +354,48 @@ class JobFlowDetail {
   ///@}
  private:
   Aws::String m_jobFlowId;
-  bool m_jobFlowIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_logEncryptionKmsKeyId;
-  bool m_logEncryptionKmsKeyIdHasBeenSet = false;
 
   Aws::String m_amiVersion;
-  bool m_amiVersionHasBeenSet = false;
 
   JobFlowExecutionStatusDetail m_executionStatusDetail;
-  bool m_executionStatusDetailHasBeenSet = false;
 
   JobFlowInstancesDetail m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::Vector<StepDetail> m_steps;
-  bool m_stepsHasBeenSet = false;
 
   Aws::Vector<BootstrapActionDetail> m_bootstrapActions;
-  bool m_bootstrapActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedProducts;
-  bool m_supportedProductsHasBeenSet = false;
 
   bool m_visibleToAllUsers{false};
-  bool m_visibleToAllUsersHasBeenSet = false;
 
   Aws::String m_jobFlowRole;
-  bool m_jobFlowRoleHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   Aws::String m_autoScalingRole;
-  bool m_autoScalingRoleHasBeenSet = false;
 
   ScaleDownBehavior m_scaleDownBehavior{ScaleDownBehavior::NOT_SET};
+  bool m_jobFlowIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_logUriHasBeenSet = false;
+  bool m_logEncryptionKmsKeyIdHasBeenSet = false;
+  bool m_amiVersionHasBeenSet = false;
+  bool m_executionStatusDetailHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_stepsHasBeenSet = false;
+  bool m_bootstrapActionsHasBeenSet = false;
+  bool m_supportedProductsHasBeenSet = false;
+  bool m_visibleToAllUsersHasBeenSet = false;
+  bool m_jobFlowRoleHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_autoScalingRoleHasBeenSet = false;
   bool m_scaleDownBehaviorHasBeenSet = false;
 };
 

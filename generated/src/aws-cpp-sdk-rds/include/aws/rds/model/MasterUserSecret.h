@@ -107,12 +107,12 @@ class MasterUserSecret {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_secretStatus;
-  bool m_secretStatusHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_secretArnHasBeenSet = false;
+  bool m_secretStatusHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

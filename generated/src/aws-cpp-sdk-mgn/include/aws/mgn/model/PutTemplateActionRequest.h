@@ -288,45 +288,45 @@ class PutTemplateActionRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_actionID;
-  bool m_actionIDHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   ActionCategory m_category{ActionCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_documentIdentifier;
-  bool m_documentIdentifierHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
-  bool m_externalParametersHasBeenSet = false;
 
   Aws::String m_launchConfigurationTemplateID;
-  bool m_launchConfigurationTemplateIDHasBeenSet = false;
 
   bool m_mustSucceedForCutover{false};
-  bool m_mustSucceedForCutoverHasBeenSet = false;
 
   Aws::String m_operatingSystem;
-  bool m_operatingSystemHasBeenSet = false;
 
   int m_order{0};
-  bool m_orderHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   int m_timeoutSeconds{0};
+  bool m_actionIDHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_documentIdentifierHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_externalParametersHasBeenSet = false;
+  bool m_launchConfigurationTemplateIDHasBeenSet = false;
+  bool m_mustSucceedForCutoverHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class SetIdentityMailFromDomainRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::String m_mailFromDomain;
-  bool m_mailFromDomainHasBeenSet = false;
 
   BehaviorOnMXFailure m_behaviorOnMXFailure{BehaviorOnMXFailure::NOT_SET};
+  bool m_identityHasBeenSet = false;
+  bool m_mailFromDomainHasBeenSet = false;
   bool m_behaviorOnMXFailureHasBeenSet = false;
 };
 

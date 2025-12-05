@@ -61,9 +61,9 @@ class ModifyDataMigrationResult {
   ///@}
  private:
   DataMigration m_dataMigration;
-  bool m_dataMigrationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataMigrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

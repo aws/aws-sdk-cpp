@@ -109,18 +109,18 @@ class DataSetImportSummary {
   ///@}
  private:
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_inProgress{0};
-  bool m_inProgressHasBeenSet = false;
 
   int m_pending{0};
-  bool m_pendingHasBeenSet = false;
 
   int m_succeeded{0};
-  bool m_succeededHasBeenSet = false;
 
   int m_total{0};
+  bool m_failedHasBeenSet = false;
+  bool m_inProgressHasBeenSet = false;
+  bool m_pendingHasBeenSet = false;
+  bool m_succeededHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class CreateSnapshotCopyGrantResult {
   ///@}
  private:
   SnapshotCopyGrant m_snapshotCopyGrant;
-  bool m_snapshotCopyGrantHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotCopyGrantHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

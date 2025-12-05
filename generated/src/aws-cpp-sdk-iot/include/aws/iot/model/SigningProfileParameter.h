@@ -86,12 +86,12 @@ class SigningProfileParameter {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_certificatePathOnDevice;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
   bool m_certificatePathOnDeviceHasBeenSet = false;
 };
 

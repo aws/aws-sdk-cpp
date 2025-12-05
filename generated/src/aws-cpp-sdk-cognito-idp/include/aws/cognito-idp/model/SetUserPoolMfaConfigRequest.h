@@ -159,21 +159,21 @@ class SetUserPoolMfaConfigRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   SmsMfaConfigType m_smsMfaConfiguration;
-  bool m_smsMfaConfigurationHasBeenSet = false;
 
   SoftwareTokenMfaConfigType m_softwareTokenMfaConfiguration;
-  bool m_softwareTokenMfaConfigurationHasBeenSet = false;
 
   EmailMfaConfigType m_emailMfaConfiguration;
-  bool m_emailMfaConfigurationHasBeenSet = false;
 
   UserPoolMfaType m_mfaConfiguration{UserPoolMfaType::NOT_SET};
-  bool m_mfaConfigurationHasBeenSet = false;
 
   WebAuthnConfigurationType m_webAuthnConfiguration;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_smsMfaConfigurationHasBeenSet = false;
+  bool m_softwareTokenMfaConfigurationHasBeenSet = false;
+  bool m_emailMfaConfigurationHasBeenSet = false;
+  bool m_mfaConfigurationHasBeenSet = false;
   bool m_webAuthnConfigurationHasBeenSet = false;
 };
 

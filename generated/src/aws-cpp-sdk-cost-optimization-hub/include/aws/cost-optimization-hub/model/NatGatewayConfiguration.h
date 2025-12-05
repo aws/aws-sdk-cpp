@@ -79,12 +79,12 @@ class NatGatewayConfiguration {
   ///@}
  private:
   long long m_activeConnectionCount{0};
-  bool m_activeConnectionCountHasBeenSet = false;
 
   long long m_packetsInFromSource{0};
-  bool m_packetsInFromSourceHasBeenSet = false;
 
   long long m_packetsInFromDestination{0};
+  bool m_activeConnectionCountHasBeenSet = false;
+  bool m_packetsInFromSourceHasBeenSet = false;
   bool m_packetsInFromDestinationHasBeenSet = false;
 };
 

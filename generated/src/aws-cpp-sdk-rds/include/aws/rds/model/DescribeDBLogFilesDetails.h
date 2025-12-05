@@ -85,12 +85,12 @@ class DescribeDBLogFilesDetails {
   ///@}
  private:
   Aws::String m_logFileName;
-  bool m_logFileNameHasBeenSet = false;
 
   long long m_lastWritten{0};
-  bool m_lastWrittenHasBeenSet = false;
 
   long long m_size{0};
+  bool m_logFileNameHasBeenSet = false;
+  bool m_lastWrittenHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

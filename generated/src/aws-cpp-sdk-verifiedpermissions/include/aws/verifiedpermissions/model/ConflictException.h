@@ -75,9 +75,9 @@ class ConflictException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<ResourceConflict> m_resources;
+  bool m_messageHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class DeleteApplicationVpcConfigurationRequest : public KinesisAnalyticsV2Reques
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   long long m_currentApplicationVersionId{0};
-  bool m_currentApplicationVersionIdHasBeenSet = false;
 
   Aws::String m_vpcConfigurationId;
-  bool m_vpcConfigurationIdHasBeenSet = false;
 
   Aws::String m_conditionalToken;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_currentApplicationVersionIdHasBeenSet = false;
+  bool m_vpcConfigurationIdHasBeenSet = false;
   bool m_conditionalTokenHasBeenSet = false;
 };
 

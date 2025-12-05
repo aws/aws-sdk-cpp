@@ -99,9 +99,9 @@ class LicenseRecommendationFilter {
   ///@}
  private:
   LicenseRecommendationFilterName m_name{LicenseRecommendationFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CategoryWithFindingNum {
   ///@}
  private:
   Aws::String m_categoryName;
-  bool m_categoryNameHasBeenSet = false;
 
   int m_findingNumber{0};
+  bool m_categoryNameHasBeenSet = false;
   bool m_findingNumberHasBeenSet = false;
 };
 

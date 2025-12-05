@@ -95,15 +95,15 @@ class GetFunctionScalingConfigResult {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   FunctionScalingConfig m_appliedFunctionScalingConfig;
-  bool m_appliedFunctionScalingConfigHasBeenSet = false;
 
   FunctionScalingConfig m_requestedFunctionScalingConfig;
-  bool m_requestedFunctionScalingConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionArnHasBeenSet = false;
+  bool m_appliedFunctionScalingConfigHasBeenSet = false;
+  bool m_requestedFunctionScalingConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

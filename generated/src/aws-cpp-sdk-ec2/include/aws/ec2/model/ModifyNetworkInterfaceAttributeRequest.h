@@ -277,36 +277,36 @@ class ModifyNetworkInterfaceAttributeRequest : public EC2Request {
   ///@}
  private:
   EnaSrdSpecification m_enaSrdSpecification;
-  bool m_enaSrdSpecificationHasBeenSet = false;
 
   bool m_enablePrimaryIpv6{false};
-  bool m_enablePrimaryIpv6HasBeenSet = false;
 
   ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
-  bool m_connectionTrackingSpecificationHasBeenSet = false;
 
   bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedSubnetIds;
-  bool m_associatedSubnetIdsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   AttributeValue m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AttributeBooleanValue m_sourceDestCheck;
-  bool m_sourceDestCheckHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   NetworkInterfaceAttachmentChanges m_attachment;
+  bool m_enaSrdSpecificationHasBeenSet = false;
+  bool m_enablePrimaryIpv6HasBeenSet = false;
+  bool m_connectionTrackingSpecificationHasBeenSet = false;
+  bool m_associatePublicIpAddressHasBeenSet = false;
+  bool m_associatedSubnetIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceDestCheckHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_attachmentHasBeenSet = false;
 };
 

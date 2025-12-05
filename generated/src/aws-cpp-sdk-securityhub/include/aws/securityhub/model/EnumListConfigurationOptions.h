@@ -100,12 +100,12 @@ class EnumListConfigurationOptions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedValues;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_allowedValuesHasBeenSet = false;
 };
 

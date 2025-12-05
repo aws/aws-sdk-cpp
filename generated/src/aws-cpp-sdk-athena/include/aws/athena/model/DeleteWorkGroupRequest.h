@@ -66,9 +66,9 @@ class DeleteWorkGroupRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   bool m_recursiveDeleteOption{false};
+  bool m_workGroupHasBeenSet = false;
   bool m_recursiveDeleteOptionHasBeenSet = false;
 };
 

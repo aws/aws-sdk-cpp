@@ -89,12 +89,12 @@ class SubModule {
   ///@}
  private:
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_absolutePath;
-  bool m_absolutePathHasBeenSet = false;
 
   Aws::String m_relativePath;
+  bool m_commitIdHasBeenSet = false;
+  bool m_absolutePathHasBeenSet = false;
   bool m_relativePathHasBeenSet = false;
 };
 

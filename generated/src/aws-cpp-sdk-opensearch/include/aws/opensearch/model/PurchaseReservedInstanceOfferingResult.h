@@ -83,12 +83,12 @@ class PurchaseReservedInstanceOfferingResult {
   ///@}
  private:
   Aws::String m_reservedInstanceId;
-  bool m_reservedInstanceIdHasBeenSet = false;
 
   Aws::String m_reservationName;
-  bool m_reservationNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reservedInstanceIdHasBeenSet = false;
+  bool m_reservationNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

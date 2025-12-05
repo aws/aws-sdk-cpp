@@ -108,12 +108,12 @@ class SkewedInfo {
   ///@}
  private:
   Aws::Vector<Aws::String> m_skewedColumnNames;
-  bool m_skewedColumnNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_skewedColumnValues;
-  bool m_skewedColumnValuesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_skewedColumnValueLocationMaps;
+  bool m_skewedColumnNamesHasBeenSet = false;
+  bool m_skewedColumnValuesHasBeenSet = false;
   bool m_skewedColumnValueLocationMapsHasBeenSet = false;
 };
 

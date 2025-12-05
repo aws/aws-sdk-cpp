@@ -77,9 +77,9 @@ class TrainingMetrics {
   ///@}
  private:
   Aws::Utils::DateTime m_time{};
-  bool m_timeHasBeenSet = false;
 
   Aws::Map<TrainingMetricName, double> m_metrics;
+  bool m_timeHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

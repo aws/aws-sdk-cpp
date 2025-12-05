@@ -77,12 +77,12 @@ class CreateStreamingURLResult {
   ///@}
  private:
   Aws::String m_streamingURL;
-  bool m_streamingURLHasBeenSet = false;
 
   Aws::Utils::DateTime m_expires{};
-  bool m_expiresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamingURLHasBeenSet = false;
+  bool m_expiresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -189,27 +189,27 @@ class TypeVersionSummary {
   ///@}
  private:
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
-  bool m_isDefaultVersionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeCreated{};
-  bool m_timeCreatedHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_publicVersionNumber;
+  bool m_typeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_isDefaultVersionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_timeCreatedHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_publicVersionNumberHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class EventConfigurationItem {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   IdentifierType m_identifierType{IdentifierType::NOT_SET};
-  bool m_identifierTypeHasBeenSet = false;
 
   EventNotificationPartnerType m_partnerType{EventNotificationPartnerType::NOT_SET};
-  bool m_partnerTypeHasBeenSet = false;
 
   EventNotificationItemConfigurations m_events;
+  bool m_identifierHasBeenSet = false;
+  bool m_identifierTypeHasBeenSet = false;
+  bool m_partnerTypeHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

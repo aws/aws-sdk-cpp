@@ -73,9 +73,9 @@ class ListIPSetsRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_nextMarkerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

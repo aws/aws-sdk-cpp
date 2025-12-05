@@ -104,15 +104,15 @@ class UpdateTemplateAliasRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   long long m_templateVersionNumber{0};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
   bool m_templateVersionNumberHasBeenSet = false;
 };
 

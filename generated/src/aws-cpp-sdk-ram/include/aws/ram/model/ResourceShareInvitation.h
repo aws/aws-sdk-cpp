@@ -184,27 +184,27 @@ class ResourceShareInvitation {
   ///@}
  private:
   Aws::String m_resourceShareInvitationArn;
-  bool m_resourceShareInvitationArnHasBeenSet = false;
 
   Aws::String m_resourceShareName;
-  bool m_resourceShareNameHasBeenSet = false;
 
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_senderAccountId;
-  bool m_senderAccountIdHasBeenSet = false;
 
   Aws::String m_receiverAccountId;
-  bool m_receiverAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_invitationTimestamp{};
-  bool m_invitationTimestampHasBeenSet = false;
 
   ResourceShareInvitationStatus m_status{ResourceShareInvitationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_receiverArn;
+  bool m_resourceShareInvitationArnHasBeenSet = false;
+  bool m_resourceShareNameHasBeenSet = false;
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_senderAccountIdHasBeenSet = false;
+  bool m_receiverAccountIdHasBeenSet = false;
+  bool m_invitationTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_receiverArnHasBeenSet = false;
 };
 

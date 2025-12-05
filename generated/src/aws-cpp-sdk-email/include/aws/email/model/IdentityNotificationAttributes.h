@@ -175,24 +175,24 @@ class IdentityNotificationAttributes {
   ///@}
  private:
   Aws::String m_bounceTopic;
-  bool m_bounceTopicHasBeenSet = false;
 
   Aws::String m_complaintTopic;
-  bool m_complaintTopicHasBeenSet = false;
 
   Aws::String m_deliveryTopic;
-  bool m_deliveryTopicHasBeenSet = false;
 
   bool m_forwardingEnabled{false};
-  bool m_forwardingEnabledHasBeenSet = false;
 
   bool m_headersInBounceNotificationsEnabled{false};
-  bool m_headersInBounceNotificationsEnabledHasBeenSet = false;
 
   bool m_headersInComplaintNotificationsEnabled{false};
-  bool m_headersInComplaintNotificationsEnabledHasBeenSet = false;
 
   bool m_headersInDeliveryNotificationsEnabled{false};
+  bool m_bounceTopicHasBeenSet = false;
+  bool m_complaintTopicHasBeenSet = false;
+  bool m_deliveryTopicHasBeenSet = false;
+  bool m_forwardingEnabledHasBeenSet = false;
+  bool m_headersInBounceNotificationsEnabledHasBeenSet = false;
+  bool m_headersInComplaintNotificationsEnabledHasBeenSet = false;
   bool m_headersInDeliveryNotificationsEnabledHasBeenSet = false;
 };
 

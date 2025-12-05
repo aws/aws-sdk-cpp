@@ -71,9 +71,9 @@ class PodIdentityAssociation {
   ///@}
  private:
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Aws::String m_associationId;
+  bool m_associationArnHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
 };
 

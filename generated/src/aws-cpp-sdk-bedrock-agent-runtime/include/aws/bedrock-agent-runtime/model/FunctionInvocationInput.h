@@ -151,21 +151,21 @@ class FunctionInvocationInput {
   ///@}
  private:
   Aws::String m_actionGroup;
-  bool m_actionGroupHasBeenSet = false;
 
   ActionInvocationType m_actionInvocationType{ActionInvocationType::NOT_SET};
-  bool m_actionInvocationTypeHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_collaboratorName;
-  bool m_collaboratorNameHasBeenSet = false;
 
   Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   Aws::Vector<FunctionParameter> m_parameters;
+  bool m_actionGroupHasBeenSet = false;
+  bool m_actionInvocationTypeHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_collaboratorNameHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

@@ -118,18 +118,18 @@ class SearchUsersByImageRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   double m_userMatchThreshold{0.0};
-  bool m_userMatchThresholdHasBeenSet = false;
 
   int m_maxUsers{0};
-  bool m_maxUsersHasBeenSet = false;
 
   QualityFilter m_qualityFilter{QualityFilter::NOT_SET};
+  bool m_collectionIdHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_userMatchThresholdHasBeenSet = false;
+  bool m_maxUsersHasBeenSet = false;
   bool m_qualityFilterHasBeenSet = false;
 };
 

@@ -267,39 +267,39 @@ class BoxPlotChartConfiguration {
   ///@}
  private:
   BoxPlotFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   BoxPlotSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   BoxPlotOptions m_boxPlotOptions;
-  bool m_boxPlotOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_categoryAxis;
-  bool m_categoryAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_primaryYAxisDisplayOptions;
-  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_primaryYAxisLabelOptions;
-  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   Aws::Vector<ReferenceLine> m_referenceLines;
-  bool m_referenceLinesHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_boxPlotOptionsHasBeenSet = false;
+  bool m_categoryAxisHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_referenceLinesHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

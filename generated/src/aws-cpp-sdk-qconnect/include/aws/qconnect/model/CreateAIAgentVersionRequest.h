@@ -113,15 +113,15 @@ class CreateAIAgentVersionRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTime{};
-  bool m_modifiedTimeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiAgentIdHasBeenSet = false;
+  bool m_modifiedTimeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

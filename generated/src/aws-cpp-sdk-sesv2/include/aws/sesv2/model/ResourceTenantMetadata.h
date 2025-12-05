@@ -106,15 +106,15 @@ class ResourceTenantMetadata {
   ///@}
  private:
   Aws::String m_tenantName;
-  bool m_tenantNameHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_associatedTimestamp{};
+  bool m_tenantNameHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_associatedTimestampHasBeenSet = false;
 };
 

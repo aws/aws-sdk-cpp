@@ -164,24 +164,24 @@ class AdvancedSecurityOptionsInput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_internalUserDatabaseEnabled{false};
-  bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
   MasterUserOptions m_masterUserOptions;
-  bool m_masterUserOptionsHasBeenSet = false;
 
   SAMLOptionsInput m_sAMLOptions;
-  bool m_sAMLOptionsHasBeenSet = false;
 
   JWTOptionsInput m_jWTOptions;
-  bool m_jWTOptionsHasBeenSet = false;
 
   IAMFederationOptionsInput m_iAMFederationOptions;
-  bool m_iAMFederationOptionsHasBeenSet = false;
 
   bool m_anonymousAuthEnabled{false};
+  bool m_enabledHasBeenSet = false;
+  bool m_internalUserDatabaseEnabledHasBeenSet = false;
+  bool m_masterUserOptionsHasBeenSet = false;
+  bool m_sAMLOptionsHasBeenSet = false;
+  bool m_jWTOptionsHasBeenSet = false;
+  bool m_iAMFederationOptionsHasBeenSet = false;
   bool m_anonymousAuthEnabledHasBeenSet = false;
 };
 

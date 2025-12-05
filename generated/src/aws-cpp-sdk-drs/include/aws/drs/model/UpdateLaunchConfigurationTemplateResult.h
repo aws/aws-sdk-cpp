@@ -60,9 +60,9 @@ class UpdateLaunchConfigurationTemplateResult {
   ///@}
  private:
   LaunchConfigurationTemplate m_launchConfigurationTemplate;
-  bool m_launchConfigurationTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_launchConfigurationTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

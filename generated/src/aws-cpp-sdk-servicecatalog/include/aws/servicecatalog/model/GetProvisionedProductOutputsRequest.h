@@ -147,21 +147,21 @@ class GetProvisionedProductOutputsRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::String m_provisionedProductName;
-  bool m_provisionedProductNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outputKeys;
-  bool m_outputKeysHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_provisionedProductIdHasBeenSet = false;
+  bool m_provisionedProductNameHasBeenSet = false;
+  bool m_outputKeysHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

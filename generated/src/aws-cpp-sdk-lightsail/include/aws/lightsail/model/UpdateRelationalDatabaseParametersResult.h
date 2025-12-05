@@ -70,9 +70,9 @@ class UpdateRelationalDatabaseParametersResult {
   ///@}
  private:
   Aws::Vector<Operation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

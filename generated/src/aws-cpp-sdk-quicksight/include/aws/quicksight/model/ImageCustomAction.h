@@ -134,18 +134,18 @@ class ImageCustomAction {
   ///@}
  private:
   Aws::String m_customActionId;
-  bool m_customActionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   WidgetStatus m_status{WidgetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ImageCustomActionTrigger m_trigger{ImageCustomActionTrigger::NOT_SET};
-  bool m_triggerHasBeenSet = false;
 
   Aws::Vector<ImageCustomActionOperation> m_actionOperations;
+  bool m_customActionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_triggerHasBeenSet = false;
   bool m_actionOperationsHasBeenSet = false;
 };
 

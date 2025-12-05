@@ -84,12 +84,12 @@ class CreateTrafficPolicyVersionResult {
   ///@}
  private:
   TrafficPolicy m_trafficPolicy;
-  bool m_trafficPolicyHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficPolicyHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

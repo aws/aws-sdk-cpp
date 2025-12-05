@@ -95,12 +95,12 @@ class SetupRequest {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainNames;
-  bool m_domainNamesHasBeenSet = false;
 
   CertificateProvider m_certificateProvider{CertificateProvider::NOT_SET};
+  bool m_instanceNameHasBeenSet = false;
+  bool m_domainNamesHasBeenSet = false;
   bool m_certificateProviderHasBeenSet = false;
 };
 

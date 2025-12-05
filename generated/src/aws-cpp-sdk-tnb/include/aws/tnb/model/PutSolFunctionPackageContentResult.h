@@ -145,24 +145,24 @@ class PutSolFunctionPackageContentResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   PutSolFunctionPackageContentMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_vnfProductName;
-  bool m_vnfProductNameHasBeenSet = false;
 
   Aws::String m_vnfProvider;
-  bool m_vnfProviderHasBeenSet = false;
 
   Aws::String m_vnfdId;
-  bool m_vnfdIdHasBeenSet = false;
 
   Aws::String m_vnfdVersion;
-  bool m_vnfdVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_vnfProductNameHasBeenSet = false;
+  bool m_vnfProviderHasBeenSet = false;
+  bool m_vnfdIdHasBeenSet = false;
+  bool m_vnfdVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

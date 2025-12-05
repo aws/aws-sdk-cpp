@@ -73,9 +73,9 @@ class DeleteSqlInjectionMatchSetRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_sqlInjectionMatchSetId;
-  bool m_sqlInjectionMatchSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_sqlInjectionMatchSetIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

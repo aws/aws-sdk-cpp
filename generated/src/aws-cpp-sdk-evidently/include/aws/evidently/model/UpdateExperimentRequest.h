@@ -240,33 +240,33 @@ class UpdateExperimentRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_experiment;
-  bool m_experimentHasBeenSet = false;
 
   Aws::Vector<MetricGoalConfig> m_metricGoals;
-  bool m_metricGoalsHasBeenSet = false;
 
   OnlineAbConfig m_onlineAbConfig;
-  bool m_onlineAbConfigHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::String m_randomizationSalt;
-  bool m_randomizationSaltHasBeenSet = false;
 
   bool m_removeSegment{false};
-  bool m_removeSegmentHasBeenSet = false;
 
   long long m_samplingRate{0};
-  bool m_samplingRateHasBeenSet = false;
 
   Aws::String m_segment;
-  bool m_segmentHasBeenSet = false;
 
   Aws::Vector<TreatmentConfig> m_treatments;
+  bool m_descriptionHasBeenSet = false;
+  bool m_experimentHasBeenSet = false;
+  bool m_metricGoalsHasBeenSet = false;
+  bool m_onlineAbConfigHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_randomizationSaltHasBeenSet = false;
+  bool m_removeSegmentHasBeenSet = false;
+  bool m_samplingRateHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_treatmentsHasBeenSet = false;
 };
 

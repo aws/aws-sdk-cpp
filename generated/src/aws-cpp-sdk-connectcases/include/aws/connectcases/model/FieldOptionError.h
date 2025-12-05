@@ -86,12 +86,12 @@ class FieldOptionError {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_messageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

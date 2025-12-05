@@ -58,9 +58,9 @@ class DeleteEgressOnlyInternetGatewayResponse {
   ///@}
  private:
   bool m_returnCode{false};
-  bool m_returnCodeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnCodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

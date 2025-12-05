@@ -88,12 +88,12 @@ class ListTestRecommendationsRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_assessmentArn;
-  bool m_assessmentArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_assessmentArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

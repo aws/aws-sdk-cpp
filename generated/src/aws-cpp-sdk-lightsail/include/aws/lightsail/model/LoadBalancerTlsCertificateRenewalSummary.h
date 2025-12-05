@@ -109,9 +109,9 @@ class LoadBalancerTlsCertificateRenewalSummary {
   ///@}
  private:
   LoadBalancerTlsCertificateRenewalStatus m_renewalStatus{LoadBalancerTlsCertificateRenewalStatus::NOT_SET};
-  bool m_renewalStatusHasBeenSet = false;
 
   Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption> m_domainValidationOptions;
+  bool m_renewalStatusHasBeenSet = false;
   bool m_domainValidationOptionsHasBeenSet = false;
 };
 

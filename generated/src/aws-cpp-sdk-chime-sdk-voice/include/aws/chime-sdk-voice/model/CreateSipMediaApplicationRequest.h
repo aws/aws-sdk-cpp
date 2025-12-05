@@ -116,15 +116,15 @@ class CreateSipMediaApplicationRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SipMediaApplicationEndpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

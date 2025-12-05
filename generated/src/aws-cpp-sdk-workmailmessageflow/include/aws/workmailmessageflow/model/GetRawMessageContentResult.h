@@ -56,9 +56,9 @@ class GetRawMessageContentResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_messageContent{};
-  bool m_messageContentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageContentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ServerShortInfoResponse {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_serverName;
+  bool m_serverIdHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
   bool m_serverNameHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class GetShardIteratorResult {
   ///@}
  private:
   Aws::String m_shardIterator;
-  bool m_shardIteratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shardIteratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

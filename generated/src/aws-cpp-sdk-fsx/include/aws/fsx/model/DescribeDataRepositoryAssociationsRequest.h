@@ -113,15 +113,15 @@ class DescribeDataRepositoryAssociationsRequest : public FSxRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_associationIds;
-  bool m_associationIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_associationIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

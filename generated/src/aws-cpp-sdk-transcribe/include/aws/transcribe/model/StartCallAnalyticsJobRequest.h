@@ -237,27 +237,27 @@ class StartCallAnalyticsJobRequest : public TranscribeServiceRequest {
   ///@}
  private:
   Aws::String m_callAnalyticsJobName;
-  bool m_callAnalyticsJobNameHasBeenSet = false;
 
   Media m_media;
-  bool m_mediaHasBeenSet = false;
 
   Aws::String m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_outputEncryptionKMSKeyId;
-  bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   CallAnalyticsJobSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<ChannelDefinition> m_channelDefinitions;
+  bool m_callAnalyticsJobNameHasBeenSet = false;
+  bool m_mediaHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_channelDefinitionsHasBeenSet = false;
 };
 

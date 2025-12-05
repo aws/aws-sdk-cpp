@@ -114,18 +114,18 @@ class AccountLimit {
   ///@}
  private:
   long long m_totalCodeSize{0};
-  bool m_totalCodeSizeHasBeenSet = false;
 
   long long m_codeSizeUnzipped{0};
-  bool m_codeSizeUnzippedHasBeenSet = false;
 
   long long m_codeSizeZipped{0};
-  bool m_codeSizeZippedHasBeenSet = false;
 
   int m_concurrentExecutions{0};
-  bool m_concurrentExecutionsHasBeenSet = false;
 
   int m_unreservedConcurrentExecutions{0};
+  bool m_totalCodeSizeHasBeenSet = false;
+  bool m_codeSizeUnzippedHasBeenSet = false;
+  bool m_codeSizeZippedHasBeenSet = false;
+  bool m_concurrentExecutionsHasBeenSet = false;
   bool m_unreservedConcurrentExecutionsHasBeenSet = false;
 };
 

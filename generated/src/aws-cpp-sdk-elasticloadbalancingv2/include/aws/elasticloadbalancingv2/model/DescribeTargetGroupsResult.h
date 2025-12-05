@@ -87,12 +87,12 @@ class DescribeTargetGroupsResult {
   ///@}
  private:
   Aws::Vector<TargetGroup> m_targetGroups;
-  bool m_targetGroupsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_targetGroupsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

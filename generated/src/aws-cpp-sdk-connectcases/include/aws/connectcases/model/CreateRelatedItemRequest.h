@@ -120,18 +120,18 @@ class CreateRelatedItemRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   RelatedItemType m_type{RelatedItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RelatedItemInputContent m_content;
-  bool m_contentHasBeenSet = false;
 
   UserUnion m_performedBy;
+  bool m_domainIdHasBeenSet = false;
+  bool m_caseIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_performedByHasBeenSet = false;
 };
 

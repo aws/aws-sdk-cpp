@@ -112,15 +112,15 @@ class AssociateFacesResult {
   ///@}
  private:
   Aws::Vector<AssociatedFace> m_associatedFaces;
-  bool m_associatedFacesHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulFaceAssociation> m_unsuccessfulFaceAssociations;
-  bool m_unsuccessfulFaceAssociationsHasBeenSet = false;
 
   UserStatus m_userStatus{UserStatus::NOT_SET};
-  bool m_userStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedFacesHasBeenSet = false;
+  bool m_unsuccessfulFaceAssociationsHasBeenSet = false;
+  bool m_userStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

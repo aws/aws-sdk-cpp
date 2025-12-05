@@ -91,12 +91,12 @@ class ConnectorEntity {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   bool m_hasNestedEntities{false};
+  bool m_nameHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
   bool m_hasNestedEntitiesHasBeenSet = false;
 };
 

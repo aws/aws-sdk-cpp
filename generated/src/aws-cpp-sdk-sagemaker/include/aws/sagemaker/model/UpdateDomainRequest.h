@@ -223,30 +223,30 @@ class UpdateDomainRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   UserSettings m_defaultUserSettings;
-  bool m_defaultUserSettingsHasBeenSet = false;
 
   DomainSettingsForUpdate m_domainSettingsForUpdate;
-  bool m_domainSettingsForUpdateHasBeenSet = false;
 
   AppSecurityGroupManagement m_appSecurityGroupManagement{AppSecurityGroupManagement::NOT_SET};
-  bool m_appSecurityGroupManagementHasBeenSet = false;
 
   DefaultSpaceSettings m_defaultSpaceSettings;
-  bool m_defaultSpaceSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   AppNetworkAccessType m_appNetworkAccessType{AppNetworkAccessType::NOT_SET};
-  bool m_appNetworkAccessTypeHasBeenSet = false;
 
   TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
-  bool m_tagPropagationHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_defaultUserSettingsHasBeenSet = false;
+  bool m_domainSettingsForUpdateHasBeenSet = false;
+  bool m_appSecurityGroupManagementHasBeenSet = false;
+  bool m_defaultSpaceSettingsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_appNetworkAccessTypeHasBeenSet = false;
+  bool m_tagPropagationHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListV2LoggingLevelsRequest : public IoTRequest {
   ///@}
  private:
   LogTargetType m_targetType{LogTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_targetTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

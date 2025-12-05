@@ -111,15 +111,15 @@ class DisassociateEmailAddressAliasRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_emailAddressId;
-  bool m_emailAddressIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   AliasConfiguration m_aliasConfiguration;
-  bool m_aliasConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_emailAddressIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_aliasConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -78,12 +78,12 @@ class GetCalculationExecutionStatusResult {
   ///@}
  private:
   CalculationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   CalculationStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

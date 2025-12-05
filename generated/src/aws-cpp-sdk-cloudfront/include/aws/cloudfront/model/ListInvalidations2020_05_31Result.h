@@ -66,9 +66,9 @@ class ListInvalidations2020_05_31Result {
   ///@}
  private:
   InvalidationList m_invalidationList;
-  bool m_invalidationListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invalidationListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

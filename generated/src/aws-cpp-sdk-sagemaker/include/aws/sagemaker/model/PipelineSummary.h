@@ -177,27 +177,27 @@ class PipelineSummary {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_pipelineDisplayName;
-  bool m_pipelineDisplayNameHasBeenSet = false;
 
   Aws::String m_pipelineDescription;
-  bool m_pipelineDescriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastExecutionTime{};
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineDisplayNameHasBeenSet = false;
+  bool m_pipelineDescriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastExecutionTimeHasBeenSet = false;
 };
 

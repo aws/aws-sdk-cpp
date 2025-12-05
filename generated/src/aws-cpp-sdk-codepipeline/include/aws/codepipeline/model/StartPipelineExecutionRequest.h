@@ -129,15 +129,15 @@ class StartPipelineExecutionRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<PipelineVariable> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<SourceRevisionOverride> m_sourceRevisions;
+  bool m_nameHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_sourceRevisionsHasBeenSet = false;
 };
 

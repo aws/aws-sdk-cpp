@@ -76,9 +76,9 @@ class TestingData {
   ///@}
  private:
   Aws::Vector<Asset> m_assets;
-  bool m_assetsHasBeenSet = false;
 
   bool m_autoCreate{false};
+  bool m_assetsHasBeenSet = false;
   bool m_autoCreateHasBeenSet = false;
 };
 

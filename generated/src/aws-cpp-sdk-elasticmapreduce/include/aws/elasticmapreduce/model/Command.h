@@ -94,12 +94,12 @@ class Command {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_scriptPath;
-  bool m_scriptPathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_args;
+  bool m_nameHasBeenSet = false;
+  bool m_scriptPathHasBeenSet = false;
   bool m_argsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class AutoTuneOptionsStatus {
   ///@}
  private:
   AutoTuneOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   AutoTuneStatus m_status;
+  bool m_optionsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

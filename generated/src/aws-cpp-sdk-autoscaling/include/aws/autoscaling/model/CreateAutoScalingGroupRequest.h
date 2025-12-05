@@ -821,102 +821,102 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_launchConfigurationName;
-  bool m_launchConfigurationNameHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   MixedInstancesPolicy m_mixedInstancesPolicy;
-  bool m_mixedInstancesPolicyHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   int m_maxSize{0};
-  bool m_maxSizeHasBeenSet = false;
 
   int m_desiredCapacity{0};
-  bool m_desiredCapacityHasBeenSet = false;
 
   int m_defaultCooldown{0};
-  bool m_defaultCooldownHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_loadBalancerNames;
-  bool m_loadBalancerNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetGroupARNs;
-  bool m_targetGroupARNsHasBeenSet = false;
 
   Aws::String m_healthCheckType;
-  bool m_healthCheckTypeHasBeenSet = false;
 
   int m_healthCheckGracePeriod{0};
-  bool m_healthCheckGracePeriodHasBeenSet = false;
 
   Aws::String m_placementGroup;
-  bool m_placementGroupHasBeenSet = false;
 
   Aws::String m_vPCZoneIdentifier;
-  bool m_vPCZoneIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_terminationPolicies;
-  bool m_terminationPoliciesHasBeenSet = false;
 
   bool m_newInstancesProtectedFromScaleIn{false};
-  bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
 
   bool m_capacityRebalance{false};
-  bool m_capacityRebalanceHasBeenSet = false;
 
   Aws::Vector<LifecycleHookSpecification> m_lifecycleHookSpecificationList;
-  bool m_lifecycleHookSpecificationListHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_serviceLinkedRoleARN;
-  bool m_serviceLinkedRoleARNHasBeenSet = false;
 
   int m_maxInstanceLifetime{0};
-  bool m_maxInstanceLifetimeHasBeenSet = false;
 
   Aws::String m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::String m_desiredCapacityType;
-  bool m_desiredCapacityTypeHasBeenSet = false;
 
   int m_defaultInstanceWarmup{0};
-  bool m_defaultInstanceWarmupHasBeenSet = false;
 
   Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
-  bool m_trafficSourcesHasBeenSet = false;
 
   InstanceMaintenancePolicy m_instanceMaintenancePolicy;
-  bool m_instanceMaintenancePolicyHasBeenSet = false;
 
   AvailabilityZoneDistribution m_availabilityZoneDistribution;
-  bool m_availabilityZoneDistributionHasBeenSet = false;
 
   AvailabilityZoneImpairmentPolicy m_availabilityZoneImpairmentPolicy;
-  bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
 
   bool m_skipZonalShiftValidation{false};
-  bool m_skipZonalShiftValidationHasBeenSet = false;
 
   CapacityReservationSpecification m_capacityReservationSpecification;
-  bool m_capacityReservationSpecificationHasBeenSet = false;
 
   InstanceLifecyclePolicy m_instanceLifecyclePolicy;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_launchConfigurationNameHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_mixedInstancesPolicyHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
+  bool m_desiredCapacityHasBeenSet = false;
+  bool m_defaultCooldownHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_loadBalancerNamesHasBeenSet = false;
+  bool m_targetGroupARNsHasBeenSet = false;
+  bool m_healthCheckTypeHasBeenSet = false;
+  bool m_healthCheckGracePeriodHasBeenSet = false;
+  bool m_placementGroupHasBeenSet = false;
+  bool m_vPCZoneIdentifierHasBeenSet = false;
+  bool m_terminationPoliciesHasBeenSet = false;
+  bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
+  bool m_capacityRebalanceHasBeenSet = false;
+  bool m_lifecycleHookSpecificationListHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_serviceLinkedRoleARNHasBeenSet = false;
+  bool m_maxInstanceLifetimeHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_desiredCapacityTypeHasBeenSet = false;
+  bool m_defaultInstanceWarmupHasBeenSet = false;
+  bool m_trafficSourcesHasBeenSet = false;
+  bool m_instanceMaintenancePolicyHasBeenSet = false;
+  bool m_availabilityZoneDistributionHasBeenSet = false;
+  bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
+  bool m_skipZonalShiftValidationHasBeenSet = false;
+  bool m_capacityReservationSpecificationHasBeenSet = false;
   bool m_instanceLifecyclePolicyHasBeenSet = false;
 };
 

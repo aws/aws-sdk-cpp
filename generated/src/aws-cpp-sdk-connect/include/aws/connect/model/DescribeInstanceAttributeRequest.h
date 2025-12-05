@@ -66,9 +66,9 @@ class DescribeInstanceAttributeRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceAttributeType m_attributeType{InstanceAttributeType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
   bool m_attributeTypeHasBeenSet = false;
 };
 

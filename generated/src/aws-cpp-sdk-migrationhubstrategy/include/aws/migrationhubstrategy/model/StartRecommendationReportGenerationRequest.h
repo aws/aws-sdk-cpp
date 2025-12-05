@@ -72,9 +72,9 @@ class StartRecommendationReportGenerationRequest : public MigrationHubStrategyRe
   ///@}
  private:
   Aws::Vector<Group> m_groupIdFilter;
-  bool m_groupIdFilterHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
+  bool m_groupIdFilterHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

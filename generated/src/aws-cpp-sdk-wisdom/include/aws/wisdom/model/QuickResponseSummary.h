@@ -304,45 +304,45 @@ class QuickResponseSummary {
   ///@}
  private:
   Aws::Vector<Aws::String> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_quickResponseArn;
-  bool m_quickResponseArnHasBeenSet = false;
 
   Aws::String m_quickResponseId;
-  bool m_quickResponseIdHasBeenSet = false;
 
   QuickResponseStatus m_status{QuickResponseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_channelsHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_quickResponseArnHasBeenSet = false;
+  bool m_quickResponseIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

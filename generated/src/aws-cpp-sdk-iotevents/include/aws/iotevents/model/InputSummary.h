@@ -140,21 +140,21 @@ class InputSummary {
   ///@}
  private:
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   Aws::String m_inputDescription;
-  bool m_inputDescriptionHasBeenSet = false;
 
   Aws::String m_inputArn;
-  bool m_inputArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   InputStatus m_status{InputStatus::NOT_SET};
+  bool m_inputNameHasBeenSet = false;
+  bool m_inputDescriptionHasBeenSet = false;
+  bool m_inputArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

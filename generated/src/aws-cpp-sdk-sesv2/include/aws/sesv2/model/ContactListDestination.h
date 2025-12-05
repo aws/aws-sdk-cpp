@@ -71,9 +71,9 @@ class ContactListDestination {
   ///@}
  private:
   Aws::String m_contactListName;
-  bool m_contactListNameHasBeenSet = false;
 
   ContactListImportAction m_contactListImportAction{ContactListImportAction::NOT_SET};
+  bool m_contactListNameHasBeenSet = false;
   bool m_contactListImportActionHasBeenSet = false;
 };
 

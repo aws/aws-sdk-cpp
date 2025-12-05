@@ -215,24 +215,24 @@ class ListShardsRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_exclusiveStartShardId;
-  bool m_exclusiveStartShardIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_streamCreationTimestamp{};
-  bool m_streamCreationTimestampHasBeenSet = false;
 
   ShardFilter m_shardFilter;
-  bool m_shardFilterHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_exclusiveStartShardIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_streamCreationTimestampHasBeenSet = false;
+  bool m_shardFilterHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

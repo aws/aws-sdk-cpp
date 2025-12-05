@@ -88,12 +88,12 @@ class ModuleParameters {
   ///@}
  private:
   NoBidModuleParameters m_noBid;
-  bool m_noBidHasBeenSet = false;
 
   OpenRtbAttributeModuleParameters m_openRtbAttribute;
-  bool m_openRtbAttributeHasBeenSet = false;
 
   RateLimiterModuleParameters m_rateLimiter;
+  bool m_noBidHasBeenSet = false;
+  bool m_openRtbAttributeHasBeenSet = false;
   bool m_rateLimiterHasBeenSet = false;
 };
 

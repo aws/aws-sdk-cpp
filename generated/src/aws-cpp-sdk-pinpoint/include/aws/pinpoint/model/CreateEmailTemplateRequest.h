@@ -67,9 +67,9 @@ class CreateEmailTemplateRequest : public PinpointRequest {
   ///@}
  private:
   EmailTemplateRequest m_emailTemplateRequest;
-  bool m_emailTemplateRequestHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_emailTemplateRequestHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

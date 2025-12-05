@@ -102,12 +102,12 @@ class ListAccountAssociationsFilter {
   ///@}
  private:
   Aws::String m_association;
-  bool m_associationHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_associationHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

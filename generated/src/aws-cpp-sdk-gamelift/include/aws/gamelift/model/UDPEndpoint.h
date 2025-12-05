@@ -67,9 +67,9 @@ class UDPEndpoint {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   int m_port{0};
+  bool m_domainHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

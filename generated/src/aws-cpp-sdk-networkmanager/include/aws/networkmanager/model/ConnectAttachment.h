@@ -88,12 +88,12 @@ class ConnectAttachment {
   ///@}
  private:
   Attachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::String m_transportAttachmentId;
-  bool m_transportAttachmentIdHasBeenSet = false;
 
   ConnectAttachmentOptions m_options;
+  bool m_attachmentHasBeenSet = false;
+  bool m_transportAttachmentIdHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

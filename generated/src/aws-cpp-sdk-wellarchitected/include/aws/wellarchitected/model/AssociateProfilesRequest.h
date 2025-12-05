@@ -70,9 +70,9 @@ class AssociateProfilesRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_profileArns;
+  bool m_workloadIdHasBeenSet = false;
   bool m_profileArnsHasBeenSet = false;
 };
 

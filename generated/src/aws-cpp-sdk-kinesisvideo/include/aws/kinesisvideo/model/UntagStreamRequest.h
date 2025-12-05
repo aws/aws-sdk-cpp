@@ -91,12 +91,12 @@ class UntagStreamRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyList;
+  bool m_streamARNHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
   bool m_tagKeyListHasBeenSet = false;
 };
 

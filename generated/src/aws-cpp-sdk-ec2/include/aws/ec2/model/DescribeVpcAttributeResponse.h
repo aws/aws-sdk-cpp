@@ -116,18 +116,18 @@ class DescribeVpcAttributeResponse {
   ///@}
  private:
   AttributeBooleanValue m_enableDnsHostnames;
-  bool m_enableDnsHostnamesHasBeenSet = false;
 
   AttributeBooleanValue m_enableDnsSupport;
-  bool m_enableDnsSupportHasBeenSet = false;
 
   AttributeBooleanValue m_enableNetworkAddressUsageMetrics;
-  bool m_enableNetworkAddressUsageMetricsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_enableDnsHostnamesHasBeenSet = false;
+  bool m_enableDnsSupportHasBeenSet = false;
+  bool m_enableNetworkAddressUsageMetricsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

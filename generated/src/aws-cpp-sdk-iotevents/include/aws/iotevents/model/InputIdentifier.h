@@ -69,9 +69,9 @@ class InputIdentifier {
   ///@}
  private:
   IotEventsInputIdentifier m_iotEventsInputIdentifier;
-  bool m_iotEventsInputIdentifierHasBeenSet = false;
 
   IotSiteWiseInputIdentifier m_iotSiteWiseInputIdentifier;
+  bool m_iotEventsInputIdentifierHasBeenSet = false;
   bool m_iotSiteWiseInputIdentifierHasBeenSet = false;
 };
 

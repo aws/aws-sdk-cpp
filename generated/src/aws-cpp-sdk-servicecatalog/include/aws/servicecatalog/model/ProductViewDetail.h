@@ -132,18 +132,18 @@ class ProductViewDetail {
   ///@}
  private:
   ProductViewSummary m_productViewSummary;
-  bool m_productViewSummaryHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_productARN;
-  bool m_productARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   SourceConnectionDetail m_sourceConnection;
+  bool m_productViewSummaryHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_productARNHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_sourceConnectionHasBeenSet = false;
 };
 

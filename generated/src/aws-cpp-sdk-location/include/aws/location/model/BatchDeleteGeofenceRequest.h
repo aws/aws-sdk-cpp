@@ -72,9 +72,9 @@ class BatchDeleteGeofenceRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_geofenceIds;
+  bool m_collectionNameHasBeenSet = false;
   bool m_geofenceIdsHasBeenSet = false;
 };
 

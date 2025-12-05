@@ -69,9 +69,9 @@ class PolandAdditionalInfo {
   ///@}
  private:
   Aws::String m_individualRegistrationNumber;
-  bool m_individualRegistrationNumberHasBeenSet = false;
 
   bool m_isGroupVatEnabled{false};
+  bool m_individualRegistrationNumberHasBeenSet = false;
   bool m_isGroupVatEnabledHasBeenSet = false;
 };
 

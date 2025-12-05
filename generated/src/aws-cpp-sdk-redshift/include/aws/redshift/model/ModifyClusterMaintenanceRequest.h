@@ -142,21 +142,21 @@ class ModifyClusterMaintenanceRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   bool m_deferMaintenance{false};
-  bool m_deferMaintenanceHasBeenSet = false;
 
   Aws::String m_deferMaintenanceIdentifier;
-  bool m_deferMaintenanceIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_deferMaintenanceStartTime{};
-  bool m_deferMaintenanceStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deferMaintenanceEndTime{};
-  bool m_deferMaintenanceEndTimeHasBeenSet = false;
 
   int m_deferMaintenanceDuration{0};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_deferMaintenanceHasBeenSet = false;
+  bool m_deferMaintenanceIdentifierHasBeenSet = false;
+  bool m_deferMaintenanceStartTimeHasBeenSet = false;
+  bool m_deferMaintenanceEndTimeHasBeenSet = false;
   bool m_deferMaintenanceDurationHasBeenSet = false;
 };
 

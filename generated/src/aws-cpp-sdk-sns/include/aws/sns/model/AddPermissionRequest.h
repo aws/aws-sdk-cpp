@@ -121,15 +121,15 @@ class AddPermissionRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aWSAccountId;
-  bool m_aWSAccountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actionName;
+  bool m_topicArnHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_aWSAccountIdHasBeenSet = false;
   bool m_actionNameHasBeenSet = false;
 };
 

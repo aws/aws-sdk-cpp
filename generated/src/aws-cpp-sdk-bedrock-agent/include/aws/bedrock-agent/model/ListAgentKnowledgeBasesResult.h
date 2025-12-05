@@ -87,12 +87,12 @@ class ListAgentKnowledgeBasesResult {
   ///@}
  private:
   Aws::Vector<AgentKnowledgeBaseSummary> m_agentKnowledgeBaseSummaries;
-  bool m_agentKnowledgeBaseSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentKnowledgeBaseSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

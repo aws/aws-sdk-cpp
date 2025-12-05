@@ -97,9 +97,9 @@ class InferredWorkloadSaving {
   ///@}
  private:
   Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
-  bool m_inferredWorkloadTypesHasBeenSet = false;
 
   EstimatedMonthlySavings m_estimatedMonthlySavings;
+  bool m_inferredWorkloadTypesHasBeenSet = false;
   bool m_estimatedMonthlySavingsHasBeenSet = false;
 };
 

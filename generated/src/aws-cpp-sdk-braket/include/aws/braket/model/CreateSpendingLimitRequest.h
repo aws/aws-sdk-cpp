@@ -133,18 +133,18 @@ class CreateSpendingLimitRequest : public BraketRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_spendingLimit;
-  bool m_spendingLimitHasBeenSet = false;
 
   TimePeriod m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_spendingLimitHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

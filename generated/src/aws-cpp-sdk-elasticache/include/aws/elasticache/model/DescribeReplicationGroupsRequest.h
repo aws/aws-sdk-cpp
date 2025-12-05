@@ -97,12 +97,12 @@ class DescribeReplicationGroupsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

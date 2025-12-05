@@ -65,9 +65,9 @@ class DataReplicationInitiationStep {
   ///@}
  private:
   DataReplicationInitiationStepName m_name{DataReplicationInitiationStepName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   DataReplicationInitiationStepStatus m_status{DataReplicationInitiationStepStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

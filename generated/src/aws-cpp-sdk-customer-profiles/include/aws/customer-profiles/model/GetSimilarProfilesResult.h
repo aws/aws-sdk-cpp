@@ -155,24 +155,24 @@ class GetSimilarProfilesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_profileIds;
-  bool m_profileIdsHasBeenSet = false;
 
   Aws::String m_matchId;
-  bool m_matchIdHasBeenSet = false;
 
   MatchType m_matchType{MatchType::NOT_SET};
-  bool m_matchTypeHasBeenSet = false;
 
   int m_ruleLevel{0};
-  bool m_ruleLevelHasBeenSet = false;
 
   double m_confidenceScore{0.0};
-  bool m_confidenceScoreHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileIdsHasBeenSet = false;
+  bool m_matchIdHasBeenSet = false;
+  bool m_matchTypeHasBeenSet = false;
+  bool m_ruleLevelHasBeenSet = false;
+  bool m_confidenceScoreHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class TestMappingRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_inputFileContent;
-  bool m_inputFileContentHasBeenSet = false;
 
   Aws::String m_mappingTemplate;
-  bool m_mappingTemplateHasBeenSet = false;
 
   FileFormat m_fileFormat{FileFormat::NOT_SET};
+  bool m_inputFileContentHasBeenSet = false;
+  bool m_mappingTemplateHasBeenSet = false;
   bool m_fileFormatHasBeenSet = false;
 };
 

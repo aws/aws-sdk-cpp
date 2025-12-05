@@ -78,9 +78,9 @@ class CreateStreamKeyRequest : public IVSRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_channelArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

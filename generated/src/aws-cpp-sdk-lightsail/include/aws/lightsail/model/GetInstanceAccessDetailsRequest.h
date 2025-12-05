@@ -67,9 +67,9 @@ class GetInstanceAccessDetailsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   InstanceAccessProtocol m_protocol{InstanceAccessProtocol::NOT_SET};
+  bool m_instanceNameHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

@@ -281,33 +281,33 @@ class CreateFeatureGroupRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_recordIdentifierFeatureName;
-  bool m_recordIdentifierFeatureNameHasBeenSet = false;
 
   Aws::String m_eventTimeFeatureName;
-  bool m_eventTimeFeatureNameHasBeenSet = false;
 
   Aws::Vector<FeatureDefinition> m_featureDefinitions;
-  bool m_featureDefinitionsHasBeenSet = false;
 
   OnlineStoreConfig m_onlineStoreConfig;
-  bool m_onlineStoreConfigHasBeenSet = false;
 
   OfflineStoreConfig m_offlineStoreConfig;
-  bool m_offlineStoreConfigHasBeenSet = false;
 
   ThroughputConfig m_throughputConfig;
-  bool m_throughputConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordIdentifierFeatureNameHasBeenSet = false;
+  bool m_eventTimeFeatureNameHasBeenSet = false;
+  bool m_featureDefinitionsHasBeenSet = false;
+  bool m_onlineStoreConfigHasBeenSet = false;
+  bool m_offlineStoreConfigHasBeenSet = false;
+  bool m_throughputConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

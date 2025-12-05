@@ -173,24 +173,24 @@ class MacModificationTask {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_macModificationTaskId;
-  bool m_macModificationTaskIdHasBeenSet = false;
 
   MacSystemIntegrityProtectionConfiguration m_macSystemIntegrityProtectionConfig;
-  bool m_macSystemIntegrityProtectionConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MacModificationTaskState m_taskState{MacModificationTaskState::NOT_SET};
-  bool m_taskStateHasBeenSet = false;
 
   MacModificationTaskType m_taskType{MacModificationTaskType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_macModificationTaskIdHasBeenSet = false;
+  bool m_macSystemIntegrityProtectionConfigHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_taskStateHasBeenSet = false;
   bool m_taskTypeHasBeenSet = false;
 };
 

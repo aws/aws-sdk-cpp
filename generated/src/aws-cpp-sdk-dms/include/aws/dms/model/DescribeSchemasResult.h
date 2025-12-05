@@ -90,12 +90,12 @@ class DescribeSchemasResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_schemas;
-  bool m_schemasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_schemasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

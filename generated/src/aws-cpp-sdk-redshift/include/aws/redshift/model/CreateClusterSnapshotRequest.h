@@ -122,15 +122,15 @@ class CreateClusterSnapshotRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

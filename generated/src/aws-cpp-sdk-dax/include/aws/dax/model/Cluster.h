@@ -412,60 +412,60 @@ class Cluster {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   int m_totalNodes{0};
-  bool m_totalNodesHasBeenSet = false;
 
   int m_activeNodes{0};
-  bool m_activeNodesHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Endpoint m_clusterDiscoveryEndpoint;
-  bool m_clusterDiscoveryEndpointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeIdsToRemove;
-  bool m_nodeIdsToRemoveHasBeenSet = false;
 
   Aws::Vector<Node> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   Aws::String m_subnetGroup;
-  bool m_subnetGroupHasBeenSet = false;
 
   Aws::Vector<SecurityGroupMembership> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   ParameterGroupStatus m_parameterGroup;
-  bool m_parameterGroupHasBeenSet = false;
 
   SSEDescription m_sSEDescription;
-  bool m_sSEDescriptionHasBeenSet = false;
 
   ClusterEndpointEncryptionType m_clusterEndpointEncryptionType{ClusterEndpointEncryptionType::NOT_SET};
-  bool m_clusterEndpointEncryptionTypeHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_totalNodesHasBeenSet = false;
+  bool m_activeNodesHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_clusterDiscoveryEndpointHasBeenSet = false;
+  bool m_nodeIdsToRemoveHasBeenSet = false;
+  bool m_nodesHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
+  bool m_subnetGroupHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_parameterGroupHasBeenSet = false;
+  bool m_sSEDescriptionHasBeenSet = false;
+  bool m_clusterEndpointEncryptionTypeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

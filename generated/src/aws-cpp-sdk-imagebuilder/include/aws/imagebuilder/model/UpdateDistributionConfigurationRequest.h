@@ -114,15 +114,15 @@ class UpdateDistributionConfigurationRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_distributionConfigurationArn;
-  bool m_distributionConfigurationArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Distribution> m_distributions;
-  bool m_distributionsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_distributionConfigurationArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_distributionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -74,9 +74,9 @@ class EmailMessageTemplateContentBody {
   ///@}
  private:
   MessageTemplateBodyContentProvider m_plainText;
-  bool m_plainTextHasBeenSet = false;
 
   MessageTemplateBodyContentProvider m_html;
+  bool m_plainTextHasBeenSet = false;
   bool m_htmlHasBeenSet = false;
 };
 

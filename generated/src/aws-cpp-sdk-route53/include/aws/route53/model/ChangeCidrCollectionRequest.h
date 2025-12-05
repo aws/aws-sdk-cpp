@@ -100,12 +100,12 @@ class ChangeCidrCollectionRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   long long m_collectionVersion{0};
-  bool m_collectionVersionHasBeenSet = false;
 
   Aws::Vector<CidrCollectionChange> m_changes;
+  bool m_idHasBeenSet = false;
+  bool m_collectionVersionHasBeenSet = false;
   bool m_changesHasBeenSet = false;
 };
 

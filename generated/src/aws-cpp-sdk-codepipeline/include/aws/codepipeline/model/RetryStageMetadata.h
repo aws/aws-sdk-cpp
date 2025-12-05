@@ -84,12 +84,12 @@ class RetryStageMetadata {
   ///@}
  private:
   int m_autoStageRetryAttempt{0};
-  bool m_autoStageRetryAttemptHasBeenSet = false;
 
   int m_manualStageRetryAttempt{0};
-  bool m_manualStageRetryAttemptHasBeenSet = false;
 
   RetryTrigger m_latestRetryTrigger{RetryTrigger::NOT_SET};
+  bool m_autoStageRetryAttemptHasBeenSet = false;
+  bool m_manualStageRetryAttemptHasBeenSet = false;
   bool m_latestRetryTriggerHasBeenSet = false;
 };
 

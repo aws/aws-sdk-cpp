@@ -140,21 +140,21 @@ class ImportReferenceJobItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_referenceStoreId;
-  bool m_referenceStoreIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ReferenceImportJobStatus m_status{ReferenceImportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
+  bool m_idHasBeenSet = false;
+  bool m_referenceStoreIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_completionTimeHasBeenSet = false;
 };
 

@@ -149,12 +149,12 @@ class WebhookFilter {
   ///@}
  private:
   WebhookFilterType m_type{WebhookFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   bool m_excludeMatchedPattern{false};
+  bool m_typeHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
   bool m_excludeMatchedPatternHasBeenSet = false;
 };
 

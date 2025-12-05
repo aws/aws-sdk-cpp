@@ -202,27 +202,27 @@ class UpdateUserRequest : public DirectoryServiceDataRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_otherAttributes;
-  bool m_otherAttributesHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   Aws::String m_surname;
-  bool m_surnameHasBeenSet = false;
 
   UpdateType m_updateType{UpdateType::NOT_SET};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_otherAttributesHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
+  bool m_surnameHasBeenSet = false;
   bool m_updateTypeHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class RouteRoundaboutExitStepDetails {
   ///@}
  private:
   Aws::Vector<LocalizedString> m_intersection;
-  bool m_intersectionHasBeenSet = false;
 
   int m_relativeExit{0};
-  bool m_relativeExitHasBeenSet = false;
 
   double m_roundaboutAngle{0.0};
-  bool m_roundaboutAngleHasBeenSet = false;
 
   RouteSteeringDirection m_steeringDirection{RouteSteeringDirection::NOT_SET};
+  bool m_intersectionHasBeenSet = false;
+  bool m_relativeExitHasBeenSet = false;
+  bool m_roundaboutAngleHasBeenSet = false;
   bool m_steeringDirectionHasBeenSet = false;
 };
 

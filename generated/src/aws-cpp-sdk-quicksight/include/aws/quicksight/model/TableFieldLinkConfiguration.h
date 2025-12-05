@@ -68,9 +68,9 @@ class TableFieldLinkConfiguration {
   ///@}
  private:
   URLTargetConfiguration m_target{URLTargetConfiguration::NOT_SET};
-  bool m_targetHasBeenSet = false;
 
   TableFieldLinkContentConfiguration m_content;
+  bool m_targetHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

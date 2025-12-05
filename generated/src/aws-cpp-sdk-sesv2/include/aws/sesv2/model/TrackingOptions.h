@@ -73,9 +73,9 @@ class TrackingOptions {
   ///@}
  private:
   Aws::String m_customRedirectDomain;
-  bool m_customRedirectDomainHasBeenSet = false;
 
   HttpsPolicy m_httpsPolicy{HttpsPolicy::NOT_SET};
+  bool m_customRedirectDomainHasBeenSet = false;
   bool m_httpsPolicyHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class OutputResources {
   ///@}
  private:
   Aws::Vector<Ami> m_amis;
-  bool m_amisHasBeenSet = false;
 
   Aws::Vector<Container> m_containers;
+  bool m_amisHasBeenSet = false;
   bool m_containersHasBeenSet = false;
 };
 

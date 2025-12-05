@@ -72,9 +72,9 @@ class BatchUpdateRecommendationStatusFailedEntry {
   ///@}
  private:
   Aws::String m_entryId;
-  bool m_entryIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_entryIdHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

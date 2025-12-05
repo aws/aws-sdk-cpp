@@ -73,9 +73,9 @@ class DelegatedService {
   ///@}
  private:
   Aws::String m_servicePrincipal;
-  bool m_servicePrincipalHasBeenSet = false;
 
   Aws::Utils::DateTime m_delegationEnabledDate{};
+  bool m_servicePrincipalHasBeenSet = false;
   bool m_delegationEnabledDateHasBeenSet = false;
 };
 

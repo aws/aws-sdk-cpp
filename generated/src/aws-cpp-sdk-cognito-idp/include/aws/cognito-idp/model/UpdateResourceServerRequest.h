@@ -118,15 +118,15 @@ class UpdateResourceServerRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ResourceServerScopeType> m_scopes;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_scopesHasBeenSet = false;
 };
 

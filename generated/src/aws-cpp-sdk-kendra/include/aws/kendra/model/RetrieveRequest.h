@@ -216,27 +216,27 @@ class RetrieveRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_queryText;
-  bool m_queryTextHasBeenSet = false;
 
   AttributeFilter m_attributeFilter;
-  bool m_attributeFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requestedDocumentAttributes;
-  bool m_requestedDocumentAttributesHasBeenSet = false;
 
   Aws::Vector<DocumentRelevanceConfiguration> m_documentRelevanceOverrideConfigurations;
-  bool m_documentRelevanceOverrideConfigurationsHasBeenSet = false;
 
   int m_pageNumber{0};
-  bool m_pageNumberHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   UserContext m_userContext;
+  bool m_indexIdHasBeenSet = false;
+  bool m_queryTextHasBeenSet = false;
+  bool m_attributeFilterHasBeenSet = false;
+  bool m_requestedDocumentAttributesHasBeenSet = false;
+  bool m_documentRelevanceOverrideConfigurationsHasBeenSet = false;
+  bool m_pageNumberHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_userContextHasBeenSet = false;
 };
 

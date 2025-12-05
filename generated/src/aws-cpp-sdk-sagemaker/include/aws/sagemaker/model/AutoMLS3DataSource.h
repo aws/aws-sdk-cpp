@@ -93,9 +93,9 @@ class AutoMLS3DataSource {
   ///@}
  private:
   AutoMLS3DataType m_s3DataType{AutoMLS3DataType::NOT_SET};
-  bool m_s3DataTypeHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_s3DataTypeHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

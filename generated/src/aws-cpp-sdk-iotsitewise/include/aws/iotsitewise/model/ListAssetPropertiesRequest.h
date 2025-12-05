@@ -112,15 +112,15 @@ class ListAssetPropertiesRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ListAssetPropertiesFilter m_filter{ListAssetPropertiesFilter::NOT_SET};
+  bool m_assetIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class SimulationMetadata {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SimulationStatus m_status{SimulationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SimulationTargetStatus m_targetStatus{SimulationTargetStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_targetStatusHasBeenSet = false;
 };
 

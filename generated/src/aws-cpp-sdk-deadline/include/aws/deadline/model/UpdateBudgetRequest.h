@@ -236,33 +236,33 @@ class UpdateBudgetRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_budgetId;
-  bool m_budgetIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   BudgetStatus m_status{BudgetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   double m_approximateDollarLimit{0.0};
-  bool m_approximateDollarLimitHasBeenSet = false;
 
   Aws::Vector<BudgetActionToAdd> m_actionsToAdd;
-  bool m_actionsToAddHasBeenSet = false;
 
   Aws::Vector<BudgetActionToRemove> m_actionsToRemove;
-  bool m_actionsToRemoveHasBeenSet = false;
 
   BudgetSchedule m_schedule;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_farmIdHasBeenSet = false;
+  bool m_budgetIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_approximateDollarLimitHasBeenSet = false;
+  bool m_actionsToAddHasBeenSet = false;
+  bool m_actionsToRemoveHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

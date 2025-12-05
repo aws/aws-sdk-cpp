@@ -119,15 +119,15 @@ class ModifyTrafficMirrorFilterNetworkServicesRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_trafficMirrorFilterId;
-  bool m_trafficMirrorFilterIdHasBeenSet = false;
 
   Aws::Vector<TrafficMirrorNetworkService> m_addNetworkServices;
-  bool m_addNetworkServicesHasBeenSet = false;
 
   Aws::Vector<TrafficMirrorNetworkService> m_removeNetworkServices;
-  bool m_removeNetworkServicesHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_trafficMirrorFilterIdHasBeenSet = false;
+  bool m_addNetworkServicesHasBeenSet = false;
+  bool m_removeNetworkServicesHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

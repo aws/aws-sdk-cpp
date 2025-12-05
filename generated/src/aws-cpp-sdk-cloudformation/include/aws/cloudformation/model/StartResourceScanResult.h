@@ -64,9 +64,9 @@ class StartResourceScanResult {
   ///@}
  private:
   Aws::String m_resourceScanId;
-  bool m_resourceScanIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resourceScanIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

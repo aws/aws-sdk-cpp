@@ -66,9 +66,9 @@ class NFSOnDeviceServiceConfiguration {
   ///@}
  private:
   int m_storageLimit{0};
-  bool m_storageLimitHasBeenSet = false;
 
   StorageUnit m_storageUnit{StorageUnit::NOT_SET};
+  bool m_storageLimitHasBeenSet = false;
   bool m_storageUnitHasBeenSet = false;
 };
 

@@ -106,9 +106,9 @@ class MedicalScribeEncryptionSettings {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_kmsEncryptionContext;
-  bool m_kmsEncryptionContextHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_kmsEncryptionContextHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

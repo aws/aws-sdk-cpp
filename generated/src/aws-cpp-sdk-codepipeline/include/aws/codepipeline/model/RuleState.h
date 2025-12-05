@@ -130,18 +130,18 @@ class RuleState {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   RuleRevision m_currentRevision;
-  bool m_currentRevisionHasBeenSet = false;
 
   RuleExecution m_latestExecution;
-  bool m_latestExecutionHasBeenSet = false;
 
   Aws::String m_entityUrl;
-  bool m_entityUrlHasBeenSet = false;
 
   Aws::String m_revisionUrl;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_currentRevisionHasBeenSet = false;
+  bool m_latestExecutionHasBeenSet = false;
+  bool m_entityUrlHasBeenSet = false;
   bool m_revisionUrlHasBeenSet = false;
 };
 

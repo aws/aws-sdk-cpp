@@ -396,57 +396,57 @@ class Experiment {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ExperimentExecution m_execution;
-  bool m_executionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Vector<MetricGoal> m_metricGoals;
-  bool m_metricGoalsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OnlineAbDefinition m_onlineAbDefinition;
-  bool m_onlineAbDefinitionHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::String m_randomizationSalt;
-  bool m_randomizationSaltHasBeenSet = false;
 
   long long m_samplingRate{0};
-  bool m_samplingRateHasBeenSet = false;
 
   ExperimentSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_segment;
-  bool m_segmentHasBeenSet = false;
 
   ExperimentStatus m_status{ExperimentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Treatment> m_treatments;
-  bool m_treatmentsHasBeenSet = false;
 
   ExperimentType m_type{ExperimentType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executionHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_metricGoalsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_onlineAbDefinitionHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_randomizationSaltHasBeenSet = false;
+  bool m_samplingRateHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_treatmentsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

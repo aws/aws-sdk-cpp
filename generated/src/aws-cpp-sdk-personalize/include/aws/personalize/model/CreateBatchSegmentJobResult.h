@@ -59,9 +59,9 @@ class CreateBatchSegmentJobResult {
   ///@}
  private:
   Aws::String m_batchSegmentJobArn;
-  bool m_batchSegmentJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchSegmentJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

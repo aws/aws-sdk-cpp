@@ -1995,303 +1995,303 @@ class ResourceDetails {
   ///@}
  private:
   AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
-  bool m_awsAutoScalingAutoScalingGroupHasBeenSet = false;
 
   AwsCodeBuildProjectDetails m_awsCodeBuildProject;
-  bool m_awsCodeBuildProjectHasBeenSet = false;
 
   AwsCloudFrontDistributionDetails m_awsCloudFrontDistribution;
-  bool m_awsCloudFrontDistributionHasBeenSet = false;
 
   AwsEc2InstanceDetails m_awsEc2Instance;
-  bool m_awsEc2InstanceHasBeenSet = false;
 
   AwsEc2NetworkInterfaceDetails m_awsEc2NetworkInterface;
-  bool m_awsEc2NetworkInterfaceHasBeenSet = false;
 
   AwsEc2SecurityGroupDetails m_awsEc2SecurityGroup;
-  bool m_awsEc2SecurityGroupHasBeenSet = false;
 
   AwsEc2VolumeDetails m_awsEc2Volume;
-  bool m_awsEc2VolumeHasBeenSet = false;
 
   AwsEc2VpcDetails m_awsEc2Vpc;
-  bool m_awsEc2VpcHasBeenSet = false;
 
   AwsEc2EipDetails m_awsEc2Eip;
-  bool m_awsEc2EipHasBeenSet = false;
 
   AwsEc2SubnetDetails m_awsEc2Subnet;
-  bool m_awsEc2SubnetHasBeenSet = false;
 
   AwsEc2NetworkAclDetails m_awsEc2NetworkAcl;
-  bool m_awsEc2NetworkAclHasBeenSet = false;
 
   AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
-  bool m_awsElbv2LoadBalancerHasBeenSet = false;
 
   AwsElasticBeanstalkEnvironmentDetails m_awsElasticBeanstalkEnvironment;
-  bool m_awsElasticBeanstalkEnvironmentHasBeenSet = false;
 
   AwsElasticsearchDomainDetails m_awsElasticsearchDomain;
-  bool m_awsElasticsearchDomainHasBeenSet = false;
 
   AwsS3BucketDetails m_awsS3Bucket;
-  bool m_awsS3BucketHasBeenSet = false;
 
   AwsS3AccountPublicAccessBlockDetails m_awsS3AccountPublicAccessBlock;
-  bool m_awsS3AccountPublicAccessBlockHasBeenSet = false;
 
   AwsS3ObjectDetails m_awsS3Object;
-  bool m_awsS3ObjectHasBeenSet = false;
 
   AwsSecretsManagerSecretDetails m_awsSecretsManagerSecret;
-  bool m_awsSecretsManagerSecretHasBeenSet = false;
 
   AwsIamAccessKeyDetails m_awsIamAccessKey;
-  bool m_awsIamAccessKeyHasBeenSet = false;
 
   AwsIamUserDetails m_awsIamUser;
-  bool m_awsIamUserHasBeenSet = false;
 
   AwsIamPolicyDetails m_awsIamPolicy;
-  bool m_awsIamPolicyHasBeenSet = false;
 
   AwsApiGatewayV2StageDetails m_awsApiGatewayV2Stage;
-  bool m_awsApiGatewayV2StageHasBeenSet = false;
 
   AwsApiGatewayV2ApiDetails m_awsApiGatewayV2Api;
-  bool m_awsApiGatewayV2ApiHasBeenSet = false;
 
   AwsDynamoDbTableDetails m_awsDynamoDbTable;
-  bool m_awsDynamoDbTableHasBeenSet = false;
 
   AwsApiGatewayStageDetails m_awsApiGatewayStage;
-  bool m_awsApiGatewayStageHasBeenSet = false;
 
   AwsApiGatewayRestApiDetails m_awsApiGatewayRestApi;
-  bool m_awsApiGatewayRestApiHasBeenSet = false;
 
   AwsCloudTrailTrailDetails m_awsCloudTrailTrail;
-  bool m_awsCloudTrailTrailHasBeenSet = false;
 
   AwsSsmPatchComplianceDetails m_awsSsmPatchCompliance;
-  bool m_awsSsmPatchComplianceHasBeenSet = false;
 
   AwsCertificateManagerCertificateDetails m_awsCertificateManagerCertificate;
-  bool m_awsCertificateManagerCertificateHasBeenSet = false;
 
   AwsRedshiftClusterDetails m_awsRedshiftCluster;
-  bool m_awsRedshiftClusterHasBeenSet = false;
 
   AwsElbLoadBalancerDetails m_awsElbLoadBalancer;
-  bool m_awsElbLoadBalancerHasBeenSet = false;
 
   AwsIamGroupDetails m_awsIamGroup;
-  bool m_awsIamGroupHasBeenSet = false;
 
   AwsIamRoleDetails m_awsIamRole;
-  bool m_awsIamRoleHasBeenSet = false;
 
   AwsKmsKeyDetails m_awsKmsKey;
-  bool m_awsKmsKeyHasBeenSet = false;
 
   AwsLambdaFunctionDetails m_awsLambdaFunction;
-  bool m_awsLambdaFunctionHasBeenSet = false;
 
   AwsLambdaLayerVersionDetails m_awsLambdaLayerVersion;
-  bool m_awsLambdaLayerVersionHasBeenSet = false;
 
   AwsRdsDbInstanceDetails m_awsRdsDbInstance;
-  bool m_awsRdsDbInstanceHasBeenSet = false;
 
   AwsSnsTopicDetails m_awsSnsTopic;
-  bool m_awsSnsTopicHasBeenSet = false;
 
   AwsSqsQueueDetails m_awsSqsQueue;
-  bool m_awsSqsQueueHasBeenSet = false;
 
   AwsWafWebAclDetails m_awsWafWebAcl;
-  bool m_awsWafWebAclHasBeenSet = false;
 
   AwsRdsDbSnapshotDetails m_awsRdsDbSnapshot;
-  bool m_awsRdsDbSnapshotHasBeenSet = false;
 
   AwsRdsDbClusterSnapshotDetails m_awsRdsDbClusterSnapshot;
-  bool m_awsRdsDbClusterSnapshotHasBeenSet = false;
 
   AwsRdsDbClusterDetails m_awsRdsDbCluster;
-  bool m_awsRdsDbClusterHasBeenSet = false;
 
   AwsEcsClusterDetails m_awsEcsCluster;
-  bool m_awsEcsClusterHasBeenSet = false;
 
   AwsEcsContainerDetails m_awsEcsContainer;
-  bool m_awsEcsContainerHasBeenSet = false;
 
   AwsEcsTaskDefinitionDetails m_awsEcsTaskDefinition;
-  bool m_awsEcsTaskDefinitionHasBeenSet = false;
 
   ContainerDetails m_container;
-  bool m_containerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_other;
-  bool m_otherHasBeenSet = false;
 
   AwsRdsEventSubscriptionDetails m_awsRdsEventSubscription;
-  bool m_awsRdsEventSubscriptionHasBeenSet = false;
 
   AwsEcsServiceDetails m_awsEcsService;
-  bool m_awsEcsServiceHasBeenSet = false;
 
   AwsAutoScalingLaunchConfigurationDetails m_awsAutoScalingLaunchConfiguration;
-  bool m_awsAutoScalingLaunchConfigurationHasBeenSet = false;
 
   AwsEc2VpnConnectionDetails m_awsEc2VpnConnection;
-  bool m_awsEc2VpnConnectionHasBeenSet = false;
 
   AwsEcrContainerImageDetails m_awsEcrContainerImage;
-  bool m_awsEcrContainerImageHasBeenSet = false;
 
   AwsOpenSearchServiceDomainDetails m_awsOpenSearchServiceDomain;
-  bool m_awsOpenSearchServiceDomainHasBeenSet = false;
 
   AwsEc2VpcEndpointServiceDetails m_awsEc2VpcEndpointService;
-  bool m_awsEc2VpcEndpointServiceHasBeenSet = false;
 
   AwsXrayEncryptionConfigDetails m_awsXrayEncryptionConfig;
-  bool m_awsXrayEncryptionConfigHasBeenSet = false;
 
   AwsWafRateBasedRuleDetails m_awsWafRateBasedRule;
-  bool m_awsWafRateBasedRuleHasBeenSet = false;
 
   AwsWafRegionalRateBasedRuleDetails m_awsWafRegionalRateBasedRule;
-  bool m_awsWafRegionalRateBasedRuleHasBeenSet = false;
 
   AwsEcrRepositoryDetails m_awsEcrRepository;
-  bool m_awsEcrRepositoryHasBeenSet = false;
 
   AwsEksClusterDetails m_awsEksCluster;
-  bool m_awsEksClusterHasBeenSet = false;
 
   AwsNetworkFirewallFirewallPolicyDetails m_awsNetworkFirewallFirewallPolicy;
-  bool m_awsNetworkFirewallFirewallPolicyHasBeenSet = false;
 
   AwsNetworkFirewallFirewallDetails m_awsNetworkFirewallFirewall;
-  bool m_awsNetworkFirewallFirewallHasBeenSet = false;
 
   AwsNetworkFirewallRuleGroupDetails m_awsNetworkFirewallRuleGroup;
-  bool m_awsNetworkFirewallRuleGroupHasBeenSet = false;
 
   AwsRdsDbSecurityGroupDetails m_awsRdsDbSecurityGroup;
-  bool m_awsRdsDbSecurityGroupHasBeenSet = false;
 
   AwsKinesisStreamDetails m_awsKinesisStream;
-  bool m_awsKinesisStreamHasBeenSet = false;
 
   AwsEc2TransitGatewayDetails m_awsEc2TransitGateway;
-  bool m_awsEc2TransitGatewayHasBeenSet = false;
 
   AwsEfsAccessPointDetails m_awsEfsAccessPoint;
-  bool m_awsEfsAccessPointHasBeenSet = false;
 
   AwsCloudFormationStackDetails m_awsCloudFormationStack;
-  bool m_awsCloudFormationStackHasBeenSet = false;
 
   AwsCloudWatchAlarmDetails m_awsCloudWatchAlarm;
-  bool m_awsCloudWatchAlarmHasBeenSet = false;
 
   AwsEc2VpcPeeringConnectionDetails m_awsEc2VpcPeeringConnection;
-  bool m_awsEc2VpcPeeringConnectionHasBeenSet = false;
 
   AwsWafRegionalRuleGroupDetails m_awsWafRegionalRuleGroup;
-  bool m_awsWafRegionalRuleGroupHasBeenSet = false;
 
   AwsWafRegionalRuleDetails m_awsWafRegionalRule;
-  bool m_awsWafRegionalRuleHasBeenSet = false;
 
   AwsWafRegionalWebAclDetails m_awsWafRegionalWebAcl;
-  bool m_awsWafRegionalWebAclHasBeenSet = false;
 
   AwsWafRuleDetails m_awsWafRule;
-  bool m_awsWafRuleHasBeenSet = false;
 
   AwsWafRuleGroupDetails m_awsWafRuleGroup;
-  bool m_awsWafRuleGroupHasBeenSet = false;
 
   AwsEcsTaskDetails m_awsEcsTask;
-  bool m_awsEcsTaskHasBeenSet = false;
 
   AwsBackupBackupVaultDetails m_awsBackupBackupVault;
-  bool m_awsBackupBackupVaultHasBeenSet = false;
 
   AwsBackupBackupPlanDetails m_awsBackupBackupPlan;
-  bool m_awsBackupBackupPlanHasBeenSet = false;
 
   AwsBackupRecoveryPointDetails m_awsBackupRecoveryPoint;
-  bool m_awsBackupRecoveryPointHasBeenSet = false;
 
   AwsEc2LaunchTemplateDetails m_awsEc2LaunchTemplate;
-  bool m_awsEc2LaunchTemplateHasBeenSet = false;
 
   AwsSageMakerNotebookInstanceDetails m_awsSageMakerNotebookInstance;
-  bool m_awsSageMakerNotebookInstanceHasBeenSet = false;
 
   AwsWafv2WebAclDetails m_awsWafv2WebAcl;
-  bool m_awsWafv2WebAclHasBeenSet = false;
 
   AwsWafv2RuleGroupDetails m_awsWafv2RuleGroup;
-  bool m_awsWafv2RuleGroupHasBeenSet = false;
 
   AwsEc2RouteTableDetails m_awsEc2RouteTable;
-  bool m_awsEc2RouteTableHasBeenSet = false;
 
   AwsAmazonMqBrokerDetails m_awsAmazonMqBroker;
-  bool m_awsAmazonMqBrokerHasBeenSet = false;
 
   AwsAppSyncGraphQlApiDetails m_awsAppSyncGraphQlApi;
-  bool m_awsAppSyncGraphQlApiHasBeenSet = false;
 
   AwsEventSchemasRegistryDetails m_awsEventSchemasRegistry;
-  bool m_awsEventSchemasRegistryHasBeenSet = false;
 
   AwsGuardDutyDetectorDetails m_awsGuardDutyDetector;
-  bool m_awsGuardDutyDetectorHasBeenSet = false;
 
   AwsStepFunctionStateMachineDetails m_awsStepFunctionStateMachine;
-  bool m_awsStepFunctionStateMachineHasBeenSet = false;
 
   AwsAthenaWorkGroupDetails m_awsAthenaWorkGroup;
-  bool m_awsAthenaWorkGroupHasBeenSet = false;
 
   AwsEventsEventbusDetails m_awsEventsEventbus;
-  bool m_awsEventsEventbusHasBeenSet = false;
 
   AwsDmsEndpointDetails m_awsDmsEndpoint;
-  bool m_awsDmsEndpointHasBeenSet = false;
 
   AwsEventsEndpointDetails m_awsEventsEndpoint;
-  bool m_awsEventsEndpointHasBeenSet = false;
 
   AwsDmsReplicationTaskDetails m_awsDmsReplicationTask;
-  bool m_awsDmsReplicationTaskHasBeenSet = false;
 
   AwsDmsReplicationInstanceDetails m_awsDmsReplicationInstance;
-  bool m_awsDmsReplicationInstanceHasBeenSet = false;
 
   AwsRoute53HostedZoneDetails m_awsRoute53HostedZone;
-  bool m_awsRoute53HostedZoneHasBeenSet = false;
 
   AwsMskClusterDetails m_awsMskCluster;
-  bool m_awsMskClusterHasBeenSet = false;
 
   AwsS3AccessPointDetails m_awsS3AccessPoint;
-  bool m_awsS3AccessPointHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointDetails m_awsEc2ClientVpnEndpoint;
-  bool m_awsEc2ClientVpnEndpointHasBeenSet = false;
 
   CodeRepositoryDetails m_codeRepository;
+  bool m_awsAutoScalingAutoScalingGroupHasBeenSet = false;
+  bool m_awsCodeBuildProjectHasBeenSet = false;
+  bool m_awsCloudFrontDistributionHasBeenSet = false;
+  bool m_awsEc2InstanceHasBeenSet = false;
+  bool m_awsEc2NetworkInterfaceHasBeenSet = false;
+  bool m_awsEc2SecurityGroupHasBeenSet = false;
+  bool m_awsEc2VolumeHasBeenSet = false;
+  bool m_awsEc2VpcHasBeenSet = false;
+  bool m_awsEc2EipHasBeenSet = false;
+  bool m_awsEc2SubnetHasBeenSet = false;
+  bool m_awsEc2NetworkAclHasBeenSet = false;
+  bool m_awsElbv2LoadBalancerHasBeenSet = false;
+  bool m_awsElasticBeanstalkEnvironmentHasBeenSet = false;
+  bool m_awsElasticsearchDomainHasBeenSet = false;
+  bool m_awsS3BucketHasBeenSet = false;
+  bool m_awsS3AccountPublicAccessBlockHasBeenSet = false;
+  bool m_awsS3ObjectHasBeenSet = false;
+  bool m_awsSecretsManagerSecretHasBeenSet = false;
+  bool m_awsIamAccessKeyHasBeenSet = false;
+  bool m_awsIamUserHasBeenSet = false;
+  bool m_awsIamPolicyHasBeenSet = false;
+  bool m_awsApiGatewayV2StageHasBeenSet = false;
+  bool m_awsApiGatewayV2ApiHasBeenSet = false;
+  bool m_awsDynamoDbTableHasBeenSet = false;
+  bool m_awsApiGatewayStageHasBeenSet = false;
+  bool m_awsApiGatewayRestApiHasBeenSet = false;
+  bool m_awsCloudTrailTrailHasBeenSet = false;
+  bool m_awsSsmPatchComplianceHasBeenSet = false;
+  bool m_awsCertificateManagerCertificateHasBeenSet = false;
+  bool m_awsRedshiftClusterHasBeenSet = false;
+  bool m_awsElbLoadBalancerHasBeenSet = false;
+  bool m_awsIamGroupHasBeenSet = false;
+  bool m_awsIamRoleHasBeenSet = false;
+  bool m_awsKmsKeyHasBeenSet = false;
+  bool m_awsLambdaFunctionHasBeenSet = false;
+  bool m_awsLambdaLayerVersionHasBeenSet = false;
+  bool m_awsRdsDbInstanceHasBeenSet = false;
+  bool m_awsSnsTopicHasBeenSet = false;
+  bool m_awsSqsQueueHasBeenSet = false;
+  bool m_awsWafWebAclHasBeenSet = false;
+  bool m_awsRdsDbSnapshotHasBeenSet = false;
+  bool m_awsRdsDbClusterSnapshotHasBeenSet = false;
+  bool m_awsRdsDbClusterHasBeenSet = false;
+  bool m_awsEcsClusterHasBeenSet = false;
+  bool m_awsEcsContainerHasBeenSet = false;
+  bool m_awsEcsTaskDefinitionHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_otherHasBeenSet = false;
+  bool m_awsRdsEventSubscriptionHasBeenSet = false;
+  bool m_awsEcsServiceHasBeenSet = false;
+  bool m_awsAutoScalingLaunchConfigurationHasBeenSet = false;
+  bool m_awsEc2VpnConnectionHasBeenSet = false;
+  bool m_awsEcrContainerImageHasBeenSet = false;
+  bool m_awsOpenSearchServiceDomainHasBeenSet = false;
+  bool m_awsEc2VpcEndpointServiceHasBeenSet = false;
+  bool m_awsXrayEncryptionConfigHasBeenSet = false;
+  bool m_awsWafRateBasedRuleHasBeenSet = false;
+  bool m_awsWafRegionalRateBasedRuleHasBeenSet = false;
+  bool m_awsEcrRepositoryHasBeenSet = false;
+  bool m_awsEksClusterHasBeenSet = false;
+  bool m_awsNetworkFirewallFirewallPolicyHasBeenSet = false;
+  bool m_awsNetworkFirewallFirewallHasBeenSet = false;
+  bool m_awsNetworkFirewallRuleGroupHasBeenSet = false;
+  bool m_awsRdsDbSecurityGroupHasBeenSet = false;
+  bool m_awsKinesisStreamHasBeenSet = false;
+  bool m_awsEc2TransitGatewayHasBeenSet = false;
+  bool m_awsEfsAccessPointHasBeenSet = false;
+  bool m_awsCloudFormationStackHasBeenSet = false;
+  bool m_awsCloudWatchAlarmHasBeenSet = false;
+  bool m_awsEc2VpcPeeringConnectionHasBeenSet = false;
+  bool m_awsWafRegionalRuleGroupHasBeenSet = false;
+  bool m_awsWafRegionalRuleHasBeenSet = false;
+  bool m_awsWafRegionalWebAclHasBeenSet = false;
+  bool m_awsWafRuleHasBeenSet = false;
+  bool m_awsWafRuleGroupHasBeenSet = false;
+  bool m_awsEcsTaskHasBeenSet = false;
+  bool m_awsBackupBackupVaultHasBeenSet = false;
+  bool m_awsBackupBackupPlanHasBeenSet = false;
+  bool m_awsBackupRecoveryPointHasBeenSet = false;
+  bool m_awsEc2LaunchTemplateHasBeenSet = false;
+  bool m_awsSageMakerNotebookInstanceHasBeenSet = false;
+  bool m_awsWafv2WebAclHasBeenSet = false;
+  bool m_awsWafv2RuleGroupHasBeenSet = false;
+  bool m_awsEc2RouteTableHasBeenSet = false;
+  bool m_awsAmazonMqBrokerHasBeenSet = false;
+  bool m_awsAppSyncGraphQlApiHasBeenSet = false;
+  bool m_awsEventSchemasRegistryHasBeenSet = false;
+  bool m_awsGuardDutyDetectorHasBeenSet = false;
+  bool m_awsStepFunctionStateMachineHasBeenSet = false;
+  bool m_awsAthenaWorkGroupHasBeenSet = false;
+  bool m_awsEventsEventbusHasBeenSet = false;
+  bool m_awsDmsEndpointHasBeenSet = false;
+  bool m_awsEventsEndpointHasBeenSet = false;
+  bool m_awsDmsReplicationTaskHasBeenSet = false;
+  bool m_awsDmsReplicationInstanceHasBeenSet = false;
+  bool m_awsRoute53HostedZoneHasBeenSet = false;
+  bool m_awsMskClusterHasBeenSet = false;
+  bool m_awsS3AccessPointHasBeenSet = false;
+  bool m_awsEc2ClientVpnEndpointHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
 };
 

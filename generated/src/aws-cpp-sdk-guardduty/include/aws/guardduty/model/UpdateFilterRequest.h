@@ -145,21 +145,21 @@ class UpdateFilterRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_filterName;
-  bool m_filterNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FilterAction m_action{FilterAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   FindingCriteria m_findingCriteria;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_filterNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
   bool m_findingCriteriaHasBeenSet = false;
 };
 

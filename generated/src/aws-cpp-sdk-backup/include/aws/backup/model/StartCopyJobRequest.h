@@ -148,21 +148,21 @@ class StartCopyJobRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_sourceBackupVaultName;
-  bool m_sourceBackupVaultNameHasBeenSet = false;
 
   Aws::String m_destinationBackupVaultArn;
-  bool m_destinationBackupVaultArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   Lifecycle m_lifecycle;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_sourceBackupVaultNameHasBeenSet = false;
+  bool m_destinationBackupVaultArnHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
   bool m_lifecycleHasBeenSet = false;
 };
 

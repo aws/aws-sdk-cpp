@@ -97,12 +97,12 @@ class GetCommandInvocationRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_pluginName;
+  bool m_commandIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_pluginNameHasBeenSet = false;
 };
 

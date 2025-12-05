@@ -102,15 +102,15 @@ class SearchImageSetsResult {
   ///@}
  private:
   Aws::Vector<ImageSetsMetadataSummary> m_imageSetsMetadataSummaries;
-  bool m_imageSetsMetadataSummariesHasBeenSet = false;
 
   Sort m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageSetsMetadataSummariesHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

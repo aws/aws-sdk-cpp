@@ -128,21 +128,21 @@ class DescribeHumanTaskUiResult {
   ///@}
  private:
   Aws::String m_humanTaskUiArn;
-  bool m_humanTaskUiArnHasBeenSet = false;
 
   Aws::String m_humanTaskUiName;
-  bool m_humanTaskUiNameHasBeenSet = false;
 
   HumanTaskUiStatus m_humanTaskUiStatus{HumanTaskUiStatus::NOT_SET};
-  bool m_humanTaskUiStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UiTemplateInfo m_uiTemplate;
-  bool m_uiTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_humanTaskUiArnHasBeenSet = false;
+  bool m_humanTaskUiNameHasBeenSet = false;
+  bool m_humanTaskUiStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_uiTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class RouterInputTransitEncryption {
   ///@}
  private:
   RouterInputTransitEncryptionKeyType m_encryptionKeyType{RouterInputTransitEncryptionKeyType::NOT_SET};
-  bool m_encryptionKeyTypeHasBeenSet = false;
 
   RouterInputTransitEncryptionKeyConfiguration m_encryptionKeyConfiguration;
+  bool m_encryptionKeyTypeHasBeenSet = false;
   bool m_encryptionKeyConfigurationHasBeenSet = false;
 };
 

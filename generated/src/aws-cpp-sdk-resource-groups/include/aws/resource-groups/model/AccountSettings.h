@@ -86,12 +86,12 @@ class AccountSettings {
   ///@}
  private:
   GroupLifecycleEventsDesiredStatus m_groupLifecycleEventsDesiredStatus{GroupLifecycleEventsDesiredStatus::NOT_SET};
-  bool m_groupLifecycleEventsDesiredStatusHasBeenSet = false;
 
   GroupLifecycleEventsStatus m_groupLifecycleEventsStatus{GroupLifecycleEventsStatus::NOT_SET};
-  bool m_groupLifecycleEventsStatusHasBeenSet = false;
 
   Aws::String m_groupLifecycleEventsStatusMessage;
+  bool m_groupLifecycleEventsDesiredStatusHasBeenSet = false;
+  bool m_groupLifecycleEventsStatusHasBeenSet = false;
   bool m_groupLifecycleEventsStatusMessageHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class TagResourceRequest : public FMSRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

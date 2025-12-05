@@ -100,15 +100,15 @@ class UpdateFrameworkResult {
   ///@}
  private:
   Aws::String m_frameworkName;
-  bool m_frameworkNameHasBeenSet = false;
 
   Aws::String m_frameworkArn;
-  bool m_frameworkArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_frameworkNameHasBeenSet = false;
+  bool m_frameworkArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

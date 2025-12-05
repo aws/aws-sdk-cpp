@@ -194,30 +194,30 @@ class ControlOperationSummary {
   ///@}
  private:
   ControlOperationType m_operationType{ControlOperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ControlOperationStatus m_status{ControlOperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_operationIdentifier;
-  bool m_operationIdentifierHasBeenSet = false;
 
   Aws::String m_controlIdentifier;
-  bool m_controlIdentifierHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::String m_enabledControlIdentifier;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_operationIdentifierHasBeenSet = false;
+  bool m_controlIdentifierHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
   bool m_enabledControlIdentifierHasBeenSet = false;
 };
 

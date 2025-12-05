@@ -69,9 +69,9 @@ class TooManyRequestsException {
   ///@}
  private:
   Aws::String m_limitType;
-  bool m_limitTypeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_limitTypeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

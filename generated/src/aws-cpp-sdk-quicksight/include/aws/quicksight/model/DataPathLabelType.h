@@ -86,12 +86,12 @@ class DataPathLabelType {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_fieldValue;
-  bool m_fieldValueHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
+  bool m_fieldIdHasBeenSet = false;
+  bool m_fieldValueHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

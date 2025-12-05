@@ -70,9 +70,9 @@ class UpdateIndexTypeRequest : public ResourceExplorer2Request {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   IndexType m_type{IndexType::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

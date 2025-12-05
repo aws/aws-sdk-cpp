@@ -179,27 +179,27 @@ class UpdateGlossaryTermRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_glossaryIdentifier;
-  bool m_glossaryIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_longDescription;
-  bool m_longDescriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_shortDescription;
-  bool m_shortDescriptionHasBeenSet = false;
 
   GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TermRelations m_termRelations;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_glossaryIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_termRelationsHasBeenSet = false;
 };
 

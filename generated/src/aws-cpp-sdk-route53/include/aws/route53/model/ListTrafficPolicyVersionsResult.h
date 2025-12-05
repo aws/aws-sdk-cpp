@@ -134,18 +134,18 @@ class ListTrafficPolicyVersionsResult {
   ///@}
  private:
   Aws::Vector<TrafficPolicy> m_trafficPolicies;
-  bool m_trafficPoliciesHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_trafficPolicyVersionMarker;
-  bool m_trafficPolicyVersionMarkerHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficPoliciesHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_trafficPolicyVersionMarkerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class CoreNetworkEdge {
   ///@}
  private:
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   long long m_asn{0};
-  bool m_asnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insideCidrBlocks;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_asnHasBeenSet = false;
   bool m_insideCidrBlocksHasBeenSet = false;
 };
 

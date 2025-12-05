@@ -133,21 +133,21 @@ class CreateComponentVersionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   CloudComponentStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentVersionHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

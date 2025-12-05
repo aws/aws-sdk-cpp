@@ -113,15 +113,15 @@ class ImportInstanceTaskDetails {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   PlatformValues m_platform{PlatformValues::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<ImportInstanceVolumeDetailItem> m_volumes;
+  bool m_descriptionHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
   bool m_volumesHasBeenSet = false;
 };
 

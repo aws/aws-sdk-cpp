@@ -73,9 +73,9 @@ class OpenZFSReadCacheConfiguration {
   ///@}
  private:
   OpenZFSReadCacheSizingMode m_sizingMode{OpenZFSReadCacheSizingMode::NOT_SET};
-  bool m_sizingModeHasBeenSet = false;
 
   int m_sizeGiB{0};
+  bool m_sizingModeHasBeenSet = false;
   bool m_sizeGiBHasBeenSet = false;
 };
 

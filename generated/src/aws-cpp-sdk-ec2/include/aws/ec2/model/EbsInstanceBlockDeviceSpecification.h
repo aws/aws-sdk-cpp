@@ -69,9 +69,9 @@ class EbsInstanceBlockDeviceSpecification {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
+  bool m_volumeIdHasBeenSet = false;
   bool m_deleteOnTerminationHasBeenSet = false;
 };
 

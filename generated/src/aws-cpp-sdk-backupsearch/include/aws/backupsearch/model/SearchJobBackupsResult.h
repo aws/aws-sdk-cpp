@@ -160,24 +160,24 @@ class SearchJobBackupsResult {
   ///@}
  private:
   SearchJobState m_status{SearchJobState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_backupResourceArn;
-  bool m_backupResourceArnHasBeenSet = false;
 
   Aws::String m_sourceResourceArn;
-  bool m_sourceResourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_indexCreationTime{};
-  bool m_indexCreationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_backupCreationTime{};
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_backupResourceArnHasBeenSet = false;
+  bool m_sourceResourceArnHasBeenSet = false;
+  bool m_indexCreationTimeHasBeenSet = false;
   bool m_backupCreationTimeHasBeenSet = false;
 };
 

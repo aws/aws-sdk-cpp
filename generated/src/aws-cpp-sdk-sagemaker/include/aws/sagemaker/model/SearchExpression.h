@@ -141,15 +141,15 @@ class SearchExpression {
   ///@}
  private:
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<NestedFilters> m_nestedFilters;
-  bool m_nestedFiltersHasBeenSet = false;
 
   Aws::Vector<SearchExpression> m_subExpressions;
-  bool m_subExpressionsHasBeenSet = false;
 
   BooleanOperator m_operator{BooleanOperator::NOT_SET};
+  bool m_filtersHasBeenSet = false;
+  bool m_nestedFiltersHasBeenSet = false;
+  bool m_subExpressionsHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

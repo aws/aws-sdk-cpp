@@ -83,9 +83,9 @@ class HybridSettingsDescription {
   ///@}
  private:
   Aws::Vector<Aws::String> m_selfManagedDnsIpAddrs;
-  bool m_selfManagedDnsIpAddrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selfManagedInstanceIds;
+  bool m_selfManagedDnsIpAddrsHasBeenSet = false;
   bool m_selfManagedInstanceIdsHasBeenSet = false;
 };
 

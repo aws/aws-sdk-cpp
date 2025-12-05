@@ -265,30 +265,30 @@ class AssetBundleCloudFormationOverridePropertyConfiguration {
   ///@}
  private:
   AssetBundleExportJobResourceIdOverrideConfiguration m_resourceIdOverrideConfiguration;
-  bool m_resourceIdOverrideConfigurationHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobVPCConnectionOverrideProperties> m_vPCConnections;
-  bool m_vPCConnectionsHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobRefreshScheduleOverrideProperties> m_refreshSchedules;
-  bool m_refreshSchedulesHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobDataSourceOverrideProperties> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobDataSetOverrideProperties> m_dataSets;
-  bool m_dataSetsHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobThemeOverrideProperties> m_themes;
-  bool m_themesHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobAnalysisOverrideProperties> m_analyses;
-  bool m_analysesHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobDashboardOverrideProperties> m_dashboards;
-  bool m_dashboardsHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobFolderOverrideProperties> m_folders;
+  bool m_resourceIdOverrideConfigurationHasBeenSet = false;
+  bool m_vPCConnectionsHasBeenSet = false;
+  bool m_refreshSchedulesHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_dataSetsHasBeenSet = false;
+  bool m_themesHasBeenSet = false;
+  bool m_analysesHasBeenSet = false;
+  bool m_dashboardsHasBeenSet = false;
   bool m_foldersHasBeenSet = false;
 };
 

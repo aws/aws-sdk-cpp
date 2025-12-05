@@ -176,24 +176,24 @@ class UpdateAppRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   AppAssessmentScheduleType m_assessmentSchedule{AppAssessmentScheduleType::NOT_SET};
-  bool m_assessmentScheduleHasBeenSet = false;
 
   bool m_clearResiliencyPolicyArn{false};
-  bool m_clearResiliencyPolicyArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EventSubscription> m_eventSubscriptions;
-  bool m_eventSubscriptionsHasBeenSet = false;
 
   PermissionModel m_permissionModel;
-  bool m_permissionModelHasBeenSet = false;
 
   Aws::String m_policyArn;
+  bool m_appArnHasBeenSet = false;
+  bool m_assessmentScheduleHasBeenSet = false;
+  bool m_clearResiliencyPolicyArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventSubscriptionsHasBeenSet = false;
+  bool m_permissionModelHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
 };
 

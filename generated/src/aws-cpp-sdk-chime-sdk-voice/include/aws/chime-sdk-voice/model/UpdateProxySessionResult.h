@@ -60,9 +60,9 @@ class UpdateProxySessionResult {
   ///@}
  private:
   ProxySession m_proxySession;
-  bool m_proxySessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxySessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

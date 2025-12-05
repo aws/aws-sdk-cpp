@@ -79,9 +79,9 @@ class RegisterInstanceTagAttributeRequest {
   ///@}
  private:
   bool m_includeAllTagsOfInstance{false};
-  bool m_includeAllTagsOfInstanceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTagKeys;
+  bool m_includeAllTagsOfInstanceHasBeenSet = false;
   bool m_instanceTagKeysHasBeenSet = false;
 };
 

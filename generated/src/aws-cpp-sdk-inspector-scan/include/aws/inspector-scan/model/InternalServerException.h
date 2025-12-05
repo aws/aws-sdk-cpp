@@ -82,12 +82,12 @@ class InternalServerException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   InternalServerExceptionReason m_reason{InternalServerExceptionReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   int m_retryAfterSeconds{0};
+  bool m_messageHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_retryAfterSecondsHasBeenSet = false;
 };
 

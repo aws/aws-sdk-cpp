@@ -155,21 +155,21 @@ class CreateMarketplaceModelEndpointRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_modelSourceIdentifier;
-  bool m_modelSourceIdentifierHasBeenSet = false;
 
   EndpointConfig m_endpointConfig;
-  bool m_endpointConfigHasBeenSet = false;
 
   bool m_acceptEula{false};
-  bool m_acceptEulaHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_modelSourceIdentifierHasBeenSet = false;
+  bool m_endpointConfigHasBeenSet = false;
+  bool m_acceptEulaHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

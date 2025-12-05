@@ -162,24 +162,24 @@ class ProfileQuestion {
   ///@}
  private:
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_questionTitle;
-  bool m_questionTitleHasBeenSet = false;
 
   Aws::String m_questionDescription;
-  bool m_questionDescriptionHasBeenSet = false;
 
   Aws::Vector<ProfileChoice> m_questionChoices;
-  bool m_questionChoicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedChoiceIds;
-  bool m_selectedChoiceIdsHasBeenSet = false;
 
   int m_minSelectedChoices{0};
-  bool m_minSelectedChoicesHasBeenSet = false;
 
   int m_maxSelectedChoices{0};
+  bool m_questionIdHasBeenSet = false;
+  bool m_questionTitleHasBeenSet = false;
+  bool m_questionDescriptionHasBeenSet = false;
+  bool m_questionChoicesHasBeenSet = false;
+  bool m_selectedChoiceIdsHasBeenSet = false;
+  bool m_minSelectedChoicesHasBeenSet = false;
   bool m_maxSelectedChoicesHasBeenSet = false;
 };
 

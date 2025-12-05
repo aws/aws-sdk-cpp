@@ -77,9 +77,9 @@ class TaggedDatabase {
   ///@}
  private:
   DatabaseResource m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::Vector<LFTagPair> m_lFTags;
+  bool m_databaseHasBeenSet = false;
   bool m_lFTagsHasBeenSet = false;
 };
 

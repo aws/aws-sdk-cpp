@@ -87,12 +87,12 @@ class Scte35SpliceInsert {
   ///@}
  private:
   int m_adAvailOffset{0};
-  bool m_adAvailOffsetHasBeenSet = false;
 
   Scte35SpliceInsertNoRegionalBlackoutBehavior m_noRegionalBlackoutFlag{Scte35SpliceInsertNoRegionalBlackoutBehavior::NOT_SET};
-  bool m_noRegionalBlackoutFlagHasBeenSet = false;
 
   Scte35SpliceInsertWebDeliveryAllowedBehavior m_webDeliveryAllowedFlag{Scte35SpliceInsertWebDeliveryAllowedBehavior::NOT_SET};
+  bool m_adAvailOffsetHasBeenSet = false;
+  bool m_noRegionalBlackoutFlagHasBeenSet = false;
   bool m_webDeliveryAllowedFlagHasBeenSet = false;
 };
 

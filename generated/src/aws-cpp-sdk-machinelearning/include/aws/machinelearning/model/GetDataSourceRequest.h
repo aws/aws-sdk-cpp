@@ -67,9 +67,9 @@ class GetDataSourceRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   bool m_verbose{false};
+  bool m_dataSourceIdHasBeenSet = false;
   bool m_verboseHasBeenSet = false;
 };
 

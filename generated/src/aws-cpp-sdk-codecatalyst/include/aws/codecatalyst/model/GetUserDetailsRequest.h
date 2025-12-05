@@ -70,9 +70,9 @@ class GetUserDetailsRequest : public CodeCatalystRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_idHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

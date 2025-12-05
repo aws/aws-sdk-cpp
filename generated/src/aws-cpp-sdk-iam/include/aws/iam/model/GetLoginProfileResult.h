@@ -68,9 +68,9 @@ class GetLoginProfileResult {
   ///@}
  private:
   LoginProfile m_loginProfile;
-  bool m_loginProfileHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_loginProfileHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

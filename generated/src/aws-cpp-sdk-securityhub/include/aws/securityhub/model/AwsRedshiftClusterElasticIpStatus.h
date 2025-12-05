@@ -69,9 +69,9 @@ class AwsRedshiftClusterElasticIpStatus {
   ///@}
  private:
   Aws::String m_elasticIp;
-  bool m_elasticIpHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_elasticIpHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

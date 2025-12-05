@@ -60,9 +60,9 @@ class GetCustomEndpointResult {
   ///@}
  private:
   Aws::String m_endpointAddress;
-  bool m_endpointAddressHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointAddressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

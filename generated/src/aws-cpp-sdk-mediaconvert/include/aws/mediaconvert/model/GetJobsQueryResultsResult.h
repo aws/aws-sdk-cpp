@@ -100,15 +100,15 @@ class GetJobsQueryResultsResult {
   ///@}
  private:
   Aws::Vector<Job> m_jobs;
-  bool m_jobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   JobsQueryStatus m_status{JobsQueryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

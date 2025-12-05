@@ -87,12 +87,12 @@ class TextConditionalFormat {
   ///@}
  private:
   ConditionalFormattingColor m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   ConditionalFormattingColor m_textColor;
-  bool m_textColorHasBeenSet = false;
 
   ConditionalFormattingIcon m_icon;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_textColorHasBeenSet = false;
   bool m_iconHasBeenSet = false;
 };
 

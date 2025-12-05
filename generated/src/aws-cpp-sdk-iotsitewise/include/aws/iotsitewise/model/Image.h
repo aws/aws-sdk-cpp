@@ -71,9 +71,9 @@ class Image {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ImageFile m_file;
+  bool m_idHasBeenSet = false;
   bool m_fileHasBeenSet = false;
 };
 

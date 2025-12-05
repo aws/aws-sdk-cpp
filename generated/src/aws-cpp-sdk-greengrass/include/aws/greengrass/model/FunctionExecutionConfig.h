@@ -64,9 +64,9 @@ class FunctionExecutionConfig {
   ///@}
  private:
   FunctionIsolationMode m_isolationMode{FunctionIsolationMode::NOT_SET};
-  bool m_isolationModeHasBeenSet = false;
 
   FunctionRunAsConfig m_runAs;
+  bool m_isolationModeHasBeenSet = false;
   bool m_runAsHasBeenSet = false;
 };
 

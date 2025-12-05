@@ -99,12 +99,12 @@ class InputDataConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   InputFormat m_inputFormat{InputFormat::NOT_SET};
-  bool m_inputFormatHasBeenSet = false;
 
   DocumentReaderConfig m_documentReaderConfig;
+  bool m_s3UriHasBeenSet = false;
+  bool m_inputFormatHasBeenSet = false;
   bool m_documentReaderConfigHasBeenSet = false;
 };
 

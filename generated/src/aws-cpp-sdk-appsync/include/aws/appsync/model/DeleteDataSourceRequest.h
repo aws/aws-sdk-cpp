@@ -65,9 +65,9 @@ class DeleteDataSourceRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_apiIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

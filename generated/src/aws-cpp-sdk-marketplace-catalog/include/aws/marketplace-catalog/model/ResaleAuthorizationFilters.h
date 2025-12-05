@@ -289,42 +289,42 @@ class ResaleAuthorizationFilters {
   ///@}
  private:
   ResaleAuthorizationEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   ResaleAuthorizationNameFilter m_name;
-  bool m_nameHasBeenSet = false;
 
   ResaleAuthorizationProductIdFilter m_productId;
-  bool m_productIdHasBeenSet = false;
 
   ResaleAuthorizationCreatedDateFilter m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   ResaleAuthorizationAvailabilityEndDateFilter m_availabilityEndDate;
-  bool m_availabilityEndDateHasBeenSet = false;
 
   ResaleAuthorizationManufacturerAccountIdFilter m_manufacturerAccountId;
-  bool m_manufacturerAccountIdHasBeenSet = false;
 
   ResaleAuthorizationProductNameFilter m_productName;
-  bool m_productNameHasBeenSet = false;
 
   ResaleAuthorizationManufacturerLegalNameFilter m_manufacturerLegalName;
-  bool m_manufacturerLegalNameHasBeenSet = false;
 
   ResaleAuthorizationResellerAccountIDFilter m_resellerAccountID;
-  bool m_resellerAccountIDHasBeenSet = false;
 
   ResaleAuthorizationResellerLegalNameFilter m_resellerLegalName;
-  bool m_resellerLegalNameHasBeenSet = false;
 
   ResaleAuthorizationStatusFilter m_status;
-  bool m_statusHasBeenSet = false;
 
   ResaleAuthorizationOfferExtendedStatusFilter m_offerExtendedStatus;
-  bool m_offerExtendedStatusHasBeenSet = false;
 
   ResaleAuthorizationLastModifiedDateFilter m_lastModifiedDate;
+  bool m_entityIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_availabilityEndDateHasBeenSet = false;
+  bool m_manufacturerAccountIdHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_manufacturerLegalNameHasBeenSet = false;
+  bool m_resellerAccountIDHasBeenSet = false;
+  bool m_resellerLegalNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_offerExtendedStatusHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

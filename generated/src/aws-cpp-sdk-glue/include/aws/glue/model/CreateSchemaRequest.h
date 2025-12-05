@@ -203,24 +203,24 @@ class CreateSchemaRequest : public GlueRequest {
   ///@}
  private:
   RegistryId m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Compatibility m_compatibility{Compatibility::NOT_SET};
-  bool m_compatibilityHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_schemaDefinition;
+  bool m_registryIdHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_compatibilityHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_schemaDefinitionHasBeenSet = false;
 };
 

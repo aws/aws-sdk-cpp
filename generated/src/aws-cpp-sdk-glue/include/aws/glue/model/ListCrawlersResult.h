@@ -85,12 +85,12 @@ class ListCrawlersResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_crawlerNames;
-  bool m_crawlerNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crawlerNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class UpdateBackupPlanRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   BackupPlanInput m_backupPlan;
+  bool m_backupPlanIdHasBeenSet = false;
   bool m_backupPlanHasBeenSet = false;
 };
 

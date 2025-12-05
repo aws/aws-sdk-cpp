@@ -66,9 +66,9 @@ class ContentBlockStartEvent {
   ///@}
  private:
   ContentBlockStart m_start;
-  bool m_startHasBeenSet = false;
 
   int m_contentBlockIndex{0};
+  bool m_startHasBeenSet = false;
   bool m_contentBlockIndexHasBeenSet = false;
 };
 

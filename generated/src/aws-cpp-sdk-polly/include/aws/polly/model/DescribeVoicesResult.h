@@ -86,12 +86,12 @@ class DescribeVoicesResult {
   ///@}
  private:
   Aws::Vector<Voice> m_voices;
-  bool m_voicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

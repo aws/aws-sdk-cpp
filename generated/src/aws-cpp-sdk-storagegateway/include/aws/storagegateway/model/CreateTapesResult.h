@@ -72,9 +72,9 @@ class CreateTapesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tapeARNs;
-  bool m_tapeARNsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tapeARNsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

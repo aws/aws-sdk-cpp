@@ -141,18 +141,18 @@ class CreateServiceEnvironmentRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_serviceEnvironmentName;
-  bool m_serviceEnvironmentNameHasBeenSet = false;
 
   ServiceEnvironmentType m_serviceEnvironmentType{ServiceEnvironmentType::NOT_SET};
-  bool m_serviceEnvironmentTypeHasBeenSet = false;
 
   ServiceEnvironmentState m_state{ServiceEnvironmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<CapacityLimit> m_capacityLimits;
-  bool m_capacityLimitsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_serviceEnvironmentNameHasBeenSet = false;
+  bool m_serviceEnvironmentTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_capacityLimitsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -156,18 +156,18 @@ class TranslateDocumentRequest : public TranslateRequest {
   ///@}
  private:
   Document m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_terminologyNames;
-  bool m_terminologyNamesHasBeenSet = false;
 
   Aws::String m_sourceLanguageCode;
-  bool m_sourceLanguageCodeHasBeenSet = false;
 
   Aws::String m_targetLanguageCode;
-  bool m_targetLanguageCodeHasBeenSet = false;
 
   TranslationSettings m_settings;
+  bool m_documentHasBeenSet = false;
+  bool m_terminologyNamesHasBeenSet = false;
+  bool m_sourceLanguageCodeHasBeenSet = false;
+  bool m_targetLanguageCodeHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

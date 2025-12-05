@@ -116,15 +116,15 @@ class CustomFieldsFilter {
   ///@}
  private:
   FieldFilter m_field;
-  bool m_fieldHasBeenSet = false;
 
   std::shared_ptr<CustomFieldsFilter> m_not;
-  bool m_notHasBeenSet = false;
 
   Aws::Vector<CustomFieldsFilter> m_andAll;
-  bool m_andAllHasBeenSet = false;
 
   Aws::Vector<CustomFieldsFilter> m_orAll;
+  bool m_fieldHasBeenSet = false;
+  bool m_notHasBeenSet = false;
+  bool m_andAllHasBeenSet = false;
   bool m_orAllHasBeenSet = false;
 };
 

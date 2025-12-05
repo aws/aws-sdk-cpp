@@ -147,27 +147,27 @@ class DomainMetadataResult {
   ///@}
  private:
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   long long m_itemNamesSizeBytes{0};
-  bool m_itemNamesSizeBytesHasBeenSet = false;
 
   int m_attributeNameCount{0};
-  bool m_attributeNameCountHasBeenSet = false;
 
   long long m_attributeNamesSizeBytes{0};
-  bool m_attributeNamesSizeBytesHasBeenSet = false;
 
   int m_attributeValueCount{0};
-  bool m_attributeValueCountHasBeenSet = false;
 
   long long m_attributeValuesSizeBytes{0};
-  bool m_attributeValuesSizeBytesHasBeenSet = false;
 
   int m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_itemCountHasBeenSet = false;
+  bool m_itemNamesSizeBytesHasBeenSet = false;
+  bool m_attributeNameCountHasBeenSet = false;
+  bool m_attributeNamesSizeBytesHasBeenSet = false;
+  bool m_attributeValueCountHasBeenSet = false;
+  bool m_attributeValuesSizeBytesHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

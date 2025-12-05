@@ -171,24 +171,24 @@ class ListTypeVersionsRequest : public CloudFormationRequest {
   ///@}
  private:
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   DeprecatedStatus m_deprecatedStatus{DeprecatedStatus::NOT_SET};
-  bool m_deprecatedStatusHasBeenSet = false;
 
   Aws::String m_publisherId;
+  bool m_typeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_deprecatedStatusHasBeenSet = false;
   bool m_publisherIdHasBeenSet = false;
 };
 

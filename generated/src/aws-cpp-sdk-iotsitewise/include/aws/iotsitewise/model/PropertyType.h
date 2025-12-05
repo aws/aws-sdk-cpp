@@ -119,15 +119,15 @@ class PropertyType {
   ///@}
  private:
   Attribute m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Measurement m_measurement;
-  bool m_measurementHasBeenSet = false;
 
   Transform m_transform;
-  bool m_transformHasBeenSet = false;
 
   Metric m_metric;
+  bool m_attributeHasBeenSet = false;
+  bool m_measurementHasBeenSet = false;
+  bool m_transformHasBeenSet = false;
   bool m_metricHasBeenSet = false;
 };
 

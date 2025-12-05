@@ -206,27 +206,27 @@ class CreateCapabilityRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_capabilityName;
-  bool m_capabilityNameHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   CapabilityType m_type{CapabilityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   CapabilityConfigurationRequest m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CapabilityDeletePropagationPolicy m_deletePropagationPolicy{CapabilityDeletePropagationPolicy::NOT_SET};
+  bool m_capabilityNameHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_typeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_deletePropagationPolicyHasBeenSet = false;
 };
 

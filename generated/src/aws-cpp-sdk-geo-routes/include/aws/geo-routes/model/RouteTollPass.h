@@ -115,18 +115,18 @@ class RouteTollPass {
   ///@}
  private:
   bool m_includesReturnTrip{false};
-  bool m_includesReturnTripHasBeenSet = false;
 
   bool m_seniorPass{false};
-  bool m_seniorPassHasBeenSet = false;
 
   int m_transferCount{0};
-  bool m_transferCountHasBeenSet = false;
 
   int m_tripCount{0};
-  bool m_tripCountHasBeenSet = false;
 
   RouteTollPassValidityPeriod m_validityPeriod;
+  bool m_includesReturnTripHasBeenSet = false;
+  bool m_seniorPassHasBeenSet = false;
+  bool m_transferCountHasBeenSet = false;
+  bool m_tripCountHasBeenSet = false;
   bool m_validityPeriodHasBeenSet = false;
 };
 

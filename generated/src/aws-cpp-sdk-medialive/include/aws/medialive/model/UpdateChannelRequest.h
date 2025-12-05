@@ -282,42 +282,42 @@ class UpdateChannelRequest : public MediaLiveRequest {
   ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
-  bool m_cdiInputSpecificationHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::Vector<OutputDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   EncoderSettings m_encoderSettings;
-  bool m_encoderSettingsHasBeenSet = false;
 
   Aws::Vector<InputAttachment> m_inputAttachments;
-  bool m_inputAttachmentsHasBeenSet = false;
 
   InputSpecification m_inputSpecification;
-  bool m_inputSpecificationHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   MaintenanceUpdateSettings m_maintenance;
-  bool m_maintenanceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ChannelEngineVersionRequest m_channelEngineVersion;
-  bool m_channelEngineVersionHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   AnywhereSettings m_anywhereSettings;
+  bool m_cdiInputSpecificationHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_encoderSettingsHasBeenSet = false;
+  bool m_inputAttachmentsHasBeenSet = false;
+  bool m_inputSpecificationHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
+  bool m_maintenanceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_channelEngineVersionHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_anywhereSettingsHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class StartTransformerJobRequest : public B2BIRequest {
   ///@}
  private:
   S3Location m_inputFile;
-  bool m_inputFileHasBeenSet = false;
 
   S3Location m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_transformerId;
-  bool m_transformerIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_inputFileHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_transformerIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

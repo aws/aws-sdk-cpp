@@ -87,12 +87,12 @@ class DescribeDBSnapshotTenantDatabasesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBSnapshotTenantDatabase> m_dBSnapshotTenantDatabases;
-  bool m_dBSnapshotTenantDatabasesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBSnapshotTenantDatabasesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

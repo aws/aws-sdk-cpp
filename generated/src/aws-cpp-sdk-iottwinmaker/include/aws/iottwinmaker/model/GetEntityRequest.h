@@ -65,9 +65,9 @@ class GetEntityRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_entityId;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class UpdateCaseRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::Vector<FieldValue> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   UserUnion m_performedBy;
+  bool m_domainIdHasBeenSet = false;
+  bool m_caseIdHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_performedByHasBeenSet = false;
 };
 

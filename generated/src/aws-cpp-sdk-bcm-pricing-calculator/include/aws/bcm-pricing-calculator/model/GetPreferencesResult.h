@@ -110,15 +110,15 @@ class GetPreferencesResult {
   ///@}
  private:
   Aws::Vector<RateType> m_managementAccountRateTypeSelections;
-  bool m_managementAccountRateTypeSelectionsHasBeenSet = false;
 
   Aws::Vector<RateType> m_memberAccountRateTypeSelections;
-  bool m_memberAccountRateTypeSelectionsHasBeenSet = false;
 
   Aws::Vector<RateType> m_standaloneAccountRateTypeSelections;
-  bool m_standaloneAccountRateTypeSelectionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managementAccountRateTypeSelectionsHasBeenSet = false;
+  bool m_memberAccountRateTypeSelectionsHasBeenSet = false;
+  bool m_standaloneAccountRateTypeSelectionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

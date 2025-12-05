@@ -91,12 +91,12 @@ class AssociatePhoneNumbersWithVoiceConnectorRequest : public ChimeSDKVoiceReque
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_e164PhoneNumbers;
-  bool m_e164PhoneNumbersHasBeenSet = false;
 
   bool m_forceAssociate{false};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_e164PhoneNumbersHasBeenSet = false;
   bool m_forceAssociateHasBeenSet = false;
 };
 

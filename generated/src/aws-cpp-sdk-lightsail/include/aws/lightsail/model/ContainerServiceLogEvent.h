@@ -70,9 +70,9 @@ class ContainerServiceLogEvent {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_createdAtHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

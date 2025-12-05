@@ -70,9 +70,9 @@ class GuardrailContentBlock {
   ///@}
  private:
   GuardrailTextBlock m_text;
-  bool m_textHasBeenSet = false;
 
   GuardrailImageBlock m_image;
+  bool m_textHasBeenSet = false;
   bool m_imageHasBeenSet = false;
 };
 

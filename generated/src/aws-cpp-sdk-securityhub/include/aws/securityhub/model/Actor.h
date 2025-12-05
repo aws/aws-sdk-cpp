@@ -97,12 +97,12 @@ class Actor {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ActorUser m_user;
-  bool m_userHasBeenSet = false;
 
   ActorSession m_session;
+  bool m_idHasBeenSet = false;
+  bool m_userHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
 };
 

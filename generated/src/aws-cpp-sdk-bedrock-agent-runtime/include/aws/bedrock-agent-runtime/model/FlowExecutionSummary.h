@@ -164,24 +164,24 @@ class FlowExecutionSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
-  bool m_flowAliasIdentifierHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::String m_flowVersion;
-  bool m_flowVersionHasBeenSet = false;
 
   FlowExecutionStatus m_status{FlowExecutionStatus::NOT_SET};
+  bool m_createdAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_executionArnHasBeenSet = false;
+  bool m_flowAliasIdentifierHasBeenSet = false;
+  bool m_flowIdentifierHasBeenSet = false;
+  bool m_flowVersionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

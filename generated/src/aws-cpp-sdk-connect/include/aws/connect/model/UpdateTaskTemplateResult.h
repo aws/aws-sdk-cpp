@@ -281,45 +281,45 @@ class UpdateTaskTemplateResult {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::String m_selfAssignFlowId;
-  bool m_selfAssignFlowIdHasBeenSet = false;
 
   TaskTemplateConstraints m_constraints;
-  bool m_constraintsHasBeenSet = false;
 
   TaskTemplateDefaults m_defaults;
-  bool m_defaultsHasBeenSet = false;
 
   Aws::Vector<TaskTemplateField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   TaskTemplateStatus m_status{TaskTemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_selfAssignFlowIdHasBeenSet = false;
+  bool m_constraintsHasBeenSet = false;
+  bool m_defaultsHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

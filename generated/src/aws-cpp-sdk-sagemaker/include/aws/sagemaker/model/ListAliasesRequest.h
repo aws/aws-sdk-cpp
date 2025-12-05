@@ -119,18 +119,18 @@ class ListAliasesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_imageNameHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

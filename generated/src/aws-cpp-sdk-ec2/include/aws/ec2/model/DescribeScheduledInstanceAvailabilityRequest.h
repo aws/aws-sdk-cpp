@@ -196,27 +196,27 @@ class DescribeScheduledInstanceAvailabilityRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   SlotDateTimeRangeRequest m_firstSlotStartTimeRange;
-  bool m_firstSlotStartTimeRangeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   int m_maxSlotDurationInHours{0};
-  bool m_maxSlotDurationInHoursHasBeenSet = false;
 
   int m_minSlotDurationInHours{0};
-  bool m_minSlotDurationInHoursHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ScheduledInstanceRecurrenceRequest m_recurrence;
+  bool m_dryRunHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_firstSlotStartTimeRangeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_maxSlotDurationInHoursHasBeenSet = false;
+  bool m_minSlotDurationInHoursHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_recurrenceHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class LambdaFunctionTimedOutEventAttributes {
   ///@}
  private:
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
-  bool m_startedEventIdHasBeenSet = false;
 
   LambdaFunctionTimeoutType m_timeoutType{LambdaFunctionTimeoutType::NOT_SET};
+  bool m_scheduledEventIdHasBeenSet = false;
+  bool m_startedEventIdHasBeenSet = false;
   bool m_timeoutTypeHasBeenSet = false;
 };
 

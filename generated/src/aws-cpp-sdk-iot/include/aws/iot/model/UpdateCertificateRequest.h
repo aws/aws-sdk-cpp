@@ -77,9 +77,9 @@ class UpdateCertificateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   CertificateStatus m_newStatus{CertificateStatus::NOT_SET};
+  bool m_certificateIdHasBeenSet = false;
   bool m_newStatusHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class ExtendLicenseConsumptionResult {
   ///@}
  private:
   Aws::String m_licenseConsumptionToken;
-  bool m_licenseConsumptionTokenHasBeenSet = false;
 
   Aws::String m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseConsumptionTokenHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

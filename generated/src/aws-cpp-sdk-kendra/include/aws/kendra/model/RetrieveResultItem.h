@@ -171,24 +171,24 @@ class RetrieveResultItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::String m_documentTitle;
-  bool m_documentTitleHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_documentURI;
-  bool m_documentURIHasBeenSet = false;
 
   Aws::Vector<DocumentAttribute> m_documentAttributes;
-  bool m_documentAttributesHasBeenSet = false;
 
   ScoreAttributes m_scoreAttributes;
+  bool m_idHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
+  bool m_documentTitleHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_documentURIHasBeenSet = false;
+  bool m_documentAttributesHasBeenSet = false;
   bool m_scoreAttributesHasBeenSet = false;
 };
 

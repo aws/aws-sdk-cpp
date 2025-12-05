@@ -203,27 +203,27 @@ class Condition {
   ///@}
  private:
   Aws::Vector<Aws::String> m_equals;
-  bool m_equalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notEquals;
-  bool m_notEqualsHasBeenSet = false;
 
   long long m_greaterThan{0};
-  bool m_greaterThanHasBeenSet = false;
 
   long long m_greaterThanOrEqual{0};
-  bool m_greaterThanOrEqualHasBeenSet = false;
 
   long long m_lessThan{0};
-  bool m_lessThanHasBeenSet = false;
 
   long long m_lessThanOrEqual{0};
-  bool m_lessThanOrEqualHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matches;
-  bool m_matchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notMatches;
+  bool m_equalsHasBeenSet = false;
+  bool m_notEqualsHasBeenSet = false;
+  bool m_greaterThanHasBeenSet = false;
+  bool m_greaterThanOrEqualHasBeenSet = false;
+  bool m_lessThanHasBeenSet = false;
+  bool m_lessThanOrEqualHasBeenSet = false;
+  bool m_matchesHasBeenSet = false;
   bool m_notMatchesHasBeenSet = false;
 };
 

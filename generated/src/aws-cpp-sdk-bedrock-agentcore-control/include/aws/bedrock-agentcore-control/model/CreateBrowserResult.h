@@ -110,18 +110,18 @@ class CreateBrowserResult {
   ///@}
  private:
   Aws::String m_browserId;
-  bool m_browserIdHasBeenSet = false;
 
   Aws::String m_browserArn;
-  bool m_browserArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   BrowserStatus m_status{BrowserStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_browserIdHasBeenSet = false;
+  bool m_browserArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -113,18 +113,18 @@ class PutAutoScalingPolicyResult {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_instanceGroupId;
-  bool m_instanceGroupIdHasBeenSet = false;
 
   AutoScalingPolicyDescription m_autoScalingPolicy;
-  bool m_autoScalingPolicyHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_instanceGroupIdHasBeenSet = false;
+  bool m_autoScalingPolicyHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

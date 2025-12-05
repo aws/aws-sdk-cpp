@@ -137,18 +137,18 @@ class CacheSecurityGroup {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_cacheSecurityGroupName;
-  bool m_cacheSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
-  bool m_eC2SecurityGroupsHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_cacheSecurityGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eC2SecurityGroupsHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

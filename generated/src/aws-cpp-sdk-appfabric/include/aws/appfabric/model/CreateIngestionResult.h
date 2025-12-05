@@ -60,9 +60,9 @@ class CreateIngestionResult {
   ///@}
  private:
   Ingestion m_ingestion;
-  bool m_ingestionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

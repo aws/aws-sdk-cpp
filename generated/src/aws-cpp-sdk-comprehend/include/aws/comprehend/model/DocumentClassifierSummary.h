@@ -122,18 +122,18 @@ class DocumentClassifierSummary {
   ///@}
  private:
   Aws::String m_documentClassifierName;
-  bool m_documentClassifierNameHasBeenSet = false;
 
   int m_numberOfVersions{0};
-  bool m_numberOfVersionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestVersionCreatedAt{};
-  bool m_latestVersionCreatedAtHasBeenSet = false;
 
   Aws::String m_latestVersionName;
-  bool m_latestVersionNameHasBeenSet = false;
 
   ModelStatus m_latestVersionStatus{ModelStatus::NOT_SET};
+  bool m_documentClassifierNameHasBeenSet = false;
+  bool m_numberOfVersionsHasBeenSet = false;
+  bool m_latestVersionCreatedAtHasBeenSet = false;
+  bool m_latestVersionNameHasBeenSet = false;
   bool m_latestVersionStatusHasBeenSet = false;
 };
 

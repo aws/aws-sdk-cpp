@@ -67,9 +67,9 @@ class DeleteTargetRequest : public CodeStarNotificationsRequest {
   ///@}
  private:
   Aws::String m_targetAddress;
-  bool m_targetAddressHasBeenSet = false;
 
   bool m_forceUnsubscribeAll{false};
+  bool m_targetAddressHasBeenSet = false;
   bool m_forceUnsubscribeAllHasBeenSet = false;
 };
 

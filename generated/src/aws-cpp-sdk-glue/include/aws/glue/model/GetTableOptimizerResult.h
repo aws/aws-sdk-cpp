@@ -111,18 +111,18 @@ class GetTableOptimizerResult {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   TableOptimizer m_tableOptimizer;
-  bool m_tableOptimizerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_tableOptimizerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

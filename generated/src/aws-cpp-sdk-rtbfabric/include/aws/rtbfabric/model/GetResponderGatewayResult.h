@@ -345,57 +345,57 @@ class GetResponderGatewayResult {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   ResponderGatewayStatus m_status{ResponderGatewayStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   TrustStoreConfiguration m_trustStoreConfiguration;
-  bool m_trustStoreConfigurationHasBeenSet = false;
 
   ManagedEndpointConfiguration m_managedEndpointConfiguration;
-  bool m_managedEndpointConfigurationHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_activeLinksCount{0};
-  bool m_activeLinksCountHasBeenSet = false;
 
   int m_totalLinksCount{0};
-  bool m_totalLinksCountHasBeenSet = false;
 
   int m_inboundLinksCount{0};
-  bool m_inboundLinksCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_trustStoreConfigurationHasBeenSet = false;
+  bool m_managedEndpointConfigurationHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_activeLinksCountHasBeenSet = false;
+  bool m_totalLinksCountHasBeenSet = false;
+  bool m_inboundLinksCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

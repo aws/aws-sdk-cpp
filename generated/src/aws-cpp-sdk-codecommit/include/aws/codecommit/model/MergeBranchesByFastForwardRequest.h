@@ -105,15 +105,15 @@ class MergeBranchesByFastForwardRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_sourceCommitSpecifier;
-  bool m_sourceCommitSpecifierHasBeenSet = false;
 
   Aws::String m_destinationCommitSpecifier;
-  bool m_destinationCommitSpecifierHasBeenSet = false;
 
   Aws::String m_targetBranch;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_sourceCommitSpecifierHasBeenSet = false;
+  bool m_destinationCommitSpecifierHasBeenSet = false;
   bool m_targetBranchHasBeenSet = false;
 };
 

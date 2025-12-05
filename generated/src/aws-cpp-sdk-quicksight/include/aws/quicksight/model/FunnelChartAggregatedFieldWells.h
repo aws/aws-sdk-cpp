@@ -85,9 +85,9 @@ class FunnelChartAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
+  bool m_categoryHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

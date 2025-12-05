@@ -73,9 +73,9 @@ class DeleteEnvironmentConfigurationRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_environmentName;
+  bool m_applicationNameHasBeenSet = false;
   bool m_environmentNameHasBeenSet = false;
 };
 

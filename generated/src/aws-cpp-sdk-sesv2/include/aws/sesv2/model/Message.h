@@ -126,15 +126,15 @@ class Message {
   ///@}
  private:
   Content m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Body m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Vector<MessageHeader> m_headers;
-  bool m_headersHasBeenSet = false;
 
   Aws::Vector<Attachment> m_attachments;
+  bool m_subjectHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
 };
 

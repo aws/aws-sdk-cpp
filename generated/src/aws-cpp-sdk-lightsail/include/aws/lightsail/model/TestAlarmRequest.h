@@ -71,9 +71,9 @@ class TestAlarmRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   AlarmState m_state{AlarmState::NOT_SET};
+  bool m_alarmNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

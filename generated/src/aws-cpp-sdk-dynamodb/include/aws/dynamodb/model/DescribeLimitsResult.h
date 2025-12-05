@@ -114,18 +114,18 @@ class DescribeLimitsResult {
   ///@}
  private:
   long long m_accountMaxReadCapacityUnits{0};
-  bool m_accountMaxReadCapacityUnitsHasBeenSet = false;
 
   long long m_accountMaxWriteCapacityUnits{0};
-  bool m_accountMaxWriteCapacityUnitsHasBeenSet = false;
 
   long long m_tableMaxReadCapacityUnits{0};
-  bool m_tableMaxReadCapacityUnitsHasBeenSet = false;
 
   long long m_tableMaxWriteCapacityUnits{0};
-  bool m_tableMaxWriteCapacityUnitsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountMaxReadCapacityUnitsHasBeenSet = false;
+  bool m_accountMaxWriteCapacityUnitsHasBeenSet = false;
+  bool m_tableMaxReadCapacityUnitsHasBeenSet = false;
+  bool m_tableMaxWriteCapacityUnitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

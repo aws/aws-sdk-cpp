@@ -71,9 +71,9 @@ class SequenceNumberRange {
   ///@}
  private:
   Aws::String m_startingSequenceNumber;
-  bool m_startingSequenceNumberHasBeenSet = false;
 
   Aws::String m_endingSequenceNumber;
+  bool m_startingSequenceNumberHasBeenSet = false;
   bool m_endingSequenceNumberHasBeenSet = false;
 };
 

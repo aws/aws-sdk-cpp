@@ -127,15 +127,15 @@ class ConnectorDataTarget {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_connectionType;
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
+  bool m_nameHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_inputsHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListedEntitlement {
   ///@}
  private:
   int m_dataTransferSubscriberFeePercent{0};
-  bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
   Aws::String m_entitlementArn;
-  bool m_entitlementArnHasBeenSet = false;
 
   Aws::String m_entitlementName;
+  bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
+  bool m_entitlementArnHasBeenSet = false;
   bool m_entitlementNameHasBeenSet = false;
 };
 

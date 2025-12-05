@@ -110,15 +110,15 @@ class AssociateSourceResourceRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::String m_progressUpdateStream;
-  bool m_progressUpdateStreamHasBeenSet = false;
 
   Aws::String m_migrationTaskName;
-  bool m_migrationTaskNameHasBeenSet = false;
 
   SourceResource m_sourceResource;
-  bool m_sourceResourceHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_progressUpdateStreamHasBeenSet = false;
+  bool m_migrationTaskNameHasBeenSet = false;
+  bool m_sourceResourceHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class HeatMapAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_rows;
-  bool m_rowsHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
+  bool m_rowsHasBeenSet = false;
+  bool m_columnsHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

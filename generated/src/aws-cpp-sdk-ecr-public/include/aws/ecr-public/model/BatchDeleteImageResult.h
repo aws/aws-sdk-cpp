@@ -91,12 +91,12 @@ class BatchDeleteImageResult {
   ///@}
  private:
   Aws::Vector<ImageIdentifier> m_imageIds;
-  bool m_imageIdsHasBeenSet = false;
 
   Aws::Vector<ImageFailure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageIdsHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

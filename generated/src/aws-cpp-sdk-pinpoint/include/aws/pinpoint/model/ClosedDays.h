@@ -155,18 +155,18 @@ class ClosedDays {
   ///@}
  private:
   Aws::Vector<ClosedDaysRule> m_eMAIL;
-  bool m_eMAILHasBeenSet = false;
 
   Aws::Vector<ClosedDaysRule> m_sMS;
-  bool m_sMSHasBeenSet = false;
 
   Aws::Vector<ClosedDaysRule> m_pUSH;
-  bool m_pUSHHasBeenSet = false;
 
   Aws::Vector<ClosedDaysRule> m_vOICE;
-  bool m_vOICEHasBeenSet = false;
 
   Aws::Vector<ClosedDaysRule> m_cUSTOM;
+  bool m_eMAILHasBeenSet = false;
+  bool m_sMSHasBeenSet = false;
+  bool m_pUSHHasBeenSet = false;
+  bool m_vOICEHasBeenSet = false;
   bool m_cUSTOMHasBeenSet = false;
 };
 

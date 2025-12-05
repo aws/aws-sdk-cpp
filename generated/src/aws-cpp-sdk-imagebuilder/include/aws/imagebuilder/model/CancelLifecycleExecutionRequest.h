@@ -70,9 +70,9 @@ class CancelLifecycleExecutionRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_lifecycleExecutionId;
-  bool m_lifecycleExecutionIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_lifecycleExecutionIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

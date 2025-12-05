@@ -75,9 +75,9 @@ class CompatibleVersionsMap {
   ///@}
  private:
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetVersions;
+  bool m_sourceVersionHasBeenSet = false;
   bool m_targetVersionsHasBeenSet = false;
 };
 

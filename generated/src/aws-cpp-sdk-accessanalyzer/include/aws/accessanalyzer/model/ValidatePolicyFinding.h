@@ -138,18 +138,18 @@ class ValidatePolicyFinding {
   ///@}
  private:
   Aws::String m_findingDetails;
-  bool m_findingDetailsHasBeenSet = false;
 
   ValidatePolicyFindingType m_findingType{ValidatePolicyFindingType::NOT_SET};
-  bool m_findingTypeHasBeenSet = false;
 
   Aws::String m_issueCode;
-  bool m_issueCodeHasBeenSet = false;
 
   Aws::String m_learnMoreLink;
-  bool m_learnMoreLinkHasBeenSet = false;
 
   Aws::Vector<Location> m_locations;
+  bool m_findingDetailsHasBeenSet = false;
+  bool m_findingTypeHasBeenSet = false;
+  bool m_issueCodeHasBeenSet = false;
+  bool m_learnMoreLinkHasBeenSet = false;
   bool m_locationsHasBeenSet = false;
 };
 

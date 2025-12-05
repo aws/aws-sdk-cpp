@@ -142,15 +142,15 @@ class BatchGetItemResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>> m_responses;
-  bool m_responsesHasBeenSet = false;
 
   Aws::Map<Aws::String, KeysAndAttributes> m_unprocessedKeys;
-  bool m_unprocessedKeysHasBeenSet = false;
 
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responsesHasBeenSet = false;
+  bool m_unprocessedKeysHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

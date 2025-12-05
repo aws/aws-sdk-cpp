@@ -66,9 +66,9 @@ class CostCategoryProcessingStatus {
   ///@}
  private:
   CostCategoryStatusComponent m_component{CostCategoryStatusComponent::NOT_SET};
-  bool m_componentHasBeenSet = false;
 
   CostCategoryStatus m_status{CostCategoryStatus::NOT_SET};
+  bool m_componentHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class CustomLogSourceConfiguration {
   ///@}
  private:
   CustomLogSourceCrawlerConfiguration m_crawlerConfiguration;
-  bool m_crawlerConfigurationHasBeenSet = false;
 
   AwsIdentity m_providerIdentity;
+  bool m_crawlerConfigurationHasBeenSet = false;
   bool m_providerIdentityHasBeenSet = false;
 };
 

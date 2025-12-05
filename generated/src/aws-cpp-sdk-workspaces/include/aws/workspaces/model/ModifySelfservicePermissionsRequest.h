@@ -68,9 +68,9 @@ class ModifySelfservicePermissionsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   SelfservicePermissions m_selfservicePermissions;
+  bool m_resourceIdHasBeenSet = false;
   bool m_selfservicePermissionsHasBeenSet = false;
 };
 

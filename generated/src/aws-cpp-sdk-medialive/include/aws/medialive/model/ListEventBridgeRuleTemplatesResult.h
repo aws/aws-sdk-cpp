@@ -88,12 +88,12 @@ class ListEventBridgeRuleTemplatesResult {
   ///@}
  private:
   Aws::Vector<EventBridgeRuleTemplateSummary> m_eventBridgeRuleTemplates;
-  bool m_eventBridgeRuleTemplatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventBridgeRuleTemplatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

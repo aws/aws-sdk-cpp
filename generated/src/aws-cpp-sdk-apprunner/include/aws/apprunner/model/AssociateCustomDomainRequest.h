@@ -89,12 +89,12 @@ class AssociateCustomDomainRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_enableWWWSubdomain{false};
+  bool m_serviceArnHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
   bool m_enableWWWSubdomainHasBeenSet = false;
 };
 

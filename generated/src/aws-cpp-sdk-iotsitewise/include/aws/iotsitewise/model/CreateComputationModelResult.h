@@ -99,15 +99,15 @@ class CreateComputationModelResult {
   ///@}
  private:
   Aws::String m_computationModelId;
-  bool m_computationModelIdHasBeenSet = false;
 
   Aws::String m_computationModelArn;
-  bool m_computationModelArnHasBeenSet = false;
 
   ComputationModelStatus m_computationModelStatus;
-  bool m_computationModelStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computationModelIdHasBeenSet = false;
+  bool m_computationModelArnHasBeenSet = false;
+  bool m_computationModelStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

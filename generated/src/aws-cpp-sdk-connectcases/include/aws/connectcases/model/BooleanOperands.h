@@ -89,12 +89,12 @@ class BooleanOperands {
   ///@}
  private:
   OperandOne m_operandOne;
-  bool m_operandOneHasBeenSet = false;
 
   OperandTwo m_operandTwo;
-  bool m_operandTwoHasBeenSet = false;
 
   bool m_result{false};
+  bool m_operandOneHasBeenSet = false;
+  bool m_operandTwoHasBeenSet = false;
   bool m_resultHasBeenSet = false;
 };
 

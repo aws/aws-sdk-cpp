@@ -59,9 +59,9 @@ class CreateQuantumTaskResult {
   ///@}
  private:
   Aws::String m_quantumTaskArn;
-  bool m_quantumTaskArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quantumTaskArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

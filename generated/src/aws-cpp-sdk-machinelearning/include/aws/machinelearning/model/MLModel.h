@@ -420,60 +420,60 @@ class MLModel {
   ///@}
  private:
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_trainingDataSourceId;
-  bool m_trainingDataSourceIdHasBeenSet = false;
 
   Aws::String m_createdByIamUser;
-  bool m_createdByIamUserHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EntityStatus m_status{EntityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   long long m_sizeInBytes{0};
-  bool m_sizeInBytesHasBeenSet = false;
 
   RealtimeEndpointInfo m_endpointInfo;
-  bool m_endpointInfoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_trainingParameters;
-  bool m_trainingParametersHasBeenSet = false;
 
   Aws::String m_inputDataLocationS3;
-  bool m_inputDataLocationS3HasBeenSet = false;
 
   Algorithm m_algorithm{Algorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   MLModelType m_mLModelType{MLModelType::NOT_SET};
-  bool m_mLModelTypeHasBeenSet = false;
 
   double m_scoreThreshold{0.0};
-  bool m_scoreThresholdHasBeenSet = false;
 
   Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt{};
-  bool m_scoreThresholdLastUpdatedAtHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_computeTime{0};
-  bool m_computeTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedAt{};
-  bool m_finishedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_trainingDataSourceIdHasBeenSet = false;
+  bool m_createdByIamUserHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sizeInBytesHasBeenSet = false;
+  bool m_endpointInfoHasBeenSet = false;
+  bool m_trainingParametersHasBeenSet = false;
+  bool m_inputDataLocationS3HasBeenSet = false;
+  bool m_algorithmHasBeenSet = false;
+  bool m_mLModelTypeHasBeenSet = false;
+  bool m_scoreThresholdHasBeenSet = false;
+  bool m_scoreThresholdLastUpdatedAtHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_computeTimeHasBeenSet = false;
+  bool m_finishedAtHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
 };
 

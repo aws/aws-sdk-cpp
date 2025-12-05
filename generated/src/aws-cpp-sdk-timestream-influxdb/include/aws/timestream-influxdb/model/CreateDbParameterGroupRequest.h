@@ -112,15 +112,15 @@ class CreateDbParameterGroupRequest : public TimestreamInfluxDBRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Parameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

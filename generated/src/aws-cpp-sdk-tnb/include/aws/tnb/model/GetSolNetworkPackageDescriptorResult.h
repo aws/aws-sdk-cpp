@@ -71,12 +71,12 @@ class GetSolNetworkPackageDescriptorResult {
   ///@}
  private:
   DescriptorContentType m_contentType{DescriptorContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_nsd{};
-  bool m_nsdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_nsdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

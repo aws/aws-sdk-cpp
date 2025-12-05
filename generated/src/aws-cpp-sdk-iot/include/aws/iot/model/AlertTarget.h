@@ -71,9 +71,9 @@ class AlertTarget {
   ///@}
  private:
   Aws::String m_alertTargetArn;
-  bool m_alertTargetArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_alertTargetArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

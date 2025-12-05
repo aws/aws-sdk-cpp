@@ -104,12 +104,12 @@ class LeadContext {
   ///@}
  private:
   Aws::String m_qualificationStatus;
-  bool m_qualificationStatusHasBeenSet = false;
 
   LeadCustomer m_customer;
-  bool m_customerHasBeenSet = false;
 
   Aws::Vector<LeadInteraction> m_interactions;
+  bool m_qualificationStatusHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

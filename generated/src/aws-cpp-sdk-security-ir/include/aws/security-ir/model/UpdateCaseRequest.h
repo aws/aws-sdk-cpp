@@ -427,54 +427,54 @@ class UpdateCaseRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportedIncidentStartDate{};
-  bool m_reportedIncidentStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_actualIncidentStartDate{};
-  bool m_actualIncidentStartDateHasBeenSet = false;
 
   EngagementType m_engagementType{EngagementType::NOT_SET};
-  bool m_engagementTypeHasBeenSet = false;
 
   Aws::Vector<Watcher> m_watchersToAdd;
-  bool m_watchersToAddHasBeenSet = false;
 
   Aws::Vector<Watcher> m_watchersToDelete;
-  bool m_watchersToDeleteHasBeenSet = false;
 
   Aws::Vector<ThreatActorIp> m_threatActorIpAddressesToAdd;
-  bool m_threatActorIpAddressesToAddHasBeenSet = false;
 
   Aws::Vector<ThreatActorIp> m_threatActorIpAddressesToDelete;
-  bool m_threatActorIpAddressesToDeleteHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedServicesToAdd;
-  bool m_impactedServicesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedServicesToDelete;
-  bool m_impactedServicesToDeleteHasBeenSet = false;
 
   Aws::Vector<ImpactedAwsRegion> m_impactedAwsRegionsToAdd;
-  bool m_impactedAwsRegionsToAddHasBeenSet = false;
 
   Aws::Vector<ImpactedAwsRegion> m_impactedAwsRegionsToDelete;
-  bool m_impactedAwsRegionsToDeleteHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedAccountsToAdd;
-  bool m_impactedAccountsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedAccountsToDelete;
-  bool m_impactedAccountsToDeleteHasBeenSet = false;
 
   Aws::Vector<CaseMetadataEntry> m_caseMetadata;
+  bool m_caseIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_reportedIncidentStartDateHasBeenSet = false;
+  bool m_actualIncidentStartDateHasBeenSet = false;
+  bool m_engagementTypeHasBeenSet = false;
+  bool m_watchersToAddHasBeenSet = false;
+  bool m_watchersToDeleteHasBeenSet = false;
+  bool m_threatActorIpAddressesToAddHasBeenSet = false;
+  bool m_threatActorIpAddressesToDeleteHasBeenSet = false;
+  bool m_impactedServicesToAddHasBeenSet = false;
+  bool m_impactedServicesToDeleteHasBeenSet = false;
+  bool m_impactedAwsRegionsToAddHasBeenSet = false;
+  bool m_impactedAwsRegionsToDeleteHasBeenSet = false;
+  bool m_impactedAccountsToAddHasBeenSet = false;
+  bool m_impactedAccountsToDeleteHasBeenSet = false;
   bool m_caseMetadataHasBeenSet = false;
 };
 

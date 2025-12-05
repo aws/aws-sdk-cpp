@@ -60,9 +60,9 @@ class DescribeVirtualGatewayResult {
   ///@}
  private:
   VirtualGatewayData m_virtualGateway;
-  bool m_virtualGatewayHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualGatewayHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

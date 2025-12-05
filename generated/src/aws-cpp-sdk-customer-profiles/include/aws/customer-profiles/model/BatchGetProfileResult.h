@@ -93,12 +93,12 @@ class BatchGetProfileResult {
   ///@}
  private:
   Aws::Vector<BatchGetProfileError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<Profile> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_profilesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

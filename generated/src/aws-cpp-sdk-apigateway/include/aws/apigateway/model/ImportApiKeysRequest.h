@@ -71,9 +71,9 @@ class ImportApiKeysRequest : public StreamingAPIGatewayRequest {
   ///@}
  private:
   ApiKeysFormat m_format{ApiKeysFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   bool m_failOnWarnings{false};
+  bool m_formatHasBeenSet = false;
   bool m_failOnWarningsHasBeenSet = false;
 };
 

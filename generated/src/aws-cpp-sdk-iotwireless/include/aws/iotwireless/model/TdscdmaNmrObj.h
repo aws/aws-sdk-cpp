@@ -112,18 +112,18 @@ class TdscdmaNmrObj {
   ///@}
  private:
   int m_uarfcn{0};
-  bool m_uarfcnHasBeenSet = false;
 
   int m_cellParams{0};
-  bool m_cellParamsHasBeenSet = false;
 
   int m_utranCid{0};
-  bool m_utranCidHasBeenSet = false;
 
   int m_rscp{0};
-  bool m_rscpHasBeenSet = false;
 
   int m_pathLoss{0};
+  bool m_uarfcnHasBeenSet = false;
+  bool m_cellParamsHasBeenSet = false;
+  bool m_utranCidHasBeenSet = false;
+  bool m_rscpHasBeenSet = false;
   bool m_pathLossHasBeenSet = false;
 };
 

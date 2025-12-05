@@ -355,54 +355,54 @@ class DescribeProxyResource {
   ///@}
  private:
   Aws::String m_proxyName;
-  bool m_proxyNameHasBeenSet = false;
 
   Aws::String m_proxyArn;
-  bool m_proxyArnHasBeenSet = false;
 
   Aws::String m_proxyConfigurationName;
-  bool m_proxyConfigurationNameHasBeenSet = false;
 
   Aws::String m_proxyConfigurationArn;
-  bool m_proxyConfigurationArnHasBeenSet = false;
 
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   ProxyState m_proxyState{ProxyState::NOT_SET};
-  bool m_proxyStateHasBeenSet = false;
 
   ProxyModifyState m_proxyModifyState{ProxyModifyState::NOT_SET};
-  bool m_proxyModifyStateHasBeenSet = false;
 
   Aws::Vector<ListenerProperty> m_listenerProperties;
-  bool m_listenerPropertiesHasBeenSet = false;
 
   TlsInterceptProperties m_tlsInterceptProperties;
-  bool m_tlsInterceptPropertiesHasBeenSet = false;
 
   Aws::String m_vpcEndpointServiceName;
-  bool m_vpcEndpointServiceNameHasBeenSet = false;
 
   Aws::String m_privateDNSName;
-  bool m_privateDNSNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTime{};
-  bool m_deleteTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_proxyNameHasBeenSet = false;
+  bool m_proxyArnHasBeenSet = false;
+  bool m_proxyConfigurationNameHasBeenSet = false;
+  bool m_proxyConfigurationArnHasBeenSet = false;
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_proxyStateHasBeenSet = false;
+  bool m_proxyModifyStateHasBeenSet = false;
+  bool m_listenerPropertiesHasBeenSet = false;
+  bool m_tlsInterceptPropertiesHasBeenSet = false;
+  bool m_vpcEndpointServiceNameHasBeenSet = false;
+  bool m_privateDNSNameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_deleteTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class Selector {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Operator m_operator;
+  bool m_fieldNameHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

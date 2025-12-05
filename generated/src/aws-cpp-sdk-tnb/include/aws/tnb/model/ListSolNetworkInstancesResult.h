@@ -85,12 +85,12 @@ class ListSolNetworkInstancesResult {
   ///@}
  private:
   Aws::Vector<ListSolNetworkInstanceInfo> m_networkInstances;
-  bool m_networkInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

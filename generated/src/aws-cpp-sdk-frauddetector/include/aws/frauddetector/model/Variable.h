@@ -201,30 +201,30 @@ class Variable {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataType m_dataType{DataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   DataSource m_dataSource{DataSource::NOT_SET};
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_variableType;
-  bool m_variableTypeHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_nameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_variableTypeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

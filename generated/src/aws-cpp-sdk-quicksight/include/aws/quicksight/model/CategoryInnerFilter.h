@@ -85,12 +85,12 @@ class CategoryInnerFilter {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   CategoryFilterConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+  bool m_columnHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_defaultFilterControlConfigurationHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class EnaSrdSpecificationRequest {
   ///@}
  private:
   bool m_enaSrdEnabled{false};
-  bool m_enaSrdEnabledHasBeenSet = false;
 
   EnaSrdUdpSpecificationRequest m_enaSrdUdpSpecification;
+  bool m_enaSrdEnabledHasBeenSet = false;
   bool m_enaSrdUdpSpecificationHasBeenSet = false;
 };
 

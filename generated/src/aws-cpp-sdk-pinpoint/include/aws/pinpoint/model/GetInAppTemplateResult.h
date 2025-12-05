@@ -58,9 +58,9 @@ class GetInAppTemplateResult {
   ///@}
  private:
   InAppTemplateResponse m_inAppTemplateResponse;
-  bool m_inAppTemplateResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inAppTemplateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

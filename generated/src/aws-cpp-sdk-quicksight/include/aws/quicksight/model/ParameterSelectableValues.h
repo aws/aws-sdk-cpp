@@ -77,9 +77,9 @@ class ParameterSelectableValues {
   ///@}
  private:
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   ColumnIdentifier m_linkToDataSetColumn;
+  bool m_valuesHasBeenSet = false;
   bool m_linkToDataSetColumnHasBeenSet = false;
 };
 

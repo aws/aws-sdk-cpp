@@ -112,15 +112,15 @@ class ListAliasesRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_functionVersion;
-  bool m_functionVersionHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_functionNameHasBeenSet = false;
+  bool m_functionVersionHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

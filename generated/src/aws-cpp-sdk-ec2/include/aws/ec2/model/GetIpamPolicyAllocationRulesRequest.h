@@ -168,24 +168,24 @@ class GetIpamPolicyAllocationRulesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPolicyId;
-  bool m_ipamPolicyIdHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   IpamPolicyResourceType m_resourceType{IpamPolicyResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPolicyIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

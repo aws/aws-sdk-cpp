@@ -123,18 +123,18 @@ class GetConnectionsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   GetConnectionsFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   bool m_hidePassword{false};
-  bool m_hidePasswordHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_catalogIdHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_hidePasswordHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

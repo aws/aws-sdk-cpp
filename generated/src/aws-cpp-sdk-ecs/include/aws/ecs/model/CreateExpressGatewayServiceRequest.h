@@ -315,39 +315,39 @@ class CreateExpressGatewayServiceRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_infrastructureRoleArn;
-  bool m_infrastructureRoleArnHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_healthCheckPath;
-  bool m_healthCheckPathHasBeenSet = false;
 
   ExpressGatewayContainer m_primaryContainer;
-  bool m_primaryContainerHasBeenSet = false;
 
   Aws::String m_taskRoleArn;
-  bool m_taskRoleArnHasBeenSet = false;
 
   ExpressGatewayServiceNetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::String m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   ExpressGatewayScalingTarget m_scalingTarget;
-  bool m_scalingTargetHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_infrastructureRoleArnHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_healthCheckPathHasBeenSet = false;
+  bool m_primaryContainerHasBeenSet = false;
+  bool m_taskRoleArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_scalingTargetHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

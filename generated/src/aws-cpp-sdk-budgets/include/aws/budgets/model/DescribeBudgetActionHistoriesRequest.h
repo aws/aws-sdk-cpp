@@ -128,21 +128,21 @@ class DescribeBudgetActionHistoriesRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   TimePeriod m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

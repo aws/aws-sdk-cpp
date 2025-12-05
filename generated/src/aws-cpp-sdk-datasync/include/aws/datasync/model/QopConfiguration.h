@@ -71,9 +71,9 @@ class QopConfiguration {
   ///@}
  private:
   HdfsRpcProtection m_rpcProtection{HdfsRpcProtection::NOT_SET};
-  bool m_rpcProtectionHasBeenSet = false;
 
   HdfsDataTransferProtection m_dataTransferProtection{HdfsDataTransferProtection::NOT_SET};
+  bool m_rpcProtectionHasBeenSet = false;
   bool m_dataTransferProtectionHasBeenSet = false;
 };
 

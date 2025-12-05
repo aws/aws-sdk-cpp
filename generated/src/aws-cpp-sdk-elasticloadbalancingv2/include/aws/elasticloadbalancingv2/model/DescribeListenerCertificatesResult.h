@@ -88,12 +88,12 @@ class DescribeListenerCertificatesResult {
   ///@}
  private:
   Aws::Vector<Certificate> m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_certificatesHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

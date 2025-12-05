@@ -124,18 +124,18 @@ class HumanLoopSummary {
   ///@}
  private:
   Aws::String m_humanLoopName;
-  bool m_humanLoopNameHasBeenSet = false;
 
   HumanLoopStatus m_humanLoopStatus{HumanLoopStatus::NOT_SET};
-  bool m_humanLoopStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_flowDefinitionArn;
+  bool m_humanLoopNameHasBeenSet = false;
+  bool m_humanLoopStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_flowDefinitionArnHasBeenSet = false;
 };
 

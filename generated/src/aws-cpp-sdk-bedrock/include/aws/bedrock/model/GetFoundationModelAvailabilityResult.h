@@ -125,21 +125,21 @@ class GetFoundationModelAvailabilityResult {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   AgreementAvailability m_agreementAvailability;
-  bool m_agreementAvailabilityHasBeenSet = false;
 
   AuthorizationStatus m_authorizationStatus{AuthorizationStatus::NOT_SET};
-  bool m_authorizationStatusHasBeenSet = false;
 
   EntitlementAvailability m_entitlementAvailability{EntitlementAvailability::NOT_SET};
-  bool m_entitlementAvailabilityHasBeenSet = false;
 
   RegionAvailability m_regionAvailability{RegionAvailability::NOT_SET};
-  bool m_regionAvailabilityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelIdHasBeenSet = false;
+  bool m_agreementAvailabilityHasBeenSet = false;
+  bool m_authorizationStatusHasBeenSet = false;
+  bool m_entitlementAvailabilityHasBeenSet = false;
+  bool m_regionAvailabilityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

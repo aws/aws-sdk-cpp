@@ -72,9 +72,9 @@ class LinearConfiguration {
   ///@}
  private:
   double m_stepPercent{0.0};
-  bool m_stepPercentHasBeenSet = false;
 
   int m_stepBakeTimeInMinutes{0};
+  bool m_stepPercentHasBeenSet = false;
   bool m_stepBakeTimeInMinutesHasBeenSet = false;
 };
 

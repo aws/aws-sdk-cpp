@@ -72,9 +72,9 @@ class RightsizingRecommendationConfiguration {
   ///@}
  private:
   RecommendationTarget m_recommendationTarget{RecommendationTarget::NOT_SET};
-  bool m_recommendationTargetHasBeenSet = false;
 
   bool m_benefitsConsidered{false};
+  bool m_recommendationTargetHasBeenSet = false;
   bool m_benefitsConsideredHasBeenSet = false;
 };
 

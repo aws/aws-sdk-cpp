@@ -139,21 +139,21 @@ class SamplingStatisticsDocument {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_clientID;
-  bool m_clientIDHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   int m_requestCount{0};
-  bool m_requestCountHasBeenSet = false;
 
   int m_sampledCount{0};
-  bool m_sampledCountHasBeenSet = false;
 
   int m_borrowCount{0};
+  bool m_ruleNameHasBeenSet = false;
+  bool m_clientIDHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_requestCountHasBeenSet = false;
+  bool m_sampledCountHasBeenSet = false;
   bool m_borrowCountHasBeenSet = false;
 };
 

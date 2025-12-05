@@ -117,15 +117,15 @@ class CreateStoreImageTaskRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::Vector<S3ObjectTag> m_s3ObjectTags;
-  bool m_s3ObjectTagsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_imageIdHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_s3ObjectTagsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

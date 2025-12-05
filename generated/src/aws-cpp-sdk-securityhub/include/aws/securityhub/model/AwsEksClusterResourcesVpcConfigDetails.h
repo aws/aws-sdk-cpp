@@ -103,12 +103,12 @@ class AwsEksClusterResourcesVpcConfigDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   bool m_endpointPublicAccess{false};
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_endpointPublicAccessHasBeenSet = false;
 };
 

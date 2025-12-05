@@ -87,9 +87,9 @@ class AwsOpportunityRelatedEntities {
   ///@}
  private:
   Aws::Vector<Aws::String> m_awsProducts;
-  bool m_awsProductsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_solutions;
+  bool m_awsProductsHasBeenSet = false;
   bool m_solutionsHasBeenSet = false;
 };
 

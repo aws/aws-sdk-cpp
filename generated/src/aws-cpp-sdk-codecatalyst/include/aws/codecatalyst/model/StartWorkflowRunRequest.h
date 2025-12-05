@@ -111,15 +111,15 @@ class StartWorkflowRunRequest : public CodeCatalystRequest {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

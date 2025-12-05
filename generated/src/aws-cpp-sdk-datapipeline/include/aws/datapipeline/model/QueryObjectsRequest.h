@@ -132,18 +132,18 @@ class QueryObjectsRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Query m_query;
-  bool m_queryHasBeenSet = false;
 
   Aws::String m_sphere;
-  bool m_sphereHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_pipelineIdHasBeenSet = false;
+  bool m_queryHasBeenSet = false;
+  bool m_sphereHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

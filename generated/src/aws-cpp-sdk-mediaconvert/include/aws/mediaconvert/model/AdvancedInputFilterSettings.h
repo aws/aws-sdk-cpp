@@ -74,9 +74,9 @@ class AdvancedInputFilterSettings {
   ///@}
  private:
   AdvancedInputFilterAddTexture m_addTexture{AdvancedInputFilterAddTexture::NOT_SET};
-  bool m_addTextureHasBeenSet = false;
 
   AdvancedInputFilterSharpen m_sharpening{AdvancedInputFilterSharpen::NOT_SET};
+  bool m_addTextureHasBeenSet = false;
   bool m_sharpeningHasBeenSet = false;
 };
 

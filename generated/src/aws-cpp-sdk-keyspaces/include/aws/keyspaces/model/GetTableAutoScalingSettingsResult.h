@@ -137,21 +137,21 @@ class GetTableAutoScalingSettingsResult {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   AutoScalingSpecification m_autoScalingSpecification;
-  bool m_autoScalingSpecificationHasBeenSet = false;
 
   Aws::Vector<ReplicaAutoScalingSpecification> m_replicaSpecifications;
-  bool m_replicaSpecificationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_autoScalingSpecificationHasBeenSet = false;
+  bool m_replicaSpecificationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

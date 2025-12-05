@@ -76,9 +76,9 @@ class IntegerDefaultValues {
   ///@}
  private:
   DynamicDefaultValue m_dynamicValue;
-  bool m_dynamicValueHasBeenSet = false;
 
   Aws::Vector<long long> m_staticValues;
+  bool m_dynamicValueHasBeenSet = false;
   bool m_staticValuesHasBeenSet = false;
 };
 

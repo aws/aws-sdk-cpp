@@ -105,15 +105,15 @@ class ReferenceFilter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_md5;
-  bool m_md5HasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
+  bool m_nameHasBeenSet = false;
+  bool m_md5HasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
   bool m_createdBeforeHasBeenSet = false;
 };
 

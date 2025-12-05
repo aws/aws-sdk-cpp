@@ -100,12 +100,12 @@ class Rule {
   ///@}
  private:
   SamplingConfig m_samplingConfig;
-  bool m_samplingConfigHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   SessionConfig m_sessionConfig;
+  bool m_samplingConfigHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_sessionConfigHasBeenSet = false;
 };
 

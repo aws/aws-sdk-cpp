@@ -363,54 +363,54 @@ class RoutingProfile {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_routingProfileArn;
-  bool m_routingProfileArnHasBeenSet = false;
 
   Aws::String m_routingProfileId;
-  bool m_routingProfileIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<MediaConcurrency> m_mediaConcurrencies;
-  bool m_mediaConcurrenciesHasBeenSet = false;
 
   Aws::String m_defaultOutboundQueueId;
-  bool m_defaultOutboundQueueIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   long long m_numberOfAssociatedQueues{0};
-  bool m_numberOfAssociatedQueuesHasBeenSet = false;
 
   long long m_numberOfAssociatedManualAssignmentQueues{0};
-  bool m_numberOfAssociatedManualAssignmentQueuesHasBeenSet = false;
 
   long long m_numberOfAssociatedUsers{0};
-  bool m_numberOfAssociatedUsersHasBeenSet = false;
 
   AgentAvailabilityTimer m_agentAvailabilityTimer{AgentAvailabilityTimer::NOT_SET};
-  bool m_agentAvailabilityTimerHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedQueueIds;
-  bool m_associatedQueueIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedManualAssignmentQueueIds;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_routingProfileArnHasBeenSet = false;
+  bool m_routingProfileIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_mediaConcurrenciesHasBeenSet = false;
+  bool m_defaultOutboundQueueIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_numberOfAssociatedQueuesHasBeenSet = false;
+  bool m_numberOfAssociatedManualAssignmentQueuesHasBeenSet = false;
+  bool m_numberOfAssociatedUsersHasBeenSet = false;
+  bool m_agentAvailabilityTimerHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_associatedQueueIdsHasBeenSet = false;
   bool m_associatedManualAssignmentQueueIdsHasBeenSet = false;
 };
 

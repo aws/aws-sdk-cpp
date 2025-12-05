@@ -100,12 +100,12 @@ class ResourceSelection {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   int m_tieringDownSettingsInDays{0};
-  bool m_tieringDownSettingsInDaysHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_resourcesHasBeenSet = false;
+  bool m_tieringDownSettingsInDaysHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

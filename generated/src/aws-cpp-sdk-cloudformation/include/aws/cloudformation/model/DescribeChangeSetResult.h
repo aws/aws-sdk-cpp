@@ -514,75 +514,75 @@ class DescribeChangeSetResult {
   ///@}
  private:
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_changeSetId;
-  bool m_changeSetIdHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   ChangeSetStatus m_status{ChangeSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   StackDriftStatus m_stackDriftStatus{StackDriftStatus::NOT_SET};
-  bool m_stackDriftStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationARNs;
-  bool m_notificationARNsHasBeenSet = false;
 
   RollbackConfiguration m_rollbackConfiguration;
-  bool m_rollbackConfigurationHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Change> m_changes;
-  bool m_changesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includeNestedStacks{false};
-  bool m_includeNestedStacksHasBeenSet = false;
 
   Aws::String m_parentChangeSetId;
-  bool m_parentChangeSetIdHasBeenSet = false;
 
   Aws::String m_rootChangeSetId;
-  bool m_rootChangeSetIdHasBeenSet = false;
 
   OnStackFailure m_onStackFailure{OnStackFailure::NOT_SET};
-  bool m_onStackFailureHasBeenSet = false;
 
   bool m_importExistingResources{false};
-  bool m_importExistingResourcesHasBeenSet = false;
 
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
-  bool m_deploymentModeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_changeSetIdHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_stackDriftStatusHasBeenSet = false;
+  bool m_notificationARNsHasBeenSet = false;
+  bool m_rollbackConfigurationHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_changesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_includeNestedStacksHasBeenSet = false;
+  bool m_parentChangeSetIdHasBeenSet = false;
+  bool m_rootChangeSetIdHasBeenSet = false;
+  bool m_onStackFailureHasBeenSet = false;
+  bool m_importExistingResourcesHasBeenSet = false;
+  bool m_deploymentModeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -123,15 +123,15 @@ class AggregateOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupByColumnNames;
-  bool m_groupByColumnNamesHasBeenSet = false;
 
   Aws::Vector<Aggregation> m_aggregations;
+  bool m_aliasHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_groupByColumnNamesHasBeenSet = false;
   bool m_aggregationsHasBeenSet = false;
 };
 

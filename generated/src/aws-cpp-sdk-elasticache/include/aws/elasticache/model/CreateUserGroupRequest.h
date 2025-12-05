@@ -121,15 +121,15 @@ class CreateUserGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_userGroupId;
-  bool m_userGroupIdHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_userGroupIdHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

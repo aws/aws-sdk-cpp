@@ -132,18 +132,18 @@ class CreateInstanceExportTaskRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   ExportEnvironment m_targetEnvironment{ExportEnvironment::NOT_SET};
-  bool m_targetEnvironmentHasBeenSet = false;
 
   ExportToS3TaskSpecification m_exportToS3Task;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_targetEnvironmentHasBeenSet = false;
   bool m_exportToS3TaskHasBeenSet = false;
 };
 

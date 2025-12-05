@@ -185,24 +185,24 @@ class HlsSettings {
   ///@}
  private:
   Aws::String m_audioGroupId;
-  bool m_audioGroupIdHasBeenSet = false;
 
   HlsAudioOnlyContainer m_audioOnlyContainer{HlsAudioOnlyContainer::NOT_SET};
-  bool m_audioOnlyContainerHasBeenSet = false;
 
   Aws::String m_audioRenditionSets;
-  bool m_audioRenditionSetsHasBeenSet = false;
 
   HlsAudioTrackType m_audioTrackType{HlsAudioTrackType::NOT_SET};
-  bool m_audioTrackTypeHasBeenSet = false;
 
   HlsDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag{HlsDescriptiveVideoServiceFlag::NOT_SET};
-  bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
   HlsIFrameOnlyManifest m_iFrameOnlyManifest{HlsIFrameOnlyManifest::NOT_SET};
-  bool m_iFrameOnlyManifestHasBeenSet = false;
 
   Aws::String m_segmentModifier;
+  bool m_audioGroupIdHasBeenSet = false;
+  bool m_audioOnlyContainerHasBeenSet = false;
+  bool m_audioRenditionSetsHasBeenSet = false;
+  bool m_audioTrackTypeHasBeenSet = false;
+  bool m_descriptiveVideoServiceFlagHasBeenSet = false;
+  bool m_iFrameOnlyManifestHasBeenSet = false;
   bool m_segmentModifierHasBeenSet = false;
 };
 

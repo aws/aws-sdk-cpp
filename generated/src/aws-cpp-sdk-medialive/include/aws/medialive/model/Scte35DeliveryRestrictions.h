@@ -102,15 +102,15 @@ class Scte35DeliveryRestrictions {
   ///@}
  private:
   Scte35ArchiveAllowedFlag m_archiveAllowedFlag{Scte35ArchiveAllowedFlag::NOT_SET};
-  bool m_archiveAllowedFlagHasBeenSet = false;
 
   Scte35DeviceRestrictions m_deviceRestrictions{Scte35DeviceRestrictions::NOT_SET};
-  bool m_deviceRestrictionsHasBeenSet = false;
 
   Scte35NoRegionalBlackoutFlag m_noRegionalBlackoutFlag{Scte35NoRegionalBlackoutFlag::NOT_SET};
-  bool m_noRegionalBlackoutFlagHasBeenSet = false;
 
   Scte35WebDeliveryAllowedFlag m_webDeliveryAllowedFlag{Scte35WebDeliveryAllowedFlag::NOT_SET};
+  bool m_archiveAllowedFlagHasBeenSet = false;
+  bool m_deviceRestrictionsHasBeenSet = false;
+  bool m_noRegionalBlackoutFlagHasBeenSet = false;
   bool m_webDeliveryAllowedFlagHasBeenSet = false;
 };
 

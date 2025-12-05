@@ -89,12 +89,12 @@ class PutClusterPolicyRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

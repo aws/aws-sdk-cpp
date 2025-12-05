@@ -107,15 +107,15 @@ class GroupSummary {
   ///@}
  private:
   GroupScope m_groupScope{GroupScope::NOT_SET};
-  bool m_groupScopeHasBeenSet = false;
 
   GroupType m_groupType{GroupType::NOT_SET};
-  bool m_groupTypeHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   Aws::String m_sID;
+  bool m_groupScopeHasBeenSet = false;
+  bool m_groupTypeHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
   bool m_sIDHasBeenSet = false;
 };
 

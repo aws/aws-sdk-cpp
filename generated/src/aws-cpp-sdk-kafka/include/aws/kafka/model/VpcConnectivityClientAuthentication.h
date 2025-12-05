@@ -78,9 +78,9 @@ class VpcConnectivityClientAuthentication {
   ///@}
  private:
   VpcConnectivitySasl m_sasl;
-  bool m_saslHasBeenSet = false;
 
   VpcConnectivityTls m_tls;
+  bool m_saslHasBeenSet = false;
   bool m_tlsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class CallAnalyticsLanguageWithScore {
   ///@}
  private:
   CallAnalyticsLanguageCode m_languageCode{CallAnalyticsLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_languageCodeHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

@@ -294,45 +294,45 @@ class Device {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   AWSLocation m_aWSLocation;
-  bool m_aWSLocationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   DeviceState m_state{DeviceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_aWSLocationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_vendorHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_siteIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

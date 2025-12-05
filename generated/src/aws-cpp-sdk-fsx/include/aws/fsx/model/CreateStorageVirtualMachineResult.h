@@ -61,9 +61,9 @@ class CreateStorageVirtualMachineResult {
   ///@}
  private:
   StorageVirtualMachine m_storageVirtualMachine;
-  bool m_storageVirtualMachineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageVirtualMachineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DeleteMembersRequest : public DetectiveRequest {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_graphArnHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

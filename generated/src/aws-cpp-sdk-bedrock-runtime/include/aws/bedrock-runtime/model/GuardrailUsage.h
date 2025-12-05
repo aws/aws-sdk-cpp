@@ -174,30 +174,30 @@ class GuardrailUsage {
   ///@}
  private:
   int m_topicPolicyUnits{0};
-  bool m_topicPolicyUnitsHasBeenSet = false;
 
   int m_contentPolicyUnits{0};
-  bool m_contentPolicyUnitsHasBeenSet = false;
 
   int m_wordPolicyUnits{0};
-  bool m_wordPolicyUnitsHasBeenSet = false;
 
   int m_sensitiveInformationPolicyUnits{0};
-  bool m_sensitiveInformationPolicyUnitsHasBeenSet = false;
 
   int m_sensitiveInformationPolicyFreeUnits{0};
-  bool m_sensitiveInformationPolicyFreeUnitsHasBeenSet = false;
 
   int m_contextualGroundingPolicyUnits{0};
-  bool m_contextualGroundingPolicyUnitsHasBeenSet = false;
 
   int m_contentPolicyImageUnits{0};
-  bool m_contentPolicyImageUnitsHasBeenSet = false;
 
   int m_automatedReasoningPolicyUnits{0};
-  bool m_automatedReasoningPolicyUnitsHasBeenSet = false;
 
   int m_automatedReasoningPolicies{0};
+  bool m_topicPolicyUnitsHasBeenSet = false;
+  bool m_contentPolicyUnitsHasBeenSet = false;
+  bool m_wordPolicyUnitsHasBeenSet = false;
+  bool m_sensitiveInformationPolicyUnitsHasBeenSet = false;
+  bool m_sensitiveInformationPolicyFreeUnitsHasBeenSet = false;
+  bool m_contextualGroundingPolicyUnitsHasBeenSet = false;
+  bool m_contentPolicyImageUnitsHasBeenSet = false;
+  bool m_automatedReasoningPolicyUnitsHasBeenSet = false;
   bool m_automatedReasoningPoliciesHasBeenSet = false;
 };
 

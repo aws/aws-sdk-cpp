@@ -268,39 +268,39 @@ class CacheReportInfo {
   ///@}
  private:
   Aws::String m_cacheReportARN;
-  bool m_cacheReportARNHasBeenSet = false;
 
   CacheReportStatus m_cacheReportStatus{CacheReportStatus::NOT_SET};
-  bool m_cacheReportStatusHasBeenSet = false;
 
   int m_reportCompletionPercent{0};
-  bool m_reportCompletionPercentHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   Aws::String m_locationARN;
-  bool m_locationARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Vector<CacheReportFilter> m_inclusionFilters;
-  bool m_inclusionFiltersHasBeenSet = false;
 
   Aws::Vector<CacheReportFilter> m_exclusionFilters;
-  bool m_exclusionFiltersHasBeenSet = false;
 
   Aws::String m_reportName;
-  bool m_reportNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_cacheReportARNHasBeenSet = false;
+  bool m_cacheReportStatusHasBeenSet = false;
+  bool m_reportCompletionPercentHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_fileShareARNHasBeenSet = false;
+  bool m_locationARNHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_inclusionFiltersHasBeenSet = false;
+  bool m_exclusionFiltersHasBeenSet = false;
+  bool m_reportNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

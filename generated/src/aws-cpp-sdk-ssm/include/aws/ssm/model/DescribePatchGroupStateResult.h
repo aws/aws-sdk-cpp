@@ -265,45 +265,45 @@ class DescribePatchGroupStateResult {
   ///@}
  private:
   int m_instances{0};
-  bool m_instancesHasBeenSet = false;
 
   int m_instancesWithInstalledPatches{0};
-  bool m_instancesWithInstalledPatchesHasBeenSet = false;
 
   int m_instancesWithInstalledOtherPatches{0};
-  bool m_instancesWithInstalledOtherPatchesHasBeenSet = false;
 
   int m_instancesWithInstalledPendingRebootPatches{0};
-  bool m_instancesWithInstalledPendingRebootPatchesHasBeenSet = false;
 
   int m_instancesWithInstalledRejectedPatches{0};
-  bool m_instancesWithInstalledRejectedPatchesHasBeenSet = false;
 
   int m_instancesWithMissingPatches{0};
-  bool m_instancesWithMissingPatchesHasBeenSet = false;
 
   int m_instancesWithFailedPatches{0};
-  bool m_instancesWithFailedPatchesHasBeenSet = false;
 
   int m_instancesWithNotApplicablePatches{0};
-  bool m_instancesWithNotApplicablePatchesHasBeenSet = false;
 
   int m_instancesWithUnreportedNotApplicablePatches{0};
-  bool m_instancesWithUnreportedNotApplicablePatchesHasBeenSet = false;
 
   int m_instancesWithCriticalNonCompliantPatches{0};
-  bool m_instancesWithCriticalNonCompliantPatchesHasBeenSet = false;
 
   int m_instancesWithSecurityNonCompliantPatches{0};
-  bool m_instancesWithSecurityNonCompliantPatchesHasBeenSet = false;
 
   int m_instancesWithOtherNonCompliantPatches{0};
-  bool m_instancesWithOtherNonCompliantPatchesHasBeenSet = false;
 
   int m_instancesWithAvailableSecurityUpdates{0};
-  bool m_instancesWithAvailableSecurityUpdatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instancesHasBeenSet = false;
+  bool m_instancesWithInstalledPatchesHasBeenSet = false;
+  bool m_instancesWithInstalledOtherPatchesHasBeenSet = false;
+  bool m_instancesWithInstalledPendingRebootPatchesHasBeenSet = false;
+  bool m_instancesWithInstalledRejectedPatchesHasBeenSet = false;
+  bool m_instancesWithMissingPatchesHasBeenSet = false;
+  bool m_instancesWithFailedPatchesHasBeenSet = false;
+  bool m_instancesWithNotApplicablePatchesHasBeenSet = false;
+  bool m_instancesWithUnreportedNotApplicablePatchesHasBeenSet = false;
+  bool m_instancesWithCriticalNonCompliantPatchesHasBeenSet = false;
+  bool m_instancesWithSecurityNonCompliantPatchesHasBeenSet = false;
+  bool m_instancesWithOtherNonCompliantPatchesHasBeenSet = false;
+  bool m_instancesWithAvailableSecurityUpdatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -209,33 +209,33 @@ class GetWorkflowRunResult {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<WorkflowRunStatusReason> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

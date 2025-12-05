@@ -87,12 +87,12 @@ class DescribeRuntimeVersionsResult {
   ///@}
  private:
   Aws::Vector<RuntimeVersion> m_runtimeVersions;
-  bool m_runtimeVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runtimeVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

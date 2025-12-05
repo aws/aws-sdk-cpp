@@ -113,15 +113,15 @@ class UpdateConnectorProfileRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
-  bool m_connectionModeHasBeenSet = false;
 
   ConnectorProfileConfig m_connectorProfileConfig;
-  bool m_connectorProfileConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_connectorProfileNameHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
+  bool m_connectorProfileConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

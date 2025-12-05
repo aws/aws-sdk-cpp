@@ -121,15 +121,15 @@ class UsageRecord {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_automatedDiscoveryFreeTrialStartDate{};
-  bool m_automatedDiscoveryFreeTrialStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_freeTrialStartDate{};
-  bool m_freeTrialStartDateHasBeenSet = false;
 
   Aws::Vector<UsageByAccount> m_usage;
+  bool m_accountIdHasBeenSet = false;
+  bool m_automatedDiscoveryFreeTrialStartDateHasBeenSet = false;
+  bool m_freeTrialStartDateHasBeenSet = false;
   bool m_usageHasBeenSet = false;
 };
 

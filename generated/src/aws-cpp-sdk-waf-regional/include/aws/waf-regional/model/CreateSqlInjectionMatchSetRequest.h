@@ -73,9 +73,9 @@ class CreateSqlInjectionMatchSetRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_nameHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

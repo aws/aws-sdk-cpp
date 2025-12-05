@@ -95,12 +95,12 @@ class SpanContext {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_spanId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
   bool m_spanIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class WindowStartTime {
   ///@}
  private:
   long long m_hours{0};
-  bool m_hoursHasBeenSet = false;
 
   long long m_minutes{0};
+  bool m_hoursHasBeenSet = false;
   bool m_minutesHasBeenSet = false;
 };
 

@@ -138,21 +138,21 @@ class RecommendationData {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Document m_document;
-  bool m_documentHasBeenSet = false;
 
   double m_relevanceScore{0.0};
-  bool m_relevanceScoreHasBeenSet = false;
 
   RelevanceLevel m_relevanceLevel{RelevanceLevel::NOT_SET};
-  bool m_relevanceLevelHasBeenSet = false;
 
   RecommendationType m_type{RecommendationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DataSummary m_data;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_relevanceScoreHasBeenSet = false;
+  bool m_relevanceLevelHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteTrafficMirrorFilterRuleResponse {
   ///@}
  private:
   Aws::String m_trafficMirrorFilterRuleId;
-  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -239,33 +239,33 @@ class StandardsControlAssociationDetail {
   ///@}
  private:
   Aws::String m_standardsArn;
-  bool m_standardsArnHasBeenSet = false;
 
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::String m_securityControlArn;
-  bool m_securityControlArnHasBeenSet = false;
 
   AssociationStatus m_associationStatus{AssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_relatedRequirements;
-  bool m_relatedRequirementsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedReason;
-  bool m_updatedReasonHasBeenSet = false;
 
   Aws::String m_standardsControlTitle;
-  bool m_standardsControlTitleHasBeenSet = false;
 
   Aws::String m_standardsControlDescription;
-  bool m_standardsControlDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_standardsControlArns;
+  bool m_standardsArnHasBeenSet = false;
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_securityControlArnHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
+  bool m_relatedRequirementsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedReasonHasBeenSet = false;
+  bool m_standardsControlTitleHasBeenSet = false;
+  bool m_standardsControlDescriptionHasBeenSet = false;
   bool m_standardsControlArnsHasBeenSet = false;
 };
 

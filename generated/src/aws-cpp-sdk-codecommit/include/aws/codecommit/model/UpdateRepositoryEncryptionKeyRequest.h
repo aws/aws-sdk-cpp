@@ -73,9 +73,9 @@ class UpdateRepositoryEncryptionKeyRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

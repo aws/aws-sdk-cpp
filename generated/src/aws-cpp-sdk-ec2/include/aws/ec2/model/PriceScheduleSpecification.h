@@ -84,12 +84,12 @@ class PriceScheduleSpecification {
   ///@}
  private:
   long long m_term{0};
-  bool m_termHasBeenSet = false;
 
   double m_price{0.0};
-  bool m_priceHasBeenSet = false;
 
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
+  bool m_termHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;
 };
 

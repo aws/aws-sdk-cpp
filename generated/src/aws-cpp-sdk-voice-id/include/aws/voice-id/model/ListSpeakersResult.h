@@ -88,12 +88,12 @@ class ListSpeakersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SpeakerSummary> m_speakerSummaries;
-  bool m_speakerSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_speakerSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

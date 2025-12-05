@@ -72,9 +72,9 @@ class ExportServerSideEncryption {
   ///@}
  private:
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   ServerSideEncryptionTypes m_type{ServerSideEncryptionTypes::NOT_SET};
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

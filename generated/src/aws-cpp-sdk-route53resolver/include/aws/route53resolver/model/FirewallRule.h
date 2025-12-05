@@ -390,54 +390,54 @@ class FirewallRule {
   ///@}
  private:
   Aws::String m_firewallRuleGroupId;
-  bool m_firewallRuleGroupIdHasBeenSet = false;
 
   Aws::String m_firewallDomainListId;
-  bool m_firewallDomainListIdHasBeenSet = false;
 
   Aws::String m_firewallThreatProtectionId;
-  bool m_firewallThreatProtectionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   BlockResponse m_blockResponse{BlockResponse::NOT_SET};
-  bool m_blockResponseHasBeenSet = false;
 
   Aws::String m_blockOverrideDomain;
-  bool m_blockOverrideDomainHasBeenSet = false;
 
   BlockOverrideDnsType m_blockOverrideDnsType{BlockOverrideDnsType::NOT_SET};
-  bool m_blockOverrideDnsTypeHasBeenSet = false;
 
   int m_blockOverrideTtl{0};
-  bool m_blockOverrideTtlHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_modificationTime;
-  bool m_modificationTimeHasBeenSet = false;
 
   FirewallDomainRedirectionAction m_firewallDomainRedirectionAction{FirewallDomainRedirectionAction::NOT_SET};
-  bool m_firewallDomainRedirectionActionHasBeenSet = false;
 
   Aws::String m_qtype;
-  bool m_qtypeHasBeenSet = false;
 
   DnsThreatProtection m_dnsThreatProtection{DnsThreatProtection::NOT_SET};
-  bool m_dnsThreatProtectionHasBeenSet = false;
 
   ConfidenceThreshold m_confidenceThreshold{ConfidenceThreshold::NOT_SET};
+  bool m_firewallRuleGroupIdHasBeenSet = false;
+  bool m_firewallDomainListIdHasBeenSet = false;
+  bool m_firewallThreatProtectionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_blockResponseHasBeenSet = false;
+  bool m_blockOverrideDomainHasBeenSet = false;
+  bool m_blockOverrideDnsTypeHasBeenSet = false;
+  bool m_blockOverrideTtlHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
+  bool m_firewallDomainRedirectionActionHasBeenSet = false;
+  bool m_qtypeHasBeenSet = false;
+  bool m_dnsThreatProtectionHasBeenSet = false;
   bool m_confidenceThresholdHasBeenSet = false;
 };
 

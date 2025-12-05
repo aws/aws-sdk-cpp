@@ -78,12 +78,12 @@ class ConfirmProductInstanceResponse {
   ///@}
  private:
   bool m_return{false};
-  bool m_returnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ArgoCdAwsIdcConfigRequest {
   ///@}
  private:
   Aws::String m_idcInstanceArn;
-  bool m_idcInstanceArnHasBeenSet = false;
 
   Aws::String m_idcRegion;
+  bool m_idcInstanceArnHasBeenSet = false;
   bool m_idcRegionHasBeenSet = false;
 };
 

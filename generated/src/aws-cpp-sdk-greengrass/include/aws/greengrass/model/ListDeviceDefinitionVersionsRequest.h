@@ -89,12 +89,12 @@ class ListDeviceDefinitionVersionsRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_deviceDefinitionId;
-  bool m_deviceDefinitionIdHasBeenSet = false;
 
   Aws::String m_maxResults;
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_deviceDefinitionIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

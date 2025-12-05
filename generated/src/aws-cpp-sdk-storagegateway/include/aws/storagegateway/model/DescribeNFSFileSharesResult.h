@@ -72,9 +72,9 @@ class DescribeNFSFileSharesResult {
   ///@}
  private:
   Aws::Vector<NFSFileShareInfo> m_nFSFileShareInfoList;
-  bool m_nFSFileShareInfoListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nFSFileShareInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

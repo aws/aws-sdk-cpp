@@ -157,21 +157,21 @@ class CreateMonitorRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_identityCenterInstanceArn;
-  bool m_identityCenterInstanceArnHasBeenSet = false;
 
   Aws::String m_subdomain;
-  bool m_subdomainHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_displayNameHasBeenSet = false;
+  bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_subdomainHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

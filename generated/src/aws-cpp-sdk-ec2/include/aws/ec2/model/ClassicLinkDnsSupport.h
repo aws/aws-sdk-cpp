@@ -69,9 +69,9 @@ class ClassicLinkDnsSupport {
   ///@}
  private:
   bool m_classicLinkDnsSupported{false};
-  bool m_classicLinkDnsSupportedHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_classicLinkDnsSupportedHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

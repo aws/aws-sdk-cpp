@@ -140,18 +140,18 @@ class ImportCertificateRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_certificateIdentifier;
-  bool m_certificateIdentifierHasBeenSet = false;
 
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_certificateWallet{};
-  bool m_certificateWalletHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_certificateIdentifierHasBeenSet = false;
+  bool m_certificatePemHasBeenSet = false;
+  bool m_certificateWalletHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

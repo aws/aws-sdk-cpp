@@ -73,9 +73,9 @@ class RouteFerrySummary {
   ///@}
  private:
   RouteFerryOverviewSummary m_overview;
-  bool m_overviewHasBeenSet = false;
 
   RouteFerryTravelOnlySummary m_travelOnly;
+  bool m_overviewHasBeenSet = false;
   bool m_travelOnlyHasBeenSet = false;
 };
 

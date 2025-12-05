@@ -101,15 +101,15 @@ class CreateNotificationSubscriptionRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   SubscriptionProtocolType m_protocol{SubscriptionProtocolType::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   SubscriptionType m_subscriptionType{SubscriptionType::NOT_SET};
+  bool m_organizationIdHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_subscriptionTypeHasBeenSet = false;
 };
 

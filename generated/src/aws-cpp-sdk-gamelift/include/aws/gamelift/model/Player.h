@@ -130,15 +130,15 @@ class Player {
   ///@}
  private:
   Aws::String m_playerId;
-  bool m_playerIdHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_playerAttributes;
-  bool m_playerAttributesHasBeenSet = false;
 
   Aws::String m_team;
-  bool m_teamHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_latencyInMs;
+  bool m_playerIdHasBeenSet = false;
+  bool m_playerAttributesHasBeenSet = false;
+  bool m_teamHasBeenSet = false;
   bool m_latencyInMsHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class ServiceCatalogProvisioningUpdateDetails {
   ///@}
  private:
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::Vector<ProvisioningParameter> m_provisioningParameters;
+  bool m_provisioningArtifactIdHasBeenSet = false;
   bool m_provisioningParametersHasBeenSet = false;
 };
 

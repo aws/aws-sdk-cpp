@@ -72,9 +72,9 @@ class MembershipProtectedQueryResultConfiguration {
   ///@}
  private:
   MembershipProtectedQueryOutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_outputConfigurationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

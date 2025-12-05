@@ -84,12 +84,12 @@ class ListAliasesResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<AliasConfiguration> m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

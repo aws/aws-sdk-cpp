@@ -66,9 +66,9 @@ class Integrations {
   ///@}
  private:
   ResourceGroup m_resourceGroup;
-  bool m_resourceGroupHasBeenSet = false;
 
   ResourceGroup m_applicationTagResourceGroup;
+  bool m_resourceGroupHasBeenSet = false;
   bool m_applicationTagResourceGroupHasBeenSet = false;
 };
 

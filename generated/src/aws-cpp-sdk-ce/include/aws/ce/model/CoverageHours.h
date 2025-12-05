@@ -105,15 +105,15 @@ class CoverageHours {
   ///@}
  private:
   Aws::String m_onDemandHours;
-  bool m_onDemandHoursHasBeenSet = false;
 
   Aws::String m_reservedHours;
-  bool m_reservedHoursHasBeenSet = false;
 
   Aws::String m_totalRunningHours;
-  bool m_totalRunningHoursHasBeenSet = false;
 
   Aws::String m_coverageHoursPercentage;
+  bool m_onDemandHoursHasBeenSet = false;
+  bool m_reservedHoursHasBeenSet = false;
+  bool m_totalRunningHoursHasBeenSet = false;
   bool m_coverageHoursPercentageHasBeenSet = false;
 };
 

@@ -149,21 +149,21 @@ class CreateCommitResult {
   ///@}
  private:
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_treeId;
-  bool m_treeIdHasBeenSet = false;
 
   Aws::Vector<FileMetadata> m_filesAdded;
-  bool m_filesAddedHasBeenSet = false;
 
   Aws::Vector<FileMetadata> m_filesUpdated;
-  bool m_filesUpdatedHasBeenSet = false;
 
   Aws::Vector<FileMetadata> m_filesDeleted;
-  bool m_filesDeletedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commitIdHasBeenSet = false;
+  bool m_treeIdHasBeenSet = false;
+  bool m_filesAddedHasBeenSet = false;
+  bool m_filesUpdatedHasBeenSet = false;
+  bool m_filesDeletedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

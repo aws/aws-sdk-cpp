@@ -106,15 +106,15 @@ class UnsubscribeFromDatasetRequest : public CognitoSyncRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_deviceId;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_identityIdHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
   bool m_deviceIdHasBeenSet = false;
 };
 

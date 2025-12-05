@@ -240,33 +240,33 @@ class ReservedInstancesListing {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Vector<InstanceCount> m_instanceCounts;
-  bool m_instanceCountsHasBeenSet = false;
 
   Aws::Vector<PriceSchedule> m_priceSchedules;
-  bool m_priceSchedulesHasBeenSet = false;
 
   Aws::String m_reservedInstancesId;
-  bool m_reservedInstancesIdHasBeenSet = false;
 
   Aws::String m_reservedInstancesListingId;
-  bool m_reservedInstancesListingIdHasBeenSet = false;
 
   ListingStatus m_status{ListingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDate{};
+  bool m_clientTokenHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_instanceCountsHasBeenSet = false;
+  bool m_priceSchedulesHasBeenSet = false;
+  bool m_reservedInstancesIdHasBeenSet = false;
+  bool m_reservedInstancesListingIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_updateDateHasBeenSet = false;
 };
 

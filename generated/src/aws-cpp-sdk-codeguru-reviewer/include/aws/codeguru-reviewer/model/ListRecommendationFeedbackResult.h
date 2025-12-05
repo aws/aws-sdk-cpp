@@ -90,12 +90,12 @@ class ListRecommendationFeedbackResult {
   ///@}
  private:
   Aws::Vector<RecommendationFeedbackSummary> m_recommendationFeedbackSummaries;
-  bool m_recommendationFeedbackSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationFeedbackSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

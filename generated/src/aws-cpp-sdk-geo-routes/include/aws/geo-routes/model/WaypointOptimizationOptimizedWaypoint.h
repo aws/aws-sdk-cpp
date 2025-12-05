@@ -134,18 +134,18 @@ class WaypointOptimizationOptimizedWaypoint {
   ///@}
  private:
   Aws::String m_arrivalTime;
-  bool m_arrivalTimeHasBeenSet = false;
 
   int m_clusterIndex{0};
-  bool m_clusterIndexHasBeenSet = false;
 
   Aws::String m_departureTime;
-  bool m_departureTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<double> m_position;
+  bool m_arrivalTimeHasBeenSet = false;
+  bool m_clusterIndexHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_positionHasBeenSet = false;
 };
 

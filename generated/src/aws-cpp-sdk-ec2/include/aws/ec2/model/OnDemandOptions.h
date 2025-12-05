@@ -159,21 +159,21 @@ class OnDemandOptions {
   ///@}
  private:
   FleetOnDemandAllocationStrategy m_allocationStrategy{FleetOnDemandAllocationStrategy::NOT_SET};
-  bool m_allocationStrategyHasBeenSet = false;
 
   CapacityReservationOptions m_capacityReservationOptions;
-  bool m_capacityReservationOptionsHasBeenSet = false;
 
   bool m_singleInstanceType{false};
-  bool m_singleInstanceTypeHasBeenSet = false;
 
   bool m_singleAvailabilityZone{false};
-  bool m_singleAvailabilityZoneHasBeenSet = false;
 
   int m_minTargetCapacity{0};
-  bool m_minTargetCapacityHasBeenSet = false;
 
   Aws::String m_maxTotalPrice;
+  bool m_allocationStrategyHasBeenSet = false;
+  bool m_capacityReservationOptionsHasBeenSet = false;
+  bool m_singleInstanceTypeHasBeenSet = false;
+  bool m_singleAvailabilityZoneHasBeenSet = false;
+  bool m_minTargetCapacityHasBeenSet = false;
   bool m_maxTotalPriceHasBeenSet = false;
 };
 

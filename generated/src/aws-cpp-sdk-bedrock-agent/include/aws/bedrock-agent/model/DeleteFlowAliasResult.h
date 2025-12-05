@@ -76,12 +76,12 @@ class DeleteFlowAliasResult {
   ///@}
  private:
   Aws::String m_flowId;
-  bool m_flowIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

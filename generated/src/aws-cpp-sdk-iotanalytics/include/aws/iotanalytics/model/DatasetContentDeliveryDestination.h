@@ -72,9 +72,9 @@ class DatasetContentDeliveryDestination {
   ///@}
  private:
   IotEventsDestinationConfiguration m_iotEventsDestinationConfiguration;
-  bool m_iotEventsDestinationConfigurationHasBeenSet = false;
 
   S3DestinationConfiguration m_s3DestinationConfiguration;
+  bool m_iotEventsDestinationConfigurationHasBeenSet = false;
   bool m_s3DestinationConfigurationHasBeenSet = false;
 };
 

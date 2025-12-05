@@ -152,21 +152,21 @@ class StartQueryWorkloadInsightsTopContributorsRequest : public NetworkFlowMonit
   ///@}
  private:
   Aws::String m_scopeId;
-  bool m_scopeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   WorkloadInsightsMetric m_metricName{WorkloadInsightsMetric::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   DestinationCategory m_destinationCategory{DestinationCategory::NOT_SET};
-  bool m_destinationCategoryHasBeenSet = false;
 
   int m_limit{0};
+  bool m_scopeIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_destinationCategoryHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class StartInvestigationResult {
   ///@}
  private:
   Aws::String m_investigationId;
-  bool m_investigationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_investigationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

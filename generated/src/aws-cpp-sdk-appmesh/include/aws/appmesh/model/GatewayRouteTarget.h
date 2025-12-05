@@ -67,9 +67,9 @@ class GatewayRouteTarget {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   GatewayRouteVirtualService m_virtualService;
+  bool m_portHasBeenSet = false;
   bool m_virtualServiceHasBeenSet = false;
 };
 

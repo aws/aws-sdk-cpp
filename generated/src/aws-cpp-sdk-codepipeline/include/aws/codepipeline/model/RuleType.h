@@ -113,15 +113,15 @@ class RuleType {
   ///@}
  private:
   RuleTypeId m_id;
-  bool m_idHasBeenSet = false;
 
   RuleTypeSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<RuleConfigurationProperty> m_ruleConfigurationProperties;
-  bool m_ruleConfigurationPropertiesHasBeenSet = false;
 
   ArtifactDetails m_inputArtifactDetails;
+  bool m_idHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_ruleConfigurationPropertiesHasBeenSet = false;
   bool m_inputArtifactDetailsHasBeenSet = false;
 };
 

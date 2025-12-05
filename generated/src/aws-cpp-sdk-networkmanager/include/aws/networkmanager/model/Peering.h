@@ -244,36 +244,36 @@ class Peering {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
-  bool m_coreNetworkArnHasBeenSet = false;
 
   Aws::String m_peeringId;
-  bool m_peeringIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   PeeringType m_peeringType{PeeringType::NOT_SET};
-  bool m_peeringTypeHasBeenSet = false;
 
   PeeringState m_state{PeeringState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<PeeringError> m_lastModificationErrors;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_coreNetworkArnHasBeenSet = false;
+  bool m_peeringIdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_peeringTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastModificationErrorsHasBeenSet = false;
 };
 

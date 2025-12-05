@@ -107,15 +107,15 @@ class DeleteVolumeRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   DeleteVolumeOntapConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   DeleteVolumeOpenZFSConfiguration m_openZFSConfiguration;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
   bool m_openZFSConfigurationHasBeenSet = false;
 };
 

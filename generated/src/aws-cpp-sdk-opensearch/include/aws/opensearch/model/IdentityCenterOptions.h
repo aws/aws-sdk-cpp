@@ -143,21 +143,21 @@ class IdentityCenterOptions {
   ///@}
  private:
   bool m_enabledAPIAccess{false};
-  bool m_enabledAPIAccessHasBeenSet = false;
 
   Aws::String m_identityCenterInstanceARN;
-  bool m_identityCenterInstanceARNHasBeenSet = false;
 
   SubjectKeyIdCOption m_subjectKey{SubjectKeyIdCOption::NOT_SET};
-  bool m_subjectKeyHasBeenSet = false;
 
   RolesKeyIdCOption m_rolesKey{RolesKeyIdCOption::NOT_SET};
-  bool m_rolesKeyHasBeenSet = false;
 
   Aws::String m_identityCenterApplicationARN;
-  bool m_identityCenterApplicationARNHasBeenSet = false;
 
   Aws::String m_identityStoreId;
+  bool m_enabledAPIAccessHasBeenSet = false;
+  bool m_identityCenterInstanceARNHasBeenSet = false;
+  bool m_subjectKeyHasBeenSet = false;
+  bool m_rolesKeyHasBeenSet = false;
+  bool m_identityCenterApplicationARNHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
 };
 

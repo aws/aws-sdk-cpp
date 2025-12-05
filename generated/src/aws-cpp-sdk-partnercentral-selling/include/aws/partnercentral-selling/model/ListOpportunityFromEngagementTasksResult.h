@@ -91,12 +91,12 @@ class ListOpportunityFromEngagementTasksResult {
   ///@}
  private:
   Aws::Vector<ListOpportunityFromEngagementTaskSummary> m_taskSummaries;
-  bool m_taskSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

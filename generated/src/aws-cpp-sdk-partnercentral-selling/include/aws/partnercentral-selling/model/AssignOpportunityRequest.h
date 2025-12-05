@@ -96,12 +96,12 @@ class AssignOpportunityRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   AssigneeContact m_assignee;
+  bool m_catalogHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_assigneeHasBeenSet = false;
 };
 

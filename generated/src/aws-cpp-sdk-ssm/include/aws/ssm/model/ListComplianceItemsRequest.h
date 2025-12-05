@@ -145,18 +145,18 @@ class ListComplianceItemsRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<ComplianceStringFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filtersHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

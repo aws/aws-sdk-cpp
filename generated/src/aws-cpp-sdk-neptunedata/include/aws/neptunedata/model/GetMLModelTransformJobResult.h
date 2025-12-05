@@ -136,21 +136,21 @@ class GetMLModelTransformJobResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MlResourceDefinition m_baseProcessingJob;
-  bool m_baseProcessingJobHasBeenSet = false;
 
   MlResourceDefinition m_remoteModelTransformJob;
-  bool m_remoteModelTransformJobHasBeenSet = false;
 
   Aws::Vector<MlConfigDefinition> m_models;
-  bool m_modelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_baseProcessingJobHasBeenSet = false;
+  bool m_remoteModelTransformJobHasBeenSet = false;
+  bool m_modelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

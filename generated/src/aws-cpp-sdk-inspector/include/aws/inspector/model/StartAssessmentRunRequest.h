@@ -69,9 +69,9 @@ class StartAssessmentRunRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentTemplateArn;
-  bool m_assessmentTemplateArnHasBeenSet = false;
 
   Aws::String m_assessmentRunName;
+  bool m_assessmentTemplateArnHasBeenSet = false;
   bool m_assessmentRunNameHasBeenSet = false;
 };
 

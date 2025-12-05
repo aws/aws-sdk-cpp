@@ -69,9 +69,9 @@ class HttpPathMatch {
   ///@}
  private:
   Aws::String m_exact;
-  bool m_exactHasBeenSet = false;
 
   Aws::String m_regex;
+  bool m_exactHasBeenSet = false;
   bool m_regexHasBeenSet = false;
 };
 

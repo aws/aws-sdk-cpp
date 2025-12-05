@@ -87,12 +87,12 @@ class UpdateContactChannelRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_contactChannelId;
-  bool m_contactChannelIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ContactChannelAddress m_deliveryAddress;
+  bool m_contactChannelIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_deliveryAddressHasBeenSet = false;
 };
 

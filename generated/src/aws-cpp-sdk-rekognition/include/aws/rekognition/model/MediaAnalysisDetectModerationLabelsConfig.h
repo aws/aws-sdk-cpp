@@ -69,9 +69,9 @@ class MediaAnalysisDetectModerationLabelsConfig {
   ///@}
  private:
   double m_minConfidence{0.0};
-  bool m_minConfidenceHasBeenSet = false;
 
   Aws::String m_projectVersion;
+  bool m_minConfidenceHasBeenSet = false;
   bool m_projectVersionHasBeenSet = false;
 };
 

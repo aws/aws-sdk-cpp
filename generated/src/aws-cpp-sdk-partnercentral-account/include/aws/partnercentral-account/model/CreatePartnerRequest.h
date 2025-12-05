@@ -170,24 +170,24 @@ class CreatePartnerRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_legalName;
-  bool m_legalNameHasBeenSet = false;
 
   PrimarySolutionType m_primarySolutionType{PrimarySolutionType::NOT_SET};
-  bool m_primarySolutionTypeHasBeenSet = false;
 
   AllianceLeadContact m_allianceLeadContact;
-  bool m_allianceLeadContactHasBeenSet = false;
 
   Aws::String m_emailVerificationCode;
-  bool m_emailVerificationCodeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_legalNameHasBeenSet = false;
+  bool m_primarySolutionTypeHasBeenSet = false;
+  bool m_allianceLeadContactHasBeenSet = false;
+  bool m_emailVerificationCodeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

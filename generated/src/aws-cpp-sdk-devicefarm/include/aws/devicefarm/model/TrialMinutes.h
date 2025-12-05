@@ -62,9 +62,9 @@ class TrialMinutes {
   ///@}
  private:
   double m_total{0.0};
-  bool m_totalHasBeenSet = false;
 
   double m_remaining{0.0};
+  bool m_totalHasBeenSet = false;
   bool m_remainingHasBeenSet = false;
 };
 

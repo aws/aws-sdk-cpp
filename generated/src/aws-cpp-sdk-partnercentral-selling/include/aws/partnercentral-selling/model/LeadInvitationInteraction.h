@@ -135,18 +135,18 @@ class LeadInvitationInteraction {
   ///@}
  private:
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_usecase;
-  bool m_usecaseHasBeenSet = false;
 
   Aws::String m_contactBusinessTitle;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
+  bool m_usecaseHasBeenSet = false;
   bool m_contactBusinessTitleHasBeenSet = false;
 };
 

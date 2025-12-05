@@ -60,9 +60,9 @@ class StartSourceNetworkReplicationResult {
   ///@}
  private:
   SourceNetwork m_sourceNetwork;
-  bool m_sourceNetworkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceNetworkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -194,27 +194,27 @@ class DataQualityRuleResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_evaluationMessage;
-  bool m_evaluationMessageHasBeenSet = false;
 
   DataQualityRuleResultStatus m_result{DataQualityRuleResultStatus::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_evaluatedMetrics;
-  bool m_evaluatedMetricsHasBeenSet = false;
 
   Aws::String m_evaluatedRule;
-  bool m_evaluatedRuleHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_ruleMetrics;
-  bool m_ruleMetricsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labels;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_evaluationMessageHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_evaluatedMetricsHasBeenSet = false;
+  bool m_evaluatedRuleHasBeenSet = false;
+  bool m_ruleMetricsHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
 };
 

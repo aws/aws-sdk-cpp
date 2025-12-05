@@ -95,12 +95,12 @@ class DataSetConfiguration {
   ///@}
  private:
   Aws::String m_placeholder;
-  bool m_placeholderHasBeenSet = false;
 
   DataSetSchema m_dataSetSchema;
-  bool m_dataSetSchemaHasBeenSet = false;
 
   Aws::Vector<ColumnGroupSchema> m_columnGroupSchemaList;
+  bool m_placeholderHasBeenSet = false;
+  bool m_dataSetSchemaHasBeenSet = false;
   bool m_columnGroupSchemaListHasBeenSet = false;
 };
 

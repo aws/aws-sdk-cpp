@@ -69,9 +69,9 @@ class ScheduledActionAssociation {
   ///@}
  private:
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_scheduledActionName;
+  bool m_namespaceNameHasBeenSet = false;
   bool m_scheduledActionNameHasBeenSet = false;
 };
 

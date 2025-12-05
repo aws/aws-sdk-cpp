@@ -64,9 +64,9 @@ class GetHostedZoneCountResult {
   ///@}
  private:
   long long m_hostedZoneCount{0};
-  bool m_hostedZoneCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostedZoneCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class PrivateKeyAttributesV2 {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cryptoProviders;
-  bool m_cryptoProvidersHasBeenSet = false;
 
   KeySpec m_keySpec{KeySpec::NOT_SET};
-  bool m_keySpecHasBeenSet = false;
 
   int m_minimalKeyLength{0};
+  bool m_cryptoProvidersHasBeenSet = false;
+  bool m_keySpecHasBeenSet = false;
   bool m_minimalKeyLengthHasBeenSet = false;
 };
 

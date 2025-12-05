@@ -96,12 +96,12 @@ class IncrementalTrainingDataChannel {
   ///@}
  private:
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_versionIdentifier;
-  bool m_versionIdentifierHasBeenSet = false;
 
   Aws::String m_channelName;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_versionIdentifierHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
 };
 

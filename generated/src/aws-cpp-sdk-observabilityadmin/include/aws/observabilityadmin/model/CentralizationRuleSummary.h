@@ -209,33 +209,33 @@ class CentralizationRuleSummary {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   long long m_createdTimeStamp{0};
-  bool m_createdTimeStampHasBeenSet = false;
 
   Aws::String m_createdRegion;
-  bool m_createdRegionHasBeenSet = false;
 
   long long m_lastUpdateTimeStamp{0};
-  bool m_lastUpdateTimeStampHasBeenSet = false;
 
   RuleHealth m_ruleHealth{RuleHealth::NOT_SET};
-  bool m_ruleHealthHasBeenSet = false;
 
   CentralizationFailureReason m_failureReason{CentralizationFailureReason::NOT_SET};
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_destinationAccountId;
-  bool m_destinationAccountIdHasBeenSet = false;
 
   Aws::String m_destinationRegion;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
+  bool m_createdTimeStampHasBeenSet = false;
+  bool m_createdRegionHasBeenSet = false;
+  bool m_lastUpdateTimeStampHasBeenSet = false;
+  bool m_ruleHealthHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_destinationAccountIdHasBeenSet = false;
   bool m_destinationRegionHasBeenSet = false;
 };
 

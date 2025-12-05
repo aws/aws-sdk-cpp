@@ -232,30 +232,30 @@ class UpdateIndexRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<DocumentMetadataConfiguration> m_documentMetadataConfigurationUpdates;
-  bool m_documentMetadataConfigurationUpdatesHasBeenSet = false;
 
   CapacityUnitsConfiguration m_capacityUnits;
-  bool m_capacityUnitsHasBeenSet = false;
 
   Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
-  bool m_userTokenConfigurationsHasBeenSet = false;
 
   UserContextPolicy m_userContextPolicy{UserContextPolicy::NOT_SET};
-  bool m_userContextPolicyHasBeenSet = false;
 
   UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_documentMetadataConfigurationUpdatesHasBeenSet = false;
+  bool m_capacityUnitsHasBeenSet = false;
+  bool m_userTokenConfigurationsHasBeenSet = false;
+  bool m_userContextPolicyHasBeenSet = false;
   bool m_userGroupResolutionConfigurationHasBeenSet = false;
 };
 

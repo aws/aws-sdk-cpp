@@ -190,15 +190,15 @@ class DkimSigningAttributes {
   ///@}
  private:
   Aws::String m_domainSigningSelector;
-  bool m_domainSigningSelectorHasBeenSet = false;
 
   Aws::String m_domainSigningPrivateKey;
-  bool m_domainSigningPrivateKeyHasBeenSet = false;
 
   DkimSigningKeyLength m_nextSigningKeyLength{DkimSigningKeyLength::NOT_SET};
-  bool m_nextSigningKeyLengthHasBeenSet = false;
 
   DkimSigningAttributesOrigin m_domainSigningAttributesOrigin{DkimSigningAttributesOrigin::NOT_SET};
+  bool m_domainSigningSelectorHasBeenSet = false;
+  bool m_domainSigningPrivateKeyHasBeenSet = false;
+  bool m_nextSigningKeyLengthHasBeenSet = false;
   bool m_domainSigningAttributesOriginHasBeenSet = false;
 };
 

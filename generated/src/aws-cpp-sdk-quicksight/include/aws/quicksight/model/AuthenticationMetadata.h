@@ -147,21 +147,21 @@ class AuthenticationMetadata {
   ///@}
  private:
   AuthorizationCodeGrantMetadata m_authorizationCodeGrantMetadata;
-  bool m_authorizationCodeGrantMetadataHasBeenSet = false;
 
   ClientCredentialsGrantMetadata m_clientCredentialsGrantMetadata;
-  bool m_clientCredentialsGrantMetadataHasBeenSet = false;
 
   BasicAuthConnectionMetadata m_basicAuthConnectionMetadata;
-  bool m_basicAuthConnectionMetadataHasBeenSet = false;
 
   APIKeyConnectionMetadata m_apiKeyConnectionMetadata;
-  bool m_apiKeyConnectionMetadataHasBeenSet = false;
 
   NoneConnectionMetadata m_noneConnectionMetadata;
-  bool m_noneConnectionMetadataHasBeenSet = false;
 
   IAMConnectionMetadata m_iamConnectionMetadata;
+  bool m_authorizationCodeGrantMetadataHasBeenSet = false;
+  bool m_clientCredentialsGrantMetadataHasBeenSet = false;
+  bool m_basicAuthConnectionMetadataHasBeenSet = false;
+  bool m_apiKeyConnectionMetadataHasBeenSet = false;
+  bool m_noneConnectionMetadataHasBeenSet = false;
   bool m_iamConnectionMetadataHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class EventsConfiguration {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_outboundEventsHTTPSEndpoint;
-  bool m_outboundEventsHTTPSEndpointHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
+  bool m_botIdHasBeenSet = false;
+  bool m_outboundEventsHTTPSEndpointHasBeenSet = false;
   bool m_lambdaFunctionArnHasBeenSet = false;
 };
 

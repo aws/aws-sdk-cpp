@@ -60,9 +60,9 @@ class DeletePortfolioShareResult {
   ///@}
  private:
   Aws::String m_portfolioShareToken;
-  bool m_portfolioShareTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portfolioShareTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

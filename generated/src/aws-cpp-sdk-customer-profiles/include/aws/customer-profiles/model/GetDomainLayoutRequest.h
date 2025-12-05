@@ -65,9 +65,9 @@ class GetDomainLayoutRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_layoutDefinitionName;
+  bool m_domainNameHasBeenSet = false;
   bool m_layoutDefinitionNameHasBeenSet = false;
 };
 

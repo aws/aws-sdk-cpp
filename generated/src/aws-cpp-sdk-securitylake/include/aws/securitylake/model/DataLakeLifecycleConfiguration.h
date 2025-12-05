@@ -77,9 +77,9 @@ class DataLakeLifecycleConfiguration {
   ///@}
  private:
   DataLakeLifecycleExpiration m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::Vector<DataLakeLifecycleTransition> m_transitions;
+  bool m_expirationHasBeenSet = false;
   bool m_transitionsHasBeenSet = false;
 };
 

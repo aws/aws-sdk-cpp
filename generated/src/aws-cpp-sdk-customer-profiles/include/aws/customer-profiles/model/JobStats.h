@@ -77,12 +77,12 @@ class JobStats {
   ///@}
  private:
   long long m_numberOfProfilesReviewed{0};
-  bool m_numberOfProfilesReviewedHasBeenSet = false;
 
   long long m_numberOfMatchesFound{0};
-  bool m_numberOfMatchesFoundHasBeenSet = false;
 
   long long m_numberOfMergesDone{0};
+  bool m_numberOfProfilesReviewedHasBeenSet = false;
+  bool m_numberOfMatchesFoundHasBeenSet = false;
   bool m_numberOfMergesDoneHasBeenSet = false;
 };
 

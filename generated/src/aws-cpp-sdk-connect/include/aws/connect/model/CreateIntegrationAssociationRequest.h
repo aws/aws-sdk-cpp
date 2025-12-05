@@ -169,24 +169,24 @@ class CreateIntegrationAssociationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IntegrationType m_integrationType{IntegrationType::NOT_SET};
-  bool m_integrationTypeHasBeenSet = false;
 
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_sourceApplicationUrl;
-  bool m_sourceApplicationUrlHasBeenSet = false;
 
   Aws::String m_sourceApplicationName;
-  bool m_sourceApplicationNameHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_integrationTypeHasBeenSet = false;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_sourceApplicationUrlHasBeenSet = false;
+  bool m_sourceApplicationNameHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

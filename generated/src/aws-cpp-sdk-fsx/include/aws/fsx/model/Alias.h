@@ -88,9 +88,9 @@ class Alias {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AliasLifecycle m_lifecycle{AliasLifecycle::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class NotifyRecommendationsReceivedError {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_recommendationIdHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

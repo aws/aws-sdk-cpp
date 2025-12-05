@@ -88,12 +88,12 @@ class ListAccountPermissionsRequest : public Inspector2Request {
   ///@}
  private:
   Service m_service{Service::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

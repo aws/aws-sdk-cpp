@@ -60,9 +60,9 @@ class GetDataCellsFilterResult {
   ///@}
  private:
   DataCellsFilter m_dataCellsFilter;
-  bool m_dataCellsFilterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataCellsFilterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

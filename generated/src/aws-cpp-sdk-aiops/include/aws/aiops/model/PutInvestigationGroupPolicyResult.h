@@ -59,9 +59,9 @@ class PutInvestigationGroupPolicyResult {
   ///@}
  private:
   Aws::String m_investigationGroupArn;
-  bool m_investigationGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_investigationGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

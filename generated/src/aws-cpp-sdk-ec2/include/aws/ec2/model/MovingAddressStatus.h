@@ -70,9 +70,9 @@ class MovingAddressStatus {
   ///@}
  private:
   MoveStatus m_moveStatus{MoveStatus::NOT_SET};
-  bool m_moveStatusHasBeenSet = false;
 
   Aws::String m_publicIp;
+  bool m_moveStatusHasBeenSet = false;
   bool m_publicIpHasBeenSet = false;
 };
 

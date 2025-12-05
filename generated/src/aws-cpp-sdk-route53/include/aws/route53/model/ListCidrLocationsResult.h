@@ -87,12 +87,12 @@ class ListCidrLocationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LocationSummary> m_cidrLocations;
-  bool m_cidrLocationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_cidrLocationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -357,51 +357,51 @@ class OTAUpdateInfo {
   ///@}
  private:
   Aws::String m_otaUpdateId;
-  bool m_otaUpdateIdHasBeenSet = false;
 
   Aws::String m_otaUpdateArn;
-  bool m_otaUpdateArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   AwsJobExecutionsRolloutConfig m_awsJobExecutionsRolloutConfig;
-  bool m_awsJobExecutionsRolloutConfigHasBeenSet = false;
 
   AwsJobPresignedUrlConfig m_awsJobPresignedUrlConfig;
-  bool m_awsJobPresignedUrlConfigHasBeenSet = false;
 
   TargetSelection m_targetSelection{TargetSelection::NOT_SET};
-  bool m_targetSelectionHasBeenSet = false;
 
   Aws::Vector<OTAUpdateFile> m_otaUpdateFiles;
-  bool m_otaUpdateFilesHasBeenSet = false;
 
   OTAUpdateStatus m_otaUpdateStatus{OTAUpdateStatus::NOT_SET};
-  bool m_otaUpdateStatusHasBeenSet = false;
 
   Aws::String m_awsIotJobId;
-  bool m_awsIotJobIdHasBeenSet = false;
 
   Aws::String m_awsIotJobArn;
-  bool m_awsIotJobArnHasBeenSet = false;
 
   ErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalParameters;
+  bool m_otaUpdateIdHasBeenSet = false;
+  bool m_otaUpdateArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
+  bool m_awsJobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_awsJobPresignedUrlConfigHasBeenSet = false;
+  bool m_targetSelectionHasBeenSet = false;
+  bool m_otaUpdateFilesHasBeenSet = false;
+  bool m_otaUpdateStatusHasBeenSet = false;
+  bool m_awsIotJobIdHasBeenSet = false;
+  bool m_awsIotJobArnHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
   bool m_additionalParametersHasBeenSet = false;
 };
 

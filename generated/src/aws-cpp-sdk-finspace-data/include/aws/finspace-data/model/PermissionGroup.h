@@ -184,24 +184,24 @@ class PermissionGroup {
   ///@}
  private:
   Aws::String m_permissionGroupId;
-  bool m_permissionGroupIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ApplicationPermission> m_applicationPermissions;
-  bool m_applicationPermissionsHasBeenSet = false;
 
   long long m_createTime{0};
-  bool m_createTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   PermissionGroupMembershipStatus m_membershipStatus{PermissionGroupMembershipStatus::NOT_SET};
+  bool m_permissionGroupIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_applicationPermissionsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_membershipStatusHasBeenSet = false;
 };
 

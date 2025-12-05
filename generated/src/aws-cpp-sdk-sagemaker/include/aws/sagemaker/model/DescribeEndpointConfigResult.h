@@ -286,45 +286,45 @@ class DescribeEndpointConfigResult {
   ///@}
  private:
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   Aws::String m_endpointConfigArn;
-  bool m_endpointConfigArnHasBeenSet = false;
 
   Aws::Vector<ProductionVariant> m_productionVariants;
-  bool m_productionVariantsHasBeenSet = false;
 
   DataCaptureConfig m_dataCaptureConfig;
-  bool m_dataCaptureConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   AsyncInferenceConfig m_asyncInferenceConfig;
-  bool m_asyncInferenceConfigHasBeenSet = false;
 
   ExplainerConfig m_explainerConfig;
-  bool m_explainerConfigHasBeenSet = false;
 
   Aws::Vector<ProductionVariant> m_shadowProductionVariants;
-  bool m_shadowProductionVariantsHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   bool m_enableNetworkIsolation{false};
-  bool m_enableNetworkIsolationHasBeenSet = false;
 
   MetricsConfig m_metricsConfig;
-  bool m_metricsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_endpointConfigArnHasBeenSet = false;
+  bool m_productionVariantsHasBeenSet = false;
+  bool m_dataCaptureConfigHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_asyncInferenceConfigHasBeenSet = false;
+  bool m_explainerConfigHasBeenSet = false;
+  bool m_shadowProductionVariantsHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_enableNetworkIsolationHasBeenSet = false;
+  bool m_metricsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

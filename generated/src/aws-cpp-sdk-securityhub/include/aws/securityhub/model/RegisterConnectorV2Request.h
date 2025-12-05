@@ -67,9 +67,9 @@ class RegisterConnectorV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_authCode;
-  bool m_authCodeHasBeenSet = false;
 
   Aws::String m_authState;
+  bool m_authCodeHasBeenSet = false;
   bool m_authStateHasBeenSet = false;
 };
 

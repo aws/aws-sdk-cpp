@@ -97,12 +97,12 @@ class ProvisionedPollerConfig {
   ///@}
  private:
   int m_minimumPollers{0};
-  bool m_minimumPollersHasBeenSet = false;
 
   int m_maximumPollers{0};
-  bool m_maximumPollersHasBeenSet = false;
 
   Aws::String m_pollerGroupName;
+  bool m_minimumPollersHasBeenSet = false;
+  bool m_maximumPollersHasBeenSet = false;
   bool m_pollerGroupNameHasBeenSet = false;
 };
 

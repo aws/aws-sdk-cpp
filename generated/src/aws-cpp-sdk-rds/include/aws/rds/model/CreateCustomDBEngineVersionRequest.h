@@ -315,39 +315,39 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_databaseInstallationFilesS3BucketName;
-  bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
 
   Aws::String m_databaseInstallationFilesS3Prefix;
-  bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   Aws::String m_sourceCustomDbEngineVersionIdentifier;
-  bool m_sourceCustomDbEngineVersionIdentifierHasBeenSet = false;
 
   bool m_useAwsProvidedLatestImage{false};
-  bool m_useAwsProvidedLatestImageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_manifest;
-  bool m_manifestHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_databaseInstallationFiles;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
+  bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_sourceCustomDbEngineVersionIdentifierHasBeenSet = false;
+  bool m_useAwsProvidedLatestImageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_manifestHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_databaseInstallationFilesHasBeenSet = false;
 };
 

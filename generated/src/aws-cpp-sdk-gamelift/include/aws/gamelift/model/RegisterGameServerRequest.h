@@ -130,18 +130,18 @@ class RegisterGameServerRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_gameServerId;
-  bool m_gameServerIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_connectionInfo;
-  bool m_connectionInfoHasBeenSet = false;
 
   Aws::String m_gameServerData;
+  bool m_gameServerGroupNameHasBeenSet = false;
+  bool m_gameServerIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_connectionInfoHasBeenSet = false;
   bool m_gameServerDataHasBeenSet = false;
 };
 

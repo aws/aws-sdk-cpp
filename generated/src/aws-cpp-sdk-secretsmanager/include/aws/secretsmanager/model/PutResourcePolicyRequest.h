@@ -103,12 +103,12 @@ class PutResourcePolicyRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   bool m_blockPublicPolicy{false};
+  bool m_secretIdHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
   bool m_blockPublicPolicyHasBeenSet = false;
 };
 

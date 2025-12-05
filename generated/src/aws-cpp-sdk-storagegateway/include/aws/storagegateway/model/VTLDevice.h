@@ -125,18 +125,18 @@ class VTLDevice {
   ///@}
  private:
   Aws::String m_vTLDeviceARN;
-  bool m_vTLDeviceARNHasBeenSet = false;
 
   Aws::String m_vTLDeviceType;
-  bool m_vTLDeviceTypeHasBeenSet = false;
 
   Aws::String m_vTLDeviceVendor;
-  bool m_vTLDeviceVendorHasBeenSet = false;
 
   Aws::String m_vTLDeviceProductIdentifier;
-  bool m_vTLDeviceProductIdentifierHasBeenSet = false;
 
   DeviceiSCSIAttributes m_deviceiSCSIAttributes;
+  bool m_vTLDeviceARNHasBeenSet = false;
+  bool m_vTLDeviceTypeHasBeenSet = false;
+  bool m_vTLDeviceVendorHasBeenSet = false;
+  bool m_vTLDeviceProductIdentifierHasBeenSet = false;
   bool m_deviceiSCSIAttributesHasBeenSet = false;
 };
 

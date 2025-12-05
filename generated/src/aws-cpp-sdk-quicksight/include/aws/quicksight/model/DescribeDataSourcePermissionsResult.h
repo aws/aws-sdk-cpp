@@ -117,18 +117,18 @@ class DescribeDataSourcePermissionsResult {
   ///@}
  private:
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_dataSourceArnHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

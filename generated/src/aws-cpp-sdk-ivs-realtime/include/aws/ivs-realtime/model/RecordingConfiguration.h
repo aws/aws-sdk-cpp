@@ -69,9 +69,9 @@ class RecordingConfiguration {
   ///@}
  private:
   CompositionRecordingHlsConfiguration m_hlsConfiguration;
-  bool m_hlsConfigurationHasBeenSet = false;
 
   RecordingConfigurationFormat m_format{RecordingConfigurationFormat::NOT_SET};
+  bool m_hlsConfigurationHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

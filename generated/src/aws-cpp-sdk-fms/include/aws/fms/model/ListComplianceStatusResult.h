@@ -90,12 +90,12 @@ class ListComplianceStatusResult {
   ///@}
  private:
   Aws::Vector<PolicyComplianceStatus> m_policyComplianceStatusList;
-  bool m_policyComplianceStatusListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyComplianceStatusListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

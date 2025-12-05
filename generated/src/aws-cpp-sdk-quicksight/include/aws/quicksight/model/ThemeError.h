@@ -67,9 +67,9 @@ class ThemeError {
   ///@}
  private:
   ThemeErrorType m_type{ThemeErrorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

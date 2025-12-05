@@ -60,9 +60,9 @@ class CreateWhatIfForecastExportResult {
   ///@}
  private:
   Aws::String m_whatIfForecastExportArn;
-  bool m_whatIfForecastExportArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_whatIfForecastExportArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

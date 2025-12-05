@@ -129,18 +129,18 @@ class ListDeployActionExecutionTargetsRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_actionExecutionId;
-  bool m_actionExecutionIdHasBeenSet = false;
 
   Aws::Vector<TargetFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_actionExecutionIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

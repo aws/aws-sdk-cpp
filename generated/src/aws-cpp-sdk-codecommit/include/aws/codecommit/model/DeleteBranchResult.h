@@ -67,9 +67,9 @@ class DeleteBranchResult {
   ///@}
  private:
   BranchInfo m_deletedBranch;
-  bool m_deletedBranchHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletedBranchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

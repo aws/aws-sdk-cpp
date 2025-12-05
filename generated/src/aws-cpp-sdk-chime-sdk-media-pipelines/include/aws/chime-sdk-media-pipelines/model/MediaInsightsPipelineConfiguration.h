@@ -188,27 +188,27 @@ class MediaInsightsPipelineConfiguration {
   ///@}
  private:
   Aws::String m_mediaInsightsPipelineConfigurationName;
-  bool m_mediaInsightsPipelineConfigurationNameHasBeenSet = false;
 
   Aws::String m_mediaInsightsPipelineConfigurationArn;
-  bool m_mediaInsightsPipelineConfigurationArnHasBeenSet = false;
 
   Aws::String m_resourceAccessRoleArn;
-  bool m_resourceAccessRoleArnHasBeenSet = false;
 
   RealTimeAlertConfiguration m_realTimeAlertConfiguration;
-  bool m_realTimeAlertConfigurationHasBeenSet = false;
 
   Aws::Vector<MediaInsightsPipelineConfigurationElement> m_elements;
-  bool m_elementsHasBeenSet = false;
 
   Aws::String m_mediaInsightsPipelineConfigurationId;
-  bool m_mediaInsightsPipelineConfigurationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_mediaInsightsPipelineConfigurationNameHasBeenSet = false;
+  bool m_mediaInsightsPipelineConfigurationArnHasBeenSet = false;
+  bool m_resourceAccessRoleArnHasBeenSet = false;
+  bool m_realTimeAlertConfigurationHasBeenSet = false;
+  bool m_elementsHasBeenSet = false;
+  bool m_mediaInsightsPipelineConfigurationIdHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

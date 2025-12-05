@@ -88,12 +88,12 @@ class ListResourceRequestsResult {
   ///@}
  private:
   Aws::Vector<ProgressEvent> m_resourceRequestStatusSummaries;
-  bool m_resourceRequestStatusSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceRequestStatusSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

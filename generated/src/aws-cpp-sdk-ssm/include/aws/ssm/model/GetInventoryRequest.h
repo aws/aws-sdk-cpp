@@ -148,18 +148,18 @@ class GetInventoryRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<InventoryFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<InventoryAggregator> m_aggregators;
-  bool m_aggregatorsHasBeenSet = false;
 
   Aws::Vector<ResultAttribute> m_resultAttributes;
-  bool m_resultAttributesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filtersHasBeenSet = false;
+  bool m_aggregatorsHasBeenSet = false;
+  bool m_resultAttributesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

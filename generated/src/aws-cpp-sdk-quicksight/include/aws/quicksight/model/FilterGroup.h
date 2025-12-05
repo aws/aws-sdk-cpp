@@ -138,18 +138,18 @@ class FilterGroup {
   ///@}
  private:
   Aws::String m_filterGroupId;
-  bool m_filterGroupIdHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   FilterScopeConfiguration m_scopeConfiguration;
-  bool m_scopeConfigurationHasBeenSet = false;
 
   WidgetStatus m_status{WidgetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CrossDatasetTypes m_crossDataset{CrossDatasetTypes::NOT_SET};
+  bool m_filterGroupIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_scopeConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_crossDatasetHasBeenSet = false;
 };
 

@@ -291,39 +291,39 @@ class RecommenderConfigurationResponse {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_recommendationProviderIdType;
-  bool m_recommendationProviderIdTypeHasBeenSet = false;
 
   Aws::String m_recommendationProviderRoleArn;
-  bool m_recommendationProviderRoleArnHasBeenSet = false;
 
   Aws::String m_recommendationProviderUri;
-  bool m_recommendationProviderUriHasBeenSet = false;
 
   Aws::String m_recommendationTransformerUri;
-  bool m_recommendationTransformerUriHasBeenSet = false;
 
   Aws::String m_recommendationsDisplayName;
-  bool m_recommendationsDisplayNameHasBeenSet = false;
 
   int m_recommendationsPerMessage{0};
+  bool m_attributesHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recommendationProviderIdTypeHasBeenSet = false;
+  bool m_recommendationProviderRoleArnHasBeenSet = false;
+  bool m_recommendationProviderUriHasBeenSet = false;
+  bool m_recommendationTransformerUriHasBeenSet = false;
+  bool m_recommendationsDisplayNameHasBeenSet = false;
   bool m_recommendationsPerMessageHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListGroupsOlderThanOrderingIdResult {
   ///@}
  private:
   Aws::Vector<GroupSummary> m_groupsSummaries;
-  bool m_groupsSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupsSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

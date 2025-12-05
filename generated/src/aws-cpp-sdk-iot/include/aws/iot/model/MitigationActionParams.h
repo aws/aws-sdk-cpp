@@ -156,21 +156,21 @@ class MitigationActionParams {
   ///@}
  private:
   UpdateDeviceCertificateParams m_updateDeviceCertificateParams;
-  bool m_updateDeviceCertificateParamsHasBeenSet = false;
 
   UpdateCACertificateParams m_updateCACertificateParams;
-  bool m_updateCACertificateParamsHasBeenSet = false;
 
   AddThingsToThingGroupParams m_addThingsToThingGroupParams;
-  bool m_addThingsToThingGroupParamsHasBeenSet = false;
 
   ReplaceDefaultPolicyVersionParams m_replaceDefaultPolicyVersionParams;
-  bool m_replaceDefaultPolicyVersionParamsHasBeenSet = false;
 
   EnableIoTLoggingParams m_enableIoTLoggingParams;
-  bool m_enableIoTLoggingParamsHasBeenSet = false;
 
   PublishFindingToSnsParams m_publishFindingToSnsParams;
+  bool m_updateDeviceCertificateParamsHasBeenSet = false;
+  bool m_updateCACertificateParamsHasBeenSet = false;
+  bool m_addThingsToThingGroupParamsHasBeenSet = false;
+  bool m_replaceDefaultPolicyVersionParamsHasBeenSet = false;
+  bool m_enableIoTLoggingParamsHasBeenSet = false;
   bool m_publishFindingToSnsParamsHasBeenSet = false;
 };
 

@@ -167,21 +167,21 @@ class InferenceComponentSpecification {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   InferenceComponentContainerSpecification m_container;
-  bool m_containerHasBeenSet = false;
 
   InferenceComponentStartupParameters m_startupParameters;
-  bool m_startupParametersHasBeenSet = false;
 
   InferenceComponentComputeResourceRequirements m_computeResourceRequirements;
-  bool m_computeResourceRequirementsHasBeenSet = false;
 
   Aws::String m_baseInferenceComponentName;
-  bool m_baseInferenceComponentNameHasBeenSet = false;
 
   InferenceComponentDataCacheConfig m_dataCacheConfig;
+  bool m_modelNameHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_startupParametersHasBeenSet = false;
+  bool m_computeResourceRequirementsHasBeenSet = false;
+  bool m_baseInferenceComponentNameHasBeenSet = false;
   bool m_dataCacheConfigHasBeenSet = false;
 };
 

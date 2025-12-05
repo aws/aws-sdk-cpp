@@ -163,24 +163,24 @@ class ApplicationComponent {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentRemarks;
-  bool m_componentRemarksHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   OsType m_osType{OsType::NOT_SET};
-  bool m_osTypeHasBeenSet = false;
 
   Tier m_tier{Tier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   bool m_monitor{false};
-  bool m_monitorHasBeenSet = false;
 
   Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>> m_detectedWorkload;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentRemarksHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_osTypeHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_monitorHasBeenSet = false;
   bool m_detectedWorkloadHasBeenSet = false;
 };
 

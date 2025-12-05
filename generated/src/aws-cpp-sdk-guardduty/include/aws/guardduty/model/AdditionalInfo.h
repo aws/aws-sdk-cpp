@@ -69,9 +69,9 @@ class AdditionalInfo {
   ///@}
  private:
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_deviceName;
+  bool m_versionIdHasBeenSet = false;
   bool m_deviceNameHasBeenSet = false;
 };
 

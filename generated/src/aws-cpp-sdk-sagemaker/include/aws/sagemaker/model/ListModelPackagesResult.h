@@ -86,12 +86,12 @@ class ListModelPackagesResult {
   ///@}
  private:
   Aws::Vector<ModelPackageSummary> m_modelPackageSummaryList;
-  bool m_modelPackageSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelPackageSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

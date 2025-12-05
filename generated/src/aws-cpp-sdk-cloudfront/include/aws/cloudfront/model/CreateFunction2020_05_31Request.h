@@ -90,12 +90,12 @@ class CreateFunction2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FunctionConfig m_functionConfig;
-  bool m_functionConfigHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_functionCode{};
+  bool m_nameHasBeenSet = false;
+  bool m_functionConfigHasBeenSet = false;
   bool m_functionCodeHasBeenSet = false;
 };
 

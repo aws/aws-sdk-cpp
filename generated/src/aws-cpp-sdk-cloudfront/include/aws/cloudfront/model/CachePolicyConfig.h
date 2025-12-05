@@ -180,21 +180,21 @@ class CachePolicyConfig {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_defaultTTL{0};
-  bool m_defaultTTLHasBeenSet = false;
 
   long long m_maxTTL{0};
-  bool m_maxTTLHasBeenSet = false;
 
   long long m_minTTL{0};
-  bool m_minTTLHasBeenSet = false;
 
   ParametersInCacheKeyAndForwardedToOrigin m_parametersInCacheKeyAndForwardedToOrigin;
+  bool m_commentHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_defaultTTLHasBeenSet = false;
+  bool m_maxTTLHasBeenSet = false;
+  bool m_minTTLHasBeenSet = false;
   bool m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = false;
 };
 

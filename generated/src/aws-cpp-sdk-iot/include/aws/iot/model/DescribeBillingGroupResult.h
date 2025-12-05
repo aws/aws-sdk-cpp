@@ -144,24 +144,24 @@ class DescribeBillingGroupResult {
   ///@}
  private:
   Aws::String m_billingGroupName;
-  bool m_billingGroupNameHasBeenSet = false;
 
   Aws::String m_billingGroupId;
-  bool m_billingGroupIdHasBeenSet = false;
 
   Aws::String m_billingGroupArn;
-  bool m_billingGroupArnHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   BillingGroupProperties m_billingGroupProperties;
-  bool m_billingGroupPropertiesHasBeenSet = false;
 
   BillingGroupMetadata m_billingGroupMetadata;
-  bool m_billingGroupMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingGroupNameHasBeenSet = false;
+  bool m_billingGroupIdHasBeenSet = false;
+  bool m_billingGroupArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_billingGroupPropertiesHasBeenSet = false;
+  bool m_billingGroupMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

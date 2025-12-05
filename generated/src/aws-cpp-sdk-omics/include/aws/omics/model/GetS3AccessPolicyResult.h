@@ -127,21 +127,21 @@ class GetS3AccessPolicyResult {
   ///@}
  private:
   Aws::String m_s3AccessPointArn;
-  bool m_s3AccessPointArnHasBeenSet = false;
 
   Aws::String m_storeId;
-  bool m_storeIdHasBeenSet = false;
 
   StoreType m_storeType{StoreType::NOT_SET};
-  bool m_storeTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_s3AccessPolicy;
-  bool m_s3AccessPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3AccessPointArnHasBeenSet = false;
+  bool m_storeIdHasBeenSet = false;
+  bool m_storeTypeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_s3AccessPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

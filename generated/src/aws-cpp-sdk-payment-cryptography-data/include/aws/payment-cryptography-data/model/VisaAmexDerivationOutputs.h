@@ -107,15 +107,15 @@ class VisaAmexDerivationOutputs {
   ///@}
  private:
   Aws::String m_authorizationRequestKeyArn;
-  bool m_authorizationRequestKeyArnHasBeenSet = false;
 
   Aws::String m_authorizationRequestKeyCheckValue;
-  bool m_authorizationRequestKeyCheckValueHasBeenSet = false;
 
   Aws::String m_currentPinPekArn;
-  bool m_currentPinPekArnHasBeenSet = false;
 
   Aws::String m_currentPinPekKeyCheckValue;
+  bool m_authorizationRequestKeyArnHasBeenSet = false;
+  bool m_authorizationRequestKeyCheckValueHasBeenSet = false;
+  bool m_currentPinPekArnHasBeenSet = false;
   bool m_currentPinPekKeyCheckValueHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class AccessConfiguration {
   ///@}
  private:
   Aws::Vector<AccessControl> m_accessControls;
-  bool m_accessControlsHasBeenSet = false;
 
   MemberRelation m_memberRelation{MemberRelation::NOT_SET};
+  bool m_accessControlsHasBeenSet = false;
   bool m_memberRelationHasBeenSet = false;
 };
 

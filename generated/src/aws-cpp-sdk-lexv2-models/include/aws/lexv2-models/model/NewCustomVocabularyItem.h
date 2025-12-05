@@ -88,12 +88,12 @@ class NewCustomVocabularyItem {
   ///@}
  private:
   Aws::String m_phrase;
-  bool m_phraseHasBeenSet = false;
 
   int m_weight{0};
-  bool m_weightHasBeenSet = false;
 
   Aws::String m_displayAs;
+  bool m_phraseHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
   bool m_displayAsHasBeenSet = false;
 };
 

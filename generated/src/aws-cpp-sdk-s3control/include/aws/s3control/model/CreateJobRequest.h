@@ -256,36 +256,36 @@ class CreateJobRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   bool m_confirmationRequired{false};
-  bool m_confirmationRequiredHasBeenSet = false;
 
   JobOperation m_operation;
-  bool m_operationHasBeenSet = false;
 
   JobReport m_report;
-  bool m_reportHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   JobManifest m_manifest;
-  bool m_manifestHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<S3Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   JobManifestGenerator m_manifestGenerator;
+  bool m_accountIdHasBeenSet = false;
+  bool m_confirmationRequiredHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_reportHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_manifestHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_manifestGeneratorHasBeenSet = false;
 };
 

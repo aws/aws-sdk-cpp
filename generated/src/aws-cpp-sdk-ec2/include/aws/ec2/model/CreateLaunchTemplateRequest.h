@@ -180,24 +180,24 @@ class CreateLaunchTemplateRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   RequestLaunchTemplateData m_launchTemplateData;
-  bool m_launchTemplateDataHasBeenSet = false;
 
   OperatorRequest m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_launchTemplateNameHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_launchTemplateDataHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

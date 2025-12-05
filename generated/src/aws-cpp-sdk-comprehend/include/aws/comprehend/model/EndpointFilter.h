@@ -110,15 +110,15 @@ class EndpointFilter {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   EndpointStatus m_status{EndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
+  bool m_modelArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
   bool m_creationTimeAfterHasBeenSet = false;
 };
 

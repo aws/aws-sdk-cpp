@@ -90,12 +90,12 @@ class SNOMEDCTDetails {
   ///@}
  private:
   Aws::String m_edition;
-  bool m_editionHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_versionDate;
+  bool m_editionHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
   bool m_versionDateHasBeenSet = false;
 };
 

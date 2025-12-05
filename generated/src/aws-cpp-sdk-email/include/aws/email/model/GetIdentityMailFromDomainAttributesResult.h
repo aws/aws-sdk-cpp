@@ -78,9 +78,9 @@ class GetIdentityMailFromDomainAttributesResult {
   ///@}
  private:
   Aws::Map<Aws::String, IdentityMailFromDomainAttributes> m_mailFromDomainAttributes;
-  bool m_mailFromDomainAttributesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_mailFromDomainAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

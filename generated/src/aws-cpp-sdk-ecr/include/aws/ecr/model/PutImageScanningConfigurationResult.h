@@ -94,15 +94,15 @@ class PutImageScanningConfigurationResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_imageScanningConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

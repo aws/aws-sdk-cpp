@@ -163,24 +163,24 @@ class PickupDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_identificationNumber;
-  bool m_identificationNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_identificationExpirationDate{};
-  bool m_identificationExpirationDateHasBeenSet = false;
 
   Aws::String m_identificationIssuingOrg;
-  bool m_identificationIssuingOrgHasBeenSet = false;
 
   Aws::String m_devicePickupId;
+  bool m_nameHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_identificationNumberHasBeenSet = false;
+  bool m_identificationExpirationDateHasBeenSet = false;
+  bool m_identificationIssuingOrgHasBeenSet = false;
   bool m_devicePickupIdHasBeenSet = false;
 };
 

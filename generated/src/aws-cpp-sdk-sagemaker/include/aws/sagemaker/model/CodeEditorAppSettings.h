@@ -144,18 +144,18 @@ class CodeEditorAppSettings {
   ///@}
  private:
   ResourceSpec m_defaultResourceSpec;
-  bool m_defaultResourceSpecHasBeenSet = false;
 
   Aws::Vector<CustomImage> m_customImages;
-  bool m_customImagesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lifecycleConfigArns;
-  bool m_lifecycleConfigArnsHasBeenSet = false;
 
   AppLifecycleManagement m_appLifecycleManagement;
-  bool m_appLifecycleManagementHasBeenSet = false;
 
   Aws::String m_builtInLifecycleConfigArn;
+  bool m_defaultResourceSpecHasBeenSet = false;
+  bool m_customImagesHasBeenSet = false;
+  bool m_lifecycleConfigArnsHasBeenSet = false;
+  bool m_appLifecycleManagementHasBeenSet = false;
   bool m_builtInLifecycleConfigArnHasBeenSet = false;
 };
 

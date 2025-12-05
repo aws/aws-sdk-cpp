@@ -72,9 +72,9 @@ class RespondActivityTaskCompletedRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   Aws::String m_result;
+  bool m_taskTokenHasBeenSet = false;
   bool m_resultHasBeenSet = false;
 };
 

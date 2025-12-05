@@ -69,9 +69,9 @@ class PolicyDetails {
   ///@}
  private:
   FindingAction m_action;
-  bool m_actionHasBeenSet = false;
 
   FindingActor m_actor;
+  bool m_actionHasBeenSet = false;
   bool m_actorHasBeenSet = false;
 };
 

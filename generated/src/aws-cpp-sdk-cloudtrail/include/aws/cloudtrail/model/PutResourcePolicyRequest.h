@@ -77,9 +77,9 @@ class PutResourcePolicyRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;
 };
 

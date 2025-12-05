@@ -144,21 +144,21 @@ class KeyValueStore {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

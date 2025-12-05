@@ -60,9 +60,9 @@ class DescribeMetricAttributionResult {
   ///@}
  private:
   MetricAttribution m_metricAttribution;
-  bool m_metricAttributionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricAttributionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class ScpActionDefinition {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetIds;
+  bool m_policyIdHasBeenSet = false;
   bool m_targetIdsHasBeenSet = false;
 };
 

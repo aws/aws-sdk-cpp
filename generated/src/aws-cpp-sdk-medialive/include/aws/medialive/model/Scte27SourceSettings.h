@@ -77,9 +77,9 @@ provide the language to consider when translating
   ///@}
  private:
   Scte27OcrLanguage m_ocrLanguage{Scte27OcrLanguage::NOT_SET};
-  bool m_ocrLanguageHasBeenSet = false;
 
   int m_pid{0};
+  bool m_ocrLanguageHasBeenSet = false;
   bool m_pidHasBeenSet = false;
 };
 

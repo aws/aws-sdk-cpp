@@ -131,18 +131,18 @@ class CreateAccessLogSubscriptionRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   ServiceNetworkLogType m_serviceNetworkLogType{ServiceNetworkLogType::NOT_SET};
-  bool m_serviceNetworkLogTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_serviceNetworkLogTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

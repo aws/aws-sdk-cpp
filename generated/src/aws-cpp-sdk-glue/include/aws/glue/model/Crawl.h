@@ -140,21 +140,21 @@ class Crawl {
   ///@}
  private:
   CrawlState m_state{CrawlState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_logGroup;
-  bool m_logGroupHasBeenSet = false;
 
   Aws::String m_logStream;
+  bool m_stateHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_logGroupHasBeenSet = false;
   bool m_logStreamHasBeenSet = false;
 };
 

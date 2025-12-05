@@ -70,9 +70,9 @@ class GetRouteServerAssociationsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_routeServerIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -166,21 +166,21 @@ class SegmentDimensions {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeDimension> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   SegmentBehaviors m_behavior;
-  bool m_behaviorHasBeenSet = false;
 
   SegmentDemographics m_demographic;
-  bool m_demographicHasBeenSet = false;
 
   SegmentLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Map<Aws::String, MetricDimension> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeDimension> m_userAttributes;
+  bool m_attributesHasBeenSet = false;
+  bool m_behaviorHasBeenSet = false;
+  bool m_demographicHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_userAttributesHasBeenSet = false;
 };
 

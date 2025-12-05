@@ -68,9 +68,9 @@ class NodeOption {
   ///@}
  private:
   NodeOptionsNodeType m_nodeType{NodeOptionsNodeType::NOT_SET};
-  bool m_nodeTypeHasBeenSet = false;
 
   NodeConfig m_nodeConfig;
+  bool m_nodeTypeHasBeenSet = false;
   bool m_nodeConfigHasBeenSet = false;
 };
 

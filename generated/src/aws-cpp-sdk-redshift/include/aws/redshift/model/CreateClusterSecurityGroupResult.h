@@ -58,9 +58,9 @@ class CreateClusterSecurityGroupResult {
   ///@}
  private:
   ClusterSecurityGroup m_clusterSecurityGroup;
-  bool m_clusterSecurityGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clusterSecurityGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ListAnalyzedResourcesRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

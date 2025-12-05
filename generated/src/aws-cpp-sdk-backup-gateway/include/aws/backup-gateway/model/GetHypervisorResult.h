@@ -60,9 +60,9 @@ class GetHypervisorResult {
   ///@}
  private:
   HypervisorDetails m_hypervisor;
-  bool m_hypervisorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hypervisorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

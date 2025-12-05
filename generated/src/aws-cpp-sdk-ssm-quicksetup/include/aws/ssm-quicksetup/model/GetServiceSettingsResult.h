@@ -61,9 +61,9 @@ class GetServiceSettingsResult {
   ///@}
  private:
   ServiceSettings m_serviceSettings;
-  bool m_serviceSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ArcRoutingControlState {
   ///@}
  private:
   Aws::String m_routingControlArn;
-  bool m_routingControlArnHasBeenSet = false;
 
   RoutingControlStateChange m_state{RoutingControlStateChange::NOT_SET};
+  bool m_routingControlArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

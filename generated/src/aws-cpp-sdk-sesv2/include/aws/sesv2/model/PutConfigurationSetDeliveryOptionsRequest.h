@@ -109,15 +109,15 @@ class PutConfigurationSetDeliveryOptionsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
-  bool m_tlsPolicyHasBeenSet = false;
 
   Aws::String m_sendingPoolName;
-  bool m_sendingPoolNameHasBeenSet = false;
 
   long long m_maxDeliverySeconds{0};
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_tlsPolicyHasBeenSet = false;
+  bool m_sendingPoolNameHasBeenSet = false;
   bool m_maxDeliverySecondsHasBeenSet = false;
 };
 

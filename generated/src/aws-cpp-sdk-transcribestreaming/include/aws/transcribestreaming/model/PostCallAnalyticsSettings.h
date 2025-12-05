@@ -145,15 +145,15 @@ class PostCallAnalyticsSettings {
   ///@}
  private:
   Aws::String m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   ContentRedactionOutput m_contentRedactionOutput{ContentRedactionOutput::NOT_SET};
-  bool m_contentRedactionOutputHasBeenSet = false;
 
   Aws::String m_outputEncryptionKMSKeyId;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_contentRedactionOutputHasBeenSet = false;
   bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 };
 

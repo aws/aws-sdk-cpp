@@ -193,30 +193,30 @@ class PanelConfiguration {
   ///@}
  private:
   PanelTitleOptions m_title;
-  bool m_titleHasBeenSet = false;
 
   Visibility m_borderVisibility{Visibility::NOT_SET};
-  bool m_borderVisibilityHasBeenSet = false;
 
   Aws::String m_borderThickness;
-  bool m_borderThicknessHasBeenSet = false;
 
   PanelBorderStyle m_borderStyle{PanelBorderStyle::NOT_SET};
-  bool m_borderStyleHasBeenSet = false;
 
   Aws::String m_borderColor;
-  bool m_borderColorHasBeenSet = false;
 
   Visibility m_gutterVisibility{Visibility::NOT_SET};
-  bool m_gutterVisibilityHasBeenSet = false;
 
   Aws::String m_gutterSpacing;
-  bool m_gutterSpacingHasBeenSet = false;
 
   Visibility m_backgroundVisibility{Visibility::NOT_SET};
-  bool m_backgroundVisibilityHasBeenSet = false;
 
   Aws::String m_backgroundColor;
+  bool m_titleHasBeenSet = false;
+  bool m_borderVisibilityHasBeenSet = false;
+  bool m_borderThicknessHasBeenSet = false;
+  bool m_borderStyleHasBeenSet = false;
+  bool m_borderColorHasBeenSet = false;
+  bool m_gutterVisibilityHasBeenSet = false;
+  bool m_gutterSpacingHasBeenSet = false;
+  bool m_backgroundVisibilityHasBeenSet = false;
   bool m_backgroundColorHasBeenSet = false;
 };
 

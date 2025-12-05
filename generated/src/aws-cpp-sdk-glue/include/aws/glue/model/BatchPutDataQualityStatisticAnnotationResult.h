@@ -68,9 +68,9 @@ class BatchPutDataQualityStatisticAnnotationResult {
   ///@}
  private:
   Aws::Vector<AnnotationError> m_failedInclusionAnnotations;
-  bool m_failedInclusionAnnotationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedInclusionAnnotationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

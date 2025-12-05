@@ -90,12 +90,12 @@ class DefaultDateTimePickerControlOptions {
   ///@}
  private:
   SheetControlDateTimePickerType m_type{SheetControlDateTimePickerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DateTimePickerControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   CommitMode m_commitMode{CommitMode::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_displayOptionsHasBeenSet = false;
   bool m_commitModeHasBeenSet = false;
 };
 

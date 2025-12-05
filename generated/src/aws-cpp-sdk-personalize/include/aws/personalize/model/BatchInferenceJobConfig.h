@@ -90,9 +90,9 @@ class BatchInferenceJobConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
-  bool m_itemExplorationConfigHasBeenSet = false;
 
   Aws::Map<RankingInfluenceType, double> m_rankingInfluence;
+  bool m_itemExplorationConfigHasBeenSet = false;
   bool m_rankingInfluenceHasBeenSet = false;
 };
 

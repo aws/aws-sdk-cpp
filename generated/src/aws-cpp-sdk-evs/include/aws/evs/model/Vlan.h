@@ -256,39 +256,39 @@ class Vlan {
   ///@}
  private:
   int m_vlanId{0};
-  bool m_vlanIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   VlanState m_vlanState{VlanState::NOT_SET};
-  bool m_vlanStateHasBeenSet = false;
 
   Aws::String m_stateDetails;
-  bool m_stateDetailsHasBeenSet = false;
 
   Aws::Vector<EipAssociation> m_eipAssociations;
-  bool m_eipAssociationsHasBeenSet = false;
 
   bool m_isPublic{false};
-  bool m_isPublicHasBeenSet = false;
 
   Aws::String m_networkAclId;
+  bool m_vlanIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_vlanStateHasBeenSet = false;
+  bool m_stateDetailsHasBeenSet = false;
+  bool m_eipAssociationsHasBeenSet = false;
+  bool m_isPublicHasBeenSet = false;
   bool m_networkAclIdHasBeenSet = false;
 };
 

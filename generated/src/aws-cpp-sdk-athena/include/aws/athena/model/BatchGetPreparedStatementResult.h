@@ -94,12 +94,12 @@ class BatchGetPreparedStatementResult {
   ///@}
  private:
   Aws::Vector<PreparedStatement> m_preparedStatements;
-  bool m_preparedStatementsHasBeenSet = false;
 
   Aws::Vector<UnprocessedPreparedStatementName> m_unprocessedPreparedStatementNames;
-  bool m_unprocessedPreparedStatementNamesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_preparedStatementsHasBeenSet = false;
+  bool m_unprocessedPreparedStatementNamesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

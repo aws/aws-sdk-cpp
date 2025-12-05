@@ -70,9 +70,9 @@ class EgyptAdditionalInfo {
   ///@}
  private:
   Aws::String m_uniqueIdentificationNumber;
-  bool m_uniqueIdentificationNumberHasBeenSet = false;
 
   Aws::String m_uniqueIdentificationNumberExpirationDate;
+  bool m_uniqueIdentificationNumberHasBeenSet = false;
   bool m_uniqueIdentificationNumberExpirationDateHasBeenSet = false;
 };
 

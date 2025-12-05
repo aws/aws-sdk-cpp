@@ -132,21 +132,21 @@ class LoRaWANPublicGatewayMetadata {
   ///@}
  private:
   Aws::String m_providerNetId;
-  bool m_providerNetIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   double m_rssi{0.0};
-  bool m_rssiHasBeenSet = false;
 
   double m_snr{0.0};
-  bool m_snrHasBeenSet = false;
 
   Aws::String m_rfRegion;
-  bool m_rfRegionHasBeenSet = false;
 
   bool m_dlAllowed{false};
+  bool m_providerNetIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_rssiHasBeenSet = false;
+  bool m_snrHasBeenSet = false;
+  bool m_rfRegionHasBeenSet = false;
   bool m_dlAllowedHasBeenSet = false;
 };
 

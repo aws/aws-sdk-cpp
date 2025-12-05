@@ -110,15 +110,15 @@ class ApplicationMetrics {
   ///@}
  private:
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_requestCount{0};
-  bool m_requestCountHasBeenSet = false;
 
   StatusCodes m_statusCodes;
-  bool m_statusCodesHasBeenSet = false;
 
   Latency m_latency;
+  bool m_durationHasBeenSet = false;
+  bool m_requestCountHasBeenSet = false;
+  bool m_statusCodesHasBeenSet = false;
   bool m_latencyHasBeenSet = false;
 };
 

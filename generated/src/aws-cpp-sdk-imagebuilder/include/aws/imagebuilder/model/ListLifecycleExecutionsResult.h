@@ -86,12 +86,12 @@ class ListLifecycleExecutionsResult {
   ///@}
  private:
   Aws::Vector<LifecycleExecution> m_lifecycleExecutions;
-  bool m_lifecycleExecutionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleExecutionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

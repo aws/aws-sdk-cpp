@@ -84,12 +84,12 @@ class ListAppVersionsResult {
   ///@}
  private:
   Aws::Vector<AppVersionSummary> m_appVersions;
-  bool m_appVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

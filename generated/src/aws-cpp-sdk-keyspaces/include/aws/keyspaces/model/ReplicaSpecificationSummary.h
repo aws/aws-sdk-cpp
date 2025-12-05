@@ -92,12 +92,12 @@ class ReplicaSpecificationSummary {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   TableStatus m_status{TableStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CapacitySpecificationSummary m_capacitySpecification;
+  bool m_regionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_capacitySpecificationHasBeenSet = false;
 };
 

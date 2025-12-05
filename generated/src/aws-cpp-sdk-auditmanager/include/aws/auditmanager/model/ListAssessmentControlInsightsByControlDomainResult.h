@@ -89,12 +89,12 @@ class ListAssessmentControlInsightsByControlDomainResult {
   ///@}
  private:
   Aws::Vector<ControlInsightsMetadataByAssessmentItem> m_controlInsightsByAssessment;
-  bool m_controlInsightsByAssessmentHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlInsightsByAssessmentHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

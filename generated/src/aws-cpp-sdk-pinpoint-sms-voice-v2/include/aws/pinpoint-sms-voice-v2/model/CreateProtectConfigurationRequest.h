@@ -96,12 +96,12 @@ class CreateProtectConfigurationRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

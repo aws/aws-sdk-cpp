@@ -85,12 +85,12 @@ class DescribeDocumentVersionsResult {
   ///@}
  private:
   Aws::Vector<DocumentVersionMetadata> m_documentVersions;
-  bool m_documentVersionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentVersionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

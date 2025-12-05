@@ -84,12 +84,12 @@ class GetVariablesResult {
   ///@}
  private:
   Aws::Vector<Variable> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_variablesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

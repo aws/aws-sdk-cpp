@@ -104,15 +104,15 @@ class S3OutputConfigurations {
   ///@}
  private:
   CompressionOption m_compression{CompressionOption::NOT_SET};
-  bool m_compressionHasBeenSet = false;
 
   FormatOption m_format{FormatOption::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   S3OutputType m_outputType{S3OutputType::NOT_SET};
-  bool m_outputTypeHasBeenSet = false;
 
   OverwriteOption m_overwrite{OverwriteOption::NOT_SET};
+  bool m_compressionHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_outputTypeHasBeenSet = false;
   bool m_overwriteHasBeenSet = false;
 };
 

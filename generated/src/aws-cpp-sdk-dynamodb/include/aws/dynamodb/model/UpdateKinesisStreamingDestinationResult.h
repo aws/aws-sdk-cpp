@@ -114,18 +114,18 @@ class UpdateKinesisStreamingDestinationResult {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   DestinationStatus m_destinationStatus{DestinationStatus::NOT_SET};
-  bool m_destinationStatusHasBeenSet = false;
 
   UpdateKinesisStreamingConfiguration m_updateKinesisStreamingConfiguration;
-  bool m_updateKinesisStreamingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableNameHasBeenSet = false;
+  bool m_streamArnHasBeenSet = false;
+  bool m_destinationStatusHasBeenSet = false;
+  bool m_updateKinesisStreamingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

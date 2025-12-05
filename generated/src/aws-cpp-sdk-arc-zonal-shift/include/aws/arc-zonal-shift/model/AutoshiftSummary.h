@@ -119,15 +119,15 @@ class AutoshiftSummary {
   ///@}
  private:
   Aws::String m_awayFrom;
-  bool m_awayFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   AutoshiftExecutionStatus m_status{AutoshiftExecutionStatus::NOT_SET};
+  bool m_awayFromHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class GetKeyPairsResult {
   ///@}
  private:
   Aws::Vector<KeyPair> m_keyPairs;
-  bool m_keyPairsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyPairsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

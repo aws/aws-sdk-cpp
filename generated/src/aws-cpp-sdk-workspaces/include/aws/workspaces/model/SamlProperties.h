@@ -105,12 +105,12 @@ class SamlProperties {
   ///@}
  private:
   SamlStatusEnum m_status{SamlStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_userAccessUrl;
-  bool m_userAccessUrlHasBeenSet = false;
 
   Aws::String m_relayStateParameterName;
+  bool m_statusHasBeenSet = false;
+  bool m_userAccessUrlHasBeenSet = false;
   bool m_relayStateParameterNameHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class GrpcGatewayRoute {
   ///@}
  private:
   GrpcGatewayRouteAction m_action;
-  bool m_actionHasBeenSet = false;
 
   GrpcGatewayRouteMatch m_match;
+  bool m_actionHasBeenSet = false;
   bool m_matchHasBeenSet = false;
 };
 

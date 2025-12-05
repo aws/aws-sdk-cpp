@@ -128,21 +128,21 @@ class DescribeTopicResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   TopicDetails m_topic;
-  bool m_topicHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   CustomInstructions m_customInstructions;
+  bool m_arnHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_customInstructionsHasBeenSet = false;
 };
 

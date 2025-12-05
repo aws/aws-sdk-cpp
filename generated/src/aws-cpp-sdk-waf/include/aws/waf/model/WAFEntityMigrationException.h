@@ -92,12 +92,12 @@ class WAFEntityMigrationException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   MigrationErrorType m_migrationErrorType{MigrationErrorType::NOT_SET};
-  bool m_migrationErrorTypeHasBeenSet = false;
 
   Aws::String m_migrationErrorReason;
+  bool m_messageHasBeenSet = false;
+  bool m_migrationErrorTypeHasBeenSet = false;
   bool m_migrationErrorReasonHasBeenSet = false;
 };
 

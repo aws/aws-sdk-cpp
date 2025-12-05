@@ -68,9 +68,9 @@ class CreateAccountLinkInvitationRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_targetAccountId;
-  bool m_targetAccountIdHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_targetAccountIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

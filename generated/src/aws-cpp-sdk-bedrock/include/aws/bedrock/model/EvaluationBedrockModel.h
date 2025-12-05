@@ -99,12 +99,12 @@ class EvaluationBedrockModel {
   ///@}
  private:
   Aws::String m_modelIdentifier;
-  bool m_modelIdentifierHasBeenSet = false;
 
   Aws::String m_inferenceParams;
-  bool m_inferenceParamsHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfig;
+  bool m_modelIdentifierHasBeenSet = false;
+  bool m_inferenceParamsHasBeenSet = false;
   bool m_performanceConfigHasBeenSet = false;
 };
 

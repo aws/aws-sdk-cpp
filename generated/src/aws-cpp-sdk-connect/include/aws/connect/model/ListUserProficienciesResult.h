@@ -120,18 +120,18 @@ class ListUserProficienciesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<UserProficiency> m_userProficiencyList;
-  bool m_userProficiencyListHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_userProficiencyListHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

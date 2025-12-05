@@ -128,18 +128,18 @@ class FieldLevelEncryptionProfileSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EncryptionEntities m_encryptionEntities;
-  bool m_encryptionEntitiesHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_encryptionEntitiesHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

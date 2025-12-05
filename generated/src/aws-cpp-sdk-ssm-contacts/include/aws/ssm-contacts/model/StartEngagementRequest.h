@@ -181,27 +181,27 @@ class StartEngagementRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_sender;
-  bool m_senderHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_publicSubject;
-  bool m_publicSubjectHasBeenSet = false;
 
   Aws::String m_publicContent;
-  bool m_publicContentHasBeenSet = false;
 
   Aws::String m_incidentId;
-  bool m_incidentIdHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_contactIdHasBeenSet = false;
+  bool m_senderHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_publicSubjectHasBeenSet = false;
+  bool m_publicContentHasBeenSet = false;
+  bool m_incidentIdHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

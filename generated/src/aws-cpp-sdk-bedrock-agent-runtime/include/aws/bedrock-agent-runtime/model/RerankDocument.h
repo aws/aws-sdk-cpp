@@ -88,12 +88,12 @@ class RerankDocument {
   ///@}
  private:
   Aws::Utils::Document m_jsonDocument;
-  bool m_jsonDocumentHasBeenSet = false;
 
   RerankTextDocument m_textDocument;
-  bool m_textDocumentHasBeenSet = false;
 
   RerankDocumentType m_type{RerankDocumentType::NOT_SET};
+  bool m_jsonDocumentHasBeenSet = false;
+  bool m_textDocumentHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

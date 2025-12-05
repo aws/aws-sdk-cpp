@@ -178,27 +178,27 @@ class Collector {
   ///@}
  private:
   CollectorHealth m_collectorHealth{CollectorHealth::NOT_SET};
-  bool m_collectorHealthHasBeenSet = false;
 
   Aws::String m_collectorId;
-  bool m_collectorIdHasBeenSet = false;
 
   Aws::String m_collectorVersion;
-  bool m_collectorVersionHasBeenSet = false;
 
   ConfigurationSummary m_configurationSummary;
-  bool m_configurationSummaryHasBeenSet = false;
 
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_lastActivityTimeStamp;
-  bool m_lastActivityTimeStampHasBeenSet = false;
 
   Aws::String m_registeredTimeStamp;
+  bool m_collectorHealthHasBeenSet = false;
+  bool m_collectorIdHasBeenSet = false;
+  bool m_collectorVersionHasBeenSet = false;
+  bool m_configurationSummaryHasBeenSet = false;
+  bool m_hostNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_lastActivityTimeStampHasBeenSet = false;
   bool m_registeredTimeStampHasBeenSet = false;
 };
 

@@ -212,33 +212,33 @@ class ClusterVersionInformation {
   ///@}
  private:
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   Aws::String m_clusterType;
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_defaultPlatformVersion;
-  bool m_defaultPlatformVersionHasBeenSet = false;
 
   bool m_defaultVersion{false};
-  bool m_defaultVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_releaseDate{};
-  bool m_releaseDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endOfStandardSupportDate{};
-  bool m_endOfStandardSupportDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endOfExtendedSupportDate{};
-  bool m_endOfExtendedSupportDateHasBeenSet = false;
 
   ClusterVersionStatus m_status{ClusterVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   VersionStatus m_versionStatus{VersionStatus::NOT_SET};
-  bool m_versionStatusHasBeenSet = false;
 
   Aws::String m_kubernetesPatchVersion;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_defaultPlatformVersionHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
+  bool m_endOfStandardSupportDateHasBeenSet = false;
+  bool m_endOfExtendedSupportDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_versionStatusHasBeenSet = false;
   bool m_kubernetesPatchVersionHasBeenSet = false;
 };
 

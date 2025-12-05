@@ -104,15 +104,15 @@ class ListProvisioningArtifactsForServiceActionRequest : public ServiceCatalogRe
   ///@}
  private:
   Aws::String m_serviceActionId;
-  bool m_serviceActionIdHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
+  bool m_serviceActionIdHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_acceptLanguageHasBeenSet = false;
 };
 

@@ -216,27 +216,27 @@ class ListBillingGroupsFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_arns;
-  bool m_arnsHasBeenSet = false;
 
   Aws::String m_pricingPlan;
-  bool m_pricingPlanHasBeenSet = false;
 
   Aws::Vector<BillingGroupStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   bool m_autoAssociate{false};
-  bool m_autoAssociateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_primaryAccountIds;
-  bool m_primaryAccountIdsHasBeenSet = false;
 
   Aws::Vector<BillingGroupType> m_billingGroupTypes;
-  bool m_billingGroupTypesHasBeenSet = false;
 
   Aws::Vector<StringSearch> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_responsibilityTransferArns;
+  bool m_arnsHasBeenSet = false;
+  bool m_pricingPlanHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
+  bool m_autoAssociateHasBeenSet = false;
+  bool m_primaryAccountIdsHasBeenSet = false;
+  bool m_billingGroupTypesHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
   bool m_responsibilityTransferArnsHasBeenSet = false;
 };
 

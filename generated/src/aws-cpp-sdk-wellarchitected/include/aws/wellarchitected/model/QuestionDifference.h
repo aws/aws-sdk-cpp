@@ -81,12 +81,12 @@ class QuestionDifference {
   ///@}
  private:
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_questionTitle;
-  bool m_questionTitleHasBeenSet = false;
 
   DifferenceStatus m_differenceStatus{DifferenceStatus::NOT_SET};
+  bool m_questionIdHasBeenSet = false;
+  bool m_questionTitleHasBeenSet = false;
   bool m_differenceStatusHasBeenSet = false;
 };
 

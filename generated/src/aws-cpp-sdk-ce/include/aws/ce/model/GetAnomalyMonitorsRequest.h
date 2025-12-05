@@ -92,12 +92,12 @@ class GetAnomalyMonitorsRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_monitorArnList;
-  bool m_monitorArnListHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_monitorArnListHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ExchangeCodeForTokenRequestBody {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_redirectUri;
-  bool m_redirectUriHasBeenSet = false;
 
   Aws::String m_clientId;
+  bool m_codeHasBeenSet = false;
+  bool m_redirectUriHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
 };
 

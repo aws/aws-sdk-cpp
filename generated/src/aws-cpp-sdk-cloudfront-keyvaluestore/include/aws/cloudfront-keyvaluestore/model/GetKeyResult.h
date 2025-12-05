@@ -111,18 +111,18 @@ class GetKeyResult {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   long long m_totalSizeInBytes{0};
-  bool m_totalSizeInBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
+  bool m_totalSizeInBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

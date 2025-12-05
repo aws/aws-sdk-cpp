@@ -101,12 +101,12 @@ class ModifyIdentityIdFormatRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   bool m_useLongIds{false};
-  bool m_useLongIdsHasBeenSet = false;
 
   Aws::String m_principalArn;
+  bool m_resourceHasBeenSet = false;
+  bool m_useLongIdsHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
 };
 

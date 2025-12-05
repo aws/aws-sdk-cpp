@@ -240,39 +240,39 @@ class DescribeModelCardResult {
   ///@}
  private:
   Aws::String m_modelCardArn;
-  bool m_modelCardArnHasBeenSet = false;
 
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   int m_modelCardVersion{0};
-  bool m_modelCardVersionHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
-  bool m_modelCardStatusHasBeenSet = false;
 
   ModelCardSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   ModelCardProcessingStatus m_modelCardProcessingStatus{ModelCardProcessingStatus::NOT_SET};
-  bool m_modelCardProcessingStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelCardArnHasBeenSet = false;
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_modelCardVersionHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_modelCardStatusHasBeenSet = false;
+  bool m_securityConfigHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_modelCardProcessingStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class CreateVolumeResult {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_volumeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

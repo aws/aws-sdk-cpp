@@ -238,36 +238,36 @@ class DatasetImportJob {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_datasetImportJobArn;
-  bool m_datasetImportJobArnHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   ImportMode m_importMode{ImportMode::NOT_SET};
-  bool m_importModeHasBeenSet = false;
 
   bool m_publishAttributionMetricsToS3{false};
+  bool m_jobNameHasBeenSet = false;
+  bool m_datasetImportJobArnHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_importModeHasBeenSet = false;
   bool m_publishAttributionMetricsToS3HasBeenSet = false;
 };
 

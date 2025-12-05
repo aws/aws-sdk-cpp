@@ -69,9 +69,9 @@ class FaceDetection {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   FaceDetail m_face;
+  bool m_timestampHasBeenSet = false;
   bool m_faceHasBeenSet = false;
 };
 

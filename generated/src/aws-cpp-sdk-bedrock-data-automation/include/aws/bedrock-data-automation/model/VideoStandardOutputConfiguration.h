@@ -65,9 +65,9 @@ class VideoStandardOutputConfiguration {
   ///@}
  private:
   VideoStandardExtraction m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   VideoStandardGenerativeField m_generativeField;
+  bool m_extractionHasBeenSet = false;
   bool m_generativeFieldHasBeenSet = false;
 };
 

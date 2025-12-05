@@ -98,15 +98,15 @@ class ResetDistributionCacheResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Operation m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

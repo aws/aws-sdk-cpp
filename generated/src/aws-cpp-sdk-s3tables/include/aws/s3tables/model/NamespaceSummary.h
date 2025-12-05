@@ -149,21 +149,21 @@ class NamespaceSummary {
   ///@}
  private:
   Aws::Vector<Aws::String> m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   Aws::String m_tableBucketId;
+  bool m_namespaceHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
   bool m_tableBucketIdHasBeenSet = false;
 };
 

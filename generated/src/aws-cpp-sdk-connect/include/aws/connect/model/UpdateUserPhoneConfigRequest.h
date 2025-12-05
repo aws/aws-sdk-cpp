@@ -86,12 +86,12 @@ class UpdateUserPhoneConfigRequest : public ConnectRequest {
   ///@}
  private:
   UserPhoneConfig m_phoneConfig;
-  bool m_phoneConfigHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_phoneConfigHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

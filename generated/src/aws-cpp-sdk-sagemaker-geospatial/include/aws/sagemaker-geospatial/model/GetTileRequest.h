@@ -249,39 +249,39 @@ class GetTileRequest : public SageMakerGeospatialRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageAssets;
-  bool m_imageAssetsHasBeenSet = false;
 
   bool m_imageMask{false};
-  bool m_imageMaskHasBeenSet = false;
 
   OutputType m_outputDataType{OutputType::NOT_SET};
-  bool m_outputDataTypeHasBeenSet = false;
 
   Aws::String m_outputFormat;
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::String m_propertyFilters;
-  bool m_propertyFiltersHasBeenSet = false;
 
   TargetOptions m_target{TargetOptions::NOT_SET};
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_timeRangeFilter;
-  bool m_timeRangeFilterHasBeenSet = false;
 
   int m_x{0};
-  bool m_xHasBeenSet = false;
 
   int m_y{0};
-  bool m_yHasBeenSet = false;
 
   int m_z{0};
+  bool m_arnHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_imageAssetsHasBeenSet = false;
+  bool m_imageMaskHasBeenSet = false;
+  bool m_outputDataTypeHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_propertyFiltersHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_timeRangeFilterHasBeenSet = false;
+  bool m_xHasBeenSet = false;
+  bool m_yHasBeenSet = false;
   bool m_zHasBeenSet = false;
 };
 

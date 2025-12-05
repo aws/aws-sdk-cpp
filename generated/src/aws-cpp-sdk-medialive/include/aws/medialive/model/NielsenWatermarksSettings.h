@@ -90,12 +90,12 @@ class NielsenWatermarksSettings {
   ///@}
  private:
   NielsenCBET m_nielsenCbetSettings;
-  bool m_nielsenCbetSettingsHasBeenSet = false;
 
   NielsenWatermarksDistributionTypes m_nielsenDistributionType{NielsenWatermarksDistributionTypes::NOT_SET};
-  bool m_nielsenDistributionTypeHasBeenSet = false;
 
   NielsenNaesIiNw m_nielsenNaesIiNwSettings;
+  bool m_nielsenCbetSettingsHasBeenSet = false;
+  bool m_nielsenDistributionTypeHasBeenSet = false;
   bool m_nielsenNaesIiNwSettingsHasBeenSet = false;
 };
 

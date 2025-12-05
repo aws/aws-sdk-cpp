@@ -85,12 +85,12 @@ class ListTimeSeriesResult {
   ///@}
  private:
   Aws::Vector<TimeSeriesSummary> m_timeSeriesSummaries;
-  bool m_timeSeriesSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_timeSeriesSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

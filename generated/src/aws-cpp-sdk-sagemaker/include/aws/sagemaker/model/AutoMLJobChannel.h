@@ -129,15 +129,15 @@ class AutoMLJobChannel {
   ///@}
  private:
   AutoMLChannelType m_channelType{AutoMLChannelType::NOT_SET};
-  bool m_channelTypeHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   CompressionType m_compressionType{CompressionType::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   AutoMLDataSource m_dataSource;
+  bool m_channelTypeHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
 };
 

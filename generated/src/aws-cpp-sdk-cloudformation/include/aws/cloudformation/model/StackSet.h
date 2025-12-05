@@ -414,54 +414,54 @@ class StackSet {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::String m_stackSetId;
-  bool m_stackSetIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StackSetStatus m_status{StackSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_stackSetARN;
-  bool m_stackSetARNHasBeenSet = false;
 
   Aws::String m_administrationRoleARN;
-  bool m_administrationRoleARNHasBeenSet = false;
 
   Aws::String m_executionRoleName;
-  bool m_executionRoleNameHasBeenSet = false;
 
   StackSetDriftDetectionDetails m_stackSetDriftDetectionDetails;
-  bool m_stackSetDriftDetectionDetailsHasBeenSet = false;
 
   AutoDeployment m_autoDeployment;
-  bool m_autoDeploymentHasBeenSet = false;
 
   PermissionModels m_permissionModel{PermissionModels::NOT_SET};
-  bool m_permissionModelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitIds;
-  bool m_organizationalUnitIdsHasBeenSet = false;
 
   ManagedExecution m_managedExecution;
-  bool m_managedExecutionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_stackSetIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_stackSetARNHasBeenSet = false;
+  bool m_administrationRoleARNHasBeenSet = false;
+  bool m_executionRoleNameHasBeenSet = false;
+  bool m_stackSetDriftDetectionDetailsHasBeenSet = false;
+  bool m_autoDeploymentHasBeenSet = false;
+  bool m_permissionModelHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
+  bool m_managedExecutionHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

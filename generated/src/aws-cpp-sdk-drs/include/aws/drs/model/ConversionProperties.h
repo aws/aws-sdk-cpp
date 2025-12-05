@@ -162,21 +162,21 @@ class ConversionProperties {
   ///@}
  private:
   Aws::String m_dataTimestamp;
-  bool m_dataTimestampHasBeenSet = false;
 
   bool m_forceUefi{false};
-  bool m_forceUefiHasBeenSet = false;
 
   Aws::String m_rootVolumeName;
-  bool m_rootVolumeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_volumeToConversionMap;
-  bool m_volumeToConversionMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ProductCode>> m_volumeToProductCodes;
-  bool m_volumeToProductCodesHasBeenSet = false;
 
   Aws::Map<Aws::String, long long> m_volumeToVolumeSize;
+  bool m_dataTimestampHasBeenSet = false;
+  bool m_forceUefiHasBeenSet = false;
+  bool m_rootVolumeNameHasBeenSet = false;
+  bool m_volumeToConversionMapHasBeenSet = false;
+  bool m_volumeToProductCodesHasBeenSet = false;
   bool m_volumeToVolumeSizeHasBeenSet = false;
 };
 

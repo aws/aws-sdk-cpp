@@ -72,9 +72,9 @@ class ConnectionProperties {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   CrossClusterSearchConnectionProperties m_crossClusterSearch;
+  bool m_endpointHasBeenSet = false;
   bool m_crossClusterSearchHasBeenSet = false;
 };
 

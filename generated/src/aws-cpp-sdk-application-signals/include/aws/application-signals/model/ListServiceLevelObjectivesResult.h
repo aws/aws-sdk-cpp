@@ -87,12 +87,12 @@ class ListServiceLevelObjectivesResult {
   ///@}
  private:
   Aws::Vector<ServiceLevelObjectiveSummary> m_sloSummaries;
-  bool m_sloSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sloSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

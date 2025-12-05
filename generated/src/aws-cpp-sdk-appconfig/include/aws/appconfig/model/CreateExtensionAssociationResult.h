@@ -150,24 +150,24 @@ class CreateExtensionAssociationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_extensionArn;
-  bool m_extensionArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   int m_extensionVersionNumber{0};
-  bool m_extensionVersionNumberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_extensionArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_extensionVersionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

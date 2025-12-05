@@ -149,21 +149,21 @@ class DistributeImageRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_sourceImage;
-  bool m_sourceImageHasBeenSet = false;
 
   Aws::String m_distributionConfigurationArn;
-  bool m_distributionConfigurationArnHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ImageLoggingConfiguration m_loggingConfiguration;
+  bool m_sourceImageHasBeenSet = false;
+  bool m_distributionConfigurationArnHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_loggingConfigurationHasBeenSet = false;
 };
 

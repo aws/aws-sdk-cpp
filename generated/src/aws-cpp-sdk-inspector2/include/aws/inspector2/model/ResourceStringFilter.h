@@ -68,9 +68,9 @@ class ResourceStringFilter {
   ///@}
  private:
   ResourceStringComparison m_comparison{ResourceStringComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_comparisonHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

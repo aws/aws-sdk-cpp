@@ -65,9 +65,9 @@ class ConfirmSubscriptionResult {
   ///@}
  private:
   Aws::String m_subscriptionArn;
-  bool m_subscriptionArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_subscriptionArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

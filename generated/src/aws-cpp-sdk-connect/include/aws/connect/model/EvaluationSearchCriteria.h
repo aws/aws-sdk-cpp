@@ -174,24 +174,24 @@ class EvaluationSearchCriteria {
   ///@}
  private:
   Aws::Vector<EvaluationSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<EvaluationSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   NumberCondition m_numberCondition;
-  bool m_numberConditionHasBeenSet = false;
 
   BooleanCondition m_booleanCondition;
-  bool m_booleanConditionHasBeenSet = false;
 
   DateTimeCondition m_dateTimeCondition;
-  bool m_dateTimeConditionHasBeenSet = false;
 
   DecimalCondition m_decimalCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
+  bool m_stringConditionHasBeenSet = false;
+  bool m_numberConditionHasBeenSet = false;
+  bool m_booleanConditionHasBeenSet = false;
+  bool m_dateTimeConditionHasBeenSet = false;
   bool m_decimalConditionHasBeenSet = false;
 };
 

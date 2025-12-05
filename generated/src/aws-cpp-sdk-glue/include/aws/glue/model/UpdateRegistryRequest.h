@@ -70,9 +70,9 @@ class UpdateRegistryRequest : public GlueRequest {
   ///@}
  private:
   RegistryId m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_registryIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

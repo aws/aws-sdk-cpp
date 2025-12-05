@@ -135,18 +135,18 @@ class CertificateSummary {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Certificate m_certificateDetail;
-  bool m_certificateDetailHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_certificateDetailHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

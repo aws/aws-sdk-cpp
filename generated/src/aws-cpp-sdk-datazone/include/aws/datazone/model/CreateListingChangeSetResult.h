@@ -92,15 +92,15 @@ class CreateListingChangeSetResult {
   ///@}
  private:
   Aws::String m_listingId;
-  bool m_listingIdHasBeenSet = false;
 
   Aws::String m_listingRevision;
-  bool m_listingRevisionHasBeenSet = false;
 
   ListingStatus m_status{ListingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_listingIdHasBeenSet = false;
+  bool m_listingRevisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -442,75 +442,75 @@ class GetJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   JobLifecycleStatus m_lifecycleStatus{JobLifecycleStatus::NOT_SET};
-  bool m_lifecycleStatusHasBeenSet = false;
 
   Aws::String m_lifecycleStatusMessage;
-  bool m_lifecycleStatusMessageHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   TaskRunStatus m_taskRunStatus{TaskRunStatus::NOT_SET};
-  bool m_taskRunStatusHasBeenSet = false;
 
   JobTargetTaskRunStatus m_targetTaskRunStatus{JobTargetTaskRunStatus::NOT_SET};
-  bool m_targetTaskRunStatusHasBeenSet = false;
 
   Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
-  bool m_taskRunStatusCountsHasBeenSet = false;
 
   int m_taskFailureRetryCount{0};
-  bool m_taskFailureRetryCountHasBeenSet = false;
 
   Aws::String m_storageProfileId;
-  bool m_storageProfileIdHasBeenSet = false;
 
   int m_maxFailedTasksCount{0};
-  bool m_maxFailedTasksCountHasBeenSet = false;
 
   int m_maxRetriesPerTask{0};
-  bool m_maxRetriesPerTaskHasBeenSet = false;
 
   Aws::Map<Aws::String, JobParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Attachments m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_maxWorkerCount{0};
-  bool m_maxWorkerCountHasBeenSet = false;
 
   Aws::String m_sourceJobId;
-  bool m_sourceJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_lifecycleStatusHasBeenSet = false;
+  bool m_lifecycleStatusMessageHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_taskRunStatusHasBeenSet = false;
+  bool m_targetTaskRunStatusHasBeenSet = false;
+  bool m_taskRunStatusCountsHasBeenSet = false;
+  bool m_taskFailureRetryCountHasBeenSet = false;
+  bool m_storageProfileIdHasBeenSet = false;
+  bool m_maxFailedTasksCountHasBeenSet = false;
+  bool m_maxRetriesPerTaskHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_maxWorkerCountHasBeenSet = false;
+  bool m_sourceJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

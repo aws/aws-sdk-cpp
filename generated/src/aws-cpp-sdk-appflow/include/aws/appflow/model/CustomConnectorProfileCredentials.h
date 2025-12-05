@@ -128,18 +128,18 @@ class CustomConnectorProfileCredentials {
   ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   BasicAuthCredentials m_basic;
-  bool m_basicHasBeenSet = false;
 
   OAuth2Credentials m_oauth2;
-  bool m_oauth2HasBeenSet = false;
 
   ApiKeyCredentials m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   CustomAuthCredentials m_custom;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_basicHasBeenSet = false;
+  bool m_oauth2HasBeenSet = false;
+  bool m_apiKeyHasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class TextToSqlConfiguration {
   ///@}
  private:
   TextToSqlKnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
-  bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
   TextToSqlConfigurationType m_type{TextToSqlConfigurationType::NOT_SET};
+  bool m_knowledgeBaseConfigurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

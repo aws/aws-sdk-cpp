@@ -243,36 +243,36 @@ class ConnectorEntityField {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_parentIdentifier;
-  bool m_parentIdentifierHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   bool m_isPrimaryKey{false};
-  bool m_isPrimaryKeyHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   bool m_isDeprecated{false};
-  bool m_isDeprecatedHasBeenSet = false;
 
   SupportedFieldTypeDetails m_supportedFieldTypeDetails;
-  bool m_supportedFieldTypeDetailsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SourceFieldProperties m_sourceProperties;
-  bool m_sourcePropertiesHasBeenSet = false;
 
   DestinationFieldProperties m_destinationProperties;
-  bool m_destinationPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customProperties;
+  bool m_identifierHasBeenSet = false;
+  bool m_parentIdentifierHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_isPrimaryKeyHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_isDeprecatedHasBeenSet = false;
+  bool m_supportedFieldTypeDetailsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourcePropertiesHasBeenSet = false;
+  bool m_destinationPropertiesHasBeenSet = false;
   bool m_customPropertiesHasBeenSet = false;
 };
 

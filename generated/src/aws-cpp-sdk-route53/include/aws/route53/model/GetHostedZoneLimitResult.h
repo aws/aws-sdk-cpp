@@ -87,12 +87,12 @@ class GetHostedZoneLimitResult {
   ///@}
  private:
   HostedZoneLimit m_limit;
-  bool m_limitHasBeenSet = false;
 
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_limitHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -150,21 +150,21 @@ class SearchWorkersRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fleetIds;
-  bool m_fleetIdsHasBeenSet = false;
 
   SearchGroupedFilterExpressions m_filterExpressions;
-  bool m_filterExpressionsHasBeenSet = false;
 
   Aws::Vector<SearchSortExpression> m_sortExpressions;
-  bool m_sortExpressionsHasBeenSet = false;
 
   int m_itemOffset{0};
-  bool m_itemOffsetHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_farmIdHasBeenSet = false;
+  bool m_fleetIdsHasBeenSet = false;
+  bool m_filterExpressionsHasBeenSet = false;
+  bool m_sortExpressionsHasBeenSet = false;
+  bool m_itemOffsetHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

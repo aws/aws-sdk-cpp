@@ -116,18 +116,18 @@ class ListReviewTemplateAnswersRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_templateArnHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

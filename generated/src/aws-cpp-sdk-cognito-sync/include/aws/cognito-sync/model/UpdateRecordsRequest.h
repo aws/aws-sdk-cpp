@@ -174,24 +174,24 @@ class UpdateRecordsRequest : public CognitoSyncRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::Vector<RecordPatch> m_recordPatches;
-  bool m_recordPatchesHasBeenSet = false;
 
   Aws::String m_syncSessionToken;
-  bool m_syncSessionTokenHasBeenSet = false;
 
   Aws::String m_clientContext;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_identityIdHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_recordPatchesHasBeenSet = false;
+  bool m_syncSessionTokenHasBeenSet = false;
   bool m_clientContextHasBeenSet = false;
 };
 

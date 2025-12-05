@@ -99,12 +99,12 @@ class RoutingCriteria {
   ///@}
  private:
   Aws::Vector<Step> m_steps;
-  bool m_stepsHasBeenSet = false;
 
   Aws::Utils::DateTime m_activationTimestamp{};
-  bool m_activationTimestampHasBeenSet = false;
 
   int m_index{0};
+  bool m_stepsHasBeenSet = false;
+  bool m_activationTimestampHasBeenSet = false;
   bool m_indexHasBeenSet = false;
 };
 

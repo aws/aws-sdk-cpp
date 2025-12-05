@@ -365,51 +365,51 @@ class RuleGroupResponse {
   ///@}
  private:
   Aws::String m_ruleGroupArn;
-  bool m_ruleGroupArnHasBeenSet = false;
 
   Aws::String m_ruleGroupName;
-  bool m_ruleGroupNameHasBeenSet = false;
 
   Aws::String m_ruleGroupId;
-  bool m_ruleGroupIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   ResourceStatus m_ruleGroupStatus{ResourceStatus::NOT_SET};
-  bool m_ruleGroupStatusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_consumedCapacity{0};
-  bool m_consumedCapacityHasBeenSet = false;
 
   int m_numberOfAssociations{0};
-  bool m_numberOfAssociationsHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   SourceMetadata m_sourceMetadata;
-  bool m_sourceMetadataHasBeenSet = false;
 
   Aws::String m_snsTopic;
-  bool m_snsTopicHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<AnalysisResult> m_analysisResults;
-  bool m_analysisResultsHasBeenSet = false;
 
   SummaryConfiguration m_summaryConfiguration;
+  bool m_ruleGroupArnHasBeenSet = false;
+  bool m_ruleGroupNameHasBeenSet = false;
+  bool m_ruleGroupIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_ruleGroupStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
+  bool m_numberOfAssociationsHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_sourceMetadataHasBeenSet = false;
+  bool m_snsTopicHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_analysisResultsHasBeenSet = false;
   bool m_summaryConfigurationHasBeenSet = false;
 };
 

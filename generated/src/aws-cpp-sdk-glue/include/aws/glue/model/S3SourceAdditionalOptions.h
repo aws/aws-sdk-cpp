@@ -64,9 +64,9 @@ class S3SourceAdditionalOptions {
   ///@}
  private:
   long long m_boundedSize{0};
-  bool m_boundedSizeHasBeenSet = false;
 
   long long m_boundedFiles{0};
+  bool m_boundedSizeHasBeenSet = false;
   bool m_boundedFilesHasBeenSet = false;
 };
 

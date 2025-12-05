@@ -130,12 +130,12 @@ class PutEventSelectorsRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_trailName;
-  bool m_trailNameHasBeenSet = false;
 
   Aws::Vector<EventSelector> m_eventSelectors;
-  bool m_eventSelectorsHasBeenSet = false;
 
   Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
+  bool m_trailNameHasBeenSet = false;
+  bool m_eventSelectorsHasBeenSet = false;
   bool m_advancedEventSelectorsHasBeenSet = false;
 };
 

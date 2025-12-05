@@ -79,9 +79,9 @@ class UpdateRestApiRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_restApiIdHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DeleteSlackChannelConfigurationRequest : public SupportAppRequest {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_teamId;
+  bool m_channelIdHasBeenSet = false;
   bool m_teamIdHasBeenSet = false;
 };
 

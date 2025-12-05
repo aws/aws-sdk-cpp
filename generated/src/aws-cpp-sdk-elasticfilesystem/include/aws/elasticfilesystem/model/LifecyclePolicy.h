@@ -100,12 +100,12 @@ class LifecyclePolicy {
   ///@}
  private:
   TransitionToIARules m_transitionToIA{TransitionToIARules::NOT_SET};
-  bool m_transitionToIAHasBeenSet = false;
 
   TransitionToPrimaryStorageClassRules m_transitionToPrimaryStorageClass{TransitionToPrimaryStorageClassRules::NOT_SET};
-  bool m_transitionToPrimaryStorageClassHasBeenSet = false;
 
   TransitionToArchiveRules m_transitionToArchive{TransitionToArchiveRules::NOT_SET};
+  bool m_transitionToIAHasBeenSet = false;
+  bool m_transitionToPrimaryStorageClassHasBeenSet = false;
   bool m_transitionToArchiveHasBeenSet = false;
 };
 

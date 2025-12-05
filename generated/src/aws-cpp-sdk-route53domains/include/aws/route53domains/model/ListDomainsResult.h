@@ -92,12 +92,12 @@ class ListDomainsResult {
   ///@}
  private:
   Aws::Vector<DomainSummary> m_domains;
-  bool m_domainsHasBeenSet = false;
 
   Aws::String m_nextPageMarker;
-  bool m_nextPageMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainsHasBeenSet = false;
+  bool m_nextPageMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

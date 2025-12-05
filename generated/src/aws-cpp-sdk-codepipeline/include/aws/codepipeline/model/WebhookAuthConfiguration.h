@@ -81,9 +81,9 @@ class WebhookAuthConfiguration {
   ///@}
  private:
   Aws::String m_allowedIPRange;
-  bool m_allowedIPRangeHasBeenSet = false;
 
   Aws::String m_secretToken;
+  bool m_allowedIPRangeHasBeenSet = false;
   bool m_secretTokenHasBeenSet = false;
 };
 

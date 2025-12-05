@@ -87,12 +87,12 @@ class CheckpointDurableExecutionResult {
   ///@}
  private:
   Aws::String m_checkpointToken;
-  bool m_checkpointTokenHasBeenSet = false;
 
   CheckpointUpdatedExecutionState m_newExecutionState;
-  bool m_newExecutionStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_checkpointTokenHasBeenSet = false;
+  bool m_newExecutionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

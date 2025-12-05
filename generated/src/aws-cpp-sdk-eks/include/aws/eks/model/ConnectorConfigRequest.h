@@ -69,9 +69,9 @@ class ConnectorConfigRequest {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ConnectorConfigProvider m_provider{ConnectorConfigProvider::NOT_SET};
+  bool m_roleArnHasBeenSet = false;
   bool m_providerHasBeenSet = false;
 };
 

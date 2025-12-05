@@ -88,12 +88,12 @@ class SimpleRule {
   ///@}
  private:
   Aws::String m_inputProperty;
-  bool m_inputPropertyHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::String m_threshold;
+  bool m_inputPropertyHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
 };
 

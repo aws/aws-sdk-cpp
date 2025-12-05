@@ -77,9 +77,9 @@ class BodySectionRepeatDimensionConfiguration {
   ///@}
  private:
   BodySectionDynamicCategoryDimensionConfiguration m_dynamicCategoryDimensionConfiguration;
-  bool m_dynamicCategoryDimensionConfigurationHasBeenSet = false;
 
   BodySectionDynamicNumericDimensionConfiguration m_dynamicNumericDimensionConfiguration;
+  bool m_dynamicCategoryDimensionConfigurationHasBeenSet = false;
   bool m_dynamicNumericDimensionConfigurationHasBeenSet = false;
 };
 

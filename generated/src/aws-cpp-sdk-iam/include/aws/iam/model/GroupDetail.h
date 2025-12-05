@@ -183,24 +183,24 @@ class GroupDetail {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Vector<PolicyDetail> m_groupPolicyList;
-  bool m_groupPolicyListHasBeenSet = false;
 
   Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
+  bool m_pathHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_groupPolicyListHasBeenSet = false;
   bool m_attachedManagedPoliciesHasBeenSet = false;
 };
 

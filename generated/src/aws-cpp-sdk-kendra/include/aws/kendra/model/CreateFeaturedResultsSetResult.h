@@ -62,9 +62,9 @@ class CreateFeaturedResultsSetResult {
   ///@}
  private:
   FeaturedResultsSet m_featuredResultsSet;
-  bool m_featuredResultsSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featuredResultsSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

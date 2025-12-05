@@ -89,12 +89,12 @@ class FilterCrossSheetControl {
   ///@}
  private:
   Aws::String m_filterControlId;
-  bool m_filterControlIdHasBeenSet = false;
 
   Aws::String m_sourceFilterId;
-  bool m_sourceFilterIdHasBeenSet = false;
 
   CascadingControlConfiguration m_cascadingControlConfiguration;
+  bool m_filterControlIdHasBeenSet = false;
+  bool m_sourceFilterIdHasBeenSet = false;
   bool m_cascadingControlConfigurationHasBeenSet = false;
 };
 

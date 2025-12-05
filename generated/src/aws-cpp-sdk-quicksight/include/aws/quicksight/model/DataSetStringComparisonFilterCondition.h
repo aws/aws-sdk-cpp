@@ -71,9 +71,9 @@ class DataSetStringComparisonFilterCondition {
   ///@}
  private:
   DataSetStringComparisonFilterOperator m_operator{DataSetStringComparisonFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DataSetStringFilterValue m_value;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

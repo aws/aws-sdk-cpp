@@ -116,15 +116,15 @@ class CreateFleetError {
   ///@}
  private:
   LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;
-  bool m_launchTemplateAndOverridesHasBeenSet = false;
 
   InstanceLifecycle m_lifecycle{InstanceLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_launchTemplateAndOverridesHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

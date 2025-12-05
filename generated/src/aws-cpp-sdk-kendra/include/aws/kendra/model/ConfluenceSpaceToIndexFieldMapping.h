@@ -93,12 +93,12 @@ class ConfluenceSpaceToIndexFieldMapping {
   ///@}
  private:
   ConfluenceSpaceFieldName m_dataSourceFieldName{ConfluenceSpaceFieldName::NOT_SET};
-  bool m_dataSourceFieldNameHasBeenSet = false;
 
   Aws::String m_dateFieldFormat;
-  bool m_dateFieldFormatHasBeenSet = false;
 
   Aws::String m_indexFieldName;
+  bool m_dataSourceFieldNameHasBeenSet = false;
+  bool m_dateFieldFormatHasBeenSet = false;
   bool m_indexFieldNameHasBeenSet = false;
 };
 

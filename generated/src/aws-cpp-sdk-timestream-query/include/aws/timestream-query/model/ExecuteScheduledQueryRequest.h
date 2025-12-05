@@ -110,15 +110,15 @@ class ExecuteScheduledQueryRequest : public TimestreamQueryRequest {
   ///@}
  private:
   Aws::String m_scheduledQueryArn;
-  bool m_scheduledQueryArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationTime{};
-  bool m_invocationTimeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ScheduledQueryInsights m_queryInsights;
+  bool m_scheduledQueryArnHasBeenSet = false;
+  bool m_invocationTimeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_queryInsightsHasBeenSet = false;
 };
 

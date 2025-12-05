@@ -149,21 +149,21 @@ class DatasetSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetType;
-  bool m_datasetTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

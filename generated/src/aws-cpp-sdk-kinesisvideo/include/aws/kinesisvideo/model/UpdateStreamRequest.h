@@ -131,18 +131,18 @@ class UpdateStreamRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_mediaType;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
   bool m_mediaTypeHasBeenSet = false;
 };
 

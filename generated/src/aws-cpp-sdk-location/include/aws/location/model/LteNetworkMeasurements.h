@@ -112,18 +112,18 @@ class LteNetworkMeasurements {
   ///@}
  private:
   int m_earfcn{0};
-  bool m_earfcnHasBeenSet = false;
 
   int m_cellId{0};
-  bool m_cellIdHasBeenSet = false;
 
   int m_pci{0};
-  bool m_pciHasBeenSet = false;
 
   int m_rsrp{0};
-  bool m_rsrpHasBeenSet = false;
 
   double m_rsrq{0.0};
+  bool m_earfcnHasBeenSet = false;
+  bool m_cellIdHasBeenSet = false;
+  bool m_pciHasBeenSet = false;
+  bool m_rsrpHasBeenSet = false;
   bool m_rsrqHasBeenSet = false;
 };
 

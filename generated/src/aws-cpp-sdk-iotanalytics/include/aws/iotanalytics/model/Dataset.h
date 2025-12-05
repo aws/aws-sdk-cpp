@@ -273,36 +273,36 @@ class Dataset {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<DatasetAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<DatasetTrigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::Vector<DatasetContentDeliveryRule> m_contentDeliveryRules;
-  bool m_contentDeliveryRulesHasBeenSet = false;
 
   DatasetStatus m_status{DatasetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   VersioningConfiguration m_versioningConfiguration;
-  bool m_versioningConfigurationHasBeenSet = false;
 
   Aws::Vector<LateDataRule> m_lateDataRules;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_triggersHasBeenSet = false;
+  bool m_contentDeliveryRulesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_versioningConfigurationHasBeenSet = false;
   bool m_lateDataRulesHasBeenSet = false;
 };
 

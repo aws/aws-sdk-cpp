@@ -60,9 +60,9 @@ class DescribeDatasetResult {
   ///@}
  private:
   DatasetProperties m_datasetProperties;
-  bool m_datasetPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -196,24 +196,24 @@ class InstanceProfile {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::String m_instanceProfileId;
-  bool m_instanceProfileIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Vector<Role> m_roles;
-  bool m_rolesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_pathHasBeenSet = false;
+  bool m_instanceProfileNameHasBeenSet = false;
+  bool m_instanceProfileIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_rolesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

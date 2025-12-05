@@ -74,9 +74,9 @@ class RealTimeContactAnalysisTranscriptItemWithCharacterOffsets {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RealTimeContactAnalysisCharacterInterval m_characterOffsets;
+  bool m_idHasBeenSet = false;
   bool m_characterOffsetsHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class SegmentDemographics {
   ///@}
  private:
   SetDimension m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   SetDimension m_channel;
-  bool m_channelHasBeenSet = false;
 
   SetDimension m_deviceType;
-  bool m_deviceTypeHasBeenSet = false;
 
   SetDimension m_make;
-  bool m_makeHasBeenSet = false;
 
   SetDimension m_model;
-  bool m_modelHasBeenSet = false;
 
   SetDimension m_platform;
+  bool m_appVersionHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_deviceTypeHasBeenSet = false;
+  bool m_makeHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

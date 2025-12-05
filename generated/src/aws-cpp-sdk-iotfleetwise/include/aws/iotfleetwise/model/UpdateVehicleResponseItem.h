@@ -68,9 +68,9 @@ class UpdateVehicleResponseItem {
   ///@}
  private:
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_vehicleNameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

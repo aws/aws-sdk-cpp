@@ -133,18 +133,18 @@ class ClassificationDetails {
   ///@}
  private:
   Aws::String m_detailedResultsLocation;
-  bool m_detailedResultsLocationHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   OriginType m_originType{OriginType::NOT_SET};
-  bool m_originTypeHasBeenSet = false;
 
   ClassificationResult m_result;
+  bool m_detailedResultsLocationHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_originTypeHasBeenSet = false;
   bool m_resultHasBeenSet = false;
 };
 

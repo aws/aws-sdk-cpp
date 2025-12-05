@@ -80,9 +80,9 @@ class Settings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::String m_securityGroupId;
+  bool m_subnetsHasBeenSet = false;
   bool m_securityGroupIdHasBeenSet = false;
 };
 

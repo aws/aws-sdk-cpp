@@ -389,42 +389,42 @@ this parameter for an
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationArns;
-  bool m_notificationArnsHasBeenSet = false;
 
   Aws::Vector<ParameterValue> m_parameterOverrides;
-  bool m_parameterOverridesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   RollbackConfiguration m_rollbackConfiguration;
-  bool m_rollbackConfigurationHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_notificationArnsHasBeenSet = false;
+  bool m_parameterOverridesHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_rollbackConfigurationHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
 };
 

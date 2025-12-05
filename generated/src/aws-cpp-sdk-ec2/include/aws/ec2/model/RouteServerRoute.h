@@ -204,27 +204,27 @@ class RouteServerRoute {
   ///@}
  private:
   Aws::String m_routeServerEndpointId;
-  bool m_routeServerEndpointIdHasBeenSet = false;
 
   Aws::String m_routeServerPeerId;
-  bool m_routeServerPeerIdHasBeenSet = false;
 
   Aws::Vector<RouteServerRouteInstallationDetail> m_routeInstallationDetails;
-  bool m_routeInstallationDetailsHasBeenSet = false;
 
   RouteServerRouteStatus m_routeStatus{RouteServerRouteStatus::NOT_SET};
-  bool m_routeStatusHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_asPaths;
-  bool m_asPathsHasBeenSet = false;
 
   int m_med{0};
-  bool m_medHasBeenSet = false;
 
   Aws::String m_nextHopIp;
+  bool m_routeServerEndpointIdHasBeenSet = false;
+  bool m_routeServerPeerIdHasBeenSet = false;
+  bool m_routeInstallationDetailsHasBeenSet = false;
+  bool m_routeStatusHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_asPathsHasBeenSet = false;
+  bool m_medHasBeenSet = false;
   bool m_nextHopIpHasBeenSet = false;
 };
 

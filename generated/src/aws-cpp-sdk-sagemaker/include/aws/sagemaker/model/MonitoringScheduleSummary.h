@@ -175,27 +175,27 @@ class MonitoringScheduleSummary {
   ///@}
  private:
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   Aws::String m_monitoringScheduleArn;
-  bool m_monitoringScheduleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   ScheduleStatus m_monitoringScheduleStatus{ScheduleStatus::NOT_SET};
-  bool m_monitoringScheduleStatusHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_monitoringJobDefinitionName;
-  bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
   MonitoringType m_monitoringType{MonitoringType::NOT_SET};
+  bool m_monitoringScheduleNameHasBeenSet = false;
+  bool m_monitoringScheduleArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_monitoringScheduleStatusHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_monitoringJobDefinitionNameHasBeenSet = false;
   bool m_monitoringTypeHasBeenSet = false;
 };
 

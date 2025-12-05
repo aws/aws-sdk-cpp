@@ -111,15 +111,15 @@ class KeyAttributes {
   ///@}
  private:
   KeyUsage m_keyUsage{KeyUsage::NOT_SET};
-  bool m_keyUsageHasBeenSet = false;
 
   KeyClass m_keyClass{KeyClass::NOT_SET};
-  bool m_keyClassHasBeenSet = false;
 
   KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
-  bool m_keyAlgorithmHasBeenSet = false;
 
   KeyModesOfUse m_keyModesOfUse;
+  bool m_keyUsageHasBeenSet = false;
+  bool m_keyClassHasBeenSet = false;
+  bool m_keyAlgorithmHasBeenSet = false;
   bool m_keyModesOfUseHasBeenSet = false;
 };
 

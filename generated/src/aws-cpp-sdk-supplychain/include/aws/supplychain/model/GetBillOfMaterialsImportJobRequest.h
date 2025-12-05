@@ -69,9 +69,9 @@ class GetBillOfMaterialsImportJobRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

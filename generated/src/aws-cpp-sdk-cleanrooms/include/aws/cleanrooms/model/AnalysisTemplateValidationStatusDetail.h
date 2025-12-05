@@ -99,12 +99,12 @@ class AnalysisTemplateValidationStatusDetail {
   ///@}
  private:
   AnalysisTemplateValidationType m_type{AnalysisTemplateValidationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AnalysisTemplateValidationStatus m_status{AnalysisTemplateValidationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<AnalysisTemplateValidationStatusReason> m_reasons;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;
 };
 

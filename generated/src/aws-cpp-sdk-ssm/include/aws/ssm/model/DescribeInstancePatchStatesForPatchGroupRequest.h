@@ -114,15 +114,15 @@ class DescribeInstancePatchStatesForPatchGroupRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_patchGroup;
-  bool m_patchGroupHasBeenSet = false;
 
   Aws::Vector<InstancePatchStateFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_patchGroupHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class AttachTypedLinkResult {
   ///@}
  private:
   TypedLinkSpecifier m_typedLinkSpecifier;
-  bool m_typedLinkSpecifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typedLinkSpecifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

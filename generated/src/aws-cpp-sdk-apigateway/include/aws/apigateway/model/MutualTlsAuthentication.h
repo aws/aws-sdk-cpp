@@ -105,12 +105,12 @@ class MutualTlsAuthentication {
   ///@}
  private:
   Aws::String m_truststoreUri;
-  bool m_truststoreUriHasBeenSet = false;
 
   Aws::String m_truststoreVersion;
-  bool m_truststoreVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_truststoreWarnings;
+  bool m_truststoreUriHasBeenSet = false;
+  bool m_truststoreVersionHasBeenSet = false;
   bool m_truststoreWarningsHasBeenSet = false;
 };
 

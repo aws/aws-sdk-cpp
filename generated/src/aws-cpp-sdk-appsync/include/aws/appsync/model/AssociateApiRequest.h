@@ -65,9 +65,9 @@ class AssociateApiRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_apiId;
+  bool m_domainNameHasBeenSet = false;
   bool m_apiIdHasBeenSet = false;
 };
 

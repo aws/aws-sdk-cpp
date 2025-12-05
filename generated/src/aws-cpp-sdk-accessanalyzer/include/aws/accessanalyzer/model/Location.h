@@ -77,9 +77,9 @@ class Location {
   ///@}
  private:
   Aws::Vector<PathElement> m_path;
-  bool m_pathHasBeenSet = false;
 
   Span m_span;
+  bool m_pathHasBeenSet = false;
   bool m_spanHasBeenSet = false;
 };
 

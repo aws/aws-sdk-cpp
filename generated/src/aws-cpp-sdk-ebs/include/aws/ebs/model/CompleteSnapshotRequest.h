@@ -123,18 +123,18 @@ class CompleteSnapshotRequest : public EBSRequest {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   int m_changedBlocksCount{0};
-  bool m_changedBlocksCountHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   ChecksumAggregationMethod m_checksumAggregationMethod{ChecksumAggregationMethod::NOT_SET};
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_changedBlocksCountHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
   bool m_checksumAggregationMethodHasBeenSet = false;
 };
 

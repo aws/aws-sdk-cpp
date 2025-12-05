@@ -79,12 +79,12 @@ class GetAccessPointPolicyStatusForObjectLambdaResult {
   ///@}
  private:
   PolicyStatus m_policyStatus;
-  bool m_policyStatusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_policyStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

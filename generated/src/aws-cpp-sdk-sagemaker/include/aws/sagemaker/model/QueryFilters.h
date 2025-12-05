@@ -190,24 +190,24 @@ class QueryFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Vector<LineageType> m_lineageTypes;
-  bool m_lineageTypesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedBefore{};
-  bool m_modifiedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAfter{};
-  bool m_modifiedAfterHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
+  bool m_typesHasBeenSet = false;
+  bool m_lineageTypesHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_modifiedBeforeHasBeenSet = false;
+  bool m_modifiedAfterHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

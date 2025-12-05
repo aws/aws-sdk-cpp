@@ -196,27 +196,27 @@ class CreateSnapshotScheduleResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_scheduleDefinitions;
-  bool m_scheduleDefinitionsHasBeenSet = false;
 
   Aws::String m_scheduleIdentifier;
-  bool m_scheduleIdentifierHasBeenSet = false;
 
   Aws::String m_scheduleDescription;
-  bool m_scheduleDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
-  bool m_nextInvocationsHasBeenSet = false;
 
   int m_associatedClusterCount{0};
-  bool m_associatedClusterCountHasBeenSet = false;
 
   Aws::Vector<ClusterAssociatedToSchedule> m_associatedClusters;
-  bool m_associatedClustersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_scheduleDefinitionsHasBeenSet = false;
+  bool m_scheduleIdentifierHasBeenSet = false;
+  bool m_scheduleDescriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_nextInvocationsHasBeenSet = false;
+  bool m_associatedClusterCountHasBeenSet = false;
+  bool m_associatedClustersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

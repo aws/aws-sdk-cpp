@@ -69,9 +69,9 @@ class DescribeKeyRegistrationRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   bool m_defaultKeyOnly{false};
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_defaultKeyOnlyHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class StartCondition {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EventStartCondition m_eventStartCondition;
-  bool m_eventStartConditionHasBeenSet = false;
 
   SegmentCondition m_segmentStartCondition;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventStartConditionHasBeenSet = false;
   bool m_segmentStartConditionHasBeenSet = false;
 };
 

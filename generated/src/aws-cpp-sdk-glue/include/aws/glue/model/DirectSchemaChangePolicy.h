@@ -104,15 +104,15 @@ class DirectSchemaChangePolicy {
   ///@}
  private:
   bool m_enableUpdateCatalog{false};
-  bool m_enableUpdateCatalogHasBeenSet = false;
 
   UpdateCatalogBehavior m_updateBehavior{UpdateCatalogBehavior::NOT_SET};
-  bool m_updateBehaviorHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_database;
+  bool m_enableUpdateCatalogHasBeenSet = false;
+  bool m_updateBehaviorHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
   bool m_databaseHasBeenSet = false;
 };
 

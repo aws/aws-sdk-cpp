@@ -87,12 +87,12 @@ class AwsOpenSearchServiceDomainMasterUserOptionsDetails {
   ///@}
  private:
   Aws::String m_masterUserArn;
-  bool m_masterUserArnHasBeenSet = false;
 
   Aws::String m_masterUserName;
-  bool m_masterUserNameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
+  bool m_masterUserArnHasBeenSet = false;
+  bool m_masterUserNameHasBeenSet = false;
   bool m_masterUserPasswordHasBeenSet = false;
 };
 

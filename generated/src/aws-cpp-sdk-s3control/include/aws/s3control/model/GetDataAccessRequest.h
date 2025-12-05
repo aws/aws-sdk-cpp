@@ -165,21 +165,21 @@ class GetDataAccessRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Privilege m_privilege{Privilege::NOT_SET};
-  bool m_privilegeHasBeenSet = false;
 
   S3PrefixType m_targetType{S3PrefixType::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_privilegeHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
 };
 

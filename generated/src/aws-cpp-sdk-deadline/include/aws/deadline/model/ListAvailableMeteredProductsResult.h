@@ -90,12 +90,12 @@ class ListAvailableMeteredProductsResult {
   ///@}
  private:
   Aws::Vector<MeteredProductSummary> m_meteredProducts;
-  bool m_meteredProductsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_meteredProductsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

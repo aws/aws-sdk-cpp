@@ -83,9 +83,9 @@ class SqlInjectionMatchSetUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   SqlInjectionMatchTuple m_sqlInjectionMatchTuple;
+  bool m_actionHasBeenSet = false;
   bool m_sqlInjectionMatchTupleHasBeenSet = false;
 };
 

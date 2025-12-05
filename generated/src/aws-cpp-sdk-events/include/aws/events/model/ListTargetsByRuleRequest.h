@@ -103,15 +103,15 @@ class ListTargetsByRuleRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::String m_eventBusName;
-  bool m_eventBusNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_ruleHasBeenSet = false;
+  bool m_eventBusNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

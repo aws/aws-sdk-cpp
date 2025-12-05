@@ -102,15 +102,15 @@ class UpdateAdapterRequest : public TextractRequest {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_adapterName;
-  bool m_adapterNameHasBeenSet = false;
 
   AutoUpdate m_autoUpdate{AutoUpdate::NOT_SET};
+  bool m_adapterIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_adapterNameHasBeenSet = false;
   bool m_autoUpdateHasBeenSet = false;
 };
 

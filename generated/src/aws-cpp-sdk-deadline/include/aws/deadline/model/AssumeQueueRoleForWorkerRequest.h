@@ -106,15 +106,15 @@ class AssumeQueueRoleForWorkerRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::String m_queueId;
+  bool m_farmIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
 };
 

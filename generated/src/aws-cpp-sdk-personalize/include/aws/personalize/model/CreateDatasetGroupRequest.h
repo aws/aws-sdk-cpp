@@ -137,18 +137,18 @@ class CreateDatasetGroupRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

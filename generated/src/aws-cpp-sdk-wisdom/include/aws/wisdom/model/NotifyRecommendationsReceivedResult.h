@@ -91,12 +91,12 @@ class NotifyRecommendationsReceivedResult {
   ///@}
  private:
   Aws::Vector<NotifyRecommendationsReceivedError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
-  bool m_recommendationIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_recommendationIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class ControlSet {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Control> m_controls;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_controlsHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class GetIpamDiscoveredPublicAddressesResponse {
   ///@}
  private:
   Aws::Vector<IpamDiscoveredPublicAddress> m_ipamDiscoveredPublicAddresses;
-  bool m_ipamDiscoveredPublicAddressesHasBeenSet = false;
 
   Aws::Utils::DateTime m_oldestSampleTime{};
-  bool m_oldestSampleTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamDiscoveredPublicAddressesHasBeenSet = false;
+  bool m_oldestSampleTimeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

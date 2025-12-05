@@ -150,18 +150,18 @@ class SendUsersMessageRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_context;
-  bool m_contextHasBeenSet = false;
 
   DirectMessageConfiguration m_messageConfiguration;
-  bool m_messageConfigurationHasBeenSet = false;
 
   TemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, EndpointSendConfiguration> m_users;
+  bool m_contextHasBeenSet = false;
+  bool m_messageConfigurationHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
   bool m_usersHasBeenSet = false;
 };
 

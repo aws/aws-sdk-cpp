@@ -148,21 +148,21 @@ class ProjectDescription {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   ProjectStatus m_status{ProjectStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<DatasetMetadata> m_datasets;
-  bool m_datasetsHasBeenSet = false;
 
   CustomizationFeature m_feature{CustomizationFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   ProjectAutoUpdate m_autoUpdate{ProjectAutoUpdate::NOT_SET};
+  bool m_projectArnHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_datasetsHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
   bool m_autoUpdateHasBeenSet = false;
 };
 

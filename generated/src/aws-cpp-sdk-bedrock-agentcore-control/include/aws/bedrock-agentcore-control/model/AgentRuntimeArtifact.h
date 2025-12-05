@@ -70,9 +70,9 @@ class AgentRuntimeArtifact {
   ///@}
  private:
   ContainerConfiguration m_containerConfiguration;
-  bool m_containerConfigurationHasBeenSet = false;
 
   CodeConfiguration m_codeConfiguration;
+  bool m_containerConfigurationHasBeenSet = false;
   bool m_codeConfigurationHasBeenSet = false;
 };
 

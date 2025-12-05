@@ -70,9 +70,9 @@ class GetPolicyGenerationRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_policyGenerationId;
-  bool m_policyGenerationIdHasBeenSet = false;
 
   Aws::String m_policyEngineId;
+  bool m_policyGenerationIdHasBeenSet = false;
   bool m_policyEngineIdHasBeenSet = false;
 };
 

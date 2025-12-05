@@ -103,15 +103,15 @@ class TypedAttributeValueRange {
   ///@}
  private:
   RangeMode m_startMode{RangeMode::NOT_SET};
-  bool m_startModeHasBeenSet = false;
 
   TypedAttributeValue m_startValue;
-  bool m_startValueHasBeenSet = false;
 
   RangeMode m_endMode{RangeMode::NOT_SET};
-  bool m_endModeHasBeenSet = false;
 
   TypedAttributeValue m_endValue;
+  bool m_startModeHasBeenSet = false;
+  bool m_startValueHasBeenSet = false;
+  bool m_endModeHasBeenSet = false;
   bool m_endValueHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class ListAccessGrantsInstanceEntry {
   ///@}
  private:
   Aws::String m_accessGrantsInstanceId;
-  bool m_accessGrantsInstanceIdHasBeenSet = false;
 
   Aws::String m_accessGrantsInstanceArn;
-  bool m_accessGrantsInstanceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_identityCenterInstanceArn;
-  bool m_identityCenterInstanceArnHasBeenSet = false;
 
   Aws::String m_identityCenterApplicationArn;
+  bool m_accessGrantsInstanceIdHasBeenSet = false;
+  bool m_accessGrantsInstanceArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_identityCenterInstanceArnHasBeenSet = false;
   bool m_identityCenterApplicationArnHasBeenSet = false;
 };
 

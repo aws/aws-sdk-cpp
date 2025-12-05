@@ -75,9 +75,9 @@ class CreateStandbyWorkspacesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_primaryRegion;
-  bool m_primaryRegionHasBeenSet = false;
 
   Aws::Vector<StandbyWorkspace> m_standbyWorkspaces;
+  bool m_primaryRegionHasBeenSet = false;
   bool m_standbyWorkspacesHasBeenSet = false;
 };
 

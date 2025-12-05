@@ -110,15 +110,15 @@ class ResourceCatalog {
   ///@}
  private:
   Aws::String m_resourceCatalogArn;
-  bool m_resourceCatalogArnHasBeenSet = false;
 
   Aws::String m_resourceCatalogName;
-  bool m_resourceCatalogNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_resourceCatalogArnHasBeenSet = false;
+  bool m_resourceCatalogNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

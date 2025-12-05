@@ -106,15 +106,15 @@ class AgentCollaboratorInvocationOutput {
   ///@}
  private:
   Aws::String m_agentCollaboratorAliasArn;
-  bool m_agentCollaboratorAliasArnHasBeenSet = false;
 
   Aws::String m_agentCollaboratorName;
-  bool m_agentCollaboratorNameHasBeenSet = false;
 
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   AgentCollaboratorOutputPayload m_output;
+  bool m_agentCollaboratorAliasArnHasBeenSet = false;
+  bool m_agentCollaboratorNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_outputHasBeenSet = false;
 };
 

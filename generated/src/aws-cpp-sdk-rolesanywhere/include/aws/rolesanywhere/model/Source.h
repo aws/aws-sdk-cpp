@@ -68,9 +68,9 @@ class Source {
   ///@}
  private:
   SourceData m_sourceData;
-  bool m_sourceDataHasBeenSet = false;
 
   TrustAnchorType m_sourceType{TrustAnchorType::NOT_SET};
+  bool m_sourceDataHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

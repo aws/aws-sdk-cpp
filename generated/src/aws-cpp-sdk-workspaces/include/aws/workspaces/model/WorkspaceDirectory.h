@@ -604,90 +604,90 @@ class WorkspaceDirectory {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_directoryName;
-  bool m_directoryNameHasBeenSet = false;
 
   Aws::String m_registrationCode;
-  bool m_registrationCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddresses;
-  bool m_dnsIpAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpv6Addresses;
-  bool m_dnsIpv6AddressesHasBeenSet = false;
 
   Aws::String m_customerUserName;
-  bool m_customerUserNameHasBeenSet = false;
 
   Aws::String m_iamRoleId;
-  bool m_iamRoleIdHasBeenSet = false;
 
   WorkspaceDirectoryType m_directoryType{WorkspaceDirectoryType::NOT_SET};
-  bool m_directoryTypeHasBeenSet = false;
 
   Aws::String m_workspaceSecurityGroupId;
-  bool m_workspaceSecurityGroupIdHasBeenSet = false;
 
   WorkspaceDirectoryState m_state{WorkspaceDirectoryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   DefaultWorkspaceCreationProperties m_workspaceCreationProperties;
-  bool m_workspaceCreationPropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipGroupIds;
-  bool m_ipGroupIdsHasBeenSet = false;
 
   WorkspaceAccessProperties m_workspaceAccessProperties;
-  bool m_workspaceAccessPropertiesHasBeenSet = false;
 
   Tenancy m_tenancy{Tenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   SelfservicePermissions m_selfservicePermissions;
-  bool m_selfservicePermissionsHasBeenSet = false;
 
   SamlProperties m_samlProperties;
-  bool m_samlPropertiesHasBeenSet = false;
 
   CertificateBasedAuthProperties m_certificateBasedAuthProperties;
-  bool m_certificateBasedAuthPropertiesHasBeenSet = false;
 
   EndpointEncryptionMode m_endpointEncryptionMode{EndpointEncryptionMode::NOT_SET};
-  bool m_endpointEncryptionModeHasBeenSet = false;
 
   MicrosoftEntraConfig m_microsoftEntraConfig;
-  bool m_microsoftEntraConfigHasBeenSet = false;
 
   Aws::String m_workspaceDirectoryName;
-  bool m_workspaceDirectoryNameHasBeenSet = false;
 
   Aws::String m_workspaceDirectoryDescription;
-  bool m_workspaceDirectoryDescriptionHasBeenSet = false;
 
   UserIdentityType m_userIdentityType{UserIdentityType::NOT_SET};
-  bool m_userIdentityTypeHasBeenSet = false;
 
   WorkspaceType m_workspaceType{WorkspaceType::NOT_SET};
-  bool m_workspaceTypeHasBeenSet = false;
 
   IDCConfig m_iDCConfig;
-  bool m_iDCConfigHasBeenSet = false;
 
   ActiveDirectoryConfig m_activeDirectoryConfig;
-  bool m_activeDirectoryConfigHasBeenSet = false;
 
   StreamingProperties m_streamingProperties;
-  bool m_streamingPropertiesHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_directoryNameHasBeenSet = false;
+  bool m_registrationCodeHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_dnsIpAddressesHasBeenSet = false;
+  bool m_dnsIpv6AddressesHasBeenSet = false;
+  bool m_customerUserNameHasBeenSet = false;
+  bool m_iamRoleIdHasBeenSet = false;
+  bool m_directoryTypeHasBeenSet = false;
+  bool m_workspaceSecurityGroupIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_workspaceCreationPropertiesHasBeenSet = false;
+  bool m_ipGroupIdsHasBeenSet = false;
+  bool m_workspaceAccessPropertiesHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_selfservicePermissionsHasBeenSet = false;
+  bool m_samlPropertiesHasBeenSet = false;
+  bool m_certificateBasedAuthPropertiesHasBeenSet = false;
+  bool m_endpointEncryptionModeHasBeenSet = false;
+  bool m_microsoftEntraConfigHasBeenSet = false;
+  bool m_workspaceDirectoryNameHasBeenSet = false;
+  bool m_workspaceDirectoryDescriptionHasBeenSet = false;
+  bool m_userIdentityTypeHasBeenSet = false;
+  bool m_workspaceTypeHasBeenSet = false;
+  bool m_iDCConfigHasBeenSet = false;
+  bool m_activeDirectoryConfigHasBeenSet = false;
+  bool m_streamingPropertiesHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

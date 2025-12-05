@@ -118,15 +118,15 @@ class DescribeCacheParametersResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<CacheNodeTypeSpecificParameter> m_cacheNodeTypeSpecificParameters;
-  bool m_cacheNodeTypeSpecificParametersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_cacheNodeTypeSpecificParametersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

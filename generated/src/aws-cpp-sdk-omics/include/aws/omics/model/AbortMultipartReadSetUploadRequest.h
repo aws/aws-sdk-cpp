@@ -65,9 +65,9 @@ class AbortMultipartReadSetUploadRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_uploadId;
+  bool m_sequenceStoreIdHasBeenSet = false;
   bool m_uploadIdHasBeenSet = false;
 };
 

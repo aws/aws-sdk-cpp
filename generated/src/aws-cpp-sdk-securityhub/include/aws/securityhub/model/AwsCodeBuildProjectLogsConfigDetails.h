@@ -69,9 +69,9 @@ class AwsCodeBuildProjectLogsConfigDetails {
   ///@}
  private:
   AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   AwsCodeBuildProjectLogsConfigS3LogsDetails m_s3Logs;
+  bool m_cloudWatchLogsHasBeenSet = false;
   bool m_s3LogsHasBeenSet = false;
 };
 

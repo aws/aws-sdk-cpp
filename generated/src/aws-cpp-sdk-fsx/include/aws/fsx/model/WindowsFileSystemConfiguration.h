@@ -407,54 +407,54 @@ class WindowsFileSystemConfiguration {
   ///@}
  private:
   Aws::String m_activeDirectoryId;
-  bool m_activeDirectoryIdHasBeenSet = false;
 
   SelfManagedActiveDirectoryAttributes m_selfManagedActiveDirectoryConfiguration;
-  bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
   WindowsDeploymentType m_deploymentType{WindowsDeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   Aws::String m_remoteAdministrationEndpoint;
-  bool m_remoteAdministrationEndpointHasBeenSet = false;
 
   Aws::String m_preferredSubnetId;
-  bool m_preferredSubnetIdHasBeenSet = false;
 
   Aws::String m_preferredFileServerIp;
-  bool m_preferredFileServerIpHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   Aws::Vector<FileSystemMaintenanceOperation> m_maintenanceOperationsInProgress;
-  bool m_maintenanceOperationsInProgressHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   bool m_copyTagsToBackups{false};
-  bool m_copyTagsToBackupsHasBeenSet = false;
 
   Aws::Vector<Alias> m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   WindowsAuditLogConfiguration m_auditLogConfiguration;
-  bool m_auditLogConfigurationHasBeenSet = false;
 
   DiskIopsConfiguration m_diskIopsConfiguration;
-  bool m_diskIopsConfigurationHasBeenSet = false;
 
   Aws::String m_preferredFileServerIpv6;
-  bool m_preferredFileServerIpv6HasBeenSet = false;
 
   WindowsFsrmConfiguration m_fsrmConfiguration;
+  bool m_activeDirectoryIdHasBeenSet = false;
+  bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_remoteAdministrationEndpointHasBeenSet = false;
+  bool m_preferredSubnetIdHasBeenSet = false;
+  bool m_preferredFileServerIpHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
+  bool m_maintenanceOperationsInProgressHasBeenSet = false;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_copyTagsToBackupsHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_auditLogConfigurationHasBeenSet = false;
+  bool m_diskIopsConfigurationHasBeenSet = false;
+  bool m_preferredFileServerIpv6HasBeenSet = false;
   bool m_fsrmConfigurationHasBeenSet = false;
 };
 

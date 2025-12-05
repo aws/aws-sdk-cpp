@@ -60,9 +60,9 @@ class CreateGameSessionResult {
   ///@}
  private:
   GameSession m_gameSession;
-  bool m_gameSessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameSessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

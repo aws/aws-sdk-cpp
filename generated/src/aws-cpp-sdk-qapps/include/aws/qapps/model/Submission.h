@@ -88,12 +88,12 @@ class Submission {
   ///@}
  private:
   Aws::Utils::Document m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_submissionId;
-  bool m_submissionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_valueHasBeenSet = false;
+  bool m_submissionIdHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

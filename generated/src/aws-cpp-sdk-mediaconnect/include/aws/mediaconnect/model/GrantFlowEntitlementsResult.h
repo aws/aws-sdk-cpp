@@ -84,12 +84,12 @@ class GrantFlowEntitlementsResult {
   ///@}
  private:
   Aws::Vector<Entitlement> m_entitlements;
-  bool m_entitlementsHasBeenSet = false;
 
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitlementsHasBeenSet = false;
+  bool m_flowArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

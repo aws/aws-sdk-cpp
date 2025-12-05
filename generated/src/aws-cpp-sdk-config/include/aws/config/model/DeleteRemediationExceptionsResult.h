@@ -69,9 +69,9 @@ class DeleteRemediationExceptionsResult {
   ///@}
  private:
   Aws::Vector<FailedDeleteRemediationExceptionsBatch> m_failedBatches;
-  bool m_failedBatchesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedBatchesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

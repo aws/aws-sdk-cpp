@@ -301,18 +301,18 @@ class RecordingGroup {
   ///@}
  private:
   bool m_allSupported{false};
-  bool m_allSupportedHasBeenSet = false;
 
   bool m_includeGlobalResourceTypes{false};
-  bool m_includeGlobalResourceTypesHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   ExclusionByResourceTypes m_exclusionByResourceTypes;
-  bool m_exclusionByResourceTypesHasBeenSet = false;
 
   RecordingStrategy m_recordingStrategy;
+  bool m_allSupportedHasBeenSet = false;
+  bool m_includeGlobalResourceTypesHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_exclusionByResourceTypesHasBeenSet = false;
   bool m_recordingStrategyHasBeenSet = false;
 };
 

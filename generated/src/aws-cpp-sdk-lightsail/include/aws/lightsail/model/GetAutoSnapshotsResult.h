@@ -102,15 +102,15 @@ class GetAutoSnapshotsResult {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<AutoSnapshotDetails> m_autoSnapshots;
-  bool m_autoSnapshotsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_autoSnapshotsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -168,9 +168,9 @@ class GuardrailPiiEntityConfig {
   ///@}
  private:
   GuardrailPiiEntityType m_type{GuardrailPiiEntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_action{GuardrailSensitiveInformationAction::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

@@ -93,15 +93,15 @@ class CreateConstraintResult {
   ///@}
  private:
   ConstraintDetail m_constraintDetail;
-  bool m_constraintDetailHasBeenSet = false;
 
   Aws::String m_constraintParameters;
-  bool m_constraintParametersHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_constraintDetailHasBeenSet = false;
+  bool m_constraintParametersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

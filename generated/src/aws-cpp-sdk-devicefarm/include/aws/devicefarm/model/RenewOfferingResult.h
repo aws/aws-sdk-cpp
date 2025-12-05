@@ -65,9 +65,9 @@ class RenewOfferingResult {
   ///@}
  private:
   OfferingTransaction m_offeringTransaction;
-  bool m_offeringTransactionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_offeringTransactionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -117,18 +117,18 @@ class UltraServerSummary {
   ///@}
  private:
   Aws::String m_ultraServerType;
-  bool m_ultraServerTypeHasBeenSet = false;
 
   ReservedCapacityInstanceType m_instanceType{ReservedCapacityInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_ultraServerCount{0};
-  bool m_ultraServerCountHasBeenSet = false;
 
   int m_availableSpareInstanceCount{0};
-  bool m_availableSpareInstanceCountHasBeenSet = false;
 
   int m_unhealthyInstanceCount{0};
+  bool m_ultraServerTypeHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_ultraServerCountHasBeenSet = false;
+  bool m_availableSpareInstanceCountHasBeenSet = false;
   bool m_unhealthyInstanceCountHasBeenSet = false;
 };
 

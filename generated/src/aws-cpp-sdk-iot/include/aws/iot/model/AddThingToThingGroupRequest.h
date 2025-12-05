@@ -120,18 +120,18 @@ class AddThingToThingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   Aws::String m_thingGroupArn;
-  bool m_thingGroupArnHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_thingArn;
-  bool m_thingArnHasBeenSet = false;
 
   bool m_overrideDynamicGroups{false};
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_thingGroupArnHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_thingArnHasBeenSet = false;
   bool m_overrideDynamicGroupsHasBeenSet = false;
 };
 

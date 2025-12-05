@@ -60,9 +60,9 @@ class CreateTrustedEntitySetResult {
   ///@}
  private:
   Aws::String m_trustedEntitySetId;
-  bool m_trustedEntitySetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustedEntitySetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,9 +88,9 @@ class UpdateRegionSettingsRequest : public BackupRequest {
   ///@}
  private:
   Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
-  bool m_resourceTypeOptInPreferenceHasBeenSet = false;
 
   Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
+  bool m_resourceTypeOptInPreferenceHasBeenSet = false;
   bool m_resourceTypeManagementPreferenceHasBeenSet = false;
 };
 

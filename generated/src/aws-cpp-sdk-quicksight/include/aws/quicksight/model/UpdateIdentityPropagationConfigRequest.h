@@ -92,12 +92,12 @@ class UpdateIdentityPropagationConfigRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   ServiceType m_service{ServiceType::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedTargets;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
   bool m_authorizedTargetsHasBeenSet = false;
 };
 

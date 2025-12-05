@@ -83,12 +83,12 @@ class UpdateKeyspaceRequest : public KeyspacesRequest {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   ReplicationSpecification m_replicationSpecification;
-  bool m_replicationSpecificationHasBeenSet = false;
 
   ClientSideTimestamps m_clientSideTimestamps;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_replicationSpecificationHasBeenSet = false;
   bool m_clientSideTimestampsHasBeenSet = false;
 };
 

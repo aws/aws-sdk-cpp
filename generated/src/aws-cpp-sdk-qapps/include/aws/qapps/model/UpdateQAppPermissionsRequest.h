@@ -119,15 +119,15 @@ class UpdateQAppPermissionsRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::Vector<PermissionInput> m_grantPermissions;
-  bool m_grantPermissionsHasBeenSet = false;
 
   Aws::Vector<PermissionInput> m_revokePermissions;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_grantPermissionsHasBeenSet = false;
   bool m_revokePermissionsHasBeenSet = false;
 };
 

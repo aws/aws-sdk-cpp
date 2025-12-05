@@ -198,27 +198,27 @@ class TableCreationParameters {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-  bool m_attributeDefinitionsHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   BillingMode m_billingMode{BillingMode::NOT_SET};
-  bool m_billingModeHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughput;
-  bool m_onDemandThroughputHasBeenSet = false;
 
   SSESpecification m_sSESpecification;
-  bool m_sSESpecificationHasBeenSet = false;
 
   Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
+  bool m_tableNameHasBeenSet = false;
+  bool m_attributeDefinitionsHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
+  bool m_billingModeHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_onDemandThroughputHasBeenSet = false;
+  bool m_sSESpecificationHasBeenSet = false;
   bool m_globalSecondaryIndexesHasBeenSet = false;
 };
 

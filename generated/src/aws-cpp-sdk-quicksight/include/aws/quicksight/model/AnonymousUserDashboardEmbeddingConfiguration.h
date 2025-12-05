@@ -130,15 +130,15 @@ class AnonymousUserDashboardEmbeddingConfiguration {
   ///@}
  private:
   Aws::String m_initialDashboardId;
-  bool m_initialDashboardIdHasBeenSet = false;
 
   Aws::Vector<AnonymousUserDashboardEmbeddingConfigurationEnabledFeature> m_enabledFeatures;
-  bool m_enabledFeaturesHasBeenSet = false;
 
   Aws::Vector<AnonymousUserDashboardEmbeddingConfigurationDisabledFeature> m_disabledFeatures;
-  bool m_disabledFeaturesHasBeenSet = false;
 
   AnonymousUserDashboardFeatureConfigurations m_featureConfigurations;
+  bool m_initialDashboardIdHasBeenSet = false;
+  bool m_enabledFeaturesHasBeenSet = false;
+  bool m_disabledFeaturesHasBeenSet = false;
   bool m_featureConfigurationsHasBeenSet = false;
 };
 

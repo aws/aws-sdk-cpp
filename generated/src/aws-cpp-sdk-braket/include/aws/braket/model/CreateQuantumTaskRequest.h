@@ -244,36 +244,36 @@ class CreateQuantumTaskRequest : public BraketRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_deviceParameters;
-  bool m_deviceParametersHasBeenSet = false;
 
   long long m_shots{0};
-  bool m_shotsHasBeenSet = false;
 
   Aws::String m_outputS3Bucket;
-  bool m_outputS3BucketHasBeenSet = false;
 
   Aws::String m_outputS3KeyPrefix;
-  bool m_outputS3KeyPrefixHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_jobToken;
-  bool m_jobTokenHasBeenSet = false;
 
   Aws::Vector<Association> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   ExperimentalCapabilities m_experimentalCapabilities;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_deviceParametersHasBeenSet = false;
+  bool m_shotsHasBeenSet = false;
+  bool m_outputS3BucketHasBeenSet = false;
+  bool m_outputS3KeyPrefixHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_jobTokenHasBeenSet = false;
+  bool m_associationsHasBeenSet = false;
   bool m_experimentalCapabilitiesHasBeenSet = false;
 };
 

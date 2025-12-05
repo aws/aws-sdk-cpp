@@ -85,12 +85,12 @@ class ListInstanceProfilesResult {
   ///@}
  private:
   Aws::Vector<InstanceProfile> m_instanceProfiles;
-  bool m_instanceProfilesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceProfilesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

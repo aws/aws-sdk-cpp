@@ -75,12 +75,12 @@ class PutMessageFeedbackResult {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   MessageFeedbackStatus m_messageFeedbackStatus{MessageFeedbackStatus::NOT_SET};
-  bool m_messageFeedbackStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageIdHasBeenSet = false;
+  bool m_messageFeedbackStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

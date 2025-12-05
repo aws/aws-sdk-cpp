@@ -61,9 +61,9 @@ class CreatePersistentContactAssociationResult {
   ///@}
  private:
   Aws::String m_continuedFromContactId;
-  bool m_continuedFromContactIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_continuedFromContactIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

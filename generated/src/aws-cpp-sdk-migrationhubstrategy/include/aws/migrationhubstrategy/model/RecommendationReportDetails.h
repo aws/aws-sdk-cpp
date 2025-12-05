@@ -148,21 +148,21 @@ class RecommendationReportDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_s3Keys;
-  bool m_s3KeysHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   RecommendationReportStatus m_status{RecommendationReportStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3KeysHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

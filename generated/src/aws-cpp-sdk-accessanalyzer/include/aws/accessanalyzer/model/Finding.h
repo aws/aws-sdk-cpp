@@ -331,48 +331,48 @@ class Finding {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   bool m_isPublic{false};
-  bool m_isPublicHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_analyzedAt{};
-  bool m_analyzedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   FindingStatus m_status{FindingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccount;
-  bool m_resourceOwnerAccountHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::Vector<FindingSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   ResourceControlPolicyRestriction m_resourceControlPolicyRestriction{ResourceControlPolicyRestriction::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_isPublicHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_analyzedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceOwnerAccountHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
   bool m_resourceControlPolicyRestrictionHasBeenSet = false;
 };
 

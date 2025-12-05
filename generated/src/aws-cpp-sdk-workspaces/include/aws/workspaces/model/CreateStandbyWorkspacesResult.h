@@ -91,12 +91,12 @@ class CreateStandbyWorkspacesResult {
   ///@}
  private:
   Aws::Vector<FailedCreateStandbyWorkspacesRequest> m_failedStandbyRequests;
-  bool m_failedStandbyRequestsHasBeenSet = false;
 
   Aws::Vector<PendingCreateStandbyWorkspacesRequest> m_pendingStandbyRequests;
-  bool m_pendingStandbyRequestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedStandbyRequestsHasBeenSet = false;
+  bool m_pendingStandbyRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

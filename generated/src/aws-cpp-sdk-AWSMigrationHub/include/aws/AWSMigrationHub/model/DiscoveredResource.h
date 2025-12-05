@@ -71,9 +71,9 @@ class DiscoveredResource {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_configurationIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

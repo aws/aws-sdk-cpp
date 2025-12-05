@@ -103,15 +103,15 @@ class Ec2CapacityReservation {
   ///@}
  private:
   Aws::String m_ec2CapacityReservationId;
-  bool m_ec2CapacityReservationIdHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   int m_usedByCurrentEndpoint{0};
+  bool m_ec2CapacityReservationIdHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
   bool m_usedByCurrentEndpointHasBeenSet = false;
 };
 

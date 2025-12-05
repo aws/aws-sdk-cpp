@@ -120,15 +120,15 @@ class GetPipelineDefinitionResult {
   ///@}
  private:
   Aws::Vector<PipelineObject> m_pipelineObjects;
-  bool m_pipelineObjectsHasBeenSet = false;
 
   Aws::Vector<ParameterObject> m_parameterObjects;
-  bool m_parameterObjectsHasBeenSet = false;
 
   Aws::Vector<ParameterValue> m_parameterValues;
-  bool m_parameterValuesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineObjectsHasBeenSet = false;
+  bool m_parameterObjectsHasBeenSet = false;
+  bool m_parameterValuesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ResponseHeadersPolicyCustomHeader {
   ///@}
  private:
   Aws::String m_header;
-  bool m_headerHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_override{false};
+  bool m_headerHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_overrideHasBeenSet = false;
 };
 

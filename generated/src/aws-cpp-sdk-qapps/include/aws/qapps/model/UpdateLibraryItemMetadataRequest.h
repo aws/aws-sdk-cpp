@@ -84,12 +84,12 @@ class UpdateLibraryItemMetadataRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_libraryItemId;
-  bool m_libraryItemIdHasBeenSet = false;
 
   bool m_isVerified{false};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_libraryItemIdHasBeenSet = false;
   bool m_isVerifiedHasBeenSet = false;
 };
 

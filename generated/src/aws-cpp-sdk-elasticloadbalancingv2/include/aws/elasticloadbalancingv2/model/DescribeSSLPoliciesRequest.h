@@ -111,15 +111,15 @@ class DescribeSSLPoliciesRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   LoadBalancerTypeEnum m_loadBalancerType{LoadBalancerTypeEnum::NOT_SET};
+  bool m_namesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_loadBalancerTypeHasBeenSet = false;
 };
 

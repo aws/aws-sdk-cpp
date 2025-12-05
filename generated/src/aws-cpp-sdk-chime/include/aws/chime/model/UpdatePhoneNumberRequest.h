@@ -82,12 +82,12 @@ class UpdatePhoneNumberRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   PhoneNumberProductType m_productType{PhoneNumberProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   Aws::String m_callingName;
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
   bool m_callingNameHasBeenSet = false;
 };
 

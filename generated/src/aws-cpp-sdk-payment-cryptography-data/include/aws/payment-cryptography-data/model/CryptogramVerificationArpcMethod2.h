@@ -71,9 +71,9 @@ class CryptogramVerificationArpcMethod2 {
   ///@}
  private:
   Aws::String m_cardStatusUpdate;
-  bool m_cardStatusUpdateHasBeenSet = false;
 
   Aws::String m_proprietaryAuthenticationData;
+  bool m_cardStatusUpdateHasBeenSet = false;
   bool m_proprietaryAuthenticationDataHasBeenSet = false;
 };
 

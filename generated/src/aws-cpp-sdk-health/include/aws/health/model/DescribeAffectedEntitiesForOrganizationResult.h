@@ -117,15 +117,15 @@ class DescribeAffectedEntitiesForOrganizationResult {
   ///@}
  private:
   Aws::Vector<AffectedEntity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::Vector<OrganizationAffectedEntitiesErrorItem> m_failedSet;
-  bool m_failedSetHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
+  bool m_failedSetHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

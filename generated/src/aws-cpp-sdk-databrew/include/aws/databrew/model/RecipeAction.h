@@ -78,9 +78,9 @@ class RecipeAction {
   ///@}
  private:
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_operationHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

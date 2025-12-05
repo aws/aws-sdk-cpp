@@ -160,21 +160,21 @@ class CreateCapabilityRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CapabilityType m_type{CapabilityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CapabilityConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<S3Location> m_instructionsDocuments;
-  bool m_instructionsDocumentsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_instructionsDocumentsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

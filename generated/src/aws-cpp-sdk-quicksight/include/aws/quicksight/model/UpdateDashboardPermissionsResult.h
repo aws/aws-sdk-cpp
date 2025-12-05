@@ -134,21 +134,21 @@ class UpdateDashboardPermissionsResult {
   ///@}
  private:
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   LinkSharingConfiguration m_linkSharingConfiguration;
+  bool m_dashboardArnHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_linkSharingConfigurationHasBeenSet = false;
 };
 

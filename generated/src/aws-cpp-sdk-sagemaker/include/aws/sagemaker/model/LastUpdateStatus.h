@@ -68,9 +68,9 @@ class LastUpdateStatus {
   ///@}
  private:
   LastUpdateStatusValue m_status{LastUpdateStatusValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

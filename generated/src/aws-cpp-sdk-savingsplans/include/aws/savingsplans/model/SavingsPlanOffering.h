@@ -240,36 +240,36 @@ class SavingsPlanOffering {
   ///@}
  private:
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   Aws::Vector<SavingsPlanProductType> m_productTypes;
-  bool m_productTypesHasBeenSet = false;
 
   SavingsPlanType m_planType{SavingsPlanType::NOT_SET};
-  bool m_planTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SavingsPlanPaymentOption m_paymentOption{SavingsPlanPaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   long long m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   CurrencyCode m_currency{CurrencyCode::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::Vector<SavingsPlanOfferingProperty> m_properties;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_productTypesHasBeenSet = false;
+  bool m_planTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

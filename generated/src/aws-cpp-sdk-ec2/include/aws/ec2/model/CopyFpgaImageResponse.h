@@ -60,9 +60,9 @@ class CopyFpgaImageResponse {
   ///@}
  private:
   Aws::String m_fpgaImageId;
-  bool m_fpgaImageIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_fpgaImageIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

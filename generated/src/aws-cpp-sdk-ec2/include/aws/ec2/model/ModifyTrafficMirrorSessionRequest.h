@@ -209,30 +209,30 @@ class ModifyTrafficMirrorSessionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_trafficMirrorSessionId;
-  bool m_trafficMirrorSessionIdHasBeenSet = false;
 
   Aws::String m_trafficMirrorTargetId;
-  bool m_trafficMirrorTargetIdHasBeenSet = false;
 
   Aws::String m_trafficMirrorFilterId;
-  bool m_trafficMirrorFilterIdHasBeenSet = false;
 
   int m_packetLength{0};
-  bool m_packetLengthHasBeenSet = false;
 
   int m_sessionNumber{0};
-  bool m_sessionNumberHasBeenSet = false;
 
   int m_virtualNetworkId{0};
-  bool m_virtualNetworkIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<TrafficMirrorSessionField> m_removeFields;
-  bool m_removeFieldsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_trafficMirrorSessionIdHasBeenSet = false;
+  bool m_trafficMirrorTargetIdHasBeenSet = false;
+  bool m_trafficMirrorFilterIdHasBeenSet = false;
+  bool m_packetLengthHasBeenSet = false;
+  bool m_sessionNumberHasBeenSet = false;
+  bool m_virtualNetworkIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_removeFieldsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

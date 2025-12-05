@@ -429,66 +429,66 @@ class OdbNetworkSummary {
   ///@}
  private:
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_odbNetworkArn;
-  bool m_odbNetworkArnHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_clientSubnetCidr;
-  bool m_clientSubnetCidrHasBeenSet = false;
 
   Aws::String m_backupSubnetCidr;
-  bool m_backupSubnetCidrHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_defaultDnsPrefix;
-  bool m_defaultDnsPrefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_peeredCidrs;
-  bool m_peeredCidrsHasBeenSet = false;
 
   Aws::String m_ociNetworkAnchorId;
-  bool m_ociNetworkAnchorIdHasBeenSet = false;
 
   Aws::String m_ociNetworkAnchorUrl;
-  bool m_ociNetworkAnchorUrlHasBeenSet = false;
 
   Aws::String m_ociResourceAnchorName;
-  bool m_ociResourceAnchorNameHasBeenSet = false;
 
   Aws::String m_ociVcnId;
-  bool m_ociVcnIdHasBeenSet = false;
 
   Aws::String m_ociVcnUrl;
-  bool m_ociVcnUrlHasBeenSet = false;
 
   Aws::Vector<OciDnsForwardingConfig> m_ociDnsForwardingConfigs;
-  bool m_ociDnsForwardingConfigsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   double m_percentProgress{0.0};
-  bool m_percentProgressHasBeenSet = false;
 
   ManagedServices m_managedServices;
+  bool m_odbNetworkIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_odbNetworkArnHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_clientSubnetCidrHasBeenSet = false;
+  bool m_backupSubnetCidrHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_defaultDnsPrefixHasBeenSet = false;
+  bool m_peeredCidrsHasBeenSet = false;
+  bool m_ociNetworkAnchorIdHasBeenSet = false;
+  bool m_ociNetworkAnchorUrlHasBeenSet = false;
+  bool m_ociResourceAnchorNameHasBeenSet = false;
+  bool m_ociVcnIdHasBeenSet = false;
+  bool m_ociVcnUrlHasBeenSet = false;
+  bool m_ociDnsForwardingConfigsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
   bool m_managedServicesHasBeenSet = false;
 };
 

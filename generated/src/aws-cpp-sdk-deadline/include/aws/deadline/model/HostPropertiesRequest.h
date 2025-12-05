@@ -69,9 +69,9 @@ class HostPropertiesRequest {
   ///@}
  private:
   IpAddresses m_ipAddresses;
-  bool m_ipAddressesHasBeenSet = false;
 
   Aws::String m_hostName;
+  bool m_ipAddressesHasBeenSet = false;
   bool m_hostNameHasBeenSet = false;
 };
 

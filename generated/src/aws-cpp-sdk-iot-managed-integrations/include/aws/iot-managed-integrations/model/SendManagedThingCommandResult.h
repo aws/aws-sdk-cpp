@@ -62,9 +62,9 @@ class SendManagedThingCommandResult {
   ///@}
  private:
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_traceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

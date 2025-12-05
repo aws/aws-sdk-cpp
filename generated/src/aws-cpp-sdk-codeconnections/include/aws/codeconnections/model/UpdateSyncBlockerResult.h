@@ -94,15 +94,15 @@ class UpdateSyncBlockerResult {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_parentResourceName;
-  bool m_parentResourceNameHasBeenSet = false;
 
   SyncBlocker m_syncBlocker;
-  bool m_syncBlockerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_parentResourceNameHasBeenSet = false;
+  bool m_syncBlockerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

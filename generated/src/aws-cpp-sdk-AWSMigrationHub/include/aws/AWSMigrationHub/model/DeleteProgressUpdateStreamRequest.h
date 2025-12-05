@@ -67,9 +67,9 @@ class DeleteProgressUpdateStreamRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::String m_progressUpdateStreamName;
-  bool m_progressUpdateStreamNameHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_progressUpdateStreamNameHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

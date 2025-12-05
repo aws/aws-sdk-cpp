@@ -76,12 +76,12 @@ class UpdateDomainConfigurationResult {
   ///@}
  private:
   Aws::String m_domainConfigurationName;
-  bool m_domainConfigurationNameHasBeenSet = false;
 
   Aws::String m_domainConfigurationArn;
-  bool m_domainConfigurationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainConfigurationNameHasBeenSet = false;
+  bool m_domainConfigurationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

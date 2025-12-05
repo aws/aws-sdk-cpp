@@ -163,21 +163,21 @@ class BrowserSettings {
   ///@}
  private:
   Aws::String m_browserSettingsArn;
-  bool m_browserSettingsArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedPortalArns;
-  bool m_associatedPortalArnsHasBeenSet = false;
 
   Aws::String m_browserPolicy;
-  bool m_browserPolicyHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   WebContentFilteringPolicy m_webContentFilteringPolicy;
+  bool m_browserSettingsArnHasBeenSet = false;
+  bool m_associatedPortalArnsHasBeenSet = false;
+  bool m_browserPolicyHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
   bool m_webContentFilteringPolicyHasBeenSet = false;
 };
 

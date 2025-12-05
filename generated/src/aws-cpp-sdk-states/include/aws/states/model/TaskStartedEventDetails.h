@@ -69,9 +69,9 @@ class TaskStartedEventDetails {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

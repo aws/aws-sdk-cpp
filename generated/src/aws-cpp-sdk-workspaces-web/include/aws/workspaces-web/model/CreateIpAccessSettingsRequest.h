@@ -186,24 +186,24 @@ class CreateIpAccessSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::Vector<IpRule> m_ipRules;
-  bool m_ipRulesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_ipRulesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

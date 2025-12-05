@@ -205,30 +205,30 @@ class ResourceV2 {
   ///@}
  private:
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   FindingResourceType m_resourceType{FindingResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_cloudPartition;
-  bool m_cloudPartitionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResourceData m_data;
+  bool m_uidHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_cloudPartitionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class CreateDatasetRequest : public RekognitionRequest {
   ///@}
  private:
   DatasetSource m_datasetSource;
-  bool m_datasetSourceHasBeenSet = false;
 
   DatasetType m_datasetType{DatasetType::NOT_SET};
-  bool m_datasetTypeHasBeenSet = false;
 
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_datasetSourceHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_projectArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

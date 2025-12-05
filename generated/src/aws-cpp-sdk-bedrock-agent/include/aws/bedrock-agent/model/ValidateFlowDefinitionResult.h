@@ -68,9 +68,9 @@ class ValidateFlowDefinitionResult {
   ///@}
  private:
   Aws::Vector<FlowValidation> m_validations;
-  bool m_validationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_validationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

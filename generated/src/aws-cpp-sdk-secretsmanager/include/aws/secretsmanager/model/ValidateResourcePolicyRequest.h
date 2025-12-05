@@ -72,9 +72,9 @@ class ValidateResourcePolicyRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
+  bool m_secretIdHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;
 };
 

@@ -117,18 +117,18 @@ class ApplyEnvironmentManagedActionResult {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_actionDescription;
-  bool m_actionDescriptionHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_actionIdHasBeenSet = false;
+  bool m_actionDescriptionHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

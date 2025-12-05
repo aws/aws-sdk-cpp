@@ -525,60 +525,60 @@ class RunTaskRequest : public ECSRequest {
   ///@}
  private:
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-  bool m_capacityProviderStrategyHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   bool m_enableECSManagedTags{false};
-  bool m_enableECSManagedTagsHasBeenSet = false;
 
   bool m_enableExecuteCommand{false};
-  bool m_enableExecuteCommandHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   TaskOverride m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::Vector<PlacementConstraint> m_placementConstraints;
-  bool m_placementConstraintsHasBeenSet = false;
 
   Aws::Vector<PlacementStrategy> m_placementStrategy;
-  bool m_placementStrategyHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   PropagateTags m_propagateTags{PropagateTags::NOT_SET};
-  bool m_propagateTagsHasBeenSet = false;
 
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<TaskVolumeConfiguration> m_volumeConfigurations;
+  bool m_capacityProviderStrategyHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_enableECSManagedTagsHasBeenSet = false;
+  bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
+  bool m_placementConstraintsHasBeenSet = false;
+  bool m_placementStrategyHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_taskDefinitionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_volumeConfigurationsHasBeenSet = false;
 };
 

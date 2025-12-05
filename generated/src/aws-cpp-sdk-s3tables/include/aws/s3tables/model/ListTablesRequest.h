@@ -125,18 +125,18 @@ class ListTablesRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   int m_maxTables{0};
+  bool m_tableBucketARNHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
   bool m_maxTablesHasBeenSet = false;
 };
 

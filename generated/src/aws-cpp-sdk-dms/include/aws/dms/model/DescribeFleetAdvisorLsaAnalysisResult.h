@@ -89,12 +89,12 @@ class DescribeFleetAdvisorLsaAnalysisResult {
   ///@}
  private:
   Aws::Vector<FleetAdvisorLsaAnalysisResponse> m_analysis;
-  bool m_analysisHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

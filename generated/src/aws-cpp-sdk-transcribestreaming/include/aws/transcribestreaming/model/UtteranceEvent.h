@@ -279,39 +279,39 @@ class UtteranceEvent {
   ///@}
  private:
   Aws::String m_utteranceId;
-  bool m_utteranceIdHasBeenSet = false;
 
   bool m_isPartial{false};
-  bool m_isPartialHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   long long m_beginOffsetMillis{0};
-  bool m_beginOffsetMillisHasBeenSet = false;
 
   long long m_endOffsetMillis{0};
-  bool m_endOffsetMillisHasBeenSet = false;
 
   Aws::String m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   Aws::Vector<CallAnalyticsItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::Vector<CallAnalyticsEntity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Sentiment m_sentiment{Sentiment::NOT_SET};
-  bool m_sentimentHasBeenSet = false;
 
   Aws::Vector<IssueDetected> m_issuesDetected;
-  bool m_issuesDetectedHasBeenSet = false;
 
   CallAnalyticsLanguageCode m_languageCode{CallAnalyticsLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::Vector<CallAnalyticsLanguageWithScore> m_languageIdentification;
+  bool m_utteranceIdHasBeenSet = false;
+  bool m_isPartialHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_beginOffsetMillisHasBeenSet = false;
+  bool m_endOffsetMillisHasBeenSet = false;
+  bool m_transcriptHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_entitiesHasBeenSet = false;
+  bool m_sentimentHasBeenSet = false;
+  bool m_issuesDetectedHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_languageIdentificationHasBeenSet = false;
 };
 

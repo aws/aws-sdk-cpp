@@ -104,15 +104,15 @@ class ListRulesRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::String m_listenerIdentifier;
-  bool m_listenerIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_listenerIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

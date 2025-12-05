@@ -211,27 +211,27 @@ class ThirdPartyJobData {
   ///@}
  private:
   ActionTypeId m_actionTypeId;
-  bool m_actionTypeIdHasBeenSet = false;
 
   ActionConfiguration m_actionConfiguration;
-  bool m_actionConfigurationHasBeenSet = false;
 
   PipelineContext m_pipelineContext;
-  bool m_pipelineContextHasBeenSet = false;
 
   Aws::Vector<Artifact> m_inputArtifacts;
-  bool m_inputArtifactsHasBeenSet = false;
 
   Aws::Vector<Artifact> m_outputArtifacts;
-  bool m_outputArtifactsHasBeenSet = false;
 
   AWSSessionCredentials m_artifactCredentials;
-  bool m_artifactCredentialsHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   EncryptionKey m_encryptionKey;
+  bool m_actionTypeIdHasBeenSet = false;
+  bool m_actionConfigurationHasBeenSet = false;
+  bool m_pipelineContextHasBeenSet = false;
+  bool m_inputArtifactsHasBeenSet = false;
+  bool m_outputArtifactsHasBeenSet = false;
+  bool m_artifactCredentialsHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
   bool m_encryptionKeyHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class Field {
   ///@}
  private:
   FieldAggregationType m_aggregation{FieldAggregationType::NOT_SET};
-  bool m_aggregationHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_aggregationHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

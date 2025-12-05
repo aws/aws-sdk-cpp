@@ -70,9 +70,9 @@ class WriteOperation {
   ///@}
  private:
   AddObjectInput m_addObject;
-  bool m_addObjectHasBeenSet = false;
 
   DeleteObjectInput m_deleteObject;
+  bool m_addObjectHasBeenSet = false;
   bool m_deleteObjectHasBeenSet = false;
 };
 

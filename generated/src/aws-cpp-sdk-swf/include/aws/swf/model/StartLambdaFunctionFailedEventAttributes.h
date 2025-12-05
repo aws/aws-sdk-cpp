@@ -92,12 +92,12 @@ class StartLambdaFunctionFailedEventAttributes {
   ///@}
  private:
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   StartLambdaFunctionFailedCause m_cause{StartLambdaFunctionFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_scheduledEventIdHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

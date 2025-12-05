@@ -76,12 +76,12 @@ class StartFlywheelIterationResult {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_flywheelIterationId;
-  bool m_flywheelIterationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flywheelArnHasBeenSet = false;
+  bool m_flywheelIterationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

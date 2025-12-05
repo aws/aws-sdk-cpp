@@ -68,9 +68,9 @@ class ValidationError {
   ///@}
  private:
   Aws::String m_elementPath;
-  bool m_elementPathHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_elementPathHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

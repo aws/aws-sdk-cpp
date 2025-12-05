@@ -64,9 +64,9 @@ class CreateInvalidationForDistributionTenant2020_05_31Request : public CloudFro
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   InvalidationBatch m_invalidationBatch;
+  bool m_idHasBeenSet = false;
   bool m_invalidationBatchHasBeenSet = false;
 };
 

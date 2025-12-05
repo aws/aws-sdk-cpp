@@ -222,33 +222,33 @@ class CollaborationMLInputChannelSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_configuredModelAlgorithmAssociations;
-  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
 
   Aws::String m_mlInputChannelArn;
-  bool m_mlInputChannelArnHasBeenSet = false;
 
   MLInputChannelStatus m_status{MLInputChannelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
+  bool m_mlInputChannelArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

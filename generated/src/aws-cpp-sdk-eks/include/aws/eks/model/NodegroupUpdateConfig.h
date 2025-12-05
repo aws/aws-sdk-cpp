@@ -101,12 +101,12 @@ class NodegroupUpdateConfig {
   ///@}
  private:
   int m_maxUnavailable{0};
-  bool m_maxUnavailableHasBeenSet = false;
 
   int m_maxUnavailablePercentage{0};
-  bool m_maxUnavailablePercentageHasBeenSet = false;
 
   NodegroupUpdateStrategies m_updateStrategy{NodegroupUpdateStrategies::NOT_SET};
+  bool m_maxUnavailableHasBeenSet = false;
+  bool m_maxUnavailablePercentageHasBeenSet = false;
   bool m_updateStrategyHasBeenSet = false;
 };
 

@@ -103,12 +103,12 @@ class AdminSetUserSettingsRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Vector<MFAOptionType> m_mFAOptions;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_mFAOptionsHasBeenSet = false;
 };
 

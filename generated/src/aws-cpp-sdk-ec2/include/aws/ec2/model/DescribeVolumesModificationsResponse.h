@@ -86,12 +86,12 @@ class DescribeVolumesModificationsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VolumeModification> m_volumesModifications;
-  bool m_volumesModificationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_volumesModificationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class RatingScale {
   ///@}
  private:
   Aws::Vector<NumericalScaleDefinition> m_numerical;
-  bool m_numericalHasBeenSet = false;
 
   Aws::Vector<CategoricalScaleDefinition> m_categorical;
+  bool m_numericalHasBeenSet = false;
   bool m_categoricalHasBeenSet = false;
 };
 

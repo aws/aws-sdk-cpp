@@ -88,12 +88,12 @@ class SessionSummary {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actorId;
-  bool m_actorIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_sessionIdHasBeenSet = false;
+  bool m_actorIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

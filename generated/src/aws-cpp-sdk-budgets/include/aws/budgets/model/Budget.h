@@ -344,42 +344,42 @@ class Budget {
   ///@}
  private:
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Spend m_budgetLimit;
-  bool m_budgetLimitHasBeenSet = false;
 
   Aws::Map<Aws::String, Spend> m_plannedBudgetLimits;
-  bool m_plannedBudgetLimitsHasBeenSet = false;
 
   TimeUnit m_timeUnit{TimeUnit::NOT_SET};
-  bool m_timeUnitHasBeenSet = false;
 
   TimePeriod m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   CalculatedSpend m_calculatedSpend;
-  bool m_calculatedSpendHasBeenSet = false;
 
   BudgetType m_budgetType{BudgetType::NOT_SET};
-  bool m_budgetTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   AutoAdjustData m_autoAdjustData;
-  bool m_autoAdjustDataHasBeenSet = false;
 
   Expression m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   Aws::Vector<Metric> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   HealthStatus m_healthStatus;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_budgetLimitHasBeenSet = false;
+  bool m_plannedBudgetLimitsHasBeenSet = false;
+  bool m_timeUnitHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_calculatedSpendHasBeenSet = false;
+  bool m_budgetTypeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_autoAdjustDataHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_billingViewArnHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
 };
 

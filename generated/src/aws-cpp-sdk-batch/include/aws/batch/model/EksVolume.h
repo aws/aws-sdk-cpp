@@ -142,18 +142,18 @@ class EksVolume {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EksHostPath m_hostPath;
-  bool m_hostPathHasBeenSet = false;
 
   EksEmptyDir m_emptyDir;
-  bool m_emptyDirHasBeenSet = false;
 
   EksSecret m_secret;
-  bool m_secretHasBeenSet = false;
 
   EksPersistentVolumeClaim m_persistentVolumeClaim;
+  bool m_nameHasBeenSet = false;
+  bool m_hostPathHasBeenSet = false;
+  bool m_emptyDirHasBeenSet = false;
+  bool m_secretHasBeenSet = false;
   bool m_persistentVolumeClaimHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListObjectChildrenResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_children;
-  bool m_childrenHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_childrenHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

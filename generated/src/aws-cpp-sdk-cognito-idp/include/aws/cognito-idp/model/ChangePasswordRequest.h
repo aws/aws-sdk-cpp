@@ -92,12 +92,12 @@ class ChangePasswordRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_previousPassword;
-  bool m_previousPasswordHasBeenSet = false;
 
   Aws::String m_proposedPassword;
-  bool m_proposedPasswordHasBeenSet = false;
 
   Aws::String m_accessToken;
+  bool m_previousPasswordHasBeenSet = false;
+  bool m_proposedPasswordHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
 };
 

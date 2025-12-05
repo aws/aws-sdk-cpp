@@ -77,9 +77,9 @@ class PhonemeDetails {
   ///@}
  private:
   Aws::Vector<PhonemeTranscription> m_title;
-  bool m_titleHasBeenSet = false;
 
   AddressComponentPhonemes m_address;
+  bool m_titleHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

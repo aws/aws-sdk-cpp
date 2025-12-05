@@ -69,9 +69,9 @@ class UnprocessedAccount {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_result;
+  bool m_accountIdHasBeenSet = false;
   bool m_resultHasBeenSet = false;
 };
 

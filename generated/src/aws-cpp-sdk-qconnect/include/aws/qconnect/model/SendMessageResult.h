@@ -96,15 +96,15 @@ class SendMessageResult {
   ///@}
  private:
   Aws::String m_requestMessageId;
-  bool m_requestMessageIdHasBeenSet = false;
 
   MessageConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_nextMessageToken;
-  bool m_nextMessageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_requestMessageIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_nextMessageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

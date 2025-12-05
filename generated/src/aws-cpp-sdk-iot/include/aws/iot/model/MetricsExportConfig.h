@@ -70,9 +70,9 @@ class MetricsExportConfig {
   ///@}
  private:
   Aws::String m_mqttTopic;
-  bool m_mqttTopicHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_mqttTopicHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class AmplitudeConnectorProfileCredentials {
   ///@}
  private:
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::String m_secretKey;
+  bool m_apiKeyHasBeenSet = false;
   bool m_secretKeyHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class StandardsControlAssociationId {
   ///@}
  private:
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::String m_standardsArn;
+  bool m_securityControlIdHasBeenSet = false;
   bool m_standardsArnHasBeenSet = false;
 };
 

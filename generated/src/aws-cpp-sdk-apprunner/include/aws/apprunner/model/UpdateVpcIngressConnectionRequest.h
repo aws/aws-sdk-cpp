@@ -71,9 +71,9 @@ class UpdateVpcIngressConnectionRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_vpcIngressConnectionArn;
-  bool m_vpcIngressConnectionArnHasBeenSet = false;
 
   IngressVpcConfiguration m_ingressVpcConfiguration;
+  bool m_vpcIngressConnectionArnHasBeenSet = false;
   bool m_ingressVpcConfigurationHasBeenSet = false;
 };
 

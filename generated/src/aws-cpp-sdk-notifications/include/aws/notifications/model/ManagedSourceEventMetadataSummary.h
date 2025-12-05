@@ -93,12 +93,12 @@ class ManagedSourceEventMetadataSummary {
   ///@}
  private:
   Aws::String m_eventOriginRegion;
-  bool m_eventOriginRegionHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_eventType;
+  bool m_eventOriginRegionHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_eventTypeHasBeenSet = false;
 };
 

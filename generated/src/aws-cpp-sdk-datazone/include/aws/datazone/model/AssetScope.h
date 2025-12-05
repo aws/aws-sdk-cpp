@@ -111,15 +111,15 @@ class AssetScope {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterIds;
-  bool m_filterIdsHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_assetIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_filterIdsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

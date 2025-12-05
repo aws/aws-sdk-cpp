@@ -222,33 +222,33 @@ class NumericRangeFilter {
   ///@}
  private:
   Aws::String m_filterId;
-  bool m_filterIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   bool m_includeMinimum{false};
-  bool m_includeMinimumHasBeenSet = false;
 
   bool m_includeMaximum{false};
-  bool m_includeMaximumHasBeenSet = false;
 
   NumericRangeFilterValue m_rangeMinimum;
-  bool m_rangeMinimumHasBeenSet = false;
 
   NumericRangeFilterValue m_rangeMaximum;
-  bool m_rangeMaximumHasBeenSet = false;
 
   NumericFilterSelectAllOptions m_selectAllOptions{NumericFilterSelectAllOptions::NOT_SET};
-  bool m_selectAllOptionsHasBeenSet = false;
 
   AggregationFunction m_aggregationFunction;
-  bool m_aggregationFunctionHasBeenSet = false;
 
   FilterNullOption m_nullOption{FilterNullOption::NOT_SET};
-  bool m_nullOptionHasBeenSet = false;
 
   DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+  bool m_filterIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_includeMinimumHasBeenSet = false;
+  bool m_includeMaximumHasBeenSet = false;
+  bool m_rangeMinimumHasBeenSet = false;
+  bool m_rangeMaximumHasBeenSet = false;
+  bool m_selectAllOptionsHasBeenSet = false;
+  bool m_aggregationFunctionHasBeenSet = false;
+  bool m_nullOptionHasBeenSet = false;
   bool m_defaultFilterControlConfigurationHasBeenSet = false;
 };
 

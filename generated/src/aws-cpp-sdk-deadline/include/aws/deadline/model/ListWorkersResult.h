@@ -90,12 +90,12 @@ class ListWorkersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WorkerSummary> m_workers;
-  bool m_workersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

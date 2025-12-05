@@ -91,12 +91,12 @@ class ListPresetsResult {
   ///@}
  private:
   Aws::Vector<Preset> m_presets;
-  bool m_presetsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_presetsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

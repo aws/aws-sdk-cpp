@@ -136,18 +136,18 @@ class ThingGroupDocument {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   Aws::String m_thingGroupId;
-  bool m_thingGroupIdHasBeenSet = false;
 
   Aws::String m_thingGroupDescription;
-  bool m_thingGroupDescriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parentGroupNames;
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_thingGroupIdHasBeenSet = false;
+  bool m_thingGroupDescriptionHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_parentGroupNamesHasBeenSet = false;
 };
 

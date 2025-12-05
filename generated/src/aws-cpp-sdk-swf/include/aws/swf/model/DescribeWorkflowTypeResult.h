@@ -91,12 +91,12 @@ class DescribeWorkflowTypeResult {
   ///@}
  private:
   WorkflowTypeInfo m_typeInfo;
-  bool m_typeInfoHasBeenSet = false;
 
   WorkflowTypeConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeInfoHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

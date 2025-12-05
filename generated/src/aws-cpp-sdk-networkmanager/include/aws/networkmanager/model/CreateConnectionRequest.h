@@ -164,24 +164,24 @@ class CreateConnectionRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_connectedDeviceId;
-  bool m_connectedDeviceIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   Aws::String m_connectedLinkId;
-  bool m_connectedLinkIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_connectedDeviceIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
+  bool m_connectedLinkIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

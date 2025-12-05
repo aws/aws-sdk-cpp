@@ -152,21 +152,21 @@ class PutDomainObjectTypeRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, DomainObjectTypeField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

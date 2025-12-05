@@ -94,12 +94,12 @@ class BatchGetLifecyclePolicyResult {
   ///@}
  private:
   Aws::Vector<LifecyclePolicyDetail> m_lifecyclePolicyDetails;
-  bool m_lifecyclePolicyDetailsHasBeenSet = false;
 
   Aws::Vector<LifecyclePolicyErrorDetail> m_lifecyclePolicyErrorDetails;
-  bool m_lifecyclePolicyErrorDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecyclePolicyDetailsHasBeenSet = false;
+  bool m_lifecyclePolicyErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

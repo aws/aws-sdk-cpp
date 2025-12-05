@@ -112,15 +112,15 @@ class ExportResourceSpecification {
   ///@}
  private:
   BotExportSpecification m_botExportSpecification;
-  bool m_botExportSpecificationHasBeenSet = false;
 
   BotLocaleExportSpecification m_botLocaleExportSpecification;
-  bool m_botLocaleExportSpecificationHasBeenSet = false;
 
   CustomVocabularyExportSpecification m_customVocabularyExportSpecification;
-  bool m_customVocabularyExportSpecificationHasBeenSet = false;
 
   TestSetExportSpecification m_testSetExportSpecification;
+  bool m_botExportSpecificationHasBeenSet = false;
+  bool m_botLocaleExportSpecificationHasBeenSet = false;
+  bool m_customVocabularyExportSpecificationHasBeenSet = false;
   bool m_testSetExportSpecificationHasBeenSet = false;
 };
 

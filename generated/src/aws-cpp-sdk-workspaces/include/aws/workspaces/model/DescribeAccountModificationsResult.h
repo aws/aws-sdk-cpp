@@ -85,12 +85,12 @@ class DescribeAccountModificationsResult {
   ///@}
  private:
   Aws::Vector<AccountModification> m_accountModifications;
-  bool m_accountModificationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountModificationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

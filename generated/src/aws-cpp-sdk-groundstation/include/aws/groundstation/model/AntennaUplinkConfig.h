@@ -86,12 +86,12 @@ class AntennaUplinkConfig {
   ///@}
  private:
   bool m_transmitDisabled{false};
-  bool m_transmitDisabledHasBeenSet = false;
 
   UplinkSpectrumConfig m_spectrumConfig;
-  bool m_spectrumConfigHasBeenSet = false;
 
   Eirp m_targetEirp;
+  bool m_transmitDisabledHasBeenSet = false;
+  bool m_spectrumConfigHasBeenSet = false;
   bool m_targetEirpHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class TakeRouterInputRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_routerOutputArn;
-  bool m_routerOutputArnHasBeenSet = false;
 
   Aws::String m_routerInputArn;
+  bool m_routerOutputArnHasBeenSet = false;
   bool m_routerInputArnHasBeenSet = false;
 };
 

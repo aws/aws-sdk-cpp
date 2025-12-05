@@ -113,15 +113,15 @@ class ReservationUtilizationGroup {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ReservationAggregates m_utilization;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_utilizationHasBeenSet = false;
 };
 

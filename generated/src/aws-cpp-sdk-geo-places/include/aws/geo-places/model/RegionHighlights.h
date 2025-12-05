@@ -84,9 +84,9 @@ class RegionHighlights {
   ///@}
  private:
   Aws::Vector<Highlight> m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::Vector<Highlight> m_name;
+  bool m_codeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

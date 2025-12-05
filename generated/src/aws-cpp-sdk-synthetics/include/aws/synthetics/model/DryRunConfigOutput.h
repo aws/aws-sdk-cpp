@@ -70,9 +70,9 @@ class DryRunConfigOutput {
   ///@}
  private:
   Aws::String m_dryRunId;
-  bool m_dryRunIdHasBeenSet = false;
 
   Aws::String m_lastDryRunExecutionStatus;
+  bool m_dryRunIdHasBeenSet = false;
   bool m_lastDryRunExecutionStatusHasBeenSet = false;
 };
 

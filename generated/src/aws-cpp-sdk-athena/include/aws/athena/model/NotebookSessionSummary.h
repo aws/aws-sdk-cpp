@@ -70,9 +70,9 @@ class NotebookSessionSummary {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_sessionIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

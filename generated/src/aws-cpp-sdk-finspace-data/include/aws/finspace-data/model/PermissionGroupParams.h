@@ -81,9 +81,9 @@ class PermissionGroupParams {
   ///@}
  private:
   Aws::String m_permissionGroupId;
-  bool m_permissionGroupIdHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_datasetPermissions;
+  bool m_permissionGroupIdHasBeenSet = false;
   bool m_datasetPermissionsHasBeenSet = false;
 };
 

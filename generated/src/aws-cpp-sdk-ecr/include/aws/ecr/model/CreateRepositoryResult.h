@@ -60,9 +60,9 @@ class CreateRepositoryResult {
   ///@}
  private:
   Repository m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

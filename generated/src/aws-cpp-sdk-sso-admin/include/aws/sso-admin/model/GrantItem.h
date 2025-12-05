@@ -68,9 +68,9 @@ class GrantItem {
   ///@}
  private:
   GrantType m_grantType{GrantType::NOT_SET};
-  bool m_grantTypeHasBeenSet = false;
 
   Grant m_grant;
+  bool m_grantTypeHasBeenSet = false;
   bool m_grantHasBeenSet = false;
 };
 

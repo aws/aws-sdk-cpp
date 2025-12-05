@@ -69,9 +69,9 @@ class PropertyLatestValue {
   ///@}
  private:
   EntityPropertyReference m_propertyReference;
-  bool m_propertyReferenceHasBeenSet = false;
 
   DataValue m_propertyValue;
+  bool m_propertyReferenceHasBeenSet = false;
   bool m_propertyValueHasBeenSet = false;
 };
 

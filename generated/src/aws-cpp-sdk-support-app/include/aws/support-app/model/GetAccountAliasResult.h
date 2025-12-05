@@ -59,9 +59,9 @@ class GetAccountAliasResult {
   ///@}
  private:
   Aws::String m_accountAlias;
-  bool m_accountAliasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountAliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

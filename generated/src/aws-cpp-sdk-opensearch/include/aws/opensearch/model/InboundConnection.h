@@ -126,18 +126,18 @@ class InboundConnection {
   ///@}
  private:
   DomainInformationContainer m_localDomainInfo;
-  bool m_localDomainInfoHasBeenSet = false;
 
   DomainInformationContainer m_remoteDomainInfo;
-  bool m_remoteDomainInfoHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   InboundConnectionStatus m_connectionStatus;
-  bool m_connectionStatusHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
+  bool m_localDomainInfoHasBeenSet = false;
+  bool m_remoteDomainInfoHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_connectionStatusHasBeenSet = false;
   bool m_connectionModeHasBeenSet = false;
 };
 

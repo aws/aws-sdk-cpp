@@ -182,21 +182,21 @@ class CreateRule {
   ///@}
  private:
   LocationValues m_location{LocationValues::NOT_SET};
-  bool m_locationHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   IntervalUnitValues m_intervalUnit{IntervalUnitValues::NOT_SET};
-  bool m_intervalUnitHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_times;
-  bool m_timesHasBeenSet = false;
 
   Aws::String m_cronExpression;
-  bool m_cronExpressionHasBeenSet = false;
 
   Aws::Vector<Script> m_scripts;
+  bool m_locationHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_intervalUnitHasBeenSet = false;
+  bool m_timesHasBeenSet = false;
+  bool m_cronExpressionHasBeenSet = false;
   bool m_scriptsHasBeenSet = false;
 };
 

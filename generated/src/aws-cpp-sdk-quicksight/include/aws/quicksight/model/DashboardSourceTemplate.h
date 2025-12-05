@@ -76,9 +76,9 @@ class DashboardSourceTemplate {
   ///@}
  private:
   Aws::Vector<DataSetReference> m_dataSetReferences;
-  bool m_dataSetReferencesHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_dataSetReferencesHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

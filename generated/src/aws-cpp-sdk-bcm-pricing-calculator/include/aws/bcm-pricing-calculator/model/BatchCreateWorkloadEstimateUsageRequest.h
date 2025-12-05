@@ -96,12 +96,12 @@ class BatchCreateWorkloadEstimateUsageRequest : public BCMPricingCalculatorReque
   ///@}
  private:
   Aws::String m_workloadEstimateId;
-  bool m_workloadEstimateIdHasBeenSet = false;
 
   Aws::Vector<BatchCreateWorkloadEstimateUsageEntry> m_usage;
-  bool m_usageHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workloadEstimateIdHasBeenSet = false;
+  bool m_usageHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

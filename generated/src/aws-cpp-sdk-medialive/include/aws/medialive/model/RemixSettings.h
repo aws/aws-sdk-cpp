@@ -90,12 +90,12 @@ Valid values: 1, 2, 4, 6, 8
   ///@}
  private:
   Aws::Vector<AudioChannelMapping> m_channelMappings;
-  bool m_channelMappingsHasBeenSet = false;
 
   int m_channelsIn{0};
-  bool m_channelsInHasBeenSet = false;
 
   int m_channelsOut{0};
+  bool m_channelMappingsHasBeenSet = false;
+  bool m_channelsInHasBeenSet = false;
   bool m_channelsOutHasBeenSet = false;
 };
 

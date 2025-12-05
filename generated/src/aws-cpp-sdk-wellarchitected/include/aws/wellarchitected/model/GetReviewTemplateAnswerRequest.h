@@ -79,12 +79,12 @@ class GetReviewTemplateAnswerRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_questionId;
+  bool m_templateArnHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
   bool m_questionIdHasBeenSet = false;
 };
 

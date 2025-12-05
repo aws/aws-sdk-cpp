@@ -486,66 +486,66 @@ class Certificate {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   CertificateStatus m_status{CertificateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   Aws::Vector<DomainValidationRecord> m_domainValidationRecords;
-  bool m_domainValidationRecordsHasBeenSet = false;
 
   Aws::String m_requestFailureReason;
-  bool m_requestFailureReasonHasBeenSet = false;
 
   int m_inUseResourceCount{0};
-  bool m_inUseResourceCountHasBeenSet = false;
 
   Aws::String m_keyAlgorithm;
-  bool m_keyAlgorithmHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_issuedAt{};
-  bool m_issuedAtHasBeenSet = false;
 
   Aws::String m_issuerCA;
-  bool m_issuerCAHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
-  bool m_notBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   Aws::String m_eligibleToRenew;
-  bool m_eligibleToRenewHasBeenSet = false;
 
   RenewalSummary m_renewalSummary;
-  bool m_renewalSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedAt{};
-  bool m_revokedAtHasBeenSet = false;
 
   Aws::String m_revocationReason;
-  bool m_revocationReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_supportCode;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
+  bool m_domainValidationRecordsHasBeenSet = false;
+  bool m_requestFailureReasonHasBeenSet = false;
+  bool m_inUseResourceCountHasBeenSet = false;
+  bool m_keyAlgorithmHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_issuedAtHasBeenSet = false;
+  bool m_issuerCAHasBeenSet = false;
+  bool m_notBeforeHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_eligibleToRenewHasBeenSet = false;
+  bool m_renewalSummaryHasBeenSet = false;
+  bool m_revokedAtHasBeenSet = false;
+  bool m_revocationReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_supportCodeHasBeenSet = false;
 };
 

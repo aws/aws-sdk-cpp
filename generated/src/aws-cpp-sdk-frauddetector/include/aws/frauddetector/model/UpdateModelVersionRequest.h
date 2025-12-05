@@ -151,21 +151,21 @@ class UpdateModelVersionRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_majorVersionNumber;
-  bool m_majorVersionNumberHasBeenSet = false;
 
   ExternalEventsDetail m_externalEventsDetail;
-  bool m_externalEventsDetailHasBeenSet = false;
 
   IngestedEventsDetail m_ingestedEventsDetail;
-  bool m_ingestedEventsDetailHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_majorVersionNumberHasBeenSet = false;
+  bool m_externalEventsDetailHasBeenSet = false;
+  bool m_ingestedEventsDetailHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

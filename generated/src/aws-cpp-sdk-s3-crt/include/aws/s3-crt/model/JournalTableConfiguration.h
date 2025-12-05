@@ -70,9 +70,9 @@ class JournalTableConfiguration {
   ///@}
  private:
   RecordExpiration m_recordExpiration;
-  bool m_recordExpirationHasBeenSet = false;
 
   MetadataTableEncryptionConfiguration m_encryptionConfiguration;
+  bool m_recordExpirationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

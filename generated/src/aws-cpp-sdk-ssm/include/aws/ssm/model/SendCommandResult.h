@@ -61,9 +61,9 @@ class SendCommandResult {
   ///@}
  private:
   Command m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

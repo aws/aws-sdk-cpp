@@ -178,27 +178,27 @@ class UpdateWorkspacesPoolRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Capacity m_capacity;
-  bool m_capacityHasBeenSet = false;
 
   ApplicationSettingsRequest m_applicationSettings;
-  bool m_applicationSettingsHasBeenSet = false;
 
   TimeoutSettings m_timeoutSettings;
-  bool m_timeoutSettingsHasBeenSet = false;
 
   PoolsRunningMode m_runningMode{PoolsRunningMode::NOT_SET};
+  bool m_poolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_applicationSettingsHasBeenSet = false;
+  bool m_timeoutSettingsHasBeenSet = false;
   bool m_runningModeHasBeenSet = false;
 };
 

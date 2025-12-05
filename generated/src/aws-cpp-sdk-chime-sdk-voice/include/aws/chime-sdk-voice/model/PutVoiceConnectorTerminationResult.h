@@ -61,9 +61,9 @@ class PutVoiceConnectorTerminationResult {
   ///@}
  private:
   Termination m_termination;
-  bool m_terminationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_terminationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

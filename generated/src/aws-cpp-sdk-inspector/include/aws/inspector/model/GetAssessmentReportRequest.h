@@ -89,12 +89,12 @@ class GetAssessmentReportRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentRunArn;
-  bool m_assessmentRunArnHasBeenSet = false;
 
   ReportFileFormat m_reportFileFormat{ReportFileFormat::NOT_SET};
-  bool m_reportFileFormatHasBeenSet = false;
 
   ReportType m_reportType{ReportType::NOT_SET};
+  bool m_assessmentRunArnHasBeenSet = false;
+  bool m_reportFileFormatHasBeenSet = false;
   bool m_reportTypeHasBeenSet = false;
 };
 

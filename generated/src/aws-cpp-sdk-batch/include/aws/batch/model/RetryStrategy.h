@@ -81,9 +81,9 @@ class RetryStrategy {
   ///@}
  private:
   int m_attempts{0};
-  bool m_attemptsHasBeenSet = false;
 
   Aws::Vector<EvaluateOnExit> m_evaluateOnExit;
+  bool m_attemptsHasBeenSet = false;
   bool m_evaluateOnExitHasBeenSet = false;
 };
 

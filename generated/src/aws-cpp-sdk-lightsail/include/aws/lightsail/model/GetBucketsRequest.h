@@ -112,15 +112,15 @@ class GetBucketsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   bool m_includeConnectedResources{false};
-  bool m_includeConnectedResourcesHasBeenSet = false;
 
   bool m_includeCors{false};
+  bool m_bucketNameHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
+  bool m_includeConnectedResourcesHasBeenSet = false;
   bool m_includeCorsHasBeenSet = false;
 };
 

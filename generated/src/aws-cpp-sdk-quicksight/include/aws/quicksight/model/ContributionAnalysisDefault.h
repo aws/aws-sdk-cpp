@@ -78,9 +78,9 @@ class ContributionAnalysisDefault {
   ///@}
  private:
   Aws::String m_measureFieldId;
-  bool m_measureFieldIdHasBeenSet = false;
 
   Aws::Vector<ColumnIdentifier> m_contributorDimensions;
+  bool m_measureFieldIdHasBeenSet = false;
   bool m_contributorDimensionsHasBeenSet = false;
 };
 

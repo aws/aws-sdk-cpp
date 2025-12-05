@@ -70,9 +70,9 @@ class S3SourceProperties {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_bucketPrefix;
+  bool m_bucketNameHasBeenSet = false;
   bool m_bucketPrefixHasBeenSet = false;
 };
 

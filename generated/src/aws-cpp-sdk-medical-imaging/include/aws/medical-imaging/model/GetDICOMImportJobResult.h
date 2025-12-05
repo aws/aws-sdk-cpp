@@ -60,9 +60,9 @@ class GetDICOMImportJobResult {
   ///@}
  private:
   DICOMImportJobProperties m_jobProperties;
-  bool m_jobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

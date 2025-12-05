@@ -91,12 +91,12 @@ class ListIdentitiesRequest : public SESRequest {
   ///@}
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_identityTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

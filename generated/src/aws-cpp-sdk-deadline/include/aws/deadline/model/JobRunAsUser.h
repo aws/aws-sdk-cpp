@@ -87,12 +87,12 @@ class JobRunAsUser {
   ///@}
  private:
   PosixUser m_posix;
-  bool m_posixHasBeenSet = false;
 
   WindowsUser m_windows;
-  bool m_windowsHasBeenSet = false;
 
   RunAs m_runAs{RunAs::NOT_SET};
+  bool m_posixHasBeenSet = false;
+  bool m_windowsHasBeenSet = false;
   bool m_runAsHasBeenSet = false;
 };
 

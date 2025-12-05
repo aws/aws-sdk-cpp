@@ -86,12 +86,12 @@ class ListInvitationsResult {
   ///@}
  private:
   Aws::Vector<Invitation> m_invitations;
-  bool m_invitationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invitationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

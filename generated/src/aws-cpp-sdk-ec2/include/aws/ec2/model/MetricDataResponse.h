@@ -102,12 +102,12 @@ class MetricDataResponse {
   ///@}
  private:
   CapacityManagerDimension m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::Vector<MetricValue> m_metricValues;
+  bool m_dimensionHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_metricValuesHasBeenSet = false;
 };
 

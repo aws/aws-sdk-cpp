@@ -192,27 +192,27 @@ class ObservabilityConfiguration {
   ///@}
  private:
   Aws::String m_observabilityConfigurationArn;
-  bool m_observabilityConfigurationArnHasBeenSet = false;
 
   Aws::String m_observabilityConfigurationName;
-  bool m_observabilityConfigurationNameHasBeenSet = false;
 
   TraceConfiguration m_traceConfiguration;
-  bool m_traceConfigurationHasBeenSet = false;
 
   int m_observabilityConfigurationRevision{0};
-  bool m_observabilityConfigurationRevisionHasBeenSet = false;
 
   bool m_latest{false};
-  bool m_latestHasBeenSet = false;
 
   ObservabilityConfigurationStatus m_status{ObservabilityConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
+  bool m_observabilityConfigurationArnHasBeenSet = false;
+  bool m_observabilityConfigurationNameHasBeenSet = false;
+  bool m_traceConfigurationHasBeenSet = false;
+  bool m_observabilityConfigurationRevisionHasBeenSet = false;
+  bool m_latestHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_deletedAtHasBeenSet = false;
 };
 

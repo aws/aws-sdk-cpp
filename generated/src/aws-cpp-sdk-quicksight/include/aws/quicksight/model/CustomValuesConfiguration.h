@@ -66,9 +66,9 @@ class CustomValuesConfiguration {
   ///@}
  private:
   bool m_includeNullValue{false};
-  bool m_includeNullValueHasBeenSet = false;
 
   CustomParameterValues m_customValues;
+  bool m_includeNullValueHasBeenSet = false;
   bool m_customValuesHasBeenSet = false;
 };
 

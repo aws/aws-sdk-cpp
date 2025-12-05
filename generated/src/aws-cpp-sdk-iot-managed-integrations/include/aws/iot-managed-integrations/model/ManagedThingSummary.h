@@ -361,57 +361,57 @@ class ManagedThingSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_advertisedProductId;
-  bool m_advertisedProductIdHasBeenSet = false;
 
   Aws::String m_brand;
-  bool m_brandHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::String m_connectorDeviceId;
-  bool m_connectorDeviceIdHasBeenSet = false;
 
   Aws::String m_connectorDestinationId;
-  bool m_connectorDestinationIdHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_credentialLockerId;
-  bool m_credentialLockerIdHasBeenSet = false;
 
   Aws::String m_parentControllerId;
-  bool m_parentControllerIdHasBeenSet = false;
 
   ProvisioningStatus m_provisioningStatus{ProvisioningStatus::NOT_SET};
-  bool m_provisioningStatusHasBeenSet = false;
 
   Role m_role{Role::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_activatedAt{};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_advertisedProductIdHasBeenSet = false;
+  bool m_brandHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
+  bool m_connectorDeviceIdHasBeenSet = false;
+  bool m_connectorDestinationIdHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_credentialLockerIdHasBeenSet = false;
+  bool m_parentControllerIdHasBeenSet = false;
+  bool m_provisioningStatusHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_activatedAtHasBeenSet = false;
 };
 

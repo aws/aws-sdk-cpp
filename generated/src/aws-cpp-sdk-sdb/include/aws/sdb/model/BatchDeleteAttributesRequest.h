@@ -77,9 +77,9 @@ class BatchDeleteAttributesRequest : public SimpleDBRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<DeletableItem> m_items;
+  bool m_domainNameHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

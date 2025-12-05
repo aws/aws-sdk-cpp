@@ -91,12 +91,12 @@ class SendCisSessionTelemetryRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanJobId;
-  bool m_scanJobIdHasBeenSet = false;
 
   Aws::String m_sessionToken;
-  bool m_sessionTokenHasBeenSet = false;
 
   Aws::Vector<CisSessionMessage> m_messages;
+  bool m_scanJobIdHasBeenSet = false;
+  bool m_sessionTokenHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
 };
 

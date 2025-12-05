@@ -196,27 +196,27 @@ class BotLocaleImportSpecification {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   double m_nluIntentConfidenceThreshold{0.0};
-  bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
   VoiceSettings m_voiceSettings;
-  bool m_voiceSettingsHasBeenSet = false;
 
   SpeechRecognitionSettings m_speechRecognitionSettings;
-  bool m_speechRecognitionSettingsHasBeenSet = false;
 
   SpeechDetectionSensitivity m_speechDetectionSensitivity{SpeechDetectionSensitivity::NOT_SET};
-  bool m_speechDetectionSensitivityHasBeenSet = false;
 
   UnifiedSpeechSettings m_unifiedSpeechSettings;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_nluIntentConfidenceThresholdHasBeenSet = false;
+  bool m_voiceSettingsHasBeenSet = false;
+  bool m_speechRecognitionSettingsHasBeenSet = false;
+  bool m_speechDetectionSensitivityHasBeenSet = false;
   bool m_unifiedSpeechSettingsHasBeenSet = false;
 };
 

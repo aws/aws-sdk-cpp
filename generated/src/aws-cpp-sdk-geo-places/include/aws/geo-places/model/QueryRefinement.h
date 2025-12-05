@@ -102,15 +102,15 @@ class QueryRefinement {
   ///@}
  private:
   Aws::String m_refinedTerm;
-  bool m_refinedTermHasBeenSet = false;
 
   Aws::String m_originalTerm;
-  bool m_originalTermHasBeenSet = false;
 
   int m_startIndex{0};
-  bool m_startIndexHasBeenSet = false;
 
   int m_endIndex{0};
+  bool m_refinedTermHasBeenSet = false;
+  bool m_originalTermHasBeenSet = false;
+  bool m_startIndexHasBeenSet = false;
   bool m_endIndexHasBeenSet = false;
 };
 

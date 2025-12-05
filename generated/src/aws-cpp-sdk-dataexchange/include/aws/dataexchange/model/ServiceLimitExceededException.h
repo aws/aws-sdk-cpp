@@ -84,12 +84,12 @@ class ServiceLimitExceededException {
   ///@}
  private:
   LimitName m_limitName{LimitName::NOT_SET};
-  bool m_limitNameHasBeenSet = false;
 
   double m_limitValue{0.0};
-  bool m_limitValueHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_limitNameHasBeenSet = false;
+  bool m_limitValueHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class DescribePartnerAppRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_includeAvailableUpgrade{false};
+  bool m_arnHasBeenSet = false;
   bool m_includeAvailableUpgradeHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class BatchListObjectParentsResponse {
   ///@}
  private:
   Aws::Vector<ObjectIdentifierAndLinkNameTuple> m_parentLinks;
-  bool m_parentLinksHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_parentLinksHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

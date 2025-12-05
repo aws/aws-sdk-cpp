@@ -109,15 +109,15 @@ class DataSecurityConfig {
   ///@}
  private:
   Aws::String m_modelKmsKeyId;
-  bool m_modelKmsKeyIdHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   Aws::String m_dataLakeKmsKeyId;
-  bool m_dataLakeKmsKeyIdHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
+  bool m_modelKmsKeyIdHasBeenSet = false;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
+  bool m_dataLakeKmsKeyIdHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

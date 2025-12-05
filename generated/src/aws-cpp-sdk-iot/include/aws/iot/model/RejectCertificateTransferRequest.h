@@ -70,9 +70,9 @@ class RejectCertificateTransferRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::String m_rejectReason;
+  bool m_certificateIdHasBeenSet = false;
   bool m_rejectReasonHasBeenSet = false;
 };
 

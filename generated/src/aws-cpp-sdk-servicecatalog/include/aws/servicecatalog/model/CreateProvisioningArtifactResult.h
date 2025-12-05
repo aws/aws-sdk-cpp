@@ -108,15 +108,15 @@ class CreateProvisioningArtifactResult {
   ///@}
  private:
   ProvisioningArtifactDetail m_provisioningArtifactDetail;
-  bool m_provisioningArtifactDetailHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_info;
-  bool m_infoHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisioningArtifactDetailHasBeenSet = false;
+  bool m_infoHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

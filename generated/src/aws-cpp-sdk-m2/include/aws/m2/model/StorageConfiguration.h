@@ -70,9 +70,9 @@ class StorageConfiguration {
   ///@}
  private:
   EfsStorageConfiguration m_efs;
-  bool m_efsHasBeenSet = false;
 
   FsxStorageConfiguration m_fsx;
+  bool m_efsHasBeenSet = false;
   bool m_fsxHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class StartConfigurationChecksRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Vector<ConfigurationCheckType> m_configurationCheckIds;
+  bool m_applicationIdHasBeenSet = false;
   bool m_configurationCheckIdsHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class CreatePolicyTemplateRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_statement;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statementHasBeenSet = false;
 };
 

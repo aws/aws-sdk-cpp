@@ -67,9 +67,9 @@ class GetTaxExemptionTypesResult {
   ///@}
  private:
   Aws::Vector<TaxExemptionType> m_taxExemptionTypes;
-  bool m_taxExemptionTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taxExemptionTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

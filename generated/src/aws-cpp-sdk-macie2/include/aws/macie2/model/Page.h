@@ -85,12 +85,12 @@ class Page {
   ///@}
  private:
   Range m_lineRange;
-  bool m_lineRangeHasBeenSet = false;
 
   Range m_offsetRange;
-  bool m_offsetRangeHasBeenSet = false;
 
   long long m_pageNumber{0};
+  bool m_lineRangeHasBeenSet = false;
+  bool m_offsetRangeHasBeenSet = false;
   bool m_pageNumberHasBeenSet = false;
 };
 

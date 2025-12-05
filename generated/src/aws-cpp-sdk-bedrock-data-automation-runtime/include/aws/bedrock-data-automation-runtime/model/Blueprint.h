@@ -85,12 +85,12 @@ class Blueprint {
   ///@}
  private:
   Aws::String m_blueprintArn;
-  bool m_blueprintArnHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   BlueprintStage m_stage{BlueprintStage::NOT_SET};
+  bool m_blueprintArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

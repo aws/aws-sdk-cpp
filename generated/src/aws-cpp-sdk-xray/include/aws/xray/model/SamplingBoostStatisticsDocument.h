@@ -140,21 +140,21 @@ class SamplingBoostStatisticsDocument {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   int m_anomalyCount{0};
-  bool m_anomalyCountHasBeenSet = false;
 
   int m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   int m_sampledAnomalyCount{0};
+  bool m_ruleNameHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_anomalyCountHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
   bool m_sampledAnomalyCountHasBeenSet = false;
 };
 

@@ -182,27 +182,27 @@ class GetExpenseAnalysisResult {
   ///@}
  private:
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ExpenseDocument> m_expenseDocuments;
-  bool m_expenseDocumentsHasBeenSet = false;
 
   Aws::Vector<Warning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_analyzeExpenseModelVersion;
-  bool m_analyzeExpenseModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_expenseDocumentsHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_analyzeExpenseModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

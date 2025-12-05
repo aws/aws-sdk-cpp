@@ -83,9 +83,9 @@ class ShareDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_successfulShares;
-  bool m_successfulSharesHasBeenSet = false;
 
   Aws::Vector<ShareError> m_shareErrors;
+  bool m_successfulSharesHasBeenSet = false;
   bool m_shareErrorsHasBeenSet = false;
 };
 

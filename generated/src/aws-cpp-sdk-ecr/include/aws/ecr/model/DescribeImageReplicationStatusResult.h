@@ -101,15 +101,15 @@ class DescribeImageReplicationStatusResult {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   ImageIdentifier m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::Vector<ImageReplicationStatus> m_replicationStatuses;
-  bool m_replicationStatusesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_replicationStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

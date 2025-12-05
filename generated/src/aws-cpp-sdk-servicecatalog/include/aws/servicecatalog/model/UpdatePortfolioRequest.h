@@ -172,24 +172,24 @@ class UpdatePortfolioRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_addTags;
-  bool m_addTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeTags;
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_addTagsHasBeenSet = false;
   bool m_removeTagsHasBeenSet = false;
 };
 

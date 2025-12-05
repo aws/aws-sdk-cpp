@@ -101,12 +101,12 @@ class ModifyInstanceCreditSpecificationRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<InstanceCreditSpecificationRequest> m_instanceCreditSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_instanceCreditSpecificationsHasBeenSet = false;
 };
 

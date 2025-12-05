@@ -88,12 +88,12 @@ class IamIdentity {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_sourceIdentity;
+  bool m_arnHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
   bool m_sourceIdentityHasBeenSet = false;
 };
 

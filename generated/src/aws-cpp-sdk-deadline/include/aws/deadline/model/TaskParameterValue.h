@@ -124,18 +124,18 @@ class TaskParameterValue {
   ///@}
  private:
   Aws::String m_int;
-  bool m_intHasBeenSet = false;
 
   Aws::String m_float;
-  bool m_floatHasBeenSet = false;
 
   Aws::String m_string;
-  bool m_stringHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_chunkInt;
+  bool m_intHasBeenSet = false;
+  bool m_floatHasBeenSet = false;
+  bool m_stringHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_chunkIntHasBeenSet = false;
 };
 

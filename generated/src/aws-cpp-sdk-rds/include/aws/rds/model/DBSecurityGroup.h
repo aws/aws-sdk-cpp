@@ -178,24 +178,24 @@ class DBSecurityGroup {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_dBSecurityGroupName;
-  bool m_dBSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_dBSecurityGroupDescription;
-  bool m_dBSecurityGroupDescriptionHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
-  bool m_eC2SecurityGroupsHasBeenSet = false;
 
   Aws::Vector<IPRange> m_iPRanges;
-  bool m_iPRangesHasBeenSet = false;
 
   Aws::String m_dBSecurityGroupArn;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_dBSecurityGroupNameHasBeenSet = false;
+  bool m_dBSecurityGroupDescriptionHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_eC2SecurityGroupsHasBeenSet = false;
+  bool m_iPRangesHasBeenSet = false;
   bool m_dBSecurityGroupArnHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class GetAlternateContactRequest : public AccountRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
   bool m_alternateContactTypeHasBeenSet = false;
 };
 

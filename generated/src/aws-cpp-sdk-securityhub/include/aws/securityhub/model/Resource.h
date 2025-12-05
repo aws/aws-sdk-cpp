@@ -234,33 +234,33 @@ class Resource {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Partition m_partition{Partition::NOT_SET};
-  bool m_partitionHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_resourceRole;
-  bool m_resourceRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DataClassificationDetails m_dataClassification;
-  bool m_dataClassificationHasBeenSet = false;
 
   ResourceDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_applicationArn;
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_partitionHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dataClassificationHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;
 };
 

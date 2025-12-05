@@ -69,9 +69,9 @@ class AuthConfig {
   ///@}
  private:
   ConnectionAuthType m_authenticationType{ConnectionAuthType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   AuthenticationMetadata m_authenticationMetadata;
+  bool m_authenticationTypeHasBeenSet = false;
   bool m_authenticationMetadataHasBeenSet = false;
 };
 

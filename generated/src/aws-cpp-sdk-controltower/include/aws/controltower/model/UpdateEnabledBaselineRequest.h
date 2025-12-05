@@ -92,12 +92,12 @@ class UpdateEnabledBaselineRequest : public ControlTowerRequest {
   ///@}
  private:
   Aws::String m_baselineVersion;
-  bool m_baselineVersionHasBeenSet = false;
 
   Aws::Vector<EnabledBaselineParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_enabledBaselineIdentifier;
+  bool m_baselineVersionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_enabledBaselineIdentifierHasBeenSet = false;
 };
 

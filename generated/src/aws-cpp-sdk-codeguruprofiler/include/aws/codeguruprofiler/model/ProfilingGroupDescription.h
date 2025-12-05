@@ -201,27 +201,27 @@ class ProfilingGroupDescription {
   ///@}
  private:
   AgentOrchestrationConfig m_agentOrchestrationConfig;
-  bool m_agentOrchestrationConfigHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
-  bool m_computePlatformHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProfilingStatus m_profilingStatus;
-  bool m_profilingStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_agentOrchestrationConfigHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_computePlatformHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_profilingStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

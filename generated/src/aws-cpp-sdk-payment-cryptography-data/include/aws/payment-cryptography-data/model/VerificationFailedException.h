@@ -65,9 +65,9 @@ class VerificationFailedException {
   ///@}
  private:
   VerificationFailedReason m_reason{VerificationFailedReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_reasonHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

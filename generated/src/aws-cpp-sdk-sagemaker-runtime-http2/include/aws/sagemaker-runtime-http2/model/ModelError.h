@@ -120,18 +120,18 @@ class ModelError {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_originalStatusCode{0};
-  bool m_originalStatusCodeHasBeenSet = false;
 
   Aws::String m_originalMessage;
-  bool m_originalMessageHasBeenSet = false;
 
   Aws::String m_logStreamArn;
-  bool m_logStreamArnHasBeenSet = false;
 
   Aws::String m_errorCode;
+  bool m_messageHasBeenSet = false;
+  bool m_originalStatusCodeHasBeenSet = false;
+  bool m_originalMessageHasBeenSet = false;
+  bool m_logStreamArnHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

@@ -245,42 +245,42 @@ class UpdatePoolResult {
   ///@}
  private:
   Aws::String m_poolArn;
-  bool m_poolArnHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   PoolStatus m_status{PoolStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   bool m_twoWayEnabled{false};
-  bool m_twoWayEnabledHasBeenSet = false;
 
   Aws::String m_twoWayChannelArn;
-  bool m_twoWayChannelArnHasBeenSet = false;
 
   Aws::String m_twoWayChannelRole;
-  bool m_twoWayChannelRoleHasBeenSet = false;
 
   bool m_selfManagedOptOutsEnabled{false};
-  bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   bool m_sharedRoutesEnabled{false};
-  bool m_sharedRoutesEnabledHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_poolArnHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_twoWayEnabledHasBeenSet = false;
+  bool m_twoWayChannelArnHasBeenSet = false;
+  bool m_twoWayChannelRoleHasBeenSet = false;
+  bool m_selfManagedOptOutsEnabledHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
+  bool m_sharedRoutesEnabledHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

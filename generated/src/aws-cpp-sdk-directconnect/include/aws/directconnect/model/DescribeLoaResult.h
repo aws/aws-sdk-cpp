@@ -83,12 +83,12 @@ class DescribeLoaResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_loaContent{};
-  bool m_loaContentHasBeenSet = false;
 
   LoaContentType m_loaContentType{LoaContentType::NOT_SET};
-  bool m_loaContentTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loaContentHasBeenSet = false;
+  bool m_loaContentTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

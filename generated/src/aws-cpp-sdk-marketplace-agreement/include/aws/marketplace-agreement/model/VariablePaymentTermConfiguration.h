@@ -72,9 +72,9 @@ class VariablePaymentTermConfiguration {
   ///@}
  private:
   PaymentRequestApprovalStrategy m_paymentRequestApprovalStrategy{PaymentRequestApprovalStrategy::NOT_SET};
-  bool m_paymentRequestApprovalStrategyHasBeenSet = false;
 
   Aws::String m_expirationDuration;
+  bool m_paymentRequestApprovalStrategyHasBeenSet = false;
   bool m_expirationDurationHasBeenSet = false;
 };
 

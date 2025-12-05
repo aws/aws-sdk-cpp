@@ -86,12 +86,12 @@ class SpaceSettingsSummary {
   ///@}
  private:
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   FeatureStatus m_remoteAccess{FeatureStatus::NOT_SET};
-  bool m_remoteAccessHasBeenSet = false;
 
   SpaceStorageSettings m_spaceStorageSettings;
+  bool m_appTypeHasBeenSet = false;
+  bool m_remoteAccessHasBeenSet = false;
   bool m_spaceStorageSettingsHasBeenSet = false;
 };
 

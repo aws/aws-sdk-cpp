@@ -61,9 +61,9 @@ class GetActionTypeResult {
   ///@}
  private:
   ActionTypeDeclaration m_actionType;
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

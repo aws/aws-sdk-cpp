@@ -106,12 +106,12 @@ class KPIFieldWells {
   ///@}
  private:
   Aws::Vector<MeasureField> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_targetValues;
-  bool m_targetValuesHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_trendGroups;
+  bool m_valuesHasBeenSet = false;
+  bool m_targetValuesHasBeenSet = false;
   bool m_trendGroupsHasBeenSet = false;
 };
 

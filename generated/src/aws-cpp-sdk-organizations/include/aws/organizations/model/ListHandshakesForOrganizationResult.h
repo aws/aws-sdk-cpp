@@ -90,12 +90,12 @@ class ListHandshakesForOrganizationResult {
   ///@}
  private:
   Aws::Vector<Handshake> m_handshakes;
-  bool m_handshakesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_handshakesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

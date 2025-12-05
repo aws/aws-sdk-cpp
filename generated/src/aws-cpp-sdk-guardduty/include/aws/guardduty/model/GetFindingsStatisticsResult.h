@@ -78,12 +78,12 @@ class GetFindingsStatisticsResult {
   ///@}
  private:
   FindingStatistics m_findingStatistics;
-  bool m_findingStatisticsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingStatisticsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

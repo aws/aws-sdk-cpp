@@ -86,12 +86,12 @@ class ListOrganizationPortfolioAccessResult {
   ///@}
  private:
   Aws::Vector<OrganizationNode> m_organizationNodes;
-  bool m_organizationNodesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationNodesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

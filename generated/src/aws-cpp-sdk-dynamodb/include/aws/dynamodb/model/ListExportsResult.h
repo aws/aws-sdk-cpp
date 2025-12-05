@@ -86,12 +86,12 @@ class ListExportsResult {
   ///@}
  private:
   Aws::Vector<ExportSummary> m_exportSummaries;
-  bool m_exportSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

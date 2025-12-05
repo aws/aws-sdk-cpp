@@ -146,18 +146,18 @@ class CreateChatResponseConfigurationRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<ResponseConfigurationType, ResponseConfiguration> m_responseConfigurations;
-  bool m_responseConfigurationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_responseConfigurationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

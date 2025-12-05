@@ -91,12 +91,12 @@ class Aggregation {
   ///@}
  private:
   DataPrepAggregationFunction m_aggregationFunction;
-  bool m_aggregationFunctionHasBeenSet = false;
 
   Aws::String m_newColumnName;
-  bool m_newColumnNameHasBeenSet = false;
 
   Aws::String m_newColumnId;
+  bool m_aggregationFunctionHasBeenSet = false;
+  bool m_newColumnNameHasBeenSet = false;
   bool m_newColumnIdHasBeenSet = false;
 };
 

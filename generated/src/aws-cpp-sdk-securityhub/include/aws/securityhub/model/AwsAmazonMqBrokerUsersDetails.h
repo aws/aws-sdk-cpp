@@ -69,9 +69,9 @@ class AwsAmazonMqBrokerUsersDetails {
   ///@}
  private:
   Aws::String m_pendingChange;
-  bool m_pendingChangeHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_pendingChangeHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

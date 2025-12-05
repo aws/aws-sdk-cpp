@@ -92,12 +92,12 @@ class GetLogGroupFieldsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   long long m_time{0};
-  bool m_timeHasBeenSet = false;
 
   Aws::String m_logGroupIdentifier;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
   bool m_logGroupIdentifierHasBeenSet = false;
 };
 

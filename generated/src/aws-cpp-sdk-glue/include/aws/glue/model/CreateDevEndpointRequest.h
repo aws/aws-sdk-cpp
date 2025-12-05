@@ -367,48 +367,48 @@ class CreateDevEndpointRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_publicKeys;
-  bool m_publicKeysHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   Aws::String m_extraPythonLibsS3Path;
-  bool m_extraPythonLibsS3PathHasBeenSet = false;
 
   Aws::String m_extraJarsS3Path;
-  bool m_extraJarsS3PathHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_arguments;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_publicKeysHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_extraPythonLibsS3PathHasBeenSet = false;
+  bool m_extraJarsS3PathHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_argumentsHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class AcceptChoice {
   ///@}
  private:
   Aws::String m_editedValue;
-  bool m_editedValueHasBeenSet = false;
 
   int m_predictionChoice{0};
-  bool m_predictionChoiceHasBeenSet = false;
 
   Aws::String m_predictionTarget;
+  bool m_editedValueHasBeenSet = false;
+  bool m_predictionChoiceHasBeenSet = false;
   bool m_predictionTargetHasBeenSet = false;
 };
 

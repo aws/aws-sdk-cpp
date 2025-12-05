@@ -107,15 +107,15 @@ class ProvisionIpamByoasnRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamId;
-  bool m_ipamIdHasBeenSet = false;
 
   Aws::String m_asn;
-  bool m_asnHasBeenSet = false;
 
   AsnAuthorizationContext m_asnAuthorizationContext;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamIdHasBeenSet = false;
+  bool m_asnHasBeenSet = false;
   bool m_asnAuthorizationContextHasBeenSet = false;
 };
 

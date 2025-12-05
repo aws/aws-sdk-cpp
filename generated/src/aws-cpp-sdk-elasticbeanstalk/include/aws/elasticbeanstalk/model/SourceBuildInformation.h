@@ -97,12 +97,12 @@ class SourceBuildInformation {
   ///@}
  private:
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   SourceRepository m_sourceRepository{SourceRepository::NOT_SET};
-  bool m_sourceRepositoryHasBeenSet = false;
 
   Aws::String m_sourceLocation;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceRepositoryHasBeenSet = false;
   bool m_sourceLocationHasBeenSet = false;
 };
 

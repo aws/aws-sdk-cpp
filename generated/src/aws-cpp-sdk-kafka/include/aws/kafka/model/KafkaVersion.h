@@ -58,9 +58,9 @@ class KafkaVersion {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   KafkaVersionStatus m_status{KafkaVersionStatus::NOT_SET};
+  bool m_versionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

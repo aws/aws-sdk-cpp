@@ -243,36 +243,36 @@ class IpamExternalResourceVerificationToken {
   ///@}
  private:
   Aws::String m_ipamExternalResourceVerificationTokenId;
-  bool m_ipamExternalResourceVerificationTokenIdHasBeenSet = false;
 
   Aws::String m_ipamExternalResourceVerificationTokenArn;
-  bool m_ipamExternalResourceVerificationTokenArnHasBeenSet = false;
 
   Aws::String m_ipamId;
-  bool m_ipamIdHasBeenSet = false;
 
   Aws::String m_ipamArn;
-  bool m_ipamArnHasBeenSet = false;
 
   Aws::String m_ipamRegion;
-  bool m_ipamRegionHasBeenSet = false;
 
   Aws::String m_tokenValue;
-  bool m_tokenValueHasBeenSet = false;
 
   Aws::String m_tokenName;
-  bool m_tokenNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   TokenState m_status{TokenState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IpamExternalResourceVerificationTokenState m_state{IpamExternalResourceVerificationTokenState::NOT_SET};
+  bool m_ipamExternalResourceVerificationTokenIdHasBeenSet = false;
+  bool m_ipamExternalResourceVerificationTokenArnHasBeenSet = false;
+  bool m_ipamIdHasBeenSet = false;
+  bool m_ipamArnHasBeenSet = false;
+  bool m_ipamRegionHasBeenSet = false;
+  bool m_tokenValueHasBeenSet = false;
+  bool m_tokenNameHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

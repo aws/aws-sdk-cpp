@@ -140,21 +140,21 @@ class TunnelSummary {
   ///@}
  private:
   Aws::String m_tunnelId;
-  bool m_tunnelIdHasBeenSet = false;
 
   Aws::String m_tunnelArn;
-  bool m_tunnelArnHasBeenSet = false;
 
   TunnelStatus m_status{TunnelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_tunnelIdHasBeenSet = false;
+  bool m_tunnelArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

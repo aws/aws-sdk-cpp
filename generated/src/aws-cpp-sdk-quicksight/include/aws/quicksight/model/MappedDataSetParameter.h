@@ -69,9 +69,9 @@ class MappedDataSetParameter {
   ///@}
  private:
   Aws::String m_dataSetIdentifier;
-  bool m_dataSetIdentifierHasBeenSet = false;
 
   Aws::String m_dataSetParameterName;
+  bool m_dataSetIdentifierHasBeenSet = false;
   bool m_dataSetParameterNameHasBeenSet = false;
 };
 

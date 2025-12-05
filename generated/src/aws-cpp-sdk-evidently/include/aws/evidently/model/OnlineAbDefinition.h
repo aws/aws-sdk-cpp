@@ -81,9 +81,9 @@ class OnlineAbDefinition {
   ///@}
  private:
   Aws::String m_controlTreatmentName;
-  bool m_controlTreatmentNameHasBeenSet = false;
 
   Aws::Map<Aws::String, long long> m_treatmentWeights;
+  bool m_controlTreatmentNameHasBeenSet = false;
   bool m_treatmentWeightsHasBeenSet = false;
 };
 

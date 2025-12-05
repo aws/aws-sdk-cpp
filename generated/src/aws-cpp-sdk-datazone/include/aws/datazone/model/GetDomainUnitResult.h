@@ -221,36 +221,36 @@ class GetDomainUnitResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<DomainUnitOwnerProperties> m_owners;
-  bool m_ownersHasBeenSet = false;
 
   Aws::String m_parentDomainUnitId;
-  bool m_parentDomainUnitIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownersHasBeenSet = false;
+  bool m_parentDomainUnitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

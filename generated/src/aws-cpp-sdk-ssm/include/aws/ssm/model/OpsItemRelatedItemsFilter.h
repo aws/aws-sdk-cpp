@@ -95,12 +95,12 @@ class OpsItemRelatedItemsFilter {
   ///@}
  private:
   OpsItemRelatedItemsFilterKey m_key{OpsItemRelatedItemsFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   OpsItemRelatedItemsFilterOperator m_operator{OpsItemRelatedItemsFilterOperator::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

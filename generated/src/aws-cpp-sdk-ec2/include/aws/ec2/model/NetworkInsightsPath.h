@@ -295,45 +295,45 @@ class NetworkInsightsPath {
   ///@}
  private:
   Aws::String m_networkInsightsPathId;
-  bool m_networkInsightsPathIdHasBeenSet = false;
 
   Aws::String m_networkInsightsPathArn;
-  bool m_networkInsightsPathArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_sourceIp;
-  bool m_sourceIpHasBeenSet = false;
 
   Aws::String m_destinationIp;
-  bool m_destinationIpHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PathFilter m_filterAtSource;
-  bool m_filterAtSourceHasBeenSet = false;
 
   PathFilter m_filterAtDestination;
+  bool m_networkInsightsPathIdHasBeenSet = false;
+  bool m_networkInsightsPathArnHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_sourceIpHasBeenSet = false;
+  bool m_destinationIpHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_filterAtSourceHasBeenSet = false;
   bool m_filterAtDestinationHasBeenSet = false;
 };
 

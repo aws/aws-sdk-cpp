@@ -71,9 +71,9 @@ class SalesforceDataSourceConfiguration {
   ///@}
  private:
   SalesforceSourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   SalesforceCrawlerConfiguration m_crawlerConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
   bool m_crawlerConfigurationHasBeenSet = false;
 };
 

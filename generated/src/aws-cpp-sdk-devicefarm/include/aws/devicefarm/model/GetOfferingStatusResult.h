@@ -114,15 +114,15 @@ class GetOfferingStatusResult {
   ///@}
  private:
   Aws::Map<Aws::String, OfferingStatus> m_current;
-  bool m_currentHasBeenSet = false;
 
   Aws::Map<Aws::String, OfferingStatus> m_nextPeriod;
-  bool m_nextPeriodHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_currentHasBeenSet = false;
+  bool m_nextPeriodHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

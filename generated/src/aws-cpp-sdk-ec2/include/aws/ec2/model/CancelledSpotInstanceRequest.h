@@ -69,9 +69,9 @@ class CancelledSpotInstanceRequest {
   ///@}
  private:
   Aws::String m_spotInstanceRequestId;
-  bool m_spotInstanceRequestIdHasBeenSet = false;
 
   CancelSpotInstanceRequestState m_state{CancelSpotInstanceRequestState::NOT_SET};
+  bool m_spotInstanceRequestIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

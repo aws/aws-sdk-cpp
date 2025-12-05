@@ -134,18 +134,18 @@ class ListRequestedServiceQuotaChangeHistoryRequest : public ServiceQuotasReques
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   RequestStatus m_status{RequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   AppliedLevelEnum m_quotaRequestedAtLevel{AppliedLevelEnum::NOT_SET};
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_quotaRequestedAtLevelHasBeenSet = false;
 };
 

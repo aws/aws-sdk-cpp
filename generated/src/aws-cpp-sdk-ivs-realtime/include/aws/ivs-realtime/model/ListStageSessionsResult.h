@@ -85,12 +85,12 @@ class ListStageSessionsResult {
   ///@}
  private:
   Aws::Vector<StageSessionSummary> m_stageSessions;
-  bool m_stageSessionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stageSessionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

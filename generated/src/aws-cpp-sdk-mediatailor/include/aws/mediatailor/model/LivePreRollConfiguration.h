@@ -72,9 +72,9 @@ class LivePreRollConfiguration {
   ///@}
  private:
   Aws::String m_adDecisionServerUrl;
-  bool m_adDecisionServerUrlHasBeenSet = false;
 
   int m_maxDurationSeconds{0};
+  bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_maxDurationSecondsHasBeenSet = false;
 };
 

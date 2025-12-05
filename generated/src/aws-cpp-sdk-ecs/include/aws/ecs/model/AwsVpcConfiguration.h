@@ -111,12 +111,12 @@ class AwsVpcConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   AssignPublicIp m_assignPublicIp{AssignPublicIp::NOT_SET};
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_assignPublicIpHasBeenSet = false;
 };
 

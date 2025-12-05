@@ -164,21 +164,21 @@ class FindMatchesMetrics {
   ///@}
  private:
   double m_areaUnderPRCurve{0.0};
-  bool m_areaUnderPRCurveHasBeenSet = false;
 
   double m_precision{0.0};
-  bool m_precisionHasBeenSet = false;
 
   double m_recall{0.0};
-  bool m_recallHasBeenSet = false;
 
   double m_f1{0.0};
-  bool m_f1HasBeenSet = false;
 
   ConfusionMatrix m_confusionMatrix;
-  bool m_confusionMatrixHasBeenSet = false;
 
   Aws::Vector<ColumnImportance> m_columnImportances;
+  bool m_areaUnderPRCurveHasBeenSet = false;
+  bool m_precisionHasBeenSet = false;
+  bool m_recallHasBeenSet = false;
+  bool m_f1HasBeenSet = false;
+  bool m_confusionMatrixHasBeenSet = false;
   bool m_columnImportancesHasBeenSet = false;
 };
 

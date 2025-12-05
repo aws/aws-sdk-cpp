@@ -80,9 +80,9 @@ class DeleteAttributesRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_clusterHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

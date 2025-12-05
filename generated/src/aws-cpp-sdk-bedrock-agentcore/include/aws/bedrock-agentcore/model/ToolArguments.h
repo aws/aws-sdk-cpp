@@ -212,30 +212,30 @@ class ToolArguments {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   ProgrammingLanguage m_language{ProgrammingLanguage::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   bool m_clearContext{false};
-  bool m_clearContextHasBeenSet = false;
 
   Aws::String m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_paths;
-  bool m_pathsHasBeenSet = false;
 
   Aws::Vector<InputContentBlock> m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_directoryPath;
-  bool m_directoryPathHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_codeHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_clearContextHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_pathsHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_directoryPathHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

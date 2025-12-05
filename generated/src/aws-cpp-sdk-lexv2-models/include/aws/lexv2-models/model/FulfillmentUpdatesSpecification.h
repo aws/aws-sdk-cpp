@@ -108,15 +108,15 @@ class FulfillmentUpdatesSpecification {
   ///@}
  private:
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   FulfillmentStartResponseSpecification m_startResponse;
-  bool m_startResponseHasBeenSet = false;
 
   FulfillmentUpdateResponseSpecification m_updateResponse;
-  bool m_updateResponseHasBeenSet = false;
 
   int m_timeoutInSeconds{0};
+  bool m_activeHasBeenSet = false;
+  bool m_startResponseHasBeenSet = false;
+  bool m_updateResponseHasBeenSet = false;
   bool m_timeoutInSecondsHasBeenSet = false;
 };
 

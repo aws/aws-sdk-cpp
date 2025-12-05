@@ -62,9 +62,9 @@ class UpdateOrganizationConfigurationResult {
   ///@}
  private:
   AutoEnable m_autoEnable;
-  bool m_autoEnableHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoEnableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

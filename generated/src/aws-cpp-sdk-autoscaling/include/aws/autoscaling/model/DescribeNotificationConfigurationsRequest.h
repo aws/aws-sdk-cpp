@@ -94,12 +94,12 @@ class DescribeNotificationConfigurationsRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_autoScalingGroupNames;
-  bool m_autoScalingGroupNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_autoScalingGroupNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

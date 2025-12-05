@@ -70,9 +70,9 @@ class AutomatedReasoningPolicyUpdateRuleAnnotation {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_ruleIdHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

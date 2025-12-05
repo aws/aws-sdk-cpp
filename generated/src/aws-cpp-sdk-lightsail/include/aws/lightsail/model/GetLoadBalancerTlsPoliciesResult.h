@@ -89,12 +89,12 @@ class GetLoadBalancerTlsPoliciesResult {
   ///@}
  private:
   Aws::Vector<LoadBalancerTlsPolicy> m_tlsPolicies;
-  bool m_tlsPoliciesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tlsPoliciesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

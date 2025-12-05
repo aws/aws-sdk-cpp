@@ -190,27 +190,27 @@ class Rule {
   ///@}
  private:
   LifecycleExpiration m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_iD;
-  bool m_iDHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   ExpirationStatus m_status{ExpirationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Transition m_transition;
-  bool m_transitionHasBeenSet = false;
 
   NoncurrentVersionTransition m_noncurrentVersionTransition;
-  bool m_noncurrentVersionTransitionHasBeenSet = false;
 
   NoncurrentVersionExpiration m_noncurrentVersionExpiration;
-  bool m_noncurrentVersionExpirationHasBeenSet = false;
 
   AbortIncompleteMultipartUpload m_abortIncompleteMultipartUpload;
+  bool m_expirationHasBeenSet = false;
+  bool m_iDHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_transitionHasBeenSet = false;
+  bool m_noncurrentVersionTransitionHasBeenSet = false;
+  bool m_noncurrentVersionExpirationHasBeenSet = false;
   bool m_abortIncompleteMultipartUploadHasBeenSet = false;
 };
 

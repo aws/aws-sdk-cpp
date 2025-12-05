@@ -134,15 +134,15 @@ class NetworkAclEntrySet {
   ///@}
  private:
   Aws::Vector<NetworkAclEntry> m_firstEntries;
-  bool m_firstEntriesHasBeenSet = false;
 
   bool m_forceRemediateForFirstEntries{false};
-  bool m_forceRemediateForFirstEntriesHasBeenSet = false;
 
   Aws::Vector<NetworkAclEntry> m_lastEntries;
-  bool m_lastEntriesHasBeenSet = false;
 
   bool m_forceRemediateForLastEntries{false};
+  bool m_firstEntriesHasBeenSet = false;
+  bool m_forceRemediateForFirstEntriesHasBeenSet = false;
+  bool m_lastEntriesHasBeenSet = false;
   bool m_forceRemediateForLastEntriesHasBeenSet = false;
 };
 

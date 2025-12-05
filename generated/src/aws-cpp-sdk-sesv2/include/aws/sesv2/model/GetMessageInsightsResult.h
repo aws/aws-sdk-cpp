@@ -150,21 +150,21 @@ class GetMessageInsightsResult {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_emailTags;
-  bool m_emailTagsHasBeenSet = false;
 
   Aws::Vector<EmailInsights> m_insights;
-  bool m_insightsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageIdHasBeenSet = false;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_emailTagsHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

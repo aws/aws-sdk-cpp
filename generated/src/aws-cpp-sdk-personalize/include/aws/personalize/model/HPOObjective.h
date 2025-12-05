@@ -89,12 +89,12 @@ class HPOObjective {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_metricRegex;
+  bool m_typeHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
   bool m_metricRegexHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class UpdateOrganizationConfigurationRequest : public DetectiveRequest {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   bool m_autoEnable{false};
+  bool m_graphArnHasBeenSet = false;
   bool m_autoEnableHasBeenSet = false;
 };
 

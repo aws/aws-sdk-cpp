@@ -68,9 +68,9 @@ class TableClassSummary {
   ///@}
  private:
   TableClass m_tableClass{TableClass::NOT_SET};
-  bool m_tableClassHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDateTime{};
+  bool m_tableClassHasBeenSet = false;
   bool m_lastUpdateDateTimeHasBeenSet = false;
 };
 

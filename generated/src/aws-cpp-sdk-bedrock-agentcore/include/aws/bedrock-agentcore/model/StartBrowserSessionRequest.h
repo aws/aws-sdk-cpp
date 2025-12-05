@@ -167,24 +167,24 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_traceParent;
-  bool m_traceParentHasBeenSet = false;
 
   Aws::String m_browserIdentifier;
-  bool m_browserIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_sessionTimeoutSeconds{0};
-  bool m_sessionTimeoutSecondsHasBeenSet = false;
 
   ViewPort m_viewPort;
-  bool m_viewPortHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_traceIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_browserIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sessionTimeoutSecondsHasBeenSet = false;
+  bool m_viewPortHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

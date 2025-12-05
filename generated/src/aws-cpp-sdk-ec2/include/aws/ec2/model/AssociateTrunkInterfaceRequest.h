@@ -142,21 +142,21 @@ class AssociateTrunkInterfaceRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_branchInterfaceId;
-  bool m_branchInterfaceIdHasBeenSet = false;
 
   Aws::String m_trunkInterfaceId;
-  bool m_trunkInterfaceIdHasBeenSet = false;
 
   int m_vlanId{0};
-  bool m_vlanIdHasBeenSet = false;
 
   int m_greKey{0};
-  bool m_greKeyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
+  bool m_branchInterfaceIdHasBeenSet = false;
+  bool m_trunkInterfaceIdHasBeenSet = false;
+  bool m_vlanIdHasBeenSet = false;
+  bool m_greKeyHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_dryRunHasBeenSet = false;
 };
 

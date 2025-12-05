@@ -74,12 +74,12 @@ class UpdateQuickSightQSearchConfigurationResult {
   ///@}
  private:
   QSearchStatus m_qSearchStatus{QSearchStatus::NOT_SET};
-  bool m_qSearchStatusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_qSearchStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

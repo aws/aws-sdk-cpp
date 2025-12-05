@@ -112,15 +112,15 @@ class UpdateInstanceAttributeRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceAttributeType m_attributeType{InstanceAttributeType::NOT_SET};
-  bool m_attributeTypeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_attributeTypeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -152,21 +152,21 @@ class CreateServiceRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DocumentReviewCommentSource {
   ///@}
  private:
   DocumentReviewCommentType m_type{DocumentReviewCommentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_typeHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

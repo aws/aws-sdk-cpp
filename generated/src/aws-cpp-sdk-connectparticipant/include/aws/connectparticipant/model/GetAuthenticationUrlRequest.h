@@ -86,12 +86,12 @@ class GetAuthenticationUrlRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_redirectUri;
-  bool m_redirectUriHasBeenSet = false;
 
   Aws::String m_connectionToken;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_redirectUriHasBeenSet = false;
   bool m_connectionTokenHasBeenSet = false;
 };
 

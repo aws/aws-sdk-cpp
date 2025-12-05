@@ -80,9 +80,9 @@ class CreatePipelineRequest : public CodePipelineRequest {
   ///@}
  private:
   PipelineDeclaration m_pipeline;
-  bool m_pipelineHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_pipelineHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

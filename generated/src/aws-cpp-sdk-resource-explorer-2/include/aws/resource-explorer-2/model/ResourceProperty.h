@@ -91,12 +91,12 @@ class ResourceProperty {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastReportedAt{};
-  bool m_lastReportedAtHasBeenSet = false;
 
   Aws::Utils::Document m_data;
+  bool m_nameHasBeenSet = false;
+  bool m_lastReportedAtHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class SignUpResult {
   ///@}
  private:
   bool m_userConfirmed{false};
-  bool m_userConfirmedHasBeenSet = false;
 
   CodeDeliveryDetailsType m_codeDeliveryDetails;
-  bool m_codeDeliveryDetailsHasBeenSet = false;
 
   Aws::String m_userSub;
-  bool m_userSubHasBeenSet = false;
 
   Aws::String m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userConfirmedHasBeenSet = false;
+  bool m_codeDeliveryDetailsHasBeenSet = false;
+  bool m_userSubHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

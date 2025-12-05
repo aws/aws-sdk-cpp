@@ -60,9 +60,9 @@ class CreateLabelingJobResult {
   ///@}
  private:
   Aws::String m_labelingJobArn;
-  bool m_labelingJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelingJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

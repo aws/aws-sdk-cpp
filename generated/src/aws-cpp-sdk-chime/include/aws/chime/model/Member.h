@@ -122,18 +122,18 @@ class Member {
   ///@}
  private:
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   MemberType m_memberType{MemberType::NOT_SET};
-  bool m_memberTypeHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_fullName;
-  bool m_fullNameHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_memberIdHasBeenSet = false;
+  bool m_memberTypeHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_fullNameHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

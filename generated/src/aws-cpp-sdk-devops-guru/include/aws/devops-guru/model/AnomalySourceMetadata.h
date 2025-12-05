@@ -88,12 +88,12 @@ class AnomalySourceMetadata {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_sourceResourceName;
-  bool m_sourceResourceNameHasBeenSet = false;
 
   Aws::String m_sourceResourceType;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceResourceNameHasBeenSet = false;
   bool m_sourceResourceTypeHasBeenSet = false;
 };
 

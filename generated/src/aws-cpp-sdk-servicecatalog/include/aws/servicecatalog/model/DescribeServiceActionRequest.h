@@ -68,9 +68,9 @@ class DescribeServiceActionRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
+  bool m_idHasBeenSet = false;
   bool m_acceptLanguageHasBeenSet = false;
 };
 

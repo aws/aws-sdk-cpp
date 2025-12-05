@@ -171,21 +171,21 @@ class UpdateIntegrationResponseResult {
   ///@}
  private:
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_selectionPattern;
-  bool m_selectionPatternHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-  bool m_responseTemplatesHasBeenSet = false;
 
   ContentHandlingStrategy m_contentHandling{ContentHandlingStrategy::NOT_SET};
-  bool m_contentHandlingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_selectionPatternHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_responseTemplatesHasBeenSet = false;
+  bool m_contentHandlingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ResultData {
   ///@}
  private:
   Document m_document;
-  bool m_documentHasBeenSet = false;
 
   double m_relevanceScore{0.0};
-  bool m_relevanceScoreHasBeenSet = false;
 
   Aws::String m_resultId;
+  bool m_documentHasBeenSet = false;
+  bool m_relevanceScoreHasBeenSet = false;
   bool m_resultIdHasBeenSet = false;
 };
 

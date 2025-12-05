@@ -110,15 +110,15 @@ class ConnectionTypeVariant {
   ///@}
  private:
   Aws::String m_connectionTypeVariantName;
-  bool m_connectionTypeVariantNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_logoUrl;
+  bool m_connectionTypeVariantNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_logoUrlHasBeenSet = false;
 };
 

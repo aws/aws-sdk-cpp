@@ -144,21 +144,21 @@ class SectionalElement {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   FieldPosition m_position;
-  bool m_positionHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   int m_level{0};
-  bool m_levelHasBeenSet = false;
 
   Aws::String m_orientation;
-  bool m_orientationHasBeenSet = false;
 
   bool m_excluded{false};
+  bool m_typeHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_orientationHasBeenSet = false;
   bool m_excludedHasBeenSet = false;
 };
 

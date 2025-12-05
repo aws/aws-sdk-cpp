@@ -107,15 +107,15 @@ class ModifyTransitGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ModifyTransitGatewayOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

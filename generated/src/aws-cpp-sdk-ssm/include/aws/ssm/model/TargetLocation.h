@@ -277,36 +277,36 @@ class TargetLocation {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::String m_targetLocationMaxConcurrency;
-  bool m_targetLocationMaxConcurrencyHasBeenSet = false;
 
   Aws::String m_targetLocationMaxErrors;
-  bool m_targetLocationMaxErrorsHasBeenSet = false;
 
   Aws::String m_executionRoleName;
-  bool m_executionRoleNameHasBeenSet = false;
 
   AlarmConfiguration m_targetLocationAlarmConfiguration;
-  bool m_targetLocationAlarmConfigurationHasBeenSet = false;
 
   bool m_includeChildOrganizationUnits{false};
-  bool m_includeChildOrganizationUnitsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeAccounts;
-  bool m_excludeAccountsHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_targetsMaxConcurrency;
-  bool m_targetsMaxConcurrencyHasBeenSet = false;
 
   Aws::String m_targetsMaxErrors;
+  bool m_accountsHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_targetLocationMaxConcurrencyHasBeenSet = false;
+  bool m_targetLocationMaxErrorsHasBeenSet = false;
+  bool m_executionRoleNameHasBeenSet = false;
+  bool m_targetLocationAlarmConfigurationHasBeenSet = false;
+  bool m_includeChildOrganizationUnitsHasBeenSet = false;
+  bool m_excludeAccountsHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_targetsMaxConcurrencyHasBeenSet = false;
   bool m_targetsMaxErrorsHasBeenSet = false;
 };
 

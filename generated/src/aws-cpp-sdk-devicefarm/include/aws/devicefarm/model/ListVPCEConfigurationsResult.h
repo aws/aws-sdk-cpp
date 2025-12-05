@@ -86,12 +86,12 @@ class ListVPCEConfigurationsResult {
   ///@}
  private:
   Aws::Vector<VPCEConfiguration> m_vpceConfigurations;
-  bool m_vpceConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpceConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

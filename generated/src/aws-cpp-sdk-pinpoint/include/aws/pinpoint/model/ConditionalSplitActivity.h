@@ -119,15 +119,15 @@ class ConditionalSplitActivity {
   ///@}
  private:
   Condition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   WaitTime m_evaluationWaitTime;
-  bool m_evaluationWaitTimeHasBeenSet = false;
 
   Aws::String m_falseActivity;
-  bool m_falseActivityHasBeenSet = false;
 
   Aws::String m_trueActivity;
+  bool m_conditionHasBeenSet = false;
+  bool m_evaluationWaitTimeHasBeenSet = false;
+  bool m_falseActivityHasBeenSet = false;
   bool m_trueActivityHasBeenSet = false;
 };
 

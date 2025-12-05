@@ -153,21 +153,21 @@ class GetObjectAttributesParts {
   ///@}
  private:
   int m_totalPartsCount{0};
-  bool m_totalPartsCountHasBeenSet = false;
 
   int m_partNumberMarker{0};
-  bool m_partNumberMarkerHasBeenSet = false;
 
   int m_nextPartNumberMarker{0};
-  bool m_nextPartNumberMarkerHasBeenSet = false;
 
   int m_maxParts{0};
-  bool m_maxPartsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::Vector<ObjectPart> m_parts;
+  bool m_totalPartsCountHasBeenSet = false;
+  bool m_partNumberMarkerHasBeenSet = false;
+  bool m_nextPartNumberMarkerHasBeenSet = false;
+  bool m_maxPartsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
   bool m_partsHasBeenSet = false;
 };
 

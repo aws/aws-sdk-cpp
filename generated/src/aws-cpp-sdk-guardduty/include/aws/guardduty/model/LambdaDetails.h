@@ -208,30 +208,30 @@ class LambdaDetails {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_functionVersion;
-  bool m_functionVersionHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_functionArnHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_functionVersionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

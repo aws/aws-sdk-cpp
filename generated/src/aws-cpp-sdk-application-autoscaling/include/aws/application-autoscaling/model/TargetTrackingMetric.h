@@ -104,12 +104,12 @@ class TargetTrackingMetric {
   ///@}
  private:
   Aws::Vector<TargetTrackingMetricDimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

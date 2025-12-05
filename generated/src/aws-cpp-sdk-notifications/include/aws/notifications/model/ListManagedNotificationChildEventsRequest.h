@@ -184,27 +184,27 @@ class ListManagedNotificationChildEventsRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_aggregateManagedNotificationEventArn;
-  bool m_aggregateManagedNotificationEventArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   LocaleCode m_locale{LocaleCode::NOT_SET};
-  bool m_localeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_relatedAccount;
-  bool m_relatedAccountHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_aggregateManagedNotificationEventArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_relatedAccountHasBeenSet = false;
+  bool m_organizationalUnitIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class OperationEvent {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   OperationEventStatus m_status{OperationEventStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_descriptionHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

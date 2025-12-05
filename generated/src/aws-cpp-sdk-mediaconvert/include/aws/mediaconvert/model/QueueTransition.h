@@ -89,12 +89,12 @@ class QueueTransition {
   ///@}
  private:
   Aws::String m_destinationQueue;
-  bool m_destinationQueueHasBeenSet = false;
 
   Aws::String m_sourceQueue;
-  bool m_sourceQueueHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_destinationQueueHasBeenSet = false;
+  bool m_sourceQueueHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

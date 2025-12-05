@@ -88,12 +88,12 @@ class StageExecution {
   ///@}
  private:
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   StageExecutionStatus m_status{StageExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExecutionType m_type{ExecutionType::NOT_SET};
+  bool m_pipelineExecutionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

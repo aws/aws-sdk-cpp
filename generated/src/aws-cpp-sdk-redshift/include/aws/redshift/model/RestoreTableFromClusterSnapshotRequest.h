@@ -202,30 +202,30 @@ class RestoreTableFromClusterSnapshotRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_sourceDatabaseName;
-  bool m_sourceDatabaseNameHasBeenSet = false;
 
   Aws::String m_sourceSchemaName;
-  bool m_sourceSchemaNameHasBeenSet = false;
 
   Aws::String m_sourceTableName;
-  bool m_sourceTableNameHasBeenSet = false;
 
   Aws::String m_targetDatabaseName;
-  bool m_targetDatabaseNameHasBeenSet = false;
 
   Aws::String m_targetSchemaName;
-  bool m_targetSchemaNameHasBeenSet = false;
 
   Aws::String m_newTableName;
-  bool m_newTableNameHasBeenSet = false;
 
   bool m_enableCaseSensitiveIdentifier{false};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_sourceDatabaseNameHasBeenSet = false;
+  bool m_sourceSchemaNameHasBeenSet = false;
+  bool m_sourceTableNameHasBeenSet = false;
+  bool m_targetDatabaseNameHasBeenSet = false;
+  bool m_targetSchemaNameHasBeenSet = false;
+  bool m_newTableNameHasBeenSet = false;
   bool m_enableCaseSensitiveIdentifierHasBeenSet = false;
 };
 

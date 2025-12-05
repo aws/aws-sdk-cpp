@@ -71,9 +71,9 @@ class VolumeStatusAttachmentStatus {
   ///@}
  private:
   Aws::String m_ioPerformance;
-  bool m_ioPerformanceHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_ioPerformanceHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

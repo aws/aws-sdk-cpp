@@ -191,27 +191,27 @@ class DescribeSMBSettingsResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ActiveDirectoryStatus m_activeDirectoryStatus{ActiveDirectoryStatus::NOT_SET};
-  bool m_activeDirectoryStatusHasBeenSet = false;
 
   bool m_sMBGuestPasswordSet{false};
-  bool m_sMBGuestPasswordSetHasBeenSet = false;
 
   SMBSecurityStrategy m_sMBSecurityStrategy{SMBSecurityStrategy::NOT_SET};
-  bool m_sMBSecurityStrategyHasBeenSet = false;
 
   bool m_fileSharesVisible{false};
-  bool m_fileSharesVisibleHasBeenSet = false;
 
   SMBLocalGroups m_sMBLocalGroups;
-  bool m_sMBLocalGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_activeDirectoryStatusHasBeenSet = false;
+  bool m_sMBGuestPasswordSetHasBeenSet = false;
+  bool m_sMBSecurityStrategyHasBeenSet = false;
+  bool m_fileSharesVisibleHasBeenSet = false;
+  bool m_sMBLocalGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

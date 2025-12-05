@@ -68,9 +68,9 @@ class AwsEcsMetadataDetails {
   ///@}
  private:
   Aws::String m_detailsGroup;
-  bool m_detailsGroupHasBeenSet = false;
 
   Aws::String m_taskDefinitionArn;
+  bool m_detailsGroupHasBeenSet = false;
   bool m_taskDefinitionArnHasBeenSet = false;
 };
 

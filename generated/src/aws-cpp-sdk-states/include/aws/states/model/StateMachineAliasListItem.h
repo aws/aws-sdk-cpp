@@ -72,9 +72,9 @@ class StateMachineAliasListItem {
   ///@}
  private:
   Aws::String m_stateMachineAliasArn;
-  bool m_stateMachineAliasArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_stateMachineAliasArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

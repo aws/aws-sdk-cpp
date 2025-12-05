@@ -75,12 +75,12 @@ class CreateDbClusterResult {
   ///@}
  private:
   Aws::String m_dbClusterId;
-  bool m_dbClusterIdHasBeenSet = false;
 
   ClusterStatus m_dbClusterStatus{ClusterStatus::NOT_SET};
-  bool m_dbClusterStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dbClusterIdHasBeenSet = false;
+  bool m_dbClusterStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -126,15 +126,15 @@ class CreateCacheSubnetGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheSubnetGroupName;
-  bool m_cacheSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_cacheSubnetGroupDescription;
-  bool m_cacheSubnetGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_cacheSubnetGroupNameHasBeenSet = false;
+  bool m_cacheSubnetGroupDescriptionHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class Computer {
   ///@}
  private:
   Aws::String m_computerId;
-  bool m_computerIdHasBeenSet = false;
 
   Aws::String m_computerName;
-  bool m_computerNameHasBeenSet = false;
 
   Aws::Vector<Attribute> m_computerAttributes;
+  bool m_computerIdHasBeenSet = false;
+  bool m_computerNameHasBeenSet = false;
   bool m_computerAttributesHasBeenSet = false;
 };
 

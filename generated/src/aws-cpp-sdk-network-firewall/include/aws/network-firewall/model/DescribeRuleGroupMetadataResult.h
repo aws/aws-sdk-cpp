@@ -225,36 +225,36 @@ class DescribeRuleGroupMetadataResult {
   ///@}
  private:
   Aws::String m_ruleGroupArn;
-  bool m_ruleGroupArnHasBeenSet = false;
 
   Aws::String m_ruleGroupName;
-  bool m_ruleGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   StatefulRuleOptions m_statefulRuleOptions;
-  bool m_statefulRuleOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_vendorName;
-  bool m_vendorNameHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_listingName;
-  bool m_listingNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleGroupArnHasBeenSet = false;
+  bool m_ruleGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_statefulRuleOptionsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_vendorNameHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_listingNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

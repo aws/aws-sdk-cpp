@@ -87,12 +87,12 @@ class AgentCollaboratorInputPayload {
   ///@}
  private:
   ReturnControlResults m_returnControlResults;
-  bool m_returnControlResultsHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   PayloadType m_type{PayloadType::NOT_SET};
+  bool m_returnControlResultsHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

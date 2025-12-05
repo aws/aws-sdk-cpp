@@ -118,15 +118,15 @@ class AwsCloudMapServiceDiscovery {
   ///@}
  private:
   Aws::Vector<AwsCloudMapInstanceAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   IpPreference m_ipPreference{IpPreference::NOT_SET};
-  bool m_ipPreferenceHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_attributesHasBeenSet = false;
+  bool m_ipPreferenceHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

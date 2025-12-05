@@ -77,9 +77,9 @@ class HttpEndpointRequestConfiguration {
   ///@}
  private:
   ContentEncoding m_contentEncoding{ContentEncoding::NOT_SET};
-  bool m_contentEncodingHasBeenSet = false;
 
   Aws::Vector<HttpEndpointCommonAttribute> m_commonAttributes;
+  bool m_contentEncodingHasBeenSet = false;
   bool m_commonAttributesHasBeenSet = false;
 };
 

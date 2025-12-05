@@ -116,12 +116,12 @@ class XssMatchSet {
   ///@}
  private:
   Aws::String m_xssMatchSetId;
-  bool m_xssMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<XssMatchTuple> m_xssMatchTuples;
+  bool m_xssMatchSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_xssMatchTuplesHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ListManagementOptions {
   ///@}
  private:
   Aws::String m_contactListName;
-  bool m_contactListNameHasBeenSet = false;
 
   Aws::String m_topicName;
+  bool m_contactListNameHasBeenSet = false;
   bool m_topicNameHasBeenSet = false;
 };
 

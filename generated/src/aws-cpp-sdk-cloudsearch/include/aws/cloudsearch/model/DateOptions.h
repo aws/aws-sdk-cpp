@@ -135,21 +135,21 @@ class DateOptions {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_sourceField;
-  bool m_sourceFieldHasBeenSet = false;
 
   bool m_facetEnabled{false};
-  bool m_facetEnabledHasBeenSet = false;
 
   bool m_searchEnabled{false};
-  bool m_searchEnabledHasBeenSet = false;
 
   bool m_returnEnabled{false};
-  bool m_returnEnabledHasBeenSet = false;
 
   bool m_sortEnabled{false};
+  bool m_defaultValueHasBeenSet = false;
+  bool m_sourceFieldHasBeenSet = false;
+  bool m_facetEnabledHasBeenSet = false;
+  bool m_searchEnabledHasBeenSet = false;
+  bool m_returnEnabledHasBeenSet = false;
   bool m_sortEnabledHasBeenSet = false;
 };
 

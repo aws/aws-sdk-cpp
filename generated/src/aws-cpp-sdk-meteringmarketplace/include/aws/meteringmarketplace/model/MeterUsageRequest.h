@@ -186,24 +186,24 @@ class MeterUsageRequest : public MarketplaceMeteringRequest {
   ///@}
  private:
   Aws::String m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_usageDimension;
-  bool m_usageDimensionHasBeenSet = false;
 
   int m_usageQuantity{0};
-  bool m_usageQuantityHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<UsageAllocation> m_usageAllocations;
-  bool m_usageAllocationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_productCodeHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_usageDimensionHasBeenSet = false;
+  bool m_usageQuantityHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_usageAllocationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

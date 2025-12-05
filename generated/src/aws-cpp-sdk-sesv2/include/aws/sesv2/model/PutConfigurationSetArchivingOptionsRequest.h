@@ -71,9 +71,9 @@ class PutConfigurationSetArchivingOptionsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_archiveArn;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_archiveArnHasBeenSet = false;
 };
 

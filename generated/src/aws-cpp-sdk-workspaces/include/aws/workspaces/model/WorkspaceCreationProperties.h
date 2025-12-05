@@ -151,21 +151,21 @@ class WorkspaceCreationProperties {
   ///@}
  private:
   bool m_enableInternetAccess{false};
-  bool m_enableInternetAccessHasBeenSet = false;
 
   Aws::String m_defaultOu;
-  bool m_defaultOuHasBeenSet = false;
 
   Aws::String m_customSecurityGroupId;
-  bool m_customSecurityGroupIdHasBeenSet = false;
 
   bool m_userEnabledAsLocalAdministrator{false};
-  bool m_userEnabledAsLocalAdministratorHasBeenSet = false;
 
   bool m_enableMaintenanceMode{false};
-  bool m_enableMaintenanceModeHasBeenSet = false;
 
   Aws::String m_instanceIamRoleArn;
+  bool m_enableInternetAccessHasBeenSet = false;
+  bool m_defaultOuHasBeenSet = false;
+  bool m_customSecurityGroupIdHasBeenSet = false;
+  bool m_userEnabledAsLocalAdministratorHasBeenSet = false;
+  bool m_enableMaintenanceModeHasBeenSet = false;
   bool m_instanceIamRoleArnHasBeenSet = false;
 };
 

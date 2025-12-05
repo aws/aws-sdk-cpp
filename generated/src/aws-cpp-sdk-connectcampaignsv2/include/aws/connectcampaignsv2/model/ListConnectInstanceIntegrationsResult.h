@@ -87,12 +87,12 @@ class ListConnectInstanceIntegrationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<IntegrationSummary> m_integrationSummaryList;
-  bool m_integrationSummaryListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_integrationSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

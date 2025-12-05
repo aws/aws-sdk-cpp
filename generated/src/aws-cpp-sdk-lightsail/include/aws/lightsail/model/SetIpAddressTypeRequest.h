@@ -113,15 +113,15 @@ class SetIpAddressTypeRequest : public LightsailRequest {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   bool m_acceptBundleUpdate{false};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_acceptBundleUpdateHasBeenSet = false;
 };
 

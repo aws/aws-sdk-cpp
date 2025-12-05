@@ -73,9 +73,9 @@ class PutApplicationPolicyRequest : public ServerlessApplicationRepositoryReques
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Vector<ApplicationPolicyStatement> m_statements;
+  bool m_applicationIdHasBeenSet = false;
   bool m_statementsHasBeenSet = false;
 };
 

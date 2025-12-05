@@ -88,12 +88,12 @@ class ListDataLakeExceptionsResult {
   ///@}
  private:
   Aws::Vector<DataLakeException> m_exceptions;
-  bool m_exceptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exceptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

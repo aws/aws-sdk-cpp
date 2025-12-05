@@ -84,12 +84,12 @@ class ListProviderServicesResult {
   ///@}
  private:
   Aws::Vector<ProviderServiceSummary> m_providerServiceSummaries;
-  bool m_providerServiceSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_providerServiceSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

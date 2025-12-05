@@ -61,9 +61,9 @@ class AssociateResolverRuleResult {
   ///@}
  private:
   ResolverRuleAssociation m_resolverRuleAssociation;
-  bool m_resolverRuleAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverRuleAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

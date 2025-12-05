@@ -165,24 +165,24 @@ class UpdateConfiguredAudienceModelRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   ConfiguredAudienceModelOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_audienceModelArn;
-  bool m_audienceModelArnHasBeenSet = false;
 
   Aws::Vector<SharedAudienceMetrics> m_sharedAudienceMetrics;
-  bool m_sharedAudienceMetricsHasBeenSet = false;
 
   int m_minMatchingSeedSize{0};
-  bool m_minMatchingSeedSizeHasBeenSet = false;
 
   AudienceSizeConfig m_audienceSizeConfig;
-  bool m_audienceSizeConfigHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_audienceModelArnHasBeenSet = false;
+  bool m_sharedAudienceMetricsHasBeenSet = false;
+  bool m_minMatchingSeedSizeHasBeenSet = false;
+  bool m_audienceSizeConfigHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

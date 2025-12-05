@@ -131,15 +131,15 @@ class StartSelector {
   ///@}
  private:
   StartSelectorType m_startSelectorType{StartSelectorType::NOT_SET};
-  bool m_startSelectorTypeHasBeenSet = false;
 
   Aws::String m_afterFragmentNumber;
-  bool m_afterFragmentNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::String m_continuationToken;
+  bool m_startSelectorTypeHasBeenSet = false;
+  bool m_afterFragmentNumberHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
   bool m_continuationTokenHasBeenSet = false;
 };
 

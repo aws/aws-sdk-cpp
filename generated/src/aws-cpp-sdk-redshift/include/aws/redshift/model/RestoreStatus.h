@@ -142,21 +142,21 @@ class RestoreStatus {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   double m_currentRestoreRateInMegaBytesPerSecond{0.0};
-  bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = false;
 
   long long m_snapshotSizeInMegaBytes{0};
-  bool m_snapshotSizeInMegaBytesHasBeenSet = false;
 
   long long m_progressInMegaBytes{0};
-  bool m_progressInMegaBytesHasBeenSet = false;
 
   long long m_elapsedTimeInSeconds{0};
-  bool m_elapsedTimeInSecondsHasBeenSet = false;
 
   long long m_estimatedTimeToCompletionInSeconds{0};
+  bool m_statusHasBeenSet = false;
+  bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = false;
+  bool m_snapshotSizeInMegaBytesHasBeenSet = false;
+  bool m_progressInMegaBytesHasBeenSet = false;
+  bool m_elapsedTimeInSecondsHasBeenSet = false;
   bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
 };
 

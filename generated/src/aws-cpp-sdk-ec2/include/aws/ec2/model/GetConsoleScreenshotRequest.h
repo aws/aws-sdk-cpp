@@ -87,12 +87,12 @@ class GetConsoleScreenshotRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   bool m_wakeUp{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_wakeUpHasBeenSet = false;
 };
 

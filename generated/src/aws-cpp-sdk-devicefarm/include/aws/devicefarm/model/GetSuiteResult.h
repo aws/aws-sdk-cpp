@@ -65,9 +65,9 @@ class GetSuiteResult {
   ///@}
  private:
   Suite m_suite;
-  bool m_suiteHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suiteHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

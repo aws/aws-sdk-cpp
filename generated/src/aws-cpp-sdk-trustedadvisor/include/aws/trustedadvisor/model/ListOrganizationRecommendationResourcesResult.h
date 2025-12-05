@@ -91,12 +91,12 @@ class ListOrganizationRecommendationResourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<OrganizationRecommendationResourceSummary> m_organizationRecommendationResourceSummaries;
-  bool m_organizationRecommendationResourceSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_organizationRecommendationResourceSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

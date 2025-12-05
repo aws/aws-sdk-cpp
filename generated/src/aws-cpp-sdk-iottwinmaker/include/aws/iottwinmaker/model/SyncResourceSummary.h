@@ -123,18 +123,18 @@ class SyncResourceSummary {
   ///@}
  private:
   SyncResourceType m_resourceType{SyncResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   SyncResourceStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_updateDateTimeHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class GetRunTaskRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_idHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

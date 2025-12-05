@@ -67,9 +67,9 @@ class GetProtocolsListRequest : public FMSRequest {
   ///@}
  private:
   Aws::String m_listId;
-  bool m_listIdHasBeenSet = false;
 
   bool m_defaultList{false};
+  bool m_listIdHasBeenSet = false;
   bool m_defaultListHasBeenSet = false;
 };
 

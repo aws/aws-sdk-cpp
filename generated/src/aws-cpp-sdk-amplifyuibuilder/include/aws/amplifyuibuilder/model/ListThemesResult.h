@@ -84,12 +84,12 @@ class ListThemesResult {
   ///@}
  private:
   Aws::Vector<ThemeSummary> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

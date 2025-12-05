@@ -78,9 +78,9 @@ class InventoryResultEntity {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, InventoryResultItem> m_data;
+  bool m_idHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

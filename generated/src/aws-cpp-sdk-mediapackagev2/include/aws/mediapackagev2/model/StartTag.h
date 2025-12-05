@@ -70,9 +70,9 @@ class StartTag {
   ///@}
  private:
   double m_timeOffset{0.0};
-  bool m_timeOffsetHasBeenSet = false;
 
   bool m_precise{false};
+  bool m_timeOffsetHasBeenSet = false;
   bool m_preciseHasBeenSet = false;
 };
 

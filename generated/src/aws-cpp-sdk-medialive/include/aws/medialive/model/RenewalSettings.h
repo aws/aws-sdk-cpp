@@ -64,9 +64,9 @@ class RenewalSettings {
   ///@}
  private:
   ReservationAutomaticRenewal m_automaticRenewal{ReservationAutomaticRenewal::NOT_SET};
-  bool m_automaticRenewalHasBeenSet = false;
 
   int m_renewalCount{0};
+  bool m_automaticRenewalHasBeenSet = false;
   bool m_renewalCountHasBeenSet = false;
 };
 

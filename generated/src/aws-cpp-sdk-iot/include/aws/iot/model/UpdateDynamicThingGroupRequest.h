@@ -139,21 +139,21 @@ class UpdateDynamicThingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   ThingGroupProperties m_thingGroupProperties;
-  bool m_thingGroupPropertiesHasBeenSet = false;
 
   long long m_expectedVersion{0};
-  bool m_expectedVersionHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_queryVersion;
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_thingGroupPropertiesHasBeenSet = false;
+  bool m_expectedVersionHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
   bool m_queryVersionHasBeenSet = false;
 };
 

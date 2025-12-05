@@ -68,9 +68,9 @@ class RestoreDocumentVersionsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_documentId;
+  bool m_authenticationTokenHasBeenSet = false;
   bool m_documentIdHasBeenSet = false;
 };
 

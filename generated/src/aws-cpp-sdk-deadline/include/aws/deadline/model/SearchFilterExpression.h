@@ -127,18 +127,18 @@ class SearchFilterExpression {
   ///@}
  private:
   DateTimeFilterExpression m_dateTimeFilter;
-  bool m_dateTimeFilterHasBeenSet = false;
 
   ParameterFilterExpression m_parameterFilter;
-  bool m_parameterFilterHasBeenSet = false;
 
   SearchTermFilterExpression m_searchTermFilter;
-  bool m_searchTermFilterHasBeenSet = false;
 
   StringFilterExpression m_stringFilter;
-  bool m_stringFilterHasBeenSet = false;
 
   std::shared_ptr<SearchGroupedFilterExpressions> m_groupFilter;
+  bool m_dateTimeFilterHasBeenSet = false;
+  bool m_parameterFilterHasBeenSet = false;
+  bool m_searchTermFilterHasBeenSet = false;
+  bool m_stringFilterHasBeenSet = false;
   bool m_groupFilterHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class SqsAction {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   bool m_useBase64{false};
-  bool m_useBase64HasBeenSet = false;
 
   Payload m_payload;
+  bool m_queueUrlHasBeenSet = false;
+  bool m_useBase64HasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AutoScalingSpecification {
   ///@}
  private:
   AutoScalingSettings m_writeCapacityAutoScaling;
-  bool m_writeCapacityAutoScalingHasBeenSet = false;
 
   AutoScalingSettings m_readCapacityAutoScaling;
+  bool m_writeCapacityAutoScalingHasBeenSet = false;
   bool m_readCapacityAutoScalingHasBeenSet = false;
 };
 

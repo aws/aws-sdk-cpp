@@ -58,9 +58,9 @@ class ReleaseFileSystemNfsV3LocksResult {
   ///@}
  private:
   FileSystem m_fileSystem;
-  bool m_fileSystemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileSystemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

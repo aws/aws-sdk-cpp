@@ -78,12 +78,12 @@ class GetAuthorizationTokenResult {
   ///@}
  private:
   Aws::String m_authorizationToken;
-  bool m_authorizationTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizationTokenHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

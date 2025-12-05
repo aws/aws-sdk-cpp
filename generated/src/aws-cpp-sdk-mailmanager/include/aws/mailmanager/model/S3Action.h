@@ -126,18 +126,18 @@ class S3Action {
   ///@}
  private:
   ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
-  bool m_actionFailurePolicyHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   Aws::String m_s3SseKmsKeyId;
+  bool m_actionFailurePolicyHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
   bool m_s3SseKmsKeyIdHasBeenSet = false;
 };
 
