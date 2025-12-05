@@ -23,6 +23,7 @@ static const int SENDER_PROFILE_NOT_FOUND_HASH = HashingUtils::HashString("SENDE
 static const int RECEIVER_PROFILE_NOT_FOUND_HASH = HashingUtils::HashString("RECEIVER_PROFILE_NOT_FOUND");
 static const int CONNECTION_INVITATION_NOT_FOUND_HASH = HashingUtils::HashString("CONNECTION_INVITATION_NOT_FOUND");
 static const int CONNECTION_NOT_FOUND_HASH = HashingUtils::HashString("CONNECTION_NOT_FOUND");
+static const int VERIFICATION_NOT_FOUND_HASH = HashingUtils::HashString("VERIFICATION_NOT_FOUND");
 
 ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const 
     return ResourceNotFoundExceptionReason::CONNECTION_INVITATION_NOT_FOUND;
   } else if (hashCode == CONNECTION_NOT_FOUND_HASH) {
     return ResourceNotFoundExceptionReason::CONNECTION_NOT_FOUND;
+  } else if (hashCode == VERIFICATION_NOT_FOUND_HASH) {
+    return ResourceNotFoundExceptionReason::VERIFICATION_NOT_FOUND;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForResourceNotFoundExceptionReason(ResourceNotFoundExceptionR
       return "CONNECTION_INVITATION_NOT_FOUND";
     case ResourceNotFoundExceptionReason::CONNECTION_NOT_FOUND:
       return "CONNECTION_NOT_FOUND";
+    case ResourceNotFoundExceptionReason::VERIFICATION_NOT_FOUND:
+      return "VERIFICATION_NOT_FOUND";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

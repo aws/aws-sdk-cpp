@@ -25,6 +25,8 @@
 #include <aws/partnercentral-account/model/AssociateAwsTrainingCertificationEmailDomainResult.h>
 #include <aws/partnercentral-account/model/BusinessValidationCode.h>
 #include <aws/partnercentral-account/model/BusinessValidationError.h>
+#include <aws/partnercentral-account/model/BusinessVerificationDetails.h>
+#include <aws/partnercentral-account/model/BusinessVerificationResponse.h>
 #include <aws/partnercentral-account/model/CancelConnectionInvitationRequest.h>
 #include <aws/partnercentral-account/model/CancelConnectionInvitationResult.h>
 #include <aws/partnercentral-account/model/CancelConnectionRequest.h>
@@ -63,6 +65,8 @@
 #include <aws/partnercentral-account/model/GetProfileUpdateTaskResult.h>
 #include <aws/partnercentral-account/model/GetProfileVisibilityRequest.h>
 #include <aws/partnercentral-account/model/GetProfileVisibilityResult.h>
+#include <aws/partnercentral-account/model/GetVerificationRequest.h>
+#include <aws/partnercentral-account/model/GetVerificationResult.h>
 #include <aws/partnercentral-account/model/IndustrySegment.h>
 #include <aws/partnercentral-account/model/InvitationStatus.h>
 #include <aws/partnercentral-account/model/ListConnectionInvitationsRequest.h>
@@ -88,6 +92,8 @@
 #include <aws/partnercentral-account/model/PutAllianceLeadContactResult.h>
 #include <aws/partnercentral-account/model/PutProfileVisibilityRequest.h>
 #include <aws/partnercentral-account/model/PutProfileVisibilityResult.h>
+#include <aws/partnercentral-account/model/RegistrantVerificationDetails.h>
+#include <aws/partnercentral-account/model/RegistrantVerificationResponse.h>
 #include <aws/partnercentral-account/model/RejectConnectionInvitationRequest.h>
 #include <aws/partnercentral-account/model/RejectConnectionInvitationResult.h>
 #include <aws/partnercentral-account/model/ResourceNotFoundException.h>
@@ -99,6 +105,8 @@
 #include <aws/partnercentral-account/model/ServiceQuotaExceededExceptionReason.h>
 #include <aws/partnercentral-account/model/StartProfileUpdateTaskRequest.h>
 #include <aws/partnercentral-account/model/StartProfileUpdateTaskResult.h>
+#include <aws/partnercentral-account/model/StartVerificationRequest.h>
+#include <aws/partnercentral-account/model/StartVerificationResult.h>
 #include <aws/partnercentral-account/model/Tag.h>
 #include <aws/partnercentral-account/model/TagResourceRequest.h>
 #include <aws/partnercentral-account/model/TagResourceResult.h>
@@ -111,6 +119,10 @@
 #include <aws/partnercentral-account/model/ValidationError.h>
 #include <aws/partnercentral-account/model/ValidationException.h>
 #include <aws/partnercentral-account/model/ValidationExceptionReason.h>
+#include <aws/partnercentral-account/model/VerificationDetails.h>
+#include <aws/partnercentral-account/model/VerificationResponseDetails.h>
+#include <aws/partnercentral-account/model/VerificationStatus.h>
+#include <aws/partnercentral-account/model/VerificationType.h>
 
 using PartnerCentralAccountIncludeTest = ::testing::Test;
 
