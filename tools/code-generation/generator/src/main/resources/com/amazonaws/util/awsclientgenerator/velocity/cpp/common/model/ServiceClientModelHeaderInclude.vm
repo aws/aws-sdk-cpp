@@ -61,7 +61,7 @@ namespace Aws
 
   namespace Auth
   {
-#if($serviceModel.hasBearerAuth())
+#if(($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || $serviceModel.hasOnlyBearerAuth())
     class BearerTokenAuthSignerProvider;
 #end
 #if($serviceModel.hasSigV4Auth())

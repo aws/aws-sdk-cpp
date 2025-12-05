@@ -22,7 +22,7 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/SameThreadExecutor.h>
 #include <aws/crt/Variant.h>
-
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 
 using namespace smithy::client;
 using namespace smithy::interceptor;
@@ -201,8 +201,9 @@ bool AwsSmithyClientBase::ResolveIdentityAuth(
       responseHandler(std::move(identityOutcome));
       return false;
     }
-    
     pRequestCtx->m_awsIdentity = std::move(identityOutcome.GetResultWithOwnership());
+
+
 
     // get endpoint params from operation context
     const auto contextEndpointParameters = this->GetContextEndpointParameters(*pRequestCtx);
@@ -254,9 +255,9 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Unable to continue AWSClient request: response handler is missing!");
         return;
     }
-
+    auto authResolver = request->GetRequestSpecificSupportedAuth().empty() ? nullptr : Aws::MakeShared<GenericAuthSchemeResolver<>>(AWS_SMITHY_CLIENT_LOG, request->GetRequestSpecificSupportedAuth());
     std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
-        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG, request, requestName, pExecutor );
+        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG, request, requestName, pExecutor, authResolver);
     if (!pRequestCtx)
     {
         AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");
@@ -702,8 +703,9 @@ AwsSmithyClientBase::ResolveEndpointOutcome AwsSmithyClientBase::ResolveEndpoint
     {
         outcome = std::move(asyncOutcome);
     };
-   
-    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx = Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG, request, requestName, nullptr);
+
+    auto authResolver = request->GetRequestSpecificSupportedAuth().empty() ? nullptr : Aws::MakeShared<GenericAuthSchemeResolver<>>(AWS_SMITHY_CLIENT_LOG, request->GetRequestSpecificSupportedAuth());
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx = Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG, request, requestName, nullptr, authResolver);
     if (!pRequestCtx)
     {
         AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");

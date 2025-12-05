@@ -117,6 +117,8 @@ public class CborCppClientGenerator extends CppClientGenerator {
             Template template;
             VelocityContext context = createContext(serviceModel);
 
+            context.put("operation", serviceModel.getOperationForRequestShapeName(shape.getName()));
+
             if (shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers())) {
                 if (shape.hasEventStreamMembers()) {
                     HashMap<String, String> headersMap = new HashMap<>(10);
@@ -146,7 +148,6 @@ public class CborCppClientGenerator extends CppClientGenerator {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborSubObjectSource.vm", StandardCharsets.UTF_8.name());
             }
 
-            context.put("operation", serviceModel.getOperationForRequestShapeName(shape.getName()));
             context.put("shape", shape);
             context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
             context.put("CppViewHelper", CppCborViewHelper.class);

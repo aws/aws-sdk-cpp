@@ -95,4 +95,18 @@ public class Operation {
     public void addRequest(final ShapeMember request) {
         this.request = request;
     }
+
+    public boolean hasSigV4Auth() { return auth != null && auth.contains("aws.auth#sigv4"); }
+
+    public boolean hasSigV4aAuth() {
+        return auth != null && auth.contains("aws.auth#sigv4a");
+    }
+
+    public boolean hasNoAuth() {
+        return auth != null && auth.contains("smithy.api#noAuth");
+    }
+
+    public boolean hasBearerAuth() {
+        return auth != null && auth.contains("smithy.api#httpBearerAuth");
+    }
 }

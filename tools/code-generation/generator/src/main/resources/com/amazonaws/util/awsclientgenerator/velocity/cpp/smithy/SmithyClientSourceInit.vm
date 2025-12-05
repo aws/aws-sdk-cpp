@@ -1,6 +1,6 @@
 #set($clientConfiguration = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
 #set($s3_express_auth = "sigv4-s3express")
-#if($serviceModel.hasOnlyBearerAuth())
+#if($serviceModel.hasBearerAuth())
 ##BEARER TOKEN AUTH PROVIDER C-TOR
 ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
@@ -14,7 +14,11 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
       {
 #foreach($entry in $AuthSchemeMapEntries)
-          {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
+    #if($entry.contains("smithy::BearerTokenAuthScheme"))
+        {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
+    #else
+        {${entry}{GetServiceName(), clientConfiguration.region}},
+    #end
 #end
       })
 {
@@ -31,7 +35,11 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
       {
 #foreach($entry in $AuthSchemeMapEntries)
-          {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
+    #if($entry.contains("smithy::BearerTokenAuthScheme"))
+        {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
+    #else
+        {${entry}{GetServiceName(), clientConfiguration.region}},
+    #end
 #end
       })
 {
@@ -39,7 +47,8 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
 ## END OF BEARER TOKEN AUTH PROVIDER C-TOR
 
 
-#else
+#end
+#if(!$serviceModel.hasOnlyBearerAuth())
 ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
@@ -113,7 +122,9 @@ ${className}::${className}(const AWSCredentials& credentials,
             }()
 #else
 #foreach($entry in $AuthSchemeMapEntries)
+#if(!$entry.contains("smithy::BearerTokenAuthScheme"))
             {${entry}{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+#end
 #end
 #end
         })
@@ -153,7 +164,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
             }()
 #else
 #foreach($entry in $AuthSchemeMapEntries)
+#if(!$entry.contains("smithy::BearerTokenAuthScheme"))
             {${entry}{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}},
+#end
 #end
 #end
         })
@@ -288,7 +301,11 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
 #end
       {
 #foreach($entry in $AuthSchemeMapEntries)
+#if($entry.contains("smithy::BearerTokenAuthScheme"))
+          {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}},
+#else
           {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}},
+#end
 #end
       })
 {}
@@ -308,7 +325,9 @@ ${className}::${className}(const AWSCredentials& credentials,
 #end
         {
 #foreach($entry in $AuthSchemeMapEntries)
+#if(!$entry.contains("smithy::BearerTokenAuthScheme"))
           {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+#end
 #end
         })
 {}
@@ -327,7 +346,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
         Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
 #end        {
 #foreach($entry in $AuthSchemeMapEntries)
+#if(!$entry.contains("smithy::BearerTokenAuthScheme"))
           {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}},
+#end
 #end
         })
 {}

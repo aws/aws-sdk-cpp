@@ -132,6 +132,8 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         Template template = null;
         VelocityContext context = createContext(serviceModel);
 
+        context.put("operation", serviceModel.getOperationForRequestShapeName(shape.getName()));
+
         if (shape.isStructure() && shape.isReferenced()) {
             if (shape.isRequest()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryRequestSource.vm", StandardCharsets.UTF_8.name());

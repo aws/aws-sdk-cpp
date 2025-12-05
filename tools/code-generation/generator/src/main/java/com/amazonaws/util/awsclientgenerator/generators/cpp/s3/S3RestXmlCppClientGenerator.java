@@ -198,7 +198,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
         if(serviceModel.isUseSmithyClient())
         {
             updateAuthSchemesFromEndpointRules(serviceModel, serviceModel.getRawEndpointRules());
-            updateAuthSchemesFromOperations(serviceModel);
+            serviceModel.setAuthSchemes(getUpdatedAuthSchemesFromOperations(serviceModel));
         }
 
         // Add ID2 and RequestId to GetObjectResult

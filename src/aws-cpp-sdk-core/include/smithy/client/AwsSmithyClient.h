@@ -188,7 +188,7 @@ namespace client
                 }
             }
 
-            Aws::Vector<AuthSchemeOption> authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
+            Aws::Vector<AuthSchemeOption> authSchemeOptions = ctx.m_authResolver == nullptr ? m_authSchemeResolver->resolveAuthScheme(identityParams) : ctx.m_authResolver->resolveAuthScheme(identityParams);
 
             auto authSchemeOptionIt = std::find_if(authSchemeOptions.begin(), authSchemeOptions.end(),
                                                    [this](const AuthSchemeOption& opt)

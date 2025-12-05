@@ -14,7 +14,20 @@
 #foreach($header in $typeInfo.sourceIncludes)
 \#include $header
 #end
-
+#if($serviceModel.useSmithyClient)
+#if($operation.hasSigV4aAuth())
+\#include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
+#end
+#if($operation.hasSigV4Auth())
+\#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
+#end
+#if($operation.hasBearerAuth())
+\#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h>
+#end
+#if($operation.hasNoAuth())
+\#include <smithy/identity/auth/built-in/NoAuthSchemeOption.h>
+#end
+#end ###if($serviceModel.useSmithyClient)
 \#include <utility>
 #if(${CppViewHelper.hasListMemberUsedForHeader($shape)})
 \#include <numeric>
@@ -69,6 +82,15 @@ void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
 }
 
 #end
+
+#if($serviceModel.useSmithyClient && $operation.auth)
+Aws::Vector<smithy::AuthSchemeOption> ${typeInfo.className}::GetRequestSpecificSupportedAuth() const
+{
+  Aws::Vector<smithy::AuthSchemeOption> authOptions{$CppViewHelper.computeAuthSchemes($operation)};
+  return authOptions;
+}
+#end
+
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompression.vm")

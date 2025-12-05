@@ -89,6 +89,15 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
   return headers;
 }
 #end
+
+#if($serviceModel.useSmithyClient && $operation.auth)
+Aws::Vector<smithy::AuthSchemeOption> ${typeInfo.className}::GetRequestSpecificSupportedAuth() const
+  {
+  Aws::Vector<smithy::AuthSchemeOption> authOptions{$CppViewHelper.computeAuthSchemes($operation)};
+  return authOptions;
+  }
+#end
+
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompression.vm")

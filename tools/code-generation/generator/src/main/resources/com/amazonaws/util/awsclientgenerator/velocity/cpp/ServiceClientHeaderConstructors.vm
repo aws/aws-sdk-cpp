@@ -69,7 +69,7 @@
         ${className}& operator=(${className} &&rhs) noexcept;
 #end
 #if($serviceModel.endpointRules && $serviceNamespace != "S3Crt")
-#if($serviceModel.hasOnlyBearerAuth())
+#if(($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || $serviceModel.hasOnlyBearerAuth())
 #set($bearerAddCtorArgs = {})
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
@@ -78,16 +78,15 @@
         * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
         */
         ${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-#if($serviceModel.endpointRules)
         ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorDummy},
-#end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($bearerAddCtorArgs.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $bearerAddCtorArgs)
         ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
 
 #end
-#else##if($serviceModel.hasOnlyBearerAuth())
+#end ###if( ($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || ($serviceModel.hasOnlyBearerAuth()))
+#if(!$serviceModel.hasOnlyBearerAuth())
 #set($defCredsChainCtor = {})
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint", "additionalCredentialProvider"])
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $defCredsChainCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
@@ -144,7 +143,7 @@
         ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
 
 #end
-#end##if($serviceModel.hasOnlyBearerAuth())
+#end##if(!$serviceModel.hasOnlyBearerAuth())
 
 #if($metadata.standalone || $metadata.apigateway)
 #set($standaloneCredsCtor = {})

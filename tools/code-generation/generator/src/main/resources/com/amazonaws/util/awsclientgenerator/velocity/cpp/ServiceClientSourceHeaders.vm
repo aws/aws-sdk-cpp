@@ -30,7 +30,7 @@
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
 #end
 #end
-#if($serviceModel.hasBearerAuth())
+#if(($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || $serviceModel.hasOnlyBearerAuth())
 \#include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
 #end
 #foreach($operation in $serviceModel.operations)

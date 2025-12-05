@@ -28,7 +28,7 @@
 #set($clientConfigurationNamespace = "Client")
 #end
 #set($clsWSpace = $className.replaceAll(".", " "))
-#if($serviceModel.hasOnlyBearerAuth())
+#if(($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || $serviceModel.hasOnlyBearerAuth())
 #set($bearerAddCtorArgs = {})
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
@@ -43,7 +43,8 @@
         ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
 
 #end
-#else##if($serviceModel.hasOnlyBearerAuth())
+#end##if(($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || $serviceModel.hasOnlyBearerAuth())
+#if(!$serviceModel.hasOnlyBearerAuth())
 #set($defCredsChainCtor = {})
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint", "additionalCredentialProvider"])
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $defCredsChainCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
@@ -90,7 +91,7 @@
         ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
 
 #end
-#end##if($serviceModel.hasOnlyBearerAuth())
+#end##if(!$serviceModel.hasOnlyBearerAuth())
 
 #if($metadata.standalone || $metadata.apigateway)
 #set($standaloneCredsCtor = {})
