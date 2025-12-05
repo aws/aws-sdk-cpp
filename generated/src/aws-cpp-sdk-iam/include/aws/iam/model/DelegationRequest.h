@@ -216,7 +216,7 @@ class DelegationRequest {
   ///@{
   /**
    * <p>The state of this delegation request.</p> <p>See the <a
-   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding
+   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
    * the Request Lifecycle</a> for an explanation of how these states are
    * transitioned.</p>
    */
@@ -228,6 +228,27 @@ class DelegationRequest {
   }
   inline DelegationRequest& WithState(StateType value) {
     SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The expiry time of this delegation request</p> <p>See the <a
+   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
+   * the Request Lifecycle</a> for details on the life time of a delegation request
+   * at each state.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExpirationTime() const { return m_expirationTime; }
+  inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
+  template <typename ExpirationTimeT = Aws::Utils::DateTime>
+  void SetExpirationTime(ExpirationTimeT&& value) {
+    m_expirationTimeHasBeenSet = true;
+    m_expirationTime = std::forward<ExpirationTimeT>(value);
+  }
+  template <typename ExpirationTimeT = Aws::Utils::DateTime>
+  DelegationRequest& WithExpirationTime(ExpirationTimeT&& value) {
+    SetExpirationTime(std::forward<ExpirationTimeT>(value));
     return *this;
   }
   ///@}
@@ -430,6 +451,9 @@ class DelegationRequest {
 
   StateType m_state{StateType::NOT_SET};
   bool m_stateHasBeenSet = false;
+
+  Aws::Utils::DateTime m_expirationTime{};
+  bool m_expirationTimeHasBeenSet = false;
 
   Aws::String m_requestorId;
   bool m_requestorIdHasBeenSet = false;

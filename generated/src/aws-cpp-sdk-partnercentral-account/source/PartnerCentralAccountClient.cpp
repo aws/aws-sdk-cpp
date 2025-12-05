@@ -35,6 +35,7 @@
 #include <aws/partnercentral-account/model/GetPartnerRequest.h>
 #include <aws/partnercentral-account/model/GetProfileUpdateTaskRequest.h>
 #include <aws/partnercentral-account/model/GetProfileVisibilityRequest.h>
+#include <aws/partnercentral-account/model/GetVerificationRequest.h>
 #include <aws/partnercentral-account/model/ListConnectionInvitationsRequest.h>
 #include <aws/partnercentral-account/model/ListConnectionsRequest.h>
 #include <aws/partnercentral-account/model/ListPartnersRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/partnercentral-account/model/RejectConnectionInvitationRequest.h>
 #include <aws/partnercentral-account/model/SendEmailVerificationCodeRequest.h>
 #include <aws/partnercentral-account/model/StartProfileUpdateTaskRequest.h>
+#include <aws/partnercentral-account/model/StartVerificationRequest.h>
 #include <aws/partnercentral-account/model/TagResourceRequest.h>
 #include <aws/partnercentral-account/model/UntagResourceRequest.h>
 #include <aws/partnercentral-account/model/UpdateConnectionPreferencesRequest.h>
@@ -615,6 +617,35 @@ GetProfileVisibilityOutcome PartnerCentralAccountClient::GetProfileVisibility(co
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetVerificationOutcome PartnerCentralAccountClient::GetVerification(const GetVerificationRequest& request) const {
+  AWS_OPERATION_GUARD(GetVerification);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetVerification",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetVerificationOutcome>(
+      [&]() -> GetVerificationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return GetVerificationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListConnectionInvitationsOutcome PartnerCentralAccountClient::ListConnectionInvitations(
     const ListConnectionInvitationsRequest& request) const {
   AWS_OPERATION_GUARD(ListConnectionInvitations);
@@ -872,6 +903,35 @@ StartProfileUpdateTaskOutcome PartnerCentralAccountClient::StartProfileUpdateTas
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartProfileUpdateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return StartProfileUpdateTaskOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartVerificationOutcome PartnerCentralAccountClient::StartVerification(const StartVerificationRequest& request) const {
+  AWS_OPERATION_GUARD(StartVerification);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartVerification",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartVerificationOutcome>(
+      [&]() -> StartVerificationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return StartVerificationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

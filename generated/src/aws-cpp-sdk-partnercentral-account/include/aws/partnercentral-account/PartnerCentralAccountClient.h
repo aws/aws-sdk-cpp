@@ -506,6 +506,34 @@ class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
   }
 
   /**
+   * <p>Retrieves the current status and details of a verification process for a
+   * partner account. This operation allows partners to check the progress and
+   * results of business or registrant verification processes.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetVerification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetVerificationOutcome GetVerification(const Model::GetVerificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetVerification that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetVerificationRequestT = Model::GetVerificationRequest>
+  Model::GetVerificationOutcomeCallable GetVerificationCallable(const GetVerificationRequestT& request) const {
+    return SubmitCallable(&PartnerCentralAccountClient::GetVerification, request);
+  }
+
+  /**
+   * An Async wrapper for GetVerification that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetVerificationRequestT = Model::GetVerificationRequest>
+  void GetVerificationAsync(const GetVerificationRequestT& request, const GetVerificationResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralAccountClient::GetVerification, request, handler, context);
+  }
+
+  /**
    * <p>Lists connection invitations for the partner account, with optional filtering
    * by status, type, and other criteria.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/ListConnectionInvitations">AWS
@@ -753,6 +781,36 @@ class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
                                    const StartProfileUpdateTaskResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralAccountClient::StartProfileUpdateTask, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates a new verification process for a partner account. This operation
+   * begins the verification workflow for either business registration or individual
+   * registrant identity verification as required by AWS Partner
+   * Central.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartVerification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartVerificationOutcome StartVerification(const Model::StartVerificationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for StartVerification that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartVerificationRequestT = Model::StartVerificationRequest>
+  Model::StartVerificationOutcomeCallable StartVerificationCallable(const StartVerificationRequestT& request = {}) const {
+    return SubmitCallable(&PartnerCentralAccountClient::StartVerification, request);
+  }
+
+  /**
+   * An Async wrapper for StartVerification that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartVerificationRequestT = Model::StartVerificationRequest>
+  void StartVerificationAsync(const StartVerificationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const StartVerificationRequestT& request = {}) const {
+    return SubmitAsync(&PartnerCentralAccountClient::StartVerification, request, handler, context);
   }
 
   /**

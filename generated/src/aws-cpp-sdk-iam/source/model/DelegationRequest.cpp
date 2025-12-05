@@ -79,6 +79,12 @@ DelegationRequest& DelegationRequest::operator=(const XmlNode& xmlNode) {
       m_state = StateTypeMapper::GetStateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
+    XmlNode expirationTimeNode = resultNode.FirstChild("ExpirationTime");
+    if (!expirationTimeNode.IsNull()) {
+      m_expirationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationTimeNode.GetText()).c_str()).c_str(),
+                                  Aws::Utils::DateFormat::ISO_8601);
+      m_expirationTimeHasBeenSet = true;
+    }
     XmlNode requestorIdNode = resultNode.FirstChild("RequestorId");
     if (!requestorIdNode.IsNull()) {
       m_requestorId = Aws::Utils::Xml::DecodeEscapedXmlText(requestorIdNode.GetText());
@@ -182,6 +188,11 @@ void DelegationRequest::OutputToStream(Aws::OStream& oStream, const char* locati
             << "&";
   }
 
+  if (m_expirationTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if (m_requestorIdHasBeenSet) {
     oStream << location << index << locationValue << ".RequestorId=" << StringUtils::URLEncode(m_requestorId.c_str()) << "&";
   }
@@ -257,6 +268,10 @@ void DelegationRequest::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if (m_stateHasBeenSet) {
     oStream << location << ".State=" << StringUtils::URLEncode(StateTypeMapper::GetNameForStateType(m_state)) << "&";
+  }
+  if (m_expirationTimeHasBeenSet) {
+    oStream << location
+            << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if (m_requestorIdHasBeenSet) {
     oStream << location << ".RequestorId=" << StringUtils::URLEncode(m_requestorId.c_str()) << "&";

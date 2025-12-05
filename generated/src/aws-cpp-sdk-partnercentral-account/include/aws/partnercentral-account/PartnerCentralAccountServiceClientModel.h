@@ -34,6 +34,7 @@
 #include <aws/partnercentral-account/model/GetPartnerResult.h>
 #include <aws/partnercentral-account/model/GetProfileUpdateTaskResult.h>
 #include <aws/partnercentral-account/model/GetProfileVisibilityResult.h>
+#include <aws/partnercentral-account/model/GetVerificationResult.h>
 #include <aws/partnercentral-account/model/ListConnectionInvitationsResult.h>
 #include <aws/partnercentral-account/model/ListConnectionsResult.h>
 #include <aws/partnercentral-account/model/ListPartnersResult.h>
@@ -43,6 +44,8 @@
 #include <aws/partnercentral-account/model/RejectConnectionInvitationResult.h>
 #include <aws/partnercentral-account/model/SendEmailVerificationCodeResult.h>
 #include <aws/partnercentral-account/model/StartProfileUpdateTaskResult.h>
+#include <aws/partnercentral-account/model/StartVerificationRequest.h>
+#include <aws/partnercentral-account/model/StartVerificationResult.h>
 #include <aws/partnercentral-account/model/TagResourceResult.h>
 #include <aws/partnercentral-account/model/UntagResourceResult.h>
 #include <aws/partnercentral-account/model/UpdateConnectionPreferencesResult.h>
@@ -94,6 +97,7 @@ class GetConnectionPreferencesRequest;
 class GetPartnerRequest;
 class GetProfileUpdateTaskRequest;
 class GetProfileVisibilityRequest;
+class GetVerificationRequest;
 class ListConnectionInvitationsRequest;
 class ListConnectionsRequest;
 class ListPartnersRequest;
@@ -103,6 +107,7 @@ class PutProfileVisibilityRequest;
 class RejectConnectionInvitationRequest;
 class SendEmailVerificationCodeRequest;
 class StartProfileUpdateTaskRequest;
+class StartVerificationRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateConnectionPreferencesRequest;
@@ -126,6 +131,7 @@ typedef Aws::Utils::Outcome<GetConnectionPreferencesResult, PartnerCentralAccoun
 typedef Aws::Utils::Outcome<GetPartnerResult, PartnerCentralAccountError> GetPartnerOutcome;
 typedef Aws::Utils::Outcome<GetProfileUpdateTaskResult, PartnerCentralAccountError> GetProfileUpdateTaskOutcome;
 typedef Aws::Utils::Outcome<GetProfileVisibilityResult, PartnerCentralAccountError> GetProfileVisibilityOutcome;
+typedef Aws::Utils::Outcome<GetVerificationResult, PartnerCentralAccountError> GetVerificationOutcome;
 typedef Aws::Utils::Outcome<ListConnectionInvitationsResult, PartnerCentralAccountError> ListConnectionInvitationsOutcome;
 typedef Aws::Utils::Outcome<ListConnectionsResult, PartnerCentralAccountError> ListConnectionsOutcome;
 typedef Aws::Utils::Outcome<ListPartnersResult, PartnerCentralAccountError> ListPartnersOutcome;
@@ -135,6 +141,7 @@ typedef Aws::Utils::Outcome<PutProfileVisibilityResult, PartnerCentralAccountErr
 typedef Aws::Utils::Outcome<RejectConnectionInvitationResult, PartnerCentralAccountError> RejectConnectionInvitationOutcome;
 typedef Aws::Utils::Outcome<SendEmailVerificationCodeResult, PartnerCentralAccountError> SendEmailVerificationCodeOutcome;
 typedef Aws::Utils::Outcome<StartProfileUpdateTaskResult, PartnerCentralAccountError> StartProfileUpdateTaskOutcome;
+typedef Aws::Utils::Outcome<StartVerificationResult, PartnerCentralAccountError> StartVerificationOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, PartnerCentralAccountError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, PartnerCentralAccountError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectionPreferencesResult, PartnerCentralAccountError> UpdateConnectionPreferencesOutcome;
@@ -156,6 +163,7 @@ typedef std::future<GetConnectionPreferencesOutcome> GetConnectionPreferencesOut
 typedef std::future<GetPartnerOutcome> GetPartnerOutcomeCallable;
 typedef std::future<GetProfileUpdateTaskOutcome> GetProfileUpdateTaskOutcomeCallable;
 typedef std::future<GetProfileVisibilityOutcome> GetProfileVisibilityOutcomeCallable;
+typedef std::future<GetVerificationOutcome> GetVerificationOutcomeCallable;
 typedef std::future<ListConnectionInvitationsOutcome> ListConnectionInvitationsOutcomeCallable;
 typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
 typedef std::future<ListPartnersOutcome> ListPartnersOutcomeCallable;
@@ -165,6 +173,7 @@ typedef std::future<PutProfileVisibilityOutcome> PutProfileVisibilityOutcomeCall
 typedef std::future<RejectConnectionInvitationOutcome> RejectConnectionInvitationOutcomeCallable;
 typedef std::future<SendEmailVerificationCodeOutcome> SendEmailVerificationCodeOutcomeCallable;
 typedef std::future<StartProfileUpdateTaskOutcome> StartProfileUpdateTaskOutcomeCallable;
+typedef std::future<StartVerificationOutcome> StartVerificationOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateConnectionPreferencesOutcome> UpdateConnectionPreferencesOutcomeCallable;
@@ -221,6 +230,9 @@ typedef std::function<void(const PartnerCentralAccountClient*, const Model::GetP
 typedef std::function<void(const PartnerCentralAccountClient*, const Model::GetProfileVisibilityRequest&,
                            const Model::GetProfileVisibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetProfileVisibilityResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralAccountClient*, const Model::GetVerificationRequest&, const Model::GetVerificationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetVerificationResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralAccountClient*, const Model::ListConnectionInvitationsRequest&,
                            const Model::ListConnectionInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListConnectionInvitationsResponseReceivedHandler;
@@ -248,6 +260,9 @@ typedef std::function<void(const PartnerCentralAccountClient*, const Model::Send
 typedef std::function<void(const PartnerCentralAccountClient*, const Model::StartProfileUpdateTaskRequest&,
                            const Model::StartProfileUpdateTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartProfileUpdateTaskResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralAccountClient*, const Model::StartVerificationRequest&,
+                           const Model::StartVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartVerificationResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralAccountClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
