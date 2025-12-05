@@ -110,15 +110,15 @@ class TriggerDetails {
   ///@}
  private:
   Aws::String m_rawData;
-  bool m_rawDataHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_triggerArn;
+  bool m_rawDataHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_triggerArnHasBeenSet = false;
 };
 

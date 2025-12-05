@@ -75,9 +75,9 @@ class AddEndpointsRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::Vector<EndpointConfiguration> m_endpointConfigurations;
-  bool m_endpointConfigurationsHasBeenSet = false;
 
   Aws::String m_endpointGroupArn;
+  bool m_endpointConfigurationsHasBeenSet = false;
   bool m_endpointGroupArnHasBeenSet = false;
 };
 

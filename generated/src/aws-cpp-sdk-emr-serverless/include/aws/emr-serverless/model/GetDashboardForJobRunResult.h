@@ -59,9 +59,9 @@ class GetDashboardForJobRunResult {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

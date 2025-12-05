@@ -126,18 +126,18 @@ class FilterCriteria {
   ///@}
  private:
   StringFilter m_severity;
-  bool m_severityHasBeenSet = false;
 
   StringFilter m_status;
-  bool m_statusHasBeenSet = false;
 
   StringFilter m_state;
-  bool m_stateHasBeenSet = false;
 
   StringFilter m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   DateFilter m_createdTime;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_entityArnHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

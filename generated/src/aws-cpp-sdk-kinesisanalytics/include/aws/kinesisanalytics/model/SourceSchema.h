@@ -98,12 +98,12 @@ class SourceSchema {
   ///@}
  private:
   RecordFormat m_recordFormat;
-  bool m_recordFormatHasBeenSet = false;
 
   Aws::String m_recordEncoding;
-  bool m_recordEncodingHasBeenSet = false;
 
   Aws::Vector<RecordColumn> m_recordColumns;
+  bool m_recordFormatHasBeenSet = false;
+  bool m_recordEncodingHasBeenSet = false;
   bool m_recordColumnsHasBeenSet = false;
 };
 

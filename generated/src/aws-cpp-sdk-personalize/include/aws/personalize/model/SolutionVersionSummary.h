@@ -168,24 +168,24 @@ class SolutionVersionSummary {
   ///@}
  private:
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   TrainingMode m_trainingMode{TrainingMode::NOT_SET};
-  bool m_trainingModeHasBeenSet = false;
 
   TrainingType m_trainingType{TrainingType::NOT_SET};
-  bool m_trainingTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_trainingModeHasBeenSet = false;
+  bool m_trainingTypeHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

@@ -143,21 +143,21 @@ class UpdateFlowRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   FlowDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_flowIdentifierHasBeenSet = false;
 };
 

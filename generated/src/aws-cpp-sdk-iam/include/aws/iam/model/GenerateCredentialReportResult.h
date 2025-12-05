@@ -83,12 +83,12 @@ class GenerateCredentialReportResult {
   ///@}
  private:
   ReportStateType m_state{ReportStateType::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

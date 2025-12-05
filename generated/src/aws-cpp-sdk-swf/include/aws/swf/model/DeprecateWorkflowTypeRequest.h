@@ -68,9 +68,9 @@ class DeprecateWorkflowTypeRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   WorkflowType m_workflowType;
+  bool m_domainHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
 };
 

@@ -382,63 +382,63 @@ class GetGatewayResult {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_gatewayUrl;
-  bool m_gatewayUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   GatewayStatus m_status{GatewayStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   GatewayProtocolType m_protocolType{GatewayProtocolType::NOT_SET};
-  bool m_protocolTypeHasBeenSet = false;
 
   GatewayProtocolConfiguration m_protocolConfiguration;
-  bool m_protocolConfigurationHasBeenSet = false;
 
   AuthorizerType m_authorizerType{AuthorizerType::NOT_SET};
-  bool m_authorizerTypeHasBeenSet = false;
 
   AuthorizerConfiguration m_authorizerConfiguration;
-  bool m_authorizerConfigurationHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
-  bool m_interceptorConfigurationsHasBeenSet = false;
 
   GatewayPolicyEngineConfiguration m_policyEngineConfiguration;
-  bool m_policyEngineConfigurationHasBeenSet = false;
 
   WorkloadIdentityDetails m_workloadIdentityDetails;
-  bool m_workloadIdentityDetailsHasBeenSet = false;
 
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
-  bool m_exceptionLevelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_gatewayUrlHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
+  bool m_protocolConfigurationHasBeenSet = false;
+  bool m_authorizerTypeHasBeenSet = false;
+  bool m_authorizerConfigurationHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_interceptorConfigurationsHasBeenSet = false;
+  bool m_policyEngineConfigurationHasBeenSet = false;
+  bool m_workloadIdentityDetailsHasBeenSet = false;
+  bool m_exceptionLevelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

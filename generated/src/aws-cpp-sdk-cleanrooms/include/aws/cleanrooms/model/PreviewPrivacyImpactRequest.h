@@ -67,9 +67,9 @@ class PreviewPrivacyImpactRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   PreviewPrivacyImpactParametersInput m_parameters;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

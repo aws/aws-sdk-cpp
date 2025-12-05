@@ -71,9 +71,9 @@ class EventDetails {
   ///@}
  private:
   Bounce m_bounce;
-  bool m_bounceHasBeenSet = false;
 
   Complaint m_complaint;
+  bool m_bounceHasBeenSet = false;
   bool m_complaintHasBeenSet = false;
 };
 

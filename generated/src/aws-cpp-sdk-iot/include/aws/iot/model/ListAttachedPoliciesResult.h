@@ -85,12 +85,12 @@ class ListAttachedPoliciesResult {
   ///@}
  private:
   Aws::Vector<Policy> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policiesHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

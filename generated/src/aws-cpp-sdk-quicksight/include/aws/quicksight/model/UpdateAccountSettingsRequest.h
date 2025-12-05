@@ -108,15 +108,15 @@ class UpdateAccountSettingsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_defaultNamespace;
-  bool m_defaultNamespaceHasBeenSet = false;
 
   Aws::String m_notificationEmail;
-  bool m_notificationEmailHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_defaultNamespaceHasBeenSet = false;
+  bool m_notificationEmailHasBeenSet = false;
   bool m_terminationProtectionEnabledHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class GetRestoreTestingInferredMetadataRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultAccountId;
-  bool m_backupVaultAccountIdHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
+  bool m_backupVaultAccountIdHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
   bool m_recoveryPointArnHasBeenSet = false;
 };
 

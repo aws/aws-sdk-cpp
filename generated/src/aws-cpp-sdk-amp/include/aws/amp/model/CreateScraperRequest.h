@@ -179,24 +179,24 @@ class CreateScraperRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   ScrapeConfiguration m_scrapeConfiguration;
-  bool m_scrapeConfigurationHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   RoleConfiguration m_roleConfiguration;
-  bool m_roleConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_aliasHasBeenSet = false;
+  bool m_scrapeConfigurationHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_roleConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

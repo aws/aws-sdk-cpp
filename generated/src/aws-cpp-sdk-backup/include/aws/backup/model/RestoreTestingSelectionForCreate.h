@@ -211,24 +211,24 @@ class RestoreTestingSelectionForCreate {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_protectedResourceArns;
-  bool m_protectedResourceArnsHasBeenSet = false;
 
   ProtectedResourceConditions m_protectedResourceConditions;
-  bool m_protectedResourceConditionsHasBeenSet = false;
 
   Aws::String m_protectedResourceType;
-  bool m_protectedResourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_restoreMetadataOverrides;
-  bool m_restoreMetadataOverridesHasBeenSet = false;
 
   Aws::String m_restoreTestingSelectionName;
-  bool m_restoreTestingSelectionNameHasBeenSet = false;
 
   int m_validationWindowHours{0};
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_protectedResourceArnsHasBeenSet = false;
+  bool m_protectedResourceConditionsHasBeenSet = false;
+  bool m_protectedResourceTypeHasBeenSet = false;
+  bool m_restoreMetadataOverridesHasBeenSet = false;
+  bool m_restoreTestingSelectionNameHasBeenSet = false;
   bool m_validationWindowHoursHasBeenSet = false;
 };
 

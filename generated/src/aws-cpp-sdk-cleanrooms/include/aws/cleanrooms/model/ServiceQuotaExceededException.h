@@ -83,12 +83,12 @@ class ServiceQuotaExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_quotaName;
-  bool m_quotaNameHasBeenSet = false;
 
   double m_quotaValue{0.0};
+  bool m_messageHasBeenSet = false;
+  bool m_quotaNameHasBeenSet = false;
   bool m_quotaValueHasBeenSet = false;
 };
 

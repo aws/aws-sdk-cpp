@@ -154,18 +154,18 @@ class PutInsightRuleRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleState;
-  bool m_ruleStateHasBeenSet = false;
 
   Aws::String m_ruleDefinition;
-  bool m_ruleDefinitionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_applyOnTransformedLogs{false};
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleStateHasBeenSet = false;
+  bool m_ruleDefinitionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_applyOnTransformedLogsHasBeenSet = false;
 };
 

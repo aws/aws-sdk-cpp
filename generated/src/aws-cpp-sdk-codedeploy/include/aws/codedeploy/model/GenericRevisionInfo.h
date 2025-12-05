@@ -130,18 +130,18 @@ class GenericRevisionInfo {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deploymentGroups;
-  bool m_deploymentGroupsHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstUsedTime{};
-  bool m_firstUsedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUsedTime{};
-  bool m_lastUsedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_registerTime{};
+  bool m_descriptionHasBeenSet = false;
+  bool m_deploymentGroupsHasBeenSet = false;
+  bool m_firstUsedTimeHasBeenSet = false;
+  bool m_lastUsedTimeHasBeenSet = false;
   bool m_registerTimeHasBeenSet = false;
 };
 

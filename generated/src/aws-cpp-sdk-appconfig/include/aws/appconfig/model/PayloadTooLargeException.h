@@ -91,15 +91,15 @@ class PayloadTooLargeException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   BytesMeasure m_measure{BytesMeasure::NOT_SET};
-  bool m_measureHasBeenSet = false;
 
   double m_limit{0.0};
-  bool m_limitHasBeenSet = false;
 
   double m_size{0.0};
+  bool m_messageHasBeenSet = false;
+  bool m_measureHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class BlackFrame {
   ///@}
  private:
   double m_maxPixelThreshold{0.0};
-  bool m_maxPixelThresholdHasBeenSet = false;
 
   double m_minCoveragePercentage{0.0};
+  bool m_maxPixelThresholdHasBeenSet = false;
   bool m_minCoveragePercentageHasBeenSet = false;
 };
 

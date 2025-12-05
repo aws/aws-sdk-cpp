@@ -86,12 +86,12 @@ class ListDirectoryBucketsResult {
   ///@}
  private:
   Aws::Vector<Bucket> m_buckets;
-  bool m_bucketsHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketsHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -292,42 +292,42 @@ class PackageVersionDescription {
   ///@}
  private:
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_homePage;
-  bool m_homePageHasBeenSet = false;
 
   Aws::String m_sourceCodeRepository;
-  bool m_sourceCodeRepositoryHasBeenSet = false;
 
   Aws::Utils::DateTime m_publishedTime{};
-  bool m_publishedTimeHasBeenSet = false;
 
   Aws::Vector<LicenseInfo> m_licenses;
-  bool m_licensesHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PackageVersionOrigin m_origin;
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_homePageHasBeenSet = false;
+  bool m_sourceCodeRepositoryHasBeenSet = false;
+  bool m_publishedTimeHasBeenSet = false;
+  bool m_licensesHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_originHasBeenSet = false;
 };
 

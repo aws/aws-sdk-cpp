@@ -78,9 +78,9 @@ class PathToObjectIdentifiers {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_objectIdentifiers;
+  bool m_pathHasBeenSet = false;
   bool m_objectIdentifiersHasBeenSet = false;
 };
 

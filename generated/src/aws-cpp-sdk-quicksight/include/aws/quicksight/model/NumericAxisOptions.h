@@ -69,9 +69,9 @@ class NumericAxisOptions {
   ///@}
  private:
   AxisScale m_scale;
-  bool m_scaleHasBeenSet = false;
 
   AxisDisplayRange m_range;
+  bool m_scaleHasBeenSet = false;
   bool m_rangeHasBeenSet = false;
 };
 

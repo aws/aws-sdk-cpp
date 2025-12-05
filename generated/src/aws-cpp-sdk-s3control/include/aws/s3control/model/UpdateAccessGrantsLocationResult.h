@@ -157,24 +157,24 @@ class UpdateAccessGrantsLocationResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_accessGrantsLocationId;
-  bool m_accessGrantsLocationIdHasBeenSet = false;
 
   Aws::String m_accessGrantsLocationArn;
-  bool m_accessGrantsLocationArnHasBeenSet = false;
 
   Aws::String m_locationScope;
-  bool m_locationScopeHasBeenSet = false;
 
   Aws::String m_iAMRoleArn;
-  bool m_iAMRoleArnHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_accessGrantsLocationIdHasBeenSet = false;
+  bool m_accessGrantsLocationArnHasBeenSet = false;
+  bool m_locationScopeHasBeenSet = false;
+  bool m_iAMRoleArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

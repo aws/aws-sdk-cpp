@@ -67,9 +67,9 @@ class ExpirationSettings {
   ///@}
  private:
   int m_expirationDays{0};
-  bool m_expirationDaysHasBeenSet = false;
 
   ExpirationCriterion m_expirationCriterion{ExpirationCriterion::NOT_SET};
+  bool m_expirationDaysHasBeenSet = false;
   bool m_expirationCriterionHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class ListLifecycleExecutionResourcesResult {
   ///@}
  private:
   Aws::String m_lifecycleExecutionId;
-  bool m_lifecycleExecutionIdHasBeenSet = false;
 
   LifecycleExecutionState m_lifecycleExecutionState;
-  bool m_lifecycleExecutionStateHasBeenSet = false;
 
   Aws::Vector<LifecycleExecutionResource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleExecutionIdHasBeenSet = false;
+  bool m_lifecycleExecutionStateHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

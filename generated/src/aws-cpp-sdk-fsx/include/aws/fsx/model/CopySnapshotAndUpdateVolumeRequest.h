@@ -140,18 +140,18 @@ class CopySnapshotAndUpdateVolumeRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_sourceSnapshotARN;
-  bool m_sourceSnapshotARNHasBeenSet = false;
 
   OpenZFSCopyStrategy m_copyStrategy{OpenZFSCopyStrategy::NOT_SET};
-  bool m_copyStrategyHasBeenSet = false;
 
   Aws::Vector<UpdateOpenZFSVolumeOption> m_options;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_sourceSnapshotARNHasBeenSet = false;
+  bool m_copyStrategyHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

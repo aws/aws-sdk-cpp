@@ -88,12 +88,12 @@ class ListApprovalTeamsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListApprovalTeamsResponseApprovalTeam> m_approvalTeams;
-  bool m_approvalTeamsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_approvalTeamsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

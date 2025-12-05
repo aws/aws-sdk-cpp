@@ -77,9 +77,9 @@ class Condition {
   ///@}
  private:
   Aws::Vector<SimpleCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   Operator m_operator{Operator::NOT_SET};
+  bool m_conditionsHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

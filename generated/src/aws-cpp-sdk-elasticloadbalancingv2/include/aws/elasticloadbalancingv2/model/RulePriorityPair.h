@@ -70,9 +70,9 @@ class RulePriorityPair {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   int m_priority{0};
+  bool m_ruleArnHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

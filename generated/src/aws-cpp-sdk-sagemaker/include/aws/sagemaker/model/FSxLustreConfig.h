@@ -64,9 +64,9 @@ class FSxLustreConfig {
   ///@}
  private:
   int m_sizeInGiB{0};
-  bool m_sizeInGiBHasBeenSet = false;
 
   int m_perUnitStorageThroughput{0};
+  bool m_sizeInGiBHasBeenSet = false;
   bool m_perUnitStorageThroughputHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class EnableSecurityHubRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_enableDefaultStandards{false};
-  bool m_enableDefaultStandardsHasBeenSet = false;
 
   ControlFindingGenerator m_controlFindingGenerator{ControlFindingGenerator::NOT_SET};
+  bool m_tagsHasBeenSet = false;
+  bool m_enableDefaultStandardsHasBeenSet = false;
   bool m_controlFindingGeneratorHasBeenSet = false;
 };
 

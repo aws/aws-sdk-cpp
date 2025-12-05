@@ -86,12 +86,12 @@ class GetTestGridSessionRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_sessionArn;
+  bool m_projectArnHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_sessionArnHasBeenSet = false;
 };
 

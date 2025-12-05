@@ -148,18 +148,18 @@ class IotSiteWiseAction {
   ///@}
  private:
   Aws::String m_entryId;
-  bool m_entryIdHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
-  bool m_propertyIdHasBeenSet = false;
 
   Aws::String m_propertyAlias;
-  bool m_propertyAliasHasBeenSet = false;
 
   AssetPropertyValue m_propertyValue;
+  bool m_entryIdHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_propertyIdHasBeenSet = false;
+  bool m_propertyAliasHasBeenSet = false;
   bool m_propertyValueHasBeenSet = false;
 };
 

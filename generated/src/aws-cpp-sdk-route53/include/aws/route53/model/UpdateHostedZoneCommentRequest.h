@@ -71,9 +71,9 @@ class UpdateHostedZoneCommentRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_idHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

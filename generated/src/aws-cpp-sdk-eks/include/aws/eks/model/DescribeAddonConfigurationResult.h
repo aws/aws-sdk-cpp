@@ -123,18 +123,18 @@ class DescribeAddonConfigurationResult {
   ///@}
  private:
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_addonVersion;
-  bool m_addonVersionHasBeenSet = false;
 
   Aws::String m_configurationSchema;
-  bool m_configurationSchemaHasBeenSet = false;
 
   Aws::Vector<AddonPodIdentityConfiguration> m_podIdentityConfiguration;
-  bool m_podIdentityConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonNameHasBeenSet = false;
+  bool m_addonVersionHasBeenSet = false;
+  bool m_configurationSchemaHasBeenSet = false;
+  bool m_podIdentityConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

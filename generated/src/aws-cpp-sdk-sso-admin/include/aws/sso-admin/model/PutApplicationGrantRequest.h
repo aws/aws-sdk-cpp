@@ -85,12 +85,12 @@ class PutApplicationGrantRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   GrantType m_grantType{GrantType::NOT_SET};
-  bool m_grantTypeHasBeenSet = false;
 
   Grant m_grant;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_grantTypeHasBeenSet = false;
   bool m_grantHasBeenSet = false;
 };
 

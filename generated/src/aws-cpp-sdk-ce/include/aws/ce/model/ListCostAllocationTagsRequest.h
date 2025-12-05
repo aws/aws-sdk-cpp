@@ -132,18 +132,18 @@ class ListCostAllocationTagsRequest : public CostExplorerRequest {
   ///@}
  private:
   CostAllocationTagStatus m_status{CostAllocationTagStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   CostAllocationTagType m_type{CostAllocationTagType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_statusHasBeenSet = false;
+  bool m_tagKeysHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

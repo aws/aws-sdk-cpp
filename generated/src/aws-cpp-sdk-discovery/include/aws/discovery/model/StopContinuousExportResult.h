@@ -79,12 +79,12 @@ class StopContinuousExportResult {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
-  bool m_stopTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stopTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

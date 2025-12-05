@@ -95,12 +95,12 @@ class UpdateStreamModeRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   StreamModeDetails m_streamModeDetails;
-  bool m_streamModeDetailsHasBeenSet = false;
 
   int m_warmThroughputMiBps{0};
+  bool m_streamARNHasBeenSet = false;
+  bool m_streamModeDetailsHasBeenSet = false;
   bool m_warmThroughputMiBpsHasBeenSet = false;
 };
 

@@ -122,18 +122,18 @@ class GrpcMetadataMatchMethod {
   ///@}
  private:
   Aws::String m_exact;
-  bool m_exactHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   MatchRange m_range;
-  bool m_rangeHasBeenSet = false;
 
   Aws::String m_regex;
-  bool m_regexHasBeenSet = false;
 
   Aws::String m_suffix;
+  bool m_exactHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_regexHasBeenSet = false;
   bool m_suffixHasBeenSet = false;
 };
 

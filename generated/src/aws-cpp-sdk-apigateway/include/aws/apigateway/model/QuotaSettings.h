@@ -83,12 +83,12 @@ class QuotaSettings {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   int m_offset{0};
-  bool m_offsetHasBeenSet = false;
 
   QuotaPeriodType m_period{QuotaPeriodType::NOT_SET};
+  bool m_limitHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
   bool m_periodHasBeenSet = false;
 };
 

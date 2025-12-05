@@ -60,9 +60,9 @@ class GetGraphqlApiResult {
   ///@}
  private:
   GraphqlApi m_graphqlApi;
-  bool m_graphqlApiHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_graphqlApiHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

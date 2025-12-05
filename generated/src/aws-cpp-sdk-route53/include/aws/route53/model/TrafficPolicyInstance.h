@@ -208,30 +208,30 @@ class TrafficPolicyInstance {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_tTL{0};
-  bool m_tTLHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   int m_trafficPolicyVersion{0};
-  bool m_trafficPolicyVersionHasBeenSet = false;
 
   RRType m_trafficPolicyType{RRType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tTLHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
+  bool m_trafficPolicyVersionHasBeenSet = false;
   bool m_trafficPolicyTypeHasBeenSet = false;
 };
 

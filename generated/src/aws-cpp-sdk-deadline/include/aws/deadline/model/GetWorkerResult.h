@@ -214,36 +214,36 @@ class GetWorkerResult {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   HostPropertiesResponse m_hostProperties;
-  bool m_hostPropertiesHasBeenSet = false;
 
   WorkerStatus m_status{WorkerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   LogConfiguration m_log;
-  bool m_logHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_farmIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_hostPropertiesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_logHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

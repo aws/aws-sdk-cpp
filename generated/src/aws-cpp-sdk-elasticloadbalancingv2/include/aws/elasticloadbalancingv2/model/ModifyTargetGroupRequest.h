@@ -224,33 +224,33 @@ class ModifyTargetGroupRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   ProtocolEnum m_healthCheckProtocol{ProtocolEnum::NOT_SET};
-  bool m_healthCheckProtocolHasBeenSet = false;
 
   Aws::String m_healthCheckPort;
-  bool m_healthCheckPortHasBeenSet = false;
 
   Aws::String m_healthCheckPath;
-  bool m_healthCheckPathHasBeenSet = false;
 
   bool m_healthCheckEnabled{false};
-  bool m_healthCheckEnabledHasBeenSet = false;
 
   int m_healthCheckIntervalSeconds{0};
-  bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
   int m_healthCheckTimeoutSeconds{0};
-  bool m_healthCheckTimeoutSecondsHasBeenSet = false;
 
   int m_healthyThresholdCount{0};
-  bool m_healthyThresholdCountHasBeenSet = false;
 
   int m_unhealthyThresholdCount{0};
-  bool m_unhealthyThresholdCountHasBeenSet = false;
 
   Matcher m_matcher;
+  bool m_targetGroupArnHasBeenSet = false;
+  bool m_healthCheckProtocolHasBeenSet = false;
+  bool m_healthCheckPortHasBeenSet = false;
+  bool m_healthCheckPathHasBeenSet = false;
+  bool m_healthCheckEnabledHasBeenSet = false;
+  bool m_healthCheckIntervalSecondsHasBeenSet = false;
+  bool m_healthCheckTimeoutSecondsHasBeenSet = false;
+  bool m_healthyThresholdCountHasBeenSet = false;
+  bool m_unhealthyThresholdCountHasBeenSet = false;
   bool m_matcherHasBeenSet = false;
 };
 

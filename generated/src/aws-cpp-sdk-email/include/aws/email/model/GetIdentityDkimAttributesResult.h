@@ -76,9 +76,9 @@ class GetIdentityDkimAttributesResult {
   ///@}
  private:
   Aws::Map<Aws::String, IdentityDkimAttributes> m_dkimAttributes;
-  bool m_dkimAttributesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dkimAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

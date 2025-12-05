@@ -135,18 +135,18 @@ class CreateDataDeletionJobRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_jobNameHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

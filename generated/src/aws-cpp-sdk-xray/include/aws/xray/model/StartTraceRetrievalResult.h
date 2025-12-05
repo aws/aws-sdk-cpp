@@ -59,9 +59,9 @@ class StartTraceRetrievalResult {
   ///@}
  private:
   Aws::String m_retrievalToken;
-  bool m_retrievalTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retrievalTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

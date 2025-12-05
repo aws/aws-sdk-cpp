@@ -90,12 +90,12 @@ class ListLimitsResult {
   ///@}
  private:
   Aws::Vector<LimitSummary> m_limits;
-  bool m_limitsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_limitsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

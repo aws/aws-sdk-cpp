@@ -87,12 +87,12 @@ class ListRelatedResourcesForAuditFindingRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_findingId;
-  bool m_findingIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_findingIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class TemplateAlias {
   ///@}
  private:
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_templateVersionNumber{0};
+  bool m_aliasNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_templateVersionNumberHasBeenSet = false;
 };
 

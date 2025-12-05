@@ -153,21 +153,21 @@ class ResolverRuleAssociation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_resolverRuleId;
-  bool m_resolverRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_vPCId;
-  bool m_vPCIdHasBeenSet = false;
 
   ResolverRuleAssociationStatus m_status{ResolverRuleAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_idHasBeenSet = false;
+  bool m_resolverRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_vPCIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

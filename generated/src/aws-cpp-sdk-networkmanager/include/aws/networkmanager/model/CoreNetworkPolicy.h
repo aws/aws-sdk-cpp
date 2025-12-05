@@ -183,27 +183,27 @@ class CoreNetworkPolicy {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   int m_policyVersionId{0};
-  bool m_policyVersionIdHasBeenSet = false;
 
   CoreNetworkPolicyAlias m_alias{CoreNetworkPolicyAlias::NOT_SET};
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ChangeSetState m_changeSetState{ChangeSetState::NOT_SET};
-  bool m_changeSetStateHasBeenSet = false;
 
   Aws::Vector<CoreNetworkPolicyError> m_policyErrors;
-  bool m_policyErrorsHasBeenSet = false;
 
   Aws::String m_policyDocument;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_policyVersionIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_changeSetStateHasBeenSet = false;
+  bool m_policyErrorsHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
 };
 

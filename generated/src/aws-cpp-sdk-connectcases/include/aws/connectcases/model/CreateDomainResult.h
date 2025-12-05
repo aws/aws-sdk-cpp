@@ -92,15 +92,15 @@ class CreateDomainResult {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   DomainStatus m_domainStatus{DomainStatus::NOT_SET};
-  bool m_domainStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainArnHasBeenSet = false;
+  bool m_domainStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

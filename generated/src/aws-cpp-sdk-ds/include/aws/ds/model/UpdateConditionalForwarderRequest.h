@@ -123,15 +123,15 @@ class UpdateConditionalForwarderRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_remoteDomainName;
-  bool m_remoteDomainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddrs;
-  bool m_dnsIpAddrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpv6Addrs;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_remoteDomainNameHasBeenSet = false;
+  bool m_dnsIpAddrsHasBeenSet = false;
   bool m_dnsIpv6AddrsHasBeenSet = false;
 };
 

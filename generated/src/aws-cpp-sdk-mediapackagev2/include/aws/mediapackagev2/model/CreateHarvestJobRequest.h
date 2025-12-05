@@ -229,33 +229,33 @@ class CreateHarvestJobRequest : public Mediapackagev2Request {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_originEndpointName;
-  bool m_originEndpointNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   HarvestedManifests m_harvestedManifests;
-  bool m_harvestedManifestsHasBeenSet = false;
 
   HarvesterScheduleConfiguration m_scheduleConfiguration;
-  bool m_scheduleConfigurationHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_harvestJobName;
-  bool m_harvestJobNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_originEndpointNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_harvestedManifestsHasBeenSet = false;
+  bool m_scheduleConfigurationHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_harvestJobNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

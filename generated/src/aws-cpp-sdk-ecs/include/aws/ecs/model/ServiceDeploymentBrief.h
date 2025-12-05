@@ -200,30 +200,30 @@ class ServiceDeploymentBrief {
   ///@}
  private:
   Aws::String m_serviceDeploymentArn;
-  bool m_serviceDeploymentArnHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedAt{};
-  bool m_finishedAtHasBeenSet = false;
 
   Aws::String m_targetServiceRevisionArn;
-  bool m_targetServiceRevisionArnHasBeenSet = false;
 
   ServiceDeploymentStatus m_status{ServiceDeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_serviceDeploymentArnHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_finishedAtHasBeenSet = false;
+  bool m_targetServiceRevisionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

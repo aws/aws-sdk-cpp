@@ -90,9 +90,9 @@ class TagResourceRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

@@ -181,24 +181,24 @@ class UpdateAppMonitorRequest : public CloudWatchRUMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainList;
-  bool m_domainListHasBeenSet = false;
 
   AppMonitorConfiguration m_appMonitorConfiguration;
-  bool m_appMonitorConfigurationHasBeenSet = false;
 
   bool m_cwLogEnabled{false};
-  bool m_cwLogEnabledHasBeenSet = false;
 
   CustomEvents m_customEvents;
-  bool m_customEventsHasBeenSet = false;
 
   DeobfuscationConfiguration m_deobfuscationConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_domainListHasBeenSet = false;
+  bool m_appMonitorConfigurationHasBeenSet = false;
+  bool m_cwLogEnabledHasBeenSet = false;
+  bool m_customEventsHasBeenSet = false;
   bool m_deobfuscationConfigurationHasBeenSet = false;
 };
 

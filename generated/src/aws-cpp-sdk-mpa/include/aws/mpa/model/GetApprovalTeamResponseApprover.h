@@ -125,18 +125,18 @@ class GetApprovalTeamResponseApprover {
   ///@}
  private:
   Aws::String m_approverId;
-  bool m_approverIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_responseTime{};
-  bool m_responseTimeHasBeenSet = false;
 
   Aws::String m_primaryIdentityId;
-  bool m_primaryIdentityIdHasBeenSet = false;
 
   Aws::String m_primaryIdentitySourceArn;
-  bool m_primaryIdentitySourceArnHasBeenSet = false;
 
   IdentityStatus m_primaryIdentityStatus{IdentityStatus::NOT_SET};
+  bool m_approverIdHasBeenSet = false;
+  bool m_responseTimeHasBeenSet = false;
+  bool m_primaryIdentityIdHasBeenSet = false;
+  bool m_primaryIdentitySourceArnHasBeenSet = false;
   bool m_primaryIdentityStatusHasBeenSet = false;
 };
 

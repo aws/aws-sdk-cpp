@@ -91,12 +91,12 @@ class MetadataConfigurationResult {
   ///@}
  private:
   DestinationResult m_destinationResult;
-  bool m_destinationResultHasBeenSet = false;
 
   JournalTableConfigurationResult m_journalTableConfigurationResult;
-  bool m_journalTableConfigurationResultHasBeenSet = false;
 
   InventoryTableConfigurationResult m_inventoryTableConfigurationResult;
+  bool m_destinationResultHasBeenSet = false;
+  bool m_journalTableConfigurationResultHasBeenSet = false;
   bool m_inventoryTableConfigurationResultHasBeenSet = false;
 };
 

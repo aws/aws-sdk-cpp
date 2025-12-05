@@ -390,60 +390,60 @@ class AwsRdsDbClusterSnapshotDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::String m_snapshotCreateTime;
-  bool m_snapshotCreateTimeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_clusterCreateTime;
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   int m_percentProgress{0};
-  bool m_percentProgressHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
-  bool m_dbClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dbClusterSnapshotIdentifier;
-  bool m_dbClusterSnapshotIdentifierHasBeenSet = false;
 
   bool m_iamDatabaseAuthenticationEnabled{false};
-  bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> m_dbClusterSnapshotAttributes;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_snapshotCreateTimeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dbClusterIdentifierHasBeenSet = false;
+  bool m_dbClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
   bool m_dbClusterSnapshotAttributesHasBeenSet = false;
 };
 

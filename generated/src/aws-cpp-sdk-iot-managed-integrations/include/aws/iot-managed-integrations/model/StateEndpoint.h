@@ -78,9 +78,9 @@ class StateEndpoint {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::Vector<StateCapability> m_capabilities;
+  bool m_endpointIdHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

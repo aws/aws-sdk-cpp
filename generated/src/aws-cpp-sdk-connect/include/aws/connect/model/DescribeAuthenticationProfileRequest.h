@@ -67,9 +67,9 @@ class DescribeAuthenticationProfileRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_authenticationProfileId;
-  bool m_authenticationProfileIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_authenticationProfileIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

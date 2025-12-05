@@ -129,18 +129,18 @@ class ConverseStreamMetadataEvent {
   ///@}
  private:
   TokenUsage m_usage;
-  bool m_usageHasBeenSet = false;
 
   ConverseStreamMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   ConverseStreamTrace m_trace;
-  bool m_traceHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfig;
-  bool m_performanceConfigHasBeenSet = false;
 
   ServiceTier m_serviceTier;
+  bool m_usageHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_traceHasBeenSet = false;
+  bool m_performanceConfigHasBeenSet = false;
   bool m_serviceTierHasBeenSet = false;
 };
 

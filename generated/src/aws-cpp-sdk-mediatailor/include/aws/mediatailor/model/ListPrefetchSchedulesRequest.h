@@ -136,18 +136,18 @@ class ListPrefetchSchedulesRequest : public MediaTailorRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_playbackConfigurationName;
-  bool m_playbackConfigurationNameHasBeenSet = false;
 
   ListPrefetchScheduleType m_scheduleType{ListPrefetchScheduleType::NOT_SET};
-  bool m_scheduleTypeHasBeenSet = false;
 
   Aws::String m_streamId;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_playbackConfigurationNameHasBeenSet = false;
+  bool m_scheduleTypeHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
 };
 

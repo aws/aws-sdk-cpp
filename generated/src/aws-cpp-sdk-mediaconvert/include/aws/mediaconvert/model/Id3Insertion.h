@@ -71,9 +71,9 @@ class Id3Insertion {
   ///@}
  private:
   Aws::String m_id3;
-  bool m_id3HasBeenSet = false;
 
   Aws::String m_timecode;
+  bool m_id3HasBeenSet = false;
   bool m_timecodeHasBeenSet = false;
 };
 

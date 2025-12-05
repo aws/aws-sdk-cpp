@@ -86,12 +86,12 @@ class KinesisVideoStreamPoolSummary {
   ///@}
  private:
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_poolArn;
+  bool m_poolNameHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
   bool m_poolArnHasBeenSet = false;
 };
 

@@ -130,21 +130,21 @@ class DescribeObjectResult {
   ///@}
  private:
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eTagHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

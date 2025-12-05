@@ -61,9 +61,9 @@ class GetLinkedWhatsAppBusinessAccountResult {
   ///@}
  private:
   LinkedWhatsAppBusinessAccount m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

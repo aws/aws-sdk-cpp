@@ -147,21 +147,21 @@ class SummaryMetricQuery {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   MetricName m_metricName{MetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   AggregationPeriod m_aggregationPeriod{AggregationPeriod::NOT_SET};
-  bool m_aggregationPeriodHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
+  bool m_queryIdHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
   bool m_endTimestampHasBeenSet = false;
 };
 

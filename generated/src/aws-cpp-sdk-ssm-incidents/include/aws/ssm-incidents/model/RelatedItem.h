@@ -90,12 +90,12 @@ class RelatedItem {
   ///@}
  private:
   Aws::String m_generatedId;
-  bool m_generatedIdHasBeenSet = false;
 
   ItemIdentifier m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_generatedIdHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

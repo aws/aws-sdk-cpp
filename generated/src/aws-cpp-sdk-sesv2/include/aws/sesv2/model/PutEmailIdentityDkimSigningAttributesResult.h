@@ -119,12 +119,12 @@ class PutEmailIdentityDkimSigningAttributesResult {
   ///@}
  private:
   DkimStatus m_dkimStatus{DkimStatus::NOT_SET};
-  bool m_dkimStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dkimTokens;
-  bool m_dkimTokensHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dkimStatusHasBeenSet = false;
+  bool m_dkimTokensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

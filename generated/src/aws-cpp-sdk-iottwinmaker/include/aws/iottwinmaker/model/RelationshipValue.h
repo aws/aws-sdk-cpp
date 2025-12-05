@@ -69,9 +69,9 @@ class RelationshipValue {
   ///@}
  private:
   Aws::String m_targetEntityId;
-  bool m_targetEntityIdHasBeenSet = false;
 
   Aws::String m_targetComponentName;
+  bool m_targetEntityIdHasBeenSet = false;
   bool m_targetComponentNameHasBeenSet = false;
 };
 

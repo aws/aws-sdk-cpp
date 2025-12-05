@@ -111,15 +111,15 @@ class TopicVisual {
   ///@}
  private:
   Aws::String m_visualId;
-  bool m_visualIdHasBeenSet = false;
 
   VisualRole m_role{VisualRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   TopicIR m_ir;
-  bool m_irHasBeenSet = false;
 
   Aws::Vector<TopicVisual> m_supportingVisuals;
+  bool m_visualIdHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_irHasBeenSet = false;
   bool m_supportingVisualsHasBeenSet = false;
 };
 

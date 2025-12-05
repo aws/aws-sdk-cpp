@@ -174,24 +174,24 @@ class Destination {
   ///@}
  private:
   ReplicationStatus m_status{ReplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastReplicatedTimestamp{};
-  bool m_lastReplicatedTimestampHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_statusHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_lastReplicatedTimestampHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

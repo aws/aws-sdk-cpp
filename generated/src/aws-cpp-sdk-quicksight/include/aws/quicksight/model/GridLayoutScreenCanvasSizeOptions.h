@@ -74,9 +74,9 @@ class GridLayoutScreenCanvasSizeOptions {
   ///@}
  private:
   ResizeOption m_resizeOption{ResizeOption::NOT_SET};
-  bool m_resizeOptionHasBeenSet = false;
 
   Aws::String m_optimizedViewPortWidth;
+  bool m_resizeOptionHasBeenSet = false;
   bool m_optimizedViewPortWidthHasBeenSet = false;
 };
 

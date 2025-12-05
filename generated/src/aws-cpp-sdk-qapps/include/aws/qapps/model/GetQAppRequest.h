@@ -89,12 +89,12 @@ class GetQAppRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   int m_appVersion{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;
 };
 

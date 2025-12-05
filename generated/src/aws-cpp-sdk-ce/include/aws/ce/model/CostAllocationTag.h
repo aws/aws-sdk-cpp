@@ -125,18 +125,18 @@ class CostAllocationTag {
   ///@}
  private:
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   CostAllocationTagType m_type{CostAllocationTagType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CostAllocationTagStatus m_status{CostAllocationTagStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_lastUpdatedDate;
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_lastUsedDate;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
   bool m_lastUsedDateHasBeenSet = false;
 };
 

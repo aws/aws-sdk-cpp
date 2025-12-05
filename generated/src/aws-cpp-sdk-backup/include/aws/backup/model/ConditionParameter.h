@@ -73,9 +73,9 @@ class ConditionParameter {
   ///@}
  private:
   Aws::String m_conditionKey;
-  bool m_conditionKeyHasBeenSet = false;
 
   Aws::String m_conditionValue;
+  bool m_conditionKeyHasBeenSet = false;
   bool m_conditionValueHasBeenSet = false;
 };
 

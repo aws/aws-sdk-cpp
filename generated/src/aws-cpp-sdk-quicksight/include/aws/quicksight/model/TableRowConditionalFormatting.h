@@ -70,9 +70,9 @@ class TableRowConditionalFormatting {
   ///@}
  private:
   ConditionalFormattingColor m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   ConditionalFormattingColor m_textColor;
+  bool m_backgroundColorHasBeenSet = false;
   bool m_textColorHasBeenSet = false;
 };
 

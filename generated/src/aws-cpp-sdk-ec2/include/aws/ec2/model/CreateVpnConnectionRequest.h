@@ -213,30 +213,30 @@ class CreateVpnConnectionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_customerGatewayId;
-  bool m_customerGatewayIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_vpnGatewayId;
-  bool m_vpnGatewayIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_vpnConcentratorId;
-  bool m_vpnConcentratorIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_preSharedKeyStorage;
-  bool m_preSharedKeyStorageHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   VpnConnectionOptionsSpecification m_options;
+  bool m_customerGatewayIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_vpnGatewayIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_vpnConcentratorIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_preSharedKeyStorageHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

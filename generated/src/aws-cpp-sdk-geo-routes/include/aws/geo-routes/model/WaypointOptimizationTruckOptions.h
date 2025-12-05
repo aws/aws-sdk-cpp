@@ -206,30 +206,30 @@ class WaypointOptimizationTruckOptions {
   ///@}
  private:
   long long m_grossWeight{0};
-  bool m_grossWeightHasBeenSet = false;
 
   Aws::Vector<WaypointOptimizationHazardousCargoType> m_hazardousCargos;
-  bool m_hazardousCargosHasBeenSet = false;
 
   long long m_height{0};
-  bool m_heightHasBeenSet = false;
 
   long long m_length{0};
-  bool m_lengthHasBeenSet = false;
 
   WaypointOptimizationTrailerOptions m_trailer;
-  bool m_trailerHasBeenSet = false;
 
   WaypointOptimizationTruckType m_truckType{WaypointOptimizationTruckType::NOT_SET};
-  bool m_truckTypeHasBeenSet = false;
 
   Aws::String m_tunnelRestrictionCode;
-  bool m_tunnelRestrictionCodeHasBeenSet = false;
 
   long long m_weightPerAxle{0};
-  bool m_weightPerAxleHasBeenSet = false;
 
   long long m_width{0};
+  bool m_grossWeightHasBeenSet = false;
+  bool m_hazardousCargosHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_lengthHasBeenSet = false;
+  bool m_trailerHasBeenSet = false;
+  bool m_truckTypeHasBeenSet = false;
+  bool m_tunnelRestrictionCodeHasBeenSet = false;
+  bool m_weightPerAxleHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

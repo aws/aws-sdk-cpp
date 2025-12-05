@@ -68,9 +68,9 @@ class GroupCertificateAuthorityProperties {
   ///@}
  private:
   Aws::String m_groupCertificateAuthorityArn;
-  bool m_groupCertificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_groupCertificateAuthorityId;
+  bool m_groupCertificateAuthorityArnHasBeenSet = false;
   bool m_groupCertificateAuthorityIdHasBeenSet = false;
 };
 

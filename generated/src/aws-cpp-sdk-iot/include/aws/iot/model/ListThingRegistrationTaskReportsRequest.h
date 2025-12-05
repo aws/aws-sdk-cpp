@@ -105,15 +105,15 @@ class ListThingRegistrationTaskReportsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   ReportType m_reportType{ReportType::NOT_SET};
-  bool m_reportTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_taskIdHasBeenSet = false;
+  bool m_reportTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

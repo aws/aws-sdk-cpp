@@ -89,12 +89,12 @@ class ListOrganizationalUnitsForParentResult {
   ///@}
  private:
   Aws::Vector<OrganizationalUnit> m_organizationalUnits;
-  bool m_organizationalUnitsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationalUnitsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

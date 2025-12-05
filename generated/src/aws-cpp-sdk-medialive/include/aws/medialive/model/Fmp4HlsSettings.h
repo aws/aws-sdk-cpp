@@ -89,12 +89,12 @@ class Fmp4HlsSettings {
   ///@}
  private:
   Aws::String m_audioRenditionSets;
-  bool m_audioRenditionSetsHasBeenSet = false;
 
   Fmp4NielsenId3Behavior m_nielsenId3Behavior{Fmp4NielsenId3Behavior::NOT_SET};
-  bool m_nielsenId3BehaviorHasBeenSet = false;
 
   Fmp4TimedMetadataBehavior m_timedMetadataBehavior{Fmp4TimedMetadataBehavior::NOT_SET};
+  bool m_audioRenditionSetsHasBeenSet = false;
+  bool m_nielsenId3BehaviorHasBeenSet = false;
   bool m_timedMetadataBehaviorHasBeenSet = false;
 };
 

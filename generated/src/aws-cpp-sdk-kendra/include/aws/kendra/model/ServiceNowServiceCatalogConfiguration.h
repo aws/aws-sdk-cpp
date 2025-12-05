@@ -176,21 +176,21 @@ class ServiceNowServiceCatalogConfiguration {
   ///@}
  private:
   bool m_crawlAttachments{false};
-  bool m_crawlAttachmentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeAttachmentFilePatterns;
-  bool m_includeAttachmentFilePatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeAttachmentFilePatterns;
-  bool m_excludeAttachmentFilePatternsHasBeenSet = false;
 
   Aws::String m_documentDataFieldName;
-  bool m_documentDataFieldNameHasBeenSet = false;
 
   Aws::String m_documentTitleFieldName;
-  bool m_documentTitleFieldNameHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
+  bool m_crawlAttachmentsHasBeenSet = false;
+  bool m_includeAttachmentFilePatternsHasBeenSet = false;
+  bool m_excludeAttachmentFilePatternsHasBeenSet = false;
+  bool m_documentDataFieldNameHasBeenSet = false;
+  bool m_documentTitleFieldNameHasBeenSet = false;
   bool m_fieldMappingsHasBeenSet = false;
 };
 

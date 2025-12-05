@@ -94,12 +94,12 @@ class RealTimeInferenceRecommendation {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
 };
 

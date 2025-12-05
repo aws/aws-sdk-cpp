@@ -57,9 +57,9 @@ class DescribeInboundDmarcSettingsResult {
   ///@}
  private:
   bool m_enforced{false};
-  bool m_enforcedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enforcedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

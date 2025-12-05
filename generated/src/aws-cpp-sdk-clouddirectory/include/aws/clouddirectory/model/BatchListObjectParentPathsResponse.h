@@ -78,9 +78,9 @@ class BatchListObjectParentPathsResponse {
   ///@}
  private:
   Aws::Vector<PathToObjectIdentifiers> m_pathToObjectIdentifiersList;
-  bool m_pathToObjectIdentifiersListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_pathToObjectIdentifiersListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

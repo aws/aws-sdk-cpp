@@ -81,12 +81,12 @@ class TotalImpactFilter {
   ///@}
  private:
   NumericOperator m_numericOperator{NumericOperator::NOT_SET};
-  bool m_numericOperatorHasBeenSet = false;
 
   double m_startValue{0.0};
-  bool m_startValueHasBeenSet = false;
 
   double m_endValue{0.0};
+  bool m_numericOperatorHasBeenSet = false;
+  bool m_startValueHasBeenSet = false;
   bool m_endValueHasBeenSet = false;
 };
 

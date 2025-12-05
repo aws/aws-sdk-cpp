@@ -60,9 +60,9 @@ class GetClassifierResult {
   ///@}
  private:
   Classifier m_classifier;
-  bool m_classifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_classifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

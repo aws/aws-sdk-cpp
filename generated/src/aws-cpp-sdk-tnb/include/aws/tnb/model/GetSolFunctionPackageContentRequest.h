@@ -67,9 +67,9 @@ class GetSolFunctionPackageContentRequest : public TnbRequest {
   ///@}
  private:
   PackageContentType m_accept{PackageContentType::NOT_SET};
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_vnfPkgId;
+  bool m_acceptHasBeenSet = false;
   bool m_vnfPkgIdHasBeenSet = false;
 };
 

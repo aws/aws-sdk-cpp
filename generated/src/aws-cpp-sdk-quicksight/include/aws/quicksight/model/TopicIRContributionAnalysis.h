@@ -111,15 +111,15 @@ class TopicIRContributionAnalysis {
   ///@}
  private:
   Aws::Vector<ContributionAnalysisFactor> m_factors;
-  bool m_factorsHasBeenSet = false;
 
   ContributionAnalysisTimeRanges m_timeRanges;
-  bool m_timeRangesHasBeenSet = false;
 
   ContributionAnalysisDirection m_direction{ContributionAnalysisDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   ContributionAnalysisSortType m_sortType{ContributionAnalysisSortType::NOT_SET};
+  bool m_factorsHasBeenSet = false;
+  bool m_timeRangesHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
   bool m_sortTypeHasBeenSet = false;
 };
 

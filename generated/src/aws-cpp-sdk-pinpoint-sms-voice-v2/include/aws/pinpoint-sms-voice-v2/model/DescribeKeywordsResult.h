@@ -121,18 +121,18 @@ class DescribeKeywordsResult {
   ///@}
  private:
   Aws::String m_originationIdentityArn;
-  bool m_originationIdentityArnHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::Vector<KeywordInformation> m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originationIdentityArnHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

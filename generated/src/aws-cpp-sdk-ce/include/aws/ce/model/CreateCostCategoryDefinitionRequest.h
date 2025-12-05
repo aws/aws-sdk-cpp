@@ -192,24 +192,24 @@ class CreateCostCategoryDefinitionRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   CostCategoryRuleVersion m_ruleVersion{CostCategoryRuleVersion::NOT_SET};
-  bool m_ruleVersionHasBeenSet = false;
 
   Aws::Vector<CostCategoryRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-  bool m_splitChargeRulesHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_nameHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_ruleVersionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_splitChargeRulesHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

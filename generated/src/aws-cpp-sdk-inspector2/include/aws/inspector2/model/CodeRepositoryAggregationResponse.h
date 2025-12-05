@@ -156,24 +156,24 @@ class CodeRepositoryAggregationResponse {
   ///@}
  private:
   Aws::String m_projectNames;
-  bool m_projectNamesHasBeenSet = false;
 
   Aws::String m_providerType;
-  bool m_providerTypeHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
-  bool m_severityCountsHasBeenSet = false;
 
   long long m_exploitAvailableActiveFindingsCount{0};
-  bool m_exploitAvailableActiveFindingsCountHasBeenSet = false;
 
   long long m_fixAvailableActiveFindingsCount{0};
-  bool m_fixAvailableActiveFindingsCountHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_projectNamesHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_severityCountsHasBeenSet = false;
+  bool m_exploitAvailableActiveFindingsCountHasBeenSet = false;
+  bool m_fixAvailableActiveFindingsCountHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

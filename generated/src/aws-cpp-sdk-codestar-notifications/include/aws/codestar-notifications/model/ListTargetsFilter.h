@@ -75,9 +75,9 @@ class ListTargetsFilter {
   ///@}
  private:
   ListTargetsFilterName m_name{ListTargetsFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -134,18 +134,18 @@ class SetTaskStatusRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   TaskStatus m_taskStatus{TaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::String m_errorId;
-  bool m_errorIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorStackTrace;
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_errorIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorStackTraceHasBeenSet = false;
 };
 

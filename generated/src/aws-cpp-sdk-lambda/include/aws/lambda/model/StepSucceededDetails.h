@@ -69,9 +69,9 @@ class StepSucceededDetails {
   ///@}
  private:
   EventResult m_result;
-  bool m_resultHasBeenSet = false;
 
   RetryDetails m_retryDetails;
+  bool m_resultHasBeenSet = false;
   bool m_retryDetailsHasBeenSet = false;
 };
 

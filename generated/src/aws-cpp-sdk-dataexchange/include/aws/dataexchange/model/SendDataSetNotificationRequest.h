@@ -143,21 +143,21 @@ class SendDataSetNotificationRequest : public DataExchangeRequest {
   ///@}
  private:
   ScopeDetails m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   NotificationDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   NotificationType m_type{NotificationType::NOT_SET};
+  bool m_scopeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_commentHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeAlertManagerDefinitionResult {
   ///@}
  private:
   AlertManagerDefinitionDescription m_alertManagerDefinition;
-  bool m_alertManagerDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alertManagerDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

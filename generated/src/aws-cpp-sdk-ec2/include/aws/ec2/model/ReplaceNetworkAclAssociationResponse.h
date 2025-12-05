@@ -60,9 +60,9 @@ class ReplaceNetworkAclAssociationResponse {
   ///@}
  private:
   Aws::String m_newAssociationId;
-  bool m_newAssociationIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_newAssociationIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

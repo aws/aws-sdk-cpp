@@ -127,15 +127,15 @@ class CodegenJobGenericDataSchema {
   ///@}
  private:
   CodegenJobGenericDataSourceType m_dataSourceType{CodegenJobGenericDataSourceType::NOT_SET};
-  bool m_dataSourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, CodegenGenericDataModel> m_models;
-  bool m_modelsHasBeenSet = false;
 
   Aws::Map<Aws::String, CodegenGenericDataEnum> m_enums;
-  bool m_enumsHasBeenSet = false;
 
   Aws::Map<Aws::String, CodegenGenericDataNonModel> m_nonModels;
+  bool m_dataSourceTypeHasBeenSet = false;
+  bool m_modelsHasBeenSet = false;
+  bool m_enumsHasBeenSet = false;
   bool m_nonModelsHasBeenSet = false;
 };
 

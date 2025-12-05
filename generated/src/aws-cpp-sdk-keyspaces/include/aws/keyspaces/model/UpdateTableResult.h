@@ -59,9 +59,9 @@ class UpdateTableResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class DataflowEndpoint {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SocketAddress m_address;
-  bool m_addressHasBeenSet = false;
 
   EndpointStatus m_status{EndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_mtu{0};
+  bool m_nameHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_mtuHasBeenSet = false;
 };
 

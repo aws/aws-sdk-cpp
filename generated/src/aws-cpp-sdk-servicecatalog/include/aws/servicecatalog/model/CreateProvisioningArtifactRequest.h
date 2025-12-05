@@ -108,15 +108,15 @@ class CreateProvisioningArtifactRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   ProvisioningArtifactProperties m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

@@ -80,9 +80,9 @@ class BatchGetDocumentStatusRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::Vector<DocumentInfo> m_documentInfoList;
+  bool m_indexIdHasBeenSet = false;
   bool m_documentInfoListHasBeenSet = false;
 };
 

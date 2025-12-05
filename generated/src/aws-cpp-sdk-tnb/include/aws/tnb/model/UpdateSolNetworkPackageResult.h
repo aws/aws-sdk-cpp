@@ -59,9 +59,9 @@ class UpdateSolNetworkPackageResult {
   ///@}
  private:
   NsdOperationalState m_nsdOperationalState{NsdOperationalState::NOT_SET};
-  bool m_nsdOperationalStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nsdOperationalStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

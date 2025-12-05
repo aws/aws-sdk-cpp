@@ -86,12 +86,12 @@ class EC2Capacity {
   ///@}
  private:
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_maxSize;
-  bool m_maxSizeHasBeenSet = false;
 
   Aws::String m_quantity;
+  bool m_familyHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
   bool m_quantityHasBeenSet = false;
 };
 

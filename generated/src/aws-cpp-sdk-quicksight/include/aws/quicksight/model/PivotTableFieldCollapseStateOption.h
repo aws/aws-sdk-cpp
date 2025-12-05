@@ -70,9 +70,9 @@ class PivotTableFieldCollapseStateOption {
   ///@}
  private:
   PivotTableFieldCollapseStateTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   PivotTableFieldCollapseState m_state{PivotTableFieldCollapseState::NOT_SET};
+  bool m_targetHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

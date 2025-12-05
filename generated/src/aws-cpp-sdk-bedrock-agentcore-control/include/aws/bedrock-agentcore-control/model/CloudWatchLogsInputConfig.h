@@ -83,9 +83,9 @@ class CloudWatchLogsInputConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_logGroupNames;
-  bool m_logGroupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceNames;
+  bool m_logGroupNamesHasBeenSet = false;
   bool m_serviceNamesHasBeenSet = false;
 };
 

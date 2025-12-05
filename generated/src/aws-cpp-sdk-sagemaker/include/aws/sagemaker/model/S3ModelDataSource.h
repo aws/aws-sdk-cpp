@@ -228,27 +228,27 @@ class S3ModelDataSource {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   S3ModelDataType m_s3DataType{S3ModelDataType::NOT_SET};
-  bool m_s3DataTypeHasBeenSet = false;
 
   ModelCompressionType m_compressionType{ModelCompressionType::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   ModelAccessConfig m_modelAccessConfig;
-  bool m_modelAccessConfigHasBeenSet = false;
 
   InferenceHubAccessConfig m_hubAccessConfig;
-  bool m_hubAccessConfigHasBeenSet = false;
 
   Aws::String m_manifestS3Uri;
-  bool m_manifestS3UriHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_manifestEtag;
+  bool m_s3UriHasBeenSet = false;
+  bool m_s3DataTypeHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
+  bool m_modelAccessConfigHasBeenSet = false;
+  bool m_hubAccessConfigHasBeenSet = false;
+  bool m_manifestS3UriHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_manifestEtagHasBeenSet = false;
 };
 

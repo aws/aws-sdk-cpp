@@ -242,36 +242,36 @@ class ObjectVersion {
   ///@}
  private:
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Vector<ChecksumAlgorithm> m_checksumAlgorithm;
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
-  bool m_checksumTypeHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   ObjectVersionStorageClass m_storageClass{ObjectVersionStorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   bool m_isLatest{false};
-  bool m_isLatestHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Owner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   RestoreStatus m_restoreStatus;
+  bool m_eTagHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_checksumTypeHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_isLatestHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_restoreStatusHasBeenSet = false;
 };
 

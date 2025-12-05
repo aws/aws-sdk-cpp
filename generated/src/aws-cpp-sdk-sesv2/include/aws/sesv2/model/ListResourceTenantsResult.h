@@ -93,12 +93,12 @@ class ListResourceTenantsResult {
   ///@}
  private:
   Aws::Vector<ResourceTenantMetadata> m_resourceTenants;
-  bool m_resourceTenantsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceTenantsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

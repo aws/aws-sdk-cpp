@@ -146,21 +146,21 @@ class ErrorResponse {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalDetails;
-  bool m_additionalDetailsHasBeenSet = false;
 
   ErrorCode m_code{ErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   ErrorResourceType m_resourceType{ErrorResourceType::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
+  bool m_additionalDetailsHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

@@ -603,72 +603,72 @@ class DescribedServer {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   ProtocolDetails m_protocolDetails;
-  bool m_protocolDetailsHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   EndpointDetails m_endpointDetails;
-  bool m_endpointDetailsHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_hostKeyFingerprint;
-  bool m_hostKeyFingerprintHasBeenSet = false;
 
   IdentityProviderDetails m_identityProviderDetails;
-  bool m_identityProviderDetailsHasBeenSet = false;
 
   IdentityProviderType m_identityProviderType{IdentityProviderType::NOT_SET};
-  bool m_identityProviderTypeHasBeenSet = false;
 
   Aws::String m_loggingRole;
-  bool m_loggingRoleHasBeenSet = false;
 
   Aws::String m_postAuthenticationLoginBanner;
-  bool m_postAuthenticationLoginBannerHasBeenSet = false;
 
   Aws::String m_preAuthenticationLoginBanner;
-  bool m_preAuthenticationLoginBannerHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   Aws::String m_securityPolicyName;
-  bool m_securityPolicyNameHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_userCount{0};
-  bool m_userCountHasBeenSet = false;
 
   WorkflowDetails m_workflowDetails;
-  bool m_workflowDetailsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_structuredLogDestinations;
-  bool m_structuredLogDestinationsHasBeenSet = false;
 
   S3StorageOptions m_s3StorageOptions;
-  bool m_s3StorageOptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_as2ServiceManagedEgressIpAddresses;
-  bool m_as2ServiceManagedEgressIpAddressesHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
+  bool m_protocolDetailsHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_endpointDetailsHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_hostKeyFingerprintHasBeenSet = false;
+  bool m_identityProviderDetailsHasBeenSet = false;
+  bool m_identityProviderTypeHasBeenSet = false;
+  bool m_loggingRoleHasBeenSet = false;
+  bool m_postAuthenticationLoginBannerHasBeenSet = false;
+  bool m_preAuthenticationLoginBannerHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
+  bool m_securityPolicyNameHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_userCountHasBeenSet = false;
+  bool m_workflowDetailsHasBeenSet = false;
+  bool m_structuredLogDestinationsHasBeenSet = false;
+  bool m_s3StorageOptionsHasBeenSet = false;
+  bool m_as2ServiceManagedEgressIpAddressesHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

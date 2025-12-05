@@ -60,9 +60,9 @@ class DeleteACLResult {
   ///@}
  private:
   ACL m_aCL;
-  bool m_aCLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aCLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

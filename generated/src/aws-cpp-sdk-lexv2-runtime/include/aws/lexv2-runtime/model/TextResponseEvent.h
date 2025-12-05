@@ -81,9 +81,9 @@ class TextResponseEvent {
   ///@}
  private:
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_eventId;
+  bool m_messagesHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeactivateKeySigningKeyRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_hostedZoneIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

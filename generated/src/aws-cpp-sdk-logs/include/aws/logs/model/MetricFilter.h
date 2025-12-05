@@ -197,27 +197,27 @@ class MetricFilter {
   ///@}
  private:
   Aws::String m_filterName;
-  bool m_filterNameHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   Aws::Vector<MetricTransformation> m_metricTransformations;
-  bool m_metricTransformationsHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   bool m_applyOnTransformedLogs{false};
-  bool m_applyOnTransformedLogsHasBeenSet = false;
 
   Aws::String m_fieldSelectionCriteria;
-  bool m_fieldSelectionCriteriaHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_emitSystemFieldDimensions;
+  bool m_filterNameHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
+  bool m_metricTransformationsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_applyOnTransformedLogsHasBeenSet = false;
+  bool m_fieldSelectionCriteriaHasBeenSet = false;
   bool m_emitSystemFieldDimensionsHasBeenSet = false;
 };
 

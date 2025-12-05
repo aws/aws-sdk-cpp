@@ -88,9 +88,9 @@ class EncryptionInTransit {
   ///@}
  private:
   ClientBroker m_clientBroker{ClientBroker::NOT_SET};
-  bool m_clientBrokerHasBeenSet = false;
 
   bool m_inCluster{false};
+  bool m_clientBrokerHasBeenSet = false;
   bool m_inClusterHasBeenSet = false;
 };
 

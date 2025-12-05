@@ -238,39 +238,39 @@ class DescribeDeviceResult {
   ///@}
  private:
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   Aws::String m_iotThingName;
-  bool m_iotThingNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_registrationTime{};
-  bool m_registrationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestHeartbeat{};
-  bool m_latestHeartbeatHasBeenSet = false;
 
   Aws::Vector<EdgeModel> m_models;
-  bool m_modelsHasBeenSet = false;
 
   int m_maxModels{0};
-  bool m_maxModelsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_iotThingNameHasBeenSet = false;
+  bool m_registrationTimeHasBeenSet = false;
+  bool m_latestHeartbeatHasBeenSet = false;
+  bool m_modelsHasBeenSet = false;
+  bool m_maxModelsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

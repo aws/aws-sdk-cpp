@@ -108,15 +108,15 @@ class ListCommitmentPurchaseAnalysesRequest : public CostExplorerRequest {
   ///@}
  private:
   AnalysisStatus m_analysisStatus{AnalysisStatus::NOT_SET};
-  bool m_analysisStatusHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_analysisIds;
+  bool m_analysisStatusHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_analysisIdsHasBeenSet = false;
 };
 

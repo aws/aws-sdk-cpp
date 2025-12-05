@@ -608,90 +608,90 @@ class MetricAlarm {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmArn;
-  bool m_alarmArnHasBeenSet = false;
 
   Aws::String m_alarmDescription;
-  bool m_alarmDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp{};
-  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
   bool m_actionsEnabled{false};
-  bool m_actionsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_oKActions;
-  bool m_oKActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmActions;
-  bool m_alarmActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insufficientDataActions;
-  bool m_insufficientDataActionsHasBeenSet = false;
 
   StateValue m_stateValue{StateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_stateReasonData;
-  bool m_stateReasonDataHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateUpdatedTimestamp{};
-  bool m_stateUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Statistic m_statistic{Statistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::String m_extendedStatistic;
-  bool m_extendedStatisticHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::String m_treatMissingData;
-  bool m_treatMissingDataHasBeenSet = false;
 
   Aws::String m_evaluateLowSampleCountPercentile;
-  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
 
   Aws::Vector<MetricDataQuery> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_thresholdMetricId;
-  bool m_thresholdMetricIdHasBeenSet = false;
 
   EvaluationState m_evaluationState{EvaluationState::NOT_SET};
-  bool m_evaluationStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateTransitionedTimestamp{};
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmArnHasBeenSet = false;
+  bool m_alarmDescriptionHasBeenSet = false;
+  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
+  bool m_actionsEnabledHasBeenSet = false;
+  bool m_oKActionsHasBeenSet = false;
+  bool m_alarmActionsHasBeenSet = false;
+  bool m_insufficientDataActionsHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_stateReasonDataHasBeenSet = false;
+  bool m_stateUpdatedTimestampHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_extendedStatisticHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_treatMissingDataHasBeenSet = false;
+  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_thresholdMetricIdHasBeenSet = false;
+  bool m_evaluationStateHasBeenSet = false;
   bool m_stateTransitionedTimestampHasBeenSet = false;
 };
 

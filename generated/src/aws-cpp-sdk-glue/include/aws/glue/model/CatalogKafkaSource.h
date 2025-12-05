@@ -158,24 +158,24 @@ class CatalogKafkaSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_windowSize{0};
-  bool m_windowSizeHasBeenSet = false;
 
   bool m_detectSchema{false};
-  bool m_detectSchemaHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   KafkaStreamingSourceOptions m_streamingOptions;
-  bool m_streamingOptionsHasBeenSet = false;
 
   StreamingDataPreviewOptions m_dataPreviewOptions;
+  bool m_nameHasBeenSet = false;
+  bool m_windowSizeHasBeenSet = false;
+  bool m_detectSchemaHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_streamingOptionsHasBeenSet = false;
   bool m_dataPreviewOptionsHasBeenSet = false;
 };
 

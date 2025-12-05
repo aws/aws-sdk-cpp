@@ -160,21 +160,21 @@ class CreateOdbPeeringConnectionRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
 
   Aws::String m_peerNetworkId;
-  bool m_peerNetworkIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_peerNetworkCidrsToBeAdded;
-  bool m_peerNetworkCidrsToBeAddedHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_odbNetworkIdHasBeenSet = false;
+  bool m_peerNetworkIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_peerNetworkCidrsToBeAddedHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

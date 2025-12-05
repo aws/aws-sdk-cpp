@@ -78,9 +78,9 @@ class DescribeExpressGatewayServiceRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::Vector<ExpressGatewayServiceInclude> m_include;
+  bool m_serviceArnHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

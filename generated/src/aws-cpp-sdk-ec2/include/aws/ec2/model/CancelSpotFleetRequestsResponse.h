@@ -97,12 +97,12 @@ class CancelSpotFleetRequestsResponse {
   ///@}
  private:
   Aws::Vector<CancelSpotFleetRequestsSuccessItem> m_successfulFleetRequests;
-  bool m_successfulFleetRequestsHasBeenSet = false;
 
   Aws::Vector<CancelSpotFleetRequestsErrorItem> m_unsuccessfulFleetRequests;
-  bool m_unsuccessfulFleetRequestsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulFleetRequestsHasBeenSet = false;
+  bool m_unsuccessfulFleetRequestsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -138,18 +138,18 @@ class Notification {
   ///@}
  private:
   NotificationType m_notificationType{NotificationType::NOT_SET};
-  bool m_notificationTypeHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   ThresholdType m_thresholdType{ThresholdType::NOT_SET};
-  bool m_thresholdTypeHasBeenSet = false;
 
   NotificationState m_notificationState{NotificationState::NOT_SET};
+  bool m_notificationTypeHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_thresholdTypeHasBeenSet = false;
   bool m_notificationStateHasBeenSet = false;
 };
 

@@ -270,42 +270,42 @@ class AwsEc2SubnetDetails {
   ///@}
  private:
   bool m_assignIpv6AddressOnCreation{false};
-  bool m_assignIpv6AddressOnCreationHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   int m_availableIpAddressCount{0};
-  bool m_availableIpAddressCountHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   bool m_defaultForAz{false};
-  bool m_defaultForAzHasBeenSet = false;
 
   bool m_mapPublicIpOnLaunch{false};
-  bool m_mapPublicIpOnLaunchHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_subnetArn;
-  bool m_subnetArnHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Ipv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
+  bool m_assignIpv6AddressOnCreationHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_availableIpAddressCountHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_defaultForAzHasBeenSet = false;
+  bool m_mapPublicIpOnLaunchHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_subnetArnHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 };
 

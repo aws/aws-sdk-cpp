@@ -90,12 +90,12 @@ class ListRepositoriesRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SortByEnum m_sortBy{SortByEnum::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   OrderEnum m_order{OrderEnum::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

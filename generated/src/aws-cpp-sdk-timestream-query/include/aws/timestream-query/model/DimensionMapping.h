@@ -68,9 +68,9 @@ class DimensionMapping {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DimensionValueType m_dimensionValueType{DimensionValueType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_dimensionValueTypeHasBeenSet = false;
 };
 

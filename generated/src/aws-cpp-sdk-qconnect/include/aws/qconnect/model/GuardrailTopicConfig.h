@@ -112,15 +112,15 @@ class GuardrailTopicConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_examples;
-  bool m_examplesHasBeenSet = false;
 
   GuardrailTopicType m_type{GuardrailTopicType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_examplesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

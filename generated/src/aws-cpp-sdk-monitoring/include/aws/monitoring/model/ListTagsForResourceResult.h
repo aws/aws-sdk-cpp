@@ -68,9 +68,9 @@ class ListTagsForResourceResult {
   ///@}
  private:
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

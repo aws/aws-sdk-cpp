@@ -124,18 +124,18 @@ class TypedAttributeValue {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_binaryValue{};
-  bool m_binaryValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   Aws::String m_numberValue;
-  bool m_numberValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_datetimeValue{};
+  bool m_stringValueHasBeenSet = false;
+  bool m_binaryValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_numberValueHasBeenSet = false;
   bool m_datetimeValueHasBeenSet = false;
 };
 

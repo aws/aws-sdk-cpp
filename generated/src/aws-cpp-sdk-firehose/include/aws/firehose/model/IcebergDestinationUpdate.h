@@ -267,39 +267,39 @@ class IcebergDestinationUpdate {
   ///@}
  private:
   Aws::Vector<DestinationTableConfiguration> m_destinationTableConfigurationList;
-  bool m_destinationTableConfigurationListHasBeenSet = false;
 
   SchemaEvolutionConfiguration m_schemaEvolutionConfiguration;
-  bool m_schemaEvolutionConfigurationHasBeenSet = false;
 
   TableCreationConfiguration m_tableCreationConfiguration;
-  bool m_tableCreationConfigurationHasBeenSet = false;
 
   BufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   IcebergS3BackupMode m_s3BackupMode{IcebergS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   RetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   bool m_appendOnly{false};
-  bool m_appendOnlyHasBeenSet = false;
 
   CatalogConfiguration m_catalogConfiguration;
-  bool m_catalogConfigurationHasBeenSet = false;
 
   S3DestinationConfiguration m_s3Configuration;
+  bool m_destinationTableConfigurationListHasBeenSet = false;
+  bool m_schemaEvolutionConfigurationHasBeenSet = false;
+  bool m_tableCreationConfigurationHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_appendOnlyHasBeenSet = false;
+  bool m_catalogConfigurationHasBeenSet = false;
   bool m_s3ConfigurationHasBeenSet = false;
 };
 

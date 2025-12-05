@@ -86,12 +86,12 @@ class CancelSpotFleetRequestsSuccessItem {
   ///@}
  private:
   BatchState m_currentSpotFleetRequestState{BatchState::NOT_SET};
-  bool m_currentSpotFleetRequestStateHasBeenSet = false;
 
   BatchState m_previousSpotFleetRequestState{BatchState::NOT_SET};
-  bool m_previousSpotFleetRequestStateHasBeenSet = false;
 
   Aws::String m_spotFleetRequestId;
+  bool m_currentSpotFleetRequestStateHasBeenSet = false;
+  bool m_previousSpotFleetRequestStateHasBeenSet = false;
   bool m_spotFleetRequestIdHasBeenSet = false;
 };
 

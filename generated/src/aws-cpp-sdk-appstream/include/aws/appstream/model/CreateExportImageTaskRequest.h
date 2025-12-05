@@ -135,18 +135,18 @@ class CreateExportImageTaskRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_amiName;
-  bool m_amiNameHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_amiDescription;
+  bool m_imageNameHasBeenSet = false;
+  bool m_amiNameHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_amiDescriptionHasBeenSet = false;
 };
 

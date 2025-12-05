@@ -330,48 +330,48 @@ class ModelPackageContainerDefinition {
   ///@}
  private:
   Aws::String m_containerHostname;
-  bool m_containerHostnameHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_imageDigest;
-  bool m_imageDigestHasBeenSet = false;
 
   Aws::String m_modelDataUrl;
-  bool m_modelDataUrlHasBeenSet = false;
 
   ModelDataSource m_modelDataSource;
-  bool m_modelDataSourceHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   ModelInput m_modelInput;
-  bool m_modelInputHasBeenSet = false;
 
   Aws::String m_framework;
-  bool m_frameworkHasBeenSet = false;
 
   Aws::String m_frameworkVersion;
-  bool m_frameworkVersionHasBeenSet = false;
 
   Aws::String m_nearestModelName;
-  bool m_nearestModelNameHasBeenSet = false;
 
   AdditionalS3DataSource m_additionalS3DataSource;
-  bool m_additionalS3DataSourceHasBeenSet = false;
 
   Aws::String m_modelDataETag;
-  bool m_modelDataETagHasBeenSet = false;
 
   bool m_isCheckpoint{false};
-  bool m_isCheckpointHasBeenSet = false;
 
   BaseModel m_baseModel;
+  bool m_containerHostnameHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_imageDigestHasBeenSet = false;
+  bool m_modelDataUrlHasBeenSet = false;
+  bool m_modelDataSourceHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_modelInputHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
+  bool m_frameworkVersionHasBeenSet = false;
+  bool m_nearestModelNameHasBeenSet = false;
+  bool m_additionalS3DataSourceHasBeenSet = false;
+  bool m_modelDataETagHasBeenSet = false;
+  bool m_isCheckpointHasBeenSet = false;
   bool m_baseModelHasBeenSet = false;
 };
 

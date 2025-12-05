@@ -102,15 +102,15 @@ class AccountJiraConfigurationInput {
   ///@}
  private:
   AccountJiraIssueManagementStatus m_issueManagementStatus{AccountJiraIssueManagementStatus::NOT_SET};
-  bool m_issueManagementStatusHasBeenSet = false;
 
   IssueManagementType m_issueManagementType{IssueManagementType::NOT_SET};
-  bool m_issueManagementTypeHasBeenSet = false;
 
   Aws::String m_jiraProjectKey;
-  bool m_jiraProjectKeyHasBeenSet = false;
 
   IntegrationStatusInput m_integrationStatus{IntegrationStatusInput::NOT_SET};
+  bool m_issueManagementStatusHasBeenSet = false;
+  bool m_issueManagementTypeHasBeenSet = false;
+  bool m_jiraProjectKeyHasBeenSet = false;
   bool m_integrationStatusHasBeenSet = false;
 };
 

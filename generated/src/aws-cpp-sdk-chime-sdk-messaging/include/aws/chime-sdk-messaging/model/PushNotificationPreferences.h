@@ -72,9 +72,9 @@ class PushNotificationPreferences {
   ///@}
  private:
   AllowNotifications m_allowNotifications{AllowNotifications::NOT_SET};
-  bool m_allowNotificationsHasBeenSet = false;
 
   Aws::String m_filterRule;
+  bool m_allowNotificationsHasBeenSet = false;
   bool m_filterRuleHasBeenSet = false;
 };
 

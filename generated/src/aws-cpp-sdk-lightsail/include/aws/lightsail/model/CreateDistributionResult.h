@@ -80,12 +80,12 @@ class CreateDistributionResult {
   ///@}
  private:
   LightsailDistribution m_distribution;
-  bool m_distributionHasBeenSet = false;
 
   Operation m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_distributionHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

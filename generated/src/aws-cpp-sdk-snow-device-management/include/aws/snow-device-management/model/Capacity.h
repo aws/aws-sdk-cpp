@@ -117,18 +117,18 @@ class Capacity {
   ///@}
  private:
   long long m_available{0};
-  bool m_availableHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_total{0};
-  bool m_totalHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   long long m_used{0};
+  bool m_availableHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_usedHasBeenSet = false;
 };
 

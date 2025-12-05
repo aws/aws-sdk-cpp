@@ -91,15 +91,15 @@ class UpdateConsumableResourceResult {
   ///@}
  private:
   Aws::String m_consumableResourceName;
-  bool m_consumableResourceNameHasBeenSet = false;
 
   Aws::String m_consumableResourceArn;
-  bool m_consumableResourceArnHasBeenSet = false;
 
   long long m_totalQuantity{0};
-  bool m_totalQuantityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumableResourceNameHasBeenSet = false;
+  bool m_consumableResourceArnHasBeenSet = false;
+  bool m_totalQuantityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

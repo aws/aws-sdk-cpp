@@ -226,36 +226,36 @@ class TransitGatewayMulticastGroup {
   ///@}
  private:
   Aws::String m_groupIpAddress;
-  bool m_groupIpAddressHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_resourceType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   bool m_groupMember{false};
-  bool m_groupMemberHasBeenSet = false;
 
   bool m_groupSource{false};
-  bool m_groupSourceHasBeenSet = false;
 
   MembershipType m_memberType{MembershipType::NOT_SET};
-  bool m_memberTypeHasBeenSet = false;
 
   MembershipType m_sourceType{MembershipType::NOT_SET};
+  bool m_groupIpAddressHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceOwnerIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_groupMemberHasBeenSet = false;
+  bool m_groupSourceHasBeenSet = false;
+  bool m_memberTypeHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

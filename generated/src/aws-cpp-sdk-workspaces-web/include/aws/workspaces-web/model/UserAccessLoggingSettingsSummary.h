@@ -68,9 +68,9 @@ class UserAccessLoggingSettingsSummary {
   ///@}
  private:
   Aws::String m_userAccessLoggingSettingsArn;
-  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
   Aws::String m_kinesisStreamArn;
+  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
   bool m_kinesisStreamArnHasBeenSet = false;
 };
 

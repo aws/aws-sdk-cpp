@@ -108,15 +108,15 @@ class LineChartLineStyleSettings {
   ///@}
  private:
   Visibility m_lineVisibility{Visibility::NOT_SET};
-  bool m_lineVisibilityHasBeenSet = false;
 
   LineInterpolation m_lineInterpolation{LineInterpolation::NOT_SET};
-  bool m_lineInterpolationHasBeenSet = false;
 
   LineChartLineStyle m_lineStyle{LineChartLineStyle::NOT_SET};
-  bool m_lineStyleHasBeenSet = false;
 
   Aws::String m_lineWidth;
+  bool m_lineVisibilityHasBeenSet = false;
+  bool m_lineInterpolationHasBeenSet = false;
+  bool m_lineStyleHasBeenSet = false;
   bool m_lineWidthHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class StepStatus {
   ///@}
  private:
   StepState m_state{StepState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   StepStateChangeReason m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   FailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   StepTimeline m_timeline;
+  bool m_stateHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
   bool m_timelineHasBeenSet = false;
 };
 

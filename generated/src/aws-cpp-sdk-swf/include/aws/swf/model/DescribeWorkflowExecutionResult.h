@@ -143,21 +143,21 @@ class DescribeWorkflowExecutionResult {
   ///@}
  private:
   WorkflowExecutionInfo m_executionInfo;
-  bool m_executionInfoHasBeenSet = false;
 
   WorkflowExecutionConfiguration m_executionConfiguration;
-  bool m_executionConfigurationHasBeenSet = false;
 
   WorkflowExecutionOpenCounts m_openCounts;
-  bool m_openCountsHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestActivityTaskTimestamp{};
-  bool m_latestActivityTaskTimestampHasBeenSet = false;
 
   Aws::String m_latestExecutionContext;
-  bool m_latestExecutionContextHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionInfoHasBeenSet = false;
+  bool m_executionConfigurationHasBeenSet = false;
+  bool m_openCountsHasBeenSet = false;
+  bool m_latestActivityTaskTimestampHasBeenSet = false;
+  bool m_latestExecutionContextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

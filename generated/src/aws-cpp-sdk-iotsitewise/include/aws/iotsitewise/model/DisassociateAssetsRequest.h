@@ -121,15 +121,15 @@ class DisassociateAssetsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_hierarchyId;
-  bool m_hierarchyIdHasBeenSet = false;
 
   Aws::String m_childAssetId;
-  bool m_childAssetIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_assetIdHasBeenSet = false;
+  bool m_hierarchyIdHasBeenSet = false;
+  bool m_childAssetIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

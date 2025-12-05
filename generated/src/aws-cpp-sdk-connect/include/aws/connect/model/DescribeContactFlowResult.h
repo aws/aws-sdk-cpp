@@ -60,9 +60,9 @@ class DescribeContactFlowResult {
   ///@}
  private:
   ContactFlow m_contactFlow;
-  bool m_contactFlowHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

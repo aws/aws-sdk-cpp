@@ -68,9 +68,9 @@ class CancelQueryRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_eventDataStoreOwnerAccountId;
+  bool m_queryIdHasBeenSet = false;
   bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 };
 

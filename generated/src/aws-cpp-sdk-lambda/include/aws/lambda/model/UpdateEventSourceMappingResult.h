@@ -687,102 +687,102 @@ class UpdateEventSourceMappingResult {
   ///@}
  private:
   Aws::String m_uUID;
-  bool m_uUIDHasBeenSet = false;
 
   EventSourcePosition m_startingPosition{EventSourcePosition::NOT_SET};
-  bool m_startingPositionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startingPositionTimestamp{};
-  bool m_startingPositionTimestampHasBeenSet = false;
 
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   int m_maximumBatchingWindowInSeconds{0};
-  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
   int m_parallelizationFactor{0};
-  bool m_parallelizationFactorHasBeenSet = false;
 
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   FilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_lastProcessingResult;
-  bool m_lastProcessingResultHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateTransitionReason;
-  bool m_stateTransitionReasonHasBeenSet = false;
 
   DestinationConfig m_destinationConfig;
-  bool m_destinationConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_topics;
-  bool m_topicsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queues;
-  bool m_queuesHasBeenSet = false;
 
   Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
-  bool m_sourceAccessConfigurationsHasBeenSet = false;
 
   SelfManagedEventSource m_selfManagedEventSource;
-  bool m_selfManagedEventSourceHasBeenSet = false;
 
   int m_maximumRecordAgeInSeconds{0};
-  bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
   bool m_bisectBatchOnFunctionError{false};
-  bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
 
   int m_maximumRetryAttempts{0};
-  bool m_maximumRetryAttemptsHasBeenSet = false;
 
   int m_tumblingWindowInSeconds{0};
-  bool m_tumblingWindowInSecondsHasBeenSet = false;
 
   Aws::Vector<FunctionResponseType> m_functionResponseTypes;
-  bool m_functionResponseTypesHasBeenSet = false;
 
   AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
-  bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
 
   SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
-  bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
 
   ScalingConfig m_scalingConfig;
-  bool m_scalingConfigHasBeenSet = false;
 
   DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
-  bool m_documentDBEventSourceConfigHasBeenSet = false;
 
   Aws::String m_kMSKeyArn;
-  bool m_kMSKeyArnHasBeenSet = false;
 
   FilterCriteriaError m_filterCriteriaError;
-  bool m_filterCriteriaErrorHasBeenSet = false;
 
   Aws::String m_eventSourceMappingArn;
-  bool m_eventSourceMappingArnHasBeenSet = false;
 
   EventSourceMappingMetricsConfig m_metricsConfig;
-  bool m_metricsConfigHasBeenSet = false;
 
   ProvisionedPollerConfig m_provisionedPollerConfig;
-  bool m_provisionedPollerConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_uUIDHasBeenSet = false;
+  bool m_startingPositionHasBeenSet = false;
+  bool m_startingPositionTimestampHasBeenSet = false;
+  bool m_batchSizeHasBeenSet = false;
+  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+  bool m_parallelizationFactorHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_lastProcessingResultHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateTransitionReasonHasBeenSet = false;
+  bool m_destinationConfigHasBeenSet = false;
+  bool m_topicsHasBeenSet = false;
+  bool m_queuesHasBeenSet = false;
+  bool m_sourceAccessConfigurationsHasBeenSet = false;
+  bool m_selfManagedEventSourceHasBeenSet = false;
+  bool m_maximumRecordAgeInSecondsHasBeenSet = false;
+  bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
+  bool m_maximumRetryAttemptsHasBeenSet = false;
+  bool m_tumblingWindowInSecondsHasBeenSet = false;
+  bool m_functionResponseTypesHasBeenSet = false;
+  bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
+  bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
+  bool m_scalingConfigHasBeenSet = false;
+  bool m_documentDBEventSourceConfigHasBeenSet = false;
+  bool m_kMSKeyArnHasBeenSet = false;
+  bool m_filterCriteriaErrorHasBeenSet = false;
+  bool m_eventSourceMappingArnHasBeenSet = false;
+  bool m_metricsConfigHasBeenSet = false;
+  bool m_provisionedPollerConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

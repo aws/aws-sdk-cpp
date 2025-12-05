@@ -315,51 +315,51 @@ class DICOMTags {
   ///@}
  private:
   Aws::String m_dICOMPatientId;
-  bool m_dICOMPatientIdHasBeenSet = false;
 
   Aws::String m_dICOMPatientName;
-  bool m_dICOMPatientNameHasBeenSet = false;
 
   Aws::String m_dICOMPatientBirthDate;
-  bool m_dICOMPatientBirthDateHasBeenSet = false;
 
   Aws::String m_dICOMPatientSex;
-  bool m_dICOMPatientSexHasBeenSet = false;
 
   Aws::String m_dICOMStudyInstanceUID;
-  bool m_dICOMStudyInstanceUIDHasBeenSet = false;
 
   Aws::String m_dICOMStudyId;
-  bool m_dICOMStudyIdHasBeenSet = false;
 
   Aws::String m_dICOMStudyDescription;
-  bool m_dICOMStudyDescriptionHasBeenSet = false;
 
   int m_dICOMNumberOfStudyRelatedSeries{0};
-  bool m_dICOMNumberOfStudyRelatedSeriesHasBeenSet = false;
 
   int m_dICOMNumberOfStudyRelatedInstances{0};
-  bool m_dICOMNumberOfStudyRelatedInstancesHasBeenSet = false;
 
   Aws::String m_dICOMAccessionNumber;
-  bool m_dICOMAccessionNumberHasBeenSet = false;
 
   Aws::String m_dICOMSeriesInstanceUID;
-  bool m_dICOMSeriesInstanceUIDHasBeenSet = false;
 
   Aws::String m_dICOMSeriesModality;
-  bool m_dICOMSeriesModalityHasBeenSet = false;
 
   Aws::String m_dICOMSeriesBodyPart;
-  bool m_dICOMSeriesBodyPartHasBeenSet = false;
 
   int m_dICOMSeriesNumber{0};
-  bool m_dICOMSeriesNumberHasBeenSet = false;
 
   Aws::String m_dICOMStudyDate;
-  bool m_dICOMStudyDateHasBeenSet = false;
 
   Aws::String m_dICOMStudyTime;
+  bool m_dICOMPatientIdHasBeenSet = false;
+  bool m_dICOMPatientNameHasBeenSet = false;
+  bool m_dICOMPatientBirthDateHasBeenSet = false;
+  bool m_dICOMPatientSexHasBeenSet = false;
+  bool m_dICOMStudyInstanceUIDHasBeenSet = false;
+  bool m_dICOMStudyIdHasBeenSet = false;
+  bool m_dICOMStudyDescriptionHasBeenSet = false;
+  bool m_dICOMNumberOfStudyRelatedSeriesHasBeenSet = false;
+  bool m_dICOMNumberOfStudyRelatedInstancesHasBeenSet = false;
+  bool m_dICOMAccessionNumberHasBeenSet = false;
+  bool m_dICOMSeriesInstanceUIDHasBeenSet = false;
+  bool m_dICOMSeriesModalityHasBeenSet = false;
+  bool m_dICOMSeriesBodyPartHasBeenSet = false;
+  bool m_dICOMSeriesNumberHasBeenSet = false;
+  bool m_dICOMStudyDateHasBeenSet = false;
   bool m_dICOMStudyTimeHasBeenSet = false;
 };
 

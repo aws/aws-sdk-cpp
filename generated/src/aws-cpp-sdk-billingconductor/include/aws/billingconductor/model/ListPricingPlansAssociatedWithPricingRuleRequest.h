@@ -100,15 +100,15 @@ class ListPricingPlansAssociatedWithPricingRuleRequest : public BillingConductor
   ///@}
  private:
   Aws::String m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
 
   Aws::String m_pricingRuleArn;
-  bool m_pricingRuleArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_billingPeriodHasBeenSet = false;
+  bool m_pricingRuleArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

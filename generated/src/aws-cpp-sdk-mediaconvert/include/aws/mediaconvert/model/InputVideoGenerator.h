@@ -167,24 +167,24 @@ Enter an integer from 32000 to 48000.
   ///@}
  private:
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   int m_width{0};
+  bool m_channelsHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

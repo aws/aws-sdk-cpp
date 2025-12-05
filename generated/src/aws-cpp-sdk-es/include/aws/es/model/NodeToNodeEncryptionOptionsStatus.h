@@ -72,9 +72,9 @@ class NodeToNodeEncryptionOptionsStatus {
   ///@}
  private:
   NodeToNodeEncryptionOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   OptionStatus m_status;
+  bool m_optionsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

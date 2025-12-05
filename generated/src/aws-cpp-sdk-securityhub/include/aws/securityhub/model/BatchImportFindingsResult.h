@@ -97,15 +97,15 @@ class BatchImportFindingsResult {
   ///@}
  private:
   int m_failedCount{0};
-  bool m_failedCountHasBeenSet = false;
 
   int m_successCount{0};
-  bool m_successCountHasBeenSet = false;
 
   Aws::Vector<ImportFindingsError> m_failedFindings;
-  bool m_failedFindingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedCountHasBeenSet = false;
+  bool m_successCountHasBeenSet = false;
+  bool m_failedFindingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

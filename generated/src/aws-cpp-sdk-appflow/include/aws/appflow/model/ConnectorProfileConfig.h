@@ -70,9 +70,9 @@ class ConnectorProfileConfig {
   ///@}
  private:
   ConnectorProfileProperties m_connectorProfileProperties;
-  bool m_connectorProfilePropertiesHasBeenSet = false;
 
   ConnectorProfileCredentials m_connectorProfileCredentials;
+  bool m_connectorProfilePropertiesHasBeenSet = false;
   bool m_connectorProfileCredentialsHasBeenSet = false;
 };
 

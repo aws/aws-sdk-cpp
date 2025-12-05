@@ -163,24 +163,24 @@ class VoiceToneAnalysisTask {
   ///@}
  private:
   Aws::String m_voiceToneAnalysisTaskId;
-  bool m_voiceToneAnalysisTaskIdHasBeenSet = false;
 
   Aws::String m_voiceToneAnalysisTaskStatus;
-  bool m_voiceToneAnalysisTaskStatusHasBeenSet = false;
 
   CallDetails m_callDetails;
-  bool m_callDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedTimestamp{};
-  bool m_startedTimestampHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_voiceToneAnalysisTaskIdHasBeenSet = false;
+  bool m_voiceToneAnalysisTaskStatusHasBeenSet = false;
+  bool m_callDetailsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_startedTimestampHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

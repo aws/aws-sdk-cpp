@@ -87,12 +87,12 @@ class DescribePlayerSessionsResult {
   ///@}
  private:
   Aws::Vector<PlayerSession> m_playerSessions;
-  bool m_playerSessionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_playerSessionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

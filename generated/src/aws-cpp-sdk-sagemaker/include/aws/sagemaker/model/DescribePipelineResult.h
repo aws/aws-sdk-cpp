@@ -295,51 +295,51 @@ class DescribePipelineResult {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_pipelineDisplayName;
-  bool m_pipelineDisplayNameHasBeenSet = false;
 
   Aws::String m_pipelineDefinition;
-  bool m_pipelineDefinitionHasBeenSet = false;
 
   Aws::String m_pipelineDescription;
-  bool m_pipelineDescriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   PipelineStatus m_pipelineStatus{PipelineStatus::NOT_SET};
-  bool m_pipelineStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRunTime{};
-  bool m_lastRunTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   ParallelismConfiguration m_parallelismConfiguration;
-  bool m_parallelismConfigurationHasBeenSet = false;
 
   Aws::String m_pipelineVersionDisplayName;
-  bool m_pipelineVersionDisplayNameHasBeenSet = false;
 
   Aws::String m_pipelineVersionDescription;
-  bool m_pipelineVersionDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineDisplayNameHasBeenSet = false;
+  bool m_pipelineDefinitionHasBeenSet = false;
+  bool m_pipelineDescriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_pipelineStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastRunTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_parallelismConfigurationHasBeenSet = false;
+  bool m_pipelineVersionDisplayNameHasBeenSet = false;
+  bool m_pipelineVersionDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

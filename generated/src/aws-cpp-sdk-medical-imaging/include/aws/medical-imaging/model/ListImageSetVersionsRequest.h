@@ -105,15 +105,15 @@ class ListImageSetVersionsRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_imageSetIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

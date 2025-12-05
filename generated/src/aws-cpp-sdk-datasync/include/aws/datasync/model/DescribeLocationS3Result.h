@@ -162,24 +162,24 @@ class DescribeLocationS3Result {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   S3StorageClass m_s3StorageClass{S3StorageClass::NOT_SET};
-  bool m_s3StorageClassHasBeenSet = false;
 
   S3Config m_s3Config;
-  bool m_s3ConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_s3StorageClassHasBeenSet = false;
+  bool m_s3ConfigHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

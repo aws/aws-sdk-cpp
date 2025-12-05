@@ -203,27 +203,27 @@ class KxScalingGroup {
   ///@}
  private:
   Aws::String m_scalingGroupName;
-  bool m_scalingGroupNameHasBeenSet = false;
 
   Aws::String m_hostType;
-  bool m_hostTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   KxScalingGroupStatus m_status{KxScalingGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_scalingGroupNameHasBeenSet = false;
+  bool m_hostTypeHasBeenSet = false;
+  bool m_clustersHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

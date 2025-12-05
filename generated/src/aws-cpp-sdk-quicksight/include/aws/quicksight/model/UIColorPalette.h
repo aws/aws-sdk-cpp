@@ -339,51 +339,51 @@ class UIColorPalette {
   ///@}
  private:
   Aws::String m_primaryForeground;
-  bool m_primaryForegroundHasBeenSet = false;
 
   Aws::String m_primaryBackground;
-  bool m_primaryBackgroundHasBeenSet = false;
 
   Aws::String m_secondaryForeground;
-  bool m_secondaryForegroundHasBeenSet = false;
 
   Aws::String m_secondaryBackground;
-  bool m_secondaryBackgroundHasBeenSet = false;
 
   Aws::String m_accent;
-  bool m_accentHasBeenSet = false;
 
   Aws::String m_accentForeground;
-  bool m_accentForegroundHasBeenSet = false;
 
   Aws::String m_danger;
-  bool m_dangerHasBeenSet = false;
 
   Aws::String m_dangerForeground;
-  bool m_dangerForegroundHasBeenSet = false;
 
   Aws::String m_warning;
-  bool m_warningHasBeenSet = false;
 
   Aws::String m_warningForeground;
-  bool m_warningForegroundHasBeenSet = false;
 
   Aws::String m_success;
-  bool m_successHasBeenSet = false;
 
   Aws::String m_successForeground;
-  bool m_successForegroundHasBeenSet = false;
 
   Aws::String m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   Aws::String m_dimensionForeground;
-  bool m_dimensionForegroundHasBeenSet = false;
 
   Aws::String m_measure;
-  bool m_measureHasBeenSet = false;
 
   Aws::String m_measureForeground;
+  bool m_primaryForegroundHasBeenSet = false;
+  bool m_primaryBackgroundHasBeenSet = false;
+  bool m_secondaryForegroundHasBeenSet = false;
+  bool m_secondaryBackgroundHasBeenSet = false;
+  bool m_accentHasBeenSet = false;
+  bool m_accentForegroundHasBeenSet = false;
+  bool m_dangerHasBeenSet = false;
+  bool m_dangerForegroundHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
+  bool m_warningForegroundHasBeenSet = false;
+  bool m_successHasBeenSet = false;
+  bool m_successForegroundHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
+  bool m_dimensionForegroundHasBeenSet = false;
+  bool m_measureHasBeenSet = false;
   bool m_measureForegroundHasBeenSet = false;
 };
 

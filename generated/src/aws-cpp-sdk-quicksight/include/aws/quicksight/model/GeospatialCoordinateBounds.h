@@ -94,15 +94,15 @@ class GeospatialCoordinateBounds {
   ///@}
  private:
   double m_north{0.0};
-  bool m_northHasBeenSet = false;
 
   double m_south{0.0};
-  bool m_southHasBeenSet = false;
 
   double m_west{0.0};
-  bool m_westHasBeenSet = false;
 
   double m_east{0.0};
+  bool m_northHasBeenSet = false;
+  bool m_southHasBeenSet = false;
+  bool m_westHasBeenSet = false;
   bool m_eastHasBeenSet = false;
 };
 

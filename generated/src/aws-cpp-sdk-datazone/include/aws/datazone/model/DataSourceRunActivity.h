@@ -230,36 +230,36 @@ class DataSourceRunActivity {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_dataAssetId;
-  bool m_dataAssetIdHasBeenSet = false;
 
   DataAssetActivityStatus m_dataAssetStatus{DataAssetActivityStatus::NOT_SET};
-  bool m_dataAssetStatusHasBeenSet = false;
 
   Aws::String m_dataSourceRunId;
-  bool m_dataSourceRunIdHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   DataSourceErrorMessage m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   LineageInfo m_lineageSummary;
-  bool m_lineageSummaryHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_technicalDescription;
-  bool m_technicalDescriptionHasBeenSet = false;
 
   Aws::String m_technicalName;
-  bool m_technicalNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_createdAtHasBeenSet = false;
+  bool m_dataAssetIdHasBeenSet = false;
+  bool m_dataAssetStatusHasBeenSet = false;
+  bool m_dataSourceRunIdHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_lineageSummaryHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_technicalDescriptionHasBeenSet = false;
+  bool m_technicalNameHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

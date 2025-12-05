@@ -70,9 +70,9 @@ class BatchGetDevicePositionError {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   BatchItemError m_error;
+  bool m_deviceIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

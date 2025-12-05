@@ -88,12 +88,12 @@ class DisassociateAnalyticsDataSetRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_targetAccountId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_targetAccountIdHasBeenSet = false;
 };
 

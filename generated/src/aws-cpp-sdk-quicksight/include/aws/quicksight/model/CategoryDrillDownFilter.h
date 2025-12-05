@@ -77,9 +77,9 @@ class CategoryDrillDownFilter {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categoryValues;
+  bool m_columnHasBeenSet = false;
   bool m_categoryValuesHasBeenSet = false;
 };
 

@@ -99,15 +99,15 @@ class UpdateFailbackReplicationConfigurationRequest : public DrsRequest {
   ///@}
  private:
   long long m_bandwidthThrottling{0};
-  bool m_bandwidthThrottlingHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_recoveryInstanceID;
-  bool m_recoveryInstanceIDHasBeenSet = false;
 
   bool m_usePrivateIP{false};
+  bool m_bandwidthThrottlingHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recoveryInstanceIDHasBeenSet = false;
   bool m_usePrivateIPHasBeenSet = false;
 };
 

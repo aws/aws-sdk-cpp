@@ -87,12 +87,12 @@ class CloudwatchLogsAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   bool m_batchMode{false};
+  bool m_roleArnHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_batchModeHasBeenSet = false;
 };
 

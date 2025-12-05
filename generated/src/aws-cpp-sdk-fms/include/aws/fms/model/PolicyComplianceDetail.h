@@ -179,24 +179,24 @@ class PolicyComplianceDetail {
   ///@}
  private:
   Aws::String m_policyOwner;
-  bool m_policyOwnerHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_memberAccount;
-  bool m_memberAccountHasBeenSet = false;
 
   Aws::Vector<ComplianceViolator> m_violators;
-  bool m_violatorsHasBeenSet = false;
 
   bool m_evaluationLimitExceeded{false};
-  bool m_evaluationLimitExceededHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiredAt{};
-  bool m_expiredAtHasBeenSet = false;
 
   Aws::Map<DependentServiceName, Aws::String> m_issueInfoMap;
+  bool m_policyOwnerHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
+  bool m_memberAccountHasBeenSet = false;
+  bool m_violatorsHasBeenSet = false;
+  bool m_evaluationLimitExceededHasBeenSet = false;
+  bool m_expiredAtHasBeenSet = false;
   bool m_issueInfoMapHasBeenSet = false;
 };
 

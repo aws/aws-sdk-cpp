@@ -86,9 +86,9 @@ class LifecyclePolicyResourceSelection {
   ///@}
  private:
   Aws::Vector<LifecyclePolicyResourceSelectionRecipe> m_recipes;
-  bool m_recipesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tagMap;
+  bool m_recipesHasBeenSet = false;
   bool m_tagMapHasBeenSet = false;
 };
 

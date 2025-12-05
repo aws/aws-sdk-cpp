@@ -69,9 +69,9 @@ class ConflictException {
   ///@}
  private:
   Aws::String m_conflictResource;
-  bool m_conflictResourceHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_conflictResourceHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

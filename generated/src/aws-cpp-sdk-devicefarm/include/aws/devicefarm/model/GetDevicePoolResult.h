@@ -66,9 +66,9 @@ class GetDevicePoolResult {
   ///@}
  private:
   DevicePool m_devicePool;
-  bool m_devicePoolHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devicePoolHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

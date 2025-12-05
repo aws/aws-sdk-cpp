@@ -66,9 +66,9 @@ class DetectorAdditionalConfiguration {
   ///@}
  private:
   FeatureAdditionalConfiguration m_name{FeatureAdditionalConfiguration::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

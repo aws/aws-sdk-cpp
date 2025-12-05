@@ -69,9 +69,9 @@ class SetVariableAction {
   ///@}
  private:
   Aws::String m_variableName;
-  bool m_variableNameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_variableNameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class CreateJobForDevicesRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deviceIds;
-  bool m_deviceIdsHasBeenSet = false;
 
   DeviceJobConfig m_deviceJobConfig;
-  bool m_deviceJobConfigHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
+  bool m_deviceIdsHasBeenSet = false;
+  bool m_deviceJobConfigHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
 };
 

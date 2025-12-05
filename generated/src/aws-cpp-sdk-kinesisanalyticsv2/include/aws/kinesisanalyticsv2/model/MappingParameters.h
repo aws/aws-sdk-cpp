@@ -75,9 +75,9 @@ class MappingParameters {
   ///@}
  private:
   JSONMappingParameters m_jSONMappingParameters;
-  bool m_jSONMappingParametersHasBeenSet = false;
 
   CSVMappingParameters m_cSVMappingParameters;
+  bool m_jSONMappingParametersHasBeenSet = false;
   bool m_cSVMappingParametersHasBeenSet = false;
 };
 

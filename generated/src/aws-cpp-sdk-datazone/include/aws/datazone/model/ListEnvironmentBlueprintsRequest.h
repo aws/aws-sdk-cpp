@@ -131,18 +131,18 @@ class ListEnvironmentBlueprintsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   bool m_managed{false};
-  bool m_managedHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_managedHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

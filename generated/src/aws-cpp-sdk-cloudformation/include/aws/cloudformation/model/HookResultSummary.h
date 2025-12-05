@@ -277,42 +277,42 @@ class HookResultSummary {
   ///@}
  private:
   Aws::String m_hookResultId;
-  bool m_hookResultIdHasBeenSet = false;
 
   HookInvocationPoint m_invocationPoint{HookInvocationPoint::NOT_SET};
-  bool m_invocationPointHasBeenSet = false;
 
   HookFailureMode m_failureMode{HookFailureMode::NOT_SET};
-  bool m_failureModeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeVersionId;
-  bool m_typeVersionIdHasBeenSet = false;
 
   Aws::String m_typeConfigurationVersionId;
-  bool m_typeConfigurationVersionIdHasBeenSet = false;
 
   HookStatus m_status{HookStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_hookStatusReason;
-  bool m_hookStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_invokedAt{};
-  bool m_invokedAtHasBeenSet = false;
 
   ListHookResultsTargetType m_targetType{ListHookResultsTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   Aws::String m_hookExecutionTarget;
+  bool m_hookResultIdHasBeenSet = false;
+  bool m_invocationPointHasBeenSet = false;
+  bool m_failureModeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeVersionIdHasBeenSet = false;
+  bool m_typeConfigurationVersionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_hookStatusReasonHasBeenSet = false;
+  bool m_invokedAtHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_typeArnHasBeenSet = false;
   bool m_hookExecutionTargetHasBeenSet = false;
 };
 

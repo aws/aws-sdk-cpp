@@ -117,15 +117,15 @@ class ListResourceScanRelatedResourcesRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_resourceScanId;
-  bool m_resourceScanIdHasBeenSet = false;
 
   Aws::Vector<ScannedResourceIdentifier> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_resourceScanIdHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

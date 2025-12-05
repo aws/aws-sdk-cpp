@@ -108,15 +108,15 @@ class FlowValidation {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   FlowValidationSeverity m_severity{FlowValidationSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   FlowValidationDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   FlowValidationType m_type{FlowValidationType::NOT_SET};
+  bool m_messageHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

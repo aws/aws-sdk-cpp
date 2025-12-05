@@ -314,51 +314,51 @@ class DataSourceSummary {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   EnableSetting m_enableSetting{EnableSetting::NOT_SET};
-  bool m_enableSettingHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   int m_lastRunAssetCount{0};
-  bool m_lastRunAssetCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRunAt{};
-  bool m_lastRunAtHasBeenSet = false;
 
   DataSourceErrorMessage m_lastRunErrorMessage;
-  bool m_lastRunErrorMessageHasBeenSet = false;
 
   DataSourceRunStatus m_lastRunStatus{DataSourceRunStatus::NOT_SET};
-  bool m_lastRunStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScheduleConfiguration m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_connectionIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_enableSettingHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_lastRunAssetCountHasBeenSet = false;
+  bool m_lastRunAtHasBeenSet = false;
+  bool m_lastRunErrorMessageHasBeenSet = false;
+  bool m_lastRunStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

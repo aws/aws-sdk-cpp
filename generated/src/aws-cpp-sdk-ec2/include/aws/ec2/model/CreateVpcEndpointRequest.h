@@ -393,54 +393,54 @@ class CreateVpcEndpointRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   VpcEndpointType m_vpcEndpointType{VpcEndpointType::NOT_SET};
-  bool m_vpcEndpointTypeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routeTableIds;
-  bool m_routeTableIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   DnsOptionsSpecification m_dnsOptions;
-  bool m_dnsOptionsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   bool m_privateDnsEnabled{false};
-  bool m_privateDnsEnabledHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::Vector<SubnetConfiguration> m_subnetConfigurations;
-  bool m_subnetConfigurationsHasBeenSet = false;
 
   Aws::String m_serviceNetworkArn;
-  bool m_serviceNetworkArnHasBeenSet = false;
 
   Aws::String m_resourceConfigurationArn;
-  bool m_resourceConfigurationArnHasBeenSet = false;
 
   Aws::String m_serviceRegion;
+  bool m_dryRunHasBeenSet = false;
+  bool m_vpcEndpointTypeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_routeTableIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_dnsOptionsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_privateDnsEnabledHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_subnetConfigurationsHasBeenSet = false;
+  bool m_serviceNetworkArnHasBeenSet = false;
+  bool m_resourceConfigurationArnHasBeenSet = false;
   bool m_serviceRegionHasBeenSet = false;
 };
 

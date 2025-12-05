@@ -77,9 +77,9 @@ class GetCompatibleElasticsearchVersionsResult {
   ///@}
  private:
   Aws::Vector<CompatibleVersionsMap> m_compatibleElasticsearchVersions;
-  bool m_compatibleElasticsearchVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compatibleElasticsearchVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

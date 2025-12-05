@@ -94,12 +94,12 @@ class UnableToDetectSchemaException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rawInputRecords;
-  bool m_rawInputRecordsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_processedInputRecords;
+  bool m_messageHasBeenSet = false;
+  bool m_rawInputRecordsHasBeenSet = false;
   bool m_processedInputRecordsHasBeenSet = false;
 };
 

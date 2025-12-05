@@ -79,9 +79,9 @@ class LoadBalancerTargetGroupState {
   ///@}
  private:
   Aws::String m_loadBalancerTargetGroupARN;
-  bool m_loadBalancerTargetGroupARNHasBeenSet = false;
 
   Aws::String m_state;
+  bool m_loadBalancerTargetGroupARNHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

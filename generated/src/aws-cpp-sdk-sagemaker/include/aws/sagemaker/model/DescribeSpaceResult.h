@@ -275,45 +275,45 @@ class DescribeSpaceResult {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_spaceArn;
-  bool m_spaceArnHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_homeEfsFileSystemUid;
-  bool m_homeEfsFileSystemUidHasBeenSet = false;
 
   SpaceStatus m_status{SpaceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   SpaceSettings m_spaceSettings;
-  bool m_spaceSettingsHasBeenSet = false;
 
   OwnershipSettings m_ownershipSettings;
-  bool m_ownershipSettingsHasBeenSet = false;
 
   SpaceSharingSettings m_spaceSharingSettings;
-  bool m_spaceSharingSettingsHasBeenSet = false;
 
   Aws::String m_spaceDisplayName;
-  bool m_spaceDisplayNameHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_spaceArnHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_homeEfsFileSystemUidHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_spaceSettingsHasBeenSet = false;
+  bool m_ownershipSettingsHasBeenSet = false;
+  bool m_spaceSharingSettingsHasBeenSet = false;
+  bool m_spaceDisplayNameHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

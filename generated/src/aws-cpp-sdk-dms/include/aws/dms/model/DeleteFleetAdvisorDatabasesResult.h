@@ -68,9 +68,9 @@ class DeleteFleetAdvisorDatabasesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_databaseIds;
-  bool m_databaseIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_databaseIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

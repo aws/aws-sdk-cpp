@@ -68,9 +68,9 @@ class Challenge {
   ///@}
  private:
   ChallengeType m_type{ChallengeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_typeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

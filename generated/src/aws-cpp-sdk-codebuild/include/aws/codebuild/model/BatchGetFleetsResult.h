@@ -90,12 +90,12 @@ class BatchGetFleetsResult {
   ///@}
  private:
   Aws::Vector<Fleet> m_fleets;
-  bool m_fleetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fleetsNotFound;
-  bool m_fleetsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetsHasBeenSet = false;
+  bool m_fleetsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

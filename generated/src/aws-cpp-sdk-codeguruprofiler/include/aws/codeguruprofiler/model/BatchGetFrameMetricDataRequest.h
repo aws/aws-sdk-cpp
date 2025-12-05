@@ -171,21 +171,21 @@ class BatchGetFrameMetricDataRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<FrameMetric> m_frameMetrics;
-  bool m_frameMetricsHasBeenSet = false;
 
   Aws::String m_period;
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   AggregationPeriod m_targetResolution{AggregationPeriod::NOT_SET};
+  bool m_endTimeHasBeenSet = false;
+  bool m_frameMetricsHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_targetResolutionHasBeenSet = false;
 };
 

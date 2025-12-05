@@ -134,21 +134,21 @@ class AudioProperties {
   ///@}
  private:
   int m_bitDepth{0};
-  bool m_bitDepthHasBeenSet = false;
 
   long long m_bitRate{0};
-  bool m_bitRateHasBeenSet = false;
 
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   FrameRate m_frameRate;
-  bool m_frameRateHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   int m_sampleRate{0};
+  bool m_bitDepthHasBeenSet = false;
+  bool m_bitRateHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

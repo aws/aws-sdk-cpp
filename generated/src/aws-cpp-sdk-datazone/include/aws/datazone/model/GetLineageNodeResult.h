@@ -319,51 +319,51 @@ class GetLineageNodeResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Vector<LineageNodeReference> m_downstreamNodes;
-  bool m_downstreamNodesHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::Vector<FormOutput> m_formsOutput;
-  bool m_formsOutputHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sourceIdentifier;
-  bool m_sourceIdentifierHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeRevision;
-  bool m_typeRevisionHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Vector<LineageNodeReference> m_upstreamNodes;
-  bool m_upstreamNodesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_downstreamNodesHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceIdentifierHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeRevisionHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_upstreamNodesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -121,18 +121,18 @@ class IngressPoint {
   ///@}
  private:
   Aws::String m_ingressPointName;
-  bool m_ingressPointNameHasBeenSet = false;
 
   Aws::String m_ingressPointId;
-  bool m_ingressPointIdHasBeenSet = false;
 
   IngressPointStatus m_status{IngressPointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   IngressPointType m_type{IngressPointType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_aRecord;
+  bool m_ingressPointNameHasBeenSet = false;
+  bool m_ingressPointIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_aRecordHasBeenSet = false;
 };
 

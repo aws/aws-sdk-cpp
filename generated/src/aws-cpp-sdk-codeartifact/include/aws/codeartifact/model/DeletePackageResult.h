@@ -58,9 +58,9 @@ class DeletePackageResult {
   ///@}
  private:
   PackageSummary m_deletedPackage;
-  bool m_deletedPackageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletedPackageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

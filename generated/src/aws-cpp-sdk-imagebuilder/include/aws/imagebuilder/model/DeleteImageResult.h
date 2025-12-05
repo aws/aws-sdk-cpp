@@ -62,9 +62,9 @@ class DeleteImageResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
+  bool m_requestIdHasBeenSet = false;
   bool m_imageBuildVersionArnHasBeenSet = false;
 };
 

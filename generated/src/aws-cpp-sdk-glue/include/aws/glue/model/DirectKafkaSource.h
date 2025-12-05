@@ -121,18 +121,18 @@ class DirectKafkaSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   KafkaStreamingSourceOptions m_streamingOptions;
-  bool m_streamingOptionsHasBeenSet = false;
 
   int m_windowSize{0};
-  bool m_windowSizeHasBeenSet = false;
 
   bool m_detectSchema{false};
-  bool m_detectSchemaHasBeenSet = false;
 
   StreamingDataPreviewOptions m_dataPreviewOptions;
+  bool m_nameHasBeenSet = false;
+  bool m_streamingOptionsHasBeenSet = false;
+  bool m_windowSizeHasBeenSet = false;
+  bool m_detectSchemaHasBeenSet = false;
   bool m_dataPreviewOptionsHasBeenSet = false;
 };
 

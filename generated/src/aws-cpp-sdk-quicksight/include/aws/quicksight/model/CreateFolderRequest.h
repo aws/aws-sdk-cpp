@@ -193,27 +193,27 @@ class CreateFolderRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FolderType m_folderType{FolderType::NOT_SET};
-  bool m_folderTypeHasBeenSet = false;
 
   Aws::String m_parentFolderArn;
-  bool m_parentFolderArnHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SharingModel m_sharingModel{SharingModel::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_folderIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_folderTypeHasBeenSet = false;
+  bool m_parentFolderArnHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_sharingModelHasBeenSet = false;
 };
 

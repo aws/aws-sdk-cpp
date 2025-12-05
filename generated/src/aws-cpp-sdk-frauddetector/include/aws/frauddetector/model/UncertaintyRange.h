@@ -63,9 +63,9 @@ class UncertaintyRange {
   ///@}
  private:
   double m_lowerBoundValue{0.0};
-  bool m_lowerBoundValueHasBeenSet = false;
 
   double m_upperBoundValue{0.0};
+  bool m_lowerBoundValueHasBeenSet = false;
   bool m_upperBoundValueHasBeenSet = false;
 };
 

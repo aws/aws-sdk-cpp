@@ -139,21 +139,21 @@ class TemplateSyncConfig {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   RepositoryProvider m_repositoryProvider{RepositoryProvider::NOT_SET};
-  bool m_repositoryProviderHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
+  bool m_branchHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_repositoryProviderHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_templateTypeHasBeenSet = false;
 };
 

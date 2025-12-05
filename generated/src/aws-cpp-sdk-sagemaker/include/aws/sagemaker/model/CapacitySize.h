@@ -74,9 +74,9 @@ class CapacitySize {
   ///@}
  private:
   CapacitySizeType m_type{CapacitySizeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_value{0};
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

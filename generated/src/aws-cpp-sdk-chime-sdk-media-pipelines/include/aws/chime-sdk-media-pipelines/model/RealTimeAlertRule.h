@@ -108,15 +108,15 @@ class RealTimeAlertRule {
   ///@}
  private:
   RealTimeAlertRuleType m_type{RealTimeAlertRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   KeywordMatchConfiguration m_keywordMatchConfiguration;
-  bool m_keywordMatchConfigurationHasBeenSet = false;
 
   SentimentConfiguration m_sentimentConfiguration;
-  bool m_sentimentConfigurationHasBeenSet = false;
 
   IssueDetectionConfiguration m_issueDetectionConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_keywordMatchConfigurationHasBeenSet = false;
+  bool m_sentimentConfigurationHasBeenSet = false;
   bool m_issueDetectionConfigurationHasBeenSet = false;
 };
 

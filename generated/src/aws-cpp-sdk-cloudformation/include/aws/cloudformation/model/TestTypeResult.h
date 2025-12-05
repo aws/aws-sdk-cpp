@@ -60,9 +60,9 @@ class TestTypeResult {
   ///@}
  private:
   Aws::String m_typeVersionArn;
-  bool m_typeVersionArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_typeVersionArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

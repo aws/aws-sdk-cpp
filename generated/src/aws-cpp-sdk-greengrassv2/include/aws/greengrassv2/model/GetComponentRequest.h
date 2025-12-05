@@ -71,9 +71,9 @@ class GetComponentRequest : public GreengrassV2Request {
   ///@}
  private:
   RecipeOutputFormat m_recipeOutputFormat{RecipeOutputFormat::NOT_SET};
-  bool m_recipeOutputFormatHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_recipeOutputFormatHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

@@ -168,21 +168,21 @@ class ListDeploymentsRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_deploymentGroupName;
-  bool m_deploymentGroupNameHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::Vector<DeploymentStatus> m_includeOnlyStatuses;
-  bool m_includeOnlyStatusesHasBeenSet = false;
 
   TimeRange m_createTimeRange;
-  bool m_createTimeRangeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_deploymentGroupNameHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_includeOnlyStatusesHasBeenSet = false;
+  bool m_createTimeRangeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

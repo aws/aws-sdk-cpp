@@ -164,27 +164,27 @@ class GetIdentitySourceResult {
   ///@}
  private:
   IdentitySourceType m_identitySourceType{IdentitySourceType::NOT_SET};
-  bool m_identitySourceTypeHasBeenSet = false;
 
   IdentitySourceParametersForGet m_identitySourceParameters;
-  bool m_identitySourceParametersHasBeenSet = false;
 
   Aws::String m_identitySourceArn;
-  bool m_identitySourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   IdentitySourceStatus m_status{IdentitySourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   IdentitySourceStatusCode m_statusCode{IdentitySourceStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identitySourceTypeHasBeenSet = false;
+  bool m_identitySourceParametersHasBeenSet = false;
+  bool m_identitySourceArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

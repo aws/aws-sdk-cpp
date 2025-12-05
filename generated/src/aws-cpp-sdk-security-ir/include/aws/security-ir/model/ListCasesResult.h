@@ -102,15 +102,15 @@ class ListCasesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListCasesItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   long long m_total{0};
-  bool m_totalHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

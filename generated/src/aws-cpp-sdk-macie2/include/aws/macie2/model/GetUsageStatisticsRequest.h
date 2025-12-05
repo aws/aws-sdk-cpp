@@ -131,18 +131,18 @@ class GetUsageStatisticsRequest : public Macie2Request {
   ///@}
  private:
   Aws::Vector<UsageStatisticsFilter> m_filterBy;
-  bool m_filterByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   UsageStatisticsSortBy m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   TimeRange m_timeRange{TimeRange::NOT_SET};
+  bool m_filterByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_timeRangeHasBeenSet = false;
 };
 

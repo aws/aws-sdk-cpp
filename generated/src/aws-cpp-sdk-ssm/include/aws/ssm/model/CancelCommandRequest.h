@@ -79,9 +79,9 @@ class CancelCommandRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
+  bool m_commandIdHasBeenSet = false;
   bool m_instanceIdsHasBeenSet = false;
 };
 

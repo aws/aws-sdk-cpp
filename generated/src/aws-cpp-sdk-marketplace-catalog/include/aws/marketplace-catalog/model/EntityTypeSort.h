@@ -182,27 +182,27 @@ class EntityTypeSort {
   ///@}
  private:
   DataProductSort m_dataProductSort;
-  bool m_dataProductSortHasBeenSet = false;
 
   SaaSProductSort m_saaSProductSort;
-  bool m_saaSProductSortHasBeenSet = false;
 
   AmiProductSort m_amiProductSort;
-  bool m_amiProductSortHasBeenSet = false;
 
   OfferSort m_offerSort;
-  bool m_offerSortHasBeenSet = false;
 
   ContainerProductSort m_containerProductSort;
-  bool m_containerProductSortHasBeenSet = false;
 
   ResaleAuthorizationSort m_resaleAuthorizationSort;
-  bool m_resaleAuthorizationSortHasBeenSet = false;
 
   MachineLearningProductSort m_machineLearningProductSort;
-  bool m_machineLearningProductSortHasBeenSet = false;
 
   OfferSetSort m_offerSetSort;
+  bool m_dataProductSortHasBeenSet = false;
+  bool m_saaSProductSortHasBeenSet = false;
+  bool m_amiProductSortHasBeenSet = false;
+  bool m_offerSortHasBeenSet = false;
+  bool m_containerProductSortHasBeenSet = false;
+  bool m_resaleAuthorizationSortHasBeenSet = false;
+  bool m_machineLearningProductSortHasBeenSet = false;
   bool m_offerSetSortHasBeenSet = false;
 };
 

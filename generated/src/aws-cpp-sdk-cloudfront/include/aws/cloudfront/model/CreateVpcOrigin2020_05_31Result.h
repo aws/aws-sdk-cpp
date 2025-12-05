@@ -94,15 +94,15 @@ class CreateVpcOrigin2020_05_31Result {
   ///@}
  private:
   VpcOrigin m_vpcOrigin;
-  bool m_vpcOriginHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcOriginHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

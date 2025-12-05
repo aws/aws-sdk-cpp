@@ -68,9 +68,9 @@ class TransformSortCriteria {
   ///@}
  private:
   TransformSortColumnType m_column{TransformSortColumnType::NOT_SET};
-  bool m_columnHasBeenSet = false;
 
   SortDirectionType m_sortDirection{SortDirectionType::NOT_SET};
+  bool m_columnHasBeenSet = false;
   bool m_sortDirectionHasBeenSet = false;
 };
 

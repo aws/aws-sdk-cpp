@@ -142,21 +142,21 @@ class VoiceProfileDomainSummary {
   ///@}
  private:
   Aws::String m_voiceProfileDomainId;
-  bool m_voiceProfileDomainIdHasBeenSet = false;
 
   Aws::String m_voiceProfileDomainArn;
-  bool m_voiceProfileDomainArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_voiceProfileDomainIdHasBeenSet = false;
+  bool m_voiceProfileDomainArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

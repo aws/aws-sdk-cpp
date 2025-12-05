@@ -209,27 +209,27 @@ class CreateDeploymentRequest : public GreengrassV2Request {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_deploymentName;
-  bool m_deploymentNameHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentDeploymentSpecification> m_components;
-  bool m_componentsHasBeenSet = false;
 
   DeploymentIoTJobConfiguration m_iotJobConfiguration;
-  bool m_iotJobConfigurationHasBeenSet = false;
 
   DeploymentPolicies m_deploymentPolicies;
-  bool m_deploymentPoliciesHasBeenSet = false;
 
   Aws::String m_parentTargetArn;
-  bool m_parentTargetArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_targetArnHasBeenSet = false;
+  bool m_deploymentNameHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_iotJobConfigurationHasBeenSet = false;
+  bool m_deploymentPoliciesHasBeenSet = false;
+  bool m_parentTargetArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

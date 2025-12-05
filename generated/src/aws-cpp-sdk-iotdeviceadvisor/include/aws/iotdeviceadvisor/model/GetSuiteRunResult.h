@@ -238,39 +238,39 @@ class GetSuiteRunResult {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteDefinitionVersion;
-  bool m_suiteDefinitionVersionHasBeenSet = false;
 
   Aws::String m_suiteRunId;
-  bool m_suiteRunIdHasBeenSet = false;
 
   Aws::String m_suiteRunArn;
-  bool m_suiteRunArnHasBeenSet = false;
 
   SuiteRunConfiguration m_suiteRunConfiguration;
-  bool m_suiteRunConfigurationHasBeenSet = false;
 
   TestResult m_testResult;
-  bool m_testResultHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   SuiteRunStatus m_status{SuiteRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorReason;
-  bool m_errorReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suiteDefinitionIdHasBeenSet = false;
+  bool m_suiteDefinitionVersionHasBeenSet = false;
+  bool m_suiteRunIdHasBeenSet = false;
+  bool m_suiteRunArnHasBeenSet = false;
+  bool m_suiteRunConfigurationHasBeenSet = false;
+  bool m_testResultHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

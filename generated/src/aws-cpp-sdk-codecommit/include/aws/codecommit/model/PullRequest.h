@@ -254,36 +254,36 @@ class PullRequest {
   ///@}
  private:
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastActivityDate{};
-  bool m_lastActivityDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   PullRequestStatusEnum m_pullRequestStatus{PullRequestStatusEnum::NOT_SET};
-  bool m_pullRequestStatusHasBeenSet = false;
 
   Aws::String m_authorArn;
-  bool m_authorArnHasBeenSet = false;
 
   Aws::Vector<PullRequestTarget> m_pullRequestTargets;
-  bool m_pullRequestTargetsHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::Vector<ApprovalRule> m_approvalRules;
+  bool m_pullRequestIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastActivityDateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_pullRequestStatusHasBeenSet = false;
+  bool m_authorArnHasBeenSet = false;
+  bool m_pullRequestTargetsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_approvalRulesHasBeenSet = false;
 };
 

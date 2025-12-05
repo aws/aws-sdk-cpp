@@ -271,39 +271,39 @@ class DescribeAssetModelCompositeModelResult {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelId;
-  bool m_assetModelCompositeModelIdHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelExternalId;
-  bool m_assetModelCompositeModelExternalIdHasBeenSet = false;
 
   Aws::Vector<AssetModelCompositeModelPathSegment> m_assetModelCompositeModelPath;
-  bool m_assetModelCompositeModelPathHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelName;
-  bool m_assetModelCompositeModelNameHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelDescription;
-  bool m_assetModelCompositeModelDescriptionHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelType;
-  bool m_assetModelCompositeModelTypeHasBeenSet = false;
 
   Aws::Vector<AssetModelProperty> m_assetModelCompositeModelProperties;
-  bool m_assetModelCompositeModelPropertiesHasBeenSet = false;
 
   CompositionDetails m_compositionDetails;
-  bool m_compositionDetailsHasBeenSet = false;
 
   Aws::Vector<AssetModelCompositeModelSummary> m_assetModelCompositeModelSummaries;
-  bool m_assetModelCompositeModelSummariesHasBeenSet = false;
 
   Aws::Vector<ActionDefinition> m_actionDefinitions;
-  bool m_actionDefinitionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetModelCompositeModelIdHasBeenSet = false;
+  bool m_assetModelCompositeModelExternalIdHasBeenSet = false;
+  bool m_assetModelCompositeModelPathHasBeenSet = false;
+  bool m_assetModelCompositeModelNameHasBeenSet = false;
+  bool m_assetModelCompositeModelDescriptionHasBeenSet = false;
+  bool m_assetModelCompositeModelTypeHasBeenSet = false;
+  bool m_assetModelCompositeModelPropertiesHasBeenSet = false;
+  bool m_compositionDetailsHasBeenSet = false;
+  bool m_assetModelCompositeModelSummariesHasBeenSet = false;
+  bool m_actionDefinitionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

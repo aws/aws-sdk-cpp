@@ -141,21 +141,21 @@ class PurchaseHostReservationResponse {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::Vector<Purchase> m_purchase;
-  bool m_purchaseHasBeenSet = false;
 
   Aws::String m_totalHourlyPrice;
-  bool m_totalHourlyPriceHasBeenSet = false;
 
   Aws::String m_totalUpfrontPrice;
-  bool m_totalUpfrontPriceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_purchaseHasBeenSet = false;
+  bool m_totalHourlyPriceHasBeenSet = false;
+  bool m_totalUpfrontPriceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

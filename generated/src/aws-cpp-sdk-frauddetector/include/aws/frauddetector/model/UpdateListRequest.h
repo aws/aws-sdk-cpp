@@ -136,18 +136,18 @@ class UpdateListRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_elements;
-  bool m_elementsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ListUpdateMode m_updateMode{ListUpdateMode::NOT_SET};
-  bool m_updateModeHasBeenSet = false;
 
   Aws::String m_variableType;
+  bool m_nameHasBeenSet = false;
+  bool m_elementsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_updateModeHasBeenSet = false;
   bool m_variableTypeHasBeenSet = false;
 };
 

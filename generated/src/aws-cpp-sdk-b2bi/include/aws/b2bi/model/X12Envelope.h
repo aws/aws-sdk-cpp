@@ -72,9 +72,9 @@ class X12Envelope {
   ///@}
  private:
   X12OutboundEdiHeaders m_common;
-  bool m_commonHasBeenSet = false;
 
   WrapOptions m_wrapOptions;
+  bool m_commonHasBeenSet = false;
   bool m_wrapOptionsHasBeenSet = false;
 };
 

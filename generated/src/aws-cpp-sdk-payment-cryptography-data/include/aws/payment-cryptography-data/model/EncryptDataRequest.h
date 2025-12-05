@@ -114,15 +114,15 @@ class EncryptDataRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   Aws::String m_plainText;
-  bool m_plainTextHasBeenSet = false;
 
   EncryptionDecryptionAttributes m_encryptionAttributes;
-  bool m_encryptionAttributesHasBeenSet = false;
 
   WrappedKey m_wrappedKey;
+  bool m_keyIdentifierHasBeenSet = false;
+  bool m_plainTextHasBeenSet = false;
+  bool m_encryptionAttributesHasBeenSet = false;
   bool m_wrappedKeyHasBeenSet = false;
 };
 

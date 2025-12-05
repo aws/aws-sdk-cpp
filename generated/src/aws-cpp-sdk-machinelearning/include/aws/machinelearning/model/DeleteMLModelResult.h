@@ -69,9 +69,9 @@ class DeleteMLModelResult {
   ///@}
  private:
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mLModelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class DataPartitionUploadOptions {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   int m_conditionLanguageVersion{0};
+  bool m_expressionHasBeenSet = false;
   bool m_conditionLanguageVersionHasBeenSet = false;
 };
 

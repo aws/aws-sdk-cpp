@@ -202,30 +202,30 @@ class HistogramConfiguration {
   ///@}
  private:
   HistogramFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   AxisDisplayOptions m_xAxisDisplayOptions;
-  bool m_xAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_xAxisLabelOptions;
-  bool m_xAxisLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_yAxisDisplayOptions;
-  bool m_yAxisDisplayOptionsHasBeenSet = false;
 
   HistogramBinOptions m_binOptions;
-  bool m_binOptionsHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_xAxisDisplayOptionsHasBeenSet = false;
+  bool m_xAxisLabelOptionsHasBeenSet = false;
+  bool m_yAxisDisplayOptionsHasBeenSet = false;
+  bool m_binOptionsHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

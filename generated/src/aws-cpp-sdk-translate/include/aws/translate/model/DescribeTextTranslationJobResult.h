@@ -61,9 +61,9 @@ class DescribeTextTranslationJobResult {
   ///@}
  private:
   TextTranslationJobProperties m_textTranslationJobProperties;
-  bool m_textTranslationJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_textTranslationJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

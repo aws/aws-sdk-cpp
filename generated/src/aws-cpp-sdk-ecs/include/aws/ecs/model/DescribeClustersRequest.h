@@ -90,9 +90,9 @@ class DescribeClustersRequest : public ECSRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   Aws::Vector<ClusterField> m_include;
+  bool m_clustersHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

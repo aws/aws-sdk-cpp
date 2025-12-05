@@ -90,12 +90,12 @@ class Note {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_updatedAt;
+  bool m_textHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

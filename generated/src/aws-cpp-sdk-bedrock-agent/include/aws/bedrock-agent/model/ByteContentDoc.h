@@ -91,9 +91,9 @@ class ByteContentDoc {
   ///@}
  private:
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_data{};
+  bool m_mimeTypeHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

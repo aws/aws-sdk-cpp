@@ -139,18 +139,18 @@ class DescribePoolsRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_poolIds;
-  bool m_poolIdsHasBeenSet = false;
 
   Aws::Vector<PoolFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Owner m_owner{Owner::NOT_SET};
+  bool m_poolIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

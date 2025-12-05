@@ -144,21 +144,21 @@ class ListRepositoriesInDomainRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_administratorAccount;
-  bool m_administratorAccountHasBeenSet = false;
 
   Aws::String m_repositoryPrefix;
-  bool m_repositoryPrefixHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_administratorAccountHasBeenSet = false;
+  bool m_repositoryPrefixHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

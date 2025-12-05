@@ -87,9 +87,9 @@ class SqlInjectionMatchSetSummary {
   ///@}
  private:
   Aws::String m_sqlInjectionMatchSetId;
-  bool m_sqlInjectionMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_sqlInjectionMatchSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

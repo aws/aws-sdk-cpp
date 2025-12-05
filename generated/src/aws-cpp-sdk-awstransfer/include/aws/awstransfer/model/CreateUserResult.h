@@ -76,12 +76,12 @@ class CreateUserResult {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class EcsCapacityIncreaseConfiguration {
   ///@}
  private:
   int m_timeoutMinutes{0};
-  bool m_timeoutMinutesHasBeenSet = false;
 
   Aws::Vector<Service> m_services;
-  bool m_servicesHasBeenSet = false;
 
   EcsUngraceful m_ungraceful;
-  bool m_ungracefulHasBeenSet = false;
 
   int m_targetPercent{0};
-  bool m_targetPercentHasBeenSet = false;
 
   EcsCapacityMonitoringApproach m_capacityMonitoringApproach{EcsCapacityMonitoringApproach::NOT_SET};
+  bool m_timeoutMinutesHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
+  bool m_ungracefulHasBeenSet = false;
+  bool m_targetPercentHasBeenSet = false;
   bool m_capacityMonitoringApproachHasBeenSet = false;
 };
 

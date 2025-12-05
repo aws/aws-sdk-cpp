@@ -124,18 +124,18 @@ class GetSavingsPlansUtilizationDetailsResult {
   ///@}
  private:
   Aws::Vector<SavingsPlansUtilizationDetail> m_savingsPlansUtilizationDetails;
-  bool m_savingsPlansUtilizationDetailsHasBeenSet = false;
 
   SavingsPlansUtilizationAggregates m_total;
-  bool m_totalHasBeenSet = false;
 
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_savingsPlansUtilizationDetailsHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

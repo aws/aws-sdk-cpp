@@ -288,42 +288,42 @@ class InlineAgentResponseStream {
   ///@}
  private:
   BedrockAgentRuntimeError m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
 
   BadGatewayException m_badGatewayException;
-  bool m_badGatewayExceptionHasBeenSet = false;
 
   InlineAgentPayloadPart m_chunk;
-  bool m_chunkHasBeenSet = false;
 
   BedrockAgentRuntimeError m_conflictException;
-  bool m_conflictExceptionHasBeenSet = false;
 
   DependencyFailedException m_dependencyFailedException;
-  bool m_dependencyFailedExceptionHasBeenSet = false;
 
   InlineAgentFilePart m_files;
-  bool m_filesHasBeenSet = false;
 
   InternalServerException m_internalServerException;
-  bool m_internalServerExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_resourceNotFoundException;
-  bool m_resourceNotFoundExceptionHasBeenSet = false;
 
   InlineAgentReturnControlPayload m_returnControl;
-  bool m_returnControlHasBeenSet = false;
 
   BedrockAgentRuntimeError m_serviceQuotaExceededException;
-  bool m_serviceQuotaExceededExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_throttlingException;
-  bool m_throttlingExceptionHasBeenSet = false;
 
   InlineAgentTracePart m_trace;
-  bool m_traceHasBeenSet = false;
 
   BedrockAgentRuntimeError m_validationException;
+  bool m_accessDeniedExceptionHasBeenSet = false;
+  bool m_badGatewayExceptionHasBeenSet = false;
+  bool m_chunkHasBeenSet = false;
+  bool m_conflictExceptionHasBeenSet = false;
+  bool m_dependencyFailedExceptionHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_internalServerExceptionHasBeenSet = false;
+  bool m_resourceNotFoundExceptionHasBeenSet = false;
+  bool m_returnControlHasBeenSet = false;
+  bool m_serviceQuotaExceededExceptionHasBeenSet = false;
+  bool m_throttlingExceptionHasBeenSet = false;
+  bool m_traceHasBeenSet = false;
   bool m_validationExceptionHasBeenSet = false;
 };
 

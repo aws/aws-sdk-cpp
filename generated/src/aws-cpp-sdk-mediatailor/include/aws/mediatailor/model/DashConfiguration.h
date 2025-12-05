@@ -98,12 +98,12 @@ class DashConfiguration {
   ///@}
  private:
   Aws::String m_manifestEndpointPrefix;
-  bool m_manifestEndpointPrefixHasBeenSet = false;
 
   Aws::String m_mpdLocation;
-  bool m_mpdLocationHasBeenSet = false;
 
   OriginManifestType m_originManifestType{OriginManifestType::NOT_SET};
+  bool m_manifestEndpointPrefixHasBeenSet = false;
+  bool m_mpdLocationHasBeenSet = false;
   bool m_originManifestTypeHasBeenSet = false;
 };
 

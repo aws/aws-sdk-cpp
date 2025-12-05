@@ -103,12 +103,12 @@ class CreateCacheSecurityGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheSecurityGroupName;
-  bool m_cacheSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_cacheSecurityGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

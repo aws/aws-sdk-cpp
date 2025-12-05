@@ -75,9 +75,9 @@ class RuleResult {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outcomes;
+  bool m_ruleIdHasBeenSet = false;
   bool m_outcomesHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class UpdateConnectorRegistrationRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorLabel;
-  bool m_connectorLabelHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ConnectorProvisioningConfig m_connectorProvisioningConfig;
-  bool m_connectorProvisioningConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_connectorLabelHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_connectorProvisioningConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

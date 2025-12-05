@@ -61,9 +61,9 @@ class DeleteLocalGatewayVirtualInterfaceResponse {
   ///@}
  private:
   LocalGatewayVirtualInterface m_localGatewayVirtualInterface;
-  bool m_localGatewayVirtualInterfaceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_localGatewayVirtualInterfaceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

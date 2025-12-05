@@ -115,15 +115,15 @@ class ListPoliciesResult {
   ///@}
  private:
   Aws::Vector<Policy> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policiesHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

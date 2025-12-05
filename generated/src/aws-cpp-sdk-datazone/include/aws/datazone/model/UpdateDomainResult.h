@@ -182,30 +182,30 @@ class UpdateDomainResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainExecutionRole;
-  bool m_domainExecutionRoleHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_rootDomainUnitId;
-  bool m_rootDomainUnitIdHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   SingleSignOn m_singleSignOn;
-  bool m_singleSignOnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainExecutionRoleHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_rootDomainUnitIdHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_singleSignOnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeNetworkInsightsPathsResponse {
   ///@}
  private:
   Aws::Vector<NetworkInsightsPath> m_networkInsightsPaths;
-  bool m_networkInsightsPathsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsPathsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

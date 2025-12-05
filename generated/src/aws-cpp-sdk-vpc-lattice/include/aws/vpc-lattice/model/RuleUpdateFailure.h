@@ -86,12 +86,12 @@ class RuleUpdateFailure {
   ///@}
  private:
   Aws::String m_ruleIdentifier;
-  bool m_ruleIdentifierHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_ruleIdentifierHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

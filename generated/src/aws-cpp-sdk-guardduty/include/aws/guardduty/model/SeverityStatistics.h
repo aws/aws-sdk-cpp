@@ -84,12 +84,12 @@ class SeverityStatistics {
   ///@}
  private:
   Aws::Utils::DateTime m_lastGeneratedAt{};
-  bool m_lastGeneratedAtHasBeenSet = false;
 
   double m_severity{0.0};
-  bool m_severityHasBeenSet = false;
 
   int m_totalFindings{0};
+  bool m_lastGeneratedAtHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
   bool m_totalFindingsHasBeenSet = false;
 };
 

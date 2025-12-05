@@ -64,9 +64,9 @@ class UpdateEnrollmentStatusRequest : public CostOptimizationHubRequest {
   ///@}
  private:
   EnrollmentStatus m_status{EnrollmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_includeMemberAccounts{false};
+  bool m_statusHasBeenSet = false;
   bool m_includeMemberAccountsHasBeenSet = false;
 };
 

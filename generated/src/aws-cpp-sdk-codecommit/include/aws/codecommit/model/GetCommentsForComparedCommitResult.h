@@ -85,12 +85,12 @@ class GetCommentsForComparedCommitResult {
   ///@}
  private:
   Aws::Vector<CommentsForComparedCommit> m_commentsForComparedCommitData;
-  bool m_commentsForComparedCommitDataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commentsForComparedCommitDataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

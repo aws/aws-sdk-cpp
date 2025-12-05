@@ -110,15 +110,15 @@ class ListLanguageModelsRequest : public TranscribeServiceRequest {
   ///@}
  private:
   ModelStatus m_statusEquals{ModelStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class BatchGetOnPremisesInstancesResult {
   ///@}
  private:
   Aws::Vector<InstanceInfo> m_instanceInfos;
-  bool m_instanceInfosHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class BatchStopJobRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_jobRunIds;
+  bool m_jobNameHasBeenSet = false;
   bool m_jobRunIdsHasBeenSet = false;
 };
 

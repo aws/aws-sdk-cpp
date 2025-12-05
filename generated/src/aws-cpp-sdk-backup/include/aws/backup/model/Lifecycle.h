@@ -114,15 +114,15 @@ class Lifecycle {
   ///@}
  private:
   long long m_moveToColdStorageAfterDays{0};
-  bool m_moveToColdStorageAfterDaysHasBeenSet = false;
 
   long long m_deleteAfterDays{0};
-  bool m_deleteAfterDaysHasBeenSet = false;
 
   bool m_optInToArchiveForSupportedResources{false};
-  bool m_optInToArchiveForSupportedResourcesHasBeenSet = false;
 
   LifecycleDeleteAfterEvent m_deleteAfterEvent{LifecycleDeleteAfterEvent::NOT_SET};
+  bool m_moveToColdStorageAfterDaysHasBeenSet = false;
+  bool m_deleteAfterDaysHasBeenSet = false;
+  bool m_optInToArchiveForSupportedResourcesHasBeenSet = false;
   bool m_deleteAfterEventHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetPatchBaselineForPatchGroupRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_patchGroup;
-  bool m_patchGroupHasBeenSet = false;
 
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
+  bool m_patchGroupHasBeenSet = false;
   bool m_operatingSystemHasBeenSet = false;
 };
 

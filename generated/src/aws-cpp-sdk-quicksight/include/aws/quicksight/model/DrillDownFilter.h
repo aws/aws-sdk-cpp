@@ -93,12 +93,12 @@ class DrillDownFilter {
   ///@}
  private:
   NumericEqualityDrillDownFilter m_numericEqualityFilter;
-  bool m_numericEqualityFilterHasBeenSet = false;
 
   CategoryDrillDownFilter m_categoryFilter;
-  bool m_categoryFilterHasBeenSet = false;
 
   TimeRangeDrillDownFilter m_timeRangeFilter;
+  bool m_numericEqualityFilterHasBeenSet = false;
+  bool m_categoryFilterHasBeenSet = false;
   bool m_timeRangeFilterHasBeenSet = false;
 };
 

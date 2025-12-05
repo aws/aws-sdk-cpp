@@ -84,12 +84,12 @@ class DeleteRoleCustomPermissionRequest : public QuickSightRequest {
   ///@}
  private:
   Role m_role{Role::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_roleHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

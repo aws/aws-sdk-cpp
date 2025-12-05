@@ -110,18 +110,18 @@ class GetOciOnboardingStatusResult {
   ///@}
  private:
   OciOnboardingStatus m_status{OciOnboardingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_existingTenancyActivationLink;
-  bool m_existingTenancyActivationLinkHasBeenSet = false;
 
   Aws::String m_newTenancyActivationLink;
-  bool m_newTenancyActivationLinkHasBeenSet = false;
 
   OciIdentityDomain m_ociIdentityDomain;
-  bool m_ociIdentityDomainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_existingTenancyActivationLinkHasBeenSet = false;
+  bool m_newTenancyActivationLinkHasBeenSet = false;
+  bool m_ociIdentityDomainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

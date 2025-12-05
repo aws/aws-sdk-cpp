@@ -94,9 +94,9 @@ class AddCustomAttributesRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::Vector<SchemaAttributeType> m_customAttributes;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
 };
 

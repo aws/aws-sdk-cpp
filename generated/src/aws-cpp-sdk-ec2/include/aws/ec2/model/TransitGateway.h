@@ -187,27 +187,27 @@ class TransitGateway {
   ///@}
  private:
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_transitGatewayArn;
-  bool m_transitGatewayArnHasBeenSet = false;
 
   TransitGatewayState m_state{TransitGatewayState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   TransitGatewayOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_transitGatewayArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

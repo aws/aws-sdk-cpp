@@ -83,12 +83,12 @@ class ListRetrievedTracesRequest : public XRayRequest {
   ///@}
  private:
   Aws::String m_retrievalToken;
-  bool m_retrievalTokenHasBeenSet = false;
 
   TraceFormatType m_traceFormat{TraceFormatType::NOT_SET};
-  bool m_traceFormatHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_retrievalTokenHasBeenSet = false;
+  bool m_traceFormatHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class LastExecutionStatus {
   ///@}
  private:
   ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_executionStatusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

@@ -331,42 +331,42 @@ class ActionDeclaration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ActionTypeId m_actionTypeId;
-  bool m_actionTypeIdHasBeenSet = false;
 
   int m_runOrder{0};
-  bool m_runOrderHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_commands;
-  bool m_commandsHasBeenSet = false;
 
   Aws::Vector<OutputArtifact> m_outputArtifacts;
-  bool m_outputArtifactsHasBeenSet = false;
 
   Aws::Vector<InputArtifact> m_inputArtifacts;
-  bool m_inputArtifactsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outputVariables;
-  bool m_outputVariablesHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
-  bool m_timeoutInMinutesHasBeenSet = false;
 
   Aws::Vector<EnvironmentVariable> m_environmentVariables;
+  bool m_nameHasBeenSet = false;
+  bool m_actionTypeIdHasBeenSet = false;
+  bool m_runOrderHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_commandsHasBeenSet = false;
+  bool m_outputArtifactsHasBeenSet = false;
+  bool m_inputArtifactsHasBeenSet = false;
+  bool m_outputVariablesHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_timeoutInMinutesHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
 };
 

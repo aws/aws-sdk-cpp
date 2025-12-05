@@ -62,9 +62,9 @@ class BinWidthOptions {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   long long m_binCountLimit{0};
+  bool m_valueHasBeenSet = false;
   bool m_binCountLimitHasBeenSet = false;
 };
 

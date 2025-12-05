@@ -180,27 +180,27 @@ class ExportSnapshotRecordSourceInfo {
   ///@}
  private:
   ExportSnapshotRecordSourceType m_resourceType{ExportSnapshotRecordSourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_fromResourceName;
-  bool m_fromResourceNameHasBeenSet = false;
 
   Aws::String m_fromResourceArn;
-  bool m_fromResourceArnHasBeenSet = false;
 
   InstanceSnapshotInfo m_instanceSnapshotInfo;
-  bool m_instanceSnapshotInfoHasBeenSet = false;
 
   DiskSnapshotInfo m_diskSnapshotInfo;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_fromResourceNameHasBeenSet = false;
+  bool m_fromResourceArnHasBeenSet = false;
+  bool m_instanceSnapshotInfoHasBeenSet = false;
   bool m_diskSnapshotInfoHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class VirtualGatewayListener {
   ///@}
  private:
   VirtualGatewayConnectionPool m_connectionPool;
-  bool m_connectionPoolHasBeenSet = false;
 
   VirtualGatewayHealthCheckPolicy m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   VirtualGatewayPortMapping m_portMapping;
-  bool m_portMappingHasBeenSet = false;
 
   VirtualGatewayListenerTls m_tls;
+  bool m_connectionPoolHasBeenSet = false;
+  bool m_healthCheckHasBeenSet = false;
+  bool m_portMappingHasBeenSet = false;
   bool m_tlsHasBeenSet = false;
 };
 

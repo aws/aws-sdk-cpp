@@ -65,9 +65,9 @@ class GetTestResult {
   ///@}
  private:
   Test m_test;
-  bool m_testHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

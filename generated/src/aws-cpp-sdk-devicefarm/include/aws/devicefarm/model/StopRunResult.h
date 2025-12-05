@@ -66,9 +66,9 @@ class StopRunResult {
   ///@}
  private:
   Run m_run;
-  bool m_runHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

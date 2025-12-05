@@ -267,36 +267,36 @@ class VolumeRecommendation {
   ///@}
  private:
   Aws::String m_volumeArn;
-  bool m_volumeArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   VolumeConfiguration m_currentConfiguration;
-  bool m_currentConfigurationHasBeenSet = false;
 
   EBSFinding m_finding{EBSFinding::NOT_SET};
-  bool m_findingHasBeenSet = false;
 
   Aws::Vector<EBSUtilizationMetric> m_utilizationMetrics;
-  bool m_utilizationMetricsHasBeenSet = false;
 
   double m_lookBackPeriodInDays{0.0};
-  bool m_lookBackPeriodInDaysHasBeenSet = false;
 
   Aws::Vector<VolumeRecommendationOption> m_volumeRecommendationOptions;
-  bool m_volumeRecommendationOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
-  bool m_currentPerformanceRiskHasBeenSet = false;
 
   EBSEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_volumeArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_currentConfigurationHasBeenSet = false;
+  bool m_findingHasBeenSet = false;
+  bool m_utilizationMetricsHasBeenSet = false;
+  bool m_lookBackPeriodInDaysHasBeenSet = false;
+  bool m_volumeRecommendationOptionsHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
+  bool m_currentPerformanceRiskHasBeenSet = false;
+  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

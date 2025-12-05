@@ -157,24 +157,24 @@ class WorkloadDeploymentPatternDataSummary {
   ///@}
  private:
   Aws::String m_deploymentPatternName;
-  bool m_deploymentPatternNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   WorkloadDeploymentPatternStatus m_status{WorkloadDeploymentPatternStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_workloadVersionName;
+  bool m_deploymentPatternNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
   bool m_workloadVersionNameHasBeenSet = false;
 };
 

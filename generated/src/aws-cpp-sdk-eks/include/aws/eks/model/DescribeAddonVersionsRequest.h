@@ -193,24 +193,24 @@ class DescribeAddonVersionsRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_kubernetesVersion;
-  bool m_kubernetesVersionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_publishers;
-  bool m_publishersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_owners;
+  bool m_kubernetesVersionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_addonNameHasBeenSet = false;
+  bool m_typesHasBeenSet = false;
+  bool m_publishersHasBeenSet = false;
   bool m_ownersHasBeenSet = false;
 };
 

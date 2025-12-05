@@ -57,9 +57,9 @@ class TestSegmentPatternResult {
   ///@}
  private:
   bool m_match{false};
-  bool m_matchHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_matchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

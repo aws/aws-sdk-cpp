@@ -292,42 +292,42 @@ class PipeTargetParameters {
   ///@}
  private:
   Aws::String m_inputTemplate;
-  bool m_inputTemplateHasBeenSet = false;
 
   PipeTargetLambdaFunctionParameters m_lambdaFunctionParameters;
-  bool m_lambdaFunctionParametersHasBeenSet = false;
 
   PipeTargetStateMachineParameters m_stepFunctionStateMachineParameters;
-  bool m_stepFunctionStateMachineParametersHasBeenSet = false;
 
   PipeTargetKinesisStreamParameters m_kinesisStreamParameters;
-  bool m_kinesisStreamParametersHasBeenSet = false;
 
   PipeTargetEcsTaskParameters m_ecsTaskParameters;
-  bool m_ecsTaskParametersHasBeenSet = false;
 
   PipeTargetBatchJobParameters m_batchJobParameters;
-  bool m_batchJobParametersHasBeenSet = false;
 
   PipeTargetSqsQueueParameters m_sqsQueueParameters;
-  bool m_sqsQueueParametersHasBeenSet = false;
 
   PipeTargetHttpParameters m_httpParameters;
-  bool m_httpParametersHasBeenSet = false;
 
   PipeTargetRedshiftDataParameters m_redshiftDataParameters;
-  bool m_redshiftDataParametersHasBeenSet = false;
 
   PipeTargetSageMakerPipelineParameters m_sageMakerPipelineParameters;
-  bool m_sageMakerPipelineParametersHasBeenSet = false;
 
   PipeTargetEventBridgeEventBusParameters m_eventBridgeEventBusParameters;
-  bool m_eventBridgeEventBusParametersHasBeenSet = false;
 
   PipeTargetCloudWatchLogsParameters m_cloudWatchLogsParameters;
-  bool m_cloudWatchLogsParametersHasBeenSet = false;
 
   PipeTargetTimestreamParameters m_timestreamParameters;
+  bool m_inputTemplateHasBeenSet = false;
+  bool m_lambdaFunctionParametersHasBeenSet = false;
+  bool m_stepFunctionStateMachineParametersHasBeenSet = false;
+  bool m_kinesisStreamParametersHasBeenSet = false;
+  bool m_ecsTaskParametersHasBeenSet = false;
+  bool m_batchJobParametersHasBeenSet = false;
+  bool m_sqsQueueParametersHasBeenSet = false;
+  bool m_httpParametersHasBeenSet = false;
+  bool m_redshiftDataParametersHasBeenSet = false;
+  bool m_sageMakerPipelineParametersHasBeenSet = false;
+  bool m_eventBridgeEventBusParametersHasBeenSet = false;
+  bool m_cloudWatchLogsParametersHasBeenSet = false;
   bool m_timestreamParametersHasBeenSet = false;
 };
 

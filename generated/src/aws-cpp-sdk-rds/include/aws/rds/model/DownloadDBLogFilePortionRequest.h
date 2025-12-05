@@ -125,15 +125,15 @@ class DownloadDBLogFilePortionRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_logFileName;
-  bool m_logFileNameHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_numberOfLines{0};
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_logFileNameHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_numberOfLinesHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class UntagResourceRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyList;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagKeyListHasBeenSet = false;
 };
 

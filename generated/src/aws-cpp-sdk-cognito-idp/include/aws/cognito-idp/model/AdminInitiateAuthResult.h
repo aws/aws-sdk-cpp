@@ -239,21 +239,21 @@ class AdminInitiateAuthResult {
   ///@}
  private:
   ChallengeNameType m_challengeName{ChallengeNameType::NOT_SET};
-  bool m_challengeNameHasBeenSet = false;
 
   Aws::String m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_challengeParameters;
-  bool m_challengeParametersHasBeenSet = false;
 
   AuthenticationResultType m_authenticationResult;
-  bool m_authenticationResultHasBeenSet = false;
 
   Aws::Vector<ChallengeNameType> m_availableChallenges;
-  bool m_availableChallengesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_challengeNameHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
+  bool m_challengeParametersHasBeenSet = false;
+  bool m_authenticationResultHasBeenSet = false;
+  bool m_availableChallengesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

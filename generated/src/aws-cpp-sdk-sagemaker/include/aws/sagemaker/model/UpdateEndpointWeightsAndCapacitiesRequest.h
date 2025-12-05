@@ -75,9 +75,9 @@ class UpdateEndpointWeightsAndCapacitiesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::Vector<DesiredWeightAndCapacity> m_desiredWeightsAndCapacities;
+  bool m_endpointNameHasBeenSet = false;
   bool m_desiredWeightsAndCapacitiesHasBeenSet = false;
 };
 

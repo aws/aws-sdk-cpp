@@ -126,21 +126,21 @@ class StartRouterOutputResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RouterOutputState m_state{RouterOutputState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   MaintenanceScheduleType m_maintenanceScheduleType{MaintenanceScheduleType::NOT_SET};
-  bool m_maintenanceScheduleTypeHasBeenSet = false;
 
   MaintenanceSchedule m_maintenanceSchedule;
-  bool m_maintenanceScheduleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_maintenanceScheduleTypeHasBeenSet = false;
+  bool m_maintenanceScheduleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

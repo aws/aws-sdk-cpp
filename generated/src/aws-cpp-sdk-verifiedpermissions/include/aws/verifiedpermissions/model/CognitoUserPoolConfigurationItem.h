@@ -131,15 +131,15 @@ class CognitoUserPoolConfigurationItem {
   ///@}
  private:
   Aws::String m_userPoolArn;
-  bool m_userPoolArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientIds;
-  bool m_clientIdsHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   CognitoGroupConfigurationItem m_groupConfiguration;
+  bool m_userPoolArnHasBeenSet = false;
+  bool m_clientIdsHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
   bool m_groupConfigurationHasBeenSet = false;
 };
 

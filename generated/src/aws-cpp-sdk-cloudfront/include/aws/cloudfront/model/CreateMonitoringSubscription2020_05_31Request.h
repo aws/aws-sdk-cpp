@@ -68,9 +68,9 @@ class CreateMonitoringSubscription2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   MonitoringSubscription m_monitoringSubscription;
+  bool m_distributionIdHasBeenSet = false;
   bool m_monitoringSubscriptionHasBeenSet = false;
 };
 

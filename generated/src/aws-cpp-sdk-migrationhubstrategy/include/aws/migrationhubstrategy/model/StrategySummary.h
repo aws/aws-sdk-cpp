@@ -65,9 +65,9 @@ class StrategySummary {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Strategy m_strategy{Strategy::NOT_SET};
+  bool m_countHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
 };
 

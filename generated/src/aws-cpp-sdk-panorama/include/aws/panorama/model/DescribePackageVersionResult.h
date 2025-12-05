@@ -210,36 +210,36 @@ class DescribePackageVersionResult {
   ///@}
  private:
   bool m_isLatestPatch{false};
-  bool m_isLatestPatchHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_packageArn;
-  bool m_packageArnHasBeenSet = false;
 
   Aws::String m_packageId;
-  bool m_packageIdHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_patchVersion;
-  bool m_patchVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_registeredTime{};
-  bool m_registeredTimeHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDescription;
-  bool m_statusDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isLatestPatchHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_packageArnHasBeenSet = false;
+  bool m_packageIdHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
+  bool m_patchVersionHasBeenSet = false;
+  bool m_registeredTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -168,27 +168,27 @@ class LensUpgradeSummary {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_currentLensVersion;
-  bool m_currentLensVersionHasBeenSet = false;
 
   Aws::String m_latestLensVersion;
-  bool m_latestLensVersionHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_currentLensVersionHasBeenSet = false;
+  bool m_latestLensVersionHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

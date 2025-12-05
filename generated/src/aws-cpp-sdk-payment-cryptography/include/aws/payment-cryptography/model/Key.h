@@ -391,57 +391,57 @@ class Key {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   KeyAttributes m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_keyCheckValue;
-  bool m_keyCheckValueHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
-  bool m_keyCheckValueAlgorithmHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_exportable{false};
-  bool m_exportableHasBeenSet = false;
 
   KeyState m_keyState{KeyState::NOT_SET};
-  bool m_keyStateHasBeenSet = false;
 
   KeyOrigin m_keyOrigin{KeyOrigin::NOT_SET};
-  bool m_keyOriginHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_usageStartTimestamp{};
-  bool m_usageStartTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_usageStopTimestamp{};
-  bool m_usageStopTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletePendingTimestamp{};
-  bool m_deletePendingTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTimestamp{};
-  bool m_deleteTimestampHasBeenSet = false;
 
   DeriveKeyUsage m_deriveKeyUsage{DeriveKeyUsage::NOT_SET};
-  bool m_deriveKeyUsageHasBeenSet = false;
 
   MultiRegionKeyType m_multiRegionKeyType{MultiRegionKeyType::NOT_SET};
-  bool m_multiRegionKeyTypeHasBeenSet = false;
 
   Aws::String m_primaryRegion;
-  bool m_primaryRegionHasBeenSet = false;
 
   Aws::Map<Aws::String, ReplicationStatusType> m_replicationStatus;
-  bool m_replicationStatusHasBeenSet = false;
 
   bool m_usingDefaultReplicationRegions{false};
+  bool m_keyArnHasBeenSet = false;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_keyCheckValueHasBeenSet = false;
+  bool m_keyCheckValueAlgorithmHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_exportableHasBeenSet = false;
+  bool m_keyStateHasBeenSet = false;
+  bool m_keyOriginHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_usageStartTimestampHasBeenSet = false;
+  bool m_usageStopTimestampHasBeenSet = false;
+  bool m_deletePendingTimestampHasBeenSet = false;
+  bool m_deleteTimestampHasBeenSet = false;
+  bool m_deriveKeyUsageHasBeenSet = false;
+  bool m_multiRegionKeyTypeHasBeenSet = false;
+  bool m_primaryRegionHasBeenSet = false;
+  bool m_replicationStatusHasBeenSet = false;
   bool m_usingDefaultReplicationRegionsHasBeenSet = false;
 };
 

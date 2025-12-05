@@ -123,15 +123,15 @@ class RegistrationVersionInformation {
   ///@}
  private:
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   RegistrationVersionStatus m_registrationVersionStatus{RegistrationVersionStatus::NOT_SET};
-  bool m_registrationVersionStatusHasBeenSet = false;
 
   RegistrationVersionStatusHistory m_registrationVersionStatusHistory;
-  bool m_registrationVersionStatusHistoryHasBeenSet = false;
 
   Aws::Vector<RegistrationDeniedReasonInformation> m_deniedReasons;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_registrationVersionStatusHasBeenSet = false;
+  bool m_registrationVersionStatusHistoryHasBeenSet = false;
   bool m_deniedReasonsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListStateMachinesResult {
   ///@}
  private:
   Aws::Vector<StateMachineListItem> m_stateMachines;
-  bool m_stateMachinesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stateMachinesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

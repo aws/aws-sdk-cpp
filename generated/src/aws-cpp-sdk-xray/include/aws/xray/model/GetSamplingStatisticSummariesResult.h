@@ -85,12 +85,12 @@ class GetSamplingStatisticSummariesResult {
   ///@}
  private:
   Aws::Vector<SamplingStatisticSummary> m_samplingStatisticSummaries;
-  bool m_samplingStatisticSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_samplingStatisticSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

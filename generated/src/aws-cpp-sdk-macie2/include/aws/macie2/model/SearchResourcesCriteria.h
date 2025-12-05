@@ -74,9 +74,9 @@ class SearchResourcesCriteria {
   ///@}
  private:
   SearchResourcesSimpleCriterion m_simpleCriterion;
-  bool m_simpleCriterionHasBeenSet = false;
 
   SearchResourcesTagCriterion m_tagCriterion;
+  bool m_simpleCriterionHasBeenSet = false;
   bool m_tagCriterionHasBeenSet = false;
 };
 

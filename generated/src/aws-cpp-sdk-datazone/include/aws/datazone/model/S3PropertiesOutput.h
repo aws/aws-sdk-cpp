@@ -105,15 +105,15 @@ class S3PropertiesOutput {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_s3AccessGrantLocationId;
-  bool m_s3AccessGrantLocationIdHasBeenSet = false;
 
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
+  bool m_s3AccessGrantLocationIdHasBeenSet = false;
+  bool m_s3UriHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

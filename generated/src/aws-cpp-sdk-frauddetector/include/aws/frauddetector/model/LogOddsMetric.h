@@ -86,12 +86,12 @@ class LogOddsMetric {
   ///@}
  private:
   Aws::String m_variableName;
-  bool m_variableNameHasBeenSet = false;
 
   Aws::String m_variableType;
-  bool m_variableTypeHasBeenSet = false;
 
   double m_variableImportance{0.0};
+  bool m_variableNameHasBeenSet = false;
+  bool m_variableTypeHasBeenSet = false;
   bool m_variableImportanceHasBeenSet = false;
 };
 

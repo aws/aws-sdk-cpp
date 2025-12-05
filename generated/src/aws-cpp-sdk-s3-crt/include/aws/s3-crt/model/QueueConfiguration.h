@@ -111,15 +111,15 @@ class QueueConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_queueArn;
-  bool m_queueArnHasBeenSet = false;
 
   Aws::Vector<Event> m_events;
-  bool m_eventsHasBeenSet = false;
 
   NotificationConfigurationFilter m_filter;
+  bool m_idHasBeenSet = false;
+  bool m_queueArnHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

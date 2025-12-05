@@ -93,12 +93,12 @@ class AccountInfo {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsAccountName;
-  bool m_awsAccountNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedRegions;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsAccountNameHasBeenSet = false;
   bool m_supportedRegionsHasBeenSet = false;
 };
 

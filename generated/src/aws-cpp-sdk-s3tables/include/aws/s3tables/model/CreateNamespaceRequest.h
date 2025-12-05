@@ -73,9 +73,9 @@ class CreateNamespaceRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespace;
+  bool m_tableBucketARNHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

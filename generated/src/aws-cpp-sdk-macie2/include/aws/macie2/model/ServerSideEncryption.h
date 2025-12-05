@@ -74,9 +74,9 @@ class ServerSideEncryption {
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsMasterKeyId;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_kmsMasterKeyIdHasBeenSet = false;
 };
 

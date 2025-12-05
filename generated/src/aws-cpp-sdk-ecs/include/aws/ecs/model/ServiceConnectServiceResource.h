@@ -85,9 +85,9 @@ class ServiceConnectServiceResource {
   ///@}
  private:
   Aws::String m_discoveryName;
-  bool m_discoveryNameHasBeenSet = false;
 
   Aws::String m_discoveryArn;
+  bool m_discoveryNameHasBeenSet = false;
   bool m_discoveryArnHasBeenSet = false;
 };
 

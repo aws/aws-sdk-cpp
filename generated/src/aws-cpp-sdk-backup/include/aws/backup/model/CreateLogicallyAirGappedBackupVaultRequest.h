@@ -147,21 +147,21 @@ class CreateLogicallyAirGappedBackupVaultRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_backupVaultTags;
-  bool m_backupVaultTagsHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_creatorRequestIdHasBeenSet = true;
 
   long long m_minRetentionDays{0};
-  bool m_minRetentionDaysHasBeenSet = false;
 
   long long m_maxRetentionDays{0};
-  bool m_maxRetentionDaysHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultTagsHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = true;
+  bool m_minRetentionDaysHasBeenSet = false;
+  bool m_maxRetentionDaysHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
 };
 

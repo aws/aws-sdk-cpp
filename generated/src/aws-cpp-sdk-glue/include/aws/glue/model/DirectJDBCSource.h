@@ -165,24 +165,24 @@ class DirectJDBCSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   JDBCConnectionType m_connectionType{JDBCConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_redshiftTmpDir;
-  bool m_redshiftTmpDirHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_redshiftTmpDirHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

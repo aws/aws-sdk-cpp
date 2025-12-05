@@ -81,9 +81,9 @@ class DeleteVirtualInterfaceResult {
   ///@}
  private:
   VirtualInterfaceState m_virtualInterfaceState{VirtualInterfaceState::NOT_SET};
-  bool m_virtualInterfaceStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualInterfaceStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class CreateTopicResult {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_topicArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

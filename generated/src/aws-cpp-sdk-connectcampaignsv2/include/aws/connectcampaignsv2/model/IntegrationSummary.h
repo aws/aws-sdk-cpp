@@ -82,12 +82,12 @@ class IntegrationSummary {
   ///@}
  private:
   CustomerProfilesIntegrationSummary m_customerProfiles;
-  bool m_customerProfilesHasBeenSet = false;
 
   QConnectIntegrationSummary m_qConnect;
-  bool m_qConnectHasBeenSet = false;
 
   LambdaIntegrationSummary m_lambda;
+  bool m_customerProfilesHasBeenSet = false;
+  bool m_qConnectHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
 };
 

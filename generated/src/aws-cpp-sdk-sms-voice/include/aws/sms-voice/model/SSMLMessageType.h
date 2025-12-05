@@ -89,12 +89,12 @@ class SSMLMessageType {
   ///@}
  private:
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_voiceId;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_voiceIdHasBeenSet = false;
 };
 

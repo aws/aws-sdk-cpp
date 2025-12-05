@@ -73,9 +73,9 @@ class ComparisonFormatConfiguration {
   ///@}
  private:
   NumberDisplayFormatConfiguration m_numberDisplayFormatConfiguration;
-  bool m_numberDisplayFormatConfigurationHasBeenSet = false;
 
   PercentageDisplayFormatConfiguration m_percentageDisplayFormatConfiguration;
+  bool m_numberDisplayFormatConfigurationHasBeenSet = false;
   bool m_percentageDisplayFormatConfigurationHasBeenSet = false;
 };
 

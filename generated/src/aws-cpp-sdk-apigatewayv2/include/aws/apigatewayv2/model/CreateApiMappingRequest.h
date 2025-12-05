@@ -105,15 +105,15 @@ class CreateApiMappingRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_apiMappingKey;
-  bool m_apiMappingKeyHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_stage;
+  bool m_apiIdHasBeenSet = false;
+  bool m_apiMappingKeyHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

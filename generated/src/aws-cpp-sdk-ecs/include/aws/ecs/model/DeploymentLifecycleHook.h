@@ -148,15 +148,15 @@ class DeploymentLifecycleHook {
   ///@}
  private:
   Aws::String m_hookTargetArn;
-  bool m_hookTargetArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<DeploymentLifecycleHookStage> m_lifecycleStages;
-  bool m_lifecycleStagesHasBeenSet = false;
 
   Aws::Utils::Document m_hookDetails;
+  bool m_hookTargetArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_lifecycleStagesHasBeenSet = false;
   bool m_hookDetailsHasBeenSet = false;
 };
 

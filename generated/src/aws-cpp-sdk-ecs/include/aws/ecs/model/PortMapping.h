@@ -245,21 +245,21 @@ class PortMapping {
   ///@}
  private:
   int m_containerPort{0};
-  bool m_containerPortHasBeenSet = false;
 
   int m_hostPort{0};
-  bool m_hostPortHasBeenSet = false;
 
   TransportProtocol m_protocol{TransportProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ApplicationProtocol m_appProtocol{ApplicationProtocol::NOT_SET};
-  bool m_appProtocolHasBeenSet = false;
 
   Aws::String m_containerPortRange;
+  bool m_containerPortHasBeenSet = false;
+  bool m_hostPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_appProtocolHasBeenSet = false;
   bool m_containerPortRangeHasBeenSet = false;
 };
 

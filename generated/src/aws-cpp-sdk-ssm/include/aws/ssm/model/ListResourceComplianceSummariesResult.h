@@ -90,12 +90,12 @@ class ListResourceComplianceSummariesResult {
   ///@}
  private:
   Aws::Vector<ResourceComplianceSummaryItem> m_resourceComplianceSummaryItems;
-  bool m_resourceComplianceSummaryItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceComplianceSummaryItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

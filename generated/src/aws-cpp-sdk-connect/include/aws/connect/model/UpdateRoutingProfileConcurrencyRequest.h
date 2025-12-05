@@ -93,12 +93,12 @@ class UpdateRoutingProfileConcurrencyRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_routingProfileId;
-  bool m_routingProfileIdHasBeenSet = false;
 
   Aws::Vector<MediaConcurrency> m_mediaConcurrencies;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_routingProfileIdHasBeenSet = false;
   bool m_mediaConcurrenciesHasBeenSet = false;
 };
 

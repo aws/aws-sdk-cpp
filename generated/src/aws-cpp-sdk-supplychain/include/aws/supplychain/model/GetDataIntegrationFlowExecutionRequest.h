@@ -86,12 +86,12 @@ class GetDataIntegrationFlowExecutionRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Aws::String m_executionId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_flowNameHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;
 };
 

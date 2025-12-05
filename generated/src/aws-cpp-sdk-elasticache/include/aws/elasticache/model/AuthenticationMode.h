@@ -78,9 +78,9 @@ class AuthenticationMode {
   ///@}
  private:
   InputAuthenticationType m_type{InputAuthenticationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_passwords;
+  bool m_typeHasBeenSet = false;
   bool m_passwordsHasBeenSet = false;
 };
 

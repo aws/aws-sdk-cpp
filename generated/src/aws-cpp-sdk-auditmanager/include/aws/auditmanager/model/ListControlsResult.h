@@ -85,12 +85,12 @@ class ListControlsResult {
   ///@}
  private:
   Aws::Vector<ControlMetadata> m_controlMetadataList;
-  bool m_controlMetadataListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlMetadataListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

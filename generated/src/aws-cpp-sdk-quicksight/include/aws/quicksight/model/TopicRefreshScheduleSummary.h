@@ -106,15 +106,15 @@ class TopicRefreshScheduleSummary {
   ///@}
  private:
   Aws::String m_datasetId;
-  bool m_datasetIdHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   TopicRefreshSchedule m_refreshSchedule;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
   bool m_refreshScheduleHasBeenSet = false;
 };
 

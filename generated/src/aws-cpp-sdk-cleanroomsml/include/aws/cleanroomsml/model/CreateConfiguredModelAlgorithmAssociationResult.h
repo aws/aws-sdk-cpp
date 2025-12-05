@@ -63,9 +63,9 @@ class CreateConfiguredModelAlgorithmAssociationResult {
   ///@}
  private:
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

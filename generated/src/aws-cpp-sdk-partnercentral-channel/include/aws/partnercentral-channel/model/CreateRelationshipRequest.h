@@ -219,33 +219,33 @@ class CreateRelationshipRequest : public PartnerCentralChannelRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   AssociationType m_associationType{AssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::String m_programManagementAccountIdentifier;
-  bool m_programManagementAccountIdentifierHasBeenSet = false;
 
   Aws::String m_associatedAccountId;
-  bool m_associatedAccountIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ResaleAccountModel m_resaleAccountModel{ResaleAccountModel::NOT_SET};
-  bool m_resaleAccountModelHasBeenSet = false;
 
   Sector m_sector{Sector::NOT_SET};
-  bool m_sectorHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SupportPlan m_requestedSupportPlan;
+  bool m_catalogHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_programManagementAccountIdentifierHasBeenSet = false;
+  bool m_associatedAccountIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_resaleAccountModelHasBeenSet = false;
+  bool m_sectorHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_requestedSupportPlanHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class DeliveryChannelStatus {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConfigExportDeliveryInfo m_configSnapshotDeliveryInfo;
-  bool m_configSnapshotDeliveryInfoHasBeenSet = false;
 
   ConfigExportDeliveryInfo m_configHistoryDeliveryInfo;
-  bool m_configHistoryDeliveryInfoHasBeenSet = false;
 
   ConfigStreamDeliveryInfo m_configStreamDeliveryInfo;
+  bool m_nameHasBeenSet = false;
+  bool m_configSnapshotDeliveryInfoHasBeenSet = false;
+  bool m_configHistoryDeliveryInfoHasBeenSet = false;
   bool m_configStreamDeliveryInfoHasBeenSet = false;
 };
 

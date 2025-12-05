@@ -109,15 +109,15 @@ class AssessmentRunInProgressException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_assessmentRunArns;
-  bool m_assessmentRunArnsHasBeenSet = false;
 
   bool m_assessmentRunArnsTruncated{false};
-  bool m_assessmentRunArnsTruncatedHasBeenSet = false;
 
   bool m_canRetry{false};
+  bool m_messageHasBeenSet = false;
+  bool m_assessmentRunArnsHasBeenSet = false;
+  bool m_assessmentRunArnsTruncatedHasBeenSet = false;
   bool m_canRetryHasBeenSet = false;
 };
 

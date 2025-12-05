@@ -60,9 +60,9 @@ class GetControlOperationResult {
   ///@}
  private:
   ControlOperation m_controlOperation;
-  bool m_controlOperationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlOperationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

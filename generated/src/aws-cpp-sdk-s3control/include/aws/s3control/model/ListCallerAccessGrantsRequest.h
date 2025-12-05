@@ -140,18 +140,18 @@ class ListCallerAccessGrantsRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_grantScope;
-  bool m_grantScopeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_allowedByApplication{false};
+  bool m_accountIdHasBeenSet = false;
+  bool m_grantScopeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_allowedByApplicationHasBeenSet = false;
 };
 

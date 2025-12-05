@@ -67,9 +67,9 @@ class RecommenderConfig {
   ///@}
  private:
   EventsConfig m_eventsConfig;
-  bool m_eventsConfigHasBeenSet = false;
 
   int m_trainingFrequency{0};
+  bool m_eventsConfigHasBeenSet = false;
   bool m_trainingFrequencyHasBeenSet = false;
 };
 

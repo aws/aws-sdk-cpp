@@ -71,9 +71,9 @@ class AccountSettings {
   ///@}
  private:
   bool m_disableRemoteControl{false};
-  bool m_disableRemoteControlHasBeenSet = false;
 
   bool m_enableDialOut{false};
+  bool m_disableRemoteControlHasBeenSet = false;
   bool m_enableDialOutHasBeenSet = false;
 };
 

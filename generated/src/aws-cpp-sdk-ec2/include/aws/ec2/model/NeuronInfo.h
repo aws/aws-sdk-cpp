@@ -77,9 +77,9 @@ class NeuronInfo {
   ///@}
  private:
   Aws::Vector<NeuronDeviceInfo> m_neuronDevices;
-  bool m_neuronDevicesHasBeenSet = false;
 
   int m_totalNeuronDeviceMemoryInMiB{0};
+  bool m_neuronDevicesHasBeenSet = false;
   bool m_totalNeuronDeviceMemoryInMiBHasBeenSet = false;
 };
 

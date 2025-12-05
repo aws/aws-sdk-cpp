@@ -229,33 +229,33 @@ class OidcConfig {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_authorizationEndpoint;
-  bool m_authorizationEndpointHasBeenSet = false;
 
   Aws::String m_tokenEndpoint;
-  bool m_tokenEndpointHasBeenSet = false;
 
   Aws::String m_userInfoEndpoint;
-  bool m_userInfoEndpointHasBeenSet = false;
 
   Aws::String m_logoutEndpoint;
-  bool m_logoutEndpointHasBeenSet = false;
 
   Aws::String m_jwksUri;
-  bool m_jwksUriHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_authenticationRequestExtraParams;
+  bool m_clientIdHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_authorizationEndpointHasBeenSet = false;
+  bool m_tokenEndpointHasBeenSet = false;
+  bool m_userInfoEndpointHasBeenSet = false;
+  bool m_logoutEndpointHasBeenSet = false;
+  bool m_jwksUriHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_authenticationRequestExtraParamsHasBeenSet = false;
 };
 

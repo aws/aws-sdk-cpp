@@ -151,21 +151,21 @@ class InstanceCollection {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_marketType;
-  bool m_marketTypeHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_marketTypeHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_instanceIdsHasBeenSet = false;
 };
 

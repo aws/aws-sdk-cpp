@@ -81,9 +81,9 @@ class RebootCacheClusterRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheNodeIdsToReboot;
+  bool m_cacheClusterIdHasBeenSet = false;
   bool m_cacheNodeIdsToRebootHasBeenSet = false;
 };
 

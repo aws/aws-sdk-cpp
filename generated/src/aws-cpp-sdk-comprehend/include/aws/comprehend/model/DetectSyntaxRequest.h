@@ -68,9 +68,9 @@ class DetectSyntaxRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   SyntaxLanguageCode m_languageCode{SyntaxLanguageCode::NOT_SET};
+  bool m_textHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class SpaceCodeEditorAppSettings {
   ///@}
  private:
   ResourceSpec m_defaultResourceSpec;
-  bool m_defaultResourceSpecHasBeenSet = false;
 
   SpaceAppLifecycleManagement m_appLifecycleManagement;
+  bool m_defaultResourceSpecHasBeenSet = false;
   bool m_appLifecycleManagementHasBeenSet = false;
 };
 

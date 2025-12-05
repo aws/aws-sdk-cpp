@@ -73,9 +73,9 @@ class DeleteXssMatchSetRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_xssMatchSetId;
-  bool m_xssMatchSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_xssMatchSetIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class GetCommentReactionsResult {
   ///@}
  private:
   Aws::Vector<ReactionForComment> m_reactionsForComment;
-  bool m_reactionsForCommentHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reactionsForCommentHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

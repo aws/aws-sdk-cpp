@@ -276,39 +276,39 @@ class CreateQuickResponseRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   QuickResponseDataProvider m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   GroupingConfiguration m_groupingConfiguration;
-  bool m_groupingConfigurationHasBeenSet = false;
 
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_shortcutKey;
-  bool m_shortcutKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_channelsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_contentHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_groupingConfigurationHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_shortcutKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

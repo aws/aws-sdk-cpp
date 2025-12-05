@@ -86,12 +86,12 @@ class CreateKeyValueStore2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   ImportSource m_importSource;
+  bool m_nameHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_importSourceHasBeenSet = false;
 };
 

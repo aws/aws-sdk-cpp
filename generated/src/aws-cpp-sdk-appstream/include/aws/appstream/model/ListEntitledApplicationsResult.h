@@ -85,12 +85,12 @@ class ListEntitledApplicationsResult {
   ///@}
  private:
   Aws::Vector<EntitledApplication> m_entitledApplications;
-  bool m_entitledApplicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitledApplicationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

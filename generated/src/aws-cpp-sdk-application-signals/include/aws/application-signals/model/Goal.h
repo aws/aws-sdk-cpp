@@ -94,12 +94,12 @@ class Goal {
   ///@}
  private:
   Interval m_interval;
-  bool m_intervalHasBeenSet = false;
 
   double m_attainmentGoal{0.0};
-  bool m_attainmentGoalHasBeenSet = false;
 
   double m_warningThreshold{0.0};
+  bool m_intervalHasBeenSet = false;
+  bool m_attainmentGoalHasBeenSet = false;
   bool m_warningThresholdHasBeenSet = false;
 };
 

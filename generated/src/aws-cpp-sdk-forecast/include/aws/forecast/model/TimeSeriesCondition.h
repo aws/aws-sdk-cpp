@@ -94,12 +94,12 @@ class TimeSeriesCondition {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeValue;
-  bool m_attributeValueHasBeenSet = false;
 
   Condition m_condition{Condition::NOT_SET};
+  bool m_attributeNameHasBeenSet = false;
+  bool m_attributeValueHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class CreateTimelineEventResult {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_incidentRecordArn;
-  bool m_incidentRecordArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventIdHasBeenSet = false;
+  bool m_incidentRecordArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

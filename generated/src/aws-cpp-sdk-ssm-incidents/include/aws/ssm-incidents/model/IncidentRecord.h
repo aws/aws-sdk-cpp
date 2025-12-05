@@ -309,45 +309,45 @@ class IncidentRecord {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<AutomationExecution> m_automationExecutions;
-  bool m_automationExecutionsHasBeenSet = false;
 
   ChatChannel m_chatChannel;
-  bool m_chatChannelHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_dedupeString;
-  bool m_dedupeStringHasBeenSet = false;
 
   int m_impact{0};
-  bool m_impactHasBeenSet = false;
 
   IncidentRecordSource m_incidentRecordSource;
-  bool m_incidentRecordSourceHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<NotificationTargetItem> m_notificationTargets;
-  bool m_notificationTargetsHasBeenSet = false;
 
   Aws::Utils::DateTime m_resolvedTime{};
-  bool m_resolvedTimeHasBeenSet = false;
 
   IncidentRecordStatus m_status{IncidentRecordStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_arnHasBeenSet = false;
+  bool m_automationExecutionsHasBeenSet = false;
+  bool m_chatChannelHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_dedupeStringHasBeenSet = false;
+  bool m_impactHasBeenSet = false;
+  bool m_incidentRecordSourceHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_notificationTargetsHasBeenSet = false;
+  bool m_resolvedTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

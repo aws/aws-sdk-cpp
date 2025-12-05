@@ -72,9 +72,9 @@ class FaceSearchSettings {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   double m_faceMatchThreshold{0.0};
+  bool m_collectionIdHasBeenSet = false;
   bool m_faceMatchThresholdHasBeenSet = false;
 };
 

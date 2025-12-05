@@ -211,36 +211,36 @@ class GetAccessSourceResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_dnsViewId;
-  bool m_dnsViewIdHasBeenSet = false;
 
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   CRResourceStatus m_status{CRResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dnsViewIdHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -161,24 +161,24 @@ class AwsNetworkFirewallRuleGroupDetails {
   ///@}
  private:
   int m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleGroupDetails m_ruleGroup;
-  bool m_ruleGroupHasBeenSet = false;
 
   Aws::String m_ruleGroupArn;
-  bool m_ruleGroupArnHasBeenSet = false;
 
   Aws::String m_ruleGroupId;
-  bool m_ruleGroupIdHasBeenSet = false;
 
   Aws::String m_ruleGroupName;
-  bool m_ruleGroupNameHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_capacityHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleGroupHasBeenSet = false;
+  bool m_ruleGroupArnHasBeenSet = false;
+  bool m_ruleGroupIdHasBeenSet = false;
+  bool m_ruleGroupNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

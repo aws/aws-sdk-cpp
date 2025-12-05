@@ -123,12 +123,12 @@ class LoadBalancerInfo {
   ///@}
  private:
   Aws::Vector<ELBInfo> m_elbInfoList;
-  bool m_elbInfoListHasBeenSet = false;
 
   Aws::Vector<TargetGroupInfo> m_targetGroupInfoList;
-  bool m_targetGroupInfoListHasBeenSet = false;
 
   Aws::Vector<TargetGroupPairInfo> m_targetGroupPairInfoList;
+  bool m_elbInfoListHasBeenSet = false;
+  bool m_targetGroupInfoListHasBeenSet = false;
   bool m_targetGroupPairInfoListHasBeenSet = false;
 };
 

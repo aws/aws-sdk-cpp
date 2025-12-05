@@ -85,9 +85,9 @@ class RestoreStatus {
   ///@}
  private:
   bool m_isRestoreInProgress{false};
-  bool m_isRestoreInProgressHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreExpiryDate{};
+  bool m_isRestoreInProgressHasBeenSet = false;
   bool m_restoreExpiryDateHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class GetTransitGatewayMulticastDomainAssociationsResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayMulticastDomainAssociation> m_multicastDomainAssociations;
-  bool m_multicastDomainAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_multicastDomainAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

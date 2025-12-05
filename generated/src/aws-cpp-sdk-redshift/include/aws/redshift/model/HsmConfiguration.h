@@ -137,18 +137,18 @@ class HsmConfiguration {
   ///@}
  private:
   Aws::String m_hsmConfigurationIdentifier;
-  bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_hsmIpAddress;
-  bool m_hsmIpAddressHasBeenSet = false;
 
   Aws::String m_hsmPartitionName;
-  bool m_hsmPartitionNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_hsmConfigurationIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_hsmIpAddressHasBeenSet = false;
+  bool m_hsmPartitionNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

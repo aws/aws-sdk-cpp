@@ -66,9 +66,9 @@ class AIAgentVersionSummary {
   ///@}
  private:
   AIAgentSummary m_aiAgentSummary;
-  bool m_aiAgentSummaryHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_aiAgentSummaryHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

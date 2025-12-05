@@ -60,9 +60,9 @@ class CreateImageUsageReportResponse {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reportIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

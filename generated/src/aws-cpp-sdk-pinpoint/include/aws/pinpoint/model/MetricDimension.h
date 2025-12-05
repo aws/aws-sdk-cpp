@@ -70,9 +70,9 @@ class MetricDimension {
   ///@}
  private:
   Aws::String m_comparisonOperator;
-  bool m_comparisonOperatorHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_comparisonOperatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

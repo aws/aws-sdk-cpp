@@ -86,12 +86,12 @@ class ListWirelessGatewayTaskDefinitionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<UpdateWirelessGatewayTaskEntry> m_taskDefinitions;
-  bool m_taskDefinitionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_taskDefinitionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

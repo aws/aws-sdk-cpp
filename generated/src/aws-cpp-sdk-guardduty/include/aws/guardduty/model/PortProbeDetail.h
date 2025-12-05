@@ -89,12 +89,12 @@ class PortProbeDetail {
   ///@}
  private:
   LocalPortDetails m_localPortDetails;
-  bool m_localPortDetailsHasBeenSet = false;
 
   LocalIpDetails m_localIpDetails;
-  bool m_localIpDetailsHasBeenSet = false;
 
   RemoteIpDetails m_remoteIpDetails;
+  bool m_localPortDetailsHasBeenSet = false;
+  bool m_localIpDetailsHasBeenSet = false;
   bool m_remoteIpDetailsHasBeenSet = false;
 };
 

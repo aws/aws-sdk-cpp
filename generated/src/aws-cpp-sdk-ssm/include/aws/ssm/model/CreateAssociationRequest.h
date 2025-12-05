@@ -557,66 +557,66 @@ class CreateAssociationRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   InstanceAssociationOutputLocation m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_associationName;
-  bool m_associationNameHasBeenSet = false;
 
   Aws::String m_automationTargetParameterName;
-  bool m_automationTargetParameterNameHasBeenSet = false;
 
   Aws::String m_maxErrors;
-  bool m_maxErrorsHasBeenSet = false;
 
   Aws::String m_maxConcurrency;
-  bool m_maxConcurrencyHasBeenSet = false;
 
   AssociationComplianceSeverity m_complianceSeverity{AssociationComplianceSeverity::NOT_SET};
-  bool m_complianceSeverityHasBeenSet = false;
 
   AssociationSyncCompliance m_syncCompliance{AssociationSyncCompliance::NOT_SET};
-  bool m_syncComplianceHasBeenSet = false;
 
   bool m_applyOnlyAtCronInterval{false};
-  bool m_applyOnlyAtCronIntervalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_calendarNames;
-  bool m_calendarNamesHasBeenSet = false;
 
   Aws::Vector<TargetLocation> m_targetLocations;
-  bool m_targetLocationsHasBeenSet = false;
 
   int m_scheduleOffset{0};
-  bool m_scheduleOffsetHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-  bool m_targetMapsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_associationNameHasBeenSet = false;
+  bool m_automationTargetParameterNameHasBeenSet = false;
+  bool m_maxErrorsHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_complianceSeverityHasBeenSet = false;
+  bool m_syncComplianceHasBeenSet = false;
+  bool m_applyOnlyAtCronIntervalHasBeenSet = false;
+  bool m_calendarNamesHasBeenSet = false;
+  bool m_targetLocationsHasBeenSet = false;
+  bool m_scheduleOffsetHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_targetMapsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_alarmConfigurationHasBeenSet = false;
 };
 

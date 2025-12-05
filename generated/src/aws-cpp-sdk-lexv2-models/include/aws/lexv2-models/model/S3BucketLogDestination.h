@@ -89,12 +89,12 @@ class S3BucketLogDestination {
   ///@}
  private:
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   Aws::String m_logPrefix;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_s3BucketArnHasBeenSet = false;
   bool m_logPrefixHasBeenSet = false;
 };
 

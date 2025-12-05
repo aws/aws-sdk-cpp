@@ -68,9 +68,9 @@ class DimensionMapping {
   ///@}
  private:
   Aws::String m_sourceColumn;
-  bool m_sourceColumnHasBeenSet = false;
 
   Aws::String m_destinationColumn;
+  bool m_sourceColumnHasBeenSet = false;
   bool m_destinationColumnHasBeenSet = false;
 };
 

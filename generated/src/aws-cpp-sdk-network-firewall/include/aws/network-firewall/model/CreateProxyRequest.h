@@ -177,24 +177,24 @@ class CreateProxyRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_proxyName;
-  bool m_proxyNameHasBeenSet = false;
 
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   Aws::String m_proxyConfigurationName;
-  bool m_proxyConfigurationNameHasBeenSet = false;
 
   Aws::String m_proxyConfigurationArn;
-  bool m_proxyConfigurationArnHasBeenSet = false;
 
   Aws::Vector<ListenerPropertyRequest> m_listenerProperties;
-  bool m_listenerPropertiesHasBeenSet = false;
 
   TlsInterceptPropertiesRequest m_tlsInterceptProperties;
-  bool m_tlsInterceptPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_proxyNameHasBeenSet = false;
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_proxyConfigurationNameHasBeenSet = false;
+  bool m_proxyConfigurationArnHasBeenSet = false;
+  bool m_listenerPropertiesHasBeenSet = false;
+  bool m_tlsInterceptPropertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

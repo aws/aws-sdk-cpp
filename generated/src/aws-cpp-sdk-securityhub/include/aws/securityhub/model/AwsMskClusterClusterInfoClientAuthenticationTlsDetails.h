@@ -77,9 +77,9 @@ class AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_certificateAuthorityArnList;
-  bool m_certificateAuthorityArnListHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_certificateAuthorityArnListHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

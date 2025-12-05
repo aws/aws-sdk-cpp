@@ -177,24 +177,24 @@ class Event {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_eventTimestamp;
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_eventVariables;
-  bool m_eventVariablesHasBeenSet = false;
 
   Aws::String m_currentLabel;
-  bool m_currentLabelHasBeenSet = false;
 
   Aws::String m_labelTimestamp;
-  bool m_labelTimestampHasBeenSet = false;
 
   Aws::Vector<Entity> m_entities;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_eventVariablesHasBeenSet = false;
+  bool m_currentLabelHasBeenSet = false;
+  bool m_labelTimestampHasBeenSet = false;
   bool m_entitiesHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class UpdateStorageRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   StorageMode m_storageMode{StorageMode::NOT_SET};
-  bool m_storageModeHasBeenSet = false;
 
   int m_volumeSizeGB{0};
+  bool m_clusterArnHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_storageModeHasBeenSet = false;
   bool m_volumeSizeGBHasBeenSet = false;
 };
 

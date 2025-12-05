@@ -68,9 +68,9 @@ class PutTableBucketStorageClassRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   StorageClassConfiguration m_storageClassConfiguration;
+  bool m_tableBucketARNHasBeenSet = false;
   bool m_storageClassConfigurationHasBeenSet = false;
 };
 

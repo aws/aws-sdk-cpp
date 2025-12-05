@@ -84,12 +84,12 @@ class OutputLogEvent {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_ingestionTime{0};
+  bool m_timestampHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_ingestionTimeHasBeenSet = false;
 };
 

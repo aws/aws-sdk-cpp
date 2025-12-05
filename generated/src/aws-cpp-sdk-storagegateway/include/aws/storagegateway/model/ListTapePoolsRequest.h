@@ -94,12 +94,12 @@ class ListTapePoolsRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_poolARNs;
-  bool m_poolARNsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_poolARNsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

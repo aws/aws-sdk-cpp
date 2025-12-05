@@ -72,9 +72,9 @@ class DescribeAlarmRequest : public IoTEventsDataRequest {
   ///@}
  private:
   Aws::String m_alarmModelName;
-  bool m_alarmModelNameHasBeenSet = false;
 
   Aws::String m_keyValue;
+  bool m_alarmModelNameHasBeenSet = false;
   bool m_keyValueHasBeenSet = false;
 };
 

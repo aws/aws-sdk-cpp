@@ -87,12 +87,12 @@ class ListContactFlowModuleAliasesResult {
   ///@}
  private:
   Aws::Vector<ContactFlowModuleAliasSummary> m_contactFlowModuleAliasSummaryList;
-  bool m_contactFlowModuleAliasSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowModuleAliasSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class DelegatedAdminAccount {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   DelegatedAdminStatus m_status{DelegatedAdminStatus::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

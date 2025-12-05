@@ -74,9 +74,9 @@ class JobResourceTags {
   ///@}
  private:
   JobResourceType m_resourceType{JobResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

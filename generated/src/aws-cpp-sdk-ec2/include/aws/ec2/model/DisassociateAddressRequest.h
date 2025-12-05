@@ -88,12 +88,12 @@ class DisassociateAddressRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_associationIdHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

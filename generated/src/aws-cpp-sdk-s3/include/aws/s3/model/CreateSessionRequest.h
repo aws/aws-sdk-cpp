@@ -229,24 +229,24 @@ class CreateSessionRequest : public S3Request {
   ///@}
  private:
   SessionMode m_sessionMode{SessionMode::NOT_SET};
-  bool m_sessionModeHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
-  bool m_sSEKMSKeyIdHasBeenSet = false;
 
   Aws::String m_sSEKMSEncryptionContext;
-  bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_sessionModeHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_sSEKMSKeyIdHasBeenSet = false;
+  bool m_sSEKMSEncryptionContextHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

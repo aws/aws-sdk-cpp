@@ -94,15 +94,15 @@ class PlanningStatistics {
   ///@}
  private:
   long long m_estimatedDataToScanBytes{0};
-  bool m_estimatedDataToScanBytesHasBeenSet = false;
 
   long long m_planningTimeMillis{0};
-  bool m_planningTimeMillisHasBeenSet = false;
 
   long long m_queueTimeMillis{0};
-  bool m_queueTimeMillisHasBeenSet = false;
 
   long long m_workUnitsGeneratedCount{0};
+  bool m_estimatedDataToScanBytesHasBeenSet = false;
+  bool m_planningTimeMillisHasBeenSet = false;
+  bool m_queueTimeMillisHasBeenSet = false;
   bool m_workUnitsGeneratedCountHasBeenSet = false;
 };
 

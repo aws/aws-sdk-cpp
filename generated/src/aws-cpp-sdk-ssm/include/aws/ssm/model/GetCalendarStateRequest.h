@@ -79,9 +79,9 @@ class GetCalendarStateRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_calendarNames;
-  bool m_calendarNamesHasBeenSet = false;
 
   Aws::String m_atTime;
+  bool m_calendarNamesHasBeenSet = false;
   bool m_atTimeHasBeenSet = false;
 };
 

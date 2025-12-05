@@ -107,15 +107,15 @@ class MonitoringAlertHistorySummary {
   ///@}
  private:
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   Aws::String m_monitoringAlertName;
-  bool m_monitoringAlertNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   MonitoringAlertStatus m_alertStatus{MonitoringAlertStatus::NOT_SET};
+  bool m_monitoringScheduleNameHasBeenSet = false;
+  bool m_monitoringAlertNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_alertStatusHasBeenSet = false;
 };
 

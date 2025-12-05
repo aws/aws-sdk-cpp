@@ -67,9 +67,9 @@ class DeleteLicenseRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_licenseArn;
-  bool m_licenseArnHasBeenSet = false;
 
   Aws::String m_sourceVersion;
+  bool m_licenseArnHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
 };
 

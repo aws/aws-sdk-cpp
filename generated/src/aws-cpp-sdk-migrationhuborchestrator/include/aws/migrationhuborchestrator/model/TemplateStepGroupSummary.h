@@ -117,15 +117,15 @@ class TemplateStepGroupSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_previous;
-  bool m_previousHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_next;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_previousHasBeenSet = false;
   bool m_nextHasBeenSet = false;
 };
 

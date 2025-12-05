@@ -89,12 +89,12 @@ class PipelineDefinitionS3Location {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_objectKey;
-  bool m_objectKeyHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_bucketHasBeenSet = false;
+  bool m_objectKeyHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

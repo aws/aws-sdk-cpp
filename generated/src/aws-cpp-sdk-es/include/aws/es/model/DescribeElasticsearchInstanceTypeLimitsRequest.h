@@ -96,12 +96,12 @@ class DescribeElasticsearchInstanceTypeLimitsRequest : public ElasticsearchServi
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ESPartitionInstanceType m_instanceType{ESPartitionInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_elasticsearchVersion;
+  bool m_domainNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_elasticsearchVersionHasBeenSet = false;
 };
 

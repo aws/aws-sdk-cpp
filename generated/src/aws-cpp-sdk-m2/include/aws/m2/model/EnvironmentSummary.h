@@ -193,30 +193,30 @@ class EnvironmentSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_environmentArn;
-  bool m_environmentArnHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   EnvironmentLifecycle m_status{EnvironmentLifecycle::NOT_SET};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_environmentArnHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

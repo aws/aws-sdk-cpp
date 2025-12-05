@@ -128,18 +128,18 @@ class CreateConnectorRequest : public PcaConnectorAdRequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VpcInformation m_vpcInformation;
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcInformationHasBeenSet = false;
 };
 

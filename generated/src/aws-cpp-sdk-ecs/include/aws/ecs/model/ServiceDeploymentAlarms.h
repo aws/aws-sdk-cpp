@@ -106,12 +106,12 @@ class ServiceDeploymentAlarms {
   ///@}
  private:
   ServiceDeploymentRollbackMonitorsStatus m_status{ServiceDeploymentRollbackMonitorsStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmNames;
-  bool m_alarmNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_triggeredAlarmNames;
+  bool m_statusHasBeenSet = false;
+  bool m_alarmNamesHasBeenSet = false;
   bool m_triggeredAlarmNamesHasBeenSet = false;
 };
 

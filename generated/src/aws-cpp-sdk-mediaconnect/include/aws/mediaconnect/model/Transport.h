@@ -308,48 +308,48 @@ class Transport {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cidrAllowList;
-  bool m_cidrAllowListHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_maxLatency{0};
-  bool m_maxLatencyHasBeenSet = false;
 
   int m_maxSyncBuffer{0};
-  bool m_maxSyncBufferHasBeenSet = false;
 
   int m_minLatency{0};
-  bool m_minLatencyHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_remoteId;
-  bool m_remoteIdHasBeenSet = false;
 
   int m_senderControlPort{0};
-  bool m_senderControlPortHasBeenSet = false;
 
   Aws::String m_senderIpAddress;
-  bool m_senderIpAddressHasBeenSet = false;
 
   int m_smoothingLatency{0};
-  bool m_smoothingLatencyHasBeenSet = false;
 
   Aws::String m_sourceListenerAddress;
-  bool m_sourceListenerAddressHasBeenSet = false;
 
   int m_sourceListenerPort{0};
-  bool m_sourceListenerPortHasBeenSet = false;
 
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   int m_ndiSpeedHqQuality{0};
-  bool m_ndiSpeedHqQualityHasBeenSet = false;
 
   Aws::String m_ndiProgramName;
+  bool m_cidrAllowListHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_maxLatencyHasBeenSet = false;
+  bool m_maxSyncBufferHasBeenSet = false;
+  bool m_minLatencyHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_remoteIdHasBeenSet = false;
+  bool m_senderControlPortHasBeenSet = false;
+  bool m_senderIpAddressHasBeenSet = false;
+  bool m_smoothingLatencyHasBeenSet = false;
+  bool m_sourceListenerAddressHasBeenSet = false;
+  bool m_sourceListenerPortHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
+  bool m_ndiSpeedHqQualityHasBeenSet = false;
   bool m_ndiProgramNameHasBeenSet = false;
 };
 

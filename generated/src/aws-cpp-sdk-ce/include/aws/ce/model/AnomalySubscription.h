@@ -217,24 +217,24 @@ class AnomalySubscription {
   ///@}
  private:
   Aws::String m_subscriptionArn;
-  bool m_subscriptionArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_monitorArnList;
-  bool m_monitorArnListHasBeenSet = false;
 
   Aws::Vector<Subscriber> m_subscribers;
-  bool m_subscribersHasBeenSet = false;
 
   AnomalySubscriptionFrequency m_frequency{AnomalySubscriptionFrequency::NOT_SET};
-  bool m_frequencyHasBeenSet = false;
 
   Aws::String m_subscriptionName;
-  bool m_subscriptionNameHasBeenSet = false;
 
   Expression m_thresholdExpression;
+  bool m_subscriptionArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_monitorArnListHasBeenSet = false;
+  bool m_subscribersHasBeenSet = false;
+  bool m_frequencyHasBeenSet = false;
+  bool m_subscriptionNameHasBeenSet = false;
   bool m_thresholdExpressionHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ReasonSummary {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_statementIndex{0};
-  bool m_statementIndexHasBeenSet = false;
 
   Aws::String m_statementId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statementIndexHasBeenSet = false;
   bool m_statementIdHasBeenSet = false;
 };
 

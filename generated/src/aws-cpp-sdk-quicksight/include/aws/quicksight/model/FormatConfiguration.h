@@ -89,12 +89,12 @@ class FormatConfiguration {
   ///@}
  private:
   StringFormatConfiguration m_stringFormatConfiguration;
-  bool m_stringFormatConfigurationHasBeenSet = false;
 
   NumberFormatConfiguration m_numberFormatConfiguration;
-  bool m_numberFormatConfigurationHasBeenSet = false;
 
   DateTimeFormatConfiguration m_dateTimeFormatConfiguration;
+  bool m_stringFormatConfigurationHasBeenSet = false;
+  bool m_numberFormatConfigurationHasBeenSet = false;
   bool m_dateTimeFormatConfigurationHasBeenSet = false;
 };
 

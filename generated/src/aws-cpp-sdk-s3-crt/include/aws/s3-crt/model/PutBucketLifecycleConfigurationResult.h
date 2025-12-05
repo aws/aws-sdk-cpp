@@ -70,9 +70,9 @@ class PutBucketLifecycleConfigurationResult {
   ///@}
  private:
   TransitionDefaultMinimumObjectSize m_transitionDefaultMinimumObjectSize{TransitionDefaultMinimumObjectSize::NOT_SET};
-  bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

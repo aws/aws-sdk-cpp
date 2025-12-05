@@ -66,9 +66,9 @@ class ProviderSummary {
   ///@}
  private:
   ConnectorProviderName m_providerName{ConnectorProviderName::NOT_SET};
-  bool m_providerNameHasBeenSet = false;
 
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
+  bool m_providerNameHasBeenSet = false;
   bool m_connectorStatusHasBeenSet = false;
 };
 

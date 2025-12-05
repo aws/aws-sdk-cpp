@@ -117,15 +117,15 @@ class UpdateArtifactRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_artifactArn;
-  bool m_artifactArnHasBeenSet = false;
 
   Aws::String m_artifactName;
-  bool m_artifactNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_propertiesToRemove;
+  bool m_artifactArnHasBeenSet = false;
+  bool m_artifactNameHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
   bool m_propertiesToRemoveHasBeenSet = false;
 };
 

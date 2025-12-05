@@ -133,21 +133,21 @@ class QueryRuntimeStatisticsTimeline {
   ///@}
  private:
   long long m_queryQueueTimeInMillis{0};
-  bool m_queryQueueTimeInMillisHasBeenSet = false;
 
   long long m_servicePreProcessingTimeInMillis{0};
-  bool m_servicePreProcessingTimeInMillisHasBeenSet = false;
 
   long long m_queryPlanningTimeInMillis{0};
-  bool m_queryPlanningTimeInMillisHasBeenSet = false;
 
   long long m_engineExecutionTimeInMillis{0};
-  bool m_engineExecutionTimeInMillisHasBeenSet = false;
 
   long long m_serviceProcessingTimeInMillis{0};
-  bool m_serviceProcessingTimeInMillisHasBeenSet = false;
 
   long long m_totalExecutionTimeInMillis{0};
+  bool m_queryQueueTimeInMillisHasBeenSet = false;
+  bool m_servicePreProcessingTimeInMillisHasBeenSet = false;
+  bool m_queryPlanningTimeInMillisHasBeenSet = false;
+  bool m_engineExecutionTimeInMillisHasBeenSet = false;
+  bool m_serviceProcessingTimeInMillisHasBeenSet = false;
   bool m_totalExecutionTimeInMillisHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class EmbeddedSourceSettings {
   ///@}
  private:
   EmbeddedConvert608To708 m_convert608To708{EmbeddedConvert608To708::NOT_SET};
-  bool m_convert608To708HasBeenSet = false;
 
   EmbeddedScte20Detection m_scte20Detection{EmbeddedScte20Detection::NOT_SET};
-  bool m_scte20DetectionHasBeenSet = false;
 
   int m_source608ChannelNumber{0};
-  bool m_source608ChannelNumberHasBeenSet = false;
 
   int m_source608TrackNumber{0};
+  bool m_convert608To708HasBeenSet = false;
+  bool m_scte20DetectionHasBeenSet = false;
+  bool m_source608ChannelNumberHasBeenSet = false;
   bool m_source608TrackNumberHasBeenSet = false;
 };
 

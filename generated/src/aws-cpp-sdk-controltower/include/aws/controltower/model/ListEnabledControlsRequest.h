@@ -122,18 +122,18 @@ class ListEnabledControlsRequest : public ControlTowerRequest {
   ///@}
  private:
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   EnabledControlFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   bool m_includeChildren{false};
+  bool m_targetIdentifierHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_includeChildrenHasBeenSet = false;
 };
 

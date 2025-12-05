@@ -330,48 +330,48 @@ class DescribeImageAttributeResponse {
   ///@}
  private:
   AttributeValue m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AttributeValue m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   AttributeValue m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   AttributeValue m_sriovNetSupport;
-  bool m_sriovNetSupportHasBeenSet = false;
 
   AttributeValue m_bootMode;
-  bool m_bootModeHasBeenSet = false;
 
   AttributeValue m_tpmSupport;
-  bool m_tpmSupportHasBeenSet = false;
 
   AttributeValue m_uefiData;
-  bool m_uefiDataHasBeenSet = false;
 
   AttributeValue m_lastLaunchedTime;
-  bool m_lastLaunchedTimeHasBeenSet = false;
 
   AttributeValue m_imdsSupport;
-  bool m_imdsSupportHasBeenSet = false;
 
   AttributeValue m_deregistrationProtection;
-  bool m_deregistrationProtectionHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::Vector<LaunchPermission> m_launchPermissions;
-  bool m_launchPermissionsHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_sriovNetSupportHasBeenSet = false;
+  bool m_bootModeHasBeenSet = false;
+  bool m_tpmSupportHasBeenSet = false;
+  bool m_uefiDataHasBeenSet = false;
+  bool m_lastLaunchedTimeHasBeenSet = false;
+  bool m_imdsSupportHasBeenSet = false;
+  bool m_deregistrationProtectionHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_launchPermissionsHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class UpdateIdMappingTableRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_idMappingTableIdentifier;
-  bool m_idMappingTableIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_idMappingTableIdentifierHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

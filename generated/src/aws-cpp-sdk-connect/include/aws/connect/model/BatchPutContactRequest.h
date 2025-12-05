@@ -98,12 +98,12 @@ class BatchPutContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<ContactDataRequest> m_contactDataRequestList;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_instanceIdHasBeenSet = false;
   bool m_contactDataRequestListHasBeenSet = false;
 };
 

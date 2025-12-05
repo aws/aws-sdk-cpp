@@ -79,9 +79,9 @@ class SendMessageBatchRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Vector<SendMessageBatchRequestEntry> m_entries;
+  bool m_queueUrlHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

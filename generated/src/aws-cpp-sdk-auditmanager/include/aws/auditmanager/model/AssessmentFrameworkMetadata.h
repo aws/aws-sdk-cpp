@@ -228,36 +228,36 @@ class AssessmentFrameworkMetadata {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   FrameworkType m_type{FrameworkType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_logo;
-  bool m_logoHasBeenSet = false;
 
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   int m_controlsCount{0};
-  bool m_controlsCountHasBeenSet = false;
 
   int m_controlSetsCount{0};
-  bool m_controlSetsCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_logoHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_controlsCountHasBeenSet = false;
+  bool m_controlSetsCountHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

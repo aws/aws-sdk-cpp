@@ -126,18 +126,18 @@ class GovernedCatalogSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_partitionPredicate;
-  bool m_partitionPredicateHasBeenSet = false;
 
   S3SourceAdditionalOptions m_additionalOptions;
+  bool m_nameHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_partitionPredicateHasBeenSet = false;
   bool m_additionalOptionsHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class StopBrowserSessionRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_traceParent;
-  bool m_traceParentHasBeenSet = false;
 
   Aws::String m_browserIdentifier;
-  bool m_browserIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_traceIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_browserIdentifierHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -146,21 +146,21 @@ class StartSingleWirelessDeviceImportTaskRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
-  bool m_positioningHasBeenSet = false;
 
   SidewalkSingleStartImportInfo m_sidewalk;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
   bool m_sidewalkHasBeenSet = false;
 };
 

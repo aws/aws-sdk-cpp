@@ -106,15 +106,15 @@ class Resource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_associationTime{};
-  bool m_associationTimeHasBeenSet = false;
 
   ResourceIntegrations m_integrations;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_associationTimeHasBeenSet = false;
   bool m_integrationsHasBeenSet = false;
 };
 

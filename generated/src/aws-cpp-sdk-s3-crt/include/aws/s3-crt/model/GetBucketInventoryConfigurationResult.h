@@ -60,9 +60,9 @@ class GetBucketInventoryConfigurationResult {
   ///@}
  private:
   InventoryConfiguration m_inventoryConfiguration;
-  bool m_inventoryConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inventoryConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class UpdateMedicalVocabularyRequest : public TranscribeServiceRequest {
   ///@}
  private:
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_vocabularyFileUri;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_vocabularyFileUriHasBeenSet = false;
 };
 

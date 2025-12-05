@@ -107,15 +107,15 @@ class Master {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_invitationId;
-  bool m_invitationIdHasBeenSet = false;
 
   Aws::String m_relationshipStatus;
-  bool m_relationshipStatusHasBeenSet = false;
 
   Aws::String m_invitedAt;
+  bool m_accountIdHasBeenSet = false;
+  bool m_invitationIdHasBeenSet = false;
+  bool m_relationshipStatusHasBeenSet = false;
   bool m_invitedAtHasBeenSet = false;
 };
 

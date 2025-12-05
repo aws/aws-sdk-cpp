@@ -135,18 +135,18 @@ class ValidationException {
   ///@}
  private:
   Aws::Vector<ValidationExceptionErrorArgument> m_errorArguments;
-  bool m_errorArgumentsHasBeenSet = false;
 
   Aws::String m_errorId;
-  bool m_errorIdHasBeenSet = false;
 
   Aws::Vector<ValidationExceptionField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
+  bool m_errorArgumentsHasBeenSet = false;
+  bool m_errorIdHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

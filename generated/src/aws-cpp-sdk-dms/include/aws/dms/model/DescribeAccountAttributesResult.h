@@ -100,12 +100,12 @@ class DescribeAccountAttributesResult {
   ///@}
  private:
   Aws::Vector<AccountQuota> m_accountQuotas;
-  bool m_accountQuotasHasBeenSet = false;
 
   Aws::String m_uniqueAccountIdentifier;
-  bool m_uniqueAccountIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountQuotasHasBeenSet = false;
+  bool m_uniqueAccountIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

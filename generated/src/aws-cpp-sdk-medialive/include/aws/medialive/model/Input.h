@@ -496,69 +496,69 @@ an input in a customer network.
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attachedChannels;
-  bool m_attachedChannelsHasBeenSet = false;
 
   Aws::Vector<InputDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   InputClass m_inputClass{InputClass::NOT_SET};
-  bool m_inputClassHasBeenSet = false;
 
   Aws::Vector<InputDeviceSettings> m_inputDevices;
-  bool m_inputDevicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputPartnerIds;
-  bool m_inputPartnerIdsHasBeenSet = false;
 
   InputSourceType m_inputSourceType{InputSourceType::NOT_SET};
-  bool m_inputSourceTypeHasBeenSet = false;
 
   Aws::Vector<MediaConnectFlow> m_mediaConnectFlows;
-  bool m_mediaConnectFlowsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::Vector<InputSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   InputState m_state{InputState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   InputType m_type{InputType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   SrtSettings m_srtSettings;
-  bool m_srtSettingsHasBeenSet = false;
 
   InputNetworkLocation m_inputNetworkLocation{InputNetworkLocation::NOT_SET};
-  bool m_inputNetworkLocationHasBeenSet = false;
 
   MulticastSettings m_multicastSettings;
-  bool m_multicastSettingsHasBeenSet = false;
 
   Smpte2110ReceiverGroupSettings m_smpte2110ReceiverGroupSettings;
-  bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sdiSources;
-  bool m_sdiSourcesHasBeenSet = false;
 
   RouterInputSettings m_routerSettings;
+  bool m_arnHasBeenSet = false;
+  bool m_attachedChannelsHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_inputClassHasBeenSet = false;
+  bool m_inputDevicesHasBeenSet = false;
+  bool m_inputPartnerIdsHasBeenSet = false;
+  bool m_inputSourceTypeHasBeenSet = false;
+  bool m_mediaConnectFlowsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_srtSettingsHasBeenSet = false;
+  bool m_inputNetworkLocationHasBeenSet = false;
+  bool m_multicastSettingsHasBeenSet = false;
+  bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
+  bool m_sdiSourcesHasBeenSet = false;
   bool m_routerSettingsHasBeenSet = false;
 };
 

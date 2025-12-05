@@ -94,12 +94,12 @@ class LendingResult {
   ///@}
  private:
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   PageClassification m_pageClassification;
-  bool m_pageClassificationHasBeenSet = false;
 
   Aws::Vector<Extraction> m_extractions;
+  bool m_pageHasBeenSet = false;
+  bool m_pageClassificationHasBeenSet = false;
   bool m_extractionsHasBeenSet = false;
 };
 

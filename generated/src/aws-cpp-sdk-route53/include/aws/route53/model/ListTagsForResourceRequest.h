@@ -70,9 +70,9 @@ class ListTagsForResourceRequest : public Route53Request {
   ///@}
  private:
   TagResourceType m_resourceType{TagResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

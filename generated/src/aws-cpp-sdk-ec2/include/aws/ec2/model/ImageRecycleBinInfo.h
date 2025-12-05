@@ -127,18 +127,18 @@ class ImageRecycleBinInfo {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_recycleBinEnterTime{};
-  bool m_recycleBinEnterTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_recycleBinExitTime{};
+  bool m_imageIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_recycleBinEnterTimeHasBeenSet = false;
   bool m_recycleBinExitTimeHasBeenSet = false;
 };
 

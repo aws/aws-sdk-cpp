@@ -223,36 +223,36 @@ class DescribeDashboardSnapshotJobResult {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_snapshotJobId;
-  bool m_snapshotJobIdHasBeenSet = false;
 
   SnapshotUserConfigurationRedacted m_userConfiguration;
-  bool m_userConfigurationHasBeenSet = false;
 
   SnapshotConfiguration m_snapshotConfiguration;
-  bool m_snapshotConfigurationHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   SnapshotJobStatus m_jobStatus{SnapshotJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_snapshotJobIdHasBeenSet = false;
+  bool m_userConfigurationHasBeenSet = false;
+  bool m_snapshotConfigurationHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

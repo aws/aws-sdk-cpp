@@ -88,12 +88,12 @@ class CreateHubContentPresignedUrlsResult {
   ///@}
  private:
   Aws::Vector<AuthorizedUrl> m_authorizedUrlConfigs;
-  bool m_authorizedUrlConfigsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizedUrlConfigsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

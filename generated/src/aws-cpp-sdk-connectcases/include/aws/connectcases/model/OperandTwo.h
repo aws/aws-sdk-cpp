@@ -105,15 +105,15 @@ class OperandTwo {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   EmptyOperandValue m_emptyValue;
+  bool m_stringValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
   bool m_emptyValueHasBeenSet = false;
 };
 

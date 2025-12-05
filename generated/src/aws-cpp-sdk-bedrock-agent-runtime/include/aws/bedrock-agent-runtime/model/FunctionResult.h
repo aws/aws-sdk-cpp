@@ -163,21 +163,21 @@ class FunctionResult {
   ///@}
  private:
   Aws::String m_actionGroup;
-  bool m_actionGroupHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   ConfirmationState m_confirmationState{ConfirmationState::NOT_SET};
-  bool m_confirmationStateHasBeenSet = false;
 
   Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   Aws::Map<Aws::String, ContentBody> m_responseBody;
-  bool m_responseBodyHasBeenSet = false;
 
   ResponseState m_responseState{ResponseState::NOT_SET};
+  bool m_actionGroupHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_confirmationStateHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
+  bool m_responseBodyHasBeenSet = false;
   bool m_responseStateHasBeenSet = false;
 };
 

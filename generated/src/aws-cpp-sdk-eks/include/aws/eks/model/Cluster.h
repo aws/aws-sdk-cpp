@@ -603,87 +603,87 @@ class Cluster {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   VpcConfigResponse m_resourcesVpcConfig;
-  bool m_resourcesVpcConfigHasBeenSet = false;
 
   KubernetesNetworkConfigResponse m_kubernetesNetworkConfig;
-  bool m_kubernetesNetworkConfigHasBeenSet = false;
 
   Logging m_logging;
-  bool m_loggingHasBeenSet = false;
 
   Identity m_identity;
-  bool m_identityHasBeenSet = false;
 
   ClusterStatus m_status{ClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Certificate m_certificateAuthority;
-  bool m_certificateAuthorityHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<EncryptionConfig> m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   ConnectorConfigResponse m_connectorConfig;
-  bool m_connectorConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ClusterHealth m_health;
-  bool m_healthHasBeenSet = false;
 
   OutpostConfigResponse m_outpostConfig;
-  bool m_outpostConfigHasBeenSet = false;
 
   AccessConfigResponse m_accessConfig;
-  bool m_accessConfigHasBeenSet = false;
 
   UpgradePolicyResponse m_upgradePolicy;
-  bool m_upgradePolicyHasBeenSet = false;
 
   ZonalShiftConfigResponse m_zonalShiftConfig;
-  bool m_zonalShiftConfigHasBeenSet = false;
 
   RemoteNetworkConfigResponse m_remoteNetworkConfig;
-  bool m_remoteNetworkConfigHasBeenSet = false;
 
   ComputeConfigResponse m_computeConfig;
-  bool m_computeConfigHasBeenSet = false;
 
   StorageConfigResponse m_storageConfig;
-  bool m_storageConfigHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   ControlPlaneScalingConfig m_controlPlaneScalingConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_resourcesVpcConfigHasBeenSet = false;
+  bool m_kubernetesNetworkConfigHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_identityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_certificateAuthorityHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
+  bool m_connectorConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_outpostConfigHasBeenSet = false;
+  bool m_accessConfigHasBeenSet = false;
+  bool m_upgradePolicyHasBeenSet = false;
+  bool m_zonalShiftConfigHasBeenSet = false;
+  bool m_remoteNetworkConfigHasBeenSet = false;
+  bool m_computeConfigHasBeenSet = false;
+  bool m_storageConfigHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_controlPlaneScalingConfigHasBeenSet = false;
 };
 

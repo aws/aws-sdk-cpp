@@ -244,36 +244,36 @@ class WorkflowRun {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workflowRunId;
-  bool m_workflowRunIdHasBeenSet = false;
 
   Aws::String m_previousRunId;
-  bool m_previousRunIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_workflowRunProperties;
-  bool m_workflowRunPropertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   WorkflowRunStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   WorkflowGraph m_graph;
-  bool m_graphHasBeenSet = false;
 
   StartingEventBatchCondition m_startingEventBatchCondition;
+  bool m_nameHasBeenSet = false;
+  bool m_workflowRunIdHasBeenSet = false;
+  bool m_previousRunIdHasBeenSet = false;
+  bool m_workflowRunPropertiesHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_graphHasBeenSet = false;
   bool m_startingEventBatchConditionHasBeenSet = false;
 };
 

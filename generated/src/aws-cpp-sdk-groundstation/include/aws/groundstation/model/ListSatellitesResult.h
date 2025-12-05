@@ -90,12 +90,12 @@ class ListSatellitesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SatelliteListItem> m_satellites;
-  bool m_satellitesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_satellitesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

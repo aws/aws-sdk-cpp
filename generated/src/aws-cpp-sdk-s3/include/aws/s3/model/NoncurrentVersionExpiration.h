@@ -81,9 +81,9 @@ class NoncurrentVersionExpiration {
   ///@}
  private:
   int m_noncurrentDays{0};
-  bool m_noncurrentDaysHasBeenSet = false;
 
   int m_newerNoncurrentVersions{0};
+  bool m_noncurrentDaysHasBeenSet = false;
   bool m_newerNoncurrentVersionsHasBeenSet = false;
 };
 

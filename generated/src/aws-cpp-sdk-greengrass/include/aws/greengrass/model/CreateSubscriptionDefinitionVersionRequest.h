@@ -93,12 +93,12 @@ class CreateSubscriptionDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_subscriptionDefinitionId;
-  bool m_subscriptionDefinitionIdHasBeenSet = false;
 
   Aws::Vector<Subscription> m_subscriptions;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_subscriptionDefinitionIdHasBeenSet = false;
   bool m_subscriptionsHasBeenSet = false;
 };
 

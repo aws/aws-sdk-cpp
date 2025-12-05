@@ -99,12 +99,12 @@ class CreateAccessPreviewRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Configuration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

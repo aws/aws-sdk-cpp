@@ -102,9 +102,9 @@ class Entity {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_keyAttributesHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class AutomatedReasoningCheckSatisfiableFinding {
   ///@}
  private:
   AutomatedReasoningCheckTranslation m_translation;
-  bool m_translationHasBeenSet = false;
 
   AutomatedReasoningCheckScenario m_claimsTrueScenario;
-  bool m_claimsTrueScenarioHasBeenSet = false;
 
   AutomatedReasoningCheckScenario m_claimsFalseScenario;
-  bool m_claimsFalseScenarioHasBeenSet = false;
 
   AutomatedReasoningCheckLogicWarning m_logicWarning;
+  bool m_translationHasBeenSet = false;
+  bool m_claimsTrueScenarioHasBeenSet = false;
+  bool m_claimsFalseScenarioHasBeenSet = false;
   bool m_logicWarningHasBeenSet = false;
 };
 

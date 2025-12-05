@@ -107,12 +107,12 @@ class PivotTableFieldOptions {
   ///@}
  private:
   Aws::Vector<PivotTableFieldOption> m_selectedFieldOptions;
-  bool m_selectedFieldOptionsHasBeenSet = false;
 
   Aws::Vector<PivotTableDataPathOption> m_dataPathOptions;
-  bool m_dataPathOptionsHasBeenSet = false;
 
   Aws::Vector<PivotTableFieldCollapseStateOption> m_collapseStateOptions;
+  bool m_selectedFieldOptionsHasBeenSet = false;
+  bool m_dataPathOptionsHasBeenSet = false;
   bool m_collapseStateOptionsHasBeenSet = false;
 };
 

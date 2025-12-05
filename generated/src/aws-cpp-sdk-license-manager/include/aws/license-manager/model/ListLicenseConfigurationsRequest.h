@@ -122,15 +122,15 @@ class ListLicenseConfigurationsRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_licenseConfigurationArns;
-  bool m_licenseConfigurationArnsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_licenseConfigurationArnsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

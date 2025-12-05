@@ -131,18 +131,18 @@ class CreateBatchPredictionRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_batchPredictionId;
-  bool m_batchPredictionIdHasBeenSet = false;
 
   Aws::String m_batchPredictionName;
-  bool m_batchPredictionNameHasBeenSet = false;
 
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_batchPredictionDataSourceId;
-  bool m_batchPredictionDataSourceIdHasBeenSet = false;
 
   Aws::String m_outputUri;
+  bool m_batchPredictionIdHasBeenSet = false;
+  bool m_batchPredictionNameHasBeenSet = false;
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_batchPredictionDataSourceIdHasBeenSet = false;
   bool m_outputUriHasBeenSet = false;
 };
 

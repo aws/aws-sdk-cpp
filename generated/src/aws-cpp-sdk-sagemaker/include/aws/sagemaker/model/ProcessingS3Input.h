@@ -159,21 +159,21 @@ class ProcessingS3Input {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_localPath;
-  bool m_localPathHasBeenSet = false;
 
   ProcessingS3DataType m_s3DataType{ProcessingS3DataType::NOT_SET};
-  bool m_s3DataTypeHasBeenSet = false;
 
   ProcessingS3InputMode m_s3InputMode{ProcessingS3InputMode::NOT_SET};
-  bool m_s3InputModeHasBeenSet = false;
 
   ProcessingS3DataDistributionType m_s3DataDistributionType{ProcessingS3DataDistributionType::NOT_SET};
-  bool m_s3DataDistributionTypeHasBeenSet = false;
 
   ProcessingS3CompressionType m_s3CompressionType{ProcessingS3CompressionType::NOT_SET};
+  bool m_s3UriHasBeenSet = false;
+  bool m_localPathHasBeenSet = false;
+  bool m_s3DataTypeHasBeenSet = false;
+  bool m_s3InputModeHasBeenSet = false;
+  bool m_s3DataDistributionTypeHasBeenSet = false;
   bool m_s3CompressionTypeHasBeenSet = false;
 };
 

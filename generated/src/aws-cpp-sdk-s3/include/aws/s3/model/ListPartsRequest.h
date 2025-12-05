@@ -288,36 +288,36 @@ class ListPartsRequest : public S3Request {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   int m_maxParts{0};
-  bool m_maxPartsHasBeenSet = false;
 
   int m_partNumberMarker{0};
-  bool m_partNumberMarkerHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKey;
-  bool m_sSECustomerKeyHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_maxPartsHasBeenSet = false;
+  bool m_partNumberMarkerHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

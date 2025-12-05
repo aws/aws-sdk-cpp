@@ -122,18 +122,18 @@ class StartProtectedJobRequest : public CleanRoomsRequest {
   ///@}
  private:
   ProtectedJobType m_type{ProtectedJobType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   ProtectedJobParameters m_jobParameters;
-  bool m_jobParametersHasBeenSet = false;
 
   ProtectedJobResultConfigurationInput m_resultConfiguration;
-  bool m_resultConfigurationHasBeenSet = false;
 
   ProtectedJobComputeConfiguration m_computeConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_jobParametersHasBeenSet = false;
+  bool m_resultConfigurationHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
 };
 

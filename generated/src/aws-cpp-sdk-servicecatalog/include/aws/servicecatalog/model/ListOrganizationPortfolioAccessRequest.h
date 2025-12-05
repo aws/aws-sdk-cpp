@@ -125,18 +125,18 @@ class ListOrganizationPortfolioAccessRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   OrganizationNodeType m_organizationNodeType{OrganizationNodeType::NOT_SET};
-  bool m_organizationNodeTypeHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_portfolioIdHasBeenSet = false;
+  bool m_organizationNodeTypeHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

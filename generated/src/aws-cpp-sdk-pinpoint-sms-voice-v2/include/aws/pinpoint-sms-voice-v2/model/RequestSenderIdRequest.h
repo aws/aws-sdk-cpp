@@ -158,21 +158,21 @@ class RequestSenderIdRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::Vector<MessageType> m_messageTypes;
-  bool m_messageTypesHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_senderIdHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_messageTypesHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

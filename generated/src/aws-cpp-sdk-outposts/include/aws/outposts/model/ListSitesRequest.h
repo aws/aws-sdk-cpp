@@ -137,18 +137,18 @@ class ListSitesRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operatingAddressCountryCodeFilter;
-  bool m_operatingAddressCountryCodeFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operatingAddressStateOrRegionFilter;
-  bool m_operatingAddressStateOrRegionFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operatingAddressCityFilter;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_operatingAddressCountryCodeFilterHasBeenSet = false;
+  bool m_operatingAddressStateOrRegionFilterHasBeenSet = false;
   bool m_operatingAddressCityFilterHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class GetQueueUrlResult {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_queueUrlHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

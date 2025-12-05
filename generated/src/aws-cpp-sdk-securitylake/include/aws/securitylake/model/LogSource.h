@@ -95,12 +95,12 @@ class LogSource {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<LogSourceResource> m_sources;
+  bool m_accountHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

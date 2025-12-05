@@ -95,12 +95,12 @@ class UtilizationByTime {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::Vector<ReservationUtilizationGroup> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   ReservationAggregates m_total;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

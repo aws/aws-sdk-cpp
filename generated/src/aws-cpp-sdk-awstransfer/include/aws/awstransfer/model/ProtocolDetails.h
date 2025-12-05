@@ -183,15 +183,15 @@ class ProtocolDetails {
   ///@}
  private:
   Aws::String m_passiveIp;
-  bool m_passiveIpHasBeenSet = false;
 
   TlsSessionResumptionMode m_tlsSessionResumptionMode{TlsSessionResumptionMode::NOT_SET};
-  bool m_tlsSessionResumptionModeHasBeenSet = false;
 
   SetStatOption m_setStatOption{SetStatOption::NOT_SET};
-  bool m_setStatOptionHasBeenSet = false;
 
   Aws::Vector<As2Transport> m_as2Transports;
+  bool m_passiveIpHasBeenSet = false;
+  bool m_tlsSessionResumptionModeHasBeenSet = false;
+  bool m_setStatOptionHasBeenSet = false;
   bool m_as2TransportsHasBeenSet = false;
 };
 

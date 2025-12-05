@@ -74,9 +74,9 @@ class AvailabilityZoneImpairmentPolicy {
   ///@}
  private:
   bool m_zonalShiftEnabled{false};
-  bool m_zonalShiftEnabledHasBeenSet = false;
 
   ImpairedZoneHealthCheckBehavior m_impairedZoneHealthCheckBehavior{ImpairedZoneHealthCheckBehavior::NOT_SET};
+  bool m_zonalShiftEnabledHasBeenSet = false;
   bool m_impairedZoneHealthCheckBehaviorHasBeenSet = false;
 };
 

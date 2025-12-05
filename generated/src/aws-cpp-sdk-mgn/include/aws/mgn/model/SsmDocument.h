@@ -152,21 +152,21 @@ class SsmDocument {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
-  bool m_externalParametersHasBeenSet = false;
 
   bool m_mustSucceedForCutover{false};
-  bool m_mustSucceedForCutoverHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_ssmDocumentName;
-  bool m_ssmDocumentNameHasBeenSet = false;
 
   int m_timeoutSeconds{0};
+  bool m_actionNameHasBeenSet = false;
+  bool m_externalParametersHasBeenSet = false;
+  bool m_mustSucceedForCutoverHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_ssmDocumentNameHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
 };
 

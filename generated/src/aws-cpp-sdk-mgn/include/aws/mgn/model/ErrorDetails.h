@@ -104,15 +104,15 @@ class ErrorDetails {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

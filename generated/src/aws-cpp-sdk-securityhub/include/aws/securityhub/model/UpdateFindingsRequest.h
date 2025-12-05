@@ -84,12 +84,12 @@ class UpdateFindingsRequest : public SecurityHubRequest {
   ///@}
  private:
   AwsSecurityFindingFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   NoteUpdate m_note;
-  bool m_noteHasBeenSet = false;
 
   RecordState m_recordState{RecordState::NOT_SET};
+  bool m_filtersHasBeenSet = false;
+  bool m_noteHasBeenSet = false;
   bool m_recordStateHasBeenSet = false;
 };
 

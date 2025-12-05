@@ -60,9 +60,9 @@ class StartFlowExecutionResult {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

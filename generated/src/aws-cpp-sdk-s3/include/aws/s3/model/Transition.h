@@ -99,12 +99,12 @@ class Transition {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   TransitionStorageClass m_storageClass{TransitionStorageClass::NOT_SET};
+  bool m_dateHasBeenSet = false;
+  bool m_daysHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;
 };
 

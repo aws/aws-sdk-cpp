@@ -68,9 +68,9 @@ class PortalStatus {
   ///@}
  private:
   PortalState m_state{PortalState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   MonitorErrorDetails m_error;
+  bool m_stateHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

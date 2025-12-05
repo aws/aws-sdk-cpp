@@ -83,12 +83,12 @@ class GetExternalModelsRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_modelEndpoint;
-  bool m_modelEndpointHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_modelEndpointHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

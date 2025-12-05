@@ -174,24 +174,24 @@ class PutDeploymentParameterRequest : public MarketplaceDeploymentRequest {
   ///@}
  private:
   Aws::String m_agreementId;
-  bool m_agreementIdHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DeploymentParameterInput m_deploymentParameter;
-  bool m_deploymentParameterHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_agreementIdHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_deploymentParameterHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

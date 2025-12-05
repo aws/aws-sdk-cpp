@@ -88,12 +88,12 @@ class AllowedRenditionSize {
   ///@}
  private:
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   RequiredFlag m_required{RequiredFlag::NOT_SET};
-  bool m_requiredHasBeenSet = false;
 
   int m_width{0};
+  bool m_heightHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

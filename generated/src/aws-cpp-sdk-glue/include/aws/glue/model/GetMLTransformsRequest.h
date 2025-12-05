@@ -103,15 +103,15 @@ class GetMLTransformsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   TransformFilterCriteria m_filter;
-  bool m_filterHasBeenSet = false;
 
   TransformSortCriteria m_sort;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

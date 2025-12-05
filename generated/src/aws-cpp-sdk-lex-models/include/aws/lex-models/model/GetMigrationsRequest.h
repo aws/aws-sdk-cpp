@@ -143,21 +143,21 @@ class GetMigrationsRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   MigrationSortAttribute m_sortByAttribute{MigrationSortAttribute::NOT_SET};
-  bool m_sortByAttributeHasBeenSet = false;
 
   SortOrder m_sortByOrder{SortOrder::NOT_SET};
-  bool m_sortByOrderHasBeenSet = false;
 
   Aws::String m_v1BotNameContains;
-  bool m_v1BotNameContainsHasBeenSet = false;
 
   MigrationStatus m_migrationStatusEquals{MigrationStatus::NOT_SET};
-  bool m_migrationStatusEqualsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_sortByAttributeHasBeenSet = false;
+  bool m_sortByOrderHasBeenSet = false;
+  bool m_v1BotNameContainsHasBeenSet = false;
+  bool m_migrationStatusEqualsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

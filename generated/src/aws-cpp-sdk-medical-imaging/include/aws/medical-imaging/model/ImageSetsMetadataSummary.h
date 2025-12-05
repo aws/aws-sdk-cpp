@@ -174,27 +174,27 @@ class ImageSetsMetadataSummary {
   ///@}
  private:
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessedAt{};
-  bool m_lastAccessedAtHasBeenSet = false;
 
   StorageTier m_storageTier{StorageTier::NOT_SET};
-  bool m_storageTierHasBeenSet = false;
 
   DICOMTags m_dICOMTags;
-  bool m_dICOMTagsHasBeenSet = false;
 
   bool m_isPrimary{false};
+  bool m_imageSetIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_lastAccessedAtHasBeenSet = false;
+  bool m_storageTierHasBeenSet = false;
+  bool m_dICOMTagsHasBeenSet = false;
   bool m_isPrimaryHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class EventTriggerLimits {
   ///@}
  private:
   long long m_eventExpiration{0};
-  bool m_eventExpirationHasBeenSet = false;
 
   Aws::Vector<Period> m_periods;
+  bool m_eventExpirationHasBeenSet = false;
   bool m_periodsHasBeenSet = false;
 };
 

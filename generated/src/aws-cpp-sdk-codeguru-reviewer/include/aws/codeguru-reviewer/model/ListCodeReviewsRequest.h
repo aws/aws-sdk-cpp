@@ -172,21 +172,21 @@ class ListCodeReviewsRequest : public CodeGuruReviewerRequest {
   ///@}
  private:
   Aws::Vector<ProviderType> m_providerTypes;
-  bool m_providerTypesHasBeenSet = false;
 
   Aws::Vector<JobState> m_states;
-  bool m_statesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_repositoryNames;
-  bool m_repositoryNamesHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_providerTypesHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
+  bool m_repositoryNamesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

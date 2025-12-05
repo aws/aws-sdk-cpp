@@ -94,12 +94,12 @@ class EvaluationFormMultiSelectQuestionProperties {
   ///@}
  private:
   Aws::Vector<EvaluationFormMultiSelectQuestionOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   EvaluationFormMultiSelectQuestionDisplayMode m_displayAs{EvaluationFormMultiSelectQuestionDisplayMode::NOT_SET};
-  bool m_displayAsHasBeenSet = false;
 
   EvaluationFormMultiSelectQuestionAutomation m_automation;
+  bool m_optionsHasBeenSet = false;
+  bool m_displayAsHasBeenSet = false;
   bool m_automationHasBeenSet = false;
 };
 

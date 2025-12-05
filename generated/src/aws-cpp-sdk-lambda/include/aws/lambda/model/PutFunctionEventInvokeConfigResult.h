@@ -134,21 +134,21 @@ class PutFunctionEventInvokeConfigResult {
   ///@}
  private:
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   int m_maximumRetryAttempts{0};
-  bool m_maximumRetryAttemptsHasBeenSet = false;
 
   int m_maximumEventAgeInSeconds{0};
-  bool m_maximumEventAgeInSecondsHasBeenSet = false;
 
   DestinationConfig m_destinationConfig;
-  bool m_destinationConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
+  bool m_maximumRetryAttemptsHasBeenSet = false;
+  bool m_maximumEventAgeInSecondsHasBeenSet = false;
+  bool m_destinationConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

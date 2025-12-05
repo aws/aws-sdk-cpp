@@ -231,36 +231,36 @@ class UpdateRoomResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   int m_maximumMessageRatePerSecond{0};
-  bool m_maximumMessageRatePerSecondHasBeenSet = false;
 
   int m_maximumMessageLength{0};
-  bool m_maximumMessageLengthHasBeenSet = false;
 
   MessageReviewHandler m_messageReviewHandler;
-  bool m_messageReviewHandlerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
-  bool m_loggingConfigurationIdentifiersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_maximumMessageRatePerSecondHasBeenSet = false;
+  bool m_maximumMessageLengthHasBeenSet = false;
+  bool m_messageReviewHandlerHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_loggingConfigurationIdentifiersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

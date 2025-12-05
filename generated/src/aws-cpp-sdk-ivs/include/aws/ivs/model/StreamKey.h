@@ -117,15 +117,15 @@ class StreamKey {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_arnHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

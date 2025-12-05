@@ -103,15 +103,15 @@ class Monitor {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   MonitorConfigState m_status{MonitorConfigState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MonitorProcessingStatusCode m_processingStatus{MonitorProcessingStatusCode::NOT_SET};
+  bool m_monitorNameHasBeenSet = false;
+  bool m_monitorArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_processingStatusHasBeenSet = false;
 };
 

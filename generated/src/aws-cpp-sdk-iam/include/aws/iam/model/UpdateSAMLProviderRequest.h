@@ -132,18 +132,18 @@ class UpdateSAMLProviderRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_sAMLMetadataDocument;
-  bool m_sAMLMetadataDocumentHasBeenSet = false;
 
   Aws::String m_sAMLProviderArn;
-  bool m_sAMLProviderArnHasBeenSet = false;
 
   AssertionEncryptionModeType m_assertionEncryptionMode{AssertionEncryptionModeType::NOT_SET};
-  bool m_assertionEncryptionModeHasBeenSet = false;
 
   Aws::String m_addPrivateKey;
-  bool m_addPrivateKeyHasBeenSet = false;
 
   Aws::String m_removePrivateKey;
+  bool m_sAMLMetadataDocumentHasBeenSet = false;
+  bool m_sAMLProviderArnHasBeenSet = false;
+  bool m_assertionEncryptionModeHasBeenSet = false;
+  bool m_addPrivateKeyHasBeenSet = false;
   bool m_removePrivateKeyHasBeenSet = false;
 };
 

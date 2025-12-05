@@ -82,12 +82,12 @@ class AnalyzerNameUnion {
   ///@}
  private:
   BinaryAnalyzerName m_binaryAnalyzerName{BinaryAnalyzerName::NOT_SET};
-  bool m_binaryAnalyzerNameHasBeenSet = false;
 
   RunTimeAnalyzerName m_runTimeAnalyzerName{RunTimeAnalyzerName::NOT_SET};
-  bool m_runTimeAnalyzerNameHasBeenSet = false;
 
   SourceCodeAnalyzerName m_sourceCodeAnalyzerName{SourceCodeAnalyzerName::NOT_SET};
+  bool m_binaryAnalyzerNameHasBeenSet = false;
+  bool m_runTimeAnalyzerNameHasBeenSet = false;
   bool m_sourceCodeAnalyzerNameHasBeenSet = false;
 };
 

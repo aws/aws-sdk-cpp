@@ -94,12 +94,12 @@ class ServiceNameAndResourceType {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   ResourceRegionScope m_resourceRegionScope{ResourceRegionScope::NOT_SET};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_resourceRegionScopeHasBeenSet = false;
 };
 

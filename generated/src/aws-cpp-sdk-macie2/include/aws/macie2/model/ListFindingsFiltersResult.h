@@ -86,12 +86,12 @@ class ListFindingsFiltersResult {
   ///@}
  private:
   Aws::Vector<FindingsFilterListItem> m_findingsFilterListItems;
-  bool m_findingsFilterListItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingsFilterListItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

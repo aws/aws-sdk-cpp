@@ -276,36 +276,36 @@ class BlueGreenDeployment {
   ///@}
  private:
   Aws::String m_blueGreenDeploymentIdentifier;
-  bool m_blueGreenDeploymentIdentifierHasBeenSet = false;
 
   Aws::String m_blueGreenDeploymentName;
-  bool m_blueGreenDeploymentNameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Vector<SwitchoverDetail> m_switchoverDetails;
-  bool m_switchoverDetailsHasBeenSet = false;
 
   Aws::Vector<BlueGreenDeploymentTask> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTime{};
-  bool m_deleteTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_blueGreenDeploymentIdentifierHasBeenSet = false;
+  bool m_blueGreenDeploymentNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_switchoverDetailsHasBeenSet = false;
+  bool m_tasksHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_deleteTimeHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

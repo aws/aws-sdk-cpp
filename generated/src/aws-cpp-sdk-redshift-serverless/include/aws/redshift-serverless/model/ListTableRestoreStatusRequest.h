@@ -107,15 +107,15 @@ class ListTableRestoreStatusRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

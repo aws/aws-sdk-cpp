@@ -71,9 +71,9 @@ class StopTimecode {
   ///@}
  private:
   LastFrameClippingBehavior m_lastFrameClippingBehavior{LastFrameClippingBehavior::NOT_SET};
-  bool m_lastFrameClippingBehaviorHasBeenSet = false;
 
   Aws::String m_timecode;
+  bool m_lastFrameClippingBehaviorHasBeenSet = false;
   bool m_timecodeHasBeenSet = false;
 };
 

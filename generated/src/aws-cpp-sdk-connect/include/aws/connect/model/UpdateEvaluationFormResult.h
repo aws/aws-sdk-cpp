@@ -91,15 +91,15 @@ class UpdateEvaluationFormResult {
   ///@}
  private:
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   Aws::String m_evaluationFormArn;
-  bool m_evaluationFormArnHasBeenSet = false;
 
   int m_evaluationFormVersion{0};
-  bool m_evaluationFormVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormArnHasBeenSet = false;
+  bool m_evaluationFormVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

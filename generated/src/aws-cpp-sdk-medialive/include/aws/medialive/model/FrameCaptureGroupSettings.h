@@ -76,9 +76,9 @@ class FrameCaptureGroupSettings {
   ///@}
  private:
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   FrameCaptureCdnSettings m_frameCaptureCdnSettings;
+  bool m_destinationHasBeenSet = false;
   bool m_frameCaptureCdnSettingsHasBeenSet = false;
 };
 

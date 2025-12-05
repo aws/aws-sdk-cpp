@@ -144,21 +144,21 @@ class CreateStreamingURLRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_fleetName;
-  bool m_fleetNameHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   long long m_validity{0};
-  bool m_validityHasBeenSet = false;
 
   Aws::String m_sessionContext;
+  bool m_stackNameHasBeenSet = false;
+  bool m_fleetNameHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_validityHasBeenSet = false;
   bool m_sessionContextHasBeenSet = false;
 };
 

@@ -144,18 +144,18 @@ class CreateTLSInspectionConfigurationRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_tLSInspectionConfigurationName;
-  bool m_tLSInspectionConfigurationNameHasBeenSet = false;
 
   TLSInspectionConfiguration m_tLSInspectionConfiguration;
-  bool m_tLSInspectionConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_tLSInspectionConfigurationNameHasBeenSet = false;
+  bool m_tLSInspectionConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

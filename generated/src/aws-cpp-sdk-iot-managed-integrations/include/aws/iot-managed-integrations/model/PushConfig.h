@@ -88,12 +88,12 @@ class PushConfig {
   ///@}
  private:
   OtaTaskAbortConfig m_abortConfig;
-  bool m_abortConfigHasBeenSet = false;
 
   OtaTaskExecutionRolloutConfig m_rolloutConfig;
-  bool m_rolloutConfigHasBeenSet = false;
 
   OtaTaskTimeoutConfig m_timeoutConfig;
+  bool m_abortConfigHasBeenSet = false;
+  bool m_rolloutConfigHasBeenSet = false;
   bool m_timeoutConfigHasBeenSet = false;
 };
 

@@ -90,9 +90,9 @@ class Projection {
   ///@}
  private:
   ProjectionType m_projectionType{ProjectionType::NOT_SET};
-  bool m_projectionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nonKeyAttributes;
+  bool m_projectionTypeHasBeenSet = false;
   bool m_nonKeyAttributesHasBeenSet = false;
 };
 

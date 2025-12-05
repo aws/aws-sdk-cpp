@@ -86,12 +86,12 @@ class DescribeCarrierGatewaysResponse {
   ///@}
  private:
   Aws::Vector<CarrierGateway> m_carrierGateways;
-  bool m_carrierGatewaysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_carrierGatewaysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

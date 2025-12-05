@@ -141,18 +141,18 @@ class ChatResponseConfigurationDetail {
   ///@}
  private:
   Aws::Map<ResponseConfigurationType, ResponseConfiguration> m_responseConfigurations;
-  bool m_responseConfigurationsHasBeenSet = false;
 
   Aws::String m_responseConfigurationSummary;
-  bool m_responseConfigurationSummaryHasBeenSet = false;
 
   ChatResponseConfigurationStatus m_status{ChatResponseConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_responseConfigurationsHasBeenSet = false;
+  bool m_responseConfigurationSummaryHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ScriptModeConfig {
   ///@}
  private:
   Aws::String m_entryPoint;
-  bool m_entryPointHasBeenSet = false;
 
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   CompressionType m_compressionType{CompressionType::NOT_SET};
+  bool m_entryPointHasBeenSet = false;
+  bool m_s3UriHasBeenSet = false;
   bool m_compressionTypeHasBeenSet = false;
 };
 

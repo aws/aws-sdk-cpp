@@ -89,12 +89,12 @@ class ActorProcess {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_sha256;
+  bool m_nameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_sha256HasBeenSet = false;
 };
 

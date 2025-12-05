@@ -154,21 +154,21 @@ class AccountDetails {
   ///@}
  private:
   MailType m_mailType{MailType::NOT_SET};
-  bool m_mailTypeHasBeenSet = false;
 
   Aws::String m_websiteURL;
-  bool m_websiteURLHasBeenSet = false;
 
   ContactLanguage m_contactLanguage{ContactLanguage::NOT_SET};
-  bool m_contactLanguageHasBeenSet = false;
 
   Aws::String m_useCaseDescription;
-  bool m_useCaseDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalContactEmailAddresses;
-  bool m_additionalContactEmailAddressesHasBeenSet = false;
 
   ReviewDetails m_reviewDetails;
+  bool m_mailTypeHasBeenSet = false;
+  bool m_websiteURLHasBeenSet = false;
+  bool m_contactLanguageHasBeenSet = false;
+  bool m_useCaseDescriptionHasBeenSet = false;
+  bool m_additionalContactEmailAddressesHasBeenSet = false;
   bool m_reviewDetailsHasBeenSet = false;
 };
 

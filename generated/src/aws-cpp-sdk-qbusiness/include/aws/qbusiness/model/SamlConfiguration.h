@@ -109,15 +109,15 @@ class SamlConfiguration {
   ///@}
  private:
   Aws::String m_metadataXML;
-  bool m_metadataXMLHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_userIdAttribute;
-  bool m_userIdAttributeHasBeenSet = false;
 
   Aws::String m_userGroupAttribute;
+  bool m_metadataXMLHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_userIdAttributeHasBeenSet = false;
   bool m_userGroupAttributeHasBeenSet = false;
 };
 

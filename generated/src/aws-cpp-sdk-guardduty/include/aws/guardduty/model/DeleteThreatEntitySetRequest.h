@@ -70,9 +70,9 @@ class DeleteThreatEntitySetRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_threatEntitySetId;
+  bool m_detectorIdHasBeenSet = false;
   bool m_threatEntitySetIdHasBeenSet = false;
 };
 

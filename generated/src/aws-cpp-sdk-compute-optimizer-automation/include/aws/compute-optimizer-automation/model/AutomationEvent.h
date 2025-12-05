@@ -305,48 +305,48 @@ class AutomationEvent {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventDescription;
-  bool m_eventDescriptionHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   EventStatus m_eventStatus{EventStatus::NOT_SET};
-  bool m_eventStatusHasBeenSet = false;
 
   Aws::String m_eventStatusReason;
-  bool m_eventStatusReasonHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_recommendedActionId;
-  bool m_recommendedActionIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedTimestamp{};
-  bool m_completedTimestampHasBeenSet = false;
 
   EstimatedMonthlySavings m_estimatedMonthlySavings;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventDescriptionHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventStatusHasBeenSet = false;
+  bool m_eventStatusReasonHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_recommendedActionIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_completedTimestampHasBeenSet = false;
   bool m_estimatedMonthlySavingsHasBeenSet = false;
 };
 

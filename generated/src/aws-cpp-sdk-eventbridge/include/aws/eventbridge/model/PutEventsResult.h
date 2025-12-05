@@ -86,12 +86,12 @@ class PutEventsResult {
   ///@}
  private:
   int m_failedEntryCount{0};
-  bool m_failedEntryCountHasBeenSet = false;
 
   Aws::Vector<PutEventsResultEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedEntryCountHasBeenSet = false;
+  bool m_entriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

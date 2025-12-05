@@ -86,12 +86,12 @@ class DescribeNatGatewaysResponse {
   ///@}
  private:
   Aws::Vector<NatGateway> m_natGateways;
-  bool m_natGatewaysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_natGatewaysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

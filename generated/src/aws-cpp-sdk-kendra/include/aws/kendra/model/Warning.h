@@ -68,9 +68,9 @@ class Warning {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   WarningCode m_code{WarningCode::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

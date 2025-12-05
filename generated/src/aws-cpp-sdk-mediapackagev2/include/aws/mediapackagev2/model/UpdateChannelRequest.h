@@ -152,21 +152,21 @@ class UpdateChannelRequest : public Mediapackagev2Request {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   InputSwitchConfiguration m_inputSwitchConfiguration;
-  bool m_inputSwitchConfigurationHasBeenSet = false;
 
   OutputHeaderConfiguration m_outputHeaderConfiguration;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inputSwitchConfigurationHasBeenSet = false;
   bool m_outputHeaderConfigurationHasBeenSet = false;
 };
 

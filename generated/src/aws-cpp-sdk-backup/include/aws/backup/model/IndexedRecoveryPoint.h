@@ -215,30 +215,30 @@ class IndexedRecoveryPoint {
   ///@}
  private:
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_sourceResourceArn;
-  bool m_sourceResourceArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_backupCreationDate{};
-  bool m_backupCreationDateHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_indexCreationDate{};
-  bool m_indexCreationDateHasBeenSet = false;
 
   IndexStatus m_indexStatus{IndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   Aws::String m_indexStatusMessage;
-  bool m_indexStatusMessageHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_sourceResourceArnHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_backupCreationDateHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_indexCreationDateHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
+  bool m_indexStatusMessageHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
 };
 

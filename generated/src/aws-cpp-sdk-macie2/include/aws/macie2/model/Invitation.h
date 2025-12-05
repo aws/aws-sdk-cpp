@@ -108,15 +108,15 @@ class Invitation {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_invitationId;
-  bool m_invitationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_invitedAt{};
-  bool m_invitedAtHasBeenSet = false;
 
   RelationshipStatus m_relationshipStatus{RelationshipStatus::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
+  bool m_invitationIdHasBeenSet = false;
+  bool m_invitedAtHasBeenSet = false;
   bool m_relationshipStatusHasBeenSet = false;
 };
 

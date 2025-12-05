@@ -168,21 +168,21 @@ class CreateAutomatedReasoningPolicyTestCaseRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_guardContent;
-  bool m_guardContentHasBeenSet = false;
 
   Aws::String m_queryContent;
-  bool m_queryContentHasBeenSet = false;
 
   AutomatedReasoningCheckResult m_expectedAggregatedFindingsResult{AutomatedReasoningCheckResult::NOT_SET};
-  bool m_expectedAggregatedFindingsResultHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   double m_confidenceThreshold{0.0};
+  bool m_policyArnHasBeenSet = false;
+  bool m_guardContentHasBeenSet = false;
+  bool m_queryContentHasBeenSet = false;
+  bool m_expectedAggregatedFindingsResultHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_confidenceThresholdHasBeenSet = false;
 };
 

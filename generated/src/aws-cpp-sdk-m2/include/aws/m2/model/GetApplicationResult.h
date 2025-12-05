@@ -426,66 +426,66 @@ class GetApplicationResult {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   DeployedVersionSummary m_deployedVersion;
-  bool m_deployedVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStartTime{};
-  bool m_lastStartTimeHasBeenSet = false;
 
   ApplicationVersionSummary m_latestVersion;
-  bool m_latestVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listenerArns;
-  bool m_listenerArnsHasBeenSet = false;
 
   Aws::Vector<int> m_listenerPorts;
-  bool m_listenerPortsHasBeenSet = false;
 
   Aws::String m_loadBalancerDnsName;
-  bool m_loadBalancerDnsNameHasBeenSet = false;
 
   Aws::Vector<LogGroupSummary> m_logGroups;
-  bool m_logGroupsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ApplicationLifecycle m_status{ApplicationLifecycle::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetGroupArns;
-  bool m_targetGroupArnsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deployedVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_lastStartTimeHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
+  bool m_listenerArnsHasBeenSet = false;
+  bool m_listenerPortsHasBeenSet = false;
+  bool m_loadBalancerDnsNameHasBeenSet = false;
+  bool m_logGroupsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetGroupArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

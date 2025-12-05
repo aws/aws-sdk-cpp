@@ -92,12 +92,12 @@ class AcceptPortfolioShareRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   PortfolioShareType m_portfolioShareType{PortfolioShareType::NOT_SET};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_portfolioIdHasBeenSet = false;
   bool m_portfolioShareTypeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class FieldSortOptions {
   ///@}
  private:
   FieldSort m_fieldSort;
-  bool m_fieldSortHasBeenSet = false;
 
   ColumnSort m_columnSort;
+  bool m_fieldSortHasBeenSet = false;
   bool m_columnSortHasBeenSet = false;
 };
 

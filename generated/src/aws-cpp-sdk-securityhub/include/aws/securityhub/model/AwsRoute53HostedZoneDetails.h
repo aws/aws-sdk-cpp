@@ -127,15 +127,15 @@ class AwsRoute53HostedZoneDetails {
   ///@}
  private:
   AwsRoute53HostedZoneObjectDetails m_hostedZone;
-  bool m_hostedZoneHasBeenSet = false;
 
   Aws::Vector<AwsRoute53HostedZoneVpcDetails> m_vpcs;
-  bool m_vpcsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nameServers;
-  bool m_nameServersHasBeenSet = false;
 
   AwsRoute53QueryLoggingConfigDetails m_queryLoggingConfig;
+  bool m_hostedZoneHasBeenSet = false;
+  bool m_vpcsHasBeenSet = false;
+  bool m_nameServersHasBeenSet = false;
   bool m_queryLoggingConfigHasBeenSet = false;
 };
 

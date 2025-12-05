@@ -103,15 +103,15 @@ class FrameCaptureSettings {
   ///@}
  private:
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   int m_maxCaptures{0};
-  bool m_maxCapturesHasBeenSet = false;
 
   int m_quality{0};
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_maxCapturesHasBeenSet = false;
   bool m_qualityHasBeenSet = false;
 };
 

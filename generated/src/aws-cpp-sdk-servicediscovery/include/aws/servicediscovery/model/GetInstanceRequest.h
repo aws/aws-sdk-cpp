@@ -71,9 +71,9 @@ class GetInstanceRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_serviceIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

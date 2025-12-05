@@ -127,21 +127,21 @@ class UpdateSessionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
-  bool m_sessionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

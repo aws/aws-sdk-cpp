@@ -173,24 +173,24 @@ class CreateIndexRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IndexType m_type{IndexType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IndexCapacityConfiguration m_capacityConfiguration;
-  bool m_capacityConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_capacityConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

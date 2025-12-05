@@ -73,9 +73,9 @@ class DeleteVoiceConnectorTerminationCredentialsRequest : public ChimeSDKVoiceRe
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_usernames;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_usernamesHasBeenSet = false;
 };
 

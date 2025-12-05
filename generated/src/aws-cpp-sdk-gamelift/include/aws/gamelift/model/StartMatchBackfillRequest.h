@@ -132,15 +132,15 @@ class StartMatchBackfillRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_ticketId;
-  bool m_ticketIdHasBeenSet = false;
 
   Aws::String m_configurationName;
-  bool m_configurationNameHasBeenSet = false;
 
   Aws::String m_gameSessionArn;
-  bool m_gameSessionArnHasBeenSet = false;
 
   Aws::Vector<Player> m_players;
+  bool m_ticketIdHasBeenSet = false;
+  bool m_configurationNameHasBeenSet = false;
+  bool m_gameSessionArnHasBeenSet = false;
   bool m_playersHasBeenSet = false;
 };
 

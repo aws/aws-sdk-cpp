@@ -94,12 +94,12 @@ class UpdateProxyRuleGroupPrioritiesResult {
   ///@}
  private:
   Aws::Vector<ProxyRuleGroupPriorityResult> m_proxyRuleGroups;
-  bool m_proxyRuleGroupsHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyRuleGroupsHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

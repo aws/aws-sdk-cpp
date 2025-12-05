@@ -178,24 +178,24 @@ class ListPhoneNumbersV2Request : public ConnectRequest {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PhoneNumberCountryCode> m_phoneNumberCountryCodes;
-  bool m_phoneNumberCountryCodesHasBeenSet = false;
 
   Aws::Vector<PhoneNumberType> m_phoneNumberTypes;
-  bool m_phoneNumberTypesHasBeenSet = false;
 
   Aws::String m_phoneNumberPrefix;
+  bool m_targetArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_phoneNumberCountryCodesHasBeenSet = false;
+  bool m_phoneNumberTypesHasBeenSet = false;
   bool m_phoneNumberPrefixHasBeenSet = false;
 };
 

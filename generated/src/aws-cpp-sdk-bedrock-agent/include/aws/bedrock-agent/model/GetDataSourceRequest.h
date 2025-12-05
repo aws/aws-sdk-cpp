@@ -65,9 +65,9 @@ class GetDataSourceRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
 };
 

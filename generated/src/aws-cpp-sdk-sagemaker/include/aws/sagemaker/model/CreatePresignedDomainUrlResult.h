@@ -59,9 +59,9 @@ class CreatePresignedDomainUrlResult {
   ///@}
  private:
   Aws::String m_authorizedUrl;
-  bool m_authorizedUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizedUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DeletePipelineRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_pipelineNameHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

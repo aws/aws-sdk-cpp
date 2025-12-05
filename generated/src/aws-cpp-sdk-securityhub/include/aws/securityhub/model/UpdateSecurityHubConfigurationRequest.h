@@ -79,9 +79,9 @@ class UpdateSecurityHubConfigurationRequest : public SecurityHubRequest {
   ///@}
  private:
   bool m_autoEnableControls{false};
-  bool m_autoEnableControlsHasBeenSet = false;
 
   ControlFindingGenerator m_controlFindingGenerator{ControlFindingGenerator::NOT_SET};
+  bool m_autoEnableControlsHasBeenSet = false;
   bool m_controlFindingGeneratorHasBeenSet = false;
 };
 

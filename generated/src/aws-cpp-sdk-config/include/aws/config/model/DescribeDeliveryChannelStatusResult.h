@@ -74,9 +74,9 @@ class DescribeDeliveryChannelStatusResult {
   ///@}
  private:
   Aws::Vector<DeliveryChannelStatus> m_deliveryChannelsStatus;
-  bool m_deliveryChannelsStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliveryChannelsStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

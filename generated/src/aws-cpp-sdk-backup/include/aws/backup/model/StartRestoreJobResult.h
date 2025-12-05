@@ -59,9 +59,9 @@ class StartRestoreJobResult {
   ///@}
  private:
   Aws::String m_restoreJobId;
-  bool m_restoreJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_restoreJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

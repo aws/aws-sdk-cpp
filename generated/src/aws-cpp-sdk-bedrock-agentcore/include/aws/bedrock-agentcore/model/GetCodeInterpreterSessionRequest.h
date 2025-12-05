@@ -71,9 +71,9 @@ class GetCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_codeInterpreterIdentifier;
-  bool m_codeInterpreterIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_codeInterpreterIdentifierHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

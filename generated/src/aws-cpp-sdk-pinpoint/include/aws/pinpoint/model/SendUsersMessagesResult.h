@@ -58,9 +58,9 @@ class SendUsersMessagesResult {
   ///@}
  private:
   SendUsersMessageResponse m_sendUsersMessageResponse;
-  bool m_sendUsersMessageResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sendUsersMessageResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

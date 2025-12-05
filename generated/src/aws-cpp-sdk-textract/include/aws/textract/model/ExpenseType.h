@@ -67,9 +67,9 @@ class ExpenseType {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_textHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

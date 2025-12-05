@@ -227,36 +227,36 @@ class DataProviderSettings {
   ///@}
  private:
   RedshiftDataProviderSettings m_redshiftSettings;
-  bool m_redshiftSettingsHasBeenSet = false;
 
   PostgreSqlDataProviderSettings m_postgreSqlSettings;
-  bool m_postgreSqlSettingsHasBeenSet = false;
 
   MySqlDataProviderSettings m_mySqlSettings;
-  bool m_mySqlSettingsHasBeenSet = false;
 
   OracleDataProviderSettings m_oracleSettings;
-  bool m_oracleSettingsHasBeenSet = false;
 
   SybaseAseDataProviderSettings m_sybaseAseSettings;
-  bool m_sybaseAseSettingsHasBeenSet = false;
 
   MicrosoftSqlServerDataProviderSettings m_microsoftSqlServerSettings;
-  bool m_microsoftSqlServerSettingsHasBeenSet = false;
 
   DocDbDataProviderSettings m_docDbSettings;
-  bool m_docDbSettingsHasBeenSet = false;
 
   MariaDbDataProviderSettings m_mariaDbSettings;
-  bool m_mariaDbSettingsHasBeenSet = false;
 
   IbmDb2LuwDataProviderSettings m_ibmDb2LuwSettings;
-  bool m_ibmDb2LuwSettingsHasBeenSet = false;
 
   IbmDb2zOsDataProviderSettings m_ibmDb2zOsSettings;
-  bool m_ibmDb2zOsSettingsHasBeenSet = false;
 
   MongoDbDataProviderSettings m_mongoDbSettings;
+  bool m_redshiftSettingsHasBeenSet = false;
+  bool m_postgreSqlSettingsHasBeenSet = false;
+  bool m_mySqlSettingsHasBeenSet = false;
+  bool m_oracleSettingsHasBeenSet = false;
+  bool m_sybaseAseSettingsHasBeenSet = false;
+  bool m_microsoftSqlServerSettingsHasBeenSet = false;
+  bool m_docDbSettingsHasBeenSet = false;
+  bool m_mariaDbSettingsHasBeenSet = false;
+  bool m_ibmDb2LuwSettingsHasBeenSet = false;
+  bool m_ibmDb2zOsSettingsHasBeenSet = false;
   bool m_mongoDbSettingsHasBeenSet = false;
 };
 

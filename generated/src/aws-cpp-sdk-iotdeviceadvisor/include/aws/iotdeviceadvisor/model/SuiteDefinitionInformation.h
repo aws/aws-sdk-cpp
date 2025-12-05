@@ -162,24 +162,24 @@ class SuiteDefinitionInformation {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteDefinitionName;
-  bool m_suiteDefinitionNameHasBeenSet = false;
 
   Aws::Vector<DeviceUnderTest> m_defaultDevices;
-  bool m_defaultDevicesHasBeenSet = false;
 
   bool m_intendedForQualification{false};
-  bool m_intendedForQualificationHasBeenSet = false;
 
   bool m_isLongDurationTest{false};
-  bool m_isLongDurationTestHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_suiteDefinitionIdHasBeenSet = false;
+  bool m_suiteDefinitionNameHasBeenSet = false;
+  bool m_defaultDevicesHasBeenSet = false;
+  bool m_intendedForQualificationHasBeenSet = false;
+  bool m_isLongDurationTestHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

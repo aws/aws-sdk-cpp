@@ -58,9 +58,9 @@ class CancelResourceRequestResult {
   ///@}
  private:
   ProgressEvent m_progressEvent;
-  bool m_progressEventHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_progressEventHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

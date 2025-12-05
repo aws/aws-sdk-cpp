@@ -112,15 +112,15 @@ class TrafficRoutingConfig {
   ///@}
  private:
   TrafficRoutingConfigType m_type{TrafficRoutingConfigType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_waitIntervalInSeconds{0};
-  bool m_waitIntervalInSecondsHasBeenSet = false;
 
   CapacitySize m_canarySize;
-  bool m_canarySizeHasBeenSet = false;
 
   CapacitySize m_linearStepSize;
+  bool m_typeHasBeenSet = false;
+  bool m_waitIntervalInSecondsHasBeenSet = false;
+  bool m_canarySizeHasBeenSet = false;
   bool m_linearStepSizeHasBeenSet = false;
 };
 

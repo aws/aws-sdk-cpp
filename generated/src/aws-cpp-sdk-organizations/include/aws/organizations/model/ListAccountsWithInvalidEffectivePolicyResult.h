@@ -127,15 +127,15 @@ class ListAccountsWithInvalidEffectivePolicyResult {
   ///@}
  private:
   Aws::Vector<Account> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   EffectivePolicyType m_policyType{EffectivePolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountsHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

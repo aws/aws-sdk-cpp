@@ -223,33 +223,33 @@ class AwsApiGatewayV2ApiDetails {
   ///@}
  private:
   Aws::String m_apiEndpoint;
-  bool m_apiEndpointHasBeenSet = false;
 
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_apiKeySelectionExpression;
-  bool m_apiKeySelectionExpressionHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_protocolType;
-  bool m_protocolTypeHasBeenSet = false;
 
   Aws::String m_routeSelectionExpression;
-  bool m_routeSelectionExpressionHasBeenSet = false;
 
   AwsCorsConfiguration m_corsConfiguration;
+  bool m_apiEndpointHasBeenSet = false;
+  bool m_apiIdHasBeenSet = false;
+  bool m_apiKeySelectionExpressionHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
+  bool m_routeSelectionExpressionHasBeenSet = false;
   bool m_corsConfigurationHasBeenSet = false;
 };
 

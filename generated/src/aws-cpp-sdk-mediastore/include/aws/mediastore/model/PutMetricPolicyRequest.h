@@ -79,9 +79,9 @@ class PutMetricPolicyRequest : public MediaStoreRequest {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   MetricPolicy m_metricPolicy;
+  bool m_containerNameHasBeenSet = false;
   bool m_metricPolicyHasBeenSet = false;
 };
 

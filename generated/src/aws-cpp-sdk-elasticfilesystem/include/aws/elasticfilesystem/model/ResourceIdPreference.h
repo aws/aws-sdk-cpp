@@ -77,9 +77,9 @@ class ResourceIdPreference {
   ///@}
  private:
   ResourceIdType m_resourceIdType{ResourceIdType::NOT_SET};
-  bool m_resourceIdTypeHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
+  bool m_resourceIdTypeHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

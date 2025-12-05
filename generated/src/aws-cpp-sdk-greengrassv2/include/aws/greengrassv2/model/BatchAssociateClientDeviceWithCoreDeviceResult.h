@@ -70,9 +70,9 @@ class BatchAssociateClientDeviceWithCoreDeviceResult {
   ///@}
  private:
   Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry> m_errorEntries;
-  bool m_errorEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

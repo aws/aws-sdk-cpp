@@ -89,12 +89,12 @@ class DestinationConfigurationRequest {
   ///@}
  private:
   Aws::String m_destinationIp;
-  bool m_destinationIpHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   InterfaceRequest m_interface;
+  bool m_destinationIpHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
   bool m_interfaceHasBeenSet = false;
 };
 

@@ -141,18 +141,18 @@ class CodeRepositoryAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_projectNames;
-  bool m_projectNamesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_providerTypes;
-  bool m_providerTypesHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   CodeRepositorySortBy m_sortBy{CodeRepositorySortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceIds;
+  bool m_projectNamesHasBeenSet = false;
+  bool m_providerTypesHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_resourceIdsHasBeenSet = false;
 };
 

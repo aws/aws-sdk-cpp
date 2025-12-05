@@ -94,12 +94,12 @@ class ListingSummary {
   ///@}
  private:
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_listingId;
-  bool m_listingIdHasBeenSet = false;
 
   Aws::String m_listingRevision;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_listingIdHasBeenSet = false;
   bool m_listingRevisionHasBeenSet = false;
 };
 

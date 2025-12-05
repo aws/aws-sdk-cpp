@@ -110,15 +110,15 @@ class StaticKeyProvider {
   ///@}
  private:
   Aws::String m_keyFormat;
-  bool m_keyFormatHasBeenSet = false;
 
   Aws::String m_keyFormatVersions;
-  bool m_keyFormatVersionsHasBeenSet = false;
 
   Aws::String m_staticKeyValue;
-  bool m_staticKeyValueHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_keyFormatHasBeenSet = false;
+  bool m_keyFormatVersionsHasBeenSet = false;
+  bool m_staticKeyValueHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

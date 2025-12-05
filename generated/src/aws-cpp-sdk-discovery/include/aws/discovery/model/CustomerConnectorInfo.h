@@ -142,24 +142,24 @@ class CustomerConnectorInfo {
   ///@}
  private:
   int m_activeConnectors{0};
-  bool m_activeConnectorsHasBeenSet = false;
 
   int m_healthyConnectors{0};
-  bool m_healthyConnectorsHasBeenSet = false;
 
   int m_blackListedConnectors{0};
-  bool m_blackListedConnectorsHasBeenSet = false;
 
   int m_shutdownConnectors{0};
-  bool m_shutdownConnectorsHasBeenSet = false;
 
   int m_unhealthyConnectors{0};
-  bool m_unhealthyConnectorsHasBeenSet = false;
 
   int m_totalConnectors{0};
-  bool m_totalConnectorsHasBeenSet = false;
 
   int m_unknownConnectors{0};
+  bool m_activeConnectorsHasBeenSet = false;
+  bool m_healthyConnectorsHasBeenSet = false;
+  bool m_blackListedConnectorsHasBeenSet = false;
+  bool m_shutdownConnectorsHasBeenSet = false;
+  bool m_unhealthyConnectorsHasBeenSet = false;
+  bool m_totalConnectorsHasBeenSet = false;
   bool m_unknownConnectorsHasBeenSet = false;
 };
 

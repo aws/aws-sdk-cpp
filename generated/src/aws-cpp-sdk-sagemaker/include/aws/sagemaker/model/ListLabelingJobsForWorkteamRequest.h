@@ -179,27 +179,27 @@ class ListLabelingJobsForWorkteamRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_workteamArn;
-  bool m_workteamArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::String m_jobReferenceCodeContains;
-  bool m_jobReferenceCodeContainsHasBeenSet = false;
 
   ListLabelingJobsForWorkteamSortByOptions m_sortBy{ListLabelingJobsForWorkteamSortByOptions::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_workteamArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_jobReferenceCodeContainsHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

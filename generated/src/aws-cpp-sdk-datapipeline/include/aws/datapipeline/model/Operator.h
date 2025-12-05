@@ -92,9 +92,9 @@ class Operator {
   ///@}
  private:
   OperatorType m_type{OperatorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_typeHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

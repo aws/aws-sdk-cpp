@@ -71,9 +71,9 @@ class MedicalScribeOutput {
   ///@}
  private:
   Aws::String m_transcriptFileUri;
-  bool m_transcriptFileUriHasBeenSet = false;
 
   Aws::String m_clinicalDocumentUri;
+  bool m_transcriptFileUriHasBeenSet = false;
   bool m_clinicalDocumentUriHasBeenSet = false;
 };
 

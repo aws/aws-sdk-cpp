@@ -65,9 +65,9 @@ class ArchiveContainerSettings {
   ///@}
  private:
   M2tsSettings m_m2tsSettings;
-  bool m_m2tsSettingsHasBeenSet = false;
 
   RawSettings m_rawSettings;
+  bool m_m2tsSettingsHasBeenSet = false;
   bool m_rawSettingsHasBeenSet = false;
 };
 

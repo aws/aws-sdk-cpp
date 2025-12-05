@@ -72,9 +72,9 @@ class GetScheduleRequest : public SchedulerRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_groupNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

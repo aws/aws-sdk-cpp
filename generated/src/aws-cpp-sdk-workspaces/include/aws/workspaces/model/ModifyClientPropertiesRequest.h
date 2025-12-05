@@ -68,9 +68,9 @@ class ModifyClientPropertiesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ClientProperties m_clientProperties;
+  bool m_resourceIdHasBeenSet = false;
   bool m_clientPropertiesHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class ResponderErrorMaskingForHttpCode {
   ///@}
  private:
   Aws::String m_httpCode;
-  bool m_httpCodeHasBeenSet = false;
 
   ResponderErrorMaskingAction m_action{ResponderErrorMaskingAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<ResponderErrorMaskingLoggingType> m_loggingTypes;
-  bool m_loggingTypesHasBeenSet = false;
 
   double m_responseLoggingPercentage{0.0};
+  bool m_httpCodeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_loggingTypesHasBeenSet = false;
   bool m_responseLoggingPercentageHasBeenSet = false;
 };
 

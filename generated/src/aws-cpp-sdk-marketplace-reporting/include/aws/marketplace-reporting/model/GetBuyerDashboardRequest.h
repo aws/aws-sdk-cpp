@@ -76,9 +76,9 @@ class GetBuyerDashboardRequest : public MarketplaceReportingRequest {
   ///@}
  private:
   Aws::String m_dashboardIdentifier;
-  bool m_dashboardIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_embeddingDomains;
+  bool m_dashboardIdentifierHasBeenSet = false;
   bool m_embeddingDomainsHasBeenSet = false;
 };
 

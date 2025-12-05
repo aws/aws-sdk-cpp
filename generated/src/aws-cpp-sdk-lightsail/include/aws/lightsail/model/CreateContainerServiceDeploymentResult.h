@@ -61,9 +61,9 @@ class CreateContainerServiceDeploymentResult {
   ///@}
  private:
   ContainerService m_containerService;
-  bool m_containerServiceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerServiceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

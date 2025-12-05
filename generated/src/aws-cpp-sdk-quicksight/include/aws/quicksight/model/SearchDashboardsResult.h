@@ -101,15 +101,15 @@ class SearchDashboardsResult {
   ///@}
  private:
   Aws::Vector<DashboardSummary> m_dashboardSummaryList;
-  bool m_dashboardSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListModelCustomizationJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ModelCustomizationJobSummary> m_modelCustomizationJobSummaries;
-  bool m_modelCustomizationJobSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_modelCustomizationJobSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

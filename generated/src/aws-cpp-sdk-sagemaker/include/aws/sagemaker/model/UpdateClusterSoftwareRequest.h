@@ -128,15 +128,15 @@ class UpdateClusterSoftwareRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Vector<UpdateClusterSoftwareInstanceGroupSpecification> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   DeploymentConfiguration m_deploymentConfig;
-  bool m_deploymentConfigHasBeenSet = false;
 
   Aws::String m_imageId;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
 };
 

@@ -165,24 +165,24 @@ class Ec2InstanceAggregationResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_ami;
-  bool m_amiHasBeenSet = false;
 
   Aws::String m_operatingSystem;
-  bool m_operatingSystemHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_instanceTags;
-  bool m_instanceTagsHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
-  bool m_severityCountsHasBeenSet = false;
 
   long long m_networkFindings{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_amiHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_instanceTagsHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_severityCountsHasBeenSet = false;
   bool m_networkFindingsHasBeenSet = false;
 };
 

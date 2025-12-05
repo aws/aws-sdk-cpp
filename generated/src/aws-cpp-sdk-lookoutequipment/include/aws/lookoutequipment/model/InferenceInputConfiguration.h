@@ -92,12 +92,12 @@ class InferenceInputConfiguration {
   ///@}
  private:
   InferenceS3InputConfiguration m_s3InputConfiguration;
-  bool m_s3InputConfigurationHasBeenSet = false;
 
   Aws::String m_inputTimeZoneOffset;
-  bool m_inputTimeZoneOffsetHasBeenSet = false;
 
   InferenceInputNameConfiguration m_inferenceInputNameConfiguration;
+  bool m_s3InputConfigurationHasBeenSet = false;
+  bool m_inputTimeZoneOffsetHasBeenSet = false;
   bool m_inferenceInputNameConfigurationHasBeenSet = false;
 };
 

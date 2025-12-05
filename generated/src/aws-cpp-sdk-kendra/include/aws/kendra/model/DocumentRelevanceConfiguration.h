@@ -72,9 +72,9 @@ class DocumentRelevanceConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Relevance m_relevance;
+  bool m_nameHasBeenSet = false;
   bool m_relevanceHasBeenSet = false;
 };
 

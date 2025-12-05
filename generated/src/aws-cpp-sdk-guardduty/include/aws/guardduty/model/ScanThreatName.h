@@ -111,15 +111,15 @@ class ScanThreatName {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   Aws::Vector<ScanFilePath> m_filePaths;
+  bool m_nameHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
   bool m_filePathsHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class SessionKeyMastercard {
   ///@}
  private:
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   Aws::String m_panSequenceNumber;
-  bool m_panSequenceNumberHasBeenSet = false;
 
   Aws::String m_applicationTransactionCounter;
-  bool m_applicationTransactionCounterHasBeenSet = false;
 
   Aws::String m_unpredictableNumber;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_panSequenceNumberHasBeenSet = false;
+  bool m_applicationTransactionCounterHasBeenSet = false;
   bool m_unpredictableNumberHasBeenSet = false;
 };
 

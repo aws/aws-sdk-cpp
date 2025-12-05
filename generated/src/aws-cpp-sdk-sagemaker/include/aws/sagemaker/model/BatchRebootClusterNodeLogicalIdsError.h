@@ -98,12 +98,12 @@ class BatchRebootClusterNodeLogicalIdsError {
   ///@}
  private:
   Aws::String m_nodeLogicalId;
-  bool m_nodeLogicalIdHasBeenSet = false;
 
   BatchRebootClusterNodesErrorCode m_errorCode{BatchRebootClusterNodesErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_nodeLogicalIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

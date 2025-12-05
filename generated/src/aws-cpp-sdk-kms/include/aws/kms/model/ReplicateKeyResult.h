@@ -110,15 +110,15 @@ class ReplicateKeyResult {
   ///@}
  private:
   KeyMetadata m_replicaKeyMetadata;
-  bool m_replicaKeyMetadataHasBeenSet = false;
 
   Aws::String m_replicaPolicy;
-  bool m_replicaPolicyHasBeenSet = false;
 
   Aws::Vector<Tag> m_replicaTags;
-  bool m_replicaTagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicaKeyMetadataHasBeenSet = false;
+  bool m_replicaPolicyHasBeenSet = false;
+  bool m_replicaTagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

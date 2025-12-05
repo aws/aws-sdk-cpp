@@ -86,12 +86,12 @@ class WeightedTarget {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_virtualNode;
-  bool m_virtualNodeHasBeenSet = false;
 
   int m_weight{0};
+  bool m_portHasBeenSet = false;
+  bool m_virtualNodeHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class Remediation {
   ///@}
  private:
   Recommendation m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   Aws::Vector<SuggestedFix> m_suggestedFixes;
+  bool m_recommendationHasBeenSet = false;
   bool m_suggestedFixesHasBeenSet = false;
 };
 

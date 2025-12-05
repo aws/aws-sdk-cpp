@@ -121,15 +121,15 @@ class ListHostedZonesByVPCRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_vPCId;
-  bool m_vPCIdHasBeenSet = false;
 
   VPCRegion m_vPCRegion{VPCRegion::NOT_SET};
-  bool m_vPCRegionHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_vPCIdHasBeenSet = false;
+  bool m_vPCRegionHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

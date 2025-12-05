@@ -61,9 +61,9 @@ class GetInlinePolicyForPermissionSetResult {
   ///@}
  private:
   Aws::String m_inlinePolicy;
-  bool m_inlinePolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inlinePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

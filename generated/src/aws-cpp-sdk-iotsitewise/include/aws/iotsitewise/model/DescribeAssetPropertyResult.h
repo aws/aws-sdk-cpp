@@ -152,24 +152,24 @@ class DescribeAssetPropertyResult {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_assetExternalId;
-  bool m_assetExternalIdHasBeenSet = false;
 
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Property m_assetProperty;
-  bool m_assetPropertyHasBeenSet = false;
 
   CompositeModelProperty m_compositeModel;
-  bool m_compositeModelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetIdHasBeenSet = false;
+  bool m_assetExternalIdHasBeenSet = false;
+  bool m_assetNameHasBeenSet = false;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetPropertyHasBeenSet = false;
+  bool m_compositeModelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

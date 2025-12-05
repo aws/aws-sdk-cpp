@@ -114,18 +114,18 @@ class ResourceCountsSummary {
   ///@}
  private:
   int m_behindMajor{0};
-  bool m_behindMajorHasBeenSet = false;
 
   int m_behindMinor{0};
-  bool m_behindMinorHasBeenSet = false;
 
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_total{0};
-  bool m_totalHasBeenSet = false;
 
   int m_upToDate{0};
+  bool m_behindMajorHasBeenSet = false;
+  bool m_behindMinorHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
   bool m_upToDateHasBeenSet = false;
 };
 

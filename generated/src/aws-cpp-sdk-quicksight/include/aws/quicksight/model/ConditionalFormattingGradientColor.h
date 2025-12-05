@@ -70,9 +70,9 @@ class ConditionalFormattingGradientColor {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   GradientColor m_color;
+  bool m_expressionHasBeenSet = false;
   bool m_colorHasBeenSet = false;
 };
 

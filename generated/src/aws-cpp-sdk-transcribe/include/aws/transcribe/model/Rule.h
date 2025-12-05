@@ -121,15 +121,15 @@ class Rule {
   ///@}
  private:
   NonTalkTimeFilter m_nonTalkTimeFilter;
-  bool m_nonTalkTimeFilterHasBeenSet = false;
 
   InterruptionFilter m_interruptionFilter;
-  bool m_interruptionFilterHasBeenSet = false;
 
   TranscriptFilter m_transcriptFilter;
-  bool m_transcriptFilterHasBeenSet = false;
 
   SentimentFilter m_sentimentFilter;
+  bool m_nonTalkTimeFilterHasBeenSet = false;
+  bool m_interruptionFilterHasBeenSet = false;
+  bool m_transcriptFilterHasBeenSet = false;
   bool m_sentimentFilterHasBeenSet = false;
 };
 

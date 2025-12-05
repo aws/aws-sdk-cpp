@@ -112,15 +112,15 @@ class GetPropertyValueResult {
   ///@}
  private:
   Aws::Map<Aws::String, PropertyLatestValue> m_propertyValues;
-  bool m_propertyValuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>> m_tabularPropertyValues;
-  bool m_tabularPropertyValuesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_propertyValuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_tabularPropertyValuesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListDetectorsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_detectorIds;
-  bool m_detectorIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

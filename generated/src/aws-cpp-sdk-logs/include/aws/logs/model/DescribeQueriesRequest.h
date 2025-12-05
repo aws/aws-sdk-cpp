@@ -118,18 +118,18 @@ class DescribeQueriesRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   QueryStatus m_status{QueryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_queryLanguageHasBeenSet = false;
 };
 

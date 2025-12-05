@@ -105,15 +105,15 @@ class AssociateFlowRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_flowId;
-  bool m_flowIdHasBeenSet = false;
 
   FlowAssociationResourceType m_resourceType{FlowAssociationResourceType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_flowIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

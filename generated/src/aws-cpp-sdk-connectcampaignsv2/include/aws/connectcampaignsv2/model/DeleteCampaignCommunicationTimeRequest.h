@@ -69,9 +69,9 @@ class DeleteCampaignCommunicationTimeRequest : public ConnectCampaignsV2Request 
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CommunicationTimeConfigType m_config{CommunicationTimeConfigType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

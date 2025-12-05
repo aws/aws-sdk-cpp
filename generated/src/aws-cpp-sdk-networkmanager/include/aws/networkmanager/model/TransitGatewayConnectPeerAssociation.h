@@ -122,18 +122,18 @@ class TransitGatewayConnectPeerAssociation {
   ///@}
  private:
   Aws::String m_transitGatewayConnectPeerArn;
-  bool m_transitGatewayConnectPeerArnHasBeenSet = false;
 
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   TransitGatewayConnectPeerAssociationState m_state{TransitGatewayConnectPeerAssociationState::NOT_SET};
+  bool m_transitGatewayConnectPeerArnHasBeenSet = false;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

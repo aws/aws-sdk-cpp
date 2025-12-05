@@ -94,12 +94,12 @@ class CreateConnectionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   ConnectionInput m_connectionInput;
-  bool m_connectionInputHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_connectionInputHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

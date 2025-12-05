@@ -86,12 +86,12 @@ class ListClassificationScopesResult {
   ///@}
  private:
   Aws::Vector<ClassificationScopeSummary> m_classificationScopes;
-  bool m_classificationScopesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_classificationScopesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ShardConfiguration {
   ///@}
  private:
   Aws::String m_slots;
-  bool m_slotsHasBeenSet = false;
 
   int m_replicaCount{0};
+  bool m_slotsHasBeenSet = false;
   bool m_replicaCountHasBeenSet = false;
 };
 

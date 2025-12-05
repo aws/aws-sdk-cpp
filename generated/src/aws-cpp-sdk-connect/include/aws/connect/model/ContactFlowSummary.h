@@ -140,21 +140,21 @@ class ContactFlowSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ContactFlowType m_contactFlowType{ContactFlowType::NOT_SET};
-  bool m_contactFlowTypeHasBeenSet = false;
 
   ContactFlowState m_contactFlowState{ContactFlowState::NOT_SET};
-  bool m_contactFlowStateHasBeenSet = false;
 
   ContactFlowStatus m_contactFlowStatus{ContactFlowStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contactFlowTypeHasBeenSet = false;
+  bool m_contactFlowStateHasBeenSet = false;
   bool m_contactFlowStatusHasBeenSet = false;
 };
 

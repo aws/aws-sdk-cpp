@@ -114,15 +114,15 @@ class ListTokenBalancesRequest : public ManagedBlockchainQueryRequest {
   ///@}
  private:
   OwnerFilter m_ownerFilter;
-  bool m_ownerFilterHasBeenSet = false;
 
   TokenFilter m_tokenFilter;
-  bool m_tokenFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_ownerFilterHasBeenSet = false;
+  bool m_tokenFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

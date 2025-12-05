@@ -85,12 +85,12 @@ class ListChangeSetsResult {
   ///@}
  private:
   Aws::Vector<ChangeSetSummaryListItem> m_changeSetSummaryList;
-  bool m_changeSetSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeSetSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

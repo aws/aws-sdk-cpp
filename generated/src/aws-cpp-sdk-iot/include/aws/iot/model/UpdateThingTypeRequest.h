@@ -64,9 +64,9 @@ class UpdateThingTypeRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   ThingTypeProperties m_thingTypeProperties;
+  bool m_thingTypeNameHasBeenSet = false;
   bool m_thingTypePropertiesHasBeenSet = false;
 };
 

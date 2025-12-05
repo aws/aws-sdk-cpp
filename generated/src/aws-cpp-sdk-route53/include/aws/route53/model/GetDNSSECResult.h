@@ -85,12 +85,12 @@ class GetDNSSECResult {
   ///@}
  private:
   DNSSECStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<KeySigningKey> m_keySigningKeys;
-  bool m_keySigningKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_keySigningKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

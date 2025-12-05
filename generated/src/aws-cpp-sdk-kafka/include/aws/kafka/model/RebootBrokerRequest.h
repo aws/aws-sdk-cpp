@@ -81,9 +81,9 @@ class RebootBrokerRequest : public KafkaRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_brokerIds;
-  bool m_brokerIdsHasBeenSet = false;
 
   Aws::String m_clusterArn;
+  bool m_brokerIdsHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class RuleTriggerEventSource {
   ///@}
  private:
   EventSourceName m_eventSourceName{EventSourceName::NOT_SET};
-  bool m_eventSourceNameHasBeenSet = false;
 
   Aws::String m_integrationAssociationId;
+  bool m_eventSourceNameHasBeenSet = false;
   bool m_integrationAssociationIdHasBeenSet = false;
 };
 

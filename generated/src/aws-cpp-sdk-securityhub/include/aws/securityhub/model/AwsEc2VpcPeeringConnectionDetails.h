@@ -126,18 +126,18 @@ class AwsEc2VpcPeeringConnectionDetails {
   ///@}
  private:
   AwsEc2VpcPeeringConnectionVpcInfoDetails m_accepterVpcInfo;
-  bool m_accepterVpcInfoHasBeenSet = false;
 
   Aws::String m_expirationTime;
-  bool m_expirationTimeHasBeenSet = false;
 
   AwsEc2VpcPeeringConnectionVpcInfoDetails m_requesterVpcInfo;
-  bool m_requesterVpcInfoHasBeenSet = false;
 
   AwsEc2VpcPeeringConnectionStatusDetails m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
+  bool m_accepterVpcInfoHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_requesterVpcInfoHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_vpcPeeringConnectionIdHasBeenSet = false;
 };
 

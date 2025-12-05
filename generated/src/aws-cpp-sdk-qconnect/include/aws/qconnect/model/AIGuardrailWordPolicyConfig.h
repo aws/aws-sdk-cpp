@@ -83,9 +83,9 @@ class AIGuardrailWordPolicyConfig {
   ///@}
  private:
   Aws::Vector<GuardrailWordConfig> m_wordsConfig;
-  bool m_wordsConfigHasBeenSet = false;
 
   Aws::Vector<GuardrailManagedWordsConfig> m_managedWordListsConfig;
+  bool m_wordsConfigHasBeenSet = false;
   bool m_managedWordListsConfigHasBeenSet = false;
 };
 

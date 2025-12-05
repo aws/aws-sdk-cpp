@@ -105,15 +105,15 @@ class ImageReplicationStatus {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   ReplicationStatus m_status{ReplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureCode;
+  bool m_regionHasBeenSet = false;
+  bool m_registryIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
 };
 

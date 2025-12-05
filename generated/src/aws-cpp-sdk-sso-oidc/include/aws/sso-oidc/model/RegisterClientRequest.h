@@ -189,24 +189,24 @@ class RegisterClientRequest : public SSOOIDCRequest {
   ///@}
  private:
   Aws::String m_clientName;
-  bool m_clientNameHasBeenSet = false;
 
   Aws::String m_clientType;
-  bool m_clientTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_redirectUris;
-  bool m_redirectUrisHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTypes;
-  bool m_grantTypesHasBeenSet = false;
 
   Aws::String m_issuerUrl;
-  bool m_issuerUrlHasBeenSet = false;
 
   Aws::String m_entitledApplicationArn;
+  bool m_clientNameHasBeenSet = false;
+  bool m_clientTypeHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
+  bool m_redirectUrisHasBeenSet = false;
+  bool m_grantTypesHasBeenSet = false;
+  bool m_issuerUrlHasBeenSet = false;
   bool m_entitledApplicationArnHasBeenSet = false;
 };
 

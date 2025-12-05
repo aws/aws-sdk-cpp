@@ -104,15 +104,15 @@ class DatasetFilter {
   ///@}
  private:
   DatasetStatus m_status{DatasetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DatasetType m_datasetType{DatasetType::NOT_SET};
-  bool m_datasetTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
+  bool m_statusHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_creationTimeAfterHasBeenSet = false;
   bool m_creationTimeBeforeHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class DescribeAgreementResult {
   ///@}
  private:
   DescribedAgreement m_agreement;
-  bool m_agreementHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agreementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

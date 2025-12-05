@@ -126,18 +126,18 @@ class UpdateRecoveryPointLifecycleResult {
   ///@}
  private:
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Lifecycle m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   CalculatedLifecycle m_calculatedLifecycle;
-  bool m_calculatedLifecycleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_calculatedLifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

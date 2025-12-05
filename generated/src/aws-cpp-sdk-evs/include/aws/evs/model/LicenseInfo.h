@@ -73,9 +73,9 @@ class LicenseInfo {
   ///@}
  private:
   Aws::String m_solutionKey;
-  bool m_solutionKeyHasBeenSet = false;
 
   Aws::String m_vsanKey;
+  bool m_solutionKeyHasBeenSet = false;
   bool m_vsanKeyHasBeenSet = false;
 };
 

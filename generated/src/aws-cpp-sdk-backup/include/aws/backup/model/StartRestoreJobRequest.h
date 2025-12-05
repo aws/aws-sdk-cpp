@@ -200,21 +200,21 @@ class StartRestoreJobRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   bool m_copySourceTagsToRestoredResource{false};
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_copySourceTagsToRestoredResourceHasBeenSet = false;
 };
 

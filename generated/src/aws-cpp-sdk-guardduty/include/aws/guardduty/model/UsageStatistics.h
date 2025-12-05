@@ -185,21 +185,21 @@ class UsageStatistics {
   ///@}
  private:
   Aws::Vector<UsageAccountResult> m_sumByAccount;
-  bool m_sumByAccountHasBeenSet = false;
 
   Aws::Vector<UsageTopAccountsResult> m_topAccountsByFeature;
-  bool m_topAccountsByFeatureHasBeenSet = false;
 
   Aws::Vector<UsageDataSourceResult> m_sumByDataSource;
-  bool m_sumByDataSourceHasBeenSet = false;
 
   Aws::Vector<UsageResourceResult> m_sumByResource;
-  bool m_sumByResourceHasBeenSet = false;
 
   Aws::Vector<UsageResourceResult> m_topResources;
-  bool m_topResourcesHasBeenSet = false;
 
   Aws::Vector<UsageFeatureResult> m_sumByFeature;
+  bool m_sumByAccountHasBeenSet = false;
+  bool m_topAccountsByFeatureHasBeenSet = false;
+  bool m_sumByDataSourceHasBeenSet = false;
+  bool m_sumByResourceHasBeenSet = false;
+  bool m_topResourcesHasBeenSet = false;
   bool m_sumByFeatureHasBeenSet = false;
 };
 

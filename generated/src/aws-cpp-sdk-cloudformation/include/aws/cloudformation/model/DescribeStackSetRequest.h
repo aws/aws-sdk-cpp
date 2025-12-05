@@ -79,9 +79,9 @@ class DescribeStackSetRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   CallAs m_callAs{CallAs::NOT_SET};
+  bool m_stackSetNameHasBeenSet = false;
   bool m_callAsHasBeenSet = false;
 };
 

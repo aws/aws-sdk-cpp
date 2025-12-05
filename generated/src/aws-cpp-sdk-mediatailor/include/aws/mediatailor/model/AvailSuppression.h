@@ -103,12 +103,12 @@ class AvailSuppression {
   ///@}
  private:
   Mode m_mode{Mode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   FillPolicy m_fillPolicy{FillPolicy::NOT_SET};
+  bool m_modeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_fillPolicyHasBeenSet = false;
 };
 

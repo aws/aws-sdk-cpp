@@ -62,9 +62,9 @@ class CountPercent {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   double m_percentage{0.0};
+  bool m_countHasBeenSet = false;
   bool m_percentageHasBeenSet = false;
 };
 

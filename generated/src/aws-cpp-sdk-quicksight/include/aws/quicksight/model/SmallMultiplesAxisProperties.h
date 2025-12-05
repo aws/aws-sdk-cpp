@@ -69,9 +69,9 @@ class SmallMultiplesAxisProperties {
   ///@}
  private:
   SmallMultiplesAxisScale m_scale{SmallMultiplesAxisScale::NOT_SET};
-  bool m_scaleHasBeenSet = false;
 
   SmallMultiplesAxisPlacement m_placement{SmallMultiplesAxisPlacement::NOT_SET};
+  bool m_scaleHasBeenSet = false;
   bool m_placementHasBeenSet = false;
 };
 

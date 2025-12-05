@@ -185,27 +185,27 @@ class SenderIdInformation {
   ///@}
  private:
   Aws::String m_senderIdArn;
-  bool m_senderIdArnHasBeenSet = false;
 
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::Vector<MessageType> m_messageTypes;
-  bool m_messageTypesHasBeenSet = false;
 
   Aws::String m_monthlyLeasingPrice;
-  bool m_monthlyLeasingPriceHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   bool m_registered{false};
-  bool m_registeredHasBeenSet = false;
 
   Aws::String m_registrationId;
+  bool m_senderIdArnHasBeenSet = false;
+  bool m_senderIdHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_messageTypesHasBeenSet = false;
+  bool m_monthlyLeasingPriceHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_registeredHasBeenSet = false;
   bool m_registrationIdHasBeenSet = false;
 };
 

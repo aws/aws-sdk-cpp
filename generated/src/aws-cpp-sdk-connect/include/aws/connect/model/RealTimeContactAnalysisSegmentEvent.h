@@ -143,21 +143,21 @@ class RealTimeContactAnalysisSegmentEvent {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   RealTimeContactAnalysisTimeData m_time;
+  bool m_idHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

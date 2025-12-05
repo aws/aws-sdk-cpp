@@ -195,27 +195,27 @@ class Intersection {
   ///@}
  private:
   Aws::String m_placeId;
-  bool m_placeIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_routeDistance{0};
-  bool m_routeDistanceHasBeenSet = false;
 
   Aws::Vector<double> m_mapView;
-  bool m_mapViewHasBeenSet = false;
 
   Aws::Vector<AccessPoint> m_accessPoints;
+  bool m_placeIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_routeDistanceHasBeenSet = false;
+  bool m_mapViewHasBeenSet = false;
   bool m_accessPointsHasBeenSet = false;
 };
 

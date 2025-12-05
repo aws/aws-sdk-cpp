@@ -310,42 +310,42 @@ class QueryResultItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   QueryResultType m_type{QueryResultType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   QueryResultFormat m_format{QueryResultFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Vector<AdditionalResultAttribute> m_additionalAttributes;
-  bool m_additionalAttributesHasBeenSet = false;
 
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   TextWithHighlights m_documentTitle;
-  bool m_documentTitleHasBeenSet = false;
 
   TextWithHighlights m_documentExcerpt;
-  bool m_documentExcerptHasBeenSet = false;
 
   Aws::String m_documentURI;
-  bool m_documentURIHasBeenSet = false;
 
   Aws::Vector<DocumentAttribute> m_documentAttributes;
-  bool m_documentAttributesHasBeenSet = false;
 
   ScoreAttributes m_scoreAttributes;
-  bool m_scoreAttributesHasBeenSet = false;
 
   Aws::String m_feedbackToken;
-  bool m_feedbackTokenHasBeenSet = false;
 
   TableExcerpt m_tableExcerpt;
-  bool m_tableExcerptHasBeenSet = false;
 
   CollapsedResultDetail m_collapsedResultDetail;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_additionalAttributesHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
+  bool m_documentTitleHasBeenSet = false;
+  bool m_documentExcerptHasBeenSet = false;
+  bool m_documentURIHasBeenSet = false;
+  bool m_documentAttributesHasBeenSet = false;
+  bool m_scoreAttributesHasBeenSet = false;
+  bool m_feedbackTokenHasBeenSet = false;
+  bool m_tableExcerptHasBeenSet = false;
   bool m_collapsedResultDetailHasBeenSet = false;
 };
 

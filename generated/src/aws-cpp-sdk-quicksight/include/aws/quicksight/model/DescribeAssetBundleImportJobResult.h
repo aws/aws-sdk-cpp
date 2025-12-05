@@ -341,51 +341,51 @@ class DescribeAssetBundleImportJobResult {
   ///@}
  private:
   AssetBundleImportJobStatus m_jobStatus{AssetBundleImportJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobError> m_rollbackErrors;
-  bool m_rollbackErrorsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_assetBundleImportJobId;
-  bool m_assetBundleImportJobIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   AssetBundleImportSourceDescription m_assetBundleImportSource;
-  bool m_assetBundleImportSourceHasBeenSet = false;
 
   AssetBundleImportJobOverrideParameters m_overrideParameters;
-  bool m_overrideParametersHasBeenSet = false;
 
   AssetBundleImportFailureAction m_failureAction{AssetBundleImportFailureAction::NOT_SET};
-  bool m_failureActionHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   AssetBundleImportJobOverridePermissions m_overridePermissions;
-  bool m_overridePermissionsHasBeenSet = false;
 
   AssetBundleImportJobOverrideTags m_overrideTags;
-  bool m_overrideTagsHasBeenSet = false;
 
   AssetBundleImportJobOverrideValidationStrategy m_overrideValidationStrategy;
-  bool m_overrideValidationStrategyHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobWarning> m_warnings;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_rollbackErrorsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_assetBundleImportJobIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_assetBundleImportSourceHasBeenSet = false;
+  bool m_overrideParametersHasBeenSet = false;
+  bool m_failureActionHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_overridePermissionsHasBeenSet = false;
+  bool m_overrideTagsHasBeenSet = false;
+  bool m_overrideValidationStrategyHasBeenSet = false;
   bool m_warningsHasBeenSet = false;
 };
 

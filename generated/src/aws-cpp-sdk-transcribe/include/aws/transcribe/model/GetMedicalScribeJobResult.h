@@ -61,9 +61,9 @@ class GetMedicalScribeJobResult {
   ///@}
  private:
   MedicalScribeJob m_medicalScribeJob;
-  bool m_medicalScribeJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_medicalScribeJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class ToolbarConfiguration {
   ///@}
  private:
   ToolbarType m_toolbarType{ToolbarType::NOT_SET};
-  bool m_toolbarTypeHasBeenSet = false;
 
   VisualMode m_visualMode{VisualMode::NOT_SET};
-  bool m_visualModeHasBeenSet = false;
 
   Aws::Vector<ToolbarItem> m_hiddenToolbarItems;
-  bool m_hiddenToolbarItemsHasBeenSet = false;
 
   MaxDisplayResolution m_maxDisplayResolution{MaxDisplayResolution::NOT_SET};
+  bool m_toolbarTypeHasBeenSet = false;
+  bool m_visualModeHasBeenSet = false;
+  bool m_hiddenToolbarItemsHasBeenSet = false;
   bool m_maxDisplayResolutionHasBeenSet = false;
 };
 

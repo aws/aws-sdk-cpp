@@ -114,15 +114,15 @@ class UpdateFacetRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<FacetAttributeUpdate> m_attributeUpdates;
-  bool m_attributeUpdatesHasBeenSet = false;
 
   ObjectType m_objectType{ObjectType::NOT_SET};
+  bool m_schemaArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_attributeUpdatesHasBeenSet = false;
   bool m_objectTypeHasBeenSet = false;
 };
 

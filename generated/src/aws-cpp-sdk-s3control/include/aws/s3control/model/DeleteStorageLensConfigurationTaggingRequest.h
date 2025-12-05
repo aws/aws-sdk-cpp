@@ -72,9 +72,9 @@ class DeleteStorageLensConfigurationTaggingRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_configId;
-  bool m_configIdHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_configIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

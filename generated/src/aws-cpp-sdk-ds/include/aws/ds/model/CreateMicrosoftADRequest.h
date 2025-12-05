@@ -197,27 +197,27 @@ class CreateMicrosoftADRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_shortName;
-  bool m_shortNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DirectoryVpcSettings m_vpcSettings;
-  bool m_vpcSettingsHasBeenSet = false;
 
   DirectoryEdition m_edition{DirectoryEdition::NOT_SET};
-  bool m_editionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_shortNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_vpcSettingsHasBeenSet = false;
+  bool m_editionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

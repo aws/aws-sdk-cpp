@@ -63,9 +63,9 @@ class DeleteIndexRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_indexName;
+  bool m_domainNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
 };
 

@@ -215,33 +215,33 @@ class Address {
   ///@}
  private:
   Aws::String m_streetName;
-  bool m_streetNameHasBeenSet = false;
 
   Aws::String m_streetSuffix;
-  bool m_streetSuffixHasBeenSet = false;
 
   Aws::String m_postDirectional;
-  bool m_postDirectionalHasBeenSet = false;
 
   Aws::String m_preDirectional;
-  bool m_preDirectionalHasBeenSet = false;
 
   Aws::String m_streetNumber;
-  bool m_streetNumberHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_postalCodePlus4;
-  bool m_postalCodePlus4HasBeenSet = false;
 
   Aws::String m_country;
+  bool m_streetNameHasBeenSet = false;
+  bool m_streetSuffixHasBeenSet = false;
+  bool m_postDirectionalHasBeenSet = false;
+  bool m_preDirectionalHasBeenSet = false;
+  bool m_streetNumberHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_postalCodePlus4HasBeenSet = false;
   bool m_countryHasBeenSet = false;
 };
 

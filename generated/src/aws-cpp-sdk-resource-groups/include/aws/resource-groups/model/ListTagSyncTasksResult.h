@@ -88,12 +88,12 @@ class ListTagSyncTasksResult {
   ///@}
  private:
   Aws::Vector<TagSyncTaskItem> m_tagSyncTasks;
-  bool m_tagSyncTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagSyncTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

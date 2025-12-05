@@ -98,12 +98,12 @@ class Action {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Operation m_operation{Operation::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_attributeNameHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

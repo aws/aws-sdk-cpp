@@ -88,12 +88,12 @@ class Subscription {
   ///@}
  private:
   long long m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

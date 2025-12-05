@@ -90,12 +90,12 @@ class RowAlternateColorOptions {
   ///@}
  private:
   WidgetStatus m_status{WidgetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rowAlternateColors;
-  bool m_rowAlternateColorsHasBeenSet = false;
 
   WidgetStatus m_usePrimaryBackgroundColor{WidgetStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
+  bool m_rowAlternateColorsHasBeenSet = false;
   bool m_usePrimaryBackgroundColorHasBeenSet = false;
 };
 

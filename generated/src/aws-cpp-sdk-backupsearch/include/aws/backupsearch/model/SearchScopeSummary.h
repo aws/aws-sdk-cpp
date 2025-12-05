@@ -66,9 +66,9 @@ class SearchScopeSummary {
   ///@}
  private:
   int m_totalRecoveryPointsToScanCount{0};
-  bool m_totalRecoveryPointsToScanCountHasBeenSet = false;
 
   long long m_totalItemsToScanCount{0};
+  bool m_totalRecoveryPointsToScanCountHasBeenSet = false;
   bool m_totalItemsToScanCountHasBeenSet = false;
 };
 

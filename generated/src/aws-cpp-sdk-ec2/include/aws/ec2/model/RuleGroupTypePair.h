@@ -71,9 +71,9 @@ class RuleGroupTypePair {
   ///@}
  private:
   Aws::String m_ruleGroupArn;
-  bool m_ruleGroupArnHasBeenSet = false;
 
   Aws::String m_ruleGroupType;
+  bool m_ruleGroupArnHasBeenSet = false;
   bool m_ruleGroupTypeHasBeenSet = false;
 };
 

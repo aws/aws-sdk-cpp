@@ -110,15 +110,15 @@ class AudienceGenerationJobDataSource {
   ///@}
  private:
   S3ConfigMap m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ProtectedQuerySQLParameters m_sqlParameters;
-  bool m_sqlParametersHasBeenSet = false;
 
   ComputeConfiguration m_sqlComputeConfiguration;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_sqlParametersHasBeenSet = false;
   bool m_sqlComputeConfigurationHasBeenSet = false;
 };
 

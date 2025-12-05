@@ -129,9 +129,9 @@ class DnsRecord {
   ///@}
  private:
   RecordType m_type{RecordType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   long long m_tTL{0};
+  bool m_typeHasBeenSet = false;
   bool m_tTLHasBeenSet = false;
 };
 

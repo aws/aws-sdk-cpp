@@ -344,51 +344,51 @@ class FpgaImage {
   ///@}
  private:
   Aws::String m_fpgaImageId;
-  bool m_fpgaImageIdHasBeenSet = false;
 
   Aws::String m_fpgaImageGlobalId;
-  bool m_fpgaImageGlobalIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_shellVersion;
-  bool m_shellVersionHasBeenSet = false;
 
   PciId m_pciId;
-  bool m_pciIdHasBeenSet = false;
 
   FpgaImageState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ownerAlias;
-  bool m_ownerAliasHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_public{false};
-  bool m_publicHasBeenSet = false;
 
   bool m_dataRetentionSupport{false};
-  bool m_dataRetentionSupportHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
+  bool m_fpgaImageIdHasBeenSet = false;
+  bool m_fpgaImageGlobalIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_shellVersionHasBeenSet = false;
+  bool m_pciIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ownerAliasHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_publicHasBeenSet = false;
+  bool m_dataRetentionSupportHasBeenSet = false;
   bool m_instanceTypesHasBeenSet = false;
 };
 

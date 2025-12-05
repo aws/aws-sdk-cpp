@@ -96,15 +96,15 @@ class UpdateOutpostRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SupportedHardwareType m_supportedHardwareType{SupportedHardwareType::NOT_SET};
+  bool m_outpostIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_supportedHardwareTypeHasBeenSet = false;
 };
 

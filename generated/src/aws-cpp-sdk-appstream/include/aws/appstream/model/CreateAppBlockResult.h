@@ -60,9 +60,9 @@ class CreateAppBlockResult {
   ///@}
  private:
   AppBlock m_appBlock;
-  bool m_appBlockHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appBlockHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

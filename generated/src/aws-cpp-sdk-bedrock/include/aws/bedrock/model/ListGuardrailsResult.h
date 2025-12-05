@@ -86,12 +86,12 @@ class ListGuardrailsResult {
   ///@}
  private:
   Aws::Vector<GuardrailSummary> m_guardrails;
-  bool m_guardrailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_guardrailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

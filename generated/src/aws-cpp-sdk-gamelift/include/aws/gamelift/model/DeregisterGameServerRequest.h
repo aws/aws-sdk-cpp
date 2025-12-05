@@ -68,9 +68,9 @@ class DeregisterGameServerRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_gameServerId;
+  bool m_gameServerGroupNameHasBeenSet = false;
   bool m_gameServerIdHasBeenSet = false;
 };
 

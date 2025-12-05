@@ -98,12 +98,12 @@ class GetBlockPublicAccessConfigurationResult {
   ///@}
  private:
   BlockPublicAccessConfiguration m_blockPublicAccessConfiguration;
-  bool m_blockPublicAccessConfigurationHasBeenSet = false;
 
   BlockPublicAccessConfigurationMetadata m_blockPublicAccessConfigurationMetadata;
-  bool m_blockPublicAccessConfigurationMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blockPublicAccessConfigurationHasBeenSet = false;
+  bool m_blockPublicAccessConfigurationMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

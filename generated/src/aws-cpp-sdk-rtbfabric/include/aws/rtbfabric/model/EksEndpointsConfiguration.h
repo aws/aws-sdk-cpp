@@ -141,21 +141,21 @@ class EksEndpointsConfiguration {
   ///@}
  private:
   Aws::String m_endpointsResourceName;
-  bool m_endpointsResourceNameHasBeenSet = false;
 
   Aws::String m_endpointsResourceNamespace;
-  bool m_endpointsResourceNamespaceHasBeenSet = false;
 
   Aws::String m_clusterApiServerEndpointUri;
-  bool m_clusterApiServerEndpointUriHasBeenSet = false;
 
   Aws::String m_clusterApiServerCaCertificateChain;
-  bool m_clusterApiServerCaCertificateChainHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_endpointsResourceNameHasBeenSet = false;
+  bool m_endpointsResourceNamespaceHasBeenSet = false;
+  bool m_clusterApiServerEndpointUriHasBeenSet = false;
+  bool m_clusterApiServerCaCertificateChainHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

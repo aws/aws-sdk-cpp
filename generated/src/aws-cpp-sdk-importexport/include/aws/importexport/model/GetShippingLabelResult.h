@@ -73,12 +73,12 @@ class GetShippingLabelResult {
   ///@}
  private:
   Aws::String m_shippingLabelURL;
-  bool m_shippingLabelURLHasBeenSet = false;
 
   Aws::String m_warning;
-  bool m_warningHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_shippingLabelURLHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

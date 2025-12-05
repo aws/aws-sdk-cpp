@@ -166,21 +166,21 @@ class PurchaseHostReservationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hostIdSet;
-  bool m_hostIdSetHasBeenSet = false;
 
   Aws::String m_limitPrice;
-  bool m_limitPriceHasBeenSet = false;
 
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_hostIdSetHasBeenSet = false;
+  bool m_limitPriceHasBeenSet = false;
+  bool m_offeringIdHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class ListPlatformApplicationsResult {
   ///@}
  private:
   Aws::Vector<PlatformApplication> m_platformApplications;
-  bool m_platformApplicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_platformApplicationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

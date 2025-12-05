@@ -123,18 +123,18 @@ class QuickConnectContactData {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationTimestamp{};
-  bool m_initiationTimestampHasBeenSet = false;
 
   Aws::String m_quickConnectId;
-  bool m_quickConnectIdHasBeenSet = false;
 
   Aws::String m_quickConnectName;
-  bool m_quickConnectNameHasBeenSet = false;
 
   QuickConnectType m_quickConnectType{QuickConnectType::NOT_SET};
+  bool m_contactIdHasBeenSet = false;
+  bool m_initiationTimestampHasBeenSet = false;
+  bool m_quickConnectIdHasBeenSet = false;
+  bool m_quickConnectNameHasBeenSet = false;
   bool m_quickConnectTypeHasBeenSet = false;
 };
 

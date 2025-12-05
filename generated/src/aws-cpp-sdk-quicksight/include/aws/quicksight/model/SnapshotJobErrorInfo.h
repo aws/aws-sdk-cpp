@@ -69,9 +69,9 @@ class SnapshotJobErrorInfo {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorType;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

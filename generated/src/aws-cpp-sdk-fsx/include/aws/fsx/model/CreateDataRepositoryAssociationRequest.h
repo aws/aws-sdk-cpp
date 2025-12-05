@@ -203,27 +203,27 @@ class CreateDataRepositoryAssociationRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_fileSystemPath;
-  bool m_fileSystemPathHasBeenSet = false;
 
   Aws::String m_dataRepositoryPath;
-  bool m_dataRepositoryPathHasBeenSet = false;
 
   bool m_batchImportMetaDataOnCreate{false};
-  bool m_batchImportMetaDataOnCreateHasBeenSet = false;
 
   int m_importedFileChunkSize{0};
-  bool m_importedFileChunkSizeHasBeenSet = false;
 
   S3DataRepositoryConfiguration m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_fileSystemPathHasBeenSet = false;
+  bool m_dataRepositoryPathHasBeenSet = false;
+  bool m_batchImportMetaDataOnCreateHasBeenSet = false;
+  bool m_importedFileChunkSizeHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

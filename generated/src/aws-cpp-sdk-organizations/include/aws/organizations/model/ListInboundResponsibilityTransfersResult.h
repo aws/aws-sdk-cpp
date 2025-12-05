@@ -90,12 +90,12 @@ class ListInboundResponsibilityTransfersResult {
   ///@}
  private:
   Aws::Vector<ResponsibilityTransfer> m_responsibilityTransfers;
-  bool m_responsibilityTransfersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responsibilityTransfersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

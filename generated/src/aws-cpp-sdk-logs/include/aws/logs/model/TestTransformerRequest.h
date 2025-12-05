@@ -84,9 +84,9 @@ class TestTransformerRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::Vector<Processor> m_transformerConfig;
-  bool m_transformerConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logEventMessages;
+  bool m_transformerConfigHasBeenSet = false;
   bool m_logEventMessagesHasBeenSet = false;
 };
 

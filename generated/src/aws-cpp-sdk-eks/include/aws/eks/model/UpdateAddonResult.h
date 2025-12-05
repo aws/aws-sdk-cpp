@@ -58,9 +58,9 @@ class UpdateAddonResult {
   ///@}
  private:
   Update m_update;
-  bool m_updateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

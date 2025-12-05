@@ -59,9 +59,9 @@ class PutConformancePackResult {
   ///@}
  private:
   Aws::String m_conformancePackArn;
-  bool m_conformancePackArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_conformancePackArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

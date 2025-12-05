@@ -89,12 +89,12 @@ class EnableAddressTransferRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_transferAccountId;
-  bool m_transferAccountIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_allocationIdHasBeenSet = false;
+  bool m_transferAccountIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

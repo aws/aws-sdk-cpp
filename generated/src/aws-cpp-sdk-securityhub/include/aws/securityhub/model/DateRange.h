@@ -64,9 +64,9 @@ class DateRange {
   ///@}
  private:
   int m_value{0};
-  bool m_valueHasBeenSet = false;
 
   DateRangeUnit m_unit{DateRangeUnit::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

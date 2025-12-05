@@ -74,9 +74,9 @@ class PutProjectEventsRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::Vector<Event> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_project;
+  bool m_eventsHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

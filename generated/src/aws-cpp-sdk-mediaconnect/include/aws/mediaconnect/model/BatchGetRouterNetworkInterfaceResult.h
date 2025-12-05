@@ -93,12 +93,12 @@ class BatchGetRouterNetworkInterfaceResult {
   ///@}
  private:
   Aws::Vector<RouterNetworkInterface> m_routerNetworkInterfaces;
-  bool m_routerNetworkInterfacesHasBeenSet = false;
 
   Aws::Vector<BatchGetRouterNetworkInterfaceError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routerNetworkInterfacesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

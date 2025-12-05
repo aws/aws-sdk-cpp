@@ -84,9 +84,9 @@ class ResourcePermission {
   ///@}
  private:
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
+  bool m_principalHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

@@ -129,15 +129,15 @@ class RulesSource {
   ///@}
  private:
   Aws::String m_rulesString;
-  bool m_rulesStringHasBeenSet = false;
 
   RulesSourceList m_rulesSourceList;
-  bool m_rulesSourceListHasBeenSet = false;
 
   Aws::Vector<StatefulRule> m_statefulRules;
-  bool m_statefulRulesHasBeenSet = false;
 
   StatelessRulesAndCustomActions m_statelessRulesAndCustomActions;
+  bool m_rulesStringHasBeenSet = false;
+  bool m_rulesSourceListHasBeenSet = false;
+  bool m_statefulRulesHasBeenSet = false;
   bool m_statelessRulesAndCustomActionsHasBeenSet = false;
 };
 

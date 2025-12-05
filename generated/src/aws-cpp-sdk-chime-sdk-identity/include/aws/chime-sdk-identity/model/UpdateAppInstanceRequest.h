@@ -83,12 +83,12 @@ class UpdateAppInstanceRequest : public ChimeSDKIdentityRequest {
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metadata;
+  bool m_appInstanceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetStageSessionResult {
   ///@}
  private:
   StageSession m_stageSession;
-  bool m_stageSessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stageSessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

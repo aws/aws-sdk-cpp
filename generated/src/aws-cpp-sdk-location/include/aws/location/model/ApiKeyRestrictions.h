@@ -226,18 +226,18 @@ class ApiKeyRestrictions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowActions;
-  bool m_allowActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowResources;
-  bool m_allowResourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowReferers;
-  bool m_allowReferersHasBeenSet = false;
 
   Aws::Vector<AndroidApp> m_allowAndroidApps;
-  bool m_allowAndroidAppsHasBeenSet = false;
 
   Aws::Vector<AppleApp> m_allowAppleApps;
+  bool m_allowActionsHasBeenSet = false;
+  bool m_allowResourcesHasBeenSet = false;
+  bool m_allowReferersHasBeenSet = false;
+  bool m_allowAndroidAppsHasBeenSet = false;
   bool m_allowAppleAppsHasBeenSet = false;
 };
 

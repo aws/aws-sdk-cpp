@@ -60,9 +60,9 @@ class DescribeRecipeResult {
   ///@}
  private:
   Recipe m_recipe;
-  bool m_recipeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recipeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

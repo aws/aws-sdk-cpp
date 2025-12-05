@@ -139,18 +139,18 @@ class ListLogSourcesRequest : public SecurityLakeRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Vector<LogSourceResource> m_sources;
+  bool m_accountsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

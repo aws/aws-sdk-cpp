@@ -85,12 +85,12 @@ class CallDetails {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   bool m_isCaller{false};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
   bool m_isCallerHasBeenSet = false;
 };
 

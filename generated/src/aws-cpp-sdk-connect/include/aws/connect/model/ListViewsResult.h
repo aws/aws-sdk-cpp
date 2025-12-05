@@ -85,12 +85,12 @@ class ListViewsResult {
   ///@}
  private:
   Aws::Vector<ViewSummary> m_viewsSummaryList;
-  bool m_viewsSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_viewsSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

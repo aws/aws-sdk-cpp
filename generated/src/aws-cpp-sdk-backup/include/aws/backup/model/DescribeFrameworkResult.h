@@ -206,30 +206,30 @@ class DescribeFrameworkResult {
   ///@}
  private:
   Aws::String m_frameworkName;
-  bool m_frameworkNameHasBeenSet = false;
 
   Aws::String m_frameworkArn;
-  bool m_frameworkArnHasBeenSet = false;
 
   Aws::String m_frameworkDescription;
-  bool m_frameworkDescriptionHasBeenSet = false;
 
   Aws::Vector<FrameworkControl> m_frameworkControls;
-  bool m_frameworkControlsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_deploymentStatus;
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_frameworkStatus;
-  bool m_frameworkStatusHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_frameworkNameHasBeenSet = false;
+  bool m_frameworkArnHasBeenSet = false;
+  bool m_frameworkDescriptionHasBeenSet = false;
+  bool m_frameworkControlsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_frameworkStatusHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

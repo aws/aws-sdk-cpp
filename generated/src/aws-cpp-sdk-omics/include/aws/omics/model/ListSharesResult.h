@@ -85,12 +85,12 @@ class ListSharesResult {
   ///@}
  private:
   Aws::Vector<ShareDetails> m_shares;
-  bool m_sharesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sharesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

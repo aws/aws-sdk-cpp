@@ -145,18 +145,18 @@ class DescribeParametersRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<ParametersFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<ParameterStringFilter> m_parameterFilters;
-  bool m_parameterFiltersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_shared{false};
+  bool m_filtersHasBeenSet = false;
+  bool m_parameterFiltersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sharedHasBeenSet = false;
 };
 

@@ -163,27 +163,27 @@ class DescribeGroupResult {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   EntityState m_state{EntityState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_enabledDate{};
-  bool m_enabledDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_disabledDate{};
-  bool m_disabledDateHasBeenSet = false;
 
   bool m_hiddenFromGlobalAddressList{false};
-  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_enabledDateHasBeenSet = false;
+  bool m_disabledDateHasBeenSet = false;
+  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

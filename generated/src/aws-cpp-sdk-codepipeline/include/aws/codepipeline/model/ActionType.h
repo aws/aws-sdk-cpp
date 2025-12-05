@@ -135,18 +135,18 @@ class ActionType {
   ///@}
  private:
   ActionTypeId m_id;
-  bool m_idHasBeenSet = false;
 
   ActionTypeSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<ActionConfigurationProperty> m_actionConfigurationProperties;
-  bool m_actionConfigurationPropertiesHasBeenSet = false;
 
   ArtifactDetails m_inputArtifactDetails;
-  bool m_inputArtifactDetailsHasBeenSet = false;
 
   ArtifactDetails m_outputArtifactDetails;
+  bool m_idHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_actionConfigurationPropertiesHasBeenSet = false;
+  bool m_inputArtifactDetailsHasBeenSet = false;
   bool m_outputArtifactDetailsHasBeenSet = false;
 };
 

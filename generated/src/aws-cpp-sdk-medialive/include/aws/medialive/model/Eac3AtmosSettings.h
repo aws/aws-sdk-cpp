@@ -151,24 +151,24 @@ class Eac3AtmosSettings {
   ///@}
  private:
   double m_bitrate{0.0};
-  bool m_bitrateHasBeenSet = false;
 
   Eac3AtmosCodingMode m_codingMode{Eac3AtmosCodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   int m_dialnorm{0};
-  bool m_dialnormHasBeenSet = false;
 
   Eac3AtmosDrcLine m_drcLine{Eac3AtmosDrcLine::NOT_SET};
-  bool m_drcLineHasBeenSet = false;
 
   Eac3AtmosDrcRf m_drcRf{Eac3AtmosDrcRf::NOT_SET};
-  bool m_drcRfHasBeenSet = false;
 
   double m_heightTrim{0.0};
-  bool m_heightTrimHasBeenSet = false;
 
   double m_surroundTrim{0.0};
+  bool m_bitrateHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
+  bool m_dialnormHasBeenSet = false;
+  bool m_drcLineHasBeenSet = false;
+  bool m_drcRfHasBeenSet = false;
+  bool m_heightTrimHasBeenSet = false;
   bool m_surroundTrimHasBeenSet = false;
 };
 

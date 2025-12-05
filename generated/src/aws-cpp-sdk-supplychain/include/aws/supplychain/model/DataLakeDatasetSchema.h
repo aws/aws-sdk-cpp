@@ -111,12 +111,12 @@ class DataLakeDatasetSchema {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<DataLakeDatasetSchemaField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Vector<DataLakeDatasetPrimaryKeyField> m_primaryKeys;
+  bool m_nameHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_primaryKeysHasBeenSet = false;
 };
 

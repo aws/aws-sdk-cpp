@@ -75,9 +75,9 @@ class BatchDeleteConnectionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectionNameList;
+  bool m_catalogIdHasBeenSet = false;
   bool m_connectionNameListHasBeenSet = false;
 };
 

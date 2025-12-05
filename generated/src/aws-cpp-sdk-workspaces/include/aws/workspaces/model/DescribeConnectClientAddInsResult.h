@@ -85,12 +85,12 @@ class DescribeConnectClientAddInsResult {
   ///@}
  private:
   Aws::Vector<ConnectClientAddIn> m_addIns;
-  bool m_addInsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addInsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

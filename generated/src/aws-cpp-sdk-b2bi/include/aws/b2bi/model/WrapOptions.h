@@ -92,12 +92,12 @@ class WrapOptions {
   ///@}
  private:
   WrapFormat m_wrapBy{WrapFormat::NOT_SET};
-  bool m_wrapByHasBeenSet = false;
 
   LineTerminator m_lineTerminator{LineTerminator::NOT_SET};
-  bool m_lineTerminatorHasBeenSet = false;
 
   int m_lineLength{0};
+  bool m_wrapByHasBeenSet = false;
+  bool m_lineTerminatorHasBeenSet = false;
   bool m_lineLengthHasBeenSet = false;
 };
 

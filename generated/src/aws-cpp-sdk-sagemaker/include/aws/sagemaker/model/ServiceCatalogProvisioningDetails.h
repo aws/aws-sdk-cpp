@@ -116,15 +116,15 @@ class ServiceCatalogProvisioningDetails {
   ///@}
  private:
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::String m_pathId;
-  bool m_pathIdHasBeenSet = false;
 
   Aws::Vector<ProvisioningParameter> m_provisioningParameters;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_pathIdHasBeenSet = false;
   bool m_provisioningParametersHasBeenSet = false;
 };
 

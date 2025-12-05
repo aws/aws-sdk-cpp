@@ -116,18 +116,18 @@ class StartWebRTCContactResult {
   ///@}
  private:
   ConnectionData m_connectionData;
-  bool m_connectionDataHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_participantToken;
-  bool m_participantTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionDataHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_participantTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

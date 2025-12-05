@@ -171,24 +171,24 @@ class ListRecommendationTemplatesRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_assessmentArn;
-  bool m_assessmentArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_recommendationTemplateArn;
-  bool m_recommendationTemplateArnHasBeenSet = false;
 
   bool m_reverseOrder{false};
-  bool m_reverseOrderHasBeenSet = false;
 
   Aws::Vector<RecommendationTemplateStatus> m_status;
+  bool m_assessmentArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendationTemplateArnHasBeenSet = false;
+  bool m_reverseOrderHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

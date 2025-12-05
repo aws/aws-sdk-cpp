@@ -65,9 +65,9 @@ class GetAssessmentReportUrlRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentReportId;
-  bool m_assessmentReportIdHasBeenSet = false;
 
   Aws::String m_assessmentId;
+  bool m_assessmentReportIdHasBeenSet = false;
   bool m_assessmentIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListUsageForLicenseConfigurationResult {
   ///@}
  private:
   Aws::Vector<LicenseConfigurationUsage> m_licenseConfigurationUsageList;
-  bool m_licenseConfigurationUsageListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseConfigurationUsageListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

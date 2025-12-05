@@ -73,9 +73,9 @@ class GetDatasetContentRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_datasetNameHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

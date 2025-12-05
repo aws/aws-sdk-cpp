@@ -88,12 +88,12 @@ class ListEntitiesFilter {
   ///@}
  private:
   Aws::String m_parentEntityId;
-  bool m_parentEntityIdHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Aws::String m_externalId;
+  bool m_parentEntityIdHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
 };
 

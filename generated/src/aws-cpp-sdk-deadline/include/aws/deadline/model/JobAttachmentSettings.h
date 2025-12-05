@@ -69,9 +69,9 @@ class JobAttachmentSettings {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_rootPrefix;
+  bool m_s3BucketNameHasBeenSet = false;
   bool m_rootPrefixHasBeenSet = false;
 };
 

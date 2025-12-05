@@ -65,9 +65,9 @@ class FlexibleTimeWindow {
   ///@}
  private:
   int m_maximumWindowInMinutes{0};
-  bool m_maximumWindowInMinutesHasBeenSet = false;
 
   FlexibleTimeWindowMode m_mode{FlexibleTimeWindowMode::NOT_SET};
+  bool m_maximumWindowInMinutesHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

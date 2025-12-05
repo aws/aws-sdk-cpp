@@ -132,18 +132,18 @@ class AttackSummary {
   ///@}
  private:
   Aws::String m_attackId;
-  bool m_attackIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<AttackVectorDescription> m_attackVectors;
+  bool m_attackIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_attackVectorsHasBeenSet = false;
 };
 

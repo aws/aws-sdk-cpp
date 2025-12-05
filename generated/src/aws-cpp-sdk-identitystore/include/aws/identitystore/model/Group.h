@@ -210,30 +210,30 @@ class Group {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Vector<ExternalId> m_externalIds;
-  bool m_externalIdsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_identityStoreId;
+  bool m_groupIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_externalIdsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
 };
 

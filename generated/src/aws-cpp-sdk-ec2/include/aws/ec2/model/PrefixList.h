@@ -95,12 +95,12 @@ class PrefixList {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cidrs;
-  bool m_cidrsHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_prefixListName;
+  bool m_cidrsHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
   bool m_prefixListNameHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class CustomConsolidationConfigurationInput {
   ///@}
  private:
   SemanticOverrideConsolidationConfigurationInput m_semanticConsolidationOverride;
-  bool m_semanticConsolidationOverrideHasBeenSet = false;
 
   SummaryOverrideConsolidationConfigurationInput m_summaryConsolidationOverride;
-  bool m_summaryConsolidationOverrideHasBeenSet = false;
 
   UserPreferenceOverrideConsolidationConfigurationInput m_userPreferenceConsolidationOverride;
-  bool m_userPreferenceConsolidationOverrideHasBeenSet = false;
 
   EpisodicOverrideConsolidationConfigurationInput m_episodicConsolidationOverride;
+  bool m_semanticConsolidationOverrideHasBeenSet = false;
+  bool m_summaryConsolidationOverrideHasBeenSet = false;
+  bool m_userPreferenceConsolidationOverrideHasBeenSet = false;
   bool m_episodicConsolidationOverrideHasBeenSet = false;
 };
 

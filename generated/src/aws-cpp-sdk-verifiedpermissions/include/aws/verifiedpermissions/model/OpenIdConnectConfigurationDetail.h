@@ -123,15 +123,15 @@ class OpenIdConnectConfigurationDetail {
   ///@}
  private:
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_entityIdPrefix;
-  bool m_entityIdPrefixHasBeenSet = false;
 
   OpenIdConnectGroupConfigurationDetail m_groupConfiguration;
-  bool m_groupConfigurationHasBeenSet = false;
 
   OpenIdConnectTokenSelectionDetail m_tokenSelection;
+  bool m_issuerHasBeenSet = false;
+  bool m_entityIdPrefixHasBeenSet = false;
+  bool m_groupConfigurationHasBeenSet = false;
   bool m_tokenSelectionHasBeenSet = false;
 };
 

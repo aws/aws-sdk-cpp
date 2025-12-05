@@ -242,36 +242,36 @@ class SourceApiAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Aws::String m_sourceApiId;
-  bool m_sourceApiIdHasBeenSet = false;
 
   Aws::String m_sourceApiArn;
-  bool m_sourceApiArnHasBeenSet = false;
 
   Aws::String m_mergedApiArn;
-  bool m_mergedApiArnHasBeenSet = false;
 
   Aws::String m_mergedApiId;
-  bool m_mergedApiIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SourceApiAssociationConfig m_sourceApiAssociationConfig;
-  bool m_sourceApiAssociationConfigHasBeenSet = false;
 
   SourceApiAssociationStatus m_sourceApiAssociationStatus{SourceApiAssociationStatus::NOT_SET};
-  bool m_sourceApiAssociationStatusHasBeenSet = false;
 
   Aws::String m_sourceApiAssociationStatusDetail;
-  bool m_sourceApiAssociationStatusDetailHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulMergeDate{};
+  bool m_associationIdHasBeenSet = false;
+  bool m_associationArnHasBeenSet = false;
+  bool m_sourceApiIdHasBeenSet = false;
+  bool m_sourceApiArnHasBeenSet = false;
+  bool m_mergedApiArnHasBeenSet = false;
+  bool m_mergedApiIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceApiAssociationConfigHasBeenSet = false;
+  bool m_sourceApiAssociationStatusHasBeenSet = false;
+  bool m_sourceApiAssociationStatusDetailHasBeenSet = false;
   bool m_lastSuccessfulMergeDateHasBeenSet = false;
 };
 

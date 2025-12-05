@@ -168,21 +168,21 @@ class GetRDSDatabaseRecommendationsRequest : public ComputeOptimizerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<RDSDBRecommendationFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   RecommendationPreferences m_recommendationPreferences;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
   bool m_recommendationPreferencesHasBeenSet = false;
 };
 

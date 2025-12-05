@@ -70,9 +70,9 @@ class ResourceIdentifier {
   ///@}
  private:
   LogicalResourceId m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_logicalResourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

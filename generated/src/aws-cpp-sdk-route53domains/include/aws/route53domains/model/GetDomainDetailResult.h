@@ -505,78 +505,78 @@ class GetDomainDetailResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Nameserver> m_nameservers;
-  bool m_nameserversHasBeenSet = false;
 
   bool m_autoRenew{false};
-  bool m_autoRenewHasBeenSet = false;
 
   ContactDetail m_adminContact;
-  bool m_adminContactHasBeenSet = false;
 
   ContactDetail m_registrantContact;
-  bool m_registrantContactHasBeenSet = false;
 
   ContactDetail m_techContact;
-  bool m_techContactHasBeenSet = false;
 
   bool m_adminPrivacy{false};
-  bool m_adminPrivacyHasBeenSet = false;
 
   bool m_registrantPrivacy{false};
-  bool m_registrantPrivacyHasBeenSet = false;
 
   bool m_techPrivacy{false};
-  bool m_techPrivacyHasBeenSet = false;
 
   Aws::String m_registrarName;
-  bool m_registrarNameHasBeenSet = false;
 
   Aws::String m_whoIsServer;
-  bool m_whoIsServerHasBeenSet = false;
 
   Aws::String m_registrarUrl;
-  bool m_registrarUrlHasBeenSet = false;
 
   Aws::String m_abuseContactEmail;
-  bool m_abuseContactEmailHasBeenSet = false;
 
   Aws::String m_abuseContactPhone;
-  bool m_abuseContactPhoneHasBeenSet = false;
 
   Aws::String m_registryDomainId;
-  bool m_registryDomainIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedDate{};
-  bool m_updatedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_reseller;
-  bool m_resellerHasBeenSet = false;
 
   Aws::String m_dnsSec;
-  bool m_dnsSecHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statusList;
-  bool m_statusListHasBeenSet = false;
 
   Aws::Vector<DnssecKey> m_dnssecKeys;
-  bool m_dnssecKeysHasBeenSet = false;
 
   ContactDetail m_billingContact;
-  bool m_billingContactHasBeenSet = false;
 
   bool m_billingPrivacy{false};
-  bool m_billingPrivacyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_nameserversHasBeenSet = false;
+  bool m_autoRenewHasBeenSet = false;
+  bool m_adminContactHasBeenSet = false;
+  bool m_registrantContactHasBeenSet = false;
+  bool m_techContactHasBeenSet = false;
+  bool m_adminPrivacyHasBeenSet = false;
+  bool m_registrantPrivacyHasBeenSet = false;
+  bool m_techPrivacyHasBeenSet = false;
+  bool m_registrarNameHasBeenSet = false;
+  bool m_whoIsServerHasBeenSet = false;
+  bool m_registrarUrlHasBeenSet = false;
+  bool m_abuseContactEmailHasBeenSet = false;
+  bool m_abuseContactPhoneHasBeenSet = false;
+  bool m_registryDomainIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_updatedDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_resellerHasBeenSet = false;
+  bool m_dnsSecHasBeenSet = false;
+  bool m_statusListHasBeenSet = false;
+  bool m_dnssecKeysHasBeenSet = false;
+  bool m_billingContactHasBeenSet = false;
+  bool m_billingPrivacyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListInvoiceUnitsResult {
   ///@}
  private:
   Aws::Vector<InvoiceUnit> m_invoiceUnits;
-  bool m_invoiceUnitsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invoiceUnitsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

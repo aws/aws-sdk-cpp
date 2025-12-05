@@ -95,12 +95,12 @@ class IntentFilter {
   ///@}
  private:
   IntentFilterName m_name{IntentFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   IntentFilterOperator m_operator{IntentFilterOperator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

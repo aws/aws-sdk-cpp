@@ -157,24 +157,24 @@ class GetRegisterAccountStatusResult {
   ///@}
  private:
   Aws::String m_customerAccountId;
-  bool m_customerAccountIdHasBeenSet = false;
 
   RegistrationStatus m_accountStatus{RegistrationStatus::NOT_SET};
-  bool m_accountStatusHasBeenSet = false;
 
   TimestreamRegistrationResponse m_timestreamRegistrationResponse;
-  bool m_timestreamRegistrationResponseHasBeenSet = false;
 
   IamRegistrationResponse m_iamRegistrationResponse;
-  bool m_iamRegistrationResponseHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customerAccountIdHasBeenSet = false;
+  bool m_accountStatusHasBeenSet = false;
+  bool m_timestreamRegistrationResponseHasBeenSet = false;
+  bool m_iamRegistrationResponseHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class S3ReferenceDataSourceUpdate {
   ///@}
  private:
   Aws::String m_bucketARNUpdate;
-  bool m_bucketARNUpdateHasBeenSet = false;
 
   Aws::String m_fileKeyUpdate;
+  bool m_bucketARNUpdateHasBeenSet = false;
   bool m_fileKeyUpdateHasBeenSet = false;
 };
 

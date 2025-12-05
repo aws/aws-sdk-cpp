@@ -236,39 +236,39 @@ class UpdateConnectionResult {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<PhysicalEndpoint> m_physicalEndpoints;
-  bool m_physicalEndpointsHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   ConnectionPropertiesOutput m_props;
-  bool m_propsHasBeenSet = false;
 
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   ConnectionType m_type{ConnectionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_physicalEndpointsHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_propsHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

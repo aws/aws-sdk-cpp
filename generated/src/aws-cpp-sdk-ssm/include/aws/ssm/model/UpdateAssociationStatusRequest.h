@@ -86,12 +86,12 @@ class UpdateAssociationStatusRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   AssociationStatus m_associationStatus;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_associationStatusHasBeenSet = false;
 };
 

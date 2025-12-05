@@ -109,15 +109,15 @@ class EncryptionConfigurationDetails {
   ///@}
  private:
   KmsKeyType m_keyType{KmsKeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   KmsKeyStatus m_encryptionStatus{KmsKeyStatus::NOT_SET};
-  bool m_encryptionStatusHasBeenSet = false;
 
   Aws::String m_encryptionStatusReason;
+  bool m_keyTypeHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_encryptionStatusHasBeenSet = false;
   bool m_encryptionStatusReasonHasBeenSet = false;
 };
 

@@ -99,15 +99,15 @@ class ListWorkerBlocksResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_numResults{0};
-  bool m_numResultsHasBeenSet = false;
 
   Aws::Vector<WorkerBlock> m_workerBlocks;
-  bool m_workerBlocksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_numResultsHasBeenSet = false;
+  bool m_workerBlocksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

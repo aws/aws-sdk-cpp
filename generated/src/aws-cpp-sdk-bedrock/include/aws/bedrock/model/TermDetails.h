@@ -105,15 +105,15 @@ class TermDetails {
   ///@}
  private:
   PricingTerm m_usageBasedPricingTerm;
-  bool m_usageBasedPricingTermHasBeenSet = false;
 
   LegalTerm m_legalTerm;
-  bool m_legalTermHasBeenSet = false;
 
   SupportTerm m_supportTerm;
-  bool m_supportTermHasBeenSet = false;
 
   ValidityTerm m_validityTerm;
+  bool m_usageBasedPricingTermHasBeenSet = false;
+  bool m_legalTermHasBeenSet = false;
+  bool m_supportTermHasBeenSet = false;
   bool m_validityTermHasBeenSet = false;
 };
 

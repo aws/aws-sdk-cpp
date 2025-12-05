@@ -288,45 +288,45 @@ class SigningJob {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   SignedObject m_signedObject;
-  bool m_signedObjectHasBeenSet = false;
 
   SigningMaterial m_signingMaterial;
-  bool m_signingMaterialHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   SigningStatus m_status{SigningStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_isRevoked{false};
-  bool m_isRevokedHasBeenSet = false;
 
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileVersion;
-  bool m_profileVersionHasBeenSet = false;
 
   Aws::String m_platformId;
-  bool m_platformIdHasBeenSet = false;
 
   Aws::String m_platformDisplayName;
-  bool m_platformDisplayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_signatureExpiresAt{};
-  bool m_signatureExpiresAtHasBeenSet = false;
 
   Aws::String m_jobOwner;
-  bool m_jobOwnerHasBeenSet = false;
 
   Aws::String m_jobInvoker;
+  bool m_jobIdHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_signedObjectHasBeenSet = false;
+  bool m_signingMaterialHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_isRevokedHasBeenSet = false;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileVersionHasBeenSet = false;
+  bool m_platformIdHasBeenSet = false;
+  bool m_platformDisplayNameHasBeenSet = false;
+  bool m_signatureExpiresAtHasBeenSet = false;
+  bool m_jobOwnerHasBeenSet = false;
   bool m_jobInvokerHasBeenSet = false;
 };
 

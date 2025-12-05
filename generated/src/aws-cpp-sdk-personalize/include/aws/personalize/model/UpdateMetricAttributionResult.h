@@ -60,9 +60,9 @@ class UpdateMetricAttributionResult {
   ///@}
  private:
   Aws::String m_metricAttributionArn;
-  bool m_metricAttributionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricAttributionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class AdminListGroupsForUserRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_usernameHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

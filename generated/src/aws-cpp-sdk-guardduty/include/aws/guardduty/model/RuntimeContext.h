@@ -507,78 +507,78 @@ class RuntimeContext {
   ///@}
  private:
   ProcessDetails m_modifyingProcess;
-  bool m_modifyingProcessHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_scriptPath;
-  bool m_scriptPathHasBeenSet = false;
 
   Aws::String m_libraryPath;
-  bool m_libraryPathHasBeenSet = false;
 
   Aws::String m_ldPreloadValue;
-  bool m_ldPreloadValueHasBeenSet = false;
 
   Aws::String m_socketPath;
-  bool m_socketPathHasBeenSet = false;
 
   Aws::String m_runcBinaryPath;
-  bool m_runcBinaryPathHasBeenSet = false;
 
   Aws::String m_releaseAgentPath;
-  bool m_releaseAgentPathHasBeenSet = false;
 
   Aws::String m_mountSource;
-  bool m_mountSourceHasBeenSet = false;
 
   Aws::String m_mountTarget;
-  bool m_mountTargetHasBeenSet = false;
 
   Aws::String m_fileSystemType;
-  bool m_fileSystemTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flags;
-  bool m_flagsHasBeenSet = false;
 
   Aws::String m_moduleName;
-  bool m_moduleNameHasBeenSet = false;
 
   Aws::String m_moduleFilePath;
-  bool m_moduleFilePathHasBeenSet = false;
 
   Aws::String m_moduleSha256;
-  bool m_moduleSha256HasBeenSet = false;
 
   Aws::String m_shellHistoryFilePath;
-  bool m_shellHistoryFilePathHasBeenSet = false;
 
   ProcessDetails m_targetProcess;
-  bool m_targetProcessHasBeenSet = false;
 
   Aws::String m_addressFamily;
-  bool m_addressFamilyHasBeenSet = false;
 
   int m_ianaProtocolNumber{0};
-  bool m_ianaProtocolNumberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_memoryRegions;
-  bool m_memoryRegionsHasBeenSet = false;
 
   Aws::String m_toolName;
-  bool m_toolNameHasBeenSet = false;
 
   Aws::String m_toolCategory;
-  bool m_toolCategoryHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_commandLineExample;
-  bool m_commandLineExampleHasBeenSet = false;
 
   Aws::String m_threatFilePath;
+  bool m_modifyingProcessHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_scriptPathHasBeenSet = false;
+  bool m_libraryPathHasBeenSet = false;
+  bool m_ldPreloadValueHasBeenSet = false;
+  bool m_socketPathHasBeenSet = false;
+  bool m_runcBinaryPathHasBeenSet = false;
+  bool m_releaseAgentPathHasBeenSet = false;
+  bool m_mountSourceHasBeenSet = false;
+  bool m_mountTargetHasBeenSet = false;
+  bool m_fileSystemTypeHasBeenSet = false;
+  bool m_flagsHasBeenSet = false;
+  bool m_moduleNameHasBeenSet = false;
+  bool m_moduleFilePathHasBeenSet = false;
+  bool m_moduleSha256HasBeenSet = false;
+  bool m_shellHistoryFilePathHasBeenSet = false;
+  bool m_targetProcessHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_ianaProtocolNumberHasBeenSet = false;
+  bool m_memoryRegionsHasBeenSet = false;
+  bool m_toolNameHasBeenSet = false;
+  bool m_toolCategoryHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_commandLineExampleHasBeenSet = false;
   bool m_threatFilePathHasBeenSet = false;
 };
 

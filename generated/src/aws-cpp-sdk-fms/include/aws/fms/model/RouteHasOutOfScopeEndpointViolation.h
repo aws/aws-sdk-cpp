@@ -270,39 +270,39 @@ class RouteHasOutOfScopeEndpointViolation {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   Aws::Vector<Route> m_violatingRoutes;
-  bool m_violatingRoutesHasBeenSet = false;
 
   Aws::String m_subnetAvailabilityZone;
-  bool m_subnetAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_subnetAvailabilityZoneId;
-  bool m_subnetAvailabilityZoneIdHasBeenSet = false;
 
   Aws::String m_currentFirewallSubnetRouteTable;
-  bool m_currentFirewallSubnetRouteTableHasBeenSet = false;
 
   Aws::String m_firewallSubnetId;
-  bool m_firewallSubnetIdHasBeenSet = false;
 
   Aws::Vector<Route> m_firewallSubnetRoutes;
-  bool m_firewallSubnetRoutesHasBeenSet = false;
 
   Aws::String m_internetGatewayId;
-  bool m_internetGatewayIdHasBeenSet = false;
 
   Aws::String m_currentInternetGatewayRouteTable;
-  bool m_currentInternetGatewayRouteTableHasBeenSet = false;
 
   Aws::Vector<Route> m_internetGatewayRoutes;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_violatingRoutesHasBeenSet = false;
+  bool m_subnetAvailabilityZoneHasBeenSet = false;
+  bool m_subnetAvailabilityZoneIdHasBeenSet = false;
+  bool m_currentFirewallSubnetRouteTableHasBeenSet = false;
+  bool m_firewallSubnetIdHasBeenSet = false;
+  bool m_firewallSubnetRoutesHasBeenSet = false;
+  bool m_internetGatewayIdHasBeenSet = false;
+  bool m_currentInternetGatewayRouteTableHasBeenSet = false;
   bool m_internetGatewayRoutesHasBeenSet = false;
 };
 

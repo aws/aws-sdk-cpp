@@ -87,12 +87,12 @@ class ListAgentVersionsResult {
   ///@}
  private:
   Aws::Vector<AgentVersionSummary> m_agentVersionSummaries;
-  bool m_agentVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

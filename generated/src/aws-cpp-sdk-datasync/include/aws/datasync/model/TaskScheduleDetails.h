@@ -101,12 +101,12 @@ class TaskScheduleDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_statusUpdateTime{};
-  bool m_statusUpdateTimeHasBeenSet = false;
 
   Aws::String m_disabledReason;
-  bool m_disabledReasonHasBeenSet = false;
 
   ScheduleDisabledBy m_disabledBy{ScheduleDisabledBy::NOT_SET};
+  bool m_statusUpdateTimeHasBeenSet = false;
+  bool m_disabledReasonHasBeenSet = false;
   bool m_disabledByHasBeenSet = false;
 };
 

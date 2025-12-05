@@ -79,9 +79,9 @@ class EffectivePatch {
   ///@}
  private:
   Patch m_patch;
-  bool m_patchHasBeenSet = false;
 
   PatchStatus m_patchStatus;
+  bool m_patchHasBeenSet = false;
   bool m_patchStatusHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class AwsWafv2VisibilityConfigDetails {
   ///@}
  private:
   bool m_cloudWatchMetricsEnabled{false};
-  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   bool m_sampledRequestsEnabled{false};
+  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
   bool m_sampledRequestsEnabledHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ApprovalRuleEventMetadata {
   ///@}
  private:
   Aws::String m_approvalRuleName;
-  bool m_approvalRuleNameHasBeenSet = false;
 
   Aws::String m_approvalRuleId;
-  bool m_approvalRuleIdHasBeenSet = false;
 
   Aws::String m_approvalRuleContent;
+  bool m_approvalRuleNameHasBeenSet = false;
+  bool m_approvalRuleIdHasBeenSet = false;
   bool m_approvalRuleContentHasBeenSet = false;
 };
 

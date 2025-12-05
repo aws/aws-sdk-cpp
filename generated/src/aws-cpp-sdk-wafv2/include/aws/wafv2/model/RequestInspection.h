@@ -114,12 +114,12 @@ class RequestInspection {
   ///@}
  private:
   PayloadType m_payloadType{PayloadType::NOT_SET};
-  bool m_payloadTypeHasBeenSet = false;
 
   UsernameField m_usernameField;
-  bool m_usernameFieldHasBeenSet = false;
 
   PasswordField m_passwordField;
+  bool m_payloadTypeHasBeenSet = false;
+  bool m_usernameFieldHasBeenSet = false;
   bool m_passwordFieldHasBeenSet = false;
 };
 

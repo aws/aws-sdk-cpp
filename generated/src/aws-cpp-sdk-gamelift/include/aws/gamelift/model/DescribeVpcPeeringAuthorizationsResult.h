@@ -69,9 +69,9 @@ class DescribeVpcPeeringAuthorizationsResult {
   ///@}
  private:
   Aws::Vector<VpcPeeringAuthorization> m_vpcPeeringAuthorizations;
-  bool m_vpcPeeringAuthorizationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcPeeringAuthorizationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

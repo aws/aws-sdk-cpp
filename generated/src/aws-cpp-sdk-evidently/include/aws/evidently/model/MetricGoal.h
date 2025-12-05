@@ -70,9 +70,9 @@ class MetricGoal {
   ///@}
  private:
   ChangeDirectionEnum m_desiredChange{ChangeDirectionEnum::NOT_SET};
-  bool m_desiredChangeHasBeenSet = false;
 
   MetricDefinition m_metricDefinition;
+  bool m_desiredChangeHasBeenSet = false;
   bool m_metricDefinitionHasBeenSet = false;
 };
 

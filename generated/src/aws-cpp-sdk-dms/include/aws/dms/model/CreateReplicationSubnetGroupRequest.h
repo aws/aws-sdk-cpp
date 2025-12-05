@@ -124,15 +124,15 @@ class CreateReplicationSubnetGroupRequest : public DatabaseMigrationServiceReque
   ///@}
  private:
   Aws::String m_replicationSubnetGroupIdentifier;
-  bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
 
   Aws::String m_replicationSubnetGroupDescription;
-  bool m_replicationSubnetGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
+  bool m_replicationSubnetGroupDescriptionHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

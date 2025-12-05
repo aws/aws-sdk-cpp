@@ -94,12 +94,12 @@ class BatchCreateDataTableValueRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataTableId;
-  bool m_dataTableIdHasBeenSet = false;
 
   Aws::Vector<DataTableValue> m_values;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataTableIdHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class LicenseRuleStatement {
   ///@}
  private:
   AndRuleStatement m_andRuleStatement;
-  bool m_andRuleStatementHasBeenSet = false;
 
   OrRuleStatement m_orRuleStatement;
-  bool m_orRuleStatementHasBeenSet = false;
 
   MatchingRuleStatement m_matchingRuleStatement;
+  bool m_andRuleStatementHasBeenSet = false;
+  bool m_orRuleStatementHasBeenSet = false;
   bool m_matchingRuleStatementHasBeenSet = false;
 };
 

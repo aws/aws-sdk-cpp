@@ -168,24 +168,24 @@ class EventStreamSummary {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_eventStreamName;
-  bool m_eventStreamNameHasBeenSet = false;
 
   Aws::String m_eventStreamArn;
-  bool m_eventStreamArnHasBeenSet = false;
 
   EventStreamState m_state{EventStreamState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stoppedSince{};
-  bool m_stoppedSinceHasBeenSet = false;
 
   DestinationSummary m_destinationSummary;
-  bool m_destinationSummaryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_eventStreamNameHasBeenSet = false;
+  bool m_eventStreamArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stoppedSinceHasBeenSet = false;
+  bool m_destinationSummaryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

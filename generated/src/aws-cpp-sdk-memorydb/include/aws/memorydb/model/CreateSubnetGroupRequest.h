@@ -118,15 +118,15 @@ class CreateSubnetGroupRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

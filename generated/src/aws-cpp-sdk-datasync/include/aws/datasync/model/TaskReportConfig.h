@@ -144,18 +144,18 @@ class TaskReportConfig {
   ///@}
  private:
   ReportDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   ReportOutputType m_outputType{ReportOutputType::NOT_SET};
-  bool m_outputTypeHasBeenSet = false;
 
   ReportLevel m_reportLevel{ReportLevel::NOT_SET};
-  bool m_reportLevelHasBeenSet = false;
 
   ObjectVersionIds m_objectVersionIds{ObjectVersionIds::NOT_SET};
-  bool m_objectVersionIdsHasBeenSet = false;
 
   ReportOverrides m_overrides;
+  bool m_destinationHasBeenSet = false;
+  bool m_outputTypeHasBeenSet = false;
+  bool m_reportLevelHasBeenSet = false;
+  bool m_objectVersionIdsHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

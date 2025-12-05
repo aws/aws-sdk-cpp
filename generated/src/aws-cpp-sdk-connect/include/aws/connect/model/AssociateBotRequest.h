@@ -108,15 +108,15 @@ class AssociateBotRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   LexBot m_lexBot;
-  bool m_lexBotHasBeenSet = false;
 
   LexV2Bot m_lexV2Bot;
-  bool m_lexV2BotHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_lexBotHasBeenSet = false;
+  bool m_lexV2BotHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -103,15 +103,15 @@ class DescribeConnectionAliasPermissionsResult {
   ///@}
  private:
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   Aws::Vector<ConnectionAliasPermission> m_connectionAliasPermissions;
-  bool m_connectionAliasPermissionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aliasIdHasBeenSet = false;
+  bool m_connectionAliasPermissionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class ChangeProgressStage {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ChangeProgressStageStatuses m_status{ChangeProgressStageStatuses::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

@@ -215,33 +215,33 @@ class ResourceIdentifier {
   ///@}
  private:
   Aws::String m_deviceCertificateId;
-  bool m_deviceCertificateIdHasBeenSet = false;
 
   Aws::String m_caCertificateId;
-  bool m_caCertificateIdHasBeenSet = false;
 
   Aws::String m_cognitoIdentityPoolId;
-  bool m_cognitoIdentityPoolIdHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   PolicyVersionIdentifier m_policyVersionIdentifier;
-  bool m_policyVersionIdentifierHasBeenSet = false;
 
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_roleAliasArn;
-  bool m_roleAliasArnHasBeenSet = false;
 
   IssuerCertificateIdentifier m_issuerCertificateIdentifier;
-  bool m_issuerCertificateIdentifierHasBeenSet = false;
 
   Aws::String m_deviceCertificateArn;
+  bool m_deviceCertificateIdHasBeenSet = false;
+  bool m_caCertificateIdHasBeenSet = false;
+  bool m_cognitoIdentityPoolIdHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_policyVersionIdentifierHasBeenSet = false;
+  bool m_accountHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_roleAliasArnHasBeenSet = false;
+  bool m_issuerCertificateIdentifierHasBeenSet = false;
   bool m_deviceCertificateArnHasBeenSet = false;
 };
 

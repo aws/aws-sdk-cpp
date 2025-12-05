@@ -88,12 +88,12 @@ class CustomOauth2ProviderConfigInput {
   ///@}
  private:
   Oauth2Discovery m_oauthDiscovery;
-  bool m_oauthDiscoveryHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
+  bool m_oauthDiscoveryHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
 };
 

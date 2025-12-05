@@ -209,27 +209,27 @@ class MedicalScribeConfigurationEvent {
   ///@}
  private:
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   MedicalScribeVocabularyFilterMethod m_vocabularyFilterMethod{MedicalScribeVocabularyFilterMethod::NOT_SET};
-  bool m_vocabularyFilterMethodHasBeenSet = false;
 
   Aws::String m_resourceAccessRoleArn;
-  bool m_resourceAccessRoleArnHasBeenSet = false;
 
   Aws::Vector<MedicalScribeChannelDefinition> m_channelDefinitions;
-  bool m_channelDefinitionsHasBeenSet = false;
 
   MedicalScribeEncryptionSettings m_encryptionSettings;
-  bool m_encryptionSettingsHasBeenSet = false;
 
   MedicalScribePostStreamAnalyticsSettings m_postStreamAnalyticsSettings;
-  bool m_postStreamAnalyticsSettingsHasBeenSet = false;
 
   MedicalScribeContext m_medicalScribeContext;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_vocabularyFilterMethodHasBeenSet = false;
+  bool m_resourceAccessRoleArnHasBeenSet = false;
+  bool m_channelDefinitionsHasBeenSet = false;
+  bool m_encryptionSettingsHasBeenSet = false;
+  bool m_postStreamAnalyticsSettingsHasBeenSet = false;
   bool m_medicalScribeContextHasBeenSet = false;
 };
 

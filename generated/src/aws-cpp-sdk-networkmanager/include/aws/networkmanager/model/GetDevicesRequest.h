@@ -129,18 +129,18 @@ class GetDevicesRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceIds;
-  bool m_deviceIdsHasBeenSet = false;
 
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_deviceIdsHasBeenSet = false;
+  bool m_siteIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

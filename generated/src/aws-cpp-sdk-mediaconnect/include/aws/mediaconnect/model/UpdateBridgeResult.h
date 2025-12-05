@@ -60,9 +60,9 @@ class UpdateBridgeResult {
   ///@}
  private:
   Bridge m_bridge;
-  bool m_bridgeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bridgeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

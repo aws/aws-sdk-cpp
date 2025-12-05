@@ -74,9 +74,9 @@ class DeleteAnalyzerRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerName;
-  bool m_analyzerNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_analyzerNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -86,12 +86,12 @@ class ImportTaskError {
   ///@}
  private:
   ImportErrorData m_errorData;
-  bool m_errorDataHasBeenSet = false;
 
   Aws::String m_errorDateTime;
-  bool m_errorDateTimeHasBeenSet = false;
 
   ImportErrorType m_errorType{ImportErrorType::NOT_SET};
+  bool m_errorDataHasBeenSet = false;
+  bool m_errorDateTimeHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

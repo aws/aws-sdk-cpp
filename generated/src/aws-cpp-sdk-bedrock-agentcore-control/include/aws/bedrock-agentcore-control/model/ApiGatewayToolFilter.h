@@ -81,9 +81,9 @@ class ApiGatewayToolFilter {
   ///@}
  private:
   Aws::String m_filterPath;
-  bool m_filterPathHasBeenSet = false;
 
   Aws::Vector<RestApiMethod> m_methods;
+  bool m_filterPathHasBeenSet = false;
   bool m_methodsHasBeenSet = false;
 };
 

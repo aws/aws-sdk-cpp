@@ -168,21 +168,21 @@ class UpdateMembershipRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipName;
-  bool m_membershipNameHasBeenSet = false;
 
   Aws::Vector<IncidentResponder> m_incidentResponseTeam;
-  bool m_incidentResponseTeamHasBeenSet = false;
 
   Aws::Vector<OptInFeature> m_optInFeatures;
-  bool m_optInFeaturesHasBeenSet = false;
 
   MembershipAccountsConfigurationsUpdate m_membershipAccountsConfigurationsUpdate;
-  bool m_membershipAccountsConfigurationsUpdateHasBeenSet = false;
 
   bool m_undoMembershipCancellation{false};
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipNameHasBeenSet = false;
+  bool m_incidentResponseTeamHasBeenSet = false;
+  bool m_optInFeaturesHasBeenSet = false;
+  bool m_membershipAccountsConfigurationsUpdateHasBeenSet = false;
   bool m_undoMembershipCancellationHasBeenSet = false;
 };
 

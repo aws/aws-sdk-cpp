@@ -76,9 +76,9 @@ class BatchDetectKeyPhrasesItemResult {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::Vector<KeyPhrase> m_keyPhrases;
+  bool m_indexHasBeenSet = false;
   bool m_keyPhrasesHasBeenSet = false;
 };
 

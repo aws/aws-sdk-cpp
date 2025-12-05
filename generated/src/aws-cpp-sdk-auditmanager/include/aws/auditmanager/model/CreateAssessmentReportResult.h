@@ -61,9 +61,9 @@ class CreateAssessmentReportResult {
   ///@}
  private:
   AssessmentReport m_assessmentReport;
-  bool m_assessmentReportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

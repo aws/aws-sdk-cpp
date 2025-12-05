@@ -173,27 +173,27 @@ class WcdmaObj {
   ///@}
  private:
   int m_mcc{0};
-  bool m_mccHasBeenSet = false;
 
   int m_mnc{0};
-  bool m_mncHasBeenSet = false;
 
   int m_lac{0};
-  bool m_lacHasBeenSet = false;
 
   int m_utranCid{0};
-  bool m_utranCidHasBeenSet = false;
 
   WcdmaLocalId m_wcdmaLocalId;
-  bool m_wcdmaLocalIdHasBeenSet = false;
 
   int m_rscp{0};
-  bool m_rscpHasBeenSet = false;
 
   int m_pathLoss{0};
-  bool m_pathLossHasBeenSet = false;
 
   Aws::Vector<WcdmaNmrObj> m_wcdmaNmr;
+  bool m_mccHasBeenSet = false;
+  bool m_mncHasBeenSet = false;
+  bool m_lacHasBeenSet = false;
+  bool m_utranCidHasBeenSet = false;
+  bool m_wcdmaLocalIdHasBeenSet = false;
+  bool m_rscpHasBeenSet = false;
+  bool m_pathLossHasBeenSet = false;
   bool m_wcdmaNmrHasBeenSet = false;
 };
 

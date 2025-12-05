@@ -94,12 +94,12 @@ class CreateSuiteDefinitionRequest : public IoTDeviceAdvisorRequest {
   ///@}
  private:
   SuiteDefinitionConfiguration m_suiteDefinitionConfiguration;
-  bool m_suiteDefinitionConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_suiteDefinitionConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

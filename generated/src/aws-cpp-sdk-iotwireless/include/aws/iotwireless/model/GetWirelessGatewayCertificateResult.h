@@ -78,12 +78,12 @@ class GetWirelessGatewayCertificateResult {
   ///@}
  private:
   Aws::String m_iotCertificateId;
-  bool m_iotCertificateIdHasBeenSet = false;
 
   Aws::String m_loRaWANNetworkServerCertificateId;
-  bool m_loRaWANNetworkServerCertificateIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_iotCertificateIdHasBeenSet = false;
+  bool m_loRaWANNetworkServerCertificateIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

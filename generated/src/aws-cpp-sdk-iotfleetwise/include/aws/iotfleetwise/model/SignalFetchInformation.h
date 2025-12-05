@@ -115,15 +115,15 @@ class SignalFetchInformation {
   ///@}
  private:
   Aws::String m_fullyQualifiedName;
-  bool m_fullyQualifiedNameHasBeenSet = false;
 
   SignalFetchConfig m_signalFetchConfig;
-  bool m_signalFetchConfigHasBeenSet = false;
 
   int m_conditionLanguageVersion{0};
-  bool m_conditionLanguageVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
+  bool m_fullyQualifiedNameHasBeenSet = false;
+  bool m_signalFetchConfigHasBeenSet = false;
+  bool m_conditionLanguageVersionHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

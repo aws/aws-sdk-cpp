@@ -84,12 +84,12 @@ class ReplicateSecretToRegionsResult {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::Vector<ReplicationStatusType> m_replicationStatus;
-  bool m_replicationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aRNHasBeenSet = false;
+  bool m_replicationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

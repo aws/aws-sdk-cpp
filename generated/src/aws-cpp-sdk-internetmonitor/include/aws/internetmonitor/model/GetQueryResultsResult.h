@@ -113,15 +113,15 @@ class GetQueryResultsResult {
   ///@}
  private:
   Aws::Vector<QueryField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fieldsHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

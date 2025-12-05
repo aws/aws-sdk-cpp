@@ -292,45 +292,45 @@ class DescribeChannelResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   ChannelState m_channelState{ChannelState::NOT_SET};
-  bool m_channelStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   SlateSource m_fillerSlate;
-  bool m_fillerSlateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<ResponseOutputItem> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_playbackMode;
-  bool m_playbackModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_tier;
-  bool m_tierHasBeenSet = false;
 
   LogConfigurationForChannel m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   TimeShiftConfiguration m_timeShiftConfiguration;
-  bool m_timeShiftConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_audiences;
-  bool m_audiencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelStateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_fillerSlateHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_playbackModeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_timeShiftConfigurationHasBeenSet = false;
+  bool m_audiencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

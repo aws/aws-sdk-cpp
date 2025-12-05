@@ -70,9 +70,9 @@ class DeleteVpnConcentratorRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_vpnConcentratorId;
-  bool m_vpnConcentratorIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_vpnConcentratorIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

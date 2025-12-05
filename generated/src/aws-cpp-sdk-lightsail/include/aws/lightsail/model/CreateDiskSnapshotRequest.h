@@ -122,15 +122,15 @@ class CreateDiskSnapshotRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_diskName;
-  bool m_diskNameHasBeenSet = false;
 
   Aws::String m_diskSnapshotName;
-  bool m_diskSnapshotNameHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_diskNameHasBeenSet = false;
+  bool m_diskSnapshotNameHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -93,15 +93,15 @@ class RegisterUserResult {
   ///@}
  private:
   User m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_userInvitationUrl;
-  bool m_userInvitationUrlHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_userHasBeenSet = false;
+  bool m_userInvitationUrlHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

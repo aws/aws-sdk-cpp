@@ -85,12 +85,12 @@ class DescribeActivationsResult {
   ///@}
  private:
   Aws::Vector<Activation> m_activationList;
-  bool m_activationListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_activationListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

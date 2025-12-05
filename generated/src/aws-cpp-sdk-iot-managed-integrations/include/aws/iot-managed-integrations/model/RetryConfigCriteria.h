@@ -66,9 +66,9 @@ class RetryConfigCriteria {
   ///@}
  private:
   RetryCriteriaFailureType m_failureType{RetryCriteriaFailureType::NOT_SET};
-  bool m_failureTypeHasBeenSet = false;
 
   int m_minNumberOfRetries{0};
+  bool m_failureTypeHasBeenSet = false;
   bool m_minNumberOfRetriesHasBeenSet = false;
 };
 

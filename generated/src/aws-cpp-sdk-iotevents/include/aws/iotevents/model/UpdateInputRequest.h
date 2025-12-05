@@ -84,12 +84,12 @@ class UpdateInputRequest : public IoTEventsRequest {
   ///@}
  private:
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   Aws::String m_inputDescription;
-  bool m_inputDescriptionHasBeenSet = false;
 
   InputDefinition m_inputDefinition;
+  bool m_inputNameHasBeenSet = false;
+  bool m_inputDescriptionHasBeenSet = false;
   bool m_inputDefinitionHasBeenSet = false;
 };
 

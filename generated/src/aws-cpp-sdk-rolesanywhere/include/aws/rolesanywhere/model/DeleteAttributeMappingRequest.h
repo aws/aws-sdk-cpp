@@ -95,12 +95,12 @@ class DeleteAttributeMappingRequest : public RolesAnywhereRequest {
   ///@}
  private:
   CertificateField m_certificateField{CertificateField::NOT_SET};
-  bool m_certificateFieldHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_specifiers;
+  bool m_certificateFieldHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_specifiersHasBeenSet = false;
 };
 

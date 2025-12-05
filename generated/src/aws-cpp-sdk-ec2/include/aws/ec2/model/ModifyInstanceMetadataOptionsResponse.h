@@ -78,12 +78,12 @@ class ModifyInstanceMetadataOptionsResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceMetadataOptionsResponse m_instanceMetadataOptions;
-  bool m_instanceMetadataOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceMetadataOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

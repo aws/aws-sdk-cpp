@@ -59,9 +59,9 @@ class CreateStreamProcessorResult {
   ///@}
  private:
   Aws::String m_streamProcessorArn;
-  bool m_streamProcessorArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamProcessorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

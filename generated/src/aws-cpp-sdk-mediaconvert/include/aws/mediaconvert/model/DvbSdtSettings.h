@@ -110,15 +110,15 @@ class DvbSdtSettings {
   ///@}
  private:
   OutputSdt m_outputSdt{OutputSdt::NOT_SET};
-  bool m_outputSdtHasBeenSet = false;
 
   int m_sdtInterval{0};
-  bool m_sdtIntervalHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_serviceProviderName;
+  bool m_outputSdtHasBeenSet = false;
+  bool m_sdtIntervalHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_serviceProviderNameHasBeenSet = false;
 };
 

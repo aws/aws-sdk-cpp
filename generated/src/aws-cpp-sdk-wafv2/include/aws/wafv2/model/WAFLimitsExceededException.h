@@ -70,9 +70,9 @@ class WAFLimitsExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_sourceType;
+  bool m_messageHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

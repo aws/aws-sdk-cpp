@@ -224,30 +224,30 @@ class Build {
   ///@}
  private:
   Aws::String m_buildId;
-  bool m_buildIdHasBeenSet = false;
 
   Aws::String m_buildArn;
-  bool m_buildArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   BuildStatus m_status{BuildStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   long long m_sizeOnDisk{0};
-  bool m_sizeOnDiskHasBeenSet = false;
 
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_serverSdkVersion;
+  bool m_buildIdHasBeenSet = false;
+  bool m_buildArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sizeOnDiskHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_serverSdkVersionHasBeenSet = false;
 };
 

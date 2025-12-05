@@ -83,9 +83,9 @@ class CheckDomainTransferabilityRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_authCode;
+  bool m_domainNameHasBeenSet = false;
   bool m_authCodeHasBeenSet = false;
 };
 

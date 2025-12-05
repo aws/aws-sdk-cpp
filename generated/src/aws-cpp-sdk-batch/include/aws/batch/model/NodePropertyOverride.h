@@ -164,21 +164,21 @@ class NodePropertyOverride {
   ///@}
  private:
   Aws::String m_targetNodes;
-  bool m_targetNodesHasBeenSet = false;
 
   ContainerOverrides m_containerOverrides;
-  bool m_containerOverridesHasBeenSet = false;
 
   EcsPropertiesOverride m_ecsPropertiesOverride;
-  bool m_ecsPropertiesOverrideHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   EksPropertiesOverride m_eksPropertiesOverride;
-  bool m_eksPropertiesOverrideHasBeenSet = false;
 
   ConsumableResourceProperties m_consumableResourcePropertiesOverride;
+  bool m_targetNodesHasBeenSet = false;
+  bool m_containerOverridesHasBeenSet = false;
+  bool m_ecsPropertiesOverrideHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_eksPropertiesOverrideHasBeenSet = false;
   bool m_consumableResourcePropertiesOverrideHasBeenSet = false;
 };
 

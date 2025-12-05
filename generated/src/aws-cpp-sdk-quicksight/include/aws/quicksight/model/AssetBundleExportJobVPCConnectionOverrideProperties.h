@@ -78,9 +78,9 @@ class AssetBundleExportJobVPCConnectionOverrideProperties {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobVPCConnectionPropertyToOverride> m_properties;
+  bool m_arnHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

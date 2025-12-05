@@ -108,15 +108,15 @@ class GuardrailAssessment {
   ///@}
  private:
   GuardrailContentPolicyAssessment m_contentPolicy;
-  bool m_contentPolicyHasBeenSet = false;
 
   GuardrailSensitiveInformationPolicyAssessment m_sensitiveInformationPolicy;
-  bool m_sensitiveInformationPolicyHasBeenSet = false;
 
   GuardrailTopicPolicyAssessment m_topicPolicy;
-  bool m_topicPolicyHasBeenSet = false;
 
   GuardrailWordPolicyAssessment m_wordPolicy;
+  bool m_contentPolicyHasBeenSet = false;
+  bool m_sensitiveInformationPolicyHasBeenSet = false;
+  bool m_topicPolicyHasBeenSet = false;
   bool m_wordPolicyHasBeenSet = false;
 };
 

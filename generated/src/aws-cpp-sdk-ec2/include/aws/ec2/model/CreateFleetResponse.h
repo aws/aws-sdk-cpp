@@ -111,15 +111,15 @@ class CreateFleetResponse {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::Vector<CreateFleetError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<CreateFleetInstance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

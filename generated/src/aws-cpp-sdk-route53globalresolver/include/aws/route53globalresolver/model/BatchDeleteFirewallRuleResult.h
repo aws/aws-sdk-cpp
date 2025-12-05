@@ -104,15 +104,15 @@ class BatchDeleteFirewallRuleResult {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CRResourceStatus m_status{CRResourceStatus::NOT_SET};
+  bool m_clientTokenHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

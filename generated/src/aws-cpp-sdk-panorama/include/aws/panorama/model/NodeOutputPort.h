@@ -85,12 +85,12 @@ class NodeOutputPort {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PortType m_type{PortType::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

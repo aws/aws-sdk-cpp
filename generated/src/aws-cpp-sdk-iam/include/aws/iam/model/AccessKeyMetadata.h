@@ -110,15 +110,15 @@ class AccessKeyMetadata {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
+  bool m_userNameHasBeenSet = false;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_createDateHasBeenSet = false;
 };
 

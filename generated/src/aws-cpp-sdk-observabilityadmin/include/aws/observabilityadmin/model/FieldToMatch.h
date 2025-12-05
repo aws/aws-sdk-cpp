@@ -106,15 +106,15 @@ class FieldToMatch {
   ///@}
  private:
   SingleHeader m_singleHeader;
-  bool m_singleHeaderHasBeenSet = false;
 
   Aws::String m_uriPath;
-  bool m_uriPathHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_method;
+  bool m_singleHeaderHasBeenSet = false;
+  bool m_uriPathHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
   bool m_methodHasBeenSet = false;
 };
 

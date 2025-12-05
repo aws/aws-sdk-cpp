@@ -69,9 +69,9 @@ class DomainUnitOwnerProperties {
   ///@}
  private:
   DomainUnitGroupProperties m_group;
-  bool m_groupHasBeenSet = false;
 
   DomainUnitUserProperties m_user;
+  bool m_groupHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

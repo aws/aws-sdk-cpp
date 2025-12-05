@@ -142,21 +142,21 @@ class AppMonitorSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_created;
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_lastModified;
-  bool m_lastModifiedHasBeenSet = false;
 
   StateEnum m_state{StateEnum::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   AppMonitorPlatform m_platform{AppMonitorPlatform::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

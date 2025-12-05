@@ -415,60 +415,60 @@ class DocumentClassifierProperties {
   ///@}
  private:
   Aws::String m_documentClassifierArn;
-  bool m_documentClassifierArnHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   ModelStatus m_status{ModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
-  bool m_submitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingStartTime{};
-  bool m_trainingStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingEndTime{};
-  bool m_trainingEndTimeHasBeenSet = false;
 
   DocumentClassifierInputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   DocumentClassifierOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   ClassifierMetadata m_classifierMetadata;
-  bool m_classifierMetadataHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   DocumentClassifierMode m_mode{DocumentClassifierMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_modelKmsKeyId;
-  bool m_modelKmsKeyIdHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_sourceModelArn;
-  bool m_sourceModelArnHasBeenSet = false;
 
   Aws::String m_flywheelArn;
+  bool m_documentClassifierArnHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_submitTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_trainingStartTimeHasBeenSet = false;
+  bool m_trainingEndTimeHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_classifierMetadataHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_modelKmsKeyIdHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_sourceModelArnHasBeenSet = false;
   bool m_flywheelArnHasBeenSet = false;
 };
 

@@ -118,15 +118,15 @@ class Attribute {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_targetId;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
 };
 

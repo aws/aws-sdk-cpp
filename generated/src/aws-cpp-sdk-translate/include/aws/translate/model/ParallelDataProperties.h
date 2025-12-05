@@ -347,54 +347,54 @@ class ParallelDataProperties {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ParallelDataStatus m_status{ParallelDataStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_sourceLanguageCode;
-  bool m_sourceLanguageCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetLanguageCodes;
-  bool m_targetLanguageCodesHasBeenSet = false;
 
   ParallelDataConfig m_parallelDataConfig;
-  bool m_parallelDataConfigHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_importedDataSize{0};
-  bool m_importedDataSizeHasBeenSet = false;
 
   long long m_importedRecordCount{0};
-  bool m_importedRecordCountHasBeenSet = false;
 
   long long m_failedRecordCount{0};
-  bool m_failedRecordCountHasBeenSet = false;
 
   long long m_skippedRecordCount{0};
-  bool m_skippedRecordCountHasBeenSet = false;
 
   EncryptionKey m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   ParallelDataStatus m_latestUpdateAttemptStatus{ParallelDataStatus::NOT_SET};
-  bool m_latestUpdateAttemptStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestUpdateAttemptAt{};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceLanguageCodeHasBeenSet = false;
+  bool m_targetLanguageCodesHasBeenSet = false;
+  bool m_parallelDataConfigHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_importedDataSizeHasBeenSet = false;
+  bool m_importedRecordCountHasBeenSet = false;
+  bool m_failedRecordCountHasBeenSet = false;
+  bool m_skippedRecordCountHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_latestUpdateAttemptStatusHasBeenSet = false;
   bool m_latestUpdateAttemptAtHasBeenSet = false;
 };
 

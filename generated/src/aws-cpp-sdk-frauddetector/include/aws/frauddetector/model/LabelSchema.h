@@ -94,9 +94,9 @@ class LabelSchema {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_labelMapper;
-  bool m_labelMapperHasBeenSet = false;
 
   UnlabeledEventsTreatment m_unlabeledEventsTreatment{UnlabeledEventsTreatment::NOT_SET};
+  bool m_labelMapperHasBeenSet = false;
   bool m_unlabeledEventsTreatmentHasBeenSet = false;
 };
 

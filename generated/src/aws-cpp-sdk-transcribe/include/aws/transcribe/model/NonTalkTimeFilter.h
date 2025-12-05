@@ -115,15 +115,15 @@ class NonTalkTimeFilter {
   ///@}
  private:
   long long m_threshold{0};
-  bool m_thresholdHasBeenSet = false;
 
   AbsoluteTimeRange m_absoluteTimeRange;
-  bool m_absoluteTimeRangeHasBeenSet = false;
 
   RelativeTimeRange m_relativeTimeRange;
-  bool m_relativeTimeRangeHasBeenSet = false;
 
   bool m_negate{false};
+  bool m_thresholdHasBeenSet = false;
+  bool m_absoluteTimeRangeHasBeenSet = false;
+  bool m_relativeTimeRangeHasBeenSet = false;
   bool m_negateHasBeenSet = false;
 };
 

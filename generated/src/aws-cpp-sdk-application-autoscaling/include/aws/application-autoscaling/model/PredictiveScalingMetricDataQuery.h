@@ -146,18 +146,18 @@ class PredictiveScalingMetricDataQuery {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   PredictiveScalingMetricStat m_metricStat;
-  bool m_metricStatHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   bool m_returnData{false};
+  bool m_idHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_metricStatHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
   bool m_returnDataHasBeenSet = false;
 };
 

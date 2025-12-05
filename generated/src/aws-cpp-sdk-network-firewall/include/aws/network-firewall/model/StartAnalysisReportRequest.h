@@ -87,12 +87,12 @@ class StartAnalysisReportRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   EnabledAnalysisType m_analysisType{EnabledAnalysisType::NOT_SET};
+  bool m_firewallNameHasBeenSet = false;
+  bool m_firewallArnHasBeenSet = false;
   bool m_analysisTypeHasBeenSet = false;
 };
 

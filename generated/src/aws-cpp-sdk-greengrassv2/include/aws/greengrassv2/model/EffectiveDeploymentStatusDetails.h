@@ -91,9 +91,9 @@ class EffectiveDeploymentStatusDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_errorStack;
-  bool m_errorStackHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_errorTypes;
+  bool m_errorStackHasBeenSet = false;
   bool m_errorTypesHasBeenSet = false;
 };
 

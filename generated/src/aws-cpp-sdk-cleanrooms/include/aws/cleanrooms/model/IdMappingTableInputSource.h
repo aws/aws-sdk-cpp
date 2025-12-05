@@ -67,9 +67,9 @@ class IdMappingTableInputSource {
   ///@}
  private:
   Aws::String m_idNamespaceAssociationId;
-  bool m_idNamespaceAssociationIdHasBeenSet = false;
 
   IdNamespaceType m_type{IdNamespaceType::NOT_SET};
+  bool m_idNamespaceAssociationIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

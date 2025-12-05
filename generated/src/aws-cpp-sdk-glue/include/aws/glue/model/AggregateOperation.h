@@ -78,9 +78,9 @@ class AggregateOperation {
   ///@}
  private:
   Aws::Vector<Aws::String> m_column;
-  bool m_columnHasBeenSet = false;
 
   AggFunction m_aggFunc{AggFunction::NOT_SET};
+  bool m_columnHasBeenSet = false;
   bool m_aggFuncHasBeenSet = false;
 };
 

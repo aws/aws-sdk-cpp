@@ -71,9 +71,9 @@ class UpdateEngagementContextPayload {
   ///@}
  private:
   UpdateLeadContext m_lead;
-  bool m_leadHasBeenSet = false;
 
   CustomerProjectsContext m_customerProject;
+  bool m_leadHasBeenSet = false;
   bool m_customerProjectHasBeenSet = false;
 };
 

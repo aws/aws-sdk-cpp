@@ -103,15 +103,15 @@ class GetQueryResultsWorkloadInsightsTopContributorsDataResult {
   ///@}
  private:
   MetricUnit m_unit{MetricUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   Aws::Vector<WorkloadInsightsTopContributorsDataPoint> m_datapoints;
-  bool m_datapointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unitHasBeenSet = false;
+  bool m_datapointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

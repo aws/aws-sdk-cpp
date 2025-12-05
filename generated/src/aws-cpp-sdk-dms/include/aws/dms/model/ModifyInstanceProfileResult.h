@@ -61,9 +61,9 @@ class ModifyInstanceProfileResult {
   ///@}
  private:
   InstanceProfile m_instanceProfile;
-  bool m_instanceProfileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceProfileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

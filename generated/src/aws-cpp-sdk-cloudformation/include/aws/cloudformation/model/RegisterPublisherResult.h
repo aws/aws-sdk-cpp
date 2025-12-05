@@ -60,9 +60,9 @@ class RegisterPublisherResult {
   ///@}
  private:
   Aws::String m_publisherId;
-  bool m_publisherIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_publisherIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

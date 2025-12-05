@@ -91,12 +91,12 @@ class PutImageScanningConfigurationRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_imageScanningConfigurationHasBeenSet = false;
 };
 

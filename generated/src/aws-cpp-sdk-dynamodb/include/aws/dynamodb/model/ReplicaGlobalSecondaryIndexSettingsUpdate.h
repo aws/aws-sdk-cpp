@@ -94,12 +94,12 @@ class ReplicaGlobalSecondaryIndexSettingsUpdate {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   long long m_provisionedReadCapacityUnits{0};
-  bool m_provisionedReadCapacityUnitsHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_provisionedReadCapacityAutoScalingSettingsUpdate;
+  bool m_indexNameHasBeenSet = false;
+  bool m_provisionedReadCapacityUnitsHasBeenSet = false;
   bool m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = false;
 };
 

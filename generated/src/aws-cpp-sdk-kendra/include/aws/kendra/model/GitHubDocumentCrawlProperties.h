@@ -144,24 +144,24 @@ class GitHubDocumentCrawlProperties {
   ///@}
  private:
   bool m_crawlRepositoryDocuments{false};
-  bool m_crawlRepositoryDocumentsHasBeenSet = false;
 
   bool m_crawlIssue{false};
-  bool m_crawlIssueHasBeenSet = false;
 
   bool m_crawlIssueComment{false};
-  bool m_crawlIssueCommentHasBeenSet = false;
 
   bool m_crawlIssueCommentAttachment{false};
-  bool m_crawlIssueCommentAttachmentHasBeenSet = false;
 
   bool m_crawlPullRequest{false};
-  bool m_crawlPullRequestHasBeenSet = false;
 
   bool m_crawlPullRequestComment{false};
-  bool m_crawlPullRequestCommentHasBeenSet = false;
 
   bool m_crawlPullRequestCommentAttachment{false};
+  bool m_crawlRepositoryDocumentsHasBeenSet = false;
+  bool m_crawlIssueHasBeenSet = false;
+  bool m_crawlIssueCommentHasBeenSet = false;
+  bool m_crawlIssueCommentAttachmentHasBeenSet = false;
+  bool m_crawlPullRequestHasBeenSet = false;
+  bool m_crawlPullRequestCommentHasBeenSet = false;
   bool m_crawlPullRequestCommentAttachmentHasBeenSet = false;
 };
 

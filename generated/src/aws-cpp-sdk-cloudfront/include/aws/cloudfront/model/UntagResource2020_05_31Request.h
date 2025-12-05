@@ -75,9 +75,9 @@ class UntagResource2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   TagKeys m_tagKeys;
+  bool m_resourceHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

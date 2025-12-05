@@ -77,9 +77,9 @@ class FieldGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<FieldItem> m_fields;
+  bool m_nameHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

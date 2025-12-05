@@ -121,15 +121,15 @@ class SubmitFeedbackRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::Vector<ClickFeedback> m_clickFeedbackItems;
-  bool m_clickFeedbackItemsHasBeenSet = false;
 
   Aws::Vector<RelevanceFeedback> m_relevanceFeedbackItems;
+  bool m_indexIdHasBeenSet = false;
+  bool m_queryIdHasBeenSet = false;
+  bool m_clickFeedbackItemsHasBeenSet = false;
   bool m_relevanceFeedbackItemsHasBeenSet = false;
 };
 

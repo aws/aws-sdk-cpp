@@ -162,21 +162,21 @@ class GetUserResult {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Vector<AttributeType> m_userAttributes;
-  bool m_userAttributesHasBeenSet = false;
 
   Aws::Vector<MFAOptionType> m_mFAOptions;
-  bool m_mFAOptionsHasBeenSet = false;
 
   Aws::String m_preferredMfaSetting;
-  bool m_preferredMfaSettingHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userMFASettingList;
-  bool m_userMFASettingListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usernameHasBeenSet = false;
+  bool m_userAttributesHasBeenSet = false;
+  bool m_mFAOptionsHasBeenSet = false;
+  bool m_preferredMfaSettingHasBeenSet = false;
+  bool m_userMFASettingListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

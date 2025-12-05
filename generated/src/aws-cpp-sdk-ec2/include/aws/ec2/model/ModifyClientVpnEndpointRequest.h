@@ -353,51 +353,51 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_serverCertificateArn;
-  bool m_serverCertificateArnHasBeenSet = false;
 
   ConnectionLogOptions m_connectionLogOptions;
-  bool m_connectionLogOptionsHasBeenSet = false;
 
   DnsServersOptionsModifyStructure m_dnsServers;
-  bool m_dnsServersHasBeenSet = false;
 
   int m_vpnPort{0};
-  bool m_vpnPortHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_splitTunnel{false};
-  bool m_splitTunnelHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   SelfServicePortal m_selfServicePortal{SelfServicePortal::NOT_SET};
-  bool m_selfServicePortalHasBeenSet = false;
 
   ClientConnectOptions m_clientConnectOptions;
-  bool m_clientConnectOptionsHasBeenSet = false;
 
   int m_sessionTimeoutHours{0};
-  bool m_sessionTimeoutHoursHasBeenSet = false;
 
   ClientLoginBannerOptions m_clientLoginBannerOptions;
-  bool m_clientLoginBannerOptionsHasBeenSet = false;
 
   ClientRouteEnforcementOptions m_clientRouteEnforcementOptions;
-  bool m_clientRouteEnforcementOptionsHasBeenSet = false;
 
   bool m_disconnectOnSessionTimeout{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_serverCertificateArnHasBeenSet = false;
+  bool m_connectionLogOptionsHasBeenSet = false;
+  bool m_dnsServersHasBeenSet = false;
+  bool m_vpnPortHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_splitTunnelHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_selfServicePortalHasBeenSet = false;
+  bool m_clientConnectOptionsHasBeenSet = false;
+  bool m_sessionTimeoutHoursHasBeenSet = false;
+  bool m_clientLoginBannerOptionsHasBeenSet = false;
+  bool m_clientRouteEnforcementOptionsHasBeenSet = false;
   bool m_disconnectOnSessionTimeoutHasBeenSet = false;
 };
 

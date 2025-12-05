@@ -203,27 +203,27 @@ class PutEventTypeRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventVariables;
-  bool m_eventVariablesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityTypes;
-  bool m_entityTypesHasBeenSet = false;
 
   EventIngestion m_eventIngestion{EventIngestion::NOT_SET};
-  bool m_eventIngestionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EventOrchestration m_eventOrchestration;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventVariablesHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_entityTypesHasBeenSet = false;
+  bool m_eventIngestionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_eventOrchestrationHasBeenSet = false;
 };
 

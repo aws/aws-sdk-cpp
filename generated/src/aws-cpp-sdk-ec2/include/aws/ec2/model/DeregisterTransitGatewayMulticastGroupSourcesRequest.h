@@ -113,15 +113,15 @@ class DeregisterTransitGatewayMulticastGroupSourcesRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayMulticastDomainId;
-  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
   Aws::String m_groupIpAddress;
-  bool m_groupIpAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceIds;
-  bool m_networkInterfaceIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
+  bool m_groupIpAddressHasBeenSet = false;
+  bool m_networkInterfaceIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

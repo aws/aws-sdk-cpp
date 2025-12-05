@@ -70,9 +70,9 @@ class DescribeStepRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_stepId;
+  bool m_clusterIdHasBeenSet = false;
   bool m_stepIdHasBeenSet = false;
 };
 

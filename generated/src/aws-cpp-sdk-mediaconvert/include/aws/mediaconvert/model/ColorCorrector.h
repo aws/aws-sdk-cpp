@@ -273,36 +273,36 @@ class ColorCorrector {
   ///@}
  private:
   int m_brightness{0};
-  bool m_brightnessHasBeenSet = false;
 
   ClipLimits m_clipLimits;
-  bool m_clipLimitsHasBeenSet = false;
 
   ColorSpaceConversion m_colorSpaceConversion{ColorSpaceConversion::NOT_SET};
-  bool m_colorSpaceConversionHasBeenSet = false;
 
   int m_contrast{0};
-  bool m_contrastHasBeenSet = false;
 
   Hdr10Metadata m_hdr10Metadata;
-  bool m_hdr10MetadataHasBeenSet = false;
 
   HDRToSDRToneMapper m_hdrToSdrToneMapper{HDRToSDRToneMapper::NOT_SET};
-  bool m_hdrToSdrToneMapperHasBeenSet = false;
 
   int m_hue{0};
-  bool m_hueHasBeenSet = false;
 
   int m_maxLuminance{0};
-  bool m_maxLuminanceHasBeenSet = false;
 
   SampleRangeConversion m_sampleRangeConversion{SampleRangeConversion::NOT_SET};
-  bool m_sampleRangeConversionHasBeenSet = false;
 
   int m_saturation{0};
-  bool m_saturationHasBeenSet = false;
 
   int m_sdrReferenceWhiteLevel{0};
+  bool m_brightnessHasBeenSet = false;
+  bool m_clipLimitsHasBeenSet = false;
+  bool m_colorSpaceConversionHasBeenSet = false;
+  bool m_contrastHasBeenSet = false;
+  bool m_hdr10MetadataHasBeenSet = false;
+  bool m_hdrToSdrToneMapperHasBeenSet = false;
+  bool m_hueHasBeenSet = false;
+  bool m_maxLuminanceHasBeenSet = false;
+  bool m_sampleRangeConversionHasBeenSet = false;
+  bool m_saturationHasBeenSet = false;
   bool m_sdrReferenceWhiteLevelHasBeenSet = false;
 };
 

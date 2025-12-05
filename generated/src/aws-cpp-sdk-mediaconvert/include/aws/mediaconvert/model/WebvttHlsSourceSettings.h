@@ -94,12 +94,12 @@ class WebvttHlsSourceSettings {
   ///@}
  private:
   Aws::String m_renditionGroupId;
-  bool m_renditionGroupIdHasBeenSet = false;
 
   LanguageCode m_renditionLanguageCode{LanguageCode::NOT_SET};
-  bool m_renditionLanguageCodeHasBeenSet = false;
 
   Aws::String m_renditionName;
+  bool m_renditionGroupIdHasBeenSet = false;
+  bool m_renditionLanguageCodeHasBeenSet = false;
   bool m_renditionNameHasBeenSet = false;
 };
 

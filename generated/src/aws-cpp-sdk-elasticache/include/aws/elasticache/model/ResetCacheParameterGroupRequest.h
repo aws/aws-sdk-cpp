@@ -104,12 +104,12 @@ class ResetCacheParameterGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   bool m_resetAllParameters{false};
-  bool m_resetAllParametersHasBeenSet = false;
 
   Aws::Vector<ParameterNameValue> m_parameterNameValues;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_resetAllParametersHasBeenSet = false;
   bool m_parameterNameValuesHasBeenSet = false;
 };
 

@@ -284,42 +284,42 @@ class SensorStatisticsSummary {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_sensorName;
-  bool m_sensorNameHasBeenSet = false;
 
   bool m_dataExists{false};
-  bool m_dataExistsHasBeenSet = false;
 
   CountPercent m_missingValues;
-  bool m_missingValuesHasBeenSet = false;
 
   CountPercent m_invalidValues;
-  bool m_invalidValuesHasBeenSet = false;
 
   CountPercent m_invalidDateEntries;
-  bool m_invalidDateEntriesHasBeenSet = false;
 
   CountPercent m_duplicateTimestamps;
-  bool m_duplicateTimestampsHasBeenSet = false;
 
   CategoricalValues m_categoricalValues;
-  bool m_categoricalValuesHasBeenSet = false;
 
   MultipleOperatingModes m_multipleOperatingModes;
-  bool m_multipleOperatingModesHasBeenSet = false;
 
   LargeTimestampGaps m_largeTimestampGaps;
-  bool m_largeTimestampGapsHasBeenSet = false;
 
   MonotonicValues m_monotonicValues;
-  bool m_monotonicValuesHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataStartTime{};
-  bool m_dataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataEndTime{};
+  bool m_componentNameHasBeenSet = false;
+  bool m_sensorNameHasBeenSet = false;
+  bool m_dataExistsHasBeenSet = false;
+  bool m_missingValuesHasBeenSet = false;
+  bool m_invalidValuesHasBeenSet = false;
+  bool m_invalidDateEntriesHasBeenSet = false;
+  bool m_duplicateTimestampsHasBeenSet = false;
+  bool m_categoricalValuesHasBeenSet = false;
+  bool m_multipleOperatingModesHasBeenSet = false;
+  bool m_largeTimestampGapsHasBeenSet = false;
+  bool m_monotonicValuesHasBeenSet = false;
+  bool m_dataStartTimeHasBeenSet = false;
   bool m_dataEndTimeHasBeenSet = false;
 };
 

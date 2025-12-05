@@ -122,12 +122,12 @@ class MalaysiaAdditionalInfo {
   ///@}
  private:
   Aws::String m_businessRegistrationNumber;
-  bool m_businessRegistrationNumberHasBeenSet = false;
 
   Aws::Vector<MalaysiaServiceTaxCode> m_serviceTaxCodes;
-  bool m_serviceTaxCodesHasBeenSet = false;
 
   Aws::String m_taxInformationNumber;
+  bool m_businessRegistrationNumberHasBeenSet = false;
+  bool m_serviceTaxCodesHasBeenSet = false;
   bool m_taxInformationNumberHasBeenSet = false;
 };
 

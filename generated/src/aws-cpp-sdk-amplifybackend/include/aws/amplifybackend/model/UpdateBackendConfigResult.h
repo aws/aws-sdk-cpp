@@ -112,18 +112,18 @@ class UpdateBackendConfigResult {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendManagerAppId;
-  bool m_backendManagerAppIdHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   LoginAuthConfigReqObj m_loginAuthConfig;
-  bool m_loginAuthConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appIdHasBeenSet = false;
+  bool m_backendManagerAppIdHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_loginAuthConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

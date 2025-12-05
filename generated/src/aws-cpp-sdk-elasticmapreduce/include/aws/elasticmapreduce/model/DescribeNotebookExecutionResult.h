@@ -60,9 +60,9 @@ class DescribeNotebookExecutionResult {
   ///@}
  private:
   NotebookExecution m_notebookExecution;
-  bool m_notebookExecutionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

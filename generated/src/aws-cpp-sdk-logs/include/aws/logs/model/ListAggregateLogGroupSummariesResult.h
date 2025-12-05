@@ -84,12 +84,12 @@ class ListAggregateLogGroupSummariesResult {
   ///@}
  private:
   Aws::Vector<AggregateLogGroupSummary> m_aggregateLogGroupSummaries;
-  bool m_aggregateLogGroupSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregateLogGroupSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

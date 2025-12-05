@@ -66,9 +66,9 @@ class Stream {
   ///@}
  private:
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   int m_fileId{0};
+  bool m_streamIdHasBeenSet = false;
   bool m_fileIdHasBeenSet = false;
 };
 

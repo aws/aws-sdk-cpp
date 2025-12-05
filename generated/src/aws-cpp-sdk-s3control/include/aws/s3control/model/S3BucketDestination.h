@@ -145,21 +145,21 @@ class S3BucketDestination {
   ///@}
  private:
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   OutputSchemaVersion m_outputSchemaVersion{OutputSchemaVersion::NOT_SET};
-  bool m_outputSchemaVersionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   StorageLensDataExportEncryption m_encryption;
+  bool m_formatHasBeenSet = false;
+  bool m_outputSchemaVersionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

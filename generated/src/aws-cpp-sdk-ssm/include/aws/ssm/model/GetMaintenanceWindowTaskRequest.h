@@ -67,9 +67,9 @@ class GetMaintenanceWindowTaskRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::String m_windowTaskId;
+  bool m_windowIdHasBeenSet = false;
   bool m_windowTaskIdHasBeenSet = false;
 };
 

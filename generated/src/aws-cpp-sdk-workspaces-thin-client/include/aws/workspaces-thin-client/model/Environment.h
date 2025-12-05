@@ -383,60 +383,60 @@ class Environment {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_desktopArn;
-  bool m_desktopArnHasBeenSet = false;
 
   Aws::String m_desktopEndpoint;
-  bool m_desktopEndpointHasBeenSet = false;
 
   DesktopType m_desktopType{DesktopType::NOT_SET};
-  bool m_desktopTypeHasBeenSet = false;
 
   Aws::String m_activationCode;
-  bool m_activationCodeHasBeenSet = false;
 
   int m_registeredDevicesCount{0};
-  bool m_registeredDevicesCountHasBeenSet = false;
 
   SoftwareSetUpdateSchedule m_softwareSetUpdateSchedule{SoftwareSetUpdateSchedule::NOT_SET};
-  bool m_softwareSetUpdateScheduleHasBeenSet = false;
 
   MaintenanceWindow m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   SoftwareSetUpdateMode m_softwareSetUpdateMode{SoftwareSetUpdateMode::NOT_SET};
-  bool m_softwareSetUpdateModeHasBeenSet = false;
 
   Aws::String m_desiredSoftwareSetId;
-  bool m_desiredSoftwareSetIdHasBeenSet = false;
 
   Aws::String m_pendingSoftwareSetId;
-  bool m_pendingSoftwareSetIdHasBeenSet = false;
 
   Aws::String m_pendingSoftwareSetVersion;
-  bool m_pendingSoftwareSetVersionHasBeenSet = false;
 
   EnvironmentSoftwareSetComplianceStatus m_softwareSetComplianceStatus{EnvironmentSoftwareSetComplianceStatus::NOT_SET};
-  bool m_softwareSetComplianceStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_deviceCreationTags;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_desktopArnHasBeenSet = false;
+  bool m_desktopEndpointHasBeenSet = false;
+  bool m_desktopTypeHasBeenSet = false;
+  bool m_activationCodeHasBeenSet = false;
+  bool m_registeredDevicesCountHasBeenSet = false;
+  bool m_softwareSetUpdateScheduleHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_softwareSetUpdateModeHasBeenSet = false;
+  bool m_desiredSoftwareSetIdHasBeenSet = false;
+  bool m_pendingSoftwareSetIdHasBeenSet = false;
+  bool m_pendingSoftwareSetVersionHasBeenSet = false;
+  bool m_softwareSetComplianceStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_deviceCreationTagsHasBeenSet = false;
 };
 

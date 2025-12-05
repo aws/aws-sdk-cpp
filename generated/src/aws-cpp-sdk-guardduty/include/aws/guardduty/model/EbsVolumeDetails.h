@@ -82,9 +82,9 @@ class EbsVolumeDetails {
   ///@}
  private:
   Aws::Vector<VolumeDetail> m_scannedVolumeDetails;
-  bool m_scannedVolumeDetailsHasBeenSet = false;
 
   Aws::Vector<VolumeDetail> m_skippedVolumeDetails;
+  bool m_scannedVolumeDetailsHasBeenSet = false;
   bool m_skippedVolumeDetailsHasBeenSet = false;
 };
 

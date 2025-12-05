@@ -83,9 +83,9 @@ class VerifyDomainDkimResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dkimTokens;
-  bool m_dkimTokensHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dkimTokensHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

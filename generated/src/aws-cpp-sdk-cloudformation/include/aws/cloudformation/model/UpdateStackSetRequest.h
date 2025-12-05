@@ -580,60 +580,60 @@ class UpdateStackSetRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateURL;
-  bool m_templateURLHasBeenSet = false;
 
   bool m_usePreviousTemplate{false};
-  bool m_usePreviousTemplateHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   StackSetOperationPreferences m_operationPreferences;
-  bool m_operationPreferencesHasBeenSet = false;
 
   Aws::String m_administrationRoleARN;
-  bool m_administrationRoleARNHasBeenSet = false;
 
   Aws::String m_executionRoleName;
-  bool m_executionRoleNameHasBeenSet = false;
 
   DeploymentTargets m_deploymentTargets;
-  bool m_deploymentTargetsHasBeenSet = false;
 
   PermissionModels m_permissionModel{PermissionModels::NOT_SET};
-  bool m_permissionModelHasBeenSet = false;
 
   AutoDeployment m_autoDeployment;
-  bool m_autoDeploymentHasBeenSet = false;
 
   Aws::String m_operationId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_operationIdHasBeenSet = true;
 
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   CallAs m_callAs{CallAs::NOT_SET};
-  bool m_callAsHasBeenSet = false;
 
   ManagedExecution m_managedExecution;
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_templateURLHasBeenSet = false;
+  bool m_usePreviousTemplateHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_operationPreferencesHasBeenSet = false;
+  bool m_administrationRoleARNHasBeenSet = false;
+  bool m_executionRoleNameHasBeenSet = false;
+  bool m_deploymentTargetsHasBeenSet = false;
+  bool m_permissionModelHasBeenSet = false;
+  bool m_autoDeploymentHasBeenSet = false;
+  bool m_operationIdHasBeenSet = true;
+  bool m_accountsHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_callAsHasBeenSet = false;
   bool m_managedExecutionHasBeenSet = false;
 };
 

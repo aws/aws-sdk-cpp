@@ -93,12 +93,12 @@ class UpdateChannelClassRequest : public MediaLiveRequest {
   ///@}
  private:
   ChannelClass m_channelClass{ChannelClass::NOT_SET};
-  bool m_channelClassHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::Vector<OutputDestination> m_destinations;
+  bool m_channelClassHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
 };
 

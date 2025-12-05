@@ -188,27 +188,27 @@ class CostCategoryReference {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   Aws::String m_effectiveEnd;
-  bool m_effectiveEndHasBeenSet = false;
 
   int m_numberOfRules{0};
-  bool m_numberOfRulesHasBeenSet = false;
 
   Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
-  bool m_processingStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_effectiveEndHasBeenSet = false;
+  bool m_numberOfRulesHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

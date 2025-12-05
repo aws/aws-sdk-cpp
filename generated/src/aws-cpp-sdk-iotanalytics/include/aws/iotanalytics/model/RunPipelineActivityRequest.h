@@ -77,9 +77,9 @@ class RunPipelineActivityRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   PipelineActivity m_pipelineActivity;
-  bool m_pipelineActivityHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::ByteBuffer> m_payloads;
+  bool m_pipelineActivityHasBeenSet = false;
   bool m_payloadsHasBeenSet = false;
 };
 

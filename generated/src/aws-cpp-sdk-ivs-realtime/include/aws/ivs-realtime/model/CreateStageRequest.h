@@ -129,15 +129,15 @@ class CreateStageRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ParticipantTokenConfiguration> m_participantTokenConfigurations;
-  bool m_participantTokenConfigurationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AutoParticipantRecordingConfiguration m_autoParticipantRecordingConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_participantTokenConfigurationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_autoParticipantRecordingConfigurationHasBeenSet = false;
 };
 

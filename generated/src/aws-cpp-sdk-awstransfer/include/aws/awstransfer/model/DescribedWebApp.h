@@ -237,33 +237,33 @@ class DescribedWebApp {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_webAppId;
-  bool m_webAppIdHasBeenSet = false;
 
   DescribedWebAppIdentityProviderDetails m_describedIdentityProviderDetails;
-  bool m_describedIdentityProviderDetailsHasBeenSet = false;
 
   Aws::String m_accessEndpoint;
-  bool m_accessEndpointHasBeenSet = false;
 
   Aws::String m_webAppEndpoint;
-  bool m_webAppEndpointHasBeenSet = false;
 
   WebAppUnits m_webAppUnits;
-  bool m_webAppUnitsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   WebAppEndpointPolicy m_webAppEndpointPolicy{WebAppEndpointPolicy::NOT_SET};
-  bool m_webAppEndpointPolicyHasBeenSet = false;
 
   WebAppEndpointType m_endpointType{WebAppEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   DescribedWebAppEndpointDetails m_describedEndpointDetails;
+  bool m_arnHasBeenSet = false;
+  bool m_webAppIdHasBeenSet = false;
+  bool m_describedIdentityProviderDetailsHasBeenSet = false;
+  bool m_accessEndpointHasBeenSet = false;
+  bool m_webAppEndpointHasBeenSet = false;
+  bool m_webAppUnitsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_webAppEndpointPolicyHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
   bool m_describedEndpointDetailsHasBeenSet = false;
 };
 

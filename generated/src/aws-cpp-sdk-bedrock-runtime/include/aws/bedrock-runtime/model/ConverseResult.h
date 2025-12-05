@@ -186,30 +186,30 @@ class ConverseResult {
   ///@}
  private:
   ConverseOutput m_output;
-  bool m_outputHasBeenSet = false;
 
   StopReason m_stopReason{StopReason::NOT_SET};
-  bool m_stopReasonHasBeenSet = false;
 
   TokenUsage m_usage;
-  bool m_usageHasBeenSet = false;
 
   ConverseMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Utils::Document m_additionalModelResponseFields;
-  bool m_additionalModelResponseFieldsHasBeenSet = false;
 
   ConverseTrace m_trace;
-  bool m_traceHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfig;
-  bool m_performanceConfigHasBeenSet = false;
 
   ServiceTier m_serviceTier;
-  bool m_serviceTierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outputHasBeenSet = false;
+  bool m_stopReasonHasBeenSet = false;
+  bool m_usageHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_additionalModelResponseFieldsHasBeenSet = false;
+  bool m_traceHasBeenSet = false;
+  bool m_performanceConfigHasBeenSet = false;
+  bool m_serviceTierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

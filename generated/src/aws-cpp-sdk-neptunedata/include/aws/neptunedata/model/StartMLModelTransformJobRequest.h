@@ -315,45 +315,45 @@ class StartMLModelTransformJobRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_dataProcessingJobId;
-  bool m_dataProcessingJobIdHasBeenSet = false;
 
   Aws::String m_mlModelTrainingJobId;
-  bool m_mlModelTrainingJobIdHasBeenSet = false;
 
   Aws::String m_trainingJobName;
-  bool m_trainingJobNameHasBeenSet = false;
 
   Aws::String m_modelTransformOutputS3Location;
-  bool m_modelTransformOutputS3LocationHasBeenSet = false;
 
   Aws::String m_sagemakerIamRoleArn;
-  bool m_sagemakerIamRoleArnHasBeenSet = false;
 
   Aws::String m_neptuneIamRoleArn;
-  bool m_neptuneIamRoleArnHasBeenSet = false;
 
   CustomModelTransformParameters m_customModelTransformParameters;
-  bool m_customModelTransformParametersHasBeenSet = false;
 
   Aws::String m_baseProcessingInstanceType;
-  bool m_baseProcessingInstanceTypeHasBeenSet = false;
 
   int m_baseProcessingInstanceVolumeSizeInGB{0};
-  bool m_baseProcessingInstanceVolumeSizeInGBHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_volumeEncryptionKMSKey;
-  bool m_volumeEncryptionKMSKeyHasBeenSet = false;
 
   Aws::String m_s3OutputEncryptionKMSKey;
+  bool m_idHasBeenSet = false;
+  bool m_dataProcessingJobIdHasBeenSet = false;
+  bool m_mlModelTrainingJobIdHasBeenSet = false;
+  bool m_trainingJobNameHasBeenSet = false;
+  bool m_modelTransformOutputS3LocationHasBeenSet = false;
+  bool m_sagemakerIamRoleArnHasBeenSet = false;
+  bool m_neptuneIamRoleArnHasBeenSet = false;
+  bool m_customModelTransformParametersHasBeenSet = false;
+  bool m_baseProcessingInstanceTypeHasBeenSet = false;
+  bool m_baseProcessingInstanceVolumeSizeInGBHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_volumeEncryptionKMSKeyHasBeenSet = false;
   bool m_s3OutputEncryptionKMSKeyHasBeenSet = false;
 };
 

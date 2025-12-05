@@ -163,24 +163,24 @@ class ModifyAdditionalStorageVolume {
   ///@}
  private:
   Aws::String m_volumeName;
-  bool m_volumeNameHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   int m_iOPS{0};
-  bool m_iOPSHasBeenSet = false;
 
   int m_maxAllocatedStorage{0};
-  bool m_maxAllocatedStorageHasBeenSet = false;
 
   int m_storageThroughput{0};
-  bool m_storageThroughputHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   bool m_setForDelete{false};
+  bool m_volumeNameHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_iOPSHasBeenSet = false;
+  bool m_maxAllocatedStorageHasBeenSet = false;
+  bool m_storageThroughputHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
   bool m_setForDeleteHasBeenSet = false;
 };
 

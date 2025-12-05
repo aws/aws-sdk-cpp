@@ -197,33 +197,33 @@ class SubjectNameFlagsV3 {
   ///@}
  private:
   bool m_requireCommonName{false};
-  bool m_requireCommonNameHasBeenSet = false;
 
   bool m_requireDirectoryPath{false};
-  bool m_requireDirectoryPathHasBeenSet = false;
 
   bool m_requireDnsAsCn{false};
-  bool m_requireDnsAsCnHasBeenSet = false;
 
   bool m_requireEmail{false};
-  bool m_requireEmailHasBeenSet = false;
 
   bool m_sanRequireDirectoryGuid{false};
-  bool m_sanRequireDirectoryGuidHasBeenSet = false;
 
   bool m_sanRequireDns{false};
-  bool m_sanRequireDnsHasBeenSet = false;
 
   bool m_sanRequireDomainDns{false};
-  bool m_sanRequireDomainDnsHasBeenSet = false;
 
   bool m_sanRequireEmail{false};
-  bool m_sanRequireEmailHasBeenSet = false;
 
   bool m_sanRequireSpn{false};
-  bool m_sanRequireSpnHasBeenSet = false;
 
   bool m_sanRequireUpn{false};
+  bool m_requireCommonNameHasBeenSet = false;
+  bool m_requireDirectoryPathHasBeenSet = false;
+  bool m_requireDnsAsCnHasBeenSet = false;
+  bool m_requireEmailHasBeenSet = false;
+  bool m_sanRequireDirectoryGuidHasBeenSet = false;
+  bool m_sanRequireDnsHasBeenSet = false;
+  bool m_sanRequireDomainDnsHasBeenSet = false;
+  bool m_sanRequireEmailHasBeenSet = false;
+  bool m_sanRequireSpnHasBeenSet = false;
   bool m_sanRequireUpnHasBeenSet = false;
 };
 

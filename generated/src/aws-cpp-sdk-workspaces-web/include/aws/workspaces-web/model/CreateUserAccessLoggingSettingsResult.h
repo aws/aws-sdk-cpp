@@ -60,9 +60,9 @@ class CreateUserAccessLoggingSettingsResult {
   ///@}
  private:
   Aws::String m_userAccessLoggingSettingsArn;
-  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

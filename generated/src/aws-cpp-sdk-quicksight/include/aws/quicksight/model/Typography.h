@@ -176,27 +176,27 @@ class Typography {
   ///@}
  private:
   Aws::Vector<Font> m_fontFamilies;
-  bool m_fontFamiliesHasBeenSet = false;
 
   FontConfiguration m_axisTitleFontConfiguration;
-  bool m_axisTitleFontConfigurationHasBeenSet = false;
 
   FontConfiguration m_axisLabelFontConfiguration;
-  bool m_axisLabelFontConfigurationHasBeenSet = false;
 
   FontConfiguration m_legendTitleFontConfiguration;
-  bool m_legendTitleFontConfigurationHasBeenSet = false;
 
   FontConfiguration m_legendValueFontConfiguration;
-  bool m_legendValueFontConfigurationHasBeenSet = false;
 
   FontConfiguration m_dataLabelFontConfiguration;
-  bool m_dataLabelFontConfigurationHasBeenSet = false;
 
   VisualTitleFontConfiguration m_visualTitleFontConfiguration;
-  bool m_visualTitleFontConfigurationHasBeenSet = false;
 
   VisualSubtitleFontConfiguration m_visualSubtitleFontConfiguration;
+  bool m_fontFamiliesHasBeenSet = false;
+  bool m_axisTitleFontConfigurationHasBeenSet = false;
+  bool m_axisLabelFontConfigurationHasBeenSet = false;
+  bool m_legendTitleFontConfigurationHasBeenSet = false;
+  bool m_legendValueFontConfigurationHasBeenSet = false;
+  bool m_dataLabelFontConfigurationHasBeenSet = false;
+  bool m_visualTitleFontConfigurationHasBeenSet = false;
   bool m_visualSubtitleFontConfigurationHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class DescribeJobResult {
   ///@}
  private:
   Aws::String m_documentSource;
-  bool m_documentSourceHasBeenSet = false;
 
   Job m_job;
-  bool m_jobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentSourceHasBeenSet = false;
+  bool m_jobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

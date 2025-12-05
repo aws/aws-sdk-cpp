@@ -127,18 +127,18 @@ class GetDurableExecutionHistoryRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_durableExecutionArn;
-  bool m_durableExecutionArnHasBeenSet = false;
 
   bool m_includeExecutionData{false};
-  bool m_includeExecutionDataHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_reverseOrder{false};
+  bool m_durableExecutionArnHasBeenSet = false;
+  bool m_includeExecutionDataHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_reverseOrderHasBeenSet = false;
 };
 

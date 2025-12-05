@@ -61,9 +61,9 @@ class GetAssistantAssociationResult {
   ///@}
  private:
   AssistantAssociationData m_assistantAssociation;
-  bool m_assistantAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assistantAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

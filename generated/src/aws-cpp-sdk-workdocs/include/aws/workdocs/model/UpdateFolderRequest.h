@@ -122,18 +122,18 @@ class UpdateFolderRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_parentFolderId;
-  bool m_parentFolderIdHasBeenSet = false;
 
   ResourceStateType m_resourceState{ResourceStateType::NOT_SET};
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_folderIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_parentFolderIdHasBeenSet = false;
   bool m_resourceStateHasBeenSet = false;
 };
 

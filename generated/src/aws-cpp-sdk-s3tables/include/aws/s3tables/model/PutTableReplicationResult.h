@@ -76,12 +76,12 @@ class PutTableReplicationResult {
   ///@}
  private:
   Aws::String m_versionToken;
-  bool m_versionTokenHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

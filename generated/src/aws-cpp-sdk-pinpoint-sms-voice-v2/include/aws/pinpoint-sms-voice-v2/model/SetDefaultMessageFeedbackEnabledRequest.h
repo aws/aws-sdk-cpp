@@ -66,9 +66,9 @@ class SetDefaultMessageFeedbackEnabledRequest : public PinpointSMSVoiceV2Request
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   bool m_messageFeedbackEnabled{false};
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_messageFeedbackEnabledHasBeenSet = false;
 };
 

@@ -157,24 +157,24 @@ class NodeInstance {
   ///@}
  private:
   NodeInstanceStatus m_currentStatus{NodeInstanceStatus::NOT_SET};
-  bool m_currentStatusHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_nodeInstanceId;
-  bool m_nodeInstanceIdHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packagePatchVersion;
-  bool m_packagePatchVersionHasBeenSet = false;
 
   Aws::String m_packageVersion;
+  bool m_currentStatusHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_nodeInstanceIdHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packagePatchVersionHasBeenSet = false;
   bool m_packageVersionHasBeenSet = false;
 };
 

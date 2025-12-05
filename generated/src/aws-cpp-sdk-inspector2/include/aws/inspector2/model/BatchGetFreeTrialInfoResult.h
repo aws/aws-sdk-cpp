@@ -93,12 +93,12 @@ class BatchGetFreeTrialInfoResult {
   ///@}
  private:
   Aws::Vector<FreeTrialAccountInfo> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::Vector<FreeTrialInfoError> m_failedAccounts;
-  bool m_failedAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountsHasBeenSet = false;
+  bool m_failedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

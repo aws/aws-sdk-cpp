@@ -64,9 +64,9 @@ class GetNotificationsAccessForOrganizationResult {
   ///@}
  private:
   NotificationsAccessForOrganization m_notificationsAccessForOrganization;
-  bool m_notificationsAccessForOrganizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationsAccessForOrganizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

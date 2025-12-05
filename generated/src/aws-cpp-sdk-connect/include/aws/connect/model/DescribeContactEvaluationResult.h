@@ -78,12 +78,12 @@ class DescribeContactEvaluationResult {
   ///@}
  private:
   Evaluation m_evaluation;
-  bool m_evaluationHasBeenSet = false;
 
   EvaluationFormContent m_evaluationForm;
-  bool m_evaluationFormHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationHasBeenSet = false;
+  bool m_evaluationFormHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

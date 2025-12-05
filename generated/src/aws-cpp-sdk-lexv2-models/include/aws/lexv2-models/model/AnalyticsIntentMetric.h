@@ -95,12 +95,12 @@ class AnalyticsIntentMetric {
   ///@}
  private:
   AnalyticsIntentMetricName m_name{AnalyticsIntentMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   AnalyticsMetricStatistic m_statistic{AnalyticsMetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   AnalyticsSortOrder m_order{AnalyticsSortOrder::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

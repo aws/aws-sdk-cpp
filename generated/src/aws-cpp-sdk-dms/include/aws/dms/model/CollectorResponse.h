@@ -270,42 +270,42 @@ class CollectorResponse {
   ///@}
  private:
   Aws::String m_collectorReferencedId;
-  bool m_collectorReferencedIdHasBeenSet = false;
 
   Aws::String m_collectorName;
-  bool m_collectorNameHasBeenSet = false;
 
   Aws::String m_collectorVersion;
-  bool m_collectorVersionHasBeenSet = false;
 
   VersionStatus m_versionStatus{VersionStatus::NOT_SET};
-  bool m_versionStatusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   CollectorHealthCheck m_collectorHealthCheck;
-  bool m_collectorHealthCheckHasBeenSet = false;
 
   Aws::String m_lastDataReceived;
-  bool m_lastDataReceivedHasBeenSet = false;
 
   Aws::String m_registeredDate;
-  bool m_registeredDateHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_modifiedDate;
-  bool m_modifiedDateHasBeenSet = false;
 
   InventoryData m_inventoryData;
+  bool m_collectorReferencedIdHasBeenSet = false;
+  bool m_collectorNameHasBeenSet = false;
+  bool m_collectorVersionHasBeenSet = false;
+  bool m_versionStatusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_collectorHealthCheckHasBeenSet = false;
+  bool m_lastDataReceivedHasBeenSet = false;
+  bool m_registeredDateHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_modifiedDateHasBeenSet = false;
   bool m_inventoryDataHasBeenSet = false;
 };
 

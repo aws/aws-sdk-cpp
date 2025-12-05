@@ -114,15 +114,15 @@ class LogsConfigurationPolicy {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedAccountIds;
-  bool m_allowedAccountIdsHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   LogRedactionConfiguration m_logRedactionConfiguration;
+  bool m_allowedAccountIdsHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
   bool m_logRedactionConfigurationHasBeenSet = false;
 };
 

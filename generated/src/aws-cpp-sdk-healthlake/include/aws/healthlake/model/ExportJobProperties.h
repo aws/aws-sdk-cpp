@@ -197,30 +197,30 @@ class ExportJobProperties {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
-  bool m_submitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_submitTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

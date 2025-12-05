@@ -181,21 +181,21 @@ class StartQueryRequest : public InternetMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   QueryType m_queryType{QueryType::NOT_SET};
-  bool m_queryTypeHasBeenSet = false;
 
   Aws::Vector<FilterParameter> m_filterParameters;
-  bool m_filterParametersHasBeenSet = false;
 
   Aws::String m_linkedAccountId;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_queryTypeHasBeenSet = false;
+  bool m_filterParametersHasBeenSet = false;
   bool m_linkedAccountIdHasBeenSet = false;
 };
 

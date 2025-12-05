@@ -95,12 +95,12 @@ class ProtectiveEquipmentBodyPart {
   ///@}
  private:
   BodyPart m_name{BodyPart::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::Vector<EquipmentDetection> m_equipmentDetections;
+  bool m_nameHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
   bool m_equipmentDetectionsHasBeenSet = false;
 };
 

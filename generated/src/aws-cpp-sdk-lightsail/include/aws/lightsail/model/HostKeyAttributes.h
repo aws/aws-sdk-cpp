@@ -176,24 +176,24 @@ class HostKeyAttributes {
   ///@}
  private:
   Aws::String m_algorithm;
-  bool m_algorithmHasBeenSet = false;
 
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_witnessedAt{};
-  bool m_witnessedAtHasBeenSet = false;
 
   Aws::String m_fingerprintSHA1;
-  bool m_fingerprintSHA1HasBeenSet = false;
 
   Aws::String m_fingerprintSHA256;
-  bool m_fingerprintSHA256HasBeenSet = false;
 
   Aws::Utils::DateTime m_notValidBefore{};
-  bool m_notValidBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notValidAfter{};
+  bool m_algorithmHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_witnessedAtHasBeenSet = false;
+  bool m_fingerprintSHA1HasBeenSet = false;
+  bool m_fingerprintSHA256HasBeenSet = false;
+  bool m_notValidBeforeHasBeenSet = false;
   bool m_notValidAfterHasBeenSet = false;
 };
 

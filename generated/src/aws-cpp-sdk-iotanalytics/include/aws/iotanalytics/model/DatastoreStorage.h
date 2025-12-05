@@ -97,12 +97,12 @@ class DatastoreStorage {
   ///@}
  private:
   ServiceManagedDatastoreS3Storage m_serviceManagedS3;
-  bool m_serviceManagedS3HasBeenSet = false;
 
   CustomerManagedDatastoreS3Storage m_customerManagedS3;
-  bool m_customerManagedS3HasBeenSet = false;
 
   DatastoreIotSiteWiseMultiLayerStorage m_iotSiteWiseMultiLayerStorage;
+  bool m_serviceManagedS3HasBeenSet = false;
+  bool m_customerManagedS3HasBeenSet = false;
   bool m_iotSiteWiseMultiLayerStorageHasBeenSet = false;
 };
 

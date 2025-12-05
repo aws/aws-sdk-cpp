@@ -90,12 +90,12 @@ class AssociateSourceServersRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_applicationID;
-  bool m_applicationIDHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceServerIDs;
+  bool m_accountIDHasBeenSet = false;
+  bool m_applicationIDHasBeenSet = false;
   bool m_sourceServerIDsHasBeenSet = false;
 };
 

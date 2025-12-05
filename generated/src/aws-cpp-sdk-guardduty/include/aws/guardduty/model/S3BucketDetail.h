@@ -213,30 +213,30 @@ class S3BucketDetail {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Owner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DefaultServerSideEncryption m_defaultServerSideEncryption;
-  bool m_defaultServerSideEncryptionHasBeenSet = false;
 
   PublicAccess m_publicAccess;
-  bool m_publicAccessHasBeenSet = false;
 
   Aws::Vector<S3ObjectDetail> m_s3ObjectDetails;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_defaultServerSideEncryptionHasBeenSet = false;
+  bool m_publicAccessHasBeenSet = false;
   bool m_s3ObjectDetailsHasBeenSet = false;
 };
 

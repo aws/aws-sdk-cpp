@@ -308,39 +308,39 @@ class Origin {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_originPath;
-  bool m_originPathHasBeenSet = false;
 
   CustomHeaders m_customHeaders;
-  bool m_customHeadersHasBeenSet = false;
 
   S3OriginConfig m_s3OriginConfig;
-  bool m_s3OriginConfigHasBeenSet = false;
 
   CustomOriginConfig m_customOriginConfig;
-  bool m_customOriginConfigHasBeenSet = false;
 
   VpcOriginConfig m_vpcOriginConfig;
-  bool m_vpcOriginConfigHasBeenSet = false;
 
   int m_connectionAttempts{0};
-  bool m_connectionAttemptsHasBeenSet = false;
 
   int m_connectionTimeout{0};
-  bool m_connectionTimeoutHasBeenSet = false;
 
   int m_responseCompletionTimeout{0};
-  bool m_responseCompletionTimeoutHasBeenSet = false;
 
   OriginShield m_originShield;
-  bool m_originShieldHasBeenSet = false;
 
   Aws::String m_originAccessControlId;
+  bool m_idHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_originPathHasBeenSet = false;
+  bool m_customHeadersHasBeenSet = false;
+  bool m_s3OriginConfigHasBeenSet = false;
+  bool m_customOriginConfigHasBeenSet = false;
+  bool m_vpcOriginConfigHasBeenSet = false;
+  bool m_connectionAttemptsHasBeenSet = false;
+  bool m_connectionTimeoutHasBeenSet = false;
+  bool m_responseCompletionTimeoutHasBeenSet = false;
+  bool m_originShieldHasBeenSet = false;
   bool m_originAccessControlIdHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class ListAccountIntegrationsRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_includeHidden{false};
+  bool m_uriHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_includeHiddenHasBeenSet = false;
 };
 

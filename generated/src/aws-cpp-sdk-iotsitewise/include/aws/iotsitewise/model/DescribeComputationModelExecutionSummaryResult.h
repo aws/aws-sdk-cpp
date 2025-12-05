@@ -107,15 +107,15 @@ class DescribeComputationModelExecutionSummaryResult {
   ///@}
  private:
   Aws::String m_computationModelId;
-  bool m_computationModelIdHasBeenSet = false;
 
   ResolveTo m_resolveTo;
-  bool m_resolveToHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_computationModelExecutionSummary;
-  bool m_computationModelExecutionSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computationModelIdHasBeenSet = false;
+  bool m_resolveToHasBeenSet = false;
+  bool m_computationModelExecutionSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

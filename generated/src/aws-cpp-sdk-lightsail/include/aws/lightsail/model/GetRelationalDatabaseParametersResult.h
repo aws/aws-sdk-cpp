@@ -90,12 +90,12 @@ class GetRelationalDatabaseParametersResult {
   ///@}
  private:
   Aws::Vector<RelationalDatabaseParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parametersHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

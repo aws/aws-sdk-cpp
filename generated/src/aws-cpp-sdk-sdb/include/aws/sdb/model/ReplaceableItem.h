@@ -78,9 +78,9 @@ class ReplaceableItem {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ReplaceableAttribute> m_attributes;
+  bool m_nameHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

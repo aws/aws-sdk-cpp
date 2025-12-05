@@ -76,12 +76,12 @@ class RollbackAutomationEventResult {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   EventStatus m_eventStatus{EventStatus::NOT_SET};
-  bool m_eventStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

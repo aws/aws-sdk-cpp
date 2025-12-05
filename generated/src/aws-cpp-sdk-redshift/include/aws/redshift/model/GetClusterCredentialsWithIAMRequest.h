@@ -108,15 +108,15 @@ class GetClusterCredentialsWithIAMRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_dbName;
-  bool m_dbNameHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Aws::String m_customDomainName;
+  bool m_dbNameHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
   bool m_customDomainNameHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class UpdateMonitoringScheduleRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   MonitoringScheduleConfig m_monitoringScheduleConfig;
+  bool m_monitoringScheduleNameHasBeenSet = false;
   bool m_monitoringScheduleConfigHasBeenSet = false;
 };
 

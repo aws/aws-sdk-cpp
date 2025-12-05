@@ -107,15 +107,15 @@ class CapabilityAction {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ref;
-  bool m_refHasBeenSet = false;
 
   Aws::String m_actionTraceId;
-  bool m_actionTraceIdHasBeenSet = false;
 
   Aws::Utils::Document m_parameters;
+  bool m_nameHasBeenSet = false;
+  bool m_refHasBeenSet = false;
+  bool m_actionTraceIdHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

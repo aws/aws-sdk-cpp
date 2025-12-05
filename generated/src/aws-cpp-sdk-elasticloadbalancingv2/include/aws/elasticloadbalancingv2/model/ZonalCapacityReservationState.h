@@ -89,12 +89,12 @@ class ZonalCapacityReservationState {
   ///@}
  private:
   CapacityReservationStatus m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   double m_effectiveCapacityUnits{0.0};
+  bool m_stateHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_effectiveCapacityUnitsHasBeenSet = false;
 };
 

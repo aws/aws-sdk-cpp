@@ -172,24 +172,24 @@ class DescribeDBLogFilesRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_filenameContains;
-  bool m_filenameContainsHasBeenSet = false;
 
   long long m_fileLastWritten{0};
-  bool m_fileLastWrittenHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_filenameContainsHasBeenSet = false;
+  bool m_fileLastWrittenHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

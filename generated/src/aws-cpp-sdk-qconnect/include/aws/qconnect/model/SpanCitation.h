@@ -105,15 +105,15 @@ class SpanCitation {
   ///@}
  private:
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
+  bool m_contentIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_knowledgeBaseArnHasBeenSet = false;
 };
 

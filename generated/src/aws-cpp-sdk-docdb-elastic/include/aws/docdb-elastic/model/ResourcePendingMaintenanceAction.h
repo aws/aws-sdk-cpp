@@ -80,9 +80,9 @@ class ResourcePendingMaintenanceAction {
   ///@}
  private:
   Aws::Vector<PendingMaintenanceActionDetails> m_pendingMaintenanceActionDetails;
-  bool m_pendingMaintenanceActionDetailsHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_pendingMaintenanceActionDetailsHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

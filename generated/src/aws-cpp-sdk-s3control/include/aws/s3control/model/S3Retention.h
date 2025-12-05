@@ -75,9 +75,9 @@ class S3Retention {
   ///@}
  private:
   Aws::Utils::DateTime m_retainUntilDate{};
-  bool m_retainUntilDateHasBeenSet = false;
 
   S3ObjectLockRetentionMode m_mode{S3ObjectLockRetentionMode::NOT_SET};
+  bool m_retainUntilDateHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

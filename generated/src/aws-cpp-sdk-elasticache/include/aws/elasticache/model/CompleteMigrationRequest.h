@@ -69,9 +69,9 @@ class CompleteMigrationRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   bool m_force{false};
+  bool m_replicationGroupIdHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

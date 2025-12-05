@@ -69,9 +69,9 @@ class SyncInputConfiguration {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_bytesHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

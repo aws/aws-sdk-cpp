@@ -241,30 +241,30 @@ class StreamSessionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   ExportFilesMetadata m_exportFilesMetadata;
-  bool m_exportFilesMetadataHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_arnHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_exportFilesMetadataHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

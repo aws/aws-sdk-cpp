@@ -73,9 +73,9 @@ class PutResourcePolicyRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_policyHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

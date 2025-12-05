@@ -76,12 +76,12 @@ class GetRegionOptStatusResult {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   RegionOptStatus m_regionOptStatus{RegionOptStatus::NOT_SET};
-  bool m_regionOptStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_regionNameHasBeenSet = false;
+  bool m_regionOptStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

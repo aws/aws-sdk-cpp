@@ -89,12 +89,12 @@ class ListConfigurationHistoryResult {
   ///@}
  private:
   Aws::Vector<ConfigurationEvent> m_eventList;
-  bool m_eventListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

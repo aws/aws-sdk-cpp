@@ -69,9 +69,9 @@ class GetParametersForExportRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   KeyMaterialType m_keyMaterialType{KeyMaterialType::NOT_SET};
-  bool m_keyMaterialTypeHasBeenSet = false;
 
   KeyAlgorithm m_signingKeyAlgorithm{KeyAlgorithm::NOT_SET};
+  bool m_keyMaterialTypeHasBeenSet = false;
   bool m_signingKeyAlgorithmHasBeenSet = false;
 };
 

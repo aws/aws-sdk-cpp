@@ -123,15 +123,15 @@ class FindMatchesParameters {
   ///@}
  private:
   Aws::String m_primaryKeyColumnName;
-  bool m_primaryKeyColumnNameHasBeenSet = false;
 
   double m_precisionRecallTradeoff{0.0};
-  bool m_precisionRecallTradeoffHasBeenSet = false;
 
   double m_accuracyCostTradeoff{0.0};
-  bool m_accuracyCostTradeoffHasBeenSet = false;
 
   bool m_enforceProvidedLabels{false};
+  bool m_primaryKeyColumnNameHasBeenSet = false;
+  bool m_precisionRecallTradeoffHasBeenSet = false;
+  bool m_accuracyCostTradeoffHasBeenSet = false;
   bool m_enforceProvidedLabelsHasBeenSet = false;
 };
 

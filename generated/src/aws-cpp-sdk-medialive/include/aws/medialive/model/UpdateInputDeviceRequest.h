@@ -123,18 +123,18 @@ class UpdateInputDeviceRequest : public MediaLiveRequest {
   ///@}
  private:
   InputDeviceConfigurableSettings m_hdDeviceSettings;
-  bool m_hdDeviceSettingsHasBeenSet = false;
 
   Aws::String m_inputDeviceId;
-  bool m_inputDeviceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InputDeviceConfigurableSettings m_uhdDeviceSettings;
-  bool m_uhdDeviceSettingsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
+  bool m_hdDeviceSettingsHasBeenSet = false;
+  bool m_inputDeviceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_uhdDeviceSettingsHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
 };
 

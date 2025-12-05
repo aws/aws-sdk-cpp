@@ -86,12 +86,12 @@ class SearchContactsTimeRange {
   ///@}
  private:
   SearchContactsTimeRangeType m_type{SearchContactsTimeRangeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_typeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

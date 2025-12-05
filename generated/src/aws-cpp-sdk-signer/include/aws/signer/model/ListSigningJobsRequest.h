@@ -203,30 +203,30 @@ class ListSigningJobsRequest : public SignerRequest {
   ///@}
  private:
   SigningStatus m_status{SigningStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_platformId;
-  bool m_platformIdHasBeenSet = false;
 
   Aws::String m_requestedBy;
-  bool m_requestedByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_isRevoked{false};
-  bool m_isRevokedHasBeenSet = false;
 
   Aws::Utils::DateTime m_signatureExpiresBefore{};
-  bool m_signatureExpiresBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_signatureExpiresAfter{};
-  bool m_signatureExpiresAfterHasBeenSet = false;
 
   Aws::String m_jobInvoker;
+  bool m_statusHasBeenSet = false;
+  bool m_platformIdHasBeenSet = false;
+  bool m_requestedByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_isRevokedHasBeenSet = false;
+  bool m_signatureExpiresBeforeHasBeenSet = false;
+  bool m_signatureExpiresAfterHasBeenSet = false;
   bool m_jobInvokerHasBeenSet = false;
 };
 

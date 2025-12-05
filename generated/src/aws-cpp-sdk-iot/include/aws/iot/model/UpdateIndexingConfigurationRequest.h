@@ -66,9 +66,9 @@ class UpdateIndexingConfigurationRequest : public IoTRequest {
   ///@}
  private:
   ThingIndexingConfiguration m_thingIndexingConfiguration;
-  bool m_thingIndexingConfigurationHasBeenSet = false;
 
   ThingGroupIndexingConfiguration m_thingGroupIndexingConfiguration;
+  bool m_thingIndexingConfigurationHasBeenSet = false;
   bool m_thingGroupIndexingConfigurationHasBeenSet = false;
 };
 

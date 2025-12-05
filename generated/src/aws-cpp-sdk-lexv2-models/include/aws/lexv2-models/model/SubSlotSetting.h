@@ -78,9 +78,9 @@ class SubSlotSetting {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Specifications> m_slotSpecifications;
+  bool m_expressionHasBeenSet = false;
   bool m_slotSpecificationsHasBeenSet = false;
 };
 

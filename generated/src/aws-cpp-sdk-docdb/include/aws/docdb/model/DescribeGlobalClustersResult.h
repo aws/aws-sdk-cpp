@@ -85,12 +85,12 @@ class DescribeGlobalClustersResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<GlobalCluster> m_globalClusters;
-  bool m_globalClustersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_globalClustersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

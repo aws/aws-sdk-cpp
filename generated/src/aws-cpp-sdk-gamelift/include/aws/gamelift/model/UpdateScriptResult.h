@@ -65,9 +65,9 @@ class UpdateScriptResult {
   ///@}
  private:
   Script m_script;
-  bool m_scriptHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scriptHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

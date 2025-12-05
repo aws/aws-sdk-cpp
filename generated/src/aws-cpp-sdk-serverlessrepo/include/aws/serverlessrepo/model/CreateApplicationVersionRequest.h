@@ -139,21 +139,21 @@ class CreateApplicationVersionRequest : public ServerlessApplicationRepositoryRe
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_sourceCodeArchiveUrl;
-  bool m_sourceCodeArchiveUrlHasBeenSet = false;
 
   Aws::String m_sourceCodeUrl;
-  bool m_sourceCodeUrlHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateUrl;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_sourceCodeArchiveUrlHasBeenSet = false;
+  bool m_sourceCodeUrlHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
   bool m_templateUrlHasBeenSet = false;
 };
 

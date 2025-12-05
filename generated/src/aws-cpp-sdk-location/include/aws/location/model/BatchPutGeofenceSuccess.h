@@ -92,12 +92,12 @@ class BatchPutGeofenceSuccess {
   ///@}
  private:
   Aws::String m_geofenceId;
-  bool m_geofenceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_geofenceIdHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

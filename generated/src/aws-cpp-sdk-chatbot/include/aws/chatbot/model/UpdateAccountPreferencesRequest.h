@@ -66,9 +66,9 @@ class UpdateAccountPreferencesRequest : public ChatbotRequest {
   ///@}
  private:
   bool m_userAuthorizationRequired{false};
-  bool m_userAuthorizationRequiredHasBeenSet = false;
 
   bool m_trainingDataCollectionEnabled{false};
+  bool m_userAuthorizationRequiredHasBeenSet = false;
   bool m_trainingDataCollectionEnabledHasBeenSet = false;
 };
 

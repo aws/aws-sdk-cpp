@@ -75,9 +75,9 @@ class DeleteBucketRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_bucketNameHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

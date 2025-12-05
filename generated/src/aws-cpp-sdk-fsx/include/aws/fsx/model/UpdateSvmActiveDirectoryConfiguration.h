@@ -72,9 +72,9 @@ class UpdateSvmActiveDirectoryConfiguration {
   ///@}
  private:
   SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;
-  bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
   Aws::String m_netBiosName;
+  bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
   bool m_netBiosNameHasBeenSet = false;
 };
 

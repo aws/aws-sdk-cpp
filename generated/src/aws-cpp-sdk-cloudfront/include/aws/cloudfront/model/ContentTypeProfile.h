@@ -86,12 +86,12 @@ class ContentTypeProfile {
   ///@}
  private:
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_contentType;
+  bool m_formatHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

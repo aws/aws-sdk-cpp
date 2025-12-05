@@ -235,33 +235,33 @@ class FoundationModelDetails {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::Vector<ModelModality> m_inputModalities;
-  bool m_inputModalitiesHasBeenSet = false;
 
   Aws::Vector<ModelModality> m_outputModalities;
-  bool m_outputModalitiesHasBeenSet = false;
 
   bool m_responseStreamingSupported{false};
-  bool m_responseStreamingSupportedHasBeenSet = false;
 
   Aws::Vector<ModelCustomization> m_customizationsSupported;
-  bool m_customizationsSupportedHasBeenSet = false;
 
   Aws::Vector<InferenceType> m_inferenceTypesSupported;
-  bool m_inferenceTypesSupportedHasBeenSet = false;
 
   FoundationModelLifecycle m_modelLifecycle;
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_inputModalitiesHasBeenSet = false;
+  bool m_outputModalitiesHasBeenSet = false;
+  bool m_responseStreamingSupportedHasBeenSet = false;
+  bool m_customizationsSupportedHasBeenSet = false;
+  bool m_inferenceTypesSupportedHasBeenSet = false;
   bool m_modelLifecycleHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class DescribeADAssessmentResult {
   ///@}
  private:
   Assessment m_assessment;
-  bool m_assessmentHasBeenSet = false;
 
   Aws::Vector<AssessmentReport> m_assessmentReports;
-  bool m_assessmentReportsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentHasBeenSet = false;
+  bool m_assessmentReportsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

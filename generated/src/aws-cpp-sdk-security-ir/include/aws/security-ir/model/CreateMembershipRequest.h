@@ -173,21 +173,21 @@ class CreateMembershipRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_membershipName;
-  bool m_membershipNameHasBeenSet = false;
 
   Aws::Vector<IncidentResponder> m_incidentResponseTeam;
-  bool m_incidentResponseTeamHasBeenSet = false;
 
   Aws::Vector<OptInFeature> m_optInFeatures;
-  bool m_optInFeaturesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_coverEntireOrganization{false};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_membershipNameHasBeenSet = false;
+  bool m_incidentResponseTeamHasBeenSet = false;
+  bool m_optInFeaturesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_coverEntireOrganizationHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class DatasetSource {
   ///@}
  private:
   DatasetSourceType m_sourceType{DatasetSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   DatasetSourceFormat m_sourceFormat{DatasetSourceFormat::NOT_SET};
-  bool m_sourceFormatHasBeenSet = false;
 
   SourceDetail m_sourceDetail;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceFormatHasBeenSet = false;
   bool m_sourceDetailHasBeenSet = false;
 };
 

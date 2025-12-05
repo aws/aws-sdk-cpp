@@ -67,9 +67,9 @@ class Permission {
   ///@}
  private:
   Service m_service{Service::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   Operation m_operation{Operation::NOT_SET};
+  bool m_serviceHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

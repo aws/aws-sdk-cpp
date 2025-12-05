@@ -109,18 +109,18 @@ class DeleteAnalysisResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionTime{};
-  bool m_deletionTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_deletionTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

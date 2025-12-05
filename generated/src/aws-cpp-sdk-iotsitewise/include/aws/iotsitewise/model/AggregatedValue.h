@@ -87,12 +87,12 @@ class AggregatedValue {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Quality m_quality{Quality::NOT_SET};
-  bool m_qualityHasBeenSet = false;
 
   Aggregates m_value;
+  bool m_timestampHasBeenSet = false;
+  bool m_qualityHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

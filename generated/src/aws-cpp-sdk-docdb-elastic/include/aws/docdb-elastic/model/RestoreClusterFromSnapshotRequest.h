@@ -201,27 +201,27 @@ class RestoreClusterFromSnapshotRequest : public DocDBElasticRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   int m_shardCapacity{0};
-  bool m_shardCapacityHasBeenSet = false;
 
   int m_shardInstanceCount{0};
-  bool m_shardInstanceCountHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_shardCapacityHasBeenSet = false;
+  bool m_shardInstanceCountHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
 };
 

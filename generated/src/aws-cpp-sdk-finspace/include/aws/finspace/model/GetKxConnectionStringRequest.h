@@ -91,12 +91,12 @@ class GetKxConnectionStringRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_clusterName;
+  bool m_userArnHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
 };
 

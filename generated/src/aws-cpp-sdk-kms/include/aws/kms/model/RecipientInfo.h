@@ -78,9 +78,9 @@ class RecipientInfo {
   ///@}
  private:
   KeyEncryptionMechanism m_keyEncryptionAlgorithm{KeyEncryptionMechanism::NOT_SET};
-  bool m_keyEncryptionAlgorithmHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_attestationDocument{};
+  bool m_keyEncryptionAlgorithmHasBeenSet = false;
   bool m_attestationDocumentHasBeenSet = false;
 };
 

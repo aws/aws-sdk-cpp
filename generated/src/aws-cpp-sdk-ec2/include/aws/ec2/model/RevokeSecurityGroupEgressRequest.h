@@ -228,33 +228,33 @@ class RevokeSecurityGroupEgressRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupRuleIds;
-  bool m_securityGroupRuleIdsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_sourceSecurityGroupName;
-  bool m_sourceSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_sourceSecurityGroupOwnerId;
-  bool m_sourceSecurityGroupOwnerIdHasBeenSet = false;
 
   Aws::String m_ipProtocol;
-  bool m_ipProtocolHasBeenSet = false;
 
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::String m_cidrIp;
-  bool m_cidrIpHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_ipPermissions;
+  bool m_securityGroupRuleIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_sourceSecurityGroupNameHasBeenSet = false;
+  bool m_sourceSecurityGroupOwnerIdHasBeenSet = false;
+  bool m_ipProtocolHasBeenSet = false;
+  bool m_fromPortHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
+  bool m_cidrIpHasBeenSet = false;
   bool m_ipPermissionsHasBeenSet = false;
 };
 

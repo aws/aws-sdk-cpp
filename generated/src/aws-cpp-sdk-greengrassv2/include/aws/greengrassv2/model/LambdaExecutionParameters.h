@@ -257,36 +257,36 @@ class LambdaExecutionParameters {
   ///@}
  private:
   Aws::Vector<LambdaEventSource> m_eventSources;
-  bool m_eventSourcesHasBeenSet = false;
 
   int m_maxQueueSize{0};
-  bool m_maxQueueSizeHasBeenSet = false;
 
   int m_maxInstancesCount{0};
-  bool m_maxInstancesCountHasBeenSet = false;
 
   int m_maxIdleTimeInSeconds{0};
-  bool m_maxIdleTimeInSecondsHasBeenSet = false;
 
   int m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   int m_statusTimeoutInSeconds{0};
-  bool m_statusTimeoutInSecondsHasBeenSet = false;
 
   bool m_pinned{false};
-  bool m_pinnedHasBeenSet = false;
 
   LambdaInputPayloadEncodingType m_inputPayloadEncodingType{LambdaInputPayloadEncodingType::NOT_SET};
-  bool m_inputPayloadEncodingTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_execArgs;
-  bool m_execArgsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   LambdaLinuxProcessParams m_linuxProcessParams;
+  bool m_eventSourcesHasBeenSet = false;
+  bool m_maxQueueSizeHasBeenSet = false;
+  bool m_maxInstancesCountHasBeenSet = false;
+  bool m_maxIdleTimeInSecondsHasBeenSet = false;
+  bool m_timeoutInSecondsHasBeenSet = false;
+  bool m_statusTimeoutInSecondsHasBeenSet = false;
+  bool m_pinnedHasBeenSet = false;
+  bool m_inputPayloadEncodingTypeHasBeenSet = false;
+  bool m_execArgsHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
   bool m_linuxProcessParamsHasBeenSet = false;
 };
 

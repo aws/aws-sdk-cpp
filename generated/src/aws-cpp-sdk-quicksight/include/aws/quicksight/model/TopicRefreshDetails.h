@@ -87,12 +87,12 @@ class TopicRefreshDetails {
   ///@}
  private:
   Aws::String m_refreshArn;
-  bool m_refreshArnHasBeenSet = false;
 
   Aws::String m_refreshId;
-  bool m_refreshIdHasBeenSet = false;
 
   TopicRefreshStatus m_refreshStatus{TopicRefreshStatus::NOT_SET};
+  bool m_refreshArnHasBeenSet = false;
+  bool m_refreshIdHasBeenSet = false;
   bool m_refreshStatusHasBeenSet = false;
 };
 

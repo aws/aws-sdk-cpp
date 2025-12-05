@@ -91,9 +91,9 @@ class DASHFragmentSelector {
   ///@}
  private:
   DASHFragmentSelectorType m_fragmentSelectorType{DASHFragmentSelectorType::NOT_SET};
-  bool m_fragmentSelectorTypeHasBeenSet = false;
 
   DASHTimestampRange m_timestampRange;
+  bool m_fragmentSelectorTypeHasBeenSet = false;
   bool m_timestampRangeHasBeenSet = false;
 };
 

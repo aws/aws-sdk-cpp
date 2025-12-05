@@ -126,18 +126,18 @@ class ConformancePackEvaluationResult {
   ///@}
  private:
   ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   EvaluationResultIdentifier m_evaluationResultIdentifier;
-  bool m_evaluationResultIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_configRuleInvokedTime{};
-  bool m_configRuleInvokedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_resultRecordedTime{};
-  bool m_resultRecordedTimeHasBeenSet = false;
 
   Aws::String m_annotation;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_evaluationResultIdentifierHasBeenSet = false;
+  bool m_configRuleInvokedTimeHasBeenSet = false;
+  bool m_resultRecordedTimeHasBeenSet = false;
   bool m_annotationHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class StartCommandExecutionRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_sandboxId;
-  bool m_sandboxIdHasBeenSet = false;
 
   Aws::String m_command;
-  bool m_commandHasBeenSet = false;
 
   CommandType m_type{CommandType::NOT_SET};
+  bool m_sandboxIdHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

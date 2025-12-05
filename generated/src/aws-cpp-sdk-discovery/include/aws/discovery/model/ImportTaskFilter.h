@@ -79,9 +79,9 @@ class ImportTaskFilter {
   ///@}
  private:
   ImportTaskFilterName m_name{ImportTaskFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

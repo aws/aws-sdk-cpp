@@ -68,9 +68,9 @@ class RoutePedestrianNotice {
   ///@}
  private:
   RoutePedestrianNoticeCode m_code{RoutePedestrianNoticeCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   RouteNoticeImpact m_impact{RouteNoticeImpact::NOT_SET};
+  bool m_codeHasBeenSet = false;
   bool m_impactHasBeenSet = false;
 };
 

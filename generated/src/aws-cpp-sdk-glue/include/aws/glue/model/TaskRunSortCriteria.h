@@ -68,9 +68,9 @@ class TaskRunSortCriteria {
   ///@}
  private:
   TaskRunSortColumnType m_column{TaskRunSortColumnType::NOT_SET};
-  bool m_columnHasBeenSet = false;
 
   SortDirectionType m_sortDirection{SortDirectionType::NOT_SET};
+  bool m_columnHasBeenSet = false;
   bool m_sortDirectionHasBeenSet = false;
 };
 

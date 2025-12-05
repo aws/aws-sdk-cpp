@@ -86,12 +86,12 @@ class DescribeMatchmakingRuleSetsResult {
   ///@}
  private:
   Aws::Vector<MatchmakingRuleSet> m_ruleSets;
-  bool m_ruleSetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleSetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

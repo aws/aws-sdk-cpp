@@ -60,9 +60,9 @@ class AttachObjectResult {
   ///@}
  private:
   Aws::String m_attachedObjectIdentifier;
-  bool m_attachedObjectIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachedObjectIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

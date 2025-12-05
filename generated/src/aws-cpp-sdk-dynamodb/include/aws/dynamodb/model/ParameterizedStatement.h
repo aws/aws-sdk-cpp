@@ -100,12 +100,12 @@ class ParameterizedStatement {
   ///@}
  private:
   Aws::String m_statement;
-  bool m_statementHasBeenSet = false;
 
   Aws::Vector<AttributeValue> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure{ReturnValuesOnConditionCheckFailure::NOT_SET};
+  bool m_statementHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
 };
 

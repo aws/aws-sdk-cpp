@@ -67,9 +67,9 @@ class DescribeRegionsResponse {
   ///@}
  private:
   Aws::Vector<Region> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_regionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

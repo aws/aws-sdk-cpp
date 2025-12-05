@@ -101,15 +101,15 @@ class UpdateMonitoringAlertRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   Aws::String m_monitoringAlertName;
-  bool m_monitoringAlertNameHasBeenSet = false;
 
   int m_datapointsToAlert{0};
-  bool m_datapointsToAlertHasBeenSet = false;
 
   int m_evaluationPeriod{0};
+  bool m_monitoringScheduleNameHasBeenSet = false;
+  bool m_monitoringAlertNameHasBeenSet = false;
+  bool m_datapointsToAlertHasBeenSet = false;
   bool m_evaluationPeriodHasBeenSet = false;
 };
 

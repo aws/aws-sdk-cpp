@@ -65,9 +65,9 @@ class Frequency {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   FrequencyUnits m_units{FrequencyUnits::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_unitsHasBeenSet = false;
 };
 

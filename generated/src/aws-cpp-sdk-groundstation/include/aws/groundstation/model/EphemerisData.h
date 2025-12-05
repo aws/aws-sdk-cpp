@@ -82,12 +82,12 @@ class EphemerisData {
   ///@}
  private:
   TLEEphemeris m_tle;
-  bool m_tleHasBeenSet = false;
 
   OEMEphemeris m_oem;
-  bool m_oemHasBeenSet = false;
 
   AzElEphemeris m_azEl;
+  bool m_tleHasBeenSet = false;
+  bool m_oemHasBeenSet = false;
   bool m_azElHasBeenSet = false;
 };
 

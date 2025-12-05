@@ -79,12 +79,12 @@ class ExportLambdaFunctionRecommendationsResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   S3Destination m_s3Destination;
-  bool m_s3DestinationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_s3DestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

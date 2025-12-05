@@ -60,9 +60,9 @@ class DeleteNetworkInsightsAnalysisResponse {
   ///@}
  private:
   Aws::String m_networkInsightsAnalysisId;
-  bool m_networkInsightsAnalysisIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsAnalysisIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

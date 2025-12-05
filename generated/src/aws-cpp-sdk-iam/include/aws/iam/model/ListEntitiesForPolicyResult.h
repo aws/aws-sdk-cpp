@@ -163,21 +163,21 @@ class ListEntitiesForPolicyResult {
   ///@}
  private:
   Aws::Vector<PolicyGroup> m_policyGroups;
-  bool m_policyGroupsHasBeenSet = false;
 
   Aws::Vector<PolicyUser> m_policyUsers;
-  bool m_policyUsersHasBeenSet = false;
 
   Aws::Vector<PolicyRole> m_policyRoles;
-  bool m_policyRolesHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyGroupsHasBeenSet = false;
+  bool m_policyUsersHasBeenSet = false;
+  bool m_policyRolesHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

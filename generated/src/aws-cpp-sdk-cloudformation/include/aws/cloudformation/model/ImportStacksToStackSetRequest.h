@@ -185,24 +185,24 @@ class ImportStacksToStackSetRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stackIds;
-  bool m_stackIdsHasBeenSet = false;
 
   Aws::String m_stackIdsUrl;
-  bool m_stackIdsUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitIds;
-  bool m_organizationalUnitIdsHasBeenSet = false;
 
   StackSetOperationPreferences m_operationPreferences;
-  bool m_operationPreferencesHasBeenSet = false;
 
   Aws::String m_operationId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_operationIdHasBeenSet = true;
 
   CallAs m_callAs{CallAs::NOT_SET};
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_stackIdsHasBeenSet = false;
+  bool m_stackIdsUrlHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
+  bool m_operationPreferencesHasBeenSet = false;
+  bool m_operationIdHasBeenSet = true;
   bool m_callAsHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class SourceData {
   ///@}
  private:
   Aws::String m_acmPcaArn;
-  bool m_acmPcaArnHasBeenSet = false;
 
   Aws::String m_x509CertificateData;
+  bool m_acmPcaArnHasBeenSet = false;
   bool m_x509CertificateDataHasBeenSet = false;
 };
 

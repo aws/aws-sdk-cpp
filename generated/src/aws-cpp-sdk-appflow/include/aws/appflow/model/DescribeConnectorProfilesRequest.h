@@ -128,18 +128,18 @@ class DescribeConnectorProfilesRequest : public AppflowRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_connectorProfileNames;
-  bool m_connectorProfileNamesHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorLabel;
-  bool m_connectorLabelHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_connectorProfileNamesHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_connectorLabelHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

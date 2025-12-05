@@ -89,12 +89,12 @@ class EC2ReplaceRouteTableAssociationAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionTarget m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   ActionTarget m_routeTableId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
   bool m_routeTableIdHasBeenSet = false;
 };
 

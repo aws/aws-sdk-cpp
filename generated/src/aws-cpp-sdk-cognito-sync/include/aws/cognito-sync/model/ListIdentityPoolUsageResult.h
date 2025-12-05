@@ -120,18 +120,18 @@ class ListIdentityPoolUsageResult {
   ///@}
  private:
   Aws::Vector<IdentityPoolUsage> m_identityPoolUsages;
-  bool m_identityPoolUsagesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityPoolUsagesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

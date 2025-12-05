@@ -60,9 +60,9 @@ class GetStatementResult {
   ///@}
  private:
   Statement m_statement;
-  bool m_statementHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

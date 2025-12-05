@@ -60,9 +60,9 @@ class ModifyIpamPrefixListResolverResponse {
   ///@}
  private:
   IpamPrefixListResolver m_ipamPrefixListResolver;
-  bool m_ipamPrefixListResolverHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPrefixListResolverHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

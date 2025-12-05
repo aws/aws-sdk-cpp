@@ -102,12 +102,12 @@ class CreateHybridADRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_secretArnHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

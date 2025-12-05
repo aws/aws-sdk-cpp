@@ -109,15 +109,15 @@ class ItalyAdditionalInfo {
   ///@}
  private:
   Aws::String m_cigNumber;
-  bool m_cigNumberHasBeenSet = false;
 
   Aws::String m_cupNumber;
-  bool m_cupNumberHasBeenSet = false;
 
   Aws::String m_sdiAccountId;
-  bool m_sdiAccountIdHasBeenSet = false;
 
   Aws::String m_taxCode;
+  bool m_cigNumberHasBeenSet = false;
+  bool m_cupNumberHasBeenSet = false;
+  bool m_sdiAccountIdHasBeenSet = false;
   bool m_taxCodeHasBeenSet = false;
 };
 

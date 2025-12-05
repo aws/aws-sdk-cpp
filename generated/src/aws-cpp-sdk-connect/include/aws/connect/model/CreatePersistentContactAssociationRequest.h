@@ -161,18 +161,18 @@ class CreatePersistentContactAssociationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   RehydrationType m_rehydrationType{RehydrationType::NOT_SET};
-  bool m_rehydrationTypeHasBeenSet = false;
 
   Aws::String m_sourceContactId;
-  bool m_sourceContactIdHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_rehydrationTypeHasBeenSet = false;
+  bool m_sourceContactIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

@@ -499,72 +499,72 @@ class Application {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   ApplicationState m_state{ApplicationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateDetails;
-  bool m_stateDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, InitialCapacityConfig> m_initialCapacity;
-  bool m_initialCapacityHasBeenSet = false;
 
   MaximumAllowedResources m_maximumCapacity;
-  bool m_maximumCapacityHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AutoStartConfig m_autoStartConfiguration;
-  bool m_autoStartConfigurationHasBeenSet = false;
 
   AutoStopConfig m_autoStopConfiguration;
-  bool m_autoStopConfigurationHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Architecture m_architecture{Architecture::NOT_SET};
-  bool m_architectureHasBeenSet = false;
 
   ImageConfiguration m_imageConfiguration;
-  bool m_imageConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, WorkerTypeSpecification> m_workerTypeSpecifications;
-  bool m_workerTypeSpecificationsHasBeenSet = false;
 
   Aws::Vector<Configuration> m_runtimeConfiguration;
-  bool m_runtimeConfigurationHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
-  bool m_monitoringConfigurationHasBeenSet = false;
 
   InteractiveConfiguration m_interactiveConfiguration;
-  bool m_interactiveConfigurationHasBeenSet = false;
 
   SchedulerConfiguration m_schedulerConfiguration;
-  bool m_schedulerConfigurationHasBeenSet = false;
 
   IdentityCenterConfiguration m_identityCenterConfiguration;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateDetailsHasBeenSet = false;
+  bool m_initialCapacityHasBeenSet = false;
+  bool m_maximumCapacityHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_autoStartConfigurationHasBeenSet = false;
+  bool m_autoStopConfigurationHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_imageConfigurationHasBeenSet = false;
+  bool m_workerTypeSpecificationsHasBeenSet = false;
+  bool m_runtimeConfigurationHasBeenSet = false;
+  bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_interactiveConfigurationHasBeenSet = false;
+  bool m_schedulerConfigurationHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;
 };
 

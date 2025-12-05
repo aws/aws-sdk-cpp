@@ -68,9 +68,9 @@ class GetInstancePortStatesResult {
   ///@}
  private:
   Aws::Vector<InstancePortState> m_portStates;
-  bool m_portStatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portStatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

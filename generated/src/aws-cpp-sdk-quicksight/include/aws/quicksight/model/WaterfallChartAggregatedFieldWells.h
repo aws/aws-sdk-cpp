@@ -107,12 +107,12 @@ class WaterfallChartAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_breakdowns;
+  bool m_categoriesHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_breakdownsHasBeenSet = false;
 };
 

@@ -172,21 +172,21 @@ class DescribeImageUsageReportEntriesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_imageIds;
-  bool m_imageIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reportIds;
-  bool m_reportIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_imageIdsHasBeenSet = false;
+  bool m_reportIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

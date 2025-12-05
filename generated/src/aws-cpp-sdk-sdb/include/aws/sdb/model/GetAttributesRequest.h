@@ -113,15 +113,15 @@ class GetAttributesRequest : public SimpleDBRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_itemName;
-  bool m_itemNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
-  bool m_attributeNamesHasBeenSet = false;
 
   bool m_consistentRead{false};
+  bool m_domainNameHasBeenSet = false;
+  bool m_itemNameHasBeenSet = false;
+  bool m_attributeNamesHasBeenSet = false;
   bool m_consistentReadHasBeenSet = false;
 };
 

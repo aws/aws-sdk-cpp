@@ -77,9 +77,9 @@ class ModifyDBClusterParameterGroupRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

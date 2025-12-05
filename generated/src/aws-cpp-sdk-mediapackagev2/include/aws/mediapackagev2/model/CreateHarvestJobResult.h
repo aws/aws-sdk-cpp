@@ -316,51 +316,51 @@ class CreateHarvestJobResult {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_originEndpointName;
-  bool m_originEndpointNameHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_harvestJobName;
-  bool m_harvestJobNameHasBeenSet = false;
 
   HarvestedManifests m_harvestedManifests;
-  bool m_harvestedManifestsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   HarvesterScheduleConfiguration m_scheduleConfiguration;
-  bool m_scheduleConfigurationHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   HarvestJobStatus m_status{HarvestJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_originEndpointNameHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_harvestJobNameHasBeenSet = false;
+  bool m_harvestedManifestsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scheduleConfigurationHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

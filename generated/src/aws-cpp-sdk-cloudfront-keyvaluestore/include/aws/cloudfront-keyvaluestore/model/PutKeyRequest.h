@@ -112,15 +112,15 @@ class PutKeyRequest : public CloudFrontKeyValueStoreRequest {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_kvsARN;
-  bool m_kvsARNHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_kvsARNHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

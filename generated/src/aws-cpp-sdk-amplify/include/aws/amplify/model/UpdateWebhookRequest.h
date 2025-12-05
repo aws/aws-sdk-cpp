@@ -87,12 +87,12 @@ class UpdateWebhookRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_webhookId;
-  bool m_webhookIdHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_webhookIdHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

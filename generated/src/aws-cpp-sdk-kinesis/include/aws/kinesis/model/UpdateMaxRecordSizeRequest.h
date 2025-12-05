@@ -74,9 +74,9 @@ class UpdateMaxRecordSizeRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   int m_maxRecordSizeInKiB{0};
+  bool m_streamARNHasBeenSet = false;
   bool m_maxRecordSizeInKiBHasBeenSet = false;
 };
 

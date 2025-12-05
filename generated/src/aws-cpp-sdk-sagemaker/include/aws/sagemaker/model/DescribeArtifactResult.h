@@ -234,39 +234,39 @@ class DescribeArtifactResult {
   ///@}
  private:
   Aws::String m_artifactName;
-  bool m_artifactNameHasBeenSet = false;
 
   Aws::String m_artifactArn;
-  bool m_artifactArnHasBeenSet = false;
 
   ArtifactSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_artifactType;
-  bool m_artifactTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   MetadataProperties m_metadataProperties;
-  bool m_metadataPropertiesHasBeenSet = false;
 
   Aws::String m_lineageGroupArn;
-  bool m_lineageGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_artifactNameHasBeenSet = false;
+  bool m_artifactArnHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_artifactTypeHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_metadataPropertiesHasBeenSet = false;
+  bool m_lineageGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

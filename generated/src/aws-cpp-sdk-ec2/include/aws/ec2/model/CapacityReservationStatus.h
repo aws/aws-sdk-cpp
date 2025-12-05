@@ -104,15 +104,15 @@ class CapacityReservationStatus {
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   int m_totalCapacity{0};
-  bool m_totalCapacityHasBeenSet = false;
 
   int m_totalAvailableCapacity{0};
-  bool m_totalAvailableCapacityHasBeenSet = false;
 
   int m_totalUnavailableCapacity{0};
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_totalCapacityHasBeenSet = false;
+  bool m_totalAvailableCapacityHasBeenSet = false;
   bool m_totalUnavailableCapacityHasBeenSet = false;
 };
 

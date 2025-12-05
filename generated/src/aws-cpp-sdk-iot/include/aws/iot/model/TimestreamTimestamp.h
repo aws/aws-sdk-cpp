@@ -73,9 +73,9 @@ class TimestreamTimestamp {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_valueHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

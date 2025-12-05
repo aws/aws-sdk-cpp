@@ -92,12 +92,12 @@ class ListDistributionsByOwnedResource2020_05_31Request : public CloudFrontReque
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

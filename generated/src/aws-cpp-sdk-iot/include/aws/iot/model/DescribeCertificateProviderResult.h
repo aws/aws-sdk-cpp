@@ -155,24 +155,24 @@ class DescribeCertificateProviderResult {
   ///@}
  private:
   Aws::String m_certificateProviderName;
-  bool m_certificateProviderNameHasBeenSet = false;
 
   Aws::String m_certificateProviderArn;
-  bool m_certificateProviderArnHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaFunctionArnHasBeenSet = false;
 
   Aws::Vector<CertificateProviderOperation> m_accountDefaultForOperations;
-  bool m_accountDefaultForOperationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateProviderNameHasBeenSet = false;
+  bool m_certificateProviderArnHasBeenSet = false;
+  bool m_lambdaFunctionArnHasBeenSet = false;
+  bool m_accountDefaultForOperationsHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class StartPolicyGenerationRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_policyEngineId;
-  bool m_policyEngineIdHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Content m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_policyEngineIdHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

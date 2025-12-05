@@ -330,45 +330,45 @@ class Feature {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_defaultVariation;
-  bool m_defaultVariationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_entityOverrides;
-  bool m_entityOverridesHasBeenSet = false;
 
   Aws::Vector<EvaluationRule> m_evaluationRules;
-  bool m_evaluationRulesHasBeenSet = false;
 
   FeatureEvaluationStrategy m_evaluationStrategy{FeatureEvaluationStrategy::NOT_SET};
-  bool m_evaluationStrategyHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VariationValueType m_valueType{VariationValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   Aws::Vector<Variation> m_variations;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_defaultVariationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_entityOverridesHasBeenSet = false;
+  bool m_evaluationRulesHasBeenSet = false;
+  bool m_evaluationStrategyHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
   bool m_variationsHasBeenSet = false;
 };
 

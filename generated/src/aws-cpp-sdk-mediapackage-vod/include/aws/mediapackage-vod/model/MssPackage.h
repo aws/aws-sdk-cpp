@@ -91,12 +91,12 @@ class MssPackage {
   ///@}
  private:
   MssEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::Vector<MssManifest> m_mssManifests;
-  bool m_mssManifestsHasBeenSet = false;
 
   int m_segmentDurationSeconds{0};
+  bool m_encryptionHasBeenSet = false;
+  bool m_mssManifestsHasBeenSet = false;
   bool m_segmentDurationSecondsHasBeenSet = false;
 };
 

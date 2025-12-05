@@ -161,21 +161,21 @@ class LocalSecondaryIndexDescription {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   Projection m_projection;
-  bool m_projectionHasBeenSet = false;
 
   long long m_indexSizeBytes{0};
-  bool m_indexSizeBytesHasBeenSet = false;
 
   long long m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   Aws::String m_indexArn;
+  bool m_indexNameHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
+  bool m_projectionHasBeenSet = false;
+  bool m_indexSizeBytesHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
   bool m_indexArnHasBeenSet = false;
 };
 

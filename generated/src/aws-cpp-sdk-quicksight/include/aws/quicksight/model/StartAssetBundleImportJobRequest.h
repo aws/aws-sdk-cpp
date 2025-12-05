@@ -190,27 +190,27 @@ class StartAssetBundleImportJobRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_assetBundleImportJobId;
-  bool m_assetBundleImportJobIdHasBeenSet = false;
 
   AssetBundleImportSource m_assetBundleImportSource;
-  bool m_assetBundleImportSourceHasBeenSet = false;
 
   AssetBundleImportJobOverrideParameters m_overrideParameters;
-  bool m_overrideParametersHasBeenSet = false;
 
   AssetBundleImportFailureAction m_failureAction{AssetBundleImportFailureAction::NOT_SET};
-  bool m_failureActionHasBeenSet = false;
 
   AssetBundleImportJobOverridePermissions m_overridePermissions;
-  bool m_overridePermissionsHasBeenSet = false;
 
   AssetBundleImportJobOverrideTags m_overrideTags;
-  bool m_overrideTagsHasBeenSet = false;
 
   AssetBundleImportJobOverrideValidationStrategy m_overrideValidationStrategy;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_assetBundleImportJobIdHasBeenSet = false;
+  bool m_assetBundleImportSourceHasBeenSet = false;
+  bool m_overrideParametersHasBeenSet = false;
+  bool m_failureActionHasBeenSet = false;
+  bool m_overridePermissionsHasBeenSet = false;
+  bool m_overrideTagsHasBeenSet = false;
   bool m_overrideValidationStrategyHasBeenSet = false;
 };
 

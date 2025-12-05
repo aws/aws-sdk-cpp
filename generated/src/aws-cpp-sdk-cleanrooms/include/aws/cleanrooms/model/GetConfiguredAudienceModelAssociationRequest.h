@@ -72,9 +72,9 @@ class GetConfiguredAudienceModelAssociationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_configuredAudienceModelAssociationIdentifier;
-  bool m_configuredAudienceModelAssociationIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
+  bool m_configuredAudienceModelAssociationIdentifierHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
 };
 

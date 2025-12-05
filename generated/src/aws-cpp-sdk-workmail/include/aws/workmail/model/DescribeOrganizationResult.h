@@ -232,39 +232,39 @@ class DescribeOrganizationResult {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_directoryType;
-  bool m_directoryTypeHasBeenSet = false;
 
   Aws::String m_defaultMailDomain;
-  bool m_defaultMailDomainHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedDate{};
-  bool m_completedDateHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_migrationAdmin;
-  bool m_migrationAdminHasBeenSet = false;
 
   bool m_interoperabilityEnabled{false};
-  bool m_interoperabilityEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_directoryTypeHasBeenSet = false;
+  bool m_defaultMailDomainHasBeenSet = false;
+  bool m_completedDateHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_migrationAdminHasBeenSet = false;
+  bool m_interoperabilityEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

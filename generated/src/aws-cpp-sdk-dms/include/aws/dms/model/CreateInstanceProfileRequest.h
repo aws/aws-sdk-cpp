@@ -221,30 +221,30 @@ class CreateInstanceProfileRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_subnetGroupIdentifier;
-  bool m_subnetGroupIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroups;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_instanceProfileNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_subnetGroupIdentifierHasBeenSet = false;
   bool m_vpcSecurityGroupsHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListConfigurationManagersRequest : public SSMQuickSetupRequest {
   ///@}
  private:
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_startingToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_startingTokenHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class UpdateActionConnectorRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_actionConnectorId;
-  bool m_actionConnectorIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AuthConfig m_authenticationConfig;
-  bool m_authenticationConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_vpcConnectionArn;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_actionConnectorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_authenticationConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_vpcConnectionArnHasBeenSet = false;
 };
 

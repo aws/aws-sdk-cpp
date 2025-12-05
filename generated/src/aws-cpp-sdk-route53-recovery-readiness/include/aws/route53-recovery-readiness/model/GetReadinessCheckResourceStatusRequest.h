@@ -106,15 +106,15 @@ class GetReadinessCheckResourceStatusRequest : public Route53RecoveryReadinessRe
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_readinessCheckName;
-  bool m_readinessCheckNameHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_readinessCheckNameHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class TestConnectionResult {
   ///@}
  private:
   Connection m_connection;
-  bool m_connectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

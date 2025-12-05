@@ -69,9 +69,9 @@ class PutSinkPolicyRequest : public OAMRequest {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_sinkIdentifier;
+  bool m_policyHasBeenSet = false;
   bool m_sinkIdentifierHasBeenSet = false;
 };
 

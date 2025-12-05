@@ -59,9 +59,9 @@ class CreateAudienceModelResult {
   ///@}
  private:
   Aws::String m_audienceModelArn;
-  bool m_audienceModelArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_audienceModelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class DescribeBrokerInstanceOptionsRequest : public MQRequest {
   ///@}
  private:
   Aws::String m_engineType;
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_hostInstanceType;
-  bool m_hostInstanceTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_storageType;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_hostInstanceTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
 };
 

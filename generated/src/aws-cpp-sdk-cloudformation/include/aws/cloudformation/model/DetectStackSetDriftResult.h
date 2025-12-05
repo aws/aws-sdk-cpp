@@ -62,9 +62,9 @@ class DetectStackSetDriftResult {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_operationIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

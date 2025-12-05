@@ -68,9 +68,9 @@ class GetDefaultCreditSpecificationRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   UnlimitedSupportedInstanceFamily m_instanceFamily{UnlimitedSupportedInstanceFamily::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
   bool m_instanceFamilyHasBeenSet = false;
 };
 

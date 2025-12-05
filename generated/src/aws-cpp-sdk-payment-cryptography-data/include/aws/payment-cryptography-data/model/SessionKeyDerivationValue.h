@@ -70,9 +70,9 @@ class SessionKeyDerivationValue {
   ///@}
  private:
   Aws::String m_applicationCryptogram;
-  bool m_applicationCryptogramHasBeenSet = false;
 
   Aws::String m_applicationTransactionCounter;
+  bool m_applicationCryptogramHasBeenSet = false;
   bool m_applicationTransactionCounterHasBeenSet = false;
 };
 

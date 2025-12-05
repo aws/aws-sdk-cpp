@@ -89,12 +89,12 @@ class ImageTagDetail {
   ///@}
  private:
   Aws::String m_imageTag;
-  bool m_imageTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ReferencedImageDetail m_imageDetail;
+  bool m_imageTagHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_imageDetailHasBeenSet = false;
 };
 

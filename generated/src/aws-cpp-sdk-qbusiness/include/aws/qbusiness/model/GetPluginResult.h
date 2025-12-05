@@ -245,42 +245,42 @@ class GetPluginResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   PluginType m_type{PluginType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_serverUrl;
-  bool m_serverUrlHasBeenSet = false;
 
   PluginAuthConfiguration m_authConfiguration;
-  bool m_authConfigurationHasBeenSet = false;
 
   CustomPluginConfiguration m_customPluginConfiguration;
-  bool m_customPluginConfigurationHasBeenSet = false;
 
   PluginBuildStatus m_buildStatus{PluginBuildStatus::NOT_SET};
-  bool m_buildStatusHasBeenSet = false;
 
   Aws::String m_pluginArn;
-  bool m_pluginArnHasBeenSet = false;
 
   PluginState m_state{PluginState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_pluginIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_serverUrlHasBeenSet = false;
+  bool m_authConfigurationHasBeenSet = false;
+  bool m_customPluginConfigurationHasBeenSet = false;
+  bool m_buildStatusHasBeenSet = false;
+  bool m_pluginArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

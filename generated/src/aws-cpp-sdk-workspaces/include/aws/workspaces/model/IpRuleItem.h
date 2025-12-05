@@ -69,9 +69,9 @@ class IpRuleItem {
   ///@}
  private:
   Aws::String m_ipRule;
-  bool m_ipRuleHasBeenSet = false;
 
   Aws::String m_ruleDesc;
+  bool m_ipRuleHasBeenSet = false;
   bool m_ruleDescHasBeenSet = false;
 };
 

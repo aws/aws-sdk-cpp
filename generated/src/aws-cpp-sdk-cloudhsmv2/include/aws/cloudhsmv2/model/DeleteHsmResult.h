@@ -59,9 +59,9 @@ class DeleteHsmResult {
   ///@}
  private:
   Aws::String m_hsmId;
-  bool m_hsmIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hsmIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -216,30 +216,30 @@ class InstalledComponent {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   InstalledComponentLifecycleState m_lifecycleState{InstalledComponentLifecycleState::NOT_SET};
-  bool m_lifecycleStateHasBeenSet = false;
 
   Aws::String m_lifecycleStateDetails;
-  bool m_lifecycleStateDetailsHasBeenSet = false;
 
   bool m_isRoot{false};
-  bool m_isRootHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChangeTimestamp{};
-  bool m_lastStatusChangeTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastReportedTimestamp{};
-  bool m_lastReportedTimestampHasBeenSet = false;
 
   Aws::String m_lastInstallationSource;
-  bool m_lastInstallationSourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lifecycleStatusCodes;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentVersionHasBeenSet = false;
+  bool m_lifecycleStateHasBeenSet = false;
+  bool m_lifecycleStateDetailsHasBeenSet = false;
+  bool m_isRootHasBeenSet = false;
+  bool m_lastStatusChangeTimestampHasBeenSet = false;
+  bool m_lastReportedTimestampHasBeenSet = false;
+  bool m_lastInstallationSourceHasBeenSet = false;
   bool m_lifecycleStatusCodesHasBeenSet = false;
 };
 

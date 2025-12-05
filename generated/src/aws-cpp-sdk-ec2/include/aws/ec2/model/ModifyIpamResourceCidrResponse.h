@@ -60,9 +60,9 @@ class ModifyIpamResourceCidrResponse {
   ///@}
  private:
   IpamResourceCidr m_ipamResourceCidr;
-  bool m_ipamResourceCidrHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamResourceCidrHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

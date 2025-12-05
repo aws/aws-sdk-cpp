@@ -201,24 +201,24 @@ class ValidStorageOptions {
   ///@}
  private:
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::Vector<Range> m_storageSize;
-  bool m_storageSizeHasBeenSet = false;
 
   Aws::Vector<Range> m_provisionedIops;
-  bool m_provisionedIopsHasBeenSet = false;
 
   Aws::Vector<DoubleRange> m_iopsToStorageRatio;
-  bool m_iopsToStorageRatioHasBeenSet = false;
 
   Aws::Vector<Range> m_provisionedStorageThroughput;
-  bool m_provisionedStorageThroughputHasBeenSet = false;
 
   Aws::Vector<DoubleRange> m_storageThroughputToIopsRatio;
-  bool m_storageThroughputToIopsRatioHasBeenSet = false;
 
   bool m_supportsStorageAutoscaling{false};
+  bool m_storageTypeHasBeenSet = false;
+  bool m_storageSizeHasBeenSet = false;
+  bool m_provisionedIopsHasBeenSet = false;
+  bool m_iopsToStorageRatioHasBeenSet = false;
+  bool m_provisionedStorageThroughputHasBeenSet = false;
+  bool m_storageThroughputToIopsRatioHasBeenSet = false;
   bool m_supportsStorageAutoscalingHasBeenSet = false;
 };
 

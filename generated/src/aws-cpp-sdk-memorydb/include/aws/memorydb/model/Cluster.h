@@ -596,93 +596,93 @@ class Cluster {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ClusterPendingUpdates m_pendingUpdates;
-  bool m_pendingUpdatesHasBeenSet = false;
 
   Aws::String m_multiRegionClusterName;
-  bool m_multiRegionClusterNameHasBeenSet = false;
 
   int m_numberOfShards{0};
-  bool m_numberOfShardsHasBeenSet = false;
 
   Aws::Vector<Shard> m_shards;
-  bool m_shardsHasBeenSet = false;
 
   AZStatus m_availabilityMode{AZStatus::NOT_SET};
-  bool m_availabilityModeHasBeenSet = false;
 
   Endpoint m_clusterEndpoint;
-  bool m_clusterEndpointHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_enginePatchVersion;
-  bool m_enginePatchVersionHasBeenSet = false;
 
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::String m_parameterGroupStatus;
-  bool m_parameterGroupStatusHasBeenSet = false;
 
   Aws::Vector<SecurityGroupMembership> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   bool m_tLSEnabled{false};
-  bool m_tLSEnabledHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::String m_snsTopicStatus;
-  bool m_snsTopicStatusHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   Aws::String m_aCLName;
-  bool m_aCLNameHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   DataTieringStatus m_dataTiering{DataTieringStatus::NOT_SET};
-  bool m_dataTieringHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_pendingUpdatesHasBeenSet = false;
+  bool m_multiRegionClusterNameHasBeenSet = false;
+  bool m_numberOfShardsHasBeenSet = false;
+  bool m_shardsHasBeenSet = false;
+  bool m_availabilityModeHasBeenSet = false;
+  bool m_clusterEndpointHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_enginePatchVersionHasBeenSet = false;
+  bool m_parameterGroupNameHasBeenSet = false;
+  bool m_parameterGroupStatusHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_tLSEnabledHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_snsTopicStatusHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_aCLNameHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_dataTieringHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_ipDiscoveryHasBeenSet = false;
 };
 

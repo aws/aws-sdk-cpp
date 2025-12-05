@@ -71,9 +71,9 @@ class PinData {
   ///@}
  private:
   Aws::String m_pinOffset;
-  bool m_pinOffsetHasBeenSet = false;
 
   Aws::String m_verificationValue;
+  bool m_pinOffsetHasBeenSet = false;
   bool m_verificationValueHasBeenSet = false;
 };
 

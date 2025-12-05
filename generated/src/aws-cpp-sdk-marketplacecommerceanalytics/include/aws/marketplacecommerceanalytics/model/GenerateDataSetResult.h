@@ -68,9 +68,9 @@ class GenerateDataSetResult {
   ///@}
  private:
   Aws::String m_dataSetRequestId;
-  bool m_dataSetRequestIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSetRequestIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

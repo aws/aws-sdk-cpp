@@ -123,18 +123,18 @@ class FleetAdvisorSchemaObjectResponse {
   ///@}
  private:
   Aws::String m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   Aws::String m_objectType;
-  bool m_objectTypeHasBeenSet = false;
 
   long long m_numberOfObjects{0};
-  bool m_numberOfObjectsHasBeenSet = false;
 
   long long m_codeLineCount{0};
-  bool m_codeLineCountHasBeenSet = false;
 
   long long m_codeSize{0};
+  bool m_schemaIdHasBeenSet = false;
+  bool m_objectTypeHasBeenSet = false;
+  bool m_numberOfObjectsHasBeenSet = false;
+  bool m_codeLineCountHasBeenSet = false;
   bool m_codeSizeHasBeenSet = false;
 };
 

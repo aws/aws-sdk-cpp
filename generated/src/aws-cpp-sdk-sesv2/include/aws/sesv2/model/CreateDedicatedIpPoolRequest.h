@@ -94,12 +94,12 @@ class CreateDedicatedIpPoolRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ScalingMode m_scalingMode{ScalingMode::NOT_SET};
+  bool m_poolNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_scalingModeHasBeenSet = false;
 };
 

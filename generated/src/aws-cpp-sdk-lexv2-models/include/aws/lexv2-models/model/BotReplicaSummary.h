@@ -112,15 +112,15 @@ class BotReplicaSummary {
   ///@}
  private:
   Aws::String m_replicaRegion;
-  bool m_replicaRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   BotReplicaStatus m_botReplicaStatus{BotReplicaStatus::NOT_SET};
-  bool m_botReplicaStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
+  bool m_replicaRegionHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_botReplicaStatusHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;
 };
 

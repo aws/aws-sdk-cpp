@@ -69,9 +69,9 @@ class FlowTraceNodeOutputNext {
   ///@}
  private:
   Aws::String m_inputFieldName;
-  bool m_inputFieldNameHasBeenSet = false;
 
   Aws::String m_nodeName;
+  bool m_inputFieldNameHasBeenSet = false;
   bool m_nodeNameHasBeenSet = false;
 };
 

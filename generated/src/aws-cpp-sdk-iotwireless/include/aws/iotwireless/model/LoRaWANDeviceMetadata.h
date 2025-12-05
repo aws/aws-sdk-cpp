@@ -167,24 +167,24 @@ class LoRaWANDeviceMetadata {
   ///@}
  private:
   Aws::String m_devEui;
-  bool m_devEuiHasBeenSet = false;
 
   int m_fPort{0};
-  bool m_fPortHasBeenSet = false;
 
   int m_dataRate{0};
-  bool m_dataRateHasBeenSet = false;
 
   int m_frequency{0};
-  bool m_frequencyHasBeenSet = false;
 
   Aws::String m_timestamp;
-  bool m_timestampHasBeenSet = false;
 
   Aws::Vector<LoRaWANGatewayMetadata> m_gateways;
-  bool m_gatewaysHasBeenSet = false;
 
   Aws::Vector<LoRaWANPublicGatewayMetadata> m_publicGateways;
+  bool m_devEuiHasBeenSet = false;
+  bool m_fPortHasBeenSet = false;
+  bool m_dataRateHasBeenSet = false;
+  bool m_frequencyHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_gatewaysHasBeenSet = false;
   bool m_publicGatewaysHasBeenSet = false;
 };
 

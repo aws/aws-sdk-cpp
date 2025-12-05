@@ -63,9 +63,9 @@ class IcebergUnreferencedFileRemovalSettings {
   ///@}
  private:
   int m_unreferencedDays{0};
-  bool m_unreferencedDaysHasBeenSet = false;
 
   int m_nonCurrentDays{0};
+  bool m_unreferencedDaysHasBeenSet = false;
   bool m_nonCurrentDaysHasBeenSet = false;
 };
 

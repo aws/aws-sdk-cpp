@@ -75,12 +75,12 @@ class DescribeIngestionResult {
   ///@}
  private:
   Ingestion m_ingestion;
-  bool m_ingestionHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_ingestionHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

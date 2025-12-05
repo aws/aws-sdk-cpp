@@ -158,24 +158,24 @@ class BrandSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_brandId;
-  bool m_brandIdHasBeenSet = false;
 
   Aws::String m_brandName;
-  bool m_brandNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   BrandStatus m_brandStatus{BrandStatus::NOT_SET};
-  bool m_brandStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_arnHasBeenSet = false;
+  bool m_brandIdHasBeenSet = false;
+  bool m_brandNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_brandStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

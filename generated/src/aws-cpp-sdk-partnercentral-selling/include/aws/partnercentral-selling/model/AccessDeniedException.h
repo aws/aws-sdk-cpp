@@ -68,9 +68,9 @@ class AccessDeniedException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   AccessDeniedExceptionErrorCode m_reason{AccessDeniedExceptionErrorCode::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -234,33 +234,33 @@ class ComplianceDrift {
   ///@}
  private:
   Aws::String m_actualReferenceId;
-  bool m_actualReferenceIdHasBeenSet = false;
 
   Aws::Map<DisruptionType, DisruptionCompliance> m_actualValue;
-  bool m_actualValueHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   DifferenceType m_diffType{DifferenceType::NOT_SET};
-  bool m_diffTypeHasBeenSet = false;
 
   DriftType m_driftType{DriftType::NOT_SET};
-  bool m_driftTypeHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityType;
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_expectedReferenceId;
-  bool m_expectedReferenceIdHasBeenSet = false;
 
   Aws::Map<DisruptionType, DisruptionCompliance> m_expectedValue;
+  bool m_actualReferenceIdHasBeenSet = false;
+  bool m_actualValueHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_diffTypeHasBeenSet = false;
+  bool m_driftTypeHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_expectedReferenceIdHasBeenSet = false;
   bool m_expectedValueHasBeenSet = false;
 };
 

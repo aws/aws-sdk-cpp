@@ -80,9 +80,9 @@ class DisableAvailabilityZonesForLoadBalancerRequest : public ElasticLoadBalanci
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
 };
 

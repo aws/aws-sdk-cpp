@@ -103,15 +103,15 @@ class EndpointInputConfiguration {
   ///@}
  private:
   ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   ProductionVariantServerlessConfig m_serverlessConfig;
-  bool m_serverlessConfigHasBeenSet = false;
 
   Aws::String m_inferenceSpecificationName;
-  bool m_inferenceSpecificationNameHasBeenSet = false;
 
   EnvironmentParameterRanges m_environmentParameterRanges;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_serverlessConfigHasBeenSet = false;
+  bool m_inferenceSpecificationNameHasBeenSet = false;
   bool m_environmentParameterRangesHasBeenSet = false;
 };
 

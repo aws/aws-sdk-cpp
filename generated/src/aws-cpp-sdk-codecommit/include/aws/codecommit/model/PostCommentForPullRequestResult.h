@@ -184,30 +184,30 @@ class PostCommentForPullRequestResult {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   Aws::String m_beforeCommitId;
-  bool m_beforeCommitIdHasBeenSet = false;
 
   Aws::String m_afterCommitId;
-  bool m_afterCommitIdHasBeenSet = false;
 
   Aws::String m_beforeBlobId;
-  bool m_beforeBlobIdHasBeenSet = false;
 
   Aws::String m_afterBlobId;
-  bool m_afterBlobIdHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   Comment m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_pullRequestIdHasBeenSet = false;
+  bool m_beforeCommitIdHasBeenSet = false;
+  bool m_afterCommitIdHasBeenSet = false;
+  bool m_beforeBlobIdHasBeenSet = false;
+  bool m_afterBlobIdHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

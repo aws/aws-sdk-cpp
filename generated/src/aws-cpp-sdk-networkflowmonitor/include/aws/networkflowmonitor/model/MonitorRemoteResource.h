@@ -83,9 +83,9 @@ class MonitorRemoteResource {
   ///@}
  private:
   MonitorRemoteResourceType m_type{MonitorRemoteResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_typeHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class UpdateAppAuthorizationRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::String m_appAuthorizationIdentifier;
-  bool m_appAuthorizationIdentifierHasBeenSet = false;
 
   Credential m_credential;
-  bool m_credentialHasBeenSet = false;
 
   Tenant m_tenant;
+  bool m_appBundleIdentifierHasBeenSet = false;
+  bool m_appAuthorizationIdentifierHasBeenSet = false;
+  bool m_credentialHasBeenSet = false;
   bool m_tenantHasBeenSet = false;
 };
 

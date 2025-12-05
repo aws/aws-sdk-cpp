@@ -104,15 +104,15 @@ class TransferInputDeviceRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_inputDeviceId;
-  bool m_inputDeviceIdHasBeenSet = false;
 
   Aws::String m_targetCustomerId;
-  bool m_targetCustomerIdHasBeenSet = false;
 
   Aws::String m_targetRegion;
-  bool m_targetRegionHasBeenSet = false;
 
   Aws::String m_transferMessage;
+  bool m_inputDeviceIdHasBeenSet = false;
+  bool m_targetCustomerIdHasBeenSet = false;
+  bool m_targetRegionHasBeenSet = false;
   bool m_transferMessageHasBeenSet = false;
 };
 

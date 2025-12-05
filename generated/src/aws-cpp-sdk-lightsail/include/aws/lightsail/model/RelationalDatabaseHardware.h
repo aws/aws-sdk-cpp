@@ -77,12 +77,12 @@ class RelationalDatabaseHardware {
   ///@}
  private:
   int m_cpuCount{0};
-  bool m_cpuCountHasBeenSet = false;
 
   int m_diskSizeInGb{0};
-  bool m_diskSizeInGbHasBeenSet = false;
 
   double m_ramSizeInGb{0.0};
+  bool m_cpuCountHasBeenSet = false;
+  bool m_diskSizeInGbHasBeenSet = false;
   bool m_ramSizeInGbHasBeenSet = false;
 };
 

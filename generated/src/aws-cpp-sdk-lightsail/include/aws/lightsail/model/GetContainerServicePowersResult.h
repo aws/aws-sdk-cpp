@@ -68,9 +68,9 @@ class GetContainerServicePowersResult {
   ///@}
  private:
   Aws::Vector<ContainerServicePower> m_powers;
-  bool m_powersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_powersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

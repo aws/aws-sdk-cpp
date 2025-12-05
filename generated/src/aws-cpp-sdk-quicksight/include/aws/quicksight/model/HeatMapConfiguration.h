@@ -239,36 +239,36 @@ class HeatMapConfiguration {
   ///@}
  private:
   HeatMapFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   HeatMapSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   AxisDisplayOptions m_rowAxisDisplayOptions;
-  bool m_rowAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_rowLabelOptions;
-  bool m_rowLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_columnAxisDisplayOptions;
-  bool m_columnAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_columnLabelOptions;
-  bool m_columnLabelOptionsHasBeenSet = false;
 
   ColorScale m_colorScale;
-  bool m_colorScaleHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_rowAxisDisplayOptionsHasBeenSet = false;
+  bool m_rowLabelOptionsHasBeenSet = false;
+  bool m_columnAxisDisplayOptionsHasBeenSet = false;
+  bool m_columnLabelOptionsHasBeenSet = false;
+  bool m_colorScaleHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

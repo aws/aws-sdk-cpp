@@ -92,12 +92,12 @@ class ExperienceEntitiesSummary {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   EntityType m_entityType{EntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   EntityDisplayData m_displayData;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
   bool m_displayDataHasBeenSet = false;
 };
 

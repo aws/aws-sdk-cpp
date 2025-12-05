@@ -270,24 +270,24 @@ class SendMessageBatchRequestEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_messageBody;
-  bool m_messageBodyHasBeenSet = false;
 
   int m_delaySeconds{0};
-  bool m_delaySecondsHasBeenSet = false;
 
   Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-  bool m_messageAttributesHasBeenSet = false;
 
   Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue> m_messageSystemAttributes;
-  bool m_messageSystemAttributesHasBeenSet = false;
 
   Aws::String m_messageDeduplicationId;
-  bool m_messageDeduplicationIdHasBeenSet = false;
 
   Aws::String m_messageGroupId;
+  bool m_idHasBeenSet = false;
+  bool m_messageBodyHasBeenSet = false;
+  bool m_delaySecondsHasBeenSet = false;
+  bool m_messageAttributesHasBeenSet = false;
+  bool m_messageSystemAttributesHasBeenSet = false;
+  bool m_messageDeduplicationIdHasBeenSet = false;
   bool m_messageGroupIdHasBeenSet = false;
 };
 

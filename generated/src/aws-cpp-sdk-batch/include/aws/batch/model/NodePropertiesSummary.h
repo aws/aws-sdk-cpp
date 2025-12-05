@@ -81,12 +81,12 @@ class NodePropertiesSummary {
   ///@}
  private:
   bool m_isMainNode{false};
-  bool m_isMainNodeHasBeenSet = false;
 
   int m_numNodes{0};
-  bool m_numNodesHasBeenSet = false;
 
   int m_nodeIndex{0};
+  bool m_isMainNodeHasBeenSet = false;
+  bool m_numNodesHasBeenSet = false;
   bool m_nodeIndexHasBeenSet = false;
 };
 

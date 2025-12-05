@@ -129,18 +129,18 @@ class ResourceDrift {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   DifferenceType m_diffType{DifferenceType::NOT_SET};
-  bool m_diffTypeHasBeenSet = false;
 
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   ResourceIdentifier m_resourceIdentifier;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_diffTypeHasBeenSet = false;
+  bool m_referenceIdHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

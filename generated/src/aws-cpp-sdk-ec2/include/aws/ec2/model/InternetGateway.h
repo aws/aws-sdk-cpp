@@ -121,15 +121,15 @@ class InternetGateway {
   ///@}
  private:
   Aws::Vector<InternetGatewayAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_internetGatewayId;
-  bool m_internetGatewayIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_internetGatewayIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

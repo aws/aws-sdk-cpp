@@ -81,9 +81,9 @@ class DisableFastSnapshotRestoreErrorItem {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Vector<DisableFastSnapshotRestoreStateErrorItem> m_fastSnapshotRestoreStateErrors;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_fastSnapshotRestoreStateErrorsHasBeenSet = false;
 };
 

@@ -212,27 +212,27 @@ class RuleDeclaration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleTypeId m_ruleTypeId;
-  bool m_ruleTypeIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_commands;
-  bool m_commandsHasBeenSet = false;
 
   Aws::Vector<InputArtifact> m_inputArtifacts;
-  bool m_inputArtifactsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
+  bool m_nameHasBeenSet = false;
+  bool m_ruleTypeIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_commandsHasBeenSet = false;
+  bool m_inputArtifactsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_timeoutInMinutesHasBeenSet = false;
 };
 

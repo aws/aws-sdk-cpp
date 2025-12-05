@@ -179,21 +179,21 @@ class DataRepositoryConfiguration {
   ///@}
  private:
   DataRepositoryLifecycle m_lifecycle{DataRepositoryLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_importPath;
-  bool m_importPathHasBeenSet = false;
 
   Aws::String m_exportPath;
-  bool m_exportPathHasBeenSet = false;
 
   int m_importedFileChunkSize{0};
-  bool m_importedFileChunkSizeHasBeenSet = false;
 
   AutoImportPolicyType m_autoImportPolicy{AutoImportPolicyType::NOT_SET};
-  bool m_autoImportPolicyHasBeenSet = false;
 
   DataRepositoryFailureDetails m_failureDetails;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_importPathHasBeenSet = false;
+  bool m_exportPathHasBeenSet = false;
+  bool m_importedFileChunkSizeHasBeenSet = false;
+  bool m_autoImportPolicyHasBeenSet = false;
   bool m_failureDetailsHasBeenSet = false;
 };
 

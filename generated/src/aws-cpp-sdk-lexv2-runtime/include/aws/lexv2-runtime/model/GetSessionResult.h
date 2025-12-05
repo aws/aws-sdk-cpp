@@ -134,18 +134,18 @@ class GetSessionResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::Vector<Interpretation> m_interpretations;
-  bool m_interpretationsHasBeenSet = false;
 
   SessionState m_sessionState;
-  bool m_sessionStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_interpretationsHasBeenSet = false;
+  bool m_sessionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

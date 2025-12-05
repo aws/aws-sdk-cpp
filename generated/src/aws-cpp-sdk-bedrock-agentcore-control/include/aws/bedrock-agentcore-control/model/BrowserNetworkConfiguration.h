@@ -67,9 +67,9 @@ class BrowserNetworkConfiguration {
   ///@}
  private:
   BrowserNetworkMode m_networkMode{BrowserNetworkMode::NOT_SET};
-  bool m_networkModeHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
+  bool m_networkModeHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

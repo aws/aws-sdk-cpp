@@ -123,18 +123,18 @@ class UpdatePlanExecutionStepRequest : public ARCRegionswitchRequest {
   ///@}
  private:
   Aws::String m_planArn;
-  bool m_planArnHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   UpdatePlanExecutionStepAction m_actionToTake{UpdatePlanExecutionStepAction::NOT_SET};
+  bool m_planArnHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_stepNameHasBeenSet = false;
   bool m_actionToTakeHasBeenSet = false;
 };
 

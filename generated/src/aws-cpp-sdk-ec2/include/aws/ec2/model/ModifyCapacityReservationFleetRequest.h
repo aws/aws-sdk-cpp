@@ -138,18 +138,18 @@ class ModifyCapacityReservationFleetRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_capacityReservationFleetId;
-  bool m_capacityReservationFleetIdHasBeenSet = false;
 
   int m_totalTargetCapacity{0};
-  bool m_totalTargetCapacityHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   bool m_removeEndDate{false};
+  bool m_capacityReservationFleetIdHasBeenSet = false;
+  bool m_totalTargetCapacityHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_removeEndDateHasBeenSet = false;
 };
 

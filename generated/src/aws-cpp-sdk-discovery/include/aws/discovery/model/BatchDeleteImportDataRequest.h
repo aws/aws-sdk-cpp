@@ -73,9 +73,9 @@ class BatchDeleteImportDataRequest : public ApplicationDiscoveryServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_importTaskIds;
-  bool m_importTaskIdsHasBeenSet = false;
 
   bool m_deleteHistory{false};
+  bool m_importTaskIdsHasBeenSet = false;
   bool m_deleteHistoryHasBeenSet = false;
 };
 

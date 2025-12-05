@@ -65,9 +65,9 @@ class CreateJourneyRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   WriteJourneyRequest m_writeJourneyRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_writeJourneyRequestHasBeenSet = false;
 };
 

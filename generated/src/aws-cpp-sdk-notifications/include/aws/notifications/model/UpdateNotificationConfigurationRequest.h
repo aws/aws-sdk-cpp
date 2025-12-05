@@ -107,15 +107,15 @@ class UpdateNotificationConfigurationRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AggregationDuration m_aggregationDuration{AggregationDuration::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_aggregationDurationHasBeenSet = false;
 };
 

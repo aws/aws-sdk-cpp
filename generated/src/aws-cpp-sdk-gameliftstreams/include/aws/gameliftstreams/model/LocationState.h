@@ -186,24 +186,24 @@ class LocationState {
   ///@}
  private:
   Aws::String m_locationName;
-  bool m_locationNameHasBeenSet = false;
 
   StreamGroupLocationStatus m_status{StreamGroupLocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_alwaysOnCapacity{0};
-  bool m_alwaysOnCapacityHasBeenSet = false;
 
   int m_onDemandCapacity{0};
-  bool m_onDemandCapacityHasBeenSet = false;
 
   int m_requestedCapacity{0};
-  bool m_requestedCapacityHasBeenSet = false;
 
   int m_allocatedCapacity{0};
-  bool m_allocatedCapacityHasBeenSet = false;
 
   int m_idleCapacity{0};
+  bool m_locationNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_alwaysOnCapacityHasBeenSet = false;
+  bool m_onDemandCapacityHasBeenSet = false;
+  bool m_requestedCapacityHasBeenSet = false;
+  bool m_allocatedCapacityHasBeenSet = false;
   bool m_idleCapacityHasBeenSet = false;
 };
 

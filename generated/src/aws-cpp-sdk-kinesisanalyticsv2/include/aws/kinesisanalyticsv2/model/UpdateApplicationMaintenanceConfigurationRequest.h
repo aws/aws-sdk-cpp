@@ -72,9 +72,9 @@ class UpdateApplicationMaintenanceConfigurationRequest : public KinesisAnalytics
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   ApplicationMaintenanceConfigurationUpdate m_applicationMaintenanceConfigurationUpdate;
+  bool m_applicationNameHasBeenSet = false;
   bool m_applicationMaintenanceConfigurationUpdateHasBeenSet = false;
 };
 

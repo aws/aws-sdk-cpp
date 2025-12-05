@@ -60,9 +60,9 @@ class CreateDetectorModelResult {
   ///@}
  private:
   DetectorModelConfiguration m_detectorModelConfiguration;
-  bool m_detectorModelConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorModelConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

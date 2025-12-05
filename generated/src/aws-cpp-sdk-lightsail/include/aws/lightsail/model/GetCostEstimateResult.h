@@ -67,9 +67,9 @@ class GetCostEstimateResult {
   ///@}
  private:
   Aws::Vector<ResourceBudgetEstimate> m_resourcesBudgetEstimate;
-  bool m_resourcesBudgetEstimateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcesBudgetEstimateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

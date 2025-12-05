@@ -235,36 +235,36 @@ class JobExecution {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_forceCanceled{false};
-  bool m_forceCanceledHasBeenSet = false;
 
   JobExecutionStatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_thingArn;
-  bool m_thingArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_queuedAt{};
-  bool m_queuedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   long long m_executionNumber{0};
-  bool m_executionNumberHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   long long m_approximateSecondsBeforeTimedOut{0};
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_forceCanceledHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_thingArnHasBeenSet = false;
+  bool m_queuedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_executionNumberHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_approximateSecondsBeforeTimedOutHasBeenSet = false;
 };
 

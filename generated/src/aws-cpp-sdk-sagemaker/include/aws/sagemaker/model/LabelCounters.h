@@ -110,18 +110,18 @@ class LabelCounters {
   ///@}
  private:
   int m_totalLabeled{0};
-  bool m_totalLabeledHasBeenSet = false;
 
   int m_humanLabeled{0};
-  bool m_humanLabeledHasBeenSet = false;
 
   int m_machineLabeled{0};
-  bool m_machineLabeledHasBeenSet = false;
 
   int m_failedNonRetryableError{0};
-  bool m_failedNonRetryableErrorHasBeenSet = false;
 
   int m_unlabeled{0};
+  bool m_totalLabeledHasBeenSet = false;
+  bool m_humanLabeledHasBeenSet = false;
+  bool m_machineLabeledHasBeenSet = false;
+  bool m_failedNonRetryableErrorHasBeenSet = false;
   bool m_unlabeledHasBeenSet = false;
 };
 

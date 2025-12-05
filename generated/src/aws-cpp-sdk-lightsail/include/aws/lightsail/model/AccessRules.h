@@ -87,9 +87,9 @@ class AccessRules {
   ///@}
  private:
   AccessType m_getObject{AccessType::NOT_SET};
-  bool m_getObjectHasBeenSet = false;
 
   bool m_allowPublicOverrides{false};
+  bool m_getObjectHasBeenSet = false;
   bool m_allowPublicOverridesHasBeenSet = false;
 };
 

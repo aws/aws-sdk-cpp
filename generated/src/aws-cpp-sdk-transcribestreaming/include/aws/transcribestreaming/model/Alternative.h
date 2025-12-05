@@ -105,12 +105,12 @@ class Alternative {
   ///@}
  private:
   Aws::String m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   Aws::Vector<Item> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::Vector<Entity> m_entities;
+  bool m_transcriptHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_entitiesHasBeenSet = false;
 };
 

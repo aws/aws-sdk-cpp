@@ -142,18 +142,18 @@ class StartCompositionRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_stageArn;
-  bool m_stageArnHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   LayoutConfiguration m_layout;
-  bool m_layoutHasBeenSet = false;
 
   Aws::Vector<DestinationConfiguration> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_stageArnHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
+  bool m_layoutHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

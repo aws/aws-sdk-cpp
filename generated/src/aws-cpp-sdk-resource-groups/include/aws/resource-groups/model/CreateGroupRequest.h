@@ -208,27 +208,27 @@ class CreateGroupRequest : public ResourceGroupsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ResourceQuery m_resourceQuery;
-  bool m_resourceQueryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<GroupConfigurationItem> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   int m_criticality{0};
-  bool m_criticalityHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_resourceQueryHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

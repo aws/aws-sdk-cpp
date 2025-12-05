@@ -69,9 +69,9 @@ class EfsStorageConfiguration {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_mountPoint;
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_mountPointHasBeenSet = false;
 };
 

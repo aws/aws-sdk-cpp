@@ -105,15 +105,15 @@ class BatchAddClusterNodesError {
   ///@}
  private:
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   BatchAddClusterNodesErrorCode m_errorCode{BatchAddClusterNodesErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   int m_failedCount{0};
-  bool m_failedCountHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_instanceGroupNameHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_failedCountHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

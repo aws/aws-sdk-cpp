@@ -131,21 +131,21 @@ class ListDocumentMetadataHistoryResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::String m_author;
-  bool m_authorHasBeenSet = false;
 
   DocumentMetadataResponseInfo m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_authorHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

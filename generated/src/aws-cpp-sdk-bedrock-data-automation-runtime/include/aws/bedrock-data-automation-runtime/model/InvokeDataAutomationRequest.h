@@ -135,18 +135,18 @@ class InvokeDataAutomationRequest : public BedrockDataAutomationRuntimeRequest {
   ///@}
  private:
   SyncInputConfiguration m_inputConfiguration;
-  bool m_inputConfigurationHasBeenSet = false;
 
   DataAutomationConfiguration m_dataAutomationConfiguration;
-  bool m_dataAutomationConfigurationHasBeenSet = false;
 
   Aws::Vector<Blueprint> m_blueprints;
-  bool m_blueprintsHasBeenSet = false;
 
   Aws::String m_dataAutomationProfileArn;
-  bool m_dataAutomationProfileArnHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_inputConfigurationHasBeenSet = false;
+  bool m_dataAutomationConfigurationHasBeenSet = false;
+  bool m_blueprintsHasBeenSet = false;
+  bool m_dataAutomationProfileArnHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

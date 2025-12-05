@@ -74,9 +74,9 @@ class JobOutputDataConfig {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_s3Path;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_s3PathHasBeenSet = false;
 };
 

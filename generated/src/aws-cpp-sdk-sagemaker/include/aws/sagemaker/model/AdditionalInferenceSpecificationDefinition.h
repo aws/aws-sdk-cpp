@@ -200,24 +200,24 @@ class AdditionalInferenceSpecificationDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ModelPackageContainerDefinition> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::Vector<TransformInstanceType> m_supportedTransformInstanceTypes;
-  bool m_supportedTransformInstanceTypesHasBeenSet = false;
 
   Aws::Vector<ProductionVariantInstanceType> m_supportedRealtimeInferenceInstanceTypes;
-  bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedContentTypes;
-  bool m_supportedContentTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedResponseMIMETypes;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_supportedTransformInstanceTypesHasBeenSet = false;
+  bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet = false;
+  bool m_supportedContentTypesHasBeenSet = false;
   bool m_supportedResponseMIMETypesHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetCertificateAuthorityCsrResult {
   ///@}
  private:
   Aws::String m_csr;
-  bool m_csrHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_csrHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

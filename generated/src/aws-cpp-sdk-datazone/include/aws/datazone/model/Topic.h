@@ -84,12 +84,12 @@ class Topic {
   ///@}
  private:
   NotificationResource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   NotificationRole m_role{NotificationRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_subject;
+  bool m_resourceHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_subjectHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class FailedRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   FailureCode m_failureCode{FailureCode::NOT_SET};
+  bool m_clientTokenHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
 };
 

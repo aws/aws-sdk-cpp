@@ -94,12 +94,12 @@ class BatchDataCaptureConfig {
   ///@}
  private:
   Aws::String m_destinationS3Uri;
-  bool m_destinationS3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_generateInferenceId{false};
+  bool m_destinationS3UriHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_generateInferenceIdHasBeenSet = false;
 };
 

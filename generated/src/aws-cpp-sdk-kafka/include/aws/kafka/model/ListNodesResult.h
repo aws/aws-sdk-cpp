@@ -92,12 +92,12 @@ class ListNodesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<NodeInfo> m_nodeInfoList;
-  bool m_nodeInfoListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_nodeInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

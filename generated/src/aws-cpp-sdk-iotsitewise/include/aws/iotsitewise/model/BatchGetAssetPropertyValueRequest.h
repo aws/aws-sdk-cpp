@@ -74,9 +74,9 @@ class BatchGetAssetPropertyValueRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::Vector<BatchGetAssetPropertyValueEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_entriesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

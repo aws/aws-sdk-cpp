@@ -85,12 +85,12 @@ class FlowAssociationSummary {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_flowId;
-  bool m_flowIdHasBeenSet = false;
 
   ListFlowAssociationResourceType m_resourceType{ListFlowAssociationResourceType::NOT_SET};
+  bool m_resourceIdHasBeenSet = false;
+  bool m_flowIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

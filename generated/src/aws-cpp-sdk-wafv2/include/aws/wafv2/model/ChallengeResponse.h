@@ -83,12 +83,12 @@ class ChallengeResponse {
   ///@}
  private:
   int m_responseCode{0};
-  bool m_responseCodeHasBeenSet = false;
 
   long long m_solveTimestamp{0};
-  bool m_solveTimestampHasBeenSet = false;
 
   FailureReason m_failureReason{FailureReason::NOT_SET};
+  bool m_responseCodeHasBeenSet = false;
+  bool m_solveTimestampHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

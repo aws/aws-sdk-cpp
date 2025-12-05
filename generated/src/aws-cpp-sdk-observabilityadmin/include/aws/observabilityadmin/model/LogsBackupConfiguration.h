@@ -71,9 +71,9 @@ class LogsBackupConfiguration {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_regionHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

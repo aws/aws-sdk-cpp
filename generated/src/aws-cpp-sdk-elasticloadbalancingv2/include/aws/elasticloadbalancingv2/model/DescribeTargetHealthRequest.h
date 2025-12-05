@@ -101,12 +101,12 @@ class DescribeTargetHealthRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   Aws::Vector<TargetDescription> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<DescribeTargetHealthInputIncludeEnum> m_include;
+  bool m_targetGroupArnHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

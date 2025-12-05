@@ -76,12 +76,12 @@ class CreateComputeQuotaResult {
   ///@}
  private:
   Aws::String m_computeQuotaArn;
-  bool m_computeQuotaArnHasBeenSet = false;
 
   Aws::String m_computeQuotaId;
-  bool m_computeQuotaIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computeQuotaArnHasBeenSet = false;
+  bool m_computeQuotaIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

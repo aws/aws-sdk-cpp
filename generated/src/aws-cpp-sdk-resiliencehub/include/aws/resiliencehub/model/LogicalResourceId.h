@@ -124,18 +124,18 @@ class LogicalResourceId {
   ///@}
  private:
   Aws::String m_eksSourceName;
-  bool m_eksSourceNameHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_logicalStackName;
-  bool m_logicalStackNameHasBeenSet = false;
 
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_terraformSourceName;
+  bool m_eksSourceNameHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_logicalStackNameHasBeenSet = false;
+  bool m_resourceGroupNameHasBeenSet = false;
   bool m_terraformSourceNameHasBeenSet = false;
 };
 

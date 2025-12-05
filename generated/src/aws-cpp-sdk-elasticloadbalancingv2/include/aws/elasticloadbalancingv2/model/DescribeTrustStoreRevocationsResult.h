@@ -88,12 +88,12 @@ class DescribeTrustStoreRevocationsResult {
   ///@}
  private:
   Aws::Vector<DescribeTrustStoreRevocation> m_trustStoreRevocations;
-  bool m_trustStoreRevocationsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trustStoreRevocationsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class EntityRecognizerMetadata {
   ///@}
  private:
   int m_numberOfTrainedDocuments{0};
-  bool m_numberOfTrainedDocumentsHasBeenSet = false;
 
   int m_numberOfTestDocuments{0};
-  bool m_numberOfTestDocumentsHasBeenSet = false;
 
   EntityRecognizerEvaluationMetrics m_evaluationMetrics;
-  bool m_evaluationMetricsHasBeenSet = false;
 
   Aws::Vector<EntityRecognizerMetadataEntityTypesListItem> m_entityTypes;
+  bool m_numberOfTrainedDocumentsHasBeenSet = false;
+  bool m_numberOfTestDocumentsHasBeenSet = false;
+  bool m_evaluationMetricsHasBeenSet = false;
   bool m_entityTypesHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class DescribePullRequestEventsRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   PullRequestEventType m_pullRequestEventType{PullRequestEventType::NOT_SET};
-  bool m_pullRequestEventTypeHasBeenSet = false;
 
   Aws::String m_actorArn;
-  bool m_actorArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_pullRequestIdHasBeenSet = false;
+  bool m_pullRequestEventTypeHasBeenSet = false;
+  bool m_actorArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

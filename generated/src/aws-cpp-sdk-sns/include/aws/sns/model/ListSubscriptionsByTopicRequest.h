@@ -73,9 +73,9 @@ class ListSubscriptionsByTopicRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_topicArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class EdiConfiguration {
   ///@}
  private:
   CapabilityDirection m_capabilityDirection{CapabilityDirection::NOT_SET};
-  bool m_capabilityDirectionHasBeenSet = false;
 
   EdiType m_type;
-  bool m_typeHasBeenSet = false;
 
   S3Location m_inputLocation;
-  bool m_inputLocationHasBeenSet = false;
 
   S3Location m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_transformerId;
+  bool m_capabilityDirectionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_inputLocationHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
   bool m_transformerIdHasBeenSet = false;
 };
 

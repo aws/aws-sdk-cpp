@@ -86,12 +86,12 @@ class ListCollectorsResult {
   ///@}
  private:
   Aws::Vector<Collector> m_collectors;
-  bool m_collectorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collectorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

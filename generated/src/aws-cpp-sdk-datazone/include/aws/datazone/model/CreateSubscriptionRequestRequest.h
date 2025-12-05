@@ -213,27 +213,27 @@ class CreateSubscriptionRequestRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<AssetPermission> m_assetPermissions;
-  bool m_assetPermissionsHasBeenSet = false;
 
   Aws::Vector<AcceptedAssetScope> m_assetScopes;
-  bool m_assetScopesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::Vector<FormInput> m_metadataForms;
-  bool m_metadataFormsHasBeenSet = false;
 
   Aws::String m_requestReason;
-  bool m_requestReasonHasBeenSet = false;
 
   Aws::Vector<SubscribedListingInput> m_subscribedListings;
-  bool m_subscribedListingsHasBeenSet = false;
 
   Aws::Vector<SubscribedPrincipalInput> m_subscribedPrincipals;
+  bool m_assetPermissionsHasBeenSet = false;
+  bool m_assetScopesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_metadataFormsHasBeenSet = false;
+  bool m_requestReasonHasBeenSet = false;
+  bool m_subscribedListingsHasBeenSet = false;
   bool m_subscribedPrincipalsHasBeenSet = false;
 };
 

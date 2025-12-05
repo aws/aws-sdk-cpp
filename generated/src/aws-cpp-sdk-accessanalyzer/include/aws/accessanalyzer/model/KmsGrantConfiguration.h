@@ -142,18 +142,18 @@ class KmsGrantConfiguration {
   ///@}
  private:
   Aws::Vector<KmsGrantOperation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::String m_granteePrincipal;
-  bool m_granteePrincipalHasBeenSet = false;
 
   Aws::String m_retiringPrincipal;
-  bool m_retiringPrincipalHasBeenSet = false;
 
   KmsGrantConstraints m_constraints;
-  bool m_constraintsHasBeenSet = false;
 
   Aws::String m_issuingAccount;
+  bool m_operationsHasBeenSet = false;
+  bool m_granteePrincipalHasBeenSet = false;
+  bool m_retiringPrincipalHasBeenSet = false;
+  bool m_constraintsHasBeenSet = false;
   bool m_issuingAccountHasBeenSet = false;
 };
 

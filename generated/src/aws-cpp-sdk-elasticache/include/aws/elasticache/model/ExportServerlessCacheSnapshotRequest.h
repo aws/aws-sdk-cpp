@@ -72,9 +72,9 @@ class ExportServerlessCacheSnapshotRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_serverlessCacheSnapshotName;
-  bool m_serverlessCacheSnapshotNameHasBeenSet = false;
 
   Aws::String m_s3BucketName;
+  bool m_serverlessCacheSnapshotNameHasBeenSet = false;
   bool m_s3BucketNameHasBeenSet = false;
 };
 

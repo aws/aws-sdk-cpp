@@ -85,12 +85,12 @@ class ListAlarmModelVersionsResult {
   ///@}
  private:
   Aws::Vector<AlarmModelVersionSummary> m_alarmModelVersionSummaries;
-  bool m_alarmModelVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alarmModelVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class UpdateJobRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobUpdate m_jobUpdate;
+  bool m_jobNameHasBeenSet = false;
   bool m_jobUpdateHasBeenSet = false;
 };
 

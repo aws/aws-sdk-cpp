@@ -86,12 +86,12 @@ class StartDomainMaintenanceRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   MaintenanceType m_action{MaintenanceType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_nodeId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_nodeIdHasBeenSet = false;
 };
 

@@ -104,18 +104,18 @@ class GetSnapshotBlockResult {
   ///@}
  private:
   int m_dataLength{0};
-  bool m_dataLengthHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_blockData{};
-  bool m_blockDataHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataLengthHasBeenSet = false;
+  bool m_blockDataHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

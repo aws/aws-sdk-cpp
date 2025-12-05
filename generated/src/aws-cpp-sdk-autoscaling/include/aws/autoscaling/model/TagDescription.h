@@ -124,18 +124,18 @@ class TagDescription {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_propagateAtLaunch{false};
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_propagateAtLaunchHasBeenSet = false;
 };
 

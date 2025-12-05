@@ -94,12 +94,12 @@ class UpdateCloudFrontOriginAccessIdentity2020_05_31Request : public CloudFrontR
   ///@}
  private:
   CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
-  bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

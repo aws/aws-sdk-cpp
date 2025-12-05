@@ -72,9 +72,9 @@ class ComplianceSummaryByResourceType {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   ComplianceSummary m_complianceSummary;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_complianceSummaryHasBeenSet = false;
 };
 

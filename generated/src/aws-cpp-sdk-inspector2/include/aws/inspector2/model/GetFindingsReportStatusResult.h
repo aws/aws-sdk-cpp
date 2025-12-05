@@ -144,24 +144,24 @@ class GetFindingsReportStatusResult {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   ExternalReportStatus m_status{ExternalReportStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ReportingErrorCode m_errorCode{ReportingErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   FilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

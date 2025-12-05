@@ -143,21 +143,21 @@ class ListConnectorEntitiesRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_entitiesPath;
-  bool m_entitiesPathHasBeenSet = false;
 
   Aws::String m_apiVersion;
-  bool m_apiVersionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_connectorProfileNameHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_entitiesPathHasBeenSet = false;
+  bool m_apiVersionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

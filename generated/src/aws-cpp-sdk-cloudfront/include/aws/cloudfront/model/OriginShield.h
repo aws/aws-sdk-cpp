@@ -82,9 +82,9 @@ class OriginShield {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_originShieldRegion;
+  bool m_enabledHasBeenSet = false;
   bool m_originShieldRegionHasBeenSet = false;
 };
 

@@ -97,15 +97,15 @@ class DescribeDefaultEncryptionConfigurationResult {
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   ConfigurationStatus m_configurationStatus;
-  bool m_configurationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_configurationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

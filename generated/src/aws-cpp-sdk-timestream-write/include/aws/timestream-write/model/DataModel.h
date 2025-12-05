@@ -157,21 +157,21 @@ class DataModel {
   ///@}
  private:
   Aws::String m_timeColumn;
-  bool m_timeColumnHasBeenSet = false;
 
   TimeUnit m_timeUnit{TimeUnit::NOT_SET};
-  bool m_timeUnitHasBeenSet = false;
 
   Aws::Vector<DimensionMapping> m_dimensionMappings;
-  bool m_dimensionMappingsHasBeenSet = false;
 
   MultiMeasureMappings m_multiMeasureMappings;
-  bool m_multiMeasureMappingsHasBeenSet = false;
 
   Aws::Vector<MixedMeasureMapping> m_mixedMeasureMappings;
-  bool m_mixedMeasureMappingsHasBeenSet = false;
 
   Aws::String m_measureNameColumn;
+  bool m_timeColumnHasBeenSet = false;
+  bool m_timeUnitHasBeenSet = false;
+  bool m_dimensionMappingsHasBeenSet = false;
+  bool m_multiMeasureMappingsHasBeenSet = false;
+  bool m_mixedMeasureMappingsHasBeenSet = false;
   bool m_measureNameColumnHasBeenSet = false;
 };
 

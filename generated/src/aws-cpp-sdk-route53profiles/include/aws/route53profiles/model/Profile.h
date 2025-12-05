@@ -215,33 +215,33 @@ class Profile {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_modificationTime{};
-  bool m_modificationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-  bool m_shareStatusHasBeenSet = false;
 
   ProfileStatus m_status{ProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_arnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_shareStatusHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

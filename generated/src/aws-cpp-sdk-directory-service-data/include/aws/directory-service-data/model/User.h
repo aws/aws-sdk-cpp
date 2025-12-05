@@ -207,30 +207,30 @@ class User {
   ///@}
  private:
   Aws::String m_distinguishedName;
-  bool m_distinguishedNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_otherAttributes;
-  bool m_otherAttributesHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   Aws::String m_sID;
-  bool m_sIDHasBeenSet = false;
 
   Aws::String m_surname;
-  bool m_surnameHasBeenSet = false;
 
   Aws::String m_userPrincipalName;
+  bool m_distinguishedNameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_otherAttributesHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
+  bool m_sIDHasBeenSet = false;
+  bool m_surnameHasBeenSet = false;
   bool m_userPrincipalNameHasBeenSet = false;
 };
 

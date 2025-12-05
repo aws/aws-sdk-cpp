@@ -148,21 +148,21 @@ class Gnss {
   ///@}
  private:
   Aws::String m_payload;
-  bool m_payloadHasBeenSet = false;
 
   double m_captureTime{0.0};
-  bool m_captureTimeHasBeenSet = false;
 
   double m_captureTimeAccuracy{0.0};
-  bool m_captureTimeAccuracyHasBeenSet = false;
 
   Aws::Vector<double> m_assistPosition;
-  bool m_assistPositionHasBeenSet = false;
 
   double m_assistAltitude{0.0};
-  bool m_assistAltitudeHasBeenSet = false;
 
   bool m_use2DSolver{false};
+  bool m_payloadHasBeenSet = false;
+  bool m_captureTimeHasBeenSet = false;
+  bool m_captureTimeAccuracyHasBeenSet = false;
+  bool m_assistPositionHasBeenSet = false;
+  bool m_assistAltitudeHasBeenSet = false;
   bool m_use2DSolverHasBeenSet = false;
 };
 

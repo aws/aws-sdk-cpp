@@ -167,24 +167,24 @@ class BackupDetails {
   ///@}
  private:
   Aws::String m_backupArn;
-  bool m_backupArnHasBeenSet = false;
 
   Aws::String m_backupName;
-  bool m_backupNameHasBeenSet = false;
 
   long long m_backupSizeBytes{0};
-  bool m_backupSizeBytesHasBeenSet = false;
 
   BackupStatus m_backupStatus{BackupStatus::NOT_SET};
-  bool m_backupStatusHasBeenSet = false;
 
   BackupType m_backupType{BackupType::NOT_SET};
-  bool m_backupTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_backupCreationDateTime{};
-  bool m_backupCreationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_backupExpiryDateTime{};
+  bool m_backupArnHasBeenSet = false;
+  bool m_backupNameHasBeenSet = false;
+  bool m_backupSizeBytesHasBeenSet = false;
+  bool m_backupStatusHasBeenSet = false;
+  bool m_backupTypeHasBeenSet = false;
+  bool m_backupCreationDateTimeHasBeenSet = false;
   bool m_backupExpiryDateTimeHasBeenSet = false;
 };
 

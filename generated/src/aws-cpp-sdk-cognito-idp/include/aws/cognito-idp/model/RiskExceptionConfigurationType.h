@@ -86,9 +86,9 @@ class RiskExceptionConfigurationType {
   ///@}
  private:
   Aws::Vector<Aws::String> m_blockedIPRangeList;
-  bool m_blockedIPRangeListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_skippedIPRangeList;
+  bool m_blockedIPRangeListHasBeenSet = false;
   bool m_skippedIPRangeListHasBeenSet = false;
 };
 

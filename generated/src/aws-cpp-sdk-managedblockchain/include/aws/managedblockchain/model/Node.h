@@ -317,42 +317,42 @@ class Node {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   NodeFrameworkAttributes m_frameworkAttributes;
-  bool m_frameworkAttributesHasBeenSet = false;
 
   NodeLogPublishingConfiguration m_logPublishingConfiguration;
-  bool m_logPublishingConfigurationHasBeenSet = false;
 
   StateDBType m_stateDB{StateDBType::NOT_SET};
-  bool m_stateDBHasBeenSet = false;
 
   NodeStatus m_status{NodeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_networkIdHasBeenSet = false;
+  bool m_memberIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_frameworkAttributesHasBeenSet = false;
+  bool m_logPublishingConfigurationHasBeenSet = false;
+  bool m_stateDBHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

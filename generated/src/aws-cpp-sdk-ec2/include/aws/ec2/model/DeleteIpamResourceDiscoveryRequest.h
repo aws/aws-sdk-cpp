@@ -70,9 +70,9 @@ class DeleteIpamResourceDiscoveryRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamResourceDiscoveryId;
+  bool m_dryRunHasBeenSet = false;
   bool m_ipamResourceDiscoveryIdHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class SplitDocument {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::Vector<int> m_pages;
+  bool m_indexHasBeenSet = false;
   bool m_pagesHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class EventBatchingCondition {
   ///@}
  private:
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   int m_batchWindow{0};
+  bool m_batchSizeHasBeenSet = false;
   bool m_batchWindowHasBeenSet = false;
 };
 

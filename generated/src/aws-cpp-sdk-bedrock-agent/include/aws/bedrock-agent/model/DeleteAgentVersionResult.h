@@ -92,15 +92,15 @@ class DeleteAgentVersionResult {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-  bool m_agentStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_agentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

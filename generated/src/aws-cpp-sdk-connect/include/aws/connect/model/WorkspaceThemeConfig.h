@@ -89,12 +89,12 @@ class WorkspaceThemeConfig {
   ///@}
  private:
   WorkspaceThemePalette m_palette;
-  bool m_paletteHasBeenSet = false;
 
   WorkspaceThemeImages m_images;
-  bool m_imagesHasBeenSet = false;
 
   WorkspaceThemeTypography m_typography;
+  bool m_paletteHasBeenSet = false;
+  bool m_imagesHasBeenSet = false;
   bool m_typographyHasBeenSet = false;
 };
 

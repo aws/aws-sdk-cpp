@@ -75,9 +75,9 @@ class TaskVolumeConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TaskManagedEBSVolumeConfiguration m_managedEBSVolume;
+  bool m_nameHasBeenSet = false;
   bool m_managedEBSVolumeHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class ItemSource {
   ///@}
  private:
   Aws::Map<Aws::String, AssetValue> m_assets;
-  bool m_assetsHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateTime{};
-  bool m_dateTimeHasBeenSet = false;
 
   Geometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Properties m_properties;
+  bool m_assetsHasBeenSet = false;
+  bool m_dateTimeHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

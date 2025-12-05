@@ -60,9 +60,9 @@ class CreateThemeResult {
   ///@}
  private:
   Theme m_entity;
-  bool m_entityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

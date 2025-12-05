@@ -100,12 +100,12 @@ class CapabilityReportEndpoint {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceTypes;
-  bool m_deviceTypesHasBeenSet = false;
 
   Aws::Vector<CapabilityReportCapability> m_capabilities;
+  bool m_idHasBeenSet = false;
+  bool m_deviceTypesHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

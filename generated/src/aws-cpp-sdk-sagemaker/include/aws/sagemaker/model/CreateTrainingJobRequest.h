@@ -682,87 +682,87 @@ class CreateTrainingJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trainingJobName;
-  bool m_trainingJobNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-  bool m_hyperParametersHasBeenSet = false;
 
   AlgorithmSpecification m_algorithmSpecification;
-  bool m_algorithmSpecificationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Channel> m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_enableNetworkIsolation{false};
-  bool m_enableNetworkIsolationHasBeenSet = false;
 
   bool m_enableInterContainerTrafficEncryption{false};
-  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
   bool m_enableManagedSpotTraining{false};
-  bool m_enableManagedSpotTrainingHasBeenSet = false;
 
   CheckpointConfig m_checkpointConfig;
-  bool m_checkpointConfigHasBeenSet = false;
 
   DebugHookConfig m_debugHookConfig;
-  bool m_debugHookConfigHasBeenSet = false;
 
   Aws::Vector<DebugRuleConfiguration> m_debugRuleConfigurations;
-  bool m_debugRuleConfigurationsHasBeenSet = false;
 
   TensorBoardOutputConfig m_tensorBoardOutputConfig;
-  bool m_tensorBoardOutputConfigHasBeenSet = false;
 
   ExperimentConfig m_experimentConfig;
-  bool m_experimentConfigHasBeenSet = false;
 
   ProfilerConfig m_profilerConfig;
-  bool m_profilerConfigHasBeenSet = false;
 
   Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
-  bool m_profilerRuleConfigurationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   RetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   RemoteDebugConfig m_remoteDebugConfig;
-  bool m_remoteDebugConfigHasBeenSet = false;
 
   InfraCheckConfig m_infraCheckConfig;
-  bool m_infraCheckConfigHasBeenSet = false;
 
   SessionChainingConfig m_sessionChainingConfig;
-  bool m_sessionChainingConfigHasBeenSet = false;
 
   ServerlessJobConfig m_serverlessJobConfig;
-  bool m_serverlessJobConfigHasBeenSet = false;
 
   MlflowConfig m_mlflowConfig;
-  bool m_mlflowConfigHasBeenSet = false;
 
   ModelPackageConfig m_modelPackageConfig;
+  bool m_trainingJobNameHasBeenSet = false;
+  bool m_hyperParametersHasBeenSet = false;
+  bool m_algorithmSpecificationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_enableNetworkIsolationHasBeenSet = false;
+  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
+  bool m_enableManagedSpotTrainingHasBeenSet = false;
+  bool m_checkpointConfigHasBeenSet = false;
+  bool m_debugHookConfigHasBeenSet = false;
+  bool m_debugRuleConfigurationsHasBeenSet = false;
+  bool m_tensorBoardOutputConfigHasBeenSet = false;
+  bool m_experimentConfigHasBeenSet = false;
+  bool m_profilerConfigHasBeenSet = false;
+  bool m_profilerRuleConfigurationsHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_remoteDebugConfigHasBeenSet = false;
+  bool m_infraCheckConfigHasBeenSet = false;
+  bool m_sessionChainingConfigHasBeenSet = false;
+  bool m_serverlessJobConfigHasBeenSet = false;
+  bool m_mlflowConfigHasBeenSet = false;
   bool m_modelPackageConfigHasBeenSet = false;
 };
 

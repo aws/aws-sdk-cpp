@@ -88,12 +88,12 @@ class TestConversionResult {
   ///@}
  private:
   Aws::String m_convertedFileContent;
-  bool m_convertedFileContentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_validationMessages;
-  bool m_validationMessagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_convertedFileContentHasBeenSet = false;
+  bool m_validationMessagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

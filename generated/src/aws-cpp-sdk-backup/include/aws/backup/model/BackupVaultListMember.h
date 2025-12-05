@@ -301,42 +301,42 @@ class BackupVaultListMember {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   VaultType m_vaultType{VaultType::NOT_SET};
-  bool m_vaultTypeHasBeenSet = false;
 
   VaultState m_vaultState{VaultState::NOT_SET};
-  bool m_vaultStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   long long m_numberOfRecoveryPoints{0};
-  bool m_numberOfRecoveryPointsHasBeenSet = false;
 
   bool m_locked{false};
-  bool m_lockedHasBeenSet = false;
 
   long long m_minRetentionDays{0};
-  bool m_minRetentionDaysHasBeenSet = false;
 
   long long m_maxRetentionDays{0};
-  bool m_maxRetentionDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_lockDate{};
-  bool m_lockDateHasBeenSet = false;
 
   EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_vaultTypeHasBeenSet = false;
+  bool m_vaultStateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_numberOfRecoveryPointsHasBeenSet = false;
+  bool m_lockedHasBeenSet = false;
+  bool m_minRetentionDaysHasBeenSet = false;
+  bool m_maxRetentionDaysHasBeenSet = false;
+  bool m_lockDateHasBeenSet = false;
   bool m_encryptionKeyTypeHasBeenSet = false;
 };
 

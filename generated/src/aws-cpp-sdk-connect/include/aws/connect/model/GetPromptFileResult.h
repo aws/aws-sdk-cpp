@@ -95,15 +95,15 @@ class GetPromptFileResult {
   ///@}
  private:
   Aws::String m_promptPresignedUrl;
-  bool m_promptPresignedUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_promptPresignedUrlHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

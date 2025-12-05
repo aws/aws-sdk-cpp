@@ -62,9 +62,9 @@ class GetApplicationSessionConfigurationResult {
   ///@}
  private:
   UserBackgroundSessionApplicationStatus m_userBackgroundSessionApplicationStatus{UserBackgroundSessionApplicationStatus::NOT_SET};
-  bool m_userBackgroundSessionApplicationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userBackgroundSessionApplicationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

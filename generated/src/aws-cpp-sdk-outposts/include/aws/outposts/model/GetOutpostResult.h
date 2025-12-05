@@ -58,9 +58,9 @@ class GetOutpostResult {
   ///@}
  private:
   Outpost m_outpost;
-  bool m_outpostHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outpostHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

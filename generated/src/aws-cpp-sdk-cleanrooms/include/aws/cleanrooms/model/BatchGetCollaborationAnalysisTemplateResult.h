@@ -96,12 +96,12 @@ class BatchGetCollaborationAnalysisTemplateResult {
   ///@}
  private:
   Aws::Vector<CollaborationAnalysisTemplate> m_collaborationAnalysisTemplates;
-  bool m_collaborationAnalysisTemplatesHasBeenSet = false;
 
   Aws::Vector<BatchGetCollaborationAnalysisTemplateError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collaborationAnalysisTemplatesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class PromptFlowNodeSourceConfiguration {
   ///@}
  private:
   PromptFlowNodeResourceConfiguration m_resource;
-  bool m_resourceHasBeenSet = false;
 
   PromptFlowNodeInlineConfiguration m_inline;
+  bool m_resourceHasBeenSet = false;
   bool m_inlineHasBeenSet = false;
 };
 

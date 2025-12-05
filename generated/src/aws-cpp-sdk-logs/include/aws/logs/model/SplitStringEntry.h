@@ -70,9 +70,9 @@ class SplitStringEntry {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_delimiter;
+  bool m_sourceHasBeenSet = false;
   bool m_delimiterHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class AssociateWorkspaceRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DependentService {
   ///@}
  private:
   ServiceName m_serviceName{ServiceName::NOT_SET};
-  bool m_serviceNameHasBeenSet = false;
 
   ServiceVersion m_serviceVersion;
+  bool m_serviceNameHasBeenSet = false;
   bool m_serviceVersionHasBeenSet = false;
 };
 

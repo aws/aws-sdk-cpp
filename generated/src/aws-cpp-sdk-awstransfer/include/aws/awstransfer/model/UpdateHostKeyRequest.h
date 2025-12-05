@@ -86,12 +86,12 @@ class UpdateHostKeyRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_hostKeyId;
-  bool m_hostKeyIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_serverIdHasBeenSet = false;
+  bool m_hostKeyIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

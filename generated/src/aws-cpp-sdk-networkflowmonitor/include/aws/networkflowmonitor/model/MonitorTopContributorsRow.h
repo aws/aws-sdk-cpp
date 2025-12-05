@@ -507,78 +507,78 @@ class MonitorTopContributorsRow {
   ///@}
  private:
   Aws::String m_localIp;
-  bool m_localIpHasBeenSet = false;
 
   Aws::String m_snatIp;
-  bool m_snatIpHasBeenSet = false;
 
   Aws::String m_localInstanceId;
-  bool m_localInstanceIdHasBeenSet = false;
 
   Aws::String m_localVpcId;
-  bool m_localVpcIdHasBeenSet = false;
 
   Aws::String m_localRegion;
-  bool m_localRegionHasBeenSet = false;
 
   Aws::String m_localAz;
-  bool m_localAzHasBeenSet = false;
 
   Aws::String m_localSubnetId;
-  bool m_localSubnetIdHasBeenSet = false;
 
   int m_targetPort{0};
-  bool m_targetPortHasBeenSet = false;
 
   DestinationCategory m_destinationCategory{DestinationCategory::NOT_SET};
-  bool m_destinationCategoryHasBeenSet = false;
 
   Aws::String m_remoteVpcId;
-  bool m_remoteVpcIdHasBeenSet = false;
 
   Aws::String m_remoteRegion;
-  bool m_remoteRegionHasBeenSet = false;
 
   Aws::String m_remoteAz;
-  bool m_remoteAzHasBeenSet = false;
 
   Aws::String m_remoteSubnetId;
-  bool m_remoteSubnetIdHasBeenSet = false;
 
   Aws::String m_remoteInstanceId;
-  bool m_remoteInstanceIdHasBeenSet = false;
 
   Aws::String m_remoteIp;
-  bool m_remoteIpHasBeenSet = false;
 
   Aws::String m_dnatIp;
-  bool m_dnatIpHasBeenSet = false;
 
   long long m_value{0};
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<TraversedComponent> m_traversedConstructs;
-  bool m_traversedConstructsHasBeenSet = false;
 
   KubernetesMetadata m_kubernetesMetadata;
-  bool m_kubernetesMetadataHasBeenSet = false;
 
   Aws::String m_localInstanceArn;
-  bool m_localInstanceArnHasBeenSet = false;
 
   Aws::String m_localSubnetArn;
-  bool m_localSubnetArnHasBeenSet = false;
 
   Aws::String m_localVpcArn;
-  bool m_localVpcArnHasBeenSet = false;
 
   Aws::String m_remoteInstanceArn;
-  bool m_remoteInstanceArnHasBeenSet = false;
 
   Aws::String m_remoteSubnetArn;
-  bool m_remoteSubnetArnHasBeenSet = false;
 
   Aws::String m_remoteVpcArn;
+  bool m_localIpHasBeenSet = false;
+  bool m_snatIpHasBeenSet = false;
+  bool m_localInstanceIdHasBeenSet = false;
+  bool m_localVpcIdHasBeenSet = false;
+  bool m_localRegionHasBeenSet = false;
+  bool m_localAzHasBeenSet = false;
+  bool m_localSubnetIdHasBeenSet = false;
+  bool m_targetPortHasBeenSet = false;
+  bool m_destinationCategoryHasBeenSet = false;
+  bool m_remoteVpcIdHasBeenSet = false;
+  bool m_remoteRegionHasBeenSet = false;
+  bool m_remoteAzHasBeenSet = false;
+  bool m_remoteSubnetIdHasBeenSet = false;
+  bool m_remoteInstanceIdHasBeenSet = false;
+  bool m_remoteIpHasBeenSet = false;
+  bool m_dnatIpHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_traversedConstructsHasBeenSet = false;
+  bool m_kubernetesMetadataHasBeenSet = false;
+  bool m_localInstanceArnHasBeenSet = false;
+  bool m_localSubnetArnHasBeenSet = false;
+  bool m_localVpcArnHasBeenSet = false;
+  bool m_remoteInstanceArnHasBeenSet = false;
+  bool m_remoteSubnetArnHasBeenSet = false;
   bool m_remoteVpcArnHasBeenSet = false;
 };
 

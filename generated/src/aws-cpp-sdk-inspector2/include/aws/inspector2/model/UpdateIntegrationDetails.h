@@ -71,9 +71,9 @@ class UpdateIntegrationDetails {
   ///@}
  private:
   UpdateGitLabSelfManagedIntegrationDetail m_gitlabSelfManaged;
-  bool m_gitlabSelfManagedHasBeenSet = false;
 
   UpdateGitHubIntegrationDetail m_github;
+  bool m_gitlabSelfManagedHasBeenSet = false;
   bool m_githubHasBeenSet = false;
 };
 

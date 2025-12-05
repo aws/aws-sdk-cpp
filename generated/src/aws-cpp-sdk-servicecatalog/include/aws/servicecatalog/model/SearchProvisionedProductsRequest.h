@@ -177,24 +177,24 @@ class SearchProvisionedProductsRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   AccessLevelFilter m_accessLevelFilter;
-  bool m_accessLevelFilterHasBeenSet = false;
 
   Aws::Map<ProvisionedProductViewFilterBy, Aws::Vector<Aws::String>> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_accessLevelFilterHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

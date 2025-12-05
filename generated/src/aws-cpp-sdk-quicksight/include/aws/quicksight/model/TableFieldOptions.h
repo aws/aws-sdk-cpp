@@ -127,15 +127,15 @@ class TableFieldOptions {
   ///@}
  private:
   Aws::Vector<TableFieldOption> m_selectedFieldOptions;
-  bool m_selectedFieldOptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_order;
-  bool m_orderHasBeenSet = false;
 
   TablePinnedFieldOptions m_pinnedFieldOptions;
-  bool m_pinnedFieldOptionsHasBeenSet = false;
 
   Aws::Vector<TransposedTableOption> m_transposedTableOptions;
+  bool m_selectedFieldOptionsHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_pinnedFieldOptionsHasBeenSet = false;
   bool m_transposedTableOptionsHasBeenSet = false;
 };
 

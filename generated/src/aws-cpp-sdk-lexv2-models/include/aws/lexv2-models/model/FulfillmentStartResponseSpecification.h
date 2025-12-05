@@ -94,12 +94,12 @@ class FulfillmentStartResponseSpecification {
   ///@}
  private:
   int m_delayInSeconds{0};
-  bool m_delayInSecondsHasBeenSet = false;
 
   Aws::Vector<MessageGroup> m_messageGroups;
-  bool m_messageGroupsHasBeenSet = false;
 
   bool m_allowInterrupt{false};
+  bool m_delayInSecondsHasBeenSet = false;
+  bool m_messageGroupsHasBeenSet = false;
   bool m_allowInterruptHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class ListSuppressedDestinationsResult {
   ///@}
  private:
   Aws::Vector<SuppressedDestinationSummary> m_suppressedDestinationSummaries;
-  bool m_suppressedDestinationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suppressedDestinationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

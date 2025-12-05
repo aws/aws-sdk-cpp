@@ -287,39 +287,39 @@ class PlayerSession {
   ///@}
  private:
   Aws::String m_playerSessionId;
-  bool m_playerSessionIdHasBeenSet = false;
 
   Aws::String m_playerId;
-  bool m_playerIdHasBeenSet = false;
 
   Aws::String m_gameSessionId;
-  bool m_gameSessionIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_terminationTime{};
-  bool m_terminationTimeHasBeenSet = false;
 
   PlayerSessionStatus m_status{PlayerSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_playerData;
+  bool m_playerSessionIdHasBeenSet = false;
+  bool m_playerIdHasBeenSet = false;
+  bool m_gameSessionIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_terminationTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_playerDataHasBeenSet = false;
 };
 

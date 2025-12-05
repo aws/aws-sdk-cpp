@@ -78,9 +78,9 @@ class VpcRouterNetworkInterfaceConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_subnetId;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
 };
 

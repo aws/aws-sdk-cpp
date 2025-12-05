@@ -63,9 +63,9 @@ class DeleteProvisioningTemplateVersionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   int m_versionId{0};
+  bool m_templateNameHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

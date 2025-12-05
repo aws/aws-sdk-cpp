@@ -86,12 +86,12 @@ class Destination {
   ///@}
  private:
   Aws::String m_destinationId;
-  bool m_destinationIdHasBeenSet = false;
 
   DestinationType m_destinationType{DestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   PublishingStatus m_status{PublishingStatus::NOT_SET};
+  bool m_destinationIdHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

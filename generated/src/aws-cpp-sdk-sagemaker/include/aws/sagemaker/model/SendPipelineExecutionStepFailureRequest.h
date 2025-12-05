@@ -88,12 +88,12 @@ class SendPipelineExecutionStepFailureRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_callbackToken;
-  bool m_callbackTokenHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_callbackTokenHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

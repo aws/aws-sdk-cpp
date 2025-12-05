@@ -273,42 +273,42 @@ class Device {
   ///@}
  private:
   DeviceBrand m_brand{DeviceBrand::NOT_SET};
-  bool m_brandHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_currentSoftware;
-  bool m_currentSoftwareHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DeviceAggregatedStatus m_deviceAggregatedStatus{DeviceAggregatedStatus::NOT_SET};
-  bool m_deviceAggregatedStatusHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   LatestDeviceJob m_latestDeviceJob;
-  bool m_latestDeviceJobHasBeenSet = false;
 
   Aws::Utils::DateTime m_leaseExpirationTime{};
-  bool m_leaseExpirationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DeviceStatus m_provisioningStatus{DeviceStatus::NOT_SET};
-  bool m_provisioningStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DeviceType m_type{DeviceType::NOT_SET};
+  bool m_brandHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_currentSoftwareHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceAggregatedStatusHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_latestDeviceJobHasBeenSet = false;
+  bool m_leaseExpirationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_provisioningStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -154,21 +154,21 @@ class GatewayResponse {
   ///@}
  private:
   GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
-  bool m_responseTypeHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-  bool m_responseTemplatesHasBeenSet = false;
 
   bool m_defaultResponse{false};
-  bool m_defaultResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responseTypeHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_responseTemplatesHasBeenSet = false;
+  bool m_defaultResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

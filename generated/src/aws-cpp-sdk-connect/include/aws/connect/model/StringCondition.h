@@ -86,12 +86,12 @@ class StringCondition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   StringComparisonType m_comparisonType{StringComparisonType::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_comparisonTypeHasBeenSet = false;
 };
 

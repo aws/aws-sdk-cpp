@@ -216,33 +216,33 @@ class ParticipantSummary {
   ///@}
  private:
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   ParticipantState m_state{ParticipantState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstJoinTime{};
-  bool m_firstJoinTimeHasBeenSet = false;
 
   bool m_published{false};
-  bool m_publishedHasBeenSet = false;
 
   ParticipantRecordingState m_recordingState{ParticipantRecordingState::NOT_SET};
-  bool m_recordingStateHasBeenSet = false;
 
   ReplicationType m_replicationType{ReplicationType::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
   ReplicationState m_replicationState{ReplicationState::NOT_SET};
-  bool m_replicationStateHasBeenSet = false;
 
   Aws::String m_sourceStageArn;
-  bool m_sourceStageArnHasBeenSet = false;
 
   Aws::String m_sourceSessionId;
+  bool m_participantIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_firstJoinTimeHasBeenSet = false;
+  bool m_publishedHasBeenSet = false;
+  bool m_recordingStateHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
+  bool m_replicationStateHasBeenSet = false;
+  bool m_sourceStageArnHasBeenSet = false;
   bool m_sourceSessionIdHasBeenSet = false;
 };
 

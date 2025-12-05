@@ -60,9 +60,9 @@ class GetTypeResult {
   ///@}
  private:
   Type m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

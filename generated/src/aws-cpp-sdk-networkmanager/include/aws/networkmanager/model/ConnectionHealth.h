@@ -84,12 +84,12 @@ class ConnectionHealth {
   ///@}
  private:
   ConnectionType m_type{ConnectionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CreateTargetGroupResult {
   ///@}
  private:
   Aws::Vector<TargetGroup> m_targetGroups;
-  bool m_targetGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_targetGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

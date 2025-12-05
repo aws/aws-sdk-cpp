@@ -59,9 +59,9 @@ class UpdateDomainResult {
   ///@}
  private:
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

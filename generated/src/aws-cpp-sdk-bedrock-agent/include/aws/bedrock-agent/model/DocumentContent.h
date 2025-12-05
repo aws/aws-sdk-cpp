@@ -91,12 +91,12 @@ class DocumentContent {
   ///@}
  private:
   ContentDataSourceType m_dataSourceType{ContentDataSourceType::NOT_SET};
-  bool m_dataSourceTypeHasBeenSet = false;
 
   CustomContent m_custom;
-  bool m_customHasBeenSet = false;
 
   S3Content m_s3;
+  bool m_dataSourceTypeHasBeenSet = false;
+  bool m_customHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

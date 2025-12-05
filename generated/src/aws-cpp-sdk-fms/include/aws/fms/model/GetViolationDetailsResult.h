@@ -60,9 +60,9 @@ class GetViolationDetailsResult {
   ///@}
  private:
   ViolationDetail m_violationDetail;
-  bool m_violationDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_violationDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

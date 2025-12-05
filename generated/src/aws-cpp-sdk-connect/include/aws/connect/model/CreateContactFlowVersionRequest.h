@@ -154,24 +154,24 @@ class CreateContactFlowVersionRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::String m_flowContentSha256;
-  bool m_flowContentSha256HasBeenSet = false;
 
   long long m_contactFlowVersion{0};
-  bool m_contactFlowVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_flowContentSha256HasBeenSet = false;
+  bool m_contactFlowVersionHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

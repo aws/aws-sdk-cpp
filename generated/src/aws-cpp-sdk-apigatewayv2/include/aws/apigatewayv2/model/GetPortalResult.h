@@ -302,48 +302,48 @@ class GetPortalResult {
   ///@}
  private:
   Authorization m_authorization;
-  bool m_authorizationHasBeenSet = false;
 
   EndpointConfigurationResponse m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includedPortalProductArns;
-  bool m_includedPortalProductArnsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastPublished{};
-  bool m_lastPublishedHasBeenSet = false;
 
   Aws::String m_lastPublishedDescription;
-  bool m_lastPublishedDescriptionHasBeenSet = false;
 
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   PortalContent m_portalContent;
-  bool m_portalContentHasBeenSet = false;
 
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Preview m_preview;
-  bool m_previewHasBeenSet = false;
 
   PublishStatus m_publishStatus{PublishStatus::NOT_SET};
-  bool m_publishStatusHasBeenSet = false;
 
   Aws::String m_rumAppMonitorName;
-  bool m_rumAppMonitorNameHasBeenSet = false;
 
   StatusException m_statusException;
-  bool m_statusExceptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizationHasBeenSet = false;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_includedPortalProductArnsHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_lastPublishedHasBeenSet = false;
+  bool m_lastPublishedDescriptionHasBeenSet = false;
+  bool m_portalArnHasBeenSet = false;
+  bool m_portalContentHasBeenSet = false;
+  bool m_portalIdHasBeenSet = false;
+  bool m_previewHasBeenSet = false;
+  bool m_publishStatusHasBeenSet = false;
+  bool m_rumAppMonitorNameHasBeenSet = false;
+  bool m_statusExceptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

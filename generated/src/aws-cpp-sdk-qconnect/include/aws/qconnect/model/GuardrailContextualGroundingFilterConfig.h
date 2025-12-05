@@ -65,9 +65,9 @@ class GuardrailContextualGroundingFilterConfig {
   ///@}
  private:
   GuardrailContextualGroundingFilterType m_type{GuardrailContextualGroundingFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_threshold{0.0};
+  bool m_typeHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
 };
 

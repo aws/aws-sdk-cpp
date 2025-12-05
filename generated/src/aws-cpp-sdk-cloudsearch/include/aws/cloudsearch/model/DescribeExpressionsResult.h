@@ -74,9 +74,9 @@ class DescribeExpressionsResult {
   ///@}
  private:
   Aws::Vector<ExpressionStatus> m_expressions;
-  bool m_expressionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_expressionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class CreateWorkflowDefinitionRequest : public NovaActRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkflowExportConfig m_exportConfig;
-  bool m_exportConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_exportConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

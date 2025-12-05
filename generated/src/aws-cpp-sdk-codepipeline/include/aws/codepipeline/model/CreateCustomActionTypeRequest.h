@@ -203,27 +203,27 @@ class CreateCustomActionTypeRequest : public CodePipelineRequest {
   ///@}
  private:
   ActionCategory m_category{ActionCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   ActionTypeSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<ActionConfigurationProperty> m_configurationProperties;
-  bool m_configurationPropertiesHasBeenSet = false;
 
   ArtifactDetails m_inputArtifactDetails;
-  bool m_inputArtifactDetailsHasBeenSet = false;
 
   ArtifactDetails m_outputArtifactDetails;
-  bool m_outputArtifactDetailsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_categoryHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_configurationPropertiesHasBeenSet = false;
+  bool m_inputArtifactDetailsHasBeenSet = false;
+  bool m_outputArtifactDetailsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

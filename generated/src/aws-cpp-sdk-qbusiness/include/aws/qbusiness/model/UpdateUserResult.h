@@ -113,15 +113,15 @@ class UpdateUserResult {
   ///@}
  private:
   Aws::Vector<UserAlias> m_userAliasesAdded;
-  bool m_userAliasesAddedHasBeenSet = false;
 
   Aws::Vector<UserAlias> m_userAliasesUpdated;
-  bool m_userAliasesUpdatedHasBeenSet = false;
 
   Aws::Vector<UserAlias> m_userAliasesDeleted;
-  bool m_userAliasesDeletedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userAliasesAddedHasBeenSet = false;
+  bool m_userAliasesUpdatedHasBeenSet = false;
+  bool m_userAliasesDeletedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

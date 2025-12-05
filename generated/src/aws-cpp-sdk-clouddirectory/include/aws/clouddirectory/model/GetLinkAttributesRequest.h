@@ -114,15 +114,15 @@ class GetLinkAttributesRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   TypedLinkSpecifier m_typedLinkSpecifier;
-  bool m_typedLinkSpecifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
-  bool m_attributeNamesHasBeenSet = false;
 
   ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
+  bool m_directoryArnHasBeenSet = false;
+  bool m_typedLinkSpecifierHasBeenSet = false;
+  bool m_attributeNamesHasBeenSet = false;
   bool m_consistencyLevelHasBeenSet = false;
 };
 

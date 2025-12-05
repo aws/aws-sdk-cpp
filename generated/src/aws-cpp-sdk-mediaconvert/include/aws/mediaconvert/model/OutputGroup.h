@@ -136,18 +136,18 @@ class OutputGroup {
   ///@}
  private:
   AutomatedEncodingSettings m_automatedEncodingSettings;
-  bool m_automatedEncodingSettingsHasBeenSet = false;
 
   Aws::String m_customName;
-  bool m_customNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OutputGroupSettings m_outputGroupSettings;
-  bool m_outputGroupSettingsHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
+  bool m_automatedEncodingSettingsHasBeenSet = false;
+  bool m_customNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outputGroupSettingsHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
 };
 

@@ -139,18 +139,18 @@ class PredictiveScalingPolicyConfiguration {
   ///@}
  private:
   Aws::Vector<PredictiveScalingMetricSpecification> m_metricSpecifications;
-  bool m_metricSpecificationsHasBeenSet = false;
 
   PredictiveScalingMode m_mode{PredictiveScalingMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   int m_schedulingBufferTime{0};
-  bool m_schedulingBufferTimeHasBeenSet = false;
 
   PredictiveScalingMaxCapacityBreachBehavior m_maxCapacityBreachBehavior{PredictiveScalingMaxCapacityBreachBehavior::NOT_SET};
-  bool m_maxCapacityBreachBehaviorHasBeenSet = false;
 
   int m_maxCapacityBuffer{0};
+  bool m_metricSpecificationsHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_schedulingBufferTimeHasBeenSet = false;
+  bool m_maxCapacityBreachBehaviorHasBeenSet = false;
   bool m_maxCapacityBufferHasBeenSet = false;
 };
 

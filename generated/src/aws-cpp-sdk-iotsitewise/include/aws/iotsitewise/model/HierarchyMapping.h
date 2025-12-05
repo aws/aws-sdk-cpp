@@ -70,9 +70,9 @@ class HierarchyMapping {
   ///@}
  private:
   Aws::String m_assetModelHierarchyId;
-  bool m_assetModelHierarchyIdHasBeenSet = false;
 
   Aws::String m_interfaceAssetModelHierarchyId;
+  bool m_assetModelHierarchyIdHasBeenSet = false;
   bool m_interfaceAssetModelHierarchyIdHasBeenSet = false;
 };
 

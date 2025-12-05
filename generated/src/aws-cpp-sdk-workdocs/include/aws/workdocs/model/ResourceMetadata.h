@@ -159,24 +159,24 @@ class ResourceMetadata {
   ///@}
  private:
   ResourceType m_type{ResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_originalName;
-  bool m_originalNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   UserMetadata m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_parentId;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_originalNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_parentIdHasBeenSet = false;
 };
 

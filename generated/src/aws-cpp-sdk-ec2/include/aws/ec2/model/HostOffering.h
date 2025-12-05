@@ -158,24 +158,24 @@ class HostOffering {
   ///@}
  private:
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_hourlyPrice;
-  bool m_hourlyPriceHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::String m_upfrontPrice;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_hourlyPriceHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
   bool m_upfrontPriceHasBeenSet = false;
 };
 

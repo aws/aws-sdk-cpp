@@ -113,15 +113,15 @@ class AssignedSession {
   ///@}
  private:
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Vector<AssignedSessionAction> m_sessionActions;
-  bool m_sessionActionsHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
+  bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_sessionActionsHasBeenSet = false;
   bool m_logConfigurationHasBeenSet = false;
 };
 

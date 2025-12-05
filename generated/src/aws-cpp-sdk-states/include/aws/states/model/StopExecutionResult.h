@@ -60,9 +60,9 @@ class StopExecutionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_stopDate{};
-  bool m_stopDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stopDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class DescribeOrganizationConfigurationResult {
   ///@}
  private:
   bool m_autoEnable{false};
-  bool m_autoEnableHasBeenSet = false;
 
   bool m_memberAccountLimitReached{false};
-  bool m_memberAccountLimitReachedHasBeenSet = false;
 
   AutoEnableStandards m_autoEnableStandards{AutoEnableStandards::NOT_SET};
-  bool m_autoEnableStandardsHasBeenSet = false;
 
   OrganizationConfiguration m_organizationConfiguration;
-  bool m_organizationConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoEnableHasBeenSet = false;
+  bool m_memberAccountLimitReachedHasBeenSet = false;
+  bool m_autoEnableStandardsHasBeenSet = false;
+  bool m_organizationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

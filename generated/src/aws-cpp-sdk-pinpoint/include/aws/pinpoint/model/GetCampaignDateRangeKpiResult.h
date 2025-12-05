@@ -58,9 +58,9 @@ class GetCampaignDateRangeKpiResult {
   ///@}
  private:
   CampaignDateRangeKpiResponse m_campaignDateRangeKpiResponse;
-  bool m_campaignDateRangeKpiResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_campaignDateRangeKpiResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

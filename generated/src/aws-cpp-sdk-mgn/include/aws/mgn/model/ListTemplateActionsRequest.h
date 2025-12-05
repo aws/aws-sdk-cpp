@@ -101,15 +101,15 @@ class ListTemplateActionsRequest : public MgnRequest {
   ///@}
  private:
   TemplateActionsRequestFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_launchConfigurationTemplateID;
-  bool m_launchConfigurationTemplateIDHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_launchConfigurationTemplateIDHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

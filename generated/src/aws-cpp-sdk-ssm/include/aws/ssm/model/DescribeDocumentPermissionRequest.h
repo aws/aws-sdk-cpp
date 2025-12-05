@@ -104,15 +104,15 @@ class DescribeDocumentPermissionRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DocumentPermissionType m_permissionType{DocumentPermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_nameHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

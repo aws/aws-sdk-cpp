@@ -84,12 +84,12 @@ class ListExecutionsResult {
   ///@}
  private:
   Aws::Vector<ExecutionReference> m_executions;
-  bool m_executionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

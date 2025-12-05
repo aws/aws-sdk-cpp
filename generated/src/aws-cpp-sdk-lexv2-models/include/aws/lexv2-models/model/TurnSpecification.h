@@ -70,9 +70,9 @@ class TurnSpecification {
   ///@}
  private:
   AgentTurnSpecification m_agentTurn;
-  bool m_agentTurnHasBeenSet = false;
 
   UserTurnSpecification m_userTurn;
+  bool m_agentTurnHasBeenSet = false;
   bool m_userTurnHasBeenSet = false;
 };
 

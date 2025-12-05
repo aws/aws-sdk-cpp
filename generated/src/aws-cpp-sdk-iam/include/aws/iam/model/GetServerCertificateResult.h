@@ -67,9 +67,9 @@ class GetServerCertificateResult {
   ///@}
  private:
   ServerCertificate m_serverCertificate;
-  bool m_serverCertificateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serverCertificateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

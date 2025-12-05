@@ -73,9 +73,9 @@ class SaaSConfiguration {
   ///@}
  private:
   Aws::String m_organizationName;
-  bool m_organizationNameHasBeenSet = false;
 
   Aws::String m_hostUrl;
+  bool m_organizationNameHasBeenSet = false;
   bool m_hostUrlHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class CreateResourceExplorerSetupRequest : public ResourceExplorer2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regionList;
-  bool m_regionListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aggregatorRegions;
-  bool m_aggregatorRegionsHasBeenSet = false;
 
   Aws::String m_viewName;
+  bool m_regionListHasBeenSet = false;
+  bool m_aggregatorRegionsHasBeenSet = false;
   bool m_viewNameHasBeenSet = false;
 };
 

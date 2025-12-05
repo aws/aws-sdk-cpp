@@ -59,9 +59,9 @@ class UpdateTelemetryRuleResult {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

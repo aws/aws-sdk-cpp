@@ -116,18 +116,18 @@ class CreateCloudFormationChangeSetResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_changeSetId;
-  bool m_changeSetIdHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_changeSetIdHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

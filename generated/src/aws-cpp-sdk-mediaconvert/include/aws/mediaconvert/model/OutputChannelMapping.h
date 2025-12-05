@@ -81,9 +81,9 @@ class OutputChannelMapping {
   ///@}
  private:
   Aws::Vector<int> m_inputChannels;
-  bool m_inputChannelsHasBeenSet = false;
 
   Aws::Vector<double> m_inputChannelsFineTune;
+  bool m_inputChannelsHasBeenSet = false;
   bool m_inputChannelsFineTuneHasBeenSet = false;
 };
 

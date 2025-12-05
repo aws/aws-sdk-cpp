@@ -65,9 +65,9 @@ class ImageQuality {
   ///@}
  private:
   double m_brightness{0.0};
-  bool m_brightnessHasBeenSet = false;
 
   double m_sharpness{0.0};
+  bool m_brightnessHasBeenSet = false;
   bool m_sharpnessHasBeenSet = false;
 };
 

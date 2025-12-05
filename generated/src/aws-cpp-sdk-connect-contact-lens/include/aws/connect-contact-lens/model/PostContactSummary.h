@@ -95,12 +95,12 @@ class PostContactSummary {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   PostContactSummaryStatus m_status{PostContactSummaryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PostContactSummaryFailureCode m_failureCode{PostContactSummaryFailureCode::NOT_SET};
+  bool m_contentHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
 };
 

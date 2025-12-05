@@ -142,21 +142,21 @@ class GetPredictiveScalingForecastRequest : public ApplicationAutoScalingRequest
   ///@}
  private:
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

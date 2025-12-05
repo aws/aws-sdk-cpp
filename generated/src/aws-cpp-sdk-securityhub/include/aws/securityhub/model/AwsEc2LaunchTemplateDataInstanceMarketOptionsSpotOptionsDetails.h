@@ -122,18 +122,18 @@ class AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
   ///@}
  private:
   int m_blockDurationMinutes{0};
-  bool m_blockDurationMinutesHasBeenSet = false;
 
   Aws::String m_instanceInterruptionBehavior;
-  bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
   Aws::String m_maxPrice;
-  bool m_maxPriceHasBeenSet = false;
 
   Aws::String m_spotInstanceType;
-  bool m_spotInstanceTypeHasBeenSet = false;
 
   Aws::String m_validUntil;
+  bool m_blockDurationMinutesHasBeenSet = false;
+  bool m_instanceInterruptionBehaviorHasBeenSet = false;
+  bool m_maxPriceHasBeenSet = false;
+  bool m_spotInstanceTypeHasBeenSet = false;
   bool m_validUntilHasBeenSet = false;
 };
 

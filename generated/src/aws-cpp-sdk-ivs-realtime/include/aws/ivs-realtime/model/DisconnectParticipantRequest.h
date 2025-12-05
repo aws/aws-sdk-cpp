@@ -85,12 +85,12 @@ class DisconnectParticipantRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_stageArn;
-  bool m_stageArnHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_stageArnHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

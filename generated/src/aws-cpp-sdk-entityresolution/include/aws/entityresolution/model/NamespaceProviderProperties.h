@@ -71,9 +71,9 @@ class NamespaceProviderProperties {
   ///@}
  private:
   Aws::String m_providerServiceArn;
-  bool m_providerServiceArnHasBeenSet = false;
 
   Aws::Utils::Document m_providerConfiguration;
+  bool m_providerServiceArnHasBeenSet = false;
   bool m_providerConfigurationHasBeenSet = false;
 };
 

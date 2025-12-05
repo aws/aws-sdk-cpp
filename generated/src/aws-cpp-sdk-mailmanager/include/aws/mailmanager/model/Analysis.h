@@ -70,9 +70,9 @@ class Analysis {
   ///@}
  private:
   Aws::String m_analyzer;
-  bool m_analyzerHasBeenSet = false;
 
   Aws::String m_resultField;
+  bool m_analyzerHasBeenSet = false;
   bool m_resultFieldHasBeenSet = false;
 };
 

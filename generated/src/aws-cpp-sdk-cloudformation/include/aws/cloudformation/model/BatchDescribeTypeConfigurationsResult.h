@@ -121,15 +121,15 @@ class BatchDescribeTypeConfigurationsResult {
   ///@}
  private:
   Aws::Vector<BatchDescribeTypeConfigurationsError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<TypeConfigurationIdentifier> m_unprocessedTypeConfigurations;
-  bool m_unprocessedTypeConfigurationsHasBeenSet = false;
 
   Aws::Vector<TypeConfigurationDetails> m_typeConfigurations;
-  bool m_typeConfigurationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_errorsHasBeenSet = false;
+  bool m_unprocessedTypeConfigurationsHasBeenSet = false;
+  bool m_typeConfigurationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

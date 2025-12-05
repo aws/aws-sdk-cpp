@@ -85,12 +85,12 @@ class TranslateKeyMaterialRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   IncomingKeyMaterial m_incomingKeyMaterial;
-  bool m_incomingKeyMaterialHasBeenSet = false;
 
   OutgoingKeyMaterial m_outgoingKeyMaterial;
-  bool m_outgoingKeyMaterialHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
+  bool m_incomingKeyMaterialHasBeenSet = false;
+  bool m_outgoingKeyMaterialHasBeenSet = false;
   bool m_keyCheckValueAlgorithmHasBeenSet = false;
 };
 

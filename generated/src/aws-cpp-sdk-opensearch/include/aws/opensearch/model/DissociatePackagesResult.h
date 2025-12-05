@@ -68,9 +68,9 @@ class DissociatePackagesResult {
   ///@}
  private:
   Aws::Vector<DomainPackageDetails> m_domainPackageDetailsList;
-  bool m_domainPackageDetailsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainPackageDetailsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -187,27 +187,27 @@ class PolicySummary {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   SecurityServiceType m_securityServiceType{SecurityServiceType::NOT_SET};
-  bool m_securityServiceTypeHasBeenSet = false;
 
   bool m_remediationEnabled{false};
-  bool m_remediationEnabledHasBeenSet = false;
 
   bool m_deleteUnusedFMManagedResources{false};
-  bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
 
   CustomerPolicyStatus m_policyStatus{CustomerPolicyStatus::NOT_SET};
+  bool m_policyArnHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_securityServiceTypeHasBeenSet = false;
+  bool m_remediationEnabledHasBeenSet = false;
+  bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
   bool m_policyStatusHasBeenSet = false;
 };
 

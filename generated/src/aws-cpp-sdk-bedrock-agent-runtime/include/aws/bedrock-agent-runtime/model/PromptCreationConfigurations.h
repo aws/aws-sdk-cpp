@@ -75,9 +75,9 @@ class PromptCreationConfigurations {
   ///@}
  private:
   bool m_excludePreviousThinkingSteps{false};
-  bool m_excludePreviousThinkingStepsHasBeenSet = false;
 
   int m_previousConversationTurnsToInclude{0};
+  bool m_excludePreviousThinkingStepsHasBeenSet = false;
   bool m_previousConversationTurnsToIncludeHasBeenSet = false;
 };
 

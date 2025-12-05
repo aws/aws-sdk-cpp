@@ -66,9 +66,9 @@ class DeleteIngestConfigurationRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_force{false};
+  bool m_arnHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

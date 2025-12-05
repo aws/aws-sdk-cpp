@@ -127,15 +127,15 @@ class RecognizeCelebritiesResult {
   ///@}
  private:
   Aws::Vector<Celebrity> m_celebrityFaces;
-  bool m_celebrityFacesHasBeenSet = false;
 
   Aws::Vector<ComparedFace> m_unrecognizedFaces;
-  bool m_unrecognizedFacesHasBeenSet = false;
 
   OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
-  bool m_orientationCorrectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_celebrityFacesHasBeenSet = false;
+  bool m_unrecognizedFacesHasBeenSet = false;
+  bool m_orientationCorrectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

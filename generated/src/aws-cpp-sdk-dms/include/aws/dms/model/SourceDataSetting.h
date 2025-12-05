@@ -108,15 +108,15 @@ class SourceDataSetting {
   ///@}
  private:
   Aws::String m_cDCStartPosition;
-  bool m_cDCStartPositionHasBeenSet = false;
 
   Aws::Utils::DateTime m_cDCStartTime{};
-  bool m_cDCStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_cDCStopTime{};
-  bool m_cDCStopTimeHasBeenSet = false;
 
   Aws::String m_slotName;
+  bool m_cDCStartPositionHasBeenSet = false;
+  bool m_cDCStartTimeHasBeenSet = false;
+  bool m_cDCStopTimeHasBeenSet = false;
   bool m_slotNameHasBeenSet = false;
 };
 

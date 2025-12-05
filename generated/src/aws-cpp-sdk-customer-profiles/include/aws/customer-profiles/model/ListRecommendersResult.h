@@ -85,12 +85,12 @@ class ListRecommendersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecommenderSummary> m_recommenders;
-  bool m_recommendersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

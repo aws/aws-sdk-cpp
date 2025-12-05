@@ -65,9 +65,9 @@ class AnalyticsBinKey {
   ///@}
  private:
   AnalyticsBinByName m_name{AnalyticsBinByName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   long long m_value{0};
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

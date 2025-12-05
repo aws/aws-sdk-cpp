@@ -157,18 +157,18 @@ class CreateLinkRequest : public OAMRequest {
   ///@}
  private:
   Aws::String m_labelTemplate;
-  bool m_labelTemplateHasBeenSet = false;
 
   LinkConfiguration m_linkConfiguration;
-  bool m_linkConfigurationHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_sinkIdentifier;
-  bool m_sinkIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_labelTemplateHasBeenSet = false;
+  bool m_linkConfigurationHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_sinkIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

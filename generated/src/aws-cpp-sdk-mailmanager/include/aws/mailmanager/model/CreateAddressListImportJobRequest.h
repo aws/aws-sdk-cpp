@@ -106,15 +106,15 @@ class CreateAddressListImportJobRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_addressListId;
-  bool m_addressListIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ImportDataFormat m_importDataFormat;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_addressListIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_importDataFormatHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DeleteThingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_thingGroupNameHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

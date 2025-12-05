@@ -133,18 +133,18 @@ class DescribeRegistrationVersionsRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::Vector<long long> m_versionNumbers;
-  bool m_versionNumbersHasBeenSet = false;
 
   Aws::Vector<RegistrationVersionFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_registrationIdHasBeenSet = false;
+  bool m_versionNumbersHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

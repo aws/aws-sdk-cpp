@@ -94,12 +94,12 @@ class DialogState {
   ///@}
  private:
   DialogAction m_dialogAction;
-  bool m_dialogActionHasBeenSet = false;
 
   IntentOverride m_intent;
-  bool m_intentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
+  bool m_dialogActionHasBeenSet = false;
+  bool m_intentHasBeenSet = false;
   bool m_sessionAttributesHasBeenSet = false;
 };
 

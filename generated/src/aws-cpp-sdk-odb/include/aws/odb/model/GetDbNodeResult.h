@@ -58,9 +58,9 @@ class GetDbNodeResult {
   ///@}
  private:
   DbNode m_dbNode;
-  bool m_dbNodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dbNodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class ImscDestinationSettings {
   ///@}
  private:
   ImscAccessibilitySubs m_accessibility{ImscAccessibilitySubs::NOT_SET};
-  bool m_accessibilityHasBeenSet = false;
 
   ImscStylePassthrough m_stylePassthrough{ImscStylePassthrough::NOT_SET};
+  bool m_accessibilityHasBeenSet = false;
   bool m_stylePassthroughHasBeenSet = false;
 };
 

@@ -123,15 +123,15 @@ class CreateConfigurationRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_kafkaVersions;
-  bool m_kafkaVersionsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_serverProperties{};
+  bool m_descriptionHasBeenSet = false;
+  bool m_kafkaVersionsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_serverPropertiesHasBeenSet = false;
 };
 

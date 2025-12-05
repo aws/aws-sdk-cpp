@@ -97,12 +97,12 @@ class DocumentSuggesterOptions {
   ///@}
  private:
   Aws::String m_sourceField;
-  bool m_sourceFieldHasBeenSet = false;
 
   SuggesterFuzzyMatching m_fuzzyMatching{SuggesterFuzzyMatching::NOT_SET};
-  bool m_fuzzyMatchingHasBeenSet = false;
 
   Aws::String m_sortExpression;
+  bool m_sourceFieldHasBeenSet = false;
+  bool m_fuzzyMatchingHasBeenSet = false;
   bool m_sortExpressionHasBeenSet = false;
 };
 

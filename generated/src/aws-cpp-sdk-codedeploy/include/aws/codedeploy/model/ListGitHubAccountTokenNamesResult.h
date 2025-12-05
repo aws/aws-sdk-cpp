@@ -91,12 +91,12 @@ class ListGitHubAccountTokenNamesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tokenNameList;
-  bool m_tokenNameListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenNameListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

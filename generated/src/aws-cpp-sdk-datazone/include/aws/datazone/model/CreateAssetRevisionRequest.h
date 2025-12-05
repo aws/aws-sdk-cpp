@@ -209,30 +209,30 @@ class CreateAssetRevisionRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::Vector<FormInput> m_formsInput;
-  bool m_formsInputHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PredictionConfiguration m_predictionConfiguration;
-  bool m_predictionConfigurationHasBeenSet = false;
 
   Aws::String m_typeRevision;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_formsInputHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_predictionConfigurationHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
 };
 

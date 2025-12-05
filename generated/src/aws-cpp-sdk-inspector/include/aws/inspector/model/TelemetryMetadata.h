@@ -86,12 +86,12 @@ class TelemetryMetadata {
   ///@}
  private:
   Aws::String m_messageType;
-  bool m_messageTypeHasBeenSet = false;
 
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   long long m_dataSize{0};
+  bool m_messageTypeHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_dataSizeHasBeenSet = false;
 };
 

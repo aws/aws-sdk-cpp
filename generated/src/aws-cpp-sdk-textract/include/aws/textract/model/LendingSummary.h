@@ -83,9 +83,9 @@ class LendingSummary {
   ///@}
  private:
   Aws::Vector<DocumentGroup> m_documentGroups;
-  bool m_documentGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_undetectedDocumentTypes;
+  bool m_documentGroupsHasBeenSet = false;
   bool m_undetectedDocumentTypesHasBeenSet = false;
 };
 

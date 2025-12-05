@@ -168,24 +168,24 @@ class Event {
   ///@}
  private:
   Aws::String m_sourceIdentifier;
-  bool m_sourceIdentifierHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventCategories;
-  bool m_eventCategoriesHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   Aws::String m_eventId;
+  bool m_sourceIdentifierHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_eventCategoriesHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_dateHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
 };
 

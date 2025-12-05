@@ -108,12 +108,12 @@ class Filter {
   ///@}
  private:
   FilterType m_type{FilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_typeHasBeenSet = false;
+  bool m_fieldHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

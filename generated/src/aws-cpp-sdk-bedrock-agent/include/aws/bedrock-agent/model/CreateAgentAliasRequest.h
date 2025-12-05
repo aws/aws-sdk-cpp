@@ -157,21 +157,21 @@ class CreateAgentAliasRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentAliasName;
-  bool m_agentAliasNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
-  bool m_routingConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentAliasNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

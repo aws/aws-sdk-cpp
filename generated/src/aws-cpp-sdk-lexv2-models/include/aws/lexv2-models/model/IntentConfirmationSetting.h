@@ -280,42 +280,42 @@ class IntentConfirmationSetting {
   ///@}
  private:
   PromptSpecification m_promptSpecification;
-  bool m_promptSpecificationHasBeenSet = false;
 
   ResponseSpecification m_declinationResponse;
-  bool m_declinationResponseHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   ResponseSpecification m_confirmationResponse;
-  bool m_confirmationResponseHasBeenSet = false;
 
   DialogState m_confirmationNextStep;
-  bool m_confirmationNextStepHasBeenSet = false;
 
   ConditionalSpecification m_confirmationConditional;
-  bool m_confirmationConditionalHasBeenSet = false;
 
   DialogState m_declinationNextStep;
-  bool m_declinationNextStepHasBeenSet = false;
 
   ConditionalSpecification m_declinationConditional;
-  bool m_declinationConditionalHasBeenSet = false;
 
   ResponseSpecification m_failureResponse;
-  bool m_failureResponseHasBeenSet = false;
 
   DialogState m_failureNextStep;
-  bool m_failureNextStepHasBeenSet = false;
 
   ConditionalSpecification m_failureConditional;
-  bool m_failureConditionalHasBeenSet = false;
 
   DialogCodeHookInvocationSetting m_codeHook;
-  bool m_codeHookHasBeenSet = false;
 
   ElicitationCodeHookInvocationSetting m_elicitationCodeHook;
+  bool m_promptSpecificationHasBeenSet = false;
+  bool m_declinationResponseHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_confirmationResponseHasBeenSet = false;
+  bool m_confirmationNextStepHasBeenSet = false;
+  bool m_confirmationConditionalHasBeenSet = false;
+  bool m_declinationNextStepHasBeenSet = false;
+  bool m_declinationConditionalHasBeenSet = false;
+  bool m_failureResponseHasBeenSet = false;
+  bool m_failureNextStepHasBeenSet = false;
+  bool m_failureConditionalHasBeenSet = false;
+  bool m_codeHookHasBeenSet = false;
   bool m_elicitationCodeHookHasBeenSet = false;
 };
 

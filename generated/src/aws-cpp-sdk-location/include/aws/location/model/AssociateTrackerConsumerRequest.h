@@ -70,9 +70,9 @@ class AssociateTrackerConsumerRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::String m_consumerArn;
+  bool m_trackerNameHasBeenSet = false;
   bool m_consumerArnHasBeenSet = false;
 };
 

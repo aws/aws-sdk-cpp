@@ -76,9 +76,9 @@ class DocumentText {
   ///@}
  private:
   Aws::Vector<Highlight> m_highlights;
-  bool m_highlightsHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_highlightsHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class UpdateInputSecurityGroupResult {
   ///@}
  private:
   InputSecurityGroup m_securityGroup;
-  bool m_securityGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

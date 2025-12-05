@@ -82,9 +82,9 @@ class RegexMatchSetUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   RegexMatchTuple m_regexMatchTuple;
+  bool m_actionHasBeenSet = false;
   bool m_regexMatchTupleHasBeenSet = false;
 };
 

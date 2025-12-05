@@ -226,27 +226,27 @@ class ResourceConfig {
   ///@}
  private:
   TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   int m_keepAlivePeriodInSeconds{0};
-  bool m_keepAlivePeriodInSecondsHasBeenSet = false;
 
   Aws::Vector<InstanceGroup> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   Aws::String m_trainingPlanArn;
-  bool m_trainingPlanArnHasBeenSet = false;
 
   InstancePlacementConfig m_instancePlacementConfig;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_volumeSizeInGBHasBeenSet = false;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
+  bool m_keepAlivePeriodInSecondsHasBeenSet = false;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_trainingPlanArnHasBeenSet = false;
   bool m_instancePlacementConfigHasBeenSet = false;
 };
 

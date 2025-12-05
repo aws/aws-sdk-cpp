@@ -216,30 +216,30 @@ class ReservedInstancesModification {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveDate{};
-  bool m_effectiveDateHasBeenSet = false;
 
   Aws::Vector<ReservedInstancesModificationResponse> m_modificationResults;
-  bool m_modificationResultsHasBeenSet = false;
 
   Aws::Vector<ReservedInstancesId> m_reservedInstancesIds;
-  bool m_reservedInstancesIdsHasBeenSet = false;
 
   Aws::String m_reservedInstancesModificationId;
-  bool m_reservedInstancesModificationIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDate{};
+  bool m_clientTokenHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_effectiveDateHasBeenSet = false;
+  bool m_modificationResultsHasBeenSet = false;
+  bool m_reservedInstancesIdsHasBeenSet = false;
+  bool m_reservedInstancesModificationIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_updateDateHasBeenSet = false;
 };
 

@@ -307,51 +307,51 @@ class GetDomainResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainExecutionRole;
-  bool m_domainExecutionRoleHasBeenSet = false;
 
   DomainVersion m_domainVersion{DomainVersion::NOT_SET};
-  bool m_domainVersionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_portalUrl;
-  bool m_portalUrlHasBeenSet = false;
 
   Aws::String m_rootDomainUnitId;
-  bool m_rootDomainUnitIdHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   SingleSignOn m_singleSignOn;
-  bool m_singleSignOnHasBeenSet = false;
 
   DomainStatus m_status{DomainStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainExecutionRoleHasBeenSet = false;
+  bool m_domainVersionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_portalUrlHasBeenSet = false;
+  bool m_rootDomainUnitIdHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_singleSignOnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

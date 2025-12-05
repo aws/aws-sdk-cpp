@@ -60,9 +60,9 @@ class GetCollaborationChangeRequestResult {
   ///@}
  private:
   CollaborationChangeRequest m_collaborationChangeRequest;
-  bool m_collaborationChangeRequestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collaborationChangeRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

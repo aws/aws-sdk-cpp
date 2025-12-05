@@ -76,12 +76,12 @@ class GetPullRequestOverrideStateResult {
   ///@}
  private:
   bool m_overridden{false};
-  bool m_overriddenHasBeenSet = false;
 
   Aws::String m_overrider;
-  bool m_overriderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_overriddenHasBeenSet = false;
+  bool m_overriderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

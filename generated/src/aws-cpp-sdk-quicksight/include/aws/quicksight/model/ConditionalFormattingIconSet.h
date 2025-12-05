@@ -68,9 +68,9 @@ class ConditionalFormattingIconSet {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   ConditionalFormattingIconSetType m_iconSetType{ConditionalFormattingIconSetType::NOT_SET};
+  bool m_expressionHasBeenSet = false;
   bool m_iconSetTypeHasBeenSet = false;
 };
 

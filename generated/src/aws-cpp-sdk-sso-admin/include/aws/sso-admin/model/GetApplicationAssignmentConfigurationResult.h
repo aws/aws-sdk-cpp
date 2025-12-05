@@ -62,9 +62,9 @@ class GetApplicationAssignmentConfigurationResult {
   ///@}
  private:
   bool m_assignmentRequired{false};
-  bool m_assignmentRequiredHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assignmentRequiredHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

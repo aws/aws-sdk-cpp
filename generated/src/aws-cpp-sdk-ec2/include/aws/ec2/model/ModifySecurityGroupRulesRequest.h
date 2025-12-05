@@ -96,12 +96,12 @@ class ModifySecurityGroupRulesRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<SecurityGroupRuleUpdate> m_securityGroupRules;
-  bool m_securityGroupRulesHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_groupIdHasBeenSet = false;
+  bool m_securityGroupRulesHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

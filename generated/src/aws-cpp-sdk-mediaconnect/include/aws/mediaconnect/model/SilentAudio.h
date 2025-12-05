@@ -67,9 +67,9 @@ class SilentAudio {
   ///@}
  private:
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_thresholdSeconds{0};
+  bool m_stateHasBeenSet = false;
   bool m_thresholdSecondsHasBeenSet = false;
 };
 

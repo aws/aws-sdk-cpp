@@ -86,12 +86,12 @@ class ListRegistriesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RegistrySummary> m_registries;
-  bool m_registriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_registriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

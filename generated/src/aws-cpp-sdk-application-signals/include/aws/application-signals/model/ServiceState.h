@@ -114,12 +114,12 @@ class ServiceState {
   ///@}
  private:
   Aws::Vector<AttributeFilter> m_attributeFilters;
-  bool m_attributeFiltersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::Vector<ChangeEvent> m_latestChangeEvents;
+  bool m_attributeFiltersHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
   bool m_latestChangeEventsHasBeenSet = false;
 };
 

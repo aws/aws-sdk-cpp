@@ -102,12 +102,12 @@ class SaaSTable {
   ///@}
  private:
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   Aws::Vector<TablePathElement> m_tablePath;
-  bool m_tablePathHasBeenSet = false;
 
   Aws::Vector<InputColumn> m_inputColumns;
+  bool m_dataSourceArnHasBeenSet = false;
+  bool m_tablePathHasBeenSet = false;
   bool m_inputColumnsHasBeenSet = false;
 };
 

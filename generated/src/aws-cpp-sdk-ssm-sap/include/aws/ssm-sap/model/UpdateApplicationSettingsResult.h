@@ -83,12 +83,12 @@ class UpdateApplicationSettingsResult {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operationIds;
-  bool m_operationIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageHasBeenSet = false;
+  bool m_operationIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

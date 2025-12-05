@@ -84,12 +84,12 @@ class Match {
   ///@}
  private:
   Aws::String m_frameAddress;
-  bool m_frameAddressHasBeenSet = false;
 
   int m_targetFramesIndex{0};
-  bool m_targetFramesIndexHasBeenSet = false;
 
   double m_thresholdBreachValue{0.0};
+  bool m_frameAddressHasBeenSet = false;
+  bool m_targetFramesIndexHasBeenSet = false;
   bool m_thresholdBreachValueHasBeenSet = false;
 };
 

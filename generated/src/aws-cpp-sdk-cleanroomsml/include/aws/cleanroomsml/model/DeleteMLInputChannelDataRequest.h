@@ -67,9 +67,9 @@ class DeleteMLInputChannelDataRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_mlInputChannelArn;
-  bool m_mlInputChannelArnHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
+  bool m_mlInputChannelArnHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
 };
 

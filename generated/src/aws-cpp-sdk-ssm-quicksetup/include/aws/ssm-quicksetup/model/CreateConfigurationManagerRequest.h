@@ -117,15 +117,15 @@ class CreateConfigurationManagerRequest : public SSMQuickSetupRequest {
   ///@}
  private:
   Aws::Vector<ConfigurationDefinitionInput> m_configurationDefinitions;
-  bool m_configurationDefinitionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_configurationDefinitionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

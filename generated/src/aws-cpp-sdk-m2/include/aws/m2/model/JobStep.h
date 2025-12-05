@@ -190,30 +190,30 @@ class JobStep {
   ///@}
  private:
   Aws::String m_procStepName;
-  bool m_procStepNameHasBeenSet = false;
 
   int m_procStepNumber{0};
-  bool m_procStepNumberHasBeenSet = false;
 
   int m_stepCheckpoint{0};
-  bool m_stepCheckpointHasBeenSet = false;
 
   Aws::String m_stepCheckpointStatus;
-  bool m_stepCheckpointStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_stepCheckpointTime{};
-  bool m_stepCheckpointTimeHasBeenSet = false;
 
   Aws::String m_stepCondCode;
-  bool m_stepCondCodeHasBeenSet = false;
 
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   int m_stepNumber{0};
-  bool m_stepNumberHasBeenSet = false;
 
   bool m_stepRestartable{false};
+  bool m_procStepNameHasBeenSet = false;
+  bool m_procStepNumberHasBeenSet = false;
+  bool m_stepCheckpointHasBeenSet = false;
+  bool m_stepCheckpointStatusHasBeenSet = false;
+  bool m_stepCheckpointTimeHasBeenSet = false;
+  bool m_stepCondCodeHasBeenSet = false;
+  bool m_stepNameHasBeenSet = false;
+  bool m_stepNumberHasBeenSet = false;
   bool m_stepRestartableHasBeenSet = false;
 };
 

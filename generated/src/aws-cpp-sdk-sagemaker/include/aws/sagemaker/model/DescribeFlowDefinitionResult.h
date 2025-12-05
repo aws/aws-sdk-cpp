@@ -220,36 +220,36 @@ class DescribeFlowDefinitionResult {
   ///@}
  private:
   Aws::String m_flowDefinitionArn;
-  bool m_flowDefinitionArnHasBeenSet = false;
 
   Aws::String m_flowDefinitionName;
-  bool m_flowDefinitionNameHasBeenSet = false;
 
   FlowDefinitionStatus m_flowDefinitionStatus{FlowDefinitionStatus::NOT_SET};
-  bool m_flowDefinitionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   HumanLoopRequestSource m_humanLoopRequestSource;
-  bool m_humanLoopRequestSourceHasBeenSet = false;
 
   HumanLoopActivationConfig m_humanLoopActivationConfig;
-  bool m_humanLoopActivationConfigHasBeenSet = false;
 
   HumanLoopConfig m_humanLoopConfig;
-  bool m_humanLoopConfigHasBeenSet = false;
 
   FlowDefinitionOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowDefinitionArnHasBeenSet = false;
+  bool m_flowDefinitionNameHasBeenSet = false;
+  bool m_flowDefinitionStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_humanLoopRequestSourceHasBeenSet = false;
+  bool m_humanLoopActivationConfigHasBeenSet = false;
+  bool m_humanLoopConfigHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class UpdateUploadRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   bool m_editContent{false};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_editContentHasBeenSet = false;
 };
 

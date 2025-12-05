@@ -66,9 +66,9 @@ class UpdateCampaignCommunicationLimitsRequest : public ConnectCampaignsV2Reques
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CommunicationLimitsConfig m_communicationLimitsOverride;
+  bool m_idHasBeenSet = false;
   bool m_communicationLimitsOverrideHasBeenSet = false;
 };
 

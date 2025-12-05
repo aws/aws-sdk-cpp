@@ -69,9 +69,9 @@ class TopicPreference {
   ///@}
  private:
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   SubscriptionStatus m_subscriptionStatus{SubscriptionStatus::NOT_SET};
+  bool m_topicNameHasBeenSet = false;
   bool m_subscriptionStatusHasBeenSet = false;
 };
 

@@ -315,42 +315,42 @@ class TypeSummary {
   ///@}
  private:
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_defaultVersionId;
-  bool m_defaultVersionIdHasBeenSet = false;
 
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_publisherId;
-  bool m_publisherIdHasBeenSet = false;
 
   Aws::String m_originalTypeName;
-  bool m_originalTypeNameHasBeenSet = false;
 
   Aws::String m_publicVersionNumber;
-  bool m_publicVersionNumberHasBeenSet = false;
 
   Aws::String m_latestPublicVersion;
-  bool m_latestPublicVersionHasBeenSet = false;
 
   IdentityProvider m_publisherIdentity{IdentityProvider::NOT_SET};
-  bool m_publisherIdentityHasBeenSet = false;
 
   Aws::String m_publisherName;
-  bool m_publisherNameHasBeenSet = false;
 
   bool m_isActivated{false};
+  bool m_typeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_defaultVersionIdHasBeenSet = false;
+  bool m_typeArnHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_publisherIdHasBeenSet = false;
+  bool m_originalTypeNameHasBeenSet = false;
+  bool m_publicVersionNumberHasBeenSet = false;
+  bool m_latestPublicVersionHasBeenSet = false;
+  bool m_publisherIdentityHasBeenSet = false;
+  bool m_publisherNameHasBeenSet = false;
   bool m_isActivatedHasBeenSet = false;
 };
 

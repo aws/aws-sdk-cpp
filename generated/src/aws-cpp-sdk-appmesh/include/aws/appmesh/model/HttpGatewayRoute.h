@@ -70,9 +70,9 @@ class HttpGatewayRoute {
   ///@}
  private:
   HttpGatewayRouteAction m_action;
-  bool m_actionHasBeenSet = false;
 
   HttpGatewayRouteMatch m_match;
+  bool m_actionHasBeenSet = false;
   bool m_matchHasBeenSet = false;
 };
 

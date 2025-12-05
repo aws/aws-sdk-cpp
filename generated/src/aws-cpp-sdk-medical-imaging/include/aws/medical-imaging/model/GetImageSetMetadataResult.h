@@ -92,15 +92,15 @@ class GetImageSetMetadataResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_imageSetMetadataBlob{};
-  bool m_imageSetMetadataBlobHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_contentEncoding;
-  bool m_contentEncodingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageSetMetadataBlobHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_contentEncodingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

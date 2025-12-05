@@ -118,15 +118,15 @@ class CreateVpcIngressConnectionRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_vpcIngressConnectionName;
-  bool m_vpcIngressConnectionNameHasBeenSet = false;
 
   IngressVpcConfiguration m_ingressVpcConfiguration;
-  bool m_ingressVpcConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_vpcIngressConnectionNameHasBeenSet = false;
+  bool m_ingressVpcConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

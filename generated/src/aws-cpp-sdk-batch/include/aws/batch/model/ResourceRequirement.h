@@ -147,9 +147,9 @@ class ResourceRequirement {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   ResourceType m_type{ResourceType::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

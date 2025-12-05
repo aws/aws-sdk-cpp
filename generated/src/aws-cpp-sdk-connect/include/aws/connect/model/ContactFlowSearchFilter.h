@@ -67,9 +67,9 @@ class ContactFlowSearchFilter {
   ///@}
  private:
   ControlPlaneTagFilter m_tagFilter;
-  bool m_tagFilterHasBeenSet = false;
 
   ContactFlowAttributeFilter m_flowAttributeFilter;
+  bool m_tagFilterHasBeenSet = false;
   bool m_flowAttributeFilterHasBeenSet = false;
 };
 

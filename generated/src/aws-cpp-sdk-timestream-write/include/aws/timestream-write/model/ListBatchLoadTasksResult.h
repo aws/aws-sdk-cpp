@@ -85,12 +85,12 @@ class ListBatchLoadTasksResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<BatchLoadTask> m_batchLoadTasks;
-  bool m_batchLoadTasksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_batchLoadTasksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

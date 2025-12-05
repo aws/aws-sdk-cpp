@@ -134,18 +134,18 @@ class StartSearchResultExportJobRequest : public BackupSearchRequest {
   ///@}
  private:
   Aws::String m_searchJobIdentifier;
-  bool m_searchJobIdentifierHasBeenSet = false;
 
   ExportSpecification m_exportSpecification;
-  bool m_exportSpecificationHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_searchJobIdentifierHasBeenSet = false;
+  bool m_exportSpecificationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

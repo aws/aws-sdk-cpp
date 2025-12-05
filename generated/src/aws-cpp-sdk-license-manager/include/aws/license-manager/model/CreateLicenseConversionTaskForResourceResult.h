@@ -61,9 +61,9 @@ class CreateLicenseConversionTaskForResourceResult {
   ///@}
  private:
   Aws::String m_licenseConversionTaskId;
-  bool m_licenseConversionTaskIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseConversionTaskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

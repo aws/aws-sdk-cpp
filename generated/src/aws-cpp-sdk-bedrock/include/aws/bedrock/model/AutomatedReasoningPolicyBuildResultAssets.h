@@ -114,15 +114,15 @@ class AutomatedReasoningPolicyBuildResultAssets {
   ///@}
  private:
   AutomatedReasoningPolicyDefinition m_policyDefinition;
-  bool m_policyDefinitionHasBeenSet = false;
 
   AutomatedReasoningPolicyDefinitionQualityReport m_qualityReport;
-  bool m_qualityReportHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildLog m_buildLog;
-  bool m_buildLogHasBeenSet = false;
 
   AutomatedReasoningPolicyGeneratedTestCases m_generatedTestCases;
+  bool m_policyDefinitionHasBeenSet = false;
+  bool m_qualityReportHasBeenSet = false;
+  bool m_buildLogHasBeenSet = false;
   bool m_generatedTestCasesHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class EnableFederationRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_eventDataStore;
-  bool m_eventDataStoreHasBeenSet = false;
 
   Aws::String m_federationRoleArn;
+  bool m_eventDataStoreHasBeenSet = false;
   bool m_federationRoleArnHasBeenSet = false;
 };
 

@@ -214,18 +214,18 @@ class OutputConfig {
   ///@}
  private:
   Aws::String m_s3OutputLocation;
-  bool m_s3OutputLocationHasBeenSet = false;
 
   TargetDevice m_targetDevice{TargetDevice::NOT_SET};
-  bool m_targetDeviceHasBeenSet = false;
 
   TargetPlatform m_targetPlatform;
-  bool m_targetPlatformHasBeenSet = false;
 
   Aws::String m_compilerOptions;
-  bool m_compilerOptionsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_s3OutputLocationHasBeenSet = false;
+  bool m_targetDeviceHasBeenSet = false;
+  bool m_targetPlatformHasBeenSet = false;
+  bool m_compilerOptionsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ResourceLocation {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   RegionName m_regionName{RegionName::NOT_SET};
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_regionNameHasBeenSet = false;
 };
 

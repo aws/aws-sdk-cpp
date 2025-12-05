@@ -268,36 +268,36 @@ class Cluster {
   ///@}
  private:
   Aws::String m_activeOperationArn;
-  bool m_activeOperationArnHasBeenSet = false;
 
   ClusterType m_clusterType{ClusterType::NOT_SET};
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   ClusterState m_state{ClusterState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   StateInfo m_stateInfo;
-  bool m_stateInfoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Provisioned m_provisioned;
-  bool m_provisionedHasBeenSet = false;
 
   Serverless m_serverless;
+  bool m_activeOperationArnHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateInfoHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_provisionedHasBeenSet = false;
   bool m_serverlessHasBeenSet = false;
 };
 

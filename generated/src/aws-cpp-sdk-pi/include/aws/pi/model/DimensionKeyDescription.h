@@ -123,15 +123,15 @@ class DimensionKeyDescription {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   double m_total{0.0};
-  bool m_totalHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_additionalMetrics;
-  bool m_additionalMetricsHasBeenSet = false;
 
   Aws::Vector<double> m_partitions;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_additionalMetricsHasBeenSet = false;
   bool m_partitionsHasBeenSet = false;
 };
 

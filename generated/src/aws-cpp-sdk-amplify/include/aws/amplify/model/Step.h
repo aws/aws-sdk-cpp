@@ -239,36 +239,36 @@ class Step {
   ///@}
  private:
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_logUrl;
-  bool m_logUrlHasBeenSet = false;
 
   Aws::String m_artifactsUrl;
-  bool m_artifactsUrlHasBeenSet = false;
 
   Aws::String m_testArtifactsUrl;
-  bool m_testArtifactsUrlHasBeenSet = false;
 
   Aws::String m_testConfigUrl;
-  bool m_testConfigUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_screenshots;
-  bool m_screenshotsHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_stepNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_logUrlHasBeenSet = false;
+  bool m_artifactsUrlHasBeenSet = false;
+  bool m_testArtifactsUrlHasBeenSet = false;
+  bool m_testConfigUrlHasBeenSet = false;
+  bool m_screenshotsHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

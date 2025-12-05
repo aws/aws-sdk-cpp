@@ -118,15 +118,15 @@ class GetRecordRequest : public SageMakerFeatureStoreRuntimeRequest {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_recordIdentifierValueAsString;
-  bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_featureNames;
-  bool m_featureNamesHasBeenSet = false;
 
   ExpirationTimeResponse m_expirationTimeResponse{ExpirationTimeResponse::NOT_SET};
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordIdentifierValueAsStringHasBeenSet = false;
+  bool m_featureNamesHasBeenSet = false;
   bool m_expirationTimeResponseHasBeenSet = false;
 };
 

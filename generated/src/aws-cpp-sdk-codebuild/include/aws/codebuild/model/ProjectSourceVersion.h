@@ -87,9 +87,9 @@ class ProjectSourceVersion {
   ///@}
  private:
   Aws::String m_sourceIdentifier;
-  bool m_sourceIdentifierHasBeenSet = false;
 
   Aws::String m_sourceVersion;
+  bool m_sourceIdentifierHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
 };
 

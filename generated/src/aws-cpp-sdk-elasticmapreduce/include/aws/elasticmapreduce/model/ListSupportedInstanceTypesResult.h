@@ -86,12 +86,12 @@ class ListSupportedInstanceTypesResult {
   ///@}
  private:
   Aws::Vector<SupportedInstanceType> m_supportedInstanceTypes;
-  bool m_supportedInstanceTypesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_supportedInstanceTypesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

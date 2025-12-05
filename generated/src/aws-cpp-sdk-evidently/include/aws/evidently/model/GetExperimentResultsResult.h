@@ -136,18 +136,18 @@ class GetExperimentResultsResult {
   ///@}
  private:
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::Vector<ExperimentReport> m_reports;
-  bool m_reportsHasBeenSet = false;
 
   Aws::Vector<ExperimentResultsData> m_resultsData;
-  bool m_resultsDataHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detailsHasBeenSet = false;
+  bool m_reportsHasBeenSet = false;
+  bool m_resultsDataHasBeenSet = false;
+  bool m_timestampsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

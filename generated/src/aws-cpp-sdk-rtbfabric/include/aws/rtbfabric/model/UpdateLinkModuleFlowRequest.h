@@ -110,15 +110,15 @@ class UpdateLinkModuleFlowRequest : public RTBFabricRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   Aws::Vector<ModuleConfiguration> m_modules;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
   bool m_modulesHasBeenSet = false;
 };
 

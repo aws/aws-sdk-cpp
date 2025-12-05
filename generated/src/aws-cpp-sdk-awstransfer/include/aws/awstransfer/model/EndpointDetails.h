@@ -208,18 +208,18 @@ class EndpointDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_addressAllocationIds;
-  bool m_addressAllocationIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_addressAllocationIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

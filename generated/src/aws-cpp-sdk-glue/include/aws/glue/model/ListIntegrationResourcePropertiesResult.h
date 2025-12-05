@@ -86,12 +86,12 @@ class ListIntegrationResourcePropertiesResult {
   ///@}
  private:
   Aws::Vector<IntegrationResourceProperty> m_integrationResourcePropertyList;
-  bool m_integrationResourcePropertyListHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationResourcePropertyListHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

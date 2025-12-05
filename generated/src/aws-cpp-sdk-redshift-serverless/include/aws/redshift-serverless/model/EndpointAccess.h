@@ -229,33 +229,33 @@ class EndpointAccess {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_endpointCreateTime{};
-  bool m_endpointCreateTimeHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointStatus;
-  bool m_endpointStatusHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   VpcEndpoint m_vpcEndpoint;
-  bool m_vpcEndpointHasBeenSet = false;
 
   Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_addressHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_endpointCreateTimeHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointStatusHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_vpcEndpointHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

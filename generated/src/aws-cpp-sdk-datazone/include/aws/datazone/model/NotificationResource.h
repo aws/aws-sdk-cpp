@@ -86,12 +86,12 @@ class NotificationResource {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NotificationResourceType m_type{NotificationResourceType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

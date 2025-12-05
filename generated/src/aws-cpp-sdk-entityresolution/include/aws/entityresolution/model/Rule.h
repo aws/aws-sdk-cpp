@@ -78,9 +78,9 @@ class Rule {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchingKeys;
+  bool m_ruleNameHasBeenSet = false;
   bool m_matchingKeysHasBeenSet = false;
 };
 

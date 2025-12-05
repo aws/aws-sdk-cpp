@@ -166,27 +166,27 @@ class GetCalculationExecutionResult {
   ///@}
  private:
   Aws::String m_calculationExecutionId;
-  bool m_calculationExecutionIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   CalculationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   CalculationStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   CalculationResult m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_calculationExecutionIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

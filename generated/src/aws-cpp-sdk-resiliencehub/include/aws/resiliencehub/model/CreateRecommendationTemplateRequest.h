@@ -209,27 +209,27 @@ class CreateRecommendationTemplateRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_assessmentArn;
-  bool m_assessmentArnHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   TemplateFormat m_format{TemplateFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
-  bool m_recommendationIdsHasBeenSet = false;
 
   Aws::Vector<RenderRecommendationType> m_recommendationTypes;
-  bool m_recommendationTypesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_assessmentArnHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_formatHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recommendationIdsHasBeenSet = false;
+  bool m_recommendationTypesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

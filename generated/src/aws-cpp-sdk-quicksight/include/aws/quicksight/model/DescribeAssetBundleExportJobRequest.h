@@ -66,9 +66,9 @@ class DescribeAssetBundleExportJobRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_assetBundleExportJobId;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_assetBundleExportJobIdHasBeenSet = false;
 };
 

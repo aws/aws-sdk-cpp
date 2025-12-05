@@ -77,9 +77,9 @@ class FunnelChartSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_categorySort;
-  bool m_categorySortHasBeenSet = false;
 
   ItemsLimitConfiguration m_categoryItemsLimit;
+  bool m_categorySortHasBeenSet = false;
   bool m_categoryItemsLimitHasBeenSet = false;
 };
 

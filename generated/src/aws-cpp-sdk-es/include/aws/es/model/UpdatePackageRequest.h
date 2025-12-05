@@ -105,15 +105,15 @@ class UpdatePackageRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   PackageSource m_packageSource;
-  bool m_packageSourceHasBeenSet = false;
 
   Aws::String m_packageDescription;
-  bool m_packageDescriptionHasBeenSet = false;
 
   Aws::String m_commitMessage;
+  bool m_packageIDHasBeenSet = false;
+  bool m_packageSourceHasBeenSet = false;
+  bool m_packageDescriptionHasBeenSet = false;
   bool m_commitMessageHasBeenSet = false;
 };
 

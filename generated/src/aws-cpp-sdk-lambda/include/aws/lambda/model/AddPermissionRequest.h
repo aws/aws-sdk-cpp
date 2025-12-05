@@ -277,39 +277,39 @@ class AddPermissionRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_sourceAccount;
-  bool m_sourceAccountHasBeenSet = false;
 
   Aws::String m_eventSourceToken;
-  bool m_eventSourceTokenHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_principalOrgID;
-  bool m_principalOrgIDHasBeenSet = false;
 
   FunctionUrlAuthType m_functionUrlAuthType{FunctionUrlAuthType::NOT_SET};
-  bool m_functionUrlAuthTypeHasBeenSet = false;
 
   bool m_invokedViaFunctionUrl{false};
+  bool m_functionNameHasBeenSet = false;
+  bool m_statementIdHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_sourceAccountHasBeenSet = false;
+  bool m_eventSourceTokenHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_principalOrgIDHasBeenSet = false;
+  bool m_functionUrlAuthTypeHasBeenSet = false;
   bool m_invokedViaFunctionUrlHasBeenSet = false;
 };
 

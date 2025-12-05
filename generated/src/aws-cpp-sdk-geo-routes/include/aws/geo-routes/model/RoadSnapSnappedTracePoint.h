@@ -96,12 +96,12 @@ class RoadSnapSnappedTracePoint {
   ///@}
  private:
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::Vector<double> m_originalPosition;
-  bool m_originalPositionHasBeenSet = false;
 
   Aws::Vector<double> m_snappedPosition;
+  bool m_confidenceHasBeenSet = false;
+  bool m_originalPositionHasBeenSet = false;
   bool m_snappedPositionHasBeenSet = false;
 };
 

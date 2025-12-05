@@ -165,21 +165,21 @@ class StageDeclaration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<BlockerDeclaration> m_blockers;
-  bool m_blockersHasBeenSet = false;
 
   Aws::Vector<ActionDeclaration> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   FailureConditions m_onFailure;
-  bool m_onFailureHasBeenSet = false;
 
   SuccessConditions m_onSuccess;
-  bool m_onSuccessHasBeenSet = false;
 
   BeforeEntryConditions m_beforeEntry;
+  bool m_nameHasBeenSet = false;
+  bool m_blockersHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_onFailureHasBeenSet = false;
+  bool m_onSuccessHasBeenSet = false;
   bool m_beforeEntryHasBeenSet = false;
 };
 

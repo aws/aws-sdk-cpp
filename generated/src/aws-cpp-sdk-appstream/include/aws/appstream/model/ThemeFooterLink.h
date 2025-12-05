@@ -69,9 +69,9 @@ class ThemeFooterLink {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_footerLinkURL;
+  bool m_displayNameHasBeenSet = false;
   bool m_footerLinkURLHasBeenSet = false;
 };
 

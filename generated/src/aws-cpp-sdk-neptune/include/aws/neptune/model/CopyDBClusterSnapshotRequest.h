@@ -190,24 +190,24 @@ class CopyDBClusterSnapshotRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_sourceDBClusterSnapshotIdentifier;
-  bool m_sourceDBClusterSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBClusterSnapshotIdentifier;
-  bool m_targetDBClusterSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_sourceRegion;
+  bool m_sourceDBClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_targetDBClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

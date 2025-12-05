@@ -111,15 +111,15 @@ class ListMetricsResult {
   ///@}
  private:
   Aws::Vector<Metric> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_owningAccounts;
-  bool m_owningAccountsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_metricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_owningAccountsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

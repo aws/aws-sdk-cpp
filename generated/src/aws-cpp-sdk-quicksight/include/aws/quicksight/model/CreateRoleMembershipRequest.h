@@ -102,15 +102,15 @@ class CreateRoleMembershipRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_memberName;
-  bool m_memberNameHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Role m_role{Role::NOT_SET};
+  bool m_memberNameHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

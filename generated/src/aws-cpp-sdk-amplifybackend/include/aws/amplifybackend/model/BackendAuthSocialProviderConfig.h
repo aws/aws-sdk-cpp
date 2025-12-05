@@ -71,9 +71,9 @@ class BackendAuthSocialProviderConfig {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
+  bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
 };
 

@@ -640,87 +640,87 @@ class CmafGroupSettings {
   ///@}
  private:
   Aws::Vector<CmafAdditionalManifest> m_additionalManifests;
-  bool m_additionalManifestsHasBeenSet = false;
 
   Aws::String m_baseUrl;
-  bool m_baseUrlHasBeenSet = false;
 
   CmafClientCache m_clientCache{CmafClientCache::NOT_SET};
-  bool m_clientCacheHasBeenSet = false;
 
   CmafCodecSpecification m_codecSpecification{CmafCodecSpecification::NOT_SET};
-  bool m_codecSpecificationHasBeenSet = false;
 
   Aws::String m_dashIFrameTrickPlayNameModifier;
-  bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
 
   DashManifestStyle m_dashManifestStyle{DashManifestStyle::NOT_SET};
-  bool m_dashManifestStyleHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   DestinationSettings m_destinationSettings;
-  bool m_destinationSettingsHasBeenSet = false;
 
   CmafEncryptionSettings m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   int m_fragmentLength{0};
-  bool m_fragmentLengthHasBeenSet = false;
 
   CmafImageBasedTrickPlay m_imageBasedTrickPlay{CmafImageBasedTrickPlay::NOT_SET};
-  bool m_imageBasedTrickPlayHasBeenSet = false;
 
   CmafImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-  bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
   CmafManifestCompression m_manifestCompression{CmafManifestCompression::NOT_SET};
-  bool m_manifestCompressionHasBeenSet = false;
 
   CmafManifestDurationFormat m_manifestDurationFormat{CmafManifestDurationFormat::NOT_SET};
-  bool m_manifestDurationFormatHasBeenSet = false;
 
   int m_minBufferTime{0};
-  bool m_minBufferTimeHasBeenSet = false;
 
   double m_minFinalSegmentLength{0.0};
-  bool m_minFinalSegmentLengthHasBeenSet = false;
 
   CmafMpdManifestBandwidthType m_mpdManifestBandwidthType{CmafMpdManifestBandwidthType::NOT_SET};
-  bool m_mpdManifestBandwidthTypeHasBeenSet = false;
 
   CmafMpdProfile m_mpdProfile{CmafMpdProfile::NOT_SET};
-  bool m_mpdProfileHasBeenSet = false;
 
   CmafPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames{CmafPtsOffsetHandlingForBFrames::NOT_SET};
-  bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
 
   CmafSegmentControl m_segmentControl{CmafSegmentControl::NOT_SET};
-  bool m_segmentControlHasBeenSet = false;
 
   int m_segmentLength{0};
-  bool m_segmentLengthHasBeenSet = false;
 
   CmafSegmentLengthControl m_segmentLengthControl{CmafSegmentLengthControl::NOT_SET};
-  bool m_segmentLengthControlHasBeenSet = false;
 
   CmafStreamInfResolution m_streamInfResolution{CmafStreamInfResolution::NOT_SET};
-  bool m_streamInfResolutionHasBeenSet = false;
 
   CmafTargetDurationCompatibilityMode m_targetDurationCompatibilityMode{CmafTargetDurationCompatibilityMode::NOT_SET};
-  bool m_targetDurationCompatibilityModeHasBeenSet = false;
 
   CmafVideoCompositionOffsets m_videoCompositionOffsets{CmafVideoCompositionOffsets::NOT_SET};
-  bool m_videoCompositionOffsetsHasBeenSet = false;
 
   CmafWriteDASHManifest m_writeDashManifest{CmafWriteDASHManifest::NOT_SET};
-  bool m_writeDashManifestHasBeenSet = false;
 
   CmafWriteHLSManifest m_writeHlsManifest{CmafWriteHLSManifest::NOT_SET};
-  bool m_writeHlsManifestHasBeenSet = false;
 
   CmafWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation{CmafWriteSegmentTimelineInRepresentation::NOT_SET};
+  bool m_additionalManifestsHasBeenSet = false;
+  bool m_baseUrlHasBeenSet = false;
+  bool m_clientCacheHasBeenSet = false;
+  bool m_codecSpecificationHasBeenSet = false;
+  bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
+  bool m_dashManifestStyleHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationSettingsHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_fragmentLengthHasBeenSet = false;
+  bool m_imageBasedTrickPlayHasBeenSet = false;
+  bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
+  bool m_manifestCompressionHasBeenSet = false;
+  bool m_manifestDurationFormatHasBeenSet = false;
+  bool m_minBufferTimeHasBeenSet = false;
+  bool m_minFinalSegmentLengthHasBeenSet = false;
+  bool m_mpdManifestBandwidthTypeHasBeenSet = false;
+  bool m_mpdProfileHasBeenSet = false;
+  bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
+  bool m_segmentControlHasBeenSet = false;
+  bool m_segmentLengthHasBeenSet = false;
+  bool m_segmentLengthControlHasBeenSet = false;
+  bool m_streamInfResolutionHasBeenSet = false;
+  bool m_targetDurationCompatibilityModeHasBeenSet = false;
+  bool m_videoCompositionOffsetsHasBeenSet = false;
+  bool m_writeDashManifestHasBeenSet = false;
+  bool m_writeHlsManifestHasBeenSet = false;
   bool m_writeSegmentTimelineInRepresentationHasBeenSet = false;
 };
 

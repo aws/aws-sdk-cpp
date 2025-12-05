@@ -70,9 +70,9 @@ class DeleteWarmPoolRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

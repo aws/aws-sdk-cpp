@@ -73,9 +73,9 @@ class GetPriceListFileUrlRequest : public PricingRequest {
   ///@}
  private:
   Aws::String m_priceListArn;
-  bool m_priceListArnHasBeenSet = false;
 
   Aws::String m_fileFormat;
+  bool m_priceListArnHasBeenSet = false;
   bool m_fileFormatHasBeenSet = false;
 };
 

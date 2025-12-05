@@ -126,18 +126,18 @@ class ListServiceVersionsResult {
   ///@}
  private:
   Aws::Vector<ServiceVersion> m_serviceVersions;
-  bool m_serviceVersionsHasBeenSet = false;
 
   ServiceName m_serviceName{ServiceName::NOT_SET};
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::Vector<DependentService> m_dependentServices;
-  bool m_dependentServicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceVersionsHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_dependentServicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -147,24 +147,24 @@ class MetricDatapoint {
   ///@}
  private:
   double m_average{0.0};
-  bool m_averageHasBeenSet = false;
 
   double m_maximum{0.0};
-  bool m_maximumHasBeenSet = false;
 
   double m_minimum{0.0};
-  bool m_minimumHasBeenSet = false;
 
   double m_sampleCount{0.0};
-  bool m_sampleCountHasBeenSet = false;
 
   double m_sum{0.0};
-  bool m_sumHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   MetricUnit m_unit{MetricUnit::NOT_SET};
+  bool m_averageHasBeenSet = false;
+  bool m_maximumHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
+  bool m_sampleCountHasBeenSet = false;
+  bool m_sumHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

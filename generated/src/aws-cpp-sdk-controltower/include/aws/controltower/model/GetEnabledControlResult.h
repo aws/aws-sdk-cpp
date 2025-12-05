@@ -60,9 +60,9 @@ class GetEnabledControlResult {
   ///@}
  private:
   EnabledControlDetails m_enabledControlDetails;
-  bool m_enabledControlDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enabledControlDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

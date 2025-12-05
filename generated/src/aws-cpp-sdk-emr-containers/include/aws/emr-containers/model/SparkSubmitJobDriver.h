@@ -94,12 +94,12 @@ class SparkSubmitJobDriver {
   ///@}
  private:
   Aws::String m_entryPoint;
-  bool m_entryPointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entryPointArguments;
-  bool m_entryPointArgumentsHasBeenSet = false;
 
   Aws::String m_sparkSubmitParameters;
+  bool m_entryPointHasBeenSet = false;
+  bool m_entryPointArgumentsHasBeenSet = false;
   bool m_sparkSubmitParametersHasBeenSet = false;
 };
 

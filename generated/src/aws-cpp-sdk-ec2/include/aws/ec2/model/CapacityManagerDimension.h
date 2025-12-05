@@ -354,54 +354,54 @@ class CapacityManagerDimension {
   ///@}
  private:
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_instancePlatform;
-  bool m_instancePlatformHasBeenSet = false;
 
   Aws::String m_reservationArn;
-  bool m_reservationArnHasBeenSet = false;
 
   Aws::String m_reservationId;
-  bool m_reservationIdHasBeenSet = false;
 
   ReservationType m_reservationType{ReservationType::NOT_SET};
-  bool m_reservationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_reservationCreateTimestamp{};
-  bool m_reservationCreateTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_reservationStartTimestamp{};
-  bool m_reservationStartTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_reservationEndTimestamp{};
-  bool m_reservationEndTimestampHasBeenSet = false;
 
   ReservationEndDateType m_reservationEndDateType{ReservationEndDateType::NOT_SET};
-  bool m_reservationEndDateTypeHasBeenSet = false;
 
   CapacityTenancy m_tenancy{CapacityTenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   ReservationState m_reservationState{ReservationState::NOT_SET};
-  bool m_reservationStateHasBeenSet = false;
 
   Aws::String m_reservationInstanceMatchCriteria;
-  bool m_reservationInstanceMatchCriteriaHasBeenSet = false;
 
   Aws::String m_reservationUnusedFinancialOwner;
+  bool m_resourceRegionHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instancePlatformHasBeenSet = false;
+  bool m_reservationArnHasBeenSet = false;
+  bool m_reservationIdHasBeenSet = false;
+  bool m_reservationTypeHasBeenSet = false;
+  bool m_reservationCreateTimestampHasBeenSet = false;
+  bool m_reservationStartTimestampHasBeenSet = false;
+  bool m_reservationEndTimestampHasBeenSet = false;
+  bool m_reservationEndDateTypeHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_reservationStateHasBeenSet = false;
+  bool m_reservationInstanceMatchCriteriaHasBeenSet = false;
   bool m_reservationUnusedFinancialOwnerHasBeenSet = false;
 };
 

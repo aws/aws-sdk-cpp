@@ -145,21 +145,21 @@ class FilterDateTimePickerControl {
   ///@}
  private:
   Aws::String m_filterControlId;
-  bool m_filterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceFilterId;
-  bool m_sourceFilterIdHasBeenSet = false;
 
   DateTimePickerControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   SheetControlDateTimePickerType m_type{SheetControlDateTimePickerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CommitMode m_commitMode{CommitMode::NOT_SET};
+  bool m_filterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceFilterIdHasBeenSet = false;
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_commitModeHasBeenSet = false;
 };
 

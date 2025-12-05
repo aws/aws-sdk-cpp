@@ -86,12 +86,12 @@ class VPCFlowLogParameters {
   ///@}
  private:
   Aws::String m_logFormat;
-  bool m_logFormatHasBeenSet = false;
 
   Aws::String m_trafficType;
-  bool m_trafficTypeHasBeenSet = false;
 
   int m_maxAggregationInterval{0};
+  bool m_logFormatHasBeenSet = false;
+  bool m_trafficTypeHasBeenSet = false;
   bool m_maxAggregationIntervalHasBeenSet = false;
 };
 

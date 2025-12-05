@@ -294,33 +294,33 @@ class InstancePortInfo {
   ///@}
  private:
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   NetworkProtocol m_protocol{NetworkProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_accessFrom;
-  bool m_accessFromHasBeenSet = false;
 
   PortAccessType m_accessType{PortAccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   Aws::String m_commonName;
-  bool m_commonNameHasBeenSet = false;
 
   AccessDirection m_accessDirection{AccessDirection::NOT_SET};
-  bool m_accessDirectionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrs;
-  bool m_cidrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Cidrs;
-  bool m_ipv6CidrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrListAliases;
+  bool m_fromPortHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_accessFromHasBeenSet = false;
+  bool m_accessTypeHasBeenSet = false;
+  bool m_commonNameHasBeenSet = false;
+  bool m_accessDirectionHasBeenSet = false;
+  bool m_cidrsHasBeenSet = false;
+  bool m_ipv6CidrsHasBeenSet = false;
   bool m_cidrListAliasesHasBeenSet = false;
 };
 

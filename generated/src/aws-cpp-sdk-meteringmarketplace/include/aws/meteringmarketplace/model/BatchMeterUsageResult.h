@@ -104,12 +104,12 @@ class BatchMeterUsageResult {
   ///@}
  private:
   Aws::Vector<UsageRecordResult> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::Vector<UsageRecord> m_unprocessedRecords;
-  bool m_unprocessedRecordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
+  bool m_unprocessedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

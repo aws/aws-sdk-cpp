@@ -155,15 +155,15 @@ class PutKeyPolicyRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   bool m_bypassPolicyLockoutSafetyCheck{false};
+  bool m_keyIdHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 };
 

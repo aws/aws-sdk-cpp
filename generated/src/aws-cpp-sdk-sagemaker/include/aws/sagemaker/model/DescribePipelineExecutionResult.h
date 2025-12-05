@@ -294,51 +294,51 @@ class DescribePipelineExecutionResult {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::String m_pipelineExecutionArn;
-  bool m_pipelineExecutionArnHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDisplayName;
-  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
   PipelineExecutionStatus m_pipelineExecutionStatus{PipelineExecutionStatus::NOT_SET};
-  bool m_pipelineExecutionStatusHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDescription;
-  bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
   PipelineExperimentConfig m_pipelineExperimentConfig;
-  bool m_pipelineExperimentConfigHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   ParallelismConfiguration m_parallelismConfiguration;
-  bool m_parallelismConfigurationHasBeenSet = false;
 
   SelectiveExecutionConfig m_selectiveExecutionConfig;
-  bool m_selectiveExecutionConfigHasBeenSet = false;
 
   long long m_pipelineVersionId{0};
-  bool m_pipelineVersionIdHasBeenSet = false;
 
   MLflowConfiguration m_mLflowConfig;
-  bool m_mLflowConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_pipelineExecutionArnHasBeenSet = false;
+  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
+  bool m_pipelineExecutionStatusHasBeenSet = false;
+  bool m_pipelineExecutionDescriptionHasBeenSet = false;
+  bool m_pipelineExperimentConfigHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_parallelismConfigurationHasBeenSet = false;
+  bool m_selectiveExecutionConfigHasBeenSet = false;
+  bool m_pipelineVersionIdHasBeenSet = false;
+  bool m_mLflowConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

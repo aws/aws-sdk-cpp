@@ -82,12 +82,12 @@ class UpdateApplicationMaintenanceConfigurationResult {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
-  bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

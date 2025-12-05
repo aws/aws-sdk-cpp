@@ -70,9 +70,9 @@ class PutConfigurationSetVdmOptionsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   VdmOptions m_vdmOptions;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_vdmOptionsHasBeenSet = false;
 };
 

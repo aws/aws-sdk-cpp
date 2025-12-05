@@ -87,12 +87,12 @@ class ListEmailContactsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<EmailContact> m_emailContacts;
-  bool m_emailContactsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_emailContactsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

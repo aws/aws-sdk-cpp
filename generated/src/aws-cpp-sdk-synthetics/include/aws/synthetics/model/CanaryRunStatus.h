@@ -115,15 +115,15 @@ class CanaryRunStatus {
   ///@}
  private:
   CanaryRunState m_state{CanaryRunState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   CanaryRunStateReasonCode m_stateReasonCode{CanaryRunStateReasonCode::NOT_SET};
-  bool m_stateReasonCodeHasBeenSet = false;
 
   CanaryRunTestResult m_testResult{CanaryRunTestResult::NOT_SET};
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_stateReasonCodeHasBeenSet = false;
   bool m_testResultHasBeenSet = false;
 };
 

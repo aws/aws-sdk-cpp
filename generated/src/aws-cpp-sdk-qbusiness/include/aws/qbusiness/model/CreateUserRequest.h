@@ -112,15 +112,15 @@ class CreateUserRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<UserAlias> m_userAliases;
-  bool m_userAliasesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userAliasesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -102,15 +102,15 @@ class LoginAttribute {
   ///@}
  private:
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_application;
-  bool m_applicationHasBeenSet = false;
 
   int m_failedLoginAttempts{0};
-  bool m_failedLoginAttemptsHasBeenSet = false;
 
   int m_successfulLoginAttempts{0};
+  bool m_userHasBeenSet = false;
+  bool m_applicationHasBeenSet = false;
+  bool m_failedLoginAttemptsHasBeenSet = false;
   bool m_successfulLoginAttemptsHasBeenSet = false;
 };
 

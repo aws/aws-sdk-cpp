@@ -60,9 +60,9 @@ class UpdateProtectedQueryResult {
   ///@}
  private:
   ProtectedQuery m_protectedQuery;
-  bool m_protectedQueryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectedQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

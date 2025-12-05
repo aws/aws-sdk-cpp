@@ -138,21 +138,21 @@ class VpcOriginEndpointConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_hTTPPort{0};
-  bool m_hTTPPortHasBeenSet = false;
 
   int m_hTTPSPort{0};
-  bool m_hTTPSPortHasBeenSet = false;
 
   OriginProtocolPolicy m_originProtocolPolicy{OriginProtocolPolicy::NOT_SET};
-  bool m_originProtocolPolicyHasBeenSet = false;
 
   OriginSslProtocols m_originSslProtocols;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_hTTPPortHasBeenSet = false;
+  bool m_hTTPSPortHasBeenSet = false;
+  bool m_originProtocolPolicyHasBeenSet = false;
   bool m_originSslProtocolsHasBeenSet = false;
 };
 

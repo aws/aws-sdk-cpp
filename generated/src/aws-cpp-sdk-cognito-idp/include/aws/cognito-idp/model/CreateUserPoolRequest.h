@@ -611,75 +611,75 @@ class CreateUserPoolRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   UserPoolPolicyType m_policies;
-  bool m_policiesHasBeenSet = false;
 
   DeletionProtectionType m_deletionProtection{DeletionProtectionType::NOT_SET};
-  bool m_deletionProtectionHasBeenSet = false;
 
   LambdaConfigType m_lambdaConfig;
-  bool m_lambdaConfigHasBeenSet = false;
 
   Aws::Vector<VerifiedAttributeType> m_autoVerifiedAttributes;
-  bool m_autoVerifiedAttributesHasBeenSet = false;
 
   Aws::Vector<AliasAttributeType> m_aliasAttributes;
-  bool m_aliasAttributesHasBeenSet = false;
 
   Aws::Vector<UsernameAttributeType> m_usernameAttributes;
-  bool m_usernameAttributesHasBeenSet = false;
 
   Aws::String m_smsVerificationMessage;
-  bool m_smsVerificationMessageHasBeenSet = false;
 
   Aws::String m_emailVerificationMessage;
-  bool m_emailVerificationMessageHasBeenSet = false;
 
   Aws::String m_emailVerificationSubject;
-  bool m_emailVerificationSubjectHasBeenSet = false;
 
   VerificationMessageTemplateType m_verificationMessageTemplate;
-  bool m_verificationMessageTemplateHasBeenSet = false;
 
   Aws::String m_smsAuthenticationMessage;
-  bool m_smsAuthenticationMessageHasBeenSet = false;
 
   UserPoolMfaType m_mfaConfiguration{UserPoolMfaType::NOT_SET};
-  bool m_mfaConfigurationHasBeenSet = false;
 
   UserAttributeUpdateSettingsType m_userAttributeUpdateSettings;
-  bool m_userAttributeUpdateSettingsHasBeenSet = false;
 
   DeviceConfigurationType m_deviceConfiguration;
-  bool m_deviceConfigurationHasBeenSet = false;
 
   EmailConfigurationType m_emailConfiguration;
-  bool m_emailConfigurationHasBeenSet = false;
 
   SmsConfigurationType m_smsConfiguration;
-  bool m_smsConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userPoolTags;
-  bool m_userPoolTagsHasBeenSet = false;
 
   AdminCreateUserConfigType m_adminCreateUserConfig;
-  bool m_adminCreateUserConfigHasBeenSet = false;
 
   Aws::Vector<SchemaAttributeType> m_schema;
-  bool m_schemaHasBeenSet = false;
 
   UserPoolAddOnsType m_userPoolAddOns;
-  bool m_userPoolAddOnsHasBeenSet = false;
 
   UsernameConfigurationType m_usernameConfiguration;
-  bool m_usernameConfigurationHasBeenSet = false;
 
   AccountRecoverySettingType m_accountRecoverySetting;
-  bool m_accountRecoverySettingHasBeenSet = false;
 
   UserPoolTierType m_userPoolTier{UserPoolTierType::NOT_SET};
+  bool m_poolNameHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_lambdaConfigHasBeenSet = false;
+  bool m_autoVerifiedAttributesHasBeenSet = false;
+  bool m_aliasAttributesHasBeenSet = false;
+  bool m_usernameAttributesHasBeenSet = false;
+  bool m_smsVerificationMessageHasBeenSet = false;
+  bool m_emailVerificationMessageHasBeenSet = false;
+  bool m_emailVerificationSubjectHasBeenSet = false;
+  bool m_verificationMessageTemplateHasBeenSet = false;
+  bool m_smsAuthenticationMessageHasBeenSet = false;
+  bool m_mfaConfigurationHasBeenSet = false;
+  bool m_userAttributeUpdateSettingsHasBeenSet = false;
+  bool m_deviceConfigurationHasBeenSet = false;
+  bool m_emailConfigurationHasBeenSet = false;
+  bool m_smsConfigurationHasBeenSet = false;
+  bool m_userPoolTagsHasBeenSet = false;
+  bool m_adminCreateUserConfigHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_userPoolAddOnsHasBeenSet = false;
+  bool m_usernameConfigurationHasBeenSet = false;
+  bool m_accountRecoverySettingHasBeenSet = false;
   bool m_userPoolTierHasBeenSet = false;
 };
 

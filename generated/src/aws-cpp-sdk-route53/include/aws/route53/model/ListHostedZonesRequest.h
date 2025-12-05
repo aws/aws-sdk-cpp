@@ -123,15 +123,15 @@ class ListHostedZonesRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_delegationSetId;
-  bool m_delegationSetIdHasBeenSet = false;
 
   HostedZoneType m_hostedZoneType{HostedZoneType::NOT_SET};
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_delegationSetIdHasBeenSet = false;
   bool m_hostedZoneTypeHasBeenSet = false;
 };
 

@@ -273,45 +273,45 @@ class GetProviderServiceResult {
   ///@}
  private:
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::String m_providerServiceName;
-  bool m_providerServiceNameHasBeenSet = false;
 
   Aws::String m_providerServiceDisplayName;
-  bool m_providerServiceDisplayNameHasBeenSet = false;
 
   ServiceType m_providerServiceType{ServiceType::NOT_SET};
-  bool m_providerServiceTypeHasBeenSet = false;
 
   Aws::String m_providerServiceArn;
-  bool m_providerServiceArnHasBeenSet = false;
 
   Aws::Utils::Document m_providerConfigurationDefinition;
-  bool m_providerConfigurationDefinitionHasBeenSet = false;
 
   ProviderIdNameSpaceConfiguration m_providerIdNameSpaceConfiguration;
-  bool m_providerIdNameSpaceConfigurationHasBeenSet = false;
 
   Aws::Utils::Document m_providerJobConfiguration;
-  bool m_providerJobConfigurationHasBeenSet = false;
 
   ProviderEndpointConfiguration m_providerEndpointConfiguration;
-  bool m_providerEndpointConfigurationHasBeenSet = false;
 
   bool m_anonymizedOutput{false};
-  bool m_anonymizedOutputHasBeenSet = false;
 
   Aws::Utils::Document m_providerEntityOutputDefinition;
-  bool m_providerEntityOutputDefinitionHasBeenSet = false;
 
   ProviderIntermediateDataAccessConfiguration m_providerIntermediateDataAccessConfiguration;
-  bool m_providerIntermediateDataAccessConfigurationHasBeenSet = false;
 
   ProviderComponentSchema m_providerComponentSchema;
-  bool m_providerComponentSchemaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_providerNameHasBeenSet = false;
+  bool m_providerServiceNameHasBeenSet = false;
+  bool m_providerServiceDisplayNameHasBeenSet = false;
+  bool m_providerServiceTypeHasBeenSet = false;
+  bool m_providerServiceArnHasBeenSet = false;
+  bool m_providerConfigurationDefinitionHasBeenSet = false;
+  bool m_providerIdNameSpaceConfigurationHasBeenSet = false;
+  bool m_providerJobConfigurationHasBeenSet = false;
+  bool m_providerEndpointConfigurationHasBeenSet = false;
+  bool m_anonymizedOutputHasBeenSet = false;
+  bool m_providerEntityOutputDefinitionHasBeenSet = false;
+  bool m_providerIntermediateDataAccessConfigurationHasBeenSet = false;
+  bool m_providerComponentSchemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

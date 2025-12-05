@@ -159,21 +159,21 @@ class CreateConfiguredAudienceModelAssociationRequest : public CleanRoomsRequest
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelAssociationName;
-  bool m_configuredAudienceModelAssociationNameHasBeenSet = false;
 
   bool m_manageResourcePolicies{false};
-  bool m_manageResourcePoliciesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_configuredAudienceModelAssociationNameHasBeenSet = false;
+  bool m_manageResourcePoliciesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

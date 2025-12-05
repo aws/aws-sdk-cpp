@@ -129,21 +129,21 @@ class TimeBasedForecastProperties {
   ///@}
  private:
   int m_periodsForward{0};
-  bool m_periodsForwardHasBeenSet = false;
 
   int m_periodsBackward{0};
-  bool m_periodsBackwardHasBeenSet = false;
 
   double m_upperBoundary{0.0};
-  bool m_upperBoundaryHasBeenSet = false;
 
   double m_lowerBoundary{0.0};
-  bool m_lowerBoundaryHasBeenSet = false;
 
   int m_predictionInterval{0};
-  bool m_predictionIntervalHasBeenSet = false;
 
   int m_seasonality{0};
+  bool m_periodsForwardHasBeenSet = false;
+  bool m_periodsBackwardHasBeenSet = false;
+  bool m_upperBoundaryHasBeenSet = false;
+  bool m_lowerBoundaryHasBeenSet = false;
+  bool m_predictionIntervalHasBeenSet = false;
   bool m_seasonalityHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class KeyspacesCell {
   ///@}
  private:
   std::shared_ptr<KeyspacesCellValue> m_value;
-  bool m_valueHasBeenSet = false;
 
   KeyspacesMetadata m_metadata;
+  bool m_valueHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

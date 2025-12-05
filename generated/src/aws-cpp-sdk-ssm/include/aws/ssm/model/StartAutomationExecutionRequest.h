@@ -368,45 +368,45 @@ class StartAutomationExecutionRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ExecutionMode m_mode{ExecutionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_targetParameterName;
-  bool m_targetParameterNameHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-  bool m_targetMapsHasBeenSet = false;
 
   Aws::String m_maxConcurrency;
-  bool m_maxConcurrencyHasBeenSet = false;
 
   Aws::String m_maxErrors;
-  bool m_maxErrorsHasBeenSet = false;
 
   Aws::Vector<TargetLocation> m_targetLocations;
-  bool m_targetLocationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
-  bool m_alarmConfigurationHasBeenSet = false;
 
   Aws::String m_targetLocationsURL;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_targetParameterNameHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_targetMapsHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_maxErrorsHasBeenSet = false;
+  bool m_targetLocationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_alarmConfigurationHasBeenSet = false;
   bool m_targetLocationsURLHasBeenSet = false;
 };
 

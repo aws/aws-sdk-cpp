@@ -112,18 +112,18 @@ class CreateGuardrailResult {
   ///@}
  private:
   Aws::String m_guardrailId;
-  bool m_guardrailIdHasBeenSet = false;
 
   Aws::String m_guardrailArn;
-  bool m_guardrailArnHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_guardrailIdHasBeenSet = false;
+  bool m_guardrailArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class CommandPayload {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_content{};
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_contentType;
+  bool m_contentHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

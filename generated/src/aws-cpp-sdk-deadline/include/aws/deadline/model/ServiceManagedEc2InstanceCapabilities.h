@@ -242,33 +242,33 @@ class ServiceManagedEc2InstanceCapabilities {
   ///@}
  private:
   VCpuCountRange m_vCpuCount;
-  bool m_vCpuCountHasBeenSet = false;
 
   MemoryMiBRange m_memoryMiB;
-  bool m_memoryMiBHasBeenSet = false;
 
   ServiceManagedFleetOperatingSystemFamily m_osFamily{ServiceManagedFleetOperatingSystemFamily::NOT_SET};
-  bool m_osFamilyHasBeenSet = false;
 
   CpuArchitectureType m_cpuArchitectureType{CpuArchitectureType::NOT_SET};
-  bool m_cpuArchitectureTypeHasBeenSet = false;
 
   Ec2EbsVolume m_rootEbsVolume;
-  bool m_rootEbsVolumeHasBeenSet = false;
 
   AcceleratorCapabilities m_acceleratorCapabilities;
-  bool m_acceleratorCapabilitiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedInstanceTypes;
-  bool m_allowedInstanceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedInstanceTypes;
-  bool m_excludedInstanceTypesHasBeenSet = false;
 
   Aws::Vector<FleetAmountCapability> m_customAmounts;
-  bool m_customAmountsHasBeenSet = false;
 
   Aws::Vector<FleetAttributeCapability> m_customAttributes;
+  bool m_vCpuCountHasBeenSet = false;
+  bool m_memoryMiBHasBeenSet = false;
+  bool m_osFamilyHasBeenSet = false;
+  bool m_cpuArchitectureTypeHasBeenSet = false;
+  bool m_rootEbsVolumeHasBeenSet = false;
+  bool m_acceleratorCapabilitiesHasBeenSet = false;
+  bool m_allowedInstanceTypesHasBeenSet = false;
+  bool m_excludedInstanceTypesHasBeenSet = false;
+  bool m_customAmountsHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
 };
 

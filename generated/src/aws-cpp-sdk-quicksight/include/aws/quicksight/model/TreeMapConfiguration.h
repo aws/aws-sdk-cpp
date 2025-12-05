@@ -222,33 +222,33 @@ class TreeMapConfiguration {
   ///@}
  private:
   TreeMapFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   TreeMapSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   ChartAxisLabelOptions m_groupLabelOptions;
-  bool m_groupLabelOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_sizeLabelOptions;
-  bool m_sizeLabelOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_colorLabelOptions;
-  bool m_colorLabelOptionsHasBeenSet = false;
 
   ColorScale m_colorScale;
-  bool m_colorScaleHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_groupLabelOptionsHasBeenSet = false;
+  bool m_sizeLabelOptionsHasBeenSet = false;
+  bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_colorScaleHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetAttendeeResult {
   ///@}
  private:
   Attendee m_attendee;
-  bool m_attendeeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attendeeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

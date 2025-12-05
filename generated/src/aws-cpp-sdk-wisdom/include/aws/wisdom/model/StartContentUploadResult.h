@@ -118,18 +118,18 @@ class StartContentUploadResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_headersToInclude;
-  bool m_headersToIncludeHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Utils::DateTime m_urlExpiry{};
-  bool m_urlExpiryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_headersToIncludeHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_urlExpiryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

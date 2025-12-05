@@ -68,9 +68,9 @@ class DescribeAccessControlConfigurationRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_indexIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

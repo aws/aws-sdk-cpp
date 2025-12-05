@@ -66,9 +66,9 @@ class FlowTransitEncryptionKeyConfiguration {
   ///@}
  private:
   SecretsManagerEncryptionKeyConfiguration m_secretsManager;
-  bool m_secretsManagerHasBeenSet = false;
 
   AutomaticEncryptionKeyConfiguration m_automatic;
+  bool m_secretsManagerHasBeenSet = false;
   bool m_automaticHasBeenSet = false;
 };
 

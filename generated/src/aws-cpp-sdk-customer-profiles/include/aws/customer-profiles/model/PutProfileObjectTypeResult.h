@@ -305,48 +305,48 @@ class PutProfileObjectTypeResult {
   ///@}
  private:
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   int m_expirationDays{0};
-  bool m_expirationDaysHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   bool m_allowProfileCreation{false};
-  bool m_allowProfileCreationHasBeenSet = false;
 
   Aws::String m_sourceLastUpdatedTimestampFormat;
-  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
 
   int m_maxProfileObjectCount{0};
-  bool m_maxProfileObjectCountHasBeenSet = false;
 
   int m_maxAvailableProfileObjectCount{0};
-  bool m_maxAvailableProfileObjectCountHasBeenSet = false;
 
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_expirationDaysHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_allowProfileCreationHasBeenSet = false;
+  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
+  bool m_maxProfileObjectCountHasBeenSet = false;
+  bool m_maxAvailableProfileObjectCountHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

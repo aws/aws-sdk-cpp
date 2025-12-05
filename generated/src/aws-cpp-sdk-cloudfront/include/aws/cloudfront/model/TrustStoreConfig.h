@@ -82,12 +82,12 @@ class TrustStoreConfig {
   ///@}
  private:
   Aws::String m_trustStoreId;
-  bool m_trustStoreIdHasBeenSet = false;
 
   bool m_advertiseTrustStoreCaNames{false};
-  bool m_advertiseTrustStoreCaNamesHasBeenSet = false;
 
   bool m_ignoreCertificateExpiry{false};
+  bool m_trustStoreIdHasBeenSet = false;
+  bool m_advertiseTrustStoreCaNamesHasBeenSet = false;
   bool m_ignoreCertificateExpiryHasBeenSet = false;
 };
 

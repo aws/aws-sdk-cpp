@@ -125,18 +125,18 @@ class HostInfoForCreate {
   ///@}
  private:
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_placementGroupId;
-  bool m_placementGroupIdHasBeenSet = false;
 
   Aws::String m_dedicatedHostId;
+  bool m_hostNameHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_placementGroupIdHasBeenSet = false;
   bool m_dedicatedHostIdHasBeenSet = false;
 };
 

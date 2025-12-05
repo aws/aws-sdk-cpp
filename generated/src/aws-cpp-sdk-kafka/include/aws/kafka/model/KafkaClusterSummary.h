@@ -71,9 +71,9 @@ class KafkaClusterSummary {
   ///@}
  private:
   AmazonMskCluster m_amazonMskCluster;
-  bool m_amazonMskClusterHasBeenSet = false;
 
   Aws::String m_kafkaClusterAlias;
+  bool m_amazonMskClusterHasBeenSet = false;
   bool m_kafkaClusterAliasHasBeenSet = false;
 };
 

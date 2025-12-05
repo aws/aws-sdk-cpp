@@ -236,36 +236,36 @@ class PendingModifiedValues {
   ///@}
  private:
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   Aws::String m_clusterType;
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   int m_automatedSnapshotRetentionPeriod{0};
-  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::String m_maintenanceTrackName;
-  bool m_maintenanceTrackNameHasBeenSet = false;
 
   Aws::String m_encryptionType;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_maintenanceTrackNameHasBeenSet = false;
   bool m_encryptionTypeHasBeenSet = false;
 };
 

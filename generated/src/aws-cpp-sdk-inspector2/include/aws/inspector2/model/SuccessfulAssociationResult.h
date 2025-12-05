@@ -69,9 +69,9 @@ class SuccessfulAssociationResult {
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   CodeSecurityResource m_resource;
+  bool m_scanConfigurationArnHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

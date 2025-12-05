@@ -102,15 +102,15 @@ class DescribeInboundIntegrationsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_targetArn;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_targetArnHasBeenSet = false;
 };
 

@@ -392,57 +392,57 @@ class AwsAmazonMqBrokerDetails {
   ///@}
  private:
   Aws::String m_authenticationStrategy;
-  bool m_authenticationStrategyHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_brokerArn;
-  bool m_brokerArnHasBeenSet = false;
 
   Aws::String m_brokerName;
-  bool m_brokerNameHasBeenSet = false;
 
   Aws::String m_deploymentMode;
-  bool m_deploymentModeHasBeenSet = false;
 
   AwsAmazonMqBrokerEncryptionOptionsDetails m_encryptionOptions;
-  bool m_encryptionOptionsHasBeenSet = false;
 
   Aws::String m_engineType;
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_hostInstanceType;
-  bool m_hostInstanceTypeHasBeenSet = false;
 
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   AwsAmazonMqBrokerLdapServerMetadataDetails m_ldapServerMetadata;
-  bool m_ldapServerMetadataHasBeenSet = false;
 
   AwsAmazonMqBrokerLogsDetails m_logs;
-  bool m_logsHasBeenSet = false;
 
   AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails m_maintenanceWindowStartTime;
-  bool m_maintenanceWindowStartTimeHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<AwsAmazonMqBrokerUsersDetails> m_users;
+  bool m_authenticationStrategyHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_brokerArnHasBeenSet = false;
+  bool m_brokerNameHasBeenSet = false;
+  bool m_deploymentModeHasBeenSet = false;
+  bool m_encryptionOptionsHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_hostInstanceTypeHasBeenSet = false;
+  bool m_brokerIdHasBeenSet = false;
+  bool m_ldapServerMetadataHasBeenSet = false;
+  bool m_logsHasBeenSet = false;
+  bool m_maintenanceWindowStartTimeHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_usersHasBeenSet = false;
 };
 

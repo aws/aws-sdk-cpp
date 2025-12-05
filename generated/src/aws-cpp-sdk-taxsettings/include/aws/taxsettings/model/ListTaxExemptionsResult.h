@@ -85,12 +85,12 @@ class ListTaxExemptionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Map<Aws::String, TaxExemptionDetails> m_taxExemptionDetailsMap;
-  bool m_taxExemptionDetailsMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_taxExemptionDetailsMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -182,30 +182,30 @@ class GetPolicyVersionResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_policyVersionId;
-  bool m_policyVersionIdHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
-  bool m_isDefaultVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_generationId;
-  bool m_generationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_policyVersionIdHasBeenSet = false;
+  bool m_isDefaultVersionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_generationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class CoverageEcsClusterDetails {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   FargateDetails m_fargateDetails;
-  bool m_fargateDetailsHasBeenSet = false;
 
   ContainerInstanceDetails m_containerInstanceDetails;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_fargateDetailsHasBeenSet = false;
   bool m_containerInstanceDetailsHasBeenSet = false;
 };
 

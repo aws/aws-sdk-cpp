@@ -339,42 +339,42 @@ class CreateClassificationJobRequest : public Macie2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowListIds;
-  bool m_allowListIdsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Aws::String> m_customDataIdentifierIds;
-  bool m_customDataIdentifierIdsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_initialRun{false};
-  bool m_initialRunHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedDataIdentifierIds;
-  bool m_managedDataIdentifierIdsHasBeenSet = false;
 
   ManagedDataIdentifierSelector m_managedDataIdentifierSelector{ManagedDataIdentifierSelector::NOT_SET};
-  bool m_managedDataIdentifierSelectorHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3JobDefinition m_s3JobDefinition;
-  bool m_s3JobDefinitionHasBeenSet = false;
 
   int m_samplingPercentage{0};
-  bool m_samplingPercentageHasBeenSet = false;
 
   JobScheduleFrequency m_scheduleFrequency;
-  bool m_scheduleFrequencyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_allowListIdsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_customDataIdentifierIdsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_initialRunHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_managedDataIdentifierIdsHasBeenSet = false;
+  bool m_managedDataIdentifierSelectorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_s3JobDefinitionHasBeenSet = false;
+  bool m_samplingPercentageHasBeenSet = false;
+  bool m_scheduleFrequencyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

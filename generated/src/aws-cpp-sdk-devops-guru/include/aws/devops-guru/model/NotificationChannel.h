@@ -84,9 +84,9 @@ class NotificationChannel {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   NotificationChannelConfig m_config;
+  bool m_idHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

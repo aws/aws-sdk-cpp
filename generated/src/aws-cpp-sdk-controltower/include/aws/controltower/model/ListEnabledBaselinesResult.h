@@ -84,12 +84,12 @@ class ListEnabledBaselinesResult {
   ///@}
  private:
   Aws::Vector<EnabledBaselineSummary> m_enabledBaselines;
-  bool m_enabledBaselinesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enabledBaselinesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

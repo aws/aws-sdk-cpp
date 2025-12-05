@@ -61,9 +61,9 @@ class InventoryData {
   ///@}
  private:
   int m_numberOfDatabases{0};
-  bool m_numberOfDatabasesHasBeenSet = false;
 
   int m_numberOfSchemas{0};
+  bool m_numberOfDatabasesHasBeenSet = false;
   bool m_numberOfSchemasHasBeenSet = false;
 };
 

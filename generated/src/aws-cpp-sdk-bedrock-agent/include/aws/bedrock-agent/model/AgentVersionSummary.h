@@ -159,24 +159,24 @@ class AgentVersionSummary {
   ///@}
  private:
   Aws::String m_agentName;
-  bool m_agentNameHasBeenSet = false;
 
   AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-  bool m_agentStatusHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   GuardrailConfiguration m_guardrailConfiguration;
+  bool m_agentNameHasBeenSet = false;
+  bool m_agentStatusHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_guardrailConfigurationHasBeenSet = false;
 };
 

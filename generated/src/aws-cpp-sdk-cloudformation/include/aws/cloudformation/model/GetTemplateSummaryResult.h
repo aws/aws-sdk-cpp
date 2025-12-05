@@ -270,36 +270,36 @@ class GetTemplateSummaryResult {
   ///@}
  private:
   Aws::Vector<ParameterDeclaration> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::String m_capabilitiesReason;
-  bool m_capabilitiesReasonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_declaredTransforms;
-  bool m_declaredTransformsHasBeenSet = false;
 
   Aws::Vector<ResourceIdentifierSummary> m_resourceIdentifierSummaries;
-  bool m_resourceIdentifierSummariesHasBeenSet = false;
 
   Warnings m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_parametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_capabilitiesReasonHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_declaredTransformsHasBeenSet = false;
+  bool m_resourceIdentifierSummariesHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

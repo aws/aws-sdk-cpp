@@ -121,18 +121,18 @@ class StreamSummary {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   StreamStatus m_streamStatus{StreamStatus::NOT_SET};
-  bool m_streamStatusHasBeenSet = false;
 
   StreamModeDetails m_streamModeDetails;
-  bool m_streamModeDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_streamCreationTimestamp{};
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_streamStatusHasBeenSet = false;
+  bool m_streamModeDetailsHasBeenSet = false;
   bool m_streamCreationTimestampHasBeenSet = false;
 };
 

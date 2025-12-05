@@ -183,27 +183,27 @@ class DescribeDatasetGroupResult {
   ///@}
  private:
   Aws::String m_datasetGroupName;
-  bool m_datasetGroupNameHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_datasetArns;
-  bool m_datasetArnsHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetGroupNameHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_datasetArnsHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

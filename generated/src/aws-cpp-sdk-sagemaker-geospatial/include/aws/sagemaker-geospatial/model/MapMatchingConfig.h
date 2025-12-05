@@ -106,15 +106,15 @@ class MapMatchingConfig {
   ///@}
  private:
   Aws::String m_idAttributeName;
-  bool m_idAttributeNameHasBeenSet = false;
 
   Aws::String m_timestampAttributeName;
-  bool m_timestampAttributeNameHasBeenSet = false;
 
   Aws::String m_xAttributeName;
-  bool m_xAttributeNameHasBeenSet = false;
 
   Aws::String m_yAttributeName;
+  bool m_idAttributeNameHasBeenSet = false;
+  bool m_timestampAttributeNameHasBeenSet = false;
+  bool m_xAttributeNameHasBeenSet = false;
   bool m_yAttributeNameHasBeenSet = false;
 };
 

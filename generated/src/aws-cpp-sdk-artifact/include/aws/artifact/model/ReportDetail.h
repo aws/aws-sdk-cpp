@@ -386,63 +386,63 @@ class ReportDetail {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_periodStart{};
-  bool m_periodStartHasBeenSet = false;
 
   Aws::Utils::DateTime m_periodEnd{};
-  bool m_periodEndHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
-  bool m_deletedAtHasBeenSet = false;
 
   PublishedState m_state{PublishedState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_series;
-  bool m_seriesHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   Aws::String m_termArn;
-  bool m_termArnHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   AcceptanceType m_acceptanceType{AcceptanceType::NOT_SET};
-  bool m_acceptanceTypeHasBeenSet = false;
 
   long long m_sequenceNumber{0};
-  bool m_sequenceNumberHasBeenSet = false;
 
   UploadState m_uploadState{UploadState::NOT_SET};
-  bool m_uploadStateHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_periodStartHasBeenSet = false;
+  bool m_periodEndHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_deletedAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_seriesHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_termArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_acceptanceTypeHasBeenSet = false;
+  bool m_sequenceNumberHasBeenSet = false;
+  bool m_uploadStateHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class DeleteAccessPointForObjectLambdaRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_accountIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

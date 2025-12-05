@@ -69,9 +69,9 @@ class ListContactsFilter {
   ///@}
  private:
   SubscriptionStatus m_filteredStatus{SubscriptionStatus::NOT_SET};
-  bool m_filteredStatusHasBeenSet = false;
 
   TopicFilter m_topicFilter;
+  bool m_filteredStatusHasBeenSet = false;
   bool m_topicFilterHasBeenSet = false;
 };
 

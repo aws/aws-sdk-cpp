@@ -191,27 +191,27 @@ class ImageDetail {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_imageDigest;
-  bool m_imageDigestHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageTags;
-  bool m_imageTagsHasBeenSet = false;
 
   long long m_imageSizeInBytes{0};
-  bool m_imageSizeInBytesHasBeenSet = false;
 
   Aws::Utils::DateTime m_imagePushedAt{};
-  bool m_imagePushedAtHasBeenSet = false;
 
   Aws::String m_imageManifestMediaType;
-  bool m_imageManifestMediaTypeHasBeenSet = false;
 
   Aws::String m_artifactMediaType;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_imageDigestHasBeenSet = false;
+  bool m_imageTagsHasBeenSet = false;
+  bool m_imageSizeInBytesHasBeenSet = false;
+  bool m_imagePushedAtHasBeenSet = false;
+  bool m_imageManifestMediaTypeHasBeenSet = false;
   bool m_artifactMediaTypeHasBeenSet = false;
 };
 

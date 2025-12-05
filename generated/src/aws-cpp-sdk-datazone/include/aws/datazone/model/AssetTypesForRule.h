@@ -74,9 +74,9 @@ class AssetTypesForRule {
   ///@}
  private:
   RuleScopeSelectionMode m_selectionMode{RuleScopeSelectionMode::NOT_SET};
-  bool m_selectionModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_specificAssetTypes;
+  bool m_selectionModeHasBeenSet = false;
   bool m_specificAssetTypesHasBeenSet = false;
 };
 

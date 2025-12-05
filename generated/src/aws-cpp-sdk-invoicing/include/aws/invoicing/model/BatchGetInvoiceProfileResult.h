@@ -67,9 +67,9 @@ class BatchGetInvoiceProfileResult {
   ///@}
  private:
   Aws::Vector<InvoiceProfile> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profilesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

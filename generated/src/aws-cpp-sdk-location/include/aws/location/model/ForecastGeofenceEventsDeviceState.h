@@ -71,9 +71,9 @@ class ForecastGeofenceEventsDeviceState {
   ///@}
  private:
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   double m_speed{0.0};
+  bool m_positionHasBeenSet = false;
   bool m_speedHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class CancelImportTaskRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_cancelReason;
-  bool m_cancelReasonHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_importTaskId;
+  bool m_cancelReasonHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_importTaskIdHasBeenSet = false;
 };
 

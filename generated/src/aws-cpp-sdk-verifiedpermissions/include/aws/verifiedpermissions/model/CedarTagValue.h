@@ -257,33 +257,33 @@ class CedarTagValue {
   ///@}
  private:
   bool m_boolean{false};
-  bool m_booleanHasBeenSet = false;
 
   EntityIdentifier m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   long long m_long{0};
-  bool m_longHasBeenSet = false;
 
   Aws::String m_string;
-  bool m_stringHasBeenSet = false;
 
   Aws::Vector<CedarTagValue> m_set;
-  bool m_setHasBeenSet = false;
 
   Aws::Map<Aws::String, CedarTagValue> m_record;
-  bool m_recordHasBeenSet = false;
 
   Aws::String m_ipaddr;
-  bool m_ipaddrHasBeenSet = false;
 
   Aws::String m_decimal;
-  bool m_decimalHasBeenSet = false;
 
   Aws::String m_datetime;
-  bool m_datetimeHasBeenSet = false;
 
   Aws::String m_duration;
+  bool m_booleanHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_longHasBeenSet = false;
+  bool m_stringHasBeenSet = false;
+  bool m_setHasBeenSet = false;
+  bool m_recordHasBeenSet = false;
+  bool m_ipaddrHasBeenSet = false;
+  bool m_decimalHasBeenSet = false;
+  bool m_datetimeHasBeenSet = false;
   bool m_durationHasBeenSet = false;
 };
 

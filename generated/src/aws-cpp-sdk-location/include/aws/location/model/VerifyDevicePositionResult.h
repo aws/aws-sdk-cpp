@@ -133,21 +133,21 @@ class VerifyDevicePositionResult {
   ///@}
  private:
   InferredState m_inferredState;
-  bool m_inferredStateHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampleTime{};
-  bool m_sampleTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_receivedTime{};
-  bool m_receivedTimeHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
-  bool m_distanceUnitHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferredStateHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_sampleTimeHasBeenSet = false;
+  bool m_receivedTimeHasBeenSet = false;
+  bool m_distanceUnitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

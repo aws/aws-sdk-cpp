@@ -86,12 +86,12 @@ class DescribeStaleSecurityGroupsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<StaleSecurityGroup> m_staleSecurityGroupSet;
-  bool m_staleSecurityGroupSetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_staleSecurityGroupSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeDeliveryStreamRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_exclusiveStartDestinationId;
+  bool m_deliveryStreamNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_exclusiveStartDestinationIdHasBeenSet = false;
 };
 

@@ -309,39 +309,39 @@ class CaseDetails {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_displayId;
-  bool m_displayIdHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_categoryCode;
-  bool m_categoryCodeHasBeenSet = false;
 
   Aws::String m_severityCode;
-  bool m_severityCodeHasBeenSet = false;
 
   Aws::String m_submittedBy;
-  bool m_submittedByHasBeenSet = false;
 
   Aws::String m_timeCreated;
-  bool m_timeCreatedHasBeenSet = false;
 
   RecentCaseCommunications m_recentCommunications;
-  bool m_recentCommunicationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ccEmailAddresses;
-  bool m_ccEmailAddressesHasBeenSet = false;
 
   Aws::String m_language;
+  bool m_caseIdHasBeenSet = false;
+  bool m_displayIdHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_categoryCodeHasBeenSet = false;
+  bool m_severityCodeHasBeenSet = false;
+  bool m_submittedByHasBeenSet = false;
+  bool m_timeCreatedHasBeenSet = false;
+  bool m_recentCommunicationsHasBeenSet = false;
+  bool m_ccEmailAddressesHasBeenSet = false;
   bool m_languageHasBeenSet = false;
 };
 

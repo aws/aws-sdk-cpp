@@ -168,21 +168,21 @@ class GetPlanRequest : public GlueRequest {
   ///@}
  private:
   Aws::Vector<MappingEntry> m_mapping;
-  bool m_mappingHasBeenSet = false;
 
   CatalogEntry m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<CatalogEntry> m_sinks;
-  bool m_sinksHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   Language m_language{Language::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalPlanOptionsMap;
+  bool m_mappingHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sinksHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
   bool m_additionalPlanOptionsMapHasBeenSet = false;
 };
 

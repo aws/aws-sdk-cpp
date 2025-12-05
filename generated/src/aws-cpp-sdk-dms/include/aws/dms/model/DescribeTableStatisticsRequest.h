@@ -119,15 +119,15 @@ class DescribeTableStatisticsRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_replicationTaskArnHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

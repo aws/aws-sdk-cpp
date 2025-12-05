@@ -69,9 +69,9 @@ class CreateOAuth2TokenResult {
   ///@}
  private:
   CreateOAuth2TokenResponseBody m_tokenOutput;
-  bool m_tokenOutputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class ShadowModeConfig {
   ///@}
  private:
   Aws::String m_sourceModelVariantName;
-  bool m_sourceModelVariantNameHasBeenSet = false;
 
   Aws::Vector<ShadowModelVariantConfig> m_shadowModelVariants;
+  bool m_sourceModelVariantNameHasBeenSet = false;
   bool m_shadowModelVariantsHasBeenSet = false;
 };
 

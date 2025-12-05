@@ -99,12 +99,12 @@ class GetImageFrameResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_imageFrameBlob{};
-  bool m_imageFrameBlobHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageFrameBlobHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

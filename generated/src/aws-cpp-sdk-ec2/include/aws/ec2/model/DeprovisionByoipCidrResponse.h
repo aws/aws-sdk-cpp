@@ -60,9 +60,9 @@ class DeprovisionByoipCidrResponse {
   ///@}
  private:
   ByoipCidr m_byoipCidr;
-  bool m_byoipCidrHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_byoipCidrHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

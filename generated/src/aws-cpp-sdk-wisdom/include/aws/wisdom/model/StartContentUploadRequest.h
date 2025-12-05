@@ -84,12 +84,12 @@ class StartContentUploadRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   int m_presignedUrlTimeToLive{0};
+  bool m_contentTypeHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_presignedUrlTimeToLiveHasBeenSet = false;
 };
 

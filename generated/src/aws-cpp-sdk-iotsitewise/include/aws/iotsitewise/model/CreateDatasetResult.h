@@ -100,15 +100,15 @@ class CreateDatasetResult {
   ///@}
  private:
   Aws::String m_datasetId;
-  bool m_datasetIdHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   DatasetStatus m_datasetStatus;
-  bool m_datasetStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

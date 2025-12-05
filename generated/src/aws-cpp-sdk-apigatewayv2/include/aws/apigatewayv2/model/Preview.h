@@ -86,12 +86,12 @@ class Preview {
   ///@}
  private:
   PreviewStatus m_previewStatus{PreviewStatus::NOT_SET};
-  bool m_previewStatusHasBeenSet = false;
 
   Aws::String m_previewUrl;
-  bool m_previewUrlHasBeenSet = false;
 
   StatusException m_statusException;
+  bool m_previewStatusHasBeenSet = false;
+  bool m_previewUrlHasBeenSet = false;
   bool m_statusExceptionHasBeenSet = false;
 };
 

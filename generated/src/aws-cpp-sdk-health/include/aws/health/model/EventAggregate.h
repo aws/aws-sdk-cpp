@@ -68,9 +68,9 @@ class EventAggregate {
   ///@}
  private:
   Aws::String m_aggregateValue;
-  bool m_aggregateValueHasBeenSet = false;
 
   int m_count{0};
+  bool m_aggregateValueHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

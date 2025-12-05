@@ -112,15 +112,15 @@ class UpdateClusterKafkaVersionRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   ConfigurationInfo m_configurationInfo;
-  bool m_configurationInfoHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_targetKafkaVersion;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_configurationInfoHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
   bool m_targetKafkaVersionHasBeenSet = false;
 };
 

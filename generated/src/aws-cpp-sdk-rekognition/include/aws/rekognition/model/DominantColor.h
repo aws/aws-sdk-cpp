@@ -151,24 +151,24 @@ class DominantColor {
   ///@}
  private:
   int m_red{0};
-  bool m_redHasBeenSet = false;
 
   int m_blue{0};
-  bool m_blueHasBeenSet = false;
 
   int m_green{0};
-  bool m_greenHasBeenSet = false;
 
   Aws::String m_hexCode;
-  bool m_hexCodeHasBeenSet = false;
 
   Aws::String m_cSSColor;
-  bool m_cSSColorHasBeenSet = false;
 
   Aws::String m_simplifiedColor;
-  bool m_simplifiedColorHasBeenSet = false;
 
   double m_pixelPercent{0.0};
+  bool m_redHasBeenSet = false;
+  bool m_blueHasBeenSet = false;
+  bool m_greenHasBeenSet = false;
+  bool m_hexCodeHasBeenSet = false;
+  bool m_cSSColorHasBeenSet = false;
+  bool m_simplifiedColorHasBeenSet = false;
   bool m_pixelPercentHasBeenSet = false;
 };
 

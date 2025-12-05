@@ -65,9 +65,9 @@ class PutEventsRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   EventsRequest m_eventsRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_eventsRequestHasBeenSet = false;
 };
 

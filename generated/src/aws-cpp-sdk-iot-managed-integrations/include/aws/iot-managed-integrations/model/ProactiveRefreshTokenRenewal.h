@@ -63,9 +63,9 @@ class ProactiveRefreshTokenRenewal {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_daysBeforeRenewal{0};
+  bool m_enabledHasBeenSet = false;
   bool m_daysBeforeRenewalHasBeenSet = false;
 };
 

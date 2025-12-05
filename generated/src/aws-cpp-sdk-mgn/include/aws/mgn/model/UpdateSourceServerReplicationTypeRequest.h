@@ -82,12 +82,12 @@ class UpdateSourceServerReplicationTypeRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   ReplicationType m_replicationType{ReplicationType::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
   Aws::String m_sourceServerID;
+  bool m_accountIDHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class DolbyVision {
   ///@}
  private:
   DolbyVisionLevel6Metadata m_l6Metadata;
-  bool m_l6MetadataHasBeenSet = false;
 
   DolbyVisionLevel6Mode m_l6Mode{DolbyVisionLevel6Mode::NOT_SET};
-  bool m_l6ModeHasBeenSet = false;
 
   DolbyVisionMapping m_mapping{DolbyVisionMapping::NOT_SET};
-  bool m_mappingHasBeenSet = false;
 
   DolbyVisionProfile m_profile{DolbyVisionProfile::NOT_SET};
+  bool m_l6MetadataHasBeenSet = false;
+  bool m_l6ModeHasBeenSet = false;
+  bool m_mappingHasBeenSet = false;
   bool m_profileHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class UpdateRumMetricDefinitionRequest : public CloudWatchRUMRequest {
   ///@}
  private:
   Aws::String m_appMonitorName;
-  bool m_appMonitorNameHasBeenSet = false;
 
   MetricDestination m_destination{MetricDestination::NOT_SET};
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   MetricDefinitionRequest m_metricDefinition;
-  bool m_metricDefinitionHasBeenSet = false;
 
   Aws::String m_metricDefinitionId;
+  bool m_appMonitorNameHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_metricDefinitionHasBeenSet = false;
   bool m_metricDefinitionIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeInterconnectsResult {
   ///@}
  private:
   Aws::Vector<Interconnect> m_interconnects;
-  bool m_interconnectsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_interconnectsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class TelemetryConfiguration {
   ///@}
  private:
   ConfigurationSyncStatus m_configurationSyncStatus{ConfigurationSyncStatus::NOT_SET};
-  bool m_configurationSyncStatusHasBeenSet = false;
 
   Telemetry m_telemetry{Telemetry::NOT_SET};
+  bool m_configurationSyncStatusHasBeenSet = false;
   bool m_telemetryHasBeenSet = false;
 };
 

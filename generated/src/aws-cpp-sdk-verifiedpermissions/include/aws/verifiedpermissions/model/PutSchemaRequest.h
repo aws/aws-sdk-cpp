@@ -69,9 +69,9 @@ class PutSchemaRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   SchemaDefinition m_definition;
+  bool m_policyStoreIdHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

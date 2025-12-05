@@ -76,12 +76,12 @@ class CreateCaseRuleResult {
   ///@}
  private:
   Aws::String m_caseRuleId;
-  bool m_caseRuleIdHasBeenSet = false;
 
   Aws::String m_caseRuleArn;
-  bool m_caseRuleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_caseRuleIdHasBeenSet = false;
+  bool m_caseRuleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

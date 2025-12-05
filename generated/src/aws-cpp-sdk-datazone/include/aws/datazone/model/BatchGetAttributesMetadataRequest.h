@@ -130,18 +130,18 @@ class BatchGetAttributesMetadataRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_attributeIdentifiers;
-  bool m_attributeIdentifiersHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   Aws::String m_entityRevision;
-  bool m_entityRevisionHasBeenSet = false;
 
   AttributeEntityType m_entityType{AttributeEntityType::NOT_SET};
+  bool m_attributeIdentifiersHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityRevisionHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
 };
 

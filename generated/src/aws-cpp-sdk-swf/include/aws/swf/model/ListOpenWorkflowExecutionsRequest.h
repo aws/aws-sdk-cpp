@@ -195,27 +195,27 @@ class ListOpenWorkflowExecutionsRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   ExecutionTimeFilter m_startTimeFilter;
-  bool m_startTimeFilterHasBeenSet = false;
 
   WorkflowTypeFilter m_typeFilter;
-  bool m_typeFilterHasBeenSet = false;
 
   TagFilter m_tagFilter;
-  bool m_tagFilterHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_maximumPageSize{0};
-  bool m_maximumPageSizeHasBeenSet = false;
 
   bool m_reverseOrder{false};
-  bool m_reverseOrderHasBeenSet = false;
 
   WorkflowExecutionFilter m_executionFilter;
+  bool m_domainHasBeenSet = false;
+  bool m_startTimeFilterHasBeenSet = false;
+  bool m_typeFilterHasBeenSet = false;
+  bool m_tagFilterHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_maximumPageSizeHasBeenSet = false;
+  bool m_reverseOrderHasBeenSet = false;
   bool m_executionFilterHasBeenSet = false;
 };
 

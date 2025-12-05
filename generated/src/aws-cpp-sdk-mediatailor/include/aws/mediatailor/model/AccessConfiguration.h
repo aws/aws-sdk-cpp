@@ -110,9 +110,9 @@ class AccessConfiguration {
   ///@}
  private:
   AccessType m_accessType{AccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   SecretsManagerAccessTokenConfiguration m_secretsManagerAccessTokenConfiguration;
+  bool m_accessTypeHasBeenSet = false;
   bool m_secretsManagerAccessTokenConfigurationHasBeenSet = false;
 };
 

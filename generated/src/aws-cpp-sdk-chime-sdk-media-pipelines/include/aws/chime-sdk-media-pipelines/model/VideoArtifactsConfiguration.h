@@ -65,9 +65,9 @@ class VideoArtifactsConfiguration {
   ///@}
  private:
   ArtifactsState m_state{ArtifactsState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   VideoMuxType m_muxType{VideoMuxType::NOT_SET};
+  bool m_stateHasBeenSet = false;
   bool m_muxTypeHasBeenSet = false;
 };
 

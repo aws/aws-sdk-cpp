@@ -70,9 +70,9 @@ class Resource {
   ///@}
  private:
   PortalResource m_portal;
-  bool m_portalHasBeenSet = false;
 
   ProjectResource m_project;
+  bool m_portalHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

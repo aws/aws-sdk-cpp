@@ -74,9 +74,9 @@ class AddClientIDToOpenIDConnectProviderRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_openIDConnectProviderArn;
-  bool m_openIDConnectProviderArnHasBeenSet = false;
 
   Aws::String m_clientID;
+  bool m_openIDConnectProviderArnHasBeenSet = false;
   bool m_clientIDHasBeenSet = false;
 };
 

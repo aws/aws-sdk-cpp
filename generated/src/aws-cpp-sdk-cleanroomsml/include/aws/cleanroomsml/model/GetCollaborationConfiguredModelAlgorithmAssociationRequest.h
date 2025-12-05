@@ -68,9 +68,9 @@ class GetCollaborationConfiguredModelAlgorithmAssociationRequest : public CleanR
   ///@}
  private:
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
 };
 

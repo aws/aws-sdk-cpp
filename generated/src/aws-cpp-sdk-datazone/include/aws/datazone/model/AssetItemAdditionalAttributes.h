@@ -136,15 +136,15 @@ class AssetItemAdditionalAttributes {
   ///@}
  private:
   Aws::Vector<FormOutput> m_formsOutput;
-  bool m_formsOutputHasBeenSet = false;
 
   Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
-  bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
 
   Aws::Vector<MatchRationaleItem> m_matchRationale;
-  bool m_matchRationaleHasBeenSet = false;
 
   Aws::Vector<FormOutput> m_readOnlyFormsOutput;
+  bool m_formsOutputHasBeenSet = false;
+  bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
+  bool m_matchRationaleHasBeenSet = false;
   bool m_readOnlyFormsOutputHasBeenSet = false;
 };
 

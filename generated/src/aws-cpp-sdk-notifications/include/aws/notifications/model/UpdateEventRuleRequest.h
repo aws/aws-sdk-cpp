@@ -95,12 +95,12 @@ class UpdateEventRuleRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_arnHasBeenSet = false;
+  bool m_eventPatternHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

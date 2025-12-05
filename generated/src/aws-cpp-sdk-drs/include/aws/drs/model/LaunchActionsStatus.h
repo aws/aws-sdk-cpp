@@ -77,9 +77,9 @@ class LaunchActionsStatus {
   ///@}
  private:
   Aws::Vector<LaunchActionRun> m_runs;
-  bool m_runsHasBeenSet = false;
 
   Aws::String m_ssmAgentDiscoveryDatetime;
+  bool m_runsHasBeenSet = false;
   bool m_ssmAgentDiscoveryDatetimeHasBeenSet = false;
 };
 

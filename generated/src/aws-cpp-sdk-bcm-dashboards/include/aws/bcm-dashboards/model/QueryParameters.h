@@ -132,18 +132,18 @@ class QueryParameters {
   ///@}
  private:
   CostAndUsageQuery m_costAndUsage;
-  bool m_costAndUsageHasBeenSet = false;
 
   SavingsPlansCoverageQuery m_savingsPlansCoverage;
-  bool m_savingsPlansCoverageHasBeenSet = false;
 
   SavingsPlansUtilizationQuery m_savingsPlansUtilization;
-  bool m_savingsPlansUtilizationHasBeenSet = false;
 
   ReservationCoverageQuery m_reservationCoverage;
-  bool m_reservationCoverageHasBeenSet = false;
 
   ReservationUtilizationQuery m_reservationUtilization;
+  bool m_costAndUsageHasBeenSet = false;
+  bool m_savingsPlansCoverageHasBeenSet = false;
+  bool m_savingsPlansUtilizationHasBeenSet = false;
+  bool m_reservationCoverageHasBeenSet = false;
   bool m_reservationUtilizationHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class UpdateVehicleError {
   ///@}
  private:
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   int m_code{0};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_vehicleNameHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

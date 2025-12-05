@@ -113,15 +113,15 @@ class DescribeInstancesHealthResult {
   ///@}
  private:
   Aws::Vector<SingleInstanceHealth> m_instanceHealthList;
-  bool m_instanceHealthListHasBeenSet = false;
 
   Aws::Utils::DateTime m_refreshedAt{};
-  bool m_refreshedAtHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceHealthListHasBeenSet = false;
+  bool m_refreshedAtHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

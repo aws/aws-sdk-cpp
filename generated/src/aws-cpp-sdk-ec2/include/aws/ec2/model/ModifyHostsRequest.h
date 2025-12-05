@@ -161,21 +161,21 @@ class ModifyHostsRequest : public EC2Request {
   ///@}
  private:
   HostRecovery m_hostRecovery{HostRecovery::NOT_SET};
-  bool m_hostRecoveryHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   HostMaintenance m_hostMaintenance{HostMaintenance::NOT_SET};
-  bool m_hostMaintenanceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hostIds;
-  bool m_hostIdsHasBeenSet = false;
 
   AutoPlacement m_autoPlacement{AutoPlacement::NOT_SET};
+  bool m_hostRecoveryHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_hostMaintenanceHasBeenSet = false;
+  bool m_hostIdsHasBeenSet = false;
   bool m_autoPlacementHasBeenSet = false;
 };
 

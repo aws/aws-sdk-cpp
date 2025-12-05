@@ -86,12 +86,12 @@ class ListVpcEndpointsResult {
   ///@}
  private:
   Aws::Vector<VpcEndpointSummary> m_vpcEndpointSummaries;
-  bool m_vpcEndpointSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcEndpointSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

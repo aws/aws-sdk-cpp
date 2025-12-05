@@ -127,18 +127,18 @@ class AliasListEntry {
   ///@}
  private:
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::String m_aliasArn;
-  bool m_aliasArnHasBeenSet = false;
 
   Aws::String m_targetKeyId;
-  bool m_targetKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
+  bool m_aliasNameHasBeenSet = false;
+  bool m_aliasArnHasBeenSet = false;
+  bool m_targetKeyIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastUpdatedDateHasBeenSet = false;
 };
 

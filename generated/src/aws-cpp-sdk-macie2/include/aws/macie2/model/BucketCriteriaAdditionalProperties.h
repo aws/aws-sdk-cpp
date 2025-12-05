@@ -169,24 +169,24 @@ class BucketCriteriaAdditionalProperties {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eq;
-  bool m_eqHasBeenSet = false;
 
   long long m_gt{0};
-  bool m_gtHasBeenSet = false;
 
   long long m_gte{0};
-  bool m_gteHasBeenSet = false;
 
   long long m_lt{0};
-  bool m_ltHasBeenSet = false;
 
   long long m_lte{0};
-  bool m_lteHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_neq;
-  bool m_neqHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_eqHasBeenSet = false;
+  bool m_gtHasBeenSet = false;
+  bool m_gteHasBeenSet = false;
+  bool m_ltHasBeenSet = false;
+  bool m_lteHasBeenSet = false;
+  bool m_neqHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

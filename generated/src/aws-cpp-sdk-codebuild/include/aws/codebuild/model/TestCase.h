@@ -201,30 +201,30 @@ class TestCase {
   ///@}
  private:
   Aws::String m_reportArn;
-  bool m_reportArnHasBeenSet = false;
 
   Aws::String m_testRawDataPath;
-  bool m_testRawDataPathHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   long long m_durationInNanoSeconds{0};
-  bool m_durationInNanoSecondsHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_expired{};
-  bool m_expiredHasBeenSet = false;
 
   Aws::String m_testSuiteName;
+  bool m_reportArnHasBeenSet = false;
+  bool m_testRawDataPathHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_durationInNanoSecondsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_expiredHasBeenSet = false;
   bool m_testSuiteNameHasBeenSet = false;
 };
 

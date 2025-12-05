@@ -75,9 +75,9 @@ class EnvironmentLink {
   ///@}
  private:
   Aws::String m_linkName;
-  bool m_linkNameHasBeenSet = false;
 
   Aws::String m_environmentName;
+  bool m_linkNameHasBeenSet = false;
   bool m_environmentNameHasBeenSet = false;
 };
 

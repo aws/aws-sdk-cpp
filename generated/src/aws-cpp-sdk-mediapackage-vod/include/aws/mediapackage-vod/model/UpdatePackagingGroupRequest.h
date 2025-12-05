@@ -68,9 +68,9 @@ class UpdatePackagingGroupRequest : public MediaPackageVodRequest {
   ///@}
  private:
   Authorization m_authorization;
-  bool m_authorizationHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_authorizationHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ChoiceContent {
   ///@}
  private:
   Aws::String m_displayText;
-  bool m_displayTextHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_displayTextHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

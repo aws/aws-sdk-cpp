@@ -92,15 +92,15 @@ class CreateShareResult {
   ///@}
  private:
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   ShareStatus m_status{ShareStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_shareName;
-  bool m_shareNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shareIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_shareNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

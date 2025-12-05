@@ -110,15 +110,15 @@ class CustomerManagedFleetConfiguration {
   ///@}
  private:
   AutoScalingMode m_mode{AutoScalingMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   CustomerManagedWorkerCapabilities m_workerCapabilities;
-  bool m_workerCapabilitiesHasBeenSet = false;
 
   Aws::String m_storageProfileId;
-  bool m_storageProfileIdHasBeenSet = false;
 
   TagPropagationMode m_tagPropagationMode{TagPropagationMode::NOT_SET};
+  bool m_modeHasBeenSet = false;
+  bool m_workerCapabilitiesHasBeenSet = false;
+  bool m_storageProfileIdHasBeenSet = false;
   bool m_tagPropagationModeHasBeenSet = false;
 };
 

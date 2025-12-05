@@ -87,12 +87,12 @@ class UpdateResourceDataSyncRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_syncName;
-  bool m_syncNameHasBeenSet = false;
 
   Aws::String m_syncType;
-  bool m_syncTypeHasBeenSet = false;
 
   ResourceDataSyncSource m_syncSource;
+  bool m_syncNameHasBeenSet = false;
+  bool m_syncTypeHasBeenSet = false;
   bool m_syncSourceHasBeenSet = false;
 };
 

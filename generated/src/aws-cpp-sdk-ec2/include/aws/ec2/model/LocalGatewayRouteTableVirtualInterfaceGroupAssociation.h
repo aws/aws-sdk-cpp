@@ -197,27 +197,27 @@ class LocalGatewayRouteTableVirtualInterfaceGroupAssociation {
   ///@}
  private:
   Aws::String m_localGatewayRouteTableVirtualInterfaceGroupAssociationId;
-  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = false;
 
   Aws::String m_localGatewayVirtualInterfaceGroupId;
-  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
   Aws::String m_localGatewayId;
-  bool m_localGatewayIdHasBeenSet = false;
 
   Aws::String m_localGatewayRouteTableId;
-  bool m_localGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_localGatewayRouteTableArn;
-  bool m_localGatewayRouteTableArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
+  bool m_localGatewayIdHasBeenSet = false;
+  bool m_localGatewayRouteTableIdHasBeenSet = false;
+  bool m_localGatewayRouteTableArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

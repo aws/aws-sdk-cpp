@@ -67,9 +67,9 @@ class UpdateAnomalyMonitorRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_monitorName;
+  bool m_monitorArnHasBeenSet = false;
   bool m_monitorNameHasBeenSet = false;
 };
 

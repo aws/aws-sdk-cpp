@@ -96,9 +96,9 @@ class RecordingMode {
   ///@}
  private:
   RecordingFrequency m_recordingFrequency{RecordingFrequency::NOT_SET};
-  bool m_recordingFrequencyHasBeenSet = false;
 
   Aws::Vector<RecordingModeOverride> m_recordingModeOverrides;
+  bool m_recordingFrequencyHasBeenSet = false;
   bool m_recordingModeOverridesHasBeenSet = false;
 };
 

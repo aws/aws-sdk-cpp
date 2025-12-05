@@ -66,9 +66,9 @@ class DeleteMessageTemplateRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_messageTemplateIdHasBeenSet = false;
 };
 

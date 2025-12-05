@@ -97,12 +97,12 @@ class UpdateZonalShiftRequest : public ARCZonalShiftRequest {
   ///@}
  private:
   Aws::String m_zonalShiftId;
-  bool m_zonalShiftIdHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_expiresIn;
+  bool m_zonalShiftIdHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_expiresInHasBeenSet = false;
 };
 

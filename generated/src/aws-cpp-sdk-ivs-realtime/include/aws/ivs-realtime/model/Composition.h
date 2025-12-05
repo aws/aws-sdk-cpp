@@ -202,27 +202,27 @@ class Composition {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_stageArn;
-  bool m_stageArnHasBeenSet = false;
 
   CompositionState m_state{CompositionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   LayoutConfiguration m_layout;
-  bool m_layoutHasBeenSet = false;
 
   Aws::Vector<Destination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_arnHasBeenSet = false;
+  bool m_stageArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_layoutHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

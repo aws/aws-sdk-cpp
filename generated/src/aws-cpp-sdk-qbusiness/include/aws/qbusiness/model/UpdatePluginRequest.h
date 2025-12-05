@@ -156,24 +156,24 @@ class UpdatePluginRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   PluginState m_state{PluginState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_serverUrl;
-  bool m_serverUrlHasBeenSet = false;
 
   CustomPluginConfiguration m_customPluginConfiguration;
-  bool m_customPluginConfigurationHasBeenSet = false;
 
   PluginAuthConfiguration m_authConfiguration;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_pluginIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_serverUrlHasBeenSet = false;
+  bool m_customPluginConfigurationHasBeenSet = false;
   bool m_authConfigurationHasBeenSet = false;
 };
 

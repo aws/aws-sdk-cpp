@@ -77,9 +77,9 @@ class PredictQAppInputOptions {
   ///@}
  private:
   Aws::Vector<ConversationMessage> m_conversation;
-  bool m_conversationHasBeenSet = false;
 
   Aws::String m_problemStatement;
+  bool m_conversationHasBeenSet = false;
   bool m_problemStatementHasBeenSet = false;
 };
 

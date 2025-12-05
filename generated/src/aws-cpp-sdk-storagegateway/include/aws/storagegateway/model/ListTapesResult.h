@@ -92,12 +92,12 @@ class ListTapesResult {
   ///@}
  private:
   Aws::Vector<TapeInfo> m_tapeInfos;
-  bool m_tapeInfosHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tapeInfosHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

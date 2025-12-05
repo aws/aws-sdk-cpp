@@ -70,9 +70,9 @@ class IngressStringToEvaluate {
   ///@}
  private:
   IngressStringEmailAttribute m_attribute{IngressStringEmailAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   IngressAnalysis m_analysis;
+  bool m_attributeHasBeenSet = false;
   bool m_analysisHasBeenSet = false;
 };
 

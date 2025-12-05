@@ -76,9 +76,9 @@ class DatasetSource {
   ///@}
  private:
   GroundTruthManifest m_groundTruthManifest;
-  bool m_groundTruthManifestHasBeenSet = false;
 
   Aws::String m_datasetArn;
+  bool m_groundTruthManifestHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;
 };
 

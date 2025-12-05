@@ -109,15 +109,15 @@ class DeleteBuildBatchResult {
   ///@}
  private:
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_buildsDeleted;
-  bool m_buildsDeletedHasBeenSet = false;
 
   Aws::Vector<BuildNotDeleted> m_buildsNotDeleted;
-  bool m_buildsNotDeletedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_buildsDeletedHasBeenSet = false;
+  bool m_buildsNotDeletedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

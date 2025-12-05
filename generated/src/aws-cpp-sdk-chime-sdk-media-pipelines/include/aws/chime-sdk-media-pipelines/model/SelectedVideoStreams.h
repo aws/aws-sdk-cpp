@@ -82,9 +82,9 @@ class SelectedVideoStreams {
   ///@}
  private:
   Aws::Vector<Aws::String> m_attendeeIds;
-  bool m_attendeeIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_externalUserIds;
+  bool m_attendeeIdsHasBeenSet = false;
   bool m_externalUserIdsHasBeenSet = false;
 };
 

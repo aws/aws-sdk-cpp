@@ -110,15 +110,15 @@ class ListExecutorsRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   ExecutorState m_executorStateFilter{ExecutorState::NOT_SET};
-  bool m_executorStateFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_executorStateFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

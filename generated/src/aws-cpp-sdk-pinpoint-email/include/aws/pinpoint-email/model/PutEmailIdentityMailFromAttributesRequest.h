@@ -99,12 +99,12 @@ class PutEmailIdentityMailFromAttributesRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   Aws::String m_mailFromDomain;
-  bool m_mailFromDomainHasBeenSet = false;
 
   BehaviorOnMxFailure m_behaviorOnMxFailure{BehaviorOnMxFailure::NOT_SET};
+  bool m_emailIdentityHasBeenSet = false;
+  bool m_mailFromDomainHasBeenSet = false;
   bool m_behaviorOnMxFailureHasBeenSet = false;
 };
 

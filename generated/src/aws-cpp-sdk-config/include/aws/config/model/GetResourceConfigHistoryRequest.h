@@ -166,24 +166,24 @@ class GetResourceConfigHistoryRequest : public ConfigServiceRequest {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_laterTime{};
-  bool m_laterTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_earlierTime{};
-  bool m_earlierTimeHasBeenSet = false;
 
   ChronologicalOrder m_chronologicalOrder{ChronologicalOrder::NOT_SET};
-  bool m_chronologicalOrderHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_laterTimeHasBeenSet = false;
+  bool m_earlierTimeHasBeenSet = false;
+  bool m_chronologicalOrderHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

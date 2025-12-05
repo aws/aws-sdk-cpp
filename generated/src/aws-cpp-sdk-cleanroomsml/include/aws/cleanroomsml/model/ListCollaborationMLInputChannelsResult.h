@@ -87,12 +87,12 @@ class ListCollaborationMLInputChannelsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CollaborationMLInputChannelSummary> m_collaborationMLInputChannelsList;
-  bool m_collaborationMLInputChannelsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_collaborationMLInputChannelsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

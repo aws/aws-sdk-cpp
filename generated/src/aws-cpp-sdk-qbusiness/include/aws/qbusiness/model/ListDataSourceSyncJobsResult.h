@@ -85,12 +85,12 @@ class ListDataSourceSyncJobsResult {
   ///@}
  private:
   Aws::Vector<DataSourceSyncJob> m_history;
-  bool m_historyHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_historyHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

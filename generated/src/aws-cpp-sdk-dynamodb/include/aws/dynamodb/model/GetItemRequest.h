@@ -222,24 +222,24 @@ class GetItemRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributesToGet;
-  bool m_attributesToGetHasBeenSet = false;
 
   bool m_consistentRead{false};
-  bool m_consistentReadHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
-  bool m_returnConsumedCapacityHasBeenSet = false;
 
   Aws::String m_projectionExpression;
-  bool m_projectionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
+  bool m_tableNameHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_attributesToGetHasBeenSet = false;
+  bool m_consistentReadHasBeenSet = false;
+  bool m_returnConsumedCapacityHasBeenSet = false;
+  bool m_projectionExpressionHasBeenSet = false;
   bool m_expressionAttributeNamesHasBeenSet = false;
 };
 

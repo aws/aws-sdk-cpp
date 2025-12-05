@@ -70,9 +70,9 @@ class CapacityReservation {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CapacityReservationType m_type{CapacityReservationType::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

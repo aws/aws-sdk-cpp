@@ -106,15 +106,15 @@ class GetProductRestEndpointPageRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_includeRawDisplayContent;
-  bool m_includeRawDisplayContentHasBeenSet = false;
 
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_productRestEndpointPageId;
-  bool m_productRestEndpointPageIdHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccountId;
+  bool m_includeRawDisplayContentHasBeenSet = false;
+  bool m_portalProductIdHasBeenSet = false;
+  bool m_productRestEndpointPageIdHasBeenSet = false;
   bool m_resourceOwnerAccountIdHasBeenSet = false;
 };
 

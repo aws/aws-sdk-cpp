@@ -78,12 +78,12 @@ class StartDeviceDiscoveryResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

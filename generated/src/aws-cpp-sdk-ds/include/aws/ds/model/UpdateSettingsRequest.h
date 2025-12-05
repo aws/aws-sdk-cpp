@@ -75,9 +75,9 @@ class UpdateSettingsRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Setting> m_settings;
+  bool m_directoryIdHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

@@ -110,18 +110,18 @@ class DescribeInsightsRefreshResult {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   InsightsRefreshStatus m_status{InsightsRefreshStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

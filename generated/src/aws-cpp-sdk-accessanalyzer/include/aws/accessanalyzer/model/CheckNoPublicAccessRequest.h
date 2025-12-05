@@ -67,9 +67,9 @@ class CheckNoPublicAccessRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   AccessCheckResourceType m_resourceType{AccessCheckResourceType::NOT_SET};
+  bool m_policyDocumentHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails m_tag;
-  bool m_tagHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_prefixHasBeenSet = false;
+  bool m_tagHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

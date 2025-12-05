@@ -112,12 +112,12 @@ class Permission {
   ///@}
  private:
   Aws::String m_granteeType;
-  bool m_granteeTypeHasBeenSet = false;
 
   Aws::String m_grantee;
-  bool m_granteeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_access;
+  bool m_granteeTypeHasBeenSet = false;
+  bool m_granteeHasBeenSet = false;
   bool m_accessHasBeenSet = false;
 };
 

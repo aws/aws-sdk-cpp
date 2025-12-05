@@ -78,9 +78,9 @@ class TaskContainerDependency {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::String m_condition;
+  bool m_containerNameHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

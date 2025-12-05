@@ -68,9 +68,9 @@ class ResourceGroupByRule {
   ///@}
  private:
   ResourceGroupByField m_groupByField{ResourceGroupByField::NOT_SET};
-  bool m_groupByFieldHasBeenSet = false;
 
   ResourcesFilters m_filters;
+  bool m_groupByFieldHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

@@ -139,18 +139,18 @@ class CreateGroupRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_precedence{0};
+  bool m_groupNameHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_precedenceHasBeenSet = false;
 };
 

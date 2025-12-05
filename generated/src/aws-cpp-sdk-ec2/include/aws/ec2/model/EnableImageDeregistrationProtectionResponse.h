@@ -62,9 +62,9 @@ class EnableImageDeregistrationProtectionResponse {
   ///@}
  private:
   Aws::String m_return;
-  bool m_returnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

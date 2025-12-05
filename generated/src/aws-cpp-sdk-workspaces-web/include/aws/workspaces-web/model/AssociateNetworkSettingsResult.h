@@ -76,12 +76,12 @@ class AssociateNetworkSettingsResult {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_networkSettingsArn;
-  bool m_networkSettingsArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalArnHasBeenSet = false;
+  bool m_networkSettingsArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

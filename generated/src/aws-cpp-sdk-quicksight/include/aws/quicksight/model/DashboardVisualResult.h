@@ -177,27 +177,27 @@ class DashboardVisualResult {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_dashboardName;
-  bool m_dashboardNameHasBeenSet = false;
 
   Aws::String m_sheetId;
-  bool m_sheetIdHasBeenSet = false;
 
   Aws::String m_sheetName;
-  bool m_sheetNameHasBeenSet = false;
 
   Aws::String m_visualId;
-  bool m_visualIdHasBeenSet = false;
 
   Aws::String m_visualTitle;
-  bool m_visualTitleHasBeenSet = false;
 
   Aws::String m_visualSubtitle;
-  bool m_visualSubtitleHasBeenSet = false;
 
   Aws::String m_dashboardUrl;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_dashboardNameHasBeenSet = false;
+  bool m_sheetIdHasBeenSet = false;
+  bool m_sheetNameHasBeenSet = false;
+  bool m_visualIdHasBeenSet = false;
+  bool m_visualTitleHasBeenSet = false;
+  bool m_visualSubtitleHasBeenSet = false;
   bool m_dashboardUrlHasBeenSet = false;
 };
 

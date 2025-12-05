@@ -184,24 +184,24 @@ class CreateDecoderManifestRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_modelManifestArn;
-  bool m_modelManifestArnHasBeenSet = false;
 
   Aws::Vector<SignalDecoder> m_signalDecoders;
-  bool m_signalDecodersHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   DefaultForUnmappedSignalsType m_defaultForUnmappedSignals{DefaultForUnmappedSignalsType::NOT_SET};
-  bool m_defaultForUnmappedSignalsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_modelManifestArnHasBeenSet = false;
+  bool m_signalDecodersHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_defaultForUnmappedSignalsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

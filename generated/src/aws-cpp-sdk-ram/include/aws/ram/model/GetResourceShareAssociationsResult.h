@@ -89,12 +89,12 @@ class GetResourceShareAssociationsResult {
   ///@}
  private:
   Aws::Vector<ResourceShareAssociation> m_resourceShareAssociations;
-  bool m_resourceShareAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceShareAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -228,30 +228,30 @@ class StartCacheReportRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_locationARN;
-  bool m_locationARNHasBeenSet = false;
 
   Aws::String m_bucketRegion;
-  bool m_bucketRegionHasBeenSet = false;
 
   Aws::String m_vPCEndpointDNSName;
-  bool m_vPCEndpointDNSNameHasBeenSet = false;
 
   Aws::Vector<CacheReportFilter> m_inclusionFilters;
-  bool m_inclusionFiltersHasBeenSet = false;
 
   Aws::Vector<CacheReportFilter> m_exclusionFilters;
-  bool m_exclusionFiltersHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_fileShareARNHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_locationARNHasBeenSet = false;
+  bool m_bucketRegionHasBeenSet = false;
+  bool m_vPCEndpointDNSNameHasBeenSet = false;
+  bool m_inclusionFiltersHasBeenSet = false;
+  bool m_exclusionFiltersHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

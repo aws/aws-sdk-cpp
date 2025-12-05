@@ -268,39 +268,39 @@ class Vpc {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Tenancy m_instanceTenancy{Tenancy::NOT_SET};
-  bool m_instanceTenancyHasBeenSet = false;
 
   Aws::Vector<VpcIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-  bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 
   Aws::Vector<VpcCidrBlockAssociation> m_cidrBlockAssociationSet;
-  bool m_cidrBlockAssociationSetHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   VpcEncryptionControl m_encryptionControl;
-  bool m_encryptionControlHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   BlockPublicAccessStates m_blockPublicAccessStates;
-  bool m_blockPublicAccessStatesHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   VpcState m_state{VpcState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_dhcpOptionsId;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_instanceTenancyHasBeenSet = false;
+  bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
+  bool m_cidrBlockAssociationSetHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_encryptionControlHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_blockPublicAccessStatesHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
   bool m_dhcpOptionsIdHasBeenSet = false;
 };
 

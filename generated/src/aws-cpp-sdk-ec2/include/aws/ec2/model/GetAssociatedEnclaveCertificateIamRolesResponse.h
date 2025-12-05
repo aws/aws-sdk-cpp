@@ -68,9 +68,9 @@ class GetAssociatedEnclaveCertificateIamRolesResponse {
   ///@}
  private:
   Aws::Vector<AssociatedRole> m_associatedRoles;
-  bool m_associatedRolesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_associatedRolesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

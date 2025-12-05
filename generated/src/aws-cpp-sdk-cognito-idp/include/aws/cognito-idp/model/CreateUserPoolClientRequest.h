@@ -686,72 +686,72 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientName;
-  bool m_clientNameHasBeenSet = false;
 
   bool m_generateSecret{false};
-  bool m_generateSecretHasBeenSet = false;
 
   int m_refreshTokenValidity{0};
-  bool m_refreshTokenValidityHasBeenSet = false;
 
   int m_accessTokenValidity{0};
-  bool m_accessTokenValidityHasBeenSet = false;
 
   int m_idTokenValidity{0};
-  bool m_idTokenValidityHasBeenSet = false;
 
   TokenValidityUnitsType m_tokenValidityUnits;
-  bool m_tokenValidityUnitsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readAttributes;
-  bool m_readAttributesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_writeAttributes;
-  bool m_writeAttributesHasBeenSet = false;
 
   Aws::Vector<ExplicitAuthFlowsType> m_explicitAuthFlows;
-  bool m_explicitAuthFlowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedIdentityProviders;
-  bool m_supportedIdentityProvidersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_callbackURLs;
-  bool m_callbackURLsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logoutURLs;
-  bool m_logoutURLsHasBeenSet = false;
 
   Aws::String m_defaultRedirectURI;
-  bool m_defaultRedirectURIHasBeenSet = false;
 
   Aws::Vector<OAuthFlowType> m_allowedOAuthFlows;
-  bool m_allowedOAuthFlowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedOAuthScopes;
-  bool m_allowedOAuthScopesHasBeenSet = false;
 
   bool m_allowedOAuthFlowsUserPoolClient{false};
-  bool m_allowedOAuthFlowsUserPoolClientHasBeenSet = false;
 
   AnalyticsConfigurationType m_analyticsConfiguration;
-  bool m_analyticsConfigurationHasBeenSet = false;
 
   PreventUserExistenceErrorTypes m_preventUserExistenceErrors{PreventUserExistenceErrorTypes::NOT_SET};
-  bool m_preventUserExistenceErrorsHasBeenSet = false;
 
   bool m_enableTokenRevocation{false};
-  bool m_enableTokenRevocationHasBeenSet = false;
 
   bool m_enablePropagateAdditionalUserContextData{false};
-  bool m_enablePropagateAdditionalUserContextDataHasBeenSet = false;
 
   int m_authSessionValidity{0};
-  bool m_authSessionValidityHasBeenSet = false;
 
   RefreshTokenRotationType m_refreshTokenRotation;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_clientNameHasBeenSet = false;
+  bool m_generateSecretHasBeenSet = false;
+  bool m_refreshTokenValidityHasBeenSet = false;
+  bool m_accessTokenValidityHasBeenSet = false;
+  bool m_idTokenValidityHasBeenSet = false;
+  bool m_tokenValidityUnitsHasBeenSet = false;
+  bool m_readAttributesHasBeenSet = false;
+  bool m_writeAttributesHasBeenSet = false;
+  bool m_explicitAuthFlowsHasBeenSet = false;
+  bool m_supportedIdentityProvidersHasBeenSet = false;
+  bool m_callbackURLsHasBeenSet = false;
+  bool m_logoutURLsHasBeenSet = false;
+  bool m_defaultRedirectURIHasBeenSet = false;
+  bool m_allowedOAuthFlowsHasBeenSet = false;
+  bool m_allowedOAuthScopesHasBeenSet = false;
+  bool m_allowedOAuthFlowsUserPoolClientHasBeenSet = false;
+  bool m_analyticsConfigurationHasBeenSet = false;
+  bool m_preventUserExistenceErrorsHasBeenSet = false;
+  bool m_enableTokenRevocationHasBeenSet = false;
+  bool m_enablePropagateAdditionalUserContextDataHasBeenSet = false;
+  bool m_authSessionValidityHasBeenSet = false;
   bool m_refreshTokenRotationHasBeenSet = false;
 };
 

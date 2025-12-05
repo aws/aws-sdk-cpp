@@ -77,9 +77,9 @@ class RecentCaseCommunications {
   ///@}
  private:
   Aws::Vector<Communication> m_communications;
-  bool m_communicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_communicationsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

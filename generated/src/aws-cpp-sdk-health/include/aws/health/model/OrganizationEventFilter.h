@@ -336,42 +336,42 @@ class OrganizationEventFilter {
   ///@}
  private:
   Aws::Vector<EventActionability> m_actionabilities;
-  bool m_actionabilitiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventTypeCodes;
-  bool m_eventTypeCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsAccountIds;
-  bool m_awsAccountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_services;
-  bool m_servicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   DateTimeRange m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   DateTimeRange m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   DateTimeRange m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityArns;
-  bool m_entityArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityValues;
-  bool m_entityValuesHasBeenSet = false;
 
   Aws::Vector<EventTypeCategory> m_eventTypeCategories;
-  bool m_eventTypeCategoriesHasBeenSet = false;
 
   Aws::Vector<EventStatusCode> m_eventStatusCodes;
-  bool m_eventStatusCodesHasBeenSet = false;
 
   Aws::Vector<EventPersona> m_personas;
+  bool m_actionabilitiesHasBeenSet = false;
+  bool m_eventTypeCodesHasBeenSet = false;
+  bool m_awsAccountIdsHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_entityArnsHasBeenSet = false;
+  bool m_entityValuesHasBeenSet = false;
+  bool m_eventTypeCategoriesHasBeenSet = false;
+  bool m_eventStatusCodesHasBeenSet = false;
   bool m_personasHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class SummarizedAttackVector {
   ///@}
  private:
   Aws::String m_vectorType;
-  bool m_vectorTypeHasBeenSet = false;
 
   Aws::Vector<SummarizedCounter> m_vectorCounters;
+  bool m_vectorTypeHasBeenSet = false;
   bool m_vectorCountersHasBeenSet = false;
 };
 

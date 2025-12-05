@@ -68,9 +68,9 @@ class LoadBalancerTlsCertificateDomainValidationOption {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   LoadBalancerTlsCertificateDomainStatus m_validationStatus{LoadBalancerTlsCertificateDomainStatus::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
   bool m_validationStatusHasBeenSet = false;
 };
 

@@ -480,72 +480,72 @@ class Agent {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentName;
-  bool m_agentNameHasBeenSet = false;
 
   Aws::String m_agentArn;
-  bool m_agentArnHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-  bool m_agentStatusHasBeenSet = false;
 
   Aws::String m_foundationModel;
-  bool m_foundationModelHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
-  bool m_orchestrationTypeHasBeenSet = false;
 
   CustomOrchestration m_customOrchestration;
-  bool m_customOrchestrationHasBeenSet = false;
 
   int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
   Aws::String m_agentResourceRoleArn;
-  bool m_agentResourceRoleArnHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_preparedAt{};
-  bool m_preparedAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendedActions;
-  bool m_recommendedActionsHasBeenSet = false;
 
   PromptOverrideConfiguration m_promptOverrideConfiguration;
-  bool m_promptOverrideConfigurationHasBeenSet = false;
 
   GuardrailConfiguration m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   MemoryConfiguration m_memoryConfiguration;
-  bool m_memoryConfigurationHasBeenSet = false;
 
   AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentNameHasBeenSet = false;
+  bool m_agentArnHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
+  bool m_agentStatusHasBeenSet = false;
+  bool m_foundationModelHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_orchestrationTypeHasBeenSet = false;
+  bool m_customOrchestrationHasBeenSet = false;
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+  bool m_agentResourceRoleArnHasBeenSet = false;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_preparedAtHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_recommendedActionsHasBeenSet = false;
+  bool m_promptOverrideConfigurationHasBeenSet = false;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_memoryConfigurationHasBeenSet = false;
   bool m_agentCollaborationHasBeenSet = false;
 };
 

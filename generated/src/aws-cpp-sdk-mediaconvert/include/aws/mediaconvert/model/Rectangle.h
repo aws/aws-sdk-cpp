@@ -96,15 +96,15 @@ class Rectangle {
   ///@}
  private:
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_x{0};
-  bool m_xHasBeenSet = false;
 
   int m_y{0};
+  bool m_heightHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_xHasBeenSet = false;
   bool m_yHasBeenSet = false;
 };
 

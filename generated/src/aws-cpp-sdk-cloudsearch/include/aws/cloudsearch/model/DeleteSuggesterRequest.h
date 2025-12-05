@@ -72,9 +72,9 @@ class DeleteSuggesterRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_suggesterName;
+  bool m_domainNameHasBeenSet = false;
   bool m_suggesterNameHasBeenSet = false;
 };
 

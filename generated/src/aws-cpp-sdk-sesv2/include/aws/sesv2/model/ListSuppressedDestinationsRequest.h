@@ -142,18 +142,18 @@ class ListSuppressedDestinationsRequest : public SESV2Request {
   ///@}
  private:
   Aws::Vector<SuppressionListReason> m_reasons;
-  bool m_reasonsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_reasonsHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

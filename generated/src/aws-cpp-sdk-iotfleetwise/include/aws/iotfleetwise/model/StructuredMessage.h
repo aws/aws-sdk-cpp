@@ -104,12 +104,12 @@ class StructuredMessage {
   ///@}
  private:
   PrimitiveMessageDefinition m_primitiveMessageDefinition;
-  bool m_primitiveMessageDefinitionHasBeenSet = false;
 
   std::shared_ptr<StructuredMessageListDefinition> m_structuredMessageListDefinition;
-  bool m_structuredMessageListDefinitionHasBeenSet = false;
 
   Aws::Vector<StructuredMessageFieldNameAndDataTypePair> m_structuredMessageDefinition;
+  bool m_primitiveMessageDefinitionHasBeenSet = false;
+  bool m_structuredMessageListDefinitionHasBeenSet = false;
   bool m_structuredMessageDefinitionHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListModelCardVersionsResult {
   ///@}
  private:
   Aws::Vector<ModelCardVersionSummary> m_modelCardVersionSummaryList;
-  bool m_modelCardVersionSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelCardVersionSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

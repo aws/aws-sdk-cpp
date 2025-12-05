@@ -159,21 +159,21 @@ class Protection {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_healthCheckIds;
-  bool m_healthCheckIdsHasBeenSet = false;
 
   Aws::String m_protectionArn;
-  bool m_protectionArnHasBeenSet = false;
 
   ApplicationLayerAutomaticResponseConfiguration m_applicationLayerAutomaticResponseConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_healthCheckIdsHasBeenSet = false;
+  bool m_protectionArnHasBeenSet = false;
   bool m_applicationLayerAutomaticResponseConfigurationHasBeenSet = false;
 };
 

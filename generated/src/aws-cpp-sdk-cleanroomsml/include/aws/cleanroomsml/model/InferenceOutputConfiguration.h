@@ -77,9 +77,9 @@ class InferenceOutputConfiguration {
   ///@}
  private:
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   Aws::Vector<InferenceReceiverMember> m_members;
+  bool m_acceptHasBeenSet = false;
   bool m_membersHasBeenSet = false;
 };
 

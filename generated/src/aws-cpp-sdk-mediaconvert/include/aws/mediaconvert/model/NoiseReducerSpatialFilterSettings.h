@@ -80,12 +80,12 @@ class NoiseReducerSpatialFilterSettings {
   ///@}
  private:
   int m_postFilterSharpenStrength{0};
-  bool m_postFilterSharpenStrengthHasBeenSet = false;
 
   int m_speed{0};
-  bool m_speedHasBeenSet = false;
 
   int m_strength{0};
+  bool m_postFilterSharpenStrengthHasBeenSet = false;
+  bool m_speedHasBeenSet = false;
   bool m_strengthHasBeenSet = false;
 };
 

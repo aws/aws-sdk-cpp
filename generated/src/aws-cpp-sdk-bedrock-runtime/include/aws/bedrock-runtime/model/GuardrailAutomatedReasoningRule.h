@@ -70,9 +70,9 @@ class GuardrailAutomatedReasoningRule {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_policyVersionArn;
+  bool m_identifierHasBeenSet = false;
   bool m_policyVersionArnHasBeenSet = false;
 };
 

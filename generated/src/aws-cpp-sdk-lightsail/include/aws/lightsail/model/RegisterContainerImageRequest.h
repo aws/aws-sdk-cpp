@@ -102,12 +102,12 @@ class RegisterContainerImageRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_digest;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
   bool m_digestHasBeenSet = false;
 };
 

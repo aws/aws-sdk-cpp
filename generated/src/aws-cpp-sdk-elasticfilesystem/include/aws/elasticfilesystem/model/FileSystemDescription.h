@@ -405,60 +405,60 @@ class FileSystemDescription {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_creationToken;
-  bool m_creationTokenHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_fileSystemArn;
-  bool m_fileSystemArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   LifeCycleState m_lifeCycleState{LifeCycleState::NOT_SET};
-  bool m_lifeCycleStateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_numberOfMountTargets{0};
-  bool m_numberOfMountTargetsHasBeenSet = false;
 
   FileSystemSize m_sizeInBytes;
-  bool m_sizeInBytesHasBeenSet = false;
 
   PerformanceMode m_performanceMode{PerformanceMode::NOT_SET};
-  bool m_performanceModeHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
-  bool m_throughputModeHasBeenSet = false;
 
   double m_provisionedThroughputInMibps{0.0};
-  bool m_provisionedThroughputInMibpsHasBeenSet = false;
 
   Aws::String m_availabilityZoneName;
-  bool m_availabilityZoneNameHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   FileSystemProtectionDescription m_fileSystemProtection;
-  bool m_fileSystemProtectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_creationTokenHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_fileSystemArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lifeCycleStateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_numberOfMountTargetsHasBeenSet = false;
+  bool m_sizeInBytesHasBeenSet = false;
+  bool m_performanceModeHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_throughputModeHasBeenSet = false;
+  bool m_provisionedThroughputInMibpsHasBeenSet = false;
+  bool m_availabilityZoneNameHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileSystemProtectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

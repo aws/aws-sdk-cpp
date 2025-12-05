@@ -164,24 +164,24 @@ class GetInsightSummariesRequest : public XRayRequest {
   ///@}
  private:
   Aws::Vector<InsightState> m_states;
-  bool m_statesHasBeenSet = false;
 
   Aws::String m_groupARN;
-  bool m_groupARNHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_statesHasBeenSet = false;
+  bool m_groupARNHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

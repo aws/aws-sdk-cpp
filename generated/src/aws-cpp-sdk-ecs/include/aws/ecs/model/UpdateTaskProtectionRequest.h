@@ -114,15 +114,15 @@ class UpdateTaskProtectionRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   bool m_protectionEnabled{false};
-  bool m_protectionEnabledHasBeenSet = false;
 
   int m_expiresInMinutes{0};
+  bool m_clusterHasBeenSet = false;
+  bool m_tasksHasBeenSet = false;
+  bool m_protectionEnabledHasBeenSet = false;
   bool m_expiresInMinutesHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListAddonsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_addons;
-  bool m_addonsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

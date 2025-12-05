@@ -168,24 +168,24 @@ class Reservation {
   ///@}
  private:
   int m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   ReservationOffering m_offering;
-  bool m_offeringHasBeenSet = false;
 
   Aws::String m_reservationArn;
-  bool m_reservationArnHasBeenSet = false;
 
   Aws::String m_reservationId;
-  bool m_reservationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_capacityHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_offeringHasBeenSet = false;
+  bool m_reservationArnHasBeenSet = false;
+  bool m_reservationIdHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class GetConnectorDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_connectorDefinitionId;
-  bool m_connectorDefinitionIdHasBeenSet = false;
 
   Aws::String m_connectorDefinitionVersionId;
-  bool m_connectorDefinitionVersionIdHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_connectorDefinitionIdHasBeenSet = false;
+  bool m_connectorDefinitionVersionIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

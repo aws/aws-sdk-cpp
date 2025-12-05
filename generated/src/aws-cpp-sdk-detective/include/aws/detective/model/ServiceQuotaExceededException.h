@@ -79,9 +79,9 @@ class ServiceQuotaExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
+  bool m_messageHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

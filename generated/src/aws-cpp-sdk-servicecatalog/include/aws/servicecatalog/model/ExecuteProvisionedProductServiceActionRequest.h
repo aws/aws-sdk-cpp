@@ -136,18 +136,18 @@ class ExecuteProvisionedProductServiceActionRequest : public ServiceCatalogReque
   ///@}
  private:
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::String m_serviceActionId;
-  bool m_serviceActionIdHasBeenSet = false;
 
   Aws::String m_executeToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_executeTokenHasBeenSet = true;
 
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
+  bool m_provisionedProductIdHasBeenSet = false;
+  bool m_serviceActionIdHasBeenSet = false;
+  bool m_executeTokenHasBeenSet = true;
+  bool m_acceptLanguageHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

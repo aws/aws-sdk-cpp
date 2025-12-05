@@ -84,12 +84,12 @@ class PeeringConnectionOptions {
   ///@}
  private:
   bool m_allowDnsResolutionFromRemoteVpc{false};
-  bool m_allowDnsResolutionFromRemoteVpcHasBeenSet = false;
 
   bool m_allowEgressFromLocalClassicLinkToRemoteVpc{false};
-  bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = false;
 
   bool m_allowEgressFromLocalVpcToRemoteClassicLink{false};
+  bool m_allowDnsResolutionFromRemoteVpcHasBeenSet = false;
+  bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = false;
   bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = false;
 };
 

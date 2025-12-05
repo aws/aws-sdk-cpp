@@ -70,9 +70,9 @@ class AwsEcrRepositoryLifecyclePolicyDetails {
   ///@}
  private:
   Aws::String m_lifecyclePolicyText;
-  bool m_lifecyclePolicyTextHasBeenSet = false;
 
   Aws::String m_registryId;
+  bool m_lifecyclePolicyTextHasBeenSet = false;
   bool m_registryIdHasBeenSet = false;
 };
 

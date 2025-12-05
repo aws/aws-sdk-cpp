@@ -85,12 +85,12 @@ class SharePrincipal {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   PrincipalType m_type{PrincipalType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RoleType m_role{RoleType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

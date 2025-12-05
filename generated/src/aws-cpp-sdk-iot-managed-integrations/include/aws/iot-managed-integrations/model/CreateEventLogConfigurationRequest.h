@@ -103,15 +103,15 @@ class CreateEventLogConfigurationRequest : public IoTManagedIntegrationsRequest 
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   LogLevel m_eventLogLevel{LogLevel::NOT_SET};
-  bool m_eventLogLevelHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_eventLogLevelHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

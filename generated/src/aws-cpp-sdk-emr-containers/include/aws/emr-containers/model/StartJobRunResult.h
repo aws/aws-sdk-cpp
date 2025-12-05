@@ -111,18 +111,18 @@ class StartJobRunResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_virtualClusterId;
-  bool m_virtualClusterIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_virtualClusterIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

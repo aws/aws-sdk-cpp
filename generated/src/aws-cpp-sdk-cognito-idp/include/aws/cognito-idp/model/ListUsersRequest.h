@@ -180,18 +180,18 @@ class ListUsersRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributesToGet;
-  bool m_attributesToGetHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_filter;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_attributesToGetHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

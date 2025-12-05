@@ -156,21 +156,21 @@ class CreateContextRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_contextName;
-  bool m_contextNameHasBeenSet = false;
 
   ContextSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_contextType;
-  bool m_contextTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_contextNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_contextTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

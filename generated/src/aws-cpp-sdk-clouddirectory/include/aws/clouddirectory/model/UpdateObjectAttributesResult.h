@@ -59,9 +59,9 @@ class UpdateObjectAttributesResult {
   ///@}
  private:
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_objectIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -419,63 +419,63 @@ class Host {
   ///@}
  private:
   AutoPlacement m_autoPlacement{AutoPlacement::NOT_SET};
-  bool m_autoPlacementHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   AvailableCapacity m_availableCapacity;
-  bool m_availableCapacityHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   HostProperties m_hostProperties;
-  bool m_hostPropertiesHasBeenSet = false;
 
   Aws::String m_hostReservationId;
-  bool m_hostReservationIdHasBeenSet = false;
 
   Aws::Vector<HostInstance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   AllocationState m_state{AllocationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_allocationTime{};
-  bool m_allocationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_releaseTime{};
-  bool m_releaseTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   HostRecovery m_hostRecovery{HostRecovery::NOT_SET};
-  bool m_hostRecoveryHasBeenSet = false;
 
   AllowsMultipleInstanceTypes m_allowsMultipleInstanceTypes{AllowsMultipleInstanceTypes::NOT_SET};
-  bool m_allowsMultipleInstanceTypesHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   bool m_memberOfServiceLinkedResourceGroup{false};
-  bool m_memberOfServiceLinkedResourceGroupHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   HostMaintenance m_hostMaintenance{HostMaintenance::NOT_SET};
-  bool m_hostMaintenanceHasBeenSet = false;
 
   Aws::String m_assetId;
+  bool m_autoPlacementHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availableCapacityHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_hostIdHasBeenSet = false;
+  bool m_hostPropertiesHasBeenSet = false;
+  bool m_hostReservationIdHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_allocationTimeHasBeenSet = false;
+  bool m_releaseTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_hostRecoveryHasBeenSet = false;
+  bool m_allowsMultipleInstanceTypesHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_memberOfServiceLinkedResourceGroupHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_hostMaintenanceHasBeenSet = false;
   bool m_assetIdHasBeenSet = false;
 };
 

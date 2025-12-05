@@ -157,24 +157,24 @@ class PasswordPolicyType {
   ///@}
  private:
   int m_minimumLength{0};
-  bool m_minimumLengthHasBeenSet = false;
 
   bool m_requireUppercase{false};
-  bool m_requireUppercaseHasBeenSet = false;
 
   bool m_requireLowercase{false};
-  bool m_requireLowercaseHasBeenSet = false;
 
   bool m_requireNumbers{false};
-  bool m_requireNumbersHasBeenSet = false;
 
   bool m_requireSymbols{false};
-  bool m_requireSymbolsHasBeenSet = false;
 
   int m_passwordHistorySize{0};
-  bool m_passwordHistorySizeHasBeenSet = false;
 
   int m_temporaryPasswordValidityDays{0};
+  bool m_minimumLengthHasBeenSet = false;
+  bool m_requireUppercaseHasBeenSet = false;
+  bool m_requireLowercaseHasBeenSet = false;
+  bool m_requireNumbersHasBeenSet = false;
+  bool m_requireSymbolsHasBeenSet = false;
+  bool m_passwordHistorySizeHasBeenSet = false;
   bool m_temporaryPasswordValidityDaysHasBeenSet = false;
 };
 

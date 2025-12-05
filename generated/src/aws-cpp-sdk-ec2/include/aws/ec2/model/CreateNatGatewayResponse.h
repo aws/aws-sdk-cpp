@@ -79,12 +79,12 @@ class CreateNatGatewayResponse {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   NatGateway m_natGateway;
-  bool m_natGatewayHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_natGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

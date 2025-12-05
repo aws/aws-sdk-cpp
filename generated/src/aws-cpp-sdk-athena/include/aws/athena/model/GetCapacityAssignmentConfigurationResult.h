@@ -62,9 +62,9 @@ class GetCapacityAssignmentConfigurationResult {
   ///@}
  private:
   CapacityAssignmentConfiguration m_capacityAssignmentConfiguration;
-  bool m_capacityAssignmentConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityAssignmentConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

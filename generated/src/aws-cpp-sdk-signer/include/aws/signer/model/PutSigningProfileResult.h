@@ -93,15 +93,15 @@ class PutSigningProfileResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_profileVersion;
-  bool m_profileVersionHasBeenSet = false;
 
   Aws::String m_profileVersionArn;
-  bool m_profileVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_profileVersionHasBeenSet = false;
+  bool m_profileVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

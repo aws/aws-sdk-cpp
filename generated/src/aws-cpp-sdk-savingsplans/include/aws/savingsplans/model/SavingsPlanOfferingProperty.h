@@ -68,9 +68,9 @@ class SavingsPlanOfferingProperty {
   ///@}
  private:
   SavingsPlanOfferingPropertyKey m_name{SavingsPlanOfferingPropertyKey::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

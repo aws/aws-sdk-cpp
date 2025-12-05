@@ -152,21 +152,21 @@ class SessionStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_startDateTime{};
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDateTime{};
-  bool m_lastModifiedDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_idleSinceDateTime{};
-  bool m_idleSinceDateTimeHasBeenSet = false;
 
   SessionState m_state{SessionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateChangeReason;
+  bool m_startDateTimeHasBeenSet = false;
+  bool m_lastModifiedDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_idleSinceDateTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_stateChangeReasonHasBeenSet = false;
 };
 

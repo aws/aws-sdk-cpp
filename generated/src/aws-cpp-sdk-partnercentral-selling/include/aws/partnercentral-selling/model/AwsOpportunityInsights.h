@@ -72,9 +72,9 @@ class AwsOpportunityInsights {
   ///@}
  private:
   Aws::String m_nextBestActions;
-  bool m_nextBestActionsHasBeenSet = false;
 
   EngagementScore m_engagementScore{EngagementScore::NOT_SET};
+  bool m_nextBestActionsHasBeenSet = false;
   bool m_engagementScoreHasBeenSet = false;
 };
 

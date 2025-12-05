@@ -284,42 +284,42 @@ class CreatePipeRequest : public PipesRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RequestedPipeState m_desiredState{RequestedPipeState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   PipeSourceParameters m_sourceParameters;
-  bool m_sourceParametersHasBeenSet = false;
 
   Aws::String m_enrichment;
-  bool m_enrichmentHasBeenSet = false;
 
   PipeEnrichmentParameters m_enrichmentParameters;
-  bool m_enrichmentParametersHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   PipeTargetParameters m_targetParameters;
-  bool m_targetParametersHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PipeLogConfigurationParameters m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceParametersHasBeenSet = false;
+  bool m_enrichmentHasBeenSet = false;
+  bool m_enrichmentParametersHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_targetParametersHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
   bool m_kmsKeyIdentifierHasBeenSet = false;
 };
 

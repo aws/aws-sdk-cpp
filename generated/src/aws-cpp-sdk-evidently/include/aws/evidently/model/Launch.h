@@ -334,48 +334,48 @@ class Launch {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LaunchExecution m_execution;
-  bool m_executionHasBeenSet = false;
 
   Aws::Vector<LaunchGroup> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Vector<MetricMonitor> m_metricMonitors;
-  bool m_metricMonitorsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::String m_randomizationSalt;
-  bool m_randomizationSaltHasBeenSet = false;
 
   ScheduledSplitsLaunchDefinition m_scheduledSplitsDefinition;
-  bool m_scheduledSplitsDefinitionHasBeenSet = false;
 
   LaunchStatus m_status{LaunchStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LaunchType m_type{LaunchType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executionHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_metricMonitorsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_randomizationSaltHasBeenSet = false;
+  bool m_scheduledSplitsDefinitionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

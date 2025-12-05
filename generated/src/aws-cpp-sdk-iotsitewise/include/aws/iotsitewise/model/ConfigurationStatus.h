@@ -68,9 +68,9 @@ class ConfigurationStatus {
   ///@}
  private:
   ConfigurationState m_state{ConfigurationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ConfigurationErrorDetails m_error;
+  bool m_stateHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

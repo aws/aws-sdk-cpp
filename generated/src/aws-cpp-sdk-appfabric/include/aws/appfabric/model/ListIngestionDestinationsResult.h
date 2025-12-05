@@ -89,12 +89,12 @@ class ListIngestionDestinationsResult {
   ///@}
  private:
   Aws::Vector<IngestionDestinationSummary> m_ingestionDestinations;
-  bool m_ingestionDestinationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestionDestinationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

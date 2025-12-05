@@ -101,12 +101,12 @@ class ModelOutputConfiguration {
   ///@}
  private:
   ModelOutputDataFormat m_format{ModelOutputDataFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_jsonKeyToVariableMap;
-  bool m_jsonKeyToVariableMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_csvIndexToVariableMap;
+  bool m_formatHasBeenSet = false;
+  bool m_jsonKeyToVariableMapHasBeenSet = false;
   bool m_csvIndexToVariableMapHasBeenSet = false;
 };
 

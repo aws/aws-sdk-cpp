@@ -81,9 +81,9 @@ class CsrExtensions {
   ///@}
  private:
   KeyUsage m_keyUsage;
-  bool m_keyUsageHasBeenSet = false;
 
   Aws::Vector<AccessDescription> m_subjectInformationAccess;
+  bool m_keyUsageHasBeenSet = false;
   bool m_subjectInformationAccessHasBeenSet = false;
 };
 

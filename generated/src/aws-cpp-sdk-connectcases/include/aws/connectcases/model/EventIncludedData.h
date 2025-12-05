@@ -71,9 +71,9 @@ class EventIncludedData {
   ///@}
  private:
   CaseEventIncludedData m_caseData;
-  bool m_caseDataHasBeenSet = false;
 
   RelatedItemEventIncludedData m_relatedItemData;
+  bool m_caseDataHasBeenSet = false;
   bool m_relatedItemDataHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class VideoStandardExtraction {
   ///@}
  private:
   VideoExtractionCategory m_category;
-  bool m_categoryHasBeenSet = false;
 
   VideoBoundingBox m_boundingBox;
+  bool m_categoryHasBeenSet = false;
   bool m_boundingBoxHasBeenSet = false;
 };
 

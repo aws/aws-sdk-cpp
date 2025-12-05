@@ -89,12 +89,12 @@ class ListSoftwareSetsResult {
   ///@}
  private:
   Aws::Vector<SoftwareSetSummary> m_softwareSets;
-  bool m_softwareSetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_softwareSetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

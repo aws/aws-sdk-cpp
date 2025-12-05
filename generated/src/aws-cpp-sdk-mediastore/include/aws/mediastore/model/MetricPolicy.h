@@ -86,9 +86,9 @@ class MetricPolicy {
   ///@}
  private:
   ContainerLevelMetrics m_containerLevelMetrics{ContainerLevelMetrics::NOT_SET};
-  bool m_containerLevelMetricsHasBeenSet = false;
 
   Aws::Vector<MetricPolicyRule> m_metricPolicyRules;
+  bool m_containerLevelMetricsHasBeenSet = false;
   bool m_metricPolicyRulesHasBeenSet = false;
 };
 

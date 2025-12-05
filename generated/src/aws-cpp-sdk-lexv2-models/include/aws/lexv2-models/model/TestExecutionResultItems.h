@@ -138,18 +138,18 @@ class TestExecutionResultItems {
   ///@}
  private:
   OverallTestResults m_overallTestResults;
-  bool m_overallTestResultsHasBeenSet = false;
 
   ConversationLevelTestResults m_conversationLevelTestResults;
-  bool m_conversationLevelTestResultsHasBeenSet = false;
 
   IntentClassificationTestResults m_intentClassificationTestResults;
-  bool m_intentClassificationTestResultsHasBeenSet = false;
 
   IntentLevelSlotResolutionTestResults m_intentLevelSlotResolutionTestResults;
-  bool m_intentLevelSlotResolutionTestResultsHasBeenSet = false;
 
   UtteranceLevelTestResults m_utteranceLevelTestResults;
+  bool m_overallTestResultsHasBeenSet = false;
+  bool m_conversationLevelTestResultsHasBeenSet = false;
+  bool m_intentClassificationTestResultsHasBeenSet = false;
+  bool m_intentLevelSlotResolutionTestResultsHasBeenSet = false;
   bool m_utteranceLevelTestResultsHasBeenSet = false;
 };
 

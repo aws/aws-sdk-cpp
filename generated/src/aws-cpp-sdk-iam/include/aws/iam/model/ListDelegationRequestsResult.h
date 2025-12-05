@@ -104,15 +104,15 @@ class ListDelegationRequestsResult {
   ///@}
  private:
   Aws::Vector<DelegationRequest> m_delegationRequests;
-  bool m_delegationRequestsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_delegationRequestsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

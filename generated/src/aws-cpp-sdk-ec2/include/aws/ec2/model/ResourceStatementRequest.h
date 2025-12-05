@@ -83,9 +83,9 @@ class ResourceStatementRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
+  bool m_resourcesHasBeenSet = false;
   bool m_resourceTypesHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class CapacityAllocation {
   ///@}
  private:
   CapacityAllocationStatus m_status{CapacityAllocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTime{};
-  bool m_requestTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestCompletionTime{};
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_requestTimeHasBeenSet = false;
   bool m_requestCompletionTimeHasBeenSet = false;
 };
 

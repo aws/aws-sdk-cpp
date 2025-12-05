@@ -239,30 +239,30 @@ class MetricDatum {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   StatisticSet m_statisticValues;
-  bool m_statisticValuesHasBeenSet = false;
 
   Aws::Vector<double> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<double> m_counts;
-  bool m_countsHasBeenSet = false;
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   int m_storageResolution{0};
+  bool m_metricNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_statisticValuesHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_countsHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_storageResolutionHasBeenSet = false;
 };
 

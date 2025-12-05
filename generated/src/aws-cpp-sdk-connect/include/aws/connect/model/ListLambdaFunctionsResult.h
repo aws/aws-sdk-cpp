@@ -84,12 +84,12 @@ class ListLambdaFunctionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_lambdaFunctions;
-  bool m_lambdaFunctionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lambdaFunctionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

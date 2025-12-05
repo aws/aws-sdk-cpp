@@ -88,12 +88,12 @@ class MemberAccountEc2DeepInspectionStatusState {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Ec2DeepInspectionStatus m_status{Ec2DeepInspectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

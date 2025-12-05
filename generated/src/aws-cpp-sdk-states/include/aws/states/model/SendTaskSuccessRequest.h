@@ -72,9 +72,9 @@ class SendTaskSuccessRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   Aws::String m_output;
+  bool m_taskTokenHasBeenSet = false;
   bool m_outputHasBeenSet = false;
 };
 

@@ -154,21 +154,21 @@ class PutResourceConfigRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_schemaVersionIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

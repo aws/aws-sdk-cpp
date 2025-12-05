@@ -58,9 +58,9 @@ class ModifyCacheSubnetGroupResult {
   ///@}
  private:
   CacheSubnetGroup m_cacheSubnetGroup;
-  bool m_cacheSubnetGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_cacheSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -111,12 +111,12 @@ class DescribeVpcClassicLinkRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcIds;
-  bool m_vpcIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_dryRunHasBeenSet = false;
+  bool m_vpcIdsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

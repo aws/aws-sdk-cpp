@@ -73,9 +73,9 @@ class DescribeTrustedAdvisorChecksResult {
   ///@}
  private:
   Aws::Vector<TrustedAdvisorCheckDescription> m_checks;
-  bool m_checksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_checksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

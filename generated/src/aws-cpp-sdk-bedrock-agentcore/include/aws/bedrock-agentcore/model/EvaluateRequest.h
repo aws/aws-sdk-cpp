@@ -92,12 +92,12 @@ class EvaluateRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_evaluatorId;
-  bool m_evaluatorIdHasBeenSet = false;
 
   EvaluationInput m_evaluationInput;
-  bool m_evaluationInputHasBeenSet = false;
 
   EvaluationTarget m_evaluationTarget;
+  bool m_evaluatorIdHasBeenSet = false;
+  bool m_evaluationInputHasBeenSet = false;
   bool m_evaluationTargetHasBeenSet = false;
 };
 

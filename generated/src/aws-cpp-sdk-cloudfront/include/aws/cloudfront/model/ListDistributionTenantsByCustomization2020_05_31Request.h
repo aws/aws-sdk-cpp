@@ -100,15 +100,15 @@ class ListDistributionTenantsByCustomization2020_05_31Request : public CloudFron
   ///@}
  private:
   Aws::String m_webACLArn;
-  bool m_webACLArnHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_webACLArnHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

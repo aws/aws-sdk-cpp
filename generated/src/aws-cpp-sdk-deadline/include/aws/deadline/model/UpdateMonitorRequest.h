@@ -105,15 +105,15 @@ class UpdateMonitorRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_monitorId;
-  bool m_monitorIdHasBeenSet = false;
 
   Aws::String m_subdomain;
-  bool m_subdomainHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_monitorIdHasBeenSet = false;
+  bool m_subdomainHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

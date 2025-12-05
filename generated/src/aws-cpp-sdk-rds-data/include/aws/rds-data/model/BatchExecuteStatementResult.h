@@ -73,9 +73,9 @@ class BatchExecuteStatementResult {
   ///@}
  private:
   Aws::Vector<UpdateResult> m_updateResults;
-  bool m_updateResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

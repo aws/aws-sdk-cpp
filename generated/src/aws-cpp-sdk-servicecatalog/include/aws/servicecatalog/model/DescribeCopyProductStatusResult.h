@@ -92,15 +92,15 @@ class DescribeCopyProductStatusResult {
   ///@}
  private:
   CopyProductStatus m_copyProductStatus{CopyProductStatus::NOT_SET};
-  bool m_copyProductStatusHasBeenSet = false;
 
   Aws::String m_targetProductId;
-  bool m_targetProductIdHasBeenSet = false;
 
   Aws::String m_statusDetail;
-  bool m_statusDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copyProductStatusHasBeenSet = false;
+  bool m_targetProductIdHasBeenSet = false;
+  bool m_statusDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class AssignedSessionAction {
   ///@}
  private:
   Aws::String m_sessionActionId;
-  bool m_sessionActionIdHasBeenSet = false;
 
   AssignedSessionActionDefinition m_definition;
+  bool m_sessionActionIdHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

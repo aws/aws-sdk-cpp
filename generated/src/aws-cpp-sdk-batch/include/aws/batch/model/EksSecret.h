@@ -72,9 +72,9 @@ class EksSecret {
   ///@}
  private:
   Aws::String m_secretName;
-  bool m_secretNameHasBeenSet = false;
 
   bool m_optional{false};
+  bool m_secretNameHasBeenSet = false;
   bool m_optionalHasBeenSet = false;
 };
 

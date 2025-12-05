@@ -97,12 +97,12 @@ class ActionExecutionEvent {
   ///@}
  private:
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   Aws::Map<Aws::String, ActionExecutionPayloadField> m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_payloadFieldNameSeparator;
+  bool m_pluginIdHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_payloadFieldNameSeparatorHasBeenSet = false;
 };
 

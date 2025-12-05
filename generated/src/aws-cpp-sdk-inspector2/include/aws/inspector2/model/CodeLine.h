@@ -67,9 +67,9 @@ class CodeLine {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   int m_lineNumber{0};
+  bool m_contentHasBeenSet = false;
   bool m_lineNumberHasBeenSet = false;
 };
 

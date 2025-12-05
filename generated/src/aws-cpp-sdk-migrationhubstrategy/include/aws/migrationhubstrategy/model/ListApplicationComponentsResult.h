@@ -88,12 +88,12 @@ class ListApplicationComponentsResult {
   ///@}
  private:
   Aws::Vector<ApplicationComponentDetail> m_applicationComponentInfos;
-  bool m_applicationComponentInfosHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationComponentInfosHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

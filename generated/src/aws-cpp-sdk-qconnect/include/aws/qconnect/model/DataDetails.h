@@ -266,39 +266,39 @@ class DataDetails {
   ///@}
  private:
   ContentDataDetails m_contentData;
-  bool m_contentDataHasBeenSet = false;
 
   std::shared_ptr<GenerativeDataDetails> m_generativeData;
-  bool m_generativeDataHasBeenSet = false;
 
   IntentDetectedDataDetails m_intentDetectedData;
-  bool m_intentDetectedDataHasBeenSet = false;
 
   SourceContentDataDetails m_sourceContentData;
-  bool m_sourceContentDataHasBeenSet = false;
 
   std::shared_ptr<GenerativeChunkDataDetails> m_generativeChunkData;
-  bool m_generativeChunkDataHasBeenSet = false;
 
   EmailResponseChunkDataDetails m_emailResponseChunkData;
-  bool m_emailResponseChunkDataHasBeenSet = false;
 
   EmailOverviewChunkDataDetails m_emailOverviewChunkData;
-  bool m_emailOverviewChunkDataHasBeenSet = false;
 
   std::shared_ptr<EmailGenerativeAnswerChunkDataDetails> m_emailGenerativeAnswerChunkData;
-  bool m_emailGenerativeAnswerChunkDataHasBeenSet = false;
 
   CaseSummarizationChunkDataDetails m_caseSummarizationChunkData;
-  bool m_caseSummarizationChunkDataHasBeenSet = false;
 
   SuggestedMessageDataDetails m_suggestedMessageData;
-  bool m_suggestedMessageDataHasBeenSet = false;
 
   NotesDataDetails m_notesData;
-  bool m_notesDataHasBeenSet = false;
 
   NotesChunkDataDetails m_notesChunkData;
+  bool m_contentDataHasBeenSet = false;
+  bool m_generativeDataHasBeenSet = false;
+  bool m_intentDetectedDataHasBeenSet = false;
+  bool m_sourceContentDataHasBeenSet = false;
+  bool m_generativeChunkDataHasBeenSet = false;
+  bool m_emailResponseChunkDataHasBeenSet = false;
+  bool m_emailOverviewChunkDataHasBeenSet = false;
+  bool m_emailGenerativeAnswerChunkDataHasBeenSet = false;
+  bool m_caseSummarizationChunkDataHasBeenSet = false;
+  bool m_suggestedMessageDataHasBeenSet = false;
+  bool m_notesDataHasBeenSet = false;
   bool m_notesChunkDataHasBeenSet = false;
 };
 

@@ -145,21 +145,21 @@ class CreateDatastoreRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_lambdaAuthorizerArn;
-  bool m_lambdaAuthorizerArnHasBeenSet = false;
 
   LosslessStorageFormat m_losslessStorageFormat{LosslessStorageFormat::NOT_SET};
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_lambdaAuthorizerArnHasBeenSet = false;
   bool m_losslessStorageFormatHasBeenSet = false;
 };
 

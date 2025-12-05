@@ -65,9 +65,9 @@ class BestPractice {
   ///@}
  private:
   Aws::String m_choiceId;
-  bool m_choiceIdHasBeenSet = false;
 
   Aws::String m_choiceTitle;
+  bool m_choiceIdHasBeenSet = false;
   bool m_choiceTitleHasBeenSet = false;
 };
 

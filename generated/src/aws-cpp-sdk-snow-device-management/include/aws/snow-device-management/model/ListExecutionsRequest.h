@@ -103,15 +103,15 @@ class ListExecutionsRequest : public SnowDeviceManagementRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ExecutionState m_state{ExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

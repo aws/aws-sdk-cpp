@@ -79,9 +79,9 @@ class StartResourceScanRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::Vector<ScanFilter> m_scanFilters;
+  bool m_clientRequestTokenHasBeenSet = false;
   bool m_scanFiltersHasBeenSet = false;
 };
 

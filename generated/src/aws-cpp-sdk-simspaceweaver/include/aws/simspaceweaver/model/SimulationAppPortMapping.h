@@ -68,9 +68,9 @@ class SimulationAppPortMapping {
   ///@}
  private:
   int m_actual{0};
-  bool m_actualHasBeenSet = false;
 
   int m_declared{0};
+  bool m_actualHasBeenSet = false;
   bool m_declaredHasBeenSet = false;
 };
 

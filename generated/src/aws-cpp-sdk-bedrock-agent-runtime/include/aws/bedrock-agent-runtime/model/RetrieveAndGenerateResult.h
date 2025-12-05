@@ -124,18 +124,18 @@ class RetrieveAndGenerateResult {
   ///@}
  private:
   Aws::Vector<Citation> m_citations;
-  bool m_citationsHasBeenSet = false;
 
   GuadrailAction m_guardrailAction{GuadrailAction::NOT_SET};
-  bool m_guardrailActionHasBeenSet = false;
 
   RetrieveAndGenerateOutput m_output;
-  bool m_outputHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_citationsHasBeenSet = false;
+  bool m_guardrailActionHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

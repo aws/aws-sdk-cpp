@@ -188,27 +188,27 @@ class ListedCertificate {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   CertificateUsageType m_usage{CertificateUsageType::NOT_SET};
-  bool m_usageHasBeenSet = false;
 
   CertificateStatusType m_status{CertificateStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_activeDate{};
-  bool m_activeDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_inactiveDate{};
-  bool m_inactiveDateHasBeenSet = false;
 
   CertificateType m_type{CertificateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_arnHasBeenSet = false;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_usageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_activeDateHasBeenSet = false;
+  bool m_inactiveDateHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

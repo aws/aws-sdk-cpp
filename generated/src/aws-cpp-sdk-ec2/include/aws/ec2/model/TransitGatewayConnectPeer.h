@@ -151,21 +151,21 @@ class TransitGatewayConnectPeer {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_transitGatewayConnectPeerId;
-  bool m_transitGatewayConnectPeerIdHasBeenSet = false;
 
   TransitGatewayConnectPeerState m_state{TransitGatewayConnectPeerState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   TransitGatewayConnectPeerConfiguration m_connectPeerConfiguration;
-  bool m_connectPeerConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_transitGatewayConnectPeerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_connectPeerConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

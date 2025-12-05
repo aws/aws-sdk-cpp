@@ -134,18 +134,18 @@ class CreateInterruptibleCapacityReservationAllocationRequest : public EC2Reques
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

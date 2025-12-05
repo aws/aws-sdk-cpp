@@ -122,15 +122,15 @@ class ComponentDataConfiguration {
   ///@}
  private:
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::Vector<SortProperty> m_sort;
-  bool m_sortHasBeenSet = false;
 
   Predicate m_predicate;
-  bool m_predicateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_identifiers;
+  bool m_modelHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_predicateHasBeenSet = false;
   bool m_identifiersHasBeenSet = false;
 };
 

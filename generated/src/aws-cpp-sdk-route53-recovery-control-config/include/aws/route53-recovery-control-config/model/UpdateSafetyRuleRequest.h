@@ -71,9 +71,9 @@ class UpdateSafetyRuleRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   AssertionRuleUpdate m_assertionRuleUpdate;
-  bool m_assertionRuleUpdateHasBeenSet = false;
 
   GatingRuleUpdate m_gatingRuleUpdate;
+  bool m_assertionRuleUpdateHasBeenSet = false;
   bool m_gatingRuleUpdateHasBeenSet = false;
 };
 

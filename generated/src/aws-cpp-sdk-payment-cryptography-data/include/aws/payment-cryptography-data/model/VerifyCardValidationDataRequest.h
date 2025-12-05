@@ -106,15 +106,15 @@ class VerifyCardValidationDataRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   CardVerificationAttributes m_verificationAttributes;
-  bool m_verificationAttributesHasBeenSet = false;
 
   Aws::String m_validationData;
+  bool m_keyIdentifierHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_verificationAttributesHasBeenSet = false;
   bool m_validationDataHasBeenSet = false;
 };
 

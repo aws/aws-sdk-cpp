@@ -105,12 +105,12 @@ class LambdaVpcConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

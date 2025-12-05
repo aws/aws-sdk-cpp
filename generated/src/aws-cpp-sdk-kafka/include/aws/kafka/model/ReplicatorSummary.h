@@ -208,30 +208,30 @@ class ReplicatorSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   bool m_isReplicatorReference{false};
-  bool m_isReplicatorReferenceHasBeenSet = false;
 
   Aws::Vector<KafkaClusterSummary> m_kafkaClustersSummary;
-  bool m_kafkaClustersSummaryHasBeenSet = false;
 
   Aws::Vector<ReplicationInfoSummary> m_replicationInfoSummaryList;
-  bool m_replicationInfoSummaryListHasBeenSet = false;
 
   Aws::String m_replicatorArn;
-  bool m_replicatorArnHasBeenSet = false;
 
   Aws::String m_replicatorName;
-  bool m_replicatorNameHasBeenSet = false;
 
   Aws::String m_replicatorResourceArn;
-  bool m_replicatorResourceArnHasBeenSet = false;
 
   ReplicatorState m_replicatorState{ReplicatorState::NOT_SET};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_isReplicatorReferenceHasBeenSet = false;
+  bool m_kafkaClustersSummaryHasBeenSet = false;
+  bool m_replicationInfoSummaryListHasBeenSet = false;
+  bool m_replicatorArnHasBeenSet = false;
+  bool m_replicatorNameHasBeenSet = false;
+  bool m_replicatorResourceArnHasBeenSet = false;
   bool m_replicatorStateHasBeenSet = false;
 };
 

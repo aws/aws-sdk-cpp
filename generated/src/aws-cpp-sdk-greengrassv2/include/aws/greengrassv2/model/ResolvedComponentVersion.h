@@ -154,21 +154,21 @@ class ResolvedComponentVersion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_recipe{};
-  bool m_recipeHasBeenSet = false;
 
   VendorGuidance m_vendorGuidance{VendorGuidance::NOT_SET};
-  bool m_vendorGuidanceHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_arnHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentVersionHasBeenSet = false;
+  bool m_recipeHasBeenSet = false;
+  bool m_vendorGuidanceHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

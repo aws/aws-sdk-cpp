@@ -63,9 +63,9 @@ class CreateRecommendationTemplateResult {
   ///@}
  private:
   RecommendationTemplate m_recommendationTemplate;
-  bool m_recommendationTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class AnalysisSource {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   AnalysisTemplateArtifacts m_artifacts;
+  bool m_textHasBeenSet = false;
   bool m_artifactsHasBeenSet = false;
 };
 

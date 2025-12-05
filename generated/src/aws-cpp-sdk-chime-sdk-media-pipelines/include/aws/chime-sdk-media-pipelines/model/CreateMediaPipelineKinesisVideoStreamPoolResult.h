@@ -65,9 +65,9 @@ class CreateMediaPipelineKinesisVideoStreamPoolResult {
   ///@}
  private:
   KinesisVideoStreamPoolConfiguration m_kinesisVideoStreamPoolConfiguration;
-  bool m_kinesisVideoStreamPoolConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kinesisVideoStreamPoolConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -190,30 +190,30 @@ class BatchDescribeModelPackageSummary {
   ///@}
  private:
   Aws::String m_modelPackageGroupName;
-  bool m_modelPackageGroupNameHasBeenSet = false;
 
   int m_modelPackageVersion{0};
-  bool m_modelPackageVersionHasBeenSet = false;
 
   Aws::String m_modelPackageArn;
-  bool m_modelPackageArnHasBeenSet = false;
 
   Aws::String m_modelPackageDescription;
-  bool m_modelPackageDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   InferenceSpecification m_inferenceSpecification;
-  bool m_inferenceSpecificationHasBeenSet = false;
 
   ModelPackageStatus m_modelPackageStatus{ModelPackageStatus::NOT_SET};
-  bool m_modelPackageStatusHasBeenSet = false;
 
   ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
-  bool m_modelApprovalStatusHasBeenSet = false;
 
   ModelPackageRegistrationType m_modelPackageRegistrationType{ModelPackageRegistrationType::NOT_SET};
+  bool m_modelPackageGroupNameHasBeenSet = false;
+  bool m_modelPackageVersionHasBeenSet = false;
+  bool m_modelPackageArnHasBeenSet = false;
+  bool m_modelPackageDescriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_inferenceSpecificationHasBeenSet = false;
+  bool m_modelPackageStatusHasBeenSet = false;
+  bool m_modelApprovalStatusHasBeenSet = false;
   bool m_modelPackageRegistrationTypeHasBeenSet = false;
 };
 

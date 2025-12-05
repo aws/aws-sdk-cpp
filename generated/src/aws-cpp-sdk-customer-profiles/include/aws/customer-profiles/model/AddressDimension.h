@@ -141,21 +141,21 @@ class AddressDimension {
   ///@}
  private:
   ProfileDimension m_city;
-  bool m_cityHasBeenSet = false;
 
   ProfileDimension m_country;
-  bool m_countryHasBeenSet = false;
 
   ProfileDimension m_county;
-  bool m_countyHasBeenSet = false;
 
   ProfileDimension m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   ProfileDimension m_province;
-  bool m_provinceHasBeenSet = false;
 
   ProfileDimension m_state;
+  bool m_cityHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_countyHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_provinceHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

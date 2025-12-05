@@ -146,21 +146,21 @@ class DatasetDescription {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   DatasetStatus m_status{DatasetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   DatasetStatusMessageCode m_statusMessageCode{DatasetStatusMessageCode::NOT_SET};
-  bool m_statusMessageCodeHasBeenSet = false;
 
   DatasetStats m_datasetStats;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_statusMessageCodeHasBeenSet = false;
   bool m_datasetStatsHasBeenSet = false;
 };
 

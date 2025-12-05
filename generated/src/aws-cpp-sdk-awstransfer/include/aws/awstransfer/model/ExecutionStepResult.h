@@ -95,12 +95,12 @@ class ExecutionStepResult {
   ///@}
  private:
   WorkflowStepType m_stepType{WorkflowStepType::NOT_SET};
-  bool m_stepTypeHasBeenSet = false;
 
   Aws::String m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   ExecutionError m_error;
+  bool m_stepTypeHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

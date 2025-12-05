@@ -93,12 +93,12 @@ class BatchExecuteStatementResult {
   ///@}
  private:
   Aws::Vector<BatchStatementResponse> m_responses;
-  bool m_responsesHasBeenSet = false;
 
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responsesHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

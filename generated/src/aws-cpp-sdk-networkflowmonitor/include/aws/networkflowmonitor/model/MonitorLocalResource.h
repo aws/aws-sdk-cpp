@@ -76,9 +76,9 @@ class MonitorLocalResource {
   ///@}
  private:
   MonitorLocalResourceType m_type{MonitorLocalResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_typeHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

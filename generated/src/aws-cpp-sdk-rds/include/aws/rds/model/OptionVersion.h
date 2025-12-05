@@ -69,9 +69,9 @@ class OptionVersion {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   bool m_isDefault{false};
+  bool m_versionHasBeenSet = false;
   bool m_isDefaultHasBeenSet = false;
 };
 

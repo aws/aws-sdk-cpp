@@ -66,9 +66,9 @@ class RemoveAllBackendsRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   bool m_cleanAmplifyApp{false};
+  bool m_appIdHasBeenSet = false;
   bool m_cleanAmplifyAppHasBeenSet = false;
 };
 

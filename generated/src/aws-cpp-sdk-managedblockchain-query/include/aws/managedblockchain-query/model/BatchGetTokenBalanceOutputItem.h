@@ -118,18 +118,18 @@ class BatchGetTokenBalanceOutputItem {
   ///@}
  private:
   OwnerIdentifier m_ownerIdentifier;
-  bool m_ownerIdentifierHasBeenSet = false;
 
   TokenIdentifier m_tokenIdentifier;
-  bool m_tokenIdentifierHasBeenSet = false;
 
   Aws::String m_balance;
-  bool m_balanceHasBeenSet = false;
 
   BlockchainInstant m_atBlockchainInstant;
-  bool m_atBlockchainInstantHasBeenSet = false;
 
   BlockchainInstant m_lastUpdatedTime;
+  bool m_ownerIdentifierHasBeenSet = false;
+  bool m_tokenIdentifierHasBeenSet = false;
+  bool m_balanceHasBeenSet = false;
+  bool m_atBlockchainInstantHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

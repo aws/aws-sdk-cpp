@@ -68,9 +68,9 @@ class EvaluateSessionRequest : public VoiceIDRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_sessionNameOrId;
+  bool m_domainIdHasBeenSet = false;
   bool m_sessionNameOrIdHasBeenSet = false;
 };
 

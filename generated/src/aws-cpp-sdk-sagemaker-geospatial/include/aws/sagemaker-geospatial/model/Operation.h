@@ -87,12 +87,12 @@ class Operation {
   ///@}
  private:
   Aws::String m_equation;
-  bool m_equationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OutputType m_outputType{OutputType::NOT_SET};
+  bool m_equationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_outputTypeHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class ServiceQuotaExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_serviceCode;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
 };
 

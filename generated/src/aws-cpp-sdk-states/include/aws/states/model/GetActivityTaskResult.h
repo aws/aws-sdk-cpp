@@ -80,12 +80,12 @@ class GetActivityTaskResult {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskTokenHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

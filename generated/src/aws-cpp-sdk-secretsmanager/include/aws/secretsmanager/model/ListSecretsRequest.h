@@ -130,18 +130,18 @@ class ListSecretsRequest : public SecretsManagerRequest {
   ///@}
  private:
   bool m_includePlannedDeletion{false};
-  bool m_includePlannedDeletionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   SortOrderType m_sortOrder{SortOrderType::NOT_SET};
+  bool m_includePlannedDeletionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

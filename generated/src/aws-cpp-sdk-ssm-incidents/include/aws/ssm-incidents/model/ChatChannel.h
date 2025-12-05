@@ -79,9 +79,9 @@ class ChatChannel {
   ///@}
  private:
   Aws::Vector<Aws::String> m_chatbotSns;
-  bool m_chatbotSnsHasBeenSet = false;
 
   EmptyChatChannel m_empty;
+  bool m_chatbotSnsHasBeenSet = false;
   bool m_emptyHasBeenSet = false;
 };
 

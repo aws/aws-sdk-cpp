@@ -67,9 +67,9 @@ class ListTagsForResourceResult {
   ///@}
  private:
   ResourceTagSet m_resourceTagSet;
-  bool m_resourceTagSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceTagSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

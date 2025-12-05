@@ -220,33 +220,33 @@ class ResourceDataSyncItem {
   ///@}
  private:
   Aws::String m_syncName;
-  bool m_syncNameHasBeenSet = false;
 
   Aws::String m_syncType;
-  bool m_syncTypeHasBeenSet = false;
 
   ResourceDataSyncSourceWithState m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   ResourceDataSyncS3Destination m_s3Destination;
-  bool m_s3DestinationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSyncTime{};
-  bool m_lastSyncTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulSyncTime{};
-  bool m_lastSuccessfulSyncTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_syncLastModifiedTime{};
-  bool m_syncLastModifiedTimeHasBeenSet = false;
 
   LastResourceDataSyncStatus m_lastStatus{LastResourceDataSyncStatus::NOT_SET};
-  bool m_lastStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_syncCreatedTime{};
-  bool m_syncCreatedTimeHasBeenSet = false;
 
   Aws::String m_lastSyncStatusMessage;
+  bool m_syncNameHasBeenSet = false;
+  bool m_syncTypeHasBeenSet = false;
+  bool m_syncSourceHasBeenSet = false;
+  bool m_s3DestinationHasBeenSet = false;
+  bool m_lastSyncTimeHasBeenSet = false;
+  bool m_lastSuccessfulSyncTimeHasBeenSet = false;
+  bool m_syncLastModifiedTimeHasBeenSet = false;
+  bool m_lastStatusHasBeenSet = false;
+  bool m_syncCreatedTimeHasBeenSet = false;
   bool m_lastSyncStatusMessageHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ContactConfiguration {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   bool m_includeRawMessage{false};
+  bool m_contactIdHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
   bool m_includeRawMessageHasBeenSet = false;
 };
 

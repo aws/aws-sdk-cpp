@@ -73,9 +73,9 @@ class HyperParameterTuningJobObjective {
   ///@}
  private:
   HyperParameterTuningJobObjectiveType m_type{HyperParameterTuningJobObjectiveType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_metricName;
+  bool m_typeHasBeenSet = false;
   bool m_metricNameHasBeenSet = false;
 };
 

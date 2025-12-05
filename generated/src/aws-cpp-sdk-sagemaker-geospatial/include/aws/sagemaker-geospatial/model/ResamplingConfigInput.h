@@ -96,12 +96,12 @@ class ResamplingConfigInput {
   ///@}
  private:
   AlgorithmNameResampling m_algorithmName{AlgorithmNameResampling::NOT_SET};
-  bool m_algorithmNameHasBeenSet = false;
 
   OutputResolutionResamplingInput m_outputResolution;
-  bool m_outputResolutionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetBands;
+  bool m_algorithmNameHasBeenSet = false;
+  bool m_outputResolutionHasBeenSet = false;
   bool m_targetBandsHasBeenSet = false;
 };
 

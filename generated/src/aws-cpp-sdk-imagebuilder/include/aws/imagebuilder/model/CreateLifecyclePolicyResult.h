@@ -77,12 +77,12 @@ class CreateLifecyclePolicyResult {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_lifecyclePolicyArn;
-  bool m_lifecyclePolicyArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_lifecyclePolicyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

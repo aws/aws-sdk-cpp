@@ -60,9 +60,9 @@ class CreateVpcEncryptionControlResponse {
   ///@}
  private:
   VpcEncryptionControl m_vpcEncryptionControl;
-  bool m_vpcEncryptionControlHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcEncryptionControlHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

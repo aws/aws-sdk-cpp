@@ -58,9 +58,9 @@ class DeleteDataCatalogResult {
   ///@}
  private:
   DataCatalog m_dataCatalog;
-  bool m_dataCatalogHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataCatalogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateSceneResult {
   ///@}
  private:
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

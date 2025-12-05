@@ -69,9 +69,9 @@ class FlowNodeOutput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

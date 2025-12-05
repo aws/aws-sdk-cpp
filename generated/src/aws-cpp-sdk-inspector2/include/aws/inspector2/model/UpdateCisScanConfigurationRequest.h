@@ -121,18 +121,18 @@ class UpdateCisScanConfigurationRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   CisSecurityLevel m_securityLevel{CisSecurityLevel::NOT_SET};
-  bool m_securityLevelHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   UpdateCisTargets m_targets;
+  bool m_scanConfigurationArnHasBeenSet = false;
+  bool m_scanNameHasBeenSet = false;
+  bool m_securityLevelHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class Preview {
   ///@}
  private:
   PostAcceptTimeoutConfig m_postAcceptTimeoutConfig;
-  bool m_postAcceptTimeoutConfigHasBeenSet = false;
 
   Aws::Vector<AllowedUserAction> m_allowedUserActions;
+  bool m_postAcceptTimeoutConfigHasBeenSet = false;
   bool m_allowedUserActionsHasBeenSet = false;
 };
 

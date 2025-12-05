@@ -87,12 +87,12 @@ class DescribeWorkspacesResult {
   ///@}
  private:
   Aws::Vector<Workspace> m_workspaces;
-  bool m_workspacesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspacesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

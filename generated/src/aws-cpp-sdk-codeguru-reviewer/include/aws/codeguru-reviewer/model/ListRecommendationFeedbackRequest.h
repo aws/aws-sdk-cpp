@@ -148,18 +148,18 @@ class ListRecommendationFeedbackRequest : public CodeGuruReviewerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_codeReviewArn;
-  bool m_codeReviewArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_codeReviewArnHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
   bool m_recommendationIdsHasBeenSet = false;
 };
 

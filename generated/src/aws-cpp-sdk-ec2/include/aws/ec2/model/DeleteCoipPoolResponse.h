@@ -60,9 +60,9 @@ class DeleteCoipPoolResponse {
   ///@}
  private:
   CoipPool m_coipPool;
-  bool m_coipPoolHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_coipPoolHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

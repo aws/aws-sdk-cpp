@@ -122,15 +122,15 @@ class SendMessageRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_connectionToken;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_connectionTokenHasBeenSet = false;
 };
 

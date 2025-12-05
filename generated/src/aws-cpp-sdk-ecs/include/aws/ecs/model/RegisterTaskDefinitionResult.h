@@ -85,12 +85,12 @@ class RegisterTaskDefinitionResult {
   ///@}
  private:
   TaskDefinition m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskDefinitionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

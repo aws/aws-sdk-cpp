@@ -87,12 +87,12 @@ class DeleteEntityRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   bool m_isRecursive{false};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
   bool m_isRecursiveHasBeenSet = false;
 };
 

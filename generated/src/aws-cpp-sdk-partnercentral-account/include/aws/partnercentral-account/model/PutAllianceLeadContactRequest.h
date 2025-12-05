@@ -105,15 +105,15 @@ class PutAllianceLeadContactRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   AllianceLeadContact m_allianceLeadContact;
-  bool m_allianceLeadContactHasBeenSet = false;
 
   Aws::String m_emailVerificationCode;
+  bool m_catalogHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_allianceLeadContactHasBeenSet = false;
   bool m_emailVerificationCodeHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class ActionExecutionOutput {
   ///@}
  private:
   Aws::Vector<ArtifactDetail> m_outputArtifacts;
-  bool m_outputArtifactsHasBeenSet = false;
 
   ActionExecutionResult m_executionResult;
-  bool m_executionResultHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_outputVariables;
+  bool m_outputArtifactsHasBeenSet = false;
+  bool m_executionResultHasBeenSet = false;
   bool m_outputVariablesHasBeenSet = false;
 };
 

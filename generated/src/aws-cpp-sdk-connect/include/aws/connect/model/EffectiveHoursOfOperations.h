@@ -78,9 +78,9 @@ class EffectiveHoursOfOperations {
   ///@}
  private:
   Aws::String m_date;
-  bool m_dateHasBeenSet = false;
 
   Aws::Vector<OperationalHour> m_operationalHours;
+  bool m_dateHasBeenSet = false;
   bool m_operationalHoursHasBeenSet = false;
 };
 

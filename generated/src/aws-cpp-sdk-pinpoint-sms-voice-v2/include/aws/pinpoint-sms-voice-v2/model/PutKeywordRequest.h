@@ -110,15 +110,15 @@ class PutKeywordRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_keyword;
-  bool m_keywordHasBeenSet = false;
 
   Aws::String m_keywordMessage;
-  bool m_keywordMessageHasBeenSet = false;
 
   KeywordAction m_keywordAction{KeywordAction::NOT_SET};
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_keywordHasBeenSet = false;
+  bool m_keywordMessageHasBeenSet = false;
   bool m_keywordActionHasBeenSet = false;
 };
 

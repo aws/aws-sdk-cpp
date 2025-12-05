@@ -69,9 +69,9 @@ class ReferenceLineStyleConfiguration {
   ///@}
  private:
   ReferenceLinePatternType m_pattern{ReferenceLinePatternType::NOT_SET};
-  bool m_patternHasBeenSet = false;
 
   Aws::String m_color;
+  bool m_patternHasBeenSet = false;
   bool m_colorHasBeenSet = false;
 };
 

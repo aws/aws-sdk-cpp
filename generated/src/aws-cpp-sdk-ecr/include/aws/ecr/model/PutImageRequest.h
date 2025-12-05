@@ -143,21 +143,21 @@ class PutImageRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_imageManifest;
-  bool m_imageManifestHasBeenSet = false;
 
   Aws::String m_imageManifestMediaType;
-  bool m_imageManifestMediaTypeHasBeenSet = false;
 
   Aws::String m_imageTag;
-  bool m_imageTagHasBeenSet = false;
 
   Aws::String m_imageDigest;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_imageManifestHasBeenSet = false;
+  bool m_imageManifestMediaTypeHasBeenSet = false;
+  bool m_imageTagHasBeenSet = false;
   bool m_imageDigestHasBeenSet = false;
 };
 

@@ -118,18 +118,18 @@ class QueryStatisticsForDescribeQuery {
   ///@}
  private:
   long long m_eventsMatched{0};
-  bool m_eventsMatchedHasBeenSet = false;
 
   long long m_eventsScanned{0};
-  bool m_eventsScannedHasBeenSet = false;
 
   long long m_bytesScanned{0};
-  bool m_bytesScannedHasBeenSet = false;
 
   int m_executionTimeInMillis{0};
-  bool m_executionTimeInMillisHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_eventsMatchedHasBeenSet = false;
+  bool m_eventsScannedHasBeenSet = false;
+  bool m_bytesScannedHasBeenSet = false;
+  bool m_executionTimeInMillisHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

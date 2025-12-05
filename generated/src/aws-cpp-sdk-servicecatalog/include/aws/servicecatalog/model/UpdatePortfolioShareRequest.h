@@ -142,21 +142,21 @@ class UpdatePortfolioShareRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   OrganizationNode m_organizationNode;
-  bool m_organizationNodeHasBeenSet = false;
 
   bool m_shareTagOptions{false};
-  bool m_shareTagOptionsHasBeenSet = false;
 
   bool m_sharePrincipals{false};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_portfolioIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_organizationNodeHasBeenSet = false;
+  bool m_shareTagOptionsHasBeenSet = false;
   bool m_sharePrincipalsHasBeenSet = false;
 };
 

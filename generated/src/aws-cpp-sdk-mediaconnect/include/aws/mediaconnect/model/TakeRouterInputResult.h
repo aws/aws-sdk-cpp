@@ -126,21 +126,21 @@ class TakeRouterInputResult {
   ///@}
  private:
   RouterOutputRoutedState m_routedState{RouterOutputRoutedState::NOT_SET};
-  bool m_routedStateHasBeenSet = false;
 
   Aws::String m_routerOutputArn;
-  bool m_routerOutputArnHasBeenSet = false;
 
   Aws::String m_routerOutputName;
-  bool m_routerOutputNameHasBeenSet = false;
 
   Aws::String m_routerInputArn;
-  bool m_routerInputArnHasBeenSet = false;
 
   Aws::String m_routerInputName;
-  bool m_routerInputNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routedStateHasBeenSet = false;
+  bool m_routerOutputArnHasBeenSet = false;
+  bool m_routerOutputNameHasBeenSet = false;
+  bool m_routerInputArnHasBeenSet = false;
+  bool m_routerInputNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

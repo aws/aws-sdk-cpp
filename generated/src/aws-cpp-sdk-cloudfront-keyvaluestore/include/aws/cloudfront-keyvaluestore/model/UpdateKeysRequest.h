@@ -124,15 +124,15 @@ class UpdateKeysRequest : public CloudFrontKeyValueStoreRequest {
   ///@}
  private:
   Aws::String m_kvsARN;
-  bool m_kvsARNHasBeenSet = false;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   Aws::Vector<PutKeyRequestListItem> m_puts;
-  bool m_putsHasBeenSet = false;
 
   Aws::Vector<DeleteKeyRequestListItem> m_deletes;
+  bool m_kvsARNHasBeenSet = false;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_putsHasBeenSet = false;
   bool m_deletesHasBeenSet = false;
 };
 

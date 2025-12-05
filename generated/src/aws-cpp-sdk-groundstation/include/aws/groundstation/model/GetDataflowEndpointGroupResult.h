@@ -166,24 +166,24 @@ class GetDataflowEndpointGroupResult {
   ///@}
  private:
   Aws::String m_dataflowEndpointGroupId;
-  bool m_dataflowEndpointGroupIdHasBeenSet = false;
 
   Aws::String m_dataflowEndpointGroupArn;
-  bool m_dataflowEndpointGroupArnHasBeenSet = false;
 
   Aws::Vector<EndpointDetails> m_endpointsDetails;
-  bool m_endpointsDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_contactPrePassDurationSeconds{0};
-  bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
   int m_contactPostPassDurationSeconds{0};
-  bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataflowEndpointGroupIdHasBeenSet = false;
+  bool m_dataflowEndpointGroupArnHasBeenSet = false;
+  bool m_endpointsDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_contactPrePassDurationSecondsHasBeenSet = false;
+  bool m_contactPostPassDurationSecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

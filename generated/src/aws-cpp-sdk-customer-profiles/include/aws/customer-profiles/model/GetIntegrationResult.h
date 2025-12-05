@@ -277,42 +277,42 @@ class GetIntegrationResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
-  bool m_objectTypeNamesHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   bool m_isUnstructured{false};
-  bool m_isUnstructuredHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventTriggerNames;
-  bool m_eventTriggerNamesHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_objectTypeNamesHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_isUnstructuredHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_eventTriggerNamesHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

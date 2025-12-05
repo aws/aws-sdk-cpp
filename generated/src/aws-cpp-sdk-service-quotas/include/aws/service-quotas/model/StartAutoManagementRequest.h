@@ -116,15 +116,15 @@ class StartAutoManagementRequest : public ServiceQuotasRequest {
   ///@}
  private:
   OptInLevel m_optInLevel{OptInLevel::NOT_SET};
-  bool m_optInLevelHasBeenSet = false;
 
   OptInType m_optInType{OptInType::NOT_SET};
-  bool m_optInTypeHasBeenSet = false;
 
   Aws::String m_notificationArn;
-  bool m_notificationArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_exclusionList;
+  bool m_optInLevelHasBeenSet = false;
+  bool m_optInTypeHasBeenSet = false;
+  bool m_notificationArnHasBeenSet = false;
   bool m_exclusionListHasBeenSet = false;
 };
 

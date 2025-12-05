@@ -141,21 +141,21 @@ class ListMembersRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   MemberStatus m_status{MemberStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_isOwned{false};
-  bool m_isOwnedHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_networkIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_isOwnedHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -161,27 +161,27 @@ class GetWorkflowRunResult {
   ///@}
  private:
   Aws::String m_workflowRunArn;
-  bool m_workflowRunArnHasBeenSet = false;
 
   Aws::String m_workflowRunId;
-  bool m_workflowRunIdHasBeenSet = false;
 
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowRunArnHasBeenSet = false;
+  bool m_workflowRunIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

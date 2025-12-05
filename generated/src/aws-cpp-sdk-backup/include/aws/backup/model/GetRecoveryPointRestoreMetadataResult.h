@@ -121,18 +121,18 @@ class GetRecoveryPointRestoreMetadataResult {
   ///@}
  private:
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_restoreMetadata;
-  bool m_restoreMetadataHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_restoreMetadataHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

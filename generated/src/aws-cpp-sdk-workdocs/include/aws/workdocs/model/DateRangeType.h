@@ -69,9 +69,9 @@ class DateRangeType {
   ///@}
  private:
   Aws::Utils::DateTime m_startValue{};
-  bool m_startValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_endValue{};
+  bool m_startValueHasBeenSet = false;
   bool m_endValueHasBeenSet = false;
 };
 

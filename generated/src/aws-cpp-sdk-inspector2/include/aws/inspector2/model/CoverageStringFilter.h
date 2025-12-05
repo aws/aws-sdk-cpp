@@ -67,9 +67,9 @@ class CoverageStringFilter {
   ///@}
  private:
   CoverageStringComparison m_comparison{CoverageStringComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_comparisonHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

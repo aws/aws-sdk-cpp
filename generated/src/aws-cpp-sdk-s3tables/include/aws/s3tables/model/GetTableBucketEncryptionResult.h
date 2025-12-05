@@ -60,9 +60,9 @@ class GetTableBucketEncryptionResult {
   ///@}
  private:
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

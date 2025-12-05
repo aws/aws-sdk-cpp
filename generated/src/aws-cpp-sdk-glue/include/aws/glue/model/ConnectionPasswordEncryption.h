@@ -85,9 +85,9 @@ class ConnectionPasswordEncryption {
   ///@}
  private:
   bool m_returnConnectionPasswordEncrypted{false};
-  bool m_returnConnectionPasswordEncryptedHasBeenSet = false;
 
   Aws::String m_awsKmsKeyId;
+  bool m_returnConnectionPasswordEncryptedHasBeenSet = false;
   bool m_awsKmsKeyIdHasBeenSet = false;
 };
 

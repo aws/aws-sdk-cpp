@@ -83,12 +83,12 @@ class ResolveCaseResult {
   ///@}
  private:
   Aws::String m_initialCaseStatus;
-  bool m_initialCaseStatusHasBeenSet = false;
 
   Aws::String m_finalCaseStatus;
-  bool m_finalCaseStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_initialCaseStatusHasBeenSet = false;
+  bool m_finalCaseStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

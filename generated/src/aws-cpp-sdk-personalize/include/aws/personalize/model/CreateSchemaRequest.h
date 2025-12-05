@@ -86,12 +86,12 @@ class CreateSchemaRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
   bool m_domainHasBeenSet = false;
 };
 

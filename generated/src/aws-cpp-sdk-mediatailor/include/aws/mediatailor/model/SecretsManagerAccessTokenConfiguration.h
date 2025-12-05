@@ -95,12 +95,12 @@ class SecretsManagerAccessTokenConfiguration {
   ///@}
  private:
   Aws::String m_headerName;
-  bool m_headerNameHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_secretStringKey;
+  bool m_headerNameHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
   bool m_secretStringKeyHasBeenSet = false;
 };
 

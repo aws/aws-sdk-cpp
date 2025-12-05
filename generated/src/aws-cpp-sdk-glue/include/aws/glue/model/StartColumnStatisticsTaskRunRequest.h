@@ -166,24 +166,24 @@ class StartColumnStatisticsTaskRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columnNameList;
-  bool m_columnNameListHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   double m_sampleSize{0.0};
-  bool m_sampleSizeHasBeenSet = false;
 
   Aws::String m_catalogID;
-  bool m_catalogIDHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_columnNameListHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_sampleSizeHasBeenSet = false;
+  bool m_catalogIDHasBeenSet = false;
   bool m_securityConfigurationHasBeenSet = false;
 };
 

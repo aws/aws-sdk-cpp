@@ -171,24 +171,24 @@ class StartCapacityTaskRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifier;
-  bool m_outpostIdentifierHasBeenSet = false;
 
   Aws::String m_orderId;
-  bool m_orderIdHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::Vector<InstanceTypeCapacity> m_instancePools;
-  bool m_instancePoolsHasBeenSet = false;
 
   InstancesToExclude m_instancesToExclude;
-  bool m_instancesToExcludeHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   TaskActionOnBlockingInstances m_taskActionOnBlockingInstances{TaskActionOnBlockingInstances::NOT_SET};
+  bool m_outpostIdentifierHasBeenSet = false;
+  bool m_orderIdHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_instancePoolsHasBeenSet = false;
+  bool m_instancesToExcludeHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_taskActionOnBlockingInstancesHasBeenSet = false;
 };
 

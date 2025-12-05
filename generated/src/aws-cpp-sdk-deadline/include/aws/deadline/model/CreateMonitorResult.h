@@ -77,12 +77,12 @@ class CreateMonitorResult {
   ///@}
  private:
   Aws::String m_monitorId;
-  bool m_monitorIdHasBeenSet = false;
 
   Aws::String m_identityCenterApplicationArn;
-  bool m_identityCenterApplicationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitorIdHasBeenSet = false;
+  bool m_identityCenterApplicationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

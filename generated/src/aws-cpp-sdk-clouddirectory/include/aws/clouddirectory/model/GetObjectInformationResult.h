@@ -86,12 +86,12 @@ class GetObjectInformationResult {
   ///@}
  private:
   Aws::Vector<SchemaFacet> m_schemaFacets;
-  bool m_schemaFacetsHasBeenSet = false;
 
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaFacetsHasBeenSet = false;
+  bool m_objectIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

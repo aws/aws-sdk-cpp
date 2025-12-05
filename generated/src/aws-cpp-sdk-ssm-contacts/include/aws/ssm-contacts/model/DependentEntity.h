@@ -78,9 +78,9 @@ class DependentEntity {
   ///@}
  private:
   Aws::String m_relationType;
-  bool m_relationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependentResourceIds;
+  bool m_relationTypeHasBeenSet = false;
   bool m_dependentResourceIdsHasBeenSet = false;
 };
 

@@ -438,66 +438,66 @@ class CreateCloudVmClusterRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   int m_cpuCoreCount{0};
-  bool m_cpuCoreCountHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_giVersion;
-  bool m_giVersionHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sshPublicKeys;
-  bool m_sshPublicKeysHasBeenSet = false;
 
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   DataCollectionOptions m_dataCollectionOptions;
-  bool m_dataCollectionOptionsHasBeenSet = false;
 
   double m_dataStorageSizeInTBs{0.0};
-  bool m_dataStorageSizeInTBsHasBeenSet = false;
 
   int m_dbNodeStorageSizeInGBs{0};
-  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbServers;
-  bool m_dbServersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_isLocalBackupEnabled{false};
-  bool m_isLocalBackupEnabledHasBeenSet = false;
 
   bool m_isSparseDiskgroupEnabled{false};
-  bool m_isSparseDiskgroupEnabledHasBeenSet = false;
 
   LicenseModel m_licenseModel{LicenseModel::NOT_SET};
-  bool m_licenseModelHasBeenSet = false;
 
   int m_memorySizeInGBs{0};
-  bool m_memorySizeInGBsHasBeenSet = false;
 
   Aws::String m_systemVersion;
-  bool m_systemVersionHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   int m_scanListenerPortTcp{0};
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_cpuCoreCountHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_giVersionHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_sshPublicKeysHasBeenSet = false;
+  bool m_odbNetworkIdHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_dataCollectionOptionsHasBeenSet = false;
+  bool m_dataStorageSizeInTBsHasBeenSet = false;
+  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_dbServersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_isLocalBackupEnabledHasBeenSet = false;
+  bool m_isSparseDiskgroupEnabledHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_memorySizeInGBsHasBeenSet = false;
+  bool m_systemVersionHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_scanListenerPortTcpHasBeenSet = false;
 };
 

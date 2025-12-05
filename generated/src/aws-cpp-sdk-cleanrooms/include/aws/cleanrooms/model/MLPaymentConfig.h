@@ -89,12 +89,12 @@ class MLPaymentConfig {
   ///@}
  private:
   ModelTrainingPaymentConfig m_modelTraining;
-  bool m_modelTrainingHasBeenSet = false;
 
   ModelInferencePaymentConfig m_modelInference;
-  bool m_modelInferenceHasBeenSet = false;
 
   SyntheticDataGenerationPaymentConfig m_syntheticDataGeneration;
+  bool m_modelTrainingHasBeenSet = false;
+  bool m_modelInferenceHasBeenSet = false;
   bool m_syntheticDataGenerationHasBeenSet = false;
 };
 

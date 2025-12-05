@@ -74,9 +74,9 @@ class BatchPutPropertyValuesRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::Vector<PropertyValueEntry> m_entries;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

@@ -99,15 +99,15 @@ class RetainedMessageSummary {
   ///@}
  private:
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   long long m_payloadSize{0};
-  bool m_payloadSizeHasBeenSet = false;
 
   int m_qos{0};
-  bool m_qosHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
+  bool m_topicHasBeenSet = false;
+  bool m_payloadSizeHasBeenSet = false;
+  bool m_qosHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

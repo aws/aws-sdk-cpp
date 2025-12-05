@@ -161,24 +161,24 @@ class GetAggregateComplianceDetailsByConfigRuleRequest : public ConfigServiceReq
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   ComplianceType m_complianceType{ComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_configurationAggregatorNameHasBeenSet = false;
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

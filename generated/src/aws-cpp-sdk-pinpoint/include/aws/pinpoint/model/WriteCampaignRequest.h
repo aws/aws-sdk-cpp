@@ -373,54 +373,54 @@ class WriteCampaignRequest {
   ///@}
  private:
   Aws::Vector<WriteTreatmentResource> m_additionalTreatments;
-  bool m_additionalTreatmentsHasBeenSet = false;
 
   CustomDeliveryConfiguration m_customDeliveryConfiguration;
-  bool m_customDeliveryConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_holdoutPercent{0};
-  bool m_holdoutPercentHasBeenSet = false;
 
   CampaignHook m_hook;
-  bool m_hookHasBeenSet = false;
 
   bool m_isPaused{false};
-  bool m_isPausedHasBeenSet = false;
 
   CampaignLimits m_limits;
-  bool m_limitsHasBeenSet = false;
 
   MessageConfiguration m_messageConfiguration;
-  bool m_messageConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_segmentId;
-  bool m_segmentIdHasBeenSet = false;
 
   int m_segmentVersion{0};
-  bool m_segmentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   Aws::String m_treatmentDescription;
-  bool m_treatmentDescriptionHasBeenSet = false;
 
   Aws::String m_treatmentName;
-  bool m_treatmentNameHasBeenSet = false;
 
   int m_priority{0};
+  bool m_additionalTreatmentsHasBeenSet = false;
+  bool m_customDeliveryConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_holdoutPercentHasBeenSet = false;
+  bool m_hookHasBeenSet = false;
+  bool m_isPausedHasBeenSet = false;
+  bool m_limitsHasBeenSet = false;
+  bool m_messageConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_segmentIdHasBeenSet = false;
+  bool m_segmentVersionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_treatmentDescriptionHasBeenSet = false;
+  bool m_treatmentNameHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

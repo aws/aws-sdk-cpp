@@ -90,12 +90,12 @@ class ListSearchJobBackupsRequest : public BackupSearchRequest {
   ///@}
  private:
   Aws::String m_searchJobIdentifier;
-  bool m_searchJobIdentifierHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_searchJobIdentifierHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

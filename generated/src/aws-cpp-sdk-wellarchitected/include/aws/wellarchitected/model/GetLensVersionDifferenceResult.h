@@ -141,24 +141,24 @@ class GetLensVersionDifferenceResult {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_baseLensVersion;
-  bool m_baseLensVersionHasBeenSet = false;
 
   Aws::String m_targetLensVersion;
-  bool m_targetLensVersionHasBeenSet = false;
 
   Aws::String m_latestLensVersion;
-  bool m_latestLensVersionHasBeenSet = false;
 
   VersionDifferences m_versionDifferences;
-  bool m_versionDifferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_baseLensVersionHasBeenSet = false;
+  bool m_targetLensVersionHasBeenSet = false;
+  bool m_latestLensVersionHasBeenSet = false;
+  bool m_versionDifferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

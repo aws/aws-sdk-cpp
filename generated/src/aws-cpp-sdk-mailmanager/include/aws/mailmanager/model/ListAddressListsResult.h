@@ -86,12 +86,12 @@ class ListAddressListsResult {
   ///@}
  private:
   Aws::Vector<AddressList> m_addressLists;
-  bool m_addressListsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addressListsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

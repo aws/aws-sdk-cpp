@@ -99,15 +99,15 @@ class GetCalendarStateResult {
   ///@}
  private:
   CalendarState m_state{CalendarState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_atTime;
-  bool m_atTimeHasBeenSet = false;
 
   Aws::String m_nextTransitionTime;
-  bool m_nextTransitionTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stateHasBeenSet = false;
+  bool m_atTimeHasBeenSet = false;
+  bool m_nextTransitionTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

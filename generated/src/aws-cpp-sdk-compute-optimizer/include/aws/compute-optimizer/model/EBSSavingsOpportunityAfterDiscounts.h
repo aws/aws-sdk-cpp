@@ -71,9 +71,9 @@ class EBSSavingsOpportunityAfterDiscounts {
   ///@}
  private:
   double m_savingsOpportunityPercentage{0.0};
-  bool m_savingsOpportunityPercentageHasBeenSet = false;
 
   EBSEstimatedMonthlySavings m_estimatedMonthlySavings;
+  bool m_savingsOpportunityPercentageHasBeenSet = false;
   bool m_estimatedMonthlySavingsHasBeenSet = false;
 };
 

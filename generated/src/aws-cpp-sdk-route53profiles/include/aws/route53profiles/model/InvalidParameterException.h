@@ -67,9 +67,9 @@ class InvalidParameterException {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_fieldNameHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

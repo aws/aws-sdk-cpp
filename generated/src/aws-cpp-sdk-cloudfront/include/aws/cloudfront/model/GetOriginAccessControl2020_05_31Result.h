@@ -79,12 +79,12 @@ class GetOriginAccessControl2020_05_31Result {
   ///@}
  private:
   OriginAccessControl m_originAccessControl;
-  bool m_originAccessControlHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originAccessControlHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

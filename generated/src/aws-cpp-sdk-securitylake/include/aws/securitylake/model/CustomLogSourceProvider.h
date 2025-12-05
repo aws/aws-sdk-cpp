@@ -73,9 +73,9 @@ class CustomLogSourceProvider {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_locationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

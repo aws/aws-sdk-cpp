@@ -106,15 +106,15 @@ class DeleteClientVpnRouteRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_targetVpcSubnetId;
-  bool m_targetVpcSubnetIdHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_targetVpcSubnetIdHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

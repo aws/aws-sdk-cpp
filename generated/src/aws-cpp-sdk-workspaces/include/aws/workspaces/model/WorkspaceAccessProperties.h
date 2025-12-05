@@ -203,33 +203,33 @@ class WorkspaceAccessProperties {
   ///@}
  private:
   AccessPropertyValue m_deviceTypeWindows{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeWindowsHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeOsx{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeOsxHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeWeb{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeWebHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeIos{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeIosHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeAndroid{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeAndroidHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeChromeOs{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeChromeOsHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeZeroClient{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeZeroClientHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeLinux{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeLinuxHasBeenSet = false;
 
   AccessPropertyValue m_deviceTypeWorkSpacesThinClient{AccessPropertyValue::NOT_SET};
-  bool m_deviceTypeWorkSpacesThinClientHasBeenSet = false;
 
   AccessEndpointConfig m_accessEndpointConfig;
+  bool m_deviceTypeWindowsHasBeenSet = false;
+  bool m_deviceTypeOsxHasBeenSet = false;
+  bool m_deviceTypeWebHasBeenSet = false;
+  bool m_deviceTypeIosHasBeenSet = false;
+  bool m_deviceTypeAndroidHasBeenSet = false;
+  bool m_deviceTypeChromeOsHasBeenSet = false;
+  bool m_deviceTypeZeroClientHasBeenSet = false;
+  bool m_deviceTypeLinuxHasBeenSet = false;
+  bool m_deviceTypeWorkSpacesThinClientHasBeenSet = false;
   bool m_accessEndpointConfigHasBeenSet = false;
 };
 

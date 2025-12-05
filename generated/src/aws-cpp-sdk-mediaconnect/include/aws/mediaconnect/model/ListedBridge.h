@@ -121,18 +121,18 @@ class ListedBridge {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   BridgeState m_bridgeState{BridgeState::NOT_SET};
-  bool m_bridgeStateHasBeenSet = false;
 
   Aws::String m_bridgeType;
-  bool m_bridgeTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_placementArn;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_bridgeStateHasBeenSet = false;
+  bool m_bridgeTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_placementArnHasBeenSet = false;
 };
 

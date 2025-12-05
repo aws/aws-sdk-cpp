@@ -59,9 +59,9 @@ class CreateResourceResult {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

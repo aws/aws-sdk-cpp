@@ -135,18 +135,18 @@ class CreateModelManifestRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   Aws::String m_signalCatalogArn;
-  bool m_signalCatalogArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nodesHasBeenSet = false;
+  bool m_signalCatalogArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

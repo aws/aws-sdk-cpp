@@ -90,12 +90,12 @@ class OcsfFindingIdentifier {
   ///@}
  private:
   Aws::String m_cloudAccountUid;
-  bool m_cloudAccountUidHasBeenSet = false;
 
   Aws::String m_findingInfoUid;
-  bool m_findingInfoUidHasBeenSet = false;
 
   Aws::String m_metadataProductUid;
+  bool m_cloudAccountUidHasBeenSet = false;
+  bool m_findingInfoUidHasBeenSet = false;
   bool m_metadataProductUidHasBeenSet = false;
 };
 

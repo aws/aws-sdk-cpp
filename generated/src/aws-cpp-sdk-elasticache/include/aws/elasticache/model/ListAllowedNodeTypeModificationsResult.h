@@ -105,12 +105,12 @@ class ListAllowedNodeTypeModificationsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_scaleUpModifications;
-  bool m_scaleUpModificationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scaleDownModifications;
-  bool m_scaleDownModificationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_scaleUpModificationsHasBeenSet = false;
+  bool m_scaleDownModificationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

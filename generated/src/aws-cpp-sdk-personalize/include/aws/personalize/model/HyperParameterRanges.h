@@ -112,12 +112,12 @@ class HyperParameterRanges {
   ///@}
  private:
   Aws::Vector<IntegerHyperParameterRange> m_integerHyperParameterRanges;
-  bool m_integerHyperParameterRangesHasBeenSet = false;
 
   Aws::Vector<ContinuousHyperParameterRange> m_continuousHyperParameterRanges;
-  bool m_continuousHyperParameterRangesHasBeenSet = false;
 
   Aws::Vector<CategoricalHyperParameterRange> m_categoricalHyperParameterRanges;
+  bool m_integerHyperParameterRangesHasBeenSet = false;
+  bool m_continuousHyperParameterRangesHasBeenSet = false;
   bool m_categoricalHyperParameterRangesHasBeenSet = false;
 };
 

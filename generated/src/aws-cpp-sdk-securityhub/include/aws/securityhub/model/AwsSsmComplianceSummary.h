@@ -356,57 +356,57 @@ class AwsSsmComplianceSummary {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_compliantCriticalCount{0};
-  bool m_compliantCriticalCountHasBeenSet = false;
 
   int m_compliantHighCount{0};
-  bool m_compliantHighCountHasBeenSet = false;
 
   int m_compliantMediumCount{0};
-  bool m_compliantMediumCountHasBeenSet = false;
 
   Aws::String m_executionType;
-  bool m_executionTypeHasBeenSet = false;
 
   int m_nonCompliantCriticalCount{0};
-  bool m_nonCompliantCriticalCountHasBeenSet = false;
 
   int m_compliantInformationalCount{0};
-  bool m_compliantInformationalCountHasBeenSet = false;
 
   int m_nonCompliantInformationalCount{0};
-  bool m_nonCompliantInformationalCountHasBeenSet = false;
 
   int m_compliantUnspecifiedCount{0};
-  bool m_compliantUnspecifiedCountHasBeenSet = false;
 
   int m_nonCompliantLowCount{0};
-  bool m_nonCompliantLowCountHasBeenSet = false;
 
   int m_nonCompliantHighCount{0};
-  bool m_nonCompliantHighCountHasBeenSet = false;
 
   int m_compliantLowCount{0};
-  bool m_compliantLowCountHasBeenSet = false;
 
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_patchBaselineId;
-  bool m_patchBaselineIdHasBeenSet = false;
 
   Aws::String m_overallSeverity;
-  bool m_overallSeverityHasBeenSet = false;
 
   int m_nonCompliantMediumCount{0};
-  bool m_nonCompliantMediumCountHasBeenSet = false;
 
   int m_nonCompliantUnspecifiedCount{0};
-  bool m_nonCompliantUnspecifiedCountHasBeenSet = false;
 
   Aws::String m_patchGroup;
+  bool m_statusHasBeenSet = false;
+  bool m_compliantCriticalCountHasBeenSet = false;
+  bool m_compliantHighCountHasBeenSet = false;
+  bool m_compliantMediumCountHasBeenSet = false;
+  bool m_executionTypeHasBeenSet = false;
+  bool m_nonCompliantCriticalCountHasBeenSet = false;
+  bool m_compliantInformationalCountHasBeenSet = false;
+  bool m_nonCompliantInformationalCountHasBeenSet = false;
+  bool m_compliantUnspecifiedCountHasBeenSet = false;
+  bool m_nonCompliantLowCountHasBeenSet = false;
+  bool m_nonCompliantHighCountHasBeenSet = false;
+  bool m_compliantLowCountHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_patchBaselineIdHasBeenSet = false;
+  bool m_overallSeverityHasBeenSet = false;
+  bool m_nonCompliantMediumCountHasBeenSet = false;
+  bool m_nonCompliantUnspecifiedCountHasBeenSet = false;
   bool m_patchGroupHasBeenSet = false;
 };
 

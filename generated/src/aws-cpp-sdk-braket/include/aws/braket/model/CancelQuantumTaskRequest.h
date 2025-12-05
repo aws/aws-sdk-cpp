@@ -66,9 +66,9 @@ class CancelQuantumTaskRequest : public BraketRequest {
   ///@}
  private:
   Aws::String m_quantumTaskArn;
-  bool m_quantumTaskArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_quantumTaskArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

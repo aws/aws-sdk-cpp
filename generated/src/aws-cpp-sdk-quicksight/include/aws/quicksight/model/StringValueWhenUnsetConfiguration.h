@@ -71,9 +71,9 @@ class StringValueWhenUnsetConfiguration {
   ///@}
  private:
   ValueWhenUnsetOption m_valueWhenUnsetOption{ValueWhenUnsetOption::NOT_SET};
-  bool m_valueWhenUnsetOptionHasBeenSet = false;
 
   Aws::String m_customValue;
+  bool m_valueWhenUnsetOptionHasBeenSet = false;
   bool m_customValueHasBeenSet = false;
 };
 

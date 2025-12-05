@@ -125,18 +125,18 @@ class SpotDatafeedSubscription {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   SpotInstanceStateFault m_fault;
-  bool m_faultHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   DatafeedSubscriptionState m_state{DatafeedSubscriptionState::NOT_SET};
+  bool m_bucketHasBeenSet = false;
+  bool m_faultHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

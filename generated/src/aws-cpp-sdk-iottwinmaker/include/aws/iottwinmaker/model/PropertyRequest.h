@@ -87,12 +87,12 @@ class PropertyRequest {
   ///@}
  private:
   PropertyDefinitionRequest m_definition;
-  bool m_definitionHasBeenSet = false;
 
   DataValue m_value;
-  bool m_valueHasBeenSet = false;
 
   PropertyUpdateType m_updateType{PropertyUpdateType::NOT_SET};
+  bool m_definitionHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_updateTypeHasBeenSet = false;
 };
 

@@ -270,42 +270,42 @@ class PivotTableOptions {
   ///@}
  private:
   PivotTableMetricPlacement m_metricPlacement{PivotTableMetricPlacement::NOT_SET};
-  bool m_metricPlacementHasBeenSet = false;
 
   Visibility m_singleMetricVisibility{Visibility::NOT_SET};
-  bool m_singleMetricVisibilityHasBeenSet = false;
 
   Visibility m_columnNamesVisibility{Visibility::NOT_SET};
-  bool m_columnNamesVisibilityHasBeenSet = false;
 
   Visibility m_toggleButtonsVisibility{Visibility::NOT_SET};
-  bool m_toggleButtonsVisibilityHasBeenSet = false;
 
   TableCellStyle m_columnHeaderStyle;
-  bool m_columnHeaderStyleHasBeenSet = false;
 
   TableCellStyle m_rowHeaderStyle;
-  bool m_rowHeaderStyleHasBeenSet = false;
 
   TableCellStyle m_cellStyle;
-  bool m_cellStyleHasBeenSet = false;
 
   TableCellStyle m_rowFieldNamesStyle;
-  bool m_rowFieldNamesStyleHasBeenSet = false;
 
   RowAlternateColorOptions m_rowAlternateColorOptions;
-  bool m_rowAlternateColorOptionsHasBeenSet = false;
 
   Visibility m_collapsedRowDimensionsVisibility{Visibility::NOT_SET};
-  bool m_collapsedRowDimensionsVisibilityHasBeenSet = false;
 
   PivotTableRowsLayout m_rowsLayout{PivotTableRowsLayout::NOT_SET};
-  bool m_rowsLayoutHasBeenSet = false;
 
   PivotTableRowsLabelOptions m_rowsLabelOptions;
-  bool m_rowsLabelOptionsHasBeenSet = false;
 
   Aws::String m_defaultCellWidth;
+  bool m_metricPlacementHasBeenSet = false;
+  bool m_singleMetricVisibilityHasBeenSet = false;
+  bool m_columnNamesVisibilityHasBeenSet = false;
+  bool m_toggleButtonsVisibilityHasBeenSet = false;
+  bool m_columnHeaderStyleHasBeenSet = false;
+  bool m_rowHeaderStyleHasBeenSet = false;
+  bool m_cellStyleHasBeenSet = false;
+  bool m_rowFieldNamesStyleHasBeenSet = false;
+  bool m_rowAlternateColorOptionsHasBeenSet = false;
+  bool m_collapsedRowDimensionsVisibilityHasBeenSet = false;
+  bool m_rowsLayoutHasBeenSet = false;
+  bool m_rowsLabelOptionsHasBeenSet = false;
   bool m_defaultCellWidthHasBeenSet = false;
 };
 

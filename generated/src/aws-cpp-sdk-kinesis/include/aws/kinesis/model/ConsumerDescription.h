@@ -131,18 +131,18 @@ class ConsumerDescription {
   ///@}
  private:
   Aws::String m_consumerName;
-  bool m_consumerNameHasBeenSet = false;
 
   Aws::String m_consumerARN;
-  bool m_consumerARNHasBeenSet = false;
 
   ConsumerStatus m_consumerStatus{ConsumerStatus::NOT_SET};
-  bool m_consumerStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_consumerCreationTimestamp{};
-  bool m_consumerCreationTimestampHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_consumerNameHasBeenSet = false;
+  bool m_consumerARNHasBeenSet = false;
+  bool m_consumerStatusHasBeenSet = false;
+  bool m_consumerCreationTimestampHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

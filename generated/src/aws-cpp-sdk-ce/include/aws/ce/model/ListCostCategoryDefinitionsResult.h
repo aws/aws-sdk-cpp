@@ -87,12 +87,12 @@ class ListCostCategoryDefinitionsResult {
   ///@}
  private:
   Aws::Vector<CostCategoryReference> m_costCategoryReferences;
-  bool m_costCategoryReferencesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costCategoryReferencesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

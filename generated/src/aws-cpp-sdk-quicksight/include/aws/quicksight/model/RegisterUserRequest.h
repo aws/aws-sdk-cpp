@@ -327,42 +327,42 @@ class RegisterUserRequest : public QuickSightRequest {
   ///@}
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   UserRole m_userRole{UserRole::NOT_SET};
-  bool m_userRoleHasBeenSet = false;
 
   Aws::String m_iamArn;
-  bool m_iamArnHasBeenSet = false;
 
   Aws::String m_sessionName;
-  bool m_sessionNameHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_customPermissionsName;
-  bool m_customPermissionsNameHasBeenSet = false;
 
   Aws::String m_externalLoginFederationProviderType;
-  bool m_externalLoginFederationProviderTypeHasBeenSet = false;
 
   Aws::String m_customFederationProviderUrl;
-  bool m_customFederationProviderUrlHasBeenSet = false;
 
   Aws::String m_externalLoginId;
-  bool m_externalLoginIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_userRoleHasBeenSet = false;
+  bool m_iamArnHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_customPermissionsNameHasBeenSet = false;
+  bool m_externalLoginFederationProviderTypeHasBeenSet = false;
+  bool m_customFederationProviderUrlHasBeenSet = false;
+  bool m_externalLoginIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

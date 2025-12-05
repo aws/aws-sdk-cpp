@@ -68,9 +68,9 @@ class UpdateReadinessCheckRequest : public Route53RecoveryReadinessRequest {
   ///@}
  private:
   Aws::String m_readinessCheckName;
-  bool m_readinessCheckNameHasBeenSet = false;
 
   Aws::String m_resourceSetName;
+  bool m_readinessCheckNameHasBeenSet = false;
   bool m_resourceSetNameHasBeenSet = false;
 };
 

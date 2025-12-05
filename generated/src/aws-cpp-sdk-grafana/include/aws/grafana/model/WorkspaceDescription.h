@@ -556,78 +556,78 @@ class WorkspaceDescription {
   ///@}
  private:
   AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
-  bool m_accountAccessTypeHasBeenSet = false;
 
   AuthenticationSummary m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Vector<DataSourceType> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   bool m_freeTrialConsumed{false};
-  bool m_freeTrialConsumedHasBeenSet = false;
 
   Aws::Utils::DateTime m_freeTrialExpiration{};
-  bool m_freeTrialExpirationHasBeenSet = false;
 
   Aws::String m_grafanaToken;
-  bool m_grafanaTokenHasBeenSet = false;
 
   Aws::String m_grafanaVersion;
-  bool m_grafanaVersionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_licenseExpiration{};
-  bool m_licenseExpirationHasBeenSet = false;
 
   LicenseType m_licenseType{LicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_modified{};
-  bool m_modifiedHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NetworkAccessConfiguration m_networkAccessControl;
-  bool m_networkAccessControlHasBeenSet = false;
 
   Aws::Vector<NotificationDestinationType> m_notificationDestinations;
-  bool m_notificationDestinationsHasBeenSet = false;
 
   Aws::String m_organizationRoleName;
-  bool m_organizationRoleNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnits;
-  bool m_organizationalUnitsHasBeenSet = false;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   WorkspaceStatus m_status{WorkspaceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_workspaceRoleArn;
+  bool m_accountAccessTypeHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_freeTrialConsumedHasBeenSet = false;
+  bool m_freeTrialExpirationHasBeenSet = false;
+  bool m_grafanaTokenHasBeenSet = false;
+  bool m_grafanaVersionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_licenseExpirationHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_modifiedHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkAccessControlHasBeenSet = false;
+  bool m_notificationDestinationsHasBeenSet = false;
+  bool m_organizationRoleNameHasBeenSet = false;
+  bool m_organizationalUnitsHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
   bool m_workspaceRoleArnHasBeenSet = false;
 };
 

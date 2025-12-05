@@ -168,18 +168,18 @@ class IpamPrefixListResolverRuleRequest {
   ///@}
  private:
   IpamPrefixListResolverRuleType m_ruleType{IpamPrefixListResolverRuleType::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   Aws::String m_staticCidr;
-  bool m_staticCidrHasBeenSet = false;
 
   Aws::String m_ipamScopeId;
-  bool m_ipamScopeIdHasBeenSet = false;
 
   IpamResourceType m_resourceType{IpamResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<IpamPrefixListResolverRuleConditionRequest> m_conditions;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_staticCidrHasBeenSet = false;
+  bool m_ipamScopeIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

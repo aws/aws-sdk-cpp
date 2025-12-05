@@ -202,27 +202,27 @@ class IpAccessSettings {
   ///@}
  private:
   Aws::String m_ipAccessSettingsArn;
-  bool m_ipAccessSettingsArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedPortalArns;
-  bool m_associatedPortalArnsHasBeenSet = false;
 
   Aws::Vector<IpRule> m_ipRules;
-  bool m_ipRulesHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
+  bool m_ipAccessSettingsArnHasBeenSet = false;
+  bool m_associatedPortalArnsHasBeenSet = false;
+  bool m_ipRulesHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
   bool m_additionalEncryptionContextHasBeenSet = false;
 };
 

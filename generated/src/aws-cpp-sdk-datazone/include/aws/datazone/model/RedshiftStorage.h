@@ -70,9 +70,9 @@ class RedshiftStorage {
   ///@}
  private:
   RedshiftClusterStorage m_redshiftClusterSource;
-  bool m_redshiftClusterSourceHasBeenSet = false;
 
   RedshiftServerlessStorage m_redshiftServerlessSource;
+  bool m_redshiftClusterSourceHasBeenSet = false;
   bool m_redshiftServerlessSourceHasBeenSet = false;
 };
 

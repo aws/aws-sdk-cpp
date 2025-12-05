@@ -77,9 +77,9 @@ class ArtifactSource {
   ///@}
  private:
   Aws::String m_sourceUri;
-  bool m_sourceUriHasBeenSet = false;
 
   Aws::Vector<ArtifactSourceType> m_sourceTypes;
+  bool m_sourceUriHasBeenSet = false;
   bool m_sourceTypesHasBeenSet = false;
 };
 

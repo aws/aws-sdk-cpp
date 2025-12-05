@@ -120,15 +120,15 @@ class CreateVodSourceRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::Vector<HttpPackageConfiguration> m_httpPackageConfigurations;
-  bool m_httpPackageConfigurationsHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vodSourceName;
+  bool m_httpPackageConfigurationsHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vodSourceNameHasBeenSet = false;
 };
 

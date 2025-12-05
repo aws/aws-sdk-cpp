@@ -289,39 +289,39 @@ class CreateDomainRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   AuthMode m_authMode{AuthMode::NOT_SET};
-  bool m_authModeHasBeenSet = false;
 
   UserSettings m_defaultUserSettings;
-  bool m_defaultUserSettingsHasBeenSet = false;
 
   DomainSettings m_domainSettings;
-  bool m_domainSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AppNetworkAccessType m_appNetworkAccessType{AppNetworkAccessType::NOT_SET};
-  bool m_appNetworkAccessTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   AppSecurityGroupManagement m_appSecurityGroupManagement{AppSecurityGroupManagement::NOT_SET};
-  bool m_appSecurityGroupManagementHasBeenSet = false;
 
   TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
-  bool m_tagPropagationHasBeenSet = false;
 
   DefaultSpaceSettings m_defaultSpaceSettings;
+  bool m_domainNameHasBeenSet = false;
+  bool m_authModeHasBeenSet = false;
+  bool m_defaultUserSettingsHasBeenSet = false;
+  bool m_domainSettingsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_appNetworkAccessTypeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_appSecurityGroupManagementHasBeenSet = false;
+  bool m_tagPropagationHasBeenSet = false;
   bool m_defaultSpaceSettingsHasBeenSet = false;
 };
 

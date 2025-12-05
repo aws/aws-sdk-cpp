@@ -60,9 +60,9 @@ class UpdateVpcEndpointResult {
   ///@}
  private:
   UpdateVpcEndpointDetail m_updateVpcEndpointDetail;
-  bool m_updateVpcEndpointDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateVpcEndpointDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

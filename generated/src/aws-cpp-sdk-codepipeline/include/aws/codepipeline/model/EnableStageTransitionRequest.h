@@ -93,12 +93,12 @@ class EnableStageTransitionRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   StageTransitionType m_transitionType{StageTransitionType::NOT_SET};
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
   bool m_transitionTypeHasBeenSet = false;
 };
 

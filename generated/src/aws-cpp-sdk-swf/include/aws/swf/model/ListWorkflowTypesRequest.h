@@ -144,21 +144,21 @@ class ListWorkflowTypesRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_maximumPageSize{0};
-  bool m_maximumPageSizeHasBeenSet = false;
 
   bool m_reverseOrder{false};
+  bool m_domainHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_registrationStatusHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_maximumPageSizeHasBeenSet = false;
   bool m_reverseOrderHasBeenSet = false;
 };
 

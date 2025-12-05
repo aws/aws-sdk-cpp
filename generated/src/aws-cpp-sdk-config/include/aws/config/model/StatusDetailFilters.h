@@ -89,9 +89,9 @@ class StatusDetailFilters {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   MemberAccountRuleStatus m_memberAccountRuleStatus{MemberAccountRuleStatus::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
   bool m_memberAccountRuleStatusHasBeenSet = false;
 };
 

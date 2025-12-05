@@ -258,39 +258,39 @@ class AwsEc2TransitGatewayDetails {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultRouteTablePropagation;
-  bool m_defaultRouteTablePropagationHasBeenSet = false;
 
   Aws::String m_autoAcceptSharedAttachments;
-  bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
 
   Aws::String m_defaultRouteTableAssociation;
-  bool m_defaultRouteTableAssociationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_transitGatewayCidrBlocks;
-  bool m_transitGatewayCidrBlocksHasBeenSet = false;
 
   Aws::String m_associationDefaultRouteTableId;
-  bool m_associationDefaultRouteTableIdHasBeenSet = false;
 
   Aws::String m_propagationDefaultRouteTableId;
-  bool m_propagationDefaultRouteTableIdHasBeenSet = false;
 
   Aws::String m_vpnEcmpSupport;
-  bool m_vpnEcmpSupportHasBeenSet = false;
 
   Aws::String m_dnsSupport;
-  bool m_dnsSupportHasBeenSet = false;
 
   Aws::String m_multicastSupport;
-  bool m_multicastSupportHasBeenSet = false;
 
   int m_amazonSideAsn{0};
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultRouteTablePropagationHasBeenSet = false;
+  bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
+  bool m_defaultRouteTableAssociationHasBeenSet = false;
+  bool m_transitGatewayCidrBlocksHasBeenSet = false;
+  bool m_associationDefaultRouteTableIdHasBeenSet = false;
+  bool m_propagationDefaultRouteTableIdHasBeenSet = false;
+  bool m_vpnEcmpSupportHasBeenSet = false;
+  bool m_dnsSupportHasBeenSet = false;
+  bool m_multicastSupportHasBeenSet = false;
   bool m_amazonSideAsnHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class PendingMaintenanceAction {
   ///@}
  private:
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_currentApplyDate{};
+  bool m_actionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_currentApplyDateHasBeenSet = false;
 };
 

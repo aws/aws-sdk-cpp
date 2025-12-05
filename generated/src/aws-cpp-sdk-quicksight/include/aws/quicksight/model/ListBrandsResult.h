@@ -86,12 +86,12 @@ class ListBrandsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<BrandSummary> m_brands;
-  bool m_brandsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_brandsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

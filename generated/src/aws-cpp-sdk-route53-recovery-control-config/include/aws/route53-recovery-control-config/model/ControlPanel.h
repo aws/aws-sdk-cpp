@@ -161,24 +161,24 @@ class ControlPanel {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_controlPanelArn;
-  bool m_controlPanelArnHasBeenSet = false;
 
   bool m_defaultControlPanel{false};
-  bool m_defaultControlPanelHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_routingControlCount{0};
-  bool m_routingControlCountHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_owner;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_controlPanelArnHasBeenSet = false;
+  bool m_defaultControlPanelHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_routingControlCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

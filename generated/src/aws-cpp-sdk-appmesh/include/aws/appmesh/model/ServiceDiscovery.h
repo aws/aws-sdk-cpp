@@ -70,9 +70,9 @@ class ServiceDiscovery {
   ///@}
  private:
   AwsCloudMapServiceDiscovery m_awsCloudMap;
-  bool m_awsCloudMapHasBeenSet = false;
 
   DnsServiceDiscovery m_dns;
+  bool m_awsCloudMapHasBeenSet = false;
   bool m_dnsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ItemIdentifier {
   ///@}
  private:
   ItemType m_type{ItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ItemValue m_value;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

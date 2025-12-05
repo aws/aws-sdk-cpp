@@ -86,12 +86,12 @@ class NotifyWorkersFailureStatus {
   ///@}
  private:
   NotifyWorkersFailureCode m_notifyWorkersFailureCode{NotifyWorkersFailureCode::NOT_SET};
-  bool m_notifyWorkersFailureCodeHasBeenSet = false;
 
   Aws::String m_notifyWorkersFailureMessage;
-  bool m_notifyWorkersFailureMessageHasBeenSet = false;
 
   Aws::String m_workerId;
+  bool m_notifyWorkersFailureCodeHasBeenSet = false;
+  bool m_notifyWorkersFailureMessageHasBeenSet = false;
   bool m_workerIdHasBeenSet = false;
 };
 

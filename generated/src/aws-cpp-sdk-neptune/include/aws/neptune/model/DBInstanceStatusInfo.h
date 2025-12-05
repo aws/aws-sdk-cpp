@@ -108,15 +108,15 @@ class DBInstanceStatusInfo {
   ///@}
  private:
   Aws::String m_statusType;
-  bool m_statusTypeHasBeenSet = false;
 
   bool m_normal{false};
-  bool m_normalHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusTypeHasBeenSet = false;
+  bool m_normalHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

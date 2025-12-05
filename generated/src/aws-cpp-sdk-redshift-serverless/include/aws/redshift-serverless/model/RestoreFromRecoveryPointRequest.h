@@ -85,12 +85,12 @@ class RestoreFromRecoveryPointRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_recoveryPointId;
-  bool m_recoveryPointIdHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_recoveryPointIdHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

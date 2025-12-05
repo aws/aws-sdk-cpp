@@ -85,12 +85,12 @@ class BlockingInstance {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AWSServiceName m_awsServiceName{AWSServiceName::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_awsServiceNameHasBeenSet = false;
 };
 

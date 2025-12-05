@@ -204,30 +204,30 @@ class SharedDirectory {
   ///@}
  private:
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_ownerDirectoryId;
-  bool m_ownerDirectoryIdHasBeenSet = false;
 
   ShareMethod m_shareMethod{ShareMethod::NOT_SET};
-  bool m_shareMethodHasBeenSet = false;
 
   Aws::String m_sharedAccountId;
-  bool m_sharedAccountIdHasBeenSet = false;
 
   Aws::String m_sharedDirectoryId;
-  bool m_sharedDirectoryIdHasBeenSet = false;
 
   ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-  bool m_shareStatusHasBeenSet = false;
 
   Aws::String m_shareNotes;
-  bool m_shareNotesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDateTime{};
-  bool m_createdDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_ownerDirectoryIdHasBeenSet = false;
+  bool m_shareMethodHasBeenSet = false;
+  bool m_sharedAccountIdHasBeenSet = false;
+  bool m_sharedDirectoryIdHasBeenSet = false;
+  bool m_shareStatusHasBeenSet = false;
+  bool m_shareNotesHasBeenSet = false;
+  bool m_createdDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

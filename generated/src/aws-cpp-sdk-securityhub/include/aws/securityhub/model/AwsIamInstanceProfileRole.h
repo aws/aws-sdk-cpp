@@ -143,21 +143,21 @@ class AwsIamInstanceProfileRole {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_assumeRolePolicyDocument;
-  bool m_assumeRolePolicyDocumentHasBeenSet = false;
 
   Aws::String m_createDate;
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_roleId;
-  bool m_roleIdHasBeenSet = false;
 
   Aws::String m_roleName;
+  bool m_arnHasBeenSet = false;
+  bool m_assumeRolePolicyDocumentHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_roleIdHasBeenSet = false;
   bool m_roleNameHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class DeliverToQBusinessAction {
   ///@}
  private:
   ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
-  bool m_actionFailurePolicyHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_actionFailurePolicyHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

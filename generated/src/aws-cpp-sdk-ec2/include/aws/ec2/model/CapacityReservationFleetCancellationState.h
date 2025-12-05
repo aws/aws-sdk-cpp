@@ -86,12 +86,12 @@ class CapacityReservationFleetCancellationState {
   ///@}
  private:
   CapacityReservationFleetState m_currentFleetState{CapacityReservationFleetState::NOT_SET};
-  bool m_currentFleetStateHasBeenSet = false;
 
   CapacityReservationFleetState m_previousFleetState{CapacityReservationFleetState::NOT_SET};
-  bool m_previousFleetStateHasBeenSet = false;
 
   Aws::String m_capacityReservationFleetId;
+  bool m_currentFleetStateHasBeenSet = false;
+  bool m_previousFleetStateHasBeenSet = false;
   bool m_capacityReservationFleetIdHasBeenSet = false;
 };
 

@@ -151,15 +151,15 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_logType;
-  bool m_logTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

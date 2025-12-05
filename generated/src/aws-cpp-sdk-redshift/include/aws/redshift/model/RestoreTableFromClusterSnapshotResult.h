@@ -59,9 +59,9 @@ class RestoreTableFromClusterSnapshotResult {
   ///@}
  private:
   TableRestoreStatus m_tableRestoreStatus;
-  bool m_tableRestoreStatusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tableRestoreStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

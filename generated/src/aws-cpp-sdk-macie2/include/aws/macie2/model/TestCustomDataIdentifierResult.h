@@ -58,9 +58,9 @@ class TestCustomDataIdentifierResult {
   ///@}
  private:
   int m_matchCount{0};
-  bool m_matchCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_matchCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -270,33 +270,33 @@ class PipelineDeclaration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ArtifactStore m_artifactStore;
-  bool m_artifactStoreHasBeenSet = false;
 
   Aws::Map<Aws::String, ArtifactStore> m_artifactStores;
-  bool m_artifactStoresHasBeenSet = false;
 
   Aws::Vector<StageDeclaration> m_stages;
-  bool m_stagesHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
-  bool m_executionModeHasBeenSet = false;
 
   PipelineType m_pipelineType{PipelineType::NOT_SET};
-  bool m_pipelineTypeHasBeenSet = false;
 
   Aws::Vector<PipelineVariableDeclaration> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::Vector<PipelineTriggerDeclaration> m_triggers;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_artifactStoreHasBeenSet = false;
+  bool m_artifactStoresHasBeenSet = false;
+  bool m_stagesHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_executionModeHasBeenSet = false;
+  bool m_pipelineTypeHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetPlaceResult {
   ///@}
  private:
   Place m_place;
-  bool m_placeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_placeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

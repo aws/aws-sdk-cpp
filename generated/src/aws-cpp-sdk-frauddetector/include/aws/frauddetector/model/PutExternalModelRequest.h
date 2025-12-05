@@ -165,24 +165,24 @@ class PutExternalModelRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_modelEndpoint;
-  bool m_modelEndpointHasBeenSet = false;
 
   ModelSource m_modelSource{ModelSource::NOT_SET};
-  bool m_modelSourceHasBeenSet = false;
 
   Aws::String m_invokeModelEndpointRoleArn;
-  bool m_invokeModelEndpointRoleArnHasBeenSet = false;
 
   ModelInputConfiguration m_inputConfiguration;
-  bool m_inputConfigurationHasBeenSet = false;
 
   ModelOutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   ModelEndpointStatus m_modelEndpointStatus{ModelEndpointStatus::NOT_SET};
-  bool m_modelEndpointStatusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_modelEndpointHasBeenSet = false;
+  bool m_modelSourceHasBeenSet = false;
+  bool m_invokeModelEndpointRoleArnHasBeenSet = false;
+  bool m_inputConfigurationHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
+  bool m_modelEndpointStatusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

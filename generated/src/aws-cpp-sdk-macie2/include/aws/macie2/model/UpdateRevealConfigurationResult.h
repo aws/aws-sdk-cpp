@@ -79,12 +79,12 @@ class UpdateRevealConfigurationResult {
   ///@}
  private:
   RevealConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   RetrievalConfiguration m_retrievalConfiguration;
-  bool m_retrievalConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationHasBeenSet = false;
+  bool m_retrievalConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

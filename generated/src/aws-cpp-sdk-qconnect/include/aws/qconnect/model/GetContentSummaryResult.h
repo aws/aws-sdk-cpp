@@ -60,9 +60,9 @@ class GetContentSummaryResult {
   ///@}
  private:
   ContentSummary m_contentSummary;
-  bool m_contentSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

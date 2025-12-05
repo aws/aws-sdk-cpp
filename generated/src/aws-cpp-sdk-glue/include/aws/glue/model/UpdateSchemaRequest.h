@@ -110,15 +110,15 @@ class UpdateSchemaRequest : public GlueRequest {
   ///@}
  private:
   SchemaId m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   SchemaVersionNumber m_schemaVersionNumber;
-  bool m_schemaVersionNumberHasBeenSet = false;
 
   Compatibility m_compatibility{Compatibility::NOT_SET};
-  bool m_compatibilityHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_schemaVersionNumberHasBeenSet = false;
+  bool m_compatibilityHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

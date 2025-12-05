@@ -202,27 +202,27 @@ class StackSetDriftDetectionDetails {
   ///@}
  private:
   StackSetDriftStatus m_driftStatus{StackSetDriftStatus::NOT_SET};
-  bool m_driftStatusHasBeenSet = false;
 
   StackSetDriftDetectionStatus m_driftDetectionStatus{StackSetDriftDetectionStatus::NOT_SET};
-  bool m_driftDetectionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDriftCheckTimestamp{};
-  bool m_lastDriftCheckTimestampHasBeenSet = false;
 
   int m_totalStackInstancesCount{0};
-  bool m_totalStackInstancesCountHasBeenSet = false;
 
   int m_driftedStackInstancesCount{0};
-  bool m_driftedStackInstancesCountHasBeenSet = false;
 
   int m_inSyncStackInstancesCount{0};
-  bool m_inSyncStackInstancesCountHasBeenSet = false;
 
   int m_inProgressStackInstancesCount{0};
-  bool m_inProgressStackInstancesCountHasBeenSet = false;
 
   int m_failedStackInstancesCount{0};
+  bool m_driftStatusHasBeenSet = false;
+  bool m_driftDetectionStatusHasBeenSet = false;
+  bool m_lastDriftCheckTimestampHasBeenSet = false;
+  bool m_totalStackInstancesCountHasBeenSet = false;
+  bool m_driftedStackInstancesCountHasBeenSet = false;
+  bool m_inSyncStackInstancesCountHasBeenSet = false;
+  bool m_inProgressStackInstancesCountHasBeenSet = false;
   bool m_failedStackInstancesCountHasBeenSet = false;
 };
 

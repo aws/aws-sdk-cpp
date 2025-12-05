@@ -245,39 +245,39 @@ class RunListItem {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RunStatus m_status{RunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
-  bool m_stopTimeHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_workflowVersionName;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stopTimeHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
   bool m_workflowVersionNameHasBeenSet = false;
 };
 

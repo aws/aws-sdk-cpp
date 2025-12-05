@@ -165,21 +165,21 @@ class SendBounceRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_originalMessageId;
-  bool m_originalMessageIdHasBeenSet = false;
 
   Aws::String m_bounceSender;
-  bool m_bounceSenderHasBeenSet = false;
 
   Aws::String m_explanation;
-  bool m_explanationHasBeenSet = false;
 
   MessageDsn m_messageDsn;
-  bool m_messageDsnHasBeenSet = false;
 
   Aws::Vector<BouncedRecipientInfo> m_bouncedRecipientInfoList;
-  bool m_bouncedRecipientInfoListHasBeenSet = false;
 
   Aws::String m_bounceSenderArn;
+  bool m_originalMessageIdHasBeenSet = false;
+  bool m_bounceSenderHasBeenSet = false;
+  bool m_explanationHasBeenSet = false;
+  bool m_messageDsnHasBeenSet = false;
+  bool m_bouncedRecipientInfoListHasBeenSet = false;
   bool m_bounceSenderArnHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class DatabaseMigrationPreference {
   ///@}
  private:
   Heterogeneous m_heterogeneous;
-  bool m_heterogeneousHasBeenSet = false;
 
   Homogeneous m_homogeneous;
-  bool m_homogeneousHasBeenSet = false;
 
   NoDatabaseMigrationPreference m_noPreference;
+  bool m_heterogeneousHasBeenSet = false;
+  bool m_homogeneousHasBeenSet = false;
   bool m_noPreferenceHasBeenSet = false;
 };
 

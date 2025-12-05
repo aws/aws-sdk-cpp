@@ -108,15 +108,15 @@ class AttachVolumeRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_device;
-  bool m_deviceHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_deviceHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

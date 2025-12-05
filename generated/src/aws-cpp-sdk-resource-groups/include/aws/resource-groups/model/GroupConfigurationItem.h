@@ -86,9 +86,9 @@ class GroupConfigurationItem {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<GroupConfigurationParameter> m_parameters;
+  bool m_typeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

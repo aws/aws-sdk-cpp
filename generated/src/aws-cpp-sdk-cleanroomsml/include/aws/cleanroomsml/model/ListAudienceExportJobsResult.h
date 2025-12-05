@@ -84,12 +84,12 @@ class ListAudienceExportJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AudienceExportJobSummary> m_audienceExportJobs;
-  bool m_audienceExportJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_audienceExportJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListDNSViewsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DNSViewSummary> m_dnsViews;
-  bool m_dnsViewsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dnsViewsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

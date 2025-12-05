@@ -58,9 +58,9 @@ class CreateClusterParameterGroupResult {
   ///@}
  private:
   ClusterParameterGroup m_clusterParameterGroup;
-  bool m_clusterParameterGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clusterParameterGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetServiceAttributesResult {
   ///@}
  private:
   ServiceAttributes m_serviceAttributes;
-  bool m_serviceAttributesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

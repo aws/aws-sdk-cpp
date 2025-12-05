@@ -204,33 +204,33 @@ class DeleteUserResult {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_minimumEngineVersion;
-  bool m_minimumEngineVersionHasBeenSet = false;
 
   Aws::String m_accessString;
-  bool m_accessStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroupIds;
-  bool m_userGroupIdsHasBeenSet = false;
 
   Authentication m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_userIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_minimumEngineVersionHasBeenSet = false;
+  bool m_accessStringHasBeenSet = false;
+  bool m_userGroupIdsHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

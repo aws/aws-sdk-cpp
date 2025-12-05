@@ -93,12 +93,12 @@ class CallAnalyticsSkippedFeature {
   ///@}
  private:
   CallAnalyticsFeature m_feature{CallAnalyticsFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   CallAnalyticsSkippedReasonCode m_reasonCode{CallAnalyticsSkippedReasonCode::NOT_SET};
-  bool m_reasonCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_featureHasBeenSet = false;
+  bool m_reasonCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

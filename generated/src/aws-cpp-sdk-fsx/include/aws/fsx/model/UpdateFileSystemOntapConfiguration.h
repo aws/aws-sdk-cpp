@@ -286,36 +286,36 @@ class UpdateFileSystemOntapConfiguration {
   ///@}
  private:
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   Aws::String m_fsxAdminPassword;
-  bool m_fsxAdminPasswordHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   DiskIopsConfiguration m_diskIopsConfiguration;
-  bool m_diskIopsConfigurationHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addRouteTableIds;
-  bool m_addRouteTableIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeRouteTableIds;
-  bool m_removeRouteTableIdsHasBeenSet = false;
 
   int m_throughputCapacityPerHAPair{0};
-  bool m_throughputCapacityPerHAPairHasBeenSet = false;
 
   int m_hAPairs{0};
-  bool m_hAPairsHasBeenSet = false;
 
   Aws::String m_endpointIpv6AddressRange;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_fsxAdminPasswordHasBeenSet = false;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_diskIopsConfigurationHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
+  bool m_addRouteTableIdsHasBeenSet = false;
+  bool m_removeRouteTableIdsHasBeenSet = false;
+  bool m_throughputCapacityPerHAPairHasBeenSet = false;
+  bool m_hAPairsHasBeenSet = false;
   bool m_endpointIpv6AddressRangeHasBeenSet = false;
 };
 

@@ -302,51 +302,51 @@ class VolumeModification {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   VolumeModificationState m_modificationState{VolumeModificationState::NOT_SET};
-  bool m_modificationStateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   int m_targetSize{0};
-  bool m_targetSizeHasBeenSet = false;
 
   int m_targetIops{0};
-  bool m_targetIopsHasBeenSet = false;
 
   VolumeType m_targetVolumeType{VolumeType::NOT_SET};
-  bool m_targetVolumeTypeHasBeenSet = false;
 
   int m_targetThroughput{0};
-  bool m_targetThroughputHasBeenSet = false;
 
   bool m_targetMultiAttachEnabled{false};
-  bool m_targetMultiAttachEnabledHasBeenSet = false;
 
   int m_originalSize{0};
-  bool m_originalSizeHasBeenSet = false;
 
   int m_originalIops{0};
-  bool m_originalIopsHasBeenSet = false;
 
   VolumeType m_originalVolumeType{VolumeType::NOT_SET};
-  bool m_originalVolumeTypeHasBeenSet = false;
 
   int m_originalThroughput{0};
-  bool m_originalThroughputHasBeenSet = false;
 
   bool m_originalMultiAttachEnabled{false};
-  bool m_originalMultiAttachEnabledHasBeenSet = false;
 
   long long m_progress{0};
-  bool m_progressHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_volumeIdHasBeenSet = false;
+  bool m_modificationStateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_targetSizeHasBeenSet = false;
+  bool m_targetIopsHasBeenSet = false;
+  bool m_targetVolumeTypeHasBeenSet = false;
+  bool m_targetThroughputHasBeenSet = false;
+  bool m_targetMultiAttachEnabledHasBeenSet = false;
+  bool m_originalSizeHasBeenSet = false;
+  bool m_originalIopsHasBeenSet = false;
+  bool m_originalVolumeTypeHasBeenSet = false;
+  bool m_originalThroughputHasBeenSet = false;
+  bool m_originalMultiAttachEnabledHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

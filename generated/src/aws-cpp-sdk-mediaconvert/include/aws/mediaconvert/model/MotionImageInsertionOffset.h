@@ -64,9 +64,9 @@ class MotionImageInsertionOffset {
   ///@}
  private:
   int m_imageX{0};
-  bool m_imageXHasBeenSet = false;
 
   int m_imageY{0};
+  bool m_imageXHasBeenSet = false;
   bool m_imageYHasBeenSet = false;
 };
 

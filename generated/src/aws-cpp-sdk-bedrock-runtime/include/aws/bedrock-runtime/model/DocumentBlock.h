@@ -131,18 +131,18 @@ class DocumentBlock {
   ///@}
  private:
   DocumentFormat m_format{DocumentFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DocumentSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_context;
-  bool m_contextHasBeenSet = false;
 
   CitationsConfig m_citations;
+  bool m_formatHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_citationsHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class TaskExecutionFilesListedDetail {
   ///@}
  private:
   long long m_atSource{0};
-  bool m_atSourceHasBeenSet = false;
 
   long long m_atDestinationForDelete{0};
+  bool m_atSourceHasBeenSet = false;
   bool m_atDestinationForDeleteHasBeenSet = false;
 };
 

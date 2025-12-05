@@ -69,9 +69,9 @@ class StartApplicationRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   RunConfiguration m_runConfiguration;
+  bool m_applicationNameHasBeenSet = false;
   bool m_runConfigurationHasBeenSet = false;
 };
 

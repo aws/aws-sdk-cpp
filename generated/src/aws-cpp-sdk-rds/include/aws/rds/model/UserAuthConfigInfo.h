@@ -145,21 +145,21 @@ class UserAuthConfigInfo {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   AuthScheme m_authScheme{AuthScheme::NOT_SET};
-  bool m_authSchemeHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   IAMAuthMode m_iAMAuth{IAMAuthMode::NOT_SET};
-  bool m_iAMAuthHasBeenSet = false;
 
   ClientPasswordAuthType m_clientPasswordAuthType{ClientPasswordAuthType::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_authSchemeHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_iAMAuthHasBeenSet = false;
   bool m_clientPasswordAuthTypeHasBeenSet = false;
 };
 

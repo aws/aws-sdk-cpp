@@ -194,27 +194,27 @@ class JobDetailsEntity {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobAttachmentSettings m_jobAttachmentSettings;
-  bool m_jobAttachmentSettingsHasBeenSet = false;
 
   JobRunAsUser m_jobRunAsUser;
-  bool m_jobRunAsUserHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_queueRoleArn;
-  bool m_queueRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, JobParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::Vector<PathMappingRule> m_pathMappingRules;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobAttachmentSettingsHasBeenSet = false;
+  bool m_jobRunAsUserHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_queueRoleArnHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
   bool m_pathMappingRulesHasBeenSet = false;
 };
 

@@ -160,24 +160,24 @@ class BillingViewListElement {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_sourceAccountId;
-  bool m_sourceAccountIdHasBeenSet = false;
 
   BillingViewType m_billingViewType{BillingViewType::NOT_SET};
-  bool m_billingViewTypeHasBeenSet = false;
 
   BillingViewHealthStatus m_healthStatus;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_sourceAccountIdHasBeenSet = false;
+  bool m_billingViewTypeHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
 };
 

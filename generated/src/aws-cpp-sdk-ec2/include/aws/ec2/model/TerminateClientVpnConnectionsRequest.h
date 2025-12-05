@@ -108,15 +108,15 @@ class TerminateClientVpnConnectionsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

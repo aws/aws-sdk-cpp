@@ -88,12 +88,12 @@ class BatchStopJobRunError {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobRunId;
-  bool m_jobRunIdHasBeenSet = false;
 
   ErrorDetail m_errorDetail;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobRunIdHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateTransformJobResult {
   ///@}
  private:
   Aws::String m_transformJobArn;
-  bool m_transformJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

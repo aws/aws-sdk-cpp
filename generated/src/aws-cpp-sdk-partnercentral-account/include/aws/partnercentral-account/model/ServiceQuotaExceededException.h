@@ -67,9 +67,9 @@ class ServiceQuotaExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ServiceQuotaExceededExceptionReason m_reason{ServiceQuotaExceededExceptionReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

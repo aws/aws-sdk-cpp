@@ -59,9 +59,9 @@ class DeleteTrialResult {
   ///@}
  private:
   Aws::String m_trialArn;
-  bool m_trialArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trialArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

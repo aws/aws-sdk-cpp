@@ -95,12 +95,12 @@ class BatchAssociateAnalyticsDataSetRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataSetIds;
-  bool m_dataSetIdsHasBeenSet = false;
 
   Aws::String m_targetAccountId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataSetIdsHasBeenSet = false;
   bool m_targetAccountIdHasBeenSet = false;
 };
 

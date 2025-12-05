@@ -85,12 +85,12 @@ class ListLicenseSpecificationsForResourceResult {
   ///@}
  private:
   Aws::Vector<LicenseSpecification> m_licenseSpecifications;
-  bool m_licenseSpecificationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseSpecificationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

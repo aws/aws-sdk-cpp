@@ -84,12 +84,12 @@ class GetColumnStatisticsTaskRunsResult {
   ///@}
  private:
   Aws::Vector<ColumnStatisticsTaskRun> m_columnStatisticsTaskRuns;
-  bool m_columnStatisticsTaskRunsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_columnStatisticsTaskRunsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

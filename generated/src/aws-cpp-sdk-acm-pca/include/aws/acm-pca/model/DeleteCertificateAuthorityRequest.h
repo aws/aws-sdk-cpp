@@ -70,9 +70,9 @@ class DeleteCertificateAuthorityRequest : public ACMPCARequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   int m_permanentDeletionTimeInDays{0};
+  bool m_certificateAuthorityArnHasBeenSet = false;
   bool m_permanentDeletionTimeInDaysHasBeenSet = false;
 };
 

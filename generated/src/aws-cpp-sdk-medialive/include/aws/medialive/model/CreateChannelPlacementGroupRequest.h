@@ -142,18 +142,18 @@ class CreateChannelPlacementGroupRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nodesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

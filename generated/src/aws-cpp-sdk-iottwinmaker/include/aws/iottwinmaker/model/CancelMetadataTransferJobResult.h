@@ -130,21 +130,21 @@ class CancelMetadataTransferJobResult {
   ///@}
  private:
   Aws::String m_metadataTransferJobId;
-  bool m_metadataTransferJobIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   MetadataTransferJobStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   MetadataTransferJobProgress m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataTransferJobIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

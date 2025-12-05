@@ -221,36 +221,36 @@ class DescribeMonitoringScheduleResult {
   ///@}
  private:
   Aws::String m_monitoringScheduleArn;
-  bool m_monitoringScheduleArnHasBeenSet = false;
 
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   ScheduleStatus m_monitoringScheduleStatus{ScheduleStatus::NOT_SET};
-  bool m_monitoringScheduleStatusHasBeenSet = false;
 
   MonitoringType m_monitoringType{MonitoringType::NOT_SET};
-  bool m_monitoringTypeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   MonitoringScheduleConfig m_monitoringScheduleConfig;
-  bool m_monitoringScheduleConfigHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   MonitoringExecutionSummary m_lastMonitoringExecutionSummary;
-  bool m_lastMonitoringExecutionSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitoringScheduleArnHasBeenSet = false;
+  bool m_monitoringScheduleNameHasBeenSet = false;
+  bool m_monitoringScheduleStatusHasBeenSet = false;
+  bool m_monitoringTypeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_monitoringScheduleConfigHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_lastMonitoringExecutionSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

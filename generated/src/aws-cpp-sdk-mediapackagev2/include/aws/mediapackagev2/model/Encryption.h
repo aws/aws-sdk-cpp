@@ -137,18 +137,18 @@ class Encryption {
   ///@}
  private:
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   EncryptionMethod m_encryptionMethod;
-  bool m_encryptionMethodHasBeenSet = false;
 
   int m_keyRotationIntervalSeconds{0};
-  bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
   bool m_cmafExcludeSegmentDrmMetadata{false};
-  bool m_cmafExcludeSegmentDrmMetadataHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
+  bool m_constantInitializationVectorHasBeenSet = false;
+  bool m_encryptionMethodHasBeenSet = false;
+  bool m_keyRotationIntervalSecondsHasBeenSet = false;
+  bool m_cmafExcludeSegmentDrmMetadataHasBeenSet = false;
   bool m_spekeKeyProviderHasBeenSet = false;
 };
 

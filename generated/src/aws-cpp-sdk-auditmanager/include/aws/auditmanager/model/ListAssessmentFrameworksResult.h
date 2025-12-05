@@ -85,12 +85,12 @@ class ListAssessmentFrameworksResult {
   ///@}
  private:
   Aws::Vector<AssessmentFrameworkMetadata> m_frameworkMetadataList;
-  bool m_frameworkMetadataListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_frameworkMetadataListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

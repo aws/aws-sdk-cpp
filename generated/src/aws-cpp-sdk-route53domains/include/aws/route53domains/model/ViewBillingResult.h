@@ -92,12 +92,12 @@ class ViewBillingResult {
   ///@}
  private:
   Aws::String m_nextPageMarker;
-  bool m_nextPageMarkerHasBeenSet = false;
 
   Aws::Vector<BillingRecord> m_billingRecords;
-  bool m_billingRecordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextPageMarkerHasBeenSet = false;
+  bool m_billingRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

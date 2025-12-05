@@ -132,18 +132,18 @@ class ImportInstanceRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ImportInstanceLaunchSpecification m_launchSpecification;
-  bool m_launchSpecificationHasBeenSet = false;
 
   Aws::Vector<DiskImage> m_diskImages;
-  bool m_diskImagesHasBeenSet = false;
 
   PlatformValues m_platform{PlatformValues::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_launchSpecificationHasBeenSet = false;
+  bool m_diskImagesHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

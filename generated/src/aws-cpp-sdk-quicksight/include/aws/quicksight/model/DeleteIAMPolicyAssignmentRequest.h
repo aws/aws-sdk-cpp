@@ -84,12 +84,12 @@ class DeleteIAMPolicyAssignmentRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_assignmentName;
-  bool m_assignmentNameHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_assignmentNameHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

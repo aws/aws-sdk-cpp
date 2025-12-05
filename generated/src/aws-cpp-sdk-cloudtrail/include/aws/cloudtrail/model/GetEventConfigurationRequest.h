@@ -69,9 +69,9 @@ class GetEventConfigurationRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_trailName;
-  bool m_trailNameHasBeenSet = false;
 
   Aws::String m_eventDataStore;
+  bool m_trailNameHasBeenSet = false;
   bool m_eventDataStoreHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class TagResourceRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

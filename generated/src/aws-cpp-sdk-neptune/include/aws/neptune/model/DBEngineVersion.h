@@ -296,42 +296,42 @@ class DBEngineVersion {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dBParameterGroupFamily;
-  bool m_dBParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_dBEngineDescription;
-  bool m_dBEngineDescriptionHasBeenSet = false;
 
   Aws::String m_dBEngineVersionDescription;
-  bool m_dBEngineVersionDescriptionHasBeenSet = false;
 
   CharacterSet m_defaultCharacterSet;
-  bool m_defaultCharacterSetHasBeenSet = false;
 
   Aws::Vector<CharacterSet> m_supportedCharacterSets;
-  bool m_supportedCharacterSetsHasBeenSet = false;
 
   Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
-  bool m_validUpgradeTargetHasBeenSet = false;
 
   Aws::Vector<Timezone> m_supportedTimezones;
-  bool m_supportedTimezonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exportableLogTypes;
-  bool m_exportableLogTypesHasBeenSet = false;
 
   bool m_supportsLogExportsToCloudwatchLogs{false};
-  bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
 
   bool m_supportsReadReplica{false};
-  bool m_supportsReadReplicaHasBeenSet = false;
 
   bool m_supportsGlobalDatabases{false};
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dBParameterGroupFamilyHasBeenSet = false;
+  bool m_dBEngineDescriptionHasBeenSet = false;
+  bool m_dBEngineVersionDescriptionHasBeenSet = false;
+  bool m_defaultCharacterSetHasBeenSet = false;
+  bool m_supportedCharacterSetsHasBeenSet = false;
+  bool m_validUpgradeTargetHasBeenSet = false;
+  bool m_supportedTimezonesHasBeenSet = false;
+  bool m_exportableLogTypesHasBeenSet = false;
+  bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
+  bool m_supportsReadReplicaHasBeenSet = false;
   bool m_supportsGlobalDatabasesHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class BatchCreateWorkloadEstimateUsageError {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   BatchCreateWorkloadEstimateUsageCode m_errorCode{BatchCreateWorkloadEstimateUsageCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_keyHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

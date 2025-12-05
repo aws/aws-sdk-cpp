@@ -70,9 +70,9 @@ class User {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   UserType m_type{UserType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

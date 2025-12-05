@@ -101,15 +101,15 @@ class StopExperimentRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   ExperimentStopDesiredState m_desiredState{ExperimentStopDesiredState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   Aws::String m_experiment;
-  bool m_experimentHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_experimentHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class InvalidConfigurationDetail {
   ///@}
  private:
   Aws::String m_constraint;
-  bool m_constraintHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_constraintHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

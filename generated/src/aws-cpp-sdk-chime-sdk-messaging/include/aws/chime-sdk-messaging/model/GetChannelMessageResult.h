@@ -60,9 +60,9 @@ class GetChannelMessageResult {
   ///@}
  private:
   ChannelMessage m_channelMessage;
-  bool m_channelMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

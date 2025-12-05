@@ -71,9 +71,9 @@ class Jurisdiction {
   ///@}
  private:
   Aws::String m_countryCode;
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_stateOrRegion;
+  bool m_countryCodeHasBeenSet = false;
   bool m_stateOrRegionHasBeenSet = false;
 };
 

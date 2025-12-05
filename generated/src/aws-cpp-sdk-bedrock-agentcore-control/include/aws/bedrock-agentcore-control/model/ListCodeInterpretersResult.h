@@ -85,12 +85,12 @@ class ListCodeInterpretersResult {
   ///@}
  private:
   Aws::Vector<CodeInterpreterSummary> m_codeInterpreterSummaries;
-  bool m_codeInterpreterSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeInterpreterSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

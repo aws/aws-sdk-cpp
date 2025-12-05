@@ -212,30 +212,30 @@ class AutomationRulesFindingFieldsUpdate {
   ///@}
  private:
   NoteUpdate m_note;
-  bool m_noteHasBeenSet = false;
 
   SeverityUpdate m_severity;
-  bool m_severityHasBeenSet = false;
 
   VerificationState m_verificationState{VerificationState::NOT_SET};
-  bool m_verificationStateHasBeenSet = false;
 
   int m_confidence{0};
-  bool m_confidenceHasBeenSet = false;
 
   int m_criticality{0};
-  bool m_criticalityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userDefinedFields;
-  bool m_userDefinedFieldsHasBeenSet = false;
 
   WorkflowUpdate m_workflow;
-  bool m_workflowHasBeenSet = false;
 
   Aws::Vector<RelatedFinding> m_relatedFindings;
+  bool m_noteHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_verificationStateHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_typesHasBeenSet = false;
+  bool m_userDefinedFieldsHasBeenSet = false;
+  bool m_workflowHasBeenSet = false;
   bool m_relatedFindingsHasBeenSet = false;
 };
 

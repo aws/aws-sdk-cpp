@@ -348,51 +348,51 @@ class AwsEc2ClientVpnEndpointDetails {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientCidrBlock;
-  bool m_clientCidrBlockHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsServer;
-  bool m_dnsServerHasBeenSet = false;
 
   bool m_splitTunnel{false};
-  bool m_splitTunnelHasBeenSet = false;
 
   Aws::String m_transportProtocol;
-  bool m_transportProtocolHasBeenSet = false;
 
   int m_vpnPort{0};
-  bool m_vpnPortHasBeenSet = false;
 
   Aws::String m_serverCertificateArn;
-  bool m_serverCertificateArnHasBeenSet = false;
 
   Aws::Vector<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails> m_authenticationOptions;
-  bool m_authenticationOptionsHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointConnectionLogOptionsDetails m_connectionLogOptions;
-  bool m_connectionLogOptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIdSet;
-  bool m_securityGroupIdSetHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_selfServicePortalUrl;
-  bool m_selfServicePortalUrlHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointClientConnectOptionsDetails m_clientConnectOptions;
-  bool m_clientConnectOptionsHasBeenSet = false;
 
   int m_sessionTimeoutHours{0};
-  bool m_sessionTimeoutHoursHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails m_clientLoginBannerOptions;
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientCidrBlockHasBeenSet = false;
+  bool m_dnsServerHasBeenSet = false;
+  bool m_splitTunnelHasBeenSet = false;
+  bool m_transportProtocolHasBeenSet = false;
+  bool m_vpnPortHasBeenSet = false;
+  bool m_serverCertificateArnHasBeenSet = false;
+  bool m_authenticationOptionsHasBeenSet = false;
+  bool m_connectionLogOptionsHasBeenSet = false;
+  bool m_securityGroupIdSetHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_selfServicePortalUrlHasBeenSet = false;
+  bool m_clientConnectOptionsHasBeenSet = false;
+  bool m_sessionTimeoutHoursHasBeenSet = false;
   bool m_clientLoginBannerOptionsHasBeenSet = false;
 };
 

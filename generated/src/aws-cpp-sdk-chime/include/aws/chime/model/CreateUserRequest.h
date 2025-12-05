@@ -100,15 +100,15 @@ class CreateUserRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   UserType m_userType{UserType::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
   bool m_userTypeHasBeenSet = false;
 };
 

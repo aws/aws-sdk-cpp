@@ -84,12 +84,12 @@ class GetNetworkResourcesResult {
   ///@}
  private:
   Aws::Vector<NetworkResource> m_networkResources;
-  bool m_networkResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

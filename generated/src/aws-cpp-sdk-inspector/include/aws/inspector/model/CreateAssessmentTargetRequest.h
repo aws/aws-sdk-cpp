@@ -70,9 +70,9 @@ class CreateAssessmentTargetRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentTargetName;
-  bool m_assessmentTargetNameHasBeenSet = false;
 
   Aws::String m_resourceGroupArn;
+  bool m_assessmentTargetNameHasBeenSet = false;
   bool m_resourceGroupArnHasBeenSet = false;
 };
 

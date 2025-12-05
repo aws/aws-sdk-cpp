@@ -109,15 +109,15 @@ class DisassociateSecurityProfilesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<SecurityProfileItem> m_securityProfiles;
-  bool m_securityProfilesHasBeenSet = false;
 
   EntityType m_entityType{EntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_entityArn;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_securityProfilesHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
   bool m_entityArnHasBeenSet = false;
 };
 

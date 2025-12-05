@@ -90,12 +90,12 @@ class BatchRemoveRoleResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_removedAccessorIds;
-  bool m_removedAccessorIdsHasBeenSet = false;
 
   Aws::Vector<BatchError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_removedAccessorIdsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

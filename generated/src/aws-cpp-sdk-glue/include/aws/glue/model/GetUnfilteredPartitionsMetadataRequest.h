@@ -271,36 +271,36 @@ class GetUnfilteredPartitionsMetadataRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   AuditContext m_auditContext;
-  bool m_auditContextHasBeenSet = false;
 
   Aws::Vector<PermissionType> m_supportedPermissionTypes;
-  bool m_supportedPermissionTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Segment m_segment;
-  bool m_segmentHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   QuerySessionContext m_querySessionContext;
+  bool m_regionHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
+  bool m_supportedPermissionTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_querySessionContextHasBeenSet = false;
 };
 

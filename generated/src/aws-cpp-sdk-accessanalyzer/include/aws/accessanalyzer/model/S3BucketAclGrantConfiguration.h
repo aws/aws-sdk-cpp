@@ -70,9 +70,9 @@ class S3BucketAclGrantConfiguration {
   ///@}
  private:
   AclPermission m_permission{AclPermission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   AclGrantee m_grantee;
+  bool m_permissionHasBeenSet = false;
   bool m_granteeHasBeenSet = false;
 };
 

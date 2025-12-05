@@ -138,21 +138,21 @@ class UpdateWorkerRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   UpdatedWorkerStatus m_status{UpdatedWorkerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   WorkerCapabilities m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   HostPropertiesRequest m_hostProperties;
+  bool m_farmIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
   bool m_hostPropertiesHasBeenSet = false;
 };
 

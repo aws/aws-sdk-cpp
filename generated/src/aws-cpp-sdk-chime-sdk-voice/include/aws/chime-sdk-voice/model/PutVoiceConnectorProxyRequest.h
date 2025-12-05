@@ -123,18 +123,18 @@ class PutVoiceConnectorProxyRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   int m_defaultSessionExpiryMinutes{0};
-  bool m_defaultSessionExpiryMinutesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_phoneNumberPoolCountries;
-  bool m_phoneNumberPoolCountriesHasBeenSet = false;
 
   Aws::String m_fallBackPhoneNumber;
-  bool m_fallBackPhoneNumberHasBeenSet = false;
 
   bool m_disabled{false};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_defaultSessionExpiryMinutesHasBeenSet = false;
+  bool m_phoneNumberPoolCountriesHasBeenSet = false;
+  bool m_fallBackPhoneNumberHasBeenSet = false;
   bool m_disabledHasBeenSet = false;
 };
 

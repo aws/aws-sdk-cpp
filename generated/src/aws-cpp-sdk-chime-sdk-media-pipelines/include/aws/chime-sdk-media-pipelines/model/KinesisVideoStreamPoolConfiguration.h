@@ -175,27 +175,27 @@ class KinesisVideoStreamPoolConfiguration {
   ///@}
  private:
   Aws::String m_poolArn;
-  bool m_poolArnHasBeenSet = false;
 
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   KinesisVideoStreamPoolStatus m_poolStatus{KinesisVideoStreamPoolStatus::NOT_SET};
-  bool m_poolStatusHasBeenSet = false;
 
   int m_poolSize{0};
-  bool m_poolSizeHasBeenSet = false;
 
   KinesisVideoStreamConfiguration m_streamConfiguration;
-  bool m_streamConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_poolArnHasBeenSet = false;
+  bool m_poolNameHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_poolStatusHasBeenSet = false;
+  bool m_poolSizeHasBeenSet = false;
+  bool m_streamConfigurationHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

@@ -377,54 +377,54 @@ class CreateDbInstanceRequest : public TimestreamInfluxDBRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_organization;
-  bool m_organizationHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   DbInstanceType m_dbInstanceType{DbInstanceType::NOT_SET};
-  bool m_dbInstanceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSubnetIds;
-  bool m_vpcSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   DbStorageType m_dbStorageType{DbStorageType::NOT_SET};
-  bool m_dbStorageTypeHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_dbParameterGroupIdentifier;
-  bool m_dbParameterGroupIdentifierHasBeenSet = false;
 
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   LogDeliveryConfiguration m_logDeliveryConfiguration;
-  bool m_logDeliveryConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_organizationHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_dbInstanceTypeHasBeenSet = false;
+  bool m_vpcSubnetIdsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_dbStorageTypeHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_dbParameterGroupIdentifierHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_logDeliveryConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

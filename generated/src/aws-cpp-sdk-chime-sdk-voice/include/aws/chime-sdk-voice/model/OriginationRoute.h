@@ -122,18 +122,18 @@ class OriginationRoute {
   ///@}
  private:
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   OriginationRouteProtocol m_protocol{OriginationRouteProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   int m_weight{0};
+  bool m_hostHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

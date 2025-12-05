@@ -92,12 +92,12 @@ class ListDevicePoolsRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DevicePoolType m_type{DevicePoolType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

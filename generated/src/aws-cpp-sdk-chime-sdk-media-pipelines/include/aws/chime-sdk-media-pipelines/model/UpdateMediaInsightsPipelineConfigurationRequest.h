@@ -114,15 +114,15 @@ class UpdateMediaInsightsPipelineConfigurationRequest : public ChimeSDKMediaPipe
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_resourceAccessRoleArn;
-  bool m_resourceAccessRoleArnHasBeenSet = false;
 
   RealTimeAlertConfiguration m_realTimeAlertConfiguration;
-  bool m_realTimeAlertConfigurationHasBeenSet = false;
 
   Aws::Vector<MediaInsightsPipelineConfigurationElement> m_elements;
+  bool m_identifierHasBeenSet = false;
+  bool m_resourceAccessRoleArnHasBeenSet = false;
+  bool m_realTimeAlertConfigurationHasBeenSet = false;
   bool m_elementsHasBeenSet = false;
 };
 

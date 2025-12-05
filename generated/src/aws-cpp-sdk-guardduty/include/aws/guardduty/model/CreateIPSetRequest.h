@@ -185,27 +185,27 @@ class CreateIPSetRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IpSetFormat m_format{IpSetFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   bool m_activate{false};
-  bool m_activateHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_activateHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_expectedBucketOwnerHasBeenSet = false;
 };
 

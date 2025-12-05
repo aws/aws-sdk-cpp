@@ -64,9 +64,9 @@ class InteractiveConfiguration {
   ///@}
  private:
   bool m_studioEnabled{false};
-  bool m_studioEnabledHasBeenSet = false;
 
   bool m_livyEndpointEnabled{false};
+  bool m_studioEnabledHasBeenSet = false;
   bool m_livyEndpointEnabledHasBeenSet = false;
 };
 

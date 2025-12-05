@@ -86,12 +86,12 @@ class Subscriber {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   SubscriberType m_type{SubscriberType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   SubscriberStatus m_status{SubscriberStatus::NOT_SET};
+  bool m_addressHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

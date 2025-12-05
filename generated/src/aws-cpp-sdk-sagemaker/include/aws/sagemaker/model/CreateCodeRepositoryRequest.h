@@ -101,12 +101,12 @@ class CreateCodeRepositoryRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_codeRepositoryName;
-  bool m_codeRepositoryNameHasBeenSet = false;
 
   GitConfig m_gitConfig;
-  bool m_gitConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_codeRepositoryNameHasBeenSet = false;
+  bool m_gitConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

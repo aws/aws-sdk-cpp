@@ -73,9 +73,9 @@ class RegisteredCustomerManagedKey {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   bool m_defaultKey{false};
+  bool m_keyArnHasBeenSet = false;
   bool m_defaultKeyHasBeenSet = false;
 };
 

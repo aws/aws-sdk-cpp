@@ -220,33 +220,33 @@ class DetectMitigationActionsTaskSummary {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   DetectMitigationActionsTaskStatus m_taskStatus{DetectMitigationActionsTaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskStartTime{};
-  bool m_taskStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskEndTime{};
-  bool m_taskEndTimeHasBeenSet = false;
 
   DetectMitigationActionsTaskTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   ViolationEventOccurrenceRange m_violationEventOccurrenceRange;
-  bool m_violationEventOccurrenceRangeHasBeenSet = false;
 
   bool m_onlyActiveViolationsIncluded{false};
-  bool m_onlyActiveViolationsIncludedHasBeenSet = false;
 
   bool m_suppressedAlertsIncluded{false};
-  bool m_suppressedAlertsIncludedHasBeenSet = false;
 
   Aws::Vector<MitigationAction> m_actionsDefinition;
-  bool m_actionsDefinitionHasBeenSet = false;
 
   DetectMitigationActionsTaskStatistics m_taskStatistics;
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_taskStartTimeHasBeenSet = false;
+  bool m_taskEndTimeHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_violationEventOccurrenceRangeHasBeenSet = false;
+  bool m_onlyActiveViolationsIncludedHasBeenSet = false;
+  bool m_suppressedAlertsIncludedHasBeenSet = false;
+  bool m_actionsDefinitionHasBeenSet = false;
   bool m_taskStatisticsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class Order {
   ///@}
  private:
   Aws::String m_column;
-  bool m_columnHasBeenSet = false;
 
   int m_sortOrder{0};
+  bool m_columnHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

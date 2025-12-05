@@ -122,18 +122,18 @@ class UpdateLogAnomalyDetectorRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_anomalyDetectorArn;
-  bool m_anomalyDetectorArnHasBeenSet = false;
 
   EvaluationFrequency m_evaluationFrequency{EvaluationFrequency::NOT_SET};
-  bool m_evaluationFrequencyHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   long long m_anomalyVisibilityTime{0};
-  bool m_anomalyVisibilityTimeHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_anomalyDetectorArnHasBeenSet = false;
+  bool m_evaluationFrequencyHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
+  bool m_anomalyVisibilityTimeHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

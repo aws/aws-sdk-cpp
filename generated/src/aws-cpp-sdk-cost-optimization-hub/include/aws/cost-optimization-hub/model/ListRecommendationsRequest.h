@@ -120,18 +120,18 @@ class ListRecommendationsRequest : public CostOptimizationHubRequest {
   ///@}
  private:
   Filter m_filter;
-  bool m_filterHasBeenSet = false;
 
   OrderBy m_orderBy;
-  bool m_orderByHasBeenSet = false;
 
   bool m_includeAllRecommendations{false};
-  bool m_includeAllRecommendationsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterHasBeenSet = false;
+  bool m_orderByHasBeenSet = false;
+  bool m_includeAllRecommendationsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

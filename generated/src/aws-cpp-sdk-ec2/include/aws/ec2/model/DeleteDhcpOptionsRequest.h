@@ -70,9 +70,9 @@ class DeleteDhcpOptionsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_dhcpOptionsId;
-  bool m_dhcpOptionsIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_dhcpOptionsIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

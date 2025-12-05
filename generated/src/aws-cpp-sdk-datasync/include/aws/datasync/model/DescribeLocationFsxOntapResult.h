@@ -171,27 +171,27 @@ class DescribeLocationFsxOntapResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   FsxProtocol m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupArns;
-  bool m_securityGroupArnsHasBeenSet = false;
 
   Aws::String m_storageVirtualMachineArn;
-  bool m_storageVirtualMachineArnHasBeenSet = false;
 
   Aws::String m_fsxFilesystemArn;
-  bool m_fsxFilesystemArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_securityGroupArnsHasBeenSet = false;
+  bool m_storageVirtualMachineArnHasBeenSet = false;
+  bool m_fsxFilesystemArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

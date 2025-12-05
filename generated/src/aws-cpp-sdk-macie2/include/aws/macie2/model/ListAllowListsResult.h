@@ -85,12 +85,12 @@ class ListAllowListsResult {
   ///@}
  private:
   Aws::Vector<AllowListSummary> m_allowLists;
-  bool m_allowListsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_allowListsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

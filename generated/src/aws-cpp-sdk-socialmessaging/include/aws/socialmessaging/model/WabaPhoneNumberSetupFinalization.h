@@ -132,15 +132,15 @@ class WabaPhoneNumberSetupFinalization {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_twoFactorPin;
-  bool m_twoFactorPinHasBeenSet = false;
 
   Aws::String m_dataLocalizationRegion;
-  bool m_dataLocalizationRegionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_twoFactorPinHasBeenSet = false;
+  bool m_dataLocalizationRegionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

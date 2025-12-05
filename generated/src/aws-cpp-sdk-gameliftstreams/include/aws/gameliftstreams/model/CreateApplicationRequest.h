@@ -240,27 +240,27 @@ class CreateApplicationRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuntimeEnvironment m_runtimeEnvironment;
-  bool m_runtimeEnvironmentHasBeenSet = false;
 
   Aws::String m_executablePath;
-  bool m_executablePathHasBeenSet = false;
 
   Aws::String m_applicationSourceUri;
-  bool m_applicationSourceUriHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicationLogPaths;
-  bool m_applicationLogPathsHasBeenSet = false;
 
   Aws::String m_applicationLogOutputUri;
-  bool m_applicationLogOutputUriHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_descriptionHasBeenSet = false;
+  bool m_runtimeEnvironmentHasBeenSet = false;
+  bool m_executablePathHasBeenSet = false;
+  bool m_applicationSourceUriHasBeenSet = false;
+  bool m_applicationLogPathsHasBeenSet = false;
+  bool m_applicationLogOutputUriHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

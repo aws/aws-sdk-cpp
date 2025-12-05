@@ -86,12 +86,12 @@ class DescribeAddressesAttributeResponse {
   ///@}
  private:
   Aws::Vector<AddressAttribute> m_addresses;
-  bool m_addressesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_addressesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

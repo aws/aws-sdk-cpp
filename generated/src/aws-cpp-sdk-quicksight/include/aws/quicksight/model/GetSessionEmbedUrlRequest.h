@@ -123,15 +123,15 @@ class GetSessionEmbedUrlRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_entryPoint;
-  bool m_entryPointHasBeenSet = false;
 
   long long m_sessionLifetimeInMinutes{0};
-  bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
   Aws::String m_userArn;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_entryPointHasBeenSet = false;
+  bool m_sessionLifetimeInMinutesHasBeenSet = false;
   bool m_userArnHasBeenSet = false;
 };
 

@@ -344,30 +344,30 @@ class CustomKeyStoresListEntry {
   ///@}
  private:
   Aws::String m_customKeyStoreId;
-  bool m_customKeyStoreIdHasBeenSet = false;
 
   Aws::String m_customKeyStoreName;
-  bool m_customKeyStoreNameHasBeenSet = false;
 
   Aws::String m_cloudHsmClusterId;
-  bool m_cloudHsmClusterIdHasBeenSet = false;
 
   Aws::String m_trustAnchorCertificate;
-  bool m_trustAnchorCertificateHasBeenSet = false;
 
   ConnectionStateType m_connectionState{ConnectionStateType::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   ConnectionErrorCodeType m_connectionErrorCode{ConnectionErrorCodeType::NOT_SET};
-  bool m_connectionErrorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   CustomKeyStoreType m_customKeyStoreType{CustomKeyStoreType::NOT_SET};
-  bool m_customKeyStoreTypeHasBeenSet = false;
 
   XksProxyConfigurationType m_xksProxyConfiguration;
+  bool m_customKeyStoreIdHasBeenSet = false;
+  bool m_customKeyStoreNameHasBeenSet = false;
+  bool m_cloudHsmClusterIdHasBeenSet = false;
+  bool m_trustAnchorCertificateHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_connectionErrorCodeHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_customKeyStoreTypeHasBeenSet = false;
   bool m_xksProxyConfigurationHasBeenSet = false;
 };
 

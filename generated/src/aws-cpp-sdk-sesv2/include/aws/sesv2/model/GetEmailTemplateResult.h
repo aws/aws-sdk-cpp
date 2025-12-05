@@ -84,12 +84,12 @@ class GetEmailTemplateResult {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   EmailTemplateContent m_templateContent;
-  bool m_templateContentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateContentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

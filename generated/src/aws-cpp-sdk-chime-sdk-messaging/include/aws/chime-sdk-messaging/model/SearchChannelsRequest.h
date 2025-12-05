@@ -115,15 +115,15 @@ class SearchChannelsRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_chimeBearer;
-  bool m_chimeBearerHasBeenSet = false;
 
   Aws::Vector<SearchField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_chimeBearerHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

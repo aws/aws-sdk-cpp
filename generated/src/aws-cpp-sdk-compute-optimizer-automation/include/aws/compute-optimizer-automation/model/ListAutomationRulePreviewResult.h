@@ -88,12 +88,12 @@ class ListAutomationRulePreviewResult {
   ///@}
  private:
   Aws::Vector<PreviewResult> m_previewResults;
-  bool m_previewResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_previewResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

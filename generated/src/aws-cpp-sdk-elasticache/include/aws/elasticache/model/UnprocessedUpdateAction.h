@@ -125,18 +125,18 @@ class UnprocessedUpdateAction {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_serviceUpdateName;
-  bool m_serviceUpdateNameHasBeenSet = false;
 
   Aws::String m_errorType;
-  bool m_errorTypeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_serviceUpdateNameHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

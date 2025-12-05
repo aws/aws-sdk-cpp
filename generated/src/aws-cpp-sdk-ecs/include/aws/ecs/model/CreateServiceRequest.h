@@ -753,81 +753,81 @@ class CreateServiceRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   AvailabilityZoneRebalancing m_availabilityZoneRebalancing{AvailabilityZoneRebalancing::NOT_SET};
-  bool m_availabilityZoneRebalancingHasBeenSet = false;
 
   Aws::Vector<LoadBalancer> m_loadBalancers;
-  bool m_loadBalancersHasBeenSet = false;
 
   Aws::Vector<ServiceRegistry> m_serviceRegistries;
-  bool m_serviceRegistriesHasBeenSet = false;
 
   int m_desiredCount{0};
-  bool m_desiredCountHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-  bool m_capacityProviderStrategyHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   DeploymentConfiguration m_deploymentConfiguration;
-  bool m_deploymentConfigurationHasBeenSet = false;
 
   Aws::Vector<PlacementConstraint> m_placementConstraints;
-  bool m_placementConstraintsHasBeenSet = false;
 
   Aws::Vector<PlacementStrategy> m_placementStrategy;
-  bool m_placementStrategyHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   int m_healthCheckGracePeriodSeconds{0};
-  bool m_healthCheckGracePeriodSecondsHasBeenSet = false;
 
   SchedulingStrategy m_schedulingStrategy{SchedulingStrategy::NOT_SET};
-  bool m_schedulingStrategyHasBeenSet = false;
 
   DeploymentController m_deploymentController;
-  bool m_deploymentControllerHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_enableECSManagedTags{false};
-  bool m_enableECSManagedTagsHasBeenSet = false;
 
   PropagateTags m_propagateTags{PropagateTags::NOT_SET};
-  bool m_propagateTagsHasBeenSet = false;
 
   bool m_enableExecuteCommand{false};
-  bool m_enableExecuteCommandHasBeenSet = false;
 
   ServiceConnectConfiguration m_serviceConnectConfiguration;
-  bool m_serviceConnectConfigurationHasBeenSet = false;
 
   Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
-  bool m_volumeConfigurationsHasBeenSet = false;
 
   Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
+  bool m_clusterHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_taskDefinitionHasBeenSet = false;
+  bool m_availabilityZoneRebalancingHasBeenSet = false;
+  bool m_loadBalancersHasBeenSet = false;
+  bool m_serviceRegistriesHasBeenSet = false;
+  bool m_desiredCountHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_capacityProviderStrategyHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_deploymentConfigurationHasBeenSet = false;
+  bool m_placementConstraintsHasBeenSet = false;
+  bool m_placementStrategyHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_healthCheckGracePeriodSecondsHasBeenSet = false;
+  bool m_schedulingStrategyHasBeenSet = false;
+  bool m_deploymentControllerHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_enableECSManagedTagsHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_serviceConnectConfigurationHasBeenSet = false;
+  bool m_volumeConfigurationsHasBeenSet = false;
   bool m_vpcLatticeConfigurationsHasBeenSet = false;
 };
 

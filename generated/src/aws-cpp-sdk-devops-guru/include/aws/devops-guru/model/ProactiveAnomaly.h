@@ -299,45 +299,45 @@ class ProactiveAnomaly {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AnomalySeverity m_severity{AnomalySeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   AnomalyStatus m_status{AnomalyStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   AnomalyTimeRange m_anomalyTimeRange;
-  bool m_anomalyTimeRangeHasBeenSet = false;
 
   AnomalyReportedTimeRange m_anomalyReportedTimeRange;
-  bool m_anomalyReportedTimeRangeHasBeenSet = false;
 
   PredictionTimeRange m_predictionTimeRange;
-  bool m_predictionTimeRangeHasBeenSet = false;
 
   AnomalySourceDetails m_sourceDetails;
-  bool m_sourceDetailsHasBeenSet = false;
 
   Aws::String m_associatedInsightId;
-  bool m_associatedInsightIdHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   double m_limit{0.0};
-  bool m_limitHasBeenSet = false;
 
   AnomalySourceMetadata m_sourceMetadata;
-  bool m_sourceMetadataHasBeenSet = false;
 
   Aws::Vector<AnomalyResource> m_anomalyResources;
-  bool m_anomalyResourcesHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_idHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_anomalyTimeRangeHasBeenSet = false;
+  bool m_anomalyReportedTimeRangeHasBeenSet = false;
+  bool m_predictionTimeRangeHasBeenSet = false;
+  bool m_sourceDetailsHasBeenSet = false;
+  bool m_associatedInsightIdHasBeenSet = false;
+  bool m_resourceCollectionHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_sourceMetadataHasBeenSet = false;
+  bool m_anomalyResourcesHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

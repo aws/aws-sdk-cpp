@@ -73,9 +73,9 @@ class DescribeEventCategoriesResult {
   ///@}
  private:
   Aws::Vector<EventCategoryGroup> m_eventCategoryGroupList;
-  bool m_eventCategoryGroupListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventCategoryGroupListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -449,63 +449,63 @@ class AwsSageMakerNotebookInstanceDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_acceleratorTypes;
-  bool m_acceleratorTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalCodeRepositories;
-  bool m_additionalCodeRepositoriesHasBeenSet = false;
 
   Aws::String m_defaultCodeRepository;
-  bool m_defaultCodeRepositoryHasBeenSet = false;
 
   Aws::String m_directInternetAccess;
-  bool m_directInternetAccessHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails m_instanceMetadataServiceConfiguration;
-  bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_notebookInstanceArn;
-  bool m_notebookInstanceArnHasBeenSet = false;
 
   Aws::String m_notebookInstanceLifecycleConfigName;
-  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
   Aws::String m_notebookInstanceName;
-  bool m_notebookInstanceNameHasBeenSet = false;
 
   Aws::String m_notebookInstanceStatus;
-  bool m_notebookInstanceStatusHasBeenSet = false;
 
   Aws::String m_platformIdentifier;
-  bool m_platformIdentifierHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_rootAccess;
-  bool m_rootAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
+  bool m_acceleratorTypesHasBeenSet = false;
+  bool m_additionalCodeRepositoriesHasBeenSet = false;
+  bool m_defaultCodeRepositoryHasBeenSet = false;
+  bool m_directInternetAccessHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_notebookInstanceArnHasBeenSet = false;
+  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
+  bool m_notebookInstanceNameHasBeenSet = false;
+  bool m_notebookInstanceStatusHasBeenSet = false;
+  bool m_platformIdentifierHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_rootAccessHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_volumeSizeInGBHasBeenSet = false;
 };
 

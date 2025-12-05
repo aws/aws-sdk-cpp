@@ -103,12 +103,12 @@ class ParsingConfiguration {
   ///@}
  private:
   ParsingStrategy m_parsingStrategy{ParsingStrategy::NOT_SET};
-  bool m_parsingStrategyHasBeenSet = false;
 
   BedrockFoundationModelConfiguration m_bedrockFoundationModelConfiguration;
-  bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 
   BedrockDataAutomationConfiguration m_bedrockDataAutomationConfiguration;
+  bool m_parsingStrategyHasBeenSet = false;
+  bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
   bool m_bedrockDataAutomationConfigurationHasBeenSet = false;
 };
 

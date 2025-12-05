@@ -85,9 +85,9 @@ class CustomDeliveryConfiguration {
   ///@}
  private:
   Aws::String m_deliveryUri;
-  bool m_deliveryUriHasBeenSet = false;
 
   Aws::Vector<__EndpointTypesElement> m_endpointTypes;
+  bool m_deliveryUriHasBeenSet = false;
   bool m_endpointTypesHasBeenSet = false;
 };
 

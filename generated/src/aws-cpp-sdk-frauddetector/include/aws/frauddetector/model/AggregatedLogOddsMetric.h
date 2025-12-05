@@ -80,9 +80,9 @@ class AggregatedLogOddsMetric {
   ///@}
  private:
   Aws::Vector<Aws::String> m_variableNames;
-  bool m_variableNamesHasBeenSet = false;
 
   double m_aggregatedVariablesImportance{0.0};
+  bool m_variableNamesHasBeenSet = false;
   bool m_aggregatedVariablesImportanceHasBeenSet = false;
 };
 

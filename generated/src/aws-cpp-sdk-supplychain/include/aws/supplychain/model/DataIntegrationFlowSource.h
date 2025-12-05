@@ -106,15 +106,15 @@ class DataIntegrationFlowSource {
   ///@}
  private:
   DataIntegrationFlowSourceType m_sourceType{DataIntegrationFlowSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   DataIntegrationFlowS3SourceConfiguration m_s3Source;
-  bool m_s3SourceHasBeenSet = false;
 
   DataIntegrationFlowDatasetSourceConfiguration m_datasetSource;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
+  bool m_s3SourceHasBeenSet = false;
   bool m_datasetSourceHasBeenSet = false;
 };
 

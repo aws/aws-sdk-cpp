@@ -92,12 +92,12 @@ class OptimizationJobOutputConfig {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_s3OutputLocation;
-  bool m_s3OutputLocationHasBeenSet = false;
 
   OptimizationSageMakerModel m_sageMakerModel;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_s3OutputLocationHasBeenSet = false;
   bool m_sageMakerModelHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class UpdateEnrollmentConfigurationRequest : public ComputeOptimizerAutomationRe
   ///@}
  private:
   EnrollmentStatus m_status{EnrollmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_statusHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

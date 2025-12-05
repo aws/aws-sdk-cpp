@@ -107,15 +107,15 @@ class Cell {
   ///@}
  private:
   long long m_column{0};
-  bool m_columnHasBeenSet = false;
 
   long long m_row{0};
-  bool m_rowHasBeenSet = false;
 
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_cellReference;
+  bool m_columnHasBeenSet = false;
+  bool m_rowHasBeenSet = false;
+  bool m_columnNameHasBeenSet = false;
   bool m_cellReferenceHasBeenSet = false;
 };
 

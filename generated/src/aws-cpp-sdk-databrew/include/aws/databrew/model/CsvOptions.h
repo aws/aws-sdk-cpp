@@ -70,9 +70,9 @@ class CsvOptions {
   ///@}
  private:
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   bool m_headerRow{false};
+  bool m_delimiterHasBeenSet = false;
   bool m_headerRowHasBeenSet = false;
 };
 

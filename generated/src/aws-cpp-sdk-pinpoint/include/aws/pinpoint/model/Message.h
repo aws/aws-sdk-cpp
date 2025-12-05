@@ -267,39 +267,39 @@ class Message {
   ///@}
  private:
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_imageIconUrl;
-  bool m_imageIconUrlHasBeenSet = false;
 
   Aws::String m_imageSmallIconUrl;
-  bool m_imageSmallIconUrlHasBeenSet = false;
 
   Aws::String m_imageUrl;
-  bool m_imageUrlHasBeenSet = false;
 
   Aws::String m_jsonBody;
-  bool m_jsonBodyHasBeenSet = false;
 
   Aws::String m_mediaUrl;
-  bool m_mediaUrlHasBeenSet = false;
 
   Aws::String m_rawContent;
-  bool m_rawContentHasBeenSet = false;
 
   bool m_silentPush{false};
-  bool m_silentPushHasBeenSet = false;
 
   int m_timeToLive{0};
-  bool m_timeToLiveHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_actionHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_imageIconUrlHasBeenSet = false;
+  bool m_imageSmallIconUrlHasBeenSet = false;
+  bool m_imageUrlHasBeenSet = false;
+  bool m_jsonBodyHasBeenSet = false;
+  bool m_mediaUrlHasBeenSet = false;
+  bool m_rawContentHasBeenSet = false;
+  bool m_silentPushHasBeenSet = false;
+  bool m_timeToLiveHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

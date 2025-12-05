@@ -180,27 +180,27 @@ class BundleTask {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   BundleTaskState m_state{BundleTaskState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Storage m_storage;
-  bool m_storageHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   BundleTaskError m_bundleTaskError;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_storageHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
   bool m_bundleTaskErrorHasBeenSet = false;
 };
 

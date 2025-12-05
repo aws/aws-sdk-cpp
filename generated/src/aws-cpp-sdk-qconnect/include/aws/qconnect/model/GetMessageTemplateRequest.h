@@ -66,9 +66,9 @@ class GetMessageTemplateRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
+  bool m_messageTemplateIdHasBeenSet = false;
   bool m_knowledgeBaseIdHasBeenSet = false;
 };
 

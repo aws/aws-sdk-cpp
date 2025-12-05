@@ -96,12 +96,12 @@ class ListManagedViewsRequest : public ResourceExplorer2Request {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_servicePrincipal;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_servicePrincipalHasBeenSet = false;
 };
 

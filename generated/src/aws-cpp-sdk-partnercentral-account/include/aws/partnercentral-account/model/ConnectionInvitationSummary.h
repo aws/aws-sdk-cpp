@@ -230,36 +230,36 @@ class ConnectionInvitationSummary {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_otherParticipantIdentifier;
-  bool m_otherParticipantIdentifierHasBeenSet = false;
 
   ParticipantType m_participantType{ParticipantType::NOT_SET};
-  bool m_participantTypeHasBeenSet = false;
 
   InvitationStatus m_status{InvitationStatus::NOT_SET};
+  bool m_catalogHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_otherParticipantIdentifierHasBeenSet = false;
+  bool m_participantTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

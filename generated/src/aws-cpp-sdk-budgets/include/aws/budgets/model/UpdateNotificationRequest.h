@@ -108,15 +108,15 @@ class UpdateNotificationRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Notification m_oldNotification;
-  bool m_oldNotificationHasBeenSet = false;
 
   Notification m_newNotification;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_oldNotificationHasBeenSet = false;
   bool m_newNotificationHasBeenSet = false;
 };
 

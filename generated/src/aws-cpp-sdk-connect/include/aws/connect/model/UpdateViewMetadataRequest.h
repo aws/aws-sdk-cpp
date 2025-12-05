@@ -103,15 +103,15 @@ class UpdateViewMetadataRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_viewId;
-  bool m_viewIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_viewIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

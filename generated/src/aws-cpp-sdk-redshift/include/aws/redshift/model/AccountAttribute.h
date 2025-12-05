@@ -79,9 +79,9 @@ class AccountAttribute {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Vector<AttributeValueTarget> m_attributeValues;
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeValuesHasBeenSet = false;
 };
 

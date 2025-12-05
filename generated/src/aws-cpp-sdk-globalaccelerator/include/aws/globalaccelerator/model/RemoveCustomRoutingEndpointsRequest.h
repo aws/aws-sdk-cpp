@@ -76,9 +76,9 @@ class RemoveCustomRoutingEndpointsRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_endpointIds;
-  bool m_endpointIdsHasBeenSet = false;
 
   Aws::String m_endpointGroupArn;
+  bool m_endpointIdsHasBeenSet = false;
   bool m_endpointGroupArnHasBeenSet = false;
 };
 

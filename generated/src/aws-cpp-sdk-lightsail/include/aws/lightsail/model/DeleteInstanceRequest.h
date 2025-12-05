@@ -66,9 +66,9 @@ class DeleteInstanceRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   bool m_forceDeleteAddOns{false};
+  bool m_instanceNameHasBeenSet = false;
   bool m_forceDeleteAddOnsHasBeenSet = false;
 };
 

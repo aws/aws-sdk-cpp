@@ -207,24 +207,24 @@ class StartTaskExecutionRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Options m_overrideOptions;
-  bool m_overrideOptionsHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_includes;
-  bool m_includesHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   ManifestConfig m_manifestConfig;
-  bool m_manifestConfigHasBeenSet = false;
 
   TaskReportConfig m_taskReportConfig;
-  bool m_taskReportConfigHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
+  bool m_taskArnHasBeenSet = false;
+  bool m_overrideOptionsHasBeenSet = false;
+  bool m_includesHasBeenSet = false;
+  bool m_excludesHasBeenSet = false;
+  bool m_manifestConfigHasBeenSet = false;
+  bool m_taskReportConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

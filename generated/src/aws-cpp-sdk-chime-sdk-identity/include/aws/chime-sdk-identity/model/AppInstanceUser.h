@@ -143,21 +143,21 @@ class AppInstanceUser {
   ///@}
  private:
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   ExpirationSettings m_expirationSettings;
+  bool m_appInstanceUserArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_expirationSettingsHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class AwsRdsDbDomainMembership {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_fqdn;
-  bool m_fqdnHasBeenSet = false;
 
   Aws::String m_iamRoleName;
+  bool m_domainHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_fqdnHasBeenSet = false;
   bool m_iamRoleNameHasBeenSet = false;
 };
 

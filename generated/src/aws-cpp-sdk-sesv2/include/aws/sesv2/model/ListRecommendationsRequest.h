@@ -100,12 +100,12 @@ class ListRecommendationsRequest : public SESV2Request {
   ///@}
  private:
   Aws::Map<ListRecommendationsFilterKey, Aws::String> m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_filterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

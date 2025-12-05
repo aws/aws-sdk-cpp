@@ -93,12 +93,12 @@ class DescribeAssessmentRunsResult {
   ///@}
  private:
   Aws::Vector<AssessmentRun> m_assessmentRuns;
-  bool m_assessmentRunsHasBeenSet = false;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentRunsHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

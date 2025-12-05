@@ -105,15 +105,15 @@ class MetadataProperties {
   ///@}
  private:
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_generatedBy;
-  bool m_generatedByHasBeenSet = false;
 
   Aws::String m_projectId;
+  bool m_commitIdHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_generatedByHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
 };
 

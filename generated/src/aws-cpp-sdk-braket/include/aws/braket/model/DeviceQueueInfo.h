@@ -87,12 +87,12 @@ class DeviceQueueInfo {
   ///@}
  private:
   QueueName m_queue{QueueName::NOT_SET};
-  bool m_queueHasBeenSet = false;
 
   Aws::String m_queueSize;
-  bool m_queueSizeHasBeenSet = false;
 
   QueuePriority m_queuePriority{QueuePriority::NOT_SET};
+  bool m_queueHasBeenSet = false;
+  bool m_queueSizeHasBeenSet = false;
   bool m_queuePriorityHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class UpdateClusterSchedulerConfigRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterSchedulerConfigId;
-  bool m_clusterSchedulerConfigIdHasBeenSet = false;
 
   int m_targetVersion{0};
-  bool m_targetVersionHasBeenSet = false;
 
   SchedulerConfig m_schedulerConfig;
-  bool m_schedulerConfigHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_clusterSchedulerConfigIdHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
+  bool m_schedulerConfigHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -241,27 +241,27 @@ class CallAnalyticsJobSettings {
   ///@}
  private:
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
-  bool m_vocabularyFilterMethodHasBeenSet = false;
 
   Aws::String m_languageModelName;
-  bool m_languageModelNameHasBeenSet = false;
 
   ContentRedaction m_contentRedaction;
-  bool m_contentRedactionHasBeenSet = false;
 
   Aws::Vector<LanguageCode> m_languageOptions;
-  bool m_languageOptionsHasBeenSet = false;
 
   Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
-  bool m_languageIdSettingsHasBeenSet = false;
 
   Summarization m_summarization;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_vocabularyFilterMethodHasBeenSet = false;
+  bool m_languageModelNameHasBeenSet = false;
+  bool m_contentRedactionHasBeenSet = false;
+  bool m_languageOptionsHasBeenSet = false;
+  bool m_languageIdSettingsHasBeenSet = false;
   bool m_summarizationHasBeenSet = false;
 };
 

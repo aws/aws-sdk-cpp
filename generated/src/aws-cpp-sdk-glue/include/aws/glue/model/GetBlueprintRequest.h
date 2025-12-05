@@ -81,12 +81,12 @@ class GetBlueprintRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_includeBlueprint{false};
-  bool m_includeBlueprintHasBeenSet = false;
 
   bool m_includeParameterSpec{false};
+  bool m_nameHasBeenSet = false;
+  bool m_includeBlueprintHasBeenSet = false;
   bool m_includeParameterSpecHasBeenSet = false;
 };
 

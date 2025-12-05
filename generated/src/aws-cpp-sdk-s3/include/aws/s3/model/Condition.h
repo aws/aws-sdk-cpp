@@ -87,9 +87,9 @@ class Condition {
   ///@}
  private:
   Aws::String m_httpErrorCodeReturnedEquals;
-  bool m_httpErrorCodeReturnedEqualsHasBeenSet = false;
 
   Aws::String m_keyPrefixEquals;
+  bool m_httpErrorCodeReturnedEqualsHasBeenSet = false;
   bool m_keyPrefixEqualsHasBeenSet = false;
 };
 

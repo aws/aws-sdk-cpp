@@ -63,9 +63,9 @@ class PutRetentionPolicyRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   int m_retentionInDays{0};
+  bool m_logGroupNameHasBeenSet = false;
   bool m_retentionInDaysHasBeenSet = false;
 };
 

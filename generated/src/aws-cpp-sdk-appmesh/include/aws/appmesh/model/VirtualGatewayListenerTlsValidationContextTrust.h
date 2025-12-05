@@ -73,9 +73,9 @@ class VirtualGatewayListenerTlsValidationContextTrust {
   ///@}
  private:
   VirtualGatewayTlsValidationContextFileTrust m_file;
-  bool m_fileHasBeenSet = false;
 
   VirtualGatewayTlsValidationContextSdsTrust m_sds;
+  bool m_fileHasBeenSet = false;
   bool m_sdsHasBeenSet = false;
 };
 

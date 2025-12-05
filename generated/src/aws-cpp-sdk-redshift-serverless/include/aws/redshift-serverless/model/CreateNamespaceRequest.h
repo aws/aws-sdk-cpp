@@ -279,39 +279,39 @@ class CreateNamespaceRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_adminPasswordSecretKmsKeyId;
-  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_adminUserPassword;
-  bool m_adminUserPasswordHasBeenSet = false;
 
   Aws::String m_adminUsername;
-  bool m_adminUsernameHasBeenSet = false;
 
   Aws::String m_dbName;
-  bool m_dbNameHasBeenSet = false;
 
   Aws::String m_defaultIamRoleArn;
-  bool m_defaultIamRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_iamRoles;
-  bool m_iamRolesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<LogExport> m_logExports;
-  bool m_logExportsHasBeenSet = false;
 
   bool m_manageAdminPassword{false};
-  bool m_manageAdminPasswordHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_redshiftIdcApplicationArn;
-  bool m_redshiftIdcApplicationArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_adminUserPasswordHasBeenSet = false;
+  bool m_adminUsernameHasBeenSet = false;
+  bool m_dbNameHasBeenSet = false;
+  bool m_defaultIamRoleArnHasBeenSet = false;
+  bool m_iamRolesHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_logExportsHasBeenSet = false;
+  bool m_manageAdminPasswordHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_redshiftIdcApplicationArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

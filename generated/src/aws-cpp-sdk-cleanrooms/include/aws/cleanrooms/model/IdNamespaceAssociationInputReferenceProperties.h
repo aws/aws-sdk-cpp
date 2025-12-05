@@ -76,9 +76,9 @@ class IdNamespaceAssociationInputReferenceProperties {
   ///@}
  private:
   IdNamespaceType m_idNamespaceType{IdNamespaceType::NOT_SET};
-  bool m_idNamespaceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::Document> m_idMappingWorkflowsSupported;
+  bool m_idNamespaceTypeHasBeenSet = false;
   bool m_idMappingWorkflowsSupportedHasBeenSet = false;
 };
 

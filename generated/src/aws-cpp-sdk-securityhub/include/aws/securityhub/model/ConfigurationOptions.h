@@ -193,27 +193,27 @@ class ConfigurationOptions {
   ///@}
  private:
   IntegerConfigurationOptions m_integer;
-  bool m_integerHasBeenSet = false;
 
   IntegerListConfigurationOptions m_integerList;
-  bool m_integerListHasBeenSet = false;
 
   DoubleConfigurationOptions m_double;
-  bool m_doubleHasBeenSet = false;
 
   StringConfigurationOptions m_string;
-  bool m_stringHasBeenSet = false;
 
   StringListConfigurationOptions m_stringList;
-  bool m_stringListHasBeenSet = false;
 
   BooleanConfigurationOptions m_boolean;
-  bool m_booleanHasBeenSet = false;
 
   EnumConfigurationOptions m_enum;
-  bool m_enumHasBeenSet = false;
 
   EnumListConfigurationOptions m_enumList;
+  bool m_integerHasBeenSet = false;
+  bool m_integerListHasBeenSet = false;
+  bool m_doubleHasBeenSet = false;
+  bool m_stringHasBeenSet = false;
+  bool m_stringListHasBeenSet = false;
+  bool m_booleanHasBeenSet = false;
+  bool m_enumHasBeenSet = false;
   bool m_enumListHasBeenSet = false;
 };
 

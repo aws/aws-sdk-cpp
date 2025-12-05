@@ -83,12 +83,12 @@ class MetadataTransferJobStatus {
   ///@}
  private:
   MetadataTransferJobState m_state{MetadataTransferJobState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ErrorDetails m_error;
-  bool m_errorHasBeenSet = false;
 
   int m_queuedPosition{0};
+  bool m_stateHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_queuedPositionHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class StartingPosition {
   ///@}
  private:
   ShardIteratorType m_type{ShardIteratorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
-  bool m_sequenceNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_typeHasBeenSet = false;
+  bool m_sequenceNumberHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

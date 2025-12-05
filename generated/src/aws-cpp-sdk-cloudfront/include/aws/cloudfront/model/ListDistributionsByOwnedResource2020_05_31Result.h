@@ -62,9 +62,9 @@ class ListDistributionsByOwnedResource2020_05_31Result {
   ///@}
  private:
   DistributionIdOwnerList m_distributionList;
-  bool m_distributionListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_distributionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

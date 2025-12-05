@@ -334,48 +334,48 @@ class ASN1Subject {
   ///@}
  private:
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_organization;
-  bool m_organizationHasBeenSet = false;
 
   Aws::String m_organizationalUnit;
-  bool m_organizationalUnitHasBeenSet = false;
 
   Aws::String m_distinguishedNameQualifier;
-  bool m_distinguishedNameQualifierHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_commonName;
-  bool m_commonNameHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_locality;
-  bool m_localityHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_surname;
-  bool m_surnameHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::String m_initials;
-  bool m_initialsHasBeenSet = false;
 
   Aws::String m_pseudonym;
-  bool m_pseudonymHasBeenSet = false;
 
   Aws::String m_generationQualifier;
-  bool m_generationQualifierHasBeenSet = false;
 
   Aws::Vector<CustomAttribute> m_customAttributes;
+  bool m_countryHasBeenSet = false;
+  bool m_organizationHasBeenSet = false;
+  bool m_organizationalUnitHasBeenSet = false;
+  bool m_distinguishedNameQualifierHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_commonNameHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_surnameHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_initialsHasBeenSet = false;
+  bool m_pseudonymHasBeenSet = false;
+  bool m_generationQualifierHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
 };
 

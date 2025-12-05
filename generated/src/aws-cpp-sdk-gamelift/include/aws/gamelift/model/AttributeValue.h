@@ -121,15 +121,15 @@ class AttributeValue {
   ///@}
  private:
   Aws::String m_s;
-  bool m_sHasBeenSet = false;
 
   double m_n{0.0};
-  bool m_nHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sL;
-  bool m_sLHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_sDM;
+  bool m_sHasBeenSet = false;
+  bool m_nHasBeenSet = false;
+  bool m_sLHasBeenSet = false;
   bool m_sDMHasBeenSet = false;
 };
 

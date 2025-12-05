@@ -59,9 +59,9 @@ class CreateIngressPointResult {
   ///@}
  private:
   Aws::String m_ingressPointId;
-  bool m_ingressPointIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingressPointIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

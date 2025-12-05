@@ -116,15 +116,15 @@ class ConflictingAliasesList {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<ConflictingAlias> m_items;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

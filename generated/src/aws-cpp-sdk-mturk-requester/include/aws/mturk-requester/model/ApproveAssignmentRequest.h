@@ -86,12 +86,12 @@ class ApproveAssignmentRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_assignmentId;
-  bool m_assignmentIdHasBeenSet = false;
 
   Aws::String m_requesterFeedback;
-  bool m_requesterFeedbackHasBeenSet = false;
 
   bool m_overrideRejection{false};
+  bool m_assignmentIdHasBeenSet = false;
+  bool m_requesterFeedbackHasBeenSet = false;
   bool m_overrideRejectionHasBeenSet = false;
 };
 

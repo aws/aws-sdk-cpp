@@ -70,9 +70,9 @@ class DataSource {
   ///@}
  private:
   GlueTable m_glueTable;
-  bool m_glueTableHasBeenSet = false;
 
   DataQualityGlueTable m_dataQualityGlueTable;
+  bool m_glueTableHasBeenSet = false;
   bool m_dataQualityGlueTableHasBeenSet = false;
 };
 

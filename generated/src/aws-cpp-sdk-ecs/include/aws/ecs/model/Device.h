@@ -96,12 +96,12 @@ class Device {
   ///@}
  private:
   Aws::String m_hostPath;
-  bool m_hostPathHasBeenSet = false;
 
   Aws::String m_containerPath;
-  bool m_containerPathHasBeenSet = false;
 
   Aws::Vector<DeviceCgroupPermission> m_permissions;
+  bool m_hostPathHasBeenSet = false;
+  bool m_containerPathHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

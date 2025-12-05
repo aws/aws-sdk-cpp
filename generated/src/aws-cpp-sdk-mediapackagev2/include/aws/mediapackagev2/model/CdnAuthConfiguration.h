@@ -78,9 +78,9 @@ class CdnAuthConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cdnIdentifierSecretArns;
-  bool m_cdnIdentifierSecretArnsHasBeenSet = false;
 
   Aws::String m_secretsRoleArn;
+  bool m_cdnIdentifierSecretArnsHasBeenSet = false;
   bool m_secretsRoleArnHasBeenSet = false;
 };
 

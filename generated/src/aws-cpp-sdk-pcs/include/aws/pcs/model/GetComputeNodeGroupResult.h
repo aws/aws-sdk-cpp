@@ -58,9 +58,9 @@ class GetComputeNodeGroupResult {
   ///@}
  private:
   ComputeNodeGroup m_computeNodeGroup;
-  bool m_computeNodeGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computeNodeGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

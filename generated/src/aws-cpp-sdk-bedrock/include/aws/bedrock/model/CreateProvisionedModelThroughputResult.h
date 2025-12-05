@@ -59,9 +59,9 @@ class CreateProvisionedModelThroughputResult {
   ///@}
  private:
   Aws::String m_provisionedModelArn;
-  bool m_provisionedModelArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisionedModelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

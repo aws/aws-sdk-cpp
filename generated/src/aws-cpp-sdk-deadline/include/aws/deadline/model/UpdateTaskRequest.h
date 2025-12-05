@@ -158,24 +158,24 @@ class UpdateTaskRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   TaskTargetRunStatus m_targetRunStatus{TaskTargetRunStatus::NOT_SET};
-  bool m_targetRunStatusHasBeenSet = false;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_targetRunStatusHasBeenSet = false;
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_stepIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

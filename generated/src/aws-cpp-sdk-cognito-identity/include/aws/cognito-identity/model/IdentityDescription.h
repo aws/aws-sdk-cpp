@@ -128,18 +128,18 @@ class IdentityDescription {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logins;
-  bool m_loginsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityIdHasBeenSet = false;
+  bool m_loginsHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

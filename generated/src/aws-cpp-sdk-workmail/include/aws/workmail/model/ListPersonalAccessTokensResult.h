@@ -85,12 +85,12 @@ class ListPersonalAccessTokensResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PersonalAccessTokenSummary> m_personalAccessTokenSummaries;
-  bool m_personalAccessTokenSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_personalAccessTokenSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

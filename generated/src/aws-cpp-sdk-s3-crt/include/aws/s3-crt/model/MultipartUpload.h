@@ -186,27 +186,27 @@ class MultipartUpload {
   ///@}
  private:
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiated{};
-  bool m_initiatedHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   Owner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Initiator m_initiator;
-  bool m_initiatorHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
+  bool m_uploadIdHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_initiatedHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_initiatorHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
   bool m_checksumTypeHasBeenSet = false;
 };
 

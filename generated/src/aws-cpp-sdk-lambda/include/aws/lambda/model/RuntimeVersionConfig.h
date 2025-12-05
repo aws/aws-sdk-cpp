@@ -71,9 +71,9 @@ class RuntimeVersionConfig {
   ///@}
  private:
   Aws::String m_runtimeVersionArn;
-  bool m_runtimeVersionArnHasBeenSet = false;
 
   RuntimeVersionError m_error;
+  bool m_runtimeVersionArnHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

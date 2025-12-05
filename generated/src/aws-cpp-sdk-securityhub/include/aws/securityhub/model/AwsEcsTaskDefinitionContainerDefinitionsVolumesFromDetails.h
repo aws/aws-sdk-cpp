@@ -67,9 +67,9 @@ class AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
   ///@}
  private:
   bool m_readOnly{false};
-  bool m_readOnlyHasBeenSet = false;
 
   Aws::String m_sourceContainer;
+  bool m_readOnlyHasBeenSet = false;
   bool m_sourceContainerHasBeenSet = false;
 };
 

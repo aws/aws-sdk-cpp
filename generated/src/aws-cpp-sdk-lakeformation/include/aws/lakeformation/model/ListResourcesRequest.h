@@ -91,12 +91,12 @@ class ListResourcesRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::Vector<FilterCondition> m_filterConditionList;
-  bool m_filterConditionListHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterConditionListHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -193,27 +193,27 @@ class StartDataQualityRulesetEvaluationRunRequest : public GlueRequest {
   ///@}
  private:
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   DataQualityEvaluationRunAdditionalRunOptions m_additionalRunOptions;
-  bool m_additionalRunOptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rulesetNames;
-  bool m_rulesetNamesHasBeenSet = false;
 
   Aws::Map<Aws::String, DataSource> m_additionalDataSources;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_additionalRunOptionsHasBeenSet = false;
+  bool m_rulesetNamesHasBeenSet = false;
   bool m_additionalDataSourcesHasBeenSet = false;
 };
 

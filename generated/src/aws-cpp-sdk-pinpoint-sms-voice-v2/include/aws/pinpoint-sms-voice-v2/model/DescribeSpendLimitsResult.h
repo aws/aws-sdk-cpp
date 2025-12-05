@@ -86,12 +86,12 @@ class DescribeSpendLimitsResult {
   ///@}
  private:
   Aws::Vector<SpendLimit> m_spendLimits;
-  bool m_spendLimitsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spendLimitsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

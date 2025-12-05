@@ -123,18 +123,18 @@ class GetLogLevelsByResourceTypesResult {
   ///@}
  private:
   LogLevel m_defaultLogLevel{LogLevel::NOT_SET};
-  bool m_defaultLogLevelHasBeenSet = false;
 
   Aws::Vector<WirelessGatewayLogOption> m_wirelessGatewayLogOptions;
-  bool m_wirelessGatewayLogOptionsHasBeenSet = false;
 
   Aws::Vector<WirelessDeviceLogOption> m_wirelessDeviceLogOptions;
-  bool m_wirelessDeviceLogOptionsHasBeenSet = false;
 
   Aws::Vector<FuotaTaskLogOption> m_fuotaTaskLogOptions;
-  bool m_fuotaTaskLogOptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_defaultLogLevelHasBeenSet = false;
+  bool m_wirelessGatewayLogOptionsHasBeenSet = false;
+  bool m_wirelessDeviceLogOptionsHasBeenSet = false;
+  bool m_fuotaTaskLogOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

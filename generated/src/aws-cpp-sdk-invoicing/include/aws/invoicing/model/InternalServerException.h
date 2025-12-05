@@ -66,9 +66,9 @@ class InternalServerException {
   ///@}
  private:
   int m_retryAfterSeconds{0};
-  bool m_retryAfterSecondsHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_retryAfterSecondsHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 
