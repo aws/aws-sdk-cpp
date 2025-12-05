@@ -18,17 +18,34 @@ namespace Aws
          * Stream buffer wrapper that calculates checksum while forwarding data to underlying stream.
          * Used for single-part download checksum validation.
          */
-        class AWS_TRANSFER_API ChecksumValidatingStreamBuf : public std::streambuf
+        class ChecksumValidatingStreamBuf : public std::streambuf
         {
         public:
             ChecksumValidatingStreamBuf(std::streambuf* underlyingBuf, 
-                                        std::shared_ptr<Aws::Utils::Crypto::Hash> hash);
+                                        std::shared_ptr<Aws::Utils::Crypto::Hash> hash)
+                : m_underlyingBuf(underlyingBuf), m_hash(hash)
+            {
+            }
 
             std::shared_ptr<Aws::Utils::Crypto::Hash> GetHash() const { return m_hash; }
 
         protected:
-            std::streamsize xsputn(const char* s, std::streamsize n) override;
-            int overflow(int c) override;
+            std::streamsize xsputn(const char* s, std::streamsize n) override
+            {
+                if (m_hash && n > 0) {
+                    m_hash->Update(const_cast<unsigned char*>(reinterpret_cast<const unsigned char*>(s)), static_cast<size_t>(n));
+                }
+                return m_underlyingBuf->sputn(s, n);
+            }
+
+            int overflow(int c) override
+            {
+                if (c != EOF && m_hash) {
+                    unsigned char byte = static_cast<unsigned char>(c);
+                    m_hash->Update(&byte, 1);
+                }
+                return m_underlyingBuf->sputc(c);
+            }
 
         private:
             std::streambuf* m_underlyingBuf;
