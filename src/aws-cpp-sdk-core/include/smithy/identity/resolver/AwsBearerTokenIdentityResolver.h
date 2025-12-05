@@ -17,8 +17,6 @@ class AwsBearerTokenIdentityResolver
     : public IdentityResolverBase<AwsBearerTokenIdentityBase>
 {
   public:
-    static const char BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[];
-
     using IdentityT = AwsBearerTokenIdentity;
     virtual ~AwsBearerTokenIdentityResolver() = default;
 
@@ -57,7 +55,7 @@ class AwsBearerTokenIdentityResolver
             if (!bearerTokenProvider)
             {
                 AWS_LOGSTREAM_FATAL(
-                    BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG,
+                    "BearerTokenProvider",
                     "Unexpected nullptr in "
                     "DefaultBearerTokenProviderChain::m_providerChain");
                 return Aws::Client::AWSError<Aws::Client::CoreErrors>(
@@ -70,7 +68,7 @@ class AwsBearerTokenIdentityResolver
             if (!bearerToken.IsExpiredOrEmpty())
             {
                 auto outcomePtr = Aws::MakeUnique<AwsBearerTokenIdentity>(
-                    BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG);
+                    "BearerTokenProvider");
                 outcomePtr->token() = bearerToken.GetToken();
                 outcomePtr->expiration() = bearerToken.GetExpiration();
                 return ResolveIdentityFutureOutcome(std::move(outcomePtr));
@@ -104,8 +102,5 @@ class DefaultAwsBearerTokenIdentityResolver
         : AwsBearerTokenIdentityResolver(Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>>{
               Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider")}){};
 };
-const char
-    AwsBearerTokenIdentityResolver::BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] =
-        "BearerTokenProvider";
 
 } // namespace smithy
