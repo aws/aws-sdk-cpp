@@ -92,15 +92,15 @@ class DescribeAccountOverviewResult {
   ///@}
  private:
   int m_reactiveInsights{0};
-  bool m_reactiveInsightsHasBeenSet = false;
 
   int m_proactiveInsights{0};
-  bool m_proactiveInsightsHasBeenSet = false;
 
   long long m_meanTimeToRecoverInMilliseconds{0};
-  bool m_meanTimeToRecoverInMillisecondsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reactiveInsightsHasBeenSet = false;
+  bool m_proactiveInsightsHasBeenSet = false;
+  bool m_meanTimeToRecoverInMillisecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

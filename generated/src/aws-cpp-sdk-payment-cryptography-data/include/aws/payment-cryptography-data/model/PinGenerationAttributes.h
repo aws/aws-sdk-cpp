@@ -149,21 +149,21 @@ class PinGenerationAttributes {
   ///@}
  private:
   VisaPin m_visaPin;
-  bool m_visaPinHasBeenSet = false;
 
   VisaPinVerificationValue m_visaPinVerificationValue;
-  bool m_visaPinVerificationValueHasBeenSet = false;
 
   Ibm3624PinOffset m_ibm3624PinOffset;
-  bool m_ibm3624PinOffsetHasBeenSet = false;
 
   Ibm3624NaturalPin m_ibm3624NaturalPin;
-  bool m_ibm3624NaturalPinHasBeenSet = false;
 
   Ibm3624RandomPin m_ibm3624RandomPin;
-  bool m_ibm3624RandomPinHasBeenSet = false;
 
   Ibm3624PinFromOffset m_ibm3624PinFromOffset;
+  bool m_visaPinHasBeenSet = false;
+  bool m_visaPinVerificationValueHasBeenSet = false;
+  bool m_ibm3624PinOffsetHasBeenSet = false;
+  bool m_ibm3624NaturalPinHasBeenSet = false;
+  bool m_ibm3624RandomPinHasBeenSet = false;
   bool m_ibm3624PinFromOffsetHasBeenSet = false;
 };
 

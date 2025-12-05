@@ -67,9 +67,9 @@ class TestMetricFilterResult {
   ///@}
  private:
   Aws::Vector<MetricFilterMatchRecord> m_matches;
-  bool m_matchesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_matchesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class OperatorResponse {
   ///@}
  private:
   bool m_managed{false};
-  bool m_managedHasBeenSet = false;
 
   Aws::String m_principal;
+  bool m_managedHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

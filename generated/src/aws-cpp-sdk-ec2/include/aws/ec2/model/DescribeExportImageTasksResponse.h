@@ -86,12 +86,12 @@ class DescribeExportImageTasksResponse {
   ///@}
  private:
   Aws::Vector<ExportImageTask> m_exportImageTasks;
-  bool m_exportImageTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_exportImageTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

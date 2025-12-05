@@ -112,15 +112,15 @@ class ReimportApiRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_basepath;
-  bool m_basepathHasBeenSet = false;
 
   bool m_failOnWarnings{false};
-  bool m_failOnWarningsHasBeenSet = false;
 
   Aws::String m_requestBody;
+  bool m_apiIdHasBeenSet = false;
+  bool m_basepathHasBeenSet = false;
+  bool m_failOnWarningsHasBeenSet = false;
   bool m_requestBodyHasBeenSet = false;
 };
 

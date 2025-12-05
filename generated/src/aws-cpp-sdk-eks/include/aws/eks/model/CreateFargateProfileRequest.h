@@ -193,24 +193,24 @@ class CreateFargateProfileRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_fargateProfileName;
-  bool m_fargateProfileNameHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_podExecutionRoleArn;
-  bool m_podExecutionRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<FargateProfileSelector> m_selectors;
-  bool m_selectorsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_fargateProfileNameHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_podExecutionRoleArnHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_selectorsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

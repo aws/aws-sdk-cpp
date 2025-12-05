@@ -130,18 +130,18 @@ class FlowTrace {
   ///@}
  private:
   FlowTraceConditionNodeResultEvent m_conditionNodeResultTrace;
-  bool m_conditionNodeResultTraceHasBeenSet = false;
 
   FlowTraceNodeActionEvent m_nodeActionTrace;
-  bool m_nodeActionTraceHasBeenSet = false;
 
   FlowTraceDependencyEvent m_nodeDependencyTrace;
-  bool m_nodeDependencyTraceHasBeenSet = false;
 
   FlowTraceNodeInputEvent m_nodeInputTrace;
-  bool m_nodeInputTraceHasBeenSet = false;
 
   FlowTraceNodeOutputEvent m_nodeOutputTrace;
+  bool m_conditionNodeResultTraceHasBeenSet = false;
+  bool m_nodeActionTraceHasBeenSet = false;
+  bool m_nodeDependencyTraceHasBeenSet = false;
+  bool m_nodeInputTraceHasBeenSet = false;
   bool m_nodeOutputTraceHasBeenSet = false;
 };
 

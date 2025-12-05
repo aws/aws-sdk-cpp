@@ -129,18 +129,18 @@ class PropertygraphRecord {
   ///@}
  private:
   long long m_commitTimestampInMillis{0};
-  bool m_commitTimestampInMillisHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   PropertygraphData m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_op;
-  bool m_opHasBeenSet = false;
 
   bool m_isLastOp{false};
+  bool m_commitTimestampInMillisHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_opHasBeenSet = false;
   bool m_isLastOpHasBeenSet = false;
 };
 

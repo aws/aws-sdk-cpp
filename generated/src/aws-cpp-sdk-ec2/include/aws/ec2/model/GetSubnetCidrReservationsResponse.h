@@ -109,15 +109,15 @@ class GetSubnetCidrReservationsResponse {
   ///@}
  private:
   Aws::Vector<SubnetCidrReservation> m_subnetIpv4CidrReservations;
-  bool m_subnetIpv4CidrReservationsHasBeenSet = false;
 
   Aws::Vector<SubnetCidrReservation> m_subnetIpv6CidrReservations;
-  bool m_subnetIpv6CidrReservationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_subnetIpv4CidrReservationsHasBeenSet = false;
+  bool m_subnetIpv6CidrReservationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

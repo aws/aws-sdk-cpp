@@ -98,12 +98,12 @@ class ReplicationGroupUpdate {
   ///@}
  private:
   CreateReplicationGroupMemberAction m_create;
-  bool m_createHasBeenSet = false;
 
   UpdateReplicationGroupMemberAction m_update;
-  bool m_updateHasBeenSet = false;
 
   DeleteReplicationGroupMemberAction m_delete;
+  bool m_createHasBeenSet = false;
+  bool m_updateHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
 };
 

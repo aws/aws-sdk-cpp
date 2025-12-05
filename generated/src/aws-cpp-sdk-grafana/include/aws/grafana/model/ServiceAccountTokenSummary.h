@@ -124,18 +124,18 @@ class ServiceAccountTokenSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUsedAt{};
-  bool m_lastUsedAtHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_createdAtHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUsedAtHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

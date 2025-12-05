@@ -469,75 +469,75 @@ class AssociateHostedConnectionResult {
   ///@}
  private:
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   ConnectionState m_connectionState{ConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_bandwidth;
-  bool m_bandwidthHasBeenSet = false;
 
   int m_vlan{0};
-  bool m_vlanHasBeenSet = false;
 
   Aws::String m_partnerName;
-  bool m_partnerNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_loaIssueTime{};
-  bool m_loaIssueTimeHasBeenSet = false;
 
   Aws::String m_lagId;
-  bool m_lagIdHasBeenSet = false;
 
   Aws::String m_awsDevice;
-  bool m_awsDeviceHasBeenSet = false;
 
   bool m_jumboFrameCapable{false};
-  bool m_jumboFrameCapableHasBeenSet = false;
 
   Aws::String m_awsDeviceV2;
-  bool m_awsDeviceV2HasBeenSet = false;
 
   Aws::String m_awsLogicalDeviceId;
-  bool m_awsLogicalDeviceIdHasBeenSet = false;
 
   HasLogicalRedundancy m_hasLogicalRedundancy{HasLogicalRedundancy::NOT_SET};
-  bool m_hasLogicalRedundancyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   bool m_macSecCapable{false};
-  bool m_macSecCapableHasBeenSet = false;
 
   Aws::String m_portEncryptionStatus;
-  bool m_portEncryptionStatusHasBeenSet = false;
 
   Aws::String m_encryptionMode;
-  bool m_encryptionModeHasBeenSet = false;
 
   Aws::Vector<MacSecKey> m_macSecKeys;
-  bool m_macSecKeysHasBeenSet = false;
 
   bool m_partnerInterconnectMacSecCapable{false};
-  bool m_partnerInterconnectMacSecCapableHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_bandwidthHasBeenSet = false;
+  bool m_vlanHasBeenSet = false;
+  bool m_partnerNameHasBeenSet = false;
+  bool m_loaIssueTimeHasBeenSet = false;
+  bool m_lagIdHasBeenSet = false;
+  bool m_awsDeviceHasBeenSet = false;
+  bool m_jumboFrameCapableHasBeenSet = false;
+  bool m_awsDeviceV2HasBeenSet = false;
+  bool m_awsLogicalDeviceIdHasBeenSet = false;
+  bool m_hasLogicalRedundancyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_macSecCapableHasBeenSet = false;
+  bool m_portEncryptionStatusHasBeenSet = false;
+  bool m_encryptionModeHasBeenSet = false;
+  bool m_macSecKeysHasBeenSet = false;
+  bool m_partnerInterconnectMacSecCapableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

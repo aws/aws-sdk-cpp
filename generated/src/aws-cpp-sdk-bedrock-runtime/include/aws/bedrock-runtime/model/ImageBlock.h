@@ -87,12 +87,12 @@ class ImageBlock {
   ///@}
  private:
   ImageFormat m_format{ImageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   ImageSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   ErrorBlock m_error;
+  bool m_formatHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

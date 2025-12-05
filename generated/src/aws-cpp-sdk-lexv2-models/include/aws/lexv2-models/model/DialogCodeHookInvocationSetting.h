@@ -105,15 +105,15 @@ class DialogCodeHookInvocationSetting {
   ///@}
  private:
   bool m_enableCodeHookInvocation{false};
-  bool m_enableCodeHookInvocationHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   Aws::String m_invocationLabel;
-  bool m_invocationLabelHasBeenSet = false;
 
   PostDialogCodeHookInvocationSpecification m_postCodeHookSpecification;
+  bool m_enableCodeHookInvocationHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_invocationLabelHasBeenSet = false;
   bool m_postCodeHookSpecificationHasBeenSet = false;
 };
 

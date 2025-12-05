@@ -122,18 +122,18 @@ class CaseAttachmentAttributes {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   CaseAttachmentStatus m_attachmentStatus{CaseAttachmentStatus::NOT_SET};
-  bool m_attachmentStatusHasBeenSet = false;
 
   Aws::String m_creator;
-  bool m_creatorHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_attachmentStatusHasBeenSet = false;
+  bool m_creatorHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
 };
 

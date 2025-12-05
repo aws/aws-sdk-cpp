@@ -77,9 +77,9 @@ class InlineArchiveRule {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Criterion> m_filter;
+  bool m_ruleNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

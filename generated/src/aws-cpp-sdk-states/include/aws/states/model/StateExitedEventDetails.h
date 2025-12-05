@@ -141,18 +141,18 @@ class StateExitedEventDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_output;
-  bool m_outputHasBeenSet = false;
 
   HistoryEventExecutionDataDetails m_outputDetails;
-  bool m_outputDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_assignedVariables;
-  bool m_assignedVariablesHasBeenSet = false;
 
   AssignedVariablesDetails m_assignedVariablesDetails;
+  bool m_nameHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_outputDetailsHasBeenSet = false;
+  bool m_assignedVariablesHasBeenSet = false;
   bool m_assignedVariablesDetailsHasBeenSet = false;
 };
 

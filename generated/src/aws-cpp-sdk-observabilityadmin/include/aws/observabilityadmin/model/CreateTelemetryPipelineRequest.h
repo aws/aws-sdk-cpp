@@ -97,12 +97,12 @@ class CreateTelemetryPipelineRequest : public ObservabilityAdminRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TelemetryPipelineConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class RegisterIdentityProviderRequest : public LicenseManagerUserSubscriptionsRe
   ///@}
  private:
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   Settings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_productHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

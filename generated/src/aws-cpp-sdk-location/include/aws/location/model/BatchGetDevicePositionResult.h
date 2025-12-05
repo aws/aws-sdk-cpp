@@ -93,12 +93,12 @@ class BatchGetDevicePositionResult {
   ///@}
  private:
   Aws::Vector<BatchGetDevicePositionError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<DevicePosition> m_devicePositions;
-  bool m_devicePositionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_devicePositionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

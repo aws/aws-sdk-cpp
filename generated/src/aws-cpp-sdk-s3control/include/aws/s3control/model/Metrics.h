@@ -70,9 +70,9 @@ class Metrics {
   ///@}
  private:
   MetricsStatus m_status{MetricsStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ReplicationTimeValue m_eventThreshold;
+  bool m_statusHasBeenSet = false;
   bool m_eventThresholdHasBeenSet = false;
 };
 

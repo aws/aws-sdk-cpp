@@ -190,27 +190,27 @@ class GetScalingPlanResourceForecastDataRequest : public AutoScalingPlansRequest
   ///@}
  private:
   Aws::String m_scalingPlanName;
-  bool m_scalingPlanNameHasBeenSet = false;
 
   long long m_scalingPlanVersion{0};
-  bool m_scalingPlanVersionHasBeenSet = false;
 
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   ForecastDataType m_forecastDataType{ForecastDataType::NOT_SET};
-  bool m_forecastDataTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_scalingPlanNameHasBeenSet = false;
+  bool m_scalingPlanVersionHasBeenSet = false;
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_forecastDataTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

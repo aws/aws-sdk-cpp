@@ -166,21 +166,21 @@ class View {
   ///@}
  private:
   Aws::String m_viewArn;
-  bool m_viewArnHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<IncludedProperty> m_includedProperties;
-  bool m_includedPropertiesHasBeenSet = false;
 
   SearchFilter m_filters;
+  bool m_viewArnHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_includedPropertiesHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

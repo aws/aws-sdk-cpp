@@ -124,18 +124,18 @@ class UploadListElement {
   ///@}
  private:
   Aws::String m_multipartUploadId;
-  bool m_multipartUploadIdHasBeenSet = false;
 
   Aws::String m_vaultARN;
-  bool m_vaultARNHasBeenSet = false;
 
   Aws::String m_archiveDescription;
-  bool m_archiveDescriptionHasBeenSet = false;
 
   long long m_partSizeInBytes{0};
-  bool m_partSizeInBytesHasBeenSet = false;
 
   Aws::String m_creationDate;
+  bool m_multipartUploadIdHasBeenSet = false;
+  bool m_vaultARNHasBeenSet = false;
+  bool m_archiveDescriptionHasBeenSet = false;
+  bool m_partSizeInBytesHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

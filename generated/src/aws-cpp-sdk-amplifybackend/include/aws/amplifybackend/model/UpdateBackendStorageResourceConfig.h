@@ -68,9 +68,9 @@ class UpdateBackendStorageResourceConfig {
   ///@}
  private:
   BackendStoragePermissions m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   ServiceName m_serviceName{ServiceName::NOT_SET};
+  bool m_permissionsHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

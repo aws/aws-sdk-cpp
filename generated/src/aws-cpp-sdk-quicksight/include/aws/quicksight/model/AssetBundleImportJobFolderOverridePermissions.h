@@ -76,9 +76,9 @@ class AssetBundleImportJobFolderOverridePermissions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_folderIds;
-  bool m_folderIdsHasBeenSet = false;
 
   AssetBundleResourcePermissions m_permissions;
+  bool m_folderIdsHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

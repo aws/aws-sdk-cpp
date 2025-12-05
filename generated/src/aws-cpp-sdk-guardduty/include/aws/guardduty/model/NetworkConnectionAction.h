@@ -180,27 +180,27 @@ class NetworkConnectionAction {
   ///@}
  private:
   bool m_blocked{false};
-  bool m_blockedHasBeenSet = false;
 
   Aws::String m_connectionDirection;
-  bool m_connectionDirectionHasBeenSet = false;
 
   LocalPortDetails m_localPortDetails;
-  bool m_localPortDetailsHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   LocalIpDetails m_localIpDetails;
-  bool m_localIpDetailsHasBeenSet = false;
 
   Aws::String m_localNetworkInterface;
-  bool m_localNetworkInterfaceHasBeenSet = false;
 
   RemoteIpDetails m_remoteIpDetails;
-  bool m_remoteIpDetailsHasBeenSet = false;
 
   RemotePortDetails m_remotePortDetails;
+  bool m_blockedHasBeenSet = false;
+  bool m_connectionDirectionHasBeenSet = false;
+  bool m_localPortDetailsHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_localIpDetailsHasBeenSet = false;
+  bool m_localNetworkInterfaceHasBeenSet = false;
+  bool m_remoteIpDetailsHasBeenSet = false;
   bool m_remotePortDetailsHasBeenSet = false;
 };
 

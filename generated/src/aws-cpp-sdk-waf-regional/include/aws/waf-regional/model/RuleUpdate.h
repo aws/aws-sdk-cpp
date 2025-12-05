@@ -80,9 +80,9 @@ class RuleUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Predicate m_predicate;
+  bool m_actionHasBeenSet = false;
   bool m_predicateHasBeenSet = false;
 };
 

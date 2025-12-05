@@ -80,12 +80,12 @@ class GetResponseHeadersPolicyConfig2020_05_31Result {
   ///@}
  private:
   ResponseHeadersPolicyConfig m_responseHeadersPolicyConfig;
-  bool m_responseHeadersPolicyConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responseHeadersPolicyConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

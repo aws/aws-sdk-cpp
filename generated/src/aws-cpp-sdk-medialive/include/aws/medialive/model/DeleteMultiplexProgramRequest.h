@@ -69,9 +69,9 @@ class DeleteMultiplexProgramRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_multiplexId;
-  bool m_multiplexIdHasBeenSet = false;
 
   Aws::String m_programName;
+  bool m_multiplexIdHasBeenSet = false;
   bool m_programNameHasBeenSet = false;
 };
 

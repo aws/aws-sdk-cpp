@@ -263,33 +263,33 @@ class ApplicationConfigurationDescription {
   ///@}
  private:
   SqlApplicationConfigurationDescription m_sqlApplicationConfigurationDescription;
-  bool m_sqlApplicationConfigurationDescriptionHasBeenSet = false;
 
   ApplicationCodeConfigurationDescription m_applicationCodeConfigurationDescription;
-  bool m_applicationCodeConfigurationDescriptionHasBeenSet = false;
 
   RunConfigurationDescription m_runConfigurationDescription;
-  bool m_runConfigurationDescriptionHasBeenSet = false;
 
   FlinkApplicationConfigurationDescription m_flinkApplicationConfigurationDescription;
-  bool m_flinkApplicationConfigurationDescriptionHasBeenSet = false;
 
   EnvironmentPropertyDescriptions m_environmentPropertyDescriptions;
-  bool m_environmentPropertyDescriptionsHasBeenSet = false;
 
   ApplicationSnapshotConfigurationDescription m_applicationSnapshotConfigurationDescription;
-  bool m_applicationSnapshotConfigurationDescriptionHasBeenSet = false;
 
   ApplicationSystemRollbackConfigurationDescription m_applicationSystemRollbackConfigurationDescription;
-  bool m_applicationSystemRollbackConfigurationDescriptionHasBeenSet = false;
 
   Aws::Vector<VpcConfigurationDescription> m_vpcConfigurationDescriptions;
-  bool m_vpcConfigurationDescriptionsHasBeenSet = false;
 
   ZeppelinApplicationConfigurationDescription m_zeppelinApplicationConfigurationDescription;
-  bool m_zeppelinApplicationConfigurationDescriptionHasBeenSet = false;
 
   ApplicationEncryptionConfigurationDescription m_applicationEncryptionConfigurationDescription;
+  bool m_sqlApplicationConfigurationDescriptionHasBeenSet = false;
+  bool m_applicationCodeConfigurationDescriptionHasBeenSet = false;
+  bool m_runConfigurationDescriptionHasBeenSet = false;
+  bool m_flinkApplicationConfigurationDescriptionHasBeenSet = false;
+  bool m_environmentPropertyDescriptionsHasBeenSet = false;
+  bool m_applicationSnapshotConfigurationDescriptionHasBeenSet = false;
+  bool m_applicationSystemRollbackConfigurationDescriptionHasBeenSet = false;
+  bool m_vpcConfigurationDescriptionsHasBeenSet = false;
+  bool m_zeppelinApplicationConfigurationDescriptionHasBeenSet = false;
   bool m_applicationEncryptionConfigurationDescriptionHasBeenSet = false;
 };
 

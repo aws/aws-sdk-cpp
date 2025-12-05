@@ -68,9 +68,9 @@ class TerminateResponsibilityTransferRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
+  bool m_idHasBeenSet = false;
   bool m_endTimestampHasBeenSet = false;
 };
 

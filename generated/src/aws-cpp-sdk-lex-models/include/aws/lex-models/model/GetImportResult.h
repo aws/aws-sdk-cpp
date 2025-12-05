@@ -168,27 +168,27 @@ class GetImportResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
-  bool m_mergeStrategyHasBeenSet = false;
 
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_mergeStrategyHasBeenSet = false;
+  bool m_importIdHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

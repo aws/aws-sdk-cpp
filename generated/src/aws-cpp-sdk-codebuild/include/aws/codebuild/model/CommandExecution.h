@@ -267,42 +267,42 @@ class CommandExecution {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_sandboxId;
-  bool m_sandboxIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
-  bool m_submitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_command;
-  bool m_commandHasBeenSet = false;
 
   CommandType m_type{CommandType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_exitCode;
-  bool m_exitCodeHasBeenSet = false;
 
   Aws::String m_standardOutputContent;
-  bool m_standardOutputContentHasBeenSet = false;
 
   Aws::String m_standardErrContent;
-  bool m_standardErrContentHasBeenSet = false;
 
   LogsLocation m_logs;
-  bool m_logsHasBeenSet = false;
 
   Aws::String m_sandboxArn;
+  bool m_idHasBeenSet = false;
+  bool m_sandboxIdHasBeenSet = false;
+  bool m_submitTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_exitCodeHasBeenSet = false;
+  bool m_standardOutputContentHasBeenSet = false;
+  bool m_standardErrContentHasBeenSet = false;
+  bool m_logsHasBeenSet = false;
   bool m_sandboxArnHasBeenSet = false;
 };
 

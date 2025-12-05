@@ -96,12 +96,12 @@ class ModelTrainingDataChannel {
   ///@}
  private:
   Aws::String m_mlInputChannelArn;
-  bool m_mlInputChannelArnHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   S3DataDistributionType m_s3DataDistributionType{S3DataDistributionType::NOT_SET};
+  bool m_mlInputChannelArnHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
   bool m_s3DataDistributionTypeHasBeenSet = false;
 };
 

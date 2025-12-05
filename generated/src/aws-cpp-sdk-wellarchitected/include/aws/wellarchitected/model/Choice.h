@@ -149,21 +149,21 @@ class Choice {
   ///@}
  private:
   Aws::String m_choiceId;
-  bool m_choiceIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ChoiceContent m_helpfulResource;
-  bool m_helpfulResourceHasBeenSet = false;
 
   ChoiceContent m_improvementPlan;
-  bool m_improvementPlanHasBeenSet = false;
 
   Aws::Vector<AdditionalResources> m_additionalResources;
+  bool m_choiceIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_helpfulResourceHasBeenSet = false;
+  bool m_improvementPlanHasBeenSet = false;
   bool m_additionalResourcesHasBeenSet = false;
 };
 

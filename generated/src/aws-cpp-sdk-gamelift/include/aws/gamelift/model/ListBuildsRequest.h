@@ -93,12 +93,12 @@ class ListBuildsRequest : public GameLiftRequest {
   ///@}
  private:
   BuildStatus m_status{BuildStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_statusHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

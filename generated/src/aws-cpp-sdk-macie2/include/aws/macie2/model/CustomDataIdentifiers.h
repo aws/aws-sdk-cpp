@@ -77,9 +77,9 @@ class CustomDataIdentifiers {
   ///@}
  private:
   Aws::Vector<CustomDetection> m_detections;
-  bool m_detectionsHasBeenSet = false;
 
   long long m_totalCount{0};
+  bool m_detectionsHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;
 };
 

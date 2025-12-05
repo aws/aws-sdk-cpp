@@ -304,36 +304,36 @@ class CreateClusterRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Vector<ClusterInstanceGroupSpecification> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   Aws::Vector<ClusterRestrictedInstanceGroupSpecification> m_restrictedInstanceGroups;
-  bool m_restrictedInstanceGroupsHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ClusterOrchestrator m_orchestrator;
-  bool m_orchestratorHasBeenSet = false;
 
   ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
-  bool m_nodeRecoveryHasBeenSet = false;
 
   ClusterTieredStorageConfig m_tieredStorageConfig;
-  bool m_tieredStorageConfigHasBeenSet = false;
 
   ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
-  bool m_nodeProvisioningModeHasBeenSet = false;
 
   Aws::String m_clusterRole;
-  bool m_clusterRoleHasBeenSet = false;
 
   ClusterAutoScalingConfig m_autoScaling;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_restrictedInstanceGroupsHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_orchestratorHasBeenSet = false;
+  bool m_nodeRecoveryHasBeenSet = false;
+  bool m_tieredStorageConfigHasBeenSet = false;
+  bool m_nodeProvisioningModeHasBeenSet = false;
+  bool m_clusterRoleHasBeenSet = false;
   bool m_autoScalingHasBeenSet = false;
 };
 

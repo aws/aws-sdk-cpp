@@ -95,12 +95,12 @@ class LogConfiguration {
   ///@}
  private:
   LogDestination m_logDestination{LogDestination::NOT_SET};
-  bool m_logDestinationHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_logGroupArn;
+  bool m_logDestinationHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
   bool m_logGroupArnHasBeenSet = false;
 };
 

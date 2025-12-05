@@ -208,33 +208,33 @@ class DescribeImportResult {
   ///@}
  private:
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   ImportResourceSpecification m_resourceSpecification;
-  bool m_resourceSpecificationHasBeenSet = false;
 
   Aws::String m_importedResourceId;
-  bool m_importedResourceIdHasBeenSet = false;
 
   Aws::String m_importedResourceName;
-  bool m_importedResourceNameHasBeenSet = false;
 
   MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
-  bool m_mergeStrategyHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importIdHasBeenSet = false;
+  bool m_resourceSpecificationHasBeenSet = false;
+  bool m_importedResourceIdHasBeenSet = false;
+  bool m_importedResourceNameHasBeenSet = false;
+  bool m_mergeStrategyHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -143,18 +143,18 @@ class RealtimeLogConfig {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_samplingRate{0};
-  bool m_samplingRateHasBeenSet = false;
 
   Aws::Vector<EndPoint> m_endPoints;
-  bool m_endPointsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fields;
+  bool m_aRNHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_samplingRateHasBeenSet = false;
+  bool m_endPointsHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

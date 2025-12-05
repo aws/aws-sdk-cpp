@@ -131,15 +131,15 @@ Alternate rendition that the client will not try to play
   ///@}
  private:
   Aws::String m_audioGroupId;
-  bool m_audioGroupIdHasBeenSet = false;
 
   InputLocation m_audioOnlyImage;
-  bool m_audioOnlyImageHasBeenSet = false;
 
   AudioOnlyHlsTrackType m_audioTrackType{AudioOnlyHlsTrackType::NOT_SET};
-  bool m_audioTrackTypeHasBeenSet = false;
 
   AudioOnlyHlsSegmentType m_segmentType{AudioOnlyHlsSegmentType::NOT_SET};
+  bool m_audioGroupIdHasBeenSet = false;
+  bool m_audioOnlyImageHasBeenSet = false;
+  bool m_audioTrackTypeHasBeenSet = false;
   bool m_segmentTypeHasBeenSet = false;
 };
 

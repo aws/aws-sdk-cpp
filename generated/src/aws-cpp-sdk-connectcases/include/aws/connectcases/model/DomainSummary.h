@@ -87,12 +87,12 @@ class DomainSummary {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

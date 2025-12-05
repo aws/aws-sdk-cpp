@@ -98,12 +98,12 @@ class PublicKey {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   PublicKeyConfig m_publicKeyConfig;
+  bool m_idHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_publicKeyConfigHasBeenSet = false;
 };
 

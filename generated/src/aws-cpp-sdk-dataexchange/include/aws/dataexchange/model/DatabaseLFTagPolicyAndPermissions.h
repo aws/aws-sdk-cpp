@@ -82,9 +82,9 @@ class DatabaseLFTagPolicyAndPermissions {
   ///@}
  private:
   Aws::Vector<LFTag> m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Vector<DatabaseLFTagPolicyPermission> m_permissions;
+  bool m_expressionHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

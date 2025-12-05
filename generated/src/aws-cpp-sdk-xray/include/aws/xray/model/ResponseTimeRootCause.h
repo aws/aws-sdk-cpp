@@ -75,9 +75,9 @@ class ResponseTimeRootCause {
   ///@}
  private:
   Aws::Vector<ResponseTimeRootCauseService> m_services;
-  bool m_servicesHasBeenSet = false;
 
   bool m_clientImpacting{false};
+  bool m_servicesHasBeenSet = false;
   bool m_clientImpactingHasBeenSet = false;
 };
 

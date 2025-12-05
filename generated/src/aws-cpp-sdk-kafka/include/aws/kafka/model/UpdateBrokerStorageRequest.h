@@ -100,12 +100,12 @@ class UpdateBrokerStorageRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::Vector<BrokerEBSVolumeInfo> m_targetBrokerEBSVolumeInfo;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
   bool m_targetBrokerEBSVolumeInfoHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class UtilizationPreference {
   ///@}
  private:
   CustomizableMetricName m_metricName{CustomizableMetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   CustomizableMetricParameters m_metricParameters;
+  bool m_metricNameHasBeenSet = false;
   bool m_metricParametersHasBeenSet = false;
 };
 

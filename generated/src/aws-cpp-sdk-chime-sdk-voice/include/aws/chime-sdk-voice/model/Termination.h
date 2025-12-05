@@ -134,18 +134,18 @@ class Termination {
   ///@}
  private:
   int m_cpsLimit{0};
-  bool m_cpsLimitHasBeenSet = false;
 
   Aws::String m_defaultPhoneNumber;
-  bool m_defaultPhoneNumberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_callingRegions;
-  bool m_callingRegionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrAllowedList;
-  bool m_cidrAllowedListHasBeenSet = false;
 
   bool m_disabled{false};
+  bool m_cpsLimitHasBeenSet = false;
+  bool m_defaultPhoneNumberHasBeenSet = false;
+  bool m_callingRegionsHasBeenSet = false;
+  bool m_cidrAllowedListHasBeenSet = false;
   bool m_disabledHasBeenSet = false;
 };
 

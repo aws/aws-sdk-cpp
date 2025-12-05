@@ -157,15 +157,15 @@ class PutMetricDataRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<MetricDatum> m_metricData;
-  bool m_metricDataHasBeenSet = false;
 
   Aws::Vector<EntityMetricData> m_entityMetricData;
-  bool m_entityMetricDataHasBeenSet = false;
 
   bool m_strictEntityValidation{false};
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricDataHasBeenSet = false;
+  bool m_entityMetricDataHasBeenSet = false;
   bool m_strictEntityValidationHasBeenSet = false;
 };
 

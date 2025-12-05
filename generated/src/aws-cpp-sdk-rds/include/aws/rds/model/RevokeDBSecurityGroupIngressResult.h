@@ -58,9 +58,9 @@ class RevokeDBSecurityGroupIngressResult {
   ///@}
  private:
   DBSecurityGroup m_dBSecurityGroup;
-  bool m_dBSecurityGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBSecurityGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

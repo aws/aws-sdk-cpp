@@ -104,15 +104,15 @@ class RouteMatrixDestinationOptions {
   ///@}
  private:
   long long m_avoidActionsForDistance{0};
-  bool m_avoidActionsForDistanceHasBeenSet = false;
 
   double m_heading{0.0};
-  bool m_headingHasBeenSet = false;
 
   RouteMatrixMatchingOptions m_matching;
-  bool m_matchingHasBeenSet = false;
 
   RouteMatrixSideOfStreetOptions m_sideOfStreet;
+  bool m_avoidActionsForDistanceHasBeenSet = false;
+  bool m_headingHasBeenSet = false;
+  bool m_matchingHasBeenSet = false;
   bool m_sideOfStreetHasBeenSet = false;
 };
 

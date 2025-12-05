@@ -71,9 +71,9 @@ class ApacheKafkaCluster {
   ///@}
  private:
   Aws::String m_bootstrapServers;
-  bool m_bootstrapServersHasBeenSet = false;
 
   Vpc m_vpc;
+  bool m_bootstrapServersHasBeenSet = false;
   bool m_vpcHasBeenSet = false;
 };
 

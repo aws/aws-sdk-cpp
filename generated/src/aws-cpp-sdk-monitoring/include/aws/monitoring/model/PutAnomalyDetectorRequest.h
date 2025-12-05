@@ -129,15 +129,15 @@ class PutAnomalyDetectorRequest : public CloudWatchRequest {
   ///@}
  private:
   AnomalyDetectorConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   MetricCharacteristics m_metricCharacteristics;
-  bool m_metricCharacteristicsHasBeenSet = false;
 
   SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
   MetricMathAnomalyDetector m_metricMathAnomalyDetector;
+  bool m_configurationHasBeenSet = false;
+  bool m_metricCharacteristicsHasBeenSet = false;
+  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
   bool m_metricMathAnomalyDetectorHasBeenSet = false;
 };
 

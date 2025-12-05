@@ -65,9 +65,9 @@ class UpdatePublicSharingSettingsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   bool m_publicSharingEnabled{false};
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_publicSharingEnabledHasBeenSet = false;
 };
 

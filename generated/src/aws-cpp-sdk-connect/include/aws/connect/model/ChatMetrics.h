@@ -89,12 +89,12 @@ class ChatMetrics {
   ///@}
  private:
   ChatContactMetrics m_chatContactMetrics;
-  bool m_chatContactMetricsHasBeenSet = false;
 
   ParticipantMetrics m_agentMetrics;
-  bool m_agentMetricsHasBeenSet = false;
 
   ParticipantMetrics m_customerMetrics;
+  bool m_chatContactMetricsHasBeenSet = false;
+  bool m_agentMetricsHasBeenSet = false;
   bool m_customerMetricsHasBeenSet = false;
 };
 

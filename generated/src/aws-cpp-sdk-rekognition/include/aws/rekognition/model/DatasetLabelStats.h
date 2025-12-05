@@ -63,9 +63,9 @@ class DatasetLabelStats {
   ///@}
  private:
   int m_entryCount{0};
-  bool m_entryCountHasBeenSet = false;
 
   int m_boundingBoxCount{0};
+  bool m_entryCountHasBeenSet = false;
   bool m_boundingBoxCountHasBeenSet = false;
 };
 

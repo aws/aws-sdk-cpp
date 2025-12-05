@@ -60,9 +60,9 @@ class CreatePromptRouterResult {
   ///@}
  private:
   Aws::String m_promptRouterArn;
-  bool m_promptRouterArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_promptRouterArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

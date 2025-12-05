@@ -68,9 +68,9 @@ class DatasetEntry {
   ///@}
  private:
   Aws::String m_entryName;
-  bool m_entryNameHasBeenSet = false;
 
   Aws::String m_dataURI;
+  bool m_entryNameHasBeenSet = false;
   bool m_dataURIHasBeenSet = false;
 };
 

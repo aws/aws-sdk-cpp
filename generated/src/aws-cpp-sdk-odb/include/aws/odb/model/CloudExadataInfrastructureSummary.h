@@ -719,117 +719,117 @@ class CloudExadataInfrastructureSummary {
   ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_cloudExadataInfrastructureArn;
-  bool m_cloudExadataInfrastructureArnHasBeenSet = false;
 
   int m_activatedStorageCount{0};
-  bool m_activatedStorageCountHasBeenSet = false;
 
   int m_additionalStorageCount{0};
-  bool m_additionalStorageCountHasBeenSet = false;
 
   int m_availableStorageSizeInGBs{0};
-  bool m_availableStorageSizeInGBsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   int m_computeCount{0};
-  bool m_computeCountHasBeenSet = false;
 
   int m_cpuCount{0};
-  bool m_cpuCountHasBeenSet = false;
 
   Aws::Vector<CustomerContact> m_customerContactsToSendToOCI;
-  bool m_customerContactsToSendToOCIHasBeenSet = false;
 
   double m_dataStorageSizeInTBs{0.0};
-  bool m_dataStorageSizeInTBsHasBeenSet = false;
 
   int m_dbNodeStorageSizeInGBs{0};
-  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
 
   Aws::String m_dbServerVersion;
-  bool m_dbServerVersionHasBeenSet = false;
 
   Aws::String m_lastMaintenanceRunId;
-  bool m_lastMaintenanceRunIdHasBeenSet = false;
 
   MaintenanceWindow m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   int m_maxCpuCount{0};
-  bool m_maxCpuCountHasBeenSet = false;
 
   double m_maxDataStorageInTBs{0.0};
-  bool m_maxDataStorageInTBsHasBeenSet = false;
 
   int m_maxDbNodeStorageSizeInGBs{0};
-  bool m_maxDbNodeStorageSizeInGBsHasBeenSet = false;
 
   int m_maxMemoryInGBs{0};
-  bool m_maxMemoryInGBsHasBeenSet = false;
 
   int m_memorySizeInGBs{0};
-  bool m_memorySizeInGBsHasBeenSet = false;
 
   Aws::String m_monthlyDbServerVersion;
-  bool m_monthlyDbServerVersionHasBeenSet = false;
 
   Aws::String m_monthlyStorageServerVersion;
-  bool m_monthlyStorageServerVersionHasBeenSet = false;
 
   Aws::String m_nextMaintenanceRunId;
-  bool m_nextMaintenanceRunIdHasBeenSet = false;
 
   Aws::String m_ociResourceAnchorName;
-  bool m_ociResourceAnchorNameHasBeenSet = false;
 
   Aws::String m_ociUrl;
-  bool m_ociUrlHasBeenSet = false;
 
   Aws::String m_ocid;
-  bool m_ocidHasBeenSet = false;
 
   Aws::String m_shape;
-  bool m_shapeHasBeenSet = false;
 
   int m_storageCount{0};
-  bool m_storageCountHasBeenSet = false;
 
   Aws::String m_storageServerVersion;
-  bool m_storageServerVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   int m_totalStorageSizeInGBs{0};
-  bool m_totalStorageSizeInGBsHasBeenSet = false;
 
   double m_percentProgress{0.0};
-  bool m_percentProgressHasBeenSet = false;
 
   Aws::String m_databaseServerType;
-  bool m_databaseServerTypeHasBeenSet = false;
 
   Aws::String m_storageServerType;
-  bool m_storageServerTypeHasBeenSet = false;
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_cloudExadataInfrastructureArnHasBeenSet = false;
+  bool m_activatedStorageCountHasBeenSet = false;
+  bool m_additionalStorageCountHasBeenSet = false;
+  bool m_availableStorageSizeInGBsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_computeCountHasBeenSet = false;
+  bool m_cpuCountHasBeenSet = false;
+  bool m_customerContactsToSendToOCIHasBeenSet = false;
+  bool m_dataStorageSizeInTBsHasBeenSet = false;
+  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_dbServerVersionHasBeenSet = false;
+  bool m_lastMaintenanceRunIdHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_maxCpuCountHasBeenSet = false;
+  bool m_maxDataStorageInTBsHasBeenSet = false;
+  bool m_maxDbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_maxMemoryInGBsHasBeenSet = false;
+  bool m_memorySizeInGBsHasBeenSet = false;
+  bool m_monthlyDbServerVersionHasBeenSet = false;
+  bool m_monthlyStorageServerVersionHasBeenSet = false;
+  bool m_nextMaintenanceRunIdHasBeenSet = false;
+  bool m_ociResourceAnchorNameHasBeenSet = false;
+  bool m_ociUrlHasBeenSet = false;
+  bool m_ocidHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
+  bool m_storageCountHasBeenSet = false;
+  bool m_storageServerVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_totalStorageSizeInGBsHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_databaseServerTypeHasBeenSet = false;
+  bool m_storageServerTypeHasBeenSet = false;
   bool m_computeModelHasBeenSet = false;
 };
 

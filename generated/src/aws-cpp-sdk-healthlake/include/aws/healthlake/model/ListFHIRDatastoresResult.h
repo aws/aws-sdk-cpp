@@ -84,12 +84,12 @@ class ListFHIRDatastoresResult {
   ///@}
  private:
   Aws::Vector<DatastoreProperties> m_datastorePropertiesList;
-  bool m_datastorePropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastorePropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

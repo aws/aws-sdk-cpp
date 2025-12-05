@@ -153,21 +153,21 @@ class CreateSnapshotScheduleRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_scheduleDefinitions;
-  bool m_scheduleDefinitionsHasBeenSet = false;
 
   Aws::String m_scheduleIdentifier;
-  bool m_scheduleIdentifierHasBeenSet = false;
 
   Aws::String m_scheduleDescription;
-  bool m_scheduleDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   int m_nextInvocations{0};
+  bool m_scheduleDefinitionsHasBeenSet = false;
+  bool m_scheduleIdentifierHasBeenSet = false;
+  bool m_scheduleDescriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_nextInvocationsHasBeenSet = false;
 };
 

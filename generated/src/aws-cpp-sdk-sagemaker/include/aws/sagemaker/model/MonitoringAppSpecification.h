@@ -140,18 +140,18 @@ class MonitoringAppSpecification {
   ///@}
  private:
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerEntrypoint;
-  bool m_containerEntrypointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerArguments;
-  bool m_containerArgumentsHasBeenSet = false;
 
   Aws::String m_recordPreprocessorSourceUri;
-  bool m_recordPreprocessorSourceUriHasBeenSet = false;
 
   Aws::String m_postAnalyticsProcessorSourceUri;
+  bool m_imageUriHasBeenSet = false;
+  bool m_containerEntrypointHasBeenSet = false;
+  bool m_containerArgumentsHasBeenSet = false;
+  bool m_recordPreprocessorSourceUriHasBeenSet = false;
   bool m_postAnalyticsProcessorSourceUriHasBeenSet = false;
 };
 

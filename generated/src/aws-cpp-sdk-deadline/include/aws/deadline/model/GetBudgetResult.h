@@ -295,48 +295,48 @@ class GetBudgetResult {
   ///@}
  private:
   Aws::String m_budgetId;
-  bool m_budgetIdHasBeenSet = false;
 
   UsageTrackingResource m_usageTrackingResource;
-  bool m_usageTrackingResourceHasBeenSet = false;
 
   BudgetStatus m_status{BudgetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   double m_approximateDollarLimit{0.0};
-  bool m_approximateDollarLimitHasBeenSet = false;
 
   ConsumedUsages m_usages;
-  bool m_usagesHasBeenSet = false;
 
   Aws::Vector<ResponseBudgetAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   BudgetSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_queueStoppedAt{};
-  bool m_queueStoppedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_budgetIdHasBeenSet = false;
+  bool m_usageTrackingResourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_approximateDollarLimitHasBeenSet = false;
+  bool m_usagesHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_queueStoppedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

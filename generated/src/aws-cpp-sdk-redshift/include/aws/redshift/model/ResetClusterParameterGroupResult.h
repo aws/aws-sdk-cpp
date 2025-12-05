@@ -84,12 +84,12 @@ class ResetClusterParameterGroupResult {
   ///@}
  private:
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::String m_parameterGroupStatus;
-  bool m_parameterGroupStatusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_parameterGroupNameHasBeenSet = false;
+  bool m_parameterGroupStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

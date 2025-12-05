@@ -65,9 +65,9 @@ class DeleteWaveRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_waveID;
+  bool m_accountIDHasBeenSet = false;
   bool m_waveIDHasBeenSet = false;
 };
 

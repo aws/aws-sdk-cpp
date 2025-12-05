@@ -88,12 +88,12 @@ class ListManagedViewsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedViews;
-  bool m_managedViewsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_managedViewsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class ArchiveFilters {
   ///@}
  private:
   Aws::Vector<ArchiveFilterCondition> m_include;
-  bool m_includeHasBeenSet = false;
 
   Aws::Vector<ArchiveFilterCondition> m_unless;
+  bool m_includeHasBeenSet = false;
   bool m_unlessHasBeenSet = false;
 };
 

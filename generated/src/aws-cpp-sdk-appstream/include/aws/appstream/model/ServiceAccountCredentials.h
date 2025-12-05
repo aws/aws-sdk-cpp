@@ -72,9 +72,9 @@ class ServiceAccountCredentials {
   ///@}
  private:
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_accountPassword;
+  bool m_accountNameHasBeenSet = false;
   bool m_accountPasswordHasBeenSet = false;
 };
 

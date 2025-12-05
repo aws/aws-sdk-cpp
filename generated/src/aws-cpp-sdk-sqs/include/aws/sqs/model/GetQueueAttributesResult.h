@@ -87,12 +87,12 @@ class GetQueueAttributesResult {
   ///@}
  private:
   Aws::Map<QueueAttributeName, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_attributesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

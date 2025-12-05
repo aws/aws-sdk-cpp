@@ -163,24 +163,24 @@ class CloudExadataInfrastructureUnallocatedResources {
   ///@}
  private:
   Aws::Vector<CloudAutonomousVmClusterResourceDetails> m_cloudAutonomousVmClusters;
-  bool m_cloudAutonomousVmClustersHasBeenSet = false;
 
   Aws::String m_cloudExadataInfrastructureDisplayName;
-  bool m_cloudExadataInfrastructureDisplayNameHasBeenSet = false;
 
   double m_exadataStorageInTBs{0.0};
-  bool m_exadataStorageInTBsHasBeenSet = false;
 
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   int m_localStorageInGBs{0};
-  bool m_localStorageInGBsHasBeenSet = false;
 
   int m_memoryInGBs{0};
-  bool m_memoryInGBsHasBeenSet = false;
 
   int m_ocpus{0};
+  bool m_cloudAutonomousVmClustersHasBeenSet = false;
+  bool m_cloudExadataInfrastructureDisplayNameHasBeenSet = false;
+  bool m_exadataStorageInTBsHasBeenSet = false;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_localStorageInGBsHasBeenSet = false;
+  bool m_memoryInGBsHasBeenSet = false;
   bool m_ocpusHasBeenSet = false;
 };
 

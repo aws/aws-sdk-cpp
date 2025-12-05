@@ -70,9 +70,9 @@ class PivotFieldSortOptions {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   PivotTableSortBy m_sortBy;
+  bool m_fieldIdHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class MetricDatum {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   MetricValue m_value;
+  bool m_timestampHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

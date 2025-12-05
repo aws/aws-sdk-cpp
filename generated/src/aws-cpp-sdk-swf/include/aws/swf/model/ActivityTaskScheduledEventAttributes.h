@@ -248,36 +248,36 @@ class ActivityTaskScheduledEventAttributes {
   ///@}
  private:
   ActivityType m_activityType;
-  bool m_activityTypeHasBeenSet = false;
 
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_control;
-  bool m_controlHasBeenSet = false;
 
   Aws::String m_scheduleToStartTimeout;
-  bool m_scheduleToStartTimeoutHasBeenSet = false;
 
   Aws::String m_scheduleToCloseTimeout;
-  bool m_scheduleToCloseTimeoutHasBeenSet = false;
 
   Aws::String m_startToCloseTimeout;
-  bool m_startToCloseTimeoutHasBeenSet = false;
 
   TaskList m_taskList;
-  bool m_taskListHasBeenSet = false;
 
   Aws::String m_taskPriority;
-  bool m_taskPriorityHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
-  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
   Aws::String m_heartbeatTimeout;
+  bool m_activityTypeHasBeenSet = false;
+  bool m_activityIdHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_controlHasBeenSet = false;
+  bool m_scheduleToStartTimeoutHasBeenSet = false;
+  bool m_scheduleToCloseTimeoutHasBeenSet = false;
+  bool m_startToCloseTimeoutHasBeenSet = false;
+  bool m_taskListHasBeenSet = false;
+  bool m_taskPriorityHasBeenSet = false;
+  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   bool m_heartbeatTimeoutHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class StateTransition {
   ///@}
  private:
   ParticipantState m_state{ParticipantState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateStartTimestamp{};
-  bool m_stateStartTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateEndTimestamp{};
+  bool m_stateHasBeenSet = false;
+  bool m_stateStartTimestampHasBeenSet = false;
   bool m_stateEndTimestampHasBeenSet = false;
 };
 

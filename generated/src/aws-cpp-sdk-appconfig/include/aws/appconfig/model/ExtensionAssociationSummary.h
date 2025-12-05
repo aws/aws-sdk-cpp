@@ -93,12 +93,12 @@ class ExtensionAssociationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_extensionArn;
-  bool m_extensionArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_idHasBeenSet = false;
+  bool m_extensionArnHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

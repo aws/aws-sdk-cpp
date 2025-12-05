@@ -148,21 +148,21 @@ class UpdateDeploymentStrategyRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_deploymentStrategyId;
-  bool m_deploymentStrategyIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_deploymentDurationInMinutes{0};
-  bool m_deploymentDurationInMinutesHasBeenSet = false;
 
   int m_finalBakeTimeInMinutes{0};
-  bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
   double m_growthFactor{0.0};
-  bool m_growthFactorHasBeenSet = false;
 
   GrowthType m_growthType{GrowthType::NOT_SET};
+  bool m_deploymentStrategyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deploymentDurationInMinutesHasBeenSet = false;
+  bool m_finalBakeTimeInMinutesHasBeenSet = false;
+  bool m_growthFactorHasBeenSet = false;
   bool m_growthTypeHasBeenSet = false;
 };
 

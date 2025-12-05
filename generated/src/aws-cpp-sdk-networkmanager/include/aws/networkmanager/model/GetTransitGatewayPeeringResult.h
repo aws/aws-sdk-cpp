@@ -60,9 +60,9 @@ class GetTransitGatewayPeeringResult {
   ///@}
  private:
   TransitGatewayPeering m_transitGatewayPeering;
-  bool m_transitGatewayPeeringHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transitGatewayPeeringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

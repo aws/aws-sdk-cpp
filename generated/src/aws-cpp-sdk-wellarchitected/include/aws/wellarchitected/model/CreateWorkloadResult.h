@@ -77,12 +77,12 @@ class CreateWorkloadResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_workloadArn;
-  bool m_workloadArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

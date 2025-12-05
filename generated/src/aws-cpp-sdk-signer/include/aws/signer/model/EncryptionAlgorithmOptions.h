@@ -74,9 +74,9 @@ class EncryptionAlgorithmOptions {
   ///@}
  private:
   Aws::Vector<EncryptionAlgorithm> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   EncryptionAlgorithm m_defaultValue{EncryptionAlgorithm::NOT_SET};
+  bool m_allowedValuesHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

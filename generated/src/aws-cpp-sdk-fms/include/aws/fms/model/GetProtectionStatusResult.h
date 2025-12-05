@@ -123,18 +123,18 @@ class GetProtectionStatusResult {
   ///@}
  private:
   Aws::String m_adminAccountId;
-  bool m_adminAccountIdHasBeenSet = false;
 
   SecurityServiceType m_serviceType{SecurityServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adminAccountIdHasBeenSet = false;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

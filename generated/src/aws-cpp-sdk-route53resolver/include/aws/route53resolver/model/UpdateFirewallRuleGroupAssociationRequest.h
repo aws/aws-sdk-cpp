@@ -109,15 +109,15 @@ class UpdateFirewallRuleGroupAssociationRequest : public Route53ResolverRequest 
   ///@}
  private:
   Aws::String m_firewallRuleGroupAssociationId;
-  bool m_firewallRuleGroupAssociationIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   MutationProtectionStatus m_mutationProtection{MutationProtectionStatus::NOT_SET};
-  bool m_mutationProtectionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_firewallRuleGroupAssociationIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_mutationProtectionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

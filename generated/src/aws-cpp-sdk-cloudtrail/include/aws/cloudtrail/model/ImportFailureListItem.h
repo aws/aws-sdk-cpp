@@ -122,18 +122,18 @@ class ImportFailureListItem {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   ImportFailureStatus m_status{ImportFailureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorType;
-  bool m_errorTypeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_locationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

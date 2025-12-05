@@ -167,24 +167,24 @@ class SdiSourceSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   SdiSourceMode m_mode{SdiSourceMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SdiSourceState m_state{SdiSourceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   SdiSourceType m_type{SdiSourceType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

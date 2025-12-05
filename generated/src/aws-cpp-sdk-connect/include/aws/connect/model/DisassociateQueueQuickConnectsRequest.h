@@ -92,12 +92,12 @@ class DisassociateQueueQuickConnectsRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_quickConnectIds;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
   bool m_quickConnectIdsHasBeenSet = false;
 };
 

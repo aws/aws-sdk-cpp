@@ -265,36 +265,36 @@ class CreateBucketRequest : public S3CrtRequest {
   ///@}
  private:
   BucketCannedACL m_aCL{BucketCannedACL::NOT_SET};
-  bool m_aCLHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   CreateBucketConfiguration m_createBucketConfiguration;
-  bool m_createBucketConfigurationHasBeenSet = false;
 
   Aws::String m_grantFullControl;
-  bool m_grantFullControlHasBeenSet = false;
 
   Aws::String m_grantRead;
-  bool m_grantReadHasBeenSet = false;
 
   Aws::String m_grantReadACP;
-  bool m_grantReadACPHasBeenSet = false;
 
   Aws::String m_grantWrite;
-  bool m_grantWriteHasBeenSet = false;
 
   Aws::String m_grantWriteACP;
-  bool m_grantWriteACPHasBeenSet = false;
 
   bool m_objectLockEnabledForBucket{false};
-  bool m_objectLockEnabledForBucketHasBeenSet = false;
 
   ObjectOwnership m_objectOwnership{ObjectOwnership::NOT_SET};
-  bool m_objectOwnershipHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_aCLHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_createBucketConfigurationHasBeenSet = false;
+  bool m_grantFullControlHasBeenSet = false;
+  bool m_grantReadHasBeenSet = false;
+  bool m_grantReadACPHasBeenSet = false;
+  bool m_grantWriteHasBeenSet = false;
+  bool m_grantWriteACPHasBeenSet = false;
+  bool m_objectLockEnabledForBucketHasBeenSet = false;
+  bool m_objectOwnershipHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

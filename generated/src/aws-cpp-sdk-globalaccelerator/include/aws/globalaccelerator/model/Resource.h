@@ -98,12 +98,12 @@ class Resource {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

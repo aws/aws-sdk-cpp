@@ -60,9 +60,9 @@ class EnableRouteServerPropagationResponse {
   ///@}
  private:
   RouteServerPropagation m_routeServerPropagation;
-  bool m_routeServerPropagationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerPropagationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

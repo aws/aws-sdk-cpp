@@ -84,12 +84,12 @@ class ListPhoneNumberOrdersResult {
   ///@}
  private:
   Aws::Vector<PhoneNumberOrder> m_phoneNumberOrders;
-  bool m_phoneNumberOrdersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_phoneNumberOrdersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class ClinicalNoteGenerationResult {
   ///@}
  private:
   Aws::String m_clinicalNoteOutputLocation;
-  bool m_clinicalNoteOutputLocationHasBeenSet = false;
 
   Aws::String m_transcriptOutputLocation;
-  bool m_transcriptOutputLocationHasBeenSet = false;
 
   ClinicalNoteGenerationStatus m_status{ClinicalNoteGenerationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_clinicalNoteOutputLocationHasBeenSet = false;
+  bool m_transcriptOutputLocationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

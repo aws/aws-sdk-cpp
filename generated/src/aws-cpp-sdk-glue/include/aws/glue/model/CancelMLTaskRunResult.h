@@ -92,15 +92,15 @@ class CancelMLTaskRunResult {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_taskRunId;
-  bool m_taskRunIdHasBeenSet = false;
 
   TaskStatusType m_status{TaskStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformIdHasBeenSet = false;
+  bool m_taskRunIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

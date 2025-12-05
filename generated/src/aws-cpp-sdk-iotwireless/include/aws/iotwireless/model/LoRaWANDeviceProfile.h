@@ -351,60 +351,60 @@ class LoRaWANDeviceProfile {
   ///@}
  private:
   bool m_supportsClassB{false};
-  bool m_supportsClassBHasBeenSet = false;
 
   int m_classBTimeout{0};
-  bool m_classBTimeoutHasBeenSet = false;
 
   int m_pingSlotPeriod{0};
-  bool m_pingSlotPeriodHasBeenSet = false;
 
   int m_pingSlotDr{0};
-  bool m_pingSlotDrHasBeenSet = false;
 
   int m_pingSlotFreq{0};
-  bool m_pingSlotFreqHasBeenSet = false;
 
   bool m_supportsClassC{false};
-  bool m_supportsClassCHasBeenSet = false;
 
   int m_classCTimeout{0};
-  bool m_classCTimeoutHasBeenSet = false;
 
   Aws::String m_macVersion;
-  bool m_macVersionHasBeenSet = false;
 
   Aws::String m_regParamsRevision;
-  bool m_regParamsRevisionHasBeenSet = false;
 
   int m_rxDelay1{0};
-  bool m_rxDelay1HasBeenSet = false;
 
   int m_rxDrOffset1{0};
-  bool m_rxDrOffset1HasBeenSet = false;
 
   int m_rxDataRate2{0};
-  bool m_rxDataRate2HasBeenSet = false;
 
   int m_rxFreq2{0};
-  bool m_rxFreq2HasBeenSet = false;
 
   Aws::Vector<int> m_factoryPresetFreqsList;
-  bool m_factoryPresetFreqsListHasBeenSet = false;
 
   int m_maxEirp{0};
-  bool m_maxEirpHasBeenSet = false;
 
   int m_maxDutyCycle{0};
-  bool m_maxDutyCycleHasBeenSet = false;
 
   Aws::String m_rfRegion;
-  bool m_rfRegionHasBeenSet = false;
 
   bool m_supportsJoin{false};
-  bool m_supportsJoinHasBeenSet = false;
 
   bool m_supports32BitFCnt{false};
+  bool m_supportsClassBHasBeenSet = false;
+  bool m_classBTimeoutHasBeenSet = false;
+  bool m_pingSlotPeriodHasBeenSet = false;
+  bool m_pingSlotDrHasBeenSet = false;
+  bool m_pingSlotFreqHasBeenSet = false;
+  bool m_supportsClassCHasBeenSet = false;
+  bool m_classCTimeoutHasBeenSet = false;
+  bool m_macVersionHasBeenSet = false;
+  bool m_regParamsRevisionHasBeenSet = false;
+  bool m_rxDelay1HasBeenSet = false;
+  bool m_rxDrOffset1HasBeenSet = false;
+  bool m_rxDataRate2HasBeenSet = false;
+  bool m_rxFreq2HasBeenSet = false;
+  bool m_factoryPresetFreqsListHasBeenSet = false;
+  bool m_maxEirpHasBeenSet = false;
+  bool m_maxDutyCycleHasBeenSet = false;
+  bool m_rfRegionHasBeenSet = false;
+  bool m_supportsJoinHasBeenSet = false;
   bool m_supports32BitFCntHasBeenSet = false;
 };
 

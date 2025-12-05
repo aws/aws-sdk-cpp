@@ -76,12 +76,12 @@ class RemoveBridgeSourceResult {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

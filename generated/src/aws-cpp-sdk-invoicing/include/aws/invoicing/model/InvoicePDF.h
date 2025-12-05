@@ -113,15 +113,15 @@ class InvoicePDF {
   ///@}
  private:
   Aws::String m_invoiceId;
-  bool m_invoiceIdHasBeenSet = false;
 
   Aws::String m_documentUrl;
-  bool m_documentUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_documentUrlExpirationDate{};
-  bool m_documentUrlExpirationDateHasBeenSet = false;
 
   Aws::Vector<SupplementalDocument> m_supplementalDocuments;
+  bool m_invoiceIdHasBeenSet = false;
+  bool m_documentUrlHasBeenSet = false;
+  bool m_documentUrlExpirationDateHasBeenSet = false;
   bool m_supplementalDocumentsHasBeenSet = false;
 };
 

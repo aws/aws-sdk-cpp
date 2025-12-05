@@ -93,12 +93,12 @@ class AttackVolume {
   ///@}
  private:
   AttackVolumeStatistics m_bitsPerSecond;
-  bool m_bitsPerSecondHasBeenSet = false;
 
   AttackVolumeStatistics m_packetsPerSecond;
-  bool m_packetsPerSecondHasBeenSet = false;
 
   AttackVolumeStatistics m_requestsPerSecond;
+  bool m_bitsPerSecondHasBeenSet = false;
+  bool m_packetsPerSecondHasBeenSet = false;
   bool m_requestsPerSecondHasBeenSet = false;
 };
 

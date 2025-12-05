@@ -187,27 +187,27 @@ class ConfigurationSetInformation {
   ///@}
  private:
   Aws::String m_configurationSetArn;
-  bool m_configurationSetArnHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::Vector<EventDestination> m_eventDestinations;
-  bool m_eventDestinationsHasBeenSet = false;
 
   MessageType m_defaultMessageType{MessageType::NOT_SET};
-  bool m_defaultMessageTypeHasBeenSet = false;
 
   Aws::String m_defaultSenderId;
-  bool m_defaultSenderIdHasBeenSet = false;
 
   bool m_defaultMessageFeedbackEnabled{false};
-  bool m_defaultMessageFeedbackEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_protectConfigurationId;
+  bool m_configurationSetArnHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_eventDestinationsHasBeenSet = false;
+  bool m_defaultMessageTypeHasBeenSet = false;
+  bool m_defaultSenderIdHasBeenSet = false;
+  bool m_defaultMessageFeedbackEnabledHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_protectConfigurationIdHasBeenSet = false;
 };
 

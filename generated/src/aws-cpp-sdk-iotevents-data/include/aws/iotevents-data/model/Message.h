@@ -108,15 +108,15 @@ class Message {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_payload{};
-  bool m_payloadHasBeenSet = false;
 
   TimestampValue m_timestamp;
+  bool m_messageIdHasBeenSet = false;
+  bool m_inputNameHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

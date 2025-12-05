@@ -128,12 +128,12 @@ class PutClusterCapacityProvidersRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capacityProviders;
-  bool m_capacityProvidersHasBeenSet = false;
 
   Aws::Vector<CapacityProviderStrategyItem> m_defaultCapacityProviderStrategy;
+  bool m_clusterHasBeenSet = false;
+  bool m_capacityProvidersHasBeenSet = false;
   bool m_defaultCapacityProviderStrategyHasBeenSet = false;
 };
 

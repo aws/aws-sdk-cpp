@@ -386,60 +386,60 @@ class Row {
   ///@}
  private:
   Aws::String m_archivedMessageId;
-  bool m_archivedMessageIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_receivedTimestamp{};
-  bool m_receivedTimestampHasBeenSet = false;
 
   Aws::String m_date;
-  bool m_dateHasBeenSet = false;
 
   Aws::String m_to;
-  bool m_toHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_cc;
-  bool m_ccHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   bool m_hasAttachments{false};
-  bool m_hasAttachmentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_receivedHeaders;
-  bool m_receivedHeadersHasBeenSet = false;
 
   Aws::String m_inReplyTo;
-  bool m_inReplyToHasBeenSet = false;
 
   Aws::String m_xMailer;
-  bool m_xMailerHasBeenSet = false;
 
   Aws::String m_xOriginalMailer;
-  bool m_xOriginalMailerHasBeenSet = false;
 
   Aws::String m_xPriority;
-  bool m_xPriorityHasBeenSet = false;
 
   Aws::String m_ingressPointId;
-  bool m_ingressPointIdHasBeenSet = false;
 
   Aws::String m_senderHostname;
-  bool m_senderHostnameHasBeenSet = false;
 
   Aws::String m_senderIpAddress;
-  bool m_senderIpAddressHasBeenSet = false;
 
   Envelope m_envelope;
-  bool m_envelopeHasBeenSet = false;
 
   Aws::String m_sourceArn;
+  bool m_archivedMessageIdHasBeenSet = false;
+  bool m_receivedTimestampHasBeenSet = false;
+  bool m_dateHasBeenSet = false;
+  bool m_toHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
+  bool m_ccHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_hasAttachmentsHasBeenSet = false;
+  bool m_receivedHeadersHasBeenSet = false;
+  bool m_inReplyToHasBeenSet = false;
+  bool m_xMailerHasBeenSet = false;
+  bool m_xOriginalMailerHasBeenSet = false;
+  bool m_xPriorityHasBeenSet = false;
+  bool m_ingressPointIdHasBeenSet = false;
+  bool m_senderHostnameHasBeenSet = false;
+  bool m_senderIpAddressHasBeenSet = false;
+  bool m_envelopeHasBeenSet = false;
   bool m_sourceArnHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DisassociateRouteServerResponse {
   ///@}
  private:
   RouteServerAssociation m_routeServerAssociation;
-  bool m_routeServerAssociationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

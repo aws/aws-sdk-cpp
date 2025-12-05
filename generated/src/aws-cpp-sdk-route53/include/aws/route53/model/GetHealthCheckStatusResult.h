@@ -75,9 +75,9 @@ class GetHealthCheckStatusResult {
   ///@}
  private:
   Aws::Vector<HealthCheckObservation> m_healthCheckObservations;
-  bool m_healthCheckObservationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_healthCheckObservationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

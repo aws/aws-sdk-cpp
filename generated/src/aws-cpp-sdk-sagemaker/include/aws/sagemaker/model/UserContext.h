@@ -108,15 +108,15 @@ class UserContext {
   ///@}
  private:
   Aws::String m_userProfileArn;
-  bool m_userProfileArnHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   IamIdentity m_iamIdentity;
+  bool m_userProfileArnHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
   bool m_iamIdentityHasBeenSet = false;
 };
 

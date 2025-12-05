@@ -136,18 +136,18 @@ class CompleteMultipartUploadRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   Aws::String m_archiveSize;
-  bool m_archiveSizeHasBeenSet = false;
 
   Aws::String m_checksum;
+  bool m_accountIdHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_archiveSizeHasBeenSet = false;
   bool m_checksumHasBeenSet = false;
 };
 

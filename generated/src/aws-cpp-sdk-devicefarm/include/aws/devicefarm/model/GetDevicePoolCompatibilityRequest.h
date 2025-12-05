@@ -153,21 +153,21 @@ class GetDevicePoolCompatibilityRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_devicePoolArn;
-  bool m_devicePoolArnHasBeenSet = false;
 
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   TestType m_testType{TestType::NOT_SET};
-  bool m_testTypeHasBeenSet = false;
 
   ScheduleRunTest m_test;
-  bool m_testHasBeenSet = false;
 
   ScheduleRunConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_projectArn;
+  bool m_devicePoolArnHasBeenSet = false;
+  bool m_appArnHasBeenSet = false;
+  bool m_testTypeHasBeenSet = false;
+  bool m_testHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_projectArnHasBeenSet = false;
 };
 

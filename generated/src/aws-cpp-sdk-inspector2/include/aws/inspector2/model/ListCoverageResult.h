@@ -88,12 +88,12 @@ class ListCoverageResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CoveredResource> m_coveredResources;
-  bool m_coveredResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_coveredResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

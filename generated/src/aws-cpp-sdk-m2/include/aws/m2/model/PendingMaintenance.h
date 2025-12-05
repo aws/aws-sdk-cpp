@@ -69,9 +69,9 @@ class PendingMaintenance {
   ///@}
  private:
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   MaintenanceSchedule m_schedule;
+  bool m_engineVersionHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

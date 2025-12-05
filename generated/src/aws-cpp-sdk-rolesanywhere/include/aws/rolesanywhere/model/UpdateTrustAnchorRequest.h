@@ -84,12 +84,12 @@ class UpdateTrustAnchorRequest : public RolesAnywhereRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_trustAnchorId;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_trustAnchorIdHasBeenSet = false;
 };
 

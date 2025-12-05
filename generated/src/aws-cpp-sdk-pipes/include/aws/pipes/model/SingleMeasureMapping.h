@@ -89,12 +89,12 @@ class SingleMeasureMapping {
   ///@}
  private:
   Aws::String m_measureValue;
-  bool m_measureValueHasBeenSet = false;
 
   MeasureValueType m_measureValueType{MeasureValueType::NOT_SET};
-  bool m_measureValueTypeHasBeenSet = false;
 
   Aws::String m_measureName;
+  bool m_measureValueHasBeenSet = false;
+  bool m_measureValueTypeHasBeenSet = false;
   bool m_measureNameHasBeenSet = false;
 };
 

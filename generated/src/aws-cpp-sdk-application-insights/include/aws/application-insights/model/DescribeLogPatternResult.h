@@ -94,15 +94,15 @@ class DescribeLogPatternResult {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   LogPattern m_logPattern;
-  bool m_logPatternHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_logPatternHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

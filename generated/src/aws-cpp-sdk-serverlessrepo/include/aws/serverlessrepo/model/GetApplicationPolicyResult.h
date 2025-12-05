@@ -69,9 +69,9 @@ class GetApplicationPolicyResult {
   ///@}
  private:
   Aws::Vector<ApplicationPolicyStatement> m_statements;
-  bool m_statementsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statementsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

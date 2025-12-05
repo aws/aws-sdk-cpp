@@ -157,24 +157,24 @@ class RunCacheListItem {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CacheBehavior m_cacheBehavior{CacheBehavior::NOT_SET};
-  bool m_cacheBehaviorHasBeenSet = false;
 
   Aws::String m_cacheS3Uri;
-  bool m_cacheS3UriHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RunCacheStatus m_status{RunCacheStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_cacheBehaviorHasBeenSet = false;
+  bool m_cacheS3UriHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

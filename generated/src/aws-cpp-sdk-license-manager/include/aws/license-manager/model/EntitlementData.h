@@ -85,12 +85,12 @@ class EntitlementData {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   EntitlementDataUnit m_unit{EntitlementDataUnit::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

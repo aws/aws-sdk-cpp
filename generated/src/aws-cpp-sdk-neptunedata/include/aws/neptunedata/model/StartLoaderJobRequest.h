@@ -395,39 +395,39 @@ class StartLoaderJobRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   S3BucketRegion m_s3BucketRegion{S3BucketRegion::NOT_SET};
-  bool m_s3BucketRegionHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Mode m_mode{Mode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   bool m_failOnError{false};
-  bool m_failOnErrorHasBeenSet = false;
 
   Parallelism m_parallelism{Parallelism::NOT_SET};
-  bool m_parallelismHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parserConfiguration;
-  bool m_parserConfigurationHasBeenSet = false;
 
   bool m_updateSingleCardinalityProperties{false};
-  bool m_updateSingleCardinalityPropertiesHasBeenSet = false;
 
   bool m_queueRequest{false};
-  bool m_queueRequestHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependencies;
-  bool m_dependenciesHasBeenSet = false;
 
   bool m_userProvidedEdgeIds{false};
+  bool m_sourceHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_s3BucketRegionHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_failOnErrorHasBeenSet = false;
+  bool m_parallelismHasBeenSet = false;
+  bool m_parserConfigurationHasBeenSet = false;
+  bool m_updateSingleCardinalityPropertiesHasBeenSet = false;
+  bool m_queueRequestHasBeenSet = false;
+  bool m_dependenciesHasBeenSet = false;
   bool m_userProvidedEdgeIdsHasBeenSet = false;
 };
 

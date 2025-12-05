@@ -88,12 +88,12 @@ class GlueTableReference {
   ///@}
  private:
   CommercialRegion m_region{CommercialRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_databaseName;
+  bool m_regionHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
 };
 

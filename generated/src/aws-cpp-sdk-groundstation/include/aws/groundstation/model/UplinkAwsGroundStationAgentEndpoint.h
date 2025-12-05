@@ -69,9 +69,9 @@ class UplinkAwsGroundStationAgentEndpoint {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UplinkDataflowDetails m_dataflowDetails;
+  bool m_nameHasBeenSet = false;
   bool m_dataflowDetailsHasBeenSet = false;
 };
 

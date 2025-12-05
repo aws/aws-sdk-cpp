@@ -84,12 +84,12 @@ class FormEntryOutput {
   ///@}
  private:
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeRevision;
+  bool m_requiredHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
 };
 

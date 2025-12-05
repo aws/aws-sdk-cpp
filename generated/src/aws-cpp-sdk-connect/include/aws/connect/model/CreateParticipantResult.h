@@ -80,12 +80,12 @@ class CreateParticipantResult {
   ///@}
  private:
   ParticipantTokenCredentials m_participantCredentials;
-  bool m_participantCredentialsHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_participantCredentialsHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

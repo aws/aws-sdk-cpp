@@ -70,9 +70,9 @@ class DeleteTransitGatewayMeteringPolicyRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayMeteringPolicyId;
-  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

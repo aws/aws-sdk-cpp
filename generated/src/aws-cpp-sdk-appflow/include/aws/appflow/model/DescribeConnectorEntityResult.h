@@ -69,9 +69,9 @@ class DescribeConnectorEntityResult {
   ///@}
  private:
   Aws::Vector<ConnectorEntityField> m_connectorEntityFields;
-  bool m_connectorEntityFieldsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorEntityFieldsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

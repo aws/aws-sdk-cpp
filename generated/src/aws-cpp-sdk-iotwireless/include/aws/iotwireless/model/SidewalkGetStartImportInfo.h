@@ -96,12 +96,12 @@ class SidewalkGetStartImportInfo {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deviceCreationFileList;
-  bool m_deviceCreationFileListHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   SidewalkPositioning m_positioning;
+  bool m_deviceCreationFileListHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_positioningHasBeenSet = false;
 };
 

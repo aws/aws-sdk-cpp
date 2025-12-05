@@ -195,27 +195,27 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_memoryExecutionRoleArn;
-  bool m_memoryExecutionRoleArnHasBeenSet = false;
 
   int m_eventExpiryDuration{0};
-  bool m_eventExpiryDurationHasBeenSet = false;
 
   Aws::Vector<MemoryStrategyInput> m_memoryStrategies;
-  bool m_memoryStrategiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_memoryExecutionRoleArnHasBeenSet = false;
+  bool m_eventExpiryDurationHasBeenSet = false;
+  bool m_memoryStrategiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

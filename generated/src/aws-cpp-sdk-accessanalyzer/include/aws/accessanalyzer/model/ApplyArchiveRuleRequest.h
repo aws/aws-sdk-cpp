@@ -87,12 +87,12 @@ class ApplyArchiveRuleRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

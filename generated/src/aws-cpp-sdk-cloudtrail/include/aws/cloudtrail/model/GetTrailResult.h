@@ -58,9 +58,9 @@ class GetTrailResult {
   ///@}
  private:
   Trail m_trail;
-  bool m_trailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

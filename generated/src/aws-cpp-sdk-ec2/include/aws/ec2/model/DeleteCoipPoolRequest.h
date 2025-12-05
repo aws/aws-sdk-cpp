@@ -70,9 +70,9 @@ class DeleteCoipPoolRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_coipPoolId;
-  bool m_coipPoolIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_coipPoolIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

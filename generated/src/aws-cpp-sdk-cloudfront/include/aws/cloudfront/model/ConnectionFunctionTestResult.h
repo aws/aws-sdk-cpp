@@ -130,18 +130,18 @@ class ConnectionFunctionTestResult {
   ///@}
  private:
   ConnectionFunctionSummary m_connectionFunctionSummary;
-  bool m_connectionFunctionSummaryHasBeenSet = false;
 
   Aws::String m_computeUtilization;
-  bool m_computeUtilizationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectionFunctionExecutionLogs;
-  bool m_connectionFunctionExecutionLogsHasBeenSet = false;
 
   Aws::String m_connectionFunctionErrorMessage;
-  bool m_connectionFunctionErrorMessageHasBeenSet = false;
 
   Aws::String m_connectionFunctionOutput;
+  bool m_connectionFunctionSummaryHasBeenSet = false;
+  bool m_computeUtilizationHasBeenSet = false;
+  bool m_connectionFunctionExecutionLogsHasBeenSet = false;
+  bool m_connectionFunctionErrorMessageHasBeenSet = false;
   bool m_connectionFunctionOutputHasBeenSet = false;
 };
 

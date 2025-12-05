@@ -86,12 +86,12 @@ class ListAppInstanceUserEndpointsResult {
   ///@}
  private:
   Aws::Vector<AppInstanceUserEndpointSummary> m_appInstanceUserEndpoints;
-  bool m_appInstanceUserEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceUserEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class ScheduledUpdateConfig {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   DeploymentConfiguration m_deploymentConfig;
+  bool m_scheduleExpressionHasBeenSet = false;
   bool m_deploymentConfigHasBeenSet = false;
 };
 

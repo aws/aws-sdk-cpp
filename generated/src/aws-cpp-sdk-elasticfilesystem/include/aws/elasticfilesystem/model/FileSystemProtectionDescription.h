@@ -76,9 +76,9 @@ class FileSystemProtectionDescription {
   ///@}
  private:
   ReplicationOverwriteProtection m_replicationOverwriteProtection{ReplicationOverwriteProtection::NOT_SET};
-  bool m_replicationOverwriteProtectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationOverwriteProtectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -162,24 +162,24 @@ class EvaluatedRule {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_ruleVersion;
-  bool m_ruleVersionHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_expressionWithValues;
-  bool m_expressionWithValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outcomes;
-  bool m_outcomesHasBeenSet = false;
 
   bool m_evaluated{false};
-  bool m_evaluatedHasBeenSet = false;
 
   bool m_matched{false};
+  bool m_ruleIdHasBeenSet = false;
+  bool m_ruleVersionHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_expressionWithValuesHasBeenSet = false;
+  bool m_outcomesHasBeenSet = false;
+  bool m_evaluatedHasBeenSet = false;
   bool m_matchedHasBeenSet = false;
 };
 

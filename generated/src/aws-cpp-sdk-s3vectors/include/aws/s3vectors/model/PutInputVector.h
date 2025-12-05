@@ -97,12 +97,12 @@ class PutInputVector {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   VectorData m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::Utils::Document m_metadata;
+  bool m_keyHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

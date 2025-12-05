@@ -89,12 +89,12 @@ class DescribeAggregateComplianceByConfigRulesResult {
   ///@}
  private:
   Aws::Vector<AggregateComplianceByConfigRule> m_aggregateComplianceByConfigRules;
-  bool m_aggregateComplianceByConfigRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregateComplianceByConfigRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

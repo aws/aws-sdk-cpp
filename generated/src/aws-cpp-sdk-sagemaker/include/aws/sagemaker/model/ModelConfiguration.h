@@ -97,12 +97,12 @@ class ModelConfiguration {
   ///@}
  private:
   Aws::String m_inferenceSpecificationName;
-  bool m_inferenceSpecificationNameHasBeenSet = false;
 
   Aws::Vector<EnvironmentParameter> m_environmentParameters;
-  bool m_environmentParametersHasBeenSet = false;
 
   Aws::String m_compilationJobName;
+  bool m_inferenceSpecificationNameHasBeenSet = false;
+  bool m_environmentParametersHasBeenSet = false;
   bool m_compilationJobNameHasBeenSet = false;
 };
 

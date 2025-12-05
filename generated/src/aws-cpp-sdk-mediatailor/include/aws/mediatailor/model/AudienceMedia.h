@@ -77,9 +77,9 @@ class AudienceMedia {
   ///@}
  private:
   Aws::String m_audience;
-  bool m_audienceHasBeenSet = false;
 
   Aws::Vector<AlternateMedia> m_alternateMedia;
+  bool m_audienceHasBeenSet = false;
   bool m_alternateMediaHasBeenSet = false;
 };
 

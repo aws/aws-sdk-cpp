@@ -189,27 +189,27 @@ class ListPermissionAssociationsRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_permissionArn;
-  bool m_permissionArnHasBeenSet = false;
 
   int m_permissionVersion{0};
-  bool m_permissionVersionHasBeenSet = false;
 
   ResourceShareAssociationStatus m_associationStatus{ResourceShareAssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   PermissionFeatureSet m_featureSet{PermissionFeatureSet::NOT_SET};
-  bool m_featureSetHasBeenSet = false;
 
   bool m_defaultVersion{false};
-  bool m_defaultVersionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_permissionArnHasBeenSet = false;
+  bool m_permissionVersionHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_featureSetHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -148,24 +148,24 @@ class AttachClusterNodeVolumeResult {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_attachTime{};
-  bool m_attachTimeHasBeenSet = false;
 
   VolumeAttachmentStatus m_status{VolumeAttachmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_attachTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

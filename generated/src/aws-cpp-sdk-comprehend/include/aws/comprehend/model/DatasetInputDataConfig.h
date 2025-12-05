@@ -124,15 +124,15 @@ class DatasetInputDataConfig {
   ///@}
  private:
   Aws::Vector<DatasetAugmentedManifestsListItem> m_augmentedManifests;
-  bool m_augmentedManifestsHasBeenSet = false;
 
   DatasetDataFormat m_dataFormat{DatasetDataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   DatasetDocumentClassifierInputDataConfig m_documentClassifierInputDataConfig;
-  bool m_documentClassifierInputDataConfigHasBeenSet = false;
 
   DatasetEntityRecognizerInputDataConfig m_entityRecognizerInputDataConfig;
+  bool m_augmentedManifestsHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_documentClassifierInputDataConfigHasBeenSet = false;
   bool m_entityRecognizerInputDataConfigHasBeenSet = false;
 };
 

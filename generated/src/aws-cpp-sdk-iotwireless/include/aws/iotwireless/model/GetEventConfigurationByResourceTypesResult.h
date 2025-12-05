@@ -137,21 +137,21 @@ class GetEventConfigurationByResourceTypesResult {
   ///@}
  private:
   DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;
-  bool m_deviceRegistrationStateHasBeenSet = false;
 
   ProximityResourceTypeEventConfiguration m_proximity;
-  bool m_proximityHasBeenSet = false;
 
   JoinResourceTypeEventConfiguration m_join;
-  bool m_joinHasBeenSet = false;
 
   ConnectionStatusResourceTypeEventConfiguration m_connectionStatus;
-  bool m_connectionStatusHasBeenSet = false;
 
   MessageDeliveryStatusResourceTypeEventConfiguration m_messageDeliveryStatus;
-  bool m_messageDeliveryStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceRegistrationStateHasBeenSet = false;
+  bool m_proximityHasBeenSet = false;
+  bool m_joinHasBeenSet = false;
+  bool m_connectionStatusHasBeenSet = false;
+  bool m_messageDeliveryStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

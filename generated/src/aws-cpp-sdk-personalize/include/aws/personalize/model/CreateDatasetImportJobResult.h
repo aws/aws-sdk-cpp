@@ -59,9 +59,9 @@ class CreateDatasetImportJobResult {
   ///@}
  private:
   Aws::String m_datasetImportJobArn;
-  bool m_datasetImportJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetImportJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

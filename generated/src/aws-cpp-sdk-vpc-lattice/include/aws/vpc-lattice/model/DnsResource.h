@@ -67,9 +67,9 @@ class DnsResource {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ResourceConfigurationIpAddressType m_ipAddressType{ResourceConfigurationIpAddressType::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

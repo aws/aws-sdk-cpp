@@ -116,15 +116,15 @@ class Isoline {
   ///@}
  private:
   Aws::Vector<IsolineConnection> m_connections;
-  bool m_connectionsHasBeenSet = false;
 
   long long m_distanceThreshold{0};
-  bool m_distanceThresholdHasBeenSet = false;
 
   Aws::Vector<IsolineShapeGeometry> m_geometries;
-  bool m_geometriesHasBeenSet = false;
 
   long long m_timeThreshold{0};
+  bool m_connectionsHasBeenSet = false;
+  bool m_distanceThresholdHasBeenSet = false;
+  bool m_geometriesHasBeenSet = false;
   bool m_timeThresholdHasBeenSet = false;
 };
 

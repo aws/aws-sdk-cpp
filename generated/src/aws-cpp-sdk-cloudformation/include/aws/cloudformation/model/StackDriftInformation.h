@@ -82,9 +82,9 @@ class StackDriftInformation {
   ///@}
  private:
   StackDriftStatus m_stackDriftStatus{StackDriftStatus::NOT_SET};
-  bool m_stackDriftStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastCheckTimestamp{};
+  bool m_stackDriftStatusHasBeenSet = false;
   bool m_lastCheckTimestampHasBeenSet = false;
 };
 

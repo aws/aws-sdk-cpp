@@ -92,12 +92,12 @@ class StartReadSetActivationJobRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<StartReadSetActivationJobSourceItem> m_sources;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

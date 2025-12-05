@@ -80,9 +80,9 @@ class OriginRequestPolicyCookiesConfig {
   ///@}
  private:
   OriginRequestPolicyCookieBehavior m_cookieBehavior{OriginRequestPolicyCookieBehavior::NOT_SET};
-  bool m_cookieBehaviorHasBeenSet = false;
 
   CookieNames m_cookies;
+  bool m_cookieBehaviorHasBeenSet = false;
   bool m_cookiesHasBeenSet = false;
 };
 

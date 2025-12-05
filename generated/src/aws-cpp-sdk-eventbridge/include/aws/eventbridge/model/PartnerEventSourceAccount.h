@@ -111,15 +111,15 @@ class PartnerEventSourceAccount {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   EventSourceState m_state{EventSourceState::NOT_SET};
+  bool m_accountHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

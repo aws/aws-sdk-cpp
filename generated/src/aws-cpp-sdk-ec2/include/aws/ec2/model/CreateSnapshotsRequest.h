@@ -181,24 +181,24 @@ class CreateSnapshotsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   InstanceSpecification m_instanceSpecification;
-  bool m_instanceSpecificationHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   CopyTagsFromSource m_copyTagsFromSource{CopyTagsFromSource::NOT_SET};
-  bool m_copyTagsFromSourceHasBeenSet = false;
 
   SnapshotLocationEnum m_location{SnapshotLocationEnum::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_instanceSpecificationHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_copyTagsFromSourceHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

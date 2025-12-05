@@ -213,27 +213,27 @@ class StackInstanceResourceDriftsSummary {
   ///@}
  private:
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::Vector<PhysicalResourceIdContextKeyValuePair> m_physicalResourceIdContext;
-  bool m_physicalResourceIdContextHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<PropertyDifference> m_propertyDifferences;
-  bool m_propertyDifferencesHasBeenSet = false;
 
   StackResourceDriftStatus m_stackResourceDriftStatus{StackResourceDriftStatus::NOT_SET};
-  bool m_stackResourceDriftStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_stackIdHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdContextHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_propertyDifferencesHasBeenSet = false;
+  bool m_stackResourceDriftStatusHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

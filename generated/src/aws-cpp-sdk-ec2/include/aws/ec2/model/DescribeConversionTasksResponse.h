@@ -67,9 +67,9 @@ class DescribeConversionTasksResponse {
   ///@}
  private:
   Aws::Vector<ConversionTask> m_conversionTasks;
-  bool m_conversionTasksHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_conversionTasksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -415,57 +415,57 @@ class JobDefinition {
   ///@}
  private:
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   Aws::String m_jobDefinitionArn;
-  bool m_jobDefinitionArnHasBeenSet = false;
 
   int m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   int m_schedulingPriority{0};
-  bool m_schedulingPriorityHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   RetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   ContainerProperties m_containerProperties;
-  bool m_containerPropertiesHasBeenSet = false;
 
   JobTimeout m_timeout;
-  bool m_timeoutHasBeenSet = false;
 
   NodeProperties m_nodeProperties;
-  bool m_nodePropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_propagateTags{false};
-  bool m_propagateTagsHasBeenSet = false;
 
   Aws::Vector<PlatformCapability> m_platformCapabilities;
-  bool m_platformCapabilitiesHasBeenSet = false;
 
   EcsProperties m_ecsProperties;
-  bool m_ecsPropertiesHasBeenSet = false;
 
   EksProperties m_eksProperties;
-  bool m_eksPropertiesHasBeenSet = false;
 
   OrchestrationType m_containerOrchestrationType{OrchestrationType::NOT_SET};
-  bool m_containerOrchestrationTypeHasBeenSet = false;
 
   ConsumableResourceProperties m_consumableResourceProperties;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_jobDefinitionArnHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_schedulingPriorityHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_containerPropertiesHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_nodePropertiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_platformCapabilitiesHasBeenSet = false;
+  bool m_ecsPropertiesHasBeenSet = false;
+  bool m_eksPropertiesHasBeenSet = false;
+  bool m_containerOrchestrationTypeHasBeenSet = false;
   bool m_consumableResourcePropertiesHasBeenSet = false;
 };
 

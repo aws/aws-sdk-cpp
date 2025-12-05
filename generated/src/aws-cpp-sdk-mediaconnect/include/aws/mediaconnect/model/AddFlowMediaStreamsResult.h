@@ -84,12 +84,12 @@ class AddFlowMediaStreamsResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::Vector<MediaStream> m_mediaStreams;
-  bool m_mediaStreamsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_mediaStreamsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

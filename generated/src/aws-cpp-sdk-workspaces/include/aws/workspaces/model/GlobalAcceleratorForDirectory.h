@@ -65,9 +65,9 @@ class GlobalAcceleratorForDirectory {
   ///@}
  private:
   AGAModeForDirectoryEnum m_mode{AGAModeForDirectoryEnum::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   AGAPreferredProtocolForDirectory m_preferredProtocol{AGAPreferredProtocolForDirectory::NOT_SET};
+  bool m_modeHasBeenSet = false;
   bool m_preferredProtocolHasBeenSet = false;
 };
 

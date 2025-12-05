@@ -184,27 +184,27 @@ class ConnectPeerSummary {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_connectAttachmentId;
-  bool m_connectAttachmentIdHasBeenSet = false;
 
   Aws::String m_connectPeerId;
-  bool m_connectPeerIdHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   ConnectPeerState m_connectPeerState{ConnectPeerState::NOT_SET};
-  bool m_connectPeerStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_subnetArn;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_connectAttachmentIdHasBeenSet = false;
+  bool m_connectPeerIdHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_connectPeerStateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_subnetArnHasBeenSet = false;
 };
 

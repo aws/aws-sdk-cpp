@@ -116,15 +116,15 @@ class SetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   SMSMfaSettingsType m_sMSMfaSettings;
-  bool m_sMSMfaSettingsHasBeenSet = false;
 
   SoftwareTokenMfaSettingsType m_softwareTokenMfaSettings;
-  bool m_softwareTokenMfaSettingsHasBeenSet = false;
 
   EmailMfaSettingsType m_emailMfaSettings;
-  bool m_emailMfaSettingsHasBeenSet = false;
 
   Aws::String m_accessToken;
+  bool m_sMSMfaSettingsHasBeenSet = false;
+  bool m_softwareTokenMfaSettingsHasBeenSet = false;
+  bool m_emailMfaSettingsHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
 };
 

@@ -162,24 +162,24 @@ class SlotSummary {
   ///@}
  private:
   Aws::String m_slotId;
-  bool m_slotIdHasBeenSet = false;
 
   Aws::String m_slotName;
-  bool m_slotNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SlotConstraint m_slotConstraint{SlotConstraint::NOT_SET};
-  bool m_slotConstraintHasBeenSet = false;
 
   Aws::String m_slotTypeId;
-  bool m_slotTypeIdHasBeenSet = false;
 
   PromptSpecification m_valueElicitationPromptSpecification;
-  bool m_valueElicitationPromptSpecificationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_slotIdHasBeenSet = false;
+  bool m_slotNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_slotConstraintHasBeenSet = false;
+  bool m_slotTypeIdHasBeenSet = false;
+  bool m_valueElicitationPromptSpecificationHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

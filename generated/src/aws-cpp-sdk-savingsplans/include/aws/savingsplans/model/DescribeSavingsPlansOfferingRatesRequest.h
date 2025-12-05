@@ -259,33 +259,33 @@ class DescribeSavingsPlansOfferingRatesRequest : public SavingsPlansRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_savingsPlanOfferingIds;
-  bool m_savingsPlanOfferingIdsHasBeenSet = false;
 
   Aws::Vector<SavingsPlanPaymentOption> m_savingsPlanPaymentOptions;
-  bool m_savingsPlanPaymentOptionsHasBeenSet = false;
 
   Aws::Vector<SavingsPlanType> m_savingsPlanTypes;
-  bool m_savingsPlanTypesHasBeenSet = false;
 
   Aws::Vector<SavingsPlanProductType> m_products;
-  bool m_productsHasBeenSet = false;
 
   Aws::Vector<SavingsPlanRateServiceCode> m_serviceCodes;
-  bool m_serviceCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_usageTypes;
-  bool m_usageTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::Vector<SavingsPlanOfferingRateFilterElement> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_savingsPlanOfferingIdsHasBeenSet = false;
+  bool m_savingsPlanPaymentOptionsHasBeenSet = false;
+  bool m_savingsPlanTypesHasBeenSet = false;
+  bool m_productsHasBeenSet = false;
+  bool m_serviceCodesHasBeenSet = false;
+  bool m_usageTypesHasBeenSet = false;
+  bool m_operationsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

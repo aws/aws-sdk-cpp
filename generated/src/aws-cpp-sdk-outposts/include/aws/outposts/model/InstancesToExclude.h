@@ -108,12 +108,12 @@ class InstancesToExclude {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<AWSServiceName> m_services;
+  bool m_instancesHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
   bool m_servicesHasBeenSet = false;
 };
 

@@ -184,24 +184,24 @@ class CopyPartResult {
   ///@}
  private:
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_checksumCRC32;
-  bool m_checksumCRC32HasBeenSet = false;
 
   Aws::String m_checksumCRC32C;
-  bool m_checksumCRC32CHasBeenSet = false;
 
   Aws::String m_checksumCRC64NVME;
-  bool m_checksumCRC64NVMEHasBeenSet = false;
 
   Aws::String m_checksumSHA1;
-  bool m_checksumSHA1HasBeenSet = false;
 
   Aws::String m_checksumSHA256;
+  bool m_eTagHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_checksumCRC32HasBeenSet = false;
+  bool m_checksumCRC32CHasBeenSet = false;
+  bool m_checksumCRC64NVMEHasBeenSet = false;
+  bool m_checksumSHA1HasBeenSet = false;
   bool m_checksumSHA256HasBeenSet = false;
 };
 

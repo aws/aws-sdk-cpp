@@ -105,15 +105,15 @@ class MonitoringClusterConfig {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   ProcessingInstanceType m_instanceType{ProcessingInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_volumeSizeInGBHasBeenSet = false;
   bool m_volumeKmsKeyIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class StartImportLabelsTaskRunResult {
   ///@}
  private:
   Aws::String m_taskRunId;
-  bool m_taskRunIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskRunIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

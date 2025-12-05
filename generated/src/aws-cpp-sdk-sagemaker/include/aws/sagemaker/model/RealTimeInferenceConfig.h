@@ -66,9 +66,9 @@ class RealTimeInferenceConfig {
   ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
+  bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
 };
 

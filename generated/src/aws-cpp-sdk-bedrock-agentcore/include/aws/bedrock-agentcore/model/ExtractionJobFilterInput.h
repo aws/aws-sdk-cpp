@@ -108,15 +108,15 @@ class ExtractionJobFilterInput {
   ///@}
  private:
   Aws::String m_strategyId;
-  bool m_strategyIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actorId;
-  bool m_actorIdHasBeenSet = false;
 
   ExtractionJobStatus m_status{ExtractionJobStatus::NOT_SET};
+  bool m_strategyIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_actorIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

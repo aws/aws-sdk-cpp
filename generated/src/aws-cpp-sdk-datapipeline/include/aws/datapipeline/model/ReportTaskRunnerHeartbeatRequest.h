@@ -97,12 +97,12 @@ class ReportTaskRunnerHeartbeatRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_taskrunnerId;
-  bool m_taskrunnerIdHasBeenSet = false;
 
   Aws::String m_workerGroup;
-  bool m_workerGroupHasBeenSet = false;
 
   Aws::String m_hostname;
+  bool m_taskrunnerIdHasBeenSet = false;
+  bool m_workerGroupHasBeenSet = false;
   bool m_hostnameHasBeenSet = false;
 };
 

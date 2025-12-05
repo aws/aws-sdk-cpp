@@ -107,15 +107,15 @@ class UpdateGroupRequest : public XRayRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupARN;
-  bool m_groupARNHasBeenSet = false;
 
   Aws::String m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   InsightsConfiguration m_insightsConfiguration;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupARNHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
   bool m_insightsConfigurationHasBeenSet = false;
 };
 

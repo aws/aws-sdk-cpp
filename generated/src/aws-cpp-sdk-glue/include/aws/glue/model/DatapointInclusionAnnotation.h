@@ -85,12 +85,12 @@ class DatapointInclusionAnnotation {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_statisticId;
-  bool m_statisticIdHasBeenSet = false;
 
   InclusionAnnotationValue m_inclusionAnnotation{InclusionAnnotationValue::NOT_SET};
+  bool m_profileIdHasBeenSet = false;
+  bool m_statisticIdHasBeenSet = false;
   bool m_inclusionAnnotationHasBeenSet = false;
 };
 

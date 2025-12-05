@@ -88,12 +88,12 @@ class ReplicationGroupStatus {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   KeyspaceStatus m_keyspaceStatus{KeyspaceStatus::NOT_SET};
-  bool m_keyspaceStatusHasBeenSet = false;
 
   Aws::String m_tablesReplicationProgress;
+  bool m_regionHasBeenSet = false;
+  bool m_keyspaceStatusHasBeenSet = false;
   bool m_tablesReplicationProgressHasBeenSet = false;
 };
 

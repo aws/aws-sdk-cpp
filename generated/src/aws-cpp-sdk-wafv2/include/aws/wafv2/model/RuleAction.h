@@ -131,18 +131,18 @@ class RuleAction {
   ///@}
  private:
   BlockAction m_block;
-  bool m_blockHasBeenSet = false;
 
   AllowAction m_allow;
-  bool m_allowHasBeenSet = false;
 
   CountAction m_count;
-  bool m_countHasBeenSet = false;
 
   CaptchaAction m_captcha;
-  bool m_captchaHasBeenSet = false;
 
   ChallengeAction m_challenge;
+  bool m_blockHasBeenSet = false;
+  bool m_allowHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_captchaHasBeenSet = false;
   bool m_challengeHasBeenSet = false;
 };
 

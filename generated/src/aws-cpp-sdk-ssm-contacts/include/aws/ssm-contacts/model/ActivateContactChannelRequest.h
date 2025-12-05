@@ -67,9 +67,9 @@ class ActivateContactChannelRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_contactChannelId;
-  bool m_contactChannelIdHasBeenSet = false;
 
   Aws::String m_activationCode;
+  bool m_contactChannelIdHasBeenSet = false;
   bool m_activationCodeHasBeenSet = false;
 };
 

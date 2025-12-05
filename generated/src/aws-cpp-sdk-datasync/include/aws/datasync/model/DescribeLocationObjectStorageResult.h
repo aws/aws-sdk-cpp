@@ -255,39 +255,39 @@ class DescribeLocationObjectStorageResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Aws::String m_accessKey;
-  bool m_accessKeyHasBeenSet = false;
 
   int m_serverPort{0};
-  bool m_serverPortHasBeenSet = false;
 
   ObjectStorageServerProtocol m_serverProtocol{ObjectStorageServerProtocol::NOT_SET};
-  bool m_serverProtocolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_serverCertificate{};
-  bool m_serverCertificateHasBeenSet = false;
 
   ManagedSecretConfig m_managedSecretConfig;
-  bool m_managedSecretConfigHasBeenSet = false;
 
   CmkSecretConfig m_cmkSecretConfig;
-  bool m_cmkSecretConfigHasBeenSet = false;
 
   CustomSecretConfig m_customSecretConfig;
-  bool m_customSecretConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_accessKeyHasBeenSet = false;
+  bool m_serverPortHasBeenSet = false;
+  bool m_serverProtocolHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_serverCertificateHasBeenSet = false;
+  bool m_managedSecretConfigHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

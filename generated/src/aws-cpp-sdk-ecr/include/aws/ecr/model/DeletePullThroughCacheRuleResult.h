@@ -164,27 +164,27 @@ class DeletePullThroughCacheRuleResult {
   ///@}
  private:
   Aws::String m_ecrRepositoryPrefix;
-  bool m_ecrRepositoryPrefixHasBeenSet = false;
 
   Aws::String m_upstreamRegistryUrl;
-  bool m_upstreamRegistryUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_credentialArn;
-  bool m_credentialArnHasBeenSet = false;
 
   Aws::String m_customRoleArn;
-  bool m_customRoleArnHasBeenSet = false;
 
   Aws::String m_upstreamRepositoryPrefix;
-  bool m_upstreamRepositoryPrefixHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ecrRepositoryPrefixHasBeenSet = false;
+  bool m_upstreamRegistryUrlHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_registryIdHasBeenSet = false;
+  bool m_credentialArnHasBeenSet = false;
+  bool m_customRoleArnHasBeenSet = false;
+  bool m_upstreamRepositoryPrefixHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

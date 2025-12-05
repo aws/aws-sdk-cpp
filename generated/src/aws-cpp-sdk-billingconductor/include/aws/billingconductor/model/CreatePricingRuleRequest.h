@@ -272,39 +272,39 @@ class CreatePricingRuleRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PricingRuleScope m_scope{PricingRuleScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   PricingRuleType m_type{PricingRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_modifierPercentage{0.0};
-  bool m_modifierPercentageHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_billingEntity;
-  bool m_billingEntityHasBeenSet = false;
 
   CreateTieringInput m_tiering;
-  bool m_tieringHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_modifierPercentageHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_billingEntityHasBeenSet = false;
+  bool m_tieringHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

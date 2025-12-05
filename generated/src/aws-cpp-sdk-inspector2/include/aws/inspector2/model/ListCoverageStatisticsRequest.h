@@ -87,12 +87,12 @@ class ListCoverageStatisticsRequest : public Inspector2Request {
   ///@}
  private:
   CoverageFilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   GroupKey m_groupBy{GroupKey::NOT_SET};
-  bool m_groupByHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

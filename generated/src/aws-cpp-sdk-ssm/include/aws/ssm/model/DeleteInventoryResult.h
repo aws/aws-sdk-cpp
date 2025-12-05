@@ -101,15 +101,15 @@ class DeleteInventoryResult {
   ///@}
  private:
   Aws::String m_deletionId;
-  bool m_deletionIdHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   InventoryDeletionSummary m_deletionSummary;
-  bool m_deletionSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletionIdHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_deletionSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

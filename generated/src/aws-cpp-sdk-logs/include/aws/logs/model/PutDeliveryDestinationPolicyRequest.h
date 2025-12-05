@@ -67,9 +67,9 @@ class PutDeliveryDestinationPolicyRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_deliveryDestinationName;
-  bool m_deliveryDestinationNameHasBeenSet = false;
 
   Aws::String m_deliveryDestinationPolicy;
+  bool m_deliveryDestinationNameHasBeenSet = false;
   bool m_deliveryDestinationPolicyHasBeenSet = false;
 };
 

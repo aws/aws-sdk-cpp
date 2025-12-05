@@ -91,12 +91,12 @@ class UpdateProjectRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   ProjectAppConfigResourceConfig m_appConfigResource;
-  bool m_appConfigResourceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_project;
+  bool m_appConfigResourceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

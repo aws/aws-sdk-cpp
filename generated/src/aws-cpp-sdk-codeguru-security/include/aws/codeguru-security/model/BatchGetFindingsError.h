@@ -104,15 +104,15 @@ class BatchGetFindingsError {
   ///@}
  private:
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   Aws::String m_findingId;
-  bool m_findingIdHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_scanNameHasBeenSet = false;
+  bool m_findingIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

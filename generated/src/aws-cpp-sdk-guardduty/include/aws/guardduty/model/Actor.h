@@ -110,15 +110,15 @@ class Actor {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   User m_user;
-  bool m_userHasBeenSet = false;
 
   Session m_session;
-  bool m_sessionHasBeenSet = false;
 
   ActorProcess m_process;
+  bool m_idHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
   bool m_processHasBeenSet = false;
 };
 

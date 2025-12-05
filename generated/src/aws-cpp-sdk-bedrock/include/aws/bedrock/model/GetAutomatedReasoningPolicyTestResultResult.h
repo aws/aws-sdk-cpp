@@ -62,9 +62,9 @@ class GetAutomatedReasoningPolicyTestResultResult {
   ///@}
  private:
   AutomatedReasoningPolicyTestResult m_testResult;
-  bool m_testResultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

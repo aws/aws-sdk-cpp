@@ -90,12 +90,12 @@ class ListActivatedRulesInRuleGroupResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<ActivatedRule> m_activatedRules;
-  bool m_activatedRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_activatedRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class CreatedByInfo {
   ///@}
  private:
   Aws::String m_connectUserArn;
-  bool m_connectUserArnHasBeenSet = false;
 
   Aws::String m_aWSIdentityArn;
+  bool m_connectUserArnHasBeenSet = false;
   bool m_aWSIdentityArnHasBeenSet = false;
 };
 

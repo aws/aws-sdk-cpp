@@ -501,75 +501,75 @@ class ReservationPurchaseRecommendationDetail {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   InstanceDetails m_instanceDetails;
-  bool m_instanceDetailsHasBeenSet = false;
 
   Aws::String m_recommendedNumberOfInstancesToPurchase;
-  bool m_recommendedNumberOfInstancesToPurchaseHasBeenSet = false;
 
   Aws::String m_recommendedNormalizedUnitsToPurchase;
-  bool m_recommendedNormalizedUnitsToPurchaseHasBeenSet = false;
 
   Aws::String m_minimumNumberOfInstancesUsedPerHour;
-  bool m_minimumNumberOfInstancesUsedPerHourHasBeenSet = false;
 
   Aws::String m_minimumNormalizedUnitsUsedPerHour;
-  bool m_minimumNormalizedUnitsUsedPerHourHasBeenSet = false;
 
   Aws::String m_maximumNumberOfInstancesUsedPerHour;
-  bool m_maximumNumberOfInstancesUsedPerHourHasBeenSet = false;
 
   Aws::String m_maximumNormalizedUnitsUsedPerHour;
-  bool m_maximumNormalizedUnitsUsedPerHourHasBeenSet = false;
 
   Aws::String m_averageNumberOfInstancesUsedPerHour;
-  bool m_averageNumberOfInstancesUsedPerHourHasBeenSet = false;
 
   Aws::String m_averageNormalizedUnitsUsedPerHour;
-  bool m_averageNormalizedUnitsUsedPerHourHasBeenSet = false;
 
   Aws::String m_averageUtilization;
-  bool m_averageUtilizationHasBeenSet = false;
 
   Aws::String m_estimatedBreakEvenInMonths;
-  bool m_estimatedBreakEvenInMonthsHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_estimatedMonthlySavingsAmount;
-  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
   Aws::String m_estimatedMonthlySavingsPercentage;
-  bool m_estimatedMonthlySavingsPercentageHasBeenSet = false;
 
   Aws::String m_estimatedMonthlyOnDemandCost;
-  bool m_estimatedMonthlyOnDemandCostHasBeenSet = false;
 
   Aws::String m_estimatedReservationCostForLookbackPeriod;
-  bool m_estimatedReservationCostForLookbackPeriodHasBeenSet = false;
 
   Aws::String m_upfrontCost;
-  bool m_upfrontCostHasBeenSet = false;
 
   Aws::String m_recurringStandardMonthlyCost;
-  bool m_recurringStandardMonthlyCostHasBeenSet = false;
 
   ReservedCapacityDetails m_reservedCapacityDetails;
-  bool m_reservedCapacityDetailsHasBeenSet = false;
 
   Aws::String m_recommendedNumberOfCapacityUnitsToPurchase;
-  bool m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = false;
 
   Aws::String m_minimumNumberOfCapacityUnitsUsedPerHour;
-  bool m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
 
   Aws::String m_maximumNumberOfCapacityUnitsUsedPerHour;
-  bool m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
 
   Aws::String m_averageNumberOfCapacityUnitsUsedPerHour;
+  bool m_accountIdHasBeenSet = false;
+  bool m_instanceDetailsHasBeenSet = false;
+  bool m_recommendedNumberOfInstancesToPurchaseHasBeenSet = false;
+  bool m_recommendedNormalizedUnitsToPurchaseHasBeenSet = false;
+  bool m_minimumNumberOfInstancesUsedPerHourHasBeenSet = false;
+  bool m_minimumNormalizedUnitsUsedPerHourHasBeenSet = false;
+  bool m_maximumNumberOfInstancesUsedPerHourHasBeenSet = false;
+  bool m_maximumNormalizedUnitsUsedPerHourHasBeenSet = false;
+  bool m_averageNumberOfInstancesUsedPerHourHasBeenSet = false;
+  bool m_averageNormalizedUnitsUsedPerHourHasBeenSet = false;
+  bool m_averageUtilizationHasBeenSet = false;
+  bool m_estimatedBreakEvenInMonthsHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
+  bool m_estimatedMonthlySavingsPercentageHasBeenSet = false;
+  bool m_estimatedMonthlyOnDemandCostHasBeenSet = false;
+  bool m_estimatedReservationCostForLookbackPeriodHasBeenSet = false;
+  bool m_upfrontCostHasBeenSet = false;
+  bool m_recurringStandardMonthlyCostHasBeenSet = false;
+  bool m_reservedCapacityDetailsHasBeenSet = false;
+  bool m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = false;
+  bool m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
+  bool m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
   bool m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
 };
 

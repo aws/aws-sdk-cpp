@@ -136,18 +136,18 @@ class StartDeclarativePoliciesReportRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

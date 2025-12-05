@@ -92,15 +92,15 @@ class CreatePluginResult {
   ///@}
  private:
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   Aws::String m_pluginArn;
-  bool m_pluginArnHasBeenSet = false;
 
   PluginBuildStatus m_buildStatus{PluginBuildStatus::NOT_SET};
-  bool m_buildStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pluginIdHasBeenSet = false;
+  bool m_pluginArnHasBeenSet = false;
+  bool m_buildStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

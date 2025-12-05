@@ -59,9 +59,9 @@ class PostWhatsAppMessageMediaResult {
   ///@}
  private:
   Aws::String m_mediaId;
-  bool m_mediaIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

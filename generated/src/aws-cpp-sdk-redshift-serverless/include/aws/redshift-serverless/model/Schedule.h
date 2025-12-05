@@ -79,9 +79,9 @@ class Schedule {
   ///@}
  private:
   Aws::Utils::DateTime m_at{};
-  bool m_atHasBeenSet = false;
 
   Aws::String m_cron;
+  bool m_atHasBeenSet = false;
   bool m_cronHasBeenSet = false;
 };
 

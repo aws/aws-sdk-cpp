@@ -192,30 +192,30 @@ class CreateConnectionRequest : public DataZoneRequest {
   ///@}
  private:
   AwsLocation m_awsLocation;
-  bool m_awsLocationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   bool m_enableTrustedIdentityPropagation{false};
-  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConnectionPropertiesInput m_props;
-  bool m_propsHasBeenSet = false;
 
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
+  bool m_awsLocationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_propsHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

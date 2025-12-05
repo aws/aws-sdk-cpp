@@ -61,9 +61,9 @@ class TimestampSegment {
   ///@}
  private:
   long long m_startTimeMillis{0};
-  bool m_startTimeMillisHasBeenSet = false;
 
   long long m_endTimeMillis{0};
+  bool m_startTimeMillisHasBeenSet = false;
   bool m_endTimeMillisHasBeenSet = false;
 };
 

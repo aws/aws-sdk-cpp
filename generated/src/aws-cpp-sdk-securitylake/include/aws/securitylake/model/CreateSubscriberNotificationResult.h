@@ -60,9 +60,9 @@ class CreateSubscriberNotificationResult {
   ///@}
  private:
   Aws::String m_subscriberEndpoint;
-  bool m_subscriberEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriberEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

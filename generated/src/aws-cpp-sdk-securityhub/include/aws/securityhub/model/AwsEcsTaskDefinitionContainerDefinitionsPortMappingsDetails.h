@@ -83,12 +83,12 @@ class AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
   ///@}
  private:
   int m_containerPort{0};
-  bool m_containerPortHasBeenSet = false;
 
   int m_hostPort{0};
-  bool m_hostPortHasBeenSet = false;
 
   Aws::String m_protocol;
+  bool m_containerPortHasBeenSet = false;
+  bool m_hostPortHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

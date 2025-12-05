@@ -78,12 +78,12 @@ class GetContinuousDeploymentPolicyConfig2020_05_31Result {
   ///@}
  private:
   ContinuousDeploymentPolicyConfig m_continuousDeploymentPolicyConfig;
-  bool m_continuousDeploymentPolicyConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_continuousDeploymentPolicyConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

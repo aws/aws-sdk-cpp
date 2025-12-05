@@ -215,21 +215,21 @@ class CreatePracticeRunConfigurationRequest : public ARCZonalShiftRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedWindows;
-  bool m_blockedWindowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedDates;
-  bool m_blockedDatesHasBeenSet = false;
 
   Aws::Vector<ControlCondition> m_blockingAlarms;
-  bool m_blockingAlarmsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedWindows;
-  bool m_allowedWindowsHasBeenSet = false;
 
   Aws::Vector<ControlCondition> m_outcomeAlarms;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_blockedWindowsHasBeenSet = false;
+  bool m_blockedDatesHasBeenSet = false;
+  bool m_blockingAlarmsHasBeenSet = false;
+  bool m_allowedWindowsHasBeenSet = false;
   bool m_outcomeAlarmsHasBeenSet = false;
 };
 

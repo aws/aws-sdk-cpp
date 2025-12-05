@@ -128,18 +128,18 @@ class ElasticsearchSettings {
   ///@}
  private:
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_endpointUri;
-  bool m_endpointUriHasBeenSet = false;
 
   int m_fullLoadErrorPercentage{0};
-  bool m_fullLoadErrorPercentageHasBeenSet = false;
 
   int m_errorRetryDuration{0};
-  bool m_errorRetryDurationHasBeenSet = false;
 
   bool m_useNewMappingType{false};
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_endpointUriHasBeenSet = false;
+  bool m_fullLoadErrorPercentageHasBeenSet = false;
+  bool m_errorRetryDurationHasBeenSet = false;
   bool m_useNewMappingTypeHasBeenSet = false;
 };
 

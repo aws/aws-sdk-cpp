@@ -103,15 +103,15 @@ class NotifyApplicationStateRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

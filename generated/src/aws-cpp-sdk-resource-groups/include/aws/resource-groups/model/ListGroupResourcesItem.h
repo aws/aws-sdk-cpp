@@ -71,9 +71,9 @@ class ListGroupResourcesItem {
   ///@}
  private:
   ResourceIdentifier m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   ResourceStatus m_status;
+  bool m_identifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

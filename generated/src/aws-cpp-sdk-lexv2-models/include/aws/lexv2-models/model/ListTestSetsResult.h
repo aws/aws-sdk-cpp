@@ -87,12 +87,12 @@ class ListTestSetsResult {
   ///@}
  private:
   Aws::Vector<TestSetSummary> m_testSets;
-  bool m_testSetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testSetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

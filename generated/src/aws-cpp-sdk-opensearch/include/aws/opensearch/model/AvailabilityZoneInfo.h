@@ -146,21 +146,21 @@ class AvailabilityZoneInfo {
   ///@}
  private:
   Aws::String m_availabilityZoneName;
-  bool m_availabilityZoneNameHasBeenSet = false;
 
   ZoneStatus m_zoneStatus{ZoneStatus::NOT_SET};
-  bool m_zoneStatusHasBeenSet = false;
 
   Aws::String m_configuredDataNodeCount;
-  bool m_configuredDataNodeCountHasBeenSet = false;
 
   Aws::String m_availableDataNodeCount;
-  bool m_availableDataNodeCountHasBeenSet = false;
 
   Aws::String m_totalShards;
-  bool m_totalShardsHasBeenSet = false;
 
   Aws::String m_totalUnAssignedShards;
+  bool m_availabilityZoneNameHasBeenSet = false;
+  bool m_zoneStatusHasBeenSet = false;
+  bool m_configuredDataNodeCountHasBeenSet = false;
+  bool m_availableDataNodeCountHasBeenSet = false;
+  bool m_totalShardsHasBeenSet = false;
   bool m_totalUnAssignedShardsHasBeenSet = false;
 };
 

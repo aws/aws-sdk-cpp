@@ -81,9 +81,9 @@ class GatewayPolicyEngineConfiguration {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   GatewayPolicyEngineMode m_mode{GatewayPolicyEngineMode::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

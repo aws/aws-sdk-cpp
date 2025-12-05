@@ -86,12 +86,12 @@ class ListCustomRoutingAcceleratorsResult {
   ///@}
  private:
   Aws::Vector<CustomRoutingAccelerator> m_accelerators;
-  bool m_acceleratorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_acceleratorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

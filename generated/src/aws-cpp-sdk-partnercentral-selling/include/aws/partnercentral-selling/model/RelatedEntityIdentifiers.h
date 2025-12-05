@@ -159,15 +159,15 @@ class RelatedEntityIdentifiers {
   ///@}
  private:
   Aws::Vector<Aws::String> m_awsMarketplaceOffers;
-  bool m_awsMarketplaceOffersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsMarketplaceOfferSets;
-  bool m_awsMarketplaceOfferSetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_solutions;
-  bool m_solutionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsProducts;
+  bool m_awsMarketplaceOffersHasBeenSet = false;
+  bool m_awsMarketplaceOfferSetsHasBeenSet = false;
+  bool m_solutionsHasBeenSet = false;
   bool m_awsProductsHasBeenSet = false;
 };
 

@@ -301,45 +301,45 @@ class HostReservation {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Utils::DateTime m_end{};
-  bool m_endHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hostIdSet;
-  bool m_hostIdSetHasBeenSet = false;
 
   Aws::String m_hostReservationId;
-  bool m_hostReservationIdHasBeenSet = false;
 
   Aws::String m_hourlyPrice;
-  bool m_hourlyPriceHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_start{};
-  bool m_startHasBeenSet = false;
 
   ReservationState m_state{ReservationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_upfrontPrice;
-  bool m_upfrontPriceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_countHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_endHasBeenSet = false;
+  bool m_hostIdSetHasBeenSet = false;
+  bool m_hostReservationIdHasBeenSet = false;
+  bool m_hourlyPriceHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_startHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_upfrontPriceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class FilterInput {
   ///@}
  private:
   BranchFilter m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::Vector<EventMetadataFilterExpression> m_eventMetadata;
+  bool m_branchHasBeenSet = false;
   bool m_eventMetadataHasBeenSet = false;
 };
 

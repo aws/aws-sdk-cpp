@@ -220,36 +220,36 @@ class CostTypes {
   ///@}
  private:
   bool m_includeTax{false};
-  bool m_includeTaxHasBeenSet = false;
 
   bool m_includeSubscription{false};
-  bool m_includeSubscriptionHasBeenSet = false;
 
   bool m_useBlended{false};
-  bool m_useBlendedHasBeenSet = false;
 
   bool m_includeRefund{false};
-  bool m_includeRefundHasBeenSet = false;
 
   bool m_includeCredit{false};
-  bool m_includeCreditHasBeenSet = false;
 
   bool m_includeUpfront{false};
-  bool m_includeUpfrontHasBeenSet = false;
 
   bool m_includeRecurring{false};
-  bool m_includeRecurringHasBeenSet = false;
 
   bool m_includeOtherSubscription{false};
-  bool m_includeOtherSubscriptionHasBeenSet = false;
 
   bool m_includeSupport{false};
-  bool m_includeSupportHasBeenSet = false;
 
   bool m_includeDiscount{false};
-  bool m_includeDiscountHasBeenSet = false;
 
   bool m_useAmortized{false};
+  bool m_includeTaxHasBeenSet = false;
+  bool m_includeSubscriptionHasBeenSet = false;
+  bool m_useBlendedHasBeenSet = false;
+  bool m_includeRefundHasBeenSet = false;
+  bool m_includeCreditHasBeenSet = false;
+  bool m_includeUpfrontHasBeenSet = false;
+  bool m_includeRecurringHasBeenSet = false;
+  bool m_includeOtherSubscriptionHasBeenSet = false;
+  bool m_includeSupportHasBeenSet = false;
+  bool m_includeDiscountHasBeenSet = false;
   bool m_useAmortizedHasBeenSet = false;
 };
 

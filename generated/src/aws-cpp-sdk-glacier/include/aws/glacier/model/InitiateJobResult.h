@@ -99,15 +99,15 @@ class InitiateJobResult {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobOutputPath;
-  bool m_jobOutputPathHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobOutputPathHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

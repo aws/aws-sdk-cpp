@@ -87,12 +87,12 @@ class ServiceHealth {
   ///@}
  private:
   ServiceName m_serviceName{ServiceName::NOT_SET};
-  bool m_serviceNameHasBeenSet = false;
 
   ServiceInsightHealth m_insight;
-  bool m_insightHasBeenSet = false;
 
   long long m_analyzedResourceCount{0};
+  bool m_serviceNameHasBeenSet = false;
+  bool m_insightHasBeenSet = false;
   bool m_analyzedResourceCountHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class IngestionJobFilter {
   ///@}
  private:
   IngestionJobFilterAttribute m_attribute{IngestionJobFilterAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   IngestionJobFilterOperator m_operator{IngestionJobFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_attributeHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListSearchJobsRequest : public BackupSearchRequest {
   ///@}
  private:
   SearchJobState m_byStatus{SearchJobState::NOT_SET};
-  bool m_byStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_byStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

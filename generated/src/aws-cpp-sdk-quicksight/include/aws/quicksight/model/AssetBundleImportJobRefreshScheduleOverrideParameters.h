@@ -95,12 +95,12 @@ class AssetBundleImportJobRefreshScheduleOverrideParameters {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_scheduleId;
-  bool m_scheduleIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startAfterDateTime{};
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_scheduleIdHasBeenSet = false;
   bool m_startAfterDateTimeHasBeenSet = false;
 };
 

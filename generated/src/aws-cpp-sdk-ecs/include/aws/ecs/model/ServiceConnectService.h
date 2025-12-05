@@ -176,21 +176,21 @@ class ServiceConnectService {
   ///@}
  private:
   Aws::String m_portName;
-  bool m_portNameHasBeenSet = false;
 
   Aws::String m_discoveryName;
-  bool m_discoveryNameHasBeenSet = false;
 
   Aws::Vector<ServiceConnectClientAlias> m_clientAliases;
-  bool m_clientAliasesHasBeenSet = false;
 
   int m_ingressPortOverride{0};
-  bool m_ingressPortOverrideHasBeenSet = false;
 
   TimeoutConfiguration m_timeout;
-  bool m_timeoutHasBeenSet = false;
 
   ServiceConnectTlsConfiguration m_tls;
+  bool m_portNameHasBeenSet = false;
+  bool m_discoveryNameHasBeenSet = false;
+  bool m_clientAliasesHasBeenSet = false;
+  bool m_ingressPortOverrideHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
   bool m_tlsHasBeenSet = false;
 };
 

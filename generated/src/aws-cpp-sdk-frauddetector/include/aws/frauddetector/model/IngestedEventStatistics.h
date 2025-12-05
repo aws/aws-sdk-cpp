@@ -118,18 +118,18 @@ class IngestedEventStatistics {
   ///@}
  private:
   long long m_numberOfEvents{0};
-  bool m_numberOfEventsHasBeenSet = false;
 
   long long m_eventDataSizeInBytes{0};
-  bool m_eventDataSizeInBytesHasBeenSet = false;
 
   Aws::String m_leastRecentEvent;
-  bool m_leastRecentEventHasBeenSet = false;
 
   Aws::String m_mostRecentEvent;
-  bool m_mostRecentEventHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
+  bool m_numberOfEventsHasBeenSet = false;
+  bool m_eventDataSizeInBytesHasBeenSet = false;
+  bool m_leastRecentEventHasBeenSet = false;
+  bool m_mostRecentEventHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

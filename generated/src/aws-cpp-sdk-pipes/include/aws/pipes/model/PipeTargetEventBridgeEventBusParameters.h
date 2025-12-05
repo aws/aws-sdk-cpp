@@ -139,18 +139,18 @@ class PipeTargetEventBridgeEventBusParameters {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_detailType;
-  bool m_detailTypeHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_time;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_detailTypeHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

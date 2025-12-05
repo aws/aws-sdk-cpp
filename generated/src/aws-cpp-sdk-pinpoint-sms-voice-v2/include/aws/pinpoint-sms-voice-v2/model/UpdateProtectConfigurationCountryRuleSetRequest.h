@@ -104,12 +104,12 @@ class UpdateProtectConfigurationCountryRuleSetRequest : public PinpointSMSVoiceV
   ///@}
  private:
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   NumberCapability m_numberCapability{NumberCapability::NOT_SET};
-  bool m_numberCapabilityHasBeenSet = false;
 
   Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation> m_countryRuleSetUpdates;
+  bool m_protectConfigurationIdHasBeenSet = false;
+  bool m_numberCapabilityHasBeenSet = false;
   bool m_countryRuleSetUpdatesHasBeenSet = false;
 };
 

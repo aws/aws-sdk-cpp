@@ -85,9 +85,9 @@ class RuleVariables {
   ///@}
  private:
   Aws::Map<Aws::String, IPSet> m_iPSets;
-  bool m_iPSetsHasBeenSet = false;
 
   Aws::Map<Aws::String, PortSet> m_portSets;
+  bool m_iPSetsHasBeenSet = false;
   bool m_portSetsHasBeenSet = false;
 };
 

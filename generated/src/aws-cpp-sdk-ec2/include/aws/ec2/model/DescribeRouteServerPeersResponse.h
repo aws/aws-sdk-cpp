@@ -86,12 +86,12 @@ class DescribeRouteServerPeersResponse {
   ///@}
  private:
   Aws::Vector<RouteServerPeer> m_routeServerPeers;
-  bool m_routeServerPeersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerPeersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

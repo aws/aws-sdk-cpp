@@ -211,27 +211,27 @@ class CreateFeaturedResultsSetRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_featuredResultsSetName;
-  bool m_featuredResultsSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   FeaturedResultsSetStatus m_status{FeaturedResultsSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryTexts;
-  bool m_queryTextsHasBeenSet = false;
 
   Aws::Vector<FeaturedDocument> m_featuredDocuments;
-  bool m_featuredDocumentsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_indexIdHasBeenSet = false;
+  bool m_featuredResultsSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_queryTextsHasBeenSet = false;
+  bool m_featuredDocumentsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

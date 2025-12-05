@@ -86,12 +86,12 @@ class IssuerCertificateIdentifier {
   ///@}
  private:
   Aws::String m_issuerCertificateSubject;
-  bool m_issuerCertificateSubjectHasBeenSet = false;
 
   Aws::String m_issuerId;
-  bool m_issuerIdHasBeenSet = false;
 
   Aws::String m_issuerCertificateSerialNumber;
+  bool m_issuerCertificateSubjectHasBeenSet = false;
+  bool m_issuerIdHasBeenSet = false;
   bool m_issuerCertificateSerialNumberHasBeenSet = false;
 };
 

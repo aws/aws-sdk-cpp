@@ -70,9 +70,9 @@ class ReferenceLineValueLabelConfiguration {
   ///@}
  private:
   ReferenceLineValueLabelRelativePosition m_relativePosition{ReferenceLineValueLabelRelativePosition::NOT_SET};
-  bool m_relativePositionHasBeenSet = false;
 
   NumericFormatConfiguration m_formatConfiguration;
+  bool m_relativePositionHasBeenSet = false;
   bool m_formatConfigurationHasBeenSet = false;
 };
 

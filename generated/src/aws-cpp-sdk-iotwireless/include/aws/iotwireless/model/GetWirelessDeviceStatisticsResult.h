@@ -113,18 +113,18 @@ class GetWirelessDeviceStatisticsResult {
   ///@}
  private:
   Aws::String m_wirelessDeviceId;
-  bool m_wirelessDeviceIdHasBeenSet = false;
 
   Aws::String m_lastUplinkReceivedAt;
-  bool m_lastUplinkReceivedAtHasBeenSet = false;
 
   LoRaWANDeviceMetadata m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   SidewalkDeviceMetadata m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_wirelessDeviceIdHasBeenSet = false;
+  bool m_lastUplinkReceivedAtHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_sidewalkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

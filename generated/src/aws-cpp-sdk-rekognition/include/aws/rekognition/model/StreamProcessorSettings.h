@@ -70,9 +70,9 @@ class StreamProcessorSettings {
   ///@}
  private:
   FaceSearchSettings m_faceSearch;
-  bool m_faceSearchHasBeenSet = false;
 
   ConnectedHomeSettings m_connectedHome;
+  bool m_faceSearchHasBeenSet = false;
   bool m_connectedHomeHasBeenSet = false;
 };
 

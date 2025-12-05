@@ -137,21 +137,21 @@ class GetWorkloadIdentityResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workloadIdentityArn;
-  bool m_workloadIdentityArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedResourceOauth2ReturnUrls;
-  bool m_allowedResourceOauth2ReturnUrlsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_workloadIdentityArnHasBeenSet = false;
+  bool m_allowedResourceOauth2ReturnUrlsHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

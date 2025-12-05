@@ -78,12 +78,12 @@ class ProvisionPublicIpv4PoolCidrResponse {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   PublicIpv4PoolRange m_poolAddressRange;
-  bool m_poolAddressRangeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_poolIdHasBeenSet = false;
+  bool m_poolAddressRangeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class LastSuccessfulReplicatedUpdate {
   ///@}
  private:
   Aws::String m_metadataLocation;
-  bool m_metadataLocationHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_metadataLocationHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

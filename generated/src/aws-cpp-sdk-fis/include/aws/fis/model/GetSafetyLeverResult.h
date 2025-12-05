@@ -60,9 +60,9 @@ class GetSafetyLeverResult {
   ///@}
  private:
   SafetyLever m_safetyLever;
-  bool m_safetyLeverHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_safetyLeverHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

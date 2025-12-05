@@ -237,33 +237,33 @@ class GetDashboardEmbedUrlRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   EmbeddingIdentityType m_identityType{EmbeddingIdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   long long m_sessionLifetimeInMinutes{0};
-  bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
   bool m_undoRedoDisabled{false};
-  bool m_undoRedoDisabledHasBeenSet = false;
 
   bool m_resetDisabled{false};
-  bool m_resetDisabledHasBeenSet = false;
 
   bool m_statePersistenceEnabled{false};
-  bool m_statePersistenceEnabledHasBeenSet = false;
 
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalDashboardIds;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_sessionLifetimeInMinutesHasBeenSet = false;
+  bool m_undoRedoDisabledHasBeenSet = false;
+  bool m_resetDisabledHasBeenSet = false;
+  bool m_statePersistenceEnabledHasBeenSet = false;
+  bool m_userArnHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_additionalDashboardIdsHasBeenSet = false;
 };
 

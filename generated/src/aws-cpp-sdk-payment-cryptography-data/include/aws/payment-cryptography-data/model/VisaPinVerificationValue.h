@@ -68,9 +68,9 @@ class VisaPinVerificationValue {
   ///@}
  private:
   Aws::String m_encryptedPinBlock;
-  bool m_encryptedPinBlockHasBeenSet = false;
 
   int m_pinVerificationKeyIndex{0};
+  bool m_encryptedPinBlockHasBeenSet = false;
   bool m_pinVerificationKeyIndexHasBeenSet = false;
 };
 

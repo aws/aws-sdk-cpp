@@ -87,12 +87,12 @@ class DescribeKinesisStreamingDestinationResult {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<KinesisDataStreamDestination> m_kinesisDataStreamDestinations;
-  bool m_kinesisDataStreamDestinationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableNameHasBeenSet = false;
+  bool m_kinesisDataStreamDestinationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

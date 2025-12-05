@@ -78,12 +78,12 @@ class CreateEnvironmentHostResult {
   ///@}
  private:
   EnvironmentSummary m_environmentSummary;
-  bool m_environmentSummaryHasBeenSet = false;
 
   Host m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentSummaryHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

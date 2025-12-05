@@ -89,12 +89,12 @@ class ListCommonControlsRequest : public ControlCatalogRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   CommonControlFilter m_commonControlFilter;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_commonControlFilterHasBeenSet = false;
 };
 

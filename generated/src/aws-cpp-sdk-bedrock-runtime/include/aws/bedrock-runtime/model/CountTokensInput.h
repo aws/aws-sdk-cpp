@@ -75,9 +75,9 @@ class CountTokensInput {
   ///@}
  private:
   InvokeModelTokensRequest m_invokeModel;
-  bool m_invokeModelHasBeenSet = false;
 
   ConverseTokensRequest m_converse;
+  bool m_invokeModelHasBeenSet = false;
   bool m_converseHasBeenSet = false;
 };
 

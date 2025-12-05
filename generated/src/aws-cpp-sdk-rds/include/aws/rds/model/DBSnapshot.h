@@ -757,117 +757,117 @@ class DBSnapshot {
   ///@}
  private:
   Aws::String m_dBSnapshotIdentifier;
-  bool m_dBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotCreateTime{};
-  bool m_snapshotCreateTimeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_instanceCreateTime{};
-  bool m_instanceCreateTimeHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_storageThroughput{0};
-  bool m_storageThroughputHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   int m_percentProgress{0};
-  bool m_percentProgressHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_sourceDBSnapshotIdentifier;
-  bool m_sourceDBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_tdeCredentialArn;
-  bool m_tdeCredentialArnHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dBSnapshotArn;
-  bool m_dBSnapshotArnHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   bool m_iAMDatabaseAuthenticationEnabled{false};
-  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
   Aws::Vector<ProcessorFeature> m_processorFeatures;
-  bool m_processorFeaturesHasBeenSet = false;
 
   Aws::String m_dbiResourceId;
-  bool m_dbiResourceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   Aws::String m_snapshotTarget;
-  bool m_snapshotTargetHasBeenSet = false;
 
   Aws::Utils::DateTime m_originalSnapshotCreateTime{};
-  bool m_originalSnapshotCreateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotDatabaseTime{};
-  bool m_snapshotDatabaseTimeHasBeenSet = false;
 
   Aws::String m_dBSystemId;
-  bool m_dBSystemIdHasBeenSet = false;
 
   bool m_multiTenant{false};
-  bool m_multiTenantHasBeenSet = false;
 
   bool m_dedicatedLogVolume{false};
-  bool m_dedicatedLogVolumeHasBeenSet = false;
 
   Aws::String m_snapshotAvailabilityZone;
-  bool m_snapshotAvailabilityZoneHasBeenSet = false;
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_dBSnapshotIdentifierHasBeenSet = false;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_snapshotCreateTimeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_instanceCreateTimeHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_storageThroughputHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_sourceDBSnapshotIdentifierHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_tdeCredentialArnHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dBSnapshotArnHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
+  bool m_processorFeaturesHasBeenSet = false;
+  bool m_dbiResourceIdHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
+  bool m_snapshotTargetHasBeenSet = false;
+  bool m_originalSnapshotCreateTimeHasBeenSet = false;
+  bool m_snapshotDatabaseTimeHasBeenSet = false;
+  bool m_dBSystemIdHasBeenSet = false;
+  bool m_multiTenantHasBeenSet = false;
+  bool m_dedicatedLogVolumeHasBeenSet = false;
+  bool m_snapshotAvailabilityZoneHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetCaseAttachmentDownloadUrlResult {
   ///@}
  private:
   Aws::String m_attachmentPresignedUrl;
-  bool m_attachmentPresignedUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachmentPresignedUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -155,21 +155,21 @@ class ListBackupsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeRangeLowerBound{};
-  bool m_timeRangeLowerBoundHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeRangeUpperBound{};
-  bool m_timeRangeUpperBoundHasBeenSet = false;
 
   Aws::String m_exclusiveStartBackupArn;
-  bool m_exclusiveStartBackupArnHasBeenSet = false;
 
   BackupTypeFilter m_backupType{BackupTypeFilter::NOT_SET};
+  bool m_tableNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_timeRangeLowerBoundHasBeenSet = false;
+  bool m_timeRangeUpperBoundHasBeenSet = false;
+  bool m_exclusiveStartBackupArnHasBeenSet = false;
   bool m_backupTypeHasBeenSet = false;
 };
 

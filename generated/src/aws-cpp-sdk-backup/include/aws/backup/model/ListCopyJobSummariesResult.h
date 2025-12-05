@@ -110,15 +110,15 @@ class ListCopyJobSummariesResult {
   ///@}
  private:
   Aws::Vector<CopyJobSummary> m_copyJobSummaries;
-  bool m_copyJobSummariesHasBeenSet = false;
 
   Aws::String m_aggregationPeriod;
-  bool m_aggregationPeriodHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copyJobSummariesHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

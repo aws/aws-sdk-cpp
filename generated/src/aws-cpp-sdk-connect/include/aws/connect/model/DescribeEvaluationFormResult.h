@@ -60,9 +60,9 @@ class DescribeEvaluationFormResult {
   ///@}
  private:
   EvaluationForm m_evaluationForm;
-  bool m_evaluationFormHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationFormHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateTrustedTokenIssuerResult {
   ///@}
  private:
   Aws::String m_trustedTokenIssuerArn;
-  bool m_trustedTokenIssuerArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustedTokenIssuerArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

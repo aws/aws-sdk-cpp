@@ -141,21 +141,21 @@ class DashIsoImageBasedTrickPlaySettings {
   ///@}
  private:
   DashIsoIntervalCadence m_intervalCadence{DashIsoIntervalCadence::NOT_SET};
-  bool m_intervalCadenceHasBeenSet = false;
 
   int m_thumbnailHeight{0};
-  bool m_thumbnailHeightHasBeenSet = false;
 
   double m_thumbnailInterval{0.0};
-  bool m_thumbnailIntervalHasBeenSet = false;
 
   int m_thumbnailWidth{0};
-  bool m_thumbnailWidthHasBeenSet = false;
 
   int m_tileHeight{0};
-  bool m_tileHeightHasBeenSet = false;
 
   int m_tileWidth{0};
+  bool m_intervalCadenceHasBeenSet = false;
+  bool m_thumbnailHeightHasBeenSet = false;
+  bool m_thumbnailIntervalHasBeenSet = false;
+  bool m_thumbnailWidthHasBeenSet = false;
+  bool m_tileHeightHasBeenSet = false;
   bool m_tileWidthHasBeenSet = false;
 };
 

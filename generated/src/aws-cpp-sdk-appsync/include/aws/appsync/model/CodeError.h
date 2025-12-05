@@ -89,12 +89,12 @@ class CodeError {
   ///@}
  private:
   Aws::String m_errorType;
-  bool m_errorTypeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   CodeErrorLocation m_location;
+  bool m_errorTypeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

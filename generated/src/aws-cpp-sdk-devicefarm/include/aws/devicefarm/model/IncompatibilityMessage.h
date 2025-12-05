@@ -71,9 +71,9 @@ class IncompatibilityMessage {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   DeviceAttribute m_type{DeviceAttribute::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

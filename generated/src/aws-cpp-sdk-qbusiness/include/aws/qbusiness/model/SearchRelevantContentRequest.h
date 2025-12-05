@@ -136,21 +136,21 @@ class SearchRelevantContentRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_queryText;
-  bool m_queryTextHasBeenSet = false;
 
   ContentSource m_contentSource;
-  bool m_contentSourceHasBeenSet = false;
 
   AttributeFilter m_attributeFilter;
-  bool m_attributeFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_queryTextHasBeenSet = false;
+  bool m_contentSourceHasBeenSet = false;
+  bool m_attributeFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

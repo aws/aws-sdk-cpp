@@ -84,12 +84,12 @@ class DeleteSlackUserIdentityRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_chatConfigurationArn;
-  bool m_chatConfigurationArnHasBeenSet = false;
 
   Aws::String m_slackTeamId;
-  bool m_slackTeamIdHasBeenSet = false;
 
   Aws::String m_slackUserId;
+  bool m_chatConfigurationArnHasBeenSet = false;
+  bool m_slackTeamIdHasBeenSet = false;
   bool m_slackUserIdHasBeenSet = false;
 };
 

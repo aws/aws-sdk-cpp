@@ -69,9 +69,9 @@ class ReadAPIKeyConnectionMetadata {
   ///@}
  private:
   Aws::String m_baseEndpoint;
-  bool m_baseEndpointHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_baseEndpointHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

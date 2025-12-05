@@ -108,15 +108,15 @@ class EphemerisMetaData {
   ///@}
  private:
   EphemerisSource m_source{EphemerisSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_ephemerisId;
-  bool m_ephemerisIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_epoch{};
-  bool m_epochHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_sourceHasBeenSet = false;
+  bool m_ephemerisIdHasBeenSet = false;
+  bool m_epochHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

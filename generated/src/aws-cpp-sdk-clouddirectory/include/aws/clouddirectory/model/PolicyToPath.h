@@ -78,9 +78,9 @@ class PolicyToPath {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<PolicyAttachment> m_policies;
+  bool m_pathHasBeenSet = false;
   bool m_policiesHasBeenSet = false;
 };
 

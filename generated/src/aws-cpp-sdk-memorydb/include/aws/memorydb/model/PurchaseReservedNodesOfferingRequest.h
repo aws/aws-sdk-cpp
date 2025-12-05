@@ -110,15 +110,15 @@ class PurchaseReservedNodesOfferingRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_reservedNodesOfferingId;
-  bool m_reservedNodesOfferingIdHasBeenSet = false;
 
   Aws::String m_reservationId;
-  bool m_reservationIdHasBeenSet = false;
 
   int m_nodeCount{0};
-  bool m_nodeCountHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_reservedNodesOfferingIdHasBeenSet = false;
+  bool m_reservationIdHasBeenSet = false;
+  bool m_nodeCountHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

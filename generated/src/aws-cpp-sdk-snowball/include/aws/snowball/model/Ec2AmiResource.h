@@ -71,9 +71,9 @@ class Ec2AmiResource {
   ///@}
  private:
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::String m_snowballAmiId;
+  bool m_amiIdHasBeenSet = false;
   bool m_snowballAmiIdHasBeenSet = false;
 };
 

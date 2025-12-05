@@ -65,9 +65,9 @@ class TooManyRequestsException {
   ///@}
  private:
   Aws::String m_retryAfterSeconds;
-  bool m_retryAfterSecondsHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_retryAfterSecondsHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class LoRaWANUpdateDevice {
   ///@}
  private:
   Aws::String m_deviceProfileId;
-  bool m_deviceProfileIdHasBeenSet = false;
 
   Aws::String m_serviceProfileId;
-  bool m_serviceProfileIdHasBeenSet = false;
 
   UpdateAbpV1_1 m_abpV1_1;
-  bool m_abpV1_1HasBeenSet = false;
 
   UpdateAbpV1_0_x m_abpV1_0_x;
-  bool m_abpV1_0_xHasBeenSet = false;
 
   UpdateFPorts m_fPorts;
+  bool m_deviceProfileIdHasBeenSet = false;
+  bool m_serviceProfileIdHasBeenSet = false;
+  bool m_abpV1_1HasBeenSet = false;
+  bool m_abpV1_0_xHasBeenSet = false;
   bool m_fPortsHasBeenSet = false;
 };
 

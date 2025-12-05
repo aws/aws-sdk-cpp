@@ -72,9 +72,9 @@ class JavaScriptSourceMaps {
   ///@}
  private:
   DeobfuscationStatus m_status{DeobfuscationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_statusHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

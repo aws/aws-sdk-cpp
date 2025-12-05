@@ -95,12 +95,12 @@ class RequestCancelActivityTaskFailedEventAttributes {
   ///@}
  private:
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   RequestCancelActivityTaskFailedCause m_cause{RequestCancelActivityTaskFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_activityIdHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

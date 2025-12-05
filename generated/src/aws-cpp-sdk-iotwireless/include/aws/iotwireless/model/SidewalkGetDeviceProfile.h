@@ -94,12 +94,12 @@ class SidewalkGetDeviceProfile {
   ///@}
  private:
   Aws::String m_applicationServerPublicKey;
-  bool m_applicationServerPublicKeyHasBeenSet = false;
 
   bool m_qualificationStatus{false};
-  bool m_qualificationStatusHasBeenSet = false;
 
   Aws::Vector<DakCertificateMetadata> m_dakCertificateMetadata;
+  bool m_applicationServerPublicKeyHasBeenSet = false;
+  bool m_qualificationStatusHasBeenSet = false;
   bool m_dakCertificateMetadataHasBeenSet = false;
 };
 

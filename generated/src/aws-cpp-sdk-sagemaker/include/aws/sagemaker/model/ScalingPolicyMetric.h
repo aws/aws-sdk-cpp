@@ -68,9 +68,9 @@ class ScalingPolicyMetric {
   ///@}
  private:
   int m_invocationsPerInstance{0};
-  bool m_invocationsPerInstanceHasBeenSet = false;
 
   int m_modelLatency{0};
+  bool m_invocationsPerInstanceHasBeenSet = false;
   bool m_modelLatencyHasBeenSet = false;
 };
 

@@ -131,18 +131,18 @@ class ListAutomationEventSummariesRequest : public ComputeOptimizerAutomationReq
   ///@}
  private:
   Aws::Vector<AutomationEventFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_startDateInclusive;
-  bool m_startDateInclusiveHasBeenSet = false;
 
   Aws::String m_endDateExclusive;
-  bool m_endDateExclusiveHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_startDateInclusiveHasBeenSet = false;
+  bool m_endDateExclusiveHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

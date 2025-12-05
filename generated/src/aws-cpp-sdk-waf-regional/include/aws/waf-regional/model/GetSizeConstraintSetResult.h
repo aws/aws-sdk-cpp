@@ -69,9 +69,9 @@ class GetSizeConstraintSetResult {
   ///@}
  private:
   SizeConstraintSet m_sizeConstraintSet;
-  bool m_sizeConstraintSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sizeConstraintSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

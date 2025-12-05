@@ -74,9 +74,9 @@ class InboundCrossClusterSearchConnectionStatus {
   ///@}
  private:
   InboundCrossClusterSearchConnectionStatusCode m_statusCode{InboundCrossClusterSearchConnectionStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

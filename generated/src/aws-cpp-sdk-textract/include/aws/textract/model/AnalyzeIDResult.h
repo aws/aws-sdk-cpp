@@ -101,15 +101,15 @@ class AnalyzeIDResult {
   ///@}
  private:
   Aws::Vector<IdentityDocument> m_identityDocuments;
-  bool m_identityDocumentsHasBeenSet = false;
 
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   Aws::String m_analyzeIDModelVersion;
-  bool m_analyzeIDModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityDocumentsHasBeenSet = false;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_analyzeIDModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

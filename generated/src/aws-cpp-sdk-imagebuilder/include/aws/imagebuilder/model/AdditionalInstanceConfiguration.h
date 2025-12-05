@@ -85,9 +85,9 @@ class AdditionalInstanceConfiguration {
   ///@}
  private:
   SystemsManagerAgent m_systemsManagerAgent;
-  bool m_systemsManagerAgentHasBeenSet = false;
 
   Aws::String m_userDataOverride;
+  bool m_systemsManagerAgentHasBeenSet = false;
   bool m_userDataOverrideHasBeenSet = false;
 };
 

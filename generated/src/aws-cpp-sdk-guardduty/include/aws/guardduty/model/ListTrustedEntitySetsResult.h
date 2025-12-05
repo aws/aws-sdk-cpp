@@ -84,12 +84,12 @@ class ListTrustedEntitySetsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_trustedEntitySetIds;
-  bool m_trustedEntitySetIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustedEntitySetIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class LabelingJobStoppingConditions {
   ///@}
  private:
   int m_maxHumanLabeledObjectCount{0};
-  bool m_maxHumanLabeledObjectCountHasBeenSet = false;
 
   int m_maxPercentageOfInputDatasetLabeled{0};
+  bool m_maxHumanLabeledObjectCountHasBeenSet = false;
   bool m_maxPercentageOfInputDatasetLabeledHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetPolicyRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_policyEngineId;
-  bool m_policyEngineIdHasBeenSet = false;
 
   Aws::String m_policyId;
+  bool m_policyEngineIdHasBeenSet = false;
   bool m_policyIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class DescribeSpotPriceHistoryResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SpotPrice> m_spotPriceHistory;
-  bool m_spotPriceHistoryHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_spotPriceHistoryHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

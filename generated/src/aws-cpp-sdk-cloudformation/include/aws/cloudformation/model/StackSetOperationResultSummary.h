@@ -159,21 +159,21 @@ class StackSetOperationResultSummary {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   StackSetOperationResultStatus m_status{StackSetOperationResultStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   AccountGateResult m_accountGateResult;
-  bool m_accountGateResultHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
+  bool m_accountHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_accountGateResultHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
 };
 

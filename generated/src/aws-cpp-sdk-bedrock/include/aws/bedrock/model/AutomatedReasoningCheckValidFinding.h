@@ -118,15 +118,15 @@ class AutomatedReasoningCheckValidFinding {
   ///@}
  private:
   AutomatedReasoningCheckTranslation m_translation;
-  bool m_translationHasBeenSet = false;
 
   AutomatedReasoningCheckScenario m_claimsTrueScenario;
-  bool m_claimsTrueScenarioHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningCheckRule> m_supportingRules;
-  bool m_supportingRulesHasBeenSet = false;
 
   AutomatedReasoningCheckLogicWarning m_logicWarning;
+  bool m_translationHasBeenSet = false;
+  bool m_claimsTrueScenarioHasBeenSet = false;
+  bool m_supportingRulesHasBeenSet = false;
   bool m_logicWarningHasBeenSet = false;
 };
 

@@ -362,51 +362,51 @@ class Schema {
   ///@}
  private:
   Aws::Vector<Column> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<Column> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::Vector<AnalysisRuleType> m_analysisRuleTypes;
-  bool m_analysisRuleTypesHasBeenSet = false;
 
   AnalysisMethod m_analysisMethod{AnalysisMethod::NOT_SET};
-  bool m_analysisMethodHasBeenSet = false;
 
   Aws::Vector<SelectedAnalysisMethod> m_selectedAnalysisMethods;
-  bool m_selectedAnalysisMethodsHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_collaborationArn;
-  bool m_collaborationArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   SchemaType m_type{SchemaType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<SchemaStatusDetail> m_schemaStatusDetails;
-  bool m_schemaStatusDetailsHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   SchemaTypeProperties m_schemaTypeProperties;
+  bool m_columnsHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
+  bool m_analysisRuleTypesHasBeenSet = false;
+  bool m_analysisMethodHasBeenSet = false;
+  bool m_selectedAnalysisMethodsHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_collaborationArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_schemaStatusDetailsHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_schemaTypePropertiesHasBeenSet = false;
 };
 

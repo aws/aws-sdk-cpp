@@ -93,12 +93,12 @@ class ManagedScalingPolicy {
   ///@}
  private:
   ComputeLimits m_computeLimits;
-  bool m_computeLimitsHasBeenSet = false;
 
   int m_utilizationPerformanceIndex{0};
-  bool m_utilizationPerformanceIndexHasBeenSet = false;
 
   ScalingStrategy m_scalingStrategy{ScalingStrategy::NOT_SET};
+  bool m_computeLimitsHasBeenSet = false;
+  bool m_utilizationPerformanceIndexHasBeenSet = false;
   bool m_scalingStrategyHasBeenSet = false;
 };
 

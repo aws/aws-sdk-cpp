@@ -84,12 +84,12 @@ class ListResourceInventoryResult {
   ///@}
  private:
   Aws::Vector<ResourceInventory> m_resourceInventoryList;
-  bool m_resourceInventoryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceInventoryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

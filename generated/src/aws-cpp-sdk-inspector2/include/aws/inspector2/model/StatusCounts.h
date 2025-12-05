@@ -77,12 +77,12 @@ class StatusCounts {
   ///@}
  private:
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_skipped{0};
-  bool m_skippedHasBeenSet = false;
 
   int m_passed{0};
+  bool m_failedHasBeenSet = false;
+  bool m_skippedHasBeenSet = false;
   bool m_passedHasBeenSet = false;
 };
 

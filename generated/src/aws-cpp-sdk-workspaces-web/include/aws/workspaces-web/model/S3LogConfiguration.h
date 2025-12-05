@@ -122,18 +122,18 @@ class S3LogConfiguration {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_keyPrefix;
-  bool m_keyPrefixHasBeenSet = false;
 
   Aws::String m_bucketOwner;
-  bool m_bucketOwnerHasBeenSet = false;
 
   LogFileFormat m_logFileFormat{LogFileFormat::NOT_SET};
-  bool m_logFileFormatHasBeenSet = false;
 
   FolderStructure m_folderStructure{FolderStructure::NOT_SET};
+  bool m_bucketHasBeenSet = false;
+  bool m_keyPrefixHasBeenSet = false;
+  bool m_bucketOwnerHasBeenSet = false;
+  bool m_logFileFormatHasBeenSet = false;
   bool m_folderStructureHasBeenSet = false;
 };
 

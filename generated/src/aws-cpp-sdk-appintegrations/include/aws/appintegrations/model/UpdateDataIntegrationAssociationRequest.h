@@ -84,12 +84,12 @@ class UpdateDataIntegrationAssociationRequest : public AppIntegrationsServiceReq
   ///@}
  private:
   Aws::String m_dataIntegrationIdentifier;
-  bool m_dataIntegrationIdentifierHasBeenSet = false;
 
   Aws::String m_dataIntegrationAssociationIdentifier;
-  bool m_dataIntegrationAssociationIdentifierHasBeenSet = false;
 
   ExecutionConfiguration m_executionConfiguration;
+  bool m_dataIntegrationIdentifierHasBeenSet = false;
+  bool m_dataIntegrationAssociationIdentifierHasBeenSet = false;
   bool m_executionConfigurationHasBeenSet = false;
 };
 

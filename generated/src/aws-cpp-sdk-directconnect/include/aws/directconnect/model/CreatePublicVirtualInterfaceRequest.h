@@ -68,9 +68,9 @@ class CreatePublicVirtualInterfaceRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   NewPublicVirtualInterface m_newPublicVirtualInterface;
+  bool m_connectionIdHasBeenSet = false;
   bool m_newPublicVirtualInterfaceHasBeenSet = false;
 };
 

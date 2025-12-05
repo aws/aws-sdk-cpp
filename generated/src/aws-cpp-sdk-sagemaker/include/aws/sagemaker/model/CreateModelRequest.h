@@ -213,27 +213,27 @@ class CreateModelRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   ContainerDefinition m_primaryContainer;
-  bool m_primaryContainerHasBeenSet = false;
 
   Aws::Vector<ContainerDefinition> m_containers;
-  bool m_containersHasBeenSet = false;
 
   InferenceExecutionConfig m_inferenceExecutionConfig;
-  bool m_inferenceExecutionConfigHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   bool m_enableNetworkIsolation{false};
+  bool m_modelNameHasBeenSet = false;
+  bool m_primaryContainerHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_inferenceExecutionConfigHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_enableNetworkIsolationHasBeenSet = false;
 };
 

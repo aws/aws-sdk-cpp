@@ -107,15 +107,15 @@ class BillScenarioCommitmentModificationItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   BillScenarioCommitmentModificationAction m_commitmentAction;
+  bool m_idHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
   bool m_commitmentActionHasBeenSet = false;
 };
 

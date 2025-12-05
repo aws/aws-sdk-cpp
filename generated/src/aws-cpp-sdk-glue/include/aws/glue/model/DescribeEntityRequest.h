@@ -123,18 +123,18 @@ class DescribeEntityRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_dataStoreApiVersion;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_entityNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_dataStoreApiVersionHasBeenSet = false;
 };
 

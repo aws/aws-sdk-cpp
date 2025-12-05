@@ -205,33 +205,33 @@ class GetSegmentDefinitionResult {
   ///@}
  private:
   Aws::String m_segmentDefinitionName;
-  bool m_segmentDefinitionNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SegmentGroup m_segmentGroups;
-  bool m_segmentGroupsHasBeenSet = false;
 
   Aws::String m_segmentDefinitionArn;
-  bool m_segmentDefinitionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_segmentSqlQuery;
-  bool m_segmentSqlQueryHasBeenSet = false;
 
   SegmentType m_segmentType{SegmentType::NOT_SET};
-  bool m_segmentTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_segmentDefinitionNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_segmentGroupsHasBeenSet = false;
+  bool m_segmentDefinitionArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_segmentSqlQueryHasBeenSet = false;
+  bool m_segmentTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class DeviceSummary {
   ///@}
  private:
   Aws::String m_associatedWithJob;
-  bool m_associatedWithJobHasBeenSet = false;
 
   Aws::String m_managedDeviceArn;
-  bool m_managedDeviceArnHasBeenSet = false;
 
   Aws::String m_managedDeviceId;
-  bool m_managedDeviceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_associatedWithJobHasBeenSet = false;
+  bool m_managedDeviceArnHasBeenSet = false;
+  bool m_managedDeviceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

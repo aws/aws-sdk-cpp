@@ -132,21 +132,21 @@ class ExecutionResult {
   ///@}
  private:
   ErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   long long m_bytesProcessed{0};
-  bool m_bytesProcessedHasBeenSet = false;
 
   long long m_bytesWritten{0};
-  bool m_bytesWrittenHasBeenSet = false;
 
   long long m_recordsProcessed{0};
-  bool m_recordsProcessedHasBeenSet = false;
 
   long long m_numParallelProcesses{0};
-  bool m_numParallelProcessesHasBeenSet = false;
 
   long long m_maxPageSize{0};
+  bool m_errorInfoHasBeenSet = false;
+  bool m_bytesProcessedHasBeenSet = false;
+  bool m_bytesWrittenHasBeenSet = false;
+  bool m_recordsProcessedHasBeenSet = false;
+  bool m_numParallelProcessesHasBeenSet = false;
   bool m_maxPageSizeHasBeenSet = false;
 };
 

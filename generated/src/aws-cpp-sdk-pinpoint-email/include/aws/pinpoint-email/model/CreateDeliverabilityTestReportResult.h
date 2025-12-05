@@ -87,12 +87,12 @@ class CreateDeliverabilityTestReportResult {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   DeliverabilityTestStatus m_deliverabilityTestStatus{DeliverabilityTestStatus::NOT_SET};
-  bool m_deliverabilityTestStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportIdHasBeenSet = false;
+  bool m_deliverabilityTestStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

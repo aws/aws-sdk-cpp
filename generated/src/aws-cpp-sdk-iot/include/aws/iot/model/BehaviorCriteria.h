@@ -173,24 +173,24 @@ class BehaviorCriteria {
   ///@}
  private:
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   MetricValue m_value;
-  bool m_valueHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   int m_consecutiveDatapointsToAlarm{0};
-  bool m_consecutiveDatapointsToAlarmHasBeenSet = false;
 
   int m_consecutiveDatapointsToClear{0};
-  bool m_consecutiveDatapointsToClearHasBeenSet = false;
 
   StatisticalThreshold m_statisticalThreshold;
-  bool m_statisticalThresholdHasBeenSet = false;
 
   MachineLearningDetectionConfig m_mlDetectionConfig;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_consecutiveDatapointsToAlarmHasBeenSet = false;
+  bool m_consecutiveDatapointsToClearHasBeenSet = false;
+  bool m_statisticalThresholdHasBeenSet = false;
   bool m_mlDetectionConfigHasBeenSet = false;
 };
 

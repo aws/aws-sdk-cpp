@@ -86,12 +86,12 @@ class AccountEnforcedGuardrailInferenceInputConfiguration {
   ///@}
  private:
   Aws::String m_guardrailIdentifier;
-  bool m_guardrailIdentifierHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
-  bool m_guardrailVersionHasBeenSet = false;
 
   InputTags m_inputTags{InputTags::NOT_SET};
+  bool m_guardrailIdentifierHasBeenSet = false;
+  bool m_guardrailVersionHasBeenSet = false;
   bool m_inputTagsHasBeenSet = false;
 };
 

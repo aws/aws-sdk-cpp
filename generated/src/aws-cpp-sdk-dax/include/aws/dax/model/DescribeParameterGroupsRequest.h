@@ -96,12 +96,12 @@ class DescribeParameterGroupsRequest : public DAXRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_parameterGroupNames;
-  bool m_parameterGroupNamesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_parameterGroupNamesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -559,72 +559,72 @@ class CreateFleetRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   FleetType m_fleetType{FleetType::NOT_SET};
-  bool m_fleetTypeHasBeenSet = false;
 
   ComputeCapacity m_computeCapacity;
-  bool m_computeCapacityHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   int m_maxUserDurationInSeconds{0};
-  bool m_maxUserDurationInSecondsHasBeenSet = false;
 
   int m_disconnectTimeoutInSeconds{0};
-  bool m_disconnectTimeoutInSecondsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   bool m_enableDefaultInternetAccess{false};
-  bool m_enableDefaultInternetAccessHasBeenSet = false;
 
   DomainJoinInfo m_domainJoinInfo;
-  bool m_domainJoinInfoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_idleDisconnectTimeoutInSeconds{0};
-  bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   StreamView m_streamView{StreamView::NOT_SET};
-  bool m_streamViewHasBeenSet = false;
 
   PlatformType m_platform{PlatformType::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   int m_maxConcurrentSessions{0};
-  bool m_maxConcurrentSessionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
-  bool m_usbDeviceFilterStringsHasBeenSet = false;
 
   S3Location m_sessionScriptS3Location;
-  bool m_sessionScriptS3LocationHasBeenSet = false;
 
   int m_maxSessionsPerInstance{0};
-  bool m_maxSessionsPerInstanceHasBeenSet = false;
 
   VolumeConfig m_rootVolumeConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_imageNameHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_fleetTypeHasBeenSet = false;
+  bool m_computeCapacityHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_maxUserDurationInSecondsHasBeenSet = false;
+  bool m_disconnectTimeoutInSecondsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_enableDefaultInternetAccessHasBeenSet = false;
+  bool m_domainJoinInfoHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_streamViewHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_maxConcurrentSessionsHasBeenSet = false;
+  bool m_usbDeviceFilterStringsHasBeenSet = false;
+  bool m_sessionScriptS3LocationHasBeenSet = false;
+  bool m_maxSessionsPerInstanceHasBeenSet = false;
   bool m_rootVolumeConfigHasBeenSet = false;
 };
 

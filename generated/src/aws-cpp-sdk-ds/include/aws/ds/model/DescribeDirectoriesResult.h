@@ -96,12 +96,12 @@ class DescribeDirectoriesResult {
   ///@}
  private:
   Aws::Vector<DirectoryDescription> m_directoryDescriptions;
-  bool m_directoryDescriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryDescriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

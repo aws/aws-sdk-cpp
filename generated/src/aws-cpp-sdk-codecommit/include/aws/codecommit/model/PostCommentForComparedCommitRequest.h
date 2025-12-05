@@ -148,21 +148,21 @@ class PostCommentForComparedCommitRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_beforeCommitId;
-  bool m_beforeCommitIdHasBeenSet = false;
 
   Aws::String m_afterCommitId;
-  bool m_afterCommitIdHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_beforeCommitIdHasBeenSet = false;
+  bool m_afterCommitIdHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

@@ -90,12 +90,12 @@ class DimensionMapping {
   ///@}
  private:
   Aws::String m_dimensionValue;
-  bool m_dimensionValueHasBeenSet = false;
 
   DimensionValueType m_dimensionValueType{DimensionValueType::NOT_SET};
-  bool m_dimensionValueTypeHasBeenSet = false;
 
   Aws::String m_dimensionName;
+  bool m_dimensionValueHasBeenSet = false;
+  bool m_dimensionValueTypeHasBeenSet = false;
   bool m_dimensionNameHasBeenSet = false;
 };
 

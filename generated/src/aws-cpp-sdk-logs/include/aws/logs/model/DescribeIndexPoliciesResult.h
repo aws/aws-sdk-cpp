@@ -82,12 +82,12 @@ class DescribeIndexPoliciesResult {
   ///@}
  private:
   Aws::Vector<IndexPolicy> m_indexPolicies;
-  bool m_indexPoliciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexPoliciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

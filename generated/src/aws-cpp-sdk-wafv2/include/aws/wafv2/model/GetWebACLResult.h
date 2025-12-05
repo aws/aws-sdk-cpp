@@ -110,15 +110,15 @@ class GetWebACLResult {
   ///@}
  private:
   WebACL m_webACL;
-  bool m_webACLHasBeenSet = false;
 
   Aws::String m_lockToken;
-  bool m_lockTokenHasBeenSet = false;
 
   Aws::String m_applicationIntegrationURL;
-  bool m_applicationIntegrationURLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webACLHasBeenSet = false;
+  bool m_lockTokenHasBeenSet = false;
+  bool m_applicationIntegrationURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

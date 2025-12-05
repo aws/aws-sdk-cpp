@@ -74,9 +74,9 @@ class PutDataProtectionPolicyRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_dataProtectionPolicy;
+  bool m_resourceArnHasBeenSet = false;
   bool m_dataProtectionPolicyHasBeenSet = false;
 };
 

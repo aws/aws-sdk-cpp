@@ -68,9 +68,9 @@ class DecimalValueWhenUnsetConfiguration {
   ///@}
  private:
   ValueWhenUnsetOption m_valueWhenUnsetOption{ValueWhenUnsetOption::NOT_SET};
-  bool m_valueWhenUnsetOptionHasBeenSet = false;
 
   double m_customValue{0.0};
+  bool m_valueWhenUnsetOptionHasBeenSet = false;
   bool m_customValueHasBeenSet = false;
 };
 

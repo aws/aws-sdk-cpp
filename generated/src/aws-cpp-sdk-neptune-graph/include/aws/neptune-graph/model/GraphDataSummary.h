@@ -312,45 +312,45 @@ class GraphDataSummary {
   ///@}
  private:
   long long m_numNodes{0};
-  bool m_numNodesHasBeenSet = false;
 
   long long m_numEdges{0};
-  bool m_numEdgesHasBeenSet = false;
 
   long long m_numNodeLabels{0};
-  bool m_numNodeLabelsHasBeenSet = false;
 
   long long m_numEdgeLabels{0};
-  bool m_numEdgeLabelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeLabels;
-  bool m_nodeLabelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeLabels;
-  bool m_edgeLabelsHasBeenSet = false;
 
   long long m_numNodeProperties{0};
-  bool m_numNodePropertiesHasBeenSet = false;
 
   long long m_numEdgeProperties{0};
-  bool m_numEdgePropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, long long>> m_nodeProperties;
-  bool m_nodePropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, long long>> m_edgeProperties;
-  bool m_edgePropertiesHasBeenSet = false;
 
   long long m_totalNodePropertyValues{0};
-  bool m_totalNodePropertyValuesHasBeenSet = false;
 
   long long m_totalEdgePropertyValues{0};
-  bool m_totalEdgePropertyValuesHasBeenSet = false;
 
   Aws::Vector<NodeStructure> m_nodeStructures;
-  bool m_nodeStructuresHasBeenSet = false;
 
   Aws::Vector<EdgeStructure> m_edgeStructures;
+  bool m_numNodesHasBeenSet = false;
+  bool m_numEdgesHasBeenSet = false;
+  bool m_numNodeLabelsHasBeenSet = false;
+  bool m_numEdgeLabelsHasBeenSet = false;
+  bool m_nodeLabelsHasBeenSet = false;
+  bool m_edgeLabelsHasBeenSet = false;
+  bool m_numNodePropertiesHasBeenSet = false;
+  bool m_numEdgePropertiesHasBeenSet = false;
+  bool m_nodePropertiesHasBeenSet = false;
+  bool m_edgePropertiesHasBeenSet = false;
+  bool m_totalNodePropertyValuesHasBeenSet = false;
+  bool m_totalEdgePropertyValuesHasBeenSet = false;
+  bool m_nodeStructuresHasBeenSet = false;
   bool m_edgeStructuresHasBeenSet = false;
 };
 

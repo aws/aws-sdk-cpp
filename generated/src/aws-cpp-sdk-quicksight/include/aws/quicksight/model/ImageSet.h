@@ -86,12 +86,12 @@ class ImageSet {
   ///@}
  private:
   Image m_original;
-  bool m_originalHasBeenSet = false;
 
   Image m_height64;
-  bool m_height64HasBeenSet = false;
 
   Image m_height32;
+  bool m_originalHasBeenSet = false;
+  bool m_height64HasBeenSet = false;
   bool m_height32HasBeenSet = false;
 };
 

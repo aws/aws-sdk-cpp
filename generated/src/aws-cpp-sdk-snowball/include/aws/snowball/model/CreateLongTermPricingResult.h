@@ -59,9 +59,9 @@ class CreateLongTermPricingResult {
   ///@}
  private:
   Aws::String m_longTermPricingId;
-  bool m_longTermPricingIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_longTermPricingIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

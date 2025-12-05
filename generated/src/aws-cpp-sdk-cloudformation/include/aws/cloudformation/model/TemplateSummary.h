@@ -174,24 +174,24 @@ class TemplateSummary {
   ///@}
  private:
   Aws::String m_generatedTemplateId;
-  bool m_generatedTemplateIdHasBeenSet = false;
 
   Aws::String m_generatedTemplateName;
-  bool m_generatedTemplateNameHasBeenSet = false;
 
   GeneratedTemplateStatus m_status{GeneratedTemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   int m_numberOfResources{0};
+  bool m_generatedTemplateIdHasBeenSet = false;
+  bool m_generatedTemplateNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_numberOfResourcesHasBeenSet = false;
 };
 

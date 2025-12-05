@@ -233,36 +233,36 @@ class ModelCustomizationJobSummary {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_baseModelArn;
-  bool m_baseModelArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   ModelCustomizationJobStatus m_status{ModelCustomizationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_customModelArn;
-  bool m_customModelArnHasBeenSet = false;
 
   Aws::String m_customModelName;
-  bool m_customModelNameHasBeenSet = false;
 
   CustomizationType m_customizationType{CustomizationType::NOT_SET};
+  bool m_jobArnHasBeenSet = false;
+  bool m_baseModelArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_customModelArnHasBeenSet = false;
+  bool m_customModelNameHasBeenSet = false;
   bool m_customizationTypeHasBeenSet = false;
 };
 

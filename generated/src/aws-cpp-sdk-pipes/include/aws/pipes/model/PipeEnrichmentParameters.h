@@ -80,9 +80,9 @@ class PipeEnrichmentParameters {
   ///@}
  private:
   Aws::String m_inputTemplate;
-  bool m_inputTemplateHasBeenSet = false;
 
   PipeEnrichmentHttpParameters m_httpParameters;
+  bool m_inputTemplateHasBeenSet = false;
   bool m_httpParametersHasBeenSet = false;
 };
 

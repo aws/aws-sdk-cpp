@@ -191,30 +191,30 @@ class ListModelVersionsRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ModelVersionStatus m_status{ModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ModelVersionSourceType m_sourceType{ModelVersionSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAtEndTime{};
-  bool m_createdAtEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAtStartTime{};
-  bool m_createdAtStartTimeHasBeenSet = false;
 
   long long m_maxModelVersion{0};
-  bool m_maxModelVersionHasBeenSet = false;
 
   long long m_minModelVersion{0};
+  bool m_modelNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_createdAtEndTimeHasBeenSet = false;
+  bool m_createdAtStartTimeHasBeenSet = false;
+  bool m_maxModelVersionHasBeenSet = false;
   bool m_minModelVersionHasBeenSet = false;
 };
 

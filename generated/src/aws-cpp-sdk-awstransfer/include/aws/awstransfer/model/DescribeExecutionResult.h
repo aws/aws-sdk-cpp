@@ -77,12 +77,12 @@ class DescribeExecutionResult {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   DescribedExecution m_execution;
-  bool m_executionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_executionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

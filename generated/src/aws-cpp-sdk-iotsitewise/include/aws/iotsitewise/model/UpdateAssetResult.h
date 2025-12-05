@@ -61,9 +61,9 @@ class UpdateAssetResult {
   ///@}
  private:
   AssetStatus m_assetStatus;
-  bool m_assetStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

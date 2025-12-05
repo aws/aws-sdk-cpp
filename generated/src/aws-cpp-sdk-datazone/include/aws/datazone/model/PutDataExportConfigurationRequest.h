@@ -108,15 +108,15 @@ class PutDataExportConfigurationRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   bool m_enableExport{false};
-  bool m_enableExportHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_enableExportHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

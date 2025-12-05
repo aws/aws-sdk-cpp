@@ -69,9 +69,9 @@ class IntegerValueWhenUnsetConfiguration {
   ///@}
  private:
   ValueWhenUnsetOption m_valueWhenUnsetOption{ValueWhenUnsetOption::NOT_SET};
-  bool m_valueWhenUnsetOptionHasBeenSet = false;
 
   long long m_customValue{0};
+  bool m_valueWhenUnsetOptionHasBeenSet = false;
   bool m_customValueHasBeenSet = false;
 };
 

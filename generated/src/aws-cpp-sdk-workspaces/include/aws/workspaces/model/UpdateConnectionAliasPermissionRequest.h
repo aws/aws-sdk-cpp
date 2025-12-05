@@ -70,9 +70,9 @@ class UpdateConnectionAliasPermissionRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   ConnectionAliasPermission m_connectionAliasPermission;
+  bool m_aliasIdHasBeenSet = false;
   bool m_connectionAliasPermissionHasBeenSet = false;
 };
 

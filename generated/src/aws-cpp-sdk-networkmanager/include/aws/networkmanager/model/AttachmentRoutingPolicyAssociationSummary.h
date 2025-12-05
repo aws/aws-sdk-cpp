@@ -119,15 +119,15 @@ class AttachmentRoutingPolicyAssociationSummary {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pendingRoutingPolicies;
-  bool m_pendingRoutingPoliciesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedRoutingPolicies;
-  bool m_associatedRoutingPoliciesHasBeenSet = false;
 
   Aws::String m_routingPolicyLabel;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_pendingRoutingPoliciesHasBeenSet = false;
+  bool m_associatedRoutingPoliciesHasBeenSet = false;
   bool m_routingPolicyLabelHasBeenSet = false;
 };
 

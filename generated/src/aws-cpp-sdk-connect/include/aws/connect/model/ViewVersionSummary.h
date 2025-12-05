@@ -155,24 +155,24 @@ class ViewVersionSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ViewType m_type{ViewType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_versionDescription;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_versionDescriptionHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class LoRaWANFuotaTaskGetInfo {
   ///@}
  private:
   Aws::String m_rfRegion;
-  bool m_rfRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_rfRegionHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

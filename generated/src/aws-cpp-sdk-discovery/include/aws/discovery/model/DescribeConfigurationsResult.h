@@ -68,9 +68,9 @@ class DescribeConfigurationsResult {
   ///@}
  private:
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -185,24 +185,24 @@ class ModifyInstanceMetadataOptionsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   HttpTokensState m_httpTokens{HttpTokensState::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   InstanceMetadataEndpointState m_httpEndpoint{InstanceMetadataEndpointState::NOT_SET};
-  bool m_httpEndpointHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   InstanceMetadataProtocolState m_httpProtocolIpv6{InstanceMetadataProtocolState::NOT_SET};
-  bool m_httpProtocolIpv6HasBeenSet = false;
 
   InstanceMetadataTagsState m_instanceMetadataTags{InstanceMetadataTagsState::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_httpProtocolIpv6HasBeenSet = false;
   bool m_instanceMetadataTagsHasBeenSet = false;
 };
 

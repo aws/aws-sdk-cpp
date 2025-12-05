@@ -62,9 +62,9 @@ class StartGameSessionPlacementResult {
   ///@}
  private:
   GameSessionPlacement m_gameSessionPlacement;
-  bool m_gameSessionPlacementHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameSessionPlacementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

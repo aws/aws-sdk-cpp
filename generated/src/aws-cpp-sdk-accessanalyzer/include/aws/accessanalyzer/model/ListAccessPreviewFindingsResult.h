@@ -85,12 +85,12 @@ class ListAccessPreviewFindingsResult {
   ///@}
  private:
   Aws::Vector<AccessPreviewFinding> m_findings;
-  bool m_findingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

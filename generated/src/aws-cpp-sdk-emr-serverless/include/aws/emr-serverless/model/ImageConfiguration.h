@@ -70,9 +70,9 @@ class ImageConfiguration {
   ///@}
  private:
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   Aws::String m_resolvedImageDigest;
+  bool m_imageUriHasBeenSet = false;
   bool m_resolvedImageDigestHasBeenSet = false;
 };
 

@@ -138,18 +138,18 @@ class ModelDashboardModel {
   ///@}
  private:
   Model m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::Vector<ModelDashboardEndpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   TransformJob m_lastBatchTransformJob;
-  bool m_lastBatchTransformJobHasBeenSet = false;
 
   Aws::Vector<ModelDashboardMonitoringSchedule> m_monitoringSchedules;
-  bool m_monitoringSchedulesHasBeenSet = false;
 
   ModelDashboardModelCard m_modelCard;
+  bool m_modelHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_lastBatchTransformJobHasBeenSet = false;
+  bool m_monitoringSchedulesHasBeenSet = false;
   bool m_modelCardHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class BatchDeleteDevicePositionHistoryRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceIds;
+  bool m_trackerNameHasBeenSet = false;
   bool m_deviceIdsHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class EnvironmentPlatform {
   ///@}
  private:
   PlatformType m_platform{PlatformType::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<EnvironmentLanguage> m_languages;
+  bool m_platformHasBeenSet = false;
   bool m_languagesHasBeenSet = false;
 };
 

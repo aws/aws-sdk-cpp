@@ -132,18 +132,18 @@ class CreateDetectorRequest : public GuardDutyRequest {
   ///@}
  private:
   bool m_enable{false};
-  bool m_enableHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
-  bool m_findingPublishingFrequencyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<DetectorFeatureConfiguration> m_features;
+  bool m_enableHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_findingPublishingFrequencyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
 };
 

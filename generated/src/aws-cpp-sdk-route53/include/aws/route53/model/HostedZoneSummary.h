@@ -95,12 +95,12 @@ class HostedZoneSummary {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   HostedZoneOwner m_owner;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

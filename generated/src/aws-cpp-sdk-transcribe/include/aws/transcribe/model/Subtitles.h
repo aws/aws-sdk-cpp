@@ -82,9 +82,9 @@ class Subtitles {
   ///@}
  private:
   Aws::Vector<SubtitleFormat> m_formats;
-  bool m_formatsHasBeenSet = false;
 
   int m_outputStartIndex{0};
+  bool m_formatsHasBeenSet = false;
   bool m_outputStartIndexHasBeenSet = false;
 };
 

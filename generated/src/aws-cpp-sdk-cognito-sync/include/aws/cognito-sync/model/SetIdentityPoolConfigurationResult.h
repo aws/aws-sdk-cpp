@@ -102,15 +102,15 @@ class SetIdentityPoolConfigurationResult {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   PushSync m_pushSync;
-  bool m_pushSyncHasBeenSet = false;
 
   CognitoStreams m_cognitoStreams;
-  bool m_cognitoStreamsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_pushSyncHasBeenSet = false;
+  bool m_cognitoStreamsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

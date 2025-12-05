@@ -97,12 +97,12 @@ class DocumentMetadata {
   ///@}
  private:
   MetadataSourceType m_type{MetadataSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<MetadataAttribute> m_inlineAttributes;
-  bool m_inlineAttributesHasBeenSet = false;
 
   CustomS3Location m_s3Location;
+  bool m_typeHasBeenSet = false;
+  bool m_inlineAttributesHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

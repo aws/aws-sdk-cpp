@@ -88,12 +88,12 @@ class App {
   ///@}
  private:
   Aws::String m_appName;
-  bool m_appNameHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   long long m_port{0};
+  bool m_appNameHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

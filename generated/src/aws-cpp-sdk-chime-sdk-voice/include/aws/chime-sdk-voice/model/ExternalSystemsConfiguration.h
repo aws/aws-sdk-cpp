@@ -81,9 +81,9 @@ class ExternalSystemsConfiguration {
   ///@}
  private:
   Aws::Vector<SessionBorderControllerType> m_sessionBorderControllerTypes;
-  bool m_sessionBorderControllerTypesHasBeenSet = false;
 
   Aws::Vector<ContactCenterSystemType> m_contactCenterSystemTypes;
+  bool m_sessionBorderControllerTypesHasBeenSet = false;
   bool m_contactCenterSystemTypesHasBeenSet = false;
 };
 

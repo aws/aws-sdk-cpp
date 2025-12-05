@@ -456,69 +456,69 @@ class GetJobResult {
   ///@}
  private:
   JobPrimaryStatus m_status{JobPrimaryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-  bool m_hyperParametersHasBeenSet = false;
 
   Aws::Vector<InputFileConfig> m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   JobOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   JobStoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   JobCheckpointConfig m_checkpointConfig;
-  bool m_checkpointConfigHasBeenSet = false;
 
   AlgorithmSpecification m_algorithmSpecification;
-  bool m_algorithmSpecificationHasBeenSet = false;
 
   InstanceConfig m_instanceConfig;
-  bool m_instanceConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   int m_billableDuration{0};
-  bool m_billableDurationHasBeenSet = false;
 
   DeviceConfig m_deviceConfig;
-  bool m_deviceConfigHasBeenSet = false;
 
   Aws::Vector<JobEventDetails> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   HybridJobQueueInfo m_queueInfo;
-  bool m_queueInfoHasBeenSet = false;
 
   Aws::Vector<Association> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_hyperParametersHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_checkpointConfigHasBeenSet = false;
+  bool m_algorithmSpecificationHasBeenSet = false;
+  bool m_instanceConfigHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_billableDurationHasBeenSet = false;
+  bool m_deviceConfigHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_queueInfoHasBeenSet = false;
+  bool m_associationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

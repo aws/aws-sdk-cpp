@@ -147,21 +147,21 @@ class AwsEfsAccessPointDetails {
   ///@}
  private:
   Aws::String m_accessPointId;
-  bool m_accessPointIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   AwsEfsAccessPointPosixUserDetails m_posixUser;
-  bool m_posixUserHasBeenSet = false;
 
   AwsEfsAccessPointRootDirectoryDetails m_rootDirectory;
+  bool m_accessPointIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_posixUserHasBeenSet = false;
   bool m_rootDirectoryHasBeenSet = false;
 };
 

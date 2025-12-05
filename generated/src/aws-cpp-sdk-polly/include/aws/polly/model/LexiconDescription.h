@@ -69,9 +69,9 @@ class LexiconDescription {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LexiconAttributes m_attributes;
+  bool m_nameHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

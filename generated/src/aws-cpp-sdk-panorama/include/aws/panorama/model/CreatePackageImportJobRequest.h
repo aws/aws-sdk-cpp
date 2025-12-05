@@ -128,18 +128,18 @@ class CreatePackageImportJobRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   PackageImportJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   Aws::Vector<JobResourceTags> m_jobTags;
-  bool m_jobTagsHasBeenSet = false;
 
   PackageImportJobType m_jobType{PackageImportJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   PackageImportJobOutputConfig m_outputConfig;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_jobTagsHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
 };
 

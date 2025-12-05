@@ -179,27 +179,27 @@ class ResourceComplianceSummaryItem {
   ///@}
  private:
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ComplianceStatus m_status{ComplianceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ComplianceSeverity m_overallSeverity{ComplianceSeverity::NOT_SET};
-  bool m_overallSeverityHasBeenSet = false;
 
   ComplianceExecutionSummary m_executionSummary;
-  bool m_executionSummaryHasBeenSet = false;
 
   CompliantSummary m_compliantSummary;
-  bool m_compliantSummaryHasBeenSet = false;
 
   NonCompliantSummary m_nonCompliantSummary;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_overallSeverityHasBeenSet = false;
+  bool m_executionSummaryHasBeenSet = false;
+  bool m_compliantSummaryHasBeenSet = false;
   bool m_nonCompliantSummaryHasBeenSet = false;
 };
 

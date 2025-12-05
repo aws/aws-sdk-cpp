@@ -76,12 +76,12 @@ class CreateAutomationRuleV2Result {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetConnectorResult {
   ///@}
  private:
   Connector m_connector;
-  bool m_connectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

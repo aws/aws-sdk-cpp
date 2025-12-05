@@ -101,15 +101,15 @@ class ServerStrategy {
   ///@}
  private:
   bool m_isPreferred{false};
-  bool m_isPreferredHasBeenSet = false;
 
   int m_numberOfApplicationComponents{0};
-  bool m_numberOfApplicationComponentsHasBeenSet = false;
 
   RecommendationSet m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   StrategyRecommendation m_status{StrategyRecommendation::NOT_SET};
+  bool m_isPreferredHasBeenSet = false;
+  bool m_numberOfApplicationComponentsHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

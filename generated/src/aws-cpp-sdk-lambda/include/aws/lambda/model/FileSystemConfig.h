@@ -72,9 +72,9 @@ class FileSystemConfig {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_localMountPath;
+  bool m_arnHasBeenSet = false;
   bool m_localMountPathHasBeenSet = false;
 };
 

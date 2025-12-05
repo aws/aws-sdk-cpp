@@ -90,12 +90,12 @@ class BatchGetCommandExecutionsResult {
   ///@}
  private:
   Aws::Vector<CommandExecution> m_commandExecutions;
-  bool m_commandExecutionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_commandExecutionsNotFound;
-  bool m_commandExecutionsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandExecutionsHasBeenSet = false;
+  bool m_commandExecutionsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

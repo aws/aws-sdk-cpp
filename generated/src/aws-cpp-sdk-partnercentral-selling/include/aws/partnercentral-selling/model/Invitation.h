@@ -86,12 +86,12 @@ class Invitation {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Receiver m_receiver;
-  bool m_receiverHasBeenSet = false;
 
   Payload m_payload;
+  bool m_messageHasBeenSet = false;
+  bool m_receiverHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

@@ -158,21 +158,21 @@ class CreateUpdatedImageRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_existingImageName;
-  bool m_existingImageNameHasBeenSet = false;
 
   Aws::String m_newImageName;
-  bool m_newImageNameHasBeenSet = false;
 
   Aws::String m_newImageDescription;
-  bool m_newImageDescriptionHasBeenSet = false;
 
   Aws::String m_newImageDisplayName;
-  bool m_newImageDisplayNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_newImageTags;
-  bool m_newImageTagsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_existingImageNameHasBeenSet = false;
+  bool m_newImageNameHasBeenSet = false;
+  bool m_newImageDescriptionHasBeenSet = false;
+  bool m_newImageDisplayNameHasBeenSet = false;
+  bool m_newImageTagsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

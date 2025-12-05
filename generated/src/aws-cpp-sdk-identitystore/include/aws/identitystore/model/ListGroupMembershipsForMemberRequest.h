@@ -112,15 +112,15 @@ class ListGroupMembershipsForMemberRequest : public IdentityStoreRequest {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   MemberId m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_memberIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

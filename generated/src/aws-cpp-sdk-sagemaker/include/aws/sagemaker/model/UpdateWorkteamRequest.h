@@ -154,18 +154,18 @@ class UpdateWorkteamRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_workteamName;
-  bool m_workteamNameHasBeenSet = false;
 
   Aws::Vector<MemberDefinition> m_memberDefinitions;
-  bool m_memberDefinitionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   WorkerAccessConfiguration m_workerAccessConfiguration;
+  bool m_workteamNameHasBeenSet = false;
+  bool m_memberDefinitionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
   bool m_workerAccessConfigurationHasBeenSet = false;
 };
 

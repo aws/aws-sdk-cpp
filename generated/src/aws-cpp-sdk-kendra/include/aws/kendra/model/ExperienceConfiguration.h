@@ -74,9 +74,9 @@ class ExperienceConfiguration {
   ///@}
  private:
   ContentSourceConfiguration m_contentSourceConfiguration;
-  bool m_contentSourceConfigurationHasBeenSet = false;
 
   UserIdentityConfiguration m_userIdentityConfiguration;
+  bool m_contentSourceConfigurationHasBeenSet = false;
   bool m_userIdentityConfigurationHasBeenSet = false;
 };
 

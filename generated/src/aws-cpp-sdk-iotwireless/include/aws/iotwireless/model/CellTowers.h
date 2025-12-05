@@ -158,18 +158,18 @@ class CellTowers {
   ///@}
  private:
   Aws::Vector<GsmObj> m_gsm;
-  bool m_gsmHasBeenSet = false;
 
   Aws::Vector<WcdmaObj> m_wcdma;
-  bool m_wcdmaHasBeenSet = false;
 
   Aws::Vector<TdscdmaObj> m_tdscdma;
-  bool m_tdscdmaHasBeenSet = false;
 
   Aws::Vector<LteObj> m_lte;
-  bool m_lteHasBeenSet = false;
 
   Aws::Vector<CdmaObj> m_cdma;
+  bool m_gsmHasBeenSet = false;
+  bool m_wcdmaHasBeenSet = false;
+  bool m_tdscdmaHasBeenSet = false;
+  bool m_lteHasBeenSet = false;
   bool m_cdmaHasBeenSet = false;
 };
 

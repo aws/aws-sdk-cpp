@@ -139,21 +139,21 @@ class ListResourceSnapshotJobsRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_engagementIdentifier;
-  bool m_engagementIdentifierHasBeenSet = false;
 
   ResourceSnapshotJobStatus m_status{ResourceSnapshotJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SortObject m_sort;
+  bool m_catalogHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_engagementIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

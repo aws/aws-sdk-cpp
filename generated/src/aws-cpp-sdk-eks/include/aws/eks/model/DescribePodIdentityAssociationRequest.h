@@ -65,9 +65,9 @@ class DescribePodIdentityAssociationRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_associationId;
+  bool m_clusterNameHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
 };
 

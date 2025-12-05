@@ -70,9 +70,9 @@ class RouteMajorRoadLabel {
   ///@}
  private:
   LocalizedString m_roadName;
-  bool m_roadNameHasBeenSet = false;
 
   RouteNumber m_routeNumber;
+  bool m_roadNameHasBeenSet = false;
   bool m_routeNumberHasBeenSet = false;
 };
 

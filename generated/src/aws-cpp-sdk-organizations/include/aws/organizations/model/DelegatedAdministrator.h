@@ -202,30 +202,30 @@ class DelegatedAdministrator {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AccountStatus m_status{AccountStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AccountState m_state{AccountState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   AccountJoinedMethod m_joinedMethod{AccountJoinedMethod::NOT_SET};
-  bool m_joinedMethodHasBeenSet = false;
 
   Aws::Utils::DateTime m_joinedTimestamp{};
-  bool m_joinedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_delegationEnabledDate{};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_joinedMethodHasBeenSet = false;
+  bool m_joinedTimestampHasBeenSet = false;
   bool m_delegationEnabledDateHasBeenSet = false;
 };
 

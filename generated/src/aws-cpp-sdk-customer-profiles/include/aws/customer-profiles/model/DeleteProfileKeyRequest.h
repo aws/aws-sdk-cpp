@@ -108,15 +108,15 @@ class DeleteProfileKeyRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_profileIdHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

@@ -207,30 +207,30 @@ class UserByPermissionGroup {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   UserStatus m_status{UserStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   UserType m_type{UserType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ApiAccess m_apiAccess{ApiAccess::NOT_SET};
-  bool m_apiAccessHasBeenSet = false;
 
   Aws::String m_apiAccessPrincipalArn;
-  bool m_apiAccessPrincipalArnHasBeenSet = false;
 
   PermissionGroupMembershipStatus m_membershipStatus{PermissionGroupMembershipStatus::NOT_SET};
+  bool m_userIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_apiAccessHasBeenSet = false;
+  bool m_apiAccessPrincipalArnHasBeenSet = false;
   bool m_membershipStatusHasBeenSet = false;
 };
 

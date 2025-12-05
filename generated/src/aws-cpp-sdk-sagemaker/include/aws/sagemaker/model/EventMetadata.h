@@ -108,15 +108,15 @@ class EventMetadata {
   ///@}
  private:
   ClusterMetadata m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   InstanceGroupMetadata m_instanceGroup;
-  bool m_instanceGroupHasBeenSet = false;
 
   InstanceGroupScalingMetadata m_instanceGroupScaling;
-  bool m_instanceGroupScalingHasBeenSet = false;
 
   InstanceMetadata m_instance;
+  bool m_clusterHasBeenSet = false;
+  bool m_instanceGroupHasBeenSet = false;
+  bool m_instanceGroupScalingHasBeenSet = false;
   bool m_instanceHasBeenSet = false;
 };
 

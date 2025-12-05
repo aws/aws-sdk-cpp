@@ -78,9 +78,9 @@ class Conflict {
   ///@}
  private:
   ConflictMetadata m_conflictMetadata;
-  bool m_conflictMetadataHasBeenSet = false;
 
   Aws::Vector<MergeHunk> m_mergeHunks;
+  bool m_conflictMetadataHasBeenSet = false;
   bool m_mergeHunksHasBeenSet = false;
 };
 

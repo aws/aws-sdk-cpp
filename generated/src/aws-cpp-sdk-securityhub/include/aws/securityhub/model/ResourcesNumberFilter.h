@@ -66,9 +66,9 @@ class ResourcesNumberFilter {
   ///@}
  private:
   ResourcesNumberField m_fieldName{ResourcesNumberField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   NumberFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

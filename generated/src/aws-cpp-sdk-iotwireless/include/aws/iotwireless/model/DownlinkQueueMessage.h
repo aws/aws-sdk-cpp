@@ -104,15 +104,15 @@ class DownlinkQueueMessage {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   int m_transmitMode{0};
-  bool m_transmitModeHasBeenSet = false;
 
   Aws::String m_receivedAt;
-  bool m_receivedAtHasBeenSet = false;
 
   LoRaWANSendDataToDevice m_loRaWAN;
+  bool m_messageIdHasBeenSet = false;
+  bool m_transmitModeHasBeenSet = false;
+  bool m_receivedAtHasBeenSet = false;
   bool m_loRaWANHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class RemoveAttributesFromFindingsRequest : public InspectorRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_findingArns;
-  bool m_findingArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeKeys;
+  bool m_findingArnsHasBeenSet = false;
   bool m_attributeKeysHasBeenSet = false;
 };
 

@@ -278,42 +278,42 @@ class DBSnapshotTenantDatabase {
   ///@}
  private:
   Aws::String m_dBSnapshotIdentifier;
-  bool m_dBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dbiResourceId;
-  bool m_dbiResourceIdHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_tenantDatabaseCreateTime{};
-  bool m_tenantDatabaseCreateTimeHasBeenSet = false;
 
   Aws::String m_tenantDBName;
-  bool m_tenantDBNameHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_tenantDatabaseResourceId;
-  bool m_tenantDatabaseResourceIdHasBeenSet = false;
 
   Aws::String m_characterSetName;
-  bool m_characterSetNameHasBeenSet = false;
 
   Aws::String m_dBSnapshotTenantDatabaseARN;
-  bool m_dBSnapshotTenantDatabaseARNHasBeenSet = false;
 
   Aws::String m_ncharCharacterSetName;
-  bool m_ncharCharacterSetNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_dBSnapshotIdentifierHasBeenSet = false;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_dbiResourceIdHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_tenantDatabaseCreateTimeHasBeenSet = false;
+  bool m_tenantDBNameHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_tenantDatabaseResourceIdHasBeenSet = false;
+  bool m_characterSetNameHasBeenSet = false;
+  bool m_dBSnapshotTenantDatabaseARNHasBeenSet = false;
+  bool m_ncharCharacterSetNameHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

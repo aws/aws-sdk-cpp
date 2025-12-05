@@ -70,9 +70,9 @@ class ModifyCertificatesRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_certificateIdentifier;
-  bool m_certificateIdentifierHasBeenSet = false;
 
   bool m_removeCustomerOverride{false};
+  bool m_certificateIdentifierHasBeenSet = false;
   bool m_removeCustomerOverrideHasBeenSet = false;
 };
 

@@ -267,30 +267,30 @@ class GetMetricStatisticsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::Vector<Statistic> m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_extendedStatistics;
-  bool m_extendedStatisticsHasBeenSet = false;
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_extendedStatisticsHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

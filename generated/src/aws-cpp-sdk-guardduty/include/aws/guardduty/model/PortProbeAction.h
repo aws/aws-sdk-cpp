@@ -75,9 +75,9 @@ class PortProbeAction {
   ///@}
  private:
   bool m_blocked{false};
-  bool m_blockedHasBeenSet = false;
 
   Aws::Vector<PortProbeDetail> m_portProbeDetails;
+  bool m_blockedHasBeenSet = false;
   bool m_portProbeDetailsHasBeenSet = false;
 };
 

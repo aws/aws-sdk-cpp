@@ -71,9 +71,9 @@ class InstanceConnectEndpointDnsNames {
   ///@}
  private:
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   Aws::String m_fipsDnsName;
+  bool m_dnsNameHasBeenSet = false;
   bool m_fipsDnsNameHasBeenSet = false;
 };
 

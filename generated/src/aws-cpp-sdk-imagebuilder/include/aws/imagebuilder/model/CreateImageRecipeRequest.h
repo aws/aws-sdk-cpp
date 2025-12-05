@@ -278,36 +278,36 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::Vector<ComponentConfiguration> m_components;
-  bool m_componentsHasBeenSet = false;
 
   Aws::String m_parentImage;
-  bool m_parentImageHasBeenSet = false;
 
   Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
-  bool m_additionalInstanceConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_amiTags;
-  bool m_amiTagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_parentImageHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
+  bool m_additionalInstanceConfigurationHasBeenSet = false;
+  bool m_amiTagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -84,12 +84,12 @@ class ListControlOperationsResult {
   ///@}
  private:
   Aws::Vector<ControlOperationSummary> m_controlOperations;
-  bool m_controlOperationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlOperationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

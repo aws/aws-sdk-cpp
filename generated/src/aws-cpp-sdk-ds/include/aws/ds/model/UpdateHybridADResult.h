@@ -78,12 +78,12 @@ class UpdateHybridADResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

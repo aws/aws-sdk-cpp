@@ -60,9 +60,9 @@ class GetAccessorResult {
   ///@}
  private:
   Accessor m_accessor;
-  bool m_accessorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,9 +94,9 @@ class ResponseResourceMetricKey {
   ///@}
  private:
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dimensions;
+  bool m_metricHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

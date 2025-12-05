@@ -93,12 +93,12 @@ class CrossRegionS3RestoreSourcesAccess {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv4Addresses;
-  bool m_ipv4AddressesHasBeenSet = false;
 
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
+  bool m_regionHasBeenSet = false;
+  bool m_ipv4AddressesHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

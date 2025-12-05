@@ -211,33 +211,33 @@ class GetBotChannelAssociationResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_botAlias;
-  bool m_botAliasHasBeenSet = false;
 
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   ChannelType m_type{ChannelType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_botConfiguration;
-  bool m_botConfigurationHasBeenSet = false;
 
   ChannelStatus m_status{ChannelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_botAliasHasBeenSet = false;
+  bool m_botNameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_botConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class UnshareApplicationRequest : public ServerlessApplicationRepositoryRequest 
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_organizationId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_organizationIdHasBeenSet = false;
 };
 

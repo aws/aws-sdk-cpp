@@ -201,30 +201,30 @@ class UpdateMissionProfileRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_missionProfileId;
-  bool m_missionProfileIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_contactPrePassDurationSeconds{0};
-  bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
   int m_contactPostPassDurationSeconds{0};
-  bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
   int m_minimumViableContactDurationSeconds{0};
-  bool m_minimumViableContactDurationSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_dataflowEdges;
-  bool m_dataflowEdgesHasBeenSet = false;
 
   Aws::String m_trackingConfigArn;
-  bool m_trackingConfigArnHasBeenSet = false;
 
   KmsKey m_streamsKmsKey;
-  bool m_streamsKmsKeyHasBeenSet = false;
 
   Aws::String m_streamsKmsRole;
+  bool m_missionProfileIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contactPrePassDurationSecondsHasBeenSet = false;
+  bool m_contactPostPassDurationSecondsHasBeenSet = false;
+  bool m_minimumViableContactDurationSecondsHasBeenSet = false;
+  bool m_dataflowEdgesHasBeenSet = false;
+  bool m_trackingConfigArnHasBeenSet = false;
+  bool m_streamsKmsKeyHasBeenSet = false;
   bool m_streamsKmsRoleHasBeenSet = false;
 };
 

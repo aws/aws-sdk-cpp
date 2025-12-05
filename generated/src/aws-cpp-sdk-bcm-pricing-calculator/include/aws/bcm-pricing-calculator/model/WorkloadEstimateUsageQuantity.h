@@ -67,9 +67,9 @@ class WorkloadEstimateUsageQuantity {
   ///@}
  private:
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   double m_amount{0.0};
+  bool m_unitHasBeenSet = false;
   bool m_amountHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class RetentionSettings {
   ///@}
  private:
   RoomRetentionSettings m_roomRetentionSettings;
-  bool m_roomRetentionSettingsHasBeenSet = false;
 
   ConversationRetentionSettings m_conversationRetentionSettings;
+  bool m_roomRetentionSettingsHasBeenSet = false;
   bool m_conversationRetentionSettingsHasBeenSet = false;
 };
 

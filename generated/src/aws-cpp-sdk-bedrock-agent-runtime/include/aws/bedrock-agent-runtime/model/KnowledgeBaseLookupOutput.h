@@ -77,9 +77,9 @@ class KnowledgeBaseLookupOutput {
   ///@}
  private:
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<RetrievedReference> m_retrievedReferences;
+  bool m_metadataHasBeenSet = false;
   bool m_retrievedReferencesHasBeenSet = false;
 };
 

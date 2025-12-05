@@ -130,18 +130,18 @@ class DescribeAddressesAttributeRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allocationIds;
-  bool m_allocationIdsHasBeenSet = false;
 
   AddressAttributeName m_attribute{AddressAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_allocationIdsHasBeenSet = false;
+  bool m_attributeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

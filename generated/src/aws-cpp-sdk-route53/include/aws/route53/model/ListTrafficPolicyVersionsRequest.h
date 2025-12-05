@@ -105,12 +105,12 @@ class ListTrafficPolicyVersionsRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_trafficPolicyVersionMarker;
-  bool m_trafficPolicyVersionMarkerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_idHasBeenSet = false;
+  bool m_trafficPolicyVersionMarkerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

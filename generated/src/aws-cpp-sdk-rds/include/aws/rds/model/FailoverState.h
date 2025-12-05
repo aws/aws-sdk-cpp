@@ -122,15 +122,15 @@ class FailoverState {
   ///@}
  private:
   FailoverStatus m_status{FailoverStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_fromDbClusterArn;
-  bool m_fromDbClusterArnHasBeenSet = false;
 
   Aws::String m_toDbClusterArn;
-  bool m_toDbClusterArnHasBeenSet = false;
 
   bool m_isDataLossAllowed{false};
+  bool m_statusHasBeenSet = false;
+  bool m_fromDbClusterArnHasBeenSet = false;
+  bool m_toDbClusterArnHasBeenSet = false;
   bool m_isDataLossAllowedHasBeenSet = false;
 };
 

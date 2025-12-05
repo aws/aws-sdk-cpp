@@ -93,12 +93,12 @@ class DescribeReplicationInstancesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReplicationInstance> m_replicationInstances;
-  bool m_replicationInstancesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_replicationInstancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

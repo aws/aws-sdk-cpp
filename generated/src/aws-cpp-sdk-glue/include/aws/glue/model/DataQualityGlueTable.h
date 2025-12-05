@@ -153,21 +153,21 @@ class DataQualityGlueTable {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalOptions;
-  bool m_additionalOptionsHasBeenSet = false;
 
   Aws::String m_preProcessingQuery;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_additionalOptionsHasBeenSet = false;
   bool m_preProcessingQueryHasBeenSet = false;
 };
 

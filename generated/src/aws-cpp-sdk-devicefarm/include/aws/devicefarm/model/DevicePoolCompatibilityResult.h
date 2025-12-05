@@ -92,12 +92,12 @@ class DevicePoolCompatibilityResult {
   ///@}
  private:
   Device m_device;
-  bool m_deviceHasBeenSet = false;
 
   bool m_compatible{false};
-  bool m_compatibleHasBeenSet = false;
 
   Aws::Vector<IncompatibilityMessage> m_incompatibilityMessages;
+  bool m_deviceHasBeenSet = false;
+  bool m_compatibleHasBeenSet = false;
   bool m_incompatibilityMessagesHasBeenSet = false;
 };
 

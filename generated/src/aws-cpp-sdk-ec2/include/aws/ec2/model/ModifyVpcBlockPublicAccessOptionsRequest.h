@@ -77,9 +77,9 @@ class ModifyVpcBlockPublicAccessOptionsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   InternetGatewayBlockMode m_internetGatewayBlockMode{InternetGatewayBlockMode::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
   bool m_internetGatewayBlockModeHasBeenSet = false;
 };
 

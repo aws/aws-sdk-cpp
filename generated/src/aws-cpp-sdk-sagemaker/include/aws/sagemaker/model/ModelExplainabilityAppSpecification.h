@@ -97,12 +97,12 @@ class ModelExplainabilityAppSpecification {
   ///@}
  private:
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   Aws::String m_configUri;
-  bool m_configUriHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
+  bool m_imageUriHasBeenSet = false;
+  bool m_configUriHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
 };
 

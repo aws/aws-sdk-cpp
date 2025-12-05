@@ -125,18 +125,18 @@ class GetExecutionHistoryRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_reverseOrder{false};
-  bool m_reverseOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includeExecutionData{false};
+  bool m_executionArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_reverseOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_includeExecutionDataHasBeenSet = false;
 };
 

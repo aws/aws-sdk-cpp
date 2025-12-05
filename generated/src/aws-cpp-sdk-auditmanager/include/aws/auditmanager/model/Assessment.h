@@ -134,18 +134,18 @@ class Assessment {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AWSAccount m_awsAccount;
-  bool m_awsAccountHasBeenSet = false;
 
   AssessmentMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   AssessmentFramework m_framework;
-  bool m_frameworkHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_awsAccountHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

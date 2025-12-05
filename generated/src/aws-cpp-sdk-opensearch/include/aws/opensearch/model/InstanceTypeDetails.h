@@ -181,27 +181,27 @@ class InstanceTypeDetails {
   ///@}
  private:
   OpenSearchPartitionInstanceType m_instanceType{OpenSearchPartitionInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   bool m_encryptionEnabled{false};
-  bool m_encryptionEnabledHasBeenSet = false;
 
   bool m_cognitoEnabled{false};
-  bool m_cognitoEnabledHasBeenSet = false;
 
   bool m_appLogsEnabled{false};
-  bool m_appLogsEnabledHasBeenSet = false;
 
   bool m_advancedSecurityEnabled{false};
-  bool m_advancedSecurityEnabledHasBeenSet = false;
 
   bool m_warmEnabled{false};
-  bool m_warmEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceRole;
-  bool m_instanceRoleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_encryptionEnabledHasBeenSet = false;
+  bool m_cognitoEnabledHasBeenSet = false;
+  bool m_appLogsEnabledHasBeenSet = false;
+  bool m_advancedSecurityEnabledHasBeenSet = false;
+  bool m_warmEnabledHasBeenSet = false;
+  bool m_instanceRoleHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
 };
 

@@ -217,33 +217,33 @@ class UpdateTableRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TableInput m_tableInput;
-  bool m_tableInputHasBeenSet = false;
 
   bool m_skipArchive{false};
-  bool m_skipArchiveHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   ViewUpdateAction m_viewUpdateAction{ViewUpdateAction::NOT_SET};
-  bool m_viewUpdateActionHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   UpdateOpenTableFormatInput m_updateOpenTableFormatInput;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tableInputHasBeenSet = false;
+  bool m_skipArchiveHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_viewUpdateActionHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_updateOpenTableFormatInputHasBeenSet = false;
 };
 

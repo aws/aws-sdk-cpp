@@ -94,12 +94,12 @@ class BatchAssociateApprovalRuleTemplateWithRepositoriesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_associatedRepositoryNames;
-  bool m_associatedRepositoryNamesHasBeenSet = false;
 
   Aws::Vector<BatchAssociateApprovalRuleTemplateWithRepositoriesError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedRepositoryNamesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

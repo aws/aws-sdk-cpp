@@ -108,15 +108,15 @@ class ClusterSnapshotCopyStatus {
   ///@}
  private:
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   long long m_retentionPeriod{0};
-  bool m_retentionPeriodHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::String m_snapshotCopyGrantName;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
   bool m_snapshotCopyGrantNameHasBeenSet = false;
 };
 

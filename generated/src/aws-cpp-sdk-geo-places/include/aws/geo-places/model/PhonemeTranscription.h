@@ -88,12 +88,12 @@ class PhonemeTranscription {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   bool m_preferred{false};
+  bool m_valueHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
   bool m_preferredHasBeenSet = false;
 };
 

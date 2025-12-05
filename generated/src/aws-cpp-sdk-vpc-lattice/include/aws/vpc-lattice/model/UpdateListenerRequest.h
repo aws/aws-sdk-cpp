@@ -84,12 +84,12 @@ class UpdateListenerRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::String m_listenerIdentifier;
-  bool m_listenerIdentifierHasBeenSet = false;
 
   RuleAction m_defaultAction;
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_listenerIdentifierHasBeenSet = false;
   bool m_defaultActionHasBeenSet = false;
 };
 

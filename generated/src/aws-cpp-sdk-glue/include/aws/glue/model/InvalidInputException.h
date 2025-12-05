@@ -66,9 +66,9 @@ class InvalidInputException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   bool m_fromFederationSource{false};
+  bool m_messageHasBeenSet = false;
   bool m_fromFederationSourceHasBeenSet = false;
 };
 

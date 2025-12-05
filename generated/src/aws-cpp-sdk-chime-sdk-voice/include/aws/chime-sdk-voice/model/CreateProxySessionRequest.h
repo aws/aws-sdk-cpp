@@ -185,27 +185,27 @@ class CreateProxySessionRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_participantPhoneNumbers;
-  bool m_participantPhoneNumbersHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_expiryMinutes{0};
-  bool m_expiryMinutesHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   NumberSelectionBehavior m_numberSelectionBehavior{NumberSelectionBehavior::NOT_SET};
-  bool m_numberSelectionBehaviorHasBeenSet = false;
 
   GeoMatchLevel m_geoMatchLevel{GeoMatchLevel::NOT_SET};
-  bool m_geoMatchLevelHasBeenSet = false;
 
   GeoMatchParams m_geoMatchParams;
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_participantPhoneNumbersHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_expiryMinutesHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_numberSelectionBehaviorHasBeenSet = false;
+  bool m_geoMatchLevelHasBeenSet = false;
   bool m_geoMatchParamsHasBeenSet = false;
 };
 

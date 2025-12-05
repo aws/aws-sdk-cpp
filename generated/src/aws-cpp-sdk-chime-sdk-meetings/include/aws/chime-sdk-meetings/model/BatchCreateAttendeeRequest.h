@@ -73,9 +73,9 @@ class BatchCreateAttendeeRequest : public ChimeSDKMeetingsRequest {
   ///@}
  private:
   Aws::String m_meetingId;
-  bool m_meetingIdHasBeenSet = false;
 
   Aws::Vector<CreateAttendeeRequestItem> m_attendees;
+  bool m_meetingIdHasBeenSet = false;
   bool m_attendeesHasBeenSet = false;
 };
 

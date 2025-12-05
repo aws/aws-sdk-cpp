@@ -115,15 +115,15 @@ class AbsoluteTimeRange {
   ///@}
  private:
   long long m_startTime{0};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_endTime{0};
-  bool m_endTimeHasBeenSet = false;
 
   long long m_first{0};
-  bool m_firstHasBeenSet = false;
 
   long long m_last{0};
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_firstHasBeenSet = false;
   bool m_lastHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class UntagColumnOperation {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::Vector<ColumnTagName> m_tagNames;
+  bool m_columnNameHasBeenSet = false;
   bool m_tagNamesHasBeenSet = false;
 };
 

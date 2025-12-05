@@ -140,18 +140,18 @@ class GetComplianceDetailsByResourceRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<ComplianceType> m_complianceTypes;
-  bool m_complianceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resourceEvaluationId;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_complianceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_resourceEvaluationIdHasBeenSet = false;
 };
 

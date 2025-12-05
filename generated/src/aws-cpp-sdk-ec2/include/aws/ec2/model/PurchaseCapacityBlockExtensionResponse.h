@@ -67,9 +67,9 @@ class PurchaseCapacityBlockExtensionResponse {
   ///@}
  private:
   Aws::Vector<CapacityBlockExtension> m_capacityBlockExtensions;
-  bool m_capacityBlockExtensionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityBlockExtensionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

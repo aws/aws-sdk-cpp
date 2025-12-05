@@ -66,9 +66,9 @@ class UpdateSuiteDefinitionRequest : public IoTDeviceAdvisorRequest {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   SuiteDefinitionConfiguration m_suiteDefinitionConfiguration;
+  bool m_suiteDefinitionIdHasBeenSet = false;
   bool m_suiteDefinitionConfigurationHasBeenSet = false;
 };
 

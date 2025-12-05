@@ -77,12 +77,12 @@ class RegisterUsageResult {
   ///@}
  private:
   Aws::Utils::DateTime m_publicKeyRotationTimestamp{};
-  bool m_publicKeyRotationTimestampHasBeenSet = false;
 
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_publicKeyRotationTimestampHasBeenSet = false;
+  bool m_signatureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

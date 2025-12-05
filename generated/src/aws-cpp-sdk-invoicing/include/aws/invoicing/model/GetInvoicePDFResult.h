@@ -61,9 +61,9 @@ class GetInvoicePDFResult {
   ///@}
  private:
   InvoicePDF m_invoicePDF;
-  bool m_invoicePDFHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invoicePDFHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

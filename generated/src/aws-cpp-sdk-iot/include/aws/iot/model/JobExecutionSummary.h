@@ -139,21 +139,21 @@ class JobExecutionSummary {
   ///@}
  private:
   JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_queuedAt{};
-  bool m_queuedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   long long m_executionNumber{0};
-  bool m_executionNumberHasBeenSet = false;
 
   int m_retryAttempt{0};
+  bool m_statusHasBeenSet = false;
+  bool m_queuedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_executionNumberHasBeenSet = false;
   bool m_retryAttemptHasBeenSet = false;
 };
 

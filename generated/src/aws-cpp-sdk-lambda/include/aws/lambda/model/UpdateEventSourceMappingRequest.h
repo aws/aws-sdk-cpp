@@ -475,66 +475,66 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_uUID;
-  bool m_uUIDHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   FilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   int m_maximumBatchingWindowInSeconds{0};
-  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
   DestinationConfig m_destinationConfig;
-  bool m_destinationConfigHasBeenSet = false;
 
   int m_maximumRecordAgeInSeconds{0};
-  bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
   bool m_bisectBatchOnFunctionError{false};
-  bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
 
   int m_maximumRetryAttempts{0};
-  bool m_maximumRetryAttemptsHasBeenSet = false;
 
   int m_parallelizationFactor{0};
-  bool m_parallelizationFactorHasBeenSet = false;
 
   Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
-  bool m_sourceAccessConfigurationsHasBeenSet = false;
 
   int m_tumblingWindowInSeconds{0};
-  bool m_tumblingWindowInSecondsHasBeenSet = false;
 
   Aws::Vector<FunctionResponseType> m_functionResponseTypes;
-  bool m_functionResponseTypesHasBeenSet = false;
 
   ScalingConfig m_scalingConfig;
-  bool m_scalingConfigHasBeenSet = false;
 
   AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
-  bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
 
   SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
-  bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
 
   DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
-  bool m_documentDBEventSourceConfigHasBeenSet = false;
 
   Aws::String m_kMSKeyArn;
-  bool m_kMSKeyArnHasBeenSet = false;
 
   EventSourceMappingMetricsConfig m_metricsConfig;
-  bool m_metricsConfigHasBeenSet = false;
 
   ProvisionedPollerConfig m_provisionedPollerConfig;
+  bool m_uUIDHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_batchSizeHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+  bool m_destinationConfigHasBeenSet = false;
+  bool m_maximumRecordAgeInSecondsHasBeenSet = false;
+  bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
+  bool m_maximumRetryAttemptsHasBeenSet = false;
+  bool m_parallelizationFactorHasBeenSet = false;
+  bool m_sourceAccessConfigurationsHasBeenSet = false;
+  bool m_tumblingWindowInSecondsHasBeenSet = false;
+  bool m_functionResponseTypesHasBeenSet = false;
+  bool m_scalingConfigHasBeenSet = false;
+  bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
+  bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
+  bool m_documentDBEventSourceConfigHasBeenSet = false;
+  bool m_kMSKeyArnHasBeenSet = false;
+  bool m_metricsConfigHasBeenSet = false;
   bool m_provisionedPollerConfigHasBeenSet = false;
 };
 

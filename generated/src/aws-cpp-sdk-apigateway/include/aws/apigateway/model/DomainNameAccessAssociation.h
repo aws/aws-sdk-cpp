@@ -149,21 +149,21 @@ class DomainNameAccessAssociation {
   ///@}
  private:
   Aws::String m_domainNameAccessAssociationArn;
-  bool m_domainNameAccessAssociationArnHasBeenSet = false;
 
   Aws::String m_domainNameArn;
-  bool m_domainNameArnHasBeenSet = false;
 
   AccessAssociationSourceType m_accessAssociationSourceType{AccessAssociationSourceType::NOT_SET};
-  bool m_accessAssociationSourceTypeHasBeenSet = false;
 
   Aws::String m_accessAssociationSource;
-  bool m_accessAssociationSourceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameAccessAssociationArnHasBeenSet = false;
+  bool m_domainNameArnHasBeenSet = false;
+  bool m_accessAssociationSourceTypeHasBeenSet = false;
+  bool m_accessAssociationSourceHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

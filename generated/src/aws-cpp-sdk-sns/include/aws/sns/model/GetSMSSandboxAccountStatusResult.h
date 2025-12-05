@@ -58,9 +58,9 @@ class GetSMSSandboxAccountStatusResult {
   ///@}
  private:
   bool m_isInSandbox{false};
-  bool m_isInSandboxHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_isInSandboxHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

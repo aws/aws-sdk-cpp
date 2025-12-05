@@ -65,9 +65,9 @@ class DeleteAssessmentReportRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_assessmentReportId;
+  bool m_assessmentIdHasBeenSet = false;
   bool m_assessmentReportIdHasBeenSet = false;
 };
 

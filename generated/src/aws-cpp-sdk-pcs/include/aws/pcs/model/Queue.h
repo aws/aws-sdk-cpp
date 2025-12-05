@@ -241,33 +241,33 @@ class Queue {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   QueueStatus m_status{QueueStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ComputeNodeGroupConfiguration> m_computeNodeGroupConfigurations;
-  bool m_computeNodeGroupConfigurationsHasBeenSet = false;
 
   QueueSlurmConfiguration m_slurmConfiguration;
-  bool m_slurmConfigurationHasBeenSet = false;
 
   Aws::Vector<ErrorInfo> m_errorInfo;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_computeNodeGroupConfigurationsHasBeenSet = false;
+  bool m_slurmConfigurationHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

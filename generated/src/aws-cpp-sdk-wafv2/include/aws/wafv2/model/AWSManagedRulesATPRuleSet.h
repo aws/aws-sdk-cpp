@@ -129,15 +129,15 @@ class AWSManagedRulesATPRuleSet {
   ///@}
  private:
   Aws::String m_loginPath;
-  bool m_loginPathHasBeenSet = false;
 
   RequestInspection m_requestInspection;
-  bool m_requestInspectionHasBeenSet = false;
 
   ResponseInspection m_responseInspection;
-  bool m_responseInspectionHasBeenSet = false;
 
   bool m_enableRegexInPath{false};
+  bool m_loginPathHasBeenSet = false;
+  bool m_requestInspectionHasBeenSet = false;
+  bool m_responseInspectionHasBeenSet = false;
   bool m_enableRegexInPathHasBeenSet = false;
 };
 

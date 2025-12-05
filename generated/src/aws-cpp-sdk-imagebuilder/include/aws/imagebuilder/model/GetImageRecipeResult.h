@@ -81,12 +81,12 @@ class GetImageRecipeResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ImageRecipe m_imageRecipe;
-  bool m_imageRecipeHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imageRecipeHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;
 };
 

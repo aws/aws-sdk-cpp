@@ -117,15 +117,15 @@ class MessageComponents {
   ///@}
  private:
   Aws::String m_headline;
-  bool m_headlineHasBeenSet = false;
 
   Aws::String m_paragraphSummary;
-  bool m_paragraphSummaryHasBeenSet = false;
 
   Aws::String m_completeDescription;
-  bool m_completeDescriptionHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
+  bool m_headlineHasBeenSet = false;
+  bool m_paragraphSummaryHasBeenSet = false;
+  bool m_completeDescriptionHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

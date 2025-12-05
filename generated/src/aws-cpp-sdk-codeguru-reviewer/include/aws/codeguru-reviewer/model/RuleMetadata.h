@@ -132,18 +132,18 @@ class RuleMetadata {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_shortDescription;
-  bool m_shortDescriptionHasBeenSet = false;
 
   Aws::String m_longDescription;
-  bool m_longDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ruleTags;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
   bool m_ruleTagsHasBeenSet = false;
 };
 

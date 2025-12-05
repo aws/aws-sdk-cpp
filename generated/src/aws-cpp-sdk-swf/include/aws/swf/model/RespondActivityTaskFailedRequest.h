@@ -89,12 +89,12 @@ class RespondActivityTaskFailedRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_details;
+  bool m_taskTokenHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

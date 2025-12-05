@@ -71,9 +71,9 @@ class DeleteIpamExternalResourceVerificationTokenRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamExternalResourceVerificationTokenId;
+  bool m_dryRunHasBeenSet = false;
   bool m_ipamExternalResourceVerificationTokenIdHasBeenSet = false;
 };
 

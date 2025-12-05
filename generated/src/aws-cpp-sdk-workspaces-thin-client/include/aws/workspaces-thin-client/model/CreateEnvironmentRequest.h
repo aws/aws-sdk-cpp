@@ -255,36 +255,36 @@ class CreateEnvironmentRequest : public WorkSpacesThinClientRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_desktopArn;
-  bool m_desktopArnHasBeenSet = false;
 
   Aws::String m_desktopEndpoint;
-  bool m_desktopEndpointHasBeenSet = false;
 
   SoftwareSetUpdateSchedule m_softwareSetUpdateSchedule{SoftwareSetUpdateSchedule::NOT_SET};
-  bool m_softwareSetUpdateScheduleHasBeenSet = false;
 
   MaintenanceWindow m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   SoftwareSetUpdateMode m_softwareSetUpdateMode{SoftwareSetUpdateMode::NOT_SET};
-  bool m_softwareSetUpdateModeHasBeenSet = false;
 
   Aws::String m_desiredSoftwareSetId;
-  bool m_desiredSoftwareSetIdHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_deviceCreationTags;
+  bool m_nameHasBeenSet = false;
+  bool m_desktopArnHasBeenSet = false;
+  bool m_desktopEndpointHasBeenSet = false;
+  bool m_softwareSetUpdateScheduleHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_softwareSetUpdateModeHasBeenSet = false;
+  bool m_desiredSoftwareSetIdHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_deviceCreationTagsHasBeenSet = false;
 };
 

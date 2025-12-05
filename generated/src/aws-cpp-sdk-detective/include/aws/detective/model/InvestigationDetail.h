@@ -161,24 +161,24 @@ class InvestigationDetail {
   ///@}
  private:
   Aws::String m_investigationId;
-  bool m_investigationIdHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   EntityType m_entityType{EntityType::NOT_SET};
+  bool m_investigationIdHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_entityArnHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
 };
 

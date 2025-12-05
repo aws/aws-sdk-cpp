@@ -73,9 +73,9 @@ class AwsDynamoDbTableBillingModeSummary {
   ///@}
  private:
   Aws::String m_billingMode;
-  bool m_billingModeHasBeenSet = false;
 
   Aws::String m_lastUpdateToPayPerRequestDateTime;
+  bool m_billingModeHasBeenSet = false;
   bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet = false;
 };
 

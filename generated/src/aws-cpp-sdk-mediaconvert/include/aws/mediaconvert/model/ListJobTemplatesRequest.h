@@ -126,18 +126,18 @@ class ListJobTemplatesRequest : public MediaConvertRequest {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   JobTemplateListBy m_listBy{JobTemplateListBy::NOT_SET};
-  bool m_listByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Order m_order{Order::NOT_SET};
+  bool m_categoryHasBeenSet = false;
+  bool m_listByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

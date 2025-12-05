@@ -238,33 +238,33 @@ class CreateJobTemplateRequest : public MediaConvertRequest {
   ///@}
  private:
   AccelerationSettings m_accelerationSettings;
-  bool m_accelerationSettingsHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<HopDestination> m_hopDestinations;
-  bool m_hopDestinationsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_queue;
-  bool m_queueHasBeenSet = false;
 
   JobTemplateSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   StatusUpdateInterval m_statusUpdateInterval{StatusUpdateInterval::NOT_SET};
-  bool m_statusUpdateIntervalHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_accelerationSettingsHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_hopDestinationsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_queueHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_statusUpdateIntervalHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -139,15 +139,15 @@ class ContainerOverrides {
   ///@}
  private:
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::Vector<ResourceRequirement> m_resourceRequirements;
+  bool m_commandHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
   bool m_resourceRequirementsHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class LambdaFunctionScheduledEventDetails {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   HistoryEventExecutionDataDetails m_inputDetails;
-  bool m_inputDetailsHasBeenSet = false;
 
   long long m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   TaskCredentials m_taskCredentials;
+  bool m_resourceHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_inputDetailsHasBeenSet = false;
+  bool m_timeoutInSecondsHasBeenSet = false;
   bool m_taskCredentialsHasBeenSet = false;
 };
 

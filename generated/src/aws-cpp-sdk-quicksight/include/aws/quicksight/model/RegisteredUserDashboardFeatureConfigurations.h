@@ -166,24 +166,24 @@ class RegisteredUserDashboardFeatureConfigurations {
   ///@}
  private:
   StatePersistenceConfigurations m_statePersistence;
-  bool m_statePersistenceHasBeenSet = false;
 
   SharedViewConfigurations m_sharedView;
-  bool m_sharedViewHasBeenSet = false;
 
   BookmarksConfigurations m_bookmarks;
-  bool m_bookmarksHasBeenSet = false;
 
   AmazonQInQuickSightDashboardConfigurations m_amazonQInQuickSight;
-  bool m_amazonQInQuickSightHasBeenSet = false;
 
   SchedulesConfigurations m_schedules;
-  bool m_schedulesHasBeenSet = false;
 
   RecentSnapshotsConfigurations m_recentSnapshots;
-  bool m_recentSnapshotsHasBeenSet = false;
 
   ThresholdAlertsConfigurations m_thresholdAlerts;
+  bool m_statePersistenceHasBeenSet = false;
+  bool m_sharedViewHasBeenSet = false;
+  bool m_bookmarksHasBeenSet = false;
+  bool m_amazonQInQuickSightHasBeenSet = false;
+  bool m_schedulesHasBeenSet = false;
+  bool m_recentSnapshotsHasBeenSet = false;
   bool m_thresholdAlertsHasBeenSet = false;
 };
 

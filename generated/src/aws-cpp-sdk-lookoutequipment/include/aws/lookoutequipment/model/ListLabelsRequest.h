@@ -158,24 +158,24 @@ class ListLabelsRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_labelGroupName;
-  bool m_labelGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_intervalStartTime{};
-  bool m_intervalStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_intervalEndTime{};
-  bool m_intervalEndTimeHasBeenSet = false;
 
   Aws::String m_faultCode;
-  bool m_faultCodeHasBeenSet = false;
 
   Aws::String m_equipment;
-  bool m_equipmentHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_labelGroupNameHasBeenSet = false;
+  bool m_intervalStartTimeHasBeenSet = false;
+  bool m_intervalEndTimeHasBeenSet = false;
+  bool m_faultCodeHasBeenSet = false;
+  bool m_equipmentHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

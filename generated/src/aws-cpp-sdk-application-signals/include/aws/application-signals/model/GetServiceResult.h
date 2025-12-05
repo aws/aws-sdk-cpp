@@ -132,18 +132,18 @@ class GetServiceResult {
   ///@}
  private:
   Service m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_logGroupReferences;
-  bool m_logGroupReferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_logGroupReferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

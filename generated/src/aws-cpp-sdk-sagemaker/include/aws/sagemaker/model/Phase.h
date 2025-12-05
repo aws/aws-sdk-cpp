@@ -80,12 +80,12 @@ class Phase {
   ///@}
  private:
   int m_initialNumberOfUsers{0};
-  bool m_initialNumberOfUsersHasBeenSet = false;
 
   int m_spawnRate{0};
-  bool m_spawnRateHasBeenSet = false;
 
   int m_durationInSeconds{0};
+  bool m_initialNumberOfUsersHasBeenSet = false;
+  bool m_spawnRateHasBeenSet = false;
   bool m_durationInSecondsHasBeenSet = false;
 };
 

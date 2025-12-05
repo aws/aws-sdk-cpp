@@ -60,9 +60,9 @@ class UpdateDocumentResult {
   ///@}
  private:
   DocumentDescription m_documentDescription;
-  bool m_documentDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

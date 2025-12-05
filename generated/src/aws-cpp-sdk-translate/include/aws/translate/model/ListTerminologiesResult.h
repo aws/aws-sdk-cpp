@@ -86,12 +86,12 @@ class ListTerminologiesResult {
   ///@}
  private:
   Aws::Vector<TerminologyProperties> m_terminologyPropertiesList;
-  bool m_terminologyPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_terminologyPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

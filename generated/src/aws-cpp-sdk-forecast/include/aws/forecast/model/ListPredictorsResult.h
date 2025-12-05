@@ -85,12 +85,12 @@ class ListPredictorsResult {
   ///@}
  private:
   Aws::Vector<PredictorSummary> m_predictors;
-  bool m_predictorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

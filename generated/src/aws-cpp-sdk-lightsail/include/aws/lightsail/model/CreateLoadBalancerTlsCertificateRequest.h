@@ -145,18 +145,18 @@ class CreateLoadBalancerTlsCertificateRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_certificateDomainName;
-  bool m_certificateDomainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_certificateAlternativeNames;
-  bool m_certificateAlternativeNamesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_certificateDomainNameHasBeenSet = false;
+  bool m_certificateAlternativeNamesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -211,30 +211,30 @@ class PendingModifiedValues {
   ///@}
  private:
   int m_numCacheNodes{0};
-  bool m_numCacheNodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;
-  bool m_cacheNodeIdsToRemoveHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   AuthTokenUpdateStatus m_authTokenStatus{AuthTokenUpdateStatus::NOT_SET};
-  bool m_authTokenStatusHasBeenSet = false;
 
   Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
-  bool m_logDeliveryConfigurationsHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
-  bool m_transitEncryptionModeHasBeenSet = false;
 
   ScaleConfig m_scaleConfig;
+  bool m_numCacheNodesHasBeenSet = false;
+  bool m_cacheNodeIdsToRemoveHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_authTokenStatusHasBeenSet = false;
+  bool m_logDeliveryConfigurationsHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_transitEncryptionModeHasBeenSet = false;
   bool m_scaleConfigHasBeenSet = false;
 };
 

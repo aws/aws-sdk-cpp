@@ -149,21 +149,21 @@ class DescribeCAEnrollmentPolicyResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_pcaConnectorArn;
-  bool m_pcaConnectorArnHasBeenSet = false;
 
   CaEnrollmentPolicyStatus m_caEnrollmentPolicyStatus{CaEnrollmentPolicyStatus::NOT_SET};
-  bool m_caEnrollmentPolicyStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_caEnrollmentPolicyStatusReason;
-  bool m_caEnrollmentPolicyStatusReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_pcaConnectorArnHasBeenSet = false;
+  bool m_caEnrollmentPolicyStatusHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_caEnrollmentPolicyStatusReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

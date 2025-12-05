@@ -196,30 +196,30 @@ class EnvironmentTemplate {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Provisioning m_provisioning{Provisioning::NOT_SET};
-  bool m_provisioningHasBeenSet = false;
 
   Aws::String m_recommendedVersion;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_provisioningHasBeenSet = false;
   bool m_recommendedVersionHasBeenSet = false;
 };
 

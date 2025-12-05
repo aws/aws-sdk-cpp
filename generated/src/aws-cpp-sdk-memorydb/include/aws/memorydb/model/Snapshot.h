@@ -165,24 +165,24 @@ class Snapshot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   ClusterConfiguration m_clusterConfiguration;
-  bool m_clusterConfigurationHasBeenSet = false;
 
   DataTieringStatus m_dataTiering{DataTieringStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_clusterConfigurationHasBeenSet = false;
   bool m_dataTieringHasBeenSet = false;
 };
 

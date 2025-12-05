@@ -76,9 +76,9 @@ class CustomConnectorProfileProperties {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_profileProperties;
-  bool m_profilePropertiesHasBeenSet = false;
 
   OAuth2Properties m_oAuth2Properties;
+  bool m_profilePropertiesHasBeenSet = false;
   bool m_oAuth2PropertiesHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class UsageResourceResult {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Total m_total;
+  bool m_resourceHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class GetAdminScopeResult {
   ///@}
  private:
   AdminScope m_adminScope;
-  bool m_adminScopeHasBeenSet = false;
 
   OrganizationStatus m_status{OrganizationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adminScopeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class StopQueryRequest : public InternetMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_queryId;
+  bool m_monitorNameHasBeenSet = false;
   bool m_queryIdHasBeenSet = false;
 };
 

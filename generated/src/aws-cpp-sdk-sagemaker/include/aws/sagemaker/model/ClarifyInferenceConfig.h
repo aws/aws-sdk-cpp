@@ -306,36 +306,36 @@ class ClarifyInferenceConfig {
   ///@}
  private:
   Aws::String m_featuresAttribute;
-  bool m_featuresAttributeHasBeenSet = false;
 
   Aws::String m_contentTemplate;
-  bool m_contentTemplateHasBeenSet = false;
 
   int m_maxRecordCount{0};
-  bool m_maxRecordCountHasBeenSet = false;
 
   int m_maxPayloadInMB{0};
-  bool m_maxPayloadInMBHasBeenSet = false;
 
   int m_probabilityIndex{0};
-  bool m_probabilityIndexHasBeenSet = false;
 
   int m_labelIndex{0};
-  bool m_labelIndexHasBeenSet = false;
 
   Aws::String m_probabilityAttribute;
-  bool m_probabilityAttributeHasBeenSet = false;
 
   Aws::String m_labelAttribute;
-  bool m_labelAttributeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labelHeaders;
-  bool m_labelHeadersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_featureHeaders;
-  bool m_featureHeadersHasBeenSet = false;
 
   Aws::Vector<ClarifyFeatureType> m_featureTypes;
+  bool m_featuresAttributeHasBeenSet = false;
+  bool m_contentTemplateHasBeenSet = false;
+  bool m_maxRecordCountHasBeenSet = false;
+  bool m_maxPayloadInMBHasBeenSet = false;
+  bool m_probabilityIndexHasBeenSet = false;
+  bool m_labelIndexHasBeenSet = false;
+  bool m_probabilityAttributeHasBeenSet = false;
+  bool m_labelAttributeHasBeenSet = false;
+  bool m_labelHeadersHasBeenSet = false;
+  bool m_featureHeadersHasBeenSet = false;
   bool m_featureTypesHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class CreateTransitGatewayMeteringPolicyEntryResponse {
   ///@}
  private:
   TransitGatewayMeteringPolicyEntry m_transitGatewayMeteringPolicyEntry;
-  bool m_transitGatewayMeteringPolicyEntryHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayMeteringPolicyEntryHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

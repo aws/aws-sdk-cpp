@@ -120,15 +120,15 @@ class StreamingProperties {
   ///@}
  private:
   StreamingExperiencePreferredProtocolEnum m_streamingExperiencePreferredProtocol{StreamingExperiencePreferredProtocolEnum::NOT_SET};
-  bool m_streamingExperiencePreferredProtocolHasBeenSet = false;
 
   Aws::Vector<UserSetting> m_userSettings;
-  bool m_userSettingsHasBeenSet = false;
 
   Aws::Vector<StorageConnector> m_storageConnectors;
-  bool m_storageConnectorsHasBeenSet = false;
 
   GlobalAcceleratorForDirectory m_globalAccelerator;
+  bool m_streamingExperiencePreferredProtocolHasBeenSet = false;
+  bool m_userSettingsHasBeenSet = false;
+  bool m_storageConnectorsHasBeenSet = false;
   bool m_globalAcceleratorHasBeenSet = false;
 };
 

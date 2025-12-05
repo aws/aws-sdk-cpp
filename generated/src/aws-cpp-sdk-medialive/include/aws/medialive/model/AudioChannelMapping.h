@@ -74,9 +74,9 @@ class AudioChannelMapping {
   ///@}
  private:
   Aws::Vector<InputChannelLevel> m_inputChannelLevels;
-  bool m_inputChannelLevelsHasBeenSet = false;
 
   int m_outputChannel{0};
+  bool m_inputChannelLevelsHasBeenSet = false;
   bool m_outputChannelHasBeenSet = false;
 };
 

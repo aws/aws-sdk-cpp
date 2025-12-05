@@ -98,12 +98,12 @@ class DeleteLoggingConfigurationRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   LogScope m_logScope{LogScope::NOT_SET};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
   bool m_logScopeHasBeenSet = false;
 };
 

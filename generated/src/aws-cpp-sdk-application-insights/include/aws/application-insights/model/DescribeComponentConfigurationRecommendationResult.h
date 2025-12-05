@@ -62,9 +62,9 @@ class DescribeComponentConfigurationRecommendationResult {
   ///@}
  private:
   Aws::String m_componentConfiguration;
-  bool m_componentConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_componentConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

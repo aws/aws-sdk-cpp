@@ -136,21 +136,21 @@ class ValidateAssessmentReportIntegrityResult {
   ///@}
  private:
   bool m_signatureValid{false};
-  bool m_signatureValidHasBeenSet = false;
 
   Aws::String m_signatureAlgorithm;
-  bool m_signatureAlgorithmHasBeenSet = false;
 
   Aws::String m_signatureDateTime;
-  bool m_signatureDateTimeHasBeenSet = false;
 
   Aws::String m_signatureKeyId;
-  bool m_signatureKeyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_validationErrors;
-  bool m_validationErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signatureValidHasBeenSet = false;
+  bool m_signatureAlgorithmHasBeenSet = false;
+  bool m_signatureDateTimeHasBeenSet = false;
+  bool m_signatureKeyIdHasBeenSet = false;
+  bool m_validationErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

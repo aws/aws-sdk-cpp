@@ -79,9 +79,9 @@ class DescribeTaskDefinitionRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   Aws::Vector<TaskDefinitionField> m_include;
+  bool m_taskDefinitionHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

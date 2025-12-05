@@ -85,12 +85,12 @@ class ListControlDomainInsightsResult {
   ///@}
  private:
   Aws::Vector<ControlDomainInsights> m_controlDomainInsights;
-  bool m_controlDomainInsightsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlDomainInsightsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

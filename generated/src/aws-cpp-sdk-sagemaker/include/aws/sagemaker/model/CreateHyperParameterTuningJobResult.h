@@ -60,9 +60,9 @@ class CreateHyperParameterTuningJobResult {
   ///@}
  private:
   Aws::String m_hyperParameterTuningJobArn;
-  bool m_hyperParameterTuningJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hyperParameterTuningJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -406,72 +406,72 @@ class LoRaWANGetServiceProfileInfo {
   ///@}
  private:
   int m_ulRate{0};
-  bool m_ulRateHasBeenSet = false;
 
   int m_ulBucketSize{0};
-  bool m_ulBucketSizeHasBeenSet = false;
 
   Aws::String m_ulRatePolicy;
-  bool m_ulRatePolicyHasBeenSet = false;
 
   int m_dlRate{0};
-  bool m_dlRateHasBeenSet = false;
 
   int m_dlBucketSize{0};
-  bool m_dlBucketSizeHasBeenSet = false;
 
   Aws::String m_dlRatePolicy;
-  bool m_dlRatePolicyHasBeenSet = false;
 
   bool m_addGwMetadata{false};
-  bool m_addGwMetadataHasBeenSet = false;
 
   int m_devStatusReqFreq{0};
-  bool m_devStatusReqFreqHasBeenSet = false;
 
   bool m_reportDevStatusBattery{false};
-  bool m_reportDevStatusBatteryHasBeenSet = false;
 
   bool m_reportDevStatusMargin{false};
-  bool m_reportDevStatusMarginHasBeenSet = false;
 
   int m_drMin{0};
-  bool m_drMinHasBeenSet = false;
 
   int m_drMax{0};
-  bool m_drMaxHasBeenSet = false;
 
   Aws::String m_channelMask;
-  bool m_channelMaskHasBeenSet = false;
 
   bool m_prAllowed{false};
-  bool m_prAllowedHasBeenSet = false;
 
   bool m_hrAllowed{false};
-  bool m_hrAllowedHasBeenSet = false;
 
   bool m_raAllowed{false};
-  bool m_raAllowedHasBeenSet = false;
 
   bool m_nwkGeoLoc{false};
-  bool m_nwkGeoLocHasBeenSet = false;
 
   int m_targetPer{0};
-  bool m_targetPerHasBeenSet = false;
 
   int m_minGwDiversity{0};
-  bool m_minGwDiversityHasBeenSet = false;
 
   int m_txPowerIndexMin{0};
-  bool m_txPowerIndexMinHasBeenSet = false;
 
   int m_txPowerIndexMax{0};
-  bool m_txPowerIndexMaxHasBeenSet = false;
 
   int m_nbTransMin{0};
-  bool m_nbTransMinHasBeenSet = false;
 
   int m_nbTransMax{0};
+  bool m_ulRateHasBeenSet = false;
+  bool m_ulBucketSizeHasBeenSet = false;
+  bool m_ulRatePolicyHasBeenSet = false;
+  bool m_dlRateHasBeenSet = false;
+  bool m_dlBucketSizeHasBeenSet = false;
+  bool m_dlRatePolicyHasBeenSet = false;
+  bool m_addGwMetadataHasBeenSet = false;
+  bool m_devStatusReqFreqHasBeenSet = false;
+  bool m_reportDevStatusBatteryHasBeenSet = false;
+  bool m_reportDevStatusMarginHasBeenSet = false;
+  bool m_drMinHasBeenSet = false;
+  bool m_drMaxHasBeenSet = false;
+  bool m_channelMaskHasBeenSet = false;
+  bool m_prAllowedHasBeenSet = false;
+  bool m_hrAllowedHasBeenSet = false;
+  bool m_raAllowedHasBeenSet = false;
+  bool m_nwkGeoLocHasBeenSet = false;
+  bool m_targetPerHasBeenSet = false;
+  bool m_minGwDiversityHasBeenSet = false;
+  bool m_txPowerIndexMinHasBeenSet = false;
+  bool m_txPowerIndexMaxHasBeenSet = false;
+  bool m_nbTransMinHasBeenSet = false;
   bool m_nbTransMaxHasBeenSet = false;
 };
 

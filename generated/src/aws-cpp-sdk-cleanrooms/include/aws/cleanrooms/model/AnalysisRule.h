@@ -178,27 +178,27 @@ class AnalysisRule {
   ///@}
  private:
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   AnalysisRuleType m_type{AnalysisRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   AnalysisRulePolicy m_policy;
-  bool m_policyHasBeenSet = false;
 
   ConfiguredTableAssociationAnalysisRulePolicy m_collaborationPolicy;
-  bool m_collaborationPolicyHasBeenSet = false;
 
   ConsolidatedPolicy m_consolidatedPolicy;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_collaborationPolicyHasBeenSet = false;
   bool m_consolidatedPolicyHasBeenSet = false;
 };
 

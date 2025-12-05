@@ -68,9 +68,9 @@ class NodeSignal {
   ///@}
  private:
   Aws::String m_nodeInstanceId;
-  bool m_nodeInstanceIdHasBeenSet = false;
 
   NodeSignalValue m_signal{NodeSignalValue::NOT_SET};
+  bool m_nodeInstanceIdHasBeenSet = false;
   bool m_signalHasBeenSet = false;
 };
 

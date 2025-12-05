@@ -166,24 +166,24 @@ class UpdateEnvironmentRequest : public MainframeModernizationRequest {
   ///@}
  private:
   bool m_applyDuringMaintenanceWindow{false};
-  bool m_applyDuringMaintenanceWindowHasBeenSet = false;
 
   int m_desiredCapacity{0};
-  bool m_desiredCapacityHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   bool m_forceUpdate{false};
-  bool m_forceUpdateHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
+  bool m_applyDuringMaintenanceWindowHasBeenSet = false;
+  bool m_desiredCapacityHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_forceUpdateHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_preferredMaintenanceWindowHasBeenSet = false;
 };
 

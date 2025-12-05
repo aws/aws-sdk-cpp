@@ -78,9 +78,9 @@ class CreateAggregateConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_aggregates;
-  bool m_aggregatesHasBeenSet = false;
 
   int m_constituentsPerAggregate{0};
+  bool m_aggregatesHasBeenSet = false;
   bool m_constituentsPerAggregateHasBeenSet = false;
 };
 

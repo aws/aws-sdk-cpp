@@ -69,9 +69,9 @@ class DeleteConnectInstanceConfigRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   CampaignDeletionPolicy m_campaignDeletionPolicy{CampaignDeletionPolicy::NOT_SET};
+  bool m_connectInstanceIdHasBeenSet = false;
   bool m_campaignDeletionPolicyHasBeenSet = false;
 };
 

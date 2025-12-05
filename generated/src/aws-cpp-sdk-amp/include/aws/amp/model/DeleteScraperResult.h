@@ -83,12 +83,12 @@ class DeleteScraperResult {
   ///@}
  private:
   Aws::String m_scraperId;
-  bool m_scraperIdHasBeenSet = false;
 
   ScraperStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scraperIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

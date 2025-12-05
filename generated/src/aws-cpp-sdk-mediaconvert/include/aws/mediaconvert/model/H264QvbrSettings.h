@@ -100,12 +100,12 @@ class H264QvbrSettings {
   ///@}
  private:
   int m_maxAverageBitrate{0};
-  bool m_maxAverageBitrateHasBeenSet = false;
 
   int m_qvbrQualityLevel{0};
-  bool m_qvbrQualityLevelHasBeenSet = false;
 
   double m_qvbrQualityLevelFineTune{0.0};
+  bool m_maxAverageBitrateHasBeenSet = false;
+  bool m_qvbrQualityLevelHasBeenSet = false;
   bool m_qvbrQualityLevelFineTuneHasBeenSet = false;
 };
 

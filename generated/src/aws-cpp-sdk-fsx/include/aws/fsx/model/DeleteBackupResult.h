@@ -82,12 +82,12 @@ class DeleteBackupResult {
   ///@}
  private:
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   BackupLifecycle m_lifecycle{BackupLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

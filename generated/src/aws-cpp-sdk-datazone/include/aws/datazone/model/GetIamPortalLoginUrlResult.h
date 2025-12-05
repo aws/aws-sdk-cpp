@@ -76,12 +76,12 @@ class GetIamPortalLoginUrlResult {
   ///@}
  private:
   Aws::String m_authCodeUrl;
-  bool m_authCodeUrlHasBeenSet = false;
 
   Aws::String m_userProfileId;
-  bool m_userProfileIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authCodeUrlHasBeenSet = false;
+  bool m_userProfileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

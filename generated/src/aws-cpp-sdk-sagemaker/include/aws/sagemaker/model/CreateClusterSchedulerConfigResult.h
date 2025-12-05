@@ -76,12 +76,12 @@ class CreateClusterSchedulerConfigResult {
   ///@}
  private:
   Aws::String m_clusterSchedulerConfigArn;
-  bool m_clusterSchedulerConfigArnHasBeenSet = false;
 
   Aws::String m_clusterSchedulerConfigId;
-  bool m_clusterSchedulerConfigIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterSchedulerConfigArnHasBeenSet = false;
+  bool m_clusterSchedulerConfigIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

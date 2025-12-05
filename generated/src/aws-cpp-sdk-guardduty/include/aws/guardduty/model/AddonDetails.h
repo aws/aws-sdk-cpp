@@ -69,9 +69,9 @@ class AddonDetails {
   ///@}
  private:
   Aws::String m_addonVersion;
-  bool m_addonVersionHasBeenSet = false;
 
   Aws::String m_addonStatus;
+  bool m_addonVersionHasBeenSet = false;
   bool m_addonStatusHasBeenSet = false;
 };
 

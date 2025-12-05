@@ -100,15 +100,15 @@ class ChannelSubtypeParameters {
   ///@}
  private:
   TelephonyChannelSubtypeParameters m_telephony;
-  bool m_telephonyHasBeenSet = false;
 
   SmsChannelSubtypeParameters m_sms;
-  bool m_smsHasBeenSet = false;
 
   EmailChannelSubtypeParameters m_email;
-  bool m_emailHasBeenSet = false;
 
   WhatsAppChannelSubtypeParameters m_whatsApp;
+  bool m_telephonyHasBeenSet = false;
+  bool m_smsHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
   bool m_whatsAppHasBeenSet = false;
 };
 

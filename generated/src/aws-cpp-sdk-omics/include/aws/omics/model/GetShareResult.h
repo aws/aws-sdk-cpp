@@ -61,9 +61,9 @@ class GetShareResult {
   ///@}
  private:
   ShareDetails m_share;
-  bool m_shareHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shareHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

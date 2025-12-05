@@ -74,9 +74,9 @@ class Tiering {
   ///@}
  private:
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   IntelligentTieringAccessTier m_accessTier{IntelligentTieringAccessTier::NOT_SET};
+  bool m_daysHasBeenSet = false;
   bool m_accessTierHasBeenSet = false;
 };
 

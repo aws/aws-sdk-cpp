@@ -77,9 +77,9 @@ class InputLambdaProcessor {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::String m_roleARN;
+  bool m_resourceARNHasBeenSet = false;
   bool m_roleARNHasBeenSet = false;
 };
 

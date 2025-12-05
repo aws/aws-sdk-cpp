@@ -90,9 +90,9 @@ class OutputDataConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_s3UriHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

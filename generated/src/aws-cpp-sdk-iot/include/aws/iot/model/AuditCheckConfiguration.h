@@ -75,9 +75,9 @@ class AuditCheckConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Map<ConfigName, Aws::String> m_configuration;
+  bool m_enabledHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

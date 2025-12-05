@@ -104,15 +104,15 @@ class LaunchActionRun {
   ///@}
  private:
   LaunchAction m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   LaunchActionRunStatus m_status{LaunchActionRunStatus::NOT_SET};
+  bool m_actionHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

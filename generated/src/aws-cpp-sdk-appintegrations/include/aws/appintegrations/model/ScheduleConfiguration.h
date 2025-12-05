@@ -88,12 +88,12 @@ class ScheduleConfiguration {
   ///@}
  private:
   Aws::String m_firstExecutionFrom;
-  bool m_firstExecutionFromHasBeenSet = false;
 
   Aws::String m_object;
-  bool m_objectHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
+  bool m_firstExecutionFromHasBeenSet = false;
+  bool m_objectHasBeenSet = false;
   bool m_scheduleExpressionHasBeenSet = false;
 };
 

@@ -133,21 +133,21 @@ class WaypointOptimizationConnection {
   ///@}
  private:
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   long long m_restDuration{0};
-  bool m_restDurationHasBeenSet = false;
 
   Aws::String m_to;
-  bool m_toHasBeenSet = false;
 
   long long m_travelDuration{0};
-  bool m_travelDurationHasBeenSet = false;
 
   long long m_waitDuration{0};
+  bool m_distanceHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
+  bool m_restDurationHasBeenSet = false;
+  bool m_toHasBeenSet = false;
+  bool m_travelDurationHasBeenSet = false;
   bool m_waitDurationHasBeenSet = false;
 };
 

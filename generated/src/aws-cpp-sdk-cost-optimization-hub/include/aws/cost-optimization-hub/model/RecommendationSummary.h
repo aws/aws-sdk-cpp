@@ -84,12 +84,12 @@ class RecommendationSummary {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   double m_estimatedMonthlySavings{0.0};
-  bool m_estimatedMonthlySavingsHasBeenSet = false;
 
   int m_recommendationCount{0};
+  bool m_groupHasBeenSet = false;
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
   bool m_recommendationCountHasBeenSet = false;
 };
 

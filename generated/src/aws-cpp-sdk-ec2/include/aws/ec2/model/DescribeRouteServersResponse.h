@@ -86,12 +86,12 @@ class DescribeRouteServersResponse {
   ///@}
  private:
   Aws::Vector<RouteServer> m_routeServers;
-  bool m_routeServersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

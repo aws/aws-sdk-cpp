@@ -316,39 +316,39 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_serverHostname;
-  bool m_serverHostnameHasBeenSet = false;
 
   int m_serverPort{0};
-  bool m_serverPortHasBeenSet = false;
 
   ObjectStorageServerProtocol m_serverProtocol{ObjectStorageServerProtocol::NOT_SET};
-  bool m_serverProtocolHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_accessKey;
-  bool m_accessKeyHasBeenSet = false;
 
   Aws::String m_secretKey;
-  bool m_secretKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_serverCertificate{};
-  bool m_serverCertificateHasBeenSet = false;
 
   CmkSecretConfig m_cmkSecretConfig;
-  bool m_cmkSecretConfigHasBeenSet = false;
 
   CustomSecretConfig m_customSecretConfig;
+  bool m_serverHostnameHasBeenSet = false;
+  bool m_serverPortHasBeenSet = false;
+  bool m_serverProtocolHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_accessKeyHasBeenSet = false;
+  bool m_secretKeyHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_serverCertificateHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
   bool m_customSecretConfigHasBeenSet = false;
 };
 

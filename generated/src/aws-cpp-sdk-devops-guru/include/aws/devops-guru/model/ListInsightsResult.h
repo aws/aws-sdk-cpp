@@ -109,15 +109,15 @@ class ListInsightsResult {
   ///@}
  private:
   Aws::Vector<ProactiveInsightSummary> m_proactiveInsights;
-  bool m_proactiveInsightsHasBeenSet = false;
 
   Aws::Vector<ReactiveInsightSummary> m_reactiveInsights;
-  bool m_reactiveInsightsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proactiveInsightsHasBeenSet = false;
+  bool m_reactiveInsightsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

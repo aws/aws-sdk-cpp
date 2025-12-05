@@ -220,21 +220,21 @@ class CreateStreamGroupRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StreamClass m_streamClass{StreamClass::NOT_SET};
-  bool m_streamClassHasBeenSet = false;
 
   Aws::String m_defaultApplicationIdentifier;
-  bool m_defaultApplicationIdentifierHasBeenSet = false;
 
   Aws::Vector<LocationConfiguration> m_locationConfigurations;
-  bool m_locationConfigurationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_descriptionHasBeenSet = false;
+  bool m_streamClassHasBeenSet = false;
+  bool m_defaultApplicationIdentifierHasBeenSet = false;
+  bool m_locationConfigurationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

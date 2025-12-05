@@ -60,9 +60,9 @@ class GetVoiceProfileResult {
   ///@}
  private:
   VoiceProfile m_voiceProfile;
-  bool m_voiceProfileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceProfileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class CalculateRouteMatrixSummary {
   ///@}
  private:
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   int m_routeCount{0};
-  bool m_routeCountHasBeenSet = false;
 
   int m_errorCount{0};
-  bool m_errorCountHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
+  bool m_dataSourceHasBeenSet = false;
+  bool m_routeCountHasBeenSet = false;
+  bool m_errorCountHasBeenSet = false;
   bool m_distanceUnitHasBeenSet = false;
 };
 

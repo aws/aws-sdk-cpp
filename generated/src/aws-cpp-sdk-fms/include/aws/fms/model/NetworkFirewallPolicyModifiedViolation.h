@@ -90,12 +90,12 @@ class NetworkFirewallPolicyModifiedViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   NetworkFirewallPolicyDescription m_currentPolicyDescription;
-  bool m_currentPolicyDescriptionHasBeenSet = false;
 
   NetworkFirewallPolicyDescription m_expectedPolicyDescription;
+  bool m_violationTargetHasBeenSet = false;
+  bool m_currentPolicyDescriptionHasBeenSet = false;
   bool m_expectedPolicyDescriptionHasBeenSet = false;
 };
 

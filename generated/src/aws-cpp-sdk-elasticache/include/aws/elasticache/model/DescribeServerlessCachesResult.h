@@ -88,12 +88,12 @@ class DescribeServerlessCachesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ServerlessCache> m_serverlessCaches;
-  bool m_serverlessCachesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serverlessCachesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

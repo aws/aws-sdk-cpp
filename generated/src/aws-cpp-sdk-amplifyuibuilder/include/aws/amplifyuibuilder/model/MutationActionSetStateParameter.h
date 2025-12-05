@@ -88,12 +88,12 @@ class MutationActionSetStateParameter {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_property;
-  bool m_propertyHasBeenSet = false;
 
   ComponentProperty m_set;
+  bool m_componentNameHasBeenSet = false;
+  bool m_propertyHasBeenSet = false;
   bool m_setHasBeenSet = false;
 };
 

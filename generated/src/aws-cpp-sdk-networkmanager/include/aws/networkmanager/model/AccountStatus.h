@@ -70,9 +70,9 @@ class AccountStatus {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_sLRDeploymentStatus;
+  bool m_accountIdHasBeenSet = false;
   bool m_sLRDeploymentStatusHasBeenSet = false;
 };
 

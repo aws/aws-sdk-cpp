@@ -383,57 +383,57 @@ class ComboChartConfiguration {
   ///@}
  private:
   ComboChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   ComboChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   BarsArrangement m_barsArrangement{BarsArrangement::NOT_SET};
-  bool m_barsArrangementHasBeenSet = false;
 
   AxisDisplayOptions m_categoryAxis;
-  bool m_categoryAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_primaryYAxisDisplayOptions;
-  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_primaryYAxisLabelOptions;
-  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_secondaryYAxisDisplayOptions;
-  bool m_secondaryYAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_secondaryYAxisLabelOptions;
-  bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
 
   SingleAxisOptions m_singleAxisOptions;
-  bool m_singleAxisOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_colorLabelOptions;
-  bool m_colorLabelOptionsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_barDataLabels;
-  bool m_barDataLabelsHasBeenSet = false;
 
   DataLabelOptions m_lineDataLabels;
-  bool m_lineDataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   Aws::Vector<ReferenceLine> m_referenceLines;
-  bool m_referenceLinesHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_barsArrangementHasBeenSet = false;
+  bool m_categoryAxisHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_secondaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_singleAxisOptionsHasBeenSet = false;
+  bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_barDataLabelsHasBeenSet = false;
+  bool m_lineDataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_referenceLinesHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

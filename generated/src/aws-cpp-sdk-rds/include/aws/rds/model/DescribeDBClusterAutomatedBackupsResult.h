@@ -87,12 +87,12 @@ class DescribeDBClusterAutomatedBackupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBClusterAutomatedBackup> m_dBClusterAutomatedBackups;
-  bool m_dBClusterAutomatedBackupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBClusterAutomatedBackupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

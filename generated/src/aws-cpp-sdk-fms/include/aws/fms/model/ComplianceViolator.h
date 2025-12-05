@@ -116,15 +116,15 @@ class ComplianceViolator {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ViolationReason m_violationReason{ViolationReason::NOT_SET};
-  bool m_violationReasonHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_violationReasonHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

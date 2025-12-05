@@ -134,18 +134,18 @@ class CitationLocation {
   ///@}
  private:
   WebLocation m_web;
-  bool m_webHasBeenSet = false;
 
   DocumentCharLocation m_documentChar;
-  bool m_documentCharHasBeenSet = false;
 
   DocumentPageLocation m_documentPage;
-  bool m_documentPageHasBeenSet = false;
 
   DocumentChunkLocation m_documentChunk;
-  bool m_documentChunkHasBeenSet = false;
 
   SearchResultLocation m_searchResultLocation;
+  bool m_webHasBeenSet = false;
+  bool m_documentCharHasBeenSet = false;
+  bool m_documentPageHasBeenSet = false;
+  bool m_documentChunkHasBeenSet = false;
   bool m_searchResultLocationHasBeenSet = false;
 };
 

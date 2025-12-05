@@ -106,15 +106,15 @@ class ListLFTagsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   ResourceShareType m_resourceShareType{ResourceShareType::NOT_SET};
-  bool m_resourceShareTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_resourceShareTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

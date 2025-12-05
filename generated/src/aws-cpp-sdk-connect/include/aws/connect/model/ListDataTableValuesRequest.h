@@ -156,21 +156,21 @@ class ListDataTableValuesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataTableId;
-  bool m_dataTableIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recordIds;
-  bool m_recordIdsHasBeenSet = false;
 
   Aws::Vector<PrimaryAttributeValueFilter> m_primaryAttributeValues;
-  bool m_primaryAttributeValuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataTableIdHasBeenSet = false;
+  bool m_recordIdsHasBeenSet = false;
+  bool m_primaryAttributeValuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

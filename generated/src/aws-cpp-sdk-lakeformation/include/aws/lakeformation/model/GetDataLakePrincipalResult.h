@@ -59,9 +59,9 @@ class GetDataLakePrincipalResult {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class ResultSet {
   ///@}
  private:
   Aws::Vector<Row> m_rows;
-  bool m_rowsHasBeenSet = false;
 
   ResultSetMetadata m_resultSetMetadata;
+  bool m_rowsHasBeenSet = false;
   bool m_resultSetMetadataHasBeenSet = false;
 };
 

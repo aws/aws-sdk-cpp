@@ -82,9 +82,9 @@ class ListTagsForResourceRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_resourceNameHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

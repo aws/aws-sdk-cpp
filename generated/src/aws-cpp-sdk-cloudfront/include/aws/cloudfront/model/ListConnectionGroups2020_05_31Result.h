@@ -87,12 +87,12 @@ class ListConnectionGroups2020_05_31Result {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<ConnectionGroupSummary> m_connectionGroups;
-  bool m_connectionGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_connectionGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

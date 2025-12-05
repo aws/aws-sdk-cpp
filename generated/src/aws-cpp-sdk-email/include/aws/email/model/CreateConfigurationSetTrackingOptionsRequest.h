@@ -73,9 +73,9 @@ class CreateConfigurationSetTrackingOptionsRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   TrackingOptions m_trackingOptions;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_trackingOptionsHasBeenSet = false;
 };
 

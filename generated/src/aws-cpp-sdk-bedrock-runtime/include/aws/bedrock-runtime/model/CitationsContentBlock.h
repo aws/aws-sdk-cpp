@@ -86,9 +86,9 @@ class CitationsContentBlock {
   ///@}
  private:
   Aws::Vector<CitationGeneratedContent> m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<Citation> m_citations;
+  bool m_contentHasBeenSet = false;
   bool m_citationsHasBeenSet = false;
 };
 

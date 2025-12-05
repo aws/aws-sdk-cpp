@@ -257,36 +257,36 @@ class StreamingDistributionSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   S3Origin m_s3Origin;
-  bool m_s3OriginHasBeenSet = false;
 
   Aliases m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   TrustedSigners m_trustedSigners;
-  bool m_trustedSignersHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   PriceClass m_priceClass{PriceClass::NOT_SET};
-  bool m_priceClassHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_idHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_s3OriginHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_trustedSignersHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_priceClassHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

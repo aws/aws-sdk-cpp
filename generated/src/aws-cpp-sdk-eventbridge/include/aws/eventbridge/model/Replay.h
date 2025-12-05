@@ -198,30 +198,30 @@ class Replay {
   ///@}
  private:
   Aws::String m_replayName;
-  bool m_replayNameHasBeenSet = false;
 
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   ReplayState m_state{ReplayState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventStartTime{};
-  bool m_eventStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventEndTime{};
-  bool m_eventEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventLastReplayedTime{};
-  bool m_eventLastReplayedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replayStartTime{};
-  bool m_replayStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replayEndTime{};
+  bool m_replayNameHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_eventStartTimeHasBeenSet = false;
+  bool m_eventEndTimeHasBeenSet = false;
+  bool m_eventLastReplayedTimeHasBeenSet = false;
+  bool m_replayStartTimeHasBeenSet = false;
   bool m_replayEndTimeHasBeenSet = false;
 };
 

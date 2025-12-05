@@ -76,9 +76,9 @@ class RSessionAppSettings {
   ///@}
  private:
   ResourceSpec m_defaultResourceSpec;
-  bool m_defaultResourceSpecHasBeenSet = false;
 
   Aws::Vector<CustomImage> m_customImages;
+  bool m_defaultResourceSpecHasBeenSet = false;
   bool m_customImagesHasBeenSet = false;
 };
 

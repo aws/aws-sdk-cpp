@@ -86,12 +86,12 @@ class ListInferenceSchedulersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<InferenceSchedulerSummary> m_inferenceSchedulerSummaries;
-  bool m_inferenceSchedulerSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_inferenceSchedulerSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class LogSubscription {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_subscriptionCreatedDateTime{};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_subscriptionCreatedDateTimeHasBeenSet = false;
 };
 

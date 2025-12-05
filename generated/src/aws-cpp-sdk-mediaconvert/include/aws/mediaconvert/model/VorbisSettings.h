@@ -84,12 +84,12 @@ class VorbisSettings {
   ///@}
  private:
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   int m_vbrQuality{0};
+  bool m_channelsHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
   bool m_vbrQualityHasBeenSet = false;
 };
 

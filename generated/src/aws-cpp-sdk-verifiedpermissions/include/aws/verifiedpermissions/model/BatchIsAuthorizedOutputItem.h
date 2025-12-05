@@ -128,15 +128,15 @@ class BatchIsAuthorizedOutputItem {
   ///@}
  private:
   BatchIsAuthorizedInputItem m_request;
-  bool m_requestHasBeenSet = false;
 
   Decision m_decision{Decision::NOT_SET};
-  bool m_decisionHasBeenSet = false;
 
   Aws::Vector<DeterminingPolicyItem> m_determiningPolicies;
-  bool m_determiningPoliciesHasBeenSet = false;
 
   Aws::Vector<EvaluationErrorItem> m_errors;
+  bool m_requestHasBeenSet = false;
+  bool m_decisionHasBeenSet = false;
+  bool m_determiningPoliciesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
 };
 

@@ -96,15 +96,15 @@ class VerifyMacResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   bool m_macValid{false};
-  bool m_macValidHasBeenSet = false;
 
   MacAlgorithmSpec m_macAlgorithm{MacAlgorithmSpec::NOT_SET};
-  bool m_macAlgorithmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_macValidHasBeenSet = false;
+  bool m_macAlgorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class DimensionalPriceRate {
   ///@}
  private:
   Aws::String m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   Aws::String m_price;
-  bool m_priceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_dimensionHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

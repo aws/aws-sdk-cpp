@@ -184,27 +184,27 @@ class ListBatchJobExecutionsRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_executionIds;
-  bool m_executionIdsHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAfter{};
-  bool m_startedAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedBefore{};
-  bool m_startedBeforeHasBeenSet = false;
 
   BatchJobExecutionStatus m_status{BatchJobExecutionStatus::NOT_SET};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_executionIdsHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_startedAfterHasBeenSet = false;
+  bool m_startedBeforeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

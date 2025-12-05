@@ -123,18 +123,18 @@ class Condition {
   ///@}
  private:
   LogicalOperator m_logicalOperator{LogicalOperator::NOT_SET};
-  bool m_logicalOperatorHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobRunState m_state{JobRunState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_crawlerName;
-  bool m_crawlerNameHasBeenSet = false;
 
   CrawlState m_crawlState{CrawlState::NOT_SET};
+  bool m_logicalOperatorHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_crawlerNameHasBeenSet = false;
   bool m_crawlStateHasBeenSet = false;
 };
 

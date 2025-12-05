@@ -73,9 +73,9 @@ class LoggingConfiguration {
   ///@}
  private:
   Aws::String m_loggingRole;
-  bool m_loggingRoleHasBeenSet = false;
 
   Aws::String m_logGroupName;
+  bool m_loggingRoleHasBeenSet = false;
   bool m_logGroupNameHasBeenSet = false;
 };
 

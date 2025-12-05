@@ -85,12 +85,12 @@ class GetBucketsAggregationResult {
   ///@}
  private:
   int m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   Aws::Vector<Bucket> m_buckets;
-  bool m_bucketsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_totalCountHasBeenSet = false;
+  bool m_bucketsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

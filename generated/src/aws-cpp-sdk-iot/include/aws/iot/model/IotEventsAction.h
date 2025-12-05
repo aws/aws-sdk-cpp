@@ -115,15 +115,15 @@ class IotEventsAction {
   ///@}
  private:
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   bool m_batchMode{false};
-  bool m_batchModeHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_inputNameHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_batchModeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

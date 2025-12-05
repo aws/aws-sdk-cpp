@@ -141,21 +141,21 @@ class TrainingDatasetSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_trainingDatasetArn;
-  bool m_trainingDatasetArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TrainingDatasetStatus m_status{TrainingDatasetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_trainingDatasetArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

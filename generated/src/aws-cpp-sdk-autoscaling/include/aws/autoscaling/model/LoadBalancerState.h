@@ -80,9 +80,9 @@ class LoadBalancerState {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_state;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -178,24 +178,24 @@ class CopyProjectVersionRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_sourceProjectArn;
-  bool m_sourceProjectArnHasBeenSet = false;
 
   Aws::String m_sourceProjectVersionArn;
-  bool m_sourceProjectVersionArnHasBeenSet = false;
 
   Aws::String m_destinationProjectArn;
-  bool m_destinationProjectArnHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_sourceProjectArnHasBeenSet = false;
+  bool m_sourceProjectVersionArnHasBeenSet = false;
+  bool m_destinationProjectArnHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

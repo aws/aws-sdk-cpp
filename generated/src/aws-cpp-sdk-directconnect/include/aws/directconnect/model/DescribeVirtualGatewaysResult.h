@@ -67,9 +67,9 @@ class DescribeVirtualGatewaysResult {
   ///@}
  private:
   Aws::Vector<VirtualGateway> m_virtualGateways;
-  bool m_virtualGatewaysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualGatewaysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

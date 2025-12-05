@@ -87,12 +87,12 @@ class DescribeCanariesLastRunResult {
   ///@}
  private:
   Aws::Vector<CanaryLastRun> m_canariesLastRun;
-  bool m_canariesLastRunHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_canariesLastRunHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateModelCardResult {
   ///@}
  private:
   Aws::String m_modelCardArn;
-  bool m_modelCardArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelCardArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

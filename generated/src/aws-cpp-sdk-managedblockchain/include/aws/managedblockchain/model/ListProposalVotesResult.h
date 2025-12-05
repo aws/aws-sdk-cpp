@@ -85,12 +85,12 @@ class ListProposalVotesResult {
   ///@}
  private:
   Aws::Vector<VoteSummary> m_proposalVotes;
-  bool m_proposalVotesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proposalVotesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

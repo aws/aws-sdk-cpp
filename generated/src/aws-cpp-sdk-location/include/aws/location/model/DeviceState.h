@@ -175,24 +175,24 @@ class DeviceState {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampleTime{};
-  bool m_sampleTimeHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   PositionalAccuracy m_accuracy;
-  bool m_accuracyHasBeenSet = false;
 
   Aws::String m_ipv4Address;
-  bool m_ipv4AddressHasBeenSet = false;
 
   Aws::Vector<WiFiAccessPoint> m_wiFiAccessPoints;
-  bool m_wiFiAccessPointsHasBeenSet = false;
 
   CellSignals m_cellSignals;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_sampleTimeHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_accuracyHasBeenSet = false;
+  bool m_ipv4AddressHasBeenSet = false;
+  bool m_wiFiAccessPointsHasBeenSet = false;
   bool m_cellSignalsHasBeenSet = false;
 };
 

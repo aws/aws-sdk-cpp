@@ -72,9 +72,9 @@ class DescribeVpnConnectionsResponse {
   ///@}
  private:
   Aws::Vector<VpnConnection> m_vpnConnections;
-  bool m_vpnConnectionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnConnectionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

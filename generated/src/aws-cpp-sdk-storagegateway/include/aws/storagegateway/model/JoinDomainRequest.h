@@ -179,24 +179,24 @@ class JoinDomainRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_organizationalUnit;
-  bool m_organizationalUnitHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainControllers;
-  bool m_domainControllersHasBeenSet = false;
 
   int m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_password;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_organizationalUnitHasBeenSet = false;
+  bool m_domainControllersHasBeenSet = false;
+  bool m_timeoutInSecondsHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
 };
 

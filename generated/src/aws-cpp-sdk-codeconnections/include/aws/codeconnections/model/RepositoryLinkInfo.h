@@ -163,24 +163,24 @@ class RepositoryLinkInfo {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_repositoryLinkArn;
-  bool m_repositoryLinkArnHasBeenSet = false;
 
   Aws::String m_repositoryLinkId;
-  bool m_repositoryLinkIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_repositoryLinkArnHasBeenSet = false;
+  bool m_repositoryLinkIdHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
 };
 

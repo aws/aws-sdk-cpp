@@ -68,9 +68,9 @@ class GetImageAncestryResponse {
   ///@}
  private:
   Aws::Vector<ImageAncestryEntry> m_imageAncestryEntries;
-  bool m_imageAncestryEntriesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_imageAncestryEntriesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

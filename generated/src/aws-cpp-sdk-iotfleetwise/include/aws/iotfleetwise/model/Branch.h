@@ -107,15 +107,15 @@ class Branch {
   ///@}
  private:
   Aws::String m_fullyQualifiedName;
-  bool m_fullyQualifiedNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_deprecationMessage;
-  bool m_deprecationMessageHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_fullyQualifiedNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deprecationMessageHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

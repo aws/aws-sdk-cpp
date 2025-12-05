@@ -74,9 +74,9 @@ class FollowUpPrompt {
   ///@}
  private:
   Prompt m_prompt;
-  bool m_promptHasBeenSet = false;
 
   Statement m_rejectionStatement;
+  bool m_promptHasBeenSet = false;
   bool m_rejectionStatementHasBeenSet = false;
 };
 

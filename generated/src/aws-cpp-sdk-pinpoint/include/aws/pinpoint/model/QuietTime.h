@@ -75,9 +75,9 @@ class QuietTime {
   ///@}
  private:
   Aws::String m_end;
-  bool m_endHasBeenSet = false;
 
   Aws::String m_start;
+  bool m_endHasBeenSet = false;
   bool m_startHasBeenSet = false;
 };
 

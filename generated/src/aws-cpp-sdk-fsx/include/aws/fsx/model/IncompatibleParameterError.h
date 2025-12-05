@@ -68,9 +68,9 @@ class IncompatibleParameterError {
   ///@}
  private:
   Aws::String m_parameter;
-  bool m_parameterHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_parameterHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

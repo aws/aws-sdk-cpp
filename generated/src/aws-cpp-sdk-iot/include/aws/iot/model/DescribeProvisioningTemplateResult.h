@@ -232,39 +232,39 @@ class DescribeProvisioningTemplateResult {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   int m_defaultVersionId{0};
-  bool m_defaultVersionIdHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_provisioningRoleArn;
-  bool m_provisioningRoleArnHasBeenSet = false;
 
   ProvisioningHook m_preProvisioningHook;
-  bool m_preProvisioningHookHasBeenSet = false;
 
   TemplateType m_type{TemplateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_defaultVersionIdHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_provisioningRoleArnHasBeenSet = false;
+  bool m_preProvisioningHookHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

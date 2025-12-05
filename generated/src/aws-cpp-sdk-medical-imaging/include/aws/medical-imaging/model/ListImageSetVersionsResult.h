@@ -85,12 +85,12 @@ class ListImageSetVersionsResult {
   ///@}
  private:
   Aws::Vector<ImageSetProperties> m_imageSetPropertiesList;
-  bool m_imageSetPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageSetPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateReviewTemplateResult {
   ///@}
  private:
   ReviewTemplate m_reviewTemplate;
-  bool m_reviewTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reviewTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

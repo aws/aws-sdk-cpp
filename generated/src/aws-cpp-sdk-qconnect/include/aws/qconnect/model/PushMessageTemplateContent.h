@@ -112,15 +112,15 @@ class PushMessageTemplateContent {
   ///@}
  private:
   PushADMMessageTemplateContent m_adm;
-  bool m_admHasBeenSet = false;
 
   PushAPNSMessageTemplateContent m_apns;
-  bool m_apnsHasBeenSet = false;
 
   PushFCMMessageTemplateContent m_fcm;
-  bool m_fcmHasBeenSet = false;
 
   PushBaiduMessageTemplateContent m_baidu;
+  bool m_admHasBeenSet = false;
+  bool m_apnsHasBeenSet = false;
+  bool m_fcmHasBeenSet = false;
   bool m_baiduHasBeenSet = false;
 };
 

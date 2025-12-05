@@ -69,9 +69,9 @@ class ProblemDetails {
   ///@}
  private:
   Aws::String m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_detailHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

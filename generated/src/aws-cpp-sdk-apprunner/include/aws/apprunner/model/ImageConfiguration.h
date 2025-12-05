@@ -135,15 +135,15 @@ class ImageConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentVariables;
-  bool m_runtimeEnvironmentVariablesHasBeenSet = false;
 
   Aws::String m_startCommand;
-  bool m_startCommandHasBeenSet = false;
 
   Aws::String m_port;
-  bool m_portHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentSecrets;
+  bool m_runtimeEnvironmentVariablesHasBeenSet = false;
+  bool m_startCommandHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_runtimeEnvironmentSecretsHasBeenSet = false;
 };
 

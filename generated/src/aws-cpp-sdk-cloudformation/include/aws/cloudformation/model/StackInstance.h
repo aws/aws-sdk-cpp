@@ -302,39 +302,39 @@ class StackInstance {
   ///@}
  private:
   Aws::String m_stackSetId;
-  bool m_stackSetIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameterOverrides;
-  bool m_parameterOverridesHasBeenSet = false;
 
   StackInstanceStatus m_status{StackInstanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StackInstanceComprehensiveStatus m_stackInstanceStatus;
-  bool m_stackInstanceStatusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   StackDriftStatus m_driftStatus{StackDriftStatus::NOT_SET};
-  bool m_driftStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDriftCheckTimestamp{};
-  bool m_lastDriftCheckTimestampHasBeenSet = false;
 
   Aws::String m_lastOperationId;
+  bool m_stackSetIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_accountHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
+  bool m_parameterOverridesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stackInstanceStatusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_organizationalUnitIdHasBeenSet = false;
+  bool m_driftStatusHasBeenSet = false;
+  bool m_lastDriftCheckTimestampHasBeenSet = false;
   bool m_lastOperationIdHasBeenSet = false;
 };
 

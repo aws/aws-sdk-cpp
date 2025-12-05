@@ -158,24 +158,24 @@ class CandidateAddress {
   ///@}
  private:
   Aws::String m_streetInfo;
-  bool m_streetInfoHasBeenSet = false;
 
   Aws::String m_streetNumber;
-  bool m_streetNumberHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_postalCodePlus4;
-  bool m_postalCodePlus4HasBeenSet = false;
 
   Aws::String m_country;
+  bool m_streetInfoHasBeenSet = false;
+  bool m_streetNumberHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_postalCodePlus4HasBeenSet = false;
   bool m_countryHasBeenSet = false;
 };
 

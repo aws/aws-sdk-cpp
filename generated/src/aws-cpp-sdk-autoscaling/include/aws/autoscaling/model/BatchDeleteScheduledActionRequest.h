@@ -77,9 +77,9 @@ class BatchDeleteScheduledActionRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scheduledActionNames;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_scheduledActionNamesHasBeenSet = false;
 };
 

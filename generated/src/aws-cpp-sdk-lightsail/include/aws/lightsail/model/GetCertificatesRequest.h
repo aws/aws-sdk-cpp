@@ -119,15 +119,15 @@ class GetCertificatesRequest : public LightsailRequest {
   ///@}
  private:
   Aws::Vector<CertificateStatus> m_certificateStatuses;
-  bool m_certificateStatusesHasBeenSet = false;
 
   bool m_includeCertificateDetails{false};
-  bool m_includeCertificateDetailsHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_certificateStatusesHasBeenSet = false;
+  bool m_includeCertificateDetailsHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

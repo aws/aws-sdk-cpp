@@ -760,96 +760,96 @@ class RequestLaunchTemplateData {
   ///@}
  private:
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   LaunchTemplateIamInstanceProfileSpecificationRequest m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::Vector<LaunchTemplateBlockDeviceMappingRequest> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   LaunchTemplatesMonitoringRequest m_monitoring;
-  bool m_monitoringHasBeenSet = false;
 
   LaunchTemplatePlacementRequest m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::String m_ramDiskId;
-  bool m_ramDiskIdHasBeenSet = false;
 
   bool m_disableApiTermination{false};
-  bool m_disableApiTerminationHasBeenSet = false;
 
   ShutdownBehavior m_instanceInitiatedShutdownBehavior{ShutdownBehavior::NOT_SET};
-  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
   Aws::String m_userData;
-  bool m_userDataHasBeenSet = false;
 
   Aws::Vector<LaunchTemplateTagSpecificationRequest> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   LaunchTemplateInstanceMarketOptionsRequest m_instanceMarketOptions;
-  bool m_instanceMarketOptionsHasBeenSet = false;
 
   CreditSpecificationRequest m_creditSpecification;
-  bool m_creditSpecificationHasBeenSet = false;
 
   LaunchTemplateCpuOptionsRequest m_cpuOptions;
-  bool m_cpuOptionsHasBeenSet = false;
 
   LaunchTemplateCapacityReservationSpecificationRequest m_capacityReservationSpecification;
-  bool m_capacityReservationSpecificationHasBeenSet = false;
 
   Aws::Vector<LaunchTemplateLicenseConfigurationRequest> m_licenseSpecifications;
-  bool m_licenseSpecificationsHasBeenSet = false;
 
   LaunchTemplateHibernationOptionsRequest m_hibernationOptions;
-  bool m_hibernationOptionsHasBeenSet = false;
 
   LaunchTemplateInstanceMetadataOptionsRequest m_metadataOptions;
-  bool m_metadataOptionsHasBeenSet = false;
 
   LaunchTemplateEnclaveOptionsRequest m_enclaveOptions;
-  bool m_enclaveOptionsHasBeenSet = false;
 
   InstanceRequirementsRequest m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   LaunchTemplatePrivateDnsNameOptionsRequest m_privateDnsNameOptions;
-  bool m_privateDnsNameOptionsHasBeenSet = false;
 
   LaunchTemplateInstanceMaintenanceOptionsRequest m_maintenanceOptions;
-  bool m_maintenanceOptionsHasBeenSet = false;
 
   bool m_disableApiStop{false};
-  bool m_disableApiStopHasBeenSet = false;
 
   OperatorRequest m_operator;
-  bool m_operatorHasBeenSet = false;
 
   LaunchTemplateNetworkPerformanceOptionsRequest m_networkPerformanceOptions;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_ramDiskIdHasBeenSet = false;
+  bool m_disableApiTerminationHasBeenSet = false;
+  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_instanceMarketOptionsHasBeenSet = false;
+  bool m_creditSpecificationHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
+  bool m_capacityReservationSpecificationHasBeenSet = false;
+  bool m_licenseSpecificationsHasBeenSet = false;
+  bool m_hibernationOptionsHasBeenSet = false;
+  bool m_metadataOptionsHasBeenSet = false;
+  bool m_enclaveOptionsHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_privateDnsNameOptionsHasBeenSet = false;
+  bool m_maintenanceOptionsHasBeenSet = false;
+  bool m_disableApiStopHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_networkPerformanceOptionsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeBatchSegmentJobResult {
   ///@}
  private:
   BatchSegmentJob m_batchSegmentJob;
-  bool m_batchSegmentJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchSegmentJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

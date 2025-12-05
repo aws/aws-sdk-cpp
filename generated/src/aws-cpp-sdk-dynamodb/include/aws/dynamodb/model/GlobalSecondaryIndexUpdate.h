@@ -97,12 +97,12 @@ class GlobalSecondaryIndexUpdate {
   ///@}
  private:
   UpdateGlobalSecondaryIndexAction m_update;
-  bool m_updateHasBeenSet = false;
 
   CreateGlobalSecondaryIndexAction m_create;
-  bool m_createHasBeenSet = false;
 
   DeleteGlobalSecondaryIndexAction m_delete;
+  bool m_updateHasBeenSet = false;
+  bool m_createHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
 };
 

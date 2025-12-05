@@ -96,12 +96,12 @@ class KubernetesWorkload {
   ///@}
  private:
   Aws::Vector<Aws::String> m_containerUids;
-  bool m_containerUidsHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   KubernetesResourcesTypes m_kubernetesResourcesTypes{KubernetesResourcesTypes::NOT_SET};
+  bool m_containerUidsHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_kubernetesResourcesTypesHasBeenSet = false;
 };
 

@@ -367,57 +367,57 @@ class EnvironmentSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_componentRoleArn;
-  bool m_componentRoleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_deploymentStatusMessage;
-  bool m_deploymentStatusMessageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_environmentAccountConnectionId;
-  bool m_environmentAccountConnectionIdHasBeenSet = false;
 
   Aws::String m_environmentAccountId;
-  bool m_environmentAccountIdHasBeenSet = false;
 
   Aws::String m_lastAttemptedDeploymentId;
-  bool m_lastAttemptedDeploymentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDeploymentAttemptedAt{};
-  bool m_lastDeploymentAttemptedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDeploymentSucceededAt{};
-  bool m_lastDeploymentSucceededAtHasBeenSet = false;
 
   Aws::String m_lastSucceededDeploymentId;
-  bool m_lastSucceededDeploymentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_protonServiceRoleArn;
-  bool m_protonServiceRoleArnHasBeenSet = false;
 
   Provisioning m_provisioning{Provisioning::NOT_SET};
-  bool m_provisioningHasBeenSet = false;
 
   Aws::String m_templateMajorVersion;
-  bool m_templateMajorVersionHasBeenSet = false;
 
   Aws::String m_templateMinorVersion;
-  bool m_templateMinorVersionHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_arnHasBeenSet = false;
+  bool m_componentRoleArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentStatusMessageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentAccountConnectionIdHasBeenSet = false;
+  bool m_environmentAccountIdHasBeenSet = false;
+  bool m_lastAttemptedDeploymentIdHasBeenSet = false;
+  bool m_lastDeploymentAttemptedAtHasBeenSet = false;
+  bool m_lastDeploymentSucceededAtHasBeenSet = false;
+  bool m_lastSucceededDeploymentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_protonServiceRoleArnHasBeenSet = false;
+  bool m_provisioningHasBeenSet = false;
+  bool m_templateMajorVersionHasBeenSet = false;
+  bool m_templateMinorVersionHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

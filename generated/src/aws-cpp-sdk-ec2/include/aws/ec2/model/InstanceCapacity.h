@@ -87,12 +87,12 @@ class InstanceCapacity {
   ///@}
  private:
   int m_availableCapacity{0};
-  bool m_availableCapacityHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_totalCapacity{0};
+  bool m_availableCapacityHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_totalCapacityHasBeenSet = false;
 };
 

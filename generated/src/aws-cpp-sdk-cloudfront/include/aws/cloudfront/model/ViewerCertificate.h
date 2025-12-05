@@ -216,18 +216,18 @@ class ViewerCertificate {
   ///@}
  private:
   bool m_cloudFrontDefaultCertificate{false};
-  bool m_cloudFrontDefaultCertificateHasBeenSet = false;
 
   Aws::String m_iAMCertificateId;
-  bool m_iAMCertificateIdHasBeenSet = false;
 
   Aws::String m_aCMCertificateArn;
-  bool m_aCMCertificateArnHasBeenSet = false;
 
   SSLSupportMethod m_sSLSupportMethod{SSLSupportMethod::NOT_SET};
-  bool m_sSLSupportMethodHasBeenSet = false;
 
   MinimumProtocolVersion m_minimumProtocolVersion{MinimumProtocolVersion::NOT_SET};
+  bool m_cloudFrontDefaultCertificateHasBeenSet = false;
+  bool m_iAMCertificateIdHasBeenSet = false;
+  bool m_aCMCertificateArnHasBeenSet = false;
+  bool m_sSLSupportMethodHasBeenSet = false;
   bool m_minimumProtocolVersionHasBeenSet = false;
 };
 

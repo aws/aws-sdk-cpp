@@ -91,12 +91,12 @@ class DeletePerformanceAnalysisReportRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_analysisReportId;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_analysisReportIdHasBeenSet = false;
 };
 

@@ -134,18 +134,18 @@ class IsAuthorizedWithTokenResult {
   ///@}
  private:
   Decision m_decision{Decision::NOT_SET};
-  bool m_decisionHasBeenSet = false;
 
   Aws::Vector<DeterminingPolicyItem> m_determiningPolicies;
-  bool m_determiningPoliciesHasBeenSet = false;
 
   Aws::Vector<EvaluationErrorItem> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   EntityIdentifier m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_decisionHasBeenSet = false;
+  bool m_determiningPoliciesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

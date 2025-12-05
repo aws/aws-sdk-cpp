@@ -60,9 +60,9 @@ class GetUserDefinedFunctionResult {
   ///@}
  private:
   UserDefinedFunction m_userDefinedFunction;
-  bool m_userDefinedFunctionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userDefinedFunctionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

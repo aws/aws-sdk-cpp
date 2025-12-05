@@ -84,12 +84,12 @@ class CreateChannelRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_channelDescription;
+  bool m_spaceIdHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
   bool m_channelDescriptionHasBeenSet = false;
 };
 

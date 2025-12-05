@@ -65,9 +65,9 @@ class CreatePlatformApplicationResult {
   ///@}
  private:
   Aws::String m_platformApplicationArn;
-  bool m_platformApplicationArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_platformApplicationArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -110,18 +110,18 @@ class RuleStatusCounts {
   ///@}
  private:
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_warning{0};
-  bool m_warningHasBeenSet = false;
 
   int m_info{0};
-  bool m_infoHasBeenSet = false;
 
   int m_passed{0};
-  bool m_passedHasBeenSet = false;
 
   int m_unknown{0};
+  bool m_failedHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
+  bool m_infoHasBeenSet = false;
+  bool m_passedHasBeenSet = false;
   bool m_unknownHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateCustomDataIdentifierResult {
   ///@}
  private:
   Aws::String m_customDataIdentifierId;
-  bool m_customDataIdentifierIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customDataIdentifierIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

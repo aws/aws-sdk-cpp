@@ -159,24 +159,24 @@ class CreateRunGroupRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_maxCpus{0};
-  bool m_maxCpusHasBeenSet = false;
 
   int m_maxRuns{0};
-  bool m_maxRunsHasBeenSet = false;
 
   int m_maxDuration{0};
-  bool m_maxDurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   int m_maxGpus{0};
+  bool m_nameHasBeenSet = false;
+  bool m_maxCpusHasBeenSet = false;
+  bool m_maxRunsHasBeenSet = false;
+  bool m_maxDurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
   bool m_maxGpusHasBeenSet = false;
 };
 

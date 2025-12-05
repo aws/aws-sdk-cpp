@@ -114,15 +114,15 @@ class RemoveTargetsRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::String m_eventBusName;
-  bool m_eventBusNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   bool m_force{false};
+  bool m_ruleHasBeenSet = false;
+  bool m_eventBusNameHasBeenSet = false;
+  bool m_idsHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

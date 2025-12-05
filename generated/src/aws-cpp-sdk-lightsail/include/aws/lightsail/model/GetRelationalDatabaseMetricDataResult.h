@@ -84,12 +84,12 @@ class GetRelationalDatabaseMetricDataResult {
   ///@}
  private:
   RelationalDatabaseMetricName m_metricName{RelationalDatabaseMetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<MetricDatapoint> m_metricData;
-  bool m_metricDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricNameHasBeenSet = false;
+  bool m_metricDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

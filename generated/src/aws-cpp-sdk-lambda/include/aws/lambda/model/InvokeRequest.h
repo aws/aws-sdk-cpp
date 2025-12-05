@@ -181,24 +181,24 @@ class InvokeRequest : public StreamingLambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   InvocationType m_invocationType{InvocationType::NOT_SET};
-  bool m_invocationTypeHasBeenSet = false;
 
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   Aws::String m_clientContext;
-  bool m_clientContextHasBeenSet = false;
 
   Aws::String m_durableExecutionName;
-  bool m_durableExecutionNameHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   Aws::String m_tenantId;
+  bool m_functionNameHasBeenSet = false;
+  bool m_invocationTypeHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
+  bool m_clientContextHasBeenSet = false;
+  bool m_durableExecutionNameHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
   bool m_tenantIdHasBeenSet = false;
 };
 

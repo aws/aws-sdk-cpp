@@ -55,9 +55,9 @@ class GetTileResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_binaryFile{};
-  bool m_binaryFileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_binaryFileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

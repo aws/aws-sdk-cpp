@@ -110,15 +110,15 @@ class DataProductItem {
   ///@}
  private:
   Aws::Vector<Aws::String> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   DataProductItemType m_itemType{DataProductItemType::NOT_SET};
-  bool m_itemTypeHasBeenSet = false;
 
   Aws::String m_revision;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_itemTypeHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

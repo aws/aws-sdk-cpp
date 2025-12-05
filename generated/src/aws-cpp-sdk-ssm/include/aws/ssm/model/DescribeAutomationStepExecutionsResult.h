@@ -86,12 +86,12 @@ class DescribeAutomationStepExecutionsResult {
   ///@}
  private:
   Aws::Vector<StepExecution> m_stepExecutions;
-  bool m_stepExecutionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stepExecutionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

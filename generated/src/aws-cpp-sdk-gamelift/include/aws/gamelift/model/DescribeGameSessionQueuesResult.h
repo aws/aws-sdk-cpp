@@ -86,12 +86,12 @@ class DescribeGameSessionQueuesResult {
   ///@}
  private:
   Aws::Vector<GameSessionQueue> m_gameSessionQueues;
-  bool m_gameSessionQueuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameSessionQueuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

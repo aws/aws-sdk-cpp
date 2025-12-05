@@ -66,9 +66,9 @@ class UpdateTargetGroupRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_targetGroupIdentifier;
-  bool m_targetGroupIdentifierHasBeenSet = false;
 
   HealthCheckConfig m_healthCheck;
+  bool m_targetGroupIdentifierHasBeenSet = false;
   bool m_healthCheckHasBeenSet = false;
 };
 

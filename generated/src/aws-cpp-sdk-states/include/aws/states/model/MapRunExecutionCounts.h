@@ -209,33 +209,33 @@ class MapRunExecutionCounts {
   ///@}
  private:
   long long m_pending{0};
-  bool m_pendingHasBeenSet = false;
 
   long long m_running{0};
-  bool m_runningHasBeenSet = false;
 
   long long m_succeeded{0};
-  bool m_succeededHasBeenSet = false;
 
   long long m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   long long m_timedOut{0};
-  bool m_timedOutHasBeenSet = false;
 
   long long m_aborted{0};
-  bool m_abortedHasBeenSet = false;
 
   long long m_total{0};
-  bool m_totalHasBeenSet = false;
 
   long long m_resultsWritten{0};
-  bool m_resultsWrittenHasBeenSet = false;
 
   long long m_failuresNotRedrivable{0};
-  bool m_failuresNotRedrivableHasBeenSet = false;
 
   long long m_pendingRedrive{0};
+  bool m_pendingHasBeenSet = false;
+  bool m_runningHasBeenSet = false;
+  bool m_succeededHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_timedOutHasBeenSet = false;
+  bool m_abortedHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_resultsWrittenHasBeenSet = false;
+  bool m_failuresNotRedrivableHasBeenSet = false;
   bool m_pendingRedriveHasBeenSet = false;
 };
 

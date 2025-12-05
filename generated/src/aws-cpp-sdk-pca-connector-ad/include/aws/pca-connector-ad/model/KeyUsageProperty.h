@@ -71,9 +71,9 @@ class KeyUsageProperty {
   ///@}
  private:
   KeyUsagePropertyFlags m_propertyFlags;
-  bool m_propertyFlagsHasBeenSet = false;
 
   KeyUsagePropertyType m_propertyType{KeyUsagePropertyType::NOT_SET};
+  bool m_propertyFlagsHasBeenSet = false;
   bool m_propertyTypeHasBeenSet = false;
 };
 

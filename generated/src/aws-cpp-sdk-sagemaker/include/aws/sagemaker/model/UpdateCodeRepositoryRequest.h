@@ -73,9 +73,9 @@ class UpdateCodeRepositoryRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_codeRepositoryName;
-  bool m_codeRepositoryNameHasBeenSet = false;
 
   GitConfigForUpdate m_gitConfig;
+  bool m_codeRepositoryNameHasBeenSet = false;
   bool m_gitConfigHasBeenSet = false;
 };
 

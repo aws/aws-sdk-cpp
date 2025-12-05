@@ -315,45 +315,45 @@ class ListObjectsV2Result {
   ///@}
  private:
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::Vector<Object> m_contents;
-  bool m_contentsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   int m_maxKeys{0};
-  bool m_maxKeysHasBeenSet = false;
 
   Aws::Vector<CommonPrefix> m_commonPrefixes;
-  bool m_commonPrefixesHasBeenSet = false;
 
   EncodingType m_encodingType{EncodingType::NOT_SET};
-  bool m_encodingTypeHasBeenSet = false;
 
   int m_keyCount{0};
-  bool m_keyCountHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_nextContinuationToken;
-  bool m_nextContinuationTokenHasBeenSet = false;
 
   Aws::String m_startAfter;
-  bool m_startAfterHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_contentsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_maxKeysHasBeenSet = false;
+  bool m_commonPrefixesHasBeenSet = false;
+  bool m_encodingTypeHasBeenSet = false;
+  bool m_keyCountHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
+  bool m_nextContinuationTokenHasBeenSet = false;
+  bool m_startAfterHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

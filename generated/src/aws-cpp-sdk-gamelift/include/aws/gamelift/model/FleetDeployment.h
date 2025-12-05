@@ -215,30 +215,30 @@ class FleetDeployment {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_gameServerBinaryArn;
-  bool m_gameServerBinaryArnHasBeenSet = false;
 
   Aws::String m_rollbackGameServerBinaryArn;
-  bool m_rollbackGameServerBinaryArnHasBeenSet = false;
 
   Aws::String m_perInstanceBinaryArn;
-  bool m_perInstanceBinaryArnHasBeenSet = false;
 
   Aws::String m_rollbackPerInstanceBinaryArn;
-  bool m_rollbackPerInstanceBinaryArnHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   DeploymentConfiguration m_deploymentConfiguration;
-  bool m_deploymentConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_gameServerBinaryArnHasBeenSet = false;
+  bool m_rollbackGameServerBinaryArnHasBeenSet = false;
+  bool m_perInstanceBinaryArnHasBeenSet = false;
+  bool m_rollbackPerInstanceBinaryArnHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentConfigurationHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

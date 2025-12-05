@@ -61,9 +61,9 @@ class DisassociateUserResult {
   ///@}
  private:
   InstanceUserSummary m_instanceUserSummary;
-  bool m_instanceUserSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceUserSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

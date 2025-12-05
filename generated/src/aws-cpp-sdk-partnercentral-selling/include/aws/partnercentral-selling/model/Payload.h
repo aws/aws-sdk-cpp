@@ -76,9 +76,9 @@ class Payload {
   ///@}
  private:
   OpportunityInvitationPayload m_opportunityInvitation;
-  bool m_opportunityInvitationHasBeenSet = false;
 
   LeadInvitationPayload m_leadInvitation;
+  bool m_opportunityInvitationHasBeenSet = false;
   bool m_leadInvitationHasBeenSet = false;
 };
 

@@ -203,30 +203,30 @@ class AccountAssignmentOperationStatus {
   ///@}
  private:
   StatusValues m_status{StatusValues::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_permissionSetArn;
-  bool m_permissionSetArnHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_permissionSetArnHasBeenSet = false;
+  bool m_principalTypeHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
 };
 

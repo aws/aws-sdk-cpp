@@ -107,18 +107,18 @@ class UpdateAnalysisResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   ResourceStatus m_updateStatus{ResourceStatus::NOT_SET};
-  bool m_updateStatusHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

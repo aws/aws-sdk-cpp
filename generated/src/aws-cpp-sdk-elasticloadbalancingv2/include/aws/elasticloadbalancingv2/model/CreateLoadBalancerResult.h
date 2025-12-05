@@ -68,9 +68,9 @@ class CreateLoadBalancerResult {
   ///@}
  private:
   Aws::Vector<LoadBalancer> m_loadBalancers;
-  bool m_loadBalancersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_loadBalancersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

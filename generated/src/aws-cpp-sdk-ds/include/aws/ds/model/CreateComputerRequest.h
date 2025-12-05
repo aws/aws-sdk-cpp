@@ -136,18 +136,18 @@ class CreateComputerRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_computerName;
-  bool m_computerNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_organizationalUnitDistinguishedName;
-  bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
 
   Aws::Vector<Attribute> m_computerAttributes;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_computerNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
   bool m_computerAttributesHasBeenSet = false;
 };
 

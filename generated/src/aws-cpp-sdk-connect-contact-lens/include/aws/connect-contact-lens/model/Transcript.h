@@ -179,27 +179,27 @@ class Transcript {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_participantRole;
-  bool m_participantRoleHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   int m_beginOffsetMillis{0};
-  bool m_beginOffsetMillisHasBeenSet = false;
 
   int m_endOffsetMillis{0};
-  bool m_endOffsetMillisHasBeenSet = false;
 
   SentimentValue m_sentiment{SentimentValue::NOT_SET};
-  bool m_sentimentHasBeenSet = false;
 
   Aws::Vector<IssueDetected> m_issuesDetected;
+  bool m_idHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_beginOffsetMillisHasBeenSet = false;
+  bool m_endOffsetMillisHasBeenSet = false;
+  bool m_sentimentHasBeenSet = false;
   bool m_issuesDetectedHasBeenSet = false;
 };
 

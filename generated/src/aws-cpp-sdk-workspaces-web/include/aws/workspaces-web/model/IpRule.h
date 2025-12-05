@@ -68,9 +68,9 @@ class IpRule {
   ///@}
  private:
   Aws::String m_ipRange;
-  bool m_ipRangeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_ipRangeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

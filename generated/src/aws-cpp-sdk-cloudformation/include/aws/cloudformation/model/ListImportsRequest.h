@@ -71,9 +71,9 @@ class ListImportsRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_exportName;
-  bool m_exportNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_exportNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

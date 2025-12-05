@@ -184,21 +184,21 @@ class PerformanceInsightsMetricsDetail {
   ///@}
  private:
   Aws::String m_metricDisplayName;
-  bool m_metricDisplayNameHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   PerformanceInsightsMetricQuery m_metricQuery;
-  bool m_metricQueryHasBeenSet = false;
 
   Aws::Vector<PerformanceInsightsReferenceData> m_referenceData;
-  bool m_referenceDataHasBeenSet = false;
 
   Aws::Vector<PerformanceInsightsStat> m_statsAtAnomaly;
-  bool m_statsAtAnomalyHasBeenSet = false;
 
   Aws::Vector<PerformanceInsightsStat> m_statsAtBaseline;
+  bool m_metricDisplayNameHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_metricQueryHasBeenSet = false;
+  bool m_referenceDataHasBeenSet = false;
+  bool m_statsAtAnomalyHasBeenSet = false;
   bool m_statsAtBaselineHasBeenSet = false;
 };
 

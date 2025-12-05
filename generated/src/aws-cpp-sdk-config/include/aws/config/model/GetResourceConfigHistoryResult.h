@@ -92,12 +92,12 @@ class GetResourceConfigHistoryResult {
   ///@}
  private:
   Aws::Vector<ConfigurationItem> m_configurationItems;
-  bool m_configurationItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

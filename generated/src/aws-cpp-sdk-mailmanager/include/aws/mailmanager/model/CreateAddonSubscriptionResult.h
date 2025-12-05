@@ -59,9 +59,9 @@ class CreateAddonSubscriptionResult {
   ///@}
  private:
   Aws::String m_addonSubscriptionId;
-  bool m_addonSubscriptionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonSubscriptionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

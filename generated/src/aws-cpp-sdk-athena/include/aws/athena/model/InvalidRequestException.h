@@ -66,9 +66,9 @@ class InvalidRequestException {
   ///@}
  private:
   Aws::String m_athenaErrorCode;
-  bool m_athenaErrorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_athenaErrorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

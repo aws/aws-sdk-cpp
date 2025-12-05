@@ -283,36 +283,36 @@ class Filter {
   ///@}
  private:
   bool m_restartNeeded{false};
-  bool m_restartNeededHasBeenSet = false;
 
   bool m_rollbackPossible{false};
-  bool m_rollbackPossibleHasBeenSet = false;
 
   Aws::Vector<ImplementationEffort> m_implementationEfforts;
-  bool m_implementationEffortsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<ActionType> m_actionTypes;
-  bool m_actionTypesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
+  bool m_restartNeededHasBeenSet = false;
+  bool m_rollbackPossibleHasBeenSet = false;
+  bool m_implementationEffortsHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_actionTypesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
   bool m_recommendationIdsHasBeenSet = false;
 };
 

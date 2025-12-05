@@ -105,15 +105,15 @@ class NetworkFirewallMissingSubnetViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::String m_vPC;
-  bool m_vPCHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_targetViolationReason;
+  bool m_violationTargetHasBeenSet = false;
+  bool m_vPCHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_targetViolationReasonHasBeenSet = false;
 };
 

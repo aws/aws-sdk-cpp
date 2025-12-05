@@ -177,24 +177,24 @@ class UpdateVPCConnectionRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_vPCConnectionId;
-  bool m_vPCConnectionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsResolvers;
-  bool m_dnsResolversHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_vPCConnectionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_dnsResolversHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

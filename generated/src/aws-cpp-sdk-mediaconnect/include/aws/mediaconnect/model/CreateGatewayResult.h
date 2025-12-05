@@ -60,9 +60,9 @@ class CreateGatewayResult {
   ///@}
  private:
   Gateway m_gateway;
-  bool m_gatewayHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

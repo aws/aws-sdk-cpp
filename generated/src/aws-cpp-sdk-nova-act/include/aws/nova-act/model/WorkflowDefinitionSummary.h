@@ -105,15 +105,15 @@ class WorkflowDefinitionSummary {
   ///@}
  private:
   Aws::String m_workflowDefinitionArn;
-  bool m_workflowDefinitionArnHasBeenSet = false;
 
   Aws::String m_workflowDefinitionName;
-  bool m_workflowDefinitionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   WorkflowDefinitionStatus m_status{WorkflowDefinitionStatus::NOT_SET};
+  bool m_workflowDefinitionArnHasBeenSet = false;
+  bool m_workflowDefinitionNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

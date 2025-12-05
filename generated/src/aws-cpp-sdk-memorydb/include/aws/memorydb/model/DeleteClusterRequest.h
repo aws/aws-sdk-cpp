@@ -87,12 +87,12 @@ class DeleteClusterRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_multiRegionClusterName;
-  bool m_multiRegionClusterNameHasBeenSet = false;
 
   Aws::String m_finalSnapshotName;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_multiRegionClusterNameHasBeenSet = false;
   bool m_finalSnapshotNameHasBeenSet = false;
 };
 

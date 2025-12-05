@@ -136,18 +136,18 @@ class ListGatewayRoutesRequest : public AppMeshRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   Aws::String m_meshOwner;
-  bool m_meshOwnerHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_virtualGatewayName;
+  bool m_limitHasBeenSet = false;
+  bool m_meshNameHasBeenSet = false;
+  bool m_meshOwnerHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_virtualGatewayNameHasBeenSet = false;
 };
 

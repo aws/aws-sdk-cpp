@@ -88,12 +88,12 @@ class PersonDetail {
   ///@}
  private:
   long long m_index{0};
-  bool m_indexHasBeenSet = false;
 
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   FaceDetail m_face;
+  bool m_indexHasBeenSet = false;
+  bool m_boundingBoxHasBeenSet = false;
   bool m_faceHasBeenSet = false;
 };
 

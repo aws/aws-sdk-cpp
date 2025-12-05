@@ -176,24 +176,24 @@ class CrossRegionCopyRule {
   ///@}
  private:
   Aws::String m_targetRegion;
-  bool m_targetRegionHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_cmkArn;
-  bool m_cmkArnHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   CrossRegionCopyRetainRule m_retainRule;
-  bool m_retainRuleHasBeenSet = false;
 
   CrossRegionCopyDeprecateRule m_deprecateRule;
+  bool m_targetRegionHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_cmkArnHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_retainRuleHasBeenSet = false;
   bool m_deprecateRuleHasBeenSet = false;
 };
 

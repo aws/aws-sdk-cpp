@@ -153,24 +153,24 @@ class ListRecommendationSummariesResult {
   ///@}
  private:
   double m_estimatedTotalDedupedSavings{0.0};
-  bool m_estimatedTotalDedupedSavingsHasBeenSet = false;
 
   Aws::Vector<RecommendationSummary> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   SummaryMetricsResult m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_estimatedTotalDedupedSavingsHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

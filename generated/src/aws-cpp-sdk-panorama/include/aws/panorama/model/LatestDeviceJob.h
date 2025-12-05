@@ -85,12 +85,12 @@ class LatestDeviceJob {
   ///@}
  private:
   Aws::String m_imageVersion;
-  bool m_imageVersionHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   UpdateProgress m_status{UpdateProgress::NOT_SET};
+  bool m_imageVersionHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

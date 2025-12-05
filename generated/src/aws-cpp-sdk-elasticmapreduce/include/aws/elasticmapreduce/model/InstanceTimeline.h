@@ -86,12 +86,12 @@ class InstanceTimeline {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_readyDateTime{};
-  bool m_readyDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_readyDateTimeHasBeenSet = false;
   bool m_endDateTimeHasBeenSet = false;
 };
 

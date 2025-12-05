@@ -125,18 +125,18 @@ class UpdateAvailabilityZoneChangeProtectionResult {
   ///@}
  private:
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   bool m_availabilityZoneChangeProtection{false};
-  bool m_availabilityZoneChangeProtectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateTokenHasBeenSet = false;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallNameHasBeenSet = false;
+  bool m_availabilityZoneChangeProtectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

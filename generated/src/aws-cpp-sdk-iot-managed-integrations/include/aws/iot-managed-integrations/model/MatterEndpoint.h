@@ -76,9 +76,9 @@ class MatterEndpoint {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<MatterCluster> m_clusters;
+  bool m_idHasBeenSet = false;
   bool m_clustersHasBeenSet = false;
 };
 

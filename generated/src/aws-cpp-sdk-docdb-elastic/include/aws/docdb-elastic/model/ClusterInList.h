@@ -85,12 +85,12 @@ class ClusterInList {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

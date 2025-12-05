@@ -167,24 +167,24 @@ class Attachment {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_rawContent{};
-  bool m_rawContentHasBeenSet = false;
 
   AttachmentContentDisposition m_contentDisposition{AttachmentContentDisposition::NOT_SET};
-  bool m_contentDispositionHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_contentDescription;
-  bool m_contentDescriptionHasBeenSet = false;
 
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   AttachmentContentTransferEncoding m_contentTransferEncoding{AttachmentContentTransferEncoding::NOT_SET};
-  bool m_contentTransferEncodingHasBeenSet = false;
 
   Aws::String m_contentType;
+  bool m_rawContentHasBeenSet = false;
+  bool m_contentDispositionHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_contentDescriptionHasBeenSet = false;
+  bool m_contentIdHasBeenSet = false;
+  bool m_contentTransferEncodingHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

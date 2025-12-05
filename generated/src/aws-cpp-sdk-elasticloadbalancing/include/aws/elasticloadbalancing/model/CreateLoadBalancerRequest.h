@@ -216,24 +216,24 @@ class CreateLoadBalancerRequest : public ElasticLoadBalancingRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Listener> m_listeners;
-  bool m_listenersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_scheme;
-  bool m_schemeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_listenersHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_schemeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

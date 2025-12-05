@@ -141,21 +141,21 @@ class ListAnomaliesForInsightRequest : public DevOpsGuruRequest {
   ///@}
  private:
   Aws::String m_insightId;
-  bool m_insightIdHasBeenSet = false;
 
   StartTimeRange m_startTimeRange;
-  bool m_startTimeRangeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ListAnomaliesForInsightFilters m_filters;
+  bool m_insightIdHasBeenSet = false;
+  bool m_startTimeRangeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

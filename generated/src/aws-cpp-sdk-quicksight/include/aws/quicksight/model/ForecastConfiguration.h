@@ -70,9 +70,9 @@ class ForecastConfiguration {
   ///@}
  private:
   TimeBasedForecastProperties m_forecastProperties;
-  bool m_forecastPropertiesHasBeenSet = false;
 
   ForecastScenario m_scenario;
+  bool m_forecastPropertiesHasBeenSet = false;
   bool m_scenarioHasBeenSet = false;
 };
 

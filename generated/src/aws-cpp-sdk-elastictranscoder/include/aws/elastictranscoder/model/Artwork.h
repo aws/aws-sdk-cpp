@@ -206,24 +206,24 @@ class Artwork {
   ///@}
  private:
   Aws::String m_inputKey;
-  bool m_inputKeyHasBeenSet = false;
 
   Aws::String m_maxWidth;
-  bool m_maxWidthHasBeenSet = false;
 
   Aws::String m_maxHeight;
-  bool m_maxHeightHasBeenSet = false;
 
   Aws::String m_sizingPolicy;
-  bool m_sizingPolicyHasBeenSet = false;
 
   Aws::String m_paddingPolicy;
-  bool m_paddingPolicyHasBeenSet = false;
 
   Aws::String m_albumArtFormat;
-  bool m_albumArtFormatHasBeenSet = false;
 
   Encryption m_encryption;
+  bool m_inputKeyHasBeenSet = false;
+  bool m_maxWidthHasBeenSet = false;
+  bool m_maxHeightHasBeenSet = false;
+  bool m_sizingPolicyHasBeenSet = false;
+  bool m_paddingPolicyHasBeenSet = false;
+  bool m_albumArtFormatHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

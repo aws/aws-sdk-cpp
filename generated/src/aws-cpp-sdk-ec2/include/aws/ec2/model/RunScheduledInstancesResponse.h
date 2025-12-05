@@ -72,9 +72,9 @@ class RunScheduledInstancesResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIdSet;
-  bool m_instanceIdSetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

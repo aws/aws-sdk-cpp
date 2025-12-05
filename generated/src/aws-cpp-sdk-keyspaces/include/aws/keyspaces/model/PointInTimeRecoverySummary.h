@@ -70,9 +70,9 @@ class PointInTimeRecoverySummary {
   ///@}
  private:
   PointInTimeRecoveryStatus m_status{PointInTimeRecoveryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_earliestRestorableTimestamp{};
+  bool m_statusHasBeenSet = false;
   bool m_earliestRestorableTimestampHasBeenSet = false;
 };
 

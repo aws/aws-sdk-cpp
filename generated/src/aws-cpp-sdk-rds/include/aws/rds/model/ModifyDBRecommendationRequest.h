@@ -115,15 +115,15 @@ class ModifyDBRecommendationRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<RecommendedActionUpdate> m_recommendedActionUpdates;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_recommendedActionUpdatesHasBeenSet = false;
 };
 

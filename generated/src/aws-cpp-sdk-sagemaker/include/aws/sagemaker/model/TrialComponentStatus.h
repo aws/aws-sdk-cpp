@@ -67,9 +67,9 @@ class TrialComponentStatus {
   ///@}
  private:
   TrialComponentPrimaryStatus m_primaryStatus{TrialComponentPrimaryStatus::NOT_SET};
-  bool m_primaryStatusHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_primaryStatusHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

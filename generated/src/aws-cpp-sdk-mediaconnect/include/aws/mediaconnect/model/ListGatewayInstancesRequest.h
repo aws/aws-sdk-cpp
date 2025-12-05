@@ -99,12 +99,12 @@ class ListGatewayInstancesRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_filterArn;
-  bool m_filterArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class JobManifest {
   ///@}
  private:
   JobManifestSpec m_spec;
-  bool m_specHasBeenSet = false;
 
   JobManifestLocation m_location;
+  bool m_specHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

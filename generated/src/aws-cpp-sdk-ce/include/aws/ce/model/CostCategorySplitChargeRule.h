@@ -127,15 +127,15 @@ class CostCategorySplitChargeRule {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   CostCategorySplitChargeMethod m_method{CostCategorySplitChargeMethod::NOT_SET};
-  bool m_methodHasBeenSet = false;
 
   Aws::Vector<CostCategorySplitChargeRuleParameter> m_parameters;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class ModifyingProperties {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_activeValue;
-  bool m_activeValueHasBeenSet = false;
 
   Aws::String m_pendingValue;
-  bool m_pendingValueHasBeenSet = false;
 
   PropertyValueType m_valueType{PropertyValueType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_activeValueHasBeenSet = false;
+  bool m_pendingValueHasBeenSet = false;
   bool m_valueTypeHasBeenSet = false;
 };
 

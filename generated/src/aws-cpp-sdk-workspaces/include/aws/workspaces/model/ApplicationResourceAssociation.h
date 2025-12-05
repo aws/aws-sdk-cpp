@@ -159,24 +159,24 @@ class ApplicationResourceAssociation {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_associatedResourceId;
-  bool m_associatedResourceIdHasBeenSet = false;
 
   ApplicationAssociatedResourceType m_associatedResourceType{ApplicationAssociatedResourceType::NOT_SET};
-  bool m_associatedResourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   AssociationState m_state{AssociationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   AssociationStateReason m_stateReason;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_associatedResourceIdHasBeenSet = false;
+  bool m_associatedResourceTypeHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_stateReasonHasBeenSet = false;
 };
 

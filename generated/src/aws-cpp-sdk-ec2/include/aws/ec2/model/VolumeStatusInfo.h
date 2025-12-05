@@ -76,9 +76,9 @@ class VolumeStatusInfo {
   ///@}
  private:
   Aws::Vector<VolumeStatusDetails> m_details;
-  bool m_detailsHasBeenSet = false;
 
   VolumeStatusInfoStatus m_status{VolumeStatusInfoStatus::NOT_SET};
+  bool m_detailsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

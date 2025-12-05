@@ -92,12 +92,12 @@ class CreatePipelineResult {
   ///@}
  private:
   PipelineDeclaration m_pipeline;
-  bool m_pipelineHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

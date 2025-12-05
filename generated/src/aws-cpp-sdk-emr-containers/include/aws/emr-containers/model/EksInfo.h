@@ -69,9 +69,9 @@ class EksInfo {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_nodeLabel;
+  bool m_namespaceHasBeenSet = false;
   bool m_nodeLabelHasBeenSet = false;
 };
 

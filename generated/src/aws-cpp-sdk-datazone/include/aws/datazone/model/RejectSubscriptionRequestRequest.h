@@ -84,12 +84,12 @@ class RejectSubscriptionRequestRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_decisionComment;
-  bool m_decisionCommentHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_decisionCommentHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

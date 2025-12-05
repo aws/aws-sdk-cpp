@@ -85,12 +85,12 @@ class ListLineageGroupsResult {
   ///@}
  private:
   Aws::Vector<LineageGroupSummary> m_lineageGroupSummaries;
-  bool m_lineageGroupSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lineageGroupSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

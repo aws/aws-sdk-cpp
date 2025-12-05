@@ -104,12 +104,12 @@ class Adapter {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pages;
-  bool m_pagesHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_adapterIdHasBeenSet = false;
+  bool m_pagesHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

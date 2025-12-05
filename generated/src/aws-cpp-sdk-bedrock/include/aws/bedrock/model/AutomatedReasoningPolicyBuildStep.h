@@ -100,12 +100,12 @@ class AutomatedReasoningPolicyBuildStep {
   ///@}
  private:
   AutomatedReasoningPolicyBuildStepContext m_context;
-  bool m_contextHasBeenSet = false;
 
   AutomatedReasoningPolicyDefinitionElement m_priorElement;
-  bool m_priorElementHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyBuildStepMessage> m_messages;
+  bool m_contextHasBeenSet = false;
+  bool m_priorElementHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
 };
 

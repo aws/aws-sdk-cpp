@@ -219,33 +219,33 @@ class ListModelPackagesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
-  bool m_modelApprovalStatusHasBeenSet = false;
 
   Aws::String m_modelPackageGroupName;
-  bool m_modelPackageGroupNameHasBeenSet = false;
 
   ModelPackageType m_modelPackageType{ModelPackageType::NOT_SET};
-  bool m_modelPackageTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ModelPackageSortBy m_sortBy{ModelPackageSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_modelApprovalStatusHasBeenSet = false;
+  bool m_modelPackageGroupNameHasBeenSet = false;
+  bool m_modelPackageTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

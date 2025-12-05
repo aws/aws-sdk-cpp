@@ -82,12 +82,12 @@ class DescribeQueriesResult {
   ///@}
  private:
   Aws::Vector<QueryInfo> m_queries;
-  bool m_queriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

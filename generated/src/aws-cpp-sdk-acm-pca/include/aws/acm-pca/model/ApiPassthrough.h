@@ -74,9 +74,9 @@ class ApiPassthrough {
   ///@}
  private:
   Extensions m_extensions;
-  bool m_extensionsHasBeenSet = false;
 
   ASN1Subject m_subject;
+  bool m_extensionsHasBeenSet = false;
   bool m_subjectHasBeenSet = false;
 };
 

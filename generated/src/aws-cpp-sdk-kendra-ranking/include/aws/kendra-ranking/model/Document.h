@@ -179,24 +179,24 @@ class Document {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenizedTitle;
-  bool m_tokenizedTitleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenizedBody;
-  bool m_tokenizedBodyHasBeenSet = false;
 
   double m_originalScore{0.0};
+  bool m_idHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_tokenizedTitleHasBeenSet = false;
+  bool m_tokenizedBodyHasBeenSet = false;
   bool m_originalScoreHasBeenSet = false;
 };
 

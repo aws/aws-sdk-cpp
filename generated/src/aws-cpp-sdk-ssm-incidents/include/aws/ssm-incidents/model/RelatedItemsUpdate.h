@@ -69,9 +69,9 @@ class RelatedItemsUpdate {
   ///@}
  private:
   RelatedItem m_itemToAdd;
-  bool m_itemToAddHasBeenSet = false;
 
   ItemIdentifier m_itemToRemove;
+  bool m_itemToAddHasBeenSet = false;
   bool m_itemToRemoveHasBeenSet = false;
 };
 

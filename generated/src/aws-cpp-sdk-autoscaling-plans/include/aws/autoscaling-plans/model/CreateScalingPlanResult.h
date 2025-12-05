@@ -58,9 +58,9 @@ class CreateScalingPlanResult {
   ///@}
  private:
   long long m_scalingPlanVersion{0};
-  bool m_scalingPlanVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scalingPlanVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

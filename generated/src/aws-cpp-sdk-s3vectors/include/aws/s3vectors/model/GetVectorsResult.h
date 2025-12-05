@@ -67,9 +67,9 @@ class GetVectorsResult {
   ///@}
  private:
   Aws::Vector<GetOutputVector> m_vectors;
-  bool m_vectorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vectorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

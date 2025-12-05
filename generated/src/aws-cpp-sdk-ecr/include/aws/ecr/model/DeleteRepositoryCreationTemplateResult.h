@@ -77,12 +77,12 @@ class DeleteRepositoryCreationTemplateResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   RepositoryCreationTemplate m_repositoryCreationTemplate;
-  bool m_repositoryCreationTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryCreationTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

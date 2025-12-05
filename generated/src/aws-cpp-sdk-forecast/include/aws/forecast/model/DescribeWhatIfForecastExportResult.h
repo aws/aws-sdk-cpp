@@ -233,36 +233,36 @@ class DescribeWhatIfForecastExportResult {
   ///@}
  private:
   Aws::String m_whatIfForecastExportArn;
-  bool m_whatIfForecastExportArnHasBeenSet = false;
 
   Aws::String m_whatIfForecastExportName;
-  bool m_whatIfForecastExportNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_whatIfForecastArns;
-  bool m_whatIfForecastArnsHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_estimatedTimeRemainingInMinutes{0};
-  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_whatIfForecastExportArnHasBeenSet = false;
+  bool m_whatIfForecastExportNameHasBeenSet = false;
+  bool m_whatIfForecastArnsHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

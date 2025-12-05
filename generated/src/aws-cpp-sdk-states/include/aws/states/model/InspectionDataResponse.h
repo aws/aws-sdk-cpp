@@ -125,18 +125,18 @@ class InspectionDataResponse {
   ///@}
  private:
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_headers;
-  bool m_headersHasBeenSet = false;
 
   Aws::String m_body;
+  bool m_protocolHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
 };
 

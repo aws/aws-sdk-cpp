@@ -195,27 +195,27 @@ class HookProgressEvent {
   ///@}
  private:
   Aws::String m_hookTypeName;
-  bool m_hookTypeNameHasBeenSet = false;
 
   Aws::String m_hookTypeVersionId;
-  bool m_hookTypeVersionIdHasBeenSet = false;
 
   Aws::String m_hookTypeArn;
-  bool m_hookTypeArnHasBeenSet = false;
 
   Aws::String m_invocationPoint;
-  bool m_invocationPointHasBeenSet = false;
 
   Aws::String m_hookStatus;
-  bool m_hookStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_hookEventTime{};
-  bool m_hookEventTimeHasBeenSet = false;
 
   Aws::String m_hookStatusMessage;
-  bool m_hookStatusMessageHasBeenSet = false;
 
   Aws::String m_failureMode;
+  bool m_hookTypeNameHasBeenSet = false;
+  bool m_hookTypeVersionIdHasBeenSet = false;
+  bool m_hookTypeArnHasBeenSet = false;
+  bool m_invocationPointHasBeenSet = false;
+  bool m_hookStatusHasBeenSet = false;
+  bool m_hookEventTimeHasBeenSet = false;
+  bool m_hookStatusMessageHasBeenSet = false;
   bool m_failureModeHasBeenSet = false;
 };
 

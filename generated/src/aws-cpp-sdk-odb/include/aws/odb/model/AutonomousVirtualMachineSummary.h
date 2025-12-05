@@ -264,42 +264,42 @@ class AutonomousVirtualMachineSummary {
   ///@}
  private:
   Aws::String m_autonomousVirtualMachineId;
-  bool m_autonomousVirtualMachineIdHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_vmName;
-  bool m_vmNameHasBeenSet = false;
 
   Aws::String m_dbServerId;
-  bool m_dbServerIdHasBeenSet = false;
 
   Aws::String m_dbServerDisplayName;
-  bool m_dbServerDisplayNameHasBeenSet = false;
 
   int m_cpuCoreCount{0};
-  bool m_cpuCoreCountHasBeenSet = false;
 
   int m_memorySizeInGBs{0};
-  bool m_memorySizeInGBsHasBeenSet = false;
 
   int m_dbNodeStorageSizeInGBs{0};
-  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
 
   Aws::String m_clientIpAddress;
-  bool m_clientIpAddressHasBeenSet = false;
 
   Aws::String m_cloudAutonomousVmClusterId;
-  bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
 
   Aws::String m_ocid;
-  bool m_ocidHasBeenSet = false;
 
   Aws::String m_ociResourceAnchorName;
+  bool m_autonomousVirtualMachineIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_vmNameHasBeenSet = false;
+  bool m_dbServerIdHasBeenSet = false;
+  bool m_dbServerDisplayNameHasBeenSet = false;
+  bool m_cpuCoreCountHasBeenSet = false;
+  bool m_memorySizeInGBsHasBeenSet = false;
+  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_clientIpAddressHasBeenSet = false;
+  bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
+  bool m_ocidHasBeenSet = false;
   bool m_ociResourceAnchorNameHasBeenSet = false;
 };
 

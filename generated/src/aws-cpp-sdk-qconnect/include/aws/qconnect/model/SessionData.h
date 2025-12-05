@@ -242,33 +242,33 @@ class SessionData {
   ///@}
  private:
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SessionIntegrationConfiguration m_integrationConfiguration;
-  bool m_integrationConfigurationHasBeenSet = false;
 
   TagFilter m_tagFilter;
-  bool m_tagFilterHasBeenSet = false;
 
   Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
-  bool m_aiAgentConfigurationHasBeenSet = false;
 
   Origin m_origin{Origin::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_integrationConfigurationHasBeenSet = false;
+  bool m_tagFilterHasBeenSet = false;
+  bool m_aiAgentConfigurationHasBeenSet = false;
+  bool m_originHasBeenSet = false;
   bool m_orchestratorConfigurationListHasBeenSet = false;
 };
 

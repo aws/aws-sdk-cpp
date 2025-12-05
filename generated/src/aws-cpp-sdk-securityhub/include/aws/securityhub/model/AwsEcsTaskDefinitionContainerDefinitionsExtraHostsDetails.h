@@ -69,9 +69,9 @@ class AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
   ///@}
  private:
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_hostnameHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

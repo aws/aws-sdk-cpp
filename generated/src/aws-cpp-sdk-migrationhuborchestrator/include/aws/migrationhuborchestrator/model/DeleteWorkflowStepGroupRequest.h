@@ -70,9 +70,9 @@ class DeleteWorkflowStepGroupRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_workflowIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

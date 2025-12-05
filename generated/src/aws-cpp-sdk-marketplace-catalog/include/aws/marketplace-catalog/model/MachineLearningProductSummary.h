@@ -69,9 +69,9 @@ class MachineLearningProductSummary {
   ///@}
  private:
   Aws::String m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   MachineLearningProductVisibilityString m_visibility{MachineLearningProductVisibilityString::NOT_SET};
+  bool m_productTitleHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

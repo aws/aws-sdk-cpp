@@ -106,12 +106,12 @@ class DocumentAttributeTarget {
   ///@}
  private:
   Aws::String m_targetDocumentAttributeKey;
-  bool m_targetDocumentAttributeKeyHasBeenSet = false;
 
   bool m_targetDocumentAttributeValueDeletion{false};
-  bool m_targetDocumentAttributeValueDeletionHasBeenSet = false;
 
   DocumentAttributeValue m_targetDocumentAttributeValue;
+  bool m_targetDocumentAttributeKeyHasBeenSet = false;
+  bool m_targetDocumentAttributeValueDeletionHasBeenSet = false;
   bool m_targetDocumentAttributeValueHasBeenSet = false;
 };
 

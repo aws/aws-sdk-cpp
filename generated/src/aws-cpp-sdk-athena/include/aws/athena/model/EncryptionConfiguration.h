@@ -76,9 +76,9 @@ class EncryptionConfiguration {
   ///@}
  private:
   EncryptionOption m_encryptionOption{EncryptionOption::NOT_SET};
-  bool m_encryptionOptionHasBeenSet = false;
 
   Aws::String m_kmsKey;
+  bool m_encryptionOptionHasBeenSet = false;
   bool m_kmsKeyHasBeenSet = false;
 };
 

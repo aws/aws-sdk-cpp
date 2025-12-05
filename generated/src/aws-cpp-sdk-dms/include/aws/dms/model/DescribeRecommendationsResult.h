@@ -90,12 +90,12 @@ class DescribeRecommendationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Recommendation> m_recommendations;
-  bool m_recommendationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

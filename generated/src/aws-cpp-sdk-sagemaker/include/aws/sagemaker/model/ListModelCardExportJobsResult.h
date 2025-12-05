@@ -85,12 +85,12 @@ class ListModelCardExportJobsResult {
   ///@}
  private:
   Aws::Vector<ModelCardExportJobSummary> m_modelCardExportJobSummaries;
-  bool m_modelCardExportJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelCardExportJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AwsRdsDbSecurityGroupIpRange {
   ///@}
  private:
   Aws::String m_cidrIp;
-  bool m_cidrIpHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_cidrIpHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

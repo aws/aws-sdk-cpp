@@ -159,24 +159,24 @@ class ExtractionJobMetadata {
   ///@}
  private:
   Aws::String m_jobID;
-  bool m_jobIDHasBeenSet = false;
 
   ExtractionJobMessages m_messages;
-  bool m_messagesHasBeenSet = false;
 
   ExtractionJobStatus m_status{ExtractionJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_strategyId;
-  bool m_strategyIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actorId;
+  bool m_jobIDHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_strategyIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_actorIdHasBeenSet = false;
 };
 

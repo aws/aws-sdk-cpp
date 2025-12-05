@@ -147,21 +147,21 @@ class Annotation {
   ///@}
  private:
   Aws::String m_annotationName;
-  bool m_annotationNameHasBeenSet = false;
 
   AnnotationStatus m_status{AnnotationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_remediationMessage;
-  bool m_remediationMessageHasBeenSet = false;
 
   Aws::String m_remediationLink;
-  bool m_remediationLinkHasBeenSet = false;
 
   AnnotationSeverityLevel m_severityLevel{AnnotationSeverityLevel::NOT_SET};
+  bool m_annotationNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_remediationMessageHasBeenSet = false;
+  bool m_remediationLinkHasBeenSet = false;
   bool m_severityLevelHasBeenSet = false;
 };
 

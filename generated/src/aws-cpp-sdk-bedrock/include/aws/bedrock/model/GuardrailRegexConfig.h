@@ -181,27 +181,27 @@ class GuardrailRegexConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_action{GuardrailSensitiveInformationAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_inputAction{GuardrailSensitiveInformationAction::NOT_SET};
-  bool m_inputActionHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_outputAction{GuardrailSensitiveInformationAction::NOT_SET};
-  bool m_outputActionHasBeenSet = false;
 
   bool m_inputEnabled{false};
-  bool m_inputEnabledHasBeenSet = false;
 
   bool m_outputEnabled{false};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_inputActionHasBeenSet = false;
+  bool m_outputActionHasBeenSet = false;
+  bool m_inputEnabledHasBeenSet = false;
   bool m_outputEnabledHasBeenSet = false;
 };
 

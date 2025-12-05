@@ -69,9 +69,9 @@ class MemberDetails {
   ///@}
  private:
   GroupDetails m_group;
-  bool m_groupHasBeenSet = false;
 
   UserDetails m_user;
+  bool m_groupHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class ListDomainsResult {
   ///@}
  private:
   Aws::Vector<DomainInfo> m_domainInfos;
-  bool m_domainInfosHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainInfosHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

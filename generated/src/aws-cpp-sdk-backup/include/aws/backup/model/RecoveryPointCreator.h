@@ -186,27 +186,27 @@ class RecoveryPointCreator {
   ///@}
  private:
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::String m_backupPlanArn;
-  bool m_backupPlanArnHasBeenSet = false;
 
   Aws::String m_backupPlanName;
-  bool m_backupPlanNameHasBeenSet = false;
 
   Aws::String m_backupPlanVersion;
-  bool m_backupPlanVersionHasBeenSet = false;
 
   Aws::String m_backupRuleId;
-  bool m_backupRuleIdHasBeenSet = false;
 
   Aws::String m_backupRuleName;
-  bool m_backupRuleNameHasBeenSet = false;
 
   Aws::String m_backupRuleCron;
-  bool m_backupRuleCronHasBeenSet = false;
 
   Aws::String m_backupRuleTimezone;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_backupPlanArnHasBeenSet = false;
+  bool m_backupPlanNameHasBeenSet = false;
+  bool m_backupPlanVersionHasBeenSet = false;
+  bool m_backupRuleIdHasBeenSet = false;
+  bool m_backupRuleNameHasBeenSet = false;
+  bool m_backupRuleCronHasBeenSet = false;
   bool m_backupRuleTimezoneHasBeenSet = false;
 };
 

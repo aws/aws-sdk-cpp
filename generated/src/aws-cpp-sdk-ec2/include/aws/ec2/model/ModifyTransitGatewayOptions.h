@@ -272,39 +272,39 @@ class ModifyTransitGatewayOptions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_addTransitGatewayCidrBlocks;
-  bool m_addTransitGatewayCidrBlocksHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeTransitGatewayCidrBlocks;
-  bool m_removeTransitGatewayCidrBlocksHasBeenSet = false;
 
   VpnEcmpSupportValue m_vpnEcmpSupport{VpnEcmpSupportValue::NOT_SET};
-  bool m_vpnEcmpSupportHasBeenSet = false;
 
   DnsSupportValue m_dnsSupport{DnsSupportValue::NOT_SET};
-  bool m_dnsSupportHasBeenSet = false;
 
   SecurityGroupReferencingSupportValue m_securityGroupReferencingSupport{SecurityGroupReferencingSupportValue::NOT_SET};
-  bool m_securityGroupReferencingSupportHasBeenSet = false;
 
   AutoAcceptSharedAttachmentsValue m_autoAcceptSharedAttachments{AutoAcceptSharedAttachmentsValue::NOT_SET};
-  bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
 
   DefaultRouteTableAssociationValue m_defaultRouteTableAssociation{DefaultRouteTableAssociationValue::NOT_SET};
-  bool m_defaultRouteTableAssociationHasBeenSet = false;
 
   Aws::String m_associationDefaultRouteTableId;
-  bool m_associationDefaultRouteTableIdHasBeenSet = false;
 
   DefaultRouteTablePropagationValue m_defaultRouteTablePropagation{DefaultRouteTablePropagationValue::NOT_SET};
-  bool m_defaultRouteTablePropagationHasBeenSet = false;
 
   Aws::String m_propagationDefaultRouteTableId;
-  bool m_propagationDefaultRouteTableIdHasBeenSet = false;
 
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   EncryptionSupportOptionValue m_encryptionSupport{EncryptionSupportOptionValue::NOT_SET};
+  bool m_addTransitGatewayCidrBlocksHasBeenSet = false;
+  bool m_removeTransitGatewayCidrBlocksHasBeenSet = false;
+  bool m_vpnEcmpSupportHasBeenSet = false;
+  bool m_dnsSupportHasBeenSet = false;
+  bool m_securityGroupReferencingSupportHasBeenSet = false;
+  bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
+  bool m_defaultRouteTableAssociationHasBeenSet = false;
+  bool m_associationDefaultRouteTableIdHasBeenSet = false;
+  bool m_defaultRouteTablePropagationHasBeenSet = false;
+  bool m_propagationDefaultRouteTableIdHasBeenSet = false;
+  bool m_amazonSideAsnHasBeenSet = false;
   bool m_encryptionSupportHasBeenSet = false;
 };
 

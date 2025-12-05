@@ -197,27 +197,27 @@ class AllocateAddressRequest : public EC2Request {
   ///@}
  private:
   DomainType m_domain{DomainType::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_publicIpv4Pool;
-  bool m_publicIpv4PoolHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
-  bool m_networkBorderGroupHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
-  bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_domainHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_publicIpv4PoolHasBeenSet = false;
+  bool m_networkBorderGroupHasBeenSet = false;
+  bool m_customerOwnedIpv4PoolHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

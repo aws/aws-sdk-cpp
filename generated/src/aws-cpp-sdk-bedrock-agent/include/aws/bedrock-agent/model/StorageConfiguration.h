@@ -221,30 +221,30 @@ class StorageConfiguration {
   ///@}
  private:
   KnowledgeBaseStorageType m_type{KnowledgeBaseStorageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   OpenSearchServerlessConfiguration m_opensearchServerlessConfiguration;
-  bool m_opensearchServerlessConfigurationHasBeenSet = false;
 
   OpenSearchManagedClusterConfiguration m_opensearchManagedClusterConfiguration;
-  bool m_opensearchManagedClusterConfigurationHasBeenSet = false;
 
   PineconeConfiguration m_pineconeConfiguration;
-  bool m_pineconeConfigurationHasBeenSet = false;
 
   RedisEnterpriseCloudConfiguration m_redisEnterpriseCloudConfiguration;
-  bool m_redisEnterpriseCloudConfigurationHasBeenSet = false;
 
   RdsConfiguration m_rdsConfiguration;
-  bool m_rdsConfigurationHasBeenSet = false;
 
   MongoDbAtlasConfiguration m_mongoDbAtlasConfiguration;
-  bool m_mongoDbAtlasConfigurationHasBeenSet = false;
 
   NeptuneAnalyticsConfiguration m_neptuneAnalyticsConfiguration;
-  bool m_neptuneAnalyticsConfigurationHasBeenSet = false;
 
   S3VectorsConfiguration m_s3VectorsConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_opensearchServerlessConfigurationHasBeenSet = false;
+  bool m_opensearchManagedClusterConfigurationHasBeenSet = false;
+  bool m_pineconeConfigurationHasBeenSet = false;
+  bool m_redisEnterpriseCloudConfigurationHasBeenSet = false;
+  bool m_rdsConfigurationHasBeenSet = false;
+  bool m_mongoDbAtlasConfigurationHasBeenSet = false;
+  bool m_neptuneAnalyticsConfigurationHasBeenSet = false;
   bool m_s3VectorsConfigurationHasBeenSet = false;
 };
 

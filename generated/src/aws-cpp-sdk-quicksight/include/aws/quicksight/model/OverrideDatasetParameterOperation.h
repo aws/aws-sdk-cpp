@@ -88,12 +88,12 @@ class OverrideDatasetParameterOperation {
   ///@}
  private:
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   Aws::String m_newParameterName;
-  bool m_newParameterNameHasBeenSet = false;
 
   NewDefaultValues m_newDefaultValues;
+  bool m_parameterNameHasBeenSet = false;
+  bool m_newParameterNameHasBeenSet = false;
   bool m_newDefaultValuesHasBeenSet = false;
 };
 

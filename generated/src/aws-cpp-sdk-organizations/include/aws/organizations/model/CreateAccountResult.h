@@ -68,9 +68,9 @@ class CreateAccountResult {
   ///@}
  private:
   CreateAccountStatus m_createAccountStatus;
-  bool m_createAccountStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createAccountStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

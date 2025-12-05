@@ -115,15 +115,15 @@ class MessageTemplateAttributes {
   ///@}
  private:
   SystemAttributes m_systemAttributes;
-  bool m_systemAttributesHasBeenSet = false;
 
   AgentAttributes m_agentAttributes;
-  bool m_agentAttributesHasBeenSet = false;
 
   CustomerProfileAttributes m_customerProfileAttributes;
-  bool m_customerProfileAttributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customAttributes;
+  bool m_systemAttributesHasBeenSet = false;
+  bool m_agentAttributesHasBeenSet = false;
+  bool m_customerProfileAttributesHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
 };
 

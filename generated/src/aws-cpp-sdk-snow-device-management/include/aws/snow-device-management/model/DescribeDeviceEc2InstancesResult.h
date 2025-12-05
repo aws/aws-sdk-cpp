@@ -68,9 +68,9 @@ class DescribeDeviceEc2InstancesResult {
   ///@}
  private:
   Aws::Vector<InstanceSummary> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

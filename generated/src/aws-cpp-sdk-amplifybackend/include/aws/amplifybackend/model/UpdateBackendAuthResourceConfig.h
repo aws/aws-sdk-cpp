@@ -108,15 +108,15 @@ class UpdateBackendAuthResourceConfig {
   ///@}
  private:
   AuthResources m_authResources{AuthResources::NOT_SET};
-  bool m_authResourcesHasBeenSet = false;
 
   UpdateBackendAuthIdentityPoolConfig m_identityPoolConfigs;
-  bool m_identityPoolConfigsHasBeenSet = false;
 
   Service m_service{Service::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   UpdateBackendAuthUserPoolConfig m_userPoolConfigs;
+  bool m_authResourcesHasBeenSet = false;
+  bool m_identityPoolConfigsHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
   bool m_userPoolConfigsHasBeenSet = false;
 };
 

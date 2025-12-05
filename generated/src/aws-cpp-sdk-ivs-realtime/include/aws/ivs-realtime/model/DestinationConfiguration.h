@@ -91,12 +91,12 @@ class DestinationConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ChannelDestinationConfiguration m_channel;
-  bool m_channelHasBeenSet = false;
 
   S3DestinationConfiguration m_s3;
+  bool m_nameHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

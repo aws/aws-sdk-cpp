@@ -86,12 +86,12 @@ class DescribeFileCachesRequest : public FSxRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fileCacheIds;
-  bool m_fileCacheIdsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_fileCacheIdsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

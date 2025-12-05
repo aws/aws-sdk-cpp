@@ -86,12 +86,12 @@ class DescribeTransitGatewayAttachmentsResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayAttachment> m_transitGatewayAttachments;
-  bool m_transitGatewayAttachmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayAttachmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

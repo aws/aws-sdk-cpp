@@ -130,18 +130,18 @@ class CaseSlaConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SlaType m_type{SlaType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::Vector<FieldValueUnion> m_targetFieldValues;
-  bool m_targetFieldValuesHasBeenSet = false;
 
   long long m_targetSlaMinutes{0};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_targetFieldValuesHasBeenSet = false;
   bool m_targetSlaMinutesHasBeenSet = false;
 };
 

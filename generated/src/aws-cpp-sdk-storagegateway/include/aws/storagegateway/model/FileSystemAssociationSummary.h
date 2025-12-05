@@ -105,15 +105,15 @@ class FileSystemAssociationSummary {
   ///@}
  private:
   Aws::String m_fileSystemAssociationId;
-  bool m_fileSystemAssociationIdHasBeenSet = false;
 
   Aws::String m_fileSystemAssociationARN;
-  bool m_fileSystemAssociationARNHasBeenSet = false;
 
   Aws::String m_fileSystemAssociationStatus;
-  bool m_fileSystemAssociationStatusHasBeenSet = false;
 
   Aws::String m_gatewayARN;
+  bool m_fileSystemAssociationIdHasBeenSet = false;
+  bool m_fileSystemAssociationARNHasBeenSet = false;
+  bool m_fileSystemAssociationStatusHasBeenSet = false;
   bool m_gatewayARNHasBeenSet = false;
 };
 

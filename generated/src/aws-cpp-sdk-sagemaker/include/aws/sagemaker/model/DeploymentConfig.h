@@ -97,12 +97,12 @@ class DeploymentConfig {
   ///@}
  private:
   BlueGreenUpdatePolicy m_blueGreenUpdatePolicy;
-  bool m_blueGreenUpdatePolicyHasBeenSet = false;
 
   RollingUpdatePolicy m_rollingUpdatePolicy;
-  bool m_rollingUpdatePolicyHasBeenSet = false;
 
   AutoRollbackConfig m_autoRollbackConfiguration;
+  bool m_blueGreenUpdatePolicyHasBeenSet = false;
+  bool m_rollingUpdatePolicyHasBeenSet = false;
   bool m_autoRollbackConfigurationHasBeenSet = false;
 };
 

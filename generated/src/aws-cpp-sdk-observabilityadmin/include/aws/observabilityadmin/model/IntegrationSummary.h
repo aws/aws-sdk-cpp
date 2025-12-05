@@ -68,9 +68,9 @@ class IntegrationSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   IntegrationStatus m_status{IntegrationStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

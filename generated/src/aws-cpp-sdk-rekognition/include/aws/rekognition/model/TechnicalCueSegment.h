@@ -66,9 +66,9 @@ class TechnicalCueSegment {
   ///@}
  private:
   TechnicalCueType m_type{TechnicalCueType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_typeHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

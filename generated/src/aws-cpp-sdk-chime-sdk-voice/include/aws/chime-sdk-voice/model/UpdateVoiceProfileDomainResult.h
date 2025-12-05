@@ -60,9 +60,9 @@ class UpdateVoiceProfileDomainResult {
   ///@}
  private:
   VoiceProfileDomain m_voiceProfileDomain;
-  bool m_voiceProfileDomainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceProfileDomainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -557,60 +557,60 @@ class InstanceRecommendation {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_currentInstanceType;
-  bool m_currentInstanceTypeHasBeenSet = false;
 
   Finding m_finding{Finding::NOT_SET};
-  bool m_findingHasBeenSet = false;
 
   Aws::Vector<InstanceRecommendationFindingReasonCode> m_findingReasonCodes;
-  bool m_findingReasonCodesHasBeenSet = false;
 
   Aws::Vector<UtilizationMetric> m_utilizationMetrics;
-  bool m_utilizationMetricsHasBeenSet = false;
 
   double m_lookBackPeriodInDays{0.0};
-  bool m_lookBackPeriodInDaysHasBeenSet = false;
 
   Aws::Vector<InstanceRecommendationOption> m_recommendationOptions;
-  bool m_recommendationOptionsHasBeenSet = false;
 
   Aws::Vector<RecommendationSource> m_recommendationSources;
-  bool m_recommendationSourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
-  bool m_currentPerformanceRiskHasBeenSet = false;
 
   EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
   Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
-  bool m_inferredWorkloadTypesHasBeenSet = false;
 
   InstanceState m_instanceState{InstanceState::NOT_SET};
-  bool m_instanceStateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ExternalMetricStatus m_externalMetricStatus;
-  bool m_externalMetricStatusHasBeenSet = false;
 
   GpuInfo m_currentInstanceGpuInfo;
-  bool m_currentInstanceGpuInfoHasBeenSet = false;
 
   InstanceIdle m_idle{InstanceIdle::NOT_SET};
+  bool m_instanceArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_currentInstanceTypeHasBeenSet = false;
+  bool m_findingHasBeenSet = false;
+  bool m_findingReasonCodesHasBeenSet = false;
+  bool m_utilizationMetricsHasBeenSet = false;
+  bool m_lookBackPeriodInDaysHasBeenSet = false;
+  bool m_recommendationOptionsHasBeenSet = false;
+  bool m_recommendationSourcesHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
+  bool m_currentPerformanceRiskHasBeenSet = false;
+  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
+  bool m_inferredWorkloadTypesHasBeenSet = false;
+  bool m_instanceStateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_externalMetricStatusHasBeenSet = false;
+  bool m_currentInstanceGpuInfoHasBeenSet = false;
   bool m_idleHasBeenSet = false;
 };
 

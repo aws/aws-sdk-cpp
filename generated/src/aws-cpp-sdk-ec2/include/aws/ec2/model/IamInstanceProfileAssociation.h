@@ -126,18 +126,18 @@ class IamInstanceProfileAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IamInstanceProfile m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   IamInstanceProfileAssociationState m_state{IamInstanceProfileAssociationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_associationIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class Action {
   ///@}
  private:
   NoBidAction m_noBid;
-  bool m_noBidHasBeenSet = false;
 
   HeaderTagAction m_headerTag;
+  bool m_noBidHasBeenSet = false;
   bool m_headerTagHasBeenSet = false;
 };
 

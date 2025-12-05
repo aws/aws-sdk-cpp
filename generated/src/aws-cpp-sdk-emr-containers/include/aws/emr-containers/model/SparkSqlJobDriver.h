@@ -68,9 +68,9 @@ class SparkSqlJobDriver {
   ///@}
  private:
   Aws::String m_entryPoint;
-  bool m_entryPointHasBeenSet = false;
 
   Aws::String m_sparkSqlParameters;
+  bool m_entryPointHasBeenSet = false;
   bool m_sparkSqlParametersHasBeenSet = false;
 };
 

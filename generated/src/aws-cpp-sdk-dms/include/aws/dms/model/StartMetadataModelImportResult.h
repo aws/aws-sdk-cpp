@@ -60,9 +60,9 @@ class StartMetadataModelImportResult {
   ///@}
  private:
   Aws::String m_requestIdentifier;
-  bool m_requestIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_requestIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

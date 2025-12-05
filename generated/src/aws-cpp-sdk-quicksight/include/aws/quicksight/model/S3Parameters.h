@@ -75,9 +75,9 @@ class S3Parameters {
   ///@}
  private:
   ManifestFileLocation m_manifestFileLocation;
-  bool m_manifestFileLocationHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_manifestFileLocationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

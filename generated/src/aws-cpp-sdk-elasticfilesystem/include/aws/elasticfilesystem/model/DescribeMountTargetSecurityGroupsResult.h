@@ -66,9 +66,9 @@ class DescribeMountTargetSecurityGroupsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

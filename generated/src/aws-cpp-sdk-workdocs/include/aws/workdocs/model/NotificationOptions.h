@@ -68,9 +68,9 @@ class NotificationOptions {
   ///@}
  private:
   bool m_sendEmail{false};
-  bool m_sendEmailHasBeenSet = false;
 
   Aws::String m_emailMessage;
+  bool m_sendEmailHasBeenSet = false;
   bool m_emailMessageHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class DeletionTaskFailureReasonType {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<RoleUsageType> m_roleUsageList;
+  bool m_reasonHasBeenSet = false;
   bool m_roleUsageListHasBeenSet = false;
 };
 

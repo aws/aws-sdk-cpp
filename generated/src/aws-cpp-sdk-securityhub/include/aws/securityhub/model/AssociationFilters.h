@@ -90,12 +90,12 @@ class AssociationFilters {
   ///@}
  private:
   Aws::String m_configurationPolicyId;
-  bool m_configurationPolicyIdHasBeenSet = false;
 
   AssociationType m_associationType{AssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   ConfigurationPolicyAssociationStatus m_associationStatus{ConfigurationPolicyAssociationStatus::NOT_SET};
+  bool m_configurationPolicyIdHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
   bool m_associationStatusHasBeenSet = false;
 };
 

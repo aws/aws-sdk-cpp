@@ -192,27 +192,27 @@ class DescribeAuditMitigationActionsTaskResult {
   ///@}
  private:
   AuditMitigationActionsTaskStatus m_taskStatus{AuditMitigationActionsTaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, TaskStatisticsForAuditCheck> m_taskStatistics;
-  bool m_taskStatisticsHasBeenSet = false;
 
   AuditMitigationActionsTaskTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_auditCheckToActionsMapping;
-  bool m_auditCheckToActionsMappingHasBeenSet = false;
 
   Aws::Vector<MitigationAction> m_actionsDefinition;
-  bool m_actionsDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_taskStatisticsHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_auditCheckToActionsMappingHasBeenSet = false;
+  bool m_actionsDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

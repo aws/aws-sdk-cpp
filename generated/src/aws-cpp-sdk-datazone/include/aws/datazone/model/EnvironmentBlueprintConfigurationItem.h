@@ -239,33 +239,33 @@ class EnvironmentBlueprintConfigurationItem {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledRegions;
-  bool m_enabledRegionsHasBeenSet = false;
 
   Aws::String m_environmentBlueprintId;
-  bool m_environmentBlueprintIdHasBeenSet = false;
 
   Aws::String m_environmentRolePermissionBoundary;
-  bool m_environmentRolePermissionBoundaryHasBeenSet = false;
 
   Aws::String m_manageAccessRoleArn;
-  bool m_manageAccessRoleArnHasBeenSet = false;
 
   Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
-  bool m_provisioningConfigurationsHasBeenSet = false;
 
   Aws::String m_provisioningRoleArn;
-  bool m_provisioningRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_regionalParameters;
-  bool m_regionalParametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_createdAtHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_enabledRegionsHasBeenSet = false;
+  bool m_environmentBlueprintIdHasBeenSet = false;
+  bool m_environmentRolePermissionBoundaryHasBeenSet = false;
+  bool m_manageAccessRoleArnHasBeenSet = false;
+  bool m_provisioningConfigurationsHasBeenSet = false;
+  bool m_provisioningRoleArnHasBeenSet = false;
+  bool m_regionalParametersHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

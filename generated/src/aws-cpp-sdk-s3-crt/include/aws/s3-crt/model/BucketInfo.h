@@ -70,9 +70,9 @@ class BucketInfo {
   ///@}
  private:
   DataRedundancy m_dataRedundancy{DataRedundancy::NOT_SET};
-  bool m_dataRedundancyHasBeenSet = false;
 
   BucketType m_type{BucketType::NOT_SET};
+  bool m_dataRedundancyHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

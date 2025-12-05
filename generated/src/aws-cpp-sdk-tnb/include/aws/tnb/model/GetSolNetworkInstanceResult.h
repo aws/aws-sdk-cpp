@@ -218,36 +218,36 @@ class GetSolNetworkInstanceResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LcmOperationInfo m_lcmOpInfo;
-  bool m_lcmOpInfoHasBeenSet = false;
 
   GetSolNetworkInstanceMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nsInstanceDescription;
-  bool m_nsInstanceDescriptionHasBeenSet = false;
 
   Aws::String m_nsInstanceName;
-  bool m_nsInstanceNameHasBeenSet = false;
 
   NsState m_nsState{NsState::NOT_SET};
-  bool m_nsStateHasBeenSet = false;
 
   Aws::String m_nsdId;
-  bool m_nsdIdHasBeenSet = false;
 
   Aws::String m_nsdInfoId;
-  bool m_nsdInfoIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lcmOpInfoHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nsInstanceDescriptionHasBeenSet = false;
+  bool m_nsInstanceNameHasBeenSet = false;
+  bool m_nsStateHasBeenSet = false;
+  bool m_nsdIdHasBeenSet = false;
+  bool m_nsdInfoIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

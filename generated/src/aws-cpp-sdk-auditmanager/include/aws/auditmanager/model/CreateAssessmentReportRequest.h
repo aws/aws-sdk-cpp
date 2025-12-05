@@ -114,15 +114,15 @@ class CreateAssessmentReportRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_queryStatement;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
   bool m_queryStatementHasBeenSet = false;
 };
 

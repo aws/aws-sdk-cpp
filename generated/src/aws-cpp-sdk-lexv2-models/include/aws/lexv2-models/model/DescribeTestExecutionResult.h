@@ -221,36 +221,36 @@ class DescribeTestExecutionResult {
   ///@}
  private:
   Aws::String m_testExecutionId;
-  bool m_testExecutionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   TestExecutionStatus m_testExecutionStatus{TestExecutionStatus::NOT_SET};
-  bool m_testExecutionStatusHasBeenSet = false;
 
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   Aws::String m_testSetName;
-  bool m_testSetNameHasBeenSet = false;
 
   TestExecutionTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   TestExecutionApiMode m_apiMode{TestExecutionApiMode::NOT_SET};
-  bool m_apiModeHasBeenSet = false;
 
   TestExecutionModality m_testExecutionModality{TestExecutionModality::NOT_SET};
-  bool m_testExecutionModalityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testExecutionIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_testExecutionStatusHasBeenSet = false;
+  bool m_testSetIdHasBeenSet = false;
+  bool m_testSetNameHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_apiModeHasBeenSet = false;
+  bool m_testExecutionModalityHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

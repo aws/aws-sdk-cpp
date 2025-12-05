@@ -75,9 +75,9 @@ class WeeklySchedule {
   ///@}
  private:
   Time m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Vector<Day> m_days;
+  bool m_startTimeHasBeenSet = false;
   bool m_daysHasBeenSet = false;
 };
 

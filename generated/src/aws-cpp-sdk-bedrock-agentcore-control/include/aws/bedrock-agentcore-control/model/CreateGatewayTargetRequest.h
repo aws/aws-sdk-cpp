@@ -157,21 +157,21 @@ class CreateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_gatewayIdentifier;
-  bool m_gatewayIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   TargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   Aws::Vector<CredentialProviderConfiguration> m_credentialProviderConfigurations;
+  bool m_gatewayIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_targetConfigurationHasBeenSet = false;
   bool m_credentialProviderConfigurationsHasBeenSet = false;
 };
 

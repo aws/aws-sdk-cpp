@@ -85,12 +85,12 @@ class ListForecastExportJobsResult {
   ///@}
  private:
   Aws::Vector<ForecastExportJobSummary> m_forecastExportJobs;
-  bool m_forecastExportJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_forecastExportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

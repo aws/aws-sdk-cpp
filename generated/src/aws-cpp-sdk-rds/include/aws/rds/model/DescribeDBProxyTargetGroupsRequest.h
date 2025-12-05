@@ -135,18 +135,18 @@ class DescribeDBProxyTargetGroupsRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBProxyName;
-  bool m_dBProxyNameHasBeenSet = false;
 
   Aws::String m_targetGroupName;
-  bool m_targetGroupNameHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_dBProxyNameHasBeenSet = false;
+  bool m_targetGroupNameHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

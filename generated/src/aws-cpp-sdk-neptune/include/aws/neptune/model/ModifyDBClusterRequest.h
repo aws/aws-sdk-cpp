@@ -459,63 +459,63 @@ class ModifyDBClusterRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_newDBClusterIdentifier;
-  bool m_newDBClusterIdentifierHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
-  bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_allowMajorVersionUpgrade{false};
-  bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_dBInstanceParameterGroupName;
-  bool m_dBInstanceParameterGroupNameHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
   Aws::String m_storageType;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_newDBClusterIdentifierHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_allowMajorVersionUpgradeHasBeenSet = false;
+  bool m_dBInstanceParameterGroupNameHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
 };
 

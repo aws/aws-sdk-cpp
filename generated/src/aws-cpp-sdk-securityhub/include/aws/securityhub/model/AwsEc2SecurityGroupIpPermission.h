@@ -197,24 +197,24 @@ class AwsEc2SecurityGroupIpPermission {
   ///@}
  private:
   Aws::String m_ipProtocol;
-  bool m_ipProtocolHasBeenSet = false;
 
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::Vector<AwsEc2SecurityGroupUserIdGroupPair> m_userIdGroupPairs;
-  bool m_userIdGroupPairsHasBeenSet = false;
 
   Aws::Vector<AwsEc2SecurityGroupIpRange> m_ipRanges;
-  bool m_ipRangesHasBeenSet = false;
 
   Aws::Vector<AwsEc2SecurityGroupIpv6Range> m_ipv6Ranges;
-  bool m_ipv6RangesHasBeenSet = false;
 
   Aws::Vector<AwsEc2SecurityGroupPrefixListId> m_prefixListIds;
+  bool m_ipProtocolHasBeenSet = false;
+  bool m_fromPortHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
+  bool m_userIdGroupPairsHasBeenSet = false;
+  bool m_ipRangesHasBeenSet = false;
+  bool m_ipv6RangesHasBeenSet = false;
   bool m_prefixListIdsHasBeenSet = false;
 };
 

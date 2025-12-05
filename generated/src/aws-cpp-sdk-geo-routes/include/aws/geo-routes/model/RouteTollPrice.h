@@ -136,21 +136,21 @@ class RouteTollPrice {
   ///@}
  private:
   Aws::String m_currency;
-  bool m_currencyHasBeenSet = false;
 
   bool m_estimate{false};
-  bool m_estimateHasBeenSet = false;
 
   long long m_perDuration{0};
-  bool m_perDurationHasBeenSet = false;
 
   bool m_range{false};
-  bool m_rangeHasBeenSet = false;
 
   RouteTollPriceValueRange m_rangeValue;
-  bool m_rangeValueHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_currencyHasBeenSet = false;
+  bool m_estimateHasBeenSet = false;
+  bool m_perDurationHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_rangeValueHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

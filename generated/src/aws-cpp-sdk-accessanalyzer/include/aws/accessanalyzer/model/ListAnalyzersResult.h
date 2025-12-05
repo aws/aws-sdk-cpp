@@ -89,12 +89,12 @@ class ListAnalyzersResult {
   ///@}
  private:
   Aws::Vector<AnalyzerSummary> m_analyzers;
-  bool m_analyzersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analyzersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class MinimalWorkflow {
   ///@}
  private:
   ExecutionAction m_action{ExecutionAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_actionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

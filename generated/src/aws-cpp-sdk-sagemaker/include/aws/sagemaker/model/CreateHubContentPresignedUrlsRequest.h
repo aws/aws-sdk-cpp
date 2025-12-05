@@ -164,24 +164,24 @@ class CreateHubContentPresignedUrlsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   HubContentType m_hubContentType{HubContentType::NOT_SET};
-  bool m_hubContentTypeHasBeenSet = false;
 
   Aws::String m_hubContentName;
-  bool m_hubContentNameHasBeenSet = false;
 
   Aws::String m_hubContentVersion;
-  bool m_hubContentVersionHasBeenSet = false;
 
   PresignedUrlAccessConfig m_accessConfig;
-  bool m_accessConfigHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_hubNameHasBeenSet = false;
+  bool m_hubContentTypeHasBeenSet = false;
+  bool m_hubContentNameHasBeenSet = false;
+  bool m_hubContentVersionHasBeenSet = false;
+  bool m_accessConfigHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

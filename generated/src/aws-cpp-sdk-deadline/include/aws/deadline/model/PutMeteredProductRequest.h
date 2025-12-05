@@ -65,9 +65,9 @@ class PutMeteredProductRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_licenseEndpointId;
-  bool m_licenseEndpointIdHasBeenSet = false;
 
   Aws::String m_productId;
+  bool m_licenseEndpointIdHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
 };
 

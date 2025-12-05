@@ -74,9 +74,9 @@ class UntagQueueRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_queueUrlHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

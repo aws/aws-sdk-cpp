@@ -140,18 +140,18 @@ class SourceCodeType {
   ///@}
  private:
   CommitDiffSourceCodeType m_commitDiff;
-  bool m_commitDiffHasBeenSet = false;
 
   RepositoryHeadSourceCodeType m_repositoryHead;
-  bool m_repositoryHeadHasBeenSet = false;
 
   BranchDiffSourceCodeType m_branchDiff;
-  bool m_branchDiffHasBeenSet = false;
 
   S3BucketRepository m_s3BucketRepository;
-  bool m_s3BucketRepositoryHasBeenSet = false;
 
   RequestMetadata m_requestMetadata;
+  bool m_commitDiffHasBeenSet = false;
+  bool m_repositoryHeadHasBeenSet = false;
+  bool m_branchDiffHasBeenSet = false;
+  bool m_s3BucketRepositoryHasBeenSet = false;
   bool m_requestMetadataHasBeenSet = false;
 };
 

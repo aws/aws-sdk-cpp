@@ -77,9 +77,9 @@ class RejectChoice {
   ///@}
  private:
   Aws::Vector<int> m_predictionChoices;
-  bool m_predictionChoicesHasBeenSet = false;
 
   Aws::String m_predictionTarget;
+  bool m_predictionChoicesHasBeenSet = false;
   bool m_predictionTargetHasBeenSet = false;
 };
 

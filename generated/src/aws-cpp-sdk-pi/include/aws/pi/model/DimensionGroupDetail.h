@@ -77,9 +77,9 @@ class DimensionGroupDetail {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::Vector<DimensionDetail> m_dimensions;
+  bool m_groupHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

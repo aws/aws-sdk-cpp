@@ -166,27 +166,27 @@ class ReEncryptResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
-  bool m_ciphertextBlobHasBeenSet = false;
 
   Aws::String m_sourceKeyId;
-  bool m_sourceKeyIdHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   EncryptionAlgorithmSpec m_sourceEncryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
-  bool m_sourceEncryptionAlgorithmHasBeenSet = false;
 
   EncryptionAlgorithmSpec m_destinationEncryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
-  bool m_destinationEncryptionAlgorithmHasBeenSet = false;
 
   Aws::String m_sourceKeyMaterialId;
-  bool m_sourceKeyMaterialIdHasBeenSet = false;
 
   Aws::String m_destinationKeyMaterialId;
-  bool m_destinationKeyMaterialIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ciphertextBlobHasBeenSet = false;
+  bool m_sourceKeyIdHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_sourceEncryptionAlgorithmHasBeenSet = false;
+  bool m_destinationEncryptionAlgorithmHasBeenSet = false;
+  bool m_sourceKeyMaterialIdHasBeenSet = false;
+  bool m_destinationKeyMaterialIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

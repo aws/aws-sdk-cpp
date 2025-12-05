@@ -164,24 +164,24 @@ class EmvCommonAttributes {
   ///@}
  private:
   MajorKeyDerivationMode m_majorKeyDerivationMode{MajorKeyDerivationMode::NOT_SET};
-  bool m_majorKeyDerivationModeHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   Aws::String m_panSequenceNumber;
-  bool m_panSequenceNumberHasBeenSet = false;
 
   Aws::String m_applicationCryptogram;
-  bool m_applicationCryptogramHasBeenSet = false;
 
   EmvEncryptionMode m_mode{EmvEncryptionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   PinBlockPaddingType m_pinBlockPaddingType{PinBlockPaddingType::NOT_SET};
-  bool m_pinBlockPaddingTypeHasBeenSet = false;
 
   PinBlockLengthPosition m_pinBlockLengthPosition{PinBlockLengthPosition::NOT_SET};
+  bool m_majorKeyDerivationModeHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_panSequenceNumberHasBeenSet = false;
+  bool m_applicationCryptogramHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_pinBlockPaddingTypeHasBeenSet = false;
   bool m_pinBlockLengthPositionHasBeenSet = false;
 };
 

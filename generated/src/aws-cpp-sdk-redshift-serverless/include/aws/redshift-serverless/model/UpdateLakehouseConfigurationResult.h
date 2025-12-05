@@ -116,18 +116,18 @@ class UpdateLakehouseConfigurationResult {
   ///@}
  private:
   Aws::String m_catalogArn;
-  bool m_catalogArnHasBeenSet = false;
 
   Aws::String m_lakehouseIdcApplicationArn;
-  bool m_lakehouseIdcApplicationArnHasBeenSet = false;
 
   Aws::String m_lakehouseRegistrationStatus;
-  bool m_lakehouseRegistrationStatusHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogArnHasBeenSet = false;
+  bool m_lakehouseIdcApplicationArnHasBeenSet = false;
+  bool m_lakehouseRegistrationStatusHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

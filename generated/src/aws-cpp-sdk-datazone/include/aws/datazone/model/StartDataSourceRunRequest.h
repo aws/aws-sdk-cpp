@@ -86,12 +86,12 @@ class StartDataSourceRunRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_dataSourceIdentifier;
-  bool m_dataSourceIdentifierHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dataSourceIdentifierHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
 };
 

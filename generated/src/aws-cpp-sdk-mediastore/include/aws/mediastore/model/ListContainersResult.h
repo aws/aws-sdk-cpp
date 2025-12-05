@@ -87,12 +87,12 @@ class ListContainersResult {
   ///@}
  private:
   Aws::Vector<Container> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

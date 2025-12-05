@@ -140,18 +140,18 @@ class PutWarmPoolRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   int m_maxGroupPreparedCapacity{0};
-  bool m_maxGroupPreparedCapacityHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   WarmPoolState m_poolState{WarmPoolState::NOT_SET};
-  bool m_poolStateHasBeenSet = false;
 
   InstanceReusePolicy m_instanceReusePolicy;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_maxGroupPreparedCapacityHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_poolStateHasBeenSet = false;
   bool m_instanceReusePolicyHasBeenSet = false;
 };
 

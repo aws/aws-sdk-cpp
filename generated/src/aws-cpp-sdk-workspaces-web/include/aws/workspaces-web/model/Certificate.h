@@ -142,21 +142,21 @@ class Certificate {
   ///@}
  private:
   Aws::String m_thumbprint;
-  bool m_thumbprintHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::Utils::DateTime m_notValidBefore{};
-  bool m_notValidBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notValidAfter{};
-  bool m_notValidAfterHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_body{};
+  bool m_thumbprintHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_notValidBeforeHasBeenSet = false;
+  bool m_notValidAfterHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
 };
 

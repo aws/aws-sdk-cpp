@@ -84,9 +84,9 @@ class UserGroupPendingChanges {
   ///@}
  private:
   Aws::Vector<Aws::String> m_userIdsToRemove;
-  bool m_userIdsToRemoveHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIdsToAdd;
+  bool m_userIdsToRemoveHasBeenSet = false;
   bool m_userIdsToAddHasBeenSet = false;
 };
 

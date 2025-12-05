@@ -68,9 +68,9 @@ class PredefinedAttributeConfiguration {
   ///@}
  private:
   bool m_enableValueValidationOnAssociation{false};
-  bool m_enableValueValidationOnAssociationHasBeenSet = false;
 
   bool m_isReadOnly{false};
+  bool m_enableValueValidationOnAssociationHasBeenSet = false;
   bool m_isReadOnlyHasBeenSet = false;
 };
 

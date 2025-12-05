@@ -316,48 +316,48 @@ class RecoveryPointByResource {
   ///@}
  private:
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   RecoveryPointStatus m_status{RecoveryPointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   long long m_backupSizeBytes{0};
-  bool m_backupSizeBytesHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   bool m_isParent{false};
-  bool m_isParentHasBeenSet = false;
 
   Aws::String m_parentRecoveryPointArn;
-  bool m_parentRecoveryPointArnHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   VaultType m_vaultType{VaultType::NOT_SET};
-  bool m_vaultTypeHasBeenSet = false;
 
   IndexStatus m_indexStatus{IndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   Aws::String m_indexStatusMessage;
-  bool m_indexStatusMessageHasBeenSet = false;
 
   EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
-  bool m_encryptionKeyTypeHasBeenSet = false;
 
   AggregatedScanResult m_aggregatedScanResult;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_backupSizeBytesHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_isParentHasBeenSet = false;
+  bool m_parentRecoveryPointArnHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_vaultTypeHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
+  bool m_indexStatusMessageHasBeenSet = false;
+  bool m_encryptionKeyTypeHasBeenSet = false;
   bool m_aggregatedScanResultHasBeenSet = false;
 };
 

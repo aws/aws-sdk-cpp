@@ -161,21 +161,22 @@ class StartMedicalScribeStreamRequest : public TranscribeStreamingServiceRequest
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   MedicalScribeLanguageCode m_languageCode{MedicalScribeLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_mediaSampleRateHertz{0};
-  bool m_mediaSampleRateHertzHasBeenSet = false;
 
   MedicalScribeMediaEncoding m_mediaEncoding{MedicalScribeMediaEncoding::NOT_SET};
-  bool m_mediaEncodingHasBeenSet = false;
 
   std::shared_ptr<MedicalScribeInputStream> m_inputStream;
-  bool m_inputStreamHasBeenSet = false;
   StartMedicalScribeStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_sessionIdHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_mediaSampleRateHertzHasBeenSet = false;
+  bool m_mediaEncodingHasBeenSet = false;
+  bool m_inputStreamHasBeenSet = false;
 };
 
 }  // namespace Model

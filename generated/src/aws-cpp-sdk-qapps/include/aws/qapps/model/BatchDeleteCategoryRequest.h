@@ -75,9 +75,9 @@ class BatchDeleteCategoryRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categories;
+  bool m_instanceIdHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
 };
 

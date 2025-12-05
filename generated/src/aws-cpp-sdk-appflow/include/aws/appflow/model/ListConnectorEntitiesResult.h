@@ -90,12 +90,12 @@ class ListConnectorEntitiesResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>> m_connectorEntityMap;
-  bool m_connectorEntityMapHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorEntityMapHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

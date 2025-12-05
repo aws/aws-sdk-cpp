@@ -107,12 +107,12 @@ class CreatePipelineRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::Vector<PipelineActivity> m_pipelineActivities;
-  bool m_pipelineActivitiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineActivitiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

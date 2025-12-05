@@ -218,33 +218,33 @@ class FirewallDomainList {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_domainCount{0};
-  bool m_domainCountHasBeenSet = false;
 
   FirewallDomainListStatus m_status{FirewallDomainListStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_managedOwnerName;
-  bool m_managedOwnerNameHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_modificationTime;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_domainCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_managedOwnerNameHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_modificationTimeHasBeenSet = false;
 };
 

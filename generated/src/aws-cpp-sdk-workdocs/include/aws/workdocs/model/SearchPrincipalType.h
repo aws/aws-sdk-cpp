@@ -75,9 +75,9 @@ class SearchPrincipalType {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<PrincipalRoleType> m_roles;
+  bool m_idHasBeenSet = false;
   bool m_rolesHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class TableBucketMaintenanceConfigurationValue {
   ///@}
  private:
   MaintenanceStatus m_status{MaintenanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TableBucketMaintenanceSettings m_settings;
+  bool m_statusHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

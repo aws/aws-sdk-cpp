@@ -98,12 +98,12 @@ class AgentAliasHistoryEvent {
   ///@}
  private:
   Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
-  bool m_routingConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
+  bool m_routingConfigurationHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
   bool m_startDateHasBeenSet = false;
 };
 

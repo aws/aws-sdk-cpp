@@ -59,9 +59,9 @@ class CreateNodeResult {
   ///@}
  private:
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nodeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

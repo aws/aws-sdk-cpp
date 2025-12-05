@@ -68,9 +68,9 @@ class ScanAction {
   ///@}
  private:
   MalwareScanner m_malwareScanner{MalwareScanner::NOT_SET};
-  bool m_malwareScannerHasBeenSet = false;
 
   ScanMode m_scanMode{ScanMode::NOT_SET};
+  bool m_malwareScannerHasBeenSet = false;
   bool m_scanModeHasBeenSet = false;
 };
 

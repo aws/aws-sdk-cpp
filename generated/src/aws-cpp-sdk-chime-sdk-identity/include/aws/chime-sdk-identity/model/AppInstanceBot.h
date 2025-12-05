@@ -143,21 +143,21 @@ class AppInstanceBot {
   ///@}
  private:
   Aws::String m_appInstanceBotArn;
-  bool m_appInstanceBotArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Configuration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_metadata;
+  bool m_appInstanceBotArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class InstanceProperty {
   ///@}
  private:
   bool m_failed{false};
-  bool m_failedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_seenAt{};
+  bool m_failedHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
   bool m_seenAtHasBeenSet = false;
 };
 

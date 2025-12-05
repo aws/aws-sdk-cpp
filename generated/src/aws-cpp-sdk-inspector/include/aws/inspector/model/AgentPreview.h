@@ -180,27 +180,27 @@ class AgentPreview {
   ///@}
  private:
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_autoScalingGroup;
-  bool m_autoScalingGroupHasBeenSet = false;
 
   AgentHealth m_agentHealth{AgentHealth::NOT_SET};
-  bool m_agentHealthHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_operatingSystem;
-  bool m_operatingSystemHasBeenSet = false;
 
   Aws::String m_kernelVersion;
-  bool m_kernelVersionHasBeenSet = false;
 
   Aws::String m_ipv4Address;
+  bool m_hostnameHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_autoScalingGroupHasBeenSet = false;
+  bool m_agentHealthHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_kernelVersionHasBeenSet = false;
   bool m_ipv4AddressHasBeenSet = false;
 };
 

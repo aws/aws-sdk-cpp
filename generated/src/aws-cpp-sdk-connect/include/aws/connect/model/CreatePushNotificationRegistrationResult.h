@@ -60,9 +60,9 @@ class CreatePushNotificationRegistrationResult {
   ///@}
  private:
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

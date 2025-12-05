@@ -91,9 +91,9 @@ class ScannedResourceIdentifier {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceIdentifier;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

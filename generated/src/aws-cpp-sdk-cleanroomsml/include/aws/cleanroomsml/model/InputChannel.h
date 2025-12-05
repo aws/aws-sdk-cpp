@@ -73,9 +73,9 @@ class InputChannel {
   ///@}
  private:
   InputChannelDataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_dataSourceHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

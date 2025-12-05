@@ -116,15 +116,15 @@ class ServiceInsertionAction {
   ///@}
  private:
   SegmentActionServiceInsertion m_action{SegmentActionServiceInsertion::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   SendViaMode m_mode{SendViaMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   WhenSentTo m_whenSentTo;
-  bool m_whenSentToHasBeenSet = false;
 
   Via m_via;
+  bool m_actionHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_whenSentToHasBeenSet = false;
   bool m_viaHasBeenSet = false;
 };
 

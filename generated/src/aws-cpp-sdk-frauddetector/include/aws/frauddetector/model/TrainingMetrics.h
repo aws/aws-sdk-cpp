@@ -76,9 +76,9 @@ class TrainingMetrics {
   ///@}
  private:
   double m_auc{0.0};
-  bool m_aucHasBeenSet = false;
 
   Aws::Vector<MetricDataPoint> m_metricDataPoints;
+  bool m_aucHasBeenSet = false;
   bool m_metricDataPointsHasBeenSet = false;
 };
 

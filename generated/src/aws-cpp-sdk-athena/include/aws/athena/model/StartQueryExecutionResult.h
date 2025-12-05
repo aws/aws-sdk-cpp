@@ -59,9 +59,9 @@ class StartQueryExecutionResult {
   ///@}
  private:
   Aws::String m_queryExecutionId;
-  bool m_queryExecutionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

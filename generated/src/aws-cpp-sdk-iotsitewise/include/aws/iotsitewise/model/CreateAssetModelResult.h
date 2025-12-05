@@ -100,15 +100,15 @@ class CreateAssetModelResult {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_assetModelArn;
-  bool m_assetModelArnHasBeenSet = false;
 
   AssetModelStatus m_assetModelStatus;
-  bool m_assetModelStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetModelArnHasBeenSet = false;
+  bool m_assetModelStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

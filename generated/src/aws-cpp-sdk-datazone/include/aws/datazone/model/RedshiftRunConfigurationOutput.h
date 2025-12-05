@@ -153,21 +153,21 @@ class RedshiftRunConfigurationOutput {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_dataAccessRole;
-  bool m_dataAccessRoleHasBeenSet = false;
 
   RedshiftCredentialConfiguration m_redshiftCredentialConfiguration;
-  bool m_redshiftCredentialConfigurationHasBeenSet = false;
 
   RedshiftStorage m_redshiftStorage;
-  bool m_redshiftStorageHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
+  bool m_accountIdHasBeenSet = false;
+  bool m_dataAccessRoleHasBeenSet = false;
+  bool m_redshiftCredentialConfigurationHasBeenSet = false;
+  bool m_redshiftStorageHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_relationalFilterConfigurationsHasBeenSet = false;
 };
 

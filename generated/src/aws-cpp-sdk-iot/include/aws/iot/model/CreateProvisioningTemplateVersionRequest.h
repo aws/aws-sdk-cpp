@@ -86,12 +86,12 @@ class CreateProvisioningTemplateVersionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   bool m_setAsDefault{false};
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
   bool m_setAsDefaultHasBeenSet = false;
 };
 

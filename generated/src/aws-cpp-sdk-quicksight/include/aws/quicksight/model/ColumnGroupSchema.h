@@ -76,9 +76,9 @@ class ColumnGroupSchema {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ColumnGroupColumnSchema> m_columnGroupColumnSchemaList;
+  bool m_nameHasBeenSet = false;
   bool m_columnGroupColumnSchemaListHasBeenSet = false;
 };
 

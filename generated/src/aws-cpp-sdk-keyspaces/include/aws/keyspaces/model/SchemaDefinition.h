@@ -133,15 +133,15 @@ class SchemaDefinition {
   ///@}
  private:
   Aws::Vector<ColumnDefinition> m_allColumns;
-  bool m_allColumnsHasBeenSet = false;
 
   Aws::Vector<PartitionKey> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::Vector<ClusteringKey> m_clusteringKeys;
-  bool m_clusteringKeysHasBeenSet = false;
 
   Aws::Vector<StaticColumn> m_staticColumns;
+  bool m_allColumnsHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
+  bool m_clusteringKeysHasBeenSet = false;
   bool m_staticColumnsHasBeenSet = false;
 };
 

@@ -192,30 +192,30 @@ class ExportTask {
   ///@}
  private:
   Aws::String m_creationDateTime;
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_endDateTime;
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::String m_exportID;
-  bool m_exportIDHasBeenSet = false;
 
   double m_progressPercentage{0.0};
-  bool m_progressPercentageHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3BucketOwner;
-  bool m_s3BucketOwnerHasBeenSet = false;
 
   Aws::String m_s3Key;
-  bool m_s3KeyHasBeenSet = false;
 
   ExportStatus m_status{ExportStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExportTaskSummary m_summary;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_exportIDHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
 };
 

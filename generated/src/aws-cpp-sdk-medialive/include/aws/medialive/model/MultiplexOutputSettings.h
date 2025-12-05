@@ -67,9 +67,9 @@ class MultiplexOutputSettings {
   ///@}
  private:
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   MultiplexContainerSettings m_containerSettings;
+  bool m_destinationHasBeenSet = false;
   bool m_containerSettingsHasBeenSet = false;
 };
 

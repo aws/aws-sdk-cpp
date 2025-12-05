@@ -120,18 +120,18 @@ class GetCoipPoolUsageResponse {
   ///@}
  private:
   Aws::String m_coipPoolId;
-  bool m_coipPoolIdHasBeenSet = false;
 
   Aws::Vector<CoipAddressUsage> m_coipAddressUsages;
-  bool m_coipAddressUsagesHasBeenSet = false;
 
   Aws::String m_localGatewayRouteTableId;
-  bool m_localGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_coipPoolIdHasBeenSet = false;
+  bool m_coipAddressUsagesHasBeenSet = false;
+  bool m_localGatewayRouteTableIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -345,45 +345,45 @@ class CreateTransformJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_transformJobName;
-  bool m_transformJobNameHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   int m_maxConcurrentTransforms{0};
-  bool m_maxConcurrentTransformsHasBeenSet = false;
 
   ModelClientConfig m_modelClientConfig;
-  bool m_modelClientConfigHasBeenSet = false;
 
   int m_maxPayloadInMB{0};
-  bool m_maxPayloadInMBHasBeenSet = false;
 
   BatchStrategy m_batchStrategy{BatchStrategy::NOT_SET};
-  bool m_batchStrategyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   TransformInput m_transformInput;
-  bool m_transformInputHasBeenSet = false;
 
   TransformOutput m_transformOutput;
-  bool m_transformOutputHasBeenSet = false;
 
   BatchDataCaptureConfig m_dataCaptureConfig;
-  bool m_dataCaptureConfigHasBeenSet = false;
 
   TransformResources m_transformResources;
-  bool m_transformResourcesHasBeenSet = false;
 
   DataProcessing m_dataProcessing;
-  bool m_dataProcessingHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ExperimentConfig m_experimentConfig;
+  bool m_transformJobNameHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_maxConcurrentTransformsHasBeenSet = false;
+  bool m_modelClientConfigHasBeenSet = false;
+  bool m_maxPayloadInMBHasBeenSet = false;
+  bool m_batchStrategyHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_transformInputHasBeenSet = false;
+  bool m_transformOutputHasBeenSet = false;
+  bool m_dataCaptureConfigHasBeenSet = false;
+  bool m_transformResourcesHasBeenSet = false;
+  bool m_dataProcessingHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_experimentConfigHasBeenSet = false;
 };
 

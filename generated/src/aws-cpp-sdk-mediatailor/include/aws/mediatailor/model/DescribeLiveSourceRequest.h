@@ -65,9 +65,9 @@ class DescribeLiveSourceRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_liveSourceName;
-  bool m_liveSourceNameHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
+  bool m_liveSourceNameHasBeenSet = false;
   bool m_sourceLocationNameHasBeenSet = false;
 };
 

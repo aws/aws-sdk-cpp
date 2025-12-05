@@ -122,15 +122,16 @@ class SubscribeToShardRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_consumerARN;
-  bool m_consumerARNHasBeenSet = false;
 
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   StartingPosition m_startingPosition;
-  bool m_startingPositionHasBeenSet = false;
   SubscribeToShardHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_consumerARNHasBeenSet = false;
+  bool m_shardIdHasBeenSet = false;
+  bool m_startingPositionHasBeenSet = false;
 };
 
 }  // namespace Model

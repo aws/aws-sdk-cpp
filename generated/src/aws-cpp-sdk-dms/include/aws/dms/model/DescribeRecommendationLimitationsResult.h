@@ -91,12 +91,12 @@ class DescribeRecommendationLimitationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Limitation> m_limitations;
-  bool m_limitationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_limitationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class AttachUserPolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_policyArn;
+  bool m_userNameHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class DashboardEntry {
   ///@}
  private:
   Aws::String m_dashboardName;
-  bool m_dashboardNameHasBeenSet = false;
 
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   long long m_size{0};
+  bool m_dashboardNameHasBeenSet = false;
+  bool m_dashboardArnHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

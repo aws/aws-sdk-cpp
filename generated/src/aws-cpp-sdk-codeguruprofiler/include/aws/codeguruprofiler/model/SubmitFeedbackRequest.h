@@ -109,15 +109,15 @@ class SubmitFeedbackRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::String m_anomalyInstanceId;
-  bool m_anomalyInstanceIdHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   FeedbackType m_type{FeedbackType::NOT_SET};
+  bool m_anomalyInstanceIdHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

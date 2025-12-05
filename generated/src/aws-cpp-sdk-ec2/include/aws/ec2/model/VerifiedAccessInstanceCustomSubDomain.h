@@ -78,9 +78,9 @@ class VerifiedAccessInstanceCustomSubDomain {
   ///@}
  private:
   Aws::String m_subDomain;
-  bool m_subDomainHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nameservers;
+  bool m_subDomainHasBeenSet = false;
   bool m_nameserversHasBeenSet = false;
 };
 

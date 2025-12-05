@@ -99,12 +99,12 @@ class ServerlessV2ScalingConfigurationInfo {
   ///@}
  private:
   double m_minCapacity{0.0};
-  bool m_minCapacityHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_secondsUntilAutoPause{0};
+  bool m_minCapacityHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
   bool m_secondsUntilAutoPauseHasBeenSet = false;
 };
 

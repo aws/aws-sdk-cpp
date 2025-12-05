@@ -88,12 +88,12 @@ class ListEvaluationFormVersionsResult {
   ///@}
  private:
   Aws::Vector<EvaluationFormVersionSummary> m_evaluationFormVersionSummaryList;
-  bool m_evaluationFormVersionSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationFormVersionSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

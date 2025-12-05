@@ -84,12 +84,12 @@ class UpdateCrlRequest : public RolesAnywhereRequest {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_crlData{};
-  bool m_crlDataHasBeenSet = false;
 
   Aws::String m_crlId;
-  bool m_crlIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_crlDataHasBeenSet = false;
+  bool m_crlIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class ListCollaborationConfiguredModelAlgorithmAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CollaborationConfiguredModelAlgorithmAssociationSummary> m_collaborationConfiguredModelAlgorithmAssociations;
-  bool m_collaborationConfiguredModelAlgorithmAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_collaborationConfiguredModelAlgorithmAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

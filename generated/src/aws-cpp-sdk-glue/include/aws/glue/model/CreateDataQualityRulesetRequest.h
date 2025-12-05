@@ -171,24 +171,24 @@ class CreateDataQualityRulesetRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_ruleset;
-  bool m_rulesetHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DataQualityTargetTable m_targetTable;
-  bool m_targetTableHasBeenSet = false;
 
   Aws::String m_dataQualitySecurityConfiguration;
-  bool m_dataQualitySecurityConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesetHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetTableHasBeenSet = false;
+  bool m_dataQualitySecurityConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

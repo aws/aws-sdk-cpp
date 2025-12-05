@@ -188,27 +188,27 @@ class TransitGatewayMulticastDomain {
   ///@}
  private:
   Aws::String m_transitGatewayMulticastDomainId;
-  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_transitGatewayMulticastDomainArn;
-  bool m_transitGatewayMulticastDomainArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   TransitGatewayMulticastDomainOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   TransitGatewayMulticastDomainState m_state{TransitGatewayMulticastDomainState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_transitGatewayMulticastDomainArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

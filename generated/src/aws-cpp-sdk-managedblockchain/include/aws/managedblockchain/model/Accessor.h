@@ -195,27 +195,27 @@ class Accessor {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AccessorType m_type{AccessorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_billingToken;
-  bool m_billingTokenHasBeenSet = false;
 
   AccessorStatus m_status{AccessorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AccessorNetworkType m_networkType{AccessorNetworkType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_billingTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

@@ -168,24 +168,24 @@ class ResourceMetadata {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_meshOwner;
-  bool m_meshOwnerHasBeenSet = false;
 
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   long long m_version{0};
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_meshOwnerHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_uidHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

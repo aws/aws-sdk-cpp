@@ -176,24 +176,24 @@ class Recommendation {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_link;
-  bool m_linkHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<RecommendationRelatedEvent> m_relatedEvents;
-  bool m_relatedEventsHasBeenSet = false;
 
   Aws::Vector<RecommendationRelatedAnomaly> m_relatedAnomalies;
-  bool m_relatedAnomaliesHasBeenSet = false;
 
   Aws::String m_category;
+  bool m_descriptionHasBeenSet = false;
+  bool m_linkHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_relatedEventsHasBeenSet = false;
+  bool m_relatedAnomaliesHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
 };
 

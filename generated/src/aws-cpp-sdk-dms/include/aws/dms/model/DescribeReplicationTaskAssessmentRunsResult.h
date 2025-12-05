@@ -97,12 +97,12 @@ class DescribeReplicationTaskAssessmentRunsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReplicationTaskAssessmentRun> m_replicationTaskAssessmentRuns;
-  bool m_replicationTaskAssessmentRunsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_replicationTaskAssessmentRunsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

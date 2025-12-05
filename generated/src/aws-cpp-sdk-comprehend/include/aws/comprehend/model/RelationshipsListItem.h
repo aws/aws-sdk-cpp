@@ -74,9 +74,9 @@ class RelationshipsListItem {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   RelationshipType m_type{RelationshipType::NOT_SET};
+  bool m_idsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class TimeoutSettings {
   ///@}
  private:
   int m_disconnectTimeoutInSeconds{0};
-  bool m_disconnectTimeoutInSecondsHasBeenSet = false;
 
   int m_idleDisconnectTimeoutInSeconds{0};
-  bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
 
   int m_maxUserDurationInSeconds{0};
+  bool m_disconnectTimeoutInSecondsHasBeenSet = false;
+  bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
   bool m_maxUserDurationInSecondsHasBeenSet = false;
 };
 

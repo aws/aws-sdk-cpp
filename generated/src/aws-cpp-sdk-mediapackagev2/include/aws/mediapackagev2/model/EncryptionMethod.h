@@ -84,12 +84,12 @@ class EncryptionMethod {
   ///@}
  private:
   TsEncryptionMethod m_tsEncryptionMethod{TsEncryptionMethod::NOT_SET};
-  bool m_tsEncryptionMethodHasBeenSet = false;
 
   CmafEncryptionMethod m_cmafEncryptionMethod{CmafEncryptionMethod::NOT_SET};
-  bool m_cmafEncryptionMethodHasBeenSet = false;
 
   IsmEncryptionMethod m_ismEncryptionMethod{IsmEncryptionMethod::NOT_SET};
+  bool m_tsEncryptionMethodHasBeenSet = false;
+  bool m_cmafEncryptionMethodHasBeenSet = false;
   bool m_ismEncryptionMethodHasBeenSet = false;
 };
 

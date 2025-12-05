@@ -60,9 +60,9 @@ class UnshareDirectoryResult {
   ///@}
  private:
   Aws::String m_sharedDirectoryId;
-  bool m_sharedDirectoryIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sharedDirectoryIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

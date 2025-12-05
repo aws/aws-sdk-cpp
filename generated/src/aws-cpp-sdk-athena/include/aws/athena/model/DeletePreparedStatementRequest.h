@@ -67,9 +67,9 @@ class DeletePreparedStatementRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   Aws::String m_workGroup;
+  bool m_statementNameHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
 };
 

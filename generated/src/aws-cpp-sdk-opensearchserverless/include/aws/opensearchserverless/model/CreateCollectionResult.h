@@ -60,9 +60,9 @@ class CreateCollectionResult {
   ///@}
  private:
   CreateCollectionDetail m_createCollectionDetail;
-  bool m_createCollectionDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createCollectionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

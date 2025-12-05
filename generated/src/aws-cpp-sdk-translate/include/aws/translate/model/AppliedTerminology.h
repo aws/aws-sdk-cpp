@@ -84,9 +84,9 @@ class AppliedTerminology {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Term> m_terms;
+  bool m_nameHasBeenSet = false;
   bool m_termsHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class PermissionInfo {
   ///@}
  private:
   RoleType m_role{RoleType::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   RolePermissionType m_type{RolePermissionType::NOT_SET};
+  bool m_roleHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

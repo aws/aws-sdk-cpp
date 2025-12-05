@@ -71,9 +71,9 @@ class LatestInPipelineExecutionFilter {
   ///@}
  private:
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   StartTimeRange m_startTimeRange{StartTimeRange::NOT_SET};
+  bool m_pipelineExecutionIdHasBeenSet = false;
   bool m_startTimeRangeHasBeenSet = false;
 };
 

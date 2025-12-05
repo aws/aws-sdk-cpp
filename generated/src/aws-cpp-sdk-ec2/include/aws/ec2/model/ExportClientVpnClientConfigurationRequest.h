@@ -70,9 +70,9 @@ class ExportClientVpnClientConfigurationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

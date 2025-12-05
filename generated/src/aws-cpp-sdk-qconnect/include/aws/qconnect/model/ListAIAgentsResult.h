@@ -85,12 +85,12 @@ class ListAIAgentsResult {
   ///@}
  private:
   Aws::Vector<AIAgentSummary> m_aiAgentSummaries;
-  bool m_aiAgentSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiAgentSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

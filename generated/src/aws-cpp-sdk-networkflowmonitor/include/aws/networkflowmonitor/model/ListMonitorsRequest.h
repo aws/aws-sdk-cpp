@@ -92,12 +92,12 @@ class ListMonitorsRequest : public NetworkFlowMonitorRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   MonitorStatus m_monitorStatus{MonitorStatus::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_monitorStatusHasBeenSet = false;
 };
 

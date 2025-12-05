@@ -92,12 +92,12 @@ class OpenIdConfiguration {
   ///@}
  private:
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_audience;
+  bool m_issuerHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
   bool m_audienceHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class ClusterDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_lastInUse{};
-  bool m_lastInUseHasBeenSet = false;
 
   long long m_runningUnitCount{0};
-  bool m_runningUnitCountHasBeenSet = false;
 
   long long m_stoppedUnitCount{0};
-  bool m_stoppedUnitCountHasBeenSet = false;
 
   ClusterMetadata m_clusterMetadata;
+  bool m_lastInUseHasBeenSet = false;
+  bool m_runningUnitCountHasBeenSet = false;
+  bool m_stoppedUnitCountHasBeenSet = false;
   bool m_clusterMetadataHasBeenSet = false;
 };
 

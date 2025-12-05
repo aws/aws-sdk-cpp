@@ -62,9 +62,9 @@ class UpdateDirectConnectGatewayAssociationResult {
   ///@}
  private:
   DirectConnectGatewayAssociation m_directConnectGatewayAssociation;
-  bool m_directConnectGatewayAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directConnectGatewayAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

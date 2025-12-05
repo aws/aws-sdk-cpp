@@ -73,9 +73,9 @@ class HdfsNameNode {
   ///@}
  private:
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   int m_port{0};
+  bool m_hostnameHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

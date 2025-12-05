@@ -85,12 +85,12 @@ class CancelPlanExecutionRequest : public ARCRegionswitchRequest {
   ///@}
  private:
   Aws::String m_planArn;
-  bool m_planArnHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_planArnHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

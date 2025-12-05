@@ -252,36 +252,36 @@ class Recommender {
   ///@}
  private:
   Aws::String m_recommenderArn;
-  bool m_recommenderArnHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_recipeArn;
-  bool m_recipeArnHasBeenSet = false;
 
   RecommenderConfig m_recommenderConfig;
-  bool m_recommenderConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   RecommenderUpdateSummary m_latestRecommenderUpdate;
-  bool m_latestRecommenderUpdateHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_modelMetrics;
+  bool m_recommenderArnHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recipeArnHasBeenSet = false;
+  bool m_recommenderConfigHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_latestRecommenderUpdateHasBeenSet = false;
   bool m_modelMetricsHasBeenSet = false;
 };
 

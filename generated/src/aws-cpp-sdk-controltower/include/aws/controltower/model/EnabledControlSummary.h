@@ -144,21 +144,21 @@ class EnabledControlSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_controlIdentifier;
-  bool m_controlIdentifierHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   EnablementStatusSummary m_statusSummary;
-  bool m_statusSummaryHasBeenSet = false;
 
   DriftStatusSummary m_driftStatusSummary;
-  bool m_driftStatusSummaryHasBeenSet = false;
 
   Aws::String m_parentIdentifier;
+  bool m_arnHasBeenSet = false;
+  bool m_controlIdentifierHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
+  bool m_statusSummaryHasBeenSet = false;
+  bool m_driftStatusSummaryHasBeenSet = false;
   bool m_parentIdentifierHasBeenSet = false;
 };
 

@@ -156,21 +156,21 @@ class StartChildWorkflowExecutionFailedEventAttributes {
   ///@}
  private:
   WorkflowType m_workflowType;
-  bool m_workflowTypeHasBeenSet = false;
 
   StartChildWorkflowExecutionFailedCause m_cause{StartChildWorkflowExecutionFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   long long m_initiatedEventId{0};
-  bool m_initiatedEventIdHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
-  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
   Aws::String m_control;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_initiatedEventIdHasBeenSet = false;
+  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   bool m_controlHasBeenSet = false;
 };
 

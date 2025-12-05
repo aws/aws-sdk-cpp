@@ -79,9 +79,9 @@ class SuggestHighlights {
   ///@}
  private:
   Aws::Vector<Highlight> m_title;
-  bool m_titleHasBeenSet = false;
 
   SuggestAddressHighlights m_address;
+  bool m_titleHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

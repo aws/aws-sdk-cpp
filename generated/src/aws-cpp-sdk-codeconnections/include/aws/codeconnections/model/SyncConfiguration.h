@@ -253,39 +253,39 @@ class SyncConfiguration {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_configFile;
-  bool m_configFileHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_repositoryLinkId;
-  bool m_repositoryLinkIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
-  bool m_syncTypeHasBeenSet = false;
 
   PublishDeploymentStatus m_publishDeploymentStatus{PublishDeploymentStatus::NOT_SET};
-  bool m_publishDeploymentStatusHasBeenSet = false;
 
   TriggerResourceUpdateOn m_triggerResourceUpdateOn{TriggerResourceUpdateOn::NOT_SET};
-  bool m_triggerResourceUpdateOnHasBeenSet = false;
 
   PullRequestComment m_pullRequestComment{PullRequestComment::NOT_SET};
+  bool m_branchHasBeenSet = false;
+  bool m_configFileHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_repositoryLinkIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_syncTypeHasBeenSet = false;
+  bool m_publishDeploymentStatusHasBeenSet = false;
+  bool m_triggerResourceUpdateOnHasBeenSet = false;
   bool m_pullRequestCommentHasBeenSet = false;
 };
 

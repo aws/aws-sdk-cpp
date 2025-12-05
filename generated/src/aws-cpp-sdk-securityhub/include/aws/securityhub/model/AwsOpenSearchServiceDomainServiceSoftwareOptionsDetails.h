@@ -177,27 +177,27 @@ class AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
   ///@}
  private:
   Aws::String m_automatedUpdateDate;
-  bool m_automatedUpdateDateHasBeenSet = false;
 
   bool m_cancellable{false};
-  bool m_cancellableHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_newVersion;
-  bool m_newVersionHasBeenSet = false;
 
   bool m_updateAvailable{false};
-  bool m_updateAvailableHasBeenSet = false;
 
   Aws::String m_updateStatus;
-  bool m_updateStatusHasBeenSet = false;
 
   bool m_optionalDeployment{false};
+  bool m_automatedUpdateDateHasBeenSet = false;
+  bool m_cancellableHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_newVersionHasBeenSet = false;
+  bool m_updateAvailableHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
   bool m_optionalDeploymentHasBeenSet = false;
 };
 

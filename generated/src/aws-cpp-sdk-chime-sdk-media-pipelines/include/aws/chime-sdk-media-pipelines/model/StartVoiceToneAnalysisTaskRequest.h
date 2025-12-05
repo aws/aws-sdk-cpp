@@ -107,15 +107,15 @@ class StartVoiceToneAnalysisTaskRequest : public ChimeSDKMediaPipelinesRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   VoiceAnalyticsLanguageCode m_languageCode{VoiceAnalyticsLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   KinesisVideoStreamSourceTaskConfiguration m_kinesisVideoStreamSourceTaskConfiguration;
-  bool m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_identifierHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

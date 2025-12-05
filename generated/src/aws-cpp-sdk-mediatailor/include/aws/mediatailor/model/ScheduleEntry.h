@@ -242,36 +242,36 @@ class ScheduleEntry {
   ///@}
  private:
   long long m_approximateDurationSeconds{0};
-  bool m_approximateDurationSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_approximateStartTime{};
-  bool m_approximateStartTimeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_liveSourceName;
-  bool m_liveSourceNameHasBeenSet = false;
 
   Aws::String m_programName;
-  bool m_programNameHasBeenSet = false;
 
   Aws::Vector<ScheduleAdBreak> m_scheduleAdBreaks;
-  bool m_scheduleAdBreaksHasBeenSet = false;
 
   ScheduleEntryType m_scheduleEntryType{ScheduleEntryType::NOT_SET};
-  bool m_scheduleEntryTypeHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::String m_vodSourceName;
-  bool m_vodSourceNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_audiences;
+  bool m_approximateDurationSecondsHasBeenSet = false;
+  bool m_approximateStartTimeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_liveSourceNameHasBeenSet = false;
+  bool m_programNameHasBeenSet = false;
+  bool m_scheduleAdBreaksHasBeenSet = false;
+  bool m_scheduleEntryTypeHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
+  bool m_vodSourceNameHasBeenSet = false;
   bool m_audiencesHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class VdmOptions {
   ///@}
  private:
   DashboardOptions m_dashboardOptions;
-  bool m_dashboardOptionsHasBeenSet = false;
 
   GuardianOptions m_guardianOptions;
+  bool m_dashboardOptionsHasBeenSet = false;
   bool m_guardianOptionsHasBeenSet = false;
 };
 

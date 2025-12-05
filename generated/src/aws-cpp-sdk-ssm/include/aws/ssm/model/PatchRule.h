@@ -154,18 +154,18 @@ class PatchRule {
   ///@}
  private:
   PatchFilterGroup m_patchFilterGroup;
-  bool m_patchFilterGroupHasBeenSet = false;
 
   PatchComplianceLevel m_complianceLevel{PatchComplianceLevel::NOT_SET};
-  bool m_complianceLevelHasBeenSet = false;
 
   int m_approveAfterDays{0};
-  bool m_approveAfterDaysHasBeenSet = false;
 
   Aws::String m_approveUntilDate;
-  bool m_approveUntilDateHasBeenSet = false;
 
   bool m_enableNonSecurity{false};
+  bool m_patchFilterGroupHasBeenSet = false;
+  bool m_complianceLevelHasBeenSet = false;
+  bool m_approveAfterDaysHasBeenSet = false;
+  bool m_approveUntilDateHasBeenSet = false;
   bool m_enableNonSecurityHasBeenSet = false;
 };
 

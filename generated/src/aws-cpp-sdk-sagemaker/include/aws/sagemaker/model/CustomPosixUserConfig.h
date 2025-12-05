@@ -62,9 +62,9 @@ class CustomPosixUserConfig {
   ///@}
  private:
   long long m_uid{0};
-  bool m_uidHasBeenSet = false;
 
   long long m_gid{0};
+  bool m_uidHasBeenSet = false;
   bool m_gidHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class DescribeSourceRegionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<SourceRegion> m_sourceRegions;
-  bool m_sourceRegionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_sourceRegionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

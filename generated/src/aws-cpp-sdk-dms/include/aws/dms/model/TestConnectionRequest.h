@@ -71,9 +71,9 @@ class TestConnectionRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   Aws::String m_endpointArn;
+  bool m_replicationInstanceArnHasBeenSet = false;
   bool m_endpointArnHasBeenSet = false;
 };
 

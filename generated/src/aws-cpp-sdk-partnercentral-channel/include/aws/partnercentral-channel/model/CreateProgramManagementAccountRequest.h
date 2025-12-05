@@ -147,21 +147,21 @@ class CreateProgramManagementAccountRequest : public PartnerCentralChannelReques
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Program m_program{Program::NOT_SET};
-  bool m_programHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_catalogHasBeenSet = false;
+  bool m_programHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

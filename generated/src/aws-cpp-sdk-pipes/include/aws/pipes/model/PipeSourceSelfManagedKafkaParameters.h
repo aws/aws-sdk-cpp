@@ -208,30 +208,30 @@ class PipeSourceSelfManagedKafkaParameters {
   ///@}
  private:
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   SelfManagedKafkaStartPosition m_startingPosition{SelfManagedKafkaStartPosition::NOT_SET};
-  bool m_startingPositionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalBootstrapServers;
-  bool m_additionalBootstrapServersHasBeenSet = false;
 
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   int m_maximumBatchingWindowInSeconds{0};
-  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
   Aws::String m_consumerGroupID;
-  bool m_consumerGroupIDHasBeenSet = false;
 
   SelfManagedKafkaAccessConfigurationCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_serverRootCaCertificate;
-  bool m_serverRootCaCertificateHasBeenSet = false;
 
   SelfManagedKafkaAccessConfigurationVpc m_vpc;
+  bool m_topicNameHasBeenSet = false;
+  bool m_startingPositionHasBeenSet = false;
+  bool m_additionalBootstrapServersHasBeenSet = false;
+  bool m_batchSizeHasBeenSet = false;
+  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+  bool m_consumerGroupIDHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_serverRootCaCertificateHasBeenSet = false;
   bool m_vpcHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class LoggingConfiguration {
   ///@}
  private:
   bool m_enableSIPLogs{false};
-  bool m_enableSIPLogsHasBeenSet = false;
 
   bool m_enableMediaMetricLogs{false};
+  bool m_enableSIPLogsHasBeenSet = false;
   bool m_enableMediaMetricLogsHasBeenSet = false;
 };
 

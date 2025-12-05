@@ -289,51 +289,51 @@ class UpdateGraphResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   GraphStatus m_status{GraphStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   int m_provisionedMemory{0};
-  bool m_provisionedMemoryHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   bool m_publicConnectivity{false};
-  bool m_publicConnectivityHasBeenSet = false;
 
   VectorSearchConfiguration m_vectorSearchConfiguration;
-  bool m_vectorSearchConfigurationHasBeenSet = false;
 
   int m_replicaCount{0};
-  bool m_replicaCountHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   Aws::String m_sourceSnapshotId;
-  bool m_sourceSnapshotIdHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_buildNumber;
-  bool m_buildNumberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_publicConnectivityHasBeenSet = false;
+  bool m_vectorSearchConfigurationHasBeenSet = false;
+  bool m_replicaCountHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_sourceSnapshotIdHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_buildNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

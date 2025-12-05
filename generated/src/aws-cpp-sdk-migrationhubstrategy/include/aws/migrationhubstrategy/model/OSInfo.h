@@ -67,9 +67,9 @@ class OSInfo {
   ///@}
  private:
   OSType m_type{OSType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_typeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

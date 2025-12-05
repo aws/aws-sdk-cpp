@@ -71,9 +71,9 @@ class SourceTable {
   ///@}
  private:
   Aws::String m_physicalTableId;
-  bool m_physicalTableIdHasBeenSet = false;
 
   ParentDataSet m_dataSet;
+  bool m_physicalTableIdHasBeenSet = false;
   bool m_dataSetHasBeenSet = false;
 };
 

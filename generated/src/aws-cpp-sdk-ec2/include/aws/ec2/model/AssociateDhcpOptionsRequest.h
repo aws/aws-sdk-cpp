@@ -89,12 +89,12 @@ class AssociateDhcpOptionsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_dhcpOptionsId;
-  bool m_dhcpOptionsIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_dhcpOptionsIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

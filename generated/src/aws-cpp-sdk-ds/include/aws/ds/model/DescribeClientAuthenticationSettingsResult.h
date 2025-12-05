@@ -93,12 +93,12 @@ class DescribeClientAuthenticationSettingsResult {
   ///@}
  private:
   Aws::Vector<ClientAuthenticationSettingInfo> m_clientAuthenticationSettingsInfo;
-  bool m_clientAuthenticationSettingsInfoHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientAuthenticationSettingsInfoHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

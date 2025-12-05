@@ -70,9 +70,9 @@ class JobExecutionSummaryForJob {
   ///@}
  private:
   Aws::String m_thingArn;
-  bool m_thingArnHasBeenSet = false;
 
   JobExecutionSummary m_jobExecutionSummary;
+  bool m_thingArnHasBeenSet = false;
   bool m_jobExecutionSummaryHasBeenSet = false;
 };
 

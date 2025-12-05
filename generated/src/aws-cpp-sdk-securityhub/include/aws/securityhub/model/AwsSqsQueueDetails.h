@@ -105,15 +105,15 @@ class AwsSqsQueueDetails {
   ///@}
  private:
   int m_kmsDataKeyReusePeriodSeconds{0};
-  bool m_kmsDataKeyReusePeriodSecondsHasBeenSet = false;
 
   Aws::String m_kmsMasterKeyId;
-  bool m_kmsMasterKeyIdHasBeenSet = false;
 
   Aws::String m_queueName;
-  bool m_queueNameHasBeenSet = false;
 
   Aws::String m_deadLetterTargetArn;
+  bool m_kmsDataKeyReusePeriodSecondsHasBeenSet = false;
+  bool m_kmsMasterKeyIdHasBeenSet = false;
+  bool m_queueNameHasBeenSet = false;
   bool m_deadLetterTargetArnHasBeenSet = false;
 };
 

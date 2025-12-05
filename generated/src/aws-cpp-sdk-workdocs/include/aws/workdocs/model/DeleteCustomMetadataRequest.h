@@ -134,18 +134,18 @@ class DeleteCustomMetadataRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   bool m_deleteAll{false};
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
   bool m_deleteAllHasBeenSet = false;
 };
 

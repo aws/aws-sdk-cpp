@@ -116,15 +116,15 @@ class Trace {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   double m_duration{0.0};
-  bool m_durationHasBeenSet = false;
 
   bool m_limitExceeded{false};
-  bool m_limitExceededHasBeenSet = false;
 
   Aws::Vector<Segment> m_segments;
+  bool m_idHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_limitExceededHasBeenSet = false;
   bool m_segmentsHasBeenSet = false;
 };
 

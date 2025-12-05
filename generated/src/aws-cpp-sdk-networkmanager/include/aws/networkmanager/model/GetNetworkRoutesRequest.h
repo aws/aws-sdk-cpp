@@ -262,33 +262,33 @@ class GetNetworkRoutesRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   RouteTableIdentifier m_routeTableIdentifier;
-  bool m_routeTableIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exactCidrMatches;
-  bool m_exactCidrMatchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_longestPrefixMatches;
-  bool m_longestPrefixMatchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetOfMatches;
-  bool m_subnetOfMatchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supernetOfMatches;
-  bool m_supernetOfMatchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_prefixListIds;
-  bool m_prefixListIdsHasBeenSet = false;
 
   Aws::Vector<RouteState> m_states;
-  bool m_statesHasBeenSet = false;
 
   Aws::Vector<RouteType> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_destinationFilters;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_routeTableIdentifierHasBeenSet = false;
+  bool m_exactCidrMatchesHasBeenSet = false;
+  bool m_longestPrefixMatchesHasBeenSet = false;
+  bool m_subnetOfMatchesHasBeenSet = false;
+  bool m_supernetOfMatchesHasBeenSet = false;
+  bool m_prefixListIdsHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
+  bool m_typesHasBeenSet = false;
   bool m_destinationFiltersHasBeenSet = false;
 };
 

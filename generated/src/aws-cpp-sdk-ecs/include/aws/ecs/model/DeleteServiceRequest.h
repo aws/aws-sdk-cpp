@@ -87,12 +87,12 @@ class DeleteServiceRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   bool m_force{false};
+  bool m_clusterHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

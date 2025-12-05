@@ -76,12 +76,12 @@ class CreateWebExperienceResult {
   ///@}
  private:
   Aws::String m_webExperienceId;
-  bool m_webExperienceIdHasBeenSet = false;
 
   Aws::String m_webExperienceArn;
-  bool m_webExperienceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webExperienceIdHasBeenSet = false;
+  bool m_webExperienceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class RestoreFromRecoveryPointResult {
   ///@}
  private:
   Namespace m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_recoveryPointId;
-  bool m_recoveryPointIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_namespaceHasBeenSet = false;
+  bool m_recoveryPointIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

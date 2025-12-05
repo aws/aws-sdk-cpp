@@ -154,21 +154,21 @@ class CreateHubRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   Aws::String m_hubDescription;
-  bool m_hubDescriptionHasBeenSet = false;
 
   Aws::String m_hubDisplayName;
-  bool m_hubDisplayNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hubSearchKeywords;
-  bool m_hubSearchKeywordsHasBeenSet = false;
 
   HubS3StorageConfig m_s3StorageConfig;
-  bool m_s3StorageConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_hubNameHasBeenSet = false;
+  bool m_hubDescriptionHasBeenSet = false;
+  bool m_hubDisplayNameHasBeenSet = false;
+  bool m_hubSearchKeywordsHasBeenSet = false;
+  bool m_s3StorageConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

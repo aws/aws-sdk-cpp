@@ -91,12 +91,12 @@ class BatchGetTableOptimizerResult {
   ///@}
  private:
   Aws::Vector<BatchTableOptimizer> m_tableOptimizers;
-  bool m_tableOptimizersHasBeenSet = false;
 
   Aws::Vector<BatchGetTableOptimizerError> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableOptimizersHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

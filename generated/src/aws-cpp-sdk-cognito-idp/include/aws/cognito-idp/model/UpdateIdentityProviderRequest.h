@@ -234,18 +234,18 @@ class UpdateIdentityProviderRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_providerDetails;
-  bool m_providerDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributeMapping;
-  bool m_attributeMappingHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_idpIdentifiers;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_providerDetailsHasBeenSet = false;
+  bool m_attributeMappingHasBeenSet = false;
   bool m_idpIdentifiersHasBeenSet = false;
 };
 

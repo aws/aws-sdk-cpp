@@ -87,12 +87,12 @@ class ListWorkflowBuildVersionsResult {
   ///@}
  private:
   Aws::Vector<WorkflowSummary> m_workflowSummaryList;
-  bool m_workflowSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

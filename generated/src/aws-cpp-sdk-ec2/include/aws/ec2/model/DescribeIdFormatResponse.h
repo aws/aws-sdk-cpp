@@ -67,9 +67,9 @@ class DescribeIdFormatResponse {
   ///@}
  private:
   Aws::Vector<IdFormat> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_statusesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

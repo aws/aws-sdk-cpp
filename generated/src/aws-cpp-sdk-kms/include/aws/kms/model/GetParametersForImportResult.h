@@ -121,18 +121,18 @@ class GetParametersForImportResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_importToken{};
-  bool m_importTokenHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_publicKey{};
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_parametersValidTo{};
-  bool m_parametersValidToHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_importTokenHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_parametersValidToHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

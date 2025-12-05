@@ -258,39 +258,40 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_mcpSessionId;
-  bool m_mcpSessionIdHasBeenSet = false;
 
   Aws::String m_runtimeSessionId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_runtimeSessionIdHasBeenSet = true;
 
   Aws::String m_mcpProtocolVersion;
-  bool m_mcpProtocolVersionHasBeenSet = false;
 
   Aws::String m_runtimeUserId;
-  bool m_runtimeUserIdHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_traceParent;
-  bool m_traceParentHasBeenSet = false;
 
   Aws::String m_traceState;
-  bool m_traceStateHasBeenSet = false;
 
   Aws::String m_baggage;
-  bool m_baggageHasBeenSet = false;
 
   Aws::String m_agentRuntimeArn;
-  bool m_agentRuntimeArnHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   Aws::String m_accountId;
+
+  bool m_acceptHasBeenSet = false;
+  bool m_mcpSessionIdHasBeenSet = false;
+  bool m_runtimeSessionIdHasBeenSet = true;
+  bool m_mcpProtocolVersionHasBeenSet = false;
+  bool m_runtimeUserIdHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_traceStateHasBeenSet = false;
+  bool m_baggageHasBeenSet = false;
+  bool m_agentRuntimeArnHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

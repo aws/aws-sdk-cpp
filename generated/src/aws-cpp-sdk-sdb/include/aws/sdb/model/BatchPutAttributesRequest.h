@@ -77,9 +77,9 @@ class BatchPutAttributesRequest : public SimpleDBRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<ReplaceableItem> m_items;
+  bool m_domainNameHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

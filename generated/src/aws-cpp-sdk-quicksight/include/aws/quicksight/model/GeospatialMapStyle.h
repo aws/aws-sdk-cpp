@@ -84,12 +84,12 @@ class GeospatialMapStyle {
   ///@}
  private:
   BaseMapStyleType m_baseMapStyle{BaseMapStyleType::NOT_SET};
-  bool m_baseMapStyleHasBeenSet = false;
 
   Aws::String m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   Visibility m_baseMapVisibility{Visibility::NOT_SET};
+  bool m_baseMapStyleHasBeenSet = false;
+  bool m_backgroundColorHasBeenSet = false;
   bool m_baseMapVisibilityHasBeenSet = false;
 };
 

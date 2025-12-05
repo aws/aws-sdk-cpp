@@ -92,12 +92,12 @@ class AuditEvent {
   ///@}
  private:
   Aws::String m_eventData;
-  bool m_eventDataHasBeenSet = false;
 
   Aws::String m_eventDataChecksum;
-  bool m_eventDataChecksumHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_eventDataHasBeenSet = false;
+  bool m_eventDataChecksumHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

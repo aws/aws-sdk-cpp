@@ -162,21 +162,21 @@ class CreateVoiceConnectorRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   VoiceConnectorAwsRegion m_awsRegion{VoiceConnectorAwsRegion::NOT_SET};
-  bool m_awsRegionHasBeenSet = false;
 
   bool m_requireEncryption{false};
-  bool m_requireEncryptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VoiceConnectorIntegrationType m_integrationType{VoiceConnectorIntegrationType::NOT_SET};
-  bool m_integrationTypeHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_requireEncryptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_integrationTypeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

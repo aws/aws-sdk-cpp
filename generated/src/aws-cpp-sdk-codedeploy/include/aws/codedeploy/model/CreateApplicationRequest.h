@@ -100,12 +100,12 @@ class CreateApplicationRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
-  bool m_computePlatformHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_computePlatformHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

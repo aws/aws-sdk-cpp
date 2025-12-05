@@ -86,12 +86,12 @@ class LayerFailure {
   ///@}
  private:
   Aws::String m_layerDigest;
-  bool m_layerDigestHasBeenSet = false;
 
   LayerFailureCode m_failureCode{LayerFailureCode::NOT_SET};
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_layerDigestHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

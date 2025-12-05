@@ -142,21 +142,21 @@ class TimestreamRegistrationResponse {
   ///@}
  private:
   Aws::String m_timestreamDatabaseName;
-  bool m_timestreamDatabaseNameHasBeenSet = false;
 
   Aws::String m_timestreamTableName;
-  bool m_timestreamTableNameHasBeenSet = false;
 
   Aws::String m_timestreamDatabaseArn;
-  bool m_timestreamDatabaseArnHasBeenSet = false;
 
   Aws::String m_timestreamTableArn;
-  bool m_timestreamTableArnHasBeenSet = false;
 
   RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_timestreamDatabaseNameHasBeenSet = false;
+  bool m_timestreamTableNameHasBeenSet = false;
+  bool m_timestreamDatabaseArnHasBeenSet = false;
+  bool m_timestreamTableArnHasBeenSet = false;
+  bool m_registrationStatusHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

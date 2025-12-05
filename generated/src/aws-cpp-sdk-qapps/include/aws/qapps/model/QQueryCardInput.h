@@ -141,21 +141,21 @@ class QQueryCardInput {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CardType m_type{CardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_prompt;
-  bool m_promptHasBeenSet = false;
 
   CardOutputSource m_outputSource{CardOutputSource::NOT_SET};
-  bool m_outputSourceHasBeenSet = false;
 
   AttributeFilter m_attributeFilter;
+  bool m_titleHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_promptHasBeenSet = false;
+  bool m_outputSourceHasBeenSet = false;
   bool m_attributeFilterHasBeenSet = false;
 };
 

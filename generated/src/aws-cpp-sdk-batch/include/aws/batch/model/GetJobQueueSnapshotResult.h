@@ -63,9 +63,9 @@ class GetJobQueueSnapshotResult {
   ///@}
  private:
   FrontOfQueueDetail m_frontOfQueue;
-  bool m_frontOfQueueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_frontOfQueueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

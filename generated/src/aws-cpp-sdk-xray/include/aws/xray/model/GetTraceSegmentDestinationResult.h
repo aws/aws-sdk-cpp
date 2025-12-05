@@ -74,12 +74,12 @@ class GetTraceSegmentDestinationResult {
   ///@}
  private:
   TraceSegmentDestination m_destination{TraceSegmentDestination::NOT_SET};
-  bool m_destinationHasBeenSet = false;
 
   TraceSegmentDestinationStatus m_status{TraceSegmentDestinationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

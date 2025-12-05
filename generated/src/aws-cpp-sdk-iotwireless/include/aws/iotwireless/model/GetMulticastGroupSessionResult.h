@@ -58,9 +58,9 @@ class GetMulticastGroupSessionResult {
   ///@}
  private:
   LoRaWANMulticastSession m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loRaWANHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

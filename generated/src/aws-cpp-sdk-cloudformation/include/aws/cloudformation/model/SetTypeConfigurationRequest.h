@@ -140,18 +140,18 @@ class SetTypeConfigurationRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   Aws::String m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_configurationAlias;
-  bool m_configurationAliasHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   ThirdPartyType m_type{ThirdPartyType::NOT_SET};
+  bool m_typeArnHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_configurationAliasHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

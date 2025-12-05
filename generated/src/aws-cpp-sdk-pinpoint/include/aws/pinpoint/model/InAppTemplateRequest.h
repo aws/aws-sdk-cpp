@@ -154,18 +154,18 @@ class InAppTemplateRequest {
   ///@}
  private:
   Aws::Vector<InAppMessageContent> m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customConfig;
-  bool m_customConfigHasBeenSet = false;
 
   Layout m_layout{Layout::NOT_SET};
-  bool m_layoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateDescription;
+  bool m_contentHasBeenSet = false;
+  bool m_customConfigHasBeenSet = false;
+  bool m_layoutHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_templateDescriptionHasBeenSet = false;
 };
 

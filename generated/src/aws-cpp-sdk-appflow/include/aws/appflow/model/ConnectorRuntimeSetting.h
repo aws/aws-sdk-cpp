@@ -165,24 +165,24 @@ class ConnectorRuntimeSetting {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   bool m_isRequired{false};
-  bool m_isRequiredHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectorSuppliedValueOptions;
+  bool m_keyHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_isRequiredHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_connectorSuppliedValueOptionsHasBeenSet = false;
 };
 

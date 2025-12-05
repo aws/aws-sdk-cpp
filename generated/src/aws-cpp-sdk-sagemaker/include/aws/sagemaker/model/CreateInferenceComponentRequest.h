@@ -156,21 +156,21 @@ class CreateInferenceComponentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_inferenceComponentName;
-  bool m_inferenceComponentNameHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   InferenceComponentSpecification m_specification;
-  bool m_specificationHasBeenSet = false;
 
   InferenceComponentRuntimeConfig m_runtimeConfig;
-  bool m_runtimeConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_inferenceComponentNameHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_variantNameHasBeenSet = false;
+  bool m_specificationHasBeenSet = false;
+  bool m_runtimeConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

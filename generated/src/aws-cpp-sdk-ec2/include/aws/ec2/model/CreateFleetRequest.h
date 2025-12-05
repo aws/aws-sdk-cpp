@@ -339,45 +339,45 @@ class CreateFleetRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   SpotOptionsRequest m_spotOptions;
-  bool m_spotOptionsHasBeenSet = false;
 
   OnDemandOptionsRequest m_onDemandOptions;
-  bool m_onDemandOptionsHasBeenSet = false;
 
   FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy{FleetExcessCapacityTerminationPolicy::NOT_SET};
-  bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
   Aws::Vector<FleetLaunchTemplateConfigRequest> m_launchTemplateConfigs;
-  bool m_launchTemplateConfigsHasBeenSet = false;
 
   TargetCapacitySpecificationRequest m_targetCapacitySpecification;
-  bool m_targetCapacitySpecificationHasBeenSet = false;
 
   bool m_terminateInstancesWithExpiration{false};
-  bool m_terminateInstancesWithExpirationHasBeenSet = false;
 
   FleetType m_type{FleetType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_validFrom{};
-  bool m_validFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   bool m_replaceUnhealthyInstances{false};
-  bool m_replaceUnhealthyInstancesHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_spotOptionsHasBeenSet = false;
+  bool m_onDemandOptionsHasBeenSet = false;
+  bool m_excessCapacityTerminationPolicyHasBeenSet = false;
+  bool m_launchTemplateConfigsHasBeenSet = false;
+  bool m_targetCapacitySpecificationHasBeenSet = false;
+  bool m_terminateInstancesWithExpirationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_validFromHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
+  bool m_replaceUnhealthyInstancesHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

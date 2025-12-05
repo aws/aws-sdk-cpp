@@ -92,12 +92,12 @@ class BatchGetSchemaAnalysisRuleResult {
   ///@}
  private:
   Aws::Vector<AnalysisRule> m_analysisRules;
-  bool m_analysisRulesHasBeenSet = false;
 
   Aws::Vector<BatchGetSchemaAnalysisRuleError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisRulesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

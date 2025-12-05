@@ -123,21 +123,21 @@ class GetAnswerResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   int m_milestoneNumber{0};
-  bool m_milestoneNumberHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Answer m_answer;
-  bool m_answerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_milestoneNumberHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_answerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

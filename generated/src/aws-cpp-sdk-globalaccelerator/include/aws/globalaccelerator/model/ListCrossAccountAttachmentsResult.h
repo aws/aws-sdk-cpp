@@ -86,12 +86,12 @@ class ListCrossAccountAttachmentsResult {
   ///@}
  private:
   Aws::Vector<Attachment> m_crossAccountAttachments;
-  bool m_crossAccountAttachmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crossAccountAttachmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

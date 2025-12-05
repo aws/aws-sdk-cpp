@@ -157,24 +157,24 @@ class AddPolicyGrantRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   PolicyGrantDetail m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   TargetEntityType m_entityType{TargetEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   ManagedPolicyType m_policyType{ManagedPolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   PolicyGrantPrincipal m_principal;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_detailHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

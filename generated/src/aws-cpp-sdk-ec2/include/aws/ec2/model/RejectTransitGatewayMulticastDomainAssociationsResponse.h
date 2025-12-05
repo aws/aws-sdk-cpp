@@ -62,9 +62,9 @@ class RejectTransitGatewayMulticastDomainAssociationsResponse {
   ///@}
  private:
   TransitGatewayMulticastDomainAssociations m_associations;
-  bool m_associationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_associationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class GetBucketLifecycleConfigurationResult {
   ///@}
  private:
   Aws::Vector<LifecycleRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   TransitionDefaultMinimumObjectSize m_transitionDefaultMinimumObjectSize{TransitionDefaultMinimumObjectSize::NOT_SET};
-  bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rulesHasBeenSet = false;
+  bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class EventDestinationDefinition {
   ///@}
  private:
   CloudWatchLogsDestination m_cloudWatchLogsDestination;
-  bool m_cloudWatchLogsDestinationHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   KinesisFirehoseDestination m_kinesisFirehoseDestination;
-  bool m_kinesisFirehoseDestinationHasBeenSet = false;
 
   Aws::Vector<EventType> m_matchingEventTypes;
-  bool m_matchingEventTypesHasBeenSet = false;
 
   SnsDestination m_snsDestination;
+  bool m_cloudWatchLogsDestinationHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_kinesisFirehoseDestinationHasBeenSet = false;
+  bool m_matchingEventTypesHasBeenSet = false;
   bool m_snsDestinationHasBeenSet = false;
 };
 

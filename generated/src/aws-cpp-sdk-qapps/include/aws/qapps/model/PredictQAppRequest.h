@@ -70,9 +70,9 @@ class PredictQAppRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   PredictQAppInputOptions m_options;
+  bool m_instanceIdHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

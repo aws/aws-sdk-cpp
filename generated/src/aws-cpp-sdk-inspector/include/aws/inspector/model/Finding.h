@@ -367,57 +367,57 @@ class Finding {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_schemaVersion{0};
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   InspectorServiceAttributes m_serviceAttributes;
-  bool m_serviceAttributesHasBeenSet = false;
 
   AssetType m_assetType{AssetType::NOT_SET};
-  bool m_assetTypeHasBeenSet = false;
 
   AssetAttributes m_assetAttributes;
-  bool m_assetAttributesHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   double m_numericSeverity{0.0};
-  bool m_numericSeverityHasBeenSet = false;
 
   int m_confidence{0};
-  bool m_confidenceHasBeenSet = false;
 
   bool m_indicatorOfCompromise{false};
-  bool m_indicatorOfCompromiseHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<Attribute> m_userAttributes;
-  bool m_userAttributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_serviceAttributesHasBeenSet = false;
+  bool m_assetTypeHasBeenSet = false;
+  bool m_assetAttributesHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_numericSeverityHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_indicatorOfCompromiseHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_userAttributesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

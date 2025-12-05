@@ -87,12 +87,12 @@ class ListPerformanceAnalysisReportsResult {
   ///@}
  private:
   Aws::Vector<AnalysisReportSummary> m_analysisReports;
-  bool m_analysisReportsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisReportsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

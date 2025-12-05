@@ -94,12 +94,12 @@ class StagingSourceServer {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

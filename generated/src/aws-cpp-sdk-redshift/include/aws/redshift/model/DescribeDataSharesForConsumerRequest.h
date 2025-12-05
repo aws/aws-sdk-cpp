@@ -114,15 +114,15 @@ class DescribeDataSharesForConsumerRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_consumerArn;
-  bool m_consumerArnHasBeenSet = false;
 
   DataShareStatusForConsumer m_status{DataShareStatusForConsumer::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_consumerArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

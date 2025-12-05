@@ -88,12 +88,12 @@ class RecordOutput {
   ///@}
  private:
   Aws::String m_outputKey;
-  bool m_outputKeyHasBeenSet = false;
 
   Aws::String m_outputValue;
-  bool m_outputValueHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_outputKeyHasBeenSet = false;
+  bool m_outputValueHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

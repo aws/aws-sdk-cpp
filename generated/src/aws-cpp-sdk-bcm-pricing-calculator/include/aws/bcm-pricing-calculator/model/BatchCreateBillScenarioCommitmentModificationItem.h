@@ -127,18 +127,18 @@ class BatchCreateBillScenarioCommitmentModificationItem {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   BillScenarioCommitmentModificationAction m_commitmentAction;
+  bool m_keyHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
   bool m_commitmentActionHasBeenSet = false;
 };
 

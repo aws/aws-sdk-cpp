@@ -354,45 +354,46 @@ class SelectObjectContentRequest : public S3Request {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKey;
-  bool m_sSECustomerKeyHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   ExpressionType m_expressionType{ExpressionType::NOT_SET};
-  bool m_expressionTypeHasBeenSet = false;
 
   RequestProgress m_requestProgress;
-  bool m_requestProgressHasBeenSet = false;
 
   InputSerialization m_inputSerialization;
-  bool m_inputSerializationHasBeenSet = false;
 
   OutputSerialization m_outputSerialization;
-  bool m_outputSerializationHasBeenSet = false;
 
   ScanRange m_scanRange;
-  bool m_scanRangeHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-  bool m_customizedAccessLogTagHasBeenSet = false;
   SelectObjectContentHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_bucketHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_expressionTypeHasBeenSet = false;
+  bool m_requestProgressHasBeenSet = false;
+  bool m_inputSerializationHasBeenSet = false;
+  bool m_outputSerializationHasBeenSet = false;
+  bool m_scanRangeHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_customizedAccessLogTagHasBeenSet = false;
 };
 
 }  // namespace Model

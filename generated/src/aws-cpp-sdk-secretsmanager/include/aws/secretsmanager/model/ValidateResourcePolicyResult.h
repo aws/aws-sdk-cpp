@@ -82,12 +82,12 @@ class ValidateResourcePolicyResult {
   ///@}
  private:
   bool m_policyValidationPassed{false};
-  bool m_policyValidationPassedHasBeenSet = false;
 
   Aws::Vector<ValidationErrorsEntry> m_validationErrors;
-  bool m_validationErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyValidationPassedHasBeenSet = false;
+  bool m_validationErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

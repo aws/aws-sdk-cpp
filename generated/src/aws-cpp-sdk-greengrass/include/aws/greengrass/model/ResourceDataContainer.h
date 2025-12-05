@@ -135,18 +135,18 @@ class ResourceDataContainer {
   ///@}
  private:
   LocalDeviceResourceData m_localDeviceResourceData;
-  bool m_localDeviceResourceDataHasBeenSet = false;
 
   LocalVolumeResourceData m_localVolumeResourceData;
-  bool m_localVolumeResourceDataHasBeenSet = false;
 
   S3MachineLearningModelResourceData m_s3MachineLearningModelResourceData;
-  bool m_s3MachineLearningModelResourceDataHasBeenSet = false;
 
   SageMakerMachineLearningModelResourceData m_sageMakerMachineLearningModelResourceData;
-  bool m_sageMakerMachineLearningModelResourceDataHasBeenSet = false;
 
   SecretsManagerSecretResourceData m_secretsManagerSecretResourceData;
+  bool m_localDeviceResourceDataHasBeenSet = false;
+  bool m_localVolumeResourceDataHasBeenSet = false;
+  bool m_s3MachineLearningModelResourceDataHasBeenSet = false;
+  bool m_sageMakerMachineLearningModelResourceDataHasBeenSet = false;
   bool m_secretsManagerSecretResourceDataHasBeenSet = false;
 };
 

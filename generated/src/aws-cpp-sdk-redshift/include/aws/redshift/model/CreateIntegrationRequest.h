@@ -185,24 +185,24 @@ class CreateIntegrationRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_integrationNameHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

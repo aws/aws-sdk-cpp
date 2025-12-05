@@ -65,9 +65,9 @@ class UpdateApplicationSettingsRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   WriteApplicationSettingsRequest m_writeApplicationSettingsRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_writeApplicationSettingsRequestHasBeenSet = false;
 };
 

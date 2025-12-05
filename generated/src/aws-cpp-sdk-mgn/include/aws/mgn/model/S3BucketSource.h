@@ -86,12 +86,12 @@ class S3BucketSource {
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3BucketOwner;
-  bool m_s3BucketOwnerHasBeenSet = false;
 
   Aws::String m_s3Key;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
 };
 

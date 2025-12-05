@@ -135,18 +135,18 @@ class CreateExtensionAssociationRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_extensionIdentifier;
-  bool m_extensionIdentifierHasBeenSet = false;
 
   int m_extensionVersionNumber{0};
-  bool m_extensionVersionNumberHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_extensionIdentifierHasBeenSet = false;
+  bool m_extensionVersionNumberHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

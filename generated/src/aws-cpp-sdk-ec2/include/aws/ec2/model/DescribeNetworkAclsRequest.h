@@ -172,18 +172,18 @@ class DescribeNetworkAclsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkAclIds;
-  bool m_networkAclIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkAclIdsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

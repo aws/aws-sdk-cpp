@@ -61,9 +61,9 @@ class PutAggregationAuthorizationResult {
   ///@}
  private:
   AggregationAuthorization m_aggregationAuthorization;
-  bool m_aggregationAuthorizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregationAuthorizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

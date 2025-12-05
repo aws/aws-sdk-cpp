@@ -129,15 +129,15 @@ class TagHealth {
   ///@}
  private:
   Aws::String m_appBoundaryKey;
-  bool m_appBoundaryKeyHasBeenSet = false;
 
   Aws::String m_tagValue;
-  bool m_tagValueHasBeenSet = false;
 
   InsightHealth m_insight;
-  bool m_insightHasBeenSet = false;
 
   long long m_analyzedResourceCount{0};
+  bool m_appBoundaryKeyHasBeenSet = false;
+  bool m_tagValueHasBeenSet = false;
+  bool m_insightHasBeenSet = false;
   bool m_analyzedResourceCountHasBeenSet = false;
 };
 

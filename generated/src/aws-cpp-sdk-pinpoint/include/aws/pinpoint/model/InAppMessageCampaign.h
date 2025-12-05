@@ -174,27 +174,27 @@ class InAppMessageCampaign {
   ///@}
  private:
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   int m_dailyCap{0};
-  bool m_dailyCapHasBeenSet = false;
 
   InAppMessage m_inAppMessage;
-  bool m_inAppMessageHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   InAppCampaignSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   int m_sessionCap{0};
-  bool m_sessionCapHasBeenSet = false;
 
   int m_totalCap{0};
-  bool m_totalCapHasBeenSet = false;
 
   Aws::String m_treatmentId;
+  bool m_campaignIdHasBeenSet = false;
+  bool m_dailyCapHasBeenSet = false;
+  bool m_inAppMessageHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_sessionCapHasBeenSet = false;
+  bool m_totalCapHasBeenSet = false;
   bool m_treatmentIdHasBeenSet = false;
 };
 

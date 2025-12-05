@@ -115,15 +115,15 @@ class Ec2AutoScalingGroupConfiguration {
   ///@}
  private:
   InstanceConfiguration m_instance;
-  bool m_instanceHasBeenSet = false;
 
   Aws::Vector<MixedInstanceConfiguration> m_mixedInstances;
-  bool m_mixedInstancesHasBeenSet = false;
 
   Ec2AutoScalingGroupType m_type{Ec2AutoScalingGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AllocationStrategy m_allocationStrategy{AllocationStrategy::NOT_SET};
+  bool m_instanceHasBeenSet = false;
+  bool m_mixedInstancesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_allocationStrategyHasBeenSet = false;
 };
 

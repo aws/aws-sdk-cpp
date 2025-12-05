@@ -92,12 +92,12 @@ class DeleteScheduleRequest : public SchedulerRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_groupNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

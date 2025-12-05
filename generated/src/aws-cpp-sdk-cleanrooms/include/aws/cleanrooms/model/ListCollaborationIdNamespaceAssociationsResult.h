@@ -90,12 +90,12 @@ class ListCollaborationIdNamespaceAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CollaborationIdNamespaceAssociationSummary> m_collaborationIdNamespaceAssociationSummaries;
-  bool m_collaborationIdNamespaceAssociationSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_collaborationIdNamespaceAssociationSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class GetInstancesHealthStatusResult {
   ///@}
  private:
   Aws::Map<Aws::String, HealthStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

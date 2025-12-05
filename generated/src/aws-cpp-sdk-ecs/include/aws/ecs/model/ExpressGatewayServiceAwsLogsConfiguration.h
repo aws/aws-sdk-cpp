@@ -70,9 +70,9 @@ class ExpressGatewayServiceAwsLogsConfiguration {
   ///@}
  private:
   Aws::String m_logGroup;
-  bool m_logGroupHasBeenSet = false;
 
   Aws::String m_logStreamPrefix;
+  bool m_logGroupHasBeenSet = false;
   bool m_logStreamPrefixHasBeenSet = false;
 };
 

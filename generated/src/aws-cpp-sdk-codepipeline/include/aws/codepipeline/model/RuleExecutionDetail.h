@@ -236,36 +236,36 @@ class RuleExecutionDetail {
   ///@}
  private:
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   Aws::String m_ruleExecutionId;
-  bool m_ruleExecutionIdHasBeenSet = false;
 
   int m_pipelineVersion{0};
-  bool m_pipelineVersionHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   RuleExecutionStatus m_status{RuleExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RuleExecutionInput m_input;
-  bool m_inputHasBeenSet = false;
 
   RuleExecutionOutput m_output;
+  bool m_pipelineExecutionIdHasBeenSet = false;
+  bool m_ruleExecutionIdHasBeenSet = false;
+  bool m_pipelineVersionHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_outputHasBeenSet = false;
 };
 

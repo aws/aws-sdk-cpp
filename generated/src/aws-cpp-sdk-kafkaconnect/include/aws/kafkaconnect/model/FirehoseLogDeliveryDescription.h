@@ -69,9 +69,9 @@ class FirehoseLogDeliveryDescription {
   ///@}
  private:
   Aws::String m_deliveryStream;
-  bool m_deliveryStreamHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_deliveryStreamHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

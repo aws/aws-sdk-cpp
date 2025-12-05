@@ -176,24 +176,24 @@ class GetInstanceTypesFromInstanceRequirementsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<ArchitectureType> m_architectureTypes;
-  bool m_architectureTypesHasBeenSet = false;
 
   Aws::Vector<VirtualizationType> m_virtualizationTypes;
-  bool m_virtualizationTypesHasBeenSet = false;
 
   InstanceRequirementsRequest m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_dryRunHasBeenSet = false;
+  bool m_architectureTypesHasBeenSet = false;
+  bool m_virtualizationTypesHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

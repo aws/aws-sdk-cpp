@@ -317,42 +317,42 @@ class UpdateResponsePlanRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ChatChannel m_chatChannel;
-  bool m_chatChannelHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_engagements;
-  bool m_engagementsHasBeenSet = false;
 
   Aws::String m_incidentTemplateDedupeString;
-  bool m_incidentTemplateDedupeStringHasBeenSet = false;
 
   int m_incidentTemplateImpact{0};
-  bool m_incidentTemplateImpactHasBeenSet = false;
 
   Aws::Vector<NotificationTargetItem> m_incidentTemplateNotificationTargets;
-  bool m_incidentTemplateNotificationTargetsHasBeenSet = false;
 
   Aws::String m_incidentTemplateSummary;
-  bool m_incidentTemplateSummaryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_incidentTemplateTags;
-  bool m_incidentTemplateTagsHasBeenSet = false;
 
   Aws::String m_incidentTemplateTitle;
-  bool m_incidentTemplateTitleHasBeenSet = false;
 
   Aws::Vector<Integration> m_integrations;
+  bool m_actionsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_chatChannelHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_displayNameHasBeenSet = false;
+  bool m_engagementsHasBeenSet = false;
+  bool m_incidentTemplateDedupeStringHasBeenSet = false;
+  bool m_incidentTemplateImpactHasBeenSet = false;
+  bool m_incidentTemplateNotificationTargetsHasBeenSet = false;
+  bool m_incidentTemplateSummaryHasBeenSet = false;
+  bool m_incidentTemplateTagsHasBeenSet = false;
+  bool m_incidentTemplateTitleHasBeenSet = false;
   bool m_integrationsHasBeenSet = false;
 };
 

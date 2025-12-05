@@ -177,24 +177,24 @@ class ServiceEnvironmentDetail {
   ///@}
  private:
   Aws::String m_serviceEnvironmentName;
-  bool m_serviceEnvironmentNameHasBeenSet = false;
 
   Aws::String m_serviceEnvironmentArn;
-  bool m_serviceEnvironmentArnHasBeenSet = false;
 
   ServiceEnvironmentType m_serviceEnvironmentType{ServiceEnvironmentType::NOT_SET};
-  bool m_serviceEnvironmentTypeHasBeenSet = false;
 
   ServiceEnvironmentState m_state{ServiceEnvironmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ServiceEnvironmentStatus m_status{ServiceEnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<CapacityLimit> m_capacityLimits;
-  bool m_capacityLimitsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_serviceEnvironmentNameHasBeenSet = false;
+  bool m_serviceEnvironmentArnHasBeenSet = false;
+  bool m_serviceEnvironmentTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_capacityLimitsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

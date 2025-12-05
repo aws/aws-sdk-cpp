@@ -393,54 +393,54 @@ class AwsElbLoadBalancerDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<AwsElbLoadBalancerBackendServerDescription> m_backendServerDescriptions;
-  bool m_backendServerDescriptionsHasBeenSet = false;
 
   Aws::String m_canonicalHostedZoneName;
-  bool m_canonicalHostedZoneNameHasBeenSet = false;
 
   Aws::String m_canonicalHostedZoneNameID;
-  bool m_canonicalHostedZoneNameIDHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   AwsElbLoadBalancerHealthCheck m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   Aws::Vector<AwsElbLoadBalancerInstance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::Vector<AwsElbLoadBalancerListenerDescription> m_listenerDescriptions;
-  bool m_listenerDescriptionsHasBeenSet = false;
 
   AwsElbLoadBalancerAttributes m_loadBalancerAttributes;
-  bool m_loadBalancerAttributesHasBeenSet = false;
 
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   AwsElbLoadBalancerPolicies m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::String m_scheme;
-  bool m_schemeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   AwsElbLoadBalancerSourceSecurityGroup m_sourceSecurityGroup;
-  bool m_sourceSecurityGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_backendServerDescriptionsHasBeenSet = false;
+  bool m_canonicalHostedZoneNameHasBeenSet = false;
+  bool m_canonicalHostedZoneNameIDHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_healthCheckHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_listenerDescriptionsHasBeenSet = false;
+  bool m_loadBalancerAttributesHasBeenSet = false;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_schemeHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_sourceSecurityGroupHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

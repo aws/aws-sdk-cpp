@@ -124,18 +124,18 @@ class PutInsightSelectorsResult {
   ///@}
  private:
   Aws::String m_trailARN;
-  bool m_trailARNHasBeenSet = false;
 
   Aws::Vector<InsightSelector> m_insightSelectors;
-  bool m_insightSelectorsHasBeenSet = false;
 
   Aws::String m_eventDataStoreArn;
-  bool m_eventDataStoreArnHasBeenSet = false;
 
   Aws::String m_insightsDestination;
-  bool m_insightsDestinationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trailARNHasBeenSet = false;
+  bool m_insightSelectorsHasBeenSet = false;
+  bool m_eventDataStoreArnHasBeenSet = false;
+  bool m_insightsDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

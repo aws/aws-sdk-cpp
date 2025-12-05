@@ -65,9 +65,9 @@ class DescribeBudgetResult {
   ///@}
  private:
   Budget m_budget;
-  bool m_budgetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_budgetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

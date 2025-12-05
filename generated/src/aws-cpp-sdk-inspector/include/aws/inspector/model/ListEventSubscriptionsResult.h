@@ -87,12 +87,12 @@ class ListEventSubscriptionsResult {
   ///@}
  private:
   Aws::Vector<Subscription> m_subscriptions;
-  bool m_subscriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

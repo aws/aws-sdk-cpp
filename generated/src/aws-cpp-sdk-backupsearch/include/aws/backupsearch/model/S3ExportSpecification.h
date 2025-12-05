@@ -71,9 +71,9 @@ class S3ExportSpecification {
   ///@}
  private:
   Aws::String m_destinationBucket;
-  bool m_destinationBucketHasBeenSet = false;
 
   Aws::String m_destinationPrefix;
+  bool m_destinationBucketHasBeenSet = false;
   bool m_destinationPrefixHasBeenSet = false;
 };
 

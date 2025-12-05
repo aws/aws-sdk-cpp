@@ -173,24 +173,24 @@ class TopBottomFilter {
   ///@}
  private:
   Aws::String m_filterId;
-  bool m_filterIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::Vector<AggregationSortConfiguration> m_aggregationSortConfigurations;
-  bool m_aggregationSortConfigurationsHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+  bool m_filterIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_aggregationSortConfigurationsHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_parameterNameHasBeenSet = false;
   bool m_defaultFilterControlConfigurationHasBeenSet = false;
 };
 

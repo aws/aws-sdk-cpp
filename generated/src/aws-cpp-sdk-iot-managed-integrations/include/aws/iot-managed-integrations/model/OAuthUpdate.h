@@ -72,9 +72,9 @@ class OAuthUpdate {
   ///@}
  private:
   Aws::String m_oAuthCompleteRedirectUrl;
-  bool m_oAuthCompleteRedirectUrlHasBeenSet = false;
 
   ProactiveRefreshTokenRenewal m_proactiveRefreshTokenRenewal;
+  bool m_oAuthCompleteRedirectUrlHasBeenSet = false;
   bool m_proactiveRefreshTokenRenewalHasBeenSet = false;
 };
 

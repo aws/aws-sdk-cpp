@@ -76,9 +76,9 @@ class UpdateRecoveryGroupRequest : public Route53RecoveryReadinessRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cells;
-  bool m_cellsHasBeenSet = false;
 
   Aws::String m_recoveryGroupName;
+  bool m_cellsHasBeenSet = false;
   bool m_recoveryGroupNameHasBeenSet = false;
 };
 

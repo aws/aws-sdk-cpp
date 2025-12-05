@@ -85,12 +85,12 @@ class UpdateUserHierarchyGroupNameRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_hierarchyGroupId;
-  bool m_hierarchyGroupIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_nameHasBeenSet = false;
+  bool m_hierarchyGroupIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

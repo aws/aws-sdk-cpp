@@ -94,15 +94,15 @@ class PutFileResult {
   ///@}
  private:
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_blobId;
-  bool m_blobIdHasBeenSet = false;
 
   Aws::String m_treeId;
-  bool m_treeIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commitIdHasBeenSet = false;
+  bool m_blobIdHasBeenSet = false;
+  bool m_treeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

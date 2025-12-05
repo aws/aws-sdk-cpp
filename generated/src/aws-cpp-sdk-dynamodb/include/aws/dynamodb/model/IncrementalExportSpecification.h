@@ -95,12 +95,12 @@ class IncrementalExportSpecification {
   ///@}
  private:
   Aws::Utils::DateTime m_exportFromTime{};
-  bool m_exportFromTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_exportToTime{};
-  bool m_exportToTimeHasBeenSet = false;
 
   ExportViewType m_exportViewType{ExportViewType::NOT_SET};
+  bool m_exportFromTimeHasBeenSet = false;
+  bool m_exportToTimeHasBeenSet = false;
   bool m_exportViewTypeHasBeenSet = false;
 };
 

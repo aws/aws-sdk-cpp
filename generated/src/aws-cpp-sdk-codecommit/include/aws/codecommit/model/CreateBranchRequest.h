@@ -89,12 +89,12 @@ class CreateBranchRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_commitId;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
   bool m_commitIdHasBeenSet = false;
 };
 

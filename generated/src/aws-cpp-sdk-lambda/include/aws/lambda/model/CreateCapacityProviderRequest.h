@@ -171,24 +171,24 @@ class CreateCapacityProviderRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_capacityProviderName;
-  bool m_capacityProviderNameHasBeenSet = false;
 
   CapacityProviderVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   CapacityProviderPermissionsConfig m_permissionsConfig;
-  bool m_permissionsConfigHasBeenSet = false;
 
   InstanceRequirements m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   CapacityProviderScalingConfig m_capacityProviderScalingConfig;
-  bool m_capacityProviderScalingConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_capacityProviderNameHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_permissionsConfigHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_capacityProviderScalingConfigHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

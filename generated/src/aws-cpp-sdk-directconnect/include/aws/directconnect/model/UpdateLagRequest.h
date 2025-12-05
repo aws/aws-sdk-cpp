@@ -103,15 +103,15 @@ class UpdateLagRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_lagId;
-  bool m_lagIdHasBeenSet = false;
 
   Aws::String m_lagName;
-  bool m_lagNameHasBeenSet = false;
 
   int m_minimumLinks{0};
-  bool m_minimumLinksHasBeenSet = false;
 
   Aws::String m_encryptionMode;
+  bool m_lagIdHasBeenSet = false;
+  bool m_lagNameHasBeenSet = false;
+  bool m_minimumLinksHasBeenSet = false;
   bool m_encryptionModeHasBeenSet = false;
 };
 

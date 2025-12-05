@@ -111,15 +111,15 @@ class Grant {
   ///@}
  private:
   AuthorizationCodeGrant m_authorizationCode;
-  bool m_authorizationCodeHasBeenSet = false;
 
   JwtBearerGrant m_jwtBearer;
-  bool m_jwtBearerHasBeenSet = false;
 
   RefreshTokenGrant m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   TokenExchangeGrant m_tokenExchange;
+  bool m_authorizationCodeHasBeenSet = false;
+  bool m_jwtBearerHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
   bool m_tokenExchangeHasBeenSet = false;
 };
 

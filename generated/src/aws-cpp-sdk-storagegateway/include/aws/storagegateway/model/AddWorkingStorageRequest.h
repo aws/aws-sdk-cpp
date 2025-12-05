@@ -79,9 +79,9 @@ class AddWorkingStorageRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_diskIds;
+  bool m_gatewayARNHasBeenSet = false;
   bool m_diskIdsHasBeenSet = false;
 };
 

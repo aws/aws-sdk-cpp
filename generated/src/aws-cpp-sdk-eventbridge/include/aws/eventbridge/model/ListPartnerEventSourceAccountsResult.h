@@ -90,12 +90,12 @@ class ListPartnerEventSourceAccountsResult {
   ///@}
  private:
   Aws::Vector<PartnerEventSourceAccount> m_partnerEventSourceAccounts;
-  bool m_partnerEventSourceAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_partnerEventSourceAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

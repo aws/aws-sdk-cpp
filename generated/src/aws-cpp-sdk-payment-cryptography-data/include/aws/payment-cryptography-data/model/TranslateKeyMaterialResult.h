@@ -61,9 +61,9 @@ class TranslateKeyMaterialResult {
   ///@}
  private:
   WrappedWorkingKey m_wrappedKey;
-  bool m_wrappedKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_wrappedKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

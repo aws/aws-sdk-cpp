@@ -87,12 +87,12 @@ class GroupStatusDetail {
   ///@}
  private:
   GroupStatus m_status{GroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   ErrorDetail m_errorDetail;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

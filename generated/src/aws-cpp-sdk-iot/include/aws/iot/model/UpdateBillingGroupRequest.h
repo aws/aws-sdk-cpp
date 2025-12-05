@@ -85,12 +85,12 @@ class UpdateBillingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_billingGroupName;
-  bool m_billingGroupNameHasBeenSet = false;
 
   BillingGroupProperties m_billingGroupProperties;
-  bool m_billingGroupPropertiesHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_billingGroupNameHasBeenSet = false;
+  bool m_billingGroupPropertiesHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

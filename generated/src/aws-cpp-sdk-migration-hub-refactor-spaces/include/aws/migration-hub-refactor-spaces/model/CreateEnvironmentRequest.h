@@ -128,18 +128,18 @@ class CreateEnvironmentRequest : public MigrationHubRefactorSpacesRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NetworkFabricType m_networkFabricType{NetworkFabricType::NOT_SET};
-  bool m_networkFabricTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkFabricTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

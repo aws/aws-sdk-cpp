@@ -67,9 +67,9 @@ class GetRouteServerAssociationsResponse {
   ///@}
  private:
   Aws::Vector<RouteServerAssociation> m_routeServerAssociations;
-  bool m_routeServerAssociationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerAssociationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

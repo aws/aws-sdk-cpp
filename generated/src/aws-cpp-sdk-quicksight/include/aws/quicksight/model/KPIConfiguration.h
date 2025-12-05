@@ -107,15 +107,15 @@ class KPIConfiguration {
   ///@}
  private:
   KPIFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   KPISortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   KPIOptions m_kPIOptions;
-  bool m_kPIOptionsHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_kPIOptionsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CreateSecurityConfigurationRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_nameHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

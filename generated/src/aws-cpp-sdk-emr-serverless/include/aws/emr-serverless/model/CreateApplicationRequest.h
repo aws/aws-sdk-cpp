@@ -417,57 +417,57 @@ class CreateApplicationRequest : public EMRServerlessRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, InitialCapacityConfig> m_initialCapacity;
-  bool m_initialCapacityHasBeenSet = false;
 
   MaximumAllowedResources m_maximumCapacity;
-  bool m_maximumCapacityHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AutoStartConfig m_autoStartConfiguration;
-  bool m_autoStartConfigurationHasBeenSet = false;
 
   AutoStopConfig m_autoStopConfiguration;
-  bool m_autoStopConfigurationHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Architecture m_architecture{Architecture::NOT_SET};
-  bool m_architectureHasBeenSet = false;
 
   ImageConfigurationInput m_imageConfiguration;
-  bool m_imageConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, WorkerTypeSpecificationInput> m_workerTypeSpecifications;
-  bool m_workerTypeSpecificationsHasBeenSet = false;
 
   Aws::Vector<Configuration> m_runtimeConfiguration;
-  bool m_runtimeConfigurationHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
-  bool m_monitoringConfigurationHasBeenSet = false;
 
   InteractiveConfiguration m_interactiveConfiguration;
-  bool m_interactiveConfigurationHasBeenSet = false;
 
   SchedulerConfiguration m_schedulerConfiguration;
-  bool m_schedulerConfigurationHasBeenSet = false;
 
   IdentityCenterConfigurationInput m_identityCenterConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_initialCapacityHasBeenSet = false;
+  bool m_maximumCapacityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_autoStartConfigurationHasBeenSet = false;
+  bool m_autoStopConfigurationHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_imageConfigurationHasBeenSet = false;
+  bool m_workerTypeSpecificationsHasBeenSet = false;
+  bool m_runtimeConfigurationHasBeenSet = false;
+  bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_interactiveConfigurationHasBeenSet = false;
+  bool m_schedulerConfigurationHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;
 };
 

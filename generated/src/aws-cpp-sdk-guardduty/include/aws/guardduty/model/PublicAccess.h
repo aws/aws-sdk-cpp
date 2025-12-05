@@ -72,9 +72,9 @@ class PublicAccess {
   ///@}
  private:
   PermissionConfiguration m_permissionConfiguration;
-  bool m_permissionConfigurationHasBeenSet = false;
 
   Aws::String m_effectivePermission;
+  bool m_permissionConfigurationHasBeenSet = false;
   bool m_effectivePermissionHasBeenSet = false;
 };
 

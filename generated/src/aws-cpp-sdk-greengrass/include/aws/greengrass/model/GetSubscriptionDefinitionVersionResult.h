@@ -148,24 +148,24 @@ class GetSubscriptionDefinitionVersionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_creationTimestamp;
-  bool m_creationTimestampHasBeenSet = false;
 
   SubscriptionDefinitionVersion m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

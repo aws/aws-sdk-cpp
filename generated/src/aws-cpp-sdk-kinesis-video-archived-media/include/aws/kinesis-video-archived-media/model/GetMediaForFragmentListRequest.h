@@ -94,12 +94,12 @@ class GetMediaForFragmentListRequest : public KinesisVideoArchivedMediaRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fragments;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
   bool m_fragmentsHasBeenSet = false;
 };
 

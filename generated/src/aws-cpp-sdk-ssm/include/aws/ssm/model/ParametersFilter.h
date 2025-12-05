@@ -75,9 +75,9 @@ class ParametersFilter {
   ///@}
  private:
   ParametersFilterKey m_key{ParametersFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_keyHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -159,18 +159,18 @@ class StartTagSyncTaskRequest : public ResourceGroupsRequest {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::String m_tagValue;
-  bool m_tagValueHasBeenSet = false;
 
   ResourceQuery m_resourceQuery;
-  bool m_resourceQueryHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_groupHasBeenSet = false;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_tagValueHasBeenSet = false;
+  bool m_resourceQueryHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

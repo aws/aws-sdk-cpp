@@ -303,45 +303,45 @@ class DescribeAssetResult {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_assetExternalId;
-  bool m_assetExternalIdHasBeenSet = false;
 
   Aws::String m_assetArn;
-  bool m_assetArnHasBeenSet = false;
 
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::Vector<AssetProperty> m_assetProperties;
-  bool m_assetPropertiesHasBeenSet = false;
 
   Aws::Vector<AssetHierarchy> m_assetHierarchies;
-  bool m_assetHierarchiesHasBeenSet = false;
 
   Aws::Vector<AssetCompositeModel> m_assetCompositeModels;
-  bool m_assetCompositeModelsHasBeenSet = false;
 
   Aws::Utils::DateTime m_assetCreationDate{};
-  bool m_assetCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_assetLastUpdateDate{};
-  bool m_assetLastUpdateDateHasBeenSet = false;
 
   AssetStatus m_assetStatus;
-  bool m_assetStatusHasBeenSet = false;
 
   Aws::String m_assetDescription;
-  bool m_assetDescriptionHasBeenSet = false;
 
   Aws::Vector<AssetCompositeModelSummary> m_assetCompositeModelSummaries;
-  bool m_assetCompositeModelSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetIdHasBeenSet = false;
+  bool m_assetExternalIdHasBeenSet = false;
+  bool m_assetArnHasBeenSet = false;
+  bool m_assetNameHasBeenSet = false;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetPropertiesHasBeenSet = false;
+  bool m_assetHierarchiesHasBeenSet = false;
+  bool m_assetCompositeModelsHasBeenSet = false;
+  bool m_assetCreationDateHasBeenSet = false;
+  bool m_assetLastUpdateDateHasBeenSet = false;
+  bool m_assetStatusHasBeenSet = false;
+  bool m_assetDescriptionHasBeenSet = false;
+  bool m_assetCompositeModelSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

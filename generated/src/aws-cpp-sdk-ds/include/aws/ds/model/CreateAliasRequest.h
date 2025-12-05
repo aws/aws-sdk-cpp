@@ -73,9 +73,9 @@ class CreateAliasRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_alias;
+  bool m_directoryIdHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class AccountHealth {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AccountInsightHealth m_insight;
+  bool m_accountIdHasBeenSet = false;
   bool m_insightHasBeenSet = false;
 };
 

@@ -222,33 +222,33 @@ class Profile {
   ///@}
  private:
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_profileVersion;
-  bool m_profileVersionHasBeenSet = false;
 
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileDescription;
-  bool m_profileDescriptionHasBeenSet = false;
 
   Aws::Vector<ProfileQuestion> m_profileQuestions;
-  bool m_profileQuestionsHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_shareInvitationId;
-  bool m_shareInvitationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_profileArnHasBeenSet = false;
+  bool m_profileVersionHasBeenSet = false;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileDescriptionHasBeenSet = false;
+  bool m_profileQuestionsHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_shareInvitationIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

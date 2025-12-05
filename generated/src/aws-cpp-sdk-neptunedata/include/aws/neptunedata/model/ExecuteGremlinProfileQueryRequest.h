@@ -121,18 +121,18 @@ class ExecuteGremlinProfileQueryRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_gremlinQuery;
-  bool m_gremlinQueryHasBeenSet = false;
 
   bool m_results{false};
-  bool m_resultsHasBeenSet = false;
 
   int m_chop{0};
-  bool m_chopHasBeenSet = false;
 
   Aws::String m_serializer;
-  bool m_serializerHasBeenSet = false;
 
   bool m_indexOps{false};
+  bool m_gremlinQueryHasBeenSet = false;
+  bool m_resultsHasBeenSet = false;
+  bool m_chopHasBeenSet = false;
+  bool m_serializerHasBeenSet = false;
   bool m_indexOpsHasBeenSet = false;
 };
 

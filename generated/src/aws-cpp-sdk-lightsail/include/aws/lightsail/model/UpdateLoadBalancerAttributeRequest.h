@@ -108,12 +108,12 @@ class UpdateLoadBalancerAttributeRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   LoadBalancerAttributeName m_attributeName{LoadBalancerAttributeName::NOT_SET};
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeValue;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeValueHasBeenSet = false;
 };
 

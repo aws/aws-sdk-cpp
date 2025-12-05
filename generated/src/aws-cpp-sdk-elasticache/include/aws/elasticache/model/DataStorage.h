@@ -82,12 +82,12 @@ class DataStorage {
   ///@}
  private:
   int m_maximum{0};
-  bool m_maximumHasBeenSet = false;
 
   int m_minimum{0};
-  bool m_minimumHasBeenSet = false;
 
   DataStorageUnit m_unit{DataStorageUnit::NOT_SET};
+  bool m_maximumHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

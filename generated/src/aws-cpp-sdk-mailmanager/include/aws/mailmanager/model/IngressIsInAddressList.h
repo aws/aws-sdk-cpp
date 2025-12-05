@@ -76,9 +76,9 @@ class IngressIsInAddressList {
   ///@}
  private:
   IngressAddressListEmailAttribute m_attribute{IngressAddressListEmailAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addressLists;
+  bool m_attributeHasBeenSet = false;
   bool m_addressListsHasBeenSet = false;
 };
 

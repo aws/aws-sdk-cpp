@@ -102,15 +102,15 @@ class ListFunctionVersionsByCapacityProviderResult {
   ///@}
  private:
   Aws::String m_capacityProviderArn;
-  bool m_capacityProviderArnHasBeenSet = false;
 
   Aws::Vector<FunctionVersionsByCapacityProviderListItem> m_functionVersions;
-  bool m_functionVersionsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityProviderArnHasBeenSet = false;
+  bool m_functionVersionsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

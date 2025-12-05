@@ -263,33 +263,33 @@ class IpamResourceDiscovery {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ipamResourceDiscoveryId;
-  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
 
   Aws::String m_ipamResourceDiscoveryArn;
-  bool m_ipamResourceDiscoveryArnHasBeenSet = false;
 
   Aws::String m_ipamResourceDiscoveryRegion;
-  bool m_ipamResourceDiscoveryRegionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IpamOperatingRegion> m_operatingRegions;
-  bool m_operatingRegionsHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   IpamResourceDiscoveryState m_state{IpamResourceDiscoveryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<IpamOrganizationalUnitExclusion> m_organizationalUnitExclusions;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
+  bool m_ipamResourceDiscoveryArnHasBeenSet = false;
+  bool m_ipamResourceDiscoveryRegionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_operatingRegionsHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_organizationalUnitExclusionsHasBeenSet = false;
 };
 

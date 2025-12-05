@@ -75,9 +75,9 @@ class UpdateRulesOfIpGroupRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<IpRuleItem> m_userRules;
+  bool m_groupIdHasBeenSet = false;
   bool m_userRulesHasBeenSet = false;
 };
 

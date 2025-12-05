@@ -87,12 +87,12 @@ class ListActionExecutionsResult {
   ///@}
  private:
   Aws::Vector<ActionExecutionDetail> m_actionExecutionDetails;
-  bool m_actionExecutionDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionExecutionDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

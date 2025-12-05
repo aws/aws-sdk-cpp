@@ -59,9 +59,9 @@ class DeleteCodeSecurityIntegrationResult {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class GetSessionTokenRequest : public STSRequest {
   ///@}
  private:
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_tokenCode;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
   bool m_tokenCodeHasBeenSet = false;
 };
 

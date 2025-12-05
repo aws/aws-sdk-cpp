@@ -73,9 +73,9 @@ class EnabledServicePrincipal {
   ///@}
  private:
   Aws::String m_servicePrincipal;
-  bool m_servicePrincipalHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateEnabled{};
+  bool m_servicePrincipalHasBeenSet = false;
   bool m_dateEnabledHasBeenSet = false;
 };
 

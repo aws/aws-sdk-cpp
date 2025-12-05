@@ -72,9 +72,9 @@ class Certificate {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   bool m_isDefault{false};
+  bool m_certificateArnHasBeenSet = false;
   bool m_isDefaultHasBeenSet = false;
 };
 

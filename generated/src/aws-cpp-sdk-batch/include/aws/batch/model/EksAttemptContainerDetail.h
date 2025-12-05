@@ -105,15 +105,15 @@ class EksAttemptContainerDetail {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_containerID;
-  bool m_containerIDHasBeenSet = false;
 
   int m_exitCode{0};
-  bool m_exitCodeHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_nameHasBeenSet = false;
+  bool m_containerIDHasBeenSet = false;
+  bool m_exitCodeHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

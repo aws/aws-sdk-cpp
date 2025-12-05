@@ -138,21 +138,21 @@ class CreateFormTypeRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Model m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owningProjectIdentifier;
-  bool m_owningProjectIdentifierHasBeenSet = false;
 
   FormTypeStatus m_status{FormTypeStatus::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_owningProjectIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DisassociateGlobalReplicationGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_replicationGroupRegion;
+  bool m_globalReplicationGroupIdHasBeenSet = false;
+  bool m_replicationGroupIdHasBeenSet = false;
   bool m_replicationGroupRegionHasBeenSet = false;
 };
 

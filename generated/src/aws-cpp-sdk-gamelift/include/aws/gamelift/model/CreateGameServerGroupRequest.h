@@ -323,36 +323,36 @@ class CreateGameServerGroupRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   int m_maxSize{0};
-  bool m_maxSizeHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-  bool m_instanceDefinitionsHasBeenSet = false;
 
   GameServerGroupAutoScalingPolicy m_autoScalingPolicy;
-  bool m_autoScalingPolicyHasBeenSet = false;
 
   BalancingStrategy m_balancingStrategy{BalancingStrategy::NOT_SET};
-  bool m_balancingStrategyHasBeenSet = false;
 
   GameServerProtectionPolicy m_gameServerProtectionPolicy{GameServerProtectionPolicy::NOT_SET};
-  bool m_gameServerProtectionPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSubnets;
-  bool m_vpcSubnetsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_gameServerGroupNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_instanceDefinitionsHasBeenSet = false;
+  bool m_autoScalingPolicyHasBeenSet = false;
+  bool m_balancingStrategyHasBeenSet = false;
+  bool m_gameServerProtectionPolicyHasBeenSet = false;
+  bool m_vpcSubnetsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

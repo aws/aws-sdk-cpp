@@ -73,9 +73,9 @@ class PutMessagingStreamingConfigurationsRequest : public ChimeSDKMessagingReque
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::Vector<StreamingConfiguration> m_streamingConfigurations;
+  bool m_appInstanceArnHasBeenSet = false;
   bool m_streamingConfigurationsHasBeenSet = false;
 };
 

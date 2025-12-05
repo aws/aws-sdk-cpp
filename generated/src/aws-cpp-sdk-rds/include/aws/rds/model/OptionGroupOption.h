@@ -362,54 +362,54 @@ class OptionGroupOption {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
-  bool m_majorEngineVersionHasBeenSet = false;
 
   Aws::String m_minimumRequiredMinorEngineVersion;
-  bool m_minimumRequiredMinorEngineVersionHasBeenSet = false;
 
   bool m_portRequired{false};
-  bool m_portRequiredHasBeenSet = false;
 
   int m_defaultPort{0};
-  bool m_defaultPortHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_optionsDependedOn;
-  bool m_optionsDependedOnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_optionsConflictsWith;
-  bool m_optionsConflictsWithHasBeenSet = false;
 
   bool m_persistent{false};
-  bool m_persistentHasBeenSet = false;
 
   bool m_permanent{false};
-  bool m_permanentHasBeenSet = false;
 
   bool m_requiresAutoMinorEngineVersionUpgrade{false};
-  bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = false;
 
   bool m_vpcOnly{false};
-  bool m_vpcOnlyHasBeenSet = false;
 
   bool m_supportsOptionVersionDowngrade{false};
-  bool m_supportsOptionVersionDowngradeHasBeenSet = false;
 
   Aws::Vector<OptionGroupOptionSetting> m_optionGroupOptionSettings;
-  bool m_optionGroupOptionSettingsHasBeenSet = false;
 
   Aws::Vector<OptionVersion> m_optionGroupOptionVersions;
-  bool m_optionGroupOptionVersionsHasBeenSet = false;
 
   bool m_copyableCrossAccount{false};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
+  bool m_majorEngineVersionHasBeenSet = false;
+  bool m_minimumRequiredMinorEngineVersionHasBeenSet = false;
+  bool m_portRequiredHasBeenSet = false;
+  bool m_defaultPortHasBeenSet = false;
+  bool m_optionsDependedOnHasBeenSet = false;
+  bool m_optionsConflictsWithHasBeenSet = false;
+  bool m_persistentHasBeenSet = false;
+  bool m_permanentHasBeenSet = false;
+  bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = false;
+  bool m_vpcOnlyHasBeenSet = false;
+  bool m_supportsOptionVersionDowngradeHasBeenSet = false;
+  bool m_optionGroupOptionSettingsHasBeenSet = false;
+  bool m_optionGroupOptionVersionsHasBeenSet = false;
   bool m_copyableCrossAccountHasBeenSet = false;
 };
 

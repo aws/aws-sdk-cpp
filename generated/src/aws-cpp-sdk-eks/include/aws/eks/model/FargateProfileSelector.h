@@ -78,9 +78,9 @@ class FargateProfileSelector {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labels;
+  bool m_namespaceHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
 };
 

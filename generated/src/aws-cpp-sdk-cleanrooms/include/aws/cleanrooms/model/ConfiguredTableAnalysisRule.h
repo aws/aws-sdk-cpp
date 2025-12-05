@@ -142,21 +142,21 @@ class ConfiguredTableAnalysisRule {
   ///@}
  private:
   Aws::String m_configuredTableId;
-  bool m_configuredTableIdHasBeenSet = false;
 
   Aws::String m_configuredTableArn;
-  bool m_configuredTableArnHasBeenSet = false;
 
   ConfiguredTableAnalysisRulePolicy m_policy;
-  bool m_policyHasBeenSet = false;
 
   ConfiguredTableAnalysisRuleType m_type{ConfiguredTableAnalysisRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_configuredTableIdHasBeenSet = false;
+  bool m_configuredTableArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

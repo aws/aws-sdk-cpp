@@ -200,30 +200,30 @@ class ListMessageMoveTasksResultEntry {
   ///@}
  private:
   Aws::String m_taskHandle;
-  bool m_taskHandleHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   int m_maxNumberOfMessagesPerSecond{0};
-  bool m_maxNumberOfMessagesPerSecondHasBeenSet = false;
 
   long long m_approximateNumberOfMessagesMoved{0};
-  bool m_approximateNumberOfMessagesMovedHasBeenSet = false;
 
   long long m_approximateNumberOfMessagesToMove{0};
-  bool m_approximateNumberOfMessagesToMoveHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   long long m_startedTimestamp{0};
+  bool m_taskHandleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_maxNumberOfMessagesPerSecondHasBeenSet = false;
+  bool m_approximateNumberOfMessagesMovedHasBeenSet = false;
+  bool m_approximateNumberOfMessagesToMoveHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_startedTimestampHasBeenSet = false;
 };
 

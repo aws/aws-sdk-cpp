@@ -70,9 +70,9 @@ class OriginAccessControl {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   OriginAccessControlConfig m_originAccessControlConfig;
+  bool m_idHasBeenSet = false;
   bool m_originAccessControlConfigHasBeenSet = false;
 };
 

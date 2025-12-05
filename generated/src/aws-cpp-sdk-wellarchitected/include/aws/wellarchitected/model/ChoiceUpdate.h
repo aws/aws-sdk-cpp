@@ -84,12 +84,12 @@ class ChoiceUpdate {
   ///@}
  private:
   ChoiceStatus m_status{ChoiceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ChoiceReason m_reason{ChoiceReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_notes;
+  bool m_statusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_notesHasBeenSet = false;
 };
 

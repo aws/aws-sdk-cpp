@@ -60,9 +60,9 @@ class ListKeyGroups2020_05_31Result {
   ///@}
  private:
   KeyGroupList m_keyGroupList;
-  bool m_keyGroupListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyGroupListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

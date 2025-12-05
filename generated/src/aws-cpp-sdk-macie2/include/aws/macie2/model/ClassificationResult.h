@@ -157,21 +157,21 @@ class ClassificationResult {
   ///@}
  private:
   bool m_additionalOccurrences{false};
-  bool m_additionalOccurrencesHasBeenSet = false;
 
   CustomDataIdentifiers m_customDataIdentifiers;
-  bool m_customDataIdentifiersHasBeenSet = false;
 
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   Aws::Vector<SensitiveDataItem> m_sensitiveData;
-  bool m_sensitiveDataHasBeenSet = false;
 
   long long m_sizeClassified{0};
-  bool m_sizeClassifiedHasBeenSet = false;
 
   ClassificationResultStatus m_status;
+  bool m_additionalOccurrencesHasBeenSet = false;
+  bool m_customDataIdentifiersHasBeenSet = false;
+  bool m_mimeTypeHasBeenSet = false;
+  bool m_sensitiveDataHasBeenSet = false;
+  bool m_sizeClassifiedHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

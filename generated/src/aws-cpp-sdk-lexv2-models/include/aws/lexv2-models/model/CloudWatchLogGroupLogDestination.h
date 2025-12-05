@@ -72,9 +72,9 @@ class CloudWatchLogGroupLogDestination {
   ///@}
  private:
   Aws::String m_cloudWatchLogGroupArn;
-  bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
   Aws::String m_logPrefix;
+  bool m_cloudWatchLogGroupArnHasBeenSet = false;
   bool m_logPrefixHasBeenSet = false;
 };
 

@@ -144,21 +144,21 @@ class AccountModification {
   ///@}
  private:
   DedicatedTenancyModificationStateEnum m_modificationState{DedicatedTenancyModificationStateEnum::NOT_SET};
-  bool m_modificationStateHasBeenSet = false;
 
   DedicatedTenancySupportResultEnum m_dedicatedTenancySupport{DedicatedTenancySupportResultEnum::NOT_SET};
-  bool m_dedicatedTenancySupportHasBeenSet = false;
 
   Aws::String m_dedicatedTenancyManagementCidrRange;
-  bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_modificationStateHasBeenSet = false;
+  bool m_dedicatedTenancySupportHasBeenSet = false;
+  bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

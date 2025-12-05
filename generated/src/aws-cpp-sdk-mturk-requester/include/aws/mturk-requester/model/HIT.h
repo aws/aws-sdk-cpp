@@ -425,66 +425,66 @@ class HIT {
   ///@}
  private:
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   Aws::String m_hITTypeId;
-  bool m_hITTypeIdHasBeenSet = false;
 
   Aws::String m_hITGroupId;
-  bool m_hITGroupIdHasBeenSet = false;
 
   Aws::String m_hITLayoutId;
-  bool m_hITLayoutIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_question;
-  bool m_questionHasBeenSet = false;
 
   Aws::String m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   HITStatus m_hITStatus{HITStatus::NOT_SET};
-  bool m_hITStatusHasBeenSet = false;
 
   int m_maxAssignments{0};
-  bool m_maxAssignmentsHasBeenSet = false;
 
   Aws::String m_reward;
-  bool m_rewardHasBeenSet = false;
 
   long long m_autoApprovalDelayInSeconds{0};
-  bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
-  bool m_expirationHasBeenSet = false;
 
   long long m_assignmentDurationInSeconds{0};
-  bool m_assignmentDurationInSecondsHasBeenSet = false;
 
   Aws::String m_requesterAnnotation;
-  bool m_requesterAnnotationHasBeenSet = false;
 
   Aws::Vector<QualificationRequirement> m_qualificationRequirements;
-  bool m_qualificationRequirementsHasBeenSet = false;
 
   HITReviewStatus m_hITReviewStatus{HITReviewStatus::NOT_SET};
-  bool m_hITReviewStatusHasBeenSet = false;
 
   int m_numberOfAssignmentsPending{0};
-  bool m_numberOfAssignmentsPendingHasBeenSet = false;
 
   int m_numberOfAssignmentsAvailable{0};
-  bool m_numberOfAssignmentsAvailableHasBeenSet = false;
 
   int m_numberOfAssignmentsCompleted{0};
+  bool m_hITIdHasBeenSet = false;
+  bool m_hITTypeIdHasBeenSet = false;
+  bool m_hITGroupIdHasBeenSet = false;
+  bool m_hITLayoutIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_questionHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
+  bool m_hITStatusHasBeenSet = false;
+  bool m_maxAssignmentsHasBeenSet = false;
+  bool m_rewardHasBeenSet = false;
+  bool m_autoApprovalDelayInSecondsHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
+  bool m_assignmentDurationInSecondsHasBeenSet = false;
+  bool m_requesterAnnotationHasBeenSet = false;
+  bool m_qualificationRequirementsHasBeenSet = false;
+  bool m_hITReviewStatusHasBeenSet = false;
+  bool m_numberOfAssignmentsPendingHasBeenSet = false;
+  bool m_numberOfAssignmentsAvailableHasBeenSet = false;
   bool m_numberOfAssignmentsCompletedHasBeenSet = false;
 };
 

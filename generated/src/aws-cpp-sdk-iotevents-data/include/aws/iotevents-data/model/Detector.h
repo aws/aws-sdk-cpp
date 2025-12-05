@@ -143,21 +143,21 @@ class Detector {
   ///@}
  private:
   Aws::String m_detectorModelName;
-  bool m_detectorModelNameHasBeenSet = false;
 
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   Aws::String m_detectorModelVersion;
-  bool m_detectorModelVersionHasBeenSet = false;
 
   DetectorState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
+  bool m_detectorModelNameHasBeenSet = false;
+  bool m_keyValueHasBeenSet = false;
+  bool m_detectorModelVersionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
 };
 

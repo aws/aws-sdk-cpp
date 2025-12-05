@@ -87,12 +87,12 @@ class RescoreResult {
   ///@}
  private:
   Aws::String m_rescoreId;
-  bool m_rescoreIdHasBeenSet = false;
 
   Aws::Vector<RescoreResultItem> m_resultItems;
-  bool m_resultItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rescoreIdHasBeenSet = false;
+  bool m_resultItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

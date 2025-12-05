@@ -72,9 +72,9 @@ class GetResourcePositionRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   PositionResourceType m_resourceType{PositionResourceType::NOT_SET};
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class CoreNetworkPolicyException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<CoreNetworkPolicyError> m_errors;
+  bool m_messageHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
 };
 

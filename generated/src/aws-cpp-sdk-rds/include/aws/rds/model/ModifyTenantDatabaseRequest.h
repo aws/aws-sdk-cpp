@@ -212,24 +212,24 @@ class ModifyTenantDatabaseRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_tenantDBName;
-  bool m_tenantDBNameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_newTenantDBName;
-  bool m_newTenantDBNameHasBeenSet = false;
 
   bool m_manageMasterUserPassword{false};
-  bool m_manageMasterUserPasswordHasBeenSet = false;
 
   bool m_rotateMasterUserPassword{false};
-  bool m_rotateMasterUserPasswordHasBeenSet = false;
 
   Aws::String m_masterUserSecretKmsKeyId;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_tenantDBNameHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_newTenantDBNameHasBeenSet = false;
+  bool m_manageMasterUserPasswordHasBeenSet = false;
+  bool m_rotateMasterUserPasswordHasBeenSet = false;
   bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 };
 

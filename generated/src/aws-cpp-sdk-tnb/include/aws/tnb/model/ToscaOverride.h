@@ -68,9 +68,9 @@ class ToscaOverride {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_defaultValueHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

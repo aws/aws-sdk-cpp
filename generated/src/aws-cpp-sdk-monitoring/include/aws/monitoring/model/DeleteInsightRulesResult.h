@@ -68,9 +68,9 @@ class DeleteInsightRulesResult {
   ///@}
  private:
   Aws::Vector<PartialFailure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_failuresHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

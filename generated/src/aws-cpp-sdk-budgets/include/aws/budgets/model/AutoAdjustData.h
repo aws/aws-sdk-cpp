@@ -89,12 +89,12 @@ class AutoAdjustData {
   ///@}
  private:
   AutoAdjustType m_autoAdjustType{AutoAdjustType::NOT_SET};
-  bool m_autoAdjustTypeHasBeenSet = false;
 
   HistoricalOptions m_historicalOptions;
-  bool m_historicalOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAutoAdjustTime{};
+  bool m_autoAdjustTypeHasBeenSet = false;
+  bool m_historicalOptionsHasBeenSet = false;
   bool m_lastAutoAdjustTimeHasBeenSet = false;
 };
 

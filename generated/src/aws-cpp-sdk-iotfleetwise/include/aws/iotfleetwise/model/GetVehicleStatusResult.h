@@ -86,12 +86,12 @@ class GetVehicleStatusResult {
   ///@}
  private:
   Aws::Vector<VehicleStatus> m_campaigns;
-  bool m_campaignsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_campaignsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class SlotResolutionTestResultItem {
   ///@}
  private:
   Aws::String m_slotName;
-  bool m_slotNameHasBeenSet = false;
 
   SlotResolutionTestResultItemCounts m_resultCounts;
+  bool m_slotNameHasBeenSet = false;
   bool m_resultCountsHasBeenSet = false;
 };
 

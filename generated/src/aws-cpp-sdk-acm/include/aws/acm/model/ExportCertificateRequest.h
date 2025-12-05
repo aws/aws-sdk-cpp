@@ -76,9 +76,9 @@ class ExportCertificateRequest : public ACMRequest {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_passphrase{};
+  bool m_certificateArnHasBeenSet = false;
   bool m_passphraseHasBeenSet = false;
 };
 

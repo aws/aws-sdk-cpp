@@ -67,9 +67,9 @@ class ListRuleTypesResult {
   ///@}
  private:
   Aws::Vector<RuleType> m_ruleTypes;
-  bool m_ruleTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

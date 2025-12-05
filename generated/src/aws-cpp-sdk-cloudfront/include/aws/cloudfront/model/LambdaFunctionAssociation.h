@@ -103,12 +103,12 @@ class LambdaFunctionAssociation {
   ///@}
  private:
   Aws::String m_lambdaFunctionARN;
-  bool m_lambdaFunctionARNHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   bool m_includeBody{false};
+  bool m_lambdaFunctionARNHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_includeBodyHasBeenSet = false;
 };
 

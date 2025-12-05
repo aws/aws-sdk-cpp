@@ -68,9 +68,9 @@ class CancelAutomatedReasoningPolicyBuildWorkflowRequest : public BedrockRequest
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
+  bool m_policyArnHasBeenSet = false;
   bool m_buildWorkflowIdHasBeenSet = false;
 };
 

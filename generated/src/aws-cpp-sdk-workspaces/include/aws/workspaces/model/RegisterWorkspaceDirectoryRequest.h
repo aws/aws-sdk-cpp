@@ -273,39 +273,39 @@ class RegisterWorkspaceDirectoryRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   bool m_enableSelfService{false};
-  bool m_enableSelfServiceHasBeenSet = false;
 
   Tenancy m_tenancy{Tenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workspaceDirectoryName;
-  bool m_workspaceDirectoryNameHasBeenSet = false;
 
   Aws::String m_workspaceDirectoryDescription;
-  bool m_workspaceDirectoryDescriptionHasBeenSet = false;
 
   UserIdentityType m_userIdentityType{UserIdentityType::NOT_SET};
-  bool m_userIdentityTypeHasBeenSet = false;
 
   Aws::String m_idcInstanceArn;
-  bool m_idcInstanceArnHasBeenSet = false;
 
   MicrosoftEntraConfig m_microsoftEntraConfig;
-  bool m_microsoftEntraConfigHasBeenSet = false;
 
   WorkspaceType m_workspaceType{WorkspaceType::NOT_SET};
-  bool m_workspaceTypeHasBeenSet = false;
 
   ActiveDirectoryConfig m_activeDirectoryConfig;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_enableSelfServiceHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_workspaceDirectoryNameHasBeenSet = false;
+  bool m_workspaceDirectoryDescriptionHasBeenSet = false;
+  bool m_userIdentityTypeHasBeenSet = false;
+  bool m_idcInstanceArnHasBeenSet = false;
+  bool m_microsoftEntraConfigHasBeenSet = false;
+  bool m_workspaceTypeHasBeenSet = false;
   bool m_activeDirectoryConfigHasBeenSet = false;
 };
 

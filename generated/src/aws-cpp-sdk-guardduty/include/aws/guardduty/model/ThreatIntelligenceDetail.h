@@ -95,12 +95,12 @@ class ThreatIntelligenceDetail {
   ///@}
  private:
   Aws::String m_threatListName;
-  bool m_threatListNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_threatNames;
-  bool m_threatNamesHasBeenSet = false;
 
   Aws::String m_threatFileSha256;
+  bool m_threatListNameHasBeenSet = false;
+  bool m_threatNamesHasBeenSet = false;
   bool m_threatFileSha256HasBeenSet = false;
 };
 

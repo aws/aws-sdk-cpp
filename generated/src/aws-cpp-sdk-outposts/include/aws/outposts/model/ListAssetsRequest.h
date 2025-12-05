@@ -131,18 +131,18 @@ class ListAssetsRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifier;
-  bool m_outpostIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hostIdFilter;
-  bool m_hostIdFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AssetState> m_statusFilter;
+  bool m_outpostIdentifierHasBeenSet = false;
+  bool m_hostIdFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_statusFilterHasBeenSet = false;
 };
 

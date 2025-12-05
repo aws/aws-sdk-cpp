@@ -111,15 +111,15 @@ class SourceDescription {
   ///@}
  private:
   DirectPutSourceDescription m_directPutSourceDescription;
-  bool m_directPutSourceDescriptionHasBeenSet = false;
 
   KinesisStreamSourceDescription m_kinesisStreamSourceDescription;
-  bool m_kinesisStreamSourceDescriptionHasBeenSet = false;
 
   MSKSourceDescription m_mSKSourceDescription;
-  bool m_mSKSourceDescriptionHasBeenSet = false;
 
   DatabaseSourceDescription m_databaseSourceDescription;
+  bool m_directPutSourceDescriptionHasBeenSet = false;
+  bool m_kinesisStreamSourceDescriptionHasBeenSet = false;
+  bool m_mSKSourceDescriptionHasBeenSet = false;
   bool m_databaseSourceDescriptionHasBeenSet = false;
 };
 

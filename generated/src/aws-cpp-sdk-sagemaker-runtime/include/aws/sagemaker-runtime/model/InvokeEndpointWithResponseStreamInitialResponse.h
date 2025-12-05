@@ -98,12 +98,12 @@ class InvokeEndpointWithResponseStreamInitialResponse {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_invokedProductionVariant;
-  bool m_invokedProductionVariantHasBeenSet = false;
 
   Aws::String m_customAttributes;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_invokedProductionVariantHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
 };
 

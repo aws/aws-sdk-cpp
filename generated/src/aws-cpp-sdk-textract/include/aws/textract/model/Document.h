@@ -89,9 +89,9 @@ class Document {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   S3Object m_s3Object;
+  bool m_bytesHasBeenSet = false;
   bool m_s3ObjectHasBeenSet = false;
 };
 

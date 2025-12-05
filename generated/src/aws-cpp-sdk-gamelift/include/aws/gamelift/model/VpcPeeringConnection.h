@@ -180,24 +180,24 @@ class VpcPeeringConnection {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::String m_ipV4CidrBlock;
-  bool m_ipV4CidrBlockHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
-  bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
   VpcPeeringConnectionStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_peerVpcId;
-  bool m_peerVpcIdHasBeenSet = false;
 
   Aws::String m_gameLiftVpcId;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_ipV4CidrBlockHasBeenSet = false;
+  bool m_vpcPeeringConnectionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_peerVpcIdHasBeenSet = false;
   bool m_gameLiftVpcIdHasBeenSet = false;
 };
 

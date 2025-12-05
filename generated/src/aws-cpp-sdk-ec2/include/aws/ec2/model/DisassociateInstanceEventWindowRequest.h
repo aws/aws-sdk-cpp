@@ -89,12 +89,12 @@ class DisassociateInstanceEventWindowRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceEventWindowId;
-  bool m_instanceEventWindowIdHasBeenSet = false;
 
   InstanceEventWindowDisassociationRequest m_associationTarget;
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceEventWindowIdHasBeenSet = false;
   bool m_associationTargetHasBeenSet = false;
 };
 

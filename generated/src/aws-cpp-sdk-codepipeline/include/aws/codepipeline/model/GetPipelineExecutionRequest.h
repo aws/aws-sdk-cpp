@@ -72,9 +72,9 @@ class GetPipelineExecutionRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_pipelineExecutionId;
+  bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineExecutionIdHasBeenSet = false;
 };
 

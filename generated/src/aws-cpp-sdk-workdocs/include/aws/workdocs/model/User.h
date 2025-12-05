@@ -301,48 +301,48 @@ class User {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::String m_surname;
-  bool m_surnameHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_rootFolderId;
-  bool m_rootFolderIdHasBeenSet = false;
 
   Aws::String m_recycleBinFolderId;
-  bool m_recycleBinFolderIdHasBeenSet = false;
 
   UserStatusType m_status{UserStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   UserType m_type{UserType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTimestamp{};
-  bool m_modifiedTimestampHasBeenSet = false;
 
   Aws::String m_timeZoneId;
-  bool m_timeZoneIdHasBeenSet = false;
 
   LocaleType m_locale{LocaleType::NOT_SET};
-  bool m_localeHasBeenSet = false;
 
   UserStorageMetadata m_storage;
+  bool m_idHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_surnameHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_rootFolderIdHasBeenSet = false;
+  bool m_recycleBinFolderIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_modifiedTimestampHasBeenSet = false;
+  bool m_timeZoneIdHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
   bool m_storageHasBeenSet = false;
 };
 

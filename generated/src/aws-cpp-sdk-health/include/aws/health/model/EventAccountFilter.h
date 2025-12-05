@@ -78,9 +78,9 @@ class EventAccountFilter {
   ///@}
  private:
   Aws::String m_eventArn;
-  bool m_eventArnHasBeenSet = false;
 
   Aws::String m_awsAccountId;
+  bool m_eventArnHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
 };
 

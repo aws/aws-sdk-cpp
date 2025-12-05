@@ -101,12 +101,12 @@ class AssumeRootRequest : public STSRequest {
   ///@}
  private:
   Aws::String m_targetPrincipal;
-  bool m_targetPrincipalHasBeenSet = false;
 
   PolicyDescriptorType m_taskPolicyArn;
-  bool m_taskPolicyArnHasBeenSet = false;
 
   int m_durationSeconds{0};
+  bool m_targetPrincipalHasBeenSet = false;
+  bool m_taskPolicyArnHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
 };
 

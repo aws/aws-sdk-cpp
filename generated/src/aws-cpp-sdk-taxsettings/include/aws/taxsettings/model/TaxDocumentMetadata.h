@@ -73,9 +73,9 @@ class TaxDocumentMetadata {
   ///@}
  private:
   Aws::String m_taxDocumentAccessToken;
-  bool m_taxDocumentAccessTokenHasBeenSet = false;
 
   Aws::String m_taxDocumentName;
+  bool m_taxDocumentAccessTokenHasBeenSet = false;
   bool m_taxDocumentNameHasBeenSet = false;
 };
 

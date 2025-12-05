@@ -88,12 +88,12 @@ class DeleteKeyPairRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_keyPairId;
-  bool m_keyPairIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_keyNameHasBeenSet = false;
+  bool m_keyPairIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

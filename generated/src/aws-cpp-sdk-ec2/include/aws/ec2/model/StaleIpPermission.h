@@ -164,21 +164,21 @@ class StaleIpPermission {
   ///@}
  private:
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   Aws::String m_ipProtocol;
-  bool m_ipProtocolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipRanges;
-  bool m_ipRangesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_prefixListIds;
-  bool m_prefixListIdsHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
+  bool m_fromPortHasBeenSet = false;
+  bool m_ipProtocolHasBeenSet = false;
+  bool m_ipRangesHasBeenSet = false;
+  bool m_prefixListIdsHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
   bool m_userIdGroupPairsHasBeenSet = false;
 };
 

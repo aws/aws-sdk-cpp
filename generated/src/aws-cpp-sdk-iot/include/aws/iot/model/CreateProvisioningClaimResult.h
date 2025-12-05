@@ -112,18 +112,18 @@ class CreateProvisioningClaimResult {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   KeyPair m_keyPair;
-  bool m_keyPairHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_certificatePemHasBeenSet = false;
+  bool m_keyPairHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

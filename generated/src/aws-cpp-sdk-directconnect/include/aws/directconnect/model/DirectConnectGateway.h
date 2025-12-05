@@ -172,24 +172,24 @@ class DirectConnectGateway {
   ///@}
  private:
   Aws::String m_directConnectGatewayId;
-  bool m_directConnectGatewayIdHasBeenSet = false;
 
   Aws::String m_directConnectGatewayName;
-  bool m_directConnectGatewayNameHasBeenSet = false;
 
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   DirectConnectGatewayState m_directConnectGatewayState{DirectConnectGatewayState::NOT_SET};
-  bool m_directConnectGatewayStateHasBeenSet = false;
 
   Aws::String m_stateChangeError;
-  bool m_stateChangeErrorHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_directConnectGatewayIdHasBeenSet = false;
+  bool m_directConnectGatewayNameHasBeenSet = false;
+  bool m_amazonSideAsnHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_directConnectGatewayStateHasBeenSet = false;
+  bool m_stateChangeErrorHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

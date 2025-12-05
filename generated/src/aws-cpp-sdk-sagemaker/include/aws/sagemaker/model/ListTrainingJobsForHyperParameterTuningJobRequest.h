@@ -139,21 +139,21 @@ class ListTrainingJobsForHyperParameterTuningJobRequest : public SageMakerReques
   ///@}
  private:
   Aws::String m_hyperParameterTuningJobName;
-  bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   TrainingJobStatus m_statusEquals{TrainingJobStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   TrainingJobSortByOptions m_sortBy{TrainingJobSortByOptions::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_hyperParameterTuningJobNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

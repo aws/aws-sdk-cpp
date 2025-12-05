@@ -85,12 +85,12 @@ class GuardrailInvocationMetrics {
   ///@}
  private:
   long long m_guardrailProcessingLatency{0};
-  bool m_guardrailProcessingLatencyHasBeenSet = false;
 
   GuardrailUsage m_usage;
-  bool m_usageHasBeenSet = false;
 
   GuardrailCoverage m_guardrailCoverage;
+  bool m_guardrailProcessingLatencyHasBeenSet = false;
+  bool m_usageHasBeenSet = false;
   bool m_guardrailCoverageHasBeenSet = false;
 };
 

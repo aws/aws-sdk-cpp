@@ -86,12 +86,12 @@ class ListPipelineEndpointsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PipelineEndpoint> m_pipelineEndpoints;
-  bool m_pipelineEndpointsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_pipelineEndpointsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

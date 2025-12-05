@@ -115,15 +115,15 @@ class UpdateClusterSlurmConfigurationRequest {
   ///@}
  private:
   int m_scaleDownIdleTimeInSeconds{0};
-  bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
 
   Aws::Vector<SlurmCustomSetting> m_slurmCustomSettings;
-  bool m_slurmCustomSettingsHasBeenSet = false;
 
   UpdateAccountingRequest m_accounting;
-  bool m_accountingHasBeenSet = false;
 
   UpdateSlurmRestRequest m_slurmRest;
+  bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
+  bool m_slurmCustomSettingsHasBeenSet = false;
+  bool m_accountingHasBeenSet = false;
   bool m_slurmRestHasBeenSet = false;
 };
 

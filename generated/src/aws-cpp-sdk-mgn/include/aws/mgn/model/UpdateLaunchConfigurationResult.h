@@ -239,42 +239,42 @@ class UpdateLaunchConfigurationResult {
   ///@}
  private:
   BootMode m_bootMode{BootMode::NOT_SET};
-  bool m_bootModeHasBeenSet = false;
 
   bool m_copyPrivateIp{false};
-  bool m_copyPrivateIpHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::String m_ec2LaunchTemplateID;
-  bool m_ec2LaunchTemplateIDHasBeenSet = false;
 
   bool m_enableMapAutoTagging{false};
-  bool m_enableMapAutoTaggingHasBeenSet = false;
 
   LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
-  bool m_launchDispositionHasBeenSet = false;
 
   Licensing m_licensing;
-  bool m_licensingHasBeenSet = false;
 
   Aws::String m_mapAutoTaggingMpeID;
-  bool m_mapAutoTaggingMpeIDHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PostLaunchActions m_postLaunchActions;
-  bool m_postLaunchActionsHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
-  bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bootModeHasBeenSet = false;
+  bool m_copyPrivateIpHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_ec2LaunchTemplateIDHasBeenSet = false;
+  bool m_enableMapAutoTaggingHasBeenSet = false;
+  bool m_launchDispositionHasBeenSet = false;
+  bool m_licensingHasBeenSet = false;
+  bool m_mapAutoTaggingMpeIDHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_postLaunchActionsHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
+  bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

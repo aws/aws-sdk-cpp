@@ -71,9 +71,9 @@ class BuiltInSlotTypeSummary {
   ///@}
  private:
   Aws::String m_slotTypeSignature;
-  bool m_slotTypeSignatureHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_slotTypeSignatureHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

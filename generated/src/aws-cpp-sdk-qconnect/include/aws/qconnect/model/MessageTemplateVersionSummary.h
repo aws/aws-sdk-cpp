@@ -189,30 +189,30 @@ class MessageTemplateVersionSummary {
   ///@}
  private:
   Aws::String m_messageTemplateArn;
-  bool m_messageTemplateArnHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_channel;
-  bool m_channelHasBeenSet = false;
 
   ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
-  bool m_channelSubtypeHasBeenSet = false;
 
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_messageTemplateArnHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_channelSubtypeHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

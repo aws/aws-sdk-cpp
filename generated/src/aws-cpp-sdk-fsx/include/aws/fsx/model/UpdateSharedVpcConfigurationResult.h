@@ -63,9 +63,9 @@ class UpdateSharedVpcConfigurationResult {
   ///@}
  private:
   Aws::String m_enableFsxRouteTableUpdatesFromParticipantAccounts;
-  bool m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

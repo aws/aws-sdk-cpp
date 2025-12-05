@@ -85,12 +85,12 @@ class OutputSegment {
   ///@}
  private:
   CustomOutputStatus m_customOutputStatus{CustomOutputStatus::NOT_SET};
-  bool m_customOutputStatusHasBeenSet = false;
 
   Aws::String m_customOutput;
-  bool m_customOutputHasBeenSet = false;
 
   Aws::String m_standardOutput;
+  bool m_customOutputStatusHasBeenSet = false;
+  bool m_customOutputHasBeenSet = false;
   bool m_standardOutputHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class UpdateGlobalSecondaryIndexAction {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughput;
-  bool m_onDemandThroughputHasBeenSet = false;
 
   WarmThroughput m_warmThroughput;
+  bool m_indexNameHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_onDemandThroughputHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
 };
 

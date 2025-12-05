@@ -354,51 +354,51 @@ class NetworkFirewallInvalidRouteConfigurationViolation {
   ///@}
  private:
   Aws::Vector<Aws::String> m_affectedSubnets;
-  bool m_affectedSubnetsHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   bool m_isRouteTableUsedInDifferentAZ{false};
-  bool m_isRouteTableUsedInDifferentAZHasBeenSet = false;
 
   Route m_violatingRoute;
-  bool m_violatingRouteHasBeenSet = false;
 
   Aws::String m_currentFirewallSubnetRouteTable;
-  bool m_currentFirewallSubnetRouteTableHasBeenSet = false;
 
   Aws::String m_expectedFirewallEndpoint;
-  bool m_expectedFirewallEndpointHasBeenSet = false;
 
   Aws::String m_actualFirewallEndpoint;
-  bool m_actualFirewallEndpointHasBeenSet = false;
 
   Aws::String m_expectedFirewallSubnetId;
-  bool m_expectedFirewallSubnetIdHasBeenSet = false;
 
   Aws::String m_actualFirewallSubnetId;
-  bool m_actualFirewallSubnetIdHasBeenSet = false;
 
   Aws::Vector<ExpectedRoute> m_expectedFirewallSubnetRoutes;
-  bool m_expectedFirewallSubnetRoutesHasBeenSet = false;
 
   Aws::Vector<Route> m_actualFirewallSubnetRoutes;
-  bool m_actualFirewallSubnetRoutesHasBeenSet = false;
 
   Aws::String m_internetGatewayId;
-  bool m_internetGatewayIdHasBeenSet = false;
 
   Aws::String m_currentInternetGatewayRouteTable;
-  bool m_currentInternetGatewayRouteTableHasBeenSet = false;
 
   Aws::Vector<ExpectedRoute> m_expectedInternetGatewayRoutes;
-  bool m_expectedInternetGatewayRoutesHasBeenSet = false;
 
   Aws::Vector<Route> m_actualInternetGatewayRoutes;
-  bool m_actualInternetGatewayRoutesHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_affectedSubnetsHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_isRouteTableUsedInDifferentAZHasBeenSet = false;
+  bool m_violatingRouteHasBeenSet = false;
+  bool m_currentFirewallSubnetRouteTableHasBeenSet = false;
+  bool m_expectedFirewallEndpointHasBeenSet = false;
+  bool m_actualFirewallEndpointHasBeenSet = false;
+  bool m_expectedFirewallSubnetIdHasBeenSet = false;
+  bool m_actualFirewallSubnetIdHasBeenSet = false;
+  bool m_expectedFirewallSubnetRoutesHasBeenSet = false;
+  bool m_actualFirewallSubnetRoutesHasBeenSet = false;
+  bool m_internetGatewayIdHasBeenSet = false;
+  bool m_currentInternetGatewayRouteTableHasBeenSet = false;
+  bool m_expectedInternetGatewayRoutesHasBeenSet = false;
+  bool m_actualInternetGatewayRoutesHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

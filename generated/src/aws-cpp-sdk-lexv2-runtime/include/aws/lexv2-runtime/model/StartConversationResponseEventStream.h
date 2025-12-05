@@ -283,45 +283,45 @@ class StartConversationResponseEventStream {
   ///@}
  private:
   PlaybackInterruptionEvent m_playbackInterruptionEvent;
-  bool m_playbackInterruptionEventHasBeenSet = false;
 
   TranscriptEvent m_transcriptEvent;
-  bool m_transcriptEventHasBeenSet = false;
 
   IntentResultEvent m_intentResultEvent;
-  bool m_intentResultEventHasBeenSet = false;
 
   TextResponseEvent m_textResponseEvent;
-  bool m_textResponseEventHasBeenSet = false;
 
   AudioResponseEvent m_audioResponseEvent;
-  bool m_audioResponseEventHasBeenSet = false;
 
   HeartbeatEvent m_heartbeatEvent;
-  bool m_heartbeatEventHasBeenSet = false;
 
   LexRuntimeV2Error m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
 
   LexRuntimeV2Error m_resourceNotFoundException;
-  bool m_resourceNotFoundExceptionHasBeenSet = false;
 
   LexRuntimeV2Error m_validationException;
-  bool m_validationExceptionHasBeenSet = false;
 
   LexRuntimeV2Error m_throttlingException;
-  bool m_throttlingExceptionHasBeenSet = false;
 
   LexRuntimeV2Error m_internalServerException;
-  bool m_internalServerExceptionHasBeenSet = false;
 
   LexRuntimeV2Error m_conflictException;
-  bool m_conflictExceptionHasBeenSet = false;
 
   LexRuntimeV2Error m_dependencyFailedException;
-  bool m_dependencyFailedExceptionHasBeenSet = false;
 
   LexRuntimeV2Error m_badGatewayException;
+  bool m_playbackInterruptionEventHasBeenSet = false;
+  bool m_transcriptEventHasBeenSet = false;
+  bool m_intentResultEventHasBeenSet = false;
+  bool m_textResponseEventHasBeenSet = false;
+  bool m_audioResponseEventHasBeenSet = false;
+  bool m_heartbeatEventHasBeenSet = false;
+  bool m_accessDeniedExceptionHasBeenSet = false;
+  bool m_resourceNotFoundExceptionHasBeenSet = false;
+  bool m_validationExceptionHasBeenSet = false;
+  bool m_throttlingExceptionHasBeenSet = false;
+  bool m_internalServerExceptionHasBeenSet = false;
+  bool m_conflictExceptionHasBeenSet = false;
+  bool m_dependencyFailedExceptionHasBeenSet = false;
   bool m_badGatewayExceptionHasBeenSet = false;
 };
 

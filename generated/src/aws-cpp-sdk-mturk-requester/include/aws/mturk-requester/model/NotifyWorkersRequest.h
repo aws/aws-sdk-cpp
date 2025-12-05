@@ -94,12 +94,12 @@ class NotifyWorkersRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_messageText;
-  bool m_messageTextHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_workerIds;
+  bool m_subjectHasBeenSet = false;
+  bool m_messageTextHasBeenSet = false;
   bool m_workerIdsHasBeenSet = false;
 };
 

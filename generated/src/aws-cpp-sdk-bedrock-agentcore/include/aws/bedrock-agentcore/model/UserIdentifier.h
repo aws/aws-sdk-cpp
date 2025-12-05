@@ -71,9 +71,9 @@ class UserIdentifier {
   ///@}
  private:
   Aws::String m_userToken;
-  bool m_userTokenHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_userTokenHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

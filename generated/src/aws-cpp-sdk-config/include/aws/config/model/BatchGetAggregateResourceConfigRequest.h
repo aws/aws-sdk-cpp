@@ -75,9 +75,9 @@ class BatchGetAggregateResourceConfigRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   Aws::Vector<AggregateResourceIdentifier> m_resourceIdentifiers;
+  bool m_configurationAggregatorNameHasBeenSet = false;
   bool m_resourceIdentifiersHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class FieldSort {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   SortDirection m_direction{SortDirection::NOT_SET};
+  bool m_fieldIdHasBeenSet = false;
   bool m_directionHasBeenSet = false;
 };
 

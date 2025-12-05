@@ -196,27 +196,27 @@ class Subscription {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   long long m_timeCommitmentInSeconds{0};
-  bool m_timeCommitmentInSecondsHasBeenSet = false;
 
   AutoRenew m_autoRenew{AutoRenew::NOT_SET};
-  bool m_autoRenewHasBeenSet = false;
 
   Aws::Vector<Limit> m_limits;
-  bool m_limitsHasBeenSet = false;
 
   ProactiveEngagementStatus m_proactiveEngagementStatus{ProactiveEngagementStatus::NOT_SET};
-  bool m_proactiveEngagementStatusHasBeenSet = false;
 
   SubscriptionLimits m_subscriptionLimits;
-  bool m_subscriptionLimitsHasBeenSet = false;
 
   Aws::String m_subscriptionArn;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_timeCommitmentInSecondsHasBeenSet = false;
+  bool m_autoRenewHasBeenSet = false;
+  bool m_limitsHasBeenSet = false;
+  bool m_proactiveEngagementStatusHasBeenSet = false;
+  bool m_subscriptionLimitsHasBeenSet = false;
   bool m_subscriptionArnHasBeenSet = false;
 };
 

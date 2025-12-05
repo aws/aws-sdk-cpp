@@ -67,9 +67,9 @@ class ListStreamingDistributions2020_05_31Result {
   ///@}
  private:
   StreamingDistributionList m_streamingDistributionList;
-  bool m_streamingDistributionListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamingDistributionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

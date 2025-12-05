@@ -67,9 +67,9 @@ class BatchWriteResult {
   ///@}
  private:
   Aws::Vector<BatchWriteOperationResponse> m_responses;
-  bool m_responsesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responsesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

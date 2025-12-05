@@ -141,21 +141,21 @@ class ScanSummary {
   ///@}
  private:
   ScanState m_scanState{ScanState::NOT_SET};
-  bool m_scanStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_scanNameArn;
+  bool m_scanStateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_scanNameHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
   bool m_scanNameArnHasBeenSet = false;
 };
 

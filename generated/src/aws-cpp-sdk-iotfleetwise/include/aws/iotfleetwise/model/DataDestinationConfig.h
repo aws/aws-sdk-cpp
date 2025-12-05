@@ -96,12 +96,12 @@ class DataDestinationConfig {
   ///@}
  private:
   S3Config m_s3Config;
-  bool m_s3ConfigHasBeenSet = false;
 
   TimestreamConfig m_timestreamConfig;
-  bool m_timestreamConfigHasBeenSet = false;
 
   MqttTopicConfig m_mqttTopicConfig;
+  bool m_s3ConfigHasBeenSet = false;
+  bool m_timestreamConfigHasBeenSet = false;
   bool m_mqttTopicConfigHasBeenSet = false;
 };
 

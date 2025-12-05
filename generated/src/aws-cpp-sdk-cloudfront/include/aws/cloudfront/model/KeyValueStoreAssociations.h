@@ -73,9 +73,9 @@ class KeyValueStoreAssociations {
   ///@}
  private:
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<KeyValueStoreAssociation> m_items;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

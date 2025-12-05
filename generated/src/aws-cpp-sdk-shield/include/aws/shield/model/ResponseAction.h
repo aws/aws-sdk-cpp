@@ -79,9 +79,9 @@ class ResponseAction {
   ///@}
  private:
   BlockAction m_block;
-  bool m_blockHasBeenSet = false;
 
   CountAction m_count;
+  bool m_blockHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

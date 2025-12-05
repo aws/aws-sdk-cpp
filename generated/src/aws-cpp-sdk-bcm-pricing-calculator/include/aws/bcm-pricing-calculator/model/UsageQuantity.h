@@ -86,12 +86,12 @@ class UsageQuantity {
   ///@}
  private:
   Aws::Utils::DateTime m_startHour{};
-  bool m_startHourHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   double m_amount{0.0};
+  bool m_startHourHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_amountHasBeenSet = false;
 };
 

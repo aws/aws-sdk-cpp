@@ -101,12 +101,12 @@ class GroupingAttributeDefinition {
   ///@}
  private:
   Aws::String m_groupingName;
-  bool m_groupingNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupingSourceKeys;
-  bool m_groupingSourceKeysHasBeenSet = false;
 
   Aws::String m_defaultGroupingValue;
+  bool m_groupingNameHasBeenSet = false;
+  bool m_groupingSourceKeysHasBeenSet = false;
   bool m_defaultGroupingValueHasBeenSet = false;
 };
 

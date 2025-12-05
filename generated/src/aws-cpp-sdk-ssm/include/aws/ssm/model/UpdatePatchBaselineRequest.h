@@ -329,42 +329,42 @@ class UpdatePatchBaselineRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_baselineId;
-  bool m_baselineIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PatchFilterGroup m_globalFilters;
-  bool m_globalFiltersHasBeenSet = false;
 
   PatchRuleGroup m_approvalRules;
-  bool m_approvalRulesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_approvedPatches;
-  bool m_approvedPatchesHasBeenSet = false;
 
   PatchComplianceLevel m_approvedPatchesComplianceLevel{PatchComplianceLevel::NOT_SET};
-  bool m_approvedPatchesComplianceLevelHasBeenSet = false;
 
   bool m_approvedPatchesEnableNonSecurity{false};
-  bool m_approvedPatchesEnableNonSecurityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rejectedPatches;
-  bool m_rejectedPatchesHasBeenSet = false;
 
   PatchAction m_rejectedPatchesAction{PatchAction::NOT_SET};
-  bool m_rejectedPatchesActionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<PatchSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   PatchComplianceStatus m_availableSecurityUpdatesComplianceStatus{PatchComplianceStatus::NOT_SET};
-  bool m_availableSecurityUpdatesComplianceStatusHasBeenSet = false;
 
   bool m_replace{false};
+  bool m_baselineIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_globalFiltersHasBeenSet = false;
+  bool m_approvalRulesHasBeenSet = false;
+  bool m_approvedPatchesHasBeenSet = false;
+  bool m_approvedPatchesComplianceLevelHasBeenSet = false;
+  bool m_approvedPatchesEnableNonSecurityHasBeenSet = false;
+  bool m_rejectedPatchesHasBeenSet = false;
+  bool m_rejectedPatchesActionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_availableSecurityUpdatesComplianceStatusHasBeenSet = false;
   bool m_replaceHasBeenSet = false;
 };
 

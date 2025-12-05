@@ -167,27 +167,27 @@ class ImportTaskDetails {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_timeElapsedSeconds{0};
-  bool m_timeElapsedSecondsHasBeenSet = false;
 
   int m_progressPercentage{0};
-  bool m_progressPercentageHasBeenSet = false;
 
   int m_errorCount{0};
-  bool m_errorCountHasBeenSet = false;
 
   Aws::String m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   long long m_statementCount{0};
-  bool m_statementCountHasBeenSet = false;
 
   long long m_dictionaryEntryCount{0};
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_timeElapsedSecondsHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
+  bool m_errorCountHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_statementCountHasBeenSet = false;
   bool m_dictionaryEntryCountHasBeenSet = false;
 };
 

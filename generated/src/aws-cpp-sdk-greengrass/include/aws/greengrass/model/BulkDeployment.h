@@ -88,12 +88,12 @@ class BulkDeployment {
   ///@}
  private:
   Aws::String m_bulkDeploymentArn;
-  bool m_bulkDeploymentArnHasBeenSet = false;
 
   Aws::String m_bulkDeploymentId;
-  bool m_bulkDeploymentIdHasBeenSet = false;
 
   Aws::String m_createdAt;
+  bool m_bulkDeploymentArnHasBeenSet = false;
+  bool m_bulkDeploymentIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

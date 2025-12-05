@@ -60,9 +60,9 @@ class GetMeetingResult {
   ///@}
  private:
   Meeting m_meeting;
-  bool m_meetingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_meetingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

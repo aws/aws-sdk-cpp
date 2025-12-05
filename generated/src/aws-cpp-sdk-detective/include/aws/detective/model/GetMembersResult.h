@@ -94,12 +94,12 @@ class GetMembersResult {
   ///@}
  private:
   Aws::Vector<MemberDetail> m_memberDetails;
-  bool m_memberDetailsHasBeenSet = false;
 
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
-  bool m_unprocessedAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memberDetailsHasBeenSet = false;
+  bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CompleteMultipartReadSetUploadResult {
   ///@}
  private:
   Aws::String m_readSetId;
-  bool m_readSetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_readSetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

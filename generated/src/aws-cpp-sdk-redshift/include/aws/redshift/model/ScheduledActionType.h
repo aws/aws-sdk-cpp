@@ -91,12 +91,12 @@ class ScheduledActionType {
   ///@}
  private:
   ResizeClusterMessage m_resizeCluster;
-  bool m_resizeClusterHasBeenSet = false;
 
   PauseClusterMessage m_pauseCluster;
-  bool m_pauseClusterHasBeenSet = false;
 
   ResumeClusterMessage m_resumeCluster;
+  bool m_resizeClusterHasBeenSet = false;
+  bool m_pauseClusterHasBeenSet = false;
   bool m_resumeClusterHasBeenSet = false;
 };
 

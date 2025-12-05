@@ -81,9 +81,9 @@ class SecretsManagerSecretResourceData {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalStagingLabelsToDownload;
+  bool m_aRNHasBeenSet = false;
   bool m_additionalStagingLabelsToDownloadHasBeenSet = false;
 };
 

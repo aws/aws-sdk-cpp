@@ -71,9 +71,9 @@ class ReplicaGlobalSecondaryIndexAutoScalingUpdate {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_provisionedReadCapacityAutoScalingUpdate;
+  bool m_indexNameHasBeenSet = false;
   bool m_provisionedReadCapacityAutoScalingUpdateHasBeenSet = false;
 };
 

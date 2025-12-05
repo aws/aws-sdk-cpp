@@ -59,9 +59,9 @@ class CreateSourceNetworkResult {
   ///@}
  private:
   Aws::String m_sourceNetworkID;
-  bool m_sourceNetworkIDHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceNetworkIDHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

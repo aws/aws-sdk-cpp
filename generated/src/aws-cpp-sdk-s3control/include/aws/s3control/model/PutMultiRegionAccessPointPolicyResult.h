@@ -81,12 +81,12 @@ class PutMultiRegionAccessPointPolicyResult {
   ///@}
  private:
   Aws::String m_requestTokenARN;
-  bool m_requestTokenARNHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_requestTokenARNHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

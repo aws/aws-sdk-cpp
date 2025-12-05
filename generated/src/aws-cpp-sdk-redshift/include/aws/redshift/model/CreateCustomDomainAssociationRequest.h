@@ -88,12 +88,12 @@ class CreateCustomDomainAssociationRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_customDomainCertificateArnHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
 };
 

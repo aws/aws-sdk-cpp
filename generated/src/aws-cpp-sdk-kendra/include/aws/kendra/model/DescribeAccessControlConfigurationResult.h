@@ -149,21 +149,21 @@ class DescribeAccessControlConfigurationResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<Principal> m_accessControlList;
-  bool m_accessControlListHasBeenSet = false;
 
   Aws::Vector<HierarchicalPrincipal> m_hierarchicalAccessControlList;
-  bool m_hierarchicalAccessControlListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_accessControlListHasBeenSet = false;
+  bool m_hierarchicalAccessControlListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

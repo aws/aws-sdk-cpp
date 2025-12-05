@@ -185,24 +185,24 @@ class MedicalScribeSettings {
   ///@}
  private:
   bool m_showSpeakerLabels{false};
-  bool m_showSpeakerLabelsHasBeenSet = false;
 
   int m_maxSpeakerLabels{0};
-  bool m_maxSpeakerLabelsHasBeenSet = false;
 
   bool m_channelIdentification{false};
-  bool m_channelIdentificationHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
-  bool m_vocabularyFilterMethodHasBeenSet = false;
 
   ClinicalNoteGenerationSettings m_clinicalNoteGenerationSettings;
+  bool m_showSpeakerLabelsHasBeenSet = false;
+  bool m_maxSpeakerLabelsHasBeenSet = false;
+  bool m_channelIdentificationHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_vocabularyFilterMethodHasBeenSet = false;
   bool m_clinicalNoteGenerationSettingsHasBeenSet = false;
 };
 

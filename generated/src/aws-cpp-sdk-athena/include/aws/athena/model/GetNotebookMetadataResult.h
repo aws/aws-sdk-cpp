@@ -60,9 +60,9 @@ class GetNotebookMetadataResult {
   ///@}
  private:
   NotebookMetadata m_notebookMetadata;
-  bool m_notebookMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

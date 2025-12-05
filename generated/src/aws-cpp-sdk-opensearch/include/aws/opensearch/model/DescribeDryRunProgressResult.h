@@ -96,15 +96,15 @@ class DescribeDryRunProgressResult {
   ///@}
  private:
   DryRunProgressStatus m_dryRunProgressStatus;
-  bool m_dryRunProgressStatusHasBeenSet = false;
 
   DomainStatus m_dryRunConfig;
-  bool m_dryRunConfigHasBeenSet = false;
 
   DryRunResults m_dryRunResults;
-  bool m_dryRunResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dryRunProgressStatusHasBeenSet = false;
+  bool m_dryRunConfigHasBeenSet = false;
+  bool m_dryRunResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

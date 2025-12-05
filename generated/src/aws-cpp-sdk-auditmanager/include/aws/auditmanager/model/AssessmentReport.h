@@ -198,30 +198,30 @@ class AssessmentReport {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_assessmentName;
-  bool m_assessmentNameHasBeenSet = false;
 
   Aws::String m_author;
-  bool m_authorHasBeenSet = false;
 
   AssessmentReportStatus m_status{AssessmentReportStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_assessmentNameHasBeenSet = false;
+  bool m_authorHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

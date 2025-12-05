@@ -85,12 +85,12 @@ class ListBulkImportJobsResult {
   ///@}
  private:
   Aws::Vector<JobSummary> m_jobSummaries;
-  bool m_jobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

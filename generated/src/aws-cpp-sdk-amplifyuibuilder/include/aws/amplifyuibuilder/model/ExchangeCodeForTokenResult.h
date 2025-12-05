@@ -92,15 +92,15 @@ class ExchangeCodeForTokenResult {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   int m_expiresIn{0};
-  bool m_expiresInHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_expiresInHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

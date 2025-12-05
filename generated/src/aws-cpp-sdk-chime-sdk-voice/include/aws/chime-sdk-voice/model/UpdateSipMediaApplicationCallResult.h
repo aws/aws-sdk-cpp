@@ -61,9 +61,9 @@ class UpdateSipMediaApplicationCallResult {
   ///@}
  private:
   SipMediaApplicationCall m_sipMediaApplicationCall;
-  bool m_sipMediaApplicationCallHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sipMediaApplicationCallHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class CreateApplicationRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
-  bool m_resourceLifecycleConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_resourceLifecycleConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

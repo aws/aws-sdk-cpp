@@ -88,12 +88,12 @@ class Relay {
   ///@}
  private:
   Aws::String m_relayId;
-  bool m_relayIdHasBeenSet = false;
 
   Aws::String m_relayName;
-  bool m_relayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
+  bool m_relayIdHasBeenSet = false;
+  bool m_relayNameHasBeenSet = false;
   bool m_lastModifiedTimestampHasBeenSet = false;
 };
 

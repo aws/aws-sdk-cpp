@@ -88,12 +88,12 @@ class WirelessDeviceLogOption {
   ///@}
  private:
   WirelessDeviceType m_type{WirelessDeviceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   Aws::Vector<WirelessDeviceEventLogOption> m_events;
+  bool m_typeHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class DescribeWorkteamResult {
   ///@}
  private:
   Workteam m_workteam;
-  bool m_workteamHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workteamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

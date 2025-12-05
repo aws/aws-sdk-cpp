@@ -66,9 +66,9 @@ class EvaluationFormScoringStrategy {
   ///@}
  private:
   EvaluationFormScoringMode m_mode{EvaluationFormScoringMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   EvaluationFormScoringStatus m_status{EvaluationFormScoringStatus::NOT_SET};
+  bool m_modeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

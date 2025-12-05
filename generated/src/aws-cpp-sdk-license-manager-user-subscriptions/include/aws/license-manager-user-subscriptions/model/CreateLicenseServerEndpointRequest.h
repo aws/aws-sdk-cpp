@@ -98,12 +98,12 @@ class CreateLicenseServerEndpointRequest : public LicenseManagerUserSubscription
   ///@}
  private:
   Aws::String m_identityProviderArn;
-  bool m_identityProviderArnHasBeenSet = false;
 
   LicenseServerSettings m_licenseServerSettings;
-  bool m_licenseServerSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_identityProviderArnHasBeenSet = false;
+  bool m_licenseServerSettingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

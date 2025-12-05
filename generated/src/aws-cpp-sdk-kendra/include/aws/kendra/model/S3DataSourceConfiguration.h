@@ -212,21 +212,21 @@ class S3DataSourceConfiguration {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPrefixes;
-  bool m_inclusionPrefixesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   DocumentsMetadataConfiguration m_documentsMetadataConfiguration;
-  bool m_documentsMetadataConfigurationHasBeenSet = false;
 
   AccessControlListConfiguration m_accessControlListConfiguration;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_inclusionPrefixesHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
+  bool m_documentsMetadataConfigurationHasBeenSet = false;
   bool m_accessControlListConfigurationHasBeenSet = false;
 };
 

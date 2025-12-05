@@ -104,15 +104,15 @@ class ProxyConfigRuleGroup {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupArn;
-  bool m_proxyRuleGroupArnHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   int m_priority{0};
+  bool m_proxyRuleGroupNameHasBeenSet = false;
+  bool m_proxyRuleGroupArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

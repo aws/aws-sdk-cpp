@@ -148,18 +148,18 @@ class CreateLakeFormationIdentityCenterConfigurationRequest : public LakeFormati
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   ExternalFilteringConfiguration m_externalFiltering;
-  bool m_externalFilteringHasBeenSet = false;
 
   Aws::Vector<DataLakePrincipal> m_shareRecipients;
-  bool m_shareRecipientsHasBeenSet = false;
 
   Aws::Vector<ServiceIntegrationUnion> m_serviceIntegrations;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_externalFilteringHasBeenSet = false;
+  bool m_shareRecipientsHasBeenSet = false;
   bool m_serviceIntegrationsHasBeenSet = false;
 };
 

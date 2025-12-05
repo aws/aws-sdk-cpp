@@ -66,9 +66,9 @@ class GetAccountSettingsResult {
   ///@}
  private:
   DeletionProtectionSettings m_deletionProtection;
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

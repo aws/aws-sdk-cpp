@@ -81,9 +81,9 @@ class UntagInstanceProfileRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_instanceProfileNameHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

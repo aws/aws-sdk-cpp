@@ -272,42 +272,42 @@ class DescribeStateMachineForExecutionResult {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDate{};
-  bool m_updateDateHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   TracingConfiguration m_tracingConfiguration;
-  bool m_tracingConfigurationHasBeenSet = false;
 
   Aws::String m_mapRunArn;
-  bool m_mapRunArnHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_variableReferences;
-  bool m_variableReferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_updateDateHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_tracingConfigurationHasBeenSet = false;
+  bool m_mapRunArnHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_variableReferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ListDataLakesResult {
   ///@}
  private:
   Aws::Vector<DataLakeResource> m_dataLakes;
-  bool m_dataLakesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataLakesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

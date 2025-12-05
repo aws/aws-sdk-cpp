@@ -73,9 +73,9 @@ class ListIdentityPoliciesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_policyNames;
-  bool m_policyNamesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyNamesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

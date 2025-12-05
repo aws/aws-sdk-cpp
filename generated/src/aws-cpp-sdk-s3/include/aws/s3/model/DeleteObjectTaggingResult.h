@@ -59,9 +59,9 @@ class DeleteObjectTaggingResult {
   ///@}
  private:
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

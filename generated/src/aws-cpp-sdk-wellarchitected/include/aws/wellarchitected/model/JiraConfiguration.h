@@ -67,9 +67,9 @@ class JiraConfiguration {
   ///@}
  private:
   Aws::String m_jiraIssueUrl;
-  bool m_jiraIssueUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSyncedTime{};
+  bool m_jiraIssueUrlHasBeenSet = false;
   bool m_lastSyncedTimeHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class ArrayPropertiesSummary {
   ///@}
  private:
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   int m_index{0};
+  bool m_sizeHasBeenSet = false;
   bool m_indexHasBeenSet = false;
 };
 

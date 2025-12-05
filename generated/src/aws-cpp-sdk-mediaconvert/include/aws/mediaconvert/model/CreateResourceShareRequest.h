@@ -65,9 +65,9 @@ class CreateResourceShareRequest : public MediaConvertRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_supportCaseId;
+  bool m_jobIdHasBeenSet = false;
   bool m_supportCaseIdHasBeenSet = false;
 };
 

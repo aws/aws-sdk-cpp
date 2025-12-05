@@ -88,9 +88,9 @@ class PullRequestBuildPolicy {
   ///@}
  private:
   PullRequestBuildCommentApproval m_requiresCommentApproval{PullRequestBuildCommentApproval::NOT_SET};
-  bool m_requiresCommentApprovalHasBeenSet = false;
 
   Aws::Vector<PullRequestBuildApproverRole> m_approverRoles;
+  bool m_requiresCommentApprovalHasBeenSet = false;
   bool m_approverRolesHasBeenSet = false;
 };
 

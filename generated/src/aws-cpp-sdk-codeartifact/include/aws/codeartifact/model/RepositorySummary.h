@@ -164,24 +164,24 @@ class RepositorySummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_administratorAccount;
-  bool m_administratorAccountHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_administratorAccountHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

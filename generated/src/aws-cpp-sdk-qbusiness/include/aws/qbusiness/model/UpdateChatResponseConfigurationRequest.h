@@ -136,18 +136,18 @@ class UpdateChatResponseConfigurationRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_chatResponseConfigurationId;
-  bool m_chatResponseConfigurationIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Map<ResponseConfigurationType, ResponseConfiguration> m_responseConfigurations;
-  bool m_responseConfigurationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_chatResponseConfigurationIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_responseConfigurationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

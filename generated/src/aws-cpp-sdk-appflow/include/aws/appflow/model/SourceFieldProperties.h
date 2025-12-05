@@ -78,12 +78,12 @@ class SourceFieldProperties {
   ///@}
  private:
   bool m_isRetrievable{false};
-  bool m_isRetrievableHasBeenSet = false;
 
   bool m_isQueryable{false};
-  bool m_isQueryableHasBeenSet = false;
 
   bool m_isTimestampFieldForIncrementalQueries{false};
+  bool m_isRetrievableHasBeenSet = false;
+  bool m_isQueryableHasBeenSet = false;
   bool m_isTimestampFieldForIncrementalQueriesHasBeenSet = false;
 };
 

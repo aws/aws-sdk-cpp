@@ -86,9 +86,9 @@ class Media {
   ///@}
  private:
   Aws::String m_mediaFileUri;
-  bool m_mediaFileUriHasBeenSet = false;
 
   Aws::String m_redactedMediaFileUri;
+  bool m_mediaFileUriHasBeenSet = false;
   bool m_redactedMediaFileUriHasBeenSet = false;
 };
 

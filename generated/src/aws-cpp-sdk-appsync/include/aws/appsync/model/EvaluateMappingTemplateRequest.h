@@ -67,9 +67,9 @@ class EvaluateMappingTemplateRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_template;
-  bool m_templateHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_templateHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

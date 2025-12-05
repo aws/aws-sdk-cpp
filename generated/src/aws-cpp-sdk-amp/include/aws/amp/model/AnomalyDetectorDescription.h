@@ -247,36 +247,36 @@ class AnomalyDetectorDescription {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_anomalyDetectorId;
-  bool m_anomalyDetectorIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   int m_evaluationIntervalInSeconds{0};
-  bool m_evaluationIntervalInSecondsHasBeenSet = false;
 
   AnomalyDetectorMissingDataAction m_missingDataAction;
-  bool m_missingDataActionHasBeenSet = false;
 
   AnomalyDetectorConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   AnomalyDetectorStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_anomalyDetectorIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_evaluationIntervalInSecondsHasBeenSet = false;
+  bool m_missingDataActionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

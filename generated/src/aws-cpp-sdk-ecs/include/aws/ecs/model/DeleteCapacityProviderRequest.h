@@ -70,9 +70,9 @@ class DeleteCapacityProviderRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_capacityProvider;
-  bool m_capacityProviderHasBeenSet = false;
 
   Aws::String m_cluster;
+  bool m_capacityProviderHasBeenSet = false;
   bool m_clusterHasBeenSet = false;
 };
 

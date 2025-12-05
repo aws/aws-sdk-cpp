@@ -108,15 +108,15 @@ class DeploymentState {
   ///@}
  private:
   ComponentState m_component;
-  bool m_componentHasBeenSet = false;
 
   EnvironmentState m_environment;
-  bool m_environmentHasBeenSet = false;
 
   ServiceInstanceState m_serviceInstance;
-  bool m_serviceInstanceHasBeenSet = false;
 
   ServicePipelineState m_servicePipeline;
+  bool m_componentHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_serviceInstanceHasBeenSet = false;
   bool m_servicePipelineHasBeenSet = false;
 };
 

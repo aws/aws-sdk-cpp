@@ -89,12 +89,12 @@ class CoipCidr {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_coipPoolId;
-  bool m_coipPoolIdHasBeenSet = false;
 
   Aws::String m_localGatewayRouteTableId;
+  bool m_cidrHasBeenSet = false;
+  bool m_coipPoolIdHasBeenSet = false;
   bool m_localGatewayRouteTableIdHasBeenSet = false;
 };
 

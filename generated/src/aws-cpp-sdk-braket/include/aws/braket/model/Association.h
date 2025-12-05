@@ -68,9 +68,9 @@ class Association {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AssociationType m_type{AssociationType::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteGitHubAccountTokenResult {
   ///@}
  private:
   Aws::String m_tokenName;
-  bool m_tokenNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

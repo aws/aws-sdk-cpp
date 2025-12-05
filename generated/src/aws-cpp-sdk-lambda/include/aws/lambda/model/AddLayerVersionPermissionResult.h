@@ -76,12 +76,12 @@ class AddLayerVersionPermissionResult {
   ///@}
  private:
   Aws::String m_statement;
-  bool m_statementHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statementHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

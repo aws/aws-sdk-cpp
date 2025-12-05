@@ -72,9 +72,9 @@ class ExtendedKeyUsage {
   ///@}
  private:
   ExtendedKeyUsageType m_extendedKeyUsageType{ExtendedKeyUsageType::NOT_SET};
-  bool m_extendedKeyUsageTypeHasBeenSet = false;
 
   Aws::String m_extendedKeyUsageObjectIdentifier;
+  bool m_extendedKeyUsageTypeHasBeenSet = false;
   bool m_extendedKeyUsageObjectIdentifierHasBeenSet = false;
 };
 

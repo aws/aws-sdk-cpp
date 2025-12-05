@@ -73,9 +73,9 @@ class LexFlowNodeConfiguration {
   ///@}
  private:
   Aws::String m_botAliasArn;
-  bool m_botAliasArnHasBeenSet = false;
 
   Aws::String m_localeId;
+  bool m_botAliasArnHasBeenSet = false;
   bool m_localeIdHasBeenSet = false;
 };
 

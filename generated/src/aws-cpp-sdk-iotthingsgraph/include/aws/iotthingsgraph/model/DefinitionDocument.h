@@ -68,9 +68,9 @@ class DefinitionDocument {
   ///@}
  private:
   DefinitionLanguage m_language{DefinitionLanguage::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_languageHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

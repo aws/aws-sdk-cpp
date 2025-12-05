@@ -92,12 +92,12 @@ class CreateSubnetGroupRequest : public DAXRequest {
   ///@}
  private:
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
 };
 

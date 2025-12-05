@@ -68,9 +68,9 @@ class ContainsPiiEntitiesResult {
   ///@}
  private:
   Aws::Vector<EntityLabel> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

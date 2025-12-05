@@ -104,15 +104,15 @@ class AssociationStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   AssociationStatusName m_name{AssociationStatusName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_additionalInfo;
+  bool m_dateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_additionalInfoHasBeenSet = false;
 };
 

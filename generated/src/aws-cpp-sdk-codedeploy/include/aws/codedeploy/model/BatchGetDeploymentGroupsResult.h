@@ -90,12 +90,12 @@ class BatchGetDeploymentGroupsResult {
   ///@}
  private:
   Aws::Vector<DeploymentGroupInfo> m_deploymentGroupsInfo;
-  bool m_deploymentGroupsInfoHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentGroupsInfoHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

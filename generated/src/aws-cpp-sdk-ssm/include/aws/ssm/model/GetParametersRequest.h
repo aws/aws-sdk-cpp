@@ -83,9 +83,9 @@ class GetParametersRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   bool m_withDecryption{false};
+  bool m_namesHasBeenSet = false;
   bool m_withDecryptionHasBeenSet = false;
 };
 

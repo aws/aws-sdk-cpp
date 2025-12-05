@@ -109,18 +109,18 @@ class ListDataAutomationProjectsRequest : public BedrockDataAutomationRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   DataAutomationProjectStageFilter m_projectStageFilter{DataAutomationProjectStageFilter::NOT_SET};
-  bool m_projectStageFilterHasBeenSet = false;
 
   BlueprintFilter m_blueprintFilter;
-  bool m_blueprintFilterHasBeenSet = false;
 
   ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_projectStageFilterHasBeenSet = false;
+  bool m_blueprintFilterHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
 };
 

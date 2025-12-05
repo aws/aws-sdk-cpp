@@ -264,24 +264,24 @@ class AssumeRoleWithWebIdentityRequest : public STSRequest {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_roleSessionName;
-  bool m_roleSessionNameHasBeenSet = false;
 
   Aws::String m_webIdentityToken;
-  bool m_webIdentityTokenHasBeenSet = false;
 
   Aws::String m_providerId;
-  bool m_providerIdHasBeenSet = false;
 
   Aws::Vector<PolicyDescriptorType> m_policyArns;
-  bool m_policyArnsHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   int m_durationSeconds{0};
+  bool m_roleArnHasBeenSet = false;
+  bool m_roleSessionNameHasBeenSet = false;
+  bool m_webIdentityTokenHasBeenSet = false;
+  bool m_providerIdHasBeenSet = false;
+  bool m_policyArnsHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
 };
 

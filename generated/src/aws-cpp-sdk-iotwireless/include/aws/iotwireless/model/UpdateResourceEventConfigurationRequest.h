@@ -183,27 +183,27 @@ class UpdateResourceEventConfigurationRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   IdentifierType m_identifierType{IdentifierType::NOT_SET};
-  bool m_identifierTypeHasBeenSet = false;
 
   EventNotificationPartnerType m_partnerType{EventNotificationPartnerType::NOT_SET};
-  bool m_partnerTypeHasBeenSet = false;
 
   DeviceRegistrationStateEventConfiguration m_deviceRegistrationState;
-  bool m_deviceRegistrationStateHasBeenSet = false;
 
   ProximityEventConfiguration m_proximity;
-  bool m_proximityHasBeenSet = false;
 
   JoinEventConfiguration m_join;
-  bool m_joinHasBeenSet = false;
 
   ConnectionStatusEventConfiguration m_connectionStatus;
-  bool m_connectionStatusHasBeenSet = false;
 
   MessageDeliveryStatusEventConfiguration m_messageDeliveryStatus;
+  bool m_identifierHasBeenSet = false;
+  bool m_identifierTypeHasBeenSet = false;
+  bool m_partnerTypeHasBeenSet = false;
+  bool m_deviceRegistrationStateHasBeenSet = false;
+  bool m_proximityHasBeenSet = false;
+  bool m_joinHasBeenSet = false;
+  bool m_connectionStatusHasBeenSet = false;
   bool m_messageDeliveryStatusHasBeenSet = false;
 };
 

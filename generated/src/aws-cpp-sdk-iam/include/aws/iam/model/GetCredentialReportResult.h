@@ -102,15 +102,15 @@ class GetCredentialReportResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_content{};
-  bool m_contentHasBeenSet = false;
 
   ReportFormatType m_reportFormat{ReportFormatType::NOT_SET};
-  bool m_reportFormatHasBeenSet = false;
 
   Aws::Utils::DateTime m_generatedTime{};
-  bool m_generatedTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_contentHasBeenSet = false;
+  bool m_reportFormatHasBeenSet = false;
+  bool m_generatedTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

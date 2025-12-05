@@ -140,21 +140,21 @@ class SoftwareSetSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_releasedAt{};
-  bool m_releasedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_supportedUntil{};
-  bool m_supportedUntilHasBeenSet = false;
 
   SoftwareSetValidationStatus m_validationStatus{SoftwareSetValidationStatus::NOT_SET};
-  bool m_validationStatusHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_idHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_releasedAtHasBeenSet = false;
+  bool m_supportedUntilHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

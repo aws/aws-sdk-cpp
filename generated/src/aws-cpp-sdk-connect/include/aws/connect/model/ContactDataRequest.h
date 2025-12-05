@@ -171,24 +171,24 @@ class ContactDataRequest {
   ///@}
  private:
   Endpoint m_systemEndpoint;
-  bool m_systemEndpointHasBeenSet = false;
 
   Endpoint m_customerEndpoint;
-  bool m_customerEndpointHasBeenSet = false;
 
   Aws::String m_requestIdentifier;
-  bool m_requestIdentifierHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Campaign m_campaign;
-  bool m_campaignHasBeenSet = false;
 
   OutboundStrategy m_outboundStrategy;
+  bool m_systemEndpointHasBeenSet = false;
+  bool m_customerEndpointHasBeenSet = false;
+  bool m_requestIdentifierHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_campaignHasBeenSet = false;
   bool m_outboundStrategyHasBeenSet = false;
 };
 

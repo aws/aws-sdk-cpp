@@ -84,12 +84,12 @@ class DeprovisionPublicIpv4PoolCidrResponse {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deprovisionedAddresses;
-  bool m_deprovisionedAddressesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_poolIdHasBeenSet = false;
+  bool m_deprovisionedAddressesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

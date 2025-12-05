@@ -83,12 +83,12 @@ class GetListElementsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_elements;
-  bool m_elementsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_elementsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -181,27 +181,27 @@ class ClassifierEvaluationMetrics {
   ///@}
  private:
   double m_accuracy{0.0};
-  bool m_accuracyHasBeenSet = false;
 
   double m_precision{0.0};
-  bool m_precisionHasBeenSet = false;
 
   double m_recall{0.0};
-  bool m_recallHasBeenSet = false;
 
   double m_f1Score{0.0};
-  bool m_f1ScoreHasBeenSet = false;
 
   double m_microPrecision{0.0};
-  bool m_microPrecisionHasBeenSet = false;
 
   double m_microRecall{0.0};
-  bool m_microRecallHasBeenSet = false;
 
   double m_microF1Score{0.0};
-  bool m_microF1ScoreHasBeenSet = false;
 
   double m_hammingLoss{0.0};
+  bool m_accuracyHasBeenSet = false;
+  bool m_precisionHasBeenSet = false;
+  bool m_recallHasBeenSet = false;
+  bool m_f1ScoreHasBeenSet = false;
+  bool m_microPrecisionHasBeenSet = false;
+  bool m_microRecallHasBeenSet = false;
+  bool m_microF1ScoreHasBeenSet = false;
   bool m_hammingLossHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class SnapshotConfiguration {
   ///@}
  private:
   Aws::Vector<SnapshotFileGroup> m_fileGroups;
-  bool m_fileGroupsHasBeenSet = false;
 
   SnapshotDestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   Parameters m_parameters;
+  bool m_fileGroupsHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

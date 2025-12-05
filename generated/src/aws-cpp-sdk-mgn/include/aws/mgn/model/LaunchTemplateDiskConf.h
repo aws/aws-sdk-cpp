@@ -80,12 +80,12 @@ class LaunchTemplateDiskConf {
   ///@}
  private:
   long long m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   long long m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
+  bool m_iopsHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
   bool m_volumeTypeHasBeenSet = false;
 };
 

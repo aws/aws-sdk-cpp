@@ -150,21 +150,21 @@ class CreateRelayRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_relayName;
-  bool m_relayNameHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_serverPort{0};
-  bool m_serverPortHasBeenSet = false;
 
   RelayAuthentication m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_relayNameHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_serverPortHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

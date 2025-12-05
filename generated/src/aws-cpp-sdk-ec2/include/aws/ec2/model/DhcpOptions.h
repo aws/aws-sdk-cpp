@@ -121,15 +121,15 @@ class DhcpOptions {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_dhcpOptionsId;
-  bool m_dhcpOptionsIdHasBeenSet = false;
 
   Aws::Vector<DhcpConfiguration> m_dhcpConfigurations;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dhcpOptionsIdHasBeenSet = false;
   bool m_dhcpConfigurationsHasBeenSet = false;
 };
 

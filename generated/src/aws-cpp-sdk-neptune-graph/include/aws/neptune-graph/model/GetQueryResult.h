@@ -122,21 +122,21 @@ class GetQueryResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   int m_waited{0};
-  bool m_waitedHasBeenSet = false;
 
   int m_elapsed{0};
-  bool m_elapsedHasBeenSet = false;
 
   QueryState m_state{QueryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_waitedHasBeenSet = false;
+  bool m_elapsedHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

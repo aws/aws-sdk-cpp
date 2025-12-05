@@ -512,84 +512,84 @@ class OperationEvent {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   OperationType m_operationType{OperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   BeaconStackOperationStatus m_operationStatus{BeaconStackOperationStatus::NOT_SET};
-  bool m_operationStatusHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ResourceStatus m_resourceStatus{ResourceStatus::NOT_SET};
-  bool m_resourceStatusHasBeenSet = false;
 
   Aws::String m_resourceStatusReason;
-  bool m_resourceStatusReasonHasBeenSet = false;
 
   Aws::String m_resourceProperties;
-  bool m_resourcePropertiesHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_hookType;
-  bool m_hookTypeHasBeenSet = false;
 
   HookStatus m_hookStatus{HookStatus::NOT_SET};
-  bool m_hookStatusHasBeenSet = false;
 
   Aws::String m_hookStatusReason;
-  bool m_hookStatusReasonHasBeenSet = false;
 
   HookInvocationPoint m_hookInvocationPoint{HookInvocationPoint::NOT_SET};
-  bool m_hookInvocationPointHasBeenSet = false;
 
   HookFailureMode m_hookFailureMode{HookFailureMode::NOT_SET};
-  bool m_hookFailureModeHasBeenSet = false;
 
   DetailedStatus m_detailedStatus{DetailedStatus::NOT_SET};
-  bool m_detailedStatusHasBeenSet = false;
 
   HookFailureMode m_validationFailureMode{HookFailureMode::NOT_SET};
-  bool m_validationFailureModeHasBeenSet = false;
 
   Aws::String m_validationName;
-  bool m_validationNameHasBeenSet = false;
 
   ValidationStatus m_validationStatus{ValidationStatus::NOT_SET};
-  bool m_validationStatusHasBeenSet = false;
 
   Aws::String m_validationStatusReason;
-  bool m_validationStatusReasonHasBeenSet = false;
 
   Aws::String m_validationPath;
+  bool m_eventIdHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_operationStatusHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_resourceStatusHasBeenSet = false;
+  bool m_resourceStatusReasonHasBeenSet = false;
+  bool m_resourcePropertiesHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_hookTypeHasBeenSet = false;
+  bool m_hookStatusHasBeenSet = false;
+  bool m_hookStatusReasonHasBeenSet = false;
+  bool m_hookInvocationPointHasBeenSet = false;
+  bool m_hookFailureModeHasBeenSet = false;
+  bool m_detailedStatusHasBeenSet = false;
+  bool m_validationFailureModeHasBeenSet = false;
+  bool m_validationNameHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
+  bool m_validationStatusReasonHasBeenSet = false;
   bool m_validationPathHasBeenSet = false;
 };
 

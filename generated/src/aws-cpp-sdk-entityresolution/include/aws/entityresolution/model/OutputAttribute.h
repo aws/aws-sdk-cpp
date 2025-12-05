@@ -70,9 +70,9 @@ class OutputAttribute {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_hashed{false};
+  bool m_nameHasBeenSet = false;
   bool m_hashedHasBeenSet = false;
 };
 

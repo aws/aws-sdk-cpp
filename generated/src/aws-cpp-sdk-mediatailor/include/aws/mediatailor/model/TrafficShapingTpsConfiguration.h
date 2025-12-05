@@ -69,9 +69,9 @@ class TrafficShapingTpsConfiguration {
   ///@}
  private:
   int m_peakTps{0};
-  bool m_peakTpsHasBeenSet = false;
 
   int m_peakConcurrentUsers{0};
+  bool m_peakTpsHasBeenSet = false;
   bool m_peakConcurrentUsersHasBeenSet = false;
 };
 

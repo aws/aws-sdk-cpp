@@ -71,9 +71,9 @@ class EventBridgeParameters {
   ///@}
  private:
   Aws::String m_detailType;
-  bool m_detailTypeHasBeenSet = false;
 
   Aws::String m_source;
+  bool m_detailTypeHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

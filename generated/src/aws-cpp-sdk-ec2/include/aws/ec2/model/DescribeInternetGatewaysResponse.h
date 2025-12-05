@@ -86,12 +86,12 @@ class DescribeInternetGatewaysResponse {
   ///@}
  private:
   Aws::Vector<InternetGateway> m_internetGateways;
-  bool m_internetGatewaysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_internetGatewaysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

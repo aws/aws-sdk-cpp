@@ -61,9 +61,9 @@ class DescribeApplicationSnapshotResult {
   ///@}
  private:
   SnapshotDetails m_snapshotDetails;
-  bool m_snapshotDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

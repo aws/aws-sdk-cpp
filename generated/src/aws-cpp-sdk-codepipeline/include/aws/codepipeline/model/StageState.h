@@ -231,33 +231,33 @@ class StageState {
   ///@}
  private:
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   StageExecution m_inboundExecution;
-  bool m_inboundExecutionHasBeenSet = false;
 
   Aws::Vector<StageExecution> m_inboundExecutions;
-  bool m_inboundExecutionsHasBeenSet = false;
 
   TransitionState m_inboundTransitionState;
-  bool m_inboundTransitionStateHasBeenSet = false;
 
   Aws::Vector<ActionState> m_actionStates;
-  bool m_actionStatesHasBeenSet = false;
 
   StageExecution m_latestExecution;
-  bool m_latestExecutionHasBeenSet = false;
 
   StageConditionState m_beforeEntryConditionState;
-  bool m_beforeEntryConditionStateHasBeenSet = false;
 
   StageConditionState m_onSuccessConditionState;
-  bool m_onSuccessConditionStateHasBeenSet = false;
 
   StageConditionState m_onFailureConditionState;
-  bool m_onFailureConditionStateHasBeenSet = false;
 
   RetryStageMetadata m_retryStageMetadata;
+  bool m_stageNameHasBeenSet = false;
+  bool m_inboundExecutionHasBeenSet = false;
+  bool m_inboundExecutionsHasBeenSet = false;
+  bool m_inboundTransitionStateHasBeenSet = false;
+  bool m_actionStatesHasBeenSet = false;
+  bool m_latestExecutionHasBeenSet = false;
+  bool m_beforeEntryConditionStateHasBeenSet = false;
+  bool m_onSuccessConditionStateHasBeenSet = false;
+  bool m_onFailureConditionStateHasBeenSet = false;
   bool m_retryStageMetadataHasBeenSet = false;
 };
 

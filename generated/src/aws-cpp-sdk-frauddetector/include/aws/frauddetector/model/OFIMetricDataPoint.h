@@ -99,15 +99,15 @@ class OFIMetricDataPoint {
   ///@}
  private:
   double m_fpr{0.0};
-  bool m_fprHasBeenSet = false;
 
   double m_precision{0.0};
-  bool m_precisionHasBeenSet = false;
 
   double m_tpr{0.0};
-  bool m_tprHasBeenSet = false;
 
   double m_threshold{0.0};
+  bool m_fprHasBeenSet = false;
+  bool m_precisionHasBeenSet = false;
+  bool m_tprHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
 };
 

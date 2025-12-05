@@ -61,9 +61,9 @@ class GetManagedCertificateDetails2020_05_31Result {
   ///@}
  private:
   ManagedCertificateDetails m_managedCertificateDetails;
-  bool m_managedCertificateDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedCertificateDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

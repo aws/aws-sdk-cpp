@@ -60,9 +60,9 @@ class GetSyncBlockerSummaryResult {
   ///@}
  private:
   SyncBlockerSummary m_syncBlockerSummary;
-  bool m_syncBlockerSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_syncBlockerSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

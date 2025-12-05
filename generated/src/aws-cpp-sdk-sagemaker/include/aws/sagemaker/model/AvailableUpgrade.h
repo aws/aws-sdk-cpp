@@ -79,9 +79,9 @@ class AvailableUpgrade {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_releaseNotes;
+  bool m_versionHasBeenSet = false;
   bool m_releaseNotesHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class ListFunctionsRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_masterRegion;
-  bool m_masterRegionHasBeenSet = false;
 
   FunctionVersion m_functionVersion{FunctionVersion::NOT_SET};
-  bool m_functionVersionHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_masterRegionHasBeenSet = false;
+  bool m_functionVersionHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

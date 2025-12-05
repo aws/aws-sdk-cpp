@@ -154,24 +154,24 @@ class DescribeSnapshotScheduleResult {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   int m_startAt{0};
-  bool m_startAtHasBeenSet = false;
 
   int m_recurrenceInHours{0};
-  bool m_recurrenceInHoursHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_startAtHasBeenSet = false;
+  bool m_recurrenceInHoursHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

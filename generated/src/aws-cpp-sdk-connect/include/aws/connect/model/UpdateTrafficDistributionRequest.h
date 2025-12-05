@@ -108,15 +108,15 @@ class UpdateTrafficDistributionRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   TelephonyConfig m_telephonyConfig;
-  bool m_telephonyConfigHasBeenSet = false;
 
   SignInConfig m_signInConfig;
-  bool m_signInConfigHasBeenSet = false;
 
   AgentConfig m_agentConfig;
+  bool m_idHasBeenSet = false;
+  bool m_telephonyConfigHasBeenSet = false;
+  bool m_signInConfigHasBeenSet = false;
   bool m_agentConfigHasBeenSet = false;
 };
 

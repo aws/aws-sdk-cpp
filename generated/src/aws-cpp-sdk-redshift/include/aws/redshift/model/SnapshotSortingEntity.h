@@ -67,9 +67,9 @@ class SnapshotSortingEntity {
   ///@}
  private:
   SnapshotAttributeToSortBy m_attribute{SnapshotAttributeToSortBy::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   SortByOrder m_sortOrder{SortByOrder::NOT_SET};
+  bool m_attributeHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

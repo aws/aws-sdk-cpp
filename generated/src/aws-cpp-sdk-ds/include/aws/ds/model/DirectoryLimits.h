@@ -175,30 +175,30 @@ class DirectoryLimits {
   ///@}
  private:
   int m_cloudOnlyDirectoriesLimit{0};
-  bool m_cloudOnlyDirectoriesLimitHasBeenSet = false;
 
   int m_cloudOnlyDirectoriesCurrentCount{0};
-  bool m_cloudOnlyDirectoriesCurrentCountHasBeenSet = false;
 
   bool m_cloudOnlyDirectoriesLimitReached{false};
-  bool m_cloudOnlyDirectoriesLimitReachedHasBeenSet = false;
 
   int m_cloudOnlyMicrosoftADLimit{0};
-  bool m_cloudOnlyMicrosoftADLimitHasBeenSet = false;
 
   int m_cloudOnlyMicrosoftADCurrentCount{0};
-  bool m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = false;
 
   bool m_cloudOnlyMicrosoftADLimitReached{false};
-  bool m_cloudOnlyMicrosoftADLimitReachedHasBeenSet = false;
 
   int m_connectedDirectoriesLimit{0};
-  bool m_connectedDirectoriesLimitHasBeenSet = false;
 
   int m_connectedDirectoriesCurrentCount{0};
-  bool m_connectedDirectoriesCurrentCountHasBeenSet = false;
 
   bool m_connectedDirectoriesLimitReached{false};
+  bool m_cloudOnlyDirectoriesLimitHasBeenSet = false;
+  bool m_cloudOnlyDirectoriesCurrentCountHasBeenSet = false;
+  bool m_cloudOnlyDirectoriesLimitReachedHasBeenSet = false;
+  bool m_cloudOnlyMicrosoftADLimitHasBeenSet = false;
+  bool m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = false;
+  bool m_cloudOnlyMicrosoftADLimitReachedHasBeenSet = false;
+  bool m_connectedDirectoriesLimitHasBeenSet = false;
+  bool m_connectedDirectoriesCurrentCountHasBeenSet = false;
   bool m_connectedDirectoriesLimitReachedHasBeenSet = false;
 };
 

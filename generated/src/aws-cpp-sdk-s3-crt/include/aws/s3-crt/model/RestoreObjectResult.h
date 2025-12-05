@@ -74,12 +74,12 @@ class RestoreObjectResult {
   ///@}
  private:
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_restoreOutputPath;
-  bool m_restoreOutputPathHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_requestChargedHasBeenSet = false;
+  bool m_restoreOutputPathHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

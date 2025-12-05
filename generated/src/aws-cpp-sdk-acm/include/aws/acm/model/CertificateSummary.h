@@ -455,63 +455,63 @@ class CertificateSummary {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subjectAlternativeNameSummaries;
-  bool m_subjectAlternativeNameSummariesHasBeenSet = false;
 
   bool m_hasAdditionalSubjectAlternativeNames{false};
-  bool m_hasAdditionalSubjectAlternativeNamesHasBeenSet = false;
 
   CertificateStatus m_status{CertificateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CertificateType m_type{CertificateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
-  bool m_keyAlgorithmHasBeenSet = false;
 
   Aws::Vector<KeyUsageName> m_keyUsages;
-  bool m_keyUsagesHasBeenSet = false;
 
   Aws::Vector<ExtendedKeyUsageName> m_extendedKeyUsages;
-  bool m_extendedKeyUsagesHasBeenSet = false;
 
   CertificateExport m_exportOption{CertificateExport::NOT_SET};
-  bool m_exportOptionHasBeenSet = false;
 
   bool m_inUse{false};
-  bool m_inUseHasBeenSet = false;
 
   bool m_exported{false};
-  bool m_exportedHasBeenSet = false;
 
   RenewalEligibility m_renewalEligibility{RenewalEligibility::NOT_SET};
-  bool m_renewalEligibilityHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
-  bool m_notBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_issuedAt{};
-  bool m_issuedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_importedAt{};
-  bool m_importedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedAt{};
-  bool m_revokedAtHasBeenSet = false;
 
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+  bool m_certificateArnHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_subjectAlternativeNameSummariesHasBeenSet = false;
+  bool m_hasAdditionalSubjectAlternativeNamesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_keyAlgorithmHasBeenSet = false;
+  bool m_keyUsagesHasBeenSet = false;
+  bool m_extendedKeyUsagesHasBeenSet = false;
+  bool m_exportOptionHasBeenSet = false;
+  bool m_inUseHasBeenSet = false;
+  bool m_exportedHasBeenSet = false;
+  bool m_renewalEligibilityHasBeenSet = false;
+  bool m_notBeforeHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_issuedAtHasBeenSet = false;
+  bool m_importedAtHasBeenSet = false;
+  bool m_revokedAtHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
 };
 

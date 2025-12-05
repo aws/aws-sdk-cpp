@@ -105,15 +105,15 @@ class ListExperimentResolvedTargetsRequest : public FISRequest {
   ///@}
  private:
   Aws::String m_experimentId;
-  bool m_experimentIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_targetName;
+  bool m_experimentIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
 };
 

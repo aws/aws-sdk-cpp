@@ -68,9 +68,9 @@ class ExecutionApprovalConfiguration {
   ///@}
  private:
   int m_timeoutMinutes{0};
-  bool m_timeoutMinutesHasBeenSet = false;
 
   Aws::String m_approvalRole;
+  bool m_timeoutMinutesHasBeenSet = false;
   bool m_approvalRoleHasBeenSet = false;
 };
 

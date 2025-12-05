@@ -71,9 +71,9 @@ class ListKeysRequest : public KMSRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

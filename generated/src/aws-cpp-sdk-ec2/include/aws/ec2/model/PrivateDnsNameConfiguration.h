@@ -110,15 +110,15 @@ class PrivateDnsNameConfiguration {
   ///@}
  private:
   DnsNameState m_state{DnsNameState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_stateHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

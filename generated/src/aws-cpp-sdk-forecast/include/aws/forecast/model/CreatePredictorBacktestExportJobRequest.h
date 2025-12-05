@@ -145,18 +145,18 @@ class CreatePredictorBacktestExportJobRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_predictorBacktestExportJobName;
-  bool m_predictorBacktestExportJobNameHasBeenSet = false;
 
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_predictorBacktestExportJobNameHasBeenSet = false;
+  bool m_predictorArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

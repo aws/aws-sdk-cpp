@@ -69,9 +69,9 @@ class Delegate {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MemberType m_type{MemberType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

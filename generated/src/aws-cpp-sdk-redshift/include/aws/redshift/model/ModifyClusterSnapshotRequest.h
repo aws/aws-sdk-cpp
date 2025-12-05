@@ -88,12 +88,12 @@ class ModifyClusterSnapshotRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   bool m_force{false};
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

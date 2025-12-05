@@ -95,12 +95,12 @@ class AdminListDevicesResult {
   ///@}
  private:
   Aws::Vector<DeviceType> m_devices;
-  bool m_devicesHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devicesHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

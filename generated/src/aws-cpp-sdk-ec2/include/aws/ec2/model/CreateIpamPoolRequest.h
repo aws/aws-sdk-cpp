@@ -397,54 +397,54 @@ class CreateIpamPoolRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamScopeId;
-  bool m_ipamScopeIdHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_sourceIpamPoolId;
-  bool m_sourceIpamPoolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   bool m_autoImport{false};
-  bool m_autoImportHasBeenSet = false;
 
   bool m_publiclyAdvertisable{false};
-  bool m_publiclyAdvertisableHasBeenSet = false;
 
   int m_allocationMinNetmaskLength{0};
-  bool m_allocationMinNetmaskLengthHasBeenSet = false;
 
   int m_allocationMaxNetmaskLength{0};
-  bool m_allocationMaxNetmaskLengthHasBeenSet = false;
 
   int m_allocationDefaultNetmaskLength{0};
-  bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
 
   Aws::Vector<RequestIpamResourceTag> m_allocationResourceTags;
-  bool m_allocationResourceTagsHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   IpamPoolAwsService m_awsService{IpamPoolAwsService::NOT_SET};
-  bool m_awsServiceHasBeenSet = false;
 
   IpamPoolPublicIpSource m_publicIpSource{IpamPoolPublicIpSource::NOT_SET};
-  bool m_publicIpSourceHasBeenSet = false;
 
   IpamPoolSourceResourceRequest m_sourceResource;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamScopeIdHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_sourceIpamPoolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_autoImportHasBeenSet = false;
+  bool m_publiclyAdvertisableHasBeenSet = false;
+  bool m_allocationMinNetmaskLengthHasBeenSet = false;
+  bool m_allocationMaxNetmaskLengthHasBeenSet = false;
+  bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
+  bool m_allocationResourceTagsHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_awsServiceHasBeenSet = false;
+  bool m_publicIpSourceHasBeenSet = false;
   bool m_sourceResourceHasBeenSet = false;
 };
 

@@ -154,24 +154,24 @@ class DescribeAuditTaskResult {
   ///@}
  private:
   AuditTaskStatus m_taskStatus{AuditTaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   AuditTaskType m_taskType{AuditTaskType::NOT_SET};
-  bool m_taskTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskStartTime{};
-  bool m_taskStartTimeHasBeenSet = false;
 
   TaskStatistics m_taskStatistics;
-  bool m_taskStatisticsHasBeenSet = false;
 
   Aws::String m_scheduledAuditName;
-  bool m_scheduledAuditNameHasBeenSet = false;
 
   Aws::Map<Aws::String, AuditCheckDetails> m_auditDetails;
-  bool m_auditDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_taskTypeHasBeenSet = false;
+  bool m_taskStartTimeHasBeenSet = false;
+  bool m_taskStatisticsHasBeenSet = false;
+  bool m_scheduledAuditNameHasBeenSet = false;
+  bool m_auditDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

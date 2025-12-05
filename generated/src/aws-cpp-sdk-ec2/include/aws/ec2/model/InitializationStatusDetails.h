@@ -94,12 +94,12 @@ class InitializationStatusDetails {
   ///@}
  private:
   InitializationType m_initializationType{InitializationType::NOT_SET};
-  bool m_initializationTypeHasBeenSet = false;
 
   long long m_progress{0};
-  bool m_progressHasBeenSet = false;
 
   long long m_estimatedTimeToCompleteInSeconds{0};
+  bool m_initializationTypeHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
   bool m_estimatedTimeToCompleteInSecondsHasBeenSet = false;
 };
 

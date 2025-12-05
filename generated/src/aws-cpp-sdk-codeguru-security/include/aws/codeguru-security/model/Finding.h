@@ -340,51 +340,51 @@ class Finding {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_generatorId;
-  bool m_generatorIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Vulnerability m_vulnerability;
-  bool m_vulnerabilityHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Remediation m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_detectorTags;
-  bool m_detectorTagsHasBeenSet = false;
 
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_detectorName;
-  bool m_detectorNameHasBeenSet = false;
 
   Aws::String m_ruleId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_generatorIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_vulnerabilityHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_detectorTagsHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorNameHasBeenSet = false;
   bool m_ruleIdHasBeenSet = false;
 };
 

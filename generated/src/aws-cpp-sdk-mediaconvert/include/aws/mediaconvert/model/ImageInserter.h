@@ -82,9 +82,9 @@ class ImageInserter {
   ///@}
  private:
   Aws::Vector<InsertableImage> m_insertableImages;
-  bool m_insertableImagesHasBeenSet = false;
 
   int m_sdrReferenceWhiteLevel{0};
+  bool m_insertableImagesHasBeenSet = false;
   bool m_sdrReferenceWhiteLevelHasBeenSet = false;
 };
 

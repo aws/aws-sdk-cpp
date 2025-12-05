@@ -177,27 +177,27 @@ class IngestionJobSummary {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_ingestionJobId;
-  bool m_ingestionJobIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IngestionJobStatus m_status{IngestionJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   IngestionJobStatistics m_statistics;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_ingestionJobIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
 };
 

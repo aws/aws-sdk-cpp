@@ -62,9 +62,9 @@ class GetFindingsPublicationConfigurationResult {
   ///@}
  private:
   SecurityHubConfiguration m_securityHubConfiguration;
-  bool m_securityHubConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityHubConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class Layer {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_codeSize{0};
-  bool m_codeSizeHasBeenSet = false;
 
   Aws::String m_signingProfileVersionArn;
-  bool m_signingProfileVersionArnHasBeenSet = false;
 
   Aws::String m_signingJobArn;
+  bool m_arnHasBeenSet = false;
+  bool m_codeSizeHasBeenSet = false;
+  bool m_signingProfileVersionArnHasBeenSet = false;
   bool m_signingJobArnHasBeenSet = false;
 };
 

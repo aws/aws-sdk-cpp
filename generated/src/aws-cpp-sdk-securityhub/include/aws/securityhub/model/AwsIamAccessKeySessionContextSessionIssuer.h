@@ -125,18 +125,18 @@ class AwsIamAccessKeySessionContextSessionIssuer {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_typeHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

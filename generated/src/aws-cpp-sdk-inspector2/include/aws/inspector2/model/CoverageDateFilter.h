@@ -69,9 +69,9 @@ class CoverageDateFilter {
   ///@}
  private:
   Aws::Utils::DateTime m_startInclusive{};
-  bool m_startInclusiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_endInclusive{};
+  bool m_startInclusiveHasBeenSet = false;
   bool m_endInclusiveHasBeenSet = false;
 };
 

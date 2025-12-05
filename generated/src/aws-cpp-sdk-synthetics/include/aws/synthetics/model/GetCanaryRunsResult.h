@@ -87,12 +87,12 @@ class GetCanaryRunsResult {
   ///@}
  private:
   Aws::Vector<CanaryRun> m_canaryRuns;
-  bool m_canaryRunsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_canaryRunsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

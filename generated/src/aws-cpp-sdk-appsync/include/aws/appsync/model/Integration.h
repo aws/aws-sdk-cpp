@@ -70,9 +70,9 @@ class Integration {
   ///@}
  private:
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   LambdaConfig m_lambdaConfig;
+  bool m_dataSourceNameHasBeenSet = false;
   bool m_lambdaConfigHasBeenSet = false;
 };
 

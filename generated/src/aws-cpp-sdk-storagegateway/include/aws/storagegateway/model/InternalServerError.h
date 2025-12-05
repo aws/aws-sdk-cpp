@@ -71,9 +71,9 @@ class InternalServerError {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   StorageGatewayError m_error;
+  bool m_messageHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class RateCardItem {
   ///@}
  private:
   Aws::String m_dimensionKey;
-  bool m_dimensionKeyHasBeenSet = false;
 
   Aws::String m_price;
+  bool m_dimensionKeyHasBeenSet = false;
   bool m_priceHasBeenSet = false;
 };
 

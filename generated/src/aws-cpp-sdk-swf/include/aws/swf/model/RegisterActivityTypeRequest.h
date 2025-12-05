@@ -254,33 +254,33 @@ class RegisterActivityTypeRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultTaskStartToCloseTimeout;
-  bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
 
   Aws::String m_defaultTaskHeartbeatTimeout;
-  bool m_defaultTaskHeartbeatTimeoutHasBeenSet = false;
 
   TaskList m_defaultTaskList;
-  bool m_defaultTaskListHasBeenSet = false;
 
   Aws::String m_defaultTaskPriority;
-  bool m_defaultTaskPriorityHasBeenSet = false;
 
   Aws::String m_defaultTaskScheduleToStartTimeout;
-  bool m_defaultTaskScheduleToStartTimeoutHasBeenSet = false;
 
   Aws::String m_defaultTaskScheduleToCloseTimeout;
+  bool m_domainHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
+  bool m_defaultTaskHeartbeatTimeoutHasBeenSet = false;
+  bool m_defaultTaskListHasBeenSet = false;
+  bool m_defaultTaskPriorityHasBeenSet = false;
+  bool m_defaultTaskScheduleToStartTimeoutHasBeenSet = false;
   bool m_defaultTaskScheduleToCloseTimeoutHasBeenSet = false;
 };
 

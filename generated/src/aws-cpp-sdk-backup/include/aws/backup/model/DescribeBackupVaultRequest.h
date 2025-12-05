@@ -72,9 +72,9 @@ class DescribeBackupVaultRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_backupVaultAccountId;
+  bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultAccountIdHasBeenSet = false;
 };
 

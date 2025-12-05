@@ -75,12 +75,12 @@ class StartMetricsExportResult {
   ///@}
  private:
   Aws::String m_metricsExportId;
-  bool m_metricsExportIdHasBeenSet = false;
 
   MetricsExportStatusType m_status{MetricsExportStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricsExportIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

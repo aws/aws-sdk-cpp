@@ -89,12 +89,12 @@ class UpdateFileSystemRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
-  bool m_throughputModeHasBeenSet = false;
 
   double m_provisionedThroughputInMibps{0.0};
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_throughputModeHasBeenSet = false;
   bool m_provisionedThroughputInMibpsHasBeenSet = false;
 };
 

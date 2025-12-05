@@ -123,18 +123,18 @@ class UpdateDataSourceRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataSourceType m_dataSourceType;
-  bool m_dataSourceTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dataSourceTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

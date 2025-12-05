@@ -61,9 +61,9 @@ class GetExportImageTaskResult {
   ///@}
  private:
   ExportImageTask m_exportImageTask;
-  bool m_exportImageTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportImageTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

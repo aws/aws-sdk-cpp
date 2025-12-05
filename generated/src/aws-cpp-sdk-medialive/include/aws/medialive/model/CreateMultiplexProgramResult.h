@@ -66,9 +66,9 @@ class CreateMultiplexProgramResult {
   ///@}
  private:
   MultiplexProgram m_multiplexProgram;
-  bool m_multiplexProgramHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_multiplexProgramHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

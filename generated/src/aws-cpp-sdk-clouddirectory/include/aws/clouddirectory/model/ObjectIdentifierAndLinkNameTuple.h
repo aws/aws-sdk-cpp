@@ -68,9 +68,9 @@ class ObjectIdentifierAndLinkNameTuple {
   ///@}
  private:
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   Aws::String m_linkName;
+  bool m_objectIdentifierHasBeenSet = false;
   bool m_linkNameHasBeenSet = false;
 };
 

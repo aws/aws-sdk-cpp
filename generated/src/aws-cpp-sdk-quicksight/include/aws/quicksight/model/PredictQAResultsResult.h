@@ -99,15 +99,15 @@ class PredictQAResultsResult {
   ///@}
  private:
   QAResult m_primaryResult;
-  bool m_primaryResultHasBeenSet = false;
 
   Aws::Vector<QAResult> m_additionalResults;
-  bool m_additionalResultsHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_primaryResultHasBeenSet = false;
+  bool m_additionalResultsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

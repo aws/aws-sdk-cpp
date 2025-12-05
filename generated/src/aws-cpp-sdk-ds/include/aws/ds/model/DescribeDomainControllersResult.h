@@ -87,12 +87,12 @@ class DescribeDomainControllersResult {
   ///@}
  private:
   Aws::Vector<DomainController> m_domainControllers;
-  bool m_domainControllersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainControllersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -172,24 +172,24 @@ class ConversionTask {
   ///@}
  private:
   Aws::String m_conversionTaskId;
-  bool m_conversionTaskIdHasBeenSet = false;
 
   Aws::String m_expirationTime;
-  bool m_expirationTimeHasBeenSet = false;
 
   ImportInstanceTaskDetails m_importInstance;
-  bool m_importInstanceHasBeenSet = false;
 
   ImportVolumeTaskDetails m_importVolume;
-  bool m_importVolumeHasBeenSet = false;
 
   ConversionTaskState m_state{ConversionTaskState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_conversionTaskIdHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_importInstanceHasBeenSet = false;
+  bool m_importVolumeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

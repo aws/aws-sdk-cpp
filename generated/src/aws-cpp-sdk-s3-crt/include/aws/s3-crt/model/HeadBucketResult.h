@@ -136,21 +136,21 @@ class HeadBucketResult {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   LocationType m_bucketLocationType{LocationType::NOT_SET};
-  bool m_bucketLocationTypeHasBeenSet = false;
 
   Aws::String m_bucketLocationName;
-  bool m_bucketLocationNameHasBeenSet = false;
 
   Aws::String m_bucketRegion;
-  bool m_bucketRegionHasBeenSet = false;
 
   bool m_accessPointAlias{false};
-  bool m_accessPointAliasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_bucketLocationTypeHasBeenSet = false;
+  bool m_bucketLocationNameHasBeenSet = false;
+  bool m_bucketRegionHasBeenSet = false;
+  bool m_accessPointAliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -110,12 +110,12 @@ class PipeTargetHttpParameters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_pathParameterValues;
-  bool m_pathParameterValuesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_headerParameters;
-  bool m_headerParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_queryStringParameters;
+  bool m_pathParameterValuesHasBeenSet = false;
+  bool m_headerParametersHasBeenSet = false;
   bool m_queryStringParametersHasBeenSet = false;
 };
 

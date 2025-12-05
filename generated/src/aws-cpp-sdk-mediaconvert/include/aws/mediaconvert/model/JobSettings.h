@@ -356,45 +356,45 @@ class JobSettings {
   ///@}
  private:
   int m_adAvailOffset{0};
-  bool m_adAvailOffsetHasBeenSet = false;
 
   AvailBlanking m_availBlanking;
-  bool m_availBlankingHasBeenSet = false;
 
   Aws::Vector<ColorConversion3DLUTSetting> m_colorConversion3DLUTSettings;
-  bool m_colorConversion3DLUTSettingsHasBeenSet = false;
 
   EsamSettings m_esam;
-  bool m_esamHasBeenSet = false;
 
   ExtendedDataServices m_extendedDataServices;
-  bool m_extendedDataServicesHasBeenSet = false;
 
   int m_followSource{0};
-  bool m_followSourceHasBeenSet = false;
 
   Aws::Vector<Input> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   KantarWatermarkSettings m_kantarWatermark;
-  bool m_kantarWatermarkHasBeenSet = false;
 
   MotionImageInserter m_motionImageInserter;
-  bool m_motionImageInserterHasBeenSet = false;
 
   NielsenConfiguration m_nielsenConfiguration;
-  bool m_nielsenConfigurationHasBeenSet = false;
 
   NielsenNonLinearWatermarkSettings m_nielsenNonLinearWatermark;
-  bool m_nielsenNonLinearWatermarkHasBeenSet = false;
 
   Aws::Vector<OutputGroup> m_outputGroups;
-  bool m_outputGroupsHasBeenSet = false;
 
   TimecodeConfig m_timecodeConfig;
-  bool m_timecodeConfigHasBeenSet = false;
 
   TimedMetadataInsertion m_timedMetadataInsertion;
+  bool m_adAvailOffsetHasBeenSet = false;
+  bool m_availBlankingHasBeenSet = false;
+  bool m_colorConversion3DLUTSettingsHasBeenSet = false;
+  bool m_esamHasBeenSet = false;
+  bool m_extendedDataServicesHasBeenSet = false;
+  bool m_followSourceHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_kantarWatermarkHasBeenSet = false;
+  bool m_motionImageInserterHasBeenSet = false;
+  bool m_nielsenConfigurationHasBeenSet = false;
+  bool m_nielsenNonLinearWatermarkHasBeenSet = false;
+  bool m_outputGroupsHasBeenSet = false;
+  bool m_timecodeConfigHasBeenSet = false;
   bool m_timedMetadataInsertionHasBeenSet = false;
 };
 

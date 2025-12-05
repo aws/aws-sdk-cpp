@@ -74,9 +74,9 @@ class DescribeLoadBalancerPoliciesResult {
   ///@}
  private:
   Aws::Vector<PolicyDescription> m_policyDescriptions;
-  bool m_policyDescriptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyDescriptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

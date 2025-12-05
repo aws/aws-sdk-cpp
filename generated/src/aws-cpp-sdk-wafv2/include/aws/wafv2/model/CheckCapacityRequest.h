@@ -80,9 +80,9 @@ class CheckCapacityRequest : public WAFV2Request {
   ///@}
  private:
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
+  bool m_scopeHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

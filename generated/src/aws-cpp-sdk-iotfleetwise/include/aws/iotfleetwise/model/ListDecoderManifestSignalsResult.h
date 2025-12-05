@@ -85,12 +85,12 @@ class ListDecoderManifestSignalsResult {
   ///@}
  private:
   Aws::Vector<SignalDecoder> m_signalDecoders;
-  bool m_signalDecodersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signalDecodersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

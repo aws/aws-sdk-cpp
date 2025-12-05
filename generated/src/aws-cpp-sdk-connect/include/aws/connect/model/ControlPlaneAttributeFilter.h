@@ -99,12 +99,12 @@ class ControlPlaneAttributeFilter {
   ///@}
  private:
   Aws::Vector<CommonAttributeAndCondition> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   CommonAttributeAndCondition m_andCondition;
-  bool m_andConditionHasBeenSet = false;
 
   TagCondition m_tagCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionHasBeenSet = false;
   bool m_tagConditionHasBeenSet = false;
 };
 

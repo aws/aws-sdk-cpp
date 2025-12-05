@@ -183,27 +183,27 @@ class StreamInfo {
   ///@}
  private:
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   int m_streamVersion{0};
-  bool m_streamVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<StreamFile> m_files;
-  bool m_filesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_streamIdHasBeenSet = false;
+  bool m_streamArnHasBeenSet = false;
+  bool m_streamVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

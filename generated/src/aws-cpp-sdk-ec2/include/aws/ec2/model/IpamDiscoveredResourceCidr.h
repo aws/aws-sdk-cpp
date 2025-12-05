@@ -308,45 +308,45 @@ class IpamDiscoveredResourceCidr {
   ///@}
  private:
   Aws::String m_ipamResourceDiscoveryId;
-  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
 
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   Aws::String m_resourceCidr;
-  bool m_resourceCidrHasBeenSet = false;
 
   IpamResourceCidrIpSource m_ipSource{IpamResourceCidrIpSource::NOT_SET};
-  bool m_ipSourceHasBeenSet = false;
 
   IpamResourceType m_resourceType{IpamResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<IpamResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   double m_ipUsage{0.0};
-  bool m_ipUsageHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   IpamNetworkInterfaceAttachmentStatus m_networkInterfaceAttachmentStatus{IpamNetworkInterfaceAttachmentStatus::NOT_SET};
-  bool m_networkInterfaceAttachmentStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampleTime{};
-  bool m_sampleTimeHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceOwnerIdHasBeenSet = false;
+  bool m_resourceCidrHasBeenSet = false;
+  bool m_ipSourceHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_ipUsageHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_networkInterfaceAttachmentStatusHasBeenSet = false;
+  bool m_sampleTimeHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

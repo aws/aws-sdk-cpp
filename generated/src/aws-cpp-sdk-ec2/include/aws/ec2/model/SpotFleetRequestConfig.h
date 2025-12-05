@@ -155,21 +155,21 @@ class SpotFleetRequestConfig {
   ///@}
  private:
   ActivityStatus m_activityStatus{ActivityStatus::NOT_SET};
-  bool m_activityStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   SpotFleetRequestConfigData m_spotFleetRequestConfig;
-  bool m_spotFleetRequestConfigHasBeenSet = false;
 
   Aws::String m_spotFleetRequestId;
-  bool m_spotFleetRequestIdHasBeenSet = false;
 
   BatchState m_spotFleetRequestState{BatchState::NOT_SET};
-  bool m_spotFleetRequestStateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_activityStatusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_spotFleetRequestConfigHasBeenSet = false;
+  bool m_spotFleetRequestIdHasBeenSet = false;
+  bool m_spotFleetRequestStateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

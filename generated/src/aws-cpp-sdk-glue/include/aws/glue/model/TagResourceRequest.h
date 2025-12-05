@@ -77,9 +77,9 @@ class TagResourceRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tagsToAdd;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagsToAddHasBeenSet = false;
 };
 

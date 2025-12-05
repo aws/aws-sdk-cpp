@@ -113,15 +113,15 @@ class DescribeConfigurationAggregatorSourcesStatusRequest : public ConfigService
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   Aws::Vector<AggregatedSourceStatusType> m_updateStatus;
-  bool m_updateStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_configurationAggregatorNameHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

@@ -223,33 +223,33 @@ class AgentInfo {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::Vector<AgentNetworkInfo> m_agentNetworkInfoList;
-  bool m_agentNetworkInfoListHasBeenSet = false;
 
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   AgentStatus m_health{AgentStatus::NOT_SET};
-  bool m_healthHasBeenSet = false;
 
   Aws::String m_lastHealthPingTime;
-  bool m_lastHealthPingTimeHasBeenSet = false;
 
   Aws::String m_collectionStatus;
-  bool m_collectionStatusHasBeenSet = false;
 
   Aws::String m_agentType;
-  bool m_agentTypeHasBeenSet = false;
 
   Aws::String m_registeredTime;
+  bool m_agentIdHasBeenSet = false;
+  bool m_hostNameHasBeenSet = false;
+  bool m_agentNetworkInfoListHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_lastHealthPingTimeHasBeenSet = false;
+  bool m_collectionStatusHasBeenSet = false;
+  bool m_agentTypeHasBeenSet = false;
   bool m_registeredTimeHasBeenSet = false;
 };
 

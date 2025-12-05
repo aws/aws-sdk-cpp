@@ -95,12 +95,12 @@ class DescribeClusterSecurityGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ClusterSecurityGroup> m_clusterSecurityGroups;
-  bool m_clusterSecurityGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_clusterSecurityGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class SSEKMSFilter {
   ///@}
  private:
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_bucketKeyEnabledHasBeenSet = false;
 };
 

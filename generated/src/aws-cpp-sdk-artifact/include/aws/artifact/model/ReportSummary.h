@@ -298,48 +298,48 @@ class ReportSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PublishedState m_state{PublishedState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   UploadState m_uploadState{UploadState::NOT_SET};
-  bool m_uploadStateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_periodStart{};
-  bool m_periodStartHasBeenSet = false;
 
   Aws::Utils::DateTime m_periodEnd{};
-  bool m_periodEndHasBeenSet = false;
 
   Aws::String m_series;
-  bool m_seriesHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   AcceptanceType m_acceptanceType{AcceptanceType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_uploadStateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_periodStartHasBeenSet = false;
+  bool m_periodEndHasBeenSet = false;
+  bool m_seriesHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_acceptanceTypeHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListLegalHoldsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LegalHold> m_legalHolds;
-  bool m_legalHoldsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_legalHoldsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

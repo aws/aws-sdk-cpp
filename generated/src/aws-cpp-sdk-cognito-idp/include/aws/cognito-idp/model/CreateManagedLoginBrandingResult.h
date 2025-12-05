@@ -61,9 +61,9 @@ class CreateManagedLoginBrandingResult {
   ///@}
  private:
   ManagedLoginBrandingType m_managedLoginBranding;
-  bool m_managedLoginBrandingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedLoginBrandingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

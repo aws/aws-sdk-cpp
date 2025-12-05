@@ -151,21 +151,21 @@ class StartFaceSearchRequest : public RekognitionRequest {
   ///@}
  private:
   Video m_video;
-  bool m_videoHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   double m_faceMatchThreshold{0.0};
-  bool m_faceMatchThresholdHasBeenSet = false;
 
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   NotificationChannel m_notificationChannel;
-  bool m_notificationChannelHasBeenSet = false;
 
   Aws::String m_jobTag;
+  bool m_videoHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_faceMatchThresholdHasBeenSet = false;
+  bool m_collectionIdHasBeenSet = false;
+  bool m_notificationChannelHasBeenSet = false;
   bool m_jobTagHasBeenSet = false;
 };
 

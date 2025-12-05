@@ -103,12 +103,12 @@ class DescribeSourceServersRequestFilters {
   ///@}
  private:
   Aws::String m_hardwareId;
-  bool m_hardwareIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceServerIDs;
-  bool m_sourceServerIDsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stagingAccountIDs;
+  bool m_hardwareIdHasBeenSet = false;
+  bool m_sourceServerIDsHasBeenSet = false;
   bool m_stagingAccountIDsHasBeenSet = false;
 };
 

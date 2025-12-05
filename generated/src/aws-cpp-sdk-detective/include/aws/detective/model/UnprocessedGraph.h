@@ -70,9 +70,9 @@ class UnprocessedGraph {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_graphArnHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

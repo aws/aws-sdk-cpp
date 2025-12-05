@@ -379,60 +379,60 @@ class ImportTableDescription {
   ///@}
  private:
   Aws::String m_importArn;
-  bool m_importArnHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::String m_tableId;
-  bool m_tableIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   S3BucketSource m_s3BucketSource;
-  bool m_s3BucketSourceHasBeenSet = false;
 
   long long m_errorCount{0};
-  bool m_errorCountHasBeenSet = false;
 
   Aws::String m_cloudWatchLogGroupArn;
-  bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
   InputFormat m_inputFormat{InputFormat::NOT_SET};
-  bool m_inputFormatHasBeenSet = false;
 
   InputFormatOptions m_inputFormatOptions;
-  bool m_inputFormatOptionsHasBeenSet = false;
 
   InputCompressionType m_inputCompressionType{InputCompressionType::NOT_SET};
-  bool m_inputCompressionTypeHasBeenSet = false;
 
   TableCreationParameters m_tableCreationParameters;
-  bool m_tableCreationParametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   long long m_processedSizeBytes{0};
-  bool m_processedSizeBytesHasBeenSet = false;
 
   long long m_processedItemCount{0};
-  bool m_processedItemCountHasBeenSet = false;
 
   long long m_importedItemCount{0};
-  bool m_importedItemCountHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_importArnHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
+  bool m_tableArnHasBeenSet = false;
+  bool m_tableIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_s3BucketSourceHasBeenSet = false;
+  bool m_errorCountHasBeenSet = false;
+  bool m_cloudWatchLogGroupArnHasBeenSet = false;
+  bool m_inputFormatHasBeenSet = false;
+  bool m_inputFormatOptionsHasBeenSet = false;
+  bool m_inputCompressionTypeHasBeenSet = false;
+  bool m_tableCreationParametersHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_processedSizeBytesHasBeenSet = false;
+  bool m_processedItemCountHasBeenSet = false;
+  bool m_importedItemCountHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

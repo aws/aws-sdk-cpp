@@ -174,27 +174,27 @@ class GatewaySummary {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   GatewayStatus m_status{GatewayStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   AuthorizerType m_authorizerType{AuthorizerType::NOT_SET};
-  bool m_authorizerTypeHasBeenSet = false;
 
   GatewayProtocolType m_protocolType{GatewayProtocolType::NOT_SET};
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_authorizerTypeHasBeenSet = false;
   bool m_protocolTypeHasBeenSet = false;
 };
 

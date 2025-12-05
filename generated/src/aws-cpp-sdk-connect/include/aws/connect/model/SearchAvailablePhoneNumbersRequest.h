@@ -159,24 +159,24 @@ class SearchAvailablePhoneNumbersRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   PhoneNumberCountryCode m_phoneNumberCountryCode{PhoneNumberCountryCode::NOT_SET};
-  bool m_phoneNumberCountryCodeHasBeenSet = false;
 
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
-  bool m_phoneNumberTypeHasBeenSet = false;
 
   Aws::String m_phoneNumberPrefix;
-  bool m_phoneNumberPrefixHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_targetArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_phoneNumberCountryCodeHasBeenSet = false;
+  bool m_phoneNumberTypeHasBeenSet = false;
+  bool m_phoneNumberPrefixHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

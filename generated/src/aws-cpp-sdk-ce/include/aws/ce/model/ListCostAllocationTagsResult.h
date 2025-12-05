@@ -87,12 +87,12 @@ class ListCostAllocationTagsResult {
   ///@}
  private:
   Aws::Vector<CostAllocationTag> m_costAllocationTags;
-  bool m_costAllocationTagsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costAllocationTagsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

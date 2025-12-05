@@ -95,15 +95,15 @@ class GenerateQueryResult {
   ///@}
  private:
   Aws::String m_queryStatement;
-  bool m_queryStatementHasBeenSet = false;
 
   Aws::String m_queryAlias;
-  bool m_queryAliasHasBeenSet = false;
 
   Aws::String m_eventDataStoreOwnerAccountId;
-  bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryStatementHasBeenSet = false;
+  bool m_queryAliasHasBeenSet = false;
+  bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

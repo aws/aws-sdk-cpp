@@ -197,24 +197,24 @@ class IosClientBrandingAttributes {
   ///@}
  private:
   Aws::String m_logoUrl;
-  bool m_logoUrlHasBeenSet = false;
 
   Aws::String m_logo2xUrl;
-  bool m_logo2xUrlHasBeenSet = false;
 
   Aws::String m_logo3xUrl;
-  bool m_logo3xUrlHasBeenSet = false;
 
   Aws::String m_supportEmail;
-  bool m_supportEmailHasBeenSet = false;
 
   Aws::String m_supportLink;
-  bool m_supportLinkHasBeenSet = false;
 
   Aws::String m_forgotPasswordLink;
-  bool m_forgotPasswordLinkHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_loginMessage;
+  bool m_logoUrlHasBeenSet = false;
+  bool m_logo2xUrlHasBeenSet = false;
+  bool m_logo3xUrlHasBeenSet = false;
+  bool m_supportEmailHasBeenSet = false;
+  bool m_supportLinkHasBeenSet = false;
+  bool m_forgotPasswordLinkHasBeenSet = false;
   bool m_loginMessageHasBeenSet = false;
 };
 

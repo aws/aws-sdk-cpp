@@ -269,39 +269,39 @@ class ServiceLevelObjectiveBudgetReport {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   ServiceLevelObjectiveBudgetStatus m_budgetStatus{ServiceLevelObjectiveBudgetStatus::NOT_SET};
-  bool m_budgetStatusHasBeenSet = false;
 
   double m_attainment{0.0};
-  bool m_attainmentHasBeenSet = false;
 
   int m_totalBudgetSeconds{0};
-  bool m_totalBudgetSecondsHasBeenSet = false;
 
   int m_budgetSecondsRemaining{0};
-  bool m_budgetSecondsRemainingHasBeenSet = false;
 
   int m_totalBudgetRequests{0};
-  bool m_totalBudgetRequestsHasBeenSet = false;
 
   int m_budgetRequestsRemaining{0};
-  bool m_budgetRequestsRemainingHasBeenSet = false;
 
   ServiceLevelIndicator m_sli;
-  bool m_sliHasBeenSet = false;
 
   RequestBasedServiceLevelIndicator m_requestBasedSli;
-  bool m_requestBasedSliHasBeenSet = false;
 
   Goal m_goal;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
+  bool m_budgetStatusHasBeenSet = false;
+  bool m_attainmentHasBeenSet = false;
+  bool m_totalBudgetSecondsHasBeenSet = false;
+  bool m_budgetSecondsRemainingHasBeenSet = false;
+  bool m_totalBudgetRequestsHasBeenSet = false;
+  bool m_budgetRequestsRemainingHasBeenSet = false;
+  bool m_sliHasBeenSet = false;
+  bool m_requestBasedSliHasBeenSet = false;
   bool m_goalHasBeenSet = false;
 };
 

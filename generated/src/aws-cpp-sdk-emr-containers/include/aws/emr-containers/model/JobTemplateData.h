@@ -156,21 +156,21 @@ class JobTemplateData {
   ///@}
  private:
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   ParametricConfigurationOverrides m_configurationOverrides;
-  bool m_configurationOverridesHasBeenSet = false;
 
   JobDriver m_jobDriver;
-  bool m_jobDriverHasBeenSet = false;
 
   Aws::Map<Aws::String, TemplateParameterConfiguration> m_parameterConfiguration;
-  bool m_parameterConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_jobTags;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_configurationOverridesHasBeenSet = false;
+  bool m_jobDriverHasBeenSet = false;
+  bool m_parameterConfigurationHasBeenSet = false;
   bool m_jobTagsHasBeenSet = false;
 };
 

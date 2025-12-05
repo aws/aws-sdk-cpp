@@ -87,12 +87,12 @@ class FindMatchesTaskRunProperties {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobRunId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
   bool m_jobRunIdHasBeenSet = false;
 };
 

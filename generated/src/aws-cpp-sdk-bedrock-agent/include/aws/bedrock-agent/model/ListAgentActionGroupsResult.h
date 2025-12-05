@@ -87,12 +87,12 @@ class ListAgentActionGroupsResult {
   ///@}
  private:
   Aws::Vector<ActionGroupSummary> m_actionGroupSummaries;
-  bool m_actionGroupSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionGroupSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

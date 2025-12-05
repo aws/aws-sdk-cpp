@@ -66,9 +66,9 @@ class MailDomainSummary {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_defaultDomain{false};
+  bool m_domainNameHasBeenSet = false;
   bool m_defaultDomainHasBeenSet = false;
 };
 

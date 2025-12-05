@@ -70,9 +70,9 @@ class ClientProperties {
   ///@}
  private:
   ReconnectEnum m_reconnectEnabled{ReconnectEnum::NOT_SET};
-  bool m_reconnectEnabledHasBeenSet = false;
 
   LogUploadEnum m_logUploadEnabled{LogUploadEnum::NOT_SET};
+  bool m_reconnectEnabledHasBeenSet = false;
   bool m_logUploadEnabledHasBeenSet = false;
 };
 

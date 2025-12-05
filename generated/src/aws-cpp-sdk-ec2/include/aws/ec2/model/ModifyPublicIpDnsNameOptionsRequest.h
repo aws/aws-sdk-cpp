@@ -101,12 +101,12 @@ class ModifyPublicIpDnsNameOptionsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   PublicIpDnsOption m_hostnameType{PublicIpDnsOption::NOT_SET};
-  bool m_hostnameTypeHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_hostnameTypeHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

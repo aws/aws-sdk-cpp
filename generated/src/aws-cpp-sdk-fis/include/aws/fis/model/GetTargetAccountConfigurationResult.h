@@ -60,9 +60,9 @@ class GetTargetAccountConfigurationResult {
   ///@}
  private:
   TargetAccountConfiguration m_targetAccountConfiguration;
-  bool m_targetAccountConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetAccountConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

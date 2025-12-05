@@ -132,21 +132,21 @@ class DeleteRegistrationAttachmentResult {
   ///@}
  private:
   Aws::String m_registrationAttachmentArn;
-  bool m_registrationAttachmentArnHasBeenSet = false;
 
   Aws::String m_registrationAttachmentId;
-  bool m_registrationAttachmentIdHasBeenSet = false;
 
   AttachmentStatus m_attachmentStatus{AttachmentStatus::NOT_SET};
-  bool m_attachmentStatusHasBeenSet = false;
 
   AttachmentUploadErrorReason m_attachmentUploadErrorReason{AttachmentUploadErrorReason::NOT_SET};
-  bool m_attachmentUploadErrorReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationAttachmentArnHasBeenSet = false;
+  bool m_registrationAttachmentIdHasBeenSet = false;
+  bool m_attachmentStatusHasBeenSet = false;
+  bool m_attachmentUploadErrorReasonHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

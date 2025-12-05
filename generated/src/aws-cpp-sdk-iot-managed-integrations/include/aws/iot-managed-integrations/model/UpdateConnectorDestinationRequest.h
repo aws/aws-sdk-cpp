@@ -140,21 +140,21 @@ class UpdateConnectorDestinationRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   AuthConfigUpdate m_authConfig;
-  bool m_authConfigHasBeenSet = false;
 
   SecretsManager m_secretsManager;
+  bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_authConfigHasBeenSet = false;
   bool m_secretsManagerHasBeenSet = false;
 };
 

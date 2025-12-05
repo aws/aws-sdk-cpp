@@ -59,9 +59,9 @@ class CreateProposalResult {
   ///@}
  private:
   Aws::String m_proposalId;
-  bool m_proposalIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proposalIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

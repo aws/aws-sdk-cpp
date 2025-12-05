@@ -72,9 +72,9 @@ class CreateCertificateFromCsrRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateSigningRequest;
-  bool m_certificateSigningRequestHasBeenSet = false;
 
   bool m_setAsActive{false};
+  bool m_certificateSigningRequestHasBeenSet = false;
   bool m_setAsActiveHasBeenSet = false;
 };
 

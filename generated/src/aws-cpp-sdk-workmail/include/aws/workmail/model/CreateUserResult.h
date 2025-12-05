@@ -59,9 +59,9 @@ class CreateUserResult {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

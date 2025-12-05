@@ -106,12 +106,12 @@ class AzElSegment {
   ///@}
  private:
   Aws::Utils::DateTime m_referenceEpoch{};
-  bool m_referenceEpochHasBeenSet = false;
 
   ISO8601TimeRange m_validTimeRange;
-  bool m_validTimeRangeHasBeenSet = false;
 
   Aws::Vector<TimeAzEl> m_azElList;
+  bool m_referenceEpochHasBeenSet = false;
+  bool m_validTimeRangeHasBeenSet = false;
   bool m_azElListHasBeenSet = false;
 };
 

@@ -189,27 +189,27 @@ class RuleBasedMatchingResponse {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<MatchingRule> m_matchingRules;
-  bool m_matchingRulesHasBeenSet = false;
 
   RuleBasedMatchingStatus m_status{RuleBasedMatchingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxAllowedRuleLevelForMerging{0};
-  bool m_maxAllowedRuleLevelForMergingHasBeenSet = false;
 
   int m_maxAllowedRuleLevelForMatching{0};
-  bool m_maxAllowedRuleLevelForMatchingHasBeenSet = false;
 
   AttributeTypesSelector m_attributeTypesSelector;
-  bool m_attributeTypesSelectorHasBeenSet = false;
 
   ConflictResolution m_conflictResolution;
-  bool m_conflictResolutionHasBeenSet = false;
 
   ExportingConfig m_exportingConfig;
+  bool m_enabledHasBeenSet = false;
+  bool m_matchingRulesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxAllowedRuleLevelForMergingHasBeenSet = false;
+  bool m_maxAllowedRuleLevelForMatchingHasBeenSet = false;
+  bool m_attributeTypesSelectorHasBeenSet = false;
+  bool m_conflictResolutionHasBeenSet = false;
   bool m_exportingConfigHasBeenSet = false;
 };
 

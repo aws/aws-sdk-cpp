@@ -75,12 +75,12 @@ class CreateScheduledQueryResult {
   ///@}
  private:
   Aws::String m_scheduledQueryArn;
-  bool m_scheduledQueryArnHasBeenSet = false;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledQueryArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

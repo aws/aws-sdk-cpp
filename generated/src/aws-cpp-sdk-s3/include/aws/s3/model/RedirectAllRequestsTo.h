@@ -69,9 +69,9 @@ class RedirectAllRequestsTo {
   ///@}
  private:
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
+  bool m_hostNameHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

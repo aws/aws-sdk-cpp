@@ -82,12 +82,12 @@ class InputSpecification {
   ///@}
  private:
   InputCodec m_codec{InputCodec::NOT_SET};
-  bool m_codecHasBeenSet = false;
 
   InputMaximumBitrate m_maximumBitrate{InputMaximumBitrate::NOT_SET};
-  bool m_maximumBitrateHasBeenSet = false;
 
   InputResolution m_resolution{InputResolution::NOT_SET};
+  bool m_codecHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
   bool m_resolutionHasBeenSet = false;
 };
 

@@ -144,21 +144,21 @@ class ProcessDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_pid{0};
-  bool m_pidHasBeenSet = false;
 
   int m_parentPid{0};
-  bool m_parentPidHasBeenSet = false;
 
   Aws::String m_launchedAt;
-  bool m_launchedAtHasBeenSet = false;
 
   Aws::String m_terminatedAt;
+  bool m_nameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_pidHasBeenSet = false;
+  bool m_parentPidHasBeenSet = false;
+  bool m_launchedAtHasBeenSet = false;
   bool m_terminatedAtHasBeenSet = false;
 };
 

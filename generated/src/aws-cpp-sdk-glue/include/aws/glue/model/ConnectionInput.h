@@ -357,39 +357,39 @@ class ConnectionInput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchCriteria;
-  bool m_matchCriteriaHasBeenSet = false;
 
   Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
-  bool m_connectionPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sparkProperties;
-  bool m_sparkPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_athenaProperties;
-  bool m_athenaPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_pythonProperties;
-  bool m_pythonPropertiesHasBeenSet = false;
 
   PhysicalConnectionRequirements m_physicalConnectionRequirements;
-  bool m_physicalConnectionRequirementsHasBeenSet = false;
 
   AuthenticationConfigurationInput m_authenticationConfiguration;
-  bool m_authenticationConfigurationHasBeenSet = false;
 
   bool m_validateCredentials{false};
-  bool m_validateCredentialsHasBeenSet = false;
 
   Aws::Vector<ComputeEnvironment> m_validateForComputeEnvironments;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_matchCriteriaHasBeenSet = false;
+  bool m_connectionPropertiesHasBeenSet = false;
+  bool m_sparkPropertiesHasBeenSet = false;
+  bool m_athenaPropertiesHasBeenSet = false;
+  bool m_pythonPropertiesHasBeenSet = false;
+  bool m_physicalConnectionRequirementsHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
+  bool m_validateCredentialsHasBeenSet = false;
   bool m_validateForComputeEnvironmentsHasBeenSet = false;
 };
 

@@ -103,12 +103,12 @@ class AutomatedReasoningPolicyGeneratedTestCase {
   ///@}
  private:
   Aws::String m_queryContent;
-  bool m_queryContentHasBeenSet = false;
 
   Aws::String m_guardContent;
-  bool m_guardContentHasBeenSet = false;
 
   AutomatedReasoningCheckResult m_expectedAggregatedFindingsResult{AutomatedReasoningCheckResult::NOT_SET};
+  bool m_queryContentHasBeenSet = false;
+  bool m_guardContentHasBeenSet = false;
   bool m_expectedAggregatedFindingsResultHasBeenSet = false;
 };
 

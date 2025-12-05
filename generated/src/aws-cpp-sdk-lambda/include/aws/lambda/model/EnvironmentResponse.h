@@ -79,9 +79,9 @@ class EnvironmentResponse {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   EnvironmentError m_error;
+  bool m_variablesHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

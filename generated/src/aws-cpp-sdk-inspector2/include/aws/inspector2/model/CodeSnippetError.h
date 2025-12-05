@@ -88,12 +88,12 @@ class CodeSnippetError {
   ///@}
  private:
   Aws::String m_findingArn;
-  bool m_findingArnHasBeenSet = false;
 
   CodeSnippetErrorCode m_errorCode{CodeSnippetErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_findingArnHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

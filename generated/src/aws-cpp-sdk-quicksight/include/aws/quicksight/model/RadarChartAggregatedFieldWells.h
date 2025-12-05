@@ -109,12 +109,12 @@ class RadarChartAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_color;
-  bool m_colorHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
+  bool m_categoryHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

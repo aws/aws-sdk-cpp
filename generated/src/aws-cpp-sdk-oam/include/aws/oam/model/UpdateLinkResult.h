@@ -198,30 +198,30 @@ class UpdateLinkResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_labelTemplate;
-  bool m_labelTemplateHasBeenSet = false;
 
   LinkConfiguration m_linkConfiguration;
-  bool m_linkConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_sinkArn;
-  bool m_sinkArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_labelTemplateHasBeenSet = false;
+  bool m_linkConfigurationHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_sinkArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

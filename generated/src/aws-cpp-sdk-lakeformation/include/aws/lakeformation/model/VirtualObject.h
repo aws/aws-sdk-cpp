@@ -70,9 +70,9 @@ class VirtualObject {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_eTag;
+  bool m_uriHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
 };
 

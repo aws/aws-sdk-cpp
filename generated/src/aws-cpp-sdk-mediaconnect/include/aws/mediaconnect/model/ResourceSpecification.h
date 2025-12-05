@@ -65,9 +65,9 @@ class ResourceSpecification {
   ///@}
  private:
   int m_reservedBitrate{0};
-  bool m_reservedBitrateHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_reservedBitrateHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

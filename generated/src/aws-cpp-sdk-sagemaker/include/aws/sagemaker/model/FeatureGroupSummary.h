@@ -129,18 +129,18 @@ class FeatureGroupSummary {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_featureGroupArn;
-  bool m_featureGroupArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   FeatureGroupStatus m_featureGroupStatus{FeatureGroupStatus::NOT_SET};
-  bool m_featureGroupStatusHasBeenSet = false;
 
   OfflineStoreStatus m_offlineStoreStatus;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_featureGroupArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_featureGroupStatusHasBeenSet = false;
   bool m_offlineStoreStatusHasBeenSet = false;
 };
 

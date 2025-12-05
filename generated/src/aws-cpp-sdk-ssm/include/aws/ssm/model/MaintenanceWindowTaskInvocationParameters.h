@@ -107,15 +107,15 @@ class MaintenanceWindowTaskInvocationParameters {
   ///@}
  private:
   MaintenanceWindowRunCommandParameters m_runCommand;
-  bool m_runCommandHasBeenSet = false;
 
   MaintenanceWindowAutomationParameters m_automation;
-  bool m_automationHasBeenSet = false;
 
   MaintenanceWindowStepFunctionsParameters m_stepFunctions;
-  bool m_stepFunctionsHasBeenSet = false;
 
   MaintenanceWindowLambdaParameters m_lambda;
+  bool m_runCommandHasBeenSet = false;
+  bool m_automationHasBeenSet = false;
+  bool m_stepFunctionsHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
 };
 

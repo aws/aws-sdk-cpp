@@ -66,9 +66,9 @@ class IcebergCompactionSettings {
   ///@}
  private:
   int m_targetFileSizeMB{0};
-  bool m_targetFileSizeMBHasBeenSet = false;
 
   IcebergCompactionStrategy m_strategy{IcebergCompactionStrategy::NOT_SET};
+  bool m_targetFileSizeMBHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
 };
 

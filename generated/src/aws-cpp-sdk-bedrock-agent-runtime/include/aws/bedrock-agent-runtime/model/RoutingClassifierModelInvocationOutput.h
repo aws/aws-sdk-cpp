@@ -89,12 +89,12 @@ class RoutingClassifierModelInvocationOutput {
   ///@}
  private:
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   RawResponse m_rawResponse;
-  bool m_rawResponseHasBeenSet = false;
 
   Aws::String m_traceId;
+  bool m_metadataHasBeenSet = false;
+  bool m_rawResponseHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class GetModelTemplateResult {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_valueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

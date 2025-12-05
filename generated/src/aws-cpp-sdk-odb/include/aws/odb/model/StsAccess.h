@@ -111,15 +111,15 @@ class StsAccess {
   ///@}
  private:
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv4Addresses;
-  bool m_ipv4AddressesHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_stsPolicyDocument;
+  bool m_statusHasBeenSet = false;
+  bool m_ipv4AddressesHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
   bool m_stsPolicyDocumentHasBeenSet = false;
 };
 

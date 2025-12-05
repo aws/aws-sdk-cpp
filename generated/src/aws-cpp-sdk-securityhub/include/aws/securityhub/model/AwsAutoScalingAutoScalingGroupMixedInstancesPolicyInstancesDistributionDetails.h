@@ -146,21 +146,21 @@ class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDet
   ///@}
  private:
   Aws::String m_onDemandAllocationStrategy;
-  bool m_onDemandAllocationStrategyHasBeenSet = false;
 
   int m_onDemandBaseCapacity{0};
-  bool m_onDemandBaseCapacityHasBeenSet = false;
 
   int m_onDemandPercentageAboveBaseCapacity{0};
-  bool m_onDemandPercentageAboveBaseCapacityHasBeenSet = false;
 
   Aws::String m_spotAllocationStrategy;
-  bool m_spotAllocationStrategyHasBeenSet = false;
 
   int m_spotInstancePools{0};
-  bool m_spotInstancePoolsHasBeenSet = false;
 
   Aws::String m_spotMaxPrice;
+  bool m_onDemandAllocationStrategyHasBeenSet = false;
+  bool m_onDemandBaseCapacityHasBeenSet = false;
+  bool m_onDemandPercentageAboveBaseCapacityHasBeenSet = false;
+  bool m_spotAllocationStrategyHasBeenSet = false;
+  bool m_spotInstancePoolsHasBeenSet = false;
   bool m_spotMaxPriceHasBeenSet = false;
 };
 

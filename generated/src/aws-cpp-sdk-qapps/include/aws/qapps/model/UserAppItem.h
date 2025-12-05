@@ -174,27 +174,27 @@ class UserAppItem {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   bool m_canEdit{false};
-  bool m_canEditHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_isVerified{false};
+  bool m_appIdHasBeenSet = false;
+  bool m_appArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_canEditHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_isVerifiedHasBeenSet = false;
 };
 

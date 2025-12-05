@@ -59,9 +59,9 @@ class CreateLicenseAssetRulesetResult {
   ///@}
  private:
   Aws::String m_licenseAssetRulesetArn;
-  bool m_licenseAssetRulesetArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseAssetRulesetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

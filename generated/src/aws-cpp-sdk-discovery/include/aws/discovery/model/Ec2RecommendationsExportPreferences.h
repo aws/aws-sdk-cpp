@@ -175,24 +175,24 @@ class Ec2RecommendationsExportPreferences {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   UsageMetricBasis m_cpuPerformanceMetricBasis;
-  bool m_cpuPerformanceMetricBasisHasBeenSet = false;
 
   UsageMetricBasis m_ramPerformanceMetricBasis;
-  bool m_ramPerformanceMetricBasisHasBeenSet = false;
 
   Tenancy m_tenancy{Tenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedInstanceTypes;
-  bool m_excludedInstanceTypesHasBeenSet = false;
 
   Aws::String m_preferredRegion;
-  bool m_preferredRegionHasBeenSet = false;
 
   ReservedInstanceOptions m_reservedInstanceOptions;
+  bool m_enabledHasBeenSet = false;
+  bool m_cpuPerformanceMetricBasisHasBeenSet = false;
+  bool m_ramPerformanceMetricBasisHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_excludedInstanceTypesHasBeenSet = false;
+  bool m_preferredRegionHasBeenSet = false;
   bool m_reservedInstanceOptionsHasBeenSet = false;
 };
 

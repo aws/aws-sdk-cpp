@@ -146,21 +146,21 @@ class BackendEnvironment {
   ///@}
  private:
   Aws::String m_backendEnvironmentArn;
-  bool m_backendEnvironmentArnHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_deploymentArtifacts;
-  bool m_deploymentArtifactsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_backendEnvironmentArnHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_deploymentArtifactsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

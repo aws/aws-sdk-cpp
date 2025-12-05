@@ -267,39 +267,39 @@ class UpdateImageVersionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aliasesToAdd;
-  bool m_aliasesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aliasesToDelete;
-  bool m_aliasesToDeleteHasBeenSet = false;
 
   VendorGuidance m_vendorGuidance{VendorGuidance::NOT_SET};
-  bool m_vendorGuidanceHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_mLFramework;
-  bool m_mLFrameworkHasBeenSet = false;
 
   Aws::String m_programmingLang;
-  bool m_programmingLangHasBeenSet = false;
 
   Processor m_processor{Processor::NOT_SET};
-  bool m_processorHasBeenSet = false;
 
   bool m_horovod{false};
-  bool m_horovodHasBeenSet = false;
 
   Aws::String m_releaseNotes;
+  bool m_imageNameHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_aliasesToAddHasBeenSet = false;
+  bool m_aliasesToDeleteHasBeenSet = false;
+  bool m_vendorGuidanceHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_mLFrameworkHasBeenSet = false;
+  bool m_programmingLangHasBeenSet = false;
+  bool m_processorHasBeenSet = false;
+  bool m_horovodHasBeenSet = false;
   bool m_releaseNotesHasBeenSet = false;
 };
 

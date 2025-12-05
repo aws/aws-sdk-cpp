@@ -107,15 +107,15 @@ class ConditionBasedCollectionScheme {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   long long m_minimumTriggerIntervalMs{0};
-  bool m_minimumTriggerIntervalMsHasBeenSet = false;
 
   TriggerMode m_triggerMode{TriggerMode::NOT_SET};
-  bool m_triggerModeHasBeenSet = false;
 
   int m_conditionLanguageVersion{0};
+  bool m_expressionHasBeenSet = false;
+  bool m_minimumTriggerIntervalMsHasBeenSet = false;
+  bool m_triggerModeHasBeenSet = false;
   bool m_conditionLanguageVersionHasBeenSet = false;
 };
 

@@ -137,18 +137,18 @@ class RecurringRetrieval {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
-  bool m_dynamicVariablesHasBeenSet = false;
 
   int m_delayAfterAvailEndSeconds{0};
-  bool m_delayAfterAvailEndSecondsHasBeenSet = false;
 
   TrafficShapingType m_trafficShapingType{TrafficShapingType::NOT_SET};
-  bool m_trafficShapingTypeHasBeenSet = false;
 
   TrafficShapingRetrievalWindow m_trafficShapingRetrievalWindow;
-  bool m_trafficShapingRetrievalWindowHasBeenSet = false;
 
   TrafficShapingTpsConfiguration m_trafficShapingTpsConfiguration;
+  bool m_dynamicVariablesHasBeenSet = false;
+  bool m_delayAfterAvailEndSecondsHasBeenSet = false;
+  bool m_trafficShapingTypeHasBeenSet = false;
+  bool m_trafficShapingRetrievalWindowHasBeenSet = false;
   bool m_trafficShapingTpsConfigurationHasBeenSet = false;
 };
 

@@ -253,33 +253,33 @@ class InvokeEndpointRequest : public StreamingSageMakerRuntimeRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_customAttributes;
-  bool m_customAttributesHasBeenSet = false;
 
   Aws::String m_targetModel;
-  bool m_targetModelHasBeenSet = false;
 
   Aws::String m_targetVariant;
-  bool m_targetVariantHasBeenSet = false;
 
   Aws::String m_targetContainerHostname;
-  bool m_targetContainerHostnameHasBeenSet = false;
 
   Aws::String m_inferenceId;
-  bool m_inferenceIdHasBeenSet = false;
 
   Aws::String m_enableExplanations;
-  bool m_enableExplanationsHasBeenSet = false;
 
   Aws::String m_inferenceComponentName;
-  bool m_inferenceComponentNameHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_acceptHasBeenSet = false;
+  bool m_customAttributesHasBeenSet = false;
+  bool m_targetModelHasBeenSet = false;
+  bool m_targetVariantHasBeenSet = false;
+  bool m_targetContainerHostnameHasBeenSet = false;
+  bool m_inferenceIdHasBeenSet = false;
+  bool m_enableExplanationsHasBeenSet = false;
+  bool m_inferenceComponentNameHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

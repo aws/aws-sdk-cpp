@@ -70,9 +70,9 @@ class ExternalWorkflowExecutionSignaledEventAttributes {
   ///@}
  private:
   WorkflowExecution m_workflowExecution;
-  bool m_workflowExecutionHasBeenSet = false;
 
   long long m_initiatedEventId{0};
+  bool m_workflowExecutionHasBeenSet = false;
   bool m_initiatedEventIdHasBeenSet = false;
 };
 

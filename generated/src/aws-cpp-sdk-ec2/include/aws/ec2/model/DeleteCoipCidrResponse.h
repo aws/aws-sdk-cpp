@@ -60,9 +60,9 @@ class DeleteCoipCidrResponse {
   ///@}
  private:
   CoipCidr m_coipCidr;
-  bool m_coipCidrHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_coipCidrHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

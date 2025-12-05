@@ -72,9 +72,9 @@ class PutEvaluationsResult {
   ///@}
  private:
   Aws::Vector<Evaluation> m_failedEvaluations;
-  bool m_failedEvaluationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedEvaluationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

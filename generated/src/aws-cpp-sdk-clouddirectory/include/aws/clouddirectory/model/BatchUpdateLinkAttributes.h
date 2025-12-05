@@ -80,9 +80,9 @@ class BatchUpdateLinkAttributes {
   ///@}
  private:
   TypedLinkSpecifier m_typedLinkSpecifier;
-  bool m_typedLinkSpecifierHasBeenSet = false;
 
   Aws::Vector<LinkAttributeUpdate> m_attributeUpdates;
+  bool m_typedLinkSpecifierHasBeenSet = false;
   bool m_attributeUpdatesHasBeenSet = false;
 };
 

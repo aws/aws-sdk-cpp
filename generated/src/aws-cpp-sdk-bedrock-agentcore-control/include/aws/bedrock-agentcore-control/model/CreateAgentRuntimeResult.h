@@ -146,24 +146,24 @@ class CreateAgentRuntimeResult {
   ///@}
  private:
   Aws::String m_agentRuntimeArn;
-  bool m_agentRuntimeArnHasBeenSet = false;
 
   WorkloadIdentityDetails m_workloadIdentityDetails;
-  bool m_workloadIdentityDetailsHasBeenSet = false;
 
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_agentRuntimeVersion;
-  bool m_agentRuntimeVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentRuntimeArnHasBeenSet = false;
+  bool m_workloadIdentityDetailsHasBeenSet = false;
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_agentRuntimeVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

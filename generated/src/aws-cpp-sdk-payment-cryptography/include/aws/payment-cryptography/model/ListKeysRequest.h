@@ -88,12 +88,12 @@ class ListKeysRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   KeyState m_keyState{KeyState::NOT_SET};
-  bool m_keyStateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_keyStateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

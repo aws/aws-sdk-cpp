@@ -109,15 +109,15 @@ class InferenceComponentRollingUpdatePolicy {
   ///@}
  private:
   InferenceComponentCapacitySize m_maximumBatchSize;
-  bool m_maximumBatchSizeHasBeenSet = false;
 
   int m_waitIntervalInSeconds{0};
-  bool m_waitIntervalInSecondsHasBeenSet = false;
 
   int m_maximumExecutionTimeoutInSeconds{0};
-  bool m_maximumExecutionTimeoutInSecondsHasBeenSet = false;
 
   InferenceComponentCapacitySize m_rollbackMaximumBatchSize;
+  bool m_maximumBatchSizeHasBeenSet = false;
+  bool m_waitIntervalInSecondsHasBeenSet = false;
+  bool m_maximumExecutionTimeoutInSecondsHasBeenSet = false;
   bool m_rollbackMaximumBatchSizeHasBeenSet = false;
 };
 

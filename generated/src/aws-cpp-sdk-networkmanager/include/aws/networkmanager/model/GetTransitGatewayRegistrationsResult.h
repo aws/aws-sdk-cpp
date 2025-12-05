@@ -85,12 +85,12 @@ class GetTransitGatewayRegistrationsResult {
   ///@}
  private:
   Aws::Vector<TransitGatewayRegistration> m_transitGatewayRegistrations;
-  bool m_transitGatewayRegistrationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transitGatewayRegistrationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

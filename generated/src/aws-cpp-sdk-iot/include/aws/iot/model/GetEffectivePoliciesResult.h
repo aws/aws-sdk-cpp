@@ -67,9 +67,9 @@ class GetEffectivePoliciesResult {
   ///@}
  private:
   Aws::Vector<EffectivePolicy> m_effectivePolicies;
-  bool m_effectivePoliciesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_effectivePoliciesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

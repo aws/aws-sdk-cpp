@@ -134,15 +134,15 @@ class PutObjectRequest : public StreamingMediaStoreDataRequest {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   UploadAvailability m_uploadAvailability{UploadAvailability::NOT_SET};
+  bool m_pathHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
   bool m_uploadAvailabilityHasBeenSet = false;
 };
 

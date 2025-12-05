@@ -85,12 +85,12 @@ class ListTargetResourceTypesResult {
   ///@}
  private:
   Aws::Vector<TargetResourceTypeSummary> m_targetResourceTypes;
-  bool m_targetResourceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetResourceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

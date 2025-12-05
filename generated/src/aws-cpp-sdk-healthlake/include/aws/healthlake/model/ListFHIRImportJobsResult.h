@@ -84,12 +84,12 @@ class ListFHIRImportJobsResult {
   ///@}
  private:
   Aws::Vector<ImportJobProperties> m_importJobPropertiesList;
-  bool m_importJobPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importJobPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

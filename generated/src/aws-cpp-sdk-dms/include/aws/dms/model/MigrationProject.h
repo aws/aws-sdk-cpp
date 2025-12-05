@@ -236,33 +236,33 @@ class MigrationProject {
   ///@}
  private:
   Aws::String m_migrationProjectName;
-  bool m_migrationProjectNameHasBeenSet = false;
 
   Aws::String m_migrationProjectArn;
-  bool m_migrationProjectArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_migrationProjectCreationTime{};
-  bool m_migrationProjectCreationTimeHasBeenSet = false;
 
   Aws::Vector<DataProviderDescriptor> m_sourceDataProviderDescriptors;
-  bool m_sourceDataProviderDescriptorsHasBeenSet = false;
 
   Aws::Vector<DataProviderDescriptor> m_targetDataProviderDescriptors;
-  bool m_targetDataProviderDescriptorsHasBeenSet = false;
 
   Aws::String m_instanceProfileArn;
-  bool m_instanceProfileArnHasBeenSet = false;
 
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::String m_transformationRules;
-  bool m_transformationRulesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SCApplicationAttributes m_schemaConversionApplicationAttributes;
+  bool m_migrationProjectNameHasBeenSet = false;
+  bool m_migrationProjectArnHasBeenSet = false;
+  bool m_migrationProjectCreationTimeHasBeenSet = false;
+  bool m_sourceDataProviderDescriptorsHasBeenSet = false;
+  bool m_targetDataProviderDescriptorsHasBeenSet = false;
+  bool m_instanceProfileArnHasBeenSet = false;
+  bool m_instanceProfileNameHasBeenSet = false;
+  bool m_transformationRulesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_schemaConversionApplicationAttributesHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class StartDevEnvironmentSessionRequest : public CodeCatalystRequest {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DevEnvironmentSessionConfiguration m_sessionConfiguration;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_sessionConfigurationHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class Palette {
   ///@}
  private:
   Aws::String m_foreground;
-  bool m_foregroundHasBeenSet = false;
 
   Aws::String m_background;
+  bool m_foregroundHasBeenSet = false;
   bool m_backgroundHasBeenSet = false;
 };
 

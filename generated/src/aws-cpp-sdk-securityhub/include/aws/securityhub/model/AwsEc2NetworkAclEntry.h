@@ -178,27 +178,27 @@ class AwsEc2NetworkAclEntry {
   ///@}
  private:
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   bool m_egress{false};
-  bool m_egressHasBeenSet = false;
 
   IcmpTypeCode m_icmpTypeCode;
-  bool m_icmpTypeCodeHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
-  bool m_ipv6CidrBlockHasBeenSet = false;
 
   PortRangeFromTo m_portRange;
-  bool m_portRangeHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_ruleAction;
-  bool m_ruleActionHasBeenSet = false;
 
   int m_ruleNumber{0};
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_egressHasBeenSet = false;
+  bool m_icmpTypeCodeHasBeenSet = false;
+  bool m_ipv6CidrBlockHasBeenSet = false;
+  bool m_portRangeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
   bool m_ruleNumberHasBeenSet = false;
 };
 

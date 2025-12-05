@@ -65,9 +65,9 @@ class UpdateSnapshotRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   int m_retentionPeriod{0};
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_snapshotName;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_snapshotNameHasBeenSet = false;
 };
 

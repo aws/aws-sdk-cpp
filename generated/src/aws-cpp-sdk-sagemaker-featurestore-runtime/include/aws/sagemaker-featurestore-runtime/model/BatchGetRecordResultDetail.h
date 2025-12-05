@@ -114,15 +114,15 @@ class BatchGetRecordResultDetail {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_recordIdentifierValueAsString;
-  bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
   Aws::Vector<FeatureValue> m_record;
-  bool m_recordHasBeenSet = false;
 
   Aws::String m_expiresAt;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordIdentifierValueAsStringHasBeenSet = false;
+  bool m_recordHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
 };
 

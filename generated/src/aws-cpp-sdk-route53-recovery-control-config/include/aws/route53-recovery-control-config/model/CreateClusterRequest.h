@@ -114,15 +114,15 @@ class CreateClusterRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteIntegrationRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_integrationId;
+  bool m_apiIdHasBeenSet = false;
   bool m_integrationIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class BatchDeleteWorkloadEstimateUsageRequest : public BCMPricingCalculatorReque
   ///@}
  private:
   Aws::String m_workloadEstimateId;
-  bool m_workloadEstimateIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ids;
+  bool m_workloadEstimateIdHasBeenSet = false;
   bool m_idsHasBeenSet = false;
 };
 

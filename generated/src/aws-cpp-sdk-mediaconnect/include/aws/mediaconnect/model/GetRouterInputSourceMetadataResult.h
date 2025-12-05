@@ -96,15 +96,15 @@ class GetRouterInputSourceMetadataResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RouterInputSourceMetadataDetails m_sourceMetadataDetails;
-  bool m_sourceMetadataDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceMetadataDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -191,27 +191,27 @@ class WorkspaceDescription {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   WorkspaceStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_prometheusEndpoint;
-  bool m_prometheusEndpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_prometheusEndpointHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

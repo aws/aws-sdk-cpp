@@ -115,15 +115,15 @@ class CustomCodeSigning {
   ///@}
  private:
   CodeSigningSignature m_signature;
-  bool m_signatureHasBeenSet = false;
 
   CodeSigningCertificateChain m_certificateChain;
-  bool m_certificateChainHasBeenSet = false;
 
   Aws::String m_hashAlgorithm;
-  bool m_hashAlgorithmHasBeenSet = false;
 
   Aws::String m_signatureAlgorithm;
+  bool m_signatureHasBeenSet = false;
+  bool m_certificateChainHasBeenSet = false;
+  bool m_hashAlgorithmHasBeenSet = false;
   bool m_signatureAlgorithmHasBeenSet = false;
 };
 

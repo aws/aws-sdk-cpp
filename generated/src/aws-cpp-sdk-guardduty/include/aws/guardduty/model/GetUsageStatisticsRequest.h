@@ -144,21 +144,21 @@ class GetUsageStatisticsRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   UsageStatisticType m_usageStatisticType{UsageStatisticType::NOT_SET};
-  bool m_usageStatisticTypeHasBeenSet = false;
 
   UsageCriteria m_usageCriteria;
-  bool m_usageCriteriaHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_usageStatisticTypeHasBeenSet = false;
+  bool m_usageCriteriaHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

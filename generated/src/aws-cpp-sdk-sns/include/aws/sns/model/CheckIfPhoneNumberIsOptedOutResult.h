@@ -66,9 +66,9 @@ class CheckIfPhoneNumberIsOptedOutResult {
   ///@}
  private:
   bool m_isOptedOut{false};
-  bool m_isOptedOutHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_isOptedOutHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

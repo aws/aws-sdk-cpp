@@ -60,9 +60,9 @@ class GetReplicationSetResult {
   ///@}
  private:
   ReplicationSet m_replicationSet;
-  bool m_replicationSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

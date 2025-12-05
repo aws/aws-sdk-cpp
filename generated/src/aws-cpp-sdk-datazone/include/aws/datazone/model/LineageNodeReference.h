@@ -70,9 +70,9 @@ class LineageNodeReference {
   ///@}
  private:
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_eventTimestampHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

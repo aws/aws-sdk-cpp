@@ -161,21 +161,21 @@ class GetSessionResult {
   ///@}
  private:
   Aws::Vector<IntentSummary> m_recentIntentSummaryView;
-  bool m_recentIntentSummaryViewHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-  bool m_sessionAttributesHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   DialogAction m_dialogAction;
-  bool m_dialogActionHasBeenSet = false;
 
   Aws::Vector<ActiveContext> m_activeContexts;
-  bool m_activeContextsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recentIntentSummaryViewHasBeenSet = false;
+  bool m_sessionAttributesHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_dialogActionHasBeenSet = false;
+  bool m_activeContextsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

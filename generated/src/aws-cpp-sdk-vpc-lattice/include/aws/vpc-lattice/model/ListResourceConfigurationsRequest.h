@@ -122,18 +122,18 @@ class ListResourceConfigurationsRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_resourceGatewayIdentifier;
-  bool m_resourceGatewayIdentifierHasBeenSet = false;
 
   Aws::String m_resourceConfigurationGroupIdentifier;
-  bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
 
   Aws::String m_domainVerificationIdentifier;
-  bool m_domainVerificationIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceGatewayIdentifierHasBeenSet = false;
+  bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
+  bool m_domainVerificationIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

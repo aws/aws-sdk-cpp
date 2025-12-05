@@ -120,15 +120,15 @@ class CreateRemoteAccessSessionConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_auxiliaryApps;
-  bool m_auxiliaryAppsHasBeenSet = false;
 
   BillingMethod m_billingMethod{BillingMethod::NOT_SET};
-  bool m_billingMethodHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpceConfigurationArns;
-  bool m_vpceConfigurationArnsHasBeenSet = false;
 
   DeviceProxy m_deviceProxy;
+  bool m_auxiliaryAppsHasBeenSet = false;
+  bool m_billingMethodHasBeenSet = false;
+  bool m_vpceConfigurationArnsHasBeenSet = false;
   bool m_deviceProxyHasBeenSet = false;
 };
 

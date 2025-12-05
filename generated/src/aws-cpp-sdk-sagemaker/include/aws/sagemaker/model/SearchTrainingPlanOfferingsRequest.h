@@ -193,27 +193,27 @@ class SearchTrainingPlanOfferingsRequest : public SageMakerRequest {
   ///@}
  private:
   ReservedCapacityInstanceType m_instanceType{ReservedCapacityInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_ultraServerType;
-  bool m_ultraServerTypeHasBeenSet = false;
 
   int m_ultraServerCount{0};
-  bool m_ultraServerCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimeAfter{};
-  bool m_startTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimeBefore{};
-  bool m_endTimeBeforeHasBeenSet = false;
 
   long long m_durationHours{0};
-  bool m_durationHoursHasBeenSet = false;
 
   Aws::Vector<SageMakerResourceName> m_targetResources;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_ultraServerTypeHasBeenSet = false;
+  bool m_ultraServerCountHasBeenSet = false;
+  bool m_startTimeAfterHasBeenSet = false;
+  bool m_endTimeBeforeHasBeenSet = false;
+  bool m_durationHoursHasBeenSet = false;
   bool m_targetResourcesHasBeenSet = false;
 };
 

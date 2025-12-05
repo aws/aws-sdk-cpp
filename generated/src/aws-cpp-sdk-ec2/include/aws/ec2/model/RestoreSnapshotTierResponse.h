@@ -111,18 +111,18 @@ class RestoreSnapshotTierResponse {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreStartTime{};
-  bool m_restoreStartTimeHasBeenSet = false;
 
   int m_restoreDuration{0};
-  bool m_restoreDurationHasBeenSet = false;
 
   bool m_isPermanentRestore{false};
-  bool m_isPermanentRestoreHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_restoreStartTimeHasBeenSet = false;
+  bool m_restoreDurationHasBeenSet = false;
+  bool m_isPermanentRestoreHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

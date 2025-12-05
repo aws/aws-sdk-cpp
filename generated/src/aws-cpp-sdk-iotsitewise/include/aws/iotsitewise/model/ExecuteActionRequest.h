@@ -124,18 +124,18 @@ class ExecuteActionRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   TargetResource m_targetResource;
-  bool m_targetResourceHasBeenSet = false;
 
   Aws::String m_actionDefinitionId;
-  bool m_actionDefinitionIdHasBeenSet = false;
 
   ActionPayload m_actionPayload;
-  bool m_actionPayloadHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ResolveTo m_resolveTo;
+  bool m_targetResourceHasBeenSet = false;
+  bool m_actionDefinitionIdHasBeenSet = false;
+  bool m_actionPayloadHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_resolveToHasBeenSet = false;
 };
 

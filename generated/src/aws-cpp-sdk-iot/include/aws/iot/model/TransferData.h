@@ -124,18 +124,18 @@ class TransferData {
   ///@}
  private:
   Aws::String m_transferMessage;
-  bool m_transferMessageHasBeenSet = false;
 
   Aws::String m_rejectReason;
-  bool m_rejectReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_transferDate{};
-  bool m_transferDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_acceptDate{};
-  bool m_acceptDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_rejectDate{};
+  bool m_transferMessageHasBeenSet = false;
+  bool m_rejectReasonHasBeenSet = false;
+  bool m_transferDateHasBeenSet = false;
+  bool m_acceptDateHasBeenSet = false;
   bool m_rejectDateHasBeenSet = false;
 };
 

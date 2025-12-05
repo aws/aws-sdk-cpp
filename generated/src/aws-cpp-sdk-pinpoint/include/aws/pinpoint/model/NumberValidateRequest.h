@@ -72,9 +72,9 @@ class NumberValidateRequest {
   ///@}
  private:
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::String m_phoneNumber;
+  bool m_isoCountryCodeHasBeenSet = false;
   bool m_phoneNumberHasBeenSet = false;
 };
 

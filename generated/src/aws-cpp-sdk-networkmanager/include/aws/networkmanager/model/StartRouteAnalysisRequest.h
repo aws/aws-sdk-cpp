@@ -118,18 +118,18 @@ class StartRouteAnalysisRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   RouteAnalysisEndpointOptionsSpecification m_source;
-  bool m_sourceHasBeenSet = false;
 
   RouteAnalysisEndpointOptionsSpecification m_destination;
-  bool m_destinationHasBeenSet = false;
 
   bool m_includeReturnPath{false};
-  bool m_includeReturnPathHasBeenSet = false;
 
   bool m_useMiddleboxes{false};
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_includeReturnPathHasBeenSet = false;
   bool m_useMiddleboxesHasBeenSet = false;
 };
 

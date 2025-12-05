@@ -79,9 +79,9 @@ class CreateAssessmentFrameworkControlSet {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<CreateAssessmentFrameworkControl> m_controls;
+  bool m_nameHasBeenSet = false;
   bool m_controlsHasBeenSet = false;
 };
 

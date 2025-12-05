@@ -81,12 +81,12 @@ class GetLoggingOptionsResult {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleArnHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

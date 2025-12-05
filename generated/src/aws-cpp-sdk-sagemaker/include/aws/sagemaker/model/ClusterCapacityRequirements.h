@@ -71,9 +71,9 @@ class ClusterCapacityRequirements {
   ///@}
  private:
   ClusterSpotOptions m_spot;
-  bool m_spotHasBeenSet = false;
 
   ClusterOnDemandOptions m_onDemand;
+  bool m_spotHasBeenSet = false;
   bool m_onDemandHasBeenSet = false;
 };
 

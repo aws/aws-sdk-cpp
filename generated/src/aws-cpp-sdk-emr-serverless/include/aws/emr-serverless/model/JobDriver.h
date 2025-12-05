@@ -69,9 +69,9 @@ class JobDriver {
   ///@}
  private:
   SparkSubmit m_sparkSubmit;
-  bool m_sparkSubmitHasBeenSet = false;
 
   Hive m_hive;
+  bool m_sparkSubmitHasBeenSet = false;
   bool m_hiveHasBeenSet = false;
 };
 

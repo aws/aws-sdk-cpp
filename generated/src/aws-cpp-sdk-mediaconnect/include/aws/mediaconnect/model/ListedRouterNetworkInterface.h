@@ -210,33 +210,33 @@ class ListedRouterNetworkInterface {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RouterNetworkInterfaceType m_networkInterfaceType{RouterNetworkInterfaceType::NOT_SET};
-  bool m_networkInterfaceTypeHasBeenSet = false;
 
   int m_associatedOutputCount{0};
-  bool m_associatedOutputCountHasBeenSet = false;
 
   int m_associatedInputCount{0};
-  bool m_associatedInputCountHasBeenSet = false;
 
   RouterNetworkInterfaceState m_state{RouterNetworkInterfaceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_networkInterfaceTypeHasBeenSet = false;
+  bool m_associatedOutputCountHasBeenSet = false;
+  bool m_associatedInputCountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

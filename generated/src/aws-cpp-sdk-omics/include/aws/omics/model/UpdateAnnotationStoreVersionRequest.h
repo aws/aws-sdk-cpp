@@ -83,12 +83,12 @@ class UpdateAnnotationStoreVersionRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_nameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

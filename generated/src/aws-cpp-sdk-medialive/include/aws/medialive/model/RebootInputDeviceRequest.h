@@ -70,9 +70,9 @@ class RebootInputDeviceRequest : public MediaLiveRequest {
   ///@}
  private:
   RebootInputDeviceForce m_force{RebootInputDeviceForce::NOT_SET};
-  bool m_forceHasBeenSet = false;
 
   Aws::String m_inputDeviceId;
+  bool m_forceHasBeenSet = false;
   bool m_inputDeviceIdHasBeenSet = false;
 };
 

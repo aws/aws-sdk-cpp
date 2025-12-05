@@ -70,9 +70,9 @@ class AwsElbAppCookieStickinessPolicy {
   ///@}
  private:
   Aws::String m_cookieName;
-  bool m_cookieNameHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_cookieNameHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

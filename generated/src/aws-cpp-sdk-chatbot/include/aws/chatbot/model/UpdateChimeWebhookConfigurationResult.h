@@ -60,9 +60,9 @@ class UpdateChimeWebhookConfigurationResult {
   ///@}
  private:
   ChimeWebhookConfiguration m_webhookConfiguration;
-  bool m_webhookConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webhookConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

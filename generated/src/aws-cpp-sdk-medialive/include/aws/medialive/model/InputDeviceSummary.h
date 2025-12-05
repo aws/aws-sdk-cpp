@@ -339,51 +339,51 @@ class InputDeviceSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   InputDeviceConnectionState m_connectionState{InputDeviceConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   DeviceSettingsSyncState m_deviceSettingsSyncState{DeviceSettingsSyncState::NOT_SET};
-  bool m_deviceSettingsSyncStateHasBeenSet = false;
 
   DeviceUpdateStatus m_deviceUpdateStatus{DeviceUpdateStatus::NOT_SET};
-  bool m_deviceUpdateStatusHasBeenSet = false;
 
   InputDeviceHdSettings m_hdDeviceSettings;
-  bool m_hdDeviceSettingsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_macAddress;
-  bool m_macAddressHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InputDeviceNetworkSettings m_networkSettings;
-  bool m_networkSettingsHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   InputDeviceType m_type{InputDeviceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   InputDeviceUhdSettings m_uhdDeviceSettings;
-  bool m_uhdDeviceSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_medialiveInputArns;
-  bool m_medialiveInputArnsHasBeenSet = false;
 
   InputDeviceOutputType m_outputType{InputDeviceOutputType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_deviceSettingsSyncStateHasBeenSet = false;
+  bool m_deviceUpdateStatusHasBeenSet = false;
+  bool m_hdDeviceSettingsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_macAddressHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkSettingsHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_uhdDeviceSettingsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_medialiveInputArnsHasBeenSet = false;
   bool m_outputTypeHasBeenSet = false;
 };
 

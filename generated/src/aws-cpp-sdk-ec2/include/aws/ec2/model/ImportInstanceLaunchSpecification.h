@@ -248,36 +248,36 @@ class ImportInstanceLaunchSpecification {
   ///@}
  private:
   ArchitectureValues m_architecture{ArchitectureValues::NOT_SET};
-  bool m_architectureHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupNames;
-  bool m_groupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupIds;
-  bool m_groupIdsHasBeenSet = false;
 
   Aws::String m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   UserData m_userData;
-  bool m_userDataHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Placement m_placement;
-  bool m_placementHasBeenSet = false;
 
   bool m_monitoring{false};
-  bool m_monitoringHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   ShutdownBehavior m_instanceInitiatedShutdownBehavior{ShutdownBehavior::NOT_SET};
-  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
+  bool m_architectureHasBeenSet = false;
+  bool m_groupNamesHasBeenSet = false;
+  bool m_groupIdsHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
   bool m_privateIpAddressHasBeenSet = false;
 };
 

@@ -164,24 +164,24 @@ class CreateAccessSourceRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_dnsViewId;
-  bool m_dnsViewIdHasBeenSet = false;
 
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_cidrHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dnsViewIdHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

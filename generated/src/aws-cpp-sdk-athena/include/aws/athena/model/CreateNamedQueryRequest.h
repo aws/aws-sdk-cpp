@@ -148,21 +148,21 @@ class CreateNamedQueryRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_workGroup;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_workGroupHasBeenSet = false;
 };
 

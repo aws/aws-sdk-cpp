@@ -163,24 +163,24 @@ class ReactStartCodegenJobData {
   ///@}
  private:
   JSModule m_module{JSModule::NOT_SET};
-  bool m_moduleHasBeenSet = false;
 
   JSTarget m_target{JSTarget::NOT_SET};
-  bool m_targetHasBeenSet = false;
 
   JSScript m_script{JSScript::NOT_SET};
-  bool m_scriptHasBeenSet = false;
 
   bool m_renderTypeDeclarations{false};
-  bool m_renderTypeDeclarationsHasBeenSet = false;
 
   bool m_inlineSourceMap{false};
-  bool m_inlineSourceMapHasBeenSet = false;
 
   ApiConfiguration m_apiConfiguration;
-  bool m_apiConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dependencies;
+  bool m_moduleHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_scriptHasBeenSet = false;
+  bool m_renderTypeDeclarationsHasBeenSet = false;
+  bool m_inlineSourceMapHasBeenSet = false;
+  bool m_apiConfigurationHasBeenSet = false;
   bool m_dependenciesHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class PutRecordResult {
   ///@}
  private:
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
-  bool m_sequenceNumberHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shardIdHasBeenSet = false;
+  bool m_sequenceNumberHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

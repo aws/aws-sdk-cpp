@@ -62,9 +62,9 @@ class RetentionPeriod {
   ///@}
  private:
   bool m_unlimited{false};
-  bool m_unlimitedHasBeenSet = false;
 
   int m_numberOfDays{0};
+  bool m_unlimitedHasBeenSet = false;
   bool m_numberOfDaysHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class NotificationSummary {
   ///@}
  private:
   NotificationType m_type{NotificationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   LensUpgradeSummary m_lensUpgradeSummary;
+  bool m_typeHasBeenSet = false;
   bool m_lensUpgradeSummaryHasBeenSet = false;
 };
 

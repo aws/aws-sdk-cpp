@@ -61,9 +61,9 @@ class ListRealtimeLogConfigs2020_05_31Result {
   ///@}
  private:
   RealtimeLogConfigs m_realtimeLogConfigs;
-  bool m_realtimeLogConfigsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_realtimeLogConfigsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GetBucketCorsResult {
   ///@}
  private:
   Aws::Vector<CORSRule> m_cORSRules;
-  bool m_cORSRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cORSRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

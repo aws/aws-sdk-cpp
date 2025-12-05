@@ -253,39 +253,39 @@ class SegmentDetection {
   ///@}
  private:
   SegmentType m_type{SegmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   long long m_startTimestampMillis{0};
-  bool m_startTimestampMillisHasBeenSet = false;
 
   long long m_endTimestampMillis{0};
-  bool m_endTimestampMillisHasBeenSet = false;
 
   long long m_durationMillis{0};
-  bool m_durationMillisHasBeenSet = false;
 
   Aws::String m_startTimecodeSMPTE;
-  bool m_startTimecodeSMPTEHasBeenSet = false;
 
   Aws::String m_endTimecodeSMPTE;
-  bool m_endTimecodeSMPTEHasBeenSet = false;
 
   Aws::String m_durationSMPTE;
-  bool m_durationSMPTEHasBeenSet = false;
 
   TechnicalCueSegment m_technicalCueSegment;
-  bool m_technicalCueSegmentHasBeenSet = false;
 
   ShotSegment m_shotSegment;
-  bool m_shotSegmentHasBeenSet = false;
 
   long long m_startFrameNumber{0};
-  bool m_startFrameNumberHasBeenSet = false;
 
   long long m_endFrameNumber{0};
-  bool m_endFrameNumberHasBeenSet = false;
 
   long long m_durationFrames{0};
+  bool m_typeHasBeenSet = false;
+  bool m_startTimestampMillisHasBeenSet = false;
+  bool m_endTimestampMillisHasBeenSet = false;
+  bool m_durationMillisHasBeenSet = false;
+  bool m_startTimecodeSMPTEHasBeenSet = false;
+  bool m_endTimecodeSMPTEHasBeenSet = false;
+  bool m_durationSMPTEHasBeenSet = false;
+  bool m_technicalCueSegmentHasBeenSet = false;
+  bool m_shotSegmentHasBeenSet = false;
+  bool m_startFrameNumberHasBeenSet = false;
+  bool m_endFrameNumberHasBeenSet = false;
   bool m_durationFramesHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class StartProjectSessionResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientSessionId;
-  bool m_clientSessionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_clientSessionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

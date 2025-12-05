@@ -303,48 +303,48 @@ class VolumeRecycleBinInfo {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   VolumeState m_state{VolumeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_sourceVolumeId;
-  bool m_sourceVolumeIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   OperatorResponse m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_recycleBinEnterTime{};
-  bool m_recycleBinEnterTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_recycleBinExitTime{};
+  bool m_volumeIdHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_sourceVolumeIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_recycleBinEnterTimeHasBeenSet = false;
   bool m_recycleBinExitTimeHasBeenSet = false;
 };
 

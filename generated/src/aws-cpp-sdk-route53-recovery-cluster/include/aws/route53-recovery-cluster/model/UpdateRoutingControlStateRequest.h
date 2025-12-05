@@ -98,12 +98,12 @@ class UpdateRoutingControlStateRequest : public Route53RecoveryClusterRequest {
   ///@}
  private:
   Aws::String m_routingControlArn;
-  bool m_routingControlArnHasBeenSet = false;
 
   RoutingControlState m_routingControlState{RoutingControlState::NOT_SET};
-  bool m_routingControlStateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_safetyRulesToOverride;
+  bool m_routingControlArnHasBeenSet = false;
+  bool m_routingControlStateHasBeenSet = false;
   bool m_safetyRulesToOverrideHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class TextClassificationJobConfig {
   ///@}
  private:
   AutoMLJobCompletionCriteria m_completionCriteria;
-  bool m_completionCriteriaHasBeenSet = false;
 
   Aws::String m_contentColumn;
-  bool m_contentColumnHasBeenSet = false;
 
   Aws::String m_targetLabelColumn;
+  bool m_completionCriteriaHasBeenSet = false;
+  bool m_contentColumnHasBeenSet = false;
   bool m_targetLabelColumnHasBeenSet = false;
 };
 

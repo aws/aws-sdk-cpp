@@ -62,9 +62,9 @@ class PortRangeFilter {
   ///@}
  private:
   int m_beginInclusive{0};
-  bool m_beginInclusiveHasBeenSet = false;
 
   int m_endInclusive{0};
+  bool m_beginInclusiveHasBeenSet = false;
   bool m_endInclusiveHasBeenSet = false;
 };
 

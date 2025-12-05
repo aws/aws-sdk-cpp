@@ -67,9 +67,9 @@ class RegisterMarketplaceModelEndpointRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_endpointIdentifier;
-  bool m_endpointIdentifierHasBeenSet = false;
 
   Aws::String m_modelSourceIdentifier;
+  bool m_endpointIdentifierHasBeenSet = false;
   bool m_modelSourceIdentifierHasBeenSet = false;
 };
 

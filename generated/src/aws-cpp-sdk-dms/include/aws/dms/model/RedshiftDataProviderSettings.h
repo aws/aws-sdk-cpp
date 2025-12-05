@@ -122,18 +122,18 @@ class RedshiftDataProviderSettings {
   ///@}
  private:
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   Aws::String m_s3AccessRoleArn;
+  bool m_serverNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
   bool m_s3AccessRoleArnHasBeenSet = false;
 };
 

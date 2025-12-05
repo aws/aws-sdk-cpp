@@ -90,12 +90,12 @@ class ListArchiveSearchesResult {
   ///@}
  private:
   Aws::Vector<SearchSummary> m_searches;
-  bool m_searchesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_searchesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -193,27 +193,27 @@ class UnifiedStudioSettings {
   ///@}
  private:
   FeatureStatus m_studioWebPortalAccess{FeatureStatus::NOT_SET};
-  bool m_studioWebPortalAccessHasBeenSet = false;
 
   Aws::String m_domainAccountId;
-  bool m_domainAccountIdHasBeenSet = false;
 
   Aws::String m_domainRegion;
-  bool m_domainRegionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_projectS3Path;
-  bool m_projectS3PathHasBeenSet = false;
 
   Aws::String m_singleSignOnApplicationArn;
+  bool m_studioWebPortalAccessHasBeenSet = false;
+  bool m_domainAccountIdHasBeenSet = false;
+  bool m_domainRegionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_projectS3PathHasBeenSet = false;
   bool m_singleSignOnApplicationArnHasBeenSet = false;
 };
 

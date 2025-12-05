@@ -68,9 +68,9 @@ class ProtectedQueryStatistics {
   ///@}
  private:
   long long m_totalDurationInMillis{0};
-  bool m_totalDurationInMillisHasBeenSet = false;
 
   BilledResourceUtilization m_billedResourceUtilization;
+  bool m_totalDurationInMillisHasBeenSet = false;
   bool m_billedResourceUtilizationHasBeenSet = false;
 };
 

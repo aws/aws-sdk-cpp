@@ -199,27 +199,27 @@ class CreateDeploymentStrategyRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_deploymentDurationInMinutes{0};
-  bool m_deploymentDurationInMinutesHasBeenSet = false;
 
   int m_finalBakeTimeInMinutes{0};
-  bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
   double m_growthFactor{0.0};
-  bool m_growthFactorHasBeenSet = false;
 
   GrowthType m_growthType{GrowthType::NOT_SET};
-  bool m_growthTypeHasBeenSet = false;
 
   ReplicateTo m_replicateTo{ReplicateTo::NOT_SET};
-  bool m_replicateToHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deploymentDurationInMinutesHasBeenSet = false;
+  bool m_finalBakeTimeInMinutesHasBeenSet = false;
+  bool m_growthFactorHasBeenSet = false;
+  bool m_growthTypeHasBeenSet = false;
+  bool m_replicateToHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

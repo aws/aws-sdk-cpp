@@ -88,12 +88,12 @@ class InvoiceSummariesFilter {
   ///@}
  private:
   DateInterval m_timeInterval;
-  bool m_timeIntervalHasBeenSet = false;
 
   BillingPeriod m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
 
   Aws::String m_invoicingEntity;
+  bool m_timeIntervalHasBeenSet = false;
+  bool m_billingPeriodHasBeenSet = false;
   bool m_invoicingEntityHasBeenSet = false;
 };
 

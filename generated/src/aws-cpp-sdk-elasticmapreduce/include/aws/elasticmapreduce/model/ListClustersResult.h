@@ -90,12 +90,12 @@ class ListClustersResult {
   ///@}
  private:
   Aws::Vector<ClusterSummary> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clustersHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

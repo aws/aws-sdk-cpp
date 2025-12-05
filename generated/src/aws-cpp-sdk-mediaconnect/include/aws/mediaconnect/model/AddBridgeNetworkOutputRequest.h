@@ -138,21 +138,21 @@ class AddBridgeNetworkOutputRequest {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_networkName;
-  bool m_networkNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_ttl{0};
+  bool m_ipAddressHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_ttlHasBeenSet = false;
 };
 

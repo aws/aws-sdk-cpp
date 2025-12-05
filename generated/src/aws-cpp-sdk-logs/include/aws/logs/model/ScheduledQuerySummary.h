@@ -206,33 +206,33 @@ class ScheduledQuerySummary {
   ///@}
  private:
   Aws::String m_scheduledQueryArn;
-  bool m_scheduledQueryArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   long long m_lastTriggeredTime{0};
-  bool m_lastTriggeredTimeHasBeenSet = false;
 
   ExecutionStatus m_lastExecutionStatus{ExecutionStatus::NOT_SET};
-  bool m_lastExecutionStatusHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   DestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_lastUpdatedTime{0};
+  bool m_scheduledQueryArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_lastTriggeredTimeHasBeenSet = false;
+  bool m_lastExecutionStatusHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

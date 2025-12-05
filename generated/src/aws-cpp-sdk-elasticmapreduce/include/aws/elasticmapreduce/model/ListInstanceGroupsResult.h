@@ -90,12 +90,12 @@ class ListInstanceGroupsResult {
   ///@}
  private:
   Aws::Vector<InstanceGroup> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

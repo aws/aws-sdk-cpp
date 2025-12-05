@@ -442,69 +442,69 @@ class ProfileAttributes {
   ///@}
  private:
   ProfileDimension m_accountNumber;
-  bool m_accountNumberHasBeenSet = false;
 
   ExtraLengthValueProfileDimension m_additionalInformation;
-  bool m_additionalInformationHasBeenSet = false;
 
   ProfileDimension m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   ProfileDimension m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   ProfileDimension m_middleName;
-  bool m_middleNameHasBeenSet = false;
 
   ProfileDimension m_genderString;
-  bool m_genderStringHasBeenSet = false;
 
   ProfileDimension m_partyTypeString;
-  bool m_partyTypeStringHasBeenSet = false;
 
   DateDimension m_birthDate;
-  bool m_birthDateHasBeenSet = false;
 
   ProfileDimension m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   ProfileDimension m_businessName;
-  bool m_businessNameHasBeenSet = false;
 
   ProfileDimension m_businessPhoneNumber;
-  bool m_businessPhoneNumberHasBeenSet = false;
 
   ProfileDimension m_homePhoneNumber;
-  bool m_homePhoneNumberHasBeenSet = false;
 
   ProfileDimension m_mobilePhoneNumber;
-  bool m_mobilePhoneNumberHasBeenSet = false;
 
   ProfileDimension m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   ProfileDimension m_personalEmailAddress;
-  bool m_personalEmailAddressHasBeenSet = false;
 
   ProfileDimension m_businessEmailAddress;
-  bool m_businessEmailAddressHasBeenSet = false;
 
   AddressDimension m_address;
-  bool m_addressHasBeenSet = false;
 
   AddressDimension m_shippingAddress;
-  bool m_shippingAddressHasBeenSet = false;
 
   AddressDimension m_mailingAddress;
-  bool m_mailingAddressHasBeenSet = false;
 
   AddressDimension m_billingAddress;
-  bool m_billingAddressHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeDimension> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ProfileTypeDimension m_profileType;
+  bool m_accountNumberHasBeenSet = false;
+  bool m_additionalInformationHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_middleNameHasBeenSet = false;
+  bool m_genderStringHasBeenSet = false;
+  bool m_partyTypeStringHasBeenSet = false;
+  bool m_birthDateHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_businessNameHasBeenSet = false;
+  bool m_businessPhoneNumberHasBeenSet = false;
+  bool m_homePhoneNumberHasBeenSet = false;
+  bool m_mobilePhoneNumberHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_personalEmailAddressHasBeenSet = false;
+  bool m_businessEmailAddressHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_shippingAddressHasBeenSet = false;
+  bool m_mailingAddressHasBeenSet = false;
+  bool m_billingAddressHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_profileTypeHasBeenSet = false;
 };
 

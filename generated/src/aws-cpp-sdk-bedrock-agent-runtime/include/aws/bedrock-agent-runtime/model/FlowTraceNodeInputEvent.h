@@ -99,12 +99,12 @@ class FlowTraceNodeInputEvent {
   ///@}
  private:
   Aws::Vector<FlowTraceNodeInputField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_fieldsHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

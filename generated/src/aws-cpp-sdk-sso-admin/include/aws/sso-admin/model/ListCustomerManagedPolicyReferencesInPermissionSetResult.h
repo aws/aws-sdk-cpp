@@ -90,12 +90,12 @@ class ListCustomerManagedPolicyReferencesInPermissionSetResult {
   ///@}
  private:
   Aws::Vector<CustomerManagedPolicyReference> m_customerManagedPolicyReferences;
-  bool m_customerManagedPolicyReferencesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customerManagedPolicyReferencesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

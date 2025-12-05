@@ -69,9 +69,9 @@ class RejectAssignmentRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_assignmentId;
-  bool m_assignmentIdHasBeenSet = false;
 
   Aws::String m_requesterFeedback;
+  bool m_assignmentIdHasBeenSet = false;
   bool m_requesterFeedbackHasBeenSet = false;
 };
 

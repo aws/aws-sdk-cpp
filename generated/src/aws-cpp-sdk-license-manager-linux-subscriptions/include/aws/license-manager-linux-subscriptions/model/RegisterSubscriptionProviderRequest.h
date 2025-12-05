@@ -93,12 +93,12 @@ class RegisterSubscriptionProviderRequest : public LicenseManagerLinuxSubscripti
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   SubscriptionProviderSource m_subscriptionProviderSource{SubscriptionProviderSource::NOT_SET};
-  bool m_subscriptionProviderSourceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_secretArnHasBeenSet = false;
+  bool m_subscriptionProviderSourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

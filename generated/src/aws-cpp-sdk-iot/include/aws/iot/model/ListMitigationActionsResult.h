@@ -84,12 +84,12 @@ class ListMitigationActionsResult {
   ///@}
  private:
   Aws::Vector<MitigationActionIdentifier> m_actionIdentifiers;
-  bool m_actionIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionIdentifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

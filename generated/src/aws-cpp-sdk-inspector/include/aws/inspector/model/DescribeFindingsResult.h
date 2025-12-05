@@ -93,12 +93,12 @@ class DescribeFindingsResult {
   ///@}
  private:
   Aws::Vector<Finding> m_findings;
-  bool m_findingsHasBeenSet = false;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingsHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -200,30 +200,30 @@ class RecommendationResourceSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_awsResourceId;
-  bool m_awsResourceIdHasBeenSet = false;
 
   ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
-  bool m_exclusionStatusHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_recommendationArn;
-  bool m_recommendationArnHasBeenSet = false;
 
   Aws::String m_regionCode;
-  bool m_regionCodeHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_awsResourceIdHasBeenSet = false;
+  bool m_exclusionStatusHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_recommendationArnHasBeenSet = false;
+  bool m_regionCodeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

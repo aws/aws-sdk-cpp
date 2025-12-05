@@ -87,12 +87,12 @@ class EventMetadataFilterExpression {
   ///@}
  private:
   LeftExpression m_left;
-  bool m_leftHasBeenSet = false;
 
   OperatorType m_operator{OperatorType::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   RightExpression m_right;
+  bool m_leftHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_rightHasBeenSet = false;
 };
 

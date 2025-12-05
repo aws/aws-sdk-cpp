@@ -161,21 +161,21 @@ class AssignPrivateIpAddressesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ipv4Prefixes;
-  bool m_ipv4PrefixesHasBeenSet = false;
 
   int m_ipv4PrefixCount{0};
-  bool m_ipv4PrefixCountHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   int m_secondaryPrivateIpAddressCount{0};
-  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
   bool m_allowReassignment{false};
+  bool m_ipv4PrefixesHasBeenSet = false;
+  bool m_ipv4PrefixCountHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
   bool m_allowReassignmentHasBeenSet = false;
 };
 

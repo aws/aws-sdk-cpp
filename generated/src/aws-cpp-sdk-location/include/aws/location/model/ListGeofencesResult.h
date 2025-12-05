@@ -85,12 +85,12 @@ class ListGeofencesResult {
   ///@}
  private:
   Aws::Vector<ListGeofenceResponseEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

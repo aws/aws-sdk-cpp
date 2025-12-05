@@ -137,18 +137,18 @@ class RowLevelPermissionDataSet {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   RowLevelPermissionPolicy m_permissionPolicy{RowLevelPermissionPolicy::NOT_SET};
-  bool m_permissionPolicyHasBeenSet = false;
 
   RowLevelPermissionFormatVersion m_formatVersion{RowLevelPermissionFormatVersion::NOT_SET};
-  bool m_formatVersionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
+  bool m_namespaceHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_permissionPolicyHasBeenSet = false;
+  bool m_formatVersionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

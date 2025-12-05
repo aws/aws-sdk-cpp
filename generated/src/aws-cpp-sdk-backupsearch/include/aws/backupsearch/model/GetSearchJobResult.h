@@ -269,42 +269,42 @@ class GetSearchJobResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SearchScopeSummary m_searchScopeSummary;
-  bool m_searchScopeSummaryHasBeenSet = false;
 
   CurrentSearchProgress m_currentSearchProgress;
-  bool m_currentSearchProgressHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   SearchJobState m_status{SearchJobState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SearchScope m_searchScope;
-  bool m_searchScopeHasBeenSet = false;
 
   ItemFilters m_itemFilters;
-  bool m_itemFiltersHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_searchJobIdentifier;
-  bool m_searchJobIdentifierHasBeenSet = false;
 
   Aws::String m_searchJobArn;
-  bool m_searchJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_searchScopeSummaryHasBeenSet = false;
+  bool m_currentSearchProgressHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_searchScopeHasBeenSet = false;
+  bool m_itemFiltersHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_searchJobIdentifierHasBeenSet = false;
+  bool m_searchJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -156,21 +156,21 @@ class AggregatedUtterancesSummary {
   ///@}
  private:
   Aws::String m_utterance;
-  bool m_utteranceHasBeenSet = false;
 
   int m_hitCount{0};
-  bool m_hitCountHasBeenSet = false;
 
   int m_missedCount{0};
-  bool m_missedCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_utteranceFirstRecordedInAggregationDuration{};
-  bool m_utteranceFirstRecordedInAggregationDurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_utteranceLastRecordedInAggregationDuration{};
-  bool m_utteranceLastRecordedInAggregationDurationHasBeenSet = false;
 
   bool m_containsDataFromDeletedResources{false};
+  bool m_utteranceHasBeenSet = false;
+  bool m_hitCountHasBeenSet = false;
+  bool m_missedCountHasBeenSet = false;
+  bool m_utteranceFirstRecordedInAggregationDurationHasBeenSet = false;
+  bool m_utteranceLastRecordedInAggregationDurationHasBeenSet = false;
   bool m_containsDataFromDeletedResourcesHasBeenSet = false;
 };
 

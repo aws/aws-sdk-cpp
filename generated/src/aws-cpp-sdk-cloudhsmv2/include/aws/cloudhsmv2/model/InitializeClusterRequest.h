@@ -92,12 +92,12 @@ class InitializeClusterRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_signedCert;
-  bool m_signedCertHasBeenSet = false;
 
   Aws::String m_trustAnchor;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_signedCertHasBeenSet = false;
   bool m_trustAnchorHasBeenSet = false;
 };
 

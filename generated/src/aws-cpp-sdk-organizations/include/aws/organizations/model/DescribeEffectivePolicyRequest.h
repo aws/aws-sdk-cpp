@@ -89,9 +89,9 @@ class DescribeEffectivePolicyRequest : public OrganizationsRequest {
   ///@}
  private:
   EffectivePolicyType m_policyType{EffectivePolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_targetId;
+  bool m_policyTypeHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
 };
 

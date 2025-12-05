@@ -70,9 +70,9 @@ class DescribeDatastoreRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   bool m_includeStatistics{false};
+  bool m_datastoreNameHasBeenSet = false;
   bool m_includeStatisticsHasBeenSet = false;
 };
 

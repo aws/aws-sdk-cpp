@@ -74,9 +74,9 @@ class ApplicationPolicies {
   ///@}
  private:
   bool m_critical{false};
-  bool m_criticalHasBeenSet = false;
 
   Aws::Vector<ApplicationPolicy> m_policies;
+  bool m_criticalHasBeenSet = false;
   bool m_policiesHasBeenSet = false;
 };
 

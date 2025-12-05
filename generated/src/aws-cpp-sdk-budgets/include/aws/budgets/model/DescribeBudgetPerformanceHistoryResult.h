@@ -80,12 +80,12 @@ class DescribeBudgetPerformanceHistoryResult {
   ///@}
  private:
   BudgetPerformanceHistory m_budgetPerformanceHistory;
-  bool m_budgetPerformanceHistoryHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_budgetPerformanceHistoryHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -160,24 +160,24 @@ class ImportClientBrandingRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   DefaultImportClientBrandingAttributes m_deviceTypeWindows;
-  bool m_deviceTypeWindowsHasBeenSet = false;
 
   DefaultImportClientBrandingAttributes m_deviceTypeOsx;
-  bool m_deviceTypeOsxHasBeenSet = false;
 
   DefaultImportClientBrandingAttributes m_deviceTypeAndroid;
-  bool m_deviceTypeAndroidHasBeenSet = false;
 
   IosImportClientBrandingAttributes m_deviceTypeIos;
-  bool m_deviceTypeIosHasBeenSet = false;
 
   DefaultImportClientBrandingAttributes m_deviceTypeLinux;
-  bool m_deviceTypeLinuxHasBeenSet = false;
 
   DefaultImportClientBrandingAttributes m_deviceTypeWeb;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_deviceTypeWindowsHasBeenSet = false;
+  bool m_deviceTypeOsxHasBeenSet = false;
+  bool m_deviceTypeAndroidHasBeenSet = false;
+  bool m_deviceTypeIosHasBeenSet = false;
+  bool m_deviceTypeLinuxHasBeenSet = false;
   bool m_deviceTypeWebHasBeenSet = false;
 };
 

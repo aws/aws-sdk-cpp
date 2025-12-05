@@ -91,9 +91,9 @@ class InputCaptions {
   ///@}
  private:
   Aws::String m_mergePolicy;
-  bool m_mergePolicyHasBeenSet = false;
 
   Aws::Vector<CaptionSource> m_captionSources;
+  bool m_mergePolicyHasBeenSet = false;
   bool m_captionSourcesHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListInvocationsResult {
   ///@}
  private:
   Aws::Vector<InvocationSummary> m_invocationSummaries;
-  bool m_invocationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invocationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

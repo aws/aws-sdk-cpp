@@ -148,21 +148,21 @@ class UpdateScraperRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_scraperId;
-  bool m_scraperIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   ScrapeConfiguration m_scrapeConfiguration;
-  bool m_scrapeConfigurationHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   RoleConfiguration m_roleConfiguration;
-  bool m_roleConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_scraperIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_scrapeConfigurationHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_roleConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

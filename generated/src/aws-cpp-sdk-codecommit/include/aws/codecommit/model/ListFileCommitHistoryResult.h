@@ -86,12 +86,12 @@ class ListFileCommitHistoryResult {
   ///@}
  private:
   Aws::Vector<FileVersion> m_revisionDag;
-  bool m_revisionDagHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_revisionDagHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

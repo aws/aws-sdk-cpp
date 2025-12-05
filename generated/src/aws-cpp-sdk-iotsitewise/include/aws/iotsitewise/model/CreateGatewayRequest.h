@@ -122,15 +122,15 @@ class CreateGatewayRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_gatewayName;
-  bool m_gatewayNameHasBeenSet = false;
 
   GatewayPlatform m_gatewayPlatform;
-  bool m_gatewayPlatformHasBeenSet = false;
 
   Aws::String m_gatewayVersion;
-  bool m_gatewayVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_gatewayNameHasBeenSet = false;
+  bool m_gatewayPlatformHasBeenSet = false;
+  bool m_gatewayVersionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

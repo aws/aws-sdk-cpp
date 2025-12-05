@@ -60,9 +60,9 @@ class GetEvidenceResult {
   ///@}
  private:
   Evidence m_evidence;
-  bool m_evidenceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evidenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

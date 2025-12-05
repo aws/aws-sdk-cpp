@@ -153,21 +153,21 @@ class ImpersonationRule {
   ///@}
  private:
   Aws::String m_impersonationRuleId;
-  bool m_impersonationRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AccessEffect m_effect{AccessEffect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetUsers;
-  bool m_targetUsersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notTargetUsers;
+  bool m_impersonationRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
+  bool m_targetUsersHasBeenSet = false;
   bool m_notTargetUsersHasBeenSet = false;
 };
 

@@ -99,9 +99,9 @@ class DescribeStorediSCSIVolumesResult {
   ///@}
  private:
   Aws::Vector<StorediSCSIVolume> m_storediSCSIVolumes;
-  bool m_storediSCSIVolumesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storediSCSIVolumesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

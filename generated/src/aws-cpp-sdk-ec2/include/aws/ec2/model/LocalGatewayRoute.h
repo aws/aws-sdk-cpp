@@ -232,36 +232,36 @@ class LocalGatewayRoute {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_localGatewayVirtualInterfaceGroupId;
-  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
   LocalGatewayRouteType m_type{LocalGatewayRouteType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   LocalGatewayRouteState m_state{LocalGatewayRouteState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_localGatewayRouteTableId;
-  bool m_localGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_localGatewayRouteTableArn;
-  bool m_localGatewayRouteTableArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_coipPoolId;
-  bool m_coipPoolIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_destinationPrefixListId;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_localGatewayRouteTableIdHasBeenSet = false;
+  bool m_localGatewayRouteTableArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_coipPoolIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
   bool m_destinationPrefixListIdHasBeenSet = false;
 };
 

@@ -133,21 +133,21 @@ class GetParametersForImportResult {
   ///@}
  private:
   Aws::String m_wrappingKeyCertificate;
-  bool m_wrappingKeyCertificateHasBeenSet = false;
 
   Aws::String m_wrappingKeyCertificateChain;
-  bool m_wrappingKeyCertificateChainHasBeenSet = false;
 
   KeyAlgorithm m_wrappingKeyAlgorithm{KeyAlgorithm::NOT_SET};
-  bool m_wrappingKeyAlgorithmHasBeenSet = false;
 
   Aws::String m_importToken;
-  bool m_importTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_parametersValidUntilTimestamp{};
-  bool m_parametersValidUntilTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_wrappingKeyCertificateHasBeenSet = false;
+  bool m_wrappingKeyCertificateChainHasBeenSet = false;
+  bool m_wrappingKeyAlgorithmHasBeenSet = false;
+  bool m_importTokenHasBeenSet = false;
+  bool m_parametersValidUntilTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

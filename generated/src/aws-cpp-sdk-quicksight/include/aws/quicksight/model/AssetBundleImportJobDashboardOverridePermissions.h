@@ -99,12 +99,12 @@ class AssetBundleImportJobDashboardOverridePermissions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dashboardIds;
-  bool m_dashboardIdsHasBeenSet = false;
 
   AssetBundleResourcePermissions m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   AssetBundleResourceLinkSharingConfiguration m_linkSharingConfiguration;
+  bool m_dashboardIdsHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_linkSharingConfigurationHasBeenSet = false;
 };
 

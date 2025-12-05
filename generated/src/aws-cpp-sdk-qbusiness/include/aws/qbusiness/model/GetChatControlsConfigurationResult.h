@@ -186,27 +186,27 @@ class GetChatControlsConfigurationResult {
   ///@}
  private:
   ResponseScope m_responseScope{ResponseScope::NOT_SET};
-  bool m_responseScopeHasBeenSet = false;
 
   AppliedOrchestrationConfiguration m_orchestrationConfiguration;
-  bool m_orchestrationConfigurationHasBeenSet = false;
 
   BlockedPhrasesConfiguration m_blockedPhrases;
-  bool m_blockedPhrasesHasBeenSet = false;
 
   Aws::Vector<TopicConfiguration> m_topicConfigurations;
-  bool m_topicConfigurationsHasBeenSet = false;
 
   AppliedCreatorModeConfiguration m_creatorModeConfiguration;
-  bool m_creatorModeConfigurationHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   HallucinationReductionConfiguration m_hallucinationReductionConfiguration;
-  bool m_hallucinationReductionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responseScopeHasBeenSet = false;
+  bool m_orchestrationConfigurationHasBeenSet = false;
+  bool m_blockedPhrasesHasBeenSet = false;
+  bool m_topicConfigurationsHasBeenSet = false;
+  bool m_creatorModeConfigurationHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_hallucinationReductionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

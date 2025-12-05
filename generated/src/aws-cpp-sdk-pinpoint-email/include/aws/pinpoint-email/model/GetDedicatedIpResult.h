@@ -65,9 +65,9 @@ class GetDedicatedIpResult {
   ///@}
  private:
   DedicatedIp m_dedicatedIp;
-  bool m_dedicatedIpHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dedicatedIpHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

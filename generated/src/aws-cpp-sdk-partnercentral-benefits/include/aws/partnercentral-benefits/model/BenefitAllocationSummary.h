@@ -264,39 +264,39 @@ class BenefitAllocationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   BenefitAllocationStatus m_status{BenefitAllocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_benefitId;
-  bool m_benefitIdHasBeenSet = false;
 
   Aws::String m_benefitApplicationId;
-  bool m_benefitApplicationIdHasBeenSet = false;
 
   Aws::Vector<FulfillmentType> m_fulfillmentTypes;
-  bool m_fulfillmentTypesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicableBenefitIds;
+  bool m_idHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_benefitIdHasBeenSet = false;
+  bool m_benefitApplicationIdHasBeenSet = false;
+  bool m_fulfillmentTypesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
   bool m_applicableBenefitIdsHasBeenSet = false;
 };
 

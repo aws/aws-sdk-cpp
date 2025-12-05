@@ -69,9 +69,9 @@ class SupplementalDataStorageLocation {
   ///@}
  private:
   SupplementalDataStorageLocationType m_type{SupplementalDataStorageLocationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   S3Location m_s3Location;
+  bool m_typeHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

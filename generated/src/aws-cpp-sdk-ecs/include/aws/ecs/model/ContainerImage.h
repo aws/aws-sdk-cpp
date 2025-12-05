@@ -96,12 +96,12 @@ class ContainerImage {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::String m_imageDigest;
-  bool m_imageDigestHasBeenSet = false;
 
   Aws::String m_image;
+  bool m_containerNameHasBeenSet = false;
+  bool m_imageDigestHasBeenSet = false;
   bool m_imageHasBeenSet = false;
 };
 

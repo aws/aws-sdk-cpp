@@ -201,33 +201,33 @@ class EnableFastLaunchResponse {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   FastLaunchResourceType m_resourceType{FastLaunchResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   FastLaunchSnapshotConfigurationResponse m_snapshotConfiguration;
-  bool m_snapshotConfigurationHasBeenSet = false;
 
   FastLaunchLaunchTemplateSpecificationResponse m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   int m_maxParallelLaunches{0};
-  bool m_maxParallelLaunchesHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   FastLaunchStateCode m_state{FastLaunchStateCode::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateTransitionReason;
-  bool m_stateTransitionReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateTransitionTime{};
-  bool m_stateTransitionTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_imageIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_snapshotConfigurationHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_maxParallelLaunchesHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateTransitionReasonHasBeenSet = false;
+  bool m_stateTransitionTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

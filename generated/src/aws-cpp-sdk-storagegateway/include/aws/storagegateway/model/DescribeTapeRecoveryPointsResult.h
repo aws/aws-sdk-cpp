@@ -110,15 +110,15 @@ class DescribeTapeRecoveryPointsResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<TapeRecoveryPointInfo> m_tapeRecoveryPointInfos;
-  bool m_tapeRecoveryPointInfosHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_tapeRecoveryPointInfosHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

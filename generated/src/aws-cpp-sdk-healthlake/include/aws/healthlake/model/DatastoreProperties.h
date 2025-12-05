@@ -235,36 +235,36 @@ class DatastoreProperties {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_datastoreArn;
-  bool m_datastoreArnHasBeenSet = false;
 
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
-  bool m_datastoreStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   FHIRVersion m_datastoreTypeVersion{FHIRVersion::NOT_SET};
-  bool m_datastoreTypeVersionHasBeenSet = false;
 
   Aws::String m_datastoreEndpoint;
-  bool m_datastoreEndpointHasBeenSet = false;
 
   SseConfiguration m_sseConfiguration;
-  bool m_sseConfigurationHasBeenSet = false;
 
   PreloadDataConfig m_preloadDataConfig;
-  bool m_preloadDataConfigHasBeenSet = false;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
-  bool m_identityProviderConfigurationHasBeenSet = false;
 
   ErrorCause m_errorCause;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_datastoreArnHasBeenSet = false;
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_datastoreStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_datastoreTypeVersionHasBeenSet = false;
+  bool m_datastoreEndpointHasBeenSet = false;
+  bool m_sseConfigurationHasBeenSet = false;
+  bool m_preloadDataConfigHasBeenSet = false;
+  bool m_identityProviderConfigurationHasBeenSet = false;
   bool m_errorCauseHasBeenSet = false;
 };
 

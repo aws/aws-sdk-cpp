@@ -67,9 +67,9 @@ class AssociateTagOptionWithResourceRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_tagOptionId;
+  bool m_resourceIdHasBeenSet = false;
   bool m_tagOptionIdHasBeenSet = false;
 };
 

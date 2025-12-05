@@ -95,9 +95,9 @@ class VpcConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_subnetsHasBeenSet = false;
 };
 

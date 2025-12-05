@@ -133,18 +133,18 @@ class DeprecationDetail {
   ///@}
  private:
   Aws::String m_usage;
-  bool m_usageHasBeenSet = false;
 
   Aws::String m_replacedWith;
-  bool m_replacedWithHasBeenSet = false;
 
   Aws::String m_stopServingVersion;
-  bool m_stopServingVersionHasBeenSet = false;
 
   Aws::String m_startServingReplacementVersion;
-  bool m_startServingReplacementVersionHasBeenSet = false;
 
   Aws::Vector<ClientStat> m_clientStats;
+  bool m_usageHasBeenSet = false;
+  bool m_replacedWithHasBeenSet = false;
+  bool m_stopServingVersionHasBeenSet = false;
+  bool m_startServingReplacementVersionHasBeenSet = false;
   bool m_clientStatsHasBeenSet = false;
 };
 

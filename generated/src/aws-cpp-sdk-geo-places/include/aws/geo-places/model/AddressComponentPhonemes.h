@@ -255,30 +255,30 @@ class AddressComponentPhonemes {
   ///@}
  private:
   Aws::Vector<PhonemeTranscription> m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_subRegion;
-  bool m_subRegionHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_locality;
-  bool m_localityHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_district;
-  bool m_districtHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_subDistrict;
-  bool m_subDistrictHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_block;
-  bool m_blockHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_subBlock;
-  bool m_subBlockHasBeenSet = false;
 
   Aws::Vector<PhonemeTranscription> m_street;
+  bool m_countryHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_subRegionHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_districtHasBeenSet = false;
+  bool m_subDistrictHasBeenSet = false;
+  bool m_blockHasBeenSet = false;
+  bool m_subBlockHasBeenSet = false;
   bool m_streetHasBeenSet = false;
 };
 

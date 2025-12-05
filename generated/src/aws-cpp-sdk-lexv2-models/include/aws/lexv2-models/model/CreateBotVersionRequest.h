@@ -100,12 +100,12 @@ class CreateBotVersionRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, BotVersionLocaleDetails> m_botVersionLocaleSpecification;
+  bool m_botIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_botVersionLocaleSpecificationHasBeenSet = false;
 };
 

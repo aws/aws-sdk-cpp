@@ -69,9 +69,9 @@ class CompositeComponentTypeResponse {
   ///@}
  private:
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   bool m_isInherited{false};
+  bool m_componentTypeIdHasBeenSet = false;
   bool m_isInheritedHasBeenSet = false;
 };
 

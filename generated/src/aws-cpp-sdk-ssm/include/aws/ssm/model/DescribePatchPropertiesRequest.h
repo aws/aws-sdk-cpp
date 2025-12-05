@@ -121,18 +121,18 @@ class DescribePatchPropertiesRequest : public SSMRequest {
   ///@}
  private:
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   PatchProperty m_property{PatchProperty::NOT_SET};
-  bool m_propertyHasBeenSet = false;
 
   PatchSet m_patchSet{PatchSet::NOT_SET};
-  bool m_patchSetHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_propertyHasBeenSet = false;
+  bool m_patchSetHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

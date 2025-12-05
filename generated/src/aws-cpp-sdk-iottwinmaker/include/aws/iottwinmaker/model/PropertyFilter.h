@@ -88,12 +88,12 @@ class PropertyFilter {
   ///@}
  private:
   Aws::String m_propertyName;
-  bool m_propertyNameHasBeenSet = false;
 
   Aws::String m_operator;
-  bool m_operatorHasBeenSet = false;
 
   DataValue m_value;
+  bool m_propertyNameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

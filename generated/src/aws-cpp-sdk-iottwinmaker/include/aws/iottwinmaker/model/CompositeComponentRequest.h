@@ -103,12 +103,12 @@ class CompositeComponentRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, PropertyRequest> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentPropertyGroupRequest> m_propertyGroups;
+  bool m_descriptionHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
   bool m_propertyGroupsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class CalculationStatistics {
   ///@}
  private:
   long long m_dpuExecutionInMillis{0};
-  bool m_dpuExecutionInMillisHasBeenSet = false;
 
   Aws::String m_progress;
+  bool m_dpuExecutionInMillisHasBeenSet = false;
   bool m_progressHasBeenSet = false;
 };
 

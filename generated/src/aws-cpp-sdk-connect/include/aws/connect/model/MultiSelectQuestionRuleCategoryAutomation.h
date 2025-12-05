@@ -93,12 +93,12 @@ class MultiSelectQuestionRuleCategoryAutomation {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   MultiSelectQuestionRuleCategoryAutomationCondition m_condition{MultiSelectQuestionRuleCategoryAutomationCondition::NOT_SET};
-  bool m_conditionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_optionRefIds;
+  bool m_categoryHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_optionRefIdsHasBeenSet = false;
 };
 

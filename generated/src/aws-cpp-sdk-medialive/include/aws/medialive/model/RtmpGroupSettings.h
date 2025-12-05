@@ -195,27 +195,27 @@ class RtmpGroupSettings {
   ///@}
  private:
   Aws::Vector<RtmpAdMarkers> m_adMarkers;
-  bool m_adMarkersHasBeenSet = false;
 
   AuthenticationScheme m_authenticationScheme{AuthenticationScheme::NOT_SET};
-  bool m_authenticationSchemeHasBeenSet = false;
 
   RtmpCacheFullBehavior m_cacheFullBehavior{RtmpCacheFullBehavior::NOT_SET};
-  bool m_cacheFullBehaviorHasBeenSet = false;
 
   int m_cacheLength{0};
-  bool m_cacheLengthHasBeenSet = false;
 
   RtmpCaptionData m_captionData{RtmpCaptionData::NOT_SET};
-  bool m_captionDataHasBeenSet = false;
 
   InputLossActionForRtmpOut m_inputLossAction{InputLossActionForRtmpOut::NOT_SET};
-  bool m_inputLossActionHasBeenSet = false;
 
   int m_restartDelay{0};
-  bool m_restartDelayHasBeenSet = false;
 
   IncludeFillerNalUnits m_includeFillerNalUnits{IncludeFillerNalUnits::NOT_SET};
+  bool m_adMarkersHasBeenSet = false;
+  bool m_authenticationSchemeHasBeenSet = false;
+  bool m_cacheFullBehaviorHasBeenSet = false;
+  bool m_cacheLengthHasBeenSet = false;
+  bool m_captionDataHasBeenSet = false;
+  bool m_inputLossActionHasBeenSet = false;
+  bool m_restartDelayHasBeenSet = false;
   bool m_includeFillerNalUnitsHasBeenSet = false;
 };
 

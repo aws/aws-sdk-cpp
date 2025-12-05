@@ -137,15 +137,15 @@ class IdentityProvider {
   ///@}
  private:
   Aws::String m_identityProviderArn;
-  bool m_identityProviderArnHasBeenSet = false;
 
   Aws::String m_identityProviderName;
-  bool m_identityProviderNameHasBeenSet = false;
 
   IdentityProviderType m_identityProviderType{IdentityProviderType::NOT_SET};
-  bool m_identityProviderTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_identityProviderDetails;
+  bool m_identityProviderArnHasBeenSet = false;
+  bool m_identityProviderNameHasBeenSet = false;
+  bool m_identityProviderTypeHasBeenSet = false;
   bool m_identityProviderDetailsHasBeenSet = false;
 };
 

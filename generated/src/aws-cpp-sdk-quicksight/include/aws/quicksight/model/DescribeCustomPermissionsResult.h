@@ -75,12 +75,12 @@ class DescribeCustomPermissionsResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   CustomPermissions m_customPermissions;
-  bool m_customPermissionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_customPermissionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

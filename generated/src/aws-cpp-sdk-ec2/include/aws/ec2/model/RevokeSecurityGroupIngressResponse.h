@@ -109,15 +109,15 @@ class RevokeSecurityGroupIngressResponse {
   ///@}
  private:
   bool m_return{false};
-  bool m_returnHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_unknownIpPermissions;
-  bool m_unknownIpPermissionsHasBeenSet = false;
 
   Aws::Vector<RevokedSecurityGroupRule> m_revokedSecurityGroupRules;
-  bool m_revokedSecurityGroupRulesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
+  bool m_unknownIpPermissionsHasBeenSet = false;
+  bool m_revokedSecurityGroupRulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

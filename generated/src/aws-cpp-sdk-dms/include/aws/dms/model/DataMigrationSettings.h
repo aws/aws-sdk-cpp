@@ -86,12 +86,12 @@ class DataMigrationSettings {
   ///@}
  private:
   int m_numberOfJobs{0};
-  bool m_numberOfJobsHasBeenSet = false;
 
   bool m_cloudwatchLogsEnabled{false};
-  bool m_cloudwatchLogsEnabledHasBeenSet = false;
 
   Aws::String m_selectionRules;
+  bool m_numberOfJobsHasBeenSet = false;
+  bool m_cloudwatchLogsEnabledHasBeenSet = false;
   bool m_selectionRulesHasBeenSet = false;
 };
 

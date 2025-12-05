@@ -92,15 +92,15 @@ class RestoreFromSnapshotResult {
   ///@}
  private:
   Namespace m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_namespaceHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

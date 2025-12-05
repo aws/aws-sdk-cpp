@@ -103,15 +103,15 @@ class UpdateBridgeSourceRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   UpdateBridgeFlowSourceRequest m_flowSource;
-  bool m_flowSourceHasBeenSet = false;
 
   UpdateBridgeNetworkSourceRequest m_networkSource;
-  bool m_networkSourceHasBeenSet = false;
 
   Aws::String m_sourceName;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_flowSourceHasBeenSet = false;
+  bool m_networkSourceHasBeenSet = false;
   bool m_sourceNameHasBeenSet = false;
 };
 

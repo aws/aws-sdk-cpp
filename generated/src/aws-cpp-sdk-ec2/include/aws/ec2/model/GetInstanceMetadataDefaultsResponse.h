@@ -60,9 +60,9 @@ class GetInstanceMetadataDefaultsResponse {
   ///@}
  private:
   InstanceMetadataDefaultsResponse m_accountLevel;
-  bool m_accountLevelHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_accountLevelHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

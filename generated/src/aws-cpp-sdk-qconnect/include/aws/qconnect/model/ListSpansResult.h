@@ -84,12 +84,12 @@ class ListSpansResult {
   ///@}
  private:
   Aws::Vector<Span> m_spans;
-  bool m_spansHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spansHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

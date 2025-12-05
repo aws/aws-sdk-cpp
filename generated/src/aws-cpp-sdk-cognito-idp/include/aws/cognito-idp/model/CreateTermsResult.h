@@ -61,9 +61,9 @@ class CreateTermsResult {
   ///@}
  private:
   TermsType m_terms;
-  bool m_termsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_termsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -192,24 +192,24 @@ class DiscoverInstancesRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_optionalParameters;
-  bool m_optionalParametersHasBeenSet = false;
 
   HealthStatusFilter m_healthStatus{HealthStatusFilter::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::String m_ownerAccount;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_queryParametersHasBeenSet = false;
+  bool m_optionalParametersHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
 };
 

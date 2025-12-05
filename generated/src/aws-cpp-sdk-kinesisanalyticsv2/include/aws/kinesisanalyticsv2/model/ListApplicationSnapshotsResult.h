@@ -87,12 +87,12 @@ class ListApplicationSnapshotsResult {
   ///@}
  private:
   Aws::Vector<SnapshotDetails> m_snapshotSummaries;
-  bool m_snapshotSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

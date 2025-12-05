@@ -71,9 +71,9 @@ class FilterRule {
   ///@}
  private:
   FilterType m_filterType{FilterType::NOT_SET};
-  bool m_filterTypeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_filterTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

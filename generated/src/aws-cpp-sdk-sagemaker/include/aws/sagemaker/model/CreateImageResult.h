@@ -59,9 +59,9 @@ class CreateImageResult {
   ///@}
  private:
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

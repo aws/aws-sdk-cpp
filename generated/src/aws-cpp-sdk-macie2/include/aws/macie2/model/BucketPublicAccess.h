@@ -73,9 +73,9 @@ class BucketPublicAccess {
   ///@}
  private:
   EffectivePermission m_effectivePermission{EffectivePermission::NOT_SET};
-  bool m_effectivePermissionHasBeenSet = false;
 
   BucketPermissionConfiguration m_permissionConfiguration;
+  bool m_effectivePermissionHasBeenSet = false;
   bool m_permissionConfigurationHasBeenSet = false;
 };
 

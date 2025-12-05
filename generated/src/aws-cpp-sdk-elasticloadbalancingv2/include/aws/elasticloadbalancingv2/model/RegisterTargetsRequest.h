@@ -77,9 +77,9 @@ class RegisterTargetsRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   Aws::Vector<TargetDescription> m_targets;
+  bool m_targetGroupArnHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
 };
 

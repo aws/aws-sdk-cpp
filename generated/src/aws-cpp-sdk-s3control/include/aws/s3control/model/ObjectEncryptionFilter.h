@@ -131,18 +131,18 @@ class ObjectEncryptionFilter {
   ///@}
  private:
   SSES3Filter m_sSES3;
-  bool m_sSES3HasBeenSet = false;
 
   SSEKMSFilter m_sSEKMS;
-  bool m_sSEKMSHasBeenSet = false;
 
   DSSEKMSFilter m_dSSEKMS;
-  bool m_dSSEKMSHasBeenSet = false;
 
   SSECFilter m_sSEC;
-  bool m_sSECHasBeenSet = false;
 
   NotSSEFilter m_nOTSSE;
+  bool m_sSES3HasBeenSet = false;
+  bool m_sSEKMSHasBeenSet = false;
+  bool m_dSSEKMSHasBeenSet = false;
+  bool m_sSECHasBeenSet = false;
   bool m_nOTSSEHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class AttachCertificateToDistributionRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_distributionName;
-  bool m_distributionNameHasBeenSet = false;
 
   Aws::String m_certificateName;
+  bool m_distributionNameHasBeenSet = false;
   bool m_certificateNameHasBeenSet = false;
 };
 

@@ -476,81 +476,81 @@ class DescribeUserResult {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   EntityState m_state{EntityState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   UserRole m_userRole{UserRole::NOT_SET};
-  bool m_userRoleHasBeenSet = false;
 
   Aws::Utils::DateTime m_enabledDate{};
-  bool m_enabledDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_disabledDate{};
-  bool m_disabledDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_mailboxProvisionedDate{};
-  bool m_mailboxProvisionedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_mailboxDeprovisionedDate{};
-  bool m_mailboxDeprovisionedDateHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   bool m_hiddenFromGlobalAddressList{false};
-  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 
   Aws::String m_initials;
-  bool m_initialsHasBeenSet = false;
 
   Aws::String m_telephone;
-  bool m_telephoneHasBeenSet = false;
 
   Aws::String m_street;
-  bool m_streetHasBeenSet = false;
 
   Aws::String m_jobTitle;
-  bool m_jobTitleHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_company;
-  bool m_companyHasBeenSet = false;
 
   Aws::String m_zipCode;
-  bool m_zipCodeHasBeenSet = false;
 
   Aws::String m_department;
-  bool m_departmentHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_office;
-  bool m_officeHasBeenSet = false;
 
   Aws::String m_identityProviderUserId;
-  bool m_identityProviderUserIdHasBeenSet = false;
 
   Aws::String m_identityProviderIdentityStoreId;
-  bool m_identityProviderIdentityStoreIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_userRoleHasBeenSet = false;
+  bool m_enabledDateHasBeenSet = false;
+  bool m_disabledDateHasBeenSet = false;
+  bool m_mailboxProvisionedDateHasBeenSet = false;
+  bool m_mailboxDeprovisionedDateHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
+  bool m_initialsHasBeenSet = false;
+  bool m_telephoneHasBeenSet = false;
+  bool m_streetHasBeenSet = false;
+  bool m_jobTitleHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_companyHasBeenSet = false;
+  bool m_zipCodeHasBeenSet = false;
+  bool m_departmentHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_officeHasBeenSet = false;
+  bool m_identityProviderUserIdHasBeenSet = false;
+  bool m_identityProviderIdentityStoreIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

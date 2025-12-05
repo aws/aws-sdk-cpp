@@ -84,12 +84,12 @@ class MigrationTaskUpdate {
   ///@}
  private:
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   UpdateType m_updateType{UpdateType::NOT_SET};
-  bool m_updateTypeHasBeenSet = false;
 
   Task m_migrationTaskState;
+  bool m_updateDateTimeHasBeenSet = false;
+  bool m_updateTypeHasBeenSet = false;
   bool m_migrationTaskStateHasBeenSet = false;
 };
 

@@ -121,18 +121,18 @@ class VerifyMacRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   Aws::String m_messageData;
-  bool m_messageDataHasBeenSet = false;
 
   Aws::String m_mac;
-  bool m_macHasBeenSet = false;
 
   MacAttributes m_verificationAttributes;
-  bool m_verificationAttributesHasBeenSet = false;
 
   int m_macLength{0};
+  bool m_keyIdentifierHasBeenSet = false;
+  bool m_messageDataHasBeenSet = false;
+  bool m_macHasBeenSet = false;
+  bool m_verificationAttributesHasBeenSet = false;
   bool m_macLengthHasBeenSet = false;
 };
 

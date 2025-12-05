@@ -130,15 +130,15 @@ class HttpRetryPolicy {
   ///@}
  private:
   Aws::Vector<Aws::String> m_httpRetryEvents;
-  bool m_httpRetryEventsHasBeenSet = false;
 
   long long m_maxRetries{0};
-  bool m_maxRetriesHasBeenSet = false;
 
   Duration m_perRetryTimeout;
-  bool m_perRetryTimeoutHasBeenSet = false;
 
   Aws::Vector<TcpRetryPolicyEvent> m_tcpRetryEvents;
+  bool m_httpRetryEventsHasBeenSet = false;
+  bool m_maxRetriesHasBeenSet = false;
+  bool m_perRetryTimeoutHasBeenSet = false;
   bool m_tcpRetryEventsHasBeenSet = false;
 };
 

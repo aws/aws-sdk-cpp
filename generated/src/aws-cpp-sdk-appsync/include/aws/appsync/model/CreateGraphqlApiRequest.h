@@ -375,54 +375,54 @@ class CreateGraphqlApiRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LogConfig m_logConfig;
-  bool m_logConfigHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   UserPoolConfig m_userPoolConfig;
-  bool m_userPoolConfigHasBeenSet = false;
 
   OpenIDConnectConfig m_openIDConnectConfig;
-  bool m_openIDConnectConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
-  bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
   bool m_xrayEnabled{false};
-  bool m_xrayEnabledHasBeenSet = false;
 
   LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
-  bool m_lambdaAuthorizerConfigHasBeenSet = false;
 
   GraphQLApiType m_apiType{GraphQLApiType::NOT_SET};
-  bool m_apiTypeHasBeenSet = false;
 
   Aws::String m_mergedApiExecutionRoleArn;
-  bool m_mergedApiExecutionRoleArnHasBeenSet = false;
 
   GraphQLApiVisibility m_visibility{GraphQLApiVisibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_ownerContact;
-  bool m_ownerContactHasBeenSet = false;
 
   GraphQLApiIntrospectionConfig m_introspectionConfig{GraphQLApiIntrospectionConfig::NOT_SET};
-  bool m_introspectionConfigHasBeenSet = false;
 
   int m_queryDepthLimit{0};
-  bool m_queryDepthLimitHasBeenSet = false;
 
   int m_resolverCountLimit{0};
-  bool m_resolverCountLimitHasBeenSet = false;
 
   EnhancedMetricsConfig m_enhancedMetricsConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_logConfigHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_userPoolConfigHasBeenSet = false;
+  bool m_openIDConnectConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_additionalAuthenticationProvidersHasBeenSet = false;
+  bool m_xrayEnabledHasBeenSet = false;
+  bool m_lambdaAuthorizerConfigHasBeenSet = false;
+  bool m_apiTypeHasBeenSet = false;
+  bool m_mergedApiExecutionRoleArnHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_ownerContactHasBeenSet = false;
+  bool m_introspectionConfigHasBeenSet = false;
+  bool m_queryDepthLimitHasBeenSet = false;
+  bool m_resolverCountLimitHasBeenSet = false;
   bool m_enhancedMetricsConfigHasBeenSet = false;
 };
 

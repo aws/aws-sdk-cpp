@@ -65,9 +65,9 @@ class CreateAppInstanceAdminRequest : public ChimeSDKIdentityRequest {
   ///@}
  private:
   Aws::String m_appInstanceAdminArn;
-  bool m_appInstanceAdminArnHasBeenSet = false;
 
   Aws::String m_appInstanceArn;
+  bool m_appInstanceAdminArnHasBeenSet = false;
   bool m_appInstanceArnHasBeenSet = false;
 };
 

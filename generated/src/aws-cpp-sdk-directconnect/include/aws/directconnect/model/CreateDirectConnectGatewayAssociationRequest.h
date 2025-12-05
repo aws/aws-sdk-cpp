@@ -119,15 +119,15 @@ class CreateDirectConnectGatewayAssociationRequest : public DirectConnectRequest
   ///@}
  private:
   Aws::String m_directConnectGatewayId;
-  bool m_directConnectGatewayIdHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_addAllowedPrefixesToDirectConnectGateway;
-  bool m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 
   Aws::String m_virtualGatewayId;
+  bool m_directConnectGatewayIdHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
   bool m_virtualGatewayIdHasBeenSet = false;
 };
 

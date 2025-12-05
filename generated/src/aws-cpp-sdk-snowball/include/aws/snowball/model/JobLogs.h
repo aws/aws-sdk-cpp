@@ -104,12 +104,12 @@ class JobLogs {
   ///@}
  private:
   Aws::String m_jobCompletionReportURI;
-  bool m_jobCompletionReportURIHasBeenSet = false;
 
   Aws::String m_jobSuccessLogURI;
-  bool m_jobSuccessLogURIHasBeenSet = false;
 
   Aws::String m_jobFailureLogURI;
+  bool m_jobCompletionReportURIHasBeenSet = false;
+  bool m_jobSuccessLogURIHasBeenSet = false;
   bool m_jobFailureLogURIHasBeenSet = false;
 };
 

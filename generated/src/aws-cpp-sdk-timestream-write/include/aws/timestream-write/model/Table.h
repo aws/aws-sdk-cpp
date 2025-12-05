@@ -202,30 +202,30 @@ class Table {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   TableStatus m_tableStatus{TableStatus::NOT_SET};
-  bool m_tableStatusHasBeenSet = false;
 
   RetentionProperties m_retentionProperties;
-  bool m_retentionPropertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   MagneticStoreWriteProperties m_magneticStoreWriteProperties;
-  bool m_magneticStoreWritePropertiesHasBeenSet = false;
 
   Schema m_schema;
+  bool m_arnHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableStatusHasBeenSet = false;
+  bool m_retentionPropertiesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_magneticStoreWritePropertiesHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class DescribeCampaignResult {
   ///@}
  private:
   Campaign m_campaign;
-  bool m_campaignHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_campaignHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

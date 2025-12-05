@@ -169,21 +169,21 @@ class TestAuthorizationRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_cognitoIdentityPoolId;
-  bool m_cognitoIdentityPoolIdHasBeenSet = false;
 
   Aws::Vector<AuthInfo> m_authInfos;
-  bool m_authInfosHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyNamesToAdd;
-  bool m_policyNamesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyNamesToSkip;
+  bool m_principalHasBeenSet = false;
+  bool m_cognitoIdentityPoolIdHasBeenSet = false;
+  bool m_authInfosHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_policyNamesToAddHasBeenSet = false;
   bool m_policyNamesToSkipHasBeenSet = false;
 };
 

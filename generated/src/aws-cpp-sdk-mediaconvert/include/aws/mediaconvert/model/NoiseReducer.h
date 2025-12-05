@@ -115,15 +115,15 @@ class NoiseReducer {
   ///@}
  private:
   NoiseReducerFilter m_filter{NoiseReducerFilter::NOT_SET};
-  bool m_filterHasBeenSet = false;
 
   NoiseReducerFilterSettings m_filterSettings;
-  bool m_filterSettingsHasBeenSet = false;
 
   NoiseReducerSpatialFilterSettings m_spatialFilterSettings;
-  bool m_spatialFilterSettingsHasBeenSet = false;
 
   NoiseReducerTemporalFilterSettings m_temporalFilterSettings;
+  bool m_filterHasBeenSet = false;
+  bool m_filterSettingsHasBeenSet = false;
+  bool m_spatialFilterSettingsHasBeenSet = false;
   bool m_temporalFilterSettingsHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class CostCategoryInheritedValueDimension {
   ///@}
  private:
   CostCategoryInheritedValueDimensionName m_dimensionName{CostCategoryInheritedValueDimensionName::NOT_SET};
-  bool m_dimensionNameHasBeenSet = false;
 
   Aws::String m_dimensionKey;
+  bool m_dimensionNameHasBeenSet = false;
   bool m_dimensionKeyHasBeenSet = false;
 };
 

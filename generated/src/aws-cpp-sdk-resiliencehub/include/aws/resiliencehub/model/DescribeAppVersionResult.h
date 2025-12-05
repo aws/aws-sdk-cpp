@@ -112,15 +112,15 @@ class DescribeAppVersionResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

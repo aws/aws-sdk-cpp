@@ -171,21 +171,21 @@ class VoiceTemplateRequest {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_defaultSubstitutions;
-  bool m_defaultSubstitutionsHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::String m_voiceId;
+  bool m_bodyHasBeenSet = false;
+  bool m_defaultSubstitutionsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
   bool m_voiceIdHasBeenSet = false;
 };
 

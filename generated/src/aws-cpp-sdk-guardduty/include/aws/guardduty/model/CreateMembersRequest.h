@@ -78,9 +78,9 @@ class CreateMembersRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::Vector<AccountDetail> m_accountDetails;
+  bool m_detectorIdHasBeenSet = false;
   bool m_accountDetailsHasBeenSet = false;
 };
 

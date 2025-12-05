@@ -89,12 +89,12 @@ class RouteServerAssociation {
   ///@}
  private:
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   RouteServerAssociationState m_state{RouteServerAssociationState::NOT_SET};
+  bool m_routeServerIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

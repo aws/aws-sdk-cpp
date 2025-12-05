@@ -125,15 +125,15 @@ class ExternalSourcesGenerationConfiguration {
   ///@}
  private:
   PromptTemplate m_promptTemplate;
-  bool m_promptTemplateHasBeenSet = false;
 
   GuardrailConfiguration m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   KbInferenceConfig m_kbInferenceConfig;
-  bool m_kbInferenceConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
+  bool m_promptTemplateHasBeenSet = false;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_kbInferenceConfigHasBeenSet = false;
   bool m_additionalModelRequestFieldsHasBeenSet = false;
 };
 

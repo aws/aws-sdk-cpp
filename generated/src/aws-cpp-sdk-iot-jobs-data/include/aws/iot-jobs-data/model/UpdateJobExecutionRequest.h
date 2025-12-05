@@ -210,30 +210,30 @@ class UpdateJobExecutionRequest : public IoTJobsDataPlaneRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   long long m_stepTimeoutInMinutes{0};
-  bool m_stepTimeoutInMinutesHasBeenSet = false;
 
   long long m_expectedVersion{0};
-  bool m_expectedVersionHasBeenSet = false;
 
   bool m_includeJobExecutionState{false};
-  bool m_includeJobExecutionStateHasBeenSet = false;
 
   bool m_includeJobDocument{false};
-  bool m_includeJobDocumentHasBeenSet = false;
 
   long long m_executionNumber{0};
+  bool m_jobIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_stepTimeoutInMinutesHasBeenSet = false;
+  bool m_expectedVersionHasBeenSet = false;
+  bool m_includeJobExecutionStateHasBeenSet = false;
+  bool m_includeJobDocumentHasBeenSet = false;
   bool m_executionNumberHasBeenSet = false;
 };
 

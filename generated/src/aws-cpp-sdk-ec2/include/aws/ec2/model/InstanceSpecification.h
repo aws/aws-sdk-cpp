@@ -97,12 +97,12 @@ class InstanceSpecification {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   bool m_excludeBootVolume{false};
-  bool m_excludeBootVolumeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeDataVolumeIds;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_excludeBootVolumeHasBeenSet = false;
   bool m_excludeDataVolumeIdsHasBeenSet = false;
 };
 

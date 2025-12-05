@@ -138,18 +138,18 @@ class UpdateScheduledAuditRequest : public IoTRequest {
   ///@}
  private:
   AuditFrequency m_frequency{AuditFrequency::NOT_SET};
-  bool m_frequencyHasBeenSet = false;
 
   Aws::String m_dayOfMonth;
-  bool m_dayOfMonthHasBeenSet = false;
 
   DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
-  bool m_dayOfWeekHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetCheckNames;
-  bool m_targetCheckNamesHasBeenSet = false;
 
   Aws::String m_scheduledAuditName;
+  bool m_frequencyHasBeenSet = false;
+  bool m_dayOfMonthHasBeenSet = false;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_targetCheckNamesHasBeenSet = false;
   bool m_scheduledAuditNameHasBeenSet = false;
 };
 

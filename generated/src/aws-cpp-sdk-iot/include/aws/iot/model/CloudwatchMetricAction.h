@@ -145,21 +145,21 @@ class CloudwatchMetricAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_metricNamespace;
-  bool m_metricNamespaceHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_metricValue;
-  bool m_metricValueHasBeenSet = false;
 
   Aws::String m_metricUnit;
-  bool m_metricUnitHasBeenSet = false;
 
   Aws::String m_metricTimestamp;
+  bool m_roleArnHasBeenSet = false;
+  bool m_metricNamespaceHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_metricValueHasBeenSet = false;
+  bool m_metricUnitHasBeenSet = false;
   bool m_metricTimestampHasBeenSet = false;
 };
 

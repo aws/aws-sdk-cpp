@@ -152,21 +152,21 @@ class SpotPrice {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   RIProductDescription m_productDescription{RIProductDescription::NOT_SET};
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::String m_spotPrice;
-  bool m_spotPriceHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_spotPriceHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

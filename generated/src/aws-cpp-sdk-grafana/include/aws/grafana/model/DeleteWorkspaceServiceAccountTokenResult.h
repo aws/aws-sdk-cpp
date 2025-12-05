@@ -94,15 +94,15 @@ class DeleteWorkspaceServiceAccountTokenResult {
   ///@}
  private:
   Aws::String m_serviceAccountId;
-  bool m_serviceAccountIdHasBeenSet = false;
 
   Aws::String m_tokenId;
-  bool m_tokenIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceAccountIdHasBeenSet = false;
+  bool m_tokenIdHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class SmsChannelSubtypeParameters {
   ///@}
  private:
   Aws::String m_destinationPhoneNumber;
-  bool m_destinationPhoneNumberHasBeenSet = false;
 
   Aws::String m_connectSourcePhoneNumberArn;
-  bool m_connectSourcePhoneNumberArnHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_templateParameters;
+  bool m_destinationPhoneNumberHasBeenSet = false;
+  bool m_connectSourcePhoneNumberArnHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
   bool m_templateParametersHasBeenSet = false;
 };
 

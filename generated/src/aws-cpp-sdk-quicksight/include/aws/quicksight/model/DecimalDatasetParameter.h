@@ -106,15 +106,15 @@ class DecimalDatasetParameter {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DatasetParameterValueType m_valueType{DatasetParameterValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   DecimalDatasetParameterDefaultValues m_defaultValues;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
   bool m_defaultValuesHasBeenSet = false;
 };
 

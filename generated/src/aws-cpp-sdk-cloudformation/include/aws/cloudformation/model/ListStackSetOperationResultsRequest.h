@@ -162,21 +162,21 @@ class ListStackSetOperationResultsRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   CallAs m_callAs{CallAs::NOT_SET};
-  bool m_callAsHasBeenSet = false;
 
   Aws::Vector<OperationResultFilter> m_filters;
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_callAsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

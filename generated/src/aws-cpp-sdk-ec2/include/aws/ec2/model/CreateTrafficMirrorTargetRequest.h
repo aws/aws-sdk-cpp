@@ -173,24 +173,24 @@ class CreateTrafficMirrorTargetRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_networkLoadBalancerArn;
-  bool m_networkLoadBalancerArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_gatewayLoadBalancerEndpointId;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_networkLoadBalancerArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_gatewayLoadBalancerEndpointIdHasBeenSet = false;
 };
 

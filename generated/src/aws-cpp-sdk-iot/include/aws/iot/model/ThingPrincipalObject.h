@@ -74,9 +74,9 @@ class ThingPrincipalObject {
   ///@}
  private:
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   ThingPrincipalType m_thingPrincipalType{ThingPrincipalType::NOT_SET};
+  bool m_principalHasBeenSet = false;
   bool m_thingPrincipalTypeHasBeenSet = false;
 };
 

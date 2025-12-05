@@ -144,21 +144,21 @@ class CreditCode {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   MonetaryValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_awsCreditCode;
-  bool m_awsCreditCodeHasBeenSet = false;
 
   BenefitAllocationStatus m_status{BenefitAllocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_issuedAt{};
-  bool m_issuedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_awsCreditCodeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_issuedAtHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
 };
 

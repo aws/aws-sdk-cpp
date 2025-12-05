@@ -103,15 +103,15 @@ class GetDatasetContentResult {
   ///@}
  private:
   Aws::Vector<DatasetEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   DatasetContentStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entriesHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

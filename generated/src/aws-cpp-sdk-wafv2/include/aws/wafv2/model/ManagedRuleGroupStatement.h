@@ -239,24 +239,24 @@ class ManagedRuleGroupStatement {
   ///@}
  private:
   Aws::String m_vendorName;
-  bool m_vendorNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<ExcludedRule> m_excludedRules;
-  bool m_excludedRulesHasBeenSet = false;
 
   std::shared_ptr<Statement> m_scopeDownStatement;
-  bool m_scopeDownStatementHasBeenSet = false;
 
   Aws::Vector<ManagedRuleGroupConfig> m_managedRuleGroupConfigs;
-  bool m_managedRuleGroupConfigsHasBeenSet = false;
 
   Aws::Vector<RuleActionOverride> m_ruleActionOverrides;
+  bool m_vendorNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_excludedRulesHasBeenSet = false;
+  bool m_scopeDownStatementHasBeenSet = false;
+  bool m_managedRuleGroupConfigsHasBeenSet = false;
   bool m_ruleActionOverridesHasBeenSet = false;
 };
 

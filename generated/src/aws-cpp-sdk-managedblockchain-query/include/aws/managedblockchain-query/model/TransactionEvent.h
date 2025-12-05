@@ -322,51 +322,51 @@ class TransactionEvent {
   ///@}
  private:
   QueryNetwork m_network{QueryNetwork::NOT_SET};
-  bool m_networkHasBeenSet = false;
 
   Aws::String m_transactionHash;
-  bool m_transactionHashHasBeenSet = false;
 
   QueryTransactionEventType m_eventType{QueryTransactionEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_to;
-  bool m_toHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_contractAddress;
-  bool m_contractAddressHasBeenSet = false;
 
   Aws::String m_tokenId;
-  bool m_tokenIdHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   int m_voutIndex{0};
-  bool m_voutIndexHasBeenSet = false;
 
   bool m_voutSpent{false};
-  bool m_voutSpentHasBeenSet = false;
 
   Aws::String m_spentVoutTransactionId;
-  bool m_spentVoutTransactionIdHasBeenSet = false;
 
   Aws::String m_spentVoutTransactionHash;
-  bool m_spentVoutTransactionHashHasBeenSet = false;
 
   int m_spentVoutIndex{0};
-  bool m_spentVoutIndexHasBeenSet = false;
 
   BlockchainInstant m_blockchainInstant;
-  bool m_blockchainInstantHasBeenSet = false;
 
   ConfirmationStatus m_confirmationStatus{ConfirmationStatus::NOT_SET};
+  bool m_networkHasBeenSet = false;
+  bool m_transactionHashHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
+  bool m_toHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_contractAddressHasBeenSet = false;
+  bool m_tokenIdHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_voutIndexHasBeenSet = false;
+  bool m_voutSpentHasBeenSet = false;
+  bool m_spentVoutTransactionIdHasBeenSet = false;
+  bool m_spentVoutTransactionHashHasBeenSet = false;
+  bool m_spentVoutIndexHasBeenSet = false;
+  bool m_blockchainInstantHasBeenSet = false;
   bool m_confirmationStatusHasBeenSet = false;
 };
 

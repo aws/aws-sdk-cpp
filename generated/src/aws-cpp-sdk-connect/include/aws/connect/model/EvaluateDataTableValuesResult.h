@@ -86,12 +86,12 @@ class EvaluateDataTableValuesResult {
   ///@}
  private:
   Aws::Vector<DataTableEvaluatedValue> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_valuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

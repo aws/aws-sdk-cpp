@@ -94,9 +94,9 @@ class SNSAction {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   SNSActionEncoding m_encoding{SNSActionEncoding::NOT_SET};
+  bool m_topicArnHasBeenSet = false;
   bool m_encodingHasBeenSet = false;
 };
 

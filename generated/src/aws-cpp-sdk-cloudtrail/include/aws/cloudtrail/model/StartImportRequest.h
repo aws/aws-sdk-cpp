@@ -143,18 +143,18 @@ class StartImportRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   ImportSource m_importSource;
-  bool m_importSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_startEventTime{};
-  bool m_startEventTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endEventTime{};
-  bool m_endEventTimeHasBeenSet = false;
 
   Aws::String m_importId;
+  bool m_destinationsHasBeenSet = false;
+  bool m_importSourceHasBeenSet = false;
+  bool m_startEventTimeHasBeenSet = false;
+  bool m_endEventTimeHasBeenSet = false;
   bool m_importIdHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class EstimatedDiscounts {
   ///@}
  private:
   double m_savingsPlansDiscount{0.0};
-  bool m_savingsPlansDiscountHasBeenSet = false;
 
   double m_reservedInstancesDiscount{0.0};
-  bool m_reservedInstancesDiscountHasBeenSet = false;
 
   double m_otherDiscount{0.0};
+  bool m_savingsPlansDiscountHasBeenSet = false;
+  bool m_reservedInstancesDiscountHasBeenSet = false;
   bool m_otherDiscountHasBeenSet = false;
 };
 

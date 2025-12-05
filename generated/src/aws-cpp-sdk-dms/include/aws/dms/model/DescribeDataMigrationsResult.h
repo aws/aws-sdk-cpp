@@ -87,12 +87,12 @@ class DescribeDataMigrationsResult {
   ///@}
  private:
   Aws::Vector<DataMigration> m_dataMigrations;
-  bool m_dataMigrationsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataMigrationsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

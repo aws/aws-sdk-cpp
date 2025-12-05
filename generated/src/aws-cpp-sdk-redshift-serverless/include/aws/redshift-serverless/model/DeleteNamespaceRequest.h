@@ -83,12 +83,12 @@ class DeleteNamespaceRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_finalSnapshotName;
-  bool m_finalSnapshotNameHasBeenSet = false;
 
   int m_finalSnapshotRetentionPeriod{0};
-  bool m_finalSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::String m_namespaceName;
+  bool m_finalSnapshotNameHasBeenSet = false;
+  bool m_finalSnapshotRetentionPeriodHasBeenSet = false;
   bool m_namespaceNameHasBeenSet = false;
 };
 

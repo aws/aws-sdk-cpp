@@ -74,9 +74,9 @@ class DescribeCachediSCSIVolumesResult {
   ///@}
  private:
   Aws::Vector<CachediSCSIVolume> m_cachediSCSIVolumes;
-  bool m_cachediSCSIVolumesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cachediSCSIVolumesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

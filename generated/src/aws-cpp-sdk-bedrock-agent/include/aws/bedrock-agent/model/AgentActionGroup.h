@@ -324,45 +324,45 @@ class AgentActionGroup {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_actionGroupId;
-  bool m_actionGroupIdHasBeenSet = false;
 
   Aws::String m_actionGroupName;
-  bool m_actionGroupNameHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   ActionGroupSignature m_parentActionSignature{ActionGroupSignature::NOT_SET};
-  bool m_parentActionSignatureHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parentActionGroupSignatureParams;
-  bool m_parentActionGroupSignatureParamsHasBeenSet = false;
 
   ActionGroupExecutor m_actionGroupExecutor;
-  bool m_actionGroupExecutorHasBeenSet = false;
 
   APISchema m_apiSchema;
-  bool m_apiSchemaHasBeenSet = false;
 
   FunctionSchema m_functionSchema;
-  bool m_functionSchemaHasBeenSet = false;
 
   ActionGroupState m_actionGroupState{ActionGroupState::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_actionGroupIdHasBeenSet = false;
+  bool m_actionGroupNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_parentActionSignatureHasBeenSet = false;
+  bool m_parentActionGroupSignatureParamsHasBeenSet = false;
+  bool m_actionGroupExecutorHasBeenSet = false;
+  bool m_apiSchemaHasBeenSet = false;
+  bool m_functionSchemaHasBeenSet = false;
   bool m_actionGroupStateHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListPrincipalsForPortfolioResult {
   ///@}
  private:
   Aws::Vector<Principal> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_principalsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

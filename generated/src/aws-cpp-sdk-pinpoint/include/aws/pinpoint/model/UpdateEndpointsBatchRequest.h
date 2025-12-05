@@ -65,9 +65,9 @@ class UpdateEndpointsBatchRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   EndpointBatchRequest m_endpointBatchRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_endpointBatchRequestHasBeenSet = false;
 };
 

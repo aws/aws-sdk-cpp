@@ -123,18 +123,18 @@ class MedicalEntity {
   ///@}
  private:
   double m_startTime{0.0};
-  bool m_startTimeHasBeenSet = false;
 
   double m_endTime{0.0};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

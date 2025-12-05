@@ -75,9 +75,9 @@ class GetConfigurationSetEventDestinationsResult {
   ///@}
  private:
   Aws::Vector<EventDestination> m_eventDestinations;
-  bool m_eventDestinationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventDestinationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

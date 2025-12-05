@@ -89,12 +89,12 @@ class RealtimeContactAnalysisSegment {
   ///@}
  private:
   Transcript m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   Categories m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   PostContactSummary m_postContactSummary;
+  bool m_transcriptHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
   bool m_postContactSummaryHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class FilledMapShapeConditionalFormatting {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   ShapeConditionalFormat m_format;
+  bool m_fieldIdHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

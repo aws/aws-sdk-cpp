@@ -89,12 +89,12 @@ class S3Location {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_bucketHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

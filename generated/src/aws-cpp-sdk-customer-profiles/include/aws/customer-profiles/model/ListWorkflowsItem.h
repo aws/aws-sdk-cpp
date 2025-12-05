@@ -139,21 +139,21 @@ class ListWorkflowsItem {
   ///@}
  private:
   WorkflowType m_workflowType{WorkflowType::NOT_SET};
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDescription;
-  bool m_statusDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDescriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

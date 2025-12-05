@@ -84,12 +84,12 @@ class UpdateConnectorRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_connectorID;
-  bool m_connectorIDHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConnectorSsmCommandConfig m_ssmCommandConfig;
+  bool m_connectorIDHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_ssmCommandConfigHasBeenSet = false;
 };
 

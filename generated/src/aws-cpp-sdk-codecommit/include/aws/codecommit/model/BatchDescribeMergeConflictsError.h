@@ -87,12 +87,12 @@ class BatchDescribeMergeConflictsError {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   Aws::String m_exceptionName;
-  bool m_exceptionNameHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_filePathHasBeenSet = false;
+  bool m_exceptionNameHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

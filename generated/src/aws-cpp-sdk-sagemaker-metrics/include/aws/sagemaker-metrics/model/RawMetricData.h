@@ -102,15 +102,15 @@ class RawMetricData {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   int m_step{0};
-  bool m_stepHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_metricNameHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_stepHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

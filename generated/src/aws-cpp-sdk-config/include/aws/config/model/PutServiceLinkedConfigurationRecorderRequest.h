@@ -77,9 +77,9 @@ class PutServiceLinkedConfigurationRecorderRequest : public ConfigServiceRequest
   ///@}
  private:
   Aws::String m_servicePrincipal;
-  bool m_servicePrincipalHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_servicePrincipalHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -298,39 +298,39 @@ class ApplicationDetail {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_applicationDescription;
-  bool m_applicationDescriptionHasBeenSet = false;
 
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
-  bool m_applicationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   Aws::Vector<InputDescription> m_inputDescriptions;
-  bool m_inputDescriptionsHasBeenSet = false;
 
   Aws::Vector<OutputDescription> m_outputDescriptions;
-  bool m_outputDescriptionsHasBeenSet = false;
 
   Aws::Vector<ReferenceDataSourceDescription> m_referenceDataSourceDescriptions;
-  bool m_referenceDataSourceDescriptionsHasBeenSet = false;
 
   Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
-  bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
 
   Aws::String m_applicationCode;
-  bool m_applicationCodeHasBeenSet = false;
 
   long long m_applicationVersionId{0};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_applicationDescriptionHasBeenSet = false;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationStatusHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
+  bool m_inputDescriptionsHasBeenSet = false;
+  bool m_outputDescriptionsHasBeenSet = false;
+  bool m_referenceDataSourceDescriptionsHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
+  bool m_applicationCodeHasBeenSet = false;
   bool m_applicationVersionIdHasBeenSet = false;
 };
 

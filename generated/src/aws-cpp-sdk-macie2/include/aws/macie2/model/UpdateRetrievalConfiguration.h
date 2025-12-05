@@ -86,9 +86,9 @@ class UpdateRetrievalConfiguration {
   ///@}
  private:
   RetrievalMode m_retrievalMode{RetrievalMode::NOT_SET};
-  bool m_retrievalModeHasBeenSet = false;
 
   Aws::String m_roleName;
+  bool m_retrievalModeHasBeenSet = false;
   bool m_roleNameHasBeenSet = false;
 };
 

@@ -99,15 +99,15 @@ class PiiEntity {
   ///@}
  private:
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   PiiEntityType m_type{PiiEntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
+  bool m_scoreHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
   bool m_endOffsetHasBeenSet = false;
 };
 

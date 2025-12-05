@@ -86,12 +86,12 @@ class ListJobRunAttemptsResult {
   ///@}
  private:
   Aws::Vector<JobRunAttemptSummary> m_jobRunAttempts;
-  bool m_jobRunAttemptsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobRunAttemptsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

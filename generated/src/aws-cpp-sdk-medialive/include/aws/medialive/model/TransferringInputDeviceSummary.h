@@ -104,15 +104,15 @@ class TransferringInputDeviceSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_targetCustomerId;
-  bool m_targetCustomerIdHasBeenSet = false;
 
   InputDeviceTransferType m_transferType{InputDeviceTransferType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_targetCustomerIdHasBeenSet = false;
   bool m_transferTypeHasBeenSet = false;
 };
 

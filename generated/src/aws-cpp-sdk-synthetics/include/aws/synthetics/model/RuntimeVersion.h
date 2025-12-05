@@ -111,15 +111,15 @@ class RuntimeVersion {
   ///@}
  private:
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_releaseDate{};
-  bool m_releaseDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deprecationDate{};
+  bool m_versionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
   bool m_deprecationDateHasBeenSet = false;
 };
 

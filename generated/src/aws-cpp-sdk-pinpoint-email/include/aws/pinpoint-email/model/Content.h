@@ -73,9 +73,9 @@ class Content {
   ///@}
  private:
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_charset;
+  bool m_dataHasBeenSet = false;
   bool m_charsetHasBeenSet = false;
 };
 

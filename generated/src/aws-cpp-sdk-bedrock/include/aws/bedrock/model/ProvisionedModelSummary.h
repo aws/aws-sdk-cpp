@@ -253,39 +253,39 @@ class ProvisionedModelSummary {
   ///@}
  private:
   Aws::String m_provisionedModelName;
-  bool m_provisionedModelNameHasBeenSet = false;
 
   Aws::String m_provisionedModelArn;
-  bool m_provisionedModelArnHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_desiredModelArn;
-  bool m_desiredModelArnHasBeenSet = false;
 
   Aws::String m_foundationModelArn;
-  bool m_foundationModelArnHasBeenSet = false;
 
   int m_modelUnits{0};
-  bool m_modelUnitsHasBeenSet = false;
 
   int m_desiredModelUnits{0};
-  bool m_desiredModelUnitsHasBeenSet = false;
 
   ProvisionedModelStatus m_status{ProvisionedModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CommitmentDuration m_commitmentDuration{CommitmentDuration::NOT_SET};
-  bool m_commitmentDurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_commitmentExpirationTime{};
-  bool m_commitmentExpirationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_provisionedModelNameHasBeenSet = false;
+  bool m_provisionedModelArnHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_desiredModelArnHasBeenSet = false;
+  bool m_foundationModelArnHasBeenSet = false;
+  bool m_modelUnitsHasBeenSet = false;
+  bool m_desiredModelUnitsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_commitmentDurationHasBeenSet = false;
+  bool m_commitmentExpirationTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

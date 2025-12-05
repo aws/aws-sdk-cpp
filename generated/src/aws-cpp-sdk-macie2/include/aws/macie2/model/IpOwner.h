@@ -108,15 +108,15 @@ class IpOwner {
   ///@}
  private:
   Aws::String m_asn;
-  bool m_asnHasBeenSet = false;
 
   Aws::String m_asnOrg;
-  bool m_asnOrgHasBeenSet = false;
 
   Aws::String m_isp;
-  bool m_ispHasBeenSet = false;
 
   Aws::String m_org;
+  bool m_asnHasBeenSet = false;
+  bool m_asnOrgHasBeenSet = false;
+  bool m_ispHasBeenSet = false;
   bool m_orgHasBeenSet = false;
 };
 

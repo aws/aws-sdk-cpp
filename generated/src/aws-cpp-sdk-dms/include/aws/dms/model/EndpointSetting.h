@@ -199,30 +199,30 @@ class EndpointSetting {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EndpointSettingTypeValue m_type{EndpointSettingTypeValue::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enumValues;
-  bool m_enumValuesHasBeenSet = false;
 
   bool m_sensitive{false};
-  bool m_sensitiveHasBeenSet = false;
 
   Aws::String m_units;
-  bool m_unitsHasBeenSet = false;
 
   Aws::String m_applicability;
-  bool m_applicabilityHasBeenSet = false;
 
   int m_intValueMin{0};
-  bool m_intValueMinHasBeenSet = false;
 
   int m_intValueMax{0};
-  bool m_intValueMaxHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_enumValuesHasBeenSet = false;
+  bool m_sensitiveHasBeenSet = false;
+  bool m_unitsHasBeenSet = false;
+  bool m_applicabilityHasBeenSet = false;
+  bool m_intValueMinHasBeenSet = false;
+  bool m_intValueMaxHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

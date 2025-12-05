@@ -69,9 +69,9 @@ class RecordingConfig {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   S3Location m_s3Location;
+  bool m_enabledHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

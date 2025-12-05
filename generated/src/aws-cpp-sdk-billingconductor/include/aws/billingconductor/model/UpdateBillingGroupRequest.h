@@ -142,21 +142,21 @@ class UpdateBillingGroupRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   BillingGroupStatus m_status{BillingGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ComputationPreference m_computationPreference;
-  bool m_computationPreferenceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   UpdateBillingGroupAccountGrouping m_accountGrouping;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_computationPreferenceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_accountGroupingHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class ListDurableExecutionsByFunctionResult {
   ///@}
  private:
   Aws::Vector<Execution> m_durableExecutions;
-  bool m_durableExecutionsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_durableExecutionsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

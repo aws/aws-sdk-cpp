@@ -220,33 +220,33 @@ class ListModelCopyJobsRequest : public BedrockRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   ModelCopyJobStatus m_statusEquals{ModelCopyJobStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   Aws::String m_sourceAccountEquals;
-  bool m_sourceAccountEqualsHasBeenSet = false;
 
   Aws::String m_sourceModelArnEquals;
-  bool m_sourceModelArnEqualsHasBeenSet = false;
 
   Aws::String m_targetModelNameContains;
-  bool m_targetModelNameContainsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SortJobsBy m_sortBy{SortJobsBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_sourceAccountEqualsHasBeenSet = false;
+  bool m_sourceModelArnEqualsHasBeenSet = false;
+  bool m_targetModelNameContainsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

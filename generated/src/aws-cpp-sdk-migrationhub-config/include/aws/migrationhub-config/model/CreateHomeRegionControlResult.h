@@ -62,9 +62,9 @@ class CreateHomeRegionControlResult {
   ///@}
  private:
   HomeRegionControl m_homeRegionControl;
-  bool m_homeRegionControlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_homeRegionControlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

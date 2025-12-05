@@ -135,18 +135,18 @@ class UpdateReportPlanRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_reportPlanName;
-  bool m_reportPlanNameHasBeenSet = false;
 
   Aws::String m_reportPlanDescription;
-  bool m_reportPlanDescriptionHasBeenSet = false;
 
   ReportDeliveryChannel m_reportDeliveryChannel;
-  bool m_reportDeliveryChannelHasBeenSet = false;
 
   ReportSetting m_reportSetting;
-  bool m_reportSettingHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_reportPlanNameHasBeenSet = false;
+  bool m_reportPlanDescriptionHasBeenSet = false;
+  bool m_reportDeliveryChannelHasBeenSet = false;
+  bool m_reportSettingHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

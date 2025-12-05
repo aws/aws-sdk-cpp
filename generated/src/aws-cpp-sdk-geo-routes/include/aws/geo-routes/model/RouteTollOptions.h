@@ -124,18 +124,18 @@ class RouteTollOptions {
   ///@}
  private:
   bool m_allTransponders{false};
-  bool m_allTranspondersHasBeenSet = false;
 
   bool m_allVignettes{false};
-  bool m_allVignettesHasBeenSet = false;
 
   Aws::String m_currency;
-  bool m_currencyHasBeenSet = false;
 
   RouteEmissionType m_emissionType;
-  bool m_emissionTypeHasBeenSet = false;
 
   RouteTollVehicleCategory m_vehicleCategory{RouteTollVehicleCategory::NOT_SET};
+  bool m_allTranspondersHasBeenSet = false;
+  bool m_allVignettesHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
+  bool m_emissionTypeHasBeenSet = false;
   bool m_vehicleCategoryHasBeenSet = false;
 };
 

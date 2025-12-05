@@ -86,12 +86,12 @@ class TableMaintenanceJobStatusValue {
   ///@}
  private:
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRunTimestamp{};
-  bool m_lastRunTimestampHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_statusHasBeenSet = false;
+  bool m_lastRunTimestampHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class StartDashboardRefreshRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_queryParameterValues;
+  bool m_dashboardIdHasBeenSet = false;
   bool m_queryParameterValuesHasBeenSet = false;
 };
 

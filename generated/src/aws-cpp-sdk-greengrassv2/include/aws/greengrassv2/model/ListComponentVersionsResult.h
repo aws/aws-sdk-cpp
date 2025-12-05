@@ -85,12 +85,12 @@ class ListComponentVersionsResult {
   ///@}
  private:
   Aws::Vector<ComponentVersionListItem> m_componentVersions;
-  bool m_componentVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_componentVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

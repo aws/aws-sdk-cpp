@@ -70,9 +70,9 @@ class ValidationErrorsEntry {
   ///@}
  private:
   Aws::String m_checkName;
-  bool m_checkNameHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_checkNameHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

@@ -175,24 +175,24 @@ class EksResourceScalingConfiguration {
   ///@}
  private:
   int m_timeoutMinutes{0};
-  bool m_timeoutMinutesHasBeenSet = false;
 
   KubernetesResourceType m_kubernetesResourceType;
-  bool m_kubernetesResourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, KubernetesScalingResource>>> m_scalingResources;
-  bool m_scalingResourcesHasBeenSet = false;
 
   Aws::Vector<EksCluster> m_eksClusters;
-  bool m_eksClustersHasBeenSet = false;
 
   EksResourceScalingUngraceful m_ungraceful;
-  bool m_ungracefulHasBeenSet = false;
 
   int m_targetPercent{0};
-  bool m_targetPercentHasBeenSet = false;
 
   EksCapacityMonitoringApproach m_capacityMonitoringApproach{EksCapacityMonitoringApproach::NOT_SET};
+  bool m_timeoutMinutesHasBeenSet = false;
+  bool m_kubernetesResourceTypeHasBeenSet = false;
+  bool m_scalingResourcesHasBeenSet = false;
+  bool m_eksClustersHasBeenSet = false;
+  bool m_ungracefulHasBeenSet = false;
+  bool m_targetPercentHasBeenSet = false;
   bool m_capacityMonitoringApproachHasBeenSet = false;
 };
 

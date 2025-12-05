@@ -86,12 +86,12 @@ class InstanceStatus {
   ///@}
  private:
   InstanceState m_state{InstanceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   InstanceStateChangeReason m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   InstanceTimeline m_timeline;
+  bool m_stateHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
   bool m_timelineHasBeenSet = false;
 };
 

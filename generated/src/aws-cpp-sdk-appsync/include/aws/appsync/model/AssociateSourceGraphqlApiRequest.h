@@ -110,15 +110,15 @@ class AssociateSourceGraphqlApiRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_mergedApiIdentifier;
-  bool m_mergedApiIdentifierHasBeenSet = false;
 
   Aws::String m_sourceApiIdentifier;
-  bool m_sourceApiIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SourceApiAssociationConfig m_sourceApiAssociationConfig;
+  bool m_mergedApiIdentifierHasBeenSet = false;
+  bool m_sourceApiIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_sourceApiAssociationConfigHasBeenSet = false;
 };
 

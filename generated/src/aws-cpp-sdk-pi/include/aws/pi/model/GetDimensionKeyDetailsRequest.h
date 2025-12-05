@@ -161,18 +161,18 @@ class GetDimensionKeyDetailsRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_groupIdentifier;
-  bool m_groupIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requestedDimensions;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_groupIdentifierHasBeenSet = false;
   bool m_requestedDimensionsHasBeenSet = false;
 };
 

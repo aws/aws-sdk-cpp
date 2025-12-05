@@ -60,9 +60,9 @@ class CreateStackSetResult {
   ///@}
  private:
   Aws::String m_stackSetId;
-  bool m_stackSetIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackSetIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -158,24 +158,24 @@ class JwtTokenTypeConfiguration {
   ///@}
  private:
   KeyLocation m_keyLocation{KeyLocation::NOT_SET};
-  bool m_keyLocationHasBeenSet = false;
 
   Aws::String m_uRL;
-  bool m_uRLHasBeenSet = false;
 
   Aws::String m_secretManagerArn;
-  bool m_secretManagerArnHasBeenSet = false;
 
   Aws::String m_userNameAttributeField;
-  bool m_userNameAttributeFieldHasBeenSet = false;
 
   Aws::String m_groupAttributeField;
-  bool m_groupAttributeFieldHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_claimRegex;
+  bool m_keyLocationHasBeenSet = false;
+  bool m_uRLHasBeenSet = false;
+  bool m_secretManagerArnHasBeenSet = false;
+  bool m_userNameAttributeFieldHasBeenSet = false;
+  bool m_groupAttributeFieldHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
   bool m_claimRegexHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class PutMetricStreamResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_arnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

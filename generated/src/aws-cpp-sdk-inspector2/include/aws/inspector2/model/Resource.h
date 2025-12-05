@@ -148,21 +148,21 @@ class Resource {
   ///@}
  private:
   ResourceType m_type{ResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_partition;
-  bool m_partitionHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResourceDetails m_details;
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_partitionHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

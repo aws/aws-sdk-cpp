@@ -497,63 +497,63 @@ class ModifyVpnTunnelOptionsSpecification {
   ///@}
  private:
   Aws::String m_tunnelInsideCidr;
-  bool m_tunnelInsideCidrHasBeenSet = false;
 
   Aws::String m_tunnelInsideIpv6Cidr;
-  bool m_tunnelInsideIpv6CidrHasBeenSet = false;
 
   Aws::String m_preSharedKey;
-  bool m_preSharedKeyHasBeenSet = false;
 
   int m_phase1LifetimeSeconds{0};
-  bool m_phase1LifetimeSecondsHasBeenSet = false;
 
   int m_phase2LifetimeSeconds{0};
-  bool m_phase2LifetimeSecondsHasBeenSet = false;
 
   int m_rekeyMarginTimeSeconds{0};
-  bool m_rekeyMarginTimeSecondsHasBeenSet = false;
 
   int m_rekeyFuzzPercentage{0};
-  bool m_rekeyFuzzPercentageHasBeenSet = false;
 
   int m_replayWindowSize{0};
-  bool m_replayWindowSizeHasBeenSet = false;
 
   int m_dPDTimeoutSeconds{0};
-  bool m_dPDTimeoutSecondsHasBeenSet = false;
 
   Aws::String m_dPDTimeoutAction;
-  bool m_dPDTimeoutActionHasBeenSet = false;
 
   Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue> m_phase1EncryptionAlgorithms;
-  bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase2EncryptionAlgorithmsRequestListValue> m_phase2EncryptionAlgorithms;
-  bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase1IntegrityAlgorithmsRequestListValue> m_phase1IntegrityAlgorithms;
-  bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase2IntegrityAlgorithmsRequestListValue> m_phase2IntegrityAlgorithms;
-  bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Phase1DHGroupNumbersRequestListValue> m_phase1DHGroupNumbers;
-  bool m_phase1DHGroupNumbersHasBeenSet = false;
 
   Aws::Vector<Phase2DHGroupNumbersRequestListValue> m_phase2DHGroupNumbers;
-  bool m_phase2DHGroupNumbersHasBeenSet = false;
 
   Aws::Vector<IKEVersionsRequestListValue> m_iKEVersions;
-  bool m_iKEVersionsHasBeenSet = false;
 
   Aws::String m_startupAction;
-  bool m_startupActionHasBeenSet = false;
 
   VpnTunnelLogOptionsSpecification m_logOptions;
-  bool m_logOptionsHasBeenSet = false;
 
   bool m_enableTunnelLifecycleControl{false};
+  bool m_tunnelInsideCidrHasBeenSet = false;
+  bool m_tunnelInsideIpv6CidrHasBeenSet = false;
+  bool m_preSharedKeyHasBeenSet = false;
+  bool m_phase1LifetimeSecondsHasBeenSet = false;
+  bool m_phase2LifetimeSecondsHasBeenSet = false;
+  bool m_rekeyMarginTimeSecondsHasBeenSet = false;
+  bool m_rekeyFuzzPercentageHasBeenSet = false;
+  bool m_replayWindowSizeHasBeenSet = false;
+  bool m_dPDTimeoutSecondsHasBeenSet = false;
+  bool m_dPDTimeoutActionHasBeenSet = false;
+  bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
+  bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
+  bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
+  bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
+  bool m_phase1DHGroupNumbersHasBeenSet = false;
+  bool m_phase2DHGroupNumbersHasBeenSet = false;
+  bool m_iKEVersionsHasBeenSet = false;
+  bool m_startupActionHasBeenSet = false;
+  bool m_logOptionsHasBeenSet = false;
   bool m_enableTunnelLifecycleControlHasBeenSet = false;
 };
 

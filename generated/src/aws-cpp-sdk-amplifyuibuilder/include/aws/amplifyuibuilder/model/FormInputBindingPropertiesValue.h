@@ -72,9 +72,9 @@ class FormInputBindingPropertiesValue {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   FormInputBindingPropertiesValueProperties m_bindingProperties;
+  bool m_typeHasBeenSet = false;
   bool m_bindingPropertiesHasBeenSet = false;
 };
 

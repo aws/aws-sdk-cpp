@@ -148,21 +148,21 @@ class ListComputeRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_containerGroupDefinitionName;
-  bool m_containerGroupDefinitionNameHasBeenSet = false;
 
   ListComputeInputStatus m_computeStatus{ListComputeInputStatus::NOT_SET};
-  bool m_computeStatusHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_containerGroupDefinitionNameHasBeenSet = false;
+  bool m_computeStatusHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

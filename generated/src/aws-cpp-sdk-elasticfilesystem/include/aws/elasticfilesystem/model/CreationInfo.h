@@ -97,12 +97,12 @@ class CreationInfo {
   ///@}
  private:
   long long m_ownerUid{0};
-  bool m_ownerUidHasBeenSet = false;
 
   long long m_ownerGid{0};
-  bool m_ownerGidHasBeenSet = false;
 
   Aws::String m_permissions;
+  bool m_ownerUidHasBeenSet = false;
+  bool m_ownerGidHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

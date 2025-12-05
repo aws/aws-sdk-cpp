@@ -174,24 +174,24 @@ class DataProductListing {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_dataProductId;
-  bool m_dataProductIdHasBeenSet = false;
 
   Aws::String m_dataProductRevision;
-  bool m_dataProductRevisionHasBeenSet = false;
 
   Aws::String m_forms;
-  bool m_formsHasBeenSet = false;
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::Vector<ListingSummary> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_owningProjectId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_dataProductIdHasBeenSet = false;
+  bool m_dataProductRevisionHasBeenSet = false;
+  bool m_formsHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
 };
 

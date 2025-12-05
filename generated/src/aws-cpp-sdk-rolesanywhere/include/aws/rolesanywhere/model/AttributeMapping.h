@@ -75,9 +75,9 @@ class AttributeMapping {
   ///@}
  private:
   CertificateField m_certificateField{CertificateField::NOT_SET};
-  bool m_certificateFieldHasBeenSet = false;
 
   Aws::Vector<MappingRule> m_mappingRules;
+  bool m_certificateFieldHasBeenSet = false;
   bool m_mappingRulesHasBeenSet = false;
 };
 

@@ -211,30 +211,30 @@ class StartDeploymentRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_deploymentStrategyId;
-  bool m_deploymentStrategyIdHasBeenSet = false;
 
   Aws::String m_configurationProfileId;
-  bool m_configurationProfileIdHasBeenSet = false;
 
   Aws::String m_configurationVersion;
-  bool m_configurationVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dynamicExtensionParameters;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_deploymentStrategyIdHasBeenSet = false;
+  bool m_configurationProfileIdHasBeenSet = false;
+  bool m_configurationVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_dynamicExtensionParametersHasBeenSet = false;
 };
 

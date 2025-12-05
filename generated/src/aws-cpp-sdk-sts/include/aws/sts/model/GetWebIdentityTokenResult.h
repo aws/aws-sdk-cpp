@@ -87,12 +87,12 @@ class GetWebIdentityTokenResult {
   ///@}
  private:
   Aws::String m_webIdentityToken;
-  bool m_webIdentityTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
-  bool m_expirationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_webIdentityTokenHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

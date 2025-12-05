@@ -145,21 +145,21 @@ class LoadBalancerTlsCertificateDomainValidationRecord {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   LoadBalancerTlsCertificateDomainStatus m_validationStatus{LoadBalancerTlsCertificateDomainStatus::NOT_SET};
-  bool m_validationStatusHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   LoadBalancerTlsCertificateDnsRecordCreationState m_dnsRecordCreationState;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
   bool m_dnsRecordCreationStateHasBeenSet = false;
 };
 

@@ -167,24 +167,24 @@ class GeneratePinDataRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_generationKeyIdentifier;
-  bool m_generationKeyIdentifierHasBeenSet = false;
 
   Aws::String m_encryptionKeyIdentifier;
-  bool m_encryptionKeyIdentifierHasBeenSet = false;
 
   PinGenerationAttributes m_generationAttributes;
-  bool m_generationAttributesHasBeenSet = false;
 
   int m_pinDataLength{0};
-  bool m_pinDataLengthHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   PinBlockFormatForPinData m_pinBlockFormat{PinBlockFormatForPinData::NOT_SET};
-  bool m_pinBlockFormatHasBeenSet = false;
 
   WrappedKey m_encryptionWrappedKey;
+  bool m_generationKeyIdentifierHasBeenSet = false;
+  bool m_encryptionKeyIdentifierHasBeenSet = false;
+  bool m_generationAttributesHasBeenSet = false;
+  bool m_pinDataLengthHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_pinBlockFormatHasBeenSet = false;
   bool m_encryptionWrappedKeyHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ModuleLoggingConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   LoggingLevel m_logLevel{LoggingLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   Aws::String m_cloudWatchLogGroupArn;
+  bool m_enabledHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
   bool m_cloudWatchLogGroupArnHasBeenSet = false;
 };
 

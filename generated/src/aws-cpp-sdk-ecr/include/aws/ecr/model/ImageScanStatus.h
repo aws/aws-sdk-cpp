@@ -67,9 +67,9 @@ class ImageScanStatus {
   ///@}
  private:
   ScanStatus m_status{ScanStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

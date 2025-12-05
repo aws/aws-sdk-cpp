@@ -72,9 +72,9 @@ class ParameterDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ParameterDefinitionSchema m_definition;
+  bool m_nameHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

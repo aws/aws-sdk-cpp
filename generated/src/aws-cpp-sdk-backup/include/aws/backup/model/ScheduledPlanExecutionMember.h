@@ -92,12 +92,12 @@ class ScheduledPlanExecutionMember {
   ///@}
  private:
   Aws::Utils::DateTime m_executionTime{};
-  bool m_executionTimeHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   RuleExecutionType m_ruleExecutionType{RuleExecutionType::NOT_SET};
+  bool m_executionTimeHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
   bool m_ruleExecutionTypeHasBeenSet = false;
 };
 

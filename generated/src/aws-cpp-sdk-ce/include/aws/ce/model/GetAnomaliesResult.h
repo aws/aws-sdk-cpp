@@ -86,12 +86,12 @@ class GetAnomaliesResult {
   ///@}
  private:
   Aws::Vector<Anomaly> m_anomalies;
-  bool m_anomaliesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anomaliesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

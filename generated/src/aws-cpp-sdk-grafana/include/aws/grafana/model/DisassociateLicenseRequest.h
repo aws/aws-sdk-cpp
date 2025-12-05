@@ -64,9 +64,9 @@ class DisassociateLicenseRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   LicenseType m_licenseType{LicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_licenseTypeHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

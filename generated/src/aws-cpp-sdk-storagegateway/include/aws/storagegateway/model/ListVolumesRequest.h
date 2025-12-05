@@ -89,12 +89,12 @@ class ListVolumesRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

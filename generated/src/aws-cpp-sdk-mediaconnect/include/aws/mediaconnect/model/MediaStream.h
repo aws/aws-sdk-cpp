@@ -176,27 +176,27 @@ class MediaStream {
   ///@}
  private:
   MediaStreamAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   int m_clockRate{0};
-  bool m_clockRateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_fmt{0};
-  bool m_fmtHasBeenSet = false;
 
   int m_mediaStreamId{0};
-  bool m_mediaStreamIdHasBeenSet = false;
 
   Aws::String m_mediaStreamName;
-  bool m_mediaStreamNameHasBeenSet = false;
 
   MediaStreamType m_mediaStreamType{MediaStreamType::NOT_SET};
-  bool m_mediaStreamTypeHasBeenSet = false;
 
   Aws::String m_videoFormat;
+  bool m_attributesHasBeenSet = false;
+  bool m_clockRateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_fmtHasBeenSet = false;
+  bool m_mediaStreamIdHasBeenSet = false;
+  bool m_mediaStreamNameHasBeenSet = false;
+  bool m_mediaStreamTypeHasBeenSet = false;
   bool m_videoFormatHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class CreateTableBucketRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   StorageClassConfiguration m_storageClassConfiguration;
-  bool m_storageClassConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_storageClassConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

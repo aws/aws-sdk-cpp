@@ -126,18 +126,18 @@ class DataIngestionJobSummary {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   IngestionInputConfiguration m_ingestionInputConfiguration;
-  bool m_ingestionInputConfigurationHasBeenSet = false;
 
   IngestionJobStatus m_status{IngestionJobStatus::NOT_SET};
+  bool m_jobIdHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_ingestionInputConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

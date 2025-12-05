@@ -58,9 +58,9 @@ class RemoveAttributesResult {
   ///@}
  private:
   AttributesResource m_attributesResource;
-  bool m_attributesResourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributesResourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

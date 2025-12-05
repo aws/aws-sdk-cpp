@@ -122,15 +122,15 @@ class DetectStackSetDriftRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   StackSetOperationPreferences m_operationPreferences;
-  bool m_operationPreferencesHasBeenSet = false;
 
   Aws::String m_operationId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_operationIdHasBeenSet = true;
 
   CallAs m_callAs{CallAs::NOT_SET};
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_operationPreferencesHasBeenSet = false;
+  bool m_operationIdHasBeenSet = true;
   bool m_callAsHasBeenSet = false;
 };
 

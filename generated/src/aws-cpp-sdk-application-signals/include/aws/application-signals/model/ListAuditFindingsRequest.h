@@ -204,24 +204,24 @@ class ListAuditFindingsRequest : public ApplicationSignalsRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_auditors;
-  bool m_auditorsHasBeenSet = false;
 
   Aws::Vector<AuditTarget> m_auditTargets;
-  bool m_auditTargetsHasBeenSet = false;
 
   DetailLevel m_detailLevel{DetailLevel::NOT_SET};
-  bool m_detailLevelHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_auditorsHasBeenSet = false;
+  bool m_auditTargetsHasBeenSet = false;
+  bool m_detailLevelHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

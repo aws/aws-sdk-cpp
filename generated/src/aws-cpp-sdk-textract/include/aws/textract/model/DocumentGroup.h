@@ -130,15 +130,15 @@ class DocumentGroup {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<SplitDocument> m_splitDocuments;
-  bool m_splitDocumentsHasBeenSet = false;
 
   Aws::Vector<DetectedSignature> m_detectedSignatures;
-  bool m_detectedSignaturesHasBeenSet = false;
 
   Aws::Vector<UndetectedSignature> m_undetectedSignatures;
+  bool m_typeHasBeenSet = false;
+  bool m_splitDocumentsHasBeenSet = false;
+  bool m_detectedSignaturesHasBeenSet = false;
   bool m_undetectedSignaturesHasBeenSet = false;
 };
 

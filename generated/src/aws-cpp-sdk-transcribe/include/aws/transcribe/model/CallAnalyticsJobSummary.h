@@ -197,27 +197,27 @@ class CallAnalyticsJobSummary {
   ///@}
  private:
   Aws::String m_callAnalyticsJobName;
-  bool m_callAnalyticsJobNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   CallAnalyticsJobStatus m_callAnalyticsJobStatus{CallAnalyticsJobStatus::NOT_SET};
-  bool m_callAnalyticsJobStatusHasBeenSet = false;
 
   CallAnalyticsJobDetails m_callAnalyticsJobDetails;
-  bool m_callAnalyticsJobDetailsHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_callAnalyticsJobNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_callAnalyticsJobStatusHasBeenSet = false;
+  bool m_callAnalyticsJobDetailsHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

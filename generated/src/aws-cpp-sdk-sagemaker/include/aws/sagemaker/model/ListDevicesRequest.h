@@ -122,18 +122,18 @@ class ListDevicesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestHeartbeatAfter{};
-  bool m_latestHeartbeatAfterHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_latestHeartbeatAfterHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
   bool m_deviceFleetNameHasBeenSet = false;
 };
 

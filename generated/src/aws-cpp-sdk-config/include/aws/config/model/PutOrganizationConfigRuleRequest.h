@@ -148,18 +148,18 @@ class PutOrganizationConfigRuleRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_organizationConfigRuleName;
-  bool m_organizationConfigRuleNameHasBeenSet = false;
 
   OrganizationManagedRuleMetadata m_organizationManagedRuleMetadata;
-  bool m_organizationManagedRuleMetadataHasBeenSet = false;
 
   OrganizationCustomRuleMetadata m_organizationCustomRuleMetadata;
-  bool m_organizationCustomRuleMetadataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedAccounts;
-  bool m_excludedAccountsHasBeenSet = false;
 
   OrganizationCustomPolicyRuleMetadata m_organizationCustomPolicyRuleMetadata;
+  bool m_organizationConfigRuleNameHasBeenSet = false;
+  bool m_organizationManagedRuleMetadataHasBeenSet = false;
+  bool m_organizationCustomRuleMetadataHasBeenSet = false;
+  bool m_excludedAccountsHasBeenSet = false;
   bool m_organizationCustomPolicyRuleMetadataHasBeenSet = false;
 };
 

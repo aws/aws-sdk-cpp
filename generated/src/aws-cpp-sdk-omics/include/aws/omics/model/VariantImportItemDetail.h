@@ -85,12 +85,12 @@ class VariantImportItemDetail {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_sourceHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class GetBlueprintRunsResult {
   ///@}
  private:
   Aws::Vector<BlueprintRun> m_blueprintRuns;
-  bool m_blueprintRunsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blueprintRunsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

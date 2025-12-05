@@ -69,9 +69,9 @@ class DeletePolicyRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

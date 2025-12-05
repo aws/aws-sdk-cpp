@@ -97,15 +97,15 @@ class CreateSnapshotFromVolumeRecoveryPointResult {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   Aws::String m_volumeRecoveryPointTime;
-  bool m_volumeRecoveryPointTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_volumeRecoveryPointTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

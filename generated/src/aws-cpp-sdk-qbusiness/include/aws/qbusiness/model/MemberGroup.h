@@ -67,9 +67,9 @@ class MemberGroup {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   MembershipType m_type{MembershipType::NOT_SET};
+  bool m_groupNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

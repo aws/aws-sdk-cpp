@@ -90,12 +90,12 @@ class BatchGetBuildsResult {
   ///@}
  private:
   Aws::Vector<Build> m_builds;
-  bool m_buildsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_buildsNotFound;
-  bool m_buildsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_buildsHasBeenSet = false;
+  bool m_buildsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

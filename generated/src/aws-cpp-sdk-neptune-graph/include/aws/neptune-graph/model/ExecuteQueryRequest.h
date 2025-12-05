@@ -173,24 +173,24 @@ class ExecuteQueryRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   QueryLanguage m_language{QueryLanguage::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   PlanCacheType m_planCache{PlanCacheType::NOT_SET};
-  bool m_planCacheHasBeenSet = false;
 
   ExplainMode m_explainMode{ExplainMode::NOT_SET};
-  bool m_explainModeHasBeenSet = false;
 
   int m_queryTimeoutMilliseconds{0};
+  bool m_graphIdentifierHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_planCacheHasBeenSet = false;
+  bool m_explainModeHasBeenSet = false;
   bool m_queryTimeoutMillisecondsHasBeenSet = false;
 };
 

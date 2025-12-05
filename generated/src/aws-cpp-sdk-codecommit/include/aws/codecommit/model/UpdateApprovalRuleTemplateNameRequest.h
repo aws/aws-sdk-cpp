@@ -67,9 +67,9 @@ class UpdateApprovalRuleTemplateNameRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_oldApprovalRuleTemplateName;
-  bool m_oldApprovalRuleTemplateNameHasBeenSet = false;
 
   Aws::String m_newApprovalRuleTemplateName;
+  bool m_oldApprovalRuleTemplateNameHasBeenSet = false;
   bool m_newApprovalRuleTemplateNameHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class DeleteCostCategoryDefinitionResult {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_effectiveEnd;
-  bool m_effectiveEndHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_effectiveEndHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

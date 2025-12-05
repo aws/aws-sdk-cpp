@@ -68,9 +68,9 @@ class MultiplexProgramSummary {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_programName;
+  bool m_channelIdHasBeenSet = false;
   bool m_programNameHasBeenSet = false;
 };
 

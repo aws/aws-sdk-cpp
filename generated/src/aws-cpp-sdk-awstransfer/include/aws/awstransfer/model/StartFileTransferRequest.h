@@ -144,18 +144,18 @@ class StartFileTransferRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sendFilePaths;
-  bool m_sendFilePathsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_retrieveFilePaths;
-  bool m_retrieveFilePathsHasBeenSet = false;
 
   Aws::String m_localDirectoryPath;
-  bool m_localDirectoryPathHasBeenSet = false;
 
   Aws::String m_remoteDirectoryPath;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_sendFilePathsHasBeenSet = false;
+  bool m_retrieveFilePathsHasBeenSet = false;
+  bool m_localDirectoryPathHasBeenSet = false;
   bool m_remoteDirectoryPathHasBeenSet = false;
 };
 

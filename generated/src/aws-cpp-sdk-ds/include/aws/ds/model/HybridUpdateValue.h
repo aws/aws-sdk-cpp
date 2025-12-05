@@ -85,9 +85,9 @@ class HybridUpdateValue {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIps;
+  bool m_instanceIdsHasBeenSet = false;
   bool m_dnsIpsHasBeenSet = false;
 };
 

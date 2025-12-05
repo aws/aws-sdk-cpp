@@ -59,9 +59,9 @@ class CreateExplainabilityResult {
   ///@}
  private:
   Aws::String m_explainabilityArn;
-  bool m_explainabilityArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_explainabilityArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

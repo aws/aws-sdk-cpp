@@ -144,18 +144,18 @@ class EnableLoggingRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
-  bool m_s3KeyPrefixHasBeenSet = false;
 
   LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
-  bool m_logDestinationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logExports;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_s3KeyPrefixHasBeenSet = false;
+  bool m_logDestinationTypeHasBeenSet = false;
   bool m_logExportsHasBeenSet = false;
 };
 

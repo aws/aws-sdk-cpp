@@ -158,18 +158,18 @@ class CreateDataSourceFromRDSRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   RDSDataSpec m_rDSData;
-  bool m_rDSDataHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   bool m_computeStatistics{false};
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_dataSourceNameHasBeenSet = false;
+  bool m_rDSDataHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
   bool m_computeStatisticsHasBeenSet = false;
 };
 

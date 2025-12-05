@@ -135,18 +135,18 @@ class TrustedAdvisorResourceDetail {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   bool m_isSuppressed{false};
-  bool m_isSuppressedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metadata;
+  bool m_statusHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_isSuppressedHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

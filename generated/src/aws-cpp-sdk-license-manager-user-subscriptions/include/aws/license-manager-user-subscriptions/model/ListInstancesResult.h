@@ -89,12 +89,12 @@ class ListInstancesResult {
   ///@}
  private:
   Aws::Vector<InstanceSummary> m_instanceSummaries;
-  bool m_instanceSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

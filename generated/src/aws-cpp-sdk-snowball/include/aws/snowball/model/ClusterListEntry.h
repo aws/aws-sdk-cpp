@@ -108,15 +108,15 @@ class ClusterListEntry {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   ClusterState m_clusterState{ClusterState::NOT_SET};
-  bool m_clusterStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_clusterStateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

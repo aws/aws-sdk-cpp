@@ -92,12 +92,12 @@ class UpdateContactListRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_contactListName;
-  bool m_contactListNameHasBeenSet = false;
 
   Aws::Vector<Topic> m_topics;
-  bool m_topicsHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_contactListNameHasBeenSet = false;
+  bool m_topicsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

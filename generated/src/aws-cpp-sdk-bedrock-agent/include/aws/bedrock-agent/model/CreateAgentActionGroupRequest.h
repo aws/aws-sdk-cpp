@@ -282,36 +282,36 @@ class CreateAgentActionGroupRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_actionGroupName;
-  bool m_actionGroupNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionGroupSignature m_parentActionGroupSignature{ActionGroupSignature::NOT_SET};
-  bool m_parentActionGroupSignatureHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parentActionGroupSignatureParams;
-  bool m_parentActionGroupSignatureParamsHasBeenSet = false;
 
   ActionGroupExecutor m_actionGroupExecutor;
-  bool m_actionGroupExecutorHasBeenSet = false;
 
   APISchema m_apiSchema;
-  bool m_apiSchemaHasBeenSet = false;
 
   ActionGroupState m_actionGroupState{ActionGroupState::NOT_SET};
-  bool m_actionGroupStateHasBeenSet = false;
 
   FunctionSchema m_functionSchema;
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_actionGroupNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parentActionGroupSignatureHasBeenSet = false;
+  bool m_parentActionGroupSignatureParamsHasBeenSet = false;
+  bool m_actionGroupExecutorHasBeenSet = false;
+  bool m_apiSchemaHasBeenSet = false;
+  bool m_actionGroupStateHasBeenSet = false;
   bool m_functionSchemaHasBeenSet = false;
 };
 

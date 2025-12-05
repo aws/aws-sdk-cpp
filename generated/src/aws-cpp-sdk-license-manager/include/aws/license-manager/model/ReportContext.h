@@ -121,15 +121,15 @@ class ReportContext {
   ///@}
  private:
   Aws::Vector<Aws::String> m_licenseConfigurationArns;
-  bool m_licenseConfigurationArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_licenseAssetGroupArns;
-  bool m_licenseAssetGroupArnsHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportStartDate{};
-  bool m_reportStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportEndDate{};
+  bool m_licenseConfigurationArnsHasBeenSet = false;
+  bool m_licenseAssetGroupArnsHasBeenSet = false;
+  bool m_reportStartDateHasBeenSet = false;
   bool m_reportEndDateHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class CreateConnectionFunction2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FunctionConfig m_connectionFunctionConfig;
-  bool m_connectionFunctionConfigHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_connectionFunctionCode{};
-  bool m_connectionFunctionCodeHasBeenSet = false;
 
   Tags m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_connectionFunctionConfigHasBeenSet = false;
+  bool m_connectionFunctionCodeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

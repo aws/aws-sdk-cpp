@@ -104,15 +104,15 @@ class FailedAssociationResult {
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   CodeSecurityResource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   AssociationResultStatusCode m_statusCode{AssociationResultStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_scanConfigurationArnHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class StartArchiveSearchResult {
   ///@}
  private:
   Aws::String m_searchId;
-  bool m_searchIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_searchIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

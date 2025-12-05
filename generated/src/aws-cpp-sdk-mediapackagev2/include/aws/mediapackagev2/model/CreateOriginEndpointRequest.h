@@ -339,45 +339,45 @@ class CreateOriginEndpointRequest : public Mediapackagev2Request {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_originEndpointName;
-  bool m_originEndpointNameHasBeenSet = false;
 
   ContainerType m_containerType{ContainerType::NOT_SET};
-  bool m_containerTypeHasBeenSet = false;
 
   Segment m_segment;
-  bool m_segmentHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_startoverWindowSeconds{0};
-  bool m_startoverWindowSecondsHasBeenSet = false;
 
   Aws::Vector<CreateHlsManifestConfiguration> m_hlsManifests;
-  bool m_hlsManifestsHasBeenSet = false;
 
   Aws::Vector<CreateLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
-  bool m_lowLatencyHlsManifestsHasBeenSet = false;
 
   Aws::Vector<CreateDashManifestConfiguration> m_dashManifests;
-  bool m_dashManifestsHasBeenSet = false;
 
   Aws::Vector<CreateMssManifestConfiguration> m_mssManifests;
-  bool m_mssManifestsHasBeenSet = false;
 
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
-  bool m_forceEndpointErrorConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_originEndpointNameHasBeenSet = false;
+  bool m_containerTypeHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_startoverWindowSecondsHasBeenSet = false;
+  bool m_hlsManifestsHasBeenSet = false;
+  bool m_lowLatencyHlsManifestsHasBeenSet = false;
+  bool m_dashManifestsHasBeenSet = false;
+  bool m_mssManifestsHasBeenSet = false;
+  bool m_forceEndpointErrorConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class CreateSnapshotFromVolumeRecoveryPointRequest : public StorageGatewayReques
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   Aws::String m_snapshotDescription;
-  bool m_snapshotDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_snapshotDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

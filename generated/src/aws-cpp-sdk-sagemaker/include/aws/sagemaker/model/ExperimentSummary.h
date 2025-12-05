@@ -144,21 +144,21 @@ class ExperimentSummary {
   ///@}
  private:
   Aws::String m_experimentArn;
-  bool m_experimentArnHasBeenSet = false;
 
   Aws::String m_experimentName;
-  bool m_experimentNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ExperimentSource m_experimentSource;
-  bool m_experimentSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_experimentArnHasBeenSet = false;
+  bool m_experimentNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_experimentSourceHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

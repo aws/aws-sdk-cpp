@@ -144,21 +144,21 @@ class ImportAssetsFromLakeFormationTagPolicyResponseDetails {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   DatabaseLFTagPolicyAndPermissions m_database;
-  bool m_databaseHasBeenSet = false;
 
   TableLFTagPolicyAndPermissions m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

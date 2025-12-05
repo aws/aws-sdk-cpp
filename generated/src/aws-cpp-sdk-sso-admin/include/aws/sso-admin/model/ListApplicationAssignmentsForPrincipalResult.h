@@ -90,12 +90,12 @@ class ListApplicationAssignmentsForPrincipalResult {
   ///@}
  private:
   Aws::Vector<ApplicationAssignmentForPrincipal> m_applicationAssignments;
-  bool m_applicationAssignmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationAssignmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

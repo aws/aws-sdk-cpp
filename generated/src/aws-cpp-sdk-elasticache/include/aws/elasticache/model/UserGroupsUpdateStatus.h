@@ -83,9 +83,9 @@ class UserGroupsUpdateStatus {
   ///@}
  private:
   Aws::Vector<Aws::String> m_userGroupIdsToAdd;
-  bool m_userGroupIdsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroupIdsToRemove;
+  bool m_userGroupIdsToAddHasBeenSet = false;
   bool m_userGroupIdsToRemoveHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class SelectiveExecutionConfig {
   ///@}
  private:
   Aws::String m_sourcePipelineExecutionArn;
-  bool m_sourcePipelineExecutionArnHasBeenSet = false;
 
   Aws::Vector<SelectedStep> m_selectedSteps;
+  bool m_sourcePipelineExecutionArnHasBeenSet = false;
   bool m_selectedStepsHasBeenSet = false;
 };
 

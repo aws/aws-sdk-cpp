@@ -263,39 +263,39 @@ class DescribeFastSnapshotRestoreSuccessItem {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   FastSnapshotRestoreStateCode m_state{FastSnapshotRestoreStateCode::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateTransitionReason;
-  bool m_stateTransitionReasonHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ownerAlias;
-  bool m_ownerAliasHasBeenSet = false;
 
   Aws::Utils::DateTime m_enablingTime{};
-  bool m_enablingTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_optimizingTime{};
-  bool m_optimizingTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_enabledTime{};
-  bool m_enabledTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_disablingTime{};
-  bool m_disablingTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_disabledTime{};
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateTransitionReasonHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ownerAliasHasBeenSet = false;
+  bool m_enablingTimeHasBeenSet = false;
+  bool m_optimizingTimeHasBeenSet = false;
+  bool m_enabledTimeHasBeenSet = false;
+  bool m_disablingTimeHasBeenSet = false;
   bool m_disabledTimeHasBeenSet = false;
 };
 

@@ -172,21 +172,21 @@ class IncidentTemplate {
   ///@}
  private:
   Aws::String m_dedupeString;
-  bool m_dedupeStringHasBeenSet = false;
 
   int m_impact{0};
-  bool m_impactHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_incidentTags;
-  bool m_incidentTagsHasBeenSet = false;
 
   Aws::Vector<NotificationTargetItem> m_notificationTargets;
-  bool m_notificationTargetsHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_dedupeStringHasBeenSet = false;
+  bool m_impactHasBeenSet = false;
+  bool m_incidentTagsHasBeenSet = false;
+  bool m_notificationTargetsHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

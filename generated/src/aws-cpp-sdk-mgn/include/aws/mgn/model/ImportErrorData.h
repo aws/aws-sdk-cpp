@@ -156,24 +156,24 @@ class ImportErrorData {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_applicationID;
-  bool m_applicationIDHasBeenSet = false;
 
   Aws::String m_ec2LaunchTemplateID;
-  bool m_ec2LaunchTemplateIDHasBeenSet = false;
 
   Aws::String m_rawError;
-  bool m_rawErrorHasBeenSet = false;
 
   long long m_rowNumber{0};
-  bool m_rowNumberHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   Aws::String m_waveID;
+  bool m_accountIDHasBeenSet = false;
+  bool m_applicationIDHasBeenSet = false;
+  bool m_ec2LaunchTemplateIDHasBeenSet = false;
+  bool m_rawErrorHasBeenSet = false;
+  bool m_rowNumberHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_waveIDHasBeenSet = false;
 };
 

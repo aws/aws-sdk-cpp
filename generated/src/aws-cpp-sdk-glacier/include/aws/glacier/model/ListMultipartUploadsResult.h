@@ -93,12 +93,12 @@ class ListMultipartUploadsResult {
   ///@}
  private:
   Aws::Vector<UploadListElement> m_uploadsList;
-  bool m_uploadsListHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_uploadsListHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

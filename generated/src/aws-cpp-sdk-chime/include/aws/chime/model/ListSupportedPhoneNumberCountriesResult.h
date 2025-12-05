@@ -67,9 +67,9 @@ class ListSupportedPhoneNumberCountriesResult {
   ///@}
  private:
   Aws::Vector<PhoneNumberCountry> m_phoneNumberCountries;
-  bool m_phoneNumberCountriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_phoneNumberCountriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

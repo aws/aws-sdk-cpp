@@ -92,12 +92,12 @@ class ListInstalledComponentsResult {
   ///@}
  private:
   Aws::Vector<InstalledComponent> m_installedComponents;
-  bool m_installedComponentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_installedComponentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

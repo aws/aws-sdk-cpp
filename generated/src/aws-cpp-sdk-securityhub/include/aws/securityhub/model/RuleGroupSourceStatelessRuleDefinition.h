@@ -80,9 +80,9 @@ class RuleGroupSourceStatelessRuleDefinition {
   ///@}
  private:
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   RuleGroupSourceStatelessRuleMatchAttributes m_matchAttributes;
+  bool m_actionsHasBeenSet = false;
   bool m_matchAttributesHasBeenSet = false;
 };
 

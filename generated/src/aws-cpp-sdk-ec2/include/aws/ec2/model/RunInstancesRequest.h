@@ -949,126 +949,126 @@ class RunInstancesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_ipv6AddressCount{0};
-  bool m_ipv6AddressCountHasBeenSet = false;
 
   Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   int m_maxCount{0};
-  bool m_maxCountHasBeenSet = false;
 
   int m_minCount{0};
-  bool m_minCountHasBeenSet = false;
 
   RunInstancesMonitoringEnabled m_monitoring;
-  bool m_monitoringHasBeenSet = false;
 
   Placement m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::String m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_userData;
-  bool m_userDataHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   InstanceMarketOptionsRequest m_instanceMarketOptions;
-  bool m_instanceMarketOptionsHasBeenSet = false;
 
   CreditSpecificationRequest m_creditSpecification;
-  bool m_creditSpecificationHasBeenSet = false;
 
   CpuOptionsRequest m_cpuOptions;
-  bool m_cpuOptionsHasBeenSet = false;
 
   CapacityReservationSpecification m_capacityReservationSpecification;
-  bool m_capacityReservationSpecificationHasBeenSet = false;
 
   HibernationOptionsRequest m_hibernationOptions;
-  bool m_hibernationOptionsHasBeenSet = false;
 
   Aws::Vector<LicenseConfigurationRequest> m_licenseSpecifications;
-  bool m_licenseSpecificationsHasBeenSet = false;
 
   InstanceMetadataOptionsRequest m_metadataOptions;
-  bool m_metadataOptionsHasBeenSet = false;
 
   EnclaveOptionsRequest m_enclaveOptions;
-  bool m_enclaveOptionsHasBeenSet = false;
 
   PrivateDnsNameOptionsRequest m_privateDnsNameOptions;
-  bool m_privateDnsNameOptionsHasBeenSet = false;
 
   InstanceMaintenanceOptionsRequest m_maintenanceOptions;
-  bool m_maintenanceOptionsHasBeenSet = false;
 
   bool m_disableApiStop{false};
-  bool m_disableApiStopHasBeenSet = false;
 
   bool m_enablePrimaryIpv6{false};
-  bool m_enablePrimaryIpv6HasBeenSet = false;
 
   InstanceNetworkPerformanceOptionsRequest m_networkPerformanceOptions;
-  bool m_networkPerformanceOptionsHasBeenSet = false;
 
   OperatorRequest m_operator;
-  bool m_operatorHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   bool m_disableApiTermination{false};
-  bool m_disableApiTerminationHasBeenSet = false;
 
   ShutdownBehavior m_instanceInitiatedShutdownBehavior{ShutdownBehavior::NOT_SET};
-  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   IamInstanceProfileSpecification m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   bool m_ebsOptimized{false};
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_ipv6AddressCountHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_maxCountHasBeenSet = false;
+  bool m_minCountHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_instanceMarketOptionsHasBeenSet = false;
+  bool m_creditSpecificationHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
+  bool m_capacityReservationSpecificationHasBeenSet = false;
+  bool m_hibernationOptionsHasBeenSet = false;
+  bool m_licenseSpecificationsHasBeenSet = false;
+  bool m_metadataOptionsHasBeenSet = false;
+  bool m_enclaveOptionsHasBeenSet = false;
+  bool m_privateDnsNameOptionsHasBeenSet = false;
+  bool m_maintenanceOptionsHasBeenSet = false;
+  bool m_disableApiStopHasBeenSet = false;
+  bool m_enablePrimaryIpv6HasBeenSet = false;
+  bool m_networkPerformanceOptionsHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_disableApiTerminationHasBeenSet = false;
+  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
   bool m_ebsOptimizedHasBeenSet = false;
 };
 

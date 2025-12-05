@@ -65,9 +65,9 @@ class UpdateGatewayInstanceRequest : public MediaConnectRequest {
   ///@}
  private:
   BridgePlacement m_bridgePlacement{BridgePlacement::NOT_SET};
-  bool m_bridgePlacementHasBeenSet = false;
 
   Aws::String m_gatewayInstanceArn;
+  bool m_bridgePlacementHasBeenSet = false;
   bool m_gatewayInstanceArnHasBeenSet = false;
 };
 

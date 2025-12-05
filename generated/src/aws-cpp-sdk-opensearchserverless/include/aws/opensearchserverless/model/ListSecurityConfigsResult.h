@@ -86,12 +86,12 @@ class ListSecurityConfigsResult {
   ///@}
  private:
   Aws::Vector<SecurityConfigSummary> m_securityConfigSummaries;
-  bool m_securityConfigSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityConfigSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

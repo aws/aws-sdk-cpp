@@ -59,9 +59,9 @@ class DeleteInferenceExperimentResult {
   ///@}
  private:
   Aws::String m_inferenceExperimentArn;
-  bool m_inferenceExperimentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceExperimentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

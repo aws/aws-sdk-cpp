@@ -105,15 +105,15 @@ class DisassociateVolumeRequest : public WorkspacesInstancesRequest {
   ///@}
  private:
   Aws::String m_workspaceInstanceId;
-  bool m_workspaceInstanceIdHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_device;
-  bool m_deviceHasBeenSet = false;
 
   DisassociateModeEnum m_disassociateMode{DisassociateModeEnum::NOT_SET};
+  bool m_workspaceInstanceIdHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_deviceHasBeenSet = false;
   bool m_disassociateModeHasBeenSet = false;
 };
 

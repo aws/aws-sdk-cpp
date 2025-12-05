@@ -227,30 +227,30 @@ class BatchDeleteConfigurationTask {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   BatchDeleteConfigurationTaskStatus m_status{BatchDeleteConfigurationTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   DeletionConfigurationItemType m_configurationType{DeletionConfigurationItemType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requestedConfigurations;
-  bool m_requestedConfigurationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deletedConfigurations;
-  bool m_deletedConfigurationsHasBeenSet = false;
 
   Aws::Vector<FailedConfiguration> m_failedConfigurations;
-  bool m_failedConfigurationsHasBeenSet = false;
 
   Aws::Vector<DeletionWarning> m_deletionWarnings;
+  bool m_taskIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_configurationTypeHasBeenSet = false;
+  bool m_requestedConfigurationsHasBeenSet = false;
+  bool m_deletedConfigurationsHasBeenSet = false;
+  bool m_failedConfigurationsHasBeenSet = false;
   bool m_deletionWarningsHasBeenSet = false;
 };
 

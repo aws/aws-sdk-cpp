@@ -260,39 +260,39 @@ class DescribeComputationModelResult {
   ///@}
  private:
   Aws::String m_computationModelId;
-  bool m_computationModelIdHasBeenSet = false;
 
   Aws::String m_computationModelArn;
-  bool m_computationModelArnHasBeenSet = false;
 
   Aws::String m_computationModelName;
-  bool m_computationModelNameHasBeenSet = false;
 
   Aws::String m_computationModelDescription;
-  bool m_computationModelDescriptionHasBeenSet = false;
 
   ComputationModelConfiguration m_computationModelConfiguration;
-  bool m_computationModelConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, ComputationModelDataBindingValue> m_computationModelDataBinding;
-  bool m_computationModelDataBindingHasBeenSet = false;
 
   Aws::Utils::DateTime m_computationModelCreationDate{};
-  bool m_computationModelCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_computationModelLastUpdateDate{};
-  bool m_computationModelLastUpdateDateHasBeenSet = false;
 
   ComputationModelStatus m_computationModelStatus;
-  bool m_computationModelStatusHasBeenSet = false;
 
   Aws::String m_computationModelVersion;
-  bool m_computationModelVersionHasBeenSet = false;
 
   Aws::Vector<ActionDefinition> m_actionDefinitions;
-  bool m_actionDefinitionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computationModelIdHasBeenSet = false;
+  bool m_computationModelArnHasBeenSet = false;
+  bool m_computationModelNameHasBeenSet = false;
+  bool m_computationModelDescriptionHasBeenSet = false;
+  bool m_computationModelConfigurationHasBeenSet = false;
+  bool m_computationModelDataBindingHasBeenSet = false;
+  bool m_computationModelCreationDateHasBeenSet = false;
+  bool m_computationModelLastUpdateDateHasBeenSet = false;
+  bool m_computationModelStatusHasBeenSet = false;
+  bool m_computationModelVersionHasBeenSet = false;
+  bool m_actionDefinitionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

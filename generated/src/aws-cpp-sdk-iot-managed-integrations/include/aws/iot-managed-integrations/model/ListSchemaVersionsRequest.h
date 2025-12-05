@@ -157,24 +157,24 @@ class ListSchemaVersionsRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   SchemaVersionType m_type{SchemaVersionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   SchemaVersionVisibility m_visibility{SchemaVersionVisibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_semanticVersion;
+  bool m_typeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_semanticVersionHasBeenSet = false;
 };
 

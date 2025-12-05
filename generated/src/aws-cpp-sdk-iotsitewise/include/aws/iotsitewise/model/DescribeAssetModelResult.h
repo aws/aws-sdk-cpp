@@ -379,54 +379,54 @@ class DescribeAssetModelResult {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_assetModelExternalId;
-  bool m_assetModelExternalIdHasBeenSet = false;
 
   Aws::String m_assetModelArn;
-  bool m_assetModelArnHasBeenSet = false;
 
   Aws::String m_assetModelName;
-  bool m_assetModelNameHasBeenSet = false;
 
   AssetModelType m_assetModelType{AssetModelType::NOT_SET};
-  bool m_assetModelTypeHasBeenSet = false;
 
   Aws::String m_assetModelDescription;
-  bool m_assetModelDescriptionHasBeenSet = false;
 
   Aws::Vector<AssetModelProperty> m_assetModelProperties;
-  bool m_assetModelPropertiesHasBeenSet = false;
 
   Aws::Vector<AssetModelHierarchy> m_assetModelHierarchies;
-  bool m_assetModelHierarchiesHasBeenSet = false;
 
   Aws::Vector<AssetModelCompositeModel> m_assetModelCompositeModels;
-  bool m_assetModelCompositeModelsHasBeenSet = false;
 
   Aws::Vector<AssetModelCompositeModelSummary> m_assetModelCompositeModelSummaries;
-  bool m_assetModelCompositeModelSummariesHasBeenSet = false;
 
   Aws::Utils::DateTime m_assetModelCreationDate{};
-  bool m_assetModelCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_assetModelLastUpdateDate{};
-  bool m_assetModelLastUpdateDateHasBeenSet = false;
 
   AssetModelStatus m_assetModelStatus;
-  bool m_assetModelStatusHasBeenSet = false;
 
   Aws::String m_assetModelVersion;
-  bool m_assetModelVersionHasBeenSet = false;
 
   Aws::Vector<InterfaceRelationship> m_interfaceDetails;
-  bool m_interfaceDetailsHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetModelExternalIdHasBeenSet = false;
+  bool m_assetModelArnHasBeenSet = false;
+  bool m_assetModelNameHasBeenSet = false;
+  bool m_assetModelTypeHasBeenSet = false;
+  bool m_assetModelDescriptionHasBeenSet = false;
+  bool m_assetModelPropertiesHasBeenSet = false;
+  bool m_assetModelHierarchiesHasBeenSet = false;
+  bool m_assetModelCompositeModelsHasBeenSet = false;
+  bool m_assetModelCompositeModelSummariesHasBeenSet = false;
+  bool m_assetModelCreationDateHasBeenSet = false;
+  bool m_assetModelLastUpdateDateHasBeenSet = false;
+  bool m_assetModelStatusHasBeenSet = false;
+  bool m_assetModelVersionHasBeenSet = false;
+  bool m_interfaceDetailsHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

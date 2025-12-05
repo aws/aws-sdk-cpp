@@ -88,12 +88,12 @@ class S3Object {
   ///@}
  private:
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_eTagHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

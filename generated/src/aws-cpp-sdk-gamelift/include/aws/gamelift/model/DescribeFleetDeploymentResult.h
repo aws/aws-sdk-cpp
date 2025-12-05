@@ -86,12 +86,12 @@ class DescribeFleetDeploymentResult {
   ///@}
  private:
   FleetDeployment m_fleetDeployment;
-  bool m_fleetDeploymentHasBeenSet = false;
 
   Aws::Map<Aws::String, LocationalDeployment> m_locationalDeployments;
-  bool m_locationalDeploymentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetDeploymentHasBeenSet = false;
+  bool m_locationalDeploymentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class S3BucketConfiguration {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_bucketPrefix;
-  bool m_bucketPrefixHasBeenSet = false;
 
   Aws::String m_bucketRegion;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_bucketPrefixHasBeenSet = false;
   bool m_bucketRegionHasBeenSet = false;
 };
 

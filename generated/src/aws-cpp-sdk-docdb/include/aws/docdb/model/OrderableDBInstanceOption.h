@@ -166,24 +166,24 @@ class OrderableDBInstanceOption {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::Vector<AvailabilityZone> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   bool m_vpc{false};
-  bool m_vpcHasBeenSet = false;
 
   Aws::String m_storageType;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
 };
 

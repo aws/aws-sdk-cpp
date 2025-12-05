@@ -70,9 +70,9 @@ class TargetGroupTuple {
   ///@}
  private:
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   int m_weight{0};
+  bool m_targetGroupArnHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

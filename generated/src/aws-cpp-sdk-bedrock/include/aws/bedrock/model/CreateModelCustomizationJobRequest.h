@@ -339,48 +339,48 @@ class CreateModelCustomizationJobRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_customModelName;
-  bool m_customModelNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_baseModelIdentifier;
-  bool m_baseModelIdentifierHasBeenSet = false;
 
   CustomizationType m_customizationType{CustomizationType::NOT_SET};
-  bool m_customizationTypeHasBeenSet = false;
 
   Aws::String m_customModelKmsKeyId;
-  bool m_customModelKmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_jobTags;
-  bool m_jobTagsHasBeenSet = false;
 
   Aws::Vector<Tag> m_customModelTags;
-  bool m_customModelTagsHasBeenSet = false;
 
   TrainingDataConfig m_trainingDataConfig;
-  bool m_trainingDataConfigHasBeenSet = false;
 
   ValidationDataConfig m_validationDataConfig;
-  bool m_validationDataConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-  bool m_hyperParametersHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   CustomizationConfig m_customizationConfig;
+  bool m_jobNameHasBeenSet = false;
+  bool m_customModelNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_baseModelIdentifierHasBeenSet = false;
+  bool m_customizationTypeHasBeenSet = false;
+  bool m_customModelKmsKeyIdHasBeenSet = false;
+  bool m_jobTagsHasBeenSet = false;
+  bool m_customModelTagsHasBeenSet = false;
+  bool m_trainingDataConfigHasBeenSet = false;
+  bool m_validationDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_hyperParametersHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_customizationConfigHasBeenSet = false;
 };
 

@@ -215,21 +215,21 @@ class AssumeRoleWithSAMLRequest : public STSRequest {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   Aws::String m_sAMLAssertion;
-  bool m_sAMLAssertionHasBeenSet = false;
 
   Aws::Vector<PolicyDescriptorType> m_policyArns;
-  bool m_policyArnsHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   int m_durationSeconds{0};
+  bool m_roleArnHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
+  bool m_sAMLAssertionHasBeenSet = false;
+  bool m_policyArnsHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
 };
 

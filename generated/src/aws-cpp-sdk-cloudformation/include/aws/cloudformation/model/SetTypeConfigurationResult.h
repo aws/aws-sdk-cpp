@@ -62,9 +62,9 @@ class SetTypeConfigurationResult {
   ///@}
  private:
   Aws::String m_configurationArn;
-  bool m_configurationArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_configurationArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

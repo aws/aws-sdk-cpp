@@ -76,9 +76,9 @@ class UsageAllocation {
   ///@}
  private:
   int m_allocatedUsageQuantity{0};
-  bool m_allocatedUsageQuantityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_allocatedUsageQuantityHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

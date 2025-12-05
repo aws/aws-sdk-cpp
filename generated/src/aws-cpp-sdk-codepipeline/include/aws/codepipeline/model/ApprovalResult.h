@@ -69,9 +69,9 @@ class ApprovalResult {
   ///@}
  private:
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   ApprovalStatus m_status{ApprovalStatus::NOT_SET};
+  bool m_summaryHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

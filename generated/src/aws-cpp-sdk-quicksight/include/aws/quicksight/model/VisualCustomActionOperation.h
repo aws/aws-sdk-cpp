@@ -111,15 +111,15 @@ class VisualCustomActionOperation {
   ///@}
  private:
   CustomActionFilterOperation m_filterOperation;
-  bool m_filterOperationHasBeenSet = false;
 
   CustomActionNavigationOperation m_navigationOperation;
-  bool m_navigationOperationHasBeenSet = false;
 
   CustomActionURLOperation m_uRLOperation;
-  bool m_uRLOperationHasBeenSet = false;
 
   CustomActionSetParametersOperation m_setParametersOperation;
+  bool m_filterOperationHasBeenSet = false;
+  bool m_navigationOperationHasBeenSet = false;
+  bool m_uRLOperationHasBeenSet = false;
   bool m_setParametersOperationHasBeenSet = false;
 };
 

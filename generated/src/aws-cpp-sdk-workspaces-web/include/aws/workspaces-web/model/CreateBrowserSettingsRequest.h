@@ -165,21 +165,21 @@ class CreateBrowserSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::String m_browserPolicy;
-  bool m_browserPolicyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   WebContentFilteringPolicy m_webContentFilteringPolicy;
+  bool m_tagsHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_browserPolicyHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_webContentFilteringPolicyHasBeenSet = false;
 };
 

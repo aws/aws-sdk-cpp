@@ -75,9 +75,9 @@ class CustomResponseBody {
   ///@}
  private:
   ResponseContentType m_contentType{ResponseContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_contentTypeHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

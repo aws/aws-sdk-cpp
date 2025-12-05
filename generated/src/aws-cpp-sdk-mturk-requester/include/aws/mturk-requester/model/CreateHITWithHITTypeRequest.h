@@ -248,33 +248,33 @@ class CreateHITWithHITTypeRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_hITTypeId;
-  bool m_hITTypeIdHasBeenSet = false;
 
   int m_maxAssignments{0};
-  bool m_maxAssignmentsHasBeenSet = false;
 
   long long m_lifetimeInSeconds{0};
-  bool m_lifetimeInSecondsHasBeenSet = false;
 
   Aws::String m_question;
-  bool m_questionHasBeenSet = false;
 
   Aws::String m_requesterAnnotation;
-  bool m_requesterAnnotationHasBeenSet = false;
 
   Aws::String m_uniqueRequestToken;
-  bool m_uniqueRequestTokenHasBeenSet = false;
 
   ReviewPolicy m_assignmentReviewPolicy;
-  bool m_assignmentReviewPolicyHasBeenSet = false;
 
   ReviewPolicy m_hITReviewPolicy;
-  bool m_hITReviewPolicyHasBeenSet = false;
 
   Aws::String m_hITLayoutId;
-  bool m_hITLayoutIdHasBeenSet = false;
 
   Aws::Vector<HITLayoutParameter> m_hITLayoutParameters;
+  bool m_hITTypeIdHasBeenSet = false;
+  bool m_maxAssignmentsHasBeenSet = false;
+  bool m_lifetimeInSecondsHasBeenSet = false;
+  bool m_questionHasBeenSet = false;
+  bool m_requesterAnnotationHasBeenSet = false;
+  bool m_uniqueRequestTokenHasBeenSet = false;
+  bool m_assignmentReviewPolicyHasBeenSet = false;
+  bool m_hITReviewPolicyHasBeenSet = false;
+  bool m_hITLayoutIdHasBeenSet = false;
   bool m_hITLayoutParametersHasBeenSet = false;
 };
 

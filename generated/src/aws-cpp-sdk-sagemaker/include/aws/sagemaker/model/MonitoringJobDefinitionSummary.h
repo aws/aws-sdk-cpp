@@ -105,15 +105,15 @@ class MonitoringJobDefinitionSummary {
   ///@}
  private:
   Aws::String m_monitoringJobDefinitionName;
-  bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
   Aws::String m_monitoringJobDefinitionArn;
-  bool m_monitoringJobDefinitionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_endpointName;
+  bool m_monitoringJobDefinitionNameHasBeenSet = false;
+  bool m_monitoringJobDefinitionArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_endpointNameHasBeenSet = false;
 };
 

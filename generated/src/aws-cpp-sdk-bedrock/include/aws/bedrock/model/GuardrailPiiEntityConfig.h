@@ -245,21 +245,21 @@ class GuardrailPiiEntityConfig {
   ///@}
  private:
   GuardrailPiiEntityType m_type{GuardrailPiiEntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_action{GuardrailSensitiveInformationAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_inputAction{GuardrailSensitiveInformationAction::NOT_SET};
-  bool m_inputActionHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_outputAction{GuardrailSensitiveInformationAction::NOT_SET};
-  bool m_outputActionHasBeenSet = false;
 
   bool m_inputEnabled{false};
-  bool m_inputEnabledHasBeenSet = false;
 
   bool m_outputEnabled{false};
+  bool m_typeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_inputActionHasBeenSet = false;
+  bool m_outputActionHasBeenSet = false;
+  bool m_inputEnabledHasBeenSet = false;
   bool m_outputEnabledHasBeenSet = false;
 };
 

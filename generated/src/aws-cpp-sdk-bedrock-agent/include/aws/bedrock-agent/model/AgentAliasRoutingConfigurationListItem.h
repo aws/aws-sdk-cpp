@@ -69,9 +69,9 @@ class AgentAliasRoutingConfigurationListItem {
   ///@}
  private:
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_provisionedThroughput;
+  bool m_agentVersionHasBeenSet = false;
   bool m_provisionedThroughputHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class PutBandwidthRateLimitScheduleRequest : public BackupGatewayRequest {
   ///@}
  private:
   Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
-  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
 
   Aws::String m_gatewayArn;
+  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
   bool m_gatewayArnHasBeenSet = false;
 };
 

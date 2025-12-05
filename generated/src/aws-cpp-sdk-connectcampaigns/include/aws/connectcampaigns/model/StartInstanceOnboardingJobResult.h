@@ -65,9 +65,9 @@ class StartInstanceOnboardingJobResult {
   ///@}
  private:
   InstanceOnboardingJobStatus m_connectInstanceOnboardingJobStatus;
-  bool m_connectInstanceOnboardingJobStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectInstanceOnboardingJobStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

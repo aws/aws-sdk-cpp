@@ -261,33 +261,33 @@ class AttributeValue {
   ///@}
  private:
   Aws::String m_s;
-  bool m_sHasBeenSet = false;
 
   Aws::String m_n;
-  bool m_nHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_b{};
-  bool m_bHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sS;
-  bool m_sSHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nS;
-  bool m_nSHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::ByteBuffer> m_bS;
-  bool m_bSHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_m;
-  bool m_mHasBeenSet = false;
 
   Aws::Vector<AttributeValue> m_l;
-  bool m_lHasBeenSet = false;
 
   bool m_nULL{false};
-  bool m_nULLHasBeenSet = false;
 
   bool m_bOOL{false};
+  bool m_sHasBeenSet = false;
+  bool m_nHasBeenSet = false;
+  bool m_bHasBeenSet = false;
+  bool m_sSHasBeenSet = false;
+  bool m_nSHasBeenSet = false;
+  bool m_bSHasBeenSet = false;
+  bool m_mHasBeenSet = false;
+  bool m_lHasBeenSet = false;
+  bool m_nULLHasBeenSet = false;
   bool m_bOOLHasBeenSet = false;
 };
 

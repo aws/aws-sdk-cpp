@@ -66,9 +66,9 @@ class UpdateRestoreTestingPlanRequest : public BackupRequest {
   ///@}
  private:
   RestoreTestingPlanForUpdate m_restoreTestingPlan;
-  bool m_restoreTestingPlanHasBeenSet = false;
 
   Aws::String m_restoreTestingPlanName;
+  bool m_restoreTestingPlanHasBeenSet = false;
   bool m_restoreTestingPlanNameHasBeenSet = false;
 };
 

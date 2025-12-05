@@ -111,12 +111,12 @@ class InclusionProtectionFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_protectionNames;
-  bool m_protectionNamesHasBeenSet = false;
 
   Aws::Vector<ProtectedResourceType> m_resourceTypes;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_protectionNamesHasBeenSet = false;
   bool m_resourceTypesHasBeenSet = false;
 };
 

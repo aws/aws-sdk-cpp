@@ -113,15 +113,15 @@ class UpdateDatastoreRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   DatastoreStorage m_datastoreStorage;
-  bool m_datastoreStorageHasBeenSet = false;
 
   FileFormatConfiguration m_fileFormatConfiguration;
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_datastoreStorageHasBeenSet = false;
   bool m_fileFormatConfigurationHasBeenSet = false;
 };
 

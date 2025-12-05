@@ -86,12 +86,12 @@ class GetSecurityGroupsForVpcResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SecurityGroupForVpc> m_securityGroupForVpcs;
-  bool m_securityGroupForVpcsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_securityGroupForVpcsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

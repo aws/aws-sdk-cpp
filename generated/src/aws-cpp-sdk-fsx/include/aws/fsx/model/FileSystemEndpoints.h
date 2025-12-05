@@ -72,9 +72,9 @@ class FileSystemEndpoints {
   ///@}
  private:
   FileSystemEndpoint m_intercluster;
-  bool m_interclusterHasBeenSet = false;
 
   FileSystemEndpoint m_management;
+  bool m_interclusterHasBeenSet = false;
   bool m_managementHasBeenSet = false;
 };
 

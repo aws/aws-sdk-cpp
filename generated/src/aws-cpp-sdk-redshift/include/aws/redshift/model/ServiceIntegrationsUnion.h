@@ -109,12 +109,12 @@ class ServiceIntegrationsUnion {
   ///@}
  private:
   Aws::Vector<LakeFormationScopeUnion> m_lakeFormation;
-  bool m_lakeFormationHasBeenSet = false;
 
   Aws::Vector<S3AccessGrantsScopeUnion> m_s3AccessGrants;
-  bool m_s3AccessGrantsHasBeenSet = false;
 
   Aws::Vector<RedshiftScopeUnion> m_redshift;
+  bool m_lakeFormationHasBeenSet = false;
+  bool m_s3AccessGrantsHasBeenSet = false;
   bool m_redshiftHasBeenSet = false;
 };
 

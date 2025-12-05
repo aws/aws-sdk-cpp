@@ -120,18 +120,18 @@ class TrustStore {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   TrustStoreStatus m_status{TrustStoreStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_numberOfCaCertificates{0};
-  bool m_numberOfCaCertificatesHasBeenSet = false;
 
   long long m_totalRevokedEntries{0};
+  bool m_nameHasBeenSet = false;
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_numberOfCaCertificatesHasBeenSet = false;
   bool m_totalRevokedEntriesHasBeenSet = false;
 };
 

@@ -169,24 +169,24 @@ class UpdateEnvironmentProfileRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsAccountRegion;
-  bool m_awsAccountRegionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<EnvironmentParameter> m_userParameters;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsAccountRegionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
 };
 

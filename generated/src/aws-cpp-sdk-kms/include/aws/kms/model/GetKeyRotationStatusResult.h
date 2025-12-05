@@ -130,21 +130,21 @@ class GetKeyRotationStatusResult {
   ///@}
  private:
   bool m_keyRotationEnabled{false};
-  bool m_keyRotationEnabledHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   int m_rotationPeriodInDays{0};
-  bool m_rotationPeriodInDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextRotationDate{};
-  bool m_nextRotationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_onDemandRotationStartDate{};
-  bool m_onDemandRotationStartDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyRotationEnabledHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_rotationPeriodInDaysHasBeenSet = false;
+  bool m_nextRotationDateHasBeenSet = false;
+  bool m_onDemandRotationStartDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

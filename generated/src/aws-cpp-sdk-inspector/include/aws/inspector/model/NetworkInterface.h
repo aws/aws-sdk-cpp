@@ -237,33 +237,33 @@ class NetworkInterface {
   ///@}
  private:
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::Vector<PrivateIp> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   Aws::String m_publicDnsName;
-  bool m_publicDnsNameHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   Aws::Vector<SecurityGroup> m_securityGroups;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_publicDnsNameHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
 };
 

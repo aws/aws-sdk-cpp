@@ -85,12 +85,12 @@ class DestinationOptionsRequest {
   ///@}
  private:
   DestinationFileFormat m_fileFormat{DestinationFileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   bool m_hiveCompatiblePartitions{false};
-  bool m_hiveCompatiblePartitionsHasBeenSet = false;
 
   bool m_perHourPartition{false};
+  bool m_fileFormatHasBeenSet = false;
+  bool m_hiveCompatiblePartitionsHasBeenSet = false;
   bool m_perHourPartitionHasBeenSet = false;
 };
 

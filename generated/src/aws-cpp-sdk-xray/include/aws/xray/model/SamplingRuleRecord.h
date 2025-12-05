@@ -89,12 +89,12 @@ class SamplingRuleRecord {
   ///@}
  private:
   SamplingRule m_samplingRule;
-  bool m_samplingRuleHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
+  bool m_samplingRuleHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
 };
 

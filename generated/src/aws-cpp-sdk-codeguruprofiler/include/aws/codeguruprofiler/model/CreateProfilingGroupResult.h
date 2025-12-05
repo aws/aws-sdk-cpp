@@ -69,9 +69,9 @@ class CreateProfilingGroupResult {
   ///@}
  private:
   ProfilingGroupDescription m_profilingGroup;
-  bool m_profilingGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profilingGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

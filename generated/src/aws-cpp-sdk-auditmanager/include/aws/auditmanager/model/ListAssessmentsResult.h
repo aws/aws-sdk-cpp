@@ -85,12 +85,12 @@ class ListAssessmentsResult {
   ///@}
  private:
   Aws::Vector<AssessmentMetadataItem> m_assessmentMetadata;
-  bool m_assessmentMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

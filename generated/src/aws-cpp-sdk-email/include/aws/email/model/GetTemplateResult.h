@@ -58,9 +58,9 @@ class GetTemplateResult {
   ///@}
  private:
   Template m_template;
-  bool m_templateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_templateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

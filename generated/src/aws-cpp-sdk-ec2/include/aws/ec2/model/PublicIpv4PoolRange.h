@@ -103,15 +103,15 @@ class PublicIpv4PoolRange {
   ///@}
  private:
   Aws::String m_firstAddress;
-  bool m_firstAddressHasBeenSet = false;
 
   Aws::String m_lastAddress;
-  bool m_lastAddressHasBeenSet = false;
 
   int m_addressCount{0};
-  bool m_addressCountHasBeenSet = false;
 
   int m_availableAddressCount{0};
+  bool m_firstAddressHasBeenSet = false;
+  bool m_lastAddressHasBeenSet = false;
+  bool m_addressCountHasBeenSet = false;
   bool m_availableAddressCountHasBeenSet = false;
 };
 

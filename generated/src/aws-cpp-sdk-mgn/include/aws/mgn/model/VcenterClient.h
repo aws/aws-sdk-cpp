@@ -189,27 +189,27 @@ class VcenterClient {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_datacenterName;
-  bool m_datacenterNameHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_lastSeenDatetime;
-  bool m_lastSeenDatetimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sourceServerTags;
-  bool m_sourceServerTagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vcenterClientID;
-  bool m_vcenterClientIDHasBeenSet = false;
 
   Aws::String m_vcenterUUID;
+  bool m_arnHasBeenSet = false;
+  bool m_datacenterNameHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_lastSeenDatetimeHasBeenSet = false;
+  bool m_sourceServerTagsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vcenterClientIDHasBeenSet = false;
   bool m_vcenterUUIDHasBeenSet = false;
 };
 

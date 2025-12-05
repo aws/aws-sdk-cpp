@@ -75,9 +75,9 @@ class PutPublicAccessBlockRequest : public S3ControlRequest {
   ///@}
  private:
   PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
-  bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_publicAccessBlockConfigurationHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class DescribeTrustStoreRevocationsRequest : public ElasticLoadBalancingv2Reques
   ///@}
  private:
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Aws::Vector<long long> m_revocationIds;
-  bool m_revocationIdsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_revocationIdsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

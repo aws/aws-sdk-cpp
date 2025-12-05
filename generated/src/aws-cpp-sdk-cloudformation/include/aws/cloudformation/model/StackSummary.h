@@ -273,39 +273,39 @@ class StackSummary {
   ///@}
  private:
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionTime{};
-  bool m_deletionTimeHasBeenSet = false;
 
   StackStatus m_stackStatus{StackStatus::NOT_SET};
-  bool m_stackStatusHasBeenSet = false;
 
   Aws::String m_stackStatusReason;
-  bool m_stackStatusReasonHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_rootId;
-  bool m_rootIdHasBeenSet = false;
 
   StackDriftInformationSummary m_driftInformation;
-  bool m_driftInformationHasBeenSet = false;
 
   Aws::Vector<OperationEntry> m_lastOperations;
+  bool m_stackIdHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_deletionTimeHasBeenSet = false;
+  bool m_stackStatusHasBeenSet = false;
+  bool m_stackStatusReasonHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_rootIdHasBeenSet = false;
+  bool m_driftInformationHasBeenSet = false;
   bool m_lastOperationsHasBeenSet = false;
 };
 

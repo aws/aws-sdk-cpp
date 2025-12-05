@@ -97,12 +97,12 @@ class PillarMetric {
   ///@}
  private:
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::Map<Risk, int> m_riskCounts;
-  bool m_riskCountsHasBeenSet = false;
 
   Aws::Vector<QuestionMetric> m_questions;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_riskCountsHasBeenSet = false;
   bool m_questionsHasBeenSet = false;
 };
 

@@ -241,36 +241,36 @@ class RelativeDatesFilter {
   ///@}
  private:
   Aws::String m_filterId;
-  bool m_filterIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   AnchorDateConfiguration m_anchorDateConfiguration;
-  bool m_anchorDateConfigurationHasBeenSet = false;
 
   TimeGranularity m_minimumGranularity{TimeGranularity::NOT_SET};
-  bool m_minimumGranularityHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   RelativeDateType m_relativeDateType{RelativeDateType::NOT_SET};
-  bool m_relativeDateTypeHasBeenSet = false;
 
   int m_relativeDateValue{0};
-  bool m_relativeDateValueHasBeenSet = false;
 
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   FilterNullOption m_nullOption{FilterNullOption::NOT_SET};
-  bool m_nullOptionHasBeenSet = false;
 
   ExcludePeriodConfiguration m_excludePeriodConfiguration;
-  bool m_excludePeriodConfigurationHasBeenSet = false;
 
   DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+  bool m_filterIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_anchorDateConfigurationHasBeenSet = false;
+  bool m_minimumGranularityHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_relativeDateTypeHasBeenSet = false;
+  bool m_relativeDateValueHasBeenSet = false;
+  bool m_parameterNameHasBeenSet = false;
+  bool m_nullOptionHasBeenSet = false;
+  bool m_excludePeriodConfigurationHasBeenSet = false;
   bool m_defaultFilterControlConfigurationHasBeenSet = false;
 };
 

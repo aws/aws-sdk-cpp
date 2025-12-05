@@ -113,12 +113,12 @@ class EventDimensions {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeDimension> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   SetDimension m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, MetricDimension> m_metrics;
+  bool m_attributesHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

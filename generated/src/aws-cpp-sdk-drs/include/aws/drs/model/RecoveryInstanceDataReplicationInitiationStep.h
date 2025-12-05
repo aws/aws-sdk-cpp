@@ -65,9 +65,9 @@ class RecoveryInstanceDataReplicationInitiationStep {
   ///@}
  private:
   RecoveryInstanceDataReplicationInitiationStepName m_name{RecoveryInstanceDataReplicationInitiationStepName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   RecoveryInstanceDataReplicationInitiationStepStatus m_status{RecoveryInstanceDataReplicationInitiationStepStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

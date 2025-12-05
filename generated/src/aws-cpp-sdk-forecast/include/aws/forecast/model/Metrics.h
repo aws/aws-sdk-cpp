@@ -103,12 +103,12 @@ class Metrics {
   ///@}
  private:
   Aws::Vector<WeightedQuantileLoss> m_weightedQuantileLosses;
-  bool m_weightedQuantileLossesHasBeenSet = false;
 
   Aws::Vector<ErrorMetric> m_errorMetrics;
-  bool m_errorMetricsHasBeenSet = false;
 
   double m_averageWeightedQuantileLoss{0.0};
+  bool m_weightedQuantileLossesHasBeenSet = false;
+  bool m_errorMetricsHasBeenSet = false;
   bool m_averageWeightedQuantileLossHasBeenSet = false;
 };
 

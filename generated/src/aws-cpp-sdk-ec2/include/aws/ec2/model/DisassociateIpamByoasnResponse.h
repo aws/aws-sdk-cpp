@@ -60,9 +60,9 @@ class DisassociateIpamByoasnResponse {
   ///@}
  private:
   AsnAssociation m_asnAssociation;
-  bool m_asnAssociationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_asnAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class FacetAttributeReference {
   ///@}
  private:
   Aws::String m_targetFacetName;
-  bool m_targetFacetNameHasBeenSet = false;
 
   Aws::String m_targetAttributeName;
+  bool m_targetFacetNameHasBeenSet = false;
   bool m_targetAttributeNameHasBeenSet = false;
 };
 

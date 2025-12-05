@@ -130,21 +130,21 @@ class DisassociateOriginationIdentityResult {
   ///@}
  private:
   Aws::String m_poolArn;
-  bool m_poolArnHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_originationIdentityArn;
-  bool m_originationIdentityArnHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_poolArnHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_originationIdentityArnHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

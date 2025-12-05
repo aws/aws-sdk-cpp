@@ -63,9 +63,9 @@ class RetryPolicy {
   ///@}
  private:
   int m_maxAttempts{0};
-  bool m_maxAttemptsHasBeenSet = false;
 
   int m_maxFailedAttemptsPerHour{0};
+  bool m_maxAttemptsHasBeenSet = false;
   bool m_maxFailedAttemptsPerHourHasBeenSet = false;
 };
 

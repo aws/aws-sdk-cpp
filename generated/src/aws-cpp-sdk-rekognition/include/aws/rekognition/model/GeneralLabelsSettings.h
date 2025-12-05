@@ -136,15 +136,15 @@ class GeneralLabelsSettings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_labelInclusionFilters;
-  bool m_labelInclusionFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labelExclusionFilters;
-  bool m_labelExclusionFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labelCategoryInclusionFilters;
-  bool m_labelCategoryInclusionFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labelCategoryExclusionFilters;
+  bool m_labelInclusionFiltersHasBeenSet = false;
+  bool m_labelExclusionFiltersHasBeenSet = false;
+  bool m_labelCategoryInclusionFiltersHasBeenSet = false;
   bool m_labelCategoryExclusionFiltersHasBeenSet = false;
 };
 

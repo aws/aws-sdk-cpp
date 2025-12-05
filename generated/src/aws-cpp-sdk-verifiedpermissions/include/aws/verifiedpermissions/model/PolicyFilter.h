@@ -110,15 +110,15 @@ class PolicyFilter {
   ///@}
  private:
   EntityReference m_principal;
-  bool m_principalHasBeenSet = false;
 
   EntityReference m_resource;
-  bool m_resourceHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_policyTemplateId;
+  bool m_principalHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_policyTemplateIdHasBeenSet = false;
 };
 

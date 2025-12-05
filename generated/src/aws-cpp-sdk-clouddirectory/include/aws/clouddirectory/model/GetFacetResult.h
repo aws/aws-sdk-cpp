@@ -60,9 +60,9 @@ class GetFacetResult {
   ///@}
  private:
   Facet m_facet;
-  bool m_facetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_facetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

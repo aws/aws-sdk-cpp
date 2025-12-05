@@ -89,12 +89,12 @@ class IndonesiaAdditionalInfo {
   ///@}
  private:
   Aws::String m_decisionNumber;
-  bool m_decisionNumberHasBeenSet = false;
 
   Aws::String m_ppnExceptionDesignationCode;
-  bool m_ppnExceptionDesignationCodeHasBeenSet = false;
 
   IndonesiaTaxRegistrationNumberType m_taxRegistrationNumberType{IndonesiaTaxRegistrationNumberType::NOT_SET};
+  bool m_decisionNumberHasBeenSet = false;
+  bool m_ppnExceptionDesignationCodeHasBeenSet = false;
   bool m_taxRegistrationNumberTypeHasBeenSet = false;
 };
 

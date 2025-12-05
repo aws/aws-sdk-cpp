@@ -109,15 +109,15 @@ class LineChartMarkerStyleSettings {
   ///@}
  private:
   Visibility m_markerVisibility{Visibility::NOT_SET};
-  bool m_markerVisibilityHasBeenSet = false;
 
   LineChartMarkerShape m_markerShape{LineChartMarkerShape::NOT_SET};
-  bool m_markerShapeHasBeenSet = false;
 
   Aws::String m_markerSize;
-  bool m_markerSizeHasBeenSet = false;
 
   Aws::String m_markerColor;
+  bool m_markerVisibilityHasBeenSet = false;
+  bool m_markerShapeHasBeenSet = false;
+  bool m_markerSizeHasBeenSet = false;
   bool m_markerColorHasBeenSet = false;
 };
 

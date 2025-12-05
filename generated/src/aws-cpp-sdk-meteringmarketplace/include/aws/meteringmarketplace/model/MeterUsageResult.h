@@ -59,9 +59,9 @@ class MeterUsageResult {
   ///@}
  private:
   Aws::String m_meteringRecordId;
-  bool m_meteringRecordIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_meteringRecordIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

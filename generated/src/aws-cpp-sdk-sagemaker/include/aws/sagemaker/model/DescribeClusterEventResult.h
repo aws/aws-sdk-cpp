@@ -63,9 +63,9 @@ class DescribeClusterEventResult {
   ///@}
  private:
   ClusterEventDetail m_eventDetails;
-  bool m_eventDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

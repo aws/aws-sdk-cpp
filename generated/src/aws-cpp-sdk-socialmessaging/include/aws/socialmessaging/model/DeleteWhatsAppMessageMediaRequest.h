@@ -76,9 +76,9 @@ class DeleteWhatsAppMessageMediaRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_mediaId;
-  bool m_mediaIdHasBeenSet = false;
 
   Aws::String m_originationPhoneNumberId;
+  bool m_mediaIdHasBeenSet = false;
   bool m_originationPhoneNumberIdHasBeenSet = false;
 };
 

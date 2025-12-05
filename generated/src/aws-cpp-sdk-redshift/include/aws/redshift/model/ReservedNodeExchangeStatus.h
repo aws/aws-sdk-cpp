@@ -196,30 +196,30 @@ class ReservedNodeExchangeStatus {
   ///@}
  private:
   Aws::String m_reservedNodeExchangeRequestId;
-  bool m_reservedNodeExchangeRequestIdHasBeenSet = false;
 
   ReservedNodeExchangeStatusType m_status{ReservedNodeExchangeStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTime{};
-  bool m_requestTimeHasBeenSet = false;
 
   Aws::String m_sourceReservedNodeId;
-  bool m_sourceReservedNodeIdHasBeenSet = false;
 
   Aws::String m_sourceReservedNodeType;
-  bool m_sourceReservedNodeTypeHasBeenSet = false;
 
   int m_sourceReservedNodeCount{0};
-  bool m_sourceReservedNodeCountHasBeenSet = false;
 
   Aws::String m_targetReservedNodeOfferingId;
-  bool m_targetReservedNodeOfferingIdHasBeenSet = false;
 
   Aws::String m_targetReservedNodeType;
-  bool m_targetReservedNodeTypeHasBeenSet = false;
 
   int m_targetReservedNodeCount{0};
+  bool m_reservedNodeExchangeRequestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_requestTimeHasBeenSet = false;
+  bool m_sourceReservedNodeIdHasBeenSet = false;
+  bool m_sourceReservedNodeTypeHasBeenSet = false;
+  bool m_sourceReservedNodeCountHasBeenSet = false;
+  bool m_targetReservedNodeOfferingIdHasBeenSet = false;
+  bool m_targetReservedNodeTypeHasBeenSet = false;
   bool m_targetReservedNodeCountHasBeenSet = false;
 };
 

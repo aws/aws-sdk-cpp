@@ -255,36 +255,36 @@ class CreateEvaluationFormRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EvaluationFormItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   EvaluationFormScoringStrategy m_scoringStrategy;
-  bool m_scoringStrategyHasBeenSet = false;
 
   EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
-  bool m_autoEvaluationConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_asDraft{false};
-  bool m_asDraftHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EvaluationFormTargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   EvaluationFormLanguageConfiguration m_languageConfiguration;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_scoringStrategyHasBeenSet = false;
+  bool m_autoEvaluationConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_asDraftHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
 };
 

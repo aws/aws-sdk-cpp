@@ -84,12 +84,12 @@ class GetCoreNetworkChangeSetResult {
   ///@}
  private:
   Aws::Vector<CoreNetworkChange> m_coreNetworkChanges;
-  bool m_coreNetworkChangesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreNetworkChangesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class DomainSummary {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_autoRenew{false};
-  bool m_autoRenewHasBeenSet = false;
 
   bool m_transferLock{false};
-  bool m_transferLockHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiry{};
+  bool m_domainNameHasBeenSet = false;
+  bool m_autoRenewHasBeenSet = false;
+  bool m_transferLockHasBeenSet = false;
   bool m_expiryHasBeenSet = false;
 };
 

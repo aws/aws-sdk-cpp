@@ -102,15 +102,15 @@ class GetRecoveryGroupReadinessSummaryResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Readiness m_readiness{Readiness::NOT_SET};
-  bool m_readinessHasBeenSet = false;
 
   Aws::Vector<ReadinessCheckSummary> m_readinessChecks;
-  bool m_readinessChecksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_readinessHasBeenSet = false;
+  bool m_readinessChecksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

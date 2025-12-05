@@ -80,12 +80,12 @@ class StartScanJobResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_scanJobId;
-  bool m_scanJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationDateHasBeenSet = false;
+  bool m_scanJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

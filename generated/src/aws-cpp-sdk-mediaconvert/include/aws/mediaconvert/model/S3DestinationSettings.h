@@ -92,12 +92,12 @@ class S3DestinationSettings {
   ///@}
  private:
   S3DestinationAccessControl m_accessControl;
-  bool m_accessControlHasBeenSet = false;
 
   S3EncryptionSettings m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   S3StorageClass m_storageClass{S3StorageClass::NOT_SET};
+  bool m_accessControlHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;
 };
 

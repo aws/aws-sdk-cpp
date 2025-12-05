@@ -121,18 +121,18 @@ class InputLossBehavior {
   ///@}
  private:
   int m_blackFrameMsec{0};
-  bool m_blackFrameMsecHasBeenSet = false;
 
   Aws::String m_inputLossImageColor;
-  bool m_inputLossImageColorHasBeenSet = false;
 
   InputLocation m_inputLossImageSlate;
-  bool m_inputLossImageSlateHasBeenSet = false;
 
   InputLossImageType m_inputLossImageType{InputLossImageType::NOT_SET};
-  bool m_inputLossImageTypeHasBeenSet = false;
 
   int m_repeatFrameMsec{0};
+  bool m_blackFrameMsecHasBeenSet = false;
+  bool m_inputLossImageColorHasBeenSet = false;
+  bool m_inputLossImageSlateHasBeenSet = false;
+  bool m_inputLossImageTypeHasBeenSet = false;
   bool m_repeatFrameMsecHasBeenSet = false;
 };
 

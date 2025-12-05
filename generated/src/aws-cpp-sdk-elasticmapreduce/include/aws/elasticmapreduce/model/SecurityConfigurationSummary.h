@@ -70,9 +70,9 @@ class SecurityConfigurationSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
+  bool m_nameHasBeenSet = false;
   bool m_creationDateTimeHasBeenSet = false;
 };
 

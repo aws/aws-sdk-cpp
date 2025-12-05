@@ -149,18 +149,18 @@ class ConfigurationSummary {
   ///@}
  private:
   Aws::Vector<Source> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Vector<DataSource> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_processors;
-  bool m_processorsHasBeenSet = false;
 
   int m_processorCount{0};
-  bool m_processorCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sinks;
+  bool m_sourcesHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_processorsHasBeenSet = false;
+  bool m_processorCountHasBeenSet = false;
   bool m_sinksHasBeenSet = false;
 };
 

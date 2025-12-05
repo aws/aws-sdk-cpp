@@ -96,12 +96,12 @@ class PackageDetailsForAssociation {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_prerequisitePackageIDList;
-  bool m_prerequisitePackageIDListHasBeenSet = false;
 
   PackageAssociationConfiguration m_associationConfiguration;
+  bool m_packageIDHasBeenSet = false;
+  bool m_prerequisitePackageIDListHasBeenSet = false;
   bool m_associationConfigurationHasBeenSet = false;
 };
 

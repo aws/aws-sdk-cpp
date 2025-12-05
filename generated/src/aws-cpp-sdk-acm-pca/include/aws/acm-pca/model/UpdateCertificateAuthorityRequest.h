@@ -121,12 +121,12 @@ class UpdateCertificateAuthorityRequest : public ACMPCARequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   RevocationConfiguration m_revocationConfiguration;
-  bool m_revocationConfigurationHasBeenSet = false;
 
   CertificateAuthorityStatus m_status{CertificateAuthorityStatus::NOT_SET};
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_revocationConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

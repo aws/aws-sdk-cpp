@@ -103,12 +103,12 @@ class InstanceFleetStatus {
   ///@}
  private:
   InstanceFleetState m_state{InstanceFleetState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   InstanceFleetStateChangeReason m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   InstanceFleetTimeline m_timeline;
+  bool m_stateHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
   bool m_timelineHasBeenSet = false;
 };
 

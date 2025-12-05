@@ -128,18 +128,18 @@ class MonitoringConfiguration {
   ///@}
  private:
   ManagedLogs m_managedLogs;
-  bool m_managedLogsHasBeenSet = false;
 
   PersistentAppUI m_persistentAppUI{PersistentAppUI::NOT_SET};
-  bool m_persistentAppUIHasBeenSet = false;
 
   CloudWatchMonitoringConfiguration m_cloudWatchMonitoringConfiguration;
-  bool m_cloudWatchMonitoringConfigurationHasBeenSet = false;
 
   S3MonitoringConfiguration m_s3MonitoringConfiguration;
-  bool m_s3MonitoringConfigurationHasBeenSet = false;
 
   ContainerLogRotationConfiguration m_containerLogRotationConfiguration;
+  bool m_managedLogsHasBeenSet = false;
+  bool m_persistentAppUIHasBeenSet = false;
+  bool m_cloudWatchMonitoringConfigurationHasBeenSet = false;
+  bool m_s3MonitoringConfigurationHasBeenSet = false;
   bool m_containerLogRotationConfigurationHasBeenSet = false;
 };
 

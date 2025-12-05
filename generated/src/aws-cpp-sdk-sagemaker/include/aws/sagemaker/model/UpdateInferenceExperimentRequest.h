@@ -159,21 +159,21 @@ class UpdateInferenceExperimentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InferenceExperimentSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ModelVariantConfig> m_modelVariants;
-  bool m_modelVariantsHasBeenSet = false;
 
   InferenceExperimentDataStorageConfig m_dataStorageConfig;
-  bool m_dataStorageConfigHasBeenSet = false;
 
   ShadowModeConfig m_shadowModeConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_modelVariantsHasBeenSet = false;
+  bool m_dataStorageConfigHasBeenSet = false;
   bool m_shadowModeConfigHasBeenSet = false;
 };
 

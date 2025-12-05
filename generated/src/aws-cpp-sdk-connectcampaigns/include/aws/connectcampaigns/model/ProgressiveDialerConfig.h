@@ -57,9 +57,9 @@ class ProgressiveDialerConfig {
   ///@}
  private:
   double m_bandwidthAllocation{0.0};
-  bool m_bandwidthAllocationHasBeenSet = false;
 
   double m_dialingCapacity{0.0};
+  bool m_bandwidthAllocationHasBeenSet = false;
   bool m_dialingCapacityHasBeenSet = false;
 };
 

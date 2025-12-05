@@ -150,21 +150,21 @@ class ListEfficiencyMetricsRequest : public CostOptimizationHubRequest {
   ///@}
  private:
   Aws::String m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   GranularityType m_granularity{GranularityType::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   TimePeriod m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   OrderBy m_orderBy;
-  bool m_orderByHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_groupByHasBeenSet = false;
+  bool m_granularityHasBeenSet = false;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_orderByHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

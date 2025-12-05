@@ -258,33 +258,33 @@ class Filters {
   ///@}
  private:
   Aws::Vector<LanguageCodeType> m_textLocales;
-  bool m_textLocalesHasBeenSet = false;
 
   Aws::Vector<ContentCategoryType> m_contentCategories;
-  bool m_contentCategoriesHasBeenSet = false;
 
   Aws::Vector<SearchResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::Vector<SearchPrincipalType> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ancestorIds;
-  bool m_ancestorIdsHasBeenSet = false;
 
   Aws::Vector<SearchCollectionType> m_searchCollectionTypes;
-  bool m_searchCollectionTypesHasBeenSet = false;
 
   LongRangeType m_sizeRange;
-  bool m_sizeRangeHasBeenSet = false;
 
   DateRangeType m_createdRange;
-  bool m_createdRangeHasBeenSet = false;
 
   DateRangeType m_modifiedRange;
+  bool m_textLocalesHasBeenSet = false;
+  bool m_contentCategoriesHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
+  bool m_ancestorIdsHasBeenSet = false;
+  bool m_searchCollectionTypesHasBeenSet = false;
+  bool m_sizeRangeHasBeenSet = false;
+  bool m_createdRangeHasBeenSet = false;
   bool m_modifiedRangeHasBeenSet = false;
 };
 

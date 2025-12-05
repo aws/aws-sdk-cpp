@@ -113,15 +113,15 @@ class AdapterOverview {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::String m_adapterName;
-  bool m_adapterNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<FeatureType> m_featureTypes;
+  bool m_adapterIdHasBeenSet = false;
+  bool m_adapterNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_featureTypesHasBeenSet = false;
 };
 

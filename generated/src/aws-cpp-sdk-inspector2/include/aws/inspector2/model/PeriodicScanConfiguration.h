@@ -72,9 +72,9 @@ class PeriodicScanConfiguration {
   ///@}
  private:
   PeriodicScanFrequency m_frequency{PeriodicScanFrequency::NOT_SET};
-  bool m_frequencyHasBeenSet = false;
 
   Aws::String m_frequencyExpression;
+  bool m_frequencyHasBeenSet = false;
   bool m_frequencyExpressionHasBeenSet = false;
 };
 

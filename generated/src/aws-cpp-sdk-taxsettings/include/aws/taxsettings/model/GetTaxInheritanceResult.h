@@ -58,9 +58,9 @@ class GetTaxInheritanceResult {
   ///@}
  private:
   HeritageStatus m_heritageStatus{HeritageStatus::NOT_SET};
-  bool m_heritageStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_heritageStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

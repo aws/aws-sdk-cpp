@@ -60,9 +60,9 @@ class DescribePersistentAppUIResult {
   ///@}
  private:
   PersistentAppUI m_persistentAppUI;
-  bool m_persistentAppUIHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_persistentAppUIHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

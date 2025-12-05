@@ -91,12 +91,12 @@ class PostCommentReplyRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_inReplyTo;
-  bool m_inReplyToHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_content;
+  bool m_inReplyToHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_contentHasBeenSet = false;
 };
 

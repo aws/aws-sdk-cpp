@@ -59,9 +59,9 @@ class PutOrganizationConfigRuleResult {
   ///@}
  private:
   Aws::String m_organizationConfigRuleArn;
-  bool m_organizationConfigRuleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationConfigRuleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

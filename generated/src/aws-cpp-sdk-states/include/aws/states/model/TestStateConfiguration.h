@@ -104,15 +104,15 @@ class TestStateConfiguration {
   ///@}
  private:
   int m_retrierRetryCount{0};
-  bool m_retrierRetryCountHasBeenSet = false;
 
   Aws::String m_errorCausedByState;
-  bool m_errorCausedByStateHasBeenSet = false;
 
   int m_mapIterationFailureCount{0};
-  bool m_mapIterationFailureCountHasBeenSet = false;
 
   Aws::String m_mapItemReaderData;
+  bool m_retrierRetryCountHasBeenSet = false;
+  bool m_errorCausedByStateHasBeenSet = false;
+  bool m_mapIterationFailureCountHasBeenSet = false;
   bool m_mapItemReaderDataHasBeenSet = false;
 };
 

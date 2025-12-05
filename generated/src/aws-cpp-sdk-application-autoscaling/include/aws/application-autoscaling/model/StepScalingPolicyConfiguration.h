@@ -146,18 +146,18 @@ class StepScalingPolicyConfiguration {
   ///@}
  private:
   AdjustmentType m_adjustmentType{AdjustmentType::NOT_SET};
-  bool m_adjustmentTypeHasBeenSet = false;
 
   Aws::Vector<StepAdjustment> m_stepAdjustments;
-  bool m_stepAdjustmentsHasBeenSet = false;
 
   int m_minAdjustmentMagnitude{0};
-  bool m_minAdjustmentMagnitudeHasBeenSet = false;
 
   int m_cooldown{0};
-  bool m_cooldownHasBeenSet = false;
 
   MetricAggregationType m_metricAggregationType{MetricAggregationType::NOT_SET};
+  bool m_adjustmentTypeHasBeenSet = false;
+  bool m_stepAdjustmentsHasBeenSet = false;
+  bool m_minAdjustmentMagnitudeHasBeenSet = false;
+  bool m_cooldownHasBeenSet = false;
   bool m_metricAggregationTypeHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class CreateDocumentationVersionRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_documentationVersion;
-  bool m_documentationVersionHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_documentationVersionHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

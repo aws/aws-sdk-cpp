@@ -102,15 +102,15 @@ class ListConnectorsV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ConnectorProviderName m_providerName{ConnectorProviderName::NOT_SET};
-  bool m_providerNameHasBeenSet = false;
 
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
   bool m_connectorStatusHasBeenSet = false;
 };
 

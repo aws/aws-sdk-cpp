@@ -70,9 +70,9 @@ class LicenseSpecification {
   ///@}
  private:
   Aws::String m_licenseConfigurationArn;
-  bool m_licenseConfigurationArnHasBeenSet = false;
 
   Aws::String m_amiAssociationScope;
+  bool m_licenseConfigurationArnHasBeenSet = false;
   bool m_amiAssociationScopeHasBeenSet = false;
 };
 

@@ -158,21 +158,21 @@ class Stage {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_activeSessionId;
-  bool m_activeSessionIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AutoParticipantRecordingConfiguration m_autoParticipantRecordingConfiguration;
-  bool m_autoParticipantRecordingConfigurationHasBeenSet = false;
 
   StageEndpoints m_endpoints;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_activeSessionIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_autoParticipantRecordingConfigurationHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;
 };
 

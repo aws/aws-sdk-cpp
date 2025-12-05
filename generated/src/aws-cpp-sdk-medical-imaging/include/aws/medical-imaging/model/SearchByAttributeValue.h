@@ -195,30 +195,30 @@ class SearchByAttributeValue {
   ///@}
  private:
   Aws::String m_dICOMPatientId;
-  bool m_dICOMPatientIdHasBeenSet = false;
 
   Aws::String m_dICOMAccessionNumber;
-  bool m_dICOMAccessionNumberHasBeenSet = false;
 
   Aws::String m_dICOMStudyId;
-  bool m_dICOMStudyIdHasBeenSet = false;
 
   Aws::String m_dICOMStudyInstanceUID;
-  bool m_dICOMStudyInstanceUIDHasBeenSet = false;
 
   Aws::String m_dICOMSeriesInstanceUID;
-  bool m_dICOMSeriesInstanceUIDHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   DICOMStudyDateAndTime m_dICOMStudyDateAndTime;
-  bool m_dICOMStudyDateAndTimeHasBeenSet = false;
 
   bool m_isPrimary{false};
+  bool m_dICOMPatientIdHasBeenSet = false;
+  bool m_dICOMAccessionNumberHasBeenSet = false;
+  bool m_dICOMStudyIdHasBeenSet = false;
+  bool m_dICOMStudyInstanceUIDHasBeenSet = false;
+  bool m_dICOMSeriesInstanceUIDHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_dICOMStudyDateAndTimeHasBeenSet = false;
   bool m_isPrimaryHasBeenSet = false;
 };
 

@@ -213,36 +213,36 @@ class DescribeResourceResult {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResourceType m_type{ResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   BookingOptions m_bookingOptions;
-  bool m_bookingOptionsHasBeenSet = false;
 
   EntityState m_state{EntityState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_enabledDate{};
-  bool m_enabledDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_disabledDate{};
-  bool m_disabledDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_hiddenFromGlobalAddressList{false};
-  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_bookingOptionsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_enabledDateHasBeenSet = false;
+  bool m_disabledDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

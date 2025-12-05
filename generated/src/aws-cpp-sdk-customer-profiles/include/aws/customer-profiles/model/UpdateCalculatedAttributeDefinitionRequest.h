@@ -121,18 +121,18 @@ class UpdateCalculatedAttributeDefinitionRequest : public CustomerProfilesReques
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_calculatedAttributeName;
-  bool m_calculatedAttributeNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Conditions m_conditions;
+  bool m_domainNameHasBeenSet = false;
+  bool m_calculatedAttributeNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

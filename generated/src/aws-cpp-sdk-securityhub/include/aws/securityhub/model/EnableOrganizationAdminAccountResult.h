@@ -78,12 +78,12 @@ class EnableOrganizationAdminAccountResult {
   ///@}
  private:
   Aws::String m_adminAccountId;
-  bool m_adminAccountIdHasBeenSet = false;
 
   SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adminAccountIdHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

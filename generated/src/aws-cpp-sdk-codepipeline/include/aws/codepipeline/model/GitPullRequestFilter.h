@@ -100,12 +100,12 @@ class GitPullRequestFilter {
   ///@}
  private:
   Aws::Vector<GitPullRequestEventType> m_events;
-  bool m_eventsHasBeenSet = false;
 
   GitBranchFilterCriteria m_branches;
-  bool m_branchesHasBeenSet = false;
 
   GitFilePathFilterCriteria m_filePaths;
+  bool m_eventsHasBeenSet = false;
+  bool m_branchesHasBeenSet = false;
   bool m_filePathsHasBeenSet = false;
 };
 

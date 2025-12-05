@@ -102,15 +102,15 @@ class GetTranscriptResult {
   ///@}
  private:
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   Aws::Vector<Item> m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_transcriptHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

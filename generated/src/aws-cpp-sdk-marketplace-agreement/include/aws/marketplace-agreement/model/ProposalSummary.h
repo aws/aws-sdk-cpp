@@ -96,12 +96,12 @@ class ProposalSummary {
   ///@}
  private:
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_offerId;
-  bool m_offerIdHasBeenSet = false;
 
   Aws::String m_offerSetId;
+  bool m_resourcesHasBeenSet = false;
+  bool m_offerIdHasBeenSet = false;
   bool m_offerSetIdHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class ListInferenceExecutionsRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataStartTimeAfter{};
-  bool m_dataStartTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataEndTimeBefore{};
-  bool m_dataEndTimeBeforeHasBeenSet = false;
 
   InferenceExecutionStatus m_status{InferenceExecutionStatus::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_dataStartTimeAfterHasBeenSet = false;
+  bool m_dataEndTimeBeforeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

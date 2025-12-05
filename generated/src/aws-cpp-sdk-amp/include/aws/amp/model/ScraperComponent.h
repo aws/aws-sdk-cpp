@@ -68,9 +68,9 @@ class ScraperComponent {
   ///@}
  private:
   ScraperComponentType m_type{ScraperComponentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ComponentConfig m_config;
+  bool m_typeHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

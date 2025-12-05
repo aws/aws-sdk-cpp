@@ -110,12 +110,12 @@ class RejectedRecord {
   ///@}
  private:
   int m_recordIndex{0};
-  bool m_recordIndexHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   long long m_existingVersion{0};
+  bool m_recordIndexHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_existingVersionHasBeenSet = false;
 };
 

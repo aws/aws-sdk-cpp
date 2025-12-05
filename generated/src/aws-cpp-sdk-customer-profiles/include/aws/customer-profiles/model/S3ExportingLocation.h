@@ -71,9 +71,9 @@ class S3ExportingLocation {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3KeyName;
+  bool m_s3BucketNameHasBeenSet = false;
   bool m_s3KeyNameHasBeenSet = false;
 };
 

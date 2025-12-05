@@ -106,15 +106,15 @@ class LifecyclePolicyDetailFilter {
   ///@}
  private:
   LifecyclePolicyDetailFilterType m_type{LifecyclePolicyDetailFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_value{0};
-  bool m_valueHasBeenSet = false;
 
   LifecyclePolicyTimeUnit m_unit{LifecyclePolicyTimeUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   int m_retainAtLeast{0};
+  bool m_typeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_retainAtLeastHasBeenSet = false;
 };
 

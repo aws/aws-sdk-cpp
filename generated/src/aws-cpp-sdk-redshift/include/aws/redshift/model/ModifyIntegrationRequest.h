@@ -87,12 +87,12 @@ class ModifyIntegrationRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_integrationName;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_integrationNameHasBeenSet = false;
 };
 

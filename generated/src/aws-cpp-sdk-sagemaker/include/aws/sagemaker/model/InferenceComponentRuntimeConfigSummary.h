@@ -64,9 +64,9 @@ class InferenceComponentRuntimeConfigSummary {
   ///@}
  private:
   int m_desiredCopyCount{0};
-  bool m_desiredCopyCountHasBeenSet = false;
 
   int m_currentCopyCount{0};
+  bool m_desiredCopyCountHasBeenSet = false;
   bool m_currentCopyCountHasBeenSet = false;
 };
 

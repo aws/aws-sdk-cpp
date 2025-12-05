@@ -389,57 +389,57 @@ class Cluster {
   ///@}
  private:
   BackupPolicy m_backupPolicy{BackupPolicy::NOT_SET};
-  bool m_backupPolicyHasBeenSet = false;
 
   BackupRetentionPolicy m_backupRetentionPolicy;
-  bool m_backupRetentionPolicyHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::Vector<Hsm> m_hsms;
-  bool m_hsmsHasBeenSet = false;
 
   Aws::String m_hsmType;
-  bool m_hsmTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_hsmTypeRollbackExpiration{};
-  bool m_hsmTypeRollbackExpirationHasBeenSet = false;
 
   Aws::String m_preCoPassword;
-  bool m_preCoPasswordHasBeenSet = false;
 
   Aws::String m_securityGroup;
-  bool m_securityGroupHasBeenSet = false;
 
   Aws::String m_sourceBackupId;
-  bool m_sourceBackupIdHasBeenSet = false;
 
   ClusterState m_state{ClusterState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_subnetMapping;
-  bool m_subnetMappingHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   Certificates m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   ClusterMode m_mode{ClusterMode::NOT_SET};
+  bool m_backupPolicyHasBeenSet = false;
+  bool m_backupRetentionPolicyHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_hsmsHasBeenSet = false;
+  bool m_hsmTypeHasBeenSet = false;
+  bool m_hsmTypeRollbackExpirationHasBeenSet = false;
+  bool m_preCoPasswordHasBeenSet = false;
+  bool m_securityGroupHasBeenSet = false;
+  bool m_sourceBackupIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_subnetMappingHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

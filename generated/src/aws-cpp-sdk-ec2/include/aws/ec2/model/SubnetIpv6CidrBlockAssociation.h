@@ -129,18 +129,18 @@ class SubnetIpv6CidrBlockAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
-  bool m_ipv6CidrBlockHasBeenSet = false;
 
   SubnetCidrBlockState m_ipv6CidrBlockState;
-  bool m_ipv6CidrBlockStateHasBeenSet = false;
 
   Ipv6AddressAttribute m_ipv6AddressAttribute{Ipv6AddressAttribute::NOT_SET};
-  bool m_ipv6AddressAttributeHasBeenSet = false;
 
   IpSource m_ipSource{IpSource::NOT_SET};
+  bool m_associationIdHasBeenSet = false;
+  bool m_ipv6CidrBlockHasBeenSet = false;
+  bool m_ipv6CidrBlockStateHasBeenSet = false;
+  bool m_ipv6AddressAttributeHasBeenSet = false;
   bool m_ipSourceHasBeenSet = false;
 };
 

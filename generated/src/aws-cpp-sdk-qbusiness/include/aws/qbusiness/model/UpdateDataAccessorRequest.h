@@ -131,18 +131,18 @@ class UpdateDataAccessorRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_dataAccessorId;
-  bool m_dataAccessorIdHasBeenSet = false;
 
   Aws::Vector<ActionConfiguration> m_actionConfigurations;
-  bool m_actionConfigurationsHasBeenSet = false;
 
   DataAccessorAuthenticationDetail m_authenticationDetail;
-  bool m_authenticationDetailHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_dataAccessorIdHasBeenSet = false;
+  bool m_actionConfigurationsHasBeenSet = false;
+  bool m_authenticationDetailHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

@@ -122,18 +122,18 @@ class DataRepositoryTaskStatus {
   ///@}
  private:
   long long m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   long long m_succeededCount{0};
-  bool m_succeededCountHasBeenSet = false;
 
   long long m_failedCount{0};
-  bool m_failedCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   long long m_releasedCapacity{0};
+  bool m_totalCountHasBeenSet = false;
+  bool m_succeededCountHasBeenSet = false;
+  bool m_failedCountHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_releasedCapacityHasBeenSet = false;
 };
 

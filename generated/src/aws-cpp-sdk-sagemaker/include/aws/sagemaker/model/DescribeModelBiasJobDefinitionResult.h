@@ -234,39 +234,39 @@ class DescribeModelBiasJobDefinitionResult {
   ///@}
  private:
   Aws::String m_jobDefinitionArn;
-  bool m_jobDefinitionArnHasBeenSet = false;
 
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ModelBiasBaselineConfig m_modelBiasBaselineConfig;
-  bool m_modelBiasBaselineConfigHasBeenSet = false;
 
   ModelBiasAppSpecification m_modelBiasAppSpecification;
-  bool m_modelBiasAppSpecificationHasBeenSet = false;
 
   ModelBiasJobInput m_modelBiasJobInput;
-  bool m_modelBiasJobInputHasBeenSet = false;
 
   MonitoringOutputConfig m_modelBiasJobOutputConfig;
-  bool m_modelBiasJobOutputConfigHasBeenSet = false;
 
   MonitoringResources m_jobResources;
-  bool m_jobResourcesHasBeenSet = false;
 
   MonitoringNetworkConfig m_networkConfig;
-  bool m_networkConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MonitoringStoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDefinitionArnHasBeenSet = false;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modelBiasBaselineConfigHasBeenSet = false;
+  bool m_modelBiasAppSpecificationHasBeenSet = false;
+  bool m_modelBiasJobInputHasBeenSet = false;
+  bool m_modelBiasJobOutputConfigHasBeenSet = false;
+  bool m_jobResourcesHasBeenSet = false;
+  bool m_networkConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class ActionTypeExecutor {
   ///@}
  private:
   ExecutorConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ExecutorType m_type{ExecutorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_policyStatementsTemplate;
-  bool m_policyStatementsTemplateHasBeenSet = false;
 
   int m_jobTimeout{0};
+  bool m_configurationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_policyStatementsTemplateHasBeenSet = false;
   bool m_jobTimeoutHasBeenSet = false;
 };
 

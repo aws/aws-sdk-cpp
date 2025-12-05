@@ -117,15 +117,15 @@ class GetIdentityPoolRolesResult {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_roles;
-  bool m_rolesHasBeenSet = false;
 
   Aws::Map<Aws::String, RoleMapping> m_roleMappings;
-  bool m_roleMappingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_rolesHasBeenSet = false;
+  bool m_roleMappingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

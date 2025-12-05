@@ -210,27 +210,27 @@ class ListAccessGrantsRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   GranteeType m_granteeType{GranteeType::NOT_SET};
-  bool m_granteeTypeHasBeenSet = false;
 
   Aws::String m_granteeIdentifier;
-  bool m_granteeIdentifierHasBeenSet = false;
 
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   Aws::String m_grantScope;
-  bool m_grantScopeHasBeenSet = false;
 
   Aws::String m_applicationArn;
+  bool m_accountIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_granteeTypeHasBeenSet = false;
+  bool m_granteeIdentifierHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
+  bool m_grantScopeHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;
 };
 

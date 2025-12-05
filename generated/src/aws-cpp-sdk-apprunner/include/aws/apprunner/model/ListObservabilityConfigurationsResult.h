@@ -90,12 +90,12 @@ class ListObservabilityConfigurationsResult {
   ///@}
  private:
   Aws::Vector<ObservabilityConfigurationSummary> m_observabilityConfigurationSummaryList;
-  bool m_observabilityConfigurationSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_observabilityConfigurationSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

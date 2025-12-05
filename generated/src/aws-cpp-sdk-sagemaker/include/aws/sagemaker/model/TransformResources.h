@@ -131,15 +131,15 @@ class TransformResources {
   ///@}
  private:
   TransformInstanceType m_instanceType{TransformInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   Aws::String m_transformAmiVersion;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
   bool m_transformAmiVersionHasBeenSet = false;
 };
 

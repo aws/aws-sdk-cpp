@@ -86,12 +86,12 @@ class DescribeIpamPoolsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<IpamPool> m_ipamPools;
-  bool m_ipamPoolsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ipamPoolsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

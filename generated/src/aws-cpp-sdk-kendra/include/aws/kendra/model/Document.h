@@ -239,30 +239,30 @@ class Document {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_blob{};
-  bool m_blobHasBeenSet = false;
 
   S3Path m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   Aws::Vector<DocumentAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<Principal> m_accessControlList;
-  bool m_accessControlListHasBeenSet = false;
 
   Aws::Vector<HierarchicalPrincipal> m_hierarchicalAccessControlList;
-  bool m_hierarchicalAccessControlListHasBeenSet = false;
 
   ContentType m_contentType{ContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_accessControlConfigurationId;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_blobHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_accessControlListHasBeenSet = false;
+  bool m_hierarchicalAccessControlListHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_accessControlConfigurationIdHasBeenSet = false;
 };
 

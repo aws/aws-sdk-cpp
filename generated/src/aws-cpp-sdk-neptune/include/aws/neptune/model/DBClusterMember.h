@@ -106,15 +106,15 @@ class DBClusterMember {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   bool m_isClusterWriter{false};
-  bool m_isClusterWriterHasBeenSet = false;
 
   Aws::String m_dBClusterParameterGroupStatus;
-  bool m_dBClusterParameterGroupStatusHasBeenSet = false;
 
   int m_promotionTier{0};
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_isClusterWriterHasBeenSet = false;
+  bool m_dBClusterParameterGroupStatusHasBeenSet = false;
   bool m_promotionTierHasBeenSet = false;
 };
 

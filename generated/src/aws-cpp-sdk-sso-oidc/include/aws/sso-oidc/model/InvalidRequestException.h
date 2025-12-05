@@ -89,12 +89,12 @@ class InvalidRequestException {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   InvalidRequestExceptionReason m_reason{InvalidRequestExceptionReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_error_description;
+  bool m_errorHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_error_descriptionHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class FormatOptions {
   ///@}
  private:
   JsonOptions m_json;
-  bool m_jsonHasBeenSet = false;
 
   ExcelOptions m_excel;
-  bool m_excelHasBeenSet = false;
 
   CsvOptions m_csv;
+  bool m_jsonHasBeenSet = false;
+  bool m_excelHasBeenSet = false;
   bool m_csvHasBeenSet = false;
 };
 

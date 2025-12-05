@@ -75,9 +75,9 @@ class SearchableAgentCriteriaStep {
   ///@}
  private:
   Aws::Vector<Aws::String> m_agentIds;
-  bool m_agentIdsHasBeenSet = false;
 
   SearchContactsMatchType m_matchType{SearchContactsMatchType::NOT_SET};
+  bool m_agentIdsHasBeenSet = false;
   bool m_matchTypeHasBeenSet = false;
 };
 

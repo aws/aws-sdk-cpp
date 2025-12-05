@@ -68,9 +68,9 @@ class DescribeMigrationTaskRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::String m_progressUpdateStream;
-  bool m_progressUpdateStreamHasBeenSet = false;
 
   Aws::String m_migrationTaskName;
+  bool m_progressUpdateStreamHasBeenSet = false;
   bool m_migrationTaskNameHasBeenSet = false;
 };
 

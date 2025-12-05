@@ -88,12 +88,12 @@ class DescribeExportTasksResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ExportTask> m_exportTasks;
-  bool m_exportTasksHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_exportTasksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

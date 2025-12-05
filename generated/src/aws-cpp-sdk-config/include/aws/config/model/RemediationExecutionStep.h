@@ -122,18 +122,18 @@ class RemediationExecutionStep {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RemediationExecutionStepState m_state{RemediationExecutionStepState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_stopTimeHasBeenSet = false;
 };
 

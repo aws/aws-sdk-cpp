@@ -68,9 +68,9 @@ class Artifact {
   ///@}
  private:
   Aws::String m_artifactFileName;
-  bool m_artifactFileNameHasBeenSet = false;
 
   Aws::String m_artifactId;
+  bool m_artifactFileNameHasBeenSet = false;
   bool m_artifactIdHasBeenSet = false;
 };
 

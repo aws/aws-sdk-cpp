@@ -627,90 +627,90 @@ class SMBFileShareInfo {
   ///@}
  private:
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   Aws::String m_fileShareId;
-  bool m_fileShareIdHasBeenSet = false;
 
   Aws::String m_fileShareStatus;
-  bool m_fileShareStatusHasBeenSet = false;
 
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kMSKey;
-  bool m_kMSKeyHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_locationARN;
-  bool m_locationARNHasBeenSet = false;
 
   Aws::String m_defaultStorageClass;
-  bool m_defaultStorageClassHasBeenSet = false;
 
   ObjectACL m_objectACL{ObjectACL::NOT_SET};
-  bool m_objectACLHasBeenSet = false;
 
   bool m_readOnly{false};
-  bool m_readOnlyHasBeenSet = false;
 
   bool m_guessMIMETypeEnabled{false};
-  bool m_guessMIMETypeEnabledHasBeenSet = false;
 
   bool m_requesterPays{false};
-  bool m_requesterPaysHasBeenSet = false;
 
   bool m_sMBACLEnabled{false};
-  bool m_sMBACLEnabledHasBeenSet = false;
 
   bool m_accessBasedEnumeration{false};
-  bool m_accessBasedEnumerationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_adminUserList;
-  bool m_adminUserListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_validUserList;
-  bool m_validUserListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_invalidUserList;
-  bool m_invalidUserListHasBeenSet = false;
 
   Aws::String m_auditDestinationARN;
-  bool m_auditDestinationARNHasBeenSet = false;
 
   Aws::String m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   CaseSensitivity m_caseSensitivity{CaseSensitivity::NOT_SET};
-  bool m_caseSensitivityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_fileShareName;
-  bool m_fileShareNameHasBeenSet = false;
 
   CacheAttributes m_cacheAttributes;
-  bool m_cacheAttributesHasBeenSet = false;
 
   Aws::String m_notificationPolicy;
-  bool m_notificationPolicyHasBeenSet = false;
 
   Aws::String m_vPCEndpointDNSName;
-  bool m_vPCEndpointDNSNameHasBeenSet = false;
 
   Aws::String m_bucketRegion;
-  bool m_bucketRegionHasBeenSet = false;
 
   bool m_oplocksEnabled{false};
+  bool m_fileShareARNHasBeenSet = false;
+  bool m_fileShareIdHasBeenSet = false;
+  bool m_fileShareStatusHasBeenSet = false;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kMSKeyHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_locationARNHasBeenSet = false;
+  bool m_defaultStorageClassHasBeenSet = false;
+  bool m_objectACLHasBeenSet = false;
+  bool m_readOnlyHasBeenSet = false;
+  bool m_guessMIMETypeEnabledHasBeenSet = false;
+  bool m_requesterPaysHasBeenSet = false;
+  bool m_sMBACLEnabledHasBeenSet = false;
+  bool m_accessBasedEnumerationHasBeenSet = false;
+  bool m_adminUserListHasBeenSet = false;
+  bool m_validUserListHasBeenSet = false;
+  bool m_invalidUserListHasBeenSet = false;
+  bool m_auditDestinationARNHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
+  bool m_caseSensitivityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileShareNameHasBeenSet = false;
+  bool m_cacheAttributesHasBeenSet = false;
+  bool m_notificationPolicyHasBeenSet = false;
+  bool m_vPCEndpointDNSNameHasBeenSet = false;
+  bool m_bucketRegionHasBeenSet = false;
   bool m_oplocksEnabledHasBeenSet = false;
 };
 

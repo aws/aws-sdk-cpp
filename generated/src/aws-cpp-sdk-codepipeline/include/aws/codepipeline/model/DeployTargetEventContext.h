@@ -69,9 +69,9 @@ class DeployTargetEventContext {
   ///@}
  private:
   Aws::String m_ssmCommandId;
-  bool m_ssmCommandIdHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_ssmCommandIdHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

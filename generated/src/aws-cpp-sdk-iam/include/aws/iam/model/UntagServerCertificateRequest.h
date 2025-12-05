@@ -81,9 +81,9 @@ class UntagServerCertificateRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_serverCertificateName;
-  bool m_serverCertificateNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_serverCertificateNameHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

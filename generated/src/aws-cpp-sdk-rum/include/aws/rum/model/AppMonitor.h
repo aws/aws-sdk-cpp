@@ -296,42 +296,42 @@ class AppMonitor {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainList;
-  bool m_domainListHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_created;
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_lastModified;
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   StateEnum m_state{StateEnum::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   AppMonitorConfiguration m_appMonitorConfiguration;
-  bool m_appMonitorConfigurationHasBeenSet = false;
 
   DataStorage m_dataStorage;
-  bool m_dataStorageHasBeenSet = false;
 
   CustomEvents m_customEvents;
-  bool m_customEventsHasBeenSet = false;
 
   DeobfuscationConfiguration m_deobfuscationConfiguration;
-  bool m_deobfuscationConfigurationHasBeenSet = false;
 
   AppMonitorPlatform m_platform{AppMonitorPlatform::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_domainListHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_appMonitorConfigurationHasBeenSet = false;
+  bool m_dataStorageHasBeenSet = false;
+  bool m_customEventsHasBeenSet = false;
+  bool m_deobfuscationConfigurationHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

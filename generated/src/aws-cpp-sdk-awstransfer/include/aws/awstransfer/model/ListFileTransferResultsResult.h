@@ -96,12 +96,12 @@ class ListFileTransferResultsResult {
   ///@}
  private:
   Aws::Vector<ConnectorFileTransferResult> m_fileTransferResults;
-  bool m_fileTransferResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileTransferResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

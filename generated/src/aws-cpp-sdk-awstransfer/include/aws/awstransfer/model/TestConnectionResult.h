@@ -121,18 +121,18 @@ class TestConnectionResult {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   SftpConnectorConnectionDetails m_sftpConnectionDetails;
-  bool m_sftpConnectionDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_sftpConnectionDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class PurchaseReservedInstancesOfferingResponse {
   ///@}
  private:
   Aws::String m_reservedInstancesId;
-  bool m_reservedInstancesIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservedInstancesIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

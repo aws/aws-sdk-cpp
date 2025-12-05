@@ -57,9 +57,9 @@ class ValidateMatchmakingRuleSetResult {
   ///@}
  private:
   bool m_valid{false};
-  bool m_validHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_validHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

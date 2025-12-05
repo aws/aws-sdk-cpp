@@ -78,12 +78,12 @@ class RollbackStackResult {
   ///@}
  private:
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackIdHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

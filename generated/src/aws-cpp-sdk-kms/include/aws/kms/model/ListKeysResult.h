@@ -103,15 +103,15 @@ class ListKeysResult {
   ///@}
  private:
   Aws::Vector<KeyListEntry> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   bool m_truncated{false};
-  bool m_truncatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keysHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_truncatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

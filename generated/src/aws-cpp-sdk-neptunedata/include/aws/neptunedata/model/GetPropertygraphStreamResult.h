@@ -144,21 +144,21 @@ class GetPropertygraphStreamResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_lastEventId;
-  bool m_lastEventIdHasBeenSet = false;
 
   long long m_lastTrxTimestampInMillis{0};
-  bool m_lastTrxTimestampInMillisHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::Vector<PropertygraphRecord> m_records;
-  bool m_recordsHasBeenSet = false;
 
   int m_totalRecords{0};
-  bool m_totalRecordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lastEventIdHasBeenSet = false;
+  bool m_lastTrxTimestampInMillisHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_recordsHasBeenSet = false;
+  bool m_totalRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

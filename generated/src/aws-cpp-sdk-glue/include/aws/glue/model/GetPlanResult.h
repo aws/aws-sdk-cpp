@@ -76,12 +76,12 @@ class GetPlanResult {
   ///@}
  private:
   Aws::String m_pythonScript;
-  bool m_pythonScriptHasBeenSet = false;
 
   Aws::String m_scalaCode;
-  bool m_scalaCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pythonScriptHasBeenSet = false;
+  bool m_scalaCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

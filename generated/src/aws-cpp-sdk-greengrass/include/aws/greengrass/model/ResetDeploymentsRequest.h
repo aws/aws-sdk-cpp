@@ -86,12 +86,12 @@ class ResetDeploymentsRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   Aws::String m_groupId;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
 };
 

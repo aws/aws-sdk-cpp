@@ -86,12 +86,12 @@ class LookbackWindow {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   LookbackWindowSizeUnit m_sizeUnit{LookbackWindowSizeUnit::NOT_SET};
+  bool m_columnNameHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_sizeUnitHasBeenSet = false;
 };
 

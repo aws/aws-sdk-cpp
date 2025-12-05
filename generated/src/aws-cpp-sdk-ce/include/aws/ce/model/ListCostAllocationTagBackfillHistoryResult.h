@@ -87,12 +87,12 @@ class ListCostAllocationTagBackfillHistoryResult {
   ///@}
  private:
   Aws::Vector<CostAllocationTagBackfillRequest> m_backfillRequests;
-  bool m_backfillRequestsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backfillRequestsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

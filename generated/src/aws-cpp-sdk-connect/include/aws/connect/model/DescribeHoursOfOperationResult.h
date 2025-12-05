@@ -60,9 +60,9 @@ class DescribeHoursOfOperationResult {
   ///@}
  private:
   HoursOfOperation m_hoursOfOperation;
-  bool m_hoursOfOperationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hoursOfOperationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class DescribeSnapshotsRequest : public FSxRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_snapshotIds;
-  bool m_snapshotIdsHasBeenSet = false;
 
   Aws::Vector<SnapshotFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includeShared{false};
+  bool m_snapshotIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_includeSharedHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class CreateViewVersionRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_viewId;
-  bool m_viewIdHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   Aws::String m_viewContentSha256;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_viewIdHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
   bool m_viewContentSha256HasBeenSet = false;
 };
 

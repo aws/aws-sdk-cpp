@@ -78,9 +78,9 @@ class UntagResourceRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_resourceIdHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class DescribeDBParameterGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBParameterGroup> m_dBParameterGroups;
-  bool m_dBParameterGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBParameterGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

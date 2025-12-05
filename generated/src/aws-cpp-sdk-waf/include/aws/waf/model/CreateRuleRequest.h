@@ -116,15 +116,15 @@ class CreateRuleRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

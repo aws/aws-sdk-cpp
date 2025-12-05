@@ -79,9 +79,9 @@ class AssetBundleImportJobAnalysisOverridePermissions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_analysisIds;
-  bool m_analysisIdsHasBeenSet = false;
 
   AssetBundleResourcePermissions m_permissions;
+  bool m_analysisIdsHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

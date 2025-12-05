@@ -85,12 +85,12 @@ class ListReadinessChecksResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ReadinessCheckOutput> m_readinessChecks;
-  bool m_readinessChecksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_readinessChecksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

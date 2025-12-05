@@ -87,12 +87,12 @@ class DescribeJobExecutionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   long long m_executionNumber{0};
+  bool m_jobIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
   bool m_executionNumberHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetAppliedSchemaVersionResult {
   ///@}
  private:
   Aws::String m_appliedSchemaArn;
-  bool m_appliedSchemaArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appliedSchemaArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetDataLakeSettingsResult {
   ///@}
  private:
   DataLakeSettings m_dataLakeSettings;
-  bool m_dataLakeSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataLakeSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

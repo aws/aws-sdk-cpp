@@ -181,27 +181,27 @@ class SlotCaptureSetting {
   ///@}
  private:
   ResponseSpecification m_captureResponse;
-  bool m_captureResponseHasBeenSet = false;
 
   DialogState m_captureNextStep;
-  bool m_captureNextStepHasBeenSet = false;
 
   ConditionalSpecification m_captureConditional;
-  bool m_captureConditionalHasBeenSet = false;
 
   ResponseSpecification m_failureResponse;
-  bool m_failureResponseHasBeenSet = false;
 
   DialogState m_failureNextStep;
-  bool m_failureNextStepHasBeenSet = false;
 
   ConditionalSpecification m_failureConditional;
-  bool m_failureConditionalHasBeenSet = false;
 
   DialogCodeHookInvocationSetting m_codeHook;
-  bool m_codeHookHasBeenSet = false;
 
   ElicitationCodeHookInvocationSetting m_elicitationCodeHook;
+  bool m_captureResponseHasBeenSet = false;
+  bool m_captureNextStepHasBeenSet = false;
+  bool m_captureConditionalHasBeenSet = false;
+  bool m_failureResponseHasBeenSet = false;
+  bool m_failureNextStepHasBeenSet = false;
+  bool m_failureConditionalHasBeenSet = false;
+  bool m_codeHookHasBeenSet = false;
   bool m_elicitationCodeHookHasBeenSet = false;
 };
 

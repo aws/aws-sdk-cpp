@@ -92,12 +92,12 @@ class ListClientVpcConnectionsResult {
   ///@}
  private:
   Aws::Vector<ClientVpcConnection> m_clientVpcConnections;
-  bool m_clientVpcConnectionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientVpcConnectionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

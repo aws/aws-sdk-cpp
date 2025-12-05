@@ -112,15 +112,15 @@ class ExecutionEngineConfig {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ExecutionEngineType m_type{ExecutionEngineType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_masterInstanceSecurityGroupId;
-  bool m_masterInstanceSecurityGroupIdHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_masterInstanceSecurityGroupIdHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

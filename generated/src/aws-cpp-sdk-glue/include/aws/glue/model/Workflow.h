@@ -212,30 +212,30 @@ class Workflow {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_defaultRunProperties;
-  bool m_defaultRunPropertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   WorkflowRun m_lastRun;
-  bool m_lastRunHasBeenSet = false;
 
   WorkflowGraph m_graph;
-  bool m_graphHasBeenSet = false;
 
   int m_maxConcurrentRuns{0};
-  bool m_maxConcurrentRunsHasBeenSet = false;
 
   BlueprintDetails m_blueprintDetails;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultRunPropertiesHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_lastRunHasBeenSet = false;
+  bool m_graphHasBeenSet = false;
+  bool m_maxConcurrentRunsHasBeenSet = false;
   bool m_blueprintDetailsHasBeenSet = false;
 };
 

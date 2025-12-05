@@ -211,30 +211,30 @@ class ReplacePermissionAssociationsWork {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_fromPermissionArn;
-  bool m_fromPermissionArnHasBeenSet = false;
 
   Aws::String m_fromPermissionVersion;
-  bool m_fromPermissionVersionHasBeenSet = false;
 
   Aws::String m_toPermissionArn;
-  bool m_toPermissionArnHasBeenSet = false;
 
   Aws::String m_toPermissionVersion;
-  bool m_toPermissionVersionHasBeenSet = false;
 
   ReplacePermissionAssociationsWorkStatus m_status{ReplacePermissionAssociationsWorkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_idHasBeenSet = false;
+  bool m_fromPermissionArnHasBeenSet = false;
+  bool m_fromPermissionVersionHasBeenSet = false;
+  bool m_toPermissionArnHasBeenSet = false;
+  bool m_toPermissionVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class ListSecurityProfilesRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_dimensionName;
-  bool m_dimensionNameHasBeenSet = false;
 
   Aws::String m_metricName;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_dimensionNameHasBeenSet = false;
   bool m_metricNameHasBeenSet = false;
 };
 

@@ -94,15 +94,15 @@ class RedactChannelMessageResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

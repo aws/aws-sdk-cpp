@@ -142,18 +142,18 @@ class UpdateRotationRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_rotationId;
-  bool m_rotationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contactIds;
-  bool m_contactIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_timeZoneId;
-  bool m_timeZoneIdHasBeenSet = false;
 
   RecurrenceSettings m_recurrence;
+  bool m_rotationIdHasBeenSet = false;
+  bool m_contactIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_timeZoneIdHasBeenSet = false;
   bool m_recurrenceHasBeenSet = false;
 };
 

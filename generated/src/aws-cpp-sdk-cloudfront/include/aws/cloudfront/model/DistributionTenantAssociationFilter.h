@@ -71,9 +71,9 @@ class DistributionTenantAssociationFilter {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::String m_connectionGroupId;
+  bool m_distributionIdHasBeenSet = false;
   bool m_connectionGroupIdHasBeenSet = false;
 };
 

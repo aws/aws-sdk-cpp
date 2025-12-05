@@ -61,9 +61,9 @@ class DiscoverInstancesRevisionResult {
   ///@}
  private:
   long long m_instancesRevision{0};
-  bool m_instancesRevisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instancesRevisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

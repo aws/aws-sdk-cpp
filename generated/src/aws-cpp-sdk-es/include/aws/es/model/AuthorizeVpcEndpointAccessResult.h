@@ -70,9 +70,9 @@ class AuthorizeVpcEndpointAccessResult {
   ///@}
  private:
   AuthorizedPrincipal m_authorizedPrincipal;
-  bool m_authorizedPrincipalHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizedPrincipalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

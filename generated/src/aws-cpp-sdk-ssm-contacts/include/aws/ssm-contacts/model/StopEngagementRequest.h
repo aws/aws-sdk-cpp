@@ -67,9 +67,9 @@ class StopEngagementRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_engagementIdHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

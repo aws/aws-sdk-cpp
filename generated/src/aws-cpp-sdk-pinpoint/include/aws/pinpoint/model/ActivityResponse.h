@@ -297,45 +297,45 @@ class ActivityResponse {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   Aws::String m_end;
-  bool m_endHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_scheduledStart;
-  bool m_scheduledStartHasBeenSet = false;
 
   Aws::String m_start;
-  bool m_startHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   int m_successfulEndpointCount{0};
-  bool m_successfulEndpointCountHasBeenSet = false;
 
   int m_timezonesCompletedCount{0};
-  bool m_timezonesCompletedCountHasBeenSet = false;
 
   int m_timezonesTotalCount{0};
-  bool m_timezonesTotalCountHasBeenSet = false;
 
   int m_totalEndpointCount{0};
-  bool m_totalEndpointCountHasBeenSet = false;
 
   Aws::String m_treatmentId;
-  bool m_treatmentIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_executionMetrics;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_campaignIdHasBeenSet = false;
+  bool m_endHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_scheduledStartHasBeenSet = false;
+  bool m_startHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_successfulEndpointCountHasBeenSet = false;
+  bool m_timezonesCompletedCountHasBeenSet = false;
+  bool m_timezonesTotalCountHasBeenSet = false;
+  bool m_totalEndpointCountHasBeenSet = false;
+  bool m_treatmentIdHasBeenSet = false;
   bool m_executionMetricsHasBeenSet = false;
 };
 

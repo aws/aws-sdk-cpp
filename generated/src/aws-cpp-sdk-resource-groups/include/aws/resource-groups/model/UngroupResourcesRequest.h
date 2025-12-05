@@ -74,9 +74,9 @@ class UngroupResourcesRequest : public ResourceGroupsRequest {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
+  bool m_groupHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
 };
 

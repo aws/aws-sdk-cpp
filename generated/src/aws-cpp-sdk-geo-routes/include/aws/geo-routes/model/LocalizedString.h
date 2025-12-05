@@ -70,9 +70,9 @@ class LocalizedString {
   ///@}
  private:
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_languageHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

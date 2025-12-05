@@ -225,30 +225,30 @@ class VolumeStatusItem {
   ///@}
  private:
   Aws::Vector<VolumeStatusAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::Vector<VolumeStatusEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   VolumeStatusInfo m_volumeStatus;
-  bool m_volumeStatusHasBeenSet = false;
 
   Aws::Vector<VolumeStatusAttachmentStatus> m_attachmentStatuses;
-  bool m_attachmentStatusesHasBeenSet = false;
 
   InitializationStatusDetails m_initializationStatusDetails;
-  bool m_initializationStatusDetailsHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_actionsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_volumeStatusHasBeenSet = false;
+  bool m_attachmentStatusesHasBeenSet = false;
+  bool m_initializationStatusDetailsHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

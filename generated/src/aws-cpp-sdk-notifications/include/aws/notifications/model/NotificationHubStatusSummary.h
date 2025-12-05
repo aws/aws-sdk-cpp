@@ -79,9 +79,9 @@ class NotificationHubStatusSummary {
   ///@}
  private:
   NotificationHubStatus m_status{NotificationHubStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

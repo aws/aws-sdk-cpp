@@ -68,9 +68,9 @@ class CreateBackendAuthIdentityPoolConfig {
   ///@}
  private:
   Aws::String m_identityPoolName;
-  bool m_identityPoolNameHasBeenSet = false;
 
   bool m_unauthenticatedLogin{false};
+  bool m_identityPoolNameHasBeenSet = false;
   bool m_unauthenticatedLoginHasBeenSet = false;
 };
 

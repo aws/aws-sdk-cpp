@@ -66,9 +66,9 @@ class CreateWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_templateDefinition{};
-  bool m_templateDefinitionHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_templateDefinitionHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

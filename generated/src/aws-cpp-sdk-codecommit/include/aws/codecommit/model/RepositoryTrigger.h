@@ -145,18 +145,18 @@ class RepositoryTrigger {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_customData;
-  bool m_customDataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_branches;
-  bool m_branchesHasBeenSet = false;
 
   Aws::Vector<RepositoryTriggerEventEnum> m_events;
+  bool m_nameHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_customDataHasBeenSet = false;
+  bool m_branchesHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

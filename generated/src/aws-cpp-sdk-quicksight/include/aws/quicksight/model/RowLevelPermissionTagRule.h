@@ -107,15 +107,15 @@ class RowLevelPermissionTagRule {
   ///@}
  private:
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_tagMultiValueDelimiter;
-  bool m_tagMultiValueDelimiterHasBeenSet = false;
 
   Aws::String m_matchAllValue;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_columnNameHasBeenSet = false;
+  bool m_tagMultiValueDelimiterHasBeenSet = false;
   bool m_matchAllValueHasBeenSet = false;
 };
 

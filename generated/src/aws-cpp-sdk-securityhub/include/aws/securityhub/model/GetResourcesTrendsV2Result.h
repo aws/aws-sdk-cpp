@@ -103,15 +103,15 @@ class GetResourcesTrendsV2Result {
   ///@}
  private:
   GranularityField m_granularity{GranularityField::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   Aws::Vector<ResourcesTrendsMetricsResult> m_trendsMetrics;
-  bool m_trendsMetricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_granularityHasBeenSet = false;
+  bool m_trendsMetricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

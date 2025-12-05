@@ -79,9 +79,9 @@ class RuleGroupRuleOptionsPair {
   ///@}
  private:
   Aws::String m_ruleGroupArn;
-  bool m_ruleGroupArnHasBeenSet = false;
 
   Aws::Vector<RuleOption> m_ruleOptions;
+  bool m_ruleGroupArnHasBeenSet = false;
   bool m_ruleOptionsHasBeenSet = false;
 };
 

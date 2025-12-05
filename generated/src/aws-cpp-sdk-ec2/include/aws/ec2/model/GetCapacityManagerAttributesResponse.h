@@ -165,27 +165,27 @@ class GetCapacityManagerAttributesResponse {
   ///@}
  private:
   CapacityManagerStatus m_capacityManagerStatus{CapacityManagerStatus::NOT_SET};
-  bool m_capacityManagerStatusHasBeenSet = false;
 
   bool m_organizationsAccess{false};
-  bool m_organizationsAccessHasBeenSet = false;
 
   int m_dataExportCount{0};
-  bool m_dataExportCountHasBeenSet = false;
 
   IngestionStatus m_ingestionStatus{IngestionStatus::NOT_SET};
-  bool m_ingestionStatusHasBeenSet = false;
 
   Aws::String m_ingestionStatusMessage;
-  bool m_ingestionStatusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_earliestDatapointTimestamp{};
-  bool m_earliestDatapointTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestDatapointTimestamp{};
-  bool m_latestDatapointTimestampHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityManagerStatusHasBeenSet = false;
+  bool m_organizationsAccessHasBeenSet = false;
+  bool m_dataExportCountHasBeenSet = false;
+  bool m_ingestionStatusHasBeenSet = false;
+  bool m_ingestionStatusMessageHasBeenSet = false;
+  bool m_earliestDatapointTimestampHasBeenSet = false;
+  bool m_latestDatapointTimestampHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

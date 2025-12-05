@@ -65,9 +65,9 @@ class SimulationClock {
   ///@}
  private:
   ClockStatus m_status{ClockStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ClockTargetStatus m_targetStatus{ClockTargetStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
   bool m_targetStatusHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class TimestreamConfig {
   ///@}
  private:
   Aws::String m_timestreamTableArn;
-  bool m_timestreamTableArnHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_timestreamTableArnHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

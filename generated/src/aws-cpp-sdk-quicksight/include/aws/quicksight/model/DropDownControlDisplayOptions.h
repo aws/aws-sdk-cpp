@@ -89,12 +89,12 @@ class DropDownControlDisplayOptions {
   ///@}
  private:
   ListControlSelectAllOptions m_selectAllOptions;
-  bool m_selectAllOptionsHasBeenSet = false;
 
   LabelOptions m_titleOptions;
-  bool m_titleOptionsHasBeenSet = false;
 
   SheetControlInfoIconLabelOptions m_infoIconLabelOptions;
+  bool m_selectAllOptionsHasBeenSet = false;
+  bool m_titleOptionsHasBeenSet = false;
   bool m_infoIconLabelOptionsHasBeenSet = false;
 };
 

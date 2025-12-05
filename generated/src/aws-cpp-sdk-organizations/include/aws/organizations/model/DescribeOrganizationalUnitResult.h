@@ -60,9 +60,9 @@ class DescribeOrganizationalUnitResult {
   ///@}
  private:
   OrganizationalUnit m_organizationalUnit;
-  bool m_organizationalUnitHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationalUnitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

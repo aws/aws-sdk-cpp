@@ -59,9 +59,9 @@ class RemoveBackendConfigResult {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

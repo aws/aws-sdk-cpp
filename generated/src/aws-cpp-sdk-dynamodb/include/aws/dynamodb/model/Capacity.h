@@ -78,12 +78,12 @@ class Capacity {
   ///@}
  private:
   double m_readCapacityUnits{0.0};
-  bool m_readCapacityUnitsHasBeenSet = false;
 
   double m_writeCapacityUnits{0.0};
-  bool m_writeCapacityUnitsHasBeenSet = false;
 
   double m_capacityUnits{0.0};
+  bool m_readCapacityUnitsHasBeenSet = false;
+  bool m_writeCapacityUnitsHasBeenSet = false;
   bool m_capacityUnitsHasBeenSet = false;
 };
 

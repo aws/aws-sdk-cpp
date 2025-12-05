@@ -146,21 +146,21 @@ class ListTypeRegistrationsRequest : public CloudFormationRequest {
   ///@}
  private:
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   RegistrationStatus m_registrationStatusFilter{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_typeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeArnHasBeenSet = false;
+  bool m_registrationStatusFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ModifyActivityStreamRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   AuditPolicyState m_auditPolicyState{AuditPolicyState::NOT_SET};
+  bool m_resourceArnHasBeenSet = false;
   bool m_auditPolicyStateHasBeenSet = false;
 };
 

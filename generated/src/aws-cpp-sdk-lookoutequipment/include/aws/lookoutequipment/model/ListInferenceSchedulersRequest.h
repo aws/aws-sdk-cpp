@@ -120,18 +120,18 @@ class ListInferenceSchedulersRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerNameBeginsWith;
-  bool m_inferenceSchedulerNameBeginsWithHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   InferenceSchedulerStatus m_status{InferenceSchedulerStatus::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_inferenceSchedulerNameBeginsWithHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

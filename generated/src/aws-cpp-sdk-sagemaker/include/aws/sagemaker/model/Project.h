@@ -287,42 +287,42 @@ class Project {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   ServiceCatalogProvisioningDetails m_serviceCatalogProvisioningDetails;
-  bool m_serviceCatalogProvisioningDetailsHasBeenSet = false;
 
   ServiceCatalogProvisionedProductDetails m_serviceCatalogProvisionedProductDetails;
-  bool m_serviceCatalogProvisionedProductDetailsHasBeenSet = false;
 
   ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
-  bool m_projectStatusHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<TemplateProviderDetail> m_templateProviderDetails;
-  bool m_templateProviderDetailsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
+  bool m_projectArnHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_serviceCatalogProvisioningDetailsHasBeenSet = false;
+  bool m_serviceCatalogProvisionedProductDetailsHasBeenSet = false;
+  bool m_projectStatusHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_templateProviderDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
 };
 

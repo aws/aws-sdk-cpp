@@ -72,9 +72,9 @@ class UpdateResourceGatewayRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_resourceGatewayIdentifier;
-  bool m_resourceGatewayIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_resourceGatewayIdentifierHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

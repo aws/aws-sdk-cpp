@@ -83,12 +83,12 @@ class GetObjectTypeAttributeStatisticsRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_attributeName;
+  bool m_domainNameHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
   bool m_attributeNameHasBeenSet = false;
 };
 

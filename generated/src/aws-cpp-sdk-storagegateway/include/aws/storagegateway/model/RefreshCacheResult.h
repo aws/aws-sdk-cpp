@@ -77,12 +77,12 @@ class RefreshCacheResult {
   ///@}
  private:
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   Aws::String m_notificationId;
-  bool m_notificationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileShareARNHasBeenSet = false;
+  bool m_notificationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

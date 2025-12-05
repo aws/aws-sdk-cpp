@@ -66,9 +66,9 @@ class FailureDetails {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_statusCode{0};
+  bool m_messageHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
 };
 

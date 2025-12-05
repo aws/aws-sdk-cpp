@@ -68,9 +68,9 @@ class TestTelemetryPipelineResult {
   ///@}
  private:
   Aws::Vector<PipelineOutput> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

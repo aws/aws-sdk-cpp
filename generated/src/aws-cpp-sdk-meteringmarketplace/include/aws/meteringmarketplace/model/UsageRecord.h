@@ -160,21 +160,21 @@ class UsageRecord {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_customerIdentifier;
-  bool m_customerIdentifierHasBeenSet = false;
 
   Aws::String m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<UsageAllocation> m_usageAllocations;
-  bool m_usageAllocationsHasBeenSet = false;
 
   Aws::String m_customerAWSAccountId;
+  bool m_timestampHasBeenSet = false;
+  bool m_customerIdentifierHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
+  bool m_usageAllocationsHasBeenSet = false;
   bool m_customerAWSAccountIdHasBeenSet = false;
 };
 

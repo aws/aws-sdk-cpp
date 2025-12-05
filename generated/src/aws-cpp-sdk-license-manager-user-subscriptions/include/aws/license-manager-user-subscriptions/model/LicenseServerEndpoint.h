@@ -210,30 +210,30 @@ class LicenseServerEndpoint {
   ///@}
  private:
   Aws::String m_identityProviderArn;
-  bool m_identityProviderArnHasBeenSet = false;
 
   ServerType m_serverType{ServerType::NOT_SET};
-  bool m_serverTypeHasBeenSet = false;
 
   ServerEndpoint m_serverEndpoint;
-  bool m_serverEndpointHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_licenseServerEndpointId;
-  bool m_licenseServerEndpointIdHasBeenSet = false;
 
   Aws::String m_licenseServerEndpointArn;
-  bool m_licenseServerEndpointArnHasBeenSet = false;
 
   LicenseServerEndpointProvisioningStatus m_licenseServerEndpointProvisioningStatus{LicenseServerEndpointProvisioningStatus::NOT_SET};
-  bool m_licenseServerEndpointProvisioningStatusHasBeenSet = false;
 
   Aws::Vector<LicenseServer> m_licenseServers;
-  bool m_licenseServersHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_identityProviderArnHasBeenSet = false;
+  bool m_serverTypeHasBeenSet = false;
+  bool m_serverEndpointHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_licenseServerEndpointIdHasBeenSet = false;
+  bool m_licenseServerEndpointArnHasBeenSet = false;
+  bool m_licenseServerEndpointProvisioningStatusHasBeenSet = false;
+  bool m_licenseServersHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

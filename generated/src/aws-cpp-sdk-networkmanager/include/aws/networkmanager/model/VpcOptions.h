@@ -98,15 +98,15 @@ class VpcOptions {
   ///@}
  private:
   bool m_ipv6Support{false};
-  bool m_ipv6SupportHasBeenSet = false;
 
   bool m_applianceModeSupport{false};
-  bool m_applianceModeSupportHasBeenSet = false;
 
   bool m_dnsSupport{false};
-  bool m_dnsSupportHasBeenSet = false;
 
   bool m_securityGroupReferencingSupport{false};
+  bool m_ipv6SupportHasBeenSet = false;
+  bool m_applianceModeSupportHasBeenSet = false;
+  bool m_dnsSupportHasBeenSet = false;
   bool m_securityGroupReferencingSupportHasBeenSet = false;
 };
 

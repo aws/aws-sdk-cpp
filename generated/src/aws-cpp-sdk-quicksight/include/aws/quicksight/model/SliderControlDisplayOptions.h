@@ -69,9 +69,9 @@ class SliderControlDisplayOptions {
   ///@}
  private:
   LabelOptions m_titleOptions;
-  bool m_titleOptionsHasBeenSet = false;
 
   SheetControlInfoIconLabelOptions m_infoIconLabelOptions;
+  bool m_titleOptionsHasBeenSet = false;
   bool m_infoIconLabelOptionsHasBeenSet = false;
 };
 

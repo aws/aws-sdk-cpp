@@ -106,15 +106,15 @@ class ListCodeInterpreterSessionsRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_codeInterpreterIdentifier;
-  bool m_codeInterpreterIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   CodeInterpreterSessionStatus m_status{CodeInterpreterSessionStatus::NOT_SET};
+  bool m_codeInterpreterIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

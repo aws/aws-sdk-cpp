@@ -84,12 +84,12 @@ class ListReferenceImportJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ImportReferenceJobItem> m_importJobs;
-  bool m_importJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_importJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

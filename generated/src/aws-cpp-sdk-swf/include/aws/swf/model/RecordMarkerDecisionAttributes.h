@@ -82,9 +82,9 @@ class RecordMarkerDecisionAttributes {
   ///@}
  private:
   Aws::String m_markerName;
-  bool m_markerNameHasBeenSet = false;
 
   Aws::String m_details;
+  bool m_markerNameHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

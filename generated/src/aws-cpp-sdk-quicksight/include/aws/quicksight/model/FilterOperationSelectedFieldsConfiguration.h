@@ -106,12 +106,12 @@ class FilterOperationSelectedFieldsConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_selectedFields;
-  bool m_selectedFieldsHasBeenSet = false;
 
   SelectedFieldOptions m_selectedFieldOptions{SelectedFieldOptions::NOT_SET};
-  bool m_selectedFieldOptionsHasBeenSet = false;
 
   Aws::Vector<ColumnIdentifier> m_selectedColumns;
+  bool m_selectedFieldsHasBeenSet = false;
+  bool m_selectedFieldOptionsHasBeenSet = false;
   bool m_selectedColumnsHasBeenSet = false;
 };
 

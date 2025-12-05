@@ -319,39 +319,39 @@ class UpdateTableRequest : public KeyspacesRequest {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<ColumnDefinition> m_addColumns;
-  bool m_addColumnsHasBeenSet = false;
 
   CapacitySpecification m_capacitySpecification;
-  bool m_capacitySpecificationHasBeenSet = false;
 
   EncryptionSpecification m_encryptionSpecification;
-  bool m_encryptionSpecificationHasBeenSet = false;
 
   PointInTimeRecovery m_pointInTimeRecovery;
-  bool m_pointInTimeRecoveryHasBeenSet = false;
 
   TimeToLive m_ttl;
-  bool m_ttlHasBeenSet = false;
 
   int m_defaultTimeToLive{0};
-  bool m_defaultTimeToLiveHasBeenSet = false;
 
   ClientSideTimestamps m_clientSideTimestamps;
-  bool m_clientSideTimestampsHasBeenSet = false;
 
   AutoScalingSpecification m_autoScalingSpecification;
-  bool m_autoScalingSpecificationHasBeenSet = false;
 
   Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
-  bool m_replicaSpecificationsHasBeenSet = false;
 
   CdcSpecification m_cdcSpecification;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_addColumnsHasBeenSet = false;
+  bool m_capacitySpecificationHasBeenSet = false;
+  bool m_encryptionSpecificationHasBeenSet = false;
+  bool m_pointInTimeRecoveryHasBeenSet = false;
+  bool m_ttlHasBeenSet = false;
+  bool m_defaultTimeToLiveHasBeenSet = false;
+  bool m_clientSideTimestampsHasBeenSet = false;
+  bool m_autoScalingSpecificationHasBeenSet = false;
+  bool m_replicaSpecificationsHasBeenSet = false;
   bool m_cdcSpecificationHasBeenSet = false;
 };
 

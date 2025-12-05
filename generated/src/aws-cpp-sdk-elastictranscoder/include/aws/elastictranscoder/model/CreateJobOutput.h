@@ -311,33 +311,33 @@ class CreateJobOutput {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_thumbnailPattern;
-  bool m_thumbnailPatternHasBeenSet = false;
 
   Encryption m_thumbnailEncryption;
-  bool m_thumbnailEncryptionHasBeenSet = false;
 
   Aws::String m_rotate;
-  bool m_rotateHasBeenSet = false;
 
   Aws::String m_presetId;
-  bool m_presetIdHasBeenSet = false;
 
   Aws::String m_segmentDuration;
-  bool m_segmentDurationHasBeenSet = false;
 
   Aws::Vector<JobWatermark> m_watermarks;
-  bool m_watermarksHasBeenSet = false;
 
   JobAlbumArt m_albumArt;
-  bool m_albumArtHasBeenSet = false;
 
   Captions m_captions;
-  bool m_captionsHasBeenSet = false;
 
   Encryption m_encryption;
+  bool m_keyHasBeenSet = false;
+  bool m_thumbnailPatternHasBeenSet = false;
+  bool m_thumbnailEncryptionHasBeenSet = false;
+  bool m_rotateHasBeenSet = false;
+  bool m_presetIdHasBeenSet = false;
+  bool m_segmentDurationHasBeenSet = false;
+  bool m_watermarksHasBeenSet = false;
+  bool m_albumArtHasBeenSet = false;
+  bool m_captionsHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

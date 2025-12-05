@@ -70,9 +70,9 @@ class Credential {
   ///@}
  private:
   Oauth2Credential m_oauth2Credential;
-  bool m_oauth2CredentialHasBeenSet = false;
 
   ApiKeyCredential m_apiKeyCredential;
+  bool m_oauth2CredentialHasBeenSet = false;
   bool m_apiKeyCredentialHasBeenSet = false;
 };
 

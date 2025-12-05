@@ -85,12 +85,12 @@ class LambdaManagedInstancesCapacityProviderConfig {
   ///@}
  private:
   Aws::String m_capacityProviderArn;
-  bool m_capacityProviderArnHasBeenSet = false;
 
   int m_perExecutionEnvironmentMaxConcurrency{0};
-  bool m_perExecutionEnvironmentMaxConcurrencyHasBeenSet = false;
 
   double m_executionEnvironmentMemoryGiBPerVCpu{0.0};
+  bool m_capacityProviderArnHasBeenSet = false;
+  bool m_perExecutionEnvironmentMaxConcurrencyHasBeenSet = false;
   bool m_executionEnvironmentMemoryGiBPerVCpuHasBeenSet = false;
 };
 

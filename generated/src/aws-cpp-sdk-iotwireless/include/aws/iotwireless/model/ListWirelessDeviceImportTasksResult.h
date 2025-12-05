@@ -87,12 +87,12 @@ class ListWirelessDeviceImportTasksResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WirelessDeviceImportTask> m_wirelessDeviceImportTaskList;
-  bool m_wirelessDeviceImportTaskListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_wirelessDeviceImportTaskListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

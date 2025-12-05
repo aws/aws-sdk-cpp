@@ -71,9 +71,9 @@ class AssetPropertyTimestamp {
   ///@}
  private:
   Aws::String m_timeInSeconds;
-  bool m_timeInSecondsHasBeenSet = false;
 
   Aws::String m_offsetInNanos;
+  bool m_timeInSecondsHasBeenSet = false;
   bool m_offsetInNanosHasBeenSet = false;
 };
 

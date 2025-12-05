@@ -218,33 +218,33 @@ class AwsOpenSearchServiceDomainClusterConfigDetails {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   bool m_warmEnabled{false};
-  bool m_warmEnabledHasBeenSet = false;
 
   int m_warmCount{0};
-  bool m_warmCountHasBeenSet = false;
 
   bool m_dedicatedMasterEnabled{false};
-  bool m_dedicatedMasterEnabledHasBeenSet = false;
 
   AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
-  bool m_zoneAwarenessConfigHasBeenSet = false;
 
   int m_dedicatedMasterCount{0};
-  bool m_dedicatedMasterCountHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_warmType;
-  bool m_warmTypeHasBeenSet = false;
 
   bool m_zoneAwarenessEnabled{false};
-  bool m_zoneAwarenessEnabledHasBeenSet = false;
 
   Aws::String m_dedicatedMasterType;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_warmEnabledHasBeenSet = false;
+  bool m_warmCountHasBeenSet = false;
+  bool m_dedicatedMasterEnabledHasBeenSet = false;
+  bool m_zoneAwarenessConfigHasBeenSet = false;
+  bool m_dedicatedMasterCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_warmTypeHasBeenSet = false;
+  bool m_zoneAwarenessEnabledHasBeenSet = false;
   bool m_dedicatedMasterTypeHasBeenSet = false;
 };
 

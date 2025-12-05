@@ -91,12 +91,12 @@ class RevisionTarget {
   ///@}
  private:
   Aws::String m_databaseRevision;
-  bool m_databaseRevisionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_databaseRevisionReleaseDate{};
+  bool m_databaseRevisionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_databaseRevisionReleaseDateHasBeenSet = false;
 };
 

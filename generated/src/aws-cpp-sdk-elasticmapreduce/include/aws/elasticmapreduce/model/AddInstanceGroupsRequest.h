@@ -78,9 +78,9 @@ class AddInstanceGroupsRequest : public EMRRequest {
   ///@}
  private:
   Aws::Vector<InstanceGroupConfig> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   Aws::String m_jobFlowId;
+  bool m_instanceGroupsHasBeenSet = false;
   bool m_jobFlowIdHasBeenSet = false;
 };
 

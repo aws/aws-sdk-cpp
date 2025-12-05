@@ -146,21 +146,21 @@ class DescribeDocumentVersionsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_include;
-  bool m_includeHasBeenSet = false;
 
   Aws::String m_fields;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_includeHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

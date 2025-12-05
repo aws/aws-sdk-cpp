@@ -196,30 +196,30 @@ class CreateUserRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   UserRole m_role{UserRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   bool m_hiddenFromGlobalAddressList{false};
-  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 
   Aws::String m_identityProviderUserId;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
   bool m_identityProviderUserIdHasBeenSet = false;
 };
 

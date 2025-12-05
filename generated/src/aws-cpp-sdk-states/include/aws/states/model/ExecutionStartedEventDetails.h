@@ -128,18 +128,18 @@ class ExecutionStartedEventDetails {
   ///@}
  private:
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   HistoryEventExecutionDataDetails m_inputDetails;
-  bool m_inputDetailsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_stateMachineAliasArn;
-  bool m_stateMachineAliasArnHasBeenSet = false;
 
   Aws::String m_stateMachineVersionArn;
+  bool m_inputHasBeenSet = false;
+  bool m_inputDetailsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stateMachineAliasArnHasBeenSet = false;
   bool m_stateMachineVersionArnHasBeenSet = false;
 };
 

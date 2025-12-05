@@ -65,9 +65,9 @@ class VideoSelectorSettings {
   ///@}
  private:
   VideoSelectorPid m_videoSelectorPid;
-  bool m_videoSelectorPidHasBeenSet = false;
 
   VideoSelectorProgramId m_videoSelectorProgramId;
+  bool m_videoSelectorPidHasBeenSet = false;
   bool m_videoSelectorProgramIdHasBeenSet = false;
 };
 

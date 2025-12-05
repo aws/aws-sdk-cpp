@@ -140,21 +140,21 @@ class MlResourceDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_cloudwatchLogUrl;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_cloudwatchLogUrlHasBeenSet = false;
 };
 

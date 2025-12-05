@@ -86,12 +86,12 @@ class DescribeOrganizationConfigRulesResult {
   ///@}
  private:
   Aws::Vector<OrganizationConfigRule> m_organizationConfigRules;
-  bool m_organizationConfigRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationConfigRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

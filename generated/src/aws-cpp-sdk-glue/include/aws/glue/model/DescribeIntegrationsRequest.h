@@ -112,15 +112,15 @@ class DescribeIntegrationsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_integrationIdentifier;
-  bool m_integrationIdentifierHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::Vector<IntegrationFilter> m_filters;
+  bool m_integrationIdentifierHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class LastActiveDefinition {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::String m_parameterSpec;
-  bool m_parameterSpecHasBeenSet = false;
 
   Aws::String m_blueprintLocation;
-  bool m_blueprintLocationHasBeenSet = false;
 
   Aws::String m_blueprintServiceLocation;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_parameterSpecHasBeenSet = false;
+  bool m_blueprintLocationHasBeenSet = false;
   bool m_blueprintServiceLocationHasBeenSet = false;
 };
 

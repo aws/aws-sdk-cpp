@@ -59,9 +59,9 @@ class CreateRuleSetResult {
   ///@}
  private:
   Aws::String m_ruleSetId;
-  bool m_ruleSetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleSetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -234,33 +234,33 @@ class ModifyServerlessCacheRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_serverlessCacheName;
-  bool m_serverlessCacheNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CacheUsageLimits m_cacheUsageLimits;
-  bool m_cacheUsageLimitsHasBeenSet = false;
 
   bool m_removeUserGroup{false};
-  bool m_removeUserGroupHasBeenSet = false;
 
   Aws::String m_userGroupId;
-  bool m_userGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_dailySnapshotTime;
-  bool m_dailySnapshotTimeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
+  bool m_serverlessCacheNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_cacheUsageLimitsHasBeenSet = false;
+  bool m_removeUserGroupHasBeenSet = false;
+  bool m_userGroupIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_dailySnapshotTimeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
   bool m_majorEngineVersionHasBeenSet = false;
 };
 

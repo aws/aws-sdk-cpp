@@ -122,18 +122,18 @@ class AttachmentOutput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AttachmentStatus m_status{AttachmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_conversationId;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
   bool m_conversationIdHasBeenSet = false;
 };
 

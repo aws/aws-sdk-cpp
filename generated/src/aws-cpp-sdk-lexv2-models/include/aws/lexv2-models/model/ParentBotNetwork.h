@@ -68,9 +68,9 @@ class ParentBotNetwork {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
+  bool m_botIdHasBeenSet = false;
   bool m_botVersionHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class ListWavesRequestFilters {
   ///@}
  private:
   bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_waveIDs;
+  bool m_isArchivedHasBeenSet = false;
   bool m_waveIDsHasBeenSet = false;
 };
 

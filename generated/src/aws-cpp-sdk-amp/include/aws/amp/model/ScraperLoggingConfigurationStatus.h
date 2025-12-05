@@ -67,9 +67,9 @@ class ScraperLoggingConfigurationStatus {
   ///@}
  private:
   ScraperLoggingConfigurationStatusCode m_statusCode{ScraperLoggingConfigurationStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

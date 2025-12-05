@@ -323,54 +323,54 @@ class GetWorkflowStepExecutionResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_stepExecutionId;
-  bool m_stepExecutionIdHasBeenSet = false;
 
   Aws::String m_workflowBuildVersionArn;
-  bool m_workflowBuildVersionArnHasBeenSet = false;
 
   Aws::String m_workflowExecutionId;
-  bool m_workflowExecutionIdHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   WorkflowStepExecutionStatus m_status{WorkflowStepExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   WorkflowStepExecutionRollbackStatus m_rollbackStatus{WorkflowStepExecutionRollbackStatus::NOT_SET};
-  bool m_rollbackStatusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::String m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_onFailure;
-  bool m_onFailureHasBeenSet = false;
 
   int m_timeoutSeconds{0};
+  bool m_requestIdHasBeenSet = false;
+  bool m_stepExecutionIdHasBeenSet = false;
+  bool m_workflowBuildVersionArnHasBeenSet = false;
+  bool m_workflowExecutionIdHasBeenSet = false;
+  bool m_imageBuildVersionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_rollbackStatusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_onFailureHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
 };
 

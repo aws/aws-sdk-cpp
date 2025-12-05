@@ -187,24 +187,24 @@ class LaunchTemplateOverrides {
   ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_spotPrice;
-  bool m_spotPriceHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   double m_weightedCapacity{0.0};
-  bool m_weightedCapacityHasBeenSet = false;
 
   double m_priority{0.0};
-  bool m_priorityHasBeenSet = false;
 
   InstanceRequirements m_instanceRequirements;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_spotPriceHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_weightedCapacityHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
 };
 

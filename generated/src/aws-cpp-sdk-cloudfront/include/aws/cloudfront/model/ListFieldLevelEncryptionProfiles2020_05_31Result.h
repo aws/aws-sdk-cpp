@@ -63,9 +63,9 @@ class ListFieldLevelEncryptionProfiles2020_05_31Result {
   ///@}
  private:
   FieldLevelEncryptionProfileList m_fieldLevelEncryptionProfileList;
-  bool m_fieldLevelEncryptionProfileListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fieldLevelEncryptionProfileListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

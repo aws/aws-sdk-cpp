@@ -72,9 +72,9 @@ class UpdateScalingParametersRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ScalingParameters m_scalingParameters;
+  bool m_domainNameHasBeenSet = false;
   bool m_scalingParametersHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeScalingProcessTypesResult {
   ///@}
  private:
   Aws::Vector<ProcessType> m_processes;
-  bool m_processesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_processesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

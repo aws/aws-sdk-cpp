@@ -106,15 +106,15 @@ class EngineVersionInfo {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_enginePatchVersion;
-  bool m_enginePatchVersionHasBeenSet = false;
 
   Aws::String m_parameterGroupFamily;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_enginePatchVersionHasBeenSet = false;
   bool m_parameterGroupFamilyHasBeenSet = false;
 };
 

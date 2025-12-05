@@ -76,9 +76,9 @@ class TerminateSolNetworkInstanceRequest : public TnbRequest {
   ///@}
  private:
   Aws::String m_nsInstanceId;
-  bool m_nsInstanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nsInstanceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

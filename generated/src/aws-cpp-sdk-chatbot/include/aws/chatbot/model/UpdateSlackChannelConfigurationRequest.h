@@ -195,27 +195,27 @@ class UpdateSlackChannelConfigurationRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_chatConfigurationArn;
-  bool m_chatConfigurationArnHasBeenSet = false;
 
   Aws::String m_slackChannelId;
-  bool m_slackChannelIdHasBeenSet = false;
 
   Aws::String m_slackChannelName;
-  bool m_slackChannelNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snsTopicArns;
-  bool m_snsTopicArnsHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_loggingLevel;
-  bool m_loggingLevelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_guardrailPolicyArns;
-  bool m_guardrailPolicyArnsHasBeenSet = false;
 
   bool m_userAuthorizationRequired{false};
+  bool m_chatConfigurationArnHasBeenSet = false;
+  bool m_slackChannelIdHasBeenSet = false;
+  bool m_slackChannelNameHasBeenSet = false;
+  bool m_snsTopicArnsHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_loggingLevelHasBeenSet = false;
+  bool m_guardrailPolicyArnsHasBeenSet = false;
   bool m_userAuthorizationRequiredHasBeenSet = false;
 };
 

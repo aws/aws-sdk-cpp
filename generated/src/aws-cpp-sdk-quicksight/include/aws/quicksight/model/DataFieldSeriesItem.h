@@ -106,15 +106,15 @@ class DataFieldSeriesItem {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_fieldValue;
-  bool m_fieldValueHasBeenSet = false;
 
   AxisBinding m_axisBinding{AxisBinding::NOT_SET};
-  bool m_axisBindingHasBeenSet = false;
 
   LineChartSeriesSettings m_settings;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_fieldValueHasBeenSet = false;
+  bool m_axisBindingHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

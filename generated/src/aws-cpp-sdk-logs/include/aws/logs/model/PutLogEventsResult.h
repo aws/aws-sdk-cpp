@@ -103,15 +103,15 @@ class PutLogEventsResult {
   ///@}
  private:
   Aws::String m_nextSequenceToken;
-  bool m_nextSequenceTokenHasBeenSet = false;
 
   RejectedLogEventsInfo m_rejectedLogEventsInfo;
-  bool m_rejectedLogEventsInfoHasBeenSet = false;
 
   RejectedEntityInfo m_rejectedEntityInfo;
-  bool m_rejectedEntityInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextSequenceTokenHasBeenSet = false;
+  bool m_rejectedLogEventsInfoHasBeenSet = false;
+  bool m_rejectedEntityInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

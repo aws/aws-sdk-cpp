@@ -266,33 +266,33 @@ class CreateAddonRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_addonVersion;
-  bool m_addonVersionHasBeenSet = false;
 
   Aws::String m_serviceAccountRoleArn;
-  bool m_serviceAccountRoleArnHasBeenSet = false;
 
   ResolveConflicts m_resolveConflicts{ResolveConflicts::NOT_SET};
-  bool m_resolveConflictsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_configurationValues;
-  bool m_configurationValuesHasBeenSet = false;
 
   Aws::Vector<AddonPodIdentityAssociations> m_podIdentityAssociations;
-  bool m_podIdentityAssociationsHasBeenSet = false;
 
   AddonNamespaceConfigRequest m_namespaceConfig;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_addonNameHasBeenSet = false;
+  bool m_addonVersionHasBeenSet = false;
+  bool m_serviceAccountRoleArnHasBeenSet = false;
+  bool m_resolveConflictsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_configurationValuesHasBeenSet = false;
+  bool m_podIdentityAssociationsHasBeenSet = false;
   bool m_namespaceConfigHasBeenSet = false;
 };
 

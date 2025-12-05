@@ -76,9 +76,9 @@ class ImageConfig {
   ///@}
  private:
   RepositoryAccessMode m_repositoryAccessMode{RepositoryAccessMode::NOT_SET};
-  bool m_repositoryAccessModeHasBeenSet = false;
 
   RepositoryAuthConfig m_repositoryAuthConfig;
+  bool m_repositoryAccessModeHasBeenSet = false;
   bool m_repositoryAuthConfigHasBeenSet = false;
 };
 

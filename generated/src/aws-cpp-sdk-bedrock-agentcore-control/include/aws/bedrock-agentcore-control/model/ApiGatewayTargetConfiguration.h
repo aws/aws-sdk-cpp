@@ -89,12 +89,12 @@ class ApiGatewayTargetConfiguration {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   ApiGatewayToolConfiguration m_apiGatewayToolConfiguration;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
   bool m_apiGatewayToolConfigurationHasBeenSet = false;
 };
 

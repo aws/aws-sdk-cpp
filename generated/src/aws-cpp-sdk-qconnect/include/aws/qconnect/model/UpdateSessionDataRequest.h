@@ -111,15 +111,15 @@ class UpdateSessionDataRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   SessionDataNamespace m_namespace{SessionDataNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<RuntimeSessionData> m_data;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

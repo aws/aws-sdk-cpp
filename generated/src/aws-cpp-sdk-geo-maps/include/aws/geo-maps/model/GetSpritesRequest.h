@@ -106,15 +106,15 @@ class GetSpritesRequest : public GeoMapsRequest {
   ///@}
  private:
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   MapStyle m_style{MapStyle::NOT_SET};
-  bool m_styleHasBeenSet = false;
 
   ColorScheme m_colorScheme{ColorScheme::NOT_SET};
-  bool m_colorSchemeHasBeenSet = false;
 
   Variant m_variant{Variant::NOT_SET};
+  bool m_fileNameHasBeenSet = false;
+  bool m_styleHasBeenSet = false;
+  bool m_colorSchemeHasBeenSet = false;
   bool m_variantHasBeenSet = false;
 };
 

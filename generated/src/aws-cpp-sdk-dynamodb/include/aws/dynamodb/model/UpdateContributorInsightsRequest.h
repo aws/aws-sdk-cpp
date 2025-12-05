@@ -108,15 +108,15 @@ class UpdateContributorInsightsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   ContributorInsightsAction m_contributorInsightsAction{ContributorInsightsAction::NOT_SET};
-  bool m_contributorInsightsActionHasBeenSet = false;
 
   ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
+  bool m_tableNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_contributorInsightsActionHasBeenSet = false;
   bool m_contributorInsightsModeHasBeenSet = false;
 };
 

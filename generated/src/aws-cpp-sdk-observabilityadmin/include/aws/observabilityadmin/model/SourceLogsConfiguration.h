@@ -72,9 +72,9 @@ class SourceLogsConfiguration {
   ///@}
  private:
   Aws::String m_logGroupSelectionCriteria;
-  bool m_logGroupSelectionCriteriaHasBeenSet = false;
 
   EncryptedLogGroupStrategy m_encryptedLogGroupStrategy{EncryptedLogGroupStrategy::NOT_SET};
+  bool m_logGroupSelectionCriteriaHasBeenSet = false;
   bool m_encryptedLogGroupStrategyHasBeenSet = false;
 };
 

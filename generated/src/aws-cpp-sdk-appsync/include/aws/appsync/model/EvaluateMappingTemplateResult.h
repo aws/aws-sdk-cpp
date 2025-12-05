@@ -140,21 +140,21 @@ class EvaluateMappingTemplateResult {
   ///@}
  private:
   Aws::String m_evaluationResult;
-  bool m_evaluationResultHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logs;
-  bool m_logsHasBeenSet = false;
 
   Aws::String m_stash;
-  bool m_stashHasBeenSet = false;
 
   Aws::String m_outErrors;
-  bool m_outErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationResultHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_logsHasBeenSet = false;
+  bool m_stashHasBeenSet = false;
+  bool m_outErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

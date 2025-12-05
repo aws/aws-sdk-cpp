@@ -130,18 +130,18 @@ class UpdateLogPatternRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_patternSetName;
-  bool m_patternSetNameHasBeenSet = false;
 
   Aws::String m_patternName;
-  bool m_patternNameHasBeenSet = false;
 
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   int m_rank{0};
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_patternSetNameHasBeenSet = false;
+  bool m_patternNameHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
   bool m_rankHasBeenSet = false;
 };
 

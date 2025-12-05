@@ -60,9 +60,9 @@ class DescribeSecurityProfileResult {
   ///@}
  private:
   SecurityProfile m_securityProfile;
-  bool m_securityProfileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityProfileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

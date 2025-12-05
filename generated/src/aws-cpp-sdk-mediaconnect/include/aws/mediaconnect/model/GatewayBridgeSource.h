@@ -70,9 +70,9 @@ class GatewayBridgeSource {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   VpcInterfaceAttachment m_vpcInterfaceAttachment;
+  bool m_bridgeArnHasBeenSet = false;
   bool m_vpcInterfaceAttachmentHasBeenSet = false;
 };
 

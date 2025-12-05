@@ -77,9 +77,9 @@ class ExecuteCommandSessionConfiguration {
   ///@}
  private:
   Aws::String m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_arguments;
+  bool m_commandHasBeenSet = false;
   bool m_argumentsHasBeenSet = false;
 };
 

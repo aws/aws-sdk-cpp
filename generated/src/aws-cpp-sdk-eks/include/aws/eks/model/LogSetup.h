@@ -76,9 +76,9 @@ class LogSetup {
   ///@}
  private:
   Aws::Vector<LogType> m_types;
-  bool m_typesHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_typesHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

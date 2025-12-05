@@ -122,18 +122,18 @@ class TableFieldOption {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_width;
-  bool m_widthHasBeenSet = false;
 
   Aws::String m_customLabel;
-  bool m_customLabelHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   TableFieldURLConfiguration m_uRLStyling;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_customLabelHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_uRLStylingHasBeenSet = false;
 };
 

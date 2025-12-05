@@ -101,12 +101,12 @@ class ListDeploymentTargetsRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Map<TargetFilterName, Aws::Vector<Aws::String>> m_targetFilters;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_targetFiltersHasBeenSet = false;
 };
 

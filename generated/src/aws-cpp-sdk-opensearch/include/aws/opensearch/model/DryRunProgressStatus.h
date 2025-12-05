@@ -131,18 +131,18 @@ class DryRunProgressStatus {
   ///@}
  private:
   Aws::String m_dryRunId;
-  bool m_dryRunIdHasBeenSet = false;
 
   Aws::String m_dryRunStatus;
-  bool m_dryRunStatusHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_updateDate;
-  bool m_updateDateHasBeenSet = false;
 
   Aws::Vector<ValidationFailure> m_validationFailures;
+  bool m_dryRunIdHasBeenSet = false;
+  bool m_dryRunStatusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_updateDateHasBeenSet = false;
   bool m_validationFailuresHasBeenSet = false;
 };
 

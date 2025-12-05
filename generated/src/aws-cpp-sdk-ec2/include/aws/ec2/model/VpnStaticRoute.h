@@ -87,12 +87,12 @@ class VpnStaticRoute {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   VpnStaticRouteSource m_source{VpnStaticRouteSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   VpnState m_state{VpnState::NOT_SET};
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

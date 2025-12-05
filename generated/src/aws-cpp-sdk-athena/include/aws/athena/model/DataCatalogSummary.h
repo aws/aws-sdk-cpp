@@ -145,18 +145,18 @@ class DataCatalogSummary {
   ///@}
  private:
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   DataCatalogType m_type{DataCatalogType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DataCatalogStatus m_status{DataCatalogStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_catalogNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

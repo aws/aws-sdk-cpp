@@ -67,9 +67,9 @@ class DescribeApplicationVersionRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   long long m_applicationVersionId{0};
+  bool m_applicationNameHasBeenSet = false;
   bool m_applicationVersionIdHasBeenSet = false;
 };
 

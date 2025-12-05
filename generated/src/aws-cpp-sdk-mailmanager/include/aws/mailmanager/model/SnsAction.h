@@ -134,18 +134,18 @@ class SnsAction {
   ///@}
  private:
   ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
-  bool m_actionFailurePolicyHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   SnsNotificationEncoding m_encoding{SnsNotificationEncoding::NOT_SET};
-  bool m_encodingHasBeenSet = false;
 
   SnsNotificationPayloadType m_payloadType{SnsNotificationPayloadType::NOT_SET};
+  bool m_actionFailurePolicyHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_encodingHasBeenSet = false;
   bool m_payloadTypeHasBeenSet = false;
 };
 

@@ -142,18 +142,18 @@ class CustomConnectorDestinationProperties {
   ///@}
  private:
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   ErrorHandlingConfig m_errorHandlingConfig;
-  bool m_errorHandlingConfigHasBeenSet = false;
 
   WriteOperationType m_writeOperationType{WriteOperationType::NOT_SET};
-  bool m_writeOperationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_idFieldNames;
-  bool m_idFieldNamesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customProperties;
+  bool m_entityNameHasBeenSet = false;
+  bool m_errorHandlingConfigHasBeenSet = false;
+  bool m_writeOperationTypeHasBeenSet = false;
+  bool m_idFieldNamesHasBeenSet = false;
   bool m_customPropertiesHasBeenSet = false;
 };
 

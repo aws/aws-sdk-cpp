@@ -89,12 +89,12 @@ class DisassociateClientVpnTargetNetworkRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class UserPoolConfig {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   DefaultAction m_defaultAction{DefaultAction::NOT_SET};
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_appIdClientRegex;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
   bool m_appIdClientRegexHasBeenSet = false;
 };
 

@@ -180,30 +180,30 @@ class GetCodeSecurityScanResult {
   ///@}
  private:
   Aws::String m_scanId;
-  bool m_scanIdHasBeenSet = false;
 
   CodeSecurityResource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   CodeScanStatus m_status{CodeScanStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_lastCommitId;
-  bool m_lastCommitIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scanIdHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_lastCommitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

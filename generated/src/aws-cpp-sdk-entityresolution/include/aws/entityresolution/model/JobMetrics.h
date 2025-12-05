@@ -113,18 +113,18 @@ class JobMetrics {
   ///@}
  private:
   int m_inputRecords{0};
-  bool m_inputRecordsHasBeenSet = false;
 
   int m_totalRecordsProcessed{0};
-  bool m_totalRecordsProcessedHasBeenSet = false;
 
   int m_recordsNotProcessed{0};
-  bool m_recordsNotProcessedHasBeenSet = false;
 
   int m_deleteRecordsProcessed{0};
-  bool m_deleteRecordsProcessedHasBeenSet = false;
 
   int m_matchIDs{0};
+  bool m_inputRecordsHasBeenSet = false;
+  bool m_totalRecordsProcessedHasBeenSet = false;
+  bool m_recordsNotProcessedHasBeenSet = false;
+  bool m_deleteRecordsProcessedHasBeenSet = false;
   bool m_matchIDsHasBeenSet = false;
 };
 

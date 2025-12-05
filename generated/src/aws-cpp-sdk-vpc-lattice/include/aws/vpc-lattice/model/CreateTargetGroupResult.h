@@ -145,24 +145,24 @@ class CreateTargetGroupResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TargetGroupType m_type{TargetGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TargetGroupConfig m_config;
-  bool m_configHasBeenSet = false;
 
   TargetGroupStatus m_status{TargetGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_configHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

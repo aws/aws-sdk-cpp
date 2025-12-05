@@ -69,9 +69,9 @@ class DeleteDatasetResult {
   ///@}
  private:
   Dataset m_dataset;
-  bool m_datasetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class ZeppelinApplicationConfigurationUpdate {
   ///@}
  private:
   ZeppelinMonitoringConfigurationUpdate m_monitoringConfigurationUpdate;
-  bool m_monitoringConfigurationUpdateHasBeenSet = false;
 
   CatalogConfigurationUpdate m_catalogConfigurationUpdate;
-  bool m_catalogConfigurationUpdateHasBeenSet = false;
 
   DeployAsApplicationConfigurationUpdate m_deployAsApplicationConfigurationUpdate;
-  bool m_deployAsApplicationConfigurationUpdateHasBeenSet = false;
 
   Aws::Vector<CustomArtifactConfiguration> m_customArtifactsConfigurationUpdate;
+  bool m_monitoringConfigurationUpdateHasBeenSet = false;
+  bool m_catalogConfigurationUpdateHasBeenSet = false;
+  bool m_deployAsApplicationConfigurationUpdateHasBeenSet = false;
   bool m_customArtifactsConfigurationUpdateHasBeenSet = false;
 };
 

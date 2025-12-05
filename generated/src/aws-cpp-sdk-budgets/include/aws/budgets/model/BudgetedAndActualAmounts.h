@@ -88,12 +88,12 @@ class BudgetedAndActualAmounts {
   ///@}
  private:
   Spend m_budgetedAmount;
-  bool m_budgetedAmountHasBeenSet = false;
 
   Spend m_actualAmount;
-  bool m_actualAmountHasBeenSet = false;
 
   TimePeriod m_timePeriod;
+  bool m_budgetedAmountHasBeenSet = false;
+  bool m_actualAmountHasBeenSet = false;
   bool m_timePeriodHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DescribeAnomalyDetectorRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_anomalyDetectorId;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_anomalyDetectorIdHasBeenSet = false;
 };
 

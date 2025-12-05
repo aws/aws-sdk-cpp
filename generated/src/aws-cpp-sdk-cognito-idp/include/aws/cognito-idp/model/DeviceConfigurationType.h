@@ -75,9 +75,9 @@ class DeviceConfigurationType {
   ///@}
  private:
   bool m_challengeRequiredOnNewDevice{false};
-  bool m_challengeRequiredOnNewDeviceHasBeenSet = false;
 
   bool m_deviceOnlyRememberedOnUserPrompt{false};
+  bool m_challengeRequiredOnNewDeviceHasBeenSet = false;
   bool m_deviceOnlyRememberedOnUserPromptHasBeenSet = false;
 };
 

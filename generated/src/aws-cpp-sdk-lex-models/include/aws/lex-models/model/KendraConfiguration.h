@@ -103,12 +103,12 @@ class KendraConfiguration {
   ///@}
  private:
   Aws::String m_kendraIndex;
-  bool m_kendraIndexHasBeenSet = false;
 
   Aws::String m_queryFilterString;
-  bool m_queryFilterStringHasBeenSet = false;
 
   Aws::String m_role;
+  bool m_kendraIndexHasBeenSet = false;
+  bool m_queryFilterStringHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

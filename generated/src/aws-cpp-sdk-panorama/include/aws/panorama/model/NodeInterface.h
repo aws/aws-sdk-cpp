@@ -82,9 +82,9 @@ class NodeInterface {
   ///@}
  private:
   Aws::Vector<NodeInputPort> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Vector<NodeOutputPort> m_outputs;
+  bool m_inputsHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
 };
 

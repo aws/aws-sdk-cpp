@@ -98,12 +98,12 @@ class DescribeOrderableClusterOptionsResult {
   ///@}
  private:
   Aws::Vector<OrderableClusterOption> m_orderableClusterOptions;
-  bool m_orderableClusterOptionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_orderableClusterOptionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

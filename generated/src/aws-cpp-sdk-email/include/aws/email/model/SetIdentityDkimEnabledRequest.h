@@ -75,9 +75,9 @@ class SetIdentityDkimEnabledRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   bool m_dkimEnabled{false};
+  bool m_identityHasBeenSet = false;
   bool m_dkimEnabledHasBeenSet = false;
 };
 

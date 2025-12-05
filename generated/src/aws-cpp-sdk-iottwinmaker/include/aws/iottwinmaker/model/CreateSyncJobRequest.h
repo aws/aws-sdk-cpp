@@ -110,15 +110,15 @@ class CreateSyncJobRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   Aws::String m_syncRole;
-  bool m_syncRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_syncSourceHasBeenSet = false;
+  bool m_syncRoleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

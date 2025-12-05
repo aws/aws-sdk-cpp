@@ -125,12 +125,12 @@ class CreateAttendeeRequest : public ChimeSDKMeetingsRequest {
   ///@}
  private:
   Aws::String m_meetingId;
-  bool m_meetingIdHasBeenSet = false;
 
   Aws::String m_externalUserId;
-  bool m_externalUserIdHasBeenSet = false;
 
   AttendeeCapabilities m_capabilities;
+  bool m_meetingIdHasBeenSet = false;
+  bool m_externalUserIdHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

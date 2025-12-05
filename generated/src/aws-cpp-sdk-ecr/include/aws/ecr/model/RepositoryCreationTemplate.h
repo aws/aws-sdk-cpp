@@ -294,39 +294,39 @@ class RepositoryCreationTemplate {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EncryptionConfigurationForRepositoryCreationTemplate m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
-  bool m_imageTagMutabilityHasBeenSet = false;
 
   Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
-  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
 
   Aws::String m_repositoryPolicy;
-  bool m_repositoryPolicyHasBeenSet = false;
 
   Aws::String m_lifecyclePolicy;
-  bool m_lifecyclePolicyHasBeenSet = false;
 
   Aws::Vector<RCTAppliedFor> m_appliedFor;
-  bool m_appliedForHasBeenSet = false;
 
   Aws::String m_customRoleArn;
-  bool m_customRoleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_prefixHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_imageTagMutabilityHasBeenSet = false;
+  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
+  bool m_repositoryPolicyHasBeenSet = false;
+  bool m_lifecyclePolicyHasBeenSet = false;
+  bool m_appliedForHasBeenSet = false;
+  bool m_customRoleArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

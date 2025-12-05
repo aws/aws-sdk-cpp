@@ -221,33 +221,33 @@ class ConnectorProfile {
   ///@}
  private:
   Aws::String m_connectorProfileArn;
-  bool m_connectorProfileArnHasBeenSet = false;
 
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorLabel;
-  bool m_connectorLabelHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
-  bool m_connectionModeHasBeenSet = false;
 
   Aws::String m_credentialsArn;
-  bool m_credentialsArnHasBeenSet = false;
 
   ConnectorProfileProperties m_connectorProfileProperties;
-  bool m_connectorProfilePropertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   PrivateConnectionProvisioningState m_privateConnectionProvisioningState;
+  bool m_connectorProfileArnHasBeenSet = false;
+  bool m_connectorProfileNameHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_connectorLabelHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
+  bool m_credentialsArnHasBeenSet = false;
+  bool m_connectorProfilePropertiesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_privateConnectionProvisioningStateHasBeenSet = false;
 };
 

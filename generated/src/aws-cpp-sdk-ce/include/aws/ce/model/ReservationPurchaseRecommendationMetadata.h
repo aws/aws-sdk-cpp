@@ -87,12 +87,12 @@ class ReservationPurchaseRecommendationMetadata {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_generationTimestamp;
-  bool m_generationTimestampHasBeenSet = false;
 
   Aws::String m_additionalMetadata;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_generationTimestampHasBeenSet = false;
   bool m_additionalMetadataHasBeenSet = false;
 };
 

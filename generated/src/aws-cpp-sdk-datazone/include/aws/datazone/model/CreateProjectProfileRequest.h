@@ -204,30 +204,30 @@ class CreateProjectProfileRequest : public DataZoneRequest {
   ///@}
  private:
   bool m_allowCustomProjectResourceTags{false};
-  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_domainUnitIdentifier;
-  bool m_domainUnitIdentifierHasBeenSet = false;
 
   Aws::Vector<EnvironmentConfiguration> m_environmentConfigurations;
-  bool m_environmentConfigurationsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ResourceTagParameter> m_projectResourceTags;
-  bool m_projectResourceTagsHasBeenSet = false;
 
   Aws::String m_projectResourceTagsDescription;
-  bool m_projectResourceTagsDescriptionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
+  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_domainUnitIdentifierHasBeenSet = false;
+  bool m_environmentConfigurationsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectResourceTagsHasBeenSet = false;
+  bool m_projectResourceTagsDescriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

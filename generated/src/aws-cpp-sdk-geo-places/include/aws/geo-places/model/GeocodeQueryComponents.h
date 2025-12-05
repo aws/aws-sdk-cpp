@@ -183,27 +183,27 @@ class GeocodeQueryComponents {
   ///@}
  private:
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_subRegion;
-  bool m_subRegionHasBeenSet = false;
 
   Aws::String m_locality;
-  bool m_localityHasBeenSet = false;
 
   Aws::String m_district;
-  bool m_districtHasBeenSet = false;
 
   Aws::String m_street;
-  bool m_streetHasBeenSet = false;
 
   Aws::String m_addressNumber;
-  bool m_addressNumberHasBeenSet = false;
 
   Aws::String m_postalCode;
+  bool m_countryHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_subRegionHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_districtHasBeenSet = false;
+  bool m_streetHasBeenSet = false;
+  bool m_addressNumberHasBeenSet = false;
   bool m_postalCodeHasBeenSet = false;
 };
 

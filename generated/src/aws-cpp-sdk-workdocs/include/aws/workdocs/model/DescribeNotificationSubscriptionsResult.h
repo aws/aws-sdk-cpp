@@ -86,12 +86,12 @@ class DescribeNotificationSubscriptionsResult {
   ///@}
  private:
   Aws::Vector<Subscription> m_subscriptions;
-  bool m_subscriptionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

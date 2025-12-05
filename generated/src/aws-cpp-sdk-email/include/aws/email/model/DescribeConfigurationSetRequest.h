@@ -85,9 +85,9 @@ class DescribeConfigurationSetRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::Vector<ConfigurationSetAttribute> m_configurationSetAttributeNames;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_configurationSetAttributeNamesHasBeenSet = false;
 };
 

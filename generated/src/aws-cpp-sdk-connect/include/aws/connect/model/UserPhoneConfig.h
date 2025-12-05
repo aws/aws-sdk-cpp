@@ -122,18 +122,18 @@ class UserPhoneConfig {
   ///@}
  private:
   PhoneType m_phoneType{PhoneType::NOT_SET};
-  bool m_phoneTypeHasBeenSet = false;
 
   bool m_autoAccept{false};
-  bool m_autoAcceptHasBeenSet = false;
 
   int m_afterContactWorkTimeLimit{0};
-  bool m_afterContactWorkTimeLimitHasBeenSet = false;
 
   Aws::String m_deskPhoneNumber;
-  bool m_deskPhoneNumberHasBeenSet = false;
 
   bool m_persistentConnection{false};
+  bool m_phoneTypeHasBeenSet = false;
+  bool m_autoAcceptHasBeenSet = false;
+  bool m_afterContactWorkTimeLimitHasBeenSet = false;
+  bool m_deskPhoneNumberHasBeenSet = false;
   bool m_persistentConnectionHasBeenSet = false;
 };
 

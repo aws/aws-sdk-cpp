@@ -71,9 +71,9 @@ class AutoDataQuality {
   ///@}
  private:
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   Aws::String m_evaluationContext;
+  bool m_isEnabledHasBeenSet = false;
   bool m_evaluationContextHasBeenSet = false;
 };
 

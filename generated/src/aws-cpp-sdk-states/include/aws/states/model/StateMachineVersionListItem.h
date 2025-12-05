@@ -72,9 +72,9 @@ class StateMachineVersionListItem {
   ///@}
  private:
   Aws::String m_stateMachineVersionArn;
-  bool m_stateMachineVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_stateMachineVersionArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

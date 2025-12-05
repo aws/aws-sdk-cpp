@@ -66,9 +66,9 @@ class WorkerAmountCapability {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

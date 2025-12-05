@@ -93,12 +93,12 @@ class ListBackupsResult {
   ///@}
  private:
   Aws::Vector<BackupSummary> m_backupSummaries;
-  bool m_backupSummariesHasBeenSet = false;
 
   Aws::String m_lastEvaluatedBackupArn;
-  bool m_lastEvaluatedBackupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupSummariesHasBeenSet = false;
+  bool m_lastEvaluatedBackupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

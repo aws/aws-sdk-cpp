@@ -71,9 +71,9 @@ class SidewalkSingleStartImportInfo {
   ///@}
  private:
   Aws::String m_sidewalkManufacturingSn;
-  bool m_sidewalkManufacturingSnHasBeenSet = false;
 
   SidewalkPositioning m_positioning;
+  bool m_sidewalkManufacturingSnHasBeenSet = false;
   bool m_positioningHasBeenSet = false;
 };
 

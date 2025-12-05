@@ -277,45 +277,45 @@ class GetProjectProfileResult {
   ///@}
  private:
   bool m_allowCustomProjectResourceTags{false};
-  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   Aws::Vector<EnvironmentConfiguration> m_environmentConfigurations;
-  bool m_environmentConfigurationsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ResourceTagParameter> m_projectResourceTags;
-  bool m_projectResourceTagsHasBeenSet = false;
 
   Aws::String m_projectResourceTagsDescription;
-  bool m_projectResourceTagsDescriptionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_environmentConfigurationsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectResourceTagsHasBeenSet = false;
+  bool m_projectResourceTagsDescriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 
